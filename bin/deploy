@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+
+set -eu
+
+KUBE_CONFIG=kubectl.config
+
+# This script updates our kubernetes deploymnet from travis
+
+# Install kubectl
+curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
+chmod +x ./kubectl
+
+# Generate our kubectl config
+cat << EOF > $KUBE_CONFIG
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority-data: $KUBE_CA_DATA
+    server: $KUBE_SERVER
+  name: cluster-operationcode
+contexts:
+- context:
+    cluster: cluster-operationcode
+    namespace: operationcode
+    user: $KUBE_USER
+  name: operationcode
+- context:
+    cluster: cluster-operationcode
+    namespace: operationcode-staging
+    user: $KUBE_USER
+  name: staging
+current-context: operationcode
+kind: Config
+preferences: {}
+users:
+- name: $KUBE_USER
+  user:
+    client-certificate-data: $KUBE_CLIENT_CERT
+    client-key-data: $KUBE_CLIENT_KEY
+EOF
+
+# Update the deployment
+KUBECONFIG=${KUBE_CONFIG} ./kubectl set image deployment/operationcode-frontend app=operationcode/operationcode_frontend:${TRAVIS_BUILD_NUMBER}

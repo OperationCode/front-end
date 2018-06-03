@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+# Publishes the most recent web container to docker hubs repo.
+# This script assumes docker push works.
+# You must set up docker push on your own.
+
+set -eu
+
+DOCKER_REPO="operationcode/operationcode_frontend"
+
+ROOT_DIR="$(dirname $0)/.."
+cd $ROOT_DIR
+
+PROJECT_NAME=$(grep COMPOSE_PROJECT_NAME $ROOT_DIR/.env | cut -d= -f2)
+
+IMAGE_NAME="${PROJECT_NAME}_web"
+IMAGE_ID=$(docker images $IMAGE_NAME:latest --format "{{.ID}}")
+
+if [ -n "$DOCKER_USERNAME" ]; then echo "Found username"; fi
+if [ -n "$DOCKER_PASSWORD" ]; then echo "Found password"; fi
+
+if [ -n "$DOCKER_USERNAME" ] && [ -n "$DOCKER_PASSWORD" ]; then
+  echo "Logging in using ENV creds"
+  docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+fi
+
+docker tag $IMAGE_ID $DOCKER_REPO
+docker tag $IMAGE_ID ${DOCKER_REPO}:${TRAVIS_BUILD_NUMBER}
+docker push $DOCKER_REPO
+docker push ${DOCKER_REPO}:${TRAVIS_BUILD_NUMBER}
