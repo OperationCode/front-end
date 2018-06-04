@@ -1,8 +1,8 @@
 import '../common/styles/globalStyles.css';
 import Link from 'next/link';
-import Head from '../components/head';
-import Nav from '../components/nav';
-import Button from '../common/components/Button/Button';
+import Head from 'components/head';
+import Nav from 'components/nav';
+import Button from 'common/components/Button/Button';
 
 export default () => (
   <div>

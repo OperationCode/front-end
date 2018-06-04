@@ -22,7 +22,7 @@
         "allowChildren": false
       }
     ],
-    "object-curly-newline": "warn",
+    "object-curly-newline": "error",
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/jsx-curly-brace-presence": [2, { "props": "never", "children": "never" }],
     "react/prefer-stateless-function": "error",
@@ -39,12 +39,5 @@
       }
     ],
     "react/jsx-max-props-per-line": ["error", { "maximum": 2 }]
-  },
-  "settings": {
-    "import/resolver": {
-      "webpack": {
-        "config": "./config/webpack.config.dev.js"
-      }
-    }
   }
 }

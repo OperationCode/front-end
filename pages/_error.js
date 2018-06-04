@@ -1,5 +1,5 @@
 import React from 'react';
-import ErrorDisplay from '../components/ErrorDisplay/ErrorDisplay';
+import ErrorDisplay from 'components/ErrorDisplay/ErrorDisplay';
 
 // This acts as an override necessary to use a custom ErrorDisplay handler
 class Error extends React.Component {
