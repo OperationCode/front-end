@@ -1,0 +1,17 @@
+// VS Code Configuration
+{
+  "compilerOptions": {
+    "target": "es2015",
+    "allowSyntheticDefaultImports": false,
+    "experimentalDecorators": true,
+    "baseUrl": ".",
+    "paths": {
+      // Ensure intellisense continues to operate - match with webpack aliases
+      "components/*": ["./components/*"],
+      "common/*": ["./common/*"],
+      "pages/*": ["./pages/*"],
+      "static/*": ["./static/*"]
+    }
+  },
+  "exclude": ["node_modules"]
+}
