@@ -1,0 +1,10 @@
+# Since we build and test in Docker we dont
+# need node at build time
+language: c
+
+services:
+  - docker
+
+script:
+  - make travis
+  - if [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_BRANCH" == "master" ]; then make publish && make deploy; fi
