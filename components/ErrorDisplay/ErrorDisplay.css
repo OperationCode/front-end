@@ -1,11 +1,11 @@
-.FourOhFour {
+.ErrorDisplay {
   width: 100vw;
   height: 100vh;
   background: #121212;
 }
 
-.FourOhFour .bg {
-  background-image: url("/static/images/404.gif");
+.ErrorDisplay .bg {
+  background-image: url("/static/images/TankFlip.gif");
   width: 100vw;
   height: 100vh;
   background-size: cover;
