@@ -3,7 +3,6 @@ const withCSS = require('@zeit/next-css');
 module.exports = withCSS({
   cssModules: true,
   cssLoaderOptions: {
-    importLoaders: 1,
     localIdentName: '[name]_[local]__[hash:base64:5]',
     modules: true,
   },
