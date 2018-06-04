@@ -1,0 +1,24 @@
+.HeroBanner {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  height: 480px;
+  width: 100%;
+}
+
+.header {
+  flex-grow: 1;
+  box-sizing: border-box;
+  padding: 4rem;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+  .HeroBanner {
+    height: 320px;
+  }
+
+  .header {
+    padding: 2rem;
+  }
+}
