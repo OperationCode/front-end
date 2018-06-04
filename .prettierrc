@@ -2,5 +2,6 @@
   "arrowParens": "avoid",
   "printWidth": 100,
   "singleQuote": true,
-  "trailingComma": "all"
+  "trailingComma": "all",
+  "overrides": [{ "files": "**/*.css", "options": { "singleQuote": false } }]
 }
