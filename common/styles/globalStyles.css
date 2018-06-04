@@ -1,0 +1,100 @@
+/* Global Styles */
+@font-face {
+  font-family: "PF Din Display";
+  font-weight: normal;
+  src: url("/static/fonts/PFDinDisplayPro-Reg.ttf");
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Noto Serif", sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  color: #47566b;
+}
+
+body {
+  line-height: 1.5;
+  hyphens: none;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+button {
+  font-family: "PF Din Display";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  min-height: 100%;
+}
+
+/* Custom font scaling formula */
+/* https://blog.envylabs.com/responsive-typographic-scales-in-css-b9f60431d1c4 */
+h1 {
+  /* 40px (2.5 * 16) on Desktops */
+  /* 37.5px (2.5 * 15) on Tablets */
+  /* 32.5px (2.5 * 13) on Mobiles */
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2.3rem;
+}
+
+h3 {
+  font-size: 2.1rem;
+}
+
+h4 {
+  font-size: 1.9rem;
+}
+
+h5 {
+  font-size: 1.7rem;
+}
+
+h6 {
+  font-size: 1.5rem;
+}
+
+@media screen and (max-width: 480px) {
+  html {
+    font-size: 13px;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 960px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+/* React Scroll Button styles */
+.ScrollUpButton {
+  position: fixed;
+  bottom: 50px;
+  right: 30px;
+  cursor: pointer;
+  transition-duration: 0.2s;
+  transition-timing-function: linear;
+  transition-delay: 0s;
+}

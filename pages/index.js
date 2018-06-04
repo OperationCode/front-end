@@ -1,3 +1,4 @@
+import '../common/styles/globalStyles.css';
 import Link from 'next/link';
 import Head from '../components/head';
 import Nav from '../components/nav';
@@ -7,9 +8,6 @@ export default () => (
   <div>
     <Head title="Home" />
     <Nav />
-    <Button onClick={() => {}} color="red">
-      Hello there
-    </Button>
 
     <div className="hero">
       <h1 className="title">Welcome to Next!</h1>
