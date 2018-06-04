@@ -1,0 +1,25 @@
+.FourOhFour {
+  width: 100vw;
+  height: 100vh;
+  background: #121212;
+}
+
+.FourOhFour .bg {
+  background-image: url("/static/images/404.gif");
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-size: 4rem;
+}
+
+.paragraph {
+  font-size: 1.4rem;
+}
