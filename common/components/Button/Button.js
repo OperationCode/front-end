@@ -1,37 +1,37 @@
-import React, { Component } from 'react';
+import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import styles from './Button.css';
 
-class Button extends Component {
-  static propTypes = {
-    className: PropTypes.string,
-    children: PropTypes.any,
-    color: PropTypes.oneOf(['blue', 'red']),
-    href: PropTypes.string,
-    onClick: PropTypes.func,
-  };
+Button.propTypes = {
+  className: PropTypes.string,
+  children: PropTypes.node,
+  color: PropTypes.oneOf(['primary', 'secondary']),
+  onClick: PropTypes.func,
+  tabIndex: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+};
 
-  static defaultProps = {
-    color: 'blue',
-  };
+Button.defaultProps = {
+  className: undefined,
+  children: undefined,
+  color: 'primary',
+  onClick: undefined,
+  tabIndex: 0,
+};
 
-  onClick = event => {
-    this.props.onClick;
-  };
-
-  render() {
-    const { props } = this;
-
-    return (
-      <button
-        children={props.children}
-        className={classNames(styles.button, { [props.className]: props.className })}
-        onClick={props.onClick}
-        style={{ backgroundColor: `${props.color}` }}
-      />
-    );
-  }
+function Button(props) {
+  return (
+    <button
+      className={classNames(styles.button, props.className, {
+        [styles.primary]: props.color === 'primary',
+        [styles.secondary]: props.color === 'secondary',
+      })}
+      onClick={props.onClick}
+      tabIndex={props.tabIndex}
+    >
+      {props.children}
+    </button>
+  );
 }
 
 export default Button;
