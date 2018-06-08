@@ -9,7 +9,7 @@
   },
   "parser": "babel-eslint",
   "rules": {
-    "comma-dangle": ["error", "only-multiline"],
+    "comma-dangle": "error",
     "import/no-unresolved": "off",
     "import/extensions": "off",
     "jsx-a11y/anchor-is-valid": ["error", { "components": ["Link"], "specialLink": ["to"] }],
@@ -33,13 +33,14 @@
       }
     ],
     "no-console": "warn",
+    "no-use-before-define": "off",
     "object-curly-newline": "error",
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/forbid-prop-types": "error",
+    "react/jsx-filename-extension": [1, { "extensions": [".js"] }],
     "react/jsx-curly-brace-presence": [2, { "props": "never", "children": "never" }],
-    "react/prefer-stateless-function": "error",
+    "react/jsx-max-props-per-line": [2, { "maximum": 1, "when": "always" }],
     "react/no-did-mount-set-state": "off",
     "react/no-unused-state": "error",
-    "react/forbid-prop-types": "warn",
-    "react/jsx-max-props-per-line": ["error", { "maximum": 2 }]
+    "react/prefer-stateless-function": "error"
   }
 }
