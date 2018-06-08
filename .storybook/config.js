@@ -3,6 +3,8 @@ import { addDecorator, configure } from '@storybook/react';
 import backgrounds from '@storybook/addon-backgrounds';
 import { setOptions } from '@storybook/addon-options';
 
+import 'common/styles/globalStyles.css';
+
 setOptions({
   name: 'Operation-Code',
 });

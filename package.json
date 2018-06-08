@@ -4,8 +4,8 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "storybook": "start-storybook -p 9001 -c .storybook",
-    "build-storybook": "build-storybook -c .storybook -o .storybook-dist"
+    "storybook": "start-storybook -s ./static -p 9001 -c .storybook",
+    "build-storybook": "build-storybook -s ./static -c .storybook -o .storybook-dist"
   },
   "dependencies": {
     "@storybook/addon-backgrounds": "^3.4.6",
@@ -23,7 +23,9 @@
     "babel-preset-stage-0": "^6.24.1",
     "classnames": "^2.2.5",
     "css-loader": "^0.28.11",
+    "express": "^4.16.3",
     "next": "^6.0.3",
+    "path": "^0.12.7",
     "prop-types": "^15.6.1",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",

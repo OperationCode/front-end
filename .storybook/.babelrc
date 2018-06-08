@@ -3,5 +3,19 @@
     "env",
     "stage-0",
     "react"
+  ],
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": ["./"],
+        "alias": {
+          "components": "./components",
+          "common": "./common",
+          "pages": "./pages",
+          "static": "./static"
+        }
+      }
+    ]
   ]
 }
