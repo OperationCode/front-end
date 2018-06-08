@@ -9,8 +9,9 @@
   },
   "parser": "babel-eslint",
   "rules": {
-    "no-console": "warn",
     "comma-dangle": ["error", "only-multiline"],
+    "import/no-unresolved": "off",
+    "import/extensions": "off",
     "jsx-a11y/anchor-is-valid": ["error", { "components": ["Link"], "specialLink": ["to"] }],
     "jsx-a11y/label-has-for": [
       2,
@@ -22,13 +23,6 @@
         "allowChildren": false
       }
     ],
-    "object-curly-newline": "error",
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-    "react/jsx-curly-brace-presence": [2, { "props": "never", "children": "never" }],
-    "react/prefer-stateless-function": "error",
-    "react/no-did-mount-set-state": "off",
-    "react/no-unused-state": "error",
-    "react/forbid-prop-types": "warn",
     "max-len": [
       "error",
       100,
@@ -38,6 +32,14 @@
         "ignoreTemplateLiterals": true
       }
     ],
+    "no-console": "warn",
+    "object-curly-newline": "error",
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/jsx-curly-brace-presence": [2, { "props": "never", "children": "never" }],
+    "react/prefer-stateless-function": "error",
+    "react/no-did-mount-set-state": "off",
+    "react/no-unused-state": "error",
+    "react/forbid-prop-types": "warn",
     "react/jsx-max-props-per-line": ["error", { "maximum": 2 }]
   }
 }
