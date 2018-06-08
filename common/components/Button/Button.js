@@ -7,6 +7,7 @@ Button.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
   color: PropTypes.oneOf(['primary', 'secondary']),
+  fullWidth: PropTypes.bool,
   onClick: PropTypes.func,
   tabIndex: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
@@ -15,6 +16,7 @@ Button.defaultProps = {
   className: undefined,
   children: undefined,
   color: 'primary',
+  fullWidth: false,
   onClick: undefined,
   tabIndex: 0,
 };
@@ -25,6 +27,7 @@ function Button(props) {
       className={classNames(styles.button, props.className, {
         [styles.primary]: props.color === 'primary',
         [styles.secondary]: props.color === 'secondary',
+        [styles.fullWidth]: props.fullWidth,
       })}
       onClick={props.onClick}
       tabIndex={props.tabIndex}
