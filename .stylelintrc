@@ -1,5 +1,6 @@
 {
   "extends": "stylelint-config-standard",
+  "ignoreFiles": "**/*.js",
   "rules": {
     "indentation": 2,
     "string-quotes": "double",
