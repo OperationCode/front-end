@@ -34,7 +34,15 @@
     ],
     "no-console": "warn",
     "no-use-before-define": "off",
-    "object-curly-newline": "error",
+    "object-curly-newline": [
+      "error",
+      {
+        "ObjectExpression": "always",
+        "ObjectPattern": "always",
+        "ImportDeclaration": "never",
+        "ExportDeclaration": { "multiline": true, "minProperties": 3 }
+      }
+    ],
     "react/forbid-prop-types": "error",
     "react/jsx-filename-extension": [1, { "extensions": [".js"] }],
     "react/jsx-curly-brace-presence": [2, { "props": "never", "children": "never" }],
