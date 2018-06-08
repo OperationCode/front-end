@@ -14,11 +14,16 @@ HeroBanner.defaultProps = {
   subtitle: '',
 };
 
-function HeroBanner({ imageSrc, title, subtitle }) {
+function HeroBanner({
+  children, imageSrc, title, subtitle,
+}) {
   const bannerStyles = { backgroundImage: `url(${imageSrc})` };
 
   return (
-    <div style={bannerStyles} className={styles.HeroBanner}>
+    <div
+      style={bannerStyles}
+      className={styles.HeroBanner}
+    >
       <div className={styles.header}>
         <h1>{title}</h1>
         {subtitle && <h4>{subtitle}</h4>}
