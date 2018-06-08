@@ -29,6 +29,7 @@
     "prop-types": "^15.6.1",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
+    "react-ga": "^2.5.3",
     "style-loader": "^0.21.0"
   },
   "devDependencies": {
