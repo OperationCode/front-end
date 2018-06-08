@@ -8,7 +8,9 @@
   --secondaryDark: #ab4034;
   --mist: #f0f2f2;
   --slate: #47566b;
-  --grey: #9baab5;
+  --gray: #9baab5;
+  --grayLight: #c1d0db;
+  --grayDark: #75848f;
 }
 
 /* Global Styles */

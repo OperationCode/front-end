@@ -11,6 +11,10 @@
   text-decoration: none;
 }
 
+.fullWidth {
+  width: 100%;
+}
+
 .primary {
   background-color: var(--primary);
   border: 2px solid var(--primaryDark);
@@ -35,6 +39,14 @@
   background-color: var(--secondaryLight);
 }
 
-.fullWidth {
-  width: 100%;
+.gray {
+  background-color: var(--gray);
+  border: 2px solid var(--grayDark);
+  color: #ffffff;
+}
+
+.gray:active,
+.gray:focus,
+.gray:hover {
+  background-color: var(--grayLight);
 }
