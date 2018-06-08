@@ -1,0 +1,87 @@
+.boardCard {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  max-height: 275px;
+  width: 250px;
+  background: white;
+  box-shadow: 0 3px 6px 2px rgba(0, 0, 0, 0.12);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  margin: 1rem;
+  padding: 1.5rem;
+}
+
+.boardCard:hover,
+.boardCard:focus {
+  box-shadow: 0 9px 28px rgba(0, 0, 0, 0.25);
+  max-height: 650px;
+  height: auto;
+  transition: box-shadow 0.3s ease-in-out, max-height 0.3s ease-in-out;
+}
+
+.boardCard:hover .descriptionText,
+.boardCard:active .descriptionText {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease-in-out;
+  transition-delay: 0.2s;
+}
+
+.boardCard:hover > img,
+.boardCard:active > img {
+  filter: grayscale(0%);
+}
+
+.boardCard > img {
+  height: 125px;
+  width: 125px;
+  border-radius: 100%;
+  box-shadow: 0 3px 4px 2px rgba(0, 0, 0, 0.15);
+  filter: grayscale(100%);
+  transition: filter 0.3s linear;
+}
+
+.name {
+  white-space: nowrap;
+  padding: 0.75rem 0;
+}
+
+.role {
+  text-align: center;
+  padding: 0.5rem 0;
+}
+
+.hr {
+  border-top: 1px solid #8c8b8b;
+  width: 80%;
+}
+
+.descriptionText {
+  opacity: 0;
+  visibility: hidden;
+  align-self: left;
+  padding: 1rem 0 0 0;
+}
+
+@media screen and (max-width: 450px) {
+  .boardCard {
+    max-height: 650px;
+    transition: none;
+  }
+
+  .boardCard:hover,
+  .boardCard:focus {
+    transition: none;
+  }
+  
+  .boardCard:hover .descriptionText,
+  .boardCard:active .descriptionText {
+    transition: none;
+  }
+
+  .descriptionText {
+    opacity: 1;
+    visibility: visible;
+  }
+}
