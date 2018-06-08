@@ -1,0 +1,24 @@
+.Card {
+  align-items: center;
+  background-color: #ffffff;
+  box-shadow: 0 3px 6px 2px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  margin: 1rem;
+  min-height: 100px;
+  min-width: 100px;
+  padding: 1.5rem;
+  text-align: left;
+}
+
+.header {
+  border-bottom: 1px solid var(--gray);
+}
+
+.content {
+}
+
+.footer {
+  border-top: 1px solid var(--gray);
+}
