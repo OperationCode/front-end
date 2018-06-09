@@ -6,7 +6,9 @@ ErrorDisplay.propTypes = {
   statusCode: PropTypes.number.isRequired,
 };
 
-function ErrorDisplay({ statusCode }) {
+function ErrorDisplay({
+  statusCode,
+}) {
   return (
     <div className={styles.ErrorDisplay}>
       <div className={styles.bg}>
