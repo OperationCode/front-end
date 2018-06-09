@@ -1,13 +1,22 @@
-import NextHead from 'next/head'
-import { string } from 'prop-types'
+import NextHead from 'next/head';
+import { string } from 'prop-types';
 
-const defaultDescription = ''
-const defaultOGURL = ''
-const defaultOGImage = ''
+const defaultDescription = '';
+const defaultOGURL = '';
+const defaultOGImage = '';
 
-const Head = (props) => (
+/* eslint-disable react/require-default-props */
+Head.propTypes = {
+  title: string,
+  description: string,
+  url: string,
+  ogImage: string,
+};
+
+/* eslint-disable react/jsx-max-props-per-line */
+const Head = props => (
   <NextHead>
-    <meta charset="UTF-8" />
+    <meta charSet="UTF-8" />
     <title>{props.title || ''}</title>
     <meta name="description" content={props.description || defaultDescription} />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -25,13 +34,6 @@ const Head = (props) => (
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
   </NextHead>
-)
+);
 
-Head.propTypes = {
-  title: string,
-  description: string,
-  url: string,
-  ogImage: string
-}
-
-export default Head
+export default Head;
