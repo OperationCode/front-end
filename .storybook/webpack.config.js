@@ -1,5 +1,3 @@
-const path = require('path');
-
 // Export a function. Accept the base config as the only param.
 // eslint-disable-next-line no-unused-vars
 module.exports = (storybookBaseConfig, configType) => {
@@ -20,6 +18,9 @@ module.exports = (storybookBaseConfig, configType) => {
           sourceMap: true,
           sourceMapContents: true,
         },
+      },
+      {
+        loader: 'postcss-loader',
       },
     ],
   });
