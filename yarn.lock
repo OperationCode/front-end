@@ -701,9 +701,9 @@
     react-inspector "^2.2.2"
     uuid "^3.2.1"
 
-"@storybook/addon-backgrounds@^3.4.6":
-  version "3.4.6"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-backgrounds/-/addon-backgrounds-3.4.6.tgz#f1bf3f6c51e80cf69a5a613310ee839f08800dd9"
+"@storybook/addon-backgrounds@^3.4.7":
+  version "3.4.7"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-backgrounds/-/addon-backgrounds-3.4.7.tgz#1ec699c7f105cbd410bc82e9bf03b65a6cf8d3bb"
   dependencies:
     babel-runtime "^6.26.0"
     global "^4.3.2"
@@ -735,9 +735,9 @@
     global "^4.3.2"
     prop-types "^15.6.1"
 
-"@storybook/addon-options@^3.4.6":
-  version "3.4.6"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-options/-/addon-options-3.4.6.tgz#8f27400c4a2a852657e939d9b733086bb6c3349c"
+"@storybook/addon-options@^3.4.7":
+  version "3.4.7"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-options/-/addon-options-3.4.7.tgz#0ab917e430fc7f9edc71529a81e3c5b7c1b94871"
   dependencies:
     babel-runtime "^6.26.0"
 

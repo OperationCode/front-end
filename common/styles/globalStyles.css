@@ -1,17 +1,4 @@
-/* Variables */
-:root {
-  --primary: #249cbc;
-  --primaryLight: #4ac2e2;
-  --primaryDark: #007696;
-  --secondary: #d1665a;
-  --secondaryLight: #f78c80;
-  --secondaryDark: #ab4034;
-  --mist: #f0f2f2;
-  --slate: #47566b;
-  --gray: #9baab5;
-  --grayLight: #c1d0db;
-  --grayDark: #75848f;
-}
+@import "./variables";
 
 /* Global Styles */
 @font-face {
@@ -45,7 +32,7 @@ h5,
 h6,
 a,
 button {
-  font-family: "PF Din Display";
+  font-family: "PF Din Display", Arial, sans-serif;
 }
 
 h1,
@@ -62,12 +49,13 @@ h6 {
   min-height: 100%;
 }
 
-/* Custom font scaling formula */
-/* https://blog.envylabs.com/responsive-typographic-scales-in-css-b9f60431d1c4 */
+/* Custom font scaling formula https://blog.envylabs.com/responsive-typographic-scales-in-css-b9f60431d1c4 */
 h1 {
-  /* 40px (2.5 * 16) on Desktops */
-  /* 37.5px (2.5 * 15) on Tablets */
-  /* 32.5px (2.5 * 13) on Mobiles */
+  /*
+    40px (2.5 * 16) on Desktops
+    37.5px (2.5 * 15) on Tablets
+    32.5px (2.5 * 13) on Mobiles
+  */
   font-size: 2.5rem;
 }
 
