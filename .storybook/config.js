@@ -1,7 +1,7 @@
 import React from 'react';
 import { addDecorator, configure } from '@storybook/react';
-import backgrounds from '@storybook/addon-backgrounds';
 import { setOptions } from '@storybook/addon-options';
+import brandingBackgrounds from './backgrounds';
 
 import 'common/styles/globalStyles.css';
 
@@ -25,15 +25,6 @@ const centerContainer = {
 };
 
 addDecorator(story => <div style={centerContainer}>{story()}</div>);
-addDecorator(
-  backgrounds([
-    { name: 'Mist', value: '#F0F2F2', default: true },
-    { name: 'OC Blue', value: '#249CBC' },
-    { name: 'OC Red', value: '#D1665A' },
-    { name: 'Slate', value: '#47566B' },
-    { name: 'Grey', value: '#9BAAB5' },
-    { name: 'Light Grey', value: '#D0D5DA' },
-  ]),
-);
+addDecorator(brandingBackgrounds);
 
 configure(loadStories, module);

@@ -23,16 +23,42 @@ module.exports = (storybookBaseConfig, configType) => {
         loader: 'postcss-loader',
         options: {
           plugins: [
-            {
-              'postcss-export-custom-variables': {
-                destination: 'common/styles/themeMap.js',
-              },
-            },
+            require('postcss-import')({
+              root: './',
+            }),
+            require('postcss-export-custom-variables')({
+              destination: 'common/styles/themeMap.js',
+            }),
           ],
         },
       },
     ],
   });
+
+  if (configType === 'PRODUCTION') {
+    storybookBaseConfig.module.rules.push({
+      test: /\.css$/,
+      use: [
+        {
+          loader: 'postcss-loader',
+          options: {
+            plugins: [
+              require('autoprefixer')({
+                ...options.autoprefixer,
+                browsers: [
+                  '>1%',
+                  'last 4 versions',
+                  'Firefox ESR',
+                  'not ie < 9', // React doesn't support IE8 anyway
+                ],
+                flexbox: 'no-2009',
+              }),
+            ],
+          },
+        },
+      ],
+    });
+  }
 
   // Return the altered config
   return storybookBaseConfig;
