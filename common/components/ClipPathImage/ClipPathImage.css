@@ -1,0 +1,31 @@
+.ClipPathImage {
+  text-decoration: none;
+}
+
+.ClipPathImage:active,
+.ClipPathImage:focus,
+.ClipPathImage:hover {
+  outline: var(--primary) auto 0.15rem;
+}
+
+.ClipPathImage img {
+  /*
+    Must force image to be these dimensions
+    clip-path will look ugly otherwise
+  */
+  width: 300px;
+  height: 200px;
+  clip-path: polygon(0 0, 100% 0, 100% 75%, 0 85%);
+}
+
+.ClipPathImage .content h6 {
+  bottom: 1rem;
+  position: relative;
+  text-align: center;
+}
+
+.primary {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: #ffffff;
+}
