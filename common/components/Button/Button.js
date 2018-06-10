@@ -4,36 +4,38 @@ import PropTypes from 'prop-types';
 import styles from './Button.css';
 
 Button.propTypes = {
-  className: PropTypes.string,
   children: PropTypes.node,
-  theme: PropTypes.oneOf(['primary', 'secondary', 'gray']),
+  className: PropTypes.string,
   fullWidth: PropTypes.bool,
   onClick: PropTypes.func,
   tabIndex: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  theme: PropTypes.oneOf(['primary', 'secondary', 'gray']),
 };
 
 Button.defaultProps = {
-  className: undefined,
   children: undefined,
-  theme: 'primary',
+  className: undefined,
   fullWidth: false,
   onClick: undefined,
   tabIndex: 0,
+  theme: 'primary',
 };
 
-function Button(props) {
+function Button({
+  className, children, fullWidth, onClick, tabIndex, theme,
+}) {
   return (
     <button
-      className={classNames(styles.button, props.className, {
-        [styles.primary]: props.theme === 'primary',
-        [styles.secondary]: props.theme === 'secondary',
-        [styles.gray]: props.theme === 'gray',
-        [styles.fullWidth]: props.fullWidth,
+      className={classNames(styles.button, className, {
+        [styles.primary]: theme === 'primary',
+        [styles.secondary]: theme === 'secondary',
+        [styles.gray]: theme === 'gray',
+        [styles.fullWidth]: fullWidth,
       })}
-      onClick={props.onClick}
-      tabIndex={props.tabIndex}
+      onClick={onClick}
+      tabIndex={tabIndex}
     >
-      {props.children}
+      {children}
     </button>
   );
 }

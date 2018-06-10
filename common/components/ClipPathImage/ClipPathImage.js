@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import OutboundLink from 'common/components/OutboundLink/OutboundLink';
 import styles from './ClipPathImage.css';
 
 ClipPathImage.propTypes = {
   altText: PropTypes.string,
   className: PropTypes.string,
-  image: PropTypes.string.isRequired,
-  link: PropTypes.string,
+  imageSource: PropTypes.string.isRequired,
+  href: PropTypes.string,
   theme: PropTypes.oneOf(['primary', 'secondary', 'gray']),
   title: PropTypes.string.isRequired,
 };
@@ -15,26 +16,33 @@ ClipPathImage.propTypes = {
 ClipPathImage.defaultProps = {
   altText: undefined,
   className: undefined,
-  link: undefined,
+  href: undefined,
   theme: 'primary',
 };
 
 function ClipPathImage({
-  altText, className, image, link, theme, title,
+  altText, className, imageSource, href, theme, title,
 }) {
-  return (
-    <a
-      href={link}
-      className={classNames(className, styles.ClipPathImage)}
+  const content = (
+    <div className={classNames(styles[theme], styles.content)}>
+      <img
+        alt={altText}
+        src={imageSource}
+      />
+      <h6>{title}</h6>
+    </div>
+  );
+
+  return href ? (
+    <OutboundLink
+      analyticsEventLabel={`ClipPath [${title}]`}
+      className={classNames(className, styles.ClipPathImage, styles.ClipPathImageWithLink)}
+      href={href}
     >
-      <div className={classNames(styles[theme], styles.content)}>
-        <img
-          alt={altText}
-          src={image}
-        />
-        <h6>{title}</h6>
-      </div>
-    </a>
+      {content}
+    </OutboundLink>
+  ) : (
+    <div className={classNames(className, styles.ClipPathImage)}>{content}</div>
   );
 }
 

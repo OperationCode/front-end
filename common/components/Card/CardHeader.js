@@ -3,7 +3,11 @@ import PropTypes from 'prop-types';
 
 CardHeader.propTypes = {
   children: PropTypes.node.isRequired,
-  className: PropTypes.string.isRequired,
+  className: PropTypes.string,
+};
+
+CardHeader.defaultProps = {
+  className: undefined,
 };
 
 function CardHeader({

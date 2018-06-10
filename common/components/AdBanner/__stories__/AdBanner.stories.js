@@ -13,7 +13,7 @@ storiesOf('AdBanner', module)
         'imageSource',
         'http://speedlux.com/wp-content/uploads/2017/02/AutoGravity-logo-1.png',
       )}
-      link={text('link', 'https://autogravity.com')}
+      href={text('href', 'https://autogravity.com')}
     >
       {text('children', 'PropTypes.any')}
     </AdBanner>

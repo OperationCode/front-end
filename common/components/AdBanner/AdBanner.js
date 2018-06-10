@@ -1,23 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import OutboundLink from 'common/components/OutboundLink/OutboundLink';
 import styles from './AdBanner.css';
 
 AdBanner.propTypes = {
   altText: PropTypes.string.isRequired,
+  className: PropTypes.string,
   children: PropTypes.node.isRequired,
+  href: PropTypes.string.isRequired,
   imageSource: PropTypes.string.isRequired,
-  link: PropTypes.string.isRequired,
+};
+
+AdBanner.defaultProps = {
+  className: undefined,
 };
 
 function AdBanner({
-  altText, children, imageSource, link,
+  altText, children, className, imageSource, href,
 }) {
   return (
     <OutboundLink
-      href={link}
-      analyticsEventLabel={`[AdBanner Hit] to ${link}`}
-      className={styles.adBannerLink}
+      analyticsEventLabel={`[AdBanner Hit] to ${href}`}
+      className={classNames(className, styles.adBannerLink)}
+      href={href}
     >
       <div className={styles.adBanner}>
         <div className={styles.adBannerImageContainer}>

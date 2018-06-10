@@ -1,24 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import Card from 'common/components/Card/Card';
 import styles from './BoardCard.css';
 
 BoardCard.propTypes = {
   boardRole: PropTypes.string.isRequired,
+  className: PropTypes.string,
   description: PropTypes.string,
   imageSource: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
 };
 
 BoardCard.defaultProps = {
-  description: null,
+  className: undefined,
+  description: undefined,
 };
 
 function BoardCard({
-  boardRole, description, imageSource, name,
+  boardRole, className, description, imageSource, name,
 }) {
   return (
-    <Card className={styles.boardCard}>
+    <Card className={classNames(className, styles.boardCard)}>
       <div className={styles.imageContainer}>
         <img
           src={imageSource}

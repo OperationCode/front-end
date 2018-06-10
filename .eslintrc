@@ -43,7 +43,7 @@
         "ExportDeclaration": { "multiline": true, "minProperties": 3 }
       }
     ],
-    "react/forbid-prop-types": "error",
+    "react/forbid-prop-types": ["error", { "forbid": ["any"] }],
     "react/jsx-filename-extension": [1, { "extensions": [".js"] }],
     "react/jsx-curly-brace-presence": [2, { "props": "never", "children": "never" }],
     "react/jsx-max-props-per-line": [2, { "maximum": 1, "when": "always" }],

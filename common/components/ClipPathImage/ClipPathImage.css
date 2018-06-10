@@ -2,9 +2,9 @@
   text-decoration: none;
 }
 
-.ClipPathImage:active,
-.ClipPathImage:focus,
-.ClipPathImage:hover {
+.ClipPathImageWithLink:active,
+.ClipPathImageWithLink:focus,
+.ClipPathImageWithLink:hover {
   outline: var(--primary) auto 0.15rem;
 }
 

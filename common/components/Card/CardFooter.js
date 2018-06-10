@@ -3,7 +3,11 @@ import PropTypes from 'prop-types';
 
 CardFooter.propTypes = {
   children: PropTypes.node.isRequired,
-  className: PropTypes.string.isRequired,
+  className: PropTypes.string,
+};
+
+CardFooter.defaultProps = {
+  className: undefined,
 };
 
 function CardFooter({
