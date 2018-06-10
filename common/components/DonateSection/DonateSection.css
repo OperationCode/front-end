@@ -1,0 +1,16 @@
+.DonateSection {
+  background-image: url("https://s3.amazonaws.com/operationcode-assets/background_flag.jpg");
+}
+
+.donate {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.donate p {
+  max-width: 700px;
+  font-size: 1.25rem;
+  color: #ffffff;
+}

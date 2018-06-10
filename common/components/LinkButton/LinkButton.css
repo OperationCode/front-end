@@ -1,0 +1,69 @@
+.LinkButton {
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  color: #dddddd;
+  padding: 8px;
+  margin: 5px;
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.42857143;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  width: 200px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.red {
+  background-color: #d1665a;
+  border-color: #d1665a;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.red-large {
+  composes: red;
+  font-size: 1.5rem;
+  padding: 20px 40px;
+}
+
+.red-small {
+  composes: red;
+  width: 120px;
+}
+
+.red:hover,
+.red-small:hover,
+.red-large:hover {
+  background-color: #f1665a;
+  border-color: #f1665a;
+}
+
+.blue {
+  background-color: #249cbc;
+  border-color: #249cbc;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.blue-large {
+  composes: blue;
+  font-size: 1.5rem;
+  padding: 20px 40px;
+}
+
+.blue-small {
+  composes: blue;
+  width: 120px;
+}
+
+.blue:hover,
+.blue-small:hover,
+.blue-large:hover {
+  background-color: #249cde;
+  border-color: #249cde;
+  cursor: pointer;
+}

@@ -1,0 +1,24 @@
+.Section {
+  width: 100%;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 0 40px 0;
+}
+
+.gray {
+  background-color: var(--gray);
+}
+
+.white {
+  background-color: var(--mist);
+}
+
+.content {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+}
