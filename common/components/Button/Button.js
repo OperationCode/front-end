@@ -6,7 +6,7 @@ import styles from './Button.css';
 Button.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
-  color: PropTypes.oneOf(['primary', 'secondary', 'grey', 'gray']),
+  theme: PropTypes.oneOf(['primary', 'secondary', 'gray']),
   fullWidth: PropTypes.bool,
   onClick: PropTypes.func,
   tabIndex: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
@@ -15,7 +15,7 @@ Button.propTypes = {
 Button.defaultProps = {
   className: undefined,
   children: undefined,
-  color: 'primary',
+  theme: 'primary',
   fullWidth: false,
   onClick: undefined,
   tabIndex: 0,
@@ -25,9 +25,9 @@ function Button(props) {
   return (
     <button
       className={classNames(styles.button, props.className, {
-        [styles.primary]: props.color === 'primary',
-        [styles.secondary]: props.color === 'secondary',
-        [styles.gray]: props.color === 'gray' || props.color === 'grey',
+        [styles.primary]: props.theme === 'primary',
+        [styles.secondary]: props.theme === 'secondary',
+        [styles.gray]: props.theme === 'gray',
         [styles.fullWidth]: props.fullWidth,
       })}
       onClick={props.onClick}
