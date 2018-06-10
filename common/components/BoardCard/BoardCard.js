@@ -28,11 +28,7 @@ function BoardCard({
       <h6 className={styles.name}>{name}</h6>
       <i className={styles.boardRole}>{boardRole}</i>
       <hr className={styles.hr} />
-      {description && (
-        <span className={styles.descriptionText}>
-          <text>{description}</text>
-        </span>
-      )}
+      {description && <span className={styles.descriptionText}>{description}</span>}
     </Card>
   );
 }

@@ -25,8 +25,6 @@
   visibility: hidden;
 }
 
-.boardCard:active,
-.boardCard:focus,
 .boardCard:hover {
   box-shadow: 0 9px 28px rgba(0, 0, 0, 0.25);
   height: auto;
@@ -34,17 +32,14 @@
   transition: box-shadow 0.3s ease-in-out, max-height 0.3s ease-in-out;
 }
 
-.boardCard:hover .descriptionText,
-.boardCard:active .descriptionText {
+.boardCard:hover .descriptionText {
   opacity: 1;
   transition: opacity 0.3s ease-in-out;
   transition-delay: 0.2s;
   visibility: visible;
 }
 
-.imageContainer:active img,
-.imageContainer:focus img,
-.imageContainer:hover img {
+.boardCard:hover img {
   filter: grayscale(0%);
 }
 
@@ -74,14 +69,10 @@
     visibility: visible;
   }
 
-  .boardCard:active,
-  .boardCard:focus,
   .boardCard:hover {
     transition: none;
   }
 
-  .boardCard:active .descriptionText,
-  .boardCard:focus .descriptionText,
   .boardCard:hover .descriptionText {
     transition: none;
   }
