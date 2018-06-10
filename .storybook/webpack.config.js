@@ -21,6 +21,15 @@ module.exports = (storybookBaseConfig, configType) => {
       },
       {
         loader: 'postcss-loader',
+        options: {
+          plugins: [
+            {
+              'postcss-export-custom-variables': {
+                destination: 'common/styles/themeMap.js',
+              },
+            },
+          ],
+        },
       },
     ],
   });
