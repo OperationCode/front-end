@@ -6,8 +6,9 @@ module.exports = withCSS({
     localIdentName: '[name]_[local]__[hash:base64:5]',
     modules: true,
   },
-  webpack: config => {
+  webpack: (config) => {
     // Fixes npm packages that depend on `fs` module
+    // eslint-disable-next-line no-param-reassign
     config.node = {
       fs: 'empty',
     };
