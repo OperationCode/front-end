@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Card from 'common/components/Card/Card';
 import styles from './BoardCard.css';
 
 BoardCard.propTypes = {
@@ -17,11 +18,13 @@ function BoardCard({
   boardRole, description, imageSource, name,
 }) {
   return (
-    <div className={styles.boardCard}>
-      <img
-        src={imageSource}
-        alt={`Headshot of ${name}`}
-      />
+    <Card className={styles.boardCard}>
+      <div className={styles.imageContainer}>
+        <img
+          src={imageSource}
+          alt={`Headshot of ${name}`}
+        />
+      </div>
       <h6 className={styles.name}>{name}</h6>
       <i className={styles.boardRole}>{boardRole}</i>
       <hr className={styles.hr} />
@@ -30,7 +33,7 @@ function BoardCard({
           <text>{description}</text>
         </span>
       )}
-    </div>
+    </Card>
   );
 }
 

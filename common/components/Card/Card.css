@@ -9,14 +9,10 @@
   min-height: 100px;
   min-width: 100px;
   padding: 1.5rem;
-  text-align: left;
 }
 
 .header {
   border-bottom: 1px solid var(--gray);
-}
-
-.content {
 }
 
 .footer {
