@@ -23,7 +23,15 @@
         "allowChildren": false
       }
     ],
-    "max-len": ["error", 100],
+    "max-len": [
+      "error",
+      100,
+      {
+        "ignoreUrls": true,
+        "ignoreStrings": true,
+        "ignoreTemplateLiterals": true
+      }
+    ],
     "no-console": "warn",
     "no-use-before-define": "off",
     "object-curly-newline": [
