@@ -1,32 +1,40 @@
 import React from 'react';
-import YouTube from 'react-youtube';
 import PropTypes from 'prop-types';
-import './YoutubeVideo.css';
+import classNames from 'classnames';
+import YouTube from 'react-youtube';
+import styles from './YouTubeVideo.css';
 
-const YoutubeVideo = ({ id, height, width }) => {
+YouTubeVideo.propTypes = {
+  className: PropTypes.string,
+  height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  videoId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+};
+
+YouTubeVideo.defaultProps = {
+  className: undefined,
+  height: 390,
+  width: 640,
+};
+
+function YouTubeVideo({
+  className, height, width, videoId,
+}) {
   const options = {
     height: `${height}`,
     width: `${width}`,
   };
+
   return (
     <YouTube
-      videoId={id}
+      className={classNames(className, styles.YouTubeVideo)}
+      onReady={(e) => {
+        e.target.pauseVideo();
+      }}
       opts={options}
-      onReady={(e) => { e.target.pauseVideo(); }}
+      videoId={videoId}
     />
   );
-};
+}
 
-YoutubeVideo.propTypes = {
-  id: PropTypes.string,
-  height: PropTypes.string,
-  width: PropTypes.string,
-};
-
-YoutubeVideo.defaultProps = {
-  id: '',
-  height: '390',
-  width: '640',
-};
-
-export default YoutubeVideo;
+export default YouTubeVideo;

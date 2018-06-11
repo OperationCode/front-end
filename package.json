@@ -37,6 +37,7 @@
     "react-dom": "^16.4.0",
     "react-ga": "^2.5.3",
     "react-scroll": "^1.7.9",
+    "react-youtube": "^7.6.0",
     "style-loader": "^0.21.0"
   },
   "devDependencies": {
