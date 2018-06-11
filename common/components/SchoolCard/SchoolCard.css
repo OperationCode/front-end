@@ -1,0 +1,84 @@
+.SchoolCard {
+  display: flex;
+  border-radius: 4px;
+  align-items: center;
+  margin: 20px 10px;
+  padding: 10px;
+  width: 360px;
+  height: 150px;
+  background: #fff;
+  box-shadow: 0 3px 10px 1px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.SchoolCardLink {
+  text-decoration: none;
+  color: black;
+}
+
+.SchoolCard p {
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+}
+
+.SchoolCard:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
+}
+
+.SchoolCardImage {
+  width: 150px;
+  height: 150px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.Logo {
+  width: 150px;
+  height: 150px;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+}
+
+.SchoolText {
+  line-height: 1;
+  padding-left: 10px;
+}
+
+.SchoolName {
+  font-weight: 800;
+  font-size: 1.4rem;
+}
+
+.SchoolLocation {
+  font-style: italic;
+}
+
+.SchoolInfo {
+  font-size: 0.8rem;
+  line-height: 1.1;
+}
+
+@media screen and (max-width: 650px) {
+  .SchoolCard {
+    width: 250px;
+    height: 100px;
+  }
+  .SchoolCardImage {
+    height: 90px;
+    width: 90px;
+  }
+  .SchoolName {
+    font-size: 1em;
+  }
+  .Logo {
+    height: 90px;
+    width: 90px;
+  }
+  .SchoolLocation {
+    font-size: 0.8em;
+  }
+  .SchoolInfo {
+    font-size: 0.7em;
+  }
+}
