@@ -8,6 +8,9 @@
     "build-storybook": "build-storybook -s ./static -c .storybook -o .storybook-dist"
   },
   "dependencies": {
+    "@fortawesome/fontawesome": "^1.1.8",
+    "@fortawesome/fontawesome-free-solid": "^5.0.13",
+    "@fortawesome/react-fontawesome": "^0.0.20",
     "@storybook/addon-actions": "^3.4.7",
     "@storybook/addon-backgrounds": "^3.4.7",
     "@storybook/addon-knobs": "^3.4.7",
@@ -36,6 +39,7 @@
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "react-ga": "^2.5.3",
+    "react-modal": "^3.4.5",
     "react-scroll": "^1.7.9",
     "react-youtube": "^7.6.0",
     "style-loader": "^0.21.0"
