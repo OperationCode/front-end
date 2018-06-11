@@ -1,0 +1,23 @@
+.SocialMediaItem {
+  padding: 0 10px;
+  opacity: 0.8;
+}
+
+.SocialMediaItem:hover {
+  opacity: 1;
+}
+
+@media screen and (min-width: 320px) and (max-width: 768px) {
+  .SocialMediaItem {
+    padding: 10px 0 0 0;
+    flex-basis: 50%;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 828px) {
+  .SocialMediaItem img {
+    width: 48px;
+    height: 48px;
+  }
+}
