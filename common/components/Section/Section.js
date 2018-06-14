@@ -28,7 +28,7 @@ function Section({
   id, title, children, className, theme, headingLines, headingTheme,
 }) {
   const classes = classNames({
-    [`${styles.section}`]: true,
+    [`${styles.Section}`]: true,
     [`${className}`]: className,
     [`${styles[theme]}`]: true,
   });
