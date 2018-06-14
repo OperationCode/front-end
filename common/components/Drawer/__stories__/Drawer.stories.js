@@ -8,6 +8,6 @@ storiesOf('Drawer', module)
   .addDecorator(withKnobs)
   .add('default', () => (
     <Drawer isVisible={boolean('isVisible', false)}>
-      {text('children', 'Click Me! (PropType.any)')}
+      {text('children', 'Only visible on Tablet view port size and under')}
     </Drawer>
   ));
