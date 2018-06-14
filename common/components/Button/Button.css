@@ -13,11 +13,12 @@
   text-decoration: none;
 }
 
+.Button:active,
 .Button:focus {
   outline-color: #000000;
   outline-offset: -2px;
   outline-style: solid;
-  outline-width: 1px;
+  outline-width: 2px;
 }
 
 .fullWidth {
@@ -28,31 +29,43 @@
   background-color: var(--primary);
   border-color: var(--primaryDark);
   color: #ffffff;
+  outline-color: var(--primaryDark);
 }
 
-.primary:focus,
 .primary:hover {
   background-color: var(--primaryLight);
+}
+
+.primary:active:not:hover {
+  background-color: var(--primaryDark);
 }
 
 .secondary {
   background-color: var(--secondary);
   border-color: var(--secondaryDark);
   color: #ffffff;
+  outline-color: var(--secondaryDark);
 }
 
-.secondary:focus,
 .secondary:hover {
   background-color: var(--secondaryLight);
+}
+
+.secondary:active:not:hover {
+  background-color: var(--secondaryDark);
 }
 
 .gray {
   background-color: var(--gray);
   border-color: var(--grayDark);
   color: #ffffff;
+  outline-color: var(--grayDark);
 }
 
-.gray:focus,
 .gray:hover {
   background-color: var(--grayLight);
+}
+
+.gray:active:not:hover {
+  background-color: var(--grayDark);
 }
