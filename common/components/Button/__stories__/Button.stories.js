@@ -9,10 +9,12 @@ storiesOf('Button', module)
   .addDecorator(withKnobs)
   .add('default', () => (
     <Button
-      theme={select('theme', ['primary', 'secondary', 'gray'])}
+      href={text('href', '')}
       fullWidth={boolean('fullWidth', false)}
       onClick={action('Button Clicked!')}
+      isScrollLink={boolean('isScrollLink', false)}
       tabIndex={number('tabIndex', 0)}
+      theme={select('theme', ['primary', 'secondary', 'gray'])}
     >
       {text('children', 'Click Me!')}
     </Button>
