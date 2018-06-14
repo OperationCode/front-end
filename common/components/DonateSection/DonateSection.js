@@ -1,6 +1,6 @@
 import React from 'react';
 import Section from 'common/components/Section/Section';
-import LinkButton from 'common/components/LinkButton/LinkButton';
+import Button from 'common/components/Button/Button';
 import { donateLink } from 'common/constants/urls';
 import styles from './DonateSection.css';
 
@@ -20,10 +20,12 @@ function Donate() {
           industry, and code the future.
         </p>
         <p>Thank you for supporting our mission!</p>
-        <LinkButton
-          text="Donate Now"
+        <Button
+          hasExternalLinkIcon={false}
           href={donateLink}
-        />
+        >
+          Donate Now
+        </Button>
       </div>
     </Section>
   );

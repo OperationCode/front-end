@@ -11,6 +11,7 @@ Button.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
   fullWidth: PropTypes.bool,
+  hasExternalLinkIcon: PropTypes.bool,
   href: PropTypes.string,
   isScrollLink: PropTypes.bool,
   onClick: PropTypes.func,
@@ -22,6 +23,7 @@ Button.defaultProps = {
   children: undefined,
   className: undefined,
   fullWidth: false,
+  hasExternalLinkIcon: true,
   href: undefined,
   isScrollLink: false,
   onClick: undefined,
@@ -30,7 +32,15 @@ Button.defaultProps = {
 };
 
 function Button({
-  className, children, fullWidth, href, isScrollLink, onClick, tabIndex, theme,
+  className,
+  children,
+  fullWidth,
+  hasExternalLinkIcon,
+  href,
+  isScrollLink,
+  onClick,
+  tabIndex,
+  theme,
 }) {
   // TODO: Handle non-string input for analytics event label on both outbound and scroll link
   // Example: SVG as a child
@@ -55,20 +65,6 @@ function Button({
     );
   }
 
-  // MARK: Outbound link (leaves OperationCode host)
-  if (href.includes('http')) {
-    return (
-      <OutboundLink
-        analyticsEventLabel={children}
-        className={buttonClassNames}
-        href={href}
-        tabIndex={tabIndex}
-      >
-        {children}
-      </OutboundLink>
-    );
-  }
-
   // MARK: Anchor button that scrolls to some y-axis position of a screen
   if (isScrollLink) {
     const scrollLinkAnalyticsMessage = {
@@ -90,6 +86,7 @@ function Button({
         onClick={() => {
           // eslint-disable-next-line no-console
           console.log(`Analytics disabled. Message: ${scrollLinkAnalyticsMessage}`);
+          onClick();
         }}
         smooth
         tabIndex={tabIndex}
@@ -100,14 +97,34 @@ function Button({
     );
   }
 
+  // MARK: Outbound link (leaves OperationCode host)
+  if (href.includes('http')) {
+    return (
+      <OutboundLink
+        analyticsEventLabel={children}
+        className={`${buttonClassNames} ${styles.outboundLink}`}
+        hasIcon={hasExternalLinkIcon}
+        href={href}
+        onClick={onClick}
+        tabIndex={tabIndex}
+      >
+        {children}
+      </OutboundLink>
+    );
+  }
+
   // MARK: Internal navigation link button
   return (
     <Link
       href={href}
       prefetch
     >
-      {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-      <a className={buttonClassNames}>{children}</a>
+      {/* eslint-disable */}
+      {/* bunch of a11y rules... */}
+      <a className={buttonClassNames} onClick={onClick}>
+        {children}
+      </a>
+      {/* eslint-enable */}
     </Link>
   );
 }

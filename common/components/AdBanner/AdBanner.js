@@ -23,6 +23,7 @@ function AdBanner({
     <OutboundLink
       analyticsEventLabel={`[AdBanner Hit] to ${href}`}
       className={classNames(className, styles.adBannerLink)}
+      hasIcon={false}
       href={href}
     >
       <div className={styles.adBanner}>
