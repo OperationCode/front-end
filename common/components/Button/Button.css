@@ -18,7 +18,7 @@
 
 .primary {
   background-color: var(--primary);
-  border: 2px solid var(--primaryDark);
+  border-color: var(--primaryDark);
   color: #ffffff;
 }
 
@@ -30,7 +30,7 @@
 
 .secondary {
   background-color: var(--secondary);
-  border: 2px solid var(--secondaryDark);
+  border-color: var(--secondaryDark);
   color: #ffffff;
 }
 
@@ -42,7 +42,7 @@
 
 .gray {
   background-color: var(--gray);
-  border: 2px solid var(--grayDark);
+  border-color: var(--grayDark);
   color: #ffffff;
 }
 
