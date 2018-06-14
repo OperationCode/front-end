@@ -9,24 +9,26 @@ OutboundLink.propTypes = {
   analyticsEventLabel: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
+  hasIcon: PropTypes.bool,
   href: PropTypes.string.isRequired,
 };
 
 OutboundLink.defaultProps = {
   className: undefined,
+  hasIcon: true,
 };
 
 function OutboundLink({
-  analyticsEventLabel, children, className, href,
+  analyticsEventLabel, children, className, hasIcon, href,
 }) {
   const linkContent = (
     <React.Fragment>
       <span className={styles.screenReaderOnly}>Opens in new window</span>
       {children}
-      <FontAwesomeIcon
+      {hasIcon && <FontAwesomeIcon
         className={styles.externalLinkIcon}
         icon={faExternalLinkAlt}
-      />
+      />}
     </React.Fragment>
   );
 
@@ -57,7 +59,6 @@ function OutboundLink({
       rel="noopener noreferrer"
       target="_blank"
     >
-      <span className={styles.screenReaderOnly}>Opens in new window</span>
       {linkContent}
     </a>
   );
