@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ReactGA from 'react-ga';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import faExternalLinkAlt from '@fortawesome/fontawesome-free-solid/faExternalLinkAlt';
+import styles from './OutboundLink.css';
 
 OutboundLink.propTypes = {
   analyticsEventLabel: PropTypes.string.isRequired,
@@ -16,7 +19,17 @@ OutboundLink.defaultProps = {
 function OutboundLink({
   analyticsEventLabel, children, className, href,
 }) {
-  // TODO: Use something safer than `window.location`
+  const linkContent = (
+    <React.Fragment>
+      <span className={styles.screenReaderOnly}>Opens in new window</span>
+      {children}
+      <FontAwesomeIcon
+        className={styles.externalLinkIcon}
+        icon={faExternalLinkAlt}
+      />
+    </React.Fragment>
+  );
+
   const analyticsMessage = `OUTBOUND [${analyticsEventLabel}] from ${window.location.pathname}`;
 
   if (process.env.NODE_ENV === 'production') {
@@ -28,7 +41,7 @@ function OutboundLink({
         target="_blank"
         to={href}
       >
-        {children}
+        {linkContent}
       </ReactGA.OutboundLink>
     );
   }
@@ -39,12 +52,13 @@ function OutboundLink({
       href={href}
       onClick={() => {
         // eslint-disable-next-line no-console
-        console.log(`analytics disabled locally: ${analyticsMessage}`);
+        console.log(`Analytics disabled. Message: ${analyticsMessage}`);
       }}
       rel="noopener noreferrer"
       target="_blank"
     >
-      {children}
+      <span className={styles.screenReaderOnly}>Opens in new window</span>
+      {linkContent}
     </a>
   );
 }
