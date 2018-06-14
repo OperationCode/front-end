@@ -1,4 +1,4 @@
-.button {
+.Button {
   align-items: center;
   border: 1px solid transparent;
   border-radius: 0.25rem;
@@ -9,7 +9,15 @@
   line-height: 1.25;
   min-width: 200px;
   padding: 0.75rem;
+  transition: 0.1s linear background-color;
   text-decoration: none;
+}
+
+.Button:focus {
+  outline-color: #000000;
+  outline-offset: -2px;
+  outline-style: solid;
+  outline-width: 1px;
 }
 
 .fullWidth {
@@ -22,7 +30,6 @@
   color: #ffffff;
 }
 
-.primary:active,
 .primary:focus,
 .primary:hover {
   background-color: var(--primaryLight);
@@ -34,7 +41,6 @@
   color: #ffffff;
 }
 
-.secondary:active,
 .secondary:focus,
 .secondary:hover {
   background-color: var(--secondaryLight);
@@ -46,7 +52,6 @@
   color: #ffffff;
 }
 
-.gray:active,
 .gray:focus,
 .gray:hover {
   background-color: var(--grayLight);

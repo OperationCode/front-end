@@ -45,7 +45,7 @@ function Button({
   // TODO: Handle non-string input for analytics event label on both outbound and scroll link
   // Example: SVG as a child
 
-  const buttonClassNames = classNames(styles.button, className, {
+  const buttonClassNames = classNames(styles.Button, className, {
     [styles.primary]: theme === 'primary',
     [styles.secondary]: theme === 'secondary',
     [styles.gray]: theme === 'gray',
