@@ -1,5 +1,4 @@
 // Export a function. Accept the base config as the only param.
-// eslint-disable-next-line no-unused-vars
 module.exports = (storybookBaseConfig, configType) => {
   // configType has a value of 'DEVELOPMENT' or 'PRODUCTION'
   // You can change the configuration based on that.
@@ -13,8 +12,8 @@ module.exports = (storybookBaseConfig, configType) => {
       {
         loader: 'css-loader',
         options: {
-          importLoaders: 1,
           modules: true,
+          importLoaders: 1,
           localIdentName: '[name]_[local]__[hash:base64:5]',
           sourceMap: true,
           sourceMapContents: true,
