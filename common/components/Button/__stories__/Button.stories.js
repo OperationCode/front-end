@@ -12,7 +12,6 @@ storiesOf('Button', module)
       fullWidth={boolean('fullWidth', false)}
       hasExternalLinkIcon={boolean('hasExternalLinkIcon', true)}
       href={text('href', '')}
-      isScrollLink={boolean('isScrollLink', false)}
       onClick={action('Button Clicked!')}
       tabIndex={number('tabIndex', 0)}
       theme={select('theme', ['primary', 'secondary', 'gray'])}
