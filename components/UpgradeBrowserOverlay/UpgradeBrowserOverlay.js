@@ -52,8 +52,9 @@ function UpgradeBrowserOverlay() {
             <div className={styles.browser}>
               <span className={styles.browserName}>{browserName}</span>
               <OutboundLink
-                href={downloadLink}
                 analyticsEventLabel={`${browserName} Download from <UpgradeBrowserOverlay>`}
+                hasIcon={false}
+                href={downloadLink}
               >
                 <img
                   className={styles.browserImage}

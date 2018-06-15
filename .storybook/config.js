@@ -13,9 +13,11 @@ setOptions({
 
 // Dynamically load all files within common/components matching `{componentName}.stories.js` pattern
 const requireCommonComponents = require.context('../common/components/', true, /stories\.js$/);
+const requireApplicationComponents = require.context('../components/', true, /stories\.js$/);
 
 function loadStories() {
   requireCommonComponents.keys().forEach(requireCommonComponents);
+  requireApplicationComponents.keys().forEach(requireApplicationComponents);
   // Add any new component folders with stories here, using the patterns defined above
 }
 
