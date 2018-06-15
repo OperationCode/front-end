@@ -7,18 +7,23 @@
   width: 100%;
 }
 
-.header {
-  flex-grow: 1;
-  box-sizing: border-box;
-  padding: 4rem;
+.underline {
+  border-bottom: 2px solid #ffffff;
+  margin-bottom: 1rem;
 }
 
-@media only screen and (min-width: 320px) and (max-width: 768px) {
+.HeroBanner .text {
+  color: #ffffff;
+  text-shadow: #000000 1px 0 15px;
+  padding: 3rem;
+}
+
+@media only screen and (max-width: 768px) {
   .HeroBanner {
     height: 320px;
   }
 
-  .header {
+  .text {
     padding: 2rem;
   }
 }

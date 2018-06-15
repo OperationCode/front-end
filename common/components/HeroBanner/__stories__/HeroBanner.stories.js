@@ -1,11 +1,20 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { s3 } from 'common/constants/urls';
+import { withKnobs, text } from '@storybook/addon-knobs';
+
 import HeroBanner from '../HeroBanner';
 
-storiesOf('HeroBanner', module).add('default', () => (
-  <HeroBanner
-    title="Hero Banner"
-    imageSrc={`${s3}heroBanners/churchill.jpg`}
-  />
-));
+storiesOf('HeroBanner', module)
+  .addDecorator(withKnobs)
+  .add('default', () => (
+    <HeroBanner
+      imageSrc={text(
+        'imageSrc',
+        'https://s3.amazonaws.com/operationcode-assets/heroBanners/churchill.jpg',
+      )}
+      title={text('title', 'Hero Banner')}
+      subtitle={text('subtitle', '')}
+    >
+      {text('children', '')}
+    </HeroBanner>
+  ));

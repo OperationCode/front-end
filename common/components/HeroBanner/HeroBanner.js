@@ -4,29 +4,33 @@ import styles from './HeroBanner.css';
 
 HeroBanner.propTypes = {
   children: PropTypes.node,
+  className: PropTypes.string,
   imageSrc: PropTypes.node.isRequired,
-  title: PropTypes.string.isRequired,
-  subtitle: PropTypes.string,
+  title: PropTypes.node.isRequired,
+  subtitle: PropTypes.node,
 };
 
 HeroBanner.defaultProps = {
   children: undefined,
-  subtitle: '',
+  className: undefined,
+  subtitle: undefined,
 };
 
 function HeroBanner({
-  children, imageSrc, title, subtitle,
+  children, className, imageSrc, title, subtitle,
 }) {
-  const bannerStyles = { backgroundImage: `url(${imageSrc})` };
+  const dynamicBackgroundImage = {
+    backgroundImage: `url(${imageSrc})`,
+  };
 
   return (
     <div
-      style={bannerStyles}
-      className={styles.HeroBanner}
+      style={dynamicBackgroundImage}
+      className={`${className} ${styles.HeroBanner}`}
     >
-      <div className={styles.header}>
-        <h1>{title}</h1>
-        {subtitle && <h4>{subtitle}</h4>}
+      <div className={styles.text}>
+        <h1 className={subtitle && styles.underline}>{title}</h1>
+        {subtitle && <h6>{subtitle}</h6>}
         {children}
       </div>
     </div>
