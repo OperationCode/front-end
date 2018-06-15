@@ -4,7 +4,7 @@ import { withKnobs, text } from '@storybook/addon-knobs';
 
 import Card from '../Card';
 
-storiesOf('Card', module)
+storiesOf('Common/Card', module)
   .addDecorator(withKnobs)
   .add('default', () => (
     <Card>{text('children', 'This is the card content (PropTypes.node)')}</Card>

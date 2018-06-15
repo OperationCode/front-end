@@ -5,7 +5,7 @@ import { action } from '@storybook/addon-actions';
 
 import Button from '../Button';
 
-storiesOf('Button', module)
+storiesOf('Common/Button', module)
   .addDecorator(withKnobs)
   .add('default', () => (
     <Button

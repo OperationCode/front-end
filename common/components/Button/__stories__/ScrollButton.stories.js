@@ -6,7 +6,7 @@ import { action } from '@storybook/addon-actions';
 import { Element } from 'react-scroll';
 import ScrollButton from '../ScrollButton';
 
-storiesOf('ScrollButton', module)
+storiesOf('Common/ScrollButton', module)
   .addDecorator(withKnobs)
   .add('default', () => (
     <div

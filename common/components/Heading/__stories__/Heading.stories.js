@@ -4,7 +4,7 @@ import { withKnobs, boolean, select, text } from '@storybook/addon-knobs';
 
 import Heading from '../Heading';
 
-storiesOf('Heading', module)
+storiesOf('Common/Heading', module)
   .addDecorator(withKnobs)
   .add('default', () => (
     <Heading

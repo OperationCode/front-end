@@ -4,7 +4,7 @@ import { withKnobs, text } from '@storybook/addon-knobs';
 
 import BoardCard from '../BoardCard';
 
-storiesOf('BoardCard', module)
+storiesOf('Single-Purpose/Cards/BoardCard', module)
   .addDecorator(withKnobs)
   .add('default', () => (
     <BoardCard

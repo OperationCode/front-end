@@ -4,7 +4,7 @@ import { withKnobs, boolean, text } from '@storybook/addon-knobs';
 
 import Drawer from '../Drawer';
 
-storiesOf('Drawer', module)
+storiesOf('Common/Drawer', module)
   .addDecorator(withKnobs)
   .add('default', () => (
     <Drawer isVisible={boolean('isVisible', false)}>

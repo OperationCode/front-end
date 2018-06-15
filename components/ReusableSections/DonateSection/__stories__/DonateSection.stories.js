@@ -3,4 +3,4 @@ import { storiesOf } from '@storybook/react';
 
 import DonateSection from '../DonateSection';
 
-storiesOf('DonateSection', module).add('default', () => <DonateSection />);
+storiesOf('ReusableSections/DonateSection', module).add('default', () => <DonateSection />);
