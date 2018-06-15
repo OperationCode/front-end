@@ -4,33 +4,33 @@ import classNames from 'classnames';
 import styles from './Heading.css';
 
 Heading.propTypes = {
+  className: PropTypes.string,
   id: PropTypes.string,
-  text: PropTypes.string.isRequired,
-  headingLines: PropTypes.bool,
-  theme: PropTypes.string,
+  children: PropTypes.node.isRequired,
+  hasHeadingLines: PropTypes.bool,
+  theme: PropTypes.oneOf(['dark', 'white']),
 };
 
 Heading.defaultProps = {
-  id: null,
-  headingLines: true,
+  className: undefined,
+  id: undefined,
+  hasHeadingLines: true,
   theme: 'dark',
 };
 
 function Heading({
-  text, headingLines, theme, ...otherProps
+  children, className, hasHeadingLines, id, theme,
 }) {
-  const classes = classNames({
-    [`${styles.Heading}`]: true,
-    [`${styles[theme]}`]: true,
-    [`${styles.headingLines}`]: headingLines,
+  const classes = classNames(className, styles.Heading, styles[theme], {
+    [`${styles.headingLines}`]: hasHeadingLines,
   });
 
   return (
     <h2
       className={classes}
-      {...otherProps}
+      id={id}
     >
-      {text}
+      {children}
     </h2>
   );
 }

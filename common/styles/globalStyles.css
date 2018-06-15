@@ -82,13 +82,13 @@ h6 {
 
 @media screen and (max-width: 480px) {
   html {
-    font-size: 13px;
+    font-size: 13px !important;
   }
 }
 
 @media screen and (min-width: 481px) and (max-width: 960px) {
   html {
-    font-size: 15px;
+    font-size: 15px !important;
   }
 }
 
