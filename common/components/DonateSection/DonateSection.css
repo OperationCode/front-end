@@ -2,15 +2,18 @@
   background-image: url("https://s3.amazonaws.com/operationcode-assets/background_flag.jpg");
 }
 
-.donate {
-  width: 80%;
+.donateText {
+  width: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.donate p {
-  max-width: 700px;
-  font-size: 1.25rem;
+.donateText p {
   color: #ffffff;
+  font-size: 1.25rem;
+}
+
+.donateText p:last-of-type {
+  padding-bottom: 2rem;
 }

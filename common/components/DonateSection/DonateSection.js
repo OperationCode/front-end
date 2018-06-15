@@ -9,10 +9,11 @@ function Donate() {
     <Section
       className={styles.DonateSection}
       hasHeadingLines={false}
+      headingTheme="white"
       title="Donate"
       theme="white"
     >
-      <div className={styles.donate}>
+      <div className={styles.donateText}>
         <p>
           As a 501(c)(3) veteran-led nonprofit organization, our programs and services are
           maintained through the efforts of our volunteer staff. Your financial support allows us to
