@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './Card.css';
 
 CardHeader.propTypes = {
   children: PropTypes.node.isRequired,
@@ -13,7 +14,7 @@ CardHeader.defaultProps = {
 function CardHeader({
   children, className,
 }) {
-  return <header className={className}>{children}</header>;
+  return <header className={`${styles.header} ${className}`}>{children}</header>;
 }
 
 export default CardHeader;

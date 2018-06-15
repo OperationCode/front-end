@@ -8,13 +8,16 @@
   margin: 1rem;
   min-height: 100px;
   min-width: 100px;
-  padding: 1.5rem;
 }
 
 .header {
   border-bottom: 1px solid var(--gray);
+  padding: 0.5rem 0;
+  width: 100%;
 }
 
 .footer {
   border-top: 1px solid var(--gray);
+  padding: 0.5rem 0;
+  width: 100%;
 }
