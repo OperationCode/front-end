@@ -1,45 +1,40 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ReactModal from 'react-modal';
-import Section from 'common/components/Section/Section';
-import styles from './Modal.css';
+import CardStyles from 'common/components/Card/Card.css';
+import ModalStyles from './Modal.css';
 
 Modal.propTypes = {
   children: PropTypes.node.isRequired,
   isOpen: PropTypes.bool,
   onRequestClose: PropTypes.func,
+  screenReaderLabel: PropTypes.string.isRequired,
   shouldCloseOnOverlayClick: PropTypes.bool,
-  title: PropTypes.string,
 };
 
 Modal.defaultProps = {
   isOpen: false,
   onRequestClose: () => {},
   shouldCloseOnOverlayClick: true,
-  title: '',
 };
 
 function Modal({
-  children, isOpen, onRequestClose, shouldCloseOnOverlayClick, title,
+  children, isOpen, onRequestClose, screenReaderLabel, shouldCloseOnOverlayClick,
 }) {
   return (
     <ReactModal
+      className={CardStyles.Card}
+      contentLabel={screenReaderLabel}
       isOpen={isOpen}
-      contentLabel={title}
-      shouldCloseOnOverlayClick={shouldCloseOnOverlayClick}
       onRequestClose={onRequestClose}
+      shouldCloseOnOverlayClick={shouldCloseOnOverlayClick}
     >
+      {/* TODO: Use a close SVG instead of CSS painted X */}
       <button
-        className={styles.close}
+        className={ModalStyles.closeButton}
         onClick={() => onRequestClose()}
       />
-      <Section
-        title={title}
-        theme="white"
-        className={styles.modal}
-      >
-        <div className={styles.scrollable}>{children}</div>
-      </Section>
+      <div className={ModalStyles.scrollableContainer}>{children}</div>
     </ReactModal>
   );
 }
