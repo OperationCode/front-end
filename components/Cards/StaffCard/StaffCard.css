@@ -1,48 +1,59 @@
 .StaffCard {
-	height: 28rem;
-	width: auto;
-	background: white;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: space-around;
-	box-shadow: 0 3px 6px 1px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-    margin: 1rem;
-    padding: 15px;
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  justify-content: space-between;
+  transition: 0.2s box-shadow linear;
 }
 
+@media screen and (max-width: 500px) {
+  .StaffCard {
+    width: 90%;
+  }
+
+  .name {
+    font-size: 2rem;
+  }
+
+  .staffDetails {
+    font-size: 1.25rem;
+  }
+}
 
 .StaffCard:hover {
-	box-shadow: 0 9px 28px rgba(0,0,0,0.25);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
 }
 
-.StaffCard:hover > .img {
-	filter: grayscale(0%);
+.image {
+  height: 125px;
+  width: 125px;
+  border-radius: 100%;
+  box-shadow: 0 2px 3px 1px rgba(0, 0, 0, 0.1);
+  filter: grayscale(100%);
+  transition: 0.2s filter linear;
 }
 
-.img {
-	height: 125px;
-	width: 125px;
-	border-radius: 100%;
-	box-shadow: 0 2px 3px 1px rgba(0, 0, 0, 0.1);
-	filter: grayscale(100%);
+.StaffCard:hover .image {
+  filter: grayscale(0%);
 }
 
-.Name {
-	font-size: 1.5rem;
+.name {
+  font-size: 1.5rem;
 }
 
-.Hr {
-	border-top: 1px solid #8c8b8b;
-	width: 80%;
+.StaffCard hr {
+  border-top: 1px solid #8c8b8b;
+  width: 80%;
 }
 
-.Item {
-	align-self: left;
+.staffDetails {
+  font-family: Arial, Helvetica, sans-serif;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.Upper {
-	text-transform: uppercase;
-	font-weight: 800;
+.detailPrompt {
+  text-transform: uppercase;
+  font-weight: bold;
 }
