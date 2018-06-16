@@ -25,10 +25,15 @@ function OutboundLink({
     <React.Fragment>
       <span className={styles.screenReaderOnly}>Opens in new window</span>
       {children}
-      {hasIcon && <FontAwesomeIcon
-        className={styles.externalLinkIcon}
-        icon={faExternalLinkAlt}
-      />}
+      {hasIcon && (
+        <FontAwesomeIcon
+          className={styles.externalLinkIcon}
+          icon={faExternalLinkAlt}
+          style={{
+            width: '14px',
+          }}
+        />
+      )}
     </React.Fragment>
   );
 

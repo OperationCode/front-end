@@ -1,6 +1,6 @@
 .boardCard {
   max-height: 275px;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: all 0.1s linear;
   width: 250px;
 }
 
@@ -14,7 +14,7 @@
   box-shadow: 0 3px 4px 2px rgba(0, 0, 0, 0.15);
   filter: grayscale(100%);
   height: 125px;
-  transition: filter 0.3s linear;
+  transition: filter 0.1s linear;
   width: 55%;
 }
 
