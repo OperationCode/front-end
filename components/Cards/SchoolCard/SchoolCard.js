@@ -1,76 +1,81 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import OutboundLink from 'shared/components/OutboundLink/OutboundLink';
+import Card from 'common/components/Card/Card';
+import OutboundLink from 'common/components/OutboundLink/OutboundLink';
 import styles from './SchoolCard.css';
 
-const SchoolCard = ({
-  alt,
-  GI,
-  fullTime,
-  hardware,
-  link,
-  logo,
-  schoolAddress,
-  schoolCity,
-  schoolName,
-  schoolState,
-}) => (
-  <OutboundLink
-    href={link}
-    analyticsEventLabel={`User clicked on <SchoolCard> ${schoolName} - ${schoolCity} location`}
-    className={styles.SchoolCardLink}
-  >
-    <div className={styles.SchoolCard}>
-      <div className={styles.SchoolCardImage}>
-        <img src={logo} alt={alt} className={styles.Logo} />
-      </div>
-
-      <div className={styles.SchoolText}>
-        <p>
-          <span className={styles.SchoolName}>{schoolName}</span>
-          <br />
-          <span className={styles.SchoolLocation}>
-            {schoolAddress.includes('Online') ? (
-              <text>
-                Online Available<br />
-              </text>
-            ) : null}
-            {schoolCity}
-            {schoolCity ? ', ' : null}
-            {schoolState}
-            {schoolState ? <br /> : null}
-            <br />
-          </span>
-        </p>
-
-        <p className={styles.SchoolInfo}>
-          GI Bill Accepted: <b>{GI}</b>
-          <br />
-          Commitment: <b>{fullTime}</b>
-          <br />
-          Hardware Included: <b>{hardware}</b>
-        </p>
-      </div>
-    </div>
-  </OutboundLink>
-);
-
 SchoolCard.propTypes = {
-  alt: PropTypes.string.isRequired,
-  link: PropTypes.string.isRequired,
+  schoolWebsite: PropTypes.string.isRequired,
   schoolName: PropTypes.string.isRequired,
   schoolAddress: PropTypes.string.isRequired,
   schoolCity: PropTypes.string,
   schoolState: PropTypes.string,
-  logo: PropTypes.string.isRequired,
-  GI: PropTypes.string.isRequired,
-  fullTime: PropTypes.string.isRequired,
-  hardware: PropTypes.string.isRequired,
+  logoSource: PropTypes.string.isRequired,
+  acceptsGIBill: PropTypes.bool.isRequired,
+  isFullTime: PropTypes.bool.isRequired,
+  hasHardware: PropTypes.bool.isRequired,
 };
 
 SchoolCard.defaultProps = {
-  schoolCity: null,
-  schoolState: null,
+  schoolCity: undefined,
+  schoolState: undefined,
 };
+
+function SchoolCard({
+  acceptsGIBill,
+  isFullTime,
+  hasHardware,
+  schoolWebsite,
+  logoSource,
+  schoolAddress,
+  schoolCity,
+  schoolName,
+  schoolState,
+}) {
+  const hasOnlineProgram = schoolAddress.includes('Online');
+
+  // TODO: Try to normalize s3 image file names to sync with school names so that this component
+  // won't need to be passed that prop
+  return (
+    <OutboundLink
+      analyticsEventLabel={`${schoolName} - ${schoolCity} <SchoolCard> click`}
+      className={styles.cardLinkOverrides}
+      hasIcon={false}
+      href={schoolWebsite}
+    >
+      <Card className={styles.SchoolCard}>
+        <template className={styles.content}>
+          <img
+            src={logoSource}
+            alt={`${schoolName} Logo`}
+            className={styles.logo}
+          />
+
+          <section className={styles.schoolCardText}>
+            <h5 className={styles.name}>{schoolName}</h5>
+            <address className={styles.location}>
+              {hasOnlineProgram && 'Online Available'}
+              {hasOnlineProgram && <br />}
+              {schoolCity && `${schoolCity}, `}
+              {schoolState}
+            </address>
+
+            <ul className={styles.info}>
+              <li>
+                GI Bill Accepted: <b>{acceptsGIBill ? 'Yes' : 'No'}</b>
+              </li>
+              <li>
+                Commitment: <b>{isFullTime ? 'Full-Time' : 'Flexible'}</b>
+              </li>
+              <li>
+                Hardware Included: <b>{hasHardware ? 'Yes' : 'No'}</b>
+              </li>
+            </ul>
+          </section>
+        </template>
+      </Card>
+    </OutboundLink>
+  );
+}
 
 export default SchoolCard;

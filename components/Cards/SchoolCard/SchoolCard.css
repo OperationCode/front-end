@@ -1,84 +1,65 @@
 .SchoolCard {
-  display: flex;
-  border-radius: 4px;
-  align-items: center;
-  margin: 20px 10px;
-  padding: 10px;
-  width: 360px;
+  color: #000000;
+  padding: 0.5rem;
   height: 150px;
-  background: #fff;
-  box-shadow: 0 3px 10px 1px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  width: 400px;
+  transition: 0.1s box-shadow linear;
 }
 
-.SchoolCardLink {
-  text-decoration: none;
-  color: black;
-}
-
-.SchoolCard p {
-  -webkit-margin-before: 0;
-  -webkit-margin-after: 0;
+@media screen and (max-width: 500px) {
+  .SchoolCard {
+    width: 290px;
+  }
 }
 
 .SchoolCard:hover {
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
 }
 
-.SchoolCardImage {
+.cardLinkOverrides {
+  text-decoration: none;
+}
+
+.content {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.SchoolCard section {
+  height: 150px;
+}
+
+.logo {
   width: 150px;
   height: 150px;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
 }
 
-.Logo {
-  width: 150px;
-  height: 150px;
-  top: 50%;
-  left: 50%;
-  margin-right: -50%;
-}
-
-.SchoolText {
+.schoolCardText {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   line-height: 1;
-  padding-left: 10px;
+  padding-left: 1rem;
+  height: 80%;
 }
 
-.SchoolName {
-  font-weight: 800;
-  font-size: 1.4rem;
-}
-
-.SchoolLocation {
+.location {
+  font-size: 1rem;
   font-style: italic;
 }
 
-.SchoolInfo {
+.info {
+  list-style: none;
   font-size: 0.8rem;
   line-height: 1.1;
+  margin: 0;
+  padding: 0;
 }
 
-@media screen and (max-width: 650px) {
-  .SchoolCard {
-    width: 250px;
-    height: 100px;
-  }
-  .SchoolCardImage {
-    height: 90px;
-    width: 90px;
-  }
-  .SchoolName {
-    font-size: 1em;
-  }
-  .Logo {
-    height: 90px;
-    width: 90px;
-  }
-  .SchoolLocation {
-    font-size: 0.8em;
-  }
-  .SchoolInfo {
-    font-size: 0.7em;
+@media screen and (max-width: 768px) {
+  .name {
+    font-size: 1.5rem;
   }
 }
