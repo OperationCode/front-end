@@ -7,5 +7,5 @@ export const secondaryDark = "#ab4034";
 export const mist = "#f0f2f2";
 export const slate = "#47566b";
 export const gray = "#9baab5";
-export const grayLight = "#c1d0db";
+export const grayLight = "#d0d5da";
 export const grayDark = "#75848f";
