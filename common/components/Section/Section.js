@@ -28,7 +28,7 @@ function Section({
   const headingTheme = theme === 'white' ? 'slate' : 'white';
 
   return (
-    <div className={classNames(className, styles.Section, styles[theme])}>
+    <section className={classNames(className, styles.Section, styles[theme])}>
       {title && (
         <Heading
           id={id}
@@ -39,7 +39,7 @@ function Section({
         </Heading>
       )}
       <div className={styles.content}>{children}</div>
-    </div>
+    </section>
   );
 }
 
