@@ -22,7 +22,10 @@ function StaffCard({
   email, imageAlternateText, imageSource, name, staffRole, twitterHandle,
 }) {
   return (
-    <Card className={styles.StaffCard}>
+    <Card
+      className={styles.StaffCard}
+      hasAnimationOnHover
+    >
       <img
         className={styles.image}
         src={imageSource}

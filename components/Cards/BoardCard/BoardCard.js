@@ -21,11 +21,14 @@ function BoardCard({
   boardRole, className, description, imageSource, name,
 }) {
   return (
-    <Card className={classNames(className, styles.boardCard)}>
+    <Card
+      className={classNames(className, styles.BoardCard)}
+      hasAnimationOnHover
+    >
       <div className={styles.imageContainer}>
         <img
-          src={imageSource}
           alt={`Headshot of ${name}`}
+          src={imageSource}
         />
       </div>
       <h6 className={styles.name}>{name}</h6>

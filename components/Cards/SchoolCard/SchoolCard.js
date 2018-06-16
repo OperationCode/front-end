@@ -43,7 +43,10 @@ function SchoolCard({
       hasIcon={false}
       href={schoolWebsite}
     >
-      <Card className={styles.SchoolCard}>
+      <Card
+        className={styles.SchoolCard}
+        hasAnimationOnHover
+      >
         <template className={styles.content}>
           <img
             src={logoSource}

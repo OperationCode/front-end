@@ -2,18 +2,13 @@
   color: #000000;
   padding: 0.5rem;
   height: 150px;
-  width: 400px;
-  transition: 0.1s box-shadow linear;
+  width: 375px;
 }
 
 @media screen and (max-width: 500px) {
   .SchoolCard {
     width: 290px;
   }
-}
-
-.SchoolCard:hover {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
 }
 
 .cardLinkOverrides {
@@ -23,7 +18,7 @@
 .content {
   align-items: center;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   width: 100%;
 }
 
@@ -46,13 +41,13 @@
 }
 
 .location {
-  font-size: 1rem;
+  font-size: 1.25rem;
   font-style: italic;
 }
 
 .info {
   list-style: none;
-  font-size: 0.8rem;
+  font-size: 1rem;
   line-height: 1.1;
   margin: 0;
   padding: 0;
@@ -61,5 +56,13 @@
 @media screen and (max-width: 768px) {
   .name {
     font-size: 1.5rem;
+  }
+
+  .location {
+    font-size: 1rem;
+  }
+
+  .info {
+    font-size: 0.8rem;
   }
 }

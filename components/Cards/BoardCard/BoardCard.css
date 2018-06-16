@@ -1,46 +1,46 @@
-.boardCard {
+.BoardCard {
   max-height: 275px;
-  transition: all 0.1s linear;
+  transition: all 0.2s linear;
   width: 250px;
+}
+
+.BoardCard:focus,
+.BoardCard:hover {
+  height: auto;
+  max-height: 650px;
 }
 
 .imageContainer {
   text-align: center;
-  width: 250px;
+  width: 125px;
 }
 
-.imageContainer img {
+.imageContainer > img {
   border-radius: 100%;
   box-shadow: 0 3px 4px 2px rgba(0, 0, 0, 0.15);
   filter: grayscale(100%);
-  height: 125px;
-  transition: filter 0.1s linear;
-  width: 55%;
+  transition: filter 0.2s linear;
+  width: 100%;
+}
+
+.BoardCard:focus img,
+.BoardCard:hover img {
+  filter: grayscale(0%);
 }
 
 .descriptionText {
   align-self: flex-start;
   opacity: 0;
-  padding: 1rem 0 0 0;
+  padding-top: 1rem;
   visibility: hidden;
 }
 
-.boardCard:hover {
-  box-shadow: 0 9px 28px rgba(0, 0, 0, 0.25);
-  height: auto;
-  max-height: 650px;
-  transition: box-shadow 0.3s ease-in-out, max-height 0.3s ease-in-out;
-}
-
-.boardCard:hover .descriptionText {
+.BoardCard:focus .descriptionText,
+.BoardCard:hover .descriptionText {
   opacity: 1;
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.2s linear;
   transition-delay: 0.2s;
   visibility: visible;
-}
-
-.boardCard:hover img {
-  filter: grayscale(0%);
 }
 
 .name {
@@ -59,7 +59,7 @@
 }
 
 @media screen and (max-width: 450px) {
-  .boardCard {
+  .BoardCard {
     max-height: 650px;
     transition: none;
   }
@@ -69,11 +69,13 @@
     visibility: visible;
   }
 
-  .boardCard:hover {
+  .BoardCard:focus,
+  .BoardCard:hover {
     transition: none;
   }
 
-  .boardCard:hover .descriptionText {
+  .BoardCard:focus .descriptionText,
+  .BoardCard:hover .descriptionText {
     transition: none;
   }
 }
