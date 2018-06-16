@@ -16,10 +16,26 @@
   margin: 0 10px 5px 10px;
 }
 
-.dark {
+.slate {
   color: var(--slate);
+}
+
+.gray {
+  color: var(--gray);
 }
 
 .white {
   color: #ffffff;
+}
+
+@media screen and (max-width: 768px) {
+  .Heading {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .Heading {
+    width: 100%;
+  }
 }

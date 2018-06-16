@@ -5,45 +5,39 @@ import Heading from 'common/components/Heading/Heading';
 import styles from './Section.css';
 
 Section.propTypes = {
-  id: PropTypes.string,
-  title: PropTypes.string,
-  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.element), PropTypes.element])
-    .isRequired,
+  children: PropTypes.node.isRequired,
   className: PropTypes.string,
-  theme: PropTypes.string,
-  headingLines: PropTypes.bool,
-  headingTheme: PropTypes.string,
+  hasHeadingLines: PropTypes.bool,
+  id: PropTypes.oneOfType(PropTypes.string, PropTypes.number), // reference point for scroll anchors
+  theme: PropTypes.oneOf(['gray', 'slate', 'white']),
+  title: PropTypes.string,
 };
 
 Section.defaultProps = {
-  id: null,
-  title: null,
-  className: null,
+  className: undefined,
+  hasHeadingLines: true,
+  id: undefined,
   theme: 'gray',
-  headingLines: true,
-  headingTheme: 'dark',
+  title: undefined,
 };
 
 function Section({
-  id, title, children, className, theme, headingLines, headingTheme,
+  children, className, hasHeadingLines, id, theme, title,
 }) {
-  const classes = classNames({
-    [`${styles.Section}`]: true,
-    [`${className}`]: className,
-    [`${styles[theme]}`]: true,
-  });
+  // heading theme should contrast from section's theme.
+  const headingTheme = theme === 'white' ? 'slate' : 'white';
 
   return (
-    <div
-      name={id}
-      className={classes}
-    >
-      {title && <Heading
-        text={title}
-        id={id}
-        headingLines={headingLines}
-        theme={headingTheme}
-      />}
+    <div className={classNames(className, styles.Section, styles[theme])}>
+      {title && (
+        <Heading
+          id={id}
+          hasHeadingLines={hasHeadingLines}
+          theme={headingTheme}
+        >
+          {title}
+        </Heading>
+      )}
       <div className={styles.content}>{children}</div>
     </div>
   );

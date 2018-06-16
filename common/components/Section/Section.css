@@ -1,24 +1,37 @@
 .Section {
-  width: 100%;
-  min-height: 250px;
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 40px 0 40px 0;
+  min-height: 250px;
+  padding: 3rem;
+  width: 100%;
+}
+
+.slate {
+  background-color: var(--slate);
+  color: #ffffff;
 }
 
 .gray {
   background-color: var(--gray);
+  color: #ffffff;
 }
 
 .white {
   background-color: var(--mist);
+  color: var(--slate);
 }
 
 .content {
+  align-items: center;
   display: flex;
   flex-flow: column;
   justify-content: space-between;
-  align-items: center;
   width: 80%;
+}
+
+@media screen and (max-width: 768px) {
+  .content {
+    width: 90%;
+  }
 }

@@ -2,16 +2,17 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, boolean, select, text } from '@storybook/addon-knobs';
 
-import Heading from '../Heading';
+import Section from '../Section';
 
-storiesOf('Common/Heading', module)
+storiesOf('Common/Section', module)
   .addDecorator(withKnobs)
   .add('default', () => (
-    <Heading
-      id={text('id', 'heading1')}
+    <Section
       hasHeadingLines={boolean('hasHeadingLines', true)}
+      id={text('id', 'Used as a reference point for scroll anchors')}
       theme={select('theme', ['gray', 'slate', 'white'], 'gray')}
+      title={text('title', 'Section Title')}
     >
-      {text('children', 'Heading Component')}
-    </Heading>
+      {text('children', 'Section content!')}
+    </Section>
   ));
