@@ -1,0 +1,39 @@
+.iconCard {
+  padding: 10px;
+  width: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 15px;
+  text-decoration: none;
+  color: currentColor;
+  transition: color .125s;
+}
+
+a.iconCard {
+  font-family: "Noto Serif", sans-serif;
+}
+
+a.iconCard:hover {
+  color: #444;
+}
+
+.iconCard__icon {
+  flex: 2;
+}
+
+.iconCard__title {
+  text-align: center;
+}
+
+.iconCard__subtext {
+  text-align: center;
+  font-size: .9rem;
+}
+
+@media screen and (max-width: 650px) {
+  .icconCard {
+    width: 100px;
+    height: 100px;
+  }
+}
