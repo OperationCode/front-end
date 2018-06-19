@@ -8,7 +8,7 @@ Section.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
   hasHeadingLines: PropTypes.bool,
-  id: PropTypes.oneOfType(PropTypes.string, PropTypes.number), // reference point for scroll anchors
+  id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]), // reference point for scroll anchors
   theme: PropTypes.oneOf(['gray', 'grayLight', 'slate', 'white']),
   title: PropTypes.string,
 };
