@@ -6,6 +6,7 @@ import liImage from 'images/icons/LinkedIn-Icon.svg';
 import SocialMediaContainer from './SocialMediaContainer/SocialMediaContainer';
 import SocialMediaItem from './SocialMediaItem/SocialMediaItem';
 
+// TODO: Refactor this whole folder
 const SocialMedia = () => (
   <SocialMediaContainer>
     <SocialMediaItem
