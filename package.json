@@ -32,6 +32,7 @@
     "classnames": "^2.2.5",
     "css-loader": "^0.28.11",
     "express": "^4.16.3",
+    "jwt-decode": "^2.2.0",
     "next": "^6.0.3",
     "path": "^0.12.7",
     "postcss-export-custom-variables": "^1.0.0",
@@ -44,7 +45,8 @@
     "react-modal": "^3.4.5",
     "react-scroll": "^1.7.9",
     "react-youtube": "^7.6.0",
-    "style-loader": "^0.21.0"
+    "style-loader": "^0.21.0",
+    "universal-cookie": "^2.2.0"
   },
   "devDependencies": {
     "eslint": "^4.19.1",
