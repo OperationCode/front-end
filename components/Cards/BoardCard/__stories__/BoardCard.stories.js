@@ -15,7 +15,5 @@ storiesOf('Single-Purpose/Cards/BoardCard', module)
       )}
       imageSource={text('imageSource', 'https://kylemh.com/public/img/me.jpg')}
       name={text('name', 'Kyle Holmberg')}
-    >
-      {text('children', 'Primary BoardCard')}
-    </BoardCard>
+    />
   ));
