@@ -4,7 +4,7 @@ import { withKnobs, boolean, text } from '@storybook/addon-knobs';
 
 import SchoolCard from '../SchoolCard';
 
-storiesOf('Single-Purpose/Cards/SchoolCard', module)
+storiesOf('Single-Purpose/SpecificCards/SchoolCard', module)
   .addDecorator(withKnobs)
   .add('default', () => (
     <SchoolCard

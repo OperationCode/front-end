@@ -5,7 +5,7 @@ import { withKnobs, boolean, select, text } from '@storybook/addon-knobs';
 import faExclamationTriangle from '@fortawesome/fontawesome-free-solid/faExclamationTriangle';
 import IconCard from '../IconCard';
 
-storiesOf('Single-Purpose/Cards/IconCard', module)
+storiesOf('Single-Purpose/SpecificCards/IconCard', module)
   .addDecorator(withKnobs)
   .add('default', () => (
     <IconCard
