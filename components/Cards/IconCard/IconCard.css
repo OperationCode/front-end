@@ -7,7 +7,7 @@
   margin: 15px;
   text-decoration: none;
   color: currentColor;
-  transition: color .125s;
+  transition: color 125ms;
 }
 
 a.iconCard {
@@ -28,7 +28,7 @@ a.iconCard:hover {
 
 .iconCard__subtext {
   text-align: center;
-  font-size: .9rem;
+  font-size: 0.9rem;
 }
 
 @media screen and (max-width: 650px) {

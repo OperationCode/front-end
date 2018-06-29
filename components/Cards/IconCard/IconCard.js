@@ -6,12 +6,11 @@ import styles from './IconCard.css';
 
 IconCard.propTypes = {
   title: PropTypes.string.isRequired,
-  subText: PropTypes.string,
+  subText: PropTypes.node,
   fontAwesomeIcon: PropTypes.object.isRequired,
   url: PropTypes.string,
   iconSize: PropTypes.string,
   iconAboveHeading: PropTypes.bool,
-  usingHtml: PropTypes.bool,
 };
 
 IconCard.defaultProps = {
@@ -19,11 +18,10 @@ IconCard.defaultProps = {
   url: undefined,
   iconSize: '6x',
   iconAboveHeading: false,
-  usingHtml: false,
 };
 
 function IconCard({
-  fontAwesomeIcon, iconSize, iconAboveHeading, subText, title, url, usingHtml,
+  fontAwesomeIcon, iconSize, iconAboveHeading, subText, title, url,
 }) {
   const icon = (<FontAwesomeIcon
     icon={fontAwesomeIcon}
@@ -32,7 +30,6 @@ function IconCard({
 
   let iconBefore = null;
   let iconAfter = null;
-  let subTextNode = null;
   const titleNode = <h5 className={styles.iconCard__title}>{title}</h5>;
 
   if (iconAboveHeading) {
@@ -41,22 +38,7 @@ function IconCard({
     iconAfter = icon;
   }
 
-  function createMarkup() {
-    return {
-      __html: subText,
-    };
-  }
-
-  if (usingHtml) {
-    subTextNode = (
-      <span
-        className={styles.iconCard__subtext}
-        dangerouslySetInnerHTML={createMarkup()}
-      />
-    );
-  } else {
-    subTextNode = <span className={styles.iconCard__subtext}>{subText}</span>;
-  }
+  const subTextNode = <span className={styles.iconCard__subtext}>{subText}</span>;
 
   if (url) {
     if (subText) {
@@ -74,6 +56,7 @@ function IconCard({
         </a>
       );
     }
+
     return (
       <a
         href={url}

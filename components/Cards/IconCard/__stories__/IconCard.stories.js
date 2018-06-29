@@ -1,55 +1,23 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, text } from '@storybook/addon-knobs';
+import { withKnobs, boolean, select, text } from '@storybook/addon-knobs';
 
-import IconCard from '../IconCard';
 import faExclamationTriangle from '@fortawesome/fontawesome-free-solid/faExclamationTriangle';
+import IconCard from '../IconCard';
 
 storiesOf('Single-Purpose/Cards/IconCard', module)
   .addDecorator(withKnobs)
   .add('default', () => (
     <IconCard
+      fontAwesomeIcon={faExclamationTriangle}
+      iconAboveHeading={boolean('iconAboveHeading', false)}
+      iconSize={select(
+        'iconSize',
+        ['1x', '2x', '3x', '4x', '5x', '6x', '7x', '8x', '9x', '10x'],
+        '6x',
+      )}
+      subText={text('subText', 'staff@operationcode.org (PropTypes.node)')}
       title={text('title', 'Email')}
-      subText={text('subText', 'staff@operationcode.org')}
-      fontAwesomeIcon={faExclamationTriangle}
-      iconSize={text('iconSize', '6x')}
       url={text('url', 'mailto:staff@operationcode.org')}
-    />
-  ))
-  .add('With subText', () => (
-    <IconCard
-      title="Title"
-      subText="Sub-text showing additional information"
-      fontAwesomeIcon={faExclamationTriangle}
-    />
-  ))
-  .add('Linked', () => (
-    <IconCard
-      title="Title"
-      subText="http://www.slack.com"
-      url="http://www.slack.com"
-      fontAwesomeIcon="FaSlack"
-    />
-  ))
-  .add('Sized icon', () => (<IconCard
-    title="Title"
-    fontAwesomeIcon="FaStar"
-    iconSize="200"
-  />))
-  .add('Icon above heading', () => (
-    <IconCard
-      title="Title"
-      fontAwesomeIcon="FaThumbsUp"
-      iconAboveHeading
-    />
-  ))
-  .add('Preformatted subtext (using HTML)', () => (
-    <IconCard
-      title="Title"
-      fontAwesomeIcon="FaHtml5"
-      subText="<strong>Test</strong><br/>
-      <em>Test</em><br/>
-      <strike>Test<strike>"
-      usingHtml
     />
   ));
