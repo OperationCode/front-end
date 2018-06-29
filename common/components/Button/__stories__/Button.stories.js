@@ -16,6 +16,6 @@ storiesOf('Common/Button', module)
       tabIndex={number('tabIndex', 0)}
       theme={select('theme', ['primary', 'secondary', 'gray'])}
     >
-      {text('children', 'Click Me!')}
+      {text('children', 'Click Me! (PropTypes.node)')}
     </Button>
   ));

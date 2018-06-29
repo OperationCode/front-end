@@ -25,7 +25,7 @@ storiesOf('Common/ScrollButton', module)
         tabIndex={number('tabIndex', 0)}
         theme={select('theme', ['primary', 'secondary', 'gray'])}
       >
-        {text('children', 'Click Me! (will scroll down)')}
+        {text('children', 'Click Me! (will scroll down) (PropTypes.node)')}
       </ScrollButton>
 
       <Element name="anchor">
