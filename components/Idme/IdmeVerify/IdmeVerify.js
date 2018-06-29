@@ -1,18 +1,29 @@
 import React, { Component } from 'react';
 import QueryString from 'query-string';
 import PropTypes from 'prop-types';
-import { postBackend } from 'shared/utils/apiHelper';
 import { withRouter } from 'react-router-dom';
-import Section from 'shared/components/section/section';
 import getVal from 'lodash/get';
+import Section from 'common/components/Section/Section';
+import { postBackend } from 'common/utils/api.utils';
+import { setUserVerifiedCookie } from 'common/utils/cookie.utils';
 import styles from './IdmeVerify.css';
-import { setUserVerifiedCookie } from '../../../utils/cookieHelper';
 
 class IdmeVerify extends Component {
-  constructor() {
-    super();
-    this.state = {};
-  }
+  propTypes = {
+    location: PropTypes.shape({
+      hash: PropTypes.string,
+    }),
+    updateRootAuthState: PropTypes.func,
+  };
+
+  defaultProps = {
+    location: {},
+    updateRootAuthState: () => {},
+  };
+
+  state = {};
+
+  // TODO: Determine if this is the correct lifecycle method
   componentWillMount() {
     const qs = QueryString.parse(this.props.location.hash);
     if (qs.error_description) {
@@ -54,17 +65,5 @@ class IdmeVerify extends Component {
     );
   }
 }
-
-IdmeVerify.defaultProps = {
-  location: {},
-  updateRootAuthState: () => {},
-};
-
-IdmeVerify.propTypes = {
-  location: PropTypes.shape({
-    hash: PropTypes.string,
-  }),
-  updateRootAuthState: PropTypes.func,
-};
 
 export default withRouter(IdmeVerify);
