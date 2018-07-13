@@ -10,7 +10,6 @@ storiesOf('Common/Button', module)
   .add('default', () => (
     <Button
       fullWidth={boolean('fullWidth', false)}
-      hasExternalLinkIcon={boolean('hasExternalLinkIcon', true)}
       href={text('href', '')}
       onClick={action('Button Clicked!')}
       tabIndex={number('tabIndex', 0)}

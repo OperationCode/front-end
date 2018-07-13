@@ -9,7 +9,6 @@ Button.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
   fullWidth: PropTypes.bool,
-  hasExternalLinkIcon: PropTypes.bool,
   href: PropTypes.string,
   onClick: PropTypes.func,
   tabIndex: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
@@ -20,7 +19,6 @@ Button.defaultProps = {
   children: undefined,
   className: undefined,
   fullWidth: false,
-  hasExternalLinkIcon: true,
   href: undefined,
   onClick: undefined,
   tabIndex: 0,
@@ -28,14 +26,7 @@ Button.defaultProps = {
 };
 
 function Button({
-  className,
-  children,
-  fullWidth,
-  hasExternalLinkIcon,
-  href,
-  onClick,
-  tabIndex,
-  theme,
+  className, children, fullWidth, href, onClick, tabIndex, theme,
 }) {
   // TODO: Handle non-string input for analytics event label on both outbound and scroll link
   // Example: SVG as a child
@@ -66,7 +57,7 @@ function Button({
       <OutboundLink
         analyticsEventLabel={children}
         className={`${buttonClassNames} ${styles.outboundLink}`}
-        hasIcon={hasExternalLinkIcon}
+        hasIcon
         href={href}
         onClick={onClick}
         tabIndex={tabIndex}
