@@ -56,16 +56,16 @@
 }
 
 .gray {
-  background-color: var(--gray);
-  border-color: var(--grayDark);
+  background-color: var(--slate);
+  border-color: var(--slateDark);
   color: #ffffff;
-  outline-color: var(--grayDark);
+  outline-color: var(--slateDark);
 }
 
 .gray:hover {
-  background-color: var(--grayLight);
+  background-color: var(--slateLight);
 }
 
 .gray:active:not:hover {
-  background-color: var(--grayDark);
+  background-color: var(--slateDark);
 }
