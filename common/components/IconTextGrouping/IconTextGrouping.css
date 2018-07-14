@@ -15,7 +15,7 @@ a.IconTextGrouping {
 }
 
 a.IconTextGrouping:hover {
-  color: #444;
+  color: inherit;
 }
 
 .IconTextGrouping__icon {
@@ -27,8 +27,9 @@ a.IconTextGrouping:hover {
 }
 
 .IconTextGrouping__subtext {
-  text-align: center;
   font-size: 0.9rem;
+  text-align: left;
+  width: inherit;
 }
 
 @media screen and (max-width: 650px) {

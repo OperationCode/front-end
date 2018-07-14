@@ -7,6 +7,7 @@ import OutboundLink from 'common/components/OutboundLink/OutboundLink';
 import styles from './IconTextGrouping.css';
 
 IconTextGrouping.propTypes = {
+  className: PropTypes.string,
   fontAwesomeIcon: PropTypes.object.isRequired,
   iconAboveHeading: PropTypes.bool,
   iconSize: PropTypes.string,
@@ -16,6 +17,7 @@ IconTextGrouping.propTypes = {
 };
 
 IconTextGrouping.defaultProps = {
+  className: '',
   iconAboveHeading: false,
   iconSize: '6x',
   subText: undefined,
@@ -23,7 +25,13 @@ IconTextGrouping.defaultProps = {
 };
 
 function IconTextGrouping({
-  fontAwesomeIcon, iconSize, iconAboveHeading, subText, title, url,
+  className,
+  fontAwesomeIcon,
+  iconSize,
+  iconAboveHeading,
+  subText,
+  title,
+  url,
 }) {
   const icon = (<FontAwesomeIcon
     icon={fontAwesomeIcon}
@@ -40,13 +48,17 @@ function IconTextGrouping({
     iconAfter = icon;
   }
 
-  const subTextNode = <span className={styles.IconTextGrouping__subtext}>{subText}</span>;
+  const subTextNode = <div className={styles.IconTextGrouping__subtext}>{subText}</div>;
 
   if (url) {
     return (
       <OutboundLink
         analyticsEventLabel={`${title} <IconTextGrouping>`}
-        className={classNames(styles.IconTextGrouping, styles.IconTextGroupingWithSubText)}
+        className={classNames(
+          styles.IconTextGrouping,
+          styles.IconTextGroupingWithSubText,
+          className,
+        )}
         href={url}
         hasIcon={false}
       >
@@ -60,7 +72,13 @@ function IconTextGrouping({
 
   if (subText) {
     return (
-      <div className={classNames(styles.IconTextGrouping, styles.IconTextGroupingWithSubText)}>
+      <div
+        className={classNames(
+          styles.IconTextGrouping,
+          styles.IconTextGroupingWithSubText,
+          className,
+        )}
+      >
         {iconBefore}
         {titleNode}
         {iconAfter}
@@ -70,7 +88,7 @@ function IconTextGrouping({
   }
 
   return (
-    <div className={styles.IconTextGrouping}>
+    <div className={classNames(styles.IconTextGrouping, className)}>
       {iconBefore}
       {titleNode}
       {iconAfter}
