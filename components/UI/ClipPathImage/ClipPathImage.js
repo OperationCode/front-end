@@ -15,7 +15,7 @@ ClipPathImage.propTypes = {
 
 ClipPathImage.defaultProps = {
   altText: undefined,
-  className: undefined,
+  className: '',
   href: undefined,
   theme: 'primary',
 };

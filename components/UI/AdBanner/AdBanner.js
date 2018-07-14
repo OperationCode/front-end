@@ -13,7 +13,7 @@ AdBanner.propTypes = {
 };
 
 AdBanner.defaultProps = {
-  className: undefined,
+  className: '',
 };
 
 function AdBanner({

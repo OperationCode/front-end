@@ -17,7 +17,7 @@ ScrollButton.propTypes = {
 
 ScrollButton.defaultProps = {
   children: undefined,
-  className: undefined,
+  className: '',
   fullWidth: false,
   href: undefined,
   onClick: undefined,

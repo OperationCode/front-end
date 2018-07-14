@@ -14,7 +14,7 @@ Section.propTypes = {
 };
 
 Section.defaultProps = {
-  className: undefined,
+  className: '',
   hasHeadingLines: true,
   id: undefined,
   theme: 'gray',

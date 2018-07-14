@@ -12,7 +12,7 @@ Heading.propTypes = {
 };
 
 Heading.defaultProps = {
-  className: undefined,
+  className: '',
   id: undefined,
   hasHeadingLines: true,
   theme: 'gray',

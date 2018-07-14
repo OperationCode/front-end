@@ -12,7 +12,7 @@ HeroBanner.propTypes = {
 
 HeroBanner.defaultProps = {
   children: undefined,
-  className: undefined,
+  className: '',
   subtitle: undefined,
 };
 

@@ -13,7 +13,7 @@ BoardCard.propTypes = {
 };
 
 BoardCard.defaultProps = {
-  className: undefined,
+  className: '',
   description: undefined,
 };
 

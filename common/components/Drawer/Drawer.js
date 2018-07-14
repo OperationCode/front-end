@@ -10,7 +10,7 @@ Drawer.propTypes = {
 };
 
 Drawer.defaultProps = {
-  className: undefined,
+  className: '',
   isVisible: false,
 };
 

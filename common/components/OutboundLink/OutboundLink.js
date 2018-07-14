@@ -14,7 +14,7 @@ OutboundLink.propTypes = {
 };
 
 OutboundLink.defaultProps = {
-  className: undefined,
+  className: '',
   hasIcon: true,
 };
 
