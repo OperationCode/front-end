@@ -1,4 +1,4 @@
-.iconCard {
+.IconTextGrouping {
   padding: 10px;
   width: 180px;
   display: flex;
@@ -10,23 +10,23 @@
   transition: color 125ms;
 }
 
-a.iconCard {
+a.IconTextGrouping {
   font-family: "Noto Serif", sans-serif;
 }
 
-a.iconCard:hover {
+a.IconTextGrouping:hover {
   color: #444;
 }
 
-.iconCard__icon {
+.IconTextGrouping__icon {
   flex: 2;
 }
 
-.iconCard__title {
+.IconTextGrouping__title {
   text-align: center;
 }
 
-.iconCard__subtext {
+.IconTextGrouping__subtext {
   text-align: center;
   font-size: 0.9rem;
 }

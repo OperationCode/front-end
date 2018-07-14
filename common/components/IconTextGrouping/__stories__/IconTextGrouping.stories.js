@@ -3,12 +3,12 @@ import { storiesOf } from '@storybook/react';
 import { withKnobs, boolean, select, text } from '@storybook/addon-knobs';
 
 import faExclamationTriangle from '@fortawesome/fontawesome-free-solid/faExclamationTriangle';
-import IconCard from '../IconCard';
+import IconTextGrouping from '../IconTextGrouping';
 
-storiesOf('Single-Purpose/Cards/IconCard', module)
+storiesOf('Common/IconTextGrouping', module)
   .addDecorator(withKnobs)
   .add('default', () => (
-    <IconCard
+    <IconTextGrouping
       fontAwesomeIcon={faExclamationTriangle}
       iconAboveHeading={boolean('iconAboveHeading', false)}
       iconSize={select(
