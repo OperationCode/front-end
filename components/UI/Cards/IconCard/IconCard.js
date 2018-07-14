@@ -1,23 +1,24 @@
 /* eslint-disable react/no-danger */
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import styles from './IconCard.css';
 
 IconCard.propTypes = {
-  title: PropTypes.string.isRequired,
-  subText: PropTypes.node,
   fontAwesomeIcon: PropTypes.object.isRequired,
-  url: PropTypes.string,
-  iconSize: PropTypes.string,
   iconAboveHeading: PropTypes.bool,
+  iconSize: PropTypes.string,
+  subText: PropTypes.node,
+  title: PropTypes.string.isRequired,
+  url: PropTypes.string,
 };
 
 IconCard.defaultProps = {
+  iconAboveHeading: false,
+  iconSize: '6x',
   subText: undefined,
   url: undefined,
-  iconSize: '6x',
-  iconAboveHeading: false,
 };
 
 function IconCard({
@@ -41,39 +42,24 @@ function IconCard({
   const subTextNode = <span className={styles.iconCard__subtext}>{subText}</span>;
 
   if (url) {
-    if (subText) {
-      return (
-        <a
-          href={url}
-          className={[styles.iconCard, styles.iconCardWithSubText].join(' ')}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {iconBefore}
-          {titleNode}
-          {iconAfter}
-          {subTextNode}
-        </a>
-      );
-    }
-
     return (
       <a
         href={url}
-        className={styles.iconCard}
+        className={classNames(styles.iconCard, styles.iconCardWithSubText)}
         target="_blank"
         rel="noopener noreferrer"
       >
         {iconBefore}
         {titleNode}
         {iconAfter}
+        {subText && subTextNode}
       </a>
     );
   }
 
   if (subText) {
     return (
-      <div className={[styles.iconCard, styles.iconCardWithSubText].join(' ')}>
+      <div className={classNames(styles.iconCard, styles.iconCardWithSubText)}>
         {iconBefore}
         {titleNode}
         {iconAfter}
