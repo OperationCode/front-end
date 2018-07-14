@@ -4,7 +4,7 @@ import { withKnobs, text } from '@storybook/addon-knobs';
 
 import StaffCard from '../StaffCard';
 
-storiesOf('Single-Purpose/SpecificCards/StaffCard', module)
+storiesOf('Single-Purpose/Cards/StaffCard', module)
   .addDecorator(withKnobs)
   .add('default', () => (
     <StaffCard
