@@ -5,7 +5,7 @@ import styles from './Heading.css';
 
 Heading.propTypes = {
   className: PropTypes.string,
-  id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]), // reference point for scroll anchors
+  id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]), // reference for scroll anchors
   children: PropTypes.node.isRequired,
   hasHeadingLines: PropTypes.bool,
   theme: PropTypes.oneOf(['gray', 'slate', 'white']),

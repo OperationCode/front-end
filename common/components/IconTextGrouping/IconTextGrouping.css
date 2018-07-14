@@ -31,10 +31,3 @@ a.IconTextGrouping:hover {
   text-align: left;
   width: inherit;
 }
-
-@media screen and (max-width: 650px) {
-  .icconCard {
-    width: 100px;
-    height: 100px;
-  }
-}

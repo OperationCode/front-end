@@ -1,11 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import ReactModal from 'react-modal';
 import CardStyles from 'common/components/Card/Card.css';
 import ModalStyles from './Modal.css';
 
 Modal.propTypes = {
   children: PropTypes.node.isRequired,
+  className: PropTypes.string,
   isOpen: PropTypes.bool,
   onRequestClose: PropTypes.func,
   screenReaderLabel: PropTypes.string.isRequired,
@@ -13,17 +15,23 @@ Modal.propTypes = {
 };
 
 Modal.defaultProps = {
+  className: '',
   isOpen: false,
   onRequestClose: () => {},
   shouldCloseOnOverlayClick: true,
 };
 
 function Modal({
-  children, isOpen, onRequestClose, screenReaderLabel, shouldCloseOnOverlayClick,
+  children,
+  className,
+  isOpen,
+  onRequestClose,
+  screenReaderLabel,
+  shouldCloseOnOverlayClick,
 }) {
   return (
     <ReactModal
-      className={CardStyles.Card}
+      className={classNames(CardStyles.Card, className)}
       contentLabel={screenReaderLabel}
       isOpen={isOpen}
       onRequestClose={onRequestClose}
