@@ -1,13 +1,13 @@
 .IconTextGrouping {
-  padding: 10px;
-  width: 180px;
+  align-items: center;
+  color: currentColor;
   display: flex;
   flex-direction: column;
-  align-items: center;
   margin: 15px;
+  padding: 10px;
   text-decoration: none;
-  color: currentColor;
   transition: color 125ms;
+  width: 180px;
 }
 
 a.IconTextGrouping {
