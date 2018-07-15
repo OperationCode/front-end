@@ -54,11 +54,15 @@ function IconTextGrouping({
     iconAfter = icon;
   }
 
-  const themeClassNames = {
+  const themeClasses = {
     [styles.primary]: theme === 'primary',
     [styles.secondary]: theme === 'secondary',
     [styles.gray]: theme === 'gray',
   };
+
+  const defaultClassNames = classNames(styles.IconTextGrouping, themeClasses, className, {
+    [styles.IconTextGroupingWithSubText]: subTextNode,
+  });
 
   const subTextNode = subText ? (
     <div className={styles.IconTextGrouping__subtext}>{subText}</div>
@@ -68,13 +72,7 @@ function IconTextGrouping({
     return (
       <OutboundLink
         analyticsEventLabel={`${title} <IconTextGrouping>`}
-        className={classNames(
-          styles.IconTextGrouping,
-          styles.IconTextGroupingWithSubText,
-          styles.IconTextGrouping__link,
-          themeClassNames,
-          className,
-        )}
+        className={defaultClassNames}
         href={url}
         hasIcon={false}
       >
@@ -87,11 +85,7 @@ function IconTextGrouping({
   }
 
   return (
-    <div
-      className={classNames(styles.IconTextGrouping, themeClassNames, className, {
-        [styles.IconTextGroupingWithSubText]: subTextNode,
-      })}
-    >
+    <div className={defaultClassNames}>
       {iconBefore}
       {titleNode}
       {iconAfter}
