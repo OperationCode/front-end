@@ -1,24 +1,29 @@
 .IconTextGrouping {
   align-items: center;
-  border-radius: 4px;
   display: flex;
   flex-direction: column;
+  padding: 1rem;
   margin: 1rem;
   text-decoration: none;
-  transition: color 125ms;
   width: 180px;
 }
 
-.IconTextGrouping__icon {
+.link {
+  border: 1px solid transparent;
+  border-radius: 4px;
+  transition: border linear 0.2s, color linear 0.2s;
+}
+
+.icon {
   padding: 0.5rem 0 1rem;
 }
 
-.IconTextGrouping__title {
+.title {
   color: var(--slate);
   text-align: center;
 }
 
-.IconTextGrouping__subtext {
+.subtext {
   color: var(--slate);
   font-family: "Noto Serif", sans-serif;
   font-size: 0.9rem;
@@ -31,37 +36,45 @@
   color: var(--primary);
 }
 
-.primary:hover {
-  color: var(--primaryLight);
-  outline: 1px solid var(--slateLight);
-}
-
-.primary:active:not:hover {
-  color: var(--primaryDark);
-}
-
 .secondary {
   color: var(--secondary);
-}
-
-.secondary:hover {
-  color: var(--secondaryLight);
-  outline: 1px solid var(--slateLight);
-}
-
-.secondary:active:not:hover {
-  color: var(--secondaryDark);
 }
 
 .gray {
   color: var(--slate);
 }
 
-.gray:hover {
-  color: var(--slateLight);
-  outline: 1px solid var(--slateLight);
+.link:hover,
+.link:focus {
+  border: 1px solid var(--slateLight);
+  outline: none;
 }
 
-.gray:active:not:hover {
+.primary.link:hover,
+.primary.link:focus {
+  color: var(--primaryLight);
+}
+
+.secondary.link:hover,
+.secondary.link:focus {
+  border: 1px solid var(--slateLight);
+  color: var(--secondaryLight);
+}
+
+.gray.link:hover,
+.gray.link:focus {
+  border: 1px solid var(--slateLight);
+  color: var(--slateLight);
+}
+
+.primary.link:active:not:hover {
+  color: var(--primaryDark);
+}
+
+.secondary.link:active:not:hover {
+  color: var(--secondaryDark);
+}
+
+.gray.link:active:not:hover {
   color: var(--slateDark);
 }

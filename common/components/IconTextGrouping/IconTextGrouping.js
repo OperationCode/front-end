@@ -9,9 +9,9 @@ import styles from './IconTextGrouping.css';
 IconTextGrouping.propTypes = {
   className: PropTypes.string,
   fontAwesomeIcon: PropTypes.object.isRequired,
-  iconAboveHeading: PropTypes.bool,
+  isIconAboveHeading: PropTypes.bool,
   iconSize: PropTypes.string,
-  subText: PropTypes.node,
+  subText: PropTypes.string,
   theme: PropTypes.oneOf(['primary', 'secondary', 'gray']),
   title: PropTypes.string.isRequired,
   url: PropTypes.string,
@@ -19,9 +19,9 @@ IconTextGrouping.propTypes = {
 
 IconTextGrouping.defaultProps = {
   className: '',
-  iconAboveHeading: false,
+  isIconAboveHeading: false,
   iconSize: '6x',
-  subText: undefined,
+  subText: '',
   theme: 'gray',
   url: undefined,
 };
@@ -30,66 +30,51 @@ function IconTextGrouping({
   className,
   fontAwesomeIcon,
   iconSize,
-  iconAboveHeading,
+  isIconAboveHeading,
   subText,
   theme,
   title,
   url,
 }) {
-  const icon = (
-    <FontAwesomeIcon
-      className={styles.IconTextGrouping__icon}
-      icon={fontAwesomeIcon}
-      size={iconSize}
-    />
-  );
-
-  let iconBefore = null;
-  let iconAfter = null;
-  const titleNode = <h5 className={styles.IconTextGrouping__title}>{title}</h5>;
-
-  if (iconAboveHeading) {
-    iconBefore = icon;
-  } else {
-    iconAfter = icon;
-  }
-
-  const themeClasses = {
+  const iconTextGroupingClassNames = classNames(styles.IconTextGrouping, className, {
+    [styles.link]: !!url,
     [styles.primary]: theme === 'primary',
     [styles.secondary]: theme === 'secondary',
     [styles.gray]: theme === 'gray',
-  };
-
-  const defaultClassNames = classNames(styles.IconTextGrouping, themeClasses, className, {
-    [styles.IconTextGroupingWithSubText]: subTextNode,
   });
 
-  const subTextNode = subText ? (
-    <div className={styles.IconTextGrouping__subtext}>{subText}</div>
-  ) : null;
+  const content = (
+    <React.Fragment>
+      {isIconAboveHeading && (
+        <FontAwesomeIcon
+          className={styles.icon}
+          icon={fontAwesomeIcon}
+          size={iconSize}
+        />
+      )}
+      {<h5 className={styles.title}>{title}</h5>}
+      {!isIconAboveHeading && (
+        <FontAwesomeIcon
+          className={styles.icon}
+          icon={fontAwesomeIcon}
+          size={iconSize}
+        />
+      )}
+      {subText && <div className={styles.subtext}>{subText}</div>}
+    </React.Fragment>
+  );
 
-  if (url) {
-    return (
-      <OutboundLink
-        analyticsEventLabel={`${title} <IconTextGrouping>`}
-        className={defaultClassNames}
-        href={url}
-        hasIcon={false}
-      >
-        {iconBefore}
-        {titleNode}
-        {iconAfter}
-        {subTextNode}
-      </OutboundLink>
-    );
-  }
-
-  return (
-    <div className={defaultClassNames}>
-      {iconBefore}
-      {titleNode}
-      {iconAfter}
-    </div>
+  return url ? (
+    <OutboundLink
+      analyticsEventLabel={`${title} <IconTextGrouping>`}
+      className={iconTextGroupingClassNames}
+      href={url}
+      hasIcon={false}
+    >
+      {content}
+    </OutboundLink>
+  ) : (
+    <div className={iconTextGroupingClassNames}>{content}</div>
   );
 }
 

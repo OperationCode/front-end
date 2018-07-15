@@ -10,15 +10,15 @@ storiesOf('Common/IconTextGrouping', module)
   .add('default', () => (
     <IconTextGrouping
       fontAwesomeIcon={faExclamationTriangle}
-      iconAboveHeading={boolean('iconAboveHeading', false)}
+      isIconAboveHeading={boolean('isIconAboveHeading', false)}
       iconSize={select(
         'iconSize',
         ['1x', '2x', '3x', '4x', '5x', '6x', '7x', '8x', '9x', '10x'],
         '6x',
       )}
-      subText={text('subText', 'staff@operationcode.org (PropTypes.node)')}
-      theme={select('theme', ['primary', 'secondary', 'gray'])}
-      title={text('title', 'Email')}
-      url={text('url', 'mailto:staff@operationcode.org')}
+      subText={text('subText', 'Please read our Terms of Service before continuing...')}
+      theme={select('theme', ['primary', 'secondary', 'gray'], 'secondary')}
+      title={text('title', 'ToS')}
+      url={text('url', 'https://operationcode.org/terms')}
     />
   ));
