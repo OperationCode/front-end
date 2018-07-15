@@ -18,7 +18,7 @@ BoardCard.defaultProps = {
 };
 
 function BoardCard({
-  boardRole, children, className, description, imageSource, name,
+  boardRole, className, description, imageSource, name,
 }) {
   return (
     <Card
