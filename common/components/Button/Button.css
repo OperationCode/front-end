@@ -1,7 +1,7 @@
 .Button {
   align-items: center;
   border: 1px solid transparent;
-  border-radius: 0.25rem;
+  border-radius: 4px;
   cursor: pointer;
   display: flex;
   font-size: 1rem;
