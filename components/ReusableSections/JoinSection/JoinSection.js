@@ -1,4 +1,5 @@
 import React from 'react';
+import { s3 } from 'common/constants/urls';
 import Button from 'common/components/Button/Button';
 import Section from 'common/components/Section/Section';
 import styles from './JoinSection.css';
@@ -8,6 +9,9 @@ function Join() {
     <Section
       className={styles.JoinSection}
       hasHeadingLines={false}
+      style={{
+        backgroundImage: `url(${s3}background_marching-troops.jpg`,
+      }}
       theme="white"
       title="Join Today!"
     >
