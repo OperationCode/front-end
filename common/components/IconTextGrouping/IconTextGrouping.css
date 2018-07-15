@@ -1,33 +1,67 @@
 .IconTextGrouping {
   align-items: center;
-  color: currentColor;
+  border-radius: 4px;
   display: flex;
   flex-direction: column;
-  margin: 15px;
-  padding: 10px;
+  margin: 1rem;
   text-decoration: none;
   transition: color 125ms;
   width: 180px;
 }
 
-a.IconTextGrouping {
-  font-family: "Noto Serif", sans-serif;
-}
-
-a.IconTextGrouping:hover {
-  color: inherit;
-}
-
 .IconTextGrouping__icon {
-  flex: 2;
+  padding: 0.5rem 0 1rem;
 }
 
 .IconTextGrouping__title {
+  color: var(--slate);
   text-align: center;
 }
 
 .IconTextGrouping__subtext {
+  color: var(--slate);
+  font-family: "Noto Serif", sans-serif;
   font-size: 0.9rem;
   text-align: left;
   width: inherit;
+}
+
+/* Theming */
+.primary {
+  color: var(--primary);
+}
+
+.primary:hover {
+  color: var(--primaryLight);
+  outline: 1px solid var(--slateLight);
+}
+
+.primary:active:not:hover {
+  color: var(--primaryDark);
+}
+
+.secondary {
+  color: var(--secondary);
+}
+
+.secondary:hover {
+  color: var(--secondaryLight);
+  outline: 1px solid var(--slateLight);
+}
+
+.secondary:active:not:hover {
+  color: var(--secondaryDark);
+}
+
+.gray {
+  color: var(--slate);
+}
+
+.gray:hover {
+  color: var(--slateLight);
+  outline: 1px solid var(--slateLight);
+}
+
+.gray:active:not:hover {
+  color: var(--slateDark);
 }

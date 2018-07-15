@@ -17,6 +17,7 @@ storiesOf('Common/IconTextGrouping', module)
         '6x',
       )}
       subText={text('subText', 'staff@operationcode.org (PropTypes.node)')}
+      theme={select('theme', ['primary', 'secondary', 'gray'])}
       title={text('title', 'Email')}
       url={text('url', 'mailto:staff@operationcode.org')}
     />

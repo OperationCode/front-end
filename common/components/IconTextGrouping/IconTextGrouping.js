@@ -12,6 +12,7 @@ IconTextGrouping.propTypes = {
   iconAboveHeading: PropTypes.bool,
   iconSize: PropTypes.string,
   subText: PropTypes.node,
+  theme: PropTypes.oneOf(['primary', 'secondary', 'gray']),
   title: PropTypes.string.isRequired,
   url: PropTypes.string,
 };
@@ -21,6 +22,7 @@ IconTextGrouping.defaultProps = {
   iconAboveHeading: false,
   iconSize: '6x',
   subText: undefined,
+  theme: 'gray',
   url: undefined,
 };
 
@@ -30,13 +32,17 @@ function IconTextGrouping({
   iconSize,
   iconAboveHeading,
   subText,
+  theme,
   title,
   url,
 }) {
-  const icon = (<FontAwesomeIcon
-    icon={fontAwesomeIcon}
-    size={iconSize}
-  />);
+  const icon = (
+    <FontAwesomeIcon
+      className={styles.IconTextGrouping__icon}
+      icon={fontAwesomeIcon}
+      size={iconSize}
+    />
+  );
 
   let iconBefore = null;
   let iconAfter = null;
@@ -48,7 +54,15 @@ function IconTextGrouping({
     iconAfter = icon;
   }
 
-  const subTextNode = <div className={styles.IconTextGrouping__subtext}>{subText}</div>;
+  const themeClassNames = {
+    [styles.primary]: theme === 'primary',
+    [styles.secondary]: theme === 'secondary',
+    [styles.gray]: theme === 'gray',
+  };
+
+  const subTextNode = subText ? (
+    <div className={styles.IconTextGrouping__subtext}>{subText}</div>
+  ) : null;
 
   if (url) {
     return (
@@ -57,6 +71,8 @@ function IconTextGrouping({
         className={classNames(
           styles.IconTextGrouping,
           styles.IconTextGroupingWithSubText,
+          styles.IconTextGrouping__link,
+          themeClassNames,
           className,
         )}
         href={url}
@@ -65,30 +81,17 @@ function IconTextGrouping({
         {iconBefore}
         {titleNode}
         {iconAfter}
-        {subText && subTextNode}
+        {subTextNode}
       </OutboundLink>
     );
   }
 
-  if (subText) {
-    return (
-      <div
-        className={classNames(
-          styles.IconTextGrouping,
-          styles.IconTextGroupingWithSubText,
-          className,
-        )}
-      >
-        {iconBefore}
-        {titleNode}
-        {iconAfter}
-        {subTextNode}
-      </div>
-    );
-  }
-
   return (
-    <div className={classNames(styles.IconTextGrouping, className)}>
+    <div
+      className={classNames(styles.IconTextGrouping, themeClassNames, className, {
+        [styles.IconTextGroupingWithSubText]: subTextNode,
+      })}
+    >
       {iconBefore}
       {titleNode}
       {iconAfter}
