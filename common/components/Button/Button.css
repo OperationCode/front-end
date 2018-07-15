@@ -55,17 +55,17 @@
   background-color: var(--secondaryDark);
 }
 
-.gray {
+.slate {
   background-color: var(--slate);
   border-color: var(--slateDark);
   color: #ffffff;
   outline-color: var(--slateDark);
 }
 
-.gray:hover {
+.slate:hover {
   background-color: var(--slateLight);
 }
 
-.gray:active:not:hover {
+.slate:active:not:hover {
   background-color: var(--slateDark);
 }

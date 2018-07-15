@@ -12,7 +12,7 @@ ScrollButton.propTypes = {
   href: PropTypes.string,
   onClick: PropTypes.func,
   tabIndex: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  theme: PropTypes.oneOf(['primary', 'secondary', 'gray']),
+  theme: PropTypes.oneOf(['primary', 'secondary', 'slate']),
 };
 
 ScrollButton.defaultProps = {
@@ -31,7 +31,7 @@ function ScrollButton({
   const buttonClassNames = classNames(styles.Button, className, {
     [styles.primary]: theme === 'primary',
     [styles.secondary]: theme === 'secondary',
-    [styles.gray]: theme === 'gray',
+    [styles.slate]: theme === 'slate',
     [styles.fullWidth]: fullWidth,
   });
 

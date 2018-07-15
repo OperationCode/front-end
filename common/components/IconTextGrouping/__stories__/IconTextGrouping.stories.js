@@ -17,7 +17,7 @@ storiesOf('Common/IconTextGrouping', module)
         '6x',
       )}
       subText={text('subText', 'Please read our Terms of Service before continuing...')}
-      theme={select('theme', ['primary', 'secondary', 'gray'], 'secondary')}
+      theme={select('theme', ['primary', 'secondary', 'slate'], 'secondary')}
       title={text('title', 'ToS')}
       url={text('url', 'https://operationcode.org/terms')}
     />

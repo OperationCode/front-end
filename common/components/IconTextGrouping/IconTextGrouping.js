@@ -12,7 +12,7 @@ IconTextGrouping.propTypes = {
   isIconAboveHeading: PropTypes.bool,
   iconSize: PropTypes.string,
   subText: PropTypes.string,
-  theme: PropTypes.oneOf(['primary', 'secondary', 'gray']),
+  theme: PropTypes.oneOf(['primary', 'secondary', 'slate']),
   title: PropTypes.string.isRequired,
   url: PropTypes.string,
 };
@@ -22,7 +22,7 @@ IconTextGrouping.defaultProps = {
   isIconAboveHeading: false,
   iconSize: '6x',
   subText: '',
-  theme: 'gray',
+  theme: 'slate',
   url: undefined,
 };
 
@@ -36,11 +36,8 @@ function IconTextGrouping({
   title,
   url,
 }) {
-  const iconTextGroupingClassNames = classNames(styles.IconTextGrouping, className, {
+  const iconTextGroupingClassNames = classNames(styles.IconTextGrouping, className, styles[theme], {
     [styles.link]: !!url,
-    [styles.primary]: theme === 'primary',
-    [styles.secondary]: theme === 'secondary',
-    [styles.gray]: theme === 'gray',
   });
 
   const content = (

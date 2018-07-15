@@ -12,7 +12,7 @@ Button.propTypes = {
   href: PropTypes.string,
   onClick: PropTypes.func,
   tabIndex: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  theme: PropTypes.oneOf(['primary', 'secondary', 'gray']),
+  theme: PropTypes.oneOf(['primary', 'secondary', 'slate']),
 };
 
 Button.defaultProps = {
@@ -31,10 +31,7 @@ function Button({
   // TODO: Handle non-string input for analytics event label on both outbound and scroll link
   // Example: SVG as a child
 
-  const buttonClassNames = classNames(styles.Button, className, {
-    [styles.primary]: theme === 'primary',
-    [styles.secondary]: theme === 'secondary',
-    [styles.gray]: theme === 'gray',
+  const buttonClassNames = classNames(styles.Button, className, styles[theme], {
     [styles.fullWidth]: fullWidth,
   });
 

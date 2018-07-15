@@ -40,7 +40,7 @@
   color: var(--secondary);
 }
 
-.gray {
+.slate {
   color: var(--slate);
 }
 
@@ -61,8 +61,8 @@
   color: var(--secondaryLight);
 }
 
-.gray.link:hover,
-.gray.link:focus {
+.slate.link:hover,
+.slate.link:focus {
   border: 1px solid var(--slateLight);
   color: var(--slateLight);
 }
@@ -75,6 +75,6 @@
   color: var(--secondaryDark);
 }
 
-.gray.link:active:not:hover {
+.slate.link:active:not:hover {
   color: var(--slateDark);
 }

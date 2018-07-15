@@ -13,7 +13,7 @@ storiesOf('Common/Button', module)
       href={text('href', '')}
       onClick={action('Button Clicked!')}
       tabIndex={number('tabIndex', 0)}
-      theme={select('theme', ['primary', 'secondary', 'gray'])}
+      theme={select('theme', ['primary', 'secondary', 'slate'])}
     >
       {text('children', 'Click Me! (PropTypes.node)')}
     </Button>
