@@ -56,7 +56,7 @@ function Button({
     return (
       <OutboundLink
         analyticsEventLabel={children}
-        className={`${buttonClassNames} ${styles.outboundLink}`}
+        className={classNames(buttonClassNames, styles.outboundLink)}
         hasIcon
         href={href}
         onClick={onClick}
