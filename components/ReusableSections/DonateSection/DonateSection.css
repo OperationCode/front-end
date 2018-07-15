@@ -3,10 +3,10 @@
 }
 
 .donateText {
-  width: 90%;
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  max-width: 750px;
 }
 
 .donateText p {

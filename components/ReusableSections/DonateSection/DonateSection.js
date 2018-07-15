@@ -11,7 +11,7 @@ function Donate() {
       hasHeadingLines={false}
       headingTheme="white"
       title="Donate"
-      theme="white"
+      theme="slate"
     >
       <div className={styles.donateText}>
         <p>
