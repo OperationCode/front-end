@@ -1,29 +1,31 @@
 import React, { Component } from 'react';
 import QueryString from 'query-string';
 import PropTypes from 'prop-types';
+import { postBackend } from 'shared/utils/apiHelper';
 import { withRouter } from 'react-router-dom';
-import getVal from 'lodash/get';
-import Section from 'common/components/Section/Section';
-import { postBackend } from 'common/utils/api.utils';
-import { setUserVerifiedCookie } from 'common/utils/cookie.utils';
+import Section from 'shared/components/section/section';
+import getValue from 'lodash/get';
 import styles from './IdmeVerify.css';
+import { setUserVerifiedCookie } from '../../../utils/cookieHelper';
 
 class IdmeVerify extends Component {
-  propTypes = {
+  static propTypes = {
     location: PropTypes.shape({
       hash: PropTypes.string,
     }),
     updateRootAuthState: PropTypes.func,
   };
 
-  defaultProps = {
+  static defaultProps = {
     location: {},
     updateRootAuthState: () => {},
   };
 
-  state = {};
+  state = {
+    error: '',
+    verified: false,
+  };
 
-  // TODO: Determine if this is the correct lifecycle method
   componentWillMount() {
     const qs = QueryString.parse(this.props.location.hash);
     if (qs.error_description) {
@@ -35,12 +37,16 @@ class IdmeVerify extends Component {
         access_token: qs.access_token,
       })
         .then((response) => {
-          if (getVal(response, 'data.verified')) {
+          const isUserVerified = getValue(response, 'data.verified', false);
+
+          if (isUserVerified) {
             setUserVerifiedCookie(true);
-            this.setState({
-              verified: true,
-            });
-            this.props.updateRootAuthState();
+            this.setState(
+              {
+                verified: true,
+              },
+              () => this.props.updateRootAuthState(),
+            );
           }
         })
         .catch(() => {
@@ -49,18 +55,21 @@ class IdmeVerify extends Component {
           });
         });
     } else {
-      console.dir(qs); //eslint-disable-line
       this.setState({
-        error: 'Unknown Error occured while verifying with id.me',
+        error: 'Unknown error occured while verifying with id.me',
       });
     }
   }
 
   render() {
+    const {
+      state,
+    } = this;
+
     return (
       <Section title="Id.Me Verification">
-        {this.state.error && <h2 className={styles.error}>{this.state.error}</h2>}
-        {this.state.verified && <h2>You have sucessfully verified with id.me</h2>}
+        {state.error && <h2 className={styles.error}>{this.state.error}</h2>}
+        {state.verified && <h2>You have sucessfully verified with id.me</h2>}
       </Section>
     );
   }
