@@ -1,11 +1,10 @@
 .ClipPathImage {
+  color: #ffffff;
   text-decoration: none;
 }
 
-.ClipPathImageWithLink:active,
-.ClipPathImageWithLink:focus,
-.ClipPathImageWithLink:hover {
-  outline: var(--primary) auto 0.15rem;
+.link {
+  border: 1px solid transparent;
 }
 
 .ClipPathImage img {
@@ -27,5 +26,32 @@
 .primary {
   background-color: var(--primary);
   border-color: var(--primary);
-  color: #ffffff;
+}
+
+.secondary {
+  background-color: var(--secondary);
+  border-color: var(--secondary);
+}
+
+.slate {
+  background-color: var(--slate);
+  border-color: var(--slate);
+}
+
+.primary.link:hover,
+.primary.link:focus {
+  background-color: var(--primaryLight);
+  border-color: var(--primaryLight);
+}
+
+.secondary.link:hover,
+.secondary.link:focus {
+  background-color: var(--secondaryLight);
+  border-color: var(--secondaryLight);
+}
+
+.slate.link:hover,
+.slate.link:focus {
+  background-color: var(--slateLight);
+  border-color: var(--slateLight);
 }

@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import faExternalLinkAlt from '@fortawesome/fontawesome-free-solid/faExternalLinkAlt';
 import OutboundLink from 'common/components/OutboundLink/OutboundLink';
 import styles from './ClipPathImage.css';
 
@@ -9,14 +11,14 @@ ClipPathImage.propTypes = {
   className: PropTypes.string,
   imageSource: PropTypes.string.isRequired,
   href: PropTypes.string,
-  theme: PropTypes.oneOf(['primary', 'secondary', 'gray']),
+  theme: PropTypes.oneOf(['primary', 'secondary', 'slate']),
   title: PropTypes.string.isRequired,
 };
 
 ClipPathImage.defaultProps = {
-  altText: undefined,
+  altText: '',
   className: '',
-  href: undefined,
+  href: '',
   theme: 'primary',
 };
 
@@ -24,19 +26,35 @@ function ClipPathImage({
   altText, className, imageSource, href, theme, title,
 }) {
   const content = (
-    <div className={classNames(styles[theme], styles.content)}>
+    <div
+      className={classNames(styles[theme], styles.content, {
+        [styles.link]: href,
+      })}
+    >
       <img
         alt={altText}
         src={imageSource}
       />
-      <h6>{title}</h6>
+      <h6>
+        {title}&nbsp;
+        {href && (
+          <FontAwesomeIcon
+            className={styles.externalLinkIcon}
+            icon={faExternalLinkAlt}
+            style={{
+              width: '14px',
+            }}
+          />
+        )}
+      </h6>
     </div>
   );
 
   return href ? (
     <OutboundLink
-      analyticsEventLabel={`ClipPath [${title}]`}
+      analyticsEventLabel={`[${title}] <ClipPathImage>`}
       className={classNames(className, styles.ClipPathImage, styles.ClipPathImageWithLink)}
+      hasIcon={false}
       href={href}
     >
       {content}
