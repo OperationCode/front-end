@@ -44,6 +44,8 @@ class Login extends Component {
     isAuth: false,
   };
 
+  // TODO: Resolve unused state variable issues
+  /* eslint-disable react/no-unused-state */
   state = {
     authenticated: false,
     email: '',
@@ -71,9 +73,7 @@ class Login extends Component {
   };
 
   setErrorMessage = (error) => {
-    const errorStatus = getVal(
-      error, ['response', 'status'], -1,
-    );
+    const errorStatus = getVal(error, ['response', 'status'], -1);
     const errorMessage = getVal(error, 'message');
     this.setState({ errorStatus, errorMessage });
   };
@@ -152,9 +152,7 @@ class Login extends Component {
           CookieHelpers.setUserAuthCookie(data);
           this.setState({ authenticated: true });
           this.props.updateRootAuthState();
-          this.props.sendNotification(
-            'success', 'Success', 'You have logged in!',
-          );
+          this.props.sendNotification('success', 'Success', 'You have logged in!');
           if (this.state.ssoParamsPresent) {
             window.location = data.redirect_to;
           } else {
@@ -162,12 +160,8 @@ class Login extends Component {
           }
         })
         .catch((error) => {
-          if (getVal(
-            error, ['response', 'status'], -1,
-          ) !== 401) {
-            this.props.sendNotification(
-              'error', 'Error', 'We will investigate this issue!',
-            );
+          if (getVal(error, ['response', 'status'], -1) !== 401) {
+            this.props.sendNotification('error', 'Error', 'We will investigate this issue!');
           }
 
           this.setErrorMessage(error);

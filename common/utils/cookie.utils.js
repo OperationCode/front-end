@@ -12,31 +12,17 @@ const cookieOptions = { path: '/', domain: cookieDomain() };
 
 export const setUserAuthCookie = ({ token, user }) => {
   const cookies = new Cookies();
-  cookies.set(
-    'token', token, cookieOptions,
-  );
-  cookies.set(
-    'firstName', user.first_name, cookieOptions,
-  );
-  cookies.set(
-    'lastName', user.last_name, cookieOptions,
-  );
-  cookies.set(
-    'slackName', user.slack_name, cookieOptions,
-  );
-  cookies.set(
-    'mentor', user.mentor, cookieOptions,
-  );
-  cookies.set(
-    'verified', user.verified, cookieOptions,
-  );
+  cookies.set('token', token, cookieOptions);
+  cookies.set('firstName', user.first_name, cookieOptions);
+  cookies.set('lastName', user.last_name, cookieOptions);
+  cookies.set('slackName', user.slack_name, cookieOptions);
+  cookies.set('mentor', user.mentor, cookieOptions);
+  cookies.set('verified', user.verified, cookieOptions);
 };
 
 export const setUserVerifiedCookie = (isVerified) => {
   const cookies = new Cookies();
-  cookies.set(
-    'verified', isVerified, cookieOptions,
-  );
+  cookies.set('verified', isVerified, cookieOptions);
 };
 
 export const clearAuthCookies = () => {

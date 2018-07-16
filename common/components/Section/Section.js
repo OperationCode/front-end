@@ -31,9 +31,7 @@ function Section({
 
   return (
     <section
-      className={classNames(
-className, styles.Section, styles[theme],
-)}
+      className={classNames(className, styles.Section, styles[theme])}
       style={style}
     >
       {title && (
