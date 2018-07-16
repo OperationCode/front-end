@@ -10,6 +10,7 @@
   "parser": "babel-eslint",
   "rules": {
     "comma-dangle": "error",
+    "function-paren-newline": ["error", { "minItems": 3 }],
     "import/no-unresolved": "off",
     "import/extensions": "off",
     "jsx-a11y/anchor-is-valid": ["error", { "components": ["Link"], "specialLink": ["to"] }],
@@ -37,9 +38,9 @@
     "object-curly-newline": [
       "error",
       {
-        "ObjectExpression": { "multiline": true, "minProperties": 1 },
-        "ObjectPattern": { "multiline": true, "minProperties": 1 },
-        "ImportDeclaration": "never",
+        "ObjectExpression": { "multiline": true, "minProperties": 3 },
+        "ObjectPattern": { "multiline": true, "minProperties": 3 },
+        "ImportDeclaration": { "multiline": false },
         "ExportDeclaration": { "multiline": true, "minProperties": 3 }
       }
     ],
