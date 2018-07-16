@@ -21,6 +21,16 @@
   outline-width: 2px;
 }
 
+.disabled {
+  border: none;
+  opacity: 0.6;
+}
+
+.disabled:hover {
+  border: none;
+  cursor: not-allowed;
+}
+
 .fullWidth {
   width: 100%;
 }
@@ -32,7 +42,7 @@
   outline-color: var(--primaryDark);
 }
 
-.primary:hover {
+.primary:hover:enabled {
   background-color: var(--primaryLight);
 }
 
@@ -47,7 +57,7 @@
   outline-color: var(--secondaryDark);
 }
 
-.secondary:hover {
+.secondary:hover:enabled {
   background-color: var(--secondaryLight);
 }
 
@@ -62,7 +72,7 @@
   outline-color: var(--slateDark);
 }
 
-.slate:hover {
+.slate:hover:enabled {
   background-color: var(--slateLight);
 }
 

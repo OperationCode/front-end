@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import QueryString from 'query-string';
 import PropTypes from 'prop-types';
-import { postBackend } from 'shared/utils/apiHelper';
-import { withRouter } from 'react-router-dom';
-import Section from 'shared/components/section/section';
+import QueryString from 'query-string';
 import getValue from 'lodash/get';
+import { withRouter } from 'react-router-dom';
+import { postBackend } from 'common/utils/api.utils';
+import { setUserVerifiedCookie } from 'common/utils/cookie.utils';
+import Section from 'common/components/Section/Section';
 import styles from './IdmeVerify.css';
-import { setUserVerifiedCookie } from '../../../utils/cookieHelper';
 
 class IdmeVerify extends Component {
   static propTypes = {

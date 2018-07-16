@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Facebook from 'shared/components/SocialLogin/Facebook';
-import Google from 'shared/components/SocialLogin/Google';
+import Facebook from 'common/components/SocialLogin/Facebook';
+import Google from 'common/components/SocialLogin/Google';
 import styles from './SocialLoginsGrouping.css';
 
 SocialLoginsGrouping.propTypes = {
@@ -18,22 +18,22 @@ SocialLoginsGrouping.propTypes = {
     location: PropTypes.shape({
       key: PropTypes.string,
       pathname: PropTypes.string,
-      search: PropTypes.string
+      search: PropTypes.string,
     }),
     push: PropTypes.func,
-    replace: PropTypes.func
+    replace: PropTypes.func,
   }).isRequired,
   sendNotification: PropTypes.func.isRequired,
-  updateRootAuthState: PropTypes.func
+  updateRootAuthState: PropTypes.func,
 };
 
 SocialLoginsGrouping.defaultProps = {
   className: '',
-  updateRootAuthState: () => {}
+  updateRootAuthState: () => {},
 };
 
 function SocialLoginsGrouping({
-  className, history, sendNotification, updateRootAuthState
+  className, history, sendNotification, updateRootAuthState,
 }) {
   return (
     <div className={`${styles.FlexRow} ${className}`}>

@@ -2,10 +2,16 @@
   "extends": "stylelint-config-standard",
   "ignoreFiles": "**/*.js",
   "rules": {
-    "indentation": 2,
-    "string-quotes": "double",
-    "no-duplicate-selectors": true,
     "color-hex-case": "lower",
     "color-hex-length": "long",
+    "indentation": 2,
+    "no-duplicate-selectors": true,
+    "property-no-unknown": [
+      true,
+      {
+        "ignoreProperties": ["composes", "composes-with"]
+      }
+    ],
+    "string-quotes": "double"
   }
 }
