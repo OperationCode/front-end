@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import axios from 'axios';
 import getValue from 'lodash/get';
 import config from 'config/environment';
-import Section from 'shared/components/Section/Section';
-import Form from 'shared/components/Form/Form';
-import FormZipCode from 'shared/components/Form/FormZipCodeZipCode';
-import FormPassword from 'shared/components/FormPassword/FormPassword';
-import FormButton from 'shared/components/FormButton/FormButton';
+import Form from 'common/components/Form/Form';
+import FormZipCode from 'common/components/Form/FormZipCode';
+import FormPassword from 'common/components/FormPassword/FormPassword';
+import FormButton from 'common/components/FormButton/FormButton';
+import Section from 'common/components/Section/Section';
 import InformationFormStyles from 'scenes/home/InformationForm/InformationForm.css';
 import styles from './SocialLogin.css';
 import * as CookieHelpers from '../../utils/cookieHelper';
@@ -28,15 +28,15 @@ class SocialLogin extends Component {
       location: PropTypes.shape({
         key: PropTypes.string,
         pathname: PropTypes.string,
-        search: PropTypes.string
+        search: PropTypes.string,
       }),
       push: PropTypes.func,
-      replace: PropTypes.func
-    }).isRequired
+      replace: PropTypes.func,
+    }).isRequired,
   };
 
   static defaultProps = {
-    updateRootAuthState: () => {}
+    updateRootAuthState: () => {},
   };
 
   state = {
@@ -45,7 +45,7 @@ class SocialLogin extends Component {
     password: '',
     passwordValid: false,
     zip: '',
-    zipValid: false
+    zipValid: false,
   };
 
   componentWillUnmount() {
@@ -53,11 +53,15 @@ class SocialLogin extends Component {
   }
 
   onZipChange = (value, valid) => {
-    this.setState({ zip: value, zipValid: valid });
+    this.setState({
+      zip: value, zipValid: valid,
+    });
   };
 
   onPasswordChange = (value, valid) => {
-    this.setState({ password: value, passwordValid: valid });
+    this.setState({
+      password: value, passwordValid: valid,
+    });
   };
 
   onExit = () => {
@@ -70,10 +74,12 @@ class SocialLogin extends Component {
     axios
       .get(`${config.backendUrl}/social_users`, {
         params: {
-          email: Email
-        }
+          email: Email,
+        },
       })
-      .then(({ data }) => {
+      .then(({
+        data,
+      }) => {
         window.localStorage.setItem('firstname', `${First}`);
         window.localStorage.setItem('lastname', `${Last}`);
         window.localStorage.setItem('email', `${Email}`);
@@ -107,10 +113,12 @@ class SocialLogin extends Component {
           first_name: localStorage.getItem('firstname'),
           last_name: localStorage.getItem('lastname'),
           zip: Zip,
-          password: Password
-        }
+          password: Password,
+        },
       })
-      .then(({ data }) => {
+      .then(({
+        data,
+      }) => {
         localStorage.removeItem('firstname');
         localStorage.removeItem('lastname');
         localStorage.removeItem('email');
@@ -136,11 +144,15 @@ class SocialLogin extends Component {
 
   handleOnClick = (e) => {
     e.preventDefault();
-    this.setState({ isLoading: true });
+    this.setState({
+      isLoading: true,
+    });
     if (this.isFormValid()) {
       this.login(this.state.zip, this.state.password);
     } else {
-      this.setState({ error: 'Missing required field(s)', isLoading: false });
+      this.setState({
+        error: 'Missing required field(s)', isLoading: false,
+      });
       this.zipRef.inputRef.revalidate();
       this.passwordRef.inputRef.revalidate();
     }
@@ -150,7 +162,10 @@ class SocialLogin extends Component {
 
   render() {
     return (
-      <Section className={informationFormStyles.signup} title="Zipcode and Password Required">
+      <Section
+        className={informationFormStyles.signup}
+        title="Zipcode and Password Required"
+      >
         <div className={styles.SocialLoginMessage}>
           <p>
             We understand that you wanted to register quickly by choosing to use your social media
