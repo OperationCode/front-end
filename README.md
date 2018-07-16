@@ -24,27 +24,27 @@ For information about the maintainers of the project, check out [MAINTAINERS.md]
 
 ## Quick Start
 
-If you're unsure of how to start this app or code for it, don't worry! Your our target audience!
+If you're unsure of how to start this app or code for it, don't worry! You're our target audience!
 Please read our [Contributing Guide](CONTRIBUTING.md) to learn everything you need to be able to ask the right questions on our Slack team.
 
 If you're no stranger to React applications and the JavaScript ecosystem:
 
+Version Assumptions:
+[Click to see Node version](https://github.com/OperationCode/front-end/blob/master/.nvmrc)
+yarn@1.7.0
+
 ```sh
 # Clone the repo
+git clone git@github.com:OperationCode/front-end.git
 
 # Install dependencies
 yarn
 
 # Run local development
 yarn dev
-```
+# open localhost:3000
 
-and if you're working on something involving the back-end, you can run it locally:
-
-```sh
-# Have Docker running
-yarn backend
-
-# In a separate terminal
-yarn dev
+# Use Storybook when developing new common components or to see what lego blocks you have available
+yarn storybook
+# open localhost:9001
 ```
