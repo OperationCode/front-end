@@ -33,7 +33,7 @@
         "ignoreTemplateLiterals": true
       }
     ],
-    "multiline-ternary": ["error", "always"],
+    "multiline-ternary": ["error", "always-multiline"],
     "no-console": "warn",
     "no-use-before-define": "off",
     "object-curly-newline": [
