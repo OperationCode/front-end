@@ -5,34 +5,28 @@ import Cookies from 'universal-cookie';
 // TODO: Map config from environment
 export const setAuthorizationHeader = () => {
   const cookies = new Cookies();
-  return {
-    Authorization: `bearer ${cookies.get('token')}`,
-  };
+  return { Authorization: `bearer ${cookies.get('token')}` };
 };
 
 function makeGenericGet(endpoint) {
   const authHeader = setAuthorizationHeader();
   return axios
-    .get(`${config.backendUrl}/${endpoint}`, {
-      headers: authHeader,
-    })
-    .then(({
-      data,
-    }) => data);
+    .get(`${config.backendUrl}/${endpoint}`, { headers: authHeader })
+    .then(({ data }) => data);
 }
 
 export function postBackend(path, body) {
   const authHeader = setAuthorizationHeader();
-  return axios.post(`${config.backendUrl}/${path}`, body, {
-    headers: authHeader,
-  });
+  return axios.post(
+    `${config.backendUrl}/${path}`, body, { headers: authHeader },
+  );
 }
 
 export function patchBackend(path, body) {
   const authHeader = setAuthorizationHeader();
-  return axios.patch(`${config.backendUrl}/${path}`, body, {
-    headers: authHeader,
-  });
+  return axios.patch(
+    `${config.backendUrl}/${path}`, body, { headers: authHeader },
+  );
 }
 
 export const getServices = () => makeGenericGet('services');
@@ -60,9 +54,7 @@ export function postRequest({
         language,
       },
     },
-    {
-      headers: authHeader,
-    },
+    { headers: authHeader },
   );
 }
 
@@ -79,8 +71,6 @@ export function updateRequest({
         mentor,
       },
     },
-    {
-      headers: authHeader,
-    },
+    { headers: authHeader },
   );
 }

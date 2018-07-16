@@ -9,9 +9,7 @@ function Join() {
     <Section
       className={styles.JoinSection}
       hasHeadingLines={false}
-      style={{
-        backgroundImage: `url(${s3}background_marching-troops.jpg`,
-      }}
+      style={{ backgroundImage: `url(${s3}background_marching-troops.jpg` }}
       theme="white"
       title="Join Today!"
     >

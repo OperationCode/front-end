@@ -71,7 +71,9 @@ class Login extends Component {
   };
 
   setErrorMessage = (error) => {
-    const errorStatus = getVal(error, ['response', 'status'], -1);
+    const errorStatus = getVal(
+      error, ['response', 'status'], -1,
+    );
     const errorMessage = getVal(error, 'message');
     this.setState({ errorStatus, errorMessage });
   };
@@ -80,13 +82,11 @@ class Login extends Component {
     const parsed = queryString.parse(location.search); //eslint-disable-line
 
     if (this.state.ssoParamsPresent) {
-      this.setState(
-        {
-          sso: parsed.sso,
-          sig: parsed.sig
-        },
-        this.checkSsoLoggedIn
-      );
+      this.setState({
+        sso: parsed.sso,
+        sig: parsed.sig,
+      },
+      this.checkSsoLoggedIn);
     }
   };
 
@@ -123,14 +123,8 @@ class Login extends Component {
 
   ssoLoggedInRedirect = () => {
     axios
-      .get(
-        `${config.backendUrl}/sessions/sso?sso=${encodeURI(this.state.sso)}&sig=${this.state.sig}`,
-        {
-          headers: {
-            Authorization: `Bearer ${CookieHelpers.authToken()}`
-          }
-        }
-      )
+      .get(`${config.backendUrl}/sessions/sso?sso=${encodeURI(this.state.sso)}&sig=${this.state.sig}`,
+        { headers: { Authorization: `Bearer ${CookieHelpers.authToken()}` } })
       .then(({ data }) => {
         window.location = data.redirect_to;
       })
@@ -149,16 +143,18 @@ class Login extends Component {
         .post(`${config.backendUrl}/sessions`, {
           user: {
             email: this.state.email,
-            password: this.state.password
+            password: this.state.password,
           },
           sso: this.state.sso,
-          sig: this.state.sig
+          sig: this.state.sig,
         })
         .then(({ data }) => {
           CookieHelpers.setUserAuthCookie(data);
           this.setState({ authenticated: true });
           this.props.updateRootAuthState();
-          this.props.sendNotification('success', 'Success', 'You have logged in!');
+          this.props.sendNotification(
+            'success', 'Success', 'You have logged in!',
+          );
           if (this.state.ssoParamsPresent) {
             window.location = data.redirect_to;
           } else {
@@ -166,8 +162,12 @@ class Login extends Component {
           }
         })
         .catch((error) => {
-          if (getVal(error, ['response', 'status'], -1) !== 401) {
-            this.props.sendNotification('error', 'Error', 'We will investigate this issue!');
+          if (getVal(
+            error, ['response', 'status'], -1,
+          ) !== 401) {
+            this.props.sendNotification(
+              'error', 'Error', 'We will investigate this issue!',
+            );
           }
 
           this.setErrorMessage(error);
@@ -186,9 +186,17 @@ class Login extends Component {
 
     return (
       <div className={styles.gridRow}>
-        <Section title="Login" theme="white">
+        <Section
+          title="Login"
+          theme="white"
+        >
           <Form autoComplete>
-            <FormEmail id="email" displayName="Email" label="Email" onChange={this.onEmailChange} />
+            <FormEmail
+              id="email"
+              displayName="Email"
+              label="Email"
+              onChange={this.onEmailChange}
+            />
             <FormInput
               id="password"
               displayName="Password"
@@ -197,7 +205,11 @@ class Login extends Component {
               onChange={this.onPasswordChange}
             />
             {errorFeedback && <h2 className={styles.loginError}>{errorFeedback}</h2>}
-            <FormButton className={styles.loginBtn} text="Login" onClick={this.handleOnClick} />
+            <FormButton
+              className={styles.loginBtn}
+              text="Login"
+              onClick={this.handleOnClick}
+            />
             <span className={styles.resetBtn}>
               Forgot your password? <Link to="/reset_password">Reset it.</Link>
             </span>

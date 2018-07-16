@@ -13,14 +13,10 @@ class FormTextArea extends Component {
     placeHolder: '',
   };
 
-  state = {
-    value: '',
-  };
+  state = { value: '' };
 
   handleChange = (event) => {
-    this.setState({
-      value: event.target.value,
-    }, () => {
+    this.setState({ value: event.target.value }, () => {
       if (this.props.onChange) {
         this.props.onChange(this.state.value);
       }

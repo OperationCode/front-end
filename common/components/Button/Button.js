@@ -33,10 +33,12 @@ function Button({
   // TODO: Handle non-string input for analytics event label on both outbound and scroll link
   // Example: SVG as a child
 
-  const buttonClassNames = classNames(styles.Button, className, styles[theme], {
-    [styles.disabled]: disabled,
-    [styles.fullWidth]: fullWidth,
-  });
+  const buttonClassNames = classNames(
+    styles.Button, className, styles[theme], {
+      [styles.disabled]: disabled,
+      [styles.fullWidth]: fullWidth,
+    },
+  );
 
   // MARK: Non-navigational button is checked first as it is the most common implementation
   if (!href) {

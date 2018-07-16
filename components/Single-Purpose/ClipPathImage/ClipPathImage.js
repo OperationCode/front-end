@@ -26,10 +26,9 @@ function ClipPathImage({
   altText, className, imageSource, href, theme, title,
 }) {
   const content = (
-    <div
-      className={classNames(styles[theme], styles.content, {
-        [styles.link]: href,
-      })}
+    <div className={classNames(
+styles[theme], styles.content, { [styles.link]: href },
+)}
     >
       <img
         alt={altText}
@@ -41,9 +40,7 @@ function ClipPathImage({
           <FontAwesomeIcon
             className={styles.externalLinkIcon}
             icon={faExternalLinkAlt}
-            style={{
-              width: '14px',
-            }}
+            style={{ width: '14px' }}
           />
         )}
       </h6>
@@ -53,7 +50,9 @@ function ClipPathImage({
   return href ? (
     <OutboundLink
       analyticsEventLabel={`[${title}] <ClipPathImage>`}
-      className={classNames(className, styles.ClipPathImage, styles.ClipPathImageWithLink)}
+      className={classNames(
+className, styles.ClipPathImage, styles.ClipPathImageWithLink,
+)}
       hasIcon={false}
       href={href}
     >

@@ -10,9 +10,7 @@ import styles from './IdmeVerify.css';
 
 class IdmeVerify extends Component {
   static propTypes = {
-    location: PropTypes.shape({
-      hash: PropTypes.string,
-    }),
+    location: PropTypes.shape({ hash: PropTypes.string }),
     updateRootAuthState: PropTypes.func,
   };
 
@@ -29,42 +27,29 @@ class IdmeVerify extends Component {
   componentWillMount() {
     const qs = QueryString.parse(this.props.location.hash);
     if (qs.error_description) {
-      this.setState({
-        error: qs.error_description,
-      });
+      this.setState({ error: qs.error_description });
     } else if (qs.access_token) {
-      postBackend('users/profile/verify', {
-        access_token: qs.access_token,
-      })
+      postBackend('users/profile/verify', { access_token: qs.access_token })
         .then((response) => {
-          const isUserVerified = getValue(response, 'data.verified', false);
+          const isUserVerified = getValue(
+            response, 'data.verified', false,
+          );
 
           if (isUserVerified) {
             setUserVerifiedCookie(true);
-            this.setState(
-              {
-                verified: true,
-              },
-              () => this.props.updateRootAuthState(),
-            );
+            this.setState({ verified: true }, () => this.props.updateRootAuthState());
           }
         })
         .catch(() => {
-          this.setState({
-            error: 'Operation Code could not verify your military affiliation with id.me',
-          });
+          this.setState({ error: 'Operation Code could not verify your military affiliation with id.me' });
         });
     } else {
-      this.setState({
-        error: 'Unknown error occured while verifying with id.me',
-      });
+      this.setState({ error: 'Unknown error occured while verifying with id.me' });
     }
   }
 
   render() {
-    const {
-      state,
-    } = this;
+    const { state } = this;
 
     return (
       <Section title="Id.Me Verification">

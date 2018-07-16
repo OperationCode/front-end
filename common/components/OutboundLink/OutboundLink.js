@@ -29,9 +29,7 @@ function OutboundLink({
         <FontAwesomeIcon
           className={styles.externalLinkIcon}
           icon={faExternalLinkAlt}
-          style={{
-            width: '14px',
-          }}
+          style={{ width: '14px' }}
         />
       )}
     </React.Fragment>

@@ -32,24 +32,20 @@ class FormInput extends Component {
 
   handleChange = (event) => {
     const isValid = this.validate(event.target.value);
-    this.setState(
-      {
-        text: event.target.value,
-        isValid,
-      },
-      () => {
-        if (this.props.onChange) {
-          this.props.onChange(this.state.text, this.state.isValid);
-        }
-      },
-    );
+    this.setState({
+      text: event.target.value,
+      isValid,
+    },
+    () => {
+      if (this.props.onChange) {
+        this.props.onChange(this.state.text, this.state.isValid);
+      }
+    });
   };
 
   revalidate() {
     const valid = this.validate(this.state.text);
-    this.setState({
-      isValid: valid,
-    });
+    this.setState({ isValid: valid });
   }
 
   validate = (text) => {

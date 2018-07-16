@@ -21,9 +21,7 @@ class FormSelect extends Component {
   };
 
   onChange(e) {
-    const {
-      onChange, validationFunc,
-    } = this.props;
+    const { onChange, validationFunc } = this.props;
 
     let isValid = true;
     if (validationFunc) {
@@ -36,9 +34,7 @@ class FormSelect extends Component {
   }
 
   buildOptions = () => {
-    const {
-      prompt, options,
-    } = this.props;
+    const { prompt, options } = this.props;
 
     const opts = [];
 

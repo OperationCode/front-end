@@ -3,12 +3,8 @@ module.exports = ({
 }) => {
   /* eslint-disable global-require */
   const postCSSPlugins = [
-    require('postcss-import')({
-      root: file.dirname,
-    }),
-    require('postcss-export-custom-variables')({
-      destination: 'common/styles/themeMap.js',
-    }),
+    require('postcss-import')({ root: file.dirname }),
+    require('postcss-export-custom-variables')({ destination: 'common/styles/themeMap.js' }),
   ];
 
   if (env === 'production') {
@@ -24,7 +20,5 @@ module.exports = ({
     }));
   }
 
-  return {
-    plugins: postCSSPlugins,
-  };
+  return { plugins: postCSSPlugins };
 };

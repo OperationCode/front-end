@@ -8,13 +8,9 @@ Form.propTypes = {
   className: PropTypes.string,
 };
 
-Form.defaultProps = {
-  className: '',
-};
+Form.defaultProps = { className: '' };
 
-function Form({
-  children, className,
-}) {
+function Form({ children, className }) {
   return (
     <form
       className={classNames({

@@ -9,10 +9,8 @@ storiesOf('Single-Purpose/AdBanner', module)
   .add('default', () => (
     <AdBanner
       altText={text('altText', 'Logo for AutoGravity')}
-      imageSource={text(
-        'imageSource',
-        'http://speedlux.com/wp-content/uploads/2017/02/AutoGravity-logo-1.png',
-      )}
+      imageSource={text('imageSource',
+        'http://speedlux.com/wp-content/uploads/2017/02/AutoGravity-logo-1.png')}
       href={text('href', 'https://autogravity.com')}
     >
       {text('children', 'PropTypes.any')}
