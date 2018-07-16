@@ -63,9 +63,10 @@ class Login extends Component {
   };
 
   setSsoParams = () => {
+    const { ssoParamsPresent } = this.state;
     const parsed = queryString.parse(location.search); //eslint-disable-line
 
-    if (this.state.ssoParamsPresent) {
+    if (ssoParamsPresent) {
       this.setState({
         sso: parsed.sso,
         sig: parsed.sig,
@@ -100,7 +101,9 @@ class Login extends Component {
   };
 
   checkSsoLoggedIn = () => {
-    if (this.state.ssoParamsPresent && this.props.isAuth) {
+    const { props, state } = this;
+
+    if (state.ssoParamsPresent && props.isAuth) {
       this.ssoLoggedInRedirect();
     }
   };
@@ -192,14 +195,22 @@ class Login extends Component {
               inputType="password"
               onChange={this.onPasswordChange}
             />
-            {errorFeedback && <h2 className={styles.loginError}>{errorFeedback}</h2>}
+            {errorFeedback && (
+            <h2 className={styles.loginError}>
+              {errorFeedback}
+            </h2>
+            )}
             <FormButton
               className={styles.loginBtn}
               text="Login"
               onClick={this.handleOnClick}
             />
             <span className={styles.resetBtn}>
-              Forgot your password? <Link to="/reset_password">Reset it.</Link>
+              Forgot your password?
+              {' '}
+              <Link to="/reset_password">
+Reset it.
+              </Link>
             </span>
           </Form>
 
