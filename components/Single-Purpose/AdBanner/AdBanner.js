@@ -32,7 +32,9 @@ function AdBanner({
             src={imageSource}
           />
         </div>
-        <h4 className={styles.adBannerText}>{children}</h4>
+        <h4 className={styles.adBannerText}>
+          {children}
+        </h4>
       </div>
     </OutboundLink>
   );

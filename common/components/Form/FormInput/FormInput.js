@@ -31,49 +31,67 @@ class FormInput extends Component {
   };
 
   handleChange = (event) => {
+    const { props, state } = this;
+
     const isValid = this.validate(event.target.value);
     this.setState({
       text: event.target.value,
       isValid,
     },
     () => {
-      if (this.props.onChange) {
-        this.props.onChange(this.state.text, this.state.isValid);
+      if (props.onChange) {
+        props.onChange(state.text, state.isValid);
       }
     });
   };
 
-  revalidate() {
-    const valid = this.validate(this.state.text);
-    this.setState({ isValid: valid });
-  }
-
   validate = (text) => {
-    if (this.props.validateFunc) {
-      return this.props.validateFunc(text);
-    } else if (text.length > 0 && this.props.validationRegex) {
-      return this.props.validationRegex.test(text);
-    } else if (text.length > 0) {
+    const { props } = this;
+
+    if (props.validateFunc) {
+      return props.validateFunc(text);
+    }
+    if (text.length > 0 && props.validationRegex) {
+      return props.validationRegex.test(text);
+    }
+    if (text.length > 0) {
       return true;
     }
 
     return false;
   };
 
+  revalidate() {
+    const { state } = this;
+
+    const valid = this.validate(state.text);
+    this.setState({ isValid: valid });
+  }
+
   render() {
+    const { props, state } = this;
+
     return (
       <div className={styles.formInput}>
-        {this.props.label && <Label htmlFor={this.props.id}>{this.props.label}</Label>}
+        {props.label && (
+        <Label htmlFor={props.id}>
+          {props.label}
+        </Label>
+        )}
 
         <input
-          className={!this.state.isValid ? styles.error : undefined}
-          id={this.props.id}
-          type={this.props.inputType}
-          value={this.state.text}
-          placeholder={this.props.placeholder}
+          className={!state.isValid ? styles.error : undefined}
+          id={props.id}
+          type={props.inputType}
+          value={state.text}
+          placeholder={props.placeholder}
           onChange={this.handleChange}
         />
-        {!this.state.isValid && <span>{this.props.validationErrorMessage}</span>}
+        {!state.isValid && (
+        <span>
+          {props.validationErrorMessage}
+        </span>
+        )}
       </div>
     );
   }

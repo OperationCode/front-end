@@ -55,7 +55,9 @@ function SchoolCard({
           />
 
           <section className={styles.schoolCardText}>
-            <h5 className={styles.name}>{schoolName}</h5>
+            <h5 className={styles.name}>
+              {schoolName}
+            </h5>
             <address className={styles.location}>
               {hasOnlineProgram && 'Online Available'}
               {hasOnlineProgram && <br />}
@@ -65,13 +67,25 @@ function SchoolCard({
 
             <ul className={styles.info}>
               <li>
-                GI Bill Accepted: <b>{acceptsGIBill ? 'Yes' : 'No'}</b>
+                GI Bill Accepted:
+                {' '}
+                <b>
+                  {acceptsGIBill ? 'Yes' : 'No'}
+                </b>
               </li>
               <li>
-                Commitment: <b>{isFullTime ? 'Full-Time' : 'Flexible'}</b>
+                Commitment:
+                {' '}
+                <b>
+                  {isFullTime ? 'Full-Time' : 'Flexible'}
+                </b>
               </li>
               <li>
-                Hardware Included: <b>{hasHardware ? 'Yes' : 'No'}</b>
+                Hardware Included:
+                {' '}
+                <b>
+                  {hasHardware ? 'Yes' : 'No'}
+                </b>
               </li>
             </ul>
           </section>

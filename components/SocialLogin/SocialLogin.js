@@ -64,6 +64,8 @@ class SocialLogin extends Component {
   };
 
   run = (First, Last, Email) => {
+    const { props, state } = this;
+
     axios
       .get(`${config.backendUrl}/social_users`, { params: { email: Email } })
       .then(({ data }) => {
@@ -71,7 +73,7 @@ class SocialLogin extends Component {
         window.localStorage.setItem('lastname', `${Last}`);
         window.localStorage.setItem('email', `${Email}`);
         if (data.redirect_to === '/social_login') {
-          this.props.history.push(data.redirect_to);
+          props.history.push(data.redirect_to);
         } else {
           this.login();
         }
@@ -83,16 +85,18 @@ class SocialLogin extends Component {
           Object.keys(data).forEach((key) => {
             if (data && data[key]) {
               errorMessage += ` ${key}: ${data[key][0]} `;
-              this.state.error = errorMessage;
+              state.error = errorMessage;
             }
           });
         }
 
-        this.props.sendNotification('error', 'Error', 'We will investigate this issue!');
+        props.sendNotification('error', 'Error', 'We will investigate this issue!');
       });
   };
 
   login = (Zip, Password) => {
+    const { props } = this;
+
     axios
       .post(`${config.backendUrl}/social_users`, {
         user: {
@@ -108,40 +112,52 @@ class SocialLogin extends Component {
         localStorage.removeItem('lastname');
         localStorage.removeItem('email');
         CookieHelpers.setUserAuthCookie(data);
-        this.props.updateRootAuthState();
-        this.props.sendNotification('success', 'Success', 'You have logged in!');
-        this.props.history.push(data.redirect_to);
+        props.updateRootAuthState();
+        props.sendNotification('success', 'Success', 'You have logged in!');
+        props.history.push(data.redirect_to);
       })
       .catch((error) => {
         const data = getValue(error, 'response.data');
+
         let errorMessage = '';
         if (data) {
           Object.keys(data).forEach((key) => {
             if (data && data[key]) {
               errorMessage += ` ${key}: ${data[key][0]} `;
-              this.state.error = errorMessage;
+              this.setState({ error: errorMessage });
             }
           });
         }
-        this.props.sendNotification('error', 'Error', 'We will investigate this issue!');
+
+        props.sendNotification('error', 'Error', 'We will investigate this issue!');
       });
   };
 
   handleOnClick = (e) => {
+    const { state } = this;
+
     e.preventDefault();
     this.setState({ isLoading: true });
+
     if (this.isFormValid()) {
-      this.login(this.state.zip, this.state.password);
+      this.login(state.zip, state.password);
     } else {
-      this.setState({ error: 'Missing required field(s)', isLoading: false });
-      this.zipRef.inputRef.revalidate();
-      this.passwordRef.inputRef.revalidate();
+      this.setState({ error: 'Missing required field(s)', isLoading: false }, () => {
+        this.zipRef.inputRef.revalidate();
+        this.passwordRef.inputRef.revalidate();
+      });
     }
   };
 
-  isFormValid = () => this.state.zipValid && this.state.passwordValid;
+  isFormValid = () => {
+    const { state } = this;
+
+    return state.zipValid && state.passwordValid;
+  };
 
   render() {
+    const { state } = this;
+
     return (
       <Section
         className={styles.signup}
@@ -176,13 +192,15 @@ class SocialLogin extends Component {
               this.passwordRef = child;
             }}
           />
-          {this.state.error && (
+          {state.error && (
             <ul className={styles.errorList}>
               There was an error joining Operation Code:
-              <li className={styles.errorMessage}>{this.state.error}</li>
+              <li className={styles.errorMessage}>
+                {state.error}
+              </li>
             </ul>
           )}
-          {this.state.isLoading ? (
+          {state.isLoading ? (
             <FormButton
               className={styles.joinButton}
               text="Loading..."

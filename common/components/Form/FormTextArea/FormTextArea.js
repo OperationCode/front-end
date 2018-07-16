@@ -16,20 +16,24 @@ class FormTextArea extends Component {
   state = { value: '' };
 
   handleChange = (event) => {
+    const { props, state } = this;
+
     this.setState({ value: event.target.value }, () => {
-      if (this.props.onChange) {
-        this.props.onChange(this.state.value);
+      if (props.onChange) {
+        props.onChange(state.value);
       }
     });
   };
 
   render() {
+    const { props } = this;
+
     return (
       <div>
         <textarea
           className={styles.text_area}
           onChange={this.handleChange}
-          placeholder={this.props.placeHolder}
+          placeholder={props.placeHolder}
         />
       </div>
     );

@@ -9,8 +9,13 @@ function ErrorDisplay({ statusCode }) {
   return (
     <div className={styles.ErrorDisplay}>
       <div className={styles.bg}>
-        <h1 className={styles.title}>{statusCode}!</h1>
-        <p className={styles.paragraph}>You definitely weren&apos;t supposed to see this...</p>
+        <h1 className={styles.title}>
+          {statusCode}
+          !
+        </h1>
+        <p className={styles.paragraph}>
+You definitely weren&apos;t supposed to see this...
+        </p>
       </div>
     </div>
   );

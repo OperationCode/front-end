@@ -43,7 +43,9 @@ function Section({
           {title}
         </Heading>
       )}
-      <div className={styles.content}>{children}</div>
+      <div className={styles.content}>
+        {children}
+      </div>
     </section>
   );
 }

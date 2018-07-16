@@ -20,8 +20,12 @@ function SuccessStory({
       />
 
       <div className={styles.quote}>
-        <h3 className={styles.title}>{title}</h3>
-        <blockquote>{`"${quote}"`}</blockquote>
+        <h3 className={styles.title}>
+          {title}
+        </h3>
+        <blockquote>
+          {`"${quote}"`}
+        </blockquote>
       </div>
     </div>
   );

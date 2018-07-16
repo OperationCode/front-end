@@ -28,8 +28,12 @@ function ImageCard({
       />
 
       <div className={styles.cardText}>
-        <h6>{title}</h6>
-        <p>{cardText}</p>
+        <h6>
+          {title}
+        </h6>
+        <p>
+          {cardText}
+        </p>
         {link && (
           <Button
             href={link}

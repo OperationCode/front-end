@@ -79,9 +79,11 @@ class Login extends Component {
   };
 
   setSsoParams = () => {
+    const { ssoParamsPresent } = this.state;
+
     const parsed = queryString.parse(location.search); //eslint-disable-line
 
-    if (this.state.ssoParamsPresent) {
+    if (ssoParamsPresent) {
       this.setState({
         sso: parsed.sso,
         sig: parsed.sig,
@@ -116,15 +118,18 @@ class Login extends Component {
   };
 
   checkSsoLoggedIn = () => {
-    if (this.state.ssoParamsPresent && this.props.isAuth) {
+    const { props, state } = this;
+
+    if (state.ssoParamsPresent && props.isAuth) {
       this.ssoLoggedInRedirect();
     }
   };
 
   ssoLoggedInRedirect = () => {
+    const { state } = this;
+
     axios
-      .get(`${config.backendUrl}/sessions/sso?sso=${encodeURI(this.state.sso)}&sig=${this.state.sig}`,
-        { headers: { Authorization: `Bearer ${CookieHelpers.authToken()}` } })
+      .get(`${config.backendUrl}/sessions/sso?sso=${encodeURI(state.sso)}&sig=${state.sig}`, { headers: { Authorization: `Bearer ${CookieHelpers.authToken()}` } })
       .then(({ data }) => {
         window.location = data.redirect_to;
       })
@@ -133,35 +138,40 @@ class Login extends Component {
       });
   };
 
-  isFormValid = () => this.state.emailValid && this.state.passwordValid;
+  isFormValid = () => {
+    const { emailValid, passwordValid } = this.state;
+    return emailValid && passwordValid;
+  };
 
   handleOnClick = (e) => {
+    const { props, state } = this;
+
     e.preventDefault();
 
     if (this.isFormValid()) {
       axios
         .post(`${config.backendUrl}/sessions`, {
           user: {
-            email: this.state.email,
-            password: this.state.password,
+            email: state.email,
+            password: state.password,
           },
-          sso: this.state.sso,
-          sig: this.state.sig,
+          sso: state.sso,
+          sig: state.sig,
         })
         .then(({ data }) => {
           CookieHelpers.setUserAuthCookie(data);
           this.setState({ authenticated: true });
-          this.props.updateRootAuthState();
-          this.props.sendNotification('success', 'Success', 'You have logged in!');
-          if (this.state.ssoParamsPresent) {
+          props.updateRootAuthState();
+          props.sendNotification('success', 'Success', 'You have logged in!');
+          if (state.ssoParamsPresent) {
             window.location = data.redirect_to;
           } else {
-            this.props.history.push(data.redirect_to);
+            props.history.push(data.redirect_to);
           }
         })
         .catch((error) => {
           if (getVal(error, ['response', 'status'], -1) !== 401) {
-            this.props.sendNotification('error', 'Error', 'We will investigate this issue!');
+            props.sendNotification('error', 'Error', 'We will investigate this issue!');
           }
 
           this.setErrorMessage(error);
@@ -170,12 +180,13 @@ class Login extends Component {
   };
 
   render() {
-    const { errorStatus, errorMessage } = this.state;
+    const { props, state } = this;
+
     let errorFeedback;
-    if (errorStatus === 401) {
+    if (state.errorStatus === 401) {
       errorFeedback = 'Sorry, you entered an invalid email or password.';
-    } else if (errorMessage) {
-      errorFeedback = `Login error: ${errorMessage}.`;
+    } else if (state.errorMessage) {
+      errorFeedback = `Login error: ${state.errorMessage}.`;
     }
 
     return (
@@ -198,21 +209,29 @@ class Login extends Component {
               inputType="password"
               onChange={this.onPasswordChange}
             />
-            {errorFeedback && <h2 className={styles.loginError}>{errorFeedback}</h2>}
+            {errorFeedback && (
+            <h2 className={styles.loginError}>
+              {errorFeedback}
+            </h2>
+            )}
             <FormButton
               className={styles.loginBtn}
               text="Login"
               onClick={this.handleOnClick}
             />
             <span className={styles.resetBtn}>
-              Forgot your password? <Link to="/reset_password">Reset it.</Link>
+              Forgot your password?
+              {' '}
+              <Link to="/reset_password">
+Reset it.
+              </Link>
             </span>
           </Form>
 
           <SocialLoginsGrouping
-            history={this.props.history}
-            sendNotification={this.props.sendNotification}
-            updateRootAuthState={this.props.updateRootAuthState}
+            history={props.history}
+            sendNotification={props.sendNotification}
+            updateRootAuthState={props.updateRootAuthState}
           />
         </Section>
         <SignUpSection />

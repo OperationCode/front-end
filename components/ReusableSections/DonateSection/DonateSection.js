@@ -21,7 +21,9 @@ function Donate() {
           continue helping the military community learn software development, enter the tech
           industry, and code the future.
         </p>
-        <p>Thank you for supporting our mission!</p>
+        <p>
+Thank you for supporting our mission!
+        </p>
         <Button
           hasExternalLinkIcon={false}
           href={donateLink}
