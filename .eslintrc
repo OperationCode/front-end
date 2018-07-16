@@ -24,15 +24,7 @@
         "allowChildren": false
       }
     ],
-    "max-len": [
-      "error",
-      100,
-      {
-        "ignoreUrls": true,
-        "ignoreStrings": true,
-        "ignoreTemplateLiterals": true
-      }
-    ],
+    "max-len": ["error", 100],
     "multiline-ternary": ["error", "always-multiline"],
     "no-console": "warn",
     "no-use-before-define": "off",
@@ -50,6 +42,7 @@
     "react/jsx-curly-brace-presence": [2, { "props": "never", "children": "never" }],
     "react/jsx-max-props-per-line": [2, { "maximum": 1, "when": "always" }],
     "react/no-did-mount-set-state": "off",
+    "react/no-unused-prop-types": "off",
     "react/no-unused-state": "error",
     "react/prefer-stateless-function": "error"
   }
