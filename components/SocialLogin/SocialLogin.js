@@ -3,14 +3,13 @@ import PropTypes from 'prop-types';
 import axios from 'axios';
 import getValue from 'lodash/get';
 import config from 'config/environment';
+import * as CookieHelpers from 'common/utils/cookie.utils';
 import Form from 'common/components/Form/Form';
 import FormZipCode from 'common/components/Form/FormZipCode';
 import FormPassword from 'common/components/FormPassword/FormPassword';
 import FormButton from 'common/components/FormButton/FormButton';
 import Section from 'common/components/Section/Section';
-import InformationFormStyles from 'scenes/home/InformationForm/InformationForm.css';
 import styles from './SocialLogin.css';
-import * as CookieHelpers from '../../utils/cookieHelper';
 
 class SocialLogin extends Component {
   static propTypes = {
@@ -163,7 +162,7 @@ class SocialLogin extends Component {
   render() {
     return (
       <Section
-        className={informationFormStyles.signup}
+        className={styles.signup}
         title="Zipcode and Password Required"
       >
         <div className={styles.SocialLoginMessage}>
@@ -176,7 +175,7 @@ class SocialLogin extends Component {
             continue to help veterans.
           </p>
         </div>
-        <Form className={informationFormStyles.signupForm}>
+        <Form className={styles.signupForm}>
           <FormZipCode
             id="zip"
             placeholder="Zip Code (Required)"
@@ -196,21 +195,21 @@ class SocialLogin extends Component {
             }}
           />
           {this.state.error && (
-            <ul className={informationFormStyles.errorList}>
+            <ul className={styles.errorList}>
               There was an error joining Operation Code:
-              <li className={informationFormStyles.errorMessage}>{this.state.error}</li>
+              <li className={styles.errorMessage}>{this.state.error}</li>
             </ul>
           )}
           {this.state.isLoading ? (
             <FormButton
-              className={informationFormStyles.joinButton}
+              className={styles.joinButton}
               text="Loading..."
               disabled
               theme="grey"
             />
           ) : (
             <FormButton
-              className={informationFormStyles.joinButton}
+              className={styles.joinButton}
               text="Join"
               onClick={this.handleOnClick}
               theme="red"

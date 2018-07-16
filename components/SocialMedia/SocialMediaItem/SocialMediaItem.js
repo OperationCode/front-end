@@ -1,27 +1,31 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import OutboundLink from 'common/OutboundLink/OutboundLink';
 import styles from './SocialMediaItem.css';
 
-const SocialMediaItem = (props) => {
-  const {
-    smImage,
-    smText,
-    link,
-  } = props;
-
-  return (
-    <div className={styles.SocialMediaItem}>
-      <a href={link} target="_blank" rel="noopener noreferrer">
-        <img src={smImage} alt={smText} />
-      </a>
-    </div>
-  );
-};
-
 SocialMediaItem.propTypes = {
+  link: PropTypes.string.isRequired,
   smImage: PropTypes.string.isRequired,
   smText: PropTypes.string.isRequired,
-  link: PropTypes.string.isRequired,
 };
+
+function SocialMediaItem({
+  link, smImage, smText,
+}) {
+  return (
+    <div className={styles.SocialMediaItem}>
+      <OutboundLink
+        analyticsEventLabel={smText}
+        hasIcon={false}
+        href={link}
+      >
+        <img
+          src={smImage}
+          alt={smText}
+        />
+      </OutboundLink>
+    </div>
+  );
+}
 
 export default SocialMediaItem;

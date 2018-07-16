@@ -4,7 +4,7 @@ import FacebookLogin from 'react-facebook-login';
 import SocialLogin from './SocialLogin';
 import styles from './SocialMediaButtons.css';
 
-const Facebook = (props) => {
+function Facebook(props) {
   const responseFacebook = (response) => {
     const login = new SocialLogin(props);
     const nameArray = response.name.split(' ');
@@ -15,7 +15,11 @@ const Facebook = (props) => {
 
   return (
     <div>
-      <script src="https://connect.facebook.net/en_US/sdk.js" async defer />
+      <script
+        async
+        defer
+        src="https://connect.facebook.net/en_US/sdk.js"
+      />
       <FacebookLogin
         appId={`${config.facebookKey}`}
         fields="name,email"
@@ -24,6 +28,6 @@ const Facebook = (props) => {
       />
     </div>
   );
-};
+}
 
 export default Facebook;

@@ -4,19 +4,23 @@ import GoogleLogin from 'react-google-login';
 import SocialLogin from './SocialLogin';
 import styles from './SocialMediaButtons.css';
 
-const Google = (props) => {
+function Google(props) {
   const responseGoogle = (response) => {
     const login = new SocialLogin(props);
     login.run(
       response.profileObj.givenName,
       response.profileObj.familyName,
-      response.profileObj.email
+      response.profileObj.email,
     );
   };
 
   return (
     <div>
-      <script src="https://apis.google.com/js/platform.js" async defer />
+      <script
+        async
+        defer
+        src="https://apis.google.com/js/platform.js"
+      />
       <GoogleLogin
         clientId={`${config.googleKey}`}
         className={[styles.LoginButton, styles.GoogleButton].join(' ')}
@@ -24,6 +28,6 @@ const Google = (props) => {
       />
     </div>
   );
-};
+}
 
 export default Google;
