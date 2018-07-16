@@ -31,24 +31,35 @@ function StaffCard({
         src={imageSource}
         alt={imageAlternateText}
       />
-      <h5 className={styles.name}>{name}</h5>
-      <i>{staffRole}</i>
+      <h5 className={styles.name}>
+        {name}
+      </h5>
+      <i>
+        {staffRole}
+      </i>
       <hr />
       <ul className={styles.staffDetails}>
         {twitterHandle && (
           <li>
-            <span className={styles.detailPrompt}>Twitter: </span>
+            <span className={styles.detailPrompt}>
+Twitter:
+              {' '}
+            </span>
             <OutboundLink
               analyticsEventLabel={`<StaffCard> ${name} Twitter Handle Click`}
               href={`https://twitter.com/${twitterHandle}`}
             >
-              @{twitterHandle}
+              @
+              {twitterHandle}
             </OutboundLink>
           </li>
         )}
         {email && (
           <li>
-            <span className={styles.detailPrompt}>Email: </span>
+            <span className={styles.detailPrompt}>
+Email:
+              {' '}
+            </span>
             <OutboundLink
               analyticsEventLabel={`<StaffCard> ${name} Email Click`}
               hasIcon={false}

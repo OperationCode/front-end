@@ -24,7 +24,9 @@ function Drawer({
         [styles.hidden]: !isVisible,
       })}
     >
-      <div className={styles.content}>{children}</div>
+      <div className={styles.content}>
+        {children}
+      </div>
     </div>
   );
 }

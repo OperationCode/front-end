@@ -22,6 +22,7 @@ storiesOf('Common/ScrollButton', module)
         fullWidth={boolean('fullWidth', false)}
         href={text('href', 'anchor')}
         onClick={action('ScrollButton Clicked!')}
+        onKeyDown={action('Enter key pressed!')}
         tabIndex={number('tabIndex', 0)}
         theme={select('theme', ['primary', 'secondary', 'slate'])}
       >
@@ -29,7 +30,9 @@ storiesOf('Common/ScrollButton', module)
       </ScrollButton>
 
       <Element name="anchor">
-        <h1>Scroll To Me</h1>
+        <h1>
+Scroll To Me
+        </h1>
       </Element>
     </div>
   ));

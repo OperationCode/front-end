@@ -41,7 +41,9 @@ function UpgradeBrowserOverlay() {
           className={styles.warningLogo}
           icon={faExclamationTriangle}
         />
-        <h1>Please Upgrade Your Browser</h1>
+        <h1>
+Please Upgrade Your Browser
+        </h1>
         <div className={styles.message}>
           You might be experiencing some problems viewing this page. Use the links below to download
           or upgrade your existing browser for a seamless experience.
@@ -50,7 +52,9 @@ function UpgradeBrowserOverlay() {
           {/* eslint-disable-next-line object-curly-newline */}
           {browsers.map(({ browserName, imageSource, downloadLink }) => (
             <div className={styles.browser}>
-              <span className={styles.browserName}>{browserName}</span>
+              <span className={styles.browserName}>
+                {browserName}
+              </span>
               <OutboundLink
                 analyticsEventLabel={`${browserName} Download from <UpgradeBrowserOverlay>`}
                 hasIcon={false}

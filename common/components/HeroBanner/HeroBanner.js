@@ -27,8 +27,14 @@ function HeroBanner({
       className={`${className} ${styles.HeroBanner}`}
     >
       <div className={styles.text}>
-        <h1 className={subtitle && styles.underline}>{title}</h1>
-        {subtitle && <h6>{subtitle}</h6>}
+        <h1 className={subtitle && styles.underline}>
+          {title}
+        </h1>
+        {subtitle && (
+        <h6>
+          {subtitle}
+        </h6>
+        )}
         {children}
       </div>
     </div>

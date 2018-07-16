@@ -25,7 +25,10 @@ class IdmeVerify extends Component {
   };
 
   componentWillMount() {
-    const qs = QueryString.parse(this.props.location.hash);
+    const { location, updateRootAuthState } = this.props;
+
+    const qs = QueryString.parse(location.hash);
+
     if (qs.error_description) {
       this.setState({ error: qs.error_description });
     } else if (qs.access_token) {
@@ -35,11 +38,16 @@ class IdmeVerify extends Component {
 
           if (isUserVerified) {
             setUserVerifiedCookie(true);
-            this.setState({ verified: true }, () => this.props.updateRootAuthState());
+            this.setState({ verified: true }, () => updateRootAuthState());
           }
         })
         .catch(() => {
-          this.setState({ error: 'Operation Code could not verify your military affiliation with id.me' });
+          // Otherwise max-len breaks...
+          /* eslint-disable object-curly-newline */
+          this.setState({
+            error: 'Operation Code could not verify your military affiliation with id.me',
+          });
+          /* eslint-enable object-curly-newline */
         });
     } else {
       this.setState({ error: 'Unknown error occured while verifying with id.me' });
@@ -51,8 +59,16 @@ class IdmeVerify extends Component {
 
     return (
       <Section title="Id.Me Verification">
-        {state.error && <h2 className={styles.error}>{this.state.error}</h2>}
-        {state.verified && <h2>You have sucessfully verified with id.me</h2>}
+        {state.error && (
+          <h2 className={styles.error}>
+            {state.error}
+          </h2>
+        )}
+        {state.verified && (
+          <h2>
+            You have sucessfully verified with id.me
+          </h2>
+        )}
       </Section>
     );
   }

@@ -10,8 +10,10 @@ class Error extends React.Component {
   }
 
   render() {
+    const { props } = this;
+
     // eslint-disable-next-line react/prop-types
-    return <ErrorDisplay statusCode={this.props.statusCode} />;
+    return <ErrorDisplay statusCode={props.statusCode} />;
   }
 }
 

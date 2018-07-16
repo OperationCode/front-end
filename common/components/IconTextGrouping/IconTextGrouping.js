@@ -49,7 +49,10 @@ function IconTextGrouping({
           size={iconSize}
         />
       )}
-      {<h5 className={styles.title}>{title}</h5>}
+      <h5 className={styles.title}>
+        {title}
+      </h5>
+
       {!isIconAboveHeading && (
         <FontAwesomeIcon
           className={styles.icon}
@@ -57,7 +60,11 @@ function IconTextGrouping({
           size={iconSize}
         />
       )}
-      {subText && <div className={styles.subtext}>{subText}</div>}
+      {subText && (
+      <div className={styles.subtext}>
+        {subText}
+      </div>
+      )}
     </React.Fragment>
   );
 
@@ -71,7 +78,9 @@ function IconTextGrouping({
       {content}
     </OutboundLink>
   ) : (
-    <div className={iconTextGroupingClassNames}>{content}</div>
+    <div className={iconTextGroupingClassNames}>
+      {content}
+    </div>
   );
 }
 

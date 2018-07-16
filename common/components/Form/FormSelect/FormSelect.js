@@ -14,10 +14,10 @@ class FormSelect extends Component {
   };
 
   static defaultProps = {
-    id: null,
+    id: '',
     onChange: () => {},
-    prompt: null,
-    validationFunc: null,
+    prompt: '',
+    validationFunc: () => {},
   };
 
   onChange(e) {
@@ -68,10 +68,12 @@ class FormSelect extends Component {
   };
 
   render() {
+    const { props } = this;
+
     return (
       <div>
         <select
-          id={this.props.id}
+          id={props.id}
           onBlur={e => this.onChange(e)}
         >
           {this.buildOptions()}

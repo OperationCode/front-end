@@ -41,8 +41,11 @@ function Modal({
       <button
         className={ModalStyles.closeButton}
         onClick={() => onRequestClose()}
+        type="button"
       />
-      <div className={ModalStyles.scrollableContainer}>{children}</div>
+      <div className={ModalStyles.scrollableContainer}>
+        {children}
+      </div>
     </ReactModal>
   );
 }

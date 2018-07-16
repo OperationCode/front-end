@@ -32,7 +32,8 @@ function ClipPathImage({
         src={imageSource}
       />
       <h6>
-        {title}&nbsp;
+        {title}
+        &nbsp;
         {href && (
           <FontAwesomeIcon
             className={styles.externalLinkIcon}
@@ -54,7 +55,9 @@ function ClipPathImage({
       {content}
     </OutboundLink>
   ) : (
-    <div className={classNames(className, styles.ClipPathImage)}>{content}</div>
+    <div className={classNames(className, styles.ClipPathImage)}>
+      {content}
+    </div>
   );
 }
 
