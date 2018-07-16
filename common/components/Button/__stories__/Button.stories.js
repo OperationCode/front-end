@@ -13,6 +13,7 @@ storiesOf('Common/Button', module)
       fullWidth={boolean('fullWidth', false)}
       href={text('href', '')}
       onClick={action('Button Clicked!')}
+      onKeyDown={action('Enter key pressed!')}
       tabIndex={number('tabIndex', 0)}
       theme={select('theme', ['primary', 'secondary', 'slate'])}
     >

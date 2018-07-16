@@ -65,11 +65,14 @@ function ScrollButton({
     onClick();
   };
 
+  const onEnterHandler = ev => (ev.key === 'Enter' ? clickHandler() : () => {});
+
   return (
     <ScrollLink
       className={buttonClassNames}
       duration={400}
       onClick={clickHandler}
+      onKeyDown={onEnterHandler}
       smooth
       tabIndex={tabIndex}
       to={href}
