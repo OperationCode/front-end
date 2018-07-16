@@ -19,9 +19,7 @@ function Card({
 }) {
   return (
     <article
-      className={classNames(
-styles.Card, className, { [styles.animatedCard]: hasAnimationOnHover },
-)}
+      className={classNames(styles.Card, className, { [styles.animatedCard]: hasAnimationOnHover })}
     >
       {children}
     </article>

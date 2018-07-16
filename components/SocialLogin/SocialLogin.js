@@ -63,9 +63,7 @@ class SocialLogin extends Component {
     window.localStorage.removeItem('email');
   };
 
-  run = (
-    First, Last, Email,
-  ) => {
+  run = (First, Last, Email) => {
     axios
       .get(`${config.backendUrl}/social_users`, { params: { email: Email } })
       .then(({ data }) => {
@@ -90,9 +88,7 @@ class SocialLogin extends Component {
           });
         }
 
-        this.props.sendNotification(
-          'error', 'Error', 'We will investigate this issue!',
-        );
+        this.props.sendNotification('error', 'Error', 'We will investigate this issue!');
       });
   };
 
@@ -113,9 +109,7 @@ class SocialLogin extends Component {
         localStorage.removeItem('email');
         CookieHelpers.setUserAuthCookie(data);
         this.props.updateRootAuthState();
-        this.props.sendNotification(
-          'success', 'Success', 'You have logged in!',
-        );
+        this.props.sendNotification('success', 'Success', 'You have logged in!');
         this.props.history.push(data.redirect_to);
       })
       .catch((error) => {
@@ -129,9 +123,7 @@ class SocialLogin extends Component {
             }
           });
         }
-        this.props.sendNotification(
-          'error', 'Error', 'We will investigate this issue!',
-        );
+        this.props.sendNotification('error', 'Error', 'We will investigate this issue!');
       });
   };
 

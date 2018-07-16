@@ -31,9 +31,7 @@ class IdmeVerify extends Component {
     } else if (qs.access_token) {
       postBackend('users/profile/verify', { access_token: qs.access_token })
         .then((response) => {
-          const isUserVerified = getValue(
-            response, 'data.verified', false,
-          );
+          const isUserVerified = getValue(response, 'data.verified', false);
 
           if (isUserVerified) {
             setUserVerifiedCookie(true);

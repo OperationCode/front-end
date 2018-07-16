@@ -28,41 +28,48 @@ ScrollButton.defaultProps = {
 function ScrollButton({
   className, children, fullWidth, href, onClick, tabIndex, theme,
 }) {
-  const buttonClassNames = classNames(
-    styles.Button, className, {
-      [styles.primary]: theme === 'primary',
-      [styles.secondary]: theme === 'secondary',
-      [styles.slate]: theme === 'slate',
-      [styles.fullWidth]: fullWidth,
-    },
-  );
+  const buttonClassNames = classNames(styles.Button, className, {
+    [styles.primary]: theme === 'primary',
+    [styles.secondary]: theme === 'secondary',
+    [styles.slate]: theme === 'slate',
+    [styles.fullWidth]: fullWidth,
+  });
 
   // TODO: Handle non-string input for analytics event label on both outbound and scroll link
   // Example: SVG as a child
-  const scrollLinkAnalyticsObject = {
+  const eventDetails = {
     category: 'Scroll Button Clicked',
     action: `[${children}] from ${window.location.pathname}`,
   };
 
+  const isProd = process.env.NODE_ENV === 'production';
+
   // Report scroll link button clicks to Google Analytics
-  if (process.env.NODE_ENV === 'production') {
+  if (isProd) {
     ScrollEvent.scrollEvent.register('begin', () => {
-      ReactGA.event(scrollLinkAnalyticsObject);
+      ReactGA.event(eventDetails);
     });
   }
 
-  const scrollLinkAnalyticsMessage = `Analytics disabled. Message:
-    ${scrollLinkAnalyticsObject.category} - ${scrollLinkAnalyticsObject.action}`;
+  const clickHandler = () => {
+    if (!isProd) {
+      const analyticsMessage = `Analytics disabled.
+        Message: ${eventDetails.category} - ${eventDetails.action}`;
+
+      // eslint-disable-next-line no-console
+      console.log(analyticsMessage);
+      onClick(analyticsMessage);
+      return;
+    }
+
+    onClick();
+  };
 
   return (
     <ScrollLink
       className={buttonClassNames}
       duration={400}
-      onClick={() => {
-        // eslint-disable-next-line no-console
-        console.log(scrollLinkAnalyticsMessage);
-        onClick(scrollLinkAnalyticsMessage);
-      }}
+      onClick={clickHandler}
       smooth
       tabIndex={tabIndex}
       to={href}
