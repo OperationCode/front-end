@@ -17,12 +17,12 @@ function Join() {
         <p>
           Operation Code is leading the way to expand opportunities for military veterans and their
           families to learn new skills, and build a career in the fast-growing technology sector.
+          <br />
+          Join our community for free and jumpstart your skills today!
         </p>
-        <p>
-Join our community for free and jumpstart your skills today!
-        </p>
+
         <Button
-          link="/join"
+          href="/join"
           theme="secondary"
         >
           Join
