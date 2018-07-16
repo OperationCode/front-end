@@ -2,3 +2,4 @@ This file was made because I can't leave TODO comments in JSON
 
 - Search for "TODO" in repo and resolve all issues
 - Resolve react/no-unused-prop-types rule issue
+- Make stories for form components
