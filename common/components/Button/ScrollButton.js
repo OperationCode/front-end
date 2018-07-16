@@ -65,7 +65,7 @@ function ScrollButton({
     onClick();
   };
 
-  const onEnterHandler = ev => (ev.key === 'Enter' ? clickHandler() : () => {});
+  const onEnterHandler = ev => (ev.key === 'Enter' ? clickHandler : () => {});
 
   return (
     <ScrollLink

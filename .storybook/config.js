@@ -1,8 +1,11 @@
 import React from 'react';
 import Router from 'next/router';
 import { addDecorator, configure } from '@storybook/react';
+import { setDefaults } from '@storybook/addon-info';
 import { action } from '@storybook/addon-actions';
 import { setOptions } from '@storybook/addon-options';
+import { checkA11y } from '@storybook/addon-a11y';
+
 import brandingBackgrounds from './backgrounds';
 
 import 'common/styles/globalStyles.css';
@@ -44,7 +47,13 @@ const centerContainer = {
   minHeight: '50vh',
 };
 
+// addon-info
+setDefaults({
+  header: false,
+});
+
 addDecorator(story => <div style={centerContainer}>{story()}</div>);
 addDecorator(brandingBackgrounds);
+addDecorator(checkA11y);
 
 configure(loadStories, module);
