@@ -17,23 +17,7 @@ import styles from './Login.css';
 
 class Login extends Component {
   static propTypes = {
-    history: PropTypes.shape({
-      action: PropTypes.string,
-      block: PropTypes.func,
-      createHref: PropTypes.func,
-      go: PropTypes.func,
-      goBack: PropTypes.func,
-      goForward: PropTypes.func,
-      length: PropTypes.number,
-      listen: PropTypes.func,
-      location: PropTypes.shape({
-        key: PropTypes.string,
-        pathname: PropTypes.string,
-        search: PropTypes.string,
-      }),
-      push: PropTypes.func,
-      replace: PropTypes.func,
-    }).isRequired,
+    history: PropTypes.object.isRequired,
     isAuth: PropTypes.bool,
     sendNotification: PropTypes.func.isRequired,
     updateRootAuthState: PropTypes.func,
@@ -79,11 +63,9 @@ class Login extends Component {
   };
 
   setSsoParams = () => {
-    const { ssoParamsPresent } = this.state;
-
     const parsed = queryString.parse(location.search); //eslint-disable-line
 
-    if (ssoParamsPresent) {
+    if (this.state.ssoParamsPresent) {
       this.setState({
         sso: parsed.sso,
         sig: parsed.sig,
@@ -118,9 +100,7 @@ class Login extends Component {
   };
 
   checkSsoLoggedIn = () => {
-    const { props, state } = this;
-
-    if (state.ssoParamsPresent && props.isAuth) {
+    if (this.state.ssoParamsPresent && this.props.isAuth) {
       this.ssoLoggedInRedirect();
     }
   };
@@ -128,8 +108,10 @@ class Login extends Component {
   ssoLoggedInRedirect = () => {
     const { state } = this;
 
+    const url = `${config.backendUrl}/sessions/sso?sso=${encodeURI(state.sso)}&sig=${state.sig}`;
+
     axios
-      .get(`${config.backendUrl}/sessions/sso?sso=${encodeURI(state.sso)}&sig=${state.sig}`, { headers: { Authorization: `Bearer ${CookieHelpers.authToken()}` } })
+      .get(url, { headers: { Authorization: `Bearer ${CookieHelpers.authToken()}` } })
       .then(({ data }) => {
         window.location = data.redirect_to;
       })
@@ -140,6 +122,7 @@ class Login extends Component {
 
   isFormValid = () => {
     const { emailValid, passwordValid } = this.state;
+
     return emailValid && passwordValid;
   };
 
@@ -209,22 +192,14 @@ class Login extends Component {
               inputType="password"
               onChange={this.onPasswordChange}
             />
-            {errorFeedback && (
-            <h2 className={styles.loginError}>
-              {errorFeedback}
-            </h2>
-            )}
+            {errorFeedback && <h2 className={styles.loginError}>{errorFeedback}</h2>}
             <FormButton
               className={styles.loginBtn}
               text="Login"
               onClick={this.handleOnClick}
             />
             <span className={styles.resetBtn}>
-              Forgot your password?
-              {' '}
-              <Link to="/reset_password">
-Reset it.
-              </Link>
+              Forgot your password? <Link to="/reset_password">Reset it.</Link>
             </span>
           </Form>
 

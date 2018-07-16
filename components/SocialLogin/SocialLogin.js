@@ -15,23 +15,7 @@ class SocialLogin extends Component {
   static propTypes = {
     sendNotification: PropTypes.func.isRequired,
     updateRootAuthState: PropTypes.func,
-    history: PropTypes.shape({
-      action: PropTypes.string,
-      block: PropTypes.func,
-      createHref: PropTypes.func,
-      go: PropTypes.func,
-      goBack: PropTypes.func,
-      goForward: PropTypes.func,
-      length: PropTypes.number,
-      listen: PropTypes.func,
-      location: PropTypes.shape({
-        key: PropTypes.string,
-        pathname: PropTypes.string,
-        search: PropTypes.string,
-      }),
-      push: PropTypes.func,
-      replace: PropTypes.func,
-    }).isRequired,
+    history: PropTypes.object.isRequired,
   };
 
   static defaultProps = { updateRootAuthState: () => {} };
