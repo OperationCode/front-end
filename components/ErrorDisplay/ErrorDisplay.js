@@ -6,6 +6,7 @@ ErrorDisplay.propTypes = {
   statusCode: PropTypes.number.isRequired,
 };
 
+// Formerly known as FourOhFour (404)
 function ErrorDisplay({
   statusCode,
 }) {
