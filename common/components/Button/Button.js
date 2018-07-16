@@ -8,6 +8,7 @@ import styles from './Button.css';
 Button.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
+  disabled: PropTypes.bool,
   fullWidth: PropTypes.bool,
   href: PropTypes.string,
   onClick: PropTypes.func,
@@ -18,6 +19,7 @@ Button.propTypes = {
 Button.defaultProps = {
   children: undefined,
   className: '',
+  disabled: false,
   fullWidth: false,
   href: undefined,
   onClick: undefined,
@@ -26,12 +28,13 @@ Button.defaultProps = {
 };
 
 function Button({
-  className, children, fullWidth, href, onClick, tabIndex, theme,
+  className, children, disabled, fullWidth, href, onClick, tabIndex, theme,
 }) {
   // TODO: Handle non-string input for analytics event label on both outbound and scroll link
   // Example: SVG as a child
 
   const buttonClassNames = classNames(styles.Button, className, styles[theme], {
+    [styles.disabled]: disabled,
     [styles.fullWidth]: fullWidth,
   });
 
@@ -40,7 +43,8 @@ function Button({
     return (
       <button
         className={buttonClassNames}
-        onClick={onClick}
+        disabled={disabled}
+        onClick={disabled ? () => {} : onClick}
         tabIndex={tabIndex}
       >
         {children}
@@ -71,7 +75,7 @@ function Button({
       prefetch
     >
       {/* eslint-disable */}
-      {/* bunch of a11y rules... */}
+      {/* TODO: resolve a bunch of a11y rules... */}
       <a className={buttonClassNames} onClick={onClick}>
         {children}
       </a>

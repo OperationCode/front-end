@@ -9,6 +9,7 @@ storiesOf('Common/Button', module)
   .addDecorator(withKnobs)
   .add('default', () => (
     <Button
+      disabled={boolean('disabled', false)}
       fullWidth={boolean('fullWidth', false)}
       href={text('href', '')}
       onClick={action('Button Clicked!')}

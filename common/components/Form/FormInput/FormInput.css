@@ -1,0 +1,21 @@
+.formInput {
+  composes: formControl from "../Form.css";
+}
+
+.formInput > input::placeholder {
+  color: #999999;
+}
+
+.formInput > .error {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #d1665a;
+}
+
+.formInput > span {
+  color: #d1665a;
+}
+
+.formInput > input:focus {
+  border-style: none;
+}
