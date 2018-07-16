@@ -12,9 +12,7 @@ AdBanner.propTypes = {
   imageSource: PropTypes.string.isRequired,
 };
 
-AdBanner.defaultProps = {
-  className: '',
-};
+AdBanner.defaultProps = { className: '' };
 
 function AdBanner({
   altText, children, className, imageSource, href,

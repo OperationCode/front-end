@@ -21,9 +21,9 @@ Heading.defaultProps = {
 function Heading({
   children, className, hasHeadingLines, id, theme,
 }) {
-  const classes = classNames(className, styles.Heading, styles[theme], {
-    [`${styles.headingLines}`]: hasHeadingLines,
-  });
+  const classes = classNames(
+    className, styles.Heading, styles[theme], { [`${styles.headingLines}`]: hasHeadingLines },
+  );
 
   return (
     <h2

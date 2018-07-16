@@ -34,9 +34,7 @@ class SocialLogin extends Component {
     }).isRequired,
   };
 
-  static defaultProps = {
-    updateRootAuthState: () => {},
-  };
+  static defaultProps = { updateRootAuthState: () => {} };
 
   state = {
     error: false,
@@ -52,15 +50,11 @@ class SocialLogin extends Component {
   }
 
   onZipChange = (value, valid) => {
-    this.setState({
-      zip: value, zipValid: valid,
-    });
+    this.setState({ zip: value, zipValid: valid });
   };
 
   onPasswordChange = (value, valid) => {
-    this.setState({
-      password: value, passwordValid: valid,
-    });
+    this.setState({ password: value, passwordValid: valid });
   };
 
   onExit = () => {
@@ -69,16 +63,12 @@ class SocialLogin extends Component {
     window.localStorage.removeItem('email');
   };
 
-  run = (First, Last, Email) => {
+  run = (
+    First, Last, Email,
+  ) => {
     axios
-      .get(`${config.backendUrl}/social_users`, {
-        params: {
-          email: Email,
-        },
-      })
-      .then(({
-        data,
-      }) => {
+      .get(`${config.backendUrl}/social_users`, { params: { email: Email } })
+      .then(({ data }) => {
         window.localStorage.setItem('firstname', `${First}`);
         window.localStorage.setItem('lastname', `${Last}`);
         window.localStorage.setItem('email', `${Email}`);
@@ -100,7 +90,9 @@ class SocialLogin extends Component {
           });
         }
 
-        this.props.sendNotification('error', 'Error', 'We will investigate this issue!');
+        this.props.sendNotification(
+          'error', 'Error', 'We will investigate this issue!',
+        );
       });
   };
 
@@ -115,15 +107,15 @@ class SocialLogin extends Component {
           password: Password,
         },
       })
-      .then(({
-        data,
-      }) => {
+      .then(({ data }) => {
         localStorage.removeItem('firstname');
         localStorage.removeItem('lastname');
         localStorage.removeItem('email');
         CookieHelpers.setUserAuthCookie(data);
         this.props.updateRootAuthState();
-        this.props.sendNotification('success', 'Success', 'You have logged in!');
+        this.props.sendNotification(
+          'success', 'Success', 'You have logged in!',
+        );
         this.props.history.push(data.redirect_to);
       })
       .catch((error) => {
@@ -137,21 +129,19 @@ class SocialLogin extends Component {
             }
           });
         }
-        this.props.sendNotification('error', 'Error', 'We will investigate this issue!');
+        this.props.sendNotification(
+          'error', 'Error', 'We will investigate this issue!',
+        );
       });
   };
 
   handleOnClick = (e) => {
     e.preventDefault();
-    this.setState({
-      isLoading: true,
-    });
+    this.setState({ isLoading: true });
     if (this.isFormValid()) {
       this.login(this.state.zip, this.state.password);
     } else {
-      this.setState({
-        error: 'Missing required field(s)', isLoading: false,
-      });
+      this.setState({ error: 'Missing required field(s)', isLoading: false });
       this.zipRef.inputRef.revalidate();
       this.passwordRef.inputRef.revalidate();
     }

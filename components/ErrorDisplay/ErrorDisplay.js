@@ -2,13 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './ErrorDisplay.css';
 
-ErrorDisplay.propTypes = {
-  statusCode: PropTypes.number.isRequired,
-};
+ErrorDisplay.propTypes = { statusCode: PropTypes.number.isRequired };
 
-function ErrorDisplay({
-  statusCode,
-}) {
+// Formerly known as FourOhFour (404)
+function ErrorDisplay({ statusCode }) {
   return (
     <div className={styles.ErrorDisplay}>
       <div className={styles.bg}>

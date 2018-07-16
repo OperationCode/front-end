@@ -36,9 +36,9 @@ function IconTextGrouping({
   title,
   url,
 }) {
-  const iconTextGroupingClassNames = classNames(styles.IconTextGrouping, className, styles[theme], {
-    [styles.link]: !!url,
-  });
+  const iconTextGroupingClassNames = classNames(
+    styles.IconTextGrouping, className, styles[theme], { [styles.link]: !!url },
+  );
 
   const content = (
     <React.Fragment>

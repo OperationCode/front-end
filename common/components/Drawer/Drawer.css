@@ -6,7 +6,7 @@
   overflow: hidden;
   width: 100%;
   z-index: 2;
-  transition: left .25s ease-in-out;
+  transition: left 0.25s ease-in-out;
 }
 
 .hidden {

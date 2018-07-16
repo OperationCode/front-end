@@ -10,9 +10,7 @@ function Donate() {
       className={styles.DonateSection}
       hasHeadingLines={false}
       headingTheme="white"
-      style={{
-        backgroundImage: `url(${s3}background_flag.jpg`,
-      }}
+      style={{ backgroundImage: `url(${s3}background_flag.jpg` }}
       title="Donate"
       theme="slate"
     >

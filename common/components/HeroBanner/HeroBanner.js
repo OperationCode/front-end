@@ -19,9 +19,7 @@ HeroBanner.defaultProps = {
 function HeroBanner({
   children, className, imageSrc, title, subtitle,
 }) {
-  const dynamicBackgroundImage = {
-    backgroundImage: `url(${imageSrc})`,
-  };
+  const dynamicBackgroundImage = { backgroundImage: `url(${imageSrc})` };
 
   return (
     <div

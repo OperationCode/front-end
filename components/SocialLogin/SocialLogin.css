@@ -14,15 +14,14 @@
 
 .signup span {
   padding: 10px 8px 30px 8px;
-  font-size:16px;
-
+  font-size: 16px;
 }
 
 .signupForm {
-  max-width:500px;
+  max-width: 500px;
   display: flex;
-  margin:auto;
-  border: 1px solid rgb(92,105,122);
+  margin: auto;
+  border: 1px solid rgb(92, 105, 122);
   padding: 10px;
   width: 100%;
 }
@@ -35,7 +34,7 @@
 
 .errorList {
   align-self: center;
-  color: #ff665A;
+  color: #ff665a;
   font-size: 1.5rem;
   font-weight: 800;
   list-style-position: inside;
@@ -51,7 +50,7 @@
   .signupForm {
     max-width: 298px;
     margin: auto;
-    border: 1px solid rgb(92,105,122);
+    border: 1px solid rgb(92, 105, 122);
     padding: 10px;
   }
 

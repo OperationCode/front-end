@@ -10,7 +10,9 @@ storiesOf('Common/Heading', module)
     <Heading
       id={text('id', 'heading1')}
       hasHeadingLines={boolean('hasHeadingLines', true)}
-      theme={select('theme', ['gray', 'slate', 'white'], 'gray')}
+      theme={select(
+'theme', ['gray', 'slate', 'white'], 'gray',
+)}
     >
       {text('children', 'Heading Component')}
     </Heading>
