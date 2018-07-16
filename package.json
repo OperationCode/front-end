@@ -16,6 +16,7 @@
     "@storybook/addon-a11y": "^3.4.8",
     "@storybook/addon-actions": "^3.4.8",
     "@storybook/addon-backgrounds": "^3.4.8",
+    "@storybook/addon-info": "^3.4.8",
     "@storybook/addon-knobs": "^3.4.8",
     "@storybook/addon-options": "^3.4.8",
     "@storybook/addon-viewport": "^3.4.8",
