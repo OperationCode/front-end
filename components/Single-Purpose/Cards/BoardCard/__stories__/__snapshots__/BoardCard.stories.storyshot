@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Single-Purpose/Cards/BoardCard default 1`] = `
+<article
+  className="Card BoardCard animatedCard"
+>
+  <div
+    className="imageContainer"
+  >
+    <img
+      alt="Headshot of Kyle Holmberg"
+      src="https://kylemh.com/public/img/me.jpg"
+    />
+  </div>
+  <h6
+    className="name"
+  >
+    Kyle Holmberg
+  </h6>
+  <i
+    className="boardRole"
+  >
+    Bossman Extraordinaire
+  </i>
+  <hr
+    className="hr"
+  />
+  <span
+    className="descriptionText"
+  >
+    The man, the myth, the legend. He hated his life most when configuring postcss loader.
+  </span>
+</article>
+`;
