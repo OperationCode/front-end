@@ -32,8 +32,6 @@ storiesOf('Common/ScrollButton', module)
           {text('children', 'Click Me! (will scroll down)')}
         </ScrollButton>
 
-        <span id="anchor">
-          Scroll To Me
-        </span>
+        <span id="anchor">Scroll To Me</span>
       </div>
-    )));
+    )),);

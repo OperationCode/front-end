@@ -13,9 +13,7 @@ function ErrorDisplay({ statusCode }) {
           {statusCode}
           !
         </h1>
-        <p className={styles.paragraph}>
-You definitely weren&apos;t supposed to see this...
-        </p>
+        <p className={styles.paragraph}>You definitely weren&apos;t supposed to see this...</p>
       </div>
     </div>
   );

@@ -19,4 +19,4 @@ storiesOf('Common/OutboundLink', module)
       >
         {text('children', 'White House Official Website')}
       </OutboundLink>
-    )));
+    )),);

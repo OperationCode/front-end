@@ -9,7 +9,7 @@ class FormZipCode extends Component {
         {...this.props}
         validateFunc={zipCodeValidator}
         validationErrorMessage="Must enter a valid zip code"
-        ref={(child) => {
+        ref={child => {
           this.inputRef = child;
         }}
       />

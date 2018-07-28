@@ -12,4 +12,4 @@ storiesOf('Common/Drawer', module)
       <Drawer isVisible={boolean('isVisible', false)}>
         {text('children', 'Only visible on Tablet view port size and under')}
       </Drawer>
-    )));
+    )),);

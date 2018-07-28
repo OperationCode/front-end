@@ -15,7 +15,7 @@ AdBanner.propTypes = {
 AdBanner.defaultProps = { className: '' };
 
 function AdBanner({
-  altText, children, className, imageSource, href,
+ altText, children, className, imageSource, href 
 }) {
   return (
     <OutboundLink
@@ -32,9 +32,7 @@ function AdBanner({
             src={imageSource}
           />
         </div>
-        <h4 className={styles.adBannerText}>
-          {children}
-        </h4>
+        <h4 className={styles.adBannerText}>{children}</h4>
       </div>
     </OutboundLink>
   );

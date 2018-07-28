@@ -5,11 +5,13 @@ import SocialLogin from './SocialLogin';
 import styles from './SocialMediaButtons.css';
 
 function Google(props) {
-  const responseGoogle = (response) => {
+  const responseGoogle = response => {
     const login = new SocialLogin(props);
-    login.run(response.profileObj.givenName,
+    login.run(
+      response.profileObj.givenName,
       response.profileObj.familyName,
-      response.profileObj.email);
+      response.profileObj.email,
+    );
   };
 
   return (

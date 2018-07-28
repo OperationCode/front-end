@@ -47,7 +47,9 @@ class SocialLogin extends Component {
     window.localStorage.removeItem('email');
   };
 
-  run = (First, Last, Email) => {
+  run = (
+First, Last, Email
+) => {
     const { props, state } = this;
 
     axios
@@ -62,11 +64,11 @@ class SocialLogin extends Component {
           this.login();
         }
       })
-      .catch((error) => {
+      .catch(error => {
         const data = getValue(error, 'response.data');
         let errorMessage = '';
         if (data) {
-          Object.keys(data).forEach((key) => {
+          Object.keys(data).forEach(key => {
             if (data && data[key]) {
               errorMessage += ` ${key}: ${data[key][0]} `;
               state.error = errorMessage;
@@ -74,7 +76,9 @@ class SocialLogin extends Component {
           });
         }
 
-        props.sendNotification('error', 'Error', 'We will investigate this issue!');
+        props.sendNotification(
+'error', 'Error', 'We will investigate this issue!'
+);
       });
   };
 
@@ -97,15 +101,17 @@ class SocialLogin extends Component {
         localStorage.removeItem('email');
         CookieHelpers.setUserAuthCookie(data);
         props.updateRootAuthState();
-        props.sendNotification('success', 'Success', 'You have logged in!');
+        props.sendNotification(
+'success', 'Success', 'You have logged in!'
+);
         props.history.push(data.redirect_to);
       })
-      .catch((error) => {
+      .catch(error => {
         const data = getValue(error, 'response.data');
 
         let errorMessage = '';
         if (data) {
-          Object.keys(data).forEach((key) => {
+          Object.keys(data).forEach(key => {
             if (data && data[key]) {
               errorMessage += ` ${key}: ${data[key][0]} `;
               this.setState({ error: errorMessage });
@@ -113,11 +119,13 @@ class SocialLogin extends Component {
           });
         }
 
-        props.sendNotification('error', 'Error', 'We will investigate this issue!');
+        props.sendNotification(
+'error', 'Error', 'We will investigate this issue!'
+);
       });
   };
 
-  handleOnClick = (e) => {
+  handleOnClick = e => {
     const { state } = this;
 
     e.preventDefault();
@@ -162,7 +170,7 @@ class SocialLogin extends Component {
             id="zip"
             placeholder="Zip Code (Required)"
             onChange={this.onZipChange}
-            ref={(child) => {
+            ref={child => {
               this.zipRef = child;
             }}
           />
@@ -172,16 +180,14 @@ class SocialLogin extends Component {
             onChange={this.onPasswordChange}
             validationRegex={/^(?=.*[A-Z]).{6,}$/}
             validationErrorMessage="Must be 6 characters long and include a capitalized letter"
-            ref={(child) => {
+            ref={child => {
               this.passwordRef = child;
             }}
           />
           {state.error && (
             <ul className={styles.errorList}>
               There was an error joining Operation Code:
-              <li className={styles.errorMessage}>
-                {state.error}
-              </li>
+              <li className={styles.errorMessage}>{state.error}</li>
             </ul>
           )}
           {state.isLoading ? (

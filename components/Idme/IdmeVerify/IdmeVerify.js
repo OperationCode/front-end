@@ -33,8 +33,10 @@ class IdmeVerify extends Component {
       this.setState({ error: qs.error_description });
     } else if (qs.access_token) {
       postBackend('users/profile/verify', { access_token: qs.access_token })
-        .then((response) => {
-          const isUserVerified = getValue(response, 'data.verified', false);
+        .then(response => {
+          const isUserVerified = getValue(
+response, 'data.verified', false
+);
 
           if (isUserVerified) {
             setUserVerifiedCookie(true);
@@ -59,16 +61,8 @@ class IdmeVerify extends Component {
 
     return (
       <Section title="Id.Me Verification">
-        {state.error && (
-          <h2 className={styles.error}>
-            {state.error}
-          </h2>
-        )}
-        {state.verified && (
-          <h2>
-            You have sucessfully verified with id.me
-          </h2>
-        )}
+        {state.error && <h2 className={styles.error}>{state.error}</h2>}
+        {state.verified && <h2>You have sucessfully verified with id.me</h2>}
       </Section>
     );
   }

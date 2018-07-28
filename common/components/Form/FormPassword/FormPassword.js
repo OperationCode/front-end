@@ -7,7 +7,7 @@ class FormPassword extends Component {
       <FormInput
         {...this.props}
         inputType="password"
-        ref={(child) => {
+        ref={child => {
           this.inputRef = child;
         }}
       />

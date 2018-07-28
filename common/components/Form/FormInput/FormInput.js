@@ -30,22 +30,22 @@ class FormInput extends Component {
     text: '',
   };
 
-  handleChange = (event) => {
+  handleChange = event => {
     const { props, state } = this;
 
     const isValid = this.validate(event.target.value);
     this.setState({
-      text: event.target.value,
-      isValid,
-    },
-    () => {
-      if (props.onChange) {
-        props.onChange(state.text, state.isValid);
-      }
-    });
+        text: event.target.value,
+        isValid,
+      },
+      () => {
+        if (props.onChange) {
+          props.onChange(state.text, state.isValid);
+        }
+      },);
   };
 
-  validate = (text) => {
+  validate = text => {
     const { props } = this;
 
     if (props.validateFunc) {
@@ -73,11 +73,7 @@ class FormInput extends Component {
 
     return (
       <div className={styles.formInput}>
-        {props.label && (
-        <Label htmlFor={props.id}>
-          {props.label}
-        </Label>
-        )}
+        {props.label && <Label htmlFor={props.id}>{props.label}</Label>}
 
         <input
           className={!state.isValid ? styles.error : undefined}
@@ -87,11 +83,7 @@ class FormInput extends Component {
           placeholder={props.placeholder}
           onChange={this.handleChange}
         />
-        {!state.isValid && (
-        <span>
-          {props.validationErrorMessage}
-        </span>
-        )}
+        {!state.isValid && <span>{props.validationErrorMessage}</span>}
       </div>
     );
   }

@@ -24,14 +24,16 @@ Section.defaultProps = {
 };
 
 function Section({
-  children, className, hasHeadingLines, id, theme, style, title,
+ children, className, hasHeadingLines, id, theme, style, title 
 }) {
   // heading theme should contrast from section's theme.
   const headingTheme = theme === 'white' || theme === 'grayLight' ? 'slate' : 'white';
 
   return (
     <section
-      className={classNames(className, styles.Section, styles[theme])}
+      className={classNames(
+className, styles.Section, styles[theme]
+)}
       style={style}
     >
       {title && (
@@ -43,9 +45,7 @@ function Section({
           {title}
         </Heading>
       )}
-      <div className={styles.content}>
-        {children}
-      </div>
+      <div className={styles.content}>{children}</div>
     </section>
   );
 }

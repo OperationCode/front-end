@@ -14,4 +14,4 @@ storiesOf('Common/YouTubeVideo', module)
         width={number('width', 640)}
         videoId={text('videoId', 'dQw4w9WgXcQ')}
       />
-    )));
+    )),);

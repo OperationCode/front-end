@@ -44,11 +44,11 @@ function Button({
   // Example: SVG as a child
 
   const buttonClassNames = classNames(
-    styles.Button, className, styles[theme], {
-      [styles.disabled]: disabled,
-      [styles.fullWidth]: fullWidth,
-    },
-  );
+styles.Button, className, styles[theme], {
+    [styles.disabled]: disabled,
+    [styles.fullWidth]: fullWidth,
+  }
+);
 
   const onClickHandler = !disabled ? onClick : () => {};
 

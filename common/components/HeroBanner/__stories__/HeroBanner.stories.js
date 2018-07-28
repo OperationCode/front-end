@@ -11,10 +11,10 @@ storiesOf('Common/HeroBanner', module)
     withInfo()(() => (
       <HeroBanner
         imageSrc={text('imageSrc',
-          'https://s3.amazonaws.com/operationcode-assets/heroBanners/churchill.jpg')}
+          'https://s3.amazonaws.com/operationcode-assets/heroBanners/churchill.jpg',)}
         title={text('title', 'Hero Banner')}
         subtitle={text('subtitle', '')}
       >
         {text('children', '')}
       </HeroBanner>
-    )));
+    )),);

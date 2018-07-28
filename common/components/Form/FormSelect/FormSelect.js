@@ -6,9 +6,9 @@ class FormSelect extends Component {
     id: PropTypes.string,
     onChange: PropTypes.func,
     options: PropTypes.arrayOf(PropTypes.shape({
-      label: PropTypes.string.isRequired,
-      value: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.bool]).isRequired,
-    })).isRequired,
+        label: PropTypes.string.isRequired,
+        value: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.bool]).isRequired,
+      }),).isRequired,
     prompt: PropTypes.string,
     validationFunc: PropTypes.func,
   };
@@ -51,7 +51,7 @@ class FormSelect extends Component {
       opts.push(blankOptionJSX);
     }
 
-    options.forEach((optionObject) => {
+    options.forEach(optionObject => {
       const optionJSX = (
         <option
           key={optionObject.value}

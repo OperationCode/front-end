@@ -15,11 +15,13 @@ Card.defaultProps = {
 };
 
 function Card({
-  children, className, hasAnimationOnHover,
+ children, className, hasAnimationOnHover 
 }) {
   return (
     <article
-      className={classNames(styles.Card, className, { [styles.animatedCard]: hasAnimationOnHover })}
+      className={classNames(
+styles.Card, className, { [styles.animatedCard]: hasAnimationOnHover }
+)}
     >
       {children}
     </article>

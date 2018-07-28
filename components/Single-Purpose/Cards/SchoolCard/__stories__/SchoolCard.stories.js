@@ -14,7 +14,7 @@ storiesOf('Single-Purpose/Cards/SchoolCard', module)
       schoolCity={text('schoolCity', 'Culver City')}
       schoolState={text('schoolState', 'CA')}
       logoSource={text('logoSource',
-        'https://s3.amazonaws.com/operationcode-assets/codeSchoolLogos/sabio.png')}
+        'https://s3.amazonaws.com/operationcode-assets/codeSchoolLogos/sabio.png',)}
       acceptsGIBill={boolean('acceptsGIBill', true)}
       isFullTime={boolean('isFullTime', true)}
       hasHardware={boolean('hasHardware', false)}

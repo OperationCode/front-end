@@ -4,6 +4,7 @@
     "build-storybook": "build-storybook -s ./static -c .storybook -o .storybook-dist",
     "build": "next build",
     "dev": "next",
+    "format": "prettier --write \"**/*.{js,css}\" && eslint --fix \"**/*.js\"",
     "start": "next start",
     "storybook": "start-storybook -s ./static -p 9001 -c .storybook",
     "test": "NODE_ENV=test jest"

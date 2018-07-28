@@ -56,8 +56,10 @@ class Login extends Component {
     this.setState({ password: value, passwordValid: valid });
   };
 
-  setErrorMessage = (error) => {
-    const errorStatus = getVal(error, ['response', 'status'], -1);
+  setErrorMessage = error => {
+    const errorStatus = getVal(
+error, ['response', 'status'], -1
+);
     const errorMessage = getVal(error, 'message');
     this.setState({ errorStatus, errorMessage });
   };
@@ -68,10 +70,10 @@ class Login extends Component {
 
     if (ssoParamsPresent) {
       this.setState({
-        sso: parsed.sso,
-        sig: parsed.sig,
-      },
-      this.checkSsoLoggedIn);
+          sso: parsed.sso,
+          sig: parsed.sig,
+        },
+        this.checkSsoLoggedIn,);
     }
   };
 
@@ -118,7 +120,7 @@ class Login extends Component {
       .then(({ data }) => {
         window.location = data.redirect_to;
       })
-      .catch((error) => {
+      .catch(error => {
         this.setErrorMessage(error);
       });
   };
@@ -129,7 +131,7 @@ class Login extends Component {
     return emailValid && passwordValid;
   };
 
-  handleOnClick = (e) => {
+  handleOnClick = e => {
     const { props, state } = this;
 
     e.preventDefault();
@@ -148,16 +150,22 @@ class Login extends Component {
           CookieHelpers.setUserAuthCookie(data);
           this.setState({ authenticated: true });
           props.updateRootAuthState();
-          props.sendNotification('success', 'Success', 'You have logged in!');
+          props.sendNotification(
+'success', 'Success', 'You have logged in!'
+);
           if (state.ssoParamsPresent) {
             window.location = data.redirect_to;
           } else {
             props.history.push(data.redirect_to);
           }
         })
-        .catch((error) => {
-          if (getVal(error, ['response', 'status'], -1) !== 401) {
-            props.sendNotification('error', 'Error', 'We will investigate this issue!');
+        .catch(error => {
+          if (getVal(
+error, ['response', 'status'], -1
+) !== 401) {
+            props.sendNotification(
+'error', 'Error', 'We will investigate this issue!'
+);
           }
 
           this.setErrorMessage(error);
@@ -195,22 +203,14 @@ class Login extends Component {
               inputType="password"
               onChange={this.onPasswordChange}
             />
-            {errorFeedback && (
-            <h2 className={styles.loginError}>
-              {errorFeedback}
-            </h2>
-            )}
+            {errorFeedback && <h2 className={styles.loginError}>{errorFeedback}</h2>}
             <FormButton
               className={styles.loginBtn}
               text="Login"
               onClick={this.handleOnClick}
             />
             <span className={styles.resetBtn}>
-              Forgot your password?
-              {' '}
-              <Link to="/reset_password">
-Reset it.
-              </Link>
+              Forgot your password? <Link to="/reset_password">Reset it.</Link>
             </span>
           </Form>
 

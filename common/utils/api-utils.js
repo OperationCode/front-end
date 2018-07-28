@@ -17,12 +17,16 @@ function makeGenericGet(endpoint) {
 
 export function postBackend(path, body) {
   const authHeader = setAuthorizationHeader();
-  return axios.post(`${config.backendUrl}/${path}`, body, { headers: authHeader });
+  return axios.post(
+`${config.backendUrl}/${path}`, body, { headers: authHeader }
+);
 }
 
 export function patchBackend(path, body) {
   const authHeader = setAuthorizationHeader();
-  return axios.patch(`${config.backendUrl}/${path}`, body, { headers: authHeader });
+  return axios.patch(
+`${config.backendUrl}/${path}`, body, { headers: authHeader }
+);
 }
 
 export const getServices = () => makeGenericGet('services');
@@ -36,11 +40,12 @@ export const getScholarships = () => makeGenericGet('scholarships');
 export const getScholarship = id => makeGenericGet(`scholarships/${id}`);
 
 export function postRequest({
-  language, additionalDetails, mentor, service,
+ language, additionalDetails, mentor, service 
 }) {
   const authHeader = setAuthorizationHeader();
 
-  return axios.post(`${config.backendUrl}/requests`,
+  return axios.post(
+    `${config.backendUrl}/requests`,
     {
       request: {
         details: additionalDetails,
@@ -49,20 +54,23 @@ export function postRequest({
         language,
       },
     },
-    { headers: authHeader });
+    { headers: authHeader },
+  );
 }
 
 export function updateRequest({
-  request, status, mentor,
+ request, status, mentor 
 }) {
   const authHeader = setAuthorizationHeader();
 
-  return axios.patch(`${config.backendUrl}/requests/${request}`,
+  return axios.patch(
+    `${config.backendUrl}/requests/${request}`,
     {
       request: {
         status,
         mentor,
       },
     },
-    { headers: authHeader });
+    { headers: authHeader },
+  );
 }

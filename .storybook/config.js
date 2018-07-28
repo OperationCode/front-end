@@ -40,7 +40,6 @@ const mockedRouter = {
 Router.router = mockedRouter;
 /* ***************************** */
 
-
 // addon-info
 setDefaults({
   header: false,
