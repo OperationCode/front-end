@@ -9,7 +9,7 @@ SuccessStory.propTypes = {
 };
 
 function SuccessStory({
-  imageSource, quote, title,
+ imageSource, quote, title 
 }) {
   return (
     <div className={styles.SuccessStory}>
@@ -20,12 +20,8 @@ function SuccessStory({
       />
 
       <div className={styles.quote}>
-        <h3 className={styles.title}>
-          {title}
-        </h3>
-        <blockquote>
-          {`"${quote}"`}
-        </blockquote>
+        <h3 className={styles.title}>{title}</h3>
+        <blockquote>{`"${quote}"`}</blockquote>
       </div>
     </div>
   );

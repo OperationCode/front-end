@@ -21,4 +21,4 @@ storiesOf('Common/Button', module)
       >
         {text('children', 'Click Me!')}
       </Button>
-    )));
+    )),);

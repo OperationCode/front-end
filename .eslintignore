@@ -1,1 +1,6 @@
 common/styles/themeMap.js
+.next
+.github
+bin
+node_modules
+static

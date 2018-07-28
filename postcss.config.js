@@ -1,5 +1,5 @@
 module.exports = ({
-  file, options, env,
+ file, options, env 
 }) => {
   /* eslint-disable global-require */
   const postCSSPlugins = [
@@ -9,15 +9,15 @@ module.exports = ({
 
   if (env === 'production') {
     postCSSPlugins.push(require('autoprefixer')({
-      ...options.autoprefixer,
-      browsers: [
-        '>1%',
-        'last 4 versions',
-        'Firefox ESR',
-        'not ie < 9', // React doesn't support IE8 anyway
-      ],
-      flexbox: 'no-2009',
-    }));
+        ...options.autoprefixer,
+        browsers: [
+          '>1%',
+          'last 4 versions',
+          'Firefox ESR',
+          'not ie < 9', // React doesn't support IE8 anyway
+        ],
+        flexbox: 'no-2009',
+      }),);
   }
 
   return { plugins: postCSSPlugins };

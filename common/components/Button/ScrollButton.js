@@ -6,7 +6,7 @@ import { Link as ScrollLink, Events as ScrollEvent } from 'react-scroll';
 import styles from './Button.css';
 
 ScrollButton.propTypes = {
-  children: PropTypes.node,
+  children: PropTypes.node.isRequired,
   className: PropTypes.string,
   fullWidth: PropTypes.bool,
   href: PropTypes.string,
@@ -16,24 +16,25 @@ ScrollButton.propTypes = {
 };
 
 ScrollButton.defaultProps = {
-  children: undefined,
   className: '',
   fullWidth: false,
-  href: undefined,
-  onClick: undefined,
+  href: '',
+  onClick: () => {},
   tabIndex: 0,
   theme: 'primary',
 };
 
 function ScrollButton({
-  className, children, fullWidth, href, onClick, tabIndex, theme,
+ className, children, fullWidth, href, onClick, tabIndex, theme
 }) {
-  const buttonClassNames = classNames(styles.Button, className, {
+  const buttonClassNames = classNames(
+styles.Button, className, {
     [styles.primary]: theme === 'primary',
     [styles.secondary]: theme === 'secondary',
     [styles.slate]: theme === 'slate',
     [styles.fullWidth]: fullWidth,
-  });
+  }
+);
 
   // TODO: Handle non-string input for analytics event label on both outbound and scroll link
   // Example: SVG as a child

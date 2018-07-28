@@ -14,8 +14,8 @@ storiesOf('Common/Modal', module)
         isOpen={boolean('isOpen', false)}
         onRequestClose={action('onRequestClose function called')}
         screenReaderLabel={text('screenReaderLabel',
-          'This is how the modal will be declared to screen readers')}
+          'This is how the modal will be declared to screen readers',)}
       >
         {text('children', 'Modal text.')}
       </Modal>
-    )));
+    )),);

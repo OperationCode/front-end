@@ -17,7 +17,7 @@ HeroBanner.defaultProps = {
 };
 
 function HeroBanner({
-  children, className, imageSrc, title, subtitle,
+ children, className, imageSrc, title, subtitle 
 }) {
   const dynamicBackgroundImage = { backgroundImage: `url(${imageSrc})` };
 
@@ -27,14 +27,8 @@ function HeroBanner({
       className={`${className} ${styles.HeroBanner}`}
     >
       <div className={styles.text}>
-        <h1 className={subtitle && styles.underline}>
-          {title}
-        </h1>
-        {subtitle && (
-        <h6>
-          {subtitle}
-        </h6>
-        )}
+        <h1 className={subtitle && styles.underline}>{title}</h1>
+        {subtitle && <h6>{subtitle}</h6>}
         {children}
       </div>
     </div>

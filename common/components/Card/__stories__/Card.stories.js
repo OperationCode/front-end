@@ -12,4 +12,4 @@ storiesOf('Common/Card', module)
       <Card hasAnimationOnHover={boolean('hasAnimationOnHover', false)}>
         {text('children', 'This is the card content...')}
       </Card>
-    )));
+    )),);

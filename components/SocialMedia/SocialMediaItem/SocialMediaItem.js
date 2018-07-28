@@ -10,7 +10,7 @@ SocialMediaItem.propTypes = {
 };
 
 function SocialMediaItem({
-  link, smImage, smText,
+ link, smImage, smText 
 }) {
   return (
     <div className={styles.SocialMediaItem}>

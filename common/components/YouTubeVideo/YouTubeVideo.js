@@ -18,7 +18,7 @@ YouTubeVideo.defaultProps = {
 };
 
 function YouTubeVideo({
-  className, height, width, videoId,
+ className, height, width, videoId 
 }) {
   const options = {
     height: `${height}`,
@@ -28,7 +28,7 @@ function YouTubeVideo({
   return (
     <YouTube
       className={classNames(className, styles.YouTubeVideo)}
-      onReady={(e) => {
+      onReady={e => {
         e.target.pauseVideo();
       }}
       opts={options}

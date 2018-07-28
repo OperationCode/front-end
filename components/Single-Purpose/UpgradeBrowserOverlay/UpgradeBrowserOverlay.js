@@ -1,7 +1,7 @@
 import React from 'react';
-import ReactModal from 'react-modal';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import faExclamationTriangle from '@fortawesome/fontawesome-free-solid/faExclamationTriangle';
+import Modal from 'common/components/Modal/Modal';
 import OutboundLink from 'common/components/OutboundLink/OutboundLink';
 import { s3 } from 'common/constants/urls';
 import styles from './UpgradeBrowserOverlay.css';
@@ -31,30 +31,32 @@ function UpgradeBrowserOverlay() {
   ];
 
   return (
-    <ReactModal
+    <Modal
       className={styles.UpgradeBrowserOverlay}
-      isOpen="true"
+      screenReaderLabel="Please Upgrade Your Browser"
+      isOpen
       overlayClassName={styles.overlay}
+      shouldCloseOnOverlayClick={false}
     >
       <div>
         <FontAwesomeIcon
           className={styles.warningLogo}
           icon={faExclamationTriangle}
         />
-        <h1>
-Please Upgrade Your Browser
-        </h1>
+        <h1>Please Upgrade Your Browser</h1>
         <div className={styles.message}>
           You might be experiencing some problems viewing this page. Use the links below to download
           or upgrade your existing browser for a seamless experience.
         </div>
         <div className={styles.browsersList}>
-          {/* eslint-disable-next-line object-curly-newline */}
-          {browsers.map(({ browserName, imageSource, downloadLink }) => (
-            <div className={styles.browser}>
-              <span className={styles.browserName}>
-                {browserName}
-              </span>
+          {browsers.map(({
+            browserName, imageSource, downloadLink
+          }) => (
+            <div
+              className={styles.browser}
+              key={browserName}
+            >
+              <span className={styles.browserName}>{browserName}</span>
               <OutboundLink
                 analyticsEventLabel={`${browserName} Download from <UpgradeBrowserOverlay>`}
                 hasIcon={false}
@@ -70,7 +72,7 @@ Please Upgrade Your Browser
           ))}
         </div>
       </div>
-    </ReactModal>
+    </Modal>
   );
 }
 

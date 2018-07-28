@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { zipCodeValidator } from 'common/utils/validator.utils';
+import { zipCodeValidator } from 'common/utils/validator-utils';
 import FormInput from '../FormInput/FormInput';
 
 class FormZipCode extends Component {
@@ -9,7 +9,7 @@ class FormZipCode extends Component {
         {...this.props}
         validateFunc={zipCodeValidator}
         validationErrorMessage="Must enter a valid zip code"
-        ref={(child) => {
+        ref={child => {
           this.inputRef = child;
         }}
       />

@@ -15,7 +15,7 @@ class FormTextArea extends Component {
 
   state = { value: '' };
 
-  handleChange = (event) => {
+  handleChange = event => {
     const { props, state } = this;
 
     this.setState({ value: event.target.value }, () => {

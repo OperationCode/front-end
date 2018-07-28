@@ -15,7 +15,7 @@ Drawer.defaultProps = {
 };
 
 function Drawer({
-  children, className, isVisible,
+ children, className, isVisible 
 }) {
   return (
     <div
@@ -24,9 +24,7 @@ function Drawer({
         [styles.hidden]: !isVisible,
       })}
     >
-      <div className={styles.content}>
-        {children}
-      </div>
+      <div className={styles.content}>{children}</div>
     </div>
   );
 }

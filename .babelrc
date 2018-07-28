@@ -1,55 +1,43 @@
 {
   "env": {
     "production": {
-      "presets": ["next/babel"],
-      "plugins": [
-        [
-          "module-resolver",
-          {
-            "root": ["./"],
-            "alias": {
-              "components": "./components",
-              "common": "./common",
-              "pages": "./pages",
-              "static": "./static"
-            }
-          }
-        ]
+      "presets": [
+        "next/babel"
       ]
     },
     "development": {
+      "presets": [
+        "next/babel"
+      ]
+    },
+    "test": {
       "presets": [
         [
           "next/babel",
           {
             "preset-env": {
-              "targets": {
-                "browsers": "last 1 Chrome version",
-                "node": true
-              }
-            },
-            "transform-runtime": {
-              "regenerator": false,
-              "useBuiltIns": true,
-              "polyfill": false
-            }
-          }
-        ]
-      ],
-      "plugins": [
-        [
-          "module-resolver",
-          {
-            "root": ["./"],
-            "alias": {
-              "components": "./components",
-              "common": "./common",
-              "pages": "./pages",
-              "static": "./static"
+              "modules": "commonjs"
             }
           }
         ]
       ]
     }
-  }
+  },
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": [
+          "./"
+        ],
+        "alias": {
+          "components": "./components",
+          "common": "./common",
+          "pages": "./pages",
+          "static": "./static",
+          "test-utils": "./test-utils"
+        }
+      }
+    ]
+  ]
 }

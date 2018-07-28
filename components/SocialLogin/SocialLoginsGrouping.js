@@ -17,7 +17,7 @@ SocialLoginsGrouping.defaultProps = {
 };
 
 function SocialLoginsGrouping({
-  className, history, sendNotification, updateRootAuthState,
+ className, history, sendNotification, updateRootAuthState 
 }) {
   return (
     <div className={`${styles.FlexRow} ${className}`}>

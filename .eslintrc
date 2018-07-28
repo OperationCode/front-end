@@ -1,5 +1,5 @@
 {
-  "extends": ["airbnb", "plugin:jsx-a11y/recommended"],
+  "extends": ["airbnb", "plugin:jsx-a11y/recommended", "prettier"],
   "env": {
     "browser": true,
     "commonjs": true,
@@ -9,10 +9,11 @@
   },
   "parser": "babel-eslint",
   "rules": {
-    "comma-dangle": "error",
-    "function-paren-newline": ["error", { "minItems": 4 }],
+    "comma-dangle": ["error", "only-multiline"],
+    "function-paren-newline": ["error", { "minItems": 3 }],
     "import/no-unresolved": "off",
     "import/extensions": "off",
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
     "jsx-a11y/anchor-is-valid": ["error", { "components": ["Link"], "specialLink": ["to"] }],
     "jsx-a11y/label-has-for": [
       2,
@@ -44,6 +45,15 @@
     "react/no-did-mount-set-state": "off",
     "react/no-unused-prop-types": "off",
     "react/no-unused-state": "error",
+    "react/jsx-one-expression-per-line": "off",
     "react/prefer-stateless-function": "error"
-  }
+  },
+  "overrides": [
+    {
+      "files": ["*.test.js", "*.spec.js"],
+      "rules": {
+        "function-paren-newline": ["error", "consistent"]
+      }
+    }
+  ]
 }

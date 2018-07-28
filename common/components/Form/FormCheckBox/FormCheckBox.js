@@ -24,7 +24,7 @@ FormCheckBox.defaultProps = {
 };
 
 function FormCheckBox({
-  checkBox, label, name, onChange, value,
+ checkBox, label, name, onChange, value 
 }) {
   return (
     <div style={checkBox}>

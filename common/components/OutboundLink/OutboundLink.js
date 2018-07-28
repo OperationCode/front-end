@@ -33,9 +33,7 @@ function OutboundLink({
 }) {
   const linkContent = (
     <React.Fragment>
-      <span className={styles.screenReaderOnly}>
-Opens in new window
-      </span>
+      <span className={styles.screenReaderOnly}>Opens in new window</span>
       {children}
       {hasIcon && (
         <FontAwesomeIcon

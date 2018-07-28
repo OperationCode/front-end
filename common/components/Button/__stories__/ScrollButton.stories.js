@@ -4,7 +4,6 @@ import { withInfo } from '@storybook/addon-info';
 import { withKnobs, boolean, number, select, text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
-import { Element } from 'react-scroll';
 import ScrollButton from '../ScrollButton';
 
 storiesOf('Common/ScrollButton', module)
@@ -13,11 +12,13 @@ storiesOf('Common/ScrollButton', module)
     withInfo()(() => (
       <div
         style={{
+          alignItems: 'center',
           display: 'flex',
           flexDirection: 'column',
           height: '200vh',
           justifyContent: 'space-between',
           paddingTop: '1rem',
+          width: '90vw',
         }}
       >
         <ScrollButton
@@ -31,8 +32,6 @@ storiesOf('Common/ScrollButton', module)
           {text('children', 'Click Me! (will scroll down)')}
         </ScrollButton>
 
-        <Element name="anchor">
-          Scroll To Me
-        </Element>
+        <span id="anchor">Scroll To Me</span>
       </div>
-    )));
+    )),);
