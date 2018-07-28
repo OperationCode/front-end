@@ -6,7 +6,7 @@ import { Link as ScrollLink, Events as ScrollEvent } from 'react-scroll';
 import styles from './Button.css';
 
 ScrollButton.propTypes = {
-  children: PropTypes.node,
+  children: PropTypes.node.isRequired,
   className: PropTypes.string,
   fullWidth: PropTypes.bool,
   href: PropTypes.string,
@@ -16,7 +16,6 @@ ScrollButton.propTypes = {
 };
 
 ScrollButton.defaultProps = {
-  children: undefined,
   className: '',
   fullWidth: false,
   href: undefined,
@@ -26,7 +25,7 @@ ScrollButton.defaultProps = {
 };
 
 function ScrollButton({
- className, children, fullWidth, href, onClick, tabIndex, theme 
+ className, children, fullWidth, href, onClick, tabIndex, theme
 }) {
   const buttonClassNames = classNames(
 styles.Button, className, {

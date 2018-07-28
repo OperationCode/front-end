@@ -6,7 +6,7 @@ import OutboundLink from 'common/components/OutboundLink/OutboundLink';
 import styles from './Button.css';
 
 Button.propTypes = {
-  children: PropTypes.node,
+  children: PropTypes.node.isRequired,
   className: PropTypes.string,
   disabled: PropTypes.bool,
   fullWidth: PropTypes.bool,
@@ -18,7 +18,6 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
-  children: undefined,
   className: '',
   disabled: false,
   fullWidth: false,
