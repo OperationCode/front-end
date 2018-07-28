@@ -1,9 +1,6 @@
 # Operation Code-specific
 backend
 
-# TODO: Ask Kyle to actually figure this one out
-common/styles/themeMap.js
-
 # Logs
 logs
 *.log

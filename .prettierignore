@@ -1,3 +1,4 @@
+common/styles/themeMap.js
 package.json
 yarn.lock
 .babelrc
