@@ -128,7 +128,7 @@ module.exports = {
   setupTestFrameworkScriptFile: "<rootDir>/jest.setup.js",
 
   // A list of paths to snapshot serializer modules Jest should use for snapshot testing
-  // snapshotSerializers: [],
+  snapshotSerializers: ["enzyme-to-json/serializer"],
 
   // The test environment that will be used for testing
   // testEnvironment: "jest-environment-jsdom",
@@ -141,7 +141,7 @@ module.exports = {
 
   // The glob patterns Jest uses to detect test files
   testMatch: [
-    "<rootDir>/**/__tests__/**/*.js",
+    "<rootDir>/**/*.test.js",
   ],
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
@@ -165,7 +165,7 @@ module.exports = {
   // timers: "real",
 
   // A map from regular expressions to paths to transformers
-  // transform: null,
+  transform: { '^.+\\.js$': 'babel-jest' },
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
   // transformIgnorePatterns: [],
