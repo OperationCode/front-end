@@ -18,8 +18,8 @@ ScrollButton.propTypes = {
 ScrollButton.defaultProps = {
   className: '',
   fullWidth: false,
-  href: undefined,
-  onClick: undefined,
+  href: '',
+  onClick: () => {},
   tabIndex: 0,
   theme: 'primary',
 };
