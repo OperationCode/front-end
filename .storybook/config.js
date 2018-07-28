@@ -40,19 +40,13 @@ const mockedRouter = {
 Router.router = mockedRouter;
 /* ***************************** */
 
-const centerContainer = {
-  alignItems: 'center',
-  display: 'flex',
-  justifyContent: 'center',
-  minHeight: '50vh',
-};
 
 // addon-info
 setDefaults({
   header: false,
+  maxPropsIntoLine: 1,
 });
 
-addDecorator(story => <div style={centerContainer}>{story()}</div>);
 addDecorator(brandingBackgrounds);
 addDecorator(checkA11y);
 
