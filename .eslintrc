@@ -9,8 +9,8 @@
   },
   "parser": "babel-eslint",
   "rules": {
-    "comma-dangle": ["error", { "functions": "ignore" }],
-    "function-paren-newline": ["error", "consistent"],
+    "comma-dangle": ["error", "only-multiline"],
+    "function-paren-newline": ["error", { "minItems": 3 }],
     "import/no-unresolved": "off",
     "import/extensions": "off",
     "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
@@ -47,5 +47,13 @@
     "react/no-unused-state": "error",
     "react/jsx-one-expression-per-line": "off",
     "react/prefer-stateless-function": "error"
-  }
+  },
+  "overrides": [
+    {
+      "files": ["*.test.js", "*.spec.js"],
+      "rules": {
+        "function-paren-newline": ["error", "consistent"]
+      }
+    }
+  ]
 }
