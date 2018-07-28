@@ -1,5 +1,5 @@
 {
-  "extends": ["airbnb", "plugin:jsx-a11y/recommended"],
+  "extends": ["airbnb", "plugin:jsx-a11y/recommended", "prettier"],
   "env": {
     "browser": true,
     "commonjs": true,
