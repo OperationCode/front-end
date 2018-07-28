@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { zipCodeValidator } from 'common/utils/validator.utils';
+import { zipCodeValidator } from 'common/utils/validator-utils';
 import FormInput from '../FormInput/FormInput';
 
 class FormZipCode extends Component {

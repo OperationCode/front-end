@@ -5,7 +5,7 @@ import config from 'config/environment';
 import PropTypes from 'prop-types';
 import queryString from 'query-string';
 import { Link } from 'react-router-dom';
-import * as CookieHelpers from 'common/utils/cookie.utils';
+import * as CookieHelpers from 'common/utils/cookie-utils';
 import Form from 'common/components/Form/Form';
 import FormButton from 'common/components/Form/FormButton/FormButton';
 import FormEmail from 'common/components/Form/FormEmail/FormEmail';

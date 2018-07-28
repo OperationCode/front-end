@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import axios from 'axios';
 import getValue from 'lodash/get';
 import config from 'config/environment';
-import * as CookieHelpers from 'common/utils/cookie.utils';
+import * as CookieHelpers from 'common/utils/cookie-utils';
 import Form from 'common/components/Form/Form';
 import FormZipCode from 'common/components/Form/FormZipCode';
 import FormPassword from 'common/components/FormPassword/FormPassword';

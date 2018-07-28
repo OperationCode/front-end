@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import QueryString from 'query-string';
 import getValue from 'lodash/get';
 import { withRouter } from 'react-router-dom';
-import { postBackend } from 'common/utils/api.utils';
-import { setUserVerifiedCookie } from 'common/utils/cookie.utils';
+import { postBackend } from 'common/utils/api-utils';
+import { setUserVerifiedCookie } from 'common/utils/cookie-utils';
 import Section from 'common/components/Section/Section';
 import styles from './IdmeVerify.css';
 
