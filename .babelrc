@@ -1,25 +1,41 @@
 {
   "env": {
     "production": {
-      "presets": ["next/babel"]
+      "presets": [
+        "next/babel"
+      ]
     },
     "development": {
-      "presets": ["next/babel"]
+      "presets": [
+        "next/babel"
+      ]
     },
     "test": {
-      "presets": [["next/babel", { "preset-env": { "modules": "commonjs" }}]]
+      "presets": [
+        [
+          "next/babel",
+          {
+            "preset-env": {
+              "modules": "commonjs"
+            }
+          }
+        ]
+      ]
     }
   },
   "plugins": [
     [
       "module-resolver",
       {
-        "root": ["./"],
+        "root": [
+          "./"
+        ],
         "alias": {
           "components": "./components",
           "common": "./common",
           "pages": "./pages",
-          "static": "./static"
+          "static": "./static",
+          "test-utils": "./test-utils"
         }
       }
     ]
