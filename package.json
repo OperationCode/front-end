@@ -1,12 +1,12 @@
 {
   "name": "create-next-example-app",
   "scripts": {
-    "dev": "next",
+    "build-storybook": "build-storybook -s ./static -c .storybook -o .storybook-dist",
     "build": "next build",
+    "dev": "next",
     "start": "next start",
     "storybook": "start-storybook -s ./static -p 9001 -c .storybook",
-    "build-storybook": "build-storybook -s ./static -c .storybook -o .storybook-dist",
-    "test": "jest",
+    "test": "jest"
   },
   "dependencies": {
     "@fortawesome/fontawesome": "^1.1.8",
