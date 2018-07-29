@@ -55,7 +55,6 @@
     "universal-cookie": "^2.2.0"
   },
   "devDependencies": {
-    "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^8.2.6",
     "babel-jest": "^23.4.2",
     "enzyme": "^3.3.0",
