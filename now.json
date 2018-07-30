@@ -1,11 +1,5 @@
 {
   "alias": "operationcode",
-  "build": {
-    "env": {
-      "BABEL_ENV": "production",
-      "NODE_ENV": "production"
-    }
-  },
   "engines": {
     "node": "8.11.3"
   },
