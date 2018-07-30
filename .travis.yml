@@ -29,7 +29,7 @@ deploy:
       all_branches: true
       master: false
   - provider: script
-    script: now --token $NOW_TOKEN --public && now alias --token $NOW_TOKEN --public
+    script: now --token $NOW_TOKEN --public && now alias --token $NOW_TOKEN
     skip_cleanup: true
     on:
       master: true

@@ -1,5 +1,5 @@
 {
-  "alias": ["operationcode"],
+  "alias": "operationcode",
   "build": {
     "env": {
       "BABEL_ENV": "production",
