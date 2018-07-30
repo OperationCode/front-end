@@ -45,8 +45,11 @@ git clone https://git@github.com/yourusername/front-end.git
 
 git remote add upstream https://github.com/OperationCode/front-end.git
 
-#checkout branch
+#checkout a branch with the name of the issue
+git checkout -b "name-of-branch-relevant-to-issue"
+
 ```
+When finished, [create a PR on GitHub](https://help.github.com/articles/creating-a-pull-request/)
 
 ## Development workflow
 
