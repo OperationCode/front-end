@@ -348,7 +348,16 @@ exports[`Storyshots Common/Heading default 1`] = `
                   <td
                     className="css-d52hbj"
                   >
-                    -
+                    <span
+                      style={
+                        Object {
+                          "color": "#22a",
+                          "wordBreak": "break-word",
+                        }
+                      }
+                    >
+                      
+                    </span>
                   </td>
                   <td
                     className="css-d52hbj"
