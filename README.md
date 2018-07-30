@@ -26,7 +26,7 @@ For information about the maintainers of the project, check out [MAINTAINERS.md]
 If you're unsure of how to start this app or code for it, don't worry! You're our target audience!
 Please read our [Contributing Guide](CONTRIBUTING.md) to learn everything you need to be able to ask the right questions on our Slack team.
 
-**By working in this repo, it is assumed that you are no stranger to React applications, the JavaScript ecosystem, and standard Github workflows such as forking, cloning, & branching.**
+**In continuing with the quick start instructions, it is assumed that you are no stranger to React applications, the JavaScript ecosystem, and standard GitHub workflows such as forking, cloning, and branching.**
 
 Recommended versions of tools used within the repo:
 
@@ -34,17 +34,14 @@ Recommended versions of tools used within the repo:
 * `yarn@1.7.0` or greater
 * `git@2.17.1` or greater
 
-## Development workflow
- (View the entire development workflow with explanations within our [Contributing Guide](CONTRIBUTING.md))
-
 ```sh
 # Install dependencies
 yarn
 
-# Run local development on localhost:3000
+# Run local development
 yarn dev
 
-# Use Storybook when developing new common components or to see what lego blocks you have available, open on localhost:9001
+# Use Storybook when developing new common components or to see what lego blocks you have available
 yarn storybook
 
 #Start local production build
