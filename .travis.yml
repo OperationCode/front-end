@@ -21,7 +21,7 @@ deploy:
       all_branches: true
       master: false
   - provider: script
-    script: yarn start
+    script: now --token $NOW_TOKEN --public && now alias --token $NOW_TOKEN --public
     skip_cleanup: true
     on:
       master: true
