@@ -28,10 +28,11 @@ Please read our [Contributing Guide](CONTRIBUTING.md) to learn everything you ne
 
 If you're no stranger to React applications and the JavaScript ecosystem:
 
-Recommended Versions of tools used within the repo:
-Node @ 8.11.3 LTS
-Yarn@1.7.0 or greater
-Git @2.17.1 or greater
+Recommended versions of tools used within the repo:
+
+* Node @ 8.11.3 LTS
+* Yarn @ 1.7.0 or greater
+* Git @ 2.17.1 or greater
 
 ## Github workflow
 
@@ -60,9 +61,8 @@ yarn
 # Run local development on localhost:3000
 yarn dev
 
-# Use Storybook when developing new common components or to see what lego blocks you have available
+# Use Storybook when developing new common components or to see what lego blocks you have available, open on localhost:9001
 yarn storybook
-# open localhost:9001
 
 #Create a static bundle of our Storybook instance that can be easily deployed.
 yarn build-storybook
@@ -71,18 +71,14 @@ yarn build-storybook
 yarn build
 
 #Check for linting errors. Used in our continuous integration to ensure that code meets our linting standards.
-
 yarn lint
 
 #Used in a precommit hook to ensure that code you’re committing is up to our linting and formatting standards.
-
 yarn format
 
 #Start the main application server or to serve up a production build locally.
-
 yarn start
 
 #Run all available unit and integration tests
-
 yarn test
 ```
