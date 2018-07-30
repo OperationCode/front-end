@@ -8,10 +8,10 @@ cache:
     - "node_modules"
 
 script:
-  - lint
-  - test
-  - build
-  - jest --coverage --coverageReporters=text-lcov | coveralls
+  - yarn lint
+  - yarn test
+  - yarn build
+  - yarn jest --coverage --coverageReporters=text-lcov | yarn coveralls
 
 before_deploy: yarn add now # Install Now CLI
 
