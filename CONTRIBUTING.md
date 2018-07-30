@@ -31,3 +31,34 @@ Example use:
 - In the drop-down menu, select `Mock Server` and click on `Try`. You will see a `GET` request with the mock endpoint url.
 - You can now copy and paste that into your front-end to test your code.
 - Don't forget to remove the mock endpoint url when committing your changes for production. Reset your values and select `Production` to get the correct endpoint url.
+
+## Development workflow with explanations
+
+```sh
+# Install dependencies
+yarn
+
+# Run local development on localhost:3000
+yarn dev
+
+# Use Storybook when developing new common components or to see what lego blocks you have available, open on localhost:9001
+yarn storybook
+
+#Create a static bundle of our Storybook instance that can be easily deployed.
+yarn build-storybook
+
+#Create a static bundle of our main application that can be easily deployed.
+yarn build
+
+#Check for linting errors. Used in our continuous integration to ensure that code meets our linting standards.
+yarn lint
+
+#Used in a precommit hook to ensure that code you’re committing is up to our linting and formatting standards.
+yarn format
+
+#Start the main application server or to serve up a production build locally.
+yarn start
+
+#Run all available unit and integration tests
+yarn test
+```
