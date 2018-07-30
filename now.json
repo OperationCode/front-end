@@ -1,0 +1,19 @@
+{
+  "build": {
+    "env": {
+      "BABEL_ENV": "production",
+      "NODE_ENV": "production"
+    }
+  },
+  "engines": {
+    "node": "8.11.3"
+  },
+  "files": [
+    ".next",
+    ".storybook-dist",
+    "static",
+    "package.json",
+    "yarn.lock"
+  ],
+  "public": true
+}
