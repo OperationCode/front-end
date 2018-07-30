@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Modal should render properly with some props assigned and not being open 1`] = `null`;
+
+exports[`Modal should render with just required props passed 1`] = `null`;

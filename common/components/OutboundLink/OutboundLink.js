@@ -11,15 +11,11 @@ OutboundLink.propTypes = {
   className: PropTypes.string,
   hasIcon: PropTypes.bool,
   href: PropTypes.string.isRequired,
-  onClick: PropTypes.func,
-  onKeyDown: PropTypes.func,
 };
 
 OutboundLink.defaultProps = {
   className: '',
   hasIcon: true,
-  onClick: () => {},
-  onKeyDown: () => {},
 };
 
 function OutboundLink({
@@ -28,8 +24,6 @@ function OutboundLink({
   className,
   hasIcon,
   href,
-  onClick,
-  onKeyDown,
 }) {
   const linkContent = (
     <React.Fragment>
@@ -52,8 +46,6 @@ function OutboundLink({
       <ReactGA.OutboundLink
         className={className}
         eventLabel={analyticsMessage}
-        onClick={onClick}
-        onKeyDown={onKeyDown}
         rel="noopener noreferrer"
         target="_blank"
         to={href}
@@ -67,16 +59,6 @@ function OutboundLink({
     <a
       className={className}
       href={href}
-      onClick={() => {
-        // eslint-disable-next-line no-console
-        console.log(`Analytics disabled. Message: ${analyticsMessage}`);
-        onClick();
-      }}
-      onKeyDown={() => {
-        // eslint-disable-next-line no-console
-        console.log(`Analytics disabled. Message: ${analyticsMessage}`);
-        onKeyDown();
-      }}
       rel="noopener noreferrer"
       target="_blank"
     >

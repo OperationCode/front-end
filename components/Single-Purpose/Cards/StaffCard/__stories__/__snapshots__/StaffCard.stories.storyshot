@@ -30,8 +30,6 @@ exports[`Storyshots Single-Purpose/Cards/StaffCard default 1`] = `
       <a
         className=""
         href="https://twitter.com/kylemh_"
-        onClick={[Function]}
-        onKeyDown={[Function]}
         rel="noopener noreferrer"
         target="_blank"
       >
@@ -73,8 +71,6 @@ exports[`Storyshots Single-Purpose/Cards/StaffCard default 1`] = `
       <a
         className=""
         href="mailto:kyle@operationcode.org"
-        onClick={[Function]}
-        onKeyDown={[Function]}
         rel="noopener noreferrer"
         target="_blank"
       >

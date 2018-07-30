@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card should render properly with some props assigned 1`] = `
+<article
+  className="Card test-class animatedCard"
+>
+  Test
+</article>
+`;
+
+exports[`Card should render with just required props passed 1`] = `
+<article
+  className="Card"
+>
+  Test
+</article>
+`;
