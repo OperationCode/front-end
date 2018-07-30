@@ -1,4 +1,14 @@
-[![Operation Code](https://s3.amazonaws.com/operationcode-assets/branding/logos/large-blue-logo.png)](https://operationcode.org)
+<div align="center">
+  <br />
+  <a href="https://operationcode.org">
+    <img
+      alt="Operation Code logo"
+      src="https://s3.amazonaws.com/operationcode-assets/branding/logos/large-blue-logo.png"
+      width="75%"
+    >
+  </a>
+  <br />
+</div>
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Twitter Follow](https://img.shields.io/twitter/follow/operation_code.svg?style=social&label=Follow&style=social)](https://twitter.com/operation_code)
