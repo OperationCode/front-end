@@ -5,8 +5,10 @@
     "build-storybook": "build-storybook -s ./static -c .storybook -o .storybook-dist",
     "build": "next build",
     "dev": "next",
-    "lint": "eslint \"**/*.js\"",
-    "format": "prettier --write \"**/*.{js,css}\" && eslint --fix \"**/*.js\"",
+    "format": "prettier --write \"**/*.{js,css}\" && eslint --fix \"**/*.js\" ** stylelint --fix \"**/*.css\"",
+    "lint": "yarn lint:scripts && yarn lint:styles",
+    "lint:scripts": "eslint \"**/*.js\"",
+    "lint:styles": "stylelint --fix \"**/*.css\"",
     "start": "next start",
     "storybook": "start-storybook -s ./static -p 9001 -c .storybook",
     "test": "NODE_ENV=test BABEL_ENV=test jest"

@@ -6,8 +6,8 @@
   width: 85%;
 }
 
-.headingLines:before,
-.headingLines:after {
+.headingLines::before,
+.headingLines::after {
   flex-grow: 1;
   height: 3px;
   content: "\a0";
