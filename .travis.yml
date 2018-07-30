@@ -1,10 +1,27 @@
-# Since we build and test in Docker we dont
-# need node at build time
-language: c
+language: node_js
 
-services:
-  - docker
+# node_js: # not needed - `.nvmrc` at root-level
+
+cache:
+  yarn: true
+  directories:
+    - "node_modules"
 
 script:
-  - make travis
-  - if [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_BRANCH" == "master" ]; then make publish && make deploy; fi
+  - yarn test
+  - yarn build
+
+before_deploy: yarn add now # Install Now CLI
+
+deploy:
+  - provider: script # Run a custom deployment script which we will define below
+    script: now --token $NOW_TOKEN --public
+    skip_cleanup: true
+    on:
+      all_branches: true
+      master: false
+  - provider: script
+    script: now --token $NOW_TOKEN --public && now alias --token $NOW_TOKEN --public
+    skip_cleanup: true
+    on:
+      master: true
