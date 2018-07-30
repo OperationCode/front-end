@@ -8,7 +8,8 @@ import ScrollButton from '../ScrollButton';
 
 storiesOf('Common/ScrollButton', module)
   .addDecorator(withKnobs)
-  .add('default',
+  .add(
+    'default',
     withInfo()(() => (
       <div
         style={{
@@ -34,4 +35,5 @@ storiesOf('Common/ScrollButton', module)
 
         <span id="anchor">Scroll To Me</span>
       </div>
-    )),);
+    )),
+  );

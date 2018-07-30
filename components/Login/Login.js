@@ -57,9 +57,7 @@ class Login extends Component {
   };
 
   setErrorMessage = error => {
-    const errorStatus = getVal(
-error, ['response', 'status'], -1
-);
+    const errorStatus = getVal(error, ['response', 'status'], -1);
     const errorMessage = getVal(error, 'message');
     this.setState({ errorStatus, errorMessage });
   };
@@ -69,11 +67,13 @@ error, ['response', 'status'], -1
     const parsed = queryString.parse(location.search); //eslint-disable-line
 
     if (ssoParamsPresent) {
-      this.setState({
+      this.setState(
+        {
           sso: parsed.sso,
           sig: parsed.sig,
         },
-        this.checkSsoLoggedIn,);
+        this.checkSsoLoggedIn,
+      );
     }
   };
 
@@ -150,9 +150,7 @@ error, ['response', 'status'], -1
           CookieHelpers.setUserAuthCookie(data);
           this.setState({ authenticated: true });
           props.updateRootAuthState();
-          props.sendNotification(
-'success', 'Success', 'You have logged in!'
-);
+          props.sendNotification('success', 'Success', 'You have logged in!');
           if (state.ssoParamsPresent) {
             window.location = data.redirect_to;
           } else {
@@ -160,12 +158,8 @@ error, ['response', 'status'], -1
           }
         })
         .catch(error => {
-          if (getVal(
-error, ['response', 'status'], -1
-) !== 401) {
-            props.sendNotification(
-'error', 'Error', 'We will investigate this issue!'
-);
+          if (getVal(error, ['response', 'status'], -1) !== 401) {
+            props.sendNotification('error', 'Error', 'We will investigate this issue!');
           }
 
           this.setErrorMessage(error);
@@ -185,17 +179,9 @@ error, ['response', 'status'], -1
 
     return (
       <div className={styles.gridRow}>
-        <Section
-          title="Login"
-          theme="white"
-        >
+        <Section title="Login" theme="white">
           <Form autoComplete>
-            <FormEmail
-              id="email"
-              displayName="Email"
-              label="Email"
-              onChange={this.onEmailChange}
-            />
+            <FormEmail id="email" displayName="Email" label="Email" onChange={this.onEmailChange} />
             <FormInput
               id="password"
               displayName="Password"
@@ -204,11 +190,7 @@ error, ['response', 'status'], -1
               onChange={this.onPasswordChange}
             />
             {errorFeedback && <h2 className={styles.loginError}>{errorFeedback}</h2>}
-            <FormButton
-              className={styles.loginBtn}
-              text="Login"
-              onClick={this.handleOnClick}
-            />
+            <FormButton className={styles.loginBtn} text="Login" onClick={this.handleOnClick} />
             <span className={styles.resetBtn}>
               Forgot your password? <Link to="/reset_password">Reset it.</Link>
             </span>

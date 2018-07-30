@@ -7,11 +7,13 @@ import YouTubeVideo from '../YouTubeVideo';
 
 storiesOf('Common/YouTubeVideo', module)
   .addDecorator(withKnobs)
-  .add('default',
+  .add(
+    'default',
     withInfo()(() => (
       <YouTubeVideo
         height={number('height', 390)}
         width={number('width', 640)}
         videoId={text('videoId', 'dQw4w9WgXcQ')}
       />
-    )),);
+    )),
+  );

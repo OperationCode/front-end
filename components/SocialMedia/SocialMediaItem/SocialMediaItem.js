@@ -9,20 +9,11 @@ SocialMediaItem.propTypes = {
   smText: PropTypes.string.isRequired,
 };
 
-function SocialMediaItem({
- link, smImage, smText 
-}) {
+function SocialMediaItem({ link, smImage, smText }) {
   return (
     <div className={styles.SocialMediaItem}>
-      <OutboundLink
-        analyticsEventLabel={smText}
-        hasIcon={false}
-        href={link}
-      >
-        <img
-          src={smImage}
-          alt={smText}
-        />
+      <OutboundLink analyticsEventLabel={smText} hasIcon={false} href={link}>
+        <img src={smImage} alt={smText} />
       </OutboundLink>
     </div>
   );

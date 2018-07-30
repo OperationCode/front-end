@@ -22,10 +22,7 @@ function Donate() {
           industry, and code the future.
         </p>
         <p>Thank you for supporting our mission!</p>
-        <Button
-          hasExternalLinkIcon={false}
-          href={donateLink}
-        >
+        <Button hasExternalLinkIcon={false} href={donateLink}>
           Donate Now
         </Button>
       </div>

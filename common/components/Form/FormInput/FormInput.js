@@ -34,7 +34,8 @@ class FormInput extends Component {
     const { props, state } = this;
 
     const isValid = this.validate(event.target.value);
-    this.setState({
+    this.setState(
+      {
         text: event.target.value,
         isValid,
       },
@@ -42,7 +43,8 @@ class FormInput extends Component {
         if (props.onChange) {
           props.onChange(state.text, state.isValid);
         }
-      },);
+      },
+    );
   };
 
   validate = text => {

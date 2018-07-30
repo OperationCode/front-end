@@ -10,8 +10,10 @@ storiesOf('Single-Purpose/Cards/ImageCard', module)
     <ImageCard
       buttonText={text('buttonText', 'Click Me!')}
       cardText={text('cardText', 'buttonText is only shown/necessary when `link` exists')}
-      imageSource={text('imageSource',
-        'https://operationcode.org/static/media/ThinkstockPhotos-489787502.812e.jpg',)}
+      imageSource={text(
+        'imageSource',
+        'https://operationcode.org/static/media/ThinkstockPhotos-489787502.812e.jpg',
+      )}
       link={text('buttonText', 'https://google.com')}
       title={text('title', 'Image Card')}
     />

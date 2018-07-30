@@ -8,7 +8,8 @@ import OutboundLink from '../OutboundLink';
 
 storiesOf('Common/OutboundLink', module)
   .addDecorator(withKnobs)
-  .add('default',
+  .add(
+    'default',
     withInfo()(() => (
       <OutboundLink
         analyticsEventLabel={text('analyticsEventLabel', 'White House Official Website')}
@@ -19,4 +20,5 @@ storiesOf('Common/OutboundLink', module)
       >
         {text('children', 'White House Official Website')}
       </OutboundLink>
-    )),);
+    )),
+  );

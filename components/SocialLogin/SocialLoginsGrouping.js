@@ -16,9 +16,7 @@ SocialLoginsGrouping.defaultProps = {
   updateRootAuthState: () => {},
 };
 
-function SocialLoginsGrouping({
- className, history, sendNotification, updateRootAuthState 
-}) {
+function SocialLoginsGrouping({ className, history, sendNotification, updateRootAuthState }) {
   return (
     <div className={`${styles.FlexRow} ${className}`}>
       <Google

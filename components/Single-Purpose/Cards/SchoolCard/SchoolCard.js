@@ -43,16 +43,9 @@ function SchoolCard({
       hasIcon={false}
       href={schoolWebsite}
     >
-      <Card
-        className={styles.SchoolCard}
-        hasAnimationOnHover
-      >
+      <Card className={styles.SchoolCard} hasAnimationOnHover>
         <template className={styles.content}>
-          <img
-            src={logoSource}
-            alt={`${schoolName} Logo`}
-            className={styles.logo}
-          />
+          <img src={logoSource} alt={`${schoolName} Logo`} className={styles.logo} />
 
           <section className={styles.schoolCardText}>
             <h5 className={styles.name}>{schoolName}</h5>

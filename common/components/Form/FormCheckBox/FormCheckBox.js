@@ -23,9 +23,7 @@ FormCheckBox.defaultProps = {
   onChange: null,
 };
 
-function FormCheckBox({
- checkBox, label, name, onChange, value 
-}) {
+function FormCheckBox({ checkBox, label, name, onChange, value }) {
   return (
     <div style={checkBox}>
       <input
@@ -36,10 +34,7 @@ function FormCheckBox({
         type="checkbox"
         value={value}
       />
-      <label
-        htmlFor={name}
-        style={label}
-      >
+      <label htmlFor={name} style={label}>
         {value}
       </label>
     </div>

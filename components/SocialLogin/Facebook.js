@@ -10,18 +10,12 @@ function Facebook(props) {
     const nameArray = response.name.split(' ');
     const firstName = nameArray[0];
     const lastName = nameArray[nameArray.length];
-    login.run(
-firstName, lastName, response.email
-);
+    login.run(firstName, lastName, response.email);
   };
 
   return (
     <div>
-      <script
-        async
-        defer
-        src="https://connect.facebook.net/en_US/sdk.js"
-      />
+      <script async defer src="https://connect.facebook.net/en_US/sdk.js" />
       <FacebookLogin
         appId={`${config.facebookKey}`}
         fields="name,email"

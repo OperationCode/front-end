@@ -14,11 +14,7 @@ const SocialMedia = () => (
       smText="Facebook"
       link="https://facebook.com/operationcode.org"
     />
-    <SocialMediaItem
-      smImage={ghImage}
-      smText="Github"
-      link="https://github.com/operationcode"
-    />
+    <SocialMediaItem smImage={ghImage} smText="Github" link="https://github.com/operationcode" />
     <SocialMediaItem
       smImage={twtImage}
       smText="Twitter"

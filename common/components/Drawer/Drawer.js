@@ -14,9 +14,7 @@ Drawer.defaultProps = {
   isVisible: false,
 };
 
-function Drawer({
- children, className, isVisible 
-}) {
+function Drawer({ children, className, isVisible }) {
   return (
     <div
       className={classNames(className, {

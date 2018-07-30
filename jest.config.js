@@ -21,18 +21,15 @@ module.exports = {
   // collectCoverage: false,
 
   // An array of glob patterns indicating a set of files for which coverage information should be collected
-  collectCoverageFrom: [
-    "<rootDir>/common/**/*.js",
-    "<rootDir>/components/**/*.js"
-  ],
+  collectCoverageFrom: ['<rootDir>/common/**/*.js', '<rootDir>/components/**/*.js'],
 
   // The directory where Jest should output its coverage files
   coverageDirectory: '<rootDir>/coverage',
 
   // An array of regexp pattern strings used to skip coverage collection
   coveragePathIgnorePatterns: [
-    "<rootDir>/node_modules",
-    "<rootDir>/pages/_*.js" // Ignore Next.js files
+    '<rootDir>/node_modules',
+    '<rootDir>/pages/_*.js', // Ignore Next.js files
   ],
 
   // A list of reporter names that Jest uses when writing coverage reports
@@ -125,10 +122,10 @@ module.exports = {
   // setupFiles: [],
 
   // The path to a module that runs some code to configure or set up the testing framework before each test
-  setupTestFrameworkScriptFile: "<rootDir>/jest.setup.js",
+  setupTestFrameworkScriptFile: '<rootDir>/jest.setup.js',
 
   // A list of paths to snapshot serializer modules Jest should use for snapshot testing
-  snapshotSerializers: ["enzyme-to-json/serializer"],
+  snapshotSerializers: ['enzyme-to-json/serializer'],
 
   // The test environment that will be used for testing
   // testEnvironment: "jest-environment-jsdom",
@@ -140,9 +137,7 @@ module.exports = {
   // testLocationInResults: false,
 
   // The glob patterns Jest uses to detect test files
-  testMatch: [
-    "<rootDir>/**/*.test.js",
-  ],
+  testMatch: ['<rootDir>/**/*.test.js'],
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
   // testPathIgnorePatterns: [
@@ -159,7 +154,7 @@ module.exports = {
   // testRunner: "jasmine2",
 
   // This option sets the URL for the jsdom environment. It is reflected in properties such as location.href
-  testURL: "https://localhost",
+  testURL: 'https://localhost',
 
   // Setting this value to "fake" allows the use of fake timers for functions such as "setTimeout"
   // timers: "real",

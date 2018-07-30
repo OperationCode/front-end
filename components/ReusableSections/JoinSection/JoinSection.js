@@ -21,10 +21,7 @@ function Join() {
           Join our community for free and jumpstart your skills today!
         </p>
 
-        <Button
-          href="/join"
-          theme="secondary"
-        >
+        <Button href="/join" theme="secondary">
           Join
         </Button>
       </div>

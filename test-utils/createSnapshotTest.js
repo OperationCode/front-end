@@ -8,7 +8,7 @@ import renderer from 'react-test-renderer';
  * @export
  * @param {*} Component
  */
-export default (Component) => {
+export default Component => {
   const tree = renderer.create(Component).toJSON();
   expect(tree).toMatchSnapshot();
-}
+};

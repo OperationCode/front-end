@@ -7,15 +7,15 @@ import Heading from '../Heading';
 
 storiesOf('Common/Heading', module)
   .addDecorator(withKnobs)
-  .add('default',
+  .add(
+    'default',
     withInfo()(() => (
       <Heading
         id={text('id', 'heading1')}
         hasHeadingLines={boolean('hasHeadingLines', true)}
-        theme={select(
-'theme', ['gray', 'slate', 'white'], 'gray'
-)}
+        theme={select('theme', ['gray', 'slate', 'white'], 'gray')}
       >
         {text('children', 'Heading Component')}
       </Heading>
-    )),);
+    )),
+  );

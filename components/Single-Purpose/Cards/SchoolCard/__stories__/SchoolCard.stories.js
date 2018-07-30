@@ -13,8 +13,10 @@ storiesOf('Single-Purpose/Cards/SchoolCard', module)
       schoolAddress={text('schoolAddress', '400 Corporate Pointe')}
       schoolCity={text('schoolCity', 'Culver City')}
       schoolState={text('schoolState', 'CA')}
-      logoSource={text('logoSource',
-        'https://s3.amazonaws.com/operationcode-assets/codeSchoolLogos/sabio.png',)}
+      logoSource={text(
+        'logoSource',
+        'https://s3.amazonaws.com/operationcode-assets/codeSchoolLogos/sabio.png',
+      )}
       acceptsGIBill={boolean('acceptsGIBill', true)}
       isFullTime={boolean('isFullTime', true)}
       hasHardware={boolean('hasHardware', false)}

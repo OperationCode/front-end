@@ -8,16 +8,10 @@ SuccessStory.propTypes = {
   title: PropTypes.string.isRequired,
 };
 
-function SuccessStory({
- imageSource, quote, title 
-}) {
+function SuccessStory({ imageSource, quote, title }) {
   return (
     <div className={styles.SuccessStory}>
-      <img
-        alt={`${title} headshot`}
-        className={styles.image}
-        src={imageSource}
-      />
+      <img alt={`${title} headshot`} className={styles.image} src={imageSource} />
 
       <div className={styles.quote}>
         <h3 className={styles.title}>{title}</h3>

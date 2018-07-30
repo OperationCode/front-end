@@ -7,9 +7,11 @@ import Card from '../Card';
 
 storiesOf('Common/Card', module)
   .addDecorator(withKnobs)
-  .add('default',
+  .add(
+    'default',
     withInfo()(() => (
       <Card hasAnimationOnHover={boolean('hasAnimationOnHover', false)}>
         {text('children', 'This is the card content...')}
       </Card>
-    )),);
+    )),
+  );
