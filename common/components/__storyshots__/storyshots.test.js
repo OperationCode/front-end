@@ -2,7 +2,7 @@ import initStoryshots, { multiSnapshotWithOptions } from '@storybook/addon-story
 
 initStoryshots({
   integrityOptions: { cwd: __dirname },
-  storyKindRegex: /^(?!.*UpgradeBrowserOverlay.js)$/, // ignore difficult to mock file
+  storyKindRegex: /^((?!.*?UpgradeBrowserOverlay).)*$/, // ignore difficult to mock file
   suite: 'Storyshots',
   test: multiSnapshotWithOptions({}),
 });
