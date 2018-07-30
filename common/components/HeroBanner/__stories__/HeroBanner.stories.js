@@ -7,14 +7,18 @@ import HeroBanner from '../HeroBanner';
 
 storiesOf('Common/HeroBanner', module)
   .addDecorator(withKnobs)
-  .add('default',
+  .add(
+    'default',
     withInfo()(() => (
       <HeroBanner
-        imageSrc={text('imageSrc',
-          'https://s3.amazonaws.com/operationcode-assets/heroBanners/churchill.jpg',)}
+        imageSrc={text(
+          'imageSrc',
+          'https://s3.amazonaws.com/operationcode-assets/heroBanners/churchill.jpg',
+        )}
         title={text('title', 'Hero Banner')}
         subtitle={text('subtitle', '')}
       >
         {text('children', '')}
       </HeroBanner>
-    )),);
+    )),
+  );

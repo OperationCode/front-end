@@ -16,16 +16,11 @@ HeroBanner.defaultProps = {
   subtitle: undefined,
 };
 
-function HeroBanner({
- children, className, imageSrc, title, subtitle 
-}) {
+function HeroBanner({ children, className, imageSrc, title, subtitle }) {
   const dynamicBackgroundImage = { backgroundImage: `url(${imageSrc})` };
 
   return (
-    <div
-      style={dynamicBackgroundImage}
-      className={`${className} ${styles.HeroBanner}`}
-    >
+    <div style={dynamicBackgroundImage} className={`${className} ${styles.HeroBanner}`}>
       <div className={styles.text}>
         <h1 className={subtitle && styles.underline}>{title}</h1>
         {subtitle && <h6>{subtitle}</h6>}

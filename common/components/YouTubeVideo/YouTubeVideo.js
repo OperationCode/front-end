@@ -17,9 +17,7 @@ YouTubeVideo.defaultProps = {
   width: 640,
 };
 
-function YouTubeVideo({
- className, height, width, videoId 
-}) {
+function YouTubeVideo({ className, height, width, videoId }) {
   const options = {
     height: `${height}`,
     width: `${width}`,

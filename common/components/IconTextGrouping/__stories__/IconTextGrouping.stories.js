@@ -8,7 +8,8 @@ import IconTextGrouping from '../IconTextGrouping';
 
 storiesOf('Common/IconTextGrouping', module)
   .addDecorator(withKnobs)
-  .add('default',
+  .add(
+    'default',
     withInfo()(() => (
       <IconTextGrouping
         fontAwesomeIcon={faExclamationTriangle}
@@ -19,10 +20,9 @@ storiesOf('Common/IconTextGrouping', module)
           '6x',
         )}
         subText={text('subText', 'Please read our Terms of Service before continuing...')}
-        theme={select(
-'theme', ['primary', 'secondary', 'slate'], 'secondary'
-)}
+        theme={select('theme', ['primary', 'secondary', 'slate'], 'secondary')}
         title={text('title', 'ToS')}
         url={text('url', 'https://operationcode.org/terms')}
       />
-    )),);
+    )),
+  );

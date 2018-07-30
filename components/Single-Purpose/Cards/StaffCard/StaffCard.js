@@ -18,19 +18,10 @@ StaffCard.defaultProps = {
   twitterHandle: undefined,
 };
 
-function StaffCard({
- email, imageAlternateText, imageSource, name, staffRole, twitterHandle 
-}) {
+function StaffCard({ email, imageAlternateText, imageSource, name, staffRole, twitterHandle }) {
   return (
-    <Card
-      className={styles.StaffCard}
-      hasAnimationOnHover
-    >
-      <img
-        className={styles.image}
-        src={imageSource}
-        alt={imageAlternateText}
-      />
+    <Card className={styles.StaffCard} hasAnimationOnHover>
+      <img className={styles.image} src={imageSource} alt={imageAlternateText} />
       <h5 className={styles.name}>{name}</h5>
       <i>{staffRole}</i>
       <hr />
@@ -42,8 +33,7 @@ function StaffCard({
               analyticsEventLabel={`<StaffCard> ${name} Twitter Handle Click`}
               href={`https://twitter.com/${twitterHandle}`}
             >
-              @
-              {twitterHandle}
+              @{twitterHandle}
             </OutboundLink>
           </li>
         )}

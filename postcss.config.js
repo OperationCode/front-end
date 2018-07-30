@@ -1,6 +1,4 @@
-module.exports = ({
- file, options, env 
-}) => {
+module.exports = ({ file, options, env }) => {
   /* eslint-disable global-require */
   const postCSSPlugins = [
     require('postcss-import')({ root: file.dirname }),
@@ -8,7 +6,8 @@ module.exports = ({
   ];
 
   if (env === 'production') {
-    postCSSPlugins.push(require('autoprefixer')({
+    postCSSPlugins.push(
+      require('autoprefixer')({
         ...options.autoprefixer,
         browsers: [
           '>1%',
@@ -17,7 +16,8 @@ module.exports = ({
           'not ie < 9', // React doesn't support IE8 anyway
         ],
         flexbox: 'no-2009',
-      }),);
+      }),
+    );
   }
 
   return { plugins: postCSSPlugins };

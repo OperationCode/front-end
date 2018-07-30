@@ -42,12 +42,10 @@ function Button({
   // TODO: Handle non-string input for analytics event label on both outbound and scroll link
   // Example: SVG as a child
 
-  const buttonClassNames = classNames(
-styles.Button, className, styles[theme], {
+  const buttonClassNames = classNames(styles.Button, className, styles[theme], {
     [styles.disabled]: disabled,
     [styles.fullWidth]: fullWidth,
-  }
-);
+  });
 
   const onClickHandler = !disabled ? onClick : () => {};
 
@@ -89,10 +87,7 @@ styles.Button, className, styles[theme], {
   return !href ? (
     ButtonJSX
   ) : (
-    <Link
-      href={href}
-      prefetch
-    >
+    <Link href={href} prefetch>
       {ButtonJSX}
     </Link>
   );

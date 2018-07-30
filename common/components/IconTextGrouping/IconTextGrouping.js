@@ -36,27 +36,19 @@ function IconTextGrouping({
   title,
   url,
 }) {
-  const iconTextGroupingClassNames = classNames(
-styles.IconTextGrouping, className, styles[theme], {[styles.link]: !!url}
-);
+  const iconTextGroupingClassNames = classNames(styles.IconTextGrouping, className, styles[theme], {
+    [styles.link]: !!url,
+  });
 
   const content = (
     <React.Fragment>
       {isIconAboveHeading && (
-        <FontAwesomeIcon
-          className={styles.icon}
-          icon={fontAwesomeIcon}
-          size={iconSize}
-        />
+        <FontAwesomeIcon className={styles.icon} icon={fontAwesomeIcon} size={iconSize} />
       )}
       <h5 className={styles.title}>{title}</h5>
 
       {!isIconAboveHeading && (
-        <FontAwesomeIcon
-          className={styles.icon}
-          icon={fontAwesomeIcon}
-          size={iconSize}
-        />
+        <FontAwesomeIcon className={styles.icon} icon={fontAwesomeIcon} size={iconSize} />
       )}
       {subText && <div className={styles.subtext}>{subText}</div>}
     </React.Fragment>

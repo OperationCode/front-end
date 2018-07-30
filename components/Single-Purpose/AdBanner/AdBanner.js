@@ -14,9 +14,7 @@ AdBanner.propTypes = {
 
 AdBanner.defaultProps = { className: '' };
 
-function AdBanner({
- altText, children, className, imageSource, href 
-}) {
+function AdBanner({ altText, children, className, imageSource, href }) {
   return (
     <OutboundLink
       analyticsEventLabel={`[AdBanner Hit] to ${href}`}
@@ -26,11 +24,7 @@ function AdBanner({
     >
       <div className={styles.adBanner}>
         <div className={styles.adBannerImageContainer}>
-          <img
-            alt={altText}
-            className={styles.adBannerImage}
-            src={imageSource}
-          />
+          <img alt={altText} className={styles.adBannerImage} src={imageSource} />
         </div>
         <h4 className={styles.adBannerText}>{children}</h4>
       </div>

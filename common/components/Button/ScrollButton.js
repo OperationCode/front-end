@@ -24,17 +24,13 @@ ScrollButton.defaultProps = {
   theme: 'primary',
 };
 
-function ScrollButton({
- className, children, fullWidth, href, onClick, tabIndex, theme
-}) {
-  const buttonClassNames = classNames(
-styles.Button, className, {
+function ScrollButton({ className, children, fullWidth, href, onClick, tabIndex, theme }) {
+  const buttonClassNames = classNames(styles.Button, className, {
     [styles.primary]: theme === 'primary',
     [styles.secondary]: theme === 'secondary',
     [styles.slate]: theme === 'slate',
     [styles.fullWidth]: fullWidth,
-  }
-);
+  });
 
   // TODO: Handle non-string input for analytics event label on both outbound and scroll link
   // Example: SVG as a child

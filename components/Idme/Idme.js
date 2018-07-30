@@ -10,9 +10,11 @@ class Idme extends PureComponent {
     }
 
     /* eslint-disable max-len */
-    window.open(`${config.idmeOAuthUrl}?client_id=${config.idmeClientId}&redirect_uri=${
+    window.open(
+      `${config.idmeOAuthUrl}?client_id=${config.idmeClientId}&redirect_uri=${
         config.host
-      }/profile/verify&response_type=token&scope=military&display=popup', '', 'scrollbars=yes,menubar=no,status=no,location=no,toolbar=no,width=750,height=780,top=200,left=200`,);
+      }/profile/verify&response_type=token&scope=military&display=popup', '', 'scrollbars=yes,menubar=no,status=no,location=no,toolbar=no,width=750,height=780,top=200,left=200`,
+    );
     /* eslint-enable max-len */
   };
 
@@ -28,11 +30,7 @@ class Idme extends PureComponent {
           onKeyDown={this.openIDME}
           tabIndex={0}
         >
-          <img
-            className={styles.authImage}
-            src={troopImage}
-            alt="Verify your status with Id.Me"
-          />
+          <img className={styles.authImage} src={troopImage} alt="Verify your status with Id.Me" />
         </a>
       </div>
     );

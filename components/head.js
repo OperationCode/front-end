@@ -14,9 +14,7 @@ Head.propTypes = {
 };
 
 /* eslint-disable react/jsx-max-props-per-line */
-function Head({
- description, ogImage, title, url 
-}) {
+function Head({ description, ogImage, title, url }) {
   return (
     <NextHead>
       <meta charSet="UTF-8" />

@@ -47,9 +47,7 @@ class SocialLogin extends Component {
     window.localStorage.removeItem('email');
   };
 
-  run = (
-First, Last, Email
-) => {
+  run = (First, Last, Email) => {
     const { props, state } = this;
 
     axios
@@ -76,9 +74,7 @@ First, Last, Email
           });
         }
 
-        props.sendNotification(
-'error', 'Error', 'We will investigate this issue!'
-);
+        props.sendNotification('error', 'Error', 'We will investigate this issue!');
       });
   };
 
@@ -101,9 +97,7 @@ First, Last, Email
         localStorage.removeItem('email');
         CookieHelpers.setUserAuthCookie(data);
         props.updateRootAuthState();
-        props.sendNotification(
-'success', 'Success', 'You have logged in!'
-);
+        props.sendNotification('success', 'Success', 'You have logged in!');
         props.history.push(data.redirect_to);
       })
       .catch(error => {
@@ -119,9 +113,7 @@ First, Last, Email
           });
         }
 
-        props.sendNotification(
-'error', 'Error', 'We will investigate this issue!'
-);
+        props.sendNotification('error', 'Error', 'We will investigate this issue!');
       });
   };
 
@@ -151,10 +143,7 @@ First, Last, Email
     const { state } = this;
 
     return (
-      <Section
-        className={styles.signup}
-        title="Zipcode and Password Required"
-      >
+      <Section className={styles.signup} title="Zipcode and Password Required">
         <div className={styles.SocialLoginMessage}>
           <p>
             We understand that you wanted to register quickly by choosing to use your social media
@@ -191,12 +180,7 @@ First, Last, Email
             </ul>
           )}
           {state.isLoading ? (
-            <FormButton
-              className={styles.joinButton}
-              text="Loading..."
-              disabled
-              theme="grey"
-            />
+            <FormButton className={styles.joinButton} text="Loading..." disabled theme="grey" />
           ) : (
             <FormButton
               className={styles.joinButton}

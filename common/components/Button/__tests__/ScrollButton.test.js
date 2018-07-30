@@ -19,7 +19,7 @@ describe('ScrollButton', () => {
         type="submit"
       >
         Test
-      </ScrollButton>
+      </ScrollButton>,
     );
   });
 });

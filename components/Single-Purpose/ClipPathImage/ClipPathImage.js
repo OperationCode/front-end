@@ -22,18 +22,10 @@ ClipPathImage.defaultProps = {
   theme: 'primary',
 };
 
-function ClipPathImage({
- altText, className, imageSource, href, theme, title 
-}) {
+function ClipPathImage({ altText, className, imageSource, href, theme, title }) {
   const content = (
-    <div className={classNames(
-styles[theme], styles.content, { [styles.link]: href }
-)}
-    >
-      <img
-        alt={altText}
-        src={imageSource}
-      />
+    <div className={classNames(styles[theme], styles.content, { [styles.link]: href })}>
+      <img alt={altText} src={imageSource} />
       <h6>
         {title}
         &nbsp;
@@ -51,9 +43,7 @@ styles[theme], styles.content, { [styles.link]: href }
   return href ? (
     <OutboundLink
       analyticsEventLabel={`[${title}] <ClipPathImage>`}
-      className={classNames(
-className, styles.ClipPathImage, styles.ClipPathImageWithLink
-)}
+      className={classNames(className, styles.ClipPathImage, styles.ClipPathImageWithLink)}
       hasIcon={false}
       href={href}
     >

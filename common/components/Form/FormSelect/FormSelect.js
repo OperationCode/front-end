@@ -5,10 +5,12 @@ class FormSelect extends Component {
   static propTypes = {
     id: PropTypes.string,
     onChange: PropTypes.func,
-    options: PropTypes.arrayOf(PropTypes.shape({
+    options: PropTypes.arrayOf(
+      PropTypes.shape({
         label: PropTypes.string.isRequired,
         value: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.bool]).isRequired,
-      }),).isRequired,
+      }),
+    ).isRequired,
     prompt: PropTypes.string,
     validationFunc: PropTypes.func,
   };
@@ -40,10 +42,7 @@ class FormSelect extends Component {
 
     if (prompt) {
       const blankOptionJSX = (
-        <option
-          key="prompt"
-          value=""
-        >
+        <option key="prompt" value="">
           {prompt}
         </option>
       );
@@ -53,10 +52,7 @@ class FormSelect extends Component {
 
     options.forEach(optionObject => {
       const optionJSX = (
-        <option
-          key={optionObject.value}
-          value={optionObject.value}
-        >
+        <option key={optionObject.value} value={optionObject.value}>
           {optionObject.label}
         </option>
       );
@@ -72,10 +68,7 @@ class FormSelect extends Component {
 
     return (
       <div>
-        <select
-          id={props.id}
-          onBlur={e => this.onChange(e)}
-        >
+        <select id={props.id} onBlur={e => this.onChange(e)}>
           {this.buildOptions()}
         </select>
       </div>

@@ -18,18 +18,13 @@ Heading.defaultProps = {
   theme: 'gray',
 };
 
-function Heading({
- children, className, hasHeadingLines, id, theme 
-}) {
-  const classes = classNames(
-className, styles.Heading, styles[theme], {[`${styles.headingLines}`]: hasHeadingLines}
-);
+function Heading({ children, className, hasHeadingLines, id, theme }) {
+  const classes = classNames(className, styles.Heading, styles[theme], {
+    [`${styles.headingLines}`]: hasHeadingLines,
+  });
 
   return (
-    <h2
-      className={classes}
-      id={id}
-    >
+    <h2 className={classes} id={id}>
       {children}
     </h2>
   );

@@ -17,19 +17,11 @@ BoardCard.defaultProps = {
   description: undefined,
 };
 
-function BoardCard({
- boardRole, className, description, imageSource, name 
-}) {
+function BoardCard({ boardRole, className, description, imageSource, name }) {
   return (
-    <Card
-      className={classNames(className, styles.BoardCard)}
-      hasAnimationOnHover
-    >
+    <Card className={classNames(className, styles.BoardCard)} hasAnimationOnHover>
       <div className={styles.imageContainer}>
-        <img
-          alt={`Headshot of ${name}`}
-          src={imageSource}
-        />
+        <img alt={`Headshot of ${name}`} src={imageSource} />
       </div>
       <h6 className={styles.name}>{name}</h6>
       <i className={styles.boardRole}>{boardRole}</i>

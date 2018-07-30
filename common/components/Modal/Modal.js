@@ -38,11 +38,7 @@ function Modal({
       shouldCloseOnOverlayClick={shouldCloseOnOverlayClick}
     >
       {/* TODO: Use a close SVG instead of CSS painted X */}
-      <button
-        className={ModalStyles.closeButton}
-        onClick={() => onRequestClose()}
-        type="button"
-      />
+      <button className={ModalStyles.closeButton} onClick={() => onRequestClose()} type="button" />
       <div className={ModalStyles.scrollableContainer}>{children}</div>
     </ReactModal>
   );

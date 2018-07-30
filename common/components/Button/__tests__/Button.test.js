@@ -19,7 +19,7 @@ describe('Button', () => {
         type="submit"
       >
         Test
-      </Button>
+      </Button>,
     );
   });
 });

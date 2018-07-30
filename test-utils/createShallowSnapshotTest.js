@@ -8,9 +8,9 @@ import ShallowRenderer from 'react-test-renderer/shallow';
  * @export
  * @param {*} Component
  */
-export default (Component) => {
+export default Component => {
   const shallowRenderer = new ShallowRenderer();
   const tree = shallowRenderer.render(Component);
 
   expect(tree).toMatchSnapshot();
-}
+};

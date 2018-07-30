@@ -16,25 +16,16 @@ ImageCard.defaultProps = {
   link: '',
 };
 
-function ImageCard({
- buttonText, cardText, imageSource, link, title 
-}) {
+function ImageCard({ buttonText, cardText, imageSource, link, title }) {
   return (
     <div className={styles.ImageCard}>
-      <img
-        className={styles.cardImage}
-        src={imageSource}
-        alt={title}
-      />
+      <img className={styles.cardImage} src={imageSource} alt={title} />
 
       <div className={styles.cardText}>
         <h6>{title}</h6>
         <p>{cardText}</p>
         {link && (
-          <Button
-            href={link}
-            theme="primary"
-          >
+          <Button href={link} theme="primary">
             {buttonText}
           </Button>
         )}
