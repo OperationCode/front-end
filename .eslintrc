@@ -1,5 +1,5 @@
 {
-  "extends": ["airbnb", "plugin:jsx-a11y/recommended", "prettier"],
+  "extends": ["airbnb", "plugin:jsx-a11y/recommended", "prettier", "prettier/react"],
   "env": {
     "browser": true,
     "commonjs": true,
@@ -10,7 +10,6 @@
   "parser": "babel-eslint",
   "rules": {
     "comma-dangle": ["error", "only-multiline"],
-    "function-paren-newline": ["error", { "minItems": 3 }],
     "import/no-unresolved": "off",
     "import/extensions": "off",
     "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
@@ -25,28 +24,28 @@
         "allowChildren": false
       }
     ],
-    "max-len": ["error", 100],
+    "max-len": ["error",  { "code": 100, "ignoreUrls": true }],
     "multiline-ternary": ["error", "always-multiline"],
     "no-console": "warn",
     "no-use-before-define": "off",
     "object-curly-newline": [
       "error",
       {
-        "ObjectExpression": { "multiline": true, "minProperties": 3 },
-        "ObjectPattern": { "multiline": true, "minProperties": 3 },
+        "ObjectExpression": { "multiline": true, "consistent": true },
+        "ObjectPattern": { "multiline": true, "consistent": true },
         "ImportDeclaration": { "multiline": false },
-        "ExportDeclaration": { "multiline": true, "minProperties": 3 }
+        "ExportDeclaration": { "multiline": true, "consistent": true }
       }
     ],
     "react/forbid-prop-types": ["error", { "forbid": ["any"] }],
-    "react/jsx-filename-extension": [1, { "extensions": [".js"] }],
-    "react/jsx-curly-brace-presence": [2, { "props": "never", "children": "never" }],
-    "react/jsx-max-props-per-line": [2, { "maximum": 1, "when": "always" }],
+    "react/jsx-filename-extension": ["error", { "extensions": [".js"] }],
+    "react/jsx-curly-brace-presence": ["error", { "props": "never", "children": "never" }],
+    "react/jsx-max-props-per-line": ["error", { "maximum": 1, "when": "multiline" }],
+    "react/jsx-one-expression-per-line": "off",
+    "react/prefer-stateless-function": ["error", { "ignorePureComponents": true }],
     "react/no-did-mount-set-state": "off",
     "react/no-unused-prop-types": "off",
-    "react/no-unused-state": "error",
-    "react/jsx-one-expression-per-line": "off",
-    "react/prefer-stateless-function": "error"
+    "react/no-unused-state": "error"
   },
   "overrides": [
     {
