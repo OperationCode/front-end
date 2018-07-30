@@ -13,6 +13,10 @@ before_script: greenkeeper-lockfile-update
 
 after_script: greenkeeper-lockfile-upload
 
+env:
+  - BABEL_ENV="production"
+  - NODE_ENV="production"
+
 script:
   - yarn lint
   - yarn test
