@@ -22,7 +22,7 @@ before_deploy: yarn add now # Install Now CLI
 
 deploy:
   - provider: script # Run a custom deployment script which we will define below
-    script: yarn export && now --public --static
+    script: yarn export && now --public --static --token $NOW_TOKEN
     skip_cleanup: true
     on:
       all_branches: true
