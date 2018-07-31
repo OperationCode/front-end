@@ -17,18 +17,19 @@ script:
   - yarn lint
   - yarn test
   - yarn jest --coverage --coverageReporters=text-lcov | yarn coveralls
+  - yarn build
 
 before_deploy: yarn add now # Install Now CLI
 
 deploy:
   - provider: script # Run a custom deployment script which we will define below
-    script: yarn export && now --token $NOW_TOKEN --public --static
+    script: yarn export && now --public --static
     skip_cleanup: true
     on:
       all_branches: true
       master: false
   - provider: script
-    script: yarn build && now --token $NOW_TOKEN --public && now alias --token $NOW_TOKEN
+    script: now --token $NOW_TOKEN --public && now alias --token $NOW_TOKEN
     skip_cleanup: true
     on:
       master: true
