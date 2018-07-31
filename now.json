@@ -9,5 +9,12 @@
   "engines": {
     "node": "8.11.3"
   },
+  "files": [
+    ".next",
+    "server",
+    "static",
+    "package.json",
+    "yarn.lock"
+  ],
   "public": true
 }

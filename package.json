@@ -10,6 +10,7 @@
     "lint": "yarn lint:scripts && yarn lint:styles",
     "lint:scripts": "eslint \"**/*.js\"",
     "lint:styles": "stylelint --fix \"**/*.css\"",
+    "now-build": "echo 'Built on Travis CI'",
     "start": "next start",
     "storybook": "start-storybook -s ./static -p 9001 -c .storybook",
     "test": "NODE_ENV=test BABEL_ENV=test jest",
