@@ -15,15 +15,14 @@ after_script: greenkeeper-lockfile-upload
 
 script:
   - yarn lint
-  - yarn test
+  - yarn test:ci
   - yarn build
-  - yarn jest --coverage --coverageReporters=text-lcov | yarn coveralls
 
 before_deploy: yarn add now # Install Now CLI
 
 deploy:
   - provider: script # Run a custom deployment script which we will define below
-    script: now --token $NOW_TOKEN --public
+    script: yarn export && now --public --static --token $NOW_TOKEN
     skip_cleanup: true
     on:
       all_branches: true
