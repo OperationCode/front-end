@@ -9,10 +9,7 @@ WORKDIR /usr/src
 COPY package.json yarn.lock ./
 
 # We install our deps
-RUN yarn --silent
-
-# Lint and test
-RUN yarn ci
+RUN yarn --silent --prod
 
 # We copy all source files
 COPY . .

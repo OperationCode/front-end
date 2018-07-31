@@ -14,10 +14,11 @@ before_script: greenkeeper-lockfile-update
 after_script: greenkeeper-lockfile-upload
 
 script:
-  - yarn ci
+  - yarn lint
+  - yarn test:ci
   - yarn build
 
-before_deploy: yarn add now # Install Now CLI
+# before_deploy: yarn add now # Install Now CLI
 
 deploy:
   # - provider: script # Run a custom deployment script which we will define below
@@ -27,7 +28,7 @@ deploy:
   #     all_branches: true
   #     master: false
   - provider: script
-    script: now --local-config "./now.master.json" --token $NOW_TOKEN
+    script: yarn add now && now --local-config "./now.master.json" --token $NOW_TOKEN
     skip_cleanup: true
     on:
       master: true
