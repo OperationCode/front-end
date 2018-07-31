@@ -1,0 +1,19 @@
+{
+  "alias": "operationcode",
+  "build": {
+    "env": {
+      "BABEL_ENV": "production",
+      "NODE_ENV": "production"
+    }
+  },
+  "engines": {
+    "node": "8.11.3"
+  },
+  "files": [
+    ".next",
+    "static",
+    "package.json",
+    "yarn.lock"
+  ],
+  "public": true
+}

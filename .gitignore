@@ -62,6 +62,7 @@ typings/
 
 # next.js build output
 .next
+out
 
 # storybook build output
 .storybook-dist
