@@ -15,8 +15,7 @@ after_script: greenkeeper-lockfile-upload
 
 script:
   - yarn lint
-  - yarn test
-  - yarn jest --coverage --coverageReporters=text-lcov | yarn coveralls
+  - yarn test:ci
   - yarn build
 
 before_deploy: yarn add now # Install Now CLI
