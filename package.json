@@ -5,6 +5,7 @@
     "build-storybook": "build-storybook -s ./static -c .storybook -o .storybook-dist",
     "build": "next build",
     "dev": "next",
+    "export": "next export",
     "format": "prettier --write \"**/*.{js,css}\" && eslint --fix \"**/*.js\" && stylelint --fix \"**/*.css\"",
     "lint": "yarn lint:scripts && yarn lint:styles",
     "lint:scripts": "eslint \"**/*.js\"",
