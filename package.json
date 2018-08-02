@@ -12,7 +12,7 @@
     "lint:styles": "stylelint --fix \"**/*.css\"",
     "now-build": "echo 'Built on Travis CI'",
     "now-start": "echo 'testing'",
-    "start": "next start",
+    "start": "echo 'testing'",
     "storybook": "start-storybook -s ./static -p 9001 -c .storybook",
     "test": "NODE_ENV=test BABEL_ENV=test jest",
     "test:ci": "NODE_ENV=test BABEL_ENV=test jest --ci --coverage --coverageReporters=text-lcov | yarn coveralls",
