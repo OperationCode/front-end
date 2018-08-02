@@ -13,10 +13,14 @@ before_script: greenkeeper-lockfile-update
 
 after_script: greenkeeper-lockfile-upload
 
+env:
+  # Parallelizes our build
+  - LINT_TEST_BUILD=lint
+  - LINT_TEST_BUILD=test:ci
+  - LINT_TEST_BUILD=build
+
 script:
-  - yarn lint
-  - yarn test:ci
-  - yarn build
+  - yarn $LINT_TEST_BUILD
 
 # before_deploy: yarn add now # Install Now CLI
 
