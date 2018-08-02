@@ -11,7 +11,7 @@
     "lint:scripts": "eslint \"**/*.js\"",
     "lint:styles": "stylelint --fix \"**/*.css\"",
     "now-build": "echo 'Built on Travis CI'",
-    "now-start": "yarn build && yarn export && cd out && now start",
+    "now-start": "echo 'testing'",
     "start": "next start",
     "storybook": "start-storybook -s ./static -p 9001 -c .storybook",
     "test": "NODE_ENV=test BABEL_ENV=test jest",
