@@ -21,13 +21,13 @@ script:
 before_deploy: yarn add now # Install Now CLI
 
 deploy:
-  - provider: script # Run a custom deployment script which we will define below
-    script: yarn export && cd out && now --local-config "./now.json" --token $NOW_TOKEN
-    skip_cleanup: true
-    on:
-      all_branches: true
-      master: false
-  - provider: script
+  # - provider: script # Run a custom deployment script which we will define below
+  #   script: yarn export && cd out && now --local-config "./now.json" --token $NOW_TOKEN
+  #   skip_cleanup: true
+  #   on:
+  #     all_branches: true
+  #     master: false
+  # - provider: script
     script: now --local-config "./now.master.json" --token $NOW_TOKEN
     skip_cleanup: true
     on:
