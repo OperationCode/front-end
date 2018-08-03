@@ -13,20 +13,23 @@ before_script: greenkeeper-lockfile-update
 
 after_script: greenkeeper-lockfile-upload
 
-script:
-  - yarn lint
-  - yarn test:ci
-  - yarn build
+jobs:
+  include:
+    - stage: Linting
+      script: yarn lint
+    - stage: Tests
+      name: 'Unit & Integration Tests (includes Snapshots)'
+      script: yarn test:ci
+    - stage: Build
+      script: yarn build
 
-# before_deploy: yarn add now # Install Now CLI
+stages:
+  - Linting
+  - Tests
+  - name: Build
+    if: branch = master
 
 deploy:
-  # - provider: script # Run a custom deployment script which we will define below
-  #   script: yarn export && now --token $NOW_TOKEN
-  #   skip_cleanup: true
-  #   on:
-  #     all_branches: true
-  #     master: false
   - provider: script
     script: yarn add now && now --local-config "./now.master.json" --token $NOW_TOKEN
     skip_cleanup: true
