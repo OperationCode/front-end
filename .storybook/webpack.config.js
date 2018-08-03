@@ -1,5 +1,4 @@
 const path = require('path');
-const postCssConfig = require('../postcss.config');
 
 // Export a function. Accept the base config as the only param.
 module.exports = (storybookBaseConfig, configType) => {
@@ -28,19 +27,22 @@ module.exports = (storybookBaseConfig, configType) => {
         // is resolved
         loader: 'postcss-loader',
         options: {
-          'postcss-import': { root: '../' },
-          'postcss-export-custom-variables': {
-            exporter: 'js',
-            destination: 'common/styles/themeMap.js',
-          },
-          autoprefixer:
-            configType === 'PRODUCTION'
-              ? {
-                  ...options.autoprefixer,
-                  browsers: ['> 1%', 'last 2 Chrome versions', 'not ie < 11'],
-                  flexbox: 'no-2009',
-                }
-              : false,
+          plugins: [
+            require('postcss-import')({ root: path.join(__dirname, '../') }),
+            require('postcss-export-custom-variables')({
+              exporter: 'js',
+              destination: 'common/styles/themeMap.js',
+            }),
+            require('autoprefixer')(
+              configType === 'PRODUCTION'
+                ? {
+                    ...options.autoprefixer,
+                    browsers: ['> 1%', 'last 2 Chrome versions', 'not ie < 11'],
+                    flexbox: 'no-2009',
+                  }
+                : false,
+            ),
+          ],
         },
       },
     ],
