@@ -1,5 +1,4 @@
 /* eslint-disable global-require */
-// eslint-disable-next-line no-unused-vars
 module.exports = ({ file, options, env }) => {
   const plugins = {
     'postcss-import': { root: file.dirname },
