@@ -1,24 +1,21 @@
+/* eslint-disable global-require */
+// eslint-disable-next-line no-unused-vars
 module.exports = ({ file, options, env }) => {
-  /* eslint-disable global-require */
-  const postCSSPlugins = [
-    require('postcss-import')({ root: file.dirname }),
-    require('postcss-export-custom-variables')({ destination: 'common/styles/themeMap.js' }),
-  ];
+  const plugins = {
+    'postcss-import': { root: file.dirname },
+    'postcss-export-custom-variables': {
+      exporter: 'js',
+      destination: './common/styles/themeMap.js',
+    },
+    autoprefixer:
+      env === 'production'
+        ? {
+            ...options.autoprefixer,
+            browsers: ['last 2 Chrome versions', 'not ie < 11'],
+            flexbox: 'no-2009',
+          }
+        : false,
+  };
 
-  if (env === 'production') {
-    postCSSPlugins.push(
-      require('autoprefixer')({
-        ...options.autoprefixer,
-        browsers: [
-          '>1%',
-          'last 4 versions',
-          'Firefox ESR',
-          'not ie < 9', // React doesn't support IE8 anyway
-        ],
-        flexbox: 'no-2009',
-      }),
-    );
-  }
-
-  return { plugins: postCSSPlugins };
+  return { ...{ plugins } };
 };
