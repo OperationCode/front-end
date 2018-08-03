@@ -33,11 +33,7 @@ module.exports = (storybookBaseConfig, configType) => {
               exporter: 'js',
               destination: 'common/styles/themeMap.js',
             }),
-            require('autoprefixer')({
-              ...options.autoprefixer,
-              browsers: ['> 1%', 'last 2 Chrome versions', 'not ie < 11'],
-              flexbox: 'no-2009',
-            }),
+            // except no autoprefixer - assuming dev has modern browser to decrease build speed
           ],
         },
       },
