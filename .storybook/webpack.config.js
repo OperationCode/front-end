@@ -8,7 +8,7 @@ module.exports = (storybookBaseConfig, configType) => {
   storybookBaseConfig.module.rules.push({
     test: /\.css$/,
     use: [
-      { loader: 'style-loader' },
+      'style-loader',
       {
         loader: 'css-loader',
         options: {
@@ -19,28 +19,7 @@ module.exports = (storybookBaseConfig, configType) => {
           sourceMapContents: true,
         },
       },
-      {
-        loader: 'postcss-loader',
-        options: {
-          plugins: [
-            require('postcss-import')({
-              root: './',
-            }),
-            require('postcss-export-custom-variables')({
-              destination: 'common/styles/themeMap.js',
-            }),
-            require('autoprefixer')({
-              browsers: [
-                '>1%',
-                'last 4 versions',
-                'Firefox ESR',
-                'not ie < 11', // React doesn't support IE8 anyway
-              ],
-              flexbox: 'no-2009',
-            }),
-          ],
-        },
-      },
+      'postcss-loader',
     ],
   });
 
