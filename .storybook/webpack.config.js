@@ -1,3 +1,6 @@
+const path = require('path');
+const postCssConfig = require('../postcss.config');
+
 // Export a function. Accept the base config as the only param.
 module.exports = (storybookBaseConfig, configType) => {
   // configType has a value of 'DEVELOPMENT' or 'PRODUCTION'
@@ -19,7 +22,27 @@ module.exports = (storybookBaseConfig, configType) => {
           sourceMapContents: true,
         },
       },
-      'postcss-loader',
+      {
+        // Keep in parity with root postcss.config.js until
+        // https://github.com/storybooks/storybook/issues/2455
+        // is resolved
+        loader: 'postcss-loader',
+        options: {
+          'postcss-import': { root: '../' },
+          'postcss-export-custom-variables': {
+            exporter: 'js',
+            destination: 'common/styles/themeMap.js',
+          },
+          autoprefixer:
+            configType === 'PRODUCTION'
+              ? {
+                  ...options.autoprefixer,
+                  browsers: ['1%', 'last 2 Chrome versions', 'not ie < 11'],
+                  flexbox: 'no-2009',
+                }
+              : false,
+        },
+      },
     ],
   });
 
