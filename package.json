@@ -14,7 +14,8 @@
     "start": "next start",
     "storybook": "start-storybook -s ./static -p 9001 -c .storybook",
     "test": "NODE_ENV=test BABEL_ENV=test jest",
-    "test:ci": "NODE_ENV=test BABEL_ENV=test jest --ci --coverage --coverageReporters=text-lcov | yarn coveralls",
+    "test:ci": "NODE_ENV=test BABEL_ENV=test test:coverage --ci | yarn coveralls",
+    "test:coverage": "jest --coverage --coverageReporters=text-lcov",
     "test:update-snaps": "jest -u"
   },
   "dependencies": {
