@@ -66,6 +66,3 @@ out
 
 # storybook build output
 .storybook-dist
-
-# file that changes often
-common/styles/themeMap.js
