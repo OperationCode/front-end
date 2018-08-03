@@ -1,3 +1,5 @@
+const path = require('path');
+
 // Export a function. Accept the base config as the only param.
 module.exports = (storybookBaseConfig, configType) => {
   // configType has a value of 'DEVELOPMENT' or 'PRODUCTION'
@@ -7,8 +9,8 @@ module.exports = (storybookBaseConfig, configType) => {
   // Make whatever fine-grained changes you need
   storybookBaseConfig.module.rules.push({
     test: /\.css$/,
-    use: [
-      { loader: 'style-loader' },
+    loaders: [
+      'style-loader',
       {
         loader: 'css-loader',
         options: {
@@ -20,24 +22,18 @@ module.exports = (storybookBaseConfig, configType) => {
         },
       },
       {
+        // Keep in parity with root postcss.config.js until
+        // https://github.com/storybooks/storybook/issues/2455
+        // is resolved
         loader: 'postcss-loader',
         options: {
           plugins: [
-            require('postcss-import')({
-              root: './',
-            }),
+            require('postcss-import')({ root: path.join(__dirname, '../') }),
             require('postcss-export-custom-variables')({
+              exporter: 'js',
               destination: 'common/styles/themeMap.js',
             }),
-            require('autoprefixer')({
-              browsers: [
-                '>1%',
-                'last 4 versions',
-                'Firefox ESR',
-                'not ie < 11', // React doesn't support IE8 anyway
-              ],
-              flexbox: 'no-2009',
-            }),
+            // except no autoprefixer - assuming dev has modern browser to decrease build speed
           ],
         },
       },
