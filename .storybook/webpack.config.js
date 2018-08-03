@@ -37,7 +37,7 @@ module.exports = (storybookBaseConfig, configType) => {
             configType === 'PRODUCTION'
               ? {
                   ...options.autoprefixer,
-                  browsers: ['1%', 'last 2 Chrome versions', 'not ie < 11'],
+                  browsers: ['> 1%', 'last 2 Chrome versions', 'not ie < 11'],
                   flexbox: 'no-2009',
                 }
               : false,
