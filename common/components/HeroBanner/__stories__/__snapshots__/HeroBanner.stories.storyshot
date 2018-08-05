@@ -252,7 +252,7 @@ exports[`Storyshots Common/HeroBanner default 1`] = `
               </div>
             </div>
             <button
-              className="css-gydez8"
+              className="css-py33tc"
               onClick={[Function]}
             >
               <div
