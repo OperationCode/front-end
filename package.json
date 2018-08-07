@@ -58,7 +58,7 @@
     "react-modal": "^3.5.1",
     "react-scroll": "^1.7.10",
     "react-youtube": "^7.6.0",
-    "style-loader": "^0.21.0",
+    "style-loader": "^0.22.0",
     "universal-cookie": "^2.2.0"
   },
   "devDependencies": {
