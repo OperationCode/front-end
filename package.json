@@ -81,7 +81,7 @@
     "prettier": "^1.14.0",
     "react-addons-test-utils": "^15.6.2",
     "react-test-renderer": "^16.4.2",
-    "react-testing-library": "^4.1.6",
+    "react-testing-library": "^5.0.0",
     "stylelint": "^9.4.0",
     "stylelint-config-standard": "^18.2.0"
   },
