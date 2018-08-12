@@ -808,12 +808,12 @@
   dependencies:
     "@fortawesome/fontawesome-common-types" "^0.1.7"
 
-"@fortawesome/react-fontawesome@0.0.20":
-  version "0.0.20"
-  resolved "https://registry.yarnpkg.com/@fortawesome/react-fontawesome/-/react-fontawesome-0.0.20.tgz#5ec711f3a032c13643e454b360112b6346a276d6"
+"@fortawesome/react-fontawesome@0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@fortawesome/react-fontawesome/-/react-fontawesome-0.1.2.tgz#baad4a6508867567aea20c1551bf62ff090d8121"
   dependencies:
     humps "^2.0.1"
-    prop-types "^15.5.7"
+    prop-types "^15.5.10"
 
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
