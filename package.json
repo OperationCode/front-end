@@ -59,7 +59,7 @@
     "react-scroll": "^1.7.10",
     "react-youtube": "^7.6.0",
     "style-loader": "^0.22.0",
-    "universal-cookie": "^2.2.0"
+    "universal-cookie": "^3.0.0"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.6",
