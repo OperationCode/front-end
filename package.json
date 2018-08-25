@@ -18,7 +18,7 @@
     "test:update-snaps": "jest -u"
   },
   "dependencies": {
-    "@babel/core": "7.0.0-rc.1",
+    "@babel/core": "7.0.0-rc.3",
     "@fortawesome/fontawesome": "1.1.8",
     "@fortawesome/fontawesome-free-brands": "5.0.13",
     "@fortawesome/fontawesome-free-regular": "5.0.13",
