@@ -55,7 +55,7 @@
       }
     },
     {
-      "files": ["pages/**.js"],
+      "files": ["pages/**.js", "components/**.js"],
       "rules": {
         "react/react-in-jsx-scope": "off"
       }
