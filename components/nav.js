@@ -14,6 +14,11 @@ function Nav() {
             404
           </Link>
         </li>
+        <li>
+          <Link prefetch href="/test">
+            Test
+          </Link>
+        </li>
       </ul>
     </nav>
   );
