@@ -1,5 +1,6 @@
 {
   "name": "operation-code",
+  "license": "MIT",
   "version": "0.0.1",
   "scripts": {
     "build-storybook": "build-storybook -s ./static -c .storybook -o .storybook-dist",
