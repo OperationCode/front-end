@@ -5,17 +5,12 @@ function Nav() {
     <nav>
       <ul>
         <li>
-          <Link prefetch href="/">
+          <Link href="/" prefetch>
             Home
           </Link>
         </li>
         <li>
-          <Link prefetch href="/404">
-            404
-          </Link>
-        </li>
-        <li>
-          <Link prefetch href="/test">
+          <Link href="/test" prefetch>
             Test
           </Link>
         </li>
