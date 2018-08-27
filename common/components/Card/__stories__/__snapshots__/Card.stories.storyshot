@@ -185,7 +185,7 @@ exports[`Storyshots Common/Card default 1`] = `
               </div>
             </div>
             <button
-              className="css-py33tc"
+              className="css-gydez8"
               onClick={[Function]}
             >
               <div
