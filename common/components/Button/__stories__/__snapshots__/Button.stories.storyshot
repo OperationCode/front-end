@@ -250,7 +250,7 @@ exports[`Storyshots Common/Button default 1`] = `
               </div>
             </div>
             <button
-              className="css-gydez8"
+              className="css-py33tc"
               onClick={[Function]}
             >
               <div
