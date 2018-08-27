@@ -4,3 +4,4 @@ common/styles/themeMap.js
 bin
 node_modules
 static
+coverage

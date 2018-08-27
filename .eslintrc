@@ -53,6 +53,12 @@
       "rules": {
         "function-paren-newline": ["error", "consistent"]
       }
+    },
+    {
+      "files": ["pages/**.js", "components/**.js"],
+      "rules": {
+        "react/react-in-jsx-scope": "off"
+      }
     }
   ]
 }
