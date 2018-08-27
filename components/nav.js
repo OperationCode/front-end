@@ -10,7 +10,7 @@ function Nav() {
           </Link>
         </li>
         <li>
-          <Link href="/About" prefetch>
+          <Link href="/about" prefetch>
             About
           </Link>
         </li>
