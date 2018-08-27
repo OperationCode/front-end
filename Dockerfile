@@ -15,4 +15,5 @@ RUN yarn --silent --prod
 COPY . .
 
 # We run the build and expose as /public
-RUN yarn build && yarn export -- -o /public
+RUN yarn build
+RUN yarn export -o /public
