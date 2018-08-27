@@ -39,7 +39,7 @@ function Head({ description, ogImage, title, url }) {
       <meta property="og:image:height" content="630" />
 
       {/* TODO: Download and avoid network request  */}
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif:400,400i,700,700i"></link>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif:400,400i,700,700i" />
     </NextHead>
   );
 }
