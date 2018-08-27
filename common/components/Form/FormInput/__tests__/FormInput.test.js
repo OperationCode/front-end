@@ -2,10 +2,10 @@
 import React from 'react';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 
-import FormEmail from '../FormEmail';
+import FormInput from '../FormInput';
 
-describe('FormEmail', () => {
+describe('FormInput', () => {
   test('should render with just required props passed', () => {
-    createSnapshotTest(<FormEmail id="test"/>);
+    createSnapshotTest(<FormInput id="test"/>);
   });
 });
