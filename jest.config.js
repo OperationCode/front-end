@@ -74,7 +74,7 @@ module.exports = {
   // A map from regular expressions to module names that allow to stub out resources with a single module
   moduleNameMapper: {
     '\\.(jpg|jpeg|png|gif|svg)$': '<rootDir>/test-utils/mocks/testFileMock.js',
-    '\\.(css)$': 'identity-obj-proxy',
+    '\\.css$': 'identity-obj-proxy',
   },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
