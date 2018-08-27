@@ -1,24 +1,23 @@
+/* eslint-disable global-require */
 module.exports = ({ file, options, env }) => {
-  /* eslint-disable global-require */
-  const postCSSPlugins = [
-    require('postcss-import')({ root: file.dirname }),
-    require('postcss-export-custom-variables')({ destination: 'common/styles/themeMap.js' }),
-  ];
+  // Keep in parity with ./storybook/webpack.config postcss-loader until
+  // https://github.com/storybooks/storybook/issues/2455
+  // is resolved
 
-  if (env === 'production') {
-    postCSSPlugins.push(
-      require('autoprefixer')({
-        ...options.autoprefixer,
-        browsers: [
-          '>1%',
-          'last 4 versions',
-          'Firefox ESR',
-          'not ie < 9', // React doesn't support IE8 anyway
-        ],
-        flexbox: 'no-2009',
-      }),
-    );
-  }
+  const plugins = {
+    'postcss-import': { root: file.dirname },
+    'postcss-export-custom-variables': {
+      exporter: 'js',
+      destination: './common/styles/themeMap.js',
+    },
+    autoprefixer:
+      env === 'production'
+        ? {
+            ...options.autoprefixer,
+            flexbox: 'no-2009',
+          }
+        : false,
+  };
 
-  return { plugins: postCSSPlugins };
+  return { plugins };
 };

@@ -3,11 +3,8 @@ const withCSS = require('@zeit/next-css');
 module.exports = withCSS({
   cssModules: true,
   cssLoaderOptions: {
-    // importLoaders is set to 1 when postcss.config.js exists
-    modules: true,
+    // No need for importLoaders: 1 as its set to 1 when postcss.config.js exists
     localIdentName: '[name]_[local]__[hash:base64:5]',
-    sourceMap: true,
-    sourceMapContents: true,
   },
   webpack: config => {
     // Fixes npm packages that depend on `fs` module

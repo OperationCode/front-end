@@ -14,7 +14,7 @@ storiesOf('Single-Purpose/Cards/ImageCard', module)
         'imageSource',
         'https://operationcode.org/static/media/ThinkstockPhotos-489787502.812e.jpg',
       )}
-      link={text('buttonText', 'https://google.com')}
+      link={text('link', 'https://google.com')}
       title={text('title', 'Image Card')}
     />
   ));
