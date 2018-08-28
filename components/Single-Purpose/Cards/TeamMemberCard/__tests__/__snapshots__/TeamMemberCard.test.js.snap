@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Single-Purpose/Cards/StaffCard default 1`] = `
+exports[`TeamMemberCard should render properly with all props assigned 1`] = `
 <article
-  className="Card StaffCard animatedCard"
+  className="Card TeamMemberCard animatedCard"
 >
   <img
     alt="Kyle's beautiful face"
@@ -15,7 +15,7 @@ exports[`Storyshots Single-Purpose/Cards/StaffCard default 1`] = `
     Kyle Holmberg
   </h5>
   <i>
-    Lead Front-End Engineer
+    Front-end Lead Engineer
   </i>
   <hr />
   <ul
@@ -29,7 +29,7 @@ exports[`Storyshots Single-Purpose/Cards/StaffCard default 1`] = `
       </span>
       <a
         className=""
-        href="https://twitter.com/kylemh_"
+        href="https://twitter.com/kylemh"
         rel="noopener noreferrer"
         target="_blank"
       >
@@ -39,7 +39,7 @@ exports[`Storyshots Single-Purpose/Cards/StaffCard default 1`] = `
           Opens in new window
         </span>
         @
-        kylemh_
+        kylemh
         <svg
           aria-hidden="true"
           className="svg-inline--fa fa-external-link-alt fa-w-18 externalLinkIcon"
@@ -70,7 +70,7 @@ exports[`Storyshots Single-Purpose/Cards/StaffCard default 1`] = `
       </span>
       <a
         className=""
-        href="mailto:kyle@operationcode.org"
+        href="mailto:inbox@kylemh.com"
         rel="noopener noreferrer"
         target="_blank"
       >
@@ -79,9 +79,30 @@ exports[`Storyshots Single-Purpose/Cards/StaffCard default 1`] = `
         >
           Opens in new window
         </span>
-        kyle@operationcode.org
+        inbox@kylemh.com
       </a>
     </li>
   </ul>
+</article>
+`;
+
+exports[`TeamMemberCard should render properly with all required props assigned 1`] = `
+<article
+  className="Card TeamMemberCard animatedCard"
+>
+  <img
+    alt="Kyle's beautiful face"
+    className="image"
+    src="https://kylemh.com/public/img/me.jpg"
+  />
+  <h5
+    className="name"
+  >
+    Kyle Holmberg
+  </h5>
+  <i>
+    Front-end Lead Engineer
+  </i>
+  <hr />
 </article>
 `;

@@ -4,7 +4,7 @@
   box-shadow: 0 3px 6px 2px rgba(0, 0, 0, 0.12);
   display: flex;
   flex-flow: column nowrap;
-  justify-content: space-between;
+  justify-content: space-around;
   margin: 1rem;
   min-height: 100px;
   min-width: 100px;
