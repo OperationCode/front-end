@@ -1,9 +1,14 @@
 .HeroBanner {
+  align-items: center;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  color: #ffffff;
   display: flex;
+  flex-direction: column;
   height: 480px;
+  justify-content: center;
+  text-shadow: #000000 1px 0 15px;
   width: 100%;
 }
 
@@ -12,18 +17,8 @@
   margin-bottom: 1rem;
 }
 
-.HeroBanner .text {
-  color: #ffffff;
-  text-shadow: #000000 1px 0 15px;
-  padding: 3rem;
-}
-
 @media only screen and (max-width: 768px) {
   .HeroBanner {
     height: 320px;
-  }
-
-  .text {
-    padding: 2rem;
   }
 }
