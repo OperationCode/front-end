@@ -18,38 +18,48 @@ TeamMemberCard.defaultProps = {
   twitterHandle: undefined,
 };
 
-function TeamMemberCard({ email, imageAlternateText, imageSource, name, staffRole, twitterHandle }) {
+function TeamMemberCard({
+  email,
+  imageAlternateText,
+  imageSource,
+  name,
+  staffRole,
+  twitterHandle,
+}) {
   return (
     <Card className={styles.TeamMemberCard} hasAnimationOnHover>
       <img className={styles.image} src={imageSource} alt={imageAlternateText} />
       <h5 className={styles.name}>{name}</h5>
       <i>{staffRole}</i>
       <hr />
-      <ul className={styles.staffDetails}>
-        {twitterHandle && (
-          <li>
-            <span className={styles.detailPrompt}>Twitter: </span>
-            <OutboundLink
-              analyticsEventLabel={`<TeamMemberCard> ${name} Twitter Handle Click`}
-              href={`https://twitter.com/${twitterHandle}`}
-            >
-              @{twitterHandle}
-            </OutboundLink>
-          </li>
+      {twitterHandle &&
+        email && (
+          <ul className={styles.staffDetails}>
+            {twitterHandle && (
+              <li>
+                <span className={styles.detailPrompt}>Twitter: </span>
+                <OutboundLink
+                  analyticsEventLabel={`<TeamMemberCard> ${name} Twitter Handle Click`}
+                  href={`https://twitter.com/${twitterHandle}`}
+                >
+                  @{twitterHandle}
+                </OutboundLink>
+              </li>
+            )}
+            {email && (
+              <li>
+                <span className={styles.detailPrompt}>Email: </span>
+                <OutboundLink
+                  analyticsEventLabel={`<TeamMemberCard> ${name} Email Click`}
+                  hasIcon={false}
+                  href={`mailto:${email}`}
+                >
+                  {email}
+                </OutboundLink>
+              </li>
+            )}
+          </ul>
         )}
-        {email && (
-          <li>
-            <span className={styles.detailPrompt}>Email: </span>
-            <OutboundLink
-              analyticsEventLabel={`<TeamMemberCard> ${name} Email Click`}
-              hasIcon={false}
-              href={`mailto:${email}`}
-            >
-              {email}
-            </OutboundLink>
-          </li>
-        )}
-      </ul>
     </Card>
   );
 }
