@@ -12,8 +12,8 @@ storiesOf('Common/HeroBanner', module)
     'default',
     withInfo()(() => (
       <HeroBanner
-        imageSrc={text(
-          'imageSrc',
+        imageSource={text(
+          'imageSource',
           `${s3}heroBanners/stock_family-2.jpg`,
         )}
         title={text('title', 'Hero Banner')}

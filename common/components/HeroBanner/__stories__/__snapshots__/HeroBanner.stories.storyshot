@@ -151,7 +151,7 @@ exports[`Storyshots Common/HeroBanner default 1`] = `
                     <span
                       style={Object {}}
                     >
-                      imageSrc
+                      imageSource
                     </span>
                     <span>
                       =
@@ -360,7 +360,7 @@ exports[`Storyshots Common/HeroBanner default 1`] = `
                   <td
                     className="css-1ygfcef"
                   >
-                    imageSrc
+                    imageSource
                   </td>
                   <td
                     className="css-1ygfcef"

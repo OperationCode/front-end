@@ -6,7 +6,7 @@ import styles from './HeroBanner.css';
 HeroBanner.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
-  imageSrc: PropTypes.node.isRequired,
+  imageSource: PropTypes.node.isRequired,
   title: PropTypes.node.isRequired,
 };
 
@@ -15,8 +15,8 @@ HeroBanner.defaultProps = {
   className: '',
 };
 
-function HeroBanner({ children, className, imageSrc, title }) {
-  const dynamicBackgroundImage = { backgroundImage: `url(${imageSrc})` };
+function HeroBanner({ children, className, imageSource, title }) {
+  const dynamicBackgroundImage = { backgroundImage: `url(${imageSource})` };
 
   return (
     <div style={dynamicBackgroundImage} className={classNames(className, styles.HeroBanner)}>

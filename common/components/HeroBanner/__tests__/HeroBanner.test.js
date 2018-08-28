@@ -7,7 +7,7 @@ import HeroBanner from '../HeroBanner';
 
 describe('HeroBanner', () => {
   test('should render with just required props passed', () => {
-    createSnapshotTest(<HeroBanner title="Test" imageSrc={`${s3}heroBanner/stock_family-2.jpg`} />);
+    createSnapshotTest(<HeroBanner title="Test" imageSource={`${s3}heroBanner/stock_family-2.jpg`} />);
   });
 
   test('should render properly with all props assigned', () => {
@@ -15,7 +15,7 @@ describe('HeroBanner', () => {
       <HeroBanner
         className="testing-123"
         title="Test"
-        imageSrc={`${s3}heroBanner/stock_family-2.jpg`}
+        imageSource={`${s3}heroBanner/stock_family-2.jpg`}
       >
         Testing 123
       </HeroBanner>,
