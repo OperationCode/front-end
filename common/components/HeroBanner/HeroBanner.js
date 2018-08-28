@@ -1,31 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import styles from './HeroBanner.css';
 
 HeroBanner.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
-  imageSrc: PropTypes.node.isRequired,
+  imageSource: PropTypes.node.isRequired,
   title: PropTypes.node.isRequired,
-  subtitle: PropTypes.node,
 };
 
 HeroBanner.defaultProps = {
   children: undefined,
   className: '',
-  subtitle: undefined,
 };
 
-function HeroBanner({ children, className, imageSrc, title, subtitle }) {
-  const dynamicBackgroundImage = { backgroundImage: `url(${imageSrc})` };
+function HeroBanner({ children, className, imageSource, title }) {
+  const dynamicBackgroundImage = { backgroundImage: `url(${imageSource})` };
 
   return (
-    <div style={dynamicBackgroundImage} className={`${className} ${styles.HeroBanner}`}>
-      <div className={styles.text}>
-        <h1 className={subtitle && styles.underline}>{title}</h1>
-        {subtitle && <h6>{subtitle}</h6>}
-        {children}
-      </div>
+    <div style={dynamicBackgroundImage} className={classNames(className, styles.HeroBanner)}>
+      {title && <h1 className={classNames({ [styles.underline]: children })}>{title}</h1>}
+      {children}
     </div>
   );
 }
