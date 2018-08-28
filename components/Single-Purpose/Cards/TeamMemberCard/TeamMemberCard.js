@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Card from 'common/components/Card/Card';
 import OutboundLink from 'common/components/OutboundLink/OutboundLink';
-import styles from './StaffCard.css';
+import styles from './TeamMemberCard.css';
 
-StaffCard.propTypes = {
+TeamMemberCard.propTypes = {
   email: PropTypes.string,
   imageAlternateText: PropTypes.string.isRequired,
   imageSource: PropTypes.string.isRequired,
@@ -13,14 +13,14 @@ StaffCard.propTypes = {
   twitterHandle: PropTypes.string,
 };
 
-StaffCard.defaultProps = {
+TeamMemberCard.defaultProps = {
   email: undefined,
   twitterHandle: undefined,
 };
 
-function StaffCard({ email, imageAlternateText, imageSource, name, staffRole, twitterHandle }) {
+function TeamMemberCard({ email, imageAlternateText, imageSource, name, staffRole, twitterHandle }) {
   return (
-    <Card className={styles.StaffCard} hasAnimationOnHover>
+    <Card className={styles.TeamMemberCard} hasAnimationOnHover>
       <img className={styles.image} src={imageSource} alt={imageAlternateText} />
       <h5 className={styles.name}>{name}</h5>
       <i>{staffRole}</i>
@@ -30,7 +30,7 @@ function StaffCard({ email, imageAlternateText, imageSource, name, staffRole, tw
           <li>
             <span className={styles.detailPrompt}>Twitter: </span>
             <OutboundLink
-              analyticsEventLabel={`<StaffCard> ${name} Twitter Handle Click`}
+              analyticsEventLabel={`<TeamMemberCard> ${name} Twitter Handle Click`}
               href={`https://twitter.com/${twitterHandle}`}
             >
               @{twitterHandle}
@@ -41,7 +41,7 @@ function StaffCard({ email, imageAlternateText, imageSource, name, staffRole, tw
           <li>
             <span className={styles.detailPrompt}>Email: </span>
             <OutboundLink
-              analyticsEventLabel={`<StaffCard> ${name} Email Click`}
+              analyticsEventLabel={`<TeamMemberCard> ${name} Email Click`}
               hasIcon={false}
               href={`mailto:${email}`}
             >
@@ -54,4 +54,4 @@ function StaffCard({ email, imageAlternateText, imageSource, name, staffRole, tw
   );
 }
 
-export default StaffCard;
+export default TeamMemberCard;

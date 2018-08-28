@@ -2,12 +2,12 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, text } from '@storybook/addon-knobs';
 
-import StaffCard from '../StaffCard';
+import TeamMemberCard from '../TeamMemberCard';
 
-storiesOf('Single-Purpose/Cards/StaffCard', module)
+storiesOf('Single-Purpose/Cards/TeamMemberCard', module)
   .addDecorator(withKnobs)
   .add('default', () => (
-    <StaffCard
+    <TeamMemberCard
       email={text('email', 'kyle@operationcode.org')}
       imageAlternateText={text('imageAlternateText', "Kyle's beautiful face")}
       imageSource={text('imageSource', 'https://kylemh.com/public/img/me.jpg')}

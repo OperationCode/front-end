@@ -1,4 +1,4 @@
-.StaffCard {
+.TeamMemberCard {
   display: flex;
   flex-direction: column;
   height: 300px;
@@ -6,7 +6,7 @@
 }
 
 @media screen and (max-width: 500px) {
-  .StaffCard {
+  .TeamMemberCard {
     width: 90%;
   }
 
@@ -28,7 +28,7 @@
   transition: 0.2s filter linear;
 }
 
-.StaffCard:hover .image {
+.TeamMemberCard:hover .image {
   filter: grayscale(0%);
 }
 
@@ -36,7 +36,7 @@
   font-size: 1.5rem;
 }
 
-.StaffCard hr {
+.TeamMemberCard hr {
   border-top: 1px solid #8c8b8b;
   width: 80%;
 }

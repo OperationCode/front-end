@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Single-Purpose/Cards/StaffCard default 1`] = `
+exports[`Storyshots Single-Purpose/Cards/TeamMemberCard default 1`] = `
 <article
-  className="Card StaffCard animatedCard"
+  className="Card TeamMemberCard animatedCard"
 >
   <img
     alt="Kyle's beautiful face"
@@ -25,7 +25,7 @@ exports[`Storyshots Single-Purpose/Cards/StaffCard default 1`] = `
       <span
         className="detailPrompt"
       >
-        Twitter: 
+        Twitter:
       </span>
       <a
         className=""
@@ -66,7 +66,7 @@ exports[`Storyshots Single-Purpose/Cards/StaffCard default 1`] = `
       <span
         className="detailPrompt"
       >
-        Email: 
+        Email:
       </span>
       <a
         className=""
