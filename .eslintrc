@@ -59,6 +59,12 @@
       "rules": {
         "react/react-in-jsx-scope": "off"
       }
+    },
+    {
+      "files": ["components/nav.js"],
+      "rules": {
+        "jsx-a11y/anchor-is-valid": "off"
+      }
     }
   ]
 }
