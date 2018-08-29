@@ -37,8 +37,8 @@ export default () => (
       </p>
       <p>
         As a non - profit organization, we rely heavily on your support. If you are interested in
-        helping us financially, please donate here or set your Amazon Smile organization to & ldquo;
-        Operation Code &rdquo;. If you have questions about our organization, platforms, or
+        helping us financially, please donate here or set your Amazon Smile organization to
+        &ldquo;Operation Code&rdquo;. If you have questions about our organization, platforms, or
         services, please reference our FAQ page. Otherwise, do not hesitate to reach out to our
         staff.
       </p>
