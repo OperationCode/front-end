@@ -2,7 +2,6 @@
 import React from 'react';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 
-import { s3 } from 'common/constants/urls';
 import Section from '../Section';
 
 describe('Section', () => {
