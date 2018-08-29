@@ -9,12 +9,16 @@ exports[`HeroBanner should render properly with all props assigned 1`] = `
     }
   }
 >
-  <h1
-    className="underline"
+  <div
+    className="content"
   >
-    Test
-  </h1>
-  Testing 123
+    <h1
+      className="underline"
+    >
+      Test
+    </h1>
+    Testing 123
+  </div>
 </div>
 `;
 
@@ -27,10 +31,14 @@ exports[`HeroBanner should render with just required props passed 1`] = `
     }
   }
 >
-  <h1
-    className=""
+  <div
+    className="content"
   >
-    Test
-  </h1>
+    <h1
+      className=""
+    >
+      Test
+    </h1>
+  </div>
 </div>
 `;
