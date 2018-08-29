@@ -1,0 +1,12 @@
+.ValueCard {
+  max-width: 425px;
+  min-height: 250px;
+  padding: 2rem;
+  margin: 40px 20px;
+}
+
+.name {
+  text-align: center;
+  text-decoration: underline;
+  padding-top: 25px;
+}

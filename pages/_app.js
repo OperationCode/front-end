@@ -1,6 +1,7 @@
 import React from 'react';
 import App, { Container } from 'next/app';
 import Nav from 'components/nav';
+import 'common/styles/globalStyles.css';
 
 // eslint-disable-next-line react/prefer-stateless-function
 class Layout extends React.Component {

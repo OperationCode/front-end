@@ -18,12 +18,16 @@ exports[`Storyshots Common/HeroBanner default 1`] = `
         }
       }
     >
-      <h1
-        className=""
+      <div
+        className="content"
       >
-        Hero Banner
-      </h1>
-      
+        <h1
+          className=""
+        >
+          Hero Banner
+        </h1>
+        
+      </div>
     </div>
   </div>
   <button

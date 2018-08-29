@@ -13,7 +13,7 @@ storiesOf('Common/Section', module)
       <Section
         hasHeadingLines={boolean('hasHeadingLines', true)}
         id={text('id', 'Used as a reference point for scroll anchors')}
-        theme={select('theme', ['gray', 'grayLight', 'slate', 'white'], 'gray')}
+        theme={select('theme', ['gray', 'grayLight', 'mist', 'slate', 'white'], 'gray')}
         title={text('title', 'Section Title')}
       >
         {text('children', 'Section content!')}

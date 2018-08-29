@@ -1,4 +1,5 @@
 import Document, { Head, Main, NextScript } from 'next/document';
+import 'common/styles/globalStyles.css';
 
 // This acts as an override necessary for CSS Modules to work
 // https://github.com/zeit/next-plugins/tree/master/packages/next-css#usage

@@ -20,8 +20,10 @@ function HeroBanner({ children, className, imageSource, title }) {
 
   return (
     <div style={dynamicBackgroundImage} className={classNames(className, styles.HeroBanner)}>
-      {title && <h1 className={classNames({ [styles.underline]: children })}>{title}</h1>}
-      {children}
+      <div className={styles.content}>
+        <h1 className={classNames({ [styles.underline]: children })}>{title}</h1>
+        {children}
+      </div>
     </div>
   );
 }
