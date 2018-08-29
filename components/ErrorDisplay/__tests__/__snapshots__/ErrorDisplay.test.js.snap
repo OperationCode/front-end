@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ErrorDisplay should render properly with all props assigned 1`] = `
+<div
+  className="ErrorDisplay"
+>
+  <div
+    className="bg"
+  >
+    <h1
+      className="title"
+    >
+      Test Code
+      !
+    </h1>
+    <p
+      className="paragraph"
+    >
+      You definitely weren't supposed to see this...
+    </p>
+  </div>
+</div>
+`;
+
+exports[`ErrorDisplay should render with just required props 1`] = `
+<div
+  className="ErrorDisplay"
+>
+  <div
+    className="bg"
+  >
+    <h1
+      className="title"
+    >
+      Test Code
+      !
+    </h1>
+    <p
+      className="paragraph"
+    >
+      You definitely weren't supposed to see this...
+    </p>
+  </div>
+</div>
+`;
