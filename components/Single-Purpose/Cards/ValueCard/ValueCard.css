@@ -1,0 +1,20 @@
+.valueCard {
+  border: 2px #AAA solid;
+  max-width: 425px;
+  min-height: 275px;
+  padding: 0 30px;
+  margin: 40px 20px;
+  justify-content: center;
+}
+
+.valueCard h3 {
+  text-align: center;
+  text-decoration: underline;
+  padding-top: 25px;
+}
+
+@media only screen and (max-width: 500) {
+  .valueCard h4 {
+    font-size: 1.5rem;
+  }
+}
