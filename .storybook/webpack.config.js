@@ -22,9 +22,6 @@ module.exports = (storybookBaseConfig, configType) => {
         },
       },
       {
-        // Keep in parity with root postcss.config.js until
-        // https://github.com/storybooks/storybook/issues/2455
-        // is resolved
         loader: 'postcss-loader',
         options: {
           plugins: [
@@ -33,7 +30,7 @@ module.exports = (storybookBaseConfig, configType) => {
               exporter: 'js',
               destination: 'common/styles/themeMap.js',
             }),
-            // except no autoprefixer - assuming dev has modern browser to decrease build speed
+            require('autoprefixer')(),
           ],
         },
       },
