@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AdBanner it should render properly with required props 1`] = `
+<OutboundLink
+  analyticsEventLabel="[AdBanner Hit] to www.test.com"
+  className="adBannerLink"
+  hasIcon={false}
+  href="www.test.com"
+>
+  <div
+    className="adBanner"
+  >
+    <div
+      className="adBannerImageContainer"
+    >
+      <img
+        alt="Some text"
+        className="adBannerImage"
+        src="www.imagetest.com"
+      />
+    </div>
+    <h4
+      className="adBannerText"
+    >
+      Test
+    </h4>
+  </div>
+</OutboundLink>
+`;
