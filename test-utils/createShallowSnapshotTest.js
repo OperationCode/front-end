@@ -3,7 +3,8 @@ import ShallowRenderer from 'react-test-renderer/shallow';
 
 /**
  * Used to create a snapshot test off of surface leaves of the tree.
- * Useful for regression tests on containers or larger components.
+ * Useful for regression tests on containers, components utilizing something that requires large
+ * mocking, or very large components.
  *
  * @export
  * @param {*} Component
