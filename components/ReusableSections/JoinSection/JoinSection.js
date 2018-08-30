@@ -4,7 +4,7 @@ import Button from 'common/components/Button/Button';
 import Section from 'common/components/Section/Section';
 import styles from './JoinSection.css';
 
-function Join() {
+function JoinSection() {
   return (
     <Section
       className={styles.JoinSection}
@@ -17,9 +17,9 @@ function Join() {
         <p>
           Operation Code is leading the way to expand opportunities for military veterans and their
           families to learn new skills, and build a career in the fast-growing technology sector.
-          <br />
-          Join our community for free and jumpstart your skills today!
         </p>
+
+        <p>Join our community for free and jumpstart your skills today!</p>
 
         <Button href="/join" theme="secondary">
           Join
@@ -29,4 +29,4 @@ function Join() {
   );
 }
 
-export default Join;
+export default JoinSection;
