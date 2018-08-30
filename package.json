@@ -14,7 +14,7 @@
     "lint:styles": "stylelint \"**/*.css\"",
     "lint": "yarn lint:scripts && yarn lint:styles",
     "now-build": "echo 'Built on Travis CI'",
-    "prepush": "lint-staged && yarn test",
+    "precommit": "lint-staged && yarn test",
     "start": "next start",
     "storybook": "start-storybook -s ./static -p 9001 -c .storybook",
     "test:ci": "NODE_ENV=test BABEL_ENV=test jest --ci --coverage --coverageReporters=text-lcov | yarn coveralls",
