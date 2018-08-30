@@ -4,7 +4,7 @@ import Section from 'common/components/Section/Section';
 import Button from 'common/components/Button/Button';
 import styles from './DonateSection.css';
 
-function Donate() {
+function DonateSection() {
   return (
     <Section
       className={styles.DonateSection}
@@ -30,4 +30,4 @@ function Donate() {
   );
 }
 
-export default Donate;
+export default DonateSection;
