@@ -5,8 +5,6 @@ import SocialMedia from '../SocialMedia';
 
 describe('SocialMedia', () => {
   test('it should render properly with no props', () => {
-    createShallowSnapshotTest(
-      <SocialMedia />,
-    );
+    createShallowSnapshotTest(<SocialMedia />);
   });
 });

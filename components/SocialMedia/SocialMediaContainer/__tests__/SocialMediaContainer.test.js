@@ -6,7 +6,10 @@ import SocialMediaContainer from '../SocialMediaContainer';
 describe('SocialMediaContainer', () => {
   test('it should render properly with required (all) props', () => {
     createSnapshotTest(
-      <SocialMediaContainer><div>Testing 1</div><div>Testing 2</div></SocialMediaContainer>,
+      <SocialMediaContainer>
+        <div>Testing 1</div>
+        <div>Testing 2</div>
+      </SocialMediaContainer>,
     );
   });
 });
