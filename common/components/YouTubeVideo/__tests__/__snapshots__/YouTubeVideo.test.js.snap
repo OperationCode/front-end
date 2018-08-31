@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`YouTubeVideo it should render properly with required props assigned 1`] = `
+<YouTube
+  className="YouTubeVideo"
+  containerClassName=""
+  id={null}
+  onEnd={[Function]}
+  onError={[Function]}
+  onPause={[Function]}
+  onPlay={[Function]}
+  onPlaybackQualityChange={[Function]}
+  onPlaybackRateChange={[Function]}
+  onReady={[Function]}
+  onStateChange={[Function]}
+  opts={
+    Object {
+      "height": "390",
+      "width": "640",
+    }
+  }
+  videoId="12345"
+/>
+`;
+
+exports[`YouTubeVideo it should render properly with some props assigned 1`] = `
+<YouTube
+  className="YouTube-video YouTubeVideo"
+  containerClassName=""
+  id={null}
+  onEnd={[Function]}
+  onError={[Function]}
+  onPause={[Function]}
+  onPlay={[Function]}
+  onPlaybackQualityChange={[Function]}
+  onPlaybackRateChange={[Function]}
+  onReady={[Function]}
+  onStateChange={[Function]}
+  opts={
+    Object {
+      "height": "450px",
+      "width": "875px",
+    }
+  }
+  videoId="12395"
+/>
+`;
