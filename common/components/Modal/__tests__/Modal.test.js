@@ -1,6 +1,7 @@
 /* eslint-env jest */
 import React from 'react';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
+import createShallowSnapshotTest from 'test-utils/createShallowSnapshotTest';
 
 import Modal from '../Modal';
 
@@ -13,6 +14,20 @@ describe('Modal', () => {
     createSnapshotTest(
       <Modal
         className="test-class"
+        onRequestClose={() => {}}
+        screenReaderLabel="Test"
+        shouldCloseOnOverlayClick
+      >
+        Test
+      </Modal>,
+    );
+  });
+
+  test('should render properly with some props assigned and being open', () => {
+    createShallowSnapshotTest(
+      <Modal
+        className="test-class"
+        isOpen
         onRequestClose={() => {}}
         screenReaderLabel="Test"
         shouldCloseOnOverlayClick
