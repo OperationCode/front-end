@@ -29,7 +29,11 @@ module.exports = {
   // An array of regexp pattern strings used to skip coverage collection
   coveragePathIgnorePatterns: [
     '<rootDir>/node_modules',
-    '<rootDir>/pages/_*.js', // Ignore Next.js files
+    '<rootDir>/common/config',
+    // Ignore Next.js files
+    '<rootDir>/pages/_*.js',
+    '<rootDir>/components/head.js',
+    '<rootDir>/components/nav.js',
   ],
 
   // A list of reporter names that Jest uses when writing coverage reports

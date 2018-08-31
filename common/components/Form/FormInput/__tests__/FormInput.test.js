@@ -6,6 +6,6 @@ import FormInput from '../FormInput';
 
 describe('FormInput', () => {
   test('should render with just required props passed', () => {
-    createSnapshotTest(<FormInput id="test"/>);
+    createSnapshotTest(<FormInput id="test" />);
   });
 });

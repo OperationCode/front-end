@@ -18,13 +18,7 @@ OutboundLink.defaultProps = {
   hasIcon: true,
 };
 
-function OutboundLink({
-  analyticsEventLabel,
-  children,
-  className,
-  hasIcon,
-  href,
-}) {
+function OutboundLink({ analyticsEventLabel, children, className, hasIcon, href }) {
   const linkContent = (
     <React.Fragment>
       <span className={styles.screenReaderOnly}>Opens in new window</span>
@@ -56,12 +50,7 @@ function OutboundLink({
   }
 
   return (
-    <a
-      className={className}
-      href={href}
-      rel="noopener noreferrer"
-      target="_blank"
-    >
+    <a className={className} href={href} rel="noopener noreferrer" target="_blank">
       {linkContent}
     </a>
   );

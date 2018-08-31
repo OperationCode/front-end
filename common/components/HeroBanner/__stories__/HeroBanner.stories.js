@@ -12,10 +12,7 @@ storiesOf('Common/HeroBanner', module)
     'default',
     withInfo()(() => (
       <HeroBanner
-        imageSource={text(
-          'imageSource',
-          `${s3}heroBanners/stock_family-2.jpg`,
-        )}
+        imageSource={text('imageSource', `${s3}heroBanners/stock_family-2.jpg`)}
         title={text('title', 'Hero Banner')}
       >
         {text('children', '')}

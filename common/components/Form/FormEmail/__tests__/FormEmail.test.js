@@ -6,6 +6,6 @@ import FormEmail from '../FormEmail';
 
 describe('FormEmail', () => {
   test('should render with just required props passed', () => {
-    createSnapshotTest(<FormEmail id="test"/>);
+    createSnapshotTest(<FormEmail id="test" />);
   });
 });

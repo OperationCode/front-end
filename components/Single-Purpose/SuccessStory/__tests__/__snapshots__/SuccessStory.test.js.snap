@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SuccessStory it should render properly with all required props 1`] = `
+<div
+  className="SuccessStory"
+>
+  <img
+    alt="Great testing culture headshot"
+    className="image"
+    src="image.png"
+  />
+  <div
+    className="quote"
+  >
+    <h3
+      className="title"
+    >
+      Great testing culture
+    </h3>
+    <blockquote>
+      "Best test of my life!"
+    </blockquote>
+  </div>
+</div>
+`;
