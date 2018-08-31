@@ -8,7 +8,9 @@ When you visit our website you're interacting with two systems, a front-end appl
 
 ### What is the back-end?
 
-The back-end is responsible for providing data for the front-end to display. This sometimes involves processing the data entered into the front-end, and running various jobs like inviting new users to Slack, or signing them up for our newsletter. Our back-end is written in Rails and it's sourcecode can be viewed [here](https://github.com/OperationCode/operationcode_backend). It acts primarily as a REST API.
+_Quick Note_: Our back-end API is not currently connected to this repository.
+
+The back-end is responsible for providing data for the front-end to display. This sometimes involves processing the data entered into the front-end, and running various jobs like inviting new users to Slack, or signing them up for our newsletter. Our back-end is written in Rails and it's source code can be viewed [here](https://github.com/OperationCode/operationcode_backend). It acts primarily as a "REST API".
 
 > "back-end" is synonymous with server, server-side, and "models & controllers"
 
@@ -38,27 +40,27 @@ Example use:
 # Install dependencies
 yarn
 
-# Run local development on localhost:3000
+# Run local development in your browser via [http://localhost:3000](http://localhost:3000)
 yarn dev
 
-# Use Storybook when developing new common components or to see what lego blocks you have available, open on localhost:9001
+# Use Storybook as a workbench when developing new components. Open app in browser via [http://localhost:9001](http://localhost:9001)
 yarn storybook
 
-#Create a static bundle of our Storybook instance that can be easily deployed.
+# Create a static bundle of our Storybook instance that can be easily deployed to the web.
 yarn build-storybook
 
-#Create a static bundle of our main application that can be easily deployed.
+# Create a static bundle of our main application that can be easily deployed to the web.
 yarn build
 
-#Check for linting errors. Used in our continuous integration to ensure that code meets our linting standards.
+# Check for linting errors. This runs as part of a "pre-commit hook" to ensure that code meets our linting standards.
 yarn lint
 
-#Used in a precommit hook to ensure that code you’re committing is up to our linting and formatting standards.
+# This runs as part of a "pre-commit hook" hook to ensure that code you’re committing is formatted properly.
 yarn format
 
-#Start the main application server or to serve up a production build locally.
+# If you ran `yarn build` this command can be used to start the server for your production build, but locally.
 yarn start
 
-#Run all available unit and integration tests
+# Run all available unit and integration tests
 yarn test
 ```
