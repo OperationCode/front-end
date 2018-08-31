@@ -9,7 +9,7 @@ SocialMediaItem.propTypes = {
   imageSource: PropTypes.string.isRequired,
 };
 
-function SocialMediaItem({  alt, href, imageSource }) {
+function SocialMediaItem({ alt, href, imageSource }) {
   return (
     <div className={styles.SocialMediaItem}>
       <OutboundLink analyticsEventLabel={`Social Media Item: ${alt}`} hasIcon={false} href={href}>
