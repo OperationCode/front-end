@@ -1,3 +1,4 @@
+/* WARNING: DEPRECATED AND WILL NOT WORK - react-router is not in this project */
 import React, { Component } from 'react';
 import getVal from 'lodash/get';
 import axios from 'axios';

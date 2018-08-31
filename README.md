@@ -15,15 +15,12 @@
 [![Twitter Follow](https://img.shields.io/twitter/follow/operation_code.svg?style=social&label=Follow&style=social)](https://twitter.com/operation_code)
 
 [![Build Status](https://travis-ci.org/OperationCode/front-end.svg?branch=master)](https://travis-ci.org/OperationCode/front-end)
-[![Coverage Status](https://coveralls.io/repos/github/OperationCode/front-end/badge.svg?branch=master)](https://coveralls.io/github/OperationCode/front-end?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/OperationCode/front-end/badge.svg?branch=chore%2Fremove-dead-code-and-add-comments)](https://coveralls.io/github/OperationCode/front-end?branch=chore%2Fremove-dead-code-and-add-comments)
 [![Maintainability](https://api.codeclimate.com/v1/badges/5010b82ce5d8e319a597/maintainability)](https://codeclimate.com/github/OperationCode/front-end/maintainability)
 [![Greenkeeper badge](https://badges.greenkeeper.io/OperationCode/front-end.svg)](https://greenkeeper.io/)
 
-## Temporary Note
 
-  Changes are made on a daily basis to documentation and files. Documentation may not be accurate due to the rapid changes that are occuring. In its current state, this repo is not ready for deployment.
-
-## Welcome!
+# Welcome!
 
 This is incoming v2 front-end application for [OperationCode](https://operationcode.org). We highly recommend [joining our organization](https://operationcode.org/join) to receive an invite to our Slack team. From there, you'll want to join the `#oc-projects` channel. You can get help from multiple professional developers, including people who have worked on the application since day 1!
 
@@ -41,7 +38,7 @@ Please read our [Contributing Guide](CONTRIBUTING.md) to learn everything you ne
 
 Recommended versions of tools used within the repo:
 
-* `node@8.11.3`
+* Node: See [.nvmrc](https://github.com/OperationCode/front-end/blob/master/.nvmrc)
 * `yarn@1.7.0` or greater
 * `git@2.17.1` or greater
 
@@ -52,10 +49,10 @@ yarn
 # Run local development
 yarn dev
 
-# Use Storybook when developing new common components or to see what lego blocks you have available
+# Use Storybook as a workbench when developing new components
 yarn storybook
 
-#Start local production build
+#Start local production build (typically unnecessary locally)
 yarn start
 
 #Run all available unit and integration tests
