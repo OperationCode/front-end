@@ -41,7 +41,7 @@ Please read our [Contributing Guide](CONTRIBUTING.md) to learn everything you ne
 
 Recommended versions of tools used within the repo:
 
-* `node@8.11.3`
+* Node: See [.nvmrc](https://github.com/OperationCode/front-end/blob/master/.nvmrc)
 * `yarn@1.7.0` or greater
 * `git@2.17.1` or greater
 
@@ -52,10 +52,10 @@ yarn
 # Run local development
 yarn dev
 
-# Use Storybook when developing new common components or to see what lego blocks you have available
+# Use Storybook as a workbench when developing new components
 yarn storybook
 
-#Start local production build
+#Start local production build (typically unnecessary locally)
 yarn start
 
 #Run all available unit and integration tests
