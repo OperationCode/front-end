@@ -29,6 +29,7 @@ module.exports = {
   // An array of regexp pattern strings used to skip coverage collection
   coveragePathIgnorePatterns: [
     '<rootDir>/node_modules',
+    '<rootDir>/common/config',
     // Ignore Next.js files
     '<rootDir>/pages/_*.js',
     '<rootDir>/components/head.js',
