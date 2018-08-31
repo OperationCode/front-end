@@ -7,26 +7,30 @@ cache:
   directories:
     - "node_modules"
 
-before_install: yarn global add greenkeeper-lockfile@1
+before_install:
+ - yarn global add greenkeeper-lockfile@1
 
-before_script: greenkeeper-lockfile-update
+install:
+  - yarn install --frozen-lockfile --silent
 
-after_script: greenkeeper-lockfile-upload
+before_script:
+ - greenkeeper-lockfile-update
+
+after_script:
+ - greenkeeper-lockfile-upload
 
 script:
   - yarn lint
   - yarn test:ci
   - yarn build
 
-# before_deploy: yarn add now # Install Now CLI
-
 deploy:
-  # - provider: script # Run a custom deployment script which we will define below
-  #   script: yarn export && now --token $NOW_TOKEN
-  #   skip_cleanup: true
-  #   on:
-  #     all_branches: true
-  #     master: false
+  - provider: script
+    script: echo 'No build on feature branches. Now deploys static exports automatically.'
+    skip_cleanup: true
+    on:
+      all_branches: true
+      master: false
   - provider: script
     script: yarn add now && now --local-config "./now.master.json" --token $NOW_TOKEN
     skip_cleanup: true
