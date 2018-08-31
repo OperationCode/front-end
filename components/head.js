@@ -18,7 +18,10 @@ function Head({ description, ogImage, title, url }) {
   return (
     <NextHead>
       <meta charSet="UTF-8" />
-      <title>Operation Code{` | ${title}` || ''}</title>
+      <title>
+        Operation Code
+        {` | ${title}` || ''}
+      </title>
       <meta name="description" content={description || defaultDescription} />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -39,7 +42,10 @@ function Head({ description, ogImage, title, url }) {
       <meta property="og:image:height" content="630" />
 
       {/* TODO: Download and avoid network request  */}
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif:400,400i,700,700i" />
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Noto+Serif:400,400i,700,700i"
+      />
     </NextHead>
   );
 }

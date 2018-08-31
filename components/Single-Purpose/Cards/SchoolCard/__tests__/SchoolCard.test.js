@@ -18,7 +18,7 @@ describe('SchoolCard', () => {
         acceptsGIBill
         isFullTime
         hasHardware={false}
-      />
+      />,
     );
   });
 
@@ -32,7 +32,7 @@ describe('SchoolCard', () => {
         acceptsGIBill={false}
         isFullTime={false}
         hasHardware
-      />
+      />,
     );
   });
 });

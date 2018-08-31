@@ -12,7 +12,7 @@ describe('TeamMemberCard', () => {
         imageSource="https://kylemh.com/public/img/me.jpg"
         name="Kyle Holmberg"
         staffRole="Front-end Lead Engineer"
-      />
+      />,
     );
   });
 
@@ -25,7 +25,7 @@ describe('TeamMemberCard', () => {
         name="Kyle Holmberg"
         staffRole="Front-end Lead Engineer"
         twitterHandle="kylemh"
-      />
+      />,
     );
   });
 });
