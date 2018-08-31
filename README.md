@@ -19,6 +19,7 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/5010b82ce5d8e319a597/maintainability)](https://codeclimate.com/github/OperationCode/front-end/maintainability)
 [![Greenkeeper badge](https://badges.greenkeeper.io/OperationCode/front-end.svg)](https://greenkeeper.io/)
 
+
 # Welcome!
 
 This is incoming v2 front-end application for [OperationCode](https://operationcode.org). We highly recommend [joining our organization](https://operationcode.org/join) to receive an invite to our Slack team. From there, you'll want to join the `#oc-projects` channel. You can get help from multiple professional developers, including people who have worked on the application since day 1!
