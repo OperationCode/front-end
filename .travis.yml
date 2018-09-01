@@ -1,3 +1,8 @@
+env:
+  - global:
+    # Not secret. Test coverage key for Code Climate
+    - CC_TEST_REPORTER_ID=0f2bc6ef737019bfc8eda369cd06b66c54606b144b4d81cec010fb494d2559af
+
 language: node_js
 
 # node_js: # not needed - `.nvmrc` at root-level
@@ -15,9 +20,14 @@ install:
 
 before_script:
  - greenkeeper-lockfile-update
+ - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+ - chmod +x ./cc-test-reporter
+ - ./cc-test-reporter before-build
+
 
 after_script:
  - greenkeeper-lockfile-upload
+ - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 
 script:
   - yarn lint
@@ -26,6 +36,7 @@ script:
 
 deploy:
   - provider: script
+    # Despite not doing anything, script is necessary to get all Travis CI working properly.
     script: echo 'No build on feature branches. Now deploys static exports automatically.'
     skip_cleanup: true
     on:
