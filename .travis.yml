@@ -24,15 +24,14 @@ before_script:
  - chmod +x ./cc-test-reporter
  - ./cc-test-reporter before-build
 
-
-after_script:
- - greenkeeper-lockfile-upload
- - ./cc-test-reporter after-build --debug --exit-code $TRAVIS_TEST_RESULT
-
 script:
   - yarn lint
   - yarn test:ci
   - yarn build
+
+after_script:
+ - greenkeeper-lockfile-upload
+ - ./cc-test-reporter after-build --debug --exit-code $TRAVIS_TEST_RESULT
 
 deploy:
   - provider: script
