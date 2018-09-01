@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Single-Purpose/ClipPathImage default 1`] = `
+exports[`Storyshots ClipPathImage default 1`] = `
 <div
   className="ClipPathImage"
 >

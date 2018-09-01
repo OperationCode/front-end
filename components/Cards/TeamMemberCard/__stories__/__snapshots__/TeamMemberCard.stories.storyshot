@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Single-Purpose/Cards/TeamMemberCard default 1`] = `
+exports[`Storyshots Cards/TeamMemberCard default 1`] = `
 <article
   className="Card TeamMemberCard animatedCard"
 >

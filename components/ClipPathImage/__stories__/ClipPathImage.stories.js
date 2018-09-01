@@ -4,7 +4,7 @@ import { withKnobs, select, text } from '@storybook/addon-knobs';
 
 import ClipPathImage from '../ClipPathImage';
 
-storiesOf('Single-Purpose/ClipPathImage', module)
+storiesOf('ClipPathImage', module)
   .addDecorator(withKnobs)
   .add('default', () => (
     <ClipPathImage

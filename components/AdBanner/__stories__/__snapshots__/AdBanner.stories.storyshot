@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Single-Purpose/AdBanner default 1`] = `
+exports[`Storyshots AdBanner default 1`] = `
 <a
   className="adBannerLink"
   href="https://autogravity.com"

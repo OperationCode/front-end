@@ -4,7 +4,7 @@ import { withKnobs, text } from '@storybook/addon-knobs';
 
 import ImageCard from '../ImageCard';
 
-storiesOf('Single-Purpose/Cards/ImageCard', module)
+storiesOf('Cards/ImageCard', module)
   .addDecorator(withKnobs)
   .add('default', () => (
     <ImageCard

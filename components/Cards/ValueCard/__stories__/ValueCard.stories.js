@@ -4,7 +4,7 @@ import { withKnobs, text } from '@storybook/addon-knobs';
 
 import ValueCard from '../ValueCard';
 
-storiesOf('Single-Purpose/Cards/ValueCard', module)
+storiesOf('Cards/ValueCard', module)
   .addDecorator(withKnobs)
   .add('default', () => (
     <ValueCard

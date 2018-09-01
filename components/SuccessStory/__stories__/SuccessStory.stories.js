@@ -4,7 +4,7 @@ import { withKnobs, text } from '@storybook/addon-knobs';
 
 import SuccessStory from '../SuccessStory';
 
-storiesOf('Single-Purpose/SuccessStory', module)
+storiesOf('SuccessStory', module)
   .addDecorator(withKnobs)
   .add('default', () => (
     <SuccessStory

@@ -4,7 +4,7 @@ import { withKnobs, text } from '@storybook/addon-knobs';
 
 import AdBanner from '../AdBanner';
 
-storiesOf('Single-Purpose/AdBanner', module)
+storiesOf('AdBanner', module)
   .addDecorator(withKnobs)
   .add('default', () => (
     <AdBanner
