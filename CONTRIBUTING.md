@@ -80,6 +80,7 @@ The back-end is responsible for providing data for the front-end to display. Thi
 ### What is REST? What is an API?
 
 [What is REST?](https://www.codecademy.com/articles/what-is-rest)
+
 [What is an API?](https://medium.freecodecamp.org/what-is-an-api-in-english-please-b880a3214a82)
 
 
