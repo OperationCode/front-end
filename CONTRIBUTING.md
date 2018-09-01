@@ -85,15 +85,17 @@ The back-end is responsible for providing data for the front-end to display. Thi
 
 ## Technologies
 
-Here is a breakdown and summary of the main technologies our project utilizes:
+Here is a breakdown and summary of the main technologies our project utilizes in alphabetic order:
 
-- [React.js](https://facebook.github.io/react/) - Facebook's popular JavaScript front-end framework.
-- [Node.js](https://www.nodejs.org/) - Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine. React utilizes a tiny Node/Express server for it's development environment.
-- [Next.js](https://nextjs.org/) - Next is a framework for creating ["server-side rendered"](https://medium.freecodecamp.org/demystifying-reacts-server-side-render-de335d408fe4) React applications with a lot of performance and [search engine optimizations](https://searchengineland.com/guide/what-is-seo) out-of-the-box.
-- [Storybook](https://storybook.js.org) - Storybook acts as a "component workbench" and source for component documentation. You can learn more about Storybook on your own [here](https://www.learnstorybook.com/)
 - [Babel](https://babeljs.io/) - JavaScript compiler to unify all the different versions of JS that may have been used or will be used in the future. [Here's a blog post from Scotch.io on why JavaScript utilizes "transpiling" with Babel](https://scotch.io/tutorials/javascript-transpilers-what-they-are-why-we-need-them).
-- [Yarn](https://yarnpkg.com/) - Facebook's open source JavaScript package manager. It has very subtle differences from npm, but essentially does the same thing.
 - [CSS Modules](https://github.com/css-modules/css-modules) - CSS Modules allow us to encapsulate CSS within components. Instead of HTML/CSS - our project structure is basically JSX/CSS.
+- [Jest](https://jestjs.io/) - A JavaScript testing framework from Facebook. We use it for all of our unit and some of our integration/regression tests.
+- [Next.js](https://nextjs.org/) - Next is a framework for creating ["server-side rendered"](https://medium.freecodecamp.org/demystifying-reacts-server-side-render-de335d408fe4) React applications with a lot of performance and [search engine optimizations](https://searchengineland.com/guide/what-is-seo) out-of-the-box.
+- [Node.js](https://www.nodejs.org/) - Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine. React utilizes a tiny Node/Express server for it's development environment.
+- [React.js](https://facebook.github.io/react/) - Facebook's popular JavaScript front-end framework.
+- [Storybook](https://storybook.js.org) - Storybook acts as a "component workbench" and source for component documentation. You can learn more about Storybook on your own [here](https://www.learnstorybook.com/)
+- [Webpack](https://webpack.js.org/) - The premier module bundler for JavaScript. Read [this article](https://survivejs.com/webpack/what-is-webpack/) for more information.
+- [Yarn](https://yarnpkg.com/) - Facebook's open source JavaScript package manager. It has very subtle differences from npm, but essentially does the same thing.
 
 
 ## Development Workflow
@@ -124,50 +126,38 @@ Some issues take awhile to code a solution for. It is very normal to take a larg
 
 ```
 ├── common
-|   |-- components
-|   |-- config
-|   |-- constants
-|   |-- styles
-|   |-- utils
+|   ├── components  # These are reusable "lego blocks" of components.
+|   ├── config  # This is just a folder for configuration shared by more than one tool.
+|   ├── constants  # This is a folder that contain simple, but unpreventable uniform data.
+|   ├── styles  # Contains global styles, CSS variables, and a JS export of those CSS variables (used in Storybook)
+|   └── utils
+|
 ├── components
-|   |-- ErrorDisplay
-|   |-- ReusableSections
-|   |-- Single-Purpose
-|   |-- SocialLogin
-|   |-- SocialMedia
-|   |-- head.js
-|   |-- nav.js
+|   ├── ReusableSections  # These sections get used many times throughout our pages, but are not necessarily reusable as `common/components`.
+|   ├── * # All the remaining folders are more to modularize logic, rather than serve as reusable code.
+|   ├── head.js  # Next.js-specific component to handle a page's meta info (and the rest of it's <head> tag) dynamically
+|   └── nav.js
+|
 ├── pages
-|   |-- styles
-|   |-- _app.js
-|   |-- _document.js
-|   |-- _error.js
-|   |-- about.js
-|   |-- index.js
+|   ├── styles
+|   ├── _app.js  # Next.js-specific file used to customize the client-side routing of the application.
+|   ├── _document.js  # Next.js-specific file used to customize the initial rendering of the application.
+|   ├── _error.js  # Next.js-specific file used to override/customize the traditional error code views (such as 404 and 503)
+|   ├── index.js  # Landing page
+|   └── *.js  # All the other pages
+|
 ├── static
-|   |-- fonts
-|   |-- images
+|   ├── fonts
+|   └── images
+|       └── icons  # SVG icons only
+|
 ├── test-utils
-|   |-- mocks
-|   |-- createComponentInstance.js
-|   |-- createShallowSnapshotTest.js
-|   |-- createSnapshotTest.js
-|   |-- setupTests.js
-|-- CODE_OF_CONDUCT
-|-- CONTRIBUTING.MD
-|-- Dockerfile
-|-- LICENSE
-|-- MAINTAINERS.MD
-|-- README.MD
-|-- jest.config.js
-|-- jest.setup.js
-|-- jsconfig.json
-|-- next.config.js
-|-- now.json
-|-- now.master.json
-|-- package.json
-|-- postcss.config.js
-└── yarn.lock
+    ├── mocks  # Contains commonly mocked components, functions, and classes for testing purposes
+    ├── createComponentInstance.js
+    ├── createShallowSnapshotTest.js
+    ├── createSnapshotTest.js
+    └── setupTests.js
+
 ```
 
 ### npm Scripts With Explanations
