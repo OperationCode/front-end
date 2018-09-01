@@ -1,8 +1,3 @@
-env:
-  - global:
-    # Not secret. Test coverage key for Code Climate
-    - CC_TEST_REPORTER_ID=0f2bc6ef737019bfc8eda369cd06b66c54606b144b4d81cec010fb494d2559af
-
 language: node_js
 
 # node_js: # not needed - `.nvmrc` at root-level
