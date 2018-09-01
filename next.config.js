@@ -1,4 +1,5 @@
 const withCSS = require('@zeit/next-css');
+const svgoConfig = require('./common/config/svgo');
 
 module.exports = withCSS({
   cssModules: true,
@@ -10,6 +11,18 @@ module.exports = withCSS({
     // Fixes npm packages that depend on `fs` module
     // eslint-disable-next-line no-param-reassign
     config.node = { fs: 'empty' };
+
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: [
+        {
+          loader: 'react-svg-loader',
+          options: {
+            svgo: svgoConfig,
+          },
+        },
+      ],
+    });
 
     return config;
   },

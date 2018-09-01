@@ -18,7 +18,7 @@ module.exports = {
   clearMocks: true,
 
   // Indicates whether the coverage information should be collected while executing the test
-  // collectCoverage: false,
+  // collectCoverage: true,
 
   // An array of glob patterns indicating a set of files for which coverage information should be collected
   collectCoverageFrom: ['<rootDir>/common/**/*.js', '<rootDir>/components/**/*.js'],
@@ -29,16 +29,16 @@ module.exports = {
   // An array of regexp pattern strings used to skip coverage collection
   coveragePathIgnorePatterns: [
     '<rootDir>/node_modules',
-    '<rootDir>/pages/_*.js', // Ignore Next.js files
+    '<rootDir>/common/config',
+
+    // Ignore Next.js files
+    '<rootDir>/pages/_*.js',
+    '<rootDir>/components/head.js',
+    '<rootDir>/components/nav.js',
   ],
 
   // A list of reporter names that Jest uses when writing coverage reports
-  // coverageReporters: [
-  //   "json",
-  //   "text",
-  //   "lcov",
-  //   "clover"
-  // ],
+  coverageReporters: ['lcov'],
 
   // An object that configures minimum threshold enforcement for coverage results
   // coverageThreshold: null,
@@ -74,7 +74,7 @@ module.exports = {
   // A map from regular expressions to module names that allow to stub out resources with a single module
   moduleNameMapper: {
     '\\.(jpg|jpeg|png|gif|svg)$': '<rootDir>/test-utils/mocks/testFileMock.js',
-    '\\.(css)$': 'identity-obj-proxy',
+    '\\.css$': 'identity-obj-proxy',
   },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader

@@ -1,29 +1,30 @@
 .HeroBanner {
+  align-items: center;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  color: #ffffff;
   display: flex;
+  flex-direction: column;
   height: 480px;
+  justify-content: center;
+  text-shadow: #111111 0 0 15px;
   width: 100%;
 }
 
-.underline {
-  border-bottom: 2px solid #ffffff;
-  margin-bottom: 1rem;
+.content {
+  padding: 3rem;
 }
 
-.HeroBanner .text {
-  color: #ffffff;
-  text-shadow: #000000 1px 0 15px;
-  padding: 3rem;
+/* TODO: Create <Hr /> component and use that to match drop-shadow on header */
+.underline {
+  border-bottom: 4px solid #ffffff;
+  margin-bottom: 1rem;
+  text-align: center;
 }
 
 @media only screen and (max-width: 768px) {
   .HeroBanner {
     height: 320px;
-  }
-
-  .text {
-    padding: 2rem;
   }
 }

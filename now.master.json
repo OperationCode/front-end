@@ -6,9 +6,6 @@
       "NODE_ENV": "production"
     }
   },
-  "engines": {
-    "node": "8.11.3"
-  },
   "files": [
     ".next",
     "static",

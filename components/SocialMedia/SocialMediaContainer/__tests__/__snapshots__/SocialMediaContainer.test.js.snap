@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SocialMediaContainer it should render properly with required (all) props 1`] = `
+<div
+  className="SocialMediaContainer"
+>
+  <div>
+    Testing 1
+  </div>
+  <div>
+    Testing 2
+  </div>
+</div>
+`;

@@ -1,7 +1,6 @@
 .ImageCard {
   align-items: center;
   background-color: #ffffff;
-  border: 1px solid var(--grayLight);
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
   display: flex;
   flex-flow: row wrap;

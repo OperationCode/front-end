@@ -11,22 +11,21 @@ exports[`Storyshots Common/HeroBanner default 1`] = `
     }
   >
     <div
-      className=" HeroBanner"
+      className="HeroBanner"
       style={
         Object {
-          "backgroundImage": "url(https://s3.amazonaws.com/operationcode-assets/heroBanners/churchill.jpg)",
+          "backgroundImage": "url(https://s3.amazonaws.com/operationcode-assets/heroBanners/stock_family-2.jpg)",
         }
       }
     >
       <div
-        className="text"
+        className="content"
       >
         <h1
           className=""
         >
           Hero Banner
         </h1>
-        
         
       </div>
     </div>
@@ -156,7 +155,7 @@ exports[`Storyshots Common/HeroBanner default 1`] = `
                     <span
                       style={Object {}}
                     >
-                      imageSrc
+                      imageSource
                     </span>
                     <span>
                       =
@@ -203,36 +202,6 @@ exports[`Storyshots Common/HeroBanner default 1`] = `
                           }
                         >
                           Hero Banner
-                        </span>
-                        "
-                      </span>
-                    </span>
-                  </span>
-                  <span>
-                    <span>
-                      <br />
-                        
-                    </span>
-                    <span
-                      style={Object {}}
-                    >
-                      subtitle
-                    </span>
-                    <span>
-                      =
-                      <span
-                        style={Object {}}
-                      >
-                        "
-                        <span
-                          style={
-                            Object {
-                              "color": "#22a",
-                              "wordBreak": "break-word",
-                            }
-                          }
-                        >
-                          
                         </span>
                         "
                       </span>
@@ -395,7 +364,7 @@ exports[`Storyshots Common/HeroBanner default 1`] = `
                   <td
                     className="css-1ygfcef"
                   >
-                    imageSrc
+                    imageSource
                   </td>
                   <td
                     className="css-1ygfcef"
@@ -431,31 +400,6 @@ exports[`Storyshots Common/HeroBanner default 1`] = `
                     className="css-d52hbj"
                   >
                     yes
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    -
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  />
-                </tr>
-                <tr>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    subtitle
-                  </td>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    <span />
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    -
                   </td>
                   <td
                     className="css-d52hbj"

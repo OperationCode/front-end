@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ImageCard it should render properly with required props 1`] = `
+<div
+  className="ImageCard"
+>
+  <img
+    alt="Test title"
+    className="cardImage"
+    src="image.jpg"
+  />
+  <div
+    className="cardText"
+  >
+    <h6>
+      Test title
+    </h6>
+    <p />
+    
+  </div>
+</div>
+`;
+
+exports[`ImageCard should render properly with some props assigned 1`] = `
+<div
+  className="ImageCard"
+>
+  <img
+    alt="Title Tester"
+    className="cardImage"
+    src="image.jpg"
+  />
+  <div
+    className="cardText"
+  >
+    <h6>
+      Title Tester
+    </h6>
+    <p>
+      This is the card
+    </p>
+    <Button
+      className=""
+      disabled={false}
+      fullWidth={false}
+      href="www.thisIsTheLink.com"
+      onClick={[Function]}
+      tabIndex={0}
+      theme="primary"
+      type="button"
+    >
+      Test me!
+    </Button>
+  </div>
+</div>
+`;

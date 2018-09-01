@@ -37,6 +37,7 @@
 
 /* Light Themes */
 .grayLight,
+.mist,
 .white {
   color: var(--slate);
 }
@@ -45,6 +46,10 @@
   background-color: var(--grayLight);
 }
 
-.white {
+.mist {
   background-color: var(--mist);
+}
+
+.white {
+  background-color: #ffffff;
 }

@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FormCheckBox should render properly with some props assigned 1`] = `
+<div
+  style={null}
+>
+  <input
+    className="input"
+    onChange={null}
+    type="checkbox"
+  />
+  <label
+    style={null}
+  />
+</div>
+`;
+
+exports[`FormCheckBox should render with just required props passed 1`] = `
+<div
+  style={null}
+>
+  <input
+    className="input"
+    onChange={null}
+    type="checkbox"
+  />
+  <label
+    style={null}
+  />
+</div>
+`;

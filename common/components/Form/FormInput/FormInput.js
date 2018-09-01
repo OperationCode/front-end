@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Label from 'common/components/label/label';
 import styles from './FormInput.css';
 
 class FormInput extends Component {
@@ -75,7 +74,7 @@ class FormInput extends Component {
 
     return (
       <div className={styles.formInput}>
-        {props.label && <Label htmlFor={props.id}>{props.label}</Label>}
+        {props.label && <label htmlFor={props.id}>{props.label}</label>}
 
         <input
           className={!state.isValid ? styles.error : undefined}

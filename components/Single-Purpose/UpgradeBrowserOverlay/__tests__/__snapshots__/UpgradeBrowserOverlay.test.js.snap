@@ -1,0 +1,140 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UpgradeBrowserOverlay should render with no props 1`] = `
+<Modal
+  className="UpgradeBrowserOverlay"
+  isOpen={true}
+  onRequestClose={[Function]}
+  overlayClassName="overlay"
+  screenReaderLabel="Please Upgrade Your Browser"
+  shouldCloseOnOverlayClick={false}
+>
+  <div>
+    <FontAwesomeIcon
+      border={false}
+      className="warningLogo"
+      fixedWidth={false}
+      flip={null}
+      icon={
+        Object {
+          "icon": Array [
+            576,
+            512,
+            Array [],
+            "f071",
+            "M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z",
+          ],
+          "iconName": "exclamation-triangle",
+          "prefix": "fas",
+        }
+      }
+      listItem={false}
+      mask={null}
+      name=""
+      pull={null}
+      pulse={false}
+      rotation={null}
+      size={null}
+      spin={false}
+      symbol={false}
+      transform={null}
+    />
+    <h1>
+      Please Upgrade Your Browser
+    </h1>
+    <div
+      className="message"
+    >
+      You might be experiencing some problems viewing this page. Use the links below to download or upgrade your existing browser for a seamless experience.
+    </div>
+    <div
+      className="browsersList"
+    >
+      <div
+        className="browser"
+      >
+        <span
+          className="browserName"
+        >
+          Microsoft Edge
+        </span>
+        <OutboundLink
+          analyticsEventLabel="Microsoft Edge Download from <UpgradeBrowserOverlay>"
+          className=""
+          hasIcon={false}
+          href="https://www.microsoft.com/windows/microsoft-edge"
+        >
+          <img
+            alt="Microsoft Edge Logo"
+            className="browserImage"
+            src="https://s3.amazonaws.com/operationcode-assets/browserLogos/edge-icon.png"
+          />
+        </OutboundLink>
+      </div>
+      <div
+        className="browser"
+      >
+        <span
+          className="browserName"
+        >
+          Google Chrome
+        </span>
+        <OutboundLink
+          analyticsEventLabel="Google Chrome Download from <UpgradeBrowserOverlay>"
+          className=""
+          hasIcon={false}
+          href="https://www.google.com/chrome"
+        >
+          <img
+            alt="Google Chrome Logo"
+            className="browserImage"
+            src="https://s3.amazonaws.com/operationcode-assets/browserLogos/chrome-icon.png"
+          />
+        </OutboundLink>
+      </div>
+      <div
+        className="browser"
+      >
+        <span
+          className="browserName"
+        >
+          Mozilla Firefox
+        </span>
+        <OutboundLink
+          analyticsEventLabel="Mozilla Firefox Download from <UpgradeBrowserOverlay>"
+          className=""
+          hasIcon={false}
+          href="https://www.mozilla.org/firefox/new"
+        >
+          <img
+            alt="Mozilla Firefox Logo"
+            className="browserImage"
+            src="https://s3.amazonaws.com/operationcode-assets/browserLogos/firefox-icon.png"
+          />
+        </OutboundLink>
+      </div>
+      <div
+        className="browser"
+      >
+        <span
+          className="browserName"
+        >
+          Safari
+        </span>
+        <OutboundLink
+          analyticsEventLabel="Safari Download from <UpgradeBrowserOverlay>"
+          className=""
+          hasIcon={false}
+          href="https://support.apple.com/downloads/safari"
+        >
+          <img
+            alt="Safari Logo"
+            className="browserImage"
+            src="https://s3.amazonaws.com/operationcode-assets/browserLogos/safari-icon.png"
+          />
+        </OutboundLink>
+      </div>
+    </div>
+  </div>
+</Modal>
+`;
