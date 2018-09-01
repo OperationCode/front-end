@@ -17,7 +17,7 @@
     "precommit": "lint-staged && yarn test",
     "start": "next start",
     "storybook": "start-storybook -s ./static -p 9001 -c .storybook",
-    "test:ci": "NODE_ENV=test BABEL_ENV=test jest --ci --coverage --coverageReporters=text-lcov | yarn coveralls",
+    "test:ci": "NODE_ENV=test BABEL_ENV=test jest --ci --coverage",
     "test:update-snaps": "jest -u",
     "test": "NODE_ENV=test BABEL_ENV=test jest"
   },
@@ -78,7 +78,6 @@
   "devDependencies": {
     "babel-eslint": "^9.0.0",
     "babel-jest": "^23.4.2",
-    "coveralls": "^3.0.2",
     "enzyme": "^3.5.0",
     "enzyme-adapter-react-16": "^1.3.1",
     "enzyme-to-json": "^3.3.4",
