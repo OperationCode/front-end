@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots SuccessStory default 1`] = `
+<div
+  className="SuccessStory"
+>
+  <img
+    alt="Kyle Holmberg headshot"
+    className="image"
+    src="https://kylemh.com/public/img/me.jpg"
+  />
+  <div
+    className="quote"
+  >
+    <h3
+      className="title"
+    >
+      Kyle Holmberg
+    </h3>
+    <blockquote>
+      "Operation Code is literally the greatest thing since sliced bread and Taco Bell."
+    </blockquote>
+  </div>
+</div>
+`;
