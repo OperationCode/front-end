@@ -24,7 +24,9 @@ function loadStories() {
   // Add any new component folders with stories here, using the patterns defined above
 }
 
-/* Necessary to mock Next router */
+/* ********************************************************** */
+/* Necessary to mock Next's router */
+// https://github.com/zeit/next.js/issues/1827#issuecomment-323721221
 const actionWithPromise = () => {
   action('clicked link')();
   // we need to return promise because it is needed by Link.linkClicked
@@ -38,7 +40,7 @@ const mockedRouter = {
 };
 
 Router.router = mockedRouter;
-/* ***************************** */
+/* ********************************************************** */
 
 // addon-info
 setDefaults({
