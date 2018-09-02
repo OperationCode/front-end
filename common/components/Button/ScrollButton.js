@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import ReactGA from 'react-ga';
+import { withRouter } from 'next/router';
 import { Link as ScrollLink, Events as ScrollEvent } from 'react-scroll';
 import styles from './Button.css';
 
@@ -11,6 +12,7 @@ ScrollButton.propTypes = {
   fullWidth: PropTypes.bool,
   href: PropTypes.string,
   onClick: PropTypes.func,
+  router: PropTypes.object.isRequired,
   tabIndex: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   theme: PropTypes.oneOf(['primary', 'secondary', 'slate']),
 };
@@ -24,7 +26,7 @@ ScrollButton.defaultProps = {
   theme: 'primary',
 };
 
-function ScrollButton({ className, children, fullWidth, href, onClick, tabIndex, theme }) {
+function ScrollButton({ className, children, fullWidth, href, onClick, router, tabIndex, theme }) {
   const buttonClassNames = classNames(styles.Button, className, {
     [styles.primary]: theme === 'primary',
     [styles.secondary]: theme === 'secondary',
@@ -32,26 +34,21 @@ function ScrollButton({ className, children, fullWidth, href, onClick, tabIndex,
     [styles.fullWidth]: fullWidth,
   });
 
-  // TODO: Handle non-string input for analytics event label on both outbound and scroll link
-  // Example: SVG as a child
-  const eventDetails = {
-    category: 'Scroll Button Clicked',
-    action: `[${children}] from ${window.location.pathname}`,
-  };
-
   const isProd = process.env.NODE_ENV === 'production';
 
   // Report scroll link button clicks to Google Analytics
   if (isProd) {
     ScrollEvent.scrollEvent.register('begin', () => {
-      ReactGA.event(eventDetails);
+      ReactGA.event({
+        category: 'Scroll Button Clicked',
+        action: `[${children}] from ${router.route}`,
+      });
     });
   }
 
   const clickHandler = () => {
     if (!isProd) {
-      const analyticsMessage = `Analytics disabled.
-        Message: ${eventDetails.category} - ${eventDetails.action}`;
+      const analyticsMessage = `Analytics disabled. <ScrollButton> clicked.`;
 
       // eslint-disable-next-line no-console
       console.log(analyticsMessage);
@@ -79,4 +76,8 @@ function ScrollButton({ className, children, fullWidth, href, onClick, tabIndex,
   );
 }
 
-export default ScrollButton;
+// Export testable child for tests
+export { ScrollButton };
+
+// Implementation usage
+export default withRouter(ScrollButton);

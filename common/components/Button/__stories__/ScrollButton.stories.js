@@ -4,7 +4,9 @@ import { withInfo } from '@storybook/addon-info';
 import { withKnobs, boolean, number, select, text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
-import ScrollButton from '../ScrollButton';
+import mockRouter from 'test-utils/mocks/router';
+
+import { ScrollButton } from '../ScrollButton';
 
 storiesOf('Common/ScrollButton', module)
   .addDecorator(withKnobs)
@@ -29,6 +31,7 @@ storiesOf('Common/ScrollButton', module)
           onKeyDown={action('Enter key pressed!')}
           tabIndex={number('tabIndex', 0)}
           theme={select('theme', ['primary', 'secondary', 'slate'])}
+          router={mockRouter}
         >
           {text('children', 'Click Me! (will scroll down)')}
         </ScrollButton>
