@@ -5,22 +5,47 @@ exports[`SocialMedia it should render properly with no props 1`] = `
   <SocialMediaItem
     alt="Facebook"
     href="https://facebook.com/operationcode.org"
-    imageSource="test-file-mock"
+    svg={
+      <test-file-mock
+        className="logo"
+      />
+    }
   />
   <SocialMediaItem
-    alt="Github"
+    alt="GitHub"
     href="https://github.com/operationcode"
-    imageSource="test-file-mock"
+    svg={
+      <test-file-mock
+        className="logo"
+      />
+    }
   />
   <SocialMediaItem
     alt="Twitter"
     href="https://twitter.com/operation_code"
-    imageSource="test-file-mock"
+    svg={
+      <test-file-mock
+        className="logo"
+      />
+    }
   />
   <SocialMediaItem
     alt="LinkedIn"
     href="https://www.linkedin.com/groups/13400924"
-    imageSource="test-file-mock"
+    svg={
+      <test-file-mock
+        className="logo"
+      />
+    }
+  />
+  <SocialMediaItem
+    alt="Pinterest"
+    href="https://www.pinterest.com/operationcode/"
+    svg={
+      <test-file-mock
+        className="logo"
+      />
+    }
   />
 </SocialMediaContainer>
 `;
