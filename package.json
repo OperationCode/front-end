@@ -71,6 +71,7 @@
     "react-ga": "^2.5.3",
     "react-modal": "^3.5.1",
     "react-scroll": "^1.7.10",
+    "react-svg-loader": "^2.1.0",
     "react-youtube": "^7.6.0",
     "style-loader": "^0.23.0",
     "universal-cookie": "^3.0.4"
@@ -95,7 +96,6 @@
     "lint-staged": "^7.2.2",
     "prettier": "^1.14.2",
     "react-addons-test-utils": "^15.6.2",
-    "react-svg-loader": "^2.1.0",
     "react-test-renderer": "^16.4.2",
     "react-testing-library": "^5.0.0",
     "stylelint": "^9.5.0",
