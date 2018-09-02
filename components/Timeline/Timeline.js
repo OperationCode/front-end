@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 import React from 'react';
-import TimelineEvent from "./TimelineEvent/TimelineEvent";
+import TimelineEvent from './TimelineEvent/TimelineEvent';
 import styles from './Timeline.css';
 
 const Timeline = () => (

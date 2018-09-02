@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from "./TimelineEvent.css";
+import styles from './TimelineEvent.css';
 
 const TimelineEvent = ({ title, content }) => (
   <div className={styles.eventContainer}>
