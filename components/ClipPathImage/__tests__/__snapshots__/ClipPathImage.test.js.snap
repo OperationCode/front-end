@@ -21,7 +21,7 @@ exports[`ClipPathImage it should render properly with required props 1`] = `
 `;
 
 exports[`ClipPathImage it should render properly with some props assigned 1`] = `
-<OutboundLink
+<withRouter(OutboundLink)
   analyticsEventLabel="[Test title] <ClipPathImage>"
   className="clipPathImage ClipPathImage ClipPathImageWithLink"
   hasIcon={false}
@@ -73,5 +73,5 @@ exports[`ClipPathImage it should render properly with some props assigned 1`] = 
       />
     </h6>
   </div>
-</OutboundLink>
+</withRouter(OutboundLink)>
 `;

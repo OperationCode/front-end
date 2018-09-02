@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`AdBanner it should render properly with required props 1`] = `
-<OutboundLink
+<withRouter(OutboundLink)
   analyticsEventLabel="[AdBanner Hit] to www.test.com"
   className="adBannerLink"
   hasIcon={false}
@@ -25,11 +25,11 @@ exports[`AdBanner it should render properly with required props 1`] = `
       Test
     </h4>
   </div>
-</OutboundLink>
+</withRouter(OutboundLink)>
 `;
 
 exports[`AdBanner should render properly with some props assigned 1`] = `
-<OutboundLink
+<withRouter(OutboundLink)
   analyticsEventLabel="[AdBanner Hit] to www.testMe.com"
   className="AdBanner-class adBannerLink"
   hasIcon={false}
@@ -53,5 +53,5 @@ exports[`AdBanner should render properly with some props assigned 1`] = `
       Test
     </h4>
   </div>
-</OutboundLink>
+</withRouter(OutboundLink)>
 `;

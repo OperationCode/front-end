@@ -58,9 +58,8 @@ exports[`UpgradeBrowserOverlay should render with no props 1`] = `
         >
           Microsoft Edge
         </span>
-        <OutboundLink
+        <withRouter(OutboundLink)
           analyticsEventLabel="Microsoft Edge Download from <UpgradeBrowserOverlay>"
-          className=""
           hasIcon={false}
           href="https://www.microsoft.com/windows/microsoft-edge"
         >
@@ -69,7 +68,7 @@ exports[`UpgradeBrowserOverlay should render with no props 1`] = `
             className="browserImage"
             src="https://s3.amazonaws.com/operationcode-assets/browserLogos/edge-icon.png"
           />
-        </OutboundLink>
+        </withRouter(OutboundLink)>
       </div>
       <div
         className="browser"
@@ -79,9 +78,8 @@ exports[`UpgradeBrowserOverlay should render with no props 1`] = `
         >
           Google Chrome
         </span>
-        <OutboundLink
+        <withRouter(OutboundLink)
           analyticsEventLabel="Google Chrome Download from <UpgradeBrowserOverlay>"
-          className=""
           hasIcon={false}
           href="https://www.google.com/chrome"
         >
@@ -90,7 +88,7 @@ exports[`UpgradeBrowserOverlay should render with no props 1`] = `
             className="browserImage"
             src="https://s3.amazonaws.com/operationcode-assets/browserLogos/chrome-icon.png"
           />
-        </OutboundLink>
+        </withRouter(OutboundLink)>
       </div>
       <div
         className="browser"
@@ -100,9 +98,8 @@ exports[`UpgradeBrowserOverlay should render with no props 1`] = `
         >
           Mozilla Firefox
         </span>
-        <OutboundLink
+        <withRouter(OutboundLink)
           analyticsEventLabel="Mozilla Firefox Download from <UpgradeBrowserOverlay>"
-          className=""
           hasIcon={false}
           href="https://www.mozilla.org/firefox/new"
         >
@@ -111,7 +108,7 @@ exports[`UpgradeBrowserOverlay should render with no props 1`] = `
             className="browserImage"
             src="https://s3.amazonaws.com/operationcode-assets/browserLogos/firefox-icon.png"
           />
-        </OutboundLink>
+        </withRouter(OutboundLink)>
       </div>
       <div
         className="browser"
@@ -121,9 +118,8 @@ exports[`UpgradeBrowserOverlay should render with no props 1`] = `
         >
           Safari
         </span>
-        <OutboundLink
+        <withRouter(OutboundLink)
           analyticsEventLabel="Safari Download from <UpgradeBrowserOverlay>"
-          className=""
           hasIcon={false}
           href="https://support.apple.com/downloads/safari"
         >
@@ -132,7 +128,7 @@ exports[`UpgradeBrowserOverlay should render with no props 1`] = `
             className="browserImage"
             src="https://s3.amazonaws.com/operationcode-assets/browserLogos/safari-icon.png"
           />
-        </OutboundLink>
+        </withRouter(OutboundLink)>
       </div>
     </div>
   </div>
