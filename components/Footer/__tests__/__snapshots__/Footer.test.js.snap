@@ -90,21 +90,27 @@ exports[`Footer it should render properly no props 1`] = `
           Terms of Service
         </a>
       </Link>
-      <withRouter(OutboundLink)
+      <OutboundLink
+        className=""
+        hasIcon={true}
         href="https://github.com/OperationCode/operationcode_frontend/issues/new"
       >
         Report A Bug
-      </withRouter(OutboundLink)>
-      <withRouter(OutboundLink)
+      </OutboundLink>
+      <OutboundLink
+        className=""
+        hasIcon={true}
         href="https://smile.amazon.com/ch/47-4247572"
       >
         Amazon Smile
-      </withRouter(OutboundLink)>
-      <withRouter(OutboundLink)
+      </OutboundLink>
+      <OutboundLink
+        className=""
+        hasIcon={true}
         href="https://www.iubenda.com/privacy-policy/8174861"
       >
         Privacy
-      </withRouter(OutboundLink)>
+      </OutboundLink>
     </div>
   </div>
 </footer>

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import ReactGA from 'react-ga';
-import { withRouter } from 'next/router';
+import getValue from 'lodash/get';
 import { Link as ScrollLink, Events as ScrollEvent } from 'react-scroll';
 import styles from './Button.css';
 
@@ -12,7 +12,6 @@ ScrollButton.propTypes = {
   fullWidth: PropTypes.bool,
   href: PropTypes.string,
   onClick: PropTypes.func,
-  router: PropTypes.object.isRequired,
   tabIndex: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   theme: PropTypes.oneOf(['primary', 'secondary', 'slate']),
 };
@@ -26,7 +25,7 @@ ScrollButton.defaultProps = {
   theme: 'primary',
 };
 
-function ScrollButton({ className, children, fullWidth, href, onClick, router, tabIndex, theme }) {
+function ScrollButton({ className, children, fullWidth, href, onClick, tabIndex, theme }) {
   const buttonClassNames = classNames(styles.Button, className, {
     [styles.primary]: theme === 'primary',
     [styles.secondary]: theme === 'secondary',
@@ -38,10 +37,15 @@ function ScrollButton({ className, children, fullWidth, href, onClick, router, t
 
   // Report scroll link button clicks to Google Analytics
   if (isProd) {
+    const location =
+      process.env.NODE_ENV === 'test'
+        ? '-testing-'
+        : getValue(window, 'location.pathname') || getValue(document, 'location.pathname');
+
     ScrollEvent.scrollEvent.register('begin', () => {
       ReactGA.event({
         category: 'Scroll Button Clicked',
-        action: `[${children}] from ${router.route}`,
+        action: `[${children}] from ${location}`,
       });
     });
   }
@@ -76,8 +80,4 @@ function ScrollButton({ className, children, fullWidth, href, onClick, router, t
   );
 }
 
-// Export testable child for tests
-export { ScrollButton };
-
-// Implementation usage
-export default withRouter(ScrollButton);
+export default ScrollButton;

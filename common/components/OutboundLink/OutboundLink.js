@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ReactGA from 'react-ga';
-import { withRouter } from 'next/router';
+import getValue from 'lodash/get';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import faExternalLinkAlt from '@fortawesome/fontawesome-free-solid/faExternalLinkAlt';
 import styles from './OutboundLink.css';
@@ -12,7 +12,6 @@ OutboundLink.propTypes = {
   className: PropTypes.string,
   hasIcon: PropTypes.bool,
   href: PropTypes.string.isRequired,
-  router: PropTypes.object.isRequired,
 };
 
 OutboundLink.defaultProps = {
@@ -20,7 +19,7 @@ OutboundLink.defaultProps = {
   hasIcon: true,
 };
 
-function OutboundLink({ analyticsEventLabel, children, className, hasIcon, href, router }) {
+function OutboundLink({ analyticsEventLabel, children, className, hasIcon, href }) {
   const linkContent = (
     <React.Fragment>
       <span className={styles.screenReaderOnly}>Opens in new window</span>
@@ -36,10 +35,15 @@ function OutboundLink({ analyticsEventLabel, children, className, hasIcon, href,
   );
 
   if (process.env.NODE_ENV === 'production') {
+    const location =
+      process.env.NODE_ENV === 'test'
+        ? '-testing-'
+        : getValue(window, 'location.pathname') || getValue(document, 'location.pathname');
+
     return (
       <ReactGA.OutboundLink
         className={className}
-        eventLabel={`OUTBOUND [${analyticsEventLabel}] from ${router.route}`}
+        eventLabel={`OUTBOUND [${analyticsEventLabel}] from ${location}`}
         rel="noopener noreferrer"
         target="_blank"
         to={href}
@@ -56,8 +60,4 @@ function OutboundLink({ analyticsEventLabel, children, className, hasIcon, href,
   );
 }
 
-// Export testable child for tests
-export { OutboundLink };
-
-// Implementation usage
-export default withRouter(OutboundLink);
+export default OutboundLink;

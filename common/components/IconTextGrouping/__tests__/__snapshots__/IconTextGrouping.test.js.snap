@@ -33,7 +33,7 @@ exports[`IconTextGrouping it should render properly with all required props 1`] 
 `;
 
 exports[`IconTextGrouping it should render properly with some props assigned 1`] = `
-<withRouter(OutboundLink)
+<OutboundLink
   analyticsEventLabel="textTitle <IconTextGrouping>"
   className="IconTextGrouping iconClass slate link"
   hasIcon={false}
@@ -68,5 +68,5 @@ exports[`IconTextGrouping it should render properly with some props assigned 1`]
       some test text
     </div>
   </React.Fragment>
-</withRouter(OutboundLink)>
+</OutboundLink>
 `;
