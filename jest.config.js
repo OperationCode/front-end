@@ -30,6 +30,7 @@ module.exports = {
   coveragePathIgnorePatterns: [
     '<rootDir>/node_modules',
     '<rootDir>/common/config',
+    '<rootDir>/test-utils/*.js',
 
     // Ignore Next.js files
     '<rootDir>/pages/_*.js',
