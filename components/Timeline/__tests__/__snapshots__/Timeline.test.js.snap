@@ -1,0 +1,615 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Timeline it should render properly with no props 1`] = `
+<div
+  className="timeline"
+>
+  <div
+    className="segment"
+  >
+    <div
+      className="date"
+    >
+      <h3>
+        2012
+      </h3>
+    </div>
+    <div
+      className="vertLine"
+    >
+      <div
+        className="line"
+      />
+      <div
+        className="bubble"
+      />
+    </div>
+    <div
+      className="timelineEvent"
+    >
+      <TimelineEvent
+        content={
+          Array [
+            "Operation Code's founder, and retired U.S. Army Captain, David Molina, attends his first hackathon in New York City. After a weekend learning at ",
+            <a
+              href="//angelhack.com"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              AngelHack
+            </a>,
+            ", he is inspired to pursue software engineering as a post-military occupation. He submits an application to The Flatiron School while on active-duty, only to discover that the program did not accept the \\"New GI Bill\\" as payment.",
+          ]
+        }
+        title="It All Started With A Hackathon..."
+      />
+    </div>
+  </div>
+  <div
+    className="segment"
+  >
+    <div
+      className="date"
+    >
+      <h3>
+        2013
+      </h3>
+    </div>
+    <div
+      className="vertLine"
+    >
+      <div
+        className="line"
+      />
+      <div
+        className="bubble"
+      />
+    </div>
+    <div
+      className="timelineEvent"
+    >
+      <TimelineEvent
+        content={
+          Array [
+            "Molina exits military service in early 2013 and begins to self-teach Ruby on Rails, a full-stack web development platform for building comprehensive web applications. He also starts attending meetups with ",
+            <a
+              href="//bmoreonrails.org"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              "Bmore on Rails"
+            </a>,
+            " while finishing ",
+            <a
+              href="//onemonth.com"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              One Month's Rails online course.
+            </a>,
+          ]
+        }
+        title="One Month Rails"
+      />
+      <TimelineEvent
+        content={
+          Array [
+            "Molina attended ",
+            <a
+              href="//railsconf.com"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              RailsConf
+            </a>,
+            " as a scholarship fellow. After meeting Rubyists from around the world, he is introduced to the Portland Ruby group.",
+          ]
+        }
+        title="The Vision Forms"
+      />
+      <TimelineEvent
+        content={
+          Array [
+            "Molina joins ",
+            <a
+              href="//techstars.com/patriotbootcamp"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Patriot Boot Camp (PBC)
+            </a>,
+            ", presented by Techstars, at George Washington University. During this time, Molina tells Virginia Senator, Tim Kaine, of the inability to use the New GI Bill for coding bootcamps. Before departing D.C., Molina receives advice from U.S. Army Congressional Fellow, Ben Culver, on gathering data to address the problem.",
+          ]
+        }
+        title="Patriot Boot Camp"
+      />
+      <TimelineEvent
+        content="Molina purchases the domain opcod3.us and worked with fellow Army veteran and software developer, Don Livanec, to finish the first live webpage."
+        title="First Draft"
+      />
+    </div>
+  </div>
+  <div
+    className="segment"
+  >
+    <div
+      className="date"
+    >
+      <h3>
+        2014
+      </h3>
+    </div>
+    <div
+      className="vertLine"
+    >
+      <div
+        className="line"
+      />
+      <div
+        className="bubble"
+      />
+    </div>
+    <div
+      className="timelineEvent"
+    >
+      <TimelineEvent
+        content={
+          Array [
+            "At ",
+            <a
+              href="//cascadiarubyconf.com"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Cascadia Ruby
+            </a>,
+            " Molina receives encouragement from fellow Rubyist, Whitney Rose, to launch Operation Code's petition using \\"Launchrock\\". After lengthy discussions with Kristin Smith, Adam Enbar (representing The Flatiron School), and ",
+            <a
+              href="//www.codefellows.org"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Code Fellows
+            </a>,
+            ", the first line of code is ",
+            <a
+              href="//github.com/OperationCode/operationcode"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              committed to GitHub
+            </a>,
+            ".",
+          ]
+        }
+        title="Operation Code Is A Go"
+      />
+      <TimelineEvent
+        content="Louisiana native, Army veteran, and software developer, Dr. James Davis joins Operation Code, supplying substantial website improvements."
+        title="Dr. Davis Joins The Team"
+      />
+      <TimelineEvent
+        content="Molina pairs veterans 1-on-1 with developers via the \\"Software Mentor Protégé Program\\" where HTML, CSS, JavaScript, and Ruby were taught. Dr. Davis becomes Operation Code's first mentor."
+        title="Pairing Begins"
+      />
+      <TimelineEvent
+        content={
+          Array [
+            "Web developer, teacher, entrepreneur and co-founder of ",
+            <a
+              href="//www.codefellows.org"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Code Fellows
+            </a>,
+            ", Ivan Storck, purchases the domain '",
+            <a
+              href="//operationcode.org"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              operationcode.org
+            </a>,
+            "' becoming our first donor in the process.",
+          ]
+        }
+        title="First Donor"
+      />
+      <TimelineEvent
+        content={
+          Array [
+            <a
+              href="//dnsimple.com"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+               
+              DNSimple
+            </a>,
+            " joined Operation Code as the sole domain management service provider, ensuring maximum uptime.",
+          ]
+        }
+        title="DNSimple Joins The Operation"
+      />
+      <TimelineEvent
+        content={
+          Array [
+            "Army veteran and aspiring software developer, Charles Sipe, writes a viral, Veteran's Day article called ",
+            <a
+              href="//www.switchup.org/blog/why-veterans-will-make-excellent-programmers"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              'Why Will Make Excellent Programmers'
+            </a>,
+            ".",
+          ]
+        }
+        title="Charles Sipe's Article"
+      />
+      <TimelineEvent
+        content={
+          Array [
+            "HackHands co-founders, Forest Good and Geraldo Ramos, join Operation Code, designing our logo and providing veterans free access to ",
+            <a
+              href="//hacksummit.org"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              hack.summit()
+            </a>,
+            " a virtual conference to learn from the world's most renowned programmers.",
+          ]
+        }
+        title="HackHands Co-Founders And The Logo"
+      />
+    </div>
+  </div>
+  <div
+    className="segment"
+  >
+    <div
+      className="date"
+    >
+      <h3>
+        2015
+      </h3>
+    </div>
+    <div
+      className="vertLine"
+    >
+      <div
+        className="line"
+      />
+      <div
+        className="bubble"
+      />
+    </div>
+    <div
+      className="timelineEvent"
+    >
+      <TimelineEvent
+        content="Software developer, Chris Hough, joins Operation Code providing software architecture advice, improving application functionality and speed. OperationCode website code becomes open source via public GitHub repository."
+        title="Scaling New Heights"
+      />
+      <TimelineEvent
+        content="Former President and CEO of United Way of Columbia-Willamette, Jay Bloom, as well as former Assistant Secretary of Veterans Affairs, John Garcia, join the Operation Code Advisory Team."
+        title="Jay Bloom Joins Advisory Team"
+      />
+      <TimelineEvent
+        content={
+          Array [
+            <a
+              href="//ruby.onales.com"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Ruby on Ales
+            </a>,
+            " - located in Bend, Oregon - becomes the first software developer industry conference to support veterans with Ruby development classes.",
+          ]
+        }
+        title="Ruby On Ales"
+      />
+      <TimelineEvent
+        content="Columbia Journalism School graduate and former Mint reporter, Teresa Mahoney, joins Operation Code to interview veterans from across the country, crafting our story with professional media to drive more public awareness."
+        title="Teresa Mahoney Joins The Operation"
+      />
+      <TimelineEvent
+        content={
+          Array [
+            "Operation Code changes it's Twitter handle to ",
+            <a
+              href="//twitter.com/operation_code"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+               
+              @operation_code
+            </a>,
+            " for more effective branding. ",
+            <a
+              href="//instagram.com/operation_code"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+               
+              Instagram
+            </a>,
+            " and ",
+            <a
+              href="//facebook.com/operationcode.org"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+               
+              Facebook
+            </a>,
+            " accounts are created.",
+          ]
+        }
+        title="Social Media Engagement"
+      />
+      <TimelineEvent
+        content={
+          Array [
+            <a
+              href="//calagator.org/events/1250468219"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Formal launch of Operation Code
+            </a>,
+            ". The event hosts dozens of veterans, software developers, media representatives, and staff members from U.S. Senator Ron Wyden and Congressman Blumenauer's offices.",
+          ]
+        }
+        title="Launch Party"
+      />
+      <TimelineEvent
+        content={
+          Array [
+            "Army veteran and software engineer, Fernando Paredes, joins Operation Code, expanding the Software Mentor Protégé Program using ",
+            <a
+              href="//operation-code.slack.com/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              our newly created Slack Team
+            </a>,
+            ". Veterans now have real-time access to a helpful coding community and one-on-one software mentorship at their fingertips.",
+          ]
+        }
+        title="Slack Team Founded"
+      />
+      <TimelineEvent
+        content={
+          Array [
+            "Fernando Paredes, Nell Shamrell, and Eric McKenna improve Operation Code's participation in open source development with our first ",
+            <a
+              href="//github.com/OperationCode/operationcode/blob/master/CONTRIBUTING.md"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              contributing guide
+            </a>,
+            ".",
+          ]
+        }
+        title="Contributing Guide Created"
+      />
+      <TimelineEvent
+        content={
+          Array [
+            "Global hospitality provider, ",
+            <a
+              href="//www.airbnb.com/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Airbnb
+            </a>,
+            " sponsors lodging for Operation Code members attending SignalConf in San Francisco. ",
+            <a
+              href="//www.instagram.com/p/21p5bFxUjd/?taken-by=davidcmolina"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              They also invited our members to tour their headquarters
+            </a>,
+            "! Airbnb forges their partnership with Operation Code in steel by offering sponsored lodgings for veterans interviewing for a career in tech.",
+          ]
+        }
+        title="AirBnB Sponsorship"
+      />
+      <TimelineEvent
+        content={
+          Array [
+            <a
+              href="//www.twilio.com/signal/2015"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              SignalConf
+            </a>,
+            " provides multiple Operation Code members with sponsored tickets. ",
+            <a
+              href="//www.twilio.com/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Twilio
+            </a>,
+            " - the conference's main sponsor - hosts an insightful tour of their headquarters.",
+          ]
+        }
+        title="SignalConf Sponsorship"
+      />
+      <TimelineEvent
+        content="Molina hosts a meetup in San Francisco, introducing Elmer Thomas (SendGrid), Laura Gómez (Atipica), Nick Frost (Navy Veteran), and Pete Runyon (Marine Veteran) to Operation Code."
+        title="21st Amendment Meetup"
+      />
+      <TimelineEvent
+        content={
+          Array [
+            "To meet growth demands, Operation Code ",
+            <a
+              href="//twitter.com/operation_code/status/614443994769027072"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              separates from its financial supporter
+            </a>,
+            ". The Cogostar Foundation - Operation Code's current sponsor - helps to reorganize a new governing Board of Directors, comprised of Josh Carter, Aimee Knight, Nick Frost, Pete Runyon, Laura Gómez, Fernando Paredes, and Elmer Thomas. Operation Code incorporates as an Oregon non-profit organization.",
+          ]
+        }
+        title="Board Of Directors Formed"
+      />
+      <TimelineEvent
+        content={
+          Array [
+            <a
+              href="//www.stickermule.com/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+               
+              Sticker Mule
+            </a>,
+            " provides free stickers to all members! Laptops around the nation equip our logo.",
+          ]
+        }
+        title="Stickers Distributed"
+      />
+      <TimelineEvent
+        content="Operation Code begins accepting online donations."
+        title="Open For Donations"
+      />
+      <TimelineEvent
+        content={
+          Array [
+            "Jared Zoneraich, founder of ",
+            <a
+              href="//www.hackbca.com/hackBCA"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              hackBCA
+            </a>,
+            " joins the Operation Code advisory team. Mark Kerr - attorney, entrepreneur, and ex-Army Captain - joins the Operation Code board of directors. He is elected chair of the board, and the board begins having regular conference calls focusing on infrastructure, processes/procedures, and fundraising strategy.",
+          ]
+        }
+        title="Jared Zoneraich And Mark Kerr Join The Operation"
+      />
+    </div>
+  </div>
+  <div
+    className="segment"
+  >
+    <div
+      className="date"
+    >
+      <h3>
+        2016
+      </h3>
+    </div>
+    <div
+      className="vertLine"
+    >
+      <div
+        className="line"
+      />
+      <div
+        className="bubble"
+      />
+    </div>
+    <div
+      className="timelineEvent"
+    >
+      <TimelineEvent
+        content={
+          Array [
+            <a
+              href="//hacksummit.org/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              hack.summit()
+            </a>,
+            " adds Operation Code to its list of coding non-profits.",
+          ]
+        }
+        title="Hack Summit"
+      />
+      <TimelineEvent
+        content={
+          Array [
+            <a
+              href="//speakeasy.com/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Speakeasy
+            </a>,
+            " joins as the Operation Code conference sponsor.",
+          ]
+        }
+        title="Speakeasy"
+      />
+      <TimelineEvent
+        content="Operation Code files for and receives 501(c)(3) status as a federally recognized non-profit organization. Thanks go to Marine Veteran and Board Secretary/Treasurer Pete Runyon, who graciously donated $850 for the fee."
+        title="501(c)(3) Application Approved"
+      />
+    </div>
+  </div>
+  <div
+    className="segment"
+  >
+    <div
+      className="date"
+    >
+      <h3>
+        2017
+      </h3>
+    </div>
+    <div
+      className="vertLine"
+    >
+      <div
+        className="line"
+      />
+      <div
+        className="bubble"
+      />
+    </div>
+    <div
+      className="timelineEvent"
+    >
+      <TimelineEvent
+        content="Multiple Operation Code veterans attend OSCON to advertise the open source development opportunity in Operation Code's planned website redesign."
+        title="O'Reilly Open Source Convention"
+      />
+      <TimelineEvent
+        content="In an effort to give Operation Code members an outlet to practice professional development, our website is overhauled. We go live with just a minimum viable product in the interest of attracting support from the open source community ."
+        title="Website Redesign"
+      />
+      <TimelineEvent
+        content={
+          Array [
+            "On Independence Day, the ",
+            <a
+              href="//twitter.com/operation_code/status/882280600920616960"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              2000th Operation Code member joined our Slack Team
+            </a>,
+            ".",
+          ]
+        }
+        title="2000th Slack Member"
+      />
+    </div>
+  </div>
+</div>
+`;
