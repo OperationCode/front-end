@@ -18,7 +18,7 @@
     "start": "next start",
     "storybook": "start-storybook -s ./static -p 9001 -c .storybook",
     "test:ci": "NODE_ENV=test BABEL_ENV=test jest --ci --coverage",
-    "test:update-snaps": "jest -u",
+    "test:update-snaps": "NODE_ENV=test BABEL_ENV=test jest -u",
     "test": "NODE_ENV=test BABEL_ENV=test jest"
   },
   "lint-staged": {
