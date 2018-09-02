@@ -17,31 +17,31 @@ Being an open source project involving contributors of varying levels of experie
 
 ## Table Of Contents
 - [Git and GitHub](#git-and-github)
-  - [Git](#git)
-  - [GitHub Workflow](#github-workflow)
+	- [Git](#git)
+	- [GitHub Workflow](#github-workflow)
 - [Explanations](#explanations)
-  - [What Is The Front-End?](#what-is-the-front-end)
-  - [What Is The Back-End?](#what-is-the-back-end)
-  - [What is REST? What is an API?](#what-is-rest-what-is-an-api)
+	- [What Is The Front-End?](#what-is-the-front-end)
+	- [What Is The Back-End?](#what-is-the-back-end)
+	- [What is REST? What is an API?](#what-is-rest-what-is-an-api)
 - [Technologies](#technologies)
 - [Development Workflow](#development-workflow)
-  - [Installing Dependencies](#installing-dependencies)
-  - [Run The Development Server](#run-the-development-server)
-  - [Returning To Work After A Break](#returning-to-work-after-a-break)
-  - [File Structure](#file-structure)
-  - [npm Scripts With Explanations](#npm-scripts-with-explanations)
+	- [Installing Dependencies](#installing-dependencies)
+	- [Run The Development Server](#run-the-development-server)
+	- [Returning To Work After A Break](#returning-to-work-after-a-break)
+	- [File Structure](#file-structure)
+	- [npm Scripts With Explanations](#npm-scripts-with-explanations)
 - [Mocking Back-end Server API](#mocking-back-end-server-api)
 - [Resources](#resources)
 - [Navigating Operating System Differences](#navigating-operating-system-differences)
-  - [MacOS](#macos)
-    - [Update your mac](#update-your-mac)
-    - [Xcode Command Line Tools](#xcode-command-line-tools)
-    - [Homebrew](#homebrew)
-    - [Git](#git)
-    - [NodeJS](#nodejs-1)
-  - [Windows](#windows)
-    - [Git](#git-1)
-    - [NodeJS](#nodejs-2)
+	- [MacOS](#macos)
+		- [Update your mac](#update-your-mac)
+		- [Xcode Command Line Tools](#xcode-command-line-tools)
+		- [Homebrew](#homebrew)
+		- [Git](#git)
+		- [NodeJS](#nodejs-1)
+	- [Windows](#windows)
+		- [Git](#git-1)
+		- [NodeJS](#nodejs-2)
 
 
 ## Git and GitHub
@@ -153,11 +153,11 @@ Some issues take awhile to code a solution for. It is very normal to take a larg
 |       └── icons  # SVG icons only
 |
 ├── test-utils
-    ├── mocks  # Contains commonly mocked components, functions, and classes for testing purposes
-    ├── createComponentInstance.js
-    ├── createShallowSnapshotTest.js
-    ├── createSnapshotTest.js
-    └── setupTests.js
+		├── mocks  # Contains commonly mocked components, functions, and classes for testing purposes
+		├── createComponentInstance.js
+		├── createShallowSnapshotTest.js
+		├── createSnapshotTest.js
+		└── setupTests.js
 
 ```
 
@@ -219,6 +219,9 @@ Example use:
 - [React Lifecycle Methods - How And When To Use Them](https://engineering.musefind.com/react-lifecycle-methods-how-and-when-to-use-them-2111a1b692b1)
 - [What Is Webpack?](https://survivejs.com/webpack/what-is-webpack/)
 - [Routed React with Express.js and Docker](https://medium.com/@patriciolpezjuri/using-create-react-app-with-react-router-express-js-8fa658bf892d)
+- [An introduction to Git: what it is, and how to use it](https://medium.freecodecamp.org/what-is-git-and-how-to-use-it-c341b049ae61)
+- [How to use Git efficiently – freeCodeCamp.org](https://medium.freecodecamp.org/how-to-use-git-efficiently-54320a236369?source=linkShare-e41cd5edcdac-1535829065)
+- [Our Best Practices for Writing React Components – Code == Life](https://engineering.musefind.com/our-best-practices-for-writing-react-components-dec3eb5c3fc8)
 
 
 ## Navigating Operating System Differences
