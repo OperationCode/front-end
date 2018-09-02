@@ -12,29 +12,29 @@ function SocialMedia() {
   return (
     <SocialMediaContainer>
       <SocialMediaItem
-        svg={<FacebookLogo className={styles.logo} />}
-        alt="Facebook"
         href="https://facebook.com/operationcode.org"
+        name="Facebook"
+        svg={<FacebookLogo className={styles.logo} />}
       />
       <SocialMediaItem
-        svg={<GitHubLogo className={styles.logo} />}
-        alt="GitHub"
         href="https://github.com/operationcode"
+        name="GitHub"
+        svg={<GitHubLogo className={styles.logo} />}
       />
       <SocialMediaItem
-        svg={<TwitterLogo className={styles.logo} />}
-        alt="Twitter"
         href="https://twitter.com/operation_code"
+        name="Twitter"
+        svg={<TwitterLogo className={styles.logo} />}
       />
       <SocialMediaItem
-        svg={<LinkedInLogo className={styles.logo} />}
-        alt="LinkedIn"
         href="https://www.linkedin.com/groups/13400924"
+        name="LinkedIn"
+        svg={<LinkedInLogo className={styles.logo} />}
       />
       <SocialMediaItem
-        svg={<PinterestLogo className={styles.logo} />}
-        alt="Pinterest"
         href="https://www.pinterest.com/operationcode/"
+        name="Pinterest"
+        svg={<PinterestLogo className={styles.logo} />}
       />
     </SocialMediaContainer>
   );

@@ -4,15 +4,19 @@ import OutboundLink from 'common/components/OutboundLink/OutboundLink';
 import styles from './SocialMediaItem.css';
 
 SocialMediaItem.propTypes = {
-  alt: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
   href: PropTypes.string.isRequired,
   svg: PropTypes.node.isRequired,
 };
 
-function SocialMediaItem({ alt, href, svg }) {
+function SocialMediaItem({ name, href, svg }) {
   return (
     <div className={styles.SocialMediaItem}>
-      <OutboundLink analyticsEventLabel={`Social Media Item: ${alt}`} hasIcon={false} href={href}>
+      <OutboundLink
+        analyticsEventLabel={`Social Media Engagement: ${name}`}
+        hasIcon={false}
+        href={href}
+      >
         {svg}
       </OutboundLink>
     </div>
