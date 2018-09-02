@@ -17,31 +17,31 @@ Being an open source project involving contributors of varying levels of experie
 
 ## Table Of Contents
 - [Git and GitHub](#git-and-github)
-  - [Git](#git)
-  - [GitHub Workflow](#github-workflow)
+	- [Git](#git)
+	- [GitHub Workflow](#github-workflow)
 - [Explanations](#explanations)
-  - [What Is The Front-End?](#what-is-the-front-end)
-  - [What Is The Back-End?](#what-is-the-back-end)
-  - [What is REST? What is an API?](#what-is-rest-what-is-an-api)
+	- [What Is The Front-End?](#what-is-the-front-end)
+	- [What Is The Back-End?](#what-is-the-back-end)
+	- [What is REST? What is an API?](#what-is-rest-what-is-an-api)
 - [Technologies](#technologies)
 - [Development Workflow](#development-workflow)
-  - [Installing Dependencies](#installing-dependencies)
-  - [Run The Development Server](#run-the-development-server)
-  - [Returning To Work After A Break](#returning-to-work-after-a-break)
-  - [File Structure](#file-structure)
-  - [npm Scripts With Explanations](#npm-scripts-with-explanations)
+	- [Installing Dependencies](#installing-dependencies)
+	- [Run The Development Server](#run-the-development-server)
+	- [Returning To Work After A Break](#returning-to-work-after-a-break)
+	- [File Structure](#file-structure)
+	- [npm Scripts With Explanations](#npm-scripts-with-explanations)
 - [Mocking Back-end Server API](#mocking-back-end-server-api)
 - [Resources](#resources)
 - [Navigating Operating System Differences](#navigating-operating-system-differences)
-  - [MacOS](#macos)
-    - [Update your mac](#update-your-mac)
-    - [Xcode Command Line Tools](#xcode-command-line-tools)
-    - [Homebrew](#homebrew)
-    - [Git](#git)
-    - [NodeJS](#nodejs-1)
-  - [Windows](#windows)
-    - [Git](#git-1)
-    - [NodeJS](#nodejs-2)
+	- [MacOS](#macos)
+		- [Update your mac](#update-your-mac)
+		- [Xcode Command Line Tools](#xcode-command-line-tools)
+		- [Homebrew](#homebrew)
+		- [Git](#git)
+		- [NodeJS](#nodejs-1)
+	- [Windows](#windows)
+		- [Git](#git-1)
+		- [NodeJS](#nodejs-2)
 
 
 ## Git and GitHub
@@ -55,7 +55,7 @@ There are many resources in the wild to learn about all forms of version control
 1. Before working on an issue, post a comment on the issue asking to claim it. One of our maintainers will assign themselves as a placeholder on the issue, at which point you are good to start working on it. We don't like competition in open source, nor do we enjoy closing pull requests resolving the same issue... Please only work on issues you've claimed, are not assigned, and do not have others waiting to claim.
 2. Once you've claimed an issue, feel free to [fork the repository](https://help.github.com/articles/fork-a-repo/).
 3. If you follow all of the instructions in the help article above, you'll be able to create a branch. That's `git checkout -b YOUR_BRANCH_NAME` Note that some companies and organizations have branch-naming conventions - we do not.
-4. Once you make a branch, you're free to open your preferred text editor and code. If you don't have a preferred text editor, Operation Code recommends [Visual Studio Code](https://code.visualstudio.com/) (more commonly referred to as "VS Code" and not to be confused with Visual Studio). You'll want to follow along with [Coding Workflow](#coding-workflow) to see how you should go about coding in the repository.
+4. Once you make a branch, you're free to open your preferred text editor and code. If you don't have a preferred text editor, Operation Code recommends [Visual Studio Code](https://code.visualstudio.com/) (more commonly referred to as "VS Code" and not to be confused with Visual Studio). You'll want to follow along with [Development Workflow](#development-workflow) to see how you should go about coding in the repository.
 5. When your changes are complete, commit your changes. If you use `git commit` often, you'll notice your commit is taking longer than usual! That's because we have a "pre-commit hook". This hook is [linting](https://stackoverflow.com/questions/8503559/what-is-linting), formatting (example: changing tabs to spaces), and testing all of your changes. If a test fails, so does the commit. If your code had changes after formatting, you'll need to re-stage those file(s) and use `git commit --amend` to add the linted/formatted code to your original commit.
 6. After committing, push your branch to your forked repository. `git push -u origin YOUR_BRANCH_NAME` should do the trick.
 7. Create a pull request within two weeks of claiming the issue, [using that branch on your fork](https://help.github.com/articles/creating-a-pull-request-from-a-fork/). You are at risk of being unassigned from the issue otherwise. While we like reserving issues out for others, this is necessary to prevent bogarting.
@@ -153,11 +153,11 @@ Some issues take awhile to code a solution for. It is very normal to take a larg
 |       └── icons  # SVG icons only
 |
 ├── test-utils
-    ├── mocks  # Contains commonly mocked components, functions, and classes for testing purposes
-    ├── createComponentInstance.js
-    ├── createShallowSnapshotTest.js
-    ├── createSnapshotTest.js
-    └── setupTests.js
+		├── mocks  # Contains commonly mocked components, functions, and classes for testing purposes
+		├── createComponentInstance.js
+		├── createShallowSnapshotTest.js
+		├── createSnapshotTest.js
+		└── setupTests.js
 
 ```
 
@@ -219,6 +219,9 @@ Example use:
 - [React Lifecycle Methods - How And When To Use Them](https://engineering.musefind.com/react-lifecycle-methods-how-and-when-to-use-them-2111a1b692b1)
 - [What Is Webpack?](https://survivejs.com/webpack/what-is-webpack/)
 - [Routed React with Express.js and Docker](https://medium.com/@patriciolpezjuri/using-create-react-app-with-react-router-express-js-8fa658bf892d)
+- [An introduction to Git: what it is, and how to use it](https://medium.freecodecamp.org/what-is-git-and-how-to-use-it-c341b049ae61)
+- [How to use Git efficiently – freeCodeCamp.org](https://medium.freecodecamp.org/how-to-use-git-efficiently-54320a236369?source=linkShare-e41cd5edcdac-1535829065)
+- [Our Best Practices for Writing React Components – Code == Life](https://engineering.musefind.com/our-best-practices-for-writing-react-components-dec3eb5c3fc8)
 
 
 ## Navigating Operating System Differences
