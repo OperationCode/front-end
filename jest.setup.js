@@ -11,7 +11,6 @@ jest.mock('@storybook/addon-info', () => ({
   setDefaults: () => {},
 }));
 
-
 // Next Router
 jest.mock('next/router', () => ({
   push: () => {},
@@ -20,3 +19,6 @@ jest.mock('next/router', () => ({
   route: '/mock-route',
   withRouter: (Component) => Component,
 }));
+
+// React Modal
+jest.mock('react-modal')
