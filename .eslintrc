@@ -12,7 +12,7 @@
     "comma-dangle": ["error", "only-multiline"],
     "import/no-unresolved": "off",
     "import/extensions": "off",
-    "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
     "jsx-a11y/anchor-is-valid": ["error", { "components": ["Link"], "specialLink": ["to"] }],
     "jsx-a11y/label-has-for": [
       2,
@@ -24,7 +24,7 @@
         "allowChildren": false
       }
     ],
-    "max-len": ["error",  { "code": 100, "ignoreUrls": true }],
+    "max-len": ["error", { "code": 100, "ignoreUrls": true }],
     "multiline-ternary": ["error", "always-multiline"],
     "no-console": "warn",
     "no-use-before-define": "off",
@@ -55,7 +55,12 @@
       }
     },
     {
-      "files": ["pages/**.js", "components/**.js"],
+      "files": [
+        "pages/**.js",
+        "components/head.js",
+        "components/nav.js",
+        "components/Timeline/historyData.js"
+      ],
       "rules": {
         "react/react-in-jsx-scope": "off"
       }
