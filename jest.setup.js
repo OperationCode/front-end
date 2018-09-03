@@ -17,8 +17,8 @@ jest.mock('next/router', () => ({
   prefetch: () => {},
   replace: () => {},
   route: '/mock-route',
-  withRouter: (Component) => Component,
+  withRouter: Component => Component,
 }));
 
 // React Modal
-jest.mock('react-modal')
+jest.mock('react-modal');
