@@ -9,7 +9,7 @@ exports[`Modal should render properly with some props assigned and being open 1`
   contentLabel="Test"
   isOpen={true}
   onRequestClose={[Function]}
-  parentSelector={[Function]}
+  parentSelector={[MockFunction]}
   portalClassName="ReactModalPortal"
   shouldCloseOnEsc={true}
   shouldCloseOnOverlayClick={true}
