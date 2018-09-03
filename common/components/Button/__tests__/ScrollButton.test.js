@@ -12,10 +12,10 @@ describe('ScrollButton', () => {
   test('should render properly with some props assigned', () => {
     createSnapshotTest(
       <ScrollButton
-        theme="secondary"
         data-custom-attr="custom stuff here"
         disabled
         fullWidth
+        theme="secondary"
         type="submit"
       >
         Test

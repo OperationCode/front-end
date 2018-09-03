@@ -1,6 +1,7 @@
 import React from 'react';
 import App, { Container } from 'next/app';
 import Nav from 'components/nav';
+import Footer from 'components/Footer/Footer';
 import 'common/styles/globalStyles.css';
 
 // eslint-disable-next-line react/prefer-stateless-function
@@ -13,7 +14,7 @@ class Layout extends React.Component {
       <>
         <Nav />
         {children}
-        {/* FOOTER EVENTUALLY GOES HERE */}
+        <Footer />
       </>
     );
   }

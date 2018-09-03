@@ -15,9 +15,8 @@ exports[`SocialMediaItem it should render properly with required (all) props 1`]
     >
       Opens in new window
     </span>
-    <img
-      alt="Facebook"
-      src="/static/images/icons/facebook_logo.svg"
+    <test-file-mock
+      fill="blue"
     />
   </a>
 </div>
