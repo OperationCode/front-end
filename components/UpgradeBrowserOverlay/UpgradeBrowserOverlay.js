@@ -38,31 +38,25 @@ function UpgradeBrowserOverlay() {
       overlayClassName={styles.overlay}
       shouldCloseOnOverlayClick={false}
     >
-      <div>
-        <FontAwesomeIcon className={styles.warningLogo} icon={faExclamationTriangle} />
-        <h1>Please Upgrade Your Browser</h1>
-        <div className={styles.message}>
-          You might be experiencing some problems viewing this page. Use the links below to download
-          or upgrade your existing browser for a seamless experience.
-        </div>
-        <div className={styles.browsersList}>
-          {browsers.map(({ browserName, imageSource, downloadLink }) => (
-            <div className={styles.browser} key={browserName}>
-              <span className={styles.browserName}>{browserName}</span>
-              <OutboundLink
-                analyticsEventLabel={`${browserName} Download from <UpgradeBrowserOverlay>`}
-                hasIcon={false}
-                href={downloadLink}
-              >
-                <img
-                  className={styles.browserImage}
-                  src={imageSource}
-                  alt={`${browserName} Logo`}
-                />
-              </OutboundLink>
-            </div>
-          ))}
-        </div>
+      <FontAwesomeIcon className={styles.warningLogo} icon={faExclamationTriangle} />
+      <h1>Please Upgrade Your Browser</h1>
+      <div className={styles.message}>
+        You might be experiencing some problems viewing this page. Use the links below to download
+        or upgrade your existing browser for a seamless experience.
+      </div>
+      <div className={styles.browsersList}>
+        {browsers.map(({ browserName, imageSource, downloadLink }) => (
+          <div className={styles.browser} key={browserName}>
+            <span className={styles.browserName}>{browserName}</span>
+            <OutboundLink
+              analyticsEventLabel={`${browserName} Download from <UpgradeBrowserOverlay>`}
+              hasIcon={false}
+              href={downloadLink}
+            >
+              <img className={styles.browserImage} src={imageSource} alt={`${browserName} Logo`} />
+            </OutboundLink>
+          </div>
+        ))}
       </div>
     </Modal>
   );

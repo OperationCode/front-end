@@ -61,7 +61,7 @@
       }
     },
     {
-      "files": ["components/nav.js"],
+      "files": ["components/nav.js", "components/Footer/Footer.js"],
       "rules": {
         "jsx-a11y/anchor-is-valid": "off"
       }

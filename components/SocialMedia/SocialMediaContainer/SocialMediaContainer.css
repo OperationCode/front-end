@@ -4,8 +4,9 @@
   align-items: center;
 }
 
-@media screen and (min-width: 320px) and (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .SocialMediaContainer {
     flex-wrap: wrap;
+    justify-content: center;
   }
 }

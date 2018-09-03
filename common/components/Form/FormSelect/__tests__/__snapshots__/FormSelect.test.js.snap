@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FormSelect should render with just required props passed 1`] = `
+<div>
+  <select
+    id=""
+    onBlur={[Function]}
+  >
+    <option
+      value="TEST1"
+    >
+      test 1
+    </option>
+    <option
+      value="TEST2"
+    >
+      test 2
+    </option>
+  </select>
+</div>
+`;

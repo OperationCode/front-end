@@ -1,0 +1,117 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer it should render properly no props 1`] = `
+<footer
+  className="Footer"
+>
+  <div
+    className="footerGrouping socialGrouping"
+  >
+    <a
+      className="email"
+      href="mailto:contact@operationcode.org"
+    >
+      contact@operationcode.org
+    </a>
+    <SocialMedia />
+  </div>
+  <div
+    className="footerGrouping logoGrouping"
+  >
+    <img
+      alt="Operation Code Logo"
+      src="/static/images/icons/operation_code_logo.svg"
+    />
+    <p
+      className="copyright"
+    >
+      Copyright 
+      2018
+      <br />
+      Operation Code™
+    </p>
+  </div>
+  <div
+    className="footerGrouping linksGrouping"
+  >
+    <div
+      className="linkColumn"
+    >
+      <Link
+        href="/about"
+      >
+        <a>
+          About
+        </a>
+      </Link>
+      <Link
+        href="/press"
+      >
+        <a>
+          Press
+        </a>
+      </Link>
+      <Link
+        href="/branding"
+      >
+        <a>
+          Branding
+        </a>
+      </Link>
+      <Link
+        href="/faq"
+      >
+        <a>
+          FAQ
+        </a>
+      </Link>
+      <Link
+        href="/team"
+      >
+        <a>
+          Team
+        </a>
+      </Link>
+    </div>
+    <div
+      className="linkColumn"
+    >
+      <Link
+        href="/contact"
+      >
+        <a>
+          Contact
+        </a>
+      </Link>
+      <Link
+        href="/terms"
+      >
+        <a>
+          Terms of Service
+        </a>
+      </Link>
+      <OutboundLink
+        className=""
+        hasIcon={true}
+        href="https://github.com/OperationCode/operationcode_frontend/issues/new"
+      >
+        Report A Bug
+      </OutboundLink>
+      <OutboundLink
+        className=""
+        hasIcon={true}
+        href="https://smile.amazon.com/ch/47-4247572"
+      >
+        Amazon Smile
+      </OutboundLink>
+      <OutboundLink
+        className=""
+        hasIcon={true}
+        href="https://www.iubenda.com/privacy-policy/8174861"
+      >
+        Privacy
+      </OutboundLink>
+    </div>
+  </div>
+</footer>
+`;
