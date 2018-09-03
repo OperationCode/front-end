@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TimelineEvent should render properly with all required props 1`] = `
+<div
+  className="eventContainer"
+>
+  <h4
+    className="eventTitle"
+  >
+    test title
+  </h4>
+  <div
+    className="eventContent"
+  >
+    here is some test content
+  </div>
+</div>
+`;

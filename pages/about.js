@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import Head from 'components/head';
 import Section from 'common/components/Section/Section';
 import ImageCard from 'components/Cards/ImageCard/ImageCard';
@@ -26,7 +27,12 @@ export default () => (
         We at Operation Code strive to provide an efficient way into a tech career for veterans and
         their families. We work directly with Senators, Congressmen, and Congresswomen to allow
         veterans total control of their future by permitting the use of the GI Bill on coding
-        bootcamps. You can read about our organization &apos;s history here
+        bootcamps. You can read about our organization&apos;s history{' '}
+        {/* eslint-disable jsx-a11y/anchor-is-valid */}
+        <Link>
+          <a>here</a>
+        </Link>
+        {/* eslint-enable jsx-a11y/anchor-is-valid */}.
       </p>
       <p>
         Aside from our work on the Hill, we offer many services to the military community and are
