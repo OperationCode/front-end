@@ -43,10 +43,6 @@ function Button({
   type,
 }) {
   const onClickHandler = () => {
-    if (disabled) {
-      return () => {};
-    }
-
     if (process.env.NODE_ENV === 'production') {
       ReactGA.event(analyticsObject);
     } else {
