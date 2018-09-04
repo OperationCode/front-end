@@ -1,16 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import Link from 'next/link';
-import OutboundLink from 'common/components/OutboundLink/OutboundLink';
+import ReactGA from 'react-ga';
+import { googleAnalyticsEventPropType } from 'common/constants/custom-props';
 import styles from './Button.css';
 
 Button.propTypes = {
-  children: PropTypes.node.isRequired,
+  analyticsObject: googleAnalyticsEventPropType,
+  children: PropTypes.oneOfType([PropTypes.node, PropTypes.string]).isRequired,
   className: PropTypes.string,
   disabled: PropTypes.bool,
   fullWidth: PropTypes.bool,
-  href: PropTypes.string,
   onClick: PropTypes.func,
   tabIndex: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   theme: PropTypes.oneOf(['primary', 'secondary', 'slate']),
@@ -18,10 +18,13 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
+  analyticsObject: {
+    category: 'Interactions',
+    action: 'Button Selected',
+  },
   className: '',
   disabled: false,
   fullWidth: false,
-  href: '',
   onClick: () => {},
   tabIndex: 0,
   theme: 'primary',
@@ -29,68 +32,50 @@ Button.defaultProps = {
 };
 
 function Button({
+  analyticsObject,
   className,
   children,
   disabled,
   fullWidth,
-  href,
   onClick,
   tabIndex,
   theme,
   type,
 }) {
-  // TODO: Handle non-string input for analytics event label on both outbound and scroll link
-  // Example: SVG as a child
-
   const buttonClassNames = classNames(styles.Button, className, styles[theme], {
     [styles.disabled]: disabled,
     [styles.fullWidth]: fullWidth,
   });
 
-  const onClickHandler = !disabled ? onClick : () => {};
+  const onClickHandler = () => {
+    if (disabled) {
+      return () => {};
+    }
 
-  const onEnterHandler = ev => (ev.key === 'Enter' ? onClickHandler() : () => {});
+    if (process.env.NODE_ENV === 'production') {
+      ReactGA.event(analyticsObject);
+    } else {
+      // eslint-disable-next-line no-console
+      console.log('Analytics Disabled', analyticsObject);
+    }
 
-  // MARK: Outbound link (leaves OperationCode host)
-  if (href.includes('http')) {
-    return (
-      <OutboundLink
-        analyticsEventLabel={children}
-        className={classNames(buttonClassNames, styles.outboundLink)}
-        hasIcon
-        href={href}
-        onClick={onClickHandler}
-        tabIndex={tabIndex}
-      >
-        {children}
-      </OutboundLink>
-    );
-  }
+    return onClick;
+  };
 
-  // Lint rule disabled because it's an eslint bug
-  // TODO: File issue on eslint repo
   /* eslint-disable react/button-has-type */
-  const ButtonJSX = (
+  return (
     <button
       className={buttonClassNames}
       disabled={disabled}
       onClick={onClickHandler}
-      onKeyDown={onEnterHandler}
       tabIndex={tabIndex}
       type={type}
     >
-      {children}
+      {/* Render text nodes within a span to apply selector styles */}
+      {typeof children === 'string' ? <span>{children}</span> : children}
     </button>
   );
   /* eslint-enable react/button-has-type */
-
-  return !href ? (
-    ButtonJSX
-  ) : (
-    <Link href={href} prefetch>
-      {ButtonJSX}
-    </Link>
-  );
 }
 
 export default Button;

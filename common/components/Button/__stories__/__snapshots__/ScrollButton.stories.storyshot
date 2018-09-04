@@ -20,7 +20,9 @@ exports[`Storyshots Common/ScrollButton default 1`] = `
     onKeyDown={[Function]}
     tabIndex={0}
   >
-    Click Me! (will scroll down)
+    <span>
+      Click Me! (will scroll down)
+    </span>
   </a>
   <span
     id="anchor"

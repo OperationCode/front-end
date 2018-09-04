@@ -5,10 +5,11 @@ exports[`Storyshots Common/Button default 1`] = `
   className="Button primary"
   disabled={false}
   onClick={[Function]}
-  onKeyDown={[Function]}
   tabIndex={0}
   type="button"
 >
-  Click Me!
+  <span>
+    Click Me!
+  </span>
 </button>
 `;
