@@ -47,10 +47,7 @@ class ScrollButton extends Component {
 
     return (
       <ScrollLink
-        className={classNames(styles.Button, props.className, {
-          [styles.primary]: props.theme === 'primary',
-          [styles.secondary]: props.theme === 'secondary',
-          [styles.slate]: props.theme === 'slate',
+        className={classNames(styles.Button, props.className, styles[props.theme], {
           [styles.fullWidth]: props.fullWidth,
         })}
         duration={400}
