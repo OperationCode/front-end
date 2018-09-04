@@ -16,9 +16,9 @@
   display: flex;
   flex-flow: column;
   justify-content: space-around;
-  overflow: hidden; /* prevent devs from bloating this component */
-  margin: 0 1rem; /* margin subtracted from width and height */
-  height: 100%; /* 1rem margin top AND bottom hence 2rem */
+  overflow: hidden; /* prevent devs from bloating content */
+  margin: 0 1rem; /* margin subtracted from width */
+  height: 100%;
   width: calc(50% - 2rem); /* 1rem margin left AND right hence 2rem */
 }
 
