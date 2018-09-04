@@ -2,19 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import ReactGA from 'react-ga';
-import { withRouter } from 'next/router';
 import { Link as ScrollLink, Events as ScrollEvent } from 'react-scroll';
 import styles from './Button.css';
 
 ScrollButton.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.oneOfType([PropTypes.node, PropTypes.string]).isRequired,
   className: PropTypes.string,
   fullWidth: PropTypes.bool,
   href: PropTypes.string,
   onClick: PropTypes.func,
   tabIndex: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   theme: PropTypes.oneOf(['primary', 'secondary', 'slate']),
-  router: PropTypes.object.isRequired,
 };
 
 ScrollButton.defaultProps = {
@@ -26,7 +24,7 @@ ScrollButton.defaultProps = {
   theme: 'primary',
 };
 
-function ScrollButton({ className, children, fullWidth, href, onClick, router, tabIndex, theme }) {
+function ScrollButton({ className, children, fullWidth, href, onClick, tabIndex, theme }) {
   const buttonClassNames = classNames(styles.Button, className, {
     [styles.primary]: theme === 'primary',
     [styles.secondary]: theme === 'secondary',
@@ -36,27 +34,24 @@ function ScrollButton({ className, children, fullWidth, href, onClick, router, t
 
   const isProd = process.env.NODE_ENV === 'production';
 
-  // Report scroll link button clicks to Google Analytics
-  if (isProd) {
-    ScrollEvent.scrollEvent.register('begin', () => {
-      ReactGA.event({
-        category: 'Scroll Button Clicked',
-        action: `[${children}] from ${router.route}`,
-      });
-    });
-  }
-
   const clickHandler = () => {
     if (!isProd) {
       const analyticsMessage = `Analytics disabled. <ScrollButton> clicked.`;
 
       // eslint-disable-next-line no-console
       console.log(analyticsMessage);
-      onClick(analyticsMessage);
-      return;
+      return () => onClick(analyticsMessage);
     }
 
-    onClick();
+    ScrollEvent.scrollEvent.register('begin', () => {
+      ReactGA.event({
+        category: 'Interactions',
+        action: 'Clicked Scroll Button',
+        label: `To [${href}]`,
+      });
+    });
+
+    return onClick;
   };
 
   const onEnterHandler = ev => (ev.key === 'Enter' ? clickHandler : () => {});
@@ -71,9 +66,10 @@ function ScrollButton({ className, children, fullWidth, href, onClick, router, t
       tabIndex={tabIndex}
       to={href}
     >
-      {children}
+      {/* Render text nodes within a span to apply selector styles */}
+      {typeof children === 'string' ? <span>{children}</span> : children}
     </ScrollLink>
   );
 }
 
-export default withRouter(ScrollButton);
+export default ScrollButton;
