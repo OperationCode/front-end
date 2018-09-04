@@ -42,11 +42,6 @@ function Button({
   theme,
   type,
 }) {
-  const buttonClassNames = classNames(styles.Button, className, styles[theme], {
-    [styles.disabled]: disabled,
-    [styles.fullWidth]: fullWidth,
-  });
-
   const onClickHandler = () => {
     if (disabled) {
       return () => {};
@@ -65,7 +60,10 @@ function Button({
   /* eslint-disable react/button-has-type */
   return (
     <button
-      className={buttonClassNames}
+      className={classNames(styles.Button, className, styles[theme], {
+        [styles.disabled]: disabled,
+        [styles.fullWidth]: fullWidth,
+      })}
       disabled={disabled}
       onClick={onClickHandler}
       tabIndex={tabIndex}
