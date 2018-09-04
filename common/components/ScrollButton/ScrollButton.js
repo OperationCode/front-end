@@ -25,17 +25,8 @@ ScrollButton.defaultProps = {
 };
 
 function ScrollButton({ className, children, fullWidth, href, onClick, tabIndex, theme }) {
-  const buttonClassNames = classNames(styles.Button, className, {
-    [styles.primary]: theme === 'primary',
-    [styles.secondary]: theme === 'secondary',
-    [styles.slate]: theme === 'slate',
-    [styles.fullWidth]: fullWidth,
-  });
-
-  const isProd = process.env.NODE_ENV === 'production';
-
   const clickHandler = () => {
-    if (isProd) {
+    if (process.env.NODE_ENV === 'production') {
       ScrollEvent.scrollEvent.register('begin', () => {
         ReactGA.event({
           category: 'Interactions',
@@ -53,7 +44,12 @@ function ScrollButton({ className, children, fullWidth, href, onClick, tabIndex,
 
   return (
     <ScrollLink
-      className={buttonClassNames}
+      className={classNames(styles.Button, className, {
+        [styles.primary]: theme === 'primary',
+        [styles.secondary]: theme === 'secondary',
+        [styles.slate]: theme === 'slate',
+        [styles.fullWidth]: fullWidth,
+      })}
       duration={400}
       onClick={clickHandler}
       smooth
