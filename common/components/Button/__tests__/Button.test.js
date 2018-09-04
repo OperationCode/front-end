@@ -1,6 +1,6 @@
 /* eslint-env jest */
 import React from 'react';
-import { mount } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 
 import Button from '../Button';
@@ -49,5 +49,17 @@ describe('Button', () => {
     const ButtonInstance = mount(<Button>{testText}</Button>);
 
     expect(ButtonInstance.containsAllMatchingElements([<span>{testText}</span>])).toEqual(true);
+  });
+
+  test('should send log to console when clickHandler is called in non-prod environment', () => {
+    /* eslint-disable no-console */
+    console.log = jest.fn();
+
+    const ButtonShallowInstance = shallow(<Button>Testing</Button>);
+
+    ButtonShallowInstance.instance().clickHandler();
+
+    expect(console.log.mock.calls.length).toEqual(1);
+    /* eslint-enable no-console */
   });
 });
