@@ -24,17 +24,28 @@ exports[`DonateSection should render properly with no props 1`] = `
       Thank you for supporting our mission!
     </p>
     <Button
+      analyticsObject={
+        Object {
+          "action": "Button Selected",
+          "category": "Interactions",
+        }
+      }
       className=""
       disabled={false}
       fullWidth={false}
-      hasExternalLinkIcon={false}
-      href="https://secure.lglforms.com/form_engine/s/BRtP7QUKyHOyEYsZROsRew"
       onClick={[Function]}
       tabIndex={0}
       theme="primary"
       type="button"
     >
-      Donate Now
+      <OutboundLink
+        analyticsEventLabel="Donate Now"
+        className=""
+        hasIcon={true}
+        href="https://secure.lglforms.com/form_engine/s/BRtP7QUKyHOyEYsZROsRew"
+      >
+        Donate Now
+      </OutboundLink>
     </Button>
   </div>
 </Section>

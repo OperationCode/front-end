@@ -23,16 +23,27 @@ exports[`JoinSection it should render properly with no props 1`] = `
       Join our community for free and jumpstart your skills today!
     </p>
     <Button
+      analyticsObject={
+        Object {
+          "action": "Button Selected",
+          "category": "Interactions",
+        }
+      }
       className=""
       disabled={false}
       fullWidth={false}
-      href="/join"
       onClick={[Function]}
       tabIndex={0}
       theme="secondary"
       type="button"
     >
-      Join
+      <Link
+        href="/join"
+      >
+        <a>
+          Join
+        </a>
+      </Link>
     </Button>
   </div>
 </Section>
