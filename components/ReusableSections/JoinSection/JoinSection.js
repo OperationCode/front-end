@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { s3 } from 'common/constants/urls';
 import Button from 'common/components/Button/Button';
 import Section from 'common/components/Section/Section';
@@ -21,8 +22,12 @@ function JoinSection() {
 
         <p>Join our community for free and jumpstart your skills today!</p>
 
-        <Button href="/join" theme="secondary">
-          Join
+        <Button theme="secondary">
+          <Link href="/join">
+            {/* eslint-disable jsx-a11y/anchor-is-valid */}
+            <a>Join</a>
+            {/* eslint-enable jsx-a11y/anchor-is-valid */}
+          </Link>
         </Button>
       </div>
     </Section>

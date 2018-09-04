@@ -5,11 +5,12 @@ exports[`Button should render properly with some props assigned 1`] = `
   className="Button secondary disabled fullWidth"
   disabled={true}
   onClick={[Function]}
-  onKeyDown={[Function]}
   tabIndex={0}
   type="submit"
 >
-  Test
+  <span>
+    Test
+  </span>
 </button>
 `;
 
@@ -18,10 +19,11 @@ exports[`Button should render with just required props passed 1`] = `
   className="Button primary"
   disabled={false}
   onClick={[Function]}
-  onKeyDown={[Function]}
   tabIndex={0}
   type="button"
 >
-  Test
+  <span>
+    Test
+  </span>
 </button>
 `;

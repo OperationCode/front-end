@@ -2,13 +2,14 @@
   align-items: center;
   border: 1px solid transparent;
   border-radius: 4px;
+  color: #ffffff;
   cursor: pointer;
   display: flex;
   font-size: 1rem;
   justify-content: center;
   line-height: 1.25;
   min-width: 200px;
-  padding: 0.75rem;
+  padding: 0;
   transition: 0.2s linear background-color;
   text-decoration: none;
 }
@@ -19,6 +20,20 @@
   outline-offset: -2px;
   outline-style: solid;
   outline-width: 2px;
+}
+
+.Button > * {
+  /* Apply padding to child so that when child is an anchor element width and height span the
+  clickable area of the button */
+  padding: 0.75rem;
+}
+
+.Button > a {
+  /* Hijack anchor styles if nested within a Button */
+  color: #ffffff;
+  height: 100%;
+  text-decoration: none;
+  width: 100%;
 }
 
 .disabled {
@@ -38,7 +53,6 @@
 .primary {
   background-color: var(--primary);
   border-color: var(--primaryDark);
-  color: #ffffff;
   outline-color: var(--primaryDark);
 }
 
@@ -53,7 +67,6 @@
 .secondary {
   background-color: var(--secondary);
   border-color: var(--secondaryDark);
-  color: #ffffff;
   outline-color: var(--secondaryDark);
 }
 
@@ -68,7 +81,6 @@
 .slate {
   background-color: var(--slate);
   border-color: var(--slateDark);
-  color: #ffffff;
   outline-color: var(--slateDark);
 }
 

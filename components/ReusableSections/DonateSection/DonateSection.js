@@ -2,6 +2,7 @@ import React from 'react';
 import { donateLink, s3 } from 'common/constants/urls';
 import Section from 'common/components/Section/Section';
 import Button from 'common/components/Button/Button';
+import OutboundLink from 'common/components/OutboundLink/OutboundLink';
 import styles from './DonateSection.css';
 
 function DonateSection() {
@@ -22,8 +23,10 @@ function DonateSection() {
           industry, and code the future.
         </p>
         <p>Thank you for supporting our mission!</p>
-        <Button hasExternalLinkIcon={false} href={donateLink}>
-          Donate Now
+        <Button>
+          <OutboundLink analyticsEventLabel="Donate Now" href={donateLink}>
+            Donate Now
+          </OutboundLink>
         </Button>
       </div>
     </Section>

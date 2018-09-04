@@ -17,10 +17,11 @@ exports[`Storyshots Common/ScrollButton default 1`] = `
   <a
     className="Button primary"
     onClick={[Function]}
-    onKeyDown={[Function]}
     tabIndex={0}
   >
-    Click Me! (will scroll down)
+    <span>
+      Click Me! (will scroll down)
+    </span>
   </a>
   <span
     id="anchor"

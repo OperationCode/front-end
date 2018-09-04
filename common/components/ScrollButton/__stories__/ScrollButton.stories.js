@@ -26,7 +26,6 @@ storiesOf('Common/ScrollButton', module)
           fullWidth={boolean('fullWidth', false)}
           href={text('href', 'anchor')}
           onClick={action('ScrollButton Clicked!')}
-          onKeyDown={action('Enter key pressed!')}
           tabIndex={number('tabIndex', 0)}
           theme={select('theme', ['primary', 'secondary', 'slate'])}
         >

@@ -17,9 +17,9 @@ class FormSelect extends Component {
 
   static defaultProps = {
     id: '',
-    onChange: () => {},
+    onChange: undefined,
     prompt: '',
-    validationFunc: () => {},
+    validationFunc: undefined,
   };
 
   onChange(e) {

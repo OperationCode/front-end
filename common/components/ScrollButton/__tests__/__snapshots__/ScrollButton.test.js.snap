@@ -4,10 +4,11 @@ exports[`ScrollButton should render properly with some props assigned 1`] = `
 <a
   className="Button secondary fullWidth"
   onClick={[Function]}
-  onKeyDown={[Function]}
   tabIndex={0}
 >
-  Test
+  <span>
+    Test
+  </span>
 </a>
 `;
 
@@ -15,9 +16,10 @@ exports[`ScrollButton should render with just required props passed 1`] = `
 <a
   className="Button primary"
   onClick={[Function]}
-  onKeyDown={[Function]}
   tabIndex={0}
 >
-  Test
+  <span>
+    Test
+  </span>
 </a>
 `;
