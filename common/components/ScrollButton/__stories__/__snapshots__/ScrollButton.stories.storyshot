@@ -17,7 +17,6 @@ exports[`Storyshots Common/ScrollButton default 1`] = `
   <a
     className="Button primary"
     onClick={[Function]}
-    onKeyDown={[Function]}
     tabIndex={0}
   >
     <span>
