@@ -35,19 +35,18 @@ function ScrollButton({ className, children, fullWidth, href, onClick, tabIndex,
   const isProd = process.env.NODE_ENV === 'production';
 
   const clickHandler = () => {
-    if (!isProd) {
+    if (isProd) {
+      ScrollEvent.scrollEvent.register('begin', () => {
+        ReactGA.event({
+          category: 'Interactions',
+          action: 'Clicked Scroll Button',
+          label: `To [${href}]`,
+        });
+      });
+    } else {
       // eslint-disable-next-line no-console
       console.log(`Analytics disabled. <ScrollButton> clicked.`);
-      return onClick;
     }
-
-    ScrollEvent.scrollEvent.register('begin', () => {
-      ReactGA.event({
-        category: 'Interactions',
-        action: 'Clicked Scroll Button',
-        label: `To [${href}]`,
-      });
-    });
 
     return onClick;
   };
