@@ -36,11 +36,16 @@ exports[`ImageCard should render properly with some props assigned 1`] = `
     <p>
       Testing with a button: 
       <Button
+        analyticsObject={
+          Object {
+            "action": "Button Selected",
+            "category": "Interactions",
+          }
+        }
         className=""
         disabled={false}
         fullWidth={false}
         href="https://www.testlink.com"
-        onClick={[Function]}
         tabIndex={0}
         theme="primary"
         type="button"

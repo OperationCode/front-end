@@ -13,16 +13,26 @@ exports[`SignUpSection it should render properly with no props 1`] = `
     Are you ready to deploy your future? Join Operation Code today and launch your career in software development. Once you complete the form below, you’ll be invited to join our team on Slack. Make sure you stop in and say hi!
   </p>
   <Button
+    analyticsObject={
+      Object {
+        "action": "Button Selected",
+        "category": "Interactions",
+      }
+    }
     className=""
     disabled={false}
     fullWidth={false}
-    href="/signup"
-    onClick={[Function]}
     tabIndex={0}
     theme="secondary"
     type="button"
   >
-    Sign Up
+    <Link
+      href="/signup"
+    >
+      <a>
+        Sign Up
+      </a>
+    </Link>
   </Button>
 </Section>
 `;
