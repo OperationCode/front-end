@@ -59,16 +59,16 @@ export default () => (
         >
           <h6>Mentorship Program</h6>
           <p>
-            Our mentorship program connects members with seasoned software developers to help you
-            progress and achieve your goals.
+            Operation Code&apos;s mentorship program connects members with seasoned software
+            developers to help you progress and achieve your goals.
           </p>
         </ImageCard>
 
         <ImageCard alt="Man working on laptop" imageSource={`${s3}stock_laptop-working.jpg`}>
           <h6>Code School Scholarships</h6>
           <p>
-            Our scholarships to code schools provide you the opportunity to kickstart your career in
-            software development.
+            Operation Code&apos;s code school scholarships provide you the opportunity to kickstart
+            your career in software development.
           </p>
         </ImageCard>
 
@@ -78,8 +78,8 @@ export default () => (
         >
           <h6>Career Services</h6>
           <p>
-            Our career services team provides job opportunities, career guidance and resume reviews,
-            and prep for technical interviews.
+            Operation Code&apos;s career services team provides job opportunities, resume reviews,
+            technical interview prep, and career guidance.
           </p>
         </ImageCard>
 
@@ -89,8 +89,8 @@ export default () => (
         >
           <h6>Conference Scholarships</h6>
           <p>
-            We partner with tech conferences around the country and offers scholarship tickets to
-            events throughout the year.
+            Operation Code partners with tech conferences around the country and offers scholarship
+            tickets to events throughout the year.
           </p>
         </ImageCard>
 
