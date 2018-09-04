@@ -170,7 +170,7 @@ yarn
 # Run local development server accessible in the browser via http://localhost:3000
 yarn dev
 
-# Run Storybook development server. Used as a workbench when developing new common components. Accessible in the broswer via http://localhost:9001
+# Run Storybook development server. Used as a workbench when developing new common components. Accessible in the browser via http://localhost:9001
 yarn storybook
 
 # Create a static bundle of our Storybook instance that can be easily deployed.
