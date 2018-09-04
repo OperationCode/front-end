@@ -1,67 +1,59 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ImageCard it should render properly with required props 1`] = `
-<div
+<Card
   className="ImageCard"
+  hasAnimationOnHover={false}
 >
   <img
     alt="Test title"
-    className="cardImage"
-    src="image.jpg"
+    className="image"
+    src="/static/images/Family1.jpg"
   />
   <div
-    className="cardText"
+    className="content"
   >
-    <h6>
-      Test title
-    </h6>
-    <p />
-    
+    <p>
+      Testing!
+    </p>
   </div>
-</div>
+</Card>
 `;
 
 exports[`ImageCard should render properly with some props assigned 1`] = `
-<div
+<Card
   className="ImageCard"
+  hasAnimationOnHover={false}
 >
   <img
     alt="Title Tester"
-    className="cardImage"
-    src="image.jpg"
+    className="image"
+    src="/static/images/TankFlip.gif"
   />
   <div
-    className="cardText"
+    className="content"
   >
-    <h6>
-      Title Tester
-    </h6>
     <p>
-      This is the card
-    </p>
-    <Button
-      analyticsObject={
-        Object {
-          "action": "Button Selected",
-          "category": "Interactions",
+      Testing with a button: 
+      <Button
+        analyticsObject={
+          Object {
+            "action": "Button Selected",
+            "category": "Interactions",
+          }
         }
-      }
-      className=""
-      disabled={false}
-      fullWidth={false}
-      onClick={[Function]}
-      tabIndex={0}
-      theme="primary"
-      type="button"
-    >
-      <Link
-        href="www.thisIsTheLink.com"
+        className=""
+        disabled={false}
+        fullWidth={false}
+        href="https://www.testlink.com"
+        onClick={[Function]}
+        tabIndex={0}
+        theme="primary"
+        type="button"
       >
-        <a>
-          Test me!
-        </a>
-      </Link>
-    </Button>
+        Test me!
+      </Button>
+    </p>
   </div>
-</div>
+</Card>
 `;
