@@ -33,7 +33,7 @@ function UpgradeBrowserOverlay() {
   return (
     <Modal
       className={styles.UpgradeBrowserOverlay}
-      screenReaderLabel="Please Upgrade Your Browser"
+      screenReaderLabel="Upgrade Your Browser"
       isOpen
       overlayClassName={styles.overlay}
       shouldCloseOnOverlayClick={false}

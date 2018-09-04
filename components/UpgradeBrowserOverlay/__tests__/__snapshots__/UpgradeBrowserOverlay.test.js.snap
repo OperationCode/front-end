@@ -5,7 +5,7 @@ exports[`UpgradeBrowserOverlay should render with no props 1`] = `
   className="UpgradeBrowserOverlay"
   isOpen={true}
   overlayClassName="overlay"
-  screenReaderLabel="Please Upgrade Your Browser"
+  screenReaderLabel="Upgrade Your Browser"
   shouldCloseOnOverlayClick={false}
 >
   <FontAwesomeIcon

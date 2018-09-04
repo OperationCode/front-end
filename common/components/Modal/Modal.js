@@ -2,7 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import ReactModal from 'react-modal';
+import ReactGA from 'react-ga';
 import CardStyles from 'common/components/Card/Card.css';
+import CloseIcon from 'static/images/icons/close_icon.svg';
 import ModalStyles from './Modal.css';
 
 Modal.propTypes = {
@@ -10,7 +12,7 @@ Modal.propTypes = {
   className: PropTypes.string,
   isOpen: PropTypes.bool,
   onRequestClose: PropTypes.func,
-  screenReaderLabel: PropTypes.string.isRequired,
+  screenReaderLabel: PropTypes.string.isRequired, // basically a summarizing title
   shouldCloseOnOverlayClick: PropTypes.bool,
 };
 
@@ -29,6 +31,10 @@ function Modal({
   screenReaderLabel,
   shouldCloseOnOverlayClick,
 }) {
+  if (process.env.NODE_ENV === 'production') {
+    ReactGA.modalView(screenReaderLabel);
+  }
+
   return (
     <ReactModal
       className={classNames(CardStyles.Card, className)}
@@ -37,8 +43,10 @@ function Modal({
       onRequestClose={onRequestClose}
       shouldCloseOnOverlayClick={shouldCloseOnOverlayClick}
     >
-      {/* TODO: Use a close SVG instead of CSS painted X */}
-      <button className={ModalStyles.closeButton} onClick={() => onRequestClose()} type="button" />
+      <button className={ModalStyles.closeButton} onClick={onRequestClose} type="button">
+        <CloseIcon className={ModalStyles.closeButtonIcon} />
+      </button>
+
       <div className={ModalStyles.scrollableContainer}>{children}</div>
     </ReactModal>
   );
