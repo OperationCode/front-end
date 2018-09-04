@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import ReactGA from 'react-ga';
 import { Link as ScrollLink, Events as ScrollEvent } from 'react-scroll';
-import styles from './Button.css';
+import styles from 'common/components/Button/Button.css';
 
 ScrollButton.propTypes = {
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.string]).isRequired,
