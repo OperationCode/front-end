@@ -1,9 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
 import Head from 'components/head';
-import Section from 'common/components/Section/Section';
-import ImageCard from 'components/Cards/ImageCard/ImageCard';
 import HeroBanner from 'common/components/HeroBanner/HeroBanner';
+import ImageCard from 'components/Cards/ImageCard/ImageCard';
+import Section from 'common/components/Section/Section';
 import ValueCard from 'components/Cards/ValueCard/ValueCard';
 import { s3 } from 'common/constants/urls';
 import styles from './styles/about.css';
@@ -54,35 +54,56 @@ export default () => (
     <Section theme="mist" title="What We Do">
       <div className={styles.flexGrid}>
         <ImageCard
-          title="Mentorship Program"
-          imageSource={`${s3}stock_teamwork-1.jpg`}
-          cardText="Our mentorship program connects members with seasoned software developers
-              to help you progress and achieve your goals."
-        />
-        <ImageCard
-          title="Code School Scholarships"
-          imageSource={`${s3}photo_red-hat-summit-2.jpg`}
-          cardText="Our scholarships to code schools provide opportunities for the
-              military community to kickstart their careers in software development."
-        />
-        <ImageCard
-          title="Career Services"
+          alt="Two women pair programming"
           imageSource={`${s3}stock_paired-programming.jpg`}
-          cardText="Our career services team provides job opportunities, career guidance and
-              resume reviews, and prep for technical interviews."
-        />
+        >
+          <h6>Mentorship Program</h6>
+          <p>
+            Operation Code&apos;s mentorship program connects members with seasoned software
+            developers to help you progress and achieve your goals.
+          </p>
+        </ImageCard>
+
+        <ImageCard alt="Man working on laptop" imageSource={`${s3}stock_laptop-working.jpg`}>
+          <h6>Code School Scholarships</h6>
+          <p>
+            Operation Code&apos;s code school scholarships provide you the opportunity to kickstart
+            your career in software development.
+          </p>
+        </ImageCard>
+
         <ImageCard
-          title="Conference Scholarships"
-          imageSource={`${s3}stock_laptop-working.jpg`}
-          cardText="We partner with tech conferences around the country and offers
-              scholarship tickets to events throughout the year."
-        />
+          alt="Team of people working together at a coffee table"
+          imageSource={`${s3}stock_teamwork-1.jpg`}
+        >
+          <h6>Career Services</h6>
+          <p>
+            Operation Code&apos;s career services team provides job opportunities, resume reviews,
+            technical interview prep, and career guidance.
+          </p>
+        </ImageCard>
+
         <ImageCard
-          title="Community Events"
+          alt="Operation Code members pose together at Red Hat Summit 2017"
+          imageSource={`${s3}photo_red-hat-summit-2.jpg`}
+        >
+          <h6>Conference Scholarships</h6>
+          <p>
+            Operation Code partners with tech conferences around the country and offers scholarship
+            tickets to events throughout the year.
+          </p>
+        </ImageCard>
+
+        <ImageCard
+          alt="Operation Code Seattle Meet-up In 2017"
           imageSource={`${s3}photo_oc-seattle-meetup.jpg`}
-          cardText="Join one of our chapters throughout the country at our local meetups,
-              and learn with fellow members of the military community."
-        />
+        >
+          <h6>Community Events</h6>
+          <p>
+            Join one of our local meetup chapters throughout the country, and learn with fellow
+            members of the military community.
+          </p>
+        </ImageCard>
       </div>
     </Section>
 

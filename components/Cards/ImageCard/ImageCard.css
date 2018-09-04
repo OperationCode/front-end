@@ -1,52 +1,41 @@
 .ImageCard {
-  align-items: center;
-  background-color: #ffffff;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
-  display: flex;
   flex-flow: row wrap;
   height: 200px;
-  margin: 15px;
+  justify-content: flex-start;
+  padding: 0;
   width: 600px;
 }
 
 .image {
-  height: 200px;
-  width: 300px;
+  height: 100%;
+  width: 50%;
 }
 
-.cardImage {
-  height: 200px;
-  width: 300px;
-}
-
-.cardText {
+.content {
   align-items: center;
   display: flex;
   flex-flow: column;
-  height: 150px;
   justify-content: space-around;
-  margin: 25px;
-  width: 250px;
-}
-
-.cardText > h6 {
-  font-size: 1.2rem;
-  text-align: center;
-}
-
-.cardText > p {
-  font-size: 0.9rem;
-  text-align: left;
+  overflow: hidden; /* prevent devs from bloating content */
+  margin: 0 1rem; /* margin subtracted from width */
+  height: 100%;
+  width: calc(50% - 2rem); /* 1rem margin left AND right hence 2rem */
 }
 
 /* Vertical space between cards for vertical layout */
-@media screen and (max-width: 667px) {
+@media screen and (max-width: 768px) {
   .ImageCard {
     height: 400px;
     width: 300px;
   }
 
-  .cardText > h6 {
-    font-size: 1.3rem;
+  .image {
+    height: 50%;
+    width: 100%;
+  }
+
+  .content {
+    height: 50%;
+    width: 100%;
   }
 }

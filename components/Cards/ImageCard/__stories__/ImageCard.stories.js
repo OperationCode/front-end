@@ -8,13 +8,12 @@ storiesOf('Cards/ImageCard', module)
   .addDecorator(withKnobs)
   .add('default', () => (
     <ImageCard
-      buttonText={text('buttonText', 'Click Me!')}
-      cardText={text('cardText', 'buttonText is only shown/necessary when `link` exists')}
+      alt={text('alt', 'Image Card')}
       imageSource={text(
         'imageSource',
         'https://operationcode.org/static/media/ThinkstockPhotos-489787502.812e.jpg',
       )}
-      link={text('link', 'https://google.com')}
-      title={text('title', 'Image Card')}
-    />
+    >
+      <p>{text('children', 'PropTypes.node')}</p>
+    </ImageCard>
   ));
