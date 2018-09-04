@@ -9,7 +9,7 @@ class FormTextArea extends Component {
   };
 
   static defaultProps = {
-    onChange: () => {},
+    onChange: undefined,
     placeHolder: '',
   };
 

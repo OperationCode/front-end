@@ -32,7 +32,6 @@ exports[`JoinSection it should render properly with no props 1`] = `
       className=""
       disabled={false}
       fullWidth={false}
-      onClick={[Function]}
       tabIndex={0}
       theme="secondary"
       type="button"

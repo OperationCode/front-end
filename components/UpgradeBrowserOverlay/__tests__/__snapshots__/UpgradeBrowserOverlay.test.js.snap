@@ -4,7 +4,6 @@ exports[`UpgradeBrowserOverlay should render with no props 1`] = `
 <Modal
   className="UpgradeBrowserOverlay"
   isOpen={true}
-  onRequestClose={[Function]}
   overlayClassName="overlay"
   screenReaderLabel="Please Upgrade Your Browser"
   shouldCloseOnOverlayClick={false}

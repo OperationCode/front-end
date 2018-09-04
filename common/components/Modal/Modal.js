@@ -17,7 +17,7 @@ Modal.propTypes = {
 Modal.defaultProps = {
   className: '',
   isOpen: false,
-  onRequestClose: () => {},
+  onRequestClose: undefined,
   shouldCloseOnOverlayClick: true,
 };
 

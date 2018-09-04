@@ -46,7 +46,6 @@ exports[`ImageCard should render properly with some props assigned 1`] = `
         disabled={false}
         fullWidth={false}
         href="https://www.testlink.com"
-        onClick={[Function]}
         tabIndex={0}
         theme="primary"
         type="button"

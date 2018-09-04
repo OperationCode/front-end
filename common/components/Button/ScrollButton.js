@@ -19,7 +19,7 @@ ScrollButton.defaultProps = {
   className: '',
   fullWidth: false,
   href: '',
-  onClick: () => {},
+  onClick: undefined,
   tabIndex: 0,
   theme: 'primary',
 };
@@ -54,7 +54,11 @@ function ScrollButton({ className, children, fullWidth, href, onClick, tabIndex,
     return onClick;
   };
 
-  const onEnterHandler = ev => (ev.key === 'Enter' ? clickHandler : () => {});
+  const onEnterHandler = ev => {
+    if (ev.key === 'Enter') {
+      clickHandler();
+    }
+  };
 
   return (
     <ScrollLink

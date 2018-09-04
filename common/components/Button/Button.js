@@ -25,7 +25,7 @@ Button.defaultProps = {
   className: '',
   disabled: false,
   fullWidth: false,
-  onClick: () => {},
+  onClick: undefined,
   tabIndex: 0,
   theme: 'primary',
   type: 'button',
