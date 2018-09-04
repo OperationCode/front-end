@@ -36,11 +36,9 @@ function ScrollButton({ className, children, fullWidth, href, onClick, tabIndex,
 
   const clickHandler = () => {
     if (!isProd) {
-      const analyticsMessage = `Analytics disabled. <ScrollButton> clicked.`;
-
       // eslint-disable-next-line no-console
-      console.log(analyticsMessage);
-      return () => onClick(analyticsMessage);
+      console.log(`Analytics disabled. <ScrollButton> clicked.`);
+      return onClick;
     }
 
     ScrollEvent.scrollEvent.register('begin', () => {
