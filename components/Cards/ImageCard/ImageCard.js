@@ -1,36 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Button from 'common/components/Button/Button';
+import Card from 'common/components/Card/Card';
 import styles from './ImageCard.css';
 
 ImageCard.propTypes = {
-  buttonText: PropTypes.string,
-  cardText: PropTypes.string.isRequired,
+  alt: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
   imageSource: PropTypes.string.isRequired,
-  link: PropTypes.string,
-  title: PropTypes.string.isRequired,
 };
 
-ImageCard.defaultProps = {
-  buttonText: '',
-  link: '',
-};
-
-function ImageCard({ buttonText, cardText, imageSource, link, title }) {
+function ImageCard({ alt, children, imageSource }) {
   return (
-    <div className={styles.ImageCard}>
-      <img className={styles.cardImage} src={imageSource} alt={title} />
+    <Card className={styles.ImageCard}>
+      <img className={styles.image} src={imageSource} alt={alt} />
 
-      <div className={styles.cardText}>
-        <h6>{title}</h6>
-        <p>{cardText}</p>
-        {link && (
-          <Button href={link} theme="primary">
-            {buttonText}
-          </Button>
-        )}
-      </div>
-    </div>
+      <div className={styles.content}>{children}</div>
+    </Card>
   );
 }
 
