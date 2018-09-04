@@ -10,7 +10,7 @@ class ScrollButton extends Component {
     children: PropTypes.oneOfType([PropTypes.node, PropTypes.string]).isRequired,
     className: PropTypes.string,
     fullWidth: PropTypes.bool,
-    href: PropTypes.string,
+    href: PropTypes.string.isRequired,
     onClick: PropTypes.func,
     tabIndex: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     theme: PropTypes.oneOf(['primary', 'secondary', 'slate']),
@@ -19,7 +19,6 @@ class ScrollButton extends Component {
   static defaultProps = {
     className: '',
     fullWidth: false,
-    href: '',
     onClick: undefined,
     tabIndex: 0,
     theme: 'primary',
@@ -55,7 +54,7 @@ class ScrollButton extends Component {
           [styles.fullWidth]: props.fullWidth,
         })}
         duration={400}
-        onClick={props.clickHandler}
+        onClick={this.clickHandler}
         smooth
         tabIndex={props.tabIndex}
         to={props.href}
