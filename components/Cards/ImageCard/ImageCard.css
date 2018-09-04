@@ -15,9 +15,10 @@
   align-items: center;
   display: flex;
   flex-flow: column;
-  overflow: scroll;
-  margin: 1rem; /* margin subtracted from width and height */
-  height: calc(100% - 2rem); /* 1rem margin top AND bottom hence 2rem */
+  justify-content: space-around;
+  overflow: hidden; /* prevent devs from bloating this component */
+  margin: 0 1rem; /* margin subtracted from width and height */
+  height: 100%; /* 1rem margin top AND bottom hence 2rem */
   width: calc(50% - 2rem); /* 1rem margin left AND right hence 2rem */
 }
 

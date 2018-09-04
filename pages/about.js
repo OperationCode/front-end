@@ -67,8 +67,8 @@ export default () => (
         <ImageCard alt="Man working on laptop" imageSource={`${s3}stock_laptop-working.jpg`}>
           <h6>Code School Scholarships</h6>
           <p>
-            Our scholarships to code schools provide opportunities for the military community to
-            kickstart their careers in software development.
+            Our scholarships to code schools provide you the opportunity to kickstart your career in
+            software development.
           </p>
         </ImageCard>
 
@@ -100,8 +100,8 @@ export default () => (
         >
           <h6>Community Events</h6>
           <p>
-            Join one of our chapters throughout the country at our local meetups, and learn with
-            fellow members of the military community.
+            Join one of our local meetup chapters throughout the country, and learn with fellow
+            members of the military community.
           </p>
         </ImageCard>
       </div>
