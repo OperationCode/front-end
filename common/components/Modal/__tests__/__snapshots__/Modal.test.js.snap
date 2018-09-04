@@ -20,7 +20,11 @@ exports[`Modal should render properly with some props assigned and being open 1`
     className="closeButton"
     onClick={[Function]}
     type="button"
-  />
+  >
+    <test-file-mock
+      className="closeButtonIcon"
+    />
+  </button>
   <div
     className="scrollableContainer"
   >
