@@ -2,7 +2,7 @@
 
 exports[`AdBanner it should render properly with required props 1`] = `
 <OutboundLink
-  analyticsEventLabel="[AdBanner Hit] to www.test.com"
+  analyticsEventLabel="[AdBanner Hit]"
   className="adBannerLink"
   hasIcon={false}
   href="www.test.com"
@@ -30,7 +30,7 @@ exports[`AdBanner it should render properly with required props 1`] = `
 
 exports[`AdBanner should render properly with some props assigned 1`] = `
 <OutboundLink
-  analyticsEventLabel="[AdBanner Hit] to www.testMe.com"
+  analyticsEventLabel="[AdBanner Hit]"
   className="AdBanner-class adBannerLink"
   hasIcon={false}
   href="www.testMe.com"

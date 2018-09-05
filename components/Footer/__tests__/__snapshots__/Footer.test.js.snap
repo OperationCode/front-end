@@ -91,6 +91,7 @@ exports[`Footer it should render properly no props 1`] = `
         </a>
       </Link>
       <OutboundLink
+        analyticsEventLabel="Footer Link"
         className=""
         hasIcon={true}
         href="https://github.com/OperationCode/operationcode_frontend/issues/new"
@@ -98,6 +99,7 @@ exports[`Footer it should render properly no props 1`] = `
         Report A Bug
       </OutboundLink>
       <OutboundLink
+        analyticsEventLabel="Footer Link"
         className=""
         hasIcon={true}
         href="https://smile.amazon.com/ch/47-4247572"
@@ -105,6 +107,7 @@ exports[`Footer it should render properly no props 1`] = `
         Amazon Smile
       </OutboundLink>
       <OutboundLink
+        analyticsEventLabel="Footer Link"
         className=""
         hasIcon={true}
         href="https://www.iubenda.com/privacy-policy/8174861"
