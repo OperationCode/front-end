@@ -1,21 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots ClipPathImage default 1`] = `
-<div
-  className="ClipPathImage"
+<article
+  className="Card ClipPathImage"
 >
   <div
     className="primary content"
   >
     <img
       alt="A lovely family sitting around an iPad"
+      className="image"
       src="https://operationcode.org/static/media/Family-1.1383.jpg"
     />
-    <h6>
+    <h6
+      className="title"
+    >
       Clip Path Image
-       
-      
     </h6>
   </div>
-</div>
+</article>
 `;

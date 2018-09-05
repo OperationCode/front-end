@@ -1,23 +1,18 @@
 .ClipPathImage {
-  color: #ffffff;
+  color: var(--mist);
   text-decoration: none;
-}
-
-.link {
-  border: 1px solid transparent;
-}
-
-.ClipPathImage img {
-  /*
-    Must force image to be these dimensions
-    clip-path will look ugly otherwise
-  */
+  padding: 0;
+  height: 240px;
   width: 300px;
-  height: 200px;
-  clip-path: polygon(0 0, 100% 0, 100% 75%, 0 85%);
 }
 
-.ClipPathImage .content h6 {
+.image {
+  clip-path: polygon(0 0, 100% 0, 100% 75%, 0 85%);
+  height: 200px;
+  width: 300px;
+}
+
+.title {
   bottom: 1rem;
   position: relative;
   text-align: center;
@@ -36,22 +31,4 @@
 .slate {
   background-color: var(--slate);
   border-color: var(--slate);
-}
-
-.primary.link:hover,
-.primary.link:focus {
-  background-color: var(--primaryLight);
-  border-color: var(--primaryLight);
-}
-
-.secondary.link:hover,
-.secondary.link:focus {
-  background-color: var(--secondaryLight);
-  border-color: var(--secondaryLight);
-}
-
-.slate.link:hover,
-.slate.link:focus {
-  background-color: var(--slateLight);
-  border-color: var(--slateLight);
 }
