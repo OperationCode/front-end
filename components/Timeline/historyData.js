@@ -8,7 +8,11 @@ export default {
         <p>
           Operation Code&apos;s founder, and retired U.S. Army Captain, David Molina, attends his
           first hackathon in New York City. After a weekend learning at{' '}
-          <OutboundLink href="https://angelhack.com" alt="Angel Hack">
+          <OutboundLink
+            analyticsEventLabel="History Link"
+            href="https://angelhack.com"
+            alt="Angel Hack"
+          >
             AngelHack
           </OutboundLink>{' '}
           , he is inspired to pursue software engineering as a post-military occupation. He submits
@@ -26,11 +30,19 @@ export default {
           Molina exits military service in early 2013 and begins to self-teach Ruby on Rails, a
           full-stack web development platform for building comprehensive web applications. He also
           starts attending meetups with{' '}
-          <OutboundLink href="https://bmoreonrails.org" alt="Bmore On Rails">
+          <OutboundLink
+            analyticsEventLabel="History Link"
+            href="https://bmoreonrails.org"
+            alt="Bmore On Rails"
+          >
             &quot;Bmore on Rails&quot;
           </OutboundLink>{' '}
           while finishing{' '}
-          <OutboundLink href="https://onemonth.com" alt="One Mounth Rails">
+          <OutboundLink
+            analyticsEventLabel="History Link"
+            href="https://onemonth.com"
+            alt="One Mounth Rails"
+          >
             One Month&apos;s Rails online course.
           </OutboundLink>
         </p>
@@ -41,7 +53,11 @@ export default {
       content: (
         <p>
           Molina attended{' '}
-          <OutboundLink href="https://railsconf.com" alt="Rails Conf">
+          <OutboundLink
+            analyticsEventLabel="History Link"
+            href="https://railsconf.com"
+            alt="Rails Conf"
+          >
             RailsConf
           </OutboundLink>{' '}
           as a scholarship fellow. After meeting Rubyists from around the world, he is introduced to
@@ -54,7 +70,11 @@ export default {
       content: (
         <p>
           Molina joins{' '}
-          <OutboundLink href="https://techstars.com/patriotbootcamp" alt="Patriot Boot Camp">
+          <OutboundLink
+            analyticsEventLabel="History Link"
+            href="https://techstars.com/patriotbootcamp"
+            alt="Patriot Boot Camp"
+          >
             Patriot Boot Camp (PBC)
           </OutboundLink>{' '}
           presented by Techstars, at George Washington University. During this time, Molina tells
@@ -80,17 +100,26 @@ export default {
       content: (
         <p>
           At{' '}
-          <OutboundLink href="https://cascadiarubyconf.com" alt="Cascadia Conference">
+          <OutboundLink
+            analyticsEventLabel="History Link"
+            href="https://cascadiarubyconf.com"
+            alt="Cascadia Conference"
+          >
             Cascadia Ruby
           </OutboundLink>{' '}
           Molina receives encouragement from fellow Rubyist, Whitney Rose, to launch Operation
           Code&apos;s petition using &quot;Launchrock&quot;. After lengthy discussions with Kristin
           Smith, Adam Enbar (representing The Flatiron School), and{' '}
-          <OutboundLink href="https://www.codefellows.org" alt="Operation Code Is A Go">
+          <OutboundLink
+            analyticsEventLabel="History Link"
+            href="https://www.codefellows.org"
+            alt="Operation Code Is A Go"
+          >
             Code Fellows
           </OutboundLink>{' '}
           the first line of code is{' '}
           <OutboundLink
+            analyticsEventLabel="History Link"
             href="//github.com/OperationCode/operationcode"
             alt="Operation Code Old Repository"
           >
@@ -124,7 +153,11 @@ export default {
       content: (
         <p>
           Web developer, teacher, entrepreneur, and co-founder of{' '}
-          <OutboundLink href="http//www.codefellows.org" alt="Code Fellows">
+          <OutboundLink
+            analyticsEventLabel="History Link"
+            href="http//www.codefellows.org"
+            alt="Code Fellows"
+          >
             Code Fellows
           </OutboundLink>{' '}
           , Ivan Storck, purchases the domain &quot;operationcode.org&quot; becoming our first donor
@@ -136,7 +169,11 @@ export default {
       title: 'DNSimple Joins The Operation',
       content: (
         <p>
-          <OutboundLink href="https://dnsimple.com" alt="DNSimple">
+          <OutboundLink
+            analyticsEventLabel="History Link"
+            href="https://dnsimple.com"
+            alt="DNSimple"
+          >
             DNSimple
           </OutboundLink>{' '}
           joined Operation Code as the sole domain management service provider, ensuring maximum
@@ -151,6 +188,7 @@ export default {
           Army veteran and aspiring software developer, Charles Sipe, writes a viral, Veteran&apos;s
           Day article called{' '}
           <OutboundLink
+            analyticsEventLabel="History Link"
             href="https://www.switchup.org/blog/why-veterans-will-make-excellent-programmers"
             alt="Blog Article: Why Veterans Will Make Excellent Programmers"
           >
@@ -166,8 +204,10 @@ export default {
         <p>
           HackHands co-founders, Forest Good and Geraldo Ramos, join Operation Code, designing our
           logo and providing veterans free access to{' '}
-          <OutboundLink href="https://hacksummit.org">hack.summit()</OutboundLink> , a virtual
-          conference to learn from the world&apos;s most renowned programmers.
+          <OutboundLink analyticsEventLabel="History Link" href="https://hacksummit.org">
+            hack.summit()
+          </OutboundLink>{' '}
+          , a virtual conference to learn from the world&apos;s most renowned programmers.
         </p>
       ),
     },
@@ -217,15 +257,27 @@ export default {
       content: (
         <p>
           Operation Code changes it&apos;s Twitter handle to{' '}
-          <OutboundLink href="https://twitter.com/operation_code" alt="Operation Code Twitter">
+          <OutboundLink
+            analyticsEventLabel="History Link"
+            href="https://twitter.com/operation_code"
+            alt="Operation Code Twitter"
+          >
             @operation_code
           </OutboundLink>{' '}
           , for more effective branding.{' '}
-          <OutboundLink href="https://instagram.com/operation_code" alt="Operation Code Instagram">
+          <OutboundLink
+            analyticsEventLabel="History Link"
+            href="https://instagram.com/operation_code"
+            alt="Operation Code Instagram"
+          >
             Instagram
           </OutboundLink>{' '}
           and{' '}
-          <OutboundLink href="https://facebook.com/operationcode.org" alt="Operation Code Facebook">
+          <OutboundLink
+            analyticsEventLabel="History Link"
+            href="https://facebook.com/operationcode.org"
+            alt="Operation Code Facebook"
+          >
             Facebook
           </OutboundLink>{' '}
           , accounts are created.
@@ -237,6 +289,7 @@ export default {
       content: (
         <p>
           <OutboundLink
+            analyticsEventLabel="History Link"
             href="https://calagator.org/events/1250468219"
             alt="Calagator Archive - OpCode Launch Party"
           >
@@ -253,7 +306,11 @@ export default {
         <p>
           Army veteran and software engineer, Fernando Paredes, joins Operation Code, expanding the
           Software Mentor Protégé Program using{' '}
-          <OutboundLink href="https://operation-code.slack.com/" alt="Operation Code Slack Team">
+          <OutboundLink
+            analyticsEventLabel="History Link"
+            href="https://operation-code.slack.com/"
+            alt="Operation Code Slack Team"
+          >
             our newly created Slack Team
           </OutboundLink>{' '}
           . Veterans now have real-time access to a helpful coding community and one-on-one software
@@ -268,6 +325,7 @@ export default {
           Fernando Paredes, Nell Shamrell, and Eric McKenna improve Operation Code&apos;s
           participation in open source development with our first{' '}
           <OutboundLink
+            analyticsEventLabel="History Link"
             href="https://github.com/OperationCode/operationcode/blob/master/CONTRIBUTING.md"
             alt="Operation Code Old GitHub Contributing Guide"
           >
@@ -282,11 +340,16 @@ export default {
       content: (
         <p>
           Global hospitality provider,{' '}
-          <OutboundLink href="https://www.airbnb.com/" alt="AirBnB">
+          <OutboundLink
+            analyticsEventLabel="History Link"
+            href="https://www.airbnb.com/"
+            alt="AirBnB"
+          >
             AirBnB
           </OutboundLink>{' '}
           sponsors lodging for Operation Code members attending SignalConf in San Francisco.{' '}
           <OutboundLink
+            analyticsEventLabel="History Link"
             href="https://www.instagram.com/p/21p5bFxUjd/?taken-by=davidcmolina"
             alt="Link to Instagram photo of Operation Code at SignalConf"
           >
@@ -302,11 +365,16 @@ export default {
       content: (
         <p>
           Global hospitality provider,{' '}
-          <OutboundLink href="https://www.airbnb.com/" alt="AirBnB">
+          <OutboundLink
+            analyticsEventLabel="History Link"
+            href="https://www.airbnb.com/"
+            alt="AirBnB"
+          >
             AirBnB
           </OutboundLink>{' '}
           sponsors lodging for Operation Code members attending SignalConf in San Francisco.{' '}
           <OutboundLink
+            analyticsEventLabel="History Link"
             href="https://www.instagram.com/p/21p5bFxUjd/?taken-by=davidcmolina"
             alt="Link to Instagram photo of Operation Code at SignalConf"
           >
@@ -321,11 +389,19 @@ export default {
       title: 'SignalConf Sponsorship',
       content: (
         <p>
-          <OutboundLink href="https://www.twilio.com/signal/2015" alt="Twilio's SignalConf">
+          <OutboundLink
+            analyticsEventLabel="History Link"
+            href="https://www.twilio.com/signal/2015"
+            alt="Twilio's SignalConf"
+          >
             SignalConf
           </OutboundLink>{' '}
           provides multiple Operation Code members with sponsored tickets.{' '}
-          <OutboundLink href="https://www.twilio.com/" alt="Twilio">
+          <OutboundLink
+            analyticsEventLabel="History Link"
+            href="https://www.twilio.com/"
+            alt="Twilio"
+          >
             Twilio
           </OutboundLink>{' '}
           - the conference&apos;s main sponsor - hosts an insightful tour of their headquarters.
@@ -347,6 +423,7 @@ export default {
         <p>
           To meet growth demands, Operation Code{' '}
           <OutboundLink
+            analyticsEventLabel="History Link"
             href="https://twitter.com/operation_code/status/614443994769027072"
             alt="Old Operation Code tweet"
           >
@@ -365,6 +442,7 @@ export default {
         <p>
           To meet growth demands, Operation Code{' '}
           <OutboundLink
+            analyticsEventLabel="History Link"
             href="https://twitter.com/operation_code/status/614443994769027072"
             alt="Old Operation Code tweet"
           >
@@ -381,7 +459,11 @@ export default {
       title: 'Stickers Distributed',
       content: (
         <p>
-          <OutboundLink href="https://www.stickermule.com/" alt="Sticker Mule">
+          <OutboundLink
+            analyticsEventLabel="History Link"
+            href="https://www.stickermule.com/"
+            alt="Sticker Mule"
+          >
             Sticker Mule
           </OutboundLink>{' '}
           provides free stickers to all members! Laptops around the nation equip our logo.
@@ -397,7 +479,11 @@ export default {
       content: (
         <p>
           Jared Zoneraich, founder of{' '}
-          <OutboundLink href="https://www.hackbca.com/hackBCA" alt="hackBCA">
+          <OutboundLink
+            analyticsEventLabel="History Link"
+            href="https://www.hackbca.com/hackBCA"
+            alt="hackBCA"
+          >
             hackBCA
           </OutboundLink>{' '}
           joins the Operation Code advisory team. Mark Kerr - attorney, entrepreneur, and ex-Army
@@ -413,7 +499,11 @@ export default {
       title: 'Hack Summit',
       content: (
         <p>
-          <OutboundLink href="https://hacksummit.org/" alt="Hack Summit">
+          <OutboundLink
+            analyticsEventLabel="History Link"
+            href="https://hacksummit.org/"
+            alt="Hack Summit"
+          >
             hack.summit()
           </OutboundLink>{' '}
           adds Operation Code to its list of coding non-profits.
@@ -424,7 +514,11 @@ export default {
       title: 'Speakeasy',
       content: (
         <p>
-          <OutboundLink href="https://speakeasy.com/" alt="Speakeasy">
+          <OutboundLink
+            analyticsEventLabel="History Link"
+            href="https://speakeasy.com/"
+            alt="Speakeasy"
+          >
             Speakeasy
           </OutboundLink>{' '}
           joins as the Operation Code conference sponsor.
@@ -448,7 +542,11 @@ export default {
       content: (
         <p>
           Multiple Operation Code veterans attend{' '}
-          <OutboundLink href="https://conferences.oreilly.com/oscon/oscon-tx" alt="O'Reilly OSCON">
+          <OutboundLink
+            analyticsEventLabel="History Link"
+            href="https://conferences.oreilly.com/oscon/oscon-tx"
+            alt="O'Reilly OSCON"
+          >
             OSCON
           </OutboundLink>{' '}
           to advertise the open source development opportunity in Operation Code&apos;s planned
@@ -473,6 +571,7 @@ export default {
         <p>
           On Independence Day,{' '}
           <OutboundLink
+            analyticsEventLabel="History Link"
             href="https://twitter.com/operation_code/status/882280600920616960"
             alt="Slack Archive of 2000th Message"
           >

@@ -52,11 +52,24 @@ function Footer() {
           <Link href="/terms">
             <a>Terms of Service</a>
           </Link>
-          <OutboundLink href="https://github.com/OperationCode/operationcode_frontend/issues/new">
+          <OutboundLink
+            analyticsEventLabel="Footer Link"
+            href="https://github.com/OperationCode/operationcode_frontend/issues/new"
+          >
             Report A Bug
           </OutboundLink>
-          <OutboundLink href="https://smile.amazon.com/ch/47-4247572">Amazon Smile</OutboundLink>
-          <OutboundLink href="https://www.iubenda.com/privacy-policy/8174861">Privacy</OutboundLink>
+          <OutboundLink
+            analyticsEventLabel="Footer Link"
+            href="https://smile.amazon.com/ch/47-4247572"
+          >
+            Amazon Smile
+          </OutboundLink>
+          <OutboundLink
+            analyticsEventLabel="Footer Link"
+            href="https://www.iubenda.com/privacy-policy/8174861"
+          >
+            Privacy
+          </OutboundLink>
         </div>
       </div>
     </footer>
