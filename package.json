@@ -33,11 +33,6 @@
   },
   "dependencies": {
     "@babel/core": "7.0.0",
-    "@fortawesome/fontawesome": "1.1.8",
-    "@fortawesome/fontawesome-free-brands": "5.0.13",
-    "@fortawesome/fontawesome-free-regular": "5.0.13",
-    "@fortawesome/fontawesome-free-solid": "5.0.13",
-    "@fortawesome/react-fontawesome": "0.0.20",
     "@storybook/addon-a11y": "^3.4.10",
     "@storybook/addon-actions": "^3.4.10",
     "@storybook/addon-backgrounds": "^3.4.10",
