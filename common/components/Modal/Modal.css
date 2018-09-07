@@ -1,18 +1,25 @@
+.ModalCard {
+  position: relative;
+}
+
 .closeButton {
-  align-self: flex-end;
-  background: var(--primary);
+  top: 1rem;
+  right: 1rem;
+  background: var(--slate);
   border-radius: 50%;
   border: none;
+  position: absolute;
 }
 
 .closeButton:hover {
-  background-color: var(--primaryDark);
+  background-color: var(--slateDark);
   cursor: pointer;
   outline: none;
 }
 
 .closeButton:focus {
   outline: 1px solid var(--slate);
+  outline-offset: 1px;
 }
 
 .closeButtonIcon {

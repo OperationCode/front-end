@@ -10,6 +10,7 @@ import ModalStyles from './Modal.css';
 Modal.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
+  hasCloseIcon: PropTypes.bool,
   isOpen: PropTypes.bool,
   onRequestClose: PropTypes.func,
   screenReaderLabel: PropTypes.string.isRequired, // basically a summarizing title
@@ -18,6 +19,7 @@ Modal.propTypes = {
 
 Modal.defaultProps = {
   className: '',
+  hasCloseIcon: true,
   isOpen: false,
   onRequestClose: undefined,
   shouldCloseOnOverlayClick: true,
@@ -26,6 +28,7 @@ Modal.defaultProps = {
 function Modal({
   children,
   className,
+  hasCloseIcon,
   isOpen,
   onRequestClose,
   screenReaderLabel,
@@ -37,15 +40,17 @@ function Modal({
 
   return (
     <ReactModal
-      className={classNames(CardStyles.Card, className)}
+      className={classNames(CardStyles.Card, ModalStyles.ModalCard, className)}
       contentLabel={screenReaderLabel}
       isOpen={isOpen}
       onRequestClose={onRequestClose}
       shouldCloseOnOverlayClick={shouldCloseOnOverlayClick}
     >
-      <button className={ModalStyles.closeButton} onClick={onRequestClose} type="button">
-        <CloseIcon className={ModalStyles.closeButtonIcon} />
-      </button>
+      {hasCloseIcon && (
+        <button className={ModalStyles.closeButton} onClick={onRequestClose} type="button">
+          <CloseIcon className={ModalStyles.closeButtonIcon} />
+        </button>
+      )}
 
       <div className={ModalStyles.scrollableContainer}>{children}</div>
     </ReactModal>

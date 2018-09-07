@@ -2,8 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ReactGA from 'react-ga';
 import { withRouter } from 'next/router';
-import FontAwesomeIcon from '@fortawesome/react-fontawesome';
-import faExternalLinkAlt from '@fortawesome/fontawesome-free-solid/faExternalLinkAlt';
+import ExternalLinkIcon from 'static/images/icons/FontAwesome/external-link-square-alt-solid.svg';
 import styles from './OutboundLink.css';
 
 OutboundLink.propTypes = {
@@ -25,13 +24,7 @@ function OutboundLink({ analyticsEventLabel, children, className, hasIcon, href,
     <React.Fragment>
       <span className={styles.screenReaderOnly}>Opens in new window</span>
       {children}
-      {hasIcon && (
-        <FontAwesomeIcon
-          className={styles.externalLinkIcon}
-          icon={faExternalLinkAlt}
-          style={{ width: '14px' }}
-        />
-      )}
+      {hasIcon && <ExternalLinkIcon className={styles.externalLinkIcon} />}
     </React.Fragment>
   );
 
