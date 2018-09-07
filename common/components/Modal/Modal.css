@@ -25,7 +25,7 @@
 .closeButtonIcon {
   /* I don't know why, but this is what gets a perfect circle wrapped around the icon */
   fill: var(--mist);
-  padding: 0.8rem 0.5rem 0.5rem 0.5rem;
+  padding: 0.7rem 0.35rem 0.5rem 0.35rem;
   width: 1rem;
 }
 
