@@ -28,11 +28,9 @@ export default () => (
         their families. We work directly with Senators, Congressmen, and Congresswomen to allow
         veterans total control of their future by permitting the use of the GI Bill on coding
         bootcamps. You can read about our organization&apos;s history{' '}
-        {/* eslint-disable jsx-a11y/anchor-is-valid */}
         <Link>
           <a>here</a>
         </Link>
-        {/* eslint-enable jsx-a11y/anchor-is-valid */}.
       </p>
       <p>
         Aside from our work on the Hill, we offer many services to the military community and are

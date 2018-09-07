@@ -13,9 +13,7 @@ const SignUpSection = () => (
 
     <Button theme="secondary">
       <Link href="/signup">
-        {/* eslint-disable jsx-a11y/anchor-is-valid */}
         <a>Sign Up</a>
-        {/* eslint-enable jsx-a11y/anchor-is-valid */}
       </Link>
     </Button>
   </Section>

@@ -24,9 +24,7 @@ function JoinSection() {
 
         <Button theme="secondary">
           <Link href="/join">
-            {/* eslint-disable jsx-a11y/anchor-is-valid */}
             <a>Join</a>
-            {/* eslint-enable jsx-a11y/anchor-is-valid */}
           </Link>
         </Button>
       </div>
