@@ -3,7 +3,6 @@ import 'common/styles/globalStyles.css';
 
 // This acts as an override necessary for CSS Modules to work
 // https://github.com/zeit/next-plugins/tree/master/packages/next-css#usage
-/* eslint-disable jsx-a11y/html-has-lang */
 export default class MyDocument extends Document {
   render() {
     return (
