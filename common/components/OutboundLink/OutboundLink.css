@@ -10,6 +10,9 @@
 }
 
 .externalLinkIcon {
-  position: relative;
+  fill: currentColor;
   left: 5px;
+  top: 2px;
+  position: relative;
+  width: 13px;
 }
