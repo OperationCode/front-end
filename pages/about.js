@@ -28,7 +28,7 @@ export default () => (
         their families. We work directly with Senators, Congressmen, and Congresswomen to allow
         veterans total control of their future by permitting the use of the GI Bill on coding
         bootcamps. You can read about our organization&apos;s history{' '}
-        <Link>
+        <Link href="/history" prefetch>
           <a>here</a>
         </Link>
       </p>
