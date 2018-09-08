@@ -1,3 +1,4 @@
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const withCSS = require('@zeit/next-css');
 const svgoConfig = require('./common/config/svgo');
 
@@ -7,7 +8,7 @@ module.exports = withCSS({
     // No need for importLoaders: 1 as its set to 1 when postcss.config.js exists
     localIdentName: '[name]_[local]__[hash:base64:5]',
   },
-  webpack: config => {
+  webpack: (config, { isServer }) => {
     // Fixes npm packages that depend on `fs` module
     // eslint-disable-next-line no-param-reassign
     config.node = { fs: 'empty' };
@@ -23,6 +24,16 @@ module.exports = withCSS({
         },
       ],
     });
+
+    if (process.env.ANALYZE) {
+      config.plugins.push(
+        new BundleAnalyzerPlugin({
+          analyzerMode: 'server',
+          analyzerPort: isServer ? 8888 : 8889,
+          openAnalyzer: true,
+        }),
+      );
+    }
 
     return config;
   },
