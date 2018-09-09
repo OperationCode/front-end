@@ -25,7 +25,7 @@ module.exports = withCSS({
       ],
     });
 
-    if (process.env.ANALYZE) {
+    if (process.env.ANALYZE === 1) {
       config.plugins.push(
         new BundleAnalyzerPlugin({
           analyzerMode: 'server',
