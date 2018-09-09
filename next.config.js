@@ -1,4 +1,3 @@
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const withCSS = require('@zeit/next-css');
 const svgoConfig = require('./common/config/svgo');
 
@@ -26,6 +25,9 @@ module.exports = withCSS({
     });
 
     if (process.env.ANALYZE === 1) {
+      // eslint-disable-next-line global-require
+      const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+
       config.plugins.push(
         new BundleAnalyzerPlugin({
           analyzerMode: 'server',
