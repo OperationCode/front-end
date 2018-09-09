@@ -10,7 +10,7 @@ export const getScholarshipsPromise = () => get('scholarships');
 export const getServicesPromise = () => get('services');
 
 /* POST REQUESTS */
-export const postMentorRequest = ({ language, additionalDetails, mentor, service }) =>
+export const postMentorRequestPromise = ({ language, additionalDetails, mentor, service }) =>
   post('requests', {
     request: {
       details: additionalDetails,
@@ -21,7 +21,7 @@ export const postMentorRequest = ({ language, additionalDetails, mentor, service
   });
 
 /* PATCH REQUESTS */
-export const patchUpdateRequest = ({ request, status, mentor }) =>
+export const patchUpdateMentorRequestPromise = ({ request, status, mentor }) =>
   patch(`requests/${request}`, {
     request: {
       status,
