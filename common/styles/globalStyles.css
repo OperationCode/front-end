@@ -5,7 +5,12 @@
 @font-face {
   font-family: "PF Din Display";
   font-weight: normal;
-  src: url("/static/fonts/PFDinDisplayPro-Reg.ttf");
+
+  /* prettier-ignore */
+  src:
+    url("/static/fonts/PFDinDisplayPro-Reg.ttf") format("truetype"),
+    url("/static/fonts/PFDinDisplayPro-Reg.woff2") format("woff2"),
+    url("/static/fonts/PFDinDisplayPro-Reg.woff") format("woff)");
 }
 
 html {
