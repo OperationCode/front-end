@@ -8,9 +8,7 @@ const setAuthorizationHeader = () => {
 };
 
 export const get = endpoint =>
-  axios
-    .get(`${apiUrl}/${endpoint}`, { headers: setAuthorizationHeader() })
-    .then(({ data }) => data);
+  axios.get(`${apiUrl}/${endpoint}`, { headers: setAuthorizationHeader() });
 
 export const post = (path, body) =>
   axios.post(`${apiUrl}/${path}`, body, { headers: setAuthorizationHeader() });
