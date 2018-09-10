@@ -20,6 +20,9 @@ const componentStruct = {
               {
                 'Component.stories.js': buildStoryJs,
               },
+               {
+                'Component.test.js': buildStoryJs,
+              },
             ],
           },
           {
@@ -108,18 +111,18 @@ const recurseStructure = (subObject, currPath, componentName) => {
       // value is function - write output to currPath + key
       if (isFunction(subObject[key])) {
         const fileData = subObject[key](componentName);
-        writeFileData(fileData, currPath, key);
+        writeFileData(fileData, newPath, key);
         return;
       }
       // value is array - recurse each item
       if (isArray(subObject[key])) {
         subObject[key].forEach(arrayItem => {
-          recurseStructure(arrayItem, currPath, componentName);
+          recurseStructure(arrayItem, newPath, componentName);
         });
         return;
       }
       // value is object - recurse object
-      recurseStructure(subObject[key], currPath, componentName);
+      recurseStructure(subObject[key], newPath, componentName);
     }
   }
 };
