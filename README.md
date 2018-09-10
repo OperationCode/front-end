@@ -58,6 +58,6 @@ yarn start
 #Run all available unit and integration tests
 yarn test
 
-#Create skeleton for new component
-yarn component $ComponentName 
+#Create all the necessary files/ folders for a new, reusable component
+yarn create-component $ComponentName 
 ```
