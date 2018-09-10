@@ -253,7 +253,4 @@ const recurseStructure = (subObject, currPath, componentName) => {
       return recurseStructure(mainTree, root, componentName);
     });
 
-  //process.argv.slice(2).forEach((val, index, array) => {
-  //  traverseStructure(val);
-  // });
 })();
