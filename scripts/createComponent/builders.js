@@ -60,6 +60,8 @@ module.exports = {
     import React from 'react';
     import createSnapshotTest from 'test-utils/createSnapshotTest';
 
+    import ${componentName} from '../${componentName}';
+
     describe('${componentName}', () => {
       it('should render with just required props passed', () => {
         createSnapshotTest(<${componentName}>Test</${componentName}>);
