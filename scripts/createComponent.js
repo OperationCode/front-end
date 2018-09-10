@@ -180,7 +180,7 @@ const recurseStructure = (subObject, currPath, componentName) => {
       newPath = conditionallyAdjustPath(key, currPath, componentName);
 
       // value is function - write output to currPath + key
-      if (isFunction(subObject[key])) {
+      if (typeof subObject[key] === 'function') {
         const fileData = subObject[key](componentName);
         writeFileData(fileData, newPath, key);
 
