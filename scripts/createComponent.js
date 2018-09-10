@@ -35,42 +35,29 @@ storiesOf('Common/${componentName}', module)
 
 
 const buildTestJs = (componentName) => 
-  `/* eslint-env jest */
+` /* eslint-env jest */
 import React from 'react';
-import { shallow } from 'enzyme';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 
-import ${componentName} from '../${componentName}';
-
 describe('${componentName}', () => {
-  test('should render with just required props passed', () => {
+  it('should render with just required props passed', () => {
     createSnapshotTest(<${componentName}>Test</${componentName}>);
   });
 
-  test('should render properly with some props assigned', () => {
+   it('should render properly with all props assigned', () => {
     createSnapshotTest(
-      <${componentName} className="test-class" id="test-heading-1" has${componentName}Lines={false}>
+      <${componentName} className="test-class">
         Test
-        </${componentName}>,
+      </${componentName}>,
     );
-  });
-
-  test('should render with "slate" in classNames when theme="slate"', () => {
-    const HeaderInstance = shallow(<${componentName} theme="slate">Test</${componentName}>);
-
-    expect(HeaderInstance).toHaveClassName('slate');
-  });
-
-  test('should render without "headingLines" in classNames when has${componentName}Lines={false}', () => {
-    const HeaderInstance = shallow(<${componentName} has${componentName}Lines={false}>Test</${componentName}>);
-
-    expect(HeaderInstance).not.toHaveClassName('headingLines');
   });
 });
 `
 
 
-const buildCss = (componentName) => `.${componentName} {
+
+
+const buildCss = (componentName) => `.${componentName} { \n
 
 }`;
 
@@ -134,14 +121,14 @@ const componentStruct = {
   },
 };
 
-function isFunction(functionToCheck) {
+const isFunction = (functionToCheck) => {
   return typeof functionToCheck === 'function';
  // return functionToCheck && {}.toString.call(functionToCheck) === '[object Function]';
 }
 
 const isArray = objToCheck => Array.isArray(objToCheck);
 
-function mkdirSyncRecursive(directory) {
+const mkdirSyncRecursive = (directory) => {
   const newPath = directory.replace(/\\{1,2}/g, '/').split('/');
 
   for (let i = 1; i <= newPath.length; i++) {
