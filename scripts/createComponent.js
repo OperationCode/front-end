@@ -239,12 +239,6 @@ const recurseStructure = (subObject, currPath, componentName) => {
   }
 };
 
-const traverseStructure = componentName => {
-  // start at root,
-  if (!doesComponentExist(componentName, root)) {
-    recurseStructure(mainTree, root, componentName);
-  }
-};
 
 (() => {
   const mainTree = componentStruct.root;
