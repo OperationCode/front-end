@@ -35,8 +35,7 @@ storiesOf('Common/${componentName}', module)
 
 
 const buildTestJs = (componentName) => 
-  `
-/* eslint-env jest */
+  `/* eslint-env jest */
 import React from 'react';
 import { shallow } from 'enzyme';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
@@ -73,34 +72,33 @@ describe('${componentName}', () => {
 
 const buildCss = (componentName) => `.${componentName} {
 
-  }>`;
+}`;
 
 const buildJS = (componentName) => {
-  return `
-    import React, { Component } from 'react';
-    import PropTypes from 'prop-types';
-    import classNames from 'classnames';
-    import styles from './${componentName}.css';
+  return `import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
+import styles from './${componentName}.css';
 
-    export default class ${componentName} extends Component {
-      static propTypes = {
-        children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.element]).isRequired,
-        className: PropTypes.string,
-      };
+export default class ${componentName} extends Component {
+  static propTypes = {
+    children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.element]).isRequired,
+    className: PropTypes.string,
+  };
 
-      static defaultProps = {
-        className: '',
-      };
+  static defaultProps = {
+    className: '',
+  };
 
-      render() {
-        return (
-            <>
-              {children}
-            </>
-        );
-      }
-    }
-  `
+  render() {
+    return (
+        <>
+          {children}
+        </>
+    );
+  }
+}
+`
 };
 
 
@@ -137,7 +135,8 @@ const componentStruct = {
 };
 
 function isFunction(functionToCheck) {
-  return functionToCheck && {}.toString.call(functionToCheck) === '[object Function]';
+  return typeof functionToCheck === 'function';
+ // return functionToCheck && {}.toString.call(functionToCheck) === '[object Function]';
 }
 
 const isArray = objToCheck => Array.isArray(objToCheck);
@@ -200,19 +199,26 @@ const recurseStructure = (subObject, currPath, componentName) => {
   for (const key in subObject) {
     if (subObject.hasOwnProperty(key)) {
       newPath = conditionallyAdjustPath(key, currPath, componentName);
+
       // value is function - write output to currPath + key
       if (isFunction(subObject[key])) {
+
         const fileData = subObject[key](componentName);
         writeFileData(fileData, newPath, key);
+
         return;
       }
+
       // value is array - recurse each item
       if (isArray(subObject[key])) {
+
         subObject[key].forEach(arrayItem => {
           recurseStructure(arrayItem, newPath, componentName);
         });
+
         return;
       }
+
       // value is object - recurse object
       recurseStructure(subObject[key], newPath, componentName);
     }
