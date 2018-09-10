@@ -1,6 +1,38 @@
 /* eslint-disable max-len */
-
+/* This file contains the functions which generate the output of each file */
 module.exports = {
+  // Output generated for component's definition file
+  buildJS: componentName => `
+    import React, { Component } from 'react';
+    import PropTypes from 'prop-types';
+    import classNames from 'classnames';
+    import styles from './${componentName}.css';
+
+    export default class ${componentName} extends Component {
+      static propTypes = {
+        children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.element]).isRequired,
+        className: PropTypes.string,
+      };
+
+      static defaultProps = {
+        className: '',
+      };
+
+      render() {
+        const { props } = this;
+
+        return (
+            <>
+              {children}
+            </>
+        );
+      }
+    }
+  `,
+
+  // Output generated for component's css file
+  buildCss: componentName => `.${componentName} { \n }`,
+
   // Output generated for component's story file
   buildStoryJs: componentName => `
     import React from 'react';
@@ -41,37 +73,5 @@ module.exports = {
         );
       });
     });
-  `,
-
-  // Output generated for component's css file
-  buildCss: componentName => `.${componentName} { \n }`,
-
-  // Output generated for component's definition file
-  buildJS: componentName => `
-    import React, { Component } from 'react';
-    import PropTypes from 'prop-types';
-    import classNames from 'classnames';
-    import styles from './${componentName}.css';
-
-    export default class ${componentName} extends Component {
-      static propTypes = {
-        children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.element]).isRequired,
-        className: PropTypes.string,
-      };
-
-      static defaultProps = {
-        className: '',
-      };
-
-      render() {
-        const { props } = this;
-
-        return (
-            <>
-              {children}
-            </>
-        );
-      }
-    }
   `,
 };
