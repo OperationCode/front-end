@@ -21,7 +21,7 @@
     "test:ci": "NODE_ENV=test BABEL_ENV=test jest --ci --coverage",
     "test:update-snaps": "NODE_ENV=test BABEL_ENV=test jest -u",
     "test": "NODE_ENV=test BABEL_ENV=test jest",
-    "create-common-component": "node scripts/create_component.js" 
+    "create-component": "node scripts/createComponent.js" 
   },
   "lint-staged": {
     "*.js": [

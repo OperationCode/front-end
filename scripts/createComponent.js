@@ -137,8 +137,7 @@ const componentStruct = {
 };
 
 function isFunction(functionToCheck) {
-  return typeof functionToCheck === 'function' 
- // return functionToCheck && {}.toString.call(functionToCheck) === '[object Function]';
+  return functionToCheck && {}.toString.call(functionToCheck) === '[object Function]';
 }
 
 const isArray = objToCheck => Array.isArray(objToCheck);
@@ -149,7 +148,6 @@ function mkdirSyncRecursive(directory) {
   for (let i = 1; i <= newPath.length; i++) {
     const segment = newPath.slice(0, i).join('/');
     segment.length > 0 && !fs.existsSync(segment) ? fs.mkdirSync(segment) : null;
-    return;
   }
 }
 
@@ -202,26 +200,19 @@ const recurseStructure = (subObject, currPath, componentName) => {
   for (const key in subObject) {
     if (subObject.hasOwnProperty(key)) {
       newPath = conditionallyAdjustPath(key, currPath, componentName);
-
       // value is function - write output to currPath + key
       if (isFunction(subObject[key])) {
-
         const fileData = subObject[key](componentName);
         writeFileData(fileData, newPath, key);
-
         return;
       }
-
       // value is array - recurse each item
       if (isArray(subObject[key])) {
-
         subObject[key].forEach(arrayItem => {
           recurseStructure(arrayItem, newPath, componentName);
         });
-
         return;
       }
-
       // value is object - recurse object
       recurseStructure(subObject[key], newPath, componentName);
     }
