@@ -5,12 +5,10 @@ var replacementString = 'Component';
 var componentPath = 'common/components';
 
 
-const buildStoryShot = () => {};
-const buildStoryJs= () => {};
-const buildJest= () => {};
-const buildTestJs= () => {};
-const buildCss= () => {};
-const buildJS= () => {};
+const buildStoryJs= () => {return ''};
+const buildTestJs= () => { return ''};
+const buildCss= () => {return ''};
+const buildJS= () => {return ''};
 
 let componentStruct = {
   "root":{
@@ -19,25 +17,14 @@ let componentStruct = {
         "Component":[
           {
             "__stories__":[
-              {
-                "__snapshots__":
-                  { 
-                    "Component.stories.storyshot": buildStoryShot
-                  }
-              },
-              {
+                           {
                 "Component.stories.js":  buildStoryJs
               }
             ]
           },
           {
             "__tests__":[
-              {
-                "__snapshots__":
-                  { 
-                    "Component.test.js.snap": buildJest
-                  }
-              },
+              
               {
                 "Component.test.js" :buildTestJs
               } 
@@ -67,13 +54,10 @@ const isArray = (objToCheck) => {
 }
 
 function mkdirSyncRecursive(directory) {
-  console.log('recursive')
 
   var newPath = directory.replace(/\\{1,2}/g, '/').split('/');
-  console.log(newPath)
   for (var i = 1; i <= newPath.length; i++) {
     var segment = newPath.slice(0, i).join('/');
-    console.log(segment)
     segment.length > 0 && !fs.existsSync(segment) ? fs.mkdirSync(segment) : null ;
   }
 };
@@ -89,7 +73,7 @@ const ensureDirectoryExistence = (filePath) =>{
 
 const writeFileData = (fileData, fileName) => {
 
-  console.log(fileName); 
+  console.log(`Creating file for new Component: ${fileName}`); 
   ensureDirectoryExistence(fileName);
 
   fs.writeFileSync(fileName, fileData);  
