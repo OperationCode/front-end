@@ -114,20 +114,60 @@ const componentStruct = {
   },
 };
 
-const isFunction = functionToCheck => {
-  return typeof functionToCheck === 'function';
+/*
+ *   Finds the project main directory with the `package.json` file
+ *   1. Start at the directory you run the script
+ *   2. Continually `cd ..` to see if `package.json` is there 
+ *
+ *   Question: do we need to check for skipping the folder?
+ *   --> package.json has to be found for a yarn script to run
+ *   --> if no package.json then we'll get some other error prior to running script
+ */
+const findRoot = () => {
+  let thisPath = path.resolve(__dirname);
+  while (!fs.existsSync(path.join(thisPath, 'package.json'))) {
+    thisPath = path.join(thisPath, '..');
+  }
+  return thisPath;
+};
+
+/*
+ * Ensures we don't override a previously found component.
+ */
+
+const doesComponentExist = (componentName, root) => {
+  const newPath = path.join(root, componentPath, componentName);
+  if (fs.existsSync(newPath)) {
+    console.log(`Component "${componentName}" Already Exists`);
+    return true;
+  }
+  return false;
 };
 
 const isArray = objToCheck => Array.isArray(objToCheck);
 
+/*
+ *  Split path into segments, and incrementally mkdir until we have built the full path
+ *     -> this could be done with `mkdir -p` if we had some other cross platform node package. 
+ */
+
 const mkdirSyncRecursive = directory => {
+  // adjust windows path delim to match bash.
   const newPath = directory.replace(/\\{1,2}/g, '/').split('/');
 
-  for (let i = 1; i <= newPath.length; i++) {
-    const segment = newPath.slice(0, i).join('/');
-    segment.length > 0 && !fs.existsSync(segment) ? fs.mkdirSync(segment) : null;
-  }
+  newPath.reduce((accumPath, nextPath) => {
+    let incrementalPath = accumPath + '/' + nextPath;
+
+    incrementalPath.length > 0 && !fs.existsSync(incrementalPath)
+      ? fs.mkdirSync(incrementalPath)
+      : null;
+    return incrementalPath;
+  });
 };
+
+/*
+ *  This will only call recursive create if the folder isn't found
+ */
 
 const ensureDirectoryExistence = filePath => {
   const dirname = path.dirname(filePath);
@@ -138,29 +178,22 @@ const ensureDirectoryExistence = filePath => {
   mkdirSyncRecursive(dirname);
 };
 
+/*
+ *  Providers user input on building the files
+ *  Log creation to the console for user purposes and actually create
+ */
+
 const writeFileData = (fileData, fileName) => {
   console.log(`Creating file for new Component: ${fileName}`);
-  ensureDirectoryExistence(fileName);
 
+  ensureDirectoryExistence(fileName);
   fs.writeFileSync(fileName, fileData);
 };
 
-const findRoot = () => {
-  let thisPath = path.resolve(__dirname);
-  while (!fs.existsSync(path.join(thisPath, 'package.json'))) {
-    thisPath = path.join(thisPath, '..');
-  }
-  return thisPath;
-};
-
-const doesComponentExist = (componentName, root) => {
-  const newPath = path.join(root, componentPath, componentName);
-  if (fs.existsSync(newPath)) {
-    console.log(`Component "${componentName}" Already Exists`);
-    return true;
-  }
-  return false;
-};
+/*
+ *  Changes path when the configuration tree needs to be modified to respect user input. 
+ *
+ */
 
 const conditionallyAdjustPath = (key, currPath, componentName) => {
   let pathBase;
@@ -172,6 +205,10 @@ const conditionallyAdjustPath = (key, currPath, componentName) => {
   const newPath = path.join(currPath, pathBase);
   return newPath;
 };
+
+/*
+ *  Interacts with the configuration tree based on what it finds in each object.  
+ */
 
 const recurseStructure = (subObject, currPath, componentName) => {
   let newPath;
@@ -202,15 +239,18 @@ const recurseStructure = (subObject, currPath, componentName) => {
   }
 };
 
-const traverseStructure = componentName => {
+
+(() => {
   const mainTree = componentStruct.root;
   const root = findRoot();
-  // start at root,
-  if (!doesComponentExist(componentName, root)) {
-    recurseStructure(mainTree, root, componentName);
-  }
-};
 
-process.argv.slice(2).forEach((val, index, array) => {
-  traverseStructure(val);
-});
+  process.argv
+    .slice(2)
+    .filter(componentName => {
+      return doesComponentExist(componentName, root) === false;
+    })
+    .map(componentName => {
+      return recurseStructure(mainTree, root, componentName);
+    });
+
+})();
