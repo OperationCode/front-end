@@ -6,6 +6,7 @@
     "analyze": "cross-env ANALYZE=1 next build",
     "build-storybook": "build-storybook -s ./static -c .storybook -o .storybook-dist",
     "build": "next build",
+    "create-component": "node scripts/createComponent.js",
     "dev": "next",
     "export": "next export",
     "format-all": "yarn format:scripts && yarn format:styles",
@@ -20,8 +21,7 @@
     "storybook": "start-storybook -s ./static -p 9001 -c .storybook",
     "test:ci": "NODE_ENV=test BABEL_ENV=test jest --ci --coverage",
     "test:update-snaps": "NODE_ENV=test BABEL_ENV=test jest -u",
-    "test": "NODE_ENV=test BABEL_ENV=test jest",
-    "create-component": "node scripts/createComponent.js" 
+    "test": "NODE_ENV=test BABEL_ENV=test jest"
   },
   "lint-staged": {
     "*.js": [
