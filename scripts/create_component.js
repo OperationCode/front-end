@@ -1,147 +1,142 @@
-var path = require('path');
-var fs = require('fs');
+/* eslint-disable */
+const path = require('path');
+const fs = require('fs');
 
-var replacementString = 'Component';
-var componentPath = 'common/components';
+const replacementString = 'Component';
+const componentPath = 'common/components';
 
+const buildStoryJs = () => '';
+const buildTestJs = () => '';
+const buildCss = () => '';
+const buildJS = () => '';
 
-const buildStoryJs= () => {return ''};
-const buildTestJs= () => { return ''};
-const buildCss= () => {return ''};
-const buildJS= () => {return ''};
-
-let componentStruct = {
-  "root":{
-    "common":{
-      "components":{
-        "Component":[
+const componentStruct = {
+  root: {
+    common: {
+      components: {
+        Component: [
           {
-            "__stories__":[
-                           {
-                "Component.stories.js":  buildStoryJs
-              }
-            ]
-          },
-          {
-            "__tests__":[
-              
+            __stories__: [
               {
-                "Component.test.js" :buildTestJs
-              } 
-            ]
+                'Component.stories.js': buildStoryJs,
+              },
+            ],
           },
           {
-            "Component.css":buildCss
+            __tests__: [
+              {
+                'Component.test.js': buildTestJs,
+              },
+            ],
           },
           {
-            "Component.js":buildJS
-          }
-        ]
-      }
-    }
-  }
+            'Component.css': buildCss,
+          },
+          {
+            'Component.js': buildJS,
+          },
+        ],
+      },
+    },
+  },
 };
+
 function isFunction(functionToCheck) {
   return functionToCheck && {}.toString.call(functionToCheck) === '[object Function]';
 }
-//const isFunction = (functionToCheck) => {
+// const isFunction = (functionToCheck) => {
 //  return (functionToCheck instanceof Function);
-//return functionToCheck && {}.toString.call(functionToCheck) === '[object Function]';
-//}
+// return functionToCheck && {}.toString.call(functionToCheck) === '[object Function]';
+// }
 
-const isArray = (objToCheck) => {
-  return Array.isArray(objToCheck); 
-}
+const isArray = objToCheck => Array.isArray(objToCheck);
 
 function mkdirSyncRecursive(directory) {
+  const newPath = directory.replace(/\\{1,2}/g, '/').split('/');
 
-  var newPath = directory.replace(/\\{1,2}/g, '/').split('/');
-  for (var i = 1; i <= newPath.length; i++) {
-    var segment = newPath.slice(0, i).join('/');
-    segment.length > 0 && !fs.existsSync(segment) ? fs.mkdirSync(segment) : null ;
+  for (let i = 1; i <= newPath.length; i++) {
+    const segment = newPath.slice(0, i).join('/');
+    segment.length > 0 && !fs.existsSync(segment) ? fs.mkdirSync(segment) : null;
   }
-};
+}
 
-const ensureDirectoryExistence = (filePath) =>{
-  var dirname = path.dirname(filePath);
+const ensureDirectoryExistence = filePath => {
+  const dirname = path.dirname(filePath);
   if (fs.existsSync(dirname)) {
     return true;
   }
-  //ensureDirectoryExistence(dirname);
-  mkdirSyncRecursive(dirname);  
-}
+  // ensureDirectoryExistence(dirname);
+  mkdirSyncRecursive(dirname);
+};
 
 const writeFileData = (fileData, fileName) => {
-
-  console.log(`Creating file for new Component: ${fileName}`); 
+  console.log(`Creating file for new Component: ${fileName}`);
   ensureDirectoryExistence(fileName);
 
-  fs.writeFileSync(fileName, fileData);  
-
-}
+  fs.writeFileSync(fileName, fileData);
+};
 
 const findRoot = () => {
-
   let thisPath = path.resolve(__dirname);
-  while(!fs.existsSync(path.join(thisPath, 'package.json'))){
-    thisPath = path.join(thisPath, '..')
+  while (!fs.existsSync(path.join(thisPath, 'package.json'))) {
+    thisPath = path.join(thisPath, '..');
   }
   return thisPath;
-}
+};
 
 const doesComponentExist = (componentName, root) => {
-
-  let newPath = path.join(root, componentPath, componentName); 
-  if (fs.existsSync(newPath)){
-    console.log(`Component \"${componentName}\" Already Exists`);
+  const newPath = path.join(root, componentPath, componentName);
+  if (fs.existsSync(newPath)) {
+    console.log(`Component "${componentName}" Already Exists`);
     return true;
-  } 
+  }
   return false;
+};
 
-}
+const conditionallyAdjustPath = (key, currPath, componentName) => {
+  let pathBase;
+  if (key.indexOf(replacementString) === 0) {
+    pathBase = key.replace(replacementString, componentName);
+  } else {
+    pathBase = key;
+  }
+  const newPath = path.join(currPath, pathBase);
+  return newPath;
+};
 
 const recurseStructure = (subObject, currPath, componentName) => {
-  for (let key in subObject) {
+  let newPath;
+  for (const key in subObject) {
     if (subObject.hasOwnProperty(key)) {
-      // we need to replace the template
-      if (key.indexOf(replacementString) == 0){
-        pathBase =  key.replace(replacementString, componentName);
-      }
-      else{
-        pathBase = key 
-      }
-      currPath = path.join(currPath, pathBase)  
+      newPath = conditionallyAdjustPath(key, currPath, componentName);
       // value is function - write output to currPath + key
-      if (isFunction(subObject[key])){
-        let fileData = subObject[key](componentName);
+      if (isFunction(subObject[key])) {
+        const fileData = subObject[key](componentName);
         writeFileData(fileData, currPath, key);
-        return; 
-      } 
-      // value is array - recurse each item 
-      if (isArray(subObject[key])){
-        subObject[key].forEach(function (arrayItem) {
-          recurseStructure(arrayItem, currPath, componentName);
-        }); 
         return;
-      }   
-      // value is object - recurse object 
+      }
+      // value is array - recurse each item
+      if (isArray(subObject[key])) {
+        subObject[key].forEach(arrayItem => {
+          recurseStructure(arrayItem, currPath, componentName);
+        });
+        return;
+      }
+      // value is object - recurse object
       recurseStructure(subObject[key], currPath, componentName);
-
     }
   }
-}
+};
 
-const traverseStructure = (componentName)=> {
-
-  const mainTree = componentStruct['root'] 
-  let root = findRoot();
-  // start at root, 
-  if(!doesComponentExist(componentName, root)){
-    recurseStructure(mainTree, root, componentName); 
+const traverseStructure = componentName => {
+  const mainTree = componentStruct.root;
+  const root = findRoot();
+  // start at root,
+  if (!doesComponentExist(componentName, root)) {
+    recurseStructure(mainTree, root, componentName);
   }
-}
+};
 
-process.argv.slice(2).forEach(function (val, index, array) {
-  traverseStructure(val)
+process.argv.slice(2).forEach((val, index, array) => {
+  traverseStructure(val);
 });
-
