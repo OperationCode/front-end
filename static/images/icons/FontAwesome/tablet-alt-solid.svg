@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+  <title>Tablet Device</title>
+  <path fill="currentColor" d="M400 0H48C22 0 0 22 0 48v416c0 27 22 48 48 48h352c27 0 48-21 48-48V48c0-26-21-48-48-48zM224 480a32 32 0 1 1 0-64 32 32 0 0 1 0 64zm176-108c0 7-5 12-12 12H60c-7 0-12-5-12-12V60c0-7 5-12 12-12h328c7 0 12 5 12 12v312z"/>
+</svg>
