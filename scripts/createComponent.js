@@ -116,7 +116,6 @@ const componentStruct = {
 
 const isFunction = functionToCheck => {
   return typeof functionToCheck === 'function';
-  // return functionToCheck && {}.toString.call(functionToCheck) === '[object Function]';
 };
 
 const isArray = objToCheck => Array.isArray(objToCheck);
