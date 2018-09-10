@@ -63,8 +63,6 @@ const doesComponentExist = (componentName, root) => {
   return false;
 };
 
-const isArray = objToCheck => Array.isArray(objToCheck);
-
 /*
  *  Split path into segments, and incrementally mkdir until we have built the full path
  *     -> this could be done with `mkdir -p` if we had some other cross platform node package.
@@ -95,7 +93,7 @@ const ensureDirectoryExistence = filePath => {
 };
 
 const writeFileData = (fileData, fileName) => {
-  console.log(`Creating file for new Component: ${fileName}`);
+  console.log(`Creating file: ${fileName}`);
 
   ensureDirectoryExistence(fileName);
   fs.writeFileSync(fileName, fileData);
