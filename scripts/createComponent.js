@@ -5,11 +5,10 @@ const fs = require('fs');
 const replacementString = 'Component';
 const componentPath = 'common/components';
 
-
 /*
  *  Modify these strings to take the componentName string and build any values you need. 
  */
-const buildStoryJs = (componentName) => 
+const buildStoryJs = componentName =>
   `import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
@@ -33,9 +32,8 @@ storiesOf('Common/${componentName}', module)
   );
 `;
 
-
-const buildTestJs = (componentName) => 
-` /* eslint-env jest */
+const buildTestJs = componentName =>
+  ` /* eslint-env jest */
 import React from 'react';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 
@@ -52,16 +50,13 @@ describe('${componentName}', () => {
     );
   });
 });
-`
+`;
 
-
-
-
-const buildCss = (componentName) => `.${componentName} { \n
+const buildCss = componentName => `.${componentName} { \n
 
 }`;
 
-const buildJS = (componentName) => {
+const buildJS = componentName => {
   return `import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
@@ -85,9 +80,8 @@ export default class ${componentName} extends Component {
     );
   }
 }
-`
+`;
 };
-
 
 const componentStruct = {
   root: {
@@ -99,7 +93,6 @@ const componentStruct = {
               {
                 'Component.stories.js': buildStoryJs,
               },
-
             ],
           },
           {
@@ -121,21 +114,21 @@ const componentStruct = {
   },
 };
 
-const isFunction = (functionToCheck) => {
+const isFunction = functionToCheck => {
   return typeof functionToCheck === 'function';
- // return functionToCheck && {}.toString.call(functionToCheck) === '[object Function]';
-}
+  // return functionToCheck && {}.toString.call(functionToCheck) === '[object Function]';
+};
 
 const isArray = objToCheck => Array.isArray(objToCheck);
 
-const mkdirSyncRecursive = (directory) => {
+const mkdirSyncRecursive = directory => {
   const newPath = directory.replace(/\\{1,2}/g, '/').split('/');
 
   for (let i = 1; i <= newPath.length; i++) {
     const segment = newPath.slice(0, i).join('/');
     segment.length > 0 && !fs.existsSync(segment) ? fs.mkdirSync(segment) : null;
   }
-}
+};
 
 const ensureDirectoryExistence = filePath => {
   const dirname = path.dirname(filePath);
@@ -189,7 +182,6 @@ const recurseStructure = (subObject, currPath, componentName) => {
 
       // value is function - write output to currPath + key
       if (isFunction(subObject[key])) {
-
         const fileData = subObject[key](componentName);
         writeFileData(fileData, newPath, key);
 
@@ -198,7 +190,6 @@ const recurseStructure = (subObject, currPath, componentName) => {
 
       // value is array - recurse each item
       if (isArray(subObject[key])) {
-
         subObject[key].forEach(arrayItem => {
           recurseStructure(arrayItem, newPath, componentName);
         });
