@@ -133,9 +133,10 @@ const findRoot = () => {
 
 /*
  * Ensures we don't override a previously found component.
- */ 
+ */
+
 const doesComponentExist = (componentName, root) => {
-    const newPath = path.join(root, componentPath, componentName);
+  const newPath = path.join(root, componentPath, componentName);
   if (fs.existsSync(newPath)) {
     console.log(`Component "${componentName}" Already Exists`);
     return true;
@@ -143,32 +144,31 @@ const doesComponentExist = (componentName, root) => {
   return false;
 };
 
-
 const isArray = objToCheck => Array.isArray(objToCheck);
-
 
 /*
  *  Split path into segments, and incrementally mkdir until we have built the full path
  *     -> this could be done with `mkdir -p` if we had some other cross platform node package. 
- */    
+ */
+
 const mkdirSyncRecursive = directory => {
-  // adjust windows path delim to match bash.  
+  // adjust windows path delim to match bash.
   const newPath = directory.replace(/\\{1,2}/g, '/').split('/');
- 
-  
-  newPath.reduce( (accumPath, nextPath) => {
+
+  newPath.reduce((accumPath, nextPath) => {
     let incrementalPath = accumPath + '/' + nextPath;
-    
-    incrementalPath.length > 0 && !fs.existsSync(incrementalPath) ? fs.mkdirSync(incrementalPath) : null;
+
+    incrementalPath.length > 0 && !fs.existsSync(incrementalPath)
+      ? fs.mkdirSync(incrementalPath)
+      : null;
     return incrementalPath;
   });
- 
-
 };
 
 /*
  *  This will only call recursive create if the folder isn't found
- */  
+ */
+
 const ensureDirectoryExistence = filePath => {
   const dirname = path.dirname(filePath);
   if (fs.existsSync(dirname)) {
@@ -181,21 +181,20 @@ const ensureDirectoryExistence = filePath => {
 /*
  *  Providers user input on building the files
  *  Log creation to the console for user purposes and actually create
- */  
+ */
+
 const writeFileData = (fileData, fileName) => {
-    
   console.log(`Creating file for new Component: ${fileName}`);
-  
+
   ensureDirectoryExistence(fileName);
   fs.writeFileSync(fileName, fileData);
-  
 };
-
 
 /*
  *  Changes path when the configuration tree needs to be modified to respect user input. 
  *
- */ 
+ */
+
 const conditionallyAdjustPath = (key, currPath, componentName) => {
   let pathBase;
   if (key.indexOf(replacementString) === 0) {
@@ -209,7 +208,8 @@ const conditionallyAdjustPath = (key, currPath, componentName) => {
 
 /*
  *  Interacts with the configuration tree based on what it finds in each object.  
- */ 
+ */
+
 const recurseStructure = (subObject, currPath, componentName) => {
   let newPath;
   for (const key in subObject) {
@@ -240,30 +240,26 @@ const recurseStructure = (subObject, currPath, componentName) => {
 };
 
 const traverseStructure = componentName => {
-  
-  
   // start at root,
   if (!doesComponentExist(componentName, root)) {
     recurseStructure(mainTree, root, componentName);
   }
 };
 
-
-(()=> {
+(() => {
   const mainTree = componentStruct.root;
   const root = findRoot();
-  
-  process.argv.slice(2).filter( (componentName) => {
-  
-    return doesComponentExist(componentName, root) === false;
-  }).map((componentName) => {
-    return recurseStructure(mainTree, root, componentName);
-  });
-  
 
- 
-   //process.argv.slice(2).forEach((val, index, array) => {
-   //  traverseStructure(val);
-   // });
+  process.argv
+    .slice(2)
+    .filter(componentName => {
+      return doesComponentExist(componentName, root) === false;
+    })
+    .map(componentName => {
+      return recurseStructure(mainTree, root, componentName);
+    });
 
-})()
+  //process.argv.slice(2).forEach((val, index, array) => {
+  //  traverseStructure(val);
+  // });
+})();
