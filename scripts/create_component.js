@@ -44,10 +44,6 @@ const componentStruct = {
 function isFunction(functionToCheck) {
   return functionToCheck && {}.toString.call(functionToCheck) === '[object Function]';
 }
-// const isFunction = (functionToCheck) => {
-//  return (functionToCheck instanceof Function);
-// return functionToCheck && {}.toString.call(functionToCheck) === '[object Function]';
-// }
 
 const isArray = objToCheck => Array.isArray(objToCheck);
 
