@@ -6,6 +6,7 @@
     "analyze": "cross-env ANALYZE=1 next build",
     "build-storybook": "build-storybook -s ./static -c .storybook -o .storybook-dist",
     "build": "next build",
+    "create-component": "node scripts/createComponent.js",
     "dev": "next",
     "export": "next export",
     "format-all": "yarn format:scripts && yarn format:styles",
