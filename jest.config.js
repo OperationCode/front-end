@@ -33,6 +33,7 @@ module.exports = {
     '<rootDir>/common/styles',
     '<rootDir>/common/constants',
     '<rootDir>/test-utils',
+    '<rootDir>/scripts',
 
     // No real logic to test here
     '<rootDir>/common/utils/api-utils.js',
