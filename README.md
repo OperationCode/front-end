@@ -19,6 +19,10 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/5010b82ce5d8e319a597/maintainability)](https://codeclimate.com/github/OperationCode/front-end/maintainability)
 [![Greenkeeper badge](https://badges.greenkeeper.io/OperationCode/front-end.svg)](https://greenkeeper.io/)
 
+[![Storybook](https://github.com/storybooks/press/blob/master/badges/storybook.svg)](https://storybook.operationcode.org)
+[![Good First Issue](https://img.shields.io/github/issues/operationcode/front-end/good%20first%20issue.svg)](https://github.com/operationcode/front-end/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22)
+
+
 
 # Welcome!
 
