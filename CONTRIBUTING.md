@@ -147,17 +147,20 @@ Some issues take awhile to code a solution for. It is very normal to take a larg
 |   ├── index.js  # Landing page
 |   └── *.js  # All the other pages
 |
-├── static
-|   ├── fonts
-|   └── images
-|       └── icons  # SVG icons only
+├── scripts
+|   ├── createComponent
+|   └── test-utils
+|       ├── mocks  # Contains commonly mocked components, functions, and classes for testing purposes
+|       ├── createComponentInstance.js
+|       ├── createShallowSnapshotTest.js
+|       ├── createSnapshotTest.js
+|       └── setupTests.js
 |
-├── test-utils
-		├── mocks  # Contains commonly mocked components, functions, and classes for testing purposes
-		├── createComponentInstance.js
-		├── createShallowSnapshotTest.js
-		├── createSnapshotTest.js
-		└── setupTests.js
+└── static
+    ├── fonts
+    └── images
+        └── icons  # SVG icons only
+
 
 ```
 
@@ -190,6 +193,9 @@ yarn start
 
 # Run all available unit and integration tests
 yarn test
+
+#Create all the necessary files/folders for a new, reusable component. Please make `ComponentName` TitleCase.
+yarn create-component $ComponentName
 ```
 
 
