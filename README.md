@@ -17,11 +17,8 @@
 [![Build Status](https://travis-ci.org/OperationCode/front-end.svg?branch=master)](https://travis-ci.org/OperationCode/front-end)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/5010b82ce5d8e319a597/test_coverage)](https://codeclimate.com/github/OperationCode/front-end/test_coverage)
 [![Maintainability](https://api.codeclimate.com/v1/badges/5010b82ce5d8e319a597/maintainability)](https://codeclimate.com/github/OperationCode/front-end/maintainability)
-[![Greenkeeper badge](https://badges.greenkeeper.io/OperationCode/front-end.svg)](https://greenkeeper.io/)
-
-[![Storybook](https://github.com/storybooks/press/blob/master/badges/storybook.svg)](https://storybook.operationcode.org)
 [![Good First Issue](https://img.shields.io/github/issues/OperationCode/front-end/good%20first%20issue.svg)](https://github.com/OperationCode/front-end/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22)
-
+[![Greenkeeper badge](https://badges.greenkeeper.io/OperationCode/front-end.svg)](https://greenkeeper.io/)
 
 
 # Welcome!
@@ -39,6 +36,8 @@ If you're unsure of how to start this app or code for it, don't worry! You're ou
 Please read our [Contributing Guide](CONTRIBUTING.md) to learn everything you need to be able to ask the right questions on our Slack team.
 
 **In continuing with the quick start instructions, it is assumed that you are no stranger to React applications, the JavaScript ecosystem, and standard GitHub workflows such as forking, cloning, and branching.**
+
+Our entire UI library is documented via [![Storybook](https://github.com/storybooks/press/blob/master/badges/storybook.svg)](https://storybook.operationcode.org)
 
 Recommended versions of tools used within the repo:
 
