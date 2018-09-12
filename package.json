@@ -6,6 +6,7 @@
     "analyze": "cross-env ANALYZE=1 next build",
     "build-storybook": "build-storybook -s ./static -c .storybook -o .storybook-dist",
     "build": "next build",
+    "create-component": "node scripts/createComponent/createComponent.js",
     "dev": "next",
     "export": "next export",
     "format-all": "yarn format:scripts && yarn format:styles",
@@ -33,7 +34,7 @@
     ]
   },
   "dependencies": {
-    "@babel/core": "7.0.0",
+    "@babel/core": "7.0.1",
     "@storybook/addon-a11y": "^3.4.10",
     "@storybook/addon-actions": "^3.4.10",
     "@storybook/addon-backgrounds": "^3.4.10",
@@ -95,6 +96,6 @@
     "react-test-renderer": "^16.5.0",
     "stylelint": "^9.5.0",
     "stylelint-config-standard": "^18.2.0",
-    "webpack-bundle-analyzer": "^2.13.1"
+    "webpack-bundle-analyzer": "^3.0.0"
   }
 }

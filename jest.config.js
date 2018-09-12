@@ -32,7 +32,7 @@ module.exports = {
     '<rootDir>/common/config',
     '<rootDir>/common/styles',
     '<rootDir>/common/constants',
-    '<rootDir>/test-utils',
+    '<rootDir>/scripts',
 
     // No real logic to test here
     '<rootDir>/common/utils/api-utils.js',
@@ -78,7 +78,7 @@ module.exports = {
 
   // A map from regular expressions to module names that allow to stub out resources with a single module
   moduleNameMapper: {
-    '\\.(jpg|jpeg|png|gif|svg)$': '<rootDir>/test-utils/mocks/testFileMock.js',
+    '\\.(jpg|jpeg|png|gif|svg)$': '<rootDir>/scripts/test-utils/mocks/testFileMock.js',
     '\\.css$': 'identity-obj-proxy',
   },
 

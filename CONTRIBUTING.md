@@ -94,7 +94,7 @@ Here is a breakdown and summary of the main technologies our project utilizes in
 - [Next.js](https://nextjs.org/) - Next is a framework for creating ["server-side rendered"](https://medium.freecodecamp.org/demystifying-reacts-server-side-render-de335d408fe4) React applications with a lot of performance and [search engine optimizations](https://searchengineland.com/guide/what-is-seo) out-of-the-box.
 - [Node.js](https://www.nodejs.org/) - Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine. React utilizes a tiny Node/Express server for it's development environment.
 - [React.js](https://facebook.github.io/react/) - Facebook's popular JavaScript front-end framework.
-- [Storybook](https://storybook.js.org) - Storybook acts as a "component workbench" and source for component documentation. You can learn more about Storybook on your own [here](https://www.learnstorybook.com/)
+- [Storybook](https://storybook.js.org) - Storybook acts as a "component workbench" and source for component documentation. You can learn more about Storybook on your own [here](https://www.learnstorybook.com/). You can see our Storybook here: [![Storybook](https://github.com/storybooks/press/blob/master/badges/storybook.svg)](https://storybook.operationcode.org)
 - [Webpack](https://webpack.js.org/) - The premier module bundler for JavaScript. Read [this article](https://survivejs.com/webpack/what-is-webpack/) for more information.
 - [Yarn](https://yarnpkg.com/) - Facebook's open source JavaScript package manager. It has very subtle differences from npm, but essentially does the same thing.
 
@@ -123,6 +123,10 @@ Some issues take awhile to code a solution for. It is very normal to take a larg
 2. Run `yarn` to install any updated dependencies
 3. Run `yarn dev` to restart local development environment
 
+### Knowing The Tools At Your Disposal
+
+You can see interactive documentation on all of our components via [![Storybook](https://github.com/storybooks/press/blob/master/badges/storybook.svg)](https://storybook.operationcode.org)
+
 ### File Structure
 
 ```
@@ -147,17 +151,20 @@ Some issues take awhile to code a solution for. It is very normal to take a larg
 |   ├── index.js  # Landing page
 |   └── *.js  # All the other pages
 |
-├── static
-|   ├── fonts
-|   └── images
-|       └── icons  # SVG icons only
+├── scripts
+|   ├── createComponent
+|   └── test-utils
+|       ├── mocks  # Contains commonly mocked components, functions, and classes for testing purposes
+|       ├── createComponentInstance.js
+|       ├── createShallowSnapshotTest.js
+|       ├── createSnapshotTest.js
+|       └── setupTests.js
 |
-├── test-utils
-		├── mocks  # Contains commonly mocked components, functions, and classes for testing purposes
-		├── createComponentInstance.js
-		├── createShallowSnapshotTest.js
-		├── createSnapshotTest.js
-		└── setupTests.js
+└── static
+    ├── fonts
+    └── images
+        └── icons  # SVG icons only
+
 
 ```
 
@@ -190,6 +197,9 @@ yarn start
 
 # Run all available unit and integration tests
 yarn test
+
+#Create all the necessary files/folders for a new, reusable component. Please make `ComponentName` TitleCase.
+yarn create-component $ComponentName
 ```
 
 
