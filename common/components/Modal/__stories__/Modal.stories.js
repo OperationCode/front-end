@@ -6,7 +6,6 @@ import { action } from '@storybook/addon-actions';
 
 import Modal from '../Modal';
 
-// TODO: Map onRequestClose to isOpen knob value
 storiesOf('Common/Modal', module)
   .addDecorator(withKnobs)
   .add(
