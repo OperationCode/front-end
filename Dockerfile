@@ -9,7 +9,7 @@ WORKDIR /usr/src
 COPY package.json yarn.lock ./
 
 # We install our deps
-RUN yarn --silent --prod
+RUN yarn --silent --production --freeze-lockfile
 
 # We copy all source files
 COPY . .
