@@ -5,33 +5,71 @@ import createSnapshotTest from 'test-utils/createSnapshotTest';
 
 import SchoolCard from '../SchoolCard';
 
+const mockManyLocationsWithGIAccepted = [
+  {
+    city: 'Austin',
+    state: 'TX',
+    doesAcceptGIBill: true,
+  },
+  {
+    city: 'Los Angeles',
+    state: 'CA',
+    doesAcceptGIBill: false,
+  },
+  {
+    city: 'New York',
+    state: 'NT',
+    doesAcceptGIBill: true,
+  },
+];
+
+// const mockManyLocationsWithoutGIAccepted = [
+//   {
+//     city: 'Austin',
+//     state: 'TX',
+//     doesAcceptGIBill: false,
+//   },
+//   {
+//     city: 'Los Angeles',
+//     state: 'CA',
+//     doesAcceptGIBill: false,
+//   },
+//   {
+//     city: 'New York',
+//     state: 'NT',
+//     doesAcceptGIBill: false,
+//   },
+// ];
+
+// const oneLocationWithoutGIAccepted = [
+//   {
+//     city: 'Portland',
+//     state: 'OR',
+//     doesAcceptGIBill: false,
+//   },
+// ];
+
+// const oneLocationWithGIAccepted = [
+//   {
+//     city: 'Portland',
+//     state: 'OR',
+//     doesAcceptGIBill: true,
+//   },
+// ];
+
 describe('SchoolCard', () => {
   test('should render properly with all props assigned', () => {
     createSnapshotTest(
       <SchoolCard
-        schoolWebsite="https://www.codeplatoon.org"
-        schoolName="Code Platoon"
-        schoolAddress="123 Baker Street"
-        schoolCity="Chicago"
-        schoolState="IL"
-        logoSource={`${s3}codeSchoolLogos/code_platoon.jpg`}
-        acceptsGIBill
+        hasHardwareIncluded={false}
+        hasHousing={false}
+        hasOnline
+        hasOnlineOnly={false}
         isFullTime
-        hasHardware={false}
-      />,
-    );
-  });
-
-  test('should render properly with all required assigned', () => {
-    createSnapshotTest(
-      <SchoolCard
-        schoolWebsite="https://www.codeplatoon.org/not-real"
-        schoolName="Code Platoon Fake"
-        schoolAddress="123 Baker Street"
+        locations={mockManyLocationsWithGIAccepted}
         logoSource={`${s3}codeSchoolLogos/code_platoon.jpg`}
-        acceptsGIBill={false}
-        isFullTime={false}
-        hasHardware
+        name="Code Platoon Fake"
+        website="https://www.codeplatoon.org/not-real"
       />,
     );
   });

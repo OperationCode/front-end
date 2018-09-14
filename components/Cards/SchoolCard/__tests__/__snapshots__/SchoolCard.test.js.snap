@@ -1,128 +1,135 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SchoolCard should render properly with all props assigned 1`] = `
-<a
-  className="cardLinkOverrides"
-  href="https://www.codeplatoon.org"
-  rel="noopener noreferrer"
-  target="_blank"
+<article
+  className="Card SchoolCard"
 >
-  <span
-    className="screenReaderOnly"
+  <h5>
+    Code Platoon Fake
+  </h5>
+  <img
+    alt=""
+    src="undefinedcodeSchoolLogos/code_platoon.jpg"
+  />
+  <div
+    className="interactionsContainer"
   >
-    Opens in new window
-  </span>
-  <article
-    className="Card SchoolCard animatedCard"
-  >
-    <template
-      className="content"
+    <button
+      className="Button primary"
+      disabled={false}
+      onClick={[Function]}
+      tabIndex={0}
+      type="button"
     >
-      <img
-        alt="Code Platoon Logo"
-        className="logo"
-        src="undefinedcodeSchoolLogos/code_platoon.jpg"
-      />
-      <section
-        className="schoolCardText"
+      <a
+        className=""
+        href="https://www.codeplatoon.org/not-real"
+        rel="noopener noreferrer"
+        target="_blank"
       >
-        <h5
-          className="name"
+        <span
+          className="screenReaderOnly"
         >
-          Code Platoon
-        </h5>
-        <address
-          className="location"
-        >
-          Chicago, 
-          IL
-        </address>
-        <ul
-          className="info"
-        >
-          <li>
-            GI Bill Accepted: 
-            <b>
-              Yes
-            </b>
-          </li>
-          <li>
-            Commitment: 
-            <b>
-              Full-Time
-            </b>
-          </li>
-          <li>
-            Hardware Included: 
-            <b>
-              No
-            </b>
-          </li>
-        </ul>
-      </section>
-    </template>
-  </article>
-</a>
-`;
-
-exports[`SchoolCard should render properly with all required assigned 1`] = `
-<a
-  className="cardLinkOverrides"
-  href="https://www.codeplatoon.org/not-real"
-  rel="noopener noreferrer"
-  target="_blank"
->
-  <span
-    className="screenReaderOnly"
-  >
-    Opens in new window
-  </span>
-  <article
-    className="Card SchoolCard animatedCard"
-  >
-    <template
-      className="content"
-    >
-      <img
-        alt="Code Platoon Fake Logo"
-        className="logo"
-        src="undefinedcodeSchoolLogos/code_platoon.jpg"
-      />
-      <section
-        className="schoolCardText"
-      >
-        <h5
-          className="name"
-        >
-          Code Platoon Fake
-        </h5>
-        <address
-          className="location"
+          Opens in new window
+        </span>
+        Go To Website
+        <test-file-mock
+          className="externalLinkIcon"
         />
-        <ul
-          className="info"
-        >
-          <li>
-            GI Bill Accepted: 
-            <b>
-              No
-            </b>
-          </li>
-          <li>
-            Commitment: 
-            <b>
-              Flexible
-            </b>
-          </li>
-          <li>
-            Hardware Included: 
-            <b>
-              Yes
-            </b>
-          </li>
-        </ul>
-      </section>
-    </template>
-  </article>
-</a>
+      </a>
+    </button>
+    <button
+      className="Button primary"
+      disabled={false}
+      onClick={[Function]}
+      tabIndex={0}
+      type="button"
+    >
+      <span>
+        See Locations
+      </span>
+    </button>
+  </div>
+  <hr
+    className="divider"
+  />
+  <div
+    className="detailsRow"
+  >
+    <figure
+      className="detailItem active"
+    >
+      <test-file-mock
+        aria-hidden="true"
+        className="icon"
+        style={
+          Object {
+            "margin": "0 0.25rem",
+          }
+        }
+      />
+      <figcaption
+        className="detailText"
+      >
+        G.I. Bill
+      </figcaption>
+    </figure>
+    <figure
+      className="detailItem active"
+    >
+      <test-file-mock
+        aria-hidden="true"
+        className="icon"
+      />
+      <figcaption
+        className="detailText"
+      >
+        Online
+      </figcaption>
+    </figure>
+    <figure
+      className="detailItem active"
+    >
+      <test-file-mock
+        aria-hidden="true"
+        className="icon"
+      />
+      <figcaption
+        className="detailText"
+      >
+        In-Person
+      </figcaption>
+    </figure>
+  </div>
+  <div
+    className="detailsRow"
+  >
+    <figure
+      className="detailItem disabled"
+    >
+      <test-file-mock
+        aria-hidden="true"
+        className="icon"
+      />
+      <figcaption
+        className="detailText"
+      >
+        Equipment
+      </figcaption>
+    </figure>
+    <figure
+      className="detailItem disabled"
+    >
+      <test-file-mock
+        aria-hidden="true"
+        className="icon"
+      />
+      <figcaption
+        className="detailText"
+      >
+        Housing
+      </figcaption>
+    </figure>
+  </div>
+</article>
 `;
