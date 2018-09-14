@@ -1,12 +1,12 @@
 import React from 'react';
 import Section from 'common/components/Section/Section';
-import Question from 'pages/component/faq/question';
-import QuestionAnswerData from 'pages/component/faq/questions';
+import Question from 'components/faq/question';
+import QuestionAnswerData from 'components/faq/questions';
 import styles from './styles/faq.css';
 
 const FAQ = () => {
   const generalQuestions = QuestionAnswerData().general.map(faq => (
-      <Question question={faq.question} answer={faq.answer} key={faq.question} />  
+    <Question question={faq.question} answer={faq.answer} key={faq.question} />
   ));
   const donationQuestions = QuestionAnswerData().donation.map(faq => (
     <Question question={faq.question} answer={faq.answer} key={faq.question} />
