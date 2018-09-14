@@ -56,7 +56,7 @@ const questions = () => ({
     {
       question: 'What is available to start learning to code today?',
       answer: (
-        <p>
+        <>
           Our friends at the New York City-based, The Flatiron School created{' '}
           <OutBoundLink href="https://learn.co/">Learn.co</OutBoundLink>, an online platform to get
           introduced to web development and the popular web framework, Ruby on Rails. Request an
@@ -66,25 +66,25 @@ const questions = () => ({
             learnhowtoprogram.com
           </OutBoundLink>
           , a resource maintained by Epicodus.
-        </p>
+        </>
       ),
     },
     {
       question: 'What are the hours of operation for Operation Code?',
       answer: (
-        <p>
+        <>
           Operation Code is different in that we don
           {"'"}t have regular business office hours. The team can usually be found in our{' '}
           <OutBoundLink href="http://operation-code.slack.com">Slack channel</OutBoundLink>, or on{' '}
           <OutBoundLink href="https://github.com/OperationCode/operationcode">GitHub</OutBoundLink>{' '}
           fixing bugs and implementing new features.
-        </p>
+        </>
       ),
     },
     {
       question: "How can I help, if I can't afford to donate to Operation Code?",
       answer: (
-        <p>
+        <>
           In addition to requiring financial support, we also need{' '}
           <OutBoundLink href="http://op.co.de/volunteer" target="_blank">
             volunteers
@@ -92,7 +92,7 @@ const questions = () => ({
           and interns. The larger our community, the more we can spread the word about our work.
           Also, remember that every <OutBoundLink href={donateLink}>donation</OutBoundLink>, no
           matter how modest, brings us closer to our goals.
-        </p>
+        </>
       ),
     },
     {
@@ -100,20 +100,20 @@ const questions = () => ({
         'I would like to receive Operation Code updates and news. How can I receive these' +
         ' communications?',
       answer: (
-        <p>
+        <>
           We primarily use{' '}
           <OutBoundLink href="https://twitter.com/operation_code">Twitter</OutBoundLink> and{' '}
           <OutBoundLink href="http://facebook.com/operationcode.org">Facebook</OutBoundLink> to put
           out updates and news since it
           {"'"}s faster to put out info and respond. Given our chosen craft, we don
           {"'"}t do regular emails as often.
-        </p>
+        </>
       ),
     },
     {
       question: "My question isn't listed. How do I contact Operation Code?",
       answer: (
-        <p>
+        <>
           If you have a question that isn
           {"'"}t listed here on our FAQ or our{' '}
           <OutBoundLink href="https://medium.com/@operation_code">blog</OutBoundLink>, write to{' '}
@@ -121,7 +121,7 @@ const questions = () => ({
           , and we
           {"'"}
           ll get back to you as soon as we can.
-        </p>
+        </>
       ),
     },
   ],
@@ -129,10 +129,10 @@ const questions = () => ({
     {
       question: 'What is the fastest way to make a donation?',
       answer: (
-        <p>
+        <>
           The fastest way to make a donation is through our secured online form{' '}
           <OutBoundLink href={donateLink}>here</OutBoundLink>.
-        </p>
+        </>
       ),
     },
     {
@@ -174,18 +174,18 @@ const questions = () => ({
     {
       question: 'Can I make donations to a particular veteran or their family learning to code?',
       answer: (
-        <p>
+        <>
           <OutBoundLink href="mailto:staff@operationcode.org">
             Please get in touch with us directly,
           </OutBoundLink>{' '}
           so we can ensure we find a good match.
-        </p>
+        </>
       ),
     },
     {
       question: 'What is AmazonSmile and how can buying at Amazon help Operation Code?',
       answer: (
-        <p>
+        <>
           When you visit{' '}
           <OutBoundLink href="https://smile.amazon.com/ch/47-4247572">
             https://smile.amazon.com
@@ -200,7 +200,7 @@ const questions = () => ({
           your purchase to Operation Code! After you’ve successfully completed a purchase on
           AmazonSmile you can share the news with your friends on Facebook, Twitter or via email.
           This option appears on the confirmation page after your order is complete.
-        </p>
+        </>
       ),
     },
   ],
@@ -208,13 +208,13 @@ const questions = () => ({
     {
       question: 'How to Volunteer?',
       answer: (
-        <p>
+        <>
           If you would like to become a volunteer, please apply{' '}
           <OutBoundLink href="http://op.co.de/volunteer" target="_blank">
             here
           </OutBoundLink>
           .
-        </p>
+        </>
       ),
     },
     {
