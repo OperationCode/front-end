@@ -34,14 +34,8 @@ Being an open source project involving contributors of varying levels of experie
 - [Resources](#resources)
 - [Navigating Operating System Differences](#navigating-operating-system-differences)
 	- [MacOS](#macos)
-		- [Update your mac](#update-your-mac)
-		- [Xcode Command Line Tools](#xcode-command-line-tools)
-		- [Homebrew](#homebrew)
-		- [Git](#git)
-		- [NodeJS](#nodejs-1)
 	- [Windows](#windows)
-		- [Git](#git-1)
-		- [NodeJS](#nodejs-2)
+
 
 
 ## Git and GitHub
@@ -237,7 +231,7 @@ Example use:
 ## Navigating Operating System Differences
 
 ### MacOS
-
+<details>
 #### Update Your Mac
 If possible, we highly recommend updating to the latest version of MacOS.
 - [Apple instructions to Upgrade MacOS](http://www.apple.com/macos/how-to-upgrade/)
@@ -287,9 +281,10 @@ n is another project that manages node versions with possibly an easier install 
 
 The other option is to install the nodejs package from the official website. Simply select the latest LTS.
 - [Nodejs Download Page](https://nodejs.org/en/download/)
+</details>
 
 ### Windows
-
+<details>
 #### Git
 - Install the full version of [CMDER](http://cmder.net/). This is a versatile terminal that wraps bash-like commands around Command Prompt by using Git for Windows. You have many options for getting Git on Windows.  We recommend using Git for Windows as it gives you a bash shell which can be very powerful and help you start to learn linux commands.
 
@@ -327,3 +322,4 @@ node --version
 npm --version
 ```
 If your installation was successful you will get the versions of node and npm that were installed.
+</details>
