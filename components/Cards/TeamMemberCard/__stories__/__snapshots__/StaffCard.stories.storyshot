@@ -41,7 +41,7 @@ exports[`Storyshots Cards/TeamMemberCard default 1`] = `
         @
         kylemh_
         <svg
-          aria-hidden="true"
+
           className="svg-inline--fa fa-external-link-alt fa-w-18 externalLinkIcon"
           data-icon="external-link-alt"
           data-prefix="fas"
