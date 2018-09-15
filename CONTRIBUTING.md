@@ -80,7 +80,7 @@ The back-end is responsible for providing data for the front-end to display. Thi
 
 ## Technologies
 
-Here is a breakdown and summary of the main technologies our project utilizes in alphabetic order:
+Here is an alphabetically organized list of technologies this project is composed of:
 
 - [Babel](https://babeljs.io/) - JavaScript compiler to unify all the different versions of JS that may have been used or will be used in the future. [Here's a blog post from Scotch.io on why JavaScript utilizes "transpiling" with Babel](https://scotch.io/tutorials/javascript-transpilers-what-they-are-why-we-need-them).
 - [CSS Modules](https://github.com/css-modules/css-modules) - CSS Modules allow us to encapsulate CSS within components. Instead of HTML/CSS - our project structure is basically JSX/CSS.
