@@ -232,6 +232,7 @@ Example use:
 
 ### MacOS
 <details>
+
 #### Update Your Mac
 If possible, we highly recommend updating to the latest version of MacOS.
 - [Apple instructions to Upgrade MacOS](http://www.apple.com/macos/how-to-upgrade/)
@@ -285,6 +286,7 @@ The other option is to install the nodejs package from the official website. Sim
 
 ### Windows
 <details>
+
 #### Git
 - Install the full version of [CMDER](http://cmder.net/). This is a versatile terminal that wraps bash-like commands around Command Prompt by using Git for Windows. You have many options for getting Git on Windows.  We recommend using Git for Windows as it gives you a bash shell which can be very powerful and help you start to learn linux commands.
 
