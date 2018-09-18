@@ -34,14 +34,8 @@ Being an open source project involving contributors of varying levels of experie
 - [Resources](#resources)
 - [Navigating Operating System Differences](#navigating-operating-system-differences)
 	- [MacOS](#macos)
-		- [Update your mac](#update-your-mac)
-		- [Xcode Command Line Tools](#xcode-command-line-tools)
-		- [Homebrew](#homebrew)
-		- [Git](#git)
-		- [NodeJS](#nodejs-1)
 	- [Windows](#windows)
-		- [Git](#git-1)
-		- [NodeJS](#nodejs-2)
+
 
 
 ## Git and GitHub
@@ -86,7 +80,7 @@ The back-end is responsible for providing data for the front-end to display. Thi
 
 ## Technologies
 
-Here is a breakdown and summary of the main technologies our project utilizes in alphabetic order:
+Here is an alphabetically organized list of technologies this project is composed of:
 
 - [Babel](https://babeljs.io/) - JavaScript compiler to unify all the different versions of JS that may have been used or will be used in the future. [Here's a blog post from Scotch.io on why JavaScript utilizes "transpiling" with Babel](https://scotch.io/tutorials/javascript-transpilers-what-they-are-why-we-need-them).
 - [CSS Modules](https://github.com/css-modules/css-modules) - CSS Modules allow us to encapsulate CSS within components. Instead of HTML/CSS - our project structure is basically JSX/CSS.
@@ -237,6 +231,7 @@ Example use:
 ## Navigating Operating System Differences
 
 ### MacOS
+<details>
 
 #### Update Your Mac
 If possible, we highly recommend updating to the latest version of MacOS.
@@ -287,8 +282,10 @@ n is another project that manages node versions with possibly an easier install 
 
 The other option is to install the nodejs package from the official website. Simply select the latest LTS.
 - [Nodejs Download Page](https://nodejs.org/en/download/)
+</details>
 
 ### Windows
+<details>
 
 #### Git
 - Install the full version of [CMDER](http://cmder.net/). This is a versatile terminal that wraps bash-like commands around Command Prompt by using Git for Windows. You have many options for getting Git on Windows.  We recommend using Git for Windows as it gives you a bash shell which can be very powerful and help you start to learn linux commands.
@@ -327,3 +324,4 @@ node --version
 npm --version
 ```
 If your installation was successful you will get the versions of node and npm that were installed.
+</details>

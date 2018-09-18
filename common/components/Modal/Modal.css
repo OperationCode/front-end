@@ -2,33 +2,6 @@
   position: relative;
 }
 
-.closeButton {
-  top: 1rem;
-  right: 1rem;
-  background: var(--slate);
-  border-radius: 50%;
-  border: none;
-  position: absolute;
-}
-
-.closeButton:hover {
-  background-color: var(--slateDark);
-  cursor: pointer;
-  outline: none;
-}
-
-.closeButton:focus {
-  outline: 1px solid var(--slate);
-  outline-offset: 1px;
-}
-
-.closeButtonIcon {
-  /* I don't know why, but this is what gets a perfect circle wrapped around the icon */
-  fill: var(--mist);
-  padding: 0.7rem 0.35rem 0.5rem 0.35rem;
-  width: 1rem;
-}
-
 .scrollableContainer {
   margin-top: 1rem;
   overflow: auto;
