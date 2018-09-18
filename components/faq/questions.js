@@ -41,9 +41,9 @@ const questions = {
           Operation Code, much like software, is built from anywhere with an internet connection,
           and is not based in one location. While we&apos;re headquartered in Portland, the entire
           organization is decentralized, including the board of directors and the core team. This
-          allows us to more effectively serve the entire military community, whether they're
-          veterans or military spouses, whether they&apos;re OCONUS or in-country. We have chapters all
-          over the nation. Use Slack chat and join the closest town to you!
+          allows us to more effectively serve the entire military community, whether they&apos;re
+          veterans or military spouses, whether they&apos;re OCONUS or in-country. We have chapters
+          all over the nation. Use Slack chat and join the closest town to you!
         </>
       ),
     },
@@ -51,10 +51,10 @@ const questions = {
       question: 'Who does Operation Code serve?',
       answer: (
         <>
-          Operation Code serves our nation&apos;s finest who&apos;ve worn the uniform and their families who
-          are interested in coding and software development. Our programs are offered at no cost to
-          the military community, including veterans, transitioning service members, and military
-          spouses and families.
+          Operation Code serves our nation&apos;s finest who&apos;ve worn the uniform and their
+          families who are interested in coding and software development. Our programs are offered
+          at no cost to the military community, including veterans, transitioning service members,
+          and military spouses and families.
         </>
       ),
     },
@@ -121,10 +121,7 @@ const questions = {
       answer: (
         <>
           In addition to requiring financial support, we also need{' '}
-          <OutboundLink
-            analyticsEventLabel="QnA Link"
-            href="http://op.co.de/volunteer"
-          >
+          <OutboundLink analyticsEventLabel="QnA Link" href="http://op.co.de/volunteer">
             volunteers
           </OutboundLink>{' '}
           and interns. The larger our community, the more we can spread the word about our work.
@@ -189,8 +186,8 @@ const questions = {
       question: 'I would rather mail a check. To whom do I make it out and where do I send it?',
       answer: (
         <>
-          It&apos;s less administrative work to accept online donations. Get in touch so we can assess
-          your situation and contribution commitment.
+          It&apos;s less administrative work to accept online donations. Get in touch so we can
+          assess your situation and contribution commitment.
         </>
       ),
     },
@@ -225,12 +222,12 @@ const questions = {
     },
     {
       question:
-        "I'd like to donate my software conference pass to an Operation Code member." +
-        ' How do I do that?',
+        "I'd like to donate my software conference pass to an Operation Code member. How do I do that?",
       answer: (
         <>
-          Get in touch, and we&apos;ll make an announcement in our Slack, tweet and/or write a blog post,
-          and find a veteran to take your spot. Even then, travel and lodging is often a barrier.
+          Get in touch, and we&apos;ll make an announcement in our Slack, tweet and/or write a blog
+          post, and find a veteran to take your spot. Even then, travel and lodging is often a
+          barrier.
         </>
       ),
     },
@@ -276,10 +273,7 @@ const questions = {
       answer: (
         <>
           If you would like to become a volunteer, please apply{' '}
-          <OutboundLink
-            analyticsEventLabel="QnA Link"
-            href="http://op.co.de/volunteer"
-          >
+          <OutboundLink analyticsEventLabel="QnA Link" href="http://op.co.de/volunteer">
             here
           </OutboundLink>
           .
