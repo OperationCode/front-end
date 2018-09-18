@@ -39,10 +39,10 @@ const questions = {
       answer: (
         <>
           Operation Code, much like software, is built from anywhere with an internet connection,
-          and is not based in one location. While we're headquartered in Portland, the entire
+          and is not based in one location. While we&apos;re headquartered in Portland, the entire
           organization is decentralized, including the board of directors and the core team. This
           allows us to more effectively serve the entire military community, whether they're
-          veterans or military spouses, whether they're OCONUS or in-country. We have chapters all
+          veterans or military spouses, whether they&apos;re OCONUS or in-country. We have chapters all
           over the nation. Use Slack chat and join the closest town to you!
         </>
       ),
@@ -51,7 +51,7 @@ const questions = {
       question: 'Who does Operation Code serve?',
       answer: (
         <>
-          Operation Code serves our nation's finest who've worn the uniform and their families who
+          Operation Code serves our nation&apos;s finest who&apos;ve worn the uniform and their families who
           are interested in coding and software development. Our programs are offered at no cost to
           the military community, including veterans, transitioning service members, and military
           spouses and families.
@@ -124,7 +124,6 @@ const questions = {
           <OutboundLink
             analyticsEventLabel="QnA Link"
             href="http://op.co.de/volunteer"
-            target="_blank"
           >
             volunteers
           </OutboundLink>{' '}
@@ -190,7 +189,7 @@ const questions = {
       question: 'I would rather mail a check. To whom do I make it out and where do I send it?',
       answer: (
         <>
-          It's less administrative work to accept online donations. Get in touch so we can assess
+          It&apos;s less administrative work to accept online donations. Get in touch so we can assess
           your situation and contribution commitment.
         </>
       ),
@@ -220,7 +219,7 @@ const questions = {
           directly benefit the organization, transitioning military, citizen-soldiers, veterans and
           their families in learning to code and building software to change the world. Items that
           are needed, include (but not limited to): frequent flyer miles, Adobe Cloud, used or new
-          MacBook Air's, and grant writers.
+          MacBook Air&apos;s, and grant writers.
         </>
       ),
     },
@@ -230,7 +229,7 @@ const questions = {
         ' How do I do that?',
       answer: (
         <>
-          Get in touch, and we'll make an announcement in our Slack, tweet and/or write a blog post,
+          Get in touch, and we&apos;ll make an announcement in our Slack, tweet and/or write a blog post,
           and find a veteran to take your spot. Even then, travel and lodging is often a barrier.
         </>
       ),
@@ -280,7 +279,6 @@ const questions = {
           <OutboundLink
             analyticsEventLabel="QnA Link"
             href="http://op.co.de/volunteer"
-            target="_blank"
           >
             here
           </OutboundLink>
