@@ -222,7 +222,8 @@ const questions = {
     },
     {
       question:
-        "I'd like to donate my software conference pass to an Operation Code member. How do I do that?",
+        "I'd like to donate my software conference pass" +
+        ' to an Operation Code member. How do I do that?',
       answer: (
         <>
           Get in touch, and we&apos;ll make an announcement in our Slack, tweet and/or write a blog
