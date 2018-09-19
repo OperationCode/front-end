@@ -24,7 +24,7 @@ const FAQ = () => (
     <Section title="Volunteer Questions" theme="white">
       <br />
       <div className={styles.container}>
-        {QuestionAnswerData().volunteer.map(faq => (
+        {QuestionAnswerData.volunteer.map(faq => (
           <Question question={faq.question} answer={faq.answer} key={faq.question} />
         ))}
       </div>
