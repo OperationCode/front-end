@@ -1,7 +1,7 @@
 import React from 'react';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 
-import Question from '../Question';
+import Question from '../question';
 
 describe('Question', () => {
   test('should render properly with required props', () => {
