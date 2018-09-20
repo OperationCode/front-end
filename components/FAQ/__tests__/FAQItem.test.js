@@ -5,10 +5,6 @@ import FAQItem from '../FAQItem/FAQItem';
 
 describe('FAQItem', () => {
   test('should render properly with required props', () => {
-    createSnapshotTest(
-      <FAQItem question="How do I test things?" answer={<>Like so!</>}>
-        Test
-      </FAQItem>,
-    );
+    createSnapshotTest(<FAQItem question="How do I test things?" answer={<>Like so!</>} />);
   });
 });
