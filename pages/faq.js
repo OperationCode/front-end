@@ -1,7 +1,7 @@
 import React from 'react';
 import Section from 'common/components/Section/Section';
-import Question from 'components/faq/question';
-import QuestionAnswerData from 'components/faq/questions';
+import Question from 'components/FAQ/FAQItem/FAQItem';
+import QuestionAnswerData from 'components/FAQ/questions';
 import styles from './styles/faq.css';
 
 const FAQ = () => (

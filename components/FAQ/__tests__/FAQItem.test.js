@@ -1,14 +1,14 @@
 import React from 'react';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 
-import Question from '../question';
+import FAQItem from '../FAQItem/FAQItem';
 
 describe('Question', () => {
   test('should render properly with required props', () => {
     createSnapshotTest(
-      <Question question="How do I test things?" answer={<>Like so!</>}>
+      <FAQItem question="How do I test things?" answer={<>Like so!</>}>
         Test
-      </Question>,
+      </FAQItem>,
     );
   });
 });
