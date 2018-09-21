@@ -12,7 +12,7 @@
       "pages/*": ["./pages/*"],
       "scripts/*": ["./scripts/*"],
       "static/*": ["./static/*"],
-      "test-utils/*": ["./scripts/test-utils/*"]
+      "test-utils/*": ["./test-utils/*"]
     }
   },
   "exclude": ["node_modules"]
