@@ -26,11 +26,13 @@
   "lint-staged": {
     "*.js": [
       "prettier --write",
-      "eslint --fix"
+      "eslint --fix",
+      "git add"
     ],
     "*.css": [
       "prettier --write",
-      "stylelint --fix"
+      "stylelint --fix",
+      "git add"
     ]
   },
   "dependencies": {
