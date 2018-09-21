@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import classNames from 'classnames';
-import OutboundLink from 'common/components/OutboundLink/OutboundLink';
+import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
 import SocialMedia from 'components/SocialMedia/SocialMedia';
 import styles from './Footer.css';
 

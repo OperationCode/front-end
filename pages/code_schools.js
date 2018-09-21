@@ -1,6 +1,6 @@
 import { getCodeSchoolsPromise } from 'common/constants/api';
-import OutboundLink from 'common/components/OutboundLink/OutboundLink';
-import Section from 'common/components/Section/Section';
+import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
+import Section from 'components/_common_/Section/Section';
 
 export default class CodeSchools extends React.Component {
   state = {
