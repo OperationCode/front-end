@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Facebook from 'common/components/SocialLogin/Facebook';
-import Google from 'common/components/SocialLogin/Google';
+import Facebook from 'components/_common_/SocialLogin/Facebook';
+import Google from 'components/_common_/SocialLogin/Google';
 import styles from './SocialLoginsGrouping.css';
 
 SocialLoginsGrouping.propTypes = {

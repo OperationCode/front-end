@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import Heading from 'common/components/Heading/Heading';
+import Heading from 'components/_common_/Heading/Heading';
 import styles from './Section.css';
 
 Section.propTypes = {

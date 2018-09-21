@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import ReactGA from 'react-ga';
 import { Link as ScrollLink, Events as ScrollEvent } from 'react-scroll';
-import styles from 'common/components/Button/Button.css';
+import styles from 'components/_common_/Button/Button.css';
 
 class ScrollButton extends Component {
   static propTypes = {

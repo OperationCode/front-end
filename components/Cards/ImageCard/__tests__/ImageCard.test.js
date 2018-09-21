@@ -1,7 +1,7 @@
 import React from 'react';
 import createShallowSnapshotTest from 'test-utils/createShallowSnapshotTest';
 
-import Button from 'common/components/Button/Button';
+import Button from 'components/_common_/Button/Button';
 import ImageCard from '../ImageCard';
 
 describe('ImageCard', () => {

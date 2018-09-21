@@ -1,9 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
 import Head from 'components/head';
-import HeroBanner from 'common/components/HeroBanner/HeroBanner';
+import HeroBanner from 'components/_common_/HeroBanner/HeroBanner';
 import ImageCard from 'components/Cards/ImageCard/ImageCard';
-import Section from 'common/components/Section/Section';
+import Section from 'components/_common_/Section/Section';
 import ValueCard from 'components/Cards/ValueCard/ValueCard';
 import { s3 } from 'common/constants/urls';
 import styles from './styles/about.css';
