@@ -1,5 +1,5 @@
 import React from 'react';
-import Section from 'common/components/Section/Section';
+import Section from 'components/_common_/Section/Section';
 import FAQItem from 'components/FAQ/FAQItem/FAQItem';
 import QuestionAnswerData from 'components/FAQ/questions';
 import styles from './styles/faq.css';
