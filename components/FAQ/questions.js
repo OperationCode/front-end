@@ -1,5 +1,5 @@
 import React from 'react';
-import OutboundLink from 'common/components/OutboundLink/OutboundLink';
+import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
 import { donateLink } from 'common/constants/urls';
 
 const questions = {
