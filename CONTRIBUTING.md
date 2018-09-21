@@ -125,15 +125,15 @@ You can see interactive documentation on all of our components via [![Storybook]
 
 ```
 ├── common
-|   ├── components  # These are reusable "lego blocks" of components.
 |   ├── config  # This is just a folder for configuration shared by more than one tool.
 |   ├── constants  # This is a folder that contain simple, but unpreventable uniform data.
 |   ├── styles  # Contains global styles, CSS variables, and a JS export of those CSS variables (used in Storybook)
 |   └── utils
 |
 ├── components
-|   ├── ReusableSections  # These sections get used many times throughout our pages, but are not necessarily reusable as `common/components`.
-|   ├── * # All the remaining folders are more to modularize logic, rather than serve as reusable code.
+|   ├── _common_  # Reusable lego blocks that form the foundation of many components.
+|   ├── ReusableSections  # These sections get used many times throughout our pages, but are not necessarily composable or reusable.
+|   ├── *  # All the remaining folders are more to modularize logic, rather than serve as reusable code.
 |   ├── head.js  # Next.js-specific component to handle a page's meta info (and the rest of it's <head> tag) dynamically
 |   └── nav.js
 |
