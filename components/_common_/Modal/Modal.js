@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import ReactModal from 'react-modal';
 import ReactGA from 'react-ga';
-import CloseButton from 'common/components/CloseButton/CloseButton';
-import CardStyles from 'common/components/Card/Card.css';
+import CloseButton from 'components/_common_/CloseButton/CloseButton';
+import CardStyles from 'components/_common_/Card/Card.css';
 import ModalStyles from './Modal.css';
 
 Modal.propTypes = {

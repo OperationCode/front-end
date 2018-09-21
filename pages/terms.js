@@ -1,4 +1,4 @@
-import Section from 'common/components/Section/Section';
+import Section from 'components/_common_/Section/Section';
 
 export default () => (
   <Section title="Terms of Service" theme="white">

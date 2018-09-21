@@ -14,13 +14,11 @@ setOptions({
   name: 'Operation-Code',
 });
 
-// Dynamically load all files within common/components matching `{componentName}.stories.js` pattern
-const requireCommonComponents = require.context('../common/components/', true, /stories\.js$/);
-const requireApplicationComponents = require.context('../components/', true, /stories\.js$/);
+// Dynamically load all files matching `*.stories.js` pattern within the components folder
+const requireComponents = require.context('../components/', true, /stories\.js$/);
 
 function loadStories() {
-  requireCommonComponents.keys().forEach(requireCommonComponents);
-  requireApplicationComponents.keys().forEach(requireApplicationComponents);
+  requireComponents.keys().forEach(requireComponents);
   // Add any new component folders with stories here, using the patterns defined above
 }
 

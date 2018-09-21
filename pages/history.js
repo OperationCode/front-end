@@ -1,7 +1,7 @@
 import React from 'react';
 import { s3 } from 'common/constants/urls';
-import Section from 'common/components/Section/Section';
-import HeroBanner from 'common/components/HeroBanner/HeroBanner';
+import Section from 'components/_common_/Section/Section';
+import HeroBanner from 'components/_common_/HeroBanner/HeroBanner';
 import Timeline from 'components/Timeline/Timeline';
 import styles from './styles/history.css';
 
