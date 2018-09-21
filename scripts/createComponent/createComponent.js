@@ -4,7 +4,7 @@ const fs = require('fs');
 const { buildJS, buildCss, buildStoryJs, buildTestJs } = require('./builders');
 
 const replacementString = 'Component';
-const componentPath = 'common/components';
+const componentPath = 'components/_common_';
 
 const componentStruct = {
   root: {

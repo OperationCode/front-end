@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Card from 'common/components/Card/Card';
-import OutboundLink from 'common/components/OutboundLink/OutboundLink';
+import Card from 'components/_common_/Card/Card';
+import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
 import styles from './SchoolCard.css';
 
 SchoolCard.propTypes = {

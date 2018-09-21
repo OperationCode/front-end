@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
-import Section from 'common/components/Section/Section';
-import Button from 'common/components/Button/Button';
+import Section from 'components/_common_/Section/Section';
+import Button from 'components/_common_/Button/Button';
 
 const SignUpSection = () => (
   <Section title="New user?" theme="white">
