@@ -1,8 +1,9 @@
 import React from 'react';
 import Router from 'next/router';
+import MockedRouter from 'test-utils/mocks/nextRouterMock';
+import MockNextContext from 'test-utils/mocks/nextContextMock';
 import { addDecorator, configure } from '@storybook/react';
 import { setDefaults } from '@storybook/addon-info';
-import { action } from '@storybook/addon-actions';
 import { setOptions } from '@storybook/addon-options';
 import { checkA11y } from '@storybook/addon-a11y';
 
@@ -22,23 +23,7 @@ function loadStories() {
   // Add any new component folders with stories here, using the patterns defined above
 }
 
-/* ********************************************************** */
-/* Necessary to mock Next's router */
-// https://github.com/zeit/next.js/issues/1827#issuecomment-323721221
-const actionWithPromise = () => {
-  action('clicked link')();
-  // we need to return promise because it is needed by Link.linkClicked
-  return new Promise((resolve, reject) => reject());
-};
-
-const mockedRouter = {
-  push: actionWithPromise,
-  replace: actionWithPromise,
-  prefetch: () => {},
-};
-
-Router.router = mockedRouter;
-/* ********************************************************** */
+Router.router = MockedRouter;
 
 // addon-info
 setDefaults({
