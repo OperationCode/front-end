@@ -35,11 +35,7 @@ setDefaults({
 // on a story-by-story basis, so we'll default to this unless it causes issues.
 Router.router = MockedRouter;
 
-const mockWithRouterDecorator = (storyFn) => (
-  <MockNextContext>
-    {storyFn()}
-  </MockNextContext>
-);
+const mockWithRouterDecorator = storyFn => <MockNextContext>{storyFn()}</MockNextContext>;
 
 addDecorator(brandingBackgrounds);
 addDecorator(checkA11y);
