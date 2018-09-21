@@ -146,20 +146,19 @@ You can see interactive documentation on all of our components via [![Storybook]
 |   └── *.js  # All the other pages
 |
 ├── scripts
-|   ├── createComponent
-|   └── test-utils
-|       ├── mocks  # Contains commonly mocked components, functions, and classes for testing purposes
-|       ├── createComponentInstance.js
-|       ├── createShallowSnapshotTest.js
-|       ├── createSnapshotTest.js
-|       └── setupTests.js
+|   └── createComponent
 |
 └── static
-    ├── fonts
-    └── images
-        └── icons  # SVG icons only
-
-
+|   ├── fonts
+|   └── images
+|       └── icons  # SVG icons only
+|
+└── test-utils
+	├── mocks  # Contains commonly mocked components, functions, and classes for testing purposes
+	├── createComponentInstance.js
+	├── createShallowSnapshotTest.js
+	├── createSnapshotTest.js
+	└── setupTests.js
 ```
 
 ### npm Scripts With Explanations
