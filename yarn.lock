@@ -2850,12 +2850,12 @@ caniuse-api@^1.5.2:
     lodash.uniq "^4.5.0"
 
 caniuse-db@^1.0.30000529, caniuse-db@^1.0.30000634, caniuse-db@^1.0.30000639:
-  version "1.0.30000885"
-  resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000885.tgz#cdc98dd168ed59678650071f7f6a70910e275bc8"
+  version "1.0.30000886"
+  resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000886.tgz#a0b962dbaccb6d2fc795541bb9ec524582bf433b"
 
 caniuse-lite@^1.0.30000792, caniuse-lite@^1.0.30000805, caniuse-lite@^1.0.30000844, caniuse-lite@^1.0.30000884:
-  version "1.0.30000885"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000885.tgz#e889e9f8e7e50e769f2a49634c932b8aee622984"
+  version "1.0.30000886"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000886.tgz#2127186c4f57da10d3ba26fc3e87dce4a5ddd3ae"
 
 capture-exit@^1.2.0:
   version "1.2.0"
@@ -3943,7 +3943,7 @@ enzyme-adapter-utils@^1.8.0:
     object.assign "^4.1.0"
     prop-types "^15.6.2"
 
-enzyme-matchers@^6.1.1:
+enzyme-matchers@^6.0.5:
   version "6.1.1"
   resolved "https://registry.yarnpkg.com/enzyme-matchers/-/enzyme-matchers-6.1.1.tgz#35a28af71f8cc503945ddac702a652700dc17d40"
   dependencies:
@@ -6059,8 +6059,8 @@ jest-each@^23.6.0:
     pretty-format "^23.6.0"
 
 jest-environment-enzyme@^6.0.5:
-  version "6.0.5"
-  resolved "https://registry.yarnpkg.com/jest-environment-enzyme/-/jest-environment-enzyme-6.0.5.tgz#33ad84e15ff32c213f73273f5f14abd569682ec4"
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/jest-environment-enzyme/-/jest-environment-enzyme-6.1.0.tgz#16e14318c930d7bb2ac08da51dde2cd0b7b5853a"
   dependencies:
     jest-environment-jsdom "^22.4.1"
 
@@ -6087,11 +6087,11 @@ jest-environment-node@^23.4.0:
     jest-mock "^23.2.0"
     jest-util "^23.4.0"
 
-jest-enzyme@^6.0.5:
-  version "6.1.1"
-  resolved "https://registry.yarnpkg.com/jest-enzyme/-/jest-enzyme-6.1.1.tgz#7e087feaa176227c848c79201172423818cda773"
+jest-enzyme@6.0.5:
+  version "6.0.5"
+  resolved "https://registry.yarnpkg.com/jest-enzyme/-/jest-enzyme-6.0.5.tgz#6018676d7250b900b26fdab7bc2c824f9f81c83e"
   dependencies:
-    enzyme-matchers "^6.1.1"
+    enzyme-matchers "^6.0.5"
     enzyme-to-json "^3.3.0"
     jest-environment-enzyme "^6.0.5"
 
