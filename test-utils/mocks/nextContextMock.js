@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import MockedRouter from './nextRouterMock';
 
 // https://github.com/zeit/next.js/issues/5205#issuecomment-422846339
 export default class MockNextContext extends React.Component {
@@ -43,6 +44,7 @@ export default class MockNextContext extends React.Component {
           off() {},
           trigger() {},
         },
+        ...MockedRouter,
         ...router,
       },
     };
