@@ -1,5 +1,5 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 
 // https://github.com/zeit/next.js/issues/5205#issuecomment-422846339
 export default class MockNextContext extends React.Component {
@@ -7,7 +7,7 @@ export default class MockNextContext extends React.Component {
     // eslint-disable-next-line react/forbid-prop-types
     children: PropTypes.any.isRequired,
     headManager: PropTypes.object,
-    router: PropTypes.object
+    router: PropTypes.object,
   };
 
   static defaultProps = {
@@ -17,20 +17,20 @@ export default class MockNextContext extends React.Component {
 
   static childContextTypes = {
     headManager: PropTypes.object,
-    router: PropTypes.object
-  }
+    router: PropTypes.object,
+  };
 
-  getChildContext () {
-    const { headManager, router } = this.props
+  getChildContext() {
+    const { headManager, router } = this.props;
     return {
       headManager: {
         updateHead() {},
-        ...headManager
+        ...headManager,
       },
       router: {
-        asPath: "/",
-        route: "/",
-        pathname: "/",
+        asPath: '/',
+        route: '/',
+        pathname: '/',
         query: {},
         back() {},
         beforePopState() {},
@@ -39,16 +39,16 @@ export default class MockNextContext extends React.Component {
         reload() {},
         replace() {},
         events: {
-          on () {},
-          off () {},
-          trigger() {}
+          on() {},
+          off() {},
+          trigger() {},
         },
-        ...router
-      }
-    }
+        ...router,
+      },
+    };
   }
 
-  render () {
+  render() {
     const { children } = this.props;
     return children;
   }
