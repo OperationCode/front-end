@@ -19,7 +19,7 @@ exports[`Storyshots Common/FeaturedJobItem default 1`] = `
       <h6
         className="link"
       >
-        Technical Product Marketing Manager
+        Director of Awesome
       </h6>
     </a>
   </div>
@@ -66,7 +66,7 @@ exports[`Storyshots Common/FeaturedJobItem default 1`] = `
   <p
     className="description"
   >
-    As a Technical Product Marketing Manager, you will work closely with our marketing, engineering, business development and sales team, and partners to help them understand how core GitLab technical value offerings solve customer problems as well as educate them about market competitors. You will be responsible for technical marketing content and representing GitLab as a technical evangelist at key trade shows and customer meetings.
+    You will be awesome at this job, apply for it!
   </p>
 </article>
 `;
