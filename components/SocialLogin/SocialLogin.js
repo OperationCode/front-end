@@ -4,11 +4,11 @@ import axios from 'axios';
 import getValue from 'lodash/get';
 import config from 'config/environment';
 import * as CookieHelpers from 'common/utils/cookie-utils';
-import Form from 'common/components/Form/Form';
-import FormZipCode from 'common/components/Form/FormZipCode';
-import FormPassword from 'common/components/FormPassword/FormPassword';
-import FormButton from 'common/components/FormButton/FormButton';
-import Section from 'common/components/Section/Section';
+import Form from 'components/_common_/Form/Form';
+import FormZipCode from 'components/_common_/Form/FormZipCode';
+import FormPassword from 'components/_common_/FormPassword/FormPassword';
+import FormButton from 'components/_common_/FormButton/FormButton';
+import Section from 'components/_common_/Section/Section';
 import styles from './SocialLogin.css';
 
 class SocialLogin extends Component {

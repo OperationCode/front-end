@@ -34,14 +34,8 @@ Being an open source project involving contributors of varying levels of experie
 - [Resources](#resources)
 - [Navigating Operating System Differences](#navigating-operating-system-differences)
 	- [MacOS](#macos)
-		- [Update your mac](#update-your-mac)
-		- [Xcode Command Line Tools](#xcode-command-line-tools)
-		- [Homebrew](#homebrew)
-		- [Git](#git)
-		- [NodeJS](#nodejs-1)
 	- [Windows](#windows)
-		- [Git](#git-1)
-		- [NodeJS](#nodejs-2)
+
 
 
 ## Git and GitHub
@@ -86,7 +80,7 @@ The back-end is responsible for providing data for the front-end to display. Thi
 
 ## Technologies
 
-Here is a breakdown and summary of the main technologies our project utilizes in alphabetic order:
+Here is an alphabetically organized list of technologies this project is composed of:
 
 - [Babel](https://babeljs.io/) - JavaScript compiler to unify all the different versions of JS that may have been used or will be used in the future. [Here's a blog post from Scotch.io on why JavaScript utilizes "transpiling" with Babel](https://scotch.io/tutorials/javascript-transpilers-what-they-are-why-we-need-them).
 - [CSS Modules](https://github.com/css-modules/css-modules) - CSS Modules allow us to encapsulate CSS within components. Instead of HTML/CSS - our project structure is basically JSX/CSS.
@@ -94,7 +88,7 @@ Here is a breakdown and summary of the main technologies our project utilizes in
 - [Next.js](https://nextjs.org/) - Next is a framework for creating ["server-side rendered"](https://medium.freecodecamp.org/demystifying-reacts-server-side-render-de335d408fe4) React applications with a lot of performance and [search engine optimizations](https://searchengineland.com/guide/what-is-seo) out-of-the-box.
 - [Node.js](https://www.nodejs.org/) - Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine. React utilizes a tiny Node/Express server for it's development environment.
 - [React.js](https://facebook.github.io/react/) - Facebook's popular JavaScript front-end framework.
-- [Storybook](https://storybook.js.org) - Storybook acts as a "component workbench" and source for component documentation. You can learn more about Storybook on your own [here](https://www.learnstorybook.com/)
+- [Storybook](https://storybook.js.org) - Storybook acts as a "component workbench" and source for component documentation. You can learn more about Storybook on your own [here](https://www.learnstorybook.com/). You can see our Storybook here: [![Storybook](https://github.com/storybooks/press/blob/master/badges/storybook.svg)](https://storybook.operationcode.org)
 - [Webpack](https://webpack.js.org/) - The premier module bundler for JavaScript. Read [this article](https://survivejs.com/webpack/what-is-webpack/) for more information.
 - [Yarn](https://yarnpkg.com/) - Facebook's open source JavaScript package manager. It has very subtle differences from npm, but essentially does the same thing.
 
@@ -123,19 +117,23 @@ Some issues take awhile to code a solution for. It is very normal to take a larg
 2. Run `yarn` to install any updated dependencies
 3. Run `yarn dev` to restart local development environment
 
+### Knowing The Tools At Your Disposal
+
+You can see interactive documentation on all of our components via [![Storybook](https://github.com/storybooks/press/blob/master/badges/storybook.svg)](https://storybook.operationcode.org)
+
 ### File Structure
 
 ```
 ├── common
-|   ├── components  # These are reusable "lego blocks" of components.
 |   ├── config  # This is just a folder for configuration shared by more than one tool.
 |   ├── constants  # This is a folder that contain simple, but unpreventable uniform data.
 |   ├── styles  # Contains global styles, CSS variables, and a JS export of those CSS variables (used in Storybook)
 |   └── utils
 |
 ├── components
-|   ├── ReusableSections  # These sections get used many times throughout our pages, but are not necessarily reusable as `common/components`.
-|   ├── * # All the remaining folders are more to modularize logic, rather than serve as reusable code.
+|   ├── _common_  # Reusable lego blocks that form the foundation of many components.
+|   ├── ReusableSections  # These sections get used many times throughout our pages, but are not necessarily composable or reusable.
+|   ├── *  # All the remaining folders are more to modularize logic, rather than serve as reusable code.
 |   ├── head.js  # Next.js-specific component to handle a page's meta info (and the rest of it's <head> tag) dynamically
 |   └── nav.js
 |
@@ -147,18 +145,20 @@ Some issues take awhile to code a solution for. It is very normal to take a larg
 |   ├── index.js  # Landing page
 |   └── *.js  # All the other pages
 |
-├── static
+├── scripts
+|   └── createComponent
+|
+└── static
 |   ├── fonts
 |   └── images
 |       └── icons  # SVG icons only
 |
-├── test-utils
-		├── mocks  # Contains commonly mocked components, functions, and classes for testing purposes
-		├── createComponentInstance.js
-		├── createShallowSnapshotTest.js
-		├── createSnapshotTest.js
-		└── setupTests.js
-
+└── test-utils
+	├── mocks  # Contains commonly mocked components, functions, and classes for testing purposes
+	├── createComponentInstance.js
+	├── createShallowSnapshotTest.js
+	├── createSnapshotTest.js
+	└── setupTests.js
 ```
 
 ### npm Scripts With Explanations
@@ -190,6 +190,9 @@ yarn start
 
 # Run all available unit and integration tests
 yarn test
+
+#Create all the necessary files/folders for a new, reusable component. Please make `ComponentName` TitleCase.
+yarn create-component $ComponentName
 ```
 
 
@@ -227,6 +230,7 @@ Example use:
 ## Navigating Operating System Differences
 
 ### MacOS
+<details>
 
 #### Update Your Mac
 If possible, we highly recommend updating to the latest version of MacOS.
@@ -277,8 +281,10 @@ n is another project that manages node versions with possibly an easier install 
 
 The other option is to install the nodejs package from the official website. Simply select the latest LTS.
 - [Nodejs Download Page](https://nodejs.org/en/download/)
+</details>
 
 ### Windows
+<details>
 
 #### Git
 - Install the full version of [CMDER](http://cmder.net/). This is a versatile terminal that wraps bash-like commands around Command Prompt by using Git for Windows. You have many options for getting Git on Windows.  We recommend using Git for Windows as it gives you a bash shell which can be very powerful and help you start to learn linux commands.
@@ -317,3 +323,4 @@ node --version
 npm --version
 ```
 If your installation was successful you will get the versions of node and npm that were installed.
+</details>

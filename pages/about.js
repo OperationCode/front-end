@@ -1,9 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
 import Head from 'components/head';
-import HeroBanner from 'common/components/HeroBanner/HeroBanner';
+import HeroBanner from 'components/_common_/HeroBanner/HeroBanner';
 import ImageCard from 'components/Cards/ImageCard/ImageCard';
-import Section from 'common/components/Section/Section';
+import Section from 'components/_common_/Section/Section';
 import ValueCard from 'components/Cards/ValueCard/ValueCard';
 import { s3 } from 'common/constants/urls';
 import styles from './styles/about.css';
@@ -28,11 +28,9 @@ export default () => (
         their families. We work directly with Senators, Congressmen, and Congresswomen to allow
         veterans total control of their future by permitting the use of the GI Bill on coding
         bootcamps. You can read about our organization&apos;s history{' '}
-        {/* eslint-disable jsx-a11y/anchor-is-valid */}
-        <Link>
+        <Link href="/history" prefetch>
           <a>here</a>
         </Link>
-        {/* eslint-enable jsx-a11y/anchor-is-valid */}.
       </p>
       <p>
         Aside from our work on the Hill, we offer many services to the military community and are

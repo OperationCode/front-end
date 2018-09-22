@@ -10,8 +10,9 @@
       "components/*": ["./components/*"],
       "common/*": ["./common/*"],
       "pages/*": ["./pages/*"],
+      "scripts/*": ["./scripts/*"],
       "static/*": ["./static/*"],
-      "test-utils": ["./test-utils"]
+      "test-utils/*": ["./test-utils/*"]
     }
   },
   "exclude": ["node_modules"]

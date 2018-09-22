@@ -32,7 +32,10 @@ module.exports = {
     '<rootDir>/common/config',
     '<rootDir>/common/styles',
     '<rootDir>/common/constants',
-    '<rootDir>/test-utils',
+    '<rootDir>/scripts',
+
+    // No real logic to test here
+    '<rootDir>/common/utils/api-utils.js',
 
     // Ignore Next.js files
     '<rootDir>/components/head.js',

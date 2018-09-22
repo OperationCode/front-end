@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
-import Section from 'common/components/Section/Section';
-import Button from 'common/components/Button/Button';
+import Section from 'components/_common_/Section/Section';
+import Button from 'components/_common_/Button/Button';
 
 const SignUpSection = () => (
   <Section title="New user?" theme="white">
@@ -13,9 +13,7 @@ const SignUpSection = () => (
 
     <Button theme="secondary">
       <Link href="/signup">
-        {/* eslint-disable jsx-a11y/anchor-is-valid */}
         <a>Sign Up</a>
-        {/* eslint-enable jsx-a11y/anchor-is-valid */}
       </Link>
     </Button>
   </Section>

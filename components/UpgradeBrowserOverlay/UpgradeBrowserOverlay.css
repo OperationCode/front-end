@@ -24,8 +24,8 @@
 }
 
 .warningLogo {
-  color: #d1665a;
-  font-size: 2em;
+  fill: #d1665a;
+  width: 100px;
 }
 
 .message {

@@ -1,0 +1,18 @@
+.screenReaderOnly {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.externalLinkIcon {
+  fill: currentColor;
+  left: 5px;
+  top: 2px;
+  position: relative;
+  width: 13px;
+}

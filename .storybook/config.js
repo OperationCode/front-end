@@ -1,8 +1,9 @@
 import React from 'react';
 import Router from 'next/router';
+import MockedRouter from 'test-utils/mocks/nextRouterMock';
+import MockNextContext from 'test-utils/mocks/nextContextMock';
 import { addDecorator, configure } from '@storybook/react';
 import { setDefaults } from '@storybook/addon-info';
-import { action } from '@storybook/addon-actions';
 import { setOptions } from '@storybook/addon-options';
 import { checkA11y } from '@storybook/addon-a11y';
 
@@ -14,33 +15,13 @@ setOptions({
   name: 'Operation-Code',
 });
 
-// Dynamically load all files within common/components matching `{componentName}.stories.js` pattern
-const requireCommonComponents = require.context('../common/components/', true, /stories\.js$/);
-const requireApplicationComponents = require.context('../components/', true, /stories\.js$/);
+// Dynamically load all files matching `*.stories.js` pattern within the components folder
+const requireComponents = require.context('../components/', true, /stories\.js$/);
 
 function loadStories() {
-  requireCommonComponents.keys().forEach(requireCommonComponents);
-  requireApplicationComponents.keys().forEach(requireApplicationComponents);
+  requireComponents.keys().forEach(requireComponents);
   // Add any new component folders with stories here, using the patterns defined above
 }
-
-/* ********************************************************** */
-/* Necessary to mock Next's router */
-// https://github.com/zeit/next.js/issues/1827#issuecomment-323721221
-const actionWithPromise = () => {
-  action('clicked link')();
-  // we need to return promise because it is needed by Link.linkClicked
-  return new Promise((resolve, reject) => reject());
-};
-
-const mockedRouter = {
-  push: actionWithPromise,
-  replace: actionWithPromise,
-  prefetch: () => {},
-};
-
-Router.router = mockedRouter;
-/* ********************************************************** */
 
 // addon-info
 setDefaults({
@@ -48,7 +29,16 @@ setDefaults({
   maxPropsIntoLine: 1,
 });
 
+// Adding global decorators for mocks
+// This is a bit like hitting our Storybook with a sledgehammer to resolve an issue with a decorator
+// which only a few components utilize. Regardless, the `withInfo` addon renders wrappers when used
+// on a story-by-story basis, so we'll default to this unless it causes issues.
+Router.router = MockedRouter;
+
+const mockWithRouterDecorator = storyFn => <MockNextContext>{storyFn()}</MockNextContext>;
+
 addDecorator(brandingBackgrounds);
 addDecorator(checkA11y);
+addDecorator(mockWithRouterDecorator);
 
 configure(loadStories, module);
