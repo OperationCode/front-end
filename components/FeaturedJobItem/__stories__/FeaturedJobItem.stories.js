@@ -9,7 +9,7 @@ storiesOf('Common/FeaturedJobItem', module)
   .add('default', () => (
     <FeaturedJobItem
       title={text('title', 'Director of Awesome')}
-      source={text('source', 'Gitlab')}
+      source={text('source', 'GitLab')}
       sourceUrl={text('sourceUrl', 'https://www.gitlab.com')}
       city={text('city', 'Los Angeles')}
       state={text('state', 'California')}
