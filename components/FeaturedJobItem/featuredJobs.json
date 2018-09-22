@@ -1,0 +1,92 @@
+[
+  {
+    "title": "Technical Product Marketing Manager",
+    "source": "GitLab",
+    "sourceUrl": "https://jobs.lever.co/gitlab/022890d6-549a-48fe-8891-51c13b8d1137",
+    "city": "",
+    "state": "",
+    "country": "Any",
+    "description": "As a Technical Product Marketing Manager, you will work closely with our marketing, engineering, business development and sales team, and partners to help them understand how core GitLab technical value offerings solve customer problems as well as educate them about market competitors.  You will be responsible for technical marketing content and representing GitLab as a technical evangelist at key trade shows and customer meetings.",
+    "status": "active",
+    "remote": true,
+    "tags": [
+      "Marketing",
+      "Product Management"
+    ]
+  },
+  {
+    "title": "Senior Database Engineer",
+    "source": "GitLab",
+    "sourceUrl": "https://jobs.lever.co/gitlab/8b711f1c-d378-4383-a027-bac550aeee6d",
+    "city": "",
+    "state": "",
+    "country": "Americas",
+    "description": "Our database engineer is a hybrid role: part developer, part database expert. You will spend the majority of your time making application changes to improve database performance, availability, and reliability; though you will also spend time working on the database infrastructure that powers GitLab.com. Infrastructure work involves (but is not limited to) tasks such as making configuration changes, adjusting monitoring, and upgrading the database.",
+    "status": "active",
+    "remote": true,
+    "tags": [
+      "Infrastructure",
+      "Database"
+    ]
+  },
+  {
+    "title": "Field Marketing Manager",
+    "source": "GitLab",
+    "sourceUrl": "https://jobs.lever.co/gitlab/f53275a2-bac6-43c8-9a7f-a1d3021c9521",
+    "city": "",
+    "state": "",
+    "country": "Asia Pacific",
+    "description": "GitLab is looking for a highly motivated, sales-focused field marketer who will be responsible for supporting our Asia Pacific (APAC) sales team. A successful Field Marketing Manager has strong understanding of sales-focused marketing as well as our audiences of enterprise IT leaders, IT ops practitioners, and developers. They enjoy taking charge of regional marketing programs, detailed planning, proactive communication, and flawlessly delivering memorable marketing experiences supporting our sales objectives.",
+    "status": "active",
+    "remote": true,
+    "tags": [
+      "Marketing",
+      "Sales"
+    ]
+  },
+  {
+    "title": "Junior Software Engineer",
+    "source": "Lockheed Martin",
+    "sourceUrl": "https://www.lockheedmartinjobs.com/job/boulder/junior-software-engineer/694/8366201",
+    "city": "Boulder",
+    "state": "Colorado",
+    "country": "United States",
+    "description": "We are seeking a Software Engineer to join the renowned SBIRS Software Development Team. The selected candidate will be a part of a new and innovative effort to design, develop, and test software solutions supporting ground system software, special projects, new business initiatives, and modernization efforts within our development environment. The candidate will work in a cohesive team environment with opportunities to expand across multiple projects and career growth. Only a Secret Clearance is required to start, and there are multiple openings for each position.",
+    "status": "active",
+    "remote": false,
+    "tags": [
+      "Java",
+      "C#"
+    ]
+  },
+  {
+    "title": "Software Engineer",
+    "source": "Lockheed Martin",
+    "sourceUrl": "https://www.lockheedmartinjobs.com/job/boulder/software-engineer/694/8061488",
+    "city": "Boulder",
+    "state": "Colorado",
+    "country": "United States",
+    "description": "We are seeking a Software Engineer to join our dynamic and growing team! The selected candidate will design, develop, and test software solutions across our contracted efforts, supporting multiple baselines in defect resolution as well as enhancements, special projects, new business initiatives, and modernization efforts. The successful candidate will be a passionate coder, someone who loves a challenge and always rises to the occasion to ensure success. They embrace modern development practices and insist that others do as well. Only a Secret Clearance is required to start, and there are multiple openings for each position.",
+    "status": "active",
+    "remote": false,
+    "tags": [
+      "Java",
+      "C++"
+    ]
+  },
+  {
+    "title": "Senior Software Engineer",
+    "source": "Lockheed Martin",
+    "sourceUrl": "https://www.lockheedmartinjobs.com/job/boulder/software-engineer-sr/694/8061486",
+    "city": "Boulder",
+    "state": "Colorado",
+    "country": "United States",
+    "description": "We are seeking a Software Engineer to join our dynamic and growing team! The selected candidate will design, develop, and test software solutions across our contracted efforts, supporting multiple baselines in defect resolution as well as enhancements, special projects, new business initiatives, and modernization efforts. The successful candidate will be a passionate coder, someone who loves a challenge and always rises to the occasion to ensure success. They embrace modern development practices and insist that others do as well. Only a Secret Clearance is required to start, and there are multiple openings for each position.",
+    "status": "active",
+    "remote": false,
+    "tags": [
+      "Java",
+      "C++"
+    ]
+  }
+]
