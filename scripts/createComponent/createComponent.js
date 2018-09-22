@@ -4,35 +4,33 @@ const fs = require('fs');
 const { buildJS, buildCss, buildStoryJs, buildTestJs } = require('./builders');
 
 const replacementString = 'Component';
-const componentPath = 'components/_common_';
+const componentPath = 'components/';
 
 const componentStruct = {
   root: {
-    common: {
-      components: {
-        Component: [
-          {
-            __stories__: [
-              {
-                'Component.stories.js': buildStoryJs,
-              },
-            ],
-          },
-          {
-            __tests__: [
-              {
-                'Component.test.js': buildTestJs,
-              },
-            ],
-          },
-          {
-            'Component.css': buildCss,
-          },
-          {
-            'Component.js': buildJS,
-          },
-        ],
-      },
+    components: {
+      Component: [
+        {
+          __stories__: [
+            {
+              'Component.stories.js': buildStoryJs,
+            },
+          ],
+        },
+        {
+          __tests__: [
+            {
+              'Component.test.js': buildTestJs,
+            },
+          ],
+        },
+        {
+          'Component.css': buildCss,
+        },
+        {
+          'Component.js': buildJS,
+        },
+      ],
     },
   },
 };
