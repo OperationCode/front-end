@@ -1,0 +1,109 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FeaturedJobItem should render properly with all props assigned 1`] = `
+<article
+  className="job"
+>
+  <div>
+    <a
+      className=""
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      <span
+        className="screenReaderOnly"
+      >
+        Opens in new window
+      </span>
+      <h6
+        className="link"
+      />
+    </a>
+  </div>
+  <div
+    className="details"
+  >
+    <div
+      className="detailsContainer"
+    >
+      <test-file-mock
+        className="icon"
+      />
+      <span
+        className="detail"
+      />
+    </div>
+    <div
+      className="detailsContainer"
+    >
+      
+      
+      
+      
+    </div>
+    <div
+      className="detailsContainer"
+    >
+      <test-file-mock
+        className="icon"
+      />
+      <span
+        className="remote"
+      >
+        Remote
+      </span>
+    </div>
+  </div>
+  <p
+    className="description"
+  />
+</article>
+`;
+
+exports[`FeaturedJobItem should render with just required props passed 1`] = `
+<article
+  className="job"
+>
+  <div>
+    <a
+      className=""
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      <span
+        className="screenReaderOnly"
+      >
+        Opens in new window
+      </span>
+      <h6
+        className="link"
+      />
+    </a>
+  </div>
+  <div
+    className="details"
+  >
+    <div
+      className="detailsContainer"
+    >
+      <test-file-mock
+        className="icon"
+      />
+      <span
+        className="detail"
+      />
+    </div>
+    <div
+      className="detailsContainer"
+    >
+      
+      
+      
+      
+    </div>
+  </div>
+  <p
+    className="description"
+  />
+</article>
+`;

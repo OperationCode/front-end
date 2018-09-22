@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Common/FeaturedJobItem default 1`] = `
+<article
+  className="job"
+>
+  <div>
+    <a
+      className=""
+      href="https://www.gitlab.com"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      <span
+        className="screenReaderOnly"
+      >
+        Opens in new window
+      </span>
+      <h6
+        className="link"
+      >
+        Technical Product Marketing Manager
+      </h6>
+    </a>
+  </div>
+  <div
+    className="details"
+  >
+    <div
+      className="detailsContainer"
+    >
+      <test-file-mock
+        className="icon"
+      />
+      <span
+        className="detail"
+      >
+        GitLab
+      </span>
+    </div>
+    <div
+      className="detailsContainer"
+    >
+      <test-file-mock
+        className="icon"
+      />
+      <span
+        className="detail"
+      >
+        Los Angeles
+        ,
+      </span>
+      <span
+        className="detail"
+      >
+        California
+        ,
+      </span>
+      <span
+        className="detail"
+      >
+        USA
+      </span>
+    </div>
+  </div>
+  <p
+    className="description"
+  >
+    As a Technical Product Marketing Manager, you will work closely with our marketing, engineering, business development and sales team, and partners to help them understand how core GitLab technical value offerings solve customer problems as well as educate them about market competitors. You will be responsible for technical marketing content and representing GitLab as a technical evangelist at key trade shows and customer meetings.
+  </p>
+</article>
+`;
