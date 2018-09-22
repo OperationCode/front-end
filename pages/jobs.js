@@ -6,12 +6,13 @@ import ZipRecruiterJobs from 'components/ZipRecruiterJobs/ZipRecruiterJobs';
 
 export default () => (
   <>
-    <Section theme="mist" title="Featured Jobs">
+    <h1>Jobs</h1>
+    <Section theme="mist" title="Featured">
       {FeaturedJobsData.filter(job => job.status === 'active').map(job => (
         <FeaturedJobItem key={job.sourceUrl} {...job} />
       ))}
     </Section>
-    <Section theme="white" title="All Jobs">
+    <Section theme="white" title="ZipRecruiter">
       <ZipRecruiterJobs />
     </Section>
   </>
