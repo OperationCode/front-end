@@ -5,12 +5,10 @@ import FeaturedJobItem from '../FeaturedJobItem';
 
 describe('FeaturedJobItem', () => {
   it('should render with just required props passed', () => {
-    createSnapshotTest(<FeaturedJobItem/>);
+    createSnapshotTest(<FeaturedJobItem />);
   });
 
   it('should render properly with all props assigned', () => {
-    createSnapshotTest(
-      <FeaturedJobItem remote="false"/>,
-    );
+    createSnapshotTest(<FeaturedJobItem remote="false" />);
   });
 });
