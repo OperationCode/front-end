@@ -1,0 +1,139 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FeaturedJobItem should render properly with all props assigned 1`] = `
+<article
+  className="job"
+>
+  <div>
+    <a
+      className=""
+      href="https://jobs.lever.co/formidable/82919058-b73c-4a02-8589-87e2433f0a90"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      <span
+        className="screenReaderOnly"
+      >
+        Opens in new window
+      </span>
+      <h6
+        className="link"
+      >
+        Experienced React Engineer
+      </h6>
+    </a>
+  </div>
+  <div
+    className="details"
+  >
+    <div
+      className="detailsContainer"
+    >
+      <test-file-mock
+        className="icon"
+      />
+      <span
+        className="detail"
+      >
+        Formidable Labs
+      </span>
+    </div>
+    <div
+      className="detailsContainer"
+    >
+      <test-file-mock
+        className="icon"
+      />
+      <span
+        className="detail"
+      >
+        Seattle
+        ,
+      </span>
+      <span
+        className="detail"
+      >
+        WA
+        ,
+      </span>
+      <span
+        className="detail"
+      >
+        United States
+      </span>
+    </div>
+    <div
+      className="detailsContainer"
+    >
+      <test-file-mock
+        className="icon"
+      />
+      <span
+        className="remote"
+      >
+        Remote
+      </span>
+    </div>
+  </div>
+  <p
+    className="description"
+  >
+    As an Experienced React Engineer, you will do React things.
+  </p>
+</article>
+`;
+
+exports[`FeaturedJobItem should render with just required props passed 1`] = `
+<article
+  className="job"
+>
+  <div>
+    <a
+      className=""
+      href="https://about.gitlab.com/jobs/apply/?gh_jid=4055708002"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      <span
+        className="screenReaderOnly"
+      >
+        Opens in new window
+      </span>
+      <h6
+        className="link"
+      >
+        DevOps Engineer
+      </h6>
+    </a>
+  </div>
+  <div
+    className="details"
+  >
+    <div
+      className="detailsContainer"
+    >
+      <test-file-mock
+        className="icon"
+      />
+      <span
+        className="detail"
+      >
+        GitLab
+      </span>
+    </div>
+    <div
+      className="detailsContainer"
+    >
+      
+      
+      
+      
+    </div>
+  </div>
+  <p
+    className="description"
+  >
+    This is a fake role, since GitLab always has remote.
+  </p>
+</article>
+`;
