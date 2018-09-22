@@ -7,6 +7,7 @@ exports[`FeaturedJobItem should render properly with all props assigned 1`] = `
   <div>
     <a
       className=""
+      href="https://jobs.lever.co/formidable/82919058-b73c-4a02-8589-87e2433f0a90"
       rel="noopener noreferrer"
       target="_blank"
     >
@@ -17,7 +18,9 @@ exports[`FeaturedJobItem should render properly with all props assigned 1`] = `
       </span>
       <h6
         className="link"
-      />
+      >
+        Experienced React Engineer
+      </h6>
     </a>
   </div>
   <div
@@ -31,15 +34,33 @@ exports[`FeaturedJobItem should render properly with all props assigned 1`] = `
       />
       <span
         className="detail"
-      />
+      >
+        Formidable Labs
+      </span>
     </div>
     <div
       className="detailsContainer"
     >
-      
-      
-      
-      
+      <test-file-mock
+        className="icon"
+      />
+      <span
+        className="detail"
+      >
+        Seattle
+        ,
+      </span>
+      <span
+        className="detail"
+      >
+        WA
+        ,
+      </span>
+      <span
+        className="detail"
+      >
+        United States
+      </span>
     </div>
     <div
       className="detailsContainer"
@@ -56,7 +77,9 @@ exports[`FeaturedJobItem should render properly with all props assigned 1`] = `
   </div>
   <p
     className="description"
-  />
+  >
+    As an Experienced React Engineer, you will do React things.
+  </p>
 </article>
 `;
 
@@ -67,6 +90,7 @@ exports[`FeaturedJobItem should render with just required props passed 1`] = `
   <div>
     <a
       className=""
+      href="https://about.gitlab.com/jobs/apply/?gh_jid=4055708002"
       rel="noopener noreferrer"
       target="_blank"
     >
@@ -77,7 +101,9 @@ exports[`FeaturedJobItem should render with just required props passed 1`] = `
       </span>
       <h6
         className="link"
-      />
+      >
+        DevOps Engineer
+      </h6>
     </a>
   </div>
   <div
@@ -91,7 +117,9 @@ exports[`FeaturedJobItem should render with just required props passed 1`] = `
       />
       <span
         className="detail"
-      />
+      >
+        GitLab
+      </span>
     </div>
     <div
       className="detailsContainer"
@@ -104,6 +132,8 @@ exports[`FeaturedJobItem should render with just required props passed 1`] = `
   </div>
   <p
     className="description"
-  />
+  >
+    This is a fake role, since GitLab always has remote.
+  </p>
 </article>
 `;
