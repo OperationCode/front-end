@@ -11,6 +11,7 @@ exports[`Modal should render properly with some props assigned and being open 1`
   onRequestClose={[Function]}
   parentSelector={[MockFunction]}
   portalClassName="ReactModalPortal"
+  role="dialog"
   shouldCloseOnEsc={true}
   shouldCloseOnOverlayClick={true}
   shouldFocusAfterRender={true}

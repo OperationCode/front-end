@@ -9,19 +9,20 @@
     "create-component": "node scripts/createComponent/createComponent.js",
     "dev": "next",
     "export": "next export",
-    "format-all": "yarn format:scripts && yarn format:styles",
+    "format:all": "yarn format:scripts && yarn format:styles",
     "format:scripts": "prettier --write \"**/*.js\" && eslint --fix \"**/*.js\"",
     "format:styles": "prettier --write \"**/*.css\" && stylelint --fix \"**/*.css\"",
     "lint:scripts": "eslint \"**/*.js\"",
     "lint:styles": "stylelint \"**/*.css\"",
     "lint": "yarn lint:scripts && yarn lint:styles",
     "now-build": "echo 'Built on Travis CI'",
-    "precommit": "lint-staged && yarn test",
+    "precommit": "lint-staged && yarn test:changes",
     "start": "next start",
     "storybook": "start-storybook -s ./static -p 9001 -c .storybook",
+    "test:all": "cross-env NODE_ENV=test BABEL_ENV=test jest",
     "test:ci": "cross-env NODE_ENV=test BABEL_ENV=test jest --ci --coverage",
-    "test:update-snaps": "cross-env NODE_ENV=test BABEL_ENV=test jest -u",
-    "test": "cross-env NODE_ENV=test BABEL_ENV=test jest"
+    "test:changes": "cross-env NODE_ENV=test BABEL_ENV=test jest --changedSince master",
+    "test:update-snaps": "cross-env NODE_ENV=test BABEL_ENV=test jest -u"
   },
   "lint-staged": {
     "*.js": [
@@ -68,7 +69,7 @@
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-ga": "^2.5.3",
-    "react-modal": "^3.5.1",
+    "react-modal": "^3.6.1",
     "react-scroll": "^1.7.10",
     "react-svg-loader": "^2.1.0",
     "react-youtube": "^7.6.0",
