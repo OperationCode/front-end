@@ -13,3 +13,22 @@ exports[`FormInput should render with just required props passed 1`] = `
   />
 </div>
 `;
+
+exports[`FormInput should render with label 1`] = `
+<div
+  className="formInput"
+>
+  <label
+    htmlFor="test"
+  >
+    Testinput
+  </label>
+  <input
+    id="test"
+    onChange={[Function]}
+    placeholder={null}
+    type="text"
+    value=""
+  />
+</div>
+`;
