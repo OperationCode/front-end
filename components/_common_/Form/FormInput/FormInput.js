@@ -30,7 +30,7 @@ class FormInput extends Component {
   };
 
   handleChange = event => {
-    const { props, state } = this;
+    const { props } = this;
 
     const isValid = this.validate(event.target.value);
     this.setState(
@@ -40,8 +40,8 @@ class FormInput extends Component {
       },
       () => {
         if (props.onChange) {
-          const { text, isValid: isValidAfterSetState } = this.state;
-          props.onChange(text, isValidAfterSetState);
+          const { text, isValid: isValidAfterChange } = this.state;
+          props.onChange(text, isValidAfterChange);
         }
       },
     );
