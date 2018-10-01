@@ -4,7 +4,7 @@ import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 
 import FeaturedJobItem from '../FeaturedJobItem';
 
-storiesOf('Common/FeaturedJobItem', module)
+storiesOf('FeaturedJobItem', module)
   .addDecorator(withKnobs)
   .add('default', () => (
     <FeaturedJobItem
