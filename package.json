@@ -22,6 +22,7 @@
     "test": "cross-env NODE_ENV=test BABEL_ENV=test jest",
     "test:ci": "cross-env NODE_ENV=test BABEL_ENV=test jest --ci --coverage",
     "test:changes": "cross-env NODE_ENV=test BABEL_ENV=test jest --changedSince master",
+    "test:changes:watch": "cross-env NODE_ENV=test BABEL_ENV=test jest --changedSince master --watch",
     "test:update-snaps": "cross-env NODE_ENV=test BABEL_ENV=test jest -u"
   },
   "lint-staged": {
