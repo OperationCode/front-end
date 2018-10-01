@@ -19,4 +19,5 @@
 
 ### Browser
 
-### Screenshots
+### Is This A Third-Party Issue?
+<!-- If so, please link corresponding issues and add the "blocked" label to this issue. -->
