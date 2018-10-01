@@ -10,6 +10,20 @@ describe('FormInput', () => {
     createSnapshotTest(<FormInput id="test" />);
   });
 
+  test('should render with label', () => {
+    createSnapshotTest(<FormInput id="test" label="Testinput" />);
+  });
+
+  test('should show error onChange if value is empty', () => {
+    const onChangeMock = jest.fn();
+    const wrap = mount(<FormInput onChange={onChangeMock} id="test" />);
+    wrap.find('input').simulate('change', {
+      target: { value: 'Test' },
+    });
+    expect(onChangeMock).toHaveBeenCalledTimes(1);
+    expect(onChangeMock).toBeCalledWith('Test', true);
+  });
+
   test('should show error onChange if value is empty', () => {
     const validationErrorMessage = 'invalid input';
     const wrap = mount(<FormInput validationErrorMessage={validationErrorMessage} id="test" />);
@@ -17,6 +31,15 @@ describe('FormInput', () => {
       target: { value: '' },
     });
     expect(wrap.find('span').text()).toBe(validationErrorMessage);
+  });
+
+  test('should show no error onChange if value is not empty', () => {
+    const validationErrorMessage = 'invalid input';
+    const wrap = mount(<FormInput validationErrorMessage={validationErrorMessage} id="test" />);
+    wrap.find('input').simulate('change', {
+      target: { value: 'hello' },
+    });
+    expect(wrap.exists('span')).toBe(false);
   });
 
   test('should show error onChange if error with validateFunc', () => {

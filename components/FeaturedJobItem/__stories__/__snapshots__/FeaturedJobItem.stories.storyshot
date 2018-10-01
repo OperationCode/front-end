@@ -70,3 +70,74 @@ exports[`Storyshots Common/FeaturedJobItem default 1`] = `
   </p>
 </article>
 `;
+
+exports[`Storyshots FeaturedJobItem default 1`] = `
+<article
+  className="job"
+>
+  <div>
+    <a
+      className=""
+      href="https://www.gitlab.com"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      <span
+        className="screenReaderOnly"
+      >
+        Opens in new window
+      </span>
+      <h6
+        className="link"
+      >
+        Director of Awesome
+      </h6>
+    </a>
+  </div>
+  <div
+    className="details"
+  >
+    <div
+      className="detailsContainer"
+    >
+      <test-file-mock
+        className="icon"
+      />
+      <span
+        className="detail"
+      >
+        GitLab
+      </span>
+    </div>
+    <div
+      className="detailsContainer"
+    >
+      <test-file-mock
+        className="icon"
+      />
+      <span
+        className="detail"
+      >
+        Los Angeles
+        ,
+      </span>
+      <span
+        className="detail"
+      >
+        California
+        ,
+      </span>
+      <span
+        className="detail"
+      >
+        USA
+      </span>
+    </div>
+  </div>
+  <p
+    className="description"
+  >
+    You will be awesome at this job, apply for it!
+  </p>
+</article>
+`;

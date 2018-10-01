@@ -40,7 +40,8 @@ class FormInput extends Component {
       },
       () => {
         if (props.onChange) {
-          props.onChange(state.text, state.isValid);
+          const { text, isValid: isValidAfterSetState } = this.state;
+          props.onChange(text, isValidAfterSetState);
         }
       },
     );
