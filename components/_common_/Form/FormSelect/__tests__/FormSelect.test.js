@@ -14,7 +14,7 @@ describe('FormSelect', () => {
     );
   });
 
-  test('should render with placeholder', () => {
+  test('should render when passing only required props', () => {
     createSnapshotTest(
       <FormSelect
         options={[{ label: 'test 1', value: 'TEST1' }, { label: 'test 2', value: 'TEST2' }]}
@@ -22,7 +22,7 @@ describe('FormSelect', () => {
     );
   });
 
-  test('should render with only with prompt', () => {
+  test('should render when passed a prompt and options', () => {
     createSnapshotTest(
       <FormSelect
         prompt="Select an item"

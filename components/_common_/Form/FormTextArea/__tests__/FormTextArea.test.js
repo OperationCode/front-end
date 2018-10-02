@@ -10,7 +10,7 @@ describe('FormTextArea', () => {
     createSnapshotTest(<FormTextArea />);
   });
 
-  test('should render with placeholder', () => {
+  test('should render when passed a placeholder', () => {
     createSnapshotTest(<FormTextArea placeholder="testplaceholder" />);
   });
 
