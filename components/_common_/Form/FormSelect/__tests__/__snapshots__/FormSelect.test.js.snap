@@ -19,3 +19,28 @@ exports[`FormSelect should render with just required props passed 1`] = `
   </select>
 </div>
 `;
+
+exports[`FormSelect should render with prompt prop 1`] = `
+<div>
+  <select
+    id=""
+    onBlur={[Function]}
+  >
+    <option
+      value=""
+    >
+      true
+    </option>
+    <option
+      value="TEST1"
+    >
+      test 1
+    </option>
+    <option
+      value="TEST2"
+    >
+      test 2
+    </option>
+  </select>
+</div>
+`;
