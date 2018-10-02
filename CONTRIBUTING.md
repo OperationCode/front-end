@@ -332,8 +332,9 @@ You can also install Github Desktop for a GUI Interface to Github. If you do thi
 
 #### NodeJS
 
-There are many ways and guides to install NodeJS on Windows. The resources below are from Microsoft.
+There are many ways and guides to install NodeJS on Windows. We recommend using [nvm-windows](https://github.com/coreybutler/nvm-windows).
 
+The resources below are from Microsoft.
 - [NodeJS On Windows Guidelines](https://github.com/Microsoft/nodejs-guidelines)
 - [Configuring your Windows development environment for NodeJS](https://github.com/Microsoft/nodejs-guidelines/blob/master/windows-environment.md#configuring-your-windows-development-environment)
 
