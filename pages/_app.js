@@ -1,5 +1,6 @@
 import React from 'react';
 import App, { Container } from 'next/app';
+import ScrollUpButton from 'react-scroll-up-button';
 import Nav from 'components/nav';
 import Footer from 'components/Footer/Footer';
 import 'common/styles/globalStyles.css';
@@ -12,6 +13,7 @@ class Layout extends React.Component {
 
     return (
       <>
+        <ScrollUpButton />
         <Nav />
         {children}
         <Footer />
