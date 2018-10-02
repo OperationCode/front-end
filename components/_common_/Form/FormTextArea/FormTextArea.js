@@ -16,10 +16,11 @@ class FormTextArea extends Component {
   state = { value: '' };
 
   handleChange = event => {
-    const { props, state } = this;
+    const { props } = this;
 
     this.setState({ value: event.target.value }, () => {
-      props.onChange(state.value);
+      const { value } = this.state;
+      props.onChange(value);
     });
   };
 

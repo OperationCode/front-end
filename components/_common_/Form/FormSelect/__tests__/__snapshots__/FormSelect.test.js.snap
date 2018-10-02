@@ -5,13 +5,68 @@ exports[`FormSelect should render with just required props passed 1`] = `
   <select
     id=""
     onBlur={[Function]}
+    onChange={[Function]}
   >
     <option
+      selected={true}
       value="TEST1"
     >
       test 1
     </option>
     <option
+      selected={false}
+      value="TEST2"
+    >
+      test 2
+    </option>
+  </select>
+</div>
+`;
+
+exports[`FormSelect should render with only with prompt 1`] = `
+<div>
+  <select
+    id=""
+    onBlur={[Function]}
+    onChange={[Function]}
+  >
+    <option
+      selected={true}
+      value=""
+    >
+      Select an item
+    </option>
+    <option
+      selected={false}
+      value="TEST1"
+    >
+      test 1
+    </option>
+    <option
+      selected={false}
+      value="TEST2"
+    >
+      test 2
+    </option>
+  </select>
+</div>
+`;
+
+exports[`FormSelect should render with placeholder 1`] = `
+<div>
+  <select
+    id=""
+    onBlur={[Function]}
+    onChange={[Function]}
+  >
+    <option
+      selected={true}
+      value="TEST1"
+    >
+      test 1
+    </option>
+    <option
+      selected={false}
       value="TEST2"
     >
       test 2

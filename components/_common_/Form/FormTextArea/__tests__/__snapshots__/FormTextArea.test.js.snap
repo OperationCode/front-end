@@ -9,3 +9,13 @@ exports[`FormTextArea should render with just required props passed 1`] = `
   />
 </div>
 `;
+
+exports[`FormTextArea should render with placeholder 1`] = `
+<div>
+  <textarea
+    className="text_area"
+    onChange={[Function]}
+    placeholder=""
+  />
+</div>
+`;
