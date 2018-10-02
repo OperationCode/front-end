@@ -1,9 +1,9 @@
 /* eslint-env jest */
 import React from 'react';
 import { shallow } from 'enzyme';
+import ReactGA from 'react-ga';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 import createShallowSnapshotTest from 'test-utils/createShallowSnapshotTest';
-import ReactGA from 'react-ga';
 
 import Modal from '../Modal';
 
@@ -44,7 +44,6 @@ describe('Modal', () => {
   });
 
   test('should call ReactGA when in prod environment', () => {
-    /* eslint-disable no-console */
     ReactGA.initialize('foo', { testMode: true });
 
     process.env.NODE_ENV = 'production';
