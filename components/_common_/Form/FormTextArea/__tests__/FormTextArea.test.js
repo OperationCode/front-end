@@ -22,6 +22,6 @@ describe('FormTextArea', () => {
     FormTextAreaShallowInstance.find('textarea').simulate('change', event);
 
     expect(props.onChange).toHaveBeenCalledTimes(1);
-    expect(onChangeMock).toBeCalledWith('TestText');
+    expect(props.onChange).toBeCalledWith('TestText');
   });
 });
