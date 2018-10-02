@@ -2,7 +2,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
-import { mount } from 'enzyme';
 
 import FormTextArea from '../FormTextArea';
 
