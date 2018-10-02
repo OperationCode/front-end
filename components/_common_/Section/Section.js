@@ -47,9 +47,8 @@ function Section({
     // Dark background colors have light heading color
     case 'gray':
     case 'slate':
-      headingTheme = 'white';
-      break;
     default:
+      headingTheme = 'white';
       break;
   }
 
