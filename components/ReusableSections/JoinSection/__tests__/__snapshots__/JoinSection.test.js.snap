@@ -3,6 +3,7 @@
 exports[`JoinSection it should render properly with no props 1`] = `
 <Section
   className="JoinSection"
+  contentClassName=""
   hasHeadingLines={false}
   id=""
   style={

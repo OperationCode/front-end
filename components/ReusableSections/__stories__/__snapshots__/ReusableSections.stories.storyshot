@@ -16,7 +16,7 @@ exports[`Storyshots ReusableSections DonateSection 1`] = `
     Donate
   </h2>
   <div
-    className="content"
+    className="content "
   >
     <div
       className="donateText"
@@ -72,7 +72,7 @@ exports[`Storyshots ReusableSections JoinSection 1`] = `
     Join Today!
   </h2>
   <div
-    className="content"
+    className="content "
   >
     <div
       className="joinText"
@@ -114,7 +114,7 @@ exports[`Storyshots ReusableSections SignUpSection 1`] = `
     New user?
   </h2>
   <div
-    className="content"
+    className="content "
   >
     <p>
       Are you ready to deploy your future? Join Operation Code today and launch your career in software development. Once you complete the form below, you’ll be invited to join our team on Slack. Make sure you stop in and say hi!
