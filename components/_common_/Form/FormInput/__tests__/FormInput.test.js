@@ -14,7 +14,7 @@ describe('FormInput', () => {
     createSnapshotTest(<FormInput id="test" label="Testinput" />);
   });
 
-  test('should show error onChange if value is empty', () => {
+  test('should call onChange from props after onChange', () => {
     const onChangeMock = jest.fn();
     const wrap = mount(<FormInput onChange={onChangeMock} id="test" />);
     wrap.find('input').simulate('change', {

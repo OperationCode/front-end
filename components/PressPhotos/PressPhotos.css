@@ -1,0 +1,24 @@
+.photos {
+  padding-top: 15px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.photos > img {
+  width: auto;
+  max-height: 368px;
+}
+
+@media screen and (min-width: 415px) and (max-width: 1280px) {
+  .photos > img {
+    width: 350px;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .photos > img {
+    width: 300px;
+  }
+}
