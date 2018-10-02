@@ -3,6 +3,7 @@
 exports[`DonateSection should render properly with no props 1`] = `
 <Section
   className="DonateSection"
+  contentClassName=""
   hasHeadingLines={false}
   headingTheme="white"
   id=""
