@@ -4249,6 +4249,11 @@ detect-newline@^2.1.0:
   resolved "https://registry.yarnpkg.com/detect-newline/-/detect-newline-2.1.0.tgz#f41f1c10be4b00e87b5f13da680759f2c5bfd3e2"
   integrity sha1-9B8cEL5LAOh7XxPaaAdZ8sW/0+I=
 
+detect-passive-events@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/detect-passive-events/-/detect-passive-events-1.0.4.tgz#6ed477e6e5bceb79079735dcd357789d37f9a91a"
+  integrity sha1-btR35uW863kHlzXc01d4nTf5qRo=
+
 detect-port-alt@1.1.6:
   version "1.1.6"
   resolved "https://registry.yarnpkg.com/detect-port-alt/-/detect-port-alt-1.1.6.tgz#24707deabe932d4a3cf621302027c2b266568275"
@@ -10122,6 +10127,15 @@ react-onclickoutside@^6.5.0:
   resolved "https://registry.yarnpkg.com/react-onclickoutside/-/react-onclickoutside-6.7.1.tgz#6a5b5b8b4eae6b776259712c89c8a2b36b17be93"
   integrity sha512-p84kBqGaMoa7VYT0vZ/aOYRfJB+gw34yjpda1Z5KeLflg70HipZOT+MXQenEhdkPAABuE2Astq4zEPdMqUQxcg==
 
+react-scroll-up-button@^1.6.4:
+  version "1.6.4"
+  resolved "https://registry.yarnpkg.com/react-scroll-up-button/-/react-scroll-up-button-1.6.4.tgz#9c4c45d1b58f2e4fcf60e44817a170becd25c7ba"
+  integrity sha512-ou/ZLbjAXgXnszmNp9g17XlZBat48V3Oz40ssEcu6dEIM2CVn/yWxej3Y4Fx1LyUtQ1cc/MoWOSXC2dufaiACg==
+  dependencies:
+    detect-passive-events "^1.0.4"
+    prop-types "^15.6.2"
+    tween-functions "^1.2.0"
+
 react-scroll@^1.7.10:
   version "1.7.10"
   resolved "https://registry.yarnpkg.com/react-scroll/-/react-scroll-1.7.10.tgz#b59cfa11a899a362c6489607ed5865c9c5fd0b53"
@@ -11959,6 +11973,11 @@ tunnel-agent@^0.6.0:
   integrity sha1-J6XeoGs2sEoKmWZ3SykIaPD8QP0=
   dependencies:
     safe-buffer "^5.0.1"
+
+tween-functions@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/tween-functions/-/tween-functions-1.2.0.tgz#1ae3a50e7c60bb3def774eac707acbca73bbc3ff"
+  integrity sha1-GuOlDnxguz3vd06scHrLynO7w/8=
 
 tweetnacl@^0.14.3, tweetnacl@~0.14.0:
   version "0.14.5"
