@@ -1,7 +1,7 @@
 /* eslint-env jest */
 import React from 'react';
-import createSnapshotTest from 'test-utils/createSnapshotTest';
 import { mount } from 'enzyme';
+import createSnapshotTest from 'test-utils/createSnapshotTest';
 
 import FormTextArea from '../FormTextArea';
 

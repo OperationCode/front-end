@@ -1,24 +1,26 @@
 /* eslint-env jest */
 import React from 'react';
-import createSnapshotTest from 'test-utils/createSnapshotTest';
 import { mount } from 'enzyme';
+import createSnapshotTest from 'test-utils/createSnapshotTest';
 
 import FormSelect from '../FormSelect';
 
 describe('FormSelect', () => {
-  test('should render with just required props passed', () => {
-    createSnapshotTest(
-      <FormSelect
-        options={[{ label: 'test 1', value: 'TEST1' }, { label: 'test 2', value: 'TEST2' }]}
-      />,
-    );
+  let options;
+  
+  beforeEach(() => {
+    options = [{ label: 'test 1', value: 'TEST1' }, { label: 'test 2', value: 'TEST2' }];
   });
   
+  test('should render with just required props passed', () => {
+    createSnapshotTest(<FormSelect options={options} />);
+  });
+    
   test('should render when passed a prompt and options', () => {
     createSnapshotTest(
       <FormSelect
+        options={options}
         prompt="Select an item"
-        options={[{ label: 'test 1', value: 'TEST1' }, { label: 'test 2', value: 'TEST2' }]}
       />,
     );
   });
@@ -28,7 +30,7 @@ describe('FormSelect', () => {
     const wrap = mount(
       <FormSelect
         onChange={onChangeMock}
-        options={[{ label: 'test 1', value: 'TEST1' }, { label: 'test 2', value: 'TEST2' }]}
+        options={options}
       />,
     );
     wrap.find('select').simulate('change', {
@@ -46,11 +48,7 @@ describe('FormSelect', () => {
       <FormSelect
         onChange={onChangeMock}
         validationFunc={e => e.target.value === 'TEST3'}
-        options={[
-          { label: 'test 1', value: 'TEST1' },
-          { label: 'test 2', value: 'TEST2' },
-          { label: 'test 3', value: 'TEST3' },
-        ]}
+        options={[ ...options, { label: 'test 3', value: 'TEST3' }]}
       />,
     );
     wrap.find('select').simulate('change', {

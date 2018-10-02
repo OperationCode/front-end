@@ -63,13 +63,6 @@ class FormInput extends Component {
     return false;
   };
 
-  revalidate() {
-    const { state } = this;
-
-    const valid = this.validate(state.text);
-    this.setState({ isValid: valid });
-  }
-
   render() {
     const { props, state } = this;
 
