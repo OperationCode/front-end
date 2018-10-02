@@ -16,13 +16,35 @@ Being an open source project involving contributors of varying levels of experie
 
 ## Table Of Contents
 
-- [Git and GitHub](#git-and-github) - [Git](#git) - [GitHub Workflow](#github-workflow)
-- [Explanations](#explanations) - [What Is The Front-End?](#what-is-the-front-end) - [What Is The Back-End?](#what-is-the-back-end) - [What is REST? What is an API?](#what-is-rest-what-is-an-api)
-- [Technologies](#technologies)
-- [Development Workflow](#development-workflow) - [Installing Dependencies](#installing-dependencies) - [Run The Development Server](#run-the-development-server) - [Returning To Work After A Break](#returning-to-work-after-a-break) - [File Structure](#file-structure) - [npm Scripts With Explanations](#npm-scripts-with-explanations)
-- [Mocking Back-end Server API](#mocking-back-end-server-api)
-- [Resources](#resources)
-- [Navigating Operating System Differences](#navigating-operating-system-differences) - [MacOS](#macos) - [Windows](#windows)
+- [Guide To Contribution](#guide-to-contribution)
+	- [Table Of Contents](#table-of-contents)
+	- [Git and GitHub](#git-and-github)
+		- [Git](#git)
+		- [GitHub Workflow](#github-workflow)
+	- [Explanations](#explanations)
+		- [What Is The Front-End?](#what-is-the-front-end)
+		- [What Is The Back-End?](#what-is-the-back-end)
+		- [What is REST? What is an API?](#what-is-rest-what-is-an-api)
+	- [Technologies](#technologies)
+	- [Development Workflow](#development-workflow)
+		- [Installing Dependencies](#installing-dependencies)
+		- [Run The Development Server](#run-the-development-server)
+		- [Returning To Work After A Break](#returning-to-work-after-a-break)
+		- [Knowing The Tools At Your Disposal](#knowing-the-tools-at-your-disposal)
+		- [File Structure](#file-structure)
+		- [npm Scripts With Explanations](#npm-scripts-with-explanations)
+	- [Mocking Back-end Server API](#mocking-back-end-server-api)
+	- [Resources](#resources)
+	- [Navigating Operating System Differences](#navigating-operating-system-differences)
+		- [MacOS](#macos)
+			- [Update Your Mac](#update-your-mac)
+			- [Xcode Command Line Tools](#xcode-command-line-tools)
+			- [Homebrew](#homebrew)
+			- [Git](#git)
+			- [NodeJS](#nodejs)
+		- [Windows](#windows)
+			- [Git](#git)
+			- [NodeJS](#nodejs)
 
 ## Git and GitHub
 
@@ -84,7 +106,7 @@ VERY IMPORTANT: Recommended versions of tools used within the repo are described
 
 _You can check to see your versions like so:_
 
-- Run `node -v`. You can download the latest LTS release of node at [nodejs.org](https://nodejs.org) or you can use [nvm](https://github.com/creationix/nvm) to be able to switch between node versions easily for many projects.
+- Run `node -v`. You can download the latest LTS release of node at [nodejs.org](https://nodejs.org) or you can use [nvm](https://github.com/creationix/nvm) to be able to switch between node versions easily for many projects. If you use Windows, you will need to use [nvm-windows](https://github.com/coreybutler/nvm-windows) instead.
 - Run `npm -v`. If you do not have version 4 or greater, run `npm install -g npm`
 - Run `yarn --version`. If you do not have version 1.7.0 or greater, run `npm install --global yarn`.
 - Once you have all the required tooling, you should be able to run `yarn` at the root level of your forked repository. You should see a bunch of emojis and progress bars - that is how you will know it is working!
@@ -310,8 +332,9 @@ You can also install Github Desktop for a GUI Interface to Github. If you do thi
 
 #### NodeJS
 
-There are many ways and guides to install NodeJS on Windows. The resources below are from Microsoft.
+There are many ways and guides to install NodeJS on Windows. We recommend using [nvm-windows](https://github.com/coreybutler/nvm-windows).
 
+The resources below are from Microsoft.
 - [NodeJS On Windows Guidelines](https://github.com/Microsoft/nodejs-guidelines)
 - [Configuring your Windows development environment for NodeJS](https://github.com/Microsoft/nodejs-guidelines/blob/master/windows-environment.md#configuring-your-windows-development-environment)
 
