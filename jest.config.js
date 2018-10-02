@@ -37,6 +37,7 @@ module.exports = {
 
     // No real logic to test here
     '<rootDir>/common/utils/api-utils.js',
+    '<rootDir>/components/FAQ/questions.js',
     '<rootDir>/components/ZipRecruiterJobs/ZipRecruiterJobs.js',
 
     // Ignore Next.js files
