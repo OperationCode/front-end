@@ -72,6 +72,7 @@
     "react-ga": "^2.5.3",
     "react-modal": "^3.6.1",
     "react-scroll": "^1.7.10",
+    "react-scroll-up-button": "^1.6.4",
     "react-svg-loader": "^2.1.0",
     "react-youtube": "^7.7.0",
     "style-loader": "^0.23.0",
