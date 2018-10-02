@@ -29,7 +29,7 @@ class FormSelect extends Component {
     };
   }
 
-  onBlur = e => {
+  onBlur = () => {
     const { onChange } = this.props;
     const { value } = this.state;
     onChange(value);
