@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PressPhotos it should render properly no props 1`] = `
+<div
+  className="photos"
+>
+  <img
+    alt="David Molina speaks to Code Conference LA 2016 attendees."
+    src="/static/images/CodeConferenceLA.jpg"
+  />
+  <img
+    alt="Operation Code members pose at Red Hat Summit 2017"
+    src="/static/images/RedHat-Summit.jpg"
+  />
+  <img
+    alt="Conrad Hollomon presents in front of the Node Summit 2016 audience."
+    src="/static/images/Node-Summit.jpg"
+  />
+  <img
+    alt="Operation Code developers pose at AngelHack Boston 2017."
+    src="/static/images/AngelHack-Boston.jpg"
+  />
+  <img
+    alt="Ken Collier leads a discussion at the Utah Operation Code meetup."
+    src="/static/images/Utah-Meetup.jpg"
+  />
+</div>
+`;
