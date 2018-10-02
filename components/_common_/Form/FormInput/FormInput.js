@@ -11,7 +11,7 @@ class FormInput extends Component {
     placeholder: PropTypes.string,
     validateFunc: PropTypes.func,
     validationErrorMessage: PropTypes.string,
-    validationRegex: PropTypes.string,
+    validationRegex: PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(RegExp)]),
   };
 
   static defaultProps = {

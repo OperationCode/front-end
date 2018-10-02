@@ -1,5 +1,5 @@
 import React from 'react';
-import config from 'config/environment';
+import config from 'common/config/environment';
 import FacebookLogin from 'react-facebook-login';
 import SocialLogin from './SocialLogin';
 import styles from './SocialMediaButtons.css';
