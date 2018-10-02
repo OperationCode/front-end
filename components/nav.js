@@ -14,6 +14,21 @@ function Nav() {
             <a>About</a>
           </Link>
         </li>
+        <li>
+          <Link href="/history" prefetch>
+            <a>History</a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/jobs" prefetch>
+            <a>Jobs</a>
+          </Link>
+          <li>
+            <Link href="/leadership_circle" prefetch>
+              <a>Leadership Circle</a>
+            </Link>
+          </li>
+        </li>
       </ul>
     </nav>
   );

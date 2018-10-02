@@ -9,32 +9,36 @@
     "create-component": "node scripts/createComponent/createComponent.js",
     "dev": "next",
     "export": "next export",
-    "format-all": "yarn format:scripts && yarn format:styles",
+    "format": "yarn format:scripts && yarn format:styles",
     "format:scripts": "prettier --write \"**/*.js\" && eslint --fix \"**/*.js\"",
     "format:styles": "prettier --write \"**/*.css\" && stylelint --fix \"**/*.css\"",
     "lint:scripts": "eslint \"**/*.js\"",
     "lint:styles": "stylelint \"**/*.css\"",
     "lint": "yarn lint:scripts && yarn lint:styles",
     "now-build": "echo 'Built on Travis CI'",
-    "precommit": "lint-staged && yarn test",
+    "precommit": "lint-staged && yarn test:changes",
     "start": "next start",
     "storybook": "start-storybook -s ./static -p 9001 -c .storybook",
-    "test:ci": "NODE_ENV=test BABEL_ENV=test jest --ci --coverage",
-    "test:update-snaps": "NODE_ENV=test BABEL_ENV=test jest -u",
-    "test": "NODE_ENV=test BABEL_ENV=test jest"
+    "test": "cross-env NODE_ENV=test BABEL_ENV=test jest",
+    "test:ci": "cross-env NODE_ENV=test BABEL_ENV=test jest --ci --coverage",
+    "test:changes": "cross-env NODE_ENV=test BABEL_ENV=test jest --changedSince master",
+    "test:changes:watch": "cross-env NODE_ENV=test BABEL_ENV=test jest --changedSince master --watch",
+    "test:update-snaps": "cross-env NODE_ENV=test BABEL_ENV=test jest -u"
   },
   "lint-staged": {
     "*.js": [
       "prettier --write",
-      "eslint --fix"
+      "eslint --fix",
+      "git add"
     ],
     "*.css": [
       "prettier --write",
-      "stylelint --fix"
+      "stylelint --fix",
+      "git add"
     ]
   },
   "dependencies": {
-    "@babel/core": "7.1.0",
+    "@babel/core": "7.1.2",
     "@storybook/addon-a11y": "^3.4.11",
     "@storybook/addon-actions": "^3.4.11",
     "@storybook/addon-backgrounds": "^3.4.11",
@@ -56,7 +60,7 @@
     "express": "^4.16.3",
     "jwt-decode": "^2.2.0",
     "lodash": "^4.17.11",
-    "next": "^7.0.0",
+    "next": "^7.0.1",
     "path": "^0.12.7",
     "postcss-export-custom-variables": "^1.0.0",
     "postcss-import": "^12.0.0",
@@ -66,36 +70,36 @@
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-ga": "^2.5.3",
-    "react-modal": "^3.5.1",
+    "react-modal": "^3.6.1",
     "react-scroll": "^1.7.10",
     "react-svg-loader": "^2.1.0",
-    "react-youtube": "^7.6.0",
+    "react-youtube": "^7.7.0",
     "style-loader": "^0.23.0",
     "universal-cookie": "^3.0.4",
-    "webpack": "^4.19.1"
+    "webpack": "^4.20.2"
   },
   "devDependencies": {
-    "babel-eslint": "^9.0.0",
+    "babel-eslint": "^10.0.1",
     "babel-jest": "^23.6.0",
     "cross-env": "^5.2.0",
     "enzyme": "^3.6.0",
     "enzyme-adapter-react-16": "^1.5.0",
     "enzyme-to-json": "^3.3.4",
-    "eslint": "5.6.0",
+    "eslint": "5.6.1",
     "eslint-config-airbnb": "^17.1.0",
-    "eslint-config-prettier": "^3.0.0",
+    "eslint-config-prettier": "^3.1.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-react": "^7.11.1",
     "husky": "0.14.3",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^23.6.0",
-    "jest-enzyme": "6.0.5",
+    "jest-enzyme": "6.1.2",
     "lint-staged": "^7.3.0",
     "prettier": "^1.14.3",
     "react-addons-test-utils": "^15.6.2",
     "react-test-renderer": "^16.5.2",
-    "stylelint": "^9.5.0",
+    "stylelint": "^9.6.0",
     "stylelint-config-standard": "^18.2.0",
     "webpack-bundle-analyzer": "^3.0.2"
   }

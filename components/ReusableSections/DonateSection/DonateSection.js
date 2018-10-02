@@ -1,8 +1,8 @@
 import React from 'react';
 import { donateLink, s3 } from 'common/constants/urls';
-import Section from 'common/components/Section/Section';
-import Button from 'common/components/Button/Button';
-import OutboundLink from 'common/components/OutboundLink/OutboundLink';
+import Section from 'components/_common_/Section/Section';
+import Button from 'components/_common_/Button/Button';
+import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
 import styles from './DonateSection.css';
 
 function DonateSection() {
