@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 import getValue from 'lodash/get';
-import config from 'config/environment';
+import config from 'common/config/environment';
 import * as CookieHelpers from 'common/utils/cookie-utils';
 import Form from 'components/_common_/Form/Form';
-import FormZipCode from 'components/_common_/Form/FormZipCode';
-import FormPassword from 'components/_common_/FormPassword/FormPassword';
-import FormButton from 'components/_common_/FormButton/FormButton';
+import FormZipCode from 'components/_common_/Form/FormZipCode/FormZipCode';
+import Button from 'components/_common_/Button/Button';
+import FormPassword from 'components/_common_/Form/FormPassword/FormPassword';
 import Section from 'components/_common_/Section/Section';
+
 import styles from './SocialLogin.css';
 
 class SocialLogin extends Component {
@@ -180,14 +181,13 @@ class SocialLogin extends Component {
             </ul>
           )}
           {state.isLoading ? (
-            <FormButton className={styles.joinButton} text="Loading..." disabled theme="grey" />
+            <Button className={styles.joinButton} disabled theme="secondary">
+              Loading...
+            </Button>
           ) : (
-            <FormButton
-              className={styles.joinButton}
-              text="Join"
-              onClick={this.handleOnClick}
-              theme="red"
-            />
+            <Button className={styles.joinButton} onClick={this.handleOnClick} theme="primary">
+              Join
+            </Button>
           )}
         </Form>
       </Section>

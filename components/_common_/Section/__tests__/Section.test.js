@@ -18,6 +18,7 @@ describe('Section', () => {
         style={{ color: 'navy' }}
         theme="grayLight"
         title="Test"
+        contentClassName="TestClassName"
       >
         Test Children 2
       </Section>,
@@ -46,5 +47,9 @@ describe('Section', () => {
         Test Children 5
       </Section>,
     );
+  });
+
+  test('should render properly with a common use case 3', () => {
+    createSnapshotTest(<Section contentClassName="TestClassName">Test Children 5</Section>);
   });
 });

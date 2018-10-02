@@ -12,7 +12,7 @@ exports[`Storyshots Common/Section default 1`] = `
     Section Title
   </h2>
   <div
-    className="content"
+    className="content "
   >
     Section content!
   </div>

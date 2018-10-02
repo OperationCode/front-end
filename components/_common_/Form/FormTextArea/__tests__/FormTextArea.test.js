@@ -2,6 +2,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
+import { mount } from 'enzyme';
 
 import FormTextArea from '../FormTextArea';
 
@@ -9,11 +10,18 @@ describe('FormTextArea', () => {
   test('should render with just required props passed', () => {
     createSnapshotTest(<FormTextArea />);
   });
-  test('should call onChange handler on changes', async () => {
-    const formTextAreaInstance = mount(<FormTextArea onChange={jest.fn()} />);
-    expect(formTextAreaInstance.state().value).toEqual('');
-    formTextAreaInstance.find('textarea').simulate('change', { target: { value: 'test change' } });
-    formTextAreaInstance.update();
-    expect(formTextAreaInstance.state().value).toEqual('test change');
+
+  test('should render when passed a placeholder', () => {
+    createSnapshotTest(<FormTextArea placeholder="testplaceholder" />);
+  });
+
+  test('should call onChange from props after onChange', () => {
+    const onChangeMock = jest.fn();
+    const wrap = mount(<FormTextArea onChange={onChangeMock} id="test" />);
+    wrap.find('textarea').simulate('change', {
+      target: { value: 'Test' },
+    });
+    expect(onChangeMock).toHaveBeenCalledTimes(1);
+    expect(onChangeMock).toBeCalledWith('Test');
   });
 });
