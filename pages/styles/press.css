@@ -1,0 +1,87 @@
+.flexContainer {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  padding: 15px 0 0 0;
+}
+
+.flexContainer > div {
+  padding: 0 30px 50px 30px;
+}
+
+.column {
+  width: 375px;
+}
+
+.column > h4 {
+  text-align: center;
+}
+
+.brandingLink {
+  font-size: 1.5rem;
+}
+
+.header {
+  text-align: center;
+}
+
+@media screen and (min-width: 415px) and (max-width: 1280px) {
+  .column {
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .column {
+    width: 250px;
+  }
+}
+
+.pressContainer p {
+  font-size: 1.1rem;
+}
+
+.customContent {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: column;
+  flex-flow: column;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 80%;
+}
+
+.logos {
+  padding-top: 15px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.logos > .imgBox {
+  padding: 25px;
+  height: auto;
+  width: 45%;
+  max-width: 560px;
+}
+
+.logos a {
+  color: #249cbc;
+  text-decoration: none;
+}
+
+@media screen and (min-width: 415px) and (max-width: 1280px) {
+  .logos > .imgBox {
+    width: 350px;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .logos > .imgBox {
+    width: 300px;
+  }
+}
