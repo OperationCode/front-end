@@ -13,15 +13,7 @@ describe('FormSelect', () => {
       />,
     );
   });
-
-  test('should render when passing only required props', () => {
-    createSnapshotTest(
-      <FormSelect
-        options={[{ label: 'test 1', value: 'TEST1' }, { label: 'test 2', value: 'TEST2' }]}
-      />,
-    );
-  });
-
+  
   test('should render when passed a prompt and options', () => {
     createSnapshotTest(
       <FormSelect
