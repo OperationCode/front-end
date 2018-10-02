@@ -5,12 +5,12 @@ import styles from './FormTextArea.css';
 class FormTextArea extends Component {
   static propTypes = {
     onChange: PropTypes.func,
-    placeHolder: PropTypes.string,
+    placeholder: PropTypes.string,
   };
 
   static defaultProps = {
     onChange: undefined,
-    placeHolder: '',
+    placeholder: '',
   };
 
   state = { value: '' };
@@ -32,7 +32,7 @@ class FormTextArea extends Component {
         <textarea
           className={styles.text_area}
           onChange={this.handleChange}
-          placeholder={props.placeHolder}
+          placeholder={props.placeholder}
         />
       </div>
     );

@@ -5,7 +5,7 @@ exports[`FormTextArea should render when passed a placeholder 1`] = `
   <textarea
     className="text_area"
     onChange={[Function]}
-    placeholder=""
+    placeholder="testplaceholder"
   />
 </div>
 `;
