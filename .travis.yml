@@ -14,7 +14,7 @@ install:
   - if [[ $TRAVIS_BRANCH == greenkeeper* ]]; then 
       yarn install --silent; 
     else
-      yarn --silent --pure-lockfile --production=true;
+      yarn --silent --pure-lockfile;
     fi
 
 before_script:
