@@ -39,6 +39,8 @@ class ArticleGroup extends Component {
                 </li>
               );
             }
+
+            return null;
           })}
         </ul>
         {articles.length > numberOfInitiallyVisibleLinks && (
