@@ -30,14 +30,16 @@ after_script:
 
 deploy:
   - provider: script
-    # Despite not doing anything, script is necessary to get all Travis CI working properly.
     script: echo 'No build on feature branches. Now deploys static exports automatically.'
     skip_cleanup: true
     on:
       all_branches: true
       master: false
   - provider: script
-    script: yarn add now && now --local-config="./now.master.json" --token $NOW_TOKEN
+    script:
+      - yarn add now
+      - now --local-config="./now.master.json" --token $NOW_TOKEN
+      - now alias --token $NOW_TOKEN
     skip_cleanup: true
     on:
       master: true
