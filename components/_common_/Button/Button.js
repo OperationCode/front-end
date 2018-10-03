@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import ReactGA from 'react-ga';
 import { googleAnalyticsEventPropType } from 'common/constants/custom-props';
+import { getDataAttributes, getAriaAttributes } from 'common/utils/prop-utils';
 import styles from './Button.css';
-import { getDataAttributes, getAriaAttributes } from '../../../common/utils/prop-utils';
 
 class Button extends Component {
   static propTypes = {
@@ -17,7 +17,7 @@ class Button extends Component {
     tabIndex: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     theme: PropTypes.oneOf(['primary', 'secondary', 'slate']),
     type: PropTypes.oneOf(['button', 'reset', 'submit']),
-    datum: PropTypes.any, // eslint-disable-line
+    datum: PropTypes.any, // eslint-disable-line react/forbid-prop-types
   };
 
   static defaultProps = {
