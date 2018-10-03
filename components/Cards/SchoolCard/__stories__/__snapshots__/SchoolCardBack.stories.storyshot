@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Cards/SchoolCard/Back default 1`] = `
+<article
+  className="Card SchoolCard backCard"
+>
+  <button
+    className="CloseButton"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    <test-file-mock
+      className="icon"
+    />
+  </button>
+  <img
+    alt=""
+    src="https://s3.amazonaws.com/operationcode-assets/codeSchoolLogos/general_assembly.jpg"
+  />
+  <span
+    className="disclaimer"
+  >
+    <b>
+      *
+    </b>
+     denotes a location that accepts the GI Bill
+  </span>
+  <hr
+    className="divider"
+  />
+  <ul
+    className="locations"
+  >
+    <li>
+      Los Angeles, CA
+    </li>
+    <li>
+      Joshua Tree, CA
+      *
+    </li>
+    <li>
+      Boston, MA
+    </li>
+    <li>
+      New York, NY
+    </li>
+    <li>
+      Portland, OR
+    </li>
+    <li>
+      Seattle, WA
+      *
+    </li>
+  </ul>
+</article>
+`;
