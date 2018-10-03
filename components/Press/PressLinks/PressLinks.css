@@ -12,17 +12,17 @@
   padding-top: 15px;
 }
 
-.flexContainer {
+.logos .articlesGroup .areAllLinksVisibleButton {
+  min-width: 100px;
+  line-height: 0.5;
+  font-size: 0.9rem;
+  margin: auto;
+}
+
+.logos .flexContainer {
   width: 100%;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
   padding: 15px 0 0 0;
-}
-
-button.areAllLinksVisibleButton {
-  min-width: 100px;
-  line-height: 0.5;
-  font-size: 0.9rem;
-  margin: auto;
 }
