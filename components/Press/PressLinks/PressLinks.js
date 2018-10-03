@@ -16,11 +16,11 @@ function PressLinks({ numberOfInitiallyVisibleLinks }) {
   return (
     <div className={styles.logos}>
       <div className={styles.flexContainer}>
-        {Object.keys(Articles).map(group => (
+        {Object.keys(Articles).map(region => (
           <ArticleGroup
-            key={`ArticleGroup_${group}`}
-            title={group}
-            links={Articles[group]}
+            key={`ArticleGroup_${region}`}
+            region={region}
+            articles={Articles[region]}
             numberOfInitiallyVisibleLinks={numberOfInitiallyVisibleLinks}
           />
         ))}

@@ -6,14 +6,14 @@ import styles from './ArticleGroup.css';
 
 class ArticleGroup extends Component {
   static propTypes = {
-    links: PropTypes.arrayOf(
+    articles: PropTypes.arrayOf(
       PropTypes.shape({
         title: PropTypes.string.isRequired,
         url: PropTypes.string.isRequired,
       }),
     ).isRequired,
     numberOfInitiallyVisibleLinks: PropTypes.number.isRequired,
-    title: PropTypes.string.isRequired,
+    region: PropTypes.string.isRequired,
   };
 
   state = {
@@ -26,12 +26,12 @@ class ArticleGroup extends Component {
 
   render() {
     const { areAllLinksVisible } = this.state;
-    const { title, links, numberOfInitiallyVisibleLinks } = this.props;
+    const { articles, region, numberOfInitiallyVisibleLinks } = this.props;
     return (
       <div className={styles.articlesGroup}>
-        <h2>{title}</h2>
+        <h2>{region}</h2>
         <ul>
-          {links.map((link, index) => {
+          {articles.map((link, index) => {
             if (index >= numberOfInitiallyVisibleLinks && !areAllLinksVisible) {
               return null;
             }
@@ -42,7 +42,7 @@ class ArticleGroup extends Component {
             );
           })}
         </ul>
-        {links.length > numberOfInitiallyVisibleLinks && (
+        {articles.length > numberOfInitiallyVisibleLinks && (
           <Button // aria needs to be passed and accepted by the button component
             aria-pressed={areAllLinksVisible} // eslint-disable-line
             className={styles.areAllLinksVisibleButton}

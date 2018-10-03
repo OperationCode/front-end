@@ -7,8 +7,8 @@ exports[`PressLinks it should render properly no props 1`] = `
   <div
     className="flexContainer"
   >
-    <ArticleItem
-      links={
+    <ArticleGroup
+      articles={
         Array [
           Object {
             "title": "New program aims to help veterans land jobs in tech industry",
@@ -25,10 +25,10 @@ exports[`PressLinks it should render properly no props 1`] = `
         ]
       }
       numberOfInitiallyVisibleLinks={5}
-      title="NYC"
+      region="NYC"
     />
-    <ArticleItem
-      links={
+    <ArticleGroup
+      articles={
         Array [
           Object {
             "title": "How Tech Pros Can Volunteer in Fun Ways",
@@ -65,10 +65,10 @@ exports[`PressLinks it should render properly no props 1`] = `
         ]
       }
       numberOfInitiallyVisibleLinks={5}
-      title="Boston"
+      region="Boston"
     />
-    <ArticleItem
-      links={
+    <ArticleGroup
+      articles={
         Array [
           Object {
             "title": "TechHire Educator Spotlight: Operation Code",
@@ -209,7 +209,7 @@ exports[`PressLinks it should render properly no props 1`] = `
         ]
       }
       numberOfInitiallyVisibleLinks={5}
-      title="General"
+      region="General"
     />
   </div>
 </div>

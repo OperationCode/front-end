@@ -8,8 +8,8 @@ describe('ArticleGroup', () => {
   test('should render properly with required props', () =>
     createShallowSnapshotTest(
       <ArticleGroup
-        title="test"
-        links={[{ title: 'Example', url: 'https://example.com' }]}
+        region="test"
+        articles={[{ title: 'Example', url: 'https://example.com' }]}
         numberOfInitiallyVisibleLinks={1}
       />,
     ));
@@ -17,8 +17,8 @@ describe('ArticleGroup', () => {
   test('should render properly with required props and 3 links and a button', () =>
     createShallowSnapshotTest(
       <ArticleGroup
-        title="test"
-        links={[
+        region="test"
+        articles={[
           { title: 'Example', url: 'https://example.com' },
           { title: 'Example', url: 'https://example.com' },
           { title: 'Example', url: 'https://example.com' },
@@ -30,8 +30,8 @@ describe('ArticleGroup', () => {
   test('should setState when clicking Show All button', () => {
     const ArticleGroupShallowInstance = shallow(
       <ArticleGroup
-        title="test"
-        links={[
+        region="test"
+        articles={[
           { title: 'Example', url: 'https://example.com' },
           { title: 'Example', url: 'https://example.com' },
           { title: 'Example', url: 'https://example.com' },
@@ -48,8 +48,8 @@ describe('ArticleGroup', () => {
   test('should not create a button if not enough links', () => {
     const wrap = mount(
       <ArticleGroup
-        title="test"
-        links={[{ title: 'Example', url: 'https://example.com' }]}
+        region="test"
+        articles={[{ title: 'Example', url: 'https://example.com' }]}
         numberOfInitiallyVisibleLinks={5}
       />,
     );
@@ -60,8 +60,8 @@ describe('ArticleGroup', () => {
   test('should create a button if enough links are available', () => {
     const wrap = mount(
       <ArticleGroup
-        title="test"
-        links={[
+        region="test"
+        articles={[
           { title: 'Example', url: 'https://example.com' },
           { title: 'Example', url: 'https://example.com' },
           { title: 'Example', url: 'https://example.com' },
