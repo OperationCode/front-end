@@ -1,6 +1,6 @@
 {
-  "name": "operation-code-new",
-  "alias": "new-operation-code",
+  "name": "operation-code",
+  "alias": "operation-code.now.sh",
   "build": {
     "env": {
       "BABEL_ENV": "production",
