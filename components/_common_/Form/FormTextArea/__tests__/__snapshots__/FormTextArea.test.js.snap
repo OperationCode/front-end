@@ -1,5 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`FormTextArea should render when passed a placeholder 1`] = `
+<div>
+  <textarea
+    className="text_area"
+    onChange={[Function]}
+    placeholder="testplaceholder"
+  />
+</div>
+`;
+
 exports[`FormTextArea should render with just required props passed 1`] = `
 <div>
   <textarea

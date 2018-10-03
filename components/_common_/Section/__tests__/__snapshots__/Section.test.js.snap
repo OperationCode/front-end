@@ -12,7 +12,7 @@ exports[`Section should render properly with a common use case 1 1`] = `
     Test 3
   </h2>
   <div
-    className="content"
+    className="content "
   >
     Test Children 4
   </div>
@@ -31,7 +31,21 @@ exports[`Section should render properly with a common use case 2 1`] = `
     Test 4
   </h2>
   <div
-    className="content"
+    className="content "
+  >
+    Test Children 5
+  </div>
+</section>
+`;
+
+exports[`Section should render properly with a common use case 3 1`] = `
+<section
+  className="Section gray"
+  style={Object {}}
+>
+  
+  <div
+    className="content TestClassName"
   >
     Test Children 5
   </div>
@@ -54,7 +68,7 @@ exports[`Section should render properly with all props assigned 1`] = `
     Test
   </h2>
   <div
-    className="content"
+    className="content TestClassName"
   >
     Test Children 2
   </div>
@@ -73,7 +87,7 @@ exports[`Section should render properly with the most common use case 1`] = `
     Test 2
   </h2>
   <div
-    className="content"
+    className="content "
   >
     Test Children 3
   </div>
@@ -87,7 +101,7 @@ exports[`Section should render with just required props passed 1`] = `
 >
   
   <div
-    className="content"
+    className="content "
   >
     Test Children
   </div>

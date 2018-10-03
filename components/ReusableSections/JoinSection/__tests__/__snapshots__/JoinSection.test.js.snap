@@ -3,6 +3,7 @@
 exports[`JoinSection it should render properly with no props 1`] = `
 <Section
   className="JoinSection"
+  contentClassName=""
   hasHeadingLines={false}
   id=""
   style={
@@ -30,8 +31,10 @@ exports[`JoinSection it should render properly with no props 1`] = `
         }
       }
       className=""
+      datum=""
       disabled={false}
       fullWidth={false}
+      onClick={[Function]}
       tabIndex={0}
       theme="secondary"
       type="button"

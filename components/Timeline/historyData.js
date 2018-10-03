@@ -96,7 +96,7 @@ export default {
   ],
   2014: [
     {
-      title: '',
+      title: 'Operation Code Is A Go',
       content: (
         <p>
           At{' '}
@@ -364,31 +364,6 @@ export default {
       title: 'SignalConf Sponsorship',
       content: (
         <p>
-          Global hospitality provider,{' '}
-          <OutboundLink
-            analyticsEventLabel="History Link"
-            href="https://www.airbnb.com/"
-            alt="AirBnB"
-          >
-            AirBnB
-          </OutboundLink>{' '}
-          sponsors lodging for Operation Code members attending SignalConf in San Francisco.{' '}
-          <OutboundLink
-            analyticsEventLabel="History Link"
-            href="https://www.instagram.com/p/21p5bFxUjd/?taken-by=davidcmolina"
-            alt="Link to Instagram photo of Operation Code at SignalConf"
-          >
-            They also invited our members to tour their headquarters
-          </OutboundLink>{' '}
-          ! Airbnb forges their partnership with Operation Code in steel by offering sponsored
-          lodgings for veterans interviewing for a career in tech.
-        </p>
-      ),
-    },
-    {
-      title: 'SignalConf Sponsorship',
-      content: (
-        <p>
           <OutboundLink
             analyticsEventLabel="History Link"
             href="https://www.twilio.com/signal/2015"
@@ -419,25 +394,6 @@ export default {
     },
     {
       title: 'Board Of Directors Formed',
-      content: (
-        <p>
-          To meet growth demands, Operation Code{' '}
-          <OutboundLink
-            analyticsEventLabel="History Link"
-            href="https://twitter.com/operation_code/status/614443994769027072"
-            alt="Old Operation Code tweet"
-          >
-            separates from its financial supporter
-          </OutboundLink>{' '}
-          . The Cogostar Foundation - Operation Code&apos;s current sponsor - helps to reorganize a
-          new governing Board of Directors, comprised of Josh Carter, Aimee Knight, Nick Frost, Pete
-          Runyon, Laura Gómez, Fernando Paredes, and Elmer Thomas. Operation Code incorporates as an
-          Oregon non-profit organization.
-        </p>
-      ),
-    },
-    {
-      title: 'Stickers Distributed',
       content: (
         <p>
           To meet growth demands, Operation Code{' '}
