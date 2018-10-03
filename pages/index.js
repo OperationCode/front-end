@@ -1,6 +1,5 @@
 // import Link from 'next/link';
 import Head from 'components/head';
-import '../common/styles/globalStyles.css';
 
 export default () => (
   <div>
