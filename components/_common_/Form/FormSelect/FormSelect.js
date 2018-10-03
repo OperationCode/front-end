@@ -22,54 +22,55 @@ class FormSelect extends Component {
     validationFunc: undefined,
   };
 
-  onChange(e) {
-    const { onChange, validationFunc } = this.props;
-
-    let isValid = true;
-    if (validationFunc) {
-      isValid = validationFunc(e);
-    }
-
-    if (isValid && onChange) {
-      onChange(e);
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: props.prompt ? '' : props.options[0].value,
+    };
   }
 
-  buildOptions = () => {
-    const { prompt, options } = this.props;
+  onBlur = () => {
+    const { onChange } = this.props;
+    const { value } = this.state;
+    onChange(value);
+  };
 
-    const opts = [];
-
-    if (prompt) {
-      const blankOptionJSX = (
-        <option key="prompt" value="">
-          {prompt}
-        </option>
-      );
-
-      opts.push(blankOptionJSX);
+  onChange = e => {
+    if (this.changeIsValid(e)) {
+      this.setState({ value: e.target.value });
     }
+  };
 
-    options.forEach(optionObject => {
-      const optionJSX = (
-        <option key={optionObject.value} value={optionObject.value}>
-          {optionObject.label}
-        </option>
-      );
+  changeIsValid = e => {
+    const { validationFunc } = this.props;
+    if (validationFunc) {
+      return validationFunc(e);
+    }
+    return true;
+  };
 
-      opts.push(optionJSX);
-    });
+  renderPrompt = () => {
+    const { prompt } = this.props;
+    return prompt ? this.renderOption(prompt, 'prompt', '') : null;
+  };
 
-    return opts;
+  renderOption = (label, key, value = '') => {
+    const { value: stateValue } = this.state;
+    return (
+      <option key={key} value={value} selected={stateValue === value}>
+        {label}
+      </option>
+    );
   };
 
   render() {
-    const { props } = this;
+    const { options, id } = this.props;
 
     return (
       <div>
-        <select id={props.id} onBlur={e => this.onChange(e)}>
-          {this.buildOptions()}
+        <select id={id} onBlur={this.onBlur} onChange={this.onChange}>
+          {this.renderPrompt()}
+          {options.map(o => this.renderOption(o.label, o.value, o.value))}
         </select>
       </div>
     );

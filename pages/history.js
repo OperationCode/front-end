@@ -1,4 +1,5 @@
 import React from 'react';
+import Head from 'components/head';
 import { s3 } from 'common/constants/urls';
 import Section from 'components/_common_/Section/Section';
 import HeroBanner from 'components/_common_/HeroBanner/HeroBanner';
@@ -8,6 +9,8 @@ import styles from './styles/history.css';
 export default function() {
   return (
     <>
+      <Head title="History" />
+
       <HeroBanner
         className={styles.hero}
         imageSource={`${s3}heroBanners/colin-powell.jpg`}

@@ -6,23 +6,23 @@ exports[`PressPhotos it should render properly no props 1`] = `
 >
   <img
     alt="David Molina speaks to Code Conference LA 2016 attendees."
-    src="/static/images/CodeConferenceLA.jpg"
+    src="https://s3.amazonaws.com/operationcode-assets/photo_code-conference-la.jpg"
   />
   <img
     alt="Operation Code members pose at Red Hat Summit 2017"
-    src="/static/images/RedHat-Summit.jpg"
+    src="https://s3.amazonaws.com/operationcode-assets/photo_red-hat-summit-1.jpg"
   />
   <img
     alt="Conrad Hollomon presents in front of the Node Summit 2016 audience."
-    src="/static/images/Node-Summit.jpg"
+    src="https://s3.amazonaws.com/operationcode-assets/photo_node-summit.jpg"
   />
   <img
     alt="Operation Code developers pose at AngelHack Boston 2017."
-    src="/static/images/AngelHack-Boston.jpg"
+    src="https://s3.amazonaws.com/operationcode-assets/photo_angelhack-boston.jpg"
   />
   <img
     alt="Ken Collier leads a discussion at the Utah Operation Code meetup."
-    src="/static/images/Utah-Meetup.jpg"
+    src="https://s3.amazonaws.com/operationcode-assets/photo_utah-meetup.jpg"
   />
 </div>
 `;

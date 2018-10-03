@@ -1,6 +1,7 @@
 /* eslint-env jest */
 import React from 'react';
 import { mount, shallow } from 'enzyme';
+import ReactGA from 'react-ga';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 
 import Button from '../Button';
@@ -69,5 +70,25 @@ describe('Button', () => {
     ButtonShallowInstance.instance().clickHandler();
 
     expect(onClickMock).toHaveBeenCalledTimes(1);
+  });
+
+  test('should call ReactGA when in prod environment', () => {
+    /* eslint-disable no-console */
+    ReactGA.initialize('foo', { testMode: true });
+
+    process.env.NODE_ENV = 'production';
+
+    const ButtonShallowInstance = shallow(<Button>Testing</Button>);
+
+    ButtonShallowInstance.instance().clickHandler();
+
+    expect(ReactGA.testModeAPI.calls).toContainEqual([
+      'send',
+      {
+        eventAction: 'Button Selected',
+        eventCategory: 'Interactions',
+        hitType: 'event',
+      },
+    ]);
   });
 });

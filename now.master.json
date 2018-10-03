@@ -1,16 +1,11 @@
 {
-  "alias": "operationcode",
+  "alias": "operationcode.org",
   "build": {
     "env": {
       "BABEL_ENV": "production",
       "NODE_ENV": "production"
     }
   },
-  "files": [
-    ".next",
-    "static",
-    "package.json",
-    "yarn.lock"
-  ],
+  "files": [".next", "static", "package.json", "yarn.lock"],
   "public": true
 }
