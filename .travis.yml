@@ -36,7 +36,7 @@ deploy:
       all_branches: true
       master: false
   - provider: script
-    script: yarn add now && now --local-config=./now.master.json && --token $NOW_TOKEN && now alias --token $NOW_TOKEN
+    script: yarn add now && now --local-config=./now.master.json --token $NOW_TOKEN && now alias --token $NOW_TOKEN
     skip_cleanup: true
     on:
       master: true
