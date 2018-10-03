@@ -20,6 +20,11 @@ class LinkGroup extends Component {
     ShowAll: false,
   };
 
+  clickHandler = () => {
+    const { ShowAll } = this.state;
+    this.setState({ ShowAll: !ShowAll });
+  };
+
   render() {
     const { ShowAll } = this.state;
     const { title, links, MaxLinks } = this.props;
@@ -43,7 +48,7 @@ class LinkGroup extends Component {
             aria-pressed={ShowAll} // this needs to be passed and accepted by the button component
             className={styles.ShowAllButton}
             theme={ShowAll ? 'slate' : 'primary'}
-            onClick={() => this.setState({ ShowAll: !ShowAll })}
+            onClick={this.clickHandler}
           >
             {ShowAll ? 'Show Less' : 'Show All'}
           </Button>
