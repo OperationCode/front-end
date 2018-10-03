@@ -1,5 +1,5 @@
 # This Dockerfile is only for static builds generated via pull requests
-FROM mhart/alpine-node:8
+FROM mhart/alpine-node:8.12.0
 
 # We store all our files in /usr/src to perform the build
 WORKDIR /usr/src
