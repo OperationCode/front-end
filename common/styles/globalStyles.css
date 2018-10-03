@@ -18,7 +18,7 @@ html {
   height: 100%;
   margin: 0;
   padding: 0;
-  font-family: "Noto Serif", sans-serif;
+  font-family: "Noto Serif", serif;
   font-size: 16px;
   font-weight: normal;
   color: #47566b;
@@ -36,7 +36,6 @@ h3,
 h4,
 h5,
 h6,
-a,
 button {
   font-family: "PF Din Display", Arial, sans-serif;
 }
