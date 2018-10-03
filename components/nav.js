@@ -23,11 +23,11 @@ function Nav() {
           <Link href="/jobs" prefetch>
             <a>Jobs</a>
           </Link>
-          <li>
-            <Link href="/leadership_circle" prefetch>
-              <a>Leadership Circle</a>
-            </Link>
-          </li>
+        </li>
+        <li>
+          <Link href="/leadership_circle" prefetch>
+            <a>Leadership Circle</a>
+          </Link>
         </li>
       </ul>
     </nav>
