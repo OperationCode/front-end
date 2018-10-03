@@ -36,7 +36,12 @@ class ArticleGroup extends Component {
       
             return isArticleVisible ? (
               <li key={`GroupLink_${link.url}`}>
-                <OutboundLink href={link.url}>{link.title}</OutboundLink>
+                <OutboundLink
+                  href={link.url}
+                  analyticsEventLabel="Press Article"
+                >
+                  {link.title}
+                </OutboundLink>
               </li>
             ) : null;
           })}
