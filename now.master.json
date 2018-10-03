@@ -1,5 +1,5 @@
 {
-  "alias": "operationcode.org",
+  "alias": "new-operation-code",
   "build": {
     "env": {
       "BABEL_ENV": "production",
