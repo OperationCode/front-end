@@ -41,8 +41,9 @@ class Button extends Component {
       // eslint-disable-next-line no-console
       console.log('Analytics Disabled', props.analyticsObject);
     }
-
-    return props.onClick;
+    if (typeof props.onClick === 'function') {
+      props.onClick();
+    }
   };
 
   render() {

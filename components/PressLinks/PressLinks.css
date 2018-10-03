@@ -1,0 +1,34 @@
+.logos a {
+  color: #249cbc;
+  text-decoration: none;
+}
+
+.logos .articlesGroup > h2 {
+  text-align: center;
+}
+
+.logos .articlesGroup {
+  width: 375px;
+  padding-top: 15px;
+}
+
+@media screen and (max-width: 414px) {
+  .logos .articlesGroup {
+    width: 275px;
+  }
+}
+
+.flexContainer {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  padding: 15px 0 0 0;
+}
+
+button.ShowAllButton {
+  min-width: 100px;
+  line-height: 0.5;
+  font-size: 0.9rem;
+  margin: auto;
+}

@@ -4,6 +4,7 @@ import Head from 'components/head';
 import PressVideos from 'components/PressVideos/PressVideos';
 import PressPhotos from 'components/PressPhotos/PressPhotos';
 import CivicXBadge from 'components/CivicXBadge/CivicXBadge';
+import PressLinks from 'components/PressLinks/PressLinks';
 import Section from 'components/_common_/Section/Section';
 import styles from './styles/press.css';
 
@@ -85,13 +86,17 @@ export default () => (
       <PressPhotos />
     </Section>
 
-    <Section contentClassName={styles.customContent} title="Branding" theme="grayLight">
+    <Section contentClassName={styles.customContent} title="In The News" theme="grayLight">
+      <PressLinks />
+    </Section>
+
+    <Section contentClassName={styles.customContent} title="Branding" theme="white">
       <div className={styles.logos}>
         <Link href="/branding">View Our Branding</Link>
       </div>
     </Section>
 
-    <Section contentClassName={styles.customContent} headingLines={false} theme="white">
+    <Section contentClassName={styles.customContent} headingLines={false} theme="grayLight">
       <h6 className={styles.header}>
         Operation Code is a graduate of the following startup accelerators:
       </h6>
