@@ -4,7 +4,7 @@ import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
 import Button from 'components/_common_/Button/Button';
 import styles from './ArticleGroup.css';
 
-class ArticleItem extends Component {
+class ArticleGroup extends Component {
   static propTypes = {
     links: PropTypes.arrayOf(
       PropTypes.shape({
@@ -57,4 +57,4 @@ class ArticleItem extends Component {
   }
 }
 
-export default ArticleItem;
+export default ArticleGroup;
