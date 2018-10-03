@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import Head from 'components/head';
 import Section from 'components/_common_/Section/Section';
-import { Videos, Photos, CivicXBadge, PressLinks } from 'components/Press';
+import { Videos, Photos, CivicXBadge, Links } from 'components/Press';
 import styles from './styles/press.css';
 
 export default () => (
@@ -86,7 +86,7 @@ export default () => (
     </Section>
 
     <Section contentClassName={styles.customContent} title="In The News" theme="grayLight">
-      <PressLinks />
+      <Links />
     </Section>
 
     <Section contentClassName={styles.customContent} title="Branding" theme="white">
