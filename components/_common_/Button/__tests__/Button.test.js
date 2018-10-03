@@ -13,16 +13,20 @@ describe('Button', () => {
 
   test('should render properly with some props assigned', () => {
     createSnapshotTest(
-      <Button
-        theme="secondary"
-        data-custom-attr="custom stuff here"
-        disabled
-        fullWidth
-        type="submit"
-      >
+      <Button theme="secondary" disabled fullWidth type="submit">
         Test
       </Button>,
     );
+  });
+
+  test('should spread data and aria props', () => {
+    const wrapper = shallow(
+      <Button aria-label="test" data-attr="test">
+        Test
+      </Button>,
+    );
+    expect(wrapper.prop('aria-label')).toEqual('test');
+    expect(wrapper.prop('data-attr')).toEqual('test');
   });
 
   test('should render without a generated span when children is PropTypes.node', () => {
@@ -62,6 +66,14 @@ describe('Button', () => {
 
     expect(console.log.mock.calls.length).toEqual(1);
     /* eslint-enable no-console */
+  });
+
+  test('call props.onClick when button is clicked', () => {
+    const onClickMock = jest.fn();
+    const ButtonShallowInstance = shallow(<Button onClick={onClickMock}>Test</Button>);
+    ButtonShallowInstance.instance().clickHandler();
+
+    expect(onClickMock).toHaveBeenCalledTimes(1);
   });
 
   test('should call ReactGA when in prod environment', () => {

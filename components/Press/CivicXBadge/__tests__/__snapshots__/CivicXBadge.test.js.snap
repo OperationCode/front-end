@@ -5,7 +5,7 @@ exports[`CivicXBadge it should render properly no props 1`] = `
   <OutboundLink
     analyticsEventLabel="[CivicX Accelerator Badge] http://cvcx.org/veterans-solutions-lab/"
     className=""
-    hasIcon={true}
+    hasIcon={false}
     href="http://cvcx.org/veterans-solutions-lab/"
   >
     <img

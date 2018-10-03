@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import Head from 'components/head';
 import Section from 'components/_common_/Section/Section';
-import { Videos, Photos, CivicXBadge } from 'components/Press';
+import { Videos, Photos, CivicXBadge, Links } from 'components/Press';
 import styles from './styles/press.css';
 
 export default () => (
@@ -77,21 +77,25 @@ export default () => (
       </div>
     </Section>
 
-    <Section title="Videos">
+    <Section contentClassName={styles.customContent} title="Videos" theme="grayLight">
       <Videos />
     </Section>
 
-    <Section title="Photos" theme="white">
+    <Section contentClassName={styles.customContent} title="Photos" theme="white">
       <Photos />
     </Section>
 
-    <Section contentClassName={styles.customContent} title="Branding">
+    <Section contentClassName={styles.customContent} title="In The News" theme="grayLight">
+      <Links />
+    </Section>
+
+    <Section contentClassName={styles.customContent} title="Branding" theme="white">
       <div className={styles.logos}>
         <Link href="/branding">View Our Branding</Link>
       </div>
     </Section>
 
-    <Section contentClassName={styles.customContent} headingLines={false} theme="white">
+    <Section contentClassName={styles.customContent} headingLines={false} theme="grayLight">
       <h6 className={styles.header}>
         Operation Code is a graduate of the following startup accelerators:
       </h6>
