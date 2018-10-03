@@ -12,7 +12,7 @@
     "format": "yarn format:scripts && yarn format:styles",
     "format:scripts": "prettier --write \"**/*.js\" && eslint --fix \"**/*.js\"",
     "format:styles": "prettier --write \"**/*.css\" && stylelint --fix \"**/*.css\"",
-    "lint:scripts": "eslint \"**/*.js\"",
+    "lint:scripts": "eslint --fix \"**/*.js\"",
     "lint:styles": "stylelint \"**/*.css\"",
     "lint": "yarn lint:scripts && yarn lint:styles",
     "now-build": "echo 'Built on Travis CI'",
