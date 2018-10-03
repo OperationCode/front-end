@@ -9,9 +9,6 @@
   },
   "files": [".next", "static", "package.json", "yarn.lock"],
   "type": "docker",
-  "features": {
-    "cloud": "v2"
-  },
   "scale": {
     "all": {
       "min": 1,
