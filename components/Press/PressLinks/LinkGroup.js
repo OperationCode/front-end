@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styles from './PressLinks.css';
-import OutboundLink from '../_common_/OutboundLink/OutboundLink';
-import Button from '../_common_/Button/Button';
+import OutboundLink from '../../_common_/OutboundLink/OutboundLink';
+import Button from '../../_common_/Button/Button';
 
 class LinkGroup extends Component {
   static propTypes = {
