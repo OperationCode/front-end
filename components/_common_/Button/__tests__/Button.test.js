@@ -62,4 +62,12 @@ describe('Button', () => {
     expect(console.log.mock.calls.length).toEqual(1);
     /* eslint-enable no-console */
   });
+
+  test('onClick prop should be called', () => {
+    const onClickMock = jest.fn();
+    const ButtonShallowInstance = shallow(<Button onClick={onClickMock} />);
+    ButtonShallowInstance.instance().clickHandler();
+
+    expect(onClickMock).toHaveBeenCalledTimes(1);
+  });
 });
