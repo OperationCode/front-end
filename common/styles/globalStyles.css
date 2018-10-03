@@ -36,7 +36,8 @@ h3,
 h4,
 h5,
 h6,
-button {
+button,
+footer a {
   font-family: "PF Din Display", Arial, sans-serif;
 }
 

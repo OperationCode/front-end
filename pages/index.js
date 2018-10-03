@@ -1,4 +1,3 @@
-// import Link from 'next/link';
 import Head from 'components/head';
 
 export default () => (

@@ -1,16 +1,16 @@
 import React from 'react';
 import Link from 'next/link';
 import Head from 'components/head';
-import PressVideos from 'components/PressVideos/PressVideos';
-import PressPhotos from 'components/PressPhotos/PressPhotos';
-import CivicXBadge from 'components/CivicXBadge/CivicXBadge';
 import Section from 'components/_common_/Section/Section';
+import { Videos, Photos, CivicXBadge } from 'components/Press';
 import styles from './styles/press.css';
 
 export default () => (
   <>
     <Head title="Press" />
-    <Section className={styles.pressContainer} title="Press" theme="white">
+
+    <Section className={styles.pressContainer} hasHeadingLines={false} theme="white">
+      <h1>Press</h1>
       <p>
         This page is designed to make a journalist&apos;s job easy in writing, blogging, or
         documenting Operation Code. Below you will find targeted information corresponding to common
@@ -78,11 +78,11 @@ export default () => (
     </Section>
 
     <Section title="Videos">
-      <PressVideos />
+      <Videos />
     </Section>
 
     <Section title="Photos" theme="white">
-      <PressPhotos />
+      <Photos />
     </Section>
 
     <Section contentClassName={styles.customContent} title="Branding">
