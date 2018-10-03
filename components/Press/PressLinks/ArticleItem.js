@@ -4,7 +4,7 @@ import styles from './PressLinks.css';
 import OutboundLink from '../../_common_/OutboundLink/OutboundLink';
 import Button from '../../_common_/Button/Button';
 
-class LinkGroup extends Component {
+class ArticleItem extends Component {
   static propTypes = {
     title: PropTypes.string.isRequired,
     links: PropTypes.arrayOf(
@@ -57,4 +57,4 @@ class LinkGroup extends Component {
   }
 }
 
-export default LinkGroup;
+export default ArticleItem;

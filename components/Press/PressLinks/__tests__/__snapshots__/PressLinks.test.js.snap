@@ -7,7 +7,7 @@ exports[`PressLinks it should render properly no props 1`] = `
   <div
     className="flexContainer"
   >
-    <LinkGroup
+    <ArticleItem
       links={
         Array [
           Object {
@@ -27,7 +27,7 @@ exports[`PressLinks it should render properly no props 1`] = `
       numberOfInitiallyVisibleLinks={5}
       title="NYC"
     />
-    <LinkGroup
+    <ArticleItem
       links={
         Array [
           Object {
@@ -67,7 +67,7 @@ exports[`PressLinks it should render properly no props 1`] = `
       numberOfInitiallyVisibleLinks={5}
       title="Boston"
     />
-    <LinkGroup
+    <ArticleItem
       links={
         Array [
           Object {

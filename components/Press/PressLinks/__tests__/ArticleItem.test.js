@@ -2,12 +2,12 @@ import React from 'react';
 import createShallowSnapshotTest from 'test-utils/createShallowSnapshotTest';
 import { mount, shallow } from 'enzyme';
 
-import LinkGroup from '../LinkGroup';
+import ArticleItem from '../ArticleItem';
 
-describe('PressLinks > LinkGroups', () => {
+describe('PressLinks > ArticleItem', () => {
   test('should render properly with required props', () =>
     createShallowSnapshotTest(
-      <LinkGroup
+      <ArticleItem
         title="test"
         links={[{ url: 'https://example.com', title: 'Example' }]}
         numberOfInitiallyVisibleLinks={1}
@@ -16,7 +16,7 @@ describe('PressLinks > LinkGroups', () => {
 
   test('should render properly with required props and 3 links and a button', () =>
     createShallowSnapshotTest(
-      <LinkGroup
+      <ArticleItem
         title="test"
         links={[
           { url: 'https://example.com', title: 'Example' },
@@ -28,8 +28,8 @@ describe('PressLinks > LinkGroups', () => {
     ));
 
   test('should setState when clicking Show All button', () => {
-    const LinkGroupShallowInstance = shallow(
-      <LinkGroup
+    const ArticleItemShallowInstance = shallow(
+      <ArticleItem
         title="test"
         links={[
           { url: 'https://example.com', title: 'Example' },
@@ -40,14 +40,14 @@ describe('PressLinks > LinkGroups', () => {
       />,
     );
 
-    LinkGroupShallowInstance.instance().clickHandler();
+    ArticleItemShallowInstance.instance().clickHandler();
 
-    expect(LinkGroupShallowInstance.state().areAllLinksVisible).toEqual(true);
+    expect(ArticleItemShallowInstance.state().areAllLinksVisible).toEqual(true);
   });
 
   test('should not create a button if not enough links', () => {
     const wrap = mount(
-      <LinkGroup
+      <ArticleItem
         title="test"
         links={[{ url: 'https://example.com', title: 'Example' }]}
         numberOfInitiallyVisibleLinks={5}
@@ -59,7 +59,7 @@ describe('PressLinks > LinkGroups', () => {
 
   test('should create a button if enough links are available', () => {
     const wrap = mount(
-      <LinkGroup
+      <ArticleItem
         title="test"
         links={[
           { url: 'https://example.com', title: 'Example' },

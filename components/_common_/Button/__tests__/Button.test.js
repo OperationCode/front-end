@@ -64,7 +64,7 @@ describe('Button', () => {
     /* eslint-enable no-console */
   });
 
-  test('onClick prop should be called', () => {
+  test('call props.onClick when button is clicked', () => {
     const onClickMock = jest.fn();
     const ButtonShallowInstance = shallow(<Button onClick={onClickMock} />);
     ButtonShallowInstance.instance().clickHandler();

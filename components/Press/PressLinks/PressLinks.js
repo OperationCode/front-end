@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './PressLinks.css';
-import * as Links from './Links';
-import LinkGroup from './LinkGroup';
+import * as Articles from './Articles';
+import ArticleItem from './ArticleItem';
 
 PressLinks.propTypes = {
   numberOfInitiallyVisibleLinks: PropTypes.number,
@@ -16,11 +16,11 @@ function PressLinks({ numberOfInitiallyVisibleLinks }) {
   return (
     <div className={styles.logos}>
       <div className={styles.flexContainer}>
-        {Object.keys(Links).map(group => (
-          <LinkGroup
-            key={`LinkGroup_${group}`}
+        {Object.keys(Articles).map(group => (
+          <ArticleItem
+            key={`ArticleItem_${group}`}
             title={group}
-            links={Links[group]}
+            links={Articles[group]}
             numberOfInitiallyVisibleLinks={numberOfInitiallyVisibleLinks}
           />
         ))}
