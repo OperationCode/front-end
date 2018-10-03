@@ -28,7 +28,12 @@ export default () => (
       </p>
 
       <br />
-      <OutboundLink href={leadershipCircleLink} hasIcon={false} className={styles.center}>
+      <OutboundLink
+        analyticsEventLabel="Join/Donate top"
+        className={styles.center}
+        hasIcon={false}
+        href={leadershipCircleLink}
+      >
         <h4>Join and Donate Now</h4>
       </OutboundLink>
     </Section>
@@ -96,7 +101,12 @@ export default () => (
       </ul>
 
       <br />
-      <OutboundLink href={leadershipCircleLink} hasIcon={false} className={styles.center}>
+      <OutboundLink
+        analyticsEventLabel="Join/Donate top"
+        className={styles.center}
+        hasIcon={false}
+        href={leadershipCircleLink}
+      >
         <h3>Join and Donate Now</h3>
       </OutboundLink>
     </Section>
