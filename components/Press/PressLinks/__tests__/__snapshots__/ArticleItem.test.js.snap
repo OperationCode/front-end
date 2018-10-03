@@ -48,6 +48,7 @@ exports[`PressLinks > ArticleItem should render properly with required props and
     }
     aria-pressed={false}
     className="areAllLinksVisibleButton"
+    datum=""
     disabled={false}
     fullWidth={false}
     onClick={[Function]}

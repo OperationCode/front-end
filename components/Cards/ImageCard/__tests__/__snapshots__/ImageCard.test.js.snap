@@ -43,6 +43,7 @@ exports[`ImageCard should render properly with some props assigned 1`] = `
           }
         }
         className=""
+        datum=""
         disabled={false}
         fullWidth={false}
         href="https://www.testlink.com"

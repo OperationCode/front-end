@@ -17,6 +17,7 @@ class Button extends Component {
     tabIndex: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     theme: PropTypes.oneOf(['primary', 'secondary', 'slate']),
     type: PropTypes.oneOf(['button', 'reset', 'submit']),
+    datum: PropTypes.any, // eslint-disable-line
   };
 
   static defaultProps = {
@@ -31,6 +32,7 @@ class Button extends Component {
     tabIndex: 0,
     theme: 'primary',
     type: 'button',
+    datum: '',
   };
 
   clickHandler = () => {
