@@ -21,7 +21,12 @@ module.exports = {
   // collectCoverage: true,
 
   // An array of glob patterns indicating a set of files for which coverage information should be collected
-  collectCoverageFrom: ['<rootDir>/common/**/*.js', '<rootDir>/components/**/*.js'],
+  collectCoverageFrom: [
+    '<rootDir>/common/**/*.js',
+    '<rootDir>/components/**/*.js',
+    '!<rootDir>/common/**/index.js',
+    '!<rootDir>/components/**/index.js',
+  ],
 
   // The directory where Jest should output its coverage files
   coverageDirectory: '<rootDir>/coverage',
@@ -34,10 +39,6 @@ module.exports = {
     '<rootDir>/common/constants',
     '<rootDir>/scripts',
     '<rootDir>/test-utils',
-
-    // import/export mappers
-    '<rootDir>/components/**/index.js',
-    '<rootDir>/common/**/index.js',
 
     // No real logic to test here
     '<rootDir>/common/utils/api-utils.js',
