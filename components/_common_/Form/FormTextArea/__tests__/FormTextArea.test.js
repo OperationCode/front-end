@@ -9,7 +9,7 @@ describe('FormTextArea', () => {
   test('should render with just required props passed', () => {
     createSnapshotTest(<FormTextArea />);
   });
-    
+
   test('should render when passed a placeholder', () => {
     createSnapshotTest(<FormTextArea placeholder="testplaceholder" />);
   });

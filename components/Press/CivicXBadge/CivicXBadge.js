@@ -11,10 +11,11 @@ CivicXBadge.defaultProps = {
   sourceUrl: 'http://cvcx.org/veterans-solutions-lab/',
 };
 
-function CivicXBadge({ sourceUrl = 'http://cvcx.org/veterans-solutions-lab/' }) {
+function CivicXBadge({ sourceUrl }) {
   return (
     <div>
       <OutboundLink
+        hasIcon={false}
         href={sourceUrl}
         analyticsEventLabel={`[CivicX Accelerator Badge] ${sourceUrl}`}
       >

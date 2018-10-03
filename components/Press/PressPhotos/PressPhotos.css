@@ -7,18 +7,13 @@
 }
 
 .photos > img {
+  max-width: 350px;
   width: auto;
-  max-height: 368px;
+  padding: 0.75rem;
 }
 
-@media screen and (min-width: 415px) and (max-width: 1280px) {
+@media screen and (max-width: 499px) {
   .photos > img {
-    width: 350px;
-  }
-}
-
-@media screen and (max-width: 414px) {
-  .photos > img {
-    width: 300px;
+    width: 100%;
   }
 }
