@@ -9,7 +9,7 @@ describe('PressLinks > ArticleItem', () => {
     createShallowSnapshotTest(
       <ArticleItem
         title="test"
-        links={[{ url: 'https://example.com', title: 'Example' }]}
+        links={[{ title: 'Example', url: 'https://example.com' }]}
         numberOfInitiallyVisibleLinks={1}
       />,
     ));
@@ -19,9 +19,9 @@ describe('PressLinks > ArticleItem', () => {
       <ArticleItem
         title="test"
         links={[
-          { url: 'https://example.com', title: 'Example' },
-          { url: 'https://example.com', title: 'Example' },
-          { url: 'https://example.com', title: 'Example' },
+          { title: 'Example', url: 'https://example.com' },
+          { title: 'Example', url: 'https://example.com' },
+          { title: 'Example', url: 'https://example.com' },
         ]}
         numberOfInitiallyVisibleLinks={1}
       />,
@@ -32,9 +32,9 @@ describe('PressLinks > ArticleItem', () => {
       <ArticleItem
         title="test"
         links={[
-          { url: 'https://example.com', title: 'Example' },
-          { url: 'https://example.com', title: 'Example' },
-          { url: 'https://example.com', title: 'Example' },
+          { title: 'Example', url: 'https://example.com' },
+          { title: 'Example', url: 'https://example.com' },
+          { title: 'Example', url: 'https://example.com' },
         ]}
         numberOfInitiallyVisibleLinks={1}
       />,
@@ -49,7 +49,7 @@ describe('PressLinks > ArticleItem', () => {
     const wrap = mount(
       <ArticleItem
         title="test"
-        links={[{ url: 'https://example.com', title: 'Example' }]}
+        links={[{ title: 'Example', url: 'https://example.com' }]}
         numberOfInitiallyVisibleLinks={5}
       />,
     );
@@ -62,9 +62,9 @@ describe('PressLinks > ArticleItem', () => {
       <ArticleItem
         title="test"
         links={[
-          { url: 'https://example.com', title: 'Example' },
-          { url: 'https://example.com', title: 'Example' },
-          { url: 'https://example.com', title: 'Example' },
+          { title: 'Example', url: 'https://example.com' },
+          { title: 'Example', url: 'https://example.com' },
+          { title: 'Example', url: 'https://example.com' },
         ]}
         numberOfInitiallyVisibleLinks={1}
       />,

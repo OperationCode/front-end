@@ -6,14 +6,14 @@ import Button from '../../_common_/Button/Button';
 
 class ArticleItem extends Component {
   static propTypes = {
-    title: PropTypes.string.isRequired,
     links: PropTypes.arrayOf(
       PropTypes.shape({
-        url: PropTypes.string.isRequired,
         title: PropTypes.string.isRequired,
+        url: PropTypes.string.isRequired,
       }),
     ).isRequired,
     numberOfInitiallyVisibleLinks: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
   };
 
   state = {

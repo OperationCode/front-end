@@ -22,17 +22,17 @@ class Button extends Component {
 
   static defaultProps = {
     analyticsObject: {
-      category: 'Interactions',
       action: 'Button Selected',
+      category: 'Interactions',
     },
     className: '',
+    datum: '',
     disabled: false,
     fullWidth: false,
     onClick: () => {},
     tabIndex: 0,
     theme: 'primary',
     type: 'button',
-    datum: '',
   };
 
   clickHandler = () => {
