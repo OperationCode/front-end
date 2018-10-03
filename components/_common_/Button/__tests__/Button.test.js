@@ -20,12 +20,6 @@ describe('Button', () => {
   });
 
   test('should spread data and aria props', () => {
-    createSnapshotTest(
-      <Button aria-label="test" data-attr="test">
-        Test
-      </Button>,
-    );
-
     const wrapper = shallow(
       <Button aria-label="test" data-attr="test">
         Test
