@@ -32,19 +32,18 @@ class ArticleGroup extends Component {
         <h2>{region}</h2>
         <ul>
           {articles.map((link, index) => {
-            if (index >= numberOfInitiallyVisibleLinks && !areAllLinksVisible) {
-              return null;
+            if (index < numberOfInitiallyVisibleLinks && areAllLinksVisible) {
+              return (
+                <li key={`GroupLink_${link.url}`}>
+                  <OutboundLink href={link.url}>{link.title}</OutboundLink>
+                </li>
+              );
             }
-            return (
-              <li key={`GroupLink_${link.url}`}>
-                <OutboundLink href={link.url}>{link.title}</OutboundLink>
-              </li>
-            );
           })}
         </ul>
         {articles.length > numberOfInitiallyVisibleLinks && (
-          <Button // aria needs to be passed and accepted by the button component
-            aria-pressed={areAllLinksVisible} // eslint-disable-line
+          <Button
+            aria-pressed={areAllLinksVisible}
             className={styles.areAllLinksVisibleButton}
             theme={areAllLinksVisible ? 'slate' : 'primary'}
             onClick={this.clickHandler}
