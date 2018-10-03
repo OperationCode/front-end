@@ -52,7 +52,8 @@
     "react/prefer-stateless-function": ["off"],
     "react/no-did-mount-set-state": "off",
     "react/no-unused-prop-types": "off",
-    "react/no-unused-state": "error"
+    "react/no-unused-state": "error",
+    "sort-imports": "error" 
   },
   "overrides": [
     {
