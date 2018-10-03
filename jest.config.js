@@ -35,6 +35,10 @@ module.exports = {
     '<rootDir>/scripts',
     '<rootDir>/test-utils',
 
+    // import/export mappers
+    '<rootDir>/components/**/index.js',
+    '<rootDir>/common/**/index.js',
+
     // No real logic to test here
     '<rootDir>/common/utils/api-utils.js',
     '<rootDir>/components/FAQ/questions.js',
