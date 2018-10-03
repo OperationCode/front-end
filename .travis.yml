@@ -5,19 +5,19 @@ language: node_js
 cache:
   yarn: true
   directories:
-    - "node_modules"
+    - 'node_modules'
 
 before_install:
- - yarn global add greenkeeper-lockfile@2
+  - yarn global add greenkeeper-lockfile@2
 
 install:
   - yarn install --silent
 
 before_script:
- - greenkeeper-lockfile-update
- - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
- - chmod +x ./cc-test-reporter
- - ./cc-test-reporter before-build
+  - greenkeeper-lockfile-update
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
 
 script:
   - yarn lint
@@ -25,8 +25,8 @@ script:
   - yarn build
 
 after_script:
- - greenkeeper-lockfile-upload
- - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+  - greenkeeper-lockfile-upload
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 
 deploy:
   - provider: script
@@ -37,7 +37,7 @@ deploy:
       all_branches: true
       master: false
   - provider: script
-    script: yarn add now && now --local-config "./now.master.json" --token $NOW_TOKEN
+    script: yarn add now && now --local-config="./now.master.json" --token $NOW_TOKEN
     skip_cleanup: true
     on:
       master: true
