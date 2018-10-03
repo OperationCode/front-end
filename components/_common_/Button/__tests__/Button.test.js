@@ -25,6 +25,14 @@ describe('Button', () => {
         Test
       </Button>,
     );
+
+    const wrapper = shallow(
+      <Button aria-label="test" data-attr="test">
+        Test
+      </Button>,
+    );
+    expect(wrapper.prop('aria-label')).toEqual('test');
+    expect(wrapper.prop('data-attr')).toEqual('test');
   });
 
   test('should render without a generated span when children is PropTypes.node', () => {
