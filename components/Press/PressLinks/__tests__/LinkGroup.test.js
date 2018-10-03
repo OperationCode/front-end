@@ -2,24 +2,19 @@ import React from 'react';
 import createShallowSnapshotTest from 'test-utils/createShallowSnapshotTest';
 import { mount, shallow } from 'enzyme';
 
-import PressLinks from '../PressLinks';
 import LinkGroup from '../LinkGroup';
 
-describe('PressLinks', () => {
-  test('it should render properly no props', () => createShallowSnapshotTest(<PressLinks />));
-});
-
 describe('PressLinks > LinkGroups', () => {
-  test('it should render properly with required props', () =>
+  test('should render properly with required props', () =>
     createShallowSnapshotTest(
       <LinkGroup
         title="test"
         links={[{ url: 'https://example.com', title: 'Example' }]}
-        MaxLinks={1}
+        numberOfInitiallyVisibleLinks={1}
       />,
     ));
 
-  test('it should render a button', () =>
+  test('should render properly with required props and 3 links and a button', () =>
     createShallowSnapshotTest(
       <LinkGroup
         title="test"
@@ -28,11 +23,11 @@ describe('PressLinks > LinkGroups', () => {
           { url: 'https://example.com', title: 'Example' },
           { url: 'https://example.com', title: 'Example' },
         ]}
-        MaxLinks={1}
+        numberOfInitiallyVisibleLinks={1}
       />,
     ));
 
-  test('LinkGroup should setState when clicking Show All button', () => {
+  test('should setState when clicking Show All button', () => {
     const LinkGroupShallowInstance = shallow(
       <LinkGroup
         title="test"
@@ -41,24 +36,40 @@ describe('PressLinks > LinkGroups', () => {
           { url: 'https://example.com', title: 'Example' },
           { url: 'https://example.com', title: 'Example' },
         ]}
-        MaxLinks={1}
+        numberOfInitiallyVisibleLinks={1}
       />,
     );
 
     LinkGroupShallowInstance.instance().clickHandler();
 
-    expect(LinkGroupShallowInstance.state().ShowAll).toEqual(true);
+    expect(LinkGroupShallowInstance.state().areAllLinksVisible).toEqual(true);
   });
 
-  test('LinkGroup should not create a button if not enough links', () => {
+  test('should not create a button if not enough links', () => {
     const wrap = mount(
       <LinkGroup
         title="test"
         links={[{ url: 'https://example.com', title: 'Example' }]}
-        MaxLinks={5}
+        numberOfInitiallyVisibleLinks={5}
       />,
     );
 
     expect(wrap.find('button').exists()).toEqual(false);
+  });
+
+  test('should create a button if enough links are available', () => {
+    const wrap = mount(
+      <LinkGroup
+        title="test"
+        links={[
+          { url: 'https://example.com', title: 'Example' },
+          { url: 'https://example.com', title: 'Example' },
+          { url: 'https://example.com', title: 'Example' },
+        ]}
+        numberOfInitiallyVisibleLinks={1}
+      />,
+    );
+
+    expect(wrap.find('button').exists()).toEqual(true);
   });
 });

@@ -8,14 +8,8 @@
 }
 
 .logos .articlesGroup {
-  width: 375px;
+  max-width: 375px;
   padding-top: 15px;
-}
-
-@media screen and (max-width: 414px) {
-  .logos .articlesGroup {
-    width: 275px;
-  }
 }
 
 .flexContainer {
@@ -26,7 +20,7 @@
   padding: 15px 0 0 0;
 }
 
-button.ShowAllButton {
+button.areAllLinksVisibleButton {
   min-width: 100px;
   line-height: 0.5;
   font-size: 0.9rem;

@@ -26,7 +26,7 @@ class Button extends Component {
     className: '',
     disabled: false,
     fullWidth: false,
-    onClick: undefined,
+    onClick: () => {},
     tabIndex: 0,
     theme: 'primary',
     type: 'button',
@@ -41,9 +41,7 @@ class Button extends Component {
       // eslint-disable-next-line no-console
       console.log('Analytics Disabled', props.analyticsObject);
     }
-    if (typeof props.onClick === 'function') {
-      props.onClick();
-    }
+    props.onClick();
   };
 
   render() {

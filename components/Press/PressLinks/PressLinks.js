@@ -5,14 +5,14 @@ import * as Links from './Links';
 import LinkGroup from './LinkGroup';
 
 PressLinks.propTypes = {
-  MaxLinks: PropTypes.number,
+  numberOfInitiallyVisibleLinks: PropTypes.number,
 };
 
 PressLinks.defaultProps = {
-  MaxLinks: 5,
+  numberOfInitiallyVisibleLinks: 5,
 };
 
-function PressLinks({ MaxLinks }) {
+function PressLinks({ numberOfInitiallyVisibleLinks }) {
   return (
     <div className={styles.logos}>
       <div className={styles.flexContainer}>
@@ -21,7 +21,7 @@ function PressLinks({ MaxLinks }) {
             key={`LinkGroup_${group}`}
             title={group}
             links={Links[group]}
-            MaxLinks={MaxLinks}
+            numberOfInitiallyVisibleLinks={numberOfInitiallyVisibleLinks}
           />
         ))}
       </div>

@@ -13,27 +13,26 @@ class LinkGroup extends Component {
         title: PropTypes.string.isRequired,
       }),
     ).isRequired,
-    MaxLinks: PropTypes.number.isRequired,
+    numberOfInitiallyVisibleLinks: PropTypes.number.isRequired,
   };
 
   state = {
-    ShowAll: false,
+    areAllLinksVisible: false,
   };
 
   clickHandler = () => {
-    const { ShowAll } = this.state;
-    this.setState({ ShowAll: !ShowAll });
+    this.setState(prevState => ({ areAllLinksVisible: !prevState.areAllLinksVisible }));
   };
 
   render() {
-    const { ShowAll } = this.state;
-    const { title, links, MaxLinks } = this.props;
+    const { areAllLinksVisible } = this.state;
+    const { title, links, numberOfInitiallyVisibleLinks } = this.props;
     return (
       <div className={styles.articlesGroup}>
         <h2>{title}</h2>
         <ul>
           {links.map((link, index) => {
-            if (index >= MaxLinks && !ShowAll) {
+            if (index >= numberOfInitiallyVisibleLinks && !areAllLinksVisible) {
               return null;
             }
             return (
@@ -43,14 +42,14 @@ class LinkGroup extends Component {
             );
           })}
         </ul>
-        {links.length > MaxLinks && (
-          <Button
-            aria-pressed={ShowAll} // this needs to be passed and accepted by the button component
-            className={styles.ShowAllButton}
-            theme={ShowAll ? 'slate' : 'primary'}
+        {links.length > numberOfInitiallyVisibleLinks && (
+          <Button // aria needs to be passed and accepted by the button component
+            aria-pressed={areAllLinksVisible} // eslint-disable-line
+            className={styles.areAllLinksVisibleButton}
+            theme={areAllLinksVisible ? 'slate' : 'primary'}
             onClick={this.clickHandler}
           >
-            {ShowAll ? 'Show Less' : 'Show All'}
+            {areAllLinksVisible ? 'Show Less' : 'Show All'}
           </Button>
         )}
       </div>

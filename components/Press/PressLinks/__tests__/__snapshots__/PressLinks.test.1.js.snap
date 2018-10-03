@@ -1,65 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PressLinks > LinkGroups it should render a button 1`] = `
-<div
-  className="articlesGroup"
->
-  <h2>
-    test
-  </h2>
-  <ul>
-    <li>
-      <OutboundLink
-        className=""
-        hasIcon={true}
-        href="https://example.com"
-      >
-        Example
-      </OutboundLink>
-    </li>
-  </ul>
-  <Button
-    analyticsObject={
-      Object {
-        "action": "Button Selected",
-        "category": "Interactions",
-      }
-    }
-    aria-pressed={false}
-    className="ShowAllButton"
-    disabled={false}
-    fullWidth={false}
-    onClick={[Function]}
-    tabIndex={0}
-    theme="primary"
-    type="button"
-  >
-    Show All
-  </Button>
-</div>
-`;
-
-exports[`PressLinks > LinkGroups it should render properly with required props 1`] = `
-<div
-  className="articlesGroup"
->
-  <h2>
-    test
-  </h2>
-  <ul>
-    <li>
-      <OutboundLink
-        className=""
-        hasIcon={true}
-        href="https://example.com"
-      >
-        Example
-      </OutboundLink>
-    </li>
-  </ul>
-</div>
-`;
-
 exports[`PressLinks it should render properly no props 1`] = `
 <div
   className="logos"
@@ -68,7 +8,6 @@ exports[`PressLinks it should render properly no props 1`] = `
     className="flexContainer"
   >
     <LinkGroup
-      MaxLinks={5}
       links={
         Array [
           Object {
@@ -85,10 +24,10 @@ exports[`PressLinks it should render properly no props 1`] = `
           },
         ]
       }
+      numberOfInitiallyVisibleLinks={5}
       title="NYC"
     />
     <LinkGroup
-      MaxLinks={5}
       links={
         Array [
           Object {
@@ -125,10 +64,10 @@ exports[`PressLinks it should render properly no props 1`] = `
           },
         ]
       }
+      numberOfInitiallyVisibleLinks={5}
       title="Boston"
     />
     <LinkGroup
-      MaxLinks={5}
       links={
         Array [
           Object {
@@ -269,6 +208,7 @@ exports[`PressLinks it should render properly no props 1`] = `
           },
         ]
       }
+      numberOfInitiallyVisibleLinks={5}
       title="General"
     />
   </div>
