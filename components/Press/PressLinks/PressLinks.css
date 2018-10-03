@@ -3,22 +3,6 @@
   text-decoration: none;
 }
 
-.logos .articlesGroup > h2 {
-  text-align: center;
-}
-
-.logos .articlesGroup {
-  max-width: 375px;
-  padding-top: 15px;
-}
-
-.logos .articlesGroup .areAllLinksVisibleButton {
-  min-width: 100px;
-  line-height: 0.5;
-  font-size: 0.9rem;
-  margin: auto;
-}
-
 .logos .flexContainer {
   width: 100%;
   display: flex;

@@ -2,12 +2,12 @@ import React from 'react';
 import createShallowSnapshotTest from 'test-utils/createShallowSnapshotTest';
 import { mount, shallow } from 'enzyme';
 
-import ArticleItem from '../ArticleItem';
+import ArticleGroup from '../ArticleGroup';
 
-describe('PressLinks > ArticleItem', () => {
+describe('PressLinks > ArticleGroup', () => {
   test('should render properly with required props', () =>
     createShallowSnapshotTest(
-      <ArticleItem
+      <ArticleGroup
         title="test"
         links={[{ title: 'Example', url: 'https://example.com' }]}
         numberOfInitiallyVisibleLinks={1}
@@ -16,7 +16,7 @@ describe('PressLinks > ArticleItem', () => {
 
   test('should render properly with required props and 3 links and a button', () =>
     createShallowSnapshotTest(
-      <ArticleItem
+      <ArticleGroup
         title="test"
         links={[
           { title: 'Example', url: 'https://example.com' },
@@ -28,8 +28,8 @@ describe('PressLinks > ArticleItem', () => {
     ));
 
   test('should setState when clicking Show All button', () => {
-    const ArticleItemShallowInstance = shallow(
-      <ArticleItem
+    const ArticleGroupShallowInstance = shallow(
+      <ArticleGroup
         title="test"
         links={[
           { title: 'Example', url: 'https://example.com' },
@@ -40,14 +40,14 @@ describe('PressLinks > ArticleItem', () => {
       />,
     );
 
-    ArticleItemShallowInstance.instance().clickHandler();
+    ArticleGroupShallowInstance.instance().clickHandler();
 
-    expect(ArticleItemShallowInstance.state().areAllLinksVisible).toEqual(true);
+    expect(ArticleGroupShallowInstance.state().areAllLinksVisible).toEqual(true);
   });
 
   test('should not create a button if not enough links', () => {
     const wrap = mount(
-      <ArticleItem
+      <ArticleGroup
         title="test"
         links={[{ title: 'Example', url: 'https://example.com' }]}
         numberOfInitiallyVisibleLinks={5}
@@ -59,7 +59,7 @@ describe('PressLinks > ArticleItem', () => {
 
   test('should create a button if enough links are available', () => {
     const wrap = mount(
-      <ArticleItem
+      <ArticleGroup
         title="test"
         links={[
           { title: 'Example', url: 'https://example.com' },
