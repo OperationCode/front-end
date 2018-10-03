@@ -23,7 +23,6 @@ script:
   - yarn lint
   - yarn test:ci
   - yarn build
-  - yarn start
 
 after_script:
   - greenkeeper-lockfile-upload
