@@ -1,4 +1,5 @@
 {
+  "name": "operation-code-new",
   "public": true,
   "type": "static",
   "static": {

@@ -1,4 +1,5 @@
 {
+  "name": "operation-code-new",
   "alias": "new-operation-code",
   "build": {
     "env": {
@@ -7,5 +8,11 @@
     }
   },
   "files": [".next", "static", "package.json", "yarn.lock"],
+  "scale": {
+    "all": {
+      "min": 1,
+      "max": "auto"
+    }
+  },
   "public": true
 }
