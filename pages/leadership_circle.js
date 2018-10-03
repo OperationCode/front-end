@@ -1,4 +1,5 @@
 import React from 'react';
+import Head from 'components/head';
 import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
 import Section from 'components/_common_/Section/Section';
 import { leadershipCircleLink } from 'common/constants/urls.js';
@@ -6,7 +7,9 @@ import styles from './styles/leadership_circle.css';
 
 export default () => (
   <>
+    <Head title="Leadership Circle" />
     <h1>Leadership Circle</h1>
+
     <Section title="Join Today!" theme="white">
       <p>Operation Code is pleased to invite you to join the Leadership Circle.</p>
       <p>
