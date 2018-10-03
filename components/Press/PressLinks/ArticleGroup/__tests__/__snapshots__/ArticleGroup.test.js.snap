@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PressLinks > ArticleGroup should render properly with required props 1`] = `
+exports[`ArticleGroup should render properly with required props 1`] = `
 <div
   className="articlesGroup"
 >
@@ -21,7 +21,7 @@ exports[`PressLinks > ArticleGroup should render properly with required props 1`
 </div>
 `;
 
-exports[`PressLinks > ArticleGroup should render properly with required props and 3 links and a button 1`] = `
+exports[`ArticleGroup should render properly with required props and 3 links and a button 1`] = `
 <div
   className="articlesGroup"
 >
