@@ -4,7 +4,7 @@ import { mount, shallow } from 'enzyme';
 
 import ArticleGroup from '../ArticleGroup';
 
-describe('PressLinks > ArticleGroup', () => {
+describe('ArticleGroup', () => {
   test('should render properly with required props', () =>
     createShallowSnapshotTest(
       <ArticleGroup
