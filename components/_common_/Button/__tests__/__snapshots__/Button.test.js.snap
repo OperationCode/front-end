@@ -27,3 +27,19 @@ exports[`Button should render with just required props passed 1`] = `
   </span>
 </button>
 `;
+
+exports[`Button should spread data and aria props 1`] = `
+<button
+  aria-label="test"
+  className="Button primary"
+  data-attr="test"
+  disabled={false}
+  onClick={[Function]}
+  tabIndex={0}
+  type="button"
+>
+  <span>
+    Test
+  </span>
+</button>
+`;

@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import ReactGA from 'react-ga';
 import { googleAnalyticsEventPropType } from 'common/constants/custom-props';
 import styles from './Button.css';
+import { getDataAttributes, getAriaAttributes } from '../../../common/utils/prop-utils';
 
 class Button extends Component {
   static propTypes = {
@@ -46,7 +47,8 @@ class Button extends Component {
 
   render() {
     const { props } = this;
-
+    const customDataAttributes = getDataAttributes(props);
+    const ariaAttributes = getAriaAttributes(props);
     /* eslint-disable react/button-has-type */
     return (
       <button
@@ -58,6 +60,8 @@ class Button extends Component {
         onClick={this.clickHandler}
         tabIndex={props.tabIndex}
         type={props.type}
+        {...customDataAttributes}
+        {...ariaAttributes}
       >
         {/* Render text nodes within a span to apply selector styles */}
         {typeof props.children === 'string' ? <span>{props.children}</span> : props.children}

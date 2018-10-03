@@ -13,13 +13,15 @@ describe('Button', () => {
 
   test('should render properly with some props assigned', () => {
     createSnapshotTest(
-      <Button
-        theme="secondary"
-        data-custom-attr="custom stuff here"
-        disabled
-        fullWidth
-        type="submit"
-      >
+      <Button theme="secondary" disabled fullWidth type="submit">
+        Test
+      </Button>,
+    );
+  });
+
+  test('should spread data and aria props', () => {
+    createSnapshotTest(
+      <Button aria-label="test" data-attr="test">
         Test
       </Button>,
     );
