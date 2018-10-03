@@ -70,7 +70,7 @@ describe('Button', () => {
 
   test('call props.onClick when button is clicked', () => {
     const onClickMock = jest.fn();
-    const ButtonShallowInstance = shallow(<Button onClick={onClickMock} />);
+    const ButtonShallowInstance = shallow(<Button onClick={onClickMock}>Test</Button>);
     ButtonShallowInstance.instance().clickHandler();
 
     expect(onClickMock).toHaveBeenCalledTimes(1);
