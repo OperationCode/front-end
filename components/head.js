@@ -41,7 +41,6 @@ function Head({ description, ogImage, title, url }) {
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
 
-      {/* TODO: Download and avoid network request  */}
       <link
         rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Noto+Serif:400,400i,700,700i"
