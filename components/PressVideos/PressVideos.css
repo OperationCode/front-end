@@ -13,21 +13,19 @@
 /* Video iFrame Media Queries */
 @media screen and (max-width: 960px) {
   .pressVideos iframe {
-    width: 666px;
+    width: 100%;
     height: 375px;
   }
 }
 
 @media screen and (max-width: 720px) {
   .pressVideos iframe {
-    width: 444px;
     height: 250px;
   }
 }
 
 @media screen and (max-width: 480px) {
   .pressVideos iframe {
-    width: 333px;
     height: 187.5px;
   }
 }

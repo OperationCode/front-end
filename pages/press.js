@@ -77,15 +77,15 @@ export default () => (
       </div>
     </Section>
 
-    <Section title="Videos">
+    <Section contentClassName={styles.customContent} title="Videos" theme="grayLight">
       <PressVideos />
     </Section>
 
-    <Section title="Photos" theme="white">
+    <Section contentClassName={styles.customContent} title="Photos" theme="white">
       <PressPhotos />
     </Section>
 
-    <Section contentClassName={styles.customContent} title="Branding">
+    <Section contentClassName={styles.customContent} title="Branding" theme="grayLight">
       <div className={styles.logos}>
         <Link href="/branding">View Our Branding</Link>
       </div>
