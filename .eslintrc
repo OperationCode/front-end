@@ -10,9 +10,23 @@
   "parser": "babel-eslint",
   "rules": {
     "comma-dangle": ["error", "only-multiline"],
+    "import/extensions": [
+      "error",
+      "never",
+      {
+        "jpg": "always",
+        "png": "always",
+        "svg": "always"
+      }
+    ],
     "import/no-unresolved": "off",
-    "import/extensions": "off",
     "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "import/order": [
+      "error",
+      {
+        "groups": ["builtin", "external", "internal", "parent", "sibling", "index"]
+      }
+    ],
     "jsx-a11y/anchor-is-valid": [
       "error",
       {
@@ -52,8 +66,7 @@
     "react/prefer-stateless-function": ["off"],
     "react/no-did-mount-set-state": "off",
     "react/no-unused-prop-types": "off",
-    "react/no-unused-state": "error",
-    "sort-imports": "error" 
+    "react/no-unused-state": "error"
   },
   "overrides": [
     {
