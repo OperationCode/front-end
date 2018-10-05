@@ -9,8 +9,9 @@ export default class CodeSchools extends React.Component {
     schools: [],
   };
 
-  componentDidMount() {
-    getCodeSchoolsPromise().then(({ data }) => this.setState({ schools: data }));
+  async componentDidMount() {
+    const { data } = await getCodeSchoolsPromise();
+    this.setState({ schools: data });
   }
 
   render() {
