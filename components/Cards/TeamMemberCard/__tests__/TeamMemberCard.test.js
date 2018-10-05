@@ -16,7 +16,7 @@ describe('TeamMemberCard', () => {
     );
   });
 
-  it('should render with all props assigned', () => {
+  it('should render with many props assigned', () => {
     createSnapshotTest(
       <TeamMemberCard
         email="inbox@kylemh.com"

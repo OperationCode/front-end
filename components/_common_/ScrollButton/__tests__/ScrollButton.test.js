@@ -11,7 +11,7 @@ describe('ScrollButton', () => {
     createSnapshotTest(<ScrollButton href="#test">Test</ScrollButton>);
   });
 
-  it('should render with all props assigned', () => {
+  it('should render with many props assigned', () => {
     createSnapshotTest(
       <ScrollButton
         className="test"

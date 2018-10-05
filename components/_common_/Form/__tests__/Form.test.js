@@ -13,7 +13,7 @@ describe('Form', () => {
     );
   });
 
-  it('should render with all props assigned', () => {
+  it('should render with many props assigned', () => {
     createSnapshotTest(
       <Form className="login-form">
         <p>Test</p>

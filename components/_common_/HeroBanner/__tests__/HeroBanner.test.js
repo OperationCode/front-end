@@ -15,7 +15,7 @@ describe('HeroBanner', () => {
     createSnapshotTest(<HeroBanner title="Test" imageSource={testImageUrl} />);
   });
 
-  it('should render with all props assigned', () => {
+  it('should render with many props assigned', () => {
     createSnapshotTest(
       <HeroBanner className="testing-123" title="Test" imageSource={testImageUrl}>
         Testing 123

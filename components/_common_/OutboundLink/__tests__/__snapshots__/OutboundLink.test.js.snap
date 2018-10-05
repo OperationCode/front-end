@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`OutboundLink should render with all props assigned 1`] = `
+exports[`OutboundLink should render with many props assigned 1`] = `
 <a
   className="test-class"
   href="https://tests.com"

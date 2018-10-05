@@ -10,7 +10,7 @@ describe('Heading', () => {
     createSnapshotTest(<Heading>Test</Heading>);
   });
 
-  it('should render with all props assigned', () => {
+  it('should render with many props assigned', () => {
     createSnapshotTest(
       <Heading className="test-class" id="test-heading-1" hasHeadingLines={false} theme="slate">
         Test

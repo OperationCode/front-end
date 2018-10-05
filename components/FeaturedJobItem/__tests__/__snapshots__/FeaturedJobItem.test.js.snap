@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FeaturedJobItem should render with all props assigned 1`] = `
+exports[`FeaturedJobItem should render with many props assigned 1`] = `
 <article
   className="job"
 >

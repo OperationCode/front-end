@@ -19,7 +19,7 @@ exports[`Section should render common use case 1`] = `
 </section>
 `;
 
-exports[`Section should render with all props assigned 1`] = `
+exports[`Section should render with many props assigned 1`] = `
 <section
   className="testing-123 Section grayLight"
   style={

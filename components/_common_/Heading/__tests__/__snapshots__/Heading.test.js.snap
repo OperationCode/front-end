@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Heading should render with all props assigned 1`] = `
+exports[`Heading should render with many props assigned 1`] = `
 <h2
   className="test-class Heading slate"
   id="test-heading-1"

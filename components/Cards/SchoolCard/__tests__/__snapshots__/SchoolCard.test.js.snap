@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SchoolCard should render with all props assigned 1`] = `
+exports[`SchoolCard should render with many props assigned 1`] = `
 <a
   className="cardLinkOverrides"
   href="https://www.codeplatoon.org"

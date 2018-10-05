@@ -1,5 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Modal should render with all props assigned 1`] = `null`;
+exports[`Modal should render with many props assigned 1`] = `null`;
 
 exports[`Modal should render with required props 1`] = `null`;

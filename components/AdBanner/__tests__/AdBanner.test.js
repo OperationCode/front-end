@@ -12,7 +12,7 @@ describe('AdBanner', () => {
     );
   });
 
-  it('should render with all props assigned', () => {
+  it('should render with many props assigned', () => {
     createShallowSnapshotTest(
       <AdBanner
         altText="Alt text test"

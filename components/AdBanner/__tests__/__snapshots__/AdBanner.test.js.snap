@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AdBanner should render with all props assigned 1`] = `
+exports[`AdBanner should render with many props assigned 1`] = `
 <OutboundLink
   analyticsEventLabel="[AdBanner Hit]"
   className="AdBanner-class adBannerLink"

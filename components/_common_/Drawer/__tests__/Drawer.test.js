@@ -9,7 +9,7 @@ describe('Drawer', () => {
     createSnapshotTest(<Drawer>Test</Drawer>);
   });
 
-  it('should render with all props assigned', () => {
+  it('should render with many props assigned', () => {
     createSnapshotTest(
       <Drawer className="test-class" isVisible>
         Test

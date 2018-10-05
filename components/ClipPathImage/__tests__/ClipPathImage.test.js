@@ -8,7 +8,7 @@ describe('ClipPathImage', () => {
     createShallowSnapshotTest(<ClipPathImage imageSource="image.png" title="Test title" />);
   });
 
-  it('should render with all props assigned', () => {
+  it('should render with many props assigned', () => {
     createShallowSnapshotTest(
       <ClipPathImage
         altText="Test picture"

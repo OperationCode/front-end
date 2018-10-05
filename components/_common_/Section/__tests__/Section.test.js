@@ -9,7 +9,7 @@ describe('Section', () => {
     createSnapshotTest(<Section>Test Children</Section>);
   });
 
-  it('should render with all props assigned', () => {
+  it('should render with many props assigned', () => {
     createSnapshotTest(
       <Section
         className="testing-123"

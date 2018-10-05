@@ -9,7 +9,7 @@ describe('FormCheckBox', () => {
     createSnapshotTest(<FormCheckBox>Test</FormCheckBox>);
   });
 
-  it('should render with all props assigned', () => {
+  it('should render with many props assigned', () => {
     createSnapshotTest(
       <FormCheckBox
         checkBox={{ display: 'inline-block', margin: '1rem' }}

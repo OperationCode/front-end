@@ -11,7 +11,7 @@ describe('Button', () => {
     createSnapshotTest(<Button>Test</Button>);
   });
 
-  it('should render with all props assigned', () => {
+  it('should render with many props assigned', () => {
     createSnapshotTest(
       <Button
         analyticsObject={{ action: 'Test Button Selected', category: 'Testing' }}
