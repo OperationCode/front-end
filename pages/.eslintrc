@@ -1,5 +1,8 @@
 {
   "globals": {
     "React": true
+  },
+  "rules": {
+    "no-restricted-imports": ["error","react"]
   }
 }

@@ -1,4 +1,3 @@
-import React from 'react';
 import Head from 'components/head';
 import { getCodeSchoolsPromise } from 'common/constants/api';
 import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';

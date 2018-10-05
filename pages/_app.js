@@ -1,4 +1,3 @@
-import React from 'react';
 import App, { Container } from 'next/app';
 import ScrollUpButton from 'react-scroll-up-button';
 import Nav from 'components/nav';
