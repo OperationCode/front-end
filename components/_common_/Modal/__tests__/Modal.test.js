@@ -3,40 +3,27 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import ReactGA from 'react-ga';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
-import createShallowSnapshotTest from 'test-utils/createShallowSnapshotTest';
 
 import Modal from '../Modal';
 
 describe('Modal', () => {
-  it('should render with just required props passed', () => {
+  it('should render with required props', () => {
     createSnapshotTest(
-      <Modal screenReaderLabel="Test" onRequestClose={() => {}}>
+      <Modal screenReaderLabel="Test" onRequestClose={jest.fn()}>
         Test
       </Modal>,
     );
   });
 
-  it('should render properly with some props assigned and not being open', () => {
+  it('should render with all props assigned', () => {
     createSnapshotTest(
       <Modal
         className="test-class"
-        onRequestClose={() => {}}
-        screenReaderLabel="Test"
-        shouldCloseOnOverlayClick
-      >
-        Test
-      </Modal>,
-    );
-  });
-
-  it('should render properly with some props assigned and being open', () => {
-    createShallowSnapshotTest(
-      <Modal
-        className="test-class"
+        hasCloseIcon={false}
         isOpen
-        onRequestClose={() => {}}
+        onRequestClose={jest.fn()}
         screenReaderLabel="Test"
-        shouldCloseOnOverlayClick
+        shouldCloseOnOverlayClick={false}
       >
         Test
       </Modal>,

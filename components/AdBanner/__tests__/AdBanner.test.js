@@ -4,7 +4,7 @@ import createShallowSnapshotTest from 'test-utils/createShallowSnapshotTest';
 import AdBanner from '../AdBanner';
 
 describe('AdBanner', () => {
-  it('it should render properly with required props', () => {
+  it('should render with required props', () => {
     createShallowSnapshotTest(
       <AdBanner altText="Some text" href="www.test.com" imageSource="www.imagetest.com">
         Test
@@ -12,7 +12,7 @@ describe('AdBanner', () => {
     );
   });
 
-  it('should render properly with some props assigned', () => {
+  it('should render with all props assigned', () => {
     createShallowSnapshotTest(
       <AdBanner
         altText="Alt text test"

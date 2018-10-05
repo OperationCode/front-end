@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Footer it should render properly no props 1`] = `
+exports[`Footer should render with no props passed 1`] = `
 <footer
   className="Footer"
 >

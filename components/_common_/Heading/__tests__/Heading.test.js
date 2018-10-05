@@ -6,13 +6,13 @@ import createSnapshotTest from 'test-utils/createSnapshotTest';
 import Heading from '../Heading';
 
 describe('Heading', () => {
-  it('should render with just required props passed', () => {
+  it('should render with required props', () => {
     createSnapshotTest(<Heading>Test</Heading>);
   });
 
-  it('should render properly with some props assigned', () => {
+  it('should render with all props assigned', () => {
     createSnapshotTest(
-      <Heading className="test-class" id="test-heading-1" hasHeadingLines={false}>
+      <Heading className="test-class" id="test-heading-1" hasHeadingLines={false} theme="slate">
         Test
       </Heading>,
     );

@@ -8,7 +8,7 @@ import ReactGA from 'react-ga';
 import OutboundLink from '../OutboundLink';
 
 describe('OutboundLink', () => {
-  it('should render with just required props passed', () => {
+  it('should render with required props', () => {
     createSnapshotTest(
       <OutboundLink analyticsEventLabel="Test" href="https://tests.com">
         Test
@@ -16,7 +16,7 @@ describe('OutboundLink', () => {
     );
   });
 
-  it('should render properly with all props assigned', () => {
+  it('should render with all props assigned', () => {
     createSnapshotTest(
       <OutboundLink
         analyticsEventLabel="Test"

@@ -12,7 +12,7 @@ describe('FormSelect', () => {
     options = [{ label: 'test 1', value: 'TEST1' }, { label: 'test 2', value: 'TEST2' }];
   });
 
-  it('should render with just required props passed', () => {
+  it('should render with required props', () => {
     createSnapshotTest(<FormSelect options={options} />);
   });
 

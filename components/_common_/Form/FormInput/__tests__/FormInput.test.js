@@ -6,7 +6,7 @@ import { mount } from 'enzyme';
 import FormInput from '../FormInput';
 
 describe('FormInput', () => {
-  it('should render with just required props passed', () => {
+  it('should render with required props', () => {
     createSnapshotTest(<FormInput id="test" />);
   });
 

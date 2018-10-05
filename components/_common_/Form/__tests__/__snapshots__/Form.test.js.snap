@@ -1,17 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Form should render properly with some props assigned 1`] = `
+exports[`Form should render with all props assigned 1`] = `
 <form
   className="form login-form"
 >
-  <div />
+  <p>
+    Test
+  </p>
 </form>
 `;
 
-exports[`Form should render with just required props passed 1`] = `
+exports[`Form should render with required props 1`] = `
 <form
   className="form"
 >
-  <div />
+  <p>
+    Test
+  </p>
 </form>
 `;

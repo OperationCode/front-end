@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ScrollButton should render properly with some props assigned 1`] = `
+exports[`ScrollButton should render with all props assigned 1`] = `
 <a
-  className="Button secondary fullWidth"
+  className="Button test secondary fullWidth"
   onClick={[Function]}
-  tabIndex={0}
+  tabIndex={-1}
 >
   <span>
     Test
@@ -12,7 +12,7 @@ exports[`ScrollButton should render properly with some props assigned 1`] = `
 </a>
 `;
 
-exports[`ScrollButton should render with just required props passed 1`] = `
+exports[`ScrollButton should render with required props 1`] = `
 <a
   className="Button primary"
   onClick={[Function]}

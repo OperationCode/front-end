@@ -5,7 +5,7 @@ import createSnapshotTest from 'test-utils/createSnapshotTest';
 import ValueCard from '../ValueCard';
 
 describe('ValueCard', () => {
-  it('should render properly with all required props assigned', () => {
+  it('should render with required props', () => {
     createSnapshotTest(
       <ValueCard
         name="Testing"

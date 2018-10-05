@@ -5,7 +5,7 @@ import { mount, shallow } from 'enzyme';
 import ArticleGroup from '../ArticleGroup';
 
 describe('ArticleGroup', () => {
-  it('should render properly with required props', () =>
+  it('should render with required props', () =>
     createShallowSnapshotTest(
       <ArticleGroup
         region="test"
@@ -14,7 +14,7 @@ describe('ArticleGroup', () => {
       />,
     ));
 
-  it('should render properly with required props and 3 links and a button', () =>
+  it('should render with required props and 3 links and a button', () =>
     createShallowSnapshotTest(
       <ArticleGroup
         region="test"

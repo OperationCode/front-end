@@ -4,5 +4,5 @@ import createShallowSnapshotTest from 'test-utils/createShallowSnapshotTest';
 import CivicXBadge from '../CivicXBadge';
 
 describe('CivicXBadge', () => {
-  it('it should render properly no props', () => createShallowSnapshotTest(<CivicXBadge />));
+  it('should render with no props passed', () => createShallowSnapshotTest(<CivicXBadge />));
 });

@@ -4,5 +4,5 @@ import createShallowSnapshotTest from 'test-utils/createShallowSnapshotTest';
 import Footer from '../Footer';
 
 describe('Footer', () => {
-  it('it should render properly no props', () => createShallowSnapshotTest(<Footer />));
+  it('should render with no props passed', () => createShallowSnapshotTest(<Footer />));
 });

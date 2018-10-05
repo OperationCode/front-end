@@ -4,26 +4,18 @@ import createShallowSnapshotTest from 'test-utils/createShallowSnapshotTest';
 import ClipPathImage from '../ClipPathImage';
 
 describe('ClipPathImage', () => {
-  it('it should render properly with required props', () => {
-    createShallowSnapshotTest(
-      <ClipPathImage imageSource="image.png" title="Test title">
-        Test
-      </ClipPathImage>,
-    );
+  it('should render with required props', () => {
+    createShallowSnapshotTest(<ClipPathImage imageSource="image.png" title="Test title" />);
   });
 
-  it('it should render properly with some props assigned', () => {
+  it('should render with all props assigned', () => {
     createShallowSnapshotTest(
       <ClipPathImage
         altText="Test picture"
-        className="clipPathImage"
         imageSource="test.png"
-        href="www.test.com"
-        theme="primary"
+        theme="secondary"
         title="Test title"
-      >
-        Test
-      </ClipPathImage>,
+      />,
     );
   });
 });

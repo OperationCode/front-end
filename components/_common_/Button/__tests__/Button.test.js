@@ -7,26 +7,47 @@ import createSnapshotTest from 'test-utils/createSnapshotTest';
 import Button from '../Button';
 
 describe('Button', () => {
-  it('should render with just required props passed', () => {
+  it('should render with required props', () => {
     createSnapshotTest(<Button>Test</Button>);
   });
 
-  it('should render properly with some props assigned', () => {
+  it('should render with all props assigned', () => {
     createSnapshotTest(
-      <Button theme="secondary" disabled fullWidth type="submit">
+      <Button
+        analyticsObject={{ action: 'Test Button Selected', category: 'Testing' }}
+        className="test-class"
+        disabled
+        fullWidth
+        onClick={jest.fn()}
+        tabIndex={-1}
+        theme="secondary"
+        type="submit"
+        data-id="test-id"
+      >
         Test
       </Button>,
     );
   });
 
-  it('should spread data and aria props', () => {
-    const wrapper = shallow(
-      <Button aria-label="test" data-attr="test">
-        Test
-      </Button>,
-    );
-    expect(wrapper.prop('aria-label')).toStrictEqual('test');
-    expect(wrapper.prop('data-attr')).toStrictEqual('test');
+  it('should spread data- and aria- props', () => {
+    const ariaProp = 'aria-label';
+    const dataAttrProp = 'data-attr';
+
+    const testProps = { [`${ariaProp}`]: 'test', [`${dataAttrProp}`]: 'test-attr' };
+
+    const wrapper = shallow(<Button {...testProps}>Test</Button>);
+
+    expect(wrapper.prop(ariaProp)).toStrictEqual('test');
+    expect(wrapper.prop(dataAttrProp)).toStrictEqual('test-attr');
+  });
+
+  it('should should not spread an unexpected prop', () => {
+    const attribute = 'fakey-data-prop';
+    const testProps = { [`${attribute}`]: 'test' };
+
+    const wrapper = shallow(<Button {...testProps}>Test</Button>);
+
+    expect(wrapper.prop(attribute)).toBeUndefined();
   });
 
   it('should render without a generated span when children is PropTypes.node', () => {

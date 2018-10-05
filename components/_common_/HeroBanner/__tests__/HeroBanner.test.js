@@ -11,17 +11,18 @@ import HeroBanner from '../HeroBanner';
 describe('HeroBanner', () => {
   const testImageUrl = `${s3}heroBanner/stock_family-2.jpg`;
 
-  it('should render with just required props passed', () => {
+  it('should render with required props', () => {
     createSnapshotTest(<HeroBanner title="Test" imageSource={testImageUrl} />);
   });
 
-  it('should render properly with all props assigned', () => {
+  it('should render with all props assigned', () => {
     createSnapshotTest(
       <HeroBanner className="testing-123" title="Test" imageSource={testImageUrl}>
         Testing 123
       </HeroBanner>,
     );
   });
+
   it('should have "fullViewHeight" class when passed isFullViewHeight', () => {
     const wrapper = mount(<HeroBanner title="Test" imageSource={testImageUrl} isFullViewHeight />);
 

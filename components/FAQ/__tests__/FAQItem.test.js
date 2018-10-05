@@ -4,7 +4,7 @@ import createSnapshotTest from 'test-utils/createSnapshotTest';
 import FAQItem from '../FAQItem/FAQItem';
 
 describe('FAQItem', () => {
-  it('should render properly with required props', () => {
+  it('should render with required props', () => {
     createSnapshotTest(<FAQItem question="How do I test things?" answer={<>Like so!</>} />);
   });
 });

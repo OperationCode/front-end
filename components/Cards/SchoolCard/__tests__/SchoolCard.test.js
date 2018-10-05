@@ -6,7 +6,7 @@ import createSnapshotTest from 'test-utils/createSnapshotTest';
 import SchoolCard from '../SchoolCard';
 
 describe('SchoolCard', () => {
-  it('should render properly with all props assigned', () => {
+  it('should render with all props assigned', () => {
     createSnapshotTest(
       <SchoolCard
         schoolWebsite="https://www.codeplatoon.org"
@@ -22,7 +22,7 @@ describe('SchoolCard', () => {
     );
   });
 
-  it('should render properly with all required assigned', () => {
+  it('should render with required props', () => {
     createSnapshotTest(
       <SchoolCard
         schoolWebsite="https://www.codeplatoon.org/not-real"

@@ -7,13 +7,20 @@ import createSnapshotTest from 'test-utils/createSnapshotTest';
 import ScrollButton from '../ScrollButton';
 
 describe('ScrollButton', () => {
-  it('should render with just required props passed', () => {
+  it('should render with required props', () => {
     createSnapshotTest(<ScrollButton href="#test">Test</ScrollButton>);
   });
 
-  it('should render properly with some props assigned', () => {
+  it('should render with all props assigned', () => {
     createSnapshotTest(
-      <ScrollButton disabled fullWidth href="#test" theme="secondary" type="submit">
+      <ScrollButton
+        className="test"
+        fullWidth
+        href="#test"
+        onClick={jest.fn()}
+        tabIndex={-1}
+        theme="secondary"
+      >
         Test
       </ScrollButton>,
     );
