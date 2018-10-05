@@ -5,7 +5,7 @@ import Button from 'components/_common_/Button/Button';
 import ImageCard from '../ImageCard';
 
 describe('ImageCard', () => {
-  test('it should render properly with required props', () => {
+  it('it should render properly with required props', () => {
     createShallowSnapshotTest(
       <ImageCard alt="Test title" imageSource="/static/images/Family1.jpg">
         <p>Testing!</p>
@@ -13,7 +13,7 @@ describe('ImageCard', () => {
     );
   });
 
-  test('should render properly with some props assigned', () => {
+  it('should render properly with some props assigned', () => {
     createShallowSnapshotTest(
       <ImageCard alt="Title Tester" imageSource="/static/images/TankFlip.gif">
         <p>

@@ -8,7 +8,7 @@ import createShallowSnapshotTest from 'test-utils/createShallowSnapshotTest';
 import Modal from '../Modal';
 
 describe('Modal', () => {
-  test('should render with just required props passed', () => {
+  it('should render with just required props passed', () => {
     createSnapshotTest(
       <Modal screenReaderLabel="Test" onRequestClose={() => {}}>
         Test
@@ -16,7 +16,7 @@ describe('Modal', () => {
     );
   });
 
-  test('should render properly with some props assigned and not being open', () => {
+  it('should render properly with some props assigned and not being open', () => {
     createSnapshotTest(
       <Modal
         className="test-class"
@@ -29,7 +29,7 @@ describe('Modal', () => {
     );
   });
 
-  test('should render properly with some props assigned and being open', () => {
+  it('should render properly with some props assigned and being open', () => {
     createShallowSnapshotTest(
       <Modal
         className="test-class"
@@ -43,7 +43,7 @@ describe('Modal', () => {
     );
   });
 
-  test('should call ReactGA when in prod environment', () => {
+  it('should call ReactGA when in prod environment', () => {
     ReactGA.initialize('foo', { testMode: true });
 
     process.env.NODE_ENV = 'production';

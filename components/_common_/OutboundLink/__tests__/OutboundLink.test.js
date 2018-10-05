@@ -8,7 +8,7 @@ import ReactGA from 'react-ga';
 import OutboundLink from '../OutboundLink';
 
 describe('OutboundLink', () => {
-  test('should render with just required props passed', () => {
+  it('should render with just required props passed', () => {
     createSnapshotTest(
       <OutboundLink analyticsEventLabel="Test" href="https://tests.com">
         Test
@@ -16,7 +16,7 @@ describe('OutboundLink', () => {
     );
   });
 
-  test('should render properly with all props assigned', () => {
+  it('should render properly with all props assigned', () => {
     createSnapshotTest(
       <OutboundLink
         analyticsEventLabel="Test"
@@ -29,7 +29,7 @@ describe('OutboundLink', () => {
     );
   });
 
-  test('should render ReactGA.OutboundLink when in prod environment', () => {
+  it('should render ReactGA.OutboundLink when in prod environment', () => {
     ReactGA.initialize('foo', { testMode: true });
 
     process.env.NODE_ENV = 'production';
@@ -46,6 +46,6 @@ describe('OutboundLink', () => {
       </OutboundLink>,
     );
 
-    expect(OutboundLinkShallowInstance.find('OutboundLink').length).toEqual(1);
+    expect(OutboundLinkShallowInstance.find('OutboundLink')).toHaveLength(1);
   });
 });

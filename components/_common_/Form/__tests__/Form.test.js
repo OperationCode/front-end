@@ -5,7 +5,7 @@ import createSnapshotTest from 'test-utils/createSnapshotTest';
 import Form from 'components/_common_/Form/Form';
 
 describe('Form', () => {
-  test('should render with just required props passed', () => {
+  it('should render with just required props passed', () => {
     createSnapshotTest(
       <Form>
         <div />
@@ -13,7 +13,7 @@ describe('Form', () => {
     );
   });
 
-  test('should render properly with some props assigned', () => {
+  it('should render properly with some props assigned', () => {
     createSnapshotTest(
       <Form className="login-form">
         <div />

@@ -4,7 +4,7 @@ import createShallowSnapshotTest from 'test-utils/createShallowSnapshotTest';
 import SocialMedia from '../SocialMedia';
 
 describe('SocialMedia', () => {
-  test('it should render properly with no props', () => {
+  it('it should render properly with no props', () => {
     createShallowSnapshotTest(<SocialMedia />);
   });
 });

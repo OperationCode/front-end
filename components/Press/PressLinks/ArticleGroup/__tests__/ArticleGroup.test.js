@@ -5,7 +5,7 @@ import { mount, shallow } from 'enzyme';
 import ArticleGroup from '../ArticleGroup';
 
 describe('ArticleGroup', () => {
-  test('should render properly with required props', () =>
+  it('should render properly with required props', () =>
     createShallowSnapshotTest(
       <ArticleGroup
         region="test"
@@ -14,7 +14,7 @@ describe('ArticleGroup', () => {
       />,
     ));
 
-  test('should render properly with required props and 3 links and a button', () =>
+  it('should render properly with required props and 3 links and a button', () =>
     createShallowSnapshotTest(
       <ArticleGroup
         region="test"
@@ -27,7 +27,7 @@ describe('ArticleGroup', () => {
       />,
     ));
 
-  test('should setState when clicking Show All button', () => {
+  it('should setState when clicking Show All button', () => {
     const ArticleGroupShallowInstance = shallow(
       <ArticleGroup
         region="test"
@@ -42,10 +42,10 @@ describe('ArticleGroup', () => {
 
     ArticleGroupShallowInstance.instance().clickHandler();
 
-    expect(ArticleGroupShallowInstance.state().areAllLinksVisible).toEqual(true);
+    expect(ArticleGroupShallowInstance.state().areAllLinksVisible).toStrictEqual(true);
   });
 
-  test('should not create a button if not enough links', () => {
+  it('should not create a button if not enough links', () => {
     const wrap = mount(
       <ArticleGroup
         region="test"
@@ -54,10 +54,10 @@ describe('ArticleGroup', () => {
       />,
     );
 
-    expect(wrap.find('button').exists()).toEqual(false);
+    expect(wrap.find('button').exists()).toStrictEqual(false);
   });
 
-  test('should create a button if enough links are available', () => {
+  it('should create a button if enough links are available', () => {
     const wrap = mount(
       <ArticleGroup
         region="test"
@@ -70,6 +70,6 @@ describe('ArticleGroup', () => {
       />,
     );
 
-    expect(wrap.find('button').exists()).toEqual(true);
+    expect(wrap.find('button').exists()).toStrictEqual(true);
   });
 });

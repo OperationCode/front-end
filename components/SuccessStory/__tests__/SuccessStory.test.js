@@ -4,7 +4,7 @@ import createShallowSnapshotTest from 'test-utils/createShallowSnapshotTest';
 import SuccessStory from '../SuccessStory';
 
 describe('SuccessStory', () => {
-  test('it should render properly with all required props', () => {
+  it('it should render properly with all required props', () => {
     createShallowSnapshotTest(
       <SuccessStory
         imageSource="image.png"

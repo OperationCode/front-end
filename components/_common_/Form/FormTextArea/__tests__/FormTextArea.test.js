@@ -6,15 +6,15 @@ import createSnapshotTest from 'test-utils/createSnapshotTest';
 import FormTextArea from '../FormTextArea';
 
 describe('FormTextArea', () => {
-  test('should render with just required props passed', () => {
+  it('should render with just required props passed', () => {
     createSnapshotTest(<FormTextArea />);
   });
 
-  test('should render when passed a placeholder', () => {
+  it('should render when passed a placeholder', () => {
     createSnapshotTest(<FormTextArea placeholder="testplaceholder" />);
   });
 
-  test('should call onChange function when text is changed in textarea', () => {
+  it('should call onChange function when text is changed in textarea', () => {
     const props = { onChange: jest.fn() };
     const event = { target: { value: 'TestText' } };
 

@@ -5,11 +5,11 @@ import createSnapshotTest from 'test-utils/createSnapshotTest';
 import FormCheckBox from '../FormCheckBox';
 
 describe('FormCheckBox', () => {
-  test('should render with just required props passed', () => {
+  it('should render with just required props passed', () => {
     createSnapshotTest(<FormCheckBox>Test</FormCheckBox>);
   });
 
-  test('should render properly with some props assigned', () => {
+  it('should render properly with some props assigned', () => {
     createSnapshotTest(
       <FormCheckBox
         className="somename"

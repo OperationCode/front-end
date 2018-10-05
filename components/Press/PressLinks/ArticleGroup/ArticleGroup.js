@@ -33,13 +33,10 @@ class ArticleGroup extends Component {
         <ul>
           {articles.map((link, index) => {
             const isArticleVisible = areAllLinksVisible || index < numberOfInitiallyVisibleLinks;
-      
+
             return isArticleVisible ? (
               <li key={`GroupLink_${link.url}`}>
-                <OutboundLink
-                  href={link.url}
-                  analyticsEventLabel="Press Article"
-                >
+                <OutboundLink href={link.url} analyticsEventLabel="Press Article">
                   {link.title}
                 </OutboundLink>
               </li>
