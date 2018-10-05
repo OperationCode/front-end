@@ -3,6 +3,6 @@
     "React": true
   },
   "rules": {
-    "no-restricted-imports": ["error","react"]
+    "no-restricted-imports": ["error", "react"]
   }
 }
