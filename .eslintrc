@@ -10,9 +10,25 @@
   "parser": "babel-eslint",
   "rules": {
     "comma-dangle": ["error", "only-multiline"],
+    "import/extensions": [
+      "error",
+      "never",
+      {
+        "css": "always",
+        "jpg": "always",
+        "json": "always",
+        "png": "always",
+        "svg": "always"
+      }
+    ],
     "import/no-unresolved": "off",
-    "import/extensions": "off",
     "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "import/order": [
+      "error",
+      {
+        "groups": ["builtin", "external", "internal", "parent", "sibling", "index"]
+      }
+    ],
     "jsx-a11y/anchor-is-valid": [
       "error",
       {
