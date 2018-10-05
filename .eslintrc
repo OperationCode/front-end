@@ -14,7 +14,9 @@
       "error",
       "never",
       {
+        "css": "always",
         "jpg": "always",
+        "json": "always",
         "png": "always",
         "svg": "always"
       }
