@@ -1,4 +1,3 @@
-import React from 'react';
 import Head from 'components/head';
 import Section from 'components/_common_/Section/Section';
 import FeaturedJobsData from 'components/FeaturedJobItem/featuredJobs.json';

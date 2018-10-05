@@ -1,4 +1,3 @@
-import React from 'react';
 import Link from 'next/link';
 import Head from 'components/head';
 import Section from 'components/_common_/Section/Section';
