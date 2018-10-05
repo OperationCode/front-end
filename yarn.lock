@@ -7129,6 +7129,11 @@ jest-mock@^23.2.0:
   resolved "https://registry.yarnpkg.com/jest-mock/-/jest-mock-23.2.0.tgz#ad1c60f29e8719d47c26e1138098b6d18b261134"
   integrity sha1-rRxg8p6HGdR8JuETgJi20YsmETQ=
 
+jest-prop-type-error@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/jest-prop-type-error/-/jest-prop-type-error-1.1.0.tgz#7949a73cef6b9769ed9811139933b4139d2d8ad9"
+  integrity sha512-i/4hdbKSp6cFJc2z3Blu2WEOGjxbQ76pShhtDFIqUfdC8ruMGT57EOsBtBq69FVg915MUMwENNc185ejs7mmtg==
+
 jest-regex-util@^23.3.0:
   version "23.3.0"
   resolved "https://registry.yarnpkg.com/jest-regex-util/-/jest-regex-util-23.3.0.tgz#5f86729547c2785c4002ceaa8f849fe8ca471bc5"
