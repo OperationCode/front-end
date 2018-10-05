@@ -52,4 +52,12 @@ describe('Section', () => {
   test('should render properly with a common use case 3', () => {
     createSnapshotTest(<Section contentClassName="TestClassName">Test Children 5</Section>);
   });
+
+  test('should render properly with a default theme', () => {
+    createSnapshotTest(
+      <Section hasHeadingLines={false} theme="default" title="Test 6">
+        Test Children 6
+      </Section>,
+    );
+  });
 });
