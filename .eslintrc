@@ -24,7 +24,7 @@
     "jest/expect-expect": [
       "error",
       {
-        "assertFunctionNames": ["expect"]
+        "assertFunctionNames": ["expect", "createShallowSnapshotTest", "createSnapshotTest"]
       }
     ],
 
