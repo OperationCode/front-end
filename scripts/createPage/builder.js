@@ -1,12 +1,17 @@
-const buildPage = pageTitle => `import Head from 'components/head';
-export default () => {
-  const pageTitle = '${pageTitle}';
-  return (
-    <div>
-      <Head title={pageTitle} />
-      <h1>pageTitle</h1>
-    </div>
-  )
-};`;
+const upperCaseFirstLetter = string => string.charAt(0).toUpperCase() + string.slice(1);
 
-module.exports = buildPage;
+const builder = {
+  buildJS: pageTitle => `import Head from 'components/head';
+
+export default () => {
+  const pageTitle = '${upperCaseFirstLetter(pageTitle)}';
+    return (
+      <div>
+        <Head title={pageTitle} />
+        <h1>pageTitle</h1>
+      </div>
+      )
+  };`,
+};
+
+module.exports = builder;

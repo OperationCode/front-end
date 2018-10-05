@@ -7,6 +7,7 @@
     "build-storybook": "build-storybook -s ./static -c .storybook -o .storybook-dist",
     "build": "next build",
     "create-component": "node scripts/createComponent/createComponent.js",
+    "create-page": "node scripts/createPage/createPage.js",
     "dev": "next",
     "export": "next export",
     "format": "yarn format:scripts && yarn format:styles",
