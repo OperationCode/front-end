@@ -2,7 +2,7 @@ import React from 'react';
 import Head from 'components/head';
 import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
 import Section from 'components/_common_/Section/Section';
-import { leadershipCircleLink } from 'common/constants/urls.js';
+import { leadershipCircleLink } from 'common/constants/urls';
 import styles from './styles/leadership_circle.css';
 
 export default () => (
