@@ -1,5 +1,11 @@
 {
-  "extends": ["airbnb", "plugin:jsx-a11y/recommended", "prettier", "prettier/react"],
+  "extends": [
+    "airbnb",
+    "plugin:jsx-a11y/recommended",
+    "prettier",
+    "prettier/react",
+    "plugin:jest/recommended"
+  ],
   "env": {
     "browser": true,
     "commonjs": true,
@@ -8,6 +14,7 @@
     "node": true
   },
   "parser": "babel-eslint",
+  "plugins": ["jest"],
   "rules": {
     "comma-dangle": ["error", "only-multiline"],
     "import/extensions": [
@@ -29,6 +36,28 @@
         "groups": ["builtin", "external", "internal", "parent", "sibling", "index"]
       }
     ],
+    "jest/consistent-test-it": ["error", { "fn": "it", "withinDescribe": "it" }],
+    "jest/expect-expect": [
+      "error",
+      {
+        "assertFunctionNames": ["expect", "createShallowSnapshotTest", "createSnapshotTest"]
+      }
+    ],
+
+    "jest/lowercase-name": [
+      "error",
+      {
+        "ignore": ["describe"]
+      }
+    ],
+    "jest/no-jasmine-globals": "error",
+    "jest/no-test-prefixes": "error",
+    "jest/no-test-return-statement": "error",
+    "jest/prefer-strict-equal": "error",
+    "jest/prefer-to-be-null": "error",
+    "jest/prefer-to-be-undefined": "error",
+    "jest/require-tothrow-message": "error",
+    "jest/valid-describe": "error",
     "jsx-a11y/anchor-is-valid": [
       "error",
       {
@@ -61,14 +90,14 @@
       }
     ],
     "react/forbid-prop-types": ["error", { "forbid": ["any"] }],
-    "react/jsx-filename-extension": ["error", { "extensions": [".js"] }],
     "react/jsx-curly-brace-presence": ["error", { "props": "never", "children": "never" }],
+    "react/jsx-filename-extension": ["error", { "extensions": [".js"] }],
     "react/jsx-max-props-per-line": ["error", { "maximum": 1, "when": "multiline" }],
     "react/jsx-one-expression-per-line": "off",
-    "react/prefer-stateless-function": ["off"],
     "react/no-did-mount-set-state": "off",
     "react/no-unused-prop-types": "off",
-    "react/no-unused-state": "error"
+    "react/no-unused-state": "error",
+    "react/prefer-stateless-function": ["off"]
   },
   "overrides": [
     {

@@ -4802,6 +4802,11 @@ eslint-plugin-import@^2.14.0:
     read-pkg-up "^2.0.0"
     resolve "^1.6.0"
 
+eslint-plugin-jest@^21.24.1:
+  version "21.24.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-jest/-/eslint-plugin-jest-21.24.1.tgz#aaf3c34e816f07add83d1e9c20696fdc31fac8dc"
+  integrity sha512-+lJ6nvwJtDRQtTumCs/9gMuteiopArpHJbRbWqPaScCzlhTu1pEilWTUlTgDEtY7GOx7FdOMD3BO/mdxFb4yDg==
+
 eslint-plugin-jsx-a11y@^6.1.1:
   version "6.1.1"
   resolved "https://registry.yarnpkg.com/eslint-plugin-jsx-a11y/-/eslint-plugin-jsx-a11y-6.1.1.tgz#7bf56dbe7d47d811d14dbb3ddff644aa656ce8e1"
@@ -7123,6 +7128,11 @@ jest-mock@^23.2.0:
   version "23.2.0"
   resolved "https://registry.yarnpkg.com/jest-mock/-/jest-mock-23.2.0.tgz#ad1c60f29e8719d47c26e1138098b6d18b261134"
   integrity sha1-rRxg8p6HGdR8JuETgJi20YsmETQ=
+
+jest-prop-type-error@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/jest-prop-type-error/-/jest-prop-type-error-1.1.0.tgz#7949a73cef6b9769ed9811139933b4139d2d8ad9"
+  integrity sha512-i/4hdbKSp6cFJc2z3Blu2WEOGjxbQ76pShhtDFIqUfdC8ruMGT57EOsBtBq69FVg915MUMwENNc185ejs7mmtg==
 
 jest-regex-util@^23.3.0:
   version "23.3.0"

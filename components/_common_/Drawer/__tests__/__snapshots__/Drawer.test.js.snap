@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Drawer should render properly with some props assigned 1`] = `
+exports[`Drawer should render with many props assigned 1`] = `
 <div
   className="test-class visible"
 >
@@ -12,7 +12,7 @@ exports[`Drawer should render properly with some props assigned 1`] = `
 </div>
 `;
 
-exports[`Drawer should render with just required props passed 1`] = `
+exports[`Drawer should render with required props 1`] = `
 <div
   className="hidden"
 >

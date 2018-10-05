@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SocialMediaItem it should render properly with required (all) props 1`] = `
+exports[`SocialMediaItem should render with required props 1`] = `
 <div
   className="SocialMediaItem"
 >

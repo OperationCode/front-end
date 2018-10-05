@@ -3,47 +3,34 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import ReactGA from 'react-ga';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
-import createShallowSnapshotTest from 'test-utils/createShallowSnapshotTest';
 
 import Modal from '../Modal';
 
 describe('Modal', () => {
-  test('should render with just required props passed', () => {
+  it('should render with required props', () => {
     createSnapshotTest(
-      <Modal screenReaderLabel="Test" onRequestClose={() => {}}>
+      <Modal screenReaderLabel="Test" onRequestClose={jest.fn()}>
         Test
       </Modal>,
     );
   });
 
-  test('should render properly with some props assigned and not being open', () => {
+  it('should render with many props assigned', () => {
     createSnapshotTest(
       <Modal
         className="test-class"
-        onRequestClose={() => {}}
-        screenReaderLabel="Test"
-        shouldCloseOnOverlayClick
-      >
-        Test
-      </Modal>,
-    );
-  });
-
-  test('should render properly with some props assigned and being open', () => {
-    createShallowSnapshotTest(
-      <Modal
-        className="test-class"
+        hasCloseIcon={false}
         isOpen
-        onRequestClose={() => {}}
+        onRequestClose={jest.fn()}
         screenReaderLabel="Test"
-        shouldCloseOnOverlayClick
+        shouldCloseOnOverlayClick={false}
       >
         Test
       </Modal>,
     );
   });
 
-  test('should call ReactGA when in prod environment', () => {
+  it('should call ReactGA when in prod environment', () => {
     ReactGA.initialize('foo', { testMode: true });
 
     process.env.NODE_ENV = 'production';

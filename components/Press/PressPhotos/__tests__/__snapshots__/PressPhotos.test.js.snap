@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PressPhotos it should render properly no props 1`] = `
+exports[`PressPhotos should render with no props passed 1`] = `
 <div
   className="photos"
 >
