@@ -12,12 +12,23 @@ export default function capitalizeFirstLetter(someString) {
 }
 
 /**
- * Checks to see if a string has white space
+ * Checks to see if a string contains white space
  *
  * @export
  * @param {string} someString
  * @returns {boolean} Returns a boolean. True if a white space is found
  */
-export function hasWhiteSpace(someString) {
+export function containsWhiteSpace(someString) {
   return /\s/.test(someString);
+}
+
+/**
+ * Checks to see if a string contains dash (-) characters
+ *
+ * @export
+ * @param {string} someString
+ * @returns {boolean} Returns a boolean. True if (-) is found
+ */
+export function containsDashCharacter(someString) {
+  return someString.indexOf('-') >= 0;
 }
