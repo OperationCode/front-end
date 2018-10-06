@@ -10,3 +10,14 @@ export default function capitalizeFirstLetter(someString) {
 
   return stringCopy.charAt(0).toUpperCase() + stringCopy.slice(1);
 }
+
+/**
+ * Checks to see if a string has white space
+ *
+ * @export
+ * @param {string} someString
+ * @returns {boolean} Returns a boolean. True if a white space is found
+ */
+export function hasWhiteSpace(someString) {
+  return /\s/.test(someString);
+}
