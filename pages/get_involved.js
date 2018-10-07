@@ -4,13 +4,12 @@ import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
 import Section from 'components/_common_/Section/Section';
 import Button from 'components/_common_/Button/Button';
 import Badge from 'components/Badge/Badge';
-// import ImageCard from 'components/Cards/ImageCard/ImageCard';
 import PlaceholderIcon1 from 'static/images/icons/FontAwesome/users-solid.svg';
 import PlaceholderIcon2 from 'static/images/icons/FontAwesome/handshake-regular.svg';
 import { s3 } from 'common/constants/urls';
 import styles from './styles/get_involved.css';
 
-// TODO: Replace PlaceholderIcon with appropriate icon assets
+// TODO: Replace PlaceholderIcons with appropriate icon assets
 
 const mentorItems = [
   {
@@ -139,5 +138,3 @@ export default () => (
     </Section>
   </div>
 );
-
-// className={classNames(styles.alignCenter, styles.marginBottom)}

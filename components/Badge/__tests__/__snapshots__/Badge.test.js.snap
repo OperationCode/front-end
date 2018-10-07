@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Badge should render properly with all props assigned 1`] = `
+<div
+  className="Badge"
+>
+  <div
+    className="iconContainer"
+  />
+  <div
+    className="centerText label"
+  >
+    
+  </div>
+</div>
+`;
+
+exports[`Badge should render with just required props passed 1`] = `
+<div
+  className="Badge"
+>
+  <div
+    className="iconContainer"
+  />
+  <div
+    className="centerText label"
+  >
+    
+  </div>
+</div>
+`;
