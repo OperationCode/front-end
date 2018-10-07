@@ -1,0 +1,19 @@
+.Badge {
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 240px;
+}
+
+.iconContainer {
+  max-width: 100px;
+  width: 100%;
+  margin: auto;
+}
+
+.label {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  line-height: 1.2rem;
+}
