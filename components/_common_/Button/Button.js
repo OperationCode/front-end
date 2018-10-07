@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import ReactGA from 'react-ga';
 import { googleAnalyticsEventPropType } from 'common/constants/custom-props';
+import { getDataAttributes, getAriaAttributes } from 'common/utils/prop-utils';
 import styles from './Button.css';
 
 class Button extends Component {
@@ -16,17 +17,19 @@ class Button extends Component {
     tabIndex: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     theme: PropTypes.oneOf(['primary', 'secondary', 'slate']),
     type: PropTypes.oneOf(['button', 'reset', 'submit']),
+    datum: PropTypes.any, // eslint-disable-line react/forbid-prop-types
   };
 
   static defaultProps = {
     analyticsObject: {
-      category: 'Interactions',
       action: 'Button Selected',
+      category: 'Interactions',
     },
     className: '',
+    datum: '',
     disabled: false,
     fullWidth: false,
-    onClick: undefined,
+    onClick: () => {},
     tabIndex: 0,
     theme: 'primary',
     type: 'button',
@@ -41,13 +44,13 @@ class Button extends Component {
       // eslint-disable-next-line no-console
       console.log('Analytics Disabled', props.analyticsObject);
     }
-
-    return props.onClick;
+    props.onClick();
   };
 
   render() {
     const { props } = this;
-
+    const customDataAttributes = getDataAttributes(props);
+    const ariaAttributes = getAriaAttributes(props);
     /* eslint-disable react/button-has-type */
     return (
       <button
@@ -59,6 +62,8 @@ class Button extends Component {
         onClick={this.clickHandler}
         tabIndex={props.tabIndex}
         type={props.type}
+        {...customDataAttributes}
+        {...ariaAttributes}
       >
         {/* Render text nodes within a span to apply selector styles */}
         {typeof props.children === 'string' ? <span>{props.children}</span> : props.children}

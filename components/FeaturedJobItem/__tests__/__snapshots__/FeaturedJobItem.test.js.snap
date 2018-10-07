@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FeaturedJobItem should render properly with all props assigned 1`] = `
+exports[`FeaturedJobItem should render with many props assigned 1`] = `
 <article
   className="job"
 >
@@ -83,7 +83,7 @@ exports[`FeaturedJobItem should render properly with all props assigned 1`] = `
 </article>
 `;
 
-exports[`FeaturedJobItem should render with just required props passed 1`] = `
+exports[`FeaturedJobItem should render with required props 1`] = `
 <article
   className="job"
 >

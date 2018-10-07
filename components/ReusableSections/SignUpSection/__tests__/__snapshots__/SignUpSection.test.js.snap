@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SignUpSection it should render properly with no props 1`] = `
+exports[`SignUpSection should render with no props passed passed 1`] = `
 <Section
   className=""
   contentClassName=""
@@ -21,8 +21,10 @@ exports[`SignUpSection it should render properly with no props 1`] = `
       }
     }
     className=""
+    datum=""
     disabled={false}
     fullWidth={false}
+    onClick={[Function]}
     tabIndex={0}
     theme="secondary"
     type="button"

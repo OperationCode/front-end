@@ -3,7 +3,17 @@ import Link from 'next/link';
 function Nav() {
   return (
     <nav>
-      <ul>
+      <ul
+        style={{
+          display: 'flex',
+          flexWrap: 'wrap',
+          justifyContent: 'space-between',
+          listStyle: 'none',
+          width: '100%',
+          margin: 0,
+          padding: '1rem 0',
+        }}
+      >
         <li>
           <Link href="/" prefetch>
             <a>Home</a>
@@ -15,19 +25,24 @@ function Nav() {
           </Link>
         </li>
         <li>
-          <Link href="/history" prefetch>
+          <Link href="/code_schools" prefetch>
+            <a>Code Schools</a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/history">
             <a>History</a>
           </Link>
         </li>
         <li>
-          <Link href="/jobs" prefetch>
+          <Link href="/jobs">
             <a>Jobs</a>
           </Link>
-          <li>
-            <Link href="/leadership_circle" prefetch>
-              <a>Leadership Circle</a>
-            </Link>
-          </li>
+        </li>
+        <li>
+          <Link href="/leadership_circle">
+            <a>Leadership Circle</a>
+          </Link>
         </li>
       </ul>
     </nav>

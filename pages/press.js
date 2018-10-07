@@ -1,16 +1,15 @@
-import React from 'react';
 import Link from 'next/link';
 import Head from 'components/head';
-import PressVideos from 'components/PressVideos/PressVideos';
-import PressPhotos from 'components/PressPhotos/PressPhotos';
-import CivicXBadge from 'components/CivicXBadge/CivicXBadge';
 import Section from 'components/_common_/Section/Section';
+import { Videos, Photos, CivicXBadge, Links } from 'components/Press';
 import styles from './styles/press.css';
 
 export default () => (
   <>
     <Head title="Press" />
-    <Section className={styles.pressContainer} title="Press" theme="white">
+
+    <Section className={styles.pressContainer} hasHeadingLines={false} theme="white">
+      <h1>Press</h1>
       <p>
         This page is designed to make a journalist&apos;s job easy in writing, blogging, or
         documenting Operation Code. Below you will find targeted information corresponding to common
@@ -77,21 +76,25 @@ export default () => (
       </div>
     </Section>
 
-    <Section title="Videos">
-      <PressVideos />
+    <Section contentClassName={styles.customContent} title="Videos" theme="grayLight">
+      <Videos />
     </Section>
 
-    <Section title="Photos" theme="white">
-      <PressPhotos />
+    <Section contentClassName={styles.customContent} title="Photos" theme="white">
+      <Photos />
     </Section>
 
-    <Section contentClassName={styles.customContent} title="Branding">
+    <Section contentClassName={styles.customContent} title="In The News" theme="grayLight">
+      <Links />
+    </Section>
+
+    <Section contentClassName={styles.customContent} title="Branding" theme="white">
       <div className={styles.logos}>
         <Link href="/branding">View Our Branding</Link>
       </div>
     </Section>
 
-    <Section contentClassName={styles.customContent} headingLines={false} theme="white">
+    <Section contentClassName={styles.customContent} headingLines={false} theme="grayLight">
       <h6 className={styles.header}>
         Operation Code is a graduate of the following startup accelerators:
       </h6>

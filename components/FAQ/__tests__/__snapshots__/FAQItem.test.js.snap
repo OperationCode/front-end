@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FAQItem should render properly with required props 1`] = `
+exports[`FAQItem should render with required props 1`] = `
 <div
   className="accordionSingle"
 >

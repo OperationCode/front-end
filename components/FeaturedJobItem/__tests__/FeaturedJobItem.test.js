@@ -4,7 +4,7 @@ import createSnapshotTest from 'test-utils/createSnapshotTest';
 import FeaturedJobItem from '../FeaturedJobItem';
 
 describe('FeaturedJobItem', () => {
-  it('should render with just required props passed', () => {
+  it('should render with required props', () => {
     createSnapshotTest(
       <FeaturedJobItem
         title="DevOps Engineer"
@@ -15,7 +15,7 @@ describe('FeaturedJobItem', () => {
     );
   });
 
-  it('should render properly with all props assigned', () => {
+  it('should render with many props assigned', () => {
     createSnapshotTest(
       <FeaturedJobItem
         title="Experienced React Engineer"

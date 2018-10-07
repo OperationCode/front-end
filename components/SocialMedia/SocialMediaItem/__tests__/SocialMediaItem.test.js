@@ -5,7 +5,7 @@ import FacebookLogo from 'static/images/icons/facebook_logo.svg';
 import SocialMediaItem from '../SocialMediaItem';
 
 describe('SocialMediaItem', () => {
-  test('it should render properly with required (all) props', () => {
+  it('should render with required props', () => {
     createSnapshotTest(
       <SocialMediaItem
         alt="Facebook"

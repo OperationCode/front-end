@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`JoinSection it should render properly with no props 1`] = `
+exports[`JoinSection should render with no props passed passed 1`] = `
 <Section
   className="JoinSection"
   contentClassName=""
@@ -31,8 +31,10 @@ exports[`JoinSection it should render properly with no props 1`] = `
         }
       }
       className=""
+      datum=""
       disabled={false}
       fullWidth={false}
+      onClick={[Function]}
       tabIndex={0}
       theme="secondary"
       type="button"

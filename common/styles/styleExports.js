@@ -1,4 +1,4 @@
-import capitalizeFirstLetter from 'common/utils/string-utils';
+import { capitalizeFirstLetter } from 'common/utils/string-utils';
 import * as themeMap from './themeMap';
 
 const colorHexCodes = Object.entries(themeMap);

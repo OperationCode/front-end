@@ -1,12 +1,14 @@
-import React from 'react';
+import Head from 'components/head';
 import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
 import Section from 'components/_common_/Section/Section';
-import { leadershipCircleLink } from 'common/constants/urls.js';
+import { leadershipCircleLink } from 'common/constants/urls';
 import styles from './styles/leadership_circle.css';
 
 export default () => (
   <>
+    <Head title="Leadership Circle" />
     <h1>Leadership Circle</h1>
+
     <Section title="Join Today!" theme="white">
       <p>Operation Code is pleased to invite you to join the Leadership Circle.</p>
       <p>
@@ -28,7 +30,12 @@ export default () => (
       </p>
 
       <br />
-      <OutboundLink href={leadershipCircleLink} hasIcon={false} className={styles.center}>
+      <OutboundLink
+        analyticsEventLabel="Join/Donate top"
+        className={styles.center}
+        hasIcon={false}
+        href={leadershipCircleLink}
+      >
         <h4>Join and Donate Now</h4>
       </OutboundLink>
     </Section>
@@ -96,7 +103,12 @@ export default () => (
       </ul>
 
       <br />
-      <OutboundLink href={leadershipCircleLink} hasIcon={false} className={styles.center}>
+      <OutboundLink
+        analyticsEventLabel="Join/Donate top"
+        className={styles.center}
+        hasIcon={false}
+        href={leadershipCircleLink}
+      >
         <h3>Join and Donate Now</h3>
       </OutboundLink>
     </Section>

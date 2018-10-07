@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Timeline it should render properly with no props 1`] = `
+exports[`Timeline should render with no props passed passed 1`] = `
 <div
   className="timeline"
 >
@@ -217,7 +217,7 @@ exports[`Timeline it should render properly with no props 1`] = `
             .
           </p>
         }
-        title=""
+        title="Operation Code Is A Go"
       />
       <TimelineEvent
         content={
@@ -505,38 +505,6 @@ exports[`Timeline it should render properly with no props 1`] = `
       <TimelineEvent
         content={
           <p>
-            Global hospitality provider,
-             
-            <OutboundLink
-              alt="AirBnB"
-              analyticsEventLabel="History Link"
-              className=""
-              hasIcon={true}
-              href="https://www.airbnb.com/"
-            >
-              AirBnB
-            </OutboundLink>
-             
-            sponsors lodging for Operation Code members attending SignalConf in San Francisco.
-             
-            <OutboundLink
-              alt="Link to Instagram photo of Operation Code at SignalConf"
-              analyticsEventLabel="History Link"
-              className=""
-              hasIcon={true}
-              href="https://www.instagram.com/p/21p5bFxUjd/?taken-by=davidcmolina"
-            >
-              They also invited our members to tour their headquarters
-            </OutboundLink>
-             
-            ! Airbnb forges their partnership with Operation Code in steel by offering sponsored lodgings for veterans interviewing for a career in tech.
-          </p>
-        }
-        title="SignalConf Sponsorship"
-      />
-      <TimelineEvent
-        content={
-          <p>
             <OutboundLink
               alt="Twilio's SignalConf"
               analyticsEventLabel="History Link"
@@ -591,26 +559,6 @@ exports[`Timeline it should render properly with no props 1`] = `
           </p>
         }
         title="Board Of Directors Formed"
-      />
-      <TimelineEvent
-        content={
-          <p>
-            To meet growth demands, Operation Code
-             
-            <OutboundLink
-              alt="Old Operation Code tweet"
-              analyticsEventLabel="History Link"
-              className=""
-              hasIcon={true}
-              href="https://twitter.com/operation_code/status/614443994769027072"
-            >
-              separates from its financial supporter
-            </OutboundLink>
-             
-            . The Cogostar Foundation - Operation Code's current sponsor - helps to reorganize a new governing Board of Directors, comprised of Josh Carter, Aimee Knight, Nick Frost, Pete Runyon, Laura Gómez, Fernando Paredes, and Elmer Thomas. Operation Code incorporates as an Oregon non-profit organization.
-          </p>
-        }
-        title="Stickers Distributed"
       />
       <TimelineEvent
         content={
