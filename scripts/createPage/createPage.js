@@ -1,9 +1,15 @@
 /* eslint-disable */
 const path = require('path');
 const fs = require('fs');
-const { buildJS } = require('./builder');
+const { buildJS } = require('./builders');
+const {
+  containsWhiteSpace,
+  containsDashCharacter,
+  capitalizeFirstLetter,
+} = require('../../common/utils/node-utils');
 
 const pagePath = 'pages/';
+const fileNamePrefix = '.js';
 
 const findRoot = () => {
   let thisPath = path.resolve(__dirname);
@@ -25,12 +31,36 @@ const doesPageExist = (pageName, root) => {
   return false;
 };
 
+const createPageTitle = pageName => {
+  let capitalizePageName = pageName.split('_').map((word, index) => capitalizeFirstLetter(word));
+
+  if (capitalizePageName[0] === '') {
+    capitalizePageName = capitalizePageName.slice(1);
+  }
+
+  return capitalizePageName.join(' ');
+};
+
 const createPage = (root, pageName) => {
+  // test to make sure file meets requirements
+  if (containsDashCharacter(pageName) || containsWhiteSpace(pageName)) {
+    console.log(`Page: ${pageName} wasn't created because of a dash or white space in name.`);
+    return false;
+  }
+
   const pageAbsolutePath = `${path.join(root, pageName)}.js`;
-  const pageData = buildJS(pageName);
+  const pageTitle = createPageTitle(pageName);
+  const pageData = buildJS(pageTitle);
 
   console.log(`Creating file: ${pageName}`);
-  fs.writeFileSync(pageAbsolutePath, pageData);
+
+  // create file
+  try {
+    fs.writeFileSync(pageAbsolutePath, pageData);
+  } catch (error) {
+    console.log(error);
+  }
+
   console.log(`File created: ${pageAbsolutePath}`);
 };
 

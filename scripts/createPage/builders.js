@@ -1,10 +1,9 @@
-const upperCaseFirstLetter = string => string.charAt(0).toUpperCase() + string.slice(1);
-
+/* eslint-disable */
 const builder = {
   buildJS: pageTitle => `import Head from 'components/head';
 
 export default () => {
-  const pageTitle = '${upperCaseFirstLetter(pageTitle)}';
+  const pageTitle = '${pageTitle}';
     return (
       <div>
         <Head title={pageTitle} />
