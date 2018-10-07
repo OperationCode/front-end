@@ -1,5 +1,5 @@
 /* eslint-env jest */
-import capitalizeFirstLetter from '../string-utils';
+import { capitalizeFirstLetter } from '../string-utils';
 
 describe('capitalizeFirstLetter', () => {
   it('should capitalize the first letter of a string with a lower-case first letter', () => {
