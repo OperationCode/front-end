@@ -19,7 +19,13 @@ module.exports.capitalizeFirstLetter = someString => {
  * @param {string} someString
  * @returns {boolean} Returns a boolean. True if a white space is found
  */
-module.exports.containsWhiteSpace = someString => /\s/.test(someString);
+module.exports.containsWhiteSpace = someString => {
+  if (typeof someString !== 'string') {
+    throw new Error(`${someString} is not a string`);
+  }
+
+  return /\s/.test(someString);
+};
 
 /**
  * Checks to see if a string contains dash (-) characters
@@ -28,4 +34,9 @@ module.exports.containsWhiteSpace = someString => /\s/.test(someString);
  * @param {string} someString
  * @returns {boolean} Returns a boolean. True if (-) is found
  */
-module.exports.containsDashCharacter = someString => someString.indexOf('-') >= 0;
+module.exports.containsDashCharacter = someString => {
+  if (Array.isArray(someString)) {
+    throw new Error(`${someString} is not a string`);
+  }
+  return someString.indexOf('-') >= 0;
+};
