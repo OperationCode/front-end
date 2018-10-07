@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TimelineEvent should render properly with all required props 1`] = `
+exports[`TimelineEvent should render with required props 1`] = `
 <div
   className="eventContainer"
 >

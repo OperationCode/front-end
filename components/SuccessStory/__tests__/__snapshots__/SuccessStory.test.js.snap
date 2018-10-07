@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SuccessStory it should render properly with all required props 1`] = `
+exports[`SuccessStory should render with required props 1`] = `
 <div
   className="SuccessStory"
 >

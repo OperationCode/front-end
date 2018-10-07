@@ -7,7 +7,7 @@ import CloseButton from '../CloseButton';
 const noOp = () => {};
 
 describe('CloseButton', () => {
-  it('should render with just required props passed', () => {
+  it('should render with required props', () => {
     createSnapshotTest(<CloseButton onClick={noOp} />);
   });
 

@@ -1,4 +1,3 @@
-import React from 'react';
 import Head from 'components/head';
 import { s3 } from 'common/constants/urls';
 import Section from 'components/_common_/Section/Section';

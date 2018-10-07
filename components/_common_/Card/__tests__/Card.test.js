@@ -5,11 +5,11 @@ import createSnapshotTest from 'test-utils/createSnapshotTest';
 import Card from '../Card';
 
 describe('Card', () => {
-  test('should render with just required props passed', () => {
+  it('should render with required props', () => {
     createSnapshotTest(<Card>Test</Card>);
   });
 
-  test('should render properly with some props assigned', () => {
+  it('should render with many props assigned', () => {
     createSnapshotTest(
       <Card className="test-class" hasAnimationOnHover>
         Test

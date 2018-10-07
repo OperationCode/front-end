@@ -63,11 +63,11 @@ import createSnapshotTest from 'test-utils/createSnapshotTest';
 import ${componentName} from '../${componentName}';
 
 describe('${componentName}', () => {
-  it('should render with just required props passed', () => {
+  it('should render with required props', () => {
     createSnapshotTest(<${componentName}>Test</${componentName}>);
   });
 
-  it('should render properly with all props assigned', () => {
+  it('should render with many props assigned', () => {
     createSnapshotTest(
       <${componentName} className="test-class">
         Test

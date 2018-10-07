@@ -12,15 +12,15 @@ describe('FormSelect', () => {
     options = [{ label: 'test 1', value: 'TEST1' }, { label: 'test 2', value: 'TEST2' }];
   });
 
-  test('should render with just required props passed', () => {
+  it('should render with required props', () => {
     createSnapshotTest(<FormSelect options={options} />);
   });
 
-  test('should render when passed a prompt and options', () => {
+  it('should render when passed a prompt and options', () => {
     createSnapshotTest(<FormSelect options={options} prompt="Select an item" />);
   });
 
-  test('should call onChange from props after onChange', () => {
+  it('should call onChange from props after onChange', () => {
     const onChangeMock = jest.fn();
     const wrap = mount(<FormSelect onChange={onChangeMock} options={options} />);
     wrap.find('select').simulate('change', {
@@ -32,7 +32,7 @@ describe('FormSelect', () => {
     expect(onChangeMock).toBeCalledWith('TEST1');
   });
 
-  test('should call onChange from props after onChange with validate', () => {
+  it('should call onChange from props after onChange with validate', () => {
     const onChangeMock = jest.fn();
     const wrap = mount(
       <FormSelect
