@@ -1,5 +1,7 @@
-// Remove lint error below when a second validator is added.
-/* eslint-disable import/prefer-default-export */
+/**
+ * Functions are being exported using module.exports, so we can use the methods in
+ * node.js and ES6 client side.
+ * */
 
 /**
  * Capitalize the first letter in a string
@@ -8,8 +10,7 @@
  * @param {string} someString
  * @returns {string} Returns string with the first character capitalized
  */
-
-export function capitalizeFirstLetter(someString = '') {
+function capitalizeFirstLetter(someString = '') {
   const stringCopy = someString.slice(0);
 
   return stringCopy.charAt(0).toUpperCase() + stringCopy.slice(1);
@@ -22,7 +23,7 @@ export function capitalizeFirstLetter(someString = '') {
  * @param {string} someString
  * @returns {boolean} Returns a boolean. True if a white space is found
  */
-export function containsWhiteSpace(someString) {
+function containsWhiteSpace(someString) {
   if (typeof someString !== 'string') {
     throw new Error(`${someString} is not a string`);
   }
@@ -37,10 +38,15 @@ export function containsWhiteSpace(someString) {
  * @param {string} someString
  * @returns {boolean} Returns a boolean. True if (-) is found
  */
-export function containsDashCharacter(someString) {
+function containsDashCharacter(someString) {
   if (Array.isArray(someString)) {
     throw new Error(`${someString} is not a string`);
   }
-
   return someString.indexOf('-') >= 0;
 }
+
+module.exports = {
+  capitalizeFirstLetter,
+  containsWhiteSpace,
+  containsDashCharacter,
+};

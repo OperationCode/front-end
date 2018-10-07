@@ -12,7 +12,7 @@ describe('String Utilities', () => {
     });
 
     it('should return an empty string when passed undefined', () => {
-      expect(capitalizeFirstLetter()).toStrictEqual('');
+      expect(capitalizeFirstLetter(undefined)).toStrictEqual('');
     });
   });
 });
