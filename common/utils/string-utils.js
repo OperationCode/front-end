@@ -5,7 +5,7 @@
  * @param {string} someString
  * @returns {string} Returns string with the first character capitalized
  */
-export default function capitalizeFirstLetter(someString) {
+export function capitalizeFirstLetter(someString) {
   const stringCopy = someString.slice(0);
 
   return stringCopy.charAt(0).toUpperCase() + stringCopy.slice(1);
@@ -19,6 +19,10 @@ export default function capitalizeFirstLetter(someString) {
  * @returns {boolean} Returns a boolean. True if a white space is found
  */
 export function containsWhiteSpace(someString) {
+  if (typeof someString !== 'string') {
+    throw new Error(`${someString} is not a string`);
+  }
+
   return /\s/.test(someString);
 }
 
@@ -30,5 +34,9 @@ export function containsWhiteSpace(someString) {
  * @returns {boolean} Returns a boolean. True if (-) is found
  */
 export function containsDashCharacter(someString) {
+  if (Array.isArray(someString)) {
+    throw new Error(`${someString} is not a string`);
+  }
+
   return someString.indexOf('-') >= 0;
 }
