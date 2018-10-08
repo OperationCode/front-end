@@ -1,4 +1,3 @@
-import React from 'react';
 import classNames from 'classnames';
 import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
 import Section from 'components/_common_/Section/Section';
