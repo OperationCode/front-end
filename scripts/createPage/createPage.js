@@ -40,7 +40,9 @@ const createPageTitle = pageName => {
 
 const createPage = (root, pageName) => {
   // test to make sure file meets requirements
-  if (containsDashCharacter(pageName) || containsWhiteSpace(pageName)) {
+  const isNotValidPageName = pageName.includes('-') || pageName.includes(' ');
+
+  if (isNotValidPageName) {
     console.log(`Page: ${pageName} wasn't created because of a dash or white space in name.`);
     return false;
   }
