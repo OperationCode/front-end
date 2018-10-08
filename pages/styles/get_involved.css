@@ -31,10 +31,10 @@
 }
 
 @media screen and (min-width: 961px) {
-  .ctaImage {
+  /* .ctaImage {
     position: relative;
     top: -5em;
-  }
+  } */
 }
 
 @media screen and (min-width: 750px) {
@@ -62,10 +62,10 @@
     align-items: center;
   }
 
-  .ctaImage {
+  /* .ctaImage {
     position: static;
     top: 0;
-  }
+  } */
 
   .ctaText {
     display: flex;

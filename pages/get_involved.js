@@ -1,4 +1,3 @@
-import React from 'react';
 import classNames from 'classnames';
 import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
 import Section from 'components/_common_/Section/Section';
@@ -51,25 +50,28 @@ export default () => (
       </div>
     </Section>
 
-    <Section theme="mist" contentClassName={styles.alignCenter}>
-      <h4>The Power of Mentorship</h4>
+    <Section
+      theme="mist"
+      contentClassName={styles.alignCenter}
+      title="The Power of Mentorship"
+      hasHeadingLines={false}
+    >
       <div className={styles.marginBottom}>
         By mentoring one of our members, you will help them:
       </div>
       <div className={classNames(styles.flexDisplay, styles.marginBottom)}>
         {mentorItems.map(item => (
-          <Badge key={item.label} icon={item.icon} label={item.label} />
+          <Badge key={item.label} svgComponent={item.icon} label={item.label} />
         ))}
       </div>
     </Section>
 
-    <Section theme="slate">
+    <Section theme="slate" title="Empower Our Community" hasHeadingLines={false}>
       <div className={classNames(styles.cta, styles.ctaImageLeft)}>
         <div className={styles.ctaImage}>
           <img src={`${s3}stock_paired-programming.jpg`} alt="Empower Our Community" />
         </div>
         <div className={styles.ctaText}>
-          <h4>Empower Our Community</h4>
           <p>
             Make a difference in the lives of military veterans, service members, and spouses who
             are eager to transition into a software development career.
@@ -79,26 +81,29 @@ export default () => (
       </div>
     </Section>
 
-    <Section theme="mist" contentClassName={styles.alignCenter}>
-      <h4>Ways You Can Support Operation Code</h4>
+    <Section
+      theme="mist"
+      contentClassName={styles.alignCenter}
+      title="Ways You Can Support Operation Code"
+      hasHeadingLines={false}
+    >
       <div className={classNames(styles.marginBottom, styles.centerText)}>
         We&apos;re always looking for volunteers who are dedicated to making an impact in the lives
         of military veterans, service members, and spouses. You can help us with:
       </div>
       <div className={classNames(styles.flexDisplay, styles.marginBottom)}>
         {supportItems.map(item => (
-          <Badge key={item.label} icon={item.icon} label={item.label} />
+          <Badge key={item.label} svgComponent={item.icon} label={item.label} />
         ))}
       </div>
     </Section>
 
-    <Section theme="slate">
+    <Section theme="slate" title="Support Our Mission" hasHeadingLines={false}>
       <div className={classNames(styles.cta, styles.ctaImageRight)}>
         <div className={styles.ctaImage}>
           <img src={`${s3}stock_paired-programming.jpg`} alt="Support Our Mission" />
         </div>
         <div className={styles.ctaText}>
-          <h4>Support Our Mission</h4>
           <p>
             Make a difference in the lives of military veterans, service members, and spouses who
             are eager to transition into a software development career.
@@ -108,8 +113,12 @@ export default () => (
       </div>
     </Section>
 
-    <Section theme="mist" contentClassName={styles.alignCenter}>
-      <h4>Donate to Deploy the Future</h4>
+    <Section
+      theme="mist"
+      contentClassName={styles.alignCenter}
+      title="Donate to Deploy the Future"
+      hasHeadingLines={false}
+    >
       <p className={styles.centerText}>
         Help us reach our fundraising goal! With your donation, we&apos;ll be able to provide our
         members with coding school scholarships, tickets to tech conferences, and access to
@@ -119,8 +128,12 @@ export default () => (
       <Button>Make a Donation</Button>
     </Section>
 
-    <Section theme="white" contentClassName={styles.alignCenter}>
-      <h4>Join Our Thriving Community</h4>
+    <Section
+      theme="white"
+      contentClassName={styles.alignCenter}
+      title="Join Our Thriving Community"
+      hasHeadingLines={false}
+    >
       <p className={styles.centerText}>
         Are you ready to begin your journey towards a career in software development?
         <br />
@@ -129,7 +142,7 @@ export default () => (
       <div className={classNames(styles.alignCenter, styles.marginBottom)}>
         <div>
           <input placeholder="Email address" />
-          <button type="submit">Join our Slack</button>
+          <Button>Join our Slack</Button>
         </div>
         Slack is a community based collaboration tool where all the magic happens!
         <br />

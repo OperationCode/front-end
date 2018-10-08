@@ -1,13 +1,9 @@
 .Badge {
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
   width: 240px;
 }
 
 .iconContainer {
-  max-width: 100px;
-  width: 100%;
+  width: 100px;
   margin: auto;
 }
 

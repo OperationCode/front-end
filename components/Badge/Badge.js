@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import styles from './Badge.css';
 
 Badge.propTypes = {
-  icon: PropTypes.element.isRequired,
+  svgComponent: PropTypes.element.isRequired,
   label: PropTypes.string,
   labelClassName: PropTypes.string,
 };
@@ -14,10 +14,10 @@ Badge.defaultProps = {
   labelClassName: '',
 };
 
-function Badge({ icon, label, labelClassName }) {
+function Badge({ svgComponent, label, labelClassName }) {
   return (
     <div className={styles.Badge}>
-      <div className={styles.iconContainer}>{icon}</div>
+      <div className={styles.iconContainer}>{svgComponent}</div>
       <div className={classNames(styles.centerText, styles.label, labelClassName)}>{label}</div>
     </div>
   );
