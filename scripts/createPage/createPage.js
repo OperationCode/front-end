@@ -31,11 +31,14 @@ const doesPageExist = (pageName, root) => {
   return false;
 };
 
+
 const createPageTitle = pageName => {
-  return pageName
-    .split('_')
-    .map(word => capitalizeFirstLetter(word))
-    .join(' ');
+  // Example 1: `some_page_name` becomes `Some Page Name`
+  // Example 2: `page` becomes `Page`
+  
+  // Trim is for trailing and leading underscroes (_) 
+  // Example 3: `_some_page_name` becomes `Some Page Name`
+  return pageName.split('_').map(word => capitalizeFirstLetter(word)).join(' ').trim();
 };
 
 const createPage = (root, pageName) => {
