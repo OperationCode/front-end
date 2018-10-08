@@ -2,11 +2,7 @@
 const path = require('path');
 const fs = require('fs');
 const { buildJS } = require('./builders');
-const {
-  containsWhiteSpace,
-  containsDashCharacter,
-  capitalizeFirstLetter,
-} = require('../../common/utils/node-utils');
+const { capitalizeFirstLetter } = require('../../common/utils/node-utils');
 
 const pagePath = 'pages/';
 const fileNamePrefix = '.js';
@@ -34,9 +30,7 @@ const doesPageExist = (pageName, root) => {
 
 const createPageTitle = pageName => {
   // Example 1: `some_page_name` becomes `Some Page Name`
-  // Example 2: `page` becomes `Page`
-  
-  // Trim is for trailing and leading underscroes (_) 
+  // Example 2: `page` becomes `Page`  
   // Example 3: `_some_page_name` becomes `Some Page Name`
   return pageName.split('_').map(word => capitalizeFirstLetter(word)).join(' ').trim();
 };
