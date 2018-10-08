@@ -32,13 +32,10 @@ const doesPageExist = (pageName, root) => {
 };
 
 const createPageTitle = pageName => {
-  let capitalizePageName = pageName.split('_').map((word, index) => capitalizeFirstLetter(word));
-
-  if (capitalizePageName[0] === '') {
-    capitalizePageName = capitalizePageName.slice(1);
-  }
-
-  return capitalizePageName.join(' ');
+  return pageName
+    .split('_')
+    .map(word => capitalizeFirstLetter(word))
+    .join(' ');
 };
 
 const createPage = (root, pageName) => {
