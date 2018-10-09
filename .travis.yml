@@ -37,7 +37,7 @@ before_deploy:
 
 deploy:
   - provider: script
-    script: now --local-config=./now.master.json --token $NOW_TOKEN && now alias --local-config=./now.master.json --token $NOW_TOKEN
+    script: echo 'No build on feature branches. Zeit's Now deploys static exports automatically.'
     skip_cleanup: true
     on:
       all_branches: true
@@ -48,6 +48,3 @@ deploy:
     on:
       all_branches: false
       master: true
-
-after_deploy:
-  - yarn start
