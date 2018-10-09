@@ -11,10 +11,9 @@ before_install:
   - yarn global add greenkeeper-lockfile@2
 
 install:
-  - if [[ $TRAVIS_BRANCH == greenkeeper* ]]; then
-    yarn install --silent;
-    else
-    yarn --silent --pure-lockfile;
+  - if [[ $TRAVIS_BRANCH == greenkeeper* ]];
+    then yarn install --silent;
+    else yarn --silent --pure-lockfile;
     fi
 
 before_script:
@@ -37,7 +36,7 @@ before_deploy:
 
 deploy:
   - provider: script
-    script: echo 'No build on feature branches. Zeit's Now deploys static exports automatically.'
+    script: echo 'No build on feature branches. @zeit/now deploys static exports automatically.'
     skip_cleanup: true
     on:
       all_branches: true
