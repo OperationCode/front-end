@@ -30,13 +30,6 @@
   width: 100%;
 }
 
-@media screen and (min-width: 961px) {
-  /* .ctaImage {
-    position: relative;
-    top: -5em;
-  } */
-}
-
 @media screen and (min-width: 750px) {
   .ctaImageRight {
     flex-direction: row-reverse;
@@ -61,11 +54,6 @@
     flex-direction: column;
     align-items: center;
   }
-
-  /* .ctaImage {
-    position: static;
-    top: 0;
-  } */
 
   .ctaText {
     display: flex;
