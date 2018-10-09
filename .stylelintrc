@@ -1,6 +1,6 @@
 {
   "extends": "stylelint-config-standard",
-  "ignoreFiles": "**/*.js",
+  "ignoreFiles": ["**/*.js", "coverage/**/*"],
   "rules": {
     "color-hex-case": "lower",
     "color-hex-length": "long",
