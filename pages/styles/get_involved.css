@@ -1,0 +1,74 @@
+.flexDisplay {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.marginBottom {
+  margin-bottom: 2rem;
+}
+
+.centerText {
+  text-align: center;
+}
+
+.alignCenter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cta {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.ctaImage > img {
+  width: 100%;
+}
+
+@media screen and (min-width: 750px) {
+  .ctaImageRight {
+    flex-direction: row-reverse;
+  }
+
+  .ctaImageRight .ctaImage {
+    margin-left: 5em;
+  }
+
+  .ctaImageLeft .ctaImage {
+    margin-right: 5em;
+  }
+
+  .cta > div {
+    max-width: 50%;
+    flex: 1 1 50%;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .cta {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ctaText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ctaText > p {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .flexDisplay {
+    flex-direction: column;
+    align-items: center;
+  }
+}

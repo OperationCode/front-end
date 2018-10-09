@@ -1,0 +1,15 @@
+.Badge {
+  width: 240px;
+}
+
+.iconContainer {
+  width: 100px;
+  margin: auto;
+}
+
+.label {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  line-height: 1.2rem;
+}
