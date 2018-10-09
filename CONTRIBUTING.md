@@ -199,6 +199,9 @@ yarn test
 
 #Create all the necessary files/folders for a new, reusable component. Please make `ComponentName` TitleCase.
 yarn create-component $ComponentName
+
+#Create a new page in the pages directory. 
+yarn create-page $pageName
 ```
 
 ## Mocking Back-end Server API
