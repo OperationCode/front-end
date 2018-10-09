@@ -8,12 +8,5 @@
     }
   },
   "files": [".next", "static", "package.json", "yarn.lock"],
-  "type": "docker",
-  "scale": {
-    "all": {
-      "min": 1,
-      "max": "auto"
-    }
-  },
   "public": true
 }
