@@ -36,12 +36,6 @@ before_deploy:
  - yarn add now
 
 deploy:
-  # - provider: script
-  #   script: echo 'No build on feature branches. Now deploys static exports automatically.'
-  #   skip_cleanup: true
-  #   on:
-  #     all_branches: true
-  #     master: false
   - provider: script
     script:
       - now --local-config=./now.master.json --token $NOW_TOKEN
@@ -49,6 +43,14 @@ deploy:
     skip_cleanup: true
     on:
       all_branches: true
+      master: false
+  - provider: script
+    script:
+      - now --local-config=./now.master.json --token $NOW_TOKEN
+      - now alias --local-config=./now.master.json --token $NOW_TOKEN
+    skip_cleanup: true
+    on:
+      all_branches: false
       master: true
 
   after_deploy:
