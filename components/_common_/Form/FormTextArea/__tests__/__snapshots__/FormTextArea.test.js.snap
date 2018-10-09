@@ -10,7 +10,7 @@ exports[`FormTextArea should render when passed a placeholder 1`] = `
 </div>
 `;
 
-exports[`FormTextArea should render with just required props passed 1`] = `
+exports[`FormTextArea should render with required props 1`] = `
 <div>
   <textarea
     className="text_area"

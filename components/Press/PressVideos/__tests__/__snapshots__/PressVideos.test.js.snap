@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PressVideos it should render properly no props 1`] = `
+exports[`PressVideos should render with no props passed 1`] = `
 <div
   className="pressVideos"
 >

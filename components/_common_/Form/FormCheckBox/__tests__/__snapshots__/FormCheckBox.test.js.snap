@@ -1,31 +1,48 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FormCheckBox should render properly with some props assigned 1`] = `
+exports[`FormCheckBox should render with many props assigned 1`] = `
 <div
-  style={null}
+  style={
+    Object {
+      "display": "inline-block",
+      "margin": "1rem",
+    }
+  }
 >
   <input
     className="input"
-    onChange={null}
+    id="test value"
+    name="test-checkbox"
+    onChange={[MockFunction]}
     type="checkbox"
+    value="test value"
   />
   <label
-    style={null}
-  />
+    htmlFor="test-checkbox"
+    style={
+      Object {
+        "fontWeight": "bold",
+        "margin": "1rem",
+        "textTransform": "uppercase",
+      }
+    }
+  >
+    test value
+  </label>
 </div>
 `;
 
-exports[`FormCheckBox should render with just required props passed 1`] = `
+exports[`FormCheckBox should render with required props 1`] = `
 <div
-  style={null}
+  style={Object {}}
 >
   <input
     className="input"
-    onChange={null}
+    onChange={[Function]}
     type="checkbox"
   />
   <label
-    style={null}
+    style={Object {}}
   />
 </div>
 `;

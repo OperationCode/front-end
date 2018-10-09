@@ -7,11 +7,23 @@ const setAuthorizationHeader = () => {
   return { Authorization: `bearer ${cookies.get('token')}` };
 };
 
-export const get = endpoint =>
-  axios.get(`${apiUrl}/${endpoint}`, { headers: setAuthorizationHeader() });
+export const get = async endpoint => {
+  const result = await axios.get(`${apiUrl}/${endpoint}`, {
+    headers: setAuthorizationHeader(),
+  });
+  return result;
+};
 
-export const post = (path, body) =>
-  axios.post(`${apiUrl}/${path}`, body, { headers: setAuthorizationHeader() });
+export const post = async (path, body) => {
+  const result = await axios.post(`${apiUrl}/${path}`, body, {
+    headers: setAuthorizationHeader(),
+  });
+  return result;
+};
 
-export const patch = (path, body) =>
-  axios.patch(`${apiUrl}/${path}`, body, { headers: setAuthorizationHeader() });
+export const patch = async (path, body) => {
+  const result = await axios.patch(`${apiUrl}/${path}`, body, {
+    headers: setAuthorizationHeader(),
+  });
+  return result;
+};

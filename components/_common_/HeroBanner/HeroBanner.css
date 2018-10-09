@@ -28,3 +28,8 @@
     height: 320px;
   }
 }
+
+.fullViewHeight {
+  height: 100vh;
+  width: auto;
+}

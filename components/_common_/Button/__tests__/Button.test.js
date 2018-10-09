@@ -7,29 +7,50 @@ import createSnapshotTest from 'test-utils/createSnapshotTest';
 import Button from '../Button';
 
 describe('Button', () => {
-  test('should render with just required props passed', () => {
+  it('should render with required props', () => {
     createSnapshotTest(<Button>Test</Button>);
   });
 
-  test('should render properly with some props assigned', () => {
+  it('should render with many props assigned', () => {
     createSnapshotTest(
-      <Button theme="secondary" disabled fullWidth type="submit">
+      <Button
+        analyticsObject={{ action: 'Test Button Selected', category: 'Testing' }}
+        className="test-class"
+        disabled
+        fullWidth
+        onClick={jest.fn()}
+        tabIndex={-1}
+        theme="secondary"
+        type="submit"
+        data-id="test-id"
+      >
         Test
       </Button>,
     );
   });
 
-  test('should spread data and aria props', () => {
-    const wrapper = shallow(
-      <Button aria-label="test" data-attr="test">
-        Test
-      </Button>,
-    );
-    expect(wrapper.prop('aria-label')).toEqual('test');
-    expect(wrapper.prop('data-attr')).toEqual('test');
+  it('should spread data- and aria- props', () => {
+    const ariaProp = 'aria-label';
+    const dataAttrProp = 'data-attr';
+
+    const testProps = { [`${ariaProp}`]: 'test', [`${dataAttrProp}`]: 'test-attr' };
+
+    const wrapper = shallow(<Button {...testProps}>Test</Button>);
+
+    expect(wrapper.prop(ariaProp)).toStrictEqual('test');
+    expect(wrapper.prop(dataAttrProp)).toStrictEqual('test-attr');
   });
 
-  test('should render without a generated span when children is PropTypes.node', () => {
+  it('should should not spread an unexpected prop', () => {
+    const attribute = 'fakey-data-prop';
+    const testProps = { [`${attribute}`]: 'test' };
+
+    const wrapper = shallow(<Button {...testProps}>Test</Button>);
+
+    expect(wrapper.prop(attribute)).toBeUndefined();
+  });
+
+  it('should render without a generated span when children is PropTypes.node', () => {
     const testText = 'Testing No Span';
 
     const ButtonInstance = mount(
@@ -45,18 +66,20 @@ describe('Button', () => {
           <b>{testText}</b>
         </span>,
       ]),
-    ).toEqual(false);
+    ).toStrictEqual(false);
   });
 
-  test('should render with a generated span when children is PropTypes.string', () => {
+  it('should render with a generated span when children is PropTypes.string', () => {
     const testText = 'Testing With Span';
 
     const ButtonInstance = mount(<Button>{testText}</Button>);
 
-    expect(ButtonInstance.containsAllMatchingElements([<span>{testText}</span>])).toEqual(true);
+    expect(ButtonInstance.containsAllMatchingElements([<span>{testText}</span>])).toStrictEqual(
+      true,
+    );
   });
 
-  test('should send log to console when clickHandler is called in non-prod environment', () => {
+  it('should send log to console when clickHandler is called in non-prod environment', () => {
     /* eslint-disable no-console */
     console.log = jest.fn();
 
@@ -64,11 +87,11 @@ describe('Button', () => {
 
     ButtonShallowInstance.instance().clickHandler();
 
-    expect(console.log.mock.calls.length).toEqual(1);
+    expect(console.log.mock.calls).toHaveLength(1);
     /* eslint-enable no-console */
   });
 
-  test('call props.onClick when button is clicked', () => {
+  it('call props.onClick when button is clicked', () => {
     const onClickMock = jest.fn();
     const ButtonShallowInstance = shallow(<Button onClick={onClickMock}>Test</Button>);
     ButtonShallowInstance.instance().clickHandler();
@@ -76,7 +99,7 @@ describe('Button', () => {
     expect(onClickMock).toHaveBeenCalledTimes(1);
   });
 
-  test('should call ReactGA when in prod environment', () => {
+  it('should call ReactGA when in prod environment', () => {
     /* eslint-disable no-console */
     ReactGA.initialize('foo', { testMode: true });
 

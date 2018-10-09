@@ -1,4 +1,3 @@
-import React from 'react';
 import Head from 'components/head';
 import Section from 'components/_common_/Section/Section';
 import FAQItem from 'components/FAQ/FAQItem/FAQItem';
