@@ -1,11 +1,10 @@
-/* eslint-disable */
+/* eslint-disable no-console */
 const path = require('path');
 const fs = require('fs');
+const { capitalizeFirstLetter } = require('../../common/utils/string-utils');
 const { buildJS } = require('./builders');
-const { capitalizeFirstLetter } = require('../../common/utils/node-utils');
 
 const pagePath = 'pages/';
-const fileNamePrefix = '.js';
 
 const findRoot = () => {
   let thisPath = path.resolve(__dirname);
@@ -18,22 +17,24 @@ const findRoot = () => {
 
 const doesPageExist = (pageName, root) => {
   const newPath = path.join(root, pagePath, pageName);
-  const filePrefix = '.js';
 
-  if (fs.existsSync(newPath + filePrefix)) {
+  if (fs.existsSync(`${newPath}.js`)) {
     console.log(`Page "${pageName}" Already Exists`);
     return true;
   }
+
   return false;
 };
 
-
-const createPageTitle = pageName => {
+const createPageTitle = pageName =>
   // Example 1: `some_page_name` becomes `Some Page Name`
-  // Example 2: `page` becomes `Page`  
+  // Example 2: `page` becomes `Page`
   // Example 3: `_some_page_name` becomes `Some Page Name`
-  return pageName.split('_').map(word => capitalizeFirstLetter(word)).join(' ').trim();
-};
+  pageName
+    .split('_')
+    .map(word => capitalizeFirstLetter(word))
+    .join(' ')
+    .trim();
 
 const createPage = (root, pageName) => {
   // test to make sure file meets requirements
@@ -58,9 +59,19 @@ const createPage = (root, pageName) => {
   }
 
   console.log(`File created: ${pageAbsolutePath}`);
+  return true;
 };
 
 (() => {
+  if (process.argv.length < 3) {
+    console.error(
+      'Error: You must provide at least one page name to script.',
+      'Example: "yarn create-page pageName"',
+    );
+
+    return;
+  }
+
   const root = findRoot();
 
   process.argv
