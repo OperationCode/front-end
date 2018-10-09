@@ -37,17 +37,13 @@ before_deploy:
 
 deploy:
   - provider: script
-    script:
-      - now --local-config=./now.master.json --token $NOW_TOKEN
-      - now alias --local-config=./now.master.json --token $NOW_TOKEN
+    script: now --local-config=./now.master.json --token $NOW_TOKEN && now alias --local-config=./now.master.json --token $NOW_TOKEN
     skip_cleanup: true
     on:
       all_branches: true
       master: false
   - provider: script
-    script:
-      - now --local-config=./now.master.json --token $NOW_TOKEN
-      - now alias --local-config=./now.master.json --token $NOW_TOKEN
+    script: now --local-config=./now.master.json --token $NOW_TOKEN && now alias --local-config=./now.master.json --token $NOW_TOKEN
     skip_cleanup: true
     on:
       all_branches: false
