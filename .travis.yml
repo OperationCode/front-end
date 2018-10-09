@@ -12,9 +12,9 @@ before_install:
 
 install:
   - if [[ $TRAVIS_BRANCH == greenkeeper* ]]; then
-      yarn install --silent;
+    yarn install --silent;
     else
-      yarn --silent --pure-lockfile;
+    yarn --silent --pure-lockfile;
     fi
 
 before_script:
@@ -33,7 +33,7 @@ after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 
 before_deploy:
- - yarn add now
+  - yarn add now
 
 deploy:
   - provider: script
@@ -53,5 +53,5 @@ deploy:
       all_branches: false
       master: true
 
-  after_deploy:
-    - yarn start
+after_deploy:
+  - yarn start
