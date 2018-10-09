@@ -11,8 +11,8 @@ before_install:
   - yarn global add greenkeeper-lockfile@2
 
 install:
-  - if [[ $TRAVIS_BRANCH == greenkeeper* ]]; then 
-      yarn install --silent; 
+  - if [[ $TRAVIS_BRANCH == greenkeeper* ]]; then
+      yarn install --silent;
     else
       yarn --silent --pure-lockfile;
     fi
@@ -34,7 +34,7 @@ after_script:
 
 before_deploy:
  - yarn add now
- 
+
 deploy:
   - provider: script
     script: echo 'No build on feature branches. Now deploys static exports automatically.'
@@ -43,7 +43,12 @@ deploy:
       all_branches: true
       master: false
   - provider: script
-    script: now --local-config=./now.master.json --token $NOW_TOKEN && now alias --local-config=./now.master.json --token $NOW_TOKEN
+    script:
+      - now --local-config=./now.master.json --token $NOW_TOKEN
+      - now alias --local-config=./now.master.json --token $NOW_TOKEN
     skip_cleanup: true
     on:
       master: true
+
+  after_deploy:
+    - yarn start
