@@ -5,116 +5,195 @@ exports[`Footer should render with no props passed 1`] = `
   className="Footer"
 >
   <div
-    className="footerGrouping socialGrouping"
-  >
-    <a
-      className="email"
-      href="mailto:contact@operationcode.org"
-    >
-      contact@operationcode.org
-    </a>
-    <SocialMedia />
-  </div>
-  <div
-    className="footerGrouping logoGrouping"
-  >
-    <img
-      alt="Operation Code Logo"
-      src="/static/images/icons/operation_code_logo.svg"
-    />
-    <p
-      className="copyright"
-    >
-      Copyright 
-      2018
-      <br />
-      Operation Code™
-    </p>
-  </div>
-  <div
-    className="footerGrouping linksGrouping"
+    className="footerRow"
   >
     <div
-      className="linkColumn"
+      className="footerGrouping socialGrouping"
     >
-      <Link
-        href="/about"
+      <div
+        className="footerGrouping logoGrouping"
       >
-        <a>
-          About
-        </a>
-      </Link>
-      <Link
-        href="/press"
-      >
-        <a>
-          Press
-        </a>
-      </Link>
-      <Link
-        href="/branding"
-      >
-        <a>
-          Branding
-        </a>
-      </Link>
-      <Link
-        href="/faq"
-      >
-        <a>
-          FAQ
-        </a>
-      </Link>
-      <Link
-        href="/team"
-      >
-        <a>
-          Team
-        </a>
-      </Link>
+        <img
+          alt="Operation Code Logo"
+          src="/static/images/icons/operation_code_logo.svg"
+        />
+      </div>
+      <SocialMedia />
     </div>
     <div
-      className="linkColumn"
+      className="footerGrouping linksGrouping"
     >
-      <Link
-        href="/contact"
+      <div
+        className="linkColumn"
       >
-        <a>
-          Contact
-        </a>
-      </Link>
-      <Link
-        href="/terms"
+        <Link
+          href="/about"
+        >
+          <a>
+            About Us
+          </a>
+        </Link>
+        <Link
+          href="/team"
+        >
+          <a>
+            Team
+          </a>
+        </Link>
+        <Link
+          href="/contact"
+        >
+          <a>
+            Contact Us
+          </a>
+        </Link>
+        <Link
+          href="/faq"
+        >
+          <a>
+            FAQ
+          </a>
+        </Link>
+      </div>
+      <div
+        className="linkColumn"
       >
-        <a>
-          Terms of Service
-        </a>
-      </Link>
-      <OutboundLink
-        analyticsEventLabel="Footer Link"
-        className=""
-        hasIcon={true}
-        href="https://github.com/OperationCode/operationcode_frontend/issues/new"
+        <Link
+          href="/who_we_serve"
+        >
+          <a>
+            Who We Serve
+          </a>
+        </Link>
+        <Link
+          href="/code_schools"
+        >
+          <a>
+            Code Schools
+          </a>
+        </Link>
+        <Link
+          href="/job_board"
+        >
+          <a>
+            Job Board
+          </a>
+        </Link>
+        <Link
+          href="/events"
+        >
+          <a>
+            Events
+          </a>
+        </Link>
+        <Link
+          href="/blog"
+        >
+          <a>
+            Blog
+          </a>
+        </Link>
+      </div>
+      <div
+        className="linkColumn"
       >
-        Report A Bug
-      </OutboundLink>
-      <OutboundLink
-        analyticsEventLabel="Footer Link"
-        className=""
-        hasIcon={true}
-        href="https://smile.amazon.com/ch/47-4247572"
+        <Link
+          href="/get_involved"
+        >
+          <a>
+            Get Involved
+          </a>
+        </Link>
+        <Link
+          href="/become_a_mentor"
+        >
+          <a>
+            Become a Mentor
+          </a>
+        </Link>
+        <Link
+          href="/support"
+        >
+          <a>
+            Support OC
+          </a>
+        </Link>
+        <Link
+          href="/donate"
+        >
+          <a>
+            Donate
+          </a>
+        </Link>
+        <Link
+          href="/feedback"
+        >
+          <a>
+            Feedback
+          </a>
+        </Link>
+      </div>
+      <div
+        className="linkColumn"
       >
-        Amazon Smile
-      </OutboundLink>
-      <OutboundLink
-        analyticsEventLabel="Footer Link"
-        className=""
-        hasIcon={true}
-        href="https://www.iubenda.com/privacy-policy/8174861"
-      >
-        Privacy
-      </OutboundLink>
+        <Link
+          href="/resources"
+        >
+          <a>
+            Resources
+          </a>
+        </Link>
+        <Link
+          href="/press"
+        >
+          <a>
+            Press
+          </a>
+        </Link>
+        <Link
+          href="/branding"
+        >
+          <a>
+            Branding
+          </a>
+        </Link>
+        <Link
+          href="/sitemap"
+        >
+          <a>
+            Sitemap
+          </a>
+        </Link>
+      </div>
     </div>
+  </div>
+  <div
+    className="footerRow"
+  >
+    <OutboundLink
+      analyticsEventLabel="Footer Link"
+      className=""
+      hasIcon={true}
+      href=""
+    >
+      Terms of Use
+    </OutboundLink>
+    <OutboundLink
+      analyticsEventLabel="Footer Link"
+      className=""
+      hasIcon={true}
+      href=""
+    >
+      Cookies
+    </OutboundLink>
+    <OutboundLink
+      analyticsEventLabel="Footer Link"
+      className=""
+      hasIcon={true}
+      href="https://www.iubenda.com/privacy-policy/8174861"
+    >
+      Privacy
+    </OutboundLink>
   </div>
 </footer>
 `;
