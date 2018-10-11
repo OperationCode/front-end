@@ -8,15 +8,16 @@ import styles from './Footer.css';
 function Footer() {
   return (
     <footer className={styles.Footer}>
-      <div className={styles.footerRow}>
+      <div className={styles.row}>
         <div className={classNames(styles.footerGrouping, styles.socialGrouping)}>
           <div className={classNames(styles.footerGrouping, styles.logoGrouping)}>
-            <img src="/static/images/icons/operation_code_logo.svg" alt="Operation Code Logo" />
+            <img src="/static/images/operation_code_logo.png" alt="Operation Code Logo" />
           </div>
+          <div className={styles.capitalize}>Connect With Us!</div>
           <SocialMedia />
         </div>
 
-        <div className={classNames(styles.footerGrouping, styles.linksGrouping)}>
+        <div className={classNames(styles.footerGrouping, styles.linksGrouping, styles.capitalize)}>
           <div className={styles.linkColumn}>
             <Link href="/about">
               <a>About Us</a>
@@ -82,7 +83,8 @@ function Footer() {
         </div>
       </div>
 
-      <div className={classNames(styles.footerRow)}>
+      <div className={classNames(styles.row, styles.legalGrouping)}>
+        <div className={styles.copyright}>2018 Operation Code</div>
         <OutboundLink analyticsEventLabel="Footer Link" href="">
           Terms of Use
         </OutboundLink>

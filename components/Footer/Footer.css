@@ -1,7 +1,8 @@
 .Footer {
   align-items: center;
-  background-color: var(--slate);
+  background-color: var(--navyDark);
   color: var(--mist);
+  font-family: "PF Din Display", Arial, sans-serif;
   display: flex;
   height: 320px;
   justify-content: space-around;
@@ -18,11 +19,6 @@
   text-decoration: underline;
 }
 
-.footerRow {
-  display: flex;
-  flex-direction: row;
-}
-
 .footerGrouping {
   align-items: center;
   display: flex;
@@ -33,7 +29,7 @@
 }
 
 .socialGrouping {
-  order: 1;
+  /* order: 1; */
   padding: 0 0.5rem;
   justify-content: center;
 }
@@ -43,11 +39,11 @@
 }
 
 .logoGrouping {
-  order: 2;
+  /* order: 0; */
 }
 
 .logoGrouping img {
-  height: 175px;
+  height: 40px;
 }
 
 .copyright {
@@ -69,7 +65,25 @@
   height: 100%;
   justify-content: start;
   margin: 0.5rem;
-  min-width: 8rem;
+  min-width: 9rem;
+  line-height: 2.2rem;
+}
+
+.legalGrouping {
+  width: 400px;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.capitalize {
+  text-transform: uppercase;
 }
 
 @media screen and (max-width: 768px) {
@@ -91,21 +105,19 @@
   }
 
   .logoGrouping {
-    order: 3;
+    /* order: 3; */
   }
 
   .linksGrouping {
-    min-height: 150px;
-    min-width: 60%;
-    order: 2;
+    /* min-height: 150px; */
+
+    /* min-width: 60%; */
+
+    /* order: 2; */
   }
 
   .linkColumn {
     height: 225px;
-  }
-
-  .logoGrouping img {
-    height: 150px;
   }
 }
 
