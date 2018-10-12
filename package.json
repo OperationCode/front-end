@@ -111,7 +111,7 @@
   },
   "greenkeeper": {
     "ignore": [
-        "husky"
+      "husky"
     ]
   }
 }
