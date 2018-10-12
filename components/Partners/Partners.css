@@ -1,0 +1,7 @@
+.partnerLogos {
+  display: flex;
+  align-self: center;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: auto;
+}

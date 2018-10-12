@@ -1,0 +1,13 @@
+.Partner {
+  filter: grayscale(100%);
+  display: flex;
+  flex-basis: 200px;
+}
+
+.Partner:hover {
+  filter: grayscale(0);
+}
+
+.logo {
+  height: 100px;
+}
