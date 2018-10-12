@@ -108,5 +108,10 @@
     "stylelint": "^9.6.0",
     "stylelint-config-standard": "^18.2.0",
     "webpack-bundle-analyzer": "^3.0.2"
+  },
+  "greenkeeper": {
+    "ignore": [
+        "husky"
+    ]
   }
 }
