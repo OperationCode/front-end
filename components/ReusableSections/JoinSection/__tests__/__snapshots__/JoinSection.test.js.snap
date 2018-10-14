@@ -2,8 +2,8 @@
 
 exports[`JoinSection should render with no props passed passed 1`] = `
 <Section
-  className="JoinSection"
-  contentClassName=""
+  className=""
+  contentClassName="content"
   hasHeadingLines={false}
   id=""
   style={
@@ -14,39 +14,35 @@ exports[`JoinSection should render with no props passed passed 1`] = `
   theme="white"
   title="Join Today!"
 >
-  <div
-    className="joinText"
-  >
-    <p>
-      Operation Code is leading the way to expand opportunities for military veterans and their families to learn new skills, and build a career in the fast-growing technology sector.
-    </p>
-    <p>
-      Join our community for free and jumpstart your skills today!
-    </p>
-    <Button
-      analyticsObject={
-        Object {
-          "action": "Button Selected",
-          "category": "Interactions",
-        }
+  <p>
+    Operation Code is leading the way to expand opportunities for military veterans and their families to learn new skills, and build a career in the fast-growing technology sector.
+  </p>
+  <p>
+    Join our community for free and jumpstart your skills today!
+  </p>
+  <Button
+    analyticsObject={
+      Object {
+        "action": "Button Selected",
+        "category": "Interactions",
       }
-      className=""
-      datum=""
-      disabled={false}
-      fullWidth={false}
-      onClick={[Function]}
-      tabIndex={0}
-      theme="secondary"
-      type="button"
+    }
+    className=""
+    datum=""
+    disabled={false}
+    fullWidth={false}
+    onClick={[Function]}
+    tabIndex={0}
+    theme="secondary"
+    type="button"
+  >
+    <Link
+      href="/join"
     >
-      <Link
-        href="/join"
-      >
-        <a>
-          Join
-        </a>
-      </Link>
-    </Button>
-  </div>
+      <a>
+        Join
+      </a>
+    </Link>
+  </Button>
 </Section>
 `;
