@@ -5,171 +5,226 @@ exports[`Footer should render with no props passed 1`] = `
   className="Footer"
 >
   <div
-    className="footerRow"
+    className="footerWrapper row"
   >
     <div
       className="footerGrouping socialGrouping"
     >
       <div
-        className="footerGrouping logoGrouping"
+        className="logoGrouping"
       >
         <img
           alt="Operation Code Logo"
-          src="/static/images/icons/operation_code_logo.svg"
+          src="/static/images/operation_code_logo.png"
         />
+      </div>
+      <div
+        className="capitalize marginBottom"
+      >
+        Connect With Us!
       </div>
       <SocialMedia />
     </div>
     <div
-      className="footerGrouping linksGrouping"
+      className="footerGrouping linksGrouping capitalize"
     >
       <div
-        className="linkColumn"
+        className="linksRow"
       >
-        <Link
-          href="/about"
+        <div
+          className="linksColumn"
         >
-          <a>
-            About Us
-          </a>
-        </Link>
-        <Link
-          href="/team"
+          <Link
+            href="/about"
+          >
+            <a>
+              About Us
+            </a>
+          </Link>
+          <Link
+            href="/team"
+          >
+            <a>
+              Team
+            </a>
+          </Link>
+          <Link
+            href="/contact"
+          >
+            <a>
+              Contact Us
+            </a>
+          </Link>
+          <Link
+            href="/faq"
+          >
+            <a>
+              FAQ
+            </a>
+          </Link>
+        </div>
+        <div
+          className="linksColumn"
         >
-          <a>
-            Team
-          </a>
-        </Link>
-        <Link
-          href="/contact"
-        >
-          <a>
-            Contact Us
-          </a>
-        </Link>
-        <Link
-          href="/faq"
-        >
-          <a>
-            FAQ
-          </a>
-        </Link>
+          <Link
+            href="/who_we_serve"
+          >
+            <a>
+              Who We Serve
+            </a>
+          </Link>
+          <Link
+            href="/code_schools"
+          >
+            <a>
+              Code Schools
+            </a>
+          </Link>
+          <Link
+            href="/job_board"
+          >
+            <a>
+              Job Board
+            </a>
+          </Link>
+          <Link
+            href="/events"
+          >
+            <a>
+              Events
+            </a>
+          </Link>
+          <Link
+            href="/blog"
+          >
+            <a>
+              Blog
+            </a>
+          </Link>
+        </div>
       </div>
       <div
-        className="linkColumn"
+        className="linksRow"
       >
-        <Link
-          href="/who_we_serve"
+        <div
+          className="linksColumn"
         >
-          <a>
-            Who We Serve
-          </a>
-        </Link>
-        <Link
-          href="/code_schools"
+          <Link
+            href="/get_involved"
+          >
+            <a>
+              Get Involved
+            </a>
+          </Link>
+          <Link
+            href="/become_a_mentor"
+          >
+            <a>
+              Become a Mentor
+            </a>
+          </Link>
+          <Link
+            href="/support"
+          >
+            <a>
+              Support OC
+            </a>
+          </Link>
+          <Link
+            href="/donate"
+          >
+            <a>
+              Donate
+            </a>
+          </Link>
+          <Link
+            href="/feedback"
+          >
+            <a>
+              Feedback
+            </a>
+          </Link>
+        </div>
+        <div
+          className="linksColumn"
         >
-          <a>
-            Code Schools
-          </a>
-        </Link>
-        <Link
-          href="/job_board"
-        >
-          <a>
-            Job Board
-          </a>
-        </Link>
-        <Link
-          href="/events"
-        >
-          <a>
-            Events
-          </a>
-        </Link>
-        <Link
-          href="/blog"
-        >
-          <a>
-            Blog
-          </a>
-        </Link>
+          <Link
+            href="/resources"
+          >
+            <a>
+              Resources
+            </a>
+          </Link>
+          <Link
+            href="/press"
+          >
+            <a>
+              Press
+            </a>
+          </Link>
+          <Link
+            href="/branding"
+          >
+            <a>
+              Branding
+            </a>
+          </Link>
+          <Link
+            href="/sitemap"
+          >
+            <a>
+              Sitemap
+            </a>
+          </Link>
+        </div>
+      </div>
+    </div>
+    <div
+      className="footerGrouping newsletterGrouping"
+    >
+      <div
+        className="capitalize newsletterHeading"
+      >
+        Newsletter
       </div>
       <div
-        className="linkColumn"
+        className="newsletterItem"
       >
-        <Link
-          href="/get_involved"
-        >
-          <a>
-            Get Involved
-          </a>
-        </Link>
-        <Link
-          href="/become_a_mentor"
-        >
-          <a>
-            Become a Mentor
-          </a>
-        </Link>
-        <Link
-          href="/support"
-        >
-          <a>
-            Support OC
-          </a>
-        </Link>
-        <Link
-          href="/donate"
-        >
-          <a>
-            Donate
-          </a>
-        </Link>
-        <Link
-          href="/feedback"
-        >
-          <a>
-            Feedback
-          </a>
-        </Link>
+        Subscribe to our newsletter and never miss a beat!
       </div>
-      <div
-        className="linkColumn"
+      <input
+        className="newsletterItem"
+        placeholder="Email address"
+        type="text"
+      />
+      <Button
+        analyticsObject={
+          Object {
+            "action": "Button Selected",
+            "category": "Interactions",
+          }
+        }
+        className="newsletterItem"
+        datum=""
+        disabled={false}
+        fullWidth={false}
+        onClick={[Function]}
+        tabIndex={0}
+        theme="primary"
+        type="button"
       >
-        <Link
-          href="/resources"
-        >
-          <a>
-            Resources
-          </a>
-        </Link>
-        <Link
-          href="/press"
-        >
-          <a>
-            Press
-          </a>
-        </Link>
-        <Link
-          href="/branding"
-        >
-          <a>
-            Branding
-          </a>
-        </Link>
-        <Link
-          href="/sitemap"
-        >
-          <a>
-            Sitemap
-          </a>
-        </Link>
-      </div>
+        Subscribe
+      </Button>
     </div>
   </div>
   <div
-    className="footerRow"
+    className="row legalGrouping"
   >
+    <div
+      className="copyright"
+    >
+      Copyright 2018 Operation Code™. Operation Code is a 501(c)(3) nonprofit, EIN 47-4247572.
+    </div>
     <OutboundLink
       analyticsEventLabel="Footer Link"
       className=""
