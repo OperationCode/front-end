@@ -62,7 +62,7 @@
     "history": "^4.7.2",
     "jwt-decode": "^2.2.0",
     "lodash": "^4.17.11",
-    "next": "^7.0.1",
+    "next": "^7.0.2",
     "path": "^0.12.7",
     "postcss-export-custom-variables": "^1.0.0",
     "postcss-import": "^12.0.0",
