@@ -67,7 +67,8 @@
 }
 
 .legalGrouping {
-  max-width: 520px;
+  max-width: 550px;
+  padding: 0 1rem;
   justify-content: space-around;
   align-items: center;
   font-size: 14px;
