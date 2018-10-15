@@ -1,5 +1,6 @@
 import Head from 'components/head';
 import Section from 'components/_common_/Section/Section';
+import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
 
 const ChapterLeader = () => (
   <>
@@ -10,13 +11,13 @@ const ChapterLeader = () => (
         <p>
           Operation Code is looking for volunteer Chapter Leaders to build local communities
           nationwide! Tell us more about yourself
-          <a
+          <OutboundLink
             href="http://op.co.de/chapter-leader-volunteer"
-            target="_blank"
-            rel="noopener noreferrer"
+            analyticsEventLabel="Chapter leader volunteer"
+            hasIcon={false}
           >
             &nbsp;here&nbsp;
-          </a>
+          </OutboundLink>
           and help further our mission to get the military community into the tech industry!
         </p>
         <p>
@@ -54,13 +55,13 @@ const ChapterLeader = () => (
           <li>Host events, including trainings, talks, hack nights, etc.</li>
           <li>Build partnerships in the local community.</li>
           <li>
-            <a
+            <OutboundLink
               href="https://opencollective.com/operationcode"
-              target="_blank"
-              rel="noopener noreferrer"
+              analyticsEventLabel="Operation code"
+              hasIcon={false}
             >
               Raise funds&nbsp;
-            </a>
+            </OutboundLink>
             and in-kind donations in support of the mission.
           </li>
           <li>Build and integrate the infrastructure necessary to sustain the chapter.</li>
@@ -70,13 +71,13 @@ const ChapterLeader = () => (
         </ul>
         <p>
           Think you are interested in becoming a Chapter Leader? Click
-          <a
+          <OutboundLink
             href="http://op.co.de/chapter-leader-volunteer"
-            target="_blank"
-            rel="noopener noreferrer"
+            analyticsEventLabel="Chapter leader volunteer"
+            hasIcon={false}
           >
             &nbsp;here.&nbsp;
-          </a>
+          </OutboundLink>
         </p>
       </div>
     </Section>
