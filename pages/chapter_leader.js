@@ -11,17 +11,17 @@ const ChapterLeader = () => (
         <p>
           Operation Code is looking for volunteer Chapter Leaders to build local communities
           nationwide! Tell us more about yourself
+          {' '}
           <OutboundLink
             href="http://op.co.de/chapter-leader-volunteer"
-            analyticsEventLabel="Chapter leader volunteer"
-            hasIcon={false}
+            analyticsEventLabel="Chapter Leader Volunteer (Top)"
           >
-            &nbsp;here&nbsp;
+            here
           </OutboundLink>
+          {' '}
           and help further our mission to get the military community into the tech industry!
         </p>
         <p>
-          {' '}
           An Operation Code Chapter Leader organizes meetups and events at the local level, and
           establishes relationships with local companies, educational institutions, and other
           organizations, in order to help build the community and support the mission.
@@ -57,11 +57,11 @@ const ChapterLeader = () => (
           <li>
             <OutboundLink
               href="https://opencollective.com/operationcode"
-              analyticsEventLabel="Operation code"
-              hasIcon={false}
+              analyticsEventLabel="Chapter Leader - Donate"
             >
-              Raise funds&nbsp;
+              Raise funds
             </OutboundLink>
+            {' '}
             and in-kind donations in support of the mission.
           </li>
           <li>Build and integrate the infrastructure necessary to sustain the chapter.</li>
@@ -71,12 +71,12 @@ const ChapterLeader = () => (
         </ul>
         <p>
           Think you are interested in becoming a Chapter Leader? Click
+          {' '}
           <OutboundLink
             href="http://op.co.de/chapter-leader-volunteer"
-            analyticsEventLabel="Chapter leader volunteer"
-            hasIcon={false}
+            analyticsEventLabel="Chapter Leader Volunteer (Bottom)"
           >
-            &nbsp;here.&nbsp;
+            here.
           </OutboundLink>
         </p>
       </div>
