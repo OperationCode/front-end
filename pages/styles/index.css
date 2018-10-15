@@ -1,3 +1,30 @@
 .container {
   width: 100%;
 }
+
+.section {
+  display: flex;
+  align-self: center;
+}
+
+.partnerLogos {
+  max-width: 990px;
+  display: flex;
+  width: 80%;
+  align-self: center;
+  justify-content: space-between;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.centerText {
+  text-align: center;
+}
+
+.alignCenter {
+  align-self: center;
+}
+
+.marginBottom {
+  margin-bottom: 20px;
+}

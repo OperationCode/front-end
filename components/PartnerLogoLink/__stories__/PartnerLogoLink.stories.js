@@ -3,11 +3,13 @@ import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 import { withKnobs, text } from '@storybook/addon-knobs';
 
-import Partners from '../Partners';
+import PartnerLogoLink from '../PartnerLogoLink';
 
-storiesOf('Common/Partners', module)
+storiesOf('Common/PartnerLogoLink', module)
   .addDecorator(withKnobs)
   .add(
     'default',
-    withInfo()(() => <Partners>{text('children', 'PropTypes.string or .node')}</Partners>),
+    withInfo()(() => (
+      <PartnerLogoLink>{text('children', 'PropTypes.string or .node')}</PartnerLogoLink>
+    )),
   );

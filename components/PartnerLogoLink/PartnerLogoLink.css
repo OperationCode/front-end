@@ -1,10 +1,11 @@
-.Partner {
+.PartnerLogoLink {
   filter: grayscale(100%);
   display: flex;
   flex-basis: 200px;
+  justify-content: center;
 }
 
-.Partner:hover {
+.PartnerLogoLink:hover {
   filter: grayscale(0);
 }
 
