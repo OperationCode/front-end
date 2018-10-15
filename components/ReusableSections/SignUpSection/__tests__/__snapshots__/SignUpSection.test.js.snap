@@ -3,7 +3,7 @@
 exports[`SignUpSection should render with no props passed passed 1`] = `
 <Section
   className=""
-  contentClassName=""
+  contentClassName="content"
   hasHeadingLines={true}
   id=""
   style={Object {}}
