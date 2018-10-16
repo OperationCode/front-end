@@ -55,6 +55,28 @@
   display: none; /* don't display image until screen size is large enough */
 }
 
+.badgeIcon {
+  width: 240px;
+  display: flex;
+  flex-direction: column;
+  margin-right: 0.5rem;
+}
+
+.badgeIcon:last-child {
+  margin-right: 0;
+}
+
+.badgeIcon > div {
+  margin: 0 auto;
+}
+
+.badgeIcon svg {
+  fill: var(--slate);
+  height: 50px;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
 .buttonOutline {
   border: 2px solid var(--primaryLight);
   border-radius: 2px;
@@ -93,6 +115,14 @@
     min-height: 350px;
     min-width: 350px;
     max-width: 800px;
+  }
+
+  .badgeIcon {
+    width: 100%;
+  }
+
+  .badgeIcon svg {
+    height: 100px;
   }
 
   .alignRight {

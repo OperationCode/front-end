@@ -5,7 +5,10 @@ import Button from 'components/_common_/Button/Button';
 import Heading from 'components/_common_/Heading/Heading';
 import Badge from 'components/Badge/Badge';
 import PlaceholderIcon1 from 'static/images/icons/FontAwesome/users-solid.svg';
-import PlaceholderIcon2 from 'static/images/icons/FontAwesome/handshake-regular.svg';
+import BullseyeIcon from 'static/images/icons/Custom/bullseye.svg';
+import ManHoldingKeyIcon from 'static/images/icons/Custom/man_holding_key.svg';
+import NetworkingIcon from 'static/images/icons/Custom/networked_people.svg';
+import PeopleMeetingIcon from 'static/images/icons/Custom/people_meeting.svg';
 import { s3 } from 'common/constants/urls';
 import styles from './styles/get_involved.css';
 
@@ -17,26 +20,26 @@ const mentorItems = [
     label: 'Feel More Confident',
   },
   {
-    icon: <PlaceholderIcon1 />,
+    icon: <BullseyeIcon />,
     label: 'Have Defined Career Goals',
   },
   {
-    icon: <PlaceholderIcon1 />,
+    icon: <ManHoldingKeyIcon />,
     label: 'Reach Their True Potential',
   },
 ];
 
 const supportItems = [
   {
-    icon: <PlaceholderIcon2 />,
+    icon: <NetworkingIcon />,
     label: 'Operations',
   },
   {
-    icon: <PlaceholderIcon2 />,
+    icon: <PlaceholderIcon1 />,
     label: 'Fundraising',
   },
   {
-    icon: <PlaceholderIcon2 />,
+    icon: <PeopleMeetingIcon />,
     label: 'Partnerships',
   },
 ];
@@ -76,7 +79,7 @@ export default () => (
         {mentorItems.map(item => (
           <Badge
             key={item.label}
-            className={styles.marginBottom}
+            className={classNames(styles.marginBottom, styles.badgeIcon)}
             svgComponent={item.icon}
             label={item.label}
           />
@@ -112,7 +115,12 @@ export default () => (
       </p>
       <div className={classNames(styles.flexDisplay)}>
         {supportItems.map(item => (
-          <Badge key={item.label} svgComponent={item.icon} label={item.label} />
+          <Badge
+            key={item.label}
+            className={classNames(styles.marginBottom, styles.badgeIcon)}
+            svgComponent={item.icon}
+            label={item.label}
+          />
         ))}
       </div>
     </Section>
@@ -158,11 +166,13 @@ export default () => (
         Get the support you need by joining our members only Slack community!
       </p>
       <div className={classNames(styles.alignCenter, styles.marginBottom)}>
-        <div>
+        <form>
           <input placeholder="Email address" />
-          <Button>JOIN OUR SLACK</Button>
-        </div>
-        Slack is a community based collaboration tool where all the magic happens!
+          <button name="submit" type="submit">
+            JOIN OUR SLACK
+          </button>
+        </form>
+        <p>Slack is a community based collaboration tool where all the magic happens!</p>
         <br />
         <OutboundLink href="https://slack.com/">Learn more</OutboundLink>
       </div>
