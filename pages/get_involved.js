@@ -2,6 +2,7 @@ import classNames from 'classnames';
 import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
 import Section from 'components/_common_/Section/Section';
 import Button from 'components/_common_/Button/Button';
+import Heading from 'components/_common_/Heading/Heading';
 import Badge from 'components/Badge/Badge';
 import PlaceholderIcon1 from 'static/images/icons/FontAwesome/users-solid.svg';
 import PlaceholderIcon2 from 'static/images/icons/FontAwesome/handshake-regular.svg';
@@ -42,21 +43,32 @@ const supportItems = [
 
 export default () => (
   <>
-    <Section
-      theme="slate"
-      title="YOU CAN MAKE AN IMPACT"
-      hasHeadingLines={false}
-      className={styles.sectionTitle}
-    >
-      <p>
-        Whether you&apos;re interested in mentoring, supporting our operations, or simply donating
-        to help military veterans, service members, and spouses launch a career in software
-        development, Operation Code is always looking for supporters like you.
-      </p>
+    <Section theme="slate" className={styles.introSection} contentClassName={styles.sectionContent}>
+      <div>
+        <Heading
+          className={classNames(styles.sectionHeading, styles.sectionHeading_introHeading)}
+          hasHeadingLines={false}
+          theme="white"
+        >
+          YOU CAN MAKE AN IMPACT
+        </Heading>
+        <p>
+          Whether you&apos;re interested in mentoring, supporting our operations, or simply donating
+          to help military veterans, service members, and spouses launch a career in software
+          development, Operation Code is always looking for supporters like you.
+        </p>
+      </div>
+      <div className={styles.imageWrapper}>
+        <img
+          src={`${s3}heroBanners/stock_family-2.jpg`}
+          alt="Person explaining something. They're very happy."
+        />
+      </div>
     </Section>
 
     <Section
       theme="mist"
+      className={styles.infoSection}
       contentClassName={styles.alignCenter}
       title="THE POWER OF MENTORSHIP"
       hasHeadingLines={false}
@@ -64,30 +76,39 @@ export default () => (
       <div className={styles.marginBottom}>
         By mentoring one of our members, you will help them:
       </div>
-      <div className={classNames(styles.flexDisplay, styles.marginBottom)}>
+      <div className={styles.flexDisplay}>
         {mentorItems.map(item => (
-          <Badge key={item.label} svgComponent={item.icon} label={item.label} />
+          <Badge
+            key={item.label}
+            className={styles.marginBottom}
+            svgComponent={item.icon}
+            label={item.label}
+          />
         ))}
       </div>
     </Section>
 
-    <Section theme="slate" title="EMPOWER OUR COMMUNITY" hasHeadingLines={false}>
-      <div className={classNames(styles.cta, styles.ctaImageLeft)}>
-        <div className={styles.ctaImage}>
-          <img src={`${s3}stock_paired-programming.jpg`} alt="Empower Our Community" />
-        </div>
-        <div className={styles.ctaText}>
-          <p>
-            Make a difference in the lives of military veterans, service members, and spouses who
-            are eager to transition into a software development career.
-          </p>
-          <Button>BECOME A MENTOR</Button>
-        </div>
+    <Section theme="slate" contentClassName={classNames(styles.ctaContent, styles.ctaContentRight)}>
+      <div>
+        <img src={`${s3}stock_paired-programming.jpg`} alt="Empower Our Community" />
+      </div>
+      <div>
+        <Heading className={styles.sectionHeading} hasHeadingLines={false} theme="white">
+          EMPOWER OUR COMMUNITY
+        </Heading>
+        <p>
+          Make a difference in the lives of military veterans, service members, and spouses who are
+          eager to transition into a software development career.
+        </p>
+        <Button theme="slate" className={styles.buttonOutline}>
+          BECOME A MENTOR
+        </Button>
       </div>
     </Section>
 
     <Section
       theme="mist"
+      className={styles.infoSection}
       contentClassName={styles.alignCenter}
       title="WAYS YOU CAN SUPPORT OPERATION CODE"
       hasHeadingLines={false}
@@ -104,16 +125,18 @@ export default () => (
     </Section>
 
     <Section theme="slate" title="SUPPORT OUR MISSION" hasHeadingLines={false}>
-      <div className={classNames(styles.cta, styles.ctaImageRight)}>
-        <div className={styles.ctaImage}>
+      <div>
+        <div>
           <img src={`${s3}stock_paired-programming.jpg`} alt="Support Our Mission" />
         </div>
-        <div className={styles.ctaText}>
+        <div>
           <p>
             Make a difference in the lives of military veterans, service members, and spouses who
             are eager to transition into a software development career.
           </p>
-          <Button>SUPPORT OC</Button>
+          <Button theme="slate" className={styles.buttonOutline}>
+            SUPPORT OC
+          </Button>
         </div>
       </div>
     </Section>

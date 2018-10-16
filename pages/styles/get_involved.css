@@ -1,84 +1,93 @@
-.flexDisplay {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  width: 100%;
-}
-
-.marginBottom {
-  margin-bottom: 2rem;
-}
-
-.centerText {
-  text-align: center;
-}
-
 .alignCenter {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.sectionTitle h2 {
-  justify-content: flex-start;
-  position: relative;
-  padding-bottom: 2rem;
+.marginBottom {
+  margin-bottom: 2rem;
 }
 
-.sectionTitle h2::after {
+.introSection {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.infoSection {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+.ctaContent {
+  flex-direction: row;
+}
+
+.infoSection h2 {
+  margin-bottom: 0;
+  line-height: 1.2;
+}
+
+.sectionHeading {
+  justify-content: flex-start;
+  text-align: left;
+  line-height: 1.2;
+}
+
+.sectionHeading_introHeading {
+  position: relative;
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+  font-size: 55px;
+  max-width: 13ch; /* this causes the line to break after the word 'make' in the title */
+}
+
+.sectionHeading_introHeading::after {
   content: "";
   position: absolute;
   bottom: 0;
   width: 2.5ch; /* This matches the width of 2.5 characters of the title font */
-  border-bottom: 2px solid var(--primaryLight);
+  border-bottom: 3px solid var(--primaryLight);
 }
 
-.cta {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  width: 100%;
+.imageWrapper img {
+  display: none;
 }
 
-.ctaImage > img {
-  width: 100%;
+.buttonOutline {
+  border: 2px solid var(--primaryLight);
+  border-radius: 2px;
+  padding: 0;
+  font-weight: 600;
+}
+
+.buttonOutline:hover:enabled,
+.buttonOutline:focus:enabled {
+  background-color: var(--primaryLight);
+  border-radius: 2px;
 }
 
 @media screen and (min-width: 750px) {
-  .ctaImageRight {
-    flex-direction: row-reverse;
-  }
-
-  .ctaImageRight .ctaImage {
-    margin-left: 5em;
-  }
-
-  .ctaImageLeft .ctaImage {
-    margin-right: 5em;
-  }
-
-  .cta > div {
-    max-width: 50%;
-    flex: 1 1 50%;
-  }
-}
-
-@media screen and (max-width: 749px) {
-  .cta {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .ctaText {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
-@media screen and (max-width: 480px) {
   .flexDisplay {
-    flex-direction: column;
-    align-items: center;
+    display: flex;
+  }
+
+  .introSection {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+  }
+
+  .sectionContent {
+    flex-flow: row;
+    max-width: 960px;
+  }
+
+  .imageWrapper img {
+    display: initial;
+    width: 100%;
+    min-height: 300px;
+    object-fit: cover;
+    min-width: 350px;
+    max-width: 800px;
+    padding-left: 2rem;
   }
 }
