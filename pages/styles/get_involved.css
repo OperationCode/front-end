@@ -19,6 +19,20 @@
   align-items: center;
 }
 
+.sectionTitle h2 {
+  justify-content: flex-start;
+  position: relative;
+  padding-bottom: 2rem;
+}
+
+.sectionTitle h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 2.5ch; /* This matches the width of 2.5 characters of the title font */
+  border-bottom: 2px solid var(--primaryLight);
+}
+
 .cta {
   display: flex;
   flex-direction: row;
@@ -59,10 +73,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-
-  .ctaText > p {
-    text-align: center;
   }
 }
 

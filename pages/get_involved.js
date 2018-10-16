@@ -41,19 +41,24 @@ const supportItems = [
 ];
 
 export default () => (
-  <div>
-    <Section theme="slate" title="You Can Make An Impact">
-      <div>
+  <>
+    <Section
+      theme="slate"
+      title="YOU CAN MAKE AN IMPACT"
+      hasHeadingLines={false}
+      className={styles.sectionTitle}
+    >
+      <p>
         Whether you&apos;re interested in mentoring, supporting our operations, or simply donating
         to help military veterans, service members, and spouses launch a career in software
         development, Operation Code is always looking for supporters like you.
-      </div>
+      </p>
     </Section>
 
     <Section
       theme="mist"
       contentClassName={styles.alignCenter}
-      title="The Power of Mentorship"
+      title="THE POWER OF MENTORSHIP"
       hasHeadingLines={false}
     >
       <div className={styles.marginBottom}>
@@ -66,7 +71,7 @@ export default () => (
       </div>
     </Section>
 
-    <Section theme="slate" title="Empower Our Community" hasHeadingLines={false}>
+    <Section theme="slate" title="EMPOWER OUR COMMUNITY" hasHeadingLines={false}>
       <div className={classNames(styles.cta, styles.ctaImageLeft)}>
         <div className={styles.ctaImage}>
           <img src={`${s3}stock_paired-programming.jpg`} alt="Empower Our Community" />
@@ -76,7 +81,7 @@ export default () => (
             Make a difference in the lives of military veterans, service members, and spouses who
             are eager to transition into a software development career.
           </p>
-          <Button>Become a Mentor</Button>
+          <Button>BECOME A MENTOR</Button>
         </div>
       </div>
     </Section>
@@ -84,7 +89,7 @@ export default () => (
     <Section
       theme="mist"
       contentClassName={styles.alignCenter}
-      title="Ways You Can Support Operation Code"
+      title="WAYS YOU CAN SUPPORT OPERATION CODE"
       hasHeadingLines={false}
     >
       <div className={classNames(styles.marginBottom, styles.centerText)}>
@@ -98,7 +103,7 @@ export default () => (
       </div>
     </Section>
 
-    <Section theme="slate" title="Support Our Mission" hasHeadingLines={false}>
+    <Section theme="slate" title="SUPPORT OUR MISSION" hasHeadingLines={false}>
       <div className={classNames(styles.cta, styles.ctaImageRight)}>
         <div className={styles.ctaImage}>
           <img src={`${s3}stock_paired-programming.jpg`} alt="Support Our Mission" />
@@ -108,7 +113,7 @@ export default () => (
             Make a difference in the lives of military veterans, service members, and spouses who
             are eager to transition into a software development career.
           </p>
-          <Button>Support OC</Button>
+          <Button>SUPPORT OC</Button>
         </div>
       </div>
     </Section>
@@ -116,7 +121,7 @@ export default () => (
     <Section
       theme="mist"
       contentClassName={styles.alignCenter}
-      title="Donate to Deploy the Future"
+      title="DONATE TO DEPLOY THE FUTURE"
       hasHeadingLines={false}
     >
       <p className={styles.centerText}>
@@ -125,13 +130,13 @@ export default () => (
         necessary equipment.
       </p>
       <p>[DONATION PROGRESS BAR]</p>
-      <Button>Make a Donation</Button>
+      <Button>MAKE A DONATION</Button>
     </Section>
 
     <Section
       theme="white"
       contentClassName={styles.alignCenter}
-      title="Join Our Thriving Community"
+      title="JOIN OUR THRIVING COMMUNITY"
       hasHeadingLines={false}
     >
       <p className={styles.centerText}>
@@ -142,12 +147,12 @@ export default () => (
       <div className={classNames(styles.alignCenter, styles.marginBottom)}>
         <div>
           <input placeholder="Email address" />
-          <Button>Join our Slack</Button>
+          <Button>JOIN OUR SLACK</Button>
         </div>
         Slack is a community based collaboration tool where all the magic happens!
         <br />
         <OutboundLink href="https://slack.com/">Learn more</OutboundLink>
       </div>
     </Section>
-  </div>
+  </>
 );
