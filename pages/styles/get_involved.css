@@ -1,25 +1,22 @@
+.getInvolved section {
+  padding: 5rem 0;
+}
+
+.grid {
+  display: grid;
+  grid-auto-flow: row;
+  grid-gap: 2rem;
+}
+
 .alignCenter {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 }
 
 .marginBottom {
   margin-bottom: 2rem;
-}
-
-.introSection {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
-}
-
-.infoSection {
-  padding-top: 6rem;
-  padding-bottom: 6rem;
-}
-
-.ctaContent {
-  flex-direction: row;
 }
 
 .infoSection h2 {
@@ -31,6 +28,11 @@
   justify-content: flex-start;
   text-align: left;
   line-height: 1.2;
+  margin-bottom: 0;
+}
+
+.introText {
+  min-width: 20rem; /* prevent the auto grid flow from collapsing the text down too far */
 }
 
 .sectionHeading_introHeading {
@@ -49,15 +51,15 @@
   border-bottom: 3px solid var(--primaryLight);
 }
 
-.imageWrapper img {
-  display: none;
+.introImage {
+  display: none; /* don't display image until screen size is large enough */
 }
 
 .buttonOutline {
   border: 2px solid var(--primaryLight);
   border-radius: 2px;
   padding: 0;
-  font-weight: 600;
+  margin-top: 1rem;
 }
 
 .buttonOutline:hover:enabled,
@@ -66,28 +68,42 @@
   border-radius: 2px;
 }
 
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 481px) {
   .flexDisplay {
     display: flex;
-  }
-
-  .introSection {
-    padding-top: 10rem;
-    padding-bottom: 10rem;
-  }
-
-  .sectionContent {
-    flex-flow: row;
-    max-width: 960px;
-  }
-
-  .imageWrapper img {
-    display: initial;
+    justify-content: center;
     width: 100%;
-    min-height: 300px;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .getInvolved section {
+    padding: 10rem 0;
+  }
+
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5%;
+  }
+
+  .introImage {
+    display: initial;
     object-fit: cover;
+    width: 100%;
+    min-height: 350px;
     min-width: 350px;
     max-width: 800px;
-    padding-left: 2rem;
+  }
+
+  .alignRight {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+  }
+
+  .alignRight .sectionHeading {
+    text-align: right;
+    justify-content: flex-end;
   }
 }
