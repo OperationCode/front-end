@@ -5,18 +5,20 @@ import styles from './Badge.css';
 
 Badge.propTypes = {
   svgComponent: PropTypes.element.isRequired,
+  className: PropTypes.string,
   label: PropTypes.string,
   labelClassName: PropTypes.string,
 };
 
 Badge.defaultProps = {
+  className: '',
   label: '',
   labelClassName: '',
 };
 
-function Badge({ svgComponent, label, labelClassName }) {
+function Badge({ svgComponent, className, label, labelClassName }) {
   return (
-    <div className={styles.Badge}>
+    <div className={classNames(className, styles.Badge)}>
       <div className={styles.iconContainer}>{svgComponent}</div>
       <div className={classNames(styles.centerText, styles.label, labelClassName)}>{label}</div>
     </div>

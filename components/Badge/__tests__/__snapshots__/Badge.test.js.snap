@@ -2,7 +2,7 @@
 
 exports[`Badge should render with many props assigned 1`] = `
 <div
-  className="Badge"
+  className="test-class Badge"
 >
   <div
     className="iconContainer"
