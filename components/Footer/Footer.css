@@ -1,8 +1,6 @@
 .Footer {
   align-items: center;
-  background-color: var(--navyDark);
   color: var(--mist);
-  font-family: "PF Din Display", Arial, sans-serif;
   display: flex;
   height: 320px;
   justify-content: center;

@@ -42,6 +42,11 @@ footer a {
   font-family: "PF Din Display", Arial, sans-serif;
 }
 
+footer {
+  background-color: var(--navy);
+  font-family: "PF Din Display", Arial, sans-serif;
+}
+
 h1,
 h2,
 h3,

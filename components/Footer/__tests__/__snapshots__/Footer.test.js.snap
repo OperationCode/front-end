@@ -15,7 +15,7 @@ exports[`Footer should render with no props passed 1`] = `
       >
         <img
           alt="Operation Code Logo"
-          src="/static/images/operation_code_logo.png"
+          src="https://s3.amazonaws.com/operationcode-assets/branding/logos/small-blue-logo.png"
         />
       </div>
       <div
@@ -223,7 +223,9 @@ exports[`Footer should render with no props passed 1`] = `
     <div
       className="copyright"
     >
-      Copyright 2018 Operation Code™. Operation Code is a 501(c)(3) nonprofit, EIN 47-4247572.
+      Copyright 
+      2018
+       Operation Code™. Operation Code is a 501(c)(3) nonprofit, EIN 47-4247572.
     </div>
     <OutboundLink
       analyticsEventLabel="Footer Link"

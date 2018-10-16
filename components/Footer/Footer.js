@@ -4,15 +4,18 @@ import classNames from 'classnames';
 import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
 import SocialMedia from 'components/SocialMedia/SocialMedia';
 import Button from 'components/_common_/Button/Button';
+import { s3 } from 'common/constants/urls';
 import styles from './Footer.css';
 
 function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className={styles.Footer}>
       <div className={classNames(styles.footerWrapper, styles.row)}>
         <div className={classNames(styles.footerGrouping, styles.socialGrouping)}>
           <div className={classNames(styles.logoGrouping)}>
-            <img src="/static/images/operation_code_logo.png" alt="Operation Code Logo" />
+            <img src={`${s3}branding/logos/small-blue-logo.png`} alt="Operation Code Logo" />
           </div>
           <div className={classNames(styles.capitalize, styles.marginBottom)}>Connect With Us!</div>
           <SocialMedia />
@@ -99,7 +102,8 @@ function Footer() {
 
       <div className={classNames(styles.row, styles.legalGrouping)}>
         <div className={styles.copyright}>
-          Copyright 2018 Operation Code™. Operation Code is a 501(c)(3) nonprofit, EIN 47-4247572.
+          Copyright {currentYear} Operation Code™. Operation Code is a 501(c)(3) nonprofit, EIN
+          47-4247572.
         </div>
         <OutboundLink analyticsEventLabel="Footer Link" href="">
           Terms of Use
