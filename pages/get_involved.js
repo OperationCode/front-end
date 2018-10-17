@@ -49,7 +49,11 @@ export default () => (
     <Section theme="slate" contentClassName={styles.grid}>
       <div className={styles.introText}>
         <Heading
-          className={classNames(styles.sectionHeading, styles.sectionHeading_introHeading)}
+          className={classNames(
+            styles.alignLeft,
+            styles.sectionHeading,
+            styles.sectionHeading_introHeading,
+          )}
           hasHeadingLines={false}
           theme="white"
         >
@@ -70,8 +74,8 @@ export default () => (
       </div>
     </Section>
 
-    <Section theme="mist" className={styles.infoSection} contentClassName={styles.alignCenter}>
-      <Heading hasHeadingLines={false} theme="slate">
+    <Section theme="mist" contentClassName={styles.alignCenter}>
+      <Heading hasHeadingLines={false} className={styles.sectionHeading} theme="slate">
         THE POWER OF MENTORSHIP
       </Heading>
       <p className={styles.marginBottom}>By mentoring one of our members, you will help them:</p>
@@ -92,7 +96,11 @@ export default () => (
         <img src={`${s3}stock_paired-programming.jpg`} alt="Empower Our Community" />
       </div>
       <div>
-        <Heading className={styles.sectionHeading} hasHeadingLines={false} theme="white">
+        <Heading
+          className={classNames(styles.alignLeft, styles.sectionHeading)}
+          hasHeadingLines={false}
+          theme="white"
+        >
           EMPOWER OUR COMMUNITY
         </Heading>
         <p>
@@ -105,7 +113,7 @@ export default () => (
       </div>
     </Section>
 
-    <Section theme="mist" className={styles.infoSection} contentClassName={styles.alignCenter}>
+    <Section theme="mist" className={styles.sectionHeading} contentClassName={styles.alignCenter}>
       <Heading hasHeadingLines={false} theme="slate">
         WAYS YOU CAN SUPPORT OPERATION CODE
       </Heading>
@@ -127,7 +135,11 @@ export default () => (
 
     <Section theme="slate" contentClassName={styles.grid}>
       <div className={styles.alignRight}>
-        <Heading className={styles.sectionHeading} hasHeadingLines={false} theme="white">
+        <Heading
+          className={classNames(styles.alignLeft, styles.sectionHeading)}
+          hasHeadingLines={false}
+          theme="white"
+        >
           SUPPORT OUR MISSION
         </Heading>
         <p>
@@ -160,21 +172,24 @@ export default () => (
       <Heading hasHeadingLines={false} theme="slate">
         JOIN OUR THRIVING COMMUNITY
       </Heading>
-      <p className={styles.centerText}>
+      <p>
         Are you ready to begin your journey towards a career in software development?
         <br />
         Get the support you need by joining our members only Slack community!
       </p>
       <div className={classNames(styles.alignCenter, styles.marginBottom)}>
-        <form>
+        <form className={styles.slackForm}>
           <input placeholder="Email address" />
-          <button name="submit" type="submit">
+          <Button className={styles.slackForm_button} name="submit" type="submit">
             JOIN OUR SLACK
-          </button>
+          </Button>
         </form>
-        <p>Slack is a community based collaboration tool where all the magic happens!</p>
-        <br />
-        <OutboundLink href="https://slack.com/">Learn more</OutboundLink>
+        <p className={styles.slackText}>
+          Slack is a community based collaboration tool where all the magic happens!
+        </p>
+        <OutboundLink href="https://slack.com/" analyticsEventLabel="Learn more (Slack)">
+          Learn more
+        </OutboundLink>
       </div>
     </Section>
   </div>

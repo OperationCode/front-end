@@ -2,6 +2,10 @@
   padding: 5rem 0;
 }
 
+.getInvolved p {
+  font-size: 1.25rem;
+}
+
 .grid {
   display: grid;
   grid-auto-flow: row;
@@ -15,18 +19,16 @@
   text-align: center;
 }
 
+.alignLeft {
+  justify-content: flex-start;
+  text-align: left;
+}
+
 .marginBottom {
   margin-bottom: 2rem;
 }
 
-.infoSection h2 {
-  margin-bottom: 0;
-  line-height: 1.2;
-}
-
 .sectionHeading {
-  justify-content: flex-start;
-  text-align: left;
   line-height: 1.2;
   margin-bottom: 0;
 }
@@ -88,6 +90,42 @@
 .buttonOutline:focus:enabled {
   background-color: var(--primaryLight);
   border-radius: 2px;
+}
+
+.slackForm {
+  width: 100%;
+  display: flex;
+  margin-top: 1rem;
+}
+
+.slackForm input {
+  flex-grow: 1;
+  padding-left: 1rem;
+  border: solid 2px var(--gray);
+  font-size: 1rem;
+}
+
+.slackForm input:focus {
+  outline-offset: -2px;
+  outline-width: 2px;
+  outline-color: #000000;
+  outline-style: solid;
+}
+
+.slackForm_button {
+  flex-grow: 1;
+  border: none;
+  background-color: var(--secondary);
+  border-radius: 0;
+}
+
+.slackForm .slackForm_button:hover {
+  background-color: var(--secondaryDark);
+}
+
+p.slackText {
+  font-size: 1rem;
+  margin-bottom: 0;
 }
 
 @media screen and (min-width: 481px) {
