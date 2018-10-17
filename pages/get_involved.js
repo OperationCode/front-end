@@ -164,7 +164,19 @@ export default () => (
         members with coding school scholarships, tickets to tech conferences, and access to
         necessary equipment.
       </p>
-      <p>[DONATION PROGRESS BAR]</p>
+      <div className={styles.progressBarInfo}>
+        <div className={styles.donatedAmount}>
+          <span className={styles.amount}>$300 </span>
+          <span>Donated</span>
+        </div>
+        <div className={styles.goalAmount}>
+          <span>Goal: </span>
+          <span>$100,000</span>
+        </div>
+      </div>
+      <div className={styles.progressBar}>
+        <div style={{ width: '0px' }} className={styles.progressBarFill} />
+      </div>
       <Button>MAKE A DONATION</Button>
     </Section>
 

@@ -92,6 +92,35 @@
   border-radius: 2px;
 }
 
+.progressBarInfo {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.progressBar {
+  position: relative;
+  width: 100%;
+  height: 1.75rem;
+  background-color: var(--grayDark);
+  border: 2px solid var(--grayDark);
+  border-radius: 50px;
+  margin-bottom: 2rem;
+}
+
+.progressBarFill {
+  position: absolute;
+  left: 1px;
+  top: 1px;
+  bottom: 1px;
+  background-color: var(--primaryLight);
+  min-width: 12px; /* this will prevent the progress bar from disappearing */
+  width: 12px; /* control this dynamically to show progress */
+  max-width: calc(100% - 12px); /* this will prevent the progress bar from over-filling */
+  border: 1px solid var(--primaryLight);
+  border-radius: 50px 0 0 50px;
+}
+
 .slackForm {
   width: 100%;
   display: flex;
