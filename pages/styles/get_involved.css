@@ -12,6 +12,10 @@
   grid-gap: 2rem;
 }
 
+.grid > div {
+  margin: auto 0;
+}
+
 .alignCenter {
   display: flex;
   flex-direction: column;
@@ -96,6 +100,21 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
+  align-items: center;
+}
+
+.donatedAmount {
+  display: flex;
+  align-items: center;
+}
+
+.donatedAmount .amount {
+  font-size: 2rem;
+  margin-right: 0.5rem;
+}
+
+.goalAmount span:first-of-type {
+  margin-right: 0.5rem;
 }
 
 .progressBar {
@@ -167,7 +186,7 @@ p.slackText {
 
 @media screen and (min-width: 769px) {
   .getInvolved section {
-    padding: 10rem 0;
+    padding: 8rem 0;
   }
 
   .grid {
@@ -202,5 +221,26 @@ p.slackText {
   .alignRight .sectionHeading {
     text-align: right;
     justify-content: flex-end;
+  }
+
+  .offsetImage img {
+    object-fit: cover;
+    width: 100%;
+    min-height: 300px;
+    min-width: 350px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    .grid .offsetImage {
+      position: relative;
+      margin: 0;
+    }
+
+    .offsetImage img {
+      position: absolute;
+      top: -10rem;
+      min-height: 450px;
+      max-width: 800px;
+    }
   }
 }

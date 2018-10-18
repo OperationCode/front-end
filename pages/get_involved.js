@@ -92,7 +92,7 @@ export default () => (
     </Section>
 
     <Section theme="slate" contentClassName={styles.grid}>
-      <div>
+      <div className={classNames(styles.alignRight, styles.offsetImage)}>
         <img src={`${s3}stock_paired-programming.jpg`} alt="Empower Our Community" />
       </div>
       <div>
@@ -150,7 +150,7 @@ export default () => (
           SUPPORT OC
         </Button>
       </div>
-      <div>
+      <div className={styles.offsetImage}>
         <img src={`${s3}stock_paired-programming.jpg`} alt="Support Our Mission" />
       </div>
     </Section>
@@ -166,11 +166,11 @@ export default () => (
       </p>
       <div className={styles.progressBarInfo}>
         <div className={styles.donatedAmount}>
-          <span className={styles.amount}>$300 </span>
+          <span className={styles.amount}>$300.00</span>
           <span>Donated</span>
         </div>
         <div className={styles.goalAmount}>
-          <span>Goal: </span>
+          <span>Goal:</span>
           <span>$100,000</span>
         </div>
       </div>
