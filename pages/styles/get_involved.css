@@ -1,255 +1,74 @@
-.getInvolved section {
-  padding: 5rem 0;
-}
-
-.getInvolved p {
-  font-size: 1.25rem;
-}
-
-.grid {
-  display: grid;
-  grid-auto-flow: row;
-  grid-gap: 2rem;
-}
-
-.grid > div {
-  margin: auto 0;
-}
-
-.alignCenter {
+.flexDisplay {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.alignLeft {
-  justify-content: flex-start;
-  text-align: left;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
 }
 
 .marginBottom {
   margin-bottom: 2rem;
 }
 
-.sectionHeading {
-  line-height: 1.2;
-  margin-bottom: 0;
+.centerText {
+  text-align: center;
 }
 
-.offsetImage img {
-  opacity: 0;
-  transition: all 1s;
-}
-
-.showImage img {
-  opacity: 1;
-}
-
-.introText {
-  min-width: 20rem; /* prevent the auto grid flow from collapsing the text down too far */
-}
-
-.sectionHeading_introHeading {
-  position: relative;
-  padding-bottom: 2rem;
-  margin-bottom: 2rem;
-  font-size: 55px;
-  max-width: 13ch; /* this causes the line to break after the word 'make' in the title */
-}
-
-.sectionHeading_introHeading::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  width: 2.5ch; /* This matches the width of 2.5 characters of the title font */
-  border-bottom: 3px solid var(--primaryLight);
-}
-
-.introImage {
-  display: none; /* don't display image until screen size is large enough */
-}
-
-.badgeIcon {
-  width: 240px;
+.alignCenter {
   display: flex;
   flex-direction: column;
-  margin-right: 0.5rem;
-}
-
-.badgeIcon:last-child {
-  margin-right: 0;
-}
-
-.badgeIcon > div {
-  margin: 0 auto;
-}
-
-.badgeIcon svg {
-  fill: var(--slate);
-  height: 50px;
-  width: 100%;
-  margin-bottom: 1rem;
-}
-
-.buttonOutline {
-  border: 2px solid var(--primaryLight);
-  border-radius: 2px;
-  padding: 0;
-  margin-top: 1rem;
-}
-
-.buttonOutline:hover:enabled,
-.buttonOutline:focus:enabled {
-  background-color: var(--primaryLight);
-  border-radius: 2px;
-}
-
-.progressBarInfo {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
   align-items: center;
 }
 
-.donatedAmount {
+.cta {
   display: flex;
-  align-items: center;
-}
-
-.donatedAmount .amount {
-  font-size: 2rem;
-  margin-right: 0.5rem;
-}
-
-.goalAmount span:first-of-type {
-  margin-right: 0.5rem;
-}
-
-.progressBar {
-  position: relative;
+  flex-direction: row;
+  justify-content: space-around;
   width: 100%;
-  height: 1.75rem;
-  background-color: var(--grayDark);
-  border: 2px solid var(--grayDark);
-  border-radius: 50px;
-  margin-bottom: 2rem;
 }
 
-.progressBarFill {
-  position: absolute;
-  left: 1px;
-  top: 1px;
-  bottom: 1px;
-  background-color: var(--primaryLight);
-  min-width: 12px; /* this will prevent the progress bar from disappearing */
-  width: 12px; /* control this dynamically to show progress */
-  max-width: calc(100% - 12px); /* this will prevent the progress bar from over-filling */
-  border: 1px solid var(--primaryLight);
-  border-radius: 50px 0 0 50px;
-}
-
-.slackForm {
+.ctaImage > img {
   width: 100%;
-  display: flex;
-  margin-top: 1rem;
 }
 
-.slackForm input {
-  flex-grow: 1;
-  padding-left: 1rem;
-  border: solid 2px var(--gray);
-  font-size: 1rem;
-}
+@media screen and (min-width: 750px) {
+  .ctaImageRight {
+    flex-direction: row-reverse;
+  }
 
-.slackForm input:focus {
-  outline-offset: -2px;
-  outline-width: 2px;
-  outline-color: #000000;
-  outline-style: solid;
-}
+  .ctaImageRight .ctaImage {
+    margin-left: 5em;
+  }
 
-.slackForm_button {
-  flex-grow: 1;
-  border: none;
-  background-color: var(--secondary);
-  border-radius: 0;
-}
+  .ctaImageLeft .ctaImage {
+    margin-right: 5em;
+  }
 
-.slackForm .slackForm_button:hover {
-  background-color: var(--secondaryDark);
-}
-
-p.slackText {
-  font-size: 1rem;
-  margin-bottom: 0;
-}
-
-@media screen and (min-width: 481px) {
-  .flexDisplay {
-    display: flex;
-    justify-content: center;
-    width: 100%;
+  .cta > div {
+    max-width: 50%;
+    flex: 1 1 50%;
   }
 }
 
-@media screen and (min-width: 769px) {
-  .getInvolved section {
-    padding: 8rem 0;
+@media screen and (max-width: 749px) {
+  .cta {
+    flex-direction: column;
+    align-items: center;
   }
 
-  .grid {
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 5%;
-  }
-
-  .introImage {
-    display: initial;
-    object-fit: cover;
-    width: 100%;
-    min-height: 350px;
-    min-width: 350px;
-    max-width: 800px;
-  }
-
-  .badgeIcon {
-    width: 100%;
-  }
-
-  .badgeIcon svg {
-    height: 100px;
-  }
-
-  .alignRight {
+  .ctaText {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    text-align: right;
+    align-items: center;
   }
 
-  .alignRight .sectionHeading {
-    text-align: right;
-    justify-content: flex-end;
+  .ctaText > p {
+    text-align: center;
   }
+}
 
-  .offsetImage img {
-    object-fit: cover;
-    width: 100%;
-    min-height: 300px;
-    min-width: 350px;
-  }
-
-  @media screen and (min-width: 1280px) {
-    .grid .offsetImage {
-      position: relative;
-      height: 18rem;
-    }
-
-    .offsetImage img {
-      position: absolute;
-      bottom: 0;
-      min-height: 450px;
-      max-width: 800px;
-    }
+@media screen and (max-width: 480px) {
+  .flexDisplay {
+    flex-direction: column;
+    align-items: center;
   }
 }
