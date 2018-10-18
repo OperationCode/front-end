@@ -1,4 +1,5 @@
 import classNames from 'classnames';
+import TrackVisibility from 'react-on-screen';
 import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
 import Section from 'components/_common_/Section/Section';
 import Button from 'components/_common_/Button/Button';
@@ -13,6 +14,7 @@ import { s3 } from 'common/constants/urls';
 import styles from './styles/get_involved.css';
 
 // TODO: Replace PlaceholderIcons with appropriate icon assets
+const VISIBILITY_OFFSET = 400;
 
 const mentorItems = [
   {
@@ -92,9 +94,19 @@ export default () => (
     </Section>
 
     <Section theme="slate" contentClassName={styles.grid}>
-      <div className={classNames(styles.alignRight, styles.offsetImage)}>
-        <img src={`${s3}stock_paired-programming.jpg`} alt="Empower Our Community" />
-      </div>
+      <TrackVisibility offset={VISIBILITY_OFFSET}>
+        {({ isVisible }) => (
+          <div
+            className={classNames(
+              styles.alignRight,
+              styles.offsetImage,
+              isVisible && styles.showImage,
+            )}
+          >
+            <img src={`${s3}stock_paired-programming.jpg`} alt="Empower Our Community" />
+          </div>
+        )}
+      </TrackVisibility>
       <div>
         <Heading
           className={classNames(styles.alignLeft, styles.sectionHeading)}
@@ -150,9 +162,19 @@ export default () => (
           SUPPORT OC
         </Button>
       </div>
-      <div className={styles.offsetImage}>
-        <img src={`${s3}stock_paired-programming.jpg`} alt="Support Our Mission" />
-      </div>
+      <TrackVisibility offset={VISIBILITY_OFFSET}>
+        {({ isVisible }) => (
+          <div
+            className={classNames(
+              styles.alignRight,
+              styles.offsetImage,
+              isVisible && styles.showImage,
+            )}
+          >
+            <img src={`${s3}stock_paired-programming.jpg`} alt="Support Our Mission" />
+          </div>
+        )}
+      </TrackVisibility>
     </Section>
 
     <Section theme="mist" contentClassName={styles.alignCenter}>
