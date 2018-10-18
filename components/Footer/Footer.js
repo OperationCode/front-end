@@ -24,68 +24,100 @@ function Footer() {
         <div className={classNames(styles.footerGrouping, styles.linksGrouping, styles.capitalize)}>
           <div className={styles.linksRow}>
             <div className={styles.linksColumn}>
-              <Link href="/about">
-                <a>About Us</a>
-              </Link>
-              <Link href="/team">
-                <a>Team</a>
-              </Link>
-              <Link href="/contact">
-                <a>Contact Us</a>
-              </Link>
-              <Link href="/faq">
-                <a>FAQ</a>
-              </Link>
+              <span>
+                <Link href="/about">
+                  <a>About Us</a>
+                </Link>
+              </span>
+              <span>
+                <Link href="/team">
+                  <a>Team</a>
+                </Link>
+              </span>
+              <span>
+                <Link href="/contact">
+                  <a>Contact Us</a>
+                </Link>
+              </span>
+              <span>
+                <Link href="/faq">
+                  <a>FAQ</a>
+                </Link>
+              </span>
             </div>
             <div className={styles.linksColumn}>
-              <Link href="/who_we_serve">
-                <a>Who We Serve</a>
-              </Link>
-              <Link href="/code_schools">
-                <a>Code Schools</a>
-              </Link>
-              <Link href="/job_board">
-                <a>Job Board</a>
-              </Link>
-              <Link href="/events">
-                <a>Events</a>
-              </Link>
-              <Link href="/blog">
-                <a>Blog</a>
-              </Link>
+              <span>
+                {' '}
+                <Link href="/who_we_serve">
+                  <a>Who We Serve</a>
+                </Link>
+              </span>
+              <span>
+                <Link href="/code_schools">
+                  <a>Code Schools</a>
+                </Link>
+              </span>
+              <span>
+                <Link href="/job_board">
+                  <a>Job Board</a>
+                </Link>
+              </span>
+              <span>
+                <Link href="/events">
+                  <a>Events</a>
+                </Link>
+              </span>
+              <span>
+                <Link href="/blog">
+                  <a>Blog</a>
+                </Link>
+              </span>
             </div>
           </div>
           <div className={styles.linksRow}>
             <div className={styles.linksColumn}>
-              <Link href="/get_involved">
-                <a>Get Involved</a>
-              </Link>
-              <Link href="/become_a_mentor">
-                <a>Become a Mentor</a>
-              </Link>
-              <Link href="/support">
-                <a>Support OC</a>
-              </Link>
-              <Link href="/donate">
-                <a>Donate</a>
-              </Link>
-              <Link href="/feedback">
-                <a>Feedback</a>
-              </Link>
+              <span>
+                <Link href="/get_involved">
+                  <a>Get Involved</a>
+                </Link>
+              </span>
+              <span>
+                <Link href="/become_a_mentor">
+                  <a>Become a Mentor</a>
+                </Link>
+              </span>
+              <span>
+                <Link href="/support">
+                  <a>Support OC</a>
+                </Link>
+              </span>
+              <span>
+                <Link href="/donate">
+                  <a>Donate</a>
+                </Link>
+              </span>
+              <span>
+                <Link href="/feedback">
+                  <a>Feedback</a>
+                </Link>
+              </span>
             </div>
             <div className={styles.linksColumn}>
-              <Link href="/resources">
-                <a>Resources</a>
-              </Link>
-              <Link href="/press">
-                <a>Press</a>
-              </Link>
-              <Link href="/branding">
-                <a>Branding</a>
-              </Link>
-              <Link href="/sitemap">
-                <a>Sitemap</a>
-              </Link>
+              <span>
+                <Link href="/resources">
+                  <a>Resources</a>
+                </Link>
+              </span>
+              <span>
+                <Link href="/press">
+                  <a>Press</a>
+                </Link>
+              </span>
+              <span>
+                <Link href="/branding">
+                  <a>Branding</a>
+                </Link>
+              </span>
             </div>
           </div>
         </div>
@@ -100,23 +132,25 @@ function Footer() {
         </div>
       </div>
 
-      <div className={classNames(styles.row, styles.legalGrouping)}>
+      <div className={classNames(styles.column, styles.legalGrouping)}>
         <div className={styles.copyright}>
           Copyright {currentYear} Operation Code™. Operation Code is a 501(c)(3) nonprofit, EIN
           47-4247572.
         </div>
-        <OutboundLink analyticsEventLabel="Footer Link" href="">
-          Terms of Use
-        </OutboundLink>
-        <OutboundLink analyticsEventLabel="Footer Link" href="">
-          Cookies
-        </OutboundLink>
-        <OutboundLink
-          analyticsEventLabel="Footer Link"
-          href="https://www.iubenda.com/privacy-policy/8174861"
-        >
-          Privacy
-        </OutboundLink>
+        <div className={classNames(styles.row, styles.legalLinks)}>
+          <OutboundLink analyticsEventLabel="Footer Link" href="">
+            Terms of Use
+          </OutboundLink>
+          <OutboundLink analyticsEventLabel="Footer Link" href="">
+            Cookies
+          </OutboundLink>
+          <OutboundLink
+            analyticsEventLabel="Footer Link"
+            href="https://www.iubenda.com/privacy-policy/8174861"
+          >
+            Privacy
+          </OutboundLink>
+        </div>
       </div>
     </footer>
   );
