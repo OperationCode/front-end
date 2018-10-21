@@ -31,10 +31,10 @@ exports[`Footer should render with no props passed 1`] = `
       <div
         className="linksRow"
       >
-        <div
+        <ul
           className="linksColumn"
         >
-          <span>
+          <li>
             <Link
               href="/about"
             >
@@ -42,8 +42,8 @@ exports[`Footer should render with no props passed 1`] = `
                 About Us
               </a>
             </Link>
-          </span>
-          <span>
+          </li>
+          <li>
             <Link
               href="/team"
             >
@@ -51,8 +51,8 @@ exports[`Footer should render with no props passed 1`] = `
                 Team
               </a>
             </Link>
-          </span>
-          <span>
+          </li>
+          <li>
             <Link
               href="/contact"
             >
@@ -60,8 +60,8 @@ exports[`Footer should render with no props passed 1`] = `
                 Contact Us
               </a>
             </Link>
-          </span>
-          <span>
+          </li>
+          <li>
             <Link
               href="/faq"
             >
@@ -69,13 +69,12 @@ exports[`Footer should render with no props passed 1`] = `
                 FAQ
               </a>
             </Link>
-          </span>
-        </div>
-        <div
+          </li>
+        </ul>
+        <ul
           className="linksColumn"
         >
-          <span>
-             
+          <li>
             <Link
               href="/who_we_serve"
             >
@@ -83,8 +82,8 @@ exports[`Footer should render with no props passed 1`] = `
                 Who We Serve
               </a>
             </Link>
-          </span>
-          <span>
+          </li>
+          <li>
             <Link
               href="/code_schools"
             >
@@ -92,8 +91,8 @@ exports[`Footer should render with no props passed 1`] = `
                 Code Schools
               </a>
             </Link>
-          </span>
-          <span>
+          </li>
+          <li>
             <Link
               href="/job_board"
             >
@@ -101,8 +100,8 @@ exports[`Footer should render with no props passed 1`] = `
                 Job Board
               </a>
             </Link>
-          </span>
-          <span>
+          </li>
+          <li>
             <Link
               href="/events"
             >
@@ -110,8 +109,8 @@ exports[`Footer should render with no props passed 1`] = `
                 Events
               </a>
             </Link>
-          </span>
-          <span>
+          </li>
+          <li>
             <Link
               href="/blog"
             >
@@ -119,65 +118,56 @@ exports[`Footer should render with no props passed 1`] = `
                 Blog
               </a>
             </Link>
-          </span>
-        </div>
+          </li>
+        </ul>
       </div>
       <div
         className="linksRow"
       >
-        <div
+        <ul
           className="linksColumn"
         >
-          <span>
+          <li>
             <Link
-              href="/get_involved"
+              href="/about"
             >
               <a>
-                Get Involved
+                About Us
               </a>
             </Link>
-          </span>
-          <span>
+          </li>
+          <li>
             <Link
-              href="/become_a_mentor"
+              href="/team"
             >
               <a>
-                Become a Mentor
+                Team
               </a>
             </Link>
-          </span>
-          <span>
+          </li>
+          <li>
             <Link
-              href="/support"
+              href="/contact"
             >
               <a>
-                Support OC
+                Contact Us
               </a>
             </Link>
-          </span>
-          <span>
+          </li>
+          <li>
             <Link
-              href="/donate"
+              href="/faq"
             >
               <a>
-                Donate
+                FAQ
               </a>
             </Link>
-          </span>
-          <span>
-            <Link
-              href="/feedback"
-            >
-              <a>
-                Feedback
-              </a>
-            </Link>
-          </span>
-        </div>
-        <div
+          </li>
+        </ul>
+        <ul
           className="linksColumn"
         >
-          <span>
+          <li>
             <Link
               href="/resources"
             >
@@ -185,8 +175,8 @@ exports[`Footer should render with no props passed 1`] = `
                 Resources
               </a>
             </Link>
-          </span>
-          <span>
+          </li>
+          <li>
             <Link
               href="/press"
             >
@@ -194,8 +184,8 @@ exports[`Footer should render with no props passed 1`] = `
                 Press
               </a>
             </Link>
-          </span>
-          <span>
+          </li>
+          <li>
             <Link
               href="/branding"
             >
@@ -203,15 +193,15 @@ exports[`Footer should render with no props passed 1`] = `
                 Branding
               </a>
             </Link>
-          </span>
-        </div>
+          </li>
+        </ul>
       </div>
     </div>
     <div
       className="footerGrouping newsletterGrouping"
     >
       <div
-        className="capitalize newsletterHeading"
+        className="capitalize marginBottom"
       >
         Newsletter
       </div>
@@ -246,39 +236,36 @@ exports[`Footer should render with no props passed 1`] = `
     </div>
   </div>
   <div
-    className="column legalGrouping"
+    className="row legalGrouping"
   >
     <div
       className="copyright"
     >
       Copyright 
       2018
-       Operation Code™. Operation Code is a 501(c)(3) nonprofit, EIN 47-4247572.
+       Operation Code™
     </div>
     <div
       className="row legalLinks"
     >
       <OutboundLink
-        analyticsEventLabel="Footer Link"
+        analyticsEventLabel="FooterLink"
         className=""
         hasIcon={true}
-        href=""
       >
         Terms of Use
       </OutboundLink>
       <OutboundLink
-        analyticsEventLabel="Footer Link"
+        analyticsEventLabel="FooterLink"
         className=""
         hasIcon={true}
-        href=""
       >
         Cookies
       </OutboundLink>
       <OutboundLink
-        analyticsEventLabel="Footer Link"
+        analyticsEventLabel="FooterLink"
         className=""
         hasIcon={true}
-        href="https://www.iubenda.com/privacy-policy/8174861"
       >
         Privacy
       </OutboundLink>

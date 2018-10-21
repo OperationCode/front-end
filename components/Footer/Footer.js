@@ -1,10 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
 import classNames from 'classnames';
+import Button from 'components/_common_/Button/Button';
 import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
 import SocialMedia from 'components/SocialMedia/SocialMedia';
-import Button from 'components/_common_/Button/Button';
-import { s3 } from 'common/constants/urls';
+import { s3, footerLinks } from 'common/constants/urls';
 import styles from './Footer.css';
 
 function Footer() {
@@ -23,107 +23,49 @@ function Footer() {
 
         <div className={classNames(styles.footerGrouping, styles.linksGrouping, styles.capitalize)}>
           <div className={styles.linksRow}>
-            <div className={styles.linksColumn}>
-              <span>
-                <Link href="/about">
-                  <a>About Us</a>
-                </Link>
-              </span>
-              <span>
-                <Link href="/team">
-                  <a>Team</a>
-                </Link>
-              </span>
-              <span>
-                <Link href="/contact">
-                  <a>Contact Us</a>
-                </Link>
-              </span>
-              <span>
-                <Link href="/faq">
-                  <a>FAQ</a>
-                </Link>
-              </span>
-            </div>
-            <div className={styles.linksColumn}>
-              <span>
-                {' '}
-                <Link href="/who_we_serve">
-                  <a>Who We Serve</a>
-                </Link>
-              </span>
-              <span>
-                <Link href="/code_schools">
-                  <a>Code Schools</a>
-                </Link>
-              </span>
-              <span>
-                <Link href="/job_board">
-                  <a>Job Board</a>
-                </Link>
-              </span>
-              <span>
-                <Link href="/events">
-                  <a>Events</a>
-                </Link>
-              </span>
-              <span>
-                <Link href="/blog">
-                  <a>Blog</a>
-                </Link>
-              </span>
-            </div>
+            <ul className={styles.linksColumn}>
+              {footerLinks.column1.map(link => (
+                <li>
+                  <Link key={link.url} href={link.url}>
+                    <a>{link.title}</a>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <ul className={styles.linksColumn}>
+              {footerLinks.column2.map(link => (
+                <li>
+                  <Link key={link.url} href={link.url}>
+                    <a>{link.title}</a>
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
           <div className={styles.linksRow}>
-            <div className={styles.linksColumn}>
-              <span>
-                <Link href="/get_involved">
-                  <a>Get Involved</a>
-                </Link>
-              </span>
-              <span>
-                <Link href="/become_a_mentor">
-                  <a>Become a Mentor</a>
-                </Link>
-              </span>
-              <span>
-                <Link href="/support">
-                  <a>Support OC</a>
-                </Link>
-              </span>
-              <span>
-                <Link href="/donate">
-                  <a>Donate</a>
-                </Link>
-              </span>
-              <span>
-                <Link href="/feedback">
-                  <a>Feedback</a>
-                </Link>
-              </span>
-            </div>
-            <div className={styles.linksColumn}>
-              <span>
-                <Link href="/resources">
-                  <a>Resources</a>
-                </Link>
-              </span>
-              <span>
-                <Link href="/press">
-                  <a>Press</a>
-                </Link>
-              </span>
-              <span>
-                <Link href="/branding">
-                  <a>Branding</a>
-                </Link>
-              </span>
-            </div>
+            <ul className={styles.linksColumn}>
+              {footerLinks.column3.map(link => (
+                <li>
+                  <Link key={link.url} href={link.url}>
+                    <a>{link.title}</a>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <ul className={styles.linksColumn}>
+              {footerLinks.column4.map(link => (
+                <li>
+                  <Link key={link.url} href={link.url}>
+                    <a>{link.title}</a>
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 
         <div className={classNames(styles.footerGrouping, styles.newsletterGrouping)}>
-          <div className={classNames(styles.capitalize, styles.newsletterHeading)}>Newsletter</div>
+          <div className={classNames(styles.capitalize, styles.marginBottom)}>Newsletter</div>
           <div className={styles.newsletterItem}>
             Subscribe to our newsletter and never miss a beat!
           </div>
@@ -132,24 +74,14 @@ function Footer() {
         </div>
       </div>
 
-      <div className={classNames(styles.column, styles.legalGrouping)}>
-        <div className={styles.copyright}>
-          Copyright {currentYear} Operation Code™. Operation Code is a 501(c)(3) nonprofit, EIN
-          47-4247572.
-        </div>
+      <div className={classNames(styles.row, styles.legalGrouping)}>
+        <div className={styles.copyright}>Copyright {currentYear} Operation Code™</div>
         <div className={classNames(styles.row, styles.legalLinks)}>
-          <OutboundLink analyticsEventLabel="Footer Link" href="">
-            Terms of Use
-          </OutboundLink>
-          <OutboundLink analyticsEventLabel="Footer Link" href="">
-            Cookies
-          </OutboundLink>
-          <OutboundLink
-            analyticsEventLabel="Footer Link"
-            href="https://www.iubenda.com/privacy-policy/8174861"
-          >
-            Privacy
-          </OutboundLink>
+          {footerLinks.legal.map(link => (
+            <OutboundLink analyticsEventLabel={link.analyticsEventLabel} href={link.href}>
+              {link.title}
+            </OutboundLink>
+          ))}
         </div>
       </div>
     </footer>
