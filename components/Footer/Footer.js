@@ -25,8 +25,8 @@ function Footer() {
           <div className={styles.linksRow}>
             <ul className={styles.linksColumn}>
               {footerLinks.column1.map(link => (
-                <li>
-                  <Link key={link.url} href={link.url}>
+                <li key={link.url}>
+                  <Link href={link.url}>
                     <a>{link.title}</a>
                   </Link>
                 </li>
@@ -34,8 +34,8 @@ function Footer() {
             </ul>
             <ul className={styles.linksColumn}>
               {footerLinks.column2.map(link => (
-                <li>
-                  <Link key={link.url} href={link.url}>
+                <li key={link.url}>
+                  <Link href={link.url}>
                     <a>{link.title}</a>
                   </Link>
                 </li>
@@ -45,8 +45,8 @@ function Footer() {
           <div className={styles.linksRow}>
             <ul className={styles.linksColumn}>
               {footerLinks.column3.map(link => (
-                <li>
-                  <Link key={link.url} href={link.url}>
+                <li key={link.url}>
+                  <Link href={link.url}>
                     <a>{link.title}</a>
                   </Link>
                 </li>
@@ -54,8 +54,8 @@ function Footer() {
             </ul>
             <ul className={styles.linksColumn}>
               {footerLinks.column4.map(link => (
-                <li>
-                  <Link key={link.url} href={link.url}>
+                <li key={link.url}>
+                  <Link href={link.url}>
                     <a>{link.title}</a>
                   </Link>
                 </li>
