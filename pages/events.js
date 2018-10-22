@@ -107,7 +107,7 @@ export default () => (
           </div>
         )}
       </TrackVisibility>
-      <div>
+      <div className={styles.gridContent}>
         <Heading
           className={classNames(styles.alignLeft, styles.sectionHeading)}
           hasHeadingLines={false}
@@ -146,7 +146,7 @@ export default () => (
     </Section>
 
     <Section theme="slate" contentClassName={styles.grid}>
-      <div className={styles.alignRight}>
+      <div className={classNames(styles.alignRight, styles.gridContent)}>
         <Heading
           className={classNames(styles.alignLeft, styles.sectionHeading)}
           hasHeadingLines={false}
