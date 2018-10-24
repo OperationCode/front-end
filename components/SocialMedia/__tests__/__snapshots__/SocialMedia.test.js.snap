@@ -12,15 +12,6 @@ exports[`SocialMedia should render with no props passed passed 1`] = `
     }
   />
   <SocialMediaItem
-    href="https://github.com/operationcode"
-    name="GitHub"
-    svg={
-      <test-file-mock
-        className="logo"
-      />
-    }
-  />
-  <SocialMediaItem
     href="https://twitter.com/operation_code"
     name="Twitter"
     svg={
@@ -30,17 +21,8 @@ exports[`SocialMedia should render with no props passed passed 1`] = `
     }
   />
   <SocialMediaItem
-    href="https://www.linkedin.com/groups/13400924"
-    name="LinkedIn"
-    svg={
-      <test-file-mock
-        className="logo"
-      />
-    }
-  />
-  <SocialMediaItem
-    href="https://www.pinterest.com/operationcode/"
-    name="Pinterest"
+    href="https://www.instagram.com/operation_code/"
+    name="Instagram"
     svg={
       <test-file-mock
         className="logo"
