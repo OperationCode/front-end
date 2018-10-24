@@ -38,8 +38,14 @@ h4,
 h5,
 h6,
 button,
-footer a {
+nav,
+footer {
   font-family: "PF Din Display", Arial, sans-serif;
+}
+
+nav a,
+footer a {
+  text-decoration: none;
 }
 
 h1,
@@ -86,15 +92,15 @@ h6 {
   font-size: 1.5rem;
 }
 
-@media screen and (max-width: 480px) {
-  html {
-    font-size: 13px !important;
-  }
-}
-
 @media screen and (min-width: 481px) and (max-width: 960px) {
   html {
     font-size: 15px !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  html {
+    font-size: 13px !important;
   }
 }
 
