@@ -48,7 +48,6 @@ module.exports = {
 
     // Ignore Next.js files
     '<rootDir>/components/head.js',
-    '<rootDir>/components/nav.js',
   ],
 
   // A list of reporter names that Jest uses when writing coverage reports
