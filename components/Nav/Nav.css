@@ -1,0 +1,29 @@
+.Nav {
+  background-color: var(--mist);
+  border-radius: var(--borderRadius);
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem auto 0;
+  width: 80%;
+}
+
+.Nav a {
+  font-weight: bolder;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.links {
+  display: flex;
+  flex-wrap: nowrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.logo {
+  height: auto;
+  padding: 0.825rem 2rem;
+  vertical-align: middle;
+  width: 200px;
+}

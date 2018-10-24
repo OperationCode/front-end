@@ -1,0 +1,56 @@
+/* TODO: Simplify styles */
+.NavListItem {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  list-style: none;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.link {
+  align-items: center;
+  color: var(--slateDark);
+  display: flex;
+  fill: var(--slateDark);
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  list-style: none;
+  text-align: center;
+  transition: all 0.2s linear;
+}
+
+.link:focus,
+.link:hover {
+  color: var(--primary);
+  fill: var(--primary);
+  transition: all 0.2s linear;
+}
+
+/* One-off differences from normal .link */
+.donateLink {
+  background-color: var(--primaryLight);
+  border-radius: 0 var(--borderRadius) var(--borderRadius) 0;
+  color: var(--slateDark);
+  padding: 0 2rem;
+  transition: color 0.2s linear;
+}
+
+.donateLink:focus,
+.donateLink:hover {
+  color: var(--mist);
+  transition: color 0.2s linear;
+}
+
+.linkContent {
+  align-self: center;
+  padding: 0 1rem;
+}
+
+.plusIcon {
+  /* Purposefully using pixels here */
+  height: 12px;
+  margin-right: 5px;
+}
