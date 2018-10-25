@@ -250,22 +250,22 @@ exports[`Footer should render with no props passed 1`] = `
     >
       <OutboundLink
         analyticsEventLabel="FooterLink"
-        className=""
         hasIcon={true}
+        href="https://www.somefakeurl.com/"
       >
         Terms of Use
       </OutboundLink>
       <OutboundLink
         analyticsEventLabel="FooterLink"
-        className=""
         hasIcon={true}
+        href="https://www.anotherfakeurl.com/"
       >
         Cookies
       </OutboundLink>
       <OutboundLink
         analyticsEventLabel="FooterLink"
-        className=""
         hasIcon={true}
+        href="https://www.iubenda.com/privacy-policy/8174861"
       >
         Privacy
       </OutboundLink>

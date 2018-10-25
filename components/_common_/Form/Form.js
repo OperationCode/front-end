@@ -8,7 +8,7 @@ Form.propTypes = {
   className: PropTypes.string,
 };
 
-Form.defaultProps = { className: '' };
+Form.defaultProps = { className: undefined };
 
 function Form({ children, className }) {
   return (

@@ -18,7 +18,6 @@ exports[`OutboundLink should render with many props assigned 1`] = `
 
 exports[`OutboundLink should render with required props 1`] = `
 <a
-  className=""
   href="https://tests.com"
   rel="noopener noreferrer"
   target="_blank"

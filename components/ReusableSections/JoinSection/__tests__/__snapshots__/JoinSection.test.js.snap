@@ -2,7 +2,6 @@
 
 exports[`JoinSection should render with no props passed passed 1`] = `
 <Section
-  className=""
   contentClassName="content"
   hasHeadingLines={false}
   id=""
@@ -27,7 +26,6 @@ exports[`JoinSection should render with no props passed passed 1`] = `
         "category": "Interactions",
       }
     }
-    className=""
     datum=""
     disabled={false}
     fullWidth={false}

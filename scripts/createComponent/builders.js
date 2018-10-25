@@ -19,7 +19,7 @@ export default class ${componentName} extends Component {
   };
 
   static defaultProps = {
-    className: '',
+    className: undefined,
   };
 
   render() {

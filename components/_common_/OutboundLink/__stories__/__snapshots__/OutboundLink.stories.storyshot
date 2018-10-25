@@ -2,7 +2,6 @@
 
 exports[`Storyshots Common/OutboundLink default 1`] = `
 <a
-  className=""
   href="https://whitehouse.gov"
   rel="noopener noreferrer"
   target="_blank"

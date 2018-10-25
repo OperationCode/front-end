@@ -25,7 +25,7 @@ class Button extends Component {
       action: 'Button Selected',
       category: 'Interactions',
     },
-    className: '',
+    className: undefined,
     datum: '',
     disabled: false,
     fullWidth: false,
