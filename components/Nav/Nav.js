@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 import Link from 'next/link';
 import { s3 } from 'common/constants/urls';
 import { navItems } from 'common/constants/navigation';
@@ -9,7 +10,7 @@ function Nav() {
   return (
     <nav className={styles.Nav}>
       <Link href="/">
-        <a className={styles.logoLink}>
+        <a className={classNames(styles.logoLink, styles.link)}>
           <img
             src={`${s3}branding/logos/small-blue-logo.png`}
             alt="Operation Code Logo"
@@ -18,7 +19,7 @@ function Nav() {
         </a>
       </Link>
 
-      <ul className={styles.links}>
+      <ul className={styles.link}>
         {navItems.map(navLink => (
           // NavListItem component API matches navItems structure
           <NavListItem key={navLink.name} {...navLink} />

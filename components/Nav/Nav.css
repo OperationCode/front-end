@@ -4,6 +4,7 @@
   display: flex;
   justify-content: space-between;
   margin: 2rem auto 0;
+  height: 65px;
   width: 80%;
 }
 
@@ -13,7 +14,7 @@
   text-transform: uppercase;
 }
 
-.links {
+.link {
   display: flex;
   flex-wrap: nowrap;
   list-style: none;
@@ -21,9 +22,12 @@
   padding: 0;
 }
 
+.logoLink {
+  height: 100%;
+}
+
 .logo {
-  height: auto;
-  padding: 0.825rem 2rem;
-  vertical-align: middle;
-  width: 200px;
+  align-self: center;
+  height: 80%;
+  margin-left: 1rem;
 }
