@@ -1,14 +1,11 @@
 /* eslint-disable global-require */
-module.exports = ({ file, options, env }) => {
+module.exports = ({ file, options /* env is also available */ }) => {
   const plugins = {
     'postcss-import': { root: file.dirname },
-    autoprefixer:
-      env === 'production'
-        ? {
-            ...options.autoprefixer,
-            flexbox: 'no-2009',
-          }
-        : false,
+    autoprefixer: {
+      ...options.autoprefixer,
+      flexbox: 'no-2009',
+    },
   };
 
   return { plugins };
