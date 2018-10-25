@@ -76,17 +76,28 @@ function Footer() {
       </div>
 
       <div className={classNames(styles.row, styles.legalGrouping)}>
-        <div className={styles.copyright}>Copyright {currentYear} Operation Code™</div>
+        <div className={classNames(styles.row, styles.copyright)}>
+          Copyright {currentYear} Operation Code™
+        </div>
         <div className={classNames(styles.row, styles.legalLinks)}>
-          {footerItems.legal.map(link => (
-            <OutboundLink
-              key={link.href}
-              analyticsEventLabel={link.analyticsEventLabel}
-              href={link.href}
-            >
-              {link.title}
-            </OutboundLink>
-          ))}
+          {footerItems.legal.map(
+            link =>
+              // Use OutboundLink if non-internal URL
+              // (indicated by the presence of an analytics label)
+              link.analyticsEventLabel ? (
+                <OutboundLink
+                  key={link.href}
+                  analyticsEventLabel={link.analyticsEventLabel}
+                  href={link.href}
+                >
+                  {link.title}
+                </OutboundLink>
+              ) : (
+                <Link href={link.href} key={link.href}>
+                  <a>{link.title}</a>
+                </Link>
+              ),
+          )}
         </div>
       </div>
     </footer>

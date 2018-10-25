@@ -94,7 +94,7 @@ exports[`Footer should render with no props passed 1`] = `
           </li>
           <li>
             <Link
-              href="/job_board"
+              href="/jobs"
             >
               <a>
                 Job Board
@@ -129,37 +129,37 @@ exports[`Footer should render with no props passed 1`] = `
         >
           <li>
             <Link
-              href="/about"
+              href="/get_involved"
             >
               <a>
-                About Us
+                Get Involved
               </a>
             </Link>
           </li>
           <li>
             <Link
-              href="/team"
+              href="/mentor"
             >
               <a>
-                Team
+                Become A Mentor
               </a>
             </Link>
           </li>
           <li>
             <Link
-              href="/contact"
+              href="/feedback"
             >
               <a>
-                Contact Us
+                Feedback
               </a>
             </Link>
           </li>
           <li>
             <Link
-              href="/faq"
+              href="/donate"
             >
               <a>
-                FAQ
+                Donate
               </a>
             </Link>
           </li>
@@ -239,7 +239,7 @@ exports[`Footer should render with no props passed 1`] = `
     className="row legalGrouping"
   >
     <div
-      className="copyright"
+      className="row copyright"
     >
       Copyright 
       2018
@@ -248,22 +248,22 @@ exports[`Footer should render with no props passed 1`] = `
     <div
       className="row legalLinks"
     >
-      <OutboundLink
-        analyticsEventLabel="FooterLink"
-        hasIcon={true}
-        href="https://www.somefakeurl.com/"
+      <Link
+        href="/terms"
       >
-        Terms of Use
-      </OutboundLink>
+        <a>
+          Terms of Use
+        </a>
+      </Link>
       <OutboundLink
-        analyticsEventLabel="FooterLink"
+        analyticsEventLabel="Footer - Cookies"
         hasIcon={true}
         href="https://www.anotherfakeurl.com/"
       >
         Cookies
       </OutboundLink>
       <OutboundLink
-        analyticsEventLabel="FooterLink"
+        analyticsEventLabel="Footer - Privacy"
         hasIcon={true}
         href="https://www.iubenda.com/privacy-policy/8174861"
       >

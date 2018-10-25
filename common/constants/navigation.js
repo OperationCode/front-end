@@ -78,7 +78,7 @@ export const footerItems = {
       title: 'Code Schools',
     },
     {
-      href: '/job_board',
+      href: '/jobs',
       title: 'Job Board',
     },
     {
@@ -92,20 +92,20 @@ export const footerItems = {
   ],
   column3: [
     {
-      href: '/about',
-      title: 'About Us',
+      href: '/get_involved',
+      title: 'Get Involved',
     },
     {
-      href: '/team',
-      title: 'Team',
+      href: '/mentor',
+      title: 'Become A Mentor',
     },
     {
-      href: '/contact',
-      title: 'Contact Us',
+      href: '/feedback',
+      title: 'Feedback',
     },
     {
-      href: '/faq',
-      title: 'FAQ',
+      href: '/donate',
+      title: 'Donate',
     },
   ],
   column4: [
@@ -124,17 +124,16 @@ export const footerItems = {
   ],
   legal: [
     {
-      analyticsEventLabel: 'FooterLink',
-      href: 'https://www.somefakeurl.com/',
+      href: '/terms',
       title: 'Terms of Use',
     },
     {
-      analyticsEventLabel: 'FooterLink',
+      analyticsEventLabel: 'Footer - Cookies',
       href: 'https://www.anotherfakeurl.com/',
       title: 'Cookies',
     },
     {
-      analyticsEventLabel: 'FooterLink',
+      analyticsEventLabel: 'Footer - Privacy',
       href: 'https://www.iubenda.com/privacy-policy/8174861',
       title: 'Privacy',
     },
