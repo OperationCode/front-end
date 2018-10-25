@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  list-style: none;
+  position: relative;
   text-align: center;
   white-space: nowrap;
 }
@@ -17,8 +17,6 @@
   flex-direction: column;
   height: 100%;
   justify-content: center;
-  list-style: none;
-  text-align: center;
   transition: all 0.2s linear;
 }
 
@@ -53,4 +51,17 @@
   /* Purposefully using pixels here */
   height: 12px;
   margin-right: 5px;
+}
+
+.sublinks {
+  background-color: var(--mist);
+  margin: 0;
+  padding: 1rem 0;
+  position: absolute;
+  top: 65px;
+  width: 100%;
+}
+
+.SublinkItem:first-of-type {
+  margin-bottom: 1rem;
 }

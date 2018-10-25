@@ -23,7 +23,6 @@ export default class NavListItem extends Component {
   };
 
   onTab = event => {
-    // Hijacking normal tab behavior because onFocusOn and onFocusOff don't exist
     if (event.keyCode === 9) {
       this.toggleSublinkVisibility();
     }
@@ -39,36 +38,43 @@ export default class NavListItem extends Component {
     const hasSublinks = props.sublinks.length > 0;
 
     return (
-      <>
-        <li className={styles.NavListItem}>
-          <Link href={props.href} prefetch={props.shouldPrefetch}>
-            <a
-              className={classNames(styles.link, {
-                [styles.donateLink]: props.name === 'Donate',
-              })}
-              onFocus={this.toggleSublinkVisibility}
-              onKeyDown={this.onTab}
-              onMouseEnter={this.toggleSublinkVisibility}
-              onMouseLeave={this.toggleSublinkVisibility}
-              role="link"
-              tabIndex={0}
-            >
-              <span className={styles.linkContent}>
-                {hasSublinks && <PlusIcon className={styles.plusIcon} />}
-                {props.name}
-              </span>
-            </a>
-          </Link>
-        </li>
+      <li className={styles.NavListItem}>
+        <Link href={props.href} prefetch={props.shouldPrefetch}>
+          <a
+            className={classNames(styles.link, {
+              [styles.donateLink]: props.name === 'Donate',
+            })}
+            onFocus={this.toggleSublinkVisibility}
+            onKeyDown={this.onTab}
+            onMouseEnter={this.toggleSublinkVisibility}
+            onMouseLeave={this.toggleSublinkVisibility}
+            role="link"
+            tabIndex={0}
+          >
+            <span className={styles.linkContent}>
+              {hasSublinks && <PlusIcon className={styles.plusIcon} />}
+              {props.name}
+            </span>
+          </a>
+        </Link>
+
         {state.showSublinks &&
           hasSublinks && (
-            <ul>
+            <ul
+              className={styles.sublinks}
+              onMouseEnter={this.toggleSublinkVisibility}
+              onMouseLeave={this.toggleSublinkVisibility}
+            >
               {props.sublinks.map(sublink => (
-                <li key={sublink.name}>{sublink.name}</li>
+                <li className={styles.SublinkItem} key={sublink.name}>
+                  <Link href={sublink.href}>
+                    <a className={styles.link}>{sublink.name}</a>
+                  </Link>
+                </li>
               ))}
             </ul>
           )}
-      </>
+      </li>
     );
   }
 }
