@@ -48,9 +48,14 @@
 }
 
 .legalGrouping {
-  width: 100%;
   font-size: 14px;
   justify-content: center;
+  width: 100%;
+}
+
+.copyright {
+  justify-content: center;
+  margin-bottom: 1rem;
 }
 
 .legalLinks {
@@ -125,7 +130,6 @@
   .Footer {
     flex-direction: column;
     height: auto;
-    padding-bottom: 2rem;
   }
 
   .footerGrouping {
@@ -164,6 +168,11 @@
 }
 
 @media screen and (max-width: 576px) {
+  .Footer {
+    /* Need to clear from scroll button on mobile devices */
+    padding-bottom: 7rem;
+  }
+
   .linksRow {
     flex: 1 1 100%;
   }
