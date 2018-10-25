@@ -33,7 +33,6 @@ exports[`UpgradeBrowserOverlay should render with no props passed 1`] = `
       </span>
       <OutboundLink
         analyticsEventLabel="Microsoft Edge Download from <UpgradeBrowserOverlay>"
-        className=""
         hasIcon={false}
         href="https://www.microsoft.com/windows/microsoft-edge"
       >
@@ -54,7 +53,6 @@ exports[`UpgradeBrowserOverlay should render with no props passed 1`] = `
       </span>
       <OutboundLink
         analyticsEventLabel="Google Chrome Download from <UpgradeBrowserOverlay>"
-        className=""
         hasIcon={false}
         href="https://www.google.com/chrome"
       >
@@ -75,7 +73,6 @@ exports[`UpgradeBrowserOverlay should render with no props passed 1`] = `
       </span>
       <OutboundLink
         analyticsEventLabel="Mozilla Firefox Download from <UpgradeBrowserOverlay>"
-        className=""
         hasIcon={false}
         href="https://www.mozilla.org/firefox/new"
       >
@@ -96,7 +93,6 @@ exports[`UpgradeBrowserOverlay should render with no props passed 1`] = `
       </span>
       <OutboundLink
         analyticsEventLabel="Safari Download from <UpgradeBrowserOverlay>"
-        className=""
         hasIcon={false}
         href="https://support.apple.com/downloads/safari"
       >

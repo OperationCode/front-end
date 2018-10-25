@@ -11,7 +11,6 @@ exports[`ArticleGroup should render with required props 1`] = `
     <li>
       <OutboundLink
         analyticsEventLabel="Press Article"
-        className=""
         hasIcon={true}
         href="https://example.com"
       >
@@ -33,7 +32,6 @@ exports[`ArticleGroup should render with required props and 3 links and a button
     <li>
       <OutboundLink
         analyticsEventLabel="Press Article"
-        className=""
         hasIcon={true}
         href="https://example.com"
       >

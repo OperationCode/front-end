@@ -10,7 +10,7 @@ Card.propTypes = {
 };
 
 Card.defaultProps = {
-  className: '',
+  className: undefined,
   hasAnimationOnHover: false,
 };
 

@@ -16,13 +16,13 @@ Section.propTypes = {
 };
 
 Section.defaultProps = {
-  className: '',
+  className: undefined,
   hasHeadingLines: true,
   id: '',
   style: {},
   theme: 'gray',
   title: '',
-  contentClassName: '',
+  contentClassName: undefined,
 };
 
 function Section({
