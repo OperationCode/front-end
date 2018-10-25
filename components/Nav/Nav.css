@@ -5,7 +5,7 @@
   justify-content: space-between;
   margin: 2rem auto 0;
   height: 65px;
-  width: 80%;
+  max-width: 1200px;
 }
 
 .Nav a {
