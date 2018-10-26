@@ -7,7 +7,7 @@
   padding: 2rem 0;
 }
 
-.Footer * {
+.Footer div {
   box-sizing: border-box;
 }
 
@@ -110,7 +110,6 @@
 
   .footerWrapper {
     padding: 0 50px;
-    flex-wrap: none;
   }
 
   .socialGrouping {

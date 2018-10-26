@@ -28,7 +28,6 @@ exports[`Storyshots Cards/TeamMemberCard default 1`] = `
         Twitter: 
       </span>
       <a
-        className=""
         href="https://twitter.com/kylemh_"
         rel="noopener noreferrer"
         target="_blank"
@@ -52,7 +51,6 @@ exports[`Storyshots Cards/TeamMemberCard default 1`] = `
         Email: 
       </span>
       <a
-        className=""
         href="mailto:kyle@operationcode.org"
         rel="noopener noreferrer"
         target="_blank"

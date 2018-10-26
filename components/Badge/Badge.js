@@ -11,7 +11,7 @@ Badge.propTypes = {
 
 Badge.defaultProps = {
   label: '',
-  labelClassName: '',
+  labelClassName: undefined,
 };
 
 function Badge({ svgComponent, label, labelClassName }) {

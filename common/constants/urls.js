@@ -6,90 +6,90 @@ export const leadershipCircleLink =
 export const footerLinks = {
   column1: [
     {
-      url: '/about',
+      href: '/about',
       title: 'About Us',
     },
     {
-      url: '/team',
+      href: '/team',
       title: 'Team',
     },
     {
-      url: '/contact',
+      href: '/contact',
       title: 'Contact Us',
     },
     {
-      url: '/faq',
+      href: '/faq',
       title: 'FAQ',
     },
   ],
   column2: [
     {
-      url: '/who_we_serve',
+      href: '/who_we_serve',
       title: 'Who We Serve',
     },
     {
-      url: '/code_schools',
+      href: '/code_schools',
       title: 'Code Schools',
     },
     {
-      url: '/job_board',
+      href: '/job_board',
       title: 'Job Board',
     },
     {
-      url: '/events',
+      href: '/events',
       title: 'Events',
     },
     {
-      url: '/blog',
+      href: '/blog',
       title: 'Blog',
     },
   ],
   column3: [
     {
-      url: '/about',
+      href: '/about',
       title: 'About Us',
     },
     {
-      url: '/team',
+      href: '/team',
       title: 'Team',
     },
     {
-      url: '/contact',
+      href: '/contact',
       title: 'Contact Us',
     },
     {
-      url: '/faq',
+      href: '/faq',
       title: 'FAQ',
     },
   ],
   column4: [
     {
-      url: '/resources',
+      href: '/resources',
       title: 'Resources',
     },
     {
-      url: '/press',
+      href: '/press',
       title: 'Press',
     },
     {
-      url: '/branding',
+      href: '/branding',
       title: 'Branding',
     },
   ],
   legal: [
     {
       analyticsEventLabel: 'FooterLink',
-      url: '',
+      href: 'https://www.somefakeurl.com/',
       title: 'Terms of Use',
     },
     {
       analyticsEventLabel: 'FooterLink',
-      url: '',
+      href: 'https://www.anotherfakeurl.com/',
       title: 'Cookies',
     },
     {
       analyticsEventLabel: 'FooterLink',
-      url: 'https://www.iubenda.com/privacy-policy/8174861',
+      href: 'https://www.iubenda.com/privacy-policy/8174861',
       title: 'Privacy',
     },
   ],

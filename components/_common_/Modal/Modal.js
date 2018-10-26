@@ -18,7 +18,7 @@ Modal.propTypes = {
 };
 
 Modal.defaultProps = {
-  className: '',
+  className: undefined,
   hasCloseIcon: true,
   isOpen: false,
   shouldCloseOnOverlayClick: true,
