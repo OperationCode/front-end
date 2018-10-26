@@ -6,7 +6,6 @@ exports[`FeaturedJobItem should render with many props assigned 1`] = `
 >
   <div>
     <a
-      className=""
       href="https://jobs.lever.co/formidable/82919058-b73c-4a02-8589-87e2433f0a90"
       rel="noopener noreferrer"
       target="_blank"
@@ -89,7 +88,6 @@ exports[`FeaturedJobItem should render with required props 1`] = `
 >
   <div>
     <a
-      className=""
       href="https://about.gitlab.com/jobs/apply/?gh_jid=4055708002"
       rel="noopener noreferrer"
       target="_blank"

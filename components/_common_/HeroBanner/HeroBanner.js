@@ -13,7 +13,7 @@ HeroBanner.propTypes = {
 
 HeroBanner.defaultProps = {
   children: undefined,
-  className: '',
+  className: undefined,
   isFullViewHeight: false,
 };
 

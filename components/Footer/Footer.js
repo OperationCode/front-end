@@ -25,8 +25,8 @@ function Footer() {
           <div className={styles.linksRow}>
             <ul className={styles.linksColumn}>
               {footerLinks.column1.map(link => (
-                <li key={link.url}>
-                  <Link href={link.url}>
+                <li key={link.href}>
+                  <Link href={link.href}>
                     <a>{link.title}</a>
                   </Link>
                 </li>
@@ -34,8 +34,8 @@ function Footer() {
             </ul>
             <ul className={styles.linksColumn}>
               {footerLinks.column2.map(link => (
-                <li key={link.url}>
-                  <Link href={link.url}>
+                <li key={link.href}>
+                  <Link href={link.href}>
                     <a>{link.title}</a>
                   </Link>
                 </li>
@@ -45,8 +45,8 @@ function Footer() {
           <div className={styles.linksRow}>
             <ul className={styles.linksColumn}>
               {footerLinks.column3.map(link => (
-                <li key={link.url}>
-                  <Link href={link.url}>
+                <li key={link.href}>
+                  <Link href={link.href}>
                     <a>{link.title}</a>
                   </Link>
                 </li>
@@ -54,8 +54,8 @@ function Footer() {
             </ul>
             <ul className={styles.linksColumn}>
               {footerLinks.column4.map(link => (
-                <li key={link.url}>
-                  <Link href={link.url}>
+                <li key={link.href}>
+                  <Link href={link.href}>
                     <a>{link.title}</a>
                   </Link>
                 </li>
@@ -78,7 +78,11 @@ function Footer() {
         <div className={styles.copyright}>Copyright {currentYear} Operation Code™</div>
         <div className={classNames(styles.row, styles.legalLinks)}>
           {footerLinks.legal.map(link => (
-            <OutboundLink analyticsEventLabel={link.analyticsEventLabel} href={link.href}>
+            <OutboundLink
+              key={link.href}
+              analyticsEventLabel={link.analyticsEventLabel}
+              href={link.href}
+            >
               {link.title}
             </OutboundLink>
           ))}

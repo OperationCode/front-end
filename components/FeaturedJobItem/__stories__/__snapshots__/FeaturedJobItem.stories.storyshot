@@ -6,7 +6,6 @@ exports[`Storyshots FeaturedJobItem default 1`] = `
 >
   <div>
     <a
-      className=""
       href="https://www.gitlab.com"
       rel="noopener noreferrer"
       target="_blank"

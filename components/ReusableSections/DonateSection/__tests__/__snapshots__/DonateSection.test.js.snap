@@ -2,7 +2,6 @@
 
 exports[`DonateSection should render with no props passed passed 1`] = `
 <Section
-  className=""
   contentClassName="content"
   hasHeadingLines={false}
   headingTheme="white"
@@ -28,7 +27,6 @@ exports[`DonateSection should render with no props passed passed 1`] = `
         "category": "Interactions",
       }
     }
-    className=""
     datum=""
     disabled={false}
     fullWidth={false}
@@ -39,7 +37,6 @@ exports[`DonateSection should render with no props passed passed 1`] = `
   >
     <OutboundLink
       analyticsEventLabel="Donate Now"
-      className=""
       hasIcon={true}
       href="https://secure.lglforms.com/form_engine/s/BRtP7QUKyHOyEYsZROsRew"
     >

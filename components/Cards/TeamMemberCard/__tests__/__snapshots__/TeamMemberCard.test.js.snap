@@ -28,7 +28,6 @@ exports[`TeamMemberCard should render with many props assigned 1`] = `
         Twitter: 
       </span>
       <a
-        className=""
         href="https://twitter.com/kylemh"
         rel="noopener noreferrer"
         target="_blank"
@@ -52,7 +51,6 @@ exports[`TeamMemberCard should render with many props assigned 1`] = `
         Email: 
       </span>
       <a
-        className=""
         href="mailto:inbox@kylemh.com"
         rel="noopener noreferrer"
         target="_blank"
