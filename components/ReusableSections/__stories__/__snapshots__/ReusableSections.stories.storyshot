@@ -32,7 +32,6 @@ exports[`Storyshots ReusableSections DonateSection 1`] = `
       type="button"
     >
       <a
-        className=""
         href="https://secure.lglforms.com/form_engine/s/BRtP7QUKyHOyEYsZROsRew"
         rel="noopener noreferrer"
         target="_blank"

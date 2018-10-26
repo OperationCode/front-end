@@ -11,3 +11,4 @@ export const slateDark = "#213045";
 export const gray = "#9baab5";
 export const grayLight = "#d0d5da";
 export const grayDark = "#75848f";
+export const navy = "#252e3e";

@@ -5,7 +5,6 @@ exports[`SocialMediaItem should render with required props 1`] = `
   className="SocialMediaItem"
 >
   <a
-    className=""
     href="https://facebook.com"
     rel="noopener noreferrer"
     target="_blank"

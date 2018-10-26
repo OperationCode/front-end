@@ -2,7 +2,6 @@
 
 exports[`SignUpSection should render with no props passed passed 1`] = `
 <Section
-  className=""
   contentClassName="content"
   hasHeadingLines={true}
   id=""
@@ -20,7 +19,6 @@ exports[`SignUpSection should render with no props passed passed 1`] = `
         "category": "Interactions",
       }
     }
-    className=""
     datum=""
     disabled={false}
     fullWidth={false}
