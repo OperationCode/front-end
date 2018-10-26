@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PartnerLogoLink should render with many props assigned 1`] = `
+<div
+  className="test-class PartnerLogoLink"
+>
+  <a
+    rel="noopener noreferrer"
+    target="_blank"
+  >
+    <span
+      className="screenReaderOnly"
+    >
+      Opens in new window
+    </span>
+    <img
+      className="logo"
+      src="https://s3.amazonaws.com/operationcode-assets/undefined"
+    />
+  </a>
+</div>
+`;
+
+exports[`PartnerLogoLink should render with required props 1`] = `
+<div
+  className="PartnerLogoLink"
+>
+  <a
+    rel="noopener noreferrer"
+    target="_blank"
+  >
+    <span
+      className="screenReaderOnly"
+    >
+      Opens in new window
+    </span>
+    <img
+      className="logo"
+      src="https://s3.amazonaws.com/operationcode-assets/undefined"
+    />
+  </a>
+</div>
+`;

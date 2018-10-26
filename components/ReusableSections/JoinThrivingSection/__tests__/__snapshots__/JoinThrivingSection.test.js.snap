@@ -12,7 +12,7 @@ exports[`JoinThrivingSection should render with many props assigned 1`] = `
     Join Our Thriving Community
   </h2>
   <div
-    className="content "
+    className="content undefined"
   >
     <p
       className="centerText"
@@ -43,7 +43,6 @@ exports[`JoinThrivingSection should render with many props assigned 1`] = `
       Slack is a community based collaboration tool where all the magic happens!
       <br />
       <a
-        className=""
         href="https://slack.com/"
         rel="noopener noreferrer"
         target="_blank"
@@ -75,7 +74,7 @@ exports[`JoinThrivingSection should render with required props 1`] = `
     Join Our Thriving Community
   </h2>
   <div
-    className="content "
+    className="content undefined"
   >
     <p
       className="centerText"
@@ -106,7 +105,6 @@ exports[`JoinThrivingSection should render with required props 1`] = `
       Slack is a community based collaboration tool where all the magic happens!
       <br />
       <a
-        className=""
         href="https://slack.com/"
         rel="noopener noreferrer"
         target="_blank"

@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Common/PartnerLogoLink default 1`] = `
+<div
+  className="PartnerLogoLink"
+>
+  <a
+    rel="noopener noreferrer"
+    target="_blank"
+  >
+    <span
+      className="screenReaderOnly"
+    >
+      Opens in new window
+    </span>
+    <img
+      className="logo"
+      src="https://s3.amazonaws.com/operationcode-assets/undefined"
+    />
+  </a>
+</div>
+`;
