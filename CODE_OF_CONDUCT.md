@@ -1,71 +1,71 @@
-# ngoq yo'SeH: ngoq qach
+# Operation Code: Code of Conduct
 
-## Pledge
+## Our Pledge
 
-in the interest of poS fostering 'ej environment, nuqneH maH je
-pledge contributors maintainers 'ej vay' jInmol participation 'ej
-porgh SIQpu'bogh Hoch qantaHvIS, regardless of net harassment-tlhab community
-size, disability, ethnicity, gender vIchIDmeH, Qatlh Qu' 'ej mIS je 'ang qabDaj, SIQpu'bogh patlh
-nationality, personal Hoch, Segh, lalDan, pagh sexual vIchIDmeH, Qatlh Qu' je
+In the interest of fostering an open and welcoming environment, we as
+contributors and maintainers pledge to making participation in our project and
+our community a harassment-free experience for everyone, regardless of age, body
+size, disability, ethnicity, gender identity and expression, level of experience,
+nationality, personal appearance, race, religion, or sexual identity and
 orientation.
 
-## motlh
+## Our Standards
 
-examples behavior 'ej QuQ ghaq environment be chenmoH
-DaH nobvam:
+Examples of behavior that contributes to creating a positive environment
+include:
 
-* yI'el 'ej inclusive Hol lo'
-* being Soj qub differ viewpoints SIQpu'bogh 'ej naDlu'meH
-* gracefully constructive criticism laj
-* focusing nuq 'oH nIvbogh community
-* empathy towards members community latlh cha'
+* Using welcoming and inclusive language
+* Being respectful of differing viewpoints and experiences
+* Gracefully accepting constructive criticism
+* Focusing on what is best for the community
+* Showing empathy towards other community members
 
-DaH nobvam examples unacceptable behavior pong participants:
+Examples of unacceptable behavior by participants include:
 
-* Hol sexualize pagh imagery 'ej unwelcome sexual attention lo' pagh
-'Itlh
-* trolling, tIch ghap derogatory comments, 'ej personal pagh political HIv
-* harassment public pagh private
-* latlhpu' private De', such as physical, pagh va publishing
-SoQ. ghaH Hutlh choHwI' wIlIng explicit
-* latlh qach laH reasonably qel yuQ neH 'oH
-targhHom veDDaq noch setting
+* The use of sexualized language or imagery and unwelcome sexual attention or
+advances
+* Trolling, insulting/derogatory comments, and personal or political attacks
+* Public or private harassment
+* Publishing others' private information, such as a physical or electronic
+  address, without explicit permission
+* Other conduct which could reasonably be considered inappropriate in a
+  professional setting
 
-## Responsibilities
+## Our Responsibilities
 
-jInmol maintainers ngoy' acceptable motlh chuH
-appropriate 'ej 'IH corrective vang pIH behavior are 'ej
-Qo'noS response unacceptable behavior instances vay'.
+Project maintainers are responsible for clarifying the standards of acceptable
+behavior and are expected to take appropriate and fair corrective action in
+response to any instances of unacceptable behavior.
 
-lugh teq, edit, responsibility je jInmol maintainers pagh
-comments, HeS, ngoq, wiki edits, wanI'vammo' tlha', 'ej latlh contributions lajQo'
-wej aligned 'e' ngoq qach joq ban temporarily pagh
-permanently vay' contributor vaj chaH deem yuQ behaviors qar latlh.
-buQ, offensive, pagh joch.
+Project maintainers have the right and responsibility to remove, edit, or
+reject comments, commits, code, wiki edits, issues, and other contributions
+that are not aligned to this Code of Conduct, or to ban temporarily or
+permanently any contributor for other behaviors that they deem inappropriate,
+threatening, offensive, or harmful.
 
-## scope
+## Scope
 
-applies ngoq qach batlhchaj 'emvo' jInmol logh 'ej public logh
-ghorgh jInmol, 'ej community pagh 'oS nuv DanoHmeH nuv. examples
-e-mail qutluch patlh Sovmo' jInmol lo' DaH nobvam jInmol community pagh 'oS
-SoQ, QInvam via qutluch patlh Sovmo' media social account posting pagh vang je chaH ngeHmeH
-Qo'noS representative DeSDu' online pagh offline wanI'. chaq, qatlh jInmol representation
-qaStaHvIS define 'ej chuH jInmol maintainers.
+This Code of Conduct applies both within project spaces and in public spaces
+when an individual is representing the project or its community. Examples of
+representing a project or community include using an official project e-mail
+address, posting via an official social media account, or acting as an appointed
+representative at an online or offline event. Representation of a project may be
+further defined and clarified by project maintainers.
 
-## enforcement
+## Enforcement
 
-chaq, qatlh abusive, harass, pagh vuDwIj unacceptable behavior instances
-ja' pong jInmol team DeSDu' < staff@operationcode.org > contacting. Hoch
-reviewed 'ej investigated complaints 'ej ghot'e' neH response
-deemed 'ut 'ej appropriate Dochvam'e' yIteqneS jay'. jInmol team
-confidentiality with regard to potlh'e' reporter leH: obligated.
-chaq posted vISangchu'Qo'chugh details specific enforcement ngoch separately.
+Instances of abusive, harassing, or otherwise unacceptable behavior may be
+reported by contacting the project team at <staff@operationcode.org>. All
+complaints will be reviewed and investigated and will result in a response that
+is deemed necessary and appropriate to the circumstances. The project team is
+obligated to maintain confidentiality with regard to the reporter of an incident.
+Further details of specific enforcement policies may be posted separately.
 
-jInmol maintainers 'Iv wej pab joq ngoq qach QaQ enforce
-ru' pagh ru'Ha' repercussions je pong latlh qIlmeH pIj chaq qab va
-Qo'noS members jInmol leadership.
+Project maintainers who do not follow or enforce the Code of Conduct in good
+faith may face temporary or permanent repercussions as determined by other
+members of the project's leadership.
 
-## attribution
+## Attribution
 
 This Code of Conduct is adapted from the [Contributor Covenant][homepage], version 1.4,
 available at [http://contributor-covenant.org/version/1/4][version]
