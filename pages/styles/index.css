@@ -1,10 +1,17 @@
+.alignCenter {
+  align-self: center;
+}
+
+.centerText {
+  text-align: center;
+}
+
 .container {
   width: 100%;
 }
 
-.section {
-  display: flex;
-  align-self: center;
+.marginBottom {
+  margin-bottom: 20px;
 }
 
 .partnerLogos {
@@ -17,14 +24,23 @@
   flex-wrap: wrap;
 }
 
-.centerText {
-  text-align: center;
-}
-
-.alignCenter {
+.section {
+  display: flex;
   align-self: center;
 }
 
-.marginBottom {
-  margin-bottom: 20px;
+.successStories {
+  display: flex;
+  align-content: center;
+}
+
+.successStoryContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 649px) {
+  .successStoryContainer {
+    flex-direction: row;
+  }
 }

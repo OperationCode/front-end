@@ -12,11 +12,11 @@ exports[`Storyshots SuccessStory default 1`] = `
   <div
     className="quote"
   >
-    <h3
+    <h5
       className="title"
     >
       Kyle Holmberg
-    </h3>
+    </h5>
     <blockquote>
       "Operation Code is literally the greatest thing since sliced bread and Taco Bell."
     </blockquote>

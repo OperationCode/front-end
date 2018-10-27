@@ -12,11 +12,11 @@ exports[`SuccessStory should render with required props 1`] = `
   <div
     className="quote"
   >
-    <h3
+    <h5
       className="title"
     >
       Great testing culture
-    </h3>
+    </h5>
     <blockquote>
       "Best test of my life!"
     </blockquote>

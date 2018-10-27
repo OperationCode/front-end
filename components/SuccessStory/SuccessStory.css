@@ -1,16 +1,15 @@
 .SuccessStory {
   display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
+  flex-flow: column nowrap;
   align-items: center;
   width: 100%;
-  margin: 15px;
+  padding-top: 60px;
+  position: relative;
 }
 
 .image {
-  margin: 15px;
-  border-radius: 50%;
-  border: 3px solid #41a4c0;
+  position: absolute;
+  top: 0;
   width: 150px;
   max-width: 150px;
   height: 150px;
@@ -20,24 +19,23 @@
 
 .quote {
   display: flex;
+  flex: 1;
   flex-flow: column nowrap;
-  justify-content: space-around;
+  align-items: center;
   margin: 15px;
+  padding: 30px;
+  padding-top: 110px;
+  border: 3px solid #41a4c0;
 }
 
 .quote > blockquote {
   font-size: 0.9rem;
   margin: 0;
-  text-align: left;
+  margin: 15px 0;
+  text-align: center;
 }
 
 .title {
-  font-size: 1.7rem;
-}
-
-/* Vertical space between cards for vertical layout */
-@media screen and (max-width: 650px) {
-  .SuccessStory {
-    flex-flow: row wrap;
-  }
+  font-size: 1.2rem;
+  text-align: center;
 }
