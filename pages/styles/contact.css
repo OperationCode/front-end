@@ -1,0 +1,30 @@
+.centerSection {
+  align-items: center;
+}
+
+.centerText {
+  text-align: center;
+}
+
+.column {
+  display: flex;
+  flex-basis: 200px;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px 5px 20px;
+}
+
+.flexContainer {
+  justify-content: space-around;
+  padding: 15px 0 0;
+  flex-flow: row wrap;
+  display: flex;
+  width: 80%;
+}
+
+.icon {
+  fill: var(--navy);
+  padding: 0.7rem 0.35rem 0.5rem 0.35rem;
+  width: 100px;
+  height: 100px;
+}
