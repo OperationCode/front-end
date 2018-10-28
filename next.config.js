@@ -2,43 +2,48 @@ const withCSS = require('@zeit/next-css');
 const withBundleAnalyzer = require('@zeit/next-bundle-analyzer');
 const svgoConfig = require('./common/config/svgo');
 
-module.exports = withBundleAnalyzer(
-  withCSS({
-    cssModules: true,
-    cssLoaderOptions: {
-      // No need for importLoaders: 1 as its set to 1 when postcss.config.js exists
-      localIdentName: '[name]_[local]__[hash:base64:5]',
-    },
-    analyzeServer: process.env.ANALYZE,
-    analyzeBrowser: process.env.ANALYZE,
-    bundleAnalyzerConfig: {
-      server: {
-        analyzerMode: 'server',
-        analyzerPort: 8888,
-      },
-      browser: {
-        analyzerMode: 'server',
-        analyzerPort: 8889,
-      },
-    },
-    webpack: config => {
-      // Fixes npm packages that depend on `fs` module
-      // eslint-disable-next-line no-param-reassign
-      config.node = { fs: 'empty' };
+const nextConfig = withCSS({
+  // NextCSS Config
+  cssModules: true,
+  cssLoaderOptions: {
+    // No need for importLoaders: 1 as its set to 1 when postcss.config.js exists
+    localIdentName: '[name]_[local]__[hash:base64:5]',
+  },
 
-      config.module.rules.push({
-        test: /\.svg$/,
-        use: [
-          {
-            loader: 'react-svg-loader',
-            options: {
-              svgo: svgoConfig,
-            },
+  // Bundle Analyzer Config
+  analyzeServer: process.env.ANALYZE,
+  analyzeBrowser: process.env.ANALYZE,
+  bundleAnalyzerConfig: {
+    server: {
+      analyzerMode: 'server',
+      analyzerPort: 8888,
+    },
+    browser: {
+      analyzerMode: 'server',
+      analyzerPort: 8889,
+    },
+  },
+  
+  // Webpack Config
+  webpack: config => {
+    // Fixes npm packages that depend on `fs` module
+    // eslint-disable-next-line no-param-reassign
+    config.node = { fs: 'empty' };
+
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: [
+        {
+          loader: 'react-svg-loader',
+          options: {
+            svgo: svgoConfig,
           },
-        ],
-      });
+        },
+      ],
+    });
 
-      return config;
-    },
-  }),
-);
+    return config;
+  },
+});
+
+module.exports = withBundleAnalyzer(nextConfig);
