@@ -50,6 +50,7 @@
     "@storybook/addon-viewport": "^3.4.11",
     "@storybook/addons": "^3.4.11",
     "@storybook/react": "^3.4.11",
+    "@zeit/next-bundle-analyzer": "^0.1.2",
     "@zeit/next-css": "^1.0.1",
     "autoprefixer": "^9.3.1",
     "axios": "^0.18.0",
@@ -107,8 +108,7 @@
     "react-addons-test-utils": "^15.6.2",
     "react-test-renderer": "^16.6.0",
     "stylelint": "^9.6.0",
-    "stylelint-config-standard": "^18.2.0",
-    "webpack-bundle-analyzer": "^3.0.3"
+    "stylelint-config-standard": "^18.2.0"
   },
   "greenkeeper": {
     "ignore": [
