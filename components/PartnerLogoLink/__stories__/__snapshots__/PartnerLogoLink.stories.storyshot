@@ -9,7 +9,7 @@ exports[`Storyshots Common/PartnerLogoLink default 1`] = `
     target="_blank"
   >
     <span
-      className="screenReaderOnly"
+      className="ScreenReaderOnly"
     >
       Opens in new window
     </span>

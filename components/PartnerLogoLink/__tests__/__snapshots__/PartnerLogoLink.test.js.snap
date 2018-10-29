@@ -9,7 +9,7 @@ exports[`PartnerLogoLink should render with many props assigned 1`] = `
     target="_blank"
   >
     <span
-      className="screenReaderOnly"
+      className="ScreenReaderOnly"
     >
       Opens in new window
     </span>
@@ -30,7 +30,7 @@ exports[`PartnerLogoLink should render with required props 1`] = `
     target="_blank"
   >
     <span
-      className="screenReaderOnly"
+      className="ScreenReaderOnly"
     >
       Opens in new window
     </span>
