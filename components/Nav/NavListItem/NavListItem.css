@@ -33,27 +33,12 @@
 .link:hover,
 .navItemLink:focus,
 .sublinkToggleButton:focus,
-.NavListItem:hover .navItemLink:not(.sublinkListItem):not(.donateLink),
-.NavListItem:hover .sublinkToggleButton:not(.sublinkListItem):not(.donateLink) {
+.NavListItem:hover .navItemLink:not(.sublinkListItem),
+.NavListItem:hover .sublinkToggleButton:not(.sublinkListItem) {
   cursor: pointer;
   color: var(--primary);
   fill: var(--primary);
   transition: all 0.2s linear;
-}
-
-/* One-off differences from normal .link */
-.donateLink {
-  background-color: var(--primaryLight);
-  border-radius: 0 var(--borderRadius) var(--borderRadius) 0;
-  color: var(--slateDark);
-  padding: 0 2rem;
-  transition: color 0.2s linear;
-}
-
-.donateLink:focus,
-.donateLink:hover {
-  color: var(--mist);
-  transition: color 0.2s linear;
 }
 
 .linkContent {

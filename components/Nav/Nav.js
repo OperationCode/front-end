@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import Link from 'next/link';
-import { s3 } from 'common/constants/urls';
+import { donateLink, s3 } from 'common/constants/urls';
 import { navItems } from 'common/constants/navigation';
 import NavListItem from 'components/Nav/NavListItem/NavListItem';
 import styles from './Nav.css';
@@ -24,6 +24,14 @@ function Nav() {
           // NavListItem component API matches navItems structure
           <NavListItem key={navLink.name} {...navLink} />
         ))}
+
+        <li>
+          <Link href={donateLink}>
+            <a className={classNames(styles.link, styles.donateLink)}>
+              <span>Donate</span>
+            </a>
+          </Link>
+        </li>
       </ul>
     </nav>
   );

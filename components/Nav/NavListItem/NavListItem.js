@@ -46,9 +46,7 @@ export default class NavListItem extends Component {
           <a
             aria-expanded={state.areSublinksVisible}
             aria-haspopup={hasSublinks}
-            className={classNames(styles.link, styles.navItemLink, {
-              [styles.donateLink]: props.name === 'Donate',
-            })}
+            className={classNames(styles.link, styles.navItemLink)}
             onMouseEnter={this.showSublinks}
             onMouseLeave={this.hideSublinks}
             role="link"

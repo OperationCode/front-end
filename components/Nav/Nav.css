@@ -35,3 +35,24 @@
   height: 80%;
   margin-left: 1rem;
 }
+
+/* One-off differences from other link items */
+.donateLink {
+  background-color: var(--primaryLight);
+  border-radius: 0 var(--borderRadius) var(--borderRadius) 0;
+  color: var(--slateDark);
+  height: 100%;
+  padding: 0 2rem;
+  transition: color 0.2s linear;
+}
+
+.donateLink > span {
+  align-self: center;
+}
+
+.donateLink:focus,
+.donateLink:hover {
+  color: var(--mist);
+  cursor: pointer;
+  transition: color 0.2s linear;
+}

@@ -41,12 +41,6 @@ export const navItems = [
     shouldPrefetch: false,
     sublinks: [],
   },
-  {
-    name: 'Donate',
-    href: '/donate',
-    shouldPrefetch: false,
-    sublinks: [],
-  },
 ];
 
 export const footerItems = {
