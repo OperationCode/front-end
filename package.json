@@ -103,7 +103,7 @@
     "jest-enzyme": "7.0.0",
     "jest-mock-axios": "^2.1.11",
     "jest-prop-type-error": "^1.1.0",
-    "lint-staged": "^7.3.0",
+    "lint-staged": "^8.0.2",
     "prettier": "^1.14.3",
     "react-addons-test-utils": "^15.6.2",
     "react-test-renderer": "^16.6.0",
