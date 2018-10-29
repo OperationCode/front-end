@@ -33,7 +33,7 @@ exports[`TeamMemberCard should render with many props assigned 1`] = `
         target="_blank"
       >
         <span
-          className="screenReaderOnly"
+          className="ScreenReaderOnly"
         >
           Opens in new window
         </span>
@@ -56,7 +56,7 @@ exports[`TeamMemberCard should render with many props assigned 1`] = `
         target="_blank"
       >
         <span
-          className="screenReaderOnly"
+          className="ScreenReaderOnly"
         >
           Opens in new window
         </span>

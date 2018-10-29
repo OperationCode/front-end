@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import ReactGA from 'react-ga';
 import { withRouter } from 'next/router';
 import ExternalLinkIcon from 'static/images/icons/FontAwesome/external-link-square-alt-solid.svg';
+import ScreenReaderOnly from 'components/_common_/ScreenReaderOnly/ScreenReaderOnly';
 import styles from './OutboundLink.css';
 
 OutboundLink.propTypes = {
@@ -22,7 +23,7 @@ OutboundLink.defaultProps = {
 function OutboundLink({ analyticsEventLabel, children, className, hasIcon, href, router }) {
   const linkContent = (
     <React.Fragment>
-      <span className={styles.screenReaderOnly}>Opens in new window</span>
+      <ScreenReaderOnly>Opens in new window</ScreenReaderOnly>
       {children}
       {hasIcon && <ExternalLinkIcon className={styles.externalLinkIcon} />}
     </React.Fragment>
