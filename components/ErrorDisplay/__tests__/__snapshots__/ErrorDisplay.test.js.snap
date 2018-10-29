@@ -4,12 +4,10 @@ exports[`ErrorDisplay should render with just required props 1`] = `
 <div
   className="ErrorDisplay"
 >
-  <h1>
-    <meta
-      content="noindex, nofollow"
-      name="robots"
-    />
-  </h1>
+  <meta
+    content="noindex, nofollow"
+    name="robots"
+  />
   <div
     className="bg"
   >
