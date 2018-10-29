@@ -19,17 +19,19 @@ export default class NavListItem extends Component {
   };
 
   state = {
-    shouldShowSublinks: false,
+    areSublinksVisible: false,
   };
 
-  onTab = event => {
-    if (event.keyCode === 9) {
-      this.toggleSublinkVisibility();
-    }
+  hideSublinks = () => {
+    this.setState({ areSublinksVisible: false });
+  };
+
+  showSublinks = () => {
+    this.setState({ areSublinksVisible: true });
   };
 
   toggleSublinkVisibility = () => {
-    this.setState(prevState => ({ shouldShowSublinks: !prevState.shouldShowSublinks }));
+    this.setState(prevState => ({ areSublinksVisible: !prevState.areSublinksVisible }));
   };
 
   render() {
@@ -41,41 +43,52 @@ export default class NavListItem extends Component {
       <li className={styles.NavListItem}>
         <Link href={props.href} prefetch={props.shouldPrefetch}>
           <a
-            className={classNames(styles.link, {
+            aria-expanded={state.areSublinksVisible}
+            aria-haspopup={hasSublinks}
+            className={classNames(styles.link, styles.navItemLink, {
               [styles.donateLink]: props.name === 'Donate',
             })}
-            onFocus={this.toggleSublinkVisibility}
-            onKeyDown={this.onTab}
-            onMouseEnter={this.toggleSublinkVisibility}
-            onMouseLeave={this.toggleSublinkVisibility}
+            onMouseEnter={this.showSublinks}
+            onMouseLeave={this.hideSublinks}
             role="link"
             tabIndex={0}
           >
-            <span className={styles.linkContent}>
-              {hasSublinks && <PlusIcon className={styles.plusIcon} />}
-              {props.name}
-            </span>
+            <span className={styles.linkContent}>{props.name}</span>
           </a>
         </Link>
 
-        {state.shouldShowSublinks &&
-          hasSublinks && (
+        {hasSublinks && (
+          <>
+            <button
+              aria-expanded={state.areSublinksVisible}
+              className={styles.sublinkToggleButton}
+              onClick={this.toggleSublinkVisibility}
+              onMouseEnter={this.showSublinks}
+              onMouseLeave={this.hideSublinks}
+              type="button"
+            >
+              <PlusIcon className={styles.plusIcon} />
+            </button>
+
             <ul
-              className={styles.sublinksList}
-              onMouseEnter={this.toggleSublinkVisibility}
-              onMouseLeave={this.toggleSublinkVisibility}
+              className={classNames(styles.sublinksList, {
+                [styles.invisible]: !state.areSublinksVisible,
+              })}
+              onMouseEnter={this.showSublinks}
+              onMouseLeave={this.hideSublinks}
             >
               {props.sublinks.map(sublink => (
-                <li className={styles.SublinkItem} key={sublink.name}>
+                <li className={styles.sublinkListItem} key={sublink.name}>
                   <Link href={sublink.href}>
-                    <a className={styles.link} key={sublink.name}>
+                    <a className={styles.link} key={sublink.name} role="link" tabIndex={0}>
                       {sublink.name}
                     </a>
                   </Link>
                 </li>
               ))}
             </ul>
-          )}
+          </>
+        )}
       </li>
     );
   }
