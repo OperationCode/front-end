@@ -10,7 +10,7 @@ exports[`SocialMediaItem should render with required props 1`] = `
     target="_blank"
   >
     <span
-      className="screenReaderOnly"
+      className="ScreenReaderOnly"
     >
       Opens in new window
     </span>
