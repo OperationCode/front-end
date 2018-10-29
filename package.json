@@ -40,7 +40,7 @@
   },
   "dependencies": {
     "@babel/core": "^7.1.2",
-    "@storybook/addon-a11y": "^3.4.11",
+    "@storybook/addon-a11y": "^4.0.0",
     "@storybook/addon-actions": "^4.0.0",
     "@storybook/addon-backgrounds": "^4.0.0",
     "@storybook/addon-info": "^4.0.0",
