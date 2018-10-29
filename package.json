@@ -43,7 +43,7 @@
     "@storybook/addon-a11y": "^3.4.11",
     "@storybook/addon-actions": "^4.0.0",
     "@storybook/addon-backgrounds": "^3.4.11",
-    "@storybook/addon-info": "^3.4.11",
+    "@storybook/addon-info": "^4.0.0",
     "@storybook/addon-knobs": "^3.4.11",
     "@storybook/addon-options": "^3.4.11",
     "@storybook/addon-storyshots": "^3.4.11",
