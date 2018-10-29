@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
 import PlusIcon from 'static/images/icons/plus.svg';
+import MinusIcon from 'static/images/icons/minus.svg';
 import styles from './NavListItem.css';
 
 export default class NavListItem extends Component {
@@ -67,7 +68,11 @@ export default class NavListItem extends Component {
               onMouseLeave={this.hideSublinks}
               type="button"
             >
-              <PlusIcon className={styles.plusIcon} />
+              {state.areSublinksVisible ? (
+                <MinusIcon className={styles.icon} />
+              ) : (
+                <PlusIcon className={styles.icon} />
+              )}
             </button>
 
             <ul
