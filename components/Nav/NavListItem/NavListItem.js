@@ -19,7 +19,7 @@ export default class NavListItem extends Component {
   };
 
   state = {
-    showSublinks: false,
+    shouldShowSublinks: false,
   };
 
   onTab = event => {
@@ -29,7 +29,7 @@ export default class NavListItem extends Component {
   };
 
   toggleSublinkVisibility = () => {
-    this.setState(prevState => ({ showSublinks: !prevState.showSublinks }));
+    this.setState(prevState => ({ shouldShowSublinks: !prevState.shouldShowSublinks }));
   };
 
   render() {
@@ -58,17 +58,19 @@ export default class NavListItem extends Component {
           </a>
         </Link>
 
-        {state.showSublinks &&
+        {state.shouldShowSublinks &&
           hasSublinks && (
             <ul
-              className={styles.sublinks}
+              className={styles.sublinksList}
               onMouseEnter={this.toggleSublinkVisibility}
               onMouseLeave={this.toggleSublinkVisibility}
             >
               {props.sublinks.map(sublink => (
                 <li className={styles.SublinkItem} key={sublink.name}>
                   <Link href={sublink.href}>
-                    <a className={styles.link}>{sublink.name}</a>
+                    <a className={styles.link} key={sublink.name}>
+                      {sublink.name}
+                    </a>
                   </Link>
                 </li>
               ))}
