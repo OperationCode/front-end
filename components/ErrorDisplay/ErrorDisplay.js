@@ -7,6 +7,7 @@ ErrorDisplay.propTypes = { statusCode: PropTypes.number.isRequired };
 // Formerly known as FourOhFour (404)
 function ErrorDisplay({ statusCode }) {
   return (
+    <meta name="robots" noindex, nofollow>
     <div className={styles.ErrorDisplay}>
       <div className={styles.bg}>
         <h1 className={styles.title}>{statusCode}!</h1>
