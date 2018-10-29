@@ -1,12 +1,14 @@
 import NextHead from 'next/head';
 import { string } from 'prop-types';
 import { s3 } from 'common/constants/urls';
+import { PropTypes } from 'components/ErrorDisplay/ErrorDisplay';
 
 Head.propTypes = {
   title: string.isRequired,
   description: string,
   url: string,
   ogImage: string,
+  statusCode: PropTypes.number.isRequired,
 };
 
 Head.defaultProps = {
