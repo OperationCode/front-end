@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ScreenReaderOnly should render with required props 1`] = `
+<span
+  className="ScreenReaderOnly"
+>
+  Test
+</span>
+`;
