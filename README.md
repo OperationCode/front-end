@@ -63,3 +63,7 @@ yarn test
 #Create all the necessary files/folders for a new, reusable component
 yarn create-component $ComponentName
 ```
+
+## License
+
+MIT Licensed , see [LICENSE](LICENSE) for details
