@@ -10,7 +10,7 @@ import OutboundLink from '../OutboundLink';
 describe('OutboundLink', () => {
   it('should render with required props', () => {
     createSnapshotTest(
-      <OutboundLink analyticsEventLabel="Test" href="https://tests.com">
+      <OutboundLink analyticsEventLabel="Test" href="https://tests.com" router={MockedRouter}>
         Test
       </OutboundLink>,
     );
@@ -23,6 +23,7 @@ describe('OutboundLink', () => {
         className="test-class"
         href="https://tests.com"
         hasIcon={false}
+        router={MockedRouter}
       >
         Test
       </OutboundLink>,

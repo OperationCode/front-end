@@ -13,6 +13,15 @@ exports[`ArticleGroup should render with required props 1`] = `
         analyticsEventLabel="Press Article"
         hasIcon={true}
         href="https://example.com"
+        router={
+          Object {
+            "pathname": "mock-path",
+            "prefetch": [Function],
+            "push": [Function],
+            "replace": [Function],
+            "route": "/mock-route",
+          }
+        }
       >
         Example
       </OutboundLink>
@@ -34,6 +43,15 @@ exports[`ArticleGroup should render with required props and 3 links and a button
         analyticsEventLabel="Press Article"
         hasIcon={true}
         href="https://example.com"
+        router={
+          Object {
+            "pathname": "mock-path",
+            "prefetch": [Function],
+            "push": [Function],
+            "replace": [Function],
+            "route": "/mock-route",
+          }
+        }
       >
         Example
       </OutboundLink>

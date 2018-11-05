@@ -5,6 +5,7 @@ exports[`UpgradeBrowserOverlay should render with no props passed 1`] = `
   className="UpgradeBrowserOverlay"
   hasCloseIcon={false}
   isOpen={true}
+  onRequestClose={[Function]}
   overlayClassName="overlay"
   screenReaderLabel="Upgrade Your Browser"
   shouldCloseOnOverlayClick={false}
@@ -35,6 +36,15 @@ exports[`UpgradeBrowserOverlay should render with no props passed 1`] = `
         analyticsEventLabel="Microsoft Edge Download from <UpgradeBrowserOverlay>"
         hasIcon={false}
         href="https://www.microsoft.com/windows/microsoft-edge"
+        router={
+          Object {
+            "pathname": "mock-path",
+            "prefetch": [Function],
+            "push": [Function],
+            "replace": [Function],
+            "route": "/mock-route",
+          }
+        }
       >
         <img
           alt="Microsoft Edge Logo"
@@ -55,6 +65,15 @@ exports[`UpgradeBrowserOverlay should render with no props passed 1`] = `
         analyticsEventLabel="Google Chrome Download from <UpgradeBrowserOverlay>"
         hasIcon={false}
         href="https://www.google.com/chrome"
+        router={
+          Object {
+            "pathname": "mock-path",
+            "prefetch": [Function],
+            "push": [Function],
+            "replace": [Function],
+            "route": "/mock-route",
+          }
+        }
       >
         <img
           alt="Google Chrome Logo"
@@ -75,6 +94,15 @@ exports[`UpgradeBrowserOverlay should render with no props passed 1`] = `
         analyticsEventLabel="Mozilla Firefox Download from <UpgradeBrowserOverlay>"
         hasIcon={false}
         href="https://www.mozilla.org/firefox/new"
+        router={
+          Object {
+            "pathname": "mock-path",
+            "prefetch": [Function],
+            "push": [Function],
+            "replace": [Function],
+            "route": "/mock-route",
+          }
+        }
       >
         <img
           alt="Mozilla Firefox Logo"
@@ -95,6 +123,15 @@ exports[`UpgradeBrowserOverlay should render with no props passed 1`] = `
         analyticsEventLabel="Safari Download from <UpgradeBrowserOverlay>"
         hasIcon={false}
         href="https://support.apple.com/downloads/safari"
+        router={
+          Object {
+            "pathname": "mock-path",
+            "prefetch": [Function],
+            "push": [Function],
+            "replace": [Function],
+            "route": "/mock-route",
+          }
+        }
       >
         <img
           alt="Safari Logo"

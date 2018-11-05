@@ -37,6 +37,15 @@ exports[`Timeline should render with no props passed passed 1`] = `
               analyticsEventLabel="History Link"
               hasIcon={true}
               href="https://angelhack.com"
+              router={
+                Object {
+                  "pathname": "mock-path",
+                  "prefetch": [Function],
+                  "push": [Function],
+                  "replace": [Function],
+                  "route": "/mock-route",
+                }
+              }
             >
               AngelHack
             </OutboundLink>
@@ -81,6 +90,15 @@ exports[`Timeline should render with no props passed passed 1`] = `
               analyticsEventLabel="History Link"
               hasIcon={true}
               href="https://bmoreonrails.org"
+              router={
+                Object {
+                  "pathname": "mock-path",
+                  "prefetch": [Function],
+                  "push": [Function],
+                  "replace": [Function],
+                  "route": "/mock-route",
+                }
+              }
             >
               "Bmore on Rails"
             </OutboundLink>
@@ -92,6 +110,15 @@ exports[`Timeline should render with no props passed passed 1`] = `
               analyticsEventLabel="History Link"
               hasIcon={true}
               href="https://onemonth.com"
+              router={
+                Object {
+                  "pathname": "mock-path",
+                  "prefetch": [Function],
+                  "push": [Function],
+                  "replace": [Function],
+                  "route": "/mock-route",
+                }
+              }
             >
               One Month's Rails online course.
             </OutboundLink>
@@ -109,6 +136,15 @@ exports[`Timeline should render with no props passed passed 1`] = `
               analyticsEventLabel="History Link"
               hasIcon={true}
               href="https://railsconf.com"
+              router={
+                Object {
+                  "pathname": "mock-path",
+                  "prefetch": [Function],
+                  "push": [Function],
+                  "replace": [Function],
+                  "route": "/mock-route",
+                }
+              }
             >
               RailsConf
             </OutboundLink>
@@ -128,6 +164,15 @@ exports[`Timeline should render with no props passed passed 1`] = `
               analyticsEventLabel="History Link"
               hasIcon={true}
               href="https://techstars.com/patriotbootcamp"
+              router={
+                Object {
+                  "pathname": "mock-path",
+                  "prefetch": [Function],
+                  "push": [Function],
+                  "replace": [Function],
+                  "route": "/mock-route",
+                }
+              }
             >
               Patriot Boot Camp (PBC)
             </OutboundLink>
@@ -180,6 +225,15 @@ exports[`Timeline should render with no props passed passed 1`] = `
               analyticsEventLabel="History Link"
               hasIcon={true}
               href="https://cascadiarubyconf.com"
+              router={
+                Object {
+                  "pathname": "mock-path",
+                  "prefetch": [Function],
+                  "push": [Function],
+                  "replace": [Function],
+                  "route": "/mock-route",
+                }
+              }
             >
               Cascadia Ruby
             </OutboundLink>
@@ -191,6 +245,15 @@ exports[`Timeline should render with no props passed passed 1`] = `
               analyticsEventLabel="History Link"
               hasIcon={true}
               href="https://www.codefellows.org"
+              router={
+                Object {
+                  "pathname": "mock-path",
+                  "prefetch": [Function],
+                  "push": [Function],
+                  "replace": [Function],
+                  "route": "/mock-route",
+                }
+              }
             >
               Code Fellows
             </OutboundLink>
@@ -202,6 +265,15 @@ exports[`Timeline should render with no props passed passed 1`] = `
               analyticsEventLabel="History Link"
               hasIcon={true}
               href="//github.com/OperationCode/operationcode"
+              router={
+                Object {
+                  "pathname": "mock-path",
+                  "prefetch": [Function],
+                  "push": [Function],
+                  "replace": [Function],
+                  "route": "/mock-route",
+                }
+              }
             >
               committed to GitHub
             </OutboundLink>
@@ -237,6 +309,15 @@ exports[`Timeline should render with no props passed passed 1`] = `
               analyticsEventLabel="History Link"
               hasIcon={true}
               href="http//www.codefellows.org"
+              router={
+                Object {
+                  "pathname": "mock-path",
+                  "prefetch": [Function],
+                  "push": [Function],
+                  "replace": [Function],
+                  "route": "/mock-route",
+                }
+              }
             >
               Code Fellows
             </OutboundLink>
@@ -254,6 +335,15 @@ exports[`Timeline should render with no props passed passed 1`] = `
               analyticsEventLabel="History Link"
               hasIcon={true}
               href="https://dnsimple.com"
+              router={
+                Object {
+                  "pathname": "mock-path",
+                  "prefetch": [Function],
+                  "push": [Function],
+                  "replace": [Function],
+                  "route": "/mock-route",
+                }
+              }
             >
               DNSimple
             </OutboundLink>
@@ -273,6 +363,15 @@ exports[`Timeline should render with no props passed passed 1`] = `
               analyticsEventLabel="History Link"
               hasIcon={true}
               href="https://www.switchup.org/blog/why-veterans-will-make-excellent-programmers"
+              router={
+                Object {
+                  "pathname": "mock-path",
+                  "prefetch": [Function],
+                  "push": [Function],
+                  "replace": [Function],
+                  "route": "/mock-route",
+                }
+              }
             >
               'Why Veterans Will Make Excellent Programmers'
             </OutboundLink>
@@ -290,6 +389,15 @@ exports[`Timeline should render with no props passed passed 1`] = `
               analyticsEventLabel="History Link"
               hasIcon={true}
               href="https://hacksummit.org"
+              router={
+                Object {
+                  "pathname": "mock-path",
+                  "prefetch": [Function],
+                  "push": [Function],
+                  "replace": [Function],
+                  "route": "/mock-route",
+                }
+              }
             >
               hack.summit()
             </OutboundLink>
@@ -366,6 +474,15 @@ exports[`Timeline should render with no props passed passed 1`] = `
               analyticsEventLabel="History Link"
               hasIcon={true}
               href="https://twitter.com/operation_code"
+              router={
+                Object {
+                  "pathname": "mock-path",
+                  "prefetch": [Function],
+                  "push": [Function],
+                  "replace": [Function],
+                  "route": "/mock-route",
+                }
+              }
             >
               @operation_code
             </OutboundLink>
@@ -377,6 +494,15 @@ exports[`Timeline should render with no props passed passed 1`] = `
               analyticsEventLabel="History Link"
               hasIcon={true}
               href="https://instagram.com/operation_code"
+              router={
+                Object {
+                  "pathname": "mock-path",
+                  "prefetch": [Function],
+                  "push": [Function],
+                  "replace": [Function],
+                  "route": "/mock-route",
+                }
+              }
             >
               Instagram
             </OutboundLink>
@@ -388,6 +514,15 @@ exports[`Timeline should render with no props passed passed 1`] = `
               analyticsEventLabel="History Link"
               hasIcon={true}
               href="https://facebook.com/operationcode.org"
+              router={
+                Object {
+                  "pathname": "mock-path",
+                  "prefetch": [Function],
+                  "push": [Function],
+                  "replace": [Function],
+                  "route": "/mock-route",
+                }
+              }
             >
               Facebook
             </OutboundLink>
@@ -405,6 +540,15 @@ exports[`Timeline should render with no props passed passed 1`] = `
               analyticsEventLabel="History Link"
               hasIcon={true}
               href="https://calagator.org/events/1250468219"
+              router={
+                Object {
+                  "pathname": "mock-path",
+                  "prefetch": [Function],
+                  "push": [Function],
+                  "replace": [Function],
+                  "route": "/mock-route",
+                }
+              }
             >
               Formal launch of Operation Code
             </OutboundLink>
@@ -424,6 +568,15 @@ exports[`Timeline should render with no props passed passed 1`] = `
               analyticsEventLabel="History Link"
               hasIcon={true}
               href="https://operation-code.slack.com/"
+              router={
+                Object {
+                  "pathname": "mock-path",
+                  "prefetch": [Function],
+                  "push": [Function],
+                  "replace": [Function],
+                  "route": "/mock-route",
+                }
+              }
             >
               our newly created Slack Team
             </OutboundLink>
@@ -443,6 +596,15 @@ exports[`Timeline should render with no props passed passed 1`] = `
               analyticsEventLabel="History Link"
               hasIcon={true}
               href="https://github.com/OperationCode/operationcode/blob/master/CONTRIBUTING.md"
+              router={
+                Object {
+                  "pathname": "mock-path",
+                  "prefetch": [Function],
+                  "push": [Function],
+                  "replace": [Function],
+                  "route": "/mock-route",
+                }
+              }
             >
               contributing guide
             </OutboundLink>
@@ -462,6 +624,15 @@ exports[`Timeline should render with no props passed passed 1`] = `
               analyticsEventLabel="History Link"
               hasIcon={true}
               href="https://www.airbnb.com/"
+              router={
+                Object {
+                  "pathname": "mock-path",
+                  "prefetch": [Function],
+                  "push": [Function],
+                  "replace": [Function],
+                  "route": "/mock-route",
+                }
+              }
             >
               AirBnB
             </OutboundLink>
@@ -473,6 +644,15 @@ exports[`Timeline should render with no props passed passed 1`] = `
               analyticsEventLabel="History Link"
               hasIcon={true}
               href="https://www.instagram.com/p/21p5bFxUjd/?taken-by=davidcmolina"
+              router={
+                Object {
+                  "pathname": "mock-path",
+                  "prefetch": [Function],
+                  "push": [Function],
+                  "replace": [Function],
+                  "route": "/mock-route",
+                }
+              }
             >
               They also invited our members to tour their headquarters
             </OutboundLink>
@@ -490,6 +670,15 @@ exports[`Timeline should render with no props passed passed 1`] = `
               analyticsEventLabel="History Link"
               hasIcon={true}
               href="https://www.twilio.com/signal/2015"
+              router={
+                Object {
+                  "pathname": "mock-path",
+                  "prefetch": [Function],
+                  "push": [Function],
+                  "replace": [Function],
+                  "route": "/mock-route",
+                }
+              }
             >
               SignalConf
             </OutboundLink>
@@ -501,6 +690,15 @@ exports[`Timeline should render with no props passed passed 1`] = `
               analyticsEventLabel="History Link"
               hasIcon={true}
               href="https://www.twilio.com/"
+              router={
+                Object {
+                  "pathname": "mock-path",
+                  "prefetch": [Function],
+                  "push": [Function],
+                  "replace": [Function],
+                  "route": "/mock-route",
+                }
+              }
             >
               Twilio
             </OutboundLink>
@@ -528,6 +726,15 @@ exports[`Timeline should render with no props passed passed 1`] = `
               analyticsEventLabel="History Link"
               hasIcon={true}
               href="https://twitter.com/operation_code/status/614443994769027072"
+              router={
+                Object {
+                  "pathname": "mock-path",
+                  "prefetch": [Function],
+                  "push": [Function],
+                  "replace": [Function],
+                  "route": "/mock-route",
+                }
+              }
             >
               separates from its financial supporter
             </OutboundLink>
@@ -545,6 +752,15 @@ exports[`Timeline should render with no props passed passed 1`] = `
               analyticsEventLabel="History Link"
               hasIcon={true}
               href="https://www.stickermule.com/"
+              router={
+                Object {
+                  "pathname": "mock-path",
+                  "prefetch": [Function],
+                  "push": [Function],
+                  "replace": [Function],
+                  "route": "/mock-route",
+                }
+              }
             >
               Sticker Mule
             </OutboundLink>
@@ -572,6 +788,15 @@ exports[`Timeline should render with no props passed passed 1`] = `
               analyticsEventLabel="History Link"
               hasIcon={true}
               href="https://www.hackbca.com/hackBCA"
+              router={
+                Object {
+                  "pathname": "mock-path",
+                  "prefetch": [Function],
+                  "push": [Function],
+                  "replace": [Function],
+                  "route": "/mock-route",
+                }
+              }
             >
               hackBCA
             </OutboundLink>
@@ -614,6 +839,15 @@ exports[`Timeline should render with no props passed passed 1`] = `
               analyticsEventLabel="History Link"
               hasIcon={true}
               href="https://hacksummit.org/"
+              router={
+                Object {
+                  "pathname": "mock-path",
+                  "prefetch": [Function],
+                  "push": [Function],
+                  "replace": [Function],
+                  "route": "/mock-route",
+                }
+              }
             >
               hack.summit()
             </OutboundLink>
@@ -631,6 +865,15 @@ exports[`Timeline should render with no props passed passed 1`] = `
               analyticsEventLabel="History Link"
               hasIcon={true}
               href="https://speakeasy.com/"
+              router={
+                Object {
+                  "pathname": "mock-path",
+                  "prefetch": [Function],
+                  "push": [Function],
+                  "replace": [Function],
+                  "route": "/mock-route",
+                }
+              }
             >
               Speakeasy
             </OutboundLink>
@@ -683,6 +926,15 @@ exports[`Timeline should render with no props passed passed 1`] = `
               analyticsEventLabel="History Link"
               hasIcon={true}
               href="https://conferences.oreilly.com/oscon/oscon-tx"
+              router={
+                Object {
+                  "pathname": "mock-path",
+                  "prefetch": [Function],
+                  "push": [Function],
+                  "replace": [Function],
+                  "route": "/mock-route",
+                }
+              }
             >
               OSCON
             </OutboundLink>
@@ -710,6 +962,15 @@ exports[`Timeline should render with no props passed passed 1`] = `
               analyticsEventLabel="History Link"
               hasIcon={true}
               href="https://twitter.com/operation_code/status/882280600920616960"
+              router={
+                Object {
+                  "pathname": "mock-path",
+                  "prefetch": [Function],
+                  "push": [Function],
+                  "replace": [Function],
+                  "route": "/mock-route",
+                }
+              }
             >
               2000th Operation Code member joined our Slack Team
             </OutboundLink>

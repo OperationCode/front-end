@@ -3,6 +3,7 @@ import Modal from 'components/_common_/Modal/Modal';
 import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
 import WarningSign from 'static/images/icons/FontAwesome/exclamation-triangle-solid.svg';
 import { s3 } from 'common/constants/urls';
+import MockedRouter from 'test-utils/mocks/nextRouterMock';
 import styles from './UpgradeBrowserOverlay.css';
 
 function UpgradeBrowserOverlay() {
@@ -31,6 +32,9 @@ function UpgradeBrowserOverlay() {
 
   return (
     <Modal
+      onRequestClose={() => {
+        console.log('Modal has been closed.');
+      }}
       className={styles.UpgradeBrowserOverlay}
       screenReaderLabel="Upgrade Your Browser"
       hasCloseIcon={false}
@@ -52,6 +56,7 @@ function UpgradeBrowserOverlay() {
               analyticsEventLabel={`${browserName} Download from <UpgradeBrowserOverlay>`}
               hasIcon={false}
               href={downloadLink}
+              router={MockedRouter}
             >
               <img className={styles.browserImage} src={imageSource} alt={`${browserName} Logo`} />
             </OutboundLink>

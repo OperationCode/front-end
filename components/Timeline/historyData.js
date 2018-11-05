@@ -1,4 +1,5 @@
 import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
+import MockedRouter from 'test-utils/mocks/nextRouterMock';
 
 export default {
   2012: [
@@ -12,6 +13,7 @@ export default {
             analyticsEventLabel="History Link"
             href="https://angelhack.com"
             alt="Angel Hack"
+            router={MockedRouter}
           >
             AngelHack
           </OutboundLink>{' '}
@@ -34,6 +36,7 @@ export default {
             analyticsEventLabel="History Link"
             href="https://bmoreonrails.org"
             alt="Bmore On Rails"
+            router={MockedRouter}
           >
             &quot;Bmore on Rails&quot;
           </OutboundLink>{' '}
@@ -42,6 +45,7 @@ export default {
             analyticsEventLabel="History Link"
             href="https://onemonth.com"
             alt="One Mounth Rails"
+            router={MockedRouter}
           >
             One Month&apos;s Rails online course.
           </OutboundLink>
@@ -57,6 +61,7 @@ export default {
             analyticsEventLabel="History Link"
             href="https://railsconf.com"
             alt="Rails Conf"
+            router={MockedRouter}
           >
             RailsConf
           </OutboundLink>{' '}
@@ -74,6 +79,7 @@ export default {
             analyticsEventLabel="History Link"
             href="https://techstars.com/patriotbootcamp"
             alt="Patriot Boot Camp"
+            router={MockedRouter}
           >
             Patriot Boot Camp (PBC)
           </OutboundLink>{' '}
@@ -104,6 +110,7 @@ export default {
             analyticsEventLabel="History Link"
             href="https://cascadiarubyconf.com"
             alt="Cascadia Conference"
+            router={MockedRouter}
           >
             Cascadia Ruby
           </OutboundLink>{' '}
@@ -114,6 +121,7 @@ export default {
             analyticsEventLabel="History Link"
             href="https://www.codefellows.org"
             alt="Operation Code Is A Go"
+            router={MockedRouter}
           >
             Code Fellows
           </OutboundLink>{' '}
@@ -122,6 +130,7 @@ export default {
             analyticsEventLabel="History Link"
             href="//github.com/OperationCode/operationcode"
             alt="Operation Code Old Repository"
+            router={MockedRouter}
           >
             committed to GitHub
           </OutboundLink>{' '}
@@ -154,6 +163,7 @@ export default {
         <p>
           Web developer, teacher, entrepreneur, and co-founder of{' '}
           <OutboundLink
+            router={MockedRouter}
             analyticsEventLabel="History Link"
             href="http//www.codefellows.org"
             alt="Code Fellows"
@@ -170,6 +180,7 @@ export default {
       content: (
         <p>
           <OutboundLink
+            router={MockedRouter}
             analyticsEventLabel="History Link"
             href="https://dnsimple.com"
             alt="DNSimple"
@@ -188,6 +199,7 @@ export default {
           Army veteran and aspiring software developer, Charles Sipe, writes a viral, Veteran&apos;s
           Day article called{' '}
           <OutboundLink
+            router={MockedRouter}
             analyticsEventLabel="History Link"
             href="https://www.switchup.org/blog/why-veterans-will-make-excellent-programmers"
             alt="Blog Article: Why Veterans Will Make Excellent Programmers"
@@ -204,7 +216,11 @@ export default {
         <p>
           HackHands co-founders, Forest Good and Geraldo Ramos, join Operation Code, designing our
           logo and providing veterans free access to{' '}
-          <OutboundLink analyticsEventLabel="History Link" href="https://hacksummit.org">
+          <OutboundLink
+            analyticsEventLabel="History Link"
+            href="https://hacksummit.org"
+            router={MockedRouter}
+          >
             hack.summit()
           </OutboundLink>{' '}
           , a virtual conference to learn from the world&apos;s most renowned programmers.
@@ -258,6 +274,7 @@ export default {
         <p>
           Operation Code changes it&apos;s Twitter handle to{' '}
           <OutboundLink
+            router={MockedRouter}
             analyticsEventLabel="History Link"
             href="https://twitter.com/operation_code"
             alt="Operation Code Twitter"
@@ -266,6 +283,7 @@ export default {
           </OutboundLink>{' '}
           , for more effective branding.{' '}
           <OutboundLink
+            router={MockedRouter}
             analyticsEventLabel="History Link"
             href="https://instagram.com/operation_code"
             alt="Operation Code Instagram"
@@ -274,6 +292,7 @@ export default {
           </OutboundLink>{' '}
           and{' '}
           <OutboundLink
+            router={MockedRouter}
             analyticsEventLabel="History Link"
             href="https://facebook.com/operationcode.org"
             alt="Operation Code Facebook"
@@ -289,6 +308,7 @@ export default {
       content: (
         <p>
           <OutboundLink
+            router={MockedRouter}
             analyticsEventLabel="History Link"
             href="https://calagator.org/events/1250468219"
             alt="Calagator Archive - OpCode Launch Party"
@@ -307,6 +327,7 @@ export default {
           Army veteran and software engineer, Fernando Paredes, joins Operation Code, expanding the
           Software Mentor Protégé Program using{' '}
           <OutboundLink
+            router={MockedRouter}
             analyticsEventLabel="History Link"
             href="https://operation-code.slack.com/"
             alt="Operation Code Slack Team"
@@ -325,6 +346,7 @@ export default {
           Fernando Paredes, Nell Shamrell, and Eric McKenna improve Operation Code&apos;s
           participation in open source development with our first{' '}
           <OutboundLink
+            router={MockedRouter}
             analyticsEventLabel="History Link"
             href="https://github.com/OperationCode/operationcode/blob/master/CONTRIBUTING.md"
             alt="Operation Code Old GitHub Contributing Guide"
@@ -341,6 +363,7 @@ export default {
         <p>
           Global hospitality provider,{' '}
           <OutboundLink
+            router={MockedRouter}
             analyticsEventLabel="History Link"
             href="https://www.airbnb.com/"
             alt="AirBnB"
@@ -349,6 +372,7 @@ export default {
           </OutboundLink>{' '}
           sponsors lodging for Operation Code members attending SignalConf in San Francisco.{' '}
           <OutboundLink
+            router={MockedRouter}
             analyticsEventLabel="History Link"
             href="https://www.instagram.com/p/21p5bFxUjd/?taken-by=davidcmolina"
             alt="Link to Instagram photo of Operation Code at SignalConf"
@@ -365,6 +389,7 @@ export default {
       content: (
         <p>
           <OutboundLink
+            router={MockedRouter}
             analyticsEventLabel="History Link"
             href="https://www.twilio.com/signal/2015"
             alt="Twilio's SignalConf"
@@ -373,6 +398,7 @@ export default {
           </OutboundLink>{' '}
           provides multiple Operation Code members with sponsored tickets.{' '}
           <OutboundLink
+            router={MockedRouter}
             analyticsEventLabel="History Link"
             href="https://www.twilio.com/"
             alt="Twilio"
@@ -398,6 +424,7 @@ export default {
         <p>
           To meet growth demands, Operation Code{' '}
           <OutboundLink
+            router={MockedRouter}
             analyticsEventLabel="History Link"
             href="https://twitter.com/operation_code/status/614443994769027072"
             alt="Old Operation Code tweet"
@@ -416,6 +443,7 @@ export default {
       content: (
         <p>
           <OutboundLink
+            router={MockedRouter}
             analyticsEventLabel="History Link"
             href="https://www.stickermule.com/"
             alt="Sticker Mule"
@@ -436,6 +464,7 @@ export default {
         <p>
           Jared Zoneraich, founder of{' '}
           <OutboundLink
+            router={MockedRouter}
             analyticsEventLabel="History Link"
             href="https://www.hackbca.com/hackBCA"
             alt="hackBCA"
@@ -456,6 +485,7 @@ export default {
       content: (
         <p>
           <OutboundLink
+            router={MockedRouter}
             analyticsEventLabel="History Link"
             href="https://hacksummit.org/"
             alt="Hack Summit"
@@ -471,6 +501,7 @@ export default {
       content: (
         <p>
           <OutboundLink
+            router={MockedRouter}
             analyticsEventLabel="History Link"
             href="https://speakeasy.com/"
             alt="Speakeasy"
@@ -499,6 +530,7 @@ export default {
         <p>
           Multiple Operation Code veterans attend{' '}
           <OutboundLink
+            router={MockedRouter}
             analyticsEventLabel="History Link"
             href="https://conferences.oreilly.com/oscon/oscon-tx"
             alt="O'Reilly OSCON"
@@ -527,6 +559,7 @@ export default {
         <p>
           On Independence Day,{' '}
           <OutboundLink
+            router={MockedRouter}
             analyticsEventLabel="History Link"
             href="https://twitter.com/operation_code/status/882280600920616960"
             alt="Slack Archive of 2000th Message"
