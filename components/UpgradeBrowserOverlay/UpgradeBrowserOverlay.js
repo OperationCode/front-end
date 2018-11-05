@@ -32,9 +32,7 @@ function UpgradeBrowserOverlay() {
 
   return (
     <Modal
-      onRequestClose={() => {
-        console.log('Modal has been closed.');
-      }}
+      onRequestClose={() => {}}
       className={styles.UpgradeBrowserOverlay}
       screenReaderLabel="Upgrade Your Browser"
       hasCloseIcon={false}
