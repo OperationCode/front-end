@@ -38,11 +38,11 @@ exports[`UpgradeBrowserOverlay should render with no props passed 1`] = `
         href="https://www.microsoft.com/windows/microsoft-edge"
         router={
           Object {
-            "pathname": "mock-path",
             "prefetch": [Function],
             "push": [Function],
             "replace": [Function],
             "route": "/mock-route",
+            "withRouter": [Function],
           }
         }
       >
@@ -67,11 +67,11 @@ exports[`UpgradeBrowserOverlay should render with no props passed 1`] = `
         href="https://www.google.com/chrome"
         router={
           Object {
-            "pathname": "mock-path",
             "prefetch": [Function],
             "push": [Function],
             "replace": [Function],
             "route": "/mock-route",
+            "withRouter": [Function],
           }
         }
       >
@@ -96,11 +96,11 @@ exports[`UpgradeBrowserOverlay should render with no props passed 1`] = `
         href="https://www.mozilla.org/firefox/new"
         router={
           Object {
-            "pathname": "mock-path",
             "prefetch": [Function],
             "push": [Function],
             "replace": [Function],
             "route": "/mock-route",
+            "withRouter": [Function],
           }
         }
       >
@@ -125,11 +125,11 @@ exports[`UpgradeBrowserOverlay should render with no props passed 1`] = `
         href="https://support.apple.com/downloads/safari"
         router={
           Object {
-            "pathname": "mock-path",
             "prefetch": [Function],
             "push": [Function],
             "replace": [Function],
             "route": "/mock-route",
+            "withRouter": [Function],
           }
         }
       >

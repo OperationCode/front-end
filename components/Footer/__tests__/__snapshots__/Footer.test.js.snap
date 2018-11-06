@@ -254,11 +254,11 @@ exports[`Footer should render with no props passed 1`] = `
         href="https://www.somefakeurl.com/"
         router={
           Object {
-            "pathname": "mock-path",
             "prefetch": [Function],
             "push": [Function],
             "replace": [Function],
             "route": "/mock-route",
+            "withRouter": [Function],
           }
         }
       >
@@ -270,11 +270,11 @@ exports[`Footer should render with no props passed 1`] = `
         href="https://www.anotherfakeurl.com/"
         router={
           Object {
-            "pathname": "mock-path",
             "prefetch": [Function],
             "push": [Function],
             "replace": [Function],
             "route": "/mock-route",
+            "withRouter": [Function],
           }
         }
       >
@@ -286,11 +286,11 @@ exports[`Footer should render with no props passed 1`] = `
         href="https://www.iubenda.com/privacy-policy/8174861"
         router={
           Object {
-            "pathname": "mock-path",
             "prefetch": [Function],
             "push": [Function],
             "replace": [Function],
             "route": "/mock-route",
+            "withRouter": [Function],
           }
         }
       >

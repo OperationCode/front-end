@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Card from 'components/_common_/Card/Card';
 import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
-import MockedRouter from 'test-utils/mocks/nextRouterMock';
+import Router from 'next/router';
 import styles from './TeamMemberCard.css';
 
 TeamMemberCard.propTypes = {
@@ -42,7 +42,7 @@ function TeamMemberCard({
                 <OutboundLink
                   analyticsEventLabel={`<TeamMemberCard> ${name} Twitter Handle Click`}
                   href={`https://twitter.com/${twitterHandle}`}
-                  router={MockedRouter}
+                  router={Router}
                 >
                   @{twitterHandle}
                 </OutboundLink>
@@ -55,7 +55,7 @@ function TeamMemberCard({
                   analyticsEventLabel={`<TeamMemberCard> ${name} Email Click`}
                   hasIcon={false}
                   href={`mailto:${email}`}
-                  router={MockedRouter}
+                  router={Router}
                 >
                   {email}
                 </OutboundLink>

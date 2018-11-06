@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
 import Button from 'components/_common_/Button/Button';
-import MockedRouter from 'test-utils/mocks/nextRouterMock';
+import Router from 'next/router';
 import styles from './ArticleGroup.css';
 
 class ArticleGroup extends Component {
@@ -37,11 +37,7 @@ class ArticleGroup extends Component {
 
             return isArticleVisible ? (
               <li key={`GroupLink_${link.url}`}>
-                <OutboundLink
-                  href={link.url}
-                  analyticsEventLabel="Press Article"
-                  router={MockedRouter}
-                >
+                <OutboundLink href={link.url} analyticsEventLabel="Press Article" router={Router}>
                   {link.title}
                 </OutboundLink>
               </li>

@@ -8,11 +8,11 @@ exports[`AdBanner should render with many props assigned 1`] = `
   href="www.testMe.com"
   router={
     Object {
-      "pathname": "mock-path",
       "prefetch": [Function],
       "push": [Function],
       "replace": [Function],
       "route": "/mock-route",
+      "withRouter": [Function],
     }
   }
 >
@@ -45,11 +45,11 @@ exports[`AdBanner should render with required props 1`] = `
   href="www.test.com"
   router={
     Object {
-      "pathname": "mock-path",
       "prefetch": [Function],
       "push": [Function],
       "replace": [Function],
       "route": "/mock-route",
+      "withRouter": [Function],
     }
   }
 >

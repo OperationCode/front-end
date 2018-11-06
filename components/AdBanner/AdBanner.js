@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
-import MockedRouter from 'test-utils/mocks/nextRouterMock';
+import Router from 'next/router';
 import styles from './AdBanner.css';
 
 AdBanner.propTypes = {
@@ -22,7 +22,7 @@ function AdBanner({ altText, children, className, imageSource, href }) {
       className={classNames(className, styles.adBannerLink)}
       hasIcon={false}
       href={href}
-      router={MockedRouter}
+      router={Router}
     >
       <div className={styles.adBanner}>
         <div className={styles.adBannerImageContainer}>

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Card from 'components/_common_/Card/Card';
 import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
-import MockedRouter from 'test-utils/mocks/nextRouterMock';
+import Router from 'next/router';
 import styles from './SchoolCard.css';
 
 SchoolCard.propTypes = {
@@ -43,7 +43,7 @@ function SchoolCard({
       className={styles.cardLinkOverrides}
       hasIcon={false}
       href={schoolWebsite}
-      router={MockedRouter}
+      router={Router}
     >
       <Card className={styles.SchoolCard} hasAnimationOnHover>
         <template className={styles.content}>

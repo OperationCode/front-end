@@ -15,11 +15,11 @@ exports[`ArticleGroup should render with required props 1`] = `
         href="https://example.com"
         router={
           Object {
-            "pathname": "mock-path",
             "prefetch": [Function],
             "push": [Function],
             "replace": [Function],
             "route": "/mock-route",
+            "withRouter": [Function],
           }
         }
       >
@@ -45,11 +45,11 @@ exports[`ArticleGroup should render with required props and 3 links and a button
         href="https://example.com"
         router={
           Object {
-            "pathname": "mock-path",
             "prefetch": [Function],
             "push": [Function],
             "replace": [Function],
             "route": "/mock-route",
+            "withRouter": [Function],
           }
         }
       >

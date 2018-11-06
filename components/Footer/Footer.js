@@ -5,7 +5,7 @@ import Button from 'components/_common_/Button/Button';
 import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
 import SocialMedia from 'components/SocialMedia/SocialMedia';
 import { s3, footerLinks } from 'common/constants/urls';
-import MockedRouter from 'test-utils/mocks/nextRouterMock';
+import Router from 'next/router';
 import styles from './Footer.css';
 
 function Footer() {
@@ -83,7 +83,7 @@ function Footer() {
               key={link.href}
               analyticsEventLabel={link.analyticsEventLabel}
               href={link.href}
-              router={MockedRouter}
+              router={Router}
             >
               {link.title}
             </OutboundLink>

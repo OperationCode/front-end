@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
-import MockedRouter from 'test-utils/mocks/nextRouterMock';
+import Router from 'next/router';
 import styles from './SocialMediaItem.css';
 
 SocialMediaItem.propTypes = {
@@ -17,7 +17,7 @@ function SocialMediaItem({ name, href, svg }) {
         analyticsEventLabel={`Social Media Engagement: ${name}`}
         hasIcon={false}
         href={href}
-        router={MockedRouter}
+        router={Router}
       >
         {svg}
       </OutboundLink>

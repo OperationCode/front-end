@@ -15,8 +15,8 @@ describe('SchoolCard', () => {
         schoolCity="Chicago"
         schoolState="IL"
         logoSource={`${s3}codeSchoolLogos/code_platoon.jpg`}
-        acceptsGIBill
-        isFullTime
+        acceptsGIBill={false}
+        isFullTime={false}
         hasHardware={false}
       />,
     );

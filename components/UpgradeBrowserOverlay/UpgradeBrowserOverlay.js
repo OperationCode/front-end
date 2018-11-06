@@ -3,7 +3,7 @@ import Modal from 'components/_common_/Modal/Modal';
 import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
 import WarningSign from 'static/images/icons/FontAwesome/exclamation-triangle-solid.svg';
 import { s3 } from 'common/constants/urls';
-import MockedRouter from 'test-utils/mocks/nextRouterMock';
+import Router from 'next/router';
 import styles from './UpgradeBrowserOverlay.css';
 
 function UpgradeBrowserOverlay() {
@@ -54,7 +54,7 @@ function UpgradeBrowserOverlay() {
               analyticsEventLabel={`${browserName} Download from <UpgradeBrowserOverlay>`}
               hasIcon={false}
               href={downloadLink}
-              router={MockedRouter}
+              router={Router}
             >
               <img className={styles.browserImage} src={imageSource} alt={`${browserName} Logo`} />
             </OutboundLink>

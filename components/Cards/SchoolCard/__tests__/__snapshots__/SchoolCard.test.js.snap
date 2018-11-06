@@ -43,13 +43,13 @@ exports[`SchoolCard should render with many props assigned 1`] = `
           <li>
             GI Bill Accepted: 
             <b>
-              Yes
+              No
             </b>
           </li>
           <li>
             Commitment: 
             <b>
-              Full-Time
+              Flexible
             </b>
           </li>
           <li>

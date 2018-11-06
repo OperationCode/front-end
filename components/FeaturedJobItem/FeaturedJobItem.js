@@ -4,7 +4,7 @@ import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
 import BuildingIcon from 'static/images/icons/FontAwesome/building_icon.svg';
 import CloudUploadIcon from 'static/images/icons/FontAwesome/cloud_upload_icon.svg';
 import MapMarkerIcon from 'static/images/icons/FontAwesome/map_marker_icon.svg';
-import MockedRouter from 'test-utils/mocks/nextRouterMock';
+import Router from 'next/router';
 import styles from './FeaturedJobItem.css';
 
 FeaturedJobItem.propTypes = {
@@ -33,7 +33,7 @@ function FeaturedJobItem({ title, source, sourceUrl, city, state, country, descr
           href={sourceUrl}
           analyticsEventLabel={`Featured Job ${source}`}
           hasIcon={false}
-          router={MockedRouter}
+          router={Router}
         >
           <h6 className={styles.link}>{title}</h6>
         </OutboundLink>
