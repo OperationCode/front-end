@@ -34,4 +34,4 @@ function AdBanner({ altText, children, className, imageSource, href }) {
   );
 }
 
-export default AdBanner;
+export default Router.withRouter(AdBanner);

@@ -67,4 +67,4 @@ function TeamMemberCard({
   );
 }
 
-export default TeamMemberCard;
+export default Router.withRouter(TeamMemberCard);

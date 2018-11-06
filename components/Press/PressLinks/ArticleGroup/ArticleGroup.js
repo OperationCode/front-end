@@ -59,4 +59,4 @@ class ArticleGroup extends Component {
   }
 }
 
-export default ArticleGroup;
+export default Router.withRouter(ArticleGroup);

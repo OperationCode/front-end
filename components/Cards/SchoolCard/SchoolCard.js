@@ -76,4 +76,4 @@ function SchoolCard({
   );
 }
 
-export default SchoolCard;
+export default Router.withRouter(SchoolCard);

@@ -61,4 +61,4 @@ function FeaturedJobItem({ title, source, sourceUrl, city, state, country, descr
   );
 }
 
-export default FeaturedJobItem;
+export default Router.withRouter(FeaturedJobItem);

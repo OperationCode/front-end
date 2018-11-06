@@ -32,4 +32,4 @@ function DonateSection() {
   );
 }
 
-export default DonateSection;
+export default Router.withRouter(DonateSection);

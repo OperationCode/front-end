@@ -65,4 +65,4 @@ function UpgradeBrowserOverlay() {
   );
 }
 
-export default UpgradeBrowserOverlay;
+export default Router.withRouter(UpgradeBrowserOverlay);

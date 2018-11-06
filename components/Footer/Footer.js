@@ -94,4 +94,4 @@ function Footer() {
   );
 }
 
-export default Footer;
+export default Router.withRouter(Footer);

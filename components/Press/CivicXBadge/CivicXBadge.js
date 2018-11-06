@@ -31,4 +31,4 @@ function CivicXBadge({ sourceUrl }) {
   );
 }
 
-export default CivicXBadge;
+export default Router.withRouter(CivicXBadge);

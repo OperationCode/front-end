@@ -25,4 +25,4 @@ function SocialMediaItem({ name, href, svg }) {
   );
 }
 
-export default SocialMediaItem;
+export default Router.withRouter(SocialMediaItem);
