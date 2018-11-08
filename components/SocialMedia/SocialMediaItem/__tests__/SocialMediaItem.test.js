@@ -9,6 +9,7 @@ describe('SocialMediaItem', () => {
     createSnapshotTest(
       <SocialMediaItem
         alt="Facebook"
+        name="social-media-nate-test"
         href="https://facebook.com"
         svg={<FacebookLogo fill="blue" />}
       />,

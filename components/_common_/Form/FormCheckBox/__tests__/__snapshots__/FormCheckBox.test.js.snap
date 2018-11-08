@@ -38,11 +38,17 @@ exports[`FormCheckBox should render with required props 1`] = `
 >
   <input
     className="input"
+    id="test value"
+    name="test-checkbox"
     onChange={[Function]}
     type="checkbox"
+    value="test value"
   />
   <label
+    htmlFor="test-checkbox"
     style={Object {}}
-  />
+  >
+    test value
+  </label>
 </div>
 `;

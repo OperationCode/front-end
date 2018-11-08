@@ -22,15 +22,15 @@ SchoolCard.defaultProps = {
 };
 
 function SchoolCard({
+  schoolAddress,
+  schoolName,
+  schoolCity,
+  schoolWebsite,
+  logoSource,
+  schoolState,
   acceptsGIBill,
   isFullTime,
   hasHardware,
-  schoolWebsite,
-  logoSource,
-  schoolAddress,
-  schoolCity,
-  schoolName,
-  schoolState,
 }) {
   const hasOnlineProgram = schoolAddress.includes('Online');
 
