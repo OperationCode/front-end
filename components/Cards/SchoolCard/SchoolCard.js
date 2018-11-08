@@ -38,7 +38,7 @@ function SchoolCard({
   // won't need to be passed that prop
   return (
     <OutboundLink
-      analyticsEventLabel={`${schoolName} - ${schoolCity} <SchoolCard> click`}
+      analyticsEventLabel={`${schoolName} - ${schoolCity}`}
       className={styles.cardLinkOverrides}
       hasIcon={false}
       href={schoolWebsite}

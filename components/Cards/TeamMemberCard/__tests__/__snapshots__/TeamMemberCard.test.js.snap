@@ -29,8 +29,10 @@ exports[`TeamMemberCard should render with many props assigned 1`] = `
       </span>
       <a
         href="https://twitter.com/kylemh"
+        onClick={[Function]}
         rel="noopener noreferrer"
         target="_blank"
+        to="https://twitter.com/kylemh"
       >
         <span
           className="ScreenReaderOnly"
@@ -52,8 +54,10 @@ exports[`TeamMemberCard should render with many props assigned 1`] = `
       </span>
       <a
         href="mailto:inbox@kylemh.com"
+        onClick={[Function]}
         rel="noopener noreferrer"
         target="_blank"
+        to="mailto:inbox@kylemh.com"
       >
         <span
           className="ScreenReaderOnly"
