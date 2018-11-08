@@ -6,7 +6,11 @@ import FormCheckBox from '../FormCheckBox';
 
 describe('FormCheckBox', () => {
   it('should render with required props', () => {
-    createSnapshotTest(<FormCheckBox>Test</FormCheckBox>);
+    createSnapshotTest(
+      <FormCheckBox name="test-checkbox" value="test value">
+        Test
+      </FormCheckBox>,
+    );
   });
 
   it('should render with many props assigned', () => {
