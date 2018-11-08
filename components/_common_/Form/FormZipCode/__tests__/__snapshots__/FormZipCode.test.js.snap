@@ -5,6 +5,7 @@ exports[`FormZipCode should render with required props 1`] = `
   className="formInput"
 >
   <input
+    id="zip-code"
     onChange={[Function]}
     placeholder={null}
     type="text"
