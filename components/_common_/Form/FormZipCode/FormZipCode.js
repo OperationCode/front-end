@@ -12,6 +12,7 @@ class FormZipCode extends Component {
         ref={child => {
           this.inputRef = child;
         }}
+        id="zip-code"
       />
     );
   }
