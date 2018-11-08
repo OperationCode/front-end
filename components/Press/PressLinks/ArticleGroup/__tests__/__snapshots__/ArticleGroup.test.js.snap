@@ -13,18 +13,6 @@ exports[`ArticleGroup should render with required props 1`] = `
         analyticsEventLabel="Press Article"
         hasIcon={true}
         href="https://example.com"
-        router={
-          Object {
-            "articles": Array [
-              Object {
-                "title": "Example",
-                "url": "https://example.com",
-              },
-            ],
-            "numberOfInitiallyVisibleLinks": 1,
-            "region": "test",
-          }
-        }
       >
         Example
       </OutboundLink>
@@ -46,26 +34,6 @@ exports[`ArticleGroup should render with required props and 3 links and a button
         analyticsEventLabel="Press Article"
         hasIcon={true}
         href="https://example.com"
-        router={
-          Object {
-            "articles": Array [
-              Object {
-                "title": "Example",
-                "url": "https://example.com",
-              },
-              Object {
-                "title": "Example",
-                "url": "https://example.com",
-              },
-              Object {
-                "title": "Example",
-                "url": "https://example.com",
-              },
-            ],
-            "numberOfInitiallyVisibleLinks": 1,
-            "region": "test",
-          }
-        }
       >
         Example
       </OutboundLink>

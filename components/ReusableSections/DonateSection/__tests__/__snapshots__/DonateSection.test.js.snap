@@ -39,7 +39,6 @@ exports[`DonateSection should render with no props passed passed 1`] = `
       analyticsEventLabel="Donate Now"
       hasIcon={true}
       href="https://secure.lglforms.com/form_engine/s/BRtP7QUKyHOyEYsZROsRew"
-      router={Object {}}
     >
       Donate Now
     </OutboundLink>

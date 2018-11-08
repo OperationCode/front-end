@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
 import Button from 'components/_common_/Button/Button';
-import { withRouter } from 'next/router';
 import styles from './ArticleGroup.css';
 
 class ArticleGroup extends Component {
@@ -37,11 +36,7 @@ class ArticleGroup extends Component {
 
             return isArticleVisible ? (
               <li key={`GroupLink_${link.url}`}>
-                <OutboundLink
-                  href={link.url}
-                  analyticsEventLabel="Press Article"
-                  router={this.props}
-                >
+                <OutboundLink href={link.url} analyticsEventLabel="Press Article">
                   {link.title}
                 </OutboundLink>
               </li>
@@ -63,4 +58,4 @@ class ArticleGroup extends Component {
   }
 }
 
-export default withRouter(ArticleGroup);
+export default ArticleGroup;

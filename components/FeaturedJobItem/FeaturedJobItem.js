@@ -4,7 +4,6 @@ import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
 import BuildingIcon from 'static/images/icons/FontAwesome/building_icon.svg';
 import CloudUploadIcon from 'static/images/icons/FontAwesome/cloud_upload_icon.svg';
 import MapMarkerIcon from 'static/images/icons/FontAwesome/map_marker_icon.svg';
-import { withRouter } from 'next/router';
 import styles from './FeaturedJobItem.css';
 
 FeaturedJobItem.propTypes = {
@@ -24,8 +23,7 @@ FeaturedJobItem.defaultProps = {
   state: '',
   country: '',
 };
-function FeaturedJobItem(props) {
-  const { title, source, sourceUrl, city, state, country, description, remote } = props;
+function FeaturedJobItem({ title, source, sourceUrl, city, state, country, description, remote }) {
   return (
     <article className={styles.job}>
       <div>
@@ -33,7 +31,6 @@ function FeaturedJobItem(props) {
           href={sourceUrl}
           analyticsEventLabel={`Featured Job ${source}`}
           hasIcon={false}
-          router={props}
         >
           <h6 className={styles.link}>{title}</h6>
         </OutboundLink>
@@ -61,4 +58,4 @@ function FeaturedJobItem(props) {
   );
 }
 
-export default withRouter(FeaturedJobItem);
+export default FeaturedJobItem;

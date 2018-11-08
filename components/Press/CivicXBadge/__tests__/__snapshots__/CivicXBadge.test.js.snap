@@ -6,11 +6,6 @@ exports[`CivicXBadge should render with no props passed 1`] = `
     analyticsEventLabel="[CivicX Accelerator Badge] http://cvcx.org/veterans-solutions-lab/"
     hasIcon={false}
     href="http://cvcx.org/veterans-solutions-lab/"
-    router={
-      Object {
-        "sourceUrl": "http://cvcx.org/veterans-solutions-lab/",
-      }
-    }
   >
     <img
       alt="Operation Code is a graduate of the CivicX Accelerator."

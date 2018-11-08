@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Card from 'components/_common_/Card/Card';
 import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
-import { withRouter } from 'next/router';
 import styles from './TeamMemberCard.css';
 
 TeamMemberCard.propTypes = {
@@ -19,9 +18,14 @@ TeamMemberCard.defaultProps = {
   twitterHandle: undefined,
 };
 
-function TeamMemberCard(props) {
-  const { email, imageAlternateText, imageSource, name, staffRole, twitterHandle } = props;
-
+function TeamMemberCard({
+  email,
+  imageAlternateText,
+  imageSource,
+  name,
+  staffRole,
+  twitterHandle,
+}) {
   return (
     <Card className={styles.TeamMemberCard} hasAnimationOnHover>
       <img className={styles.image} src={imageSource} alt={imageAlternateText} />
@@ -35,9 +39,8 @@ function TeamMemberCard(props) {
               <li>
                 <span className={styles.detailPrompt}>Twitter: </span>
                 <OutboundLink
-                  analyticsEventLabel={`<TeamMemberCard> ${name} Twitter Handle Click`}
+                  analyticsEventLabel={`Team Member ${name} Twitter Click`}
                   href={`https://twitter.com/${twitterHandle}`}
-                  router={props}
                 >
                   @{twitterHandle}
                 </OutboundLink>
@@ -47,10 +50,9 @@ function TeamMemberCard(props) {
               <li>
                 <span className={styles.detailPrompt}>Email: </span>
                 <OutboundLink
-                  analyticsEventLabel={`<TeamMemberCard> ${name} Email Click`}
+                  analyticsEventLabel={`Team Member ${name} Email Click`}
                   hasIcon={false}
                   href={`mailto:${email}`}
-                  router={props}
                 >
                   {email}
                 </OutboundLink>
@@ -62,4 +64,4 @@ function TeamMemberCard(props) {
   );
 }
 
-export default withRouter(TeamMemberCard);
+export default TeamMemberCard;

@@ -5,9 +5,8 @@ import AdBanner from '../AdBanner';
 
 storiesOf('AdBanner', module)
   .addDecorator(withKnobs)
-  .add('default', router => (
+  .add('default', () => (
     <AdBanner
-      router={router}
       altText={text('altText', 'Logo for AutoGravity')}
       imageSource={text(
         'imageSource',

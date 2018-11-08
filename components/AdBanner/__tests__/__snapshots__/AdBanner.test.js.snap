@@ -2,26 +2,10 @@
 
 exports[`AdBanner should render with many props assigned 1`] = `
 <OutboundLink
-  analyticsEventLabel="[AdBanner Hit]"
+  analyticsEventLabel="AdBanner Hit"
   className="AdBanner-class adBannerLink"
   hasIcon={false}
   href="www.testMe.com"
-  router={
-    Object {
-      "altText": "Alt text test",
-      "children": "Test",
-      "className": "AdBanner-class",
-      "href": "www.testMe.com",
-      "imageSource": "test-image.jpg",
-      "router": Object {
-        "pathname": "mock-path",
-        "prefetch": [Function],
-        "push": [Function],
-        "replace": [Function],
-        "route": "/mock-route",
-      },
-    }
-  }
 >
   <div
     className="adBanner"
@@ -46,26 +30,10 @@ exports[`AdBanner should render with many props assigned 1`] = `
 
 exports[`AdBanner should render with required props 1`] = `
 <OutboundLink
-  analyticsEventLabel="[AdBanner Hit]"
+  analyticsEventLabel="AdBanner Hit"
   className="adBannerLink"
   hasIcon={false}
   href="www.test.com"
-  router={
-    Object {
-      "altText": "Some text",
-      "children": "Test",
-      "className": undefined,
-      "href": "www.test.com",
-      "imageSource": "www.imagetest.com",
-      "router": Object {
-        "pathname": "mock-path",
-        "prefetch": [Function],
-        "push": [Function],
-        "replace": [Function],
-        "route": "/mock-route",
-      },
-    }
-  }
 >
   <div
     className="adBanner"
