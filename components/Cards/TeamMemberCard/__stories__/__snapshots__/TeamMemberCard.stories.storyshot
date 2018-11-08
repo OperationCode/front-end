@@ -29,8 +29,10 @@ exports[`Storyshots Cards/TeamMemberCard default 1`] = `
       </span>
       <a
         href="https://twitter.com/kylemh_"
+        onClick={[Function]}
         rel="noopener noreferrer"
         target="_blank"
+        to="https://twitter.com/kylemh_"
       >
         <span
           className="ScreenReaderOnly"
@@ -52,8 +54,10 @@ exports[`Storyshots Cards/TeamMemberCard default 1`] = `
       </span>
       <a
         href="mailto:kyle@operationcode.org"
+        onClick={[Function]}
         rel="noopener noreferrer"
         target="_blank"
+        to="mailto:kyle@operationcode.org"
       >
         <span
           className="ScreenReaderOnly"
