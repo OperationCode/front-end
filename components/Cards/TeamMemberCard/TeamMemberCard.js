@@ -39,7 +39,7 @@ function TeamMemberCard({
               <li>
                 <span className={styles.detailPrompt}>Twitter: </span>
                 <OutboundLink
-                  analyticsEventLabel={`<TeamMemberCard> ${name} Twitter Handle Click`}
+                  analyticsEventLabel={`Team Member ${name} Twitter Click`}
                   href={`https://twitter.com/${twitterHandle}`}
                 >
                   @{twitterHandle}
@@ -50,7 +50,7 @@ function TeamMemberCard({
               <li>
                 <span className={styles.detailPrompt}>Email: </span>
                 <OutboundLink
-                  analyticsEventLabel={`<TeamMemberCard> ${name} Email Click`}
+                  analyticsEventLabel={`Team Member ${name} Email Click`}
                   hasIcon={false}
                   href={`mailto:${email}`}
                 >
