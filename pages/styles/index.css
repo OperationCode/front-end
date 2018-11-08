@@ -1,46 +1,22 @@
-.alignCenter {
-  align-self: center;
-}
-
-.centerText {
-  text-align: center;
-}
-
-.container {
-  width: 100%;
-}
-
-.marginBottom {
-  margin-bottom: 20px;
+.successStories {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .partnerLogos {
-  max-width: 990px;
   display: flex;
-  width: 80%;
   align-self: center;
   justify-content: space-between;
-  justify-content: space-evenly;
+  flex-direction: row;
   flex-wrap: wrap;
+  max-width: 900px;
 }
 
-.section {
+.joinThrivingSection {
   display: flex;
   align-self: center;
-}
-
-.successStories {
-  display: flex;
-  align-content: center;
-}
-
-.successStoryContainer {
-  display: flex;
+  justify-content: space-between;
   flex-direction: column;
-}
-
-@media screen and (min-width: 649px) {
-  .successStoryContainer {
-    flex-direction: row;
-  }
 }

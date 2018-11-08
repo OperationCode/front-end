@@ -13,7 +13,7 @@ function SuccessStory({ imageSource, quote, title }) {
     <div className={styles.SuccessStory}>
       <img alt={`${title} headshot`} className={styles.image} src={imageSource} />
       <div className={styles.quote}>
-        <h5 className={styles.title}>{title}</h5>
+        <h6 className={styles.title}>{title}</h6>
         <blockquote>{`"${quote}"`}</blockquote>
       </div>
     </div>

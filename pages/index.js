@@ -1,11 +1,8 @@
-import classNames from 'classnames';
 import Head from 'components/head';
-import Button from 'components/_common_/Button/Button';
-import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
-import PartnerLogoLink from 'components/PartnerLogoLink/PartnerLogoLink';
 import Section from 'components/_common_/Section/Section';
 import SuccessStory from 'components/SuccessStory/SuccessStory';
-
+import PartnerLogoLink from 'components/PartnerLogoLink/PartnerLogoLink';
+import JoinSection from 'components/ReusableSections/JoinSection/JoinSection';
 import successStories from 'common/constants/successStories';
 import partners from 'common/constants/partners';
 
@@ -15,55 +12,28 @@ export default () => (
   <div>
     <Head title="Home" />
 
-    {/* Success Stories Section */}
     <Section
-      className={classNames(styles.section, styles.successStories)}
+      title="Success Stories"
+      contentClassName={styles.successStories}
       hasHeadingLines={false}
       theme="slate"
-      title="Success Stories"
     >
-      <div className={styles.successStoryContainer}>
-        {successStories.map(story => (
-          <SuccessStory {...story} />
-        ))}
-      </div>
+      {successStories.map(story => (
+        <SuccessStory {...story} key={story.title} />
+      ))}
     </Section>
 
-    {/* Partners Section */}
     <Section
-      className={classNames(styles.section, styles.partners)}
+      title="Partners"
+      contentClassName={styles.partnerLogos}
       hasHeadingLines={false}
       theme="mist"
-      title="Partners"
     >
-      <div className={classNames(styles.partnerLogos)}>
-        {partners.map(partner => (
-          <PartnerLogoLink key={partner.name} {...partner} />
-        ))}
-      </div>
+      {partners.map(partner => (
+        <PartnerLogoLink key={partner.name} {...partner} />
+      ))}
     </Section>
 
-    {/* Join Thriving Section */}
-    <Section
-      className={classNames(styles.section, styles.joinThrivingSection)}
-      hasHeadingLines={false}
-      theme="white"
-      title="Join Our Thriving Community"
-    >
-      <p className={classNames(styles.alignCenter, styles.marginBottom)}>
-        Are you ready to begin your journey towards a career in software development?
-        <br />
-        Get the support you need by joining our members only Slack community!
-      </p>
-      <div className={classNames(styles.alignCenter, styles.marginBottom)}>
-        <div>
-          <input placeholder="Email address" />
-          <Button>Join our Slack</Button>
-        </div>
-        Slack is a community based collaboration tool where all the magic happens!
-        <br />
-        <OutboundLink href="https://slack.com/">Learn more</OutboundLink>
-      </div>
-    </Section>
+    <JoinSection />
   </div>
 );

@@ -1,7 +1,11 @@
+/* eslint-env jest */
 import React from 'react';
-import createShallowSnapshotTest from 'test-utils/createShallowSnapshotTest';
+import createSnapshotTest from 'test-utils/createSnapshotTest';
+
 import JoinSection from '../JoinSection';
 
 describe('JoinSection', () => {
-  it('should render with no props passed passed', () => createShallowSnapshotTest(<JoinSection />));
+  it('should render with required props', () => {
+    createSnapshotTest(<JoinSection />);
+  });
 });
