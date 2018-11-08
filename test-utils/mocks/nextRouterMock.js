@@ -11,7 +11,7 @@ const actionWithPromise = () => {
 const mockedRouter = {
   pathname: 'mock-path',
   prefetch: () => {},
-  push: actionWithPromise,
+  push: () => {},
   replace: actionWithPromise,
   route: '/mock-route',
 };
