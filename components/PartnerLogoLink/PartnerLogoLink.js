@@ -16,7 +16,11 @@ export default class PartnerLogoLink extends Component {
 
     return (
       <div className={styles.PartnerLogoLink}>
-        <OutboundLink href={url} analyticsEventLabel={`Partner Logo - ${name}`} hasIcon={false}>
+        <OutboundLink
+          href={url}
+          analyticsEventLabel={`Partner Logo Click - ${name}`}
+          hasIcon={false}
+        >
           <img className={styles.logo} src={`${s3}${logo}`} alt={`${name} logo`} />
         </OutboundLink>
       </div>
