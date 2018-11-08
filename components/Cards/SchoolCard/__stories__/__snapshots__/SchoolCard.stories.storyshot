@@ -4,8 +4,10 @@ exports[`Storyshots Cards/SchoolCard default 1`] = `
 <a
   className="cardLinkOverrides"
   href="https://sabio.la/veterans"
+  onClick={[Function]}
   rel="noopener noreferrer"
   target="_blank"
+  to="https://sabio.la/veterans"
 >
   <span
     className="ScreenReaderOnly"
