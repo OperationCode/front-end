@@ -8,11 +8,18 @@ exports[`AdBanner should render with many props assigned 1`] = `
   href="www.testMe.com"
   router={
     Object {
-      "prefetch": [Function],
-      "push": [Function],
-      "replace": [Function],
-      "route": "/mock-route",
-      "withRouter": [Function],
+      "altText": "Alt text test",
+      "children": "Test",
+      "className": "AdBanner-class",
+      "href": "www.testMe.com",
+      "imageSource": "test-image.jpg",
+      "router": Object {
+        "pathname": "mock-path",
+        "prefetch": [Function],
+        "push": [Function],
+        "replace": [Function],
+        "route": "/mock-route",
+      },
     }
   }
 >
@@ -45,11 +52,18 @@ exports[`AdBanner should render with required props 1`] = `
   href="www.test.com"
   router={
     Object {
-      "prefetch": [Function],
-      "push": [Function],
-      "replace": [Function],
-      "route": "/mock-route",
-      "withRouter": [Function],
+      "altText": "Some text",
+      "children": "Test",
+      "className": undefined,
+      "href": "www.test.com",
+      "imageSource": "www.imagetest.com",
+      "router": Object {
+        "pathname": "mock-path",
+        "prefetch": [Function],
+        "push": [Function],
+        "replace": [Function],
+        "route": "/mock-route",
+      },
     }
   }
 >

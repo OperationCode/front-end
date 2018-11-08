@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Card from 'components/_common_/Card/Card';
 import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
-import Router from 'next/router';
+import { withRouter } from 'next/router';
 import styles from './SchoolCard.css';
 
 SchoolCard.propTypes = {
@@ -22,28 +22,29 @@ SchoolCard.defaultProps = {
   schoolState: undefined,
 };
 
-function SchoolCard({
-  acceptsGIBill,
-  isFullTime,
-  hasHardware,
-  schoolWebsite,
-  logoSource,
-  schoolAddress,
-  schoolCity,
-  schoolName,
-  schoolState,
-}) {
+function SchoolCard(props) {
+  const {
+    schoolAddress,
+    schoolName,
+    schoolCity,
+    schoolWebsite,
+    logoSource,
+    schoolState,
+    acceptsGIBill,
+    isFullTime,
+    hasHardware,
+  } = props;
   const hasOnlineProgram = schoolAddress.includes('Online');
 
   // TODO: Try to normalize s3 image file names to sync with school names so that this component
   // won't need to be passed that prop
   return (
     <OutboundLink
+      router={props}
       analyticsEventLabel={`${schoolName} - ${schoolCity} <SchoolCard> click`}
       className={styles.cardLinkOverrides}
       hasIcon={false}
       href={schoolWebsite}
-      router={Router}
     >
       <Card className={styles.SchoolCard} hasAnimationOnHover>
         <template className={styles.content}>
@@ -76,4 +77,4 @@ function SchoolCard({
   );
 }
 
-export default Router.withRouter(SchoolCard);
+export default withRouter(SchoolCard);

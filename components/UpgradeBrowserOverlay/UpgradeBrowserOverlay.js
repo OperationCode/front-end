@@ -3,10 +3,10 @@ import Modal from 'components/_common_/Modal/Modal';
 import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
 import WarningSign from 'static/images/icons/FontAwesome/exclamation-triangle-solid.svg';
 import { s3 } from 'common/constants/urls';
-import Router from 'next/router';
+import { withRouter } from 'next/router';
 import styles from './UpgradeBrowserOverlay.css';
 
-function UpgradeBrowserOverlay() {
+function UpgradeBrowserOverlay(props) {
   const browsers = [
     {
       browserName: 'Microsoft Edge',
@@ -54,7 +54,7 @@ function UpgradeBrowserOverlay() {
               analyticsEventLabel={`${browserName} Download from <UpgradeBrowserOverlay>`}
               hasIcon={false}
               href={downloadLink}
-              router={Router}
+              router={props}
             >
               <img className={styles.browserImage} src={imageSource} alt={`${browserName} Logo`} />
             </OutboundLink>
@@ -65,4 +65,4 @@ function UpgradeBrowserOverlay() {
   );
 }
 
-export default Router.withRouter(UpgradeBrowserOverlay);
+export default withRouter(UpgradeBrowserOverlay);

@@ -15,11 +15,14 @@ exports[`ArticleGroup should render with required props 1`] = `
         href="https://example.com"
         router={
           Object {
-            "prefetch": [Function],
-            "push": [Function],
-            "replace": [Function],
-            "route": "/mock-route",
-            "withRouter": [Function],
+            "articles": Array [
+              Object {
+                "title": "Example",
+                "url": "https://example.com",
+              },
+            ],
+            "numberOfInitiallyVisibleLinks": 1,
+            "region": "test",
           }
         }
       >
@@ -45,11 +48,22 @@ exports[`ArticleGroup should render with required props and 3 links and a button
         href="https://example.com"
         router={
           Object {
-            "prefetch": [Function],
-            "push": [Function],
-            "replace": [Function],
-            "route": "/mock-route",
-            "withRouter": [Function],
+            "articles": Array [
+              Object {
+                "title": "Example",
+                "url": "https://example.com",
+              },
+              Object {
+                "title": "Example",
+                "url": "https://example.com",
+              },
+              Object {
+                "title": "Example",
+                "url": "https://example.com",
+              },
+            ],
+            "numberOfInitiallyVisibleLinks": 1,
+            "region": "test",
           }
         }
       >

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
-import Router from 'next/router';
+import { withRouter } from 'next/router';
 import styles from './AdBanner.css';
 
 AdBanner.propTypes = {
@@ -15,14 +15,15 @@ AdBanner.propTypes = {
 
 AdBanner.defaultProps = { className: undefined };
 
-function AdBanner({ altText, children, className, imageSource, href }) {
+function AdBanner(props) {
+  const { className, href, altText, imageSource, children } = props;
   return (
     <OutboundLink
+      router={props}
       analyticsEventLabel="[AdBanner Hit]"
       className={classNames(className, styles.adBannerLink)}
       hasIcon={false}
       href={href}
-      router={Router}
     >
       <div className={styles.adBanner}>
         <div className={styles.adBannerImageContainer}>
@@ -34,4 +35,4 @@ function AdBanner({ altText, children, className, imageSource, href }) {
   );
 }
 
-export default Router.withRouter(AdBanner);
+export default withRouter(AdBanner);

@@ -3,6 +3,7 @@ import React from 'react';
 import s3 from 'common/constants/urls';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 
+import mockedRouter from 'test-utils/mocks/nextRouterMock';
 import SchoolCard from '../SchoolCard';
 
 describe('SchoolCard', () => {
@@ -18,6 +19,7 @@ describe('SchoolCard', () => {
         acceptsGIBill
         isFullTime
         hasHardware={false}
+        router={mockedRouter}
       />,
     );
   });
@@ -32,6 +34,7 @@ describe('SchoolCard', () => {
         acceptsGIBill={false}
         isFullTime={false}
         hasHardware
+        router={mockedRouter}
       />,
     );
   });

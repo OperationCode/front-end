@@ -3,10 +3,10 @@ import { donateLink, s3 } from 'common/constants/urls';
 import Section from 'components/_common_/Section/Section';
 import Button from 'components/_common_/Button/Button';
 import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
-import Router from 'next/router';
+import { withRouter } from 'next/router';
 import styles from './DonateSection.css';
 
-function DonateSection() {
+function DonateSection(props) {
   return (
     <Section
       contentClassName={styles.content}
@@ -24,7 +24,7 @@ function DonateSection() {
       </p>
       <p>Thank you for supporting our mission!</p>
       <Button>
-        <OutboundLink analyticsEventLabel="Donate Now" href={donateLink} router={Router}>
+        <OutboundLink analyticsEventLabel="Donate Now" href={donateLink} router={props}>
           Donate Now
         </OutboundLink>
       </Button>
@@ -32,4 +32,4 @@ function DonateSection() {
   );
 }
 
-export default Router.withRouter(DonateSection);
+export default withRouter(DonateSection);

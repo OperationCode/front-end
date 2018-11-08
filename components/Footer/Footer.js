@@ -5,10 +5,10 @@ import Button from 'components/_common_/Button/Button';
 import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
 import SocialMedia from 'components/SocialMedia/SocialMedia';
 import { s3, footerLinks } from 'common/constants/urls';
-import Router from 'next/router';
+import { withRouter } from 'next/router';
 import styles from './Footer.css';
 
-function Footer() {
+function Footer(props) {
   const currentYear = new Date().getFullYear();
 
   return (
@@ -83,7 +83,7 @@ function Footer() {
               key={link.href}
               analyticsEventLabel={link.analyticsEventLabel}
               href={link.href}
-              router={Router}
+              router={props}
             >
               {link.title}
             </OutboundLink>
@@ -94,4 +94,4 @@ function Footer() {
   );
 }
 
-export default Router.withRouter(Footer);
+export default withRouter(Footer);

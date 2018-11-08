@@ -252,15 +252,7 @@ exports[`Footer should render with no props passed 1`] = `
         analyticsEventLabel="FooterLink"
         hasIcon={true}
         href="https://www.somefakeurl.com/"
-        router={
-          Object {
-            "prefetch": [Function],
-            "push": [Function],
-            "replace": [Function],
-            "route": "/mock-route",
-            "withRouter": [Function],
-          }
-        }
+        router={Object {}}
       >
         Terms of Use
       </OutboundLink>
@@ -268,15 +260,7 @@ exports[`Footer should render with no props passed 1`] = `
         analyticsEventLabel="FooterLink"
         hasIcon={true}
         href="https://www.anotherfakeurl.com/"
-        router={
-          Object {
-            "prefetch": [Function],
-            "push": [Function],
-            "replace": [Function],
-            "route": "/mock-route",
-            "withRouter": [Function],
-          }
-        }
+        router={Object {}}
       >
         Cookies
       </OutboundLink>
@@ -284,15 +268,7 @@ exports[`Footer should render with no props passed 1`] = `
         analyticsEventLabel="FooterLink"
         hasIcon={true}
         href="https://www.iubenda.com/privacy-policy/8174861"
-        router={
-          Object {
-            "prefetch": [Function],
-            "push": [Function],
-            "replace": [Function],
-            "route": "/mock-route",
-            "withRouter": [Function],
-          }
-        }
+        router={Object {}}
       >
         Privacy
       </OutboundLink>

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
-import Router from 'next/router';
+import { withRouter } from 'next/router';
 import styles from './SocialMediaItem.css';
 
 SocialMediaItem.propTypes = {
@@ -10,14 +10,15 @@ SocialMediaItem.propTypes = {
   svg: PropTypes.node.isRequired,
 };
 
-function SocialMediaItem({ name, href, svg }) {
+function SocialMediaItem(props) {
+  const { name, href, svg } = props;
   return (
     <div className={styles.SocialMediaItem}>
       <OutboundLink
         analyticsEventLabel={`Social Media Engagement: ${name}`}
         hasIcon={false}
         href={href}
-        router={Router}
+        router={props}
       >
         {svg}
       </OutboundLink>
@@ -25,4 +26,4 @@ function SocialMediaItem({ name, href, svg }) {
   );
 }
 
-export default Router.withRouter(SocialMediaItem);
+export default withRouter(SocialMediaItem);

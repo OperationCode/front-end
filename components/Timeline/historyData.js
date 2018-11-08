@@ -1,7 +1,7 @@
 import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
 import Router from 'next/router';
 
-export default Router.withRouter({
+export default {
   2012: [
     {
       title: 'It All Started With A Hackathon...',
@@ -570,4 +570,4 @@ export default Router.withRouter({
       ),
     },
   ],
-});
+};

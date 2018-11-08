@@ -19,8 +19,8 @@ OutboundLink.defaultProps = {
   className: undefined,
   hasIcon: true,
 };
-
-function OutboundLink({ analyticsEventLabel, children, className, hasIcon, href, router }) {
+function OutboundLink(props) {
+  const { children, hasIcon, className, analyticsEventLabel, href, router } = props;
   const linkContent = (
     <React.Fragment>
       <ScreenReaderOnly>Opens in new window</ScreenReaderOnly>

@@ -1,12 +1,17 @@
 import React from 'react';
 import createShallowSnapshotTest from 'test-utils/createShallowSnapshotTest';
-
+import MockedRouter from 'test-utils/mocks/nextRouterMock';
 import AdBanner from '../AdBanner';
 
 describe('AdBanner', () => {
   it('should render with required props', () => {
     createShallowSnapshotTest(
-      <AdBanner altText="Some text" href="www.test.com" imageSource="www.imagetest.com">
+      <AdBanner
+        altText="Some text"
+        href="www.test.com"
+        imageSource="www.imagetest.com"
+        router={MockedRouter}
+      >
         Test
       </AdBanner>,
     );
@@ -19,6 +24,7 @@ describe('AdBanner', () => {
         className="AdBanner-class"
         href="www.testMe.com"
         imageSource="test-image.jpg"
+        router={MockedRouter}
       >
         Test
       </AdBanner>,

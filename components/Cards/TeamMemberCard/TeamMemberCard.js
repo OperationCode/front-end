@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Card from 'components/_common_/Card/Card';
 import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
-import Router from 'next/router';
+import { withRouter } from 'next/router';
 import styles from './TeamMemberCard.css';
 
 TeamMemberCard.propTypes = {
@@ -19,14 +19,9 @@ TeamMemberCard.defaultProps = {
   twitterHandle: undefined,
 };
 
-function TeamMemberCard({
-  email,
-  imageAlternateText,
-  imageSource,
-  name,
-  staffRole,
-  twitterHandle,
-}) {
+function TeamMemberCard(props) {
+  const { email, imageAlternateText, imageSource, name, staffRole, twitterHandle } = props;
+
   return (
     <Card className={styles.TeamMemberCard} hasAnimationOnHover>
       <img className={styles.image} src={imageSource} alt={imageAlternateText} />
@@ -42,7 +37,7 @@ function TeamMemberCard({
                 <OutboundLink
                   analyticsEventLabel={`<TeamMemberCard> ${name} Twitter Handle Click`}
                   href={`https://twitter.com/${twitterHandle}`}
-                  router={Router}
+                  router={props}
                 >
                   @{twitterHandle}
                 </OutboundLink>
@@ -55,7 +50,7 @@ function TeamMemberCard({
                   analyticsEventLabel={`<TeamMemberCard> ${name} Email Click`}
                   hasIcon={false}
                   href={`mailto:${email}`}
-                  router={Router}
+                  router={props}
                 >
                   {email}
                 </OutboundLink>
@@ -67,4 +62,4 @@ function TeamMemberCard({
   );
 }
 
-export default Router.withRouter(TeamMemberCard);
+export default withRouter(TeamMemberCard);
