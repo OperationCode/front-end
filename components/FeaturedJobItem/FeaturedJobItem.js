@@ -23,6 +23,7 @@ FeaturedJobItem.defaultProps = {
   state: '',
   country: '',
 };
+
 function FeaturedJobItem({ title, source, sourceUrl, city, state, country, description, remote }) {
   return (
     <article className={styles.job}>

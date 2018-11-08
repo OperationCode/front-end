@@ -14,7 +14,7 @@ AdBanner.propTypes = {
 
 AdBanner.defaultProps = { className: undefined };
 
-function AdBanner({ className, href, altText, imageSource, children }) {
+function AdBanner({ altText, children, className, imageSource, href }) {
   return (
     <OutboundLink
       analyticsEventLabel="AdBanner Hit"
