@@ -6,10 +6,14 @@ import PartnerLogoLink from '../PartnerLogoLink';
 
 describe('PartnerLogoLink', () => {
   it('should render with required props', () => {
-    createSnapshotTest(<PartnerLogoLink>Test</PartnerLogoLink>);
-  });
-
-  it('should render with many props assigned', () => {
-    createSnapshotTest(<PartnerLogoLink className="test-class">Test</PartnerLogoLink>);
+    createSnapshotTest(
+      <PartnerLogoLink
+        logo="https://partnerinc.com/logo"
+        name="Partner Inc."
+        url="https://partnerinc.com"
+      >
+        Test
+      </PartnerLogoLink>,
+    );
   });
 });

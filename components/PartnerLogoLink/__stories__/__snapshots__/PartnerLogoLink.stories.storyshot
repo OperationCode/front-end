@@ -5,11 +5,11 @@ exports[`Storyshots Common/PartnerLogoLink default 1`] = `
   className="PartnerLogoLink"
 >
   <a
-    href={null}
+    href="https://github.com"
     onClick={[Function]}
     rel="noopener noreferrer"
     target="_blank"
-    to={null}
+    to="https://github.com"
   >
     <span
       className="ScreenReaderOnly"
@@ -17,9 +17,9 @@ exports[`Storyshots Common/PartnerLogoLink default 1`] = `
       Opens in new window
     </span>
     <img
-      alt="undefined logo"
+      alt="GitHub logo"
       className="logo"
-      src="https://s3.amazonaws.com/operationcode-assets/undefined"
+      src="https://s3.amazonaws.com/operationcode-assets/https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png"
     />
   </a>
 </div>

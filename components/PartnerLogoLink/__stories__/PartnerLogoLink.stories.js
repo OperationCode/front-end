@@ -10,6 +10,13 @@ storiesOf('Common/PartnerLogoLink', module)
   .add(
     'default',
     withInfo()(() => (
-      <PartnerLogoLink>{text('children', 'PropTypes.string or .node')}</PartnerLogoLink>
+      <PartnerLogoLink
+        logo={text(
+          'logo',
+          'https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png',
+        )}
+        name={text('name', 'GitHub')}
+        url={text('url', 'https://github.com')}
+      />
     )),
   );
