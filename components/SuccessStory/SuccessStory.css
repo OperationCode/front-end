@@ -1,43 +1,40 @@
 .SuccessStory {
+  box-sizing: border-box;
   display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
+  flex-flow: column nowrap;
   align-items: center;
-  width: 100%;
-  margin: 15px;
+  margin: 1.5rem 1rem;
+  padding-top: 60px;
+  position: relative;
+  max-width: 400px;
+  height: 550px;
 }
 
 .image {
-  margin: 15px;
-  border-radius: 50%;
-  border: 3px solid #41a4c0;
-  width: 150px;
-  max-width: 150px;
-  height: 150px;
-  max-height: 150px;
-  flex: 1 0 auto;
+  box-shadow: 1px 2px 4px 2px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 0;
+  height: 200px;
+  width: 200px;
 }
 
 .quote {
   display: flex;
+  flex: 1;
   flex-flow: column nowrap;
-  justify-content: space-around;
-  margin: 15px;
+  align-items: center;
+  padding: 2.5rem;
+  padding-top: 160px;
+  border: 3px solid var(--primary);
 }
 
 .quote > blockquote {
-  font-size: 0.9rem;
-  margin: 0;
-  text-align: left;
+  margin: 1rem 0;
+  font-style: italic;
+  font-size: 1rem;
 }
 
 .title {
-  font-size: 1.7rem;
-}
-
-/* Vertical space between cards for vertical layout */
-@media screen and (max-width: 650px) {
-  .SuccessStory {
-    flex-flow: row wrap;
-  }
+  text-align: center;
+  font-size: 1rem;
 }

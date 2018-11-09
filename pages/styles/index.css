@@ -1,0 +1,75 @@
+.featuredLinks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  margin-top: 2rem;
+  align-self: flex-end;
+}
+
+.featuredLinks a {
+  text-decoration: none;
+}
+
+.featuredLinkItem {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  color: #ffffff;
+  text-align: left;
+  text-transform: uppercase;
+  width: 300px;
+}
+
+.featuredLinkItem img {
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.featuredLinkItem:active,
+.featuredLinkItem:focus,
+.featuredLinkItem:hover {
+  color: var(--primary);
+}
+
+.ourMission {
+  align-items: center;
+}
+
+.missionCard {
+  flex-wrap: wrap;
+  height: auto;
+  width: 80%;
+}
+
+.missionCard h2 {
+  align-self: flex-start;
+}
+
+.missionCard img {
+  height: 100%;
+}
+
+.successStories {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.partnerLogos {
+  display: flex;
+  align-self: center;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 900px;
+}
+
+.joinThrivingSection {
+  display: flex;
+  align-self: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
