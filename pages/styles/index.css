@@ -1,3 +1,38 @@
+.featuredLinks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  margin-top: 2rem;
+  align-self: flex-end;
+}
+
+.featuredLinks a {
+  text-decoration: none;
+}
+
+.featuredLinkItem {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  color: #ffffff;
+  text-align: left;
+  text-transform: uppercase;
+  width: 300px;
+}
+
+.featuredLinkItem img {
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.featuredLinkItem:active,
+.featuredLinkItem:focus,
+.featuredLinkItem:hover {
+  color: var(--primary);
+}
+
 .successStories {
   display: flex;
   flex-direction: row;
