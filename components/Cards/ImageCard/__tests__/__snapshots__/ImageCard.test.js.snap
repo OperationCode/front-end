@@ -1,21 +1,45 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`ImageCard should render with many props assigned 1`] = `
+<Card
+  className="ImageCard test"
+  hasAnimationOnHover={false}
+>
+  <React.Fragment>
+    <div
+      className="content"
+    >
+      <p>
+        Testing!
+      </p>
+    </div>
+    <img
+      alt="Test title"
+      className="image"
+      src="/static/images/Family1.jpg"
+    />
+  </React.Fragment>
+</Card>
+`;
+
 exports[`ImageCard should render with required props 1`] = `
 <Card
   className="ImageCard"
   hasAnimationOnHover={false}
 >
-  <img
-    alt="Test title"
-    className="image"
-    src="/static/images/Family1.jpg"
-  />
-  <div
-    className="content"
-  >
-    <p>
-      Testing!
-    </p>
-  </div>
+  <React.Fragment>
+    <img
+      alt="Test title"
+      className="image"
+      src="/static/images/Family1.jpg"
+    />
+    <div
+      className="content"
+    >
+      <p>
+        Testing!
+      </p>
+    </div>
+  </React.Fragment>
 </Card>
 `;
