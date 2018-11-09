@@ -33,6 +33,24 @@
   color: var(--primary);
 }
 
+.ourMission {
+  align-items: center;
+}
+
+.missionCard {
+  flex-wrap: wrap;
+  height: auto;
+  width: 80%;
+}
+
+.missionCard h2 {
+  align-self: flex-start;
+}
+
+.missionCard img {
+  height: 100%;
+}
+
 .successStories {
   display: flex;
   flex-direction: row;

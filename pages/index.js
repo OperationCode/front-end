@@ -7,6 +7,7 @@ import HeroBanner from 'components/_common_/HeroBanner/HeroBanner';
 import LinkButton from 'components/_common_/LinkButton/LinkButton';
 import Section from 'components/_common_/Section/Section';
 import AdBanner from 'components/AdBanner/AdBanner';
+import ImageCard from 'components/Cards/ImageCard/ImageCard';
 import SuccessStory from 'components/SuccessStory/SuccessStory';
 import PartnerLogoLink from 'components/PartnerLogoLink/PartnerLogoLink';
 import JoinSection from 'components/ReusableSections/JoinSection/JoinSection';
@@ -73,6 +74,23 @@ export default () => (
       Operation Code and Topcoder have teamed up to work on open source coding projects, to solve
       critical problems, and to compete for cash prizes! Sign up for Topcoder Veterans.
     </AdBanner>
+
+    <Section contentClassName={styles.ourMission} hasHeadingLines={false} theme="mist">
+      <ImageCard
+        imageSource={`${s3}redesign/images/node-summit-2018.jpg`}
+        alt="Operation Code members posing at Node Summit 2018"
+        className={styles.missionCard}
+        isImageFirst={false}
+      >
+        <h2>Our Mission</h2>
+        <p>
+          At Operation Code, we strongly believe in improving the lives of military veterans,
+          service members, and their spouses. We increase their chances for success in the tech
+          industry as software developers through thoughtful mentorship, code school scholarships,
+          and career services.
+        </p>
+      </ImageCard>
+    </Section>
 
     <Section
       title="Success Stories"
