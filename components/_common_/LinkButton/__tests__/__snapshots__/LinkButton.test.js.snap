@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LinkButton should render with required props 1`] = `
+<a
+  className="LinkButton"
+  href="https://tests.com"
+  onClick={[Function]}
+>
+  Test
+</a>
+`;
