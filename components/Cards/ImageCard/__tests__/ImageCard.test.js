@@ -11,4 +11,17 @@ describe('ImageCard', () => {
       </ImageCard>,
     );
   });
+
+  it('should render with many props assigned', () => {
+    createShallowSnapshotTest(
+      <ImageCard
+        alt="Test title"
+        className="test"
+        imageSource="/static/images/Family1.jpg"
+        isImageFirst={false}
+      >
+        <p>Testing!</p>
+      </ImageCard>,
+    );
+  });
 });

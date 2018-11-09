@@ -2,10 +2,10 @@
 import React from 'react';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 
-import JoinSection from '../JoinSection';
+import LinkButton from '../LinkButton';
 
-describe('JoinSection', () => {
+describe('LinkButton', () => {
   it('should render with required props', () => {
-    createSnapshotTest(<JoinSection />);
+    createSnapshotTest(<LinkButton href="https://tests.com">Test</LinkButton>);
   });
 });
