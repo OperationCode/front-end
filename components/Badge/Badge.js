@@ -6,13 +6,12 @@ import styles from './Badge.css';
 Badge.propTypes = {
   svgComponent: PropTypes.element.isRequired,
   className: PropTypes.string,
-  label: PropTypes.string,
+  label: PropTypes.string.isRequired,
   labelClassName: PropTypes.string,
 };
 
 Badge.defaultProps = {
-  className: '',
-  label: '',
+  className: undefined,
   labelClassName: undefined,
 };
 

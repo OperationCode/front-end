@@ -10,7 +10,7 @@ exports[`Badge should render with many props assigned 1`] = `
     <test-file-mock />
   </div>
   <div
-    className="centerText label"
+    className="centerText label label-test-class"
   >
     Badge Icon
   </div>
@@ -29,7 +29,7 @@ exports[`Badge should render with required props 1`] = `
   <div
     className="centerText label"
   >
-    
+    Without Custom Label Classname
   </div>
 </div>
 `;

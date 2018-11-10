@@ -9,12 +9,17 @@ const badgeIcon = <Icon />;
 
 describe('Badge', () => {
   it('should render with required props', () => {
-    createSnapshotTest(<Badge svgComponent={badgeIcon} />);
+    createSnapshotTest(<Badge svgComponent={badgeIcon} label="Without Custom Label Classname" />);
   });
 
   it('should render with many props assigned', () => {
     createSnapshotTest(
-      <Badge svgComponent={badgeIcon} label="Badge Icon" className="test-class" />,
+      <Badge
+        svgComponent={badgeIcon}
+        label="Badge Icon"
+        className="test-class"
+        labelClassName="label-test-class"
+      />,
     );
   });
 });

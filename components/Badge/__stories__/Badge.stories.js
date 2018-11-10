@@ -25,7 +25,7 @@ storiesOf('Common/Badge', module)
         <Badge
           svgComponent={icons[iconName]}
           label={text('label', 'My Awesome Badge')}
-          labelClassName={text('labelClassName', 'test-class')}
+          labelClassName={text('labelClassName', '')}
         />
       );
     }),
