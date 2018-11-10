@@ -4,6 +4,7 @@
 
 .eventsPage p {
   font-size: 1.25rem;
+  max-width: 700px;
 }
 
 .alignCenter {
@@ -29,70 +30,22 @@
 
 .offsetImage img {
   opacity: 0;
-  transition: all 1s;
+  transition: opacity 1s;
 }
 
 .showImage img {
   opacity: 1;
 }
 
-.introText {
-  min-width: 20rem; /* prevent the auto grid flow from collapsing the text down too far */
-}
-
-.sectionHeading_introHeading {
-  position: relative;
-  padding-bottom: 2rem;
-  margin-bottom: 2rem;
-  font-size: 55px;
-  max-width: 13ch; /* this causes the line to break after the word 'make' in the title */
-}
-
-.sectionHeading_introHeading::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  width: 2.5ch; /* This matches the width of 2.5 characters of the title font */
-  border-bottom: 3px solid var(--primaryLight);
-}
-
-.introImage {
-  display: none; /* don't display image until screen size is large enough */
-}
-
-.badgeIcon {
-  width: 240px;
+.badgeGroupings {
   display: flex;
-  flex-direction: column;
-  margin-right: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.badgeIcon:last-child {
-  margin-right: 0;
-}
-
-.badgeIcon > div {
-  margin: 0 auto;
-}
-
-.badgeIcon svg {
+.badge {
   fill: var(--slate);
-  height: 50px;
-  width: 100%;
-  margin-bottom: 1rem;
-}
-
-.buttonOutline {
-  border: 2px solid var(--primaryLight);
-  border-radius: 2px;
-  padding: 0;
-  margin-top: 1rem;
-}
-
-.buttonOutline:hover:enabled,
-.buttonOutline:focus:enabled {
-  background-color: var(--primaryLight);
-  border-radius: 2px;
+  margin: 1rem 4rem;
 }
 
 .progressBarInfo {
@@ -139,51 +92,13 @@
   border-radius: 50px 0 0 50px;
 }
 
-.slackForm {
-  width: 100%;
-  display: flex;
-  margin-top: 1rem;
-}
-
-.slackForm input {
-  flex-grow: 1;
-  padding-left: 1rem;
-  border: solid 2px var(--gray);
-  font-size: 1rem;
-}
-
-.slackForm input:focus {
-  outline-offset: -2px;
-  outline-width: 2px;
-  outline-color: #000000;
-  outline-style: solid;
-}
-
-.slackForm_button {
-  flex-grow: 1;
-  border: none;
-  background-color: var(--secondary);
-  border-radius: 0;
-}
-
-.slackForm .slackForm_button:hover {
-  background-color: var(--secondaryDark);
-}
-
-p.slackText {
-  font-size: 1rem;
-  margin-bottom: 0;
-}
-
 .gridContent {
   margin: 2rem 0;
 }
 
-@media screen and (min-width: 481px) {
-  .flexDisplay {
-    display: flex;
-    justify-content: center;
-    width: 100%;
+@media screen and (max-width: 768px) {
+  .heroBannerMobilePositioning {
+    background-position: right center;
   }
 }
 
@@ -206,23 +121,6 @@ p.slackText {
     margin: 0;
   }
 
-  .introImage {
-    display: initial;
-    object-fit: cover;
-    width: 100%;
-    min-height: 350px;
-    min-width: 350px;
-    max-width: 800px;
-  }
-
-  .badgeIcon {
-    width: 100%;
-  }
-
-  .badgeIcon svg {
-    height: 100px;
-  }
-
   .alignRight {
     display: flex;
     flex-direction: column;
@@ -237,7 +135,6 @@ p.slackText {
 
   .offsetImage img {
     object-fit: cover;
-    width: 100%;
   }
 
   @media screen and (min-width: 1280px) {
