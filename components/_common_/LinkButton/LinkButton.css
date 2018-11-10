@@ -1,18 +1,17 @@
 .LinkButton {
-  align-items: center;
   background-color: rgba(0, 0, 0, 0); /* transparent */
-  border: 4px solid var(--primary);
   border-radius: 3px;
+  border: 4px solid var(--primary);
   color: #ffffff;
   cursor: pointer;
-  display: flex;
-  justify-content: center;
+  display: inline-block;
   line-height: 1.25;
   min-width: 200px;
   padding: 1rem;
-  transition: background-color 0.2s linear;
+  text-align: center;
   text-decoration: none;
   text-transform: uppercase;
+  transition: background-color 0.2s linear, border-color 0.2s linear, outline 0.2s linear;
 }
 
 .LinkButton:active,
@@ -21,10 +20,6 @@
   background-color: var(--primary);
 }
 
-.LinkButton:active,
-.LinkButton:focus {
-  outline-color: var(--primary);
-  outline-offset: -1px;
-  outline-style: solid;
-  outline-width: 3px;
+.LinkButton:active {
+  text-decoration: underline;
 }
