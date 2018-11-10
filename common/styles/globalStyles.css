@@ -57,6 +57,15 @@ h6 {
   padding: 0;
 }
 
+a {
+  color: #ffffff;
+}
+
+p {
+  line-height: 1.75;
+  max-width: 700px;
+}
+
 #root {
   min-height: 100%;
 }
