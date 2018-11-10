@@ -6,7 +6,7 @@
   color: #ffffff;
   display: flex;
   flex-direction: column;
-  height: 480px;
+  min-height: 65vh;
   justify-content: center;
   text-shadow: #111111 0 0 15px;
   width: 100%;
