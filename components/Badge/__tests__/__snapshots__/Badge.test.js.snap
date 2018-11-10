@@ -2,7 +2,7 @@
 
 exports[`Badge should render with many props assigned 1`] = `
 <div
-  className="Badge"
+  className="Badge test-class"
 >
   <div
     className="iconContainer"
@@ -29,7 +29,7 @@ exports[`Badge should render with required props 1`] = `
   <div
     className="centerText label"
   >
-    
+    Testing
   </div>
 </div>
 `;

@@ -18,7 +18,11 @@ HeroBanner.defaultProps = {
 };
 
 function HeroBanner({ children, className, imageSource, isFullViewHeight, title }) {
-  const dynamicBackgroundImage = { backgroundImage: `url(${imageSource})` };
+  // See https://css-tricks.com/tinted-images-multiple-backgrounds/ for explanation
+  const darkOverlay = 'linear-gradient(rgba(33, 48, 69, 0.65),rgba(33, 48, 69, 0.65))';
+  const dynamicBackgroundImage = {
+    backgroundImage: `${darkOverlay}, url(${imageSource})`,
+  };
 
   return (
     <div

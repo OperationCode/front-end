@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
-import { withKnobs, text } from '@storybook/addon-knobs';
+import { withKnobs, boolean, text } from '@storybook/addon-knobs';
 import LinkButton from '../LinkButton';
 
 storiesOf('Common/LinkButton', module)
@@ -9,7 +9,7 @@ storiesOf('Common/LinkButton', module)
   .add(
     'default',
     withInfo()(() => (
-      <LinkButton href={text('href', 'https://someurl.com/')}>
+      <LinkButton href={text('href', 'https://someurl.com/')} isFilled={boolean('isFilled', false)}>
         {text('children', 'Click Me!')}
       </LinkButton>
     )),
