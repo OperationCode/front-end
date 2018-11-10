@@ -9,7 +9,7 @@ const badgeIcon = <Icon />;
 
 describe('Badge', () => {
   it('should render with required props', () => {
-    createSnapshotTest(<Badge svgComponent={badgeIcon} />);
+    createSnapshotTest(<Badge svgComponent={badgeIcon} label="Testing" />);
   });
 
   it('should render with many props assigned', () => {

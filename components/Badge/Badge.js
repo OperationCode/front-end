@@ -4,24 +4,20 @@ import classNames from 'classnames';
 import styles from './Badge.css';
 
 Badge.propTypes = {
+  className: PropTypes.string,
   svgComponent: PropTypes.element.isRequired,
-  children: PropTypes.element,
-  label: PropTypes.string,
-  labelClassName: PropTypes.string,
+  label: PropTypes.string.isRequired,
 };
 
 Badge.defaultProps = {
-  children: undefined,
-  label: '',
-  labelClassName: undefined,
+  className: undefined,
 };
 
-function Badge({ children, svgComponent, label, labelClassName }) {
+function Badge({ className, svgComponent, label }) {
   return (
-    <div className={styles.Badge}>
+    <div className={classNames(styles.Badge, className)}>
       <div className={styles.iconContainer}>{svgComponent}</div>
-      <div className={classNames(styles.centerText, styles.label, labelClassName)}>{label}</div>
-      {children}
+      <div className={classNames(styles.centerText, styles.label)}>{label}</div>
     </div>
   );
 }
