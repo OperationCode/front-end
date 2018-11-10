@@ -9,11 +9,11 @@ exports[`Badge should render with many props assigned 1`] = `
   >
     <test-file-mock />
   </div>
-  <div
-    className="centerText label"
+  <span
+    className="label"
   >
     Badge Icon
-  </div>
+  </span>
 </div>
 `;
 
@@ -26,10 +26,10 @@ exports[`Badge should render with required props 1`] = `
   >
     <test-file-mock />
   </div>
-  <div
-    className="centerText label"
+  <span
+    className="label"
   >
     Testing
-  </div>
+  </span>
 </div>
 `;
