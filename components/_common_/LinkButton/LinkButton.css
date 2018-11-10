@@ -23,3 +23,13 @@
 .LinkButton:active {
   text-decoration: underline;
 }
+
+.filled {
+  background-color: var(--primary);
+}
+
+.filled:focus,
+.filled:hover {
+  outline: 3px solid var(--primary);
+  outline-offset: 1px;
+}
