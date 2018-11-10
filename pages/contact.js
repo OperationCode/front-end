@@ -1,83 +1,59 @@
-import classNames from 'classnames';
 import Link from 'next/link';
 import Head from 'components/head';
-import Section from 'components/_common_/Section/Section';
 import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
-import Badge from 'components/Badge/Badge';
-import EmailIcon from 'static/images/icons/FontAwesome/envelope-solid.svg';
-import HomeIcon from 'static/images/icons/FontAwesome/home-solid.svg';
-import SlackIcon from 'static/images/icons/FontAwesome/slack-hash.svg';
+import HeroBanner from 'components/_common_/HeroBanner/HeroBanner';
 import styles from './styles/contact.css';
 
 export default () => (
   <>
     <Head title="Contact Us" />
 
-    <Section title="Contact Us" theme="mist">
-      <p className={styles.centerText}>
+    <HeroBanner title="Contact Us" imageSource="" className={styles.contactHero}>
+      <p>
         We are a decentralized community of hard-working volunteers, and we love hearing feedback,
         comments, and suggestions!
-        <br />
-        <br />
+      </p>
+
+      <p>
         The best way to reach our staff and our members is by{' '}
         <Link href="/join">
           <a>joining Operation Code</a>
         </Link>{' '}
-        to receive an invite to our team, including our Slack chat. You can also reach us via email,
-        physical mail, or via{' '}
+        to receive an invite to our team, including our Slack chat.
+      </p>
+
+      <p>
+        You can also reach us via email:{' '}
         <OutboundLink
-          href="//twitter.com/operation_code"
+          href="mailto:staff@operationcode.org"
           analyticsEventLabel="Contact Us - Twitter"
+          hasIcon={false}
         >
-          Twitter
+          staff@operationcode.org
         </OutboundLink>
       </p>
-    </Section>
-    <Section theme="white" headingLines={false} contentClassName={styles.centerSection}>
-      <div className={styles.flexContainer}>
-        {/* Columns */}
-        <div className={styles.column}>
-          <h5>Email</h5>
-          <OutboundLink
-            analyticsEventLabel="Contact Us - Email"
-            hasIcon={false}
-            href="mailto:staff@operationcode.org"
-            className={styles.centerText}
-          >
-            <Badge
-              label="staff@operationcode.org"
-              svgComponent={<EmailIcon className={styles.icon} />}
-            />
-          </OutboundLink>
-        </div>
-        <div className={styles.column}>
-          <h5>Slack Team</h5>
-          <OutboundLink
-            href="https://operation-code.slack.com"
-            analyticsEventLabel="Contact Us - Slack"
-            className={styles.centerText}
-          >
-            <Badge
-              label="https://operation-code.slack.com"
-              svgComponent={<SlackIcon className={styles.icon} />}
-            />
-          </OutboundLink>
-        </div>
-        <div className={classNames(styles.column, styles.centerText)}>
-          <h5>Mailing Address</h5>
-          <Badge label="" svgComponent={<HomeIcon className={styles.icon} />}>
-            <span>
-              Operation Code
-              <br />
-              707 SW Washington St.
-              <br />
-              Suite 1100
-              <br />
-              Portland, OR 97205
-            </span>
-          </Badge>
-        </div>
+
+      <p>
+        You could tweet at us:{' '}
+        <OutboundLink
+          href="https://twitter.com/operation_code"
+          analyticsEventLabel="Contact Us - Twitter"
+        >
+          @operation_code
+        </OutboundLink>
+      </p>
+
+      <div className={styles.address}>
+        <p>And - if you really want to - you can snail-mail us:</p>
+
+        <span>
+          Operation Code
+          <br />
+          707 SW Washington Street, Suite 1100
+          <br />
+          Portland, OR 97205
+        </span>
       </div>
-    </Section>
+    </HeroBanner>
   </>
 );

@@ -1,31 +1,23 @@
-.centerSection {
-  align-items: center;
-  font-size: 0.9rem;
+.contactHero {
+  height: auto;
+  padding: 3rem 0;
 }
 
-.centerText {
-  text-align: center;
+.contactHero a {
+  transition: color 0.2s linear;
 }
 
-.column {
-  display: flex;
-  flex-basis: 200px;
-  flex-direction: column;
-  align-items: center;
-  margin: 10px 5px 20px;
+.contactHero a:focus,
+.contactHero a:hover {
+  text-shadow: none;
+  color: var(--primaryLight);
 }
 
-.flexContainer {
-  justify-content: space-around;
-  padding: 15px 0 0;
-  flex-flow: row wrap;
-  display: flex;
-  width: 80%;
-}
+/* .contactHero p {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+} */
 
-.icon {
-  fill: var(--navy);
-  padding: 0.7rem 0.35rem 0.5rem 0.35rem;
-  width: 100px;
-  height: 100px;
+.address {
+  margin: 4rem auto 2rem;
 }
