@@ -14,6 +14,6 @@ RUN yarn --silent --production --freeze-lockfile
 # We copy all source files
 COPY . .
 
+EXPOSE 8080
 # We run the build and expose as /public
-RUN yarn build
-RUN yarn export -o /public
+CMD ["npm", "run" "start:server"]
