@@ -35,7 +35,7 @@ const featuredLinksArray = [
 ];
 
 export default () => (
-  <div>
+  <>
     <Head title="Home" />
 
     <HeroBanner
@@ -116,5 +116,5 @@ export default () => (
     </Section>
 
     <JoinSection />
-  </div>
+  </>
 );
