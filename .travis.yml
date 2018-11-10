@@ -55,7 +55,7 @@ deploy:
       master: true
       staging: true
   - provider: script
-    script: if [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_BRANCH" == "master" ]; make deploy; fi
+    script: if [ "$TRAVIS_PULL_REQUEST" == "false" ]; make deploy; fi
     script_cleanup: true
     on:
       all_branches: false
