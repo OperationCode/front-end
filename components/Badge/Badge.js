@@ -6,7 +6,7 @@ import styles from './Badge.css';
 Badge.propTypes = {
   className: PropTypes.string,
   svgComponent: PropTypes.element.isRequired,
-  label: PropTypes.string.isRequired,
+  label: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
 };
 
 Badge.defaultProps = {
@@ -17,7 +17,7 @@ function Badge({ className, svgComponent, label }) {
   return (
     <div className={classNames(styles.Badge, className)}>
       <div className={styles.iconContainer}>{svgComponent}</div>
-      <div className={classNames(styles.centerText, styles.label)}>{label}</div>
+      <span className={styles.label}>{label}</span>
     </div>
   );
 }
