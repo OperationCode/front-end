@@ -47,3 +47,16 @@ deploy:
     on:
       all_branches: false
       master: true
+  - provider: script
+    script: if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then make publish; fi 
+    script_cleanup: true
+    on:
+      all_branches: false
+      master: true
+      staging: true
+  - provider: script
+    script: if [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_BRANCH" == "master" ]; make deploy; fi
+    script_cleanup: true
+    on:
+      all_branches: false
+      master: true
