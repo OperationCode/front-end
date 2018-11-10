@@ -8,4 +8,12 @@ describe('LinkButton', () => {
   it('should render with required props', () => {
     createSnapshotTest(<LinkButton href="https://tests.com">Test</LinkButton>);
   });
+
+  it('should render with many props assigned', () => {
+    createSnapshotTest(
+      <LinkButton href="https://tests.com" isFilled>
+        Test
+      </LinkButton>,
+    );
+  });
 });

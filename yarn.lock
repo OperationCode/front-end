@@ -9104,6 +9104,15 @@ react-modal@^3.6.1:
     react-lifecycles-compat "^3.0.0"
     warning "^3.0.0"
 
+react-on-screen@^2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/react-on-screen/-/react-on-screen-2.0.4.tgz#afe2185a9eb4b9ec53cff961790b843ab1c25467"
+  integrity sha512-2iiIulBu83MiPug3y0EH0WR/h+xk2KGmR+UWn6zhcew0dXTU8mz7VDVL4UguGrtWCmxFL8FRA0/Mt8HHeLo23A==
+  dependencies:
+    lodash.throttle "^4.1.1"
+    prop-types "^15.6.0"
+    shallowequal "^1.0.2"
+
 react-onclickoutside@^6.5.0:
   version "6.7.1"
   resolved "https://registry.yarnpkg.com/react-onclickoutside/-/react-onclickoutside-6.7.1.tgz#6a5b5b8b4eae6b776259712c89c8a2b36b17be93"
@@ -9958,6 +9967,11 @@ shallowequal@^0.2.2:
   resolved "https://registry.yarnpkg.com/shallowequal/-/shallowequal-0.2.2.tgz#1e32fd5bcab6ad688a4812cb0cc04efc75c7014e"
   dependencies:
     lodash.keys "^3.1.2"
+
+shallowequal@^1.0.2:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/shallowequal/-/shallowequal-1.1.0.tgz#188d521de95b9087404fd4dcb68b13df0ae4e7f8"
+  integrity sha512-y0m1JoUZSlPAjXVtPPW70aZWfIL/dSP7AFkRnniLCrK/8MDKog3TySTBmckD+RObVxH0v4Tox67+F14PdED2oQ==
 
 shebang-command@^1.2.0:
   version "1.2.0"

@@ -9,10 +9,10 @@ exports[`Storyshots Common/Badge default 1`] = `
   >
     <test-file-mock />
   </div>
-  <div
-    className="centerText label test-class"
+  <span
+    className="label"
   >
     My Awesome Badge
-  </div>
+  </span>
 </div>
 `;
