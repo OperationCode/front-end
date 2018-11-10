@@ -70,6 +70,7 @@ export default () => (
     <AdBanner
       href="http://op.co.de/topcoder-veterans"
       imageSource={`${s3}partnerLogos/logo_topcoder_with_name.svg`}
+      altText="Topcoder Logo"
     >
       Operation Code and Topcoder have teamed up to work on open source coding projects, to solve
       critical problems, and to compete for cash prizes! Sign up for Topcoder Veterans.
