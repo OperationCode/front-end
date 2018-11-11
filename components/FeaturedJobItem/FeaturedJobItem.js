@@ -27,26 +27,23 @@ FeaturedJobItem.defaultProps = {
 function FeaturedJobItem({ title, source, sourceUrl, city, state, country, description, remote }) {
   return (
     <article className={styles.job}>
-      <div>
-        <OutboundLink
-          href={sourceUrl}
-          analyticsEventLabel={`Featured Job ${source}`}
-          hasIcon={false}
-        >
-          <h6 className={styles.link}>{title}</h6>
-        </OutboundLink>
-      </div>
+      <OutboundLink href={sourceUrl} analyticsEventLabel={`Featured Job ${source}`}>
+        <h6>{title}</h6>
+      </OutboundLink>
+
       <div className={styles.details}>
         <div className={styles.detailsContainer}>
           <BuildingIcon className={styles.icon} />
           <span className={styles.detail}>{source}</span>
         </div>
+
         <div className={styles.detailsContainer}>
           {(city || state || country) && <MapMarkerIcon className={styles.icon} />}
           {city && <span className={styles.detail}>{city},</span>}
           {state && <span className={styles.detail}>{state},</span>}
           {country && <span className={styles.detail}>{country}</span>}
         </div>
+
         {remote && (
           <div className={styles.detailsContainer}>
             <CloudUploadIcon className={styles.icon} />
