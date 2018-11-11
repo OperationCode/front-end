@@ -58,7 +58,7 @@ h6 {
 }
 
 a {
-  color: #ffffff;
+  color: currentColor;
 }
 
 p {
