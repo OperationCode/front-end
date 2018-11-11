@@ -16,35 +16,7 @@ Being an open source project involving contributors of varying levels of experie
 
 ## Table Of Contents
 
-- [Guide To Contribution](#guide-to-contribution)
-	- [Table Of Contents](#table-of-contents)
-	- [Git and GitHub](#git-and-github)
-		- [Git](#git)
-		- [GitHub Workflow](#github-workflow)
-	- [Explanations](#explanations)
-		- [What Is The Front-End?](#what-is-the-front-end)
-		- [What Is The Back-End?](#what-is-the-back-end)
-		- [What is REST? What is an API?](#what-is-rest-what-is-an-api)
-	- [Technologies](#technologies)
-	- [Development Workflow](#development-workflow)
-		- [Installing Dependencies](#installing-dependencies)
-		- [Run The Development Server](#run-the-development-server)
-		- [Returning To Work After A Break](#returning-to-work-after-a-break)
-		- [Knowing The Tools At Your Disposal](#knowing-the-tools-at-your-disposal)
-		- [File Structure](#file-structure)
-		- [npm Scripts With Explanations](#npm-scripts-with-explanations)
-	- [Mocking Back-end Server API](#mocking-back-end-server-api)
-	- [Resources](#resources)
-	- [Navigating Operating System Differences](#navigating-operating-system-differences)
-		- [MacOS](#macos)
-			- [Update Your Mac](#update-your-mac)
-			- [Xcode Command Line Tools](#xcode-command-line-tools)
-			- [Homebrew](#homebrew)
-			- [Git](#git)
-			- [NodeJS](#nodejs)
-		- [Windows](#windows)
-			- [Git](#git)
-			- [NodeJS](#nodejs)
+- [Guide To Contribution](#guide-to-contribution) - [Table Of Contents](#table-of-contents) - [Git and GitHub](#git-and-github) - [Git](#git) - [GitHub Workflow](#github-workflow) - [Explanations](#explanations) - [What Is The Front-End?](#what-is-the-front-end) - [What Is The Back-End?](#what-is-the-back-end) - [What is REST? What is an API?](#what-is-rest-what-is-an-api) - [Technologies](#technologies) - [Development Workflow](#development-workflow) - [Installing Dependencies](#installing-dependencies) - [Run The Development Server](#run-the-development-server) - [Returning To Work After A Break](#returning-to-work-after-a-break) - [Knowing The Tools At Your Disposal](#knowing-the-tools-at-your-disposal) - [File Structure](#file-structure) - [npm Scripts With Explanations](#npm-scripts-with-explanations) - [Mocking Back-end Server API](#mocking-back-end-server-api) - [Resources](#resources) - [Navigating Operating System Differences](#navigating-operating-system-differences) - [MacOS](#macos) - [Update Your Mac](#update-your-mac) - [Xcode Command Line Tools](#xcode-command-line-tools) - [Homebrew](#homebrew) - [Git](#git) - [NodeJS](#nodejs) - [Windows](#windows) - [Git](#git) - [NodeJS](#nodejs)
 
 ## Git and GitHub
 
@@ -189,7 +161,7 @@ yarn build
 yarn lint
 
 # Similar instructions are in a precommit hook to ensure that code you’re committing is up to our linting and formatting standards. You can use this command locally before comitting to ensure that you don't need to ammend your commit from formatting changes.
-yarn format-all
+yarn format
 
 # Start the main application server or to serve up a production build locally.
 yarn start
@@ -200,7 +172,7 @@ yarn test
 #Create all the necessary files/folders for a new, reusable component. Please make `ComponentName` TitleCase.
 yarn create-component $ComponentName
 
-#Create a new page in the pages directory. 
+#Create a new page in the pages directory.
 yarn create-page $pageName
 ```
 
@@ -338,6 +310,7 @@ You can also install Github Desktop for a GUI Interface to Github. If you do thi
 There are many ways and guides to install NodeJS on Windows. We recommend using [nvm-windows](https://github.com/coreybutler/nvm-windows).
 
 The resources below are from Microsoft.
+
 - [NodeJS On Windows Guidelines](https://github.com/Microsoft/nodejs-guidelines)
 - [Configuring your Windows development environment for NodeJS](https://github.com/Microsoft/nodejs-guidelines/blob/master/windows-environment.md#configuring-your-windows-development-environment)
 
