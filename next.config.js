@@ -23,7 +23,7 @@ const nextConfig = withCSS({
       analyzerPort: 8889,
     },
   },
-  
+
   // Webpack Config
   webpack: config => {
     // Fixes npm packages that depend on `fs` module
