@@ -3,6 +3,7 @@ import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
 import Section from 'components/_common_/Section/Section';
 import Button from 'components/_common_/Button/Button';
 import Badge from 'components/Badge/Badge';
+import DonateSection from 'components/ReusableSections/DonateSection/DonateSection';
 import PlaceholderIcon1 from 'static/images/icons/FontAwesome/users-solid.svg';
 import PlaceholderIcon2 from 'static/images/icons/FontAwesome/handshake-regular.svg';
 import { s3 } from 'common/constants/urls';
@@ -113,20 +114,7 @@ export default () => (
       </div>
     </Section>
 
-    <Section
-      theme="mist"
-      contentClassName={styles.alignCenter}
-      title="Donate to Deploy the Future"
-      hasHeadingLines={false}
-    >
-      <p className={styles.centerText}>
-        Help us reach our fundraising goal! With your donation, we&apos;ll be able to provide our
-        members with coding school scholarships, tickets to tech conferences, and access to
-        necessary equipment.
-      </p>
-      <p>[DONATION PROGRESS BAR]</p>
-      <Button>Make a Donation</Button>
-    </Section>
+    <DonateSection />
 
     <Section
       theme="white"
