@@ -12,10 +12,10 @@ class Layout extends React.Component {
 
     return (
       <>
-        <ScrollUpButton />
         <Nav />
-        {children}
+        <main>{children}</main>
         <Footer />
+        <ScrollUpButton />
       </>
     );
   }
