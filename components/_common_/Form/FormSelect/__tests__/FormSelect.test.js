@@ -29,7 +29,7 @@ describe('FormSelect', () => {
 
     wrap.find('select').simulate('blur');
     expect(onChangeMock).toHaveBeenCalledTimes(1);
-    expect(onChangeMock).toBeCalledWith('TEST1');
+    expect(onChangeMock).toHaveBeenCalledWith('TEST1');
   });
 
   it('should call onChange from props after onChange with validate', () => {
@@ -46,13 +46,13 @@ describe('FormSelect', () => {
     });
     wrap.find('select').simulate('blur');
     expect(onChangeMock).toHaveBeenCalledTimes(1);
-    expect(onChangeMock).toBeCalledWith('TEST1');
+    expect(onChangeMock).toHaveBeenCalledWith('TEST1');
 
     wrap.find('select').simulate('change', {
       target: { value: 'TEST3' },
     });
     wrap.find('select').simulate('blur');
     expect(onChangeMock).toHaveBeenCalledTimes(2);
-    expect(onChangeMock).toBeCalledWith('TEST3');
+    expect(onChangeMock).toHaveBeenCalledWith('TEST3');
   });
 });

@@ -32,34 +32,33 @@ function TeamMemberCard({
       <h5 className={styles.name}>{name}</h5>
       <i>{staffRole}</i>
       <hr />
-      {twitterHandle &&
-        email && (
-          <ul className={styles.staffDetails}>
-            {twitterHandle && (
-              <li>
-                <span className={styles.detailPrompt}>Twitter: </span>
-                <OutboundLink
-                  analyticsEventLabel={`Team Member ${name} Twitter Click`}
-                  href={`https://twitter.com/${twitterHandle}`}
-                >
-                  @{twitterHandle}
-                </OutboundLink>
-              </li>
-            )}
-            {email && (
-              <li>
-                <span className={styles.detailPrompt}>Email: </span>
-                <OutboundLink
-                  analyticsEventLabel={`Team Member ${name} Email Click`}
-                  hasIcon={false}
-                  href={`mailto:${email}`}
-                >
-                  {email}
-                </OutboundLink>
-              </li>
-            )}
-          </ul>
-        )}
+      {twitterHandle && email && (
+        <ul className={styles.staffDetails}>
+          {twitterHandle && (
+            <li>
+              <span className={styles.detailPrompt}>Twitter: </span>
+              <OutboundLink
+                analyticsEventLabel={`Team Member ${name} Twitter Click`}
+                href={`https://twitter.com/${twitterHandle}`}
+              >
+                @{twitterHandle}
+              </OutboundLink>
+            </li>
+          )}
+          {email && (
+            <li>
+              <span className={styles.detailPrompt}>Email: </span>
+              <OutboundLink
+                analyticsEventLabel={`Team Member ${name} Email Click`}
+                hasIcon={false}
+                href={`mailto:${email}`}
+              >
+                {email}
+              </OutboundLink>
+            </li>
+          )}
+        </ul>
+      )}
     </Card>
   );
 }

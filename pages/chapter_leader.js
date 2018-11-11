@@ -10,15 +10,13 @@ const ChapterLeader = () => (
       <div>
         <p>
           Operation Code is looking for volunteer Chapter Leaders to build local communities
-          nationwide! Tell us more about yourself
-          {' '}
+          nationwide! Tell us more about yourself{' '}
           <OutboundLink
             href="http://op.co.de/chapter-leader-volunteer"
             analyticsEventLabel="Chapter Leader Volunteer (Top)"
           >
             here
-          </OutboundLink>
-          {' '}
+          </OutboundLink>{' '}
           and help further our mission to get the military community into the tech industry!
         </p>
         <p>
@@ -60,8 +58,7 @@ const ChapterLeader = () => (
               analyticsEventLabel="Chapter Leader - Donate"
             >
               Raise funds
-            </OutboundLink>
-            {' '}
+            </OutboundLink>{' '}
             and in-kind donations in support of the mission.
           </li>
           <li>Build and integrate the infrastructure necessary to sustain the chapter.</li>
@@ -70,8 +67,7 @@ const ChapterLeader = () => (
           <li>Help members learn, grow, and find jobs!</li>
         </ul>
         <p>
-          Think you are interested in becoming a Chapter Leader? Click
-          {' '}
+          Think you are interested in becoming a Chapter Leader? Click{' '}
           <OutboundLink
             href="http://op.co.de/chapter-leader-volunteer"
             analyticsEventLabel="Chapter Leader Volunteer (Bottom)"
