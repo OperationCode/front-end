@@ -83,6 +83,7 @@
     "redux": "^4.0.1",
     "redux-devtools-extension": "^2.13.5",
     "redux-thunk": "^2.3.0",
+    "selector": "^1.0.0",
     "style-loader": "^0.23.1",
     "universal-cookie": "^3.0.4",
     "webpack": "^4.25.1"

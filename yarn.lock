@@ -10036,6 +10036,11 @@ schema-utils@^1.0.0:
     ajv-errors "^1.0.0"
     ajv-keywords "^3.1.0"
 
+selector@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/selector/-/selector-1.0.0.tgz#84b04fafc6b90bfa237a9d1b097062f163022fbd"
+  integrity sha512-Y0G7V2W8PuWyZv+w3OfTx+pu0BbWxBqEqkVCxI8q2APGYygChngpjWBiL9OzGOg9Y8JMH47sTTvLOHlaCCI5kw==
+
 semver-compare@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/semver-compare/-/semver-compare-1.0.0.tgz#0dee216a1c941ab37e9efb1788f6afc5ff5537fc"
