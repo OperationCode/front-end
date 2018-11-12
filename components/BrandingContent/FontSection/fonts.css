@@ -1,0 +1,21 @@
+.brandingFonts {
+  text-align: center;
+  margin: 3em 0;
+}
+
+.brandingFonts a {
+  color: #249cbc;
+  text-decoration: none;
+}
+
+.pfDinDisplay {
+  font-family: "PF Din Display", sans-serif;
+  font-weight: normal;
+  font-size: 3rem;
+}
+
+.notoSerif {
+  font-family: "Noto Serif", serif;
+  font-weight: normal;
+  font-size: 2.5rem;
+}
