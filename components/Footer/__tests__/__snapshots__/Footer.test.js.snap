@@ -1,114 +1,269 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Footer it should render properly no props 1`] = `
+exports[`Footer should render with no props passed 1`] = `
 <footer
   className="Footer"
 >
   <div
-    className="footerGrouping socialGrouping"
+    className="footerWrapper row"
   >
-    <a
-      className="email"
-      href="mailto:contact@operationcode.org"
+    <div
+      className="footerGrouping socialGrouping"
     >
-      contact@operationcode.org
-    </a>
-    <SocialMedia />
+      <div
+        className="logoGrouping"
+      >
+        <img
+          alt="Operation Code Logo"
+          src="https://s3.amazonaws.com/operationcode-assets/branding/logos/small-blue-logo.png"
+        />
+      </div>
+      <div
+        className="capitalize marginBottom"
+      >
+        Connect With Us!
+      </div>
+      <SocialMedia />
+    </div>
+    <div
+      className="footerGrouping linksGrouping capitalize"
+    >
+      <div
+        className="linksRow"
+      >
+        <ul
+          className="linksColumn"
+        >
+          <li>
+            <Link
+              href="/about"
+            >
+              <a>
+                About Us
+              </a>
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/team"
+            >
+              <a>
+                Team
+              </a>
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/contact"
+            >
+              <a>
+                Contact Us
+              </a>
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/faq"
+            >
+              <a>
+                FAQ
+              </a>
+            </Link>
+          </li>
+        </ul>
+        <ul
+          className="linksColumn"
+        >
+          <li>
+            <Link
+              href="/who_we_serve"
+            >
+              <a>
+                Who We Serve
+              </a>
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/code_schools"
+            >
+              <a>
+                Code Schools
+              </a>
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/jobs"
+            >
+              <a>
+                Job Board
+              </a>
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/events"
+            >
+              <a>
+                Events
+              </a>
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/blog"
+            >
+              <a>
+                Blog
+              </a>
+            </Link>
+          </li>
+        </ul>
+      </div>
+      <div
+        className="linksRow"
+      >
+        <ul
+          className="linksColumn"
+        >
+          <li>
+            <Link
+              href="/about"
+            >
+              <a>
+                About Us
+              </a>
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/team"
+            >
+              <a>
+                Team
+              </a>
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/contact"
+            >
+              <a>
+                Contact Us
+              </a>
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/faq"
+            >
+              <a>
+                FAQ
+              </a>
+            </Link>
+          </li>
+        </ul>
+        <ul
+          className="linksColumn"
+        >
+          <li>
+            <Link
+              href="/resources"
+            >
+              <a>
+                Resources
+              </a>
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/press"
+            >
+              <a>
+                Press
+              </a>
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/branding"
+            >
+              <a>
+                Branding
+              </a>
+            </Link>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div
+      className="footerGrouping newsletterGrouping"
+    >
+      <div
+        className="capitalize marginBottom"
+      >
+        Newsletter
+      </div>
+      <div
+        className="newsletterItem"
+      >
+        Subscribe to our newsletter and never miss a beat!
+      </div>
+      <input
+        className="newsletterItem"
+        placeholder="Email address"
+        type="text"
+      />
+      <Button
+        analyticsObject={
+          Object {
+            "action": "Button Selected",
+            "category": "Interactions",
+          }
+        }
+        className="newsletterItem"
+        datum=""
+        disabled={false}
+        fullWidth={false}
+        onClick={[Function]}
+        tabIndex={0}
+        theme="primary"
+        type="button"
+      >
+        Subscribe
+      </Button>
+    </div>
   </div>
   <div
-    className="footerGrouping logoGrouping"
+    className="row legalGrouping"
   >
-    <img
-      alt="Operation Code Logo"
-      src="/static/images/icons/operation_code_logo.svg"
-    />
-    <p
+    <div
       className="copyright"
     >
       Copyright 
       2018
-      <br />
-      Operation Code™
-    </p>
-  </div>
-  <div
-    className="footerGrouping linksGrouping"
-  >
-    <div
-      className="linkColumn"
-    >
-      <Link
-        href="/about"
-      >
-        <a>
-          About
-        </a>
-      </Link>
-      <Link
-        href="/press"
-      >
-        <a>
-          Press
-        </a>
-      </Link>
-      <Link
-        href="/branding"
-      >
-        <a>
-          Branding
-        </a>
-      </Link>
-      <Link
-        href="/faq"
-      >
-        <a>
-          FAQ
-        </a>
-      </Link>
-      <Link
-        href="/team"
-      >
-        <a>
-          Team
-        </a>
-      </Link>
+       Operation Code™
     </div>
     <div
-      className="linkColumn"
+      className="row legalLinks"
     >
-      <Link
-        href="/contact"
-      >
-        <a>
-          Contact
-        </a>
-      </Link>
-      <Link
-        href="/terms"
-      >
-        <a>
-          Terms of Service
-        </a>
-      </Link>
       <OutboundLink
-        analyticsEventLabel="Footer Link"
-        className=""
+        analyticsEventLabel="FooterLink"
         hasIcon={true}
-        href="https://github.com/OperationCode/operationcode_frontend/issues/new"
+        href="https://www.somefakeurl.com/"
       >
-        Report A Bug
+        Terms of Use
       </OutboundLink>
       <OutboundLink
-        analyticsEventLabel="Footer Link"
-        className=""
+        analyticsEventLabel="FooterLink"
         hasIcon={true}
-        href="https://smile.amazon.com/ch/47-4247572"
+        href="https://www.anotherfakeurl.com/"
       >
-        Amazon Smile
+        Cookies
       </OutboundLink>
       <OutboundLink
-        analyticsEventLabel="Footer Link"
-        className=""
+        analyticsEventLabel="FooterLink"
         hasIcon={true}
         href="https://www.iubenda.com/privacy-policy/8174861"
       >

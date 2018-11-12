@@ -1,44 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Section should render properly with a common use case 1 1`] = `
+exports[`Section should render common use case 1`] = `
 <section
-  className="Section mist"
+  className="Section white"
   style={Object {}}
 >
   <h2
     className="Heading slate headingLines"
     id=""
   >
-    Test 3
+    Test 2
   </h2>
   <div
-    className="content"
+    className="content undefined"
   >
-    Test Children 4
+    Test Children 3
   </div>
 </section>
 `;
 
-exports[`Section should render properly with a common use case 2 1`] = `
-<section
-  className="Section slate"
-  style={Object {}}
->
-  <h2
-    className="Heading white"
-    id=""
-  >
-    Test 4
-  </h2>
-  <div
-    className="content"
-  >
-    Test Children 5
-  </div>
-</section>
-`;
-
-exports[`Section should render properly with all props assigned 1`] = `
+exports[`Section should render with many props assigned 1`] = `
 <section
   className="testing-123 Section grayLight"
   style={
@@ -54,40 +35,21 @@ exports[`Section should render properly with all props assigned 1`] = `
     Test
   </h2>
   <div
-    className="content"
+    className="content TestClassName"
   >
     Test Children 2
   </div>
 </section>
 `;
 
-exports[`Section should render properly with the most common use case 1`] = `
-<section
-  className="Section white"
-  style={Object {}}
->
-  <h2
-    className="Heading slate headingLines"
-    id=""
-  >
-    Test 2
-  </h2>
-  <div
-    className="content"
-  >
-    Test Children 3
-  </div>
-</section>
-`;
-
-exports[`Section should render with just required props passed 1`] = `
+exports[`Section should render with required props 1`] = `
 <section
   className="Section gray"
   style={Object {}}
 >
   
   <div
-    className="content"
+    className="content undefined"
   >
     Test Children
   </div>

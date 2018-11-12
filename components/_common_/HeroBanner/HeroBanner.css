@@ -6,14 +6,21 @@
   color: #ffffff;
   display: flex;
   flex-direction: column;
-  height: 480px;
+  min-height: 65vh;
   justify-content: center;
   text-shadow: #111111 0 0 15px;
   width: 100%;
 }
 
 .content {
-  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: auto;
+  width: 90%;
+  align-self: center;
+  margin-top: 3rem;
 }
 
 /* TODO: Create <Hr /> component and use that to match drop-shadow on header */
@@ -23,8 +30,7 @@
   text-align: center;
 }
 
-@media only screen and (max-width: 768px) {
-  .HeroBanner {
-    height: 320px;
-  }
+.fullViewHeight {
+  min-height: 100vh;
+  width: auto;
 }

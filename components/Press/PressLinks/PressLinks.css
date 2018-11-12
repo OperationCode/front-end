@@ -1,0 +1,12 @@
+.logos a {
+  color: #249cbc;
+  text-decoration: none;
+}
+
+.logos .flexContainer {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  padding: 15px 0 0 0;
+}

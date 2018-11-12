@@ -21,7 +21,12 @@ module.exports = {
   // collectCoverage: true,
 
   // An array of glob patterns indicating a set of files for which coverage information should be collected
-  collectCoverageFrom: ['<rootDir>/common/**/*.js', '<rootDir>/components/**/*.js'],
+  collectCoverageFrom: [
+    '<rootDir>/common/**/*.js',
+    '<rootDir>/components/**/*.js',
+    '!<rootDir>/common/**/index.js',
+    '!<rootDir>/components/**/index.js',
+  ],
 
   // The directory where Jest should output its coverage files
   coverageDirectory: '<rootDir>/coverage',
@@ -37,7 +42,9 @@ module.exports = {
 
     // No real logic to test here
     '<rootDir>/common/utils/api-utils.js',
+    '<rootDir>/components/FAQ/questions.js',
     '<rootDir>/components/ZipRecruiterJobs/ZipRecruiterJobs.js',
+    '<rootDir>/components/Press/PressLinks/Articles.js',
 
     // Ignore Next.js files
     '<rootDir>/components/head.js',
@@ -126,7 +133,7 @@ module.exports = {
   // runner: "jest-runner",
 
   // The paths to modules that run some code to configure or set up the testing environment before each test
-  // setupFiles: [],
+  setupFiles: ['jest-prop-type-error'],
 
   // The path to a module that runs some code to configure or set up the testing framework before each test
   setupTestFrameworkScriptFile: '<rootDir>/jest.setup.js',

@@ -141,6 +141,15 @@ const recurseStructure = (subObject, currPath, componentName) => {
 
 // Function runner
 (() => {
+  if (process.argv.length < 3) {
+    console.error(
+      'Error: You must provide at least one component name to script.',
+      'Example: "yarn create-component componentName"',
+    );
+
+    return;
+  }
+
   const mainTree = componentStruct.root;
   const root = findRoot();
 

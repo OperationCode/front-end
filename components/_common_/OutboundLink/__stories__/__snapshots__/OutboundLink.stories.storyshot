@@ -2,13 +2,14 @@
 
 exports[`Storyshots Common/OutboundLink default 1`] = `
 <a
-  className=""
   href="https://whitehouse.gov"
+  onClick={[Function]}
   rel="noopener noreferrer"
   target="_blank"
+  to="https://whitehouse.gov"
 >
   <span
-    className="screenReaderOnly"
+    className="ScreenReaderOnly"
   >
     Opens in new window
   </span>

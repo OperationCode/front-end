@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`HeroBanner should render properly with all props assigned 1`] = `
+exports[`HeroBanner should render with many props assigned 1`] = `
 <div
   className="testing-123 HeroBanner"
   style={
     Object {
-      "backgroundImage": "url(https://s3.amazonaws.com/operationcode-assets/heroBanner/stock_family-2.jpg)",
+      "backgroundImage": "linear-gradient(rgba(33, 48, 69, 0.65),rgba(33, 48, 69, 0.65)), url(https://s3.amazonaws.com/operationcode-assets/heroBanner/stock_family-2.jpg)",
     }
   }
 >
@@ -22,12 +22,12 @@ exports[`HeroBanner should render properly with all props assigned 1`] = `
 </div>
 `;
 
-exports[`HeroBanner should render with just required props passed 1`] = `
+exports[`HeroBanner should render with required props 1`] = `
 <div
   className="HeroBanner"
   style={
     Object {
-      "backgroundImage": "url(https://s3.amazonaws.com/operationcode-assets/heroBanner/stock_family-2.jpg)",
+      "backgroundImage": "linear-gradient(rgba(33, 48, 69, 0.65),rgba(33, 48, 69, 0.65)), url(https://s3.amazonaws.com/operationcode-assets/heroBanner/stock_family-2.jpg)",
     }
   }
 >

@@ -18,7 +18,7 @@ html {
   height: 100%;
   margin: 0;
   padding: 0;
-  font-family: "Noto Serif", sans-serif;
+  font-family: "Noto Serif", serif;
   font-size: 16px;
   font-weight: normal;
   color: #47566b;
@@ -28,6 +28,7 @@ body {
   line-height: 1.5;
   hyphens: none;
   margin: 0;
+  min-width: 300px;
 }
 
 h1,
@@ -36,9 +37,14 @@ h3,
 h4,
 h5,
 h6,
-a,
-button {
+button,
+footer {
   font-family: "PF Din Display", Arial, sans-serif;
+}
+
+footer {
+  color: var(--mist);
+  background-color: var(--navy);
 }
 
 h1,
@@ -49,6 +55,15 @@ h5,
 h6 {
   margin: 0;
   padding: 0;
+}
+
+a {
+  color: currentColor;
+}
+
+p {
+  line-height: 1.75;
+  max-width: 700px;
 }
 
 #root {

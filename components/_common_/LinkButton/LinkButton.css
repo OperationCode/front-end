@@ -1,0 +1,35 @@
+.LinkButton {
+  background-color: rgba(0, 0, 0, 0); /* transparent */
+  border-radius: 3px;
+  border: 4px solid var(--primary);
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 1.25;
+  min-width: 200px;
+  padding: 1rem;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color 0.2s linear, border-color 0.2s linear, outline 0.2s linear;
+}
+
+.LinkButton:active,
+.LinkButton:focus,
+.LinkButton:hover {
+  background-color: var(--primary);
+}
+
+.LinkButton:active {
+  text-decoration: underline;
+}
+
+.filled {
+  background-color: var(--primary);
+}
+
+.filled:focus,
+.filled:hover {
+  outline: 3px solid var(--primary);
+  outline-offset: 1px;
+}

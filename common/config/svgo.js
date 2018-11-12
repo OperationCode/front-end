@@ -26,6 +26,11 @@ const svgoConfig = {
     { removeUselessStrokeAndFill: true },
     { removeXMLProcInst: true },
     { sortAttrs: true },
+    {
+      addAttributesToSVGElement: {
+        attribute: 'aria-hidden="true"',
+      },
+    },
   ],
   floatPrecision: 3,
 };

@@ -2,12 +2,13 @@
   padding: 1rem 0;
 }
 
-.link {
-  color: #1a0dab;
+.job h6 {
+  display: inline;
 }
 
 .details {
   display: flex;
+  flex-wrap: wrap;
   font-size: 1.125rem;
   color: var(--grayDark);
   margin-top: 0.25rem;

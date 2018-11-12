@@ -6,25 +6,25 @@ import { mount } from 'enzyme';
 import FormInput from '../FormInput';
 
 describe('FormInput', () => {
-  test('should render with just required props passed', () => {
+  it('should render with required props', () => {
     createSnapshotTest(<FormInput id="test" />);
   });
 
-  test('should render with label', () => {
+  it('should render with label', () => {
     createSnapshotTest(<FormInput id="test" label="Testinput" />);
   });
 
-  test('should show error onChange if value is empty', () => {
+  it('should call onChange from props after onChange', () => {
     const onChangeMock = jest.fn();
     const wrap = mount(<FormInput onChange={onChangeMock} id="test" />);
     wrap.find('input').simulate('change', {
       target: { value: 'Test' },
     });
     expect(onChangeMock).toHaveBeenCalledTimes(1);
-    expect(onChangeMock).toBeCalledWith('Test', true);
+    expect(onChangeMock).toHaveBeenCalledWith('Test', true);
   });
 
-  test('should show error onChange if value is empty', () => {
+  it('should show error onChange if value is empty', () => {
     const validationErrorMessage = 'invalid input';
     const wrap = mount(<FormInput validationErrorMessage={validationErrorMessage} id="test" />);
     wrap.find('input').simulate('change', {
@@ -33,7 +33,7 @@ describe('FormInput', () => {
     expect(wrap.find('span').text()).toBe(validationErrorMessage);
   });
 
-  test('should show no error onChange if value is not empty', () => {
+  it('should show no error onChange if value is not empty', () => {
     const validationErrorMessage = 'invalid input';
     const wrap = mount(<FormInput validationErrorMessage={validationErrorMessage} id="test" />);
     wrap.find('input').simulate('change', {
@@ -42,7 +42,7 @@ describe('FormInput', () => {
     expect(wrap.exists('span')).toBe(false);
   });
 
-  test('should show error onChange if error with validateFunc', () => {
+  it('should show error onChange if error with validateFunc', () => {
     const validationErrorMessage = 'invalid input';
     const inputShouldContainString = 'Teststring1234';
     const wrap = mount(
@@ -64,7 +64,7 @@ describe('FormInput', () => {
     expect(wrap.exists('span')).toBe(false);
   });
 
-  test('should show error onChange if error with validationRegex', () => {
+  it('should show error onChange if error with validationRegex', () => {
     const validationErrorMessage = 'invalid input';
     const validationRegex = new RegExp('^Test');
     const wrap = mount(

@@ -12,7 +12,7 @@ YouTubeVideo.propTypes = {
 };
 
 YouTubeVideo.defaultProps = {
-  className: '',
+  className: undefined,
   height: 390,
   width: 640,
 };

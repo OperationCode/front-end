@@ -3,7 +3,7 @@
   <a href="https://operationcode.org">
     <img
       alt="Operation Code Hacktoberfest Banner"
-      src="https://s3.amazonaws.com/operationcode-assets/operationcode-hacktoberfest-2018.png"
+      src="https://s3.amazonaws.com/operationcode-assets/branding/logos/large-blue-logo.png"
     >
   </a>
   <br />
@@ -41,7 +41,7 @@ Our entire UI library is documented via [![Storybook](https://github.com/storybo
 Recommended versions of tools used within the repo:
 
 - Node: See [.nvmrc](https://github.com/OperationCode/front-end/blob/master/.nvmrc)
-- `yarn@1.7.0` or greater
+- `yarn@1.12.1` or greater
 - `git@2.17.1` or greater
 
 ```sh

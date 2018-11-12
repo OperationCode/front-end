@@ -13,7 +13,7 @@ exports[`CloseButton should render as disabled 1`] = `
 </button>
 `;
 
-exports[`CloseButton should render with just required props passed 1`] = `
+exports[`CloseButton should render with required props 1`] = `
 <button
   className="CloseButton"
   disabled={false}

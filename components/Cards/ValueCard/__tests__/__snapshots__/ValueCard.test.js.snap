@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ValueCard should render properly with all required props assigned 1`] = `
+exports[`ValueCard should render with required props 1`] = `
 <article
   className="Card ValueCard"
 >

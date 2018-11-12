@@ -1,4 +1,8 @@
 {
-  "public": true,
-  "type": "static"
+  "name": "operation-code-new",
+  "static": {
+    "trailingSlash": false
+  },
+  "type": "static",
+  "public": true
 }

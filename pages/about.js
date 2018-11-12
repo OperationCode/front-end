@@ -1,4 +1,3 @@
-import React from 'react';
 import Link from 'next/link';
 import Head from 'components/head';
 import HeroBanner from 'components/_common_/HeroBanner/HeroBanner';
@@ -9,7 +8,7 @@ import { s3 } from 'common/constants/urls';
 import styles from './styles/about.css';
 
 export default () => (
-  <>
+  <div className={styles.about}>
     <Head title="About" />
 
     <HeroBanner
@@ -49,7 +48,7 @@ export default () => (
       </p>
     </Section>
 
-    <Section theme="mist" title="What We Do">
+    <Section theme="slate" title="What We Do">
       <div className={styles.flexGrid}>
         <ImageCard
           alt="Two women pair programming"
@@ -170,5 +169,5 @@ export default () => (
         />
       </div>
     </Section>
-  </>
+  </div>
 );
