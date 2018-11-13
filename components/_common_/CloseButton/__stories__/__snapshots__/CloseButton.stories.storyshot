@@ -7,7 +7,7 @@ exports[`Storyshots Common/CloseButton default 1`] = `
   onClick={[Function]}
   type="button"
 >
-  <test-file-mock
+  <svg
     className="icon"
   />
 </button>

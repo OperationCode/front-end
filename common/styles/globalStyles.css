@@ -5,6 +5,7 @@
 @font-face {
   font-family: "PF Din Display";
   font-weight: normal;
+  font-display: auto;
 
   /* prettier-ignore */
   src:

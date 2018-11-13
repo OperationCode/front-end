@@ -6,7 +6,7 @@ exports[`SocialMedia should render with no props passed passed 1`] = `
     href="https://facebook.com/operationcode.org"
     name="Facebook"
     svg={
-      <test-file-mock
+      <Svg
         className="logo"
       />
     }
@@ -15,7 +15,7 @@ exports[`SocialMedia should render with no props passed passed 1`] = `
     href="https://twitter.com/operation_code"
     name="Twitter"
     svg={
-      <test-file-mock
+      <Svg
         className="logo"
       />
     }
@@ -24,7 +24,7 @@ exports[`SocialMedia should render with no props passed passed 1`] = `
     href="https://www.instagram.com/operation_code/"
     name="Instagram"
     svg={
-      <test-file-mock
+      <Svg
         className="logo"
       />
     }

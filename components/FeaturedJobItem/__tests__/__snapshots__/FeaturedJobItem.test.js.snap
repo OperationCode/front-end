@@ -19,7 +19,7 @@ exports[`FeaturedJobItem should render with many props assigned 1`] = `
     <h6>
       Experienced React Engineer
     </h6>
-    <test-file-mock
+    <svg
       className="externalLinkIcon"
     />
   </a>
@@ -29,7 +29,7 @@ exports[`FeaturedJobItem should render with many props assigned 1`] = `
     <div
       className="detailsContainer"
     >
-      <test-file-mock
+      <svg
         className="icon"
       />
       <span
@@ -41,7 +41,7 @@ exports[`FeaturedJobItem should render with many props assigned 1`] = `
     <div
       className="detailsContainer"
     >
-      <test-file-mock
+      <svg
         className="icon"
       />
       <span
@@ -65,7 +65,7 @@ exports[`FeaturedJobItem should render with many props assigned 1`] = `
     <div
       className="detailsContainer"
     >
-      <test-file-mock
+      <svg
         className="icon"
       />
       <span
@@ -102,7 +102,7 @@ exports[`FeaturedJobItem should render with required props 1`] = `
     <h6>
       DevOps Engineer
     </h6>
-    <test-file-mock
+    <svg
       className="externalLinkIcon"
     />
   </a>
@@ -112,7 +112,7 @@ exports[`FeaturedJobItem should render with required props 1`] = `
     <div
       className="detailsContainer"
     >
-      <test-file-mock
+      <svg
         className="icon"
       />
       <span
