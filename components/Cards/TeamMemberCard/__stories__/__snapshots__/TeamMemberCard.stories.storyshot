@@ -41,7 +41,7 @@ exports[`Storyshots Cards/TeamMemberCard default 1`] = `
         </span>
         @
         kylemh_
-        <test-file-mock
+        <svg
           className="externalLinkIcon"
         />
       </a>
