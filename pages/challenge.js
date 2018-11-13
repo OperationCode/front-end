@@ -37,7 +37,6 @@ class Challenge extends React.Component {
       <div>
         <Section title="Operation Code Challenge" theme="white" className={styles.displayBlock}>
           <div>
-            {' '}
             Welcome to the Operation Code challenge! The goal of this challenge is to get you to
             easily commit your first change to a program, see the results of the change, and leave
             your mark on Operation Code itself! To do this we&apos;re going to take a look at a
@@ -110,7 +109,7 @@ class Challenge extends React.Component {
               <OutboundLink analyticsEventLabel={`${CompareLink}`} href={`${CompareLink}`}>
                 {' '}
               </OutboundLink>
-              &nbsp;here , to open Operation Code&apos;s &quot;New pull request&quot; interface. You
+              &nbsp;, to open Operation Code&apos;s &quot;New pull request&quot; interface. You
               should see a &quot;Compare changes&quot; headline. Just below that is a link within
               the text:&nbsp; &apos;compare across forks&apos; - click it. Now, click on the
               selector that says &apos; head fork&apos; at the beginning, and choose your fork.
