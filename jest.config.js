@@ -47,6 +47,10 @@ module.exports = {
     '<rootDir>/components/FAQ/questions.js',
     '<rootDir>/components/ZipRecruiterJobs/ZipRecruiterJobs.js',
     '<rootDir>/components/Press/PressLinks/Articles.js',
+    '<rootDir>/store/store',
+    '<rootDir>/store/initialState',
+    '<rootDir>/store/**/types',
+    '<rootDir>/store/**/actions',
 
     // Ignore Next.js files
     '<rootDir>/components/head.js',
