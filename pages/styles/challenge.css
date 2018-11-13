@@ -1,0 +1,40 @@
+/* TODO: Move <code> styles to global stylesheet */
+code {
+  background-color: #f0f2f2;
+  border-radius: 4px;
+  border-style: solid;
+  border-color: #f0f2f2;
+}
+
+.instructionList img {
+  max-width: 100%;
+  height: auto;
+  padding: 0 10px; /* On this component, all non-classed images are inline */
+}
+
+.displayLinebreak {
+  white-space: pre-line;
+  text-align: center;
+}
+
+.displayBlock > div {
+  display: block;
+}
+
+.instructionList {
+  line-height: 1.5;
+  padding: 0 0 0 5px;
+  margin: 0;
+}
+
+.instructionList li {
+  padding: 0 0 25px 0;
+}
+
+.blockImage {
+  padding: 0 !important;
+}
+
+.centerText {
+  text-align: center;
+}
