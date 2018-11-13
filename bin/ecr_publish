@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-# import util functions
-source "${SCRIPTDIR}/../lib/util.sh"
-
 echo "Logging into ECR..."
 AWS_LOGIN=$(runCommand "aws ecr get-login --region $AWS_REGION --no-include-email")
 
