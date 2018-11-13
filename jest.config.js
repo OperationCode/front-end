@@ -24,6 +24,7 @@ module.exports = {
   collectCoverageFrom: [
     '<rootDir>/common/**/*.js',
     '<rootDir>/components/**/*.js',
+    '<rootDir>/store/**/*.js',
 
     // Don't collect coverage from import/export mappers
     '!<rootDir>/common/**/index.js',
@@ -47,10 +48,10 @@ module.exports = {
     '<rootDir>/components/FAQ/questions.js',
     '<rootDir>/components/ZipRecruiterJobs/ZipRecruiterJobs.js',
     '<rootDir>/components/Press/PressLinks/Articles.js',
-    '<rootDir>/store/store',
-    '<rootDir>/store/initialState',
-    '<rootDir>/store/**/types',
-    '<rootDir>/store/**/actions',
+    '<rootDir>/store/store.js',
+    '<rootDir>/store/initialState.js',
+    '<rootDir>/store/**/types.js',
+    '<rootDir>/store/**/actions.js',
 
     // Ignore Next.js files
     '<rootDir>/components/head.js',
