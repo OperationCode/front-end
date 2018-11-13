@@ -7,7 +7,7 @@ env:
   - secure: "HTAr1re6wF/zhUJKA8HAkzRUIzT+iEVNjUHEut/OZ9nPE8W7ss4uKW3iv3RQBWSwVZjMNQ3imzddyBUvPeUGLw4m3vnwLvkIRDYrAstbAbEOj1qU16gUtJhmKTNvijQwtllDNua6EyhuRQ4GITNq/hlIIB1esH/n2nA/u0ael7VJmULbn3tOTorzXth9Ux/OKG7GC0FW3ukiJldT9uPmL0h9NvHw+1lDdimzW58Rke1uQ0wQoexdaG7uPT4aUaQWMByMSCDGUYkeukh78yy5FJPfmopo8BL8qxSYkJLn1G2vaUzEFGcLtq7bZhiViZyT+5957dtDfql0uUnFH8sonE5GHTcxsuXi0qMAyJZoUN7Wmb/AIsi6OYK19MQyDNBbfPuyKQxcUo9MOdjaNgbMTVHFKlFNb15iP634515+OHHq1ICoWM8Npz+PPr/iyRoBvQfryl8utS5njQlEzC/7eNPG9mH6hDxtysYrGpoIUUD8NVlWsUN3GVWeEZEEF8DaRQ2LS2YQqY1hmrVt6lGAeR5qQ4xOlv3oD9xiVXPF9lyI3oqwhloHDUARzxHisqk/s3PckwA7elrJT6oewb5xX8bNkV+Gf1ufP0oTUn/3Q8MDnm5/Wta488HsV/OJYNQDwILmpp59MZGMuoyCdZI0dlpvEDPI4s5EHErUyyzSBQI="
   - REMOTE_IMAGE_URL=633607774026.dkr.ecr.us-east-2.amazonaws.com/front-end
 
-language: node_js
+# node_js: # not needed - `.nvmrc` at root-level
 
 cache:
   yarn: true
