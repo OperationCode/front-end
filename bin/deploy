@@ -41,4 +41,4 @@ EOF
 
 # Update the deployment
 # For now I want to keep it as the previous name since I kube uses it
-KUBECONFIG=${KUBE_CONFIG} ./kubectl set image deployment/operationcode-frontend app=operationcode/operationcode_frontend:${TRAVIS_BUILD_NUMBER}
+KUBECONFIG=${KUBE_CONFIG} ./kubectl set image deployment/front-end app=operationcode/front-end:${TRAVIS_BUILD_NUMBER}
