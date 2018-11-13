@@ -1,7 +1,9 @@
 import Link from 'next/link';
 import Head from 'components/head';
 import Section from 'components/_common_/Section/Section';
-import { Videos, Photos, CivicXBadge, Links } from 'components/Press';
+import {
+ Videos, Photos, CivicXBadge, Links 
+} from 'components/Press';
 import styles from './styles/press.css';
 
 export default () => (

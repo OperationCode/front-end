@@ -21,10 +21,10 @@
     "start": "next start",
     "storybook": "start-storybook -s ./static -p 9001 -c .storybook",
     "test": "cross-env NODE_ENV=test BABEL_ENV=test jest",
-    "test:ci": "cross-env NODE_ENV=test BABEL_ENV=test jest --ci --coverage",
-    "test:changes": "cross-env NODE_ENV=test BABEL_ENV=test jest --changedSince master",
-    "test:changes:watch": "cross-env NODE_ENV=test BABEL_ENV=test jest --changedSince master --watch",
-    "test:update-snaps": "cross-env NODE_ENV=test BABEL_ENV=test jest -u"
+    "test:ci": "yarn test --ci --coverage",
+    "test:changes": "yarn test --changedSince master",
+    "test:changes:watch": "yarn test --changedSince master --watch",
+    "test:update-snaps": "yarn test -u"
   },
   "lint-staged": {
     "*.js": [
@@ -70,8 +70,8 @@
     "postcss-loader": "^3.0.0",
     "prop-types": "^15.6.2",
     "query-string": "^6.2.0",
-    "react": "^16.6.1",
-    "react-dom": "^16.6.1",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
     "react-ga": "^2.5.3",
     "react-modal": "^3.6.1",
     "react-on-screen": "^2.1.0",
@@ -93,7 +93,7 @@
     "enzyme-to-json": "^3.3.4",
     "eslint": "5.9.0",
     "eslint-config-airbnb": "^17.1.0",
-    "eslint-config-prettier": "^3.2.0",
+    "eslint-config-prettier": "^3.3.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jest": "^22.0.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
@@ -107,7 +107,7 @@
     "lint-staged": "^8.0.4",
     "prettier": "^1.15.2",
     "react-addons-test-utils": "^15.6.2",
-    "react-test-renderer": "^16.6.1",
+    "react-test-renderer": "^16.6.3",
     "stylelint": "^9.8.0",
     "stylelint-config-standard": "^18.2.0"
   },

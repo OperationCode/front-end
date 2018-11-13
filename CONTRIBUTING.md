@@ -16,35 +16,34 @@ Being an open source project involving contributors of varying levels of experie
 
 ## Table Of Contents
 
-- [Guide To Contribution](#guide-to-contribution)
-	- [Table Of Contents](#table-of-contents)
-	- [Git and GitHub](#git-and-github)
-		- [Git](#git)
-		- [GitHub Workflow](#github-workflow)
-	- [Explanations](#explanations)
-		- [What Is The Front-End?](#what-is-the-front-end)
-		- [What Is The Back-End?](#what-is-the-back-end)
-		- [What is REST? What is an API?](#what-is-rest-what-is-an-api)
-	- [Technologies](#technologies)
-	- [Development Workflow](#development-workflow)
-		- [Installing Dependencies](#installing-dependencies)
-		- [Run The Development Server](#run-the-development-server)
-		- [Returning To Work After A Break](#returning-to-work-after-a-break)
-		- [Knowing The Tools At Your Disposal](#knowing-the-tools-at-your-disposal)
-		- [File Structure](#file-structure)
-		- [npm Scripts With Explanations](#npm-scripts-with-explanations)
-	- [Mocking Back-end Server API](#mocking-back-end-server-api)
-	- [Resources](#resources)
-	- [Navigating Operating System Differences](#navigating-operating-system-differences)
-		- [MacOS](#macos)
-			- [Update Your Mac](#update-your-mac)
-			- [Xcode Command Line Tools](#xcode-command-line-tools)
-			- [Homebrew](#homebrew)
-			- [Git](#git)
-			- [NodeJS](#nodejs)
-		- [Windows](#windows)
-			- [Git](#git)
-			- [NodeJS](#nodejs)
+    - [Table Of Contents](#table-of-contents)
+    - [Git and GitHub](#git-and-github)
+    	- [Git](#git)
+    	- [GitHub Workflow](#github-workflow)
+    - [Explanations](#explanations)
+    	- [What Is The Front-End?](#what-is-the-front-end)
+    	- [What Is The Back-End?](#what-is-the-back-end)
+    	- [What is REST? What is an API?](#what-is-rest-what-is-an-api)
+    - [Technologies](#technologies)
+    - [Development Workflow](#development-workflow)
+    	- [Installing Dependencies](#installing-dependencies)
+    	- [Run The Development Server](#run-the-development-server)
+    	- [Returning To Work After A Break](#returning-to-work-after-a-break)
+    	- [Knowing The Tools At Your Disposal](#knowing-the-tools-at-your-disposal)
+    	- [File Structure](#file-structure)
+    	- [npm Scripts With Explanations](#npm-scripts-with-explanations)
+    - [Mocking Back-end Server API](#mocking-back-end-server-api)
+    - [Resources](#resources)
+    - [Navigating Operating System Differences](#navigating-operating-system-differences)
+    	- [MacOS](#macos)
+    		- [Update Your Mac](#update-your-mac)
+    		- [Xcode Command Line Tools](#xcode-command-line-tools)
+    		- [Homebrew](#homebrew)
+    		- [Git](#git)
+    		- [NodeJS](#nodejs)
+    	- [Windows](#windows)
+    		- [Git](#git)
+    		- [NodeJS](#nodejs)
 
 ## Git and GitHub
 
@@ -140,7 +139,7 @@ You can see interactive documentation on all of our components via [![Storybook]
 |   ├── _common_  # Reusable lego blocks that form the foundation of many components.
 |   ├── ReusableSections  # These sections get used many times throughout our pages, but are not necessarily composable or reusable.
 |   ├── *  # All the remaining folders are more to modularize logic, rather than serve as reusable code.
-|   ├── head.js  # Next.js-specific component to handle a page's meta info (and the rest of it's <head> tag) dynamically
+|   ├── head.js  # Next.js-specific component to handle a page's meta info (and the rest of it's <head> tag) dynamically
 |   └── nav.js
 |
 ├── pages
@@ -154,17 +153,22 @@ You can see interactive documentation on all of our components via [![Storybook]
 ├── scripts
 |   └── createComponent
 |
-└── static
+├── static
 |   ├── fonts
 |   └── images
 |       └── icons  # SVG icons only
 |
-└── test-utils
-	├── mocks  # Contains commonly mocked components, functions, and classes for testing purposes
-	├── createComponentInstance.js
-	├── createShallowSnapshotTest.js
-	├── createSnapshotTest.js
-	└── setupTests.js
+├── test-utils
+|   ├── mocks  # Contains commonly mocked components, functions, and classes for testing purposes
+|   ├── createComponentInstance.js
+|   ├── createShallowSnapshotTest.js
+|   ├── createSnapshotTest.js
+|   └── setupTests.js
+|
+├── internationalized-documentation
+|    └ * # Folders per language plus an English-only README to describe how to contribute translations of documentation.
+|
+* - Root-level files are configuration and documentation.
 ```
 
 ### npm Scripts With Explanations
@@ -189,7 +193,7 @@ yarn build
 yarn lint
 
 # Similar instructions are in a precommit hook to ensure that code you’re committing is up to our linting and formatting standards. You can use this command locally before comitting to ensure that you don't need to ammend your commit from formatting changes.
-yarn format-all
+yarn format
 
 # Start the main application server or to serve up a production build locally.
 yarn start
@@ -200,7 +204,7 @@ yarn test
 #Create all the necessary files/folders for a new, reusable component. Please make `ComponentName` TitleCase.
 yarn create-component $ComponentName
 
-#Create a new page in the pages directory. 
+#Create a new page in the pages directory.
 yarn create-page $pageName
 ```
 
@@ -338,6 +342,7 @@ You can also install Github Desktop for a GUI Interface to Github. If you do thi
 There are many ways and guides to install NodeJS on Windows. We recommend using [nvm-windows](https://github.com/coreybutler/nvm-windows).
 
 The resources below are from Microsoft.
+
 - [NodeJS On Windows Guidelines](https://github.com/Microsoft/nodejs-guidelines)
 - [Configuring your Windows development environment for NodeJS](https://github.com/Microsoft/nodejs-guidelines/blob/master/windows-environment.md#configuring-your-windows-development-environment)
 
