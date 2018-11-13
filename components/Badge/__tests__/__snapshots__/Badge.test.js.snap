@@ -7,7 +7,7 @@ exports[`Badge should render with many props assigned 1`] = `
   <div
     className="iconContainer"
   >
-    <test-file-mock />
+    <svg />
   </div>
   <span
     className="label"
@@ -24,7 +24,7 @@ exports[`Badge should render with required props 1`] = `
   <div
     className="iconContainer"
   >
-    <test-file-mock />
+    <svg />
   </div>
   <span
     className="label"

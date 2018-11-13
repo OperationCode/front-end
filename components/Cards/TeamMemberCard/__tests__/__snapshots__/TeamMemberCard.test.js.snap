@@ -41,7 +41,7 @@ exports[`TeamMemberCard should render with many props assigned 1`] = `
         </span>
         @
         kylemh
-        <test-file-mock
+        <svg
           className="externalLinkIcon"
         />
       </a>

@@ -53,7 +53,7 @@ exports[`JoinSection should render with required props 1`] = `
         Opens in new window
       </span>
       Learn more
-      <test-file-mock
+      <svg
         className="externalLinkIcon"
       />
     </a>

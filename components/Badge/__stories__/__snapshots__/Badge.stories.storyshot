@@ -7,7 +7,7 @@ exports[`Storyshots Common/Badge default 1`] = `
   <div
     className="iconContainer"
   >
-    <test-file-mock />
+    <svg />
   </div>
   <span
     className="label"

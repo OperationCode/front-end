@@ -10,7 +10,7 @@ exports[`UpgradeBrowserOverlay should render with no props passed 1`] = `
   screenReaderLabel="Upgrade Your Browser"
   shouldCloseOnOverlayClick={false}
 >
-  <test-file-mock
+  <Svg
     className="warningLogo"
   />
   <h1>
