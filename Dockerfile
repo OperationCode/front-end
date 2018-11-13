@@ -16,4 +16,5 @@ COPY . .
 
 EXPOSE 8080
 # We run the build and expose as /public
-CMD ["npm", "run" "start:server"]
+RUN yarn build
+RUN yarn export -o /public
