@@ -44,7 +44,7 @@ exports[`Storyshots ReusableSections DonateSection 1`] = `
           Opens in new window
         </span>
         Donate Now
-        <test-file-mock
+        <svg
           className="externalLinkIcon"
         />
       </a>
@@ -106,7 +106,7 @@ exports[`Storyshots ReusableSections JoinSection 1`] = `
         Opens in new window
       </span>
       Learn more
-      <test-file-mock
+      <svg
         className="externalLinkIcon"
       />
     </a>
