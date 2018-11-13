@@ -5,6 +5,8 @@ env:
   - AWS_REGION=us-east-2
   - REMOTE_IMAGE_URL=633607774026.dkr.ecr.us-east-2.amazonaws.com/front-end
 
+language: node_js
+
 cache:
   yarn: true
   directories:
