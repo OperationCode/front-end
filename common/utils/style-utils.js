@@ -84,14 +84,14 @@ export function getSortedBreakpointValues(arrayOfBreakpointValues) {
  * @returns {Breakpoints}
  */
 export function getBreakpoints(arrayOfBreakpointValues) {
-  const sortedBreakpointValues = getSortedBreakpointValues(arrayOfBreakpointValues);
-
-  if (sortedBreakpointValues.length !== 4) {
+  if (arrayOfBreakpointValues.length !== 4) {
     throw new Error(`
       We require a small, medium, large, and extra-large breakpoint. Ensure
       "common/styles/variables.css" has exactly 4 breakpoint values.
     `);
   }
+
+  const sortedBreakpointValues = getSortedBreakpointValues(arrayOfBreakpointValues);
 
   return {
     sm: sortedBreakpointValues[0],
