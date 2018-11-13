@@ -1,3 +1,4 @@
+import Head from 'components/head';
 import classNames from 'classnames';
 import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
 import Section from 'components/_common_/Section/Section';
@@ -43,6 +44,8 @@ const supportItems = [
 
 export default () => (
   <div>
+    <Head title="Get Involved" />
+
     <Section theme="slate" title="You Can Make An Impact">
       <div>
         Whether you&apos;re interested in mentoring, supporting our operations, or simply donating
