@@ -1,15 +1,17 @@
 import NextHead from 'next/head';
-import { string } from 'prop-types';
+import PropTypes from 'prop-types';
 import { s3 } from 'common/constants/urls';
 
 Head.propTypes = {
-  title: string,
-  description: string,
-  url: string,
-  ogImage: string,
+  children: PropTypes.element,
+  title: PropTypes.string,
+  description: PropTypes.string,
+  url: PropTypes.string,
+  ogImage: PropTypes.string,
 };
 
 Head.defaultProps = {
+  children: undefined,
   title: undefined,
   description:
     // eslint-disable-next-line max-len
@@ -18,7 +20,7 @@ Head.defaultProps = {
   ogImage: `${s3}branding/logos/small-blue-logo.png`,
 };
 
-function Head({ description, ogImage, title, url }) {
+function Head({ children, title, description, url, ogImage }) {
   return (
     <NextHead>
       <meta charSet="UTF-8" />
@@ -34,6 +36,9 @@ function Head({ description, ogImage, title, url }) {
       <meta property="og:image" content={ogImage} />
 
       {/* Constant meta tags are supplied in `_document.js` */}
+
+      {/* children must be `<link>` or `<meta>` */}
+      {children}
     </NextHead>
   );
 }
