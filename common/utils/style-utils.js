@@ -27,6 +27,32 @@ export function hasPixelSuffix(someString) {
 }
 
 /**
+ * @description Check to see if a string is a valid hex color
+ *
+ * @exports
+ * @param {string} someString
+ * @throws Will throw an error if method is not passed a string
+ * @returns {boolean}
+ */
+export function isHexColor(someString) {
+  if (typeof someString !== 'string') {
+    throw new Error('Must pass a string to this method.');
+  }
+
+  // #FFF (smallest possible hex color pattern)
+  // #FFFFFF (largest possible hex color pattern)
+  const stringLength = someString.length;
+  if (stringLength !== 4 && stringLength !== 7) {
+    return false;
+  }
+
+  // Edge Cases: If you pass characters unrelated to a hex letter like 'g' or '+'
+  // and it begins with a hashtag, you'll get a false-positive
+
+  return someString.startsWith('#');
+}
+
+/**
  * @description Get a sorted array of every breakpoint value converted to a number
  *
  * @exports
@@ -73,30 +99,4 @@ export function getBreakpoints(arrayOfBreakpointValues) {
     lg: sortedBreakpointValues[2],
     xl: sortedBreakpointValues[3],
   };
-}
-
-/**
- * @description Check to see if a string is a valid hex color
- *
- * @exports
- * @param {string} someString
- * @throws Will throw an error if method is not passed a string
- * @returns {boolean}
- */
-export function isHexColor(someString) {
-  if (typeof someString !== 'string') {
-    throw new Error('Must pass a string to this method.');
-  }
-
-  // #FFF (smallest possible hex color pattern)
-  // #FFFFFF (largest possible hex color pattern)
-  const stringLength = someString.length;
-  if (stringLength !== 4 && stringLength !== 7) {
-    return false;
-  }
-
-  // Edge Cases: If you pass characters unrelated to a hex letter like 'g' or '+'
-  // and it begins with a hashtag, you'll get a false-positive
-
-  return someString.startsWith('#');
 }
