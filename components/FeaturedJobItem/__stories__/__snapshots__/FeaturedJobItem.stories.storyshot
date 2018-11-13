@@ -19,7 +19,7 @@ exports[`Storyshots FeaturedJobItem default 1`] = `
     <h6>
       Director of Awesome
     </h6>
-    <test-file-mock
+    <svg
       className="externalLinkIcon"
     />
   </a>
@@ -29,7 +29,7 @@ exports[`Storyshots FeaturedJobItem default 1`] = `
     <div
       className="detailsContainer"
     >
-      <test-file-mock
+      <svg
         className="icon"
       />
       <span
@@ -41,7 +41,7 @@ exports[`Storyshots FeaturedJobItem default 1`] = `
     <div
       className="detailsContainer"
     >
-      <test-file-mock
+      <svg
         className="icon"
       />
       <span
