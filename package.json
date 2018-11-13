@@ -21,10 +21,10 @@
     "start": "next start",
     "storybook": "start-storybook -s ./static -p 9001 -c .storybook",
     "test": "cross-env NODE_ENV=test BABEL_ENV=test jest",
-    "test:ci": "cross-env NODE_ENV=test BABEL_ENV=test jest --ci --coverage",
-    "test:changes": "cross-env NODE_ENV=test BABEL_ENV=test jest --changedSince master",
-    "test:changes:watch": "cross-env NODE_ENV=test BABEL_ENV=test jest --changedSince master --watch",
-    "test:update-snaps": "cross-env NODE_ENV=test BABEL_ENV=test jest -u"
+    "test:ci": "yarn test --ci --coverage",
+    "test:changes": "yarn test --changedSince master",
+    "test:changes:watch": "yarn test --changedSince master --watch",
+    "test:update-snaps": "yarn test -u"
   },
   "lint-staged": {
     "*.js": [

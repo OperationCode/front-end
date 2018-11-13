@@ -1,8 +1,9 @@
 # Operation Code: Code of Conduct
 
-Translations:
-[German](./internationalized-documentation/CODE_OF_CONDUCT_DE.md)
-[Turkish](./internationalized-documentation/CODE_OF_CONDUCT_TR.md)
+_Translations:_
+
+- [German](./internationalized-documentation/Germany/CODE_OF_CONDUCT_DE.md)
+- [Turkish](./internationalized-documentation/Turkey/CODE_OF_CONDUCT_TR.md)
 
 ## Our Pledge
 

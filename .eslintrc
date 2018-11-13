@@ -85,7 +85,11 @@
       {
         "ObjectExpression": { "multiline": true, "consistent": true },
         "ObjectPattern": { "multiline": true, "consistent": true },
-        "ImportDeclaration": { "multiline": false },
+        "ImportDeclaration": {
+          "multiline": true,
+          "minProperties": 4,
+          "consistent": true
+        },
         "ExportDeclaration": { "multiline": true, "consistent": true }
       }
     ],
