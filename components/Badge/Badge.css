@@ -3,6 +3,8 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .iconContainer > svg {
@@ -13,7 +15,6 @@
 
 .label {
   font-size: 1.2rem;
-  margin-bottom: 1rem;
-  text-align: center;
   line-height: 1.2rem;
+  white-space: nowrap;
 }

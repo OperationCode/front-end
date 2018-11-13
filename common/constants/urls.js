@@ -32,7 +32,7 @@ export const footerLinks = {
       title: 'Code Schools',
     },
     {
-      href: '/job_board',
+      href: '/jobs',
       title: 'Job Board',
     },
     {

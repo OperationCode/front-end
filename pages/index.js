@@ -3,14 +3,15 @@ import { s3 } from 'common/constants/urls';
 import successStories from 'common/constants/successStories';
 import partners from 'common/constants/partners';
 import Head from 'components/head';
-import HeroBanner from 'components/_common_/HeroBanner/HeroBanner';
-import LinkButton from 'components/_common_/LinkButton/LinkButton';
-import Section from 'components/_common_/Section/Section';
 import AdBanner from 'components/AdBanner/AdBanner';
+import HeroBanner from 'components/_common_/HeroBanner/HeroBanner';
 import ImageCard from 'components/Cards/ImageCard/ImageCard';
-import SuccessStory from 'components/SuccessStory/SuccessStory';
-import PartnerLogoLink from 'components/PartnerLogoLink/PartnerLogoLink';
 import JoinSection from 'components/ReusableSections/JoinSection/JoinSection';
+import LinkButton from 'components/_common_/LinkButton/LinkButton';
+import PartnerLogoLink from 'components/PartnerLogoLink/PartnerLogoLink';
+import ScreenReaderOnly from 'components/_common_/ScreenReaderOnly/ScreenReaderOnly';
+import Section from 'components/_common_/Section/Section';
+import SuccessStory from 'components/SuccessStory/SuccessStory';
 import styles from './styles/index.css';
 
 const featuredLinksArray = [
@@ -39,9 +40,10 @@ export default () => (
     <Head title="Home" />
 
     <HeroBanner
+      title="Deploy The Future"
       imageSource={`${s3}redesign/heroBanners/homepage.jpg`}
       isFullViewHeight
-      title="Deploy The Future"
+      className={styles.hero}
     >
       <>
         <p>
@@ -54,14 +56,19 @@ export default () => (
 
         <div className={styles.featuredLinks}>
           {featuredLinksArray.map(({ href, name, imageSource, alt }) => (
-            <Link href={href} key={name}>
-              <a>
-                <div className={styles.featuredLinkItem}>
+            <div className={styles.featuredLinkItem} key={name}>
+              <Link href={href}>
+                <a>
                   <h6>{name}</h6>
-                  <img src={imageSource} alt={alt} />
-                </div>
-              </a>
-            </Link>
+                  <ScreenReaderOnly>{`Image: ${alt}`}</ScreenReaderOnly>
+                  <div
+                    style={{ backgroundImage: `url(${imageSource})` }}
+                    className={styles.featuredLinkImage}
+                    aria-hidden="true"
+                  />
+                </a>
+              </Link>
+            </div>
           ))}
         </div>
       </>
