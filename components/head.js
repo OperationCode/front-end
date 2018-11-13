@@ -3,13 +3,14 @@ import { string } from 'prop-types';
 import { s3 } from 'common/constants/urls';
 
 Head.propTypes = {
-  title: string.isRequired,
+  title: string,
   description: string,
   url: string,
   ogImage: string,
 };
 
 Head.defaultProps = {
+  title: undefined,
   description:
     // eslint-disable-next-line max-len
     'Operation Code is a 501(c)(3) non-profit dedicated to helping military members, veterans, and their families to learn how to get a job in the tech industry.',
@@ -21,7 +22,7 @@ function Head({ description, ogImage, title, url }) {
   return (
     <NextHead>
       <meta charSet="UTF-8" />
-      <title>Operation Code | {title}</title>
+      <title>Operation Code{` | ${title}`}</title>
       <meta name="description" content={description} />
 
       <meta property="og:url" content={url} />
