@@ -21,7 +21,7 @@ describe('FormInput', () => {
       target: { value: 'Test' },
     });
     expect(onChangeMock).toHaveBeenCalledTimes(1);
-    expect(onChangeMock).toBeCalledWith('Test', true);
+    expect(onChangeMock).toHaveBeenCalledWith('Test', true);
   });
 
   it('should show error onChange if value is empty', () => {

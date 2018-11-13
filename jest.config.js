@@ -24,6 +24,8 @@ module.exports = {
   collectCoverageFrom: [
     '<rootDir>/common/**/*.js',
     '<rootDir>/components/**/*.js',
+
+    // Don't collect coverage from import/export mappers
     '!<rootDir>/common/**/index.js',
     '!<rootDir>/components/**/index.js',
   ],
