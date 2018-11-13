@@ -7,7 +7,7 @@ import ProposeButton from 'static/images/operationcode_challenge/GitHubProposeBu
 import PencilIcon from 'static/images/operationcode_challenge/GitHubPencilIcon.png';
 import ExampleImage from 'static/images/operationcode_challenge/GitHubExample.png';
 import PRButton from 'static/images/operationcode_challenge/GitHubPRButton.png';
-import namesFile from '../static/operationcode_challenge/names.txt';
+import namesFile from 'static/operationcode_challenge/names.txt';
 import styles from './styles/challenge.css';
 
 const RepoLink = 'https://github.com/OperationCode/front-end/';
