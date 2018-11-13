@@ -49,7 +49,10 @@ const nextConfig = withCSS({
             loader: 'url-loader',
             options: {
               limit: 8192,
-              fallback: 'file-loader',
+              fallback: {
+                loader: 'file-loader',
+                options: { publicPath: '/_next/static/images', outputPath: 'static/images' },
+              },
               publicPath: '/_next/',
               outputPath: 'static/images/',
               name: '[name]-[hash].[ext]',
