@@ -7,7 +7,6 @@ ErrorDisplay.propTypes = { statusCode: PropTypes.number };
 
 ErrorDisplay.defaultProps = { statusCode: undefined };
 
-// Formerly known as FourOhFour (404)
 function ErrorDisplay({ statusCode }) {
   return (
     <>
