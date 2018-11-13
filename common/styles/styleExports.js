@@ -1,8 +1,10 @@
-import { hasPixelSuffix, isHexColor } from 'common/utils/style-utils';
+import { isHexColor } from 'common/utils/style-utils';
 import * as themeMap from './themeMap';
 
 export const breakpointsObject = Object.entries(themeMap).reduce((obj, [key, value]) => {
-  if (hasPixelSuffix(value)) {
+  const isBreakpoint = key.includes('ViewportWidth');
+
+  if (isBreakpoint) {
     obj[key] = value; // eslint-disable-line no-param-reassign
   }
 
