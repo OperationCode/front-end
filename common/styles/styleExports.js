@@ -1,15 +1,23 @@
-import { capitalizeFirstLetter } from 'common/utils/string-utils';
+import { hasPixelSuffix, isHexColor } from 'common/utils/style-utils';
 import * as themeMap from './themeMap';
 
-const colorHexCodes = Object.entries(themeMap);
+export const breakpointsObject = Object.entries(themeMap).reduce((obj, [key, value]) => {
+  if (hasPixelSuffix(value)) {
+    obj[key] = value; // eslint-disable-line no-param-reassign
+  }
 
-// For Backgrounds Addon
-const backgroundsPaletteArray = colorHexCodes
-  .filter(([name]) => !(name.includes('Light') || name.includes('Dark')))
-  .map(([name, hexCode]) => ({
-    name: capitalizeFirstLetter(name),
-    value: hexCode,
-    default: name === 'mist',
-  }));
+  return obj;
+}, {});
 
-export default backgroundsPaletteArray;
+export const brandColorsObject = Object.entries(themeMap).reduce((obj, [key, value]) => {
+  if (isHexColor(value)) {
+    // We don't want to include modifier colors like `primaryLight`
+    const isBrandColor = !(key.includes('Light') || key.includes('Dark'));
+
+    if (isBrandColor) {
+      obj[key] = value; // eslint-disable-line no-param-reassign
+    }
+  }
+
+  return obj;
+}, {});
