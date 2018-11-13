@@ -32,7 +32,7 @@ exports[`OutboundLink should render with required props 1`] = `
     Opens in new window
   </span>
   Test
-  <test-file-mock
+  <svg
     className="externalLinkIcon"
   />
 </a>
