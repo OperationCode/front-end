@@ -122,3 +122,10 @@ h6 {
   transition-timing-function: linear;
   transition-delay: 0s;
 }
+
+code {
+  background-color: #f0f2f2;
+  border-radius: 4px;
+  border-style: solid;
+  border-color: #f0f2f2;
+}

@@ -1,12 +1,13 @@
 import axios from 'axios';
-import Section from '../components/_common_/Section/Section';
-import OutboundLink from '../components/_common_/OutboundLink/OutboundLink';
+import Section from 'components/_common_/Section/Section';
+import Head from 'components/head';
+import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
+import ForkButton from 'static/images/operationcode_challenge/GitHubForkButton.png';
+import ProposeButton from 'static/images/operationcode_challenge/GitHubProposeButton.png';
+import PencilIcon from 'static/images/operationcode_challenge/GitHubPencilIcon.png';
+import ExampleImage from 'static/images/operationcode_challenge/GitHubExample.png';
+import PRButton from 'static/images/operationcode_challenge/GitHubPRButton.png';
 import namesFile from '../static/operationcode_challenge/names.txt';
-import ForkButton from '../static/images/operationcode_challenge/GitHubForkButton.png';
-import ProposeButton from '../static/images/operationcode_challenge/GitHubProposeButton.png';
-import PencilIcon from '../static/images/operationcode_challenge/GitHubPencilIcon.png';
-import ExampleImage from '../static/images/operationcode_challenge/GitHubExample.png';
-import PRButton from '../static/images/operationcode_challenge/GitHubPRButton.png';
 import styles from './styles/challenge.css';
 
 const RepoLink = 'https://github.com/OperationCode/front-end/';
@@ -14,27 +15,22 @@ const ChallengeLink = `${RepoLink}blob/master/pages/challenge.js`;
 const CompareLink = `${RepoLink}compare`;
 
 class Challenge extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      names: '',
-    };
-  }
+  state = {
+    names: 'Loading names of challengers...',
+  };
 
   componentDidMount() {
-    const { currentNames } = this.state;
-    if (!currentNames) {
-      axios.get(namesFile).then(response => {
-        const names = response.data;
-        this.setState({ names });
-      });
-    }
+    axios.get(namesFile).then(response => {
+      const names = response.data;
+      this.setState({ names });
+    });
   }
 
   render() {
     const { names } = this.state;
     return (
-      <div>
+      <>
+        <Head title="Challenge" />
         <Section title="Operation Code Challenge" theme="white" className={styles.displayBlock}>
           <div>
             Welcome to the Operation Code challenge! The goal of this challenge is to get you to
@@ -146,7 +142,7 @@ class Challenge extends React.Component {
           </h6>
           <div className={styles.displayLinebreak}>{names}</div>
         </Section>
-      </div>
+      </>
     );
   }
 }

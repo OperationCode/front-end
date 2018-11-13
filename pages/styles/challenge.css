@@ -1,15 +1,8 @@
-/* TODO: Move <code> styles to global stylesheet */
-code {
-  background-color: #f0f2f2;
-  border-radius: 4px;
-  border-style: solid;
-  border-color: #f0f2f2;
-}
-
+/* On this component, all non-classed images are inline */
 .instructionList img {
   max-width: 100%;
   height: auto;
-  padding: 0 10px; /* On this component, all non-classed images are inline */
+  padding: 0 10px;
 }
 
 .displayLinebreak {

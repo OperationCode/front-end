@@ -43,16 +43,21 @@ const nextConfig = withCSS({
         ],
       },
       {
-        test: /\.(txt|png|jpg|gif)$/i,
+        test: /\.(jpe?g|png|gif|txt)$/,
         use: [
           {
             loader: 'url-loader',
-            options: {},
+            options: {
+              limit: 8192,
+              fallback: 'file-loader',
+              publicPath: '/_next/',
+              outputPath: 'static/images/',
+              name: '[name]-[hash].[ext]',
+            },
           },
         ],
       },
     );
-
     return config;
   },
 });
