@@ -55,6 +55,6 @@ deploy:
       all_branches: false
       master: true
   - provider: script
-    script: bash bin/ecr_publish 
+    script: bash bin/ecr_publish && bin/k8s_config_deploy
     on:
       master: true

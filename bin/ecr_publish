@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+pip install awscli -q
+
+AWSBIN=$(which aws)
+AWSPATH=$(dirname $AWSBIN)
+export PATH=$PATH:$AWSPATH
+
 echo "Logging into ECR..."
 AWS_LOGIN=$(runCommand "aws ecr get-login --region $AWS_REGION --no-include-email")
 
