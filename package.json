@@ -82,6 +82,7 @@
     "react-svg-loader": "^2.1.0",
     "react-youtube": "^7.8.0",
     "redux": "^4.0.1",
+    "redux-devtools-extension": "^2.13.5",
     "redux-thunk": "^2.3.0",
     "reselect": "^4.0.0",
     "style-loader": "^0.23.1",
@@ -113,7 +114,6 @@
     "prettier": "^1.15.2",
     "react-addons-test-utils": "^15.6.2",
     "react-test-renderer": "^16.6.1",
-    "redux-devtools-extension": "^2.13.5",
     "redux-mock-store": "^1.5.3",
     "stylelint": "^9.8.0",
     "stylelint-config-standard": "^18.2.0"
