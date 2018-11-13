@@ -3,13 +3,15 @@ import PropTypes from 'prop-types';
 import Head from 'components/head';
 import styles from './ErrorDisplay.css';
 
-ErrorDisplay.propTypes = { statusCode: PropTypes.number.isRequired };
+ErrorDisplay.propTypes = { statusCode: PropTypes.number };
+
+ErrorDisplay.defaultProps = { statusCode: undefined };
 
 // Formerly known as FourOhFour (404)
 function ErrorDisplay({ statusCode }) {
   return (
     <>
-      <Head title="Whoops...">
+      <Head title={statusCode ? `${statusCode}` : 'Error'}>
         <meta name="robots" content="noindex, nofollow" key={statusCode} />
       </Head>
 
