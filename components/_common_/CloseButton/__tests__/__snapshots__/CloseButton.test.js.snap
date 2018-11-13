@@ -7,7 +7,7 @@ exports[`CloseButton should render as disabled 1`] = `
   onClick={[Function]}
   type="button"
 >
-  <test-file-mock
+  <svg
     className="icon"
   />
 </button>
@@ -20,7 +20,7 @@ exports[`CloseButton should render with required props 1`] = `
   onClick={[Function]}
   type="button"
 >
-  <test-file-mock
+  <svg
     className="icon"
   />
 </button>
