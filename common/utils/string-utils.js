@@ -4,7 +4,7 @@
  * */
 
 /**
- * Capitalize the first letter in a string
+ * @description Capitalize the first letter in a string
  *
  * @export
  * @param {string} someString

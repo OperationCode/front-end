@@ -1,5 +1,6 @@
-/* IMPORTANT: Only change colors in this file if branding changes! */
+/* IMPORTANT: Please run `yarn storybook` when file changes to update `./themeMap.js` */
 :root {
+  /* Colors */
   --primary: #249cbc;
   --primaryLight: #4ac2e2;
   --primaryDark: #007696;
@@ -14,4 +15,10 @@
   --grayLight: #d0d5da;
   --grayDark: #75848f;
   --navy: #252e3e;
+
+  /* Viewports (for media queries) */
+  --smallViewportWidth: 576px;
+  --mediumViewportWidth: 768px;
+  --largeViewportWidth: 992px;
+  --extraLargeViewportWidth: 1200px;
 }
