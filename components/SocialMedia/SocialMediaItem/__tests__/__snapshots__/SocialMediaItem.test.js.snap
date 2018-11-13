@@ -16,7 +16,7 @@ exports[`SocialMediaItem should render with required props 1`] = `
     >
       Opens in new window
     </span>
-    <test-file-mock
+    <svg
       fill="blue"
     />
   </a>
