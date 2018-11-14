@@ -11,8 +11,8 @@ function ColorBlock({ colorName, hexCode }) {
   return (
     <div className={styles.ColorBlock}>
       <div className={styles.swatch} style={{ backgroundColor: hexCode }} />
-      <h6>{colorName}</h6>
-      <span>{hexCode}</span>
+      <h6>{colorName.toUpperCase()}</h6>
+      <span>{hexCode.toUpperCase()}</span>
     </div>
   );
 }
