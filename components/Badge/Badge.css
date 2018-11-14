@@ -7,6 +7,7 @@
   margin-bottom: 1rem;
 }
 
+.iconContainer > img,
 .iconContainer > svg {
   fill: currentColor;
   height: 100px;
