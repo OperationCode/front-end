@@ -1,7 +1,7 @@
 import Head from 'components/head';
-import LogoSection from 'components/BrandingContent/LogoSection/LogoSection';
-import ColorSection from 'components/BrandingContent/ColorSection/ColorSection';
-import FontSection from 'components/BrandingContent/FontSection/FontSection';
+import LogoSection from 'components/Branding/LogoSection/LogoSection';
+import ColorSection from 'components/Branding/ColorSection/ColorSection';
+import FontSection from 'components/Branding/FontSection/FontSection';
 
 export default () => (
   <>
