@@ -4,7 +4,7 @@ import styles from './FontSection.css';
 
 function FontSection() {
   return (
-    <Section title="Fonts" theme="grey">
+    <Section title="Fonts" theme="white">
       <div className={styles.brandingFonts}>
         <h6>PF DIN DISPLAY PRO REGULAR</h6>
         <p className={styles.pfDinDisplay}>Sphinx of black quartz, judge my vow!</p>
