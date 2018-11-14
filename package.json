@@ -60,6 +60,7 @@
     "classnames": "^2.2.6",
     "css-loader": "^1.0.1",
     "express": "^4.16.4",
+    "file-loader": "2.0.0",
     "history": "^4.7.2",
     "jwt-decode": "^2.2.0",
     "lodash": "^4.17.11",
@@ -80,6 +81,7 @@
     "react-svg-loader": "^2.1.0",
     "react-youtube": "^7.8.0",
     "style-loader": "^0.23.1",
+    "url-loader": "^1.1.2",
     "universal-cookie": "^3.0.4",
     "webpack": "^4.25.1"
   },
