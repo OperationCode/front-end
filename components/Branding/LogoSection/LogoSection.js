@@ -5,23 +5,6 @@ import styles from './LogoSection.css';
 function LogoSection() {
   return (
     <Section title="Logo" theme="mist">
-      <p className={styles.logosInfo}>
-        The size ratio between the star and the medallion changes depending on the size of
-        reproduction. Please make use of the appropriate sized logo when creating collateral.
-      </p>
-      <p className={styles.logosInfo}>
-        In most cases, use the blue-accent version of the logo. The red-accent is delivered for
-        special uses only.
-      </p>
-      <p className={styles.logosInfo}>
-        <a href="https://s3.us-east-2.amazonaws.com/operationcode-web/Operation-Code-Logo.eps">
-          Download master EPS file
-        </a>
-      </p>
-      <p className={styles.logosInfo}>
-        The files below are transparent PNGs. Click-and-drag (or for mobile, press-and-hold) them
-        directly from your browser to download the file.
-      </p>
       <div className={styles.logoImages}>
         <section className={styles.sectionPadding}>
           <h5>SMALL</h5>

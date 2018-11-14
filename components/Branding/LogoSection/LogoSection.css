@@ -1,10 +1,10 @@
 .marginSpace {
-  margin: 5em 0;
+  margin: 5rem 0;
 }
 
 .sectionPadding {
-  margin: 2em 0 0;
-  padding: 3em 0 0;
+  margin: 2rem 0 0;
+  padding: 3rem 0 0;
   border-top: 1px solid #dddddd;
   border-bottom: 1px solid #dddddd;
 }
@@ -16,7 +16,6 @@
 .logosInfo {
   width: 60%;
   font-size: 1.2rem;
-  text-align: justify;
 }
 
 .logosInfo a {
