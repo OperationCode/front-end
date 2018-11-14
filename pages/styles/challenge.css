@@ -5,11 +5,6 @@
   padding: 0 10px;
 }
 
-.displayLinebreak {
-  white-space: pre-line;
-  text-align: center;
-}
-
 .displayBlock > div {
   display: block;
 }

@@ -14,12 +14,7 @@ const ChallengeLink = `${RepoLink}blob/master/pages/challenge.js`;
 const CompareLink = `${RepoLink}compare`;
 
 class Challenge extends React.Component {
-  state = {
-    names: challengers,
-  };
-
   render() {
-    const { names } = this.state;
     return (
       <>
         <Head title="Challenge" />
@@ -132,11 +127,11 @@ class Challenge extends React.Component {
           <h6 className={styles.centerText}>
             Here is a list of the people that have completed this before you:
           </h6>
-          {names.map(name => (
-            <div key={name} className={styles.displayLinebreak}>
-              {name}
-            </div>
-          ))}
+          <ol>
+            {challengers.map(name => (
+              <li key={name}>{name}</li>
+            ))}
+          </ol>
         </Section>
       </>
     );
