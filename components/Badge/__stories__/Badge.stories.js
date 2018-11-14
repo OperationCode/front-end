@@ -19,8 +19,8 @@ storiesOf('Common/Badge', module)
   .add(
     'default',
     withInfo()(() => {
-      const iconName = select('svgComponent', Object.keys(icons), 'github');
+      const iconName = select('icon', Object.keys(icons), 'github');
 
-      return <Badge svgComponent={icons[iconName]} label={text('label', 'My Awesome Badge')} />;
+      return <Badge icon={icons[iconName]} label={text('label', 'My Awesome Badge')} />;
     }),
   );
