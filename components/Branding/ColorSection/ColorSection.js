@@ -1,27 +1,41 @@
 import React from 'react';
+import { brandColorsObject } from 'common/styles/styleExports';
+import Swatch from 'components/Branding/Swatch/Swatch';
 import Section from 'components/_common_/Section/Section';
-import ColorBlock from './ColorBlock/ColorBlock';
 import styles from './ColorSection.css';
 
 function ColorSection() {
+  // TODO: Name our primary and secondary colors
+  const primaryColor = { name: 'Primary', hexCode: brandColorsObject.primary };
+  const secondaryColor = { name: 'Secondary', hexCode: brandColorsObject.secondary };
+
+  // Compose a list of colors excluding primary and secondary
+  const otherColorNames = Object.keys(brandColorsObject).filter(colorName => {
+    const isPrimary = colorName === 'primary';
+    const isSecondary = colorName === 'secondary';
+
+    return !isPrimary && !isSecondary;
+  });
+
   return (
-    <Section title="Colors" theme="grey">
-      <h3>Primary Pallete</h3>
-      <div className={styles.colorPalette}>
-        <ColorBlock colorName="Blue" colorHex="#249CBC" />
+    <Section title="Colors" theme="white" contentClassName={styles.ColorSection}>
+      <div className={styles.mainColors}>
+        <div className={styles.colorGrouping}>
+          <h3>Primary</h3>
+          <Swatch colorName={primaryColor.name} hexCode={primaryColor.hexCode} />
+        </div>
 
-        <ColorBlock colorName="Red" colorHex="#D1665A" />
-
-        <ColorBlock colorName="Slate" colorHex="#47566B" />
+        <div className={styles.colorGrouping}>
+          <h3>Secondary</h3>
+          <Swatch colorName={secondaryColor.name} hexCode={secondaryColor.hexCode} />
+        </div>
       </div>
 
-      <h3>Tints</h3>
-      <div className={styles.colorPalette}>
-        <ColorBlock colorName="Gray" colorHex="#9BAAB5" />
-
-        <ColorBlock colorName="Light Gray" colorHex="#D0D5DA" />
-
-        <ColorBlock colorName="Mist" colorHex="#F0F2F2" />
+      <h3>Other On-Brand Colors</h3>
+      <div className={styles.otherColors}>
+        {otherColorNames.map(colorName => (
+          <Swatch colorName={colorName} hexCode={brandColorsObject[colorName]} key={colorName} />
+        ))}
       </div>
     </Section>
   );
