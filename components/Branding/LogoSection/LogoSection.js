@@ -4,7 +4,7 @@ import styles from './LogoSection.css';
 
 function LogoSection() {
   return (
-    <Section title="Logo" theme="white">
+    <Section title="Logo" theme="mist">
       <p className={styles.logosInfo}>
         The size ratio between the star and the medallion changes depending on the size of
         reproduction. Please make use of the appropriate sized logo when creating collateral.

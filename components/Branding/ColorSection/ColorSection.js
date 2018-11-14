@@ -18,7 +18,7 @@ function ColorSection() {
   });
 
   return (
-    <Section title="Colors" theme="white" contentClassName={styles.ColorSection}>
+    <Section title="Colors" theme="mist" contentClassName={styles.ColorSection}>
       <div className={styles.mainColors}>
         <div className={styles.colorGrouping}>
           <h3>Primary</h3>
