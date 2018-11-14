@@ -31,40 +31,45 @@ class Challenge extends React.Component {
           <br />
           <ol className={styles.instructionList}>
             <li>
-              Firstly, visit our GitHub repository for this page via this link{' '}
-              <OutboundLink analyticsEventLabel={`${RepoLink}`} href={`${RepoLink}`}>
-                {' '}
+              Firstly,{' '}
+              <OutboundLink analyticsEventLabel="Challenge Engagement" href={RepoLink}>
+                visit our GitHub repository for this page
               </OutboundLink>
               . GitHub is a website dedicated to hosting source code. That&apos;s right -&nbsp; the
               code for this website is publically available! Take a moment to explore GitHub. You
-              can see the code for this specific page via&nbsp; this link{' '}
-              <OutboundLink analyticsEventLabel={`${ChallengeLink}`} href={`${ChallengeLink}`}>
-                {' '}
+              can see{' '}
+              <OutboundLink analyticsEventLabel="Challenge Engagement" href={ChallengeLink}>
+                the code for this specific page
               </OutboundLink>
               .
             </li>
+
             <li>
-              Secondly, fork the repository. Forking a repository takes a snapshot of the repo and
-              places that snapshot into your personal area. This allows anyone to make changes to
-              any project and easily contribute them back. Visit this link{' '}
-              <OutboundLink analyticsEventLabel={`${RepoLink}`} href={`${RepoLink}`}>
-                {' '}
+              Secondly, fork the repository. Forking a repository takes a snapshot of the code and
+              places that snapshot into your personal GitHub. GitHub allows you to contribute code
+              between forks and their original repository. This process is how everybody contributes
+              to open source. After forking, you will{' '}
+              <OutboundLink analyticsEventLabel="Challenge Engagement" href={RepoLink}>
+                visit this link
               </OutboundLink>
-              &nbsp; and click on this button near the top-right corner of the screen:&nbsp;
+              &nbsp; and click on the button near the top-right corner of the screen:{' '}
               <img src={ForkButton} alt="the GitHub Fork Button" width="65px" /> In a few moments,
               you will be redirected to your own copy of this website&apos;s source code.
               <br />
               <br />
-              <b>Congratulations! You now have your very own personal copy of our website!</b>
+              <b>Congratulations! You have &quot;forked&quot; the &quot;repo&quot;!</b>
             </li>
+
             <li>
               Now that you have a fork of the &quot;repo&quot;, it&apos;s time to edit the necessary
               file to add your name to the list below! Inside the <code>/static</code> folder ,
               click on the <code>operationcode_challenge</code> directory and click on the file
               called <code>names.js</code>. On the right-hand side, you should see
-              <img src={PencilIcon} alt="a pencil icon button" width="18px" />- Click it.
+              <img src={PencilIcon} alt="a pencil icon button" width="18px" />. Click it.
             </li>
-            <li>Add your name to the file.</li>
+
+            <li>Add your name to the bottom of the list of names.</li>
+
             <li>
               Scroll to the bottom for the <b>Commit changes</b> form. There are two input boxes. In
               the input field with &quot;Update names.js&quot;, type{' '}
@@ -84,12 +89,29 @@ class Challenge extends React.Component {
               Once you confirm the similarities, click
               <img src={ProposeButton} alt="the 'Propose file change' button" width="125px" />
             </li>
+
+            <li>
+              With your changes merged into your fork (your name added to the list in your copy of
+              the code), head back to{' '}
+              <OutboundLink analyticsEventLabel="Callenge Engagement" href={RepoLink}>
+                Operation Code&apos;s front-end repository
+              </OutboundLink>
+              .
+            </li>
+
+            <li>
+              Click on the &quot;Pull requests&quot; tab. It rests between the &quot;Issues&quot;
+              and &quot;Project&quot; tabs.
+            </li>
+
+            <li>Click on the green &quot;New pull request&quot; button.</li>
+
             <li>
               You should now be at the &quot;
               <b>Open a pull request</b>
               &quot; screen. We do not wish to ask ourselves for permission to merge our new branch
               into our own fork! Instead,&nbsp; click{' '}
-              <OutboundLink analyticsEventLabel={`${CompareLink}`} href={`${CompareLink}`}>
+              <OutboundLink analyticsEventLabel="Challenge Engagement" href={CompareLink}>
                 {' '}
               </OutboundLink>
               &nbsp;, to open Operation Code&apos;s &quot;New pull request&quot; interface. You
