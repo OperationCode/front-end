@@ -1,11 +1,7 @@
-import Section from 'components/_common_/Section/Section';
+import { s3 } from 'common/constants/urls';
 import Head from 'components/head';
+import Section from 'components/_common_/Section/Section';
 import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
-import ForkButton from 'static/images/operationcode_challenge/GitHubForkButton.png';
-import ProposeButton from 'static/images/operationcode_challenge/GitHubProposeButton.png';
-import PencilIcon from 'static/images/operationcode_challenge/GitHubPencilIcon.png';
-import ExampleImage from 'static/images/operationcode_challenge/GitHubExample.png';
-import PRButton from 'static/images/operationcode_challenge/GitHubPRButton.png';
 import challengers from 'static/operationcode_challenge/names';
 import styles from './styles/challenge.css';
 
@@ -49,8 +45,13 @@ const Challenge = () => (
             visit this link
           </OutboundLink>
           &nbsp; and click on the button near the top-right corner of the screen:{' '}
-          <img src={ForkButton} alt="the GitHub Fork Button" width="65px" /> In a few moments, you
-          will be redirected to your own copy of this website&apos;s source code.
+          <img
+            src={`${s3}github_demo/fork-button.png`}
+            alt="screenshot of 'Fork' button on GitHub"
+            width="65px"
+          />{' '}
+          In a few moments, you will be redirected to your own copy of this website&apos;s source
+          code.
           <br />
           <br />
           <b>Congratulations! You have &quot;forked&quot; the &quot;repo&quot;!</b>
@@ -61,7 +62,12 @@ const Challenge = () => (
           file to add your name to the list below! Inside the <code>/static</code> folder , click on
           the <code>operationcode_challenge</code> directory and click on the file called{' '}
           <code>names.js</code>. On the right-hand side, you should see
-          <img src={PencilIcon} alt="a pencil icon button" width="18px" />. Click it.
+          <img
+            src={`${s3}github_demo/pencil-icon.png`}
+            alt="a button with a pencil icon"
+            width="18px"
+          />
+          . Click it.
         </li>
 
         <li>Add your name to the bottom of the list of names.</li>
@@ -76,14 +82,18 @@ const Challenge = () => (
           <br />
           <br />
           <img
-            src={ExampleImage}
-            alt="example of GitHub input thus far"
+            src={`${s3}github_demo/example.png`}
+            alt="screenshot of what the screen should look like on GitHub thus far"
             className={styles.blockImage}
           />
           <br />
           <br />
           Once you confirm the similarities, click
-          <img src={ProposeButton} alt="the 'Propose file change' button" width="125px" />
+          <img
+            src={`${s3}github_demo/propose-button.png`}
+            alt="screensot of the 'Propose file change' button"
+            width="125px"
+          />
         </li>
 
         <li>
@@ -116,7 +126,11 @@ const Challenge = () => (
           says &apos; head fork&apos; at the beginning, and choose your fork. Click the next
           selector to the right, and choose your new branch. Now, you&apos;re comparing Operation
           Code&apos;s master branch with your new fork&apos;s branch, and you may click
-          <img src={PRButton} alt="the 'Create pull request' button" width="115px" />
+          <img
+            src={`${s3}github_demo/pr-button.png`}
+            alt="screenshot of the 'Create pull request' button"
+            width="115px"
+          />
           to create your first Pull Request! We hope you come to love that button...
         </li>
         <blockquote>
