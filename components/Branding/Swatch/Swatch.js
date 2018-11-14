@@ -1,20 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './ColorBlock.css';
+import styles from './Swatch.css';
 
-ColorBlock.propTypes = {
+Swatch.propTypes = {
   colorName: PropTypes.string.isRequired,
   hexCode: PropTypes.string.isRequired,
 };
 
-function ColorBlock({ colorName, hexCode }) {
+function Swatch({ colorName, hexCode }) {
   return (
-    <div className={styles.ColorBlock}>
-      <div className={styles.swatch} style={{ backgroundColor: hexCode }} />
+    <div className={styles.Swatch}>
+      <div className={styles.colorBlock} style={{ backgroundColor: hexCode }} />
       <h6>{colorName.toUpperCase()}</h6>
       <span>{hexCode.toUpperCase()}</span>
     </div>
   );
 }
 
-export default ColorBlock;
+export default Swatch;
