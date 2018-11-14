@@ -1,7 +1,7 @@
 import React from 'react';
 import Section from 'components/_common_/Section/Section';
 import ColorBlock from './ColorBlock/ColorBlock';
-import styles from './colors.css';
+import styles from './ColorSection.css';
 
 function ColorSection() {
   return (

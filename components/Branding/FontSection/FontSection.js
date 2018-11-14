@@ -1,6 +1,6 @@
 import React from 'react';
 import Section from 'components/_common_/Section/Section';
-import styles from './fonts.css';
+import styles from './FontSection.css';
 
 function FontSection() {
   return (

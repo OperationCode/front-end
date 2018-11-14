@@ -1,6 +1,6 @@
 import React from 'react';
 import Section from 'components/_common_/Section/Section';
-import styles from './logos.css';
+import styles from './LogoSection.css';
 
 function LogoSection() {
   return (
