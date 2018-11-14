@@ -43,7 +43,7 @@ const nextConfig = withCSS({
         ],
       },
       {
-        test: /\.(jpe?g|png|gif|txt)$/,
+        test: /\.(jpe?g|png|gif)$/,
         use: [
           {
             loader: 'url-loader',

@@ -1,4 +1,3 @@
-import axios from 'axios';
 import Section from 'components/_common_/Section/Section';
 import Head from 'components/head';
 import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
@@ -7,7 +6,7 @@ import ProposeButton from 'static/images/operationcode_challenge/GitHubProposeBu
 import PencilIcon from 'static/images/operationcode_challenge/GitHubPencilIcon.png';
 import ExampleImage from 'static/images/operationcode_challenge/GitHubExample.png';
 import PRButton from 'static/images/operationcode_challenge/GitHubPRButton.png';
-import namesFile from 'static/operationcode_challenge/names.txt';
+import challengers from 'static/operationcode_challenge/names';
 import styles from './styles/challenge.css';
 
 const RepoLink = 'https://github.com/OperationCode/front-end/';
@@ -16,15 +15,8 @@ const CompareLink = `${RepoLink}compare`;
 
 class Challenge extends React.Component {
   state = {
-    names: 'Loading names of challengers...',
+    names: challengers,
   };
-
-  componentDidMount() {
-    axios.get(namesFile).then(response => {
-      const names = response.data;
-      this.setState({ names });
-    });
-  }
 
   render() {
     const { names } = this.state;
@@ -74,13 +66,13 @@ class Challenge extends React.Component {
               Now that you have a fork of the &quot;repo&quot;, it&apos;s time to edit the necessary
               file to add your name to the list below! Inside the <code>/static</code> folder ,
               click on the <code>operationcode_challenge</code> directory and click on the file
-              called <code>names.txt</code>. On the right-hand side, you should see
+              called <code>names.js</code>. On the right-hand side, you should see
               <img src={PencilIcon} alt="a pencil icon button" width="18px" />- Click it.
             </li>
             <li>Add your name to the file.</li>
             <li>
               Scroll to the bottom for the <b>Commit changes</b> form. There are two input boxes. In
-              the input field with &quot;Update names.txt&quot;, type{' '}
+              the input field with &quot;Update names.js&quot;, type{' '}
               <code>Add &lt;YOUR NAME&gt; to challenge list</code>. You will leave the second, large
               input field blank. There are two &quot;radio&quot; buttons below the input fields.
               Check the one that says &quot;Create a new branch&quot;. Your screen should now have
@@ -140,7 +132,11 @@ class Challenge extends React.Component {
           <h6 className={styles.centerText}>
             Here is a list of the people that have completed this before you:
           </h6>
-          <div className={styles.displayLinebreak}>{names}</div>
+          {names.map(name => (
+            <div key={name} className={styles.displayLinebreak}>
+              {name}
+            </div>
+          ))}
         </Section>
       </>
     );
