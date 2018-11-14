@@ -1,0 +1,11 @@
+.ColorBlock {
+  min-width: 175px;
+  max-width: 250px;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.swatch {
+  width: 90%;
+  height: 200px;
+}
