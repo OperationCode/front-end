@@ -65,7 +65,7 @@ export default () => (
       </div>
       <div className={classNames(styles.flexDisplay, styles.marginBottom)}>
         {mentorItems.map(item => (
-          <Badge key={item.label} svgComponent={item.icon} label={item.label} />
+          <Badge key={item.label} icon={item.icon} label={item.label} />
         ))}
       </div>
     </Section>
@@ -97,7 +97,7 @@ export default () => (
       </div>
       <div className={classNames(styles.flexDisplay, styles.marginBottom)}>
         {supportItems.map(item => (
-          <Badge key={item.label} svgComponent={item.icon} label={item.label} />
+          <Badge key={item.label} image={item.icon} label={item.label} />
         ))}
       </div>
     </Section>
