@@ -1,141 +1,41 @@
-.marginSpace {
-  margin: 5rem 0;
+.LogoSection ul {
+  margin-bottom: 1.5rem;
 }
 
-.sectionPadding {
-  margin: 2rem 0 0;
-  padding: 3rem 0 0;
-  border-top: 1px solid #dddddd;
-  border-bottom: 1px solid #dddddd;
-}
-
-.sectionPadding:last-child {
-  border: none;
-}
-
-.logosInfo {
-  width: 60%;
-  font-size: 1.2rem;
-}
-
-.logosInfo a {
-  color: #249cbc;
-  font-size: 1.3rem;
-  text-decoration: none;
-}
-
-.logoImages {
+.logoSizeList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
   width: 100%;
-  text-align: center;
 }
 
-.smallLogos {
-  display: flex;
-  align-items: center;
-  flex-flow: row;
-  padding: 1rem 0;
-}
-
-.stackLogos {
-  width: 50%;
-}
-
-.starLogos,
-.stackedLogos {
-  width: 33.33%;
-}
-
-.smallMedalLogos {
-  text-align: center;
-}
-
-.medalLogos {
-  margin: 1em;
-  display: inline-block;
-}
-
-.medalLogos img {
-  max-width: 130px;
-}
-
-.largeLogos {
-  display: flex;
-  align-items: center;
-  flex-flow: column;
-}
-
-.largeLogos .stackLogos,
-.largeLogos .starLogos {
-  width: 625px;
-}
-
-.largeLogos .stackedLogos {
-  width: 460px;
-}
-
-.largeLogos img {
+.logoSizeListItem {
+  margin: 0;
+  padding: 0;
   width: 100%;
-  max-width: 100%;
 }
 
-@media (max-width: 360px) {
-  .smallLogos .stackLogos,
-  .smallLogos .starLogos,
-  .smallLogos .stackedLogos {
-    width: 100%;
-    max-width: 200px;
-  }
+.badgeList {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid #bbbbbb;
 }
 
-@media (max-width: 424px) {
-  .logosInfo {
-    width: 100%;
-  }
-
-  .smallLogos {
-    flex-flow: column;
-  }
-
-  .smallLogos .stackLogos,
-  .smallLogos .starLogos,
-  .smallLogos .stackedLogos {
-    width: 100%;
-    max-width: 320px;
-  }
-
-  .smallLogos img {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .largeLogos .stackLogos,
-  .largeLogos .starLogos {
-    width: 100%;
-  }
-
-  .largeLogos .stackedLogos {
-    width: 100%;
-  }
+.largeLogos .badgeList {
+  flex-wrap: nowrap;
+  flex-direction: column;
 }
 
-@media (min-width: 425px) and (max-width: 768px) {
-  .logosInfo {
-    width: 80%;
-  }
-
-  .smallLogos img {
-    width: 90%;
-    max-width: 100%;
-  }
+.largeLogos .badgeList img {
+  height: 100%;
 }
 
-@media (min-width: 769px) and (max-width: 1024px) {
-  .logosInfo {
-    width: 70%;
-  }
-
-  .smallLogos .starLogos img,
-  .smallLogos .stackedLogos img {
-    width: 90%;
-  }
+.badgeList span {
+  font-size: 1.5rem;
+  font-weight: bold;
 }

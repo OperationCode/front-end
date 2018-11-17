@@ -1,208 +1,269 @@
 import React from 'react';
+import classNames from 'classnames';
+import { s3 } from 'common/constants/urls';
 import Section from 'components/_common_/Section/Section';
+import Badge from 'components/Badge/Badge';
 import styles from './LogoSection.css';
 
 function LogoSection() {
   return (
-    <Section title="Logo" theme="mist">
-      <div className={styles.logoImages}>
-        <section className={styles.sectionPadding}>
+    <Section contentClassName={styles.LogoSection} title="Logo" theme="mist">
+      <ul className={styles.logoSizeList}>
+        {/* - SMALL LOGOS - */}
+        <li className={classNames(styles.logoSizeListItem, styles.smallLogos)}>
           <h5>SMALL</h5>
           <p>For use when the medal is between 0 and 1-inch tall.</p>
-          <div className={styles.marginSpace}>
-            <h6>LOGO</h6>
-            <div className={styles.smallLogos}>
-              <div className={styles.stackLogos}>
-                <img
-                  src="https://s3.amazonaws.com/operationcode-assets/branding/logos/small-blue-logo.png"
-                  alt="Blue Accent Logo"
-                />
-                <p>Blue Accent</p>
-              </div>
-              <div className={styles.stackLogos}>
-                <img
-                  src="https://s3.amazonaws.com/operationcode-assets/branding/logos/small-red-logo.png"
-                  alt="Red Accent Logo"
-                />
-                <p>Red Accent</p>
-              </div>
-            </div>
-            <div className={styles.smallLogos}>
-              <div className={styles.stackLogos}>
-                <img
-                  src="https://s3.amazonaws.com/operationcode-assets/branding/logos/small-logo.png"
-                  alt="No Accent Logo"
-                />
-                <p>No Accent</p>
-              </div>
-              <div className={styles.stackLogos}>
-                <img
-                  src="https://s3.amazonaws.com/operationcode-assets/branding/logos/small-white-logo.png"
-                  alt="White Accent Logo"
-                />
-                <p>White Accent</p>
-              </div>
-            </div>
-            <div className={styles.smallLogos}>
-              <div className={styles.starLogos}>
-                <img
-                  src="https://s3.amazonaws.com/operationcode-assets/branding/logos/small-white-logo-blue-star.png"
-                  alt="White Blue Star Logo"
-                />
-              </div>
-              <div className={styles.starLogos}>
-                <img
-                  src="https://s3.amazonaws.com/operationcode-assets/branding/logos/small-white-logo-red-star.png"
-                  alt="White Red Star Logo"
-                />
-              </div>
-              <div className={styles.starLogos}>
-                <img
-                  src="https://s3.amazonaws.com/operationcode-assets/branding/logos/small-white-logo-slate-star.png"
-                  alt="White Slate Star Logo"
-                />
-              </div>
-            </div>
-            <p>Star Accents</p>
-          </div>
-          <div className={styles.marginSpace}>
-            <h6>LOGO, STACKED</h6>
-            <div className={styles.smallLogos}>
-              <div className={styles.stackedLogos}>
-                <img
-                  src="https://s3.amazonaws.com/operationcode-assets/branding/logos/small-stacked-logo-blue.png"
-                  alt="Stacked Small Blue Logo"
-                />
-                <p>Blue Accent</p>
-              </div>
-              <div className={styles.stackedLogos}>
-                <img
-                  src="https://s3.amazonaws.com/operationcode-assets/branding/logos/small-stacked-logo-red.png"
-                  alt="Stacked Small Red Logo"
-                />
-                <p>Red Accent</p>
-              </div>
-              <div className={styles.stackedLogos}>
-                <img
-                  src="https://s3.amazonaws.com/operationcode-assets/branding/logos/small-stacked-logo.png"
-                  alt="Stacked Small Slate Logo"
-                />
-                <p>Slate Accent</p>
-              </div>
-            </div>
-          </div>
-          <div className={styles.marginSpace}>
-            <h6>MEDALS</h6>
-            <div className={styles.smallMedalLogos}>
-              <div className={styles.medalLogos}>
-                <img
-                  src="https://s3.amazonaws.com/operationcode-assets/branding/logos/large-blue-medal.png"
-                  alt="Blue Medal"
-                />
-                <p>Blue</p>
-              </div>
-              <div className={styles.medalLogos}>
-                <img
-                  src="https://s3.amazonaws.com/operationcode-assets/branding/logos/large-red-medal.png"
-                  alt="Red Medal"
-                />
-                <p>Red</p>
-              </div>
-              <div className={styles.medalLogos}>
-                <img
-                  src="https://s3.amazonaws.com/operationcode-assets/branding/logos/large-slate-medal.png"
-                  alt="Slate Medal"
-                />
-                <p>Slate</p>
-              </div>
-            </div>
-          </div>
-        </section>
-        <div className={styles.sectionPadding}>
+
+          <ul className={styles.logoTypeList}>
+            <li className={styles.logoTypeListItem}>
+              <h6>TYPICAL</h6>
+
+              <ul className={styles.badgeList}>
+                <li>
+                  <Badge
+                    icon={
+                      <img
+                        src={`${s3}branding/logos/small-blue-logo.png`}
+                        alt="Small Blue Accented Logo"
+                      />
+                    }
+                    isImageFirst={false}
+                    label="Blue"
+                  />
+                </li>
+
+                <li>
+                  <Badge
+                    icon={
+                      <img
+                        src={`${s3}branding/logos/small-red-logo.png`}
+                        alt="Small Red Accented Logo"
+                      />
+                    }
+                    isImageFirst={false}
+                    label="Red"
+                  />
+                </li>
+
+                <li>
+                  <Badge
+                    icon={
+                      <img src={`${s3}branding/logos/small-logo.png`} alt="Small Unaccented Logo" />
+                    }
+                    isImageFirst={false}
+                    label="Slate"
+                  />
+                </li>
+
+                <li>
+                  <Badge
+                    icon={
+                      <img
+                        src={`${s3}branding/logos/small-white-logo.png`}
+                        alt="Small White Accented Logo"
+                      />
+                    }
+                    isImageFirst={false}
+                    label="White"
+                  />
+                </li>
+              </ul>
+            </li>
+
+            <li className={styles.logoTypeListItem}>
+              <h6>STACKED</h6>
+
+              <ul className={styles.badgeList}>
+                <li>
+                  <Badge
+                    icon={
+                      <img
+                        src={`${s3}branding/logos/small-stacked-logo-blue.png`}
+                        alt="Stacked Small Blue Logo"
+                      />
+                    }
+                    isImageFirst={false}
+                    label="Blue"
+                  />
+                </li>
+
+                <li>
+                  <Badge
+                    icon={
+                      <img
+                        src={`${s3}branding/logos/small-stacked-logo-red.png`}
+                        alt="Stacked Small Red Logo"
+                      />
+                    }
+                    isImageFirst={false}
+                    label="Red"
+                  />
+                </li>
+
+                <li>
+                  <Badge
+                    icon={
+                      <img
+                        src={`${s3}branding/logos/small-stacked-logo.png`}
+                        alt="Stacked Unaccented Slate Logo"
+                      />
+                    }
+                    isImageFirst={false}
+                    label="Slate"
+                  />
+                </li>
+              </ul>
+            </li>
+
+            <li className={styles.logoTypeListItem}>
+              <h6>MEDALS</h6>
+              <p>
+                For use as an icon reference, when no other logo representations will fit the media
+                space.
+              </p>
+
+              <ul className={styles.badgeList}>
+                <li>
+                  <Badge
+                    icon={<img src={`${s3}branding/logos/large-blue-medal.png`} alt="Blue Medal" />}
+                    isImageFirst={false}
+                    label="Blue"
+                  />
+                </li>
+
+                <li>
+                  <Badge
+                    icon={<img src={`${s3}branding/logos/large-red-medal.png`} alt="Red Medal" />}
+                    isImageFirst={false}
+                    label="Red"
+                  />
+                </li>
+
+                <li>
+                  <Badge
+                    icon={
+                      <img src={`${s3}branding/logos/large-slate-medal.png`} alt="Slate Medal" />
+                    }
+                    isImageFirst={false}
+                    label="Slate"
+                  />
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        {/* - LARGE LOGOS - */}
+        <li className={classNames(styles.logoSizeListItem, styles.largeLogos)}>
           <h5>LARGE</h5>
           <p>For use when the medal is above 1-inch tall.</p>
-          <div className={styles.marginSpace}>
-            <h6>LOGO</h6>
-            <div className={styles.largeLogos}>
-              <div className={styles.stackLogos}>
-                <img
-                  src="https://s3.amazonaws.com/operationcode-assets/branding/logos/large-blue-logo.png"
-                  alt="Blue Accent Logo"
-                />
-                <p>Blue Accent</p>
-              </div>
-              <div className={styles.stackLogos}>
-                <img
-                  src="https://s3.amazonaws.com/operationcode-assets/branding/logos/large-red-logo.png"
-                  alt="Red Accent Logo"
-                />
-                <p>Red Accent</p>
-              </div>
-              <div className={styles.stackLogos}>
-                <img
-                  src="https://s3.amazonaws.com/operationcode-assets/branding/logos/large-logo.png"
-                  alt="No Accent Logo"
-                />
-                <p>No Accent</p>
-              </div>
-              <div className={styles.stackLogos}>
-                <img
-                  src="https://s3.amazonaws.com/operationcode-assets/branding/logos/large-white-logo.png"
-                  alt="White Accent Logo"
-                />
-                <p>White Accent</p>
-              </div>
-            </div>
-            <div className={styles.largeLogos}>
-              <div className={styles.starLogos}>
-                <img
-                  src="https://s3.amazonaws.com/operationcode-assets/branding/logos/large-white-logo-blue-star.png"
-                  alt="White Blue Star Logo"
-                />
-              </div>
-              <div className={styles.starLogos}>
-                <img
-                  src="https://s3.amazonaws.com/operationcode-assets/branding/logos/large-white-logo-red-star.png"
-                  alt="White Red Star Logo"
-                />
-              </div>
-              <div className={styles.starLogos}>
-                <img
-                  src="https://s3.amazonaws.com/operationcode-assets/branding/logos/large-white-logo-slate-star.png"
-                  alt="White Slate Star Logo"
-                />
-              </div>
-            </div>
-            <p>Star Accents</p>
-          </div>
-          <div className={styles.marginSpace}>
-            <h6>LOGO, STACKED</h6>
-            <div className={styles.largeLogos}>
-              <div className={styles.stackedLogos}>
-                <img
-                  src="https://s3.amazonaws.com/operationcode-assets/branding/logos/large-stacked-logo-blue.png"
-                  alt="Stacked LARGE Blue Logo"
-                />
-                <p>Blue Accent</p>
-              </div>
-              <div className={styles.stackedLogos}>
-                <img
-                  src="https://s3.amazonaws.com/operationcode-assets/branding/logos/large-stacked-logo-red.png"
-                  alt="Stacked Large Red Logo"
-                />
-                <p>Red Accent</p>
-              </div>
-              <div className={styles.stackedLogos}>
-                <img
-                  src="https://s3.amazonaws.com/operationcode-assets/branding/logos/large-stacked-logo.png"
-                  alt="Stacked Large Slate Logo"
-                />
-                <p>Slate Accent</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+
+          <ul className={styles.logoTypeList}>
+            <li className={styles.logoTypeListItem}>
+              <h6>TYPICAL</h6>
+
+              <ul className={styles.badgeList}>
+                <li>
+                  <Badge
+                    icon={
+                      <img
+                        src={`${s3}branding/logos/large-blue-logo.png`}
+                        alt="Large Blue Accented Logo"
+                      />
+                    }
+                    isImageFirst={false}
+                    label="Blue"
+                  />
+                </li>
+
+                <li>
+                  <Badge
+                    icon={
+                      <img
+                        src={`${s3}branding/logos/large-red-logo.png`}
+                        alt="Large Red Accented Logo"
+                      />
+                    }
+                    isImageFirst={false}
+                    label="Red"
+                  />
+                </li>
+
+                <li>
+                  <Badge
+                    icon={
+                      <img
+                        src={`${s3}branding/logos/large-logo.png`}
+                        alt="Large Unaccenteded Logo"
+                      />
+                    }
+                    isImageFirst={false}
+                    label="Slate"
+                  />
+                </li>
+
+                <li>
+                  <Badge
+                    icon={
+                      <img
+                        src={`${s3}branding/logos/large-white-logo.png`}
+                        alt="Large White Accented Logo"
+                      />
+                    }
+                    isImageFirst={false}
+                    label="White"
+                  />
+                </li>
+              </ul>
+            </li>
+
+            <li className={styles.logoTypeListItem}>
+              <h6>STACKED</h6>
+
+              <ul className={styles.badgeList}>
+                <li>
+                  <Badge
+                    icon={
+                      <img
+                        src={`${s3}branding/logos/large-stacked-logo-blue.png`}
+                        alt="Stacked Large Blue Logo"
+                      />
+                    }
+                    isImageFirst={false}
+                    label="Blue"
+                  />
+                </li>
+
+                <li>
+                  <Badge
+                    icon={
+                      <img
+                        src={`${s3}branding/logos/large-stacked-logo-red.png`}
+                        alt="Stacked Large Red Logo"
+                      />
+                    }
+                    isImageFirst={false}
+                    label="Red"
+                  />
+                </li>
+
+                <li>
+                  <Badge
+                    icon={
+                      <img
+                        src={`${s3}branding/logos/large-stacked-logo.png`}
+                        alt="Stacked Large Slate Logo"
+                      />
+                    }
+                    isImageFirst={false}
+                    label="Slate"
+                  />
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
     </Section>
   );
 }
