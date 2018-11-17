@@ -5,7 +5,10 @@ import styles from './Badge.css';
 
 Badge.propTypes = {
   className: PropTypes.string,
-  svgComponent: PropTypes.element.isRequired,
+
+  // TODO: Create custom proptype accepting only `<svg>` or `<img>`
+  // TODO: Once above is done, add integration tests regarding proptype
+  icon: PropTypes.element.isRequired,
   label: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
 };
 
@@ -13,10 +16,10 @@ Badge.defaultProps = {
   className: undefined,
 };
 
-function Badge({ className, svgComponent, label }) {
+function Badge({ className, icon, label }) {
   return (
     <div className={classNames(styles.Badge, className)}>
-      <div className={styles.iconContainer}>{svgComponent}</div>
+      <div className={styles.iconContainer}>{icon}</div>
       <span className={styles.label}>{label}</span>
     </div>
   );
