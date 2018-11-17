@@ -10,17 +10,28 @@ Badge.propTypes = {
   // TODO: Once above is done, add integration tests regarding proptype
   icon: PropTypes.element.isRequired,
   label: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
+  isImageFirst: PropTypes.bool,
 };
 
 Badge.defaultProps = {
   className: undefined,
+  isImageFirst: true,
 };
 
-function Badge({ className, icon, label }) {
+function Badge({ className, icon, isImageFirst, label }) {
   return (
     <div className={classNames(styles.Badge, className)}>
-      <div className={styles.iconContainer}>{icon}</div>
-      <span className={styles.label}>{label}</span>
+      {isImageFirst ? (
+        <>
+          <div className={styles.iconContainer}>{icon}</div>
+          <span className={styles.label}>{label}</span>
+        </>
+      ) : (
+        <>
+          <span className={styles.label}>{label}</span>
+          <div className={styles.iconContainer}>{icon}</div>
+        </>
+      )}
     </div>
   );
 }
