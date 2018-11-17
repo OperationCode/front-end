@@ -1,6 +1,7 @@
 import React from 'react';
 import Section from 'components/_common_/Section/Section';
 import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
+import { s3 } from 'common/constants/urls';
 import styles from './LogosSection.css';
 
 function LogosSection() {
@@ -35,52 +36,40 @@ function LogosSection() {
             <h6>LOGO</h6>
             <div className={styles.smallLogos}>
               <div className={styles.stackLogos}>
-                <img
-                  src="https://s3.amazonaws.com/operationcode-assets/branding/logos/small-blue-logo.png"
-                  alt="Blue Accent Logo"
-                />
+                <img src={`${s3}branding/logos/small-blue-logo.png`} alt="Blue Accent Logo" />
                 <p>Blue Accent</p>
               </div>
               <div className={styles.stackLogos}>
-                <img
-                  src="https://s3.amazonaws.com/operationcode-assets/branding/logos/small-red-logo.png"
-                  alt="Red Accent Logo"
-                />
+                <img src={`${s3}branding/logos/small-red-logo.png`} alt="Red Accent Logo" />
                 <p>Red Accent</p>
               </div>
             </div>
             <div className={styles.smallLogos}>
               <div className={styles.stackLogos}>
-                <img
-                  src="https://s3.amazonaws.com/operationcode-assets/branding/logos/small-logo.png"
-                  alt="No Accent Logo"
-                />
+                <img src={`${s3}branding/logos/small-logo.png`} alt="No Accent Logo" />
                 <p>No Accent</p>
               </div>
               <div className={styles.stackLogos}>
-                <img
-                  src="https://s3.amazonaws.com/operationcode-assets/branding/logos/small-white-logo.png"
-                  alt="White Accent Logo"
-                />
+                <img src={`${s3}branding/logos/small-white-logo.png`} alt="White Accent Logo" />
                 <p>White Accent</p>
               </div>
             </div>
             <div className={styles.smallLogos}>
               <div className={styles.starLogos}>
                 <img
-                  src="https://s3.amazonaws.com/operationcode-assets/branding/logos/small-white-logo-blue-star.png"
+                  src={`${s3}branding/logos/small-white-logo-blue-star.png`}
                   alt="White Blue Star Logo"
                 />
               </div>
               <div className={styles.starLogos}>
                 <img
-                  src="https://s3.amazonaws.com/operationcode-assets/branding/logos/small-white-logo-red-star.png"
+                  src={`${s3}branding/logos/small-white-logo-red-star.png`}
                   alt="White Red Star Logo"
                 />
               </div>
               <div className={styles.starLogos}>
                 <img
-                  src="https://s3.amazonaws.com/operationcode-assets/branding/logos/small-white-logo-slate-star.png"
+                  src={`${s3}branding/logos/small-white-logo-slate-star.png`}
                   alt="White Slate Star Logo"
                 />
               </div>
@@ -92,21 +81,21 @@ function LogosSection() {
             <div className={styles.smallLogos}>
               <div className={styles.stackedLogos}>
                 <img
-                  src="https://s3.amazonaws.com/operationcode-assets/branding/logos/small-stacked-logo-blue.png"
+                  src={`${s3}branding/logos/small-stacked-logo-blue.png`}
                   alt="Stacked Small Blue Logo"
                 />
                 <p>Blue Accent</p>
               </div>
               <div className={styles.stackedLogos}>
                 <img
-                  src="https://s3.amazonaws.com/operationcode-assets/branding/logos/small-stacked-logo-red.png"
+                  src={`${s3}branding/logos/small-stacked-logo-red.png`}
                   alt="Stacked Small Red Logo"
                 />
                 <p>Red Accent</p>
               </div>
               <div className={styles.stackedLogos}>
                 <img
-                  src="https://s3.amazonaws.com/operationcode-assets/branding/logos/small-stacked-logo.png"
+                  src={`${s3}branding/logos/small-stacked-logo.png`}
                   alt="Stacked Small Slate Logo"
                 />
                 <p>Slate Accent</p>
@@ -117,24 +106,15 @@ function LogosSection() {
             <h6>MEDALS</h6>
             <div className={styles.smallMedalLogos}>
               <div className={styles.medalLogos}>
-                <img
-                  src="https://s3.amazonaws.com/operationcode-assets/branding/logos/large-blue-medal.png"
-                  alt="Blue Medal"
-                />
+                <img src={`${s3}branding/logos/large-blue-medal.png`} alt="Blue Medal" />
                 <p>Blue</p>
               </div>
               <div className={styles.medalLogos}>
-                <img
-                  src="https://s3.amazonaws.com/operationcode-assets/branding/logos/large-red-medal.png"
-                  alt="Red Medal"
-                />
+                <img src={`${s3}branding/logos/large-red-medal.png`} alt="Red Medal" />
                 <p>Red</p>
               </div>
               <div className={styles.medalLogos}>
-                <img
-                  src="https://s3.amazonaws.com/operationcode-assets/branding/logos/large-slate-medal.png"
-                  alt="Slate Medal"
-                />
+                <img src={`${s3}branding/logos/large-slate-medal.png`} alt="Slate Medal" />
                 <p>Slate</p>
               </div>
             </div>
@@ -147,50 +127,38 @@ function LogosSection() {
             <h6>LOGO</h6>
             <div className={styles.largeLogos}>
               <div className={styles.stackLogos}>
-                <img
-                  src="https://s3.amazonaws.com/operationcode-assets/branding/logos/large-blue-logo.png"
-                  alt="Blue Accent Logo"
-                />
+                <img src={`${s3}branding/logos/large-blue-logo.png`} alt="Blue Accent Logo" />
                 <p>Blue Accent</p>
               </div>
               <div className={styles.stackLogos}>
-                <img
-                  src="https://s3.amazonaws.com/operationcode-assets/branding/logos/large-red-logo.png"
-                  alt="Red Accent Logo"
-                />
+                <img src={`${s3}branding/logos/large-red-logo.png`} alt="Red Accent Logo" />
                 <p>Red Accent</p>
               </div>
               <div className={styles.stackLogos}>
-                <img
-                  src="https://s3.amazonaws.com/operationcode-assets/branding/logos/large-logo.png"
-                  alt="No Accent Logo"
-                />
+                <img src={`${s3}branding/logos/large-logo.png`} alt="No Accent Logo" />
                 <p>No Accent</p>
               </div>
               <div className={styles.stackLogos}>
-                <img
-                  src="https://s3.amazonaws.com/operationcode-assets/branding/logos/large-white-logo.png"
-                  alt="White Accent Logo"
-                />
+                <img src={`${s3}branding/logos/large-white-logo.png`} alt="White Accent Logo" />
                 <p>White Accent</p>
               </div>
             </div>
             <div className={styles.largeLogos}>
               <div className={styles.starLogos}>
                 <img
-                  src="https://s3.amazonaws.com/operationcode-assets/branding/logos/large-white-logo-blue-star.png"
+                  src={`${s3}branding/logos/large-white-logo-blue-star.png`}
                   alt="White Blue Star Logo"
                 />
               </div>
               <div className={styles.starLogos}>
                 <img
-                  src="https://s3.amazonaws.com/operationcode-assets/branding/logos/large-white-logo-red-star.png"
+                  src={`${s3}branding/logos/large-white-logo-red-star.png`}
                   alt="White Red Star Logo"
                 />
               </div>
               <div className={styles.starLogos}>
                 <img
-                  src="https://s3.amazonaws.com/operationcode-assets/branding/logos/large-white-logo-slate-star.png"
+                  src={`${s3}branding/logos/large-white-logo-slate-star.png`}
                   alt="White Slate Star Logo"
                 />
               </div>
@@ -202,21 +170,21 @@ function LogosSection() {
             <div className={styles.largeLogos}>
               <div className={styles.stackedLogos}>
                 <img
-                  src="https://s3.amazonaws.com/operationcode-assets/branding/logos/large-stacked-logo-blue.png"
+                  src={`${s3}branding/logos/large-stacked-logo-blue.png`}
                   alt="Stacked LARGE Blue Logo"
                 />
                 <p>Blue Accent</p>
               </div>
               <div className={styles.stackedLogos}>
                 <img
-                  src="https://s3.amazonaws.com/operationcode-assets/branding/logos/large-stacked-logo-red.png"
+                  src={`${s3}branding/logos/large-stacked-logo-red.png`}
                   alt="Stacked Large Red Logo"
                 />
                 <p>Red Accent</p>
               </div>
               <div className={styles.stackedLogos}>
                 <img
-                  src="https://s3.amazonaws.com/operationcode-assets/branding/logos/large-stacked-logo.png"
+                  src={`${s3}branding/logos/large-stacked-logo.png`}
                   alt="Stacked Large Slate Logo"
                 />
                 <p>Slate Accent</p>
