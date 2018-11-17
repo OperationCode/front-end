@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FontSection should render with required props 1`] = `
+<Section
+  hasHeadingLines={true}
+  id=""
+  style={Object {}}
+  theme="mist"
+  title="Fonts"
+>
+  <ul
+    className="fontsList"
+  >
+    <li
+      className="primaryFontFamily"
+    >
+      <div>
+        <h6>
+          PF Din Display Pro Regular
+        </h6>
+        <p>
+          Sphinx of black quartz, judge my vow!
+        </p>
+      </div>
+    </li>
+    <li
+      className="secondaryFontFamily"
+    >
+      <div>
+        <h6>
+          Noto Serif Regular
+        </h6>
+        <p>
+          Sphinx of black quartz, judge my vow!
+        </p>
+      </div>
+    </li>
+  </ul>
+</Section>
+`;
