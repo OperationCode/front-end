@@ -1,10 +1,11 @@
 import React from 'react';
 import Section from 'components/_common_/Section/Section';
-import styles from './logos.css';
+import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
+import styles from './LogosSection.css';
 
-function LogoSection() {
+function LogosSection() {
   return (
-    <Section title="Logo">
+    <Section title="Logo" theme="gray">
       <p className={styles.logosInfo}>
         The size ratio between the star and the medallion changes depending on the size of
         reproduction. Please make use of the appropriate sized logo when creating collateral.
@@ -14,18 +15,22 @@ function LogoSection() {
         special uses only.
       </p>
       <p className={styles.logosInfo}>
-        <a href="https://s3.us-east-2.amazonaws.com/operationcode-web/Operation-Code-Logo.eps">
+        <OutboundLink
+          analyticsEventLabel="Download master EPS file"
+          href="https://s3.us-east-2.amazonaws.com/operationcode-web/Operation-Code-Logo.eps"
+        >
           Download master EPS file
-        </a>
+        </OutboundLink>
       </p>
       <p className={styles.logosInfo}>
         The files below are transparent PNGs. Click-and-drag (or for mobile, press-and-hold) them
         directly from your browser to download the file.
       </p>
+
       <div className={styles.logoImages}>
         <section className={styles.sectionPadding}>
           <h5>SMALL</h5>
-          <p>For use when the medal is between 0 and 1-inch tall.</p>
+          <p className={styles.centerText}>For use when the medal is between 0 and 1-inch tall.</p>
           <div className={styles.marginSpace}>
             <h6>LOGO</h6>
             <div className={styles.smallLogos}>
@@ -137,7 +142,7 @@ function LogoSection() {
         </section>
         <div className={styles.sectionPadding}>
           <h5>LARGE</h5>
-          <p>For use when the medal is above 1-inch tall.</p>
+          <p className={styles.centerText}>For use when the medal is above 1-inch tall.</p>
           <div className={styles.marginSpace}>
             <h6>LOGO</h6>
             <div className={styles.largeLogos}>
@@ -190,7 +195,7 @@ function LogoSection() {
                 />
               </div>
             </div>
-            <p>Star Accents</p>
+            <p className={styles.centerText}>Star Accents</p>
           </div>
           <div className={styles.marginSpace}>
             <h6>LOGO, STACKED</h6>
@@ -223,4 +228,4 @@ function LogoSection() {
     </Section>
   );
 }
-export default LogoSection;
+export default LogosSection;

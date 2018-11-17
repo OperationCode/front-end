@@ -13,10 +13,18 @@
   border: none;
 }
 
+.centerText {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .logosInfo {
   width: 60%;
   font-size: 1.2rem;
   text-align: justify;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .logosInfo a {

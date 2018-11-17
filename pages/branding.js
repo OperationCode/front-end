@@ -1,10 +1,13 @@
-import React from 'react';
 import Head from 'components/head';
-import LogoSection from 'components/BrandingContent/LogoSection/LogoSection';
+import LogosSection from 'components/BrandingContent/LogosSection/LogosSection';
+import ColorsSection from 'components/BrandingContent/ColorsSection/ColorsSection';
+import FontsSection from 'components/BrandingContent/FontsSection/FontsSection';
 
 export default () => (
   <>
     <Head title="Branding" />
-    <LogoSection />
+    <LogosSection />
+    <ColorsSection />
+    <FontsSection />
   </>
 );
