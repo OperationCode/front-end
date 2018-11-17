@@ -1,0 +1,15 @@
+.brandingFonts {
+  text-align: center;
+  margin: auto;
+}
+
+.centerText {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.brandingFonts > p {
+  color: var(--primary);
+  text-decoration: none;
+}
