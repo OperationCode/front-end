@@ -1,19 +1,7 @@
-.DonateSection {
-  background-image: url("https://s3.amazonaws.com/operationcode-assets/background_flag.jpg");
-}
-
-.donateText {
-  align-items: center;
+.content {
   display: flex;
+  align-items: center;
   flex-direction: column;
-  max-width: 700px;
-  width: 90%;
-}
-
-.donateText p {
-  font-size: 1.25rem;
-}
-
-.donateText p:last-of-type {
-  padding-bottom: 2rem;
+  justify-content: space-around;
+  max-width: 50rem;
 }

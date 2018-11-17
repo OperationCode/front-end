@@ -5,18 +5,22 @@ import createSnapshotTest from 'test-utils/createSnapshotTest';
 import FormCheckBox from '../FormCheckBox';
 
 describe('FormCheckBox', () => {
-  test('should render with just required props passed', () => {
-    createSnapshotTest(<FormCheckBox>Test</FormCheckBox>);
+  it('should render with required props', () => {
+    createSnapshotTest(
+      <FormCheckBox name="test-checkbox" value="test value">
+        Test
+      </FormCheckBox>,
+    );
   });
 
-  test('should render properly with some props assigned', () => {
+  it('should render with many props assigned', () => {
     createSnapshotTest(
       <FormCheckBox
-        className="somename"
-        data-custom-attr="custom stuff here"
-        disabled
-        fullWidth
-        type="checkbox"
+        checkBox={{ display: 'inline-block', margin: '1rem' }}
+        label={{ fontWeight: 'bold', margin: '1rem', textTransform: 'uppercase' }}
+        name="test-checkbox"
+        onChange={jest.fn()}
+        value="test value"
       >
         Test
       </FormCheckBox>,

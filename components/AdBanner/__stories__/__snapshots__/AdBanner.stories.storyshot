@@ -4,11 +4,13 @@ exports[`Storyshots AdBanner default 1`] = `
 <a
   className="adBannerLink"
   href="https://autogravity.com"
+  onClick={[Function]}
   rel="noopener noreferrer"
   target="_blank"
+  to="https://autogravity.com"
 >
   <span
-    className="screenReaderOnly"
+    className="ScreenReaderOnly"
   >
     Opens in new window
   </span>

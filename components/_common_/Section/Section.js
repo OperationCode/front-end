@@ -12,18 +12,29 @@ Section.propTypes = {
   style: PropTypes.object,
   theme: PropTypes.oneOf(['gray', 'grayLight', 'mist', 'slate', 'white']),
   title: PropTypes.string,
+  contentClassName: PropTypes.string,
 };
 
 Section.defaultProps = {
-  className: '',
+  className: undefined,
   hasHeadingLines: true,
   id: '',
   style: {},
   theme: 'gray',
   title: '',
+  contentClassName: undefined,
 };
 
-function Section({ children, className, hasHeadingLines, id, theme, style, title }) {
+function Section({
+  children,
+  className,
+  hasHeadingLines,
+  id,
+  theme,
+  style,
+  title,
+  contentClassName,
+}) {
   // heading theme should contrast from section's theme.
   let headingTheme;
   switch (theme) {
@@ -49,7 +60,7 @@ function Section({ children, className, hasHeadingLines, id, theme, style, title
           {title}
         </Heading>
       )}
-      <div className={styles.content}>{children}</div>
+      <div className={`${styles.content} ${contentClassName}`}>{children}</div>
     </section>
   );
 }

@@ -28,19 +28,20 @@ exports[`Storyshots Cards/TeamMemberCard default 1`] = `
         Twitter: 
       </span>
       <a
-        className=""
         href="https://twitter.com/kylemh_"
+        onClick={[Function]}
         rel="noopener noreferrer"
         target="_blank"
+        to="https://twitter.com/kylemh_"
       >
         <span
-          className="screenReaderOnly"
+          className="ScreenReaderOnly"
         >
           Opens in new window
         </span>
         @
         kylemh_
-        <test-file-mock
+        <svg
           className="externalLinkIcon"
         />
       </a>
@@ -52,13 +53,14 @@ exports[`Storyshots Cards/TeamMemberCard default 1`] = `
         Email: 
       </span>
       <a
-        className=""
         href="mailto:kyle@operationcode.org"
+        onClick={[Function]}
         rel="noopener noreferrer"
         target="_blank"
+        to="mailto:kyle@operationcode.org"
       >
         <span
-          className="screenReaderOnly"
+          className="ScreenReaderOnly"
         >
           Opens in new window
         </span>

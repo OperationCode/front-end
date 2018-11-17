@@ -5,7 +5,7 @@ import createSnapshotTest from 'test-utils/createSnapshotTest';
 import OutboundLink from '../OutboundLink';
 
 describe('OutboundLink', () => {
-  test('should render with just required props passed', () => {
+  it('should render with required props', () => {
     createSnapshotTest(
       <OutboundLink analyticsEventLabel="Test" href="https://tests.com">
         Test
@@ -13,7 +13,7 @@ describe('OutboundLink', () => {
     );
   });
 
-  test('should render properly with all props assigned', () => {
+  it('should render with many props assigned', () => {
     createSnapshotTest(
       <OutboundLink
         analyticsEventLabel="Test"

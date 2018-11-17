@@ -1,0 +1,15 @@
+.PartnerLogoLink {
+  text-align: center;
+  width: 200px;
+}
+
+.logo {
+  filter: grayscale(100%);
+  height: 100px;
+  transition: filter 0.2s linear;
+}
+
+.logo:hover {
+  filter: grayscale(0);
+  transition: filter 0.2s linear;
+}

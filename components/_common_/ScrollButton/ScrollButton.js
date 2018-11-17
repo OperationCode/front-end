@@ -17,9 +17,9 @@ class ScrollButton extends Component {
   };
 
   static defaultProps = {
-    className: '',
+    className: undefined,
     fullWidth: false,
-    onClick: undefined,
+    onClick: () => {},
     tabIndex: 0,
     theme: 'primary',
   };

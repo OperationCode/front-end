@@ -12,16 +12,15 @@ Modal.propTypes = {
   className: PropTypes.string,
   hasCloseIcon: PropTypes.bool,
   isOpen: PropTypes.bool,
-  onRequestClose: PropTypes.func,
+  onRequestClose: PropTypes.func.isRequired,
   screenReaderLabel: PropTypes.string.isRequired, // basically a summarizing title
   shouldCloseOnOverlayClick: PropTypes.bool,
 };
 
 Modal.defaultProps = {
-  className: '',
+  className: undefined,
   hasCloseIcon: true,
   isOpen: false,
-  onRequestClose: undefined,
   shouldCloseOnOverlayClick: true,
 };
 
@@ -35,7 +34,7 @@ function Modal({
   shouldCloseOnOverlayClick,
 }) {
   if (process.env.NODE_ENV === 'production' && process.env.GOOGLE_ANALYTICS_KEY) {
-    ReactGA.modalView(screenReaderLabel);
+    ReactGA.modalview(screenReaderLabel);
   }
 
   return (

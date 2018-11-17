@@ -4,32 +4,32 @@ exports[`Storyshots FeaturedJobItem default 1`] = `
 <article
   className="job"
 >
-  <div>
-    <a
-      className=""
-      href="https://www.gitlab.com"
-      rel="noopener noreferrer"
-      target="_blank"
+  <a
+    href="https://www.gitlab.com"
+    onClick={[Function]}
+    rel="noopener noreferrer"
+    target="_blank"
+    to="https://www.gitlab.com"
+  >
+    <span
+      className="ScreenReaderOnly"
     >
-      <span
-        className="screenReaderOnly"
-      >
-        Opens in new window
-      </span>
-      <h6
-        className="link"
-      >
-        Director of Awesome
-      </h6>
-    </a>
-  </div>
+      Opens in new window
+    </span>
+    <h6>
+      Director of Awesome
+    </h6>
+    <svg
+      className="externalLinkIcon"
+    />
+  </a>
   <div
     className="details"
   >
     <div
       className="detailsContainer"
     >
-      <test-file-mock
+      <svg
         className="icon"
       />
       <span
@@ -41,7 +41,7 @@ exports[`Storyshots FeaturedJobItem default 1`] = `
     <div
       className="detailsContainer"
     >
-      <test-file-mock
+      <svg
         className="icon"
       />
       <span

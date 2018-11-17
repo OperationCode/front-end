@@ -1,13 +1,13 @@
 <div align="center">
-  <br />
+  <br>
   <a href="https://operationcode.org">
     <img
       alt="Operation Code Hacktoberfest Banner"
-      src="https://s3.amazonaws.com/operationcode-assets/operationcode-hacktoberfest-2018.png"
+      src="https://s3.amazonaws.com/operationcode-assets/branding/logos/large-blue-logo.png"
     >
   </a>
-  <br />
-  <br />
+  <br>
+  <br>
 </div>
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
@@ -41,7 +41,7 @@ Our entire UI library is documented via [![Storybook](https://github.com/storybo
 Recommended versions of tools used within the repo:
 
 - Node: See [.nvmrc](https://github.com/OperationCode/front-end/blob/master/.nvmrc)
-- `yarn@1.7.0` or greater
+- `yarn@1.12.1` or greater
 - `git@2.17.1` or greater
 
 ```sh
@@ -54,12 +54,12 @@ yarn dev
 # Use Storybook as a workbench when developing new components
 yarn storybook
 
-#Start local production build (typically unnecessary locally)
+# Start local production build (typically unnecessary locally)
 yarn start
 
-#Run all available unit and integration tests
+# Run all available unit and integration tests
 yarn test
 
-#Create all the necessary files/folders for a new, reusable component
+# Create all the necessary files/folders for a new, reusable component
 yarn create-component $ComponentName
 ```

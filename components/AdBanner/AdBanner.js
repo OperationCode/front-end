@@ -12,12 +12,12 @@ AdBanner.propTypes = {
   imageSource: PropTypes.string.isRequired,
 };
 
-AdBanner.defaultProps = { className: '' };
+AdBanner.defaultProps = { className: undefined };
 
 function AdBanner({ altText, children, className, imageSource, href }) {
   return (
     <OutboundLink
-      analyticsEventLabel="[AdBanner Hit]"
+      analyticsEventLabel="AdBanner Hit"
       className={classNames(className, styles.adBannerLink)}
       hasIcon={false}
       href={href}

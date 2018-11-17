@@ -1,3 +1,4 @@
+import Head from 'components/head';
 import { getCodeSchoolsPromise } from 'common/constants/api';
 import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
 import Section from 'components/_common_/Section/Section';
@@ -7,8 +8,9 @@ export default class CodeSchools extends React.Component {
     schools: [],
   };
 
-  componentDidMount() {
-    getCodeSchoolsPromise().then(({ data }) => this.setState({ schools: data }));
+  async componentDidMount() {
+    const { data } = await getCodeSchoolsPromise();
+    this.setState({ schools: data });
   }
 
   render() {
@@ -16,6 +18,8 @@ export default class CodeSchools extends React.Component {
 
     return (
       <>
+        <Head title="Code Schools" />
+
         <Section theme="white" title="Code Schools">
           <p>
             Code schools are accelerated learning programs that will prepare you for a career in

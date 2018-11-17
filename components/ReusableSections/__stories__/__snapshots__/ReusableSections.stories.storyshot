@@ -2,7 +2,7 @@
 
 exports[`Storyshots ReusableSections DonateSection 1`] = `
 <section
-  className="DonateSection Section slate"
+  className="Section slate"
   style={
     Object {
       "backgroundImage": "url(https://s3.amazonaws.com/operationcode-assets/background_flag.jpg",
@@ -16,17 +16,68 @@ exports[`Storyshots ReusableSections DonateSection 1`] = `
     Donate
   </h2>
   <div
-    className="content"
+    className="content content"
   >
-    <div
-      className="donateText"
+    <p>
+      As a 501(c)(3) veteran-led nonprofit organization, our programs and services are maintained through the efforts of our volunteer staff. Your financial support allows us to continue helping the military community learn software development, enter the tech industry, and code the future.
+    </p>
+    <p>
+      Thank you for supporting our mission!
+    </p>
+    <button
+      className="Button primary"
+      disabled={false}
+      onClick={[Function]}
+      tabIndex={0}
+      type="button"
     >
-      <p>
-        As a 501(c)(3) veteran-led nonprofit organization, our programs and services are maintained through the efforts of our volunteer staff. Your financial support allows us to continue helping the military community learn software development, enter the tech industry, and code the future.
-      </p>
-      <p>
-        Thank you for supporting our mission!
-      </p>
+      <a
+        href="https://secure.lglforms.com/form_engine/s/BRtP7QUKyHOyEYsZROsRew"
+        onClick={[Function]}
+        rel="noopener noreferrer"
+        target="_blank"
+        to="https://secure.lglforms.com/form_engine/s/BRtP7QUKyHOyEYsZROsRew"
+      >
+        <span
+          className="ScreenReaderOnly"
+        >
+          Opens in new window
+        </span>
+        Donate Now
+        <svg
+          className="externalLinkIcon"
+        />
+      </a>
+    </button>
+  </div>
+</section>
+`;
+
+exports[`Storyshots ReusableSections JoinSection 1`] = `
+<section
+  className="Section white"
+  style={Object {}}
+>
+  <h2
+    className="Heading slate"
+    id=""
+  >
+    Join Our Thriving Community
+  </h2>
+  <div
+    className="content JoinSection"
+  >
+    <p>
+      Are you ready to begin your journey towards a career in software development?
+      <br />
+      Get the support you need by joining our members only Slack community!
+    </p>
+    <div
+      className="form"
+    >
+      <input
+        placeholder="Email address"
+      />
       <button
         className="Button primary"
         disabled={false}
@@ -34,70 +85,31 @@ exports[`Storyshots ReusableSections DonateSection 1`] = `
         tabIndex={0}
         type="button"
       >
-        <a
-          className=""
-          href="https://secure.lglforms.com/form_engine/s/BRtP7QUKyHOyEYsZROsRew"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          <span
-            className="screenReaderOnly"
-          >
-            Opens in new window
-          </span>
-          Donate Now
-          <test-file-mock
-            className="externalLinkIcon"
-          />
-        </a>
+        <span>
+          Join our Slack
+        </span>
       </button>
     </div>
-  </div>
-</section>
-`;
-
-exports[`Storyshots ReusableSections JoinSection 1`] = `
-<section
-  className="JoinSection Section white"
-  style={
-    Object {
-      "backgroundImage": "url(https://s3.amazonaws.com/operationcode-assets/background_marching-troops.jpg",
-    }
-  }
->
-  <h2
-    className="Heading slate"
-    id=""
-  >
-    Join Today!
-  </h2>
-  <div
-    className="content"
-  >
-    <div
-      className="joinText"
+    <p>
+      Slack is a community based collaboration tool where all the magic happens!
+    </p>
+    <a
+      href="https://slack.com/"
+      onClick={[Function]}
+      rel="noopener noreferrer"
+      target="_blank"
+      to="https://slack.com/"
     >
-      <p>
-        Operation Code is leading the way to expand opportunities for military veterans and their families to learn new skills, and build a career in the fast-growing technology sector.
-      </p>
-      <p>
-        Join our community for free and jumpstart your skills today!
-      </p>
-      <button
-        className="Button secondary"
-        disabled={false}
-        onClick={[Function]}
-        tabIndex={0}
-        type="button"
+      <span
+        className="ScreenReaderOnly"
       >
-        <a
-          href="/join"
-          onClick={[Function]}
-        >
-          Join
-        </a>
-      </button>
-    </div>
+        Opens in new window
+      </span>
+      Learn more
+      <svg
+        className="externalLinkIcon"
+      />
+    </a>
   </div>
 </section>
 `;
@@ -114,7 +126,7 @@ exports[`Storyshots ReusableSections SignUpSection 1`] = `
     New user?
   </h2>
   <div
-    className="content"
+    className="content content"
   >
     <p>
       Are you ready to deploy your future? Join Operation Code today and launch your career in software development. Once you complete the form below, you’ll be invited to join our team on Slack. Make sure you stop in and say hi!

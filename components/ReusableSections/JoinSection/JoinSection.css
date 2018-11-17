@@ -1,15 +1,16 @@
-.joinText {
+.JoinSection {
   align-items: center;
+  max-width: 900px;
+  text-align: center;
+}
+
+.form {
   display: flex;
-  flex-direction: column;
-  max-width: 700px;
-  width: 90%;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 1rem 0;
 }
 
-.joinText p {
-  font-size: 1.25rem;
-}
-
-.joinText p:last-of-type {
-  padding-bottom: 2rem;
+.form > input {
+  width: 300px;
 }

@@ -1,35 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FeaturedJobItem should render properly with all props assigned 1`] = `
+exports[`FeaturedJobItem should render with many props assigned 1`] = `
 <article
   className="job"
 >
-  <div>
-    <a
-      className=""
-      href="https://jobs.lever.co/formidable/82919058-b73c-4a02-8589-87e2433f0a90"
-      rel="noopener noreferrer"
-      target="_blank"
+  <a
+    href="https://jobs.lever.co/formidable/82919058-b73c-4a02-8589-87e2433f0a90"
+    onClick={[Function]}
+    rel="noopener noreferrer"
+    target="_blank"
+    to="https://jobs.lever.co/formidable/82919058-b73c-4a02-8589-87e2433f0a90"
+  >
+    <span
+      className="ScreenReaderOnly"
     >
-      <span
-        className="screenReaderOnly"
-      >
-        Opens in new window
-      </span>
-      <h6
-        className="link"
-      >
-        Experienced React Engineer
-      </h6>
-    </a>
-  </div>
+      Opens in new window
+    </span>
+    <h6>
+      Experienced React Engineer
+    </h6>
+    <svg
+      className="externalLinkIcon"
+    />
+  </a>
   <div
     className="details"
   >
     <div
       className="detailsContainer"
     >
-      <test-file-mock
+      <svg
         className="icon"
       />
       <span
@@ -41,7 +41,7 @@ exports[`FeaturedJobItem should render properly with all props assigned 1`] = `
     <div
       className="detailsContainer"
     >
-      <test-file-mock
+      <svg
         className="icon"
       />
       <span
@@ -65,7 +65,7 @@ exports[`FeaturedJobItem should render properly with all props assigned 1`] = `
     <div
       className="detailsContainer"
     >
-      <test-file-mock
+      <svg
         className="icon"
       />
       <span
@@ -83,36 +83,36 @@ exports[`FeaturedJobItem should render properly with all props assigned 1`] = `
 </article>
 `;
 
-exports[`FeaturedJobItem should render with just required props passed 1`] = `
+exports[`FeaturedJobItem should render with required props 1`] = `
 <article
   className="job"
 >
-  <div>
-    <a
-      className=""
-      href="https://about.gitlab.com/jobs/apply/?gh_jid=4055708002"
-      rel="noopener noreferrer"
-      target="_blank"
+  <a
+    href="https://about.gitlab.com/jobs/apply/?gh_jid=4055708002"
+    onClick={[Function]}
+    rel="noopener noreferrer"
+    target="_blank"
+    to="https://about.gitlab.com/jobs/apply/?gh_jid=4055708002"
+  >
+    <span
+      className="ScreenReaderOnly"
     >
-      <span
-        className="screenReaderOnly"
-      >
-        Opens in new window
-      </span>
-      <h6
-        className="link"
-      >
-        DevOps Engineer
-      </h6>
-    </a>
-  </div>
+      Opens in new window
+    </span>
+    <h6>
+      DevOps Engineer
+    </h6>
+    <svg
+      className="externalLinkIcon"
+    />
+  </a>
   <div
     className="details"
   >
     <div
       className="detailsContainer"
     >
-      <test-file-mock
+      <svg
         className="icon"
       />
       <span

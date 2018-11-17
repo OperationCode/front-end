@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ReactGA from 'react-ga';
-import { withRouter } from 'next/router';
 import ExternalLinkIcon from 'static/images/icons/FontAwesome/external-link-square-alt-solid.svg';
+import ScreenReaderOnly from 'components/_common_/ScreenReaderOnly/ScreenReaderOnly';
 import styles from './OutboundLink.css';
 
 OutboundLink.propTypes = {
@@ -11,42 +11,29 @@ OutboundLink.propTypes = {
   className: PropTypes.string,
   hasIcon: PropTypes.bool,
   href: PropTypes.string.isRequired,
-  router: PropTypes.object.isRequired,
 };
 
 OutboundLink.defaultProps = {
-  className: '',
+  className: undefined,
   hasIcon: true,
 };
 
-function OutboundLink({ analyticsEventLabel, children, className, hasIcon, href, router }) {
-  const linkContent = (
-    <React.Fragment>
-      <span className={styles.screenReaderOnly}>Opens in new window</span>
-      {children}
-      {hasIcon && <ExternalLinkIcon className={styles.externalLinkIcon} />}
-    </React.Fragment>
-  );
-
-  if (process.env.NODE_ENV === 'production') {
-    return (
-      <ReactGA.OutboundLink
-        className={className}
-        eventLabel={`OUTBOUND [${analyticsEventLabel}] from ${router.route}`}
-        rel="noopener noreferrer"
-        target="_blank"
-        to={href}
-      >
-        {linkContent}
-      </ReactGA.OutboundLink>
-    );
-  }
-
+function OutboundLink({ analyticsEventLabel, children, className, hasIcon, href }) {
   return (
-    <a className={className} href={href} rel="noopener noreferrer" target="_blank">
-      {linkContent}
-    </a>
+    <ReactGA.OutboundLink
+      className={className}
+      eventLabel={`OUTBOUND [${analyticsEventLabel}]`}
+      rel="noopener noreferrer"
+      target="_blank"
+      to={href}
+    >
+      <>
+        <ScreenReaderOnly>Opens in new window</ScreenReaderOnly>
+        {children}
+        {hasIcon && <ExternalLinkIcon className={styles.externalLinkIcon} />}
+      </>
+    </ReactGA.OutboundLink>
   );
 }
 
-export default withRouter(OutboundLink);
+export default OutboundLink;

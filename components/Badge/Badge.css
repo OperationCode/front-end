@@ -1,0 +1,21 @@
+.Badge {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.iconContainer > img,
+.iconContainer > svg {
+  fill: currentColor;
+  height: 100px;
+  margin-bottom: 1rem;
+}
+
+.label {
+  font-size: 1.2rem;
+  line-height: 1.2rem;
+  white-space: nowrap;
+}

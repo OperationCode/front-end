@@ -1,21 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SocialMedia it should render properly with no props 1`] = `
+exports[`SocialMedia should render with no props passed passed 1`] = `
 <SocialMediaContainer>
   <SocialMediaItem
     href="https://facebook.com/operationcode.org"
     name="Facebook"
     svg={
-      <test-file-mock
-        className="logo"
-      />
-    }
-  />
-  <SocialMediaItem
-    href="https://github.com/operationcode"
-    name="GitHub"
-    svg={
-      <test-file-mock
+      <Svg
         className="logo"
       />
     }
@@ -24,25 +15,16 @@ exports[`SocialMedia it should render properly with no props 1`] = `
     href="https://twitter.com/operation_code"
     name="Twitter"
     svg={
-      <test-file-mock
+      <Svg
         className="logo"
       />
     }
   />
   <SocialMediaItem
-    href="https://www.linkedin.com/groups/13400924"
-    name="LinkedIn"
+    href="https://www.instagram.com/operation_code/"
+    name="Instagram"
     svg={
-      <test-file-mock
-        className="logo"
-      />
-    }
-  />
-  <SocialMediaItem
-    href="https://www.pinterest.com/operationcode/"
-    name="Pinterest"
-    svg={
-      <test-file-mock
+      <Svg
         className="logo"
       />
     }

@@ -21,7 +21,14 @@ module.exports = {
   // collectCoverage: true,
 
   // An array of glob patterns indicating a set of files for which coverage information should be collected
-  collectCoverageFrom: ['<rootDir>/common/**/*.js', '<rootDir>/components/**/*.js'],
+  collectCoverageFrom: [
+    '<rootDir>/common/**/*.js',
+    '<rootDir>/components/**/*.js',
+
+    // Don't collect coverage from import/export mappers
+    '!<rootDir>/common/**/index.js',
+    '!<rootDir>/components/**/index.js',
+  ],
 
   // The directory where Jest should output its coverage files
   coverageDirectory: '<rootDir>/coverage',
@@ -37,7 +44,9 @@ module.exports = {
 
     // No real logic to test here
     '<rootDir>/common/utils/api-utils.js',
+    '<rootDir>/components/FAQ/questions.js',
     '<rootDir>/components/ZipRecruiterJobs/ZipRecruiterJobs.js',
+    '<rootDir>/components/Press/PressLinks/Articles.js',
 
     // Ignore Next.js files
     '<rootDir>/components/head.js',
@@ -80,8 +89,9 @@ module.exports = {
 
   // A map from regular expressions to module names that allow to stub out resources with a single module
   moduleNameMapper: {
-    '\\.(jpg|jpeg|png|gif|svg)$': '<rootDir>/test-utils/mocks/testFileMock.js',
-    '\\.css$': 'identity-obj-proxy',
+    '^.+\\.(jp?eg|png|gif|txt)$': '<rootDir>/test-utils/mocks/testFileMock.js',
+    '^.+\\.svg$': '<rootDir>/test-utils/mocks/svgMock.js',
+    '^.+\\.css$': 'identity-obj-proxy',
   },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
@@ -126,7 +136,7 @@ module.exports = {
   // runner: "jest-runner",
 
   // The paths to modules that run some code to configure or set up the testing environment before each test
-  // setupFiles: [],
+  setupFiles: ['jest-prop-type-error'],
 
   // The path to a module that runs some code to configure or set up the testing framework before each test
   setupTestFrameworkScriptFile: '<rootDir>/jest.setup.js',
@@ -167,7 +177,10 @@ module.exports = {
   // timers: "real",
 
   // A map from regular expressions to paths to transformers
-  transform: { '^.+\\.js$': 'babel-jest' },
+  transform: {
+    '^.+\\.js$': 'babel-jest',
+    '^(?!.*\\.(js|css|json)$)': '<rootDir>/test-utils/transforms/file.js',
+  },
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
   // transformIgnorePatterns: [],

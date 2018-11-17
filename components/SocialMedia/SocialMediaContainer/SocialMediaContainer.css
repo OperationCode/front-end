@@ -1,12 +1,6 @@
 .SocialMediaContainer {
   display: flex;
+  flex-direction: row;
   justify-content: space-around;
   align-items: center;
-}
-
-@media screen and (max-width: 768px) {
-  .SocialMediaContainer {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
 }

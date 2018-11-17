@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TeamMemberCard should render properly with all props assigned 1`] = `
+exports[`TeamMemberCard should render with many props assigned 1`] = `
 <article
   className="Card TeamMemberCard animatedCard"
 >
@@ -28,19 +28,20 @@ exports[`TeamMemberCard should render properly with all props assigned 1`] = `
         Twitter: 
       </span>
       <a
-        className=""
         href="https://twitter.com/kylemh"
+        onClick={[Function]}
         rel="noopener noreferrer"
         target="_blank"
+        to="https://twitter.com/kylemh"
       >
         <span
-          className="screenReaderOnly"
+          className="ScreenReaderOnly"
         >
           Opens in new window
         </span>
         @
         kylemh
-        <test-file-mock
+        <svg
           className="externalLinkIcon"
         />
       </a>
@@ -52,13 +53,14 @@ exports[`TeamMemberCard should render properly with all props assigned 1`] = `
         Email: 
       </span>
       <a
-        className=""
         href="mailto:inbox@kylemh.com"
+        onClick={[Function]}
         rel="noopener noreferrer"
         target="_blank"
+        to="mailto:inbox@kylemh.com"
       >
         <span
-          className="screenReaderOnly"
+          className="ScreenReaderOnly"
         >
           Opens in new window
         </span>
@@ -69,7 +71,7 @@ exports[`TeamMemberCard should render properly with all props assigned 1`] = `
 </article>
 `;
 
-exports[`TeamMemberCard should render properly with all required props assigned 1`] = `
+exports[`TeamMemberCard should render with required props 1`] = `
 <article
   className="Card TeamMemberCard animatedCard"
 >

@@ -1,14 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SchoolCard should render properly with all props assigned 1`] = `
+exports[`SchoolCard should render with many props assigned 1`] = `
 <a
   className="cardLinkOverrides"
   href="https://www.codeplatoon.org"
+  onClick={[Function]}
   rel="noopener noreferrer"
   target="_blank"
+  to="https://www.codeplatoon.org"
 >
   <span
-    className="screenReaderOnly"
+    className="ScreenReaderOnly"
   >
     Opens in new window
   </span>
@@ -65,15 +67,17 @@ exports[`SchoolCard should render properly with all props assigned 1`] = `
 </a>
 `;
 
-exports[`SchoolCard should render properly with all required assigned 1`] = `
+exports[`SchoolCard should render with required props 1`] = `
 <a
   className="cardLinkOverrides"
   href="https://www.codeplatoon.org/not-real"
+  onClick={[Function]}
   rel="noopener noreferrer"
   target="_blank"
+  to="https://www.codeplatoon.org/not-real"
 >
   <span
-    className="screenReaderOnly"
+    className="ScreenReaderOnly"
   >
     Opens in new window
   </span>

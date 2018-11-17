@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`DonateSection should render properly with no props 1`] = `
+exports[`DonateSection should render with no props passed passed 1`] = `
 <Section
-  className="DonateSection"
+  contentClassName="content"
   hasHeadingLines={false}
   headingTheme="white"
   id=""
@@ -14,38 +14,34 @@ exports[`DonateSection should render properly with no props 1`] = `
   theme="slate"
   title="Donate"
 >
-  <div
-    className="donateText"
-  >
-    <p>
-      As a 501(c)(3) veteran-led nonprofit organization, our programs and services are maintained through the efforts of our volunteer staff. Your financial support allows us to continue helping the military community learn software development, enter the tech industry, and code the future.
-    </p>
-    <p>
-      Thank you for supporting our mission!
-    </p>
-    <Button
-      analyticsObject={
-        Object {
-          "action": "Button Selected",
-          "category": "Interactions",
-        }
+  <p>
+    As a 501(c)(3) veteran-led nonprofit organization, our programs and services are maintained through the efforts of our volunteer staff. Your financial support allows us to continue helping the military community learn software development, enter the tech industry, and code the future.
+  </p>
+  <p>
+    Thank you for supporting our mission!
+  </p>
+  <Button
+    analyticsObject={
+      Object {
+        "action": "Button Selected",
+        "category": "Interactions",
       }
-      className=""
-      disabled={false}
-      fullWidth={false}
-      tabIndex={0}
-      theme="primary"
-      type="button"
+    }
+    datum=""
+    disabled={false}
+    fullWidth={false}
+    onClick={[Function]}
+    tabIndex={0}
+    theme="primary"
+    type="button"
+  >
+    <OutboundLink
+      analyticsEventLabel="Donate Now"
+      hasIcon={true}
+      href="https://secure.lglforms.com/form_engine/s/BRtP7QUKyHOyEYsZROsRew"
     >
-      <OutboundLink
-        analyticsEventLabel="Donate Now"
-        className=""
-        hasIcon={true}
-        href="https://secure.lglforms.com/form_engine/s/BRtP7QUKyHOyEYsZROsRew"
-      >
-        Donate Now
-      </OutboundLink>
-    </Button>
-  </div>
+      Donate Now
+    </OutboundLink>
+  </Button>
 </Section>
 `;

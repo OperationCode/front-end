@@ -1,5 +1,6 @@
 // Remove lint error below when a second validator is added.
 /* eslint-disable import/prefer-default-export */
+
 /**
  * Take a string and determine if it has non-whitespace characters in it
  *
@@ -10,4 +11,6 @@
  * @param {string} input
  * @returns {boolean}
  */
-export const zipCodeValidator = input => input.length !== 0 && input.trim().length !== 0;
+export function zipCodeStringValidator(input = '') {
+  return input.length !== 0 && input.trim().length !== 0;
+}
