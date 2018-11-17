@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ColorSection should render with required props 1`] = `
+<Section
+  contentClassName="ColorSection"
+  hasHeadingLines={true}
+  id=""
+  style={Object {}}
+  theme="mist"
+  title="Colors"
+>
+  <div
+    className="mainColors"
+  >
+    <div
+      className="colorGrouping"
+    >
+      <h3>
+        Primary
+      </h3>
+      <Swatch
+        colorName="Primary"
+        hexCode="#249cbc"
+      />
+    </div>
+    <div
+      className="colorGrouping"
+    >
+      <h3>
+        Secondary
+      </h3>
+      <Swatch
+        colorName="Secondary"
+        hexCode="#d1665a"
+      />
+    </div>
+  </div>
+  <h3>
+    Other On-Brand Colors
+  </h3>
+  <div
+    className="otherColors"
+  >
+    <Swatch
+      colorName="mist"
+      hexCode="#f0f2f2"
+    />
+    <Swatch
+      colorName="slate"
+      hexCode="#47566b"
+    />
+    <Swatch
+      colorName="gray"
+      hexCode="#9baab5"
+    />
+    <Swatch
+      colorName="navy"
+      hexCode="#252e3e"
+    />
+  </div>
+</Section>
+`;
