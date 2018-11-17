@@ -1,21 +1,23 @@
-.brandingFonts {
-  text-align: center;
-  margin: 3em 0;
+.fontsList {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 100%;
 }
 
-.brandingFonts a {
-  color: #249cbc;
-  text-decoration: none;
+.fontsList > li {
+  margin: 1rem;
 }
 
-.pfDinDisplay {
-  font-family: "PF Din Display", sans-serif;
-  font-weight: normal;
-  font-size: 3rem;
+.primaryFontFamily div > h6,
+.primaryFontFamily div > p {
+  font-family: "PF Din Display", Arial, sans-serif;
 }
 
-.notoSerif {
+.secondaryFontFamily div > h6,
+.secondaryFontFamily div > p {
   font-family: "Noto Serif", serif;
-  font-weight: normal;
-  font-size: 2.5rem;
 }
