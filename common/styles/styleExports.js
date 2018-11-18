@@ -21,3 +21,11 @@ export const brandColorsObject = Object.entries(themeMap).reduce((obj, [key, val
 
   return obj;
 }, {});
+
+export const fontsObject = Object.entries(themeMap).reduce((obj, [key, value]) => {
+  if (key.includes('Font')) {
+    obj[key] = value; // eslint-disable-line no-param-reassign
+  }
+
+  return obj;
+}, {});
