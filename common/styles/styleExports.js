@@ -24,7 +24,8 @@ export const brandColorsObject = Object.entries(themeMap).reduce((obj, [key, val
 
 export const fontsObject = Object.entries(themeMap).reduce((obj, [key, value]) => {
   if (key.includes('Font')) {
-    obj[key] = value; // eslint-disable-line no-param-reassign
+    // Remove extra quotes from font name
+    obj[key] = value.replace(/^"(.*)"$/, '$1'); // eslint-disable-line no-param-reassign
   }
 
   return obj;
