@@ -16,7 +16,7 @@ const icons = {
   pinterest: <PinterestIcon />,
 };
 
-storiesOf('Common/Badge', module)
+storiesOf('Badge', module)
   .addDecorator(withKnobs)
   .add(
     'default',
