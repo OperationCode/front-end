@@ -12,7 +12,7 @@ storiesOf('Common/Modal', module)
     'default',
     withInfo()(() => (
       <Modal
-        hasCloseIcon={boolean('hasCloseIcon', true)}
+        hasCloseButton={boolean('hasCloseButton', true)}
         isOpen={boolean('isOpen', false)}
         onRequestClose={action('onRequestClose function called')}
         screenReaderLabel={text(

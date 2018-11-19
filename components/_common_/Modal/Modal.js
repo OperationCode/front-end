@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import ReactModal from 'react-modal';
 import ReactGA from 'react-ga';
-import CloseButton from 'components/_common_/CloseButton/CloseButton';
+import ScreenReaderOnly from 'components/_common_/ScreenReaderOnly/ScreenReaderOnly';
 import CardStyles from 'components/_common_/Card/Card.css';
 import ModalStyles from './Modal.css';
 
 Modal.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
-  hasCloseIcon: PropTypes.bool,
+  hasCloseButton: PropTypes.bool,
   isOpen: PropTypes.bool,
   onRequestClose: PropTypes.func.isRequired,
   screenReaderLabel: PropTypes.string.isRequired, // basically a summarizing title
@@ -19,7 +19,7 @@ Modal.propTypes = {
 
 Modal.defaultProps = {
   className: undefined,
-  hasCloseIcon: true,
+  hasCloseButton: true,
   isOpen: false,
   shouldCloseOnOverlayClick: true,
 };
@@ -27,7 +27,7 @@ Modal.defaultProps = {
 function Modal({
   children,
   className,
-  hasCloseIcon,
+  hasCloseButton,
   isOpen,
   onRequestClose,
   screenReaderLabel,
@@ -45,7 +45,12 @@ function Modal({
       onRequestClose={onRequestClose}
       shouldCloseOnOverlayClick={shouldCloseOnOverlayClick}
     >
-      {hasCloseIcon && <CloseButton onClick={onRequestClose} />}
+      {/* TODO: Style close button */}
+      {hasCloseButton && (
+        <button onClick={onRequestClose} type="button">
+          <ScreenReaderOnly>Close Pop-up</ScreenReaderOnly>X
+        </button>
+      )}
 
       <div className={ModalStyles.scrollableContainer}>{children}</div>
     </ReactModal>
