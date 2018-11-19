@@ -16,6 +16,10 @@
   --grayDark: #75848f;
   --navy: #252e3e;
 
+  /* Fonts */
+  --primaryFontFamily: "PF Din Display";
+  --secondaryFontFamily: "Noto Serif";
+
   /* Viewports (for media queries) */
   --smallViewportWidth: 576px;
   --mediumViewportWidth: 768px;
