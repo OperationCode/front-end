@@ -17,13 +17,17 @@
   --grayDark: #75848f;
   --navy: #252e3e;
 
-  /* Commonly referenced dimensions */
-  --borderRadius: 3px;
-  --navBarHeight: 65px;
+  /* Fonts */
+  --primaryFontFamily: "PF Din Display";
+  --secondaryFontFamily: "Noto Serif";
 
   /* Viewports (for media queries) */
   --smallViewportWidth: 576px;
   --mediumViewportWidth: 768px;
   --largeViewportWidth: 992px;
   --extraLargeViewportWidth: 1200px;
+  
+  /* Commonly referenced dimensions */
+  --borderRadius: 3px;
+  --navBarHeight: 65px;
 }

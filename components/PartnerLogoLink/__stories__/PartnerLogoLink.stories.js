@@ -5,7 +5,7 @@ import { withKnobs, text } from '@storybook/addon-knobs';
 
 import PartnerLogoLink from '../PartnerLogoLink';
 
-storiesOf('Common/PartnerLogoLink', module)
+storiesOf('PartnerLogoLink', module)
   .addDecorator(withKnobs)
   .add(
     'default',
