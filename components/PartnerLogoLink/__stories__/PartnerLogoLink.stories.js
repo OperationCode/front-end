@@ -11,9 +11,9 @@ storiesOf('PartnerLogoLink', module)
     'default',
     withInfo()(() => (
       <PartnerLogoLink
-        logo={text(
-          'logo',
-          'https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png',
+        logoSource={text(
+          'logoSource',
+          'https://s3.amazonaws.com/operationcode-assets/partnerLogos/github.png',
         )}
         name={text('name', 'GitHub')}
         url={text('url', 'https://github.com')}

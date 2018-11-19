@@ -16,20 +16,3 @@ exports[`Storyshots Badge default 1`] = `
   </span>
 </div>
 `;
-
-exports[`Storyshots Common/Badge default 1`] = `
-<div
-  className="Badge"
->
-  <div
-    className="iconContainer"
-  >
-    <svg />
-  </div>
-  <span
-    className="label"
-  >
-    My Awesome Badge
-  </span>
-</div>
-`;

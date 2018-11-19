@@ -8,8 +8,8 @@ describe('PartnerLogoLink', () => {
   it('should render with required props', () => {
     createSnapshotTest(
       <PartnerLogoLink
-        logo="https://partnerinc.com/logo"
         name="Partner Inc."
+        logoSource="https://partnerinc.com/logo"
         url="https://partnerinc.com"
       >
         Test

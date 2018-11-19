@@ -1,30 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Common/PartnerLogoLink default 1`] = `
-<div
-  className="PartnerLogoLink"
->
-  <a
-    href="https://github.com"
-    onClick={[Function]}
-    rel="noopener noreferrer"
-    target="_blank"
-    to="https://github.com"
-  >
-    <span
-      className="ScreenReaderOnly"
-    >
-      Opens in new window
-    </span>
-    <img
-      alt="GitHub logo"
-      className="logo"
-      src="https://s3.amazonaws.com/operationcode-assets/https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png"
-    />
-  </a>
-</div>
-`;
-
 exports[`Storyshots PartnerLogoLink default 1`] = `
 <div
   className="PartnerLogoLink"
@@ -44,7 +19,7 @@ exports[`Storyshots PartnerLogoLink default 1`] = `
     <img
       alt="GitHub logo"
       className="logo"
-      src="https://s3.amazonaws.com/operationcode-assets/https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png"
+      src="https://s3.amazonaws.com/operationcode-assets/partnerLogos/github.png"
     />
   </a>
 </div>

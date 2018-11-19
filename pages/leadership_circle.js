@@ -40,7 +40,7 @@ export default () => (
       </OutboundLink>
     </Section>
 
-    <Section title="Membership Levels" theme="mist">
+    <Section title="Membership Levels" theme="gray">
       <h6>Benefactor ($2500 or more)</h6>
       <ul>
         <li>

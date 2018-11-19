@@ -48,7 +48,7 @@ export default () => (
       </p>
     </Section>
 
-    <Section theme="slate" title="What We Do">
+    <Section theme="secondary" title="What We Do">
       <div className={styles.flexGrid}>
         <ImageCard
           alt="Two women pair programming"
@@ -115,7 +115,7 @@ export default () => (
         partnerships.
       </p>
     </Section>
-    <Section theme="mist" title="Core Values">
+    <Section theme="gray" title="Core Values">
       <div className={styles.flexGrid}>
         <ValueCard
           name="Integrity"

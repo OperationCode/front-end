@@ -1,93 +1,66 @@
 .Button {
-  align-items: center;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  color: #ffffff;
-  cursor: pointer;
   display: flex;
-  font-size: 1rem;
   justify-content: center;
+  align-items: center;
+  border: 3px solid transparent;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
   line-height: 1.25;
-  min-width: 200px;
-  padding: 0;
-  transition: 0.2s linear background-color;
-  text-decoration: none;
-}
-
-.Button:active,
-.Button:focus {
-  outline-color: #000000;
-  outline-offset: -2px;
-  outline-style: solid;
-  outline-width: 2px;
-}
-
-.Button > * {
-  /* Apply padding to child so that when child is an anchor element width and height span the
-  clickable area of the button */
+  min-width: 175px;
   padding: 0.75rem;
+  transition: 0.2s linear background-color, 0.2s linear color;
 }
 
-.Button > a {
-  /* Hijack anchor styles if nested within a Button */
-  color: #ffffff;
-  height: 100%;
-  text-decoration: none;
-  width: 100%;
+.primary {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: var(--secondary);
+  outline-color: var(--primary);
 }
 
-.disabled {
-  border: none;
-  opacity: 0.6;
+.primary:hover:enabled,
+.primary:focus:enabled {
+  background-color: rgba(0, 0, 0, 0);
+  color: var(--primary);
 }
 
-.disabled:hover {
-  border: none;
-  cursor: not-allowed;
+.secondary {
+  background-color: var(--secondary);
+  border-color: var(--secondary);
+  color: var(--primary);
+  outline-color: var(--secondary);
+}
+
+.secondary:hover:enabled,
+.secondary:focus:enabled {
+  background-color: rgba(0, 0, 0, 0);
+  color: var(--secondary);
 }
 
 .fullWidth {
   width: 100%;
 }
 
-.primary {
-  background-color: var(--primary);
-  border-color: var(--primaryDark);
-  outline-color: var(--primaryDark);
+.disabled {
+  border: 3px solid transparent;
+  opacity: 0.6;
 }
 
-.primary:hover:enabled {
-  background-color: var(--primaryLight);
+.disabled:hover {
+  border: 3px solid transparent;
+  cursor: not-allowed;
 }
 
-.primary:active:not:hover {
-  background-color: var(--primaryDark);
-}
+/* Hijack anchor styles if nested within a Button */
 
-.secondary {
-  background-color: var(--secondary);
-  border-color: var(--secondaryDark);
-  outline-color: var(--secondaryDark);
-}
+/* .Button > a {
+  text-decoration: none;
 
-.secondary:hover:enabled {
-  background-color: var(--secondaryLight);
-}
+  height: 100%;
+  width: 100%;
+} */
 
-.secondary:active:not:hover {
-  background-color: var(--secondaryDark);
-}
-
-.slate {
-  background-color: var(--slate);
-  border-color: var(--slateDark);
-  outline-color: var(--slateDark);
-}
-
-.slate:hover:enabled {
-  background-color: var(--slateLight);
-}
-
-.slate:active:not:hover {
-  background-color: var(--slateDark);
-}
+/* Make clickable area span button area */
