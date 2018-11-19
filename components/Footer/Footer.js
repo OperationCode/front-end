@@ -1,7 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
 import classNames from 'classnames';
-import Button from 'components/_common_/Button/Button';
 import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
 import SocialMedia from 'components/SocialMedia/SocialMedia';
 import { s3, footerLinks } from 'common/constants/urls';
@@ -62,15 +61,6 @@ function Footer() {
               ))}
             </ul>
           </div>
-        </div>
-
-        <div className={classNames(styles.footerGrouping, styles.newsletterGrouping)}>
-          <div className={classNames(styles.capitalize, styles.marginBottom)}>Newsletter</div>
-          <div className={styles.newsletterItem}>
-            Subscribe to our newsletter and never miss a beat!
-          </div>
-          <input className={styles.newsletterItem} type="text" placeholder="Email address" />
-          <Button className={styles.newsletterItem}>Subscribe</Button>
         </div>
       </div>
 
