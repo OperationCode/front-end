@@ -8,7 +8,7 @@ Heading.propTypes = {
   id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]), // reference for scroll anchors
   children: PropTypes.node.isRequired,
   hasHeadingLines: PropTypes.bool,
-  theme: PropTypes.oneOf(['gray', 'slate', 'white']),
+  theme: PropTypes.oneOf(['gray', 'secondary', 'white']),
 };
 
 Heading.defaultProps = {

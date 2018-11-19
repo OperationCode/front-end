@@ -18,8 +18,8 @@
   margin: 0 10px 5px 10px;
 }
 
-.slate {
-  color: var(--slate);
+.secondary {
+  color: var(--secondary);
 }
 
 .gray {
@@ -27,7 +27,7 @@
 }
 
 .white {
-  color: #ffffff;
+  color: var(--white);
 }
 
 @media screen and (max-width: 768px) {

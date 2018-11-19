@@ -44,7 +44,7 @@ export default class CodeSchools extends React.Component {
             </p>
           </aside>
         </Section>
-        <Section theme="mist" title="Schools" hasHeadingLines={false}>
+        <Section theme="gray" title="Schools" hasHeadingLines={false}>
           {state.schools.map(school => (
             <div key={`${Math.random()}`}>{school.name}</div>
           ))}

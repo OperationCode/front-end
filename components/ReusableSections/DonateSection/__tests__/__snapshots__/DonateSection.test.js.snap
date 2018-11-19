@@ -11,7 +11,7 @@ exports[`DonateSection should render with no props passed passed 1`] = `
       "backgroundImage": "url(https://s3.amazonaws.com/operationcode-assets/background_flag.jpg",
     }
   }
-  theme="slate"
+  theme="secondary"
   title="Donate"
 >
   <p>
