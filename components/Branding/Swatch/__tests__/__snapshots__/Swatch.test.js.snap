@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Swatch should render with required props 1`] = `
+<div
+  className="Swatch"
+>
+  <div
+    className="colorBlock"
+    style={
+      Object {
+        "backgroundColor": "#0000FF",
+      }
+    }
+  />
+  <h6>
+    BLUE
+  </h6>
+  <span>
+    #0000FF
+  </span>
+</div>
+`;

@@ -30,18 +30,37 @@ const nextConfig = withCSS({
     // eslint-disable-next-line no-param-reassign
     config.node = { fs: 'empty' };
 
-    config.module.rules.push({
-      test: /\.svg$/,
-      use: [
-        {
-          loader: 'react-svg-loader',
-          options: {
-            svgo: svgoConfig,
+    config.module.rules.push(
+      {
+        test: /\.svg$/,
+        use: [
+          {
+            loader: 'react-svg-loader',
+            options: {
+              svgo: svgoConfig,
+            },
           },
-        },
-      ],
-    });
-
+        ],
+      },
+      {
+        test: /\.(jpe?g|png|gif)$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8192,
+              fallback: {
+                loader: 'file-loader',
+                options: { publicPath: '/_next/static/images', outputPath: 'static/images' },
+              },
+              publicPath: '/_next/',
+              outputPath: 'static/images/',
+              name: '[name]-[hash].[ext]',
+            },
+          },
+        ],
+      },
+    );
     return config;
   },
 });

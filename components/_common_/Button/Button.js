@@ -15,7 +15,7 @@ class Button extends Component {
     fullWidth: PropTypes.bool,
     onClick: PropTypes.func,
     tabIndex: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    theme: PropTypes.oneOf(['primary', 'secondary', 'slate']),
+    theme: PropTypes.oneOf(['primary', 'secondary']),
     type: PropTypes.oneOf(['button', 'reset', 'submit']),
     datum: PropTypes.any, // eslint-disable-line react/forbid-prop-types
   };
@@ -51,6 +51,7 @@ class Button extends Component {
     const { props } = this;
     const customDataAttributes = getDataAttributes(props);
     const ariaAttributes = getAriaAttributes(props);
+
     /* eslint-disable react/button-has-type */
     return (
       <button

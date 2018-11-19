@@ -50,10 +50,6 @@ export const footerItems = {
       title: 'About Us',
     },
     {
-      href: '/team',
-      title: 'Team',
-    },
-    {
       href: '/contact',
       title: 'Contact Us',
     },
@@ -79,10 +75,6 @@ export const footerItems = {
       href: '/events',
       title: 'Events',
     },
-    {
-      href: '/blog',
-      title: 'Blog',
-    },
   ],
   column3: [
     {
@@ -90,12 +82,12 @@ export const footerItems = {
       title: 'Get Involved',
     },
     {
-      href: '/mentor',
+      href: '/mentoring',
       title: 'Become A Mentor',
     },
     {
-      href: '/feedback',
-      title: 'Feedback',
+      href: '/history',
+      title: 'History',
     },
     {
       href: '/donate',
@@ -115,19 +107,24 @@ export const footerItems = {
       href: '/branding',
       title: 'Branding',
     },
+    {
+      href: '/blog',
+      title: 'Blog',
+    },
   ],
   legal: [
     {
-      href: '/terms',
+      analyticsEventLabel: 'FooterLink',
+      href: 'https://www.somefakeurl.com/',
       title: 'Terms of Use',
     },
     {
-      analyticsEventLabel: 'Footer - Cookies',
+      analyticsEventLabel: 'FooterLink',
       href: 'https://www.anotherfakeurl.com/',
       title: 'Cookies',
     },
     {
-      analyticsEventLabel: 'Footer - Privacy',
+      analyticsEventLabel: 'FooterLink',
       href: 'https://www.iubenda.com/privacy-policy/8174861',
       title: 'Privacy',
     },

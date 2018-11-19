@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Common/Badge default 1`] = `
+exports[`Storyshots Badge default 1`] = `
 <div
   className="Badge"
 >
   <div
     className="iconContainer"
   >
-    <test-file-mock />
+    <svg />
   </div>
   <span
     className="label"

@@ -70,8 +70,8 @@ export default () => (
         </>
       </HeroBanner>
 
-      <Section theme="mist" contentClassName={styles.alignCenter}>
-        <Heading hasHeadingLines={false} className={styles.sectionHeading} theme="slate">
+      <Section theme="gray" contentClassName={styles.alignCenter}>
+        <Heading hasHeadingLines={false} className={styles.sectionHeading} theme="secondary">
           The Power Of Mentorship
         </Heading>
 
@@ -79,17 +79,12 @@ export default () => (
 
         <div className={styles.badgeGroupings}>
           {mentorItems.map(item => (
-            <Badge
-              key={item.label}
-              svgComponent={item.icon}
-              label={item.label}
-              className={styles.badge}
-            />
+            <Badge key={item.label} icon={item.icon} label={item.label} className={styles.badge} />
           ))}
         </div>
       </Section>
 
-      <Section theme="slate" contentClassName={styles.grid}>
+      <Section theme="secondary" contentClassName={styles.grid}>
         <TrackVisibility offset={VISIBILITY_OFFSET}>
           {({ isVisible }) => (
             <div
@@ -122,8 +117,8 @@ export default () => (
         </div>
       </Section>
 
-      <Section theme="mist" className={styles.sectionHeading} contentClassName={styles.alignCenter}>
-        <Heading hasHeadingLines={false} theme="slate">
+      <Section theme="gray" className={styles.sectionHeading} contentClassName={styles.alignCenter}>
+        <Heading hasHeadingLines={false} theme="secondary">
           WAYS YOU CAN SUPPORT OPERATION CODE
         </Heading>
 
@@ -134,17 +129,12 @@ export default () => (
 
         <div className={classNames(styles.badgeGroupings)}>
           {supportItems.map(item => (
-            <Badge
-              key={item.label}
-              svgComponent={item.icon}
-              label={item.label}
-              className={styles.badge}
-            />
+            <Badge key={item.label} image={item.icon} label={item.label} className={styles.badge} />
           ))}
         </div>
       </Section>
 
-      <Section theme="slate" contentClassName={styles.grid}>
+      <Section theme="secondary" contentClassName={styles.grid}>
         <div className={classNames(styles.alignRight, styles.gridContent)}>
           <Heading
             className={classNames(styles.alignLeft, styles.sectionHeading)}
@@ -181,8 +171,8 @@ export default () => (
       </Section>
 
       {/* TODO: REMOVE PLACEHOLDER CONTENT */}
-      <Section theme="mist" contentClassName={styles.alignCenter}>
-        <Heading hasHeadingLines={false} theme="slate">
+      <Section theme="gray" contentClassName={styles.alignCenter}>
+        <Heading hasHeadingLines={false} theme="secondary">
           Donate To Deploy The Future
         </Heading>
 

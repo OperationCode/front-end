@@ -45,15 +45,6 @@ exports[`Footer should render with no props passed 1`] = `
           </li>
           <li>
             <Link
-              href="/team"
-            >
-              <a>
-                Team
-              </a>
-            </Link>
-          </li>
-          <li>
-            <Link
               href="/contact"
             >
               <a>
@@ -110,15 +101,6 @@ exports[`Footer should render with no props passed 1`] = `
               </a>
             </Link>
           </li>
-          <li>
-            <Link
-              href="/blog"
-            >
-              <a>
-                Blog
-              </a>
-            </Link>
-          </li>
         </ul>
       </div>
       <div
@@ -138,7 +120,7 @@ exports[`Footer should render with no props passed 1`] = `
           </li>
           <li>
             <Link
-              href="/mentor"
+              href="/mentoring"
             >
               <a>
                 Become A Mentor
@@ -147,10 +129,10 @@ exports[`Footer should render with no props passed 1`] = `
           </li>
           <li>
             <Link
-              href="/feedback"
+              href="/history"
             >
               <a>
-                Feedback
+                History
               </a>
             </Link>
           </li>
@@ -194,45 +176,17 @@ exports[`Footer should render with no props passed 1`] = `
               </a>
             </Link>
           </li>
+          <li>
+            <Link
+              href="/blog"
+            >
+              <a>
+                Blog
+              </a>
+            </Link>
+          </li>
         </ul>
       </div>
-    </div>
-    <div
-      className="footerGrouping newsletterGrouping"
-    >
-      <div
-        className="capitalize marginBottom"
-      >
-        Newsletter
-      </div>
-      <div
-        className="newsletterItem"
-      >
-        Subscribe to our newsletter and never miss a beat!
-      </div>
-      <input
-        className="newsletterItem"
-        placeholder="Email address"
-        type="text"
-      />
-      <Button
-        analyticsObject={
-          Object {
-            "action": "Button Selected",
-            "category": "Interactions",
-          }
-        }
-        className="newsletterItem"
-        datum=""
-        disabled={false}
-        fullWidth={false}
-        onClick={[Function]}
-        tabIndex={0}
-        theme="primary"
-        type="button"
-      >
-        Subscribe
-      </Button>
     </div>
   </div>
   <div
@@ -248,22 +202,22 @@ exports[`Footer should render with no props passed 1`] = `
     <div
       className="row legalLinks"
     >
-      <Link
-        href="/terms"
-      >
-        <a>
-          Terms of Use
-        </a>
-      </Link>
       <OutboundLink
-        analyticsEventLabel="Footer - Cookies"
+        analyticsEventLabel="FooterLink"
+        hasIcon={true}
+        href="https://www.somefakeurl.com/"
+      >
+        Terms of Use
+      </OutboundLink>
+      <OutboundLink
+        analyticsEventLabel="FooterLink"
         hasIcon={true}
         href="https://www.anotherfakeurl.com/"
       >
         Cookies
       </OutboundLink>
       <OutboundLink
-        analyticsEventLabel="Footer - Privacy"
+        analyticsEventLabel="FooterLink"
         hasIcon={true}
         href="https://www.iubenda.com/privacy-policy/8174861"
       >

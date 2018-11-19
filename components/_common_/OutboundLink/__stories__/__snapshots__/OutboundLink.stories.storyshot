@@ -14,7 +14,7 @@ exports[`Storyshots Common/OutboundLink default 1`] = `
     Opens in new window
   </span>
   White House Official Website
-  <test-file-mock
+  <svg
     className="externalLinkIcon"
   />
 </a>

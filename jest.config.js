@@ -88,8 +88,9 @@ module.exports = {
 
   // A map from regular expressions to module names that allow to stub out resources with a single module
   moduleNameMapper: {
-    '\\.(jpg|jpeg|png|gif|svg)$': '<rootDir>/test-utils/mocks/testFileMock.js',
-    '\\.css$': 'identity-obj-proxy',
+    '^.+\\.(jp?eg|png|gif|txt)$': '<rootDir>/test-utils/mocks/testFileMock.js',
+    '^.+\\.svg$': '<rootDir>/test-utils/mocks/svgMock.js',
+    '^.+\\.css$': 'identity-obj-proxy',
   },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
@@ -175,7 +176,10 @@ module.exports = {
   // timers: "real",
 
   // A map from regular expressions to paths to transformers
-  transform: { '^.+\\.js$': 'babel-jest' },
+  transform: {
+    '^.+\\.js$': 'babel-jest',
+    '^(?!.*\\.(js|css|json)$)': '<rootDir>/test-utils/transforms/file.js',
+  },
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
   // transformIgnorePatterns: [],

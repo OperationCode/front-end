@@ -2,7 +2,7 @@
 
 exports[`Storyshots ReusableSections DonateSection 1`] = `
 <section
-  className="Section slate"
+  className="Section secondary"
   style={
     Object {
       "backgroundImage": "url(https://s3.amazonaws.com/operationcode-assets/background_flag.jpg",
@@ -44,7 +44,7 @@ exports[`Storyshots ReusableSections DonateSection 1`] = `
           Opens in new window
         </span>
         Donate Now
-        <test-file-mock
+        <svg
           className="externalLinkIcon"
         />
       </a>
@@ -59,7 +59,7 @@ exports[`Storyshots ReusableSections JoinSection 1`] = `
   style={Object {}}
 >
   <h2
-    className="Heading slate"
+    className="Heading secondary"
     id=""
   >
     Join Our Thriving Community
@@ -106,7 +106,7 @@ exports[`Storyshots ReusableSections JoinSection 1`] = `
         Opens in new window
       </span>
       Learn more
-      <test-file-mock
+      <svg
         className="externalLinkIcon"
       />
     </a>
@@ -120,7 +120,7 @@ exports[`Storyshots ReusableSections SignUpSection 1`] = `
   style={Object {}}
 >
   <h2
-    className="Heading slate headingLines"
+    className="Heading secondary headingLines"
     id=""
   >
     New user?

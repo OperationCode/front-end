@@ -83,7 +83,7 @@ export default () => (
       critical problems, and to compete for cash prizes! Sign up for Topcoder Veterans.
     </AdBanner>
 
-    <Section contentClassName={styles.ourMission} hasHeadingLines={false} theme="mist">
+    <Section contentClassName={styles.ourMission} hasHeadingLines={false} theme="gray">
       <ImageCard
         imageSource={`${s3}redesign/images/node-summit-2018.jpg`}
         alt="Operation Code members posing at Node Summit 2018"
@@ -104,7 +104,7 @@ export default () => (
       title="Success Stories"
       contentClassName={styles.successStories}
       hasHeadingLines={false}
-      theme="slate"
+      theme="secondary"
     >
       {successStories.map(story => (
         <SuccessStory {...story} key={story.title} />
@@ -115,7 +115,7 @@ export default () => (
       title="Partners"
       contentClassName={styles.partnerLogos}
       hasHeadingLines={false}
-      theme="mist"
+      theme="gray"
     >
       {partners.map(partner => (
         <PartnerLogoLink key={partner.name} {...partner} />

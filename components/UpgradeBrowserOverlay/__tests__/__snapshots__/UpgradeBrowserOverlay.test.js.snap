@@ -3,14 +3,13 @@
 exports[`UpgradeBrowserOverlay should render with no props passed 1`] = `
 <Modal
   className="UpgradeBrowserOverlay"
-  hasCloseIcon={false}
   isOpen={true}
   onRequestClose={[Function]}
   overlayClassName="overlay"
   screenReaderLabel="Upgrade Your Browser"
   shouldCloseOnOverlayClick={false}
 >
-  <test-file-mock
+  <Svg
     className="warningLogo"
   />
   <h1>

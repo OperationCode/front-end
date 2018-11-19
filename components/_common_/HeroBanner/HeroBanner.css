@@ -3,7 +3,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  color: #ffffff;
+  color: var(--white);
   display: flex;
   flex-direction: column;
   min-height: 65vh;
@@ -25,7 +25,7 @@
 
 /* TODO: Create <Hr /> component and use that to match drop-shadow on header */
 .underline {
-  border-bottom: 4px solid #ffffff;
+  border-bottom: 4px solid var(--white);
   margin-bottom: 1rem;
   text-align: center;
 }

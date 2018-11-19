@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FontSection should render with required props 1`] = `
+<Section
+  hasHeadingLines={true}
+  id=""
+  style={Object {}}
+  theme="gray"
+  title="Fonts"
+>
+  <ul
+    className="fontsList"
+  >
+    <li>
+      <div>
+        <h6
+          style={
+            Object {
+              "fontFamily": "PF Din Display",
+            }
+          }
+        >
+          PF Din Display
+        </h6>
+        <p
+          style={
+            Object {
+              "fontFamily": "PF Din Display",
+            }
+          }
+        >
+          Sphinx of black quartz, judge my vow!
+        </p>
+      </div>
+    </li>
+    <li>
+      <div>
+        <h6
+          style={
+            Object {
+              "fontFamily": "Noto Serif",
+            }
+          }
+        >
+          Noto Serif
+        </h6>
+        <p
+          style={
+            Object {
+              "fontFamily": "Noto Serif",
+            }
+          }
+        >
+          Sphinx of black quartz, judge my vow!
+        </p>
+      </div>
+    </li>
+  </ul>
+</Section>
+`;

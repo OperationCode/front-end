@@ -2,7 +2,7 @@
   background-color: rgba(0, 0, 0, 0); /* transparent */
   border-radius: 3px;
   border: 4px solid var(--primary);
-  color: #ffffff;
+  color: var(--white);
   cursor: pointer;
   display: inline-block;
   line-height: 1.25;

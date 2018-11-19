@@ -1,9 +1,12 @@
+import Head from 'components/head';
 import HeroBanner from 'components/_common_/HeroBanner/HeroBanner';
 import { s3 } from 'common/constants/urls';
 import styles from './styles/policy.css';
 
 export default () => (
   <>
+    <Head title="Policy" />
+
     <HeroBanner
       className={styles.overlay}
       title="Modernize the GI Bill"

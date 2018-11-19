@@ -31,9 +31,6 @@ after_script:
   - greenkeeper-lockfile-upload
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 
-before_deploy:
-  - yarn add now
-
 deploy:
   - provider: script
     script: echo 'No build on feature branches. @zeit/now deploys static exports automatically.'
@@ -42,7 +39,7 @@ deploy:
       all_branches: true
       master: false
   - provider: script
-    script: now --local-config=./now.master.json --token $NOW_TOKEN && now alias --local-config=./now.master.json --token $NOW_TOKEN
+    script: yarn add now && now --local-config=./now.master.json --token $NOW_TOKEN && now alias --local-config=./now.master.json --token $NOW_TOKEN
     skip_cleanup: true
     on:
       all_branches: false

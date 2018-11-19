@@ -1,29 +1,22 @@
 /* IMPORTANT: Please run `yarn storybook` when file changes to update `./themeMap.js` */
 :root {
   /* Colors */
-  --primary: #249cbc;
-  --primaryLight: #4ac2e2;
-  --primaryDark: #007696;
-  --secondary: #d1665a;
-  --secondaryLight: #f78c80;
-  --secondaryDark: #ab4034;
-  --mist: #f0f2f2;
-  --navy: #252e3e;
-  --slate: #47566b;
-  --slateLight: #6d7c91;
-  --slateDark: #213045;
-  --gray: #9baab5;
-  --grayLight: #d0d5da;
-  --grayDark: #75848f;
-  --navy: #252e3e;
+  --primary: #3ed6f0; /* cerulean */
+  --secondary: #252e3e; /* navy */
+  --gray: #e2e2e2; /* gainsboro */
+  --white: #f7f7f7; /* offwhite */
 
-  /* Commonly referenced dimensions */
-  --borderRadius: 3px;
-  --navBarHeight: 65px;
+  /* Fonts */
+  --primaryFontFamily: "PF Din Display";
+  --secondaryFontFamily: "Noto Serif";
 
   /* Viewports (for media queries) */
   --smallViewportWidth: 576px;
   --mediumViewportWidth: 768px;
   --largeViewportWidth: 992px;
   --extraLargeViewportWidth: 1200px;
+
+  /* Commonly referenced dimensions */
+  --borderRadius: 3px;
+  --navBarHeight: 65px;
 }

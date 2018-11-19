@@ -12,7 +12,7 @@
 }
 
 .Footer a {
-  color: var(--mist);
+  color: var(--white);
   text-decoration: none;
 }
 
@@ -63,17 +63,6 @@
   justify-content: space-around;
 }
 
-.newsletterGrouping {
-  align-items: flex-start;
-}
-
-.newsletterItem {
-  max-width: 200px;
-  width: 100%;
-  line-height: 1rem;
-  margin-bottom: 0.5rem;
-}
-
 .row {
   width: 100%;
   display: flex;
@@ -120,10 +109,6 @@
   .socialGrouping {
     max-width: 220px;
   }
-
-  .newsletterGrouping {
-    max-width: 220px;
-  }
 }
 
 @media screen and (max-width: 1119px) {
@@ -152,16 +137,6 @@
     justify-content: space-around;
   }
 
-  .newsletterGrouping {
-    display: flex;
-    align-items: center;
-    width: 100%;
-  }
-
-  .newsletterItem {
-    max-width: 235px;
-  }
-
   .legalGrouping {
     padding: 1.5rem;
   }
@@ -169,8 +144,7 @@
 
 @media screen and (max-width: 576px) {
   .Footer {
-    /* Need to clear from scroll button on mobile devices */
-    padding-bottom: 7rem;
+    padding-bottom: 10rem;
   }
 
   .linksRow {
@@ -187,10 +161,6 @@
 
   .linksGrouping li:not(:last-child) {
     margin-bottom: 20px;
-  }
-
-  .newsletterItem {
-    line-height: 1.5rem;
   }
 
   .footerGrouping {

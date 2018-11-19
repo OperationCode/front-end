@@ -1,7 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
 import classNames from 'classnames';
-import Button from 'components/_common_/Button/Button';
 import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
 import SocialMedia from 'components/SocialMedia/SocialMedia';
 import { footerItems } from 'common/constants/navigation';
@@ -64,15 +63,6 @@ function Footer() {
             </ul>
           </div>
         </div>
-
-        <div className={classNames(styles.footerGrouping, styles.newsletterGrouping)}>
-          <div className={classNames(styles.capitalize, styles.marginBottom)}>Newsletter</div>
-          <div className={styles.newsletterItem}>
-            Subscribe to our newsletter and never miss a beat!
-          </div>
-          <input className={styles.newsletterItem} type="text" placeholder="Email address" />
-          <Button className={styles.newsletterItem}>Subscribe</Button>
-        </div>
       </div>
 
       <div className={classNames(styles.row, styles.legalGrouping)}>
@@ -80,23 +70,22 @@ function Footer() {
           Copyright {currentYear} Operation Code™
         </div>
         <div className={classNames(styles.row, styles.legalLinks)}>
-          {footerItems.legal.map(
-            link =>
-              // Use OutboundLink if non-internal URL
-              // (indicated by the presence of an analytics label)
-              link.analyticsEventLabel ? (
-                <OutboundLink
-                  key={link.href}
-                  analyticsEventLabel={link.analyticsEventLabel}
-                  href={link.href}
-                >
-                  {link.title}
-                </OutboundLink>
-              ) : (
-                <Link href={link.href} key={link.href}>
-                  <a>{link.title}</a>
-                </Link>
-              ),
+          {footerItems.legal.map(link =>
+            // Use OutboundLink if non-internal URL
+            // (indicated by the presence of an analytics label)
+            link.analyticsEventLabel ? (
+              <OutboundLink
+                key={link.href}
+                analyticsEventLabel={link.analyticsEventLabel}
+                href={link.href}
+              >
+                {link.title}
+              </OutboundLink>
+            ) : (
+              <Link href={link.href} key={link.href}>
+                <a>{link.title}</a>
+              </Link>
+            ),
           )}
         </div>
       </div>

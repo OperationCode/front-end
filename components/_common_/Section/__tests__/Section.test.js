@@ -15,8 +15,8 @@ describe('Section', () => {
         className="testing-123"
         hasHeadingLines={false}
         id="test-1"
-        style={{ color: 'navy' }}
-        theme="grayLight"
+        style={{ color: 'black' }}
+        theme="gray"
         title="Test"
         contentClassName="TestClassName"
       >

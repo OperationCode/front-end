@@ -1,3 +1,4 @@
+import Head from 'components/head';
 import classNames from 'classnames';
 import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
 import Section from 'components/_common_/Section/Section';
@@ -43,7 +44,9 @@ const supportItems = [
 
 export default () => (
   <div>
-    <Section theme="slate" title="You Can Make An Impact">
+    <Head title="Get Involved" />
+
+    <Section theme="secondary" title="You Can Make An Impact">
       <div>
         Whether you&apos;re interested in mentoring, supporting our operations, or simply donating
         to help military veterans, service members, and spouses launch a career in software
@@ -52,7 +55,7 @@ export default () => (
     </Section>
 
     <Section
-      theme="mist"
+      theme="gray"
       contentClassName={styles.alignCenter}
       title="The Power of Mentorship"
       hasHeadingLines={false}
@@ -62,12 +65,12 @@ export default () => (
       </div>
       <div className={classNames(styles.flexDisplay, styles.marginBottom)}>
         {mentorItems.map(item => (
-          <Badge key={item.label} svgComponent={item.icon} label={item.label} />
+          <Badge key={item.label} icon={item.icon} label={item.label} />
         ))}
       </div>
     </Section>
 
-    <Section theme="slate" title="Empower Our Community" hasHeadingLines={false}>
+    <Section theme="secondary" title="Empower Our Community" hasHeadingLines={false}>
       <div className={classNames(styles.cta, styles.ctaImageLeft)}>
         <div className={styles.ctaImage}>
           <img src={`${s3}stock_paired-programming.jpg`} alt="Empower Our Community" />
@@ -83,7 +86,7 @@ export default () => (
     </Section>
 
     <Section
-      theme="mist"
+      theme="gray"
       contentClassName={styles.alignCenter}
       title="Ways You Can Support Operation Code"
       hasHeadingLines={false}
@@ -94,12 +97,12 @@ export default () => (
       </div>
       <div className={classNames(styles.flexDisplay, styles.marginBottom)}>
         {supportItems.map(item => (
-          <Badge key={item.label} svgComponent={item.icon} label={item.label} />
+          <Badge key={item.label} image={item.icon} label={item.label} />
         ))}
       </div>
     </Section>
 
-    <Section theme="slate" title="Support Our Mission" hasHeadingLines={false}>
+    <Section theme="secondary" title="Support Our Mission" hasHeadingLines={false}>
       <div className={classNames(styles.cta, styles.ctaImageRight)}>
         <div className={styles.ctaImage}>
           <img src={`${s3}stock_paired-programming.jpg`} alt="Support Our Mission" />
