@@ -10,7 +10,7 @@ export default () => (
 
     <h1>Jobs</h1>
 
-    <Section theme="mist" title="Featured">
+    <Section theme="gray" title="Featured">
       {FeaturedJobsData.filter(job => job.status === 'active').map(job => (
         <FeaturedJobItem key={job.sourceUrl} {...job} />
       ))}

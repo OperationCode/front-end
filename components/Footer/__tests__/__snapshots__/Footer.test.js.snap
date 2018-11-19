@@ -45,15 +45,6 @@ exports[`Footer should render with no props passed 1`] = `
           </li>
           <li>
             <Link
-              href="/team"
-            >
-              <a>
-                Team
-              </a>
-            </Link>
-          </li>
-          <li>
-            <Link
               href="/contact"
             >
               <a>
@@ -110,15 +101,6 @@ exports[`Footer should render with no props passed 1`] = `
               </a>
             </Link>
           </li>
-          <li>
-            <Link
-              href="/blog"
-            >
-              <a>
-                Blog
-              </a>
-            </Link>
-          </li>
         </ul>
       </div>
       <div
@@ -129,37 +111,37 @@ exports[`Footer should render with no props passed 1`] = `
         >
           <li>
             <Link
-              href="/about"
+              href="/get_involved"
             >
               <a>
-                About Us
+                Get Involved
               </a>
             </Link>
           </li>
           <li>
             <Link
-              href="/team"
+              href="/mentoring"
             >
               <a>
-                Team
+                Become A Mentor
               </a>
             </Link>
           </li>
           <li>
             <Link
-              href="/contact"
+              href="/history"
             >
               <a>
-                Contact Us
+                History
               </a>
             </Link>
           </li>
           <li>
             <Link
-              href="/faq"
+              href="/donate"
             >
               <a>
-                FAQ
+                Donate
               </a>
             </Link>
           </li>
@@ -194,45 +176,17 @@ exports[`Footer should render with no props passed 1`] = `
               </a>
             </Link>
           </li>
+          <li>
+            <Link
+              href="/blog"
+            >
+              <a>
+                Blog
+              </a>
+            </Link>
+          </li>
         </ul>
       </div>
-    </div>
-    <div
-      className="footerGrouping newsletterGrouping"
-    >
-      <div
-        className="capitalize marginBottom"
-      >
-        Newsletter
-      </div>
-      <div
-        className="newsletterItem"
-      >
-        Subscribe to our newsletter and never miss a beat!
-      </div>
-      <input
-        className="newsletterItem"
-        placeholder="Email address"
-        type="text"
-      />
-      <Button
-        analyticsObject={
-          Object {
-            "action": "Button Selected",
-            "category": "Interactions",
-          }
-        }
-        className="newsletterItem"
-        datum=""
-        disabled={false}
-        fullWidth={false}
-        onClick={[Function]}
-        tabIndex={0}
-        theme="primary"
-        type="button"
-      >
-        Subscribe
-      </Button>
     </div>
   </div>
   <div

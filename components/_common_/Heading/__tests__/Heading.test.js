@@ -12,16 +12,16 @@ describe('Heading', () => {
 
   it('should render with many props assigned', () => {
     createSnapshotTest(
-      <Heading className="test-class" id="test-heading-1" hasHeadingLines={false} theme="slate">
+      <Heading className="test-class" id="test-heading-1" hasHeadingLines={false} theme="secondary">
         Test
       </Heading>,
     );
   });
 
-  it('should render with "slate" in classNames when theme="slate"', () => {
-    const HeaderInstance = shallow(<Heading theme="slate">Test</Heading>);
+  it('should render with "secondary" in classNames when theme="secondary"', () => {
+    const HeaderInstance = shallow(<Heading theme="secondary">Test</Heading>);
 
-    expect(HeaderInstance).toHaveClassName('slate');
+    expect(HeaderInstance).toHaveClassName('secondary');
   });
 
   it('should render without "headingLines" in classNames when hasHeadingLines={false}', () => {

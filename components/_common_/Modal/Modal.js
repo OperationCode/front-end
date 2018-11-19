@@ -3,14 +3,12 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import ReactModal from 'react-modal';
 import ReactGA from 'react-ga';
-import CloseButton from 'components/_common_/CloseButton/CloseButton';
 import CardStyles from 'components/_common_/Card/Card.css';
 import ModalStyles from './Modal.css';
 
 Modal.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
-  hasCloseIcon: PropTypes.bool,
   isOpen: PropTypes.bool,
   onRequestClose: PropTypes.func.isRequired,
   screenReaderLabel: PropTypes.string.isRequired, // basically a summarizing title
@@ -19,7 +17,6 @@ Modal.propTypes = {
 
 Modal.defaultProps = {
   className: undefined,
-  hasCloseIcon: true,
   isOpen: false,
   shouldCloseOnOverlayClick: true,
 };
@@ -27,7 +24,6 @@ Modal.defaultProps = {
 function Modal({
   children,
   className,
-  hasCloseIcon,
   isOpen,
   onRequestClose,
   screenReaderLabel,
@@ -45,8 +41,6 @@ function Modal({
       onRequestClose={onRequestClose}
       shouldCloseOnOverlayClick={shouldCloseOnOverlayClick}
     >
-      {hasCloseIcon && <CloseButton onClick={onRequestClose} />}
-
       <div className={ModalStyles.scrollableContainer}>{children}</div>
     </ReactModal>
   );

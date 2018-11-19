@@ -8,7 +8,7 @@ function FontSection() {
   const demoText = 'Sphinx of black quartz, judge my vow!';
 
   return (
-    <Section title="Fonts" theme="mist">
+    <Section title="Fonts" theme="gray">
       <ul className={styles.fontsList}>
         {Object.keys(fontsObject).map(item => {
           const fontStyle = {

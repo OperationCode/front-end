@@ -44,8 +44,8 @@ footer {
 }
 
 footer {
-  color: var(--mist);
-  background-color: var(--navy);
+  color: var(--white);
+  background-color: var(--secondary);
 }
 
 h1,

@@ -3,11 +3,11 @@
 exports[`Storyshots AdBanner default 1`] = `
 <a
   className="adBannerLink"
-  href="https://autogravity.com"
+  href="http://op.co.de/topcoder-veterans"
   onClick={[Function]}
   rel="noopener noreferrer"
   target="_blank"
-  to="https://autogravity.com"
+  to="http://op.co.de/topcoder-veterans"
 >
   <span
     className="ScreenReaderOnly"
@@ -21,9 +21,9 @@ exports[`Storyshots AdBanner default 1`] = `
       className="adBannerImageContainer"
     >
       <img
-        alt="Logo for AutoGravity"
+        alt="Logo for Topcoder"
         className="adBannerImage"
-        src="http://speedlux.com/wp-content/uploads/2017/02/AutoGravity-logo-1.png"
+        src="https://s3.amazonaws.com/operationcode-assets/partnerLogos/logo_topcoder_with_name.svg"
       />
     </div>
     <h4

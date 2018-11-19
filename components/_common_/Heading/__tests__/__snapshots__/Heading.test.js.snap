@@ -2,7 +2,7 @@
 
 exports[`Heading should render with many props assigned 1`] = `
 <h2
-  className="test-class Heading slate"
+  className="test-class Heading secondary"
   id="test-heading-1"
 >
   Test

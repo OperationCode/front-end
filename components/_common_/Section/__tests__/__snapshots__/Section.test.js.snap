@@ -6,7 +6,7 @@ exports[`Section should render common use case 1`] = `
   style={Object {}}
 >
   <h2
-    className="Heading slate headingLines"
+    className="Heading secondary headingLines"
     id=""
   >
     Test 2
@@ -21,15 +21,15 @@ exports[`Section should render common use case 1`] = `
 
 exports[`Section should render with many props assigned 1`] = `
 <section
-  className="testing-123 Section grayLight"
+  className="testing-123 Section gray"
   style={
     Object {
-      "color": "navy",
+      "color": "black",
     }
   }
 >
   <h2
-    className="Heading slate"
+    className="Heading secondary"
     id="test-1"
   >
     Test

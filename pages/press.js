@@ -78,7 +78,7 @@ export default () => (
       </div>
     </Section>
 
-    <Section contentClassName={styles.customContent} title="Videos" theme="grayLight">
+    <Section contentClassName={styles.customContent} title="Videos" theme="gray">
       <Videos />
     </Section>
 
@@ -86,7 +86,7 @@ export default () => (
       <Photos />
     </Section>
 
-    <Section contentClassName={styles.customContent} title="In The News" theme="grayLight">
+    <Section contentClassName={styles.customContent} title="In The News" theme="gray">
       <Links />
     </Section>
 
@@ -96,7 +96,7 @@ export default () => (
       </div>
     </Section>
 
-    <Section contentClassName={styles.customContent} headingLines={false} theme="grayLight">
+    <Section contentClassName={styles.customContent} headingLines={false} theme="gray">
       <h6 className={styles.header}>
         Operation Code is a graduate of the following startup accelerators:
       </h6>

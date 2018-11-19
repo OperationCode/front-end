@@ -22,34 +22,21 @@
 }
 
 /* Dark Themes */
+.secondary {
+  background-color: var(--secondary);
+  color: var(--white);
+}
+
+/* Light Themes */
 .gray,
-.slate {
-  color: #ffffff;
+.white {
+  color: var(--secondary);
 }
 
 .gray {
   background-color: var(--gray);
 }
 
-.slate {
-  background-color: var(--slate);
-}
-
-/* Light Themes */
-.grayLight,
-.mist,
 .white {
-  color: var(--slate);
-}
-
-.grayLight {
-  background-color: var(--grayLight);
-}
-
-.mist {
-  background-color: var(--mist);
-}
-
-.white {
-  background-color: #ffffff;
+  background-color: var(--white);
 }

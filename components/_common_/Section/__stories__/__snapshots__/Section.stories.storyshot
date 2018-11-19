@@ -6,7 +6,7 @@ exports[`Storyshots Common/Section default 1`] = `
   style={Object {}}
 >
   <h2
-    className="Heading white headingLines"
+    className="Heading secondary headingLines"
     id="Used as a reference point for scroll anchors"
   >
     Section Title

@@ -34,7 +34,6 @@ function UpgradeBrowserOverlay() {
       onRequestClose={() => {}}
       className={styles.UpgradeBrowserOverlay}
       screenReaderLabel="Upgrade Your Browser"
-      hasCloseIcon={false}
       isOpen
       overlayClassName={styles.overlay}
       shouldCloseOnOverlayClick={false}

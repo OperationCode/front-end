@@ -47,7 +47,7 @@ class ArticleGroup extends Component {
           <Button
             aria-pressed={areAllLinksVisible}
             className={styles.areAllLinksVisibleButton}
-            theme={areAllLinksVisible ? 'slate' : 'primary'}
+            theme={areAllLinksVisible ? 'secondary' : 'primary'}
             onClick={this.clickHandler}
           >
             {areAllLinksVisible ? 'Show Less' : 'Show All'}
