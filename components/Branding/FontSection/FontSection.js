@@ -1,5 +1,6 @@
 import React from 'react';
 import Section from 'components/_common_/Section/Section';
+import { fontsObject } from 'common/styles/styleExports';
 import styles from './FontSection.css';
 
 function FontSection() {
@@ -9,19 +10,19 @@ function FontSection() {
   return (
     <Section title="Fonts" theme="gray">
       <ul className={styles.fontsList}>
-        <li className={styles.primaryFontFamily}>
-          <div>
-            <h6>PF Din Display Pro Regular</h6>
-            <p>{demoText}</p>
-          </div>
-        </li>
-
-        <li className={styles.secondaryFontFamily}>
-          <div>
-            <h6>Noto Serif Regular</h6>
-            <p>{demoText}</p>
-          </div>
-        </li>
+        {Object.keys(fontsObject).map(item => {
+          const fontStyle = {
+            fontFamily: fontsObject[item],
+          };
+          return (
+            <li key={item}>
+              <div>
+                <h6 style={fontStyle}>{fontsObject[item]}</h6>
+                <p style={fontStyle}>{demoText}</p>
+              </div>
+            </li>
+          );
+        })}
       </ul>
     </Section>
   );

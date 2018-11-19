@@ -6,6 +6,10 @@
   --gray: #e2e2e2; /* gainsboro */
   --white: #f7f7f7; /* offwhite */
 
+  /* Fonts */
+  --primaryFontFamily: "PF Din Display";
+  --secondaryFontFamily: "Noto Serif";
+
   /* Viewports (for media queries) */
   --smallViewportWidth: 576px;
   --mediumViewportWidth: 768px;
