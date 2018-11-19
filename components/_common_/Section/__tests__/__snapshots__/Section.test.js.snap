@@ -24,7 +24,7 @@ exports[`Section should render with many props assigned 1`] = `
   className="testing-123 Section gray"
   style={
     Object {
-      "color": "navy",
+      "color": "black",
     }
   }
 >
