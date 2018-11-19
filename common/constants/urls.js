@@ -10,10 +10,6 @@ export const footerLinks = {
       title: 'About Us',
     },
     {
-      href: '/team',
-      title: 'Team',
-    },
-    {
       href: '/contact',
       title: 'Contact Us',
     },
@@ -39,27 +35,23 @@ export const footerLinks = {
       href: '/events',
       title: 'Events',
     },
-    {
-      href: '/blog',
-      title: 'Blog',
-    },
   ],
   column3: [
     {
-      href: '/about',
-      title: 'About Us',
+      href: '/get_involved',
+      title: 'Get Involved',
     },
     {
-      href: '/team',
-      title: 'Team',
+      href: '/mentoring',
+      title: 'Become A Mentor',
     },
     {
-      href: '/contact',
-      title: 'Contact Us',
+      href: '/history',
+      title: 'History',
     },
     {
-      href: '/faq',
-      title: 'FAQ',
+      href: '/donate',
+      title: 'Donate',
     },
   ],
   column4: [
@@ -74,6 +66,10 @@ export const footerLinks = {
     {
       href: '/branding',
       title: 'Branding',
+    },
+    {
+      href: '/blog',
+      title: 'Blog',
     },
   ],
   legal: [

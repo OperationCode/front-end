@@ -6,7 +6,7 @@ exports[`JoinSection should render with required props 1`] = `
   style={Object {}}
 >
   <h2
-    className="Heading slate"
+    className="Heading secondary"
     id=""
   >
     Join Our Thriving Community

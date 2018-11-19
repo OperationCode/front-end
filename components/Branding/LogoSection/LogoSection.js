@@ -7,7 +7,7 @@ import styles from './LogoSection.css';
 
 function LogoSection() {
   return (
-    <Section contentClassName={styles.LogoSection} title="Logo" theme="mist">
+    <Section contentClassName={styles.LogoSection} title="Logo" theme="gray">
       <ul className={styles.logoSizeList}>
         {/* - SMALL LOGOS - */}
         <li className={classNames(styles.logoSizeListItem, styles.smallLogos)}>

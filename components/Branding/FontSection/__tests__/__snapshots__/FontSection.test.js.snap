@@ -5,32 +5,52 @@ exports[`FontSection should render with required props 1`] = `
   hasHeadingLines={true}
   id=""
   style={Object {}}
-  theme="mist"
+  theme="gray"
   title="Fonts"
 >
   <ul
     className="fontsList"
   >
-    <li
-      className="primaryFontFamily"
-    >
+    <li>
       <div>
-        <h6>
-          PF Din Display Pro Regular
+        <h6
+          style={
+            Object {
+              "fontFamily": "PF Din Display",
+            }
+          }
+        >
+          PF Din Display
         </h6>
-        <p>
+        <p
+          style={
+            Object {
+              "fontFamily": "PF Din Display",
+            }
+          }
+        >
           Sphinx of black quartz, judge my vow!
         </p>
       </div>
     </li>
-    <li
-      className="secondaryFontFamily"
-    >
+    <li>
       <div>
-        <h6>
-          Noto Serif Regular
+        <h6
+          style={
+            Object {
+              "fontFamily": "Noto Serif",
+            }
+          }
+        >
+          Noto Serif
         </h6>
-        <p>
+        <p
+          style={
+            Object {
+              "fontFamily": "Noto Serif",
+            }
+          }
+        >
           Sphinx of black quartz, judge my vow!
         </p>
       </div>

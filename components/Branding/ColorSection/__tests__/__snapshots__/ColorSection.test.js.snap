@@ -6,7 +6,7 @@ exports[`ColorSection should render with required props 1`] = `
   hasHeadingLines={true}
   id=""
   style={Object {}}
-  theme="mist"
+  theme="white"
   title="Colors"
 >
   <div
@@ -20,7 +20,7 @@ exports[`ColorSection should render with required props 1`] = `
       </h3>
       <Swatch
         colorName="Primary"
-        hexCode="#249cbc"
+        hexCode="#3ed6f0"
       />
     </div>
     <div
@@ -31,7 +31,7 @@ exports[`ColorSection should render with required props 1`] = `
       </h3>
       <Swatch
         colorName="Secondary"
-        hexCode="#d1665a"
+        hexCode="#252e3e"
       />
     </div>
   </div>
@@ -42,20 +42,12 @@ exports[`ColorSection should render with required props 1`] = `
     className="otherColors"
   >
     <Swatch
-      colorName="mist"
-      hexCode="#f0f2f2"
-    />
-    <Swatch
-      colorName="slate"
-      hexCode="#47566b"
-    />
-    <Swatch
       colorName="gray"
-      hexCode="#9baab5"
+      hexCode="#e2e2e2"
     />
     <Swatch
-      colorName="navy"
-      hexCode="#252e3e"
+      colorName="white"
+      hexCode="#f7f7f7"
     />
   </div>
 </Section>

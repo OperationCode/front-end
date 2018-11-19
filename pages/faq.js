@@ -11,8 +11,8 @@ export default () => (
 
     <HeroBanner title="Frequently Asked Questions" />
 
-    <Section hasHeadingLines={false} theme="slate">
-      <Section title="General Questions" theme="slate">
+    <Section hasHeadingLines={false} theme="secondary">
+      <Section title="General Questions" theme="secondary">
         <div className={styles.container}>
           {QuestionAnswerData.general.map(faq => (
             <FAQItem question={faq.question} answer={faq.answer} key={faq.question} />
@@ -20,7 +20,7 @@ export default () => (
         </div>
       </Section>
 
-      <Section title="Donation Questions" theme="slate">
+      <Section title="Donation Questions" theme="secondary">
         <br />
         <div className={styles.container}>
           {QuestionAnswerData.donation.map(faq => (
@@ -29,7 +29,7 @@ export default () => (
         </div>
       </Section>
 
-      <Section title="Volunteer Questions" theme="slate">
+      <Section title="Volunteer Questions" theme="secondary">
         <br />
         <div className={styles.container}>
           {QuestionAnswerData.volunteer.map(faq => (

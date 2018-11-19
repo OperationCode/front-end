@@ -19,7 +19,7 @@ exports[`PartnerLogoLink should render with required props 1`] = `
     <img
       alt="Partner Inc. logo"
       className="logo"
-      src="https://s3.amazonaws.com/operationcode-assets/https://partnerinc.com/logo"
+      src="https://partnerinc.com/logo"
     />
   </a>
 </div>

@@ -10,7 +10,8 @@
   display: flex;
   flex-wrap: wrap;
   font-size: 1.125rem;
-  color: var(--grayDark);
+  color: var(--secondary);
+  opacity: 0.8;
   margin-top: 0.25rem;
 }
 
@@ -32,6 +33,7 @@
 }
 
 .icon {
-  fill: var(--grayDark);
+  fill: var(--secondary);
+  opacity: 0.8;
   height: 0.825rem;
 }

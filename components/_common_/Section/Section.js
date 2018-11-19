@@ -10,7 +10,7 @@ Section.propTypes = {
   hasHeadingLines: PropTypes.bool,
   id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]), // reference for scroll anchors
   style: PropTypes.object,
-  theme: PropTypes.oneOf(['gray', 'grayLight', 'mist', 'slate', 'white']),
+  theme: PropTypes.oneOf(['gray', 'secondary', 'white']),
   title: PropTypes.string,
   contentClassName: PropTypes.string,
 };
@@ -39,14 +39,12 @@ function Section({
   let headingTheme;
   switch (theme) {
     // Light background colors have dark heading color
-    case 'grayLight':
-    case 'mist':
     case 'white':
-      headingTheme = 'slate';
+    case 'gray':
+      headingTheme = 'secondary';
       break;
     // Dark background colors have light heading color
-    case 'gray':
-    case 'slate':
+    case 'secondary':
       headingTheme = 'white';
       break;
     default:

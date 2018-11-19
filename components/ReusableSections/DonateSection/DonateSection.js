@@ -13,7 +13,7 @@ function DonateSection() {
       headingTheme="white"
       style={{ backgroundImage: `url(${s3}background_flag.jpg` }}
       title="Donate"
-      theme="slate"
+      theme="secondary"
     >
       <p>
         As a 501(c)(3) veteran-led nonprofit organization, our programs and services are maintained

@@ -6,7 +6,7 @@ exports[`LogoSection should render with required props 1`] = `
   hasHeadingLines={true}
   id=""
   style={Object {}}
-  theme="mist"
+  theme="gray"
   title="Logo"
 >
   <ul

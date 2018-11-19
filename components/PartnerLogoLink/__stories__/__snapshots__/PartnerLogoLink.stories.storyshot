@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Common/PartnerLogoLink default 1`] = `
+exports[`Storyshots PartnerLogoLink default 1`] = `
 <div
   className="PartnerLogoLink"
 >
@@ -19,7 +19,7 @@ exports[`Storyshots Common/PartnerLogoLink default 1`] = `
     <img
       alt="GitHub logo"
       className="logo"
-      src="https://s3.amazonaws.com/operationcode-assets/https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png"
+      src="https://s3.amazonaws.com/operationcode-assets/partnerLogos/github.png"
     />
   </a>
 </div>

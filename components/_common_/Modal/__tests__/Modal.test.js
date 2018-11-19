@@ -19,7 +19,6 @@ describe('Modal', () => {
     createSnapshotTest(
       <Modal
         className="test-class"
-        hasCloseIcon={false}
         isOpen
         onRequestClose={jest.fn()}
         screenReaderLabel="Test"
@@ -37,7 +36,6 @@ describe('Modal', () => {
     process.env.GOOGLE_ANALYTICS_KEY = 'debug';
 
     const props = {
-      hasCloseIcon: false,
       onRequestClose: () => {},
       screenReaderLabel: 'Test',
     };
