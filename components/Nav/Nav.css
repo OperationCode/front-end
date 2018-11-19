@@ -1,5 +1,5 @@
 .Nav {
-  background-color: var(--mist);
+  background-color: var(--white);
   border-radius: var(--borderRadius);
   display: flex;
   justify-content: space-between;
@@ -38,9 +38,9 @@
 
 /* One-off differences from other link items */
 .donateLink {
-  background-color: var(--primaryLight);
+  background-color: var(--primary);
   border-radius: 0 var(--borderRadius) var(--borderRadius) 0;
-  color: var(--slateDark);
+  color: var(--secondary);
   height: 100%;
   padding: 0 2rem;
   transition: color 0.2s linear;
@@ -52,7 +52,7 @@
 
 .donateLink:focus,
 .donateLink:hover {
-  color: var(--mist);
+  color: var(--white);
   cursor: pointer;
   transition: color 0.2s linear;
 }
