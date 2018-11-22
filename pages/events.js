@@ -129,7 +129,7 @@ export default () => (
 
         <div className={classNames(styles.badgeGroupings)}>
           {supportItems.map(item => (
-            <Badge key={item.label} image={item.icon} label={item.label} className={styles.badge} />
+            <Badge key={item.label} icon={item.icon} label={item.label} className={styles.badge} />
           ))}
         </div>
       </Section>
