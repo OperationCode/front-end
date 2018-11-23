@@ -20,28 +20,14 @@ exports[`DonateSection should render with no props passed passed 1`] = `
   <p>
     Thank you for supporting our mission!
   </p>
-  <Button
-    analyticsObject={
-      Object {
-        "action": "Button Selected",
-        "category": "Interactions",
-      }
-    }
-    datum=""
+  <LinkButton
+    analyticsEventLabel="Donate"
     disabled={false}
     fullWidth={false}
-    onClick={[Function]}
-    tabIndex={0}
-    theme="primary"
-    type="button"
+    href="https://secure.lglforms.com/form_engine/s/BRtP7QUKyHOyEYsZROsRew"
+    theme="secondary"
   >
-    <OutboundLink
-      analyticsEventLabel="Donate Now"
-      hasIcon={true}
-      href="https://secure.lglforms.com/form_engine/s/BRtP7QUKyHOyEYsZROsRew"
-    >
-      Donate Now
-    </OutboundLink>
-  </Button>
+    Donate Now
+  </LinkButton>
 </Section>
 `;

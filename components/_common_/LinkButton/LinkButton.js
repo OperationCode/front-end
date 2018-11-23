@@ -2,22 +2,55 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
-import styles from './LinkButton.css';
+import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
+import styles from 'components/_common_/Button/Button.css';
 
 LinkButton.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.node, PropTypes.string]).isRequired,
+  // Only pass analytics event label if you're href is to an external website
+  analyticsEventLabel: PropTypes.string,
+  children: PropTypes.node.isRequired,
+  className: PropTypes.string,
+  disabled: PropTypes.bool,
+  fullWidth: PropTypes.bool,
   href: PropTypes.string.isRequired,
-  isFilled: PropTypes.bool,
+  theme: PropTypes.oneOf(['primary', 'secondary']),
 };
 
 LinkButton.defaultProps = {
-  isFilled: false,
+  analyticsEventLabel: '',
+  className: undefined,
+  disabled: false,
+  fullWidth: false,
+  theme: 'primary',
 };
 
-export default function LinkButton({ children, href, isFilled }) {
+export default function LinkButton({
+  analyticsEventLabel,
+  children,
+  className,
+  fullWidth,
+  href,
+  theme,
+}) {
+  const linkButtonClassNames = classNames(styles.Button, className, styles[theme], {
+    [styles.fullWidth]: fullWidth,
+  });
+
   return (
     <Link href={href}>
-      <a className={classNames(styles.LinkButton, { [styles.filled]: isFilled })}>{children}</a>
+      {analyticsEventLabel ? (
+        <OutboundLink
+          analyticsEventLabel={analyticsEventLabel}
+          href={href}
+          className={linkButtonClassNames}
+        >
+          {children}
+        </OutboundLink>
+      ) : (
+        <a className={linkButtonClassNames} href={href}>
+          {children}
+        </a>
+      )}
     </Link>
   );
 }
