@@ -1,6 +1,6 @@
 /* eslint-env jest */
 import React from 'react';
-import { mount, shallow } from 'enzyme';
+import { shallow } from 'enzyme';
 import ReactGA from 'react-ga';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 
@@ -48,35 +48,6 @@ describe('Button', () => {
     const wrapper = shallow(<Button {...testProps}>Test</Button>);
 
     expect(wrapper.prop(attribute)).toBeUndefined();
-  });
-
-  it('should render without a generated span when children is PropTypes.node', () => {
-    const testText = 'Testing No Span';
-
-    const ButtonInstance = mount(
-      <Button>
-        <b>{testText}</b>
-      </Button>,
-    );
-
-    expect(
-      ButtonInstance.containsAnyMatchingElements([
-        <span>{testText}</span>,
-        <span>
-          <b>{testText}</b>
-        </span>,
-      ]),
-    ).toStrictEqual(false);
-  });
-
-  it('should render with a generated span when children is PropTypes.string', () => {
-    const testText = 'Testing With Span';
-
-    const ButtonInstance = mount(<Button>{testText}</Button>);
-
-    expect(ButtonInstance.containsAllMatchingElements([<span>{testText}</span>])).toStrictEqual(
-      true,
-    );
   });
 
   it('should send log to console when clickHandler is called in non-prod environment', () => {

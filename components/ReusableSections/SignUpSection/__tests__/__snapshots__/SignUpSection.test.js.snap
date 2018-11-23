@@ -12,28 +12,14 @@ exports[`SignUpSection should render with no props passed passed 1`] = `
   <p>
     Are you ready to deploy your future? Join Operation Code today and launch your career in software development. Once you complete the form below, you’ll be invited to join our team on Slack. Make sure you stop in and say hi!
   </p>
-  <Button
-    analyticsObject={
-      Object {
-        "action": "Button Selected",
-        "category": "Interactions",
-      }
-    }
-    datum=""
+  <LinkButton
+    analyticsEventLabel=""
     disabled={false}
     fullWidth={false}
-    onClick={[Function]}
-    tabIndex={0}
+    href="/signup"
     theme="secondary"
-    type="button"
   >
-    <Link
-      href="/signup"
-    >
-      <a>
-        Sign Up
-      </a>
-    </Link>
-  </Button>
+    Sign Up
+  </LinkButton>
 </Section>
 `;

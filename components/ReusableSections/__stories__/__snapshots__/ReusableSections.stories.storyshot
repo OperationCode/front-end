@@ -24,31 +24,24 @@ exports[`Storyshots ReusableSections DonateSection 1`] = `
     <p>
       Thank you for supporting our mission!
     </p>
-    <button
-      className="Button primary"
-      disabled={false}
+    <a
+      className="Button secondary"
+      href="https://secure.lglforms.com/form_engine/s/BRtP7QUKyHOyEYsZROsRew"
       onClick={[Function]}
-      tabIndex={0}
-      type="button"
+      rel="noopener noreferrer"
+      target="_blank"
+      to="https://secure.lglforms.com/form_engine/s/BRtP7QUKyHOyEYsZROsRew"
     >
-      <a
-        href="https://secure.lglforms.com/form_engine/s/BRtP7QUKyHOyEYsZROsRew"
-        onClick={[Function]}
-        rel="noopener noreferrer"
-        target="_blank"
-        to="https://secure.lglforms.com/form_engine/s/BRtP7QUKyHOyEYsZROsRew"
+      <span
+        className="ScreenReaderOnly"
       >
-        <span
-          className="ScreenReaderOnly"
-        >
-          Opens in new window
-        </span>
-        Donate Now
-        <svg
-          className="externalLinkIcon"
-        />
-      </a>
-    </button>
+        Opens in new window
+      </span>
+      Donate Now
+      <svg
+        className="externalLinkIcon"
+      />
+    </a>
   </div>
 </section>
 `;
@@ -85,9 +78,7 @@ exports[`Storyshots ReusableSections JoinSection 1`] = `
         tabIndex={0}
         type="button"
       >
-        <span>
-          Join our Slack
-        </span>
+        Join our Slack
       </button>
     </div>
     <p>
@@ -131,20 +122,13 @@ exports[`Storyshots ReusableSections SignUpSection 1`] = `
     <p>
       Are you ready to deploy your future? Join Operation Code today and launch your career in software development. Once you complete the form below, you’ll be invited to join our team on Slack. Make sure you stop in and say hi!
     </p>
-    <button
+    <a
       className="Button secondary"
-      disabled={false}
+      href="/signup"
       onClick={[Function]}
-      tabIndex={0}
-      type="button"
     >
-      <a
-        href="/signup"
-        onClick={[Function]}
-      >
-        Sign Up
-      </a>
-    </button>
+      Sign Up
+    </a>
   </div>
 </section>
 `;

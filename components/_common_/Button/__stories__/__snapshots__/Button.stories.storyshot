@@ -8,8 +8,6 @@ exports[`Storyshots Common/Button default 1`] = `
   tabIndex={0}
   type="button"
 >
-  <span>
-    Click Me!
-  </span>
+  Click Me!
 </button>
 `;

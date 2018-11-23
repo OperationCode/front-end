@@ -2,10 +2,21 @@
 
 exports[`Storyshots Common/LinkButton default 1`] = `
 <a
-  className="LinkButton"
-  href="https://someurl.com/"
+  className="Button primary"
+  href="https://tests.com"
   onClick={[Function]}
+  rel="noopener noreferrer"
+  target="_blank"
+  to="https://tests.com"
 >
+  <span
+    className="ScreenReaderOnly"
+  >
+    Opens in new window
+  </span>
   Click Me!
+  <svg
+    className="externalLinkIcon"
+  />
 </a>
 `;
