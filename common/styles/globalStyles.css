@@ -3,7 +3,7 @@
 
 /* Global Styles */
 @font-face {
-  font-family: "PF Din Display";
+  font-family: var(--primaryFontFamily);
   font-weight: normal;
   font-display: auto;
 
@@ -19,7 +19,7 @@ html {
   height: 100%;
   margin: 0;
   padding: 0;
-  font-family: "Noto Serif", serif;
+  font-family: var(--secondaryFontFamily), serif;
   font-size: 16px;
   font-weight: normal;
   color: #47566b;
@@ -40,7 +40,7 @@ h5,
 h6,
 button,
 footer {
-  font-family: "PF Din Display", Arial, sans-serif;
+  font-family: var(--primaryFontFamily), sans-serif;
 }
 
 footer {
