@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
 import Section from 'components/_common_/Section/Section';
 import Button from 'components/_common_/Button/Button';
+import LinkButton from 'components/_common_/LinkButton/LinkButton';
 import Badge from 'components/Badge/Badge';
 import DonateSection from 'components/ReusableSections/DonateSection/DonateSection';
 import PlaceholderIcon1 from 'static/images/icons/FontAwesome/users-solid.svg';
@@ -80,7 +81,7 @@ export default () => (
             Make a difference in the lives of military veterans, service members, and spouses who
             are eager to transition into a software development career.
           </p>
-          <Button>Become a Mentor</Button>
+          <LinkButton href="/mentoring">Become A Mentor</LinkButton>
         </div>
       </div>
     </Section>
@@ -97,7 +98,7 @@ export default () => (
       </div>
       <div className={classNames(styles.flexDisplay, styles.marginBottom)}>
         {supportItems.map(item => (
-          <Badge key={item.label} image={item.icon} label={item.label} />
+          <Badge key={item.label} icon={item.icon} label={item.label} />
         ))}
       </div>
     </Section>
@@ -112,13 +113,14 @@ export default () => (
             Make a difference in the lives of military veterans, service members, and spouses who
             are eager to transition into a software development career.
           </p>
-          <Button>Support OC</Button>
+          <LinkButton href="/donate">Support Us</LinkButton>
         </div>
       </div>
     </Section>
 
     <DonateSection />
 
+    {/* TODO: Replace with ReusableSection/JoinSection */}
     <Section
       theme="white"
       contentClassName={styles.alignCenter}

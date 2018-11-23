@@ -66,8 +66,7 @@ class Button extends Component {
         {...customDataAttributes}
         {...ariaAttributes}
       >
-        {/* Render text nodes within a span to apply selector styles */}
-        {typeof props.children === 'string' ? <span>{props.children}</span> : props.children}
+        {props.children}
       </button>
     );
     /* eslint-enable react/button-has-type */
