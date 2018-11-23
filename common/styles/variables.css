@@ -7,8 +7,8 @@
   --white: #f7f7f7; /* offwhite */
 
   /* Fonts */
-  --primaryFontFamily: "PF Din Display";
-  --secondaryFontFamily: "Noto Serif";
+  --primaryFontFamily: "DIN Condensed Bold";
+  --secondaryFontFamily: "Encode Sans";
 
   /* Viewports (for media queries) */
   --smallViewportWidth: 576px;
