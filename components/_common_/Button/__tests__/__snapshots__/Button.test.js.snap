@@ -9,9 +9,7 @@ exports[`Button should render with many props assigned 1`] = `
   tabIndex={-1}
   type="submit"
 >
-  <span>
-    Test
-  </span>
+  Test
 </button>
 `;
 
@@ -23,8 +21,6 @@ exports[`Button should render with required props 1`] = `
   tabIndex={0}
   type="button"
 >
-  <span>
-    Test
-  </span>
+  Test
 </button>
 `;
