@@ -3,15 +3,16 @@
 
 /* Global Styles */
 @font-face {
-  font-family: "PF Din Display";
+  font-family: "DIN Condensed Bold";
+  font-style: normal;
   font-weight: normal;
   font-display: auto;
 
   /* prettier-ignore */
   src:
-    url("/static/fonts/PFDinDisplayPro-Reg.ttf") format("truetype"),
-    url("/static/fonts/PFDinDisplayPro-Reg.woff2") format("woff2"),
-    url("/static/fonts/PFDinDisplayPro-Reg.woff") format("woff)");
+    url("/static/fonts/DINCondensed-Bold.ttf") format("truetype"),
+    url("/static/fonts/DINCondensed-Bold.woff2") format("woff2"),
+    url("/static/fonts/DINCondensed-Bold.woff") format("woff");
 }
 
 html {
@@ -20,8 +21,8 @@ html {
   margin: 0;
   padding: 0;
   font-family: var(--secondaryFontFamily), serif;
-  font-size: 16px;
-  font-weight: normal;
+  font-size: 18px;
+  font-weight: 400;
   color: #47566b;
 }
 
@@ -41,6 +42,12 @@ h6,
 button,
 footer {
   font-family: var(--primaryFontFamily), sans-serif;
+  text-transform: uppercase;
+}
+
+button,
+footer {
+  letter-spacing: 2px;
 }
 
 footer {
@@ -54,6 +61,7 @@ h3,
 h4,
 h5,
 h6 {
+  letter-spacing: 3px;
   margin: 0;
   padding: 0;
 }
@@ -73,11 +81,6 @@ p {
 
 /* Custom font scaling formula https://blog.envylabs.com/responsive-typographic-scales-in-css-b9f60431d1c4 */
 h1 {
-  /*
-    40px (2.5 * 16) on Desktops
-    37.5px (2.5 * 15) on Tablets
-    32.5px (2.5 * 13) on Mobiles
-  */
   font-size: 2.5rem;
 }
 
@@ -103,13 +106,13 @@ h6 {
 
 @media screen and (max-width: 480px) {
   html {
-    font-size: 13px !important;
+    font-size: 14px !important;
   }
 }
 
 @media screen and (min-width: 481px) and (max-width: 960px) {
   html {
-    font-size: 15px !important;
+    font-size: 16px !important;
   }
 }
 

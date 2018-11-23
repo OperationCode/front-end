@@ -16,16 +16,16 @@ exports[`FontSection should render with required props 1`] = `
         <h6
           style={
             Object {
-              "fontFamily": "PF Din Display",
+              "fontFamily": "DIN Condensed Bold",
             }
           }
         >
-          PF Din Display
+          DIN Condensed Bold
         </h6>
         <p
           style={
             Object {
-              "fontFamily": "PF Din Display",
+              "fontFamily": "DIN Condensed Bold",
             }
           }
         >
@@ -38,16 +38,16 @@ exports[`FontSection should render with required props 1`] = `
         <h6
           style={
             Object {
-              "fontFamily": "Noto Serif",
+              "fontFamily": "Encode Sans",
             }
           }
         >
-          Noto Serif
+          Encode Sans
         </h6>
         <p
           style={
             Object {
-              "fontFamily": "Noto Serif",
+              "fontFamily": "Encode Sans",
             }
           }
         >
