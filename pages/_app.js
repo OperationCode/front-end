@@ -1,5 +1,11 @@
 import App, { Container } from 'next/app';
+import { Provider } from 'react-redux';
 import ScrollUpButton from 'react-scroll-up-button';
+import withRedux from 'next-redux-wrapper';
+import debounce from 'lodash/debounce';
+import { initStore } from 'store/store';
+import { screenResize } from 'store/screenSize/actions';
+import breakpoints from 'common/styles/breakpoints';
 import Nav from 'components/Nav/Nav';
 import Footer from 'components/Footer/Footer';
 import 'common/styles/globalStyles.css';
@@ -21,9 +27,17 @@ class Layout extends React.Component {
   }
 }
 
-export default class OperationCodeApp extends App {
-  // eslint-disable-next-line no-unused-vars
-  static async getInitialProps({ Component, router, ctx }) {
+class OperationCodeApp extends App {
+  componentDidMount() {
+    this.handleScreenResize(); // get initial size on load
+    window.addEventListener('resize', this.debouncedHandleScreenResize);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.debouncedHandleScreenResize);
+  }
+
+  static async getInitialProps({ Component, ctx }) {
     let pageProps = {};
 
     // if page hits an API, make it async
@@ -34,15 +48,29 @@ export default class OperationCodeApp extends App {
     return { pageProps };
   }
 
+  handleScreenResize = () => {
+    const { store } = this.props;
+    store.dispatch(screenResize(window.innerWidth, window.innerHeight, breakpoints));
+  };
+
+  debouncedHandleScreenResize = debounce(this.handleScreenResize, 100, {
+    leading: true,
+    maxWait: 250,
+  });
+
   render() {
-    const { Component, pageProps } = this.props;
+    const { Component, pageProps, store } = this.props;
 
     return (
       <Container>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
+        <Provider store={store}>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </Provider>
       </Container>
     );
   }
 }
+
+export default withRedux(initStore)(OperationCodeApp);
