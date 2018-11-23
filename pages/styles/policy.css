@@ -6,7 +6,7 @@
 .statisticContainer {
   display: flex;
   flex-direction: column;
-  font-family: "PF Din Display", sans-serif;
+  font-family: var(--primaryFontFamily), sans-serif;
   margin-top: 3em;
 }
 

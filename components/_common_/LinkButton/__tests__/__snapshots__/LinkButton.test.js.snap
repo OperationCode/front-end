@@ -2,17 +2,28 @@
 
 exports[`LinkButton should render with many props assigned 1`] = `
 <a
-  className="LinkButton filled"
+  className="Button test-class secondary fullWidth"
   href="https://tests.com"
   onClick={[Function]}
+  rel="noopener noreferrer"
+  target="_blank"
+  to="https://tests.com"
 >
+  <span
+    className="ScreenReaderOnly"
+  >
+    Opens in new window
+  </span>
   Test
+  <svg
+    className="externalLinkIcon"
+  />
 </a>
 `;
 
 exports[`LinkButton should render with required props 1`] = `
 <a
-  className="LinkButton"
+  className="Button primary"
   href="https://tests.com"
   onClick={[Function]}
 >

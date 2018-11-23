@@ -11,7 +11,13 @@ describe('LinkButton', () => {
 
   it('should render with many props assigned', () => {
     createSnapshotTest(
-      <LinkButton href="https://tests.com" isFilled>
+      <LinkButton
+        href="https://tests.com"
+        analyticsEventLabel="Test"
+        className="test-class"
+        fullWidth
+        theme="secondary"
+      >
         Test
       </LinkButton>,
     );
