@@ -36,6 +36,7 @@
           "pages": "./pages",
           "scripts": "./scripts",
           "static": "./static",
+          "store": "./store",
           "test-utils": "./test-utils"
         }
       }

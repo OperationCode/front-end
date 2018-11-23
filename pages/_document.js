@@ -24,11 +24,10 @@ export default class MyDocument extends Document {
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="630" />
 
-          {/* TODO: https://github.com/zeit/next.js/issues/512#issuecomment-322026199 */}
-          {/* Fonts until TODO implemented */}
+          {/* 'Encode Sans' */}
           <link
+            href="https://fonts.googleapis.com/css?family=Encode+Sans:400,700"
             rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=Noto+Serif:400,400i,700,700i"
           />
         </Head>
         <body>
