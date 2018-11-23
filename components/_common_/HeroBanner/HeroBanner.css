@@ -23,9 +23,8 @@
   margin-top: 3rem;
 }
 
-/* TODO: Create <Hr /> component and use that to match drop-shadow on header */
 .underline {
-  border-bottom: 4px solid var(--white);
+  border-bottom: 4px solid var(--primary);
   margin-bottom: 1rem;
   text-align: center;
 }
