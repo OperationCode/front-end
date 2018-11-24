@@ -22,10 +22,10 @@ storiesOf('Common/Button', module)
         })}
         disabled={boolean('disabled', false)}
         fullWidth={boolean('fullWidth', false)}
-        href={text('href', '')}
         onClick={action('Button Clicked!')}
         tabIndex={number('tabIndex', 0)}
-        theme={select('theme', ['primary', 'secondary'])}
+        theme={select('theme', ['primary', 'secondary'], 'primary')}
+        type={select('type', ['button', 'reset', 'submit'], 'button')}
       >
         {text('children', 'Click Me!')}
       </Button>
