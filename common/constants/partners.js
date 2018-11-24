@@ -23,7 +23,7 @@ const partners = [
   },
   {
     name: 'Threat Stack',
-    logoSource: `{s3}partnerLogos/threat_stack.png`,
+    logoSource: `${s3}partnerLogos/threat_stack.png`,
     url: 'https://threatstack.com',
   },
   {
