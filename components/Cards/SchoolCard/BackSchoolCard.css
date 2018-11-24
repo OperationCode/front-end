@@ -1,0 +1,18 @@
+.disclaimer {
+  font-size: 0.825rem;
+}
+
+.divider {
+  border: 1px solid #ffffff;
+  width: 100%;
+}
+
+.locations {
+  font-size: 1.25rem;
+  list-style: none;
+  margin: 0;
+  max-height: 150px;
+  overflow-y: auto;
+  padding: 0;
+  width: 85%;
+}

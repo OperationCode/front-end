@@ -2,6 +2,7 @@ import Head from 'components/head';
 import { getCodeSchoolsPromise } from 'common/constants/api';
 import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
 import Section from 'components/_common_/Section/Section';
+import SchoolCard from 'components/Cards/SchoolCard/SchoolCard';
 
 export default class CodeSchools extends React.Component {
   state = {
@@ -46,7 +47,19 @@ export default class CodeSchools extends React.Component {
         </Section>
         <Section theme="gray" title="Schools" hasHeadingLines={false}>
           {state.schools.map(school => (
-            <div key={`${Math.random()}`}>{school.name}</div>
+            <div key={`${Math.random()}`}>
+              <SchoolCard
+                hasHardwareIncluded={school.hasHardwareIncluded}
+                hasHousing={school.hasHousing}
+                hasOnline={school.hasOnline}
+                hasOnlyOnline={school.hasOnlineOnly}
+                isFullTime={school.isFullTime}
+                locations={school.locations}
+                logoSource={school.logoSource}
+                name={school.name}
+                website={school.website}
+              />
+            </div>
           ))}
         </Section>
       </>

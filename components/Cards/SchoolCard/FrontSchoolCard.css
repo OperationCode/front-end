@@ -1,0 +1,67 @@
+.interactionsContainer {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: 576px) {
+  .interactionsContainer {
+    flex-wrap: wrap;
+  }
+}
+
+.interactionsContainer > button,
+.interactionsContainer > span {
+  margin: 1rem 0.5rem;
+}
+
+.singleLocationText {
+  color: var(--primary);
+  font-family: "PF Din Display", Arial, sans-serif;
+  font-weight: bolder;
+
+  /* Matches up with Button stylings */
+  margin: 1rem;
+  min-width: 200px;
+  text-align: center;
+}
+
+.divider {
+  border: 2px solid var(--primary);
+  margin: 1rem 0;
+  width: 100%;
+}
+
+.detailsRow {
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+  width: 85%;
+}
+
+.detailItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0.5rem;
+  min-width: 75px;
+}
+
+.detailText {
+  text-align: center;
+}
+
+.icon {
+  height: 50px;
+}
+
+.active {
+  color: var(--primary);
+  fill: var(--primary);
+  font-weight: bold;
+}
+
+.disabled {
+  color: var(--gray);
+  fill: var(--gray);
+}
