@@ -2,7 +2,7 @@
 
 exports[`Storyshots AdBanner default 1`] = `
 <a
-  className="adBannerLink"
+  className="AdBanner"
   href="http://op.co.de/topcoder-veterans"
   onClick={[Function]}
   rel="noopener noreferrer"
@@ -15,7 +15,7 @@ exports[`Storyshots AdBanner default 1`] = `
     Opens in new window
   </span>
   <div
-    className="adBanner"
+    className="adBannerContent"
   >
     <div
       className="adBannerImageContainer"
@@ -26,11 +26,11 @@ exports[`Storyshots AdBanner default 1`] = `
         src="https://s3.amazonaws.com/operationcode-assets/partnerLogos/logo_topcoder_with_name.svg"
       />
     </div>
-    <h4
+    <h6
       className="adBannerText"
     >
       PropTypes.any
-    </h4>
+    </h6>
   </div>
 </a>
 `;
