@@ -16,7 +16,7 @@
 }
 
 .singleLocationText {
-  color: var(--primary);
+  color: var(--secondary);
   font-family: "PF Din Display", Arial, sans-serif;
   font-weight: bolder;
 
@@ -27,7 +27,7 @@
 }
 
 .divider {
-  border: 2px solid var(--primary);
+  border: 2px solid var(--secondary);
   margin: 1rem 0;
   width: 100%;
 }
@@ -56,8 +56,8 @@
 }
 
 .active {
-  color: var(--primary);
-  fill: var(--primary);
+  color: var(--secondary);
+  fill: var(--secondary);
   font-weight: bold;
 }
 

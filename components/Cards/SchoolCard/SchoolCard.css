@@ -14,7 +14,7 @@
 }
 
 .backCard {
-  background-color: var(--primary);
+  background-color: var(--secondary);
   color: #ffffff;
   position: relative;
 }
