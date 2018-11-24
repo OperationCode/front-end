@@ -3,12 +3,12 @@
 exports[`AdBanner should render with many props assigned 1`] = `
 <OutboundLink
   analyticsEventLabel="AdBanner Hit"
-  className="AdBanner-class adBannerLink"
+  className="AdBanner-class AdBanner"
   hasIcon={false}
   href="www.testMe.com"
 >
   <div
-    className="adBanner"
+    className="adBannerContent"
   >
     <div
       className="adBannerImageContainer"
@@ -19,11 +19,11 @@ exports[`AdBanner should render with many props assigned 1`] = `
         src="test-image.jpg"
       />
     </div>
-    <h4
+    <h6
       className="adBannerText"
     >
       Test
-    </h4>
+    </h6>
   </div>
 </OutboundLink>
 `;
@@ -31,12 +31,12 @@ exports[`AdBanner should render with many props assigned 1`] = `
 exports[`AdBanner should render with required props 1`] = `
 <OutboundLink
   analyticsEventLabel="AdBanner Hit"
-  className="adBannerLink"
+  className="AdBanner"
   hasIcon={false}
   href="www.test.com"
 >
   <div
-    className="adBanner"
+    className="adBannerContent"
   >
     <div
       className="adBannerImageContainer"
@@ -47,11 +47,11 @@ exports[`AdBanner should render with required props 1`] = `
         src="www.imagetest.com"
       />
     </div>
-    <h4
+    <h6
       className="adBannerText"
     >
       Test
-    </h4>
+    </h6>
   </div>
 </OutboundLink>
 `;

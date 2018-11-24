@@ -18,15 +18,15 @@ function AdBanner({ altText, children, className, imageSource, href }) {
   return (
     <OutboundLink
       analyticsEventLabel="AdBanner Hit"
-      className={classNames(className, styles.adBannerLink)}
+      className={classNames(className, styles.AdBanner)}
       hasIcon={false}
       href={href}
     >
-      <div className={styles.adBanner}>
+      <div className={styles.adBannerContent}>
         <div className={styles.adBannerImageContainer}>
           <img alt={altText} className={styles.adBannerImage} src={imageSource} />
         </div>
-        <h4 className={styles.adBannerText}>{children}</h4>
+        <h6 className={styles.adBannerText}>{children}</h6>
       </div>
     </OutboundLink>
   );
