@@ -57,7 +57,9 @@ export default class CodeSchools extends React.Component {
                 isFullTime={school.full_time}
                 locations={school.locations}
                 logoSource={`${s3}codeSchoolLogos/${school.name
-                  .replace(/[ \u00A0]/g, '_')
+                  .trim()
+                  .split(' ')
+                  .join('_')
                   .toLowerCase()}.jpg`}
                 name={school.name}
                 website={school.url}
