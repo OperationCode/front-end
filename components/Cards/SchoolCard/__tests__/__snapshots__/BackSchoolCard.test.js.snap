@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BackSchoolCard should render with required props 1`] = `
+<React.Fragment>
+  <CloseButton
+    disabled={false}
+    onClick={[Function]}
+  />
+  <img
+    alt=""
+    src="logoSource"
+  />
+  <span
+    className="disclaimer"
+  >
+    <b>
+      *
+    </b>
+     denotes a location that accepts the GI Bill
+  </span>
+  <hr
+    className="divider"
+  />
+  <ul
+    className="locations"
+  >
+    <li>
+      *
+    </li>
+  </ul>
+</React.Fragment>
+`;

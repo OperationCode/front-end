@@ -1,0 +1,126 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FrontSchoolCard should render with required props 1`] = `
+<React.Fragment>
+  <h5>
+    school name
+  </h5>
+  <img
+    alt=""
+    src="logoSource"
+  />
+  <div
+    className="interactionsContainer"
+  >
+    <Button
+      analyticsObject={
+        Object {
+          "action": "Button Selected",
+          "category": "Interactions",
+        }
+      }
+      datum=""
+      disabled={false}
+      fullWidth={false}
+      onClick={[Function]}
+      tabIndex={0}
+      theme="primary"
+      type="button"
+    >
+      <OutboundLink
+        analyticsEventLabel="school name | Website"
+        hasIcon={true}
+        href="website"
+      >
+        Go To Website
+      </OutboundLink>
+    </Button>
+    <span
+      className="singleLocationText"
+    >
+      San Francisco, undefined
+    </span>
+  </div>
+  <hr
+    className="divider"
+  />
+  <div
+    className="detailsRow"
+  >
+    <figure
+      className="detailItem active"
+    >
+      <Svg
+        aria-hidden="true"
+        className="icon"
+        style={
+          Object {
+            "margin": "0 0.25rem",
+          }
+        }
+      />
+      <figcaption
+        className="detailText"
+      >
+        G.I. Bill
+      </figcaption>
+    </figure>
+    <figure
+      className="detailItem active"
+    >
+      <Svg
+        aria-hidden="true"
+        className="icon"
+      />
+      <figcaption
+        className="detailText"
+      >
+        Online
+      </figcaption>
+    </figure>
+    <figure
+      className="detailItem active"
+    >
+      <Svg
+        aria-hidden="true"
+        className="icon"
+      />
+      <figcaption
+        className="detailText"
+      >
+        In-Person
+      </figcaption>
+    </figure>
+  </div>
+  <div
+    className="detailsRow"
+  >
+    <figure
+      className="detailItem active"
+    >
+      <Svg
+        aria-hidden="true"
+        className="icon"
+      />
+      <figcaption
+        className="detailText"
+      >
+        Equipment
+      </figcaption>
+    </figure>
+    <figure
+      className="detailItem active"
+    >
+      <Svg
+        aria-hidden="true"
+        className="icon"
+      />
+      <figcaption
+        className="detailText"
+      >
+        Housing
+      </figcaption>
+    </figure>
+  </div>
+</React.Fragment>
+`;

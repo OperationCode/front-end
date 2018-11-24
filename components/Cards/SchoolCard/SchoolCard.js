@@ -16,7 +16,7 @@ class SchoolCard extends Component {
     locations: PropTypes.arrayOf(
       PropTypes.shape({
         city: PropTypes.string,
-        doesAcceptGIBill: PropTypes.bool.isRequired,
+        va_accepted: PropTypes.bool.isRequired,
         state: PropTypes.string,
       }),
     ).isRequired,

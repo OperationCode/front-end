@@ -22,7 +22,7 @@ export default class FrontSchoolCard extends Component {
     locations: PropTypes.arrayOf(
       PropTypes.shape({
         city: PropTypes.string,
-        doesAcceptGIBill: PropTypes.bool.isRequired,
+        va_accepted: PropTypes.bool.isRequired,
         state: PropTypes.string,
       }),
     ).isRequired,
@@ -70,7 +70,7 @@ export default class FrontSchoolCard extends Component {
 
         <div className={styles.detailsRow}>
           {/* GI Bill */}
-          {props.locations.some(location => location.doesAcceptGIBill) ? (
+          {props.locations.some(location => location.va_accepted) ? (
             <figure className={`${styles.detailItem} ${styles.active}`}>
               <GIBillApprovedIcon
                 aria-hidden="true"

@@ -8,7 +8,7 @@ BackSchoolCard.propTypes = {
   locations: PropTypes.arrayOf(
     PropTypes.shape({
       city: PropTypes.string,
-      doesAcceptGIBill: PropTypes.bool.isRequired,
+      va_accepted: PropTypes.bool.isRequired,
       state: PropTypes.string,
     }),
   ).isRequired,
@@ -32,7 +32,7 @@ function BackSchoolCard({ cardFlipCallback, locations, logoSource }) {
         {locations.map(location => (
           <li>
             {location.city && location.state && `${location.city}, ${location.state}`}
-            {location.doesAcceptGIBill ? '*' : null}
+            {location.va_accepted ? '*' : null}
           </li>
         ))}
       </ul>
