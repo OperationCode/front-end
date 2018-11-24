@@ -6,7 +6,7 @@ import { withKnobs, text } from '@storybook/addon-knobs';
 import { s3 } from 'common/constants/urls';
 
 // Mimic <SchoolCard>
-import Card from 'common/components/Card/Card';
+import Card from 'components/_common_/Card/Card';
 import styles from '../SchoolCard.css';
 
 import BackSchoolCard from '../BackSchoolCard';

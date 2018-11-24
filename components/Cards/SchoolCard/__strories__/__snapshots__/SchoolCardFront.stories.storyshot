@@ -1,0 +1,392 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Cards/SchoolCard/Front with many locations 1`] = `
+<article
+  className="Card SchoolCard"
+>
+  <h5>
+    General Assembly
+  </h5>
+  <img
+    alt=""
+    src="https://s3.amazonaws.com/operationcode-assets/codeSchoolLogos/general_assembly.jpg"
+  />
+  <div
+    className="interactionsContainer"
+  >
+    <button
+      className="Button primary"
+      disabled={false}
+      onClick={[Function]}
+      tabIndex={0}
+      type="button"
+    >
+      <a
+        href="https://generalassembly.com"
+        onClick={[Function]}
+        rel="noopener noreferrer"
+        target="_blank"
+        to="https://generalassembly.com"
+      >
+        <span
+          className="ScreenReaderOnly"
+        >
+          Opens in new window
+        </span>
+        Go To Website
+        <svg
+          className="externalLinkIcon"
+        />
+      </a>
+    </button>
+    <button
+      className="Button primary"
+      disabled={false}
+      onClick={[Function]}
+      tabIndex={0}
+      type="button"
+    >
+      See Locations
+    </button>
+  </div>
+  <hr
+    className="divider"
+  />
+  <div
+    className="detailsRow"
+  >
+    <figure
+      className="detailItem active"
+    >
+      <svg
+        aria-hidden="true"
+        className="icon"
+        style={
+          Object {
+            "margin": "0 0.25rem",
+          }
+        }
+      />
+      <figcaption
+        className="detailText"
+      >
+        G.I. Bill
+      </figcaption>
+    </figure>
+    <figure
+      className="detailItem active"
+    >
+      <svg
+        aria-hidden="true"
+        className="icon"
+      />
+      <figcaption
+        className="detailText"
+      >
+        Online
+      </figcaption>
+    </figure>
+    <figure
+      className="detailItem active"
+    >
+      <svg
+        aria-hidden="true"
+        className="icon"
+      />
+      <figcaption
+        className="detailText"
+      >
+        In-Person
+      </figcaption>
+    </figure>
+  </div>
+  <div
+    className="detailsRow"
+  >
+    <figure
+      className="detailItem disabled"
+    >
+      <svg
+        aria-hidden="true"
+        className="icon"
+      />
+      <figcaption
+        className="detailText"
+      >
+        Equipment
+      </figcaption>
+    </figure>
+    <figure
+      className="detailItem disabled"
+    >
+      <svg
+        aria-hidden="true"
+        className="icon"
+      />
+      <figcaption
+        className="detailText"
+      >
+        Housing
+      </figcaption>
+    </figure>
+  </div>
+</article>
+`;
+
+exports[`Storyshots Cards/SchoolCard/Front with no physical locations 1`] = `
+<article
+  className="Card SchoolCard"
+>
+  <h5>
+    Thinkful
+  </h5>
+  <img
+    alt=""
+    src="https://s3.amazonaws.com/operationcode-assets/codeSchoolLogos/thinkful.jpg"
+  />
+  <div
+    className="interactionsContainer"
+  >
+    <button
+      className="Button primary"
+      disabled={false}
+      onClick={[Function]}
+      tabIndex={0}
+      type="button"
+    >
+      <a
+        href="https://thinkful.com"
+        onClick={[Function]}
+        rel="noopener noreferrer"
+        target="_blank"
+        to="https://thinkful.com"
+      >
+        <span
+          className="ScreenReaderOnly"
+        >
+          Opens in new window
+        </span>
+        Go To Website
+        <svg
+          className="externalLinkIcon"
+        />
+      </a>
+    </button>
+    <span
+      className="singleLocationText"
+    >
+      Online Only
+    </span>
+  </div>
+  <hr
+    className="divider"
+  />
+  <div
+    className="detailsRow"
+  >
+    <figure
+      className="detailItem disabled"
+    >
+      <svg
+        aria-hidden="true"
+        className="icon"
+        style={
+          Object {
+            "margin": "0 0.25rem",
+          }
+        }
+      />
+      <figcaption
+        className="detailText"
+      >
+        G.I. Bill
+      </figcaption>
+    </figure>
+    <figure
+      className="detailItem active"
+    >
+      <svg
+        aria-hidden="true"
+        className="icon"
+      />
+      <figcaption
+        className="detailText"
+      >
+        Online
+      </figcaption>
+    </figure>
+    <figure
+      className="detailItem disabled"
+    >
+      <svg
+        aria-hidden="true"
+        className="icon"
+      />
+      <figcaption
+        className="detailText"
+      >
+        In-Person
+      </figcaption>
+    </figure>
+  </div>
+  <div
+    className="detailsRow"
+  >
+    <figure
+      className="detailItem disabled"
+    >
+      <svg
+        aria-hidden="true"
+        className="icon"
+      />
+      <figcaption
+        className="detailText"
+      >
+        Equipment
+      </figcaption>
+    </figure>
+    <figure
+      className="detailItem disabled"
+    >
+      <svg
+        aria-hidden="true"
+        className="icon"
+      />
+      <figcaption
+        className="detailText"
+      >
+        Housing
+      </figcaption>
+    </figure>
+  </div>
+</article>
+`;
+
+exports[`Storyshots Cards/SchoolCard/Front with one location 1`] = `
+<article
+  className="Card SchoolCard"
+>
+  <h5>
+    Code Immersives
+  </h5>
+  <img
+    alt=""
+    src="https://s3.amazonaws.com/operationcode-assets/codeSchoolLogos/code_immersives.jpg"
+  />
+  <div
+    className="interactionsContainer"
+  >
+    <button
+      className="Button primary"
+      disabled={false}
+      onClick={[Function]}
+      tabIndex={0}
+      type="button"
+    >
+      <a
+        href="https://codeimmersives.com"
+        onClick={[Function]}
+        rel="noopener noreferrer"
+        target="_blank"
+        to="https://codeimmersives.com"
+      >
+        <span
+          className="ScreenReaderOnly"
+        >
+          Opens in new window
+        </span>
+        Go To Website
+        <svg
+          className="externalLinkIcon"
+        />
+      </a>
+    </button>
+    <span
+      className="singleLocationText"
+    >
+      Los Angeles, CA
+    </span>
+  </div>
+  <hr
+    className="divider"
+  />
+  <div
+    className="detailsRow"
+  >
+    <figure
+      className="detailItem disabled"
+    >
+      <svg
+        aria-hidden="true"
+        className="icon"
+        style={
+          Object {
+            "margin": "0 0.25rem",
+          }
+        }
+      />
+      <figcaption
+        className="detailText"
+      >
+        G.I. Bill
+      </figcaption>
+    </figure>
+    <figure
+      className="detailItem disabled"
+    >
+      <svg
+        aria-hidden="true"
+        className="icon"
+      />
+      <figcaption
+        className="detailText"
+      >
+        Online
+      </figcaption>
+    </figure>
+    <figure
+      className="detailItem active"
+    >
+      <svg
+        aria-hidden="true"
+        className="icon"
+      />
+      <figcaption
+        className="detailText"
+      >
+        In-Person
+      </figcaption>
+    </figure>
+  </div>
+  <div
+    className="detailsRow"
+  >
+    <figure
+      className="detailItem active"
+    >
+      <svg
+        aria-hidden="true"
+        className="icon"
+      />
+      <figcaption
+        className="detailText"
+      >
+        Equipment
+      </figcaption>
+    </figure>
+    <figure
+      className="detailItem disabled"
+    >
+      <svg
+        aria-hidden="true"
+        className="icon"
+      />
+      <figcaption
+        className="detailText"
+      >
+        Housing
+      </figcaption>
+    </figure>
+  </div>
+</article>
+`;
