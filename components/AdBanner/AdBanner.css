@@ -1,15 +1,15 @@
-.adBannerLink {
+.AdBanner {
   width: 100%;
   color: inherit;
   text-decoration: none;
 }
 
-.adBanner {
+.adBannerContent {
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  padding: 1.5rem;
   background-color: #dbf0cc;
   border-color: #d0eeba;
   border-style: solid;
@@ -27,8 +27,8 @@
 }
 
 .adBannerText {
-  font-size: 18px;
   text-align: center;
+  width: 90%;
 }
 
 /* Change the color of links on hover */
