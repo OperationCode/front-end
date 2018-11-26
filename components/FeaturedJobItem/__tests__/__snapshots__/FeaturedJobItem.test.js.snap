@@ -9,7 +9,6 @@ exports[`FeaturedJobItem should render with many props assigned 1`] = `
     onClick={[Function]}
     rel="noopener noreferrer"
     target="_blank"
-    to="https://jobs.lever.co/formidable/82919058-b73c-4a02-8589-87e2433f0a90"
   >
     <span
       className="ScreenReaderOnly"
@@ -92,7 +91,6 @@ exports[`FeaturedJobItem should render with required props 1`] = `
     onClick={[Function]}
     rel="noopener noreferrer"
     target="_blank"
-    to="https://about.gitlab.com/jobs/apply/?gh_jid=4055708002"
   >
     <span
       className="ScreenReaderOnly"

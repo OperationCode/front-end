@@ -9,5 +9,6 @@
   },
   "files": [".next", "static", "package.json", "yarn.lock"],
   "type": "npm",
-  "public": true
+  "public": true,
+  "version": 1
 }

@@ -6,7 +6,6 @@ exports[`Storyshots Common/OutboundLink default 1`] = `
   onClick={[Function]}
   rel="noopener noreferrer"
   target="_blank"
-  to="https://whitehouse.gov"
 >
   <span
     className="ScreenReaderOnly"

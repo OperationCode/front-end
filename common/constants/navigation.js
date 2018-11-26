@@ -1,18 +1,30 @@
+// links shared between nav and footer (no duplicate code)
+const contactLink = {
+  name: 'Contact Us',
+  href: '/contact',
+};
+
+const faqLink = {
+  name: 'FAQ',
+  href: '/faq',
+};
+
+const getInvolvedLink = {
+  name: 'Get Involved',
+  href: '/get_involved',
+};
+
+const eventsLink = {
+  name: 'Events',
+  href: '/events',
+};
+
 export const navItems = [
   {
     name: 'About Us',
     href: '/about',
     shouldPrefetch: false,
-    sublinks: [
-      {
-        name: 'Contact Us',
-        href: '/contact_us',
-      },
-      {
-        name: 'FAQ',
-        href: '/faq',
-      },
-    ],
+    sublinks: [contactLink, faqLink],
   },
   {
     name: 'Who We Serve',
@@ -30,14 +42,12 @@ export const navItems = [
     ],
   },
   {
-    name: 'Events',
-    href: '/events',
+    ...eventsLink,
     shouldPrefetch: false,
     sublinks: [],
   },
   {
-    name: 'Get Involved',
-    href: '/get_involved',
+    ...getInvolvedLink,
     shouldPrefetch: false,
     sublinks: [],
   },
@@ -47,86 +57,74 @@ export const footerItems = {
   column1: [
     {
       href: '/about',
-      title: 'About Us',
+      name: 'About Us',
     },
-    {
-      href: '/contact',
-      title: 'Contact Us',
-    },
-    {
-      href: '/faq',
-      title: 'FAQ',
-    },
+    contactLink,
+    faqLink,
   ],
   column2: [
     {
       href: '/who_we_serve',
-      title: 'Who We Serve',
+      name: 'Who We Serve',
     },
     {
       href: '/code_schools',
-      title: 'Code Schools',
+      name: 'Code Schools',
     },
     {
       href: '/jobs',
-      title: 'Job Board',
+      name: 'Job Board',
     },
-    {
-      href: '/events',
-      title: 'Events',
-    },
+    eventsLink,
   ],
   column3: [
-    {
-      href: '/get_involved',
-      title: 'Get Involved',
-    },
+    getInvolvedLink,
     {
       href: '/mentoring',
-      title: 'Become A Mentor',
+      name: 'Become A Mentor',
     },
     {
       href: '/history',
-      title: 'History',
+      name: 'History',
     },
     {
       href: '/donate',
-      title: 'Donate',
+      name: 'Donate',
     },
   ],
   column4: [
     {
       href: '/resources',
-      title: 'Resources',
+      name: 'Resources',
     },
     {
       href: '/press',
-      title: 'Press',
+      name: 'Press',
     },
     {
       href: '/branding',
-      title: 'Branding',
+      name: 'Branding',
     },
     {
       href: '/blog',
-      title: 'Blog',
+      name: 'Blog',
     },
   ],
   legal: [
     {
       analyticsEventLabel: 'FooterLink',
       href: 'https://www.somefakeurl.com/',
-      title: 'Terms of Use',
+      name: 'Terms of Use',
     },
     {
       analyticsEventLabel: 'FooterLink',
       href: 'https://www.anotherfakeurl.com/',
-      title: 'Cookies',
+      name: 'Cookies',
     },
     {
       analyticsEventLabel: 'FooterLink',
       href: 'https://www.iubenda.com/privacy-policy/8174861',
-      title: 'Privacy',
+      name: 'Privacy',
     },
   ],
 };
