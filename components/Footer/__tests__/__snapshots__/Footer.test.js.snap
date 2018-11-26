@@ -193,7 +193,7 @@ exports[`Footer should render with no props passed 1`] = `
     className="row legalGrouping"
   >
     <div
-      className="copyright"
+      className="row copyright"
     >
       Copyright 
       2018

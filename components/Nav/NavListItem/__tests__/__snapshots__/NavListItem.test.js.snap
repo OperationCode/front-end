@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavListItem should render with required props passed 1`] = `
+<li
+  className="NavListItem"
+>
+  <Link
+    href="/test"
+    prefetch={false}
+  >
+    <a
+      aria-expanded={false}
+      aria-haspopup={false}
+      className="link navItemLink"
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      role="link"
+      tabIndex={0}
+    >
+      <span
+        className="linkContent"
+      >
+        Test
+      </span>
+    </a>
+  </Link>
+</li>
+`;

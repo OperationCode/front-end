@@ -7,7 +7,6 @@ exports[`OutboundLink should render with many props assigned 1`] = `
   onClick={[Function]}
   rel="noopener noreferrer"
   target="_blank"
-  to="https://tests.com"
 >
   <span
     className="ScreenReaderOnly"
@@ -24,7 +23,6 @@ exports[`OutboundLink should render with required props 1`] = `
   onClick={[Function]}
   rel="noopener noreferrer"
   target="_blank"
-  to="https://tests.com"
 >
   <span
     className="ScreenReaderOnly"
