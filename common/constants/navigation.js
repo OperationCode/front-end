@@ -57,7 +57,7 @@ export const footerItems = {
   column1: [
     {
       href: '/about',
-      title: 'About Us',
+      name: 'About Us',
     },
     contactLink,
     faqLink,
@@ -65,15 +65,15 @@ export const footerItems = {
   column2: [
     {
       href: '/who_we_serve',
-      title: 'Who We Serve',
+      name: 'Who We Serve',
     },
     {
       href: '/code_schools',
-      title: 'Code Schools',
+      name: 'Code Schools',
     },
     {
       href: '/jobs',
-      title: 'Job Board',
+      name: 'Job Board',
     },
     eventsLink,
   ],
@@ -81,50 +81,50 @@ export const footerItems = {
     getInvolvedLink,
     {
       href: '/mentoring',
-      title: 'Become A Mentor',
+      name: 'Become A Mentor',
     },
     {
       href: '/history',
-      title: 'History',
+      name: 'History',
     },
     {
       href: '/donate',
-      title: 'Donate',
+      name: 'Donate',
     },
   ],
   column4: [
     {
       href: '/resources',
-      title: 'Resources',
+      name: 'Resources',
     },
     {
       href: '/press',
-      title: 'Press',
+      name: 'Press',
     },
     {
       href: '/branding',
-      title: 'Branding',
+      name: 'Branding',
     },
     {
       href: '/blog',
-      title: 'Blog',
+      name: 'Blog',
     },
   ],
   legal: [
     {
       analyticsEventLabel: 'FooterLink',
       href: 'https://www.somefakeurl.com/',
-      title: 'Terms of Use',
+      name: 'Terms of Use',
     },
     {
       analyticsEventLabel: 'FooterLink',
       href: 'https://www.anotherfakeurl.com/',
-      title: 'Cookies',
+      name: 'Cookies',
     },
     {
       analyticsEventLabel: 'FooterLink',
       href: 'https://www.iubenda.com/privacy-policy/8174861',
-      title: 'Privacy',
+      name: 'Privacy',
     },
   ],
 };
