@@ -40,6 +40,7 @@ h4,
 h5,
 h6,
 button,
+nav,
 footer {
   font-family: var(--primaryFontFamily), sans-serif;
   text-transform: uppercase;
@@ -50,9 +51,14 @@ footer {
   letter-spacing: 2px;
 }
 
+nav,
 footer {
-  color: var(--white);
+  text-decoration: none;
+}
+
+footer {
   background-color: var(--secondary);
+  color: var(--white);
 }
 
 h1,
@@ -104,15 +110,15 @@ h6 {
   font-size: 1.5rem;
 }
 
-@media screen and (max-width: 480px) {
-  html {
-    font-size: 14px !important;
-  }
-}
-
 @media screen and (min-width: 481px) and (max-width: 960px) {
   html {
     font-size: 16px !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  html {
+    font-size: 14px !important;
   }
 }
 
