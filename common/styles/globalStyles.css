@@ -50,11 +50,6 @@ footer {
   letter-spacing: 2px;
 }
 
-nav,
-footer {
-  text-decoration: none;
-}
-
 footer {
   background-color: var(--secondary);
   color: var(--white);
@@ -73,6 +68,11 @@ h6 {
 
 a {
   color: currentColor;
+}
+
+nav a,
+footer a {
+  text-decoration: none;
 }
 
 p {
