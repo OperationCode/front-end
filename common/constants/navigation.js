@@ -1,18 +1,30 @@
+// links shared between nav and footer (no duplicate code)
+const contactLink = {
+  name: 'Contact Us',
+  href: '/contact',
+};
+
+const faqLink = {
+  name: 'FAQ',
+  href: '/faq',
+};
+
+const getInvolvedLink = {
+  name: 'Get Involved',
+  href: '/get_involved',
+};
+
+const eventsLink = {
+  name: 'Events',
+  href: '/events',
+};
+
 export const navItems = [
   {
     name: 'About Us',
     href: '/about',
     shouldPrefetch: false,
-    sublinks: [
-      {
-        name: 'Contact Us',
-        href: '/contact_us',
-      },
-      {
-        name: 'FAQ',
-        href: '/faq',
-      },
-    ],
+    sublinks: [contactLink, faqLink],
   },
   {
     name: 'Who We Serve',
@@ -30,14 +42,12 @@ export const navItems = [
     ],
   },
   {
-    name: 'Events',
-    href: '/events',
+    ...eventsLink,
     shouldPrefetch: false,
     sublinks: [],
   },
   {
-    name: 'Get Involved',
-    href: '/get_involved',
+    ...getInvolvedLink,
     shouldPrefetch: false,
     sublinks: [],
   },
@@ -49,14 +59,8 @@ export const footerItems = {
       href: '/about',
       title: 'About Us',
     },
-    {
-      href: '/contact',
-      title: 'Contact Us',
-    },
-    {
-      href: '/faq',
-      title: 'FAQ',
-    },
+    contactLink,
+    faqLink,
   ],
   column2: [
     {
@@ -71,16 +75,10 @@ export const footerItems = {
       href: '/jobs',
       title: 'Job Board',
     },
-    {
-      href: '/events',
-      title: 'Events',
-    },
+    eventsLink,
   ],
   column3: [
-    {
-      href: '/get_involved',
-      title: 'Get Involved',
-    },
+    getInvolvedLink,
     {
       href: '/mentoring',
       title: 'Become A Mentor',
