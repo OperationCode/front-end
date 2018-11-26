@@ -23,10 +23,13 @@ before_script:
 
 jobs:
   include:
-    - stage: lint/test
-      script: yarn lint
-      script: yarn test:ci
-    - stage: build
+    - stage: test
+      name: lint/test
+      script: 
+        - yarn lint
+        - yarn test:ci
+    -
+      name: build
       script: yarn build
 
 after_script:
