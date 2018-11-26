@@ -8,32 +8,36 @@ import styles from './Nav.css';
 
 function Nav() {
   return (
-    <nav className={styles.Nav}>
-      <Link href="/">
-        <a className={classNames(styles.logoLink, styles.link)}>
-          <img
-            src={`${s3}branding/logos/small-blue-logo.png`}
-            alt="Operation Code Logo"
-            className={styles.logo}
-          />
-        </a>
-      </Link>
-
-      <ul className={styles.link}>
-        {navItems.map(navLink => (
-          // NavListItem component API matches navItems structure
-          <NavListItem key={navLink.name} {...navLink} />
-        ))}
-
-        <li>
-          <Link href={donateLink}>
-            <a className={classNames(styles.link, styles.donateLink)}>
-              <span>Donate</span>
+    <header className={styles.header}>
+      <div className={styles.navContainer}>
+        <nav className={styles.Nav}>
+          <Link href="/">
+            <a className={classNames(styles.logoLink, styles.link)}>
+              <img
+                src={`${s3}branding/logos/small-blue-logo.png`}
+                alt="Operation Code Logo"
+                className={styles.logo}
+              />
             </a>
           </Link>
-        </li>
-      </ul>
-    </nav>
+
+          <ul className={styles.link}>
+            {navItems.map(navLink => (
+              // NavListItem component API matches navItems structure
+              <NavListItem key={navLink.name} {...navLink} />
+            ))}
+
+            <li>
+              <Link href={donateLink}>
+                <a className={classNames(styles.link, styles.donateLink)}>
+                  <span>Donate</span>
+                </a>
+              </Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
   );
 }
 

@@ -27,7 +27,7 @@ function Footer() {
               {footerItems.column1.map(link => (
                 <li key={link.href}>
                   <Link href={link.href}>
-                    <a>{link.title}</a>
+                    <a>{link.name}</a>
                   </Link>
                 </li>
               ))}
@@ -36,7 +36,7 @@ function Footer() {
               {footerItems.column2.map(link => (
                 <li key={link.href}>
                   <Link href={link.href}>
-                    <a>{link.title}</a>
+                    <a>{link.name}</a>
                   </Link>
                 </li>
               ))}
@@ -47,7 +47,7 @@ function Footer() {
               {footerItems.column3.map(link => (
                 <li key={link.href}>
                   <Link href={link.href}>
-                    <a>{link.title}</a>
+                    <a>{link.name}</a>
                   </Link>
                 </li>
               ))}
@@ -56,7 +56,7 @@ function Footer() {
               {footerItems.column4.map(link => (
                 <li key={link.href}>
                   <Link href={link.href}>
-                    <a>{link.title}</a>
+                    <a>{link.name}</a>
                   </Link>
                 </li>
               ))}
@@ -79,11 +79,11 @@ function Footer() {
                 analyticsEventLabel={link.analyticsEventLabel}
                 href={link.href}
               >
-                {link.title}
+                {link.name}
               </OutboundLink>
             ) : (
               <Link href={link.href} key={link.href}>
-                <a>{link.title}</a>
+                <a>{link.name}</a>
               </Link>
             ),
           )}

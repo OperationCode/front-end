@@ -10,3 +10,4 @@ export const largeViewportWidth = "992px";
 export const extraLargeViewportWidth = "1200px";
 export const borderRadius = "3px";
 export const navBarHeight = "65px";
+export const navBarTopGutterHeight = "20px";
