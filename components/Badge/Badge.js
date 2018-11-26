@@ -22,15 +22,15 @@ function Badge({ className, icon, isImageFirst, label }) {
   return (
     <div className={classNames(styles.Badge, className)}>
       {isImageFirst ? (
-        <>
-          <figure className={styles.iconContainer}>{icon}</figure>
+        <figure className={styles.iconContainer}>
+          {icon}
           <figcaption className={styles.label}>{label}</figcaption>
-        </>
+        </figure>
       ) : (
-        <>
-          <figure className={styles.label}>{label}</figure>
+        <figure className={styles.label}>
+          {label}
           <figcaption className={styles.iconContainer}>{icon}</figcaption>
-        </>
+        </figure>
       )}
     </div>
   );

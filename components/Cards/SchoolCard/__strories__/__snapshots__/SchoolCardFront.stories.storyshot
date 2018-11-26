@@ -26,7 +26,6 @@ exports[`Storyshots Cards/SchoolCard/Front with many locations 1`] = `
         onClick={[Function]}
         rel="noopener noreferrer"
         target="_blank"
-        to="https://generalassembly.com"
       >
         <span
           className="ScreenReaderOnly"
@@ -67,12 +66,12 @@ exports[`Storyshots Cards/SchoolCard/Front with many locations 1`] = `
           <svg
             className="icon"
           />
+          <figcaption
+            className="label"
+          >
+            G.I Bill
+          </figcaption>
         </figure>
-        <figcaption
-          className="label"
-        >
-          G.I Bill
-        </figcaption>
       </div>
     </div>
     <div
@@ -87,12 +86,12 @@ exports[`Storyshots Cards/SchoolCard/Front with many locations 1`] = `
           <svg
             className="icon"
           />
+          <figcaption
+            className="label"
+          >
+            Online
+          </figcaption>
         </figure>
-        <figcaption
-          className="label"
-        >
-          Online
-        </figcaption>
       </div>
     </div>
     <div
@@ -108,12 +107,12 @@ exports[`Storyshots Cards/SchoolCard/Front with many locations 1`] = `
           <svg
             className="icon"
           />
+          <figcaption
+            className="label"
+          >
+            In-Person
+          </figcaption>
         </figure>
-        <figcaption
-          className="label"
-        >
-          In-Person
-        </figcaption>
       </div>
     </div>
   </div>
@@ -133,12 +132,12 @@ exports[`Storyshots Cards/SchoolCard/Front with many locations 1`] = `
           <svg
             className="icon"
           />
+          <figcaption
+            className="label"
+          >
+            Equipment
+          </figcaption>
         </figure>
-        <figcaption
-          className="label"
-        >
-          Equipment
-        </figcaption>
       </div>
     </div>
     <div
@@ -154,12 +153,12 @@ exports[`Storyshots Cards/SchoolCard/Front with many locations 1`] = `
           <svg
             className="icon"
           />
+          <figcaption
+            className="label"
+          >
+            Housing
+          </figcaption>
         </figure>
-        <figcaption
-          className="label"
-        >
-          Housing
-        </figcaption>
       </div>
     </div>
   </div>
@@ -192,7 +191,6 @@ exports[`Storyshots Cards/SchoolCard/Front with no physical locations 1`] = `
         onClick={[Function]}
         rel="noopener noreferrer"
         target="_blank"
-        to="https://thinkful.com"
       >
         <span
           className="ScreenReaderOnly"
@@ -229,12 +227,12 @@ exports[`Storyshots Cards/SchoolCard/Front with no physical locations 1`] = `
           <svg
             className="icon"
           />
+          <figcaption
+            className="label"
+          >
+            G.I Bill
+          </figcaption>
         </figure>
-        <figcaption
-          className="label"
-        >
-          G.I Bill
-        </figcaption>
       </div>
     </div>
     <div
@@ -249,12 +247,12 @@ exports[`Storyshots Cards/SchoolCard/Front with no physical locations 1`] = `
           <svg
             className="icon"
           />
+          <figcaption
+            className="label"
+          >
+            Online
+          </figcaption>
         </figure>
-        <figcaption
-          className="label"
-        >
-          Online
-        </figcaption>
       </div>
     </div>
     <div
@@ -270,12 +268,12 @@ exports[`Storyshots Cards/SchoolCard/Front with no physical locations 1`] = `
           <svg
             className="icon"
           />
+          <figcaption
+            className="label"
+          >
+            In-Person
+          </figcaption>
         </figure>
-        <figcaption
-          className="label"
-        >
-          In-Person
-        </figcaption>
       </div>
     </div>
   </div>
@@ -295,12 +293,12 @@ exports[`Storyshots Cards/SchoolCard/Front with no physical locations 1`] = `
           <svg
             className="icon"
           />
+          <figcaption
+            className="label"
+          >
+            Equipment
+          </figcaption>
         </figure>
-        <figcaption
-          className="label"
-        >
-          Equipment
-        </figcaption>
       </div>
     </div>
     <div
@@ -316,12 +314,12 @@ exports[`Storyshots Cards/SchoolCard/Front with no physical locations 1`] = `
           <svg
             className="icon"
           />
+          <figcaption
+            className="label"
+          >
+            Housing
+          </figcaption>
         </figure>
-        <figcaption
-          className="label"
-        >
-          Housing
-        </figcaption>
       </div>
     </div>
   </div>
@@ -354,7 +352,6 @@ exports[`Storyshots Cards/SchoolCard/Front with one location 1`] = `
         onClick={[Function]}
         rel="noopener noreferrer"
         target="_blank"
-        to="https://codeimmersives.com"
       >
         <span
           className="ScreenReaderOnly"
@@ -391,12 +388,12 @@ exports[`Storyshots Cards/SchoolCard/Front with one location 1`] = `
           <svg
             className="icon"
           />
+          <figcaption
+            className="label"
+          >
+            G.I Bill
+          </figcaption>
         </figure>
-        <figcaption
-          className="label"
-        >
-          G.I Bill
-        </figcaption>
       </div>
     </div>
     <div
@@ -411,12 +408,12 @@ exports[`Storyshots Cards/SchoolCard/Front with one location 1`] = `
           <svg
             className="icon"
           />
+          <figcaption
+            className="label"
+          >
+            Online
+          </figcaption>
         </figure>
-        <figcaption
-          className="label"
-        >
-          Online
-        </figcaption>
       </div>
     </div>
     <div
@@ -432,12 +429,12 @@ exports[`Storyshots Cards/SchoolCard/Front with one location 1`] = `
           <svg
             className="icon"
           />
+          <figcaption
+            className="label"
+          >
+            In-Person
+          </figcaption>
         </figure>
-        <figcaption
-          className="label"
-        >
-          In-Person
-        </figcaption>
       </div>
     </div>
   </div>
@@ -457,12 +454,12 @@ exports[`Storyshots Cards/SchoolCard/Front with one location 1`] = `
           <svg
             className="icon"
           />
+          <figcaption
+            className="label"
+          >
+            Equipment
+          </figcaption>
         </figure>
-        <figcaption
-          className="label"
-        >
-          Equipment
-        </figcaption>
       </div>
     </div>
     <div
@@ -478,12 +475,12 @@ exports[`Storyshots Cards/SchoolCard/Front with one location 1`] = `
           <svg
             className="icon"
           />
+          <figcaption
+            className="label"
+          >
+            Housing
+          </figcaption>
         </figure>
-        <figcaption
-          className="label"
-        >
-          Housing
-        </figcaption>
       </div>
     </div>
   </div>

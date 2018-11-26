@@ -15,7 +15,7 @@ const locations = [
 describe('BackSchoolCard', () => {
   it('should render with required props', () => {
     createShallowSnapshotTest(
-      <BackSchoolCard cardFlipCallback={() => {}} locations={locations} logoSource="logoSource">
+      <BackSchoolCard cardFlipCallback={jest.fn()} locations={locations} logoSource="logoSource">
         <p>Testing!</p>
       </BackSchoolCard>,
     );

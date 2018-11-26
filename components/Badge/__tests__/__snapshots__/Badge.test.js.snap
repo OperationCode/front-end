@@ -8,12 +8,12 @@ exports[`Badge should render with many props assigned 1`] = `
     className="iconContainer"
   >
     <svg />
+    <figcaption
+      className="label"
+    >
+      Badge Icon
+    </figcaption>
   </figure>
-  <figcaption
-    className="label"
-  >
-    Badge Icon
-  </figcaption>
 </div>
 `;
 
@@ -25,11 +25,11 @@ exports[`Badge should render with required props 1`] = `
     className="iconContainer"
   >
     <svg />
+    <figcaption
+      className="label"
+    >
+      Testing
+    </figcaption>
   </figure>
-  <figcaption
-    className="label"
-  >
-    Testing
-  </figcaption>
 </div>
 `;

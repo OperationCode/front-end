@@ -4,7 +4,7 @@ exports[`BackSchoolCard should render with required props 1`] = `
 <React.Fragment>
   <CloseButton
     disabled={false}
-    onClick={[Function]}
+    onClick={[MockFunction]}
   />
   <img
     alt=""

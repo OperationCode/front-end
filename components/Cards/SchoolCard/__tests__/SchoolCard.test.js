@@ -14,6 +14,26 @@ const locations = [
 ];
 
 describe('SchoolCard', () => {
+  let wrapper;
+  beforeEach(() => {
+    wrapper = shallow(
+      <SchoolCard
+        cardFlipCallback={() => {}}
+        hasHardwareIncluded
+        hasHousing
+        hasOnline
+        hasOnlyOnline={false}
+        isFullTime
+        locations={locations}
+        logoSource="source"
+        name="school name"
+        website="website"
+      >
+        Test
+      </SchoolCard>,
+    );
+  });
+
   it('should render with required props', () => {
     createShallowSnapshotTest(
       <SchoolCard
@@ -31,25 +51,9 @@ describe('SchoolCard', () => {
       </SchoolCard>,
     );
   });
+
   it('call to showBackOfCard/showFrontOfTheCard flips isFrontOfCardShowing', () => {
-    const wrapper = shallow(
-      <SchoolCard
-        cardFlipCallback={() => {}}
-        hasHardwareIncluded
-        hasHousing
-        hasOnline
-        hasOnlyOnline={false}
-        isFullTime
-        locations={locations}
-        logoSource="source"
-        name="school name"
-        website="website"
-      >
-        Test
-      </SchoolCard>,
-    );
     const instance = wrapper.instance();
-    wrapper.setState({ isFrontOfCardShowing: true });
     expect(wrapper.state('isFrontOfCardShowing')).toBe(true);
     instance.showBackOfCard();
     expect(wrapper.state('isFrontOfCardShowing')).toBe(false);

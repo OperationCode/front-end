@@ -8,11 +8,11 @@ exports[`Storyshots Badge default 1`] = `
     className="iconContainer"
   >
     <svg />
+    <figcaption
+      className="label"
+    >
+      My Awesome Badge
+    </figcaption>
   </figure>
-  <figcaption
-    className="label"
-  >
-    My Awesome Badge
-  </figcaption>
 </div>
 `;
