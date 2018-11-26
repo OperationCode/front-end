@@ -3,7 +3,8 @@ import Link from 'next/link';
 import classNames from 'classnames';
 import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
 import SocialMedia from 'components/SocialMedia/SocialMedia';
-import { s3, footerLinks } from 'common/constants/urls';
+import { footerItems } from 'common/constants/navigation';
+import { s3 } from 'common/constants/urls';
 import styles from './Footer.css';
 
 function Footer() {
@@ -23,7 +24,7 @@ function Footer() {
         <div className={classNames(styles.footerGrouping, styles.linksGrouping, styles.capitalize)}>
           <div className={styles.linksRow}>
             <ul className={styles.linksColumn}>
-              {footerLinks.column1.map(link => (
+              {footerItems.column1.map(link => (
                 <li key={link.href}>
                   <Link href={link.href}>
                     <a>{link.title}</a>
@@ -32,7 +33,7 @@ function Footer() {
               ))}
             </ul>
             <ul className={styles.linksColumn}>
-              {footerLinks.column2.map(link => (
+              {footerItems.column2.map(link => (
                 <li key={link.href}>
                   <Link href={link.href}>
                     <a>{link.title}</a>
@@ -43,7 +44,7 @@ function Footer() {
           </div>
           <div className={styles.linksRow}>
             <ul className={styles.linksColumn}>
-              {footerLinks.column3.map(link => (
+              {footerItems.column3.map(link => (
                 <li key={link.href}>
                   <Link href={link.href}>
                     <a>{link.title}</a>
@@ -52,7 +53,7 @@ function Footer() {
               ))}
             </ul>
             <ul className={styles.linksColumn}>
-              {footerLinks.column4.map(link => (
+              {footerItems.column4.map(link => (
                 <li key={link.href}>
                   <Link href={link.href}>
                     <a>{link.title}</a>
@@ -65,17 +66,27 @@ function Footer() {
       </div>
 
       <div className={classNames(styles.row, styles.legalGrouping)}>
-        <div className={styles.copyright}>Copyright {currentYear} Operation Code™</div>
+        <div className={classNames(styles.row, styles.copyright)}>
+          Copyright {currentYear} Operation Code™
+        </div>
         <div className={classNames(styles.row, styles.legalLinks)}>
-          {footerLinks.legal.map(link => (
-            <OutboundLink
-              key={link.href}
-              analyticsEventLabel={link.analyticsEventLabel}
-              href={link.href}
-            >
-              {link.title}
-            </OutboundLink>
-          ))}
+          {footerItems.legal.map(link =>
+            // Use OutboundLink if non-internal URL
+            // (indicated by the presence of an analytics label)
+            link.analyticsEventLabel ? (
+              <OutboundLink
+                key={link.href}
+                analyticsEventLabel={link.analyticsEventLabel}
+                href={link.href}
+              >
+                {link.title}
+              </OutboundLink>
+            ) : (
+              <Link href={link.href} key={link.href}>
+                <a>{link.title}</a>
+              </Link>
+            ),
+          )}
         </div>
       </div>
     </footer>

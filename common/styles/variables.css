@@ -15,4 +15,8 @@
   --mediumViewportWidth: 768px;
   --largeViewportWidth: 992px;
   --extraLargeViewportWidth: 1200px;
+
+  /* Commonly referenced dimensions */
+  --borderRadius: 3px;
+  --navBarHeight: 65px;
 }
