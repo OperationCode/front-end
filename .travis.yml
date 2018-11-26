@@ -21,10 +21,13 @@ before_script:
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
 
-script:
-  - yarn lint
-  - yarn test:ci
-  - yarn build
+jobs:
+  include:
+    - stage: lint/test
+      script: yarn lint
+      script: yarn test:ci
+    - stage: build
+      script: yarn build
 
 after_script:
   - greenkeeper-lockfile-upload
