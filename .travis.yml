@@ -21,12 +21,8 @@ before_script:
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
 
-addons:
-  apt_packages:
-    - parallel
-
 script:
-  - parallel --gnu --keep-order ::: 'yarn lint' 'yarn test:ci'
+  - yarn lint-and-test
   - yarn build
 # jobs:
 #   include:
