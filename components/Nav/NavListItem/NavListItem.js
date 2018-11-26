@@ -67,9 +67,9 @@ export default class NavListItem extends Component {
               type="button"
             >
               {state.areSublinksVisible ? (
-                <MinusIcon className={styles.icon} />
+                <MinusIcon className={styles.icon} data-testid="minus-icon" />
               ) : (
-                <PlusIcon className={styles.icon} />
+                <PlusIcon className={styles.icon} data-testid="plus-icon" />
               )}
             </button>
 
