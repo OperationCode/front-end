@@ -21,17 +21,24 @@ before_script:
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
 
-jobs:
-  include:
-    - stage: lint/test
-      name: "Lint"
-      script: yarn lint
-    -
-      name: "Test"
-      script: yarn test:ci
-    - stage: build
-      name: "Build"
-      script: yarn build
+addons:
+  apt_packages:
+    - parallel
+
+script:
+  - parallel --gnu --keep-order ::: 'yarn lint' 'yarn test:ci'
+  - yarn build
+# jobs:
+#   include:
+#     - stage: lint/test
+#       name: "Lint"
+#       script: yarn lint
+#     -
+#       name: "Test"
+#       script: yarn test:ci
+#     - stage: build
+#       name: "Build"
+#       script: yarn build
 
 after_script:
   - greenkeeper-lockfile-upload
