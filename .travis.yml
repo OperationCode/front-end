@@ -22,16 +22,21 @@ before_script:
   - ./cc-test-reporter before-build
 
 script:
-  - yarn lint-and-test
+  - yarn lint
+  - yarn test:ci
   - yarn build
+
+# Leave comment for inevitable Cypress integration
 # jobs:
 #   include:
+# THIS IS ONE STAGE
 #     - stage: lint/test
 #       name: "Lint"
 #       script: yarn lint
 #     -
 #       name: "Test"
 #       script: yarn test:ci
+# THIS IS ANOTHER
 #     - stage: build
 #       name: "Build"
 #       script: yarn build
