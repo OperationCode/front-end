@@ -42,8 +42,16 @@
 }
 
 .linkContent {
-  align-self: center;
-  padding: 0 1rem;
+  padding: 2px 1rem 0;
+}
+
+@media screen and (max-width: 992px) {
+  /* font-size shifts, but SVG icons do not */
+
+  /* align nav link content vertically with plus/minus icons */
+  .linkContent {
+    padding-top: 3px;
+  }
 }
 
 .icon {
