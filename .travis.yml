@@ -23,12 +23,13 @@ before_script:
 
 jobs:
   include:
-    - stage: test
-      name: lint/test
-      script: 
-        - yarn lint
-        - yarn test:ci
+    - stage: parallel lint/test
+      name: lint
+      script: yarn lint
     -
+      name: test
+      script: yarn test:ci
+    - stage: build
       name: build
       script: yarn build
 
