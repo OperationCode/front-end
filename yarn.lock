@@ -884,9 +884,10 @@
   dependencies:
     any-observable "^0.3.0"
 
-"@storybook/addon-a11y@^3.4.11":
+"@storybook/addon-a11y@3.4.11":
   version "3.4.11"
   resolved "https://registry.yarnpkg.com/@storybook/addon-a11y/-/addon-a11y-3.4.11.tgz#884f8caeeaac8e4a35d13ca5d679040edc505e1e"
+  integrity sha512-d/8yozoE1Jo0dvO1o+P5xu/wPGPZhI6zXkrCk4ESjXGUSIrCQu/KGQqXYWCVkhs/oT82j9XcuYLnelmh9oYqdA==
   dependencies:
     "@storybook/components" "3.4.11"
     axe-core "^2.6.1"
@@ -895,7 +896,7 @@
     glamorous "^4.12.1"
     prop-types "^15.6.1"
 
-"@storybook/addon-actions@3.4.11", "@storybook/addon-actions@^3.4.11":
+"@storybook/addon-actions@3.4.11":
   version "3.4.11"
   resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-3.4.11.tgz#a51418c5b684fd3df2788c19ef266845d6068baf"
   dependencies:
@@ -910,17 +911,19 @@
     react-inspector "^2.2.2"
     uuid "^3.2.1"
 
-"@storybook/addon-backgrounds@^3.4.11":
+"@storybook/addon-backgrounds@3.4.11":
   version "3.4.11"
   resolved "https://registry.yarnpkg.com/@storybook/addon-backgrounds/-/addon-backgrounds-3.4.11.tgz#3d98652990c94bbe00ebac7a380fac98e7b478b2"
+  integrity sha512-48G6SMVrOfBUAPzcnV1ZlTzaqUMNtxwHCwc1leJK223EJfTOQ4QBlcDVuP2jtDcB2euS/yJyTBKccldoApxecQ==
   dependencies:
     babel-runtime "^6.26.0"
     global "^4.3.2"
     prop-types "^15.6.1"
 
-"@storybook/addon-info@^3.4.11":
+"@storybook/addon-info@3.4.11":
   version "3.4.11"
   resolved "https://registry.yarnpkg.com/@storybook/addon-info/-/addon-info-3.4.11.tgz#eb4eafb2ec5a580acdaeacab0065ee8463eddefd"
+  integrity sha512-ujIiTZUu4tP7w/gb5A3T1iXvW//V9xuP9mfeTloiuBlHpbujIJqPg80UqoLB9ZN06IkXlHigHrhvgYcEDGmcDA==
   dependencies:
     "@storybook/client-logger" "3.4.11"
     "@storybook/components" "3.4.11"
@@ -934,9 +937,10 @@
     react-addons-create-fragment "^15.5.3"
     util-deprecate "^1.0.2"
 
-"@storybook/addon-knobs@^3.4.11":
+"@storybook/addon-knobs@3.4.11":
   version "3.4.11"
   resolved "https://registry.yarnpkg.com/@storybook/addon-knobs/-/addon-knobs-3.4.11.tgz#13ca0c73f19c0a3fda1a1d1ff07ef00fa3a914b3"
+  integrity sha512-1yeUajXEP+iYHfbAbk2eOP6uI68tVsmQAGlWhzGVMQub2Reu0fTQlwV+sb7W2XhwGJxFRwJfb2u91qUmsUyy8Q==
   dependencies:
     "@storybook/components" "3.4.11"
     babel-runtime "^6.26.0"
@@ -960,15 +964,17 @@
     global "^4.3.2"
     prop-types "^15.6.1"
 
-"@storybook/addon-options@^3.4.11":
+"@storybook/addon-options@3.4.11":
   version "3.4.11"
   resolved "https://registry.yarnpkg.com/@storybook/addon-options/-/addon-options-3.4.11.tgz#6f27f223cad466dc1079045f5af01c99f94f65d0"
+  integrity sha512-8kXOCV1RU2C84kDpcJxn5T7jCHCZfwzTQtgA2LDpitcyEayuvlo6crP0AMmsD6RQn41SJ5AS5TbOQgXnBnRMuw==
   dependencies:
     babel-runtime "^6.26.0"
 
-"@storybook/addon-storyshots@^3.4.11":
+"@storybook/addon-storyshots@3.4.11":
   version "3.4.11"
   resolved "https://registry.yarnpkg.com/@storybook/addon-storyshots/-/addon-storyshots-3.4.11.tgz#feb2594ae30170638ea9aed3770325d96016cbf5"
+  integrity sha512-E0OX50xICBexMIgHcdf8qOjDJUykSSCL6tFncoHSTAQgeCoH+PpFYe04vTWgalZxIoHY5o0dfDm8fLCzFQhyYA==
   dependencies:
     "@storybook/channels" "3.4.11"
     "@storybook/node-logger" "3.4.11"
@@ -980,16 +986,17 @@
     puppeteer "^1.2.0"
     read-pkg-up "^3.0.0"
 
-"@storybook/addon-viewport@^3.4.11":
+"@storybook/addon-viewport@3.4.11":
   version "3.4.11"
   resolved "https://registry.yarnpkg.com/@storybook/addon-viewport/-/addon-viewport-3.4.11.tgz#55f10b258b8010baeeb9dfccefc0a9cfcb4e97b0"
+  integrity sha512-pzgOvg7aAeYytkTsZaWXI8dNGhHZRrcCD7Ywy8bjxAP8xU1uNpiu5E2bFpt4boJZ7q2BvcvZ8wyKrh8lrWP5QQ==
   dependencies:
     "@storybook/components" "3.4.11"
     babel-runtime "^6.26.0"
     global "^4.3.2"
     prop-types "^15.6.1"
 
-"@storybook/addons@3.4.11", "@storybook/addons@^3.4.11":
+"@storybook/addons@3.4.11":
   version "3.4.11"
   resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-3.4.11.tgz#f3e27c46d80ad1f171888c4aad0a19a8a032d072"
 
@@ -1095,9 +1102,10 @@
   dependencies:
     babel-runtime "^6.5.0"
 
-"@storybook/react@^3.4.11":
+"@storybook/react@3.4.11":
   version "3.4.11"
   resolved "https://registry.yarnpkg.com/@storybook/react/-/react-3.4.11.tgz#0496132d78ca2f66ace79d9c4f7e951402c962db"
+  integrity sha512-e6U3Lh6mLlKD0hSdoVwXDMiiykKymH35TtYiL8PdRliQzZxPwIYJ4k6uViAVrKiaOoV2c0fcx+ADit4pCWE5zw==
   dependencies:
     "@storybook/addon-actions" "3.4.11"
     "@storybook/addon-links" "3.4.11"
