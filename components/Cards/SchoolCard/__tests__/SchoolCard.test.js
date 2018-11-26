@@ -60,4 +60,16 @@ describe('SchoolCard', () => {
     instance.showFrontOfCard();
     expect(wrapper.state('isFrontOfCardShowing')).toBe(true);
   });
+
+  it('renders the See Locations Buttom', () => {
+    expect(wrapper.state('isFrontOfCardShowing')).toBe(true);
+    expect(wrapper.find('See Locations')).toBeTruthy();
+  });
+
+  it('renders the text when flipped', () => {
+    const instance = wrapper.instance();
+    instance.showBackOfCard();
+    expect(wrapper.state('isFrontOfCardShowing')).toBe(false);
+    expect(wrapper.find('denotes a location that accepts the GI Bill')).toBeTruthy();
+  });
 });
