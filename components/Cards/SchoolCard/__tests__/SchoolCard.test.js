@@ -1,4 +1,5 @@
 import React from 'react';
+import { shallow } from 'enzyme';
 import createShallowSnapshotTest from 'test-utils/createShallowSnapshotTest';
 import SchoolCard from '../SchoolCard';
 
@@ -29,5 +30,30 @@ describe('SchoolCard', () => {
         <p>Testing!</p>
       </SchoolCard>,
     );
+  });
+  it('call to showBackOfCard/showFrontOfTheCard flips isFrontOfCardShowing', () => {
+    const wrapper = shallow(
+      <SchoolCard
+        cardFlipCallback={() => {}}
+        hasHardwareIncluded
+        hasHousing
+        hasOnline
+        hasOnlyOnline={false}
+        isFullTime
+        locations={locations}
+        logoSource="source"
+        name="school name"
+        website="website"
+      >
+        Test
+      </SchoolCard>,
+    );
+    const instance = wrapper.instance();
+    wrapper.setState({ isFrontOfCardShowing: true });
+    expect(wrapper.state('isFrontOfCardShowing')).toBe(true);
+    instance.showBackOfCard();
+    expect(wrapper.state('isFrontOfCardShowing')).toBe(false);
+    instance.showFrontOfCard();
+    expect(wrapper.state('isFrontOfCardShowing')).toBe(true);
   });
 });

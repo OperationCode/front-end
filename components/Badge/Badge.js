@@ -23,13 +23,13 @@ function Badge({ className, icon, isImageFirst, label }) {
     <div className={classNames(styles.Badge, className)}>
       {isImageFirst ? (
         <>
-          <div className={styles.iconContainer}>{icon}</div>
-          <span className={styles.label}>{label}</span>
+          <figure className={styles.iconContainer}>{icon}</figure>
+          <figcaption className={styles.label}>{label}</figcaption>
         </>
       ) : (
         <>
-          <span className={styles.label}>{label}</span>
-          <div className={styles.iconContainer}>{icon}</div>
+          <figure className={styles.label}>{label}</figure>
+          <figcaption className={styles.iconContainer}>{icon}</figcaption>
         </>
       )}
     </div>

@@ -47,80 +47,78 @@ exports[`FrontSchoolCard should render with required props 1`] = `
   <div
     className="detailsRow"
   >
-    <figure
+    <div
       className="detailItem active"
     >
-      <Svg
-        aria-hidden="true"
-        className="icon"
-        style={
-          Object {
-            "margin": "0 0.25rem",
-          }
+      <Badge
+        icon={
+          <Svg
+            className="icon"
+          />
         }
+        isImageFirst={true}
+        label="G.I Bill"
       />
-      <figcaption
-        className="detailText"
-      >
-        G.I. Bill
-      </figcaption>
-    </figure>
-    <figure
+    </div>
+    <div
       className="detailItem active"
     >
-      <Svg
-        aria-hidden="true"
-        className="icon"
+      <Badge
+        icon={
+          <Svg
+            className="icon"
+          />
+        }
+        isImageFirst={true}
+        label="Online"
       />
-      <figcaption
-        className="detailText"
-      >
-        Online
-      </figcaption>
-    </figure>
-    <figure
+    </div>
+    <div
       className="detailItem active"
     >
-      <Svg
-        aria-hidden="true"
-        className="icon"
+       
+      <Badge
+        icon={
+          <Svg
+            className="icon"
+          />
+        }
+        isImageFirst={true}
+        label="In-Person"
       />
-      <figcaption
-        className="detailText"
-      >
-        In-Person
-      </figcaption>
-    </figure>
+    </div>
   </div>
   <div
     className="detailsRow"
   >
-    <figure
+    <div
       className="detailItem active"
     >
-      <Svg
-        aria-hidden="true"
-        className="icon"
+       
+      <Badge
+        icon={
+          <Svg
+            className="icon"
+          />
+        }
+        isImageFirst={true}
+        label="Equipment"
       />
-      <figcaption
-        className="detailText"
-      >
-        Equipment
-      </figcaption>
-    </figure>
-    <figure
+    </div>
+    <div
       className="detailItem active"
     >
-      <Svg
-        aria-hidden="true"
-        className="icon"
+       
+      <Badge
+        icon={
+          <Svg
+            className="icon"
+          />
+        }
+        isImageFirst={true}
+        label="Housing"
       />
-      <figcaption
-        className="detailText"
-      >
-        Housing
-      </figcaption>
-    </figure>
+    </div>
   </div>
 </React.Fragment>
 `;

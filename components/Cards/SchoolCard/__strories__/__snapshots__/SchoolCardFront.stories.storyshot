@@ -55,80 +55,113 @@ exports[`Storyshots Cards/SchoolCard/Front with many locations 1`] = `
   <div
     className="detailsRow"
   >
-    <figure
+    <div
       className="detailItem active"
     >
-      <svg
-        aria-hidden="true"
-        className="icon"
-        style={
-          Object {
-            "margin": "0 0.25rem",
-          }
-        }
-      />
-      <figcaption
-        className="detailText"
+      <div
+        className="Badge"
       >
-        G.I. Bill
-      </figcaption>
-    </figure>
-    <figure
+        <figure
+          className="iconContainer"
+        >
+          <svg
+            className="icon"
+          />
+        </figure>
+        <figcaption
+          className="label"
+        >
+          G.I Bill
+        </figcaption>
+      </div>
+    </div>
+    <div
       className="detailItem active"
     >
-      <svg
-        aria-hidden="true"
-        className="icon"
-      />
-      <figcaption
-        className="detailText"
+      <div
+        className="Badge"
       >
-        Online
-      </figcaption>
-    </figure>
-    <figure
+        <figure
+          className="iconContainer"
+        >
+          <svg
+            className="icon"
+          />
+        </figure>
+        <figcaption
+          className="label"
+        >
+          Online
+        </figcaption>
+      </div>
+    </div>
+    <div
       className="detailItem active"
     >
-      <svg
-        aria-hidden="true"
-        className="icon"
-      />
-      <figcaption
-        className="detailText"
+       
+      <div
+        className="Badge"
       >
-        In-Person
-      </figcaption>
-    </figure>
+        <figure
+          className="iconContainer"
+        >
+          <svg
+            className="icon"
+          />
+        </figure>
+        <figcaption
+          className="label"
+        >
+          In-Person
+        </figcaption>
+      </div>
+    </div>
   </div>
   <div
     className="detailsRow"
   >
-    <figure
+    <div
       className="detailItem disabled"
     >
-      <svg
-        aria-hidden="true"
-        className="icon"
-      />
-      <figcaption
-        className="detailText"
+       
+      <div
+        className="Badge"
       >
-        Equipment
-      </figcaption>
-    </figure>
-    <figure
+        <figure
+          className="iconContainer"
+        >
+          <svg
+            className="icon"
+          />
+        </figure>
+        <figcaption
+          className="label"
+        >
+          Equipment
+        </figcaption>
+      </div>
+    </div>
+    <div
       className="detailItem disabled"
     >
-      <svg
-        aria-hidden="true"
-        className="icon"
-      />
-      <figcaption
-        className="detailText"
+       
+      <div
+        className="Badge"
       >
-        Housing
-      </figcaption>
-    </figure>
+        <figure
+          className="iconContainer"
+        >
+          <svg
+            className="icon"
+          />
+        </figure>
+        <figcaption
+          className="label"
+        >
+          Housing
+        </figcaption>
+      </div>
+    </div>
   </div>
 </article>
 `;
@@ -184,80 +217,113 @@ exports[`Storyshots Cards/SchoolCard/Front with no physical locations 1`] = `
   <div
     className="detailsRow"
   >
-    <figure
+    <div
       className="detailItem disabled"
     >
-      <svg
-        aria-hidden="true"
-        className="icon"
-        style={
-          Object {
-            "margin": "0 0.25rem",
-          }
-        }
-      />
-      <figcaption
-        className="detailText"
+      <div
+        className="Badge"
       >
-        G.I. Bill
-      </figcaption>
-    </figure>
-    <figure
+        <figure
+          className="iconContainer"
+        >
+          <svg
+            className="icon"
+          />
+        </figure>
+        <figcaption
+          className="label"
+        >
+          G.I Bill
+        </figcaption>
+      </div>
+    </div>
+    <div
       className="detailItem active"
     >
-      <svg
-        aria-hidden="true"
-        className="icon"
-      />
-      <figcaption
-        className="detailText"
+      <div
+        className="Badge"
       >
-        Online
-      </figcaption>
-    </figure>
-    <figure
+        <figure
+          className="iconContainer"
+        >
+          <svg
+            className="icon"
+          />
+        </figure>
+        <figcaption
+          className="label"
+        >
+          Online
+        </figcaption>
+      </div>
+    </div>
+    <div
       className="detailItem disabled"
     >
-      <svg
-        aria-hidden="true"
-        className="icon"
-      />
-      <figcaption
-        className="detailText"
+       
+      <div
+        className="Badge"
       >
-        In-Person
-      </figcaption>
-    </figure>
+        <figure
+          className="iconContainer"
+        >
+          <svg
+            className="icon"
+          />
+        </figure>
+        <figcaption
+          className="label"
+        >
+          In-Person
+        </figcaption>
+      </div>
+    </div>
   </div>
   <div
     className="detailsRow"
   >
-    <figure
+    <div
       className="detailItem disabled"
     >
-      <svg
-        aria-hidden="true"
-        className="icon"
-      />
-      <figcaption
-        className="detailText"
+       
+      <div
+        className="Badge"
       >
-        Equipment
-      </figcaption>
-    </figure>
-    <figure
+        <figure
+          className="iconContainer"
+        >
+          <svg
+            className="icon"
+          />
+        </figure>
+        <figcaption
+          className="label"
+        >
+          Equipment
+        </figcaption>
+      </div>
+    </div>
+    <div
       className="detailItem disabled"
     >
-      <svg
-        aria-hidden="true"
-        className="icon"
-      />
-      <figcaption
-        className="detailText"
+       
+      <div
+        className="Badge"
       >
-        Housing
-      </figcaption>
-    </figure>
+        <figure
+          className="iconContainer"
+        >
+          <svg
+            className="icon"
+          />
+        </figure>
+        <figcaption
+          className="label"
+        >
+          Housing
+        </figcaption>
+      </div>
+    </div>
   </div>
 </article>
 `;
@@ -313,80 +379,113 @@ exports[`Storyshots Cards/SchoolCard/Front with one location 1`] = `
   <div
     className="detailsRow"
   >
-    <figure
+    <div
       className="detailItem disabled"
     >
-      <svg
-        aria-hidden="true"
-        className="icon"
-        style={
-          Object {
-            "margin": "0 0.25rem",
-          }
-        }
-      />
-      <figcaption
-        className="detailText"
+      <div
+        className="Badge"
       >
-        G.I. Bill
-      </figcaption>
-    </figure>
-    <figure
+        <figure
+          className="iconContainer"
+        >
+          <svg
+            className="icon"
+          />
+        </figure>
+        <figcaption
+          className="label"
+        >
+          G.I Bill
+        </figcaption>
+      </div>
+    </div>
+    <div
       className="detailItem disabled"
     >
-      <svg
-        aria-hidden="true"
-        className="icon"
-      />
-      <figcaption
-        className="detailText"
+      <div
+        className="Badge"
       >
-        Online
-      </figcaption>
-    </figure>
-    <figure
+        <figure
+          className="iconContainer"
+        >
+          <svg
+            className="icon"
+          />
+        </figure>
+        <figcaption
+          className="label"
+        >
+          Online
+        </figcaption>
+      </div>
+    </div>
+    <div
       className="detailItem active"
     >
-      <svg
-        aria-hidden="true"
-        className="icon"
-      />
-      <figcaption
-        className="detailText"
+       
+      <div
+        className="Badge"
       >
-        In-Person
-      </figcaption>
-    </figure>
+        <figure
+          className="iconContainer"
+        >
+          <svg
+            className="icon"
+          />
+        </figure>
+        <figcaption
+          className="label"
+        >
+          In-Person
+        </figcaption>
+      </div>
+    </div>
   </div>
   <div
     className="detailsRow"
   >
-    <figure
+    <div
       className="detailItem active"
     >
-      <svg
-        aria-hidden="true"
-        className="icon"
-      />
-      <figcaption
-        className="detailText"
+       
+      <div
+        className="Badge"
       >
-        Equipment
-      </figcaption>
-    </figure>
-    <figure
+        <figure
+          className="iconContainer"
+        >
+          <svg
+            className="icon"
+          />
+        </figure>
+        <figcaption
+          className="label"
+        >
+          Equipment
+        </figcaption>
+      </div>
+    </div>
+    <div
       className="detailItem disabled"
     >
-      <svg
-        aria-hidden="true"
-        className="icon"
-      />
-      <figcaption
-        className="detailText"
+       
+      <div
+        className="Badge"
       >
-        Housing
-      </figcaption>
-    </figure>
+        <figure
+          className="iconContainer"
+        >
+          <svg
+            className="icon"
+          />
+        </figure>
+        <figcaption
+          className="label"
+        >
+          Housing
+        </figcaption>
+      </div>
+    </div>
   </div>
 </article>
 `;

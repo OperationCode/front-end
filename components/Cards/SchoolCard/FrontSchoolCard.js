@@ -9,6 +9,7 @@ import HomeIcon from 'static/images/icons/FontAwesome/home-solid.svg';
 import PeopleIcon from 'static/images/icons/FontAwesome/users-solid.svg';
 import GIBillApprovedIcon from 'static/images/icons/gi-bill-approved.svg';
 import GIBillUnavailableIcon from 'static/images/icons/gi-bill-unavailable.svg';
+import Badge from 'components/Badge/Badge';
 import styles from './FrontSchoolCard.css';
 
 export default class FrontSchoolCard extends Component {
@@ -71,70 +72,59 @@ export default class FrontSchoolCard extends Component {
         <div className={styles.detailsRow}>
           {/* GI Bill */}
           {props.locations.some(location => location.va_accepted) ? (
-            <figure className={`${styles.detailItem} ${styles.active}`}>
-              <GIBillApprovedIcon
-                aria-hidden="true"
-                className={styles.icon}
-                style={{ margin: '0 0.25rem' }}
-              />
-              <figcaption className={styles.detailText}>G.I. Bill</figcaption>
-            </figure>
+            <div className={`${styles.detailItem} ${styles.active}`}>
+              <Badge label="G.I Bill" icon={<GIBillApprovedIcon className={styles.icon} />} />
+            </div>
           ) : (
-            <figure className={`${styles.detailItem} ${styles.disabled}`}>
-              <GIBillUnavailableIcon
-                aria-hidden="true"
-                className={styles.icon}
-                style={{ margin: '0 0.25rem' }}
-              />
-              <figcaption className={styles.detailText}>G.I. Bill</figcaption>
-            </figure>
+            <div className={`${styles.detailItem} ${styles.disabled}`}>
+              <Badge label="G.I Bill" icon={<GIBillUnavailableIcon className={styles.icon} />} />
+            </div>
           )}
 
           {/* Online Education */}
-          <figure
+          <div
             className={classNames(styles.detailItem, {
               [styles.active]: props.hasOnline,
               [styles.disabled]: !props.hasOnline,
             })}
           >
-            <DesktopIcon aria-hidden="true" className={styles.icon} />
-            <figcaption className={styles.detailText}>Online</figcaption>
-          </figure>
+            <Badge label="Online" icon={<DesktopIcon className={styles.icon} />} />
+          </div>
 
           {/* In-Person Education */}
-          <figure
+          <div
             className={classNames(styles.detailItem, {
               [styles.active]: props.isFullTime,
               [styles.disabled]: !props.isFullTime,
             })}
           >
-            <PeopleIcon aria-hidden="true" className={styles.icon} />
-            <figcaption className={styles.detailText}>In-Person</figcaption>
-          </figure>
+            {' '}
+            <Badge label="In-Person" icon={<PeopleIcon className={styles.icon} />} />
+          </div>
         </div>
 
         <div className={styles.detailsRow}>
           {/* Equipment Provided */}
-          <figure
+          <div
             className={classNames(styles.detailItem, {
               [styles.active]: props.hasHardwareIncluded,
               [styles.disabled]: !props.hasHardwareIncluded,
             })}
           >
-            <DevicesIcon aria-hidden="true" className={styles.icon} />
-            <figcaption className={styles.detailText}>Equipment</figcaption>
-          </figure>
+            {' '}
+            <Badge label="Equipment" icon={<DevicesIcon className={styles.icon} />} />
+          </div>
 
           {/* Housing Provided */}
-          <figure
+          <div
             className={classNames(styles.detailItem, {
               [styles.active]: props.hasHousing,
               [styles.disabled]: !props.hasHousing,
             })}
           >
-            <HomeIcon aria-hidden="true" className={styles.icon} />
-            <figcaption className={styles.detailText}>Housing</figcaption>
-          </figure>
+            {' '}
+            <Badge label="Housing" icon={<HomeIcon className={styles.icon} />} />
+          </div>
         </div>
       </>
     );

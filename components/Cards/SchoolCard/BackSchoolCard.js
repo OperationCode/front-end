@@ -13,7 +13,6 @@ BackSchoolCard.propTypes = {
     }),
   ).isRequired,
   logoSource: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
 };
 
 function BackSchoolCard({ cardFlipCallback, locations, logoSource }) {

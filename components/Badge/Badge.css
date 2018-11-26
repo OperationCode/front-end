@@ -3,18 +3,18 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  margin: 1rem;
+  margin: 2rem;
 }
 
 .iconContainer > img,
 .iconContainer > svg {
   fill: currentColor;
-  height: 100px;
-  margin: 1rem 0;
+  height: 50px;
+  margin: 0.5rem 0;
 }
 
 .label {
-  font-size: 1.2rem;
-  line-height: 1.2rem;
+  font-size: 1rem;
+  line-height: 1rem;
   white-space: nowrap;
 }

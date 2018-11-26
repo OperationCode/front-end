@@ -19,6 +19,6 @@ describe('Badge', () => {
 
   it('should render the image after the label when `isImageFirst` is false', () => {
     const wrapper = shallow(<Badge icon={badgeIcon} label="Badge Icon" isImageFirst={false} />);
-    expect(wrapper.children().first()).toContainExactlyOneMatchingElement('span');
+    expect(wrapper.children().first()).toContainExactlyOneMatchingElement('figure');
   });
 });

@@ -4,15 +4,15 @@ exports[`Storyshots Badge default 1`] = `
 <div
   className="Badge"
 >
-  <div
+  <figure
     className="iconContainer"
   >
     <svg />
-  </div>
-  <span
+  </figure>
+  <figcaption
     className="label"
   >
     My Awesome Badge
-  </span>
+  </figcaption>
 </div>
 `;

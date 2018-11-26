@@ -47,12 +47,8 @@
   min-width: 75px;
 }
 
-.detailText {
-  text-align: center;
-}
-
 .icon {
-  height: 50px;
+  height: 40px;
 }
 
 .active {
