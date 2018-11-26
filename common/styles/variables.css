@@ -19,4 +19,5 @@
   /* Commonly referenced dimensions */
   --borderRadius: 3px;
   --navBarHeight: 65px;
+  --navBarTopGutterHeight: 20px;
 }

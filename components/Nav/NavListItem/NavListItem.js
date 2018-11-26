@@ -84,7 +84,7 @@ export default class NavListItem extends Component {
                 <li className={styles.sublinkListItem} key={sublink.name}>
                   <Link href={sublink.href}>
                     <a className={styles.link} key={sublink.name} role="link" tabIndex={0}>
-                      {sublink.name}
+                      <span className={styles.linkContent}>{sublink.name}</span>
                     </a>
                   </Link>
                 </li>

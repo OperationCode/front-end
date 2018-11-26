@@ -20,7 +20,7 @@
   height: auto;
   width: 90%;
   align-self: center;
-  margin-top: 3rem;
+  margin-top: calc(3rem + var(--navBarHeight) + var(--navBarTopGutterHeight));
 }
 
 .underline {

@@ -1,17 +1,25 @@
+.header {
+  height: var(--navBarHeight);
+  position: absolute;
+  top: var(--navBarTopGutterHeight);
+  width: 100%;
+  z-index: 1000;
+}
+
+.navContainer {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
 .Nav {
   background-color: var(--white);
   border-radius: var(--borderRadius);
   display: flex;
   justify-content: space-between;
-  margin: 2rem auto 0;
-  height: var(--navBarHeight);
-  max-width: 1200px;
 }
 
 .Nav a {
   font-weight: bolder;
-  text-decoration: none;
-  text-transform: uppercase;
 }
 
 .Nav li {
@@ -27,12 +35,12 @@
 }
 
 .logoLink {
-  height: 100%;
+  height: var(--navBarHeight);
 }
 
 .logo {
   align-self: center;
-  height: 80%;
+  height: 65%;
   margin-left: 1rem;
 }
 

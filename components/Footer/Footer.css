@@ -13,7 +13,6 @@
 
 .Footer a {
   color: var(--white);
-  text-decoration: none;
 }
 
 .Footer:not(.logoGrouping) a:hover {
