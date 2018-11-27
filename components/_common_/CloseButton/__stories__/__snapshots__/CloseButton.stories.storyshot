@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CloseButton should render with just required props passed 1`] = `
+exports[`Storyshots Common/CloseButton default 1`] = `
 <button
   className="CloseButton"
   disabled={false}
-  onClick={[MockFunction]}
+  onClick={[Function]}
   type="button"
 >
   <span

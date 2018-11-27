@@ -10,8 +10,13 @@ exports[`Storyshots Cards/SchoolCard/Back default 1`] = `
     onClick={[Function]}
     type="button"
   >
+    <span
+      className="ScreenReaderOnly"
+    >
+      Close
+    </span>
     <svg
-      className="icon"
+      className="icon secondary"
     />
   </button>
   <img

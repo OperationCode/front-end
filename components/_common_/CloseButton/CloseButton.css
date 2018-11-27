@@ -1,33 +1,41 @@
 .CloseButton {
+  background-color: rgba(0, 0, 0, 0);
+  position: absolute;
   top: 1rem;
   right: 1rem;
-  background: var(--slate);
-  border-radius: 50%;
   border: none;
-  position: absolute;
+  margin: 0.5rem;
 }
 
 .CloseButton:disabled {
   cursor: not-allowed;
-  background-color: var(--slateLight);
   opacity: 0.5;
 }
 
-.CloseButton:focus {
-  outline: 1px solid var(--slate);
-  outline-offset: 1px;
-}
-
 .CloseButton:hover:not(:disabled) {
-  background-color: var(--slateDark);
   cursor: pointer;
-  outline: none;
 }
 
 .icon {
-  fill: var(--mist);
-  padding: 0.7rem 0.35rem 0.5rem 0.35rem;
-  width: 1rem;
+  padding: 0.25rem;
+  width: 20px;
+  transform: rotate(45deg);
+  transition: 0.2s linear transform;
 }
 
-/* TODO: Create disabled styles */
+.primary {
+  fill: var(--primary);
+}
+
+.secondary {
+  fill: var(--secondary);
+}
+
+.white {
+  fill: var(--white);
+}
+
+.CloseButton:hover:not(:disabled) .icon {
+  transform: rotate(135deg);
+  transition: 0.2s linear transform;
+}

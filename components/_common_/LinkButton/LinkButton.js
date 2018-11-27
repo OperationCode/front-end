@@ -38,7 +38,7 @@ export default function LinkButton({
 
   return (
     <Link href={href}>
-      {analyticsEventLabel ? (
+      {analyticsEventLabel && process.env.NODE_ENV === 'production' ? (
         <OutboundLink
           analyticsEventLabel={analyticsEventLabel}
           href={href}

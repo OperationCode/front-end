@@ -5,6 +5,7 @@ exports[`BackSchoolCard should render with required props 1`] = `
   <CloseButton
     disabled={false}
     onClick={[MockFunction]}
+    theme="secondary"
   />
   <img
     alt=""
