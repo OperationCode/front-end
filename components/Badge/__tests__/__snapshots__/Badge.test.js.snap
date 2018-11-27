@@ -5,7 +5,7 @@ exports[`Badge should render with many props assigned 1`] = `
   className="Badge test-class"
 >
   <figure
-    className="iconContainer"
+    className="test-class"
   >
     <svg />
     <figcaption

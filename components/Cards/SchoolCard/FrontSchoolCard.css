@@ -47,10 +47,6 @@
   min-width: 75px;
 }
 
-.icon {
-  height: 40px;
-}
-
 .active {
   color: var(--secondary);
   fill: var(--secondary);
@@ -60,4 +56,11 @@
 .disabled {
   color: var(--gray);
   fill: var(--gray);
+}
+
+.codeSchoolCardIcon > img,
+.codeSchoolCardIcon > svg {
+  fill: currentColor;
+  height: 50px;
+  margin: 1rem 0;
 }

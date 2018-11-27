@@ -51,11 +51,8 @@ exports[`FrontSchoolCard should render with required props 1`] = `
       className="detailItem active"
     >
       <Badge
-        icon={
-          <Svg
-            className="icon"
-          />
-        }
+        className="codeSchoolCardIcon"
+        icon={<Svg />}
         isImageFirst={true}
         label="G.I Bill"
       />
@@ -64,11 +61,8 @@ exports[`FrontSchoolCard should render with required props 1`] = `
       className="detailItem active"
     >
       <Badge
-        icon={
-          <Svg
-            className="icon"
-          />
-        }
+        className="codeSchoolCardIcon"
+        icon={<Svg />}
         isImageFirst={true}
         label="Online"
       />
@@ -78,11 +72,8 @@ exports[`FrontSchoolCard should render with required props 1`] = `
     >
        
       <Badge
-        icon={
-          <Svg
-            className="icon"
-          />
-        }
+        className="codeSchoolCardIcon"
+        icon={<Svg />}
         isImageFirst={true}
         label="In-Person"
       />
@@ -96,11 +87,8 @@ exports[`FrontSchoolCard should render with required props 1`] = `
     >
        
       <Badge
-        icon={
-          <Svg
-            className="icon"
-          />
-        }
+        className="codeSchoolCardIcon"
+        icon={<Svg />}
         isImageFirst={true}
         label="Equipment"
       />
@@ -110,11 +98,8 @@ exports[`FrontSchoolCard should render with required props 1`] = `
     >
        
       <Badge
-        icon={
-          <Svg
-            className="icon"
-          />
-        }
+        className="codeSchoolCardIcon"
+        icon={<Svg />}
         isImageFirst={true}
         label="Housing"
       />

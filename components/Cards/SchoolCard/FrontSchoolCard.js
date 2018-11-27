@@ -73,11 +73,19 @@ export default class FrontSchoolCard extends Component {
           {/* GI Bill */}
           {props.locations.some(location => location.va_accepted) ? (
             <div className={`${styles.detailItem} ${styles.active}`}>
-              <Badge label="G.I Bill" icon={<GIBillApprovedIcon className={styles.icon} />} />
+              <Badge
+                label="G.I Bill"
+                className={styles.codeSchoolCardIcon}
+                icon={<GIBillApprovedIcon />}
+              />
             </div>
           ) : (
             <div className={`${styles.detailItem} ${styles.disabled}`}>
-              <Badge label="G.I Bill" icon={<GIBillUnavailableIcon className={styles.icon} />} />
+              <Badge
+                label="G.I Bill"
+                className={styles.codeSchoolCardIcon}
+                icon={<GIBillUnavailableIcon />}
+              />
             </div>
           )}
 
@@ -88,7 +96,7 @@ export default class FrontSchoolCard extends Component {
               [styles.disabled]: !props.hasOnline,
             })}
           >
-            <Badge label="Online" icon={<DesktopIcon className={styles.icon} />} />
+            <Badge label="Online" className={styles.codeSchoolCardIcon} icon={<DesktopIcon />} />
           </div>
 
           {/* In-Person Education */}
@@ -99,7 +107,7 @@ export default class FrontSchoolCard extends Component {
             })}
           >
             {' '}
-            <Badge label="In-Person" icon={<PeopleIcon className={styles.icon} />} />
+            <Badge label="In-Person" className={styles.codeSchoolCardIcon} icon={<PeopleIcon />} />
           </div>
         </div>
 
@@ -112,7 +120,7 @@ export default class FrontSchoolCard extends Component {
             })}
           >
             {' '}
-            <Badge label="Equipment" icon={<DevicesIcon className={styles.icon} />} />
+            <Badge label="Equipment" className={styles.codeSchoolCardIcon} icon={<DevicesIcon />} />
           </div>
 
           {/* Housing Provided */}
@@ -123,7 +131,7 @@ export default class FrontSchoolCard extends Component {
             })}
           >
             {' '}
-            <Badge label="Housing" icon={<HomeIcon className={styles.icon} />} />
+            <Badge label="Housing" className={styles.codeSchoolCardIcon} icon={<HomeIcon />} />
           </div>
         </div>
       </>

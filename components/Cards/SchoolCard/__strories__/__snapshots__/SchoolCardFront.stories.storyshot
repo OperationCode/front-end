@@ -58,14 +58,12 @@ exports[`Storyshots Cards/SchoolCard/Front with many locations 1`] = `
       className="detailItem active"
     >
       <div
-        className="Badge"
+        className="Badge codeSchoolCardIcon"
       >
         <figure
-          className="iconContainer"
+          className="codeSchoolCardIcon"
         >
-          <svg
-            className="icon"
-          />
+          <svg />
           <figcaption
             className="label"
           >
@@ -78,14 +76,12 @@ exports[`Storyshots Cards/SchoolCard/Front with many locations 1`] = `
       className="detailItem active"
     >
       <div
-        className="Badge"
+        className="Badge codeSchoolCardIcon"
       >
         <figure
-          className="iconContainer"
+          className="codeSchoolCardIcon"
         >
-          <svg
-            className="icon"
-          />
+          <svg />
           <figcaption
             className="label"
           >
@@ -99,14 +95,12 @@ exports[`Storyshots Cards/SchoolCard/Front with many locations 1`] = `
     >
        
       <div
-        className="Badge"
+        className="Badge codeSchoolCardIcon"
       >
         <figure
-          className="iconContainer"
+          className="codeSchoolCardIcon"
         >
-          <svg
-            className="icon"
-          />
+          <svg />
           <figcaption
             className="label"
           >
@@ -124,14 +118,12 @@ exports[`Storyshots Cards/SchoolCard/Front with many locations 1`] = `
     >
        
       <div
-        className="Badge"
+        className="Badge codeSchoolCardIcon"
       >
         <figure
-          className="iconContainer"
+          className="codeSchoolCardIcon"
         >
-          <svg
-            className="icon"
-          />
+          <svg />
           <figcaption
             className="label"
           >
@@ -145,14 +137,12 @@ exports[`Storyshots Cards/SchoolCard/Front with many locations 1`] = `
     >
        
       <div
-        className="Badge"
+        className="Badge codeSchoolCardIcon"
       >
         <figure
-          className="iconContainer"
+          className="codeSchoolCardIcon"
         >
-          <svg
-            className="icon"
-          />
+          <svg />
           <figcaption
             className="label"
           >
@@ -219,14 +209,12 @@ exports[`Storyshots Cards/SchoolCard/Front with no physical locations 1`] = `
       className="detailItem disabled"
     >
       <div
-        className="Badge"
+        className="Badge codeSchoolCardIcon"
       >
         <figure
-          className="iconContainer"
+          className="codeSchoolCardIcon"
         >
-          <svg
-            className="icon"
-          />
+          <svg />
           <figcaption
             className="label"
           >
@@ -239,14 +227,12 @@ exports[`Storyshots Cards/SchoolCard/Front with no physical locations 1`] = `
       className="detailItem active"
     >
       <div
-        className="Badge"
+        className="Badge codeSchoolCardIcon"
       >
         <figure
-          className="iconContainer"
+          className="codeSchoolCardIcon"
         >
-          <svg
-            className="icon"
-          />
+          <svg />
           <figcaption
             className="label"
           >
@@ -260,14 +246,12 @@ exports[`Storyshots Cards/SchoolCard/Front with no physical locations 1`] = `
     >
        
       <div
-        className="Badge"
+        className="Badge codeSchoolCardIcon"
       >
         <figure
-          className="iconContainer"
+          className="codeSchoolCardIcon"
         >
-          <svg
-            className="icon"
-          />
+          <svg />
           <figcaption
             className="label"
           >
@@ -285,14 +269,12 @@ exports[`Storyshots Cards/SchoolCard/Front with no physical locations 1`] = `
     >
        
       <div
-        className="Badge"
+        className="Badge codeSchoolCardIcon"
       >
         <figure
-          className="iconContainer"
+          className="codeSchoolCardIcon"
         >
-          <svg
-            className="icon"
-          />
+          <svg />
           <figcaption
             className="label"
           >
@@ -306,14 +288,12 @@ exports[`Storyshots Cards/SchoolCard/Front with no physical locations 1`] = `
     >
        
       <div
-        className="Badge"
+        className="Badge codeSchoolCardIcon"
       >
         <figure
-          className="iconContainer"
+          className="codeSchoolCardIcon"
         >
-          <svg
-            className="icon"
-          />
+          <svg />
           <figcaption
             className="label"
           >
@@ -380,14 +360,12 @@ exports[`Storyshots Cards/SchoolCard/Front with one location 1`] = `
       className="detailItem disabled"
     >
       <div
-        className="Badge"
+        className="Badge codeSchoolCardIcon"
       >
         <figure
-          className="iconContainer"
+          className="codeSchoolCardIcon"
         >
-          <svg
-            className="icon"
-          />
+          <svg />
           <figcaption
             className="label"
           >
@@ -400,14 +378,12 @@ exports[`Storyshots Cards/SchoolCard/Front with one location 1`] = `
       className="detailItem disabled"
     >
       <div
-        className="Badge"
+        className="Badge codeSchoolCardIcon"
       >
         <figure
-          className="iconContainer"
+          className="codeSchoolCardIcon"
         >
-          <svg
-            className="icon"
-          />
+          <svg />
           <figcaption
             className="label"
           >
@@ -421,14 +397,12 @@ exports[`Storyshots Cards/SchoolCard/Front with one location 1`] = `
     >
        
       <div
-        className="Badge"
+        className="Badge codeSchoolCardIcon"
       >
         <figure
-          className="iconContainer"
+          className="codeSchoolCardIcon"
         >
-          <svg
-            className="icon"
-          />
+          <svg />
           <figcaption
             className="label"
           >
@@ -446,14 +420,12 @@ exports[`Storyshots Cards/SchoolCard/Front with one location 1`] = `
     >
        
       <div
-        className="Badge"
+        className="Badge codeSchoolCardIcon"
       >
         <figure
-          className="iconContainer"
+          className="codeSchoolCardIcon"
         >
-          <svg
-            className="icon"
-          />
+          <svg />
           <figcaption
             className="label"
           >
@@ -467,14 +439,12 @@ exports[`Storyshots Cards/SchoolCard/Front with one location 1`] = `
     >
        
       <div
-        className="Badge"
+        className="Badge codeSchoolCardIcon"
       >
         <figure
-          className="iconContainer"
+          className="codeSchoolCardIcon"
         >
-          <svg
-            className="icon"
-          />
+          <svg />
           <figcaption
             className="label"
           >
