@@ -28,18 +28,8 @@ exports[`Storyshots ReusableSections DonateSection 1`] = `
       className="Button secondary"
       href="https://secure.lglforms.com/form_engine/s/BRtP7QUKyHOyEYsZROsRew"
       onClick={[Function]}
-      rel="noopener noreferrer"
-      target="_blank"
     >
-      <span
-        className="ScreenReaderOnly"
-      >
-        Opens in new window
-      </span>
       Donate Now
-      <svg
-        className="externalLinkIcon"
-      />
     </a>
   </div>
 </section>
