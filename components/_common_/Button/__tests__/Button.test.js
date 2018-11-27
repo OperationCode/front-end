@@ -65,20 +65,19 @@ describe('Button', () => {
   it('call props.onClick when button is clicked', () => {
     const onClickMock = jest.fn();
     const ButtonShallowInstance = shallow(<Button onClick={onClickMock}>Test</Button>);
-    ButtonShallowInstance.instance().clickHandler();
 
+    expect(onClickMock).toHaveBeenCalledTimes(0);
+    ButtonShallowInstance.simulate('click');
     expect(onClickMock).toHaveBeenCalledTimes(1);
   });
 
   it('should call ReactGA when in prod environment', () => {
     /* eslint-disable no-console */
     ReactGA.initialize('foo', { testMode: true });
-
     process.env.NODE_ENV = 'production';
-
     const ButtonShallowInstance = shallow(<Button>Testing</Button>);
 
-    ButtonShallowInstance.instance().clickHandler();
+    ButtonShallowInstance.simulate('click');
 
     expect(ReactGA.testModeAPI.calls).toContainEqual([
       'send',
