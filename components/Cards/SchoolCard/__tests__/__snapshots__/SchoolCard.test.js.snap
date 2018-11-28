@@ -21,15 +21,18 @@ exports[`SchoolCard should render with required props 1`] = `
           "va_accepted": true,
           "zip": "94111",
         },
+        Object {
+          "address1": "825 Battery Street",
+          "address2": "3rd Floor",
+          "city": "San Francisco",
+          "va_accepted": true,
+          "zip": "94111",
+        },
       ]
     }
-    logoSource="logoSource.com"
+    logoSource="source"
     name="school name"
-    website="website.com"
-  >
-    <p>
-      Testing!
-    </p>
-  </FrontSchoolCard>
+    website="website"
+  />
 </Card>
 `;

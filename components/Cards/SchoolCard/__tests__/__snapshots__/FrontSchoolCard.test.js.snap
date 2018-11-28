@@ -35,11 +35,24 @@ exports[`FrontSchoolCard should render with required props 1`] = `
         Go To Website
       </OutboundLink>
     </Button>
-    <span
-      className="singleLocationText"
+    <Button
+      analyticsObject={
+        Object {
+          "action": "Button Selected",
+          "category": "Interactions",
+          "label": "school name | Locations",
+        }
+      }
+      datum=""
+      disabled={false}
+      fullWidth={false}
+      onClick={[Function]}
+      tabIndex={0}
+      theme="primary"
+      type="button"
     >
-      San Francisco, undefined
-    </span>
+      See Locations
+    </Button>
   </div>
   <hr
     className="divider"
@@ -70,7 +83,6 @@ exports[`FrontSchoolCard should render with required props 1`] = `
     <div
       className="detailItem active"
     >
-       
       <Badge
         className="codeSchoolCardIcon"
         icon={<Svg />}
@@ -85,7 +97,6 @@ exports[`FrontSchoolCard should render with required props 1`] = `
     <div
       className="detailItem active"
     >
-       
       <Badge
         className="codeSchoolCardIcon"
         icon={<Svg />}
@@ -96,7 +107,6 @@ exports[`FrontSchoolCard should render with required props 1`] = `
     <div
       className="detailItem active"
     >
-       
       <Badge
         className="codeSchoolCardIcon"
         icon={<Svg />}

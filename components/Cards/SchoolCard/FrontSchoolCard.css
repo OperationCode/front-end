@@ -58,8 +58,8 @@
   fill: var(--gray);
 }
 
-.codeSchoolCardIcon > img,
-.codeSchoolCardIcon > svg {
+.codeSchoolCardIcon > figure > img,
+.codeSchoolCardIcon > figure > svg {
   fill: currentColor;
   height: 50px;
   margin: 1rem 0;

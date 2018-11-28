@@ -13,12 +13,13 @@ BackSchoolCard.propTypes = {
     }),
   ).isRequired,
   logoSource: PropTypes.string.isRequired,
+  alt: PropTypes.string.isRequired,
 };
 
 function BackSchoolCard({ cardFlipCallback, locations, logoSource }) {
   return (
     <>
-      <CloseButton onClick={cardFlipCallback} />
+      <CloseButton onClick={cardFlipCallback} theme="white" />
 
       <img src={logoSource} alt="" />
       <span className={styles.disclaimer}>
@@ -29,7 +30,7 @@ function BackSchoolCard({ cardFlipCallback, locations, logoSource }) {
 
       <ul className={styles.locations}>
         {locations.map(location => (
-          <li>
+          <li id={logoSource}>
             {location.city && location.state && `${location.city}, ${location.state}`}
             {location.va_accepted ? '*' : null}
           </li>

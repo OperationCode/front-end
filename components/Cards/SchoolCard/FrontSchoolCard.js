@@ -106,7 +106,6 @@ export default class FrontSchoolCard extends Component {
               [styles.disabled]: !props.isFullTime,
             })}
           >
-            {' '}
             <Badge label="In-Person" className={styles.codeSchoolCardIcon} icon={<PeopleIcon />} />
           </div>
         </div>
@@ -119,7 +118,6 @@ export default class FrontSchoolCard extends Component {
               [styles.disabled]: !props.hasHardwareIncluded,
             })}
           >
-            {' '}
             <Badge label="Equipment" className={styles.codeSchoolCardIcon} icon={<DevicesIcon />} />
           </div>
 
@@ -130,7 +128,6 @@ export default class FrontSchoolCard extends Component {
               [styles.disabled]: !props.hasHousing,
             })}
           >
-            {' '}
             <Badge label="Housing" className={styles.codeSchoolCardIcon} icon={<HomeIcon />} />
           </div>
         </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import createShallowSnapshotTest from 'test-utils/createShallowSnapshotTest';
 import SchoolCard from '../SchoolCard';
 
@@ -11,14 +11,23 @@ const locations = [
     city: 'San Francisco',
     zip: '94111',
   },
+  {
+    va_accepted: true,
+    address1: '825 Battery Street',
+    address2: '3rd Floor',
+    city: 'San Francisco',
+    zip: '94111',
+  },
 ];
 
 describe('SchoolCard', () => {
+  let componentInstance;
   let wrapper;
+  let onClickMock;
   beforeEach(() => {
-    wrapper = shallow(
+    componentInstance = (
       <SchoolCard
-        cardFlipCallback={() => {}}
+        cardFlipCallback={onClickMock}
         hasHardwareIncluded
         hasHousing
         hasOnline
@@ -28,31 +37,17 @@ describe('SchoolCard', () => {
         logoSource="source"
         name="school name"
         website="website"
-      >
-        Test
-      </SchoolCard>,
+      />
     );
+    onClickMock = jest.fn();
+    wrapper = mount(componentInstance);
   });
 
   it('should render with required props', () => {
-    createShallowSnapshotTest(
-      <SchoolCard
-        hasHardwareIncluded
-        hasHousing
-        hasOnline
-        hasOnlyOnline={false}
-        isFullTime
-        locations={locations}
-        logoSource="logoSource.com"
-        name="school name"
-        website="website.com"
-      >
-        <p>Testing!</p>
-      </SchoolCard>,
-    );
+    createShallowSnapshotTest(componentInstance);
   });
 
-  it('call to showBackOfCard/showFrontOfTheCard flips isFrontOfCardShowing', () => {
+  it('should change state when showBackOfCard/showFrontOfCard is called', () => {
     const instance = wrapper.instance();
     expect(wrapper.state('isFrontOfCardShowing')).toBe(true);
     instance.showBackOfCard();
@@ -61,15 +56,9 @@ describe('SchoolCard', () => {
     expect(wrapper.state('isFrontOfCardShowing')).toBe(true);
   });
 
-  it('renders the See Locations Buttom', () => {
-    expect(wrapper.state('isFrontOfCardShowing')).toBe(true);
-    expect(wrapper.find('See Locations')).toBeTruthy();
-  });
-
-  it('renders the text when flipped', () => {
-    const instance = wrapper.instance();
-    instance.showBackOfCard();
-    expect(wrapper.state('isFrontOfCardShowing')).toBe(false);
-    expect(wrapper.find('denotes a location that accepts the GI Bill')).toBeTruthy();
+  it('should render the "See Locations" button when multiple locations exist', () => {
+    // ensure wrapper has multiple locations at this point
+    expect(wrapper.prop('locations').length).toBeGreaterThan(1);
+    expect(wrapper.find('button').filterWhere(node => node.text() === 'See Locations')).toExist();
   });
 });

@@ -61,7 +61,7 @@ exports[`Storyshots Cards/SchoolCard/Front with many locations 1`] = `
         className="Badge codeSchoolCardIcon"
       >
         <figure
-          className="codeSchoolCardIcon"
+          className="iconContainer"
         >
           <svg />
           <figcaption
@@ -79,7 +79,7 @@ exports[`Storyshots Cards/SchoolCard/Front with many locations 1`] = `
         className="Badge codeSchoolCardIcon"
       >
         <figure
-          className="codeSchoolCardIcon"
+          className="iconContainer"
         >
           <svg />
           <figcaption
@@ -93,12 +93,11 @@ exports[`Storyshots Cards/SchoolCard/Front with many locations 1`] = `
     <div
       className="detailItem active"
     >
-       
       <div
         className="Badge codeSchoolCardIcon"
       >
         <figure
-          className="codeSchoolCardIcon"
+          className="iconContainer"
         >
           <svg />
           <figcaption
@@ -116,12 +115,11 @@ exports[`Storyshots Cards/SchoolCard/Front with many locations 1`] = `
     <div
       className="detailItem disabled"
     >
-       
       <div
         className="Badge codeSchoolCardIcon"
       >
         <figure
-          className="codeSchoolCardIcon"
+          className="iconContainer"
         >
           <svg />
           <figcaption
@@ -135,12 +133,11 @@ exports[`Storyshots Cards/SchoolCard/Front with many locations 1`] = `
     <div
       className="detailItem disabled"
     >
-       
       <div
         className="Badge codeSchoolCardIcon"
       >
         <figure
-          className="codeSchoolCardIcon"
+          className="iconContainer"
         >
           <svg />
           <figcaption
@@ -212,7 +209,7 @@ exports[`Storyshots Cards/SchoolCard/Front with no physical locations 1`] = `
         className="Badge codeSchoolCardIcon"
       >
         <figure
-          className="codeSchoolCardIcon"
+          className="iconContainer"
         >
           <svg />
           <figcaption
@@ -230,7 +227,7 @@ exports[`Storyshots Cards/SchoolCard/Front with no physical locations 1`] = `
         className="Badge codeSchoolCardIcon"
       >
         <figure
-          className="codeSchoolCardIcon"
+          className="iconContainer"
         >
           <svg />
           <figcaption
@@ -244,12 +241,11 @@ exports[`Storyshots Cards/SchoolCard/Front with no physical locations 1`] = `
     <div
       className="detailItem disabled"
     >
-       
       <div
         className="Badge codeSchoolCardIcon"
       >
         <figure
-          className="codeSchoolCardIcon"
+          className="iconContainer"
         >
           <svg />
           <figcaption
@@ -267,12 +263,11 @@ exports[`Storyshots Cards/SchoolCard/Front with no physical locations 1`] = `
     <div
       className="detailItem disabled"
     >
-       
       <div
         className="Badge codeSchoolCardIcon"
       >
         <figure
-          className="codeSchoolCardIcon"
+          className="iconContainer"
         >
           <svg />
           <figcaption
@@ -286,12 +281,11 @@ exports[`Storyshots Cards/SchoolCard/Front with no physical locations 1`] = `
     <div
       className="detailItem disabled"
     >
-       
       <div
         className="Badge codeSchoolCardIcon"
       >
         <figure
-          className="codeSchoolCardIcon"
+          className="iconContainer"
         >
           <svg />
           <figcaption
@@ -363,7 +357,7 @@ exports[`Storyshots Cards/SchoolCard/Front with one location 1`] = `
         className="Badge codeSchoolCardIcon"
       >
         <figure
-          className="codeSchoolCardIcon"
+          className="iconContainer"
         >
           <svg />
           <figcaption
@@ -381,7 +375,7 @@ exports[`Storyshots Cards/SchoolCard/Front with one location 1`] = `
         className="Badge codeSchoolCardIcon"
       >
         <figure
-          className="codeSchoolCardIcon"
+          className="iconContainer"
         >
           <svg />
           <figcaption
@@ -395,12 +389,11 @@ exports[`Storyshots Cards/SchoolCard/Front with one location 1`] = `
     <div
       className="detailItem active"
     >
-       
       <div
         className="Badge codeSchoolCardIcon"
       >
         <figure
-          className="codeSchoolCardIcon"
+          className="iconContainer"
         >
           <svg />
           <figcaption
@@ -418,12 +411,11 @@ exports[`Storyshots Cards/SchoolCard/Front with one location 1`] = `
     <div
       className="detailItem active"
     >
-       
       <div
         className="Badge codeSchoolCardIcon"
       >
         <figure
-          className="codeSchoolCardIcon"
+          className="iconContainer"
         >
           <svg />
           <figcaption
@@ -437,12 +429,11 @@ exports[`Storyshots Cards/SchoolCard/Front with one location 1`] = `
     <div
       className="detailItem disabled"
     >
-       
       <div
         className="Badge codeSchoolCardIcon"
       >
         <figure
-          className="codeSchoolCardIcon"
+          className="iconContainer"
         >
           <svg />
           <figcaption

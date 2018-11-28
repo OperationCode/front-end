@@ -27,6 +27,7 @@ storiesOf('Cards/SchoolCard/Back', module)
         ]}
         logoSource={text('logoSource', `${s3}codeSchoolLogos/general_assembly.jpg`)}
         name={text('name', 'General Assembly')}
+        alt={text('alt', 'General Assembly logo')}
       />
     </Card>
   ));

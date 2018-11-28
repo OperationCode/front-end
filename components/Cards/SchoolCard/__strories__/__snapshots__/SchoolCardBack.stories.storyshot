@@ -16,7 +16,7 @@ exports[`Storyshots Cards/SchoolCard/Back default 1`] = `
       Close
     </span>
     <svg
-      className="icon secondary"
+      className="icon white"
     />
   </button>
   <img
@@ -37,23 +37,35 @@ exports[`Storyshots Cards/SchoolCard/Back default 1`] = `
   <ul
     className="locations"
   >
-    <li>
+    <li
+      id="https://s3.amazonaws.com/operationcode-assets/codeSchoolLogos/general_assembly.jpg"
+    >
       Los Angeles, CA
     </li>
-    <li>
+    <li
+      id="https://s3.amazonaws.com/operationcode-assets/codeSchoolLogos/general_assembly.jpg"
+    >
       Joshua Tree, CA
       *
     </li>
-    <li>
+    <li
+      id="https://s3.amazonaws.com/operationcode-assets/codeSchoolLogos/general_assembly.jpg"
+    >
       Boston, MA
     </li>
-    <li>
+    <li
+      id="https://s3.amazonaws.com/operationcode-assets/codeSchoolLogos/general_assembly.jpg"
+    >
       New York, NY
     </li>
-    <li>
+    <li
+      id="https://s3.amazonaws.com/operationcode-assets/codeSchoolLogos/general_assembly.jpg"
+    >
       Portland, OR
     </li>
-    <li>
+    <li
+      id="https://s3.amazonaws.com/operationcode-assets/codeSchoolLogos/general_assembly.jpg"
+    >
       Seattle, WA
       *
     </li>

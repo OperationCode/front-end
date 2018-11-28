@@ -5,7 +5,7 @@ exports[`BackSchoolCard should render with required props 1`] = `
   <CloseButton
     disabled={false}
     onClick={[MockFunction]}
-    theme="secondary"
+    theme="white"
   />
   <img
     alt=""
@@ -25,7 +25,14 @@ exports[`BackSchoolCard should render with required props 1`] = `
   <ul
     className="locations"
   >
-    <li>
+    <li
+      id="logoSource"
+    >
+      *
+    </li>
+    <li
+      id="logoSource"
+    >
       *
     </li>
   </ul>
