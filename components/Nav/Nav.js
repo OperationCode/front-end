@@ -4,9 +4,15 @@ import Link from 'next/link';
 import { donateLink, s3 } from 'common/constants/urls';
 import { navItems } from 'common/constants/navigation';
 import NavListItem from 'components/Nav/NavListItem/NavListItem';
+import NavMobile from 'components/Nav/NavMobile/NavMobile';
 import styles from './Nav.css';
 
 function Nav() {
+  const displayMobile = true;
+
+  if (displayMobile) {
+    return <NavMobile navItems={navItems} />;
+  }
   return (
     <header className={styles.header}>
       <div className={styles.navContainer}>
