@@ -5,19 +5,19 @@ import FrontSchoolCard from '../FrontSchoolCard';
 
 const locations = [
   {
-    va_accepted: true,
     address1: '825 Battery Street',
     address2: '3rd Floor',
     city: 'San Francisco',
     state: 'CA',
-    zip: '94111',
+    va_accepted: true,
+    zip: 94111,
   },
   {
-    va_accepted: false,
     address1: '123 Battery Street',
     address2: 'Ste 1',
     city: 'San FDiego',
-    zip: '90111',
+    va_accepted: false,
+    zip: 90111,
   },
 ];
 
@@ -27,6 +27,7 @@ describe('FrontSchoolCard', () => {
       <FrontSchoolCard
         cardFlipCallback={jest.fn()}
         hasHardwareIncluded
+        hasHousing
         hasOnline
         hasOnlyOnline={false}
         isFullTime

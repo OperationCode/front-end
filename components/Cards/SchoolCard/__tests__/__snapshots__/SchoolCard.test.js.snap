@@ -20,7 +20,7 @@ exports[`SchoolCard should render with required props 1`] = `
           "city": "San Francisco",
           "state": "CA",
           "va_accepted": true,
-          "zip": "94111",
+          "zip": 94111,
         },
         Object {
           "address1": "123Battery Street",
@@ -28,7 +28,7 @@ exports[`SchoolCard should render with required props 1`] = `
           "city": "San Diego",
           "state": "CA",
           "va_accepted": false,
-          "zip": "90111",
+          "zip": 90111,
         },
       ]
     }

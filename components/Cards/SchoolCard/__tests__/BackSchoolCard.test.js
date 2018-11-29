@@ -5,20 +5,20 @@ import BackSchoolCard from '../BackSchoolCard';
 
 const locations = [
   {
-    va_accepted: true,
     address1: '825 Battery Street',
     address2: '3rd Floor',
     city: 'San Francisco',
     state: 'CA',
-    zip: '94111',
+    va_accepted: true,
+    zip: 94111,
   },
   {
-    va_accepted: false,
     address1: '123 Battery Street',
     address2: 'Ste 1',
     city: 'San Diego',
     state: 'CA',
-    zip: '90111',
+    va_accepted: false,
+    zip: 90111,
   },
 ];
 

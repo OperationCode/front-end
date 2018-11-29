@@ -91,7 +91,7 @@ exports[`FrontSchoolCard should render with required props 1`] = `
       />
     </div>
     <div
-      className="detailItem disabled"
+      className="detailItem active"
     >
       <Badge
         className="codeSchoolCardIcon"

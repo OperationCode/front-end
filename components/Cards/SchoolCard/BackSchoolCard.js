@@ -7,9 +7,12 @@ BackSchoolCard.propTypes = {
   cardFlipCallback: PropTypes.func.isRequired,
   locations: PropTypes.arrayOf(
     PropTypes.shape({
+      address1: PropTypes.string,
+      address2: PropTypes.string,
       city: PropTypes.string,
-      va_accepted: PropTypes.bool.isRequired,
       state: PropTypes.string,
+      va_accepted: PropTypes.bool.isRequired,
+      zip: PropTypes.number,
     }),
   ).isRequired,
   logoSource: PropTypes.string.isRequired,
@@ -27,7 +30,7 @@ function BackSchoolCard({ cardFlipCallback, locations, logoSource, schoolName })
       <hr className={styles.divider} />
       <ul className={styles.locations}>
         {locations.map(location => (
-          <li key={`${JSON.stringify(location)}`}>
+          <li key={`${location.address1} ${location.address2}`}>
             {location.city && location.state && `${location.city}, ${location.state}`}
             {location.va_accepted ? '*' : null}
           </li>
