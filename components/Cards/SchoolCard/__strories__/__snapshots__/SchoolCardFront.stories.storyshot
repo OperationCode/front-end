@@ -14,30 +14,13 @@ exports[`Storyshots Cards/SchoolCard/Front with many locations 1`] = `
   <div
     className="interactionsContainer"
   >
-    <button
+    <a
       className="Button primary"
-      disabled={false}
+      href="https://generalassembly.com"
       onClick={[Function]}
-      tabIndex={0}
-      type="button"
     >
-      <a
-        href="https://generalassembly.com"
-        onClick={[Function]}
-        rel="noopener noreferrer"
-        target="_blank"
-      >
-        <span
-          className="ScreenReaderOnly"
-        >
-          Opens in new window
-        </span>
-        Go To Website
-        <svg
-          className="externalLinkIcon"
-        />
-      </a>
-    </button>
+      Go To Website
+    </a>
     <button
       className="Button primary"
       disabled={false}
@@ -166,30 +149,13 @@ exports[`Storyshots Cards/SchoolCard/Front with no physical locations 1`] = `
   <div
     className="interactionsContainer"
   >
-    <button
+    <a
       className="Button primary"
-      disabled={false}
+      href="https://thinkful.com"
       onClick={[Function]}
-      tabIndex={0}
-      type="button"
     >
-      <a
-        href="https://thinkful.com"
-        onClick={[Function]}
-        rel="noopener noreferrer"
-        target="_blank"
-      >
-        <span
-          className="ScreenReaderOnly"
-        >
-          Opens in new window
-        </span>
-        Go To Website
-        <svg
-          className="externalLinkIcon"
-        />
-      </a>
-    </button>
+      Go To Website
+    </a>
     <span
       className="singleLocationText"
     >
@@ -314,30 +280,13 @@ exports[`Storyshots Cards/SchoolCard/Front with one location 1`] = `
   <div
     className="interactionsContainer"
   >
-    <button
+    <a
       className="Button primary"
-      disabled={false}
+      href="https://codeimmersives.com"
       onClick={[Function]}
-      tabIndex={0}
-      type="button"
     >
-      <a
-        href="https://codeimmersives.com"
-        onClick={[Function]}
-        rel="noopener noreferrer"
-        target="_blank"
-      >
-        <span
-          className="ScreenReaderOnly"
-        >
-          Opens in new window
-        </span>
-        Go To Website
-        <svg
-          className="externalLinkIcon"
-        />
-      </a>
-    </button>
+      Go To Website
+    </a>
     <span
       className="singleLocationText"
     >

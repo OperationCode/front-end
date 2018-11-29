@@ -50,7 +50,7 @@ class SchoolCard extends Component {
             cardFlipCallback={this.showFrontOfCard}
             locations={props.locations}
             logoSource={props.logoSource}
-            alt={`${props.schoolName} logo`}
+            alt={props.name}
           />
         )}
       </Card>

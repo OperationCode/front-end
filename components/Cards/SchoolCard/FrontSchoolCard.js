@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Button from 'components/_common_/Button/Button';
-import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
+import LinkButton from 'components/_common_/LinkButton/LinkButton';
 import DesktopIcon from 'static/images/icons/FontAwesome/desktop-solid.svg';
 import DevicesIcon from 'static/images/icons/FontAwesome/devices-alt-solid.svg';
 import HomeIcon from 'static/images/icons/FontAwesome/home-solid.svg';
@@ -39,14 +39,10 @@ export default class FrontSchoolCard extends Component {
       <>
         <h5>{props.name}</h5>
         <img src={props.logoSource} alt="" />
-
         <div className={styles.interactionsContainer}>
-          <Button>
-            <OutboundLink analyticsEventLabel={`${props.name} | Website`} href={props.website}>
-              Go To Website
-            </OutboundLink>
-          </Button>
-
+          <LinkButton analyticsEventLabel={`${props.name} | Website`} href={props.website}>
+            Go To Website
+          </LinkButton>
           {props.locations.length > 1 ? (
             <Button
               analyticsObject={{

@@ -8,7 +8,7 @@ exports[`BackSchoolCard should render with required props 1`] = `
     theme="white"
   />
   <img
-    alt=""
+    alt="alt logo"
     src="logoSource"
   />
   <span
@@ -25,15 +25,12 @@ exports[`BackSchoolCard should render with required props 1`] = `
   <ul
     className="locations"
   >
-    <li
-      id="logoSource"
-    >
+    <li>
+      San Francisco, CA
       *
     </li>
-    <li
-      id="logoSource"
-    >
-      *
+    <li>
+      San Diego, CA
     </li>
   </ul>
 </React.Fragment>

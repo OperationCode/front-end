@@ -48,7 +48,7 @@ export default class CodeSchools extends React.Component {
         </Section>
         <Section theme="gray" title="Schools" hasHeadingLines={false}>
           {state.schools.map(school => (
-            <div key={`${Math.random()}`}>
+            <div key={`${school.name}`}>
               <SchoolCard
                 hasHardwareIncluded={school.hardware_included}
                 hasHousing={school.has_housing}

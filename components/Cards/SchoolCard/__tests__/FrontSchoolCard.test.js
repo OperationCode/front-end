@@ -9,14 +9,15 @@ const locations = [
     address1: '825 Battery Street',
     address2: '3rd Floor',
     city: 'San Francisco',
+    state: 'CA',
     zip: '94111',
   },
   {
-    va_accepted: true,
-    address1: '825 Battery Street',
-    address2: '3rd Floor',
-    city: 'San Francisco',
-    zip: '94111',
+    va_accepted: false,
+    address1: '123 Battery Street',
+    address2: 'Ste 1',
+    city: 'San FDiego',
+    zip: '90111',
   },
 ];
 
@@ -34,13 +35,11 @@ describe('FrontSchoolCard', () => {
         logoSource="logoSource"
         name="school name"
         website="website"
-      >
-        <p>Testing!</p>
-      </FrontSchoolCard>,
+      />,
     );
   });
 
-  it('should call callback function', () => {
+  it('should call callback function when button is clicked', () => {
     const onClickMock = jest.fn();
     const wrapper = mount(
       <FrontSchoolCard

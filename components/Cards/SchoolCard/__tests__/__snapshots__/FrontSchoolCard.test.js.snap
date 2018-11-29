@@ -12,29 +12,15 @@ exports[`FrontSchoolCard should render with required props 1`] = `
   <div
     className="interactionsContainer"
   >
-    <Button
-      analyticsObject={
-        Object {
-          "action": "Button Selected",
-          "category": "Interactions",
-        }
-      }
-      datum=""
+    <LinkButton
+      analyticsEventLabel="school name | Website"
       disabled={false}
       fullWidth={false}
-      onClick={[Function]}
-      tabIndex={0}
+      href="website"
       theme="primary"
-      type="button"
     >
-      <OutboundLink
-        analyticsEventLabel="school name | Website"
-        hasIcon={true}
-        href="website"
-      >
-        Go To Website
-      </OutboundLink>
-    </Button>
+      Go To Website
+    </LinkButton>
     <Button
       analyticsObject={
         Object {

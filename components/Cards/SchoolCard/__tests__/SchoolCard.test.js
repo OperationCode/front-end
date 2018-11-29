@@ -9,14 +9,16 @@ const locations = [
     address1: '825 Battery Street',
     address2: '3rd Floor',
     city: 'San Francisco',
+    state: 'CA',
     zip: '94111',
   },
   {
-    va_accepted: true,
-    address1: '825 Battery Street',
-    address2: '3rd Floor',
-    city: 'San Francisco',
-    zip: '94111',
+    va_accepted: false,
+    address1: '123Battery Street',
+    address2: 'Ste 1',
+    city: 'San Diego',
+    state: 'CA',
+    zip: '90111',
   },
 ];
 

@@ -20,7 +20,7 @@ exports[`Storyshots Cards/SchoolCard/Back default 1`] = `
     />
   </button>
   <img
-    alt=""
+    alt="General Assembly logo logo"
     src="https://s3.amazonaws.com/operationcode-assets/codeSchoolLogos/general_assembly.jpg"
   />
   <span
@@ -37,35 +37,23 @@ exports[`Storyshots Cards/SchoolCard/Back default 1`] = `
   <ul
     className="locations"
   >
-    <li
-      id="https://s3.amazonaws.com/operationcode-assets/codeSchoolLogos/general_assembly.jpg"
-    >
+    <li>
       Los Angeles, CA
     </li>
-    <li
-      id="https://s3.amazonaws.com/operationcode-assets/codeSchoolLogos/general_assembly.jpg"
-    >
+    <li>
       Joshua Tree, CA
       *
     </li>
-    <li
-      id="https://s3.amazonaws.com/operationcode-assets/codeSchoolLogos/general_assembly.jpg"
-    >
+    <li>
       Boston, MA
     </li>
-    <li
-      id="https://s3.amazonaws.com/operationcode-assets/codeSchoolLogos/general_assembly.jpg"
-    >
+    <li>
       New York, NY
     </li>
-    <li
-      id="https://s3.amazonaws.com/operationcode-assets/codeSchoolLogos/general_assembly.jpg"
-    >
+    <li>
       Portland, OR
     </li>
-    <li
-      id="https://s3.amazonaws.com/operationcode-assets/codeSchoolLogos/general_assembly.jpg"
-    >
+    <li>
       Seattle, WA
       *
     </li>
