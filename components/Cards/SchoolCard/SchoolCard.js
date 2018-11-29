@@ -9,7 +9,7 @@ import styles from './SchoolCard.css';
 class SchoolCard extends Component {
   static propTypes = {
     hasHardwareIncluded: PropTypes.bool.isRequired,
-    hasHousing: PropTypes.bool.isRequired,
+    hasHousing: PropTypes.bool,
     hasOnline: PropTypes.bool.isRequired,
     hasOnlyOnline: PropTypes.bool.isRequired,
     isFullTime: PropTypes.bool.isRequired,
@@ -23,6 +23,10 @@ class SchoolCard extends Component {
     logoSource: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     website: PropTypes.string.isRequired,
+  };
+
+  static defaultProps = {
+    hasHousing: false,
   };
 
   state = {

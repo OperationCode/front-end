@@ -51,7 +51,7 @@ export default class CodeSchools extends React.Component {
             <div key={`${school.name}`}>
               <SchoolCard
                 hasHardwareIncluded={school.hardware_included}
-                hasHousing={school.has_housing ? school.has_housing : false}
+                hasHousing={school.has_housing}
                 hasOnline={school.has_online}
                 hasOnlyOnline={school.online_only}
                 isFullTime={school.full_time}

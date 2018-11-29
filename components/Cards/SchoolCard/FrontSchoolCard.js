@@ -16,7 +16,7 @@ export default class FrontSchoolCard extends Component {
   static propTypes = {
     cardFlipCallback: PropTypes.func.isRequired,
     hasHardwareIncluded: PropTypes.bool.isRequired,
-    hasHousing: PropTypes.bool.isRequired,
+    hasHousing: PropTypes.bool,
     hasOnline: PropTypes.bool.isRequired,
     hasOnlyOnline: PropTypes.bool.isRequired,
     isFullTime: PropTypes.bool.isRequired,
@@ -30,6 +30,10 @@ export default class FrontSchoolCard extends Component {
     logoSource: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     website: PropTypes.string.isRequired,
+  };
+
+  static defaultProps = {
+    hasHousing: false,
   };
 
   render() {

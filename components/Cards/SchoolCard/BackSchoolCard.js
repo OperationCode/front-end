@@ -27,7 +27,7 @@ function BackSchoolCard({ cardFlipCallback, locations, logoSource, schoolName })
       <hr className={styles.divider} />
       <ul className={styles.locations}>
         {locations.map(location => (
-          <li key={`${location}`}>
+          <li key={`${JSON.stringify(location)}`}>
             {location.city && location.state && `${location.city}, ${location.state}`}
             {location.va_accepted ? '*' : null}
           </li>

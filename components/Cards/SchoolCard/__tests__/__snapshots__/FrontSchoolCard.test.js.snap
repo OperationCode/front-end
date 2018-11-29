@@ -32,7 +32,7 @@ exports[`FrontSchoolCard should render with required props 1`] = `
       datum=""
       disabled={false}
       fullWidth={false}
-      onClick={[Function]}
+      onClick={[MockFunction]}
       tabIndex={0}
       theme="primary"
       type="button"
@@ -91,7 +91,7 @@ exports[`FrontSchoolCard should render with required props 1`] = `
       />
     </div>
     <div
-      className="detailItem active"
+      className="detailItem disabled"
     >
       <Badge
         className="codeSchoolCardIcon"

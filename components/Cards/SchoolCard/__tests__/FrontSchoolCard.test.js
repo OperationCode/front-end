@@ -25,9 +25,8 @@ describe('FrontSchoolCard', () => {
   it('should render with required props', () => {
     createShallowSnapshotTest(
       <FrontSchoolCard
-        cardFlipCallback={() => {}}
+        cardFlipCallback={jest.fn()}
         hasHardwareIncluded
-        hasHousing
         hasOnline
         hasOnlyOnline={false}
         isFullTime
