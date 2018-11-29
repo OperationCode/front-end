@@ -112,7 +112,7 @@ export default () => (
     </Section>
 
     <Section
-      title="Partners"
+      title="Sponsors"
       contentClassName={styles.partnerLogos}
       hasHeadingLines={false}
       theme="gray"
