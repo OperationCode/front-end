@@ -29,7 +29,7 @@ describe('BackSchoolCard', () => {
         cardFlipCallback={jest.fn()}
         locations={locations}
         logoSource="logoSource"
-        alt="alt"
+        schoolName="alt"
       />,
     );
   });
@@ -41,7 +41,7 @@ describe('BackSchoolCard', () => {
         cardFlipCallback={onClickMock}
         locations={locations}
         logoSource="logoSource"
-        alt="alt"
+        schoolName="alt"
       />,
     );
     wrapper.find('button').simulate('click');

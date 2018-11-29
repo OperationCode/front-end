@@ -13,24 +13,21 @@ BackSchoolCard.propTypes = {
     }),
   ).isRequired,
   logoSource: PropTypes.string.isRequired,
-  alt: PropTypes.string.isRequired,
+  schoolName: PropTypes.string.isRequired,
 };
 
-function BackSchoolCard({ cardFlipCallback, locations, logoSource, alt }) {
+function BackSchoolCard({ cardFlipCallback, locations, logoSource, schoolName }) {
   return (
     <>
       <CloseButton onClick={cardFlipCallback} theme="white" />
-
-      <img src={logoSource} alt={`${alt} logo`} />
+      <img src={logoSource} alt={`${schoolName} logo`} />
       <span className={styles.disclaimer}>
         <b>*</b> denotes a location that accepts the GI Bill
       </span>
-
       <hr className={styles.divider} />
-
       <ul className={styles.locations}>
         {locations.map(location => (
-          <li key={logoSource}>
+          <li key={`${location}`}>
             {location.city && location.state && `${location.city}, ${location.state}`}
             {location.va_accepted ? '*' : null}
           </li>
