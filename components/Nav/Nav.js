@@ -9,7 +9,7 @@ import NavMobile from 'components/Nav/NavMobile/NavMobile';
 import styles from './Nav.css';
 
 function Nav(props) {
-  const isXs = props;
+  const { isXs } = props;
 
   if (isXs) {
     return <NavMobile navItems={navItems} />;
@@ -50,7 +50,11 @@ function Nav(props) {
 }
 
 Nav.propTypes = {
-  isXs: PropTypes.bool.isRequired,
+  isXs: PropTypes.bool,
+};
+
+Nav.defaultProps = {
+  isXs: false,
 };
 
 export default Nav;
