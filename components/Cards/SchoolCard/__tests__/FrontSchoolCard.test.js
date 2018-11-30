@@ -61,4 +61,24 @@ describe('FrontSchoolCard', () => {
       .simulate('click');
     expect(onClickMock).toHaveBeenCalledTimes(1);
   });
+
+  it('should not render locations button with single location ', () => {
+    const onClickMock = jest.fn();
+    const wrapper = mount(
+      <FrontSchoolCard
+        cardFlipCallback={onClickMock}
+        hasHardwareIncluded
+        hasHousing
+        hasOnline
+        hasOnlyOnline={false}
+        isFullTime
+        locations={[{ ...locations[0] }]}
+        logoSource="logoSource"
+        name="school name"
+        website="website"
+      />,
+    );
+    const button = wrapper.find('button').filterWhere(node => node.text() === 'See Locations');
+    expect(button.exists()).toBeFalsy();
+  });
 });

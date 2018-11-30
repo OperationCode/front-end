@@ -34,7 +34,7 @@ describe('BackSchoolCard', () => {
     );
   });
 
-  it('should call callback function', () => {
+  it('should call callback function when button is clicked', () => {
     const onClickMock = jest.fn();
     const wrapper = mount(
       <BackSchoolCard
