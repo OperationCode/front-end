@@ -1,18 +1,20 @@
 import React from 'react';
 import classNames from 'classnames';
 import Link from 'next/link';
+import PropTypes from 'prop-types';
 import { donateLink, s3 } from 'common/constants/urls';
 import { navItems } from 'common/constants/navigation';
 import NavListItem from 'components/Nav/NavListItem/NavListItem';
 import NavMobile from 'components/Nav/NavMobile/NavMobile';
 import styles from './Nav.css';
 
-function Nav() {
-  const displayMobile = true;
+function Nav(props) {
+  const isXs = props;
 
-  if (displayMobile) {
+  if (isXs) {
     return <NavMobile navItems={navItems} />;
   }
+
   return (
     <header className={styles.header}>
       <div className={styles.navContainer}>
@@ -46,5 +48,9 @@ function Nav() {
     </header>
   );
 }
+
+Nav.propTypes = {
+  isXs: PropTypes.bool.isRequired,
+};
 
 export default Nav;
