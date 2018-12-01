@@ -6,7 +6,7 @@ import { s3 } from 'common/constants/urls';
 
 import SchoolCard from '../SchoolCard';
 
-storiesOf('Cards/SchoolCard/Front', module)
+storiesOf('Cards/SchoolCard', module)
   .addDecorator(withKnobs)
   .add('with many locations', () => (
     <SchoolCard

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Cards/SchoolCard/Front with many locations 1`] = `
+exports[`Storyshots Cards/SchoolCard with many locations 1`] = `
 <article
   className="Card SchoolCard"
 >
@@ -135,7 +135,7 @@ exports[`Storyshots Cards/SchoolCard/Front with many locations 1`] = `
 </article>
 `;
 
-exports[`Storyshots Cards/SchoolCard/Front with no physical locations 1`] = `
+exports[`Storyshots Cards/SchoolCard with no physical locations 1`] = `
 <article
   className="Card SchoolCard"
 >
@@ -266,7 +266,7 @@ exports[`Storyshots Cards/SchoolCard/Front with no physical locations 1`] = `
 </article>
 `;
 
-exports[`Storyshots Cards/SchoolCard/Front with one location 1`] = `
+exports[`Storyshots Cards/SchoolCard with one location 1`] = `
 <article
   className="Card SchoolCard"
 >
