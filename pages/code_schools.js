@@ -2,6 +2,8 @@ import Head from 'components/head';
 import { getCodeSchoolsPromise } from 'common/constants/api';
 import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
 import Section from 'components/_common_/Section/Section';
+import SchoolCard from 'components/Cards/SchoolCard/SchoolCard';
+import { s3 } from 'common/constants/urls';
 
 export default class CodeSchools extends React.Component {
   state = {
@@ -46,7 +48,23 @@ export default class CodeSchools extends React.Component {
         </Section>
         <Section theme="gray" title="Schools" hasHeadingLines={false}>
           {state.schools.map(school => (
-            <div key={`${Math.random()}`}>{school.name}</div>
+            <div key={`${school.name}`}>
+              <SchoolCard
+                hasHardwareIncluded={school.hardware_included}
+                hasHousing={school.has_housing}
+                hasOnline={school.has_online}
+                hasOnlyOnline={school.online_only}
+                isFullTime={school.full_time}
+                locations={school.locations}
+                logoSource={`${s3}codeSchoolLogos/${school.name
+                  .trim()
+                  .split(' ')
+                  .join('_')
+                  .toLowerCase()}.jpg`}
+                name={school.name}
+                website={school.url}
+              />
+            </div>
           ))}
         </Section>
       </>
