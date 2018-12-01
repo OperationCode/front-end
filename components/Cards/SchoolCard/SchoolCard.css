@@ -1,6 +1,7 @@
 .SchoolCard {
   max-width: 400px;
   height: 550px;
+  font-family: var(--primaryFontFamily), sans-serif;
 }
 
 @media screen and (max-width: 576px) {

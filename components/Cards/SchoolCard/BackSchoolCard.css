@@ -3,7 +3,7 @@
 }
 
 .divider {
-  border: 1px solid #ffffff;
+  border: 1px solid var(--white);
   width: 100%;
 }
 

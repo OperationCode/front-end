@@ -1,6 +1,5 @@
 .interactionsContainer {
   align-items: center;
-  font-family: var(--primaryFontFamily), sans-serif;
   display: flex;
   justify-content: center;
 }
