@@ -18,16 +18,51 @@ storiesOf('Cards/SchoolCard/Back', module)
       <BackSchoolCard
         cardFlipCallback={action('Close Back Button Clicked!')}
         locations={[
-          { city: 'Los Angeles', state: 'CA', va_accepted: false },
-          { city: 'Joshua Tree', state: 'CA', va_accepted: true },
-          { city: 'Boston', state: 'MA', va_accepted: false },
-          { city: 'New York', state: 'NY', va_accepted: false },
-          { city: 'Portland', state: 'OR', va_accepted: false },
-          { city: 'Seattle', state: 'WA', va_accepted: true },
+          {
+            address1: '1st Ave ',
+            adress2: 'Suite 1',
+            city: 'Los Angeles',
+            state: 'CA',
+            va_accepted: false,
+          },
+          {
+            address1: '2nd Ave ',
+            adress2: 'Suite 2',
+            city: 'Joshua Tree',
+            state: 'CA',
+            va_accepted: true,
+          },
+          {
+            address1: '3rd Ave ',
+            adress2: 'Suite 3',
+            city: 'Boston',
+            state: 'MA',
+            va_accepted: false,
+          },
+          {
+            address1: '4th Ave ',
+            adress2: 'Suite 4',
+            city: 'New York',
+            state: 'NY',
+            va_accepted: false,
+          },
+          {
+            address1: '5th Ave ',
+            adress2: 'Suite 5',
+            city: 'Portland',
+            state: 'OR',
+            va_accepted: false,
+          },
+          {
+            address1: '6thAve ',
+            adress2: 'Suite 6',
+            city: 'Seattle',
+            state: 'WA',
+            va_accepted: true,
+          },
         ]}
         logoSource={text('logoSource', `${s3}codeSchoolLogos/general_assembly.jpg`)}
-        name={text('name', 'General Assembly')}
-        schoolName={text('schoolName', 'General Assembly logo')}
+        schoolName={text('name', 'General Assembly')}
       />
     </Card>
   ));

@@ -20,7 +20,7 @@ exports[`Storyshots Cards/SchoolCard/Back default 1`] = `
     />
   </button>
   <img
-    alt="General Assembly logo logo"
+    alt="General Assembly logo"
     src="https://s3.amazonaws.com/operationcode-assets/codeSchoolLogos/general_assembly.jpg"
   />
   <span
