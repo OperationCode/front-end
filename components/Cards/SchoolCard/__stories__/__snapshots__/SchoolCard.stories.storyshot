@@ -1,0 +1,398 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Cards/SchoolCard with many locations 1`] = `
+<article
+  className="Card SchoolCard"
+>
+  <h5>
+    General Assembly
+  </h5>
+  <img
+    alt="General Assembly logo"
+    src="https://s3.amazonaws.com/operationcode-assets/codeSchoolLogos/general_assembly.jpg"
+  />
+  <div
+    className="interactionsContainer"
+  >
+    <a
+      className="Button primary"
+      href="https://generalassembly.com"
+      onClick={[Function]}
+    >
+      Go To Website
+    </a>
+    <button
+      className="Button primary"
+      disabled={false}
+      onClick={[Function]}
+      tabIndex={0}
+      type="button"
+    >
+      See Locations
+    </button>
+  </div>
+  <hr
+    className="divider"
+  />
+  <div
+    className="detailsRow"
+  >
+    <div
+      className="detailItem active"
+    >
+      <div
+        className="Badge codeSchoolCardIcon"
+      >
+        <figure
+          className="iconContainer"
+        >
+          <svg />
+          <figcaption
+            className="label"
+          >
+            G.I Bill
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+    <div
+      className="detailItem active"
+    >
+      <div
+        className="Badge codeSchoolCardIcon"
+      >
+        <figure
+          className="iconContainer"
+        >
+          <svg />
+          <figcaption
+            className="label"
+          >
+            Online
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+    <div
+      className="detailItem active"
+    >
+      <div
+        className="Badge codeSchoolCardIcon"
+      >
+        <figure
+          className="iconContainer"
+        >
+          <svg />
+          <figcaption
+            className="label"
+          >
+            In-Person
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+  <div
+    className="detailsRow"
+  >
+    <div
+      className="detailItem disabled"
+    >
+      <div
+        className="Badge codeSchoolCardIcon"
+      >
+        <figure
+          className="iconContainer"
+        >
+          <svg />
+          <figcaption
+            className="label"
+          >
+            Equipment
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+    <div
+      className="detailItem disabled"
+    >
+      <div
+        className="Badge codeSchoolCardIcon"
+      >
+        <figure
+          className="iconContainer"
+        >
+          <svg />
+          <figcaption
+            className="label"
+          >
+            Housing
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</article>
+`;
+
+exports[`Storyshots Cards/SchoolCard with no physical locations 1`] = `
+<article
+  className="Card SchoolCard"
+>
+  <h5>
+    Thinkful
+  </h5>
+  <img
+    alt="Thinkful logo"
+    src="https://s3.amazonaws.com/operationcode-assets/codeSchoolLogos/thinkful.jpg"
+  />
+  <div
+    className="interactionsContainer"
+  >
+    <a
+      className="Button primary"
+      href="https://thinkful.com"
+      onClick={[Function]}
+    >
+      Go To Website
+    </a>
+    <span
+      className="singleLocationText"
+    >
+      Online Only
+    </span>
+  </div>
+  <hr
+    className="divider"
+  />
+  <div
+    className="detailsRow"
+  >
+    <div
+      className="detailItem disabled"
+    >
+      <div
+        className="Badge codeSchoolCardIcon"
+      >
+        <figure
+          className="iconContainer"
+        >
+          <svg />
+          <figcaption
+            className="label"
+          >
+            G.I Bill
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+    <div
+      className="detailItem active"
+    >
+      <div
+        className="Badge codeSchoolCardIcon"
+      >
+        <figure
+          className="iconContainer"
+        >
+          <svg />
+          <figcaption
+            className="label"
+          >
+            Online
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+    <div
+      className="detailItem disabled"
+    >
+      <div
+        className="Badge codeSchoolCardIcon"
+      >
+        <figure
+          className="iconContainer"
+        >
+          <svg />
+          <figcaption
+            className="label"
+          >
+            In-Person
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+  <div
+    className="detailsRow"
+  >
+    <div
+      className="detailItem disabled"
+    >
+      <div
+        className="Badge codeSchoolCardIcon"
+      >
+        <figure
+          className="iconContainer"
+        >
+          <svg />
+          <figcaption
+            className="label"
+          >
+            Equipment
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+    <div
+      className="detailItem disabled"
+    >
+      <div
+        className="Badge codeSchoolCardIcon"
+      >
+        <figure
+          className="iconContainer"
+        >
+          <svg />
+          <figcaption
+            className="label"
+          >
+            Housing
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</article>
+`;
+
+exports[`Storyshots Cards/SchoolCard with one location 1`] = `
+<article
+  className="Card SchoolCard"
+>
+  <h5>
+    Code Immersives
+  </h5>
+  <img
+    alt="Code Immersives logo"
+    src="https://s3.amazonaws.com/operationcode-assets/codeSchoolLogos/code_immersives.jpg"
+  />
+  <div
+    className="interactionsContainer"
+  >
+    <a
+      className="Button primary"
+      href="https://codeimmersives.com"
+      onClick={[Function]}
+    >
+      Go To Website
+    </a>
+    <span
+      className="singleLocationText"
+    >
+      Los Angeles, CA
+    </span>
+  </div>
+  <hr
+    className="divider"
+  />
+  <div
+    className="detailsRow"
+  >
+    <div
+      className="detailItem disabled"
+    >
+      <div
+        className="Badge codeSchoolCardIcon"
+      >
+        <figure
+          className="iconContainer"
+        >
+          <svg />
+          <figcaption
+            className="label"
+          >
+            G.I Bill
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+    <div
+      className="detailItem disabled"
+    >
+      <div
+        className="Badge codeSchoolCardIcon"
+      >
+        <figure
+          className="iconContainer"
+        >
+          <svg />
+          <figcaption
+            className="label"
+          >
+            Online
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+    <div
+      className="detailItem active"
+    >
+      <div
+        className="Badge codeSchoolCardIcon"
+      >
+        <figure
+          className="iconContainer"
+        >
+          <svg />
+          <figcaption
+            className="label"
+          >
+            In-Person
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+  <div
+    className="detailsRow"
+  >
+    <div
+      className="detailItem active"
+    >
+      <div
+        className="Badge codeSchoolCardIcon"
+      >
+        <figure
+          className="iconContainer"
+        >
+          <svg />
+          <figcaption
+            className="label"
+          >
+            Equipment
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+    <div
+      className="detailItem disabled"
+    >
+      <div
+        className="Badge codeSchoolCardIcon"
+      >
+        <figure
+          className="iconContainer"
+        >
+          <svg />
+          <figcaption
+            className="label"
+          >
+            Housing
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</article>
+`;
