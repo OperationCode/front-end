@@ -79,6 +79,6 @@ describe('FrontSchoolCard', () => {
       />,
     );
     const button = wrapper.find('button').filterWhere(node => node.text() === 'See Locations');
-    expect(button.exists()).toBeFalsy();
+    expect(button.exists()).toStrictEqual(false);
   });
 });

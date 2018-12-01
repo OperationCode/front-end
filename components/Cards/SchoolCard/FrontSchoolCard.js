@@ -38,7 +38,7 @@ export default class FrontSchoolCard extends Component {
     return (
       <>
         <h5>{props.name}</h5>
-        <img src={props.logoSource} alt="" />
+        <img src={props.logoSource} alt={`${props.name} logo`} />
         <div className={styles.interactionsContainer}>
           <LinkButton analyticsEventLabel={`${props.name} | Website`} href={props.website}>
             Go To Website

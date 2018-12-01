@@ -1,5 +1,6 @@
 .interactionsContainer {
   align-items: center;
+  font-family: var(--primaryFontFamily), sans-serif;
   display: flex;
   justify-content: center;
 }
@@ -17,7 +18,6 @@
 
 .singleLocationText {
   color: var(--secondary);
-  font-family: "PF Din Display", Arial, sans-serif;
   font-weight: bolder;
 
   /* Matches up with Button stylings */
@@ -50,7 +50,6 @@
 .active {
   color: var(--secondary);
   fill: var(--secondary);
-  font-weight: bold;
 }
 
 .disabled {

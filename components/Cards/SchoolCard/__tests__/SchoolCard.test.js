@@ -49,13 +49,22 @@ describe('SchoolCard', () => {
     createShallowSnapshotTest(componentInstance);
   });
 
-  it('should change state when showBackOfCard/showFrontOfCard is called', () => {
+  it('should change state when showBackOfCard/showFrontOfCard function is called', () => {
     const instance = wrapper.instance();
     expect(wrapper.state('isFrontOfCardShowing')).toBe(true);
     instance.showBackOfCard();
     expect(wrapper.state('isFrontOfCardShowing')).toBe(false);
     instance.showFrontOfCard();
     expect(wrapper.state('isFrontOfCardShowing')).toBe(true);
+  });
+
+  it('should change state when see locations button is clicked', () => {
+    expect(wrapper.state('isFrontOfCardShowing')).toBe(true);
+    wrapper
+      .find('button')
+      .filterWhere(node => node.text() === 'See Locations')
+      .simulate('click');
+    expect(wrapper.state('isFrontOfCardShowing')).toBe(false);
   });
 
   it('should render the "See Locations" button when multiple locations exist', () => {

@@ -8,7 +8,7 @@ exports[`Storyshots Cards/SchoolCard/Front with many locations 1`] = `
     General Assembly
   </h5>
   <img
-    alt=""
+    alt="General Assembly logo"
     src="https://s3.amazonaws.com/operationcode-assets/codeSchoolLogos/general_assembly.jpg"
   />
   <div
@@ -143,7 +143,7 @@ exports[`Storyshots Cards/SchoolCard/Front with no physical locations 1`] = `
     Thinkful
   </h5>
   <img
-    alt=""
+    alt="Thinkful logo"
     src="https://s3.amazonaws.com/operationcode-assets/codeSchoolLogos/thinkful.jpg"
   />
   <div
@@ -274,7 +274,7 @@ exports[`Storyshots Cards/SchoolCard/Front with one location 1`] = `
     Code Immersives
   </h5>
   <img
-    alt=""
+    alt="Code Immersives logo"
     src="https://s3.amazonaws.com/operationcode-assets/codeSchoolLogos/code_immersives.jpg"
   />
   <div

@@ -6,7 +6,7 @@ exports[`FrontSchoolCard should render with required props 1`] = `
     school name
   </h5>
   <img
-    alt=""
+    alt="school name logo"
     src="logoSource"
   />
   <div
