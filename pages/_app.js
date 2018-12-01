@@ -10,7 +10,7 @@ import breakpoints from 'common/styles/breakpoints';
 import Nav from 'components/Nav/Nav';
 import Footer from 'components/Footer/Footer';
 import 'common/styles/globalStyles.css';
-import withFonts from '../containers/withFonts';
+import withFonts from '../containers/withFonts/withFonts';
 
 // eslint-disable-next-line react/prefer-stateless-function
 class Layout extends React.Component {
