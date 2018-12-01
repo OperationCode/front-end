@@ -13,7 +13,6 @@
 
 .Footer a {
   color: var(--white);
-  text-decoration: none;
 }
 
 .Footer:not(.logoGrouping) a:hover {
@@ -48,9 +47,14 @@
 }
 
 .legalGrouping {
-  width: 100%;
   font-size: 14px;
   justify-content: center;
+  width: 100%;
+}
+
+.copyright {
+  justify-content: center;
+  margin-bottom: 1rem;
 }
 
 .legalLinks {
@@ -110,7 +114,6 @@
   .Footer {
     flex-direction: column;
     height: auto;
-    padding-bottom: 2rem;
   }
 
   .footerGrouping {

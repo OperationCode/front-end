@@ -1,12 +1,14 @@
 /* eslint-env jest */
 import React from 'react';
-import { shallow } from 'enzyme';
 import ReactGA from 'react-ga';
+import { shallow } from 'enzyme';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 
 import Button from '../Button';
 
 describe('Button', () => {
+  ReactGA.initialize('foo', { testMode: true });
+
   it('should render with required props', () => {
     createSnapshotTest(<Button>Test</Button>);
   });
@@ -65,28 +67,34 @@ describe('Button', () => {
   it('call props.onClick when button is clicked', () => {
     const onClickMock = jest.fn();
     const ButtonShallowInstance = shallow(<Button onClick={onClickMock}>Test</Button>);
-    ButtonShallowInstance.instance().clickHandler();
 
+    expect(onClickMock).toHaveBeenCalledTimes(0);
+    ButtonShallowInstance.simulate('click');
     expect(onClickMock).toHaveBeenCalledTimes(1);
   });
 
-  it('should call ReactGA when in prod environment', () => {
-    /* eslint-disable no-console */
-    ReactGA.initialize('foo', { testMode: true });
+  it('should not create ReactGA event on click when in dev environment', () => {
+    const wrapper = shallow(<Button>Testing</Button>);
 
+    expect(ReactGA.testModeAPI.calls).toHaveLength(1);
+    wrapper.find('button').simulate('click');
+    expect(ReactGA.testModeAPI.calls).toHaveLength(1);
+  });
+
+  it('should create ReactGA event on click when in prod environment', () => {
     process.env.NODE_ENV = 'production';
-
     const ButtonShallowInstance = shallow(<Button>Testing</Button>);
-
-    ButtonShallowInstance.instance().clickHandler();
-
-    expect(ReactGA.testModeAPI.calls).toContainEqual([
+    const buttonEventPayload = [
       'send',
       {
         eventAction: 'Button Selected',
         eventCategory: 'Interactions',
         hitType: 'event',
       },
-    ]);
+    ];
+
+    expect(ReactGA.testModeAPI.calls).not.toContainEqual(buttonEventPayload);
+    ButtonShallowInstance.simulate('click');
+    expect(ReactGA.testModeAPI.calls).toContainEqual(buttonEventPayload);
   });
 });

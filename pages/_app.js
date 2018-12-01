@@ -7,7 +7,7 @@ import debounce from 'lodash/debounce';
 import { initStore } from 'store/store';
 import { screenResize } from 'store/screenSize/actions';
 import breakpoints from 'common/styles/breakpoints';
-import Nav from 'components/nav';
+import Nav from 'components/Nav/Nav';
 import Footer from 'components/Footer/Footer';
 import 'common/styles/globalStyles.css';
 import withFonts from '../containers/withFonts';

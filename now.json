@@ -4,5 +4,6 @@
     "trailingSlash": false
   },
   "type": "static",
-  "public": true
+  "public": true,
+  "version": 1
 }

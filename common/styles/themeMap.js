@@ -8,3 +8,6 @@ export const smallViewportWidth = "576px";
 export const mediumViewportWidth = "768px";
 export const largeViewportWidth = "992px";
 export const extraLargeViewportWidth = "1200px";
+export const borderRadius = "3px";
+export const navBarHeight = "65px";
+export const navBarTopGutterHeight = "20px";
