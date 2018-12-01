@@ -9,6 +9,7 @@ exports[`Storyshots PartnerLogoLink default 1`] = `
     onClick={[Function]}
     rel="noopener noreferrer"
     target="_blank"
+    to="https://github.com"
   >
     <span
       className="ScreenReaderOnly"

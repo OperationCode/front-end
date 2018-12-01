@@ -8,6 +8,8 @@ const fonts = [
   },
   {
     fontFamily: 'DIN Condensed Bold',
+    // loading of this font is being handled by the @font-face rule on
+    // the global style sheet.
     url: null,
   },
 ];
