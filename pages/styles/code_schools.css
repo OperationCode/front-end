@@ -1,0 +1,11 @@
+.flexGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.select {
+  min-width: 300px;
+  width: 100%;
+  max-width: 900px;
+}
