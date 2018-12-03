@@ -12,6 +12,7 @@
   max-width: 50%;
   top: 16.25px;
   left: 2rem;
+  cursor: pointer;
 }
 
 .icon {
@@ -19,6 +20,7 @@
   width: 35px;
   top: 16px;
   right: 2rem;
+  cursor: pointer;
 }
 
 .dropdown {
@@ -26,30 +28,21 @@
   top: var(--navBarHeight);
   right: 0;
   background-color: var(--gray);
-  width: 300px;
-  height: 170px;
-  padding: 1rem;
+  width: auto;
 }
 
 .ul {
   columns: 3;
-  -webkit-columns: 2;
-  -moz-columns: 2;
+  -webkit-columns: 3;
+  -moz-columns: 3;
+  padding: 15px;
+  margin: 0;
   list-style: none;
-  margin: initial;
-  padding: initial;
-}
-
-/*
-multi column containers have a weird margin on the first column, see pictures of
-'https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Columns/Styling_Columns#Summary'
-*/
-li:first-child {
-  margin-top: 0;
+  font-size: 14px;
 }
 
 .li {
-  margin: 2rem 1rem 1rem;
+  padding: 20px 10px;
 }
 
 .a {
