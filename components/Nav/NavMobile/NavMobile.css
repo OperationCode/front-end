@@ -51,6 +51,9 @@
   fill: var(--secondary);
   transition: all 0.2s linear;
   font-weight: bolder;
+  display: block;
+  height: 34px;
+  text-align: center;
 }
 
 .a:hover {

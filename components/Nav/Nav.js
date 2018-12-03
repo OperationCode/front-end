@@ -12,7 +12,7 @@ function Nav(props) {
   const { isXs } = props;
 
   if (isXs) {
-    return <NavMobile navItems={navItems} />;
+    return <NavMobile />;
   }
 
   return (

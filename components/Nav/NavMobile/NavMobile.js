@@ -10,6 +10,7 @@ export default class NavMobile extends Component {
     super(props);
     this.handleOnClick = this.handleOnClick.bind(this);
     this.handleMouseLeave = this.handleMouseLeave.bind(this);
+    this.handleKeyPress = this.handleKeyPress.bind(this);
     this.links = this.links.bind(this);
   }
 
@@ -32,8 +33,14 @@ export default class NavMobile extends Component {
     this.toggleDropdown();
   }
 
+  handleKeyPress(e) {
+    if (e.key === 'Enter') {
+      this.toggleDropdown();
+    }
+  }
+
   render() {
-    const { state, handleOnClick, handleMouseLeave, links } = this;
+    const { state, handleOnClick, handleMouseLeave, handleKeyPress, links } = this;
     const { dropdownShow } = state;
 
     return (
@@ -47,9 +54,13 @@ export default class NavMobile extends Component {
             />
           </Link>
 
-          <div onClick={handleOnClick} onKeyPress={() => {}} role="button" tabIndex={0}>
-            <HamburgerIcon className={styles.icon} />
-          </div>
+          <HamburgerIcon
+            className={styles.icon}
+            onClick={handleOnClick}
+            onKeyPress={handleKeyPress}
+            role="button"
+            tabIndex={0}
+          />
 
           {dropdownShow && (
             <div className={styles.dropdown} onMouseLeave={handleMouseLeave}>
