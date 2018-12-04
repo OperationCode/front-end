@@ -50,11 +50,7 @@ function Nav(props) {
 }
 
 Nav.propTypes = {
-  isXs: PropTypes.bool,
-};
-
-Nav.defaultProps = {
-  isXs: false,
+  isXs: PropTypes.bool.isRequired,
 };
 
 export default Nav;

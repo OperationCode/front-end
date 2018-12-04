@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavMobile should render 1`] = `
+<header>
+  <div
+    className="NavMobile"
+  >
+    <Link
+      href="/"
+    >
+      <img
+        alt="operation code logo"
+        className="logo"
+        src="https://s3.amazonaws.com/operationcode-assets/branding/logos/small-blue-logo.png"
+      />
+    </Link>
+    <Svg
+      className="icon"
+      onClick={[Function]}
+      onKeyPress={[Function]}
+      role="button"
+      tabIndex={0}
+    />
+  </div>
+</header>
+`;

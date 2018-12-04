@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Nav should render with required props passed 1`] = `
+<header
+  className="header"
+>
+  <div
+    className="navContainer"
+  >
+    <nav
+      className="Nav"
+    >
+      <Link
+        href="/"
+      >
+        <a
+          className="logoLink link"
+        >
+          <img
+            alt="Operation Code Logo"
+            className="logo"
+            src="https://s3.amazonaws.com/operationcode-assets/branding/logos/small-blue-logo.png"
+          />
+        </a>
+      </Link>
+      <ul
+        className="link"
+      >
+        <NavListItem
+          href="/about"
+          name="About Us"
+          shouldPrefetch={false}
+          sublinks={
+            Array [
+              Object {
+                "href": "/contact",
+                "name": "Contact Us",
+              },
+              Object {
+                "href": "/faq",
+                "name": "FAQ",
+              },
+            ]
+          }
+        />
+        <NavListItem
+          href="/who_we_serve"
+          name="Who We Serve"
+          shouldPrefetch={false}
+          sublinks={
+            Array [
+              Object {
+                "href": "/login",
+                "name": "Member Login",
+              },
+              Object {
+                "href": "/join",
+                "name": "Join",
+              },
+            ]
+          }
+        />
+        <NavListItem
+          href="/events"
+          name="Events"
+          shouldPrefetch={false}
+          sublinks={Array []}
+        />
+        <NavListItem
+          href="/get_involved"
+          name="Get Involved"
+          shouldPrefetch={false}
+          sublinks={Array []}
+        />
+        <li>
+          <Link
+            href="https://secure.lglforms.com/form_engine/s/BRtP7QUKyHOyEYsZROsRew"
+          >
+            <a
+              className="link donateLink"
+            >
+              <span>
+                Donate
+              </span>
+            </a>
+          </Link>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+`;
