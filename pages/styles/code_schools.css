@@ -5,7 +5,20 @@
 }
 
 .select {
-  min-width: 300px;
+  min-width: 250px;
   width: 100%;
-  max-width: 900px;
+  max-width: 250px;
+}
+
+.filterButtons {
+  display: flex;
+}
+
+.filterButtons > button {
+  margin: 5px;
+}
+
+.filterButtons > div {
+  padding-top: 5px;
+  margin: 5px;
 }
