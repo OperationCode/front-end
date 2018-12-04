@@ -142,6 +142,9 @@ You can see interactive documentation on all of our components via [![Storybook]
 |   ├── head.js  # Next.js-specific component to handle a page's meta info (and the rest of it's <head> tag) dynamically
 |   └── nav.js
 |
+├── decorators
+|   └── * # All directories specify decorators that wrap components to add little bits of functionality.
+|
 ├── pages
 |   ├── styles
 |   ├── _app.js  # Next.js-specific file used to customize the client-side routing of the application.
