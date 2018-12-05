@@ -5,13 +5,33 @@
 }
 
 .select {
-  min-width: 250px;
+  min-width: 300px;
   width: 100%;
-  max-width: 250px;
+  max-width: 900px;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  .select input {
+    font-size: 16px !important;
+  }
+
+  .select input:focus {
+    font-size: 16px !important;
+  }
+}
+
+.buttonWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3rem;
 }
 
 .filterButtons {
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .filterButtons > button {
@@ -21,4 +41,12 @@
 .filterButtons > div {
   padding-top: 5px;
   margin: 5px;
+}
+
+.whatAreQuestionsSection {
+  display: flex;
+}
+
+.whatAreQuestionsSection > div {
+  padding: 2rem;
 }
