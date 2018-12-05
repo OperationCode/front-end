@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Link from 'next/link';
 import { donateLink, s3 } from 'common/constants/urls';
 import { navItems } from 'common/constants/navigation';
+import flattenDepth from 'lodash/flattenDepth';
 import HamburgerIcon from 'static/images/icons/hamburger.svg';
 import styles from './NavMobile.css';
 
@@ -11,7 +12,6 @@ export default class NavMobile extends Component {
     this.handleOnClick = this.handleOnClick.bind(this);
     this.handleMouseLeave = this.handleMouseLeave.bind(this);
     this.handleKeyPress = this.handleKeyPress.bind(this);
-    this.links = this.links.bind(this);
   }
 
   state = {
@@ -19,7 +19,7 @@ export default class NavMobile extends Component {
   };
 
   // flattens navItems
-  links = () => navItems.map(navItem => [navItem, navItem.sublinks]).flat(2);
+  links = () => flattenDepth(navItems.map(navItem => [navItem, navItem.sublinks]), 2);
 
   toggleDropdown() {
     this.setState(prevState => ({ dropdownShow: !prevState.dropdownShow }));
