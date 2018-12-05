@@ -23,12 +23,6 @@ export default class MyDocument extends Document {
           <meta name="twitter:card" content="summary_large_image" />
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="630" />
-
-          {/* 'Encode Sans' */}
-          <link
-            href="https://fonts.googleapis.com/css?family=Encode+Sans:400,700"
-            rel="stylesheet"
-          />
         </Head>
         <body>
           <Main />

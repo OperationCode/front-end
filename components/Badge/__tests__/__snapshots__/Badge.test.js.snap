@@ -4,16 +4,16 @@ exports[`Badge should render with many props assigned 1`] = `
 <div
   className="Badge test-class"
 >
-  <div
+  <figure
     className="iconContainer"
   >
     <svg />
-  </div>
-  <span
-    className="label"
-  >
-    Badge Icon
-  </span>
+    <figcaption
+      className="label"
+    >
+      Badge Icon
+    </figcaption>
+  </figure>
 </div>
 `;
 
@@ -21,15 +21,15 @@ exports[`Badge should render with required props 1`] = `
 <div
   className="Badge"
 >
-  <div
+  <figure
     className="iconContainer"
   >
     <svg />
-  </div>
-  <span
-    className="label"
-  >
-    Testing
-  </span>
+    <figcaption
+      className="label"
+    >
+      Testing
+    </figcaption>
+  </figure>
 </div>
 `;
