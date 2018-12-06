@@ -40,56 +40,44 @@ exports[`Storyshots Cards/SchoolCard with many locations 1`] = `
     <div
       className="detailItem active"
     >
-      <div
+      <figure
         className="Badge codeSchoolCardIcon"
       >
-        <figure
-          className="iconContainer"
+        <svg />
+        <figcaption
+          className="label"
         >
-          <svg />
-          <figcaption
-            className="label"
-          >
-            G.I Bill
-          </figcaption>
-        </figure>
-      </div>
+          G.I Bill
+        </figcaption>
+      </figure>
     </div>
     <div
       className="detailItem active"
     >
-      <div
+      <figure
         className="Badge codeSchoolCardIcon"
       >
-        <figure
-          className="iconContainer"
+        <svg />
+        <figcaption
+          className="label"
         >
-          <svg />
-          <figcaption
-            className="label"
-          >
-            Online
-          </figcaption>
-        </figure>
-      </div>
+          Online
+        </figcaption>
+      </figure>
     </div>
     <div
       className="detailItem active"
     >
-      <div
+      <figure
         className="Badge codeSchoolCardIcon"
       >
-        <figure
-          className="iconContainer"
+        <svg />
+        <figcaption
+          className="label"
         >
-          <svg />
-          <figcaption
-            className="label"
-          >
-            In-Person
-          </figcaption>
-        </figure>
-      </div>
+          In-Person
+        </figcaption>
+      </figure>
     </div>
   </div>
   <div
@@ -98,38 +86,30 @@ exports[`Storyshots Cards/SchoolCard with many locations 1`] = `
     <div
       className="detailItem disabled"
     >
-      <div
+      <figure
         className="Badge codeSchoolCardIcon"
       >
-        <figure
-          className="iconContainer"
+        <svg />
+        <figcaption
+          className="label"
         >
-          <svg />
-          <figcaption
-            className="label"
-          >
-            Equipment
-          </figcaption>
-        </figure>
-      </div>
+          Equipment
+        </figcaption>
+      </figure>
     </div>
     <div
       className="detailItem disabled"
     >
-      <div
+      <figure
         className="Badge codeSchoolCardIcon"
       >
-        <figure
-          className="iconContainer"
+        <svg />
+        <figcaption
+          className="label"
         >
-          <svg />
-          <figcaption
-            className="label"
-          >
-            Housing
-          </figcaption>
-        </figure>
-      </div>
+          Housing
+        </figcaption>
+      </figure>
     </div>
   </div>
 </article>
@@ -171,56 +151,44 @@ exports[`Storyshots Cards/SchoolCard with no physical locations 1`] = `
     <div
       className="detailItem disabled"
     >
-      <div
+      <figure
         className="Badge codeSchoolCardIcon"
       >
-        <figure
-          className="iconContainer"
+        <svg />
+        <figcaption
+          className="label"
         >
-          <svg />
-          <figcaption
-            className="label"
-          >
-            G.I Bill
-          </figcaption>
-        </figure>
-      </div>
+          G.I Bill
+        </figcaption>
+      </figure>
     </div>
     <div
       className="detailItem active"
     >
-      <div
+      <figure
         className="Badge codeSchoolCardIcon"
       >
-        <figure
-          className="iconContainer"
+        <svg />
+        <figcaption
+          className="label"
         >
-          <svg />
-          <figcaption
-            className="label"
-          >
-            Online
-          </figcaption>
-        </figure>
-      </div>
+          Online
+        </figcaption>
+      </figure>
     </div>
     <div
       className="detailItem disabled"
     >
-      <div
+      <figure
         className="Badge codeSchoolCardIcon"
       >
-        <figure
-          className="iconContainer"
+        <svg />
+        <figcaption
+          className="label"
         >
-          <svg />
-          <figcaption
-            className="label"
-          >
-            In-Person
-          </figcaption>
-        </figure>
-      </div>
+          In-Person
+        </figcaption>
+      </figure>
     </div>
   </div>
   <div
@@ -229,38 +197,30 @@ exports[`Storyshots Cards/SchoolCard with no physical locations 1`] = `
     <div
       className="detailItem disabled"
     >
-      <div
+      <figure
         className="Badge codeSchoolCardIcon"
       >
-        <figure
-          className="iconContainer"
+        <svg />
+        <figcaption
+          className="label"
         >
-          <svg />
-          <figcaption
-            className="label"
-          >
-            Equipment
-          </figcaption>
-        </figure>
-      </div>
+          Equipment
+        </figcaption>
+      </figure>
     </div>
     <div
       className="detailItem disabled"
     >
-      <div
+      <figure
         className="Badge codeSchoolCardIcon"
       >
-        <figure
-          className="iconContainer"
+        <svg />
+        <figcaption
+          className="label"
         >
-          <svg />
-          <figcaption
-            className="label"
-          >
-            Housing
-          </figcaption>
-        </figure>
-      </div>
+          Housing
+        </figcaption>
+      </figure>
     </div>
   </div>
 </article>
@@ -302,56 +262,44 @@ exports[`Storyshots Cards/SchoolCard with one location 1`] = `
     <div
       className="detailItem disabled"
     >
-      <div
+      <figure
         className="Badge codeSchoolCardIcon"
       >
-        <figure
-          className="iconContainer"
+        <svg />
+        <figcaption
+          className="label"
         >
-          <svg />
-          <figcaption
-            className="label"
-          >
-            G.I Bill
-          </figcaption>
-        </figure>
-      </div>
+          G.I Bill
+        </figcaption>
+      </figure>
     </div>
     <div
       className="detailItem disabled"
     >
-      <div
+      <figure
         className="Badge codeSchoolCardIcon"
       >
-        <figure
-          className="iconContainer"
+        <svg />
+        <figcaption
+          className="label"
         >
-          <svg />
-          <figcaption
-            className="label"
-          >
-            Online
-          </figcaption>
-        </figure>
-      </div>
+          Online
+        </figcaption>
+      </figure>
     </div>
     <div
       className="detailItem active"
     >
-      <div
+      <figure
         className="Badge codeSchoolCardIcon"
       >
-        <figure
-          className="iconContainer"
+        <svg />
+        <figcaption
+          className="label"
         >
-          <svg />
-          <figcaption
-            className="label"
-          >
-            In-Person
-          </figcaption>
-        </figure>
-      </div>
+          In-Person
+        </figcaption>
+      </figure>
     </div>
   </div>
   <div
@@ -360,38 +308,30 @@ exports[`Storyshots Cards/SchoolCard with one location 1`] = `
     <div
       className="detailItem active"
     >
-      <div
+      <figure
         className="Badge codeSchoolCardIcon"
       >
-        <figure
-          className="iconContainer"
+        <svg />
+        <figcaption
+          className="label"
         >
-          <svg />
-          <figcaption
-            className="label"
-          >
-            Equipment
-          </figcaption>
-        </figure>
-      </div>
+          Equipment
+        </figcaption>
+      </figure>
     </div>
     <div
       className="detailItem disabled"
     >
-      <div
+      <figure
         className="Badge codeSchoolCardIcon"
       >
-        <figure
-          className="iconContainer"
+        <svg />
+        <figcaption
+          className="label"
         >
-          <svg />
-          <figcaption
-            className="label"
-          >
-            Housing
-          </figcaption>
-        </figure>
-      </div>
+          Housing
+        </figcaption>
+      </figure>
     </div>
   </div>
 </article>
