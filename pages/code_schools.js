@@ -7,7 +7,7 @@ import Section from 'components/_common_/Section/Section';
 import Button from 'components/_common_/Button/Button';
 import SchoolCard from 'components/Cards/SchoolCard/SchoolCard';
 import { s3 } from 'common/constants/urls';
-import States from 'pages/CodeSchools/States';
+import States from 'common/constants/dropdown-states-values';
 import styles from './styles/code_schools.css';
 
 export default class CodeSchools extends React.Component {
