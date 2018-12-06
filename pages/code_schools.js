@@ -14,6 +14,7 @@ export default class CodeSchools extends React.Component {
   state = {
     allSchools: [],
     filteredSchools: [],
+    selectedStates: [],
   };
 
   async componentDidMount() {
@@ -29,23 +30,27 @@ export default class CodeSchools extends React.Component {
       return vaFound;
     });
     this.setState({ filteredSchools: vaApproved });
+    this.setState({ selectedStates: [] });
   };
 
   filterOnline = () => {
     const { allSchools } = this.state;
     const onlineSchools = allSchools.filter(school => school.has_online);
     this.setState({ filteredSchools: onlineSchools });
+    this.setState({ selectedStates: [] });
   };
 
   filterMoocs = () => {
     const { allSchools } = this.state;
     const moocSchools = allSchools.filter(school => school.mooc);
     this.setState({ filteredSchools: moocSchools });
+    this.setState({ selectedStates: [] });
   };
 
   showAll = () => {
     const { allSchools } = this.state;
     this.setState({ filteredSchools: allSchools });
+    this.setState({ selectedStates: [] });
   };
 
   filterByState = selectedOptions => {
@@ -56,6 +61,7 @@ export default class CodeSchools extends React.Component {
       return stateLocatonFound;
     });
     this.setState({ filteredSchools: stateSchools });
+    this.setState({ selectedStates: selectedOptions });
   };
 
   render() {
@@ -128,16 +134,18 @@ export default class CodeSchools extends React.Component {
               </Button>
             </div>
           </div>
-
-          <Select
-            instanceId="state_select"
-            placeholder="Start typing a state..."
-            className={styles.select}
-            isMulti
-            name="States"
-            options={States}
-            onChange={this.filterByState}
-          />
+          <div className={styles.buttonWrapper}>
+            <Select
+              instanceId="state_select"
+              placeholder="Start typing a state..."
+              className={styles.select}
+              isMulti
+              name="States"
+              options={States}
+              onChange={this.filterByState}
+              value={state.selectedStates}
+            />
+          </div>
           <div className={styles.flexGrid}>
             {state.filteredSchools.map(school => (
               <div key={`${school.name}`}>
