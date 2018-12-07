@@ -1,12 +1,17 @@
-.flexGrid {
+.whatAreQuestionsSectionWrapper {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
+  align-items: top;
+  flex-wrap: wrap;
+}
+
+.whatAreQuestionsSectionWrapper > div {
+  margin: 2rem;
 }
 
 .select {
   min-width: 20rem;
-  width: 100%;
+  width: 90%;
   max-width: 50rem;
 }
 
@@ -15,27 +20,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 3rem;
+  margin: 1rem;
+  flex-wrap: wrap;
 }
 
-.filterButtons {
+.buttonWrapper > button {
+  margin: 1rem;
+}
+
+.schoolCardsWrapper {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
-}
-
-.filterButtons > button {
-  margin: 1rem;
-}
-
-.filterButtons > div {
-  margin: 1rem;
-}
-
-.whatAreQuestionsSection {
-  display: flex;
-}
-
-.whatAreQuestionsSection > div {
-  padding: 2rem;
 }

@@ -67,7 +67,7 @@ export default class CodeSchools extends React.Component {
           </p>
         </HeroBanner>
         <Section theme="gray" hasHeadingLines={false}>
-          <div className={styles.whatAreQuestionsSection}>
+          <div className={styles.whatAreQuestionsSectionWrapper}>
             <div>
               <h6>What Are Code Schools?</h6>
               <p>
@@ -88,37 +88,34 @@ export default class CodeSchools extends React.Component {
                 paying for premium aspects of MOOCs.
               </p>
             </div>
-            <div>
-              <aside style={{ textAlign: 'center' }}>
-                <h6>Would you like your school listed here?</h6>
-                <p>
-                  Please fill out our request form,{' '}
-                  <OutboundLink
-                    analyticsEventLabel="Code School Add Request"
-                    href="https://op.co.de/code-school-request"
-                  >
-                    here
-                  </OutboundLink>
-                  .
-                </p>
-              </aside>
-            </div>
+
+            <aside style={{ textAlign: 'center' }}>
+              <h6>Would you like your school listed here?</h6>
+              <p>
+                Please fill out our request form,{' '}
+                <OutboundLink
+                  analyticsEventLabel="Code School Add Request"
+                  href="https://op.co.de/code-school-request"
+                >
+                  here
+                </OutboundLink>
+                .
+              </p>
+            </aside>
           </div>
         </Section>
 
         <Section theme="gray" title="Schools" hasHeadingLines>
           <div className={styles.buttonWrapper}>
-            <div className={styles.filterButtons}>
-              <Button theme="primary" onClick={this.showAll}>
-                All Schools{' '}
-              </Button>
-              <Button theme="primary" onClick={this.filterVaApproved}>
-                VA Approved Schools{' '}
-              </Button>
-              <Button theme="primary" onClick={this.filterOnline}>
-                Online Schools{' '}
-              </Button>
-            </div>
+            <Button theme="primary" onClick={this.showAll}>
+              All Schools{' '}
+            </Button>
+            <Button theme="primary" onClick={this.filterVaApproved}>
+              VA Approved Schools{' '}
+            </Button>
+            <Button theme="primary" onClick={this.filterOnline}>
+              Online Schools{' '}
+            </Button>
           </div>
           <div className={styles.buttonWrapper}>
             <Select
@@ -132,7 +129,7 @@ export default class CodeSchools extends React.Component {
               value={state.selectedStates}
             />
           </div>
-          <div className={styles.flexGrid}>
+          <div className={styles.schoolCardsWrapper}>
             {state.filteredSchools.map(school => (
               <div key={`${school.name}`}>
                 <SchoolCard
