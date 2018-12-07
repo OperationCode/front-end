@@ -46,60 +46,40 @@ exports[`FrontSchoolCard should render with required props 1`] = `
   <div
     className="detailsRow"
   >
-    <div
-      className="detailItem active"
-    >
-      <Badge
-        className="codeSchoolCardIcon"
-        icon={<Svg />}
-        isImageFirst={true}
-        label="G.I Bill"
-      />
-    </div>
-    <div
-      className="detailItem active"
-    >
-      <Badge
-        className="codeSchoolCardIcon"
-        icon={<Svg />}
-        isImageFirst={true}
-        label="Online"
-      />
-    </div>
-    <div
-      className="detailItem active"
-    >
-      <Badge
-        className="codeSchoolCardIcon"
-        icon={<Svg />}
-        isImageFirst={true}
-        label="In-Person"
-      />
-    </div>
+    <Badge
+      className="codeSchoolCardIcon active"
+      icon={<Svg />}
+      isImageFirst={true}
+      label="G.I. Bill"
+    />
+    <Badge
+      className="codeSchoolCardIcon active"
+      icon={<Svg />}
+      isImageFirst={true}
+      label="Online"
+    />
+    <Badge
+      className="codeSchoolCardIcon active"
+      icon={<Svg />}
+      isImageFirst={true}
+      label="In-Person"
+    />
   </div>
   <div
     className="detailsRow"
   >
-    <div
-      className="detailItem active"
-    >
-      <Badge
-        className="codeSchoolCardIcon"
-        icon={<Svg />}
-        isImageFirst={true}
-        label="Equipment"
-      />
-    </div>
-    <div
-      className="detailItem active"
-    >
-      <Badge
-        className="codeSchoolCardIcon"
-        icon={<Svg />}
-        isImageFirst={true}
-        label="Housing"
-      />
-    </div>
+    <Badge
+      className="codeSchoolCardIcon active"
+      icon={<Svg />}
+      isImageFirst={true}
+      label="Equipment"
+    />
+    <Badge
+      className="codeSchoolCardIcon active"
+      icon={<Svg />}
+      isImageFirst={true}
+      label="Housing"
+    />
   </div>
 </React.Fragment>
 `;
