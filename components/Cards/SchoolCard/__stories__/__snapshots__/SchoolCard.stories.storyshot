@@ -37,100 +37,60 @@ exports[`Storyshots Cards/SchoolCard with many locations 1`] = `
   <div
     className="detailsRow"
   >
-    <div
-      className="detailItem active"
+    <figure
+      className="Badge codeSchoolCardIcon active"
     >
-      <div
-        className="Badge codeSchoolCardIcon"
+      <svg />
+      <figcaption
+        className="label"
       >
-        <figure
-          className="iconContainer"
-        >
-          <svg />
-          <figcaption
-            className="label"
-          >
-            G.I Bill
-          </figcaption>
-        </figure>
-      </div>
-    </div>
-    <div
-      className="detailItem active"
+        G.I. Bill
+      </figcaption>
+    </figure>
+    <figure
+      className="Badge codeSchoolCardIcon active"
     >
-      <div
-        className="Badge codeSchoolCardIcon"
+      <svg />
+      <figcaption
+        className="label"
       >
-        <figure
-          className="iconContainer"
-        >
-          <svg />
-          <figcaption
-            className="label"
-          >
-            Online
-          </figcaption>
-        </figure>
-      </div>
-    </div>
-    <div
-      className="detailItem active"
+        Online
+      </figcaption>
+    </figure>
+    <figure
+      className="Badge codeSchoolCardIcon active"
     >
-      <div
-        className="Badge codeSchoolCardIcon"
+      <svg />
+      <figcaption
+        className="label"
       >
-        <figure
-          className="iconContainer"
-        >
-          <svg />
-          <figcaption
-            className="label"
-          >
-            In-Person
-          </figcaption>
-        </figure>
-      </div>
-    </div>
+        In-Person
+      </figcaption>
+    </figure>
   </div>
   <div
     className="detailsRow"
   >
-    <div
-      className="detailItem disabled"
+    <figure
+      className="Badge codeSchoolCardIcon disabled"
     >
-      <div
-        className="Badge codeSchoolCardIcon"
+      <svg />
+      <figcaption
+        className="label"
       >
-        <figure
-          className="iconContainer"
-        >
-          <svg />
-          <figcaption
-            className="label"
-          >
-            Equipment
-          </figcaption>
-        </figure>
-      </div>
-    </div>
-    <div
-      className="detailItem disabled"
+        Equipment
+      </figcaption>
+    </figure>
+    <figure
+      className="Badge codeSchoolCardIcon disabled"
     >
-      <div
-        className="Badge codeSchoolCardIcon"
+      <svg />
+      <figcaption
+        className="label"
       >
-        <figure
-          className="iconContainer"
-        >
-          <svg />
-          <figcaption
-            className="label"
-          >
-            Housing
-          </figcaption>
-        </figure>
-      </div>
-    </div>
+        Housing
+      </figcaption>
+    </figure>
   </div>
 </article>
 `;
@@ -168,100 +128,60 @@ exports[`Storyshots Cards/SchoolCard with no physical locations 1`] = `
   <div
     className="detailsRow"
   >
-    <div
-      className="detailItem disabled"
+    <figure
+      className="Badge codeSchoolCardIcon disabled"
     >
-      <div
-        className="Badge codeSchoolCardIcon"
+      <svg />
+      <figcaption
+        className="label"
       >
-        <figure
-          className="iconContainer"
-        >
-          <svg />
-          <figcaption
-            className="label"
-          >
-            G.I Bill
-          </figcaption>
-        </figure>
-      </div>
-    </div>
-    <div
-      className="detailItem active"
+        G.I. Bill
+      </figcaption>
+    </figure>
+    <figure
+      className="Badge codeSchoolCardIcon active"
     >
-      <div
-        className="Badge codeSchoolCardIcon"
+      <svg />
+      <figcaption
+        className="label"
       >
-        <figure
-          className="iconContainer"
-        >
-          <svg />
-          <figcaption
-            className="label"
-          >
-            Online
-          </figcaption>
-        </figure>
-      </div>
-    </div>
-    <div
-      className="detailItem disabled"
+        Online
+      </figcaption>
+    </figure>
+    <figure
+      className="Badge codeSchoolCardIcon disabled"
     >
-      <div
-        className="Badge codeSchoolCardIcon"
+      <svg />
+      <figcaption
+        className="label"
       >
-        <figure
-          className="iconContainer"
-        >
-          <svg />
-          <figcaption
-            className="label"
-          >
-            In-Person
-          </figcaption>
-        </figure>
-      </div>
-    </div>
+        In-Person
+      </figcaption>
+    </figure>
   </div>
   <div
     className="detailsRow"
   >
-    <div
-      className="detailItem disabled"
+    <figure
+      className="Badge codeSchoolCardIcon disabled"
     >
-      <div
-        className="Badge codeSchoolCardIcon"
+      <svg />
+      <figcaption
+        className="label"
       >
-        <figure
-          className="iconContainer"
-        >
-          <svg />
-          <figcaption
-            className="label"
-          >
-            Equipment
-          </figcaption>
-        </figure>
-      </div>
-    </div>
-    <div
-      className="detailItem disabled"
+        Equipment
+      </figcaption>
+    </figure>
+    <figure
+      className="Badge codeSchoolCardIcon disabled"
     >
-      <div
-        className="Badge codeSchoolCardIcon"
+      <svg />
+      <figcaption
+        className="label"
       >
-        <figure
-          className="iconContainer"
-        >
-          <svg />
-          <figcaption
-            className="label"
-          >
-            Housing
-          </figcaption>
-        </figure>
-      </div>
-    </div>
+        Housing
+      </figcaption>
+    </figure>
   </div>
 </article>
 `;
@@ -299,100 +219,60 @@ exports[`Storyshots Cards/SchoolCard with one location 1`] = `
   <div
     className="detailsRow"
   >
-    <div
-      className="detailItem disabled"
+    <figure
+      className="Badge codeSchoolCardIcon disabled"
     >
-      <div
-        className="Badge codeSchoolCardIcon"
+      <svg />
+      <figcaption
+        className="label"
       >
-        <figure
-          className="iconContainer"
-        >
-          <svg />
-          <figcaption
-            className="label"
-          >
-            G.I Bill
-          </figcaption>
-        </figure>
-      </div>
-    </div>
-    <div
-      className="detailItem disabled"
+        G.I. Bill
+      </figcaption>
+    </figure>
+    <figure
+      className="Badge codeSchoolCardIcon disabled"
     >
-      <div
-        className="Badge codeSchoolCardIcon"
+      <svg />
+      <figcaption
+        className="label"
       >
-        <figure
-          className="iconContainer"
-        >
-          <svg />
-          <figcaption
-            className="label"
-          >
-            Online
-          </figcaption>
-        </figure>
-      </div>
-    </div>
-    <div
-      className="detailItem active"
+        Online
+      </figcaption>
+    </figure>
+    <figure
+      className="Badge codeSchoolCardIcon active"
     >
-      <div
-        className="Badge codeSchoolCardIcon"
+      <svg />
+      <figcaption
+        className="label"
       >
-        <figure
-          className="iconContainer"
-        >
-          <svg />
-          <figcaption
-            className="label"
-          >
-            In-Person
-          </figcaption>
-        </figure>
-      </div>
-    </div>
+        In-Person
+      </figcaption>
+    </figure>
   </div>
   <div
     className="detailsRow"
   >
-    <div
-      className="detailItem active"
+    <figure
+      className="Badge codeSchoolCardIcon active"
     >
-      <div
-        className="Badge codeSchoolCardIcon"
+      <svg />
+      <figcaption
+        className="label"
       >
-        <figure
-          className="iconContainer"
-        >
-          <svg />
-          <figcaption
-            className="label"
-          >
-            Equipment
-          </figcaption>
-        </figure>
-      </div>
-    </div>
-    <div
-      className="detailItem disabled"
+        Equipment
+      </figcaption>
+    </figure>
+    <figure
+      className="Badge codeSchoolCardIcon disabled"
     >
-      <div
-        className="Badge codeSchoolCardIcon"
+      <svg />
+      <figcaption
+        className="label"
       >
-        <figure
-          className="iconContainer"
-        >
-          <svg />
-          <figcaption
-            className="label"
-          >
-            Housing
-          </figcaption>
-        </figure>
-      </div>
-    </div>
+        Housing
+      </figcaption>
+    </figure>
   </div>
 </article>
 `;

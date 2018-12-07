@@ -35,6 +35,8 @@ export default class FrontSchoolCard extends Component {
   render() {
     const { props } = this;
 
+    const hasLocationAcceptingGIBill = props.locations.some(location => location.va_accepted);
+
     return (
       <>
         <h5>{props.name}</h5>
@@ -67,65 +69,56 @@ export default class FrontSchoolCard extends Component {
 
         <div className={styles.detailsRow}>
           {/* GI Bill */}
-          {props.locations.some(location => location.va_accepted) ? (
-            <div className={`${styles.detailItem} ${styles.active}`}>
-              <Badge
-                label="G.I Bill"
-                className={styles.codeSchoolCardIcon}
-                icon={<GIBillApprovedIcon />}
-              />
-            </div>
-          ) : (
-            <div className={`${styles.detailItem} ${styles.disabled}`}>
-              <Badge
-                label="G.I Bill"
-                className={styles.codeSchoolCardIcon}
-                icon={<GIBillUnavailableIcon />}
-              />
-            </div>
-          )}
+          <Badge
+            label="G.I. Bill"
+            className={classNames(styles.codeSchoolCardIcon, {
+              [styles.active]: hasLocationAcceptingGIBill,
+              [styles.disabled]: !hasLocationAcceptingGIBill,
+            })}
+            icon={hasLocationAcceptingGIBill ? <GIBillApprovedIcon /> : <GIBillUnavailableIcon />}
+          />
 
           {/* Online Education */}
-          <div
-            className={classNames(styles.detailItem, {
+          <Badge
+            label="Online"
+            className={classNames(styles.codeSchoolCardIcon, {
               [styles.active]: props.hasOnline,
               [styles.disabled]: !props.hasOnline,
             })}
-          >
-            <Badge label="Online" className={styles.codeSchoolCardIcon} icon={<DesktopIcon />} />
-          </div>
+            icon={<DesktopIcon />}
+          />
 
           {/* In-Person Education */}
-          <div
-            className={classNames(styles.detailItem, {
+          <Badge
+            label="In-Person"
+            className={classNames(styles.codeSchoolCardIcon, {
               [styles.active]: props.isFullTime,
               [styles.disabled]: !props.isFullTime,
             })}
-          >
-            <Badge label="In-Person" className={styles.codeSchoolCardIcon} icon={<PeopleIcon />} />
-          </div>
+            icon={<PeopleIcon />}
+          />
         </div>
 
         <div className={styles.detailsRow}>
           {/* Equipment Provided */}
-          <div
-            className={classNames(styles.detailItem, {
+          <Badge
+            label="Equipment"
+            className={classNames(styles.codeSchoolCardIcon, {
               [styles.active]: props.hasHardwareIncluded,
               [styles.disabled]: !props.hasHardwareIncluded,
             })}
-          >
-            <Badge label="Equipment" className={styles.codeSchoolCardIcon} icon={<DevicesIcon />} />
-          </div>
+            icon={<DevicesIcon />}
+          />
 
           {/* Housing Provided */}
-          <div
-            className={classNames(styles.detailItem, {
+          <Badge
+            label="Housing"
+            className={classNames(styles.codeSchoolCardIcon, {
               [styles.active]: props.hasHousing,
               [styles.disabled]: !props.hasHousing,
             })}
-          >
-            <Badge label="Housing" className={styles.codeSchoolCardIcon} icon={<HomeIcon />} />
-          </div>
+            icon={<HomeIcon />}
+          />
         </div>
       </>
     );
