@@ -2,15 +2,14 @@ import React from 'react';
 import classNames from 'classnames';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { donateLink, s3 } from 'common/constants/urls';
 import { navItems } from 'common/constants/navigation';
 import NavListItem from 'components/Nav/NavListItem/NavListItem';
 import NavMobile from 'components/Nav/NavMobile/NavMobile';
 import styles from './Nav.css';
 
-function Nav(props) {
-  const { isXs } = props;
-
+export const Nav = ({ isXs }) => {
   if (isXs) {
     return <NavMobile />;
   }
@@ -47,10 +46,10 @@ function Nav(props) {
       </div>
     </header>
   );
-}
+};
 
 Nav.propTypes = {
   isXs: PropTypes.bool.isRequired,
 };
 
-export default Nav;
+export default connect(state => ({ isXs: state.screenSize.isXs }))(Nav);

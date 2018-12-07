@@ -4,83 +4,67 @@ import { donateLink, s3 } from 'common/constants/urls';
 import { navItems } from 'common/constants/navigation';
 import flattenDepth from 'lodash/flattenDepth';
 import HamburgerIcon from 'static/images/icons/hamburger.svg';
+import CloseButton from 'components/_common_/CloseButton/CloseButton';
 import styles from './NavMobile.css';
 
 export default class NavMobile extends Component {
-  constructor(props) {
-    super(props);
-    this.handleOnClick = this.handleOnClick.bind(this);
-    this.handleMouseLeave = this.handleMouseLeave.bind(this);
-    this.handleKeyPress = this.handleKeyPress.bind(this);
-  }
-
   state = {
-    dropdownShow: false,
+    isDropDownVisible: false,
   };
 
-  // flattens navItems
-  links = () => flattenDepth(navItems.map(navItem => [navItem, navItem.sublinks]), 2);
+  toggleDropdown = () =>
+    this.setState(prevState => ({ isDropDownVisible: !prevState.isDropDownVisible }));
 
-  toggleDropdown() {
-    this.setState(prevState => ({ dropdownShow: !prevState.dropdownShow }));
-  }
-
-  handleOnClick() {
-    this.toggleDropdown();
-  }
-
-  handleMouseLeave() {
-    this.toggleDropdown();
-  }
-
-  handleKeyPress(e) {
-    if (e.key === 'Enter') {
-      this.toggleDropdown();
-    }
-  }
+  handleOnClick = () => this.toggleDropdown();
 
   render() {
-    const { state, handleOnClick, handleMouseLeave, handleKeyPress, links } = this;
-    const { dropdownShow } = state;
+    const { state } = this;
+    const { isDropDownVisible } = state;
+    const links = flattenDepth(navItems.map(navItem => [navItem, navItem.sublinks]), 2);
 
     return (
-      <header>
-        <div className={styles.NavMobile}>
-          <Link href="/">
-            <img
-              src={`${s3}branding/logos/small-blue-logo.png`}
-              alt="operation code logo"
-              className={styles.logo}
-            />
-          </Link>
-
-          <HamburgerIcon
-            className={styles.icon}
-            onClick={handleOnClick}
-            onKeyPress={handleKeyPress}
-            role="button"
-            tabIndex={0}
+      <header className={styles.NavMobile}>
+        <Link href="/">
+          <img
+            src={`${s3}branding/logos/small-blue-logo.png`}
+            alt="Operation Code Logo"
+            className={styles.logo}
           />
+        </Link>
 
-          {dropdownShow && (
-            <div className={styles.dropdown} onMouseLeave={handleMouseLeave}>
-              <ul className={styles.ul}>
-                {links().map(navlink => (
-                  <li className={styles.li} key={navlink.name}>
-                    <Link href={navlink.href}>
-                      <a className={styles.a}>{navlink.name}</a>
-                    </Link>
-                  </li>
-                ))}
-                <li className={styles.li}>
-                  <Link href={donateLink}>
-                    <a className={styles.a}>Donate</a>
+        <button
+          className={styles.hamburgerButtonWrapper}
+          type="button"
+          name="dropdown"
+          onClick={this.handleOnClick}
+        >
+          <HamburgerIcon className={styles.hamburgerIcon} />
+        </button>
+
+        {isDropDownVisible && (
+          <div className={styles.dropdown}>
+            <CloseButton onClick={this.handleOnClick} theme="white" />
+            <ul className={styles.ul}>
+              <li className={styles.li}>
+                <Link href="/">
+                  <a className={styles.a}>Home</a>
+                </Link>
+              </li>
+              {links.map(navlink => (
+                <li className={styles.li} key={navlink.name}>
+                  <Link href={navlink.href}>
+                    <a className={styles.a}>{navlink.name}</a>
                   </Link>
                 </li>
-              </ul>
-            </div>
-          )}
-        </div>
+              ))}
+              <li className={styles.li}>
+                <Link href={donateLink}>
+                  <a className={styles.a}>Donate</a>
+                </Link>
+              </li>
+            </ul>
+          </div>
+        )}
       </header>
     );
   }

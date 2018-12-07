@@ -15,26 +15,45 @@
   cursor: pointer;
 }
 
-.icon {
+.hamburgerButtonWrapper {
   position: absolute;
   width: 35px;
   top: 16px;
   right: 2rem;
   cursor: pointer;
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+.hamburgerIcon {
+  width: 35px;
+}
+
+.checkButtonWrapper {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+.checkIcon {
+  width: 35px;
 }
 
 .dropdown {
   position: absolute;
-  top: var(--navBarHeight);
-  right: 0;
-  background-color: var(--gray);
-  width: auto;
+  left: 0;
+  background: rgba(37, 46, 62, 0.97);
+  width: 95%;
+  height: auto;
+  z-index: 100;
 }
 
 .ul {
-  columns: 3;
-  -webkit-columns: 3;
-  -moz-columns: 3;
   padding: 15px;
   margin: 0;
   list-style: none;
@@ -42,18 +61,26 @@
 }
 
 .li {
-  padding: 20px 10px;
+  padding: 10px;
+}
+
+.li:first-child {
+  padding-top: 30px;
+}
+
+.li:last-child {
+  padding-bottom: 40px;
 }
 
 .a {
   text-decoration: none;
-  color: var(--secondary);
-  fill: var(--secondary);
+  color: var(--white);
+  fill: var(--white);
   transition: all 0.2s linear;
   font-weight: bolder;
-  display: block;
+  font-size: 1.7rem;
+  display: inline-block;
   height: 34px;
-  text-align: center;
 }
 
 .a:hover {

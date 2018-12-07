@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import createShallowSnapshotTest from 'test-utils/createShallowSnapshotTest';
 
 import NavMobile from '../NavMobile/NavMobile';
-import Nav from '../Nav';
+import { Nav } from '../Nav';
 
 describe('Nav', () => {
   const smallScreen = { isXs: true };

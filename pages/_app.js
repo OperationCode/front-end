@@ -7,7 +7,7 @@ import debounce from 'lodash/debounce';
 import { initStore } from 'store/store';
 import { screenResize } from 'store/screenSize/actions';
 import breakpoints from 'common/styles/breakpoints';
-import DisplayNav from 'components/Containers/DisplayNav';
+import Nav from 'components/Nav/Nav';
 import Footer from 'components/Footer/Footer';
 import 'common/styles/globalStyles.css';
 import withFonts from '../decorators/withFonts/withFonts';
@@ -20,7 +20,7 @@ class Layout extends React.Component {
 
     return (
       <>
-        <DisplayNav />
+        <Nav />
         <main>{children}</main>
         <Footer />
         <ScrollUpButton />
