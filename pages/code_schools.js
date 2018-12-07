@@ -19,38 +19,32 @@ export default class CodeSchools extends React.Component {
 
   async componentDidMount() {
     const { data } = await getCodeSchoolsPromise();
-    this.setState({ allSchools: data });
-    this.setState({ filteredSchools: data });
+    this.setState({ allSchools: data, filteredSchools: data });
   }
 
   filterVaApproved = () => {
     const { allSchools } = this.state;
-    const vaApproved = allSchools.filter(school => {
-      const vaFound = school.locations.some(location => location.va_accepted === true);
-      return vaFound;
-    });
-    this.setState({ filteredSchools: vaApproved });
-    this.setState({ selectedStates: [] });
+    const vaApproved = allSchools.filter(school =>
+      school.locations.some(location => location.va_accepted === true),
+    );
+    this.setState({ filteredSchools: vaApproved, selectedStates: [] });
   };
 
   filterOnline = () => {
     const { allSchools } = this.state;
     const onlineSchools = allSchools.filter(school => school.has_online);
-    this.setState({ filteredSchools: onlineSchools });
-    this.setState({ selectedStates: [] });
+    this.setState({ filteredSchools: onlineSchools, selectedStates: [] });
   };
 
   filterMoocs = () => {
     const { allSchools } = this.state;
     const moocSchools = allSchools.filter(school => school.mooc);
-    this.setState({ filteredSchools: moocSchools });
-    this.setState({ selectedStates: [] });
+    this.setState({ filteredSchools: moocSchools, selectedStates: [] });
   };
 
   showAll = () => {
     const { allSchools } = this.state;
-    this.setState({ filteredSchools: allSchools });
-    this.setState({ selectedStates: [] });
+    this.setState({ filteredSchools: allSchools, selectedStates: [] });
   };
 
   filterByState = selectedOptions => {
@@ -60,8 +54,7 @@ export default class CodeSchools extends React.Component {
       const stateLocatonFound = school.locations.some(location => states.includes(location.state));
       return stateLocatonFound;
     });
-    this.setState({ filteredSchools: stateSchools });
-    this.setState({ selectedStates: selectedOptions });
+    this.setState({ filteredSchools: stateSchools, selectedStates: [] });
   };
 
   render() {
