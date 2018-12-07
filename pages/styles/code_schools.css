@@ -5,19 +5,9 @@
 }
 
 .select {
-  min-width: 300px;
+  min-width: 20rem;
   width: 100%;
-  max-width: 900px;
-}
-
-@media screen and (-webkit-min-device-pixel-ratio: 0) {
-  .select input {
-    font-size: 16px !important;
-  }
-
-  .select input:focus {
-    font-size: 16px !important;
-  }
+  max-width: 50rem;
 }
 
 .buttonWrapper {
@@ -35,12 +25,11 @@
 }
 
 .filterButtons > button {
-  margin: 5px;
+  margin: 1rem;
 }
 
 .filterButtons > div {
-  padding-top: 5px;
-  margin: 5px;
+  margin: 1rem;
 }
 
 .whatAreQuestionsSection {

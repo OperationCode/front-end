@@ -14,18 +14,21 @@ export default class CodeSchools extends React.Component {
   state = {
     allSchools: [],
     filteredSchools: [],
+    moocSchools: [],
     selectedStates: [],
   };
 
   async componentDidMount() {
     const { data } = await getCodeSchoolsPromise();
-    this.setState({ allSchools: data, filteredSchools: data });
+    // should be school.mooc, using school.has_online for testing
+    const moocs = data.filter(school => school.has_online);
+    this.setState({ allSchools: data, filteredSchools: data, moocSchools: moocs });
   }
 
   filterVaApproved = () => {
     const { allSchools } = this.state;
     const vaApproved = allSchools.filter(school =>
-      school.locations.some(location => location.va_accepted === true),
+      school.locations.some(location => location.va_accepted),
     );
     this.setState({ filteredSchools: vaApproved, selectedStates: [] });
   };
@@ -36,12 +39,6 @@ export default class CodeSchools extends React.Component {
     this.setState({ filteredSchools: onlineSchools, selectedStates: [] });
   };
 
-  filterMoocs = () => {
-    const { allSchools } = this.state;
-    const moocSchools = allSchools.filter(school => school.mooc);
-    this.setState({ filteredSchools: moocSchools, selectedStates: [] });
-  };
-
   showAll = () => {
     const { allSchools } = this.state;
     this.setState({ filteredSchools: allSchools, selectedStates: [] });
@@ -50,11 +47,10 @@ export default class CodeSchools extends React.Component {
   filterByState = selectedOptions => {
     const { allSchools } = this.state;
     const states = selectedOptions.map(state => state.value);
-    const stateSchools = allSchools.filter(school => {
-      const stateLocatonFound = school.locations.some(location => states.includes(location.state));
-      return stateLocatonFound;
-    });
-    this.setState({ filteredSchools: stateSchools, selectedStates: [] });
+    const stateSchools = allSchools.filter(school =>
+      school.locations.some(location => states.includes(location.state)),
+    );
+    this.setState({ filteredSchools: stateSchools, selectedStates: selectedOptions });
   };
 
   render() {
@@ -122,9 +118,6 @@ export default class CodeSchools extends React.Component {
               <Button theme="primary" onClick={this.filterOnline}>
                 Online Schools{' '}
               </Button>
-              <Button theme="primary" onClick={this.filterMoocs}>
-                Mooc Schools{' '}
-              </Button>
             </div>
           </div>
           <div className={styles.buttonWrapper}>
@@ -160,6 +153,11 @@ export default class CodeSchools extends React.Component {
               </div>
             ))}
           </div>
+        </Section>
+        <Section theme="gray" title="Mooc Schools" hasHeadingLines>
+          {state.moocSchools.map(mooc => (
+            <div key={mooc.url}>{mooc.name}</div>
+          ))}
         </Section>
       </>
     );
