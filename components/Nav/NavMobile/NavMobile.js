@@ -32,7 +32,7 @@ export default class NavMobile extends Component {
         </Link>
 
         <button
-          className={styles.hamburgerButtonWrapper}
+          className={styles.hamburgerButton}
           type="button"
           name="dropdown"
           onClick={this.openDropDown}

@@ -15,7 +15,7 @@
   cursor: pointer;
 }
 
-.hamburgerButtonWrapper {
+.hamburgerButton {
   position: absolute;
   width: 35px;
   top: 16px;

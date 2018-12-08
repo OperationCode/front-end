@@ -17,7 +17,7 @@ describe('NavMobile', () => {
   it('dropdown is visible with hamburger button click', () => {
     const wrapper = shallow(<NavMobile />);
 
-    wrapper.find('.hamburgerButtonWrapper').simulate('click');
+    wrapper.find('.hamburgerButton').simulate('click');
 
     expect(wrapper.find('ul')).toExist();
   });
@@ -33,7 +33,7 @@ describe('NavMobile', () => {
   it('visible dropdown dissappears on close button click', () => {
     const wrapper = shallow(<NavMobile />);
 
-    wrapper.find('.hamburgerButtonWrapper').simulate('click');
+    wrapper.find('.hamburgerButton').simulate('click');
     expect(wrapper.find('ul')).toExist();
     wrapper.find(CloseButton).simulate('click');
 

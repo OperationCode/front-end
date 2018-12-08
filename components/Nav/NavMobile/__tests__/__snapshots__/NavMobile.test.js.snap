@@ -14,7 +14,7 @@ exports[`NavMobile should render 1`] = `
     />
   </Link>
   <button
-    className="hamburgerButtonWrapper"
+    className="hamburgerButton"
     name="dropdown"
     onClick={[Function]}
     type="button"
