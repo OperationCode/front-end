@@ -2,7 +2,7 @@ export default {
   screenSize: {
     width: null,
     height: null,
-    isXs: true,
+    isXs: null,
     isSm: null,
     isMd: null,
     isLg: null,

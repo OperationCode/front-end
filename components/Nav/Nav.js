@@ -49,7 +49,11 @@ export const Nav = ({ isXs }) => {
 };
 
 Nav.propTypes = {
-  isXs: PropTypes.bool.isRequired,
+  isXs: PropTypes.bool,
+};
+
+Nav.defaultProps = {
+  isXs: true,
 };
 
 export default connect(state => ({ isXs: state.screenSize.isXs }))(Nav);

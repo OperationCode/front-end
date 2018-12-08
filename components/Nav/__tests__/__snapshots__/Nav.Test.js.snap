@@ -1,6 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Nav should render with required props passed 1`] = `
+exports[`Nav should render with no props passed 1`] = `<NavMobile />`;
+
+exports[`Nav should render with props passed 1`] = `
 <header
   className="header"
 >
