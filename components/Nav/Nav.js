@@ -1,12 +1,19 @@
 import React from 'react';
 import classNames from 'classnames';
 import Link from 'next/link';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { donateLink, s3 } from 'common/constants/urls';
 import { navItems } from 'common/constants/navigation';
 import NavListItem from 'components/Nav/NavListItem/NavListItem';
+import NavMobile from 'components/Nav/NavMobile/NavMobile';
 import styles from './Nav.css';
 
-function Nav() {
+export const Nav = ({ isXs }) => {
+  if (isXs) {
+    return <NavMobile />;
+  }
+
   return (
     <header className={styles.header}>
       <div className={styles.navContainer}>
@@ -39,6 +46,14 @@ function Nav() {
       </div>
     </header>
   );
-}
+};
 
-export default Nav;
+Nav.propTypes = {
+  isXs: PropTypes.bool,
+};
+
+Nav.defaultProps = {
+  isXs: true,
+};
+
+export default connect(state => ({ isXs: state.screenSize.isXs }))(Nav);
