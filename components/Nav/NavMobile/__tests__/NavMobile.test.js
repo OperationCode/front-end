@@ -20,4 +20,16 @@ describe('NavMobile', () => {
 
     expect(wrapper.find('ul')).toExist();
   });
+
+  it('should hide nav items list after close button is pressed', () => {
+    const wrapper = shallow(<NavMobile />);
+
+    wrapper.setState({ isDropDownVisible: true });
+    wrapper.update();
+
+    expect(wrapper.find('ul')).toExist();
+
+    wrapper.find('CloseButton').simulate('click');
+    expect(wrapper.find('ul')).not.toExist();
+  });
 });
