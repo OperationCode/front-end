@@ -12,14 +12,13 @@ export default class NavMobile extends Component {
     isDropDownVisible: false,
   };
 
-  toggleDropdown = () =>
-    this.setState(prevState => ({ isDropDownVisible: !prevState.isDropDownVisible }));
+  openDropDown = () => this.setState({ isDropDownVisible: true });
 
-  handleOnClick = () => this.toggleDropdown();
+  closeDropDown = () => this.setState({ isDropDownVisible: false });
 
   render() {
-    const { state } = this;
-    const { isDropDownVisible } = state;
+    const { isDropDownVisible } = this.state;
+
     const links = flattenDepth(navItems.map(navItem => [navItem, navItem.sublinks]), 2);
 
     return (
@@ -36,14 +35,15 @@ export default class NavMobile extends Component {
           className={styles.hamburgerButtonWrapper}
           type="button"
           name="dropdown"
-          onClick={this.handleOnClick}
+          onClick={this.openDropDown}
         >
           <HamburgerIcon className={styles.hamburgerIcon} />
         </button>
 
         {isDropDownVisible && (
           <div className={styles.dropdown}>
-            <CloseButton onClick={this.handleOnClick} theme="white" />
+            <CloseButton onClick={this.closeDropDown} theme="white" />
+
             <ul className={styles.ul}>
               <li className={styles.li}>
                 <Link href="/">
