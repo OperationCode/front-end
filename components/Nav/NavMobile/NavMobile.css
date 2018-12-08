@@ -1,0 +1,91 @@
+.NavMobile {
+  display: flex;
+  position: absolute;
+  background-color: var(--gray);
+  height: var(--navBarHeight);
+  width: 100%;
+}
+
+.logo {
+  position: relative;
+  max-height: 50%;
+  max-width: 50%;
+  top: 16.25px;
+  left: 2rem;
+  cursor: pointer;
+}
+
+.hamburgerButton {
+  position: absolute;
+  width: 35px;
+  top: 16px;
+  right: 2rem;
+  cursor: pointer;
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+.hamburgerIcon {
+  width: 35px;
+}
+
+.checkButtonWrapper {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+.checkIcon {
+  width: 35px;
+}
+
+.dropdown {
+  position: absolute;
+  left: 0;
+  background: rgba(37, 46, 62, 0.97);
+  width: 95%;
+  height: auto;
+  z-index: 100;
+}
+
+.ul {
+  padding: 15px;
+  margin: 0;
+  list-style: none;
+  font-size: 14px;
+}
+
+.li {
+  padding: 10px;
+}
+
+.li:first-child {
+  padding-top: 30px;
+}
+
+.li:last-child {
+  padding-bottom: 40px;
+}
+
+.a {
+  text-decoration: none;
+  color: var(--white);
+  fill: var(--white);
+  transition: all 0.2s linear;
+  font-weight: bolder;
+  font-size: 1.7rem;
+  display: inline-block;
+  height: 34px;
+}
+
+.a:hover {
+  cursor: pointer;
+  color: var(--primary);
+  fill: var(--primary);
+  transition: all 0.2s linear;
+}
