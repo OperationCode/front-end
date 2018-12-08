@@ -21,6 +21,6 @@ describe('Nav', () => {
   // make more specific than relying on presence of nav
   it('should render the regular navigation bar when screen size is not Xs', () => {
     const wrapper = shallow(<Nav {...largerScreen} />);
-    expect(wrapper.find('nav')).toExist();
+    expect(wrapper.find(NavMobile)).not.toExist();
   });
 });

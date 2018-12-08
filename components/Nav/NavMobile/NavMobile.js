@@ -41,7 +41,7 @@ export default class NavMobile extends Component {
         </button>
 
         {isDropDownVisible && (
-          <div className={styles.dropdown}>
+          <nav className={styles.dropdown}>
             <CloseButton onClick={this.closeDropDown} theme="white" />
 
             <ul className={styles.ul}>
@@ -63,7 +63,7 @@ export default class NavMobile extends Component {
                 </Link>
               </li>
             </ul>
-          </div>
+          </nav>
         )}
       </header>
     );
