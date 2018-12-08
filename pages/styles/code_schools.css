@@ -6,7 +6,7 @@
 }
 
 .whatAreQuestionsSectionWrapper > div {
-  margin: 2rem;
+  margin: 1rem;
 }
 
 .select {
@@ -32,4 +32,11 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.moocCardsWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }

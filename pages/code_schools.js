@@ -6,6 +6,7 @@ import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
 import Section from 'components/_common_/Section/Section';
 import Button from 'components/_common_/Button/Button';
 import SchoolCard from 'components/Cards/SchoolCard/SchoolCard';
+import SuccessStory from 'components/SuccessStory/SuccessStory';
 import { s3 } from 'common/constants/urls';
 import States from 'common/constants/dropdown-states-values';
 import styles from './styles/code_schools.css';
@@ -52,6 +53,12 @@ export default class CodeSchools extends React.Component {
     );
     this.setState({ filteredSchools: stateSchools, selectedStates: selectedOptions });
   };
+
+  prepUrl = name => `${s3}codeSchoolLogos/${name
+      .trim()
+      .split(' ')
+      .join('_')
+      .toLowerCase()}.jpg`;
 
   render() {
     const { state } = this;
@@ -139,11 +146,7 @@ export default class CodeSchools extends React.Component {
                   hasOnlyOnline={school.online_only}
                   isFullTime={school.full_time}
                   locations={school.locations}
-                  logoSource={`${s3}codeSchoolLogos/${school.name
-                    .trim()
-                    .split(' ')
-                    .join('_')
-                    .toLowerCase()}.jpg`}
+                  logoSource={this.prepUrl(school.name)}
                   name={school.name}
                   website={school.url}
                 />
@@ -152,9 +155,16 @@ export default class CodeSchools extends React.Component {
           </div>
         </Section>
         <Section theme="gray" title="Mooc Schools" hasHeadingLines>
-          {state.moocSchools.map(mooc => (
-            <div key={mooc.url}>{mooc.name}</div>
-          ))}
+          <div className={styles.moocCardsWrapper}>
+            {state.moocSchools.map(mooc => (
+              <SuccessStory
+                key={mooc.name}
+                imageSource={this.prepUrl(mooc.name)}
+                title={mooc.name}
+                quote={mooc.url}
+              />
+            ))}
+          </div>
         </Section>
       </>
     );
