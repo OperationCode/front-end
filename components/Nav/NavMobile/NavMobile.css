@@ -1,0 +1,79 @@
+.NavMobile {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--white);
+  height: var(--navBarHeight);
+  width: 100%;
+
+  --gutterWidth: 2rem;
+}
+
+.logoLink {
+  margin-left: var(--gutterWidth);
+  max-width: 50%;
+  max-height: calc(var(--navBarHeight) - 1rem);
+}
+
+.logo {
+  max-width: 100%;
+  max-height: calc(var(--navBarHeight) - 1rem);
+  vertical-align: middle;
+}
+
+.hamburgerButton {
+  margin-right: var(--gutterWidth);
+  border: none;
+  background: none;
+}
+
+.hamburgerButton:hover {
+  cursor: pointer;
+}
+
+.hamburgerIcon {
+  width: 35px;
+}
+
+.dropdown {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: rgba(37, 46, 62, 0.97);
+  width: 97.5%;
+  height: 100vh;
+  z-index: 10;
+}
+
+.ul {
+  padding: 1rem;
+  margin: 0;
+  list-style: none;
+  font-size: 1.5rem;
+  overflow-y: auto;
+}
+
+.li {
+  padding: 1rem;
+}
+
+.li:first-child {
+  padding-top: 2rem;
+}
+
+.li:last-child {
+  padding-bottom: 3rem;
+}
+
+.a {
+  color: var(--white);
+  fill: var(--white);
+  transition: color 0.2s linear, fill 0.2s linear;
+}
+
+.a:hover {
+  color: var(--primary);
+  fill: var(--primary);
+  transition: color 0.2s linear, fill 0.2s linear;
+}
