@@ -1,7 +1,7 @@
 .NavMobile {
   display: flex;
   position: absolute;
-  background-color: var(--gray);
+  background-color: var(--white);
   height: var(--navBarHeight);
   width: 100%;
 }
