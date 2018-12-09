@@ -28,6 +28,10 @@
   background: none;
 }
 
+.hamburgerButton:hover {
+  cursor: pointer;
+}
+
 .hamburgerIcon {
   width: 35px;
 }
@@ -37,7 +41,7 @@
   left: 0;
   top: 0;
   background: rgba(37, 46, 62, 0.97);
-  width: 95%;
+  width: 97.5%;
   height: 100vh;
   z-index: 10;
 }
