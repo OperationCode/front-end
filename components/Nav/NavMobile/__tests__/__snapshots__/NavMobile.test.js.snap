@@ -7,11 +7,15 @@ exports[`NavMobile should render 1`] = `
   <Link
     href="/"
   >
-    <img
-      alt="Operation Code Logo"
-      className="logo"
-      src="https://s3.amazonaws.com/operationcode-assets/branding/logos/small-blue-logo.png"
-    />
+    <a
+      className="logoLink"
+    >
+      <img
+        alt="Operation Code Logo"
+        className="logo"
+        src="https://s3.amazonaws.com/operationcode-assets/branding/logos/small-blue-logo.png"
+      />
+    </a>
   </Link>
   <button
     className="hamburgerButton"

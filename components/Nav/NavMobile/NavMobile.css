@@ -1,91 +1,79 @@
 .NavMobile {
+  position: fixed;
   display: flex;
-  position: absolute;
-  background-color: var(--gray);
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--white);
   height: var(--navBarHeight);
   width: 100%;
+
+  --gutterWidth: 2rem;
+}
+
+.logoLink {
+  margin-left: var(--gutterWidth);
+  max-width: 50%;
+  max-height: calc(var(--navBarHeight) - 1rem);
 }
 
 .logo {
-  position: relative;
-  max-height: 50%;
-  max-width: 50%;
-  top: 16.25px;
-  left: 2rem;
-  cursor: pointer;
+  max-width: 100%;
+  max-height: calc(var(--navBarHeight) - 1rem);
+  vertical-align: middle;
 }
 
 .hamburgerButton {
-  position: absolute;
-  width: 35px;
-  top: 16px;
-  right: 2rem;
-  cursor: pointer;
-  padding: 0;
+  margin-right: var(--gutterWidth);
   border: none;
   background: none;
+}
+
+.hamburgerButton:hover {
+  cursor: pointer;
 }
 
 .hamburgerIcon {
   width: 35px;
 }
 
-.checkButtonWrapper {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  cursor: pointer;
-  padding: 0;
-  border: none;
-  background: none;
-}
-
-.checkIcon {
-  width: 35px;
-}
-
 .dropdown {
   position: absolute;
   left: 0;
+  top: 0;
   background: rgba(37, 46, 62, 0.97);
-  width: 95%;
-  height: auto;
-  z-index: 100;
+  width: 97.5%;
+  height: 100vh;
+  z-index: 10;
 }
 
 .ul {
-  padding: 15px;
+  padding: 1rem;
   margin: 0;
   list-style: none;
-  font-size: 14px;
+  font-size: 1.5rem;
+  overflow-y: auto;
 }
 
 .li {
-  padding: 10px;
+  padding: 1rem;
 }
 
 .li:first-child {
-  padding-top: 30px;
+  padding-top: 2rem;
 }
 
 .li:last-child {
-  padding-bottom: 40px;
+  padding-bottom: 3rem;
 }
 
 .a {
-  text-decoration: none;
   color: var(--white);
   fill: var(--white);
-  transition: all 0.2s linear;
-  font-weight: bolder;
-  font-size: 1.7rem;
-  display: inline-block;
-  height: 34px;
+  transition: color 0.2s linear, fill 0.2s linear;
 }
 
 .a:hover {
-  cursor: pointer;
   color: var(--primary);
   fill: var(--primary);
-  transition: all 0.2s linear;
+  transition: color 0.2s linear, fill 0.2s linear;
 }
