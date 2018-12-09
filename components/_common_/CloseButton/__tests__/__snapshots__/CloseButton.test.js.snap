@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CloseButton should render with just required props passed 1`] = `
+<button
+  className="CloseButton"
+  disabled={false}
+  onClick={[MockFunction]}
+  type="button"
+>
+  <span
+    className="ScreenReaderOnly"
+  >
+    Close
+  </span>
+  <svg
+    className="icon secondary"
+  />
+</button>
+`;

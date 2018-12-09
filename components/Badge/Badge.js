@@ -20,19 +20,19 @@ Badge.defaultProps = {
 
 function Badge({ className, icon, isImageFirst, label }) {
   return (
-    <div className={classNames(styles.Badge, className)}>
+    <figure className={classNames(styles.Badge, className)}>
       {isImageFirst ? (
         <>
-          <div className={styles.iconContainer}>{icon}</div>
-          <span className={styles.label}>{label}</span>
+          {icon}
+          <figcaption className={styles.label}>{label}</figcaption>
         </>
       ) : (
         <>
-          <span className={styles.label}>{label}</span>
-          <div className={styles.iconContainer}>{icon}</div>
+          <figcaption className={styles.label}>{label}</figcaption>
+          {icon}
         </>
       )}
-    </div>
+    </figure>
   );
 }
 

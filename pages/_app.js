@@ -1,5 +1,6 @@
 import App, { Container } from 'next/app';
 import { Provider } from 'react-redux';
+import { compose } from 'redux';
 import ScrollUpButton from 'react-scroll-up-button';
 import withRedux from 'next-redux-wrapper';
 import debounce from 'lodash/debounce';
@@ -9,6 +10,7 @@ import breakpoints from 'common/styles/breakpoints';
 import Nav from 'components/Nav/Nav';
 import Footer from 'components/Footer/Footer';
 import 'common/styles/globalStyles.css';
+import withFonts from '../decorators/withFonts/withFonts';
 
 // eslint-disable-next-line react/prefer-stateless-function
 class Layout extends React.Component {
@@ -73,4 +75,7 @@ class OperationCodeApp extends App {
   }
 }
 
-export default withRedux(initStore)(OperationCodeApp);
+export default compose(
+  withFonts,
+  withRedux(initStore),
+)(OperationCodeApp);
