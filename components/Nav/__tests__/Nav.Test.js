@@ -6,9 +6,9 @@ import NavMobile from '../NavMobile/NavMobile';
 import { Nav } from '../Nav';
 
 describe('Nav', () => {
-  const smallScreen = { isXs: true };
+  const smallScreen = { isDesktopView: false };
 
-  const largeScreen = { isXs: false };
+  const largeScreen = { isDesktopView: true };
 
   it('should render with no props passed', () => createShallowSnapshotTest(<Nav />));
 

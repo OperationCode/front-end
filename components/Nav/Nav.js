@@ -3,14 +3,16 @@ import classNames from 'classnames';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { compose } from 'redux';
 import { donateLink, s3 } from 'common/constants/urls';
 import { navItems } from 'common/constants/navigation';
+import { isDesktopSelector } from 'store/screenSize/selectors';
 import NavListItem from 'components/Nav/NavListItem/NavListItem';
 import NavMobile from 'components/Nav/NavMobile/NavMobile';
 import styles from './Nav.css';
 
-export const Nav = ({ isXs }) => {
-  if (isXs) {
+export const Nav = ({ isDesktopView }) => {
+  if (!isDesktopView) {
     return <NavMobile />;
   }
 
@@ -49,11 +51,15 @@ export const Nav = ({ isXs }) => {
 };
 
 Nav.propTypes = {
-  isXs: PropTypes.bool,
+  isDesktopView: PropTypes.bool,
 };
 
 Nav.defaultProps = {
-  isXs: true,
+  isDesktopView: false,
 };
 
-export default connect(state => ({ isXs: state.screenSize.isXs }))(Nav);
+const mapStateToProps = state => ({
+  isDesktopView: isDesktopSelector(state),
+});
+
+export default compose(connect(mapStateToProps))(Nav);
