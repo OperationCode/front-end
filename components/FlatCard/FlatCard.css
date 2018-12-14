@@ -1,0 +1,29 @@
+.FlatCard {
+  display: flex;
+  flex-direction: column;
+}
+
+.imageWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.image {
+  order: 1;
+  height: 200px;
+  width: 200px;
+}
+
+.header {
+  order: 2;
+  text-align: center;
+}
+
+.subHeader {
+  order: 3;
+  text-align: center;
+}
+
+.body {
+  order: 4;
+}
