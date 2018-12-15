@@ -1,22 +1,29 @@
 .FlatCard {
-  display: flex;
-  flex-direction: column;
-}
-
-.imageWrapper {
-  display: flex;
-  justify-content: center;
+  box-sizing: border-box;
+  margin: 1.5rem 1rem;
+  padding-top: 60px;
+  position: relative;
+  max-width: 400px;
 }
 
 .image {
   order: 1;
   height: 200px;
   width: 200px;
+  position: absolute;
+  top: 0;
+}
+
+.rowCenter {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .header {
   order: 2;
   text-align: center;
+  padding-top: 150px;
 }
 
 .subHeader {
@@ -26,4 +33,14 @@
 
 .body {
   order: 4;
+}
+
+.borderContainer {
+  padding: 0 2rem 2rem;
+  border: 3px solid var(--primary);
+}
+
+.divider {
+  width: 85%;
+  border: 2px solid var(--primary);
 }

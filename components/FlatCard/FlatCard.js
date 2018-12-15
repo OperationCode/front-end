@@ -20,13 +20,15 @@ function FlatCard({ className, imageSource, imageAlt, headerText, subHeaderText,
   return (
     <>
       <article className={classNames(styles.FlatCard, className)}>
-        <h1 className={styles.header}>{headerText}</h1>
-        {subHeaderText ? <h6 className={styles.subHeader}>{subHeaderText}</h6> : <></>}
-        <div className={styles.imageWrapper}>
-          <img className={styles.image} src={imageSource} alt={imageAlt} />
+        <div className={styles.borderContainer}>
+          <h1 className={styles.header}>{headerText}</h1>
+          {subHeaderText ? <h6 className={styles.subHeader}>{subHeaderText}</h6> : <></>}
+          <div className={styles.rowCenter}>
+            <img className={styles.image} src={imageSource} alt={imageAlt} />
+          </div>
+          <hr className={styles.divider} />
+          <p className={styles.body}>{bodyText}</p>
         </div>
-        <hr />
-        <p className={styles.body}>{bodyText}</p>
       </article>
     </>
   );

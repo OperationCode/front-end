@@ -4,31 +4,37 @@ exports[`FlatCard should render with many props assigned 1`] = `
 <article
   className="FlatCard test-class"
 >
-  <h1
-    className="header"
-  >
-    Tester Person
-  </h1>
-  <h6
-    className="subHeader"
-  >
-    Leader of the Company
-  </h6>
   <div
-    className="imageWrapper"
+    className="borderContainer"
   >
-    <img
-      alt="Image Caption"
-      className="image"
-      src="https://s3.amazonaws.com/operationcode-assets/headshots/david_molina.jpg"
+    <h1
+      className="header"
+    >
+      Tester Person
+    </h1>
+    <h6
+      className="subHeader"
+    >
+      Leader of the Company
+    </h6>
+    <div
+      className="rowCenter"
+    >
+      <img
+        alt="Image Caption"
+        className="image"
+        src="https://s3.amazonaws.com/operationcode-assets/headshots/david_molina.jpg"
+      />
+    </div>
+    <hr
+      className="divider"
     />
+    <p
+      className="body"
+    >
+      Description of the person shown on the card.
+    </p>
   </div>
-  <hr />
-  <p
-    className="body"
-  >
-    Description of the person shown on the card.
-  </p>
 </article>
 `;
 
@@ -36,23 +42,29 @@ exports[`FlatCard should render with required props 1`] = `
 <article
   className="FlatCard"
 >
-  <h1
-    className="header"
-  >
-    Tester Person
-  </h1>
   <div
-    className="imageWrapper"
+    className="borderContainer"
   >
-    <img
-      alt="Image caption"
-      className="image"
-      src="https://s3.amazonaws.com/operationcode-assets/headshots/david_molina.jpg"
+    <h1
+      className="header"
+    >
+      Tester Person
+    </h1>
+    <div
+      className="rowCenter"
+    >
+      <img
+        alt="Image caption"
+        className="image"
+        src="https://s3.amazonaws.com/operationcode-assets/headshots/david_molina.jpg"
+      />
+    </div>
+    <hr
+      className="divider"
+    />
+    <p
+      className="body"
     />
   </div>
-  <hr />
-  <p
-    className="body"
-  />
 </article>
 `;
