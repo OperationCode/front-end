@@ -21,7 +21,7 @@ exports[`FlatCard should render with many props assigned 1`] = `
       className="rowCenter"
     >
       <img
-        alt="Image Caption"
+        alt="David Molina's face"
         className="image"
         src="https://s3.amazonaws.com/operationcode-assets/headshots/david_molina.jpg"
       />
@@ -32,11 +32,12 @@ exports[`FlatCard should render with many props assigned 1`] = `
     <div
       className="children"
     >
-      <div>
-        <p>
-          Even more test content!
-        </p>
-      </div>
+      <p>
+        Example content goes here
+      </p>
+      <p>
+        More content goes here
+      </p>
     </div>
   </div>
 </article>
@@ -53,7 +54,7 @@ exports[`FlatCard should render with required props 1`] = `
       className="rowCenter"
     >
       <img
-        alt="Image caption"
+        alt="David Molina's face"
         className="image"
         src="https://s3.amazonaws.com/operationcode-assets/headshots/david_molina.jpg"
       />
