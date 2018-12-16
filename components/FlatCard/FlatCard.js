@@ -4,11 +4,11 @@ import classNames from 'classnames';
 import styles from './FlatCard.css';
 
 FlatCard.propTypes = {
+  children: PropTypes.node.isRequired,
   className: PropTypes.string,
-  imageSource: PropTypes.string.isRequired,
-  imageAlt: PropTypes.string.isRequired,
   header: PropTypes.node,
-  content: PropTypes.node.isRequired,
+  imageAlt: PropTypes.string.isRequired,
+  imageSource: PropTypes.string.isRequired,
 };
 
 FlatCard.defaultProps = {
@@ -16,7 +16,7 @@ FlatCard.defaultProps = {
   header: undefined,
 };
 
-function FlatCard({ className, imageSource, imageAlt, header, content }) {
+function FlatCard({ children, className, header, imageSource, imageAlt }) {
   return (
     <article className={classNames(styles.FlatCard, className)}>
       <div className={styles.borderContainer}>
@@ -25,7 +25,7 @@ function FlatCard({ className, imageSource, imageAlt, header, content }) {
           <img className={styles.image} src={imageSource} alt={imageAlt} />
         </div>
         {header && <hr className={styles.divider} />}
-        <div className={styles.content}>{content}</div>
+        <div className={styles.children}>{children}</div>
       </div>
     </article>
   );

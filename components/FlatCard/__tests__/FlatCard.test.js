@@ -10,16 +10,12 @@ const testImageUrl = `${s3}headshots/david_molina.jpg`;
 describe('FlatCard', () => {
   it('should render with required props', () => {
     createSnapshotTest(
-      <FlatCard
-        imageSource={testImageUrl}
-        imageAlt="Image caption"
-        content={
-          <>
-            <p>Example content goes here</p>
-            <p>More content goes here</p>
-          </>
-        }
-      />,
+      <FlatCard imageSource={testImageUrl} imageAlt="Image caption">
+        <>
+          <p>Example content goes here</p>
+          <p>More content goes here</p>
+        </>
+      </FlatCard>,
     );
   });
 
@@ -27,21 +23,19 @@ describe('FlatCard', () => {
     createSnapshotTest(
       <FlatCard
         className="test-class"
-        imageSource={testImageUrl}
-        imageAlt="Image Caption"
         header={
           <>
             <h1>Main heading</h1>
             <h6>Sub heading</h6>
           </>
         }
-        content={
-          <>
-            <p>Example content goes here</p>
-            <p>More content goes here</p>
-          </>
-        }
-      />,
+        imageSource={testImageUrl}
+        imageAlt="Image Caption"
+      >
+        <div>
+          <p>Even more test content!</p>
+        </div>
+      </FlatCard>,
     );
   });
 });

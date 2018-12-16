@@ -30,14 +30,13 @@ exports[`FlatCard should render with many props assigned 1`] = `
       className="divider"
     />
     <div
-      className="content"
+      className="children"
     >
-      <p>
-        Example content goes here
-      </p>
-      <p>
-        More content goes here
-      </p>
+      <div>
+        <p>
+          Even more test content!
+        </p>
+      </div>
     </div>
   </div>
 </article>
@@ -60,7 +59,7 @@ exports[`FlatCard should render with required props 1`] = `
       />
     </div>
     <div
-      className="content"
+      className="children"
     >
       <p>
         Example content goes here

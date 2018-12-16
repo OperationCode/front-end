@@ -32,19 +32,19 @@ exports[`Storyshots Common/FlatCard default 1`] = `
       className="divider"
     />
     <div
-      className="content"
+      className="children"
     >
-      <p>
+      <span>
         
   David Molina is Founder & Board Chairman of Operation Code and self-taught himself Ruby
   on Rails writing the first line of code for operationcode.org to petition Congress to
-  expand the New GI Bill to include coding schools, a benefit he couldn’t use after exiting 
-  Dover AFB after 12 years in uniform. An entrepreneur, David has built numerous startups, 
-  has testified before members of Congress to expand technical education for veterans and 
-  spouses, and as a former captain in the Army was recipient of the Lt. Rowan Award, 
+  expand the New GI Bill to include coding schools, a benefit he couldn’t use after exiting
+  Dover AFB after 12 years in uniform. An entrepreneur, David has built numerous startups,
+  has testified before members of Congress to expand technical education for veterans and
+  spouses, and as a former captain in the Army was recipient of the Lt. Rowan Award,
   Meritorious Service Medal and Army Commendation Medal.
 
-      </p>
+      </span>
     </div>
   </div>
 </article>
