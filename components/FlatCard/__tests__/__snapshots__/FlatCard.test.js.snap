@@ -59,9 +59,6 @@ exports[`FlatCard should render with required props 1`] = `
         src="https://s3.amazonaws.com/operationcode-assets/headshots/david_molina.jpg"
       />
     </div>
-    <hr
-      className="divider"
-    />
     <div
       className="content"
     >

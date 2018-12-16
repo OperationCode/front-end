@@ -24,7 +24,7 @@ function FlatCard({ className, imageSource, imageAlt, header, content }) {
         <div className={styles.rowCenter}>
           <img className={styles.image} src={imageSource} alt={imageAlt} />
         </div>
-        {content && <hr className={styles.divider} />}
+        {header && <hr className={styles.divider} />}
         <div className={styles.content}>{content}</div>
       </div>
     </article>
