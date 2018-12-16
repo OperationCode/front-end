@@ -13,6 +13,7 @@ FlatCard.propTypes = {
 
 FlatCard.defaultProps = {
   className: undefined,
+  header: undefined,
 };
 
 function FlatCard({ className, imageSource, imageAlt, header, content }) {
