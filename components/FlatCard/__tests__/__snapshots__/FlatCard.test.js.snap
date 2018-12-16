@@ -7,16 +7,16 @@ exports[`FlatCard should render with many props assigned 1`] = `
   <div
     className="borderContainer"
   >
-    <h1
+    <div
       className="header"
     >
-      Tester Person
-    </h1>
-    <h6
-      className="subHeader"
-    >
-      Leader of the Company
-    </h6>
+      <h1>
+        Main heading
+      </h1>
+      <h6>
+        Sub heading
+      </h6>
+    </div>
     <div
       className="rowCenter"
     >
@@ -29,11 +29,16 @@ exports[`FlatCard should render with many props assigned 1`] = `
     <hr
       className="divider"
     />
-    <p
-      className="body"
+    <div
+      className="content"
     >
-      Description of the person shown on the card.
-    </p>
+      <p>
+        Example content goes here
+      </p>
+      <p>
+        More content goes here
+      </p>
+    </div>
   </div>
 </article>
 `;
@@ -45,11 +50,9 @@ exports[`FlatCard should render with required props 1`] = `
   <div
     className="borderContainer"
   >
-    <h1
+    <div
       className="header"
-    >
-      Tester Person
-    </h1>
+    />
     <div
       className="rowCenter"
     >
@@ -59,12 +62,16 @@ exports[`FlatCard should render with required props 1`] = `
         src="https://s3.amazonaws.com/operationcode-assets/headshots/david_molina.jpg"
       />
     </div>
-    <hr
-      className="divider"
-    />
-    <p
-      className="body"
-    />
+    <div
+      className="content"
+    >
+      <p>
+        Example content goes here
+      </p>
+      <p>
+        More content goes here
+      </p>
+    </div>
   </div>
 </article>
 `;

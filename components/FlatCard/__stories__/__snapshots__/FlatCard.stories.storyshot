@@ -7,16 +7,18 @@ exports[`Storyshots Common/FlatCard default 1`] = `
   <div
     className="borderContainer"
   >
-    <h1
+    <div
       className="header"
     >
-      David Molina
-    </h1>
-    <h6
-      className="subHeader"
-    >
-      Founder, Board Chairman
-    </h6>
+      <div>
+        <h1>
+          David Molina
+        </h1>
+        <h6>
+          Founder, Board Chairman
+        </h6>
+      </div>
+    </div>
     <div
       className="rowCenter"
     >
@@ -29,55 +31,21 @@ exports[`Storyshots Common/FlatCard default 1`] = `
     <hr
       className="divider"
     />
-    <p
-      className="body"
-    >
-      David Molina is Founder & Board Chairman of Operation Code and self-taught himself Ruby
-          on Rails writing the first line of code for operationcode.org to petition Congress to
-          expand the New GI Bill to include coding schools, a benefit he couldn’t use after exiting 
-          Dover AFB after 12 years in uniform. An entrepreneur, David has built numerous startups, 
-          has testified before members of Congress to expand technical education for veterans and 
-          spouses, and as a former captain in the Army was recipient of the Lt. Rowan Award, 
-          Meritorious Service Medal and Army Commendation Medal.
-          
-    </p>
-  </div>
-</article>
-`;
-
-exports[`Storyshots Common/FlatCard without subheader 1`] = `
-<article
-  className="FlatCard"
->
-  <div
-    className="borderContainer"
-  >
-    <h1
-      className="header"
-    >
-      Jon Deng, US Army, Software Engineer
-    </h1>
     <div
-      className="rowCenter"
+      className="content"
     >
-      <img
-        alt="FlatCard image caption"
-        className="image"
-        src="https://s3.amazonaws.com/operationcode-assets/headshots/jon_deng.jpg"
-      />
+      <p>
+        
+  David Molina is Founder & Board Chairman of Operation Code and self-taught himself Ruby
+  on Rails writing the first line of code for operationcode.org to petition Congress to
+  expand the New GI Bill to include coding schools, a benefit he couldn’t use after exiting 
+  Dover AFB after 12 years in uniform. An entrepreneur, David has built numerous startups, 
+  has testified before members of Congress to expand technical education for veterans and 
+  spouses, and as a former captain in the Army was recipient of the Lt. Rowan Award, 
+  Meritorious Service Medal and Army Commendation Medal.
+
+      </p>
     </div>
-    <hr
-      className="divider"
-    />
-    <p
-      className="body"
-    >
-      Transitioning out the military into tech is a difficult process. You have to learn 
-          new skills and a new way of thinking. The part that doesn't change is that it's easier 
-          to be successful when you have a good team. Through Operation Code, I was able to access 
-          mentorship, attend technology conferences, and found a support network that helped me 
-          find my first software engineering job.
-    </p>
   </div>
 </article>
 `;
