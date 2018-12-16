@@ -25,13 +25,13 @@ storiesOf('Common/FlatCard', module)
       <FlatCard
         imageAlt={text('imageAlt', 'FlatCard image caption')}
         imageSource={text('imageSource', `${s3}headshots/david_molina.jpg`)}
-        renderHeader={
+        header={
           <div>
             <h1>David Molina</h1>
             <h6>Founder, Board Chairman</h6>
           </div>
         }
-        renderContent={<p>{contentText}</p>}
+        content={<p>{contentText}</p>}
       />
     )),
   );

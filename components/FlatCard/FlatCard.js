@@ -7,25 +7,25 @@ FlatCard.propTypes = {
   className: PropTypes.string,
   imageSource: PropTypes.string.isRequired,
   imageAlt: PropTypes.string.isRequired,
-  renderHeader: PropTypes.node,
-  renderContent: PropTypes.node.isRequired,
+  header: PropTypes.node,
+  content: PropTypes.node.isRequired,
 };
 
 FlatCard.defaultProps = {
   className: undefined,
 };
 
-function FlatCard({ className, imageSource, imageAlt, renderHeader, renderContent }) {
+function FlatCard({ className, imageSource, imageAlt, header, content }) {
   return (
     <>
       <article className={classNames(styles.FlatCard, className)}>
         <div className={styles.borderContainer}>
-          <div className={styles.header}>{renderHeader}</div>
+          {header && <div className={styles.header}>{header}</div>}
           <div className={styles.rowCenter}>
             <img className={styles.image} src={imageSource} alt={imageAlt} />
           </div>
-          {renderHeader && <hr className={styles.divider} />}
-          <div className={styles.content}>{renderContent}</div>
+          {content && <hr className={styles.divider} />}
+          <div className={styles.content}>{content}</div>
         </div>
       </article>
     </>

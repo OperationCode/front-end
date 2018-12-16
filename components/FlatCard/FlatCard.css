@@ -23,7 +23,6 @@
 .header {
   order: 2;
   text-align: center;
-  padding-top: 150px;
 }
 
 .content {
@@ -31,7 +30,7 @@
 }
 
 .borderContainer {
-  padding: 0 2rem 2rem;
+  padding: 150px 2rem 2rem;
   border: 3px solid var(--primary);
 }
 

@@ -13,7 +13,7 @@ describe('FlatCard', () => {
       <FlatCard
         imageSource={testImageUrl}
         imageAlt="Image caption"
-        renderContent={
+        content={
           <>
             <p>Example content goes here</p>
             <p>More content goes here</p>
@@ -29,13 +29,13 @@ describe('FlatCard', () => {
         className="test-class"
         imageSource={testImageUrl}
         imageAlt="Image Caption"
-        renderHeader={
+        header={
           <>
             <h1>Main heading</h1>
             <h6>Sub heading</h6>
           </>
         }
-        renderContent={
+        content={
           <>
             <p>Example content goes here</p>
             <p>More content goes here</p>
