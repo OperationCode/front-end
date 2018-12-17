@@ -13,7 +13,7 @@ describe('NavMobile', () => {
     expect(wrapper.find('ul')).not.toExist();
   });
 
-  it('should render nav items list after hamburger button is clicked', () => {
+  it('should render dropdown after hamburger button is clicked', () => {
     const wrapper = shallow(<NavMobile />);
 
     wrapper.find('.hamburgerButton').simulate('click');
@@ -21,7 +21,7 @@ describe('NavMobile', () => {
     expect(wrapper.find('ul')).toExist();
   });
 
-  it('should hide nav items list after close button is pressed', () => {
+  it('should hide dropdown after close button is pressed', () => {
     const wrapper = shallow(<NavMobile />);
 
     wrapper.setState({ isDropDownVisible: true });
@@ -30,6 +30,21 @@ describe('NavMobile', () => {
     expect(wrapper.find('ul')).toExist();
 
     wrapper.find('CloseButton').simulate('click');
+    expect(wrapper.find('ul')).not.toExist();
+  });
+
+  it('should hide dropdown when navigation is performed', () => {
+    const wrapper = shallow(<NavMobile />);
+
+    wrapper.setState({ isDropDownVisible: true });
+    wrapper.update();
+
+    expect(wrapper.find('ul')).toExist();
+    wrapper
+      .find('.link')
+      .first()
+      .simulate('click');
+
     expect(wrapper.find('ul')).not.toExist();
   });
 });

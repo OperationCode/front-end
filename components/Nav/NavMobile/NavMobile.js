@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Link from 'next/link';
+import classNames from 'classnames';
 import { donateLink, s3 } from 'common/constants/urls';
 import { navItems } from 'common/constants/navigation';
 import flattenDepth from 'lodash/flattenDepth';
@@ -24,20 +25,24 @@ export default class NavMobile extends Component {
     return (
       <header className={styles.NavMobile}>
         <Link href="/">
-          <a className={styles.logoLink}>
+          <button
+            className={classNames(styles.button, styles.logoButton)}
+            type="button"
+            name="dropdown"
+          >
             <img
               src={`${s3}branding/logos/small-blue-logo.png`}
               alt="Operation Code Logo"
               className={styles.logo}
             />
-          </a>
+          </button>
         </Link>
 
         <button
-          className={styles.hamburgerButton}
+          className={classNames(styles.button, styles.hamburger)}
+          onClick={this.openDropDown}
           type="button"
           name="dropdown"
-          onClick={this.openDropDown}
         >
           <HamburgerIcon className={styles.hamburgerIcon} />
         </button>
@@ -49,19 +54,40 @@ export default class NavMobile extends Component {
             <ul className={styles.ul}>
               <li className={styles.li}>
                 <Link href="/">
-                  <a className={styles.a}>Home</a>
+                  <button
+                    className={classNames(styles.button, styles.link)}
+                    onClick={this.closeDropDown}
+                    type="button"
+                    name="dropdown"
+                  >
+                    Home
+                  </button>
                 </Link>
               </li>
               {links.map(navlink => (
                 <li className={styles.li} key={navlink.name}>
                   <Link href={navlink.href}>
-                    <a className={styles.a}>{navlink.name}</a>
+                    <button
+                      className={classNames(styles.button, styles.link)}
+                      onClick={this.closeDropDown}
+                      type="button"
+                      name="dropdown"
+                    >
+                      {navlink.name}
+                    </button>
                   </Link>
                 </li>
               ))}
               <li className={styles.li}>
                 <Link href={donateLink}>
-                  <a className={styles.a}>Donate</a>
+                  <button
+                    className={classNames(styles.button, styles.link)}
+                    onClick={this.closeDropDown}
+                    type="button"
+                    name="dropdown"
+                  >
+                    Donate
+                  </button>
                 </Link>
               </li>
             </ul>

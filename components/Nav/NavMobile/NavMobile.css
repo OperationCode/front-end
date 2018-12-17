@@ -6,29 +6,29 @@
   background-color: var(--white);
   height: var(--navBarHeight);
   width: 100%;
+  z-index: 500;
 
-  --gutterWidth: 2rem;
+  --gutterWidth: 30px;
 }
 
-.logoLink {
-  margin-left: var(--gutterWidth);
+.logoButton {
+  padding: 0;
   max-width: 50%;
-  max-height: calc(var(--navBarHeight) - 1rem);
+  height: var(--navBarHeight);
+  margin-left: var(--gutterWidth);
 }
 
 .logo {
   max-width: 100%;
-  max-height: calc(var(--navBarHeight) - 1rem);
+  max-height: calc(var(--navBarHeight) - 20px);
   vertical-align: middle;
 }
 
-.hamburgerButton {
+.hamburger {
   margin-right: var(--gutterWidth);
-  border: none;
-  background: none;
 }
 
-.hamburgerButton:hover {
+.hamburger:hover {
   cursor: pointer;
 }
 
@@ -43,14 +43,12 @@
   background: rgba(37, 46, 62, 0.97);
   width: 97.5%;
   height: 100vh;
-  z-index: 10;
 }
 
 .ul {
   padding: 1rem;
   margin: 0;
   list-style: none;
-  font-size: 1.5rem;
   overflow-y: auto;
 }
 
@@ -66,14 +64,23 @@
   padding-bottom: 3rem;
 }
 
-.a {
+.link {
   color: var(--white);
   fill: var(--white);
   transition: color 0.2s linear, fill 0.2s linear;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
 }
 
-.a:hover {
+.link:hover {
   color: var(--primary);
   fill: var(--primary);
   transition: color 0.2s linear, fill 0.2s linear;
+}
+
+.button {
+  background: none;
+  border: none;
 }
