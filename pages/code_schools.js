@@ -160,19 +160,19 @@ export default class CodeSchools extends React.Component {
             {state.moocSchools.map(mooc => (
               <FlatCard
                 key={mooc.name}
-                className={styles.moocCard}
                 imageSource={this.prepUrl(mooc.name)}
                 imageAlt={`${mooc.name} logo`}
-                header={
-                  <OutboundLink href={mooc.url} analyticsEventLabel={`Link to ${mooc.name}`}>
-                    {mooc.name}
-                  </OutboundLink>
-                }
               >
-                {' '}
-                This is a description of a Mooc School. This is a description of a Mooc School. This
-                is a description of a Mooc School. This is a description of a Mooc School. This is a
-                description of a Mooc School. This is a description of a Mooc School.
+                <>
+                  This is a description of a Mooc School. This is a description of a Mooc School.
+                  This is a description of a Mooc School. This is a description of a Mooc School.
+                  This is a description of a Mooc School. This is a description of a Mooc School.
+                  <div className={styles.centered}>
+                    <OutboundLink href={mooc.url} analyticsEventLabel={`Link to ${mooc.name}`}>
+                      {mooc.name}
+                    </OutboundLink>
+                  </div>
+                </>
               </FlatCard>
             ))}
           </div>
