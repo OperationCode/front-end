@@ -6,7 +6,7 @@ import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
 import Section from 'components/_common_/Section/Section';
 import Button from 'components/_common_/Button/Button';
 import SchoolCard from 'components/Cards/SchoolCard/SchoolCard';
-import SuccessStory from 'components/SuccessStory/SuccessStory';
+import FlatCard from 'components/Cards/FlatCard/FlatCard';
 import { s3 } from 'common/constants/urls';
 import States from 'common/constants/dropdown-states-values';
 import styles from './styles/code_schools.css';
@@ -54,7 +54,8 @@ export default class CodeSchools extends React.Component {
     this.setState({ filteredSchools: stateSchools, selectedStates: selectedOptions });
   };
 
-  prepUrl = name => `${s3}codeSchoolLogos/${name
+  prepUrl = name =>
+    `${s3}codeSchoolLogos/${name
       .trim()
       .split(' ')
       .join('_')
@@ -73,7 +74,7 @@ export default class CodeSchools extends React.Component {
             schools to offer scholarships, and discounts for our members.
           </p>
         </HeroBanner>
-        <Section theme="gray" hasHeadingLines={false}>
+        <Section theme="secondary" hasHeadingLines={false}>
           <div className={styles.whatAreQuestionsSectionWrapper}>
             <div>
               <h6>What Are Code Schools?</h6>
@@ -154,15 +155,25 @@ export default class CodeSchools extends React.Component {
             ))}
           </div>
         </Section>
-        <Section theme="gray" title="Mooc Schools" hasHeadingLines>
+        <Section theme="secondary" title="Mooc Schools" hasHeadingLines>
           <div className={styles.moocCardsWrapper}>
             {state.moocSchools.map(mooc => (
-              <SuccessStory
+              <FlatCard
                 key={mooc.name}
+                className={styles.moocCard}
                 imageSource={this.prepUrl(mooc.name)}
-                title={mooc.name}
-                quote={mooc.url}
-              />
+                imageAlt={`${mooc.name} logo`}
+                header={
+                  <OutboundLink href={mooc.url} analyticsEventLabel={`Link to ${mooc.name}`}>
+                    {mooc.name}
+                  </OutboundLink>
+                }
+              >
+                {' '}
+                This is a description of a Mooc School. This is a description of a Mooc School. This
+                is a description of a Mooc School. This is a description of a Mooc School. This is a
+                description of a Mooc School. This is a description of a Mooc School.
+              </FlatCard>
             ))}
           </div>
         </Section>

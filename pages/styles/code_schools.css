@@ -40,3 +40,13 @@
   justify-content: center;
   align-items: center;
 }
+
+.moocCard {
+  color: var(--white);
+}
+
+.moocCard img {
+  height: 120px;
+  width: 120px;
+  padding-top: 5rem;
+}
