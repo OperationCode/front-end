@@ -16,7 +16,7 @@ describe('NavMobile', () => {
   it('should render dropdown after hamburger button is clicked', () => {
     const wrapper = shallow(<NavMobile />);
 
-    wrapper.find('.hamburgerButton').simulate('click');
+    wrapper.find('.hamburger').simulate('click');
 
     expect(wrapper.find('ul')).toExist();
   });
