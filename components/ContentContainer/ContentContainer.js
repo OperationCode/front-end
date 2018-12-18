@@ -1,27 +1,29 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import styles from './ContentContainer.css';
 
-export default class ContentContainer extends Component {
-  static propTypes = {
-    children: PropTypes.oneOfType([
-      PropTypes.arrayOf(PropTypes.node),
-      PropTypes.element,
-      PropTypes.string,
-    ]).isRequired,
-    className: PropTypes.string,
-  };
+ContentContainer.propTypes = {
+  children: PropTypes.node,
+  className: PropTypes.string,
+  backgroundImageSource: PropTypes.string,
+};
 
-  static defaultProps = {
-    className: undefined,
-  };
+ContentContainer.defaultProps = {
+  className: undefined,
+  backgroundImageSource: undefined,
+  children: undefined,
+};
 
-  render() {
-    const { props } = this;
-
-    return (
-      <div className={classNames(props.className, styles.ContentContainer)}>{props.children}</div>
-    );
-  }
+function ContentContainer({ children, className, backgroundImageSource }) {
+  return (
+    <div
+      backgroundImageSource={backgroundImageSource}
+      className={classNames(className, styles.ContentContainer)}
+    >
+      {children}
+    </div>
+  );
 }
+
+export default ContentContainer;

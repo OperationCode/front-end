@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContentContainer should render with many props assigned 1`] = `
+<div
+  className="test-class ContentContainer"
+>
+  Test
+</div>
+`;
+
+exports[`ContentContainer should render with required props 1`] = `
+<div
+  className="ContentContainer"
+>
+  Test
+</div>
+`;
