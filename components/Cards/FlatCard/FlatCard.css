@@ -1,0 +1,40 @@
+.FlatCard {
+  box-sizing: border-box;
+  margin: 1.5rem 1rem;
+  padding-top: 60px;
+  position: relative;
+  max-width: 400px;
+}
+
+.image {
+  order: 1;
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  top: 0;
+}
+
+.rowCenter {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.header {
+  order: 2;
+  text-align: center;
+}
+
+.content {
+  order: 3;
+}
+
+.borderContainer {
+  padding: 150px 2rem 2rem;
+  border: 3px solid var(--primary);
+}
+
+.divider {
+  width: 85%;
+  border: 1px solid var(--primary);
+}
