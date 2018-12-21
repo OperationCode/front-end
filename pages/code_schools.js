@@ -9,6 +9,9 @@ import SchoolCard from 'components/Cards/SchoolCard/SchoolCard';
 import FlatCard from 'components/Cards/FlatCard/FlatCard';
 import { s3 } from 'common/constants/urls';
 import States from 'common/constants/dropdown-states-values';
+import edx from 'static/images/moocs/edx.jpg';
+import treehouse from 'static/images/moocs/treehouse.jpg';
+import udacity from 'static/images/moocs/udacity.jpg';
 import styles from './styles/code_schools.css';
 
 export default class CodeSchools extends React.Component {
@@ -21,8 +24,26 @@ export default class CodeSchools extends React.Component {
 
   async componentDidMount() {
     const { data } = await getCodeSchoolsPromise();
-    // should be school.mooc, using school.has_online for testing
-    const moocs = data.filter(school => school.has_online);
+    const moocs = [
+      {
+        logo: edx,
+        name: 'edX',
+        url: 'https://edx.org',
+        text: 'Offers free courses with the option to pay for certificates/grading.',
+      },
+      {
+        logo: treehouse,
+        name: 'Team Treehouse',
+        url: 'https://teamtreehouse.com',
+        text: 'Offers only paid programs, but we have licenses available.',
+      },
+      {
+        logo: udacity,
+        name: 'Udacity',
+        url: 'https://udacity.com',
+        text: 'Offers free courses with the option to pay for certificates/grading.',
+      },
+    ];
     this.setState({ allSchools: data, filteredSchools: data, moocSchools: moocs });
   }
 
@@ -158,15 +179,9 @@ export default class CodeSchools extends React.Component {
         <Section theme="secondary" title="Mooc Schools" hasHeadingLines>
           <div className={styles.moocCardsWrapper}>
             {state.moocSchools.map(mooc => (
-              <FlatCard
-                key={mooc.name}
-                imageSource={this.prepUrl(mooc.name)}
-                imageAlt={`${mooc.name} logo`}
-              >
+              <FlatCard key={mooc.name} imageSource={mooc.logo} imageAlt={`${mooc.name} logo`}>
                 <>
-                  This is a description of a Mooc School. This is a description of a Mooc School.
-                  This is a description of a Mooc School. This is a description of a Mooc School.
-                  This is a description of a Mooc School. This is a description of a Mooc School.
+                  {mooc.text}
                   <div className={styles.centered}>
                     <OutboundLink href={mooc.url} analyticsEventLabel={`Link to ${mooc.name}`}>
                       {mooc.name}
