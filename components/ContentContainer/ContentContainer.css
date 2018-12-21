@@ -1,3 +1,28 @@
 .ContentContainer {
-  color: red;
+  align-items: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  min-height: 250px;
+  width: 100%;
+}
+
+/* Dark Themes */
+.secondary {
+  background-color: var(--secondary);
+  color: var(--white);
+}
+
+/* Light Themes */
+.gray,
+.white {
+  color: var(--secondary);
+}
+
+.gray {
+  background-color: var(--gray);
+}
+
+.white {
+  background-color: var(--white);
 }

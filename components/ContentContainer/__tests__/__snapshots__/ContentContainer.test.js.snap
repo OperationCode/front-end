@@ -1,17 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ContentContainer should render with many props assigned 1`] = `
+exports[`ContentContainer should render common use case 1`] = `
 <div
-  className="test-class ContentContainer"
+  className="test-class ContentContainer secondary"
 >
-  Test
+  Test Children 2
 </div>
 `;
 
-exports[`ContentContainer should render with required props 1`] = `
+exports[`ContentContainer should render with many props assigned 1`] = `
 <div
-  className="ContentContainer"
+  backgroundImageSource="testImage"
+  className="test-class ContentContainer gray"
 >
-  Test
+  Test Children
 </div>
 `;
