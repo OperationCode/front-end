@@ -60,7 +60,7 @@
     "classnames": "^2.2.6",
     "css-loader": "^2.0.0",
     "express": "^4.16.4",
-    "file-loader": "2.0.0",
+    "file-loader": "3.0.0",
     "fontfaceobserver": "^2.1.0",
     "history": "^4.7.2",
     "jwt-decode": "^2.2.0",
