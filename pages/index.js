@@ -3,7 +3,6 @@ import { s3 } from 'common/constants/urls';
 import successStories from 'common/constants/successStories';
 import partners from 'common/constants/partners';
 import Head from 'components/head';
-import AdBanner from 'components/AdBanner/AdBanner';
 import HeroBanner from 'components/_common_/HeroBanner/HeroBanner';
 import ImageCard from 'components/Cards/ImageCard/ImageCard';
 import JoinSection from 'components/ReusableSections/JoinSection/JoinSection';
@@ -73,15 +72,6 @@ export default () => (
         </div>
       </>
     </HeroBanner>
-
-    <AdBanner
-      href="http://op.co.de/topcoder-veterans"
-      imageSource={`${s3}partnerLogos/logo_topcoder_with_name.svg`}
-      altText="Topcoder Logo"
-    >
-      Operation Code and Topcoder have teamed up to work on open source coding projects, to solve
-      critical problems, and to compete for cash prizes! Sign up for Topcoder Veterans.
-    </AdBanner>
 
     <Section contentClassName={styles.ourMission} hasHeadingLines={false} theme="gray">
       <ImageCard
