@@ -8,6 +8,7 @@ ErrorDisplay.propTypes = { statusCode: PropTypes.number };
 ErrorDisplay.defaultProps = { statusCode: undefined };
 
 function ErrorDisplay({ statusCode }) {
+  console.log(statusCode);
   return (
     <>
       <Head title={statusCode ? `${statusCode}` : 'Error'}>
@@ -16,8 +17,10 @@ function ErrorDisplay({ statusCode }) {
 
       <div className={styles.ErrorDisplay}>
         <div className={styles.bg}>
-          <h1 className={styles.title}>{statusCode}!</h1>
-          <p className={styles.paragraph}>You definitely weren&apos;t supposed to see this...</p>
+          <div className={styles.textContainer}>
+            <h1 className={styles.title}>{statusCode || 'Oh no'}!</h1>
+            <p className={styles.paragraph}>You definitely weren&apos;t supposed to see this...</p>
+          </div>
         </div>
       </div>
     </>
