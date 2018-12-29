@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Link from 'next/link';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { donateLink, s3 } from 'common/constants/urls';
 import { navItems } from 'common/constants/navigation';
@@ -9,16 +10,8 @@ import CloseButton from 'components/_common_/CloseButton/CloseButton';
 import styles from './NavMobile.css';
 
 export default class NavMobile extends Component {
-  state = {
-    isDropDownVisible: false,
-  };
-
-  openDropDown = () => this.setState({ isDropDownVisible: true });
-
-  closeDropDown = () => this.setState({ isDropDownVisible: false });
-
   render() {
-    const { isDropDownVisible } = this.state;
+    const { isMenuVisible, openMenu, closeMenu } = this.props;
 
     const links = flattenDepth(navItems.map(navItem => [navItem, navItem.sublinks]), 2);
 
@@ -40,28 +33,23 @@ export default class NavMobile extends Component {
 
         <button
           className={classNames(styles.button, styles.hamburger)}
-          onClick={this.openDropDown}
+          onClick={openMenu}
           type="button"
           name="dropdown"
         >
           <HamburgerIcon className={styles.hamburgerIcon} />
         </button>
 
-        {isDropDownVisible && (
+        {isMenuVisible && (
           <nav className={styles.dropdown}>
-            <CloseButton onClick={this.closeDropDown} theme="white" />
+            <CloseButton onClick={closeMenu} theme="white" />
 
             <ul className={styles.ul}>
               <li className={styles.li}>
                 <Link href="/">
-                  <button
-                    className={classNames(styles.button, styles.link)}
-                    onClick={this.closeDropDown}
-                    type="button"
-                    name="dropdown"
-                  >
+                  <a className={styles.link} name="dropdown">
                     Home
-                  </button>
+                  </a>
                 </Link>
               </li>
               {links.map(navlink => (
@@ -69,7 +57,6 @@ export default class NavMobile extends Component {
                   <Link href={navlink.href}>
                     <button
                       className={classNames(styles.button, styles.link)}
-                      onClick={this.closeDropDown}
                       type="button"
                       name="dropdown"
                     >
@@ -82,7 +69,6 @@ export default class NavMobile extends Component {
                 <Link href={donateLink}>
                   <button
                     className={classNames(styles.button, styles.link)}
-                    onClick={this.closeDropDown}
                     type="button"
                     name="dropdown"
                   >
@@ -97,3 +83,9 @@ export default class NavMobile extends Component {
     );
   }
 }
+
+NavMobile.propTypes = {
+  isMenuVisible: PropTypes.bool.isRequired,
+  openMenu: PropTypes.func.isRequired,
+  closeMenu: PropTypes.func.isRequired,
+};

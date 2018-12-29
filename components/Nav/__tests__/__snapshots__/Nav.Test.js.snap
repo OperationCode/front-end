@@ -1,6 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Nav should render with no props passed 1`] = `<NavMobile />`;
+exports[`Nav should render with no props passed 1`] = `
+<NavMobile
+  closeMenu={[Function]}
+  isMenuVisible={false}
+  openMenu={[Function]}
+/>
+`;
 
 exports[`Nav should render with props passed 1`] = `
 <header
