@@ -1,0 +1,48 @@
+.whatAreQuestionsSectionWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: top;
+  flex-wrap: wrap;
+}
+
+.whatAreQuestionsSectionWrapper > div {
+  margin: 1rem;
+}
+
+.select {
+  min-width: 20rem;
+  width: 90%;
+  max-width: 50rem;
+}
+
+.buttonWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+  flex-wrap: wrap;
+}
+
+.buttonWrapper > button {
+  margin: 1rem;
+}
+
+.schoolCardsWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.moocCardsWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.centered {
+  margin: 1rem 0;
+  text-align: center;
+}
