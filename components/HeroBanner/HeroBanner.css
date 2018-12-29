@@ -1,0 +1,6 @@
+.HeroBanner {
+  align-items: center;
+  display: flex;
+  margin: 1rem auto;
+  width: 90%;
+}
