@@ -1,0 +1,8 @@
+.SectionContent {
+  align-items: flex-start;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  margin: 1rem auto;
+  width: 90%;
+}
