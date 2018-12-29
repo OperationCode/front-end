@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SectionContent should render with many props assigned 1`] = `
+<section
+  className="test-class SectionContent"
+  columns={3}
+  id="test-id"
+  title="test-title"
+/>
+`;
+
+exports[`SectionContent should render with required props 1`] = `
+<section
+  className="SectionContent"
+  columns={2}
+/>
+`;
