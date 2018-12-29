@@ -16,7 +16,7 @@ Container.defaultProps = {
   children: undefined,
   className: undefined,
   isFullViewportHeight: false,
-  theme: 'gray',
+  theme: 'secondary',
 };
 
 function Container({ backgroundImageSource, children, className, isFullViewportHeight, theme }) {
