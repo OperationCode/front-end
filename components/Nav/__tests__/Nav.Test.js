@@ -15,13 +15,12 @@ describe('Nav', () => {
   it('should render with props passed', () => createShallowSnapshotTest(<Nav {...largeScreen} />));
 
   it('should render the mobile navigation bar when screen size is Xs', () => {
-    const wrapper = shallow(<Nav {...smallScreen} />, { disableLifecycleMethods: true });
+    const wrapper = shallow(<Nav {...smallScreen} />);
     expect(wrapper.find(NavMobile)).toExist();
   });
 
-  // make more specific than relying on presence of nav
   it('should render the regular navigation bar when screen size is not Xs', () => {
-    const wrapper = shallow(<Nav {...largeScreen} />, { disableLifecycleMethods: true });
+    const wrapper = shallow(<Nav {...largeScreen} />);
     expect(wrapper.find(NavMobile)).not.toExist();
   });
 });
