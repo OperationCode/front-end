@@ -28,10 +28,6 @@
   margin-right: var(--gutterWidth);
 }
 
-.hamburger:hover {
-  cursor: pointer;
-}
-
 .hamburgerIcon {
   width: 35px;
 }
@@ -83,4 +79,5 @@
 .button {
   background: none;
   border: none;
+  cursor: pointer;
 }

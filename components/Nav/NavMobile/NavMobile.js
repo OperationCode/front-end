@@ -55,25 +55,13 @@ export default class NavMobile extends Component {
               {links.map(navlink => (
                 <li className={styles.li} key={navlink.name}>
                   <Link href={navlink.href}>
-                    <button
-                      className={classNames(styles.button, styles.link)}
-                      type="button"
-                      name="dropdown"
-                    >
-                      {navlink.name}
-                    </button>
+                    <a className={styles.link}>{navlink.name}</a>
                   </Link>
                 </li>
               ))}
               <li className={styles.li}>
                 <Link href={donateLink}>
-                  <button
-                    className={classNames(styles.button, styles.link)}
-                    type="button"
-                    name="dropdown"
-                  >
-                    Donate
-                  </button>
+                  <a className={styles.link}>Donate</a>
                 </Link>
               </li>
             </ul>
