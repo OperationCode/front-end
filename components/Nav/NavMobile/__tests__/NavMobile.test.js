@@ -39,9 +39,7 @@ describe('NavMobile', () => {
 
   it('should invoke callback when close button is pressed', () => {
     const mockClose = jest.fn();
-    const wrapper = shallow(
-      <NavMobile isMenuVisible openMenu={() => {}} closeMenu={mockClose} />,
-    );
+    const wrapper = shallow(<NavMobile isMenuVisible openMenu={() => {}} closeMenu={mockClose} />);
 
     wrapper.find('CloseButton').simulate('click');
 
