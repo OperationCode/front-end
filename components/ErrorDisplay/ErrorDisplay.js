@@ -8,7 +8,6 @@ ErrorDisplay.propTypes = { statusCode: PropTypes.number };
 ErrorDisplay.defaultProps = { statusCode: undefined };
 
 function ErrorDisplay({ statusCode }) {
-  console.log(statusCode);
   return (
     <>
       <Head title={statusCode ? `${statusCode}` : 'Error'}>
