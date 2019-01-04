@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SocialMediaItem it should render properly with required (all) props 1`] = `
+<div
+  className="SocialMediaItem"
+>
+  <a
+    className=""
+    href="https://facebook.com"
+    rel="noopener noreferrer"
+    target="_blank"
+  >
+    <span
+      className="screenReaderOnly"
+    >
+      Opens in new window
+    </span>
+    <test-file-mock
+      fill="blue"
+    />
+  </a>
+</div>
+`;

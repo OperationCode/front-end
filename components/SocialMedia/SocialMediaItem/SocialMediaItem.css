@@ -1,0 +1,14 @@
+.SocialMediaItem {
+  margin: 0 0.5rem;
+  opacity: 0.8;
+}
+
+.SocialMediaItem:hover {
+  opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .SocialMediaItem {
+    margin: 1rem;
+  }
+}

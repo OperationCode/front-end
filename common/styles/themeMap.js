@@ -1,0 +1,13 @@
+export const primary = "#249cbc";
+export const primaryLight = "#4ac2e2";
+export const primaryDark = "#007696";
+export const secondary = "#d1665a";
+export const secondaryLight = "#f78c80";
+export const secondaryDark = "#ab4034";
+export const mist = "#f0f2f2";
+export const slate = "#47566b";
+export const slateLight = "#6d7c91";
+export const slateDark = "#213045";
+export const gray = "#9baab5";
+export const grayLight = "#d0d5da";
+export const grayDark = "#75848f";

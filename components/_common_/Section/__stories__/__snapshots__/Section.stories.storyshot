@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Common/Section default 1`] = `
+<section
+  className="Section gray"
+  style={Object {}}
+>
+  <h2
+    className="Heading white headingLines"
+    id="Used as a reference point for scroll anchors"
+  >
+    Section Title
+  </h2>
+  <div
+    className="content "
+  >
+    Section content!
+  </div>
+</section>
+`;

@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ImageCard it should render properly with required props 1`] = `
+<Card
+  className="ImageCard"
+  hasAnimationOnHover={false}
+>
+  <img
+    alt="Test title"
+    className="image"
+    src="/static/images/Family1.jpg"
+  />
+  <div
+    className="content"
+  >
+    <p>
+      Testing!
+    </p>
+  </div>
+</Card>
+`;
+
+exports[`ImageCard should render properly with some props assigned 1`] = `
+<Card
+  className="ImageCard"
+  hasAnimationOnHover={false}
+>
+  <img
+    alt="Title Tester"
+    className="image"
+    src="/static/images/TankFlip.gif"
+  />
+  <div
+    className="content"
+  >
+    <p>
+      Testing with a button: 
+      <Button
+        analyticsObject={
+          Object {
+            "action": "Button Selected",
+            "category": "Interactions",
+          }
+        }
+        className=""
+        datum=""
+        disabled={false}
+        fullWidth={false}
+        href="https://www.testlink.com"
+        onClick={[Function]}
+        tabIndex={0}
+        theme="primary"
+        type="button"
+      >
+        Test me!
+      </Button>
+    </p>
+  </div>
+</Card>
+`;

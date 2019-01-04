@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Common/HeroBanner default 1`] = `
+<div
+  className="HeroBanner"
+  style={
+    Object {
+      "backgroundImage": "url(https://s3.amazonaws.com/operationcode-assets/heroBanners/stock_family-2.jpg)",
+    }
+  }
+>
+  <div
+    className="content"
+  >
+    <h1
+      className=""
+    >
+      Hero Banner
+    </h1>
+    
+  </div>
+</div>
+`;

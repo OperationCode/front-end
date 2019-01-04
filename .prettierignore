@@ -1,0 +1,10 @@
+common/styles/themeMap.js
+package.json
+yarn.lock
+.babelrc
+**/.babelrc
+.next
+.github
+bin
+node_modules
+static

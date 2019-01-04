@@ -1,0 +1,17 @@
+{
+  "extends": "stylelint-config-standard",
+  "ignoreFiles": "**/*.js",
+  "rules": {
+    "color-hex-case": "lower",
+    "color-hex-length": "long",
+    "indentation": 2,
+    "no-duplicate-selectors": true,
+    "property-no-unknown": [
+      true,
+      {
+        "ignoreProperties": ["composes", "composes-with"]
+      }
+    ],
+    "string-quotes": "double"
+  }
+}

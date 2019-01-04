@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeroBanner should render properly with all props assigned 1`] = `
+<div
+  className="testing-123 HeroBanner"
+  style={
+    Object {
+      "backgroundImage": "url(https://s3.amazonaws.com/operationcode-assets/heroBanner/stock_family-2.jpg)",
+    }
+  }
+>
+  <div
+    className="content"
+  >
+    <h1
+      className="underline"
+    >
+      Test
+    </h1>
+    Testing 123
+  </div>
+</div>
+`;
+
+exports[`HeroBanner should render with just required props passed 1`] = `
+<div
+  className="HeroBanner"
+  style={
+    Object {
+      "backgroundImage": "url(https://s3.amazonaws.com/operationcode-assets/heroBanner/stock_family-2.jpg)",
+    }
+  }
+>
+  <div
+    className="content"
+  >
+    <h1
+      className=""
+    >
+      Test
+    </h1>
+  </div>
+</div>
+`;

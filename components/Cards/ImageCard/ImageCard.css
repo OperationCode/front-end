@@ -1,0 +1,41 @@
+.ImageCard {
+  flex-flow: row wrap;
+  height: 225px;
+  justify-content: flex-start;
+  padding: 0;
+  width: 650px;
+}
+
+.image {
+  height: 225px;
+  width: 50%;
+}
+
+.content {
+  align-items: center;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  overflow: hidden; /* prevent devs from bloating content */
+  margin: 1.5rem;
+  height: calc(100% - 3rem); /* 1.5rem margin top AND bottom hence 3rem */
+  width: calc(50% - 3rem); /* 1.5rem margin left AND right hence 3rem */
+}
+
+/* Vertical space between cards for vertical layout */
+@media screen and (max-width: 768px) {
+  .ImageCard {
+    height: auto;
+    width: 325px;
+  }
+
+  .image {
+    height: 50%;
+    width: 100%;
+  }
+
+  .content {
+    height: auto;
+    width: 100%;
+  }
+}

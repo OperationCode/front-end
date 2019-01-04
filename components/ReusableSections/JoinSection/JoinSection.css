@@ -1,0 +1,15 @@
+.joinText {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  max-width: 700px;
+  width: 90%;
+}
+
+.joinText p {
+  font-size: 1.25rem;
+}
+
+.joinText p:last-of-type {
+  padding-bottom: 2rem;
+}

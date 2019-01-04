@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button should render properly with some props assigned 1`] = `
+<button
+  className="Button secondary disabled fullWidth"
+  disabled={true}
+  onClick={[Function]}
+  tabIndex={0}
+  type="submit"
+>
+  <span>
+    Test
+  </span>
+</button>
+`;
+
+exports[`Button should render with just required props passed 1`] = `
+<button
+  className="Button primary"
+  disabled={false}
+  onClick={[Function]}
+  tabIndex={0}
+  type="button"
+>
+  <span>
+    Test
+  </span>
+</button>
+`;

@@ -1,0 +1,29 @@
+.ErrorDisplay {
+  background: #121212;
+
+  /* TODO: calc min-height based upon 100vh - nav and footer sizes */
+  height: 100vh;
+  width: 100vw;
+}
+
+.ErrorDisplay .bg {
+  align-items: center;
+  background-image: url("/static/images/TankFlip.gif");
+  background-size: cover;
+  color: white;
+  display: flex;
+  flex-direction: column;
+
+  /* TODO: calc min-height based upon 100vh - nav and footer sizes */
+  height: 100vh;
+  justify-content: center;
+  width: 100vw;
+}
+
+.title {
+  font-size: 4rem;
+}
+
+.paragraph {
+  font-size: 1.4rem;
+}

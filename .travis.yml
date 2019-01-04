@@ -1,0 +1,49 @@
+language: node_js
+
+# node_js: # not needed - `.nvmrc` at root-level
+
+cache:
+  yarn: true
+  directories:
+    - 'node_modules'
+
+before_install:
+  - yarn global add greenkeeper-lockfile@2
+
+install:
+  - if [[ $TRAVIS_BRANCH == greenkeeper* ]]; then 
+      yarn install --silent; 
+    else
+      yarn --silent --pure-lockfile;
+    fi
+
+before_script:
+  - greenkeeper-lockfile-update
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+
+script:
+  - yarn lint
+  - yarn test:ci
+  - yarn build
+
+after_script:
+  - greenkeeper-lockfile-upload
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+
+before_deploy:
+ - yarn add now
+ 
+deploy:
+  - provider: script
+    script: echo 'No build on feature branches. Now deploys static exports automatically.'
+    skip_cleanup: true
+    on:
+      all_branches: true
+      master: false
+  - provider: script
+    script: now --local-config=./now.master.json --token $NOW_TOKEN && now alias --local-config=./now.master.json --token $NOW_TOKEN
+    skip_cleanup: true
+    on:
+      master: true

@@ -1,0 +1,69 @@
+.HeroBanner {
+  align-items: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  height: 430px;
+  justify-content: center;
+  text-shadow: #111111 0 0 15px;
+  width: 100%;
+}
+
+.content {
+  padding: 3rem;
+}
+
+/* TODO: Create <Hr /> component and use that to match drop-shadow on header */
+.underline {
+  border-bottom: 4px solid #ffffff;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.quoteLines {
+  width: 85%;
+  height: 3px;
+  content: '\a0';
+  background-color: white;
+  align-self: center;
+}
+
+.quoteText {
+  padding: 80px;
+  font-family: 'Noto Serif', serif;
+  text-align: center;
+}
+
+.author {
+  display: block;
+  text-align: right;
+}
+
+@media screen and (max-width: 850px) {
+  .quoteText {
+    font-size: 2rem;
+    padding: 60px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .quoteText {
+    font-size: 1.5rem;
+    padding: 40px;
+  }
+}
+
+@media screen and (max-width: 415px) {
+  .author {
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .HeroBanner {
+    height: 320px;
+  }
+}

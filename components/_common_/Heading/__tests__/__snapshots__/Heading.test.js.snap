@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Heading should render properly with some props assigned 1`] = `
+<h2
+  className="test-class Heading gray"
+  id="test-heading-1"
+>
+  Test
+</h2>
+`;
+
+exports[`Heading should render with just required props passed 1`] = `
+<h2
+  className="Heading gray headingLines"
+  id=""
+>
+  Test
+</h2>
+`;

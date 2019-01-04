@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Common/OutboundLink default 1`] = `
+<a
+  className=""
+  href="https://whitehouse.gov"
+  rel="noopener noreferrer"
+  target="_blank"
+>
+  <span
+    className="screenReaderOnly"
+  >
+    Opens in new window
+  </span>
+  White House Official Website
+  <test-file-mock
+    className="externalLinkIcon"
+  />
+</a>
+`;

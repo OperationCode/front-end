@@ -1,0 +1,10 @@
+.civic {
+  display: block;
+  margin: 0 auto;
+}
+
+@media (max-width: 767px) {
+  .civic {
+    width: 100%;
+  }
+}

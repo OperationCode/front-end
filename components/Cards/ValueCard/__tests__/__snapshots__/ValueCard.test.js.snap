@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ValueCard should render properly with all required props assigned 1`] = `
+<article
+  className="Card ValueCard"
+>
+  <h3
+    className="name"
+  >
+    Testing
+  </h3>
+  <p>
+    Testing is good for the soul and scientifically proven to make puppies happy.
+  </p>
+</article>
+`;

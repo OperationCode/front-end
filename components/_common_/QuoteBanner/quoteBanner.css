@@ -1,0 +1,52 @@
+.quoteBanner {
+    align-items: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  height: 480px;
+  justify-content: center;
+  text-shadow: #111111 0 0 15px;
+  width: 100%;
+  
+}
+
+.quoteLines {
+  width: 85%;
+  height: 3px;
+  content: '\a0';
+  background-color: white;
+  align-self: center;
+}
+
+.quoteText {
+  padding: 80px;
+  font-family: 'Noto Serif', serif;
+}
+
+.author {
+  display: block;
+  text-align: right;
+}
+
+@media screen and (max-width: 850px) {
+  .quoteText {
+    font-size: 2rem;
+    padding: 60px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .quoteText {
+    font-size: 1.5rem;
+    padding: 40px;
+  }
+}
+
+@media screen and (max-width: 415px) {
+  .author {
+    text-align: center;
+  }
+}

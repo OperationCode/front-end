@@ -1,0 +1,19 @@
+{
+  "name": "operation-code",
+  "alias": "operation-code.now.sh",
+  "build": {
+    "env": {
+      "BABEL_ENV": "production",
+      "NODE_ENV": "production"
+    }
+  },
+  "files": [".next", "static", "package.json", "yarn.lock"],
+  "type": "docker",
+  "scale": {
+    "all": {
+      "min": 1,
+      "max": "auto"
+    }
+  },
+  "public": true
+}

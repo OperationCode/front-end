@@ -1,0 +1,93 @@
+.Button {
+  align-items: center;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  font-size: 1rem;
+  justify-content: center;
+  line-height: 1.25;
+  min-width: 200px;
+  padding: 0;
+  transition: 0.2s linear background-color;
+  text-decoration: none;
+}
+
+.Button:active,
+.Button:focus {
+  outline-color: #000000;
+  outline-offset: -2px;
+  outline-style: solid;
+  outline-width: 2px;
+}
+
+.Button > * {
+  /* Apply padding to child so that when child is an anchor element width and height span the
+  clickable area of the button */
+  padding: 0.75rem;
+}
+
+.Button > a {
+  /* Hijack anchor styles if nested within a Button */
+  color: #ffffff;
+  height: 100%;
+  text-decoration: none;
+  width: 100%;
+}
+
+.disabled {
+  border: none;
+  opacity: 0.6;
+}
+
+.disabled:hover {
+  border: none;
+  cursor: not-allowed;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.primary {
+  background-color: var(--primary);
+  border-color: var(--primaryDark);
+  outline-color: var(--primaryDark);
+}
+
+.primary:hover:enabled {
+  background-color: var(--primaryLight);
+}
+
+.primary:active:not:hover {
+  background-color: var(--primaryDark);
+}
+
+.secondary {
+  background-color: var(--secondary);
+  border-color: var(--secondaryDark);
+  outline-color: var(--secondaryDark);
+}
+
+.secondary:hover:enabled {
+  background-color: var(--secondaryLight);
+}
+
+.secondary:active:not:hover {
+  background-color: var(--secondaryDark);
+}
+
+.slate {
+  background-color: var(--slate);
+  border-color: var(--slateDark);
+  outline-color: var(--slateDark);
+}
+
+.slate:hover:enabled {
+  background-color: var(--slateLight);
+}
+
+.slate:active:not:hover {
+  background-color: var(--slateDark);
+}

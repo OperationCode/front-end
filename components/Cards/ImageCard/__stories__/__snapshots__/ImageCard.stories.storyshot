@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Cards/ImageCard default 1`] = `
+<article
+  className="Card ImageCard"
+>
+  <img
+    alt="Image Card"
+    className="image"
+    src="https://operationcode.org/static/media/ThinkstockPhotos-489787502.812e.jpg"
+  />
+  <div
+    className="content"
+  >
+    <p>
+      PropTypes.node
+    </p>
+  </div>
+</article>
+`;

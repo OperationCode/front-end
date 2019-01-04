@@ -1,0 +1,36 @@
+.job {
+  padding: 1rem 0;
+}
+
+.link {
+  color: #1a0dab;
+}
+
+.details {
+  display: flex;
+  font-size: 1.125rem;
+  color: var(--grayDark);
+  margin-top: 0.25rem;
+}
+
+.detailsContainer {
+  margin-right: 1rem;
+}
+
+.detail {
+  margin-left: 4px;
+}
+
+.description {
+  margin: 0;
+}
+
+.remote {
+  composes: detail;
+  font-style: italic;
+}
+
+.icon {
+  fill: var(--grayDark);
+  height: 0.825rem;
+}
