@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* IMPORTANT: Only change colors in this file if branding changes! */
 :root {
   --primary: #249cbc;
@@ -13,4 +14,28 @@
   --gray: #9baab5;
   --grayLight: #d0d5da;
   --grayDark: #75848f;
+=======
+/* IMPORTANT: Please run `yarn storybook` when file changes to update `./themeMap.js` */
+:root {
+  /* Colors */
+  --primary: #3ed6f0; /* cerulean */
+  --secondary: #252e3e; /* navy */
+  --gray: #e2e2e2; /* gainsboro */
+  --white: #f7f7f7; /* offwhite */
+
+  /* Fonts */
+  --primaryFontFamily: "DIN Condensed Bold";
+  --secondaryFontFamily: "Encode Sans";
+
+  /* Viewports (for media queries) */
+  --smallViewportWidth: 576px;
+  --mediumViewportWidth: 768px;
+  --largeViewportWidth: 992px;
+  --extraLargeViewportWidth: 1200px;
+
+  /* Commonly referenced dimensions */
+  --borderRadius: 3px;
+  --navBarHeight: 65px;
+  --navBarTopGutterHeight: 20px;
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
 }

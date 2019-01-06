@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FrontSchoolCard should render with required props 1`] = `
+<React.Fragment>
+  <h5>
+    school name
+  </h5>
+  <img
+    alt="school name logo"
+    src="logoSource"
+  />
+  <div
+    className="interactionsContainer"
+  >
+    <LinkButton
+      analyticsEventLabel="school name | Website"
+      disabled={false}
+      fullWidth={false}
+      href="website"
+      theme="primary"
+    >
+      Go To Website
+    </LinkButton>
+    <Button
+      analyticsObject={
+        Object {
+          "action": "Button Selected",
+          "category": "Interactions",
+          "label": "school name | Locations",
+        }
+      }
+      datum=""
+      disabled={false}
+      fullWidth={false}
+      onClick={[MockFunction]}
+      tabIndex={0}
+      theme="primary"
+      type="button"
+    >
+      See Locations
+    </Button>
+  </div>
+  <hr
+    className="divider"
+  />
+  <div
+    className="detailsRow"
+  >
+    <Badge
+      className="codeSchoolCardIcon active"
+      icon={<Svg />}
+      isImageFirst={true}
+      label="G.I. Bill"
+    />
+    <Badge
+      className="codeSchoolCardIcon active"
+      icon={<Svg />}
+      isImageFirst={true}
+      label="Online"
+    />
+    <Badge
+      className="codeSchoolCardIcon active"
+      icon={<Svg />}
+      isImageFirst={true}
+      label="In-Person"
+    />
+  </div>
+  <div
+    className="detailsRow"
+  >
+    <Badge
+      className="codeSchoolCardIcon active"
+      icon={<Svg />}
+      isImageFirst={true}
+      label="Equipment"
+    />
+    <Badge
+      className="codeSchoolCardIcon active"
+      icon={<Svg />}
+      isImageFirst={true}
+      label="Housing"
+    />
+  </div>
+</React.Fragment>
+`;

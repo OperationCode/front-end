@@ -1,9 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+<<<<<<< HEAD
 exports[`FormInput should render with just required props passed 1`] = `
 <div
   className="formInput"
 >
+=======
+exports[`FormInput should render with label 1`] = `
+<div
+  className="formInput"
+>
+  <label
+    htmlFor="test"
+  >
+    Testinput
+  </label>
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
   <input
     id="test"
     onChange={[Function]}
@@ -14,6 +26,7 @@ exports[`FormInput should render with just required props passed 1`] = `
 </div>
 `;
 
+<<<<<<< HEAD
 exports[`FormInput should render with label 1`] = `
 <div
   className="formInput"
@@ -23,6 +36,12 @@ exports[`FormInput should render with label 1`] = `
   >
     Testinput
   </label>
+=======
+exports[`FormInput should render with required props 1`] = `
+<div
+  className="formInput"
+>
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
   <input
     id="test"
     onChange={[Function]}

@@ -15,7 +15,11 @@ class Button extends Component {
     fullWidth: PropTypes.bool,
     onClick: PropTypes.func,
     tabIndex: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+<<<<<<< HEAD
     theme: PropTypes.oneOf(['primary', 'secondary', 'slate']),
+=======
+    theme: PropTypes.oneOf(['primary', 'secondary']),
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
     type: PropTypes.oneOf(['button', 'reset', 'submit']),
     datum: PropTypes.any, // eslint-disable-line react/forbid-prop-types
   };
@@ -25,7 +29,11 @@ class Button extends Component {
       action: 'Button Selected',
       category: 'Interactions',
     },
+<<<<<<< HEAD
     className: '',
+=======
+    className: undefined,
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
     datum: '',
     disabled: false,
     fullWidth: false,
@@ -51,6 +59,10 @@ class Button extends Component {
     const { props } = this;
     const customDataAttributes = getDataAttributes(props);
     const ariaAttributes = getAriaAttributes(props);
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
     /* eslint-disable react/button-has-type */
     return (
       <button
@@ -65,8 +77,12 @@ class Button extends Component {
         {...customDataAttributes}
         {...ariaAttributes}
       >
+<<<<<<< HEAD
         {/* Render text nodes within a span to apply selector styles */}
         {typeof props.children === 'string' ? <span>{props.children}</span> : props.children}
+=======
+        {props.children}
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
       </button>
     );
     /* eslint-enable react/button-has-type */

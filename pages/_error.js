@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 import React from 'react';
+=======
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
 import ErrorDisplay from 'components/ErrorDisplay/ErrorDisplay';
 
 // This acts as an override necessary to use a custom ErrorDisplay handler

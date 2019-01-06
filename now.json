@@ -1,8 +1,17 @@
 {
   "name": "operation-code-new",
+<<<<<<< HEAD
   "public": true,
   "type": "static",
   "static": {
     "trailingSlash": false
   }
+=======
+  "static": {
+    "trailingSlash": false
+  },
+  "type": "static",
+  "public": true,
+  "version": 1
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
 }

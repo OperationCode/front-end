@@ -1,5 +1,11 @@
 {
   "globals": {
     "React": true
+<<<<<<< HEAD
+=======
+  },
+  "rules": {
+    "no-restricted-imports": ["error", "react"]
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
   }
 }

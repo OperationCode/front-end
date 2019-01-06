@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 import React from 'react';
+=======
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
 import Link from 'next/link';
 import Head from 'components/head';
 import HeroBanner from 'components/_common_/HeroBanner/HeroBanner';
@@ -9,7 +12,11 @@ import { s3 } from 'common/constants/urls';
 import styles from './styles/about.css';
 
 export default () => (
+<<<<<<< HEAD
   <>
+=======
+  <div className={styles.about}>
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
     <Head title="About" />
 
     <HeroBanner
@@ -49,7 +56,11 @@ export default () => (
       </p>
     </Section>
 
+<<<<<<< HEAD
     <Section theme="mist" title="What We Do">
+=======
+    <Section theme="secondary" title="What We Do">
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
       <div className={styles.flexGrid}>
         <ImageCard
           alt="Two women pair programming"
@@ -116,7 +127,11 @@ export default () => (
         partnerships.
       </p>
     </Section>
+<<<<<<< HEAD
     <Section theme="mist" title="Core Values">
+=======
+    <Section theme="gray" title="Core Values">
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
       <div className={styles.flexGrid}>
         <ValueCard
           name="Integrity"
@@ -170,5 +185,9 @@ export default () => (
         />
       </div>
     </Section>
+<<<<<<< HEAD
   </>
+=======
+  </div>
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
 );

@@ -1,0 +1,41 @@
+.LogoSection ul {
+  margin-bottom: 1.5rem;
+}
+
+.logoSizeList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 100%;
+}
+
+.logoSizeListItem {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.badgeList {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid #bbbbbb;
+}
+
+.largeLogos .badgeList {
+  flex-wrap: nowrap;
+  flex-direction: column;
+}
+
+.largeLogos .badgeList img {
+  height: 100%;
+}
+
+.badgeList span {
+  font-size: 1.5rem;
+  font-weight: bold;
+}

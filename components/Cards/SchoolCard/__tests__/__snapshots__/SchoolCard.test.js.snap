@@ -1,5 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+<<<<<<< HEAD
 exports[`SchoolCard should render properly with all props assigned 1`] = `
 <a
   className="cardLinkOverrides"
@@ -125,4 +126,43 @@ exports[`SchoolCard should render properly with all required assigned 1`] = `
     </template>
   </article>
 </a>
+=======
+exports[`SchoolCard should render with required props 1`] = `
+<Card
+  className="SchoolCard"
+  hasAnimationOnHover={false}
+>
+  <FrontSchoolCard
+    cardFlipCallback={[Function]}
+    hasHardwareIncluded={true}
+    hasHousing={true}
+    hasOnline={true}
+    hasOnlyOnline={false}
+    isFullTime={true}
+    locations={
+      Array [
+        Object {
+          "address1": "825 Battery Street",
+          "address2": "3rd Floor",
+          "city": "San Francisco",
+          "state": "CA",
+          "va_accepted": true,
+          "zip": 94111,
+        },
+        Object {
+          "address1": "123Battery Street",
+          "address2": "Ste 1",
+          "city": "San Diego",
+          "state": "CA",
+          "va_accepted": false,
+          "zip": 90111,
+        },
+      ]
+    }
+    logoSource="source"
+    name="school name"
+    website="website"
+  />
+</Card>
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
 `;

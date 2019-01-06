@@ -18,9 +18,15 @@ FormCheckBox.propTypes = {
 };
 
 FormCheckBox.defaultProps = {
+<<<<<<< HEAD
   checkBox: null,
   label: null,
   onChange: null,
+=======
+  checkBox: {},
+  label: {},
+  onChange: () => {},
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
 };
 
 function FormCheckBox({ checkBox, label, name, onChange, value }) {

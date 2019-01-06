@@ -29,7 +29,11 @@ exports[`FormSelect should render when passed a prompt and options 1`] = `
 </div>
 `;
 
+<<<<<<< HEAD
 exports[`FormSelect should render with just required props passed 1`] = `
+=======
+exports[`FormSelect should render with required props 1`] = `
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
 <div>
   <select
     id=""

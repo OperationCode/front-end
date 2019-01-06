@@ -27,9 +27,6 @@ export default class team extends React.Component {
   const boardChair = 'David Molina';
   const CEO = 'Conrad Hollomon';
 
-   
-
-
   this.setState({
     boardMembers: this.getOrderedGroup(boardMembers, boardChair),
     staffMembers: this.getOrderedGroup(staffMembers, CEO)
@@ -52,8 +49,9 @@ render() {
        <QuoteBanner 
           className={styles.lincoln}
           imageSource={`${s3}heroBanners/lincoln.jpg`}
+          title =  "tst"
           author="Abraham Lincoln"
-          quote="To care for him who shall have borne the battle and for his widow, and his orphan."
+          quote = "To care for him who shall have borne the battle and for his widow, and his orphan."
         />
        <Section title="Our Board" theme="white">
        <div className={styles.boardMembers}>

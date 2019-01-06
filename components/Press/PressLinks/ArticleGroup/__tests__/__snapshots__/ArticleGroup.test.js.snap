@@ -1,6 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+<<<<<<< HEAD
 exports[`ArticleGroup should render properly with required props 1`] = `
+=======
+exports[`ArticleGroup should render with required props 1`] = `
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
 <div
   className="articlesGroup"
 >
@@ -11,7 +15,10 @@ exports[`ArticleGroup should render properly with required props 1`] = `
     <li>
       <OutboundLink
         analyticsEventLabel="Press Article"
+<<<<<<< HEAD
         className=""
+=======
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
         hasIcon={true}
         href="https://example.com"
       >
@@ -22,7 +29,11 @@ exports[`ArticleGroup should render properly with required props 1`] = `
 </div>
 `;
 
+<<<<<<< HEAD
 exports[`ArticleGroup should render properly with required props and 3 links and a button 1`] = `
+=======
+exports[`ArticleGroup should render with required props and 3 links and a button 1`] = `
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
 <div
   className="articlesGroup"
 >
@@ -33,7 +44,10 @@ exports[`ArticleGroup should render properly with required props and 3 links and
     <li>
       <OutboundLink
         analyticsEventLabel="Press Article"
+<<<<<<< HEAD
         className=""
+=======
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
         hasIcon={true}
         href="https://example.com"
       >

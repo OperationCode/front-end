@@ -1,0 +1,81 @@
+/* TODO: Simplify styles */
+.NavListItem {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.link {
+  align-items: center;
+  color: var(--secondary);
+  display: flex;
+  fill: var(--secondary);
+  height: 100%;
+  justify-content: center;
+  transition: all 0.2s linear;
+}
+
+.sublinkToggleButton {
+  background-color: inherit;
+  border: none;
+  padding: 0;
+  height: var(--navBarHeight);
+
+  /* Match ratio of distance within .linkContent */
+  padding-right: 1rem;
+}
+
+.link:focus,
+.link:hover,
+.navItemLink:focus,
+.sublinkToggleButton:focus,
+.NavListItem:hover .navItemLink:not(.sublinkListItem),
+.NavListItem:hover .sublinkToggleButton:not(.sublinkListItem) {
+  cursor: pointer;
+  color: var(--primary);
+  fill: var(--primary);
+  transition: all 0.2s linear;
+}
+
+.linkContent {
+  padding: 2px 1rem 0;
+}
+
+@media screen and (max-width: 992px) {
+  /* font-size shifts, but SVG icons do not */
+
+  /* align nav link content vertically with plus/minus icons */
+  .linkContent {
+    padding-top: 3px;
+  }
+}
+
+.icon {
+  width: 12px;
+}
+
+.sublinksList {
+  background-color: var(--white);
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 65px;
+  width: 100%;
+}
+
+.invisible {
+  display: none;
+  visibility: hidden;
+}
+
+.sublinkListItem {
+  height: calc(var(--navBarHeight) - 15px);
+}
+
+.sublinkListItem:first-of-type {
+  margin-bottom: 1rem;
+}

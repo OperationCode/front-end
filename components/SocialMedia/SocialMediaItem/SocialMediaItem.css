@@ -6,9 +6,12 @@
 .SocialMediaItem:hover {
   opacity: 1;
 }
+<<<<<<< HEAD
 
 @media screen and (max-width: 768px) {
   .SocialMediaItem {
     margin: 1rem;
   }
 }
+=======
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e

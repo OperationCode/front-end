@@ -24,8 +24,12 @@ module.exports = {
   collectCoverageFrom: [
     '<rootDir>/common/**/*.js',
     '<rootDir>/components/**/*.js',
+<<<<<<< HEAD
     '!<rootDir>/common/**/index.js',
     '!<rootDir>/components/**/index.js',
+=======
+    '<rootDir>/store/**/*.js',
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
   ],
 
   // The directory where Jest should output its coverage files
@@ -45,10 +49,23 @@ module.exports = {
     '<rootDir>/components/FAQ/questions.js',
     '<rootDir>/components/ZipRecruiterJobs/ZipRecruiterJobs.js',
     '<rootDir>/components/Press/PressLinks/Articles.js',
+<<<<<<< HEAD
 
     // Ignore Next.js files
     '<rootDir>/components/head.js',
     '<rootDir>/components/nav.js',
+=======
+    '<rootDir>/store/store.js',
+    '<rootDir>/store/initialState.js',
+    '<rootDir>/store/(.*)/(types|actions).js',
+
+    // Don't collect coverage from import/export mappers
+    '<rootDir>/common/(.*)/index.js',
+    '<rootDir>/components/(.*)/index.js',
+
+    // Ignore Next.js files
+    '<rootDir>/components/head.js',
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
   ],
 
   // A list of reporter names that Jest uses when writing coverage reports
@@ -87,8 +104,14 @@ module.exports = {
 
   // A map from regular expressions to module names that allow to stub out resources with a single module
   moduleNameMapper: {
+<<<<<<< HEAD
     '\\.(jpg|jpeg|png|gif|svg)$': '<rootDir>/test-utils/mocks/testFileMock.js',
     '\\.css$': 'identity-obj-proxy',
+=======
+    '^.+\\.(jp?eg|png|gif|txt)$': '<rootDir>/test-utils/mocks/testFileMock.js',
+    '^.+\\.svg$': '<rootDir>/test-utils/mocks/svgMock.js',
+    '^.+\\.css$': 'identity-obj-proxy',
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
   },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
@@ -133,7 +156,11 @@ module.exports = {
   // runner: "jest-runner",
 
   // The paths to modules that run some code to configure or set up the testing environment before each test
+<<<<<<< HEAD
   // setupFiles: [],
+=======
+  setupFiles: ['jest-prop-type-error'],
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
 
   // The path to a module that runs some code to configure or set up the testing framework before each test
   setupTestFrameworkScriptFile: '<rootDir>/jest.setup.js',
@@ -174,7 +201,14 @@ module.exports = {
   // timers: "real",
 
   // A map from regular expressions to paths to transformers
+<<<<<<< HEAD
   transform: { '^.+\\.js$': 'babel-jest' },
+=======
+  transform: {
+    '^.+\\.js$': 'babel-jest',
+    '^(?!.*\\.(js|css|json)$)': '<rootDir>/test-utils/transforms/file.js',
+  },
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
   // transformIgnorePatterns: [],

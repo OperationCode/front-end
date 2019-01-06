@@ -1,5 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+<<<<<<< HEAD
 exports[`CloseButton should render as disabled 1`] = `
 <button
   className="CloseButton"
@@ -13,15 +14,30 @@ exports[`CloseButton should render as disabled 1`] = `
 </button>
 `;
 
+=======
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
 exports[`CloseButton should render with just required props passed 1`] = `
 <button
   className="CloseButton"
   disabled={false}
+<<<<<<< HEAD
   onClick={[Function]}
   type="button"
 >
   <test-file-mock
     className="icon"
+=======
+  onClick={[MockFunction]}
+  type="button"
+>
+  <span
+    className="ScreenReaderOnly"
+  >
+    Close
+  </span>
+  <svg
+    className="icon secondary"
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
   />
 </button>
 `;

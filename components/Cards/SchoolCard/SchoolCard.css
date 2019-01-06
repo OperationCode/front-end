@@ -1,4 +1,5 @@
 .SchoolCard {
+<<<<<<< HEAD
   color: #000000;
   padding: 0.5rem;
   height: 150px;
@@ -65,4 +66,26 @@
   .info {
     font-size: 0.8rem;
   }
+=======
+  max-width: 400px;
+  height: 550px;
+  font-family: var(--primaryFontFamily), sans-serif;
+}
+
+@media screen and (max-width: 576px) {
+  .SchoolCard {
+    height: 550px;
+  }
+}
+
+.SchoolCard > img {
+  height: 150px;
+  margin: 1rem;
+}
+
+.backCard {
+  background-color: var(--secondary);
+  color: var(--white);
+  position: relative;
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
 }

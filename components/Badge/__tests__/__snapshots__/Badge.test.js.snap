@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Badge should render with many props assigned 1`] = `
+<figure
+  className="Badge test-class"
+>
+  <svg />
+  <figcaption
+    className="label"
+  >
+    Badge Icon
+  </figcaption>
+</figure>
+`;
+
+exports[`Badge should render with required props 1`] = `
+<figure
+  className="Badge"
+>
+  <svg />
+  <figcaption
+    className="label"
+  >
+    Testing
+  </figcaption>
+</figure>
+`;

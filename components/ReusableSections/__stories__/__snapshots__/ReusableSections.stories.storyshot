@@ -2,7 +2,11 @@
 
 exports[`Storyshots ReusableSections DonateSection 1`] = `
 <section
+<<<<<<< HEAD
   className="DonateSection Section slate"
+=======
+  className="Section secondary"
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
   style={
     Object {
       "backgroundImage": "url(https://s3.amazonaws.com/operationcode-assets/background_flag.jpg",
@@ -16,6 +20,7 @@ exports[`Storyshots ReusableSections DonateSection 1`] = `
     Donate
   </h2>
   <div
+<<<<<<< HEAD
     className="content "
   >
     <div
@@ -52,12 +57,30 @@ exports[`Storyshots ReusableSections DonateSection 1`] = `
         </a>
       </button>
     </div>
+=======
+    className="content content"
+  >
+    <p>
+      As a 501(c)(3) veteran-led nonprofit organization, our programs and services are maintained through the efforts of our volunteer staff. Your financial support allows us to continue helping the military community learn software development, enter the tech industry, and code the future.
+    </p>
+    <p>
+      Thank you for supporting our mission!
+    </p>
+    <a
+      className="Button secondary"
+      href="https://secure.lglforms.com/form_engine/s/BRtP7QUKyHOyEYsZROsRew"
+      onClick={[Function]}
+    >
+      Donate Now
+    </a>
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
   </div>
 </section>
 `;
 
 exports[`Storyshots ReusableSections JoinSection 1`] = `
 <section
+<<<<<<< HEAD
   className="JoinSection Section white"
   style={
     Object {
@@ -85,11 +108,39 @@ exports[`Storyshots ReusableSections JoinSection 1`] = `
       </p>
       <button
         className="Button secondary"
+=======
+  className="Section white"
+  style={Object {}}
+>
+  <h2
+    className="Heading secondary"
+    id=""
+  >
+    Join Our Thriving Community
+  </h2>
+  <div
+    className="content JoinSection"
+  >
+    <p>
+      Are you ready to begin your journey towards a career in software development?
+      <br />
+      Get the support you need by joining our members only Slack community!
+    </p>
+    <div
+      className="form"
+    >
+      <input
+        placeholder="Email address"
+      />
+      <button
+        className="Button primary"
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
         disabled={false}
         onClick={[Function]}
         tabIndex={0}
         type="button"
       >
+<<<<<<< HEAD
         <a
           href="/join"
           onClick={[Function]}
@@ -98,6 +149,30 @@ exports[`Storyshots ReusableSections JoinSection 1`] = `
         </a>
       </button>
     </div>
+=======
+        Join our Slack
+      </button>
+    </div>
+    <p>
+      Slack is a community based collaboration tool where all the magic happens!
+    </p>
+    <a
+      href="https://slack.com/"
+      onClick={[Function]}
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      <span
+        className="ScreenReaderOnly"
+      >
+        Opens in new window
+      </span>
+      Learn more
+      <svg
+        className="externalLinkIcon"
+      />
+    </a>
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
   </div>
 </section>
 `;
@@ -108,17 +183,26 @@ exports[`Storyshots ReusableSections SignUpSection 1`] = `
   style={Object {}}
 >
   <h2
+<<<<<<< HEAD
     className="Heading slate headingLines"
+=======
+    className="Heading secondary headingLines"
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
     id=""
   >
     New user?
   </h2>
   <div
+<<<<<<< HEAD
     className="content "
+=======
+    className="content content"
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
   >
     <p>
       Are you ready to deploy your future? Join Operation Code today and launch your career in software development. Once you complete the form below, you’ll be invited to join our team on Slack. Make sure you stop in and say hi!
     </p>
+<<<<<<< HEAD
     <button
       className="Button secondary"
       disabled={false}
@@ -133,6 +217,15 @@ exports[`Storyshots ReusableSections SignUpSection 1`] = `
         Sign Up
       </a>
     </button>
+=======
+    <a
+      className="Button secondary"
+      href="/signup"
+      onClick={[Function]}
+    >
+      Sign Up
+    </a>
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
   </div>
 </section>
 `;

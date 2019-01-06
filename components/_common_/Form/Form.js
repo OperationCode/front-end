@@ -8,7 +8,11 @@ Form.propTypes = {
   className: PropTypes.string,
 };
 
+<<<<<<< HEAD
 Form.defaultProps = { className: '' };
+=======
+Form.defaultProps = { className: undefined };
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
 
 function Form({ children, className }) {
   return (

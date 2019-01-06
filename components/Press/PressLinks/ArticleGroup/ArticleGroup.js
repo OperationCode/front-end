@@ -33,6 +33,7 @@ class ArticleGroup extends Component {
         <ul>
           {articles.map((link, index) => {
             const isArticleVisible = areAllLinksVisible || index < numberOfInitiallyVisibleLinks;
+<<<<<<< HEAD
       
             return isArticleVisible ? (
               <li key={`GroupLink_${link.url}`}>
@@ -40,6 +41,12 @@ class ArticleGroup extends Component {
                   href={link.url}
                   analyticsEventLabel="Press Article"
                 >
+=======
+
+            return isArticleVisible ? (
+              <li key={`GroupLink_${link.url}`}>
+                <OutboundLink href={link.url} analyticsEventLabel="Press Article">
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
                   {link.title}
                 </OutboundLink>
               </li>
@@ -50,7 +57,11 @@ class ArticleGroup extends Component {
           <Button
             aria-pressed={areAllLinksVisible}
             className={styles.areAllLinksVisibleButton}
+<<<<<<< HEAD
             theme={areAllLinksVisible ? 'slate' : 'primary'}
+=======
+            theme={areAllLinksVisible ? 'secondary' : 'primary'}
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
             onClick={this.clickHandler}
           >
             {areAllLinksVisible ? 'Show Less' : 'Show All'}

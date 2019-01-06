@@ -6,13 +6,21 @@ exports[`Storyshots Common/Section default 1`] = `
   style={Object {}}
 >
   <h2
+<<<<<<< HEAD
     className="Heading white headingLines"
+=======
+    className="Heading secondary headingLines"
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
     id="Used as a reference point for scroll anchors"
   >
     Section Title
   </h2>
   <div
+<<<<<<< HEAD
     className="content "
+=======
+    className="content undefined"
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
   >
     Section content!
   </div>

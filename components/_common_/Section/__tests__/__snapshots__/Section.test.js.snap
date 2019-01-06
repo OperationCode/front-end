@@ -1,5 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+<<<<<<< HEAD
 exports[`Section should render properly with a common use case 1 1`] = `
 <section
   className="Section mist"
@@ -48,21 +49,51 @@ exports[`Section should render properly with a common use case 3 1`] = `
     className="content TestClassName"
   >
     Test Children 5
+=======
+exports[`Section should render common use case 1`] = `
+<section
+  className="Section white"
+  style={Object {}}
+>
+  <h2
+    className="Heading secondary headingLines"
+    id=""
+  >
+    Test 2
+  </h2>
+  <div
+    className="content undefined"
+  >
+    Test Children 3
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
   </div>
 </section>
 `;
 
+<<<<<<< HEAD
 exports[`Section should render properly with all props assigned 1`] = `
 <section
   className="testing-123 Section grayLight"
   style={
     Object {
       "color": "navy",
+=======
+exports[`Section should render with many props assigned 1`] = `
+<section
+  className="testing-123 Section gray"
+  style={
+    Object {
+      "color": "black",
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
     }
   }
 >
   <h2
+<<<<<<< HEAD
     className="Heading slate"
+=======
+    className="Heading secondary"
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
     id="test-1"
   >
     Test
@@ -75,6 +106,7 @@ exports[`Section should render properly with all props assigned 1`] = `
 </section>
 `;
 
+<<<<<<< HEAD
 exports[`Section should render properly with the most common use case 1`] = `
 <section
   className="Section white"
@@ -95,13 +127,20 @@ exports[`Section should render properly with the most common use case 1`] = `
 `;
 
 exports[`Section should render with just required props passed 1`] = `
+=======
+exports[`Section should render with required props 1`] = `
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
 <section
   className="Section gray"
   style={Object {}}
 >
   
   <div
+<<<<<<< HEAD
     className="content "
+=======
+    className="content undefined"
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
   >
     Test Children
   </div>

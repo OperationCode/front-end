@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavMobile should render 1`] = `
+<header
+  className="NavMobile"
+>
+  <Link
+    href="/"
+  >
+    <a
+      className="logoLink"
+    >
+      <img
+        alt="Operation Code Logo"
+        className="logo"
+        src="https://s3.amazonaws.com/operationcode-assets/branding/logos/small-blue-logo.png"
+      />
+    </a>
+  </Link>
+  <button
+    className="hamburgerButton"
+    name="dropdown"
+    onClick={[Function]}
+    type="button"
+  >
+    <Svg
+      className="hamburgerIcon"
+    />
+  </button>
+</header>
+`;

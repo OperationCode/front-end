@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .DonateSection {
   background-image: url("https://s3.amazonaws.com/operationcode-assets/background_flag.jpg");
 }
@@ -16,4 +17,12 @@
 
 .donateText p:last-of-type {
   padding-bottom: 2rem;
+=======
+.content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  max-width: 50rem;
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
 }

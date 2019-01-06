@@ -8,6 +8,7 @@ cache:
     - 'node_modules'
 
 before_install:
+<<<<<<< HEAD
   - yarn global add greenkeeper-lockfile@2
 
 install:
@@ -16,6 +17,14 @@ install:
     else
       yarn --silent --pure-lockfile;
     fi
+=======
+  - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.12.1
+  - export PATH="$HOME/.yarn/bin:$PATH"
+  - yarn global add greenkeeper-lockfile@2
+
+install:
+  - yarn --silent
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
 
 before_script:
   - greenkeeper-lockfile-update
@@ -28,22 +37,53 @@ script:
   - yarn test:ci
   - yarn build
 
+<<<<<<< HEAD
+=======
+# Leave comment for inevitable Cypress integration
+# jobs:
+#   include:
+# THIS IS ONE STAGE
+#     - stage: lint/test
+#       name: "Lint"
+#       script: yarn lint
+#     -
+#       name: "Test"
+#       script: yarn test:ci
+# THIS IS ANOTHER
+#     - stage: build
+#       name: "Build"
+#       script: yarn build
+
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
 after_script:
   - greenkeeper-lockfile-upload
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 
+<<<<<<< HEAD
 before_deploy:
  - yarn add now
  
 deploy:
   - provider: script
     script: echo 'No build on feature branches. Now deploys static exports automatically.'
+=======
+deploy:
+  - provider: script
+    script: echo 'No build on feature branches. @zeit/now deploys static exports automatically.'
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
     skip_cleanup: true
     on:
       all_branches: true
       master: false
   - provider: script
+<<<<<<< HEAD
     script: now --local-config=./now.master.json --token $NOW_TOKEN && now alias --local-config=./now.master.json --token $NOW_TOKEN
     skip_cleanup: true
     on:
+=======
+    script: yarn add now && now --local-config=./now.master.json --token $NOW_TOKEN && now alias --local-config=./now.master.json --token $NOW_TOKEN
+    skip_cleanup: true
+    on:
+      all_branches: false
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
       master: true

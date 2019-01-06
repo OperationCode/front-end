@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .screenReaderOnly {
   border: 0;
   clip: rect(0, 0, 0, 0);
@@ -9,6 +10,8 @@
   width: 1px;
 }
 
+=======
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
 .externalLinkIcon {
   fill: currentColor;
   left: 4px;

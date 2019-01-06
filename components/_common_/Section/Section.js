@@ -10,19 +10,31 @@ Section.propTypes = {
   hasHeadingLines: PropTypes.bool,
   id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]), // reference for scroll anchors
   style: PropTypes.object,
+<<<<<<< HEAD
   theme: PropTypes.oneOf(['gray', 'grayLight', 'mist', 'slate', 'white']),
+=======
+  theme: PropTypes.oneOf(['gray', 'secondary', 'white']),
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
   title: PropTypes.string,
   contentClassName: PropTypes.string,
 };
 
 Section.defaultProps = {
+<<<<<<< HEAD
   className: '',
+=======
+  className: undefined,
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
   hasHeadingLines: true,
   id: '',
   style: {},
   theme: 'gray',
   title: '',
+<<<<<<< HEAD
   contentClassName: '',
+=======
+  contentClassName: undefined,
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
 };
 
 function Section({
@@ -39,6 +51,7 @@ function Section({
   let headingTheme;
   switch (theme) {
     // Light background colors have dark heading color
+<<<<<<< HEAD
     case 'grayLight':
     case 'mist':
     case 'white':
@@ -47,6 +60,14 @@ function Section({
     // Dark background colors have light heading color
     case 'gray':
     case 'slate':
+=======
+    case 'white':
+    case 'gray':
+      headingTheme = 'secondary';
+      break;
+    // Dark background colors have light heading color
+    case 'secondary':
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
       headingTheme = 'white';
       break;
     default:

@@ -27,6 +27,7 @@ FeaturedJobItem.defaultProps = {
 function FeaturedJobItem({ title, source, sourceUrl, city, state, country, description, remote }) {
   return (
     <article className={styles.job}>
+<<<<<<< HEAD
       <div>
         <OutboundLink
           href={sourceUrl}
@@ -36,17 +37,31 @@ function FeaturedJobItem({ title, source, sourceUrl, city, state, country, descr
           <h6 className={styles.link}>{title}</h6>
         </OutboundLink>
       </div>
+=======
+      <OutboundLink href={sourceUrl} analyticsEventLabel={`Featured Job ${source}`}>
+        <h6>{title}</h6>
+      </OutboundLink>
+
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
       <div className={styles.details}>
         <div className={styles.detailsContainer}>
           <BuildingIcon className={styles.icon} />
           <span className={styles.detail}>{source}</span>
         </div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
         <div className={styles.detailsContainer}>
           {(city || state || country) && <MapMarkerIcon className={styles.icon} />}
           {city && <span className={styles.detail}>{city},</span>}
           {state && <span className={styles.detail}>{state},</span>}
           {country && <span className={styles.detail}>{country}</span>}
         </div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
         {remote && (
           <div className={styles.detailsContainer}>
             <CloudUploadIcon className={styles.icon} />

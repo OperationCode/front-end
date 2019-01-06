@@ -1,5 +1,11 @@
 .logo {
+<<<<<<< HEAD
   fill: var(--primary);
   height: 52px;
   width: 52px;
+=======
+  fill: var(--white);
+  height: 30px;
+  width: 30px;
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
 }

@@ -1,6 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+<<<<<<< HEAD
 exports[`Timeline it should render properly with no props 1`] = `
+=======
+exports[`Timeline should render with no props passed passed 1`] = `
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
 <div
   className="timeline"
 >
@@ -35,7 +39,10 @@ exports[`Timeline it should render properly with no props 1`] = `
             <OutboundLink
               alt="Angel Hack"
               analyticsEventLabel="History Link"
+<<<<<<< HEAD
               className=""
+=======
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
               hasIcon={true}
               href="https://angelhack.com"
             >
@@ -80,7 +87,10 @@ exports[`Timeline it should render properly with no props 1`] = `
             <OutboundLink
               alt="Bmore On Rails"
               analyticsEventLabel="History Link"
+<<<<<<< HEAD
               className=""
+=======
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
               hasIcon={true}
               href="https://bmoreonrails.org"
             >
@@ -92,7 +102,10 @@ exports[`Timeline it should render properly with no props 1`] = `
             <OutboundLink
               alt="One Mounth Rails"
               analyticsEventLabel="History Link"
+<<<<<<< HEAD
               className=""
+=======
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
               hasIcon={true}
               href="https://onemonth.com"
             >
@@ -110,7 +123,10 @@ exports[`Timeline it should render properly with no props 1`] = `
             <OutboundLink
               alt="Rails Conf"
               analyticsEventLabel="History Link"
+<<<<<<< HEAD
               className=""
+=======
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
               hasIcon={true}
               href="https://railsconf.com"
             >
@@ -130,7 +146,10 @@ exports[`Timeline it should render properly with no props 1`] = `
             <OutboundLink
               alt="Patriot Boot Camp"
               analyticsEventLabel="History Link"
+<<<<<<< HEAD
               className=""
+=======
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
               hasIcon={true}
               href="https://techstars.com/patriotbootcamp"
             >
@@ -183,7 +202,10 @@ exports[`Timeline it should render properly with no props 1`] = `
             <OutboundLink
               alt="Cascadia Conference"
               analyticsEventLabel="History Link"
+<<<<<<< HEAD
               className=""
+=======
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
               hasIcon={true}
               href="https://cascadiarubyconf.com"
             >
@@ -195,7 +217,10 @@ exports[`Timeline it should render properly with no props 1`] = `
             <OutboundLink
               alt="Operation Code Is A Go"
               analyticsEventLabel="History Link"
+<<<<<<< HEAD
               className=""
+=======
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
               hasIcon={true}
               href="https://www.codefellows.org"
             >
@@ -207,7 +232,10 @@ exports[`Timeline it should render properly with no props 1`] = `
             <OutboundLink
               alt="Operation Code Old Repository"
               analyticsEventLabel="History Link"
+<<<<<<< HEAD
               className=""
+=======
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
               hasIcon={true}
               href="//github.com/OperationCode/operationcode"
             >
@@ -243,7 +271,10 @@ exports[`Timeline it should render properly with no props 1`] = `
             <OutboundLink
               alt="Code Fellows"
               analyticsEventLabel="History Link"
+<<<<<<< HEAD
               className=""
+=======
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
               hasIcon={true}
               href="http//www.codefellows.org"
             >
@@ -261,7 +292,10 @@ exports[`Timeline it should render properly with no props 1`] = `
             <OutboundLink
               alt="DNSimple"
               analyticsEventLabel="History Link"
+<<<<<<< HEAD
               className=""
+=======
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
               hasIcon={true}
               href="https://dnsimple.com"
             >
@@ -281,7 +315,10 @@ exports[`Timeline it should render properly with no props 1`] = `
             <OutboundLink
               alt="Blog Article: Why Veterans Will Make Excellent Programmers"
               analyticsEventLabel="History Link"
+<<<<<<< HEAD
               className=""
+=======
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
               hasIcon={true}
               href="https://www.switchup.org/blog/why-veterans-will-make-excellent-programmers"
             >
@@ -299,7 +336,10 @@ exports[`Timeline it should render properly with no props 1`] = `
              
             <OutboundLink
               analyticsEventLabel="History Link"
+<<<<<<< HEAD
               className=""
+=======
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
               hasIcon={true}
               href="https://hacksummit.org"
             >
@@ -376,7 +416,10 @@ exports[`Timeline it should render properly with no props 1`] = `
             <OutboundLink
               alt="Operation Code Twitter"
               analyticsEventLabel="History Link"
+<<<<<<< HEAD
               className=""
+=======
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
               hasIcon={true}
               href="https://twitter.com/operation_code"
             >
@@ -388,7 +431,10 @@ exports[`Timeline it should render properly with no props 1`] = `
             <OutboundLink
               alt="Operation Code Instagram"
               analyticsEventLabel="History Link"
+<<<<<<< HEAD
               className=""
+=======
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
               hasIcon={true}
               href="https://instagram.com/operation_code"
             >
@@ -400,7 +446,10 @@ exports[`Timeline it should render properly with no props 1`] = `
             <OutboundLink
               alt="Operation Code Facebook"
               analyticsEventLabel="History Link"
+<<<<<<< HEAD
               className=""
+=======
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
               hasIcon={true}
               href="https://facebook.com/operationcode.org"
             >
@@ -418,7 +467,10 @@ exports[`Timeline it should render properly with no props 1`] = `
             <OutboundLink
               alt="Calagator Archive - OpCode Launch Party"
               analyticsEventLabel="History Link"
+<<<<<<< HEAD
               className=""
+=======
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
               hasIcon={true}
               href="https://calagator.org/events/1250468219"
             >
@@ -438,7 +490,10 @@ exports[`Timeline it should render properly with no props 1`] = `
             <OutboundLink
               alt="Operation Code Slack Team"
               analyticsEventLabel="History Link"
+<<<<<<< HEAD
               className=""
+=======
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
               hasIcon={true}
               href="https://operation-code.slack.com/"
             >
@@ -458,7 +513,10 @@ exports[`Timeline it should render properly with no props 1`] = `
             <OutboundLink
               alt="Operation Code Old GitHub Contributing Guide"
               analyticsEventLabel="History Link"
+<<<<<<< HEAD
               className=""
+=======
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
               hasIcon={true}
               href="https://github.com/OperationCode/operationcode/blob/master/CONTRIBUTING.md"
             >
@@ -478,7 +536,10 @@ exports[`Timeline it should render properly with no props 1`] = `
             <OutboundLink
               alt="AirBnB"
               analyticsEventLabel="History Link"
+<<<<<<< HEAD
               className=""
+=======
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
               hasIcon={true}
               href="https://www.airbnb.com/"
             >
@@ -490,7 +551,10 @@ exports[`Timeline it should render properly with no props 1`] = `
             <OutboundLink
               alt="Link to Instagram photo of Operation Code at SignalConf"
               analyticsEventLabel="History Link"
+<<<<<<< HEAD
               className=""
+=======
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
               hasIcon={true}
               href="https://www.instagram.com/p/21p5bFxUjd/?taken-by=davidcmolina"
             >
@@ -508,7 +572,10 @@ exports[`Timeline it should render properly with no props 1`] = `
             <OutboundLink
               alt="Twilio's SignalConf"
               analyticsEventLabel="History Link"
+<<<<<<< HEAD
               className=""
+=======
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
               hasIcon={true}
               href="https://www.twilio.com/signal/2015"
             >
@@ -520,7 +587,10 @@ exports[`Timeline it should render properly with no props 1`] = `
             <OutboundLink
               alt="Twilio"
               analyticsEventLabel="History Link"
+<<<<<<< HEAD
               className=""
+=======
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
               hasIcon={true}
               href="https://www.twilio.com/"
             >
@@ -548,7 +618,10 @@ exports[`Timeline it should render properly with no props 1`] = `
             <OutboundLink
               alt="Old Operation Code tweet"
               analyticsEventLabel="History Link"
+<<<<<<< HEAD
               className=""
+=======
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
               hasIcon={true}
               href="https://twitter.com/operation_code/status/614443994769027072"
             >
@@ -566,7 +639,10 @@ exports[`Timeline it should render properly with no props 1`] = `
             <OutboundLink
               alt="Sticker Mule"
               analyticsEventLabel="History Link"
+<<<<<<< HEAD
               className=""
+=======
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
               hasIcon={true}
               href="https://www.stickermule.com/"
             >
@@ -594,7 +670,10 @@ exports[`Timeline it should render properly with no props 1`] = `
             <OutboundLink
               alt="hackBCA"
               analyticsEventLabel="History Link"
+<<<<<<< HEAD
               className=""
+=======
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
               hasIcon={true}
               href="https://www.hackbca.com/hackBCA"
             >
@@ -637,7 +716,10 @@ exports[`Timeline it should render properly with no props 1`] = `
             <OutboundLink
               alt="Hack Summit"
               analyticsEventLabel="History Link"
+<<<<<<< HEAD
               className=""
+=======
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
               hasIcon={true}
               href="https://hacksummit.org/"
             >
@@ -655,7 +737,10 @@ exports[`Timeline it should render properly with no props 1`] = `
             <OutboundLink
               alt="Speakeasy"
               analyticsEventLabel="History Link"
+<<<<<<< HEAD
               className=""
+=======
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
               hasIcon={true}
               href="https://speakeasy.com/"
             >
@@ -708,7 +793,10 @@ exports[`Timeline it should render properly with no props 1`] = `
             <OutboundLink
               alt="O'Reilly OSCON"
               analyticsEventLabel="History Link"
+<<<<<<< HEAD
               className=""
+=======
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
               hasIcon={true}
               href="https://conferences.oreilly.com/oscon/oscon-tx"
             >
@@ -736,7 +824,10 @@ exports[`Timeline it should render properly with no props 1`] = `
             <OutboundLink
               alt="Slack Archive of 2000th Message"
               analyticsEventLabel="History Link"
+<<<<<<< HEAD
               className=""
+=======
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
               hasIcon={true}
               href="https://twitter.com/operation_code/status/882280600920616960"
             >

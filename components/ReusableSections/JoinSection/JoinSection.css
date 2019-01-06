@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .joinText {
   align-items: center;
   display: flex;
@@ -12,4 +13,21 @@
 
 .joinText p:last-of-type {
   padding-bottom: 2rem;
+=======
+.JoinSection {
+  align-items: center;
+  max-width: 900px;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 1rem 0;
+}
+
+.form > input {
+  width: 300px;
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
 }

@@ -3,6 +3,7 @@
 
 /* Global Styles */
 @font-face {
+<<<<<<< HEAD
   font-family: "PF Din Display";
   font-weight: normal;
 
@@ -11,6 +12,18 @@
     url("/static/fonts/PFDinDisplayPro-Reg.ttf") format("truetype"),
     url("/static/fonts/PFDinDisplayPro-Reg.woff2") format("woff2"),
     url("/static/fonts/PFDinDisplayPro-Reg.woff") format("woff)");
+=======
+  font-family: "DIN Condensed Bold";
+  font-style: normal;
+  font-weight: normal;
+  font-display: auto;
+
+  /* prettier-ignore */
+  src:
+    url("/static/fonts/DINCondensed-Bold.ttf") format("truetype"),
+    url("/static/fonts/DINCondensed-Bold.woff2") format("woff2"),
+    url("/static/fonts/DINCondensed-Bold.woff") format("woff");
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
 }
 
 html {
@@ -18,14 +31,23 @@ html {
   height: 100%;
   margin: 0;
   padding: 0;
+<<<<<<< HEAD
   font-family: "Noto Serif", serif;
   font-size: 16px;
   font-weight: normal;
+=======
+  font-family: var(--secondaryFontFamily), serif;
+  font-size: 18px;
+  font-weight: 400;
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
   color: #47566b;
 }
 
 body {
+<<<<<<< HEAD
   line-height: 1.5;
+=======
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
   hyphens: none;
   margin: 0;
   min-width: 300px;
@@ -38,8 +60,25 @@ h4,
 h5,
 h6,
 button,
+<<<<<<< HEAD
 footer a {
   font-family: "PF Din Display", Arial, sans-serif;
+=======
+nav,
+footer {
+  font-family: var(--primaryFontFamily), sans-serif;
+  text-transform: uppercase;
+}
+
+button,
+footer {
+  letter-spacing: 2px;
+}
+
+footer {
+  background-color: var(--secondary);
+  color: var(--white);
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
 }
 
 h1,
@@ -48,21 +87,45 @@ h3,
 h4,
 h5,
 h6 {
+<<<<<<< HEAD
+=======
+  letter-spacing: 3px;
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
   margin: 0;
   padding: 0;
 }
 
+<<<<<<< HEAD
+=======
+a {
+  color: currentColor;
+}
+
+nav a,
+footer a {
+  text-decoration: none;
+}
+
+p {
+  line-height: 1.75;
+  max-width: 700px;
+}
+
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
 #root {
   min-height: 100%;
 }
 
 /* Custom font scaling formula https://blog.envylabs.com/responsive-typographic-scales-in-css-b9f60431d1c4 */
 h1 {
+<<<<<<< HEAD
   /*
     40px (2.5 * 16) on Desktops
     37.5px (2.5 * 15) on Tablets
     32.5px (2.5 * 13) on Mobiles
   */
+=======
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
   font-size: 2.5rem;
 }
 
@@ -86,6 +149,7 @@ h6 {
   font-size: 1.5rem;
 }
 
+<<<<<<< HEAD
 @media screen and (max-width: 480px) {
   html {
     font-size: 13px !important;
@@ -95,6 +159,17 @@ h6 {
 @media screen and (min-width: 481px) and (max-width: 960px) {
   html {
     font-size: 15px !important;
+=======
+@media screen and (min-width: 481px) and (max-width: 960px) {
+  html {
+    font-size: 16px !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  html {
+    font-size: 14px !important;
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
   }
 }
 
@@ -108,3 +183,13 @@ h6 {
   transition-timing-function: linear;
   transition-delay: 0s;
 }
+<<<<<<< HEAD
+=======
+
+code {
+  background-color: #f0f2f2;
+  border-radius: 4px;
+  border-style: solid;
+  border-color: #f0f2f2;
+}
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e

@@ -1,9 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+<<<<<<< HEAD
 exports[`SignUpSection it should render properly with no props 1`] = `
 <Section
   className=""
   contentClassName=""
+=======
+exports[`SignUpSection should render with no props passed passed 1`] = `
+<Section
+  contentClassName="content"
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
   hasHeadingLines={true}
   id=""
   style={Object {}}
@@ -13,6 +19,7 @@ exports[`SignUpSection it should render properly with no props 1`] = `
   <p>
     Are you ready to deploy your future? Join Operation Code today and launch your career in software development. Once you complete the form below, you’ll be invited to join our team on Slack. Make sure you stop in and say hi!
   </p>
+<<<<<<< HEAD
   <Button
     analyticsObject={
       Object {
@@ -37,5 +44,16 @@ exports[`SignUpSection it should render properly with no props 1`] = `
       </a>
     </Link>
   </Button>
+=======
+  <LinkButton
+    analyticsEventLabel=""
+    disabled={false}
+    fullWidth={false}
+    href="/signup"
+    theme="secondary"
+  >
+    Sign Up
+  </LinkButton>
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
 </Section>
 `;

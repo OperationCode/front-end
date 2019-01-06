@@ -4,6 +4,10 @@
   justify-content: center;
   margin-bottom: 1rem;
   text-align: center;
+<<<<<<< HEAD
+=======
+  text-transform: uppercase;
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
   width: 85%;
 }
 
@@ -17,8 +21,13 @@
   margin: 0 10px 5px 10px;
 }
 
+<<<<<<< HEAD
 .slate {
   color: var(--slate);
+=======
+.secondary {
+  color: var(--secondary);
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
 }
 
 .gray {
@@ -26,7 +35,11 @@
 }
 
 .white {
+<<<<<<< HEAD
   color: #ffffff;
+=======
+  color: var(--white);
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
 }
 
 @media screen and (max-width: 768px) {

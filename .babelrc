@@ -36,6 +36,10 @@
           "pages": "./pages",
           "scripts": "./scripts",
           "static": "./static",
+<<<<<<< HEAD
+=======
+          "store": "./store",
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
           "test-utils": "./test-utils"
         }
       }

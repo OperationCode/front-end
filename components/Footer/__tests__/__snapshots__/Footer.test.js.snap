@@ -1,10 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+<<<<<<< HEAD
 exports[`Footer it should render properly no props 1`] = `
+=======
+exports[`Footer should render with no props passed 1`] = `
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
 <footer
   className="Footer"
 >
   <div
+<<<<<<< HEAD
     className="footerGrouping socialGrouping"
   >
     <a
@@ -109,6 +114,221 @@ exports[`Footer it should render properly no props 1`] = `
       <OutboundLink
         analyticsEventLabel="Footer Link"
         className=""
+=======
+    className="footerWrapper row"
+  >
+    <div
+      className="footerGrouping socialGrouping"
+    >
+      <div
+        className="logoGrouping"
+      >
+        <img
+          alt="Operation Code Logo"
+          src="https://s3.amazonaws.com/operationcode-assets/branding/logos/small-blue-logo.png"
+        />
+      </div>
+      <div
+        className="capitalize marginBottom"
+      >
+        Connect With Us!
+      </div>
+      <SocialMedia />
+    </div>
+    <div
+      className="footerGrouping linksGrouping capitalize"
+    >
+      <div
+        className="linksRow"
+      >
+        <ul
+          className="linksColumn"
+        >
+          <li>
+            <Link
+              href="/about"
+            >
+              <a>
+                About Us
+              </a>
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/contact"
+            >
+              <a>
+                Contact Us
+              </a>
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/faq"
+            >
+              <a>
+                FAQ
+              </a>
+            </Link>
+          </li>
+        </ul>
+        <ul
+          className="linksColumn"
+        >
+          <li>
+            <Link
+              href="/who_we_serve"
+            >
+              <a>
+                Who We Serve
+              </a>
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/code_schools"
+            >
+              <a>
+                Code Schools
+              </a>
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/jobs"
+            >
+              <a>
+                Job Board
+              </a>
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/events"
+            >
+              <a>
+                Events
+              </a>
+            </Link>
+          </li>
+        </ul>
+      </div>
+      <div
+        className="linksRow"
+      >
+        <ul
+          className="linksColumn"
+        >
+          <li>
+            <Link
+              href="/get_involved"
+            >
+              <a>
+                Get Involved
+              </a>
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/mentoring"
+            >
+              <a>
+                Become A Mentor
+              </a>
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/history"
+            >
+              <a>
+                History
+              </a>
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/donate"
+            >
+              <a>
+                Donate
+              </a>
+            </Link>
+          </li>
+        </ul>
+        <ul
+          className="linksColumn"
+        >
+          <li>
+            <Link
+              href="/resources"
+            >
+              <a>
+                Resources
+              </a>
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/press"
+            >
+              <a>
+                Press
+              </a>
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/branding"
+            >
+              <a>
+                Branding
+              </a>
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/blog"
+            >
+              <a>
+                Blog
+              </a>
+            </Link>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div
+    className="row legalGrouping"
+  >
+    <div
+      className="row copyright"
+    >
+      Copyright 
+      2018
+       Operation Code™
+    </div>
+    <div
+      className="row legalLinks"
+    >
+      <OutboundLink
+        analyticsEventLabel="FooterLink"
+        hasIcon={true}
+        href="https://www.somefakeurl.com/"
+      >
+        Terms of Use
+      </OutboundLink>
+      <OutboundLink
+        analyticsEventLabel="FooterLink"
+        hasIcon={true}
+        href="https://www.anotherfakeurl.com/"
+      >
+        Cookies
+      </OutboundLink>
+      <OutboundLink
+        analyticsEventLabel="FooterLink"
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
         hasIcon={true}
         href="https://www.iubenda.com/privacy-policy/8174861"
       >

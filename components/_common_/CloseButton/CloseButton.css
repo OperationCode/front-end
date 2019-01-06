@@ -1,14 +1,24 @@
 .CloseButton {
+<<<<<<< HEAD
   top: 1rem;
   right: 1rem;
   background: var(--slate);
   border-radius: 50%;
   border: none;
   position: absolute;
+=======
+  background-color: rgba(0, 0, 0, 0);
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  border: none;
+  margin: 0.5rem;
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
 }
 
 .CloseButton:disabled {
   cursor: not-allowed;
+<<<<<<< HEAD
   background-color: var(--slateLight);
   opacity: 0.5;
 }
@@ -31,3 +41,35 @@
 }
 
 /* TODO: Create disabled styles */
+=======
+  opacity: 0.5;
+}
+
+.CloseButton:hover:not(:disabled) {
+  cursor: pointer;
+}
+
+.icon {
+  padding: 0.25rem;
+  width: 20px;
+  transform: rotate(45deg);
+  transition: 0.2s linear transform;
+}
+
+.primary {
+  fill: var(--primary);
+}
+
+.secondary {
+  fill: var(--secondary);
+}
+
+.white {
+  fill: var(--white);
+}
+
+.CloseButton:hover:not(:disabled) .icon {
+  transform: rotate(135deg);
+  transition: 0.2s linear transform;
+}
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e

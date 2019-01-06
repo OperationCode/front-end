@@ -3,26 +3,49 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+<<<<<<< HEAD
   color: #ffffff;
   display: flex;
   flex-direction: column;
   height: 430px;
+=======
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  min-height: 65vh;
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
   justify-content: center;
   text-shadow: #111111 0 0 15px;
   width: 100%;
 }
 
 .content {
+<<<<<<< HEAD
   padding: 3rem;
 }
 
 /* TODO: Create <Hr /> component and use that to match drop-shadow on header */
 .underline {
   border-bottom: 4px solid #ffffff;
+=======
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: auto;
+  width: 90%;
+  align-self: center;
+  margin-top: calc(3rem + var(--navBarHeight) + var(--navBarTopGutterHeight));
+}
+
+.underline {
+  border-bottom: 4px solid var(--primary);
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
   margin-bottom: 1rem;
   text-align: center;
 }
 
+<<<<<<< HEAD
 .quoteLines {
   width: 85%;
   height: 3px;
@@ -66,4 +89,9 @@
   .HeroBanner {
     height: 320px;
   }
+=======
+.fullViewHeight {
+  min-height: 100vh;
+  width: auto;
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
 }

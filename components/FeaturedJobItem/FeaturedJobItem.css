@@ -2,14 +2,26 @@
   padding: 1rem 0;
 }
 
+<<<<<<< HEAD
 .link {
   color: #1a0dab;
+=======
+.job h6 {
+  display: inline;
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
 }
 
 .details {
   display: flex;
+<<<<<<< HEAD
   font-size: 1.125rem;
   color: var(--grayDark);
+=======
+  flex-wrap: wrap;
+  font-size: 1.125rem;
+  color: var(--secondary);
+  opacity: 0.8;
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
   margin-top: 0.25rem;
 }
 
@@ -31,6 +43,11 @@
 }
 
 .icon {
+<<<<<<< HEAD
   fill: var(--grayDark);
+=======
+  fill: var(--secondary);
+  opacity: 0.8;
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
   height: 0.825rem;
 }

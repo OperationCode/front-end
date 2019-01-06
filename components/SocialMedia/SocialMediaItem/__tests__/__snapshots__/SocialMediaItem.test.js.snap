@@ -1,21 +1,38 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+<<<<<<< HEAD
 exports[`SocialMediaItem it should render properly with required (all) props 1`] = `
+=======
+exports[`SocialMediaItem should render with required props 1`] = `
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
 <div
   className="SocialMediaItem"
 >
   <a
+<<<<<<< HEAD
     className=""
     href="https://facebook.com"
+=======
+    href="https://facebook.com"
+    onClick={[Function]}
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
     rel="noopener noreferrer"
     target="_blank"
   >
     <span
+<<<<<<< HEAD
       className="screenReaderOnly"
     >
       Opens in new window
     </span>
     <test-file-mock
+=======
+      className="ScreenReaderOnly"
+    >
+      Opens in new window
+    </span>
+    <svg
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
       fill="blue"
     />
   </a>

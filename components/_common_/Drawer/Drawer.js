@@ -10,7 +10,11 @@ Drawer.propTypes = {
 };
 
 Drawer.defaultProps = {
+<<<<<<< HEAD
   className: '',
+=======
+  className: undefined,
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
   isVisible: false,
 };
 

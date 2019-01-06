@@ -19,7 +19,11 @@ export default class ${componentName} extends Component {
   };
 
   static defaultProps = {
+<<<<<<< HEAD
     className: '',
+=======
+    className: undefined,
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
   };
 
   render() {
@@ -63,11 +67,19 @@ import createSnapshotTest from 'test-utils/createSnapshotTest';
 import ${componentName} from '../${componentName}';
 
 describe('${componentName}', () => {
+<<<<<<< HEAD
   it('should render with just required props passed', () => {
     createSnapshotTest(<${componentName}>Test</${componentName}>);
   });
 
   it('should render properly with all props assigned', () => {
+=======
+  it('should render with required props', () => {
+    createSnapshotTest(<${componentName}>Test</${componentName}>);
+  });
+
+  it('should render with many props assigned', () => {
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
     createSnapshotTest(
       <${componentName} className="test-class">
         Test

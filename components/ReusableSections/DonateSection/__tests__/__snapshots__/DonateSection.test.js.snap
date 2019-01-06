@@ -1,9 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+<<<<<<< HEAD
 exports[`DonateSection should render properly with no props 1`] = `
 <Section
   className="DonateSection"
   contentClassName=""
+=======
+exports[`DonateSection should render with no props passed passed 1`] = `
+<Section
+  contentClassName="content"
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
   hasHeadingLines={false}
   headingTheme="white"
   id=""
@@ -12,6 +18,7 @@ exports[`DonateSection should render properly with no props 1`] = `
       "backgroundImage": "url(https://s3.amazonaws.com/operationcode-assets/background_flag.jpg",
     }
   }
+<<<<<<< HEAD
   theme="slate"
   title="Donate"
 >
@@ -50,5 +57,25 @@ exports[`DonateSection should render properly with no props 1`] = `
       </OutboundLink>
     </Button>
   </div>
+=======
+  theme="secondary"
+  title="Donate"
+>
+  <p>
+    As a 501(c)(3) veteran-led nonprofit organization, our programs and services are maintained through the efforts of our volunteer staff. Your financial support allows us to continue helping the military community learn software development, enter the tech industry, and code the future.
+  </p>
+  <p>
+    Thank you for supporting our mission!
+  </p>
+  <LinkButton
+    analyticsEventLabel="Donate"
+    disabled={false}
+    fullWidth={false}
+    href="https://secure.lglforms.com/form_engine/s/BRtP7QUKyHOyEYsZROsRew"
+    theme="secondary"
+  >
+    Donate Now
+  </LinkButton>
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
 </Section>
 `;

@@ -1,15 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+<<<<<<< HEAD
 exports[`UpgradeBrowserOverlay should render with no props 1`] = `
 <Modal
   className="UpgradeBrowserOverlay"
   hasCloseIcon={false}
   isOpen={true}
+=======
+exports[`UpgradeBrowserOverlay should render with no props passed 1`] = `
+<Modal
+  className="UpgradeBrowserOverlay"
+  isOpen={true}
+  onRequestClose={[Function]}
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
   overlayClassName="overlay"
   screenReaderLabel="Upgrade Your Browser"
   shouldCloseOnOverlayClick={false}
 >
+<<<<<<< HEAD
   <test-file-mock
+=======
+  <Svg
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
     className="warningLogo"
   />
   <h1>
@@ -33,7 +45,10 @@ exports[`UpgradeBrowserOverlay should render with no props 1`] = `
       </span>
       <OutboundLink
         analyticsEventLabel="Microsoft Edge Download from <UpgradeBrowserOverlay>"
+<<<<<<< HEAD
         className=""
+=======
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
         hasIcon={false}
         href="https://www.microsoft.com/windows/microsoft-edge"
       >
@@ -54,7 +69,10 @@ exports[`UpgradeBrowserOverlay should render with no props 1`] = `
       </span>
       <OutboundLink
         analyticsEventLabel="Google Chrome Download from <UpgradeBrowserOverlay>"
+<<<<<<< HEAD
         className=""
+=======
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
         hasIcon={false}
         href="https://www.google.com/chrome"
       >
@@ -75,7 +93,10 @@ exports[`UpgradeBrowserOverlay should render with no props 1`] = `
       </span>
       <OutboundLink
         analyticsEventLabel="Mozilla Firefox Download from <UpgradeBrowserOverlay>"
+<<<<<<< HEAD
         className=""
+=======
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
         hasIcon={false}
         href="https://www.mozilla.org/firefox/new"
       >
@@ -96,7 +117,10 @@ exports[`UpgradeBrowserOverlay should render with no props 1`] = `
       </span>
       <OutboundLink
         analyticsEventLabel="Safari Download from <UpgradeBrowserOverlay>"
+<<<<<<< HEAD
         className=""
+=======
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
         hasIcon={false}
         href="https://support.apple.com/downloads/safari"
       >

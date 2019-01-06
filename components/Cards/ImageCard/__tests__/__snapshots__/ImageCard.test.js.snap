@@ -1,5 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+<<<<<<< HEAD
 exports[`ImageCard it should render properly with required props 1`] = `
 <Card
   className="ImageCard"
@@ -21,10 +22,36 @@ exports[`ImageCard it should render properly with required props 1`] = `
 `;
 
 exports[`ImageCard should render properly with some props assigned 1`] = `
+=======
+exports[`ImageCard should render with many props assigned 1`] = `
+<Card
+  className="ImageCard test"
+  hasAnimationOnHover={false}
+>
+  <React.Fragment>
+    <div
+      className="content"
+    >
+      <p>
+        Testing!
+      </p>
+    </div>
+    <img
+      alt="Test title"
+      className="image"
+      src="/static/images/Family1.jpg"
+    />
+  </React.Fragment>
+</Card>
+`;
+
+exports[`ImageCard should render with required props 1`] = `
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
 <Card
   className="ImageCard"
   hasAnimationOnHover={false}
 >
+<<<<<<< HEAD
   <img
     alt="Title Tester"
     className="image"
@@ -56,5 +83,21 @@ exports[`ImageCard should render properly with some props assigned 1`] = `
       </Button>
     </p>
   </div>
+=======
+  <React.Fragment>
+    <img
+      alt="Test title"
+      className="image"
+      src="/static/images/Family1.jpg"
+    />
+    <div
+      className="content"
+    >
+      <p>
+        Testing!
+      </p>
+    </div>
+  </React.Fragment>
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
 </Card>
 `;

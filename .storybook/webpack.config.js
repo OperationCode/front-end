@@ -1,5 +1,9 @@
 const path = require('path');
 const svgoConfig = require('../common/config/svgo');
+<<<<<<< HEAD
+=======
+const postCSSConfig = require('../postcss.config');
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
 
 // Export a function. Accept the base config as the only param.
 module.exports = (storybookBaseConfig, configType) => {
@@ -27,12 +31,26 @@ module.exports = (storybookBaseConfig, configType) => {
           loader: 'postcss-loader',
           options: {
             plugins: [
+<<<<<<< HEAD
               require('postcss-import')({ root: path.join(__dirname, '../') }),
+=======
+              // Use PostCSS.config.js, but also use `postcss-export-custom-variables` plugin
+              ...postCSSConfig({
+                file: {
+                  dirname: '../',
+                },
+                options: storybookBaseConfig,
+                env: configType.toLowerCase(),
+              }).plugins,
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
               require('postcss-export-custom-variables')({
                 exporter: 'js',
                 destination: 'common/styles/themeMap.js',
               }),
+<<<<<<< HEAD
               require('autoprefixer')(),
+=======
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
             ],
           },
         },

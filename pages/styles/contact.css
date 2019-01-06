@@ -1,0 +1,23 @@
+.contactHero {
+  height: auto;
+  padding: 3rem 0;
+}
+
+.contactHero a {
+  transition: color 0.2s linear;
+}
+
+.contactHero a:focus,
+.contactHero a:hover {
+  text-shadow: none;
+  color: var(--primary);
+}
+
+/* .contactHero p {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+} */
+
+.address {
+  margin: 4rem auto 2rem;
+}

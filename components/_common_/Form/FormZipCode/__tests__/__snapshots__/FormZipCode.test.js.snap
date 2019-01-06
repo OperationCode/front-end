@@ -1,10 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+<<<<<<< HEAD
 exports[`FormZipCode should render with just required props passed 1`] = `
+=======
+exports[`FormZipCode should render with required props 1`] = `
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
 <div
   className="formInput"
 >
   <input
+<<<<<<< HEAD
+=======
+    id="zip-code"
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
     onChange={[Function]}
     placeholder={null}
     type="text"

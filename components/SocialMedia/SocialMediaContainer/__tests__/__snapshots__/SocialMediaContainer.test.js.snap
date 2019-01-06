@@ -1,6 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+<<<<<<< HEAD
 exports[`SocialMediaContainer it should render properly with required (all) props 1`] = `
+=======
+exports[`SocialMediaContainer should render with required props 1`] = `
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
 <div
   className="SocialMediaContainer"
 >

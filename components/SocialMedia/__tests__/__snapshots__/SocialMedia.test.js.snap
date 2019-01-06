@@ -1,11 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+<<<<<<< HEAD
 exports[`SocialMedia it should render properly with no props 1`] = `
+=======
+exports[`SocialMedia should render with no props passed passed 1`] = `
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
 <SocialMediaContainer>
   <SocialMediaItem
     href="https://facebook.com/operationcode.org"
     name="Facebook"
     svg={
+<<<<<<< HEAD
       <test-file-mock
         className="logo"
       />
@@ -16,6 +21,9 @@ exports[`SocialMedia it should render properly with no props 1`] = `
     name="GitHub"
     svg={
       <test-file-mock
+=======
+      <Svg
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
         className="logo"
       />
     }
@@ -24,6 +32,7 @@ exports[`SocialMedia it should render properly with no props 1`] = `
     href="https://twitter.com/operation_code"
     name="Twitter"
     svg={
+<<<<<<< HEAD
       <test-file-mock
         className="logo"
       />
@@ -34,15 +43,25 @@ exports[`SocialMedia it should render properly with no props 1`] = `
     name="LinkedIn"
     svg={
       <test-file-mock
+=======
+      <Svg
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
         className="logo"
       />
     }
   />
   <SocialMediaItem
+<<<<<<< HEAD
     href="https://www.pinterest.com/operationcode/"
     name="Pinterest"
     svg={
       <test-file-mock
+=======
+    href="https://www.instagram.com/operation_code/"
+    name="Instagram"
+    svg={
+      <Svg
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
         className="logo"
       />
     }

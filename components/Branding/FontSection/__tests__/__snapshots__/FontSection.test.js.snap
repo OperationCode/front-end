@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FontSection should render with required props 1`] = `
+<Section
+  hasHeadingLines={true}
+  id=""
+  style={Object {}}
+  theme="gray"
+  title="Fonts"
+>
+  <ul
+    className="fontsList"
+  >
+    <li>
+      <div>
+        <h6
+          style={
+            Object {
+              "fontFamily": "DIN Condensed Bold",
+            }
+          }
+        >
+          DIN Condensed Bold
+        </h6>
+        <p
+          style={
+            Object {
+              "fontFamily": "DIN Condensed Bold",
+            }
+          }
+        >
+          Sphinx of black quartz, judge my vow!
+        </p>
+      </div>
+    </li>
+    <li>
+      <div>
+        <h6
+          style={
+            Object {
+              "fontFamily": "Encode Sans",
+            }
+          }
+        >
+          Encode Sans
+        </h6>
+        <p
+          style={
+            Object {
+              "fontFamily": "Encode Sans",
+            }
+          }
+        >
+          Sphinx of black quartz, judge my vow!
+        </p>
+      </div>
+    </li>
+  </ul>
+</Section>
+`;

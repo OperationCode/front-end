@@ -2,18 +2,31 @@
 
 exports[`Storyshots Common/OutboundLink default 1`] = `
 <a
+<<<<<<< HEAD
   className=""
   href="https://whitehouse.gov"
+=======
+  href="https://whitehouse.gov"
+  onClick={[Function]}
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
   rel="noopener noreferrer"
   target="_blank"
 >
   <span
+<<<<<<< HEAD
     className="screenReaderOnly"
+=======
+    className="ScreenReaderOnly"
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
   >
     Opens in new window
   </span>
   White House Official Website
+<<<<<<< HEAD
   <test-file-mock
+=======
+  <svg
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
     className="externalLinkIcon"
   />
 </a>

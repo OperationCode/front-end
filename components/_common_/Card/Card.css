@@ -1,7 +1,13 @@
 .Card {
   align-items: center;
+<<<<<<< HEAD
   background-color: #ffffff;
   box-shadow: 0 3px 6px 2px rgba(0, 0, 0, 0.12);
+=======
+  background-color: var(--white);
+  box-shadow: 0 3px 6px 2px rgba(0, 0, 0, 0.12);
+  color: var(--secondary);
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-around;

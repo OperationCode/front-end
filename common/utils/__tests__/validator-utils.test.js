@@ -1,4 +1,5 @@
 /* eslint-env jest */
+<<<<<<< HEAD
 import { zipCodeValidator } from '../validator-utils';
 
 describe('capitalizeFirstLetter', () => {
@@ -26,5 +27,22 @@ describe('capitalizeFirstLetter', () => {
 
   it('should throw an error when passed an array', () => {
     expect(() => zipCodeValidator(['item1', 'item2'])).toThrow();
+=======
+import { zipCodeStringValidator } from '../validator-utils';
+
+describe('Validator Utilities', () => {
+  describe('zipCodeStringValidator', () => {
+    it('should return true for any string', () => {
+      expect(zipCodeStringValidator('testString')).toStrictEqual(true);
+    });
+
+    it('should return false when passed an empty string', () => {
+      expect(zipCodeStringValidator('')).toStrictEqual(false);
+    });
+
+    it('should return false when passed undefined', () => {
+      expect(zipCodeStringValidator()).toStrictEqual(false);
+    });
+>>>>>>> 1e3818fe1ed61deeda96881e0e7a718d44c1dd4e
   });
 });
