@@ -196,7 +196,7 @@ exports[`Footer should render with no props passed 1`] = `
       className="row copyright"
     >
       Copyright 
-      2018
+      2019
        Operation Code™
     </div>
     <div
