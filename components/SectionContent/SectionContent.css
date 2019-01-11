@@ -1,8 +1,15 @@
 .SectionContent {
-  align-items: flex-start;
   display: flex;
-  flex-flow: column;
+  flex-direction: column;
+  align-items: center;
   justify-content: space-between;
-  margin: 1rem auto;
-  width: 90%;
+}
+
+.title {
+
+}
+
+.columnsContainer {
+  display: flex;
+
 }

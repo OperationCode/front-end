@@ -4,26 +4,30 @@ import classNames from 'classnames';
 import styles from './SectionContent.css';
 
 SectionContent.propTypes = {
-  title: PropTypes.string,
   className: PropTypes.string,
-  columns: PropTypes.number.isRequired,
+  columns: PropTypes.array.isRequired,
   id: PropTypes.string,
+  title: PropTypes.string,
 };
 
 SectionContent.defaultProps = {
-  title: undefined,
   className: undefined,
   id: undefined,
+  title: undefined,
 };
 
-function SectionContent({ title, className, columns, id }) {
+function SectionContent({ className, columns, id, title }) {
   return (
-    <section
-      title={title}
-      className={classNames(className, styles.SectionContent)}
-      columns={columns}
-      id={id}
-    />
+    <section className={classNames(styles.SectionContent, className)} id={id}>
+      <h3 className={styles.title}>{title}</h3>
+
+      <div className={styles.columnsContainer}>
+        {columns.map((Column, index) => (
+          // eslint-disable-next-line react/no-array-index-key
+          <Column key={index} />
+        ))}
+      </div>
+    </section>
   );
 }
 

@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots HeroBanner default 1`] = `
+<section
+  className="HeroBanner"
+>
+  PropTypes.string or .node
+</section>
+`;
