@@ -109,13 +109,13 @@ h6 {
   font-size: 1.5rem;
 }
 
-@media screen and (min-width: 481px) and (max-width: 960px) {
+@media screen and (--large-viewport) {
   html {
     font-size: 16px !important;
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (--small-viewport) {
   html {
     font-size: 14px !important;
   }
