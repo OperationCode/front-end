@@ -1,3 +1,5 @@
+@import "../../common/styles/media-queries.css";
+
 .featuredLinks {
   display: flex;
   flex-wrap: wrap;
@@ -78,7 +80,7 @@
 }
 
 /* Tablets */
-@media screen and (max-width: 768px) {
+@media screen and (--medium-viewport) {
   /* .hero {
     padding-bottom: 8rem;
   } */
@@ -90,7 +92,7 @@
 }
 
 /* Large Phones */
-@media screen and (max-width: 500px) {
+@media screen and (--small-viewport) {
   /* .hero {
     padding-bottom: 16rem;
   } */
@@ -102,14 +104,14 @@
 }
 
 /* Tall Phones */
-@media screen and (max-width: 500px) and (min-height: 750px) {
+@media screen and (--small-viewport) and (min-height: 750px) {
   /* .hero {
     padding-bottom: 8rem;
   } */
 }
 
 /* Small Phones */
-@media screen and (max-width: 374px) {
+@media screen and (--extra-small-viewport) {
   /* .hero {
     padding-bottom: 24rem;
   } */

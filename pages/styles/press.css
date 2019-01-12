@@ -1,3 +1,5 @@
+@import "../../../common/styles/media-queries.css";
+
 .flexContainer {
   width: 100%;
   display: flex;
@@ -26,13 +28,13 @@
   text-align: center;
 }
 
-@media screen and (min-width: 415px) and (max-width: 1280px) {
+@media screen and (min-width: 415px) and (--extra-large-viewport) {
   .column {
     width: 300px;
   }
 }
 
-@media screen and (max-width: 414px) {
+@media screen and (--extra-small-viewport) {
   .column {
     width: 250px;
   }
@@ -66,13 +68,13 @@
   text-decoration: none;
 }
 
-@media screen and (min-width: 415px) and (max-width: 1280px) {
+@media screen and (min-width: 415px) and (--extra-large-viewport) {
   .logos > .imgBox {
     width: 350px;
   }
 }
 
-@media screen and (max-width: 414px) {
+@media screen and (--extra-small-viewport) {
   .logos > .imgBox {
     width: 300px;
   }

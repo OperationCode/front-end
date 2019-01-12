@@ -1,5 +1,6 @@
 /* Do not attempt to change values in themeMap - only change in ./variables.css */
 @import "./variables.css";
+@import "./media-queries.css";
 
 /* Global Styles */
 @font-face {

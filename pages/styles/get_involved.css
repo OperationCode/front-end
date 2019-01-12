@@ -1,3 +1,5 @@
+@import "../../../common/styles/media-queries.css";
+
 .flexDisplay {
   display: flex;
   flex-direction: row;
@@ -49,7 +51,7 @@
   }
 }
 
-@media screen and (max-width: 749px) {
+@media screen and (--medium-viewport) {
   .cta {
     flex-direction: column;
     align-items: center;
@@ -66,7 +68,7 @@
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (--small-viewport) {
   .flexDisplay {
     flex-direction: column;
     align-items: center;

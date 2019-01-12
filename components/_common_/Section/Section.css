@@ -1,3 +1,5 @@
+@import "../../../common/styles/media-queries.css";
+
 .Section {
   align-items: center;
   display: flex;
@@ -15,7 +17,7 @@
   width: 85%;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (--medium-viewport) {
   .content {
     width: 90%;
   }
