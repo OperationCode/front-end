@@ -1,15 +1,13 @@
-.SectionContent {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-}
+/* .SectionContent {
+} */
 
 .title {
-
+  text-align: center;
 }
 
 .columnsContainer {
   display: flex;
-
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
