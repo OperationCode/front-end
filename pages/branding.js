@@ -20,6 +20,10 @@ const Branding = () => (
         special uses only.
       </p>
       <p>
+        Please note: Images may appear larger or smaller than they appear on your device, but the
+        files linked are &quot;large&quot; or &quot;small&quot; as described.
+      </p>
+      <p>
         <OutboundLink
           analyticsEventLabel="Branding EPS Download"
           href="https://s3.us-east-2.amazonaws.com/operationcode-web/Operation-Code-Logo.eps"

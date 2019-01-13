@@ -5,31 +5,44 @@ import createShallowSnapshotTest from 'test-utils/createShallowSnapshotTest';
 import NavMobile from '../NavMobile';
 
 describe('NavMobile', () => {
-  it('should render', () => createShallowSnapshotTest(<NavMobile />));
+  it('should render', () =>
+    createShallowSnapshotTest(
+      <NavMobile isMenuVisible={false} openMenu={() => {}} closeMenu={() => {}} />,
+    ));
 
-  it('should not immediately render nav items list', () => {
-    const wrapper = shallow(<NavMobile />);
+  it('should not have a visible menu when isMenuVisible prop is false', () => {
+    const wrapper = shallow(
+      <NavMobile isMenuVisible={false} openMenu={() => {}} closeMenu={() => {}} />,
+    );
 
     expect(wrapper.find('ul')).not.toExist();
   });
 
-  it('should render nav items list after hamburger button is clicked', () => {
-    const wrapper = shallow(<NavMobile />);
-
-    wrapper.find('.hamburgerButton').simulate('click');
+  it('should have a visible menu when isMenuVisible prop is true', () => {
+    const wrapper = shallow(
+      <NavMobile isMenuVisible openMenu={() => {}} closeMenu={() => {}} />,
+    );
 
     expect(wrapper.find('ul')).toExist();
   });
 
-  it('should hide nav items list after close button is pressed', () => {
-    const wrapper = shallow(<NavMobile />);
+  it('should invoke callback when hamburger button is clicked', () => {
+    const mockOpen = jest.fn();
+    const wrapper = shallow(
+      <NavMobile isMenuVisible={false} openMenu={mockOpen} closeMenu={() => {}} />,
+    );
 
-    wrapper.setState({ isDropDownVisible: true });
-    wrapper.update();
+    wrapper.find('.hamburger').simulate('click');
 
-    expect(wrapper.find('ul')).toExist();
+    expect(mockOpen).toHaveBeenCalled();
+  });
+
+  it('should invoke callback when close button is pressed', () => {
+    const mockClose = jest.fn();
+    const wrapper = shallow(<NavMobile isMenuVisible openMenu={() => {}} closeMenu={mockClose} />);
 
     wrapper.find('CloseButton').simulate('click');
-    expect(wrapper.find('ul')).not.toExist();
+
+    expect(mockClose).toHaveBeenCalled();
   });
 });
