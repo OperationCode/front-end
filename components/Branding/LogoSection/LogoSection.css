@@ -1,3 +1,8 @@
+.LogoSection img {
+  height: auto;
+  max-width: 100%;
+}
+
 .LogoSection ul {
   margin-bottom: 1.5rem;
 }
@@ -29,10 +34,6 @@
 .largeLogos .badgeList {
   flex-wrap: nowrap;
   flex-direction: column;
-}
-
-.largeLogos .badgeList img {
-  height: 100%;
 }
 
 .badgeList span {

@@ -1,7 +1,5 @@
 .ErrorDisplay {
   background: #121212;
-
-  /* TODO: calc min-height based upon 100vh - nav and footer sizes */
   height: 100vh;
   width: 100vw;
 }
@@ -13,11 +11,14 @@
   color: white;
   display: flex;
   flex-direction: column;
-
-  /* TODO: calc min-height based upon 100vh - nav and footer sizes */
   height: 100vh;
   justify-content: center;
   width: 100vw;
+}
+
+.textContainer {
+  text-align: center;
+  margin: 1rem auto;
 }
 
 .title {
