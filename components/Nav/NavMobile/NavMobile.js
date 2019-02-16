@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Link from 'next/link';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import { donateLink, s3 } from 'common/constants/urls';
 import { navItems } from 'common/constants/navigation';
 import flattenDepth from 'lodash/flattenDepth';
@@ -8,60 +10,58 @@ import CloseButton from 'components/_common_/CloseButton/CloseButton';
 import styles from './NavMobile.css';
 
 export default class NavMobile extends Component {
-  state = {
-    isDropDownVisible: false,
-  };
-
-  openDropDown = () => this.setState({ isDropDownVisible: true });
-
-  closeDropDown = () => this.setState({ isDropDownVisible: false });
-
   render() {
-    const { isDropDownVisible } = this.state;
+    const { isMenuVisible, openMenu, closeMenu } = this.props;
 
     const links = flattenDepth(navItems.map(navItem => [navItem, navItem.sublinks]), 2);
 
     return (
       <header className={styles.NavMobile}>
         <Link href="/">
-          <a className={styles.logoLink}>
+          <button
+            className={classNames(styles.button, styles.logoButton)}
+            type="button"
+            name="dropdown"
+          >
             <img
               src={`${s3}branding/logos/small-blue-logo.png`}
               alt="Operation Code Logo"
               className={styles.logo}
             />
-          </a>
+          </button>
         </Link>
 
         <button
-          className={styles.hamburgerButton}
+          className={classNames(styles.button, styles.hamburger)}
+          onClick={openMenu}
           type="button"
           name="dropdown"
-          onClick={this.openDropDown}
         >
           <HamburgerIcon className={styles.hamburgerIcon} />
         </button>
 
-        {isDropDownVisible && (
+        {isMenuVisible && (
           <nav className={styles.dropdown}>
-            <CloseButton onClick={this.closeDropDown} theme="white" />
+            <CloseButton onClick={closeMenu} theme="white" />
 
             <ul className={styles.ul}>
               <li className={styles.li}>
                 <Link href="/">
-                  <a className={styles.a}>Home</a>
+                  <a className={styles.link} name="dropdown">
+                    Home
+                  </a>
                 </Link>
               </li>
               {links.map(navlink => (
                 <li className={styles.li} key={navlink.name}>
                   <Link href={navlink.href}>
-                    <a className={styles.a}>{navlink.name}</a>
+                    <a className={styles.link}>{navlink.name}</a>
                   </Link>
                 </li>
               ))}
               <li className={styles.li}>
                 <Link href={donateLink}>
-                  <a className={styles.a}>Donate</a>
+                  <a className={styles.link}>Donate</a>
                 </Link>
               </li>
             </ul>
@@ -71,3 +71,9 @@ export default class NavMobile extends Component {
     );
   }
 }
+
+NavMobile.propTypes = {
+  isMenuVisible: PropTypes.bool.isRequired,
+  openMenu: PropTypes.func.isRequired,
+  closeMenu: PropTypes.func.isRequired,
+};

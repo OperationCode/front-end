@@ -26,7 +26,8 @@
 @media screen and (max-width: 768px) {
   .ImageCard {
     height: auto;
-    width: 325px;
+    max-width: 350px;
+    width: auto;
   }
 
   .image {

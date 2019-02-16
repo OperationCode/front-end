@@ -1,12 +1,15 @@
+@import "../../../common/styles/variables.css";
+
 .SchoolCard {
   max-width: 400px;
   height: 550px;
   font-family: var(--primaryFontFamily), sans-serif;
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (--small-viewport) {
   .SchoolCard {
-    height: 550px;
+    height: 500px;
+    max-width: 350px;
   }
 }
 

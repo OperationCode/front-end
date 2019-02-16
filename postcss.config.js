@@ -4,6 +4,10 @@ module.exports = ({ file, options, env }) => {
 
   return {
     ...options,
-    plugins: [require('postcss-import')({ root: file.dirname }), require('autoprefixer')()],
+    plugins: [
+      require('postcss-import')({ root: file.dirname }),
+      require('autoprefixer')(),
+      require('postcss-custom-media')(),
+    ],
   };
 };
