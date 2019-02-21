@@ -44,7 +44,7 @@ export default class team extends React.Component {
     return (
       <div>
         <QuoteBanner
-          className="styles.lincoln"
+          className={styles.lincoln}
           imageSource={`${s3}heroBanners/lincoln.jpg`}
           author="Abraham Lincoln"
           quote="To care for him who shall have borne the battle and for his widow, and his orphan."
