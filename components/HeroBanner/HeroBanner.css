@@ -2,3 +2,9 @@
   min-height: 65vh;
   text-shadow: #111111 0 0 15px;
 }
+
+.underline {
+  border-bottom: 4px solid var(--primary);
+  margin-bottom: 1rem;
+  text-align: center;
+}
