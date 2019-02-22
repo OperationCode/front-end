@@ -14,7 +14,12 @@ describe('HeroBanner', () => {
 
   it('should render with many props assigned', () => {
     createSnapshotTest(
-      <HeroBanner title="Test" backgroundImageSource={testImageUrl} isFullViewportHeight>
+      <HeroBanner
+        title="Test"
+        backgroundImageSource={testImageUrl}
+        className="test"
+        isFullViewportHeight
+      >
         Testing 123
       </HeroBanner>,
     );

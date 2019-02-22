@@ -6,21 +6,23 @@ import styles from './HeroBanner.css';
 
 HeroBanner.propTypes = {
   backgroundImageSource: PropTypes.string.isRequired,
+  className: PropTypes.string,
   children: PropTypes.node,
   isFullViewportHeight: PropTypes.bool,
   title: PropTypes.string.isRequired,
 };
 
 HeroBanner.defaultProps = {
+  className: undefined,
   children: undefined,
   isFullViewportHeight: false,
 };
 
-function HeroBanner({ backgroundImageSource, children, isFullViewportHeight, title }) {
+function HeroBanner({ backgroundImageSource, children, className, isFullViewportHeight, title }) {
   return (
     <Container
       backgroundImageSource={backgroundImageSource}
-      className={styles.HeroBanner}
+      className={classNames(styles.HeroBanner, className)}
       isFullViewportHeight={isFullViewportHeight}
     >
       <h1 className={classNames({ [styles.underline]: children })}>{title}</h1>
