@@ -2,7 +2,7 @@
 import React from 'react';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 
-import SectionContent from '../SectionContent';
+import Content from '../Content';
 
 const basicProps = {
   columns: [
@@ -13,14 +13,14 @@ const basicProps = {
   id: undefined,
 };
 
-describe('SectionContent', () => {
+describe('Content', () => {
   it('should render with required props', () => {
-    createSnapshotTest(<SectionContent {...basicProps} />);
+    createSnapshotTest(<Content {...basicProps} />);
   });
 
   it('should render with many props assigned', () => {
     createSnapshotTest(
-      <SectionContent
+      <Content
         columns={[
           <div>
             <p>some multi-column test content</p>

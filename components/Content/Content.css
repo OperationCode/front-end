@@ -1,0 +1,25 @@
+.Content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem auto;
+}
+
+.title {
+  text-align: center;
+}
+
+.columnsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* the individual columns */
+.columnsContainer > * {
+  margin: 0 1rem;
+}
