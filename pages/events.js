@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import TrackVisibility from 'react-on-screen';
 import Head from 'components/head';
-import HeroBanner from 'components/_common_/HeroBanner/HeroBanner';
+import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Section from 'components/_common_/Section/Section';
 import LinkButton from 'components/_common_/LinkButton/LinkButton';
 import Heading from 'components/_common_/Heading/Heading';
@@ -55,8 +55,8 @@ export default () => (
 
     <div className={styles.eventsPage}>
       <HeroBanner
+        backgroundImageSource={`${s3}redesign/heroBanners/events.jpg`}
         className={styles.heroBannerMobilePositioning}
-        imageSource={`${s3}redesign/heroBanners/events.jpg`}
         title="You Can Make An Impact"
       >
         <>

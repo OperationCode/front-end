@@ -1,5 +1,5 @@
 import Head from 'components/head';
-import HeroBanner from 'components/_common_/HeroBanner/HeroBanner';
+import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Section from 'components/_common_/Section/Section';
 import FAQItem from 'components/FAQ/FAQItem/FAQItem';
 import QuestionAnswerData from 'components/FAQ/questions';

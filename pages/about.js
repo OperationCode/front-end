@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Head from 'components/head';
-import HeroBanner from 'components/_common_/HeroBanner/HeroBanner';
+import HeroBanner from 'components/HeroBanner/HeroBanner';
 import ImageCard from 'components/Cards/ImageCard/ImageCard';
 import Section from 'components/_common_/Section/Section';
 import ValueCard from 'components/Cards/ValueCard/ValueCard';
@@ -12,8 +12,9 @@ export default () => (
     <Head title="About" />
 
     <HeroBanner
+      backgroundImageSource={`${s3}heroBanners/stock_family-2.jpg`}
       className={styles.hero}
-      imageSource={`${s3}heroBanners/stock_family-2.jpg`}
+      isFullViewportHeight
       title="About Us"
     />
 

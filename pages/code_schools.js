@@ -1,7 +1,7 @@
 import Select from 'react-select';
 import { getCodeSchoolsPromise } from 'common/constants/api';
 import Head from 'components/head';
-import HeroBanner from 'components/_common_/HeroBanner/HeroBanner';
+import HeroBanner from 'components/HeroBanner/HeroBanner';
 import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
 import Section from 'components/_common_/Section/Section';
 import Button from 'components/_common_/Button/Button';
@@ -88,13 +88,15 @@ export default class CodeSchools extends React.Component {
     return (
       <>
         <Head title="Code Schools" />
-        <HeroBanner title="Code Schools" imageSource="">
+
+        <HeroBanner title="Code Schools">
           <p>
             Whether you&apos;re trying to find out more about a chosen school, or are just gettting
             started in your search, we&apos;re here to help. We&apos;ve even partnered with some
             schools to offer scholarships, and discounts for our members.
           </p>
         </HeroBanner>
+
         <Section theme="secondary" hasHeadingLines={false}>
           <div className={styles.whatAreQuestionsSectionWrapper}>
             <div>

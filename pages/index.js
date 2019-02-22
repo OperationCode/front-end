@@ -3,7 +3,7 @@ import { s3 } from 'common/constants/urls';
 import successStories from 'common/constants/successStories';
 import partners from 'common/constants/partners';
 import Head from 'components/head';
-import HeroBanner from 'components/_common_/HeroBanner/HeroBanner';
+import HeroBanner from 'components/HeroBanner/HeroBanner';
 import ImageCard from 'components/Cards/ImageCard/ImageCard';
 import JoinSection from 'components/ReusableSections/JoinSection/JoinSection';
 import LinkButton from 'components/_common_/LinkButton/LinkButton';
@@ -39,10 +39,10 @@ export default () => (
     <Head title="Home" />
 
     <HeroBanner
-      title="Deploy The Future"
-      imageSource={`${s3}redesign/heroBanners/homepage.jpg`}
-      isFullViewHeight
+      backgroundImageSource={`${s3}redesign/heroBanners/homepage.jpg`}
       className={styles.hero}
+      isFullViewportHeight
+      title="Deploy The Future"
     >
       <>
         <p>
