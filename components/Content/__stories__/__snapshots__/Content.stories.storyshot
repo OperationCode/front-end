@@ -8,11 +8,7 @@ exports[`Storyshots Content with one column 1`] = `
   <div
     className="content"
   >
-    <h3
-      className="title"
-    >
-      Section Content Title
-    </h3>
+    
     <div
       className="columnsContainer"
     >
@@ -34,11 +30,7 @@ exports[`Storyshots Content with three columns 1`] = `
   <div
     className="content"
   >
-    <h3
-      className="title"
-    >
-      Section Content Title
-    </h3>
+    
     <div
       className="columnsContainer"
     >
@@ -70,11 +62,7 @@ exports[`Storyshots Content with two columns 1`] = `
   <div
     className="content"
   >
-    <h3
-      className="title"
-    >
-      Section Content Title
-    </h3>
+    
     <div
       className="columnsContainer"
     >
