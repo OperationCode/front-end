@@ -15,7 +15,7 @@ storiesOf('Common/Container', module)
       <Container
         backgroundImageSource={text('backgroundImageSource', '')}
         isFullViewportHeight={boolean('isFullViewportHeight', false)}
-        theme={select('theme', ['gray', 'secondary', 'white'], 'gray')}
+        theme={select('theme', ['gray', 'secondary', 'white'], 'secondary')}
       >
         {text('children', 'You can put anything here!')}
       </Container>
