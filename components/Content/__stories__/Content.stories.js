@@ -44,7 +44,7 @@ storiesOf('Content', module)
         id={text('id', '')}
         isFullViewportHeight={boolean('isFullViewportHeight', false)}
         theme={select('theme', ['gray', 'secondary', 'white'], 'secondary')}
-        title={text('title', 'Section Content Title')}
+        title={text('title', '')}
       />
     )),
   )
@@ -56,7 +56,7 @@ storiesOf('Content', module)
         id={text('id', '')}
         isFullViewportHeight={boolean('isFullViewportHeight', false)}
         theme={select('theme', ['gray', 'secondary', 'white'], 'secondary')}
-        title={text('title', 'Section Content Title')}
+        title={text('title', '')}
       />
     )),
   )
@@ -68,7 +68,7 @@ storiesOf('Content', module)
         id={text('id', '')}
         isFullViewportHeight={boolean('isFullViewportHeight', false)}
         theme={select('theme', ['gray', 'secondary', 'white'], 'secondary')}
-        title={text('title', 'Section Content Title')}
+        title={text('title', '')}
       />
     )),
   );
