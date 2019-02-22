@@ -9,6 +9,11 @@
   width: 100%;
 }
 
+/* need to have a higher order of specificity since HeroBanner fights it */
+.Container.fullViewportHeight {
+  min-height: 100vh;
+}
+
 .content {
   display: flex;
   flex-direction: column;
@@ -17,10 +22,6 @@
   margin: 1.5rem auto;
   width: 85%;
   max-width: 1400px;
-}
-
-.fullViewportHeight {
-  height: 100vh;
 }
 
 /* Dark Themes */

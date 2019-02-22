@@ -1,3 +1,7 @@
+.hero {
+  padding-top: 8rem;
+}
+
 .featuredLinks {
   display: flex;
   flex-wrap: wrap;
@@ -77,24 +81,8 @@
   flex-direction: column;
 }
 
-@media screen and (max-width: 1575px) {
-  .hero {
-    padding-top: 5rem;
-  }
-}
-
-@media screen and (max-width: 1050px) {
-  .hero {
-    padding-top: 10rem;
-  }
-}
-
 /* Tablets */
-@media screen and (max-width: 768px) {
-  .hero {
-    padding-top: 8rem;
-  }
-
+@media screen and (max-width: 1050px) {
   .featuredLinkImage {
     width: 300px;
     height: 125px;
@@ -103,26 +91,8 @@
 
 /* Large Phones */
 @media screen and (max-width: 500px) {
-  .hero {
-    padding-top: 16rem;
-  }
-
   .featuredLinkImage {
     width: 250px;
     height: 100px;
-  }
-}
-
-/* Tall Phones */
-@media screen and (max-width: 500px) and (min-height: 750px) {
-  .hero {
-    padding-top: 8rem;
-  }
-}
-
-/* Small Phones */
-@media screen and (max-width: 374px) {
-  .hero {
-    padding-top: 24rem;
   }
 }
