@@ -32,30 +32,27 @@
   margin-top: 1rem;
   width: 400px;
   height: 150px;
+  border: 2px solid rgb(0, 0, 0);
+  transition: 0.2s linear border, 0.2s linear color;
+}
+
+.featuredLinkImage:active,
+.featuredLinkImage:focus,
+.featuredLinkImage:hover {
+  border: 2px solid var(--primary);
+  transition: 0.2s linear border;
 }
 
 .featuredLinkItem:active a,
 .featuredLinkItem:focus a,
 .featuredLinkItem:hover a {
   color: var(--primary);
+  transition: 0.2s linear color;
 }
 
-.ourMission {
-  align-items: center;
-}
-
-.missionCard {
-  flex-wrap: wrap;
-  height: auto;
-  width: 80%;
-}
-
-.missionCard h2 {
-  align-self: flex-start;
-}
-
-.missionCard img {
-  height: 100%;
+.cta {
+  display: flex;
+  flex-direction: column;
 }
 
 .successStories {
