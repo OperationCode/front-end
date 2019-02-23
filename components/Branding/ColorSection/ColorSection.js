@@ -1,7 +1,7 @@
 import React from 'react';
 import { brandColorsObject } from 'common/styles/styleExports';
 import Swatch from 'components/Branding/Swatch/Swatch';
-import Section from 'components/_common_/Section/Section';
+import Content from 'components/Content/Content';
 import styles from './ColorSection.css';
 
 function ColorSection() {
@@ -18,26 +18,30 @@ function ColorSection() {
   });
 
   return (
-    <Section title="Colors" theme="white" contentClassName={styles.ColorSection}>
-      <div className={styles.mainColors}>
-        <div className={styles.colorGrouping}>
-          <h3>Primary</h3>
-          <Swatch colorName={primaryColor.name} hexCode={primaryColor.hexCode} />
-        </div>
-
-        <div className={styles.colorGrouping}>
-          <h3>Secondary</h3>
-          <Swatch colorName={secondaryColor.name} hexCode={secondaryColor.hexCode} />
-        </div>
-      </div>
-
-      <h3>Other On-Brand Colors</h3>
-      <div className={styles.otherColors}>
-        {otherColorNames.map(colorName => (
+    <>
+      <Content
+        title="Colors"
+        hasTitleUnderline
+        theme="white"
+        columns={[
+          <div>
+            <h3 className={styles.centeredText}>Primary</h3>
+            <Swatch colorName={primaryColor.name} hexCode={primaryColor.hexCode} />
+          </div>,
+          <div>
+            <h3 className={styles.centeredText}>Secondary</h3>
+            <Swatch colorName={secondaryColor.name} hexCode={secondaryColor.hexCode} />
+          </div>,
+        ]}
+      />
+      <Content
+        title="Other On-Brand Colors"
+        theme="white"
+        columns={otherColorNames.map(colorName => (
           <Swatch colorName={colorName} hexCode={brandColorsObject[colorName]} key={colorName} />
         ))}
-      </div>
-    </Section>
+      />
+    </>
   );
 }
 
