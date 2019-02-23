@@ -1,23 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots ReusableSections DonateSection 1`] = `
-<section
-  className="Section secondary"
+<div
+  className="Container secondary"
   style={
     Object {
-      "backgroundImage": "url(https://s3.amazonaws.com/operationcode-assets/background_flag.jpg",
+      "backgroundImage": "linear-gradient(rgba(33, 48, 69, 0.65),rgba(33, 48, 69, 0.65)), url(https://s3.amazonaws.com/operationcode-assets/background_flag.jpg)",
     }
   }
 >
-  <h2
-    className="Heading white"
-    id=""
-  >
-    Donate
-  </h2>
   <div
-    className="content content"
+    className="content"
   >
+    <h3>
+      Donate
+    </h3>
     <p>
       As a 501(c)(3) veteran-led nonprofit organization, our programs and services are maintained through the efforts of our volunteer staff. Your financial support allows us to continue helping the military community learn software development, enter the tech industry, and code the future.
     </p>
@@ -25,38 +22,32 @@ exports[`Storyshots ReusableSections DonateSection 1`] = `
       Thank you for supporting our mission!
     </p>
     <a
-      className="Button secondary"
+      className="Button primary"
       href="https://secure.lglforms.com/form_engine/s/BRtP7QUKyHOyEYsZROsRew"
       onClick={[Function]}
     >
       Donate Now
     </a>
   </div>
-</section>
+</div>
 `;
 
 exports[`Storyshots ReusableSections JoinSection 1`] = `
-<section
-  className="Section white"
-  style={Object {}}
+<div
+  className="Container white"
 >
-  <h2
-    className="Heading secondary"
-    id=""
-  >
-    Join Our Thriving Community
-  </h2>
   <div
-    className="content JoinSection"
+    className="content"
   >
+    <h3>
+      Join Our Thriving Community
+    </h3>
     <p>
       Are you ready to begin your journey towards a career in software development?
       <br />
       Get the support you need by joining our members only Slack community!
     </p>
-    <div
-      className="form"
-    >
+    <form>
       <input
         placeholder="Email address"
       />
@@ -65,11 +56,11 @@ exports[`Storyshots ReusableSections JoinSection 1`] = `
         disabled={false}
         onClick={[Function]}
         tabIndex={0}
-        type="button"
+        type="submit"
       >
         Join our Slack
       </button>
-    </div>
+    </form>
     <p>
       Slack is a community based collaboration tool where all the magic happens!
     </p>
@@ -90,23 +81,19 @@ exports[`Storyshots ReusableSections JoinSection 1`] = `
       />
     </a>
   </div>
-</section>
+</div>
 `;
 
 exports[`Storyshots ReusableSections SignUpSection 1`] = `
-<section
-  className="Section white"
-  style={Object {}}
+<div
+  className="Container white"
 >
-  <h2
-    className="Heading secondary headingLines"
-    id=""
-  >
-    New user?
-  </h2>
   <div
-    className="content content"
+    className="content"
   >
+    <h3>
+      New user?
+    </h3>
     <p>
       Are you ready to deploy your future? Join Operation Code today and launch your career in software development. Once you complete the form below, you’ll be invited to join our team on Slack. Make sure you stop in and say hi!
     </p>
@@ -118,5 +105,5 @@ exports[`Storyshots ReusableSections SignUpSection 1`] = `
       Sign Up
     </a>
   </div>
-</section>
+</div>
 `;
