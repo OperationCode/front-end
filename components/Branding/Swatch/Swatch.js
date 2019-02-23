@@ -9,11 +9,17 @@ Swatch.propTypes = {
 
 function Swatch({ colorName, hexCode }) {
   return (
-    <div className={styles.Swatch}>
-      <div className={styles.colorBlock} style={{ backgroundColor: hexCode }} />
-      <h6>{colorName.toUpperCase()}</h6>
-      <span>{hexCode.toUpperCase()}</span>
-    </div>
+    <figure className={styles.Swatch}>
+      <div
+        alt={`A block of the color ${colorName}`}
+        className={styles.colorBlock}
+        style={{ backgroundColor: hexCode }}
+      />
+      <figcaption>
+        <h6>{colorName.toUpperCase()}</h6>
+        {hexCode.toUpperCase()}
+      </figcaption>
+    </figure>
   );
 }
 
