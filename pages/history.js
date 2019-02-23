@@ -1,6 +1,6 @@
 import Head from 'components/head';
 import { s3 } from 'common/constants/urls';
-import Section from 'components/_common_/Section/Section';
+import Content from 'components/Content/Content';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Timeline from 'components/Timeline/Timeline';
 import styles from './styles/history.css';
@@ -24,9 +24,7 @@ export default function() {
         </>
       </HeroBanner>
 
-      <Section theme="white" hasHeadingLines={false}>
-        <Timeline />
-      </Section>
+      <Content theme="white" columns={[<Timeline />]} />
     </>
   );
 }
