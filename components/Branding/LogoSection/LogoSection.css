@@ -1,17 +1,17 @@
-.LogoSection img {
-  height: auto;
-  max-width: 100%;
-}
-
-.LogoSection ul {
-  margin-bottom: 1.5rem;
-}
-
 .logoSizeList {
   margin: 0;
   padding: 0;
   list-style: none;
   width: 100%;
+}
+
+.logoSizeList img {
+  height: auto;
+  max-width: 100%;
+}
+
+.logoSizeList ul {
+  margin-bottom: 1.5rem;
 }
 
 .logoSizeListItem {
