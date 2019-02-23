@@ -12,6 +12,11 @@ const partners = [
     url: 'https://github.com',
   },
   {
+    name: 'Heroku',
+    logoSource: `${s3}partnerLogos/heroku.png`,
+    url: 'https://heroku.com/',
+  },
+  {
     name: '1Password',
     logoSource: `${s3}partnerLogos/1password.png`,
     url: 'https://1password.com/',
