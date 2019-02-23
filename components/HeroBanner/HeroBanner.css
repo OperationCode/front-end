@@ -4,6 +4,10 @@
   text-shadow: #111111 0 0 15px;
 }
 
+.HeroBanner.smallHero {
+  min-height: 35vh;
+}
+
 .underline {
   border-bottom: 4px solid var(--primary);
   margin-bottom: 1rem;

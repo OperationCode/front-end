@@ -22,7 +22,9 @@ function HeroBanner({ backgroundImageSource, children, className, isFullViewport
   return (
     <Container
       backgroundImageSource={backgroundImageSource}
-      className={classNames(styles.HeroBanner, className)}
+      className={classNames(styles.HeroBanner, className, {
+        [styles.smallHero]: !children && !backgroundImageSource,
+      })}
       isFullViewportHeight={isFullViewportHeight}
     >
       <h1 className={classNames({ [styles.underline]: children })}>{title}</h1>
