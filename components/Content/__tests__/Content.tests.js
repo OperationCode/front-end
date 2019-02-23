@@ -28,7 +28,10 @@ describe('Content', () => {
           <h6>OH YEAH!!</h6>,
           <aside>Testing...</aside>,
         ]}
+        hasTitleUnderline
         id="test-id"
+        isFullViewportHeight
+        title="Testing!"
       />,
     );
   });

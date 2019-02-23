@@ -2,12 +2,17 @@
 
 exports[`Content should render with many props assigned 1`] = `
 <div
-  className="Container secondary"
+  className="Container secondary fullViewportHeight"
   id="test-id"
 >
   <div
     className="content"
   >
+    <h3
+      className="title underline"
+    >
+      Testing!
+    </h3>
     <div
       className="columnsContainer"
     >

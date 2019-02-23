@@ -41,6 +41,7 @@ storiesOf('Content', module)
     withInfo()(() => (
       <Content
         columns={oneItemArray}
+        hasTitleUnderline={boolean('hasTitleUnderline', false)}
         id={text('id', '')}
         isFullViewportHeight={boolean('isFullViewportHeight', false)}
         theme={select('theme', ['gray', 'secondary', 'white'], 'secondary')}
@@ -53,6 +54,7 @@ storiesOf('Content', module)
     withInfo()(() => (
       <Content
         columns={twoItemArray}
+        hasTitleUnderline={boolean('hasTitleUnderline', false)}
         id={text('id', '')}
         isFullViewportHeight={boolean('isFullViewportHeight', false)}
         theme={select('theme', ['gray', 'secondary', 'white'], 'secondary')}
@@ -65,6 +67,7 @@ storiesOf('Content', module)
     withInfo()(() => (
       <Content
         columns={threeItemArray}
+        hasTitleUnderline={boolean('hasTitleUnderline', false)}
         id={text('id', '')}
         isFullViewportHeight={boolean('isFullViewportHeight', false)}
         theme={select('theme', ['gray', 'secondary', 'white'], 'secondary')}
