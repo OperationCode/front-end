@@ -1,11 +1,12 @@
 import React from 'react';
-import Section from 'components/_common_/Section/Section';
+import Container from 'components/_common_/Container/Container';
 import LinkButton from 'components/_common_/LinkButton/LinkButton';
-import styles from './SignUpSection.css';
 
 function SignUpSection() {
   return (
-    <Section contentClassName={styles.content} title="New user?" theme="white">
+    <Container theme="white">
+      <h3>New user?</h3>
+
       <p>
         Are you ready to deploy your future? Join Operation Code today and launch your career in
         software development. Once you complete the form below, you&#8217;ll be invited to join our
@@ -15,7 +16,7 @@ function SignUpSection() {
       <LinkButton href="/signup" theme="secondary">
         Sign Up
       </LinkButton>
-    </Section>
+    </Container>
   );
 }
 

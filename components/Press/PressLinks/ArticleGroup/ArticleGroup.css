@@ -1,15 +1,8 @@
-.articlesGroup > h2 {
+.articlesGroup .centered {
   text-align: center;
 }
 
 .articlesGroup {
   max-width: 375px;
   padding-top: 15px;
-}
-
-.articlesGroup .areAllLinksVisibleButton {
-  min-width: 100px;
-  line-height: 0.5;
-  font-size: 0.9rem;
-  margin: auto;
 }

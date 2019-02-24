@@ -1,27 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`JoinSection should render with required props 1`] = `
-<section
-  className="Section white"
-  style={Object {}}
+<div
+  className="Container white"
 >
-  <h2
-    className="Heading secondary"
-    id=""
-  >
-    Join Our Thriving Community
-  </h2>
   <div
-    className="content JoinSection"
+    className="content"
   >
+    <h3>
+      Join Our Thriving Community
+    </h3>
     <p>
       Are you ready to begin your journey towards a career in software development?
       <br />
       Get the support you need by joining our members only Slack community!
     </p>
-    <div
-      className="form"
-    >
+    <form>
       <input
         placeholder="Email address"
       />
@@ -30,11 +24,11 @@ exports[`JoinSection should render with required props 1`] = `
         disabled={false}
         onClick={[Function]}
         tabIndex={0}
-        type="button"
+        type="submit"
       >
         Join our Slack
       </button>
-    </div>
+    </form>
     <p>
       Slack is a community based collaboration tool where all the magic happens!
     </p>
@@ -55,5 +49,5 @@ exports[`JoinSection should render with required props 1`] = `
       />
     </a>
   </div>
-</section>
+</div>
 `;

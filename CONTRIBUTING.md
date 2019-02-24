@@ -75,7 +75,7 @@ _Quick Note_: Our back-end API is not currently connected to this repository.
 
 The back-end is responsible for providing data for the front-end to display. This sometimes involves processing the data entered into the front-end, and running various jobs like inviting new users to Slack, or signing them up for our newsletter. Our back-end is written in Rails and it's source code can be viewed [here](https://github.com/OperationCode/operationcode_backend). It acts primarily as a "REST API".
 
-> "back-end" is synonymous with server, server-side, and "models & controllers"
+> "back-end" is synonymous with server, server-side, and "models & controllers".
 
 ### What is REST? What is an API?
 

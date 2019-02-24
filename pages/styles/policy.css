@@ -1,10 +1,5 @@
 @import "../../common/styles/media-queries.css";
 
-.overlay {
-  background-color: rgba(0, 5, 30, 0.6);
-  background-blend-mode: overlay;
-}
-
 .statisticContainer {
   display: flex;
   flex-direction: column;

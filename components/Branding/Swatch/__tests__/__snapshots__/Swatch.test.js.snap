@@ -1,9 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Swatch should render with required props 1`] = `
-<div
+<figure
   className="Swatch"
 >
+  <ScreenReaderOnly>
+    A block of the color Blue
+  </ScreenReaderOnly>
   <div
     className="colorBlock"
     style={
@@ -12,11 +15,11 @@ exports[`Swatch should render with required props 1`] = `
       }
     }
   />
-  <h6>
-    BLUE
-  </h6>
-  <span>
+  <figcaption>
+    <h6>
+      BLUE
+    </h6>
     #0000FF
-  </span>
-</div>
+  </figcaption>
+</figure>
 `;

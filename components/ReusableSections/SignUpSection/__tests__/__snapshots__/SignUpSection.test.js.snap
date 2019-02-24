@@ -1,14 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SignUpSection should render with no props passed passed 1`] = `
-<Section
-  contentClassName="content"
-  hasHeadingLines={true}
-  id=""
-  style={Object {}}
+<Container
+  isFullViewportHeight={false}
   theme="white"
-  title="New user?"
 >
+  <h3>
+    New user?
+  </h3>
   <p>
     Are you ready to deploy your future? Join Operation Code today and launch your career in software development. Once you complete the form below, you’ll be invited to join our team on Slack. Make sure you stop in and say hi!
   </p>
@@ -21,5 +20,5 @@ exports[`SignUpSection should render with no props passed passed 1`] = `
   >
     Sign Up
   </LinkButton>
-</Section>
+</Container>
 `;

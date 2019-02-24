@@ -1,51 +1,29 @@
-@import "../../common/styles/media-queries.css";
+@import "../../common/styles/variables.css";
 
-.flexContainer {
-  width: 100%;
+.row {
   display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
-  padding: 15px 0 0 0;
-}
-
-.flexContainer > div {
-  padding: 0 30px 50px 30px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .column {
-  width: 375px;
+  flex: 33%;
 }
 
-.column > h4 {
-  text-align: center;
-}
-
-.brandingLink {
-  font-size: 1.5rem;
-}
-
-.header {
-  text-align: center;
-}
-
-@media screen and (min-width: 415px) and (--extra-large-viewport) {
+@media screen and (--large-viewport) {
   .column {
-    width: 300px;
+    flex: 50%;
   }
 }
 
-@media screen and (--extra-small-viewport) {
+@media screen and (--medium-viewport) {
   .column {
-    width: 250px;
+    flex: 100%;
   }
 }
 
-.pressContainer p {
-  font-size: 1.1rem;
-}
-
-.customContent {
-  align-items: center;
+.textGrouping {
+  margin: 1rem;
 }
 
 .logos {

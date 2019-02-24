@@ -1,24 +1,3 @@
-.ColorSection {
-  align-items: center;
-}
-
-.colorGrouping h3 {
+.centeredText {
   text-align: center;
-}
-
-.mainColors,
-.otherColors {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  width: 90%;
-}
-
-.mainColors {
-  justify-content: center;
-  margin-bottom: 3rem;
-}
-
-.otherColors {
-  justify-content: space-around;
 }

@@ -1,76 +1,43 @@
 @import "../../common/styles/media-queries.css";
 
-.flexDisplay {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  width: 100%;
-}
-
-.marginBottom {
-  margin-bottom: 2rem;
-}
-
-.centerText {
-  text-align: center;
-}
-
-.alignCenter {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.image {
+  margin: 2rem;
+  max-width: 500px;
 }
 
 .cta {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  width: 100%;
+  flex-direction: column;
 }
 
-.ctaImage > img {
-  width: 100%;
+.centeredText {
+  text-align: center;
 }
 
-@media screen and (min-width: 750px) {
-  .ctaImageRight {
-    flex-direction: row-reverse;
-  }
+.image img {
+  max-width: 100%;
+  opacity: 0;
+  transition: opacity 1s;
+}
 
-  .ctaImageRight .ctaImage {
-    margin-left: 5em;
-  }
+.showImage img {
+  opacity: 1;
+}
 
-  .ctaImageLeft .ctaImage {
-    margin-right: 5em;
-  }
+.badgeGroupings {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: -1rem;
+}
 
-  .cta > div {
-    max-width: 50%;
-    flex: 1 1 50%;
-  }
+.badge {
+  fill: var(--secondary);
+  margin: 1rem 4rem;
 }
 
 @media screen and (--medium-viewport) {
-  .cta {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .ctaText {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .ctaText > p {
-    text-align: center;
-  }
-}
-
-@media screen and (--small-viewport) {
-  .flexDisplay {
-    flex-direction: column;
-    align-items: center;
+  .heroBannerMobilePositioning {
+    background-position: right center;
   }
 }
