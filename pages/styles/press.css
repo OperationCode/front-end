@@ -1,49 +1,29 @@
-.flexContainer {
-  width: 100%;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
-  padding: 15px 0 0 0;
-}
+@import "../../common/styles/variables.css";
 
-.flexContainer > div {
-  padding: 0 30px 50px 30px;
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .column {
-  width: 375px;
+  flex: 33%;
 }
 
-.column > h4 {
-  text-align: center;
-}
-
-.brandingLink {
-  font-size: 1.5rem;
-}
-
-.header {
-  text-align: center;
-}
-
-@media screen and (min-width: 415px) and (max-width: 1280px) {
+@media screen and (--large-viewport) {
   .column {
-    width: 300px;
+    flex: 50%;
   }
 }
 
-@media screen and (max-width: 414px) {
+@media screen and (--medium-viewport) {
   .column {
-    width: 250px;
+    flex: 100%;
   }
 }
 
-.pressContainer p {
-  font-size: 1.1rem;
-}
-
-.customContent {
-  align-items: center;
+.textGrouping {
+  margin: 1rem;
 }
 
 .logos {
@@ -66,13 +46,13 @@
   text-decoration: none;
 }
 
-@media screen and (min-width: 415px) and (max-width: 1280px) {
+@media screen and (--extra-large-viewport) {
   .logos > .imgBox {
     width: 350px;
   }
 }
 
-@media screen and (max-width: 414px) {
+@media screen and (--extra-small-viewport) {
   .logos > .imgBox {
     width: 300px;
   }

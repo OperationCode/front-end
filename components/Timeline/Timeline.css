@@ -1,3 +1,5 @@
+@import "../../common/styles/media-queries.css";
+
 .timeline {
   width: 90%;
   margin: 50px auto;
@@ -52,7 +54,7 @@
   flex: 8;
 }
 
-@media screen and (max-width: 680px) {
+@media screen and (--medium-viewport) {
   .date > h3 {
     top: 24px;
     font-size: 1.1rem;

@@ -1,307 +1,308 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`LogoSection should render with required props 1`] = `
-<Section
-  contentClassName="LogoSection"
-  hasHeadingLines={true}
-  id=""
-  style={Object {}}
-  theme="gray"
-  title="Logo"
->
-  <ul
-    className="logoSizeList"
-  >
-    <li
-      className="logoSizeListItem smallLogos"
-    >
-      <h5>
-        SMALL
-      </h5>
-      <p>
-        For use when the medal is between 0 and 1-inch tall.
-      </p>
+<Content
+  columns={
+    Array [
       <ul
-        className="logoTypeList"
+        className="logoSizeList"
       >
         <li
-          className="logoTypeListItem"
+          className="logoSizeListItem smallLogos"
         >
-          <h6>
-            TYPICAL
-          </h6>
-          <ul
-            className="badgeList"
-          >
-            <li>
-              <Badge
-                icon={
-                  <img
-                    alt="Small Blue Accented Logo"
-                    src="https://s3.amazonaws.com/operationcode-assets/branding/logos/small-blue-logo.png"
-                  />
-                }
-                isImageFirst={false}
-                label="Blue"
-              />
-            </li>
-            <li>
-              <Badge
-                icon={
-                  <img
-                    alt="Small Red Accented Logo"
-                    src="https://s3.amazonaws.com/operationcode-assets/branding/logos/small-red-logo.png"
-                  />
-                }
-                isImageFirst={false}
-                label="Red"
-              />
-            </li>
-            <li>
-              <Badge
-                icon={
-                  <img
-                    alt="Small Unaccented Logo"
-                    src="https://s3.amazonaws.com/operationcode-assets/branding/logos/small-logo.png"
-                  />
-                }
-                isImageFirst={false}
-                label="Slate"
-              />
-            </li>
-            <li>
-              <Badge
-                icon={
-                  <img
-                    alt="Small White Accented Logo"
-                    src="https://s3.amazonaws.com/operationcode-assets/branding/logos/small-white-logo.png"
-                  />
-                }
-                isImageFirst={false}
-                label="White"
-              />
-            </li>
-          </ul>
-        </li>
-        <li
-          className="logoTypeListItem"
-        >
-          <h6>
-            STACKED
-          </h6>
-          <ul
-            className="badgeList"
-          >
-            <li>
-              <Badge
-                icon={
-                  <img
-                    alt="Stacked Small Blue Logo"
-                    src="https://s3.amazonaws.com/operationcode-assets/branding/logos/small-stacked-logo-blue.png"
-                  />
-                }
-                isImageFirst={false}
-                label="Blue"
-              />
-            </li>
-            <li>
-              <Badge
-                icon={
-                  <img
-                    alt="Stacked Small Red Logo"
-                    src="https://s3.amazonaws.com/operationcode-assets/branding/logos/small-stacked-logo-red.png"
-                  />
-                }
-                isImageFirst={false}
-                label="Red"
-              />
-            </li>
-            <li>
-              <Badge
-                icon={
-                  <img
-                    alt="Stacked Unaccented Slate Logo"
-                    src="https://s3.amazonaws.com/operationcode-assets/branding/logos/small-stacked-logo.png"
-                  />
-                }
-                isImageFirst={false}
-                label="Slate"
-              />
-            </li>
-          </ul>
-        </li>
-        <li
-          className="logoTypeListItem"
-        >
-          <h6>
-            MEDALS
-          </h6>
+          <h5>
+            SMALL
+          </h5>
           <p>
-            For use as an icon reference, when no other logo representations will fit the media space.
+            For use when the medal is between 0 and 1-inch tall.
           </p>
           <ul
-            className="badgeList"
+            className="logoTypeList"
           >
-            <li>
-              <Badge
-                icon={
-                  <img
-                    alt="Blue Medal"
-                    src="https://s3.amazonaws.com/operationcode-assets/branding/logos/large-blue-medal.png"
+            <li
+              className="logoTypeListItem"
+            >
+              <h6>
+                TYPICAL
+              </h6>
+              <ul
+                className="badgeList"
+              >
+                <li>
+                  <Badge
+                    icon={
+                      <img
+                        alt="Small Blue Accented Logo"
+                        src="https://s3.amazonaws.com/operationcode-assets/branding/logos/small-blue-logo.png"
+                      />
+                    }
+                    isImageFirst={false}
+                    label="Blue"
                   />
-                }
-                isImageFirst={false}
-                label="Blue"
-              />
+                </li>
+                <li>
+                  <Badge
+                    icon={
+                      <img
+                        alt="Small Red Accented Logo"
+                        src="https://s3.amazonaws.com/operationcode-assets/branding/logos/small-red-logo.png"
+                      />
+                    }
+                    isImageFirst={false}
+                    label="Red"
+                  />
+                </li>
+                <li>
+                  <Badge
+                    icon={
+                      <img
+                        alt="Small Unaccented Logo"
+                        src="https://s3.amazonaws.com/operationcode-assets/branding/logos/small-logo.png"
+                      />
+                    }
+                    isImageFirst={false}
+                    label="Slate"
+                  />
+                </li>
+                <li>
+                  <Badge
+                    icon={
+                      <img
+                        alt="Small White Accented Logo"
+                        src="https://s3.amazonaws.com/operationcode-assets/branding/logos/small-white-logo.png"
+                      />
+                    }
+                    isImageFirst={false}
+                    label="White"
+                  />
+                </li>
+              </ul>
             </li>
-            <li>
-              <Badge
-                icon={
-                  <img
-                    alt="Red Medal"
-                    src="https://s3.amazonaws.com/operationcode-assets/branding/logos/large-red-medal.png"
+            <li
+              className="logoTypeListItem"
+            >
+              <h6>
+                STACKED
+              </h6>
+              <ul
+                className="badgeList"
+              >
+                <li>
+                  <Badge
+                    icon={
+                      <img
+                        alt="Stacked Small Blue Logo"
+                        src="https://s3.amazonaws.com/operationcode-assets/branding/logos/small-stacked-logo-blue.png"
+                      />
+                    }
+                    isImageFirst={false}
+                    label="Blue"
                   />
-                }
-                isImageFirst={false}
-                label="Red"
-              />
+                </li>
+                <li>
+                  <Badge
+                    icon={
+                      <img
+                        alt="Stacked Small Red Logo"
+                        src="https://s3.amazonaws.com/operationcode-assets/branding/logos/small-stacked-logo-red.png"
+                      />
+                    }
+                    isImageFirst={false}
+                    label="Red"
+                  />
+                </li>
+                <li>
+                  <Badge
+                    icon={
+                      <img
+                        alt="Stacked Unaccented Slate Logo"
+                        src="https://s3.amazonaws.com/operationcode-assets/branding/logos/small-stacked-logo.png"
+                      />
+                    }
+                    isImageFirst={false}
+                    label="Slate"
+                  />
+                </li>
+              </ul>
             </li>
-            <li>
-              <Badge
-                icon={
-                  <img
-                    alt="Slate Medal"
-                    src="https://s3.amazonaws.com/operationcode-assets/branding/logos/large-slate-medal.png"
+            <li
+              className="logoTypeListItem"
+            >
+              <h6>
+                MEDALS
+              </h6>
+              <p>
+                For use as an icon reference, when no other logo representations will fit the media space.
+              </p>
+              <ul
+                className="badgeList"
+              >
+                <li>
+                  <Badge
+                    icon={
+                      <img
+                        alt="Blue Medal"
+                        src="https://s3.amazonaws.com/operationcode-assets/branding/logos/large-blue-medal.png"
+                      />
+                    }
+                    isImageFirst={false}
+                    label="Blue"
                   />
-                }
-                isImageFirst={false}
-                label="Slate"
-              />
+                </li>
+                <li>
+                  <Badge
+                    icon={
+                      <img
+                        alt="Red Medal"
+                        src="https://s3.amazonaws.com/operationcode-assets/branding/logos/large-red-medal.png"
+                      />
+                    }
+                    isImageFirst={false}
+                    label="Red"
+                  />
+                </li>
+                <li>
+                  <Badge
+                    icon={
+                      <img
+                        alt="Slate Medal"
+                        src="https://s3.amazonaws.com/operationcode-assets/branding/logos/large-slate-medal.png"
+                      />
+                    }
+                    isImageFirst={false}
+                    label="Slate"
+                  />
+                </li>
+              </ul>
             </li>
           </ul>
         </li>
-      </ul>
-    </li>
-    <li
-      className="logoSizeListItem largeLogos"
-    >
-      <h5>
-        LARGE
-      </h5>
-      <p>
-        For use when the medal is above 1-inch tall.
-      </p>
-      <ul
-        className="logoTypeList"
-      >
         <li
-          className="logoTypeListItem"
+          className="logoSizeListItem largeLogos"
         >
-          <h6>
-            TYPICAL
-          </h6>
+          <h5>
+            LARGE
+          </h5>
+          <p>
+            For use when the medal is above 1-inch tall.
+          </p>
           <ul
-            className="badgeList"
+            className="logoTypeList"
           >
-            <li>
-              <Badge
-                icon={
-                  <img
-                    alt="Large Blue Accented Logo"
-                    src="https://s3.amazonaws.com/operationcode-assets/branding/logos/large-blue-logo.png"
+            <li
+              className="logoTypeListItem"
+            >
+              <h6>
+                TYPICAL
+              </h6>
+              <ul
+                className="badgeList"
+              >
+                <li>
+                  <Badge
+                    icon={
+                      <img
+                        alt="Large Blue Accented Logo"
+                        src="https://s3.amazonaws.com/operationcode-assets/branding/logos/large-blue-logo.png"
+                      />
+                    }
+                    isImageFirst={false}
+                    label="Blue"
                   />
-                }
-                isImageFirst={false}
-                label="Blue"
-              />
+                </li>
+                <li>
+                  <Badge
+                    icon={
+                      <img
+                        alt="Large Red Accented Logo"
+                        src="https://s3.amazonaws.com/operationcode-assets/branding/logos/large-red-logo.png"
+                      />
+                    }
+                    isImageFirst={false}
+                    label="Red"
+                  />
+                </li>
+                <li>
+                  <Badge
+                    icon={
+                      <img
+                        alt="Large Unaccenteded Logo"
+                        src="https://s3.amazonaws.com/operationcode-assets/branding/logos/large-logo.png"
+                      />
+                    }
+                    isImageFirst={false}
+                    label="Slate"
+                  />
+                </li>
+                <li>
+                  <Badge
+                    icon={
+                      <img
+                        alt="Large White Accented Logo"
+                        src="https://s3.amazonaws.com/operationcode-assets/branding/logos/large-white-logo.png"
+                      />
+                    }
+                    isImageFirst={false}
+                    label="White"
+                  />
+                </li>
+              </ul>
             </li>
-            <li>
-              <Badge
-                icon={
-                  <img
-                    alt="Large Red Accented Logo"
-                    src="https://s3.amazonaws.com/operationcode-assets/branding/logos/large-red-logo.png"
+            <li
+              className="logoTypeListItem"
+            >
+              <h6>
+                STACKED
+              </h6>
+              <ul
+                className="badgeList"
+              >
+                <li>
+                  <Badge
+                    icon={
+                      <img
+                        alt="Stacked Large Blue Logo"
+                        src="https://s3.amazonaws.com/operationcode-assets/branding/logos/large-stacked-logo-blue.png"
+                      />
+                    }
+                    isImageFirst={false}
+                    label="Blue"
                   />
-                }
-                isImageFirst={false}
-                label="Red"
-              />
-            </li>
-            <li>
-              <Badge
-                icon={
-                  <img
-                    alt="Large Unaccenteded Logo"
-                    src="https://s3.amazonaws.com/operationcode-assets/branding/logos/large-logo.png"
+                </li>
+                <li>
+                  <Badge
+                    icon={
+                      <img
+                        alt="Stacked Large Red Logo"
+                        src="https://s3.amazonaws.com/operationcode-assets/branding/logos/large-stacked-logo-red.png"
+                      />
+                    }
+                    isImageFirst={false}
+                    label="Red"
                   />
-                }
-                isImageFirst={false}
-                label="Slate"
-              />
-            </li>
-            <li>
-              <Badge
-                icon={
-                  <img
-                    alt="Large White Accented Logo"
-                    src="https://s3.amazonaws.com/operationcode-assets/branding/logos/large-white-logo.png"
+                </li>
+                <li>
+                  <Badge
+                    icon={
+                      <img
+                        alt="Stacked Large Slate Logo"
+                        src="https://s3.amazonaws.com/operationcode-assets/branding/logos/large-stacked-logo.png"
+                      />
+                    }
+                    isImageFirst={false}
+                    label="Slate"
                   />
-                }
-                isImageFirst={false}
-                label="White"
-              />
+                </li>
+              </ul>
             </li>
           </ul>
         </li>
-        <li
-          className="logoTypeListItem"
-        >
-          <h6>
-            STACKED
-          </h6>
-          <ul
-            className="badgeList"
-          >
-            <li>
-              <Badge
-                icon={
-                  <img
-                    alt="Stacked Large Blue Logo"
-                    src="https://s3.amazonaws.com/operationcode-assets/branding/logos/large-stacked-logo-blue.png"
-                  />
-                }
-                isImageFirst={false}
-                label="Blue"
-              />
-            </li>
-            <li>
-              <Badge
-                icon={
-                  <img
-                    alt="Stacked Large Red Logo"
-                    src="https://s3.amazonaws.com/operationcode-assets/branding/logos/large-stacked-logo-red.png"
-                  />
-                }
-                isImageFirst={false}
-                label="Red"
-              />
-            </li>
-            <li>
-              <Badge
-                icon={
-                  <img
-                    alt="Stacked Large Slate Logo"
-                    src="https://s3.amazonaws.com/operationcode-assets/branding/logos/large-stacked-logo.png"
-                  />
-                }
-                isImageFirst={false}
-                label="Slate"
-              />
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-  </ul>
-</Section>
+      </ul>,
+    ]
+  }
+  hasTitleUnderline={true}
+  isFullViewportHeight={false}
+  theme="gray"
+  title="Logo"
+/>
 `;

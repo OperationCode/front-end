@@ -1,5 +1,6 @@
 /* Do not attempt to change values in themeMap - only change in ./variables.css */
 @import "./variables.css";
+@import "./media-queries.css";
 
 /* Global Styles */
 @font-face {
@@ -102,11 +103,11 @@ h4 {
 }
 
 h5 {
-  font-size: 1.7rem;
+  font-size: 1.375rem;
 }
 
 h6 {
-  font-size: 1.5rem;
+  font-size: 1.125rem;
 }
 
 @media screen and (--large-viewport) {

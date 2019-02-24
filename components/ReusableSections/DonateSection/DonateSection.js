@@ -1,19 +1,13 @@
 import React from 'react';
 import { donateLink, s3 } from 'common/constants/urls';
-import Section from 'components/_common_/Section/Section';
+import Container from 'components/_common_/Container/Container';
 import LinkButton from 'components/_common_/LinkButton/LinkButton';
-import styles from './DonateSection.css';
 
 function DonateSection() {
   return (
-    <Section
-      contentClassName={styles.content}
-      hasHeadingLines={false}
-      headingTheme="white"
-      style={{ backgroundImage: `url(${s3}background_flag.jpg` }}
-      title="Donate"
-      theme="secondary"
-    >
+    <Container backgroundImageSource={`${s3}background_flag.jpg`}>
+      <h3>Donate</h3>
+
       <p>
         As a 501(c)(3) veteran-led nonprofit organization, our programs and services are maintained
         through the efforts of our volunteer staff. Your financial support allows us to continue
@@ -22,10 +16,10 @@ function DonateSection() {
       </p>
       <p>Thank you for supporting our mission!</p>
 
-      <LinkButton href={donateLink} analyticsEventLabel="Donate" theme="secondary">
+      <LinkButton href={donateLink} analyticsEventLabel="Donate" theme="primary">
         Donate Now
       </LinkButton>
-    </Section>
+    </Container>
   );
 }
 
