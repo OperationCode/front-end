@@ -46,7 +46,7 @@
   text-decoration: none;
 }
 
-@media screen and (min-width: 415px) and (--extra-large-viewport) {
+@media screen and (--extra-large-viewport) {
   .logos > .imgBox {
     width: 350px;
   }
