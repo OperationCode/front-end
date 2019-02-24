@@ -1,16 +1,16 @@
 import Link from 'next/link';
-import { s3 } from 'common/constants/urls';
-import successStories from 'common/constants/successStories';
-import partners from 'common/constants/partners';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
-import JoinSection from 'components/ReusableSections/JoinSection/JoinSection';
-import LinkButton from 'components/_common_/LinkButton/LinkButton';
 import PartnerLogoLink from 'components/PartnerLogoLink/PartnerLogoLink';
-import ScreenReaderOnly from 'components/_common_/ScreenReaderOnly/ScreenReaderOnly';
+import JoinSection from 'components/ReusableSections/JoinSection/JoinSection';
 import SuccessStory from 'components/SuccessStory/SuccessStory';
 import Heading from 'components/_common_/Heading/Heading';
+import LinkButton from 'components/_common_/LinkButton/LinkButton';
+import ScreenReaderOnly from 'components/_common_/ScreenReaderOnly/ScreenReaderOnly';
+import successStories from 'common/constants/successStories';
+import partners from 'common/constants/partners';
+import { s3 } from 'common/constants/urls';
 import styles from './styles/index.css';
 
 const featuredLinksArray = [
