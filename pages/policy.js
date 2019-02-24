@@ -1,5 +1,5 @@
 import Head from 'components/head';
-import HeroBanner from 'components/_common_/HeroBanner/HeroBanner';
+import HeroBanner from 'components/HeroBanner/HeroBanner';
 import { s3 } from 'common/constants/urls';
 import styles from './styles/policy.css';
 
@@ -8,10 +8,9 @@ export default () => (
     <Head title="Policy" />
 
     <HeroBanner
-      className={styles.overlay}
-      title="Modernize the GI Bill"
-      imageSource={`${s3}heroBanners/capitol-building.jpg`}
+      backgroundImageSource={`${s3}heroBanners/capitol-building.jpg`}
       isFullViewHeight
+      title="Modernize the GI Bill"
     >
       <h6 className={styles.subtitle}>
         We demanded that Congress develop policies to make veterans more competitive for careers in

@@ -2,14 +2,14 @@ import Head from 'components/head';
 import LogoSection from 'components/Branding/LogoSection/LogoSection';
 import ColorSection from 'components/Branding/ColorSection/ColorSection';
 import FontSection from 'components/Branding/FontSection/FontSection';
-import HeroBanner from 'components/_common_/HeroBanner/HeroBanner';
+import HeroBanner from 'components/HeroBanner/HeroBanner';
 import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
 
 const Branding = () => (
   <>
     <Head title="Branding" />
 
-    <HeroBanner title="Branding">
+    <HeroBanner isFullViewportHeight title="Branding">
       <h6>General Guidelines</h6>
       <p>
         The size ratio between the star and the medallion changes depending on the size of

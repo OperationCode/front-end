@@ -1,0 +1,45 @@
+.Container {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 250px;
+  width: 100%;
+}
+
+/* need to have a higher order of specificity since HeroBanner fights it */
+.Container.fullViewportHeight {
+  min-height: 100vh;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 3.5rem auto;
+  width: 85%;
+  max-width: 1400px;
+}
+
+/* Dark Themes */
+.secondary {
+  background-color: var(--secondary);
+  color: var(--white);
+  fill: var(--white);
+}
+
+/* Light Themes */
+.gray {
+  background-color: var(--gray);
+  color: var(--secondary);
+  fill: var(--secondary);
+}
+
+.white {
+  background-color: var(--white);
+  color: var(--secondary);
+  fill: var(--secondary);
+}
