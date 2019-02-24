@@ -1,17 +1,17 @@
 import Select from 'react-select';
-import { getCodeSchoolsPromise } from 'common/constants/api';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
-import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
-import Button from 'components/_common_/Button/Button';
-import SchoolCard from 'components/Cards/SchoolCard/SchoolCard';
 import FlatCard from 'components/Cards/FlatCard/FlatCard';
-import { s3 } from 'common/constants/urls';
+import SchoolCard from 'components/Cards/SchoolCard/SchoolCard';
+import Button from 'components/_common_/Button/Button';
+import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
+import { getCodeSchoolsPromise } from 'common/constants/api';
 import States from 'common/constants/dropdown-states-values';
 import edx from 'static/images/moocs/edx.jpg';
 import treehouse from 'static/images/moocs/treehouse.jpg';
 import udacity from 'static/images/moocs/udacity.jpg';
+import { s3 } from 'common/constants/urls';
 import styles from './styles/code_schools.css';
 
 export default class CodeSchools extends React.Component {
