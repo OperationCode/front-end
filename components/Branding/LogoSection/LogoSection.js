@@ -1,8 +1,8 @@
 import React from 'react';
 import classNames from 'classnames';
-import { s3 } from 'common/constants/urls';
-import Content from 'components/Content/Content';
 import Badge from 'components/Badge/Badge';
+import Content from 'components/Content/Content';
+import { s3 } from 'common/constants/urls';
 import styles from './LogoSection.css';
 
 function LogoSection() {

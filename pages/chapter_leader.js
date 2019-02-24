@@ -1,7 +1,7 @@
 import Head from 'components/head';
+import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
 import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
-import HeroBanner from 'components/HeroBanner/HeroBanner';
 
 const ChapterLeader = () => (
   <>

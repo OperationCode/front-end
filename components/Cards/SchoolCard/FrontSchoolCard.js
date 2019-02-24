@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import Badge from 'components/Badge/Badge';
 import Button from 'components/_common_/Button/Button';
 import LinkButton from 'components/_common_/LinkButton/LinkButton';
 import DesktopIcon from 'static/images/icons/FontAwesome/desktop-solid.svg';
@@ -9,7 +10,6 @@ import HomeIcon from 'static/images/icons/FontAwesome/home-solid.svg';
 import PeopleIcon from 'static/images/icons/FontAwesome/users-solid.svg';
 import GIBillApprovedIcon from 'static/images/icons/gi-bill-approved.svg';
 import GIBillUnavailableIcon from 'static/images/icons/gi-bill-unavailable.svg';
-import Badge from 'components/Badge/Badge';
 import styles from './FrontSchoolCard.css';
 
 export default class FrontSchoolCard extends Component {
