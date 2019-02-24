@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Common/YouTubeVideo default 1`] = `
-<span
+<div
   className=""
 >
   <div
     className="YouTubeVideo"
     id={null}
   />
-</span>
+</div>
 `;
