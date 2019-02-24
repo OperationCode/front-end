@@ -2,12 +2,10 @@
   max-width: 100%;
 }
 
-.hero {
-  background-position: center top;
+.imageCard h6 {
+  font-size: 1.125rem;
 }
 
-.flexGrid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+.imageCard p {
+  font-size: 85%;
 }

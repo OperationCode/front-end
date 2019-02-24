@@ -102,11 +102,11 @@ h4 {
 }
 
 h5 {
-  font-size: 1.7rem;
+  font-size: 1.375rem;
 }
 
 h6 {
-  font-size: 1.5rem;
+  font-size: 1.125rem;
 }
 
 @media screen and (--large-viewport) {
