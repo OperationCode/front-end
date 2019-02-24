@@ -1,4 +1,4 @@
-@import "../../../common/styles/variables.css";
+@import "../../../common/styles/media-queries.css";
 
 .SchoolCard {
   max-width: 400px;

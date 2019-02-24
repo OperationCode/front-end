@@ -1,3 +1,5 @@
+@import "../../../common/styles/media-queries.css";
+
 .eventContainer {
   margin: 0 0 30px 0;
   border: 1px solid #c5c5c5;
@@ -9,7 +11,7 @@
   text-transform: capitalize;
 }
 
-@media screen and (max-width: 680px) {
+@media screen and (--medium-viewport) {
   .eventTitle {
     font-size: 1.5rem;
   }

@@ -12,8 +12,8 @@ storiesOf('Common/HeroBanner', module)
     'default',
     withInfo()(() => (
       <HeroBanner
-        isFullViewHeight={boolean('isFullViewHeight', false)}
-        imageSource={text('imageSource', `${s3}heroBanners/stock_family-2.jpg`)}
+        backgroundImageSource={text('imageSource', `${s3}heroBanners/stock_family-2.jpg`)}
+        isFullViewportHeight={boolean('isFullViewportHeight', false)}
         title={text('title', 'Hero Banner')}
       >
         {text('children', '')}

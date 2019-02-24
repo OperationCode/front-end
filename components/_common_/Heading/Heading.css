@@ -1,11 +1,13 @@
+@import "../../../common/styles/media-queries.css";
+
 .Heading {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-bottom: 1rem;
   text-align: center;
   text-transform: uppercase;
   width: 85%;
+  margin: 1rem auto;
 }
 
 .headingLines::before,
@@ -30,13 +32,13 @@
   color: var(--white);
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (--medium-viewport) {
   .Heading {
     width: 90%;
   }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (--small-viewport) {
   .Heading {
     width: 100%;
   }
