@@ -10,8 +10,8 @@
   --primaryFontFamily: "DIN Condensed Bold";
   --secondaryFontFamily: "Encode Sans";
 
-  /* Viewports (for media queries) */
-  /* NOTE: Any changes here should be also made to `media-queries.css` */
+  /* Breakpoint definitions used in Storybook */
+  /* NOTE: Any changes here should be also made to `../media-queries.css` */
   --smallViewportWidth: 576px;
   --mediumViewportWidth: 768px;
   --largeViewportWidth: 992px;
