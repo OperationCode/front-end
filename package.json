@@ -65,7 +65,7 @@
     "history": "^4.7.2",
     "jwt-decode": "^2.2.0",
     "lodash": "^4.17.11",
-    "next": "^7.0.2",
+    "next": "^8.0.0",
     "next-redux-wrapper": "^2.1.0",
     "path": "^0.12.7",
     "postcss-custom-media": "^7.0.7",
