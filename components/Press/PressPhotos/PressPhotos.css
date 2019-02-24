@@ -1,3 +1,5 @@
+@import "../../../common/styles/media-queries.css";
+
 .photos {
   padding-top: 15px;
   display: flex;
@@ -12,7 +14,7 @@
   padding: 0.75rem;
 }
 
-@media screen and (max-width: 499px) {
+@media screen and (--small-viewport) {
   .photos > img {
     width: 100%;
   }

@@ -1,3 +1,5 @@
+@import "../../../common/styles/media-queries.css";
+
 .accordionSingleHidden {
   display: none;
 }
@@ -48,13 +50,13 @@
   content: "-";
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (--medium-viewport) {
   .accordionSingle {
     max-width: 270px;
   }
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (--small-viewport) {
   .accordionSingle {
     max-width: 200px;
   }

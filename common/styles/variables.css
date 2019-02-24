@@ -10,19 +10,8 @@
   --primaryFontFamily: "DIN Condensed Bold";
   --secondaryFontFamily: "Encode Sans";
 
-  /* Viewports (for media queries) */
-  --smallViewportWidth: 576px;
-  --mediumViewportWidth: 768px;
-  --largeViewportWidth: 992px;
-  --extraLargeViewportWidth: 1200px;
-
   /* Commonly referenced dimensions */
   --borderRadius: 3px;
   --navBarHeight: 65px;
   --navBarTopGutterHeight: 20px;
 }
-
-@custom-media --small-viewport (max-width: 576px);
-@custom-media --medium-viewport (max-width: 768px);
-@custom-media --large-viewport (max-width: 992px);
-@custom-media --extra-large-viewport (max-width: 1200px);

@@ -1,3 +1,5 @@
+@import "../../../common/styles/media-queries.css";
+
 /* TODO: Simplify styles */
 .NavListItem {
   align-items: center;
@@ -45,7 +47,7 @@
   padding: 2px 1rem 0;
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (--large-viewport) {
   /* font-size shifts, but SVG icons do not */
 
   /* align nav link content vertically with plus/minus icons */

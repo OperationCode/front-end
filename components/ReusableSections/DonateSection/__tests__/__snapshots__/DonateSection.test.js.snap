@@ -1,19 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DonateSection should render with no props passed passed 1`] = `
-<Section
-  contentClassName="content"
-  hasHeadingLines={false}
-  headingTheme="white"
-  id=""
-  style={
-    Object {
-      "backgroundImage": "url(https://s3.amazonaws.com/operationcode-assets/background_flag.jpg",
-    }
-  }
+<Container
+  backgroundImageSource="https://s3.amazonaws.com/operationcode-assets/background_flag.jpg"
+  isFullViewportHeight={false}
   theme="secondary"
-  title="Donate"
 >
+  <h3>
+    Donate
+  </h3>
   <p>
     As a 501(c)(3) veteran-led nonprofit organization, our programs and services are maintained through the efforts of our volunteer staff. Your financial support allows us to continue helping the military community learn software development, enter the tech industry, and code the future.
   </p>
@@ -25,9 +20,9 @@ exports[`DonateSection should render with no props passed passed 1`] = `
     disabled={false}
     fullWidth={false}
     href="https://secure.lglforms.com/form_engine/s/BRtP7QUKyHOyEYsZROsRew"
-    theme="secondary"
+    theme="primary"
   >
     Donate Now
   </LinkButton>
-</Section>
+</Container>
 `;

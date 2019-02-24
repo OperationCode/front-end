@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Content should render with many props assigned 1`] = `
+<div
+  className="Container secondary fullViewportHeight"
+  id="test-id"
+>
+  <div
+    className="content"
+  >
+    <h3
+      className="title underline"
+    >
+      Testing!
+    </h3>
+    <div
+      className="columnsContainer"
+    >
+      <div>
+        <p>
+          some multi-column test content
+        </p>
+      </div>
+      <h6>
+        OH YEAH!!
+      </h6>
+      <aside>
+        Testing...
+      </aside>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Content should render with required props 1`] = `
+<div
+  className="Container secondary"
+>
+  <div
+    className="content"
+  >
+    <div
+      className="columnsContainer"
+    >
+      <div>
+        <p>
+          some test content
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
