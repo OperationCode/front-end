@@ -1,3 +1,5 @@
+@import "../../common/styles/media-queries.css";
+
 .statisticContainer {
   display: flex;
   flex-direction: column;
@@ -32,14 +34,14 @@
   padding: 0 1rem 0 0.5rem;
 }
 
-@media screen and (max-width: 959px) {
+@media screen and (--large-viewport) {
   .statisticNumber {
     font-size: 2rem;
     line-height: 2rem;
   }
 }
 
-@media screen and (max-width: 667px) {
+@media screen and (--medium-viewport) {
   .statisticNumber {
     flex-grow: 0;
   }

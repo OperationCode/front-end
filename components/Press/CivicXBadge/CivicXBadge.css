@@ -1,9 +1,11 @@
+@import "../../../common/styles/media-queries.css";
+
 .civic {
   display: block;
   margin: 0 auto;
 }
 
-@media (max-width: 767px) {
+@media (--medium-viewport) {
   .civic {
     width: 100%;
   }

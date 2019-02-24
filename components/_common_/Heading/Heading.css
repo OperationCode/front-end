@@ -1,3 +1,5 @@
+@import "../../../common/styles/media-queries.css";
+
 .Heading {
   display: flex;
   flex-direction: row;
@@ -30,13 +32,13 @@
   color: var(--white);
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (--medium-viewport) {
   .Heading {
     width: 90%;
   }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (--small-viewport) {
   .Heading {
     width: 100%;
   }

@@ -1,3 +1,5 @@
+@import "../../common/styles/media-queries.css";
+
 .SuccessStory {
   box-sizing: border-box;
   display: flex;
@@ -39,7 +41,7 @@
   font-size: 1rem;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (--medium-viewport) {
   .SuccessStory {
     height: 575px;
   }
