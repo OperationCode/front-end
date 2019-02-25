@@ -7,6 +7,7 @@ import Heading from 'components/_common_/Heading/Heading';
 import Badge from 'components/Badge/Badge';
 import Content from 'components/Content/Content';
 import JoinSection from 'components/ReusableSections/JoinSection/JoinSection';
+import Carousel from 'nuka-carousel';
 import BuildingIcon from 'static/images/icons/FontAwesome/building_icon.svg';
 import UserIcon from 'static/images/icons/FontAwesome/user-solid.svg';
 import DiversityIcon from 'static/images/icons/FontAwesome/users-solid.svg';
@@ -30,7 +31,7 @@ const sponsorItems = [
   },
 ];
 
-const hostEventIcons = [
+const hostEventItems = [
   {
     icon: <UserIcon />,
     label: 'Raise Awareness',
@@ -42,6 +43,35 @@ const hostEventIcons = [
   {
     icon: <UserIcon />,
     label: 'Get Our Voices out There',
+  },
+];
+
+const carouselItems = [
+  {
+    label: 'OpCode North Carolina: Durham',
+    date: '10/06/2018',
+  },
+  {
+    label: 'Hacktober',
+    date: '10/01/2018',
+  },
+  {
+    label: 'OpCode Boston',
+  },
+  {
+    label: 'OpCode North Carolina: Durham',
+    date: '10/06/2018',
+  },
+  {
+    label: 'Hacktober',
+    date: '10/01/2018',
+  },
+  {
+    label: 'OpCode Boston',
+  },
+  {
+    label: 'OpCode North Carolina: Durham',
+    date: '10/06/2018',
   },
 ];
 
@@ -67,7 +97,42 @@ export default () => {
         </>
       </HeroBanner>
 
-      {/* "Upcoming Events" carousel section here */}
+      <Content
+        title="Upcoming Events:"
+        theme="gray"
+        columns={[
+          <p className={styles.eventsLeadText}>
+            Be sure to check back often or join your local meetup for a more up to date list of
+            meetups or engagements
+          </p>,
+        ]}
+      />
+
+      <div className={styles.eventsCarousel}>
+        <Carousel
+          cellSpacing={35}
+          slideWidth="325px"
+          renderCenterLeftControls={({ previousSlide }) => (
+            <button type="button" className={styles.carouselControlLeft} onClick={previousSlide}>
+              &lt;
+            </button>
+          )}
+          renderCenterRightControls={({ nextSlide }) => (
+            <button type="button" className={styles.carouselControlRight} onClick={nextSlide}>
+              &gt;
+            </button>
+          )}
+          renderBottomCenterControls={null}
+          frameOverflow="hidden"
+        >
+          {carouselItems.map(item => (
+            <div className={styles.eventsCarouselItem}>
+              {item.label}
+              {item.date && <div className={styles.eventsCarouselItemDate}>{item.date}</div>}
+            </div>
+          ))}
+        </Carousel>
+      </div>
 
       {/* Three cards section here (use flat cards component) */}
 
@@ -123,7 +188,7 @@ export default () => {
         columns={[
           <p>Sponsoring a meetup ensures we have access to:</p>,
           <div className={styles.badgeGroupings}>
-            {hostEventIcons.map(item => (
+            {hostEventItems.map(item => (
               <Badge
                 key={item.label}
                 icon={item.icon}
