@@ -38,6 +38,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 0 17.5px;
+  cursor: default;
 }
 
 .eventsCarouselItemDate {
@@ -46,6 +48,8 @@
 
 .carouselControlLeft,
 .carouselControlRight {
+  display: flex;
+  align-items: center;
   background-color: var(--primary);
   color: var(--white);
   outline: 0;
@@ -56,6 +60,13 @@
   border-radius: 50%;
   height: 58px;
   width: 68px;
+  cursor: pointer;
+}
+
+.carouselControlLeft > svg,
+.carouselControlRight > svg {
+  fill: var(--white);
+  height: 30px;
 }
 
 .carouselControlLeft {
@@ -88,6 +99,12 @@
 .badge {
   fill: var(--secondary);
   margin: 1rem 4rem;
+}
+
+@media screen and (--medium-viewport) {
+  .eventsCarouselItem {
+    margin: 0 10px;
+  }
 }
 
 @media screen and (--medium-viewport) {

@@ -12,6 +12,8 @@ import BookIcon from 'static/images/icons/FontAwesome/book-solid.svg';
 import UtensilsIcon from 'static/images/icons/FontAwesome/utensils-solid.svg';
 import BuildingIcon from 'static/images/icons/FontAwesome/building_icon.svg';
 import BullhornIcon from 'static/images/icons/FontAwesome/bullhorn-solid.svg';
+import LeftAngleIcon from 'static/images/icons/FontAwesome/angle-left-solid.svg';
+import RightAngleIcon from 'static/images/icons/FontAwesome/angle-right-solid.svg';
 import UserIcon from 'static/images/icons/FontAwesome/user-solid.svg';
 import DiversityIcon from 'static/images/icons/FontAwesome/users-solid.svg';
 import { s3 } from 'common/constants/urls';
@@ -113,23 +115,21 @@ export default () => {
 
       <div className={styles.eventsCarousel}>
         <Carousel
-          cellSpacing={35}
           slideWidth="325px"
           renderCenterLeftControls={({ previousSlide }) => (
             <button type="button" className={styles.carouselControlLeft} onClick={previousSlide}>
-              &lt;
+              <LeftAngleIcon />
             </button>
           )}
           renderCenterRightControls={({ nextSlide }) => (
             <button type="button" className={styles.carouselControlRight} onClick={nextSlide}>
-              &gt;
+              <RightAngleIcon />
             </button>
           )}
           renderBottomCenterControls={null}
-          frameOverflow="hidden"
         >
           {carouselItems.map(item => (
-            <div className={styles.eventsCarouselItem}>
+            <div className={styles.eventsCarouselItem} key={item.label}>
               {item.label}
               {item.date && <div className={styles.eventsCarouselItemDate}>{item.date}</div>}
             </div>
