@@ -12,7 +12,7 @@ export default class team extends React.Component {
     };
   
 
-  async componentWillMount() {
+  async componentDidMount() {
     const { data } = await getTeamMembersPromise();
     const json = data;
     const boardMembers = json.filter(x => x.group === 'board');
