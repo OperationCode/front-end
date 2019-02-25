@@ -6,14 +6,11 @@ import TeamCard from 'components/_common_/TeamCard/TeamCard';
 import styles from './styles/team.css';
 
 export default class team extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
+    state = {
       boardMembers: null,
       staffMembers: null,
     };
-  }
+  
 
   async componentWillMount() {
     const { data } = await getTeamMembersPromise();
