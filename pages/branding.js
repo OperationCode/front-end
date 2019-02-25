@@ -1,8 +1,8 @@
 import Head from 'components/head';
+import HeroBanner from 'components/HeroBanner/HeroBanner';
 import LogoSection from 'components/Branding/LogoSection/LogoSection';
 import ColorSection from 'components/Branding/ColorSection/ColorSection';
 import FontSection from 'components/Branding/FontSection/FontSection';
-import HeroBanner from 'components/HeroBanner/HeroBanner';
 import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
 
 const Branding = () => (
