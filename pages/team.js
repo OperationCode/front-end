@@ -1,5 +1,3 @@
-// eslint-disable-next-line no-restricted-imports
-import React from 'react';
 import { getTeamMembersPromise } from 'common/constants/api';
 import { s3 } from 'common/constants/urls';
 import QuoteBanner from 'components/_common_/HeroBanner/HeroBanner';
