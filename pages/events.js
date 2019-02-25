@@ -8,7 +8,10 @@ import Badge from 'components/Badge/Badge';
 import Content from 'components/Content/Content';
 import JoinSection from 'components/ReusableSections/JoinSection/JoinSection';
 import Carousel from 'nuka-carousel';
+import BookIcon from 'static/images/icons/FontAwesome/book-solid.svg';
+import UtensilsIcon from 'static/images/icons/FontAwesome/utensils-solid.svg';
 import BuildingIcon from 'static/images/icons/FontAwesome/building_icon.svg';
+import BullhornIcon from 'static/images/icons/FontAwesome/bullhorn-solid.svg';
 import UserIcon from 'static/images/icons/FontAwesome/user-solid.svg';
 import DiversityIcon from 'static/images/icons/FontAwesome/users-solid.svg';
 import { s3 } from 'common/constants/urls';
@@ -18,7 +21,7 @@ const VISIBILITY_OFFSET = 400;
 
 const sponsorItems = [
   {
-    icon: <BuildingIcon />,
+    icon: <BookIcon />,
     label: 'Education Materials',
   },
   {
@@ -26,14 +29,14 @@ const sponsorItems = [
     label: 'Workspaces for Meetups',
   },
   {
-    icon: <BuildingIcon />,
+    icon: <UtensilsIcon />,
     label: 'Food for Longer Meetups',
   },
 ];
 
 const hostEventItems = [
   {
-    icon: <UserIcon />,
+    icon: <BullhornIcon />,
     label: 'Raise Awareness',
   },
   {
