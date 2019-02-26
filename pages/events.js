@@ -8,13 +8,13 @@ import Badge from 'components/Badge/Badge';
 import Content from 'components/Content/Content';
 import JoinSection from 'components/ReusableSections/JoinSection/JoinSection';
 import FlatCard from 'components/Cards/FlatCard/FlatCard';
-import Carousel from 'nuka-carousel';
+// import Carousel from 'nuka-carousel';
 import BookIcon from 'static/images/icons/FontAwesome/book-solid.svg';
 import UtensilsIcon from 'static/images/icons/FontAwesome/utensils-solid.svg';
 import BuildingIcon from 'static/images/icons/FontAwesome/building_icon.svg';
 import BullhornIcon from 'static/images/icons/FontAwesome/bullhorn-solid.svg';
-import LeftAngleIcon from 'static/images/icons/FontAwesome/angle-left-solid.svg';
-import RightAngleIcon from 'static/images/icons/FontAwesome/angle-right-solid.svg';
+// import LeftAngleIcon from 'static/images/icons/FontAwesome/angle-left-solid.svg';
+// import RightAngleIcon from 'static/images/icons/FontAwesome/angle-right-solid.svg';
 import UserIcon from 'static/images/icons/FontAwesome/user-solid.svg';
 import DiversityIcon from 'static/images/icons/FontAwesome/users-solid.svg';
 import { s3 } from 'common/constants/urls';
@@ -52,34 +52,35 @@ const hostEventItems = [
   },
 ];
 
-const carouselItems = [
-  {
-    label: 'OpCode North Carolina: Durham',
-    date: '10/06/2018',
-  },
-  {
-    label: 'Hacktober',
-    date: '10/01/2018',
-  },
-  {
-    label: 'OpCode Boston',
-  },
-  {
-    label: 'OpCode North Carolina: Durham',
-    date: '10/06/2018',
-  },
-  {
-    label: 'Hacktober',
-    date: '10/01/2018',
-  },
-  {
-    label: 'OpCode Boston',
-  },
-  {
-    label: 'OpCode North Carolina: Durham',
-    date: '10/06/2018',
-  },
-];
+/* commented out until api endpoints */
+// const carouselItems = [
+//   {
+//     label: 'OpCode North Carolina: Durham',
+//     date: '10/06/2018',
+//   },
+//   {
+//     label: 'Hacktober',
+//     date: '10/01/2018',
+//   },
+//   {
+//     label: 'OpCode Boston',
+//   },
+//   {
+//     label: 'OpCode North Carolina: Durham',
+//     date: '10/06/2018',
+//   },
+//   {
+//     label: 'Hacktober',
+//     date: '10/01/2018',
+//   },
+//   {
+//     label: 'OpCode Boston',
+//   },
+//   {
+//     label: 'OpCode North Carolina: Durham',
+//     date: '10/06/2018',
+//   },
+// ];
 
 export default () => {
   const pageTitle = 'Events';
@@ -110,7 +111,8 @@ export default () => {
         ]}
       />
 
-      <div className={styles.eventsCarousel}>
+      {/* commented out until api endpoints */}
+      {/* <div className={styles.eventsCarousel}>
         <Carousel
           slideWidth="325px"
           renderCenterLeftControls={({ previousSlide }) => (
@@ -132,7 +134,7 @@ export default () => {
             </div>
           ))}
         </Carousel>
-      </div>
+      </div> */}
 
       <HeroBanner
         backgroundImageSource={`${s3}redesign/heroBanners/events.jpg`}
