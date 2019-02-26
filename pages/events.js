@@ -17,6 +17,7 @@ import RightAngleIcon from 'static/images/icons/FontAwesome/angle-right-solid.sv
 import UserIcon from 'static/images/icons/FontAwesome/user-solid.svg';
 import DiversityIcon from 'static/images/icons/FontAwesome/users-solid.svg';
 import { s3 } from 'common/constants/urls';
+import FlatCard from 'components/Cards/FlatCard/FlatCard';
 import styles from './styles/events.css';
 
 const VISIBILITY_OFFSET = 400;
@@ -87,11 +88,7 @@ export default () => {
     <>
       <Head title={pageTitle} />
 
-      <HeroBanner
-        title={pageTitle}
-        backgroundImageSource={`${s3}redesign/heroBanners/events.jpg`}
-        className={styles.heroBannerMobilePositioning}
-      >
+      <HeroBanner title={pageTitle} backgroundImageSource={`${s3}redesign/heroBanners/events.jpg`}>
         <>
           <p>
             Need more Operation Code in your life? From conventions to tech meetups, we are where
@@ -137,7 +134,37 @@ export default () => {
         </Carousel>
       </div>
 
-      {/* Three cards section here (use flat cards component) */}
+      <HeroBanner
+        backgroundImageSource={`${s3}redesign/heroBanners/events.jpg`}
+        className={styles.meetupCardsBanner}
+      >
+        <div className={styles.cardsRow}>
+          <div className={styles.col}>
+            <FlatCard className={styles.meetupCard}>
+              <span className={styles.meetupCardHeader}>Find Your Local Meetup</span>
+              <div className={styles.meetupCardCta}>
+                <LinkButton href="/locations">Locations</LinkButton>
+              </div>
+            </FlatCard>
+          </div>
+          <div className={styles.col}>
+            <FlatCard className={styles.meetupCard}>
+              <span className={styles.meetupCardHeader}>Start a Meetup in Your Area</span>
+              <div className={styles.meetupCardCta}>
+                <LinkButton href="/locations">Find Out How</LinkButton>
+              </div>
+            </FlatCard>
+          </div>
+          <div className={styles.col}>
+            <FlatCard className={styles.meetupCard}>
+              <span className={styles.meetupCardHeader}>Donate to Your Local Meetup</span>
+              <div className={styles.meetupCardCta}>
+                <LinkButton href="/locations">Find Out How</LinkButton>
+              </div>
+            </FlatCard>
+          </div>
+        </div>
+      </HeroBanner>
 
       <Content
         title="Want to Become a Sponsor?"

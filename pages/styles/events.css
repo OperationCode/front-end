@@ -5,6 +5,60 @@
   max-width: 500px;
 }
 
+.meetupCardsBanner {
+  padding-top: 0;
+}
+
+.meetupCardsBanner > div > h1 {
+  display: none;
+}
+
+.cardsRow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardsRow > .col {
+  flex: 0 0 33.333333%;
+  max-width: 33.333333%;
+}
+
+.cardsRow article {
+  padding-top: 0;
+}
+
+.meetupCard > div {
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.meetupCard div > div:first-child {
+  display: none;
+}
+
+.meetupCardHeader {
+  min-height: 210px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-size: 1.8em;
+  padding: 0 0.25em;
+}
+
+.meetupCardCta {
+  margin-bottom: -3.6em;
+  text-align: center;
+}
+
+.meetupCardCta:hover > a:hover {
+  background-color: var(--white);
+  color: var(--secondary);
+}
+
 .cta {
   display: flex;
   flex-direction: column;
@@ -101,14 +155,24 @@
   margin: 1rem 4rem;
 }
 
-@media screen and (--medium-viewport) {
-  .eventsCarouselItem {
-    margin: 0 10px;
+@media screen and (--large-viewport) {
+  .cardsRow > .col {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .cardsRow article {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .meetupCardHeader {
+    min-height: 125px;
   }
 }
 
 @media screen and (--medium-viewport) {
-  .heroBannerMobilePositioning {
-    background-position: right center;
+  .eventsCarouselItem {
+    margin: 0 10px;
   }
 }
