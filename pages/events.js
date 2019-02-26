@@ -7,6 +7,7 @@ import Heading from 'components/_common_/Heading/Heading';
 import Badge from 'components/Badge/Badge';
 import Content from 'components/Content/Content';
 import JoinSection from 'components/ReusableSections/JoinSection/JoinSection';
+import FlatCard from 'components/Cards/FlatCard/FlatCard';
 import Carousel from 'nuka-carousel';
 import BookIcon from 'static/images/icons/FontAwesome/book-solid.svg';
 import UtensilsIcon from 'static/images/icons/FontAwesome/utensils-solid.svg';
@@ -17,7 +18,6 @@ import RightAngleIcon from 'static/images/icons/FontAwesome/angle-right-solid.sv
 import UserIcon from 'static/images/icons/FontAwesome/user-solid.svg';
 import DiversityIcon from 'static/images/icons/FontAwesome/users-solid.svg';
 import { s3 } from 'common/constants/urls';
-import FlatCard from 'components/Cards/FlatCard/FlatCard';
 import styles from './styles/events.css';
 
 const VISIBILITY_OFFSET = 400;
@@ -95,7 +95,7 @@ export default () => {
             you are! There are 4,000+ members across more than 20 states!
           </p>
 
-          <LinkButton href="/locations">See Locations</LinkButton>
+          <LinkButton href="#">See Locations</LinkButton>
         </>
       </HeroBanner>
 
@@ -138,28 +138,33 @@ export default () => {
         backgroundImageSource={`${s3}redesign/heroBanners/events.jpg`}
         className={styles.meetupCardsBanner}
       >
-        <div className={styles.cardsRow}>
+        <div className={styles.meetupCardsRow}>
           <div className={styles.col}>
             <FlatCard className={styles.meetupCard}>
               <span className={styles.meetupCardHeader}>Find Your Local Meetup</span>
+
               <div className={styles.meetupCardCta}>
-                <LinkButton href="/locations">Locations</LinkButton>
+                <LinkButton href="#">Locations</LinkButton>
               </div>
             </FlatCard>
           </div>
+
           <div className={styles.col}>
             <FlatCard className={styles.meetupCard}>
               <span className={styles.meetupCardHeader}>Start a Meetup in Your Area</span>
+
               <div className={styles.meetupCardCta}>
-                <LinkButton href="/locations">Find Out How</LinkButton>
+                <LinkButton href="#">Find Out How</LinkButton>
               </div>
             </FlatCard>
           </div>
+
           <div className={styles.col}>
             <FlatCard className={styles.meetupCard}>
               <span className={styles.meetupCardHeader}>Donate to Your Local Meetup</span>
+
               <div className={styles.meetupCardCta}>
-                <LinkButton href="/locations">Find Out How</LinkButton>
+                <LinkButton href="#">Find Out How</LinkButton>
               </div>
             </FlatCard>
           </div>
