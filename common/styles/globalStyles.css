@@ -8,6 +8,8 @@
   font-style: normal;
   font-weight: normal;
   font-display: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 
   /* prettier-ignore */
   src:
