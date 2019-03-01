@@ -18,32 +18,32 @@ Being an open source project involving contributors of varying levels of experie
 
 - [Table Of Contents](#table-of-contents)
 - [Git and GitHub](#git-and-github)
-    - [Git](#git)
-    - [GitHub Workflow](#github-workflow)
+  - [Git](#git)
+  - [GitHub Workflow](#github-workflow)
 - [Explanations](#explanations)
-    - [What Is The Front-End?](#what-is-the-front-end)
-    - [What Is The Back-End?](#what-is-the-back-end)
-    - [What is REST? What is an API?](#what-is-rest-what-is-an-api)
+  - [What Is The Front-End?](#what-is-the-front-end)
+  - [What Is The Back-End?](#what-is-the-back-end)
+  - [What is REST? What is an API?](#what-is-rest-what-is-an-api)
 - [Technologies](#technologies)
 - [Development Workflow](#development-workflow)
-    - [Installing Dependencies](#installing-dependencies)
-    - [Run The Development Server](#run-the-development-server)
-    - [Returning To Work After A Break](#returning-to-work-after-a-break)
-    - [Knowing The Tools At Your Disposal](#knowing-the-tools-at-your-disposal)
-    - [File Structure](#file-structure)
-    - [npm Scripts With Explanations](#npm-scripts-with-explanations)
+  - [Installing Dependencies](#installing-dependencies)
+  - [Run The Development Server](#run-the-development-server)
+  - [Returning To Work After A Break](#returning-to-work-after-a-break)
+  - [Knowing The Tools At Your Disposal](#knowing-the-tools-at-your-disposal)
+  - [File Structure](#file-structure)
+  - [npm Scripts With Explanations](#npm-scripts-with-explanations)
 - [Mocking Back-end Server API](#mocking-back-end-server-api)
 - [Resources](#resources)
 - [Navigating Operating System Differences](#navigating-operating-system-differences)
-    - [MacOS](#macos)
-        - [Update Your Mac](#update-your-mac)
-        - [Xcode Command Line Tools](#xcode-command-line-tools)
-        - [Homebrew](#homebrew)
-        - [Git](#git)
-        - [NodeJS](#nodejs)
-    - [Windows](#windows)
-        - [Git](#git)
-        - [NodeJS](#nodejs)
+  - [MacOS](#macos)
+    - [Update Your Mac](#update-your-mac)
+    - [Xcode Command Line Tools](#xcode-command-line-tools)
+    - [Homebrew](#homebrew)
+    - [Git](#git)
+    - [NodeJS](#nodejs)
+  - [Windows](#windows)
+    - [Git](#git)
+    - [NodeJS](#nodejs)
 
 ## Git and GitHub
 
@@ -113,6 +113,9 @@ _You can check to see your versions like so:_
 ### Run The Development Server
 
 Now that you've installed your dependencies and your new branch in your fork, you can launch the "dev server" with `yarn dev`.
+
+<center>⚠️ Warning ⚠️ </center>
+<aside>Unfortunately, you may need to refresh a page on navigation in development to have all styles be applied. This is the result of a bug within NextCSS plugin. It's being worked on!</aside>
 
 ### Returning To Work After A Break
 
@@ -203,6 +206,9 @@ yarn start
 
 # Run all available unit and integration tests
 yarn test
+
+# Update all snapshot tests
+yarn test -u
 
 #Create all the necessary files/folders for a new, reusable component. Please make `ComponentName` TitleCase.
 yarn create-component $ComponentName
