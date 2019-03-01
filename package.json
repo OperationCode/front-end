@@ -39,7 +39,7 @@
     ]
   },
   "dependencies": {
-    "@babel/core": "^7.2.2",
+    "@babel/core": "^7.3.4",
     "@storybook/addon-a11y": "3.4.11",
     "@storybook/addon-actions": "3.4.11",
     "@storybook/addon-backgrounds": "3.4.11",
@@ -52,7 +52,7 @@
     "@storybook/react": "3.4.11",
     "@zeit/next-bundle-analyzer": "^0.1.2",
     "@zeit/next-css": "^1.0.1",
-    "autoprefixer": "^9.4.3",
+    "autoprefixer": "^9.4.9",
     "axios": "^0.18.0",
     "babel-core": "7.0.0-bridge.0",
     "babel-loader": "^8.0.4",
@@ -94,15 +94,15 @@
     "style-loader": "^0.23.1",
     "universal-cookie": "^3.0.7",
     "url-loader": "^1.1.2",
-    "webpack": "^4.28.2"
+    "webpack": "^4.29.6"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.2.3",
+    "@babel/preset-env": "^7.3.4",
     "babel-eslint": "^10.0.1",
-    "babel-jest": "^23.6.0",
+    "babel-jest": "^24.1.0",
     "cross-env": "^5.2.0",
     "enzyme": "^3.8.0",
-    "enzyme-adapter-react-16": "^1.7.1",
+    "enzyme-adapter-react-16": "^1.10.0",
     "enzyme-to-json": "^3.3.5",
     "eslint": "5.14.1",
     "eslint-config-airbnb": "^17.1.0",
@@ -113,7 +113,7 @@
     "eslint-plugin-react": "^7.12.0",
     "husky": "0.14.3",
     "identity-obj-proxy": "^3.0.0",
-    "jest": "^23.6.0",
+    "jest": "^24.1.0",
     "jest-enzyme": "7.0.1",
     "jest-mock-axios": "^2.1.11",
     "jest-prop-type-error": "^1.1.0",
