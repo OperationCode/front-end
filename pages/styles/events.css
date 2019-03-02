@@ -39,6 +39,33 @@
   text-align: center;
 }
 
+.image img {
+  max-width: 100%;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.showImage img {
+  opacity: 1;
+}
+
+.badgeGroupings {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: -1rem;
+}
+
+.badge {
+  fill: var(--secondary);
+  margin: 1rem 4rem;
+}
+
+/*
+comment out carousel styles until api endpoint complete
+*/
+
+/*
 .eventsLeadText {
   text-align: center;
   font-size: 1.25em;
@@ -104,36 +131,15 @@
   margin-right: -30px;
 }
 
-.image img {
-  max-width: 100%;
-  opacity: 0;
-  transition: opacity 1s;
+@media screen and (--medium-viewport) {
+  .eventsCarouselItem {
+    margin: 0 10px;
+  }
 }
-
-.showImage img {
-  opacity: 1;
-}
-
-.badgeGroupings {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: -1rem;
-}
-
-.badge {
-  fill: var(--secondary);
-  margin: 1rem 4rem;
-}
+*/
 
 @media screen and (--large-viewport) {
   .meetupCardHeader {
     min-height: 125px;
-  }
-}
-
-@media screen and (--medium-viewport) {
-  .eventsCarouselItem {
-    margin: 0 10px;
   }
 }
