@@ -136,42 +136,30 @@ export default () => {
         </Carousel>
       </div> */}
 
-      <HeroBanner
+      <Content
         backgroundImageSource={`${s3}redesign/heroBanners/events.jpg`}
-        className={styles.meetupCardsBanner}
-      >
-        <div className={styles.meetupCardsRow}>
-          <div className={styles.col}>
-            <FlatCard className={styles.meetupCard}>
-              <span className={styles.meetupCardHeader}>Find Your Local Meetup</span>
-
-              <div className={styles.meetupCardCta}>
-                <LinkButton href="#">Locations</LinkButton>
-              </div>
-            </FlatCard>
-          </div>
-
-          <div className={styles.col}>
-            <FlatCard className={styles.meetupCard}>
-              <span className={styles.meetupCardHeader}>Start a Meetup in Your Area</span>
-
-              <div className={styles.meetupCardCta}>
-                <LinkButton href="#">Find Out How</LinkButton>
-              </div>
-            </FlatCard>
-          </div>
-
-          <div className={styles.col}>
-            <FlatCard className={styles.meetupCard}>
-              <span className={styles.meetupCardHeader}>Donate to Your Local Meetup</span>
-
-              <div className={styles.meetupCardCta}>
-                <LinkButton href="#">Find Out How</LinkButton>
-              </div>
-            </FlatCard>
-          </div>
-        </div>
-      </HeroBanner>
+        id="meetupCardsBanner"
+        columns={[
+          <FlatCard
+            button={<LinkButton href="#">Locations</LinkButton>}
+            className={styles.meetupCard}
+          >
+            <span className={styles.meetupCardHeader}>Find Your Local Meetup</span>
+          </FlatCard>,
+          <FlatCard
+            button={<LinkButton href="#">Find Out How</LinkButton>}
+            className={styles.meetupCard}
+          >
+            <span className={styles.meetupCardHeader}>Start a Meetup in Your Area</span>
+          </FlatCard>,
+          <FlatCard
+            button={<LinkButton href="#">Find Out How</LinkButton>}
+            className={styles.meetupCard}
+          >
+            <span className={styles.meetupCardHeader}>Donate to Your Local Meetup</span>
+          </FlatCard>,
+        ]}
+      />
 
       <Content
         title="Want to Become a Sponsor?"
