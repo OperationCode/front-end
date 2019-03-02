@@ -38,3 +38,7 @@
   width: 85%;
   border: 1px solid var(--primary);
 }
+
+.alignCenter {
+  text-align: center;
+}
