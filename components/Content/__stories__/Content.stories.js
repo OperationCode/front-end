@@ -4,11 +4,8 @@ import { withInfo } from '@storybook/addon-info';
 import {
  withKnobs, boolean, select, text 
 } from '@storybook/addon-knobs';
-import { s3 } from 'common/constants/urls';
 
 import Content from '../Content';
-
-const backgroundImage = `${s3}heroBanners/stock_family-2.jpg`;
 
 const oneItemArray = [
   <div>
@@ -43,7 +40,7 @@ storiesOf('Content', module)
     'with one column',
     withInfo()(() => (
       <Content
-        backgroundImageSource={text('imageSource', backgroundImage)}
+        backgroundImageSource={text('backgroundImageSource', '')}
         columns={oneItemArray}
         hasTitleUnderline={boolean('hasTitleUnderline', false)}
         id={text('id', '')}
@@ -57,7 +54,7 @@ storiesOf('Content', module)
     'with two columns',
     withInfo()(() => (
       <Content
-        backgroundImageSource={text('imageSource', backgroundImage)}
+        backgroundImageSource={text('backgroundImageSource', '')}
         columns={twoItemArray}
         hasTitleUnderline={boolean('hasTitleUnderline', false)}
         id={text('id', '')}
@@ -71,7 +68,7 @@ storiesOf('Content', module)
     'with three columns',
     withInfo()(() => (
       <Content
-        backgroundImageSource={text('imageSource', backgroundImage)}
+        backgroundImageSource={text('backgroundImageSource', '')}
         columns={threeItemArray}
         hasTitleUnderline={boolean('hasTitleUnderline', false)}
         id={text('id', '')}
