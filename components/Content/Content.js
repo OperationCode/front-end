@@ -5,6 +5,7 @@ import Container from 'components/_common_/Container/Container';
 import styles from './Content.css';
 
 Content.propTypes = {
+  backgroundImageSource: PropTypes.string,
   columns: PropTypes.array.isRequired, // can be JSX, elements, or strings
   hasTitleUnderline: PropTypes.bool,
   id: PropTypes.string,
@@ -14,6 +15,7 @@ Content.propTypes = {
 };
 
 Content.defaultProps = {
+  backgroundImageSource: undefined,
   hasTitleUnderline: false,
   id: undefined,
   isFullViewportHeight: false,
@@ -21,9 +23,22 @@ Content.defaultProps = {
   title: undefined,
 };
 
-function Content({ columns, hasTitleUnderline, id, isFullViewportHeight, theme, title }) {
+function Content({
+  columns,
+  hasTitleUnderline,
+  id,
+  isFullViewportHeight,
+  theme,
+  title,
+  backgroundImageSource,
+}) {
   return (
-    <Container id={id} isFullViewportHeight={isFullViewportHeight} theme={theme}>
+    <Container
+      backgroundImageSource={backgroundImageSource}
+      id={id}
+      isFullViewportHeight={isFullViewportHeight}
+      theme={theme}
+    >
       {title && (
         <h3
           className={classNames(styles.title, {
