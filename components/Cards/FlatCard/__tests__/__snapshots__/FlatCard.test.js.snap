@@ -26,6 +26,7 @@ exports[`FlatCard should render with image props 1`] = `
         More content goes here
       </p>
     </div>
+    )
   </div>
 </article>
 `;
@@ -60,13 +61,18 @@ exports[`FlatCard should render with many props assigned 1`] = `
         More content goes here
       </p>
     </div>
-    <a
-      className="Button primary"
-      href="/"
-      onClick={[Function]}
+    <div
+      className="alignCenter"
     >
-      Widget Action
-    </a>
+      <a
+        className="Button primary"
+        href="/"
+        onClick={[Function]}
+      >
+        Widget Action
+      </a>
+    </div>
+    )
   </div>
 </article>
 `;
@@ -88,6 +94,7 @@ exports[`FlatCard should render with required props 1`] = `
         More content goes here
       </p>
     </div>
+    )
   </div>
 </article>
 `;
