@@ -12,7 +12,7 @@ storiesOf('Common/HeroBanner', module)
     'default',
     withInfo()(() => (
       <HeroBanner
-        backgroundImageSource={text('imageSource', `${s3}heroBanners/stock_family-2.jpg`)}
+        backgroundImageSource={text('backgroundImageSource', `${s3}heroBanners/stock_family-2.jpg`)}
         isFullViewportHeight={boolean('isFullViewportHeight', false)}
         title={text('title', 'Hero Banner')}
       >
