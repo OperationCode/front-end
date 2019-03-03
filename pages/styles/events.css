@@ -20,11 +20,6 @@
   margin-bottom: -3.6em;
 }
 
-.meetupCard > div > div:nth-child(2) a:hover {
-  background-color: var(--white);
-  color: var(--secondary);
-}
-
 .meetupCardHeader {
   min-height: 210px;
   display: flex;

@@ -32,7 +32,7 @@ function FlatCard({ button: Button, children, className, header, imageSource, im
         )}
         {header && <hr className={styles.divider} />}
         <div className={styles.children}>{children}</div>
-        {Button && <div className={styles.alignCenter}>{Button}</div>}
+        {Button && <div className={styles.flatCardButton}>{Button}</div>}
       </div>
     </article>
   );

@@ -39,6 +39,14 @@
   border: 1px solid var(--primary);
 }
 
-.alignCenter {
+.flatCardButton {
   text-align: center;
+}
+
+.flatCardButton > button:focus,
+.flatCardButton > button:hover,
+.flatCardButton > a:focus,
+.flatCardButton > a:hover {
+  background-color: var(--white);
+  color: var(--secondary);
 }
