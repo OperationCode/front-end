@@ -18,7 +18,6 @@
 
 .meetupCard > div > div:nth-child(2) {
   margin-bottom: -3.6em;
-  text-align: center;
 }
 
 .meetupCard > div > div:nth-child(2) a:hover {
