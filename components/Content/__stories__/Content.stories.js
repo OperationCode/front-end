@@ -40,6 +40,7 @@ storiesOf('Content', module)
     'with one column',
     withInfo()(() => (
       <Content
+        backgroundImageSource={text('backgroundImageSource', '')}
         columns={oneItemArray}
         hasTitleUnderline={boolean('hasTitleUnderline', false)}
         id={text('id', '')}
@@ -53,6 +54,7 @@ storiesOf('Content', module)
     'with two columns',
     withInfo()(() => (
       <Content
+        backgroundImageSource={text('backgroundImageSource', '')}
         columns={twoItemArray}
         hasTitleUnderline={boolean('hasTitleUnderline', false)}
         id={text('id', '')}
@@ -66,6 +68,7 @@ storiesOf('Content', module)
     'with three columns',
     withInfo()(() => (
       <Content
+        backgroundImageSource={text('backgroundImageSource', '')}
         columns={threeItemArray}
         hasTitleUnderline={boolean('hasTitleUnderline', false)}
         id={text('id', '')}
