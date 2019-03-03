@@ -1,26 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
-import styles from './Form.css';
+import { connect } from 'formik';
 
-Form.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.element]).isRequired,
-  className: PropTypes.string,
-};
+const FormikConnectedForm = connect(({ formik: { handleReset, handleSubmit }, ...props }) => (
+  <form onReset={handleReset} onSubmit={handleSubmit} noValidate {...props} />
+));
 
-Form.defaultProps = { className: undefined };
+FormikConnectedForm.displayName = 'FormikConnectedForm';
 
-function Form({ children, className }) {
-  return (
-    <form
-      className={classNames({
-        [`${styles.form}`]: true,
-        [`${className}`]: className,
-      })}
-    >
-      {children}
-    </form>
-  );
-}
-
-export default Form;
+export default FormikConnectedForm;
