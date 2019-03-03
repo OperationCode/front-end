@@ -41,6 +41,10 @@
 
 .flatCardButton {
   text-align: center;
+  position: absolute;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
 }
 
 .flatCardButton > button:focus,

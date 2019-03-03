@@ -11,13 +11,6 @@
 
 .meetupCard > div {
   padding: 2rem;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-
-.meetupCard > div > div:nth-child(2) {
-  margin-bottom: -3.6em;
 }
 
 .meetupCardHeader {
