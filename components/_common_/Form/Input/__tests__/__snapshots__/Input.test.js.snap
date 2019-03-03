@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input should render with required props 1`] = `
+<div
+  className="field"
+>
+  <label
+    className="Label"
+    htmlFor="someInputName"
+  >
+    Some Input:
+  </label>
+  <div
+    className="inputFeedBackGrouping"
+  >
+    <input
+      className="input"
+      id="someInputName"
+      name="someInputName"
+      type="text"
+    />
+  </div>
+</div>
+`;

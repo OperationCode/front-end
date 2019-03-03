@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Form/Input default 1`] = `
+<div
+  className="field"
+>
+  <label
+    className="Label"
+    htmlFor="someInput"
+  >
+    Some Input:
+  </label>
+  <div
+    className="inputFeedBackGrouping"
+  >
+    <input
+      className="input"
+      id="someInput"
+      name="someInput"
+      type="text"
+    />
+  </div>
+</div>
+`;
