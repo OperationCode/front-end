@@ -19,7 +19,7 @@ Alert.defaultProps = {
 
 function Alert({ children, isOpen, onClose, type }) {
   return (
-    <aside
+    <div
       className={classNames(styles.Alert, {
         [styles.error]: type === 'error',
         [styles.success]: type === 'success',
@@ -35,7 +35,7 @@ function Alert({ children, isOpen, onClose, type }) {
         </button>
       ) : null}
       {children}
-    </aside>
+    </div>
   );
 }
 
