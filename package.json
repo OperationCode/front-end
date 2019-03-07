@@ -113,7 +113,7 @@
     "husky": "0.14.3",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.1.0",
-    "jest-enzyme": "7.0.1",
+    "jest-enzyme": "7.0.2",
     "jest-mock-axios": "^2.1.11",
     "jest-prop-type-error": "^1.1.0",
     "lint-staged": "^8.1.0",
