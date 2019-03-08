@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Formik, Field } from 'formik';
 import * as Yup from 'yup';
 import { minPasswordCharNum, validationErrorMessages } from 'common/constants/validations';
@@ -6,6 +7,7 @@ import { isMinPasswordStrength } from 'common/utils/validator-utils';
 import Button from 'components/_common_/Button/Button';
 import Form from 'components/_common_/Form/Form';
 import Input from 'components/_common_/Form/Input/Input';
+import Alert from 'components/Alert/Alert';
 
 const registrationSchema = Yup.object().shape({
   email: Yup.string()
@@ -25,33 +27,75 @@ const registrationSchema = Yup.object().shape({
 
 // TODO: Define links for terms of service / privacy policy and place on this page
 
-export default class RegistrationForm extends Component {
-  state = {
-    // firstName: '',
-    // lastName: '',
-    email: '',
-    // zip: '',
-    password: '',
-    // isMentor: '',
+class RegistrationForm extends Component {
+  static propTypes = {
+    register: PropTypes.func.isRequired,
+    onSuccess: PropTypes.func.isRequired,
+    initialValues: PropTypes.shape({
+      email: PropTypes.string,
+      password: PropTypes.string,
+    }),
   };
 
+  static defaultProps = {
+    initialValues: {
+      email: '',
+      password: '',
+    },
+  };
+
+  state = {
+    alertMsg: '',
+    alertType: '',
+  };
+
+  handleSubmit = async (values, actions) => {
+    const { register, onSuccess } = this.props;
+
+    try {
+      await register({ ...values });
+      actions.setSubmitting(false);
+      actions.resetForm();
+
+      onSuccess();
+    } catch (error) {
+      actions.setSubmitting(false);
+
+      const { data } = error.response;
+
+      if (data.email && data.email[0] === 'has already been taken') {
+        actions.setFieldError('email', 'This email is tied to an account already.');
+      } else {
+        const alertMsg = Object.keys(data)
+          .map(key => `${key}: ${data[key][0]}`)
+          .join('\n');
+
+        this.setState({ alertMsg, alertType: 'error' });
+      }
+    }
+  };
+
+  closeAlert = () => this.setState({ alertMsg: '', alertType: '' });
+
   render() {
-    const { state } = this;
+    const { props, state } = this;
 
     return (
       <Formik
-        initialValues={{ ...state }}
-        onSubmit={(values, { setSubmitting }) => {
-          // Probably HTTP request right here...
-          setTimeout(() => {
-            console.log(JSON.stringify(values, null, 2));
-            setSubmitting(false);
-          }, 400);
-        }}
+        initialValues={props.initialValues}
+        onSubmit={props.onSubmit}
         validationSchema={registrationSchema}
       >
         {({ isSubmitting }) => (
           <Form>
+            <Alert
+              isOpen={Boolean(state.alertMsg)}
+              type={state.alertType}
+              onToggle={this.closeAlert}
+            >
+              {state.alertMsg}
+            </Alert>
+
             <Field
               type="email"
               name="email"
@@ -97,3 +141,5 @@ export default class RegistrationForm extends Component {
     );
   }
 }
+
+export default RegistrationForm;
