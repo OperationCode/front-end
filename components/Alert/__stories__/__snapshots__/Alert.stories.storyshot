@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Alert default 1`] = `
-<aside
+<div
   className="Alert error visible"
   role="alert"
 >
@@ -20,5 +20,5 @@ exports[`Storyshots Alert default 1`] = `
     </span>
   </button>
   PropTypes.string or .node
-</aside>
+</div>
 `;
