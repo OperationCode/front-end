@@ -15,7 +15,7 @@ storiesOf('Alert', module)
     withInfo()(() => (
       <Alert
         isOpen={boolean('isOpen', true)}
-        onClose={action('onClose for Alert')}
+        onToggle={action('onToggle for Alert')}
         type={select('type', ['error', 'success', 'warning'])}
       >
         {text('children', 'PropTypes.string or .node')}

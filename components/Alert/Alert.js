@@ -7,17 +7,17 @@ import styles from './Alert.css';
 Alert.propTypes = {
   children: PropTypes.node.isRequired,
   isOpen: PropTypes.bool,
-  onClose: PropTypes.func,
+  onToggle: PropTypes.func,
   type: PropTypes.oneOf(['error', 'success', 'warning']),
 };
 
 Alert.defaultProps = {
   isOpen: true,
-  onClose: undefined,
+  onToggle: undefined,
   type: 'error',
 };
 
-function Alert({ children, isOpen, onClose, type }) {
+function Alert({ children, isOpen, onToggle, type }) {
   return (
     <div
       className={classNames(styles.Alert, {
@@ -28,8 +28,8 @@ function Alert({ children, isOpen, onClose, type }) {
       })}
       role="alert"
     >
-      {Boolean(onClose) && isOpen ? (
-        <button type="button" className={styles.alertCloseButton} onClick={onClose}>
+      {Boolean(onToggle) && isOpen ? (
+        <button type="button" className={styles.alertCloseButton} onClick={onToggle}>
           <ScreenReaderOnly>Close Alert</ScreenReaderOnly>
           <span>&times;</span>
         </button>
