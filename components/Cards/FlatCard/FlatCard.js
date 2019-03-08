@@ -21,8 +21,14 @@ FlatCard.defaultProps = {
 };
 
 function FlatCard({ button: Button, children, className, header, imageSource, imageAlt }) {
+  const cardClassNames = [styles.FlatCard];
+
+  if (imageSource) {
+    cardClassNames.push(styles.cardWithImage);
+  }
+
   return (
-    <article className={classNames(styles.FlatCard, className)}>
+    <article className={classNames(...cardClassNames, className)}>
       <div className={styles.borderContainer}>
         {header && <div className={styles.header}>{header}</div>}
         {imageSource && (
