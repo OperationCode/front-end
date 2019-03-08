@@ -42,15 +42,15 @@
 .flatCardButton {
   text-align: center;
   position: absolute;
-  margin: 0 auto;
   left: 0;
   right: 0;
+  bottom: -27.5px;
 }
 
-.flatCardButton > button:focus,
-.flatCardButton > button:hover,
-.flatCardButton > a:focus,
-.flatCardButton > a:hover {
+.FlatCard .flatCardButton button:focus,
+.FlatCard .flatCardButton button:hover,
+.FlatCard .flatCardButton a:focus,
+.FlatCard .flatCardButton a:hover {
   background-color: var(--white);
   color: var(--secondary);
 }
