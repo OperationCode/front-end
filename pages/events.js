@@ -140,22 +140,13 @@ export default () => {
         backgroundImageSource={`${s3}redesign/heroBanners/events.jpg`}
         id="meetupCardsBanner"
         columns={[
-          <FlatCard
-            button={<LinkButton href="#">Locations</LinkButton>}
-            className={styles.meetupCard}
-          >
+          <FlatCard button={<LinkButton href="#">Locations</LinkButton>}>
             <span className={styles.meetupCardHeader}>Find Your Local Meetup</span>
           </FlatCard>,
-          <FlatCard
-            button={<LinkButton href="#">Find Out How</LinkButton>}
-            className={styles.meetupCard}
-          >
+          <FlatCard button={<LinkButton href="#">Find Out How</LinkButton>}>
             <span className={styles.meetupCardHeader}>Start a Meetup in Your Area</span>
           </FlatCard>,
-          <FlatCard
-            button={<LinkButton href="#">Find Out How</LinkButton>}
-            className={styles.meetupCard}
-          >
+          <FlatCard button={<LinkButton href="#">Find Out How</LinkButton>}>
             <span className={styles.meetupCardHeader}>Donate to Your Local Meetup</span>
           </FlatCard>,
         ]}
