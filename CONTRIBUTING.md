@@ -372,10 +372,10 @@ If your installation was successful you will get the versions of node and npm th
 </details>
 
 ## PostCSS
-In our repo, we use PostCSS modules to help simplify how we write our CSS. 
+In our repo, we use PostCSS plug-ins to help simplify how we write our CSS. 
 
 ### What is Post CSS? 
-"PostCSS is a tool for transforming styles with JS plugins. These plugins can lint your CSS, support variables and mixins, transpile future CSS syntax, inline images, and more." - [PostCSS](https://github.com/postcss/postcss)
+"PostCSS is a tool for transforming styles with JS plugins. These plugins can lint your CSS, support variables and mixins, transpile future CSS syntax, inline images, and more." - [PostCSS Repo](https://github.com/postcss/postcss)
 
 
 ### Modules in Use
