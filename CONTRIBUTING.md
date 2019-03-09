@@ -44,6 +44,7 @@ Being an open source project involving contributors of varying levels of experie
   - [Windows](#windows)
     - [Git](#git)
     - [NodeJS](#nodejs)
+- [PostCSS](#postcss)
 
 ## Git and GitHub
 
@@ -369,3 +370,19 @@ npm --version
 If your installation was successful you will get the versions of node and npm that were installed.
 
 </details>
+
+## PostCSS
+In our repo, we use PostCSS modules to help simplify how we write our CSS. 
+
+### What is Post CSS? 
+"PostCSS is a tool for transforming styles with JS plugins. These plugins can lint your CSS, support variables and mixins, transpile future CSS syntax, inline images, and more." - [PostCSS](https://github.com/postcss/postcss)
+
+
+### Modules in Use
+
+[autoprefixer](https://github.com/postcss/autoprefixer): used to pasrse vendor prefixes for certian CSS selectors 
+([What is a vendor prefix?](https://developer.mozilla.org/en-US/docs/Glossary/Vendor_Prefix)). In our repo, you will not have to include vendor prefixes when you create a non-standard CSS selector.  
+
+[postcss-media-variables](https://github.com/WolfgangKluge/postcss-media-variables): This plugin allows us to set 'default' breakpoints, and manipulate those values as needed without changing the defaults.  
+
+[post-css-variables](https://github.com/MadLittleMods/postcss-css-variables): This plug-in allows us to use [CSS3 variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables) across older browsers. On run-time, this plug-in extracts and translates our custom variables into 'vanilla' CSS. 
