@@ -15,9 +15,16 @@ storiesOf('Cards/FlatCard', module)
     'default',
     withInfo()(() => {
       const buttonText = text('button (render prop)', '');
+
+      const buttonRenderer = () => {
+        return buttonText ? (
+          <Button onClick={action('Button clicked!')}>{buttonText}</Button>
+        ) : null;
+      };
+
       return (
         <FlatCard
-          button={buttonText && <Button onClick={action('Button clicked!')}>{buttonText}</Button>}
+          button={buttonRenderer()}
           header={text('header (render prop)', '')}
           imageAlt={text('imageAlt', 'FlatCard image caption')}
           imageSource={text('imageSource', `${s3}headshots/david_molina.jpg`)}
