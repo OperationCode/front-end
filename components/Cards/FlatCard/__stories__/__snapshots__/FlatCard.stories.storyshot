@@ -2,7 +2,7 @@
 
 exports[`Storyshots Cards/FlatCard default 1`] = `
 <article
-  className="FlatCard"
+  className="FlatCard cardWithImage"
 >
   <div
     className="borderContainer"
