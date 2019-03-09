@@ -1,21 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Form should render with many props assigned 1`] = `
+exports[`Form should render within the context of Formik 1`] = `
 <form
-  className="form login-form"
+  noValidate={true}
+  onReset={[Function]}
+  onSubmit={[Function]}
 >
-  <p>
-    Test
-  </p>
-</form>
-`;
-
-exports[`Form should render with required props 1`] = `
-<form
-  className="form"
->
-  <p>
-    Test
-  </p>
+  <input
+    id="test"
+    label="label"
+    name="test"
+    onBlur={[Function]}
+    onChange={[Function]}
+  />
+  ,
 </form>
 `;

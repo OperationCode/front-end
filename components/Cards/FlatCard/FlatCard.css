@@ -1,7 +1,6 @@
 .FlatCard {
   box-sizing: border-box;
   margin: 1.5rem 1rem;
-  padding-top: 60px;
   position: relative;
   max-width: 400px;
 }
@@ -30,8 +29,16 @@
 }
 
 .borderContainer {
-  padding: 150px 2rem 2rem;
+  padding: 2rem;
   border: 3px solid var(--primary);
+}
+
+.cardWithImage {
+  padding-top: 60px;
+}
+
+.cardWithImage .borderContainer {
+  padding: 150px 2rem 2rem;
 }
 
 .divider {
@@ -39,6 +46,18 @@
   border: 1px solid var(--primary);
 }
 
-.alignCenter {
+.flatCardButton {
   text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -27.5px;
+}
+
+.FlatCard .flatCardButton button:focus,
+.FlatCard .flatCardButton button:hover,
+.FlatCard .flatCardButton a:focus,
+.FlatCard .flatCardButton a:hover {
+  background-color: var(--white);
+  color: var(--secondary);
 }
