@@ -2,7 +2,7 @@
 
 exports[`FlatCard should render with image props 1`] = `
 <article
-  className="FlatCard"
+  className="FlatCard cardWithImage"
 >
   <div
     className="borderContainer"
@@ -61,7 +61,7 @@ exports[`FlatCard should render with many props assigned 1`] = `
       </p>
     </div>
     <div
-      className="alignCenter"
+      className="flatCardButton"
     >
       <a
         className="Button primary"
