@@ -372,17 +372,73 @@ If your installation was successful you will get the versions of node and npm th
 </details>
 
 ## PostCSS
-In our repo, we use PostCSS plug-ins to help simplify how we write our CSS. 
+In our repo, we use PostCSS plug-ins to help simplify how we write our CSS. PostCSS is included in our webpack configuration, so there are no additional steps necessary to leverage these plug-ins.
 
 ### What is Post CSS? 
 "PostCSS is a tool for transforming styles with JS plugins. These plugins can lint your CSS, support variables and mixins, transpile future CSS syntax, inline images, and more." - [PostCSS Repo](https://github.com/postcss/postcss)
 
-
 ### Modules in Use
 
-[autoprefixer](https://github.com/postcss/autoprefixer): used to pasrse vendor prefixes for certian CSS selectors 
-([What is a vendor prefix?](https://developer.mozilla.org/en-US/docs/Glossary/Vendor_Prefix)). In our repo, you will not have to include vendor prefixes when you create a non-standard CSS selector.  
+[autoprefixer](https://github.com/postcss/autoprefixer): used to parse vendor prefixes for certain CSS selectors 
+([What is a vendor prefix?](https://developer.mozilla.org/en-US/docs/Glossary/Vendor_Prefix)). In our repo, you will not have to include vendor prefixes when you create a non-standard CSS selector. 
 
-[postcss-media-variables](https://github.com/WolfgangKluge/postcss-media-variables): This plugin allows us to set 'default' breakpoints, and manipulate those values as needed without changing the defaults.  
+**Example:**
+During development, we would write:
+```
+::placeholder {
+  color: --primary;
+}
+```
+Which will output the following when deployed: 
+```
+::-webkit-input-placeholder {
+  color: #3ed6f0;
+}
+:-ms-input-placeholder {
+  color: #3ed6f0;
+}
+::-ms-input-placeholder {
+  color: #3ed6f0;
+}
+::placeholder {
+  color: #3ed6f0;
+}
+```
 
-[post-css-variables](https://github.com/MadLittleMods/postcss-css-variables): This plug-in allows us to use [CSS3 variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables) across older browsers. On run-time, this plug-in extracts and translates our custom variables into 'vanilla' CSS. 
+[postcss-media-variables](https://github.com/WolfgangKluge/postcss-media-variables): This plugin allows us to set 'default' breakpoints, and manipulate those values as needed without changing the defaults. Our defaults are defined in `common/styles/variables.css`   
+
+**Example:**
+During development, we would write:
+```
+:root {
+    --largeViewportWidth: 992px;
+}
+@media (min-width: var(--largeViewportWidth)) {}
+```
+Which will output the following when deployed: 
+```
+@media (min-width: 992px){}
+```
+
+[post-css-variables](https://github.com/MadLittleMods/postcss-css-variables): This plug-in allows us to use [CSS3 variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables) across older browsers. On run-time, this plug-in extracts and translates our custom variables into 'vanilla' CSS.  
+
+**Example:** 
+During development, we would write:
+```
+:root {
+  --some-color: red;
+  /*here we have defined the property `--some-color` as red*/
+} 
+
+.foo {
+  color: --some-color;
+/*the element with class selector `.foo` will be red */
+}
+
+```
+Which will output the following when deployed:  
+```
+.foo {
+  color: red;
+} 
+```
