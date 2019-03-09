@@ -7,7 +7,7 @@
       "NODE_ENV": "production"
     }
   },
-  "files": [".next", "static", "package.json", "yarn.lock"],
+  "files": [".next", "static", "package.json", "yarn.lock", "server.js"],
   "type": "npm",
   "public": true,
   "version": 1
