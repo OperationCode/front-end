@@ -71,9 +71,9 @@
       {
         "components": ["Label"],
         "required": {
-          "some": ["nesting", "id"]
+          "some": ["for"]
         },
-        "allowChildren": false
+        "allowChildren": true
       }
     ],
     "max-len": ["error", { "code": 100, "ignoreUrls": true }],

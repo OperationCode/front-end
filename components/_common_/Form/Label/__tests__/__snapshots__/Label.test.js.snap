@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Label should render with required props 1`] = `
+<label
+  className="Label"
+  htmlFor="someInputName"
+>
+  Test
+</label>
+`;

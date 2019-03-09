@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styles from './ScreenReaderOnly.css';
 
 ScreenReaderOnly.propTypes = {
-  children: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 export default function ScreenReaderOnly({ children }) {

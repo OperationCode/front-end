@@ -1,6 +1,3 @@
-// Remove lint error below when a second validator is added.
-/* eslint-disable import/prefer-default-export */
-
 /**
  * Take a string and determine if it has non-whitespace characters in it
  *
@@ -13,4 +10,18 @@
  */
 export function zipCodeStringValidator(input = '') {
   return input.length !== 0 && input.trim().length !== 0;
+}
+
+/**
+ * Check if provided value meets minimum password strength requirements.
+ * 1. one lowercase letter
+ * 2. one uppercase letter
+ * 3. one number
+ *
+ * @function isMinPasswordStrength
+ * @param {string} val
+ * @return {boolean} true if min requirements are met
+ */
+export function isMinPasswordStrength(val) {
+  return /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]/.test(val);
 }
