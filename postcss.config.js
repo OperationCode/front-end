@@ -5,8 +5,7 @@ module.exports = ({ file, options, env }) => {
   const autoPrefixer = require('autoprefixer');
   const postcssCustomMedia = require('postcss-custom-media');
 
-  const ENV = env.toLowerCase(); // eslint-disable-line no-unused-vars
-  const isProd = ENV === 'production';
+  const isProd = env === 'production';
 
   const plugins = [postcssImport({ root: file.dirname }), autoPrefixer(), postcssCustomMedia()];
 
