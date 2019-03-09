@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Alert default 1`] = `
+<div
+  className="Alert error visible"
+  role="alert"
+>
+  <button
+    className="alertCloseButton"
+    onClick={[Function]}
+    type="button"
+  >
+    <span
+      className="ScreenReaderOnly"
+    >
+      Close Alert
+    </span>
+    <span>
+      ×
+    </span>
+  </button>
+  PropTypes.string or .node
+</div>
+`;

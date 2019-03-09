@@ -1,23 +1,18 @@
 /* eslint-env jest */
 import React from 'react';
+import { Formik, Field } from 'formik';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 
-import Form from 'components/_common_/Form/Form';
+import Form from '../Form';
 
 describe('Form', () => {
-  it('should render with required props', () => {
+  it('should render within the context of Formik', () => {
     createSnapshotTest(
-      <Form>
-        <p>Test</p>
-      </Form>,
-    );
-  });
-
-  it('should render with many props assigned', () => {
-    createSnapshotTest(
-      <Form className="login-form">
-        <p>Test</p>
-      </Form>,
+      <Formik>
+        <Form>
+          <Field id="test" name="test" label="label" component="input" />,
+        </Form>
+      </Formik>,
     );
   });
 });
