@@ -1,4 +1,5 @@
 import App, { Container } from 'next/app';
+import Router from 'next/router';
 import { Provider } from 'react-redux';
 import { compose } from 'redux';
 import ScrollUpButton from 'react-scroll-up-button';
@@ -73,6 +74,16 @@ class OperationCodeApp extends App {
       </Container>
     );
   }
+}
+
+// Fixes Next CSS route change bug: https://github.com/zeit/next-plugins/issues/282
+if (process.env.NODE_ENV !== 'production') {
+  Router.events.on('routeChangeComplete', () => {
+    const chunksSelector = 'link[href*="/_next/static/css/styles.chunk.css"]';
+    const chunksNodes = document.querySelectorAll(chunksSelector);
+    const timestamp = new Date().valueOf();
+    chunksNodes[0].href = `/_next/static/css/styles.chunk.css?v=${timestamp}`;
+  });
 }
 
 export default compose(
