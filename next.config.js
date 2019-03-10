@@ -1,6 +1,5 @@
 const withCSS = require('@zeit/next-css');
 const withBundleAnalyzer = require('@zeit/next-bundle-analyzer');
-const FilterWarningsPlugin = require('webpack-filter-warnings-plugin');
 const svgoConfig = require('./common/config/svgo');
 
 const nextConfig = withCSS({
@@ -32,6 +31,9 @@ const nextConfig = withCSS({
     config.node = { fs: 'empty' };
 
     if (dev) {
+      // eslint-disable-next-line global-require
+      const FilterWarningsPlugin = require('webpack-filter-warnings-plugin');
+
       // Filters Mini CSS Extract Plugin bug
       // https://github.com/webpack-contrib/mini-css-extract-plugin/issues/250#issuecomment-415345126
       config.plugins.push(
