@@ -2,8 +2,8 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
-import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
-import styles from 'components/_common_/Button/Button.css';
+import OutboundLink from 'components/OutboundLink/OutboundLink';
+import styles from 'components/Button/Button.css';
 
 LinkButton.propTypes = {
   // Only pass analytics event label if you're href is to an external website

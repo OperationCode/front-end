@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ReactGA from 'react-ga';
 import ExternalLinkIcon from 'static/images/icons/FontAwesome/external-link-square-alt-solid.svg';
-import ScreenReaderOnly from 'components/_common_/ScreenReaderOnly/ScreenReaderOnly';
+import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
 import styles from './OutboundLink.css';
 
 OutboundLink.propTypes = {

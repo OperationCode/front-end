@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import ScreenReaderOnly from 'components/_common_/ScreenReaderOnly/ScreenReaderOnly';
+import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
 import styles from './Label.css';
 
 Label.propTypes = {

@@ -4,7 +4,7 @@ import { shallow } from 'enzyme';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 
 import { s3 } from 'common/constants/urls';
-import LinkButton from 'components/_common_/LinkButton/LinkButton';
+import LinkButton from 'components/LinkButton/LinkButton';
 import FlatCard from '../FlatCard';
 
 describe('FlatCard', () => {

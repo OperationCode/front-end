@@ -1,7 +1,7 @@
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
-import LinkButton from 'components/_common_/LinkButton/LinkButton';
+import LinkButton from 'components/LinkButton/LinkButton';
 import { leadershipCircleLink } from 'common/constants/urls';
 import styles from './styles/leadership_circle.css';
 

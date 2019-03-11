@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import ReactModal from 'react-modal';
 import ReactGA from 'react-ga';
-import CardStyles from 'components/_common_/Card/Card.css';
+import CardStyles from 'components/Card/Card.css';
 import ModalStyles from './Modal.css';
 
 Modal.propTypes = {

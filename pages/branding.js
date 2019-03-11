@@ -3,7 +3,7 @@ import HeroBanner from 'components/HeroBanner/HeroBanner';
 import LogoSection from 'components/Branding/LogoSection/LogoSection';
 import ColorSection from 'components/Branding/ColorSection/ColorSection';
 import FontSection from 'components/Branding/FontSection/FontSection';
-import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
+import OutboundLink from 'components/OutboundLink/OutboundLink';
 
 const Branding = () => (
   <>

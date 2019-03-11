@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import PlusIcon from 'static/images/icons/plus.svg';
-import ScreenReaderOnly from 'components/_common_/ScreenReaderOnly/ScreenReaderOnly';
+import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
 import styles from './CloseButton.css';
 
 export default class CloseButton extends Component {
