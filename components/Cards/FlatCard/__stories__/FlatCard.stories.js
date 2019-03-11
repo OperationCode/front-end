@@ -6,7 +6,7 @@ import { withKnobs, text } from '@storybook/addon-knobs';
 
 import { s3 } from 'common/constants/urls';
 
-import Button from 'components/_common_/Button/Button';
+import Button from 'components/Button/Button';
 import FlatCard from '../FlatCard';
 
 storiesOf('Cards/FlatCard', module)

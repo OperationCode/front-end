@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots LinkButton default 1`] = `
+<a
+  className="Button primary"
+  href="https://tests.com"
+  onClick={[Function]}
+>
+  Click Me!
+</a>
+`;
