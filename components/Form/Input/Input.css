@@ -9,6 +9,7 @@
   margin-top: 0.25rem;
   margin-bottom: 1rem;
   padding: 0.5rem;
+  min-width: 200px;
 }
 
 .input:focus {
@@ -18,9 +19,10 @@
 }
 
 /* error message element */
-.inputFeedBackGrouping > aside {
+.inputFeedBackGrouping > div {
   color: var(--errorDeep);
   font-size: 0.825rem;
+  max-width: 165px; /* so that aside content doesn't span past width of input */
 }
 
 .valid {
