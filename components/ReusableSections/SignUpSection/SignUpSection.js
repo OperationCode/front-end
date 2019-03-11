@@ -1,6 +1,6 @@
 import React from 'react';
-import Container from 'components/_common_/Container/Container';
-import LinkButton from 'components/_common_/LinkButton/LinkButton';
+import Container from 'components/Container/Container';
+import LinkButton from 'components/LinkButton/LinkButton';
 
 function SignUpSection() {
   return (

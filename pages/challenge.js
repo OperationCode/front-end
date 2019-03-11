@@ -2,7 +2,7 @@ import { s3 } from 'common/constants/urls';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
-import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
+import OutboundLink from 'components/OutboundLink/OutboundLink';
 import challengers from 'static/operationcode_challenge/names';
 import styles from './styles/challenge.css';
 

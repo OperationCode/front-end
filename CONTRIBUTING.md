@@ -140,9 +140,8 @@ You can see interactive documentation on all of our components via [![Storybook]
 |   └── utils
 |
 ├── components
-|   ├── _common_  # Reusable lego blocks that form the foundation of many components.
 |   ├── ReusableSections  # These sections get used many times throughout our pages, but are not necessarily composable or reusable.
-|   ├── *  # All the remaining folders are more to modularize logic, rather than serve as reusable code.
+|   ├── *  # Most components act as reusable lego blocks that form the foundation of many components. One-off use components may also exist simply to modularize the codebase (not put everything in one big file).
 |   ├── head.js  # Next.js-specific component to handle a page's meta info (and the rest of it's <head> tag) dynamically
 |   └── nav.js
 |

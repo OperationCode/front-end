@@ -1,5 +1,5 @@
 import React from 'react';
-import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
+import OutboundLink from 'components/OutboundLink/OutboundLink';
 import { donateLink } from 'common/constants/urls';
 
 const questions = {
@@ -221,7 +221,7 @@ const questions = {
       ),
     },
     {
-      question: `I'd like to donate my software conference pass 
+      question: `I'd like to donate my software conference pass
       to an Operation Code member. How do I do that?`,
       answer: (
         <>

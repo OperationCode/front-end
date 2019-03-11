@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
-import Button from 'components/_common_/Button/Button';
+import OutboundLink from 'components/OutboundLink/OutboundLink';
+import Button from 'components/Button/Button';
 import styles from './ArticleGroup.css';
 
 class ArticleGroup extends Component {

@@ -6,7 +6,7 @@ import { withKnobs, boolean, text } from '@storybook/addon-knobs';
 import { s3 } from 'common/constants/urls';
 import HeroBanner from '../HeroBanner';
 
-storiesOf('Common/HeroBanner', module)
+storiesOf('HeroBanner', module)
   .addDecorator(withKnobs)
   .add(
     'default',

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Card from 'components/_common_/Card/Card';
+import Card from 'components/Cards/Card/Card';
 import styles from './ValueCard.css';
 
 ValueCard.propTypes = {

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Common/HeroBanner default 1`] = `
+exports[`Storyshots HeroBanner default 1`] = `
 <div
   className="HeroBanner Container secondary"
   style={

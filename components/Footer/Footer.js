@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import classNames from 'classnames';
-import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
+import OutboundLink from 'components/OutboundLink/OutboundLink';
 import SocialMedia from 'components/SocialMedia/SocialMedia';
 import { footerItems } from 'common/constants/navigation';
 import { s3 } from 'common/constants/urls';

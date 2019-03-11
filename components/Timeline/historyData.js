@@ -1,4 +1,4 @@
-import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
+import OutboundLink from 'components/OutboundLink/OutboundLink';
 
 export default {
   2012: [
