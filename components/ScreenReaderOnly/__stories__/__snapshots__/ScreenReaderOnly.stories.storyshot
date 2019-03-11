@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Common/ScreenReaderOnly default 1`] = `
+exports[`Storyshots ScreenReaderOnly default 1`] = `
 <span
   className="ScreenReaderOnly"
 >

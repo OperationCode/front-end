@@ -6,7 +6,7 @@ import {
 } from '@storybook/addon-knobs';
 import LinkButton from '../LinkButton';
 
-storiesOf('Common/LinkButton', module)
+storiesOf('LinkButton', module)
   .addDecorator(withKnobs)
   .add(
     'default',

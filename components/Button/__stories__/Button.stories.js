@@ -9,7 +9,7 @@ import { action } from '@storybook/addon-actions';
 
 import Button from '../Button';
 
-storiesOf('Common/Button', module)
+storiesOf('Button', module)
   .addDecorator(withKnobs)
   .add(
     'default',

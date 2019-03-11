@@ -7,7 +7,7 @@ import {
 
 import Container from '../Container';
 
-storiesOf('Common/Container', module)
+storiesOf('Container', module)
   .addDecorator(withKnobs)
   .add(
     'default',

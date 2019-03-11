@@ -42,7 +42,7 @@ import { withKnobs, text } from '@storybook/addon-knobs';
 
 import ${componentName} from '../${componentName}';
 
-storiesOf('Common/${componentName}', module)
+storiesOf('${componentName}', module)
   .addDecorator(withKnobs)
   .add(
     'default',

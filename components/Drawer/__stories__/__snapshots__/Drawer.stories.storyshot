@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Common/Drawer default 1`] = `
+exports[`Storyshots Drawer default 1`] = `
 <div
   className="hidden"
 >

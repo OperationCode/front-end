@@ -6,7 +6,7 @@ import { action } from '@storybook/addon-actions';
 
 import Modal from '../Modal';
 
-storiesOf('Common/Modal', module)
+storiesOf('Modal', module)
   .addDecorator(withKnobs)
   .add(
     'default',

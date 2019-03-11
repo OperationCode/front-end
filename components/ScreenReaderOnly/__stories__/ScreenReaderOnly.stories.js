@@ -5,7 +5,7 @@ import { withKnobs, text } from '@storybook/addon-knobs';
 
 import ScreenReaderOnly from '../ScreenReaderOnly';
 
-storiesOf('Common/ScreenReaderOnly', module)
+storiesOf('ScreenReaderOnly', module)
   .addDecorator(withKnobs)
   .add(
     'default',

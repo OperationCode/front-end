@@ -5,7 +5,7 @@ import { withKnobs, boolean, text } from '@storybook/addon-knobs';
 
 import OutboundLink from '../OutboundLink';
 
-storiesOf('Common/OutboundLink', module)
+storiesOf('OutboundLink', module)
   .addDecorator(withKnobs)
   .add(
     'default',

@@ -5,7 +5,7 @@ import { withKnobs, number, text } from '@storybook/addon-knobs';
 
 import YouTubeVideo from '../YouTubeVideo';
 
-storiesOf('Common/YouTubeVideo', module)
+storiesOf('YouTubeVideo', module)
   .addDecorator(withKnobs)
   .add(
     'default',

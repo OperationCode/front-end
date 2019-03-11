@@ -5,7 +5,7 @@ import { withKnobs, boolean, text } from '@storybook/addon-knobs';
 
 import Card from '../Card';
 
-storiesOf('Common/Card', module)
+storiesOf('Card/Card', module)
   .addDecorator(withKnobs)
   .add(
     'default',

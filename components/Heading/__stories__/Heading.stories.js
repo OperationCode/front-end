@@ -7,7 +7,7 @@ import {
 
 import Heading from '../Heading';
 
-storiesOf('Common/Heading', module)
+storiesOf('Heading', module)
   .addDecorator(withKnobs)
   .add(
     'default',

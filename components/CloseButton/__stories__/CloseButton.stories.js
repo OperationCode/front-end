@@ -6,7 +6,7 @@ import { action } from '@storybook/addon-actions';
 
 import CloseButton from '../CloseButton';
 
-storiesOf('Common/CloseButton', module)
+storiesOf('CloseButton', module)
   .addDecorator(withKnobs)
   .add(
     'default',
