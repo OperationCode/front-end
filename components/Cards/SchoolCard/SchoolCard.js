@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import Card from 'components/Card/Card';
+import Card from 'components/Cards/Card/Card';
 import FrontSchoolCard from './FrontSchoolCard';
 import BackSchoolCard from './BackSchoolCard';
 import styles from './SchoolCard.css';
