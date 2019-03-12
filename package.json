@@ -100,6 +100,7 @@
   },
   "devDependencies": {
     "@babel/preset-env": "^7.3.4",
+    "axios-mock-adapter": "^1.16.0",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^24.3.1",
     "cross-env": "^5.2.0",
@@ -117,7 +118,6 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.3.1",
     "jest-enzyme": "7.0.2",
-    "jest-mock-axios": "^2.1.11",
     "jest-prop-type-error": "^1.1.0",
     "lint-staged": "^8.1.5",
     "prettier": "^1.15.3",
