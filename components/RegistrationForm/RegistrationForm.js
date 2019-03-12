@@ -38,8 +38,6 @@ const registrationSchema = Yup.object().shape({
     .test('zipcode', validationErrorMessages.zipcode, isValidZipcode),
 });
 
-// TODO: Define links for terms of service / privacy policy and place on this page
-
 class RegistrationForm extends Component {
   static propTypes = {
     register: PropTypes.func.isRequired, // essentially onSubmit
@@ -75,11 +73,11 @@ class RegistrationForm extends Component {
     const { register, onSuccess } = this.props;
 
     try {
-      await register(values);
+      const { token } = await register(values);
       actions.setSubmitting(false);
       actions.resetForm();
 
-      await onSuccess();
+      await onSuccess({ ...values, token, slackName: '', isMentor: false });
     } catch (error) {
       actions.setSubmitting(false);
 

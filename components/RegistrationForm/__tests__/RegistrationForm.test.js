@@ -118,52 +118,61 @@ describe('RegistrationForm', () => {
   });
 
   it('should submit with valid data in form', async () => {
+    const initialValues = {
+      email: 'email@email.com',
+      'confirm-email': 'email@email.com',
+      password: 'abc123ABC',
+      'confirm-password': 'abc123ABC',
+      firstName: 'Test',
+      lastName: 'User',
+      zipcode: 90630,
+    };
+
+    OperationCodeAPIMock.onPost('users', { user: initialValues }).reply(200, {
+      token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9',
+    });
+
     const successSpy = jest.fn();
     const wrapper = mount(
-      <RegistrationForm
-        onSuccess={successSpy}
-        register={jest.fn()}
-        initialValues={{
-          email: 'email@email.com',
-          'confirm-email': 'email@email.com',
-          password: 'abc123ABC',
-          'confirm-password': 'abc123ABC',
-          firstName: 'Test',
-          lastName: 'User',
-          zipcode: 90630,
-        }}
-      />,
+      <RegistrationForm onSuccess={successSpy} register={jest.fn()} {...initialValues} />,
     );
 
     wrapper.find('Button').simulate('submit');
     await asyncRenderDiff(wrapper);
 
-    expect(successSpy).toHaveBeenCalled();
+    await wait(() => {
+      expect(successSpy).toHaveBeenCalled();
+      expect(OperationCodeAPIMock.history.post.length).toBeGreaterThan(0);
+    });
   });
 
   it('should NOT submit with invalid data in form', async () => {
     const successSpy = jest.fn();
 
+    const initialValues = {
+      email: 'email@email.com',
+      'confirm-email': 'ffdsdsfsadf@fdsafdsafsd.com',
+      password: 'abc1231111',
+      'confirm-password': '111111',
+      firstName: '',
+      lastName: '',
+      zipcode: '',
+    };
+
     const wrapper = mount(
-      <RegistrationForm
-        onSuccess={successSpy}
-        register={jest.fn()}
-        initialValues={{
-          email: 'email@email.com',
-          'confirm-email': 'ffdsdsfsadf@fdsafdsafsd.com',
-          password: 'abc1231111',
-          'confirm-password': '111111',
-          firstName: '',
-          lastName: '',
-          zipcode: '',
-        }}
-      />,
+      <RegistrationForm onSuccess={successSpy} register={jest.fn()} {...initialValues} />,
     );
 
     wrapper.find('Button').simulate('submit');
     await asyncRenderDiff(wrapper);
 
-    expect(successSpy).not.toHaveBeenCalled();
+    await wait(() => {
+      expect(successSpy).not.toHaveBeenCalled();
+      expect(OperationCodeAPIMock.history.post.length).not.toBeGreaterThan(0);
+    });
+
+    // + 1 because of always-present form Alert (conditionally rendered text)
+    expect(wrapper.find('Alert').children()).toHaveLength(Object.keys(initialValues).length + 1);
   });
 
   it('should show "email already registered" message for dupe email registration', async () => {
