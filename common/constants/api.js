@@ -21,6 +21,14 @@ export const createUser = ({ email, password, firstName, lastName, zipcode }) =>
     },
   }).then(({ data }) => data);
 
+export const loginUser = ({ email, password }) =>
+  post('sessions', {
+    user: {
+      email,
+      password,
+    },
+  }).then(({ data }) => data);
+
 export const postMentorRequestPromise = ({ language, additionalDetails, mentor, service }) =>
   post('requests', {
     request: {
