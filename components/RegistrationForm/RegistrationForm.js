@@ -19,22 +19,22 @@ import styles from './RegistrationForm.css';
  */
 const registrationSchema = Yup.object().shape({
   email: Yup.string()
-    .required('Required')
+    .required(validationErrorMessages.required)
     .email(validationErrorMessages.email),
   'confirm-email': Yup.string()
-    .required('Required')
+    .required(validationErrorMessages.required)
     .oneOf([Yup.ref('email')], validationErrorMessages.emailMatch),
   password: Yup.string()
-    .required('Required')
+    .required(validationErrorMessages.required)
     .min(minPasswordCharNum, validationErrorMessages.length(minPasswordCharNum))
     .test('password-strength', validationErrorMessages.password, isMinPasswordStrength),
   'confirm-password': Yup.string()
-    .required('Required')
+    .required(validationErrorMessages.required)
     .oneOf([Yup.ref('password')], validationErrorMessages.passwordMatch),
-  firstName: Yup.string().required('Required'),
-  lastName: Yup.string().required('Required'),
+  firstName: Yup.string().required(validationErrorMessages.required),
+  lastName: Yup.string().required(validationErrorMessages.required),
   zipcode: Yup.string()
-    .required('Required')
+    .required(validationErrorMessages.required)
     .test('zipcode', validationErrorMessages.zipcode, isValidZipcode),
 });
 
@@ -75,11 +75,11 @@ class RegistrationForm extends Component {
     const { register, onSuccess } = this.props;
 
     try {
-      await register({ ...values });
+      await register(values);
       actions.setSubmitting(false);
       actions.resetForm();
 
-      onSuccess();
+      await onSuccess();
     } catch (error) {
       actions.setSubmitting(false);
 
@@ -99,8 +99,6 @@ class RegistrationForm extends Component {
       this.setState({ errorMsg });
     }
   };
-
-  closeAlert = () => this.setState({ errorMsg: '' });
 
   render() {
     const { props, state } = this;
@@ -185,7 +183,7 @@ class RegistrationForm extends Component {
             </div>
 
             <div className={styles.row}>
-              <Alert isOpen={Boolean(state.errorMsg)} type="error" onToggle={this.closeAlert}>
+              <Alert isOpen={Boolean(state.errorMsg)} type="error">
                 {state.errorMsg}
               </Alert>
             </div>
