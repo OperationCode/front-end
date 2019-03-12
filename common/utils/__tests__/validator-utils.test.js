@@ -1,18 +1,18 @@
 /* eslint-env jest */
-import { isMinPasswordStrength, zipCodeStringValidator } from '../validator-utils';
+import { isMinPasswordStrength, isValidZipcode } from '../validator-utils';
 
 describe('Validator Utilities', () => {
-  describe('zipCodeStringValidator', () => {
+  describe('isValidZipcode', () => {
     it('should return true for any string', () => {
-      expect(zipCodeStringValidator('testString')).toStrictEqual(true);
+      expect(isValidZipcode('testString')).toStrictEqual(true);
     });
 
     it('should return false when passed an empty string', () => {
-      expect(zipCodeStringValidator('')).toStrictEqual(false);
+      expect(isValidZipcode('')).toStrictEqual(false);
     });
 
     it('should return false when passed undefined', () => {
-      expect(zipCodeStringValidator()).toStrictEqual(false);
+      expect(isValidZipcode()).toStrictEqual(false);
     });
   });
 

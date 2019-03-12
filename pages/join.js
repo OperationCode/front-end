@@ -1,7 +1,10 @@
+import Link from 'next/link';
+import Router from 'next/router';
+import { createUser } from 'common/constants/api';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
-// import Content from 'components/Content/Content';
-// import RegistrationForm from 'components/RegistrationForm/RegistrationForm';
+import Content from 'components/Content/Content';
+import RegistrationForm from 'components/RegistrationForm/RegistrationForm';
 
 export default () => (
   <>
@@ -9,6 +12,18 @@ export default () => (
 
     <HeroBanner title="Join" />
 
-    {/* <Content theme="gray" title="Join" hasTitleUnderline columns={[<RegistrationForm />]} /> */}
+    <Content
+      theme="gray"
+      columns={[
+        <RegistrationForm register={createUser} onSuccess={() => Router.push('/profile')} />,
+        <p>
+          Already registered?&nbsp;
+          <Link href="/login">
+            <a>Login</a>
+          </Link>
+          .
+        </p>,
+      ]}
+    />
   </>
 );

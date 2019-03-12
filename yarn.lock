@@ -2451,6 +2451,13 @@ axe-core@^2.6.1:
   resolved "https://registry.yarnpkg.com/axe-core/-/axe-core-2.6.1.tgz#28772c4f76966d373acda35b9a409299dc00d1b5"
   integrity sha512-QFfI3d+x/v92HJWGBaNfgrxdfon9/xXzd04YYfm5w5NJQOLex8qkJCctOt7+ky6e1l9zcQ5E7jsvbnTgQzyfTw==
 
+axios-mock-adapter@^1.16.0:
+  version "1.16.0"
+  resolved "https://registry.yarnpkg.com/axios-mock-adapter/-/axios-mock-adapter-1.16.0.tgz#cdd55bb60d8cb3fcd77fdb9cbb269e47b8b95180"
+  integrity sha512-m2D8ngMTQ5p4zZNBsPKoENgwz5rDfd0pZmXI/spdE2eeeKIcR3jquk+NRiBVFtb9UJlciBYplNzSUmgQ6X385Q==
+  dependencies:
+    deep-equal "^1.0.1"
+
 axios@^0.18.0:
   version "0.18.0"
   resolved "https://registry.yarnpkg.com/axios/-/axios-0.18.0.tgz#32d53e4851efdc0a11993b6cd000789d70c05102"
@@ -8066,18 +8073,6 @@ jest-message-util@^24.3.0:
     micromatch "^3.1.10"
     slash "^2.0.0"
     stack-utils "^1.0.1"
-
-jest-mock-axios@^2.1.11:
-  version "2.1.11"
-  resolved "https://registry.yarnpkg.com/jest-mock-axios/-/jest-mock-axios-2.1.11.tgz#5261646f25d69cd034c8235e4e9683ead3bdcc74"
-  integrity sha512-rxF13chmHuelAh/rysNQEY4YqmOO94XmBO5Mk2+edFh2dOwe3j/XIRSnY8+m61t1658AU6nGoTh1s7tCgvridg==
-  dependencies:
-    jest-mock-promise "^1.0.23"
-
-jest-mock-promise@^1.0.23:
-  version "1.0.23"
-  resolved "https://registry.yarnpkg.com/jest-mock-promise/-/jest-mock-promise-1.0.23.tgz#c921fd6b512ac546097edbcf477f3d4169657e40"
-  integrity sha1-ySH9a1EqxUYJftvPR389QWllfkA=
 
 jest-mock@^24.0.0:
   version "24.0.0"

@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { ErrorMessage } from 'formik';
-import Label from '../Label/Label';
+import Alert from 'components/Alert/Alert';
+import Label from 'components/Form/Label/Label';
 import styles from './Input.css';
 
 Input.propTypes = {
@@ -58,6 +59,7 @@ function Input({
   ...props // input simply has too many possible attributes... we'd be redocumenting the web
   // See: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Attributes_common_to_all_input_types
 }) {
+  const hasErrors = Boolean(errors[name]);
   const isLabelAfterInput = type === 'radio' || type === 'checkbox';
   const isLabelBeforeInput = !isLabelAfterInput;
 
@@ -74,15 +76,15 @@ function Input({
           {...field}
           {...props}
           className={classNames(styles.input, {
-            [styles.valid]: touched[name] && !errors[name],
-            [styles.invalid]: touched[name] && Boolean(errors[name]),
+            [styles.valid]: touched[name] && !hasErrors,
+            [styles.invalid]: touched[name] && hasErrors,
           })}
           id={id || name}
           name={name}
           type={type}
         />
 
-        <ErrorMessage name={name} component="aside" />
+        <ErrorMessage name={name} render={msg => <Alert isOpen={hasErrors}>{msg}</Alert>} />
       </div>
 
       {isLabelAfterInput && (
