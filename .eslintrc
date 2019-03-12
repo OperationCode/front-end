@@ -132,7 +132,9 @@
     {
       "files": ["cypress/**/*.js"],
       "rules": {
-        "jest/expect-expect": "off"
+        "jest/expect-expect": "off",
+        "jest/valid-expect": "off",
+        "func-names": "off"
       }
     }
   ],
