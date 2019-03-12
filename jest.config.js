@@ -37,6 +37,7 @@ module.exports = {
     '<rootDir>/common/styles',
     '<rootDir>/common/constants',
     '<rootDir>/scripts',
+    '<rootDir>/cypress',
     '<rootDir>/test-utils',
 
     // No real logic to test here
@@ -158,7 +159,7 @@ module.exports = {
   // testLocationInResults: false,
 
   // The glob patterns Jest uses to detect test files
-  // testMatch: ['<rootDir>/**/*.test.js'],
+  testMatch: ['<rootDir>/**/*.test.js'],
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
   // testPathIgnorePatterns: [
