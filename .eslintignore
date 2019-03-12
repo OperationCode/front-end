@@ -5,4 +5,3 @@ bin
 node_modules
 static
 coverage
-cypress/integration/examples
