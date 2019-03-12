@@ -1,0 +1,9 @@
+.LoginForm {
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
