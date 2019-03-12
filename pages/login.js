@@ -1,36 +1,62 @@
+import PropTypes from 'prop-types';
+import { withCookies, Cookies } from 'react-cookie';
 import Link from 'next/link';
 import Router from 'next/router';
 import { loginUser } from 'common/constants/api';
+import { setAuthCookies } from 'common/utils/cookie-utils';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
 import LoginForm from 'components/LoginForm/LoginForm';
 
-export default () => (
-  <>
-    <Head title="Login" />
+class Login extends React.Component {
+  static propTypes = {
+    cookies: PropTypes.instanceOf(Cookies).isRequired,
+  };
 
-    <HeroBanner title="Login" />
+  handleSuccess = ({ token, ...user }) => {
+    const { cookies } = this.props;
+    setAuthCookies(cookies, { token, user });
+    Router.push('/profile');
+  };
 
-    <Content
-      theme="gray"
-      columns={[
-        <LoginForm login={loginUser} onSuccess={() => Router.push('/profile')} />,
-        <p>
-          Don&apos;t have an account?&nbsp;
-          <Link href="/join">
-            <a>Register</a>
-          </Link>
-          .
-        </p>,
-        <p>
-          Forgot your password?&nbsp;
-          <Link href="/reset_password">
-            <a>Reset it</a>
-          </Link>
-          .
-        </p>,
-      ]}
-    />
-  </>
-);
+  render() {
+    return (
+      <>
+        <Head title="Login" />
+
+        <HeroBanner title="Login" />
+
+        <Content
+          theme="gray"
+          columns={[
+            <LoginForm
+              login={loginUser}
+              onSuccess={this.handleSuccess}
+              initialValues={{
+                email: 'fakeUser@gmail.com',
+                password: 'abc123ABC!',
+              }}
+            />,
+            <p>
+              Don&apos;t have an account?&nbsp;
+              <Link href="/join">
+                <a>Register</a>
+              </Link>
+              .
+            </p>,
+            <p>
+              Forgot your password?&nbsp;
+              <Link href="/reset_password">
+                <a>Reset it</a>
+              </Link>
+              .
+            </p>,
+          ]}
+        />
+      </>
+    );
+  }
+}
+
+export default withCookies(Login);
