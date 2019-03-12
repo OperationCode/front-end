@@ -23,7 +23,7 @@
     "start": "NODE_ENV=production node server.js",
     "storybook": "start-storybook -s ./static -p 9001 -c .storybook",
     "test": "cross-env NODE_ENV=test BABEL_ENV=test jest",
-    "test:ci": "yarn test --ci --coverage",
+    "test:ci": "yarn test --ci --coverage && yarn cypress:ci",
     "test:changes": "yarn test --changedSince master",
     "test:changes:watch": "yarn test --changedSince master --watch",
     "test:update-snaps": "yarn test -u"
