@@ -60,3 +60,7 @@
 a.Button {
   font-family: var(--primaryFontFamily), sans-serif;
 }
+
+.Button[type="submit"] {
+  margin-top: 1rem;
+}

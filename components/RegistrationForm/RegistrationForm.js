@@ -110,7 +110,7 @@ class RegistrationForm extends Component {
         validationSchema={registrationSchema}
       >
         {({ isSubmitting }) => (
-          <Form>
+          <Form className={styles.RegistrationForm}>
             <div className={styles.row}>
               <Field
                 type="email"
@@ -189,12 +189,7 @@ class RegistrationForm extends Component {
             </div>
 
             <div className={styles.row}>
-              <Button
-                className={styles.topSpacing}
-                type="submit"
-                theme="secondary"
-                disabled={isSubmitting}
-              >
+              <Button type="submit" theme="secondary" disabled={isSubmitting}>
                 Submit
               </Button>
             </div>

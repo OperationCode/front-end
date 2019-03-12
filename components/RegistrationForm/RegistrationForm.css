@@ -1,9 +1,9 @@
+.RegistrationForm {
+  width: 100%;
+}
+
 .row {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-}
-
-.topSpacing {
-  margin-top: 1rem;
 }

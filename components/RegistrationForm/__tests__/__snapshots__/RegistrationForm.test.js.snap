@@ -2,6 +2,7 @@
 
 exports[`RegistrationForm should render with required props 1`] = `
 <form
+  className="RegistrationForm"
   noValidate={true}
   onReset={[Function]}
   onSubmit={[Function]}
@@ -211,7 +212,7 @@ exports[`RegistrationForm should render with required props 1`] = `
     className="row"
   >
     <button
-      className="Button topSpacing secondary"
+      className="Button secondary"
       disabled={false}
       onClick={[Function]}
       tabIndex={0}
