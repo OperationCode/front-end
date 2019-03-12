@@ -4,12 +4,12 @@
  * This may seem counter-intuitive, but it's difficult to get a zipcode regex correctly.
  * See https://stackoverflow.com/questions/578406/what-is-the-ultimate-postal-code-and-zip-regex
  * for more info
- * @export
- * @param {string} input
+ *
+ * @param {string} zipcode
  * @returns {boolean}
  */
-export function zipCodeStringValidator(input = '') {
-  return input.length !== 0 && input.trim().length !== 0;
+export function isValidZipcode(zipcode = '') {
+  return zipcode.length !== 0 && zipcode.trim().length !== 0;
 }
 
 /**
@@ -18,7 +18,6 @@ export function zipCodeStringValidator(input = '') {
  * 2. one uppercase letter
  * 3. one number
  *
- * @function isMinPasswordStrength
  * @param {string} val
  * @return {boolean} true if min requirements are met
  */

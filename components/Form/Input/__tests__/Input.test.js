@@ -41,7 +41,7 @@ describe('Input', () => {
     wrapper.find('input').simulate('blur'); // trigger validation
     await wait();
     wrapper.update();
-    expect(wrapper.find('aside')).toHaveText('Required');
+    expect(wrapper.find('Alert')).toHaveText('Required');
   });
 
   it('should render the label after input, but only when input type is radio or checkbox', () => {

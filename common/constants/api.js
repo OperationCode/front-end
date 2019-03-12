@@ -10,6 +10,17 @@ export const getScholarshipsPromise = () => get('scholarships');
 export const getServicesPromise = () => get('services');
 
 /* POST REQUESTS */
+export const createUser = ({ email, password, firstName, lastName, zipcode }) =>
+  post('users', {
+    user: {
+      email,
+      password,
+      first_name: firstName,
+      last_name: lastName,
+      zip: zipcode,
+    },
+  }).then(({ data }) => data);
+
 export const postMentorRequestPromise = ({ language, additionalDetails, mentor, service }) =>
   post('requests', {
     request: {
