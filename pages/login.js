@@ -30,14 +30,7 @@ class Login extends React.Component {
         <Content
           theme="gray"
           columns={[
-            <LoginForm
-              login={loginUser}
-              onSuccess={this.handleSuccess}
-              initialValues={{
-                email: 'fakeUser@gmail.com',
-                password: 'abc123ABC!',
-              }}
-            />,
+            <LoginForm login={loginUser} onSuccess={this.handleSuccess} />,
             <p>
               Don&apos;t have an account?&nbsp;
               <Link href="/join">
