@@ -75,7 +75,7 @@ exports[`LoginForm should render with required props 1`] = `
     className="row"
   >
     <button
-      className="Button secondary"
+      className="Button topMargin secondary"
       disabled={false}
       onClick={[Function]}
       tabIndex={0}

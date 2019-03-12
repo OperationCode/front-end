@@ -103,7 +103,12 @@ class LoginForm extends Component {
             </div>
 
             <div className={styles.row}>
-              <Button type="submit" theme="secondary" disabled={isSubmitting}>
+              <Button
+                className={styles.topMargin}
+                type="submit"
+                theme="secondary"
+                disabled={isSubmitting}
+              >
                 Submit
               </Button>
             </div>
