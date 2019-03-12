@@ -166,7 +166,6 @@ describe('RegistrationForm', () => {
     expect(successSpy).not.toHaveBeenCalled();
   });
 
-  // TODO: Get this integration test working
   it('should show "email already registered" message for dupe email registration', async () => {
     const user = {
       email: 'kylemh.email12@gmail.com',
