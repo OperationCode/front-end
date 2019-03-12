@@ -14,9 +14,12 @@ class Login extends React.Component {
     cookies: PropTypes.instanceOf(Cookies).isRequired,
   };
 
-  handleSuccess = ({ token, ...user }) => {
+  handleSuccess = ({ token, user }) => {
     const { cookies } = this.props;
     setAuthCookies(cookies, { token, user });
+    console.log('cookies', cookies);
+    console.log('token', token);
+    console.log('user', user);
     Router.push('/profile');
   };
 
