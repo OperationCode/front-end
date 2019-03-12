@@ -1,11 +1,11 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { createUser } from 'common/constants/api';
+import { loginUser } from 'common/constants/api';
 import { validationErrorMessages } from 'common/constants/validations';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 import OperationCodeAPIMock from 'test-utils/mocks/apiMock';
 import wait from 'test-utils/wait';
-import RegistrationForm from '../RegistrationForm';
+import LoginForm from '../LoginForm';
 
 const asyncRenderDiff = async enzymeWrapper => {
   await wait();
@@ -16,13 +16,13 @@ afterEach(() => {
   OperationCodeAPIMock.reset();
 });
 
-describe('RegistrationForm', () => {
+describe('LoginForm', () => {
   it('should render with required props', () => {
-    createSnapshotTest(<RegistrationForm register={jest.fn()} onSuccess={jest.fn()} />);
+    createSnapshotTest(<LoginForm login={jest.fn()} onSuccess={jest.fn()} />);
   });
 
   it('should display required error message when blurring past email input', async () => {
-    const wrapper = mount(<RegistrationForm register={jest.fn()} onSuccess={jest.fn()} />);
+    const wrapper = mount(<LoginForm login={jest.fn()} onSuccess={jest.fn()} />);
 
     wrapper.find('input#email').simulate('blur');
 
@@ -37,7 +37,7 @@ describe('RegistrationForm', () => {
   });
 
   it('should show error when providing non-email to email input', async () => {
-    const wrapper = mount(<RegistrationForm register={jest.fn()} onSuccess={jest.fn()} />);
+    const wrapper = mount(<LoginForm login={jest.fn()} onSuccess={jest.fn()} />);
 
     wrapper
       .find('input#email')
@@ -55,7 +55,7 @@ describe('RegistrationForm', () => {
   });
 
   it('should show "password required" message when blurring past input', async () => {
-    const wrapper = mount(<RegistrationForm register={jest.fn()} onSuccess={jest.fn()} />);
+    const wrapper = mount(<LoginForm login={jest.fn()} onSuccess={jest.fn()} />);
 
     wrapper.find('input#password').simulate('blur');
 
@@ -70,13 +70,13 @@ describe('RegistrationForm', () => {
   });
 
   it('should show "invalid password" message when focusing off an invalid password', async () => {
-    const wrapper = mount(<RegistrationForm register={jest.fn()} onSuccess={jest.fn()} />);
+    const wrapper = mount(<LoginForm login={jest.fn()} onSuccess={jest.fn()} />);
 
-    const stringWithoutNumber = 'SillyPassword';
+    const stringWithNoCapital = 'sillypassword1';
 
     wrapper
       .find('input#password')
-      .simulate('change', { target: { id: 'password', value: stringWithoutNumber } })
+      .simulate('change', { target: { id: 'password', value: stringWithNoCapital } })
       .simulate('blur');
 
     await asyncRenderDiff(wrapper);
@@ -89,48 +89,15 @@ describe('RegistrationForm', () => {
     ).toStrictEqual(validationErrorMessages.password);
   });
 
-  it('should display password match message when both password inputs do not match', async () => {
-    const wrapper = mount(<RegistrationForm register={jest.fn()} onSuccess={jest.fn()} />);
-
-    wrapper
-      .find('input#password')
-      .simulate('change', {
-        target: { id: 'password', value: 'ValidPassword1' },
-      })
-      .simulate('blur');
-
-    wrapper
-      .find('input#confirm-password')
-      .simulate('change', {
-        target: { id: 'confirm-password', value: 'something' },
-      })
-      .simulate('blur');
-
-    await asyncRenderDiff(wrapper);
-
-    expect(
-      wrapper
-        .find('input#confirm-password')
-        .closest('Input')
-        .find('Alert')
-        .text(),
-    ).toStrictEqual(validationErrorMessages.passwordMatch);
-  });
-
   it('should submit with valid data in form', async () => {
     const successSpy = jest.fn();
     const wrapper = mount(
-      <RegistrationForm
+      <LoginForm
         onSuccess={successSpy}
-        register={jest.fn()}
+        login={jest.fn()}
         initialValues={{
           email: 'email@email.com',
-          'confirm-email': 'email@email.com',
           password: 'abc123ABC',
-          'confirm-password': 'abc123ABC',
-          firstName: 'Test',
-          lastName: 'User',
-          zipcode: 90630,
         }}
       />,
     );
@@ -145,17 +112,12 @@ describe('RegistrationForm', () => {
     const successSpy = jest.fn();
 
     const wrapper = mount(
-      <RegistrationForm
+      <LoginForm
         onSuccess={successSpy}
-        register={jest.fn()}
+        login={jest.fn()}
         initialValues={{
-          email: 'email@email.com',
-          'confirm-email': 'ffdsdsfsadf@fdsafdsafsd.com',
-          password: 'abc1231111',
-          'confirm-password': '111111',
-          firstName: '',
-          lastName: '',
-          zipcode: '',
+          email: 'email@email',
+          password: '1',
         }}
       />,
     );
@@ -166,34 +128,24 @@ describe('RegistrationForm', () => {
     expect(successSpy).not.toHaveBeenCalled();
   });
 
-  it('should show "email already registered" message for dupe email registration', async () => {
-    const testUser = {
-      email: 'kylemh.email12@gmail.com',
-      password: 'Testing123!',
-      firstName: 'Test',
-      lastName: 'User',
-      zipcode: 90630,
+  it('should show error when trying to login with incorrect email or password', async () => {
+    const invalidError = 'Invalid Email or password.';
+
+    const user = {
+      email: 'testing123@gmail.com',
+      password: 'Testing123',
     };
 
-    OperationCodeAPIMock.onPost('users', {
-      user: {
-        email: testUser.email,
-        password: testUser.password,
-        first_name: testUser.firstName,
-        last_name: testUser.lastName,
-        zip: testUser.zipcode,
-      },
-    }).reply(422, { email: ['has been taken'] });
+    OperationCodeAPIMock.onPost('sessions', { user }).reply(401, { error: invalidError });
 
     const successSpy = jest.fn();
+
     const wrapper = mount(
-      <RegistrationForm
-        register={createUser}
+      <LoginForm
+        login={loginUser}
         onSuccess={successSpy}
         initialValues={{
-          ...testUser,
-          'confirm-email': testUser.email,
-          'confirm-password': testUser.password,
+          ...user,
         }}
       />,
     );
@@ -207,6 +159,6 @@ describe('RegistrationForm', () => {
         .find('Alert')
         .last()
         .text(),
-    ).toStrictEqual('Email has been taken.');
+    ).toStrictEqual(invalidError);
   });
 });

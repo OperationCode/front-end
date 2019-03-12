@@ -6,7 +6,14 @@ export const OperationCodeAPI = axios.create({ baseURL: apiUrl });
 
 const setAuthorizationHeader = () => {
   const cookies = new Cookies();
-  return { Authorization: `bearer ${cookies.get('token')}` };
+
+  const token = cookies.get('token');
+
+  if (token) {
+    return { Authorization: `bearer ${cookies.get('token')}` };
+  }
+
+  return {};
 };
 
 export const get = async path => {

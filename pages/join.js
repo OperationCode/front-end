@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Router from 'next/router';
 import { createUser } from 'common/constants/api';
 import Head from 'components/head';
@@ -15,6 +16,13 @@ export default () => (
       theme="gray"
       columns={[
         <RegistrationForm register={createUser} onSuccess={() => Router.push('/profile')} />,
+        <p>
+          Already registered?&nbsp;
+          <Link href="/login">
+            <a>Login</a>
+          </Link>
+          .
+        </p>,
       ]}
     />
   </>
