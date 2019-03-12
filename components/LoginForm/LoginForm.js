@@ -26,7 +26,6 @@ const loginSchema = Yup.object().shape({
     .test('password-strength', validationErrorMessages.password, isMinPasswordStrength),
 });
 
-// TODO: Define links for terms of service / privacy policy and place on this page
 class LoginForm extends Component {
   static propTypes = {
     login: PropTypes.func.isRequired, // essentially onSubmit
@@ -52,11 +51,19 @@ class LoginForm extends Component {
     const { login, onSuccess } = this.props;
 
     try {
-      await login(values);
+      const { user, token } = await login(values);
       actions.setSubmitting(false);
       actions.resetForm();
-
-      await onSuccess();
+      await onSuccess({
+        user: {
+          firstName: user.first_name,
+          lastName: user.last_name,
+          zipcode: user.zip,
+          slackName: user.slack_name,
+          isMentor: user.mentor,
+        },
+        token,
+      });
     } catch (error) {
       actions.setSubmitting(false);
 
