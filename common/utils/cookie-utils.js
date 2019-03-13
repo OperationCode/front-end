@@ -1,4 +1,3 @@
-import Cookies from 'universal-cookie';
 import jwt_decode from 'jwt-decode'; // eslint-disable-line camelcase
 
 const cookieOptions = {
@@ -6,22 +5,21 @@ const cookieOptions = {
   domain: process.env.NODE_ENV === 'development' ? 'localhost' : 'operationcode.org',
 };
 
-export const loginCookies = ({ token, user }) => {
-  const cookies = new Cookies();
+export const setAuthCookies = (cookies, { token, user }) => {
   cookies.set('token', token, cookieOptions);
-  cookies.set('firstName', user.first_name, cookieOptions);
-  cookies.set('lastName', user.last_name, cookieOptions);
-  cookies.set('slackName', user.slack_name, cookieOptions);
-  cookies.set('mentor', user.mentor, cookieOptions);
+  cookies.set('firstName', user.firstName, cookieOptions);
+  cookies.set('lastName', user.lastName, cookieOptions);
+  cookies.set('zipcode', user.zipcode, cookieOptions);
+  // cookies.set('slackName', user.slackName, cookieOptions);
+  // cookies.set('isMentor', user.isMentor, cookieOptions);
 };
 
-export const logoutCookies = () => {
-  const cookies = new Cookies();
+export const removeAuthCookies = cookies => {
   cookies.remove('token', cookieOptions);
   cookies.remove('firstName', cookieOptions);
   cookies.remove('lastName', cookieOptions);
-  cookies.remove('slackName', cookieOptions);
-  cookies.remove('mentor', cookieOptions);
+  // cookies.remove('slackName', cookieOptions);
+  // cookies.remove('mentor', cookieOptions);
 };
 
 const isTokenValid = token => {
@@ -36,11 +34,9 @@ const isTokenValid = token => {
   return currentTime < jwt.exp;
 };
 
-export const getUserStatus = () => {
-  const cookies = new Cookies();
-
+export const getUserStatus = cookies => {
   return {
-    isMentor: cookies.get('mentor') === 'true',
+    // isMentor: cookies.get('isMentor') === 'true',
     isLoggedIn: isTokenValid(cookies.get('token')),
   };
 };
