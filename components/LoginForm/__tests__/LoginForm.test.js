@@ -90,22 +90,35 @@ describe('LoginForm', () => {
   });
 
   it('should submit with valid data in form', async () => {
+    const initialValues = {
+      email: 'email@email.com',
+      password: 'abc123ABC',
+    };
+
+    OperationCodeAPIMock.onPost('sessions', { user: initialValues }).reply(200, {
+      user: {
+        first_name: 'John',
+        last_name: 'Doe',
+        email: initialValues.email,
+        zip: 12345,
+        slack_name: 'JD12345',
+        mentor: false,
+      },
+      token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9',
+    });
+
     const successSpy = jest.fn();
     const wrapper = mount(
-      <LoginForm
-        onSuccess={successSpy}
-        login={jest.fn()}
-        initialValues={{
-          email: 'email@email.com',
-          password: 'abc123ABC',
-        }}
-      />,
+      <LoginForm onSuccess={successSpy} login={loginUser} {...initialValues} />,
     );
 
     wrapper.find('Button').simulate('submit');
     await asyncRenderDiff(wrapper);
 
-    expect(successSpy).toHaveBeenCalled();
+    await wait(() => {
+      expect(successSpy).toHaveBeenCalled();
+      expect(OperationCodeAPIMock.history.post.length).toBeGreaterThan(0);
+    });
   });
 
   it('should NOT submit with invalid data in form', async () => {
@@ -125,7 +138,10 @@ describe('LoginForm', () => {
     wrapper.find('Button').simulate('submit');
     await asyncRenderDiff(wrapper);
 
-    expect(successSpy).not.toHaveBeenCalled();
+    await wait(() => {
+      expect(successSpy).not.toHaveBeenCalled();
+      expect(OperationCodeAPIMock.history.post.length).not.toBeGreaterThan(0);
+    });
   });
 
   it('should show error when trying to login with incorrect email or password', async () => {
@@ -153,7 +169,10 @@ describe('LoginForm', () => {
     wrapper.find('Button').simulate('submit');
     await asyncRenderDiff(wrapper);
 
-    expect(successSpy).not.toHaveBeenCalled();
+    wait(() => {
+      expect(successSpy).not.toHaveBeenCalled();
+    });
+
     expect(
       wrapper
         .find('Alert')
