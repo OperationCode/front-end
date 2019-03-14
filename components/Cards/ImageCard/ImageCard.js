@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import Card from 'components/_common_/Card/Card';
+import Card from 'components/Cards/Card/Card';
 import styles from './ImageCard.css';
 
 ImageCard.propTypes = {

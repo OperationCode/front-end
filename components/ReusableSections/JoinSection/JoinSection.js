@@ -1,7 +1,7 @@
 import React from 'react';
-import Container from 'components/_common_/Container/Container';
-import Button from 'components/_common_/Button/Button';
-import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
+import Container from 'components/Container/Container';
+import Button from 'components/Button/Button';
+import OutboundLink from 'components/OutboundLink/OutboundLink';
 
 const JoinSection = () => (
   <Container theme="white">

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import Container from 'components/_common_/Container/Container';
+import Container from 'components/Container/Container';
 import styles from './Content.css';
 
 Content.propTypes = {

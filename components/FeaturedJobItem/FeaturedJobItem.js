@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
+import OutboundLink from 'components/OutboundLink/OutboundLink';
 import BuildingIcon from 'static/images/icons/FontAwesome/building_icon.svg';
 import CloudUploadIcon from 'static/images/icons/FontAwesome/cloud_upload_icon.svg';
 import MapMarkerIcon from 'static/images/icons/FontAwesome/map_marker_icon.svg';
