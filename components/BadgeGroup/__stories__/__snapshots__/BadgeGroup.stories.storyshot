@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots BadgeGroup default 1`] = `
+<div
+  className="BadgeGroup groupBadgeMargins"
+>
+  <figure
+    className="Badge groupBadge"
+  >
+    <svg />
+    <figcaption
+      className="label"
+    >
+      Lorem ipsum dolor sit amet
+    </figcaption>
+  </figure>
+  <figure
+    className="Badge groupBadge"
+  >
+    <svg />
+    <figcaption
+      className="label"
+    >
+      Proin at diam
+    </figcaption>
+  </figure>
+  <figure
+    className="Badge groupBadge"
+  >
+    <svg />
+    <figcaption
+      className="label"
+    >
+      Fusce imperdiet fringilla enim quis aliquet
+    </figcaption>
+  </figure>
+</div>
+`;

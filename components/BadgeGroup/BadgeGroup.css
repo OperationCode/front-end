@@ -1,0 +1,18 @@
+.BadgeGroup {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.groupBadgeMargins {
+  margin: 0 4rem 1rem;
+}
+
+.groupMarginTop {
+  margin-top: 1rem;
+}
+
+.groupBadge {
+  fill: var(--secondary);
+}
