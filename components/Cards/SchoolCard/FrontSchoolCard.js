@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import Badge from 'components/Badge/Badge';
+import BadgeGroup from 'components/BadgeGroup/BadgeGroup';
 import Button from 'components/Button/Button';
 import LinkButton from 'components/LinkButton/LinkButton';
 import DesktopIcon from 'static/images/icons/FontAwesome/desktop-solid.svg';
@@ -11,6 +11,12 @@ import PeopleIcon from 'static/images/icons/FontAwesome/users-solid.svg';
 import GIBillApprovedIcon from 'static/images/icons/gi-bill-approved.svg';
 import GIBillUnavailableIcon from 'static/images/icons/gi-bill-unavailable.svg';
 import styles from './FrontSchoolCard.css';
+
+const badgeClassName = isBadgeActive =>
+  classNames(styles.codeSchoolCardIcon, {
+    [styles.active]: isBadgeActive,
+    [styles.disabled]: !isBadgeActive,
+  });
 
 export default class FrontSchoolCard extends Component {
   static propTypes = {
@@ -33,91 +39,80 @@ export default class FrontSchoolCard extends Component {
   };
 
   render() {
-    const { props } = this;
+    const { name, locations, ...props } = this.props;
 
-    const hasLocationAcceptingGIBill = props.locations.some(location => location.va_accepted);
+    const hasLocationAcceptingGIBill = locations.some(location => location.va_accepted);
+    const analyticsObject = {
+      action: 'Button Selected',
+      category: 'Interactions',
+      label: `${name} | Locations`,
+    };
 
     return (
       <>
-        <h5>{props.name}</h5>
-        <img src={props.logoSource} alt={`${props.name} logo`} />
+        <h5>{name}</h5>
+        <img src={props.logoSource} alt={`${name} logo`} />
+
         <div className={styles.interactionsContainer}>
-          <LinkButton analyticsEventLabel={`${props.name} | Website`} href={props.website}>
+          <LinkButton analyticsEventLabel={`${name} | Website`} href={props.website}>
             Go To Website
           </LinkButton>
-          {props.locations.length > 1 ? (
-            <Button
-              analyticsObject={{
-                action: 'Button Selected',
-                category: 'Interactions',
-                label: `${props.name} | Locations`,
-              }}
-              onClick={props.cardFlipCallback}
-            >
+          {locations.length && (
+            <Button analyticsObject={analyticsObject} onClick={props.cardFlipCallback}>
               See Locations
             </Button>
-          ) : (
+          )}
+          {!locations.length && (
             <span className={styles.singleLocationText}>
-              {props.hasOnlyOnline
-                ? 'Online Only'
-                : `${props.locations[0].city}, ${props.locations[0].state}`}
+              {props.hasOnlyOnline ? 'Online Only' : `${locations[0].city}, ${locations[0].state}`}
             </span>
           )}
         </div>
 
         <hr className={styles.divider} />
 
-        <div className={styles.detailsRow}>
-          {/* GI Bill */}
-          <Badge
-            label="G.I. Bill"
-            className={classNames(styles.codeSchoolCardIcon, {
-              [styles.active]: hasLocationAcceptingGIBill,
-              [styles.disabled]: !hasLocationAcceptingGIBill,
-            })}
-            icon={hasLocationAcceptingGIBill ? <GIBillApprovedIcon /> : <GIBillUnavailableIcon />}
+        <div className={styles.cardBadgeGroups}>
+          <BadgeGroup
+            className={styles.cardBadgeGroup}
+            hasBadgeMargins={false}
+            items={[
+              {
+                label: 'G.I. Bill',
+                icon: hasLocationAcceptingGIBill ? (
+                  <GIBillApprovedIcon />
+                ) : (
+                  <GIBillUnavailableIcon />
+                ),
+                className: badgeClassName(hasLocationAcceptingGIBill),
+              },
+              {
+                label: 'Online',
+                icon: <DesktopIcon />,
+                className: badgeClassName(props.hasOnline),
+              },
+              {
+                label: 'In-Person',
+                icon: <PeopleIcon />,
+                className: badgeClassName(props.isFullTime),
+              },
+            ]}
           />
 
-          {/* Online Education */}
-          <Badge
-            label="Online"
-            className={classNames(styles.codeSchoolCardIcon, {
-              [styles.active]: props.hasOnline,
-              [styles.disabled]: !props.hasOnline,
-            })}
-            icon={<DesktopIcon />}
-          />
-
-          {/* In-Person Education */}
-          <Badge
-            label="In-Person"
-            className={classNames(styles.codeSchoolCardIcon, {
-              [styles.active]: props.isFullTime,
-              [styles.disabled]: !props.isFullTime,
-            })}
-            icon={<PeopleIcon />}
-          />
-        </div>
-
-        <div className={styles.detailsRow}>
-          {/* Equipment Provided */}
-          <Badge
-            label="Equipment"
-            className={classNames(styles.codeSchoolCardIcon, {
-              [styles.active]: props.hasHardwareIncluded,
-              [styles.disabled]: !props.hasHardwareIncluded,
-            })}
-            icon={<DevicesIcon />}
-          />
-
-          {/* Housing Provided */}
-          <Badge
-            label="Housing"
-            className={classNames(styles.codeSchoolCardIcon, {
-              [styles.active]: props.hasHousing,
-              [styles.disabled]: !props.hasHousing,
-            })}
-            icon={<HomeIcon />}
+          <BadgeGroup
+            className={styles.detailsBadges}
+            hasBadgeMargins={false}
+            items={[
+              {
+                label: 'Equipment',
+                icon: <DevicesIcon />,
+                className: badgeClassName(props.hasHardwareIncluded),
+              },
+              {
+                label: 'Housing',
+                icon: <HomeIcon />,
+                className: badgeClassName(props.hasHousing),
+              },
+            ]}
           />
         </div>
       </>

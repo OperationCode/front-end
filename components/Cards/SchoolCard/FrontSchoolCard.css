@@ -31,16 +31,18 @@
   width: 100%;
 }
 
-.detailsRow {
-  align-items: center;
+.cardBadgeGroups {
   display: flex;
-  justify-content: space-around;
-  width: 85%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
-.active {
-  color: var(--secondary);
-  fill: var(--secondary);
+.cardBadgeGroups .cardBadgeGroup {
+  width: 85%;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .disabled {

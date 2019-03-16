@@ -26,18 +26,6 @@
   opacity: 1;
 }
 
-.badgeGroupings {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: -1rem;
-}
-
-.badge {
-  fill: var(--secondary);
-  margin: 1rem 4rem;
-}
-
 /*
 comment out carousel styles until api endpoint complete
 */

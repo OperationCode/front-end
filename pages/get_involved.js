@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import TrackVisibility from 'react-on-screen';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
-import Badge from 'components/Badge/Badge';
+import BadgeGroup from 'components/BadgeGroup/BadgeGroup';
 import Content from 'components/Content/Content';
 import LinkButton from 'components/LinkButton/LinkButton';
 import Heading from 'components/Heading/Heading';
@@ -74,11 +74,7 @@ export default () => (
       theme="gray"
       columns={[
         <p>By mentoring one of our members, you will help them:</p>,
-        <div className={styles.badgeGroupings}>
-          {mentorItems.map(item => (
-            <Badge key={item.label} icon={item.icon} label={item.label} className={styles.badge} />
-          ))}
-        </div>,
+        <BadgeGroup items={mentorItems} />,
       ]}
     />
 
@@ -119,11 +115,7 @@ export default () => (
           </p>
           <p className={styles.centeredText}>You can help us with:</p>
         </div>,
-        <div className={classNames(styles.badgeGroupings)}>
-          {supportItems.map(item => (
-            <Badge key={item.label} icon={item.icon} label={item.label} className={styles.badge} />
-          ))}
-        </div>,
+        <BadgeGroup items={supportItems} />,
       ]}
     />
 

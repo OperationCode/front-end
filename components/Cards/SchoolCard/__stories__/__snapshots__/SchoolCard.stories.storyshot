@@ -35,62 +35,66 @@ exports[`Storyshots Cards/SchoolCard with many locations 1`] = `
     className="divider"
   />
   <div
-    className="detailsRow"
+    className="cardBadgeGroups"
   >
-    <figure
-      className="Badge codeSchoolCardIcon active"
+    <div
+      className="BadgeGroup cardBadgeGroup"
     >
-      <svg />
-      <figcaption
-        className="label"
+      <figure
+        className="Badge groupBadge codeSchoolCardIcon active"
       >
-        G.I. Bill
-      </figcaption>
-    </figure>
-    <figure
-      className="Badge codeSchoolCardIcon active"
+        <svg />
+        <figcaption
+          className="label"
+        >
+          G.I. Bill
+        </figcaption>
+      </figure>
+      <figure
+        className="Badge groupBadge codeSchoolCardIcon active"
+      >
+        <svg />
+        <figcaption
+          className="label"
+        >
+          Online
+        </figcaption>
+      </figure>
+      <figure
+        className="Badge groupBadge codeSchoolCardIcon active"
+      >
+        <svg />
+        <figcaption
+          className="label"
+        >
+          In-Person
+        </figcaption>
+      </figure>
+    </div>
+    <div
+      className="BadgeGroup detailsBadges"
     >
-      <svg />
-      <figcaption
-        className="label"
+      <figure
+        className="Badge groupBadge codeSchoolCardIcon disabled"
       >
-        Online
-      </figcaption>
-    </figure>
-    <figure
-      className="Badge codeSchoolCardIcon active"
-    >
-      <svg />
-      <figcaption
-        className="label"
+        <svg />
+        <figcaption
+          className="label"
+        >
+          Equipment
+        </figcaption>
+      </figure>
+      <figure
+        className="Badge groupBadge codeSchoolCardIcon disabled"
       >
-        In-Person
-      </figcaption>
-    </figure>
-  </div>
-  <div
-    className="detailsRow"
-  >
-    <figure
-      className="Badge codeSchoolCardIcon disabled"
-    >
-      <svg />
-      <figcaption
-        className="label"
-      >
-        Equipment
-      </figcaption>
-    </figure>
-    <figure
-      className="Badge codeSchoolCardIcon disabled"
-    >
-      <svg />
-      <figcaption
-        className="label"
-      >
-        Housing
-      </figcaption>
-    </figure>
+        <svg />
+        <figcaption
+          className="label"
+        >
+          Housing
+        </figcaption>
+      </figure>
+    </div>
   </div>
 </article>
 `;
@@ -116,6 +120,7 @@ exports[`Storyshots Cards/SchoolCard with no physical locations 1`] = `
     >
       Go To Website
     </a>
+    0
     <span
       className="singleLocationText"
     >
@@ -126,62 +131,66 @@ exports[`Storyshots Cards/SchoolCard with no physical locations 1`] = `
     className="divider"
   />
   <div
-    className="detailsRow"
+    className="cardBadgeGroups"
   >
-    <figure
-      className="Badge codeSchoolCardIcon disabled"
+    <div
+      className="BadgeGroup cardBadgeGroup"
     >
-      <svg />
-      <figcaption
-        className="label"
+      <figure
+        className="Badge groupBadge codeSchoolCardIcon disabled"
       >
-        G.I. Bill
-      </figcaption>
-    </figure>
-    <figure
-      className="Badge codeSchoolCardIcon active"
+        <svg />
+        <figcaption
+          className="label"
+        >
+          G.I. Bill
+        </figcaption>
+      </figure>
+      <figure
+        className="Badge groupBadge codeSchoolCardIcon active"
+      >
+        <svg />
+        <figcaption
+          className="label"
+        >
+          Online
+        </figcaption>
+      </figure>
+      <figure
+        className="Badge groupBadge codeSchoolCardIcon disabled"
+      >
+        <svg />
+        <figcaption
+          className="label"
+        >
+          In-Person
+        </figcaption>
+      </figure>
+    </div>
+    <div
+      className="BadgeGroup detailsBadges"
     >
-      <svg />
-      <figcaption
-        className="label"
+      <figure
+        className="Badge groupBadge codeSchoolCardIcon disabled"
       >
-        Online
-      </figcaption>
-    </figure>
-    <figure
-      className="Badge codeSchoolCardIcon disabled"
-    >
-      <svg />
-      <figcaption
-        className="label"
+        <svg />
+        <figcaption
+          className="label"
+        >
+          Equipment
+        </figcaption>
+      </figure>
+      <figure
+        className="Badge groupBadge codeSchoolCardIcon disabled"
       >
-        In-Person
-      </figcaption>
-    </figure>
-  </div>
-  <div
-    className="detailsRow"
-  >
-    <figure
-      className="Badge codeSchoolCardIcon disabled"
-    >
-      <svg />
-      <figcaption
-        className="label"
-      >
-        Equipment
-      </figcaption>
-    </figure>
-    <figure
-      className="Badge codeSchoolCardIcon disabled"
-    >
-      <svg />
-      <figcaption
-        className="label"
-      >
-        Housing
-      </figcaption>
-    </figure>
+        <svg />
+        <figcaption
+          className="label"
+        >
+          Housing
+        </figcaption>
+      </figure>
+    </div>
   </div>
 </article>
 `;
@@ -207,72 +216,80 @@ exports[`Storyshots Cards/SchoolCard with one location 1`] = `
     >
       Go To Website
     </a>
-    <span
-      className="singleLocationText"
+    <button
+      className="Button primary"
+      disabled={false}
+      onClick={[Function]}
+      tabIndex={0}
+      type="button"
     >
-      Los Angeles, CA
-    </span>
+      See Locations
+    </button>
   </div>
   <hr
     className="divider"
   />
   <div
-    className="detailsRow"
+    className="cardBadgeGroups"
   >
-    <figure
-      className="Badge codeSchoolCardIcon disabled"
+    <div
+      className="BadgeGroup cardBadgeGroup"
     >
-      <svg />
-      <figcaption
-        className="label"
+      <figure
+        className="Badge groupBadge codeSchoolCardIcon disabled"
       >
-        G.I. Bill
-      </figcaption>
-    </figure>
-    <figure
-      className="Badge codeSchoolCardIcon disabled"
+        <svg />
+        <figcaption
+          className="label"
+        >
+          G.I. Bill
+        </figcaption>
+      </figure>
+      <figure
+        className="Badge groupBadge codeSchoolCardIcon disabled"
+      >
+        <svg />
+        <figcaption
+          className="label"
+        >
+          Online
+        </figcaption>
+      </figure>
+      <figure
+        className="Badge groupBadge codeSchoolCardIcon active"
+      >
+        <svg />
+        <figcaption
+          className="label"
+        >
+          In-Person
+        </figcaption>
+      </figure>
+    </div>
+    <div
+      className="BadgeGroup detailsBadges"
     >
-      <svg />
-      <figcaption
-        className="label"
+      <figure
+        className="Badge groupBadge codeSchoolCardIcon active"
       >
-        Online
-      </figcaption>
-    </figure>
-    <figure
-      className="Badge codeSchoolCardIcon active"
-    >
-      <svg />
-      <figcaption
-        className="label"
+        <svg />
+        <figcaption
+          className="label"
+        >
+          Equipment
+        </figcaption>
+      </figure>
+      <figure
+        className="Badge groupBadge codeSchoolCardIcon disabled"
       >
-        In-Person
-      </figcaption>
-    </figure>
-  </div>
-  <div
-    className="detailsRow"
-  >
-    <figure
-      className="Badge codeSchoolCardIcon active"
-    >
-      <svg />
-      <figcaption
-        className="label"
-      >
-        Equipment
-      </figcaption>
-    </figure>
-    <figure
-      className="Badge codeSchoolCardIcon disabled"
-    >
-      <svg />
-      <figcaption
-        className="label"
-      >
-        Housing
-      </figcaption>
-    </figure>
+        <svg />
+        <figcaption
+          className="label"
+        >
+          Housing
+        </figcaption>
+      </figure>
+    </div>
   </div>
 </article>
 `;

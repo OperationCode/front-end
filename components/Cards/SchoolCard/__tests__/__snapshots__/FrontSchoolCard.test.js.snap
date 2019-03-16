@@ -44,41 +44,50 @@ exports[`FrontSchoolCard should render with required props 1`] = `
     className="divider"
   />
   <div
-    className="detailsRow"
+    className="cardBadgeGroups"
   >
-    <Badge
-      className="codeSchoolCardIcon active"
-      icon={<Svg />}
-      isImageFirst={true}
-      label="G.I. Bill"
+    <BadgeGroup
+      className="cardBadgeGroup"
+      hasBadgeMargins={false}
+      hasMarginTop={false}
+      items={
+        Array [
+          Object {
+            "className": "codeSchoolCardIcon active",
+            "icon": <Svg />,
+            "label": "G.I. Bill",
+          },
+          Object {
+            "className": "codeSchoolCardIcon active",
+            "icon": <Svg />,
+            "label": "Online",
+          },
+          Object {
+            "className": "codeSchoolCardIcon active",
+            "icon": <Svg />,
+            "label": "In-Person",
+          },
+        ]
+      }
     />
-    <Badge
-      className="codeSchoolCardIcon active"
-      icon={<Svg />}
-      isImageFirst={true}
-      label="Online"
-    />
-    <Badge
-      className="codeSchoolCardIcon active"
-      icon={<Svg />}
-      isImageFirst={true}
-      label="In-Person"
-    />
-  </div>
-  <div
-    className="detailsRow"
-  >
-    <Badge
-      className="codeSchoolCardIcon active"
-      icon={<Svg />}
-      isImageFirst={true}
-      label="Equipment"
-    />
-    <Badge
-      className="codeSchoolCardIcon active"
-      icon={<Svg />}
-      isImageFirst={true}
-      label="Housing"
+    <BadgeGroup
+      className="detailsBadges"
+      hasBadgeMargins={false}
+      hasMarginTop={false}
+      items={
+        Array [
+          Object {
+            "className": "codeSchoolCardIcon active",
+            "icon": <Svg />,
+            "label": "Equipment",
+          },
+          Object {
+            "className": "codeSchoolCardIcon active",
+            "icon": <Svg />,
+            "label": "Housing",
+          },
+        ]
+      }
     />
   </div>
 </React.Fragment>

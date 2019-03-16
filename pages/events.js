@@ -4,7 +4,7 @@ import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import LinkButton from 'components/LinkButton/LinkButton';
 import Heading from 'components/Heading/Heading';
-import Badge from 'components/Badge/Badge';
+import BadgeGroup from 'components/BadgeGroup/BadgeGroup';
 import Content from 'components/Content/Content';
 import JoinSection from 'components/ReusableSections/JoinSection/JoinSection';
 import FlatCard from 'components/Cards/FlatCard/FlatCard';
@@ -157,16 +157,7 @@ export default () => {
         theme="gray"
         columns={[
           <p>Sponsoring a meetup ensures we have access to:</p>,
-          <div className={styles.badgeGroupings}>
-            {sponsorItems.map(item => (
-              <Badge
-                key={item.label}
-                icon={item.icon}
-                label={item.label}
-                className={styles.badge}
-              />
-            ))}
-          </div>,
+          <BadgeGroup items={sponsorItems} />,
         ]}
       />
 
@@ -203,16 +194,7 @@ export default () => {
         theme="gray"
         columns={[
           <p>Sponsoring a meetup ensures we have access to:</p>,
-          <div className={styles.badgeGroupings}>
-            {hostEventItems.map(item => (
-              <Badge
-                key={item.label}
-                icon={item.icon}
-                label={item.label}
-                className={styles.badge}
-              />
-            ))}
-          </div>,
+          <BadgeGroup items={hostEventItems} />,
         ]}
       />
 

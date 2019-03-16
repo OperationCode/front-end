@@ -22,18 +22,6 @@
   opacity: 1;
 }
 
-.badgeGroupings {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: -1rem;
-}
-
-.badge {
-  fill: var(--secondary);
-  margin: 1rem 4rem;
-}
-
 @media screen and (--medium-viewport) {
   .heroBannerMobilePositioning {
     background-position: right center;
