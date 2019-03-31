@@ -2,7 +2,7 @@
 import React from 'react';
 import { getTeamMembersPromise } from 'common/constants/api';
 import { s3 } from 'common/constants/urls';
-import QuoteBanner from 'components/_common_/HeroBanner/HeroBanner';
+import QuoteBanner from 'components/HeroBanner/HeroBanner';
 import Section from 'components/_common_/Section/Section';
 import TeamCard from 'components/_common_/TeamCard/TeamCard';
 import styles from './styles/team.css';
