@@ -1,13 +1,30 @@
-/* eslint-disable global-require */
-module.exports = ({ file, options, env }) => {
-  const ENV = env.toLowerCase(); // eslint-disable-line no-unused-vars
+const autoPrefixer = require('autoprefixer');
+const postcssImport = require('postcss-import');
+const postcssCustomMedia = require('postcss-custom-media');
+const postcssCustomProperties = require('postcss-custom-properties');
+const postcssPrependImports = require('postcss-prepend-imports');
 
-  return {
-    ...options,
-    plugins: [
-      require('postcss-import')({ root: file.dirname }),
-      require('autoprefixer')(),
-      require('postcss-custom-media')(),
-    ],
-  };
+module.exports = ({ options, env }) => {
+  const isProd = env === 'production';
+
+  const plugins = [
+    postcssPrependImports({
+      path: 'common/styles',
+      files: ['media-queries.css'],
+    }),
+    postcssImport(),
+    autoPrefixer(),
+    postcssCustomMedia(),
+  ];
+
+  if (isProd) {
+    plugins.push(
+      postcssCustomProperties({
+        importFrom: './common/styles/variables.css',
+        preserve: false,
+      }),
+    );
+  }
+
+  return { ...options, plugins };
 };

@@ -1,16 +1,16 @@
 import Link from 'next/link';
-import { s3 } from 'common/constants/urls';
+import Head from 'components/head';
+import HeroBanner from 'components/HeroBanner/HeroBanner';
+import Content from 'components/Content/Content';
+import PartnerLogoLink from 'components/PartnerLogoLink/PartnerLogoLink';
+import JoinSection from 'components/ReusableSections/JoinSection/JoinSection';
+import SuccessStory from 'components/SuccessStory/SuccessStory';
+import Heading from 'components/Heading/Heading';
+import LinkButton from 'components/LinkButton/LinkButton';
+import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
 import successStories from 'common/constants/successStories';
 import partners from 'common/constants/partners';
-import Head from 'components/head';
-import HeroBanner from 'components/_common_/HeroBanner/HeroBanner';
-import ImageCard from 'components/Cards/ImageCard/ImageCard';
-import JoinSection from 'components/ReusableSections/JoinSection/JoinSection';
-import LinkButton from 'components/_common_/LinkButton/LinkButton';
-import PartnerLogoLink from 'components/PartnerLogoLink/PartnerLogoLink';
-import ScreenReaderOnly from 'components/_common_/ScreenReaderOnly/ScreenReaderOnly';
-import Section from 'components/_common_/Section/Section';
-import SuccessStory from 'components/SuccessStory/SuccessStory';
+import { s3 } from 'common/constants/urls';
 import styles from './styles/index.css';
 
 const featuredLinksArray = [
@@ -39,10 +39,10 @@ export default () => (
     <Head title="Home" />
 
     <HeroBanner
-      title="Deploy The Future"
-      imageSource={`${s3}redesign/heroBanners/homepage.jpg`}
-      isFullViewHeight
+      backgroundImageSource={`${s3}redesign/heroBanners/homepage.jpg`}
       className={styles.hero}
+      isFullViewportHeight
+      title="Deploy The Future"
     >
       <>
         <p>
@@ -73,44 +73,37 @@ export default () => (
       </>
     </HeroBanner>
 
-    <Section contentClassName={styles.ourMission} hasHeadingLines={false} theme="gray">
-      <ImageCard
-        imageSource={`${s3}redesign/images/node-summit-2018.jpg`}
-        alt="Operation Code members posing at Node Summit 2018"
-        className={styles.missionCard}
-        isImageFirst={false}
-      >
-        <h2>Our Mission</h2>
-        <p>
-          At Operation Code, we strongly believe in improving the lives of military veterans,
-          service members, and their spouses. We increase their chances for success in the tech
-          industry as software developers through thoughtful mentorship, code school scholarships,
-          and career services.
-        </p>
-      </ImageCard>
-    </Section>
+    <Content
+      theme="gray"
+      columns={[
+        <div className={styles.cta}>
+          <Heading hasHeadingLines theme="secondary">
+            Our Mission
+          </Heading>
+          <p>
+            At Operation Code, we strongly believe in improving the lives of military veterans,
+            service members, and their spouses. We increase their chances for success in the tech
+            industry as software developers through thoughtful mentorship, code school scholarships,
+            and career services.
+          </p>
+        </div>,
+      ]}
+    />
 
-    <Section
+    <Content
       title="Success Stories"
-      contentClassName={styles.successStories}
-      hasHeadingLines={false}
-      theme="secondary"
-    >
-      {successStories.map(story => (
+      columns={successStories.map(story => (
         <SuccessStory {...story} key={story.title} />
       ))}
-    </Section>
+    />
 
-    <Section
+    <Content
       title="Sponsors"
-      contentClassName={styles.partnerLogos}
-      hasHeadingLines={false}
       theme="gray"
-    >
-      {partners.map(partner => (
+      columns={partners.map(partner => (
         <PartnerLogoLink key={partner.name} {...partner} />
       ))}
-    </Section>
+    />
 
     <JoinSection />
   </>

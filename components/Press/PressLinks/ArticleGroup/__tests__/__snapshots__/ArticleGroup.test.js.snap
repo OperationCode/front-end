@@ -4,7 +4,9 @@ exports[`ArticleGroup should render with required props 1`] = `
 <div
   className="articlesGroup"
 >
-  <h2>
+  <h2
+    className="centered"
+  >
     test
   </h2>
   <ul>
@@ -25,7 +27,9 @@ exports[`ArticleGroup should render with required props and 3 links and a button
 <div
   className="articlesGroup"
 >
-  <h2>
+  <h2
+    className="centered"
+  >
     test
   </h2>
   <ul>
@@ -39,24 +43,27 @@ exports[`ArticleGroup should render with required props and 3 links and a button
       </OutboundLink>
     </li>
   </ul>
-  <Button
-    analyticsObject={
-      Object {
-        "action": "Button Selected",
-        "category": "Interactions",
-      }
-    }
-    aria-pressed={false}
-    className="areAllLinksVisibleButton"
-    datum=""
-    disabled={false}
-    fullWidth={false}
-    onClick={[Function]}
-    tabIndex={0}
-    theme="primary"
-    type="button"
+  <div
+    className="centered"
   >
-    Show All
-  </Button>
+    <Button
+      analyticsObject={
+        Object {
+          "action": "Button Selected",
+          "category": "Interactions",
+        }
+      }
+      aria-pressed={false}
+      datum=""
+      disabled={false}
+      fullWidth={false}
+      onClick={[Function]}
+      tabIndex={0}
+      theme="primary"
+      type="button"
+    >
+      Show All
+    </Button>
+  </div>
 </div>
 `;

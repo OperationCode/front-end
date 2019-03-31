@@ -4,17 +4,19 @@
     "plugin:jsx-a11y/recommended",
     "prettier",
     "prettier/react",
-    "plugin:jest/recommended"
+    "plugin:jest/recommended",
+    "plugin:cypress/recommended"
   ],
   "env": {
     "browser": true,
     "commonjs": true,
     "es6": true,
+    "cypress/globals": true,
     "jest": true,
     "node": true
   },
   "parser": "babel-eslint",
-  "plugins": ["jest"],
+  "plugins": ["jest", "cypress"],
   "rules": {
     "comma-dangle": ["error", "only-multiline"],
     "import/extensions": [
@@ -71,9 +73,9 @@
       {
         "components": ["Label"],
         "required": {
-          "some": ["nesting", "id"]
+          "some": ["for"]
         },
-        "allowChildren": false
+        "allowChildren": true
       }
     ],
     "max-len": ["error", { "code": 100, "ignoreUrls": true }],
@@ -126,6 +128,18 @@
       "rules": {
         "jsx-a11y/anchor-is-valid": "off"
       }
+    },
+    {
+      "files": ["cypress/**/*.js"],
+      "rules": {
+        "jest/expect-expect": "off",
+        "jest/valid-expect": "off",
+        "func-names": "off"
+      }
     }
-  ]
+  ],
+  "globals": {
+    "cy": true,
+    "Cypress": true
+  }
 }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
+import OutboundLink from 'components/OutboundLink/OutboundLink';
 import styles from './PartnerLogoLink.css';
 
 export default class PartnerLogoLink extends Component {

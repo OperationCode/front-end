@@ -4,7 +4,7 @@
   justify-content: center;
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (--small-viewport) {
   .interactionsContainer {
     flex-wrap: wrap;
   }

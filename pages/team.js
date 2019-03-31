@@ -1,5 +1,3 @@
-// eslint-disable-next-line no-restricted-imports
-import React from 'react';
 import { getTeamMembersPromise } from 'common/constants/api';
 import { s3 } from 'common/constants/urls';
 import QuoteBanner from 'components/HeroBanner/HeroBanner';
@@ -8,16 +6,13 @@ import TeamCard from 'components/_common_/TeamCard/TeamCard';
 import styles from './styles/team.css';
 
 export default class team extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
+    state = {
       boardMembers: null,
       staffMembers: null,
     };
-  }
+  
 
-  async componentWillMount() {
+  async componentDidMount() {
     const { data } = await getTeamMembersPromise();
     const json = data;
     const boardMembers = json.filter(x => x.group === 'board');

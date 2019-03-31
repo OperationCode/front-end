@@ -19,9 +19,7 @@ describe('NavMobile', () => {
   });
 
   it('should have a visible menu when isMenuVisible prop is true', () => {
-    const wrapper = shallow(
-      <NavMobile isMenuVisible openMenu={() => {}} closeMenu={() => {}} />,
-    );
+    const wrapper = shallow(<NavMobile isMenuVisible openMenu={() => {}} closeMenu={() => {}} />);
 
     expect(wrapper.find('ul')).toExist();
   });

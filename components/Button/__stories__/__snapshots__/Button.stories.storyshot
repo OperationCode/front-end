@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Button default 1`] = `
+<button
+  className="Button primary"
+  disabled={false}
+  onClick={[Function]}
+  tabIndex={0}
+  type="button"
+>
+  Click Me!
+</button>
+`;

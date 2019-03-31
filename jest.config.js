@@ -37,10 +37,12 @@ module.exports = {
     '<rootDir>/common/styles',
     '<rootDir>/common/constants',
     '<rootDir>/scripts',
+    '<rootDir>/cypress',
     '<rootDir>/test-utils',
 
     // No real logic to test here
     '<rootDir>/common/utils/api-utils.js',
+    '<rootDir>/common/utils/cookie-utils.js',
     '<rootDir>/components/FAQ/questions.js',
     '<rootDir>/components/ZipRecruiterJobs/ZipRecruiterJobs.js',
     '<rootDir>/components/Press/PressLinks/Articles.js',
@@ -141,8 +143,8 @@ module.exports = {
   // The paths to modules that run some code to configure or set up the testing environment before each test
   setupFiles: ['jest-prop-type-error'],
 
-  // The path to a module that runs some code to configure or set up the testing framework before each test
-  setupTestFrameworkScriptFile: '<rootDir>/jest.setup.js',
+  // A list of paths to modules that run some code to configure or set up the testing framework before each test.
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
 
   // A list of paths to snapshot serializer modules Jest should use for snapshot testing
   snapshotSerializers: ['enzyme-to-json/serializer'],
@@ -157,7 +159,7 @@ module.exports = {
   // testLocationInResults: false,
 
   // The glob patterns Jest uses to detect test files
-  // testMatch: ['<rootDir>/**/*.test.js'],
+  testMatch: ['<rootDir>/**/*.test.js'],
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
   // testPathIgnorePatterns: [

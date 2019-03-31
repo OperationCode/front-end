@@ -1,14 +1,14 @@
 import Link from 'next/link';
 import Head from 'components/head';
-import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
-import HeroBanner from 'components/_common_/HeroBanner/HeroBanner';
+import HeroBanner from 'components/HeroBanner/HeroBanner';
+import OutboundLink from 'components/OutboundLink/OutboundLink';
 import styles from './styles/contact.css';
 
 export default () => (
   <>
     <Head title="Contact Us" />
 
-    <HeroBanner title="Contact Us" imageSource="" className={styles.contactHero}>
+    <HeroBanner className={styles.contactHero} isFullViewportHeight title="Contact Us">
       <p>
         We are a decentralized community of hard-working volunteers, and we love hearing feedback,
         comments, and suggestions!

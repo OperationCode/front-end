@@ -1,9 +1,8 @@
 import Head from 'components/head';
-import HeroBanner from 'components/_common_/HeroBanner/HeroBanner';
-import Section from 'components/_common_/Section/Section';
+import HeroBanner from 'components/HeroBanner/HeroBanner';
+import Content from 'components/Content/Content';
 import FAQItem from 'components/FAQ/FAQItem/FAQItem';
 import QuestionAnswerData from 'components/FAQ/questions';
-import styles from './styles/faq.css';
 
 export default () => (
   <>
@@ -11,32 +10,28 @@ export default () => (
 
     <HeroBanner title="Frequently Asked Questions" />
 
-    <Section hasHeadingLines={false} theme="secondary">
-      <Section title="General Questions" theme="secondary">
-        <div className={styles.container}>
-          {QuestionAnswerData.general.map(faq => (
-            <FAQItem question={faq.question} answer={faq.answer} key={faq.question} />
-          ))}
-        </div>
-      </Section>
+    <Content
+      title="General Questions"
+      hasTitleUnderline
+      columns={QuestionAnswerData.general.map(faq => (
+        <FAQItem question={faq.question} answer={faq.answer} key={faq.question} />
+      ))}
+    />
 
-      <Section title="Donation Questions" theme="secondary">
-        <br />
-        <div className={styles.container}>
-          {QuestionAnswerData.donation.map(faq => (
-            <FAQItem question={faq.question} answer={faq.answer} key={faq.question} />
-          ))}
-        </div>
-      </Section>
+    <Content
+      title="Donation Questions"
+      hasTitleUnderline
+      columns={QuestionAnswerData.donation.map(faq => (
+        <FAQItem question={faq.question} answer={faq.answer} key={faq.question} />
+      ))}
+    />
 
-      <Section title="Volunteer Questions" theme="secondary">
-        <br />
-        <div className={styles.container}>
-          {QuestionAnswerData.volunteer.map(faq => (
-            <FAQItem question={faq.question} answer={faq.answer} key={faq.question} />
-          ))}
-        </div>
-      </Section>
-    </Section>
+    <Content
+      title="Volunteer Questions"
+      hasTitleUnderline
+      columns={QuestionAnswerData.volunteer.map(faq => (
+        <FAQItem question={faq.question} answer={faq.answer} key={faq.question} />
+      ))}
+    />
   </>
 );

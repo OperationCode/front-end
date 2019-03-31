@@ -9,7 +9,7 @@
   text-transform: capitalize;
 }
 
-@media screen and (max-width: 680px) {
+@media screen and (--medium-viewport) {
   .eventTitle {
     font-size: 1.5rem;
   }

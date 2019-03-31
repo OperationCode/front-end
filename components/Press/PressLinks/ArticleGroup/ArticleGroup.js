@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import OutboundLink from 'components/_common_/OutboundLink/OutboundLink';
-import Button from 'components/_common_/Button/Button';
+import OutboundLink from 'components/OutboundLink/OutboundLink';
+import Button from 'components/Button/Button';
 import styles from './ArticleGroup.css';
 
 class ArticleGroup extends Component {
@@ -29,7 +29,7 @@ class ArticleGroup extends Component {
     const { articles, region, numberOfInitiallyVisibleLinks } = this.props;
     return (
       <div className={styles.articlesGroup}>
-        <h2>{region}</h2>
+        <h2 className={styles.centered}>{region}</h2>
         <ul>
           {articles.map((link, index) => {
             const isArticleVisible = areAllLinksVisible || index < numberOfInitiallyVisibleLinks;
@@ -44,14 +44,11 @@ class ArticleGroup extends Component {
           })}
         </ul>
         {articles.length > numberOfInitiallyVisibleLinks && (
-          <Button
-            aria-pressed={areAllLinksVisible}
-            className={styles.areAllLinksVisibleButton}
-            theme={areAllLinksVisible ? 'secondary' : 'primary'}
-            onClick={this.clickHandler}
-          >
-            {areAllLinksVisible ? 'Show Less' : 'Show All'}
-          </Button>
+          <div className={styles.centered}>
+            <Button onClick={this.clickHandler} aria-pressed={areAllLinksVisible} theme="primary">
+              {areAllLinksVisible ? 'Show Less' : 'Show All'}
+            </Button>
+          </div>
         )}
       </div>
     );

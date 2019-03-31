@@ -52,7 +52,7 @@
   flex: 8;
 }
 
-@media screen and (max-width: 680px) {
+@media screen and (--medium-viewport) {
   .date > h3 {
     top: 24px;
     font-size: 1.1rem;

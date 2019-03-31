@@ -11,20 +11,20 @@
 }
 
 /* Video iFrame Media Queries */
-@media screen and (max-width: 960px) {
+@media screen and (--large-viewport) {
   .pressVideos iframe {
     width: 100%;
     height: 375px;
   }
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (--medium-viewport) {
   .pressVideos iframe {
     height: 250px;
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (--small-viewport) {
   .pressVideos iframe {
     height: 187.5px;
   }

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
 import styles from './Swatch.css';
 
 Swatch.propTypes = {
@@ -9,11 +10,16 @@ Swatch.propTypes = {
 
 function Swatch({ colorName, hexCode }) {
   return (
-    <div className={styles.Swatch}>
+    <figure className={styles.Swatch}>
+      <ScreenReaderOnly>{`A block of the color ${colorName}`}</ScreenReaderOnly>
+
       <div className={styles.colorBlock} style={{ backgroundColor: hexCode }} />
-      <h6>{colorName.toUpperCase()}</h6>
-      <span>{hexCode.toUpperCase()}</span>
-    </div>
+
+      <figcaption>
+        <h6>{colorName.toUpperCase()}</h6>
+        {hexCode.toUpperCase()}
+      </figcaption>
+    </figure>
   );
 }
 

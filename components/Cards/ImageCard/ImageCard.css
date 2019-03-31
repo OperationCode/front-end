@@ -23,7 +23,7 @@
 }
 
 /* Vertical space between cards for vertical layout */
-@media screen and (max-width: 768px) {
+@media screen and (--medium-viewport) {
   .ImageCard {
     height: auto;
     max-width: 350px;

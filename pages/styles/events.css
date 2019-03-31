@@ -1,34 +1,22 @@
-.eventsPage section {
-  padding: 5rem 0;
+.image {
+  margin: 2rem;
+  max-width: 500px;
 }
 
-.eventsPage p {
-  font-size: 1.25rem;
-  max-width: 700px;
-}
-
-.alignCenter {
+.meetupCardHeader {
+  min-height: 210px;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  text-align: center;
+  font-size: 1.8em;
+  padding: 0 0.25em;
+}
+
+.centeredText {
   text-align: center;
 }
 
-.alignLeft {
-  justify-content: flex-start;
-  text-align: left;
-}
-
-.marginBottom {
-  margin-bottom: 2rem;
-}
-
-.sectionHeading {
-  line-height: 1.2;
-  margin-bottom: 0;
-}
-
-.offsetImage img {
+.image img {
   max-width: 100%;
   opacity: 0;
   transition: opacity 1s;
@@ -42,6 +30,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-top: -1rem;
 }
 
 .badge {
@@ -49,105 +38,85 @@
   margin: 1rem 4rem;
 }
 
-.progressBarInfo {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  align-items: center;
+/*
+comment out carousel styles until api endpoint complete
+*/
+
+/*
+.eventsLeadText {
+  text-align: center;
+  font-size: 1.25em;
 }
 
-.donatedAmount {
-  display: flex;
-  align-items: center;
-}
-
-.donatedAmount .amount {
-  font-size: 2rem;
-  margin-right: 0.5rem;
-}
-
-.goalAmount span:first-of-type {
-  margin-right: 0.5rem;
-}
-
-.progressBar {
-  position: relative;
-  width: 100%;
-  height: 1.75rem;
+.eventsCarousel {
+  overflow: hidden;
   background-color: var(--gray);
-  border: 2px solid var(--gray);
-  border-radius: 50px;
-  margin-bottom: 2rem;
+  margin-top: -1em;
+  padding-bottom: 3.5em;
 }
 
-.progressBarFill {
-  position: absolute;
-  left: 1px;
-  top: 1px;
-  bottom: 1px;
+.eventsCarouselItem {
+  background-color: var(--secondary);
+  height: 200px;
+  padding: 1em 1.5em;
+  color: var(--white);
+  font-weight: bold;
+  font-size: 1.4em;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 17.5px;
+  cursor: default;
+}
+
+.eventsCarouselItemDate {
+  margin-top: 0.5em;
+}
+
+.carouselControlLeft,
+.carouselControlRight {
+  display: flex;
+  align-items: center;
   background-color: var(--primary);
-  min-width: 12px; /* this will prevent the progress bar from disappearing */
-  width: 12px; /* control this dynamically to show progress */
-  max-width: calc(100% - 12px); /* this will prevent the progress bar from over-filling */
-  border: 1px solid var(--primary);
-  border-radius: 50px 0 0 50px;
+  color: var(--white);
+  outline: 0;
+  border: 0;
+  font-size: 1.8em;
+  padding-top: 0.15em;
+  padding-bottom: 0.15em;
+  border-radius: 50%;
+  height: 58px;
+  width: 68px;
+  cursor: pointer;
 }
 
-.gridContent {
-  margin: 2rem 0;
+.carouselControlLeft > svg,
+.carouselControlRight > svg {
+  fill: var(--white);
+  height: 30px;
 }
 
-@media screen and (max-width: 768px) {
-  .heroBannerMobilePositioning {
-    background-position: right center;
-  }
+.carouselControlLeft {
+  padding-left: 35px;
+  margin-left: -30px;
 }
 
-@media screen and (min-width: 769px) {
-  .eventsPage section {
-    padding: 8rem 0;
+.carouselControlRight {
+  padding-right: 35px;
+  margin-right: -30px;
+}
+
+@media screen and (--medium-viewport) {
+  .eventsCarouselItem {
+    margin: 0 10px;
   }
+}
+*/
 
-  .grid {
-    flex-direction: row;
-    justify-content: space-between;
-    align-content: center;
-  }
-
-  .grid > div {
-    width: 45%;
-  }
-
-  .gridContent {
-    margin: 0;
-  }
-
-  .alignRight {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    text-align: right;
-  }
-
-  .alignRight .sectionHeading {
-    text-align: right;
-    justify-content: flex-end;
-  }
-
-  .offsetImage img {
-    object-fit: cover;
-  }
-
-  @media screen and (min-width: 1280px) {
-    .grid .offsetImage {
-      position: relative;
-      height: 18rem;
-    }
-
-    .offsetImage img {
-      position: absolute;
-      bottom: 0;
-      max-height: 450px;
-    }
+@media screen and (--large-viewport) {
+  .meetupCardHeader {
+    min-height: 125px;
   }
 }

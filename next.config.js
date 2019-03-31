@@ -25,10 +25,23 @@ const nextConfig = withCSS({
   },
 
   // Webpack Config
-  webpack: config => {
+  webpack: (config, { dev }) => {
     // Fixes npm packages that depend on `fs` module
     // eslint-disable-next-line no-param-reassign
     config.node = { fs: 'empty' };
+
+    if (dev) {
+      // eslint-disable-next-line global-require
+      const FilterWarningsPlugin = require('webpack-filter-warnings-plugin');
+
+      // Filters Mini CSS Extract Plugin bug
+      // https://github.com/webpack-contrib/mini-css-extract-plugin/issues/250#issuecomment-415345126
+      config.plugins.push(
+        new FilterWarningsPlugin({
+          exclude: /mini-css-extract-plugin[^]*Conflicting order between:/,
+        }),
+      );
+    }
 
     config.module.rules.push(
       {
@@ -61,6 +74,7 @@ const nextConfig = withCSS({
         ],
       },
     );
+
     return config;
   },
 });

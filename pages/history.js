@@ -1,8 +1,8 @@
 import Head from 'components/head';
-import { s3 } from 'common/constants/urls';
-import Section from 'components/_common_/Section/Section';
-import HeroBanner from 'components/_common_/HeroBanner/HeroBanner';
+import HeroBanner from 'components/HeroBanner/HeroBanner';
+import Content from 'components/Content/Content';
 import Timeline from 'components/Timeline/Timeline';
+import { s3 } from 'common/constants/urls';
 import styles from './styles/history.css';
 
 export default function() {
@@ -11,8 +11,8 @@ export default function() {
       <Head title="History" />
 
       <HeroBanner
+        backgroundImageSource={`${s3}heroBanners/colin-powell.jpg`}
         className={styles.hero}
-        imageSource={`${s3}heroBanners/colin-powell.jpg`}
         title="History"
       >
         <>
@@ -24,9 +24,7 @@ export default function() {
         </>
       </HeroBanner>
 
-      <Section theme="white" hasHeadingLines={false}>
-        <Timeline />
-      </Section>
+      <Content theme="white" columns={[<Timeline />]} />
     </>
   );
 }

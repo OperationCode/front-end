@@ -1,52 +1,28 @@
-import Cookies from 'universal-cookie';
 import jwt_decode from 'jwt-decode'; // eslint-disable-line camelcase
 
-const cookieDomain = () => {
-  if (process.env.NODE_ENV === 'development') {
-    return 'localhost';
-  }
-  return 'operationcode.org';
+const cookieOptions = {
+  path: '/',
+  domain: process.env.NODE_ENV === 'development' ? 'localhost' : 'operationcode.org',
 };
 
-const cookieOptions = { path: '/', domain: cookieDomain() };
-
-export const setUserAuthCookie = ({ token, user }) => {
-  const cookies = new Cookies();
+export const setAuthCookies = (cookies, { token, user }) => {
   cookies.set('token', token, cookieOptions);
-  cookies.set('firstName', user.first_name, cookieOptions);
-  cookies.set('lastName', user.last_name, cookieOptions);
-  cookies.set('slackName', user.slack_name, cookieOptions);
-  cookies.set('mentor', user.mentor, cookieOptions);
-  cookies.set('verified', user.verified, cookieOptions);
+  cookies.set('firstName', user.firstName, cookieOptions);
+  cookies.set('lastName', user.lastName, cookieOptions);
+  cookies.set('zipcode', user.zipcode, cookieOptions);
+  // cookies.set('slackName', user.slackName, cookieOptions);
+  // cookies.set('isMentor', user.isMentor, cookieOptions);
 };
 
-export const setUserVerifiedCookie = isVerified => {
-  const cookies = new Cookies();
-  cookies.set('verified', isVerified, cookieOptions);
-};
-
-export const clearAuthCookies = () => {
-  const cookies = new Cookies();
+export const removeAuthCookies = cookies => {
   cookies.remove('token', cookieOptions);
   cookies.remove('firstName', cookieOptions);
   cookies.remove('lastName', cookieOptions);
-  cookies.remove('slackName', cookieOptions);
-  cookies.remove('mentor', cookieOptions);
-  cookies.remove('verified', cookieOptions);
+  // cookies.remove('slackName', cookieOptions);
+  // cookies.remove('mentor', cookieOptions);
 };
 
-export const isMentor = () => {
-  const cookies = new Cookies();
-  return cookies.get('mentor');
-};
-
-export const authToken = () => {
-  const cookies = new Cookies();
-  const token = cookies.get('token');
-  return token;
-};
-
-const validToken = token => {
+const isTokenValid = token => {
   if (token === undefined) {
     return false;
   }
@@ -54,19 +30,13 @@ const validToken = token => {
   const jwt = jwt_decode(token);
   const currentTime = new Date().getTime() / 1000;
 
-  if (currentTime > jwt.exp) {
-    return false;
-  }
-
-  return true;
+  // Valid if jwt expiry is in the future
+  return currentTime < jwt.exp;
 };
 
-export const getUserStatus = () => {
-  const cookies = new Cookies();
-
+export const getUserStatus = cookies => {
   return {
-    mentor: cookies.get('mentor') === 'true',
-    signedIn: validToken(cookies.get('token')),
-    verified: cookies.get('verified') === 'true',
+    // isMentor: cookies.get('isMentor') === 'true',
+    isLoggedIn: isTokenValid(cookies.get('token')),
   };
 };

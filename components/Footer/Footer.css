@@ -110,7 +110,7 @@
   }
 }
 
-@media screen and (max-width: 1119px) {
+@media screen and (--extra-large-viewport) {
   .Footer {
     flex-direction: column;
     height: auto;
@@ -141,7 +141,7 @@
   }
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (--small-viewport) {
   .Footer {
     padding-bottom: 10rem;
   }
@@ -171,7 +171,7 @@
   }
 }
 
-@media screen and (max-width: 350px) {
+@media screen and (--extra-small-viewport) {
   .linksGrouping {
     margin-left: 1.5rem;
   }
