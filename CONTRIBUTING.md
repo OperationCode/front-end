@@ -114,6 +114,8 @@ _You can check to see your versions like so:_
 
 Now that you've installed your dependencies and your new branch in your fork, you can launch the "dev server" with `yarn dev`.
 
+**Note:** Yarn should be running on http://localhost:3000/.
+
 <center>⚠️ Warning ⚠️ </center>
 <aside>Unfortunately, you may need to refresh a page on navigation in development to have all styles be applied. This is the result of a bug within NextCSS plugin. It's being worked on!</aside>
 
