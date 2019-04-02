@@ -53,7 +53,7 @@ There are many resources in the wild to learn about all forms of version control
 
 ### GitHub Workflow
 
-1. Before working on an issue, post a comment on the issue asking to claim it. One of our maintainers will assign themselves as a placeholder on the issue, at which point you are good to start working on it. We don't like competition in open source, nor do we enjoy closing pull requests resolving the same issue... Please only work on issues you've claimed, are not assigned, and do not have others waiting to claim.
+1. Before working on an issue, post a comment on the issue asking to claim it. One of our maintainers will assign themselves as a placeholder on the issue, at which point you are good to start working on it. We don't like competition in open source, nor do we enjoy closing pull requests resolving the same issue... Please only ask to claim unassigned issues!
 2. Once you've claimed an issue, feel free to [fork the repository](https://help.github.com/articles/fork-a-repo/).
 3. If you follow all of the instructions in the help article above, you'll be able to create a branch. That's `git checkout -b YOUR_BRANCH_NAME` Note that some companies and organizations have branch-naming conventions - we do not.
 4. Once you make a branch, you're free to open your preferred text editor and code. If you don't have a preferred text editor, Operation Code recommends [Visual Studio Code](https://code.visualstudio.com/) (more commonly referred to as "VS Code" and not to be confused with Visual Studio). You'll want to follow along with [Development Workflow](#development-workflow) to see how you should go about coding in the repository.
@@ -113,6 +113,8 @@ _You can check to see your versions like so:_
 ### Run The Development Server
 
 Now that you've installed your dependencies and your new branch in your fork, you can launch the "dev server" with `yarn dev`.
+
+**Note:** The dev server should be running on http://localhost:3000/ shortly after you run `yarn dev`
 
 <center>⚠️ Warning ⚠️ </center>
 <aside>Unfortunately, you may need to refresh a page on navigation in development to have all styles be applied. This is the result of a bug within NextCSS plugin. It's being worked on!</aside>
