@@ -51,7 +51,7 @@ const supportItems = [
 
 export default () => (
   <>
-    <Head title="Events" />
+    <Head title="Get Involved" />
 
     <HeroBanner
       backgroundImageSource={`${s3}redesign/heroBanners/events.jpg`}
