@@ -1,16 +1,14 @@
-.boardMembers {
-  align-items: flex-start;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-}
-
-.staffMembers {
-  padding: 20px 0;
+.boardMembers,
+.foundingMembers {
+  width: 100%;
 }
 
 .foundingMembers {
   padding: 2rem 0 0 0;
+}
+
+.staffMembers {
+  padding: 20px 0;
 }
 
 @media screen and (max-width: 840px) {
