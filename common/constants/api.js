@@ -8,6 +8,7 @@ export const getRequestsPromise = () => get('requests');
 export const getScholarshipPromise = id => get(`scholarships/${id}`);
 export const getScholarshipsPromise = () => get('scholarships');
 export const getServicesPromise = () => get('services');
+export const getTeamMembersPromise = () => get('team_members');
 
 /* POST REQUESTS */
 export const createUser = ({ email, password, firstName, lastName, zipcode }) =>
