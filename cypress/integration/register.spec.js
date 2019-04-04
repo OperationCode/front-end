@@ -1,3 +1,8 @@
+beforeEach(() => {
+  cy.server({ delay: 500 });
+  cy.clearCookies();
+});
+
 const createRandomEmail = () => {
   const listOfTLDs = ['com', 'org', 'gov.uk', 'gov.us', 'edu', 'io', 'dev', 'us', 'es', 'co'];
 
@@ -13,10 +18,6 @@ const createRandomEmail = () => {
 
   return `${randomString1}@${randomString2}.${randomTLD}`;
 };
-
-beforeEach(() => {
-  cy.clearCookies();
-});
 
 describe('register', function() {
   it('should be able to register with valid data', () => {
