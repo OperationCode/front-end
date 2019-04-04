@@ -7,8 +7,6 @@ cache:
   directories:
     - 'node_modules'
     - ~/.cache
-  override:
-    - yarn cypress verify
 
 before_install:
   - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.15.2
@@ -28,6 +26,7 @@ script:
   - yarn lint
   - yarn test:unit:ci
   - yarn build
+  - yarn cypress verify
   - yarn start-server-and-test dev http://localhost:3000 test:e2e:ci
 
 # jobs:
