@@ -26,14 +26,14 @@ before_script:
 
 jobs:
   include:
-    - stage: lint and unit test
+    - stage: Lint + Run Unit Tests
       name: 'Lint + Run Unit Tests'
       script: yarn lint
       script: yarn test:unit:ci
-    - stage: build
+    - stage: Build
       name: 'Build'
       script: yarn build
-    - stage: e2e tests
+    - stage: E2E Tests
       name: 'Run E2E Tests'
       script: yarn test:e2e:ci
 
