@@ -1,6 +1,10 @@
 # Operation Code-specific
 backend
 
+# Cypress local support artifacts
+cypress/screenshots
+cypress/videos
+
 # Logs
 logs
 *.log
