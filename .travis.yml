@@ -24,8 +24,9 @@ before_script:
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
 
-jobs:
-  include:
+script:
+  jobs:
+    include:
     - stage: Lint + Run Unit Tests
       name: 'Checking code for lint issues and ensuring unit tests pass'
       script: yarn lint
