@@ -24,6 +24,7 @@ module.exports = {
   collectCoverageFrom: [
     '<rootDir>/common/**/*.js',
     '<rootDir>/components/**/*.js',
+    '<rootDir>/decorators/**/*.js',
     '<rootDir>/store/**/*.js',
   ],
 
