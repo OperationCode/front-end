@@ -24,7 +24,7 @@
     "test:e2e": "cypress open",
     "test:e2e:ci": "yarn dev:ci && cypress run --record --key 9e628491-4a66-4f7e-9651-91ab6ac459b8",
     "test": "cross-env NODE_ENV=test BABEL_ENV=test jest",
-    "test:unit:ci": "yarn test --ci --coverage && yarn cypress:ci",
+    "test:unit:ci": "yarn test --ci --coverage",
     "test:unit:changes": "yarn test --changedSince master",
     "test:unit:changes:watch": "yarn test --changedSince master --watch",
     "test:unit:watch": "yarn test --watch",
