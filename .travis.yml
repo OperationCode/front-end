@@ -7,6 +7,8 @@ cache:
   directories:
     - 'node_modules'
     - ~/.cache
+  override:
+    - yarn cypress verify
 
 before_install:
   - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.15.2
@@ -26,23 +28,7 @@ script:
   - yarn lint
   - yarn test:unit:ci
   - yarn build
-  - yarn cypress verify
   - yarn start-server-and-test dev http://localhost:3000 test:e2e:ci
-
-# jobs:
-#   include:
-#     - stage: Lint + Run Unit Tests
-#       name: 'Linting'
-#       script: yarn lint
-#     - # 2nd job of the above stage
-#       name: 'Unit Tests'
-#       script: yarn test:unit:ci
-#     - stage: Build
-#       name: 'Building the production bundle of the application'
-#       script: yarn build
-#     - stage: E2E Tests
-#       name: 'Start a dev server and run E2E Tests against it'
-#       script: yarn start-server-and-test dev http://localhost:3000 test:e2e:ci
 
 after_script:
   - greenkeeper-lockfile-upload
