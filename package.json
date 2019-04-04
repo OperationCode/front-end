@@ -9,7 +9,7 @@
     "create-component": "node scripts/createComponent/createComponent.js",
     "create-page": "node scripts/createPage/createPage.js",
     "dev": "node server.js",
-    "dev:ci": "yarn dev & wait-on http://localhost:8080",
+    "dev:ci": "yarn dev & wait-on http://localhost:3000",
     "export": "next export",
     "format": "yarn format:scripts && yarn format:styles",
     "format:scripts": "prettier --write \"**/*.js\" && eslint --fix \"**/*.js\"",
