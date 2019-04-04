@@ -24,6 +24,8 @@ before_script:
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
 
+script: echo 'Test'
+
 jobs:
   include:
     - stage: Lint + Run Unit Tests
@@ -37,7 +39,7 @@ jobs:
       script: yarn build
     - stage: E2E Tests
       name: 'Start a dev server and run E2E Tests against it'
-      script: yarn test:e2e:ci
+      script: yarn start-server-and-test dev http://localhost:3000 test:e2e:ci
 
 after_script:
   - greenkeeper-lockfile-upload

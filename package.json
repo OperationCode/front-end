@@ -9,7 +9,6 @@
     "create-component": "node scripts/createComponent/createComponent.js",
     "create-page": "node scripts/createPage/createPage.js",
     "dev": "node server.js",
-    "dev:ci": "yarn dev & wait-on http://localhost:3000",
     "export": "next export",
     "format": "yarn format:scripts && yarn format:styles",
     "format:scripts": "prettier --write \"**/*.js\" && eslint --fix \"**/*.js\"",
@@ -22,7 +21,7 @@
     "start": "NODE_ENV=production node server.js",
     "storybook": "start-storybook -s ./static -p 9001 -c .storybook",
     "test:e2e": "cypress open",
-    "test:e2e:ci": "yarn dev:ci && cypress run --record --key 9e628491-4a66-4f7e-9651-91ab6ac459b8",
+    "test:e2e:ci": "cypress run --record --key 9e628491-4a66-4f7e-9651-91ab6ac459b8",
     "test": "cross-env NODE_ENV=test BABEL_ENV=test jest",
     "test:unit:ci": "yarn test --ci --coverage",
     "test:unit:changes": "yarn test --changedSince master",
@@ -130,9 +129,9 @@
     "react-addons-test-utils": "^15.6.2",
     "react-test-renderer": "^16.8.4",
     "redux-mock-store": "^1.5.3",
+    "start-server-and-test": "^1.7.13",
     "stylelint": "^9.9.0",
     "stylelint-config-standard": "^18.2.0",
-    "wait-on": "^3.2.0",
     "webpack-filter-warnings-plugin": "^1.2.1"
   },
   "greenkeeper": {
