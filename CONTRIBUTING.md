@@ -98,6 +98,7 @@ Here is an list of technologies this project leverages:
 - [Webpack](https://webpack.js.org/) - The premier module bundler for JavaScript. Read [this article](https://survivejs.com/webpack/what-is-webpack/) for more information.
 - [Yarn](https://yarnpkg.com/) - Facebook's open source JavaScript package manager. It has very subtle differences from npm, but essentially does the same thing.
 - [PostCSS](#PostCSS) - Extensive documentation listed below...
+- [Cypress](https://cypress.io/) - Hand-picked resources [here](https://github.com/OperationCode/front-end/tree/master/cypress/README.md).
 
 ### PostCSS
 
