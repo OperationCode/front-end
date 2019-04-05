@@ -110,7 +110,7 @@ In our repo, we use PostCSS plug-ins to help simplify how we write our CSS. Post
 
 #### PostCSS Plug-ins in Use
 
-[autoprefixer](https://github.com/postcss/autoprefixer): used to parse vendor prefixes for certain CSS property values
+- [Autoprefixer](https://github.com/postcss/autoprefixer): used to parse vendor prefixes for certain CSS property values
 ([What is a vendor prefix?](https://developer.mozilla.org/en-US/docs/Glossary/Vendor_Prefix)). In our repo, you will not have to include vendor prefixes when you create a non-standard CSS selector.
 
 **Example:**
@@ -132,7 +132,7 @@ Which will output the following once compiled:
 }
 ```
 
-[postcss-media-variables](https://github.com/WolfgangKluge/postcss-media-variables): This plugin allows us to set 'default' breakpoints, and manipulate those values as needed without changing the defaults. Our defaults are defined in `common/styles/variables.css`
+- [PostCSS Media Variables](https://github.com/WolfgangKluge/postcss-media-variables): This plugin allows us to set 'default' breakpoints, and manipulate those values as needed without changing the defaults. Our defaults are defined in `common/styles/variables.css`
 
 **Example:**
 During development, we would write:
@@ -150,7 +150,7 @@ Which will output the following when deployed:
 @media (min-width: 992px){}
 ```
 
-[postcss-css-variables](https://github.com/MadLittleMods/postcss-css-variables): This plug-in allows us to use [CSS3 variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables) across older browsers. On run-time, this plug-in extracts and translates our custom variables into 'vanilla' CSS.
+- [PostCSS CSS Variables](https://github.com/MadLittleMods/postcss-css-variables): This plug-in allows us to use [CSS3 variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables) across older browsers. On run-time, this plug-in extracts and translates our custom variables into 'vanilla' CSS.
 
 **Example:**
 During development, we would write:
@@ -175,6 +175,10 @@ Which will output the following when deployed:
   color: red;
 }
 ```
+
+- [PostCSS Export Custom Variables](https://github.com/jonathantneal/postcss-export-custom-variables): We use this plug-in simply to export our collection of CSS variables to [common/styles/themeMap.js](https://github.com/OperationCode/front-end/blob/master/common/styles/themeMap.js) so that they're leveragable within any JavaScript context.
+
+- [PostCSS Import](https://github.com/postcss/postcss-import): This plug-in essentially tries to emulate the existing [CSS Import spec](https://developer.mozilla.org/en-US/docs/Web/CSS/@import) allowing for modularization and concatenation of CSS files.
 
 ## Development Workflow
 
