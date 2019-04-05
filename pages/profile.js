@@ -9,16 +9,10 @@ class Profile extends React.Component {
     cookies: PropTypes.instanceOf(Cookies).isRequired,
   };
 
-  constructor(props) {
-    super(props);
-    const { cookies } = props;
-    this.state = {
-      displayName: cookies.get('firstName'),
-    };
-  }
-
   render() {
-    const { state } = this;
+    const { cookies } = this.props;
+
+    const firstName = cookies.get('firstName');
 
     return (
       <>
@@ -28,7 +22,7 @@ class Profile extends React.Component {
 
         <Content
           theme="gray"
-          columns={[<p>Hello {state.displayName}! The profile page is an unfinished feature.</p>]}
+          columns={[<p>Hello {firstName}! The profile page is an unfinished feature.</p>]}
         />
       </>
     );
