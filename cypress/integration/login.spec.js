@@ -1,13 +1,11 @@
 beforeEach(() => {
   cy.clearCookies();
+  cy.visit('/login');
 });
 
 describe('login', function() {
   it('should be able to login with valid credentials', () => {
     cy.getCookies().should('have.length', 0);
-    cy.visit('/');
-    cy.get('[data-testid="Nav Item Member Login"]').should('not.be.visible');
-    cy.get('[data-testid="Nav Item Member Login"]').click({ force: true });
     cy.get('h1').should('have.text', 'Login');
     cy.get('input#email').type('kylemh.email12@gmail.com');
     cy.get('input#password').type('Testing1');

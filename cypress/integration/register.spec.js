@@ -1,5 +1,6 @@
 beforeEach(() => {
   cy.clearCookies();
+  cy.visit('/join');
 });
 
 const createRandomEmail = () => {
@@ -31,9 +32,6 @@ describe('register', function() {
     };
 
     cy.getCookies().should('have.length', 0);
-    cy.visit('/');
-    cy.get('[data-testid="Nav Item Join"]').should('not.be.visible');
-    cy.get('[data-testid="Nav Item Join"]').click({ force: true });
     cy.get('h1').should('have.text', 'Join');
     cy.get('input#email').type(newUser.email);
     cy.get('input#confirm-email').type(newUser.email);
