@@ -101,9 +101,11 @@ Here is an list of technologies this project leverages:
 - [PostCSS](#PostCSS) - Extensive documentation listed below...
 
 ### PostCSS
+
 In our repo, we use PostCSS plug-ins to help simplify how we write our CSS. PostCSS is included in our webpack configuration, so there are no additional steps necessary to leverage these plug-ins.
 
 #### What is PostCSS?
+
 "PostCSS is a tool for transforming styles with JS plugins. These plugins can lint your CSS, support variables and mixins, transpile future CSS syntax, inline images, and more." - [PostCSS Repo](https://github.com/postcss/postcss)
 
 #### PostCSS Plug-ins in Use
@@ -113,6 +115,7 @@ In our repo, we use PostCSS plug-ins to help simplify how we write our CSS. Post
 
 **Example:**
 During development, we would write:
+
 ```
 .someClass {
   disply: flex;
@@ -120,6 +123,7 @@ During development, we would write:
 ```
 
 Which will output the following once compiled:
+
 ```
 .someClass {
   display: -webkit-box;
@@ -132,13 +136,16 @@ Which will output the following once compiled:
 
 **Example:**
 During development, we would write:
+
 ```
 :root {
     --largeViewportWidth: 992px;
 }
 @media (min-width: var(--largeViewportWidth)) {}
 ```
+
 Which will output the following when deployed:
+
 ```
 @media (min-width: 992px){}
 ```
@@ -147,6 +154,7 @@ Which will output the following when deployed:
 
 **Example:**
 During development, we would write:
+
 ```
 :root {
   --some-color: red;
@@ -159,7 +167,9 @@ During development, we would write:
 }
 
 ```
+
 Which will output the following when deployed:
+
 ```
 .foo {
   color: red;
