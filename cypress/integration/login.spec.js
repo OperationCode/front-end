@@ -1,5 +1,4 @@
 beforeEach(() => {
-  cy.server({ delay: 500 });
   cy.clearCookies();
 });
 
