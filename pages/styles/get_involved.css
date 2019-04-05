@@ -35,7 +35,17 @@
 }
 
 @media screen and (--medium-viewport) {
+  /* DESING FOR SECTION 1: YOU CAN MAKE AN IMPACT */
   .heroBannerMobilePositioning {
     background-position: right center;
+  }
+
+  .heroBannerMobilePositioning p {
+    font-size: 1.5rem;
+    letter-spacing: 0.2rem;
+    text-align: left;
+    width: 100%;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
   }
 }

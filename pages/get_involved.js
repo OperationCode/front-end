@@ -16,6 +16,7 @@ import ChartIcon from 'static/images/icons/Custom/chart.svg';
 import PeopleMeetingIcon from 'static/images/icons/Custom/people_meeting.svg';
 import { s3 } from 'common/constants/urls';
 import styles from './styles/get_involved.css';
+// import { style } from 'node_modules/glamor/index';
 
 const VISIBILITY_OFFSET = 400;
 
@@ -55,7 +56,7 @@ export default () => (
 
     <HeroBanner
       backgroundImageSource={`${s3}redesign/heroBanners/events.jpg`}
-      className={styles.heroBannerMobilePositioning}
+      className={[styles.heroBannerMobilePositioning, styles.heroBannerTabletDesign]}
       title="You Can Make An Impact"
     >
       <>
@@ -65,12 +66,15 @@ export default () => (
           development, Operation Code is always looking for supporters like you.
         </p>
 
-        <LinkButton href="/who_we_serve">Learn More</LinkButton>
+        <LinkButton className="hero_banner_link_button" href="/who_we_serve">
+          Learn More
+        </LinkButton>
       </>
     </HeroBanner>
 
     <Content
       title="The Power of Mentorship"
+      className="get_involved_badgeGroupings"
       theme="gray"
       columns={[
         <p>By mentoring one of our members, you will help them:</p>,
