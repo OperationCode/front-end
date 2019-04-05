@@ -45,7 +45,6 @@ Being an open source project involving contributors of varying levels of experie
   - [Windows](#windows)
     - [Git](#git)
     - [NodeJS](#nodejs)
-- [PostCSS](#postcss)
 
 ## Git and GitHub
 
