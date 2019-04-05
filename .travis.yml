@@ -28,7 +28,7 @@ script:
   - yarn lint
   - yarn test:unit:ci
   - yarn build
-  - yarn start-server-and-test start http://localhost:3000 test:e2e:ci
+  - yarn start-server-and-test dev http://localhost:3000 test:e2e:ci
 
 after_script:
   - greenkeeper-lockfile-upload
