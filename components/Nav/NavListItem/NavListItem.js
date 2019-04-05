@@ -83,7 +83,13 @@ export default class NavListItem extends Component {
               {props.sublinks.map(sublink => (
                 <li className={styles.sublinkListItem} key={sublink.name}>
                   <Link href={sublink.href}>
-                    <a className={styles.link} key={sublink.name} role="link" tabIndex={0}>
+                    <a
+                      className={styles.link}
+                      key={sublink.name}
+                      role="link"
+                      tabIndex={0}
+                      data-testid={`Nav Item ${sublink.name}`}
+                    >
                       <span className={styles.linkContent}>{sublink.name}</span>
                     </a>
                   </Link>
