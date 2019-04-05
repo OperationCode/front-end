@@ -2,7 +2,7 @@
 
 Firstly, thank you for considering contributing to our project! It's people like you that make Operation Code such a great community.
 
-The team at Operation Code wants to reiterate that joining our Slack team is the ultimate way to set yourself up for success when contributing to our repository. You can get an invite to our Slack channel by [requesting to join Operation Code](https://operationcode.org/join). Once in our Slack team, simply type: `/open #oc-projects` and then click enter. Feel free to ask for help; everyone is a beginner at first :smile_cat:!
+The team at Operation Code wants to reiterate that joining our Slack team is the ultimate way to set yourself up for success when contributing to our repository (repo). You can get an invite to our Slack channel by [requesting to join Operation Code](https://operationcode.org/join). Once in our Slack team, simply type: `/open #oc-projects` and then click enter. Feel free to ask for help; everyone is a beginner at first :smile_cat:!
 
 **This guideline is for newer developers, developers who are unfamiliar with the quick start instructions, and developers who are unfamiliar with React. This guide assumes that you are a little bit familiar with HTML, CSS, and JavaScript.**
 
@@ -25,6 +25,7 @@ Being an open source project involving contributors of varying levels of experie
   - [What Is The Back-End?](#what-is-the-back-end)
   - [What is REST? What is an API?](#what-is-rest-what-is-an-api)
 - [Technologies](#technologies)
+  - [PostCSS](#postcss)
 - [Development Workflow](#development-workflow)
   - [Installing Dependencies](#installing-dependencies)
   - [Run The Development Server](#run-the-development-server)
@@ -54,11 +55,11 @@ There are many resources in the wild to learn about all forms of version control
 ### GitHub Workflow
 
 1. Before working on an issue, post a comment on the issue asking to claim it. One of our maintainers will assign themselves as a placeholder on the issue, at which point you are good to start working on it. We don't like competition in open source, nor do we enjoy closing pull requests resolving the same issue... Please only ask to claim unassigned issues!
-2. Once you've claimed an issue, feel free to [fork the repository](https://help.github.com/articles/fork-a-repo/).
+2. Once you've claimed an issue, feel free to [fork the repo](https://help.github.com/articles/fork-a-repo/).
 3. If you follow all of the instructions in the help article above, you'll be able to create a branch. That's `git checkout -b YOUR_BRANCH_NAME` Note that some companies and organizations have branch-naming conventions - we do not.
-4. Once you make a branch, you're free to open your preferred text editor and code. If you don't have a preferred text editor, Operation Code recommends [Visual Studio Code](https://code.visualstudio.com/) (more commonly referred to as "VS Code" and not to be confused with Visual Studio). You'll want to follow along with [Development Workflow](#development-workflow) to see how you should go about coding in the repository.
+4. Once you make a branch, you're free to open your preferred text editor and code. If you don't have a preferred text editor, Operation Code recommends [Visual Studio Code](https://code.visualstudio.com/) (more commonly referred to as "VS Code" and not to be confused with Visual Studio). You'll want to follow along with [Development Workflow](#development-workflow) to see how you should go about coding in the repo.
 5. When your changes are complete, commit your changes. If you use `git commit` often, you'll notice your commit is taking longer than usual! That's because we have a "pre-commit hook". This hook is [linting](https://stackoverflow.com/questions/8503559/what-is-linting), formatting (example: changing tabs to spaces), and testing all of your changes. If a test fails, so does the commit. If your code had changes after formatting, you'll need to re-stage those file(s) and use `git commit --amend` to add the linted/formatted code to your original commit.
-6. After committing, push your branch to your forked repository. `git push -u origin YOUR_BRANCH_NAME` should do the trick.
+6. After committing, push your branch to your forked repo. `git push -u origin YOUR_BRANCH_NAME` should do the trick.
 7. Create a pull request within two weeks of claiming the issue, [using that branch on your fork](https://help.github.com/articles/creating-a-pull-request-from-a-fork/). You are at risk of being unassigned from the issue otherwise. While we like reserving issues out for others, this is necessary to prevent bogarting.
 
 ## Explanations
@@ -71,7 +72,7 @@ When you visit our website you're interacting with two systems, a front-end appl
 
 ### What Is The Back-End?
 
-_Quick Note_: Our back-end API is not currently connected to this repository.
+_Quick Note_: Our back-end API is not currently connected to this repo.
 
 The back-end is responsible for providing data for the front-end to display. This sometimes involves processing the data entered into the front-end, and running various jobs like inviting new users to Slack, or signing them up for our newsletter. Our back-end is written in Rails and it's source code can be viewed [here](https://github.com/OperationCode/operationcode_backend). It acts primarily as a "REST API".
 
@@ -85,7 +86,7 @@ The back-end is responsible for providing data for the front-end to display. Thi
 
 ## Technologies
 
-Here is an alphabetically organized list of technologies this project is composed of:
+Here is an list of technologies this project leverages:
 
 - [Babel](https://babeljs.io/) - JavaScript compiler to unify all the different versions of JS that may have been used or will be used in the future. [Here's a blog post from Scotch.io on why JavaScript utilizes "transpiling" with Babel](https://scotch.io/tutorials/javascript-transpilers-what-they-are-why-we-need-them).
 - [CSS Modules](https://github.com/css-modules/css-modules) - CSS Modules allow us to encapsulate CSS within components. Instead of HTML/CSS - our project structure is basically JSX/CSS.
@@ -96,6 +97,87 @@ Here is an alphabetically organized list of technologies this project is compose
 - [Storybook](https://storybook.js.org) - Storybook acts as a "component workbench" and source for component documentation. You can learn more about Storybook on your own [here](https://www.learnstorybook.com/). You can see our Storybook here: [![Storybook](https://github.com/storybooks/brand/blob/master/badge/badge-storybook.svg)](http://storybook.operationcode.org)
 - [Webpack](https://webpack.js.org/) - The premier module bundler for JavaScript. Read [this article](https://survivejs.com/webpack/what-is-webpack/) for more information.
 - [Yarn](https://yarnpkg.com/) - Facebook's open source JavaScript package manager. It has very subtle differences from npm, but essentially does the same thing.
+- [PostCSS](#PostCSS) - Extensive documentation listed below...
+
+### PostCSS
+
+In our repo, we use PostCSS plug-ins to help simplify how we write our CSS. PostCSS is included in our webpack configuration, so there are no additional steps necessary to leverage these plug-ins.
+
+#### What is PostCSS?
+
+"PostCSS is a tool for transforming styles with JS plugins. These plugins can lint your CSS, support variables and mixins, transpile future CSS syntax, inline images, and more." - [PostCSS Repo](https://github.com/postcss/postcss)
+
+#### PostCSS Plug-ins in Use
+
+- [Autoprefixer](https://github.com/postcss/autoprefixer): used to parse vendor prefixes for certain CSS property values
+([What is a vendor prefix?](https://developer.mozilla.org/en-US/docs/Glossary/Vendor_Prefix)). In our repo, you will not have to include vendor prefixes when you create a non-standard CSS selector.
+
+**Example:**
+During development, we would write:
+
+```
+.someClass {
+  disply: flex;
+}
+```
+
+Which will output the following once compiled:
+
+```
+.someClass {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+```
+
+- [PostCSS Media Variables](https://github.com/WolfgangKluge/postcss-media-variables): This plugin allows us to set 'default' breakpoints, and manipulate those values as needed without changing the defaults. Our defaults are defined in `common/styles/variables.css`
+
+**Example:**
+During development, we would write:
+
+```
+:root {
+    --largeViewportWidth: 992px;
+}
+@media (min-width: var(--largeViewportWidth)) {}
+```
+
+Which will output the following when deployed:
+
+```
+@media (min-width: 992px){}
+```
+
+- [PostCSS CSS Variables](https://github.com/MadLittleMods/postcss-css-variables): This plug-in allows us to use [CSS3 variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables) across older browsers. On run-time, this plug-in extracts and translates our custom variables into 'vanilla' CSS.
+
+**Example:**
+During development, we would write:
+
+```
+:root {
+  --some-color: red;
+  /*here we have defined the property `--some-color` as red*/
+}
+
+.foo {
+  color: --some-color;
+/*the element with class selector `.foo` will be red */
+}
+
+```
+
+Which will output the following when deployed:
+
+```
+.foo {
+  color: red;
+}
+```
+
+- [PostCSS Export Custom Variables](https://github.com/jonathantneal/postcss-export-custom-variables): We use this plug-in simply to export our collection of CSS variables to [common/styles/themeMap.js](https://github.com/OperationCode/front-end/blob/master/common/styles/themeMap.js) so that they're leveragable within any JavaScript context.
+
+- [PostCSS Import](https://github.com/postcss/postcss-import): This plug-in essentially tries to emulate the existing [CSS Import spec](https://developer.mozilla.org/en-US/docs/Web/CSS/@import) allowing for modularization and concatenation of CSS files.
 
 ## Development Workflow
 
@@ -108,7 +190,7 @@ _You can check to see your versions like so:_
 - Run `node -v`. You can download the latest LTS release of node at [nodejs.org](https://nodejs.org) or you can use [nvm](https://github.com/creationix/nvm) to be able to switch between node versions easily for many projects. If you use Windows, you will need to use [nvm-windows](https://github.com/coreybutler/nvm-windows) instead.
 - Run `npm -v`. If you do not have version 4 or greater, run `npm install -g npm`
 - Run `yarn --version`. If you do not have version 1.12.1 or greater, run `npm install --global yarn`.
-- Once you have all the required tooling, you should be able to run `yarn` at the root level of your forked repository. You should see a bunch of emojis and progress bars - that is how you will know it is working!
+- Once you have all the required tooling, you should be able to run `yarn` at the root level of your forked repo. You should see a bunch of emojis and progress bars - that is how you will know it is working!
 
 ### Run The Development Server
 
