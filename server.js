@@ -3,8 +3,8 @@ const { parse } = require('url');
 const { join } = require('path');
 const next = require('next');
 
-const port = parseInt(process.env.PORT, 10) || 3000;
 const dev = process.env.NODE_ENV !== 'production';
+const port = dev ? 3000 : 3001;
 const app = next({ dev });
 const handle = app.getRequestHandler();
 
