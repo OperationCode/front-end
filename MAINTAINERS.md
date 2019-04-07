@@ -6,14 +6,14 @@ Check out [how Operation Code Open Source projects are maintained](https://githu
 
 # Project Lead
 
-* [Kyle Holmberg](http://www.github.com/kylemh)
+- [Kyle Holmberg](http://www.github.com/kylemh)
 
 # Sergeant
 
-* [Evan Cooper](http://www.github.com/cooperbuilt)
+- [Evan Cooper](http://www.github.com/cooperbuilt)
 
 # Maintainers
 
-* [Kelly MacLeod](http://www.github.com/ksmacleod99)
-* [Will Montgomery](http://www.github.com/wimo7083)
-* [John Hampton](https://github.com/jjhampton)
+- [Kelly MacLeod](http://www.github.com/ksmacleod99)
+- [Will Montgomery](http://www.github.com/wimo7083)
+- [John Hampton](https://github.com/jjhampton)
