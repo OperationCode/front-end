@@ -7,6 +7,7 @@
   justify-content: center;
   min-height: 250px;
   width: 100%;
+  fill: currentColor;
 }
 
 /* need to have a higher order of specificity since HeroBanner fights it */
@@ -28,18 +29,15 @@
 .secondary {
   background-color: var(--secondary);
   color: var(--white);
-  fill: var(--white);
 }
 
 /* Light Themes */
 .gray {
   background-color: var(--gray);
   color: var(--secondary);
-  fill: var(--secondary);
 }
 
 .white {
   background-color: var(--white);
   color: var(--secondary);
-  fill: var(--secondary);
 }
