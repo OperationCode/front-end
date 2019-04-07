@@ -13,37 +13,37 @@ cache:
 before_install:
   - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.15.2
   - export PATH="$HOME/.yarn/bin:$PATH"
-  # - yarn global add greenkeeper-lockfile@2
+  - yarn global add greenkeeper-lockfile@2
 
 install:
   - yarn --silent
 
 before_script:
-  # - greenkeeper-lockfile-update
-  # - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-  # - chmod +x ./cc-test-reporter
-  # - ./cc-test-reporter before-build
+  - greenkeeper-lockfile-update
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
 
 script:
-  # - yarn lint
-  # - yarn test:unit:ci
+  - yarn lint
+  - yarn test:unit:ci
   - yarn start-server-and-test dev http://localhost:3000 test:e2e:ci
   - yarn build
 
 after_script:
-  # - greenkeeper-lockfile-upload
-  # - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+  - greenkeeper-lockfile-upload
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 
 deploy:
-  # - provider: script
-  #   script: echo 'No build on feature branches. @zeit/now deploys static exports automatically.'
-  #   skip_cleanup: true
-  #   on:
-  #     all_branches: true
-  #     master: false
   - provider: script
-    script: ./run-now.sh
+    script: echo 'No build on feature branches. @zeit/now deploys static exports automatically.'
     skip_cleanup: true
     on:
       all_branches: true
+      master: false
+  - provider: script
+    script: yarn add now && now --local-config=./now.master.json --token $NOW_TOKEN && now alias --local-config=./now.master.json --token $NOW_TOKEN
+    skip_cleanup: true
+    on:
+      all_branches: false
       master: true
