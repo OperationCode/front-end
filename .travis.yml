@@ -25,11 +25,10 @@ before_script:
   # - ./cc-test-reporter before-build
 
 script:
-  - yarn lint
-  - yarn test:unit:ci
-  - yarn build ## for dev server
+  # - yarn lint
+  # - yarn test:unit:ci
   - yarn start-server-and-test dev http://localhost:3000 test:e2e:ci
-  - yarn build ## run twice to avoid dev server pollution
+  - yarn build
 
 after_script:
   # - greenkeeper-lockfile-upload
