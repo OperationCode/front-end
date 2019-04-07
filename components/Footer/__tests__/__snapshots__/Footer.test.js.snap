@@ -202,22 +202,17 @@ exports[`Footer should render with no props passed 1`] = `
     <div
       className="row legalLinks"
     >
-      <OutboundLink
-        analyticsEventLabel="FooterLink"
-        hasIcon={true}
-        href="https://www.somefakeurl.com/"
+      <Link
+        href="/terms"
       >
-        Terms of Use
-      </OutboundLink>
+        <a
+          className="lineHeightFix"
+        >
+          Terms of Use
+        </a>
+      </Link>
       <OutboundLink
-        analyticsEventLabel="FooterLink"
-        hasIcon={true}
-        href="https://www.anotherfakeurl.com/"
-      >
-        Cookies
-      </OutboundLink>
-      <OutboundLink
-        analyticsEventLabel="FooterLink"
+        analyticsEventLabel="Privacy footer link"
         hasIcon={true}
         href="https://www.iubenda.com/privacy-policy/8174861"
       >

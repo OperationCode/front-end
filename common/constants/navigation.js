@@ -112,19 +112,19 @@ export const footerItems = {
   ],
   legal: [
     {
-      analyticsEventLabel: 'FooterLink',
-      href: 'https://www.somefakeurl.com/',
+      href: '/terms',
       name: 'Terms of Use',
     },
+    // TODO: Create a link for this
+    // {
+    //   href: 'https://www.anotherfakeurl.com/',
+    //   name: 'Cookies',
+    //   analyticsEventLabel: 'Cookies',
+    // },
     {
-      analyticsEventLabel: 'FooterLink',
-      href: 'https://www.anotherfakeurl.com/',
-      name: 'Cookies',
-    },
-    {
-      analyticsEventLabel: 'FooterLink',
       href: 'https://www.iubenda.com/privacy-policy/8174861',
       name: 'Privacy',
+      analyticsEventLabel: 'Privacy',
     },
   ],
 };

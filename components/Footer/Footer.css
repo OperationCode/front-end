@@ -176,3 +176,11 @@
     margin-left: 1.5rem;
   }
 }
+
+.lineHeightFix {
+  /*
+   * A bit of technical debt here...
+   * OutboundLinks with the icon end up larger in height than other links
+   */
+  line-height: 24px;
+}

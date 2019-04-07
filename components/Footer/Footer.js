@@ -76,14 +76,14 @@ function Footer() {
             link.analyticsEventLabel ? (
               <OutboundLink
                 key={link.href}
-                analyticsEventLabel={link.analyticsEventLabel}
+                analyticsEventLabel={`${link.name} footer link`}
                 href={link.href}
               >
                 {link.name}
               </OutboundLink>
             ) : (
               <Link href={link.href} key={link.href}>
-                <a>{link.name}</a>
+                <a className={styles.lineHeightFix}>{link.name}</a>
               </Link>
             ),
           )}
