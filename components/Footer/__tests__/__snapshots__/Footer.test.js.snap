@@ -67,15 +67,6 @@ exports[`Footer should render with no props passed 1`] = `
         >
           <li>
             <Link
-              href="/who_we_serve"
-            >
-              <a>
-                Who We Serve
-              </a>
-            </Link>
-          </li>
-          <li>
-            <Link
               href="/code_schools"
             >
               <a>
@@ -120,15 +111,6 @@ exports[`Footer should render with no props passed 1`] = `
           </li>
           <li>
             <Link
-              href="/mentoring"
-            >
-              <a>
-                Become A Mentor
-              </a>
-            </Link>
-          </li>
-          <li>
-            <Link
               href="/history"
             >
               <a>
@@ -137,27 +119,18 @@ exports[`Footer should render with no props passed 1`] = `
             </Link>
           </li>
           <li>
-            <Link
-              href="/donate"
+            <OutboundLink
+              analyticsEventLabel="Donate footer link"
+              hasIcon={false}
+              href="https://secure.lglforms.com/form_engine/s/BRtP7QUKyHOyEYsZROsRew"
             >
-              <a>
-                Donate
-              </a>
-            </Link>
+              Donate
+            </OutboundLink>
           </li>
         </ul>
         <ul
           className="linksColumn"
         >
-          <li>
-            <Link
-              href="/resources"
-            >
-              <a>
-                Resources
-              </a>
-            </Link>
-          </li>
           <li>
             <Link
               href="/press"
@@ -178,10 +151,10 @@ exports[`Footer should render with no props passed 1`] = `
           </li>
           <li>
             <Link
-              href="/blog"
+              href="/who_we_serve"
             >
               <a>
-                Blog
+                Who We Serve
               </a>
             </Link>
           </li>

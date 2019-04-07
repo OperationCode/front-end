@@ -10,6 +10,23 @@ import styles from './Footer.css';
 function Footer() {
   const currentYear = new Date().getFullYear();
 
+  // eslint-disable-next-line react/prop-types
+  const renderLink = ({ href, name, analyticsEventLabel }) => {
+    return (
+      <li key={href}>
+        {analyticsEventLabel ? (
+          <OutboundLink analyticsEventLabel={`${name} footer link`} href={href} hasIcon={false}>
+            {name}
+          </OutboundLink>
+        ) : (
+          <Link href={href}>
+            <a>{name}</a>
+          </Link>
+        )}
+      </li>
+    );
+  };
+
   return (
     <footer className={styles.Footer}>
       <div className={classNames(styles.footerWrapper, styles.row)}>
@@ -24,42 +41,19 @@ function Footer() {
         <div className={classNames(styles.footerGrouping, styles.linksGrouping, styles.capitalize)}>
           <div className={styles.linksRow}>
             <ul className={styles.linksColumn}>
-              {footerItems.column1.map(link => (
-                <li key={link.href}>
-                  <Link href={link.href}>
-                    <a>{link.name}</a>
-                  </Link>
-                </li>
-              ))}
+              {footerItems.column1.map(link => renderLink(link))}
             </ul>
             <ul className={styles.linksColumn}>
-              {footerItems.column2.map(link => (
-                <li key={link.href}>
-                  <Link href={link.href}>
-                    <a>{link.name}</a>
-                  </Link>
-                </li>
-              ))}
+              {footerItems.column2.map(link => renderLink(link))}
             </ul>
           </div>
+
           <div className={styles.linksRow}>
             <ul className={styles.linksColumn}>
-              {footerItems.column3.map(link => (
-                <li key={link.href}>
-                  <Link href={link.href}>
-                    <a>{link.name}</a>
-                  </Link>
-                </li>
-              ))}
+              {footerItems.column3.map(link => renderLink(link))}
             </ul>
             <ul className={styles.linksColumn}>
-              {footerItems.column4.map(link => (
-                <li key={link.href}>
-                  <Link href={link.href}>
-                    <a>{link.name}</a>
-                  </Link>
-                </li>
-              ))}
+              {footerItems.column4.map(link => renderLink(link))}
             </ul>
           </div>
         </div>
@@ -71,8 +65,7 @@ function Footer() {
         </div>
         <div className={classNames(styles.row, styles.legalLinks)}>
           {footerItems.legal.map(link =>
-            // Use OutboundLink if non-internal URL
-            // (indicated by the presence of an analytics label)
+            // / logic of renderLink duplicated here
             link.analyticsEventLabel ? (
               <OutboundLink
                 key={link.href}

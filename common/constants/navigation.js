@@ -1,3 +1,5 @@
+import { donateLink } from 'common/constants/urls';
+
 // links shared between nav and footer (no duplicate code)
 const contactLink = {
   name: 'Contact Us',
@@ -64,10 +66,6 @@ export const footerItems = {
   ],
   column2: [
     {
-      href: '/who_we_serve',
-      name: 'Who We Serve',
-    },
-    {
       href: '/code_schools',
       name: 'Code Schools',
     },
@@ -79,24 +77,25 @@ export const footerItems = {
   ],
   column3: [
     getInvolvedLink,
-    {
-      href: '/mentoring',
-      name: 'Become A Mentor',
-    },
+    // {
+    //   href: '/mentoring',
+    //   name: 'Become A Mentor',
+    // },
     {
       href: '/history',
       name: 'History',
     },
     {
-      href: '/donate',
+      href: donateLink,
       name: 'Donate',
+      analyticsEventLabel: 'Donate',
     },
   ],
   column4: [
-    {
-      href: '/resources',
-      name: 'Resources',
-    },
+    // {
+    //   href: '/resources',
+    //   name: 'Resources',
+    // },
     {
       href: '/press',
       name: 'Press',
@@ -106,9 +105,14 @@ export const footerItems = {
       name: 'Branding',
     },
     {
-      href: '/blog',
-      name: 'Blog',
+      // TODO: move this to column 2 when column 4 has 3 items
+      href: '/who_we_serve',
+      name: 'Who We Serve',
     },
+    // {
+    //   href: '/blog',
+    //   name: 'Blog',
+    // },
   ],
   legal: [
     {
