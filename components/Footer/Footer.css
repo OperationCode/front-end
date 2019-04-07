@@ -27,6 +27,17 @@
   padding-bottom: 2rem;
 }
 
+.row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.column {
+  flex-direction: column;
+}
+
 .logoGrouping img {
   height: 40px;
 }
@@ -59,18 +70,8 @@
 
 .legalLinks {
   max-width: 300px;
-  justify-content: space-around;
-}
-
-.row {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-
-.column {
-  flex-direction: column;
+  justify-content: center;
+  flex-wrap: nowrap;
 }
 
 .marginBottom {
@@ -177,10 +178,16 @@
   }
 }
 
+/*
+ * A bit of technical debt here...
+ * OutboundLinks with the icon end up larger in height than other links
+ */
 .lineHeightFix {
-  /*
-   * A bit of technical debt here...
-   * OutboundLinks with the icon end up larger in height than other links
-   */
-  line-height: 24px;
+  line-height: 22px;
+}
+
+@media screen and (--extra-large-viewport) {
+  .lineHeightFix {
+    line-height: 24px;
+  }
 }
