@@ -22,15 +22,15 @@ const VISIBILITY_OFFSET = 400;
 const mentorItems = [
   {
     icon: <HighfivingIcon />,
-    label: 'Feel More Confident',
+    label: 'Feel more confident',
   },
   {
     icon: <BullseyeIcon />,
-    label: 'Have Defined Career Goals',
+    label: 'Have defined career goals',
   },
   {
     icon: <ManHoldingKeyIcon />,
-    label: 'Reach Their True Potential',
+    label: 'Reach their true potential',
   },
 ];
 
