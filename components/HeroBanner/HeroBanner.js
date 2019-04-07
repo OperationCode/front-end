@@ -5,7 +5,7 @@ import Container from 'components/Container/Container';
 import styles from './HeroBanner.css';
 
 HeroBanner.propTypes = {
-  backgroundImageSource: PropTypes.string.isRequired,
+  backgroundImageSource: PropTypes.string,
   className: PropTypes.string,
   children: PropTypes.node,
   isFullViewportHeight: PropTypes.bool,
@@ -13,6 +13,7 @@ HeroBanner.propTypes = {
 };
 
 HeroBanner.defaultProps = {
+  backgroundImageSource: '',
   className: undefined,
   children: undefined,
   isFullViewportHeight: false,

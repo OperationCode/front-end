@@ -35,6 +35,6 @@
 
 @media screen and (--medium-viewport) {
   .heroBannerMobilePositioning {
-    background-position: right center;
+    background-position: 60% center;
   }
 }

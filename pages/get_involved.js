@@ -22,15 +22,15 @@ const VISIBILITY_OFFSET = 400;
 const mentorItems = [
   {
     icon: <HighfivingIcon />,
-    label: 'Feel More Confident',
+    label: 'Feel more confident',
   },
   {
     icon: <BullseyeIcon />,
-    label: 'Have Defined Career Goals',
+    label: 'Have defined career goals',
   },
   {
     icon: <ManHoldingKeyIcon />,
-    label: 'Reach Their True Potential',
+    label: 'Reach their true potential',
   },
 ];
 
@@ -54,7 +54,7 @@ export default () => (
     <Head title="Get Involved" />
 
     <HeroBanner
-      backgroundImageSource={`${s3}redesign/heroBanners/events.jpg`}
+      backgroundImageSource={`${s3}redesign/heroBanners/get_involved.jpg`}
       className={styles.heroBannerMobilePositioning}
       title="You Can Make An Impact"
     >
@@ -87,7 +87,10 @@ export default () => (
         <TrackVisibility offset={VISIBILITY_OFFSET}>
           {({ isVisible }) => (
             <div className={classNames(styles.image, { [styles.showImage]: isVisible })}>
-              <img src={`${s3}redesign/images/woman.jpg`} alt="Woman smiling at computer" />
+              <img
+                src={`${s3}redesign/images/one_on_one_mentoring.jpg`}
+                alt="Woman outlines a whiteboarding problem to a man"
+              />
             </div>
           )}
         </TrackVisibility>,

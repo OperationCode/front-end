@@ -17,7 +17,7 @@ import BullhornIcon from 'static/images/icons/FontAwesome/bullhorn-solid.svg';
 // import RightAngleIcon from 'static/images/icons/FontAwesome/angle-right-solid.svg';
 import UserIcon from 'static/images/icons/FontAwesome/user-solid.svg';
 import DiversityIcon from 'static/images/icons/FontAwesome/users-solid.svg';
-import { s3 } from 'common/constants/urls';
+import { donateLink, s3 } from 'common/constants/urls';
 import styles from './styles/events.css';
 
 const VISIBILITY_OFFSET = 400;
@@ -25,30 +25,30 @@ const VISIBILITY_OFFSET = 400;
 const sponsorItems = [
   {
     icon: <BookIcon />,
-    label: 'Education Materials',
+    label: 'Education materials',
   },
   {
     icon: <BuildingIcon />,
-    label: 'Workspaces for Meetups',
+    label: 'Workspaces for meetups',
   },
   {
     icon: <UtensilsIcon />,
-    label: 'Food for Longer Meetups',
+    label: 'Food for longer meetups',
   },
 ];
 
 const hostEventItems = [
   {
     icon: <BullhornIcon />,
-    label: 'Raise Awareness',
+    label: 'Raise awareness of our cause',
   },
   {
     icon: <DiversityIcon />,
-    label: 'Add Diversity to Conventions',
+    label: 'Incentivize membership',
   },
   {
     icon: <UserIcon />,
-    label: 'Get Our Voices out There',
+    label: 'Champion underrepresented groups',
   },
 ];
 
@@ -92,15 +92,23 @@ export default () => {
       <HeroBanner title={pageTitle} backgroundImageSource={`${s3}redesign/heroBanners/events.jpg`}>
         <>
           <p>
-            Need more Operation Code in your life? From conventions to tech meetups, we are where
-            you are! There are 4,000+ members across more than 20 states!
+            Need more Operation Code in your life?
+            <br />
+            From conventions to tech meetups, we are where you are!
+            <br />
+            There are 4,000+ members across more than 20 states!
           </p>
 
-          <LinkButton href="#">See Locations</LinkButton>
+          <LinkButton
+            href="https://www.meetup.com/pro/operationcode"
+            analyticsEventLabel="Meetup.com Locations Link"
+          >
+            SeeLocations
+          </LinkButton>
         </>
       </HeroBanner>
 
-      <Content
+      {/* <Content
         title="Upcoming Events:"
         theme="gray"
         columns={[
@@ -109,7 +117,7 @@ export default () => {
             meetups or engagements
           </p>,
         ]}
-      />
+      /> */}
 
       {/* commented out until api endpoints */}
       {/* <div className={styles.eventsCarousel}>
@@ -137,23 +145,47 @@ export default () => {
       </div> */}
 
       <Content
-        backgroundImageSource={`${s3}redesign/heroBanners/events.jpg`}
+        // backgroundImageSource={`${s3}redesign/heroBanners/events.jpg`}
         id="meetupCardsBanner"
         columns={[
-          <FlatCard button={<LinkButton href="#">Locations</LinkButton>}>
+          <FlatCard
+            button={
+              <LinkButton
+                href="https://www.meetup.com/pro/operationcode"
+                analyticsEventLabel="Meetup.com Locations Link"
+              >
+                Locations
+              </LinkButton>
+            }
+          >
             <span className={styles.meetupCardHeader}>Find Your Local Meetup</span>
           </FlatCard>,
-          <FlatCard button={<LinkButton href="#">Find Out How</LinkButton>}>
-            <span className={styles.meetupCardHeader}>Start a Meetup in Your Area</span>
+          <FlatCard
+            button={
+              <LinkButton
+                href="mailto:staff@operationcode.org?subject=Start Meetup"
+                analyticsEventLabel="Start Meetup"
+              >
+                Find Out How
+              </LinkButton>
+            }
+          >
+            <span className={styles.meetupCardHeader}>Start A Meetup In Your Area</span>
           </FlatCard>,
-          <FlatCard button={<LinkButton href="#">Find Out How</LinkButton>}>
-            <span className={styles.meetupCardHeader}>Donate to Your Local Meetup</span>
+          <FlatCard
+            button={
+              <LinkButton href={donateLink} analyticsEventLabel="Donate">
+                Find Out How
+              </LinkButton>
+            }
+          >
+            <span className={styles.meetupCardHeader}>Donate To Your Local Meetup</span>
           </FlatCard>,
         ]}
       />
 
       <Content
-        title="Want to Become a Sponsor?"
+        title="Want to become a sponsor?"
         theme="gray"
         columns={[
           <p>Sponsoring a meetup ensures we have access to:</p>,
@@ -175,7 +207,10 @@ export default () => {
           <TrackVisibility offset={VISIBILITY_OFFSET}>
             {({ isVisible }) => (
               <div className={classNames(styles.image, { [styles.showImage]: isVisible })}>
-                <img src={`${s3}redesign/images/woman.jpg`} alt="Woman smiling at computer" />
+                <img
+                  src={`${s3}redesign/images/chef_seattle_meetup.jpg`}
+                  alt="Nell Shamrell-Harrington gives a talk at Chef in Seattle"
+                />
               </div>
             )}
           </TrackVisibility>,
@@ -185,24 +220,29 @@ export default () => {
             </Heading>
 
             <p>
-              From classes, to hackathons, to contributions to our open source projects. Our meetups
-              are just one way we engage with our veterans and our community. Wanna help out? Find
-              out how you can sponsor us, from food, to educational materials, and a space for us to
-              meet.
+              From classes, to hackathons, to contributing to open source projects as a group. Our
+              meetups are just one way we engage with our veterans and our community. Wanna help
+              out? Find out how you can sponsor us, from food, to educational materials, and a space
+              for us to meet.
             </p>
 
             <div className={styles.centeredText}>
-              <LinkButton href="/mentor">Become A Mentor</LinkButton>
+              <LinkButton
+                href="mailto:staff@operationcode.org?subject=Sponsor Meetup"
+                analyticsEventLabel="Sponsor Meetup"
+              >
+                Become A Sponsor
+              </LinkButton>
             </div>
           </div>,
         ]}
       />
 
       <Content
-        title="Ways You Can Support Operation Code"
+        title="Want to host us at your next event?"
         theme="gray"
         columns={[
-          <p>Sponsoring a meetup ensures we have access to:</p>,
+          <p>Hosting us at events helps us:</p>,
           <div className={styles.badgeGroupings}>
             {hostEventItems.map(item => (
               <Badge
@@ -220,7 +260,7 @@ export default () => {
         columns={[
           <div>
             <Heading hasHeadingLines={false} theme="white">
-              Host Us at an Event
+              Host Us At An Event
             </Heading>
 
             <p>
@@ -231,13 +271,21 @@ export default () => {
             </p>
 
             <div className={styles.centeredText}>
-              <LinkButton href="/mentor">Become A Mentor</LinkButton>
+              <LinkButton
+                href="mailto:staff@operationcode.org?subject=Host Meetup"
+                analyticsEventLabel="Host Meetup"
+              >
+                Host Us
+              </LinkButton>
             </div>
           </div>,
           <TrackVisibility offset={VISIBILITY_OFFSET}>
             {({ isVisible }) => (
               <div className={classNames(styles.image, { [styles.showImage]: isVisible })}>
-                <img src={`${s3}redesign/images/woman.jpg`} alt="Woman smiling at computer" />
+                <img
+                  src={`${s3}redesign/images/molina_speaking_at_podium.jpg`}
+                  alt="David Molina presents Operation Code at OSCON"
+                />
               </div>
             )}
           </TrackVisibility>,
