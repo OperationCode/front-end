@@ -3,7 +3,6 @@ import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 import { withKnobs, boolean, text } from '@storybook/addon-knobs';
 
-import { s3 } from 'common/constants/urls';
 import HeroBanner from '../HeroBanner';
 
 storiesOf('HeroBanner', module)
@@ -12,7 +11,7 @@ storiesOf('HeroBanner', module)
     'default',
     withInfo()(() => (
       <HeroBanner
-        backgroundImageSource={text('backgroundImageSource', `${s3}heroBanners/stock_family-2.jpg`)}
+        backgroundImageSource={text('backgroundImageSource', '')}
         isFullViewportHeight={boolean('isFullViewportHeight', false)}
         title={text('title', 'Hero Banner')}
       >

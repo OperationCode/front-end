@@ -6,17 +6,15 @@ import { s3 } from 'common/constants/urls';
 import HeroBanner from '../HeroBanner';
 
 describe('HeroBanner', () => {
-  const testImageUrl = `${s3}heroBanner/stock_family-2.jpg`;
-
   it('should render with required props', () => {
-    createSnapshotTest(<HeroBanner title="Test" backgroundImageSource={testImageUrl} />);
+    createSnapshotTest(<HeroBanner title="Test" />);
   });
 
   it('should render with many props assigned', () => {
     createSnapshotTest(
       <HeroBanner
         title="Test"
-        backgroundImageSource={testImageUrl}
+        backgroundImageSource={`${s3}heroBanner/stock_family-2.jpg`}
         className="test"
         isFullViewportHeight
       >
