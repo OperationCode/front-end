@@ -1,0 +1,15 @@
+.centeredText {
+  text-align: center;
+}
+
+.badgeGroupings {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: -1rem;
+}
+
+.badge {
+  fill: var(--secondary);
+  margin: 1rem 4rem;
+}
