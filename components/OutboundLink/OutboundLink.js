@@ -6,6 +6,7 @@ import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
 import styles from './OutboundLink.css';
 
 OutboundLink.propTypes = {
+  // will report this label plus the URL from where it was clicked
   analyticsEventLabel: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
