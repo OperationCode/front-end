@@ -13,7 +13,7 @@
   align-items: center;
   color: var(--secondary);
   display: flex;
-  fill: var(--secondary);
+  fill: currentColor;
   height: 100%;
   justify-content: center;
   transition: all 0.2s linear;
@@ -37,7 +37,6 @@
 .NavListItem:hover .sublinkToggleButton:not(.sublinkListItem) {
   cursor: pointer;
   color: var(--primary);
-  fill: var(--primary);
   transition: all 0.2s linear;
 }
 
