@@ -26,7 +26,7 @@ before_script:
 
 script:
   - yarn lint
-  - yarn test:unit:ci
+  - yarn test:ci
   - yarn start-server-and-test dev http://localhost:3000 test:e2e:ci
   - if [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_BRANCH" == "master" ]; then yarn build; fi
 

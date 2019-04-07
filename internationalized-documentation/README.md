@@ -19,6 +19,7 @@ These files simply change to frequently.
 - Link to that file at the top of the original file.
 
 Example, inside [CODE_OF_CONDUCT.md](../CODE_OF_CONDUCT.md):
+
 ```
 [German](./internationalized-documentation/Germany/CODE_OF_CONDUCT_DE.md)
 ```

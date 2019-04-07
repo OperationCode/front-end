@@ -1,12 +1,10 @@
-
-
 Operasyon Kodu: Davranış Kuralları
 
 Bizim Vaatlerimiz
 
-Açık ve davetkar bir ortamı teşvik etmek adına, katkıda bulunanlar ve koruyucular olarak, projemize ve topluluğumuza,  deneyim düzeyi, milliyet, kişisel görünüş, ırk, din veya cinsel kimlik ve yönelime bakılmaksızın herkes için tacizden arınmış bir deneyim sunmayı taahhüt ediyoruz.
+Açık ve davetkar bir ortamı teşvik etmek adına, katkıda bulunanlar ve koruyucular olarak, projemize ve topluluğumuza, deneyim düzeyi, milliyet, kişisel görünüş, ırk, din veya cinsel kimlik ve yönelime bakılmaksızın herkes için tacizden arınmış bir deneyim sunmayı taahhüt ediyoruz.
 
-Bizim Standartlarımız 
+Bizim Standartlarımız
 
 Olumlu bir ortam yaratmaya katkıda bulunan davranış örnekleri şunları içerir:
 
@@ -23,15 +21,15 @@ Katılımcılar tarafından kabul edilemez davranış örnekleri şunları içer
 
 Cinsel dil veya imgelerin kullanımı ve istenmeyen cinsel ilgi veya ilerlemeler
 
-Trolling, aşağılayama/  aşağılayıcı yorumlar ve kişisel ya da politik saldırılar
+Trolling, aşağılayama/ aşağılayıcı yorumlar ve kişisel ya da politik saldırılar
 
 Kamu ya da özel taciz
 
-Fiziksel veya elektronik adres gibi başkalarının özel bilgilerini açık izinsiz yayınlama 
+Fiziksel veya elektronik adres gibi başkalarının özel bilgilerini açık izinsiz yayınlama
 
 Makul bir şekilde profesyonel bir ortamda uygunsuz olarak kabul edilebilecek diğer davranışlar
 
-Sorumluluklarımız 
+Sorumluluklarımız
 
 Proje yürütücüleri kabul edilebilir davranış standartlarını açıklamaktan sorumludur ve kabul edilemez davranış durumlarına karşılık olarak uygun ve adil düzeltici önlemler almaları beklenmektedir.
 
@@ -50,4 +48,3 @@ Davranış Kurallarını iyi niyetle takip etmeyen veya uygulayan proje sahipler
 Atfetme
 
 Bu Davranış Kuralları, http://contributor-covenant.org/version/1/4 adresinde bulunan, Kullanıcı Sözleşmesi, 1.4 Sürümünden uyarlanmıştır.
-
