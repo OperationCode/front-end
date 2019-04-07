@@ -10,7 +10,7 @@ const nextConfig = withCSS({
     localIdentName: '[name]_[local]__[hash:base64:5]',
   },
 
-  // Bundle Analyzer Config
+  // Bundle Analyzer Config (only used when running `yarn build:analyze`)
   analyzeServer: process.env.ANALYZE,
   analyzeBrowser: process.env.ANALYZE,
   bundleAnalyzerConfig: {
