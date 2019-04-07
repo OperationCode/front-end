@@ -99,7 +99,12 @@ export default () => {
             There are 4,000+ members across more than 20 states!
           </p>
 
-          <LinkButton href="#">See Locations</LinkButton>
+          <LinkButton
+            href="https://www.meetup.com/pro/operationcode"
+            analyticsEventLabel="Meetup.com Locations Link"
+          >
+            SeeLocations
+          </LinkButton>
         </>
       </HeroBanner>
 
