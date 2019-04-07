@@ -111,7 +111,7 @@ In our repo, we use PostCSS plug-ins to help simplify how we write our CSS. Post
 #### PostCSS Plug-ins in Use
 
 - [Autoprefixer](https://github.com/postcss/autoprefixer): used to parse vendor prefixes for certain CSS property values
-([What is a vendor prefix?](https://developer.mozilla.org/en-US/docs/Glossary/Vendor_Prefix)). In our repo, you will not have to include vendor prefixes when you create a non-standard CSS selector.
+  ([What is a vendor prefix?](https://developer.mozilla.org/en-US/docs/Glossary/Vendor_Prefix)). In our repo, you will not have to include vendor prefixes when you create a non-standard CSS selector.
 
 **Example:**
 During development, we would write:
@@ -274,10 +274,13 @@ yarn dev
 yarn storybook
 
 # Create a static bundle of our Storybook instance that can be easily deployed.
-yarn build-storybook
+yarn storybook:build
 
-# Create a static bundle of our main application that can be easily deployed.
+# Create a bundle of our main application that can be easily deployed by a server or as a static export.
 yarn build
+
+# Run build, but expose local instances of bundle visualizations to see what code we ship to users' browsers.
+yarn build:analyze
 
 # Check for linting errors. Used in the precommit hook and on every build to ensure that code meets our linting standards.
 yarn lint
@@ -288,11 +291,26 @@ yarn format
 # Start the main application server or to serve up a production build locally.
 yarn start
 
-# Run all available unit and integration tests
+# Run all available unit and integration tests.
 yarn test
 
 # Update all snapshot tests
-yarn test -u
+yarn test -u OR yarn test:update-snaps
+
+# Only run tests for files changed from master branch
+yarn test:changes
+
+# Start a test runner for files changed from master branch
+yarn test:changes:watch
+
+# Start a test runner for all tests
+yarn test:watch
+
+# You can use the name of the file at the end of any non-e2e test command to run it against a single file
+yarn test $fileName
+
+# Opens up a Cypress browser with which you can check e2e tests locally. Be sure the local dev server is running before this command!
+yarn test:e2e
 
 #Create all the necessary files/folders for a new, reusable component. Please make `ComponentName` TitleCase.
 yarn create-component $ComponentName
