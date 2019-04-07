@@ -26,7 +26,7 @@ export default () => (
         You can also reach us via email:{' '}
         <OutboundLink
           href="mailto:staff@operationcode.org"
-          analyticsEventLabel="Contact Us - Twitter"
+          analyticsEventLabel="Email"
           hasIcon={false}
         >
           staff@operationcode.org
@@ -35,10 +35,7 @@ export default () => (
 
       <p>
         You could tweet at us:{' '}
-        <OutboundLink
-          href="https://twitter.com/operation_code"
-          analyticsEventLabel="Contact Us - Twitter"
-        >
+        <OutboundLink href="https://twitter.com/operation_code" analyticsEventLabel="Twitter">
           @operation_code
         </OutboundLink>
       </p>
