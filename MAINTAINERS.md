@@ -10,10 +10,10 @@ Check out [how Operation Code Open Source projects are maintained](https://githu
 
 # Sergeant
 
-- [Evan Cooper](http://www.github.com/cooperbuilt)
+- [Julian Flynn](https://github.com/juliantrueflynn)
 
 # Maintainers
 
-- [Kelly MacLeod](http://www.github.com/ksmacleod99)
-- [Will Montgomery](http://www.github.com/wimo7083)
+- [Kelly MacLeod](https://www.github.com/ksmacleod99)
+- [Will Montgomery](https://www.github.com/wimo7083)
 - [John Hampton](https://github.com/jjhampton)
