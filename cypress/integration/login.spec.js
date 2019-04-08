@@ -1,15 +1,16 @@
-beforeEach(() => {
-  cy.clearCookies();
-  cy.visit('/login');
-});
-
 describe('login', function() {
   it('should be able to login with valid credentials', () => {
+    cy.clearCookies();
+    cy.visit('/login');
+    cy.waitForPageToCompile();
+
     cy.getCookies().should('have.length', 0);
     cy.get('h1').should('have.text', 'Login');
     cy.get('input#email').type('kylemh.email12@gmail.com');
     cy.get('input#password').type('Testing1');
     cy.get('button[type="submit"]').click();
+
+    cy.waitForPageToCompile();
     cy.get('h1').should('have.text', 'Profile');
     cy.get('p').contains('Hello Kyle!');
     cy.getCookies()

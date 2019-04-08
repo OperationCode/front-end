@@ -19,8 +19,6 @@ import './commands';
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
 
-beforeEach(function() {
-  // Ensure that server is ready in CI
-  cy.server({ delay: 1000 });
-  cy.wait(1000); // eslint-disable-line cypress/no-unnecessary-waiting
+beforeEach(() => {
+  cy.waitForPageToCompile();
 });
