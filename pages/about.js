@@ -32,10 +32,11 @@ export default () => (
             We at Operation Code strive to provide an efficient way into a tech career for veterans
             and their families. We work directly with Senators, Congressmen, and Congresswomen to
             allow veterans total control of their future by permitting the use of the GI Bill on
-            coding bootcamps. You can read about our organization&apos;s history{' '}
+            coding bootcamps. We also have a page where you can read about our{' '}
             <Link href="/history" prefetch>
-              <a>here</a>
+              <a>organization&apos;s history</a>
             </Link>
+            .
           </p>
 
           <p>
