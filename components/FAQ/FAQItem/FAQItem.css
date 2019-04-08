@@ -6,13 +6,12 @@
   margin-top: 5px;
   max-height: 0;
   opacity: 0;
-  transform: translate(0, 5%);
   transition: all 0.4s ease;
   position: relative;
 }
 
 .accordionSingleHidden:checked ~ .accordionSingleAnswer {
-  max-height: 600px;
+  max-height: 1000px;
   opacity: 1;
   margin-top: 14px;
 }
