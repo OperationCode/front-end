@@ -1,4 +1,12 @@
 import { get, post, patch } from 'common/utils/api-utils';
+import wait from 'test-utils/wait';
+
+/* THIRD-PARTY APIs */
+// TODO: Make this method actually do stuff with mailchimp
+export const addMailchimpSubscriber = async values => {
+  console.log(values);
+  await wait(1);
+};
 
 /* GET REQUESTS */
 export const getCodeSchoolsPromise = () => get('code_schools');
