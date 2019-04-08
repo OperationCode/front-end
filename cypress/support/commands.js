@@ -11,7 +11,12 @@
 //
 // -- This is a parent command --
 // Cypress.Commands.add("login", (email, password) => { ... })
-//
+
+Cypress.Commands.add('waitForPageToCompile', () => {
+  cy.server({ delay: 1000 });
+  cy.wait(1000); // eslint-disable-line cypress/no-unnecessary-waiting
+});
+
 //
 // -- This is a child command --
 // Cypress.Commands.add("drag", { prevSubject: 'element'}, (subject, options) => { ... })
