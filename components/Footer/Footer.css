@@ -58,7 +58,7 @@
 }
 
 .legalGrouping {
-  font-size: 14px;
+  font-size: 0.75rem;
   justify-content: center;
   width: 100%;
 }
@@ -70,7 +70,7 @@
 
 .legalLinks {
   max-width: 300px;
-  justify-content: center;
+  justify-content: space-between;
   flex-wrap: nowrap;
 }
 
