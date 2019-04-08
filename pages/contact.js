@@ -23,7 +23,7 @@ export default () => (
         to receive an invite to our team, including our Slack chat.
       </p>
 
-      <p className={styles.forceWidth}>
+      <address className={classNames(styles.forceWidth, styles.address)}>
         <b>You can also reach us via email:</b>
         <br />
         <OutboundLink
@@ -33,20 +33,21 @@ export default () => (
         >
           staff@operationcode.org
         </OutboundLink>
-      </p>
+      </address>
 
-      <p className={styles.forceWidth}>
+      <address className={classNames(styles.forceWidth, styles.address)}>
         <b>You could tweet at us:</b>
         <br />
         <OutboundLink href="https://twitter.com/operation_code" analyticsEventLabel="Twitter">
           @operation_code
         </OutboundLink>
-      </p>
+      </address>
 
-      <div className={classNames(styles.address, styles.forceWidth)}>
-        <p>
+      <address className={classNames(styles.forceWidth, styles.address)}>
+        <p className={styles.forceWidth}>
           <b>And - if you really want to - you can snail-mail us:</b>
         </p>
+
         <span>
           Operation Code
           <br />
@@ -54,7 +55,7 @@ export default () => (
           <br />
           Portland, OR 97204
         </span>
-      </div>
+      </address>
     </HeroBanner>
   </>
 );

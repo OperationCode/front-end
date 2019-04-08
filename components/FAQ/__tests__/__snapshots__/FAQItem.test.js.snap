@@ -6,12 +6,12 @@ exports[`FAQItem should render with required props 1`] = `
 >
   <input
     className="accordionSingleHidden"
-    id="How do I test things?"
+    id="How do I test things"
     type="checkbox"
   />
   <label
     className="accordionSingleQuestion"
-    htmlFor="How do I test things?"
+    htmlFor="How do I test things"
   >
     How do I test things?
   </label>
