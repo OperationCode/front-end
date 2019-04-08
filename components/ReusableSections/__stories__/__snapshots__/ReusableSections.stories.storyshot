@@ -45,22 +45,15 @@ exports[`Storyshots ReusableSections JoinSection 1`] = `
     <p>
       Are you ready to begin your journey towards a career in software development?
       <br />
-      Get the support you need by joining our members only Slack community!
+      Get the support you need by joining our members-only Slack community!
     </p>
-    <form>
-      <input
-        placeholder="Email address"
-      />
-      <button
-        className="Button primary"
-        disabled={false}
-        onClick={[Function]}
-        tabIndex={0}
-        type="submit"
-      >
-        Join our Slack
-      </button>
-    </form>
+    <a
+      className="Button secondary"
+      href="/join"
+      onClick={[Function]}
+    >
+      Register Now
+    </a>
     <p>
       Slack is a community based collaboration tool where all the magic happens!
     </p>
@@ -79,30 +72,6 @@ exports[`Storyshots ReusableSections JoinSection 1`] = `
       <svg
         className="externalLinkIcon"
       />
-    </a>
-  </div>
-</div>
-`;
-
-exports[`Storyshots ReusableSections SignUpSection 1`] = `
-<div
-  className="Container white"
->
-  <div
-    className="content"
-  >
-    <h3>
-      New user?
-    </h3>
-    <p>
-      Are you ready to deploy your future? Join Operation Code today and launch your career in software development. Once you complete the form below, you’ll be invited to join our team on Slack. Make sure you stop in and say hi!
-    </p>
-    <a
-      className="Button secondary"
-      href="/signup"
-      onClick={[Function]}
-    >
-      Sign Up
     </a>
   </div>
 </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import Container from 'components/Container/Container';
-import Button from 'components/Button/Button';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
+import LinkButton from 'components/LinkButton/LinkButton';
 
 const JoinSection = () => (
   <Container theme="white">
@@ -10,13 +10,12 @@ const JoinSection = () => (
     <p>
       Are you ready to begin your journey towards a career in software development?
       <br />
-      Get the support you need by joining our members only Slack community!
+      Get the support you need by joining our members-only Slack community!
     </p>
 
-    <form>
-      <input placeholder="Email address" />
-      <Button type="submit">Join our Slack</Button>
-    </form>
+    <LinkButton href="/join" theme="secondary">
+      Register Now
+    </LinkButton>
 
     <p>Slack is a community based collaboration tool where all the magic happens!</p>
 
