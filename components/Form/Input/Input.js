@@ -7,6 +7,7 @@ import Label from 'components/Form/Label/Label';
 import styles from './Input.css';
 
 Input.propTypes = {
+  className: PropTypes.string,
   field: PropTypes.shape({
     name: PropTypes.string.isRequired,
   }).isRequired,
@@ -14,7 +15,8 @@ Input.propTypes = {
     touched: PropTypes.objectOf(PropTypes.bool),
     errors: PropTypes.objectOf(PropTypes.string),
   }).isRequired,
-  isLabelHidden: PropTypes.bool,
+  shouldHideError: PropTypes.bool,
+  shouldHideLabel: PropTypes.bool,
   id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   label: PropTypes.string.isRequired,
   type: PropTypes.oneOf([
@@ -44,16 +46,20 @@ Input.propTypes = {
 };
 
 Input.defaultProps = {
-  isLabelHidden: false,
+  className: undefined,
+  shouldHideError: false,
+  shouldHideLabel: false,
   id: '',
   type: 'text',
 };
 
 function Input({
+  className,
   field: { name, ...field },
   form: { touched, errors },
   label,
-  isLabelHidden,
+  shouldHideError,
+  shouldHideLabel,
   id,
   type,
   ...props // input simply has too many possible attributes... we'd be redocumenting the web
@@ -64,9 +70,9 @@ function Input({
   const isLabelBeforeInput = !isLabelAfterInput;
 
   return (
-    <div className={styles.field}>
+    <div className={classNames(styles.field, className)}>
       {isLabelBeforeInput && (
-        <Label for={name} isHidden={isLabelHidden}>
+        <Label for={name} isHidden={shouldHideLabel}>
           {label}
         </Label>
       )}
@@ -76,6 +82,7 @@ function Input({
           {...field}
           {...props}
           className={classNames(styles.input, {
+            [styles.inputWithError]: shouldHideError,
             [styles.valid]: touched[name] && !hasErrors,
             [styles.invalid]: touched[name] && hasErrors,
           })}
@@ -84,11 +91,13 @@ function Input({
           type={type}
         />
 
-        <ErrorMessage name={name} render={msg => <Alert isOpen={hasErrors}>{msg}</Alert>} />
+        {!shouldHideError && (
+          <ErrorMessage name={name} render={msg => <Alert isOpen={hasErrors}>{msg}</Alert>} />
+        )}
       </div>
 
       {isLabelAfterInput && (
-        <Label for={name} isHidden={isLabelHidden} className={styles.labelAfterInput}>
+        <Label for={name} isHidden={shouldHideLabel} className={styles.labelAfterInput}>
           {label}
         </Label>
       )}

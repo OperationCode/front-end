@@ -21,7 +21,7 @@ describe('Input', () => {
     createSnapshotTest(<Input {...requiredProps} />);
   });
 
-  it('should render with label', () => {
+  it('should render with exactly one label', () => {
     const wrapper = shallow(<Input {...requiredProps} />);
 
     expect(wrapper).toContainExactlyOneMatchingElement('Label');
@@ -42,6 +42,38 @@ describe('Input', () => {
     await wait();
     wrapper.update();
     expect(wrapper.find('Alert')).toHaveText('Required');
+  });
+
+  it('should hide label visually when prompted, but still render it', async () => {
+    const hiddenLabelInstance = mount(<Input {...requiredProps} shouldHideLabel />);
+    expect(hiddenLabelInstance).toContainExactlyOneMatchingElement('Label');
+    expect(hiddenLabelInstance).toContainExactlyOneMatchingElement('ScreenReaderOnly');
+
+    const visibleLabelInstance = mount(<Input {...requiredProps} />);
+    expect(visibleLabelInstance).toContainExactlyOneMatchingElement('Label');
+    expect(visibleLabelInstance).not.toContainExactlyOneMatchingElement('ScreenReaderOnly');
+  });
+
+  it('should hide label visually, despite errors existing', async () => {
+    // eslint-disable-next-line react/prop-types
+    const InputWithHiddenError = ({ form, field, ...otherProps }) => (
+      <Input form={form} field={field} {...otherProps} shouldHideError />
+    );
+
+    const validate = () => ({ test: 'Required' });
+
+    const wrapper = mount(
+      <Formik validate={validate}>
+        <Form>
+          <Field id="test" name="test" label="label" component={InputWithHiddenError} />,
+        </Form>
+      </Formik>,
+    );
+
+    wrapper.find('input').simulate('blur'); // trigger validation
+    await wait();
+    wrapper.update();
+    expect(wrapper.find('Alert')).not.toExist();
   });
 
   it('should render the label after input, but only when input type is radio or checkbox', () => {

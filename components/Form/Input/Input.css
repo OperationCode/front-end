@@ -6,10 +6,13 @@
   border: 1px solid rgba(var(--rgbValuesSecondary), 0.5);
   border-radius: 3px;
   font-size: 1.125rem;
-  margin-top: 0.25rem;
-  margin-bottom: 1rem;
+  margin: 0.25rem 0;
   padding: 0.5rem;
   min-width: 200px;
+}
+
+.inputWithError {
+  margin-bottom: 1rem;
 }
 
 .input:focus {

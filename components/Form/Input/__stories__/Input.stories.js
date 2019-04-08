@@ -18,7 +18,8 @@ storiesOf('Form/Input', module)
         field={{ name: inputName }}
         form={object('form', { touched: { [inputName]: false }, errors: { [inputName]: '' } })}
         id={text('id', '')}
-        isLabelHidden={boolean('isLabelHidden', false)}
+        shouldHideError={boolean('shouldHideError', false)}
+        shouldHideLabel={boolean('shouldHideLabel', false)}
         label={text('label', 'Some Input:')}
         type={select('type', [
           'button',
