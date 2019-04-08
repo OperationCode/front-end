@@ -45,8 +45,8 @@ export default () => (
         <div>
           <p>
             Military veterans, service members, and spouses who are passionate about transition into
-            a career in software development. We work with over 4,000 members who are all are
-            working to enter or currently thrive in the tech industry.
+            a career in software development. We work with over 4,000 members who are all working to
+            enter or currently thrive in the tech industry.
           </p>
 
           <div className={styles.centeredText}>

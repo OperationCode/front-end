@@ -191,7 +191,7 @@ export default () => (
         <ValueCard
           name="Community"
           description="We look out for the people to our left and right,
-            nd always keep a hand free to help. We listen to our community
+            and always keep a hand free to help. We listen to our community
             and our people to ensure we are working towards the mission and the vision."
         />,
       ]}
