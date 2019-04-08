@@ -13,7 +13,7 @@ export default () => (
 
     <HeroBanner title="Press">
       <>
-        <p>
+        <p className={styles.justifyAlign}>
           This page is designed to make a journalist&apos;s job easy in writing, blogging, or
           documenting Operation Code. Below you will find targeted information corresponding to
           common representative visitors, videos, photos, press releases, and branding details.
@@ -25,7 +25,7 @@ export default () => (
       theme="white"
       columns={[
         <aside>
-          <p>
+          <p className={styles.justifyAlign}>
             If you are looking for our mission statement or our values, please{' '}
             <Link href="/about">
               <a>go to the About page</a>
@@ -54,7 +54,7 @@ export default () => (
           <div className={styles.column}>
             <div className={styles.textGrouping}>
               <h4>Code Schools</h4>
-              <p>
+              <p className={styles.justifyAlign}>
                 Firstly, if your code school&apos;s information is not listed on our directory,
                 please contact us at{' '}
                 <a href="mailto:staff@operationcode.org?subject=Add Code School">
@@ -67,10 +67,11 @@ export default () => (
               </p>
             </div>
           </div>
+
           <div className={styles.column}>
             <div className={styles.textGrouping}>
               <h4>Partnered Organizations</h4>
-              <p>
+              <p className={styles.justifyAlign}>
                 We have long-standing, productive partnerships with some amazing companies, and
                 yours could be one of them! Organizations the put our members and our open source
                 work on a pedastal, can look forward to receive social media blasts and the
@@ -82,10 +83,11 @@ export default () => (
               </p>
             </div>
           </div>
+
           <div className={styles.column}>
             <div className={styles.textGrouping}>
               <h4>Media Outlets</h4>
-              <p>
+              <p className={styles.justifyAlign}>
                 The staff at Operation Code thank you for taking your time to represent us in your
                 work. If your piece has a specific theme or target, and you&apos;d like some custom
                 contributions, please join our organization to receive a Slack team invite. There

@@ -91,16 +91,14 @@ export default () => {
 
       <HeroBanner title={pageTitle} backgroundImageSource={`${s3}redesign/heroBanners/events.jpg`}>
         <>
-          <p>
-            Need more Operation Code in your life?
-            <br />
-            From conventions to tech meetups, we are where you are!
-            <br />
-            There are 4,000+ members across more than 20 states!
+          <p className={styles.justifyAlign}>
+            Need more Operation Code in your life? From conventions to tech meetups, we are where
+            you are! There are 4,000+ members across more than 20 states!
           </p>
 
           <LinkButton
             href="https://www.meetup.com/pro/operationcode"
+            className={styles.topMargin}
             analyticsEventLabel="Meetup.com Locations Link"
           >
             SeeLocations
@@ -219,7 +217,7 @@ export default () => {
               Sponsor a Meetup
             </Heading>
 
-            <p>
+            <p className={styles.justifyAlign}>
               From classes, to hackathons, to contributing to open source projects as a group. Our
               meetups are just one way we engage with our veterans and our community. Wanna help
               out? Find out how you can sponsor us, from food, to educational materials, and a space
@@ -230,6 +228,7 @@ export default () => {
               <LinkButton
                 href="mailto:staff@operationcode.org?subject=Sponsor Meetup"
                 analyticsEventLabel="Sponsor Meetup"
+                className={styles.topMargin}
               >
                 Become A Sponsor
               </LinkButton>
@@ -263,7 +262,7 @@ export default () => {
               Host Us At An Event
             </Heading>
 
-            <p>
+            <p className={styles.justifyAlign}>
               Not only are we working to get veterans into tech, we are also working to raise
               awareness of vets in the job market. From technical knowledge to diversity,
               we&rsquo;re not only a community of veterans, we also house a group of content experts
@@ -274,6 +273,7 @@ export default () => {
               <LinkButton
                 href="mailto:staff@operationcode.org?subject=Host Meetup"
                 analyticsEventLabel="Host Meetup"
+                className={styles.topMargin}
               >
                 Host Us
               </LinkButton>

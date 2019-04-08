@@ -1,4 +1,6 @@
-@import "../../common/styles/variables.css";
+.justifyAlign {
+  text-align: justify;
+}
 
 .row {
   display: flex;

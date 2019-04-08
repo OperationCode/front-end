@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import Link from 'next/link';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
@@ -9,12 +10,12 @@ export default () => (
     <Head title="Contact Us" />
 
     <HeroBanner className={styles.contactHero} isFullViewportHeight title="Contact Us">
-      <p>
+      <p className={styles.justifyAlign}>
         We are a decentralized community of hard-working volunteers, and we love hearing feedback,
         comments, and suggestions!
       </p>
 
-      <p>
+      <p className={styles.justifyAlign}>
         The best way to reach our staff and our members is by{' '}
         <Link href="/join">
           <a>joining Operation Code</a>
@@ -22,8 +23,9 @@ export default () => (
         to receive an invite to our team, including our Slack chat.
       </p>
 
-      <p>
-        You can also reach us via email:{' '}
+      <p className={styles.forceWidth}>
+        <b>You can also reach us via email:</b>
+        <br />
         <OutboundLink
           href="mailto:staff@operationcode.org"
           analyticsEventLabel="Email"
@@ -33,16 +35,18 @@ export default () => (
         </OutboundLink>
       </p>
 
-      <p>
-        You could tweet at us:{' '}
+      <p className={styles.forceWidth}>
+        <b>You could tweet at us:</b>
+        <br />
         <OutboundLink href="https://twitter.com/operation_code" analyticsEventLabel="Twitter">
           @operation_code
         </OutboundLink>
       </p>
 
-      <div className={styles.address}>
-        <p>And - if you really want to - you can snail-mail us:</p>
-
+      <div className={classNames(styles.address, styles.forceWidth)}>
+        <p>
+          <b>And - if you really want to - you can snail-mail us:</b>
+        </p>
         <span>
           Operation Code
           <br />

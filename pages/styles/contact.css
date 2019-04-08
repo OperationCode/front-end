@@ -1,3 +1,7 @@
+.justifyAlign {
+  text-align: justify;
+}
+
 .contactHero a {
   transition: color 0.2s linear;
 }
@@ -9,5 +13,9 @@
 }
 
 .address {
-  margin: 4rem auto 2rem;
+  margin: 0 auto 2rem;
+}
+
+.forceWidth {
+  width: 700px;
 }
