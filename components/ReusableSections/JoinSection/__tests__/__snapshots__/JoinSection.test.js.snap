@@ -15,19 +15,65 @@ exports[`JoinSection should render with required props 1`] = `
       <br />
       Get the support you need by joining our members only Slack community!
     </p>
-    <form>
-      <input
-        placeholder="Email address"
-      />
-      <button
-        className="Button primary"
-        disabled={false}
-        onClick={[Function]}
-        tabIndex={0}
-        type="submit"
+    <form
+      noValidate={true}
+      onReset={[Function]}
+      onSubmit={[Function]}
+    >
+      <div
+        className="row"
       >
-        Join our Slack
-      </button>
+        <div
+          className="field newsletterInput"
+        >
+          <span
+            className="ScreenReaderOnly"
+          >
+            <label
+              className="Label"
+              htmlFor="email"
+            >
+              Email*
+            </label>
+          </span>
+          <div
+            className="inputFeedBackGrouping"
+          >
+            <input
+              autoComplete="username email"
+              className="input inputWithError"
+              disabled={false}
+              id="email"
+              name="email"
+              onBlur={[Function]}
+              onChange={[Function]}
+              type="email"
+              value=""
+            />
+          </div>
+        </div>
+        <button
+          className="Button newsletterButton primary"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={0}
+          type="submit"
+        >
+          Submit
+        </button>
+      </div>
+      <div
+        className="Alert success"
+        role="alert"
+      >
+        
+      </div>
+      <div
+        className="Alert error"
+        role="alert"
+      >
+        
+      </div>
     </form>
     <p>
       Slack is a community based collaboration tool where all the magic happens!

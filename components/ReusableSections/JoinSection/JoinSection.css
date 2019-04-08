@@ -1,0 +1,37 @@
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.newsletterInput,
+.newsletterInput input,
+.newsletterButton {
+  margin: 0.25rem;
+}
+
+.newsletterInput input {
+  padding: 0.8rem;
+}
+
+@media screen and (--small-viewport) {
+  .newsletterInput,
+  .newsletterInput input,
+  .newsletterButton {
+    margin: 0.25rem 0;
+  }
+
+  .newsletterButton {
+    width: 100%;
+  }
+
+  .newsletterInput,
+  .newsletterInput input {
+    width: calc(100% - 1px);
+  }
+
+  .newsletterInput input {
+    padding: 0.8rem 0;
+  }
+}
