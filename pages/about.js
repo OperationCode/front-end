@@ -12,9 +12,9 @@ export default () => (
     <Head title="About" />
 
     <HeroBanner
-      backgroundImageSource={`${s3}heroBanners/stock_family-2.jpg`}
-      isFullViewportHeight
+      backgroundImageSource={`${s3}redesign/heroBanners/about.jpg`}
       title="About Us"
+      className={styles.hero}
     />
 
     <Content
