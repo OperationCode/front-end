@@ -1,3 +1,7 @@
+.hero {
+  background-position: top center;
+}
+
 .about p {
   max-width: 100%;
 }
