@@ -8,8 +8,8 @@ export default () => (
     <Head title="Policy" />
 
     <HeroBanner
-      backgroundImageSource={`${s3}heroBanners/capitol-building.jpg`}
-      isFullViewHeight
+      backgroundImageSource={`${s3}redesign/heroBanners/policy.jpg`}
+      isFullViewportHeight
       title="Modernize the GI Bill"
     >
       <h6 className={styles.subtitle}>

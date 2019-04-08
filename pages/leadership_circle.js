@@ -16,14 +16,18 @@ export default () => (
       theme="white"
       columns={[
         <div>
-          <p>Operation Code is pleased to invite you to join the Leadership Circle.</p>
-          <p>
+          <p className={styles.justifyAlign}>
+            Operation Code is pleased to invite you to join the Leadership Circle.
+          </p>
+
+          <p className={styles.justifyAlign}>
             The Leadership Circle exists for people who passionately believe in the Operation Code
             mission, have a vital interest in our success, recognize the importance of annual
             giving, and are fortunate enough to possess the ability to contribute significantly to
             Operation Code’s drive for impact, growth and sustainability.
           </p>
-          <p>
+
+          <p className={styles.justifyAlign}>
             As Leadership Circle members, we are passionate advocates for the mission. Our
             volunteerism helps the community, whether by bringing in new supporters or by mentoring
             a transitioning veteran or military spouse. Our compelling events allow us to connect
@@ -31,7 +35,8 @@ export default () => (
             people join in Operation Code’s work. And our financial contributions secure Operation
             Code’s ability to grow.
           </p>
-          <p>
+
+          <p className={styles.justifyAlign}>
             Please join us and help make our mission a success. Together, we will create a new and
             secure future for today’s veterans and military spouses.
           </p>

@@ -1,14 +1,16 @@
+import classNames from 'classnames';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
+import styles from './styles/chapter_leader.css';
 
 const ChapterLeader = () => (
   <>
     <Head title="Chapter Leaders" />
 
     <HeroBanner title="Chapter Leaders">
-      <p>
+      <p className={styles.justifyAlign}>
         Operation Code is looking for volunteer Chapter Leaders to build local communities
         nationwide! Tell us more about yourself{' '}
         <OutboundLink
@@ -27,7 +29,7 @@ const ChapterLeader = () => (
         <div>
           <h5>Who is a Chapter Leader?</h5>
 
-          <p>
+          <p className={classNames(styles.justifyAlign, styles.fullWidth)}>
             An Operation Code Chapter Leader organizes meetups and events at the local level, and
             establishes relationships with local companies, educational institutions, and other
             organizations, in order to help build the community and support the mission. Chapter
@@ -77,7 +79,7 @@ const ChapterLeader = () => (
             <li>Help members learn, grow, and find jobs!</li>
           </ul>
 
-          <p>
+          <p className={styles.justifyAlign}>
             Think you are interested in becoming a Chapter Leader? Click{' '}
             <OutboundLink
               href="http://op.co.de/chapter-leader-volunteer"

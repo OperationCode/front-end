@@ -1,5 +1,9 @@
-.about p {
-  max-width: 100%;
+.hero {
+  background-position: top center;
+}
+
+.justifyAlign {
+  text-align: justify;
 }
 
 .imageCard h6 {

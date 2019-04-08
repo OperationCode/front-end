@@ -1,5 +1,13 @@
+.justifyAlign {
+  text-align: justify;
+}
+
 .centeredText {
   text-align: center;
+}
+
+.topMargin {
+  margin-top: 2.5rem;
 }
 
 .badgeGroupings {
