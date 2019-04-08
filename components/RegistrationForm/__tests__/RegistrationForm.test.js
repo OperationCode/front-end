@@ -2,15 +2,11 @@ import React from 'react';
 import { mount } from 'enzyme';
 import { createUser } from 'common/constants/api';
 import { validationErrorMessages } from 'common/constants/validations';
+import asyncWrapperRender from 'test-utils/asyncRenderUpdate';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 import OperationCodeAPIMock from 'test-utils/mocks/apiMock';
 import wait from 'test-utils/wait';
 import RegistrationForm from '../RegistrationForm';
-
-const asyncRenderDiff = async enzymeWrapper => {
-  await wait();
-  enzymeWrapper.update();
-};
 
 afterEach(() => {
   OperationCodeAPIMock.reset();
@@ -26,7 +22,7 @@ describe('RegistrationForm', () => {
 
     wrapper.find('input#email').simulate('blur');
 
-    await asyncRenderDiff(wrapper);
+    await asyncWrapperRender(wrapper);
 
     expect(
       wrapper
@@ -44,7 +40,7 @@ describe('RegistrationForm', () => {
       .simulate('change', { target: { id: 'email', value: 'email' } })
       .simulate('blur');
 
-    await asyncRenderDiff(wrapper);
+    await asyncWrapperRender(wrapper);
 
     expect(
       wrapper
@@ -59,7 +55,7 @@ describe('RegistrationForm', () => {
 
     wrapper.find('input#password').simulate('blur');
 
-    await asyncRenderDiff(wrapper);
+    await asyncWrapperRender(wrapper);
 
     expect(
       wrapper
@@ -79,7 +75,7 @@ describe('RegistrationForm', () => {
       .simulate('change', { target: { id: 'password', value: stringWithoutNumber } })
       .simulate('blur');
 
-    await asyncRenderDiff(wrapper);
+    await asyncWrapperRender(wrapper);
 
     expect(
       wrapper
@@ -106,7 +102,7 @@ describe('RegistrationForm', () => {
       })
       .simulate('blur');
 
-    await asyncRenderDiff(wrapper);
+    await asyncWrapperRender(wrapper);
 
     expect(
       wrapper
@@ -138,7 +134,7 @@ describe('RegistrationForm', () => {
     );
 
     wrapper.find('Button').simulate('submit');
-    await asyncRenderDiff(wrapper);
+    await asyncWrapperRender(wrapper);
 
     await wait(() => {
       expect(successSpy).toHaveBeenCalled();
@@ -164,7 +160,7 @@ describe('RegistrationForm', () => {
     );
 
     wrapper.find('Button').simulate('submit');
-    await asyncRenderDiff(wrapper);
+    await asyncWrapperRender(wrapper);
 
     await wait(() => {
       expect(successSpy).not.toHaveBeenCalled();
@@ -208,7 +204,7 @@ describe('RegistrationForm', () => {
     );
 
     wrapper.find('Button').simulate('submit');
-    await asyncRenderDiff(wrapper);
+    await asyncWrapperRender(wrapper);
 
     expect(successSpy).not.toHaveBeenCalled();
     expect(
