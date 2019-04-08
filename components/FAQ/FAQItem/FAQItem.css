@@ -42,10 +42,10 @@
   text-decoration: underline;
 }
 
-.accordionSingleQuestion::after {
+.accordionSingleQuestion::before {
   display: inline-block;
-  margin-left: 10px;
-  color: #249cbc;
+  margin-right: 10px;
+  color: var(--primary);
   content: "+";
 }
 
