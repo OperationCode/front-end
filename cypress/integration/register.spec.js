@@ -1,35 +1,20 @@
-beforeEach(() => {
-  cy.clearCookies();
-  cy.visit('/join');
-});
-
-const createRandomEmail = () => {
-  const listOfTLDs = ['com', 'org', 'gov.uk', 'gov.us', 'edu', 'io', 'dev', 'us', 'es', 'co'];
-
-  const randomString1 = Math.random()
-    .toString(36)
-    .substring(2);
-
-  const randomString2 = Math.random()
-    .toString(36)
-    .substring(2);
-
-  const randomTLD = listOfTLDs[Math.floor(Math.random() * listOfTLDs.length)];
-
-  return `${randomString1}@${randomString2}.${randomTLD}`;
-};
+const faker = require('faker');
 
 describe('register', function() {
   it('should be able to register with valid data', () => {
     // Fake email generator with rare conflicts
 
     const newUser = {
-      email: createRandomEmail(),
-      password: 'Testing1',
-      firstName: 'Test',
-      lastName: 'User',
-      zipcode: 12345,
+      email: faker.internet.email(),
+      password: faker.internet.password(),
+      firstName: faker.name.firstName(),
+      lastName: faker.name.lastName(),
+      zipcode: faker.address.zipCode(),
     };
+
+    cy.clearCookies();
+    cy.visit('/join');
+    cy.waitForPageToCompile();
 
     cy.getCookies().should('have.length', 0);
     cy.get('h1').should('have.text', 'Join');
@@ -41,6 +26,8 @@ describe('register', function() {
     cy.get('input#lastName').type(newUser.lastName);
     cy.get('input#zipcode').type(newUser.zipcode);
     cy.get('button[type="submit"]').click();
+
+    cy.waitForPageToCompile();
     cy.get('h1').should('have.text', 'Profile');
     cy.get('p').contains(`Hello ${newUser.firstName}!`);
     cy.getCookies()
