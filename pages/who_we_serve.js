@@ -1,4 +1,5 @@
 import TrackVisibility from 'react-on-screen';
+import classNames from 'classnames';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Badge from 'components/Badge/Badge';
@@ -10,7 +11,7 @@ import HighfivingIcon from 'static/images/icons/Custom/high_fiving.svg';
 import GraduationCapIcon from 'static/images/icons/FontAwesome/graduation-cap-solid.svg';
 import BriefcaseIcon from 'static/images/icons/FontAwesome/briefcase-solid.svg';
 import { s3 } from 'common/constants/urls';
-import styles from './styles/get_involved.css';
+import styles from './styles/who_we_serve.css';
 
 const VISIBILITY_OFFSET = 400;
 
@@ -43,14 +44,16 @@ export default () => (
       theme="gray"
       columns={[
         <div>
-          <p>
+          <p className={styles.justifyAlign}>
             Military veterans, service members, and spouses who are passionate about transition into
             a career in software development. We work with over 4,000 members who are all working to
             enter or currently thrive in the tech industry.
           </p>
 
-          <div className={styles.centeredText}>
-            <LinkButton href="/join">Become A Member</LinkButton>
+          <div className={classNames(styles.centeredText, styles.topMargin)}>
+            <LinkButton href="/join" theme="secondary">
+              Become A Member
+            </LinkButton>
           </div>
         </div>,
       ]}
@@ -76,7 +79,7 @@ export default () => (
       title="Our Commitment To You"
       theme="gray"
       columns={[
-        <p className={styles.centeredText}>
+        <p className={styles.justifyAlign}>
           Whether you are looking to change careers or starting a new one in the tech industry, we
           are here to help you succeed by providing:
         </p>,

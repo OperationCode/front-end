@@ -2,6 +2,10 @@
   padding-top: 8rem;
 }
 
+.justifyAlign {
+  text-align: justify;
+}
+
 .featuredLinks {
   display: flex;
   flex-wrap: wrap;

@@ -8,7 +8,7 @@ import { s3 } from 'common/constants/urls';
 import styles from './styles/about.css';
 
 export default () => (
-  <div className={styles.about}>
+  <>
     <Head title="About" />
 
     <HeroBanner
@@ -21,14 +21,14 @@ export default () => (
       theme="white"
       columns={[
         <>
-          <p>
+          <p className={styles.justifyAlign}>
             <b>
               Operation Code is a non-profit charity helping the military community learn software
               development, enter the tech industry, and code the future.
             </b>
           </p>
 
-          <p>
+          <p className={styles.justifyAlign}>
             We at Operation Code strive to provide an efficient way into a tech career for veterans
             and their families. We work directly with Senators, Congressmen, and Congresswomen to
             allow veterans total control of their future by permitting the use of the GI Bill on
@@ -39,7 +39,7 @@ export default () => (
             .
           </p>
 
-          <p>
+          <p className={styles.justifyAlign}>
             Aside from our work on the Hill, we offer many services to the military community and
             are continuing to expand our offerings as often as possible. First and foremost, our
             staff works tirelessly to provide mentorship for veterans interested in learning about
@@ -49,7 +49,7 @@ export default () => (
             laptop!
           </p>
 
-          <p>
+          <p className={styles.justifyAlign}>
             As a non - profit organization, we rely heavily on your support. If you are interested
             in helping us financially, please donate here or set your Amazon Smile organization to
             &ldquo;Operation Code&rdquo;. If you have questions about our organization, platforms,
@@ -128,7 +128,7 @@ export default () => (
       title="Mission"
       hasTitleUnderline
       columns={[
-        <p>
+        <p className={styles.justifyAlign}>
           Operation Code is leading the way to expand opportunities for military veterans and their
           families. We aim to help veterans learn new skills and build their careers in the
           fast-growing technology sector. Our team’s mission - led by veterans and other dedicated,
@@ -197,5 +197,5 @@ export default () => (
         />,
       ]}
     />
-  </div>
+  </>
 );

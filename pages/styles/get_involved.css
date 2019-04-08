@@ -1,3 +1,15 @@
+.justifyAlign {
+  text-align: justify;
+}
+
+.topMargin {
+  margin-top: 1rem;
+}
+
+.extraTopMargin {
+  margin-top: 2rem;
+}
+
 .image {
   margin: 2rem;
   max-width: 500px;

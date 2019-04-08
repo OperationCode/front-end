@@ -45,7 +45,7 @@ export default () => (
       title="Deploy The Future"
     >
       <>
-        <p>
+        <p className={styles.justifyAlign}>
           We&apos;re the largest community of military veterans, service members, and spouses
           committed to becoming software developers with the help of mentors, scholarships, and our
           tech partners.
@@ -80,7 +80,7 @@ export default () => (
           <Heading hasHeadingLines theme="secondary">
             Our Mission
           </Heading>
-          <p>
+          <p className={styles.justifyAlign}>
             At Operation Code, we strongly believe in improving the lives of military veterans,
             service members, and their spouses. We increase their chances for success in the tech
             industry as software developers through thoughtful mentorship, code school scholarships,

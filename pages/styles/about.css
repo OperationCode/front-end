@@ -2,8 +2,8 @@
   background-position: top center;
 }
 
-.about p {
-  max-width: 100%;
+.justifyAlign {
+  text-align: justify;
 }
 
 .imageCard h6 {

@@ -15,14 +15,16 @@ exports[`Storyshots ReusableSections DonateSection 1`] = `
     <h3>
       Donate
     </h3>
-    <p>
+    <p
+      className="justifyAlign"
+    >
       As a 501(c)(3) veteran-led nonprofit organization, our programs and services are maintained through the efforts of our volunteer staff. Your financial support allows us to continue helping the military community learn software development, enter the tech industry, and code the future.
     </p>
     <p>
       Thank you for supporting our mission!
     </p>
     <a
-      className="Button primary"
+      className="Button topMargin primary"
       href="https://secure.lglforms.com/form_engine/s/BRtP7QUKyHOyEYsZROsRew"
       onClick={[Function]}
     >
@@ -42,13 +44,13 @@ exports[`Storyshots ReusableSections JoinSection 1`] = `
     <h3>
       Join Our Thriving Community
     </h3>
-    <p>
-      Are you ready to begin your journey towards a career in software development?
-      <br />
-      Get the support you need by joining our members-only Slack community!
+    <p
+      className="justifyAlign"
+    >
+      Are you ready to begin your journey towards a career in software development? Get the support you need by joining our members-only Slack community!
     </p>
     <a
-      className="Button secondary"
+      className="Button verticalSpacing secondary"
       href="/join"
       onClick={[Function]}
     >

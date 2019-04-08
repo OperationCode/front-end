@@ -59,13 +59,15 @@ export default () => (
       title="You Can Make An Impact"
     >
       <>
-        <p>
+        <p className={styles.justifyAlign}>
           Whether you&apos;re interested in mentoring, supporting our operations, or simply donating
           to help military veterans, service members, and spouses launch a career in software
           development, Operation Code is always looking for supporters like you.
         </p>
 
-        <LinkButton href="/who_we_serve">Learn More</LinkButton>
+        <LinkButton href="/who_we_serve" className={styles.topMargin}>
+          Learn More
+        </LinkButton>
       </>
     </HeroBanner>
 
@@ -99,12 +101,12 @@ export default () => (
             Empower Our Community
           </Heading>
 
-          <p>
+          <p className={styles.justifyAlign}>
             Make a difference in the lives of military veterans, service members, and spouses who
             are eager to transition into a software development career.
           </p>
 
-          <div className={styles.centeredText}>
+          <div className={classNames(styles.centeredText, styles.extraTopMargin)}>
             <LinkButton href="/mentor">Become A Mentor</LinkButton>
           </div>
         </div>,
@@ -137,12 +139,12 @@ export default () => (
             Support Our Mission
           </Heading>
 
-          <p>
+          <p className={styles.justifyAlign}>
             Make a difference in the lives of military veterans, service members, and spouses who
             are eager to transition into a software development career.
           </p>
 
-          <div className={styles.centeredText}>
+          <div className={classNames(styles.centeredText, styles.extraTopMargin)}>
             <LinkButton href="/get_involved">Get Involved</LinkButton>
           </div>
         </div>,
