@@ -14,8 +14,10 @@
 
 .address {
   margin: 0 auto 2rem;
+  max-width: 700px; /* keep in sync with paragraph max-width */
+  font-style: normal;
 }
 
 .forceWidth {
-  width: 700px;
+  width: 100%;
 }
