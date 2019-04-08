@@ -44,7 +44,10 @@ export default () => (
             </Link>
             . Lastly, if you are seeking information not located on our website, please do not
             hesitate to email us at{' '}
-            <a href="mailto:staff@operationcode.org">staff@operationcode.org</a>.
+            <a href="mailto:staff@operationcode.org?subject=Press Inquiry">
+              staff@operationcode.org
+            </a>
+            .
           </p>
         </aside>,
         <div className={styles.row}>
@@ -54,11 +57,13 @@ export default () => (
               <p>
                 Firstly, if your code school&apos;s information is not listed on our directory,
                 please contact us at{' '}
-                <a href="mailto:staff@operationcode.org">staff@operationcode.org</a>. If your school
-                has recently partnered with our organization and is seeking information to write
-                about it a blog post, we recommend joining our Slack team to receive personal
-                recommendations from our members, many of whom have attended various coding schools
-                - perhaps yours!
+                <a href="mailto:staff@operationcode.org?subject=Add Code School">
+                  staff@operationcode.org
+                </a>
+                . If your school has recently partnered with our organization and is seeking
+                information to write about it a blog post, we recommend joining our Slack team to
+                receive personal recommendations from our members, many of whom have attended
+                various coding schools - perhaps yours!
               </p>
             </div>
           </div>
@@ -71,8 +76,9 @@ export default () => (
                 work on a pedastal, can look forward to receive social media blasts and the
                 appreciate of America&apos;s military veterans. If you are thinking about a
                 partnership with Operation Code, but are unsure of what to offer our members,{' '}
-                <a href="mailto:staff@operationcode.org">let&apos;s talk</a>. If you&apos;re seeking
-                information to display in announcing the partnership, please see below!
+                <a href="mailto:staff@operationcode.org?subject=Partnership">let&apos;s talk</a>. If
+                you&apos;re seeking information to display in announcing the partnership, please see
+                below!
               </p>
             </div>
           </div>

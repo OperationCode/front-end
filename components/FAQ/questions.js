@@ -161,7 +161,10 @@ const questions = {
             blog
           </OutboundLink>{' '}
           , write to{' '}
-          <OutboundLink analyticsEventLabel="QnA Link" href="mailto:staff@operationcode.org">
+          <OutboundLink
+            analyticsEventLabel="QnA Link"
+            href="mailto:staff@operationcode.org?subject=Question Not On FAQ"
+          >
             staff@operationcode.org
           </OutboundLink>{' '}
           , and we&apos;ll get back to you as soon as we can.
@@ -235,7 +238,10 @@ const questions = {
       question: 'Can I make donations to a particular veteran or their family learning to code?',
       answer: (
         <>
-          <OutboundLink analyticsEventLabel="QnA Link" href="mailto:staff@operationcode.org">
+          <OutboundLink
+            analyticsEventLabel="QnA Link"
+            href="mailto:staff@operationcode.org?subject=Donating Directly"
+          >
             Please get in touch with us directly,
           </OutboundLink>{' '}
           so we can ensure we find a good match.
