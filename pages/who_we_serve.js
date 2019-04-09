@@ -45,9 +45,9 @@ export default () => (
       columns={[
         <div>
           <p className={styles.justifyAlign}>
-            Military veterans, service members, and spouses who are passionate about transition into
-            a career in software development. We work with over 4,000 members who are all working to
-            enter or currently thrive in the tech industry.
+            We work closely with military veterans, service members, and spouses who are passionate
+            about transitioning into the tech industry. We work with over 4,000 members who are all
+            working towards relevant goals.
           </p>
 
           <div className={classNames(styles.centeredText, styles.topMargin)}>

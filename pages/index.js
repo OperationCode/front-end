@@ -10,7 +10,7 @@ import LinkButton from 'components/LinkButton/LinkButton';
 import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
 import successStories from 'common/constants/successStories';
 import partners from 'common/constants/partners';
-import { s3 } from 'common/constants/urls';
+import { donateLink, s3 } from 'common/constants/urls';
 import styles from './styles/index.css';
 
 const featuredLinksArray = [
@@ -21,7 +21,7 @@ const featuredLinksArray = [
     alt: 'Group of coders smiling at each other',
   },
   {
-    href: 'donate',
+    href: donateLink,
     name: 'Donate',
     imageSource: `${s3}redesign/images/fist-bumping.jpg`,
     alt: 'A team fist-bumping eachother over a table.',
