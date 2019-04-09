@@ -2,7 +2,10 @@ import jwt_decode from 'jwt-decode'; // eslint-disable-line camelcase
 
 const cookieOptions = {
   path: '/',
-  domain: process.env.NODE_ENV === 'development' ? 'localhost' : 'operationcode.org',
+  domain: process.env.NODE_ENV === 'development' ? 'localhost' : 'operation-code.now.sh',
+  httpOnly: true,
+  sameSite: true,
+  secure: true,
 };
 
 export const setAuthCookies = (cookies, { token, user }) => {
