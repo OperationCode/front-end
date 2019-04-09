@@ -6,7 +6,7 @@
   "routes": [
     {
       "src": "/_next/static/(?:[^/]+/pages|chunks|runtime)/.+",
-      "headers": { "cache-control": "immutable" }
+      "headers": { "cache-control": "max-age=31536000" }
     },
     {
       "src": "^/(favicon.ico|manifest.json|humans.txt|sitemap.xml|sitemap.xsl)$",
