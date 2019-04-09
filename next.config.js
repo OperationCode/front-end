@@ -3,6 +3,10 @@ const withBundleAnalyzer = require('@zeit/next-bundle-analyzer');
 const svgoConfig = require('./common/config/svgo');
 
 const nextConfig = withCSS({
+  // For now.sh
+  // see: https://zeit.co/guides/deploying-nextjs-with-now/
+  target: 'serverless',
+
   // NextCSS Config
   cssModules: true,
   cssLoaderOptions: {
@@ -77,10 +81,6 @@ const nextConfig = withCSS({
 
     return config;
   },
-
-  // For now.sh
-  // see: https://zeit.co/guides/deploying-nextjs-with-now/
-  target: 'serverless',
 });
 
 module.exports = withBundleAnalyzer(nextConfig);
