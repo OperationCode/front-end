@@ -1,16 +1,17 @@
 const faker = require('faker');
 
 describe('register', function() {
-  it('should be able to register with valid data', () => {
-    // Fake email generator with rare conflicts
+  const newUser = {
+    email: faker.internet.email(),
+    password: faker.internet.password(),
+    firstName: faker.name.firstName(),
+    lastName: faker.name.lastName(),
+    zipcode: faker.address.zipCode(),
+  };
 
-    const newUser = {
-      email: faker.internet.email(),
-      password: faker.internet.password(),
-      firstName: faker.name.firstName(),
-      lastName: faker.name.lastName(),
-      zipcode: faker.address.zipCode(),
-    };
+  it('should be able to register with valid data', () => {
+    cy.server();
+    cy.route('POST', '/api/v1/users').as('postRegister');
 
     cy.clearCookies();
     cy.visitAndWaitFor('/join');
@@ -25,6 +26,8 @@ describe('register', function() {
     cy.get('input#lastName').type(newUser.lastName);
     cy.get('input#zipcode').type(newUser.zipcode);
     cy.get('button[type="submit"]').click();
+
+    cy.wait('@postRegister');
 
     cy.url().should('contain', '/profile');
     cy.get('h1').should('have.text', 'Profile');
