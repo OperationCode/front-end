@@ -1,8 +1,10 @@
 describe('login', function() {
   it('should be able to login with valid credentials', () => {
+    cy.server();
+    cy.route('POST', '/api/v1/sessions').as('postLogin');
+
     cy.clearCookies();
-    cy.visit('/login');
-    cy.waitForPageToCompile();
+    cy.visitAndWaitFor('/login');
 
     cy.getCookies().should('have.length', 0);
     cy.get('h1').should('have.text', 'Login');
@@ -10,7 +12,9 @@ describe('login', function() {
     cy.get('input#password').type('Testing1');
     cy.get('button[type="submit"]').click();
 
-    cy.waitForPageToCompile();
+    cy.wait('@postLogin');
+
+    cy.url().should('contain', '/profile');
     cy.get('h1').should('have.text', 'Profile');
     cy.get('p').contains('Hello Kyle!');
     cy.getCookies()

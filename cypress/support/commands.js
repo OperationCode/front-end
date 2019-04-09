@@ -12,9 +12,10 @@
 // -- This is a parent command --
 // Cypress.Commands.add("login", (email, password) => { ... })
 
-Cypress.Commands.add('waitForPageToCompile', () => {
-  cy.server({ delay: 1000 });
+Cypress.Commands.add('visitAndWaitFor', path => {
+  cy.visit(path);
   cy.wait(1000); // eslint-disable-line cypress/no-unnecessary-waiting
+  cy.url().should('contain', path);
 });
 
 //
