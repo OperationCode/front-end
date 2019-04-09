@@ -28,7 +28,6 @@ script:
   - yarn lint
   - yarn test:ci
   - yarn start-server-and-test dev http://localhost:3000 test:e2e:ci
-  - if [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_BRANCH" == "master" ]; then yarn build; fi
 
 after_script:
   - greenkeeper-lockfile-upload
