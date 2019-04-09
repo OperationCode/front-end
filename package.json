@@ -5,6 +5,7 @@
   "scripts": {
     "build": "next build",
     "build:analyze": "cross-env ANALYZE=1 next build",
+    "now-build": "next build",
     "create-component": "node scripts/createComponent/createComponent.js",
     "create-page": "node scripts/createPage/createPage.js",
     "dev": "next",
@@ -16,7 +17,6 @@
     "lint": "yarn lint:scripts && yarn lint:styles",
     "lint:scripts": "eslint \"**/*.js\"",
     "lint:styles": "stylelint \"**/*.css\"",
-    "now-build": "echo 'Built on Travis CI'",
     "precommit": "lint-staged && yarn test:changes",
     "start": "next start",
     "storybook": "start-storybook -s ./static -p 9001 -c .storybook",
