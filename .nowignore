@@ -5,3 +5,10 @@
 !now.json
 !postcss.config.js
 !.browserslistrc
+!common
+!components
+!coverage
+!decorators
+!pages
+!static
+!store
