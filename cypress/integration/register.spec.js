@@ -3,7 +3,7 @@ const faker = require('faker');
 describe('register', function() {
   const newUser = {
     email: faker.internet.email(),
-    password: faker.internet.password(),
+    password: `${faker.internet.password()}!1Aa`, // gaurantee a valid password
     firstName: faker.name.firstName(),
     lastName: faker.name.lastName(),
     zipcode: faker.address.zipCode(),
