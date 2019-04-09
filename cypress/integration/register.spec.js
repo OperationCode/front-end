@@ -13,8 +13,7 @@ describe('register', function() {
     };
 
     cy.clearCookies();
-    cy.visit('/join');
-    cy.waitForPageToCompile();
+    cy.visitAndWaitFor('/join');
 
     cy.getCookies().should('have.length', 0);
     cy.get('h1').should('have.text', 'Join');
@@ -27,7 +26,7 @@ describe('register', function() {
     cy.get('input#zipcode').type(newUser.zipcode);
     cy.get('button[type="submit"]').click();
 
-    cy.waitForPageToCompile();
+    cy.url().should('contain', '/profile');
     cy.get('h1').should('have.text', 'Profile');
     cy.get('p').contains(`Hello ${newUser.firstName}!`);
     cy.getCookies()
