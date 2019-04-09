@@ -77,6 +77,10 @@ const nextConfig = withCSS({
 
     return config;
   },
+
+  // For now.sh
+  // see: https://zeit.co/guides/deploying-nextjs-with-now/
+  target: 'serverless',
 });
 
 module.exports = withBundleAnalyzer(nextConfig);

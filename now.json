@@ -1,9 +1,18 @@
 {
-  "name": "operation-code-new",
-  "static": {
-    "trailingSlash": false
-  },
-  "type": "static",
-  "public": true,
-  "version": 1
+  "version": 2,
+  "builds": [{ "src": "next.config.js", "use": "@now/next" }],
+  "name": "operation-code",
+  "alias": "operation-code.now.sh",
+  "routes": [
+    {
+      "src": "/_next/static/(?:[^/]+/pages|chunks|runtime)/.+",
+      "headers": { "cache-control": "immutable" }
+    },
+    {
+      "src": "^/(favicon.ico|manifest.json|humans.txt|sitemap.xml|sitemap.xsl)$",
+      "dest": "/static/$1",
+      "headers": { "cache-control": "max-age=10000 must-revalidate" }
+    }
+  ],
+  "public": true
 }
