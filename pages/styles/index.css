@@ -34,16 +34,10 @@
   background-position: center center;
   background-size: cover;
   margin-top: 1rem;
-  width: 400px;
+  width: 390px;
   height: 150px;
   border: 2px solid rgb(0, 0, 0);
   transition: 0.2s linear border, 0.2s linear color;
-}
-
-@media screen and (--extra-large-viewport) {
-  .featuredLinkImage {
-    width: 325px;
-  }
 }
 
 .featuredLinkImage:active,
