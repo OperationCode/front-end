@@ -32,11 +32,3 @@ script:
 after_script:
   - greenkeeper-lockfile-upload
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
-
-deploy:
-  - provider: script
-    script: yarn add now && now --token $NOW_TOKEN
-    skip_cleanup: true
-    on:
-      all_branches: true
-      master: true
