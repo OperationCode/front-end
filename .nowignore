@@ -1,0 +1,7 @@
+.next
+.storybook
+cypress
+internationalized-documentation
+node_modules
+test-utils
+*.md
