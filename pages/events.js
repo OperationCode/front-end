@@ -101,7 +101,7 @@ export default () => {
             className={styles.topMargin}
             analyticsEventLabel="Meetup.com Locations Link"
           >
-            SeeLocations
+            See Locations
           </LinkButton>
         </>
       </HeroBanner>

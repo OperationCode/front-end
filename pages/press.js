@@ -61,7 +61,7 @@ export default () => (
                   staff@operationcode.org
                 </a>
                 . If your school has recently partnered with our organization and is seeking
-                information to write about it a blog post, we recommend joining our Slack team to
+                information to write about it in a blog post, we recommend joining our Slack team to
                 receive personal recommendations from our members, many of whom have attended
                 various coding schools - perhaps yours!
               </p>
@@ -73,9 +73,9 @@ export default () => (
               <h4>Partnered Organizations</h4>
               <p className={styles.justifyAlign}>
                 We have long-standing, productive partnerships with some amazing companies, and
-                yours could be one of them! Organizations the put our members and our open source
+                yours could be one of them! Organizations that put our members and our open source
                 work on a pedastal, can look forward to receive social media blasts and the
-                appreciate of America&apos;s military veterans. If you are thinking about a
+                appreciation of America&apos;s military veterans. If you are thinking about a
                 partnership with Operation Code, but are unsure of what to offer our members,{' '}
                 <a href="mailto:staff@operationcode.org?subject=Partnership">let&apos;s talk</a>. If
                 you&apos;re seeking information to display in announcing the partnership, please see
