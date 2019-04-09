@@ -107,7 +107,7 @@ export default () => (
           </p>
 
           <div className={classNames(styles.centeredText, styles.extraTopMargin)}>
-            <LinkButton href="/mentor">Become A Mentor</LinkButton>
+            <LinkButton href="/join">Become A Mentor</LinkButton>
           </div>
         </div>,
       ]}
