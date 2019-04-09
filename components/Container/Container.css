@@ -25,6 +25,12 @@
   max-width: 1400px;
 }
 
+@media screen and (--small-viewport) {
+  .content {
+    width: 85%;
+  }
+}
+
 /* Dark Themes */
 .secondary {
   background-color: var(--secondary);
