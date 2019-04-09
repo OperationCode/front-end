@@ -40,9 +40,18 @@
   transition: 0.2s linear border, 0.2s linear color;
 }
 
+@media screen and (--extra-large-viewport) {
+  .featuredLinkImage {
+    width: 325px;
+  }
+}
+
 .featuredLinkImage:active,
 .featuredLinkImage:focus,
-.featuredLinkImage:hover {
+.featuredLinkImage:hover,
+.featuredLinkItem a:active .featuredLinkImage,
+.featuredLinkItem a:focus .featuredLinkImage,
+.featuredLinkItem a:hover .featuredLinkImage {
   border: 2px solid var(--primary);
   transition: 0.2s linear border;
 }
