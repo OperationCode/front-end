@@ -3,11 +3,11 @@
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  margin: 1.5rem 1rem;
+  margin: 3rem 1rem;
   padding-top: 60px;
   position: relative;
-  max-width: 400px;
-  height: 650px;
+  max-width: 320px;
+  height: 670px;
 }
 
 .image {
@@ -23,7 +23,7 @@
   flex: 1;
   flex-flow: column nowrap;
   align-items: center;
-  padding: 2.5rem;
+  padding: 2rem;
   padding-top: 160px;
   border: 3px solid var(--primary);
 }
@@ -42,5 +42,11 @@
 @media screen and (--medium-viewport) {
   .SuccessStory {
     height: 575px;
+  }
+}
+
+@media screen and (--small-viewport) {
+  .SuccessStory {
+    height: auto;
   }
 }
