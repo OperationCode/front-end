@@ -20,30 +20,34 @@ storiesOf('Form/Input', module)
         id={text('id', '')}
         isLabelHidden={boolean('isLabelHidden', false)}
         label={text('label', 'Some Input:')}
-        type={select('type', [
-          'button',
-          'checkbox',
-          'color',
-          'date',
-          'datetime-local',
-          'email',
-          'file',
-          'hidden',
-          'image',
-          'month',
-          'number',
-          'password',
-          'radio',
-          'range',
-          'reset',
-          'search',
-          'submit',
-          'tel',
+        type={select(
+          'type',
+          [
+            'button',
+            'checkbox',
+            'color',
+            'date',
+            'datetime-local',
+            'email',
+            'file',
+            'hidden',
+            'image',
+            'month',
+            'number',
+            'password',
+            'radio',
+            'range',
+            'reset',
+            'search',
+            'submit',
+            'tel',
+            'text',
+            'time',
+            'url',
+            'week',
+          ],
           'text',
-          'time',
-          'url',
-          'week',
-        ])}
+        )}
       />
     )),
   );
