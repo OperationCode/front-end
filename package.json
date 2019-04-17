@@ -9,7 +9,6 @@
     "create-component": "node scripts/createComponent/createComponent.js",
     "create-page": "node scripts/createPage/createPage.js",
     "dev": "next",
-    "export": "next export",
     "format": "yarn format:scripts && yarn format:styles && yarn format:md",
     "format:scripts": "prettier --write \"**/*.js\" && eslint --fix \"**/*.js\"",
     "format:styles": "prettier --write \"**/*.css\" && stylelint --fix \"**/*.css\"",
