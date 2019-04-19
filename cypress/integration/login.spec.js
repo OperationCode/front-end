@@ -16,7 +16,7 @@ describe('login', function() {
 
     cy.url().should('contain', '/profile');
     cy.get('h1').should('have.text', 'Profile');
-    cy.get('p').contains('Hello Kyle!');
+    cy.get('p').contains('Hello Kyle Holmberg!');
     cy.getCookies()
       .should('have.length', 4)
       .then(cookies => {
