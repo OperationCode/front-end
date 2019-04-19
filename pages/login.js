@@ -1,23 +1,14 @@
-import PropTypes from 'prop-types';
-import { withCookies, Cookies } from 'react-cookie';
 import Link from 'next/link';
-import Router from 'next/router';
 import { loginUser } from 'common/constants/api';
-import { setAuthCookies } from 'common/utils/cookie-utils';
+import { login } from 'common/utils/auth-utils';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
 import LoginForm from 'components/LoginForm/LoginForm';
 
 class Login extends React.Component {
-  static propTypes = {
-    cookies: PropTypes.instanceOf(Cookies).isRequired,
-  };
-
   handleSuccess = ({ token, user }) => {
-    const { cookies } = this.props;
-    setAuthCookies(cookies, { token, user });
-    Router.push('/profile');
+    login({ token, user });
   };
 
   render() {
@@ -52,4 +43,4 @@ class Login extends React.Component {
   }
 }
 
-export default withCookies(Login);
+export default Login;
