@@ -1,38 +1,39 @@
 import axios from 'axios';
+import cookie from 'js-cookie';
 import { apiUrl } from 'common/config/environment';
 
 export const OperationCodeAPI = axios.create({ baseURL: apiUrl });
 
-// TODO: Use cookies programatically in all HTTP requests
-// const setAuthorizationHeader = () => {
-//   const cookies = new Cookies();
+const setAuthorizationHeader = () => {
+  const token = cookie.get('token');
 
-//   const token = cookies.get('token');
+  if (token) {
+    return { Authorization: `bearer ${token}` };
+  }
 
-//   if (token) {
-//     return { Authorization: `bearer ${cookies.get('token')}` };
-//   }
-
-//   return {};
-// };
+  return {};
+};
 
 export const get = async path => {
   const result = await OperationCodeAPI.get(`/${path}`, {
-    // headers: setAuthorizationHeader(),
+    headers: setAuthorizationHeader(),
   });
+
   return result;
 };
 
 export const post = async (path, body) => {
   const result = await OperationCodeAPI.post(`/${path}`, body, {
-    // headers: setAuthorizationHeader(),
+    headers: setAuthorizationHeader(),
   });
+
   return result;
 };
 
 export const patch = async (path, body) => {
   const result = await OperationCodeAPI.patch(`/${path}`, body, {
-    // headers: setAuthorizationHeader(),
+    headers: setAuthorizationHeader(),
   });
+
   return result;
 };
