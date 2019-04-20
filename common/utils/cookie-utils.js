@@ -29,6 +29,16 @@ export const removeAuthCookies = () => {
   });
 };
 
+export const setAuthorizationHeader = () => {
+  const token = cookie.get('token');
+
+  if (token) {
+    return { Authorization: `bearer ${token}` };
+  }
+
+  return {};
+};
+
 export const isTokenValid = token => {
   if (token === undefined) {
     return false;

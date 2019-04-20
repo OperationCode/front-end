@@ -1,18 +1,8 @@
 import axios from 'axios';
-import cookie from 'js-cookie';
 import { apiUrl } from 'common/config/environment';
+import { setAuthorizationHeader } from 'common/utils/cookie-utils';
 
 export const OperationCodeAPI = axios.create({ baseURL: apiUrl });
-
-const setAuthorizationHeader = () => {
-  const token = cookie.get('token');
-
-  if (token) {
-    return { Authorization: `bearer ${token}` };
-  }
-
-  return {};
-};
 
 export const get = async path => {
   const result = await OperationCodeAPI.get(`/${path}`, {
