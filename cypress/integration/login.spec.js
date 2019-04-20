@@ -23,7 +23,7 @@ describe('login', function() {
         expect(cookies[0].value).to.contain('eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9');
         expect(cookies[1].value).to.equal('Kyle');
         expect(cookies[2].value).to.equal('Holmberg');
-        expect(cookies[3].value).to.equal('90630');
+        expect(cookies[3].value).to.equal('97214');
       });
   });
 });
