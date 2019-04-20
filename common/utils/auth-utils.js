@@ -3,7 +3,7 @@ import isEmpty from 'lodash/isEmpty';
 import nextCookie from 'next-cookies';
 import { setAuthCookies, removeAuthCookies, isTokenValid } from './cookie-utils';
 
-export const login = async ({ token, user }) => {
+export const login = ({ token, user }) => {
   setAuthCookies({ token, user });
   Router.push('/profile');
 };
