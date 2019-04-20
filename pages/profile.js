@@ -1,18 +1,23 @@
 import PropTypes from 'prop-types';
-import { withCookies, Cookies } from 'react-cookie';
+import nextCookie from 'next-cookies';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
+import withAuthSync from 'decorators/withAuthSync/withAuthSync';
 
 class Profile extends React.Component {
+  static async getInitialProps(ctx) {
+    const { firstName, lastName } = nextCookie(ctx);
+    return { firstName, lastName };
+  }
+
   static propTypes = {
-    cookies: PropTypes.instanceOf(Cookies).isRequired,
+    firstName: PropTypes.string.isRequired,
+    lastName: PropTypes.string.isRequired,
   };
 
   render() {
-    const { cookies } = this.props;
-
-    const firstName = cookies.get('firstName');
+    const { firstName, lastName } = this.props;
 
     return (
       <>
@@ -22,11 +27,15 @@ class Profile extends React.Component {
 
         <Content
           theme="gray"
-          columns={[<p>Hello {firstName}! The profile page is an unfinished feature.</p>]}
+          columns={[
+            <p>
+              Hello {firstName} {lastName}! The profile page is an unfinished feature.
+            </p>,
+          ]}
         />
       </>
     );
   }
 }
 
-export default withCookies(Profile);
+export default withAuthSync(Profile);

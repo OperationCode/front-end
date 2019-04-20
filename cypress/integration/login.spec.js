@@ -16,14 +16,14 @@ describe('login', function() {
 
     cy.url().should('contain', '/profile');
     cy.get('h1').should('have.text', 'Profile');
-    cy.get('p').contains('Hello Kyle!');
+    cy.get('p').contains('Hello Kyle Holmberg!');
     cy.getCookies()
       .should('have.length', 4)
       .then(cookies => {
         expect(cookies[0].value).to.contain('eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9');
         expect(cookies[1].value).to.equal('Kyle');
         expect(cookies[2].value).to.equal('Holmberg');
-        expect(cookies[3].value).to.equal('90630');
+        expect(cookies[3].value).to.equal('97214');
       });
   });
 });

@@ -1,3 +1,4 @@
+import cookie from 'js-cookie';
 import jwt_decode from 'jwt-decode'; // eslint-disable-line camelcase
 
 const isProd = process.env.NODE_ENV !== 'development';
@@ -10,24 +11,35 @@ const cookieOptions = {
   secure: isProd,
 };
 
-export const setAuthCookies = (cookies, { token, user }) => {
-  cookies.set('token', token, cookieOptions);
-  cookies.set('firstName', user.firstName, cookieOptions);
-  cookies.set('lastName', user.lastName, cookieOptions);
-  cookies.set('zipcode', user.zipcode, cookieOptions);
-  // cookies.set('slackName', user.slackName, cookieOptions);
-  // cookies.set('isMentor', user.isMentor, cookieOptions);
+const userInfoCookieNames = ['firstName', 'lastName', 'zipcode'];
+
+export const setAuthCookies = ({ token, user }) => {
+  cookie.set('token', token, cookieOptions);
+
+  userInfoCookieNames.forEach(cookieName => {
+    cookie.set(cookieName, user[cookieName], cookieOptions);
+  });
 };
 
-export const removeAuthCookies = cookies => {
-  cookies.remove('token', cookieOptions);
-  cookies.remove('firstName', cookieOptions);
-  cookies.remove('lastName', cookieOptions);
-  // cookies.remove('slackName', cookieOptions);
-  // cookies.remove('mentor', cookieOptions);
+export const removeAuthCookies = () => {
+  cookie.remove('token');
+
+  userInfoCookieNames.forEach(cookieName => {
+    cookie.remove(cookieName);
+  });
 };
 
-const isTokenValid = token => {
+export const setAuthorizationHeader = () => {
+  const token = cookie.get('token');
+
+  if (token) {
+    return { Authorization: `bearer ${token}` };
+  }
+
+  return {};
+};
+
+export const isTokenValid = token => {
   if (token === undefined) {
     return false;
   }
@@ -37,11 +49,4 @@ const isTokenValid = token => {
 
   // Valid if jwt expiry is in the future
   return currentTime < jwt.exp;
-};
-
-export const getUserStatus = cookies => {
-  return {
-    // isMentor: cookies.get('isMentor') === 'true',
-    isLoggedIn: isTokenValid(cookies.get('token')),
-  };
 };

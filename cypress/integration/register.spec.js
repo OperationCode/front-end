@@ -36,7 +36,7 @@ describe('register', function() {
 
     cy.url().should('contain', '/profile');
     cy.get('h1').should('have.text', 'Profile');
-    cy.get('p').contains(`Hello ${newUser.firstName}!`);
+    cy.get('p').contains(`Hello ${newUser.firstName} ${newUser.lastName}!`);
     cy.getCookies()
       .should('have.length', 4)
       .then(cookies => {

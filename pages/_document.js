@@ -3,12 +3,8 @@ import Document, { Head, Main, NextScript } from 'next/document';
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const initialProps = await Document.getInitialProps(ctx);
-    const page = ctx.renderPage();
 
-    return {
-      ...initialProps,
-      ...page,
-    };
+    return { ...initialProps };
   }
 
   render() {

@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import FontFaceObserver from 'fontfaceobserver';
+import getDisplayName from 'decorators/getDisplayName';
 
 const fonts = [
   {
@@ -15,7 +16,16 @@ const fonts = [
 ];
 
 const withFonts = WrappedComponent =>
-  class extends Component {
+  class extends React.Component {
+    static displayname = `withFonts(${getDisplayName(WrappedComponent)})`;
+
+    static async getInitialProps(ctx) {
+      const componentProps =
+        WrappedComponent.getInitialProps && (await WrappedComponent.getInitialProps(ctx));
+
+      return { ...componentProps };
+    }
+
     componentDidMount() {
       const observers = fonts.map(font => {
         if (font.url) {

@@ -1,6 +1,5 @@
 import App, { Container } from 'next/app';
 import Router from 'next/router';
-import { CookiesProvider } from 'react-cookie';
 import { Provider } from 'react-redux';
 import { compose } from 'redux';
 import ScrollUpButton from 'react-scroll-up-button';
@@ -68,11 +67,9 @@ class OperationCodeApp extends App {
     return (
       <Container>
         <Provider store={store}>
-          <CookiesProvider>
-            <Layout>
-              <Component {...pageProps} />
-            </Layout>
-          </CookiesProvider>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
         </Provider>
       </Container>
     );
