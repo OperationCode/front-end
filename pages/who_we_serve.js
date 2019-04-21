@@ -7,9 +7,9 @@ import Content from 'components/Content/Content';
 import ImageCard from 'components/Cards/ImageCard/ImageCard';
 import LinkButton from 'components/LinkButton/LinkButton';
 import JoinSection from 'components/ReusableSections/JoinSection/JoinSection';
-import HighfivingIcon from 'static/images/icons/Custom/high_fiving.svg';
-import GraduationCapIcon from 'static/images/icons/FontAwesome/graduation-cap-solid.svg';
-import BriefcaseIcon from 'static/images/icons/FontAwesome/briefcase-solid.svg';
+import CareerServicesIcon from 'static/images/icons/Custom/career_services.svg';
+import MentorshipIcon from 'static/images/icons/Custom/mentorship.svg';
+import ScholarshipsIcon from 'static/images/icons/Custom/scholarships.svg';
 import { s3 } from 'common/constants/urls';
 import styles from './styles/who_we_serve.css';
 
@@ -17,15 +17,15 @@ const VISIBILITY_OFFSET = 400;
 
 const mentorItems = [
   {
-    icon: <HighfivingIcon />,
+    icon: <MentorshipIcon />,
     label: 'One-on-one mentorship',
   },
   {
-    icon: <GraduationCapIcon />,
+    icon: <ScholarshipsIcon />,
     label: 'Coding scholarships',
   },
   {
-    icon: <BriefcaseIcon />,
+    icon: <CareerServicesIcon />,
     label: 'Career services',
   },
 ];
