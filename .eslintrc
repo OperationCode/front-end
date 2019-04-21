@@ -113,6 +113,12 @@
       }
     },
     {
+      "files": ["*.spec.js"],
+      "rules": {
+        "no-unused-expressions": ["off"]
+      }
+    },
+    {
       "files": [
         "pages/**.js",
         "components/head.js",

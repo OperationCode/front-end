@@ -1,23 +1,13 @@
 import cookie from 'js-cookie';
 import jwt_decode from 'jwt-decode'; // eslint-disable-line camelcase
 
-const isProd = process.env.NODE_ENV !== 'development';
-
-const cookieOptions = {
-  path: '/',
-  domain: isProd ? 'operation-code.now.sh' : 'localhost',
-  httpOnly: isProd,
-  sameSite: isProd,
-  secure: isProd,
-};
-
-const userInfoCookieNames = ['firstName', 'lastName', 'zipcode'];
+const userInfoCookieNames = ['firstName', 'lastName', 'zipcode', 'isMentor'];
 
 export const setAuthCookies = ({ token, user }) => {
-  cookie.set('token', token, cookieOptions);
+  cookie.set('token', token);
 
   userInfoCookieNames.forEach(cookieName => {
-    cookie.set(cookieName, user[cookieName], cookieOptions);
+    cookie.set(cookieName, user[cookieName]);
   });
 };
 

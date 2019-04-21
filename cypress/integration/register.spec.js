@@ -37,12 +37,11 @@ describe('register', function() {
     cy.url().should('contain', '/profile');
     cy.get('h1').should('have.text', 'Profile');
     cy.get('p').contains(`Hello ${newUser.firstName} ${newUser.lastName}!`);
-    cy.getCookies()
-      .should('have.length', 4)
-      .then(cookies => {
-        expect(cookies[1].value).to.equal(newUser.firstName);
-        expect(cookies[2].value).to.equal(newUser.lastName);
-        expect(cookies[3].value).to.equal(`${newUser.zipcode}`); // number to string 🤷‍♂️
-      });
+
+    cy.getCookies().then(cookies => {
+      expect(cookies.some(({ value }) => value === newUser.firstName)).to.be.true;
+      expect(cookies.some(({ value }) => value === newUser.lastName)).to.be.true;
+      expect(cookies.some(({ value }) => value === newUser.zipcode.toString())).to.be.true;
+    });
   });
 });
