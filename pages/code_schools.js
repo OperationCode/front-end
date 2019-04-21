@@ -11,7 +11,6 @@ import States from 'common/constants/dropdown-states-values';
 import edx from 'static/images/moocs/edx.jpg';
 import treehouse from 'static/images/moocs/treehouse.jpg';
 import udacity from 'static/images/moocs/udacity.jpg';
-import { s3 } from 'common/constants/urls';
 import styles from './styles/code_schools.css';
 
 export default class CodeSchools extends React.Component {
@@ -24,7 +23,8 @@ export default class CodeSchools extends React.Component {
 
   async componentDidMount() {
     const { data } = await getCodeSchoolsPromise();
-    const moocs = [
+
+    const moocSchools = [
       {
         logo: edx,
         name: 'edX',
@@ -44,43 +44,40 @@ export default class CodeSchools extends React.Component {
         text: 'Offers free courses with the option to pay for certificates/grading.',
       },
     ];
-    this.setState({ allSchools: data, filteredSchools: data, moocSchools: moocs });
+
+    this.setState({ allSchools: data, filteredSchools: data, moocSchools });
   }
+
+  filterOnline = () => {
+    const { allSchools } = this.state;
+    const onlineSchools = allSchools.filter(school => school.has_online);
+
+    this.setState({ filteredSchools: onlineSchools, selectedStates: [] });
+  };
+
+  filterState = selectedOptions => {
+    const { allSchools } = this.state;
+    const states = selectedOptions.map(state => state.value);
+    const stateSchools = allSchools.filter(school =>
+      school.locations.some(location => states.includes(location.state)),
+    );
+
+    this.setState({ filteredSchools: stateSchools, selectedStates: selectedOptions });
+  };
 
   filterVaApproved = () => {
     const { allSchools } = this.state;
     const vaApproved = allSchools.filter(school =>
       school.locations.some(location => location.va_accepted),
     );
+
     this.setState({ filteredSchools: vaApproved, selectedStates: [] });
   };
 
-  filterOnline = () => {
-    const { allSchools } = this.state;
-    const onlineSchools = allSchools.filter(school => school.has_online);
-    this.setState({ filteredSchools: onlineSchools, selectedStates: [] });
-  };
-
-  showAll = () => {
+  showAllSchools = () => {
     const { allSchools } = this.state;
     this.setState({ filteredSchools: allSchools, selectedStates: [] });
   };
-
-  filterByState = selectedOptions => {
-    const { allSchools } = this.state;
-    const states = selectedOptions.map(state => state.value);
-    const stateSchools = allSchools.filter(school =>
-      school.locations.some(location => states.includes(location.state)),
-    );
-    this.setState({ filteredSchools: stateSchools, selectedStates: selectedOptions });
-  };
-
-  prepUrl = name =>
-    `${s3}codeSchoolLogos/${name
-      .trim()
-      .split(' ')
-      .join('_')
-      .toLowerCase()}.jpg`;
 
   render() {
     const { state } = this;
@@ -147,7 +144,7 @@ export default class CodeSchools extends React.Component {
           title="Schools"
           hasTitleUnderline
           columns={[
-            <Button theme="primary" onClick={this.showAll}>
+            <Button theme="primary" onClick={this.showAllSchools}>
               All Schools{' '}
             </Button>,
             <Button theme="primary" onClick={this.filterVaApproved}>
@@ -163,7 +160,7 @@ export default class CodeSchools extends React.Component {
               isMulti
               name="States"
               options={States}
-              onChange={this.filterByState}
+              onChange={this.filterState}
               value={state.selectedStates}
             />,
             <div className={styles.schoolCardsWrapper}>
@@ -176,7 +173,7 @@ export default class CodeSchools extends React.Component {
                     hasOnlyOnline={school.online_only}
                     isFullTime={school.full_time}
                     locations={school.locations}
-                    logoSource={this.prepUrl(school.name)}
+                    logoSource={school.logo}
                     name={school.name}
                     website={school.url}
                   />
