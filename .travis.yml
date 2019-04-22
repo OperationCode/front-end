@@ -1,5 +1,10 @@
 language: node_js
 
+notifications:
+  slack: 
+    rooms:
+      - operation-code:Hh35niahhB04Vanzam2biU54#oc-web-deploys
+
 # node_js: # not needed - `.nvmrc` at root-level
 
 cache:
