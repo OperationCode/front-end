@@ -165,19 +165,18 @@ export default class CodeSchools extends React.Component {
             />,
             <div className={styles.schoolCardsWrapper}>
               {state.filteredSchools.map(school => (
-                <div key={`${school.name}`}>
-                  <SchoolCard
-                    hasHardwareIncluded={school.hardware_included}
-                    hasHousing={school.has_housing}
-                    hasOnline={school.has_online}
-                    hasOnlyOnline={school.online_only}
-                    isFullTime={school.full_time}
-                    locations={school.locations}
-                    logoSource={school.logo}
-                    name={school.name}
-                    website={school.url}
-                  />
-                </div>
+                <SchoolCard
+                  key={`${school.name}`}
+                  hasHardwareIncluded={school.hardware_included}
+                  hasHousing={school.has_housing}
+                  hasOnline={school.has_online}
+                  hasOnlyOnline={school.online_only}
+                  isFullTime={school.full_time}
+                  locations={school.locations}
+                  logoSource={school.logo}
+                  name={school.name}
+                  website={school.url}
+                />
               ))}
             </div>,
           ]}
