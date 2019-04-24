@@ -21,6 +21,8 @@
 
 [![Good First Issue](https://img.shields.io/github/issues/OperationCode/front-end/good%20first%20issue.svg)](https://github.com/OperationCode/front-end/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22)
 
+[See unblocked, unassigned issues](https://github.com/OperationCode/front-end/issues?q=is%3Aopen+is%3Aissue+-label%3A%22Status%3A+Blocked%22+no%3Aassignee).
+
 # Welcome!
 
 This is incoming v2 front-end application for [OperationCode](https://operationcode.org). We highly recommend [joining our organization](https://operationcode.org/join) to receive an invite to our Slack team. From there, you'll want to join the `#oc-projects` channel. You can get help from multiple professional developers, including people who have worked on the application since day 1! Our website is currently served by code located [here](https://github.com/operationcode/operationcode_frontend), but that repository is no longer being developed.
