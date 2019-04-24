@@ -62,7 +62,11 @@ export default class CodeSchools extends React.Component {
       school.locations.some(location => states.includes(location.state)),
     );
 
-    this.setState({ filteredSchools: stateSchools, selectedStates: selectedOptions });
+    if (states.length > 0) {
+      this.setState({ filteredSchools: stateSchools, selectedStates: selectedOptions });
+    } else {
+      this.showAllSchools();
+    }
   };
 
   filterVaApproved = () => {
