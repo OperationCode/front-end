@@ -13,7 +13,7 @@
       "dest": "/static/$1",
       "headers": { "cache-control": "max-age=10000 must-revalidate" }
     },
-    { "handle": "filesystem" }
+    { "handle": "filesystem" },
     { 
       "src": "/.*",
       "dest": "/_error"
