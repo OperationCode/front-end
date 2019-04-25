@@ -42,7 +42,7 @@
 
 .giBillRibbon::before,
 .giBillRibbon::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   margin: 0 -1px;
@@ -94,7 +94,6 @@
   border-radius: 0;
   letter-spacing: 0;
   background-color: #ffffff;
-  margin-left: 5px;
   color: inherit;
 }
 

@@ -98,13 +98,17 @@ class SchoolCard extends Component {
             <span className={styles.cardBlockTitle}>Campus Locations</span>
             {locationText}
             {hasManyLocations && (
-              <Button
-                analyticsObject={analyticsObject}
-                onClick={this.toggleModalClick}
-                className={styles.modalToggler}
-              >
-                (view all)
-              </Button>
+              <>
+                {' ('}
+                <Button
+                  analyticsObject={analyticsObject}
+                  onClick={this.toggleModalClick}
+                  className={styles.modalToggler}
+                >
+                  view all
+                </Button>
+                {')'}
+              </>
             )}
           </div>
 

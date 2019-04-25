@@ -4,93 +4,94 @@ exports[`Storyshots Cards/SchoolCard with many locations 1`] = `
 <article
   className="Card SchoolCard"
 >
-  <h5>
-    General Assembly
-  </h5>
-  <img
-    alt="General Assembly logo"
-    src="https://s3.amazonaws.com/operationcode-assets/codeSchoolLogos/general_assembly.jpg"
-  />
   <div
-    className="interactionsContainer"
+    className="giBillRibbon"
   >
-    <a
-      className="Button primary"
-      href="https://generalassembly.com"
-      onClick={[Function]}
+    GI Bill
+  </div>
+  <div
+    className="cardBrand"
+  >
+    <img
+      alt="General Assembly logo"
+      height="150"
+      src="https://s3.amazonaws.com/operationcode-assets/codeSchoolLogos/general_assembly.jpg"
+    />
+  </div>
+  <div
+    className="cardBlock"
+  >
+    <span
+      className="cardBlockTitle"
     >
-      Go To Website
-    </a>
+      Availability
+    </span>
+    <div
+      className="badgeGroup"
+    >
+      <figure
+        className="Badge badgeGroupItem"
+      >
+        <svg />
+        <figcaption
+          className="label"
+        >
+          Online
+        </figcaption>
+      </figure>
+      <figure
+        className="Badge badgeGroupItem"
+      >
+        <svg />
+        <figcaption
+          className="label"
+        >
+          Campus
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+  <div
+    className="cardBlock"
+  >
+    <span
+      className="cardBlockTitle"
+    >
+      Accepts GI Bill
+    </span>
+    Yes
+  </div>
+  <div
+    className="cardBlock"
+  >
+    <span
+      className="cardBlockTitle"
+    >
+      Campus Locations
+    </span>
+    Multiple locations
+     (
     <button
-      className="Button primary"
+      className="Button modalToggler primary"
       disabled={false}
       onClick={[Function]}
       tabIndex={0}
       type="button"
     >
-      See Locations
+      view all
     </button>
-  </div>
-  <hr
-    className="divider"
-  />
-  <div
-    className="detailsRow"
-  >
-    <figure
-      className="Badge codeSchoolCardIcon active"
-    >
-      <svg />
-      <figcaption
-        className="label"
-      >
-        G.I. Bill
-      </figcaption>
-    </figure>
-    <figure
-      className="Badge codeSchoolCardIcon active"
-    >
-      <svg />
-      <figcaption
-        className="label"
-      >
-        Online
-      </figcaption>
-    </figure>
-    <figure
-      className="Badge codeSchoolCardIcon active"
-    >
-      <svg />
-      <figcaption
-        className="label"
-      >
-        In-Person
-      </figcaption>
-    </figure>
+    )
   </div>
   <div
-    className="detailsRow"
+    className="cardBlock"
   >
-    <figure
-      className="Badge codeSchoolCardIcon disabled"
+    <a
+      className="Button primary fullWidth"
+      href="https://generalassembly.com"
+      onClick={[Function]}
     >
-      <svg />
-      <figcaption
-        className="label"
-      >
-        Equipment
-      </figcaption>
-    </figure>
-    <figure
-      className="Badge codeSchoolCardIcon disabled"
-    >
-      <svg />
-      <figcaption
-        className="label"
-      >
-        Housing
-      </figcaption>
-    </figure>
+      Visit Website
+    </a>
   </div>
 </article>
 `;
@@ -99,89 +100,73 @@ exports[`Storyshots Cards/SchoolCard with no physical locations 1`] = `
 <article
   className="Card SchoolCard"
 >
-  <h5>
-    Thinkful
-  </h5>
-  <img
-    alt="Thinkful logo"
-    src="https://s3.amazonaws.com/operationcode-assets/codeSchoolLogos/thinkful.jpg"
-  />
   <div
-    className="interactionsContainer"
+    className="giBillRibbon"
+  >
+    GI Bill
+  </div>
+  <div
+    className="cardBrand"
+  >
+    <img
+      alt="Thinkful logo"
+      height="150"
+      src="https://s3.amazonaws.com/operationcode-assets/codeSchoolLogos/thinkful.jpg"
+    />
+  </div>
+  <div
+    className="cardBlock"
+  >
+    <span
+      className="cardBlockTitle"
+    >
+      Availability
+    </span>
+    <div
+      className="badgeGroup"
+    >
+      <figure
+        className="Badge badgeGroupItem"
+      >
+        <svg />
+        <figcaption
+          className="label"
+        >
+          Online
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+  <div
+    className="cardBlock"
+  >
+    <span
+      className="cardBlockTitle"
+    >
+      Accepts GI Bill
+    </span>
+    Yes
+  </div>
+  <div
+    className="cardBlock"
+  >
+    <span
+      className="cardBlockTitle"
+    >
+      Campus Locations
+    </span>
+    Online only
+  </div>
+  <div
+    className="cardBlock"
   >
     <a
-      className="Button primary"
+      className="Button primary fullWidth"
       href="https://thinkful.com"
       onClick={[Function]}
     >
-      Go To Website
+      Visit Website
     </a>
-    <span
-      className="singleLocationText"
-    >
-      Online Only
-    </span>
-  </div>
-  <hr
-    className="divider"
-  />
-  <div
-    className="detailsRow"
-  >
-    <figure
-      className="Badge codeSchoolCardIcon disabled"
-    >
-      <svg />
-      <figcaption
-        className="label"
-      >
-        G.I. Bill
-      </figcaption>
-    </figure>
-    <figure
-      className="Badge codeSchoolCardIcon active"
-    >
-      <svg />
-      <figcaption
-        className="label"
-      >
-        Online
-      </figcaption>
-    </figure>
-    <figure
-      className="Badge codeSchoolCardIcon disabled"
-    >
-      <svg />
-      <figcaption
-        className="label"
-      >
-        In-Person
-      </figcaption>
-    </figure>
-  </div>
-  <div
-    className="detailsRow"
-  >
-    <figure
-      className="Badge codeSchoolCardIcon disabled"
-    >
-      <svg />
-      <figcaption
-        className="label"
-      >
-        Equipment
-      </figcaption>
-    </figure>
-    <figure
-      className="Badge codeSchoolCardIcon disabled"
-    >
-      <svg />
-      <figcaption
-        className="label"
-      >
-        Housing
-      </figcaption>
-    </figure>
   </div>
 </article>
 `;
@@ -190,89 +175,83 @@ exports[`Storyshots Cards/SchoolCard with one location 1`] = `
 <article
   className="Card SchoolCard"
 >
-  <h5>
-    Code Immersives
-  </h5>
-  <img
-    alt="Code Immersives logo"
-    src="https://s3.amazonaws.com/operationcode-assets/codeSchoolLogos/code_immersives.jpg"
-  />
   <div
-    className="interactionsContainer"
+    className="giBillRibbon"
+  >
+    GI Bill
+  </div>
+  <div
+    className="cardBrand"
+  >
+    <img
+      alt="Code Immersives logo"
+      height="150"
+      src="https://s3.amazonaws.com/operationcode-assets/codeSchoolLogos/code_immersives.jpg"
+    />
+  </div>
+  <div
+    className="cardBlock"
+  >
+    <span
+      className="cardBlockTitle"
+    >
+      Availability
+    </span>
+    <div
+      className="badgeGroup"
+    >
+      <figure
+        className="Badge badgeGroupItem"
+      >
+        <svg />
+        <figcaption
+          className="label"
+        >
+          Campus
+        </figcaption>
+      </figure>
+      <figure
+        className="Badge badgeGroupItem"
+      >
+        <svg />
+        <figcaption
+          className="label"
+        >
+          Equipment
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+  <div
+    className="cardBlock"
+  >
+    <span
+      className="cardBlockTitle"
+    >
+      Accepts GI Bill
+    </span>
+    Yes
+  </div>
+  <div
+    className="cardBlock"
+  >
+    <span
+      className="cardBlockTitle"
+    >
+      Campus Locations
+    </span>
+    Los Angeles, CA
+  </div>
+  <div
+    className="cardBlock"
   >
     <a
-      className="Button primary"
+      className="Button primary fullWidth"
       href="https://codeimmersives.com"
       onClick={[Function]}
     >
-      Go To Website
+      Visit Website
     </a>
-    <span
-      className="singleLocationText"
-    >
-      Los Angeles, CA
-    </span>
-  </div>
-  <hr
-    className="divider"
-  />
-  <div
-    className="detailsRow"
-  >
-    <figure
-      className="Badge codeSchoolCardIcon disabled"
-    >
-      <svg />
-      <figcaption
-        className="label"
-      >
-        G.I. Bill
-      </figcaption>
-    </figure>
-    <figure
-      className="Badge codeSchoolCardIcon disabled"
-    >
-      <svg />
-      <figcaption
-        className="label"
-      >
-        Online
-      </figcaption>
-    </figure>
-    <figure
-      className="Badge codeSchoolCardIcon active"
-    >
-      <svg />
-      <figcaption
-        className="label"
-      >
-        In-Person
-      </figcaption>
-    </figure>
-  </div>
-  <div
-    className="detailsRow"
-  >
-    <figure
-      className="Badge codeSchoolCardIcon active"
-    >
-      <svg />
-      <figcaption
-        className="label"
-      >
-        Equipment
-      </figcaption>
-    </figure>
-    <figure
-      className="Badge codeSchoolCardIcon disabled"
-    >
-      <svg />
-      <figcaption
-        className="label"
-      >
-        Housing
-      </figcaption>
-    </figure>
   </div>
 </article>
 `;
