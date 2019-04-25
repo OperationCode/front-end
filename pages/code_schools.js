@@ -6,6 +6,7 @@ import FlatCard from 'components/Cards/FlatCard/FlatCard';
 import SchoolCard from 'components/Cards/SchoolCard/SchoolCard';
 import Button from 'components/Button/Button';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
+import Modal from 'components/Modal/Modal';
 import { getCodeSchoolsPromise } from 'common/constants/api';
 import States from 'common/constants/dropdown-states-values';
 import edx from 'static/images/moocs/edx.jpg';
@@ -19,6 +20,7 @@ export default class CodeSchools extends React.Component {
     filteredSchools: [],
     moocSchools: [],
     selectedStates: [],
+    modalOpen: {},
   };
 
   async componentDidMount() {
@@ -46,7 +48,13 @@ export default class CodeSchools extends React.Component {
     ];
 
     this.setState({ allSchools: data, filteredSchools: data, moocSchools });
+
+    if (Modal.setAppElement) {
+      Modal.setAppElement('body');
+    }
   }
+
+  handleModalToggle = (modalOpen) => this.setState({ modalOpen: modalOpen || {} });
 
   filterOnline = () => {
     const { allSchools } = this.state;
@@ -85,6 +93,7 @@ export default class CodeSchools extends React.Component {
 
   render() {
     const { state } = this;
+    const isModalOpen = !!state.modalOpen.name;
 
     return (
       <>
@@ -180,6 +189,7 @@ export default class CodeSchools extends React.Component {
                   logoSource={school.logo}
                   name={school.name}
                   website={school.url}
+                  toggleModal={this.handleModalToggle}
                 />
               ))}
             </div>,
@@ -202,6 +212,22 @@ export default class CodeSchools extends React.Component {
             </FlatCard>
           ))}
         />
+
+        <Modal
+          isOpen={isModalOpen}
+          screenReaderLabel="Campus locations"
+          onRequestClose={this.handleModalToggle}
+          className={styles.schoolLocationModal}
+        >
+          <>
+            {isModalOpen && <h3>{state.modalOpen.name} Campuses</h3>}
+            {isModalOpen && state.modalOpen.locations.map((location) => (
+              <div className={styles.schoolLocalModalItem}>
+                {`${location.city}, ${location.state}`}
+              </div>
+            ))}
+          </>
+        </Modal>
       </>
     );
   }

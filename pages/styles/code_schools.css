@@ -26,3 +26,27 @@
   margin: 1rem 0;
   text-align: center;
 }
+
+.schoolLocationModal {
+  width: 500px;
+}
+
+@media screen and (--small-viewport) {
+  .schoolLocationModal {
+    width: 100%;
+  }
+}
+
+.schoolLocationModal > div {
+  width: 100%;
+}
+
+.schoolLocalModalItem {
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--gray);
+}
+
+.schoolLocalModalItem:last-child {
+  border-bottom: 0;
+  margin-bottom: 15px;
+}

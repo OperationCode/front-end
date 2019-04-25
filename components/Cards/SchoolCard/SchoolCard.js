@@ -27,14 +27,17 @@ class SchoolCard extends Component {
     logoSource: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     website: PropTypes.string.isRequired,
+    toggleModal: PropTypes.func.isRequired,
   };
 
   static defaultProps = {
     hasHousing: true,
   };
 
-  // eslint-disable-next-line no-console
-  toggleModal = () => console.log('toggle modal');
+  toggleModalClick = () => {
+    const { name, locations, toggleModal } = this.props;
+    toggleModal({ name, locations });
+  };
 
   render() {
     const { props } = this;
@@ -48,6 +51,12 @@ class SchoolCard extends Component {
       const [location] = props.locations;
       locationText = `${location.city}, ${location.state}`;
     }
+
+    const analyticsObject = {
+      action: 'Button Selected',
+      category: 'Interactions',
+      label: `${props.name} | Locations`,
+    };
 
     return (
       <Card className={styles.SchoolCard} hasAnimationOnHover={false}>
@@ -90,12 +99,8 @@ class SchoolCard extends Component {
             {locationText}
             {hasManyLocations && (
               <Button
-                analyticsObject={{
-                  action: 'Button Selected',
-                  category: 'Interactions',
-                  label: `${props.name} | Locations`,
-                }}
-                onClick={props.cardFlipCallback}
+                analyticsObject={analyticsObject}
+                onClick={this.toggleModalClick}
                 className={styles.modalToggler}
               >
                 (view all)

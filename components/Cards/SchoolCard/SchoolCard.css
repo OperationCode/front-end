@@ -117,7 +117,7 @@
   margin: 0;
 }
 
-@media screen and (--small-viewport) {
+@media screen and (--medium-viewport) {
   .badgeGroupItem svg {
     height: 32px;
   }
