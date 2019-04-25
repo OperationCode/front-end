@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 import Card from 'components/Cards/Card/Card';
-import FrontSchoolCard from './FrontSchoolCard';
-import BackSchoolCard from './BackSchoolCard';
+import OnlineIcon from 'static/images/icons/Custom/online.svg';
+import CampusIcon from 'static/images/icons/Custom/campus.svg';
+import HousingIcon from 'static/images/icons/Custom/housing.svg';
+import EquipmentIcon from 'static/images/icons/Custom/equipment.svg';
+import LinkButton from 'components/LinkButton/LinkButton';
+import Button from 'components/Button/Button';
+import Badge from 'components/Badge/Badge';
 import styles from './SchoolCard.css';
 
 class SchoolCard extends Component {
@@ -26,37 +30,87 @@ class SchoolCard extends Component {
   };
 
   static defaultProps = {
-    hasHousing: false,
+    hasHousing: true,
   };
 
-  state = {
-    isFrontOfCardShowing: true,
-  };
-
-  showBackOfCard = () => this.setState({ isFrontOfCardShowing: false });
-
-  showFrontOfCard = () => this.setState({ isFrontOfCardShowing: true });
+  // eslint-disable-next-line no-console
+  toggleModal = () => console.log('toggle modal');
 
   render() {
-    const { props, state } = this;
+    const { props } = this;
+
+    const hasManyLocations = props.locations.length > 1;
+
+    let locationText = 'Multiple locations';
+    if (props.hasOnlyOnline) {
+      locationText = 'Online only';
+    } else if (!hasManyLocations) {
+      const [location] = props.locations;
+      locationText = `${location.city}, ${location.state}`;
+    }
 
     return (
-      <Card
-        className={classNames(styles.SchoolCard, {
-          [styles.backCard]: !state.isFrontOfCardShowing,
-        })}
-        hasAnimationOnHover={false}
-      >
-        {state.isFrontOfCardShowing ? (
-          <FrontSchoolCard {...props} cardFlipCallback={this.showBackOfCard} />
-        ) : (
-          <BackSchoolCard
-            cardFlipCallback={this.showFrontOfCard}
-            locations={props.locations}
-            logoSource={props.logoSource}
-            schoolName={props.name}
-          />
-        )}
+      <Card className={styles.SchoolCard} hasAnimationOnHover={false}>
+        <>
+          <div className={styles.cardBrand}>
+            <img src={props.logoSource} alt={`${props.name} logo`} height="150" />
+          </div>
+
+          <div className={styles.cardBlock}>
+            <span className={styles.cardBlockTitle}>Availability</span>
+            <div className={styles.badgeGroup}>
+              {props.hasOnline && (
+                <Badge label="Online" icon={<OnlineIcon />} className={styles.badgeGroupItem} />
+              )}
+              {props.hasOnlyOnline || (
+                <Badge label="Campus" icon={<CampusIcon />} className={styles.badgeGroupItem} />
+              )}
+              {props.hasHousing && (
+                <Badge label="Housing" icon={<HousingIcon />} className={styles.badgeGroupItem} />
+              )}
+              {props.hasHardwareIncluded && (
+                <Badge
+                  label="Equipment"
+                  icon={<EquipmentIcon />}
+                  className={styles.badgeGroupItem}
+                />
+              )}
+            </div>
+          </div>
+
+          <div className={styles.cardBlock}>
+            <span className={styles.cardBlockTitle}>Accepts GI Bill</span>
+            Yes
+          </div>
+
+          <div className={styles.cardBlock}>
+            <span className={styles.cardBlockTitle}>Campus Locations</span>
+            {locationText}
+            {hasManyLocations && (
+              <Button
+                analyticsObject={{
+                  action: 'Button Selected',
+                  category: 'Interactions',
+                  label: `${props.name} | Locations`,
+                }}
+                onClick={props.cardFlipCallback}
+                className={styles.modalToggler}
+              >
+                (view all)
+              </Button>
+            )}
+          </div>
+
+          <div className={styles.cardBlock}>
+            <LinkButton
+              analyticsEventLabel={`${props.name} | Website`}
+              href={props.website}
+              fullWidth
+            >
+              Visit Website
+            </LinkButton>
+          </div>
+        </>
       </Card>
     );
   }

@@ -1,23 +1,102 @@
 .SchoolCard {
-  max-width: 400px;
-  height: 550px;
+  width: 330px;
   font-family: var(--primaryFontFamily), sans-serif;
+  background-color: #ffffff;
+  border: 1px solid var(--primary);
+  justify-content: normal;
+  padding: 0;
+  position: relative;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+@media screen and (--large-viewport) {
+  .SchoolCard {
+    width: 300px;
+  }
 }
 
 @media screen and (--small-viewport) {
   .SchoolCard {
-    height: 500px;
-    max-width: 350px;
+    width: 100%;
   }
 }
 
-.SchoolCard > img {
-  height: 150px;
-  margin: 1rem;
+.cardBrand {
+  text-align: center;
+  padding: 0.25rem 0;
 }
 
-.backCard {
-  background-color: var(--secondary);
-  color: var(--white);
-  position: relative;
+.SchoolCard,
+.cardBlock {
+  box-sizing: border-box;
+}
+
+.cardBlock {
+  display: flex;
+  width: 100%;
+  padding: 1rem 0.75rem;
+  border-top: 1px solid var(--gray);
+}
+
+.cardBlockTitle {
+  font-weight: bold;
+  display: block;
+  margin-right: auto;
+  padding-right: 6px;
+  color: var(--secondary);
+}
+
+.modalToggler {
+  min-width: auto;
+  text-transform: none;
+  padding: 0;
+  border: 0;
+  line-height: inherit;
+  text-decoration: underline;
+  border-radius: 0;
+  letter-spacing: 0;
+  background-color: #ffffff;
+  margin-left: 5px;
+  color: inherit;
+}
+
+.badgeGroup {
+  display: flex;
+}
+
+.badgeGroupItem {
+  margin: 0 8px;
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.badgeGroupItem:last-child {
+  margin-right: 0;
+}
+
+.badgeGroupItem svg {
+  height: 36px;
+  margin: 0;
+}
+
+@media screen and (--small-viewport) {
+  .badgeGroupItem svg {
+    height: 32px;
+  }
+}
+
+@media screen and (--small-viewport) {
+  .badgeGroupItem svg {
+    height: 28px;
+  }
+}
+
+.badgeGroupItem figcaption {
+  margin-top: 10px;
+}
+
+@media screen and (--small-viewport) {
+  .badgeGroupItem figcaption {
+    font-size: 0.875em;
+  }
 }
