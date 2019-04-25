@@ -7,6 +7,7 @@
   padding: 0;
   position: relative;
   color: rgba(0, 0, 0, 0.7);
+  overflow: hidden;
 }
 
 @media screen and (--large-viewport) {
@@ -19,6 +20,43 @@
   .SchoolCard {
     width: 100%;
   }
+}
+
+.giBillRibbon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0.3rem 0 0.1rem; /* Add more padding on top to fix vertically center */
+  width: 55px;
+  background: var(--secondary);
+  color: var(--primary);
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-transform: uppercase;
+  text-align: center;
+  transform: translateX(20%) translateY(0%) rotate(40deg);
+  transform-origin: top left;
+}
+
+.giBillRibbon::before,
+.giBillRibbon::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  margin: 0 -1px;
+  width: 100%;
+  height: 100%;
+  background: var(--secondary);
+}
+
+.giBillRibbon::before {
+  right: 100%;
+}
+
+.giBillRibbon::after {
+  left: 100%;
 }
 
 .cardBrand {
