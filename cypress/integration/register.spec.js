@@ -151,11 +151,20 @@ describe('register', function() {
     cy.get('input#confirm-password').type(newUser.password);
     cy.get('input#firstName').type(newUser.firstName);
     cy.get('input#lastName').type(newUser.lastName);
-    cy.get('input#zipcode').type('00010');
+    cy.get('input#zipcode').type('           ');
     cy.get('button[type="submit"]').click();
 
     cy.url().should('contain', '/join');
-    cy.get('div[role="alert"]').should('contain', 'Invalid zipcode');
+    cy.get('div[role="alert"]').should('contain', 'Must be a valid zipcode');
+    cy.getCookies().should('have.length', 0);
+  });
+
+  it('should NOT be able to register without filling all required fields', () => {
+    cy.get('button[type="submit"]').click();
+    cy.url().should('contain', '/join');
+    cy.get('div[role="alert"]')
+      .should('have.length', 8)
+      .should('contain', 'Required');
     cy.getCookies().should('have.length', 0);
   });
 });
