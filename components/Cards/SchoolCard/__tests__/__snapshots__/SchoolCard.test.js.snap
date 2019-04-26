@@ -5,114 +5,112 @@ exports[`SchoolCard should render with required props 1`] = `
   className="SchoolCard"
   hasAnimationOnHover={false}
 >
-  <React.Fragment>
-    <div
-      className="giBillRibbon"
+  <div
+    className="giBillRibbon"
+  >
+    GI Bill
+  </div>
+  <div
+    className="cardBrand"
+  >
+    <img
+      alt="school name logo"
+      height="150"
+      src="source"
+    />
+  </div>
+  <div
+    className="cardBlock"
+  >
+    <span
+      className="cardBlockTitle"
     >
-      GI Bill
-    </div>
+      Availability
+    </span>
     <div
-      className="cardBrand"
+      className="badgeGroup"
     >
-      <img
-        alt="school name logo"
-        height="150"
-        src="source"
+      <Badge
+        className="badgeGroupItem active"
+        icon={<Svg />}
+        isImageFirst={true}
+        label="Online"
+      />
+      <Badge
+        className="badgeGroupItem active"
+        icon={<Svg />}
+        isImageFirst={true}
+        label="Campus"
+      />
+      <Badge
+        className="badgeGroupItem active"
+        icon={<Svg />}
+        isImageFirst={true}
+        label="Housing"
+      />
+      <Badge
+        className="badgeGroupItem active"
+        icon={<Svg />}
+        isImageFirst={true}
+        label="Equipment"
       />
     </div>
-    <div
-      className="cardBlock"
+  </div>
+  <div
+    className="cardBlock"
+  >
+    <span
+      className="cardBlockTitle"
     >
-      <span
-        className="cardBlockTitle"
-      >
-        Availability
-      </span>
-      <div
-        className="badgeGroup"
-      >
-        <Badge
-          className="badgeGroupItem"
-          icon={<Svg />}
-          isImageFirst={true}
-          label="Online"
-        />
-        <Badge
-          className="badgeGroupItem"
-          icon={<Svg />}
-          isImageFirst={true}
-          label="Campus"
-        />
-        <Badge
-          className="badgeGroupItem"
-          icon={<Svg />}
-          isImageFirst={true}
-          label="Housing"
-        />
-        <Badge
-          className="badgeGroupItem"
-          icon={<Svg />}
-          isImageFirst={true}
-          label="Equipment"
-        />
-      </div>
-    </div>
-    <div
-      className="cardBlock"
+      Accepts GI Bill
+    </span>
+    Yes
+  </div>
+  <div
+    className="cardBlock"
+  >
+    <span
+      className="cardBlockTitle"
     >
-      <span
-        className="cardBlockTitle"
-      >
-        Accepts GI Bill
-      </span>
-      Yes
-    </div>
-    <div
-      className="cardBlock"
-    >
-      <span
-        className="cardBlockTitle"
-      >
-        Campus Locations
-      </span>
-      Multiple locations
-      <React.Fragment>
-         (
-        <Button
-          analyticsObject={
-            Object {
-              "action": "Button Selected",
-              "category": "Interactions",
-              "label": "school name | Locations",
-            }
+      Campus Locations
+    </span>
+    Multiple locations
+    <React.Fragment>
+       (
+      <Button
+        analyticsObject={
+          Object {
+            "action": "Button Selected",
+            "category": "Interactions",
+            "label": "school name | Locations",
           }
-          className="modalToggler"
-          datum=""
-          disabled={false}
-          fullWidth={false}
-          onClick={[Function]}
-          tabIndex={0}
-          theme="primary"
-          type="button"
-        >
-          view all
-        </Button>
-        )
-      </React.Fragment>
-    </div>
-    <div
-      className="cardBlock"
-    >
-      <LinkButton
-        analyticsEventLabel="school name | Website"
+        }
+        className="modalToggler"
+        datum=""
         disabled={false}
-        fullWidth={true}
-        href="website"
+        fullWidth={false}
+        onClick={[Function]}
+        tabIndex={0}
         theme="primary"
+        type="button"
       >
-        Visit Website
-      </LinkButton>
-    </div>
-  </React.Fragment>
+        view all
+      </Button>
+      )
+    </React.Fragment>
+  </div>
+  <div
+    className="cardBlock"
+  >
+    <LinkButton
+      analyticsEventLabel="school name | Website"
+      disabled={false}
+      fullWidth={true}
+      href="website"
+      theme="primary"
+    >
+      Visit Website
+    </LinkButton>
+  </div>
 </Card>
 `;

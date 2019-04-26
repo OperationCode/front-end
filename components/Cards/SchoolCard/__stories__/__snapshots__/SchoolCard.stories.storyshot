@@ -30,7 +30,7 @@ exports[`Storyshots Cards/SchoolCard with many locations 1`] = `
       className="badgeGroup"
     >
       <figure
-        className="Badge badgeGroupItem"
+        className="Badge badgeGroupItem active"
       >
         <svg />
         <figcaption
@@ -40,13 +40,33 @@ exports[`Storyshots Cards/SchoolCard with many locations 1`] = `
         </figcaption>
       </figure>
       <figure
-        className="Badge badgeGroupItem"
+        className="Badge badgeGroupItem active"
       >
         <svg />
         <figcaption
           className="label"
         >
           Campus
+        </figcaption>
+      </figure>
+      <figure
+        className="Badge badgeGroupItem"
+      >
+        <svg />
+        <figcaption
+          className="label"
+        >
+          Housing
+        </figcaption>
+      </figure>
+      <figure
+        className="Badge badgeGroupItem"
+      >
+        <svg />
+        <figcaption
+          className="label"
+        >
+          Equipment
         </figcaption>
       </figure>
     </div>
@@ -101,11 +121,6 @@ exports[`Storyshots Cards/SchoolCard with no physical locations 1`] = `
   className="Card SchoolCard"
 >
   <div
-    className="giBillRibbon"
-  >
-    GI Bill
-  </div>
-  <div
     className="cardBrand"
   >
     <img
@@ -126,13 +141,43 @@ exports[`Storyshots Cards/SchoolCard with no physical locations 1`] = `
       className="badgeGroup"
     >
       <figure
-        className="Badge badgeGroupItem"
+        className="Badge badgeGroupItem active"
       >
         <svg />
         <figcaption
           className="label"
         >
           Online
+        </figcaption>
+      </figure>
+      <figure
+        className="Badge badgeGroupItem"
+      >
+        <svg />
+        <figcaption
+          className="label"
+        >
+          Campus
+        </figcaption>
+      </figure>
+      <figure
+        className="Badge badgeGroupItem"
+      >
+        <svg />
+        <figcaption
+          className="label"
+        >
+          Housing
+        </figcaption>
+      </figure>
+      <figure
+        className="Badge badgeGroupItem"
+      >
+        <svg />
+        <figcaption
+          className="label"
+        >
+          Equipment
         </figcaption>
       </figure>
     </div>
@@ -145,7 +190,7 @@ exports[`Storyshots Cards/SchoolCard with no physical locations 1`] = `
     >
       Accepts GI Bill
     </span>
-    Yes
+    No
   </div>
   <div
     className="cardBlock"
@@ -176,11 +221,6 @@ exports[`Storyshots Cards/SchoolCard with one location 1`] = `
   className="Card SchoolCard"
 >
   <div
-    className="giBillRibbon"
-  >
-    GI Bill
-  </div>
-  <div
     className="cardBrand"
   >
     <img
@@ -207,11 +247,31 @@ exports[`Storyshots Cards/SchoolCard with one location 1`] = `
         <figcaption
           className="label"
         >
+          Online
+        </figcaption>
+      </figure>
+      <figure
+        className="Badge badgeGroupItem active"
+      >
+        <svg />
+        <figcaption
+          className="label"
+        >
           Campus
         </figcaption>
       </figure>
       <figure
         className="Badge badgeGroupItem"
+      >
+        <svg />
+        <figcaption
+          className="label"
+        >
+          Housing
+        </figcaption>
+      </figure>
+      <figure
+        className="Badge badgeGroupItem active"
       >
         <svg />
         <figcaption
@@ -230,7 +290,7 @@ exports[`Storyshots Cards/SchoolCard with one location 1`] = `
     >
       Accepts GI Bill
     </span>
-    Yes
+    No
   </div>
   <div
     className="cardBlock"

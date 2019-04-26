@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import createShallowSnapshotTest from 'test-utils/createShallowSnapshotTest';
-import SchoolCard from '../SchoolCard';
+import SchoolCard, { getSchoolLocationText } from '../SchoolCard';
 
 const locations = [
   {
@@ -22,14 +22,17 @@ const locations = [
   },
 ];
 
+const [location] = locations;
+const mockSingleLocationText = getSchoolLocationText(false, [location]);
+const mockManyLocationsText = getSchoolLocationText(false, locations);
+const mockOnlineOnlyText = getSchoolLocationText(true, locations);
+
 describe('SchoolCard', () => {
   let componentInstance;
   let wrapper;
-  let onClickMock;
   beforeEach(() => {
     componentInstance = (
       <SchoolCard
-        cardFlipCallback={onClickMock}
         hasHardwareIncluded
         hasHousing
         hasOnline
@@ -39,15 +42,20 @@ describe('SchoolCard', () => {
         logoSource="source"
         name="school name"
         website="website"
-        toggleModal={() => {}}
+        toggleModal={jest.fn()}
       />
     );
-    onClickMock = jest.fn();
     wrapper = mount(componentInstance);
   });
 
   it('should render with required props', () => {
     createShallowSnapshotTest(componentInstance);
+  });
+
+  it('should display correct text based on location', () => {
+    expect(mockSingleLocationText).toBe(`${location.city}, ${location.state}`);
+    expect(mockManyLocationsText).toBe('Multiple locations');
+    expect(mockOnlineOnlyText).toBe('Online only');
   });
 
   it('should render the "view all" button when multiple locations exist', () => {

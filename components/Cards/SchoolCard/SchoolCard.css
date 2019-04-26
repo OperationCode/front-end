@@ -1,13 +1,14 @@
 .SchoolCard {
   width: 330px;
   font-family: var(--primaryFontFamily), sans-serif;
-  background-color: #ffffff;
   border: 1px solid var(--primary);
   justify-content: normal;
   padding: 0;
   position: relative;
-  color: rgba(0, 0, 0, 0.7);
   overflow: hidden;
+
+  /* Hardcoded white background to match logo image background, which var(--white) does not match */
+  background-color: #ffffff;
 }
 
 @media screen and (--large-viewport) {
@@ -20,6 +21,11 @@
   .SchoolCard {
     width: 100%;
   }
+}
+
+.SchoolCard,
+.badgeGroup .active {
+  color: rgba(0, 0, 0, 0.7);
 }
 
 .giBillRibbon {
@@ -93,18 +99,18 @@
   text-decoration: underline;
   border-radius: 0;
   letter-spacing: 0;
-  background-color: #ffffff;
+  background-color: transparent;
   color: inherit;
 }
 
 .badgeGroup {
   display: flex;
+  color: var(--gray);
 }
 
 .badgeGroupItem {
   margin: 0 8px;
   font-size: 15px;
-  color: rgba(0, 0, 0, 0.65);
 }
 
 .badgeGroupItem:last-child {
