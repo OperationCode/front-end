@@ -7,7 +7,12 @@ exports[`Storyshots Cards/SchoolCard with many locations 1`] = `
   <div
     className="giBillRibbon"
   >
-    GI Bill
+    <span
+      className="ScreenReaderOnly"
+    >
+      Accepts the 
+    </span>
+     GI Bill
   </div>
   <div
     className="cardBrand"
@@ -36,7 +41,17 @@ exports[`Storyshots Cards/SchoolCard with many locations 1`] = `
         <figcaption
           className="label"
         >
+          <span
+            className="ScreenReaderOnly"
+          >
+            Has 
+          </span>
           Online
+          <span
+            className="ScreenReaderOnly"
+          >
+            availability
+          </span>
         </figcaption>
       </figure>
       <figure
@@ -46,7 +61,17 @@ exports[`Storyshots Cards/SchoolCard with many locations 1`] = `
         <figcaption
           className="label"
         >
+          <span
+            className="ScreenReaderOnly"
+          >
+            Has 
+          </span>
           Campus
+          <span
+            className="ScreenReaderOnly"
+          >
+            availability
+          </span>
         </figcaption>
       </figure>
       <figure
@@ -56,7 +81,17 @@ exports[`Storyshots Cards/SchoolCard with many locations 1`] = `
         <figcaption
           className="label"
         >
+          <span
+            className="ScreenReaderOnly"
+          >
+            Does not have 
+          </span>
           Housing
+          <span
+            className="ScreenReaderOnly"
+          >
+            availability
+          </span>
         </figcaption>
       </figure>
       <figure
@@ -66,7 +101,17 @@ exports[`Storyshots Cards/SchoolCard with many locations 1`] = `
         <figcaption
           className="label"
         >
+          <span
+            className="ScreenReaderOnly"
+          >
+            Does not have 
+          </span>
           Equipment
+          <span
+            className="ScreenReaderOnly"
+          >
+            availability
+          </span>
         </figcaption>
       </figure>
     </div>
@@ -120,6 +165,11 @@ exports[`Storyshots Cards/SchoolCard with no physical locations 1`] = `
 <article
   className="Card SchoolCard"
 >
+  <span
+    className="ScreenReaderOnly"
+  >
+    Does not accept the GI Bill as payment
+  </span>
   <div
     className="cardBrand"
   >
@@ -147,7 +197,17 @@ exports[`Storyshots Cards/SchoolCard with no physical locations 1`] = `
         <figcaption
           className="label"
         >
+          <span
+            className="ScreenReaderOnly"
+          >
+            Has 
+          </span>
           Online
+          <span
+            className="ScreenReaderOnly"
+          >
+            availability
+          </span>
         </figcaption>
       </figure>
       <figure
@@ -157,7 +217,17 @@ exports[`Storyshots Cards/SchoolCard with no physical locations 1`] = `
         <figcaption
           className="label"
         >
+          <span
+            className="ScreenReaderOnly"
+          >
+            Does not have 
+          </span>
           Campus
+          <span
+            className="ScreenReaderOnly"
+          >
+            availability
+          </span>
         </figcaption>
       </figure>
       <figure
@@ -167,7 +237,17 @@ exports[`Storyshots Cards/SchoolCard with no physical locations 1`] = `
         <figcaption
           className="label"
         >
+          <span
+            className="ScreenReaderOnly"
+          >
+            Does not have 
+          </span>
           Housing
+          <span
+            className="ScreenReaderOnly"
+          >
+            availability
+          </span>
         </figcaption>
       </figure>
       <figure
@@ -177,7 +257,17 @@ exports[`Storyshots Cards/SchoolCard with no physical locations 1`] = `
         <figcaption
           className="label"
         >
+          <span
+            className="ScreenReaderOnly"
+          >
+            Does not have 
+          </span>
           Equipment
+          <span
+            className="ScreenReaderOnly"
+          >
+            availability
+          </span>
         </figcaption>
       </figure>
     </div>
@@ -220,6 +310,11 @@ exports[`Storyshots Cards/SchoolCard with one location 1`] = `
 <article
   className="Card SchoolCard"
 >
+  <span
+    className="ScreenReaderOnly"
+  >
+    Does not accept the GI Bill as payment
+  </span>
   <div
     className="cardBrand"
   >
@@ -247,7 +342,17 @@ exports[`Storyshots Cards/SchoolCard with one location 1`] = `
         <figcaption
           className="label"
         >
+          <span
+            className="ScreenReaderOnly"
+          >
+            Does not have 
+          </span>
           Online
+          <span
+            className="ScreenReaderOnly"
+          >
+            availability
+          </span>
         </figcaption>
       </figure>
       <figure
@@ -257,7 +362,17 @@ exports[`Storyshots Cards/SchoolCard with one location 1`] = `
         <figcaption
           className="label"
         >
+          <span
+            className="ScreenReaderOnly"
+          >
+            Has 
+          </span>
           Campus
+          <span
+            className="ScreenReaderOnly"
+          >
+            availability
+          </span>
         </figcaption>
       </figure>
       <figure
@@ -267,7 +382,17 @@ exports[`Storyshots Cards/SchoolCard with one location 1`] = `
         <figcaption
           className="label"
         >
+          <span
+            className="ScreenReaderOnly"
+          >
+            Does not have 
+          </span>
           Housing
+          <span
+            className="ScreenReaderOnly"
+          >
+            availability
+          </span>
         </figcaption>
       </figure>
       <figure
@@ -277,7 +402,17 @@ exports[`Storyshots Cards/SchoolCard with one location 1`] = `
         <figcaption
           className="label"
         >
+          <span
+            className="ScreenReaderOnly"
+          >
+            Has 
+          </span>
           Equipment
+          <span
+            className="ScreenReaderOnly"
+          >
+            availability
+          </span>
         </figcaption>
       </figure>
     </div>
