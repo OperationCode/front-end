@@ -22,11 +22,6 @@ const locations = [
   },
 ];
 
-const [location] = locations;
-const mockSingleLocationText = getSchoolLocationText(false, [location]);
-const mockManyLocationsText = getSchoolLocationText(false, locations);
-const mockOnlineOnlyText = getSchoolLocationText(true, locations);
-
 describe('SchoolCard', () => {
   let componentInstance;
   let wrapper;
@@ -59,9 +54,11 @@ describe('SchoolCard', () => {
   });
 
   it('should display correct text based on location', () => {
-    expect(mockSingleLocationText).toBe(`${location.city}, ${location.state}`);
-    expect(mockManyLocationsText).toBe('Multiple locations');
-    expect(mockOnlineOnlyText).toBe('Online only');
+    const [location] = locations;
+
+    expect(getSchoolLocationText(false, [location])).toBe(`${location.city}, ${location.state}`);
+    expect(getSchoolLocationText(false, locations)).toBe('Multiple locations');
+    expect(getSchoolLocationText(true, locations)).toBe('Online only');
   });
 
   it('should render the "view all" button when multiple locations exist', () => {
