@@ -30,6 +30,7 @@ const mockOnlineOnlyText = getSchoolLocationText(true, locations);
 describe('SchoolCard', () => {
   let componentInstance;
   let wrapper;
+  const toggleModal = jest.fn();
   beforeEach(() => {
     componentInstance = (
       <SchoolCard
@@ -42,7 +43,7 @@ describe('SchoolCard', () => {
         logoSource="source"
         name="school name"
         website="website"
-        toggleModal={jest.fn()}
+        toggleModal={toggleModal}
       />
     );
     wrapper = mount(componentInstance);
@@ -50,6 +51,11 @@ describe('SchoolCard', () => {
 
   it('should render with required props', () => {
     createShallowSnapshotTest(componentInstance);
+  });
+
+  it('should call toggleModal on click', () => {
+    wrapper.find('button').simulate('click');
+    expect(toggleModal).toHaveBeenCalled();
   });
 
   it('should display correct text based on location', () => {
