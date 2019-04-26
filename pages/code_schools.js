@@ -14,13 +14,15 @@ import treehouse from 'static/images/moocs/treehouse.jpg';
 import udacity from 'static/images/moocs/udacity.jpg';
 import styles from './styles/code_schools.css';
 
+const INITIAL_MODAL_STATE = { name: '', locations: [] };
+
 export default class CodeSchools extends React.Component {
   state = {
     allSchools: [],
     filteredSchools: [],
     moocSchools: [],
     selectedStates: [],
-    modalOpen: {},
+    locationsModalInfo: INITIAL_MODAL_STATE,
   };
 
   async componentDidMount() {
@@ -48,13 +50,11 @@ export default class CodeSchools extends React.Component {
     ];
 
     this.setState({ allSchools: data, filteredSchools: data, moocSchools });
-
-    if (Modal.setAppElement) {
-      Modal.setAppElement('body');
-    }
   }
 
-  handleModalToggle = (modalOpen) => this.setState({ modalOpen: modalOpen || {} });
+  handleModalOpen = locationsModalInfo => this.setState({ locationsModalInfo });
+
+  handleModalClose = () => this.setState({ locationsModalInfo: INITIAL_MODAL_STATE });
 
   filterOnline = () => {
     const { allSchools } = this.state;
@@ -93,7 +93,7 @@ export default class CodeSchools extends React.Component {
 
   render() {
     const { state } = this;
-    const isModalOpen = !!state.modalOpen.name;
+    const isModalOpen = Boolean(state.locationsModalInfo.name);
 
     return (
       <>
@@ -189,7 +189,7 @@ export default class CodeSchools extends React.Component {
                   logoSource={school.logo}
                   name={school.name}
                   website={school.url}
-                  toggleModal={this.handleModalToggle}
+                  toggleModal={this.handleModalOpen}
                 />
               ))}
             </div>,
@@ -216,12 +216,12 @@ export default class CodeSchools extends React.Component {
         <Modal
           isOpen={isModalOpen}
           screenReaderLabel="Campus locations"
-          onRequestClose={this.handleModalToggle}
+          onRequestClose={this.handleModalClose}
           className={styles.schoolLocationModal}
         >
           <>
-            {isModalOpen && <h3>{state.modalOpen.name} Campuses</h3>}
-            {isModalOpen && state.modalOpen.locations.map((location) => (
+            <h3>{state.locationsModalInfo.name} Campuses</h3>
+            {state.locationsModalInfo.locations.map(location => (
               <div className={styles.schoolLocalModalItem}>
                 {`${location.city}, ${location.state}`}
               </div>
