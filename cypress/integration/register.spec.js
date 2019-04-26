@@ -5,8 +5,6 @@ const faker = require('faker');
 describe('register', function() {
   const newUser = {
     email: faker.internet.email(),
-
-    existingEmail: 'kylemh.email12@gmail.com',
     // ensure password passes strength requirement
     password: `${faker.internet.password(minPasswordCharNum)}!1Aa`,
 
@@ -15,6 +13,7 @@ describe('register', function() {
     zipcode: faker.address.zipCode(),
   };
 
+  const existingEmail = 'kylemh.email12@gmail.com';
   beforeEach(() => {
     cy.server();
     cy.route('POST', '/api/v1/users').as('postRegister');
@@ -50,8 +49,8 @@ describe('register', function() {
   });
 
   it('should NOT be able to register with an existing email', () => {
-    cy.get('input#email').type(newUser.existingEmail);
-    cy.get('input#confirm-email').type(newUser.existingEmail);
+    cy.get('input#email').type(existingEmail);
+    cy.get('input#confirm-email').type(existingEmail);
     cy.get('input#password').type(newUser.password);
     cy.get('input#confirm-password').type(newUser.password);
     cy.get('input#firstName').type(newUser.firstName);
@@ -83,7 +82,7 @@ describe('register', function() {
 
   it('should NOT be able to register with an invalid email match', () => {
     cy.get('input#email').type(newUser.email);
-    cy.get('input#confirm-email').type(newUser.existingEmail);
+    cy.get('input#confirm-email').type(existingEmail);
     cy.get('input#password').type(newUser.password);
     cy.get('input#confirm-password').type(newUser.password);
     cy.get('input#firstName').type(newUser.firstName);
