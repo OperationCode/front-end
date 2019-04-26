@@ -14,15 +14,13 @@ import treehouse from 'static/images/moocs/treehouse.jpg';
 import udacity from 'static/images/moocs/udacity.jpg';
 import styles from './styles/code_schools.css';
 
-const INITIAL_MODAL_STATE = { name: '', locations: [] };
-
 export default class CodeSchools extends React.Component {
   state = {
     allSchools: [],
     filteredSchools: [],
     moocSchools: [],
     selectedStates: [],
-    locationsModalInfo: INITIAL_MODAL_STATE,
+    locationsModalInfo: { name: '', locations: [] },
   };
 
   async componentDidMount() {
@@ -52,9 +50,10 @@ export default class CodeSchools extends React.Component {
     this.setState({ allSchools: data, filteredSchools: data, moocSchools });
   }
 
-  handleModalOpen = locationsModalInfo => this.setState({ locationsModalInfo });
+  handleModalOpen = ({ name, locations }) =>
+    this.setState({ locationsModalInfo: { name, locations } });
 
-  handleModalClose = () => this.setState({ locationsModalInfo: INITIAL_MODAL_STATE });
+  handleModalClose = () => this.setState({ locationsModalInfo: { name: '', locations: [] } });
 
   filterOnline = () => {
     const { allSchools } = this.state;
