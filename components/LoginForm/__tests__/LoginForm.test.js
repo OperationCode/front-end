@@ -1,7 +1,8 @@
 import React from 'react';
+import faker from 'faker';
 import { mount } from 'enzyme';
-import { loginUser } from 'common/constants/api';
-import { validationErrorMessages } from 'common/constants/validations';
+import { loginUser, serverDownErrorMessage } from 'common/constants/api';
+import { minPasswordCharNum, validationErrorMessages } from 'common/constants/validations';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 import OperationCodeAPIMock from 'test-utils/mocks/apiMock';
 import wait from 'test-utils/wait';
@@ -91,17 +92,17 @@ describe('LoginForm', () => {
 
   it('should submit with valid data in form', async () => {
     const initialValues = {
-      email: 'email@email.com',
-      password: 'abc123ABC',
+      email: faker.internet.email(),
+      password: `${faker.internet.password(minPasswordCharNum)}!1Aa`,
     };
 
     OperationCodeAPIMock.onPost('sessions', { user: initialValues }).reply(200, {
       user: {
-        first_name: 'John',
-        last_name: 'Doe',
+        first_name: faker.name.firstName(),
+        last_name: faker.name.lastName(),
         email: initialValues.email,
-        zip: 12345,
-        slack_name: 'JD12345',
+        zip: faker.address.zipCode(),
+        slack_name: faker.internet.userName(),
         mentor: false,
       },
       token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9',
@@ -179,5 +180,33 @@ describe('LoginForm', () => {
         .last()
         .text(),
     ).toStrictEqual(invalidError);
+  });
+
+  it('should show a helpful error if the server is down', async () => {
+    const initialValues = {
+      email: faker.internet.email(),
+      password: `${faker.internet.password(minPasswordCharNum)}!1Aa`,
+    };
+
+    OperationCodeAPIMock.onPost('sessions', { user: initialValues }).reply(503);
+
+    const successSpy = jest.fn();
+    const wrapper = mount(
+      <LoginForm onSuccess={successSpy} login={loginUser} {...initialValues} />,
+    );
+
+    wrapper.find('Button').simulate('submit');
+    await asyncRenderDiff(wrapper);
+
+    await wait(() => {
+      expect(successSpy).toHaveBeenCalled();
+      expect(OperationCodeAPIMock.history.post.length).toBeGreaterThan(0);
+      expect(
+        wrapper
+          .find('Alert')
+          .last()
+          .text(),
+      ).toStrictEqual(serverDownErrorMessage);
+    });
   });
 });
