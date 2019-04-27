@@ -107,6 +107,12 @@
   border-color: var(--gray);
 }
 
+@media screen and (--large-viewport) {
+  .SchoolCard .modalToggler {
+    margin-top: -5px;
+  }
+}
+
 .badgeGroup {
   display: flex;
   color: var(--gray);
@@ -117,24 +123,36 @@
   font-size: 15px;
 }
 
+@media screen and (--large-viewport) {
+  .badgeGroupItem {
+    margin: 0 6px;
+  }
+}
+
 .badgeGroupItem:last-child {
   margin-right: 0;
 }
 
 .badgeGroupItem svg {
-  height: 36px;
+  height: 32px;
   margin: 0;
+}
+
+@media screen and (--large-viewport) {
+  .badgeGroupItem svg {
+    height: 28px;
+  }
 }
 
 @media screen and (--medium-viewport) {
   .badgeGroupItem svg {
-    height: 32px;
+    height: 26px;
   }
 }
 
 @media screen and (--small-viewport) {
   .badgeGroupItem svg {
-    height: 28px;
+    height: 22px;
   }
 }
 
