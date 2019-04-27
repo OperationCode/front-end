@@ -15,12 +15,7 @@ export const breakpointsObject = themeMapValues.reduce((obj, [key, value]) => {
 
 export const brandColorsObject = themeMapValues.reduce((obj, [key, value]) => {
   if (isHexColor(value)) {
-    // We don't want to include modifier colors like `primaryLight`
-    const isBrandColor = !(key.includes('Light') || key.includes('Dark'));
-
-    if (isBrandColor) {
-      obj[key] = value; // eslint-disable-line no-param-reassign
-    }
+    obj[key] = value; // eslint-disable-line no-param-reassign
   }
 
   return obj;
