@@ -8,7 +8,7 @@
  *
  * @export
  * @param {string} someString
- * @returns {string } Returns string with the first character capitalized
+ * @returns {string} Returns string with the first character capitalized
  */
 function capitalizeFirstLetter(someString = '') {
   const stringCopy = someString.slice(0);
