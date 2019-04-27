@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Formik, Field } from 'formik';
 import * as Yup from 'yup';
+import { getErrorMessage } from 'common/utils/api-utils';
 import { minPasswordCharNum, validationErrorMessages } from 'common/constants/validations';
 import { isMinPasswordStrength } from 'common/utils/validator-utils';
 import Button from 'components/Button/Button';
@@ -67,8 +68,7 @@ class LoginForm extends Component {
     } catch (error) {
       actions.setSubmitting(false);
 
-      const { data } = error.response;
-      this.setState({ errorMsg: data.error });
+      this.setState({ errorMsg: getErrorMessage(error) });
     }
   };
 

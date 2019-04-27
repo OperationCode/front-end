@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Formik, Field } from 'formik';
 import * as Yup from 'yup';
+import { getErrorMessage } from 'common/utils/api-utils';
 import { minPasswordCharNum, validationErrorMessages } from 'common/constants/validations';
 import { capitalizeFirstLetter } from 'common/utils/string-utils';
 import { isMinPasswordStrength, isValidZipcode } from 'common/utils/validator-utils';
@@ -83,18 +84,22 @@ class RegistrationForm extends Component {
 
       const { data } = error.response;
 
-      // TODO: Create back-end ticket for checking if email has been taken for a debounced,
-      // client-side validation of emails instead of waiting for submission.
-      const errorMsg = Object.keys(data)
-        .map(key => {
-          const fieldName = capitalizeFirstLetter(key);
+      if (data) {
+        // TODO: Create back-end ticket for checking if email has been taken for a debounced,
+        // client-side validation of emails instead of waiting for submission.
+        const errorMsg = Object.keys(data)
+          .map(key => {
+            const fieldName = capitalizeFirstLetter(key);
 
-          // example: Email has already been taken.
-          return `${fieldName} ${data[key][0]}.`;
-        })
-        .join('\n');
+            // example: Email has already been taken.
+            return `${fieldName} ${data[key][0]}.`;
+          })
+          .join('\n');
 
-      this.setState({ errorMsg });
+        this.setState({ errorMsg });
+      } else {
+        this.setState({ errorMsg: getErrorMessage(error) });
+      }
     }
   };
 
