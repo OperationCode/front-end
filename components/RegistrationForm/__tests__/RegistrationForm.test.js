@@ -1,7 +1,7 @@
 import React from 'react';
 import faker from 'faker';
 import { mount } from 'enzyme';
-import { createUser } from 'common/constants/api';
+import { createUser, serverDownErrorMessage } from 'common/constants/api';
 import { validationErrorMessages } from 'common/constants/validations';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 import mockValidPassword from 'test-utils/mockValidPassword';
@@ -224,5 +224,34 @@ describe('RegistrationForm', () => {
         .last()
         .text(),
     ).toStrictEqual('Email has been taken.');
+  });
+  it('should show a helpful error if the server is down', async () => {
+    const user = generateValidUserObject();
+
+    OperationCodeAPIMock.onPost('users', {
+      user: {
+        email: user.email,
+        password: user.password,
+        first_name: user.firstName,
+        last_name: user.lastName,
+        zip: user.zipcode,
+      },
+    }).reply(503);
+
+    const successSpy = jest.fn();
+    const wrapper = mount(
+      <RegistrationForm register={createUser} onSuccess={successSpy} initialValues={user} />,
+    );
+
+    wrapper.find('Button').simulate('submit');
+    await asyncRenderDiff(wrapper);
+
+    expect(successSpy).not.toHaveBeenCalled();
+    expect(
+      wrapper
+        .find('Alert')
+        .last()
+        .text(),
+    ).toStrictEqual(serverDownErrorMessage);
   });
 });
