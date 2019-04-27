@@ -7,12 +7,7 @@ exports[`Storyshots Cards/SchoolCard with many locations 1`] = `
   <div
     className="giBillRibbon"
   >
-    <span
-      className="ScreenReaderOnly"
-    >
-      Accepts the 
-    </span>
-     GI Bill
+    GI Bill
   </div>
   <div
     className="cardBrand"
@@ -47,11 +42,6 @@ exports[`Storyshots Cards/SchoolCard with many locations 1`] = `
             Has 
           </span>
           Online
-          <span
-            className="ScreenReaderOnly"
-          >
-            availability
-          </span>
         </figcaption>
       </figure>
       <figure
@@ -67,11 +57,6 @@ exports[`Storyshots Cards/SchoolCard with many locations 1`] = `
             Has 
           </span>
           Campus
-          <span
-            className="ScreenReaderOnly"
-          >
-            availability
-          </span>
         </figcaption>
       </figure>
       <figure
@@ -87,11 +72,6 @@ exports[`Storyshots Cards/SchoolCard with many locations 1`] = `
             Does not have 
           </span>
           Housing
-          <span
-            className="ScreenReaderOnly"
-          >
-            availability
-          </span>
         </figcaption>
       </figure>
       <figure
@@ -107,11 +87,6 @@ exports[`Storyshots Cards/SchoolCard with many locations 1`] = `
             Does not have 
           </span>
           Equipment
-          <span
-            className="ScreenReaderOnly"
-          >
-            availability
-          </span>
         </figcaption>
       </figure>
     </div>
@@ -135,7 +110,6 @@ exports[`Storyshots Cards/SchoolCard with many locations 1`] = `
       Campus Locations
     </span>
     Multiple locations
-     (
     <button
       className="Button modalToggler primary"
       disabled={false}
@@ -145,13 +119,12 @@ exports[`Storyshots Cards/SchoolCard with many locations 1`] = `
     >
       view all
     </button>
-    )
   </div>
   <div
     className="cardBlock"
   >
     <a
-      className="Button primary fullWidth"
+      className="Button secondary fullWidth"
       href="https://generalassembly.com"
       onClick={[Function]}
     >
@@ -165,11 +138,11 @@ exports[`Storyshots Cards/SchoolCard with no physical locations 1`] = `
 <article
   className="Card SchoolCard"
 >
-  <span
-    className="ScreenReaderOnly"
+  <div
+    className="giBillRibbon"
   >
-    Does not accept the GI Bill as payment
-  </span>
+    GI Bill
+  </div>
   <div
     className="cardBrand"
   >
@@ -203,11 +176,6 @@ exports[`Storyshots Cards/SchoolCard with no physical locations 1`] = `
             Has 
           </span>
           Online
-          <span
-            className="ScreenReaderOnly"
-          >
-            availability
-          </span>
         </figcaption>
       </figure>
       <figure
@@ -223,11 +191,6 @@ exports[`Storyshots Cards/SchoolCard with no physical locations 1`] = `
             Does not have 
           </span>
           Campus
-          <span
-            className="ScreenReaderOnly"
-          >
-            availability
-          </span>
         </figcaption>
       </figure>
       <figure
@@ -243,11 +206,6 @@ exports[`Storyshots Cards/SchoolCard with no physical locations 1`] = `
             Does not have 
           </span>
           Housing
-          <span
-            className="ScreenReaderOnly"
-          >
-            availability
-          </span>
         </figcaption>
       </figure>
       <figure
@@ -263,11 +221,6 @@ exports[`Storyshots Cards/SchoolCard with no physical locations 1`] = `
             Does not have 
           </span>
           Equipment
-          <span
-            className="ScreenReaderOnly"
-          >
-            availability
-          </span>
         </figcaption>
       </figure>
     </div>
@@ -296,7 +249,7 @@ exports[`Storyshots Cards/SchoolCard with no physical locations 1`] = `
     className="cardBlock"
   >
     <a
-      className="Button primary fullWidth"
+      className="Button secondary fullWidth"
       href="https://thinkful.com"
       onClick={[Function]}
     >
@@ -310,11 +263,11 @@ exports[`Storyshots Cards/SchoolCard with one location 1`] = `
 <article
   className="Card SchoolCard"
 >
-  <span
-    className="ScreenReaderOnly"
+  <div
+    className="giBillRibbon"
   >
-    Does not accept the GI Bill as payment
-  </span>
+    GI Bill
+  </div>
   <div
     className="cardBrand"
   >
@@ -348,11 +301,6 @@ exports[`Storyshots Cards/SchoolCard with one location 1`] = `
             Does not have 
           </span>
           Online
-          <span
-            className="ScreenReaderOnly"
-          >
-            availability
-          </span>
         </figcaption>
       </figure>
       <figure
@@ -368,11 +316,6 @@ exports[`Storyshots Cards/SchoolCard with one location 1`] = `
             Has 
           </span>
           Campus
-          <span
-            className="ScreenReaderOnly"
-          >
-            availability
-          </span>
         </figcaption>
       </figure>
       <figure
@@ -388,11 +331,6 @@ exports[`Storyshots Cards/SchoolCard with one location 1`] = `
             Does not have 
           </span>
           Housing
-          <span
-            className="ScreenReaderOnly"
-          >
-            availability
-          </span>
         </figcaption>
       </figure>
       <figure
@@ -408,11 +346,6 @@ exports[`Storyshots Cards/SchoolCard with one location 1`] = `
             Has 
           </span>
           Equipment
-          <span
-            className="ScreenReaderOnly"
-          >
-            availability
-          </span>
         </figcaption>
       </figure>
     </div>
@@ -441,7 +374,7 @@ exports[`Storyshots Cards/SchoolCard with one location 1`] = `
     className="cardBlock"
   >
     <a
-      className="Button primary fullWidth"
+      className="Button secondary fullWidth"
       href="https://codeimmersives.com"
       onClick={[Function]}
     >

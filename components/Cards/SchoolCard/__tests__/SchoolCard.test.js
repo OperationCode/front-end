@@ -61,9 +61,11 @@ describe('SchoolCard', () => {
     expect(getSchoolLocationText(true, locations)).toBe('Online only');
   });
 
-  it('should render the "view all" button when multiple locations exist', () => {
+  it('should render the "(view all)" button when multiple locations exist', () => {
     // ensure wrapper has multiple locations at this point
     expect(wrapper.prop('locations').length).toBeGreaterThan(1);
-    expect(wrapper.find('button').filterWhere(node => node.text() === 'view all')).toExist();
+    expect(
+      wrapper.find('button.modalToggler').filterWhere(node => node.text() === 'view all'),
+    ).toExist();
   });
 });

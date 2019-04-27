@@ -29,7 +29,6 @@ const LabelWithScreenReader = ({ isActive, label }) => (
   <>
     <ScreenReaderOnly>{isActive ? 'Has ' : 'Does not have '}</ScreenReaderOnly>
     {label}
-    <ScreenReaderOnly>availability</ScreenReaderOnly>
   </>
 );
 
@@ -71,83 +70,73 @@ export default class SchoolCard extends Component {
 
     return (
       <Card className={styles.SchoolCard} hasAnimationOnHover={false}>
-        <>
-          {hasGiBill && (
-            <div className={styles.giBillRibbon}>
-              <ScreenReaderOnly>Accepts the </ScreenReaderOnly> GI Bill
-            </div>
-          )}
-          {hasGiBill || <ScreenReaderOnly>Does not accept the GI Bill as payment</ScreenReaderOnly>}
+        <div className={styles.giBillRibbon}>GI Bill</div>
 
-          <div className={styles.cardBrand}>
-            <img src={props.logoSource} alt={`${props.name} logo`} height="150" />
+        <div className={styles.cardBrand}>
+          <img src={props.logoSource} alt={`${props.name} logo`} height="150" />
+        </div>
+
+        <div className={styles.cardBlock}>
+          <span className={styles.cardBlockTitle}>Availability</span>
+          <div className={styles.badgeGroup}>
+            <Badge
+              label={<LabelWithScreenReader label="Online" isActive={props.hasOnline} />}
+              icon={<OnlineIcon />}
+              className={badgeClassNames(props.hasOnline)}
+            />
+            <Badge
+              label={<LabelWithScreenReader label="Campus" isActive={!props.hasOnlyOnline} />}
+              icon={<CampusIcon />}
+              className={badgeClassNames(!props.hasOnlyOnline)}
+            />
+            <Badge
+              label={<LabelWithScreenReader label="Housing" isActive={props.hasHousing} />}
+              icon={<HousingIcon />}
+              className={badgeClassNames(props.hasHousing)}
+            />
+            <Badge
+              label={
+                <LabelWithScreenReader label="Equipment" isActive={props.hasHardwareIncluded} />
+              }
+              icon={<EquipmentIcon />}
+              className={badgeClassNames(props.hasHardwareIncluded)}
+            />
           </div>
+        </div>
 
-          <div className={styles.cardBlock}>
-            <span className={styles.cardBlockTitle}>Availability</span>
-            <div className={styles.badgeGroup}>
-              <Badge
-                label={<LabelWithScreenReader label="Online" isActive={props.hasOnline} />}
-                icon={<OnlineIcon />}
-                className={badgeClassNames(props.hasOnline)}
-              />
-              <Badge
-                label={<LabelWithScreenReader label="Campus" isActive={!props.hasOnlyOnline} />}
-                icon={<CampusIcon />}
-                className={badgeClassNames(!props.hasOnlyOnline)}
-              />
-              <Badge
-                label={<LabelWithScreenReader label="Housing" isActive={props.hasHousing} />}
-                icon={<HousingIcon />}
-                className={badgeClassNames(props.hasHousing)}
-              />
-              <Badge
-                label={
-                  <LabelWithScreenReader label="Equipment" isActive={props.hasHardwareIncluded} />
-                }
-                icon={<EquipmentIcon />}
-                className={badgeClassNames(props.hasHardwareIncluded)}
-              />
-            </div>
-          </div>
+        <div className={styles.cardBlock}>
+          <span className={styles.cardBlockTitle}>Accepts GI Bill</span>
+          {hasGiBill ? 'Yes' : 'No'}
+        </div>
 
-          <div className={styles.cardBlock}>
-            <span className={styles.cardBlockTitle}>Accepts GI Bill</span>
-            {hasGiBill ? 'Yes' : 'No'}
-          </div>
-
-          <div className={styles.cardBlock}>
-            <span className={styles.cardBlockTitle}>Campus Locations</span>
-            {getSchoolLocationText(props.hasOnlyOnline, props.locations)}
-            {props.locations.length > 1 && (
-              <>
-                {' ('}
-                <Button
-                  analyticsObject={{
-                    action: 'Button Selected',
-                    category: 'Interactions',
-                    label: `${props.name} | Locations`,
-                  }}
-                  onClick={this.toggleModalClick}
-                  className={styles.modalToggler}
-                >
-                  view all
-                </Button>
-                {')'}
-              </>
-            )}
-          </div>
-
-          <div className={styles.cardBlock}>
-            <LinkButton
-              analyticsEventLabel={`${props.name} | Website`}
-              href={props.website}
-              fullWidth
+        <div className={styles.cardBlock}>
+          <span className={styles.cardBlockTitle}>Campus Locations</span>
+          {getSchoolLocationText(props.hasOnlyOnline, props.locations)}
+          {props.locations.length > 1 && (
+            <Button
+              analyticsObject={{
+                action: 'Button Selected',
+                category: 'Interactions',
+                label: `${props.name} | Locations`,
+              }}
+              onClick={this.toggleModalClick}
+              className={styles.modalToggler}
             >
-              Visit Website
-            </LinkButton>
-          </div>
-        </>
+              view all
+            </Button>
+          )}
+        </div>
+
+        <div className={styles.cardBlock}>
+          <LinkButton
+            analyticsEventLabel={`${props.name} | Website`}
+            href={props.website}
+            fullWidth
+            theme="secondary"
+          >
+            Visit Website
+          </LinkButton>
+        </div>
       </Card>
     );
   }

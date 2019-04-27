@@ -90,17 +90,21 @@
   color: var(--secondary);
 }
 
-.modalToggler {
+.SchoolCard .modalToggler {
   min-width: auto;
   text-transform: none;
-  padding: 0;
-  border: 0;
-  line-height: inherit;
-  text-decoration: underline;
-  border-radius: 0;
+  padding: 2px 6px 0;
+  margin: -4px 0 0 7px;
   letter-spacing: 0;
-  background-color: transparent;
   color: inherit;
+  background-color: var(--gray);
+  border: 2px solid var(--gray);
+}
+
+.SchoolCard .modalToggler:hover {
+  background-color: transparent;
+  color: var(--secondary);
+  border-color: var(--gray);
 }
 
 .badgeGroup {
