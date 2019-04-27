@@ -1,4 +1,6 @@
 import axios from 'axios';
+import lodashGet from 'lodash/get';
+import { serverDownErrorMessage } from 'common/constants/api';
 import { apiUrl } from 'common/config/environment';
 import { setAuthorizationHeader } from 'common/utils/cookie-utils';
 
@@ -26,4 +28,20 @@ export const patch = async (path, body) => {
   });
 
   return result;
+};
+
+/**
+ * @description Take an expected server error object and return its error. If object is unexpected,
+ * assume the server is down and return a relavant error message.
+ *
+ * @export
+ * @param {Error} errorObject
+ * @returns {string} A user-facing error message
+ */
+export const getErrorMessage = errorObject => {
+  // _.get's third argument is the default message
+  // if errorObject.response.data.error doesn't resolve, it means that the server is down
+  const errorMessage = lodashGet(errorObject, 'response.data.error', serverDownErrorMessage);
+
+  return errorMessage;
 };
