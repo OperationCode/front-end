@@ -139,11 +139,6 @@ exports[`Storyshots Cards/SchoolCard with no physical locations 1`] = `
   className="Card SchoolCard"
 >
   <div
-    className="giBillRibbon"
-  >
-    GI Bill
-  </div>
-  <div
     className="cardBrand"
   >
     <img
@@ -263,11 +258,6 @@ exports[`Storyshots Cards/SchoolCard with one location 1`] = `
 <article
   className="Card SchoolCard"
 >
-  <div
-    className="giBillRibbon"
-  >
-    GI Bill
-  </div>
   <div
     className="cardBrand"
   >
