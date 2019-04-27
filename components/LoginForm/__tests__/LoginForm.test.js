@@ -1,8 +1,9 @@
 import React from 'react';
 import faker from 'faker';
 import { mount } from 'enzyme';
-import { loginUser, serverDownErrorMessage } from 'common/constants/api';
-import { minPasswordCharNum, validationErrorMessages } from 'common/constants/validations';
+import { loginUser } from 'common/constants/api';
+import { networkErrorMessages, validationErrorMessages } from 'common/constants/messages';
+import { minPasswordCharNum } from 'common/constants/validations';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 import OperationCodeAPIMock from 'test-utils/mocks/apiMock';
 import wait from 'test-utils/wait';
@@ -206,7 +207,7 @@ describe('LoginForm', () => {
           .find('Alert')
           .last()
           .text(),
-      ).toStrictEqual(serverDownErrorMessage);
+      ).toStrictEqual(networkErrorMessages.serverDown);
     });
   });
 });

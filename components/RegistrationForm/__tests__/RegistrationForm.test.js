@@ -1,8 +1,8 @@
 import React from 'react';
 import faker from 'faker';
 import { mount } from 'enzyme';
-import { createUser, serverDownErrorMessage } from 'common/constants/api';
-import { validationErrorMessages } from 'common/constants/validations';
+import { createUser } from 'common/constants/api';
+import { networkErrorMessages, validationErrorMessages } from 'common/constants/messages';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 import mockValidPassword from 'test-utils/mockValidPassword';
 import OperationCodeAPIMock from 'test-utils/mocks/apiMock';
@@ -252,6 +252,6 @@ describe('RegistrationForm', () => {
         .find('Alert')
         .last()
         .text(),
-    ).toStrictEqual(serverDownErrorMessage);
+    ).toStrictEqual(networkErrorMessages.serverDown);
   });
 });

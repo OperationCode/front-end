@@ -1,6 +1,6 @@
 import axios from 'axios';
 import lodashGet from 'lodash/get';
-import { serverDownErrorMessage } from 'common/constants/api';
+import { networkErrorMessages } from 'common/constants/messages';
 import { apiUrl } from 'common/config/environment';
 import { setAuthorizationHeader } from 'common/utils/cookie-utils';
 
@@ -41,7 +41,11 @@ export const patch = async (path, body) => {
 export const getErrorMessage = errorObject => {
   // _.get's third argument is the default message
   // if errorObject.response.data.error doesn't resolve, it means that the server is down
-  const errorMessage = lodashGet(errorObject, 'response.data.error', serverDownErrorMessage);
+  const errorMessage = lodashGet(
+    errorObject,
+    'response.data.error',
+    networkErrorMessages.serverDown,
+  );
 
   return errorMessage;
 };

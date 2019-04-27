@@ -1,8 +1,5 @@
 import { get, post, patch } from 'common/utils/api-utils';
 
-/* Messages */
-export const serverDownErrorMessage = 'Something is wrong on our end. Please try again later.';
-
 /* GET REQUESTS */
 export const getCodeSchoolsPromise = () => get('code_schools');
 export const getMentorPromise = id => get(`mentors/${id}`);
