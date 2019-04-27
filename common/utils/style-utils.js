@@ -36,9 +36,15 @@ export function hasPixelSuffix(someString) {
  */
 export function isHexColor(value) {
   if (typeof value !== 'string') {
-    throw new Error(
-      `Must pass a string to this method. You passed ${value} which is type of: ${typeof value}`,
-    );
+    if (typeof value === 'object') {
+      throw new Error(
+        `Must pass a string to this method. You passed an object! Keys: ${Object.keys(value)}`,
+      );
+    } else {
+      throw new Error(
+        `Must pass a string to this method. You passed ${value} which is type of: ${typeof value}`,
+      );
+    }
   }
 
   // #FFF (smallest possible hex color pattern)
