@@ -1,15 +1,7 @@
-import mockValidPassword from '../../test-utils/mockValidPassword';
-
-const faker = require('faker');
+import mockUser from '../../test-utils/mockGenerators/mockUser';
 
 describe('register', function() {
-  const newUser = {
-    email: faker.internet.email(),
-    password: mockValidPassword(),
-    firstName: faker.name.firstName(),
-    lastName: faker.name.lastName(),
-    zipcode: faker.address.zipCode(),
-  };
+  const newUser = mockUser();
 
   it('should be able to register with valid data', () => {
     cy.server();

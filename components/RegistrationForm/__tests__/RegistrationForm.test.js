@@ -1,10 +1,10 @@
 import React from 'react';
-import faker from 'faker';
 import { mount } from 'enzyme';
 import { createUser } from 'common/constants/api';
 import { networkErrorMessages, validationErrorMessages } from 'common/constants/messages';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
-import mockValidPassword from 'test-utils/mockValidPassword';
+import mockUser from 'test-utils/mockGenerators/mockUser';
+import mockPassword from 'test-utils/mockGenerators/mockPassword';
 import OperationCodeAPIMock from 'test-utils/mocks/apiMock';
 import wait from 'test-utils/wait';
 import RegistrationForm from '../RegistrationForm';
@@ -17,23 +17,6 @@ const asyncRenderDiff = async enzymeWrapper => {
 afterEach(() => {
   OperationCodeAPIMock.reset();
 });
-
-const generateValidUserObject = (desiredEmail = '') => {
-  const email = desiredEmail || faker.internet.email();
-  const password = mockValidPassword();
-
-  const user = {
-    email,
-    'confirm-email': email,
-    password,
-    'confirm-password': password,
-    firstName: faker.name.firstName(),
-    lastName: faker.name.lastName(),
-    zipcode: faker.address.zipCode(),
-  };
-
-  return user;
-};
 
 describe('RegistrationForm', () => {
   it('should render with required props', () => {
@@ -114,7 +97,7 @@ describe('RegistrationForm', () => {
     wrapper
       .find('input#password')
       .simulate('change', {
-        target: { id: 'password', value: mockValidPassword() },
+        target: { id: 'password', value: mockPassword() },
       })
       .simulate('blur');
 
@@ -137,7 +120,7 @@ describe('RegistrationForm', () => {
   });
 
   it('should submit with valid data in form', async () => {
-    const user = generateValidUserObject();
+    const user = mockUser();
 
     OperationCodeAPIMock.onPost('users', { user }).reply(200, {
       token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9',
@@ -193,7 +176,7 @@ describe('RegistrationForm', () => {
   });
 
   it('should show "email already registered" message for dupe email registration', async () => {
-    const existingUser = await generateValidUserObject('kylemh.email12@gmail.com');
+    const existingUser = await mockUser('kylemh.email12@gmail.com');
 
     OperationCodeAPIMock.onPost('users', {
       user: {
@@ -226,7 +209,7 @@ describe('RegistrationForm', () => {
     ).toStrictEqual('Email has been taken.');
   });
   it('should show a helpful error if the server is down', async () => {
-    const user = generateValidUserObject();
+    const user = mockUser();
 
     OperationCodeAPIMock.onPost('users', {
       user: {

@@ -3,9 +3,9 @@ import faker from 'faker';
 import { mount } from 'enzyme';
 import { loginUser } from 'common/constants/api';
 import { networkErrorMessages, validationErrorMessages } from 'common/constants/messages';
-import { minPasswordCharNum } from 'common/constants/validations';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 import OperationCodeAPIMock from 'test-utils/mocks/apiMock';
+import mockUser from 'test-utils/mockGenerators/mockUser';
 import wait from 'test-utils/wait';
 import LoginForm from '../LoginForm';
 
@@ -92,17 +92,19 @@ describe('LoginForm', () => {
   });
 
   it('should submit with valid data in form', async () => {
+    const user = mockUser();
+
     const initialValues = {
-      email: faker.internet.email(),
-      password: `${faker.internet.password(minPasswordCharNum)}!1Aa`,
+      email: user.email,
+      password: user.password,
     };
 
     OperationCodeAPIMock.onPost('sessions', { user: initialValues }).reply(200, {
       user: {
-        first_name: faker.name.firstName(),
-        last_name: faker.name.lastName(),
-        email: initialValues.email,
-        zip: faker.address.zipCode(),
+        first_name: user.firstName,
+        last_name: user.lastName,
+        email: user.email,
+        zip: user.zipcode,
         slack_name: faker.internet.userName(),
         mentor: false,
       },
@@ -184,9 +186,11 @@ describe('LoginForm', () => {
   });
 
   it('should show a helpful error if the server is down', async () => {
+    const user = mockUser();
+
     const initialValues = {
-      email: faker.internet.email(),
-      password: `${faker.internet.password(minPasswordCharNum)}!1Aa`,
+      email: user.email,
+      password: user.password,
     };
 
     OperationCodeAPIMock.onPost('sessions', { user: initialValues }).reply(503);
