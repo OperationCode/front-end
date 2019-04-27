@@ -1,14 +1,11 @@
-import { minPasswordCharNum } from '../../common/constants/validations';
+import mockValidPassword from '../../test-utils/mockValidPassword';
 
 const faker = require('faker');
 
 describe('register', function() {
   const newUser = {
     email: faker.internet.email(),
-
-    // ensure password passes strength requirement
-    password: `${faker.internet.password(minPasswordCharNum)}!1Aa`,
-
+    password: mockValidPassword(),
     firstName: faker.name.firstName(),
     lastName: faker.name.lastName(),
     zipcode: faker.address.zipCode(),
