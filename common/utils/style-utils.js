@@ -30,26 +30,27 @@ export function hasPixelSuffix(someString) {
  * @description Check to see if a string is a valid hex color
  *
  * @exports
- * @param {string} someString
+ * @param {string} value
  * @throws Will throw an error if method is not passed a string
  * @returns {boolean}
  */
-export function isHexColor(someString) {
-  if (typeof someString !== 'string') {
-    throw new Error('Must pass a string to this method.');
+export function isHexColor(value) {
+  if (typeof value !== 'string') {
+    throw new Error(
+      `Must pass a string to this method. You passed ${value} which is type of: ${typeof value}`,
+    );
   }
 
   // #FFF (smallest possible hex color pattern)
   // #FFFFFF (largest possible hex color pattern)
-  const stringLength = someString.length;
+  const stringLength = value.length;
   if (stringLength !== 4 && stringLength !== 7) {
     return false;
   }
 
   // Edge Cases: If you pass characters unrelated to a hex letter like 'g' or '+'
   // and it begins with a hashtag, you'll get a false-positive
-
-  return someString.startsWith('#');
+  return value.startsWith('#');
 }
 
 /**
