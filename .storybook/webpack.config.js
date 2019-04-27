@@ -1,6 +1,7 @@
 const path = require('path');
 const svgoConfig = require('../common/config/svgo');
 const postCSSConfig = require('../postcss.config');
+const { insertIf } = require('../common/utils/array-utils');
 
 // Export a function. Accept the base config as the only param.
 module.exports = (storybookBaseConfig, configType) => {
@@ -28,7 +29,7 @@ module.exports = (storybookBaseConfig, configType) => {
           loader: 'postcss-loader',
           options: {
             plugins: [
-              // Use PostCSS.config.js, but also use `postcss-export-custom-variables` plugin
+              // Use PostCSS.config.js, but also use `postcss-export-custom-variables` plugin in dev
               ...postCSSConfig({
                 file: {
                   dirname: '../',
@@ -36,10 +37,13 @@ module.exports = (storybookBaseConfig, configType) => {
                 options: storybookBaseConfig,
                 env: configType.toLowerCase(),
               }).plugins,
-              require('postcss-export-custom-variables')({
-                exporter: 'js',
-                destination: 'common/styles/themeMap.js',
-              }),
+              ...insertIf(
+                configType === 'DEVELOPMENT',
+                require('postcss-export-custom-variables')({
+                  exporter: 'js',
+                  destination: 'common/styles/themeMap.js',
+                }),
+              ),
             ],
           },
         },
