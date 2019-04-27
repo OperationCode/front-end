@@ -58,7 +58,16 @@ describe('Style Utilities', () => {
     });
 
     it('should throw an error if not passed a string', () => {
-      expect(() => isHexColor(3725)).toThrow('Must pass a string to this method.');
+      expect(() => isHexColor(3725)).toThrow(
+        'Must pass a string to this method. You passed 3725 which is type of: number.',
+      );
+    });
+
+    it('should throw an error if not passed a string - specifically an object', () => {
+      const someObject = { someKey: 'value' };
+      const errorMessage = `Must pass a string to this method. You passed an object! Keys: someKey`;
+
+      expect(() => isHexColor(someObject)).toThrow(errorMessage);
     });
   });
 
