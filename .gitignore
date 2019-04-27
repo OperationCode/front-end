@@ -73,3 +73,6 @@ out
 
 # WebStorm Config
 .idea
+
+# File system stuff
+.DS_Store
