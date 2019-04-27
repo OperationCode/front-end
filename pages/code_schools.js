@@ -6,6 +6,7 @@ import FlatCard from 'components/Cards/FlatCard/FlatCard';
 import SchoolCard from 'components/Cards/SchoolCard/SchoolCard';
 import Button from 'components/Button/Button';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
+import Modal from 'components/Modal/Modal';
 import { getCodeSchoolsPromise } from 'common/constants/api';
 import States from 'common/constants/dropdown-states-values';
 import edx from 'static/images/moocs/edx.jpg';
@@ -19,6 +20,7 @@ export default class CodeSchools extends React.Component {
     filteredSchools: [],
     moocSchools: [],
     selectedStates: [],
+    locationsModalInfo: { name: '', locations: [] },
   };
 
   async componentDidMount() {
@@ -47,6 +49,11 @@ export default class CodeSchools extends React.Component {
 
     this.setState({ allSchools: data, filteredSchools: data, moocSchools });
   }
+
+  handleModalOpen = ({ name, locations }) =>
+    this.setState({ locationsModalInfo: { name, locations } });
+
+  handleModalClose = () => this.setState({ locationsModalInfo: { name: '', locations: [] } });
 
   filterOnline = () => {
     const { allSchools } = this.state;
@@ -85,6 +92,7 @@ export default class CodeSchools extends React.Component {
 
   render() {
     const { state } = this;
+    const isModalOpen = Boolean(state.locationsModalInfo.name);
 
     return (
       <>
@@ -169,19 +177,19 @@ export default class CodeSchools extends React.Component {
             />,
             <div className={styles.schoolCardsWrapper}>
               {state.filteredSchools.map(school => (
-                <div key={`${school.name}`}>
-                  <SchoolCard
-                    hasHardwareIncluded={school.hardware_included}
-                    hasHousing={school.has_housing}
-                    hasOnline={school.has_online}
-                    hasOnlyOnline={school.online_only}
-                    isFullTime={school.full_time}
-                    locations={school.locations}
-                    logoSource={school.logo}
-                    name={school.name}
-                    website={school.url}
-                  />
-                </div>
+                <SchoolCard
+                  key={`${school.name}`}
+                  hasHardwareIncluded={school.hardware_included}
+                  hasHousing={school.has_housing}
+                  hasOnline={school.has_online}
+                  hasOnlyOnline={school.online_only}
+                  isFullTime={school.full_time}
+                  locations={school.locations}
+                  logoSource={school.logo}
+                  name={school.name}
+                  website={school.url}
+                  toggleModal={this.handleModalOpen}
+                />
               ))}
             </div>,
           ]}
@@ -203,6 +211,22 @@ export default class CodeSchools extends React.Component {
             </FlatCard>
           ))}
         />
+
+        <Modal
+          isOpen={isModalOpen}
+          screenReaderLabel="Campus locations"
+          onRequestClose={this.handleModalClose}
+          className={styles.schoolLocationModal}
+        >
+          <>
+            <h3>{state.locationsModalInfo.name} Campuses</h3>
+            {state.locationsModalInfo.locations.map(location => (
+              <div className={styles.schoolLocalModalItem}>
+                {`${location.city}, ${location.state}`}
+              </div>
+            ))}
+          </>
+        </Modal>
       </>
     );
   }
