@@ -27,7 +27,7 @@ storiesOf('Cards/SchoolCard', module)
       logoSource={text('logoSource', `${s3}codeSchoolLogos/general_assembly.jpg`)}
       name={text('name', 'General Assembly')}
       website={text('website', 'https://generalassembly.com')}
-      toggleModal={() => {}}
+      toggleModal={action('Modal opened!')}
     />
   ))
   .add('with one location', () => (
