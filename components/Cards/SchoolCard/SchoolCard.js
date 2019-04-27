@@ -70,7 +70,7 @@ export default class SchoolCard extends Component {
 
     return (
       <Card className={styles.SchoolCard} hasAnimationOnHover={false}>
-        <div className={styles.giBillRibbon}>GI Bill</div>
+        {hasGiBill && <div className={styles.giBillRibbon}>GI Bill</div>}
 
         <div className={styles.cardBrand}>
           <img src={props.logoSource} alt={`${props.name} logo`} height="150" />
