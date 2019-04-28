@@ -21,7 +21,7 @@
     "storybook": "start-storybook -s ./static -p 9001 -c .storybook",
     "storybook:build": "build-storybook -s ./static -c .storybook -o .storybook-dist",
     "test:e2e": "cypress open",
-    "test:e2e:ci": "cypress run --record --key 9e628491-4a66-4f7e-9651-91ab6ac459b8",
+    "test:e2e:ci": "cypress run --key 9e628491-4a66-4f7e-9651-91ab6ac459b8",
     "test": "cross-env NODE_ENV=test BABEL_ENV=test jest",
     "test:ci": "yarn test --ci --coverage",
     "test:changes": "yarn test --changedSince master",

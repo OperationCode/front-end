@@ -1,6 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, boolean, text } from '@storybook/addon-knobs';
+import { action } from '@storybook/addon-actions';
 
 import { s3 } from 'common/constants/urls';
 
@@ -26,6 +27,7 @@ storiesOf('Cards/SchoolCard', module)
       logoSource={text('logoSource', `${s3}codeSchoolLogos/general_assembly.jpg`)}
       name={text('name', 'General Assembly')}
       website={text('website', 'https://generalassembly.com')}
+      toggleModal={action('Modal opened!')}
     />
   ))
   .add('with one location', () => (
@@ -45,6 +47,7 @@ storiesOf('Cards/SchoolCard', module)
       logoSource={text('logoSource', `${s3}codeSchoolLogos/code_immersives.jpg`)}
       name={text('name', 'Code Immersives')}
       website={text('website', 'https://codeimmersives.com')}
+      toggleModal={action('Modal opened!')}
     />
   ))
   .add('with no physical locations', () => (
@@ -58,5 +61,6 @@ storiesOf('Cards/SchoolCard', module)
       logoSource={text('logoSource', `${s3}codeSchoolLogos/thinkful.jpg`)}
       name={text('name', 'Thinkful')}
       website={text('website', 'https://thinkful.com')}
+      toggleModal={action('Modal opened!')}
     />
   ));

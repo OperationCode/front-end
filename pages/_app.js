@@ -10,6 +10,7 @@ import { screenResize } from 'store/screenSize/actions';
 import breakpoints from 'common/styles/breakpoints';
 import Nav from 'components/Nav/Nav';
 import Footer from 'components/Footer/Footer';
+import Modal from 'components/Modal/Modal';
 import 'common/styles/globalStyles.css';
 import withFonts from '../decorators/withFonts/withFonts';
 
@@ -34,6 +35,10 @@ class OperationCodeApp extends App {
   componentDidMount() {
     this.handleScreenResize(); // get initial size on load
     window.addEventListener('resize', this.debouncedHandleScreenResize);
+
+    if (Modal.setAppElement) {
+      Modal.setAppElement('body');
+    }
   }
 
   componentWillUnmount() {
