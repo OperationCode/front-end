@@ -16,8 +16,9 @@
     "node": true
   },
   "parser": "babel-eslint",
-  "plugins": ["jest", "cypress"],
+  "plugins": ["prettier", "jest", "cypress"],
   "rules": {
+    "prettier/prettier": "error",
     "comma-dangle": ["error", "only-multiline"],
     "import/extensions": [
       "error",
@@ -82,19 +83,6 @@
     "multiline-ternary": ["error", "always-multiline"],
     "no-console": "warn",
     "no-use-before-define": "off",
-    "object-curly-newline": [
-      "error",
-      {
-        "ObjectExpression": { "multiline": true, "consistent": true },
-        "ObjectPattern": { "multiline": true, "consistent": true },
-        "ImportDeclaration": {
-          "multiline": true,
-          "minProperties": 4,
-          "consistent": true
-        },
-        "ExportDeclaration": { "multiline": true, "consistent": true }
-      }
-    ],
     "react/forbid-prop-types": ["error", { "forbid": ["any"] }],
     "react/jsx-curly-brace-presence": ["error", { "props": "never", "children": "never" }],
     "react/jsx-filename-extension": ["error", { "extensions": [".js"] }],
