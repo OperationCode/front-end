@@ -15,7 +15,7 @@ export const logout = () => {
 };
 
 /**
- * @description This method examines context via `getInitialProps` and returns a token if it exists.
+ * @description This method examines ctx via `getInitialProps` and returns a token if it exists.
  * If a token does not exist, the user will be routed to /login
  *
  * @export
@@ -29,13 +29,13 @@ export const logout = () => {
  * }} ctx
  * @returns {?string} token or null
  */
-export const authenticate = context => {
-  const { token } = nextCookie(context);
+export const authenticate = ctx => {
+  const { token } = nextCookie(ctx);
 
   // server request without a token provided
-  if (!isEmpty(context.req) && (!token || !isTokenValid(token))) {
-    context.res.writeHead(302, { Location: '/login' });
-    context.res.end();
+  if (!isEmpty(ctx.req) && (!token || !isTokenValid(token))) {
+    ctx.res.writeHead(302, { Location: '/login' });
+    ctx.res.end();
     return;
   }
 

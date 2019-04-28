@@ -116,7 +116,8 @@
           "props": true,
           "requiredProps": true,
           "defaultProps": true,
-          "mapStateToProps": true
+          "mapStateToProps": true,
+          "ctx": true
         }
       }
     ],

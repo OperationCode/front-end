@@ -45,13 +45,14 @@ class OperationCodeApp extends App {
     window.removeEventListener('resize', this.debouncedHandleScreenResize);
   }
 
-  static async getInitialProps({ Component, context }) {
+  // eslint-disable-next-line unicorn/prevent-abbreviations
+  static async getInitialProps({ Component, ctx }) {
     // eslint-disable-next-line unicorn/prevent-abbreviations
     let pageProps = {};
 
     // if page hits an API, make it async
     if (Component.getInitialProps) {
-      pageProps = await Component.getInitialProps(context);
+      pageProps = await Component.getInitialProps(ctx);
     }
 
     return { pageProps };

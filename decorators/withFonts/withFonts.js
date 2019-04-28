@@ -19,10 +19,10 @@ const withFonts = WrappedComponent =>
   class extends React.Component {
     static displayname = `withFonts(${getDisplayName(WrappedComponent)})`;
 
-    static async getInitialProps(context_) {
+    static async getInitialProps(ctx) {
       // eslint-disable-next-line unicorn/prevent-abbreviations
       const componentProps =
-        WrappedComponent.getInitialProps && (await WrappedComponent.getInitialProps(context_));
+        WrappedComponent.getInitialProps && (await WrappedComponent.getInitialProps(ctx));
 
       return { ...componentProps };
     }
