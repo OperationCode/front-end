@@ -1,19 +1,9 @@
-import { minPasswordCharNum } from '../../common/constants/validations';
-
-const faker = require('faker');
+import mockUser from '../../test-utils/mockGenerators/mockUser';
 
 describe('register', function() {
-  const newUser = {
-    email: faker.internet.email(),
-    // ensure password passes strength requirement
-    password: `${faker.internet.password(minPasswordCharNum)}!1Aa`,
-
-    firstName: faker.name.firstName(),
-    lastName: faker.name.lastName(),
-    zipcode: faker.address.zipCode(),
-  };
-
+  const newUser = mockUser();
   const existingEmail = 'kylemh.email12@gmail.com';
+  
   beforeEach(() => {
     cy.server();
     cy.route('POST', '/api/v1/users').as('postRegister');
