@@ -1,5 +1,5 @@
 import faker from 'faker';
-import { minPasswordCharNum } from '../../common/constants/validations';
+import { minimumPasswordLength } from '../../common/constants/validations';
 
 /**
  * @description generate a mocked password for registration tests
@@ -10,6 +10,6 @@ import { minPasswordCharNum } from '../../common/constants/validations';
  */
 export default function mockPassword(isValid = true) {
   return isValid
-    ? `${faker.internet.password(minPasswordCharNum)}!1Aa`
-    : `${faker.internet.password(minPasswordCharNum - 2)}`;
+    ? `${faker.internet.password(minimumPasswordLength)}!1Aa`
+    : `${faker.internet.password(minimumPasswordLength - 2)}`;
 }

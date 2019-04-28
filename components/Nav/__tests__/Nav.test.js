@@ -2,7 +2,6 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 import createShallowSnapshotTest from 'test-utils/createShallowSnapshotTest';
 
-import NavMobile from '../NavMobile/NavMobile';
 import { Nav } from '../Nav';
 
 describe('Nav', () => {
@@ -16,12 +15,12 @@ describe('Nav', () => {
 
   it('should render the mobile navigation bar when screen size is Xs', () => {
     const wrapper = shallow(<Nav {...smallScreen} />);
-    expect(wrapper.find(NavMobile)).toExist();
+    expect(wrapper.find('NavMobile')).toExist();
   });
 
   it('should render the regular navigation bar when screen size is not Xs', () => {
     const wrapper = shallow(<Nav {...largeScreen} />);
-    expect(wrapper.find(NavMobile)).not.toExist();
+    expect(wrapper.find('NavMobile')).not.toExist();
   });
 
   it('should change state accordingly when child component invokes openMenu callback', () => {

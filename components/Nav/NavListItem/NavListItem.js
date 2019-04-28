@@ -32,7 +32,7 @@ export default class NavListItem extends Component {
   };
 
   toggleSublinkVisibility = () => {
-    this.setState(prevState => ({ areSublinksVisible: !prevState.areSublinksVisible }));
+    this.setState(previousState => ({ areSublinksVisible: !previousState.areSublinksVisible }));
   };
 
   render() {

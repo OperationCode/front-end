@@ -84,7 +84,7 @@ function Input({
           type={type}
         />
 
-        <ErrorMessage name={name} render={msg => <Alert isOpen={hasErrors}>{msg}</Alert>} />
+        <ErrorMessage name={name} render={message => <Alert isOpen={hasErrors}>{message}</Alert>} />
       </div>
 
       {isLabelAfterInput && (

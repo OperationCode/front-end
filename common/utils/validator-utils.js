@@ -23,6 +23,6 @@ export function isValidZipcode(zipcode = '') {
  * @param {string} val
  * @return {boolean} true if min requirements are met
  */
-export function isMinPasswordStrength(val) {
-  return passwordStrengthRegex.test(val);
+export function isMinPasswordStrength(value) {
+  return passwordStrengthRegex.test(value);
 }

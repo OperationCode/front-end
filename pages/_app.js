@@ -45,12 +45,13 @@ class OperationCodeApp extends App {
     window.removeEventListener('resize', this.debouncedHandleScreenResize);
   }
 
-  static async getInitialProps({ Component, ctx }) {
+  static async getInitialProps({ Component, context }) {
+    // eslint-disable-next-line unicorn/prevent-abbreviations
     let pageProps = {};
 
     // if page hits an API, make it async
     if (Component.getInitialProps) {
-      pageProps = await Component.getInitialProps(ctx);
+      pageProps = await Component.getInitialProps(context);
     }
 
     return { pageProps };
@@ -67,6 +68,7 @@ class OperationCodeApp extends App {
   });
 
   render() {
+    // eslint-disable-next-line unicorn/prevent-abbreviations
     const { Component, pageProps, store } = this.props;
 
     return (

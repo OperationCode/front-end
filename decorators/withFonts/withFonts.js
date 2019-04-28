@@ -19,9 +19,10 @@ const withFonts = WrappedComponent =>
   class extends React.Component {
     static displayname = `withFonts(${getDisplayName(WrappedComponent)})`;
 
-    static async getInitialProps(ctx) {
+    static async getInitialProps(context_) {
+      // eslint-disable-next-line unicorn/prevent-abbreviations
       const componentProps =
-        WrappedComponent.getInitialProps && (await WrappedComponent.getInitialProps(ctx));
+        WrappedComponent.getInitialProps && (await WrappedComponent.getInitialProps(context_));
 
       return { ...componentProps };
     }
@@ -31,8 +32,8 @@ const withFonts = WrappedComponent =>
         if (font.url) {
           const link = document.createElement('link');
           link.href = font.url;
-          link.rel = 'stylesheet';
-          document.head.appendChild(link);
+          link.rel = 'stylesheet'; // eslint-disable-line unicorn/prevent-abbreviations
+          document.head.append(link);
         }
 
         const observer = new FontFaceObserver(font.fontFamily);

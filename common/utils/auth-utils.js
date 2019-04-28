@@ -29,13 +29,13 @@ export const logout = () => {
  * }} ctx
  * @returns {?string} token or null
  */
-export const authenticate = ctx => {
-  const { token } = nextCookie(ctx);
+export const authenticate = context => {
+  const { token } = nextCookie(context);
 
   // server request without a token provided
-  if (!isEmpty(ctx.req) && (!token || !isTokenValid(token))) {
-    ctx.res.writeHead(302, { Location: '/login' });
-    ctx.res.end();
+  if (!isEmpty(context.req) && (!token || !isTokenValid(token))) {
+    context.res.writeHead(302, { Location: '/login' });
+    context.res.end();
     return;
   }
 

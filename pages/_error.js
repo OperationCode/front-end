@@ -2,8 +2,9 @@ import ErrorDisplay from 'components/ErrorDisplay/ErrorDisplay';
 
 // This acts as an override necessary to use a custom ErrorDisplay handler
 class Error extends React.Component {
-  static getInitialProps({ res, err }) {
-    const currentError = err ? err.statusCode : null;
+  // eslint-disable-next-line unicorn/prevent-abbreviations
+  static getInitialProps({ res, error }) {
+    const currentError = error ? error.statusCode : null;
     const statusCode = res ? res.statusCode : currentError;
     return { statusCode };
   }

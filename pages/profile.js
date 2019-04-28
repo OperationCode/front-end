@@ -6,8 +6,8 @@ import Content from 'components/Content/Content';
 import withAuthSync from 'decorators/withAuthSync/withAuthSync';
 
 class Profile extends React.Component {
-  static async getInitialProps(ctx) {
-    const { firstName, lastName } = nextCookie(ctx);
+  static async getInitialProps(context) {
+    const { firstName, lastName } = nextCookie(context);
     return { firstName, lastName };
   }
 

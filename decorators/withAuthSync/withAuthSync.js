@@ -7,11 +7,12 @@ const withAuthSync = WrappedComponent =>
   class extends React.Component {
     static displayName = `withAuthSync(${getDisplayName(WrappedComponent)})`;
 
-    static async getInitialProps(ctx) {
-      const token = authenticate(ctx);
+    static async getInitialProps(context) {
+      const token = authenticate(context);
 
+      // eslint-disable-next-line unicorn/prevent-abbreviations
       const componentProps =
-        WrappedComponent.getInitialProps && (await WrappedComponent.getInitialProps(ctx));
+        WrappedComponent.getInitialProps && (await WrappedComponent.getInitialProps(context));
 
       return { ...componentProps, token };
     }
