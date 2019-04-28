@@ -176,7 +176,7 @@ describe('RegistrationForm', () => {
   });
 
   it('should show "email already registered" message for dupe email registration', async () => {
-    const existingUser = await mockUser('kylemh.email12@gmail.com');
+    const existingUser = mockUser('kylemh.email12@gmail.com');
 
     OperationCodeAPIMock.onPost('users', {
       user: {
