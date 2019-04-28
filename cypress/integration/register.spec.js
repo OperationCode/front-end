@@ -1,9 +1,9 @@
+import { validationErrorMessages } from '../../common/constants/messages';
+import { minPasswordCharNum } from '../../common/constants/validations';
+import existingUser from '../../test-utils/mocks/existingUser';
 import mockUser from '../../test-utils/mockGenerators/mockUser';
 
 describe('register', function() {
-  const newUser = mockUser();
-  const existingEmail = 'kylemh.email12@gmail.com';
-  
   beforeEach(() => {
     cy.server();
     cy.route('POST', '/api/v1/users').as('postRegister');
@@ -16,6 +16,8 @@ describe('register', function() {
   });
 
   it('should be able to register with valid data', () => {
+    const newUser = mockUser();
+
     cy.get('input#email').type(newUser.email);
     cy.get('input#confirm-email').type(newUser.email);
     cy.get('input#password').type(newUser.password);
@@ -39,13 +41,13 @@ describe('register', function() {
   });
 
   it('should NOT be able to register with an existing email', () => {
-    cy.get('input#email').type(existingEmail);
-    cy.get('input#confirm-email').type(existingEmail);
-    cy.get('input#password').type(newUser.password);
-    cy.get('input#confirm-password').type(newUser.password);
-    cy.get('input#firstName').type(newUser.firstName);
-    cy.get('input#lastName').type(newUser.lastName);
-    cy.get('input#zipcode').type(newUser.zipcode);
+    cy.get('input#email').type(existingUser.email);
+    cy.get('input#confirm-email').type(existingUser.email);
+    cy.get('input#password').type(existingUser.password);
+    cy.get('input#confirm-password').type(existingUser.password);
+    cy.get('input#firstName').type(existingUser.firstName);
+    cy.get('input#lastName').type(existingUser.lastName);
+    cy.get('input#zipcode').type(existingUser.zipcode);
     cy.get('button[type="submit"]').click();
 
     cy.wait('@postRegister');
@@ -56,6 +58,8 @@ describe('register', function() {
   });
 
   it('should NOT be able to register witn an invalid email', () => {
+    const newUser = mockUser();
+
     cy.get('input#email').type('notavalidemail');
     cy.get('input#confirm-email').type('notavalidemail');
     cy.get('input#password').type(newUser.password);
@@ -66,13 +70,15 @@ describe('register', function() {
     cy.get('button[type="submit"]').click();
 
     cy.url().should('contain', '/join');
-    cy.get('div[role="alert"]').should('contain', 'Must be a valid email');
+    cy.get('div[role="alert"]').should('contain', validationErrorMessages.email);
     cy.getCookies().should('have.length', 0);
   });
 
-  it('should NOT be able to register with an invalid email match', () => {
+  it('should NOT be able to register without matching emails', () => {
+    const newUser = mockUser();
+
     cy.get('input#email').type(newUser.email);
-    cy.get('input#confirm-email').type(existingEmail);
+    cy.get('input#confirm-email').type(existingUser.email);
     cy.get('input#password').type(newUser.password);
     cy.get('input#confirm-password').type(newUser.password);
     cy.get('input#firstName').type(newUser.firstName);
@@ -81,11 +87,13 @@ describe('register', function() {
     cy.get('button[type="submit"]').click();
 
     cy.url().should('contain', '/join');
-    cy.get('div[role="alert"]').should('contain', 'Emails must match');
+    cy.get('div[role="alert"]').should('contain', validationErrorMessages.emailMatch);
     cy.getCookies().should('have.length', 0);
   });
 
   it('should NOT be able to register with a short password', () => {
+    const newUser = mockUser();
+
     cy.get('input#email').type(newUser.email);
     cy.get('input#confirm-email').type(newUser.email);
     cy.get('input#password').type('kek1');
@@ -96,11 +104,16 @@ describe('register', function() {
     cy.get('button[type="submit"]').click();
 
     cy.url().should('contain', '/join');
-    cy.get('div[role="alert"]').should('contain', 'Must be at least 8 characters');
+    cy.get('div[role="alert"]').should(
+      'contain',
+      validationErrorMessages.length(minPasswordCharNum),
+    );
     cy.getCookies().should('have.length', 0);
   });
 
   it('should NOT be able to register with a weak password', () => {
+    const newUser = mockUser();
+
     cy.get('input#email').type(newUser.email);
     cy.get('input#confirm-email').type(newUser.email);
     cy.get('input#password').type('12345678');
@@ -111,29 +124,30 @@ describe('register', function() {
     cy.get('button[type="submit"]').click();
 
     cy.url().should('contain', '/join');
-    cy.get('div[role="alert"]').should(
-      'contain',
-      'Must include the following: lowercase letter, uppercase letter, number',
-    );
+    cy.get('div[role="alert"]').should('contain', validationErrorMessages.password);
     cy.getCookies().should('have.length', 0);
   });
 
   it('should NOT be able to register with an invalid password match ', () => {
+    const newUser = mockUser();
+
     cy.get('input#email').type(newUser.email);
     cy.get('input#confirm-email').type(newUser.email);
     cy.get('input#password').type(newUser.password);
-    cy.get('input#confirm-password').type('Kekmhm123');
+    cy.get('input#confirm-password').type('Kekmhm123!');
     cy.get('input#firstName').type(newUser.firstName);
     cy.get('input#lastName').type(newUser.lastName);
     cy.get('input#zipcode').type(newUser.zipcode);
     cy.get('button[type="submit"]').click();
 
     cy.url().should('contain', '/join');
-    cy.get('div[role="alert"]').should('contain', 'Passwords must match');
+    cy.get('div[role="alert"]').should('contain', validationErrorMessages.passwordMatch);
     cy.getCookies().should('have.length', 0);
   });
 
   it('should NOT be able to register with an invalid zip code', () => {
+    const newUser = mockUser();
+
     cy.get('input#email').type(newUser.email);
     cy.get('input#confirm-email').type(newUser.email);
     cy.get('input#password').type(newUser.password);
@@ -144,7 +158,7 @@ describe('register', function() {
     cy.get('button[type="submit"]').click();
 
     cy.url().should('contain', '/join');
-    cy.get('div[role="alert"]').should('contain', 'Must be a valid zipcode');
+    cy.get('div[role="alert"]').should('contain', validationErrorMessages.zipcode);
     cy.getCookies().should('have.length', 0);
   });
 
@@ -153,7 +167,7 @@ describe('register', function() {
     cy.url().should('contain', '/join');
     cy.get('div[role="alert"]')
       .should('have.length', 8)
-      .should('contain', 'Required');
+      .should('contain', validationErrorMessages.required);
     cy.getCookies().should('have.length', 0);
   });
 });
