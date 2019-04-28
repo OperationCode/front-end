@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import createShallowSnapshotTest from 'test-utils/createShallowSnapshotTest';
-import SchoolCard from '../SchoolCard';
+import SchoolCard, { getSchoolLocationText } from '../SchoolCard';
 
 const locations = [
   {
@@ -25,11 +25,10 @@ const locations = [
 describe('SchoolCard', () => {
   let componentInstance;
   let wrapper;
-  let onClickMock;
+  const toggleModal = jest.fn();
   beforeEach(() => {
     componentInstance = (
       <SchoolCard
-        cardFlipCallback={onClickMock}
         hasHardwareIncluded
         hasHousing
         hasOnline
@@ -39,9 +38,9 @@ describe('SchoolCard', () => {
         logoSource="source"
         name="school name"
         website="website"
+        toggleModal={toggleModal}
       />
     );
-    onClickMock = jest.fn();
     wrapper = mount(componentInstance);
   });
 
@@ -49,18 +48,24 @@ describe('SchoolCard', () => {
     createShallowSnapshotTest(componentInstance);
   });
 
-  it('should change state when see locations button is clicked', () => {
-    expect(wrapper.state('isFrontOfCardShowing')).toBe(true);
-    wrapper
-      .find('button')
-      .filterWhere(node => node.text() === 'See Locations')
-      .simulate('click');
-    expect(wrapper.state('isFrontOfCardShowing')).toBe(false);
+  it('should call toggleModal on click', () => {
+    wrapper.find('button').simulate('click');
+    expect(toggleModal).toHaveBeenCalled();
   });
 
-  it('should render the "See Locations" button when multiple locations exist', () => {
+  it('should display correct text based on location', () => {
+    const [location] = locations;
+
+    expect(getSchoolLocationText(false, [location])).toBe(`${location.city}, ${location.state}`);
+    expect(getSchoolLocationText(false, locations)).toBe('Multiple locations');
+    expect(getSchoolLocationText(true, locations)).toBe('Online only');
+  });
+
+  it('should render the "(view all)" button when multiple locations exist', () => {
     // ensure wrapper has multiple locations at this point
     expect(wrapper.prop('locations').length).toBeGreaterThan(1);
-    expect(wrapper.find('button').filterWhere(node => node.text() === 'See Locations')).toExist();
+    expect(
+      wrapper.find('button.modalToggler').filterWhere(node => node.text() === 'view all'),
+    ).toExist();
   });
 });

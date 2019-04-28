@@ -21,7 +21,7 @@ class ArticleGroup extends Component {
   };
 
   clickHandler = () => {
-    this.setState(prevState => ({ areAllLinksVisible: !prevState.areAllLinksVisible }));
+    this.setState(previousState => ({ areAllLinksVisible: !previousState.areAllLinksVisible }));
   };
 
   render() {

@@ -16,8 +16,9 @@ export default () => {
 
       {/* Rest of page content goes in here */}
     </>
-  )
-};`,
+  );
+};
+`,
 };
 
 module.exports = builder;

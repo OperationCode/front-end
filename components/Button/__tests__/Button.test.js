@@ -32,19 +32,25 @@ describe('Button', () => {
   });
 
   it('should spread data- and aria- props', () => {
-    const ariaProp = 'aria-label';
-    const dataAttrProp = 'data-attr';
+    const ariaProperty = 'aria-label';
+    const dataAttributeProperty = 'data-attr';
 
-    const testProps = { [`${ariaProp}`]: 'test', [`${dataAttrProp}`]: 'test-attr' };
+    // eslint-disable-next-line unicorn/prevent-abbreviations
+    const testProps = {
+      [`${ariaProperty}`]: 'test',
+      [`${dataAttributeProperty}`]: 'test-attr',
+    };
 
     const wrapper = shallow(<Button {...testProps}>Test</Button>);
 
-    expect(wrapper.prop(ariaProp)).toStrictEqual('test');
-    expect(wrapper.prop(dataAttrProp)).toStrictEqual('test-attr');
+    expect(wrapper.prop(ariaProperty)).toStrictEqual('test');
+    expect(wrapper.prop(dataAttributeProperty)).toStrictEqual('test-attr');
   });
 
   it('should should not spread an unexpected prop', () => {
     const attribute = 'fakey-data-prop';
+
+    // eslint-disable-next-line unicorn/prevent-abbreviations
     const testProps = { [`${attribute}`]: 'test' };
 
     const wrapper = shallow(<Button {...testProps}>Test</Button>);

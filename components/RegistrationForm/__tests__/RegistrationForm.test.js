@@ -1,8 +1,10 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { createUser } from 'common/constants/api';
-import { validationErrorMessages } from 'common/constants/validations';
+import { networkErrorMessages, validationErrorMessages } from 'common/constants/messages';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
+import mockUser from 'test-utils/mockGenerators/mockUser';
+import mockPassword from 'test-utils/mockGenerators/mockPassword';
 import OperationCodeAPIMock from 'test-utils/mocks/apiMock';
 import wait from 'test-utils/wait';
 import RegistrationForm from '../RegistrationForm';
@@ -95,14 +97,14 @@ describe('RegistrationForm', () => {
     wrapper
       .find('input#password')
       .simulate('change', {
-        target: { id: 'password', value: 'ValidPassword1' },
+        target: { id: 'password', value: mockPassword() },
       })
       .simulate('blur');
 
     wrapper
       .find('input#confirm-password')
       .simulate('change', {
-        target: { id: 'confirm-password', value: 'something' },
+        target: { id: 'confirm-password', value: 'something-else' },
       })
       .simulate('blur');
 
@@ -118,23 +120,15 @@ describe('RegistrationForm', () => {
   });
 
   it('should submit with valid data in form', async () => {
-    const initialValues = {
-      email: 'email@email.com',
-      'confirm-email': 'email@email.com',
-      password: 'abc123ABC',
-      'confirm-password': 'abc123ABC',
-      firstName: 'Test',
-      lastName: 'User',
-      zipcode: 90630,
-    };
+    const user = mockUser();
 
-    OperationCodeAPIMock.onPost('users', { user: initialValues }).reply(200, {
+    OperationCodeAPIMock.onPost('users', { user }).reply(200, {
       token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9',
     });
 
     const successSpy = jest.fn();
     const wrapper = mount(
-      <RegistrationForm onSuccess={successSpy} register={jest.fn()} {...initialValues} />,
+      <RegistrationForm onSuccess={successSpy} register={jest.fn()} initialState={user} />,
     );
 
     wrapper.find('Button').simulate('submit');
@@ -146,21 +140,25 @@ describe('RegistrationForm', () => {
     });
   });
 
-  it('should NOT submit with invalid data in form', async () => {
+  it('should NOT submit with some invalid data in form', async () => {
     const successSpy = jest.fn();
 
-    const initialValues = {
-      email: 'email@email.com',
-      'confirm-email': 'ffdsdsfsadf@fdsafdsafsd.com',
-      password: 'abc1231111',
-      'confirm-password': '111111',
+    const invalidFormValues = {
+      email: 'not-an-email',
+      'confirm-email': 'not-the-same',
+      password: 'notvalid',
+      'confirm-password': 'notmatching',
       firstName: '',
       lastName: '',
       zipcode: '',
     };
 
     const wrapper = mount(
-      <RegistrationForm onSuccess={successSpy} register={jest.fn()} {...initialValues} />,
+      <RegistrationForm
+        onSuccess={successSpy}
+        register={jest.fn()}
+        initialValues={invalidFormValues}
+      />,
     );
 
     wrapper.find('Button').simulate('submit');
@@ -171,26 +169,22 @@ describe('RegistrationForm', () => {
       expect(OperationCodeAPIMock.history.post.length).not.toBeGreaterThan(0);
     });
 
-    // + 1 because of always-present form Alert (conditionally rendered text)
-    expect(wrapper.find('Alert').children()).toHaveLength(Object.keys(initialValues).length + 1);
+    // All fields + 1 because of always-rendered form error (as opposed to all the field errors)
+    expect(wrapper.find('Alert').children()).toHaveLength(
+      Object.keys(invalidFormValues).length + 1,
+    );
   });
 
   it('should show "email already registered" message for dupe email registration', async () => {
-    const testUser = {
-      email: 'kylemh.email12@gmail.com',
-      password: 'Testing123!',
-      firstName: 'Test',
-      lastName: 'User',
-      zipcode: 90630,
-    };
+    const existingUser = mockUser('kylemh.email12@gmail.com');
 
     OperationCodeAPIMock.onPost('users', {
       user: {
-        email: testUser.email,
-        password: testUser.password,
-        first_name: testUser.firstName,
-        last_name: testUser.lastName,
-        zip: testUser.zipcode,
+        email: existingUser.email,
+        password: existingUser.password,
+        first_name: existingUser.firstName,
+        last_name: existingUser.lastName,
+        zip: existingUser.zipcode,
       },
     }).reply(422, { email: ['has been taken'] });
 
@@ -199,11 +193,7 @@ describe('RegistrationForm', () => {
       <RegistrationForm
         register={createUser}
         onSuccess={successSpy}
-        initialValues={{
-          ...testUser,
-          'confirm-email': testUser.email,
-          'confirm-password': testUser.password,
-        }}
+        initialValues={existingUser}
       />,
     );
 
@@ -217,5 +207,34 @@ describe('RegistrationForm', () => {
         .last()
         .text(),
     ).toStrictEqual('Email has been taken.');
+  });
+  it('should show a helpful error if the server is down', async () => {
+    const user = mockUser();
+
+    OperationCodeAPIMock.onPost('users', {
+      user: {
+        email: user.email,
+        password: user.password,
+        first_name: user.firstName,
+        last_name: user.lastName,
+        zip: user.zipcode,
+      },
+    }).reply(503);
+
+    const successSpy = jest.fn();
+    const wrapper = mount(
+      <RegistrationForm register={createUser} onSuccess={successSpy} initialValues={user} />,
+    );
+
+    wrapper.find('Button').simulate('submit');
+    await asyncRenderDiff(wrapper);
+
+    expect(successSpy).not.toHaveBeenCalled();
+    expect(
+      wrapper
+        .find('Alert')
+        .last()
+        .text(),
+    ).toStrictEqual(networkErrorMessages.serverDown);
   });
 });

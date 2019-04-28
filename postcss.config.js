@@ -4,8 +4,9 @@ const postcssCustomMedia = require('postcss-custom-media');
 const postcssCustomProperties = require('postcss-custom-properties');
 const postcssPrependImports = require('postcss-prepend-imports');
 
+// eslint-disable-next-line unicorn/prevent-abbreviations
 module.exports = ({ options, env }) => {
-  const isProd = env === 'production';
+  const isProduction = env === 'production';
 
   const plugins = [
     postcssPrependImports({
@@ -17,7 +18,7 @@ module.exports = ({ options, env }) => {
     postcssCustomMedia(),
   ];
 
-  if (isProd) {
+  if (isProduction) {
     plugins.push(
       postcssCustomProperties({
         importFrom: './common/styles/variables.css',

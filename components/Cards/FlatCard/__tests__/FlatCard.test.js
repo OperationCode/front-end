@@ -17,6 +17,7 @@ describe('FlatCard', () => {
     ),
   };
 
+  // eslint-disable-next-line unicorn/prevent-abbreviations
   const imageProps = {
     imageSource: `${s3}headshots/david_molina.jpg`,
     imageAlt: "David Molina's face",

@@ -10,6 +10,7 @@ const withAuthSync = WrappedComponent =>
     static async getInitialProps(ctx) {
       const token = authenticate(ctx);
 
+      // eslint-disable-next-line unicorn/prevent-abbreviations
       const componentProps =
         WrappedComponent.getInitialProps && (await WrappedComponent.getInitialProps(ctx));
 

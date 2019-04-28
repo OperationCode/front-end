@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Formik, Field } from 'formik';
 import * as Yup from 'yup';
-import { minPasswordCharNum, validationErrorMessages } from 'common/constants/validations';
+import { getErrorMessage } from 'common/utils/api-utils';
+import { validationErrorMessages } from 'common/constants/messages';
+import { minimumPasswordLength } from 'common/constants/validations';
 import { isMinPasswordStrength } from 'common/utils/validator-utils';
 import Button from 'components/Button/Button';
 import Form from 'components/Form/Form';
@@ -22,7 +24,7 @@ const loginSchema = Yup.object().shape({
     .email(validationErrorMessages.email),
   password: Yup.string()
     .required(validationErrorMessages.required)
-    .min(minPasswordCharNum, validationErrorMessages.length(minPasswordCharNum))
+    .min(minimumPasswordLength, validationErrorMessages.length(minimumPasswordLength))
     .test('password-strength', validationErrorMessages.password, isMinPasswordStrength),
 });
 
@@ -44,7 +46,7 @@ class LoginForm extends Component {
   };
 
   state = {
-    errorMsg: '',
+    errorMessage: '',
   };
 
   handleSubmit = async (values, actions) => {
@@ -67,8 +69,7 @@ class LoginForm extends Component {
     } catch (error) {
       actions.setSubmitting(false);
 
-      const { data } = error.response;
-      this.setState({ errorMsg: data.error });
+      this.setState({ errorMessage: getErrorMessage(error) });
     }
   };
 
@@ -104,8 +105,8 @@ class LoginForm extends Component {
             </div>
 
             <div className={styles.row}>
-              <Alert isOpen={Boolean(state.errorMsg)} type="error">
-                {state.errorMsg}
+              <Alert isOpen={Boolean(state.errorMessage)} type="error">
+                {state.errorMessage}
               </Alert>
             </div>
 

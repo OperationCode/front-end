@@ -10,6 +10,7 @@ import { screenResize } from 'store/screenSize/actions';
 import breakpoints from 'common/styles/breakpoints';
 import Nav from 'components/Nav/Nav';
 import Footer from 'components/Footer/Footer';
+import Modal from 'components/Modal/Modal';
 import 'common/styles/globalStyles.css';
 import withFonts from '../decorators/withFonts/withFonts';
 
@@ -34,13 +35,19 @@ class OperationCodeApp extends App {
   componentDidMount() {
     this.handleScreenResize(); // get initial size on load
     window.addEventListener('resize', this.debouncedHandleScreenResize);
+
+    if (Modal.setAppElement) {
+      Modal.setAppElement('body');
+    }
   }
 
   componentWillUnmount() {
     window.removeEventListener('resize', this.debouncedHandleScreenResize);
   }
 
+  // eslint-disable-next-line unicorn/prevent-abbreviations
   static async getInitialProps({ Component, ctx }) {
+    // eslint-disable-next-line unicorn/prevent-abbreviations
     let pageProps = {};
 
     // if page hits an API, make it async
@@ -62,6 +69,7 @@ class OperationCodeApp extends App {
   });
 
   render() {
+    // eslint-disable-next-line unicorn/prevent-abbreviations
     const { Component, pageProps, store } = this.props;
 
     return (
