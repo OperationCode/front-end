@@ -9,7 +9,10 @@ import mockPassword from './mockPassword';
  * @returns {Object.<string, string>}
  */
 export default function mockUser(desiredEmail = '') {
-  const email = desiredEmail || faker.internet.email();
+  const firstName = faker.name.firstName();
+  const lastName = faker.name.lastName();
+
+  const email = desiredEmail || faker.internet.email(firstName, lastName, 'operationcode.org');
   const password = mockPassword();
 
   const user = {
@@ -17,8 +20,8 @@ export default function mockUser(desiredEmail = '') {
     'confirm-email': email,
     password,
     'confirm-password': password,
-    firstName: faker.name.firstName(),
-    lastName: faker.name.lastName(),
+    firstName,
+    lastName,
     zipcode: faker.address.zipCode(),
   };
 
