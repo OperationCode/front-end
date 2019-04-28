@@ -1,7 +1,9 @@
 {
-  "extends": "stylelint-config-standard",
+  "extends": ["stylelint-config-standard", "stylelint-prettier/recommended"],
+  "plugins": ["stylelint-prettier"],
   "ignoreFiles": ["**/*.js", "coverage/**/*"],
   "rules": {
+    "prettier/prettier": true,
     "color-hex-case": "lower",
     "color-hex-length": "long",
     "indentation": 2,

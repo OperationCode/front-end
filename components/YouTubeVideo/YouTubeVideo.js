@@ -26,8 +26,8 @@ function YouTubeVideo({ className, height, width, videoId }) {
   return (
     <YouTube
       className={classNames(className, styles.YouTubeVideo)}
-      onReady={e => {
-        e.target.pauseVideo();
+      onReady={event => {
+        event.target.pauseVideo();
       }}
       opts={options}
       videoId={videoId}

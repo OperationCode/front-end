@@ -36,13 +36,13 @@ export function hasPixelSuffix(someString) {
  */
 export function isHexColor(value) {
   if (typeof value === 'object') {
-    throw new Error(
+    throw new TypeError(
       `Must pass a string to this method. You passed an object! Keys: ${Object.keys(value)}.`,
     );
   }
 
   if (typeof value !== 'string') {
-    throw new Error(
+    throw new TypeError(
       `Must pass a string to this method. You passed ${value} which is type of: ${typeof value}.`,
     );
   }

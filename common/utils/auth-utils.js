@@ -15,7 +15,7 @@ export const logout = () => {
 };
 
 /**
- * @description This method examines context via `getInitialProps` and returns a token if it exists.
+ * @description This method examines ctx via `getInitialProps` and returns a token if it exists.
  * If a token does not exist, the user will be routed to /login
  *
  * @export

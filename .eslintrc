@@ -16,8 +16,9 @@
     "node": true
   },
   "parser": "babel-eslint",
-  "plugins": ["jest", "cypress"],
+  "plugins": ["prettier", "unicorn", "jest", "cypress"],
   "rules": {
+    "prettier/prettier": "error",
     "comma-dangle": ["error", "only-multiline"],
     "import/extensions": [
       "error",
@@ -82,19 +83,6 @@
     "multiline-ternary": ["error", "always-multiline"],
     "no-console": "warn",
     "no-use-before-define": "off",
-    "object-curly-newline": [
-      "error",
-      {
-        "ObjectExpression": { "multiline": true, "consistent": true },
-        "ObjectPattern": { "multiline": true, "consistent": true },
-        "ImportDeclaration": {
-          "multiline": true,
-          "minProperties": 4,
-          "consistent": true
-        },
-        "ExportDeclaration": { "multiline": true, "consistent": true }
-      }
-    ],
     "react/forbid-prop-types": ["error", { "forbid": ["any"] }],
     "react/jsx-curly-brace-presence": ["error", { "props": "never", "children": "never" }],
     "react/jsx-filename-extension": ["error", { "extensions": [".js"] }],
@@ -103,7 +91,37 @@
     "react/no-did-mount-set-state": "off",
     "react/no-unused-prop-types": "off",
     "react/no-unused-state": "error",
-    "react/prefer-stateless-function": ["off"]
+    "react/prefer-stateless-function": ["off"],
+    "unicorn/catch-error-name": "error",
+    "unicorn/error-message": "error",
+    "unicorn/no-abusive-eslint-disable": "error",
+    "unicorn/no-fn-reference-in-iterator": "error",
+    "unicorn/no-for-loop": "error",
+    "unicorn/no-unreadable-array-destructuring": "error",
+    "unicorn/no-zero-fractions": "error",
+    "unicorn/prefer-includes": "error",
+    "unicorn/prefer-node-append": "error",
+    "unicorn/prefer-node-remove": "error",
+    "unicorn/prefer-query-selector": "error",
+    "unicorn/prefer-spread": "error",
+    "unicorn/prefer-starts-ends-with": "error",
+    "unicorn/prefer-text-content": "error",
+    "unicorn/prefer-type-error": "error",
+    "unicorn/prevent-abbreviations": [
+      "error",
+      {
+        "whitelist": {
+          "getInitialProps": true,
+          "initialProps": true,
+          "props": true,
+          "requiredProps": true,
+          "defaultProps": true,
+          "mapStateToProps": true,
+          "ctx": true
+        }
+      }
+    ],
+    "unicorn/throw-new-error": "error"
   },
   "overrides": [
     {

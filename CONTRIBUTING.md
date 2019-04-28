@@ -282,11 +282,8 @@ yarn build
 # Run build, but expose local instances of bundle visualizations to see what code we ship to users' browsers.
 yarn build:analyze
 
-# Check for linting errors. Used in the precommit hook and on every build to ensure that code meets our linting standards.
+# Fix/reveal linting errors. Used in the precommit hook and on every build to ensure that code meets our linting standards.
 yarn lint
-
-# Similar instructions are in a precommit hook to ensure that code you’re committing is up to our linting and formatting standards. You can use this command locally before comitting to ensure that you don't need to ammend your commit from formatting changes.
-yarn format
 
 # Start the main application server or to serve up a production build locally.
 yarn start

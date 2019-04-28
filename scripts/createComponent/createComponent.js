@@ -1,4 +1,3 @@
-/* eslint-disable */
 const path = require('path');
 const fs = require('fs');
 const { buildJS, buildCss, buildStoryJs, buildTestJs } = require('./builders');
@@ -55,7 +54,7 @@ const findRoot = () => {
 const doesComponentExist = (componentName, root) => {
   const newPath = path.join(root, componentPath, componentName);
   if (fs.existsSync(newPath)) {
-    console.log(`Component "${componentName}" Already Exists`);
+    console.log(`Component "${componentName}" Already Exists`); // eslint-disable-line no-console
     return true;
   }
   return false;
@@ -71,29 +70,34 @@ const mkdirSyncRecursive = directory => {
   const newPath = directory.replace(/\\{1,2}/g, '/').split('/');
 
   newPath.reduce((accumPath, nextPath) => {
-    let incrementalPath = accumPath + '/' + nextPath;
+    const incrementalPath = `${accumPath}/${nextPath}`;
 
-    incrementalPath.length > 0 && !fs.existsSync(incrementalPath)
-      ? fs.mkdirSync(incrementalPath)
-      : null;
+    if (incrementalPath.length > 0 && !fs.existsSync(incrementalPath)) {
+      fs.mkdirSync(incrementalPath);
+    }
+
     return incrementalPath;
   });
 };
 
 // Only call recursive create if the folder doesn't yet exist
-const ensureDirectoryExistence = filePath => {
-  const dirname = path.dirname(filePath);
-  if (fs.existsSync(dirname)) {
+const doesDirectoryExist = directoryName => {
+  if (fs.existsSync(directoryName)) {
     return true;
   }
-  // ensureDirectoryExistence(dirname);
-  mkdirSyncRecursive(dirname);
+
+  return false;
 };
 
 const writeFileData = (fileData, fileName) => {
-  console.log(`Creating file: ${fileName}`);
+  console.log(`Creating file: ${fileName}`); // eslint-disable-line no-console
 
-  ensureDirectoryExistence(fileName);
+  const directoryName = path.dirname(fileName);
+
+  if (!doesDirectoryExist(directoryName)) {
+    mkdirSyncRecursive(directoryName);
+  }
+
   fs.writeFileSync(fileName, fileData);
 };
 
@@ -113,8 +117,10 @@ const conditionallyAdjustPath = (key, currPath, componentName) => {
 // Interacts with the configuration tree based on what it finds in each object.
 const recurseStructure = (subObject, currPath, componentName) => {
   let newPath;
+
+  /* eslint-disable no-restricted-syntax */
   for (const key in subObject) {
-    if (subObject.hasOwnProperty(key)) {
+    if (subObject[key]) {
       newPath = conditionallyAdjustPath(key, currPath, componentName);
 
       // Recursive base case - write file data when a function is found
@@ -127,9 +133,11 @@ const recurseStructure = (subObject, currPath, componentName) => {
 
       // Recurse over arrays or objects within file/folder structure
       if (Array.isArray(subObject[key])) {
+        /* eslint-disable no-loop-func */
         subObject[key].forEach(arrayItem => {
           recurseStructure(arrayItem, newPath, componentName);
         });
+        /* eslint-enable no-loop-func */
 
         return;
       }
@@ -137,11 +145,13 @@ const recurseStructure = (subObject, currPath, componentName) => {
       recurseStructure(subObject[key], newPath, componentName);
     }
   }
+  /* eslint-enable no-restricted-syntax */
 };
 
 // Function runner
 (() => {
   if (process.argv.length < 3) {
+    // eslint-disable-next-line no-console
     console.error(
       'Error: You must provide at least one component name to script.',
       'Example: "yarn create-component componentName"',

@@ -4,7 +4,7 @@ import { Formik, Field } from 'formik';
 import * as Yup from 'yup';
 import { getErrorMessage } from 'common/utils/api-utils';
 import { validationErrorMessages } from 'common/constants/messages';
-import { minPasswordCharNum } from 'common/constants/validations';
+import { minimumPasswordLength } from 'common/constants/validations';
 import { capitalizeFirstLetter } from 'common/utils/string-utils';
 import { isMinPasswordStrength, isValidZipcode } from 'common/utils/validator-utils';
 import Button from 'components/Button/Button';
@@ -28,7 +28,7 @@ const registrationSchema = Yup.object().shape({
     .oneOf([Yup.ref('email')], validationErrorMessages.emailMatch),
   password: Yup.string()
     .required(validationErrorMessages.required)
-    .min(minPasswordCharNum, validationErrorMessages.length(minPasswordCharNum))
+    .min(minimumPasswordLength, validationErrorMessages.length(minimumPasswordLength))
     .test('password-strength', validationErrorMessages.password, isMinPasswordStrength),
   'confirm-password': Yup.string()
     .required(validationErrorMessages.required)
@@ -68,7 +68,7 @@ class RegistrationForm extends Component {
   };
 
   state = {
-    errorMsg: '',
+    errorMessage: '',
   };
 
   handleSubmit = async (values, actions) => {
@@ -88,7 +88,7 @@ class RegistrationForm extends Component {
       if (data) {
         // TODO: Create back-end ticket for checking if email has been taken for a debounced,
         // client-side validation of emails instead of waiting for submission.
-        const errorMsg = Object.keys(data)
+        const errorMessage = Object.keys(data)
           .map(key => {
             const fieldName = capitalizeFirstLetter(key);
 
@@ -97,9 +97,9 @@ class RegistrationForm extends Component {
           })
           .join('\n');
 
-        this.setState({ errorMsg });
+        this.setState({ errorMessage });
       } else {
-        this.setState({ errorMsg: getErrorMessage(error) });
+        this.setState({ errorMessage: getErrorMessage(error) });
       }
     }
   };
@@ -187,8 +187,8 @@ class RegistrationForm extends Component {
             </div>
 
             <div className={styles.row}>
-              <Alert isOpen={Boolean(state.errorMsg)} type="error">
-                {state.errorMsg}
+              <Alert isOpen={Boolean(state.errorMessage)} type="error">
+                {state.errorMessage}
               </Alert>
             </div>
 

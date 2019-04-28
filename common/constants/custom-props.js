@@ -8,6 +8,7 @@ import PropTypes from 'prop-types';
 
 /* eslint-disable import/prefer-default-export */
 // See: https://github.com/react-ga/react-ga#reactgaeventargs for reference
+// eslint-disable-next-line unicorn/prevent-abbreviations
 export const googleAnalyticsEventPropType = PropTypes.shape({
   // A description of the behaviour. E.g. 'Clicked Delete', 'Added a component', 'Deleted account'
   action: PropTypes.string.isRequired,

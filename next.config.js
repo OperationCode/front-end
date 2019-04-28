@@ -28,7 +28,7 @@ const nextConfig = withCSS({
     },
   },
 
-  // Webpack Config
+  // eslint-disable-next-line unicorn/prevent-abbreviations
   webpack: (config, { dev }) => {
     // Fixes npm packages that depend on `fs` module
     // eslint-disable-next-line no-param-reassign

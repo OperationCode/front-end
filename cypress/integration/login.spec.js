@@ -15,7 +15,6 @@ describe('login', function() {
   });
 
   it('should be able to login with valid credentials', () => {
-    cy.get('h1').should('have.text', 'Login');
     cy.get('input#email').type(existingUser.email);
     cy.get('input#password').type(existingUser.password);
     cy.get('button[type="submit"]').click();

@@ -9,8 +9,8 @@ describe('Array Utilities', () => {
     });
 
     it('should return an passed argument if condition is true', () => {
-      const someObj = { key: 'value' };
-      expect(insertIf(true, someObj)).toStrictEqual([someObj]);
+      const someObject = { key: 'value' };
+      expect(insertIf(true, someObject)).toStrictEqual([someObject]);
     });
 
     it('should return an array of every argument if condition is true', () => {

@@ -4,7 +4,8 @@ import createSnapshotTest from 'test-utils/createSnapshotTest';
 
 import Content from '../Content';
 
-const basicProps = {
+// eslint-disable-next-line unicorn/prevent-abbreviations
+const requiredProps = {
   columns: [
     <div>
       <p>some test content</p>
@@ -15,7 +16,7 @@ const basicProps = {
 
 describe('Content', () => {
   it('should render with required props', () => {
-    createSnapshotTest(<Content {...basicProps} />);
+    createSnapshotTest(<Content {...requiredProps} />);
   });
 
   it('should render with many props assigned', () => {

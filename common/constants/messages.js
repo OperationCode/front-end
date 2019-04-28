@@ -4,7 +4,7 @@ export const validationErrorMessages = {
   emailMatch: 'Emails must match',
   password: 'Must include the following: lowercase letter, uppercase letter, number',
   passwordMatch: 'Passwords must match',
-  length: val => `Must be at least ${val} characters`,
+  length: value => `Must be at least ${value} characters`,
   zipcode: 'Must be a valid zipcode',
 };
 

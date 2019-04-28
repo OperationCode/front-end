@@ -1,5 +1,5 @@
 import { validationErrorMessages } from '../../common/constants/messages';
-import { minPasswordCharNum } from '../../common/constants/validations';
+import { minimumPasswordLength } from '../../common/constants/validations';
 import existingUser from '../../test-utils/mocks/existingUser';
 import mockUser from '../../test-utils/mockGenerators/mockUser';
 
@@ -106,7 +106,7 @@ describe('register', function() {
     cy.url().should('contain', '/join');
     cy.get('div[role="alert"]').should(
       'contain',
-      validationErrorMessages.length(minPasswordCharNum),
+      validationErrorMessages.length(minimumPasswordLength),
     );
     cy.getCookies().should('have.length', 0);
   });

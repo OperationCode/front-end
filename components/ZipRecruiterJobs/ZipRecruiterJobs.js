@@ -4,10 +4,11 @@ export default class ZipRecruiterJobs extends Component {
   componentDidMount() {
     const zipRecruiterScript = document.createElement('script');
 
+    // eslint-disable-next-line unicorn/prevent-abbreviations
     zipRecruiterScript.src =
       'https://www.ziprecruiter.com/jobs-widget/pro/v2/63bjfya4arc58ywaxtvi8jkchvzymeep';
 
-    document.body.appendChild(zipRecruiterScript);
+    document.body.append(zipRecruiterScript);
 
     const initializeZipRecruiter = zipsearch => {
       const options = {
