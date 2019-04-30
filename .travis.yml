@@ -27,7 +27,7 @@ before_script:
 script:
   - yarn lint
   - yarn test:ci
-  - yarn start-server-and-test dev http://localhost:3000 test:e2e:ci --key CYPRESS_RECORD_KEY
+  - yarn start-server-and-test dev http://localhost:3000 test:e2e:ci --key $CYPRESS_RECORD_KEY
 
 after_script:
   - greenkeeper-lockfile-upload
