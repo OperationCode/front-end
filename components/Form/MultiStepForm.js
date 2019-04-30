@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Formik } from 'formik';
+import { getErrorMessage } from 'common/utils/api-utils';
+import { capitalizeFirstLetter } from 'common/utils/string-utils';
 import Button from 'components/Button/Button';
 import Form from 'components/Form/Form';
 import Alert from 'components/Alert/Alert';
@@ -11,7 +13,7 @@ class MultiStepForm extends React.Component {
     // initialValues can be object of strings, where entire form's shape is described
     initialValues: PropTypes.object.isRequired,
 
-    onSubmit: PropTypes.func.isRequired,
+    onFinalStepSuccess: PropTypes.func.isRequired,
     startingStepNumber: PropTypes.number,
     steps: PropTypes.arrayOf(
       PropTypes.shape({
@@ -29,7 +31,7 @@ class MultiStepForm extends React.Component {
   state = {
     // eslint-disable-next-line react/destructuring-assignment
     stepNumber: this.props.startingStepNumber,
-    containerFormErrorMessage: '',
+    errorMessage: '',
   };
 
   showNextStep = () => {
@@ -44,31 +46,64 @@ class MultiStepForm extends React.Component {
     }));
   };
 
+  handleError = error => {
+    const { data } = error.response;
+
+    if (data) {
+      // TODO: Create back-end ticket for checking if email has been taken for a debounced,
+      // client-side validation of emails instead of waiting for submission.
+      const errorMessage = Object.keys(data)
+        .map(key => {
+          const fieldName = capitalizeFirstLetter(key);
+
+          // example: Email has already been taken.
+          return `${fieldName} ${data[key][0]}.`;
+        })
+        .join('\n');
+
+      this.setState({ errorMessage });
+    } else {
+      this.setState({ errorMessage: getErrorMessage(error) });
+    }
+  };
+
   handleSubmit = async (values, formikBag) => {
-    const { steps, onSubmit } = this.props;
+    const { steps, onFinalStepSuccess } = this.props;
     const { stepNumber } = this.state;
+
+    this.setState({ errorMessage: '' });
 
     const isLastStep = stepNumber === steps.length - 1;
 
     if (isLastStep) {
-      await onSubmit(values, formikBag);
-      return;
-    }
+      try {
+        await onFinalStepSuccess(values);
 
-    // Not required
-    const currentStepCustomSubmit = steps[stepNumber].stepSubmit || undefined;
-
-    if (currentStepCustomSubmit) {
-      await currentStepCustomSubmit(values, formikBag);
+        formikBag.setSubmitting(false);
+        formikBag.resetForm();
+        return;
+      } catch (error) {
+        formikBag.setSubmitting(false);
+        this.handleError(error);
+      }
     } else {
-      this.showNextStep();
-      formikBag.setSubmitting(false);
+      // Not last step
+      try {
+        const currentStepSubmitHandler = steps[stepNumber].stepSubmitHandler;
+        await currentStepSubmitHandler(values);
+
+        formikBag.setSubmitting(false);
+        this.showNextStep();
+      } catch (error) {
+        formikBag.setSubmitting(false);
+        this.handleError(error);
+      }
     }
   };
 
   render() {
     const { initialValues, steps } = this.props;
-    const { containerFormErrorMessage, stepNumber } = this.state;
+    const { errorMessage, stepNumber } = this.state;
 
     const currentStep = steps[stepNumber].stepRender;
     const isLastStep = stepNumber === steps.length - 1;
@@ -83,9 +118,9 @@ class MultiStepForm extends React.Component {
           <Form className={styles.MultiStepForm} onSubmit={formikBag.handleSubmit}>
             {currentStep(formikBag)}
 
-            <div className={styles.containerFormErrorMessage}>
-              <Alert isOpen={Boolean(containerFormErrorMessage)} type="error">
-                {containerFormErrorMessage}
+            <div className={styles.errorMessage}>
+              <Alert isOpen={Boolean(errorMessage)} type="error">
+                {errorMessage}
               </Alert>
             </div>
 
