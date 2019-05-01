@@ -3,3 +3,7 @@
   flex-wrap: wrap;
   justify-content: center;
 }
+
+.pulledLeft {
+  justify-content: flex-start;
+}

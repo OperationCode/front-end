@@ -98,7 +98,7 @@ class InitialStep extends React.Component {
           />
         </div>
 
-        <div className={styles.row}>
+        <div className={(styles.row, styles.pulledLeft)}>
           <Field
             type="text"
             name="zipcode"
