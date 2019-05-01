@@ -9,7 +9,7 @@ class Test extends React.Component {
       <>
         <Head title="Test" />
 
-        <HeroBanner title="Test" />
+        <HeroBanner title="Join Us" />
 
         <Content theme="gray" columns={[<NewRegistrationForm />]} />
       </>

@@ -35,25 +35,29 @@ class PersonalDetailsSteps extends React.Component {
     const { isSubmitting } = this.props;
 
     return (
-      <div className={styles.row}>
-        <Field
-          type="text"
-          name="firstName"
-          label="First Name*"
-          component={Input}
-          disabled={isSubmitting}
-          autoComplete="given-name"
-        />
+      <>
+        <h2 className={styles.row}>Personal Details</h2>
 
-        <Field
-          type="text"
-          name="lastName"
-          label="Last Name*"
-          component={Input}
-          disabled={isSubmitting}
-          autoComplete="family-name"
-        />
-      </div>
+        <div className={styles.row}>
+          <Field
+            type="text"
+            name="firstName"
+            label="First Name*"
+            component={Input}
+            disabled={isSubmitting}
+            autoComplete="given-name"
+          />
+
+          <Field
+            type="text"
+            name="lastName"
+            label="Last Name*"
+            component={Input}
+            disabled={isSubmitting}
+            autoComplete="family-name"
+          />
+        </div>
+      </>
     );
   }
 }

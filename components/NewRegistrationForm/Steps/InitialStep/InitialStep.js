@@ -56,6 +56,8 @@ class InitialStep extends React.Component {
 
     return (
       <>
+        <h2 className={styles.row}>User Information</h2>
+
         <div className={styles.row}>
           <Field
             type="email"
