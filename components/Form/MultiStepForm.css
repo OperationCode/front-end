@@ -13,7 +13,9 @@
   justify-content: space-around;
   align-items: center;
   width: 92.5%;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
 }
 
 .forceButtonRight {
