@@ -69,9 +69,12 @@ class MultiStepForm extends React.Component {
 
   handleSubmit = async (values, formikBag) => {
     const { steps, onFinalStepSuccess } = this.props;
-    const { stepNumber } = this.state;
+    const { errorMessage, stepNumber } = this.state;
 
-    this.setState({ errorMessage: '' });
+    if (errorMessage) {
+      // reset error message each submit
+      this.setState({ errorMessage: '' });
+    }
 
     const isLastStep = stepNumber === steps.length - 1;
 
