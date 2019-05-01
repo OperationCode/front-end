@@ -17,7 +17,7 @@ class MultiStepForm extends React.Component {
     startingStepNumber: PropTypes.number,
     steps: PropTypes.arrayOf(
       PropTypes.shape({
-        stepRender: PropTypes.func.isRequired,
+        render: PropTypes.func.isRequired,
         stepSubmit: PropTypes.func,
         validationSchema: PropTypes.object.isRequired, // specifically a Yup object shape
       }),
@@ -34,9 +34,14 @@ class MultiStepForm extends React.Component {
     errorMessage: '',
   };
 
-  showNextStep = () => {
+  showNextStep = values => {
+    const { steps } = this.props;
+    const { stepNumber } = this.state;
+
+    const { getNumberOfStepSkips } = steps[stepNumber];
+
     this.setState(previousState => ({
-      stepNumber: previousState.stepNumber + 1,
+      stepNumber: previousState.stepNumber + 1 + getNumberOfStepSkips(values),
     }));
   };
 
@@ -92,11 +97,11 @@ class MultiStepForm extends React.Component {
     } else {
       // Not last step
       try {
-        const currentStepSubmitHandler = steps[stepNumber].stepSubmitHandler;
+        const currentStepSubmitHandler = steps[stepNumber].submitHandler;
         await currentStepSubmitHandler(values);
 
         formikBag.setSubmitting(false);
-        this.showNextStep();
+        this.showNextStep(values);
       } catch (error) {
         formikBag.setSubmitting(false);
         this.handleError(error);
@@ -108,7 +113,7 @@ class MultiStepForm extends React.Component {
     const { initialValues, steps } = this.props;
     const { errorMessage, stepNumber } = this.state;
 
-    const currentStep = steps[stepNumber].stepRender;
+    const currentStep = steps[stepNumber].render;
     const currentStepValidationSchema = steps[stepNumber].validationSchema;
     const isFirstStep = stepNumber === 0;
     const isLastStep = stepNumber === steps.length - 1;

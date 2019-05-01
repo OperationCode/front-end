@@ -15,9 +15,12 @@ const OrderedSteps = [
 
 export const Steps = OrderedSteps.map(Step => {
   return {
-    stepRender: props => <Step {...props} />,
+    render: props => <Step {...props} />,
     validationSchema: Step.validationSchema,
-    stepSubmitHandler: Step.submitHandler,
+    submitHandler: Step.submitHandler,
+    getNumberOfStepSkips: Step.getNumberOfStepSkips
+      ? ({ values }) => Step.getNumberOfStepSkips(values)
+      : () => 0,
   };
 });
 
