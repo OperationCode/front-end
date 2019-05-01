@@ -10,7 +10,12 @@
 .buttonGrouping {
   display: flex;
   flex-wrap: nowrap;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  width: 75%;
+  width: 92.5%;
+  margin: 0 auto;
+}
+
+.forceButtonRight {
+  justify-content: flex-end;
 }

@@ -109,8 +109,9 @@ class MultiStepForm extends React.Component {
     const { errorMessage, stepNumber } = this.state;
 
     const currentStep = steps[stepNumber].stepRender;
-    const isLastStep = stepNumber === steps.length - 1;
     const currentStepValidationSchema = steps[stepNumber].validationSchema;
+    const isFirstStep = stepNumber === 0;
+    const isLastStep = stepNumber === steps.length - 1;
 
     return (
       <Formik
@@ -140,10 +141,15 @@ class MultiStepForm extends React.Component {
 
               {isLastStep ? (
                 <Button type="submit" theme="secondary" disabled={formikBag.isSubmitting}>
-                  Submit
+                  Submit ✓
                 </Button>
               ) : (
-                <Button type="submit" theme="secondary" disabled={formikBag.isSubmitting}>
+                <Button
+                  type="submit"
+                  theme="secondary"
+                  disabled={formikBag.isSubmitting}
+                  fullWidth={isFirstStep}
+                >
                   Next »
                 </Button>
               )}
