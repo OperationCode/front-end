@@ -18,8 +18,9 @@ class MultiStepForm extends React.Component {
     steps: PropTypes.arrayOf(
       PropTypes.shape({
         render: PropTypes.func.isRequired,
-        stepSubmit: PropTypes.func,
         validationSchema: PropTypes.object.isRequired, // specifically a Yup object shape
+        submitHandler: PropTypes.func,
+        getNumberOfStepSkips: PropTypes.func,
       }),
     ).isRequired,
   };
@@ -38,10 +39,12 @@ class MultiStepForm extends React.Component {
     const { steps } = this.props;
     const { stepNumber } = this.state;
 
-    const { getNumberOfStepSkips } = steps[stepNumber + 1];
+    const nextStep = steps[stepNumber + 1];
+
+    const numberOfStepsToSkip = nextStep.getNumberOfStepSkips(values);
 
     this.setState(previousState => ({
-      stepNumber: previousState.stepNumber + 1 + getNumberOfStepSkips(values),
+      stepNumber: previousState.stepNumber + 1 + numberOfStepsToSkip,
     }));
   };
 

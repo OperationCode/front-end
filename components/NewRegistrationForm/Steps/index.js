@@ -14,6 +14,7 @@ const OrderedSteps = [
 ];
 
 export const Steps = OrderedSteps.map(Step => {
+  // if fields are changed/added/removed, please adjust propTypes inside MultiStepForm
   return {
     render: props => <Step {...props} />,
     validationSchema: Step.validationSchema,
