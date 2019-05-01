@@ -38,7 +38,7 @@ class MultiStepForm extends React.Component {
     const { steps } = this.props;
     const { stepNumber } = this.state;
 
-    const { getNumberOfStepSkips } = steps[stepNumber];
+    const { getNumberOfStepSkips } = steps[stepNumber + 1];
 
     this.setState(previousState => ({
       stepNumber: previousState.stepNumber + 1 + getNumberOfStepSkips(values),
