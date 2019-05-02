@@ -14,7 +14,6 @@ class MultiStepForm extends React.Component {
     initialValues: PropTypes.object.isRequired,
 
     onFinalStepSuccess: PropTypes.func.isRequired,
-    startingStepNumber: PropTypes.number,
     steps: PropTypes.arrayOf(
       PropTypes.shape({
         render: PropTypes.func.isRequired,
@@ -24,13 +23,9 @@ class MultiStepForm extends React.Component {
     ).isRequired,
   };
 
-  static defaultProps = {
-    startingStepNumber: 0,
-  };
-
   state = {
     // eslint-disable-next-line react/destructuring-assignment
-    stepNumber: this.props.startingStepNumber,
+    stepNumber: 0,
     errorMessage: '',
   };
 
@@ -114,18 +109,17 @@ class MultiStepForm extends React.Component {
     const { initialValues, steps } = this.props;
     const { errorMessage, stepNumber } = this.state;
 
-    const currentStep = steps[stepNumber].render;
-    const currentStepValidationSchema = steps[stepNumber].validationSchema;
+    const currentStep = steps[stepNumber];
     const isFirstStep = stepNumber === 0;
 
     return (
       <Formik
         initialValues={initialValues}
-        validationSchema={currentStepValidationSchema}
+        validationSchema={currentStep.validationSchema}
         onSubmit={this.handleSubmit}
         render={formikBag => (
           <Form className={styles.MultiStepForm} onSubmit={formikBag.handleSubmit}>
-            {currentStep(formikBag)}
+            {currentStep.render(formikBag)}
 
             <div className={styles.errorMessage}>
               <Alert isOpen={Boolean(errorMessage)} type="error">
