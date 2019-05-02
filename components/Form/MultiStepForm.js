@@ -26,7 +26,6 @@ class MultiStepForm extends React.Component {
   };
 
   state = {
-    // eslint-disable-next-line react/destructuring-assignment
     stepNumber: 0,
     errorMessage: '',
   };
