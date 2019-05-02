@@ -20,7 +20,6 @@ class MultiStepForm extends React.Component {
         render: PropTypes.func.isRequired,
         validationSchema: PropTypes.object.isRequired, // specifically a Yup object shape
         submitHandler: PropTypes.func,
-        getNumberOfStepSkips: PropTypes.func,
       }),
     ).isRequired,
   };
@@ -43,15 +42,9 @@ class MultiStepForm extends React.Component {
   };
 
   // We assume this method cannot be called on the last step
-  showNextStep = values => {
-    const { steps } = this.props;
-    const { stepNumber } = this.state;
-
-    const { getNumberOfStepSkips } = steps[stepNumber + 1];
-    const numberOfStepsToSkip = getNumberOfStepSkips(values);
-
+  showNextStep = () => {
     this.setState(previousState => ({
-      stepNumber: previousState.stepNumber + 1 + numberOfStepsToSkip,
+      stepNumber: previousState.stepNumber + 1,
     }));
   };
 
@@ -110,7 +103,7 @@ class MultiStepForm extends React.Component {
       await currentStepSubmitHandler(values);
 
       formikBag.setSubmitting(false);
-      this.showNextStep(values);
+      this.showNextStep();
     } catch (error) {
       formikBag.setSubmitting(false);
       this.handleError(error);
@@ -124,7 +117,6 @@ class MultiStepForm extends React.Component {
     const currentStep = steps[stepNumber].render;
     const currentStepValidationSchema = steps[stepNumber].validationSchema;
     const isFirstStep = stepNumber === 0;
-    const isLastStep = this.isLastStep();
 
     return (
       <Formik
@@ -152,7 +144,7 @@ class MultiStepForm extends React.Component {
                 </Button>
               )}
 
-              {isLastStep ? (
+              {this.isLastStep() ? (
                 <Button type="submit" theme="secondary" disabled={formikBag.isSubmitting}>
                   Submit ✓
                 </Button>

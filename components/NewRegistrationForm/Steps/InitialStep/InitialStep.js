@@ -51,8 +51,6 @@ class InitialStep extends React.Component {
     await createUser(values);
   };
 
-  static getNumberOfStepSkips = () => 0;
-
   render() {
     const { isSubmitting } = this.props;
 

@@ -19,11 +19,9 @@ export const Steps = OrderedSteps.map(Step => {
     render: props => <Step {...props} />,
     validationSchema: Step.validationSchema,
     submitHandler: Step.submitHandler,
-    getNumberOfStepSkips: values => Step.getNumberOfStepSkips(values),
   };
 });
 
-// eslint-disable-next-line unicorn/prevent-abbreviations
 export const StepsInitialValues = OrderedSteps.reduce((previousValue, component) => {
   return {
     ...previousValue,

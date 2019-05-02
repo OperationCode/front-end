@@ -31,8 +31,6 @@ class PersonalDetailsSteps extends React.Component {
     // await updateUser(values);
   };
 
-  static getNumberOfStepSkips = () => 0;
-
   render() {
     const { isSubmitting } = this.props;
 

@@ -30,15 +30,6 @@ class MilitaryStep extends React.Component {
     // await updateUser(values);
   };
 
-  static getNumberOfStepSkips = values => {
-    console.log('values when MilitaryStep.getNumberOfStepSkips', values);
-    if (values.classification !== 'military') {
-      return 1;
-    }
-
-    return 0;
-  };
-
   render() {
     const { isSubmitting } = this.props;
 
