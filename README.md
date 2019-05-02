@@ -58,12 +58,15 @@ yarn dev
 # Use Storybook as a workbench when developing new components
 yarn storybook
 
-# Start local production build (typically unnecessary locally)
-yarn start
-
-# Run all available unit and integration tests
+# Run all unit tests
 yarn test
+
+# Run all Cypress tests (make sure your dev server is running)
+yarn test:e2e
 
 # Create all the necessary files/folders for a new, reusable component
 yarn create-component $ComponentName
+
+# Create the necessary file with a small boilerplate for a new page
+yarn create-page $PageName 
 ```
