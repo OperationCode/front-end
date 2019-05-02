@@ -25,7 +25,7 @@ class NewRegistrationForm extends Component {
     return (
       <MultiStepForm
         initialValues={initialValues}
-        onFinalstepsuccess={this.handleSuccess}
+        onFinalStepSuccess={this.handleSuccess}
         steps={steps}
       />
     );
