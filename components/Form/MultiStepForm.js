@@ -10,7 +10,7 @@ import styles from './MultiStepForm.css';
 
 class MultiStepForm extends React.Component {
   static propTypes = {
-    // initialValues can be object of strings, where entire form's shape is described
+    // initialValues must be object where entire form's shape is described
     initialValues: PropTypes.object.isRequired,
 
     onFinalStepSuccess: PropTypes.func.isRequired,
@@ -95,26 +95,25 @@ class MultiStepForm extends React.Component {
     if (this.isLastStep()) {
       try {
         await onFinalStepSuccess(values);
-
         formikBag.setSubmitting(false);
         formikBag.resetForm();
-        return;
       } catch (error) {
         formikBag.setSubmitting(false);
         this.handleError(error);
       }
-    } else {
-      // Not last step
-      try {
-        const currentStepSubmitHandler = steps[stepNumber].submitHandler;
-        await currentStepSubmitHandler(values);
+      return;
+    }
 
-        formikBag.setSubmitting(false);
-        this.showNextStep(values);
-      } catch (error) {
-        formikBag.setSubmitting(false);
-        this.handleError(error);
-      }
+    // Not last step
+    try {
+      const currentStepSubmitHandler = steps[stepNumber].submitHandler;
+      await currentStepSubmitHandler(values);
+
+      formikBag.setSubmitting(false);
+      this.showNextStep(values);
+    } catch (error) {
+      formikBag.setSubmitting(false);
+      this.handleError(error);
     }
   };
 
