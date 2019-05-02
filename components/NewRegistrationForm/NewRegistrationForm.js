@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { login } from 'common/utils/auth-utils';
 import MultiStepForm from 'components/Form/MultiStepForm';
-import { Steps, StepsInitialValues } from './Steps';
+import { steps, entireFormInitialValues } from './Steps';
 
 class NewRegistrationForm extends Component {
   static propTypes = {
@@ -11,7 +11,7 @@ class NewRegistrationForm extends Component {
 
   static defaultProps = {
     initialValues: {
-      ...StepsInitialValues,
+      ...entireFormInitialValues,
     },
   };
 
@@ -25,8 +25,8 @@ class NewRegistrationForm extends Component {
     return (
       <MultiStepForm
         initialValues={initialValues}
-        onFinalStepSuccess={this.handleSuccess}
-        steps={Steps}
+        onFinalstepsuccess={this.handleSuccess}
+        steps={steps}
       />
     );
   }

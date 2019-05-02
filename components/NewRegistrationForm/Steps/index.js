@@ -5,7 +5,7 @@ import ClassificationStep from './ClassificationStep/ClassificationStep';
 import MilitaryStep from './MilitaryStep/MilitaryStep';
 import TechnologyStep from './TechnologyStep/TechnologyStep';
 
-const OrderedSteps = [
+const orderedSteps = [
   InitialStep,
   PersonalDetailsStep,
   ClassificationStep,
@@ -13,7 +13,7 @@ const OrderedSteps = [
   TechnologyStep,
 ];
 
-export const Steps = OrderedSteps.map(Step => {
+export const steps = orderedSteps.map(Step => {
   // if fields are changed/added/removed, please adjust propTypes inside MultiStepForm
   return {
     render: props => <Step {...props} />,
@@ -22,7 +22,7 @@ export const Steps = OrderedSteps.map(Step => {
   };
 });
 
-export const StepsInitialValues = OrderedSteps.reduce((previousValue, component) => {
+export const entireFormInitialValues = orderedSteps.reduce((previousValue, component) => {
   return {
     ...previousValue,
     ...component.initialValues,
