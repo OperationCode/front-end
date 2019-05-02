@@ -35,19 +35,27 @@ class MultiStepForm extends React.Component {
     errorMessage: '',
   };
 
+  isLastStep = () => {
+    const { steps } = this.props;
+    const { stepNumber } = this.state;
+
+    return stepNumber === steps.length - 1;
+  };
+
+  // We assume this method cannot be called on the last step
   showNextStep = values => {
     const { steps } = this.props;
     const { stepNumber } = this.state;
 
-    const nextStep = steps[stepNumber + 1];
-
-    const numberOfStepsToSkip = nextStep.getNumberOfStepSkips(values);
+    const { getNumberOfStepSkips } = steps[stepNumber + 1];
+    const numberOfStepsToSkip = getNumberOfStepSkips(values);
 
     this.setState(previousState => ({
       stepNumber: previousState.stepNumber + 1 + numberOfStepsToSkip,
     }));
   };
 
+  // We assume this method cannot be called on the first step
   showPreviousStep = () => {
     this.setState(previousState => ({
       stepNumber: previousState.stepNumber - 1,
@@ -84,9 +92,7 @@ class MultiStepForm extends React.Component {
       this.setState({ errorMessage: '' });
     }
 
-    const isLastStep = stepNumber === steps.length - 1;
-
-    if (isLastStep) {
+    if (this.isLastStep()) {
       try {
         await onFinalStepSuccess(values);
 
@@ -119,7 +125,7 @@ class MultiStepForm extends React.Component {
     const currentStep = steps[stepNumber].render;
     const currentStepValidationSchema = steps[stepNumber].validationSchema;
     const isFirstStep = stepNumber === 0;
-    const isLastStep = stepNumber === steps.length - 1;
+    const isLastStep = this.isLastStep();
 
     return (
       <Formik
