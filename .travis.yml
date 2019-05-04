@@ -17,9 +17,9 @@ before_install:
 
 install:
   - if [[ $TRAVIS_BRANCH == greenkeeper* ]]; then
-      yarn --silent
+      yarn --silent;
     else
-      yarn --silent --pure-lockfile --production=true
+      yarn --silent --pure-lockfile --production=false;
     fi
 
 before_script:
