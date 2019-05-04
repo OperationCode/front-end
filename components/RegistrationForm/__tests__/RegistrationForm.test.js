@@ -230,8 +230,6 @@ describe('RegistrationForm', () => {
     wrapper.find('button[type="submit"]').simulate('submit');
     await asyncRenderDiff(wrapper);
 
-    console.log(user);
-    console.log(wrapper.html());
     expect(successSpy).not.toHaveBeenCalled();
     expect(
       wrapper
