@@ -11,9 +11,9 @@ import mockPassword from './mockPassword';
 export default function mockUser(desiredEmail = '') {
   const firstName = faker.name.firstName();
   const lastName = faker.name.lastName();
-
   const email = desiredEmail || faker.internet.email(firstName, lastName, 'operationcode.org');
   const password = mockPassword();
+  const zipcode = faker.address.zipCode();
 
   const user = {
     email,
@@ -22,7 +22,7 @@ export default function mockUser(desiredEmail = '') {
     'confirm-password': password,
     firstName,
     lastName,
-    zipcode: faker.address.zipCode(),
+    zipcode,
   };
 
   return user;
