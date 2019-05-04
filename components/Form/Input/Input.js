@@ -71,11 +71,11 @@ function Input({
         </Label>
       )}
 
-      <div className={styles.inputFeedBackGrouping}>
+      <div className={styles.inputFeedbackGrouping}>
         <input
           {...field}
           {...props}
-          className={classNames(styles.input, {
+          className={classNames(styles.Input, {
             [styles.valid]: touched[name] && !hasErrors,
             [styles.invalid]: touched[name] && hasErrors,
           })}

@@ -11,10 +11,10 @@ exports[`Storyshots Form/Input default 1`] = `
     Some Input:
   </label>
   <div
-    className="inputFeedBackGrouping"
+    className="inputFeedbackGrouping"
   >
     <input
-      className="input"
+      className="Input"
       id="someInput"
       name="someInput"
       type="text"
