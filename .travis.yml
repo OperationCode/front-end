@@ -16,10 +16,10 @@ before_install:
   - yarn global add greenkeeper-lockfile@2
 
 install:
-  - if [[ $TRAVIS_BRANCH == greenkeeper* ]]; then 
-      yarn install; 
+  - if [[ $TRAVIS_BRANCH == greenkeeper* ]]; then
+      yarn --silent
     else
-      yarn --silent --pure-lockfile --production=true;
+      yarn --silent --pure-lockfile --production=true
     fi
 
 before_script:
