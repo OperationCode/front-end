@@ -10,6 +10,6 @@ import { minimumPasswordLength } from '../../common/constants/validations';
  */
 export default function mockPassword(isValid = true) {
   return isValid
-    ? `${faker.internet.password(minimumPasswordLength)}!1Aa`
+    ? `${faker.internet.password(minimumPasswordLength)}!1Aa${faker.internet.password(1)}`
     : `${faker.internet.password(minimumPasswordLength - 2)}`;
 }
