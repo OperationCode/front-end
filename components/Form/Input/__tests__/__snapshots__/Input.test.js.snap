@@ -11,10 +11,10 @@ exports[`Input should render with required props 1`] = `
     Some Input:
   </label>
   <div
-    className="inputFeedBackGrouping"
+    className="inputFeedbackGrouping"
   >
     <input
-      className="input"
+      className="Input"
       id="someInputName"
       name="someInputName"
       type="text"
