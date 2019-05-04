@@ -20,11 +20,11 @@ exports[`LoginForm should render with required props 1`] = `
         Email*
       </label>
       <div
-        className="inputFeedBackGrouping"
+        className="inputFeedbackGrouping"
       >
         <input
           autoComplete="username email"
-          className="input"
+          className="Input"
           disabled={false}
           id="email"
           name="email"
@@ -45,11 +45,11 @@ exports[`LoginForm should render with required props 1`] = `
         Password*
       </label>
       <div
-        className="inputFeedBackGrouping"
+        className="inputFeedbackGrouping"
       >
         <input
           autoComplete="new-password"
-          className="input"
+          className="Input"
           disabled={false}
           id="password"
           name="password"

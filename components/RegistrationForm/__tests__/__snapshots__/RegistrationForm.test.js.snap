@@ -20,11 +20,11 @@ exports[`RegistrationForm should render with required props 1`] = `
         Email*
       </label>
       <div
-        className="inputFeedBackGrouping"
+        className="inputFeedbackGrouping"
       >
         <input
           autoComplete="username email"
-          className="input"
+          className="Input"
           disabled={false}
           id="email"
           name="email"
@@ -45,11 +45,11 @@ exports[`RegistrationForm should render with required props 1`] = `
         Confirm Email*
       </label>
       <div
-        className="inputFeedBackGrouping"
+        className="inputFeedbackGrouping"
       >
         <input
           autoComplete="username email"
-          className="input"
+          className="Input"
           disabled={false}
           id="confirm-email"
           name="confirm-email"
@@ -74,11 +74,11 @@ exports[`RegistrationForm should render with required props 1`] = `
         Password*
       </label>
       <div
-        className="inputFeedBackGrouping"
+        className="inputFeedbackGrouping"
       >
         <input
           autoComplete="new-password"
-          className="input"
+          className="Input"
           disabled={false}
           id="password"
           name="password"
@@ -99,11 +99,11 @@ exports[`RegistrationForm should render with required props 1`] = `
         Confirm Password*
       </label>
       <div
-        className="inputFeedBackGrouping"
+        className="inputFeedbackGrouping"
       >
         <input
           autoComplete="new-password"
-          className="input"
+          className="Input"
           disabled={false}
           id="confirm-password"
           name="confirm-password"
@@ -128,11 +128,11 @@ exports[`RegistrationForm should render with required props 1`] = `
         First Name*
       </label>
       <div
-        className="inputFeedBackGrouping"
+        className="inputFeedbackGrouping"
       >
         <input
           autoComplete="given-name"
-          className="input"
+          className="Input"
           disabled={false}
           id="firstName"
           name="firstName"
@@ -153,11 +153,11 @@ exports[`RegistrationForm should render with required props 1`] = `
         Last Name*
       </label>
       <div
-        className="inputFeedBackGrouping"
+        className="inputFeedbackGrouping"
       >
         <input
           autoComplete="family-name"
-          className="input"
+          className="Input"
           disabled={false}
           id="lastName"
           name="lastName"
@@ -182,11 +182,11 @@ exports[`RegistrationForm should render with required props 1`] = `
         Zipcode*
       </label>
       <div
-        className="inputFeedBackGrouping"
+        className="inputFeedbackGrouping"
       >
         <input
           autoComplete="postal-code"
-          className="input"
+          className="Input"
           disabled={false}
           id="zipcode"
           name="zipcode"

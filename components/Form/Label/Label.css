@@ -1,4 +1,4 @@
 .Label {
-  color: var(--secondary);
+  color: rgba(var(--rgbValuesSecondary), 0.75);
   font-size: 0.825rem;
 }
