@@ -37,6 +37,16 @@ describe('Validator Utilities', () => {
       expect(isMinPasswordStrength(password)).toStrictEqual(true);
     });
 
+    it('should pass with password that broke CI on 5/3/2019', () => {
+      const password = '_DGMaDV4!1Aa';
+      expect(isMinPasswordStrength(password)).toStrictEqual(true);
+    });
+
+    it('should pass leading and trailing whitespace', () => {
+      const password = ' _DGMaDV4!1Aa ';
+      expect(isMinPasswordStrength(password)).toStrictEqual(true);
+    });
+
     it('should fail when missing a number', () => {
       const password = 'aA';
       expect(isMinPasswordStrength(password)).toStrictEqual(false);
