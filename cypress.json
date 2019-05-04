@@ -2,5 +2,6 @@
   "projectId": "dbquo6",
   "baseUrl": "http://localhost:3000",
   "viewportWidth": 1600,
-  "viewportHeight": 1200
+  "viewportHeight": 1200,
+  "requestTimeout": 10000
 }
