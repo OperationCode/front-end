@@ -40,6 +40,9 @@ export const postMentorRequestPromise = ({ language, additionalDetails, mentor, 
     },
   });
 
+// eslint-disable-next-line max-len
+// export const confirmEmail = key => post('registration/verify-email/', key).then(({ data }) => data);
+
 /* PATCH REQUESTS */
 export const patchUpdateMentorRequestPromise = ({ request, status, mentor }) =>
   patch(`requests/${request}`, {
