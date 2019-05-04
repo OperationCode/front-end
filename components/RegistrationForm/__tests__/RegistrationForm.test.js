@@ -204,6 +204,7 @@ describe('RegistrationForm', () => {
         .text(),
     ).toStrictEqual('Email has been taken.');
   });
+
   it('should show a helpful error if the server is down', async () => {
     const user = mockUser();
 
@@ -222,7 +223,7 @@ describe('RegistrationForm', () => {
       <RegistrationForm register={createUser} onSuccess={successSpy} initialValues={user} />,
     );
 
-    wrapper.find('Button').simulate('submit');
+    wrapper.find('button[type="submit"]').simulate('submit');
     await asyncRenderDiff(wrapper);
 
     expect(successSpy).not.toHaveBeenCalled();
