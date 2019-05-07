@@ -3,6 +3,7 @@
 exports[`SchoolCard should render with required props 1`] = `
 <Card
   className="SchoolCard"
+  data-testid="SchoolCard"
   hasAnimationOnHover={false}
 >
   <div

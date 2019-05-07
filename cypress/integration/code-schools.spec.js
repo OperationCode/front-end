@@ -11,7 +11,7 @@ describe('code schools', function() {
   it('should render many code school cards', () => {
     cy.wait('@codeSchools');
 
-    // 50 is arbitrary, but it proves that the API is working and leading to rendered content
-    cy.get('article').should('have.length.greaterThan', 50);
+    // 40 is arbitrary, but it proves that the API is working and leading to rendered content
+    cy.get('[data-testid="SchoolCard"]').should('have.length.greaterThan', 40);
   });
 });
