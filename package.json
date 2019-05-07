@@ -105,6 +105,7 @@
     "axios-mock-adapter": "^1.16.0",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^24.7.1",
+    "babel-plugin-react-remove-properties": "^0.3.0",
     "cross-env": "^5.2.0",
     "cypress": "^3.2.0",
     "enzyme": "^3.8.0",
