@@ -3,28 +3,12 @@ import PropTypes from 'prop-types';
 import get from 'lodash/get';
 import { Formik } from 'formik';
 import { getErrorMessage } from 'common/utils/api-utils';
+import { validStep } from 'common/constants/custom-props';
 import { capitalizeFirstLetter } from 'common/utils/string-utils';
 import Button from 'components/Button/Button';
 import Form from 'components/Form/Form';
 import Alert from 'components/Alert/Alert';
 import styles from './MultiStepForm.css';
-
-function validStep(propValue, key, componentName, location, propFullName) {
-  if (!Object.getOwnPropertyNames(propValue[key]).includes('validationSchema')) {
-    return new Error(
-      `${propFullName} does not have a validateSchema function.  
-      All form steps must contain both validateSchema and submitHandler functions`,
-    );
-  }
-
-  if (!Object.getOwnPropertyNames(propValue[key]).includes('submitHandler')) {
-    return new Error(
-      `${propFullName} does not have a submitHandler function.  
-      All form steps must contain both validateSchema and submitHandler functions`,
-    );
-  }
-  return null;
-}
 
 class MultiStepForm extends React.Component {
   static propTypes = {
