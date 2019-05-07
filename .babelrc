@@ -3,7 +3,10 @@
     "production": {
       "presets": [
         "next/babel"
-      ]
+      ],
+      "plugins": [
+        ["react-remove-properties", { "properties": ["data-testid"] }]
+      ],
     },
     "development": {
       "presets": [

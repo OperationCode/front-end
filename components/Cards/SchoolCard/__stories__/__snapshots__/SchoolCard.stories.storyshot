@@ -3,6 +3,7 @@
 exports[`Storyshots Cards/SchoolCard with many locations 1`] = `
 <article
   className="Card SchoolCard"
+  data-testid="SchoolCard"
 >
   <div
     className="giBillRibbon"
@@ -137,6 +138,7 @@ exports[`Storyshots Cards/SchoolCard with many locations 1`] = `
 exports[`Storyshots Cards/SchoolCard with no physical locations 1`] = `
 <article
   className="Card SchoolCard"
+  data-testid="SchoolCard"
 >
   <div
     className="cardBrand"
@@ -257,6 +259,7 @@ exports[`Storyshots Cards/SchoolCard with no physical locations 1`] = `
 exports[`Storyshots Cards/SchoolCard with one location 1`] = `
 <article
   className="Card SchoolCard"
+  data-testid="SchoolCard"
 >
   <div
     className="cardBrand"
