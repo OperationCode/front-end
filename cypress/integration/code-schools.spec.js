@@ -8,9 +8,10 @@ describe('code schools', function() {
     cy.get('h1').should('have.text', 'Code Schools');
   });
 
-  describe('render code school cards', () => {
-    it('should render code school cards', () => {
-      cy.get('div.code_schools_schoolCardsWrapper__SXWXI');
-    });
+  it('should render many code school cards', () => {
+    cy.wait('@codeSchools');
+
+    // 50 is arbitrary, but it definitely proves that the API is working and leading to rendered content
+    cy.get('article').should('have.length.greaterThan', 50);
   });
 });
