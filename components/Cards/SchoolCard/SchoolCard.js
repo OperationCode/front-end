@@ -77,13 +77,8 @@ export default class SchoolCard extends Component {
         )}
 
         <div className={styles.cardBrand}>
-          <img
-            src={props.logoSource}
-            alt={`${props.name} logo`}
-            data-testid="School logo"
-            height="150"
-          />
-          <p>{props.name}</p>
+          <img src={props.logoSource} alt={`${props.name} logo`} height="150" />
+          <ScreenReaderOnly>{props.name}</ScreenReaderOnly>
         </div>
 
         <div className={styles.cardBlock}>

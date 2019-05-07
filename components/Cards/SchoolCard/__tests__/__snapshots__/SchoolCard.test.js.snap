@@ -17,13 +17,12 @@ exports[`SchoolCard should render with required props 1`] = `
   >
     <img
       alt="school name logo"
-      data-testid="School logo"
       height="150"
       src="source"
     />
-    <p>
+    <ScreenReaderOnly>
       school name
-    </p>
+    </ScreenReaderOnly>
   </div>
   <div
     className="cardBlock"
