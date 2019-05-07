@@ -69,7 +69,7 @@ export default class SchoolCard extends Component {
       classNames(styles.badgeGroupItem, { [styles.active]: isActive });
 
     return (
-      <Card className={styles.SchoolCard} hasAnimationOnHover={false}>
+      <Card className={styles.SchoolCard} hasAnimationOnHover={false} data-testid="SchoolCard">
         {hasGiBill && <div className={styles.giBillRibbon}>GI Bill</div>}
 
         <div className={styles.cardBrand}>
