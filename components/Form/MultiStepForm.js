@@ -9,6 +9,23 @@ import Form from 'components/Form/Form';
 import Alert from 'components/Alert/Alert';
 import styles from './MultiStepForm.css';
 
+function validStep(propValue, key, componentName, location, propFullName) {
+  if (!Object.getOwnPropertyNames(propValue[key]).includes('validationSchema')) {
+    return new Error(
+      `${propFullName} does not have a validateSchema function.  
+      All form steps must contain both validateSchema and submitHandler functions`,
+    );
+  }
+
+  if (!Object.getOwnPropertyNames(propValue[key]).includes('submitHandler')) {
+    return new Error(
+      `${propFullName} does not have a submitHandler function.  
+      All form steps must contain both validateSchema and submitHandler functions`,
+    );
+  }
+  return null;
+}
+
 class MultiStepForm extends React.Component {
   static propTypes = {
     // initialValues must be object where entire form's shape is described
@@ -16,13 +33,7 @@ class MultiStepForm extends React.Component {
 
     onFinalSubmit: PropTypes.func.isRequired,
     onFinalSubmitSuccess: PropTypes.func.isRequired,
-    steps: PropTypes.arrayOf(
-      PropTypes.shape({
-        render: PropTypes.func.isRequired,
-        validationSchema: PropTypes.object.isRequired, // specifically a Yup object shape
-        submitHandler: PropTypes.func.isRequired,
-      }),
-    ).isRequired,
+    steps: PropTypes.arrayOf(validStep).isRequired,
   };
 
   state = {
@@ -112,17 +123,17 @@ class MultiStepForm extends React.Component {
     const { initialValues, steps } = this.props;
     const { errorMessage, stepNumber } = this.state;
 
-    const currentStep = steps[stepNumber];
+    const CurrentStep = steps[stepNumber];
     const isFirstStep = stepNumber === 0;
 
     return (
       <Formik
         initialValues={initialValues}
-        validationSchema={currentStep.validationSchema}
+        validationSchema={CurrentStep.validationSchema}
         onSubmit={this.handleSubmit}
         render={formikBag => (
           <Form className={styles.MultiStepForm} onSubmit={formikBag.handleSubmit}>
-            {currentStep.render(formikBag)}
+            <CurrentStep {...formikBag} />
 
             <div className={styles.errorMessage}>
               <Alert isOpen={Boolean(errorMessage)} type="error">
