@@ -26,9 +26,9 @@
   cursor: not-allowed;
 }
 
-/* error message element */
-.inputFeedBackgrouping > div {
-  max-width: 202px; /* so that aside content doesn't span past width of input */
+.errorMessage {
+  /* Alert's border is only 1px - not 2px (account for Input's left and right border) */
+  max-width: calc(inherit + 2px);
 }
 
 .valid {
