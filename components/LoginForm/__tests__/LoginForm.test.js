@@ -6,13 +6,9 @@ import { networkErrorMessages, validationErrorMessages } from 'common/constants/
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 import OperationCodeAPIMock from 'test-utils/mocks/apiMock';
 import mockUser from 'test-utils/mockGenerators/mockUser';
+import asyncRenderDiff from 'test-utils/asyncRenderDiff';
 import wait from 'test-utils/wait';
 import LoginForm from '../LoginForm';
-
-const asyncRenderDiff = async enzymeWrapper => {
-  await wait();
-  enzymeWrapper.update();
-};
 
 afterEach(() => {
   OperationCodeAPIMock.reset();
