@@ -10,7 +10,17 @@
   max-width: 500px;
 }
 
+.filterContainer {
+  margin: 2rem 0;
+  width: 100%;
+}
+
+.filterContainer > h5 {
+  text-align: center;
+}
+
 .select {
+  margin: 0.5rem auto;
   min-width: 20rem;
   width: 90%;
   max-width: 50rem;
