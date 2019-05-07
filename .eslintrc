@@ -82,6 +82,17 @@
     "max-len": ["error", { "code": 100, "ignoreUrls": true }],
     "multiline-ternary": ["error", "always-multiline"],
     "no-console": "warn",
+    "no-restricted-imports": [
+      "error",
+      {
+        "paths": [
+          {
+            "name": "react-select",
+            "message": "Please use `components/Form/Select/ThemedReactSelect` instead."
+          }
+        ]
+      }
+    ],
     "no-use-before-define": "off",
     "react/forbid-prop-types": ["error", { "forbid": ["any"] }],
     "react/jsx-curly-brace-presence": ["error", { "props": "never", "children": "never" }],

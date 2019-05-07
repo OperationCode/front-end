@@ -1,4 +1,3 @@
-import Select from 'react-select';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
@@ -7,6 +6,7 @@ import SchoolCard from 'components/Cards/SchoolCard/SchoolCard';
 import Button from 'components/Button/Button';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 import Modal from 'components/Modal/Modal';
+import ThemedReactSelect from 'components/Form/Select/ThemedReactSelect';
 import { getCodeSchoolsPromise } from 'common/constants/api';
 import States from 'common/constants/dropdown-states-values';
 import edx from 'static/images/moocs/edx.jpg';
@@ -165,7 +165,7 @@ export default class CodeSchools extends React.Component {
             <Button theme="primary" onClick={this.filterOnline}>
               Online Schools{' '}
             </Button>,
-            <Select
+            <ThemedReactSelect
               instanceId="state_select"
               placeholder="Start typing a state..."
               className={styles.select}
