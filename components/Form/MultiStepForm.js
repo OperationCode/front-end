@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import get from 'lodash/get';
 import { Formik } from 'formik';
 import { getErrorMessage } from 'common/utils/api-utils';
+import { validStep } from 'common/constants/custom-props';
 import { capitalizeFirstLetter } from 'common/utils/string-utils';
 import Button from 'components/Button/Button';
 import Form from 'components/Form/Form';
@@ -16,13 +17,7 @@ class MultiStepForm extends React.Component {
 
     onFinalSubmit: PropTypes.func.isRequired,
     onFinalSubmitSuccess: PropTypes.func.isRequired,
-    steps: PropTypes.arrayOf(
-      PropTypes.shape({
-        render: PropTypes.func.isRequired,
-        validationSchema: PropTypes.object.isRequired, // specifically a Yup object shape
-        submitHandler: PropTypes.func.isRequired,
-      }),
-    ).isRequired,
+    steps: PropTypes.arrayOf(validStep).isRequired,
   };
 
   state = {
@@ -112,17 +107,17 @@ class MultiStepForm extends React.Component {
     const { initialValues, steps } = this.props;
     const { errorMessage, stepNumber } = this.state;
 
-    const currentStep = steps[stepNumber];
+    const CurrentStep = steps[stepNumber];
     const isFirstStep = stepNumber === 0;
 
     return (
       <Formik
         initialValues={initialValues}
-        validationSchema={currentStep.validationSchema}
+        validationSchema={CurrentStep.validationSchema}
         onSubmit={this.handleSubmit}
         render={formikBag => (
           <Form className={styles.MultiStepForm} onSubmit={formikBag.handleSubmit}>
-            {currentStep.render(formikBag)}
+            <CurrentStep {...formikBag} />
 
             <div className={styles.errorMessage}>
               <Alert isOpen={Boolean(errorMessage)} type="error">
