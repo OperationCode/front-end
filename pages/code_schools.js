@@ -1,4 +1,5 @@
 import Head from 'components/head';
+import ThemedReactSelect from 'components/Form/Select/ThemedReactSelect';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
 import FlatCard from 'components/Cards/FlatCard/FlatCard';
@@ -6,7 +7,6 @@ import SchoolCard from 'components/Cards/SchoolCard/SchoolCard';
 import Button from 'components/Button/Button';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 import Modal from 'components/Modal/Modal';
-import ThemedReactSelect from 'components/Form/Select/ThemedReactSelect';
 import { getCodeSchoolsPromise } from 'common/constants/api';
 import States from 'common/constants/dropdown-states-values';
 import edx from 'static/images/moocs/edx.jpg';
@@ -157,24 +157,27 @@ export default class CodeSchools extends React.Component {
           hasTitleUnderline
           columns={[
             <Button theme="primary" onClick={this.showAllSchools}>
-              All Schools{' '}
+              All Schools
             </Button>,
             <Button theme="primary" onClick={this.filterVaApproved}>
-              VA Approved Schools{' '}
+              VA Approved Schools
             </Button>,
             <Button theme="primary" onClick={this.filterOnline}>
-              Online Schools{' '}
+              Online Schools
             </Button>,
-            <ThemedReactSelect
-              instanceId="state_select"
-              placeholder="Start typing a state..."
-              className={styles.select}
-              isMulti
-              name="States"
-              options={States}
-              onChange={this.filterState}
-              value={state.selectedStates}
-            />,
+            <div className={styles.filterContainer}>
+              <h5>Filter By State</h5>
+              <ThemedReactSelect
+                instanceId="state_select"
+                placeholder="Start typing a state..."
+                className={styles.select}
+                isMulti
+                name="States"
+                options={States}
+                onChange={this.filterState}
+                value={state.selectedStates}
+              />
+            </div>,
             <div className={styles.schoolCardsWrapper}>
               {state.filteredSchools.map(school => (
                 <SchoolCard
