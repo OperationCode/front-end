@@ -13,13 +13,15 @@ describe('code schools', function() {
   });
 
   it('should render Cincy and Tech Elevator after selecting Ohio', () => {
-    cy.get('[data-testid="code schools input"]')
+    cy.get('input#react-select-state_select-input')
       .type('Ohio', { force: true })
       .type('{enter}');
 
     cy.get('[data-testid="SchoolCard"]')
-      .find('Cincy Code IT Bootcamps logo', 'Tech Elevator logo')
-      .should('exist');
+      .should('contain', 'Cincy Code IT Bootcamps')
+      .and('exist')
+      .should('contain', 'Tech Elevator')
+      .and('exist');
   });
 
   it('should only renders GI Bill accepted schools after clicking on VA Approved Schools', () => {
@@ -35,7 +37,7 @@ describe('code schools', function() {
   // /Online Schools test
 
   it('should render no schools after selecting Alaska', () => {
-    cy.get('[data-testid="code schools input"]')
+    cy.get('input#react-select-state_select-input')
       .type('Alaska', { force: true })
       .type('{enter}');
 
