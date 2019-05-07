@@ -13,25 +13,29 @@ describe('code schools', function() {
   });
 
   it('should render Cincy and Tech Elevator after selecting Ohio', () => {
-    cy.get('input#react-select-state_select-input')
+    cy.get('[data-testid="code schools input"]')
       .type('Ohio', { force: true })
       .type('{enter}');
 
     cy.get('[data-testid="SchoolCard"]')
-      .find('img[alt="Cincy Code IT Bootcamps logo"]', 'img[alt="Tech Elevator logo"]')
-      .should('be.visible');
+      .find('Cincy Code IT Bootcamps logo', 'Tech Elevator logo')
+      .should('exist');
   });
 
-  it('should render GI Bill accepted schools after hitting VA button', () => {
+  it('should only renders GI Bill accepted schools after clicking on VA Approved Schools', () => {
     cy.contains('VA Approved Schools').click();
 
-    cy.get('[data-testid="GIBill"]').should('have.length.greaterThan', 20);
+    cy.get('[data-testid="SchoolCard"]').each(card => {
+      cy.wrap(card)
+        .find('[data-testid="GI Bill Ribbon"]')
+        .should('exist');
+    });
   });
 
   // /Online Schools test
 
   it('should render no schools after selecting Alaska', () => {
-    cy.get('input#react-select-state_select-input')
+    cy.get('[data-testid="code schools input"]')
       .type('Alaska', { force: true })
       .type('{enter}');
 

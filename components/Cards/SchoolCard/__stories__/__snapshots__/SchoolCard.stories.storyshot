@@ -7,6 +7,7 @@ exports[`Storyshots Cards/SchoolCard with many locations 1`] = `
 >
   <div
     className="giBillRibbon"
+    data-testid="GI Bill Ribbon"
   >
     GI Bill
   </div>

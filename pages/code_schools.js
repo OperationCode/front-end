@@ -168,6 +168,7 @@ export default class CodeSchools extends React.Component {
             <div className={styles.filterContainer}>
               <h5>Filter By State</h5>
               <ThemedReactSelect
+                data-testid="code schools input"
                 instanceId="state_select"
                 placeholder="Start typing a state..."
                 className={styles.select}

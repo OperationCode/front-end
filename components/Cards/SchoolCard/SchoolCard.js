@@ -71,7 +71,7 @@ export default class SchoolCard extends Component {
     return (
       <Card className={styles.SchoolCard} hasAnimationOnHover={false} data-testid="SchoolCard">
         {hasGiBill && (
-          <div className={styles.giBillRibbon} data-testid="GIBill">
+          <div className={styles.giBillRibbon} data-testid="GI Bill Ribbon">
             GI Bill
           </div>
         )}

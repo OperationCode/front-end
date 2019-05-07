@@ -8,6 +8,7 @@ exports[`SchoolCard should render with required props 1`] = `
 >
   <div
     className="giBillRibbon"
+    data-testid="GI Bill Ribbon"
   >
     GI Bill
   </div>
