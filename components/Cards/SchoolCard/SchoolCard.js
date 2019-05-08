@@ -90,7 +90,11 @@ export default class SchoolCard extends Component {
           <div className={styles.badgeGroup}>
             <Badge
               label={<LabelWithScreenReader label="Online" isActive={props.hasOnline} />}
-              icon={<OnlineIcon data-testid="OnlineSchools" />}
+              icon={
+                <OnlineIcon
+                  data-testid={props.hasOnline ? 'School has online' : 'School has no online'}
+                />
+              }
               className={badgeClassNames(props.hasOnline)}
             />
             <Badge

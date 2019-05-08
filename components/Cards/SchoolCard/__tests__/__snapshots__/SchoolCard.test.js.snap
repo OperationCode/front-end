@@ -43,7 +43,7 @@ exports[`SchoolCard should render with required props 1`] = `
         className="badgeGroupItem active"
         icon={
           <Svg
-            data-testid="OnlineSchools"
+            data-testid="School has online"
           />
         }
         isImageFirst={true}
