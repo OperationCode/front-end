@@ -12,18 +12,18 @@ import {
 } from 'common/styles/themeMap';
 
 ThemedReactSelect.propTypes = {
+  disabled: bool,
   hasErrors: bool,
-  isDisabled: bool,
   isTouched: bool,
 };
 
 ThemedReactSelect.defaultProps = {
+  disabled: false,
   hasErrors: false,
-  isDisabled: false,
   isTouched: false,
 };
 
-function ThemedReactSelect({ hasErrors, isDisabled, isTouched, ...props }) {
+function ThemedReactSelect({ disabled, hasErrors, isTouched, ...props }) {
   const getOuterColor = () => {
     if (hasErrors) {
       return errorDeep;
@@ -46,10 +46,10 @@ function ThemedReactSelect({ hasErrors, isDisabled, isTouched, ...props }) {
             marginBottom: '1rem',
             minWidth: '250px',
             padding: '0.25rem',
-            opacity: isDisabled ? '0.5' : '1',
+            opacity: disabled ? '0.5' : '1',
             outline: 'none',
             '&:hover': {
-              cursor: isDisabled ? 'not-allowed' : 'text',
+              cursor: disabled ? 'not-allowed' : 'text',
             },
           };
         },
@@ -57,7 +57,7 @@ function ThemedReactSelect({ hasErrors, isDisabled, isTouched, ...props }) {
           return {
             ...base,
             '&:hover': {
-              cursor: isDisabled ? 'not-allowed' : 'pointer',
+              cursor: disabled ? 'not-allowed' : 'pointer',
             },
           };
         },
@@ -65,7 +65,7 @@ function ThemedReactSelect({ hasErrors, isDisabled, isTouched, ...props }) {
           return {
             ...base,
             '&:hover': {
-              cursor: isDisabled ? 'not-allowed' : 'pointer',
+              cursor: disabled ? 'not-allowed' : 'pointer',
             },
           };
         },
@@ -73,7 +73,7 @@ function ThemedReactSelect({ hasErrors, isDisabled, isTouched, ...props }) {
           return {
             ...base,
             '&:hover': {
-              cursor: isDisabled ? 'not-allowed' : 'pointer',
+              cursor: disabled ? 'not-allowed' : 'pointer',
             },
           };
         },

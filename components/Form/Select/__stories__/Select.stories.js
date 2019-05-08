@@ -9,6 +9,8 @@ import Select from '../Select';
 const selectName = text('field.name', 'someSelect');
 const isMulti = boolean('isMulti', false);
 
+const initialValue = isMulti ? [] : '';
+
 const options = isMulti
   ? array('options', [
       { label: 'Option #1', value: 'option1' },
@@ -29,7 +31,7 @@ storiesOf('Form/Select', module)
 
         <Select
           disabled={boolean('disabled', false)}
-          field={{ name: selectName }}
+          field={{ name: selectName, value: initialValue }}
           form={object('form', {
             touched: { [selectName]: false },
             errors: { [selectName]: '' },

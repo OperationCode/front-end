@@ -8,13 +8,12 @@ import styles from './Select.css';
 
 class Select extends React.Component {
   static propTypes = {
-    disabled: bool,
     field: shape({
       name: string.isRequired,
       value: oneOfType([
         string,
         arrayOf(shape({ label: string.isRequired, value: string.isRequired })),
-      ]),
+      ]).isRequired,
     }).isRequired,
     form: shape({
       touched: objectOf(bool).isRequired,
@@ -28,15 +27,12 @@ class Select extends React.Component {
     label: string.isRequired,
     options: arrayOf(shape({ label: string.isRequired, value: string.isRequired }).isRequired)
       .isRequired,
-    placeholder: string,
   };
 
   static defaultProps = {
-    disabled: false,
     id: '',
     isLabelHidden: false,
     isMulti: false,
-    placeholder: '',
   };
 
   /**
@@ -91,7 +87,6 @@ class Select extends React.Component {
 
   render() {
     const {
-      disabled,
       field: { name },
       form: { errors, touched },
       id,
@@ -99,7 +94,7 @@ class Select extends React.Component {
       isMulti,
       label,
       options,
-      placeholder,
+      ...props // disabled, placeholder, etc.
     } = this.props;
 
     const hasErrors = Boolean(errors[name]);
@@ -116,16 +111,15 @@ class Select extends React.Component {
 
         <div>
           <ThemedReactSelect
+            {...props}
             hasErrors={hasErrors}
             isTouched={touched[name]}
             id={id}
-            isDisabled={disabled}
             isMulti={isMulti}
             name={name}
             onBlur={this.handleBlur}
             onChange={onChangeHandler}
             options={options}
-            placeholder={placeholder}
             value={value}
           />
 

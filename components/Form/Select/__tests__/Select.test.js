@@ -57,13 +57,14 @@ describe('Select', () => {
     // @see https://stackoverflow.com/a/46201546/7304377
 
     it('should display an error message when a required field is touched', async () => {
-      const validate = () => ({ favoriteFastFood: 'Required' });
+      const fieldName = 'favoriteFastFood';
+      const validate = () => ({ [fieldName]: 'Required' });
 
       const wrapper = mount(
-        <Formik validate={validate}>
+        <Formik initialValues={{ [fieldName]: '' }} validate={validate}>
           <Form>
             <Field
-              name="favoriteFastFood"
+              name={fieldName}
               label="Favorite Fast Food Places*"
               options={requiredProps.options}
               component={Select}
