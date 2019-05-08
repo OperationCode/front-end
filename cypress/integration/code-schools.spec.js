@@ -33,7 +33,7 @@ describe('code schools', function() {
     });
   });
 
-  it('only renders online schools with an online option after clicking "Online Schools"', () => {
+  it('only renders code schools with an online option after clicking "Online Schools"', () => {
     cy.contains('Online Schools').click();
 
     cy.get('[data-testid="SchoolCard"]').each(card => {
