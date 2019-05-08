@@ -1,5 +1,5 @@
-import Select from 'react-select';
 import Head from 'components/head';
+import ThemedReactSelect from 'components/Form/Select/ThemedReactSelect';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
 import FlatCard from 'components/Cards/FlatCard/FlatCard';
@@ -157,24 +157,27 @@ export default class CodeSchools extends React.Component {
           hasTitleUnderline
           columns={[
             <Button theme="primary" onClick={this.showAllSchools}>
-              All Schools{' '}
+              All Schools
             </Button>,
             <Button theme="primary" onClick={this.filterVaApproved}>
-              VA Approved Schools{' '}
+              VA Approved Schools
             </Button>,
             <Button theme="primary" onClick={this.filterOnline}>
-              Online Schools{' '}
+              Online Schools
             </Button>,
-            <Select
-              instanceId="state_select"
-              placeholder="Start typing a state..."
-              className={styles.select}
-              isMulti
-              name="States"
-              options={States}
-              onChange={this.filterState}
-              value={state.selectedStates}
-            />,
+            <div className={styles.filterContainer}>
+              <h5>Filter By State</h5>
+              <ThemedReactSelect
+                instanceId="state_select"
+                placeholder="Start typing a state..."
+                className={styles.select}
+                isMulti
+                name="States"
+                options={States}
+                onChange={this.filterState}
+                value={state.selectedStates}
+              />
+            </div>,
             <div className={styles.schoolCardsWrapper}>
               {state.filteredSchools.map(school => (
                 <SchoolCard

@@ -6,21 +6,23 @@ import styles from './Alert.css';
 
 Alert.propTypes = {
   children: PropTypes.node.isRequired,
+  className: PropTypes.string,
   isOpen: PropTypes.bool,
   onToggle: PropTypes.func,
   type: PropTypes.oneOf(['error', 'success', 'warning']),
 };
 
 Alert.defaultProps = {
+  className: undefined,
   isOpen: true,
   onToggle: undefined,
   type: 'error',
 };
 
-function Alert({ children, isOpen, onToggle, type }) {
+function Alert({ children, className, isOpen, onToggle, type }) {
   return (
     <div
-      className={classNames(styles.Alert, {
+      className={classNames(styles.Alert, className, {
         [styles.error]: type === 'error',
         [styles.success]: type === 'success',
         [styles.warning]: type === 'warning',

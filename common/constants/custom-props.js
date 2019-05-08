@@ -40,3 +40,20 @@ export const googleAnalyticsEventStoryObjectFactory = () => ({
   nonInteraction: false,
   transport: undefined,
 });
+
+export function validStep(propValue, key, componentName, location, propFullName) {
+  if (!Object.getOwnPropertyNames(propValue[key]).includes('validationSchema')) {
+    return new Error(
+      `${propFullName} does not have a validateSchema function.  
+      All form steps must contain both validateSchema and submitHandler functions`,
+    );
+  }
+
+  if (!Object.getOwnPropertyNames(propValue[key]).includes('submitHandler')) {
+    return new Error(
+      `${propFullName} does not have a submitHandler function.  
+      All form steps must contain both validateSchema and submitHandler functions`,
+    );
+  }
+  return null;
+}

@@ -6,13 +6,9 @@ import createSnapshotTest from 'test-utils/createSnapshotTest';
 import mockUser from 'test-utils/mockGenerators/mockUser';
 import mockPassword from 'test-utils/mockGenerators/mockPassword';
 import OperationCodeAPIMock from 'test-utils/mocks/apiMock';
+import asyncRenderDiff from 'test-utils/asyncRenderDiff';
 import wait from 'test-utils/wait';
 import RegistrationForm from '../RegistrationForm';
-
-const asyncRenderDiff = async enzymeWrapper => {
-  await wait();
-  enzymeWrapper.update();
-};
 
 afterEach(() => {
   OperationCodeAPIMock.reset();
