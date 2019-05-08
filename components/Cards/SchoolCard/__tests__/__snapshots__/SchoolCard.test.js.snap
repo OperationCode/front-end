@@ -41,7 +41,11 @@ exports[`SchoolCard should render with required props 1`] = `
     >
       <Badge
         className="badgeGroupItem active"
-        icon={<Svg />}
+        icon={
+          <Svg
+            data-testid="School has online"
+          />
+        }
         isImageFirst={true}
         label={
           <LabelWithScreenReader

@@ -33,7 +33,15 @@ describe('code schools', function() {
     });
   });
 
-  // /Online Schools test
+  it('only renders code schools with an online option after clicking "Online Schools"', () => {
+    cy.contains('Online Schools').click();
+
+    cy.get('[data-testid="SchoolCard"]').each(card => {
+      cy.wrap(card)
+        .get('[data-testid="School has online"]')
+        .should('exist');
+    });
+  });
 
   it('renders no code school cards after filtering for Alaska', () => {
     cy.get(ReactSelectSelector)
