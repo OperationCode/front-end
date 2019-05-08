@@ -70,6 +70,11 @@ export default class SchoolCard extends Component {
 
     return (
       <Card className={styles.SchoolCard} hasAnimationOnHover={false} data-testid="SchoolCard">
+        {/* Clearly express code school name to screen readers */}
+        <ScreenReaderOnly>
+          <h6 data-testid={`SchoolCard Name: ${props.name}`}>{props.name}</h6>
+        </ScreenReaderOnly>
+
         {hasGiBill && (
           <div className={styles.giBillRibbon} data-testid="GI Bill Ribbon">
             GI Bill
@@ -78,7 +83,6 @@ export default class SchoolCard extends Component {
 
         <div className={styles.cardBrand}>
           <img src={props.logoSource} alt={`${props.name} logo`} height="150" />
-          <ScreenReaderOnly>{props.name}</ScreenReaderOnly>
         </div>
 
         <div className={styles.cardBlock}>
