@@ -1,3 +1,4 @@
+/* eslint-disable react/no-multi-comp */
 import React from 'react';
 import faker from 'faker';
 import { mount } from 'enzyme';
@@ -19,87 +20,109 @@ const typeIntoInput = async (enzymeWrapper, inputName, value) => {
   input.simulate('change', { target: { id: inputName, value } }).simulate('blur');
 };
 
+function makeNameForm(submitHandler = jest.fn()) {
+  return class NameForm extends React.Component {
+    static validationSchema = Yup.object().shape({
+      firstName: Yup.string().required(),
+      lastName: Yup.string().required(),
+    });
+
+    static submitHandler = submitHandler;
+
+    render() {
+      const { props } = this;
+      return (
+        <>
+          <Field
+            type="text"
+            name="firstName"
+            id="firstName"
+            label="First Name*"
+            component="input"
+            {...props}
+          />
+          <Field
+            type="text"
+            name="lastName"
+            id="lastName"
+            label="Last Name*"
+            component="input"
+            {...props}
+          />
+        </>
+      );
+    }
+  };
+}
+
 describe('MultiStepForm', () => {
   // Define some mock form steps
   const nameFormSubmitHandler = jest.fn();
-  const NameForm = {
-    render: props => (
-      <>
-        <Field
-          type="text"
-          name="firstName"
-          id="firstName"
-          label="First Name*"
-          component="input"
-          {...props}
-        />
-        <Field
-          type="text"
-          name="lastName"
-          id="lastName"
-          label="Last Name*"
-          component="input"
-          {...props}
-        />
-      </>
-    ),
-    validationSchema: Yup.object().shape({
-      firstName: Yup.string().required(),
-      lastName: Yup.string().required(),
-    }),
-    submitHandler: nameFormSubmitHandler,
-  };
+
+  const NameForm = makeNameForm(nameFormSubmitHandler);
 
   const ultimateAnswerIncorrectMessage =
     'The Answer to the Ultimate Question of Life, the Universe, and Everything is 42';
   const ultimateAnswerFormSubmitHandler = jest.fn();
-  const UltimateAnswerForm = {
-    render: props => (
-      <Field
-        type="text"
-        name="ultimateAnswer"
-        id="ultimateAnswer"
-        label="What is the answer to the Ultimate Question of Life?*"
-        component="input"
-        {...props}
-      />
-    ),
-    validationSchema: Yup.object().shape({
+
+  class UltimateAnswerForm extends React.Component {
+    static validationSchema = Yup.object().shape({
       ultimateAnswer: Yup.string()
         .matches(/42/, ultimateAnswerIncorrectMessage)
         .required(),
-    }),
-    submitHandler: ultimateAnswerFormSubmitHandler,
-  };
+    });
+
+    static submitHandler = ultimateAnswerFormSubmitHandler;
+
+    render() {
+      const { props } = this;
+      return (
+        <Field
+          type="text"
+          name="ultimateAnswer"
+          id="ultimateAnswer"
+          label="What is the answer to the Ultimate Question of Life?*"
+          component="input"
+          {...props}
+        />
+      );
+    }
+  }
 
   const favoritesFormSubmitHandler = jest.fn();
-  const FavoritesForm = {
-    render: props => (
-      <>
-        <Field
-          type="text"
-          name="favoriteNumber"
-          id="favoriteNumber"
-          label="Favorite Number*"
-          component="input"
-          {...props}
-        />
-        <Field
-          type="text"
-          name="favoritePerson"
-          id="favoritePerson"
-          label="Favorite Person*"
-          component="input"
-          {...props}
-        />
-      </>
-    ),
-    validationSchema: Yup.object().shape({
+
+  class FavoritesForm extends React.Component {
+    static validationSchema = Yup.object().shape({
       favoriteNumber: Yup.string().required(),
       favoritePerson: Yup.string(),
-    }),
-    submitHandler: favoritesFormSubmitHandler,
-  };
+    });
+
+    static submitHandler = favoritesFormSubmitHandler;
+
+    render() {
+      const { props } = this;
+      return (
+        <>
+          <Field
+            type="text"
+            name="favoriteNumber"
+            id="favoriteNumber"
+            label="Favorite Number*"
+            component="input"
+            {...props}
+          />
+          <Field
+            type="text"
+            name="favoritePerson"
+            id="favoritePerson"
+            label="Favorite Person*"
+            component="input"
+            {...props}
+          />
+        </>
+      );
+    }
+  }
 
   const requiredProps = {
     initialValues: {
@@ -307,10 +330,8 @@ describe('MultiStepForm', () => {
 
   it('should handle error if custom handler throws after submitting', async () => {
     const mockedSubmitHandler = jest.fn().mockRejectedValueOnce(new Error());
-    const steps = [
-      { ...NameForm, submitHandler: mockedSubmitHandler },
-      { ...requiredProps.steps[1] },
-    ];
+
+    const steps = [makeNameForm(mockedSubmitHandler), requiredProps.steps[1]];
 
     const wrapper = mount(<MultiStepForm {...requiredProps} steps={steps} />);
 
@@ -329,10 +350,7 @@ describe('MultiStepForm', () => {
       .fn()
       .mockRejectedValue({ response: { data: { error: errorMessage } } });
 
-    const steps = [
-      { ...NameForm, submitHandler: mockedSubmitHandler },
-      { ...requiredProps.steps[1] },
-    ];
+    const steps = [makeNameForm(mockedSubmitHandler), requiredProps.steps[1]];
 
     const wrapper = mount(<MultiStepForm {...requiredProps} steps={steps} />);
 
