@@ -1,6 +1,6 @@
 import { networkErrorMessages } from '../../common/constants/messages';
 
-describe('code schools wehen server responds successfully', function() {
+describe('Code schools when server responds successfully', function() {
   const ReactSelectSelector = 'input#react-select-state_select-input';
 
   beforeEach(() => {
