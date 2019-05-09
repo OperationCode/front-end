@@ -1,7 +1,10 @@
+import { array, string } from 'prop-types';
 import Head from 'components/head';
+import { getErrorMessage } from 'common/utils/api-utils';
 import ThemedReactSelect from 'components/Form/Select/ThemedReactSelect';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
+import Alert from 'components/Alert/Alert';
 import FlatCard from 'components/Cards/FlatCard/FlatCard';
 import SchoolCard from 'components/Cards/SchoolCard/SchoolCard';
 import Button from 'components/Button/Button';
@@ -14,40 +17,60 @@ import treehouse from 'static/images/moocs/treehouse.jpg';
 import udacity from 'static/images/moocs/udacity.jpg';
 import styles from './styles/code_schools.css';
 
+const moocSchools = [
+  {
+    logo: edx,
+    name: 'edX',
+    url: 'https://edx.org',
+    text: 'Offers free courses with the option to pay for certificates/grading.',
+  },
+  {
+    logo: treehouse,
+    name: 'Team Treehouse',
+    url: 'https://teamtreehouse.com',
+    text: 'Offers only paid programs, but we have licenses available.',
+  },
+  {
+    logo: udacity,
+    name: 'Udacity',
+    url: 'https://udacity.com',
+    text: 'Offers free courses with the option to pay for certificates/grading.',
+  },
+];
+
 export default class CodeSchools extends React.Component {
-  state = {
-    allSchools: [],
-    filteredSchools: [],
-    moocSchools: [],
-    selectedStates: [],
-    locationsModalInfo: { name: '', locations: [] },
+  static async getInitialProps() {
+    try {
+      const { data } = await getCodeSchoolsPromise();
+
+      return {
+        allSchools: data,
+      };
+    } catch (error) {
+      return { errorMessage: getErrorMessage(error) };
+    }
+  }
+
+  static propTypes = {
+    allSchools: array,
+    errorMessage: string,
   };
 
-  async componentDidMount() {
-    const { data } = await getCodeSchoolsPromise();
+  static defaultProps = {
+    allSchools: [],
+    errorMessage: '',
+  };
 
-    const moocSchools = [
-      {
-        logo: edx,
-        name: 'edX',
-        url: 'https://edx.org',
-        text: 'Offers free courses with the option to pay for certificates/grading.',
-      },
-      {
-        logo: treehouse,
-        name: 'Team Treehouse',
-        url: 'https://teamtreehouse.com',
-        text: 'Offers only paid programs, but we have licenses available.',
-      },
-      {
-        logo: udacity,
-        name: 'Udacity',
-        url: 'https://udacity.com',
-        text: 'Offers free courses with the option to pay for certificates/grading.',
-      },
-    ];
+  constructor(props) {
+    super(props);
 
-    this.setState({ allSchools: data, filteredSchools: data, moocSchools });
+    const { allSchools } = this.props;
+
+    this.state = {
+      filteredSchools: allSchools,
+      selectedStates: [],
+      locationsModalInfo: { name: '', locations: [] },
+    };
   }
 
   handleModalOpen = ({ name, locations }) =>
@@ -56,14 +79,14 @@ export default class CodeSchools extends React.Component {
   handleModalClose = () => this.setState({ locationsModalInfo: { name: '', locations: [] } });
 
   filterOnline = () => {
-    const { allSchools } = this.state;
+    const { allSchools } = this.props;
     const onlineSchools = allSchools.filter(school => school.has_online);
 
     this.setState({ filteredSchools: onlineSchools, selectedStates: [] });
   };
 
   filterState = selectedOptions => {
-    const { allSchools } = this.state;
+    const { allSchools } = this.props;
     const states = selectedOptions.map(state => state.value);
     const stateSchools = allSchools.filter(school =>
       school.locations.some(location => states.includes(location.state)),
@@ -77,7 +100,7 @@ export default class CodeSchools extends React.Component {
   };
 
   filterVaApproved = () => {
-    const { allSchools } = this.state;
+    const { allSchools } = this.props;
     const vaApproved = allSchools.filter(school =>
       school.locations.some(location => location.va_accepted),
     );
@@ -86,13 +109,14 @@ export default class CodeSchools extends React.Component {
   };
 
   showAllSchools = () => {
-    const { allSchools } = this.state;
+    const { allSchools } = this.props;
     this.setState({ filteredSchools: allSchools, selectedStates: [] });
   };
 
   render() {
-    const { state } = this;
-    const isModalOpen = Boolean(state.locationsModalInfo.name);
+    const { errorMessage } = this.props;
+    const { filteredSchools, selectedStates, locationsModalInfo } = this.state;
+    const isModalOpen = Boolean(locationsModalInfo.name);
 
     return (
       <>
@@ -155,53 +179,57 @@ export default class CodeSchools extends React.Component {
           theme="gray"
           title="Schools"
           hasTitleUnderline
-          columns={[
-            <Button theme="primary" onClick={this.showAllSchools}>
-              All Schools
-            </Button>,
-            <Button theme="primary" onClick={this.filterVaApproved}>
-              VA Approved Schools
-            </Button>,
-            <Button theme="primary" onClick={this.filterOnline}>
-              Online Schools
-            </Button>,
-            <div className={styles.filterContainer}>
-              <h5>Filter By State</h5>
-              <ThemedReactSelect
-                instanceId="state_select"
-                placeholder="Start typing a state..."
-                className={styles.select}
-                isMulti
-                name="States"
-                options={States}
-                onChange={this.filterState}
-                value={state.selectedStates}
-              />
-            </div>,
-            <div className={styles.schoolCardsWrapper}>
-              {state.filteredSchools.map(school => (
-                <SchoolCard
-                  key={`${school.name}`}
-                  hasHardwareIncluded={school.hardware_included}
-                  hasHousing={school.has_housing}
-                  hasOnline={school.has_online}
-                  hasOnlyOnline={school.online_only}
-                  isFullTime={school.full_time}
-                  locations={school.locations}
-                  logoSource={school.logo}
-                  name={school.name}
-                  website={school.url}
-                  toggleModal={this.handleModalOpen}
-                />
-              ))}
-            </div>,
-          ]}
+          columns={
+            errorMessage
+              ? [<Alert isOpen>{errorMessage}</Alert>]
+              : [
+                  <Button theme="primary" onClick={this.showAllSchools}>
+                    All Schools
+                  </Button>,
+                  <Button theme="primary" onClick={this.filterVaApproved}>
+                    VA Approved Schools
+                  </Button>,
+                  <Button theme="primary" onClick={this.filterOnline}>
+                    Online Schools
+                  </Button>,
+                  <div className={styles.filterContainer}>
+                    <h5>Filter By State</h5>
+                    <ThemedReactSelect
+                      instanceId="state_select"
+                      placeholder="Start typing a state..."
+                      className={styles.select}
+                      isMulti
+                      name="States"
+                      options={States}
+                      onChange={this.filterState}
+                      value={selectedStates}
+                    />
+                  </div>,
+                  <div className={styles.schoolCardsWrapper}>
+                    {filteredSchools.map(school => (
+                      <SchoolCard
+                        key={`${school.name}`}
+                        hasHardwareIncluded={school.hardware_included}
+                        hasHousing={school.has_housing}
+                        hasOnline={school.has_online}
+                        hasOnlyOnline={school.online_only}
+                        isFullTime={school.full_time}
+                        locations={school.locations}
+                        logoSource={school.logo}
+                        name={school.name}
+                        website={school.url}
+                        toggleModal={this.handleModalOpen}
+                      />
+                    ))}
+                  </div>,
+                ]
+          }
         />
 
         <Content
           title="Mooc Schools"
           hasTitleUnderline
-          columns={state.moocSchools.map(mooc => (
+          columns={moocSchools.map(mooc => (
             <FlatCard key={mooc.name} imageSource={mooc.logo} imageAlt={`${mooc.name} logo`}>
               <>
                 {mooc.text}
@@ -215,21 +243,23 @@ export default class CodeSchools extends React.Component {
           ))}
         />
 
-        <Modal
-          isOpen={isModalOpen}
-          screenReaderLabel="Campus locations"
-          onRequestClose={this.handleModalClose}
-          className={styles.schoolLocationModal}
-        >
-          <>
-            <h3>{state.locationsModalInfo.name} Campuses</h3>
-            {state.locationsModalInfo.locations.map(location => (
-              <div className={styles.schoolLocalModalItem}>
-                {`${location.city}, ${location.state}`}
-              </div>
-            ))}
-          </>
-        </Modal>
+        {!errorMessage && (
+          <Modal
+            isOpen={isModalOpen}
+            screenReaderLabel="Campus locations"
+            onRequestClose={this.handleModalClose}
+            className={styles.schoolLocationModal}
+          >
+            <>
+              <h3>{locationsModalInfo.name} Campuses</h3>
+              {locationsModalInfo.locations.map(location => (
+                <div className={styles.schoolLocalModalItem}>
+                  {`${location.city}, ${location.state}`}
+                </div>
+              ))}
+            </>
+          </Modal>
+        )}
       </>
     );
   }

@@ -1,15 +1,12 @@
 import { networkErrorMessages } from '../../common/constants/messages';
+describe('code schools', function() {
+  const ReactSelectSelector = 'input#react-select-state_select-input';
 
-describe('code schools', () => {
   describe('when server responds successfully', function() {
-    const ReactSelectSelector = 'input#react-select-state_select-input';
-
     beforeEach(() => {
       cy.server();
-      cy.route('GET', '/api/v1/code_schools').as('codeSchools');
       cy.visitAndWaitFor('/code_schools');
       cy.get('h1').should('have.text', 'Code Schools');
-      cy.wait('@codeSchools');
     });
 
     it('renders many code school cards', () => {
@@ -68,44 +65,42 @@ describe('code schools', () => {
 
   describe('when server does not respond', function() {
     beforeEach(() => {
-      cy.server();
       cy.route({
         method: 'GET',
         url: '/api/v1/code_schools',
         status: 502,
         response: [],
       }).as('codeSchools');
+      cy.server();
       cy.visitAndWaitFor('/code_schools');
       cy.get('h1').should('have.text', 'Code Schools');
-      cy.wait('@codeSchools');
     });
 
-    it('all Schools button should not render', () => {
+    it('"All Schools" button should not render', () => {
       cy.get('button')
         .contains('All Schools')
         .should('not.exist');
     });
 
-    it('vA Approved Schools button should not render', () => {
+    it('"VA Approved Schools" button should not render', () => {
       cy.get('button')
         .contains('VA Approved Schools')
         .should('not.exist');
     });
 
-    it('online Schools button should not render', () => {
+    it('"Online Schools" button should not render', () => {
       cy.get('button')
         .contains('Online Schools')
         .should('not.be.visible');
     });
 
-    it('themedReactSelect input bar and its "Filter By State" header should not render', () => {
-      cy.get('div')
-        .contains('Filter By State')
+    it('"Filter By State" select should not render', () => {
+      cy.get('ReactSelectSelector')
         .should('not.exist');
     });
 
     it('no code school cards should render on page', () => {
-      cy.get('[data-testid="SchoolCard"]').should('have.length', 0);
+      cy.get('[data-testid="SchoolCard"]').should('not.exist');
     });
 
     it('should fail gracefully when server is down', () => {
