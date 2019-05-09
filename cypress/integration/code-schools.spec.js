@@ -79,7 +79,25 @@ describe('code schools when server fails', function() {
     cy.wait('@codeSchools');
   });
 
-  it('renders no code school cards', () => {
+  it('all Schools button does not render', () => {
+    cy.get('button')
+      .contains('All Schools')
+      .should('not.be.visible');
+  });
+
+  it('vA Approved Schools button does not render', () => {
+    cy.get('button')
+      .contains('VA Approved Schools')
+      .should('not.be.visible');
+  });
+
+  it('online Schools button does not render', () => {
+    cy.get('button')
+      .contains('Online Schools')
+      .should('not.be.visible');
+  });
+
+  it('no code school cards render on page', () => {
     cy.get('[data-testid="SchoolCard"]').should('have.length', 0);
   });
 
