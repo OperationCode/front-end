@@ -1,6 +1,6 @@
 import { networkErrorMessages } from '../../common/constants/messages';
 
-describe('code schools', function() {
+describe('code schools wehen server responds successfully', function() {
   const ReactSelectSelector = 'input#react-select-state_select-input';
 
   beforeEach(() => {
@@ -63,18 +63,25 @@ describe('code schools', function() {
     cy.contains('All Schools').click();
     cy.get('[data-testid="SchoolCard"]').should('have.length.greaterThan', 40);
   });
+});
 
-  it('should fail gracefully when server is down', () => {
+describe('code schools when server fails', function() {
+  beforeEach(() => {
     cy.server();
     cy.route({
       method: 'GET',
       url: '/api/v1/code_schools',
-      status: 500,
+      status: 502,
       response: [],
-    });
+    }).as('codeSchools');
+    cy.visitAndWaitFor('/code_schools');
+    cy.get('h1').should('have.text', 'Code Schools');
+    cy.wait('@codeSchools');
+  });
 
+  it('should fail gracefully when server is down', () => {
     cy.url().should('contain', '/code_schools');
+
     cy.get('div[role="alert"]').should('have.text', networkErrorMessages.serverDown);
-    cy.getCookies().should('have.length', 0);
   });
 });
