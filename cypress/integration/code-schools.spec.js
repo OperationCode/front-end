@@ -65,7 +65,7 @@ describe('code schools wehen server responds successfully', function() {
   });
 });
 
-describe('code schools when server fails', function() {
+describe('Code schools when server fails', function() {
   beforeEach(() => {
     cy.server();
     cy.route({
@@ -79,25 +79,31 @@ describe('code schools when server fails', function() {
     cy.wait('@codeSchools');
   });
 
-  it('all Schools button does not render', () => {
+  it('all Schools button should not render', () => {
     cy.get('button')
       .contains('All Schools')
       .should('not.be.visible');
   });
 
-  it('vA Approved Schools button does not render', () => {
+  it('vA Approved Schools button should not render', () => {
     cy.get('button')
       .contains('VA Approved Schools')
       .should('not.be.visible');
   });
 
-  it('online Schools button does not render', () => {
+  it('online Schools button should not render', () => {
     cy.get('button')
       .contains('Online Schools')
       .should('not.be.visible');
   });
 
-  it('no code school cards render on page', () => {
+  it('themedReactSelect input bar and its "Filter By State" header should not render', () => {
+    cy.get('div')
+      .contains('Filter By State')
+      .should('not.be.visible');
+  });
+
+  it('no code school cards should render on page', () => {
     cy.get('[data-testid="SchoolCard"]').should('have.length', 0);
   });
 
