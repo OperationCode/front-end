@@ -79,6 +79,10 @@ describe('code schools when server fails', function() {
     cy.wait('@codeSchools');
   });
 
+  it('renders no code school cards', () => {
+    cy.get('[data-testid="SchoolCard"]').should('have.length', 0);
+  });
+
   it('should fail gracefully when server is down', () => {
     cy.url().should('contain', '/code_schools');
 
