@@ -65,13 +65,13 @@ describe('code schools', function() {
 
   describe('when server does not respond', function() {
     beforeEach(() => {
+      cy.server();
       cy.route({
         method: 'GET',
         url: '/api/v1/code_schools',
         status: 502,
         response: [],
       }).as('codeSchools');
-      cy.server();
       cy.visitAndWaitFor('/code_schools');
       cy.get('h1').should('have.text', 'Code Schools');
     });
