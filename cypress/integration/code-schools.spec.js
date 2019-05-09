@@ -1,3 +1,5 @@
+import { networkErrorMessages } from '../../common/constants/messages';
+
 describe('code schools', function() {
   const ReactSelectSelector = 'input#react-select-state_select-input';
 
@@ -60,5 +62,19 @@ describe('code schools', function() {
 
     cy.contains('All Schools').click();
     cy.get('[data-testid="SchoolCard"]').should('have.length.greaterThan', 40);
+  });
+
+  it('should fail gracefully when server is down', () => {
+    cy.server();
+    cy.route({
+      method: 'GET',
+      url: '/api/v1/code_schools',
+      status: 500,
+      response: [],
+    });
+
+    cy.url().should('contain', '/code_schools');
+    cy.get('div[role="alert"]').should('have.text', networkErrorMessages.serverDown);
+    cy.getCookies().should('have.length', 0);
   });
 });
