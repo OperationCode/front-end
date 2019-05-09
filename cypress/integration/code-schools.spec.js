@@ -83,13 +83,13 @@ describe('code schools', () => {
     it('all Schools button should not render', () => {
       cy.get('button')
         .contains('All Schools')
-        .should('not.be.visible');
+        .should('not.exist');
     });
 
     it('vA Approved Schools button should not render', () => {
       cy.get('button')
         .contains('VA Approved Schools')
-        .should('not.be.visible');
+        .should('not.exist');
     });
 
     it('online Schools button should not render', () => {
@@ -101,7 +101,7 @@ describe('code schools', () => {
     it('themedReactSelect input bar and its "Filter By State" header should not render', () => {
       cy.get('div')
         .contains('Filter By State')
-        .should('not.be.visible');
+        .should('not.exist');
     });
 
     it('no code school cards should render on page', () => {
