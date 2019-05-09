@@ -1,4 +1,4 @@
-import { insertIf } from '../array-utils';
+import { insertIf, mapStringsToSelectOptions } from '../array-utils';
 
 describe('Array Utilities', () => {
   describe('insertIf', () => {
@@ -15,6 +15,15 @@ describe('Array Utilities', () => {
 
     it('should return an array of every argument if condition is true', () => {
       expect(insertIf(true, 'yo', 'yes', 'wow', 2)).toStrictEqual(['yo', 'yes', 'wow', 2]);
+    });
+  });
+
+  describe('mapStringsToSelectOptions', () => {
+    it('should return an arrray of specifically shaped objects from an array of strings', () => {
+      expect(mapStringsToSelectOptions(['army', 'navy'])).toStrictEqual([
+        { label: 'army', value: 'army' },
+        { label: 'navy', value: 'navy' },
+      ]);
     });
   });
 });

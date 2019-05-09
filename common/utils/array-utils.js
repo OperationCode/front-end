@@ -13,6 +13,22 @@ function insertIf(condition, ...elements) {
   return condition ? elements : [];
 }
 
+/**
+ * @description used to quickly define Select-ready options array from just an array of strings
+ * @export
+ * @param {sring[]} arrayOfStrings
+ * @returns {{ label: string, value: string }[]} array of options ready for use in Select component
+ */
+function mapStringsToSelectOptions(arrayOfStrings) {
+  return arrayOfStrings.map(someString => {
+    return {
+      value: someString,
+      label: someString,
+    };
+  });
+}
+
 module.exports = {
   insertIf,
+  mapStringsToSelectOptions,
 };
