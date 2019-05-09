@@ -50,4 +50,15 @@ describe('code schools', function() {
 
     cy.get('[data-testid="SchoolCard"]').should('have.length', 0);
   });
+
+  it('renders no code school cards after filtering for Alaska then all after selecting all', () => {
+    cy.get(ReactSelectSelector)
+      .type('Alaska', { force: true })
+      .type('{enter}');
+
+    cy.get('[data-testid="SchoolCard"]').should('have.length', 0);
+
+    cy.contains('All Schools').click();
+    cy.get('[data-testid="SchoolCard"]').should('have.length.greaterThan', 40);
+  });
 });
