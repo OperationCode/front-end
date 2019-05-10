@@ -6,8 +6,16 @@ exports[`SchoolCard should render with required props 1`] = `
   data-testid="SchoolCard"
   hasAnimationOnHover={false}
 >
+  <ScreenReaderOnly>
+    <h6
+      data-testid="SchoolCard Name: school name"
+    >
+      school name
+    </h6>
+  </ScreenReaderOnly>
   <div
     className="giBillRibbon"
+    data-testid="GI Bill Ribbon"
   >
     GI Bill
   </div>
@@ -33,7 +41,11 @@ exports[`SchoolCard should render with required props 1`] = `
     >
       <Badge
         className="badgeGroupItem active"
-        icon={<Svg />}
+        icon={
+          <Svg
+            data-testid="School has online"
+          />
+        }
         isImageFirst={true}
         label={
           <LabelWithScreenReader

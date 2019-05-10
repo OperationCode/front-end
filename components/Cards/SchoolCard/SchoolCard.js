@@ -70,7 +70,16 @@ export default class SchoolCard extends Component {
 
     return (
       <Card className={styles.SchoolCard} hasAnimationOnHover={false} data-testid="SchoolCard">
-        {hasGiBill && <div className={styles.giBillRibbon}>GI Bill</div>}
+        {/* Clearly express code school name to screen readers */}
+        <ScreenReaderOnly>
+          <h6 data-testid={`SchoolCard Name: ${props.name}`}>{props.name}</h6>
+        </ScreenReaderOnly>
+
+        {hasGiBill && (
+          <div className={styles.giBillRibbon} data-testid="GI Bill Ribbon">
+            GI Bill
+          </div>
+        )}
 
         <div className={styles.cardBrand}>
           <img src={props.logoSource} alt={`${props.name} logo`} height="150" />
@@ -81,7 +90,11 @@ export default class SchoolCard extends Component {
           <div className={styles.badgeGroup}>
             <Badge
               label={<LabelWithScreenReader label="Online" isActive={props.hasOnline} />}
-              icon={<OnlineIcon />}
+              icon={
+                <OnlineIcon
+                  data-testid={props.hasOnline ? 'School has online' : 'School has no online'}
+                />
+              }
               className={badgeClassNames(props.hasOnline)}
             />
             <Badge

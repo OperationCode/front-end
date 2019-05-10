@@ -44,6 +44,35 @@ export const postMentorRequestPromise = ({ language, additionalDetails, mentor, 
 // export const confirmEmail = key => post('registration/verify-email/', key).then(({ data }) => data);
 
 /* PATCH REQUESTS */
+export const updateUser = ({
+  branchOfService,
+  companyName,
+  companyRole,
+  doesWantMentor,
+  doesWantScholarshipInfo,
+  doesWantToVolunteer,
+  employmentStatus,
+  militaryStatus,
+  payGrade,
+  stringListFavoriteLanguages,
+  yearsOfService,
+}) =>
+  patch('users', {
+    user: {
+      branch_of_service: branchOfService,
+      company_name: companyName,
+      company_role: companyRole,
+      mentor: doesWantMentor,
+      scholarship_info: doesWantScholarshipInfo,
+      volunteer: doesWantToVolunteer,
+      employment_status: employmentStatus,
+      military_status: militaryStatus,
+      pay_grade: payGrade,
+      interests: stringListFavoriteLanguages,
+      years_of_service: yearsOfService,
+    },
+  }).then(({ data }) => data);
+
 export const patchUpdateMentorRequestPromise = ({ request, status, mentor }) =>
   patch(`requests/${request}`, {
     request: {
