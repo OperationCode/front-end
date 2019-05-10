@@ -21,7 +21,7 @@ describe('code schools', function() {
     cy.get('[data-testid="SchoolCard Name: Tech Elevator"]').should('exist');
   });
 
-  it('only renders schools that accept the GI Bill after clicking on "VA Approved Schools"', () => {
+  it('only renders schools that accept GI Bill after clicking on "VA Approved Schools"', () => {
     cy.contains('VA Approved Schools').click();
 
     cy.get('[data-testid="SchoolCard"]').each(card => {
@@ -47,5 +47,16 @@ describe('code schools', function() {
       .type('{enter}');
 
     cy.get('[data-testid="SchoolCard"]').should('have.length', 0);
+  });
+
+  it('renders no school cards after filtering for Alaska then all after selecting all', () => {
+    cy.get(ReactSelectSelector)
+      .type('Alaska', { force: true })
+      .type('{enter}');
+
+    cy.get('[data-testid="SchoolCard"]').should('have.length', 0);
+
+    cy.contains('All Schools').click();
+    cy.get('[data-testid="SchoolCard"]').should('have.length.greaterThan', 40);
   });
 });
