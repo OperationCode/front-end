@@ -1,13 +1,13 @@
 import NextHead from 'next/head';
-import PropTypes from 'prop-types';
+import { element, string } from 'prop-types';
 import { s3 } from 'common/constants/urls';
 
 Head.propTypes = {
-  children: PropTypes.element,
-  title: PropTypes.string,
-  description: PropTypes.string,
-  url: PropTypes.string,
-  ogImage: PropTypes.string,
+  children: element,
+  title: string,
+  description: string,
+  url: string,
+  ogImage: string,
 };
 
 Head.defaultProps = {

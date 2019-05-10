@@ -1,14 +1,14 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { any, object } from 'prop-types';
 import MockedRouter from './nextRouterMock';
 
 // https://github.com/zeit/next.js/issues/5205#issuecomment-422846339
 export default class MockNextContext extends React.Component {
   static propTypes = {
     // eslint-disable-next-line react/forbid-prop-types
-    children: PropTypes.any.isRequired,
-    headManager: PropTypes.object,
-    router: PropTypes.object,
+    children: any.isRequired,
+    headManager: object,
+    router: object,
   };
 
   static defaultProps = {
@@ -17,8 +17,8 @@ export default class MockNextContext extends React.Component {
   };
 
   static childContextTypes = {
-    headManager: PropTypes.object,
-    router: PropTypes.object,
+    headManager: object,
+    router: object,
   };
 
   getChildContext() {

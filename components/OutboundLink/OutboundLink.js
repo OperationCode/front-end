@@ -1,17 +1,17 @@
+import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
+import { bool, node, string } from 'prop-types';
 import React from 'react';
-import PropTypes from 'prop-types';
 import ReactGA from 'react-ga';
 import ExternalLinkIcon from 'static/images/icons/FontAwesome/external-link-square-alt-solid.svg';
-import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
 import styles from './OutboundLink.css';
 
 OutboundLink.propTypes = {
   // will report this label plus the URL from where it was clicked
-  analyticsEventLabel: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired,
-  className: PropTypes.string,
-  hasIcon: PropTypes.bool,
-  href: PropTypes.string.isRequired,
+  analyticsEventLabel: string.isRequired,
+  children: node.isRequired,
+  className: string,
+  hasIcon: bool,
+  href: string.isRequired,
 };
 
 OutboundLink.defaultProps = {

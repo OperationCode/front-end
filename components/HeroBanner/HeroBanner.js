@@ -1,15 +1,15 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { string, node, bool } from 'prop-types';
 import classNames from 'classnames';
 import Container from 'components/Container/Container';
 import styles from './HeroBanner.css';
 
 HeroBanner.propTypes = {
-  backgroundImageSource: PropTypes.string,
-  className: PropTypes.string,
-  children: PropTypes.node,
-  isFullViewportHeight: PropTypes.bool,
-  title: PropTypes.string.isRequired,
+  backgroundImageSource: string,
+  className: string,
+  children: node,
+  isFullViewportHeight: bool,
+  title: string.isRequired,
 };
 
 HeroBanner.defaultProps = {

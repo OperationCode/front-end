@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { object, func, arrayOf } from 'prop-types';
 import get from 'lodash/get';
 import { Formik } from 'formik';
 import { getErrorMessage } from 'common/utils/api-utils';
@@ -13,11 +13,11 @@ import styles from './MultiStepForm.css';
 class MultiStepForm extends React.Component {
   static propTypes = {
     // initialValues must be object where entire form's shape is described
-    initialValues: PropTypes.object.isRequired,
+    initialValues: object.isRequired,
 
-    onFinalSubmit: PropTypes.func.isRequired,
-    onFinalSubmitSuccess: PropTypes.func.isRequired,
-    steps: PropTypes.arrayOf(validStep).isRequired,
+    onFinalSubmit: func.isRequired,
+    onFinalSubmitSuccess: func.isRequired,
+    steps: arrayOf(validStep).isRequired,
   };
 
   state = {

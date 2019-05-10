@@ -1,10 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
+import { string } from 'prop-types';
+import React from 'react';
 import styles from './CivicXBadge.css';
 
 CivicXBadge.propTypes = {
-  sourceUrl: PropTypes.string,
+  sourceUrl: string,
 };
 
 CivicXBadge.defaultProps = {

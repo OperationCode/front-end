@@ -1,9 +1,9 @@
-import PropTypes from 'prop-types';
-import nextCookie from 'next-cookies';
+import Content from 'components/Content/Content';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
-import Content from 'components/Content/Content';
 import withAuthSync from 'decorators/withAuthSync/withAuthSync';
+import nextCookie from 'next-cookies';
+import { string } from 'prop-types';
 
 class Profile extends React.Component {
   static async getInitialProps(ctx) {
@@ -12,8 +12,8 @@ class Profile extends React.Component {
   }
 
   static propTypes = {
-    firstName: PropTypes.string.isRequired,
-    lastName: PropTypes.string.isRequired,
+    firstName: string.isRequired,
+    lastName: string.isRequired,
   };
 
   render() {

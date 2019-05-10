@@ -1,16 +1,16 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { Formik, Field } from 'formik';
-import * as Yup from 'yup';
-import { getErrorMessage } from 'common/utils/api-utils';
 import { validationErrorMessages } from 'common/constants/messages';
 import { minimumPasswordLength } from 'common/constants/validations';
+import { getErrorMessage } from 'common/utils/api-utils';
 import { capitalizeFirstLetter } from 'common/utils/string-utils';
 import { isMinPasswordStrength, isValidZipcode } from 'common/utils/validator-utils';
+import Alert from 'components/Alert/Alert';
 import Button from 'components/Button/Button';
 import Form from 'components/Form/Form';
 import Input from 'components/Form/Input/Input';
-import Alert from 'components/Alert/Alert';
+import { Field, Formik } from 'formik';
+import { func, number, oneOfType, shape, string } from 'prop-types';
+import React, { Component } from 'react';
+import * as Yup from 'yup';
 import styles from './RegistrationForm.css';
 
 /*
@@ -42,16 +42,16 @@ const registrationSchema = Yup.object().shape({
 
 class RegistrationForm extends Component {
   static propTypes = {
-    register: PropTypes.func.isRequired, // essentially onSubmit
-    onSuccess: PropTypes.func.isRequired,
-    initialValues: PropTypes.shape({
-      email: PropTypes.string,
-      'confirm-email': PropTypes.string,
-      password: PropTypes.string,
-      'confirm-password': PropTypes.string,
-      firstName: PropTypes.string,
-      lastName: PropTypes.string,
-      zipcode: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    register: func.isRequired, // essentially onSubmit
+    onSuccess: func.isRequired,
+    initialValues: shape({
+      email: string,
+      'confirm-email': string,
+      password: string,
+      'confirm-password': string,
+      firstName: string,
+      lastName: string,
+      zipcode: oneOfType([string, number]),
     }),
   };
 
