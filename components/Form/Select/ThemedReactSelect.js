@@ -35,6 +35,7 @@ function ThemedReactSelect({ disabled, hasErrors, isTouched, ...props }) {
   return (
     <ReactSelect
       {...props}
+      disabled={disabled}
       styles={{
         control: base => {
           return {
