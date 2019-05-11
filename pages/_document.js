@@ -1,4 +1,13 @@
 import Document, { Head, Main, NextScript } from 'next/document';
+import * as Sentry from '@sentry/browser';
+
+process.on('unhandledRejection', error => {
+  Sentry.captureException(error);
+});
+
+process.on('uncaughtException', error => {
+  Sentry.captureException(error);
+});
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
