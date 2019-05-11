@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import { compose } from 'redux';
 import ScrollUpButton from 'react-scroll-up-button';
 import withRedux from 'next-redux-wrapper';
+import * as Sentry from '@sentry/browser';
 import debounce from 'lodash/debounce';
 import { initStore } from 'store/store';
 import { screenResize } from 'store/screenSize/actions';
@@ -13,6 +14,8 @@ import Footer from 'components/Footer/Footer';
 import Modal from 'components/Modal/Modal';
 import 'common/styles/globalStyles.css';
 import withFonts from '../decorators/withFonts/withFonts';
+
+Sentry.init({ dsn: process.env.SENTRY_DSN });
 
 // eslint-disable-next-line react/prefer-stateless-function
 class Layout extends React.Component {
@@ -56,6 +59,18 @@ class OperationCodeApp extends App {
     }
 
     return { pageProps };
+  }
+
+  componentDidCatch(error, errorInfo) {
+    Sentry.withScope(scope => {
+      Object.keys(errorInfo).forEach(key => {
+        scope.setExtra(key, errorInfo[key]);
+      });
+
+      Sentry.captureException(error);
+    });
+
+    super.componentDidCatch(error, errorInfo);
   }
 
   handleScreenResize = () => {
