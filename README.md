@@ -68,5 +68,5 @@ yarn test:e2e
 yarn create-component $ComponentName
 
 # Create the necessary file with a small boilerplate for a new page
-yarn create-page $PageName 
+yarn create-page $PageName
 ```
