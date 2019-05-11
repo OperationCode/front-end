@@ -99,7 +99,6 @@
     "style-loader": "^0.23.1",
     "url-loader": "^1.1.2",
     "webpack": "^4.30.0",
-    "yarn": "^1.16.0",
     "yup": "^0.27.0"
   },
   "devDependencies": {
