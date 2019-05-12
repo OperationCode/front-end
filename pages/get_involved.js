@@ -60,9 +60,9 @@ export default () => (
     >
       <>
         <p className={styles.justifyAlign}>
-          Whether you&apos;re interested in mentoring, supporting our operations, or simply donating
-          to help military veterans, service members, and spouses launch a career in software
-          development, Operation Code is always looking for supporters like you.
+          Whether you&apos;re interested in mentoring, corporate sponsorship, volunteering your
+          time, or simply donating to help military veterans, service members, and spouses launch a
+          career in software development, Operation Code is always looking for supporters like you.
         </p>
 
         <LinkButton href="/who_we_serve" className={styles.topMargin}>
