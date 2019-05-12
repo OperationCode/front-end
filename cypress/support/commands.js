@@ -15,7 +15,7 @@ import { addMatchImageSnapshotCommand } from 'cypress-image-snapshot/command';
 
 Cypress.Commands.add('visitAndWaitFor', path => {
   cy.visit(path);
-  cy.wait(2000); // eslint-disable-line cypress/no-unnecessary-waiting
+  cy.wait(3000); // eslint-disable-line cypress/no-unnecessary-waiting
   cy.url().should('contain', path);
 });
 
@@ -24,6 +24,7 @@ addMatchImageSnapshotCommand({
   failureThresholdType: 'percent',
   customDiffConfig: { threshold: 0 },
   capture: 'viewport',
+  timeout: '60000',
 });
 
 Cypress.Commands.add('setResolution', size => {
