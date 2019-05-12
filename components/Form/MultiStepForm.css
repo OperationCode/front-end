@@ -1,5 +1,5 @@
 .MultiStepForm {
-  width: 100%;
+  width: auto;
 }
 
 .containerFormErrorMessage {
@@ -21,6 +21,16 @@
    * the outer edges of inputs in our often-existing two-column forms
    */
   width: 92.5%;
+}
+
+.buttonGrouping button + button {
+  margin-left: 1rem;
+}
+
+@media screen and (--small-viewport) {
+  .buttonGrouping button {
+    min-width: 100px;
+  }
 }
 
 .forceButtonRight {
