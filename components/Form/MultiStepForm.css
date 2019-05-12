@@ -23,6 +23,16 @@
   width: 92.5%;
 }
 
+.buttonGrouping button + button {
+  margin-left: 1rem;
+}
+
+@media screen and (--small-viewport) {
+  .buttonGrouping button {
+    min-width: 100px;
+  }
+}
+
 .forceButtonRight {
   justify-content: flex-end;
 }
