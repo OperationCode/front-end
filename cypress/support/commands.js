@@ -23,7 +23,7 @@ addMatchImageSnapshotCommand({
   failureThreshold: 0.03,
   failureThresholdType: 'percent',
   customDiffConfig: { threshold: 0.1 },
-  capture: 'viewport',
+  capture: 'fullPage',
 });
 
 Cypress.Commands.add('setResolution', size => {
@@ -32,6 +32,16 @@ Cypress.Commands.add('setResolution', size => {
   } else {
     cy.viewport(size);
   }
+});
+
+Cypress.Commands.add('createVisualRegressionTests', () => {
+  cy.matchImageSnapshot('desktop');
+
+  cy.viewport('iphone-6');
+  cy.matchImageSnapshot('mobile');
+
+  // Match these up with config in cypress.json
+  cy.viewport(1600, 1200);
 });
 
 //
