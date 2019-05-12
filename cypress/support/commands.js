@@ -11,11 +11,27 @@
 //
 // -- This is a parent command --
 // Cypress.Commands.add("login", (email, password) => { ... })
+import { addMatchImageSnapshotCommand } from 'cypress-image-snapshot/command';
 
 Cypress.Commands.add('visitAndWaitFor', path => {
   cy.visit(path);
-  cy.wait(1000); // eslint-disable-line cypress/no-unnecessary-waiting
+  cy.wait(3000); // eslint-disable-line cypress/no-unnecessary-waiting
   cy.url().should('contain', path);
+});
+
+addMatchImageSnapshotCommand({
+  failureThreshold: 0.03,
+  failureThresholdType: 'percent',
+  customDiffConfig: { threshold: 0.1 },
+  capture: 'viewport',
+});
+
+Cypress.Commands.add('setResolution', size => {
+  if (Cypress._.isArray(size)) {
+    cy.viewport(size[0], size[1]);
+  } else {
+    cy.viewport(size);
+  }
 });
 
 //
