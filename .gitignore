@@ -4,6 +4,7 @@ backend
 # Cypress local support artifacts
 cypress/screenshots
 cypress/videos
+cypress/fixtures/example.json
 
 # Logs
 logs
