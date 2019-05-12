@@ -13,5 +13,5 @@ about: Suggest an idea for Operation Code's website.
 ## Potential alternative solutions
 <!-- A clear and concise description of any alternative solutions or features you've considered. Why are they inferior to the first proposed solution? -->
 
-### Additional context
+## Additional context
 <!-- Add any other context or screenshots about the feature request here. -->
