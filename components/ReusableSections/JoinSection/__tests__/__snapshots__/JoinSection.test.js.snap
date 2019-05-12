@@ -26,7 +26,7 @@ exports[`JoinSection should render with required props 1`] = `
       Slack is a community based collaboration tool where all the magic happens!
     </p>
     <a
-      href="https://slack.com/"
+      href="https://get.slack.help/hc/en-us/categories/360000049043-Getting-Started"
       onClick={[Function]}
       rel="noopener noreferrer"
       target="_blank"
@@ -36,7 +36,7 @@ exports[`JoinSection should render with required props 1`] = `
       >
         Opens in new window
       </span>
-      Learn more
+      Never heard of Slack before?
       <svg
         className="externalLinkIcon"
       />

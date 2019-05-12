@@ -19,8 +19,11 @@ const JoinSection = () => (
 
     <p>Slack is a community based collaboration tool where all the magic happens!</p>
 
-    <OutboundLink href="https://slack.com/" analyticsEventLabel="Learn More About Slack">
-      Learn more
+    <OutboundLink
+      href="https://get.slack.help/hc/en-us/categories/360000049043-Getting-Started"
+      analyticsEventLabel="Learn More Slack"
+    >
+      Never heard of Slack before?
     </OutboundLink>
   </Container>
 );

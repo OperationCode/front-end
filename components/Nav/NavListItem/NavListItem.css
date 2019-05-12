@@ -75,6 +75,10 @@
   height: calc(var(--navBarHeight) - 15px);
 }
 
-.sublinkListItem:first-of-type {
+.sublinkListItem:not(:last-of-type) {
   margin-bottom: 1rem;
+}
+
+.sublinkListItem:last-of-type {
+  margin-bottom: 0.5rem;
 }

@@ -51,7 +51,20 @@ export const navItems = [
   {
     ...getInvolvedLink,
     shouldPrefetch: false,
-    sublinks: [],
+    sublinks: [
+      {
+        name: 'Mentoring',
+        href: '/mentoring',
+      },
+      {
+        name: 'Sponsorship',
+        href: '/sponsorship',
+      },
+      {
+        name: 'Leadership Circle',
+        href: '/leadership_circle',
+      },
+    ],
   },
 ];
 
