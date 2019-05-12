@@ -15,7 +15,7 @@ import { addMatchImageSnapshotCommand } from 'cypress-image-snapshot/command';
 
 Cypress.Commands.add('visitAndWaitFor', path => {
   cy.visit(path);
-  cy.wait(1000); // eslint-disable-line cypress/no-unnecessary-waiting
+  cy.wait(2000); // eslint-disable-line cypress/no-unnecessary-waiting
   cy.url().should('contain', path);
 });
 
