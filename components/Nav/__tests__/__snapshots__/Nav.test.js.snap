@@ -78,7 +78,22 @@ exports[`Nav should render with props passed 1`] = `
           href="/get_involved"
           name="Get Involved"
           shouldPrefetch={false}
-          sublinks={Array []}
+          sublinks={
+            Array [
+              Object {
+                "href": "/mentoring",
+                "name": "Mentoring",
+              },
+              Object {
+                "href": "/sponsorship",
+                "name": "Sponsorship",
+              },
+              Object {
+                "href": "/leadership_circle",
+                "name": "Leadership Circle",
+              },
+            ]
+          }
         />
         <li>
           <Link
