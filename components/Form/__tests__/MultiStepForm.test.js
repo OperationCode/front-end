@@ -354,6 +354,53 @@ describe('MultiStepForm', () => {
     expect(wrapper.find('input#lastName').props().value).toStrictEqual(lastNameValue);
   });
 
+  it('calls setFieldTouched for every field on prev step if calling showPreviousStep', async () => {
+    const wrapper = mount(<MultiStepForm {...requiredProps} />);
+
+    const firstNameValue = faker.name.firstName();
+    const lastNameValue = faker.name.lastName();
+
+    typeIntoInput(wrapper, 'firstName', firstNameValue);
+    typeIntoInput(wrapper, 'lastName', lastNameValue);
+    await submitForm(wrapper);
+
+    // make sure that step 2's input is untouched & visible after step 1 submission
+    expect(wrapper.find('input')).toHaveLength(1);
+    expect(wrapper.find('input#ultimateAnswer').exists()).toBe(true);
+    expect(wrapper.find('input#ultimateAnswer').prop('touched')).toStrictEqual({
+      firstName: true,
+      lastName: true,
+      favoriteNumber: true,
+      favoritePerson: true,
+      ultimateAnswer: false,
+    });
+
+    // click on "Previous" button
+    const goToPreviousStepButton = wrapper.find('button[type="button"]');
+    expect(goToPreviousStepButton.exists()).toBe(true);
+    expect(goToPreviousStepButton.text()).toContain('Previous');
+    goToPreviousStepButton.simulate('click');
+
+    // make sure that step 1's inputs are untouched & visible after clicking "Previous" from step 1
+    expect(wrapper.find('input')).toHaveLength(2);
+    expect(wrapper.find('input#firstName').exists()).toBe(true);
+    expect(wrapper.find('input#lastName').exists()).toBe(true);
+    expect(wrapper.find('input#firstName').prop('touched')).toStrictEqual({
+      firstName: false,
+      lastName: false,
+      favoriteNumber: true,
+      favoritePerson: true,
+      ultimateAnswer: false,
+    });
+    expect(wrapper.find('input#lastName').prop('touched')).toStrictEqual({
+      firstName: false,
+      lastName: false,
+      favoriteNumber: true,
+      favoritePerson: true,
+      ultimateAnswer: false,
+    });
+  });
+
   it('should call custom step handler after submitting', async () => {
     const wrapper = mount(<MultiStepForm {...requiredProps} />);
 
