@@ -21,8 +21,8 @@ class MultiStepForm extends React.Component {
   };
 
   state = {
-    stepNumber: 0,
     errorMessage: '',
+    stepNumber: 0,
   };
 
   isLastStep = () => {
