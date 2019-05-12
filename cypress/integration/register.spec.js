@@ -3,7 +3,7 @@ import { minimumPasswordLength } from '../../common/constants/validations';
 import existingUser from '../../test-utils/mocks/existingUser';
 import mockUser from '../../test-utils/mockGenerators/mockUser';
 
-describe('register', function() {
+describe('register', () => {
   beforeEach(() => {
     cy.server();
     cy.route('POST', '/api/v1/users').as('postRegister');

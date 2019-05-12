@@ -3,7 +3,7 @@ import existingUser from '../../test-utils/mocks/existingUser';
 import mockPassword from '../../test-utils/mockGenerators/mockPassword';
 import mockUser from '../../test-utils/mockGenerators/mockUser';
 
-describe('login', function() {
+describe('login', () => {
   beforeEach(() => {
     cy.server();
     cy.route('POST', '/api/v1/sessions').as('postLogin');
