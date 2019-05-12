@@ -1,6 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { arrayOf, func, object } from 'prop-types';
 import get from 'lodash/get';
+import noop from 'lodash/noop';
 import { Formik } from 'formik';
 import { getErrorMessage } from 'common/utils/api-utils';
 import { validStep } from 'common/constants/custom-props';
@@ -13,11 +14,16 @@ import styles from './MultiStepForm.css';
 class MultiStepForm extends React.Component {
   static propTypes = {
     // initialValues must be object where entire form's shape is described
-    initialValues: PropTypes.object.isRequired,
+    initialValues: object.isRequired,
 
-    onFinalSubmit: PropTypes.func.isRequired,
-    onFinalSubmitSuccess: PropTypes.func.isRequired,
-    steps: PropTypes.arrayOf(validStep).isRequired,
+    onAllButLastStep: func,
+    onFinalSubmit: func.isRequired,
+    onFinalSubmitSuccess: func.isRequired,
+    steps: arrayOf(validStep).isRequired,
+  };
+
+  static defaultProps = {
+    onAllButLastStep: noop,
   };
 
   state = {
@@ -69,7 +75,7 @@ class MultiStepForm extends React.Component {
   };
 
   handleSubmit = async (values, formikBag) => {
-    const { steps, onFinalSubmit, onFinalSubmitSuccess } = this.props;
+    const { steps, onAllButLastStep, onFinalSubmit, onFinalSubmitSuccess } = this.props;
     const { errorMessage, stepNumber } = this.state;
 
     if (errorMessage) {
@@ -93,6 +99,8 @@ class MultiStepForm extends React.Component {
     // Not last step
     try {
       const currentStepSubmitHandler = steps[stepNumber].submitHandler;
+
+      await onAllButLastStep(values);
       await currentStepSubmitHandler(values);
 
       formikBag.setSubmitting(false);

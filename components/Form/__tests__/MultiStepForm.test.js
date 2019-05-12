@@ -196,6 +196,28 @@ describe('MultiStepForm', () => {
     expect(onFinalSubmitSuccessMock).toHaveBeenCalledTimes(1);
   });
 
+  it('should call onAllButLastStep handler after each step submission in happy-path', async () => {
+    const onAllButLastStep = jest.fn();
+    const wrapper = mount(<MultiStepForm {...requiredProps} onAllButLastStep={onAllButLastStep} />);
+
+    typeIntoInput(wrapper, 'firstName', faker.name.firstName());
+    typeIntoInput(wrapper, 'lastName', faker.name.lastName());
+    await submitForm(wrapper);
+
+    expect(onAllButLastStep).toHaveBeenCalledTimes(1);
+
+    typeIntoInput(wrapper, 'ultimateAnswer', '42');
+    await submitForm(wrapper);
+
+    expect(onAllButLastStep).toHaveBeenCalledTimes(2);
+
+    typeIntoInput(wrapper, 'favoriteNumber', faker.random.number());
+    typeIntoInput(wrapper, 'favoritePerson', faker.name.firstName());
+    await submitForm(wrapper);
+
+    expect(onAllButLastStep).toHaveBeenCalledTimes(2);
+  });
+
   it('should handle error on final submit if success handler throws', async () => {
     const onFinalSubmitSuccessMock = jest.fn();
     const onFinalSubmitMock = jest.fn().mockRejectedValue(new Error());
