@@ -27,6 +27,11 @@ function makeNameForm(submitHandler = jest.fn()) {
       lastName: Yup.string().required(),
     });
 
+    static initialValues = {
+      firstName: '',
+      lastName: '',
+    };
+
     static submitHandler = submitHandler;
 
     render() {
@@ -72,6 +77,10 @@ describe('MultiStepForm', () => {
         .required(),
     });
 
+    static initialValues = {
+      ultimateAnswer: '',
+    };
+
     static submitHandler = ultimateAnswerFormSubmitHandler;
 
     render() {
@@ -96,6 +105,11 @@ describe('MultiStepForm', () => {
       favoriteNumber: Yup.string().required(),
       favoritePerson: Yup.string(),
     });
+
+    static initialValues = {
+      favoriteNumber: '',
+      favoritePerson: '',
+    };
 
     static submitHandler = favoritesFormSubmitHandler;
 
