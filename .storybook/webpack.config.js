@@ -1,16 +1,18 @@
 const path = require('path');
 const svgoConfig = require('../common/config/svgo');
 const postCSSConfig = require('../postcss.config');
-const { insertIf } = require('../common/utils/array-utils');
 
 // Export a function. Accept the base config as the only param.
-module.exports = (storybookBaseConfig, configType) => {
-  // configType has a value of 'DEVELOPMENT' or 'PRODUCTION'
+module.exports = async ({ config, mode }) => {
+  // mode has a value of 'DEVELOPMENT' or 'PRODUCTION'
   // You can change the configuration based on that.
   // 'PRODUCTION' is used when building the static version of storybook.
 
-  // Make whatever fine-grained changes you need
-  storybookBaseConfig.module.rules.push(
+  // remove existing css-loader rules
+  config.module.rules = config.module.rules.filter(f => f.test.toString() !== '/\\.css$/');
+
+  // extend config to our liking
+  config.module.rules.push(
     {
       test: /\.css$/,
       loaders: [
@@ -22,32 +24,29 @@ module.exports = (storybookBaseConfig, configType) => {
             importLoaders: 1,
             localIdentName: '[name]_[local]__[hash:base64:5]',
             sourceMap: true,
-            sourceMapContents: true,
           },
         },
         {
           loader: 'postcss-loader',
           options: {
             plugins: [
-              // Use PostCSS.config.js, but also use `postcss-export-custom-variables` plugin in dev
+              // Use PostCSS.config.js, but also use `postcss-export-custom-variables` plugin
               ...postCSSConfig({
                 file: {
                   dirname: '../',
                 },
-                options: storybookBaseConfig,
-                env: configType.toLowerCase(),
+                options: config,
+                env: mode.toLowerCase(),
               }).plugins,
-              ...insertIf(
-                configType === 'DEVELOPMENT',
-                require('postcss-export-custom-variables')({
-                  exporter: 'js',
-                  destination: 'common/styles/themeMap.js',
-                }),
-              ),
+              require('postcss-export-custom-variables')({
+                exporter: 'js',
+                destination: 'common/styles/themeMap.js',
+              }),
             ],
           },
         },
       ],
+      include: path.resolve(__dirname, '../'),
     },
     {
       test: /\.svg$/,
@@ -63,5 +62,5 @@ module.exports = (storybookBaseConfig, configType) => {
   );
 
   // Return the altered config
-  return storybookBaseConfig;
+  return config;
 };
