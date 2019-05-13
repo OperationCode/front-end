@@ -11,6 +11,7 @@ exports[`Nav should render with no props passed 1`] = `
 exports[`Nav should render with props passed 1`] = `
 <header
   className="header"
+  data-testid="Not Mobile Nav"
 >
   <div
     className="navContainer"

@@ -16,7 +16,7 @@ export default class NavMobile extends Component {
     const links = flattenDepth(navItems.map(navItem => [navItem, navItem.sublinks]), 2);
 
     return (
-      <header className={styles.NavMobile}>
+      <header className={styles.NavMobile} data-testid="Mobile Nav">
         <Link href="/">
           <button
             className={classNames(styles.button, styles.logoButton)}

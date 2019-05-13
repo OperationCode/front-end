@@ -3,6 +3,7 @@
 exports[`NavMobile should render 1`] = `
 <header
   className="NavMobile"
+  data-testid="Mobile Nav"
 >
   <Link
     href="/"
