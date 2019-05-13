@@ -1,7 +1,7 @@
-import Button from 'components/Button/Button';
-import OutboundLink from 'components/OutboundLink/OutboundLink';
-import { arrayOf, number, shape, string } from 'prop-types';
 import React, { Component } from 'react';
+import { arrayOf, number, shape, string } from 'prop-types';
+import OutboundLink from 'components/OutboundLink/OutboundLink';
+import Button from 'components/Button/Button';
 import styles from './ArticleGroup.css';
 
 class ArticleGroup extends Component {

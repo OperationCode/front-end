@@ -1,5 +1,5 @@
-import { node } from 'prop-types';
 import React from 'react';
+import { node } from 'prop-types';
 import styles from './ScreenReaderOnly.css';
 
 ScreenReaderOnly.propTypes = {

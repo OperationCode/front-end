@@ -1,9 +1,9 @@
+import React, { Component } from 'react';
 import classNames from 'classnames';
 import Link from 'next/link';
 import { arrayOf, bool, shape, string } from 'prop-types';
-import React, { Component } from 'react';
-import MinusIcon from 'static/images/icons/minus.svg';
 import PlusIcon from 'static/images/icons/plus.svg';
+import MinusIcon from 'static/images/icons/minus.svg';
 import styles from './NavListItem.css';
 
 export default class NavListItem extends Component {

@@ -1,6 +1,6 @@
-import classNames from 'classnames';
-import { element, node, string } from 'prop-types';
 import React from 'react';
+import { element, node, string } from 'prop-types';
+import classNames from 'classnames';
 import styles from './FlatCard.css';
 
 FlatCard.propTypes = {

@@ -1,5 +1,5 @@
-import { array, node, oneOfType, string } from 'prop-types';
 import React from 'react';
+import { array, node, oneOfType, string } from 'prop-types';
 import styles from './TimelineEvent.css';
 
 TimelineEvent.propTypes = {

@@ -1,15 +1,15 @@
-import classNames from 'classnames';
-import Badge from 'components/Badge/Badge';
-import Button from 'components/Button/Button';
-import Card from 'components/Cards/Card/Card';
-import LinkButton from 'components/LinkButton/LinkButton';
-import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
-import { arrayOf, bool, func, string, shape } from 'prop-types';
 import React, { Component } from 'react';
-import CampusIcon from 'static/images/icons/Custom/campus.svg';
-import EquipmentIcon from 'static/images/icons/Custom/equipment.svg';
-import HousingIcon from 'static/images/icons/Custom/housing.svg';
+import { arrayOf, bool, func, string, shape } from 'prop-types';
+import classNames from 'classnames';
+import Card from 'components/Cards/Card/Card';
 import OnlineIcon from 'static/images/icons/Custom/online.svg';
+import CampusIcon from 'static/images/icons/Custom/campus.svg';
+import HousingIcon from 'static/images/icons/Custom/housing.svg';
+import EquipmentIcon from 'static/images/icons/Custom/equipment.svg';
+import LinkButton from 'components/LinkButton/LinkButton';
+import Button from 'components/Button/Button';
+import Badge from 'components/Badge/Badge';
+import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
 import styles from './SchoolCard.css';
 
 export const getSchoolLocationText = (hasOnlyOnline, locations) => {

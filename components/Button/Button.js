@@ -3,7 +3,7 @@ import { any, bool, func, node, number, oneOf, oneOfType, string } from 'prop-ty
 import classNames from 'classnames';
 import ReactGA from 'react-ga';
 import { googleAnalyticsEventPropType } from 'common/constants/custom-props';
-import { getAriaAttributes, getDataAttributes } from 'common/utils/prop-utils';
+import { getDataAttributes, getAriaAttributes } from 'common/utils/prop-utils';
 import styles from './Button.css';
 
 class Button extends Component {

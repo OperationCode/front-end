@@ -1,8 +1,8 @@
-import { number } from 'prop-types';
 import React from 'react';
-import ArticleGroup from './ArticleGroup/ArticleGroup';
-import * as Articles from './Articles';
+import { number } from 'prop-types';
 import styles from './PressLinks.css';
+import * as Articles from './Articles';
+import ArticleGroup from './ArticleGroup/ArticleGroup';
 
 PressLinks.propTypes = {
   numberOfInitiallyVisibleLinks: number,

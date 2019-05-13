@@ -1,6 +1,6 @@
-import classNames from 'classnames';
-import { number, oneOfType, string } from 'prop-types';
 import React from 'react';
+import { number, oneOfType, string } from 'prop-types';
+import classNames from 'classnames';
 import YouTube from 'react-youtube';
 import styles from './YouTubeVideo.css';
 

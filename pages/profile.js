@@ -1,9 +1,9 @@
-import Content from 'components/Content/Content';
+import { string } from 'prop-types';
+import nextCookie from 'next-cookies';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
+import Content from 'components/Content/Content';
 import withAuthSync from 'decorators/withAuthSync/withAuthSync';
-import nextCookie from 'next-cookies';
-import { string } from 'prop-types';
 
 class Profile extends React.Component {
   static async getInitialProps(ctx) {

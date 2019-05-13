@@ -1,6 +1,6 @@
+import React from 'react';
 import classNames from 'classnames';
 import { bool, node, number, oneOf, oneOfType, string } from 'prop-types';
-import React from 'react';
 import styles from './Container.css';
 
 Container.propTypes = {

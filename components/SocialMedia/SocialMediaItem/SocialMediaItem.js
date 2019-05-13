@@ -1,6 +1,6 @@
-import OutboundLink from 'components/OutboundLink/OutboundLink';
-import { node, string } from 'prop-types';
 import React from 'react';
+import { node, string } from 'prop-types';
+import OutboundLink from 'components/OutboundLink/OutboundLink';
 import styles from './SocialMediaItem.css';
 
 SocialMediaItem.propTypes = {

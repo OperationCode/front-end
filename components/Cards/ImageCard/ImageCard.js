@@ -1,7 +1,7 @@
+import React from 'react';
+import { bool, node, string } from 'prop-types';
 import classNames from 'classnames';
 import Card from 'components/Cards/Card/Card';
-import { bool, node, string } from 'prop-types';
-import React from 'react';
 import styles from './ImageCard.css';
 
 ImageCard.propTypes = {

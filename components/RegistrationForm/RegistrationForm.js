@@ -1,16 +1,16 @@
+import React, { Component } from 'react';
+import { func, number, oneOfType, shape, string } from 'prop-types';
+import { Formik, Field } from 'formik';
+import * as Yup from 'yup';
+import { getErrorMessage } from 'common/utils/api-utils';
 import { validationErrorMessages } from 'common/constants/messages';
 import { minimumPasswordLength } from 'common/constants/validations';
-import { getErrorMessage } from 'common/utils/api-utils';
 import { capitalizeFirstLetter } from 'common/utils/string-utils';
 import { isMinPasswordStrength, isValidZipcode } from 'common/utils/validator-utils';
-import Alert from 'components/Alert/Alert';
 import Button from 'components/Button/Button';
 import Form from 'components/Form/Form';
 import Input from 'components/Form/Input/Input';
-import { Field, Formik } from 'formik';
-import { func, number, oneOfType, shape, string } from 'prop-types';
-import React, { Component } from 'react';
-import * as Yup from 'yup';
+import Alert from 'components/Alert/Alert';
 import styles from './RegistrationForm.css';
 
 /*
