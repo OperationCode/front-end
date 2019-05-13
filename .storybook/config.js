@@ -4,24 +4,13 @@ import MockedRouter from 'test-utils/mocks/nextRouterMock';
 import MockNextContext from 'test-utils/mocks/nextContextMock';
 import { addDecorator, configure } from '@storybook/react';
 import { setDefaults } from '@storybook/addon-info';
-import { setOptions } from '@storybook/addon-options';
 import { checkA11y } from '@storybook/addon-a11y';
+import { addParameters } from '@storybook/react';
+import { create, themes } from '@storybook/theming';
 
-import brandingBackgrounds from './backgrounds';
+import backgroundsPaletteArray from './backgrounds';
 
 import 'common/styles/globalStyles.css';
-
-setOptions({
-  name: 'Operation-Code',
-});
-
-// Dynamically load all files matching `*.stories.js` pattern within the components folder
-const requireComponents = require.context('../components/', true, /stories\.js$/);
-
-function loadStories() {
-  requireComponents.keys().forEach(requireComponents);
-  // Add any new component folders with stories here, using the patterns defined above
-}
 
 // addon-info
 setDefaults({
@@ -37,8 +26,26 @@ Router.router = MockedRouter;
 
 const mockWithRouterDecorator = storyFn => <MockNextContext>{storyFn()}</MockNextContext>;
 
-addDecorator(brandingBackgrounds);
 addDecorator(checkA11y);
 addDecorator(mockWithRouterDecorator);
+addParameters({
+  backgrounds: backgroundsPaletteArray,
+  options: {
+    theme: create({
+      ...themes.dark,
+      brandTitle: 'Operation Code',
+      brandUrl: 'storybook.operationcode.org',
+      // brandImage: ''
+    }),
+  },
+});
+
+// Dynamically load all files matching `*.stories.js` pattern within the components folder
+const requireComponents = require.context('../components/', true, /stories\.js$/);
+
+function loadStories() {
+  requireComponents.keys().forEach(requireComponents);
+  // Add any new component folders with stories here, using the patterns defined above
+}
 
 configure(loadStories, module);
