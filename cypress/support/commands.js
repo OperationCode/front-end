@@ -40,10 +40,12 @@ Cypress.Commands.add('createVisualRegressionTests', () => {
 
   cy.viewport('iphone-6');
   cy.get('[data-testid="Mobile Nav"'); // wait for resize listener to respond to viewport change
+  cy.wait(1000); // eslint-disable-line cypress/no-unnecessary-waiting
   cy.matchImageSnapshot('mobile');
 
   // Match these up with config in cypress.json
   cy.viewport(1600, 1200);
+  cy.wait(1000); // eslint-disable-line cypress/no-unnecessary-waiting
 });
 
 //
