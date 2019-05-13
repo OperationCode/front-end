@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { node, string, bool, func } from 'prop-types';
 import classNames from 'classnames';
 import ReactModal from 'react-modal';
 import ReactGA from 'react-ga';
@@ -7,12 +7,12 @@ import CardStyles from 'components/Cards/Card/Card.css';
 import ModalStyles from './Modal.css';
 
 Modal.propTypes = {
-  children: PropTypes.node.isRequired,
-  className: PropTypes.string,
-  isOpen: PropTypes.bool,
-  onRequestClose: PropTypes.func.isRequired,
-  screenReaderLabel: PropTypes.string.isRequired, // basically a summarizing title
-  shouldCloseOnOverlayClick: PropTypes.bool,
+  children: node.isRequired,
+  className: string,
+  isOpen: bool,
+  onRequestClose: func.isRequired,
+  screenReaderLabel: string.isRequired, // basically a summarizing title
+  shouldCloseOnOverlayClick: bool,
 };
 
 Modal.defaultProps = {

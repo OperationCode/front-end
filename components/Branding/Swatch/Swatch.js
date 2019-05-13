@@ -1,11 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { string } from 'prop-types';
 import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
 import styles from './Swatch.css';
 
 Swatch.propTypes = {
-  colorName: PropTypes.string.isRequired,
-  hexCode: PropTypes.string.isRequired,
+  colorName: string.isRequired,
+  hexCode: string.isRequired,
 };
 
 function Swatch({ colorName, hexCode }) {

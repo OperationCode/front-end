@@ -1,14 +1,14 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { string, number, oneOfType, bool, node, oneOf } from 'prop-types';
 import classNames from 'classnames';
 import styles from './Heading.css';
 
 Heading.propTypes = {
-  className: PropTypes.string,
-  id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]), // reference for scroll anchors
-  children: PropTypes.node.isRequired,
-  hasHeadingLines: PropTypes.bool,
-  theme: PropTypes.oneOf(['gray', 'secondary', 'white']),
+  className: string,
+  id: oneOfType([string, number]), // reference for scroll anchors
+  children: node.isRequired,
+  hasHeadingLines: bool,
+  theme: oneOf(['gray', 'secondary', 'white']),
 };
 
 Heading.defaultProps = {

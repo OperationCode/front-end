@@ -1,9 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { number } from 'prop-types';
 import Head from 'components/head';
 import styles from './ErrorDisplay.css';
 
-ErrorDisplay.propTypes = { statusCode: PropTypes.number };
+ErrorDisplay.propTypes = { statusCode: number };
 
 ErrorDisplay.defaultProps = { statusCode: undefined };
 

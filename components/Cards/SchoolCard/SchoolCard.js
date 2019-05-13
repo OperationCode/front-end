@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import { arrayOf, bool, func, string, shape } from 'prop-types';
 import classNames from 'classnames';
 import Card from 'components/Cards/Card/Card';
 import OnlineIcon from 'static/images/icons/Custom/online.svg';
@@ -34,22 +34,22 @@ const LabelWithScreenReader = ({ isActive, label }) => (
 
 export default class SchoolCard extends Component {
   static propTypes = {
-    hasHardwareIncluded: PropTypes.bool.isRequired,
-    hasHousing: PropTypes.bool,
-    hasOnline: PropTypes.bool.isRequired,
-    hasOnlyOnline: PropTypes.bool.isRequired,
-    isFullTime: PropTypes.bool.isRequired,
-    locations: PropTypes.arrayOf(
-      PropTypes.shape({
-        city: PropTypes.string,
-        va_accepted: PropTypes.bool.isRequired,
-        state: PropTypes.string,
+    hasHardwareIncluded: bool.isRequired,
+    hasHousing: bool,
+    hasOnline: bool.isRequired,
+    hasOnlyOnline: bool.isRequired,
+    isFullTime: bool.isRequired,
+    locations: arrayOf(
+      shape({
+        city: string,
+        va_accepted: bool.isRequired,
+        state: string,
       }),
     ).isRequired,
-    logoSource: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    website: PropTypes.string.isRequired,
-    toggleModal: PropTypes.func.isRequired,
+    logoSource: string.isRequired,
+    name: string.isRequired,
+    website: string.isRequired,
+    toggleModal: func.isRequired,
   };
 
   static defaultProps = {

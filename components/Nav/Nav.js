@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import classNames from 'classnames';
 import Link from 'next/link';
 import Router from 'next/router';
-import PropTypes from 'prop-types';
+import { bool } from 'prop-types';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { donateLink, s3 } from 'common/constants/urls';
@@ -83,7 +83,7 @@ export class Nav extends Component {
 }
 
 Nav.propTypes = {
-  isDesktopView: PropTypes.bool,
+  isDesktopView: bool,
 };
 
 Nav.defaultProps = {
