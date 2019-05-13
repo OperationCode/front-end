@@ -5,7 +5,7 @@ import { compose } from 'redux';
 import ScrollUpButton from 'react-scroll-up-button';
 import withRedux from 'next-redux-wrapper';
 import * as Sentry from '@sentry/browser';
-import debounce from 'lodash/debounce';
+import debounce from 'lodash-es/debounce';
 import { initStore } from 'store/store';
 import { screenResize } from 'store/screenSize/actions';
 import breakpoints from 'common/styles/breakpoints';
