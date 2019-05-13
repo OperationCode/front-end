@@ -1,15 +1,15 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { element, node, string } from 'prop-types';
 import classNames from 'classnames';
 import styles from './FlatCard.css';
 
 FlatCard.propTypes = {
-  button: PropTypes.element,
-  children: PropTypes.node.isRequired,
-  className: PropTypes.string,
-  header: PropTypes.node,
-  imageAlt: PropTypes.string,
-  imageSource: PropTypes.string,
+  button: element,
+  children: node.isRequired,
+  className: string,
+  header: node,
+  imageAlt: string,
+  imageSource: string,
 };
 
 FlatCard.defaultProps = {

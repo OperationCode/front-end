@@ -1,11 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { string } from 'prop-types';
 import Card from 'components/Cards/Card/Card';
 import styles from './ValueCard.css';
 
 ValueCard.propTypes = {
-  name: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
+  name: string.isRequired,
+  description: string.isRequired,
 };
 
 function ValueCard({ description, name }) {

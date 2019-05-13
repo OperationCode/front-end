@@ -1,11 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { number } from 'prop-types';
 import styles from './PressLinks.css';
 import * as Articles from './Articles';
 import ArticleGroup from './ArticleGroup/ArticleGroup';
 
 PressLinks.propTypes = {
-  numberOfInitiallyVisibleLinks: PropTypes.number,
+  numberOfInitiallyVisibleLinks: number,
 };
 
 PressLinks.defaultProps = {

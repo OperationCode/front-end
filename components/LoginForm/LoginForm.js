@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import { func, shape, string } from 'prop-types';
 import { Formik, Field } from 'formik';
 import * as Yup from 'yup';
 import { getErrorMessage } from 'common/utils/api-utils';
@@ -30,11 +30,11 @@ const loginSchema = Yup.object().shape({
 
 class LoginForm extends Component {
   static propTypes = {
-    login: PropTypes.func.isRequired, // essentially onSubmit
-    onSuccess: PropTypes.func.isRequired,
-    initialValues: PropTypes.shape({
-      email: PropTypes.string,
-      password: PropTypes.string,
+    login: func.isRequired, // essentially onSubmit
+    onSuccess: func.isRequired,
+    initialValues: shape({
+      email: string,
+      password: string,
     }),
   };
 
