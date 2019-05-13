@@ -1,9 +1,9 @@
+import React, { Component } from 'react';
+import { any, bool, func, node, number, oneOf, oneOfType, string } from 'prop-types';
 import classNames from 'classnames';
+import ReactGA from 'react-ga';
 import { googleAnalyticsEventPropType } from 'common/constants/custom-props';
 import { getAriaAttributes, getDataAttributes } from 'common/utils/prop-utils';
-import { any, bool, func, node, number, oneOf, oneOfType, string } from 'prop-types';
-import React, { Component } from 'react';
-import ReactGA from 'react-ga';
 import styles from './Button.css';
 
 class Button extends Component {

@@ -1,7 +1,7 @@
+import React from 'react';
+import { bool, node, string } from 'prop-types';
 import classNames from 'classnames';
 import { getDataAttributes } from 'common/utils/prop-utils';
-import { bool, node, string } from 'prop-types';
-import React from 'react';
 import styles from './Card.css';
 
 Card.propTypes = {

@@ -1,7 +1,7 @@
+import React from 'react';
+import { bool, func, node, oneOf, string } from 'prop-types';
 import classNames from 'classnames';
 import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
-import { bool, func, node, oneOf, string } from 'prop-types';
-import React from 'react';
 import styles from './Alert.css';
 
 Alert.propTypes = {

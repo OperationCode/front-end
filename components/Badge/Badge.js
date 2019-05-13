@@ -1,6 +1,6 @@
-import classNames from 'classnames';
-import { bool, element, oneOfType, string } from 'prop-types';
 import React from 'react';
+import { bool, element, oneOfType, string } from 'prop-types';
+import classNames from 'classnames';
 import styles from './Badge.css';
 
 Badge.propTypes = {

@@ -1,6 +1,6 @@
-import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
-import { string } from 'prop-types';
 import React from 'react';
+import { string } from 'prop-types';
+import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
 import styles from './Swatch.css';
 
 Swatch.propTypes = {
