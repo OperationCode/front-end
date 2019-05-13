@@ -63,7 +63,7 @@
     "babel-plugin-react-remove-properties": "^0.3.0",
     "classnames": "^2.2.6",
     "css-loader": "^1.0.1",
-    "cypress-image-snapshot": "^3.0.1",
+    "cypress-image-snapshot": "^3.0.2",
     "express": "^4.16.4",
     "file-loader": "^3.0.1",
     "fontfaceobserver": "^2.1.0",
