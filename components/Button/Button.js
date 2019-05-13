@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import { any, bool, func, node, number, oneOf, oneOfType, string } from 'prop-types';
 import classNames from 'classnames';
 import ReactGA from 'react-ga';
 import { googleAnalyticsEventPropType } from 'common/constants/custom-props';
@@ -9,15 +9,15 @@ import styles from './Button.css';
 class Button extends Component {
   static propTypes = {
     analyticsObject: googleAnalyticsEventPropType,
-    children: PropTypes.oneOfType([PropTypes.node, PropTypes.string]).isRequired,
-    className: PropTypes.string,
-    disabled: PropTypes.bool,
-    fullWidth: PropTypes.bool,
-    onClick: PropTypes.func,
-    tabIndex: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    theme: PropTypes.oneOf(['primary', 'secondary']),
-    type: PropTypes.oneOf(['button', 'reset', 'submit']),
-    datum: PropTypes.any, // eslint-disable-line react/forbid-prop-types
+    children: oneOfType([node, string]).isRequired,
+    className: string,
+    disabled: bool,
+    fullWidth: bool,
+    onClick: func,
+    tabIndex: oneOfType([string, number]),
+    theme: oneOf(['primary', 'secondary']),
+    type: oneOf(['button', 'reset', 'submit']),
+    datum: any, // eslint-disable-line react/forbid-prop-types
   };
 
   static defaultProps = {

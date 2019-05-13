@@ -1,10 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { string, node } from 'prop-types';
 import styles from './FAQItem.css';
 
 FAQItem.propTypes = {
-  question: PropTypes.string.isRequired,
-  answer: PropTypes.node.isRequired,
+  question: string.isRequired,
+  answer: node.isRequired,
 };
 
 function FAQItem({ question, answer }) {

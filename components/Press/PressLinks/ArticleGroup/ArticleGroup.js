@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import { arrayOf, number, shape, string } from 'prop-types';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 import Button from 'components/Button/Button';
 import styles from './ArticleGroup.css';
 
 class ArticleGroup extends Component {
   static propTypes = {
-    articles: PropTypes.arrayOf(
-      PropTypes.shape({
-        title: PropTypes.string.isRequired,
-        url: PropTypes.string.isRequired,
+    articles: arrayOf(
+      shape({
+        title: string.isRequired,
+        url: string.isRequired,
       }),
     ).isRequired,
-    numberOfInitiallyVisibleLinks: PropTypes.number.isRequired,
-    region: PropTypes.string.isRequired,
+    numberOfInitiallyVisibleLinks: number.isRequired,
+    region: string.isRequired,
   };
 
   state = {

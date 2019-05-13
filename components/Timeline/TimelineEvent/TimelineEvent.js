@@ -1,10 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { array, node, oneOfType, string } from 'prop-types';
 import styles from './TimelineEvent.css';
 
 TimelineEvent.propTypes = {
-  content: PropTypes.oneOfType([PropTypes.string, PropTypes.array, PropTypes.node]).isRequired,
-  title: PropTypes.string.isRequired,
+  content: oneOfType([string, array, node]).isRequired,
+  title: string.isRequired,
 };
 
 function TimelineEvent({ content, title }) {

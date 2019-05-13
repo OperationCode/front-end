@@ -1,14 +1,14 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { number, oneOfType, string } from 'prop-types';
 import classNames from 'classnames';
 import YouTube from 'react-youtube';
 import styles from './YouTubeVideo.css';
 
 YouTubeVideo.propTypes = {
-  className: PropTypes.string,
-  height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  videoId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  className: string,
+  height: oneOfType([string, number]),
+  width: oneOfType([string, number]),
+  videoId: oneOfType([string, number]).isRequired,
 };
 
 YouTubeVideo.defaultProps = {

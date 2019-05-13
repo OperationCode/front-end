@@ -1,12 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { node, string, bool } from 'prop-types';
 import classNames from 'classnames';
 import styles from './Drawer.css';
 
 Drawer.propTypes = {
-  children: PropTypes.node.isRequired,
-  className: PropTypes.string,
-  isVisible: PropTypes.bool,
+  children: node.isRequired,
+  className: string,
+  isVisible: bool,
 };
 
 Drawer.defaultProps = {
