@@ -20,7 +20,7 @@ Cypress.Commands.add('visitAndWaitFor', path => {
 });
 
 addMatchImageSnapshotCommand({
-  failureThreshold: 0.05,
+  failureThreshold: 0.1,
   failureThresholdType: 'percent',
   customDiffConfig: { threshold: 2.25 },
   capture: 'fullPage',
