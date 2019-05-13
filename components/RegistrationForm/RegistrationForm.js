@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import { func, number, oneOfType, shape, string } from 'prop-types';
 import { Formik, Field } from 'formik';
 import * as Yup from 'yup';
 import { getErrorMessage } from 'common/utils/api-utils';
@@ -42,16 +42,16 @@ const registrationSchema = Yup.object().shape({
 
 class RegistrationForm extends Component {
   static propTypes = {
-    register: PropTypes.func.isRequired, // essentially onSubmit
-    onSuccess: PropTypes.func.isRequired,
-    initialValues: PropTypes.shape({
-      email: PropTypes.string,
-      'confirm-email': PropTypes.string,
-      password: PropTypes.string,
-      'confirm-password': PropTypes.string,
-      firstName: PropTypes.string,
-      lastName: PropTypes.string,
-      zipcode: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    register: func.isRequired, // essentially onSubmit
+    onSuccess: func.isRequired,
+    initialValues: shape({
+      email: string,
+      'confirm-email': string,
+      password: string,
+      'confirm-password': string,
+      firstName: string,
+      lastName: string,
+      zipcode: oneOfType([string, number]),
     }),
   };
 

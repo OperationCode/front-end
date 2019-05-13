@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
 import Link from 'next/link';
-import PropTypes from 'prop-types';
+import { arrayOf, bool, shape, string } from 'prop-types';
 import PlusIcon from 'static/images/icons/plus.svg';
 import MinusIcon from 'static/images/icons/minus.svg';
 import styles from './NavListItem.css';
 
 export default class NavListItem extends Component {
   static propTypes = {
-    href: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    shouldPrefetch: PropTypes.bool.isRequired,
-    sublinks: PropTypes.arrayOf(
-      PropTypes.shape({
-        name: PropTypes.string.isRequired,
-        href: PropTypes.string.isRequired,
+    href: string.isRequired,
+    name: string.isRequired,
+    shouldPrefetch: bool.isRequired,
+    sublinks: arrayOf(
+      shape({
+        name: string.isRequired,
+        href: string.isRequired,
       }),
     ).isRequired,
   };
