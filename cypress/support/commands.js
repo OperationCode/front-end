@@ -35,9 +35,11 @@ Cypress.Commands.add('setResolution', size => {
 });
 
 Cypress.Commands.add('createVisualRegressionTests', () => {
+  cy.get('[data-testid="Not Mobile Nav"'); // wait for resize listener
   cy.matchImageSnapshot('desktop');
 
   cy.viewport('iphone-6');
+  cy.get('[data-testid="Mobile Nav"'); // wait for resize listener to respond to viewport change
   cy.matchImageSnapshot('mobile');
 
   // Match these up with config in cypress.json
