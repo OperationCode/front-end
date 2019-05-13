@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pagination should render with many props assigned 1`] = `
+<div
+  className="test-class Pagination"
+>
+  Test
+</div>
+`;

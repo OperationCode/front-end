@@ -1,11 +1,11 @@
 import React from 'react';
-import { oneofType, arrayOf, element, string, node } from 'prop-types';
+import { arrayOf, element, string, node } from 'prop-types';
 import classNames from 'classnames';
 import styles from './Pagination.css';
 
 export default class Pagination extends React.Component {
   static propTypes = {
-    children: oneOfType([arrayOf(node), element, string]).isRequired,
+    children: [arrayOf(node), element, string].isRequired,
     className: string,
   };
 

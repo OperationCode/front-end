@@ -15,6 +15,7 @@ import States from 'common/constants/dropdown-states-values';
 import edx from 'static/images/moocs/edx.jpg';
 import treehouse from 'static/images/moocs/treehouse.jpg';
 import udacity from 'static/images/moocs/udacity.jpg';
+import Pagination from 'components/Pagination/Pagination';
 import styles from './styles/code_schools.css';
 
 const moocSchools = [
@@ -205,7 +206,7 @@ export default class CodeSchools extends React.Component {
                       value={selectedStates}
                     />
                   </div>,
-                  <div className={styles.schoolCardsWrapper}>
+                  <Pagination className={styles.schoolCardsWrapper}>
                     {filteredSchools.map(school => (
                       <SchoolCard
                         key={`${school.name}`}
@@ -221,7 +222,7 @@ export default class CodeSchools extends React.Component {
                         toggleModal={this.handleModalOpen}
                       />
                     ))}
-                  </div>,
+                  </Pagination>,
                 ]
           }
         />
