@@ -21,9 +21,10 @@ export default () => {
         className={styles.justifyAlign}
         columns={[
           <p className="changeToSomething">
-            Operation Code is pleased to invite America’s leading technology companies to become
-            shared value sponsors. Please join us and help make our mission a success. Together, we
-            will create a new and secure future for today’s veterans and military spouses.
+            Operation Code is pleased to invite America&apos;s leading technology companies to
+            become shared value sponsors. Please join us and help make our mission a success.
+            Together, we will create a new and secure future for today&apos;s veterans and military
+            spouses.
           </p>,
         ]}
       />
