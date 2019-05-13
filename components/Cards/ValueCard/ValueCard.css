@@ -5,6 +5,12 @@
   padding: 2rem;
 }
 
+@media screen and (--medium-viewport) {
+  .ValueCard {
+    height: auto;
+  }
+}
+
 .name {
   text-align: center;
   text-decoration: underline;

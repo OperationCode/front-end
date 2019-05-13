@@ -1,4 +1,5 @@
 const withCSS = require('@zeit/next-css');
+const withSourceMaps = require('@zeit/next-source-maps')();
 const withBundleAnalyzer = require('@zeit/next-bundle-analyzer');
 const svgoConfig = require('./common/config/svgo');
 
@@ -83,4 +84,4 @@ const nextConfig = withCSS({
   },
 });
 
-module.exports = withBundleAnalyzer(nextConfig);
+module.exports = withSourceMaps(withBundleAnalyzer(nextConfig));
