@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { func, number, oneOfType, shape, string } from 'prop-types';
 import { Formik, Field } from 'formik';
 import * as Yup from 'yup';
+import { createUser } from 'common/constants/api';
 import { getErrorMessage } from 'common/utils/api-utils';
 import { validationErrorMessages } from 'common/constants/messages';
 import { minimumPasswordLength } from 'common/constants/validations';
@@ -36,7 +37,6 @@ const registrationSchema = Yup.object().shape({
 
 class RegistrationForm extends Component {
   static propTypes = {
-    register: func.isRequired, // essentially onSubmit
     onSuccess: func.isRequired,
     initialValues: shape({
       email: string,
@@ -66,10 +66,10 @@ class RegistrationForm extends Component {
   };
 
   handleSubmit = async (values, actions) => {
-    const { register, onSuccess } = this.props;
+    const { onSuccess } = this.props;
 
     try {
-      const { token } = await register(values);
+      const { token } = await createUser(values);
       actions.setSubmitting(false);
       actions.resetForm();
 

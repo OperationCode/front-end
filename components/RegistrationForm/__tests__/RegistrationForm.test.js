@@ -1,6 +1,5 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { createUser } from 'common/constants/api';
 import { networkErrorMessages, validationErrorMessages } from 'common/constants/messages';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 import mockUser from 'test-utils/mockGenerators/mockUser';
@@ -16,11 +15,11 @@ afterEach(() => {
 
 describe('RegistrationForm', () => {
   it('should render with required props', () => {
-    createSnapshotTest(<RegistrationForm register={jest.fn()} onSuccess={jest.fn()} />);
+    createSnapshotTest(<RegistrationForm onSuccess={jest.fn()} />);
   });
 
   it('should display required error message when blurring past email input', async () => {
-    const wrapper = mount(<RegistrationForm register={jest.fn()} onSuccess={jest.fn()} />);
+    const wrapper = mount(<RegistrationForm onSuccess={jest.fn()} />);
 
     wrapper.find('input#email').simulate('blur');
 
@@ -35,7 +34,7 @@ describe('RegistrationForm', () => {
   });
 
   it('should show error when providing non-email to email input', async () => {
-    const wrapper = mount(<RegistrationForm register={jest.fn()} onSuccess={jest.fn()} />);
+    const wrapper = mount(<RegistrationForm onSuccess={jest.fn()} />);
 
     wrapper
       .find('input#email')
@@ -53,7 +52,7 @@ describe('RegistrationForm', () => {
   });
 
   it('should show "password required" message when blurring past input', async () => {
-    const wrapper = mount(<RegistrationForm register={jest.fn()} onSuccess={jest.fn()} />);
+    const wrapper = mount(<RegistrationForm onSuccess={jest.fn()} />);
 
     wrapper.find('input#password').simulate('blur');
 
@@ -68,7 +67,7 @@ describe('RegistrationForm', () => {
   });
 
   it('should show "invalid password" message when focusing off an invalid password', async () => {
-    const wrapper = mount(<RegistrationForm register={jest.fn()} onSuccess={jest.fn()} />);
+    const wrapper = mount(<RegistrationForm onSuccess={jest.fn()} />);
 
     const stringWithoutNumber = 'SillyPassword';
 
@@ -88,7 +87,7 @@ describe('RegistrationForm', () => {
   });
 
   it('should display password match message when both password inputs do not match', async () => {
-    const wrapper = mount(<RegistrationForm register={jest.fn()} onSuccess={jest.fn()} />);
+    const wrapper = mount(<RegistrationForm onSuccess={jest.fn()} />);
 
     wrapper
       .find('input#password')
@@ -123,9 +122,7 @@ describe('RegistrationForm', () => {
     });
 
     const successSpy = jest.fn();
-    const wrapper = mount(
-      <RegistrationForm onSuccess={successSpy} register={jest.fn()} initialState={user} />,
-    );
+    const wrapper = mount(<RegistrationForm onSuccess={successSpy} initialState={user} />);
 
     wrapper.find('Button').simulate('submit');
     await asyncRenderDiff(wrapper);
@@ -150,11 +147,7 @@ describe('RegistrationForm', () => {
     };
 
     const wrapper = mount(
-      <RegistrationForm
-        onSuccess={successSpy}
-        register={jest.fn()}
-        initialValues={invalidFormValues}
-      />,
+      <RegistrationForm onSuccess={successSpy} initialValues={invalidFormValues} />,
     );
 
     wrapper.find('Button').simulate('submit');
@@ -185,13 +178,7 @@ describe('RegistrationForm', () => {
     }).reply(422, { email: ['has been taken'] });
 
     const successSpy = jest.fn();
-    const wrapper = mount(
-      <RegistrationForm
-        register={createUser}
-        onSuccess={successSpy}
-        initialValues={existingUser}
-      />,
-    );
+    const wrapper = mount(<RegistrationForm onSuccess={successSpy} initialValues={existingUser} />);
 
     wrapper.find('Button').simulate('submit');
     await asyncRenderDiff(wrapper);
@@ -219,9 +206,7 @@ describe('RegistrationForm', () => {
     }).reply(503);
 
     const successSpy = jest.fn();
-    const wrapper = mount(
-      <RegistrationForm register={createUser} onSuccess={successSpy} initialValues={user} />,
-    );
+    const wrapper = mount(<RegistrationForm onSuccess={successSpy} initialValues={user} />);
 
     wrapper.find('button[type="submit"]').simulate('submit');
     await asyncRenderDiff(wrapper);
