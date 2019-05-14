@@ -36,6 +36,7 @@ Cypress.Commands.add('setResolution', size => {
 
 Cypress.Commands.add('createVisualRegressionTests', () => {
   cy.get('[data-testid="Not Mobile Nav"'); // wait for resize listener
+  cy.viewport(1600, 1200);
   cy.matchImageSnapshot('desktop');
 
   // TODO: Get mobile visual regression diffs working
