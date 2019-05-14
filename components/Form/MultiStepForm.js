@@ -151,7 +151,7 @@ export class MultiStepForm extends React.Component {
                   disabled={formikBag.isSubmitting}
                   onClick={() => this.showPreviousStep(formikBag)}
                 >
-                  {isMobileView && !isFirstStep ? (
+                  {isMobileView ? (
                     <>
                       <ScreenReaderOnly>Previous</ScreenReaderOnly>
                       {'←'}
