@@ -1,4 +1,5 @@
 import { get, post, patch } from 'common/utils/api-utils';
+import { coerceEmptyStringToUndefined } from 'common/utils/string-utils';
 
 /* GET REQUESTS */
 export const getCodeSchoolsPromise = () => get('code_schools');
@@ -54,22 +55,31 @@ export const updateUser = ({
   payGrade,
   programmingLanguages,
   yearsOfService,
-}) =>
-  patch('users', {
+}) => {
+  const interestItems = [...programmingLanguages, ...disciplines];
+
+  // Interests could be an array of many filled strings, one filled string, or one empty string
+  const interests =
+    interestItems.length > 1
+      ? interestItems.join(', ')
+      : [coerceEmptyStringToUndefined(interestItems[0])];
+
+  return patch('users', {
     user: {
-      branch_of_service: branchOfService,
-      company_name: companyName,
-      company_role: companyRole,
+      branch_of_service: coerceEmptyStringToUndefined(branchOfService),
+      company_name: coerceEmptyStringToUndefined(companyName),
+      company_role: coerceEmptyStringToUndefined(companyRole),
       mentor: doesWantMentor,
       scholarship_info: doesWantScholarshipInfo,
       volunteer: doesWantToVolunteer,
-      employment_status: employmentStatus,
-      military_status: militaryStatus,
-      pay_grade: payGrade,
-      interests: [...programmingLanguages, ...disciplines].join(', '),
-      years_of_service: yearsOfService,
+      employment_status: coerceEmptyStringToUndefined(employmentStatus),
+      military_status: coerceEmptyStringToUndefined(militaryStatus),
+      pay_grade: coerceEmptyStringToUndefined(payGrade),
+      interests,
+      years_of_service: coerceEmptyStringToUndefined(yearsOfService),
     },
   }).then(({ data }) => data);
+};
 
 export const patchUpdateMentorRequestPromise = ({ request, status, mentor }) =>
   patch(`requests/${request}`, {
