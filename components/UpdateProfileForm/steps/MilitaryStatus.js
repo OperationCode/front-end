@@ -45,6 +45,10 @@ class MilitaryStatus extends React.Component {
             component={Select}
             options={[
               {
+                value: '',
+                label: 'Not Applicable',
+              },
+              {
                 value: 'current',
                 label: 'Currently Serving',
               },
@@ -55,10 +59,6 @@ class MilitaryStatus extends React.Component {
               {
                 value: 'spouse',
                 label: 'Spouse / Dependent',
-              },
-              {
-                value: 'civilian',
-                label: 'Not Applicable',
               },
             ]}
             disabled={isSubmitting}
