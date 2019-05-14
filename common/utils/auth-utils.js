@@ -3,9 +3,9 @@ import isEmpty from 'lodash/isEmpty';
 import nextCookie from 'next-cookies';
 import { setAuthCookies, removeAuthCookies, isTokenValid } from './cookie-utils';
 
-export const login = ({ token, user }) => {
+export const login = ({ token, user }, routeTo = '/profile') => {
   setAuthCookies({ token, user });
-  Router.push('/profile');
+  Router.push(routeTo);
 };
 
 export const logout = () => {
