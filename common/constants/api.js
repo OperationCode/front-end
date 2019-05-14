@@ -45,13 +45,14 @@ export const updateUser = ({
   branchOfService,
   companyName,
   companyRole,
-  doesWantMentor,
-  doesWantScholarshipInfo,
-  doesWantToVolunteer,
+  disciplines,
+  doesWantMentor, // TODO: Use in form
+  doesWantScholarshipInfo, // TODO: Use in form
+  doesWantToVolunteer, // TODO: Use in form
   employmentStatus,
   militaryStatus,
   payGrade,
-  stringListFavoriteLanguages,
+  programmingLanguages,
   yearsOfService,
 }) =>
   patch('users', {
@@ -65,7 +66,7 @@ export const updateUser = ({
       employment_status: employmentStatus,
       military_status: militaryStatus,
       pay_grade: payGrade,
-      interests: stringListFavoriteLanguages,
+      interests: [...programmingLanguages, ...disciplines].join(', '),
       years_of_service: yearsOfService,
     },
   }).then(({ data }) => data);
