@@ -1,2 +1,6 @@
 .Pagination {
 }
+
+.pageNumberActive {
+  color: red;
+}
