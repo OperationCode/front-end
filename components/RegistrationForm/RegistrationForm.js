@@ -13,12 +13,6 @@ import Input from 'components/Form/Input/Input';
 import Alert from 'components/Alert/Alert';
 import styles from './RegistrationForm.css';
 
-/*
- * NOTE: We're repeating hardcode between the registration schema and passing an asterisk
- * to the label of required fields. This seems to an unfortunate negative aspect of an otherwise
- * awesome library. More importantly, it looks like the lib's author has plans to remedy the
- * situation. For now, our forms wont change much, so we should be okay.
- */
 const registrationSchema = Yup.object().shape({
   email: Yup.string()
     .required(validationErrorMessages.required)
