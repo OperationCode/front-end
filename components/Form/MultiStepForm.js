@@ -1,17 +1,21 @@
 import React from 'react';
-import { arrayOf, func, object } from 'prop-types';
+import { arrayOf, bool, func, object } from 'prop-types';
 import get from 'lodash/get';
 import noop from 'lodash/noop';
 import { Formik } from 'formik';
-import { getErrorMessage } from 'common/utils/api-utils';
-import { validStep } from 'common/constants/custom-props';
+import { connect } from 'react-redux';
+import { compose } from 'redux';
 import { capitalizeFirstLetter } from 'common/utils/string-utils';
+import { getErrorMessage } from 'common/utils/api-utils';
+import { isMobileSelector } from 'store/screenSize/selectors';
+import { validStep } from 'common/constants/custom-props';
 import Button from 'components/Button/Button';
 import Form from 'components/Form/Form';
 import Alert from 'components/Alert/Alert';
+import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
 import styles from './MultiStepForm.css';
 
-class MultiStepForm extends React.Component {
+export class MultiStepForm extends React.Component {
   static propTypes = {
     // initialValues must be object where entire form's shape is described
     initialValues: object.isRequired,
@@ -19,10 +23,12 @@ class MultiStepForm extends React.Component {
     onEachStepSubmit: func,
     onFinalSubmit: func.isRequired, // to be considered onSuccess
     steps: arrayOf(validStep).isRequired,
+    isMobileView: bool,
   };
 
   static defaultProps = {
     onEachStepSubmit: noop,
+    isMobileView: false,
   };
 
   state = {
@@ -117,7 +123,7 @@ class MultiStepForm extends React.Component {
   };
 
   render() {
-    const { initialValues, steps } = this.props;
+    const { initialValues, isMobileView, steps } = this.props;
     const { errorMessage, stepNumber } = this.state;
 
     const CurrentStep = steps[stepNumber];
@@ -139,13 +145,20 @@ class MultiStepForm extends React.Component {
             </div>
 
             <div className={styles.buttonGrouping}>
-              {stepNumber > 0 && (
+              {!isFirstStep && (
                 <Button
                   theme="secondary"
                   disabled={formikBag.isSubmitting}
                   onClick={() => this.showPreviousStep(formikBag)}
                 >
-                  « Previous
+                  {isMobileView && !isFirstStep ? (
+                    <>
+                      <ScreenReaderOnly>Previous</ScreenReaderOnly>
+                      {'←'}
+                    </>
+                  ) : (
+                    '← Previous'
+                  )}
                 </Button>
               )}
 
@@ -160,7 +173,14 @@ class MultiStepForm extends React.Component {
                   disabled={formikBag.isSubmitting}
                   fullWidth={isFirstStep}
                 >
-                  Next »
+                  {isMobileView ? (
+                    <>
+                      <ScreenReaderOnly>Next</ScreenReaderOnly>
+                      {'→'}
+                    </>
+                  ) : (
+                    'Next →'
+                  )}
                 </Button>
               )}
             </div>
@@ -171,4 +191,8 @@ class MultiStepForm extends React.Component {
   }
 }
 
-export default MultiStepForm;
+const mapStateToProps = state => ({
+  isMobileView: isMobileSelector(state),
+});
+
+export default compose(connect(mapStateToProps))(MultiStepForm);

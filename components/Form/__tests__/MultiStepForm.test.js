@@ -6,7 +6,7 @@ import { Field } from 'formik';
 import * as Yup from 'yup';
 import { networkErrorMessages } from 'common/constants/messages';
 import asyncRenderDiff from 'test-utils/asyncRenderDiff';
-import MultiStepForm from '../MultiStepForm';
+import { MultiStepForm } from '../MultiStepForm';
 
 const submitForm = async enzymeWrapper => {
   const submitButton = enzymeWrapper.find('button[type="submit"]');
@@ -410,5 +410,53 @@ describe('MultiStepForm', () => {
     expect(nameFormSubmitHandler).toHaveBeenCalledTimes(0);
     expect(mockedSubmitHandler).toHaveBeenCalledTimes(1);
     expect(wrapper.find('Alert').text()).toStrictEqual(errorMessage);
+  });
+
+  it('should render buttons with ScreenReaderOnly content only on mobile view', async () => {
+    // NOT MOBILE
+    const wrapperNonMobile = mount(<MultiStepForm {...requiredProps} isMobileView={false} />);
+
+    // 1st step
+    expect(wrapperNonMobile.find('ScreenReaderOnly').exists()).toBe(false);
+    expect(wrapperNonMobile.find('button').length).toStrictEqual(1);
+
+    typeIntoInput(wrapperNonMobile, 'firstName', faker.name.firstName());
+    typeIntoInput(wrapperNonMobile, 'lastName', faker.name.lastName());
+    await submitForm(wrapperNonMobile);
+
+    // 2nd step
+    expect(wrapperNonMobile.find('ScreenReaderOnly').exists()).toBe(false);
+    expect(wrapperNonMobile.find('button').length).toStrictEqual(2);
+
+    typeIntoInput(wrapperNonMobile, 'ultimateAnswer', '42');
+    await submitForm(wrapperNonMobile);
+
+    // 3rd (last) step
+    expect(wrapperNonMobile.find('ScreenReaderOnly').exists()).toBe(false);
+    expect(wrapperNonMobile.find('button').length).toStrictEqual(2);
+
+    // MOBILE
+    const wrapperMobile = mount(<MultiStepForm {...requiredProps} isMobileView />);
+
+    // 1st step
+    expect(wrapperMobile.find('ScreenReaderOnly').exists()).toBe(true);
+    expect(wrapperMobile.find('ScreenReaderOnly').length).toStrictEqual(1);
+    expect(wrapperMobile.find('ScreenReaderOnly').text()).toStrictEqual('Next');
+
+    typeIntoInput(wrapperMobile, 'firstName', faker.name.firstName());
+    typeIntoInput(wrapperMobile, 'lastName', faker.name.lastName());
+    await submitForm(wrapperMobile);
+
+    // 2nd step
+    expect(wrapperMobile.find('ScreenReaderOnly').exists()).toBe(true);
+    expect(wrapperMobile.find('ScreenReaderOnly').length).toStrictEqual(2);
+
+    typeIntoInput(wrapperMobile, 'ultimateAnswer', '42');
+    await submitForm(wrapperMobile);
+
+    // 3rd (last) step
+    expect(wrapperMobile.find('ScreenReaderOnly').exists()).toBe(true);
+    expect(wrapperMobile.find('ScreenReaderOnly').length).toStrictEqual(1);
+    expect(wrapperMobile.find('ScreenReaderOnly').text()).toStrictEqual('Previous');
   });
 });
