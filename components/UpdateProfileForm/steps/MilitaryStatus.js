@@ -45,7 +45,7 @@ class MilitaryStatus extends React.Component {
             component={Select}
             options={[
               {
-                value: '',
+                value: 'civilian',
                 label: 'Not Applicable',
               },
               {

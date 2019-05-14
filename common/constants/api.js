@@ -73,7 +73,8 @@ export const updateUser = ({
       scholarship_info: doesWantScholarshipInfo,
       volunteer: doesWantToVolunteer,
       employment_status: coerceEmptyStringToUndefined(employmentStatus),
-      military_status: coerceEmptyStringToUndefined(militaryStatus),
+      military_status:
+        militaryStatus === 'civilian' ? undefined : coerceEmptyStringToUndefined(militaryStatus),
       pay_grade: coerceEmptyStringToUndefined(payGrade),
       interests,
       years_of_service: coerceEmptyStringToUndefined(yearsOfService),
