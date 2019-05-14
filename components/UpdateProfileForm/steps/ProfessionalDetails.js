@@ -30,7 +30,6 @@ class ProfessionalDetails extends React.Component {
   };
 
   static submitHandler = async values => {
-    console.log('Values:', values);
     await updateUser(values);
   };
 
