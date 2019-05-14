@@ -8,10 +8,10 @@ export const login = ({ token, user }, routeTo = '/profile') => {
   Router.push(routeTo);
 };
 
-export const logout = () => {
+export const logout = (routeTo = '/login') => {
   removeAuthCookies();
   window.localStorage.setItem('logout', Date.now()); // Log out from all windows
-  Router.push('/login');
+  Router.push(routeTo);
 };
 
 /**
