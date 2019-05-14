@@ -10,10 +10,7 @@ class Select extends React.Component {
   static propTypes = {
     field: shape({
       name: string.isRequired,
-      value: oneOfType([
-        string,
-        arrayOf(shape({ label: string.isRequired, value: string.isRequired })),
-      ]).isRequired,
+      value: oneOfType([string, arrayOf(string.isRequired)]).isRequired,
     }).isRequired,
     form: shape({
       touched: objectOf(bool).isRequired,
