@@ -27,7 +27,6 @@ exports[`UpdateProfileForm should render with required props 1`] = `
       <div>
         <div
           className="css-1pcexqc-container fullWidth"
-          id=""
           onKeyDown={[Function]}
         >
           <div
@@ -60,7 +59,7 @@ exports[`UpdateProfileForm should render with required props 1`] = `
                     autoComplete="off"
                     autoCorrect="off"
                     disabled={false}
-                    id="react-select-2-input"
+                    id="react-select-employmentStatus-input"
                     onBlur={[Function]}
                     onChange={[Function]}
                     onFocus={[Function]}
