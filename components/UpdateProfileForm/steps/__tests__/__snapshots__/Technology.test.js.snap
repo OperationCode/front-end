@@ -1,12 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`UpdateProfileForm/Steps/Technology should render in context of Formik 1`] = `
-Array [
+<form
+  noValidate={true}
+  onReset={[Function]}
+  onSubmit={[Function]}
+>
   <h2
     className="row"
   >
     Technology
-  </h2>,
+  </h2>
   <div
     className="row"
   >
@@ -22,7 +26,6 @@ Array [
       <div>
         <div
           className="css-1pcexqc-container fullWidth"
-          id=""
           onKeyDown={[Function]}
         >
           <div
@@ -55,7 +58,7 @@ Array [
                     autoComplete="off"
                     autoCorrect="off"
                     disabled={false}
-                    id="react-select-2-input"
+                    id="react-select-programmingLanguages-input"
                     onBlur={[Function]}
                     onChange={[Function]}
                     onFocus={[Function]}
@@ -132,7 +135,7 @@ Array [
         </div>
       </div>
     </div>
-  </div>,
+  </div>
   <div
     className="row"
   >
@@ -148,7 +151,6 @@ Array [
       <div>
         <div
           className="css-1pcexqc-container fullWidth"
-          id=""
           onKeyDown={[Function]}
         >
           <div
@@ -181,7 +183,7 @@ Array [
                     autoComplete="off"
                     autoCorrect="off"
                     disabled={false}
-                    id="react-select-3-input"
+                    id="react-select-disciplines-input"
                     onBlur={[Function]}
                     onChange={[Function]}
                     onFocus={[Function]}
@@ -258,6 +260,6 @@ Array [
         </div>
       </div>
     </div>
-  </div>,
-]
+  </div>
+</form>
 `;

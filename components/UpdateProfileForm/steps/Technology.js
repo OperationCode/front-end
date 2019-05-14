@@ -44,13 +44,13 @@ class Technology extends React.Component {
   };
 
   static validationSchema = Yup.object().shape({
-    programmingLanguages: Yup.array(),
-    disciplines: Yup.array(),
+    programmingLanguages: Yup.array().of(Yup.string()),
+    disciplines: Yup.array().of(Yup.string()),
   });
 
   static initialValues = {
-    programmingLanguages: [''],
-    disciplines: [''],
+    programmingLanguages: [],
+    disciplines: [],
   };
 
   static submitHandler = async values => {
