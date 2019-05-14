@@ -16,14 +16,13 @@ class MultiStepForm extends React.Component {
     // initialValues must be object where entire form's shape is described
     initialValues: object.isRequired,
 
-    onAllButLastStep: func,
-    onFinalSubmit: func.isRequired,
-    onFinalSubmitSuccess: func.isRequired,
+    onEachStepSubmit: func,
+    onFinalSubmit: func.isRequired, // to be considered onSuccess
     steps: arrayOf(validStep).isRequired,
   };
 
   static defaultProps = {
-    onAllButLastStep: noop,
+    onEachStepSubmit: noop,
   };
 
   state = {
@@ -89,7 +88,7 @@ class MultiStepForm extends React.Component {
   };
 
   handleSubmit = async (values, formikBag) => {
-    const { steps, onAllButLastStep, onFinalSubmit, onFinalSubmitSuccess } = this.props;
+    const { steps, onEachStepSubmit, onFinalSubmit } = this.props;
     const { errorMessage, stepNumber } = this.state;
 
     if (errorMessage) {
@@ -97,28 +96,20 @@ class MultiStepForm extends React.Component {
       this.setState({ errorMessage: '' });
     }
 
-    if (this.isLastStep()) {
-      try {
-        await onFinalSubmit(values);
-        formikBag.setSubmitting(false);
-        formikBag.resetForm();
-        await onFinalSubmitSuccess(values);
-      } catch (error) {
-        formikBag.setSubmitting(false);
-        this.handleError(error);
-      }
-      return;
-    }
-
-    // Not last step
     try {
+      await onEachStepSubmit(values);
+
       const currentStepSubmitHandler = steps[stepNumber].submitHandler;
       await currentStepSubmitHandler(values);
 
-      await onAllButLastStep(values);
-
-      formikBag.setSubmitting(false);
-      this.showNextStep(formikBag);
+      if (this.isLastStep()) {
+        await onFinalSubmit(values);
+        formikBag.setSubmitting(false);
+        formikBag.resetForm();
+      } else {
+        formikBag.setSubmitting(false);
+        this.showNextStep(formikBag);
+      }
     } catch (error) {
       formikBag.setSubmitting(false);
       this.handleError(error);
@@ -139,12 +130,7 @@ class MultiStepForm extends React.Component {
         onSubmit={this.handleSubmit}
         render={formikBag => (
           <Form className={styles.MultiStepForm} onSubmit={formikBag.handleSubmit}>
-            {/*
-             * If a step has to have props passed to its component, it needs to be passed in as an
-             * object with a render prop passed (and initialValues and submitHandler
-             * mapped)
-             */}
-            {CurrentStep.render ? CurrentStep.render(...formikBag) : <CurrentStep {...formikBag} />}
+            <CurrentStep {...formikBag} />
 
             <div className={styles.errorMessage}>
               <Alert isOpen={Boolean(errorMessage)} type="error">
