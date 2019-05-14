@@ -1,3 +1,4 @@
+import isEmpty from 'lodash/isEmpty';
 import { get, post, patch } from 'common/utils/api-utils';
 import { coerceEmptyStringToUndefined } from 'common/utils/string-utils';
 
@@ -56,13 +57,22 @@ export const updateUser = ({
   programmingLanguages,
   yearsOfService,
 }) => {
-  const interestItems = [...programmingLanguages, ...disciplines];
+  let interests;
+  const hasInterests =
+    Array.isArray(disciplines) &&
+    Array.isArray(programmingLanguages) &&
+    !isEmpty(disciplines) &&
+    !isEmpty(programmingLanguages);
 
-  // Interests could be an array of many filled strings, one filled string, or one empty string
-  const interests =
-    interestItems.length > 1
-      ? interestItems.join(', ')
-      : [coerceEmptyStringToUndefined(interestItems[0])];
+  if (hasInterests) {
+    const interestItems = [...programmingLanguages, ...disciplines];
+
+    // interests could be a string of many comma-separated items, or a single string
+    interests =
+      interestItems.length > 1
+        ? interestItems.join(', ')
+        : coerceEmptyStringToUndefined(interestItems[0]);
+  }
 
   return patch('users', {
     user: {
