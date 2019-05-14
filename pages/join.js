@@ -7,7 +7,7 @@ import RegistrationForm from 'components/RegistrationForm/RegistrationForm';
 
 class Join extends React.Component {
   handleSuccess = ({ token, user }) => {
-    login({ token, user });
+    login({ token, user }, '/profile/update');
   };
 
   render() {
