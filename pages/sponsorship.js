@@ -1,6 +1,7 @@
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
+import FlatCard from 'components/Cards/FlatCard/FlatCard';
 import styles from './styles/sponsorship.css';
 
 export default () => {
@@ -26,6 +27,28 @@ export default () => {
             Together, we will create a new and secure future for today&apos;s veterans and military
             spouses.
           </p>,
+        ]}
+      />
+      <Content
+        title="What We Offer"
+        theme="secondary"
+        className={styles.justifyAlign}
+        columns={[
+          <FlatCard>
+            The largest national volunteer service organization devoted to software engineering.
+          </FlatCard>,
+          <FlatCard>
+            Direct and indirect access to military veterans and spouses for surveying or hiring
+            purposes.
+          </FlatCard>,
+          <FlatCard>
+            Potential partnerships with national and local meetups. Help us create a community
+            at a city near you.
+          </FlatCard>,
+          <FlatCard>
+            An authentic and vibrant community. Your sponsorship will have a very noticeable
+            and organic impact.
+          </FlatCard>,
         ]}
       />
       {/* Rest of page content goes in here */}
