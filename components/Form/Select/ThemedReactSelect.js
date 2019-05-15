@@ -15,6 +15,7 @@ ThemedReactSelect.propTypes = {
   disabled: bool,
   hasErrors: bool,
   id: string,
+  instanceId: string,
   // TODO: Resolve why multiselects can end up with touched: { key: array }
   // see ThemedReactSelect as well
   // isTouched: bool,
@@ -25,10 +26,11 @@ ThemedReactSelect.defaultProps = {
   disabled: false,
   hasErrors: false,
   id: undefined,
+  instanceId: undefined,
   isTouched: false,
 };
 
-function ThemedReactSelect({ disabled, hasErrors, id, ...props }) {
+function ThemedReactSelect({ disabled, hasErrors, id, instanceId, ...props }) {
   // See TODO in propTypes definition
   // eslint-disable-next-line react/destructuring-assignment
   const isTouched = Array.isArray(props.isTouched) ? true : props.isTouched; // coerce to boolean
@@ -44,7 +46,7 @@ function ThemedReactSelect({ disabled, hasErrors, id, ...props }) {
   return (
     <ReactSelect
       {...props}
-      instanceId={id}
+      instanceId={instanceId || id}
       disabled={disabled}
       styles={{
         control: base => {
