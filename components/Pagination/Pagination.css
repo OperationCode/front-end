@@ -1,6 +1,10 @@
 .Pagination {
 }
 
+.controls {
+  cursor: pointer;
+}
+
 .pageNumberActive {
   color: red;
 }
