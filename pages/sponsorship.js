@@ -34,14 +34,12 @@ export default () => {
         theme="secondary"
         className={styles.justifyAlign}
         columns={[
-          <p>
-            <FlatCard>
-              The largest national volunteer service organization devoted to software engineering.
-            </FlatCard>
-            <FlatCard>Direct and indirect access to military veterans and spouses.</FlatCard>
-            <FlatCard>Potential partnerships with national and local meetups.</FlatCard>
-            <FlatCard>An authentic and vibrant community.</FlatCard>
-          </p>,
+          <FlatCard>
+            The largest national volunteer service organization devoted to software engineering.
+          </FlatCard>,
+          <FlatCard>Direct and indirect access to military veterans and spouses.</FlatCard>,
+          <FlatCard>Potential partnerships with national and local meetups.</FlatCard>,
+          <FlatCard>An authentic and vibrant community.</FlatCard>,
         ]}
       />
       {/* Rest of page content goes in here */}
