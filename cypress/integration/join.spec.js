@@ -29,9 +29,8 @@ describe('register', function() {
 
     cy.wait('@postRegister');
 
-    cy.url().should('contain', '/profile');
-    cy.get('h1').should('have.text', 'Profile');
-    cy.get('p').contains(`Hello ${newUser.firstName} ${newUser.lastName}!`);
+    cy.url().should('contain', '/profile/update');
+    cy.get('h1').should('have.text', 'Update Profile');
 
     cy.getCookies().then(cookies => {
       expect(cookies.some(({ value }) => value === newUser.firstName)).to.be.true;
