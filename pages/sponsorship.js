@@ -37,9 +37,18 @@ export default () => {
           <FlatCard>
             The largest national volunteer service organization devoted to software engineering.
           </FlatCard>,
-          <FlatCard>Direct and indirect access to military veterans and spouses.</FlatCard>,
-          <FlatCard>Potential partnerships with national and local meetups.</FlatCard>,
-          <FlatCard>An authentic and vibrant community.</FlatCard>,
+          <FlatCard>
+            Direct and indirect access to military veterans and spouses for surveying or hiring
+            purposes.
+          </FlatCard>,
+          <FlatCard>
+            Potential partnerships with national and local meetups. Help us create a community
+            at a city near you.
+          </FlatCard>,
+          <FlatCard>
+            An authentic and vibrant community. Your sponsorship will have a very noticeable
+            and organic impact.
+          </FlatCard>,
         ]}
       />
       {/* Rest of page content goes in here */}
