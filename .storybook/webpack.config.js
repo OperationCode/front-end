@@ -11,6 +11,9 @@ module.exports = async ({ config, mode }) => {
   // remove existing css-loader rules
   config.module.rules = config.module.rules.filter(f => f.test.toString() !== '/\\.css$/');
 
+  //required for importing svgs
+  config.resolve.extensions.push('.svg');
+
   // extend config to our liking
   config.module.rules.push(
     {
@@ -51,15 +54,18 @@ module.exports = async ({ config, mode }) => {
     {
       test: /\.svg$/,
       use: [
-        {
-          loader: 'react-svg-loader',
-          options: {
-            svgo: svgoConfig,
-          },
-        },
+        { loader: require.resolve('babel-loader') },
+        { loader: require.resolve('react-svg-loader') },
       ],
     },
   );
+
+  config.module.rules = config.module.rules.map(data => {
+    if (/svg\|/.test(String(data.test)))
+      data.test = /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2|cur|ani)(\?.*)?$/;
+
+    return data;
+  });
 
   // Return the altered config
   return config;
