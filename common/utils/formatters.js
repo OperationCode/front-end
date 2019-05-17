@@ -1,6 +1,5 @@
-import get from 'lodash/get';
-import isEmpty from 'lodash/isEmpty';
 import { coerceEmptyStringToUndefined } from 'common/utils/string-utils';
+import { isFilledArray } from 'common/utils/array-utils';
 
 // TODO: Remove eslint disable when more items are exported
 /* eslint-disable import/prefer-default-export */
@@ -45,11 +44,6 @@ export const formatUserData = ({
   yearsOfService,
 }) => {
   let interests;
-
-  const isFilledArray = potentialArray =>
-    Array.isArray(potentialArray) &&
-    !isEmpty(potentialArray) &&
-    get(potentialArray, '[0]', undefined);
 
   const hasInterests = isFilledArray(disciplines) || isFilledArray(programmingLanguages);
 
