@@ -55,8 +55,6 @@ export default () => {
         ]}
       />
 
-      {/* Section 3 goes here */}
-
       <Content
         title="Corporate Partner Opportunities"
         theme="white"
