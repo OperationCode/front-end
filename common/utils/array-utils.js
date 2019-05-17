@@ -1,6 +1,3 @@
-const get = require('lodash/get');
-const isEmpty = require('lodash/isEmpty');
-
 /**
  * Functions are being exported using module.exports, so we can use the methods in
  * node.js and ES6 client side.
@@ -25,11 +22,7 @@ function insertIf(condition, ...elements) {
  * @returns {boolean}
  */
 function isFilledArray(potentialArray) {
-  return Boolean(
-    Array.isArray(potentialArray) &&
-      !isEmpty(potentialArray) &&
-      get(potentialArray, '[0]', undefined),
-  );
+  return Boolean(Array.isArray(potentialArray) && potentialArray.length > 0 && potentialArray[0]);
 }
 
 /**

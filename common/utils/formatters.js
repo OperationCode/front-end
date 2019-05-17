@@ -51,10 +51,7 @@ export const formatUserData = ({
     const interestItems = [...programmingLanguages, ...disciplines];
 
     // interests could be a string of many comma-separated items, or a single string
-    interests =
-      interestItems.length > 1
-        ? interestItems.join(', ')
-        : coerceEmptyStringToUndefined(interestItems[0]);
+    interests = interestItems.length > 1 ? interestItems.join(', ') : interestItems[0];
   }
 
   const user = {
