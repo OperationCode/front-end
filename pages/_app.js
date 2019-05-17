@@ -20,6 +20,13 @@ import withFonts from '../decorators/withFonts/withFonts';
 Sentry.init({ dsn: process.env.SENTRY_DSN });
 LogRocket.init(`${process.env.LOGROCKET_KEY}/operation-code`);
 
+// Every crash report will have a LogRocket session URL.
+LogRocket.getSessionURL(sessionURL => {
+  Sentry.configureScope(scope => {
+    scope.setExtra('sessionURL', sessionURL);
+  });
+});
+
 // eslint-disable-next-line react/prefer-stateless-function
 class Layout extends React.Component {
   render() {

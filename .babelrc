@@ -5,8 +5,8 @@
         "next/babel"
       ],
       "plugins": [
-        ["react-remove-properties", { "properties": ["data-testid"] }]
-      ],
+        ["react-remove-properties", { "properties": ["data-testid"] }, "ADD-REACT-DISPLAYNAME"]
+      ]
     },
     "development": {
       "presets": [
