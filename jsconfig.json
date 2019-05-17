@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "allowSyntheticDefaultImports": false,
+    "experimentalDecorators": true,
+    "baseUrl": ".",
+    "paths": {
+      "components/*": ["./components/*"],
+      "common/*": ["./common/*"],
+      "pages/*": ["./pages/*"],
+      "scripts/*": ["./scripts/*"],
+      "static/*": ["./static/*"],
+      "store/*": ["./store/*"],
+      "test-utils/*": ["./test-utils/*"]
+    }
+  },
+  "exclude": ["node_modules"]
+}
