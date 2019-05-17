@@ -1808,7 +1808,7 @@
     "@sentry/types" "5.2.0"
     tslib "^1.9.3"
 
-"@storybook/addon-a11y@5.0.11":
+"@storybook/addon-a11y@^5.0.11":
   version "5.0.11"
   resolved "https://registry.yarnpkg.com/@storybook/addon-a11y/-/addon-a11y-5.0.11.tgz#b045a99c2582722db8b34e2edee11aa5521eba26"
   integrity sha512-vMBjgKE5Ia4w7QOi4apZLsLvJtc5OoeDOSvGp01sQBMfZYsjaQmy4cDVtB0baek3D7syYtoduj/b0KX3NR09/A==
@@ -1828,7 +1828,7 @@
     react-dom "^16.8.1"
     util-deprecate "^1.0.2"
 
-"@storybook/addon-actions@5.0.11":
+"@storybook/addon-actions@^5.0.11":
   version "5.0.11"
   resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-5.0.11.tgz#7ca6d6ce9400b9b97f2699935edade88905767c3"
   integrity sha512-1aJ/UDBYAyuqq4wkEYKNv/xwy2BZS61Cl8+c8le5af3Rk/y2HVRuBHPoKptFkS0nACE/XvPSvLPUIHZDLUkkMw==
@@ -1848,7 +1848,7 @@
     react-inspector "^2.3.0"
     uuid "^3.3.2"
 
-"@storybook/addon-backgrounds@5.0.11":
+"@storybook/addon-backgrounds@^5.0.11":
   version "5.0.11"
   resolved "https://registry.yarnpkg.com/@storybook/addon-backgrounds/-/addon-backgrounds-5.0.11.tgz#d21dc3c047891c1c6cd96bf8c9db2a7679a057b6"
   integrity sha512-aTS7mlSZG4JVYssqVy1ZeVdBrvMFPFXtLWpEuxvH7A7AWG22Gn90XZTUuc2T/vOdDdMwj8UDNDSImTFIGFXiXA==
@@ -1864,7 +1864,7 @@
     react "^16.8.1"
     util-deprecate "^1.0.2"
 
-"@storybook/addon-info@5.0.11":
+"@storybook/addon-info@^5.0.11":
   version "5.0.11"
   resolved "https://registry.yarnpkg.com/@storybook/addon-info/-/addon-info-5.0.11.tgz#d051fdf2b9e6c15b0bc4ef2a23200f35f1e1397d"
   integrity sha512-lAz0zranutGXtoBbKLIGA4nOlb9YfSDu24A3uR6Q743LTo/SWUiZW14E+JkBkNI/oReev8DyvMSL26t8Z9RlfA==
@@ -1885,7 +1885,7 @@
     react-lifecycles-compat "^3.0.4"
     util-deprecate "^1.0.2"
 
-"@storybook/addon-knobs@5.0.11":
+"@storybook/addon-knobs@^5.0.11":
   version "5.0.11"
   resolved "https://registry.yarnpkg.com/@storybook/addon-knobs/-/addon-knobs-5.0.11.tgz#1f093560ceec78f4906e0575ded0ac03b4494b09"
   integrity sha512-9/Q88GhzISxue1wxvbfVa1e8kBA1V6ny1eXWwKN1TRIfBRk4fzmIQtgKMf2R9kQ1VJCzzPHs1sHEpjjvSGbMFw==
@@ -1907,7 +1907,7 @@
     react-select "^2.3.0"
     util-deprecate "^1.0.2"
 
-"@storybook/addon-storyshots@5.0.11":
+"@storybook/addon-storyshots@^5.0.11":
   version "5.0.11"
   resolved "https://registry.yarnpkg.com/@storybook/addon-storyshots/-/addon-storyshots-5.0.11.tgz#006335e7949c6e03b81f6570c050dc5bb912d102"
   integrity sha512-75G+LMdCJWnLnKNtzwe0xYIf5lg+2v8NHLiHHE4MtFtCDWoP/IlDKS5wqiziHMmtqbFB402HsCuS5u0ArYbw1Q==
@@ -1920,7 +1920,7 @@
     read-pkg-up "^4.0.0"
     regenerator-runtime "^0.12.1"
 
-"@storybook/addon-viewport@5.0.11":
+"@storybook/addon-viewport@^5.0.11":
   version "5.0.11"
   resolved "https://registry.yarnpkg.com/@storybook/addon-viewport/-/addon-viewport-5.0.11.tgz#93b1d6db2c06b7a9282ee96a9a4d1dd2c4ba8849"
   integrity sha512-dOq+L7Crxh8B3KrdkbKhCGX466k+0x1t5/VuZjztxfVQPpjIn8L7Zxo+nYouvlbXtHaKh7Xon4bq61HPksrJAw==
@@ -1936,7 +1936,7 @@
     prop-types "^15.6.2"
     util-deprecate "^1.0.2"
 
-"@storybook/addons@5.0.11":
+"@storybook/addons@5.0.11", "@storybook/addons@^5.0.11":
   version "5.0.11"
   resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-5.0.11.tgz#86de70747e0a692d9dd8ea431daa1147d8785697"
   integrity sha512-zw3vjYa2EfFQKKZd8/o44eVy5xaZpFEBY/4mGMBBTQb57H0X1VTzE4VxHrk7fGPJMdmrPfXbYEiQtfHyO56y+w==
@@ -2115,7 +2115,7 @@
     pretty-hrtime "^1.0.3"
     regenerator-runtime "^0.12.1"
 
-"@storybook/react@5.0.11":
+"@storybook/react@^5.0.11":
   version "5.0.11"
   resolved "https://registry.yarnpkg.com/@storybook/react/-/react-5.0.11.tgz#e131437a59d1f2fac7fbad4ab0c28a54d8a96398"
   integrity sha512-HOKtOvGAOpwZyKXEEjNg3Exhf1E946H+Wcmfgp3hD7BOdxiWbXvkE3kwdBHb+cnQri0rJaADnYiXB/p8MkxfzQ==
