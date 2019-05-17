@@ -59,7 +59,7 @@ export default () => {
 
       <Content
         title="Corporate Partner Opportunities"
-        theme="secondary"
+        theme="white"
         className={styles.justifyAlign}
         columns={[
           <div className={styles.justifyAlign}>

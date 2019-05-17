@@ -3,8 +3,9 @@
 }
 
 .badgeFormat {
-  font-size: 1.5em;
+  font-size: 1.5rem;
   font-weight: 550;
+  margin-top: 1.5rem;
 }
 
 .gold {
@@ -21,5 +22,5 @@
 
 .paragraphFormat {
   text-align: justify;
-  padding: 0 2em;
+  padding: 0 2rem;
 }
