@@ -1,5 +1,5 @@
-import get from 'lodash/get';
-import isEmpty from 'lodash/isEmpty';
+const get = require('lodash/get');
+const isEmpty = require('lodash/isEmpty');
 
 /**
  * Functions are being exported using module.exports, so we can use the methods in
