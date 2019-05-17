@@ -4,6 +4,8 @@ import { Provider } from 'react-redux';
 import { compose } from 'redux';
 import ScrollUpButton from 'react-scroll-up-button';
 import withRedux from 'next-redux-wrapper';
+import LogRocket from 'logrocket';
+import setupLogRocketReact from 'logrocket-react';
 import * as Sentry from '@sentry/browser';
 import debounce from 'lodash/debounce';
 import { initStore } from 'store/store';
@@ -16,6 +18,7 @@ import 'common/styles/globalStyles.css';
 import withFonts from '../decorators/withFonts/withFonts';
 
 Sentry.init({ dsn: process.env.SENTRY_DSN });
+LogRocket.init(`${process.env.LOGROCKET_KEY}/operation-code`);
 
 // eslint-disable-next-line react/prefer-stateless-function
 class Layout extends React.Component {
@@ -38,6 +41,7 @@ class OperationCodeApp extends App {
   componentDidMount() {
     this.handleScreenResize(); // get initial size on load
     window.addEventListener('resize', this.debouncedHandleScreenResize);
+    setupLogRocketReact(LogRocket);
 
     if (Modal.setAppElement) {
       Modal.setAppElement('body');
