@@ -1,3 +1,15 @@
 .justifyAlign {
   text-align: justify;
 }
+
+.gold {
+  color: #ffaa22;
+}
+
+.silver {
+  color: silver;
+}
+
+.bronze {
+  color: #cd7f32;
+}

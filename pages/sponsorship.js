@@ -2,6 +2,9 @@ import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
 import FlatCard from 'components/Cards/FlatCard/FlatCard';
+import Badge from 'components/Badge/Badge';
+import MedalSolid from 'static/images/icons/FontAwesome/medal-solid.svg';
+
 import styles from './styles/sponsorship.css';
 
 export default () => {
@@ -42,13 +45,40 @@ export default () => {
             purposes.
           </FlatCard>,
           <FlatCard>
-            Potential partnerships with national and local meetups. Help us create a community
-            at a city near you.
+            Potential partnerships with national and local meetups. Help us create a community at a
+            city near you.
           </FlatCard>,
           <FlatCard>
-            An authentic and vibrant community. Your sponsorship will have a very noticeable
-            and organic impact.
+            An authentic and vibrant community. Your sponsorship will have a very noticeable and
+            organic impact.
           </FlatCard>,
+        ]}
+      />
+
+      {/* Section 3 goes here */}
+
+      <Content
+        title="Corporate Partner Opportunities"
+        theme="secondary"
+        className={styles.justifyAlign}
+        columns={[
+          <div className={styles.justifyAlign}>
+            <Badge icon={<MedalSolid className={styles.gold} />} label="Gold Sponsor" />
+            <p className={styles.justifyAlign}>
+              National benefits include branding recognition in national Slack community, open
+              source program sponsorship, national employee engagement activities, plus all above.
+            </p>
+            <Badge icon={<MedalSolid className={styles.silver} />} label="Silver Sponsor" />
+            <p className={styles.justifyAlign}>
+              Three local chapter sponsorships of choice, complete with marketing, employee
+              engagement and talent pipeline opportunities, plus all above.
+            </p>
+            <Badge icon={<MedalSolid className={styles.bronze} />} label="Bronze Sponsor" />
+            <p className={styles.justifyAlign}>
+              Sponsor one chapter and support your local Operation Code community for the year,
+              including events, training, and networking opportunities.
+            </p>
+          </div>,
         ]}
       />
       {/* Rest of page content goes in here */}
