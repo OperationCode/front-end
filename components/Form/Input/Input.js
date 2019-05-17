@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { shape, string, number, objectOf, oneOfType, bool, oneOf } from 'prop-types';
 import classNames from 'classnames';
 import { ErrorMessage } from 'formik';
 import Alert from 'components/Alert/Alert';
@@ -7,17 +7,17 @@ import Label from 'components/Form/Label/Label';
 import styles from './Input.css';
 
 Input.propTypes = {
-  field: PropTypes.shape({
-    name: PropTypes.string.isRequired,
+  field: shape({
+    name: string.isRequired,
   }).isRequired,
-  form: PropTypes.shape({
-    touched: PropTypes.objectOf(PropTypes.bool),
-    errors: PropTypes.objectOf(PropTypes.string),
+  form: shape({
+    touched: objectOf(bool),
+    errors: objectOf(string),
   }).isRequired,
-  isLabelHidden: PropTypes.bool,
-  id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  label: PropTypes.string.isRequired,
-  type: PropTypes.oneOf([
+  isLabelHidden: bool,
+  id: oneOfType([string, number]),
+  label: string.isRequired,
+  type: oneOf([
     'button',
     'checkbox',
     'color',

@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { createUser } from 'common/constants/api';
 import { login } from 'common/utils/auth-utils';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
@@ -8,7 +7,7 @@ import RegistrationForm from 'components/RegistrationForm/RegistrationForm';
 
 class Join extends React.Component {
   handleSuccess = ({ token, user }) => {
-    login({ token, user });
+    login({ token, user }, '/profile/update');
   };
 
   render() {
@@ -21,7 +20,7 @@ class Join extends React.Component {
         <Content
           theme="gray"
           columns={[
-            <RegistrationForm register={createUser} onSuccess={this.handleSuccess} />,
+            <RegistrationForm onSuccess={this.handleSuccess} />,
             <p>
               Already registered?&nbsp;
               <Link href="/login">

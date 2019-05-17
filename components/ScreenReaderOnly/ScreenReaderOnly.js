@@ -1,9 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { node } from 'prop-types';
 import styles from './ScreenReaderOnly.css';
 
 ScreenReaderOnly.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: node.isRequired,
 };
 
 export default function ScreenReaderOnly({ children }) {

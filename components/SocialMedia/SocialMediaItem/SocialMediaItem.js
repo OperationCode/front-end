@@ -1,12 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { node, string } from 'prop-types';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 import styles from './SocialMediaItem.css';
 
 SocialMediaItem.propTypes = {
-  name: PropTypes.string.isRequired,
-  href: PropTypes.string.isRequired,
-  svg: PropTypes.node.isRequired,
+  name: string.isRequired,
+  href: string.isRequired,
+  svg: node.isRequired,
 };
 
 function SocialMediaItem({ name, href, svg }) {

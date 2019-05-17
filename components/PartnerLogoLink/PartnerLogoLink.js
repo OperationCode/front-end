@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import { string } from 'prop-types';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 import styles from './PartnerLogoLink.css';
 
 export default class PartnerLogoLink extends Component {
   static propTypes = {
-    logoSource: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    url: PropTypes.string.isRequired,
+    logoSource: string.isRequired,
+    name: string.isRequired,
+    url: string.isRequired,
   };
 
   render() {

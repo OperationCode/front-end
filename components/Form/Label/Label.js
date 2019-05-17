@@ -1,14 +1,14 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { node, string, bool } from 'prop-types';
 import classNames from 'classnames';
 import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
 import styles from './Label.css';
 
 Label.propTypes = {
-  children: PropTypes.node.isRequired,
-  className: PropTypes.string,
-  for: PropTypes.string.isRequired,
-  isHidden: PropTypes.bool, // visually hides the label, but maintains accessibility
+  children: node.isRequired,
+  className: string,
+  for: string.isRequired,
+  isHidden: bool, // visually hides the label, but maintains accessibility
 };
 
 Label.defaultProps = {
