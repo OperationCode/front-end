@@ -63,18 +63,30 @@ export default () => {
         className={styles.justifyAlign}
         columns={[
           <div className={styles.justifyAlign}>
-            <Badge icon={<MedalSolid className={styles.gold} />} label="Gold Sponsor" />
-            <p className={styles.justifyAlign}>
+            <Badge
+              className={styles.badgeFormat}
+              icon={<MedalSolid className={styles.gold} />}
+              label="Gold Sponsor"
+            />
+            <p className={styles.paragraphFormat}>
               National benefits include branding recognition in national Slack community, open
               source program sponsorship, national employee engagement activities, plus all above.
             </p>
-            <Badge icon={<MedalSolid className={styles.silver} />} label="Silver Sponsor" />
-            <p className={styles.justifyAlign}>
+            <Badge
+              className={styles.badgeFormat}
+              icon={<MedalSolid className={styles.silver} />}
+              label="Silver Sponsor"
+            />
+            <p className={styles.paragraphFormat}>
               Three local chapter sponsorships of choice, complete with marketing, employee
               engagement and talent pipeline opportunities, plus all above.
             </p>
-            <Badge icon={<MedalSolid className={styles.bronze} />} label="Bronze Sponsor" />
-            <p className={styles.justifyAlign}>
+            <Badge
+              className={styles.badgeFormat}
+              icon={<MedalSolid className={styles.bronze} />}
+              label="Bronze Sponsor"
+            />
+            <p className={styles.paragraphFormat}>
               Sponsor one chapter and support your local Operation Code community for the year,
               including events, training, and networking opportunities.
             </p>

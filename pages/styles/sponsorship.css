@@ -2,6 +2,11 @@
   text-align: justify;
 }
 
+.badgeFormat {
+  font-size: 1.5em;
+  font-weight: 550;
+}
+
 .gold {
   color: #ffaa22;
 }
@@ -12,4 +17,9 @@
 
 .bronze {
   color: #cd7f32;
+}
+
+.paragraphFormat {
+  text-align: justify;
+  padding: 0 2em;
 }
