@@ -28,7 +28,7 @@ function isFilledArray(potentialArray) {
 /**
  * @description used to quickly define Select-ready options array from just an array of strings
  * @export
- * @param {sring[]} arrayOfStrings
+ * @param {string[]} arrayOfStrings
  * @returns {{ label: string, value: string }[]} array of options ready for use in Select component
  */
 function mapStringsToSelectOptions(arrayOfStrings) {
