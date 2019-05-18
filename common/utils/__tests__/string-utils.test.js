@@ -1,5 +1,5 @@
 /* eslint-env jest */
-import { capitalizeFirstLetter } from '../string-utils';
+import { capitalizeFirstLetter, coerceEmptyStringToUndefined } from '../string-utils';
 
 describe('String Utilities', () => {
   describe('capitalizeFirstLetter', () => {
@@ -13,6 +13,17 @@ describe('String Utilities', () => {
 
     it('should return an empty string when passed undefined', () => {
       expect(capitalizeFirstLetter(undefined)).toStrictEqual('');
+    });
+  });
+
+  describe('coerceEmptyStringToUndefined', () => {
+    it('should return undefined when passed string is empty', () => {
+      expect(coerceEmptyStringToUndefined('')).toStrictEqual(undefined);
+    });
+
+    it('should return the string itself if it is not empty', () => {
+      const theString = 'yo';
+      expect(coerceEmptyStringToUndefined(theString)).toStrictEqual(theString);
     });
   });
 });

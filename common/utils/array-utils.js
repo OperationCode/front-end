@@ -1,5 +1,7 @@
-// TODO: Remove once mulitple methods within
-/* eslint-disable import/prefer-default-export */
+/**
+ * Functions are being exported using module.exports, so we can use the methods in
+ * node.js and ES6 client side.
+ * */
 
 /**
  * @description a method to conditionally apply items into an array
@@ -14,9 +16,19 @@ function insertIf(condition, ...elements) {
 }
 
 /**
+ * @description used to identify if an array is filled with real values
+ * @export
+ * @param {array} potentialArray passed arg isnt required to be an array
+ * @returns {boolean}
+ */
+function isFilledArray(potentialArray) {
+  return Boolean(Array.isArray(potentialArray) && potentialArray.length > 0 && potentialArray[0]);
+}
+
+/**
  * @description used to quickly define Select-ready options array from just an array of strings
  * @export
- * @param {sring[]} arrayOfStrings
+ * @param {string[]} arrayOfStrings
  * @returns {{ label: string, value: string }[]} array of options ready for use in Select component
  */
 function mapStringsToSelectOptions(arrayOfStrings) {
@@ -30,5 +42,6 @@ function mapStringsToSelectOptions(arrayOfStrings) {
 
 module.exports = {
   insertIf,
+  isFilledArray,
   mapStringsToSelectOptions,
 };
