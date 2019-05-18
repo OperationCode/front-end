@@ -1,4 +1,3 @@
-import isEmpty from 'lodash/isEmpty';
 import { get, post, patch } from 'common/utils/api-utils';
 import { formatUserData } from 'common/utils/formatters';
 
@@ -42,7 +41,7 @@ export const postMentorRequestPromise = ({ language, additionalDetails, mentor, 
     },
   });
 
-/* PATCH REQUESTS */  
+/* PATCH REQUESTS */
 export const updateUser = userInfo => {
   return patch('users', {
     user: { ...formatUserData(userInfo) },
