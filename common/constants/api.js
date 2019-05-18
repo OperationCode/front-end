@@ -1,6 +1,6 @@
 import isEmpty from 'lodash/isEmpty';
 import { get, post, patch } from 'common/utils/api-utils';
-import { coerceEmptyStringToUndefined } from 'common/utils/string-utils';
+import { formatUserData } from 'common/utils/formatters';
 
 /* GET REQUESTS */
 export const getCodeSchoolsPromise = () => get('code_schools');
@@ -42,53 +42,10 @@ export const postMentorRequestPromise = ({ language, additionalDetails, mentor, 
     },
   });
 
-/* PATCH REQUESTS */
-export const updateUser = ({
-  branchOfService,
-  companyName,
-  companyRole,
-  disciplines,
-  doesWantMentor, // TODO: Use in form
-  doesWantScholarshipInfo, // TODO: Use in form
-  doesWantToVolunteer, // TODO: Use in form
-  employmentStatus,
-  militaryStatus,
-  payGrade,
-  programmingLanguages,
-  yearsOfService,
-}) => {
-  let interests;
-  const hasInterests =
-    Array.isArray(disciplines) &&
-    Array.isArray(programmingLanguages) &&
-    !isEmpty(disciplines) &&
-    !isEmpty(programmingLanguages);
-
-  if (hasInterests) {
-    const interestItems = [...programmingLanguages, ...disciplines];
-
-    // interests could be a string of many comma-separated items, or a single string
-    interests =
-      interestItems.length > 1
-        ? interestItems.join(', ')
-        : coerceEmptyStringToUndefined(interestItems[0]);
-  }
-
+/* PATCH REQUESTS */  
+export const updateUser = userInfo => {
   return patch('users', {
-    user: {
-      branch_of_service: coerceEmptyStringToUndefined(branchOfService),
-      company_name: coerceEmptyStringToUndefined(companyName),
-      company_role: coerceEmptyStringToUndefined(companyRole),
-      mentor: doesWantMentor,
-      scholarship_info: doesWantScholarshipInfo,
-      volunteer: doesWantToVolunteer,
-      employment_status: coerceEmptyStringToUndefined(employmentStatus),
-      military_status:
-        militaryStatus === 'civilian' ? undefined : coerceEmptyStringToUndefined(militaryStatus),
-      pay_grade: coerceEmptyStringToUndefined(payGrade),
-      interests,
-      years_of_service: coerceEmptyStringToUndefined(yearsOfService),
-    },
+    user: { ...formatUserData(userInfo) },
   }).then(({ data }) => data);
 };
 
