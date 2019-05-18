@@ -40,7 +40,7 @@ class Select extends React.Component {
   };
 
   static defaultProps = {
-    id: '',
+    id: undefined,
     isLabelHidden: false,
     isMulti: false,
   };
@@ -127,7 +127,7 @@ class Select extends React.Component {
             {...props}
             hasErrors={hasErrors}
             isTouched={touched[name]}
-            id={name}
+            id={id || name}
             isMulti={isMulti}
             name={name}
             onBlur={this.handleBlur}
