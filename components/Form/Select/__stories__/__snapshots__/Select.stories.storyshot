@@ -24,7 +24,6 @@ Array [
     <div>
       <div
         className="css-1pcexqc-container"
-        id=""
         onKeyDown={[Function]}
       >
         <div
@@ -57,7 +56,7 @@ Array [
                   autoComplete="off"
                   autoCorrect="off"
                   disabled={false}
-                  id="react-select-2-input"
+                  id="react-select-someSelect-input"
                   onBlur={[Function]}
                   onChange={[Function]}
                   onFocus={[Function]}
