@@ -31,7 +31,6 @@ describe('Select', () => {
     form: { touched: { [name]: false }, errors: { [name]: '' }, setFieldTouched, setFieldValue },
     label: 'Some Select:',
     options: [
-      { label: '-- Select One --', value: '' },
       { label: 'Taco Bell', value: 'tacobell' },
       { label: `Wendy's`, value: 'wendys' },
       { label: 'Panda Express', value: 'pandaexpress' },
