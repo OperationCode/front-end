@@ -37,9 +37,9 @@ exports[`UpdateProfileForm/Steps/MilitaryDetails should render in context of For
               className="css-1hwfws3"
             >
               <div
-                className="css-dvua67-singleValue"
+                className="css-151xaom-placeholder"
               >
-                -- Select One --
+                Select...
               </div>
               <div
                 className="css-1g6gooi"

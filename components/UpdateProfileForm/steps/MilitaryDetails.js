@@ -49,10 +49,6 @@ class MilitaryDetails extends React.Component {
             component={Select}
             options={[
               {
-                value: '',
-                label: '-- Select One --',
-              },
-              {
                 value: 'army',
                 label: 'Army / Army Reserves / Army National Guard',
               },
