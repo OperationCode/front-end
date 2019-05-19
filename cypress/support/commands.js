@@ -24,6 +24,7 @@ addMatchImageSnapshotCommand({
   failureThresholdType: 'percent',
   customDiffConfig: { threshold: 2.25 },
   capture: 'fullPage',
+  scale: true,
 });
 
 Cypress.Commands.add('setResolution', size => {
@@ -34,9 +35,10 @@ Cypress.Commands.add('setResolution', size => {
   }
 });
 
-Cypress.Commands.add('createVisualRegressionTests', () => {
+Cypress.Commands.add('createVisualRegressionTest', () => {
   cy.get('[data-testid="Not Mobile Nav"'); // wait for resize listener
-  cy.viewport(1600, 1200);
+  cy.viewport(1280, 720);
+  cy.wait(1000); // eslint-disable-line cypress/no-unnecessary-waiting
   cy.matchImageSnapshot('desktop');
 
   // TODO: Get mobile visual regression diffs working
