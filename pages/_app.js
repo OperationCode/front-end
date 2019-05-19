@@ -17,15 +17,19 @@ import Modal from 'components/Modal/Modal';
 import 'common/styles/globalStyles.css';
 import withFonts from '../decorators/withFonts/withFonts';
 
-Sentry.init({ dsn: process.env.SENTRY_DSN });
-LogRocket.init(`${process.env.LOGROCKET_KEY}/operation-code`);
+const isProduction = process.env.NODE_ENV === 'production';
 
-// Every crash report will have a LogRocket session URL.
-LogRocket.getSessionURL(sessionURL => {
-  Sentry.configureScope(scope => {
-    scope.setExtra('sessionURL', sessionURL);
+if (isProduction) {
+  Sentry.init({ dsn: process.env.SENTRY_DSN });
+  LogRocket.init(`${process.env.LOGROCKET_KEY}/operation-code`);
+
+  // Every crash report will have a LogRocket session URL.
+  LogRocket.getSessionURL(sessionURL => {
+    Sentry.configureScope(scope => {
+      scope.setExtra('sessionURL', sessionURL);
+    });
   });
-});
+}
 
 // eslint-disable-next-line react/prefer-stateless-function
 class Layout extends React.Component {
@@ -48,7 +52,10 @@ class OperationCodeApp extends App {
   componentDidMount() {
     this.handleScreenResize(); // get initial size on load
     window.addEventListener('resize', this.debouncedHandleScreenResize);
-    setupLogRocketReact(LogRocket);
+
+    if (isProduction) {
+      setupLogRocketReact(LogRocket);
+    }
 
     if (Modal.setAppElement) {
       Modal.setAppElement('body');
@@ -111,7 +118,7 @@ class OperationCodeApp extends App {
 }
 
 // Fixes Next CSS route change bug: https://github.com/zeit/next-plugins/issues/282
-if (process.env.NODE_ENV !== 'production') {
+if (!isProduction) {
   Router.events.on('routeChangeComplete', () => {
     const chunksSelector = 'link[href*="/_next/static/css/styles.chunk.css"]';
     const chunksNodes = document.querySelectorAll(chunksSelector);
