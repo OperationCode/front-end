@@ -1,5 +1,5 @@
 import React from 'react';
-import { shape, string, number, objectOf, oneOfType, bool, oneOf } from 'prop-types';
+import { shape, string, number, object, objectOf, oneOfType, bool, oneOf } from 'prop-types';
 import classNames from 'classnames';
 import { ErrorMessage } from 'formik';
 import Alert from 'components/Alert/Alert';
@@ -11,7 +11,10 @@ Input.propTypes = {
     name: string.isRequired,
   }).isRequired,
   form: shape({
-    touched: objectOf(bool),
+    // TODO: Resolve why multiselects can end up with touched: { key: array }
+    // see ThemedReactSelect as well
+    // touched: objectOf(bool).isRequired,
+    touched: object.isRequired,
     errors: objectOf(string),
   }).isRequired,
   isLabelHidden: bool,
