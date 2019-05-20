@@ -42,9 +42,8 @@ class OperationCodeApp extends App {
     window.addEventListener('resize', this.debouncedHandleScreenResize);
 
     if (isProduction) {
-      const { SENTRY_DSN, LOGROCKET_KEY } = this.props;
-      Sentry.init({ dsn: SENTRY_DSN });
-      LogRocket.init(`${LOGROCKET_KEY}/operation-code`);
+      Sentry.init({ dsn: process.env.SENTRY_DSN });
+      LogRocket.init(`${process.env.LOGROCKET_KEY}/operation-code`);
 
       // Every crash report will have a LogRocket session URL.
       LogRocket.getSessionURL(sessionURL => {
@@ -75,11 +74,7 @@ class OperationCodeApp extends App {
       pageProps = await Component.getInitialProps(ctx);
     }
 
-    return {
-      pageProps,
-      SENTRY_DSN: process.env.SENTRY_DSN,
-      LOGROCKET_KEY: process.env.LOGROCKET_KEY,
-    };
+    return { pageProps };
   }
 
   componentDidCatch(error, errorInfo) {
