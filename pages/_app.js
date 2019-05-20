@@ -50,6 +50,9 @@ class Layout extends React.Component {
 
 class OperationCodeApp extends App {
   componentDidMount() {
+    console.log('SENTRY_DSN', process.env.SENTRY_DSN);
+    console.log('LOGROCKET_KEY', process.env.LOGROCKET_KEY);
+    console.log(process.env.NODE_ENV);
     this.handleScreenResize(); // get initial size on load
     window.addEventListener('resize', this.debouncedHandleScreenResize);
 
