@@ -3,10 +3,6 @@ const withSourceMaps = require('@zeit/next-source-maps')();
 const withBundleAnalyzer = require('@zeit/next-bundle-analyzer');
 const svgoConfig = require('./common/config/svgo');
 
-console.log('process.env', process.env);
-console.log('process.env.NODE_ENV', process.env.NODE_ENV);
-console.log('process.env.LOGROCKET_KEY', process.env.LOGROCKET_KEY);
-
 const nextConfig = withCSS({
   // For now.sh
   // see: https://zeit.co/guides/deploying-nextjs-with-now/
