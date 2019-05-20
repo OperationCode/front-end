@@ -167,15 +167,14 @@ describe('RegistrationForm', () => {
   it('should show "email already registered" message for dupe email registration', async () => {
     const existingUser = mockUser('kylemh.email12@gmail.com');
 
-    OperationCodeAPIMock.onPost('users', {
-      user: {
-        email: existingUser.email,
-        password: existingUser.password,
-        first_name: existingUser.firstName,
-        last_name: existingUser.lastName,
-        zip: existingUser.zipcode,
-      },
-    }).reply(422, { email: ['has been taken'] });
+    OperationCodeAPIMock.onPost('auth/registration/', {
+      email: existingUser.email,
+      password1: existingUser.password,
+      password2: existingUser.password,
+      firstName: existingUser.firstName,
+      lastName: existingUser.lastName,
+      zip: existingUser.zipcode,
+    }).reply(400, { email: ['has been taken'] });
 
     const successSpy = jest.fn();
     const wrapper = mount(<RegistrationForm onSuccess={successSpy} initialValues={existingUser} />);
@@ -195,7 +194,7 @@ describe('RegistrationForm', () => {
   it('should show a helpful error if the server is down', async () => {
     const user = mockUser();
 
-    OperationCodeAPIMock.onPost('users', {
+    OperationCodeAPIMock.onPost('auth/registration/', {
       user: {
         email: user.email,
         password: user.password,
