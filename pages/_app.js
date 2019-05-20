@@ -38,6 +38,7 @@ class Layout extends React.Component {
 
 class OperationCodeApp extends App {
   componentDidMount() {
+    console.log('LOGROCKET_KEY', process.env.LOGROCKET_KEY);
     this.handleScreenResize(); // get initial size on load
     window.addEventListener('resize', this.debouncedHandleScreenResize);
 
