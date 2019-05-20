@@ -1,6 +1,7 @@
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
+import SponsorsSection from 'components/ReusableSections/SponsorsSection/SponsorsSection';
 import FlatCard from 'components/Cards/FlatCard/FlatCard';
 import Badge from 'components/Badge/Badge';
 import MedalSolid from 'static/images/icons/FontAwesome/medal-solid.svg';
@@ -91,7 +92,8 @@ export default () => {
           </div>,
         ]}
       />
-      {/* Rest of page content goes in here */}
+
+      <SponsorsSection />
     </>
   );
 };
