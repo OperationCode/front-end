@@ -4,6 +4,8 @@ import { Provider } from 'react-redux';
 import { compose } from 'redux';
 import ScrollUpButton from 'react-scroll-up-button';
 import withRedux from 'next-redux-wrapper';
+import LogRocket from 'logrocket';
+import setupLogRocketReact from 'logrocket-react';
 import * as Sentry from '@sentry/browser';
 import debounce from 'lodash/debounce';
 import { initStore } from 'store/store';
@@ -15,7 +17,7 @@ import Modal from 'components/Modal/Modal';
 import 'common/styles/globalStyles.css';
 import withFonts from '../decorators/withFonts/withFonts';
 
-Sentry.init({ dsn: process.env.SENTRY_DSN });
+const isProduction = process.env.NODE_ENV === 'production';
 
 // eslint-disable-next-line react/prefer-stateless-function
 class Layout extends React.Component {
@@ -36,8 +38,23 @@ class Layout extends React.Component {
 
 class OperationCodeApp extends App {
   componentDidMount() {
+    console.log('LOGROCKET_KEY', process.env.LOGROCKET_KEY);
     this.handleScreenResize(); // get initial size on load
     window.addEventListener('resize', this.debouncedHandleScreenResize);
+
+    if (isProduction) {
+      Sentry.init({ dsn: process.env.SENTRY_DSN });
+      LogRocket.init(`${process.env.LOGROCKET_KEY}/operation-code`);
+
+      // Every crash report will have a LogRocket session URL.
+      LogRocket.getSessionURL(sessionURL => {
+        Sentry.configureScope(scope => {
+          scope.setExtra('sessionURL', sessionURL);
+        });
+      });
+
+      setupLogRocketReact(LogRocket);
+    }
 
     if (Modal.setAppElement) {
       Modal.setAppElement('body');
@@ -100,7 +117,7 @@ class OperationCodeApp extends App {
 }
 
 // Fixes Next CSS route change bug: https://github.com/zeit/next-plugins/issues/282
-if (process.env.NODE_ENV !== 'production') {
+if (!isProduction) {
   Router.events.on('routeChangeComplete', () => {
     const chunksSelector = 'link[href*="/_next/static/css/styles.chunk.css"]';
     const chunksNodes = document.querySelectorAll(chunksSelector);
