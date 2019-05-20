@@ -57,8 +57,29 @@ export default () => {
       />
 
       <Content
-        title="Corporate Partner Opportunities"
+        title="Engagement Opportunities"
         theme="white"
+        className={styles.justifyAlign}
+        columns={[
+          <FlatCard header="Employee Engagement">
+            Provide opportunities for software engineers to mentor new learners and contribute to
+            open source projects. Engage with veterans and military spouse employees in your
+            organization - share their story; loud and proud.
+          </FlatCard>,
+          <FlatCard header="Talent Management">
+            Build a talent pipeline between your company and transitioning service members with
+            technical skills and security clearances.
+          </FlatCard>,
+          <FlatCard header="Marketing">
+            Marketing opportunities for national online and local community engagement Community
+            activation opportunities and online recognition via social media and long-form content.
+          </FlatCard>,
+        ]}
+      />
+
+      <Content
+        title="Corporate Partner Opportunities"
+        theme="secondary"
         className={styles.justifyAlign}
         columns={[
           <div className={styles.justifyAlign}>
