@@ -19,18 +19,6 @@ import withFonts from '../decorators/withFonts/withFonts';
 
 const isProduction = process.env.NODE_ENV === 'production';
 
-if (isProduction) {
-  Sentry.init({ dsn: process.env.SENTRY_DSN });
-  LogRocket.init(`${process.env.LOGROCKET_KEY}/operation-code`);
-
-  // Every crash report will have a LogRocket session URL.
-  LogRocket.getSessionURL(sessionURL => {
-    Sentry.configureScope(scope => {
-      scope.setExtra('sessionURL', sessionURL);
-    });
-  });
-}
-
 // eslint-disable-next-line react/prefer-stateless-function
 class Layout extends React.Component {
   render() {
@@ -50,13 +38,21 @@ class Layout extends React.Component {
 
 class OperationCodeApp extends App {
   componentDidMount() {
-    console.log('SENTRY_DSN', process.env.SENTRY_DSN);
-    console.log('LOGROCKET_KEY', process.env.LOGROCKET_KEY);
-    console.log(process.env.NODE_ENV);
     this.handleScreenResize(); // get initial size on load
     window.addEventListener('resize', this.debouncedHandleScreenResize);
 
     if (isProduction) {
+      const { SENTRY_DSN, LOGROCKET_KEY } = this.props;
+      Sentry.init({ dsn: SENTRY_DSN });
+      LogRocket.init(`${LOGROCKET_KEY}/operation-code`);
+
+      // Every crash report will have a LogRocket session URL.
+      LogRocket.getSessionURL(sessionURL => {
+        Sentry.configureScope(scope => {
+          scope.setExtra('sessionURL', sessionURL);
+        });
+      });
+
       setupLogRocketReact(LogRocket);
     }
 
@@ -79,7 +75,10 @@ class OperationCodeApp extends App {
       pageProps = await Component.getInitialProps(ctx);
     }
 
-    return { pageProps };
+    const { SENTRY_DSN } = process.env;
+    const { LOGROCKET_KEY } = process.env;
+
+    return { pageProps, SENTRY_DSN, LOGROCKET_KEY };
   }
 
   componentDidCatch(error, errorInfo) {
