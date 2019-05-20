@@ -3,9 +3,11 @@
   "name": "operation-code",
   "alias": "operation-code.now.sh",
   "builds": [{ "src": "package.json", "use": "@now/next" }],
-  "env": {
-    "SENTRY_DSN": "@sentry-dsn",
-    "LOGROCKET_KEY": "@logrocket-key"
+  “build”: {
+    "env": {
+      "SENTRY_DSN": "@sentry-dsn",
+      "LOGROCKET_KEY": "@logrocket-key"
+    }
   },
   "routes": [
     {
