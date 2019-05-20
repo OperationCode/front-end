@@ -75,10 +75,11 @@ class OperationCodeApp extends App {
       pageProps = await Component.getInitialProps(ctx);
     }
 
-    const { SENTRY_DSN } = process.env;
-    const { LOGROCKET_KEY } = process.env;
-
-    return { pageProps, SENTRY_DSN, LOGROCKET_KEY };
+    return {
+      pageProps,
+      SENTRY_DSN: process.env.SENTRY_DSN,
+      LOGROCKET_KEY: process.env.LOGROCKET_KEY,
+    };
   }
 
   componentDidCatch(error, errorInfo) {
