@@ -8,7 +8,7 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
     className="content"
   >
     <h3
-      className="title"
+      className="title underline"
     >
       Sponsors
     </h3>
@@ -238,7 +238,7 @@ exports[`SponsorsSection should render with required props 1`] = `
     className="content"
   >
     <h3
-      className="title"
+      className="title underline"
     >
       Sponsors
     </h3>
