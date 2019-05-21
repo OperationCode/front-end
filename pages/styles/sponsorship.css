@@ -2,6 +2,12 @@
   text-align: justify;
 }
 
+.constrainDimensions {
+  justify-content: flex-start;
+  max-width: 350px;
+  height: 250px;
+}
+
 .badgeFormat {
   font-size: 1.5rem;
   font-weight: 550;
