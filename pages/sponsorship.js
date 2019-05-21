@@ -32,6 +32,7 @@ export default () => {
       <Content
         title="Become A Corporate Sponsor Today"
         theme="white"
+        hasTitleUnderline
         className={styles.justifyAlign}
         columns={[
           <p>
@@ -69,6 +70,7 @@ export default () => {
       <Content
         title="Engagement Opportunities"
         theme="white"
+        hasTitleUnderline
         className={styles.justifyAlign}
         columns={[
           <Card className={styles.constrainDimensions}>
