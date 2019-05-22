@@ -1,22 +1,11 @@
-.boardMembers,
-.foundingMembers {
+.boardMembers {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
   width: 100%;
 }
 
 .foundingMembers {
   padding: 2rem 0 0 0;
-}
-
-.staffMembers {
-  padding: 20px 0;
-}
-
-@media screen and (max-width: 840px) {
-  .boardMembers,
-  .staffMembers {
-    align-items: center;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 100%;
-  }
 }
