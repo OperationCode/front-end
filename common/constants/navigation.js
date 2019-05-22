@@ -52,10 +52,10 @@ export const navItems = [
     ...getInvolvedLink,
     shouldPrefetch: false,
     sublinks: [
-      {
-        name: 'Mentoring',
-        href: '/mentoring',
-      },
+      // {
+      //   name: 'Mentoring',
+      //   href: '/mentoring',
+      // },
       {
         name: 'Sponsorship',
         href: '/sponsorship',
