@@ -74,7 +74,7 @@
     "js-cookie": "^2.2.0",
     "jwt-decode": "^2.2.0",
     "lodash": "^4.17.11",
-    "logrocket": "^0.6.21",
+    "logrocket": "^1.0.0",
     "logrocket-react": "^3.0.0",
     "next": "^8.1.0",
     "next-cookies": "^1.1.2",
