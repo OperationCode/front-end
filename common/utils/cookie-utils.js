@@ -19,17 +19,19 @@ export const removeAuthCookies = () => {
   });
 };
 
-export const setAuthorizationHeader = () => {
-  const token = cookie.get('token');
-
+export const setAuthorizationHeader = (token = getAuthToken()) => {
   if (token) {
-    return { Authorization: `bearer ${token}` };
+    return { Authorization: `Bearer ${token}` };
   }
 
   return {};
 };
 
-export const isTokenValid = token => {
+export const getAuthToken = () => {
+  return cookie.get('token');
+};
+
+export const isTokenValid = (token = cookie.get('token')) => {
   if (token === undefined) {
     return false;
   }

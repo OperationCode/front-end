@@ -6,13 +6,15 @@ import { setAuthorizationHeader } from 'common/utils/cookie-utils';
 
 export const OperationCodeAPI = axios.create({ baseURL: apiUrl });
 
-export const get = async path => {
-  const result = await OperationCodeAPI.get(`/${path}`, {
-    headers: setAuthorizationHeader(),
+/**
+ * @param {string} path
+ * @param {{token: string}} options
+ * @returns {Promise<AxiosPromise<any>>}
+ */
+export const get = async (path, { token } = {}) =>
+  OperationCodeAPI.get(`/${path}`, {
+    headers: setAuthorizationHeader(token),
   });
-
-  return result;
-};
 
 export const post = async (path, body) => {
   const result = await OperationCodeAPI.post(`/${path}`, body, {

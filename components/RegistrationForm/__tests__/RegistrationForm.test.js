@@ -169,8 +169,7 @@ describe('RegistrationForm', () => {
 
     OperationCodeAPIMock.onPost('auth/registration/', {
       email: existingUser.email,
-      password1: existingUser.password,
-      password2: existingUser.password,
+      password: existingUser.password,
       firstName: existingUser.firstName,
       lastName: existingUser.lastName,
       zip: existingUser.zipcode,
@@ -195,13 +194,11 @@ describe('RegistrationForm', () => {
     const user = mockUser();
 
     OperationCodeAPIMock.onPost('auth/registration/', {
-      user: {
-        email: user.email,
-        password: user.password,
-        first_name: user.firstName,
-        last_name: user.lastName,
-        zip: user.zipcode,
-      },
+      email: user.email,
+      password: user.password,
+      firstName: user.firstName,
+      lastName: user.lastName,
+      zip: user.zipcode,
     }).reply(503);
 
     const successSpy = jest.fn();
