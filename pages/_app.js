@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import { compose } from 'redux';
 import ScrollUpButton from 'react-scroll-up-button';
 import withRedux from 'next-redux-wrapper';
+import ReactGA from 'react-ga';
 import LogRocket from 'logrocket';
 import setupLogRocketReact from 'logrocket-react';
 import * as Sentry from '@sentry/browser';
@@ -44,6 +45,7 @@ class OperationCodeApp extends App {
     if (isProduction) {
       Sentry.init({ dsn: process.env.SENTRY_DSN });
       LogRocket.init(`${process.env.LOGROCKET_KEY}/operation-code`);
+      ReactGA.initialize(process.env.GOOGLE_ANALYTICS_TRACKING_ID);
 
       // Every crash report will have a LogRocket session URL.
       LogRocket.getSessionURL(sessionURL => {
@@ -53,6 +55,8 @@ class OperationCodeApp extends App {
       });
 
       setupLogRocketReact(LogRocket);
+
+      ReactGA.set({ page: window.location.pathname });
     }
 
     if (Modal.setAppElement) {
@@ -113,6 +117,10 @@ class OperationCodeApp extends App {
       </Container>
     );
   }
+}
+
+if (isProduction) {
+  Router.events.on('routeChangeComplete', url => ReactGA.pageview(url));
 }
 
 // Fixes Next CSS route change bug: https://github.com/zeit/next-plugins/issues/282

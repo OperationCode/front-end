@@ -6,7 +6,8 @@
   "build": {
     "env": {
       "SENTRY_DSN": "@sentry-dsn",
-      "LOGROCKET_KEY": "@logrocket-key"
+      "LOGROCKET_KEY": "@logrocket-key",
+      "GOOGLE_ANALYTICS_TRACKING_ID": "@google-analytics-tracking-id"
     }
   },
   "routes": [
