@@ -187,7 +187,7 @@ export default class CodeSchools extends React.Component {
                     All Schools
                   </Button>,
                   <Button theme="primary" onClick={this.filterVaApproved}>
-                    VA Approved Schools
+                    Schools Accepting GI Bill
                   </Button>,
                   <Button theme="primary" onClick={this.filterOnline}>
                     Online Schools
