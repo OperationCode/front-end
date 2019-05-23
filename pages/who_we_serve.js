@@ -111,6 +111,26 @@ export default () => (
       ]}
     />
 
+    <Content
+      columns={[
+        <TrackVisibility offset={VISIBILITY_OFFSET}>
+          <ImageCard alt="" imageSource={`${s3}images/podcast-1.jpg`}>
+            <p className={styles.centeredText}>
+              Have a story to tell? Want to be inspired by some of our vets? Listen to our podcast!
+            </p>
+
+            <LinkButton
+              href="/podcasts"
+              analyticsEventLabel="Meetup.com Locations Link"
+              theme="secondary"
+            >
+              Listen here!
+            </LinkButton>
+          </ImageCard>
+        </TrackVisibility>,
+      ]}
+    />
+
     <JoinSection />
   </>
 );
