@@ -21,8 +21,8 @@ describe('code schools', function() {
     cy.get('[data-testid="SchoolCard Name: Tech Elevator"]').should('exist');
   });
 
-  it('only renders schools that accept GI Bill after clicking on "VA Approved Schools"', () => {
-    cy.contains('VA Approved Schools').click();
+  it('only renders relevant schools after clicking on "Schools Accepting GI Bill"', () => {
+    cy.contains('Schools Accepting GI Bill').click();
 
     cy.get('[data-testid="SchoolCard"]').each(card => {
       cy.wrap(card)
