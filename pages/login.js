@@ -31,7 +31,7 @@ class Login extends React.Component {
             </p>,
             <p>
               Forgot your password?&nbsp;
-              <Link href="/reset_password">
+              <Link href="/password_reset">
                 <a>Reset it</a>
               </Link>
               .

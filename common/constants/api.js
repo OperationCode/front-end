@@ -22,6 +22,12 @@ export const loginUser = ({ email, password }) =>
     password,
   }).then(({ data }) => data);
 
+export const passwordReset = ({ email }) =>
+  post('auth/password/reset/', { email }).then(({ data }) => data);
+
+export const passwordResetSubmit = values =>
+  post('auth/password_reset/confirm/', values).then(({ data }) => data);
+
 /* PATCH REQUESTS */
 export const updateUser = userInfo => {
   return patch('auth/profile', {
