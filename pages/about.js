@@ -120,6 +120,16 @@ export default () => (
             members of the military community.
           </p>
         </ImageCard>,
+        <ImageCard
+          alt="Operation Code Podcast"
+          className={styles.ImageCard}
+          imageSource={`${s3}photo-podcast-1.jpg`}
+        >
+          <a href="/podcasts">
+            <h6>Podcasts</h6>
+          </a>
+          <p>Listen to some of the incredible stories of our vets who transitioned into tech.</p>
+        </ImageCard>,
       ]}
     />
 
