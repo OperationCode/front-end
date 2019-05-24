@@ -1,17 +1,17 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { string, array, bool } from 'prop-types';
 import classNames from 'classnames';
 import Container from 'components/Container/Container';
 import styles from './Content.css';
 
 Content.propTypes = {
-  backgroundImageSource: PropTypes.string,
-  columns: PropTypes.array.isRequired, // can be JSX, elements, or strings
-  hasTitleUnderline: PropTypes.bool,
-  id: PropTypes.string,
-  isFullViewportHeight: PropTypes.bool,
-  theme: PropTypes.string,
-  title: PropTypes.string,
+  backgroundImageSource: string,
+  columns: array.isRequired, // can be JSX, elements, or strings
+  hasTitleUnderline: bool,
+  id: string,
+  isFullViewportHeight: bool,
+  theme: string,
+  title: string,
 };
 
 Content.defaultProps = {

@@ -1,24 +1,36 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Form/Input default 1`] = `
-<div
-  className="field"
->
-  <label
-    className="Label"
-    htmlFor="someInput"
+Array [
+  <h3
+    style={
+      Object {
+        "marginTop": "2rem",
+        "textAlign": "center",
+      }
+    }
   >
-    Some Input:
-  </label>
+    Please Note: This component's story has no context of Formik and will not function properly.
+  </h3>,
   <div
-    className="inputFeedBackGrouping"
+    className="field"
   >
-    <input
-      className="input"
-      id="someInput"
-      name="someInput"
-      type="text"
-    />
-  </div>
-</div>
+    <label
+      className="Label"
+      htmlFor="someInput"
+    >
+      Some Input:
+    </label>
+    <div
+      className="inputFeedbackGrouping"
+    >
+      <input
+        className="Input"
+        id="someInput"
+        name="someInput"
+        type="text"
+      />
+    </div>
+  </div>,
+]
 `;

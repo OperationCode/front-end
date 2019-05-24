@@ -3,19 +3,19 @@
 module.exports = {
   // Output generated for component's definition file
   buildJS: componentName =>
-    `import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+    `import React from 'react';
+import { oneofType, arrayOf, element, string, node } from 'prop-types';
 import classNames from 'classnames';
 import styles from './${componentName}.css';
 
-export default class ${componentName} extends Component {
+export default class ${componentName} extends React.Component {
   static propTypes = {
-    children: PropTypes.oneOfType([
-      PropTypes.arrayOf(PropTypes.node),
-      PropTypes.element,
-      PropTypes.string,
+    children: oneOfType([
+      arrayOf(node),
+      element,
+      string,
     ]).isRequired,
-    className: PropTypes.string,
+    className: string,
   };
 
   static defaultProps = {
@@ -48,7 +48,7 @@ storiesOf('${componentName}', module)
     'default',
     withInfo()(() => (
       <${componentName}>
-        {text('children', 'PropTypes.string or .node')}
+        {text('children', 'string or .node')}
       </${componentName}>
     )),
   );

@@ -1,4 +1,5 @@
 import { get, post, patch } from 'common/utils/api-utils';
+import { formatUserData } from 'common/utils/formatters';
 
 /* GET REQUESTS */
 export const getCodeSchoolsPromise = () => get('code_schools');
@@ -41,6 +42,12 @@ export const postMentorRequestPromise = ({ language, additionalDetails, mentor, 
   });
 
 /* PATCH REQUESTS */
+export const updateUser = userInfo => {
+  return patch('users', {
+    user: { ...formatUserData(userInfo) },
+  }).then(({ data }) => data);
+};
+
 export const patchUpdateMentorRequestPromise = ({ request, status, mentor }) =>
   patch(`requests/${request}`, {
     request: {

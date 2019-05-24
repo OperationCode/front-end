@@ -2,7 +2,7 @@
   margin: 1rem;
 }
 
-.input {
+.Input {
   border: 1px solid rgba(var(--rgbValuesSecondary), 0.5);
   border-radius: 3px;
   font-size: 1.125rem;
@@ -12,17 +12,23 @@
   min-width: 200px;
 }
 
-.input:focus {
+.Input:focus {
   border-color: var(--primary);
   box-shadow: 0 0 1px 1px rgba(var(--rgbValuesPrimary), 0.75);
   outline: none;
 }
 
-/* error message element */
-.inputFeedBackGrouping > div {
-  color: var(--errorDeep);
-  font-size: 0.825rem;
-  max-width: 202px; /* so that aside content doesn't span past width of input */
+.Input:disabled {
+  opacity: 0.6;
+}
+
+.Input:disabled:hover {
+  cursor: not-allowed;
+}
+
+.errorMessage {
+  /* Alert's border is only 1px - not 2px (account for Input's left and right border) */
+  max-width: calc(inherit + 2px);
 }
 
 .valid {
@@ -35,12 +41,4 @@
   border-color: var(--errorDeep);
   box-shadow: 0 0 1px 1px var(--errorDeep);
   outline: none;
-}
-
-.input:disabled {
-  opacity: 0.6;
-}
-
-.input:disabled:hover {
-  cursor: not-allowed;
 }

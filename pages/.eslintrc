@@ -3,6 +3,20 @@
     "React": true
   },
   "rules": {
-    "no-restricted-imports": ["error", "react"]
+    "no-restricted-imports": [
+      "error",
+      {
+        "paths": [
+          {
+            "name": "react-select",
+            "message": "Please use `components/Form/Select/ThemedReactSelect` instead."
+          },
+          {
+            "name": "react",
+            "message": "React is globally availble for all page files."
+          }
+        ]
+      }
+    ]
   }
 }

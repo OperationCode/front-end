@@ -1,8 +1,14 @@
 {
   "version": 2,
-  "builds": [{ "src": "package.json", "use": "@now/next" }],
   "name": "operation-code",
   "alias": "operation-code.now.sh",
+  "builds": [{ "src": "package.json", "use": "@now/next" }],
+  "build": {
+    "env": {
+      "SENTRY_DSN": "@sentry-dsn",
+      "LOGROCKET_KEY": "@logrocket-key"
+    }
+  },
   "routes": [
     {
       "src": "/_next/static/(?:[^/]+/pages|chunks|runtime|css|fonts)/.+",

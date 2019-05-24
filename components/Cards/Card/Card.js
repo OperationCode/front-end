@@ -1,12 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { bool, node, string } from 'prop-types';
 import classNames from 'classnames';
+import { getDataAttributes } from 'common/utils/prop-utils';
 import styles from './Card.css';
 
 Card.propTypes = {
-  children: PropTypes.node.isRequired,
-  className: PropTypes.string,
-  hasAnimationOnHover: PropTypes.bool,
+  children: node.isRequired,
+  className: string,
+  hasAnimationOnHover: bool,
 };
 
 Card.defaultProps = {
@@ -14,10 +15,13 @@ Card.defaultProps = {
   hasAnimationOnHover: false,
 };
 
-function Card({ children, className, hasAnimationOnHover }) {
+function Card({ children, className, hasAnimationOnHover, ...props }) {
+  const customDataAttributes = getDataAttributes(props);
+
   return (
     <article
       className={classNames(styles.Card, className, { [styles.animatedCard]: hasAnimationOnHover })}
+      {...customDataAttributes}
     >
       {children}
     </article>

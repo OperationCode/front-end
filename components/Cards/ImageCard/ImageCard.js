@@ -1,15 +1,15 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { bool, node, string } from 'prop-types';
 import classNames from 'classnames';
 import Card from 'components/Cards/Card/Card';
 import styles from './ImageCard.css';
 
 ImageCard.propTypes = {
-  alt: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired,
-  className: PropTypes.string,
-  imageSource: PropTypes.string.isRequired,
-  isImageFirst: PropTypes.bool,
+  alt: string.isRequired,
+  children: node.isRequired,
+  className: string,
+  imageSource: string.isRequired,
+  isImageFirst: bool,
 };
 
 ImageCard.defaultProps = {

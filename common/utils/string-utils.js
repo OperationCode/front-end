@@ -16,6 +16,22 @@ function capitalizeFirstLetter(someString = '') {
   return stringCopy.charAt(0).toUpperCase() + stringCopy.slice(1);
 }
 
+/**
+ * @description Return undefined if passed string is empty, otherwise pass the string thru
+ *
+ * @export
+ * @param {string} someString
+ * @returns {(undefined|string)} undefined or string
+ */
+function coerceEmptyStringToUndefined(someString) {
+  if (someString === '') {
+    return undefined;
+  }
+
+  return someString;
+}
+
 module.exports = {
   capitalizeFirstLetter,
+  coerceEmptyStringToUndefined,
 };

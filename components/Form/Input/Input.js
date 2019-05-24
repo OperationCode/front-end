@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { shape, string, number, object, objectOf, oneOfType, bool, oneOf } from 'prop-types';
 import classNames from 'classnames';
 import { ErrorMessage } from 'formik';
 import Alert from 'components/Alert/Alert';
@@ -7,17 +7,20 @@ import Label from 'components/Form/Label/Label';
 import styles from './Input.css';
 
 Input.propTypes = {
-  field: PropTypes.shape({
-    name: PropTypes.string.isRequired,
+  field: shape({
+    name: string.isRequired,
   }).isRequired,
-  form: PropTypes.shape({
-    touched: PropTypes.objectOf(PropTypes.bool),
-    errors: PropTypes.objectOf(PropTypes.string),
+  form: shape({
+    // TODO: Resolve why multiselects can end up with touched: { key: array }
+    // see ThemedReactSelect as well
+    // touched: objectOf(bool).isRequired,
+    touched: object.isRequired,
+    errors: objectOf(string),
   }).isRequired,
-  isLabelHidden: PropTypes.bool,
-  id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  label: PropTypes.string.isRequired,
-  type: PropTypes.oneOf([
+  isLabelHidden: bool,
+  id: oneOfType([string, number]),
+  label: string.isRequired,
+  type: oneOf([
     'button',
     'checkbox',
     'color',
@@ -71,11 +74,11 @@ function Input({
         </Label>
       )}
 
-      <div className={styles.inputFeedBackGrouping}>
+      <div className={styles.inputFeedbackGrouping}>
         <input
           {...field}
           {...props}
-          className={classNames(styles.input, {
+          className={classNames(styles.Input, {
             [styles.valid]: touched[name] && !hasErrors,
             [styles.invalid]: touched[name] && hasErrors,
           })}
@@ -84,7 +87,14 @@ function Input({
           type={type}
         />
 
-        <ErrorMessage name={name} render={message => <Alert isOpen={hasErrors}>{message}</Alert>} />
+        <ErrorMessage
+          name={name}
+          render={message => (
+            <Alert isOpen={hasErrors} className={styles.errorMessage}>
+              {message}
+            </Alert>
+          )}
+        />
       </div>
 
       {isLabelAfterInput && (

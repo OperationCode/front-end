@@ -1,0 +1,32 @@
+.justifyAlign {
+  text-align: justify;
+}
+
+.constrainDimensions {
+  justify-content: flex-start;
+  max-width: 350px;
+  height: 250px;
+}
+
+.badgeFormat {
+  font-size: 1.5rem;
+  font-weight: 550;
+  margin-top: 1.5rem;
+}
+
+.gold {
+  color: #ffaa22;
+}
+
+.silver {
+  color: silver;
+}
+
+.bronze {
+  color: #cd7f32;
+}
+
+.paragraphFormat {
+  text-align: justify;
+  padding: 0 2rem;
+}

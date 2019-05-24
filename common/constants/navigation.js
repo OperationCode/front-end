@@ -51,7 +51,20 @@ export const navItems = [
   {
     ...getInvolvedLink,
     shouldPrefetch: false,
-    sublinks: [],
+    sublinks: [
+      // {
+      //   name: 'Mentoring',
+      //   href: '/mentoring',
+      // },
+      {
+        name: 'Sponsorship',
+        href: '/sponsorship',
+      },
+      {
+        name: 'Leadership Circle',
+        href: '/leadership_circle',
+      },
+    ],
   },
 ];
 
@@ -74,6 +87,10 @@ export const footerItems = {
       name: 'Job Board',
     },
     eventsLink,
+    {
+      href: '/who_we_serve',
+      name: 'Who We Serve',
+    },
   ],
   column3: [
     getInvolvedLink,
@@ -105,9 +122,8 @@ export const footerItems = {
       name: 'Branding',
     },
     {
-      // TODO: move this to column 2 when column 4 has 3 items
-      href: '/who_we_serve',
-      name: 'Who We Serve',
+      href: '/team',
+      name: 'Team',
     },
     // {
     //   href: '/blog',

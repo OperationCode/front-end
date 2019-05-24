@@ -3,9 +3,20 @@
 exports[`Storyshots Cards/SchoolCard with many locations 1`] = `
 <article
   className="Card SchoolCard"
+  data-testid="SchoolCard"
 >
+  <span
+    className="ScreenReaderOnly"
+  >
+    <h6
+      data-testid="SchoolCard Name: General Assembly"
+    >
+      General Assembly
+    </h6>
+  </span>
   <div
     className="giBillRibbon"
+    data-testid="GI Bill Ribbon"
   >
     GI Bill
   </div>
@@ -32,7 +43,9 @@ exports[`Storyshots Cards/SchoolCard with many locations 1`] = `
       <figure
         className="Badge badgeGroupItem active"
       >
-        <svg />
+        <svg
+          data-testid="School has online"
+        />
         <figcaption
           className="label"
         >
@@ -137,7 +150,17 @@ exports[`Storyshots Cards/SchoolCard with many locations 1`] = `
 exports[`Storyshots Cards/SchoolCard with no physical locations 1`] = `
 <article
   className="Card SchoolCard"
+  data-testid="SchoolCard"
 >
+  <span
+    className="ScreenReaderOnly"
+  >
+    <h6
+      data-testid="SchoolCard Name: Thinkful"
+    >
+      Thinkful
+    </h6>
+  </span>
   <div
     className="cardBrand"
   >
@@ -161,7 +184,9 @@ exports[`Storyshots Cards/SchoolCard with no physical locations 1`] = `
       <figure
         className="Badge badgeGroupItem active"
       >
-        <svg />
+        <svg
+          data-testid="School has online"
+        />
         <figcaption
           className="label"
         >
@@ -257,7 +282,17 @@ exports[`Storyshots Cards/SchoolCard with no physical locations 1`] = `
 exports[`Storyshots Cards/SchoolCard with one location 1`] = `
 <article
   className="Card SchoolCard"
+  data-testid="SchoolCard"
 >
+  <span
+    className="ScreenReaderOnly"
+  >
+    <h6
+      data-testid="SchoolCard Name: Code Immersives"
+    >
+      Code Immersives
+    </h6>
+  </span>
   <div
     className="cardBrand"
   >
@@ -281,7 +316,9 @@ exports[`Storyshots Cards/SchoolCard with one location 1`] = `
       <figure
         className="Badge badgeGroupItem"
       >
-        <svg />
+        <svg
+          data-testid="School has no online"
+        />
         <figcaption
           className="label"
         >

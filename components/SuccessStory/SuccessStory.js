@@ -1,11 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { string } from 'prop-types';
 import styles from './SuccessStory.css';
 
 SuccessStory.propTypes = {
-  imageSource: PropTypes.string.isRequired,
-  quote: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
+  imageSource: string.isRequired,
+  quote: string.isRequired,
+  title: string.isRequired,
 };
 
 function SuccessStory({ imageSource, quote, title }) {

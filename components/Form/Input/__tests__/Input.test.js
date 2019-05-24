@@ -21,8 +21,8 @@ describe('Input', () => {
     createSnapshotTest(<Input {...requiredProps} />);
   });
 
-  it('should render with label', () => {
-    const wrapper = shallow(<Input {...requiredProps} />);
+  it('should render with label, even if hidden', () => {
+    const wrapper = shallow(<Input {...requiredProps} isLabelHidden />);
 
     expect(wrapper).toContainExactlyOneMatchingElement('Label');
   });
