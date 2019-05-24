@@ -114,17 +114,13 @@ export default () => (
     <Content
       columns={[
         <TrackVisibility offset={VISIBILITY_OFFSET}>
-          <ImageCard alt="" imageSource={`${s3}images/podcast-1.jpg`}>
+          <ImageCard alt="" imageSource={`${s3}image_unavailable_placeholder.png`}>
             <p className={styles.centeredText}>
-              Have a story to tell? Want to be inspired by some of our vets? Listen to our podcast!
+              Have a story to tell? Want to be inspired by some of our vets?
             </p>
 
-            <LinkButton
-              href="/podcasts"
-              analyticsEventLabel="Meetup.com Locations Link"
-              theme="secondary"
-            >
-              Listen here!
+            <LinkButton href="/podcasts" analyticsEventLabel="Podcasts Link" theme="secondary">
+              Listen to our podcast!
             </LinkButton>
           </ImageCard>
         </TrackVisibility>,
