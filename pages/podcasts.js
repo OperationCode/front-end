@@ -1,5 +1,4 @@
 // TODO: Add google/apple podcast buttons to page
-
 import Head from 'components/head';
 import Card from 'components/Cards/Card/Card';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
@@ -8,6 +7,7 @@ import Link from 'next/link';
 import FAQItem from 'components/FAQ/FAQItem/FAQItem';
 // TODO: to be replaced by data for podcasts
 import QuestionAnswerData from 'components/FAQ/questions';
+import ReactAudioPlayer from 'react-audio-player';
 import styles from './styles/about.css';
 
 export default () => {
@@ -36,6 +36,13 @@ export default () => {
         columns={[
           <>
             <Card>
+              <ReactAudioPlayer
+                title=""
+                art="" // podcast image
+                source="" // podcast Link
+                autoPlay
+                controls
+              />
               {/* inserting iframe from libsyn will position the podcast within the card */}
             </Card>
 
