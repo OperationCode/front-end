@@ -4,7 +4,9 @@ import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
 import PasswordResetSubmitForm from 'components/PasswordResetSubmitForm/PasswordResetSubmitForm';
+import Alert from 'components/Alert/Alert';
 import { passwordResetSubmit } from 'common/constants/api';
+import styles from '../styles/password_reset.css';
 
 class PasswordResetConfirm extends React.Component {
   static propTypes = {
@@ -13,7 +15,7 @@ class PasswordResetConfirm extends React.Component {
   };
 
   state = {
-    success: false,
+    didReset: false,
   };
 
   static async getInitialProps({ query: { uid, token } }) {
@@ -21,15 +23,15 @@ class PasswordResetConfirm extends React.Component {
   }
 
   onSuccess = () => {
-    this.setState({ success: true });
+    this.setState({ didReset: true });
   };
 
   getContent = () => {
-    const { success } = this.state;
+    const { didReset } = this.state;
 
-    if (success) {
+    if (didReset) {
       return (
-        <div>
+        <div className={styles.centerAlign}>
           <p>You password has been reset with the new password.</p>
           <Link href="/login">
             <a>Click here to Login</a>
@@ -37,10 +39,11 @@ class PasswordResetConfirm extends React.Component {
         </div>
       );
     }
+
     const { uid, token } = this.props;
 
     if (!uid || !token) {
-      return <p>The provided credentials were either invalid or expired.</p>;
+      return <Alert>The provided credentials were either invalid or expired.</Alert>;
     }
 
     return (

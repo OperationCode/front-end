@@ -54,13 +54,7 @@ export default class PasswordResetSubmitForm extends React.Component {
       await onSuccess();
     } catch (error) {
       actions.setSubmitting(false);
-      if (error.response && error.response.status === 400) {
-        this.setState({
-          errorMessage: 'Could not reset password.  Reset token expired or invalid',
-        });
-      } else {
-        this.setState({ errorMessage: getErrorMessage(error) });
-      }
+      this.setState({ errorMessage: getErrorMessage(error) });
     }
   };
 
