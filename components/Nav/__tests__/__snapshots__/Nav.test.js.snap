@@ -3,7 +3,64 @@
 exports[`Nav should render with no props passed 1`] = `
 <NavMobile
   closeMenu={[Function]}
+  isLoggedIn={false}
   isMenuVisible={false}
+  logout={[Function]}
+  navLinks={
+    Array [
+      Object {
+        "href": "/about",
+        "name": "About Us",
+        "shouldPrefetch": false,
+        "sublinks": Array [
+          Object {
+            "href": "/contact",
+            "name": "Contact Us",
+          },
+          Object {
+            "href": "/faq",
+            "name": "FAQ",
+          },
+        ],
+      },
+      Object {
+        "href": "/events",
+        "name": "Events",
+        "shouldPrefetch": false,
+        "sublinks": Array [],
+      },
+      Object {
+        "href": "/get_involved",
+        "name": "Get Involved",
+        "shouldPrefetch": false,
+        "sublinks": Array [
+          Object {
+            "href": "/sponsorship",
+            "name": "Sponsorship",
+          },
+          Object {
+            "href": "/leadership_circle",
+            "name": "Leadership Circle",
+          },
+        ],
+      },
+      Object {
+        "href": "/who_we_serve",
+        "name": "Who We Serve",
+        "shouldPrefetch": false,
+        "sublinks": Array [
+          Object {
+            "href": "/login",
+            "name": "Member Login",
+          },
+          Object {
+            "href": "/join",
+            "name": "Join",
+          },
+        ],
+      },
+    ]
+  }
   openMenu={[Function]}
 />
 `;
@@ -52,23 +109,6 @@ exports[`Nav should render with props passed 1`] = `
           }
         />
         <NavListItem
-          href="/who_we_serve"
-          name="Who We Serve"
-          shouldPrefetch={false}
-          sublinks={
-            Array [
-              Object {
-                "href": "/login",
-                "name": "Member Login",
-              },
-              Object {
-                "href": "/join",
-                "name": "Join",
-              },
-            ]
-          }
-        />
-        <NavListItem
           href="/events"
           name="Events"
           shouldPrefetch={false}
@@ -87,6 +127,23 @@ exports[`Nav should render with props passed 1`] = `
               Object {
                 "href": "/leadership_circle",
                 "name": "Leadership Circle",
+              },
+            ]
+          }
+        />
+        <NavListItem
+          href="/who_we_serve"
+          name="Who We Serve"
+          shouldPrefetch={false}
+          sublinks={
+            Array [
+              Object {
+                "href": "/login",
+                "name": "Member Login",
+              },
+              Object {
+                "href": "/join",
+                "name": "Join",
               },
             ]
           }

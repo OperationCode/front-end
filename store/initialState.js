@@ -1,4 +1,5 @@
 export default {
+  isLoggedIn: false,
   screenSize: {
     width: null,
     height: null,

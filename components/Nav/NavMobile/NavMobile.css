@@ -80,4 +80,6 @@
   background: none;
   border: none;
   cursor: pointer;
+  letter-spacing: normal;
+  padding: 0;
 }

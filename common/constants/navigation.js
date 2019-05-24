@@ -21,27 +21,28 @@ const eventsLink = {
   href: '/events',
 };
 
+export const loginLinks = {
+  name: 'Who We Serve',
+  href: '/who_we_serve',
+  shouldPrefetch: false,
+  sublinks: [
+    {
+      name: 'Member Login',
+      href: '/login',
+    },
+    {
+      name: 'Join',
+      href: '/join',
+    },
+  ],
+};
+
 export const navItems = [
   {
     name: 'About Us',
     href: '/about',
     shouldPrefetch: false,
     sublinks: [contactLink, faqLink],
-  },
-  {
-    name: 'Who We Serve',
-    href: '/who_we_serve',
-    shouldPrefetch: false,
-    sublinks: [
-      {
-        name: 'Member Login',
-        href: '/login',
-      },
-      {
-        name: 'Join',
-        href: '/join',
-      },
-    ],
   },
   {
     ...eventsLink,
