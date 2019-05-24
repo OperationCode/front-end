@@ -6,7 +6,7 @@ import Content from 'components/Content/Content';
 import FAQItem from 'components/FAQ/FAQItem/FAQItem';
 import PodcastData from 'components/podcasts/podcastsdata';
 import ReactAudioPlayer from 'react-audio-player';
-import { s3 } from 'common/constants/urls';
+// import { s3 } from 'common/constants/urls';
 import styles from './styles/podcast.css';
 
 export default () => {
@@ -55,20 +55,20 @@ export default () => {
       <Content
         title="Episodes"
         theme="white"
-        columns={PodcastData.general.map(faq => (
+        columns={PodcastData.general.map(episode => (
           <ImageCard
             alt="Default podcast Image"
             className={styles.content}
-            imageSource={`${s3}image_unavailable_placeholder.png`}
+            imageSource={episode.image}
           >
             <ReactAudioPlayer
               // title="Title"
               // art="http://static.libsyn.com/p/assets/2/0/a/3/20a3052760331f2c/Logo-resized.png" // podcast image
-              src={faq.source} // podcast Link
+              src={episode.source} // podcast Link
               // autoPlay
               controls
             />
-            <FAQItem question={faq.name} answer={faq.story} key={faq.name} />
+            <FAQItem question={episode.name} answer={episode.story} key={episode.name} />
           </ImageCard>
         ))}
         // columns={[
