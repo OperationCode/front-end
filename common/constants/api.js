@@ -25,11 +25,12 @@ export const loginUser = ({ email, password }) =>
 export const loginGoogleUser = ({ accessToken }) => {
   return post('auth/social/google/', { accessToken }).then(({ data }) => data);
 };
+
 export const passwordReset = ({ email }) =>
   post('auth/password/reset/', { email }).then(({ data }) => data);
 
 export const passwordResetSubmit = values =>
-  post('auth/password_reset/confirm/', values).then(({ data }) => data);
+  post('auth/password/reset/confirm/', values).then(({ data }) => data);
 
 /* PATCH REQUESTS */
 export const updateUser = userInfo => {
