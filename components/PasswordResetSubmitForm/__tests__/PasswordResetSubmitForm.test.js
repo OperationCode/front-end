@@ -6,14 +6,13 @@ import PasswordResetSubmitForm from '../PasswordResetSubmitForm';
 
 describe('PasswordResetSubmitForm', () => {
   it('should render with required props', () => {
-    createSnapshotTest(<PasswordResetSubmitForm>Test</PasswordResetSubmitForm>);
-  });
-
-  it('should render with many props assigned', () => {
     createSnapshotTest(
-      <PasswordResetSubmitForm className="test-class">
-        Test
-      </PasswordResetSubmitForm>,
+      <PasswordResetSubmitForm
+        onSuccess={jest.fn()}
+        passwordResetSubmit={jest.fn()}
+        token="testToken"
+        uid="testUID"
+      />,
     );
   });
 });

@@ -6,12 +6,8 @@ import PasswordResetForm from '../PasswordResetForm';
 
 describe('PasswordResetForm', () => {
   it('should render with required props', () => {
-    createSnapshotTest(<PasswordResetForm>Test</PasswordResetForm>);
-  });
-
-  it('should render with many props assigned', () => {
     createSnapshotTest(
-      <PasswordResetForm className="test-class">
+      <PasswordResetForm onSuccess={jest.fn()} passwordReset={jest.fn()}>
         Test
       </PasswordResetForm>,
     );
