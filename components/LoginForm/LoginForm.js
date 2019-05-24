@@ -4,8 +4,6 @@ import { Formik, Field } from 'formik';
 import * as Yup from 'yup';
 import { getServerErrorMessage } from 'common/utils/api-utils';
 import { validationErrorMessages } from 'common/constants/messages';
-import { minimumPasswordLength } from 'common/constants/validations';
-import { isMinPasswordStrength } from 'common/utils/validator-utils';
 import Button from 'components/Button/Button';
 import Form from 'components/Form/Form';
 import Input from 'components/Form/Input/Input';
@@ -22,10 +20,7 @@ const loginSchema = Yup.object().shape({
   email: Yup.string()
     .required(validationErrorMessages.required)
     .email(validationErrorMessages.email),
-  password: Yup.string()
-    .required(validationErrorMessages.required)
-    .min(minimumPasswordLength, validationErrorMessages.length(minimumPasswordLength))
-    .test('password-strength', validationErrorMessages.password, isMinPasswordStrength),
+  password: Yup.string().required(validationErrorMessages.required),
 });
 
 class LoginForm extends Component {
