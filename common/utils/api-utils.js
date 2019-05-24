@@ -16,21 +16,21 @@ export const get = async (path, { token } = {}) =>
     headers: setAuthorizationHeader(token),
   });
 
-export const post = async (path, body) => {
-  const result = await OperationCodeAPI.post(`/${path}`, body, {
-    headers: setAuthorizationHeader(),
+/**
+ * @param {string} path
+ * @param {{any}} body
+ * @param {{noAuth?: boolean}}options
+ * @returns {Promise<AxiosResponse<any>>}
+ */
+export const post = async (path, body, { noAuth } = {}) =>
+  OperationCodeAPI.post(`/${path}`, body, {
+    headers: noAuth ? {} : setAuthorizationHeader(),
   });
 
-  return result;
-};
-
-export const patch = async (path, body) => {
-  const result = await OperationCodeAPI.patch(`/${path}`, body, {
+export const patch = async (path, body) =>
+  OperationCodeAPI.patch(`/${path}`, body, {
     headers: setAuthorizationHeader(),
   });
-
-  return result;
-};
 
 /**
  * @description Take an expected server error object and return its error. If object is unexpected,

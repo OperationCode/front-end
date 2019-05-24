@@ -17,14 +17,17 @@ export const createUser = ({ email, password, firstName, lastName, zipcode }) =>
   }).then(({ data }) => data);
 
 export const loginUser = ({ email, password }) =>
-  post('auth/login/', {
-    email,
-    password,
-  }).then(({ data }) => data);
+  post(
+    'auth/login/',
+    {
+      email,
+      password,
+    },
+    { noAuth: true },
+  ).then(({ data }) => data);
 
-export const loginGoogleUser = ({ accessToken }) => {
-  return post('auth/social/google/', { accessToken }).then(({ data }) => data);
-};
+export const loginSocial = (provider, body) =>
+  post(`auth/social/${provider}/`, body, { noAuth: true }).then(({ data }) => data);
 
 export const passwordReset = ({ email }) =>
   post('auth/password/reset/', { email }).then(({ data }) => data);
