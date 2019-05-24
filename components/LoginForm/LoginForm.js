@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { func, shape, string } from 'prop-types';
 import { Formik, Field } from 'formik';
 import * as Yup from 'yup';
-import { getErrorMessage } from 'common/utils/api-utils';
+import { getServerErrorMessage } from 'common/utils/api-utils';
 import { validationErrorMessages } from 'common/constants/messages';
 import { minimumPasswordLength } from 'common/constants/validations';
 import { isMinPasswordStrength } from 'common/utils/validator-utils';
@@ -69,7 +69,7 @@ class LoginForm extends Component {
     } catch (error) {
       actions.setSubmitting(false);
 
-      this.setState({ errorMessage: getErrorMessage(error) });
+      this.setState({ errorMessage: getServerErrorMessage(error) });
     }
   };
 

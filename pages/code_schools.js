@@ -1,6 +1,6 @@
 import { array, string } from 'prop-types';
 import Head from 'components/head';
-import { getErrorMessage } from 'common/utils/api-utils';
+import { getServerErrorMessage } from 'common/utils/api-utils';
 import ThemedReactSelect from 'components/Form/Select/ThemedReactSelect';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
@@ -47,7 +47,7 @@ export default class CodeSchools extends React.Component {
         allSchools: data,
       };
     } catch (error) {
-      return { errorMessage: getErrorMessage(error) };
+      return { errorMessage: getServerErrorMessage(error) };
     }
   }
 

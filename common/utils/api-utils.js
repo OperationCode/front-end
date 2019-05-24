@@ -38,7 +38,7 @@ export const patch = async (path, body) => {
  * @param {Error} errorObject
  * @returns {string} A user-facing error message
  */
-export const getErrorMessage = errorObject => {
+export const getServerErrorMessage = errorObject => {
   // _.get's third argument is the default message
   // if errorObject.response.data.error doesn't resolve, it means that the server is down
   const errorMessage = lodashGet(
