@@ -22,6 +22,9 @@ export const loginUser = ({ email, password }) =>
     password,
   }).then(({ data }) => data);
 
+export const loginGoogleUser = ({ accessToken }) => {
+  return post('auth/social/google/', { accessToken }).then(({ data }) => data);
+};
 export const passwordReset = ({ email }) =>
   post('auth/password/reset/', { email }).then(({ data }) => data);
 
