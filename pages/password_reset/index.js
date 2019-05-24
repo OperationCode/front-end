@@ -2,8 +2,8 @@ import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
 import PasswordResetForm from 'components/PasswordResetForm/PasswordResetForm';
+import Alert from 'components/Alert/Alert';
 import { passwordReset } from 'common/constants/api';
-import Alert from '../../components/Alert/Alert';
 
 class PasswordReset extends React.Component {
   state = {

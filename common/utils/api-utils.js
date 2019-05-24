@@ -18,18 +18,24 @@ export const get = async (path, { token } = {}) =>
 
 /**
  * @param {string} path
- * @param {{any}} body
- * @param {{noAuth?: boolean}}options
+ * @param {?Object.<string, any>} body
+ * @param {{token: string}} options
  * @returns {Promise<AxiosResponse<any>>}
  */
-export const post = async (path, body, { noAuth } = {}) =>
+export const post = async (path, body, { token } = {}) =>
   OperationCodeAPI.post(`/${path}`, body, {
-    headers: noAuth ? {} : setAuthorizationHeader(),
+    headers: setAuthorizationHeader(token),
   });
 
-export const patch = async (path, body) =>
+/**
+ * @param {string} path
+ * @param {?Object.<string, any>} body
+ * @param {{token: string}} options
+ * @returns {Promise<AxiosResponse<any>>}
+ */
+export const patch = async (path, body, { token } = {}) =>
   OperationCodeAPI.patch(`/${path}`, body, {
-    headers: setAuthorizationHeader(),
+    headers: setAuthorizationHeader(token),
   });
 
 /**

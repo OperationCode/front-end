@@ -20,7 +20,7 @@ export const removeAuthCookies = () => {
 };
 
 export const setAuthorizationHeader = (token = getAuthToken()) => {
-  if (token) {
+  if (isTokenValid(token)) {
     return { Authorization: `Bearer ${token}` };
   }
 

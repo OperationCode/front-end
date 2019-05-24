@@ -1,7 +1,7 @@
 import React from 'react';
 import { string, func } from 'prop-types';
-import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props';
 import classNames from 'classnames';
+import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props';
 import GoogleLogin from 'react-google-login';
 import { googleKey, facebookKey } from 'common/config/environment';
 import Alert from 'components/Alert/Alert';
@@ -48,6 +48,7 @@ class SocialLoginGroup extends React.Component {
               </button>
             )}
           />
+
           <FacebookLogin
             appId={facebookKey}
             callback={onSocialSuccess('facebook')}
@@ -62,6 +63,7 @@ class SocialLoginGroup extends React.Component {
             )}
           />
         </div>
+
         <div className={styles.flexRow}>
           <Alert isOpen={Boolean(errorMessage)} type="error">
             {errorMessage}
