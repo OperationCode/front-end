@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots podcasts default 1`] = `
+<podcasts>
+  PropTypes.string or .node
+</podcasts>
+`;

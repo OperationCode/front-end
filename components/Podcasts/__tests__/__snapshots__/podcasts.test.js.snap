@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`podcasts should render with many props assigned 1`] = `
+<podcasts
+  className="test-class"
+>
+  Test
+</podcasts>
+`;
+
+exports[`podcasts should render with required props 1`] = `
+<podcasts>
+  Test
+</podcasts>
+`;
