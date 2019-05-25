@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import styles from './podcasts.css';
 
-export default class podcasts extends Component {
+class Podcasts extends Component {
   static propTypes = {
     children: PropTypes.oneOfType([
       PropTypes.arrayOf(PropTypes.node),
@@ -23,3 +23,5 @@ export default class podcasts extends Component {
     return <div className={classNames(props.className, styles.podcasts)}>{props.children}</div>;
   }
 }
+
+export default Podcasts;
