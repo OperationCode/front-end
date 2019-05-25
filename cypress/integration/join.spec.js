@@ -29,7 +29,7 @@ describe('register', function() {
 
     cy.wait('@postRegister');
 
-    cy.url().should('contain', '/profile/update');
+    cy.url({ timeout: 5000 }).should('contain', '/profile/update');
     cy.get('h1').should('have.text', 'Update Profile');
 
     cy.getCookies().then(cookies => {
