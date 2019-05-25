@@ -9,11 +9,12 @@ const podcastdata = {
 
 parser.parseURL('http://operationcode.libsyn.com/rss', (error, feed) => {
   feed.items.forEach(entry => {
+    console.log(entry);
     podcastdata.general.push({
       image: entry.itunes.image,
       source: entry.link,
       name: entry.title,
-      story: entry.content,
+      story: entry.contentSnippet,
     });
   });
 });

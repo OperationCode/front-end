@@ -22,36 +22,6 @@ export default () => {
         their transition to careers to technology.
       </HeroBanner>
 
-      {/* <Content
-        title="Episodes"
-        theme="white"
-        columns={QuestionAnswerData.general.map(faq => (
-          <FAQItem question={faq.question} answer={faq.answer} key={faq.question} />
-        ))}
-      /> */}
-
-      {/* <Content
-        title="Episodes"
-        theme="white"
-        columns={[
-          <>
-            <Card>
-              <ReactAudioPlayer
-                title="Title"
-                art="http://static.libsyn.com/p/assets/2/0/a/3/20a3052760331f2c/Logo-resized.png" // podcast image
-                src="http://traffic.libsyn.com/operationcode/Mike.mp3" // podcast Link
-                // autoPlay
-                controls
-              />
-
-              <p className={styles.justifyAlign}>
-                We at Operation Code strive to provide an efficient way into a tech career for
-                veterans and their families.
-              </p>
-            </Card>
-          </>,
-        ]}
-      /> */}
       <Content
         title="Episodes"
         theme="white"
@@ -63,35 +33,14 @@ export default () => {
           >
             <ReactAudioPlayer
               // title="Title"
-              // art="http://static.libsyn.com/p/assets/2/0/a/3/20a3052760331f2c/Logo-resized.png" // podcast image
-              src={episode.source} // podcast Link
+              src={episode.source}
               // autoPlay
               controls
             />
             <FAQItem question={episode.name} answer={episode.story} key={episode.name} />
           </ImageCard>
         ))}
-        // columns={[
-        //   <>
-        //     <Card>
-        //       <ReactAudioPlayer
-        //         title="Title"
-        //         art="http://static.libsyn.com/p/assets/2/0/a/3/20a3052760331f2c/Logo-resized.png" // podcast image
-        //         src="http://traffic.libsyn.com/operationcode/Mike.mp3" // podcast Link
-        //         // autoPlay
-        //         controls
-        //       />
-
-        //       <p className={styles.justifyAlign}>
-        //         We at Operation Code strive to provide an efficient way into a tech career for
-        //         veterans and their families.
-        //       </p>
-        //     </Card>
-        //   </>,
-        // ]}
       />
-
-      {/* Rest of page content goes in here */}
     </>
   );
 };
