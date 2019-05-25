@@ -10,8 +10,13 @@ import styles from '../styles/password_reset.css';
 
 class PasswordResetConfirm extends React.Component {
   static propTypes = {
-    uid: string.isRequired,
-    token: string.isRequired,
+    uid: string,
+    token: string,
+  };
+
+  static defaultProps = {
+    uid: '',
+    token: '',
   };
 
   state = {

@@ -26,8 +26,8 @@ export default class PasswordResetSubmitForm extends React.Component {
   static propTypes = {
     passwordResetSubmit: func.isRequired,
     onSuccess: func.isRequired,
-    uid: string.isRequired,
-    token: string.isRequired,
+    uid: string,
+    token: string,
     initialValues: shape({
       email: string,
     }),
@@ -38,6 +38,8 @@ export default class PasswordResetSubmitForm extends React.Component {
       newPassword1: '',
       newPassword2: '',
     },
+    uid: '',
+    token: '',
   };
 
   state = {
