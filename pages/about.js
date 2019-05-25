@@ -125,9 +125,11 @@ export default () => (
           className={styles.ImageCard}
           imageSource={`${s3}image_unavailable_placeholder.png`}
         >
-          <a href="/podcasts">
-            <h6>Podcasts</h6>
-          </a>
+          <Link href="/podcasts">
+            <a>
+              <h6>Podcasts</h6>
+            </a>
+          </Link>
           <p>Listen to some of the incredible stories of our vets who transitioned into tech.</p>
         </ImageCard>,
       ]}
