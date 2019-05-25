@@ -36,7 +36,6 @@ export default class PasswordResetForm extends React.Component {
   };
 
   handleSubmit = async ({ email }, actions) => {
-    // debugger;
     const { passwordReset, onSuccess } = this.props;
     try {
       const { detail } = await passwordReset({ email });
