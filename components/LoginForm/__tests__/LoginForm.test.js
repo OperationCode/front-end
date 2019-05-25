@@ -67,26 +67,6 @@ describe('LoginForm', () => {
     ).toStrictEqual(validationErrorMessages.required);
   });
 
-  it('should show "invalid password" message when focusing off an invalid password', async () => {
-    const wrapper = mount(<LoginForm login={jest.fn()} onSuccess={jest.fn()} />);
-
-    const stringWithNoCapital = 'sillypassword1';
-
-    wrapper
-      .find('input#password')
-      .simulate('change', { target: { id: 'password', value: stringWithNoCapital } })
-      .simulate('blur');
-
-    await asyncRenderDiff(wrapper);
-
-    expect(
-      wrapper
-        .find('Input[type="password"]')
-        .find('Alert')
-        .text(),
-    ).toStrictEqual(validationErrorMessages.password);
-  });
-
   it('should submit with valid data in form', async () => {
     const user = mockUser();
 
