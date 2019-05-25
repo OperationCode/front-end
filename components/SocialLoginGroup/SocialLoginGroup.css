@@ -9,6 +9,10 @@
   align-items: center;
 }
 
+.fullWidth {
+  width: 100%;
+}
+
 /* Shared */
 .loginButton {
   font-family: Helvetica, sans-serif;

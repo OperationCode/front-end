@@ -3,7 +3,7 @@ import { func, bool } from 'prop-types';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { setLoggedIn, setLoggedOut } from 'store/loggedIn/actions';
-import { loginUser, loginSocial } from 'common/constants/api';
+import { loginUser } from 'common/constants/api';
 import { login, logout, isomorphicRedirect } from 'common/utils/auth-utils';
 import Head from 'components/head';
 import Alert from 'components/Alert/Alert';
@@ -52,11 +52,6 @@ class Login extends React.Component {
     login({ token, user });
   };
 
-  onSocialSuccess = provider => async ({ accessToken }) => {
-    const result = await loginSocial(provider, { accessToken });
-    this.handleSuccess(result);
-  };
-
   render() {
     const { loggedOut } = this.props;
     return (
@@ -91,7 +86,7 @@ class Login extends React.Component {
               </Link>
               .
             </p>,
-            <SocialLoginGroup onSocialSuccess={this.onSocialSuccess} />,
+            <SocialLoginGroup handleSuccess={this.handleSuccess} />,
           ]}
         />
       </>
