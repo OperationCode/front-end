@@ -1,19 +1,17 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import createShallowSnapshotTest from 'test-utils/createShallowSnapshotTest';
-import { loginLinks, navItems } from 'common/constants/navigation';
+import { whoWeServeSection, navItems } from 'common/constants/navigation';
 
 import NavMobile from '../NavMobile';
 
-const loggedOutLinks = [...navItems, loginLinks];
+const loggedOutLinks = [...navItems, whoWeServeSection];
 
 describe('NavMobile', () => {
   it('should render', () =>
     createShallowSnapshotTest(
       <NavMobile
-        isLoggedIn={false}
-        logout={jest.fn()}
-        navLinks={loggedOutLinks}
+        navItems={loggedOutLinks}
         isMenuVisible={false}
         openMenu={() => {}}
         closeMenu={() => {}}
@@ -23,9 +21,7 @@ describe('NavMobile', () => {
   it('should not have a visible menu when isMenuVisible prop is false', () => {
     const wrapper = shallow(
       <NavMobile
-        isLoggedIn={false}
-        logout={jest.fn()}
-        navLinks={loggedOutLinks}
+        navItems={loggedOutLinks}
         isMenuVisible={false}
         openMenu={() => {}}
         closeMenu={() => {}}
@@ -38,9 +34,7 @@ describe('NavMobile', () => {
   it('should have a visible menu when isMenuVisible prop is true', () => {
     const wrapper = shallow(
       <NavMobile
-        isLoggedIn={false}
-        logout={jest.fn()}
-        navLinks={loggedOutLinks}
+        navItems={loggedOutLinks}
         isMenuVisible
         openMenu={() => {}}
         closeMenu={() => {}}
@@ -54,9 +48,7 @@ describe('NavMobile', () => {
     const mockOpen = jest.fn();
     const wrapper = shallow(
       <NavMobile
-        isLoggedIn={false}
-        logout={jest.fn()}
-        navLinks={loggedOutLinks}
+        navItems={loggedOutLinks}
         isMenuVisible={false}
         openMenu={mockOpen}
         closeMenu={() => {}}
@@ -72,9 +64,7 @@ describe('NavMobile', () => {
     const mockClose = jest.fn();
     const wrapper = shallow(
       <NavMobile
-        isLoggedIn={false}
-        logout={jest.fn()}
-        navLinks={loggedOutLinks}
+        navItems={loggedOutLinks}
         isMenuVisible
         openMenu={() => {}}
         closeMenu={mockClose}

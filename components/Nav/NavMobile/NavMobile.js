@@ -10,9 +10,9 @@ import styles from './NavMobile.css';
 
 export default class NavMobile extends Component {
   render() {
-    const { isMenuVisible, openMenu, closeMenu, navLinks, isLoggedIn, logout } = this.props;
+    const { isMenuVisible, openMenu, closeMenu, navItems } = this.props;
 
-    const links = flattenDepth(navLinks.map(navItem => [navItem, navItem.sublinks]), 2);
+    const links = flattenDepth(navItems.map(navItem => [navItem, navItem.sublinks]), 2);
 
     return (
       <header className={styles.NavMobile}>
@@ -58,13 +58,6 @@ export default class NavMobile extends Component {
                   </Link>
                 </li>
               ))}
-              {isLoggedIn && (
-                <li className={styles.li}>
-                  <button type="button" className={styles.button} onClick={logout}>
-                    <span className={styles.link}>Log out</span>
-                  </button>
-                </li>
-              )}
               <li className={styles.li}>
                 <Link href={donateLink}>
                   <a className={styles.link}>Donate</a>
@@ -82,9 +75,7 @@ NavMobile.propTypes = {
   isMenuVisible: bool.isRequired,
   openMenu: func.isRequired,
   closeMenu: func.isRequired,
-  isLoggedIn: bool.isRequired,
-  logout: func.isRequired,
-  navLinks: arrayOf(
+  navItems: arrayOf(
     shape({
       href: string.isRequired,
       name: string.isRequired,

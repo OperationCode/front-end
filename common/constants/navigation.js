@@ -21,7 +21,7 @@ const eventsLink = {
   href: '/events',
 };
 
-export const loginLinks = {
+export const whoWeServeSection = {
   name: 'Who We Serve',
   href: '/who_we_serve',
   shouldPrefetch: false,
@@ -35,6 +35,13 @@ export const loginLinks = {
       href: '/join',
     },
   ],
+};
+
+const logoutLink = {
+  name: 'Logout',
+  href: '/login?loggedOut=true',
+  shouldPrefetch: false,
+  sublinks: [],
 };
 
 export const navItems = [
@@ -68,6 +75,9 @@ export const navItems = [
     ],
   },
 ];
+
+export const loggedInNavItems = [...navItems, logoutLink];
+export const loggedOutNavItems = [...navItems.slice(0, 1), whoWeServeSection, ...navItems.slice(1)];
 
 export const footerItems = {
   column1: [
