@@ -123,7 +123,7 @@ export default () => (
         <ImageCard
           alt="Operation Code Podcast"
           className={styles.ImageCard}
-          imageSource={`${s3}photo-podcast-1.jpg`}
+          imageSource={`${s3}image_unavailable_placeholder.png`}
         >
           <a href="/podcasts">
             <h6>Podcasts</h6>

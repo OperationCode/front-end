@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import { bool, func, oneOf } from 'prop-types';
 import classNames from 'classnames';
 import PlusIcon from 'static/images/icons/plus.svg';
 import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
@@ -7,9 +7,9 @@ import styles from './CloseButton.css';
 
 export default class CloseButton extends Component {
   static propTypes = {
-    disabled: PropTypes.bool,
-    onClick: PropTypes.func.isRequired,
-    theme: PropTypes.oneOf(['primary', 'secondary', 'white']),
+    disabled: bool,
+    onClick: func.isRequired,
+    theme: oneOf(['primary', 'secondary', 'white']),
   };
 
   static defaultProps = {

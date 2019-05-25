@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { string, bool } from 'prop-types';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 import BuildingIcon from 'static/images/icons/FontAwesome/building_icon.svg';
 import CloudUploadIcon from 'static/images/icons/FontAwesome/cloud_upload_icon.svg';
@@ -7,14 +7,14 @@ import MapMarkerIcon from 'static/images/icons/FontAwesome/map_marker_icon.svg';
 import styles from './FeaturedJobItem.css';
 
 FeaturedJobItem.propTypes = {
-  title: PropTypes.string.isRequired,
-  source: PropTypes.string.isRequired,
-  sourceUrl: PropTypes.string.isRequired,
-  city: PropTypes.string,
-  state: PropTypes.string,
-  country: PropTypes.string,
-  description: PropTypes.string.isRequired,
-  remote: PropTypes.bool,
+  title: string.isRequired,
+  source: string.isRequired,
+  sourceUrl: string.isRequired,
+  city: string,
+  state: string,
+  country: string,
+  description: string.isRequired,
+  remote: bool,
 };
 
 FeaturedJobItem.defaultProps = {

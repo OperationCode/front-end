@@ -6,7 +6,7 @@ import { Field } from 'formik';
 import * as Yup from 'yup';
 import { networkErrorMessages } from 'common/constants/messages';
 import asyncRenderDiff from 'test-utils/asyncRenderDiff';
-import MultiStepForm from '../MultiStepForm';
+import { MultiStepForm } from '../MultiStepForm';
 
 const submitForm = async enzymeWrapper => {
   const submitButton = enzymeWrapper.find('button[type="submit"]');
@@ -26,6 +26,11 @@ function makeNameForm(submitHandler = jest.fn()) {
       firstName: Yup.string().required(),
       lastName: Yup.string().required(),
     });
+
+    static initialValues = {
+      firstName: '',
+      lastName: '',
+    };
 
     static submitHandler = submitHandler;
 
@@ -72,6 +77,10 @@ describe('MultiStepForm', () => {
         .required(),
     });
 
+    static initialValues = {
+      ultimateAnswer: '',
+    };
+
     static submitHandler = ultimateAnswerFormSubmitHandler;
 
     render() {
@@ -96,6 +105,11 @@ describe('MultiStepForm', () => {
       favoriteNumber: Yup.string().required(),
       favoritePerson: Yup.string(),
     });
+
+    static initialValues = {
+      favoriteNumber: '',
+      favoritePerson: '',
+    };
 
     static submitHandler = favoritesFormSubmitHandler;
 
@@ -133,7 +147,6 @@ describe('MultiStepForm', () => {
       favoritePerson: '',
     },
     onFinalSubmit: jest.fn(),
-    onFinalSubmitSuccess: jest.fn(),
     steps: [NameForm, UltimateAnswerForm, FavoritesForm],
   };
 
@@ -170,14 +183,7 @@ describe('MultiStepForm', () => {
 
   it('should call final handlers after last step submission in happy-path', async () => {
     const onFinalSubmitMock = jest.fn();
-    const onFinalSubmitSuccessMock = jest.fn();
-    const wrapper = mount(
-      <MultiStepForm
-        {...requiredProps}
-        onFinalSubmit={onFinalSubmitMock}
-        onFinalSubmitSuccess={onFinalSubmitSuccessMock}
-      />,
-    );
+    const wrapper = mount(<MultiStepForm {...requiredProps} onFinalSubmit={onFinalSubmitMock} />);
 
     typeIntoInput(wrapper, 'firstName', faker.name.firstName());
     typeIntoInput(wrapper, 'lastName', faker.name.lastName());
@@ -193,20 +199,34 @@ describe('MultiStepForm', () => {
     await submitForm(wrapper);
 
     expect(onFinalSubmitMock).toHaveBeenCalledTimes(1);
-    expect(onFinalSubmitSuccessMock).toHaveBeenCalledTimes(1);
+  });
+
+  it('should call onEachStepSubmit handler after each step submission in happy-path', async () => {
+    const onEachStepSubmit = jest.fn();
+    const wrapper = mount(<MultiStepForm {...requiredProps} onEachStepSubmit={onEachStepSubmit} />);
+
+    typeIntoInput(wrapper, 'firstName', faker.name.firstName());
+    typeIntoInput(wrapper, 'lastName', faker.name.lastName());
+    await submitForm(wrapper);
+
+    expect(onEachStepSubmit).toHaveBeenCalledTimes(1);
+
+    typeIntoInput(wrapper, 'ultimateAnswer', '42');
+    await submitForm(wrapper);
+
+    expect(onEachStepSubmit).toHaveBeenCalledTimes(2);
+
+    typeIntoInput(wrapper, 'favoriteNumber', faker.random.number());
+    typeIntoInput(wrapper, 'favoritePerson', faker.name.firstName());
+    await submitForm(wrapper);
+
+    expect(onEachStepSubmit).toHaveBeenCalledTimes(3);
   });
 
   it('should handle error on final submit if success handler throws', async () => {
-    const onFinalSubmitSuccessMock = jest.fn();
     const onFinalSubmitMock = jest.fn().mockRejectedValue(new Error());
 
-    const wrapper = mount(
-      <MultiStepForm
-        {...requiredProps}
-        onFinalSubmit={onFinalSubmitMock}
-        onFinalSubmitSuccess={onFinalSubmitSuccessMock}
-      />,
-    );
+    const wrapper = mount(<MultiStepForm {...requiredProps} onFinalSubmit={onFinalSubmitMock} />);
 
     typeIntoInput(wrapper, 'firstName', faker.name.firstName());
     typeIntoInput(wrapper, 'lastName', faker.name.lastName());
@@ -221,23 +241,15 @@ describe('MultiStepForm', () => {
     await submitForm(wrapper);
 
     expect(wrapper.find('Alert').text()).toStrictEqual(networkErrorMessages.serverDown);
-    expect(onFinalSubmitSuccessMock).toHaveBeenCalledTimes(0);
   });
 
   it('should handle server error on final submit', async () => {
-    const onFinalSubmitSuccessMock = jest.fn();
     const onFinalSubmitMock = jest
       .fn()
       .mockRejectedValue({ response: { data: { favoritePerson: ['is not allowed'] } } });
     const cleanedUpNetworkErrorMessage = 'FavoritePerson is not allowed.';
 
-    const wrapper = mount(
-      <MultiStepForm
-        {...requiredProps}
-        onFinalSubmit={onFinalSubmitMock}
-        onFinalSubmitSuccess={onFinalSubmitSuccessMock}
-      />,
-    );
+    const wrapper = mount(<MultiStepForm {...requiredProps} onFinalSubmit={onFinalSubmitMock} />);
 
     typeIntoInput(wrapper, 'firstName', faker.name.firstName());
     typeIntoInput(wrapper, 'lastName', faker.name.lastName());
@@ -252,23 +264,15 @@ describe('MultiStepForm', () => {
     await submitForm(wrapper);
 
     expect(wrapper.find('Alert').text()).toStrictEqual(cleanedUpNetworkErrorMessage);
-    expect(onFinalSubmitSuccessMock).toHaveBeenCalledTimes(0);
   });
 
   it('should wipe error message between an invalid and valid submit', async () => {
-    const onFinalSubmitSuccessMock = jest.fn();
     const onFinalSubmitMock = jest
       .fn()
       .mockRejectedValueOnce(new Error())
       .mockResolvedValueOnce();
 
-    const wrapper = mount(
-      <MultiStepForm
-        {...requiredProps}
-        onFinalSubmit={onFinalSubmitMock}
-        onFinalSubmitSuccess={onFinalSubmitSuccessMock}
-      />,
-    );
+    const wrapper = mount(<MultiStepForm {...requiredProps} onFinalSubmit={onFinalSubmitMock} />);
 
     typeIntoInput(wrapper, 'firstName', faker.name.firstName());
     typeIntoInput(wrapper, 'lastName', faker.name.lastName());
@@ -283,12 +287,10 @@ describe('MultiStepForm', () => {
     await submitForm(wrapper);
 
     expect(wrapper.find('Alert').text()).toStrictEqual(networkErrorMessages.serverDown);
-    expect(onFinalSubmitSuccessMock).toHaveBeenCalledTimes(0);
 
     await submitForm(wrapper);
 
     expect(wrapper.find('Alert').text()).toStrictEqual('');
-    expect(onFinalSubmitSuccessMock).toHaveBeenCalledTimes(1);
   });
 
   it('should be able to go back and forth between steps, maintaining form state', async () => {
@@ -316,6 +318,53 @@ describe('MultiStepForm', () => {
     expect(wrapper.find('input#lastName').exists()).toBe(true);
     expect(wrapper.find('input#firstName').props().value).toStrictEqual(firstNameValue);
     expect(wrapper.find('input#lastName').props().value).toStrictEqual(lastNameValue);
+  });
+
+  it('calls setFieldTouched for every field on prev step if calling showPreviousStep', async () => {
+    const wrapper = mount(<MultiStepForm {...requiredProps} />);
+
+    const firstNameValue = faker.name.firstName();
+    const lastNameValue = faker.name.lastName();
+
+    typeIntoInput(wrapper, 'firstName', firstNameValue);
+    typeIntoInput(wrapper, 'lastName', lastNameValue);
+    await submitForm(wrapper);
+
+    // make sure that step 2's input is untouched & visible after step 1 submission
+    expect(wrapper.find('input')).toHaveLength(1);
+    expect(wrapper.find('input#ultimateAnswer').exists()).toBe(true);
+    expect(wrapper.find('input#ultimateAnswer').prop('touched')).toStrictEqual({
+      firstName: true,
+      lastName: true,
+      favoriteNumber: true,
+      favoritePerson: true,
+      ultimateAnswer: false,
+    });
+
+    // click on "Previous" button
+    const goToPreviousStepButton = wrapper.find('button[type="button"]');
+    expect(goToPreviousStepButton.exists()).toBe(true);
+    expect(goToPreviousStepButton.text()).toContain('Previous');
+    goToPreviousStepButton.simulate('click');
+
+    // make sure that step 1's inputs are untouched & visible after clicking "Previous" from step 1
+    expect(wrapper.find('input')).toHaveLength(2);
+    expect(wrapper.find('input#firstName').exists()).toBe(true);
+    expect(wrapper.find('input#lastName').exists()).toBe(true);
+    expect(wrapper.find('input#firstName').prop('touched')).toStrictEqual({
+      firstName: false,
+      lastName: false,
+      favoriteNumber: true,
+      favoritePerson: true,
+      ultimateAnswer: false,
+    });
+    expect(wrapper.find('input#lastName').prop('touched')).toStrictEqual({
+      firstName: false,
+      lastName: false,
+      favoriteNumber: true,
+      favoritePerson: true,
+      ultimateAnswer: false,
+    });
   });
 
   it('should call custom step handler after submitting', async () => {
@@ -361,5 +410,53 @@ describe('MultiStepForm', () => {
     expect(nameFormSubmitHandler).toHaveBeenCalledTimes(0);
     expect(mockedSubmitHandler).toHaveBeenCalledTimes(1);
     expect(wrapper.find('Alert').text()).toStrictEqual(errorMessage);
+  });
+
+  it('should render buttons with ScreenReaderOnly content only on mobile view', async () => {
+    // NOT MOBILE
+    const wrapperNonMobile = mount(<MultiStepForm {...requiredProps} isMobileView={false} />);
+
+    // 1st step
+    expect(wrapperNonMobile.find('ScreenReaderOnly').exists()).toBe(false);
+    expect(wrapperNonMobile.find('button').length).toStrictEqual(1);
+
+    typeIntoInput(wrapperNonMobile, 'firstName', faker.name.firstName());
+    typeIntoInput(wrapperNonMobile, 'lastName', faker.name.lastName());
+    await submitForm(wrapperNonMobile);
+
+    // 2nd step
+    expect(wrapperNonMobile.find('ScreenReaderOnly').exists()).toBe(false);
+    expect(wrapperNonMobile.find('button').length).toStrictEqual(2);
+
+    typeIntoInput(wrapperNonMobile, 'ultimateAnswer', '42');
+    await submitForm(wrapperNonMobile);
+
+    // 3rd (last) step
+    expect(wrapperNonMobile.find('ScreenReaderOnly').exists()).toBe(false);
+    expect(wrapperNonMobile.find('button').length).toStrictEqual(2);
+
+    // MOBILE
+    const wrapperMobile = mount(<MultiStepForm {...requiredProps} isMobileView />);
+
+    // 1st step
+    expect(wrapperMobile.find('ScreenReaderOnly').exists()).toBe(true);
+    expect(wrapperMobile.find('ScreenReaderOnly').length).toStrictEqual(1);
+    expect(wrapperMobile.find('ScreenReaderOnly').text()).toStrictEqual('Next');
+
+    typeIntoInput(wrapperMobile, 'firstName', faker.name.firstName());
+    typeIntoInput(wrapperMobile, 'lastName', faker.name.lastName());
+    await submitForm(wrapperMobile);
+
+    // 2nd step
+    expect(wrapperMobile.find('ScreenReaderOnly').exists()).toBe(true);
+    expect(wrapperMobile.find('ScreenReaderOnly').length).toStrictEqual(2);
+
+    typeIntoInput(wrapperMobile, 'ultimateAnswer', '42');
+    await submitForm(wrapperMobile);
+
+    // 3rd (last) step
+    expect(wrapperMobile.find('ScreenReaderOnly').exists()).toBe(true);
+    expect(wrapperMobile.find('ScreenReaderOnly').length).toStrictEqual(1);
+    expect(wrapperMobile.find('ScreenReaderOnly').text()).toStrictEqual('Previous');
   });
 });

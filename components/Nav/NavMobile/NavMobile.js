@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Link from 'next/link';
-import PropTypes from 'prop-types';
+import { func, bool } from 'prop-types';
 import classNames from 'classnames';
 import { donateLink, s3 } from 'common/constants/urls';
 import { navItems } from 'common/constants/navigation';
@@ -73,7 +73,7 @@ export default class NavMobile extends Component {
 }
 
 NavMobile.propTypes = {
-  isMenuVisible: PropTypes.bool.isRequired,
-  openMenu: PropTypes.func.isRequired,
-  closeMenu: PropTypes.func.isRequired,
+  isMenuVisible: bool.isRequired,
+  openMenu: func.isRequired,
+  closeMenu: func.isRequired,
 };

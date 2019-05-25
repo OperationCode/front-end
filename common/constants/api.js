@@ -1,4 +1,5 @@
 import { get, post, patch } from 'common/utils/api-utils';
+import { formatUserData } from 'common/utils/formatters';
 
 /* GET REQUESTS */
 export const getCodeSchoolsPromise = () => get('code_schools');
@@ -41,34 +42,11 @@ export const postMentorRequestPromise = ({ language, additionalDetails, mentor, 
   });
 
 /* PATCH REQUESTS */
-export const updateUser = ({
-  branchOfService,
-  companyName,
-  companyRole,
-  doesWantMentor,
-  doesWantScholarshipInfo,
-  doesWantToVolunteer,
-  employmentStatus,
-  militaryStatus,
-  payGrade,
-  stringListFavoriteLanguages,
-  yearsOfService,
-}) =>
-  patch('users', {
-    user: {
-      branch_of_service: branchOfService,
-      company_name: companyName,
-      company_role: companyRole,
-      mentor: doesWantMentor,
-      scholarship_info: doesWantScholarshipInfo,
-      volunteer: doesWantToVolunteer,
-      employment_status: employmentStatus,
-      military_status: militaryStatus,
-      pay_grade: payGrade,
-      interests: stringListFavoriteLanguages,
-      years_of_service: yearsOfService,
-    },
+export const updateUser = userInfo => {
+  return patch('users', {
+    user: { ...formatUserData(userInfo) },
   }).then(({ data }) => data);
+};
 
 export const patchUpdateMentorRequestPromise = ({ request, status, mentor }) =>
   patch(`requests/${request}`, {

@@ -7,6 +7,7 @@ module.exports = {
     'plugin:jest/recommended',
     'plugin:cypress/recommended',
   ],
+
   env: {
     browser: true,
     commonjs: true,
@@ -16,11 +17,14 @@ module.exports = {
     node: true,
   },
   parser: 'babel-eslint',
+
   plugins: ['prettier', 'unicorn', 'jest', 'cypress'],
+
   globals: {
     cy: true,
     Cypress: true,
   },
+
   overrides: [
     {
       files: ['*.test.js', '*.spec.js'],
@@ -60,6 +64,7 @@ module.exports = {
       },
     },
   ],
+
   rules: {
     // Import Rules
     'import/extensions': [
@@ -224,6 +229,12 @@ module.exports = {
           {
             name: 'react-select',
             message: 'Please use `components/Form/Select/ThemedReactSelect` instead.',
+          },
+          {
+            name: 'prop-types',
+            importNames: ['default'],
+            message:
+              "Please use non-default imports of `prop-types`. Example: `import { func } from 'prop-types';`",
           },
         ],
       },

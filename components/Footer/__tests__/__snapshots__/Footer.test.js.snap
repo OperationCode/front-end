@@ -92,6 +92,15 @@ exports[`Footer should render with no props passed 1`] = `
               </a>
             </Link>
           </li>
+          <li>
+            <Link
+              href="/who_we_serve"
+            >
+              <a>
+                Who We Serve
+              </a>
+            </Link>
+          </li>
         </ul>
       </div>
       <div
@@ -151,10 +160,10 @@ exports[`Footer should render with no props passed 1`] = `
           </li>
           <li>
             <Link
-              href="/who_we_serve"
+              href="/team"
             >
               <a>
-                Who We Serve
+                Team
               </a>
             </Link>
           </li>

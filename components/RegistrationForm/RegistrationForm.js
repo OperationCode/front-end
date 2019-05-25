@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import { func, number, oneOfType, shape, string } from 'prop-types';
 import { Formik, Field } from 'formik';
 import * as Yup from 'yup';
+import { createUser } from 'common/constants/api';
 import { getErrorMessage } from 'common/utils/api-utils';
 import { validationErrorMessages } from 'common/constants/messages';
 import { minimumPasswordLength } from 'common/constants/validations';
@@ -13,12 +14,6 @@ import Input from 'components/Form/Input/Input';
 import Alert from 'components/Alert/Alert';
 import styles from './RegistrationForm.css';
 
-/*
- * NOTE: We're repeating hardcode between the registration schema and passing an asterisk
- * to the label of required fields. This seems to an unfortunate negative aspect of an otherwise
- * awesome library. More importantly, it looks like the lib's author has plans to remedy the
- * situation. For now, our forms wont change much, so we should be okay.
- */
 const registrationSchema = Yup.object().shape({
   email: Yup.string()
     .required(validationErrorMessages.required)
@@ -42,16 +37,15 @@ const registrationSchema = Yup.object().shape({
 
 class RegistrationForm extends Component {
   static propTypes = {
-    register: PropTypes.func.isRequired, // essentially onSubmit
-    onSuccess: PropTypes.func.isRequired,
-    initialValues: PropTypes.shape({
-      email: PropTypes.string,
-      'confirm-email': PropTypes.string,
-      password: PropTypes.string,
-      'confirm-password': PropTypes.string,
-      firstName: PropTypes.string,
-      lastName: PropTypes.string,
-      zipcode: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    onSuccess: func.isRequired,
+    initialValues: shape({
+      email: string,
+      'confirm-email': string,
+      password: string,
+      'confirm-password': string,
+      firstName: string,
+      lastName: string,
+      zipcode: oneOfType([string, number]),
     }),
   };
 
@@ -72,10 +66,10 @@ class RegistrationForm extends Component {
   };
 
   handleSubmit = async (values, actions) => {
-    const { register, onSuccess } = this.props;
+    const { onSuccess } = this.props;
 
     try {
-      const { token } = await register(values);
+      const { token } = await createUser(values);
       actions.setSubmitting(false);
       actions.resetForm();
 

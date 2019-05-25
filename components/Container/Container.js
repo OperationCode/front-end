@@ -1,15 +1,15 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { bool, node, number, oneOf, oneOfType, string } from 'prop-types';
 import classNames from 'classnames';
 import styles from './Container.css';
 
 Container.propTypes = {
-  backgroundImageSource: PropTypes.string,
-  children: PropTypes.node,
-  className: PropTypes.string,
-  id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  isFullViewportHeight: PropTypes.bool,
-  theme: PropTypes.oneOf(['gray', 'secondary', 'white']),
+  backgroundImageSource: string,
+  children: node,
+  className: string,
+  id: oneOfType([string, number]),
+  isFullViewportHeight: bool,
+  theme: oneOf(['gray', 'secondary', 'white']),
 };
 
 Container.defaultProps = {

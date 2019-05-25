@@ -1,4 +1,5 @@
 import { createStore, applyMiddleware, combineReducers } from 'redux';
+import LogRocket from 'logrocket';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import thunkMiddleware from 'redux-thunk';
 import initialState from './initialState';
@@ -17,5 +18,5 @@ export const initStore = (state = initialState) =>
     { ...state },
     process.env.NODE_ENV === 'development'
       ? composeWithDevTools(applyMiddleware(thunkMiddleware))
-      : applyMiddleware(thunkMiddleware),
+      : applyMiddleware(thunkMiddleware, LogRocket.reduxMiddleware()),
   );

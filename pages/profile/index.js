@@ -1,9 +1,11 @@
-import PropTypes from 'prop-types';
+import { string } from 'prop-types';
 import nextCookie from 'next-cookies';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
+import LinkButton from 'components/LinkButton/LinkButton';
 import withAuthSync from 'decorators/withAuthSync/withAuthSync';
+import styles from '../styles/profile.css';
 
 class Profile extends React.Component {
   static async getInitialProps(ctx) {
@@ -12,8 +14,8 @@ class Profile extends React.Component {
   }
 
   static propTypes = {
-    firstName: PropTypes.string.isRequired,
-    lastName: PropTypes.string.isRequired,
+    firstName: string.isRequired,
+    lastName: string.isRequired,
   };
 
   render() {
@@ -29,8 +31,13 @@ class Profile extends React.Component {
           theme="gray"
           columns={[
             <p>
-              Hello {firstName} {lastName}! The profile page is an unfinished feature.
+              Hello {firstName} {lastName}!
             </p>,
+            <div className={styles.actionItems}>
+              <LinkButton theme="secondary" href="/profile/update">
+                Update Profile
+              </LinkButton>
+            </div>,
           ]}
         />
       </>

@@ -1,28 +1,39 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { arrayOf, bool, func, object } from 'prop-types';
 import get from 'lodash/get';
+import noop from 'lodash/noop';
 import { Formik } from 'formik';
-import { getErrorMessage } from 'common/utils/api-utils';
-import { validStep } from 'common/constants/custom-props';
+import { connect } from 'react-redux';
+import { compose } from 'redux';
 import { capitalizeFirstLetter } from 'common/utils/string-utils';
+import { getErrorMessage } from 'common/utils/api-utils';
+import { isMobileSelector } from 'store/screenSize/selectors';
+import { validStep } from 'common/constants/custom-props';
 import Button from 'components/Button/Button';
 import Form from 'components/Form/Form';
 import Alert from 'components/Alert/Alert';
+import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
 import styles from './MultiStepForm.css';
 
-class MultiStepForm extends React.Component {
+export class MultiStepForm extends React.Component {
   static propTypes = {
     // initialValues must be object where entire form's shape is described
-    initialValues: PropTypes.object.isRequired,
+    initialValues: object.isRequired,
 
-    onFinalSubmit: PropTypes.func.isRequired,
-    onFinalSubmitSuccess: PropTypes.func.isRequired,
-    steps: PropTypes.arrayOf(validStep).isRequired,
+    onEachStepSubmit: func,
+    onFinalSubmit: func.isRequired, // to be considered onSuccess
+    steps: arrayOf(validStep).isRequired,
+    isMobileView: bool,
+  };
+
+  static defaultProps = {
+    onEachStepSubmit: noop,
+    isMobileView: false,
   };
 
   state = {
-    stepNumber: 0,
     errorMessage: '',
+    stepNumber: 0,
   };
 
   isLastStep = () => {
@@ -33,14 +44,28 @@ class MultiStepForm extends React.Component {
   };
 
   // We assume this method cannot be called on the last step
-  showNextStep = () => {
+  showNextStep = ({ setFieldTouched }) => {
+    const { steps } = this.props;
+    const { stepNumber } = this.state;
+
+    // TODO: Only untouch if value is '' or []
+    const nextStepFieldNames = Object.keys(steps[stepNumber + 1].initialValues);
+    nextStepFieldNames.forEach(fieldName => setFieldTouched(fieldName, false));
+
     this.setState(previousState => ({
       stepNumber: previousState.stepNumber + 1,
     }));
   };
 
   // We assume this method cannot be called on the first step
-  showPreviousStep = () => {
+  showPreviousStep = ({ setFieldTouched }) => {
+    const { steps } = this.props;
+    const { stepNumber } = this.state;
+
+    // TODO: Only untouch if value is '' or []
+    const previousStepFieldNames = Object.keys(steps[stepNumber - 1].initialValues);
+    previousStepFieldNames.forEach(fieldName => setFieldTouched(fieldName, false));
+
     this.setState(previousState => ({
       stepNumber: previousState.stepNumber - 1,
     }));
@@ -69,7 +94,7 @@ class MultiStepForm extends React.Component {
   };
 
   handleSubmit = async (values, formikBag) => {
-    const { steps, onFinalSubmit, onFinalSubmitSuccess } = this.props;
+    const { steps, onEachStepSubmit, onFinalSubmit } = this.props;
     const { errorMessage, stepNumber } = this.state;
 
     if (errorMessage) {
@@ -77,26 +102,20 @@ class MultiStepForm extends React.Component {
       this.setState({ errorMessage: '' });
     }
 
-    if (this.isLastStep()) {
-      try {
-        await onFinalSubmit(values);
-        formikBag.setSubmitting(false);
-        formikBag.resetForm();
-        onFinalSubmitSuccess(values);
-      } catch (error) {
-        formikBag.setSubmitting(false);
-        this.handleError(error);
-      }
-      return;
-    }
-
-    // Not last step
     try {
+      await onEachStepSubmit(values);
+
       const currentStepSubmitHandler = steps[stepNumber].submitHandler;
       await currentStepSubmitHandler(values);
 
-      formikBag.setSubmitting(false);
-      this.showNextStep();
+      if (this.isLastStep()) {
+        await onFinalSubmit(values);
+        formikBag.setSubmitting(false);
+        formikBag.resetForm();
+      } else {
+        formikBag.setSubmitting(false);
+        this.showNextStep(formikBag);
+      }
     } catch (error) {
       formikBag.setSubmitting(false);
       this.handleError(error);
@@ -104,7 +123,7 @@ class MultiStepForm extends React.Component {
   };
 
   render() {
-    const { initialValues, steps } = this.props;
+    const { initialValues, isMobileView, steps } = this.props;
     const { errorMessage, stepNumber } = this.state;
 
     const CurrentStep = steps[stepNumber];
@@ -126,13 +145,20 @@ class MultiStepForm extends React.Component {
             </div>
 
             <div className={styles.buttonGrouping}>
-              {stepNumber > 0 && (
+              {!isFirstStep && (
                 <Button
                   theme="secondary"
                   disabled={formikBag.isSubmitting}
-                  onClick={this.showPreviousStep}
+                  onClick={() => this.showPreviousStep(formikBag)}
                 >
-                  « Previous
+                  {isMobileView ? (
+                    <>
+                      <ScreenReaderOnly>Previous</ScreenReaderOnly>
+                      {'←'}
+                    </>
+                  ) : (
+                    '← Previous'
+                  )}
                 </Button>
               )}
 
@@ -147,7 +173,14 @@ class MultiStepForm extends React.Component {
                   disabled={formikBag.isSubmitting}
                   fullWidth={isFirstStep}
                 >
-                  Next »
+                  {isMobileView ? (
+                    <>
+                      <ScreenReaderOnly>Next</ScreenReaderOnly>
+                      {'→'}
+                    </>
+                  ) : (
+                    'Next →'
+                  )}
                 </Button>
               )}
             </div>
@@ -158,4 +191,8 @@ class MultiStepForm extends React.Component {
   }
 }
 
-export default MultiStepForm;
+const mapStateToProps = state => ({
+  isMobileView: isMobileSelector(state),
+});
+
+export default compose(connect(mapStateToProps))(MultiStepForm);
