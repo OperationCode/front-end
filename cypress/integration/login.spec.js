@@ -6,7 +6,7 @@ import mockUser from '../../test-utils/mockGenerators/mockUser';
 describe('login', function() {
   beforeEach(() => {
     cy.server();
-    cy.route('POST', '/api/v1/sessions').as('postLogin');
+    cy.route('POST', 'auth/login/').as('postLogin');
 
     cy.clearCookies();
     cy.visitAndWaitFor('/login');
@@ -47,7 +47,10 @@ describe('login', function() {
       .should('eq', 401);
 
     cy.url().should('contain', '/login');
-    cy.get('div[role="alert"]').should('have.text', 'Invalid Email or password.');
+    cy.get('div[role="alert"]').should(
+      'have.text',
+      'The email or password you entered is incorrect!',
+    );
     cy.getCookies().should('have.length', 0);
   });
 
@@ -64,14 +67,17 @@ describe('login', function() {
       .should('eq', 401);
 
     cy.url().should('contain', '/login');
-    cy.get('div[role="alert"]').should('have.text', 'Invalid Email or password.');
+    cy.get('div[role="alert"]').should(
+      'have.text',
+      'The email or password you entered is incorrect!',
+    );
     cy.getCookies().should('have.length', 0);
   });
 
   it('should NOT be able to login to existing user when the server is unreachable', () => {
     cy.route({
       method: 'POST',
-      url: '/api/v1/sessions',
+      url: 'auth/login/',
       status: 502,
       response: [],
     }).as('postLogin');
