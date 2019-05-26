@@ -9,7 +9,7 @@ describe('code schools', function() {
 
   it('renders many code school cards', () => {
     // 40 is arbitrary, but it proves that the API is working and leading to rendered content
-    cy.get('[data-testid="SchoolCard"]').should('have.length.greaterThan', 40);
+    cy.get('[data-testid="SchoolCard"]').should('have.length.greaterThan', 30);
   });
 
   it('renders "Cincy Code IT Bootcamps" and "Tech Elevator" after filtering for Ohio', () => {
@@ -57,6 +57,6 @@ describe('code schools', function() {
     cy.get('[data-testid="SchoolCard"]').should('have.length', 0);
 
     cy.contains('All Schools').click();
-    cy.get('[data-testid="SchoolCard"]').should('have.length.greaterThan', 40);
+    cy.get('[data-testid="SchoolCard"]').should('have.length.greaterThan', 30);
   });
 });
