@@ -7,7 +7,7 @@ import LinkButton from 'components/LinkButton/LinkButton';
 import styles from './JoinSection.css';
 
 export const JoinSection = ({ isLoggedIn }) =>
-  !isLoggedIn ? (
+  !isLoggedIn && (
     <Container theme="white">
       <h3>Join Our Thriving Community</h3>
 
@@ -29,7 +29,7 @@ export const JoinSection = ({ isLoggedIn }) =>
         Never heard of Slack before?
       </OutboundLink>
     </Container>
-  ) : null;
+  );
 
 JoinSection.propTypes = {
   isLoggedIn: bool.isRequired,
