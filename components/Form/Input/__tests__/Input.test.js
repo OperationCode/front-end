@@ -1,8 +1,8 @@
 /* eslint-env jest */
 import React from 'react';
 import { Formik, Field } from 'formik';
+import { wait } from 'react-testing-library';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
-import wait from 'test-utils/wait';
 import { shallow, mount } from 'enzyme';
 
 import Form from '../../Form';
