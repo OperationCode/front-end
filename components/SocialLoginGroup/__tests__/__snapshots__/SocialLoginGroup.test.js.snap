@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SocialLoginGroup should render SocialLoginButtons with required props 1`] = `
+Array [
+  <button
+    className="loginButton googleButton"
+    disabled={true}
+    onClick={[Function]}
+    type="button"
+  >
+    Login with Google
+  </button>,
+  <button
+    className="loginButton facebookButton"
+    onClick={[Function]}
+    type="button"
+  >
+    Login with Facebook
+  </button>,
+]
+`;
+
+exports[`SocialLoginGroup should render with required props 1`] = `
+<div
+  className="test-class flexRow SocialLoginGroup"
+>
+  <div
+    className="Alert flexRow fullWidth error"
+    role="alert"
+  >
+    
+  </div>
+</div>
+`;

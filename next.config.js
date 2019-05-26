@@ -8,6 +8,12 @@ const nextConfig = withCSS({
   // see: https://zeit.co/guides/deploying-nextjs-with-now/
   target: 'serverless',
 
+  // eslint-disable-next-line unicorn/prevent-abbreviations
+  env: {
+    SENTRY_DSN: process.env.SENTRY_DSN,
+    LOGROCKET_KEY: process.env.LOGROCKET_KEY,
+  },
+
   // NextCSS Config
   cssModules: true,
   cssLoaderOptions: {

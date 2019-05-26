@@ -6,7 +6,7 @@ import mockUser from '../../test-utils/mockGenerators/mockUser';
 describe('register', function() {
   beforeEach(() => {
     cy.server();
-    cy.route('POST', '/api/v1/users').as('postRegister');
+    cy.route('POST', 'auth/registration/').as('postRegister');
 
     cy.clearCookies();
     cy.visitAndWaitFor('/join');
@@ -29,9 +29,8 @@ describe('register', function() {
 
     cy.wait('@postRegister');
 
-    cy.url().should('contain', '/profile');
-    cy.get('h1').should('have.text', 'Profile');
-    cy.get('p').contains(`Hello ${newUser.firstName} ${newUser.lastName}!`);
+    cy.url({ timeout: 5000 }).should('contain', '/profile/update');
+    cy.get('h1').should('have.text', 'Update Profile');
 
     cy.getCookies().then(cookies => {
       expect(cookies.some(({ value }) => value === newUser.firstName)).to.be.true;
@@ -53,11 +52,14 @@ describe('register', function() {
     cy.wait('@postRegister');
 
     cy.url().should('contain', '/join');
-    cy.get('div[role="alert"]').should('contain', 'Email has already been taken.');
+    cy.get('div[role="alert"]').should(
+      'contain',
+      'A user is already registered with this e-mail address',
+    );
     cy.getCookies().should('have.length', 0);
   });
 
-  it('should NOT be able to register witn an invalid email', () => {
+  it('should NOT be able to register with an invalid email', () => {
     const newUser = mockUser();
 
     cy.get('input#email').type('notavalidemail');

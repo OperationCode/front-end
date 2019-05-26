@@ -21,27 +21,35 @@ const eventsLink = {
   href: '/events',
 };
 
+export const whoWeServeSection = {
+  name: 'Who We Serve',
+  href: '/who_we_serve',
+  shouldPrefetch: false,
+  sublinks: [
+    {
+      name: 'Member Login',
+      href: '/login',
+    },
+    {
+      name: 'Join',
+      href: '/join',
+    },
+  ],
+};
+
+const logoutLink = {
+  name: 'Logout',
+  href: '/login?loggedOut=true',
+  shouldPrefetch: false,
+  sublinks: [],
+};
+
 export const navItems = [
   {
     name: 'About Us',
     href: '/about',
     shouldPrefetch: false,
     sublinks: [contactLink, faqLink],
-  },
-  {
-    name: 'Who We Serve',
-    href: '/who_we_serve',
-    shouldPrefetch: false,
-    sublinks: [
-      {
-        name: 'Member Login',
-        href: '/login',
-      },
-      {
-        name: 'Join',
-        href: '/join',
-      },
-    ],
   },
   {
     ...eventsLink,
@@ -52,10 +60,10 @@ export const navItems = [
     ...getInvolvedLink,
     shouldPrefetch: false,
     sublinks: [
-      {
-        name: 'Mentoring',
-        href: '/mentoring',
-      },
+      // {
+      //   name: 'Mentoring',
+      //   href: '/mentoring',
+      // },
       {
         name: 'Sponsorship',
         href: '/sponsorship',
@@ -67,6 +75,9 @@ export const navItems = [
     ],
   },
 ];
+
+export const loggedInNavItems = [...navItems, logoutLink];
+export const loggedOutNavItems = [...navItems.slice(0, 1), whoWeServeSection, ...navItems.slice(1)];
 
 export const footerItems = {
   column1: [
@@ -87,6 +98,10 @@ export const footerItems = {
       name: 'Job Board',
     },
     eventsLink,
+    {
+      href: '/who_we_serve',
+      name: 'Who We Serve',
+    },
   ],
   column3: [
     getInvolvedLink,
@@ -118,9 +133,8 @@ export const footerItems = {
       name: 'Branding',
     },
     {
-      // TODO: move this to column 2 when column 4 has 3 items
-      href: '/who_we_serve',
-      name: 'Who We Serve',
+      href: '/team',
+      name: 'Team',
     },
     // {
     //   href: '/blog',

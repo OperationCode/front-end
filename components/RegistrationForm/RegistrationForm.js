@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { func, number, oneOfType, shape, string } from 'prop-types';
 import { Formik, Field } from 'formik';
 import * as Yup from 'yup';
-import { getErrorMessage } from 'common/utils/api-utils';
+import { createUser } from 'common/constants/api';
+import { getServerErrorMessage } from 'common/utils/api-utils';
 import { validationErrorMessages } from 'common/constants/messages';
 import { minimumPasswordLength } from 'common/constants/validations';
 import { capitalizeFirstLetter } from 'common/utils/string-utils';
@@ -13,12 +14,6 @@ import Input from 'components/Form/Input/Input';
 import Alert from 'components/Alert/Alert';
 import styles from './RegistrationForm.css';
 
-/*
- * NOTE: We're repeating hardcode between the registration schema and passing an asterisk
- * to the label of required fields. This seems to an unfortunate negative aspect of an otherwise
- * awesome library. More importantly, it looks like the lib's author has plans to remedy the
- * situation. For now, our forms wont change much, so we should be okay.
- */
 const registrationSchema = Yup.object().shape({
   email: Yup.string()
     .required(validationErrorMessages.required)
@@ -42,7 +37,6 @@ const registrationSchema = Yup.object().shape({
 
 class RegistrationForm extends Component {
   static propTypes = {
-    register: func.isRequired, // essentially onSubmit
     onSuccess: func.isRequired,
     initialValues: shape({
       email: string,
@@ -72,10 +66,10 @@ class RegistrationForm extends Component {
   };
 
   handleSubmit = async (values, actions) => {
-    const { register, onSuccess } = this.props;
+    const { onSuccess } = this.props;
 
     try {
-      const { token } = await register(values);
+      const { token } = await createUser(values);
       actions.setSubmitting(false);
       actions.resetForm();
 
@@ -99,7 +93,7 @@ class RegistrationForm extends Component {
 
         this.setState({ errorMessage });
       } else {
-        this.setState({ errorMessage: getErrorMessage(error) });
+        this.setState({ errorMessage: getServerErrorMessage(error) });
       }
     }
   };
