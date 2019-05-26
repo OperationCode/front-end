@@ -6,7 +6,7 @@ import { bool } from 'prop-types';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { donateLink, s3 } from 'common/constants/urls';
-import { navItems } from 'common/constants/navigation';
+import { loggedInNavItems, loggedOutNavItems } from 'common/constants/navigation';
 import { isDesktopSelector } from 'store/screenSize/selectors';
 import NavListItem from 'components/Nav/NavListItem/NavListItem';
 import NavMobile from 'components/Nav/NavMobile/NavMobile';
@@ -34,8 +34,10 @@ export class Nav extends Component {
   };
 
   render() {
-    const { isDesktopView } = this.props;
+    const { isDesktopView, isLoggedIn } = this.props;
     const { isMobileMenuVisible } = this.state;
+
+    const navItems = isLoggedIn ? loggedInNavItems : loggedOutNavItems;
 
     if (!isDesktopView) {
       return (
@@ -43,6 +45,7 @@ export class Nav extends Component {
           isMenuVisible={isMobileMenuVisible}
           closeMenu={this.closeMobileMenu}
           openMenu={this.openMobileMenu}
+          navItems={navItems}
         />
       );
     }
@@ -62,11 +65,10 @@ export class Nav extends Component {
             </Link>
 
             <ul className={styles.link}>
-              {navItems.map(navLink => (
+              {navItems.map(navItem => (
                 // NavListItem component API matches navItems structure
-                <NavListItem key={navLink.name} {...navLink} />
+                <NavListItem key={navItem.name} {...navItem} />
               ))}
-
               <li>
                 <Link href={donateLink}>
                   <a className={classNames(styles.link, styles.donateLink)}>
@@ -84,14 +86,17 @@ export class Nav extends Component {
 
 Nav.propTypes = {
   isDesktopView: bool,
+  isLoggedIn: bool,
 };
 
 Nav.defaultProps = {
   isDesktopView: false,
+  isLoggedIn: false,
 };
 
 const mapStateToProps = state => ({
   isDesktopView: isDesktopSelector(state),
+  isLoggedIn: state.isLoggedIn,
 });
 
 export default compose(connect(mapStateToProps))(Nav);

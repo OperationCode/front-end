@@ -6,29 +6,37 @@ import { setAuthorizationHeader } from 'common/utils/cookie-utils';
 
 export const OperationCodeAPI = axios.create({ baseURL: apiUrl });
 
-export const get = async path => {
-  const result = await OperationCodeAPI.get(`/${path}`, {
-    headers: setAuthorizationHeader(),
+/**
+ * @param {string} path
+ * @param {{token: string}} options
+ * @returns {Promise<AxiosPromise<any>>}
+ */
+export const get = async (path, { token } = {}) =>
+  OperationCodeAPI.get(`/${path}`, {
+    headers: setAuthorizationHeader(token),
   });
 
-  return result;
-};
-
-export const post = async (path, body) => {
-  const result = await OperationCodeAPI.post(`/${path}`, body, {
-    headers: setAuthorizationHeader(),
+/**
+ * @param {string} path
+ * @param {?Object.<string, any>} body
+ * @param {{token: string}} options
+ * @returns {Promise<AxiosResponse<any>>}
+ */
+export const post = async (path, body, { token } = {}) =>
+  OperationCodeAPI.post(`/${path}`, body, {
+    headers: setAuthorizationHeader(token),
   });
 
-  return result;
-};
-
-export const patch = async (path, body) => {
-  const result = await OperationCodeAPI.patch(`/${path}`, body, {
-    headers: setAuthorizationHeader(),
+/**
+ * @param {string} path
+ * @param {?Object.<string, any>} body
+ * @param {{token: string}} options
+ * @returns {Promise<AxiosResponse<any>>}
+ */
+export const patch = async (path, body, { token } = {}) =>
+  OperationCodeAPI.patch(`/${path}`, body, {
+    headers: setAuthorizationHeader(token),
   });
-
-  return result;
-};
 
 /**
  * @description Take an expected server error object and return its error. If object is unexpected,

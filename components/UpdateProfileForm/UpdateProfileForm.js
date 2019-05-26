@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import get from 'lodash/get';
 import Router from 'next/router';
-import { array, objectOf, oneOfType, string } from 'prop-types';
 import { getServerErrorMessage } from 'common/utils/api-utils';
+import { array, objectOf, oneOfType, string, number, bool } from 'prop-types';
 import { insertIf } from 'common/utils/array-utils';
 import MultiStepForm from 'components/Form/MultiStepForm';
 import { ProfessionalDetails, MilitaryStatus, MilitaryDetails, Technology } from './steps';
 
 class UpdateProfileForm extends Component {
   static propTypes = {
-    initialValues: objectOf(oneOfType([array, string])),
+    initialValues: objectOf(oneOfType([array, string, number, bool])),
   };
 
   static defaultProps = {
