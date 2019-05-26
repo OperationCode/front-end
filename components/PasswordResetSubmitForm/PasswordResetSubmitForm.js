@@ -7,7 +7,7 @@ import Form from 'components/Form/Form';
 import Input from 'components/Form/Input/Input';
 import Alert from 'components/Alert/Alert';
 import { validationErrorMessages } from 'common/constants/messages';
-import { getErrorMessage } from 'common/utils/api-utils';
+import { getServerErrorMessage } from 'common/utils/api-utils';
 import { minimumPasswordLength } from 'common/constants/validations';
 import { isMinPasswordStrength } from 'common/utils/validator-utils';
 import styles from './PasswordResetSubmitForm.css';
@@ -56,7 +56,7 @@ export default class PasswordResetSubmitForm extends React.Component {
       await onSuccess();
     } catch (error) {
       actions.setSubmitting(false);
-      this.setState({ errorMessage: getErrorMessage(error) });
+      this.setState({ errorMessage: getServerErrorMessage(error) });
     }
   };
 

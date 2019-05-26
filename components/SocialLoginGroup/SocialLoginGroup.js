@@ -1,7 +1,7 @@
 import React from 'react';
 import { string, func } from 'prop-types';
 import classNames from 'classnames';
-import { getErrorMessage } from 'common/utils/api-utils';
+import { getServerErrorMessage } from 'common/utils/api-utils';
 import Alert from 'components/Alert/Alert';
 import styles from './SocialLoginGroup.css';
 
@@ -27,7 +27,7 @@ class SocialLoginGroup extends React.Component {
       const result = await loginSocial(provider, { accessToken });
       handleSuccess(result);
     } catch (error) {
-      this.setState({ errorMessage: getErrorMessage(error) });
+      this.setState({ errorMessage: getServerErrorMessage(error) });
     }
   };
 

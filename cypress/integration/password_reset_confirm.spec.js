@@ -45,7 +45,7 @@ describe('reset_password_confirm', () => {
     cy.get('a[href="/login"]').should('contain', 'Click here to Login');
   });
 
-  it('should NOT be able to reset with mismatched passwords', () => {
+  it('should NOT be able to reset with mis-matched passwords', () => {
     cy.visit(`/password_reset/confirm?uid=${uid}&token=${token}`);
 
     cy.get('#newPassword1').type(existingUser.password);
