@@ -47,7 +47,10 @@ describe('login', function() {
       .should('eq', 400);
 
     cy.url().should('contain', '/login');
-    cy.get('div[role="alert"]').should('have.text', 'Unable to log in with provided credentials.');
+    cy.get('div[role="alert"]').should(
+      'have.text',
+      'The email or password you entered is incorrect!',
+    );
     cy.getCookies().should('have.length', 0);
   });
 
@@ -64,7 +67,10 @@ describe('login', function() {
       .should('eq', 400);
 
     cy.url().should('contain', '/login');
-    cy.get('div[role="alert"]').should('have.text', 'Unable to log in with provided credentials.');
+    cy.get('div[role="alert"]').should(
+      'have.text',
+      'The email or password you entered is incorrect!',
+    );
     cy.getCookies().should('have.length', 0);
   });
 
