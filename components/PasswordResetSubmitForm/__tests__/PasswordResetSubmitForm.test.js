@@ -1,6 +1,7 @@
 /* eslint-env jest */
 import React from 'react';
 import { mount } from 'enzyme';
+import { passwordResetSubmit } from 'common/constants/api';
 import { validationErrorMessages } from 'common/constants/messages';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 import OperationCodeAPIMock from 'test-utils/mocks/apiMock';
@@ -8,6 +9,10 @@ import mockUser from 'test-utils/mockGenerators/mockUser';
 import asyncRenderDiff from 'test-utils/asyncRenderDiff';
 import wait from 'test-utils/wait';
 import PasswordResetSubmitForm from '../PasswordResetSubmitForm';
+
+afterEach(() => {
+  OperationCodeAPIMock.reset();
+});
 
 describe('PasswordResetSubmitForm', () => {
   it('should render with required props', () => {
@@ -124,5 +129,41 @@ describe('PasswordResetSubmitForm', () => {
       expect(successSpy).not.toHaveBeenCalled();
       expect(OperationCodeAPIMock.history.post.length).not.toBeGreaterThan(0);
     });
+  });
+
+  it('should display error message when request fails', async () => {
+    const user = mockUser();
+    const initialValues = {
+      newPassword1: user.password,
+      newPassword2: user.password,
+    };
+
+    OperationCodeAPIMock.onPost('auth/password/reset/confirm/', {
+      newPassword1: user.password,
+      newPassword2: user.password,
+      token: 'testToken',
+      uid: 'testUID',
+    }).reply(400, { error: 'test error' });
+
+    const successSpy = jest.fn();
+
+    const wrapper = mount(
+      <PasswordResetSubmitForm
+        onSuccess={successSpy}
+        passwordResetSubmit={passwordResetSubmit}
+        token="testToken"
+        uid="testUID"
+        initialValues={initialValues}
+      />,
+    );
+
+    wrapper.find('Button').simulate('submit');
+    await asyncRenderDiff(wrapper);
+
+    await wait(() => {
+      expect(OperationCodeAPIMock.history.post.length).toBeGreaterThan(0);
+    });
+
+    expect(wrapper.find('Alert').text()).toStrictEqual('test error');
   });
 });
