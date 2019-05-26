@@ -1,16 +1,16 @@
 import React from 'react';
 import faker from 'faker';
 import { mount } from 'enzyme';
+import { wait } from 'react-testing-library';
 import { loginUser } from 'common/constants/api';
 import { networkErrorMessages, validationErrorMessages } from 'common/constants/messages';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 import OperationCodeAPIMock from 'test-utils/mocks/apiMock';
 import mockUser from 'test-utils/mockGenerators/mockUser';
 import asyncRenderDiff from 'test-utils/asyncRenderDiff';
-import wait from 'test-utils/wait';
 import LoginForm from '../LoginForm';
 
-afterEach(() => {
+beforeEach(() => {
   OperationCodeAPIMock.reset();
 });
 
@@ -75,7 +75,7 @@ describe('LoginForm', () => {
       password: user.password,
     };
 
-    OperationCodeAPIMock.onPost('auth/login/', { user: initialValues }).reply(200, {
+    OperationCodeAPIMock.onPost('auth/login/', initialValues).reply(200, {
       user: {
         firstName: user.firstName,
         lastName: user.lastName,
@@ -89,15 +89,15 @@ describe('LoginForm', () => {
 
     const successSpy = jest.fn();
     const wrapper = mount(
-      <LoginForm onSuccess={successSpy} login={loginUser} {...initialValues} />,
+      <LoginForm onSuccess={successSpy} login={loginUser} initialValues={initialValues} />,
     );
 
     wrapper.find('Button').simulate('submit');
     await asyncRenderDiff(wrapper);
 
     await wait(() => {
-      expect(successSpy).toHaveBeenCalled();
       expect(OperationCodeAPIMock.history.post.length).toBeGreaterThan(0);
+      expect(successSpy).toHaveBeenCalledTimes(1);
     });
   });
 
@@ -173,14 +173,14 @@ describe('LoginForm', () => {
 
     const successSpy = jest.fn();
     const wrapper = mount(
-      <LoginForm onSuccess={successSpy} login={loginUser} {...initialValues} />,
+      <LoginForm onSuccess={successSpy} login={loginUser} initialValues={initialValues} />,
     );
 
     wrapper.find('Button').simulate('submit');
     await asyncRenderDiff(wrapper);
 
     await wait(() => {
-      expect(successSpy).toHaveBeenCalled();
+      expect(successSpy).not.toHaveBeenCalled();
       expect(OperationCodeAPIMock.history.post.length).toBeGreaterThan(0);
       expect(
         wrapper
