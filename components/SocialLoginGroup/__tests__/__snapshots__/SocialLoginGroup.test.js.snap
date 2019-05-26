@@ -22,7 +22,7 @@ Array [
 
 exports[`SocialLoginGroup should render with required props 1`] = `
 <div
-  className="test-class flexRow SocialLoginGroup"
+  className="flexRow SocialLoginGroup"
 >
   <div
     className="Alert flexRow fullWidth error"

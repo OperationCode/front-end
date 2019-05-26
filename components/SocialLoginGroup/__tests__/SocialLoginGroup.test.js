@@ -31,13 +31,14 @@ function renderWithHelpers() {
       }}
     </SocialLoginGroup>,
   );
+
   return { wrapper, handleSuccessSpy, renderProps };
 }
 
 describe('SocialLoginGroup', () => {
   it('should render with required props', () => {
     createSnapshotTest(
-      <SocialLoginGroup className="test-class" loginSocial={jest.fn()} handleSuccess={jest.fn()}>
+      <SocialLoginGroup loginSocial={jest.fn()} handleSuccess={jest.fn()}>
         {() => {}}
       </SocialLoginGroup>,
     );
