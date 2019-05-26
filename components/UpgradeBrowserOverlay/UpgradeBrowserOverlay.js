@@ -1,4 +1,5 @@
 import React from 'react';
+import noop from 'lodash/noop';
 import Modal from 'components/Modal/Modal';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 import WarningSign from 'static/images/icons/FontAwesome/exclamation-triangle-solid.svg';
@@ -31,7 +32,7 @@ function UpgradeBrowserOverlay() {
 
   return (
     <Modal
-      onRequestClose={() => {}}
+      onRequestClose={noop}
       className={styles.UpgradeBrowserOverlay}
       screenReaderLabel="Upgrade Your Browser"
       isOpen
