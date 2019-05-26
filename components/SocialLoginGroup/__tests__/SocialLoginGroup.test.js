@@ -4,19 +4,26 @@ import createSnapshotTest from 'test-utils/createSnapshotTest';
 import { mount } from 'enzyme';
 import asyncRenderDiff from 'test-utils/asyncRenderDiff';
 import wait from 'test-utils/wait';
+import { loginSocial } from 'common/constants/api';
+import OperationCodeAPIMock from 'test-utils/mocks/apiMock';
 import SocialLoginGroup from '../SocialLoginGroup';
 import SocialLoginButtons from '../SocialLoginButtons';
 
-function renderWithHelpers(loginSocialFunc) {
+const socialReturnToken = { accessToken: 'abc123' };
+
+beforeEach(() => {
+  OperationCodeAPIMock.reset();
+});
+
+function renderWithHelpers() {
   const handleSuccessSpy = jest.fn();
-  const loginSocialSpy = jest.fn(loginSocialFunc);
 
   let renderProps;
 
   const wrapper = mount(
     <SocialLoginGroup
       className="test-class"
-      loginSocial={loginSocialSpy}
+      loginSocial={loginSocial}
       handleSuccess={handleSuccessSpy}
     >
       {({ onSuccess, onGoogleFailure }) => {
@@ -24,12 +31,10 @@ function renderWithHelpers(loginSocialFunc) {
       }}
     </SocialLoginGroup>,
   );
-  return { wrapper, handleSuccessSpy, loginSocialSpy, renderProps };
+  return { wrapper, handleSuccessSpy, renderProps };
 }
 
 describe('SocialLoginGroup', () => {
-  const socialReturnToken = { accessToken: 'abc123' };
-
   it('should render with required props', () => {
     createSnapshotTest(
       <SocialLoginGroup className="test-class" loginSocial={jest.fn()} handleSuccess={jest.fn()}>
@@ -43,34 +48,38 @@ describe('SocialLoginGroup', () => {
   });
 
   it('calls callbacks when onSuccess is triggered', async () => {
-    const { wrapper, loginSocialSpy, handleSuccessSpy, renderProps } = renderWithHelpers();
+    OperationCodeAPIMock.onPost('auth/social/google/', socialReturnToken).reply(200);
 
-    await renderProps.onSuccess(socialReturnToken);
+    const { wrapper, handleSuccessSpy, renderProps } = renderWithHelpers();
+
+    const onSuccess = renderProps.onSuccess('google');
+    await onSuccess(socialReturnToken);
 
     await asyncRenderDiff(wrapper);
 
     await wait(() => {
-      expect(loginSocialSpy).toHaveBeenCalledWith(socialReturnToken);
-      expect(handleSuccessSpy).toHaveBeenCalled();
+      expect(handleSuccessSpy).toHaveBeenCalledWith('google', socialReturnToken);
     });
   });
 
   it('does NOT call handleSuccess when loginSocial fails', async () => {
-    const loginSocialFail = () => {
-      throw new Error('User is already registered with this e-mail address.');
-    };
+    const { wrapper, handleSuccessSpy, renderProps } = renderWithHelpers();
 
-    const { wrapper, loginSocialSpy, handleSuccessSpy, renderProps } = renderWithHelpers(
-      loginSocialFail,
-    );
+    OperationCodeAPIMock.onPost('auth/social/google/', socialReturnToken).reply(400, {
+      error: 'User is already registered with this e-mail address.',
+    });
 
-    await renderProps.onSuccess(socialReturnToken);
+    const onSuccess = renderProps.onSuccess('google');
+    await onSuccess(socialReturnToken);
 
     await asyncRenderDiff(wrapper);
 
     await wait(() => {
-      expect(loginSocialSpy).toHaveBeenCalledWith(socialReturnToken);
       expect(handleSuccessSpy).not.toHaveBeenCalled();
     });
+
+    expect(wrapper.find('Alert').text()).toStrictEqual(
+      'User is already registered with this e-mail address.',
+    );
   });
 });
