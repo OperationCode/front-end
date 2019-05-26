@@ -3,13 +3,14 @@ import { func, bool } from 'prop-types';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { setLoggedIn, setLoggedOut } from 'store/loggedIn/actions';
-import { loginUser } from 'common/constants/api';
+import { loginUser, loginSocial } from 'common/constants/api';
 import { login, logout, isomorphicRedirect } from 'common/utils/auth-utils';
 import Head from 'components/head';
 import Alert from 'components/Alert/Alert';
 import Content from 'components/Content/Content';
-import HeroBanner from 'components/HeroBanner/HeroBanner';
 import LoginForm from 'components/LoginForm/LoginForm';
+import HeroBanner from 'components/HeroBanner/HeroBanner';
+import SocialLoginButtons from 'components/SocialLoginGroup/SocialLoginButtons';
 import SocialLoginGroup from 'components/SocialLoginGroup/SocialLoginGroup';
 
 class Login extends React.Component {
@@ -86,7 +87,11 @@ class Login extends React.Component {
               </Link>
               .
             </p>,
-            <SocialLoginGroup handleSuccess={this.handleSuccess} />,
+            <SocialLoginGroup handleSuccess={this.handleSuccess} loginSocial={loginSocial}>
+              {({ onSuccess, onGoogleFailure }) => (
+                <SocialLoginButtons onSuccess={onSuccess} onGoogleFailure={onGoogleFailure} />
+              )}
+            </SocialLoginGroup>,
           ]}
         />
       </>

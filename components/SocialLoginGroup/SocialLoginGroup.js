@@ -1,10 +1,6 @@
 import React from 'react';
 import { string, func } from 'prop-types';
 import classNames from 'classnames';
-import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props';
-import GoogleLogin from 'react-google-login';
-import { googleKey, facebookKey } from 'common/config/environment';
-import { loginSocial } from 'common/constants/api';
 import { getErrorMessage } from 'common/utils/api-utils';
 import Alert from 'components/Alert/Alert';
 import styles from './SocialLoginGroup.css';
@@ -13,6 +9,8 @@ class SocialLoginGroup extends React.Component {
   static propTypes = {
     className: string,
     handleSuccess: func.isRequired,
+    children: func.isRequired,
+    loginSocial: func.isRequired,
   };
 
   static defaultProps = {
@@ -25,7 +23,7 @@ class SocialLoginGroup extends React.Component {
 
   onSuccess = provider => async ({ accessToken }) => {
     try {
-      const { handleSuccess } = this.props;
+      const { handleSuccess, loginSocial } = this.props;
       const result = await loginSocial(provider, { accessToken });
       handleSuccess(result);
     } catch (error) {
@@ -39,7 +37,7 @@ class SocialLoginGroup extends React.Component {
 
   render() {
     const { errorMessage } = this.state;
-    const { className } = this.props;
+    const { className, children } = this.props;
 
     return (
       <>
@@ -51,37 +49,7 @@ class SocialLoginGroup extends React.Component {
           >
             {errorMessage}
           </Alert>
-
-          <GoogleLogin
-            clientId={googleKey}
-            buttonText="Login"
-            onSuccess={this.onSuccess('google')}
-            onFailure={this.onGoogleFailure}
-            render={renderProps => (
-              <button
-                type="button"
-                onClick={renderProps.onClick}
-                disabled={renderProps.disabled}
-                className={classNames(styles.loginButton, styles.googleButton)}
-              >
-                Login with Google
-              </button>
-            )}
-          />
-
-          <FacebookLogin
-            appId={facebookKey}
-            callback={this.onSuccess('facebook')}
-            render={renderProps => (
-              <button
-                type="button"
-                onClick={renderProps.onClick}
-                className={classNames(styles.loginButton, styles.facebookButton)}
-              >
-                Login with Facebook
-              </button>
-            )}
-          />
+          {children({ onSuccess: this.onSuccess, onGoogleFailure: this.onGoogleFailure })}
         </div>
       </>
     );
