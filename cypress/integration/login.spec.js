@@ -44,7 +44,7 @@ describe('login', function() {
 
     cy.wait('@postLogin')
       .its('status')
-      .should('eq', 401);
+      .should('eq', 400);
 
     cy.url().should('contain', '/login');
     cy.get('div[role="alert"]').should(
@@ -64,7 +64,7 @@ describe('login', function() {
 
     cy.wait('@postLogin')
       .its('status')
-      .should('eq', 401);
+      .should('eq', 400);
 
     cy.url().should('contain', '/login');
     cy.get('div[role="alert"]').should(
