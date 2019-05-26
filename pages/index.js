@@ -1,3 +1,4 @@
+import { bool } from 'prop-types';
 import Link from 'next/link';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
@@ -33,7 +34,7 @@ const featuredLinksArray = [
   },
 ];
 
-export default () => (
+const Home = ({ isLoggedIn }) => (
   <>
     <Head title="Home" />
 
@@ -98,6 +99,16 @@ export default () => (
 
     <SponsorsSection />
 
-    <JoinSection />
+    {!isLoggedIn && <JoinSection />}
   </>
 );
+
+Home.getInitialProps = async ({ isLoggedIn }) => {
+  return { isLoggedIn };
+};
+
+Home.propTypes = {
+  isLoggedIn: bool.isRequired,
+};
+
+export default Home;

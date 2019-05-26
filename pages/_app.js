@@ -2,6 +2,7 @@ import App, { Container } from 'next/app';
 import Router from 'next/router';
 import { Provider } from 'react-redux';
 import { compose } from 'redux';
+import nextCookie from 'next-cookies';
 import ScrollUpButton from 'react-scroll-up-button';
 import withRedux from 'next-redux-wrapper';
 import ReactGA from 'react-ga';
@@ -11,12 +12,14 @@ import * as Sentry from '@sentry/browser';
 import debounce from 'lodash/debounce';
 import { initStore } from 'store/store';
 import { screenResize } from 'store/screenSize/actions';
+import { setLoggedIn } from 'store/loggedIn/actions';
 import breakpoints from 'common/styles/breakpoints';
+import { isTokenValid } from 'common/utils/cookie-utils';
 import Nav from 'components/Nav/Nav';
 import Footer from 'components/Footer/Footer';
 import Modal from 'components/Modal/Modal';
+import withFonts from 'decorators/withFonts/withFonts';
 import 'common/styles/globalStyles.css';
-import withFonts from '../decorators/withFonts/withFonts';
 
 const isProduction = process.env.NODE_ENV === 'production';
 
@@ -39,6 +42,11 @@ class Layout extends React.Component {
 
 class OperationCodeApp extends App {
   componentDidMount() {
+    // get initial logged-in state on load
+    if (this.props.isLoggedIn) {
+      this.dispatchLogin();
+    }
+
     this.handleScreenResize(); // get initial size on load
     window.addEventListener('resize', this.debouncedHandleScreenResize);
 
@@ -72,13 +80,15 @@ class OperationCodeApp extends App {
   static async getInitialProps({ Component, ctx }) {
     // eslint-disable-next-line unicorn/prevent-abbreviations
     let pageProps = {};
+    const { token } = nextCookie(ctx);
+    const isLoggedIn = isTokenValid(token);
 
     // if page hits an API, make it async
     if (Component.getInitialProps) {
-      pageProps = await Component.getInitialProps(ctx);
+      pageProps = await Component.getInitialProps({ ...ctx, isLoggedIn });
     }
 
-    return { pageProps };
+    return { pageProps, isLoggedIn };
   }
 
   componentDidCatch(error, errorInfo) {
@@ -96,6 +106,11 @@ class OperationCodeApp extends App {
   handleScreenResize = () => {
     const { store } = this.props;
     store.dispatch(screenResize(window.innerWidth, window.innerHeight, breakpoints));
+  };
+
+  dispatchLogin = () => {
+    const { store } = this.props;
+    store.dispatch(setLoggedIn());
   };
 
   debouncedHandleScreenResize = debounce(this.handleScreenResize, 100, {

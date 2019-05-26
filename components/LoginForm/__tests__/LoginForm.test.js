@@ -67,26 +67,6 @@ describe('LoginForm', () => {
     ).toStrictEqual(validationErrorMessages.required);
   });
 
-  it('should show "invalid password" message when focusing off an invalid password', async () => {
-    const wrapper = mount(<LoginForm login={jest.fn()} onSuccess={jest.fn()} />);
-
-    const stringWithNoCapital = 'sillypassword1';
-
-    wrapper
-      .find('input#password')
-      .simulate('change', { target: { id: 'password', value: stringWithNoCapital } })
-      .simulate('blur');
-
-    await asyncRenderDiff(wrapper);
-
-    expect(
-      wrapper
-        .find('Input[type="password"]')
-        .find('Alert')
-        .text(),
-    ).toStrictEqual(validationErrorMessages.password);
-  });
-
   it('should submit with valid data in form', async () => {
     const user = mockUser();
 
@@ -95,13 +75,13 @@ describe('LoginForm', () => {
       password: user.password,
     };
 
-    OperationCodeAPIMock.onPost('sessions', { user: initialValues }).reply(200, {
+    OperationCodeAPIMock.onPost('auth/login/', { user: initialValues }).reply(200, {
       user: {
-        first_name: user.firstName,
-        last_name: user.lastName,
+        firstName: user.firstName,
+        lastName: user.lastName,
         email: user.email,
         zip: user.zipcode,
-        slack_name: faker.internet.userName(),
+        slackName: faker.internet.userName(),
         mentor: false,
       },
       token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9',
@@ -152,7 +132,7 @@ describe('LoginForm', () => {
       password: 'Testing123',
     };
 
-    OperationCodeAPIMock.onPost('sessions', { user }).reply(401, { error: invalidError });
+    OperationCodeAPIMock.onPost('auth/login/', { ...user }).reply(401, { error: invalidError });
 
     const successSpy = jest.fn();
 
@@ -189,7 +169,7 @@ describe('LoginForm', () => {
       password: user.password,
     };
 
-    OperationCodeAPIMock.onPost('sessions', { user: initialValues }).reply(503);
+    OperationCodeAPIMock.onPost('auth/login/', initialValues).reply(503);
 
     const successSpy = jest.fn();
     const wrapper = mount(
