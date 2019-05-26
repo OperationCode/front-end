@@ -5,9 +5,11 @@
   "builds": [{ "src": "package.json", "use": "@now/next" }],
   "build": {
     "env": {
-      "SENTRY_DSN": "@sentry-dsn",
+      "GOOGLE_ANALYTICS_TRACKING_ID": "@google-analytics-tracking-id",
       "LOGROCKET_KEY": "@logrocket-key",
-      "GOOGLE_ANALYTICS_TRACKING_ID": "@google-analytics-tracking-id"
+      "OC_FACEBOOK_KEY": "@facebook-sso",
+      "OC_GOOGLE_KEY": "@google-sso",
+      "SENTRY_DSN": "@sentry-dsn"
     }
   },
   "routes": [
