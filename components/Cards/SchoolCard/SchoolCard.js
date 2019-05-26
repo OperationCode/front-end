@@ -42,7 +42,7 @@ export default class SchoolCard extends Component {
     locations: arrayOf(
       shape({
         city: string,
-        va_accepted: bool.isRequired,
+        vaAccepted: bool.isRequired,
         state: string,
       }),
     ).isRequired,
@@ -64,7 +64,7 @@ export default class SchoolCard extends Component {
   render() {
     const { props } = this;
 
-    const hasGiBill = props.locations.some(location => location.va_accepted);
+    const hasGiBill = props.locations.some(location => location.vaAccepted);
     const badgeClassNames = isActive =>
       classNames(styles.badgeGroupItem, { [styles.active]: isActive });
 

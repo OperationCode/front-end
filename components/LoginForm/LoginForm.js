@@ -53,10 +53,8 @@ class LoginForm extends Component {
       actions.resetForm();
       await onSuccess({
         user: {
-          firstName: user.first_name,
-          lastName: user.last_name,
+          ...user,
           zipcode: user.zip,
-          slackName: user.slack_name,
           isMentor: user.mentor,
         },
         token,
