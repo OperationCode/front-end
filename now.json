@@ -6,7 +6,9 @@
   "build": {
     "env": {
       "SENTRY_DSN": "@sentry-dsn",
-      "LOGROCKET_KEY": "@logrocket-key"
+      "LOGROCKET_KEY": "@logrocket-key",
+      "OC_FACEBOOK_KEY": "@facebook-sso",
+      "OC_GOOGLE_KEY": "@google-sso"
     }
   },
   "routes": [
