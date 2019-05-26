@@ -190,4 +190,41 @@ describe('LoginForm', () => {
       ).toStrictEqual(networkErrorMessages.serverDown);
     });
   });
+
+  it('should reset form and set form as "not submitting" after successful login', async () => {
+    const user = mockUser();
+
+    const initialValues = {
+      email: user.email,
+      password: user.password,
+    };
+
+    OperationCodeAPIMock.onPost('auth/login/', initialValues).reply(200, {
+      user: {
+        firstName: user.firstName,
+        lastName: user.lastName,
+        email: user.email,
+        zip: user.zipcode,
+        slackName: faker.internet.userName(),
+        mentor: false,
+      },
+      token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9',
+    });
+
+    const successSpy = jest.fn();
+    const wrapper = mount(
+      <LoginForm onSuccess={successSpy} login={loginUser} initialValues={initialValues} />,
+    );
+
+    const mockedFormikBag = {
+      setSubmitting: jest.fn(),
+      resetForm: jest.fn(),
+    };
+
+    await wrapper.instance().handleSubmit(initialValues, mockedFormikBag);
+
+    expect(mockedFormikBag.setSubmitting).toHaveBeenCalledTimes(1);
+    expect(mockedFormikBag.setSubmitting).toHaveBeenCalledWith(false);
+    expect(mockedFormikBag.resetForm).toHaveBeenCalledTimes(1);
+  });
 });
