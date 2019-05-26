@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { func, shape, string } from 'prop-types';
 import { Formik, Field } from 'formik';
 import * as Yup from 'yup';
-import { getErrorMessage } from 'common/utils/api-utils';
+import { getServerErrorMessage } from 'common/utils/api-utils';
 import { validationErrorMessages } from 'common/constants/messages';
 import Button from 'components/Button/Button';
 import Form from 'components/Form/Form';
@@ -53,10 +53,8 @@ class LoginForm extends Component {
       actions.resetForm();
       await onSuccess({
         user: {
-          firstName: user.first_name,
-          lastName: user.last_name,
+          ...user,
           zipcode: user.zip,
-          slackName: user.slack_name,
           isMentor: user.mentor,
         },
         token,
@@ -64,7 +62,7 @@ class LoginForm extends Component {
     } catch (error) {
       actions.setSubmitting(false);
 
-      this.setState({ errorMessage: getErrorMessage(error) });
+      this.setState({ errorMessage: getServerErrorMessage(error) });
     }
   };
 

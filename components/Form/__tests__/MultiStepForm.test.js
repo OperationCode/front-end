@@ -1,6 +1,7 @@
 /* eslint-disable react/no-multi-comp */
 import React from 'react';
 import faker from 'faker';
+import get from 'lodash/get';
 import { mount } from 'enzyme';
 import { Field } from 'formik';
 import * as Yup from 'yup';
@@ -138,6 +139,16 @@ describe('MultiStepForm', () => {
     }
   }
 
+  const getErrorMessage = jest.fn().mockImplementation(error => {
+    const serverError = get(error, 'response.data.error', '');
+
+    if (serverError) {
+      return serverError;
+    }
+
+    return error.message;
+  });
+
   const requiredProps = {
     initialValues: {
       firstName: '',
@@ -146,6 +157,7 @@ describe('MultiStepForm', () => {
       favoriteNumber: '',
       favoritePerson: '',
     },
+    getErrorMessage,
     onFinalSubmit: jest.fn(),
     steps: [NameForm, UltimateAnswerForm, FavoritesForm],
   };
@@ -224,7 +236,9 @@ describe('MultiStepForm', () => {
   });
 
   it('should handle error on final submit if success handler throws', async () => {
-    const onFinalSubmitMock = jest.fn().mockRejectedValue(new Error());
+    const onFinalSubmitMock = jest
+      .fn()
+      .mockRejectedValue(new Error(networkErrorMessages.serverDown));
 
     const wrapper = mount(<MultiStepForm {...requiredProps} onFinalSubmit={onFinalSubmitMock} />);
 
@@ -244,10 +258,11 @@ describe('MultiStepForm', () => {
   });
 
   it('should handle server error on final submit', async () => {
+    const errorMessage = 'Unauthorized request';
+
     const onFinalSubmitMock = jest
       .fn()
-      .mockRejectedValue({ response: { data: { favoritePerson: ['is not allowed'] } } });
-    const cleanedUpNetworkErrorMessage = 'FavoritePerson is not allowed.';
+      .mockRejectedValue({ response: { data: { error: errorMessage } } });
 
     const wrapper = mount(<MultiStepForm {...requiredProps} onFinalSubmit={onFinalSubmitMock} />);
 
@@ -263,13 +278,13 @@ describe('MultiStepForm', () => {
     typeIntoInput(wrapper, 'favoritePerson', faker.name.firstName());
     await submitForm(wrapper);
 
-    expect(wrapper.find('Alert').text()).toStrictEqual(cleanedUpNetworkErrorMessage);
+    expect(wrapper.find('Alert').text()).toStrictEqual(errorMessage);
   });
 
   it('should wipe error message between an invalid and valid submit', async () => {
     const onFinalSubmitMock = jest
       .fn()
-      .mockRejectedValueOnce(new Error())
+      .mockRejectedValueOnce(new Error(networkErrorMessages.serverDown))
       .mockResolvedValueOnce();
 
     const wrapper = mount(<MultiStepForm {...requiredProps} onFinalSubmit={onFinalSubmitMock} />);
@@ -378,7 +393,9 @@ describe('MultiStepForm', () => {
   });
 
   it('should handle error if custom handler throws after submitting', async () => {
-    const mockedSubmitHandler = jest.fn().mockRejectedValueOnce(new Error());
+    const mockedSubmitHandler = jest
+      .fn()
+      .mockRejectedValueOnce(new Error(networkErrorMessages.serverDown));
 
     const steps = [makeNameForm(mockedSubmitHandler), requiredProps.steps[1]];
 
