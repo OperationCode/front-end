@@ -3,7 +3,7 @@ import { func, number, oneOfType, shape, string } from 'prop-types';
 import { Formik, Field } from 'formik';
 import * as Yup from 'yup';
 import { createUser } from 'common/constants/api';
-import { getErrorMessage } from 'common/utils/api-utils';
+import { getServerErrorMessage } from 'common/utils/api-utils';
 import { validationErrorMessages } from 'common/constants/messages';
 import { minimumPasswordLength } from 'common/constants/validations';
 import { capitalizeFirstLetter } from 'common/utils/string-utils';
@@ -93,7 +93,7 @@ class RegistrationForm extends Component {
 
         this.setState({ errorMessage });
       } else {
-        this.setState({ errorMessage: getErrorMessage(error) });
+        this.setState({ errorMessage: getServerErrorMessage(error) });
       }
     }
   };

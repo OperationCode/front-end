@@ -7,7 +7,7 @@ import Form from 'components/Form/Form';
 import Input from 'components/Form/Input/Input';
 import Alert from 'components/Alert/Alert';
 import { validationErrorMessages } from 'common/constants/messages';
-import { getErrorMessage } from 'common/utils/api-utils';
+import { getServerErrorMessage } from 'common/utils/api-utils';
 import styles from './PasswordResetForm.css';
 
 const passwordResetSchema = Yup.object().shape({
@@ -46,7 +46,7 @@ export default class PasswordResetForm extends React.Component {
     } catch (error) {
       actions.setSubmitting(false);
 
-      this.setState({ errorMessage: getErrorMessage(error) });
+      this.setState({ errorMessage: getServerErrorMessage(error) });
     }
   };
 
