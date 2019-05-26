@@ -1,16 +1,16 @@
 /* eslint-env jest */
 import React from 'react';
 import { mount } from 'enzyme';
+import { wait } from 'react-testing-library';
 import { passwordResetSubmit } from 'common/constants/api';
 import { validationErrorMessages } from 'common/constants/messages';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 import OperationCodeAPIMock from 'test-utils/mocks/apiMock';
 import mockUser from 'test-utils/mockGenerators/mockUser';
 import asyncRenderDiff from 'test-utils/asyncRenderDiff';
-import wait from 'test-utils/wait';
 import PasswordResetSubmitForm from '../PasswordResetSubmitForm';
 
-afterEach(() => {
+beforeEach(() => {
   OperationCodeAPIMock.reset();
 });
 
@@ -96,13 +96,12 @@ describe('PasswordResetSubmitForm', () => {
     await asyncRenderDiff(wrapper);
 
     await wait(() => {
-      expect(passwordResetSubmitSpy).toHaveBeenCalled();
-      expect(successSpy).toHaveBeenCalled();
-      expect(OperationCodeAPIMock.history.post.length).toBeGreaterThan(0);
+      expect(passwordResetSubmitSpy).toHaveBeenCalledTimes(1);
+      expect(successSpy).toHaveBeenCalledTimes(1);
     });
   });
 
-  it('should NOT submit with invalid data in form', async () => {
+  it('should NOT submit to server with invalid data in form', async () => {
     const initialValues = {
       newPassword1: '1',
       newPassword2: '1',
@@ -115,8 +114,6 @@ describe('PasswordResetSubmitForm', () => {
       <PasswordResetSubmitForm
         onSuccess={successSpy}
         passwordResetSubmit={passwordResetSubmitSpy}
-        token="testToken"
-        uid="testUID"
         initialValues={initialValues}
       />,
     );
