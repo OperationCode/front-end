@@ -7,5 +7,5 @@ import SponsorsSection from '../SponsorsSection/SponsorsSection';
 
 storiesOf('ReusableSections', module)
   .add('DonateSection', () => <DonateSection />)
-  .add('JoinSection', () => <JoinSection />)
+  .add('JoinSection', () => <JoinSection isLoggedIn={false} />)
   .add('SponsorsSection', () => <SponsorsSection />);
