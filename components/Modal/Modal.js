@@ -4,6 +4,8 @@ import classNames from 'classnames';
 import ReactModal from 'react-modal';
 import ReactGA from 'react-ga';
 import CardStyles from 'components/Cards/Card/Card.css';
+import CloseButton from 'components/CloseButton/CloseButton';
+
 import ModalStyles from './Modal.css';
 
 Modal.propTypes = {
@@ -41,6 +43,7 @@ function Modal({
       onRequestClose={onRequestClose}
       shouldCloseOnOverlayClick={shouldCloseOnOverlayClick}
     >
+      <CloseButton onClick={onRequestClose} />
       <div className={ModalStyles.scrollableContainer}>{children}</div>
     </ReactModal>
   );
