@@ -73,7 +73,7 @@ class RegistrationForm extends Component {
       actions.setSubmitting(false);
       actions.resetForm();
 
-      await onSuccess({ user: { ...values, slackName: '', isMentor: false }, token });
+      await onSuccess({ user: { ...values, zip: values.zipcode }, token });
     } catch (error) {
       actions.setSubmitting(false);
 

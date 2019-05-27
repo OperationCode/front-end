@@ -1,13 +1,13 @@
 import cookie from 'js-cookie';
 import jwt_decode from 'jwt-decode'; // eslint-disable-line camelcase
 
-const userInfoCookieNames = ['firstName', 'lastName', 'zipcode', 'isMentor'];
+export const userInfoCookieNames = ['firstName', 'lastName', 'mentor', 'zip'];
 
 export const setAuthCookies = ({ token, user }) => {
   cookie.set('token', token);
 
   userInfoCookieNames.forEach(cookieName => {
-    cookie.set(cookieName, user[cookieName]);
+    cookie.set(cookieName, `${user[cookieName]}`);
   });
 };
 
