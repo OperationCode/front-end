@@ -29,7 +29,6 @@ describe('register', function() {
 
     cy.wait('@postRegister');
 
-    // TODO: Investigate why this takes so long
     cy.url({ timeout: 10000 }).should('contain', '/profile/update');
     cy.get('h1').should('have.text', 'Update Profile');
 
