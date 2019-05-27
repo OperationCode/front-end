@@ -4,6 +4,7 @@ import { confirmEmail } from 'common/constants/api';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
+import Alert from '../components/Alert/Alert';
 
 class ConfirmEmail extends React.Component {
   static propTypes = {
@@ -38,7 +39,7 @@ class ConfirmEmail extends React.Component {
                   <a>Verified! Click to Login</a>
                 </Link>
               ) : (
-                <span>Could not verify email</span>
+                <Alert type="error">Could not verify email</Alert>
               )}
             </p>,
           ]}
