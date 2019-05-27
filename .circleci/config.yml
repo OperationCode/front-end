@@ -8,10 +8,7 @@ jobs:
           CC_TEST_REPORTER_ID: 0f2bc6ef737019bfc8eda369cd06b66c54606b144b4d81cec010fb494d2559af
 
     steps:
-
       - checkout
-
-      - run: sudo chown -R circleci:circleci /usr/local/bin
 
       # Download and cache dependencies
       - restore_cache:
