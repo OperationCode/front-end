@@ -6,11 +6,12 @@
 }
 
 .image {
+  border: 3px solid var(--primary);
   order: 1;
   height: 200px;
   width: 200px;
   position: absolute;
-  top: 0;
+  top: -1rem;
 }
 
 .rowCenter {

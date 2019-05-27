@@ -2,9 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withInfo } from '@storybook/addon-info';
-import { withKnobs, text } from '@storybook/addon-knobs';
-
-import { s3 } from 'common/constants/urls';
+import { withKnobs, object, text } from '@storybook/addon-knobs';
 
 import Button from 'components/Button/Button';
 import FlatCard from '../FlatCard';
@@ -26,8 +24,7 @@ storiesOf('Cards/FlatCard', module)
         <FlatCard
           button={buttonRenderer()}
           header={text('header (render prop)', '')}
-          imageAlt={text('imageAlt', 'FlatCard image caption')}
-          imageSource={text('imageSource', `${s3}headshots/david_molina.jpg`)}
+          image={object('image', { image: '', source: '' })}
         >
           {text(
             'children (render prop)',
