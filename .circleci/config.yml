@@ -1,14 +1,35 @@
 version: 2.1
 
-jobs:
+orbs:
+  cypress: cypress-io/cypress@1
+
+workflows:
   build:
+    jobs:
+      - build_and_test
+
+      - cypress/run:
+          requires:
+            - build_and_test
+          record: true # record results on Cypress Dashboard
+          parallel: true # split all specs across machines
+          parallelism: 4 # use 4 CircleCI machines to finish quickly
+          group: 'all tests' # name this group "all tests" on the dashboard
+          start: 'next dev' # start server before running tests
+          yarn: true # use yarn instead of npm
+          wait-on: http://localhost:3000 # wait until server is ready
+
+jobs:
+  build_and_test:
     docker:
-      - image: cypress/base:8
+      - image: circleci/node:8.15.1
         environment: # environment variables for primary container
           CC_TEST_REPORTER_ID: 0f2bc6ef737019bfc8eda369cd06b66c54606b144b4d81cec010fb494d2559af
 
     steps:
       - checkout
+
+      - run: sudo chown -R circleci:circleci /usr/local/bin
 
       # Download and cache dependencies
       - restore_cache:
@@ -23,9 +44,9 @@ jobs:
             yarn global add greenkeeper-lockfile@2
 
             if [[ ${CIRCLE_BRANCH} == greenkeeper* ]]; then
-                  yarn --silent;
+                  yarn;
             else
-                  yarn --silent --frozen-lockfile --production=false;
+                  yarn  --frozen-lockfile --production=false;
             fi
 
       - run:
@@ -47,7 +68,6 @@ jobs:
           command: |
             yarn lint
             yarn test:ci --max-workers=2
-            yarn start-server-and-test dev http://localhost:3000 test:e2e:ci
 
       - run:
           name: Post test scripts
