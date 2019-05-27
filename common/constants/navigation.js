@@ -153,6 +153,7 @@ export const footerItems = {
     //   analyticsEventLabel: 'Cookies',
     // },
     {
+      // NOTE: If you change this route, please update the redirect in `now.json` as well
       href: 'https://www.iubenda.com/privacy-policy/8174861',
       name: 'Privacy',
       analyticsEventLabel: 'Privacy',
