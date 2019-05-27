@@ -9,7 +9,7 @@ import { ProfessionalDetails, MilitaryStatus, MilitaryDetails, Technology } from
 
 class UpdateProfileForm extends Component {
   static propTypes = {
-    initialValues: objectOf(oneOfType([array, string, number, bool]).isRequired),
+    initialValues: objectOf(oneOfType([array, string, number, bool])),
   };
 
   static defaultProps = {
