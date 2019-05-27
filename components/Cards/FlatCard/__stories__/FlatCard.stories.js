@@ -24,7 +24,7 @@ storiesOf('Cards/FlatCard', module)
         <FlatCard
           button={buttonRenderer()}
           header={text('header (render prop)', '')}
-          image={object('image', { image: '', source: '' })}
+          image={object('image', { source: '', alt: '' })}
         >
           {text(
             'children (render prop)',
