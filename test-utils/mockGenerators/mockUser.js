@@ -13,7 +13,7 @@ export default function mockUser(desiredEmail = '') {
   const lastName = faker.name.lastName();
   const email = desiredEmail || faker.internet.email(firstName, lastName, 'operationcode.org');
   const password = mockPassword();
-  const zipcode = faker.address.zipCode();
+  const zipcode = `${faker.address.zipCode()}`; // force to be string
 
   const user = {
     email,

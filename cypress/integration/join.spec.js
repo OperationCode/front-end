@@ -35,7 +35,7 @@ describe('join', () => {
     cy.getCookies().then(cookies => {
       expect(cookies.some(({ value }) => value === newUser.firstName)).to.be.true;
       expect(cookies.some(({ value }) => value === newUser.lastName)).to.be.true;
-      expect(cookies.some(({ value }) => value === newUser.zipcode.toString())).to.be.true;
+      expect(cookies.some(({ value }) => value === newUser.zipcode)).to.be.true;
     });
 
     cy.get('[data-testid="Nav Item Login"]').should('not.exist');
