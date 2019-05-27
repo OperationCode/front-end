@@ -136,6 +136,7 @@ exports[`SchoolCard should render with required props 1`] = `
       disabled={false}
       fullWidth={true}
       href="website"
+      shouldPrefetch={false}
       theme="secondary"
     >
       Visit Website
