@@ -94,7 +94,15 @@ class UpdateProfileForm extends Component {
 
     return (
       <MultiStepForm
-        initialValues={initialValues}
+        initialValues={{
+          ...initialValues,
+          disciplines: Array.isArray(initialValues.disciplines)
+            ? initialValues.disciplines
+            : initialValues.disciplines.split(', '),
+          programmingLanguages: Array.isArray(initialValues.programmingLanguages)
+            ? initialValues.programmingLanguages
+            : initialValues.programmingLanguages.split(', '),
+        }}
         getErrorMessage={this.generateError}
         onEachStepSubmit={this.onValueChange}
         onFinalSubmit={this.goToProfile}
