@@ -1,5 +1,8 @@
 import Link from 'next/link';
-import { object } from 'prop-types';
+import { func, object } from 'prop-types';
+import { compose } from 'redux';
+import { connect } from 'react-redux';
+import { setLoggedIn } from 'store/loggedIn/actions';
 import { withRouter } from 'next/router';
 import { login } from 'common/utils/auth-utils';
 import Head from 'components/head';
@@ -11,6 +14,7 @@ const profileUpdateURL = '/profile/update';
 
 class Join extends React.Component {
   static propTypes = {
+    dispatch: func.isRequired,
     router: object.isRequired,
   };
 
@@ -21,7 +25,10 @@ class Join extends React.Component {
   }
 
   handleSuccess = ({ token, user }) => {
+    const { dispatch } = this.props;
+
     login({ token, user }, profileUpdateURL);
+    dispatch(setLoggedIn());
   };
 
   render() {
@@ -49,4 +56,7 @@ class Join extends React.Component {
   }
 }
 
-export default withRouter(Join);
+export default compose(
+  connect(),
+  withRouter,
+)(Join);

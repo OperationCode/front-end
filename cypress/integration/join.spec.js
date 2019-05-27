@@ -37,6 +37,9 @@ describe('register', function() {
       expect(cookies.some(({ value }) => value === newUser.lastName)).to.be.true;
       expect(cookies.some(({ value }) => value === newUser.zipcode.toString())).to.be.true;
     });
+
+    cy.get('[data-testid="Nav Item Member Login"]').should('not.exist');
+    cy.get('[data-testid="Nav Item Logout"]').should('exist');
   });
 
   it('should NOT be able to register with an existing email', () => {

@@ -51,6 +51,7 @@ export default class NavListItem extends Component {
             onMouseLeave={this.hideSublinks}
             role="link"
             tabIndex={0}
+            data-testid={`Nav Item ${props.name}`}
           >
             <span className={styles.linkContent}>{props.name}</span>
           </a>
