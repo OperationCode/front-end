@@ -24,11 +24,14 @@ class UpdateProfile extends React.Component {
 
   render() {
     const { initialValues } = this.props;
+
+    const pageTitle = 'Update Profile';
+
     return (
       <>
-        <Head title="Update Profile" />
+        <Head title={pageTitle} />
 
-        <HeroBanner title="Update Profile" />
+        <HeroBanner title={pageTitle} />
 
         <Content theme="gray" columns={[<UpdateProfileForm initialValues={initialValues} />]} />
       </>

@@ -51,14 +51,7 @@ class LoginForm extends Component {
       const { user, token } = await login(values);
       actions.setSubmitting(false);
       actions.resetForm();
-      await onSuccess({
-        user: {
-          ...user,
-          zipcode: user.zip,
-          isMentor: user.mentor,
-        },
-        token,
-      });
+      await onSuccess({ user, token });
     } catch (error) {
       actions.setSubmitting(false);
 
