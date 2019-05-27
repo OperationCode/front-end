@@ -124,23 +124,17 @@ describe('LoginForm', () => {
   it('should show error when trying to login with incorrect email or password', async () => {
     const invalidError = 'Invalid Email or password.';
 
-    const user = {
+    const initialValues = {
       email: 'testing123@gmail.com',
       password: 'Testing123',
     };
 
-    OperationCodeAPIMock.onPost('auth/login/', { ...user }).reply(401, { error: invalidError });
+    OperationCodeAPIMock.onPost('auth/login/', initialValues).reply(401, { error: invalidError });
 
     const successSpy = jest.fn();
 
     const wrapper = mount(
-      <LoginForm
-        login={loginUser}
-        onSuccess={successSpy}
-        initialValues={{
-          ...user,
-        }}
-      />,
+      <LoginForm login={loginUser} onSuccess={successSpy} initialValues={initialValues} />,
     );
 
     wrapper.find('Button').simulate('submit');
