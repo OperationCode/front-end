@@ -22,6 +22,10 @@
       "dest": "/static/$1",
       "headers": { "cache-control": "max-age=10000 must-revalidate" }
     },
+    {
+      "src": "/privacy",
+      "dest": "https://www.iubenda.com/privacy-policy/8174861"
+    },
     { "handle": "filesystem" },
     { "src": "/*/.*", "dest": "/_error" }
   ],
