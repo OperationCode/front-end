@@ -10,8 +10,21 @@ import { getUserPromise } from 'common/constants/api';
 class UpdateProfile extends React.Component {
   static async getInitialProps(ctx) {
     const { token } = nextCookie(ctx);
-    const { data } = await getUserPromise({ token });
-    return { initialValues: { ...UpdateProfileForm.defaultProps.initialValues, ...data } };
+    const { data = {} } = await getUserPromise({ token });
+
+    const formattedData = {
+      ...data,
+      disciplines: Array.isArray(data.disciplines)
+        ? data.disciplines
+        : data.disciplines.split(', '),
+      programmingLanguages: Array.isArray(data.programmingLanguages)
+        ? data.programmingLanguages
+        : data.programmingLanguages.split(', '),
+    };
+
+    return {
+      initialValues: { ...UpdateProfileForm.defaultProps.initialValues, data: formattedData },
+    };
   }
 
   static propTypes = {

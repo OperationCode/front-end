@@ -9,7 +9,7 @@ import { ProfessionalDetails, MilitaryStatus, MilitaryDetails, Technology } from
 
 class UpdateProfileForm extends Component {
   static propTypes = {
-    initialValues: objectOf(oneOfType([array, string, number, bool])),
+    initialValues: objectOf(oneOfType([array, string, number, bool]).isRequired),
   };
 
   static defaultProps = {
@@ -94,15 +94,7 @@ class UpdateProfileForm extends Component {
 
     return (
       <MultiStepForm
-        initialValues={{
-          ...initialValues,
-          disciplines: Array.isArray(initialValues.disciplines)
-            ? initialValues.disciplines
-            : initialValues.disciplines.split(', '),
-          programmingLanguages: Array.isArray(initialValues.programmingLanguages)
-            ? initialValues.programmingLanguages
-            : initialValues.programmingLanguages.split(', '),
-        }}
+        initialValues={initialValues}
         getErrorMessage={this.generateError}
         onEachStepSubmit={this.onValueChange}
         onFinalSubmit={this.goToProfile}
