@@ -1,4 +1,3 @@
-/* eslint-env jest */
 import { getPropsStartingWith, getDataAttributes, getAriaAttributes } from '../prop-utils';
 
 describe('Prop Utilities', () => {

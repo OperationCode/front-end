@@ -1,4 +1,3 @@
-/* eslint-env jest */
 import { isMinPasswordStrength, isValidZipcode } from '../validator-utils';
 
 describe('Validator Utilities', () => {
