@@ -49,7 +49,7 @@ jobs:
           name: Run Tests
           command: |
             yarn lint
-            yarn test:ci
+            yarn test:ci --max-workers=2
             yarn start-server-and-test dev http://localhost:3000 test:e2e:ci
 
       - run:
