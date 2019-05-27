@@ -1,13 +1,9 @@
-/* eslint-env jest */
 import React from 'react';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 import { mount } from 'enzyme';
-import asyncRenderDiff from 'test-utils/asyncRenderDiff';
-import wait from 'test-utils/wait';
 import { loginSocial } from 'common/constants/api';
 import OperationCodeAPIMock from 'test-utils/mocks/apiMock';
 import SocialLoginGroup from '../SocialLoginGroup';
-import SocialLoginButtons from '../SocialLoginButtons';
 
 const socialReturnToken = { accessToken: 'abc123' };
 
@@ -31,53 +27,47 @@ function renderWithHelpers() {
       }}
     </SocialLoginGroup>,
   );
+
   return { wrapper, handleSuccessSpy, renderProps };
 }
 
 describe('SocialLoginGroup', () => {
   it('should render with required props', () => {
     createSnapshotTest(
-      <SocialLoginGroup className="test-class" loginSocial={jest.fn()} handleSuccess={jest.fn()}>
+      <SocialLoginGroup loginSocial={jest.fn()} handleSuccess={jest.fn()}>
         {() => {}}
       </SocialLoginGroup>,
     );
   });
 
-  it('should render SocialLoginButtons with required props', () => {
-    createSnapshotTest(<SocialLoginButtons onGoogleFailure={jest.fn()} onSuccess={jest.fn()} />);
-  });
+  it('calls callbacks when onSuccess is triggered against correct provider', async () => {
+    const providerName = 'google';
 
-  it('calls callbacks when onSuccess is triggered', async () => {
-    OperationCodeAPIMock.onPost('auth/social/google/', socialReturnToken).reply(200);
+    OperationCodeAPIMock.onPost(`auth/social/${providerName}/`, socialReturnToken).reply(200, {
+      ...socialReturnToken,
+    });
 
-    const { wrapper, handleSuccessSpy, renderProps } = renderWithHelpers();
+    const { handleSuccessSpy, renderProps } = renderWithHelpers();
 
-    const onSuccess = renderProps.onSuccess('google');
+    const onSuccess = renderProps.onSuccess(providerName);
     await onSuccess(socialReturnToken);
 
-    await asyncRenderDiff(wrapper);
-
-    await wait(() => {
-      expect(handleSuccessSpy).toHaveBeenCalledWith('google', socialReturnToken);
-    });
+    expect(handleSuccessSpy).toHaveBeenCalledWith(socialReturnToken);
   });
 
   it('does NOT call handleSuccess when loginSocial fails', async () => {
+    const providerName = 'facebook';
+
     const { wrapper, handleSuccessSpy, renderProps } = renderWithHelpers();
 
-    OperationCodeAPIMock.onPost('auth/social/google/', socialReturnToken).reply(400, {
+    OperationCodeAPIMock.onPost(`auth/social/${providerName}/`, socialReturnToken).reply(400, {
       error: 'User is already registered with this e-mail address.',
     });
 
-    const onSuccess = renderProps.onSuccess('google');
+    const onSuccess = renderProps.onSuccess(providerName);
     await onSuccess(socialReturnToken);
 
-    await asyncRenderDiff(wrapper);
-
-    await wait(() => {
-      expect(handleSuccessSpy).not.toHaveBeenCalled();
-    });
-
+    expect(handleSuccessSpy).not.toHaveBeenCalled();
     expect(wrapper.find('Alert').text()).toStrictEqual(
       'User is already registered with this e-mail address.',
     );

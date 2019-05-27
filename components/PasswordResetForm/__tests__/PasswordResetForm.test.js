@@ -1,13 +1,13 @@
 /* eslint-env jest */
 import React from 'react';
 import { mount } from 'enzyme';
+import { wait } from 'react-testing-library';
 import { passwordReset } from 'common/constants/api';
 import { validationErrorMessages } from 'common/constants/messages';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 import OperationCodeAPIMock from 'test-utils/mocks/apiMock';
 import mockUser from 'test-utils/mockGenerators/mockUser';
 import asyncRenderDiff from 'test-utils/asyncRenderDiff';
-import wait from 'test-utils/wait';
 import PasswordResetForm from '../PasswordResetForm';
 
 afterEach(() => {

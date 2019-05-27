@@ -40,18 +40,17 @@ class SocialLoginGroup extends React.Component {
     const { className, children } = this.props;
 
     return (
-      <>
-        <div className={classNames(className, styles.flexRow, styles.SocialLoginGroup)}>
-          <Alert
-            className={classNames(styles.flexRow, styles.fullWidth)}
-            isOpen={Boolean(errorMessage)}
-            type="error"
-          >
-            {errorMessage}
-          </Alert>
-          {children({ onSuccess: this.onSuccess, onGoogleFailure: this.onGoogleFailure })}
-        </div>
-      </>
+      <div className={classNames(className, styles.flexRow, styles.SocialLoginGroup)}>
+        <Alert
+          className={classNames(styles.flexRow, styles.fullWidth)}
+          isOpen={Boolean(errorMessage)}
+          type="error"
+        >
+          {errorMessage}
+        </Alert>
+
+        {children({ onSuccess: this.onSuccess, onGoogleFailure: this.onGoogleFailure })}
+      </div>
     );
   }
 }
