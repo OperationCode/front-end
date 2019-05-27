@@ -16,19 +16,8 @@ describe('FlatCard', () => {
     ),
   };
 
-  // eslint-disable-next-line unicorn/prevent-abbreviations
-  const imageProps = {
-    imageSource: `${s3}headshots/david_molina.jpg`,
-    imageAlt: "David Molina's face",
-    ...requiredProps,
-  };
-
   it('should render with required props', () => {
     createSnapshotTest(<FlatCard {...requiredProps} />);
-  });
-
-  it('should render with image props', () => {
-    createSnapshotTest(<FlatCard {...imageProps} />);
   });
 
   it('should render with many props assigned', () => {
@@ -57,5 +46,21 @@ describe('FlatCard', () => {
     const wrapper = shallow(<FlatCard {...requiredProps} header={<h1>Howdy!</h1>} />);
 
     expect(wrapper.find('hr').exists()).toStrictEqual(true);
+  });
+
+  it('only renders an image when both source and alt are passed in image prop', () => {
+    const wrapperWithNoImageProperty = shallow(<FlatCard {...requiredProps} />);
+    expect(wrapperWithNoImageProperty.find('img').exists()).toBe(false);
+
+    const wrapperWithAllImageProperties = shallow(
+      <FlatCard
+        {...requiredProps}
+        image={{
+          source: `${s3}headshots/david_molina.jpg`,
+          alt: "David Molina's face",
+        }}
+      />,
+    );
+    expect(wrapperWithAllImageProperties.find('img').exists()).toBe(true);
   });
 });
