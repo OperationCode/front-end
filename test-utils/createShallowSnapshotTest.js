@@ -1,4 +1,3 @@
-/* eslint-env jest */
 import ShallowRenderer from 'react-test-renderer/shallow';
 
 /**

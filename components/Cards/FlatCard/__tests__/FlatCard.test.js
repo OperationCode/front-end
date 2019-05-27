@@ -1,4 +1,3 @@
-/* eslint-env jest */
 import React from 'react';
 import { shallow } from 'enzyme';
 import createSnapshotTest from 'test-utils/createSnapshotTest';

@@ -7,55 +7,48 @@ exports[`Nav should render with no props passed 1`] = `
   navItems={
     Array [
       Object {
+        "href": "/login",
+        "name": "Login",
+      },
+      Object {
+        "href": "/join",
+        "name": "Join",
+      },
+      Object {
         "href": "/about",
         "name": "About Us",
         "shouldPrefetch": false,
-        "sublinks": Array [
-          Object {
-            "href": "/contact",
-            "name": "Contact Us",
-          },
-          Object {
-            "href": "/faq",
-            "name": "FAQ",
-          },
-        ],
+      },
+      Object {
+        "href": "/contact",
+        "name": "Contact Us",
+      },
+      Object {
+        "href": "/faq",
+        "name": "FAQ",
       },
       Object {
         "href": "/who_we_serve",
         "name": "Who We Serve",
         "shouldPrefetch": false,
-        "sublinks": Array [
-          Object {
-            "href": "/login",
-            "name": "Member Login",
-          },
-          Object {
-            "href": "/join",
-            "name": "Join",
-          },
-        ],
       },
       Object {
         "href": "/events",
         "name": "Events",
         "shouldPrefetch": false,
-        "sublinks": Array [],
       },
       Object {
         "href": "/get_involved",
         "name": "Get Involved",
         "shouldPrefetch": false,
-        "sublinks": Array [
-          Object {
-            "href": "/sponsorship",
-            "name": "Sponsorship",
-          },
-          Object {
-            "href": "/leadership_circle",
-            "name": "Leadership Circle",
-          },
-        ],
+      },
+      Object {
+        "href": "/sponsorship",
+        "name": "Sponsorship",
+      },
+      Object {
+        "href": "/leadership_circle",
+        "name": "Leadership Circle",
       },
     ]
   }
@@ -114,7 +107,7 @@ exports[`Nav should render with props passed 1`] = `
             Array [
               Object {
                 "href": "/login",
-                "name": "Member Login",
+                "name": "Login",
               },
               Object {
                 "href": "/join",

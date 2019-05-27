@@ -1,4 +1,4 @@
-describe('code schools', function() {
+describe('code schools', () => {
   const ReactSelectSelector = 'input#react-select-state_select-input';
 
   beforeEach(() => {

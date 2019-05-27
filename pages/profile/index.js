@@ -34,7 +34,7 @@ class Profile extends React.Component {
               Hello {firstName} {lastName}!
             </p>,
             <div className={styles.actionItems}>
-              <LinkButton theme="secondary" href="/profile/update">
+              <LinkButton theme="secondary" href="/profile/update" shouldPrefetch>
                 Update Profile
               </LinkButton>
             </div>,

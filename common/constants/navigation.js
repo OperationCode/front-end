@@ -1,6 +1,7 @@
+import flattenDepth from 'lodash/flattenDepth';
 import { donateLink } from 'common/constants/urls';
 
-// links shared between nav and footer (no duplicate code)
+// MARK: Links shared between nav and footer (no duplicate code)
 const contactLink = {
   name: 'Contact Us',
   href: '/contact',
@@ -21,13 +22,18 @@ const eventsLink = {
   href: '/events',
 };
 
-export const whoWeServeSection = {
+// MARK: Top-level navigation items
+const whoWeServeWithoutSublinks = {
   name: 'Who We Serve',
   href: '/who_we_serve',
   shouldPrefetch: false,
+};
+
+const whoWeServeWithSublinks = {
+  ...whoWeServeWithoutSublinks,
   sublinks: [
     {
-      name: 'Member Login',
+      name: 'Login',
       href: '/login',
     },
     {
@@ -37,48 +43,58 @@ export const whoWeServeSection = {
   ],
 };
 
-const logoutLink = {
+const aboutUs = {
+  name: 'About Us',
+  href: '/about',
+  shouldPrefetch: false,
+  sublinks: [contactLink, faqLink],
+};
+
+const events = {
+  ...eventsLink,
+  shouldPrefetch: false,
+};
+
+const getInvolved = {
+  ...getInvolvedLink,
+  shouldPrefetch: false,
+  sublinks: [
+    {
+      name: 'Sponsorship',
+      href: '/sponsorship',
+    },
+    {
+      name: 'Leadership Circle',
+      href: '/leadership_circle',
+    },
+  ],
+};
+
+const logout = {
   name: 'Logout',
   href: '/login?loggedOut=true',
   shouldPrefetch: false,
-  sublinks: [],
 };
 
-export const navItems = [
-  {
-    name: 'About Us',
-    href: '/about',
-    shouldPrefetch: false,
-    sublinks: [contactLink, faqLink],
-  },
-  {
-    ...eventsLink,
-    shouldPrefetch: false,
-    sublinks: [],
-  },
-  {
-    ...getInvolvedLink,
-    shouldPrefetch: false,
-    sublinks: [
-      // {
-      //   name: 'Mentoring',
-      //   href: '/mentoring',
-      // },
-      {
-        name: 'Sponsorship',
-        href: '/sponsorship',
-      },
-      {
-        name: 'Leadership Circle',
-        href: '/leadership_circle',
-      },
-    ],
-  },
-];
+// MARK: Nav items
+export const loggedInNavItems = [aboutUs, whoWeServeWithoutSublinks, events, getInvolved, logout];
+export const loggedOutNavItems = [aboutUs, whoWeServeWithSublinks, events, getInvolved];
 
-export const loggedInNavItems = [...navItems, logoutLink];
-export const loggedOutNavItems = [...navItems.slice(0, 1), whoWeServeSection, ...navItems.slice(1)];
+// Extracts sublinks to list everything as a single, top-level list
+export const mobileLoggedInNavItems = flattenDepth(
+  [logout, aboutUs, whoWeServeWithoutSublinks, events, getInvolved].map(
+    ({ sublinks = [], ...item }) => [item, sublinks],
+  ),
+  2,
+);
+export const mobileLoggedOutNavItems = flattenDepth(
+  [...whoWeServeWithSublinks.sublinks, aboutUs, whoWeServeWithoutSublinks, events, getInvolved].map(
+    ({ sublinks = [], ...item }) => [item, sublinks],
+  ),
+  2,
+);
 
+// MARK: Footer items
 export const footerItems = {
   column1: [
     {
@@ -105,10 +121,6 @@ export const footerItems = {
   ],
   column3: [
     getInvolvedLink,
-    // {
-    //   href: '/mentoring',
-    //   name: 'Become A Mentor',
-    // },
     {
       href: '/history',
       name: 'History',
@@ -120,10 +132,6 @@ export const footerItems = {
     },
   ],
   column4: [
-    // {
-    //   href: '/resources',
-    //   name: 'Resources',
-    // },
     {
       href: '/press',
       name: 'Press',
@@ -136,10 +144,6 @@ export const footerItems = {
       href: '/team',
       name: 'Team',
     },
-    // {
-    //   href: '/blog',
-    //   name: 'Blog',
-    // },
   ],
   legal: [
     {
