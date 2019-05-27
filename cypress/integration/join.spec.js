@@ -39,7 +39,7 @@ describe('register', function() {
       expect(cookies.some(({ value }) => value === newUser.zipcode.toString())).to.be.true;
     });
 
-    cy.get('[data-testid="Nav Item Member Login"]').should('not.exist');
+    cy.get('[data-testid="Nav Item Login"]').should('not.exist');
     cy.get('[data-testid="Nav Item Logout"]').should('exist');
   });
 
