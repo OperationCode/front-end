@@ -23,6 +23,10 @@
       "headers": { "cache-control": "max-age=10000 must-revalidate" }
     },
     {
+      "src": "/media",
+      "dest": "/branding"
+    },
+    {
       "src": "/privacy",
       "dest": "https://www.iubenda.com/privacy-policy/8174861"
     },
