@@ -11,6 +11,8 @@ jobs:
 
       - checkout
 
+      - run: sudo chown -R circleci:circleci /usr/local/bin
+
       # Download and cache dependencies
       - restore_cache:
           keys:
