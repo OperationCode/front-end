@@ -1,4 +1,3 @@
-/* eslint-env jest */
 import renderer from 'react-test-renderer';
 
 /**

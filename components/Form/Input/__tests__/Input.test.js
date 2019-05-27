@@ -1,4 +1,3 @@
-/* eslint-env jest */
 import React from 'react';
 import { Formik, Field } from 'formik';
 import { wait } from 'react-testing-library';
