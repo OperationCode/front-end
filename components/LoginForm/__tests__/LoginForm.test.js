@@ -77,10 +77,7 @@ describe('LoginForm', () => {
 
     OperationCodeAPIMock.onPost('auth/login/', initialValues).reply(200, {
       user: {
-        firstName: user.firstName,
-        lastName: user.lastName,
-        email: user.email,
-        zip: user.zipcode,
+        ...user,
         slackName: faker.internet.userName(),
         mentor: false,
       },
@@ -201,10 +198,7 @@ describe('LoginForm', () => {
 
     OperationCodeAPIMock.onPost('auth/login/', initialValues).reply(200, {
       user: {
-        firstName: user.firstName,
-        lastName: user.lastName,
-        email: user.email,
-        zip: user.zipcode,
+        ...user,
         slackName: faker.internet.userName(),
         mentor: false,
       },

@@ -73,12 +73,11 @@ class RegistrationForm extends Component {
       actions.setSubmitting(false);
       actions.resetForm();
 
-      await onSuccess({ user: { ...values, zip: values.zipcode }, token });
+      await onSuccess({ user: values, token });
     } catch (error) {
       actions.setSubmitting(false);
 
       const { data } = error.response;
-
       if (data) {
         // TODO: Create back-end ticket for checking if email has been taken for a debounced,
         // client-side validation of emails instead of waiting for submission.

@@ -13,7 +13,7 @@ export const createUser = ({ email, password, firstName, lastName, zipcode }) =>
     firstName,
     lastName,
     password,
-    zip: zipcode,
+    zipcode,
   }).then(({ data }) => data);
 
 export const loginUser = ({ email, password }) =>
