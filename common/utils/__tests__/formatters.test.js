@@ -17,63 +17,32 @@ const simpleMilitaryUser = {
 
 describe('formatters', () => {
   describe('formatUserData', () => {
-    it('should return no key that has empty string value', () => {
-      const parsedData = formatUserData(simpleMilitaryUser);
-      Object.values(parsedData).forEach(value => {
-        expect(value).not.toStrictEqual('');
-      });
-    });
-
-    it('should not define interests values when being passed relevant empty arrays', () => {
+    it('should covert disciplines and programmingLanguages to string representations', () => {
       const user = {
         ...simpleMilitaryUser,
-        disciplines: [],
-        programmingLanguages: [],
+        disciplines: ['Front-End Developer'],
+        programmingLanguages: ['JavaScript', 'Python', 'C++'],
       };
 
       const parsedData = formatUserData(user);
-      const { interests } = Object.values(parsedData);
+      const { disciplines, programmingLanguages } = parsedData;
 
-      expect(interests).toStrictEqual(undefined);
+      expect(disciplines).toStrictEqual('Front-End Developer');
+      expect(programmingLanguages).toStrictEqual(['JavaScript', 'Python', 'C++'].join(', '));
     });
 
-    it('should define interests value when being passed just one relevant, filled array', () => {
-      const programmingLanguages = ['JavaScript', 'Python', 'C++'];
+    it('should convert empty arrays to empty strings', () => {
       const user = {
         ...simpleMilitaryUser,
         disciplines: [],
-        programmingLanguages,
+        programmingLanguages: ['JavaScript', 'Python', 'C++'],
       };
 
-      const { interests } = formatUserData(user);
+      const parsedData = formatUserData(user);
+      const { disciplines, programmingLanguages } = parsedData;
 
-      expect(interests).toStrictEqual(programmingLanguages.join(', '));
-    });
-
-    it('should not define interests value when being passed array with one empty string', () => {
-      const arrayWithEmptyString = [''];
-
-      // one array with empty string
-      const user1 = {
-        ...simpleMilitaryUser,
-        programmingLanguages: arrayWithEmptyString,
-        disciplines: [],
-      };
-
-      const { interests: interests1 } = formatUserData(user1);
-
-      expect(interests1).toStrictEqual(undefined);
-
-      // both array with empty string
-      const user2 = {
-        ...simpleMilitaryUser,
-        programmingLanguages: arrayWithEmptyString,
-        disciplines: arrayWithEmptyString,
-      };
-
-      const { interests: interests2 } = formatUserData(user2);
-
-      expect(interests2).toStrictEqual(undefined);
+      expect(disciplines).toStrictEqual('');
+      expect(programmingLanguages).toStrictEqual(['JavaScript', 'Python', 'C++'].join(', '));
     });
   });
 });

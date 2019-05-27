@@ -33,8 +33,7 @@ export const passwordResetSubmit = values =>
 
 /* PATCH REQUESTS */
 export const updateUser = userInfo => {
-  // TODO: Add trailing slash to this route on back-end
-  return patch('auth/profile', {
+  return patch('auth/profile/', {
     ...formatUserData(userInfo),
   }).then(({ data }) => data);
 };
