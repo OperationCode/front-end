@@ -3,7 +3,7 @@ import { minimumPasswordLength } from '../../common/constants/validations';
 import existingUser from '../../test-utils/mocks/existingUser';
 import mockUser from '../../test-utils/mockGenerators/mockUser';
 
-describe('register', function() {
+describe('join', () => {
   beforeEach(() => {
     cy.server();
     cy.route('POST', 'auth/registration/').as('postRegister');
@@ -29,14 +29,17 @@ describe('register', function() {
 
     cy.wait('@postRegister');
 
-    cy.url({ timeout: 5000 }).should('contain', '/profile/update');
+    cy.url({ timeout: 10000 }).should('contain', '/profile/update');
     cy.get('h1').should('have.text', 'Update Profile');
 
     cy.getCookies().then(cookies => {
       expect(cookies.some(({ value }) => value === newUser.firstName)).to.be.true;
       expect(cookies.some(({ value }) => value === newUser.lastName)).to.be.true;
-      expect(cookies.some(({ value }) => value === newUser.zipcode.toString())).to.be.true;
+      expect(cookies.some(({ value }) => value === newUser.zipcode)).to.be.true;
     });
+
+    cy.get('[data-testid="Nav Item Login"]').should('not.exist');
+    cy.get('[data-testid="Nav Item Logout"]').should('exist');
   });
 
   it('should NOT be able to register with an existing email', () => {

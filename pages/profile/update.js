@@ -1,5 +1,6 @@
 import { array, objectOf, oneOfType, string, number, bool } from 'prop-types';
 import nextCookie from 'next-cookies';
+import get from 'lodash/get';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
@@ -11,7 +12,21 @@ class UpdateProfile extends React.Component {
   static async getInitialProps(ctx) {
     const { token } = nextCookie(ctx);
     const { data } = await getUserPromise({ token });
-    return { initialValues: { ...UpdateProfileForm.defaultProps.initialValues, ...data } };
+
+    // We get disciplines and programmingLanguages as a comma-separated string back from the server
+    // Turn it into an array if trying to populate initialValues.
+    const disciplines = get(data, 'disciplines') || '';
+    const programmingLanguages = get(data, 'programmingLanguages') || '';
+
+    const formattedData = {
+      ...data,
+      disciplines: disciplines.split(', '),
+      programmingLanguages: programmingLanguages.split(', '),
+    };
+
+    return {
+      initialValues: { ...UpdateProfileForm.defaultProps.initialValues, ...formattedData },
+    };
   }
 
   static propTypes = {
@@ -24,11 +39,14 @@ class UpdateProfile extends React.Component {
 
   render() {
     const { initialValues } = this.props;
+
+    const pageTitle = 'Update Profile';
+
     return (
       <>
-        <Head title="Update Profile" />
+        <Head title={pageTitle} />
 
-        <HeroBanner title="Update Profile" />
+        <HeroBanner title={pageTitle} />
 
         <Content theme="gray" columns={[<UpdateProfileForm initialValues={initialValues} />]} />
       </>

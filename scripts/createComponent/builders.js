@@ -56,8 +56,7 @@ storiesOf('${componentName}', module)
 
   // Output generated for component's test file
   buildTestJs: componentName =>
-    `/* eslint-env jest */
-import React from 'react';
+    `import React from 'react';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 
 import ${componentName} from '../${componentName}';

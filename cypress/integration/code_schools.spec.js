@@ -1,4 +1,4 @@
-describe('code schools', function() {
+describe('code schools', () => {
   const ReactSelectSelector = 'input#react-select-state_select-input';
 
   beforeEach(() => {
@@ -58,5 +58,13 @@ describe('code schools', function() {
 
     cy.contains('All Schools').click();
     cy.get('[data-testid="SchoolCard"]').should('have.length.greaterThan', 30);
+  });
+
+  it('should close when user clicks close button', () => {
+    cy.get('button:contains(view all)').each(button => {
+      cy.wrap(button).click();
+      cy.contains('Close').click();
+      cy.get('.ReactModal_Content').should('not.exist');
+    });
   });
 });

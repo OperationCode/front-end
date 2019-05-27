@@ -13,7 +13,7 @@ export const createUser = ({ email, password, firstName, lastName, zipcode }) =>
     firstName,
     lastName,
     password,
-    zip: zipcode,
+    zipcode,
   }).then(({ data }) => data);
 
 export const loginUser = ({ email, password }) =>
@@ -36,7 +36,7 @@ export const passwordResetSubmit = values =>
 
 /* PATCH REQUESTS */
 export const updateUser = userInfo => {
-  return patch('auth/profile', {
+  return patch('auth/profile/', {
     ...formatUserData(userInfo),
   }).then(({ data }) => data);
 };

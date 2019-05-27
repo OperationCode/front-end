@@ -1,15 +1,15 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import { wait } from 'react-testing-library';
 import { networkErrorMessages, validationErrorMessages } from 'common/constants/messages';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 import mockUser from 'test-utils/mockGenerators/mockUser';
 import mockPassword from 'test-utils/mockGenerators/mockPassword';
 import OperationCodeAPIMock from 'test-utils/mocks/apiMock';
 import asyncRenderDiff from 'test-utils/asyncRenderDiff';
-import wait from 'test-utils/wait';
 import RegistrationForm from '../RegistrationForm';
 
-afterEach(() => {
+beforeEach(() => {
   OperationCodeAPIMock.reset();
 });
 
@@ -117,19 +117,23 @@ describe('RegistrationForm', () => {
   it('should submit with valid data in form', async () => {
     const user = mockUser();
 
-    OperationCodeAPIMock.onPost('users', { user }).reply(200, {
-      token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9',
-    });
+    OperationCodeAPIMock.onPost('auth/registration/', {
+      email: user.email,
+      password: user.password,
+      firstName: user.firstName,
+      lastName: user.lastName,
+      zipcode: user.zipcode,
+    }).reply(200, { token: 'fake-token' });
 
     const successSpy = jest.fn();
-    const wrapper = mount(<RegistrationForm onSuccess={successSpy} initialState={user} />);
+    const wrapper = mount(<RegistrationForm onSuccess={successSpy} initialValues={user} />);
 
     wrapper.find('Button').simulate('submit');
     await asyncRenderDiff(wrapper);
 
     await wait(() => {
-      expect(successSpy).toHaveBeenCalled();
-      expect(OperationCodeAPIMock.history.post.length).toBeGreaterThan(0);
+      expect(OperationCodeAPIMock.history.post.length).toStrictEqual(1);
+      expect(successSpy).toHaveBeenCalledTimes(1);
     });
   });
 
@@ -172,8 +176,10 @@ describe('RegistrationForm', () => {
       password: existingUser.password,
       firstName: existingUser.firstName,
       lastName: existingUser.lastName,
-      zip: existingUser.zipcode,
-    }).reply(400, { email: ['has been taken'] });
+      zipcode: existingUser.zipcode,
+    }).reply(400, {
+      email: ['has been taken'],
+    });
 
     const successSpy = jest.fn();
     const wrapper = mount(<RegistrationForm onSuccess={successSpy} initialValues={existingUser} />);
@@ -193,13 +199,7 @@ describe('RegistrationForm', () => {
   it('should show a helpful error if the server is down', async () => {
     const user = mockUser();
 
-    OperationCodeAPIMock.onPost('auth/registration/', {
-      email: user.email,
-      password: user.password,
-      firstName: user.firstName,
-      lastName: user.lastName,
-      zip: user.zipcode,
-    }).reply(503);
+    OperationCodeAPIMock.onPost('auth/registration/', user).reply(503);
 
     const successSpy = jest.fn();
     const wrapper = mount(<RegistrationForm onSuccess={successSpy} initialValues={user} />);

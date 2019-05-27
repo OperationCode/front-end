@@ -13,6 +13,7 @@ LinkButton.propTypes = {
   disabled: bool,
   fullWidth: bool,
   href: string.isRequired,
+  shouldPrefetch: bool,
   theme: oneOf(['primary', 'secondary']),
 };
 
@@ -21,6 +22,7 @@ LinkButton.defaultProps = {
   className: undefined,
   disabled: false,
   fullWidth: false,
+  shouldPrefetch: false,
   theme: 'primary',
 };
 
@@ -30,6 +32,7 @@ export default function LinkButton({
   className,
   fullWidth,
   href,
+  shouldPrefetch,
   theme,
 }) {
   const linkButtonClassNames = classNames(styles.Button, className, styles[theme], {
@@ -37,7 +40,7 @@ export default function LinkButton({
   });
 
   return (
-    <Link href={href}>
+    <Link href={href} prefetch={shouldPrefetch}>
       {analyticsEventLabel && process.env.NODE_ENV === 'production' ? (
         <OutboundLink
           analyticsEventLabel={analyticsEventLabel}

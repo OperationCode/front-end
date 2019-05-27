@@ -1,4 +1,3 @@
-/* eslint-env jest */
 import { capitalizeFirstLetter, coerceEmptyStringToUndefined } from '../string-utils';
 
 describe('String Utilities', () => {

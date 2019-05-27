@@ -1,13 +1,17 @@
-/* eslint-env jest */
 import React from 'react';
 import { mount } from 'enzyme';
+import { wait } from 'react-testing-library';
+import { passwordReset } from 'common/constants/api';
 import { validationErrorMessages } from 'common/constants/messages';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 import OperationCodeAPIMock from 'test-utils/mocks/apiMock';
 import mockUser from 'test-utils/mockGenerators/mockUser';
 import asyncRenderDiff from 'test-utils/asyncRenderDiff';
-import wait from 'test-utils/wait';
 import PasswordResetForm from '../PasswordResetForm';
+
+afterEach(() => {
+  OperationCodeAPIMock.reset();
+});
 
 describe('PasswordResetForm', () => {
   it('should render with required props', () => {
@@ -49,29 +53,52 @@ describe('PasswordResetForm', () => {
   it('should submit with valid data in form', async () => {
     const user = mockUser();
 
-    const initialValues = {
-      email: user.email,
-    };
+    OperationCodeAPIMock.onPost('auth/password/reset/', { email: user.email }).reply(200, {
+      detail: 'success',
+    });
 
     const successSpy = jest.fn();
-    const passwordResetSpy = jest.fn();
 
     const wrapper = mount(
-      <PasswordResetForm
-        onSuccess={successSpy}
-        passwordReset={passwordResetSpy}
-        {...initialValues}
-      />,
+      <PasswordResetForm onSuccess={successSpy} passwordReset={passwordReset} />,
     );
+
+    wrapper
+      .find('input#email')
+      .simulate('change', { target: { id: 'email', value: user.email } })
+      .simulate('blur');
+
+    wrapper.find('Button').simulate('submit');
+
+    await asyncRenderDiff(wrapper);
+
+    await wait(() => {
+      expect(successSpy).toHaveBeenCalledWith({ detail: 'success' });
+      expect(OperationCodeAPIMock.history.post.length).toBeGreaterThan(0);
+    });
+  });
+
+  it('should display an error message if request fails', async () => {
+    const user = mockUser();
+    OperationCodeAPIMock.onPost('auth/password/reset/', { email: user.email }).reply(400, {
+      error: 'test error',
+    });
+
+    const successSpy = jest.fn();
+
+    const wrapper = mount(
+      <PasswordResetForm onSuccess={successSpy} passwordReset={passwordReset} />,
+    );
+
+    wrapper
+      .find('input#email')
+      .simulate('change', { target: { id: 'email', value: user.email } })
+      .simulate('blur');
 
     wrapper.find('Button').simulate('submit');
     await asyncRenderDiff(wrapper);
 
-    await wait(() => {
-      expect(passwordResetSpy).toHaveBeenCalled();
-      expect(successSpy).toHaveBeenCalled();
-      expect(OperationCodeAPIMock.history.post.length).toBeGreaterThan(0);
-    });
+    expect(wrapper.find('Alert').text()).toStrictEqual('test error');
   });
 
   it('should NOT submit with invalid data in form', async () => {

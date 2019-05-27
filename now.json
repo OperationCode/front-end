@@ -21,7 +21,17 @@
       "src": "^/(favicon.ico|manifest.json|humans.txt|sitemap.xml|sitemap.xsl)$",
       "dest": "/static/$1",
       "headers": { "cache-control": "max-age=10000 must-revalidate" }
-    }
+    },
+    {
+      "src": "/media",
+      "dest": "/branding"
+    },
+    {
+      "src": "/privacy",
+      "dest": "https://www.iubenda.com/privacy-policy/8174861"
+    },
+    { "handle": "filesystem" },
+    { "src": "/*/.*", "dest": "/_error" }
   ],
   "public": true
 }

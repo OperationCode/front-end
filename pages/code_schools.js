@@ -230,7 +230,7 @@ export default class CodeSchools extends React.Component {
           title="Mooc Schools"
           hasTitleUnderline
           columns={moocSchools.map(mooc => (
-            <FlatCard key={mooc.name} imageSource={mooc.logo} imageAlt={`${mooc.name} logo`}>
+            <FlatCard key={mooc.name} image={{ source: mooc.logo, alt: `${mooc.name} logo` }}>
               <>
                 {mooc.text}
                 <div className={styles.centered}>
