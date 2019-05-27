@@ -6,13 +6,28 @@ import { bool } from 'prop-types';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { donateLink, s3 } from 'common/constants/urls';
-import { loggedInNavItems, loggedOutNavItems } from 'common/constants/navigation';
+import {
+  loggedInNavItems,
+  loggedOutNavItems,
+  mobileLoggedInNavItems,
+  mobileLoggedOutNavItems,
+} from 'common/constants/navigation';
 import { isDesktopSelector } from 'store/screenSize/selectors';
 import NavListItem from 'components/Nav/NavListItem/NavListItem';
 import NavMobile from 'components/Nav/NavMobile/NavMobile';
 import styles from './Nav.css';
 
 export class Nav extends Component {
+  static propTypes = {
+    isDesktopView: bool,
+    isLoggedIn: bool,
+  };
+
+  static defaultProps = {
+    isDesktopView: false,
+    isLoggedIn: false,
+  };
+
   state = {
     isMobileMenuVisible: false,
   };
@@ -37,18 +52,21 @@ export class Nav extends Component {
     const { isDesktopView, isLoggedIn } = this.props;
     const { isMobileMenuVisible } = this.state;
 
-    const navItems = isLoggedIn ? loggedInNavItems : loggedOutNavItems;
-
     if (!isDesktopView) {
+      const mobileNavItems = isLoggedIn ? mobileLoggedInNavItems : mobileLoggedOutNavItems;
+
       return (
         <NavMobile
           isMenuVisible={isMobileMenuVisible}
           closeMenu={this.closeMobileMenu}
           openMenu={this.openMobileMenu}
-          navItems={navItems}
+          navItems={mobileNavItems}
         />
       );
     }
+
+    // non-mobile
+    const navItems = isLoggedIn ? loggedInNavItems : loggedOutNavItems;
 
     return (
       <header className={styles.header}>
@@ -83,16 +101,6 @@ export class Nav extends Component {
     );
   }
 }
-
-Nav.propTypes = {
-  isDesktopView: bool,
-  isLoggedIn: bool,
-};
-
-Nav.defaultProps = {
-  isDesktopView: false,
-  isLoggedIn: false,
-};
 
 const mapStateToProps = state => ({
   isDesktopView: isDesktopSelector(state),
