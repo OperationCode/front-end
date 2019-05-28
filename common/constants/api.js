@@ -31,6 +31,8 @@ export const passwordReset = ({ email }) =>
 export const passwordResetSubmit = values =>
   post('auth/password/reset/confirm/', values).then(({ data }) => data);
 
+export const confirmEmail = key => post('auth/verify-email/', key).then(({ data }) => data);
+
 /* PATCH REQUESTS */
 export const updateUser = userInfo => {
   return patch('auth/profile/', {

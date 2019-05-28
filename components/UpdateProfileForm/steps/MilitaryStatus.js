@@ -43,6 +43,7 @@ class MilitaryStatus extends React.Component {
             name="militaryStatus"
             label="Military Status*"
             component={Select}
+            instanceId="militaryStatus"
             options={[
               {
                 value: 'civilian',
