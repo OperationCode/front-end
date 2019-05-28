@@ -5438,7 +5438,7 @@ cypress-image-snapshot@^3.1.0:
     pkg-dir "^3.0.0"
     term-img "^4.0.0"
 
-cypress@^3.3.1:
+cypress@^3.2.0:
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/cypress/-/cypress-3.3.1.tgz#8a127b1d9fa74bff21f111705abfef58d595fdef"
   integrity sha512-JIo47ZD9P3jAw7oaK7YKUoODzszJbNw41JmBrlMMiupHOlhmXvZz75htuo7mfRFPC9/1MDQktO4lX/V2+a6lGQ==
