@@ -19,7 +19,7 @@ workflows:
           parallel: true # split all specs across machines
           parallelism: 4 # use 4 CircleCI machines to finish quickly
           group: 'all tests' # name this group "all tests" on the dashboard
-          start: 'next dev' # start server before running tests
+          start: 'yarn dev' # start server before running tests
           yarn: true # use yarn instead of npm
           wait-on: http://localhost:3000 # wait until server is ready
 
