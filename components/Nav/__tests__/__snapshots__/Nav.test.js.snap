@@ -65,6 +65,7 @@ exports[`Nav should render with props passed 1`] = `
   >
     <nav
       className="Nav"
+      data-testid="Desktop Nav"
     >
       <Link
         href="/"

@@ -132,6 +132,7 @@ export class MultiStepForm extends React.Component {
                   theme="secondary"
                   disabled={formikBag.isSubmitting}
                   onClick={() => this.showPreviousStep(formikBag)}
+                  data-testid="Previous Step Button"
                 >
                   {isMobileView ? (
                     <>
@@ -145,7 +146,12 @@ export class MultiStepForm extends React.Component {
               )}
 
               {this.isLastStep() ? (
-                <Button type="submit" theme="secondary" disabled={formikBag.isSubmitting}>
+                <Button
+                  type="submit"
+                  theme="secondary"
+                  disabled={formikBag.isSubmitting}
+                  data-testid="Submit Multi-Step Form"
+                >
                   Submit ✓
                 </Button>
               ) : (
@@ -154,6 +160,7 @@ export class MultiStepForm extends React.Component {
                   theme="secondary"
                   disabled={formikBag.isSubmitting}
                   fullWidth={isFirstStep}
+                  data-testid="Submit Step Button"
                 >
                   {isMobileView ? (
                     <>
