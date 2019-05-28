@@ -18,7 +18,7 @@ import { userInfoCookieNames } from '../../common/utils/cookie-utils';
 
 Cypress.Commands.add('visitAndWaitFor', path => {
   cy.visit(path);
-  cy.wait(3000); // eslint-disable-line cypress/no-unnecessary-waiting
+  cy.get('nav[data-testid="Desktop Nav"]').should('exist');
   cy.url().should('contain', path);
 });
 
