@@ -93,6 +93,10 @@ export const footerItems = {
     },
   ],
   column3: [
+    {
+      href: '/podcasts',
+      name: 'Podcast',
+    },
     getInvolvedLink,
     // {
     //   href: '/mentoring',

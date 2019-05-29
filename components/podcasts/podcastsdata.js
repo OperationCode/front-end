@@ -3,14 +3,14 @@ import RssParser from 'rss-parser';
 
 const parser = new RssParser();
 
-const podcastdata = {
+const Podcastdata = {
   general: [],
 };
 
 parser.parseURL('http://operationcode.libsyn.com/rss', (error, feed) => {
   feed.items.forEach(entry => {
-    console.log(entry);
-    podcastdata.general.push({
+    // console.log(entry);
+    Podcastdata.general.push({
       image: entry.itunes.image,
       source: entry.link,
       name: entry.title,
@@ -19,4 +19,4 @@ parser.parseURL('http://operationcode.libsyn.com/rss', (error, feed) => {
   });
 });
 
-export default podcastdata;
+export default Podcastdata;

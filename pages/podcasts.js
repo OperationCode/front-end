@@ -4,10 +4,10 @@ import ImageCard from 'components/Cards/ImageCard/ImageCard';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
 import FAQItem from 'components/FAQ/FAQItem/FAQItem';
-import PodcastData from 'components/podcasts/podcastsdata';
+import PodcastData from 'components/Podcasts/Podcastsdata';
 import ReactAudioPlayer from 'react-audio-player';
 // import { s3 } from 'common/constants/urls';
-import styles from './styles/podcast.css';
+import styles from './styles/podcasts.css';
 
 export default () => {
   const pageTitle = 'Operation Code Podcast';
