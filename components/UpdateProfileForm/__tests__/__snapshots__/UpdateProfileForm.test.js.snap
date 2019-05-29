@@ -203,6 +203,7 @@ exports[`UpdateProfileForm should render with required props 1`] = `
   >
     <button
       className="Button secondary fullWidth"
+      data-testid="Submit Step Button"
       disabled={false}
       onClick={[Function]}
       tabIndex={0}

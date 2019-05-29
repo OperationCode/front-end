@@ -23,6 +23,20 @@ describe('Nav', () => {
     expect(wrapper.find('NavMobile')).not.toExist();
   });
 
+  it('should render logout link when logged in', () => {
+    const wrapper = mount(<Nav isLoggedIn {...largeScreen} />);
+
+    expect(wrapper.find('a[href="/login?loggedOut=true"]')).toExist();
+  });
+
+  it('should render who we serve section when logged in', () => {
+    const wrapper = mount(<Nav {...largeScreen} />);
+
+    expect(wrapper.find('a[href="/who_we_serve"]')).toExist();
+    expect(wrapper.find('a[href="/login"]')).toExist();
+    expect(wrapper.find('a[href="/join"]')).toExist();
+  });
+
   it('should change state accordingly when child component invokes openMenu callback', () => {
     const wrapper = mount(<Nav {...smallScreen} />);
 

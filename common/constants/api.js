@@ -2,56 +2,40 @@ import { get, post, patch } from 'common/utils/api-utils';
 import { formatUserData } from 'common/utils/formatters';
 
 /* GET REQUESTS */
-export const getCodeSchoolsPromise = () => get('code_schools');
-export const getMentorPromise = id => get(`mentors/${id}`);
-export const getMentorsPromise = () => get('mentors');
-export const getRequestsPromise = () => get('requests');
-export const getScholarshipPromise = id => get(`scholarships/${id}`);
-export const getScholarshipsPromise = () => get('scholarships');
-export const getServicesPromise = () => get('services');
-export const getTeamMembersPromise = () => get('team_members');
+export const getUserPromise = ({ token }) => get('auth/user', { token });
+export const getCodeSchoolsPromise = () => get('api/v1/codeschools/');
+export const getTeamMembersPromise = () => get('api/v1/teamMembers/');
 
 /* POST REQUESTS */
 export const createUser = ({ email, password, firstName, lastName, zipcode }) =>
-  post('users', {
-    user: {
-      email,
-      password,
-      first_name: firstName,
-      last_name: lastName,
-      zip: zipcode,
-    },
+  post('auth/registration/', {
+    email,
+    firstName,
+    lastName,
+    password,
+    zipcode,
   }).then(({ data }) => data);
 
 export const loginUser = ({ email, password }) =>
-  post('sessions', {
-    user: {
-      email,
-      password,
-    },
+  post('auth/login/', {
+    email,
+    password,
   }).then(({ data }) => data);
 
-export const postMentorRequestPromise = ({ language, additionalDetails, mentor, service }) =>
-  post('requests', {
-    request: {
-      details: additionalDetails,
-      language,
-      requested_mentor_id: mentor,
-      service_id: service,
-    },
-  });
+export const loginSocial = (provider, body) =>
+  post(`auth/social/${provider}/`, body).then(({ data }) => data);
+
+export const passwordReset = ({ email }) =>
+  post('auth/password/reset/', { email }).then(({ data }) => data);
+
+export const passwordResetSubmit = values =>
+  post('auth/password/reset/confirm/', values).then(({ data }) => data);
+
+export const confirmEmail = key => post('auth/verify-email/', key).then(({ data }) => data);
 
 /* PATCH REQUESTS */
 export const updateUser = userInfo => {
-  return patch('users', {
-    user: { ...formatUserData(userInfo) },
+  return patch('auth/profile/', {
+    ...formatUserData(userInfo),
   }).then(({ data }) => data);
 };
-
-export const patchUpdateMentorRequestPromise = ({ request, status, mentor }) =>
-  patch(`requests/${request}`, {
-    request: {
-      status,
-      mentor,
-    },
-  });

@@ -1,12 +1,9 @@
 import React from 'react';
 import { arrayOf, bool, func, object } from 'prop-types';
-import get from 'lodash/get';
 import noop from 'lodash/noop';
 import { Formik } from 'formik';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
-import { capitalizeFirstLetter } from 'common/utils/string-utils';
-import { getErrorMessage } from 'common/utils/api-utils';
 import { isMobileSelector } from 'store/screenSize/selectors';
 import { validStep } from 'common/constants/custom-props';
 import Button from 'components/Button/Button';
@@ -20,6 +17,7 @@ export class MultiStepForm extends React.Component {
     // initialValues must be object where entire form's shape is described
     initialValues: object.isRequired,
 
+    getErrorMessage: func.isRequired,
     onEachStepSubmit: func,
     onFinalSubmit: func.isRequired, // to be considered onSuccess
     steps: arrayOf(validStep).isRequired,
@@ -72,25 +70,9 @@ export class MultiStepForm extends React.Component {
   };
 
   handleError = error => {
-    const data = get(error, 'response.data');
+    const { getErrorMessage } = this.props;
 
-    // custom error handling logic specific to BE registration error responses
-    if (data && !data.error) {
-      // TODO: Create back-end ticket for checking if email has been taken for a debounced,
-      // client-side validation of emails instead of waiting for submission.
-      const errorMessage = Object.keys(data)
-        .map(key => {
-          const fieldName = capitalizeFirstLetter(key);
-
-          // example: Email has already been taken.
-          return `${fieldName} ${data[key][0]}.`;
-        })
-        .join('\n');
-
-      this.setState({ errorMessage });
-    } else {
-      this.setState({ errorMessage: getErrorMessage(error) });
-    }
+    this.setState({ errorMessage: getErrorMessage(error) });
   };
 
   handleSubmit = async (values, formikBag) => {
@@ -150,6 +132,7 @@ export class MultiStepForm extends React.Component {
                   theme="secondary"
                   disabled={formikBag.isSubmitting}
                   onClick={() => this.showPreviousStep(formikBag)}
+                  data-testid="Previous Step Button"
                 >
                   {isMobileView ? (
                     <>
@@ -163,7 +146,12 @@ export class MultiStepForm extends React.Component {
               )}
 
               {this.isLastStep() ? (
-                <Button type="submit" theme="secondary" disabled={formikBag.isSubmitting}>
+                <Button
+                  type="submit"
+                  theme="secondary"
+                  disabled={formikBag.isSubmitting}
+                  data-testid="Submit Multi-Step Form"
+                >
                   Submit ✓
                 </Button>
               ) : (
@@ -172,6 +160,7 @@ export class MultiStepForm extends React.Component {
                   theme="secondary"
                   disabled={formikBag.isSubmitting}
                   fullWidth={isFirstStep}
+                  data-testid="Submit Step Button"
                 >
                   {isMobileView ? (
                     <>

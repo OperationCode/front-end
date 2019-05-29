@@ -1,6 +1,6 @@
 import { array, string } from 'prop-types';
 import Head from 'components/head';
-import { getErrorMessage } from 'common/utils/api-utils';
+import { getServerErrorMessage } from 'common/utils/api-utils';
 import ThemedReactSelect from 'components/Form/Select/ThemedReactSelect';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
@@ -47,7 +47,7 @@ export default class CodeSchools extends React.Component {
         allSchools: data,
       };
     } catch (error) {
-      return { errorMessage: getErrorMessage(error) };
+      return { errorMessage: getServerErrorMessage(error) };
     }
   }
 
@@ -80,7 +80,7 @@ export default class CodeSchools extends React.Component {
 
   filterOnline = () => {
     const { allSchools } = this.props;
-    const onlineSchools = allSchools.filter(school => school.has_online);
+    const onlineSchools = allSchools.filter(school => school.hasOnline);
 
     this.setState({ filteredSchools: onlineSchools, selectedStates: [] });
   };
@@ -102,7 +102,7 @@ export default class CodeSchools extends React.Component {
   filterVaApproved = () => {
     const { allSchools } = this.props;
     const vaApproved = allSchools.filter(school =>
-      school.locations.some(location => location.va_accepted),
+      school.locations.some(location => location.vaAccepted),
     );
 
     this.setState({ filteredSchools: vaApproved, selectedStates: [] });
@@ -209,11 +209,11 @@ export default class CodeSchools extends React.Component {
                     {filteredSchools.map(school => (
                       <SchoolCard
                         key={`${school.name}`}
-                        hasHardwareIncluded={school.hardware_included}
-                        hasHousing={school.has_housing}
-                        hasOnline={school.has_online}
-                        hasOnlyOnline={school.online_only}
-                        isFullTime={school.full_time}
+                        hasHardwareIncluded={school.hardwareIncluded}
+                        hasHousing={school.hasHousing}
+                        hasOnline={school.hasOnline}
+                        hasOnlyOnline={school.onlineOnly}
+                        isFullTime={school.fullTime}
                         locations={school.locations}
                         logoSource={school.logo}
                         name={school.name}
@@ -230,7 +230,7 @@ export default class CodeSchools extends React.Component {
           title="Mooc Schools"
           hasTitleUnderline
           columns={moocSchools.map(mooc => (
-            <FlatCard key={mooc.name} imageSource={mooc.logo} imageAlt={`${mooc.name} logo`}>
+            <FlatCard key={mooc.name} image={{ source: mooc.logo, alt: `${mooc.name} logo` }}>
               <>
                 {mooc.text}
                 <div className={styles.centered}>

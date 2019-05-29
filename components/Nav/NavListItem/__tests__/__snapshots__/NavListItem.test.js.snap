@@ -12,6 +12,7 @@ exports[`NavListItem should render with required props passed 1`] = `
       aria-expanded={false}
       aria-haspopup={false}
       className="link navItemLink"
+      data-testid="Nav Item Test"
       onMouseEnter={[Function]}
       onMouseLeave={[Function]}
       role="link"

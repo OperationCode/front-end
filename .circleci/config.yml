@@ -1,0 +1,80 @@
+version: 2.1
+
+orbs:
+  cypress: cypress-io/cypress@1
+
+
+workflows:
+  build:
+    jobs:
+      - build_and_test
+
+      - cypress/install:
+          yarn: true
+
+      - cypress/run:
+          requires:
+            - cypress/install
+          record: true # record results on Cypress Dashboard
+          parallel: true # split all specs across machines
+          parallelism: 3 # use 3 CircleCI machines to finish quickly
+          group: 'all tests' # name this group "all tests" on the dashboard
+          start: 'yarn dev' # start server before running tests
+          yarn: true # use yarn instead of npm
+          wait-on: http://localhost:3000 # wait until server is ready
+
+jobs:
+  build_and_test:
+    docker:
+      - image: circleci/node:8.15.1
+        environment: # environment variables for primary container
+          CC_TEST_REPORTER_ID: 0f2bc6ef737019bfc8eda369cd06b66c54606b144b4d81cec010fb494d2559af
+
+    steps:
+      - checkout
+
+      - run: sudo chown -R circleci:circleci /usr/local/bin
+
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
+
+      - run:
+          name: Install dependencies
+          command: |
+            yarn global add greenkeeper-lockfile@2
+
+            if [[ ${CIRCLE_BRANCH} == greenkeeper* ]]; then
+                  yarn;
+            else
+                  yarn  --frozen-lockfile --production=false;
+            fi
+
+      - run:
+          name: Initializing CodeClimate
+          command: |
+            curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > /usr/local/bin/cc-test-reporter
+            chmod +x /usr/local/bin/cc-test-reporter
+            /usr/local/bin/cc-test-reporter before-build
+
+      - save_cache:
+          paths:
+            - node_modules
+            - ~/.cache
+          key: v1-dependencies-{{ checksum "package.json" }}
+
+      # Run tests
+      - run:
+          name: Run Tests
+          command: |
+            yarn lint
+            yarn test:ci --max-workers=2
+
+      - run:
+          name: Post test scripts
+          command: |
+            greenkeeper-lockfile-upload
+            /usr/local/bin/cc-test-reporter after-build

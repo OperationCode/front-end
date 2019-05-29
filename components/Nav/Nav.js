@@ -6,13 +6,28 @@ import { bool } from 'prop-types';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { donateLink, s3 } from 'common/constants/urls';
-import { navItems } from 'common/constants/navigation';
+import {
+  loggedInNavItems,
+  loggedOutNavItems,
+  mobileLoggedInNavItems,
+  mobileLoggedOutNavItems,
+} from 'common/constants/navigation';
 import { isDesktopSelector } from 'store/screenSize/selectors';
 import NavListItem from 'components/Nav/NavListItem/NavListItem';
 import NavMobile from 'components/Nav/NavMobile/NavMobile';
 import styles from './Nav.css';
 
 export class Nav extends Component {
+  static propTypes = {
+    isDesktopView: bool,
+    isLoggedIn: bool,
+  };
+
+  static defaultProps = {
+    isDesktopView: false,
+    isLoggedIn: false,
+  };
+
   state = {
     isMobileMenuVisible: false,
   };
@@ -34,23 +49,29 @@ export class Nav extends Component {
   };
 
   render() {
-    const { isDesktopView } = this.props;
+    const { isDesktopView, isLoggedIn } = this.props;
     const { isMobileMenuVisible } = this.state;
 
     if (!isDesktopView) {
+      const mobileNavItems = isLoggedIn ? mobileLoggedInNavItems : mobileLoggedOutNavItems;
+
       return (
         <NavMobile
           isMenuVisible={isMobileMenuVisible}
           closeMenu={this.closeMobileMenu}
           openMenu={this.openMobileMenu}
+          navItems={mobileNavItems}
         />
       );
     }
 
+    // non-mobile
+    const navItems = isLoggedIn ? loggedInNavItems : loggedOutNavItems;
+
     return (
       <header className={styles.header}>
         <div className={styles.navContainer}>
-          <nav className={styles.Nav}>
+          <nav className={styles.Nav} data-testid="Desktop Nav">
             <Link href="/">
               <a className={classNames(styles.logoLink, styles.link)}>
                 <img
@@ -62,11 +83,10 @@ export class Nav extends Component {
             </Link>
 
             <ul className={styles.link}>
-              {navItems.map(navLink => (
+              {navItems.map(navItem => (
                 // NavListItem component API matches navItems structure
-                <NavListItem key={navLink.name} {...navLink} />
+                <NavListItem key={navItem.name} {...navItem} />
               ))}
-
               <li>
                 <Link href={donateLink}>
                   <a className={classNames(styles.link, styles.donateLink)}>
@@ -82,16 +102,9 @@ export class Nav extends Component {
   }
 }
 
-Nav.propTypes = {
-  isDesktopView: bool,
-};
-
-Nav.defaultProps = {
-  isDesktopView: false,
-};
-
 const mapStateToProps = state => ({
   isDesktopView: isDesktopSelector(state),
+  isLoggedIn: state.isLoggedIn,
 });
 
 export default compose(connect(mapStateToProps))(Nav);

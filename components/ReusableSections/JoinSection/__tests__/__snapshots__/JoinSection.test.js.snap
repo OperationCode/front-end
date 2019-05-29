@@ -1,5 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`JoinSection should render correctly when logged in 1`] = `null`;
+
 exports[`JoinSection should render with required props 1`] = `
 <div
   className="Container white"

@@ -33,7 +33,7 @@ const featuredLinksArray = [
   },
 ];
 
-export default () => (
+const Home = () => (
   <>
     <Head title="Home" />
 
@@ -101,3 +101,5 @@ export default () => (
     <JoinSection />
   </>
 );
+
+export default Home;

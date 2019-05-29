@@ -4,6 +4,54 @@ exports[`Nav should render with no props passed 1`] = `
 <NavMobile
   closeMenu={[Function]}
   isMenuVisible={false}
+  navItems={
+    Array [
+      Object {
+        "href": "/login",
+        "name": "Login",
+      },
+      Object {
+        "href": "/join",
+        "name": "Join",
+      },
+      Object {
+        "href": "/about",
+        "name": "About Us",
+        "shouldPrefetch": false,
+      },
+      Object {
+        "href": "/contact",
+        "name": "Contact Us",
+      },
+      Object {
+        "href": "/faq",
+        "name": "FAQ",
+      },
+      Object {
+        "href": "/who_we_serve",
+        "name": "Who We Serve",
+        "shouldPrefetch": false,
+      },
+      Object {
+        "href": "/events",
+        "name": "Events",
+        "shouldPrefetch": false,
+      },
+      Object {
+        "href": "/get_involved",
+        "name": "Get Involved",
+        "shouldPrefetch": false,
+      },
+      Object {
+        "href": "/sponsorship",
+        "name": "Sponsorship",
+      },
+      Object {
+        "href": "/leadership_circle",
+        "name": "Leadership Circle",
+      },
+    ]
+  }
   openMenu={[Function]}
 />
 `;
@@ -17,6 +65,7 @@ exports[`Nav should render with props passed 1`] = `
   >
     <nav
       className="Nav"
+      data-testid="Desktop Nav"
     >
       <Link
         href="/"
@@ -59,7 +108,7 @@ exports[`Nav should render with props passed 1`] = `
             Array [
               Object {
                 "href": "/login",
-                "name": "Member Login",
+                "name": "Login",
               },
               Object {
                 "href": "/join",

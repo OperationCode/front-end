@@ -1,19 +1,34 @@
 import React, { Component } from 'react';
 import Link from 'next/link';
-import { func, bool } from 'prop-types';
+import { func, bool, string, arrayOf, shape } from 'prop-types';
 import classNames from 'classnames';
 import { donateLink, s3 } from 'common/constants/urls';
-import { navItems } from 'common/constants/navigation';
-import flattenDepth from 'lodash/flattenDepth';
 import HamburgerIcon from 'static/images/icons/hamburger.svg';
 import CloseButton from 'components/CloseButton/CloseButton';
 import styles from './NavMobile.css';
 
 export default class NavMobile extends Component {
-  render() {
-    const { isMenuVisible, openMenu, closeMenu } = this.props;
+  static propTypes = {
+    isMenuVisible: bool.isRequired,
+    openMenu: func.isRequired,
+    closeMenu: func.isRequired,
+    navItems: arrayOf(
+      shape({
+        href: string.isRequired,
+        name: string.isRequired,
+        shouldPrefetch: bool,
+        sublinks: arrayOf(
+          shape({
+            name: string.isRequired,
+            href: string.isRequired,
+          }),
+        ),
+      }),
+    ).isRequired,
+  };
 
-    const links = flattenDepth(navItems.map(navItem => [navItem, navItem.sublinks]), 2);
+  render() {
+    const { isMenuVisible, openMenu, closeMenu, navItems } = this.props;
 
     return (
       <header className={styles.NavMobile}>
@@ -52,7 +67,7 @@ export default class NavMobile extends Component {
                   </a>
                 </Link>
               </li>
-              {links.map(navlink => (
+              {navItems.map(navlink => (
                 <li className={styles.li} key={navlink.name}>
                   <Link href={navlink.href}>
                     <a className={styles.link}>{navlink.name}</a>
@@ -71,9 +86,3 @@ export default class NavMobile extends Component {
     );
   }
 }
-
-NavMobile.propTypes = {
-  isMenuVisible: bool.isRequired,
-  openMenu: func.isRequired,
-  closeMenu: func.isRequired,
-};

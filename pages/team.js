@@ -2,7 +2,7 @@ import { arrayOf, object, string } from 'prop-types';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import { getTeamMembersPromise } from 'common/constants/api';
 import { s3 } from 'common/constants/urls';
-import { getErrorMessage } from 'common/utils/api-utils';
+import { getServerErrorMessage } from 'common/utils/api-utils';
 import Content from 'components/Content/Content';
 import Alert from 'components/Alert/Alert';
 import FlatCard from 'components/Cards/FlatCard/FlatCard';
@@ -26,7 +26,7 @@ export default class Team extends React.Component {
 
       return { boardMembers: sortedBoardMembers };
     } catch (error) {
-      return { errorMessage: getErrorMessage(error) };
+      return { errorMessage: getServerErrorMessage(error) };
     }
   }
 
@@ -55,7 +55,7 @@ export default class Team extends React.Component {
               <Alert isOpen>{errorMessage}</Alert>
             ) : (
               <div className={styles.boardMembers}>
-                {boardMembers.map(({ name, role, image_src: imageSource, description }) => (
+                {boardMembers.map(({ name, role, imageSrc: imageSource, description }) => (
                   <FlatCard
                     key={name}
                     header={
@@ -65,7 +65,10 @@ export default class Team extends React.Component {
                         <h5>{role}</h5>
                       </>
                     }
-                    imageSource={imageSource}
+                    image={{
+                      source: imageSource,
+                      alt: `Headshot of ${name}`,
+                    }}
                   >
                     {description}
                   </FlatCard>

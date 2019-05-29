@@ -27,7 +27,7 @@ describe('UpdateProfileForm/Steps/MilitaryStatus', () => {
   });
 
   it('should update user on submit', async () => {
-    OperationCodeAPIMock.onPatch('users').reply(200);
+    OperationCodeAPIMock.onPatch('auth/profile/').reply(200);
 
     const wrapper = mount(
       <Formik
