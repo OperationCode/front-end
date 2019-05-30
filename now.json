@@ -2,7 +2,7 @@
   "version": 2,
   "name": "operation-code",
   "alias": "operation-code.now.sh",
-  "builds": [{ "src": "package.json", "use": "@now/next" }],
+  "builds": [{ "src": "package.json", "use": "@now/next@canary" }],
   "build": {
     "env": {
       "GOOGLE_ANALYTICS_TRACKING_ID": "@google-analytics-tracking-id",
