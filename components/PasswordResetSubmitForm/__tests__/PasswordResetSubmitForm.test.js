@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { wait } from 'react-testing-library';
+import { wait } from '@testing-library/react';
 import { passwordResetSubmit } from 'common/constants/api';
 import { validationErrorMessages } from 'common/constants/messages';
 import createSnapshotTest from 'test-utils/createSnapshotTest';

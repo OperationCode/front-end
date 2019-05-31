@@ -1,6 +1,6 @@
 import React from 'react';
 import { Formik, Field } from 'formik';
-import { wait } from 'react-testing-library';
+import { wait } from '@testing-library/react';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 import { shallow, mount } from 'enzyme';
 
