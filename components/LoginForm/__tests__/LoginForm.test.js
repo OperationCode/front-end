@@ -1,7 +1,7 @@
 import React from 'react';
 import faker from 'faker';
 import { mount } from 'enzyme';
-import { wait } from 'react-testing-library';
+import { wait } from '@testing-library/react';
 import { loginUser } from 'common/constants/api';
 import { networkErrorMessages, validationErrorMessages } from 'common/constants/messages';
 import createSnapshotTest from 'test-utils/createSnapshotTest';

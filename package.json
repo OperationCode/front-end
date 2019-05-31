@@ -112,6 +112,7 @@
   },
   "devDependencies": {
     "@babel/preset-env": "^7.4.5",
+    "@testing-library/react": "^8.0.1",
     "axios-mock-adapter": "^1.16.0",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^24.8.0",
@@ -141,7 +142,6 @@
     "prettier": "^1.17.1",
     "react-addons-test-utils": "^15.6.2",
     "react-test-renderer": "^16.8.6",
-    "react-testing-library": "^8.0.0",
     "redux-mock-store": "^1.5.3",
     "start-server-and-test": "^1.9.1",
     "stylelint": "^10.0.1",
