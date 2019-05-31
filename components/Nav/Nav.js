@@ -71,7 +71,7 @@ export class Nav extends Component {
     return (
       <header className={styles.header}>
         <div className={styles.navContainer}>
-          <nav className={styles.Nav}>
+          <nav className={styles.Nav} data-testid="Desktop Nav">
             <Link href="/">
               <a className={classNames(styles.logoLink, styles.link)}>
                 <img

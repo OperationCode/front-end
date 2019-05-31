@@ -1,7 +1,7 @@
 import React from 'react';
 import faker from 'faker';
 import { mount } from 'enzyme';
-import { wait } from 'react-testing-library';
+import { wait } from '@testing-library/react';
 import { loginUser } from 'common/constants/api';
 import { networkErrorMessages, validationErrorMessages } from 'common/constants/messages';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
@@ -77,10 +77,7 @@ describe('LoginForm', () => {
 
     OperationCodeAPIMock.onPost('auth/login/', initialValues).reply(200, {
       user: {
-        firstName: user.firstName,
-        lastName: user.lastName,
-        email: user.email,
-        zip: user.zipcode,
+        ...user,
         slackName: faker.internet.userName(),
         mentor: false,
       },
@@ -127,23 +124,17 @@ describe('LoginForm', () => {
   it('should show error when trying to login with incorrect email or password', async () => {
     const invalidError = 'Invalid Email or password.';
 
-    const user = {
+    const initialValues = {
       email: 'testing123@gmail.com',
       password: 'Testing123',
     };
 
-    OperationCodeAPIMock.onPost('auth/login/', { ...user }).reply(401, { error: invalidError });
+    OperationCodeAPIMock.onPost('auth/login/', initialValues).reply(401, { error: invalidError });
 
     const successSpy = jest.fn();
 
     const wrapper = mount(
-      <LoginForm
-        login={loginUser}
-        onSuccess={successSpy}
-        initialValues={{
-          ...user,
-        }}
-      />,
+      <LoginForm login={loginUser} onSuccess={successSpy} initialValues={initialValues} />,
     );
 
     wrapper.find('Button').simulate('submit');
@@ -201,10 +192,7 @@ describe('LoginForm', () => {
 
     OperationCodeAPIMock.onPost('auth/login/', initialValues).reply(200, {
       user: {
-        firstName: user.firstName,
-        lastName: user.lastName,
-        email: user.email,
-        zip: user.zipcode,
+        ...user,
         slackName: faker.internet.userName(),
         mentor: false,
       },

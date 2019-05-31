@@ -26,12 +26,9 @@ describe('login', () => {
     cy.get('p').contains('Hello Kyle Holmberg!');
 
     cy.getCookies().then(cookies => {
-      expect(
-        cookies.some(({ value }) => value.includes('eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9')),
-      ).to.equal(true);
-      expect(cookies.some(({ value }) => value === 'Kyle')).to.be.true;
-      expect(cookies.some(({ value }) => value === 'Holmberg')).to.be.true;
-      expect(cookies.some(({ value }) => value === '97214')).to.be.true;
+      expect(cookies.some(({ value }) => value === existingUser.firstName)).to.be.true;
+      expect(cookies.some(({ value }) => value === existingUser.lastName)).to.be.true;
+      expect(cookies.some(({ value }) => value === existingUser.zipcode)).to.be.true;
     });
   });
 

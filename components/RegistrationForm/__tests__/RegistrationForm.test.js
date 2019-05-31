@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { wait } from 'react-testing-library';
+import { wait } from '@testing-library/react';
 import { networkErrorMessages, validationErrorMessages } from 'common/constants/messages';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 import mockUser from 'test-utils/mockGenerators/mockUser';
@@ -122,10 +122,8 @@ describe('RegistrationForm', () => {
       password: user.password,
       firstName: user.firstName,
       lastName: user.lastName,
-      zip: user.zipcode,
-    }).reply(200, {
-      token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9',
-    });
+      zipcode: user.zipcode,
+    }).reply(200, { token: 'fake-token' });
 
     const successSpy = jest.fn();
     const wrapper = mount(<RegistrationForm onSuccess={successSpy} initialValues={user} />);
@@ -178,8 +176,10 @@ describe('RegistrationForm', () => {
       password: existingUser.password,
       firstName: existingUser.firstName,
       lastName: existingUser.lastName,
-      zip: existingUser.zipcode,
-    }).reply(400, { email: ['has been taken'] });
+      zipcode: existingUser.zipcode,
+    }).reply(400, {
+      email: ['has been taken'],
+    });
 
     const successSpy = jest.fn();
     const wrapper = mount(<RegistrationForm onSuccess={successSpy} initialValues={existingUser} />);
@@ -199,13 +199,7 @@ describe('RegistrationForm', () => {
   it('should show a helpful error if the server is down', async () => {
     const user = mockUser();
 
-    OperationCodeAPIMock.onPost('auth/registration/', {
-      email: user.email,
-      password: user.password,
-      firstName: user.firstName,
-      lastName: user.lastName,
-      zip: user.zipcode,
-    }).reply(503);
+    OperationCodeAPIMock.onPost('auth/registration/', user).reply(503);
 
     const successSpy = jest.fn();
     const wrapper = mount(<RegistrationForm onSuccess={successSpy} initialValues={user} />);

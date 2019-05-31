@@ -4,7 +4,7 @@ module.exports = {
   // Output generated for component's definition file
   buildJS: componentName =>
     `import React from 'react';
-import { oneofType, arrayOf, element, string, node } from 'prop-types';
+import { oneOfType, arrayOf, element, string, node } from 'prop-types';
 import classNames from 'classnames';
 import styles from './${componentName}.css';
 

@@ -1,4 +1,4 @@
-import { wait } from 'react-testing-library';
+import { wait } from '@testing-library/react';
 
 /**
  * @description Used to rerender after asynchronous things (Formik forms in particular)

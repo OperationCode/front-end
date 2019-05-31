@@ -55,7 +55,7 @@ export default class Team extends React.Component {
               <Alert isOpen>{errorMessage}</Alert>
             ) : (
               <div className={styles.boardMembers}>
-                {boardMembers.map(({ name, role, image_src: imageSource, description }) => (
+                {boardMembers.map(({ name, role, imageSrc: imageSource, description }) => (
                   <FlatCard
                     key={name}
                     header={
@@ -65,7 +65,10 @@ export default class Team extends React.Component {
                         <h5>{role}</h5>
                       </>
                     }
-                    imageSource={imageSource}
+                    image={{
+                      source: imageSource,
+                      alt: `Headshot of ${name}`,
+                    }}
                   >
                     {description}
                   </FlatCard>

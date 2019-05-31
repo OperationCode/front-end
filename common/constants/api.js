@@ -13,7 +13,7 @@ export const createUser = ({ email, password, firstName, lastName, zipcode }) =>
     firstName,
     lastName,
     password,
-    zip: zipcode,
+    zipcode,
   }).then(({ data }) => data);
 
 export const loginUser = ({ email, password }) =>
@@ -31,10 +31,11 @@ export const passwordReset = ({ email }) =>
 export const passwordResetSubmit = values =>
   post('auth/password/reset/confirm/', values).then(({ data }) => data);
 
+export const confirmEmail = key => post('auth/verify-email/', key).then(({ data }) => data);
+
 /* PATCH REQUESTS */
 export const updateUser = userInfo => {
-  // TODO: Add trailing slash to this route on back-end
-  return patch('auth/profile', {
+  return patch('auth/profile/', {
     ...formatUserData(userInfo),
   }).then(({ data }) => data);
 };
