@@ -9,12 +9,11 @@ workflows:
     jobs:
       - build_and_test
 
-      - cypress/install:
-          yarn: true
+      - cypress_install
 
       - cypress/run:
           requires:
-            - cypress/install
+            - cypress_install
           record: true # record results on Cypress Dashboard
           parallel: true # split all specs across machines
           parallelism: 3 # use 3 CircleCI machines to finish quickly
@@ -78,3 +77,34 @@ jobs:
           command: |
             greenkeeper-lockfile-upload
             /usr/local/bin/cc-test-reporter after-build
+
+  cypress_install:
+    docker:
+      - image: cypress/base:10
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - cache-{{ arch }}-{{ .Branch }}-{{ checksum "package.json" }}
+      - run:
+          name: Yarn install
+          command: |
+            yarn global add greenkeeper-lockfile@2
+
+            if [[ ${CIRCLE_BRANCH} == greenkeeper* ]]; then
+                  yarn;
+            else
+                  yarn  --frozen-lockfile --production=false;
+            fi
+
+      - run:
+          command: npx cypress verify
+      - save_cache:
+          key: cache-{{ arch }}-{{ .Branch }}-{{ checksum "package.json" }}
+          paths:
+            - ~/.cache
+      - persist_to_workspace:
+          root: ~/
+          paths:
+            - project
+            - .cache/Cypress
