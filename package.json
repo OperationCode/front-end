@@ -130,7 +130,7 @@
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.13.0",
-    "eslint-plugin-unicorn": "^8.0.2",
+    "eslint-plugin-unicorn": "^9.0.0",
     "express": "^4.17.1",
     "faker": "^4.1.0",
     "husky": "0.14.3",
