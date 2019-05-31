@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { wait } from 'react-testing-library';
+import { wait } from '@testing-library/react';
 import { networkErrorMessages, validationErrorMessages } from 'common/constants/messages';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 import mockUser from 'test-utils/mockGenerators/mockUser';
