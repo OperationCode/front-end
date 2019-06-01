@@ -99,7 +99,7 @@
     "react-scroll": "^1.7.10",
     "react-scroll-up-button": "^1.6.4",
     "react-select": "^2.4.3",
-    "react-svg-loader": "2.1.0",
+    "react-svg-loader": "3.0.2",
     "react-youtube": "^7.8.0",
     "redux": "^4.0.1",
     "redux-devtools-extension": "^2.13.7",
