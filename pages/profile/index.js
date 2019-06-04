@@ -37,6 +37,9 @@ class Profile extends React.Component {
               <LinkButton theme="secondary" href="/profile/update" shouldPrefetch>
                 Update Profile
               </LinkButton>
+              <LinkButton theme="secondary" href="/profile/change_password" shouldPrefetch>
+                Change Password
+              </LinkButton>
             </div>,
           ]}
         />
