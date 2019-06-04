@@ -7,18 +7,18 @@ import createSnapshotTest from 'test-utils/createSnapshotTest';
 import OperationCodeAPIMock from 'test-utils/mocks/apiMock';
 import mockUser from 'test-utils/mockGenerators/mockUser';
 import asyncRenderDiff from 'test-utils/asyncRenderDiff';
-import PasswordResetSubmitForm from '../PasswordResetSubmitForm';
+import ChangePasswordForm from '../ChangePasswordForm';
 
 beforeEach(() => {
   OperationCodeAPIMock.reset();
 });
 
-describe('PasswordResetSubmitForm', () => {
+describe('ChangePasswordForm', () => {
   it('should render with required props', () => {
     createSnapshotTest(
-      <PasswordResetSubmitForm
+      <ChangePasswordForm
         onSuccess={jest.fn()}
-        passwordResetSubmit={jest.fn()}
+        onSubmit={jest.fn()}
         token="testToken"
         uid="testUID"
       />,
@@ -27,9 +27,9 @@ describe('PasswordResetSubmitForm', () => {
 
   it('should display required error message when blurring past password input', async () => {
     const wrapper = mount(
-      <PasswordResetSubmitForm
+      <ChangePasswordForm
         onSuccess={jest.fn()}
-        passwordResetSubmit={jest.fn()}
+        onSubmit={jest.fn()}
         token="testToken"
         uid="testUID"
       />,
@@ -50,9 +50,9 @@ describe('PasswordResetSubmitForm', () => {
   it('should show "invalid password" message when given invalid password', async () => {
     const stringWithNoCapital = 'sillypassword1';
     const wrapper = mount(
-      <PasswordResetSubmitForm
+      <ChangePasswordForm
         onSuccess={jest.fn()}
-        passwordResetSubmit={jest.fn()}
+        onSubmit={jest.fn()}
         token="testToken"
         uid="testUID"
         initialValues={{ newPassword1: stringWithNoCapital }}
@@ -82,9 +82,9 @@ describe('PasswordResetSubmitForm', () => {
     const passwordResetSubmitSpy = jest.fn();
 
     const wrapper = mount(
-      <PasswordResetSubmitForm
+      <ChangePasswordForm
         onSuccess={successSpy}
-        passwordResetSubmit={passwordResetSubmitSpy}
+        onSubmit={passwordResetSubmitSpy}
         token="testToken"
         uid="testUID"
         initialValues={initialValues}
@@ -110,9 +110,9 @@ describe('PasswordResetSubmitForm', () => {
     const passwordResetSubmitSpy = jest.fn();
 
     const wrapper = mount(
-      <PasswordResetSubmitForm
+      <ChangePasswordForm
         onSuccess={successSpy}
-        passwordResetSubmit={passwordResetSubmitSpy}
+        onSubmit={passwordResetSubmitSpy}
         initialValues={initialValues}
       />,
     );
@@ -144,9 +144,9 @@ describe('PasswordResetSubmitForm', () => {
     const successSpy = jest.fn();
 
     const wrapper = mount(
-      <PasswordResetSubmitForm
+      <ChangePasswordForm
         onSuccess={successSpy}
-        passwordResetSubmit={passwordResetSubmit}
+        onSubmit={passwordResetSubmit}
         token="testToken"
         uid="testUID"
         initialValues={initialValues}

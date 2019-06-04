@@ -3,7 +3,7 @@ import { string } from 'prop-types';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
-import PasswordResetSubmitForm from 'components/PasswordResetSubmitForm/PasswordResetSubmitForm';
+import ChangePasswordForm from 'components/ChangePasswordForm/ChangePasswordForm';
 import Alert from 'components/Alert/Alert';
 import { passwordResetSubmit } from 'common/constants/api';
 import styles from '../styles/password_reset.css';
@@ -52,8 +52,8 @@ class PasswordResetConfirm extends React.Component {
     }
 
     return (
-      <PasswordResetSubmitForm
-        passwordResetSubmit={passwordResetSubmit}
+      <ChangePasswordForm
+        onSubmit={passwordResetSubmit}
         onSuccess={this.onSuccess}
         uid={uid}
         token={token}
