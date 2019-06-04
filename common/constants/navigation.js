@@ -70,6 +70,12 @@ const getInvolved = {
   ],
 };
 
+const profile = {
+  name: 'Profile',
+  href: '/profile',
+  shouldPrefetch: false,
+};
+
 const logout = {
   name: 'Logout',
   href: '/login?loggedOut=true',
@@ -77,12 +83,19 @@ const logout = {
 };
 
 // MARK: Nav items
-export const loggedInNavItems = [aboutUs, whoWeServeWithoutSublinks, events, getInvolved, logout];
+export const loggedInNavItems = [
+  aboutUs,
+  whoWeServeWithoutSublinks,
+  events,
+  getInvolved,
+  profile,
+  logout,
+];
 export const loggedOutNavItems = [aboutUs, whoWeServeWithSublinks, events, getInvolved];
 
 // Extracts sublinks to list everything as a single, top-level list
 export const mobileLoggedInNavItems = flattenDepth(
-  [logout, aboutUs, whoWeServeWithoutSublinks, events, getInvolved].map(
+  [logout, profile, aboutUs, whoWeServeWithoutSublinks, events, getInvolved].map(
     ({ sublinks = [], ...item }) => [item, sublinks],
   ),
   2,
