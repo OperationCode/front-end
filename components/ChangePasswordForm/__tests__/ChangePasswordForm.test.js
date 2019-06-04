@@ -15,25 +15,11 @@ beforeEach(() => {
 
 describe('ChangePasswordForm', () => {
   it('should render with required props', () => {
-    createSnapshotTest(
-      <ChangePasswordForm
-        onSuccess={jest.fn()}
-        onSubmit={jest.fn()}
-        token="testToken"
-        uid="testUID"
-      />,
-    );
+    createSnapshotTest(<ChangePasswordForm onSuccess={jest.fn()} onSubmit={jest.fn()} />);
   });
 
   it('should display required error message when blurring past password input', async () => {
-    const wrapper = mount(
-      <ChangePasswordForm
-        onSuccess={jest.fn()}
-        onSubmit={jest.fn()}
-        token="testToken"
-        uid="testUID"
-      />,
-    );
+    const wrapper = mount(<ChangePasswordForm onSuccess={jest.fn()} onSubmit={jest.fn()} />);
 
     wrapper.find('input#newPassword1').simulate('blur');
 
@@ -53,8 +39,6 @@ describe('ChangePasswordForm', () => {
       <ChangePasswordForm
         onSuccess={jest.fn()}
         onSubmit={jest.fn()}
-        token="testToken"
-        uid="testUID"
         initialValues={{ newPassword1: stringWithNoCapital }}
       />,
     );
@@ -85,8 +69,6 @@ describe('ChangePasswordForm', () => {
       <ChangePasswordForm
         onSuccess={successSpy}
         onSubmit={passwordResetSubmitSpy}
-        token="testToken"
-        uid="testUID"
         initialValues={initialValues}
       />,
     );
@@ -137,8 +119,6 @@ describe('ChangePasswordForm', () => {
     OperationCodeAPIMock.onPost('auth/password/reset/confirm/', {
       newPassword1: user.password,
       newPassword2: user.password,
-      token: 'testToken',
-      uid: 'testUID',
     }).reply(400, { error: 'test error' });
 
     const successSpy = jest.fn();
@@ -147,8 +127,6 @@ describe('ChangePasswordForm', () => {
       <ChangePasswordForm
         onSuccess={successSpy}
         onSubmit={passwordResetSubmit}
-        token="testToken"
-        uid="testUID"
         initialValues={initialValues}
       />,
     );

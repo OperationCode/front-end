@@ -30,8 +30,6 @@ export default class ChangePasswordForm extends React.Component {
   static propTypes = {
     onSubmit: func.isRequired,
     onSuccess: func.isRequired,
-    uid: string,
-    token: string,
     initialValues: shape({
       email: string,
     }),
@@ -42,8 +40,6 @@ export default class ChangePasswordForm extends React.Component {
       newPassword1: '',
       newPassword2: '',
     },
-    uid: '',
-    token: '',
   };
 
   state = {
@@ -51,9 +47,9 @@ export default class ChangePasswordForm extends React.Component {
   };
 
   handleSubmit = async (values, actions) => {
-    const { onSubmit, onSuccess, uid, token } = this.props;
+    const { onSubmit, onSuccess } = this.props;
     try {
-      await onSubmit({ ...values, uid, token });
+      await onSubmit(values);
       actions.setSubmitting(false);
       actions.resetForm();
 

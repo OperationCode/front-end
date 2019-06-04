@@ -27,6 +27,11 @@ class PasswordResetConfirm extends React.Component {
     return { uid, token };
   }
 
+  onSubmit = async values => {
+    const { uid, token } = this.props;
+    return passwordResetSubmit({ ...values, uid, token });
+  };
+
   onSuccess = () => {
     this.setState({ didReset: true });
   };
@@ -51,14 +56,7 @@ class PasswordResetConfirm extends React.Component {
       return <Alert>The provided credentials were either invalid or expired.</Alert>;
     }
 
-    return (
-      <ChangePasswordForm
-        onSubmit={passwordResetSubmit}
-        onSuccess={this.onSuccess}
-        uid={uid}
-        token={token}
-      />
-    );
+    return <ChangePasswordForm onSubmit={this.onSubmit} onSuccess={this.onSuccess} />;
   };
 
   render() {
