@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { string } from 'prop-types';
 import withAuthSync from 'decorators/withAuthSync/withAuthSync';
 import { changePassword } from 'common/constants/api';
 import Head from 'components/head';
@@ -9,16 +8,6 @@ import ChangePasswordForm from 'components/ChangePasswordForm/ChangePasswordForm
 import styles from '../styles/password_reset.css';
 
 class ChangePassword extends React.Component {
-  static propTypes = {
-    uid: string,
-    token: string,
-  };
-
-  static defaultProps = {
-    uid: '',
-    token: '',
-  };
-
   state = {
     didChange: false,
   };
