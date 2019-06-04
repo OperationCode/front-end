@@ -1,5 +1,5 @@
 import existingUser from '../../../test-utils/mocks/existingUser';
-import { validationErrorMessages } from '../../../common/constants/messages';
+import { networkErrorMessages, validationErrorMessages } from '../../../common/constants/messages';
 
 describe(`profile/change_password (unauthorized)`, () => {
   it(`should redirect to login if not authorized`, () => {
@@ -42,5 +42,22 @@ describe('change_password', () => {
     cy.get('button[type="submit"]').click();
 
     cy.get('div[role="alert"]').should('contain', validationErrorMessages.passwordMatch);
+  });
+
+  it('should NOT be able to change password when server is unreachable', () => {
+    cy.route({
+      method: 'POST',
+      url: 'auth/password/change/',
+      status: 502,
+      response: [],
+    }).as('postChange');
+
+    cy.get('#newPassword1').type(existingUser.password);
+    cy.get('#newPassword2').type(existingUser.password);
+    cy.get('button[type="submit"]').click();
+
+    cy.wait('@postChange');
+
+    cy.get('div[role="alert"]').should('have.text', networkErrorMessages.serverDown);
   });
 });
