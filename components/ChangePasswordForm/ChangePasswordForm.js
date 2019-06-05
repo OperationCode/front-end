@@ -10,7 +10,7 @@ import { validationErrorMessages } from 'common/constants/messages';
 import { getServerErrorMessage } from 'common/utils/api-utils';
 import { minimumPasswordLength } from 'common/constants/validations';
 import { isMinPasswordStrength } from 'common/utils/validator-utils';
-import styles from './PasswordResetSubmitForm.css';
+import styles from './ChangePasswordForm.css';
 
 const passwordResetSubmitSchema = Yup.object().shape({
   newPassword1: Yup.string()
@@ -22,12 +22,14 @@ const passwordResetSubmitSchema = Yup.object().shape({
     .oneOf([Yup.ref('newPassword1')], validationErrorMessages.passwordMatch),
 });
 
-export default class PasswordResetSubmitForm extends React.Component {
+/**
+ * Form component used for changing a password either during a password reset
+ * or standard change password request.
+ */
+export default class ChangePasswordForm extends React.Component {
   static propTypes = {
-    passwordResetSubmit: func.isRequired,
+    onSubmit: func.isRequired,
     onSuccess: func.isRequired,
-    uid: string,
-    token: string,
     initialValues: shape({
       email: string,
     }),
@@ -38,8 +40,6 @@ export default class PasswordResetSubmitForm extends React.Component {
       newPassword1: '',
       newPassword2: '',
     },
-    uid: '',
-    token: '',
   };
 
   state = {
@@ -47,9 +47,9 @@ export default class PasswordResetSubmitForm extends React.Component {
   };
 
   handleSubmit = async (values, actions) => {
-    const { passwordResetSubmit, onSuccess, uid, token } = this.props;
+    const { onSubmit, onSuccess } = this.props;
     try {
-      await passwordResetSubmit({ ...values, uid, token });
+      await onSubmit(values);
       actions.setSubmitting(false);
       actions.resetForm();
 
