@@ -66,7 +66,7 @@
     "classnames": "^2.2.6",
     "css-loader": "^1.0.1",
     "cypress-image-snapshot": "^3.1.0",
-    "file-loader": "^3.0.1",
+    "file-loader": "^4.0.0",
     "fontfaceobserver": "^2.1.0",
     "formik": "^1.5.7",
     "history": "^4.9.0",
