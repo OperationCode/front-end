@@ -14,7 +14,7 @@ const profileUpdateURL = '/profile/update';
 
 class Join extends React.Component {
   static propTypes = {
-    dispatch: func.isRequired,
+    dispatchLogin: func.isRequired,
     router: object.isRequired,
   };
 
@@ -25,10 +25,10 @@ class Join extends React.Component {
   }
 
   handleSuccess = ({ token, user }) => {
-    const { dispatch } = this.props;
+    const { dispatchLogin } = this.props;
 
     login({ token, user }, profileUpdateURL);
-    dispatch(setLoggedIn());
+    dispatchLogin();
   };
 
   render() {
@@ -57,6 +57,9 @@ class Join extends React.Component {
 }
 
 export default compose(
-  connect(),
+  connect(
+    null,
+    { dispatchLogin: setLoggedIn },
+  ),
   withRouter,
 )(Join);

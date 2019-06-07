@@ -15,7 +15,10 @@ import SocialLoginGroup from 'components/SocialLoginGroup/SocialLoginGroup';
 
 class Login extends React.Component {
   static propTypes = {
-    dispatch: func.isRequired,
+    dispatchLogout: func.isRequired,
+    dispatchLogin: func.isRequired,
+
+    // pulled out of query param
     loggedOut: bool,
   };
 
@@ -37,19 +40,19 @@ class Login extends React.Component {
   }
 
   componentDidMount() {
-    const { dispatch, loggedOut } = this.props;
+    const { dispatchLogout, loggedOut } = this.props;
 
     // initiate logout if user was routed
     // here by clicking the logout link
     if (loggedOut) {
       logout({ shouldRedirect: false });
-      dispatch(setLoggedOut());
+      dispatchLogout();
     }
   }
 
   handleSuccess = ({ token, user }) => {
-    const { dispatch } = this.props;
-    dispatch(setLoggedIn());
+    const { dispatchLogin } = this.props;
+    dispatchLogin();
     login({ token, user });
   };
 
@@ -99,4 +102,11 @@ class Login extends React.Component {
   }
 }
 
-export default compose(connect())(Login);
+const mapStateToProps = ({ loggedIn }) => ({ loggedIn });
+
+export default compose(
+  connect(
+    mapStateToProps,
+    { dispatchLogin: setLoggedIn, dispatchLogout: setLoggedOut },
+  ),
+)(Login);
