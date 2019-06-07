@@ -202,6 +202,7 @@ module.exports = {
           getInitialProps: true,
           initialProps: true,
           mapStateToProps: true,
+          mapDispatchToProps: true,
           propFullName: true,
           propValue: true,
           props: true,
