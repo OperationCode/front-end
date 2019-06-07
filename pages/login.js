@@ -17,6 +17,7 @@ class Login extends React.Component {
   static propTypes = {
     dispatchLogout: func.isRequired,
     dispatchLogin: func.isRequired,
+
     // pulled out of query param
     loggedOut: bool,
   };
