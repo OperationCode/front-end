@@ -1,4 +1,11 @@
-export const apiUrl = 'https://pybot.staging.operationcode.org';
+const isProduction = process.env.NODE_ENV === 'production';
+
+// Use staging environment locally, otherwise use environment variable to define API URL
+export const apiUrl =
+  isProduction && Boolean(process.env.API_URL)
+    ? process.env.API_URL
+    : 'https://api.staging.operationcode.org';
+
 export const facebookKey = process.env.OC_FACEBOOK_KEY || '399113557601038';
 export const googleKey =
   process.env.OC_GOOGLE_KEY ||
