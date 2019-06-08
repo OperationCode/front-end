@@ -1,8 +1,15 @@
 const isProduction = process.env.NODE_ENV === 'production';
 
 // Use staging environment locally, otherwise use environment variable to define API URL
+// TODO: Use GitHub Actions to enable environment-based Now deploys
+// export const apiUrl =
+//   isProduction && Boolean(process.env.API_URL)
+//     ? process.env.API_URL
+//     : 'https://api.staging.operationcode.org';
+
+// temporary hack
 export const apiUrl =
-  isProduction && Boolean(process.env.API_URL)
+  isProduction && (window && window.location.hostname === 'operationcode.org')
     ? process.env.API_URL
     : 'https://api.staging.operationcode.org';
 
