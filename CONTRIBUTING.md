@@ -4,7 +4,13 @@ Firstly, thank you for considering contributing to our project! It's people like
 
 The team at Operation Code wants to reiterate that joining our Slack team is the ultimate way to set yourself up for success when contributing to our repository (repo). You can get an invite to our Slack channel by [requesting to join Operation Code](https://operationcode.org/join). Once in our Slack team, simply type: `/open #oc-projects` and then click enter. Feel free to ask for help; everyone is a beginner at first :smile_cat:!
 
-**This guideline is for newer developers, developers who are unfamiliar with the quick start instructions, and developers who are unfamiliar with React. This guide assumes that you are a little bit familiar with HTML, CSS, and JavaScript.**
+## For Everybody
+
+**Regardless of your experience level**, reading about our [technology choices](#technology) and our [development workflow](development-workflow) will prove beneficial.
+
+## For Developers With Less Experience
+
+We're so excited your want to contribute! Most of this guideline is for newer developers, developers who are unfamiliar with the quick start instructions, and developers who are unfamiliar with React. This guide assumes that you are a little bit familiar with HTML, CSS, and JavaScript.
 
 Reading this entire guide not only helps you contribute successfully into our codebase, it also helps to communicate that you respect the time of the developers managing and developing this open source project. In return, they should reciprocate that respect in addressing your issue, assessing changes, and helping you finalize your pull requests.
 
@@ -229,8 +235,11 @@ You can see interactive documentation on all of our components via [![Storybook]
 |   ├── head.js  # Next.js-specific component to handle a page's meta info (and the rest of it's <head> tag) dynamically
 |   └── nav.js
 |
+├── cypress
+|   └── * # Houses all e2e/integration tests and configuration of cypress.
+|
 ├── decorators
-|   └── * # All directories specify decorators that wrap components to add little bits of functionality.
+|   └── * # This is filled with higher-order components that wrap components to add little bits of functionality.
 |
 ├── pages
 |   ├── styles
