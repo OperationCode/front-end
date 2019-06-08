@@ -63,7 +63,7 @@ export default () => (
       columns={[
         <TrackVisibility offset={VISIBILITY_OFFSET}>
           <ImageCard
-            alt=""
+            alt="Two developers collaborting over some code."
             imageSource={`${s3}redesign/images/paired_programming.jpg`}
             isImageFirst
           >
@@ -94,7 +94,10 @@ export default () => (
     <Content
       columns={[
         <TrackVisibility offset={VISIBILITY_OFFSET}>
-          <ImageCard alt="" imageSource={`${s3}redesign/images/chatting_at_meetup.jpg`}>
+          <ImageCard
+            alt="Room full of people chatting at an Operation Code meetup in New York City."
+            imageSource={`${s3}redesign/images/chatting_at_meetup.jpg`}
+          >
             <p className={styles.centeredText}>
               We have meetup chapters all around the United States!
             </p>
