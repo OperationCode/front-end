@@ -28,19 +28,19 @@ exports[`UpdateProfileForm/Steps/MilitaryStatus should render in context of Form
       </label>
       <div>
         <div
-          className="css-1pcexqc-container fullWidth"
+          className="fullWidth css-2b097c-container"
           onKeyDown={[Function]}
         >
           <div
-            className="css-1h6jeay-control"
+            className=" css-6k4gi9-control"
             onMouseDown={[Function]}
             onTouchEnd={[Function]}
           >
             <div
-              className="css-1hwfws3"
+              className=" css-1hwfws3"
             >
               <div
-                className="css-151xaom-placeholder"
+                className=" css-1wa3eu0-placeholder"
               >
                 Select...
               </div>
@@ -103,14 +103,14 @@ exports[`UpdateProfileForm/Steps/MilitaryStatus should render in context of Form
               </div>
             </div>
             <div
-              className="css-1wy0on6"
+              className=" css-1wy0on6"
             >
               <span
-                className="css-bgvzuu-indicatorSeparator"
+                className=" css-1okebmr-indicatorSeparator"
               />
               <div
                 aria-hidden="true"
-                className="css-r2iad6-indicatorContainer"
+                className=" css-1vtn1ro-indicatorContainer"
                 onMouseDown={[Function]}
                 onTouchEnd={[Function]}
               >
