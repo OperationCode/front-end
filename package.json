@@ -117,7 +117,7 @@
     "babel-eslint": "^10.0.1",
     "babel-jest": "^24.8.0",
     "cross-env": "^5.2.0",
-    "cypress": "3.3.1",
+    "cypress": "3.2.0",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
     "enzyme-to-json": "^3.3.5",
