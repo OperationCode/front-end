@@ -1,7 +1,7 @@
 {
   "version": 2,
   "name": "operation-code",
-  "alias": ["operation-code.now.sh", "operationcode.org"],
+  "alias": ["operation-code.now.sh", "operationcode.org", "www.operationcode.org"],
   "builds": [{ "src": "package.json", "use": "@now/next@canary" }],
   "build": {
     "env": {
