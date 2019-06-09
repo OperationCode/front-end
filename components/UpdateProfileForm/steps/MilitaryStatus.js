@@ -17,7 +17,9 @@ class MilitaryStatus extends React.Component {
   };
 
   static validationSchema = Yup.object().shape({
-    militaryStatus: Yup.string().required(validationErrorMessages.required),
+    militaryStatus: Yup.string()
+      .nullable()
+      .required(validationErrorMessages.required),
   });
 
   static initialValues = {

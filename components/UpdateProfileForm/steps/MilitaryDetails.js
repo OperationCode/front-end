@@ -19,9 +19,15 @@ class MilitaryDetails extends React.Component {
 
   static validationSchema = Yup.object().shape({
     // TODO: use when() on these
-    branchOfService: Yup.string().required(validationErrorMessages.required),
-    yearsOfService: Yup.number().required(validationErrorMessages.required),
-    payGrade: Yup.string().required(validationErrorMessages.required),
+    branchOfService: Yup.string()
+      .nullable()
+      .required(validationErrorMessages.required),
+    yearsOfService: Yup.number()
+      .nullable()
+      .required(validationErrorMessages.required),
+    payGrade: Yup.string()
+      .nullable()
+      .required(validationErrorMessages.required),
   });
 
   static initialValues = {
