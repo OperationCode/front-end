@@ -10,8 +10,11 @@ const nextConfig = withCSS({
 
   // eslint-disable-next-line unicorn/prevent-abbreviations
   env: {
-    SENTRY_DSN: process.env.SENTRY_DSN,
+    GOOGLE_ANALYTICS_TRACKING_ID: process.env.GOOGLE_ANALYTICS_TRACKING_ID,
     LOGROCKET_KEY: process.env.LOGROCKET_KEY,
+    OC_FACEBOOK_KEY: process.env.OC_FACEBOOK_KEY,
+    OC_GOOGLE_KEY: process.env.OC_GOOGLE_KEY,
+    SENTRY_DSN: process.env.SENTRY_DSN,
   },
 
   // NextCSS Config
