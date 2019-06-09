@@ -5,6 +5,7 @@ import classNames from 'classnames';
 import { donateLink, s3 } from 'common/constants/urls';
 import HamburgerIcon from 'static/images/icons/hamburger.svg';
 import CloseButton from 'components/CloseButton/CloseButton';
+import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
 import styles from './NavMobile.css';
 
 export default class NavMobile extends Component {
@@ -52,6 +53,7 @@ export default class NavMobile extends Component {
           type="button"
           name="dropdown"
         >
+          <ScreenReaderOnly>Open Menu</ScreenReaderOnly>
           <HamburgerIcon className={styles.hamburgerIcon} />
         </button>
 
