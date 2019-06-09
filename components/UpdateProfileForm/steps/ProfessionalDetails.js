@@ -18,9 +18,11 @@ class ProfessionalDetails extends React.Component {
   };
 
   static validationSchema = Yup.object().shape({
-    employmentStatus: Yup.string().required(validationErrorMessages.required),
-    companyName: Yup.string(),
-    companyRole: Yup.string(),
+    employmentStatus: Yup.string()
+      .nullable()
+      .required(validationErrorMessages.required),
+    companyName: Yup.string().nullable(),
+    companyRole: Yup.string().nullable(),
   });
 
   static initialValues = {
