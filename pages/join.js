@@ -10,7 +10,6 @@ import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
 import RegistrationForm from 'components/RegistrationForm/RegistrationForm';
 
-// If we change this, ensure that we change the redirect URI whitelist in google console
 const profileUpdateURL = '/profile/update';
 
 class Join extends React.Component {

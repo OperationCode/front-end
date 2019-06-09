@@ -2,7 +2,6 @@ import Router from 'next/router';
 import nextCookie from 'next-cookies';
 import { setAuthCookies, removeAuthCookies, isTokenValid } from './cookie-utils';
 
-// If we change `routeTo`, ensure that we change the redirect URI whitelist in google console
 export const login = ({ token, user }, routeTo = '/profile') => {
   setAuthCookies({ token, user });
   Router.push(routeTo);
