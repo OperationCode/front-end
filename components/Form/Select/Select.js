@@ -20,7 +20,7 @@ class Select extends React.Component {
   static propTypes = {
     field: shape({
       name: string.isRequired,
-      value: oneOfType([string.isRequired, arrayOf(string.isRequired).isRequired]).isRequired,
+      value: oneOfType([string.isRequired, arrayOf(string.isRequired).isRequired]),
     }).isRequired,
     form: shape({
       // TODO: Resolve why multiselects can end up with touched: { key: array }
@@ -63,8 +63,11 @@ class Select extends React.Component {
    */
   onChangeMulti = selectedArray => {
     const { field, form } = this.props;
-
-    form.setFieldValue(field.name, selectedArray.map(item => item.value));
+    if (selectedArray) {
+      form.setFieldValue(field.name, selectedArray.map(item => item.value));
+    } else {
+      form.setFieldValue(field.name, []);
+    }
   };
 
   /**

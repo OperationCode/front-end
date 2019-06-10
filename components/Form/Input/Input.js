@@ -53,7 +53,7 @@ Input.defaultProps = {
 };
 
 function Input({
-  field: { name, ...field },
+  field: { name, value, ...field },
   form: { touched, errors },
   label,
   isLabelHidden,
@@ -85,6 +85,7 @@ function Input({
           id={id || name}
           name={name}
           type={type}
+          value={value || ''}
         />
 
         <ErrorMessage
