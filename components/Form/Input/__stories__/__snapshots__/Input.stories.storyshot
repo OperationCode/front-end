@@ -29,6 +29,7 @@ Array [
         id="someInput"
         name="someInput"
         type="text"
+        value=""
       />
     </div>
   </div>,
