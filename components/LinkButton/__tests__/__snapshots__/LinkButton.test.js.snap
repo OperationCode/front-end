@@ -5,6 +5,7 @@ exports[`LinkButton should render with many props assigned 1`] = `
   className="Button test-class secondary fullWidth"
   href="https://tests.com"
   onClick={[Function]}
+  onMouseEnter={[Function]}
 >
   Test
 </a>
@@ -15,6 +16,7 @@ exports[`LinkButton should render with required props 1`] = `
   className="Button primary"
   href="https://tests.com"
   onClick={[Function]}
+  onMouseEnter={[Function]}
 >
   Test
 </a>

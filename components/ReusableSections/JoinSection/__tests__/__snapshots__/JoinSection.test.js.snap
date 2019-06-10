@@ -21,6 +21,7 @@ exports[`JoinSection should render with required props 1`] = `
       className="Button verticalSpacing secondary"
       href="/join"
       onClick={[Function]}
+      onMouseEnter={[Function]}
     >
       Register Now
     </a>

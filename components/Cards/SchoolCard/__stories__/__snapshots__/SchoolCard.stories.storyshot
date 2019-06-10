@@ -140,6 +140,7 @@ exports[`Storyshots Cards/SchoolCard with many locations 1`] = `
       className="Button secondary fullWidth"
       href="https://generalassembly.com"
       onClick={[Function]}
+      onMouseEnter={[Function]}
     >
       Visit Website
     </a>
@@ -272,6 +273,7 @@ exports[`Storyshots Cards/SchoolCard with no physical locations 1`] = `
       className="Button secondary fullWidth"
       href="https://thinkful.com"
       onClick={[Function]}
+      onMouseEnter={[Function]}
     >
       Visit Website
     </a>
@@ -404,6 +406,7 @@ exports[`Storyshots Cards/SchoolCard with one location 1`] = `
       className="Button secondary fullWidth"
       href="https://codeimmersives.com"
       onClick={[Function]}
+      onMouseEnter={[Function]}
     >
       Visit Website
     </a>

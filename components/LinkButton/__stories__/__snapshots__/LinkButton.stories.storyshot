@@ -5,6 +5,7 @@ exports[`Storyshots LinkButton default 1`] = `
   className="Button primary"
   href="https://tests.com"
   onClick={[Function]}
+  onMouseEnter={[Function]}
 >
   Click Me!
 </a>

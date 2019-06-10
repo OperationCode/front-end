@@ -27,6 +27,7 @@ exports[`Storyshots ReusableSections DonateSection 1`] = `
       className="Button topMargin primary"
       href="https://secure.lglforms.com/form_engine/s/BRtP7QUKyHOyEYsZROsRew"
       onClick={[Function]}
+      onMouseEnter={[Function]}
     >
       Donate Now
     </a>
@@ -53,6 +54,7 @@ exports[`Storyshots ReusableSections JoinSection 1`] = `
       className="Button verticalSpacing secondary"
       href="/join"
       onClick={[Function]}
+      onMouseEnter={[Function]}
     >
       Register Now
     </a>
