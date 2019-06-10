@@ -18,6 +18,7 @@ exports[`Input should render with required props 1`] = `
       id="someInputName"
       name="someInputName"
       type="text"
+      value=""
     />
   </div>
 </div>
