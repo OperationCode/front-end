@@ -13,7 +13,7 @@ export default class Team extends React.Component {
     try {
       const { data } = await getTeamMembersPromise();
 
-      const boardMembers = data.filter(x => x.group === 'board');
+      const boardMembers = data.filter(({ group }) => group === 'board' || group === 'staff');
 
       const firstListedMemberName = 'David Molina';
 
