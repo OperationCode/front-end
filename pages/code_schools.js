@@ -86,6 +86,10 @@ export default class CodeSchools extends React.Component {
   };
 
   filterState = selectedOptions => {
+    if (!selectedOptions) {
+      this.showAllSchools();
+      return;
+    }
     const { allSchools } = this.props;
     const states = selectedOptions.map(state => state.value);
     const stateSchools = allSchools.filter(school =>

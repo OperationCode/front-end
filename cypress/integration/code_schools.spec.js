@@ -60,6 +60,15 @@ describe('code schools', () => {
     cy.get('[data-testid="SchoolCard"]').should('have.length.greaterThan', 30);
   });
 
+  it('renders all cards after un-filtering Alaska', () => {
+    cy.get(ReactSelectSelector)
+      .type('Alaska', { force: true })
+      .type('{enter}')
+      .type('{backspace}');
+
+    cy.get('[data-testid="SchoolCard"]').should('have.length.greaterThan', 30);
+  });
+
   it('should close when user clicks close button', () => {
     cy.get('button:contains(view all)').each(button => {
       cy.wrap(button).click();
