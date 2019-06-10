@@ -8,6 +8,11 @@ const nextConfig = withCSS({
   // see: https://zeit.co/guides/deploying-nextjs-with-now/
   target: 'serverless',
 
+  // Enable dynamic static exports (if a page can be static, it will be)
+  experimental: {
+    autoExport: true,
+  },
+
   // eslint-disable-next-line unicorn/prevent-abbreviations
   env: {
     GOOGLE_ANALYTICS_TRACKING_ID: process.env.GOOGLE_ANALYTICS_TRACKING_ID,

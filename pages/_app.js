@@ -2,7 +2,6 @@ import App, { Container } from 'next/app';
 import Router from 'next/router';
 import { Provider } from 'react-redux';
 import { compose } from 'redux';
-import nextCookie from 'next-cookies';
 import ScrollUpButton from 'react-scroll-up-button';
 import withRedux from 'next-redux-wrapper';
 import ReactGA from 'react-ga';
@@ -43,7 +42,7 @@ class Layout extends React.Component {
 class OperationCodeApp extends App {
   componentDidMount() {
     // get initial logged-in state on load
-    if (this.props.isLoggedIn) {
+    if (isTokenValid()) {
       this.dispatchLogin();
     }
 
@@ -74,21 +73,6 @@ class OperationCodeApp extends App {
 
   componentWillUnmount() {
     window.removeEventListener('resize', this.debouncedHandleScreenResize);
-  }
-
-  // eslint-disable-next-line unicorn/prevent-abbreviations
-  static async getInitialProps({ Component, ctx }) {
-    // eslint-disable-next-line unicorn/prevent-abbreviations
-    let pageProps = {};
-    const { token } = nextCookie(ctx);
-    const isLoggedIn = isTokenValid(token);
-
-    // if page hits an API, make it async
-    if (Component.getInitialProps) {
-      pageProps = await Component.getInitialProps({ ...ctx, isLoggedIn });
-    }
-
-    return { pageProps, isLoggedIn };
   }
 
   componentDidCatch(error, errorInfo) {
