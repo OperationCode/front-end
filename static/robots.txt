@@ -1,2 +1,3 @@
 User-agent: *
-Disallow:
+Disallow: 404.html
+Disallow: employers.html
