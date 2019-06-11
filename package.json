@@ -1,7 +1,7 @@
 {
   "name": "operationcode",
   "license": "MIT",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "scripts": {
     "build": "next build",
     "build:analyze": "cross-env ANALYZE=1 next build",
