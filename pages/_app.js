@@ -1,6 +1,5 @@
 import App, { Container } from 'next/app';
 import Router from 'next/router';
-import { Provider } from 'react-redux';
 import ScrollUpButton from 'react-scroll-up-button';
 import ReactGA from 'react-ga';
 import LogRocket from 'logrocket';
@@ -73,15 +72,13 @@ class OperationCodeApp extends App {
 
   render() {
     // eslint-disable-next-line unicorn/prevent-abbreviations
-    const { Component, pageProps, store } = this.props;
+    const { Component, pageProps } = this.props;
 
     return (
       <Container>
-        <Provider store={store}>
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
-        </Provider>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
       </Container>
     );
   }
