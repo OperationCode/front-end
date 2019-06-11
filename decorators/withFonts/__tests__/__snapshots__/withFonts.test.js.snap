@@ -1,7 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`withFonts it calls load 1`] = `
-<div>
-  test component
-</div>
-`;
