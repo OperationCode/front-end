@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import { object } from 'prop-types';
-import { compose } from 'redux';
 import { withRouter } from 'next/router';
 import { login } from 'common/utils/auth-utils';
 import Head from 'components/head';
@@ -50,4 +49,4 @@ class Join extends React.Component {
   }
 }
 
-export default compose(withRouter)(Join);
+export default withRouter(Join);
