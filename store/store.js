@@ -6,11 +6,9 @@ import initialState from './initialState';
 
 // REDUCERS
 import screenSizeReducer from './screenSize/reducer';
-import loggedInReducer from './loggedIn/reducer';
 
 export const reducers = combineReducers({
   screenSize: screenSizeReducer,
-  isLoggedIn: loggedInReducer,
 });
 
 // Store initialized in `pages/_app.js`
