@@ -64,3 +64,9 @@
   cursor: pointer;
   transition: color 0.2s linear;
 }
+
+@media screen and (--mobile-viewport) {
+  .header {
+    display: none;
+  }
+}
