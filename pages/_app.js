@@ -1,17 +1,11 @@
 import App, { Container } from 'next/app';
 import Router from 'next/router';
 import { Provider } from 'react-redux';
-import { compose } from 'redux';
-import nextCookie from 'next-cookies';
 import ScrollUpButton from 'react-scroll-up-button';
-import withRedux from 'next-redux-wrapper';
 import ReactGA from 'react-ga';
 import LogRocket from 'logrocket';
 import setupLogRocketReact from 'logrocket-react';
 import * as Sentry from '@sentry/browser';
-import { initStore } from 'store/store';
-import { setLoggedIn } from 'store/loggedIn/actions';
-import { isTokenValid } from 'common/utils/cookie-utils';
 import Nav from 'components/Nav/Nav';
 import Footer from 'components/Footer/Footer';
 import Modal from 'components/Modal/Modal';
@@ -39,11 +33,6 @@ class Layout extends React.Component {
 
 class OperationCodeApp extends App {
   componentDidMount() {
-    // get initial logged-in state on load
-    if (this.props.isLoggedIn) {
-      this.dispatchLogin();
-    }
-
     if (isProduction) {
       Sentry.init({ dsn: process.env.SENTRY_DSN });
       LogRocket.init(`${process.env.LOGROCKET_KEY}/operation-code`);
@@ -70,21 +59,6 @@ class OperationCodeApp extends App {
     window.removeEventListener('resize', this.debouncedHandleScreenResize);
   }
 
-  // eslint-disable-next-line unicorn/prevent-abbreviations
-  static async getInitialProps({ Component, ctx }) {
-    // eslint-disable-next-line unicorn/prevent-abbreviations
-    let pageProps = {};
-    const { token } = nextCookie(ctx);
-    const isLoggedIn = isTokenValid(token);
-
-    // if page hits an API, make it async
-    if (Component.getInitialProps) {
-      pageProps = await Component.getInitialProps({ ...ctx, isLoggedIn });
-    }
-
-    return { pageProps, isLoggedIn };
-  }
-
   componentDidCatch(error, errorInfo) {
     Sentry.withScope(scope => {
       Object.keys(errorInfo).forEach(key => {
@@ -96,11 +70,6 @@ class OperationCodeApp extends App {
 
     super.componentDidCatch(error, errorInfo);
   }
-
-  dispatchLogin = () => {
-    const { store } = this.props;
-    store.dispatch(setLoggedIn());
-  };
 
   render() {
     // eslint-disable-next-line unicorn/prevent-abbreviations
@@ -132,7 +101,4 @@ if (!isProduction) {
   });
 }
 
-export default compose(
-  withFonts,
-  withRedux(initStore),
-)(OperationCodeApp);
+export default withFonts(OperationCodeApp);

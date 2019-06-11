@@ -1,160 +1,159 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Nav should render with no props passed 1`] = `
-<NavMobile
-  closeMenu={[Function]}
-  isMenuVisible={false}
-  navItems={
-    Array [
-      Object {
-        "href": "/login",
-        "name": "Login",
-      },
-      Object {
-        "href": "/join",
-        "name": "Join",
-      },
-      Object {
-        "href": "/about",
-        "name": "About Us",
-        "shouldPrefetch": false,
-      },
-      Object {
-        "href": "/contact",
-        "name": "Contact Us",
-      },
-      Object {
-        "href": "/faq",
-        "name": "FAQ",
-      },
-      Object {
-        "href": "/who_we_serve",
-        "name": "Who We Serve",
-        "shouldPrefetch": false,
-      },
-      Object {
-        "href": "/events",
-        "name": "Events",
-        "shouldPrefetch": false,
-      },
-      Object {
-        "href": "/get_involved",
-        "name": "Get Involved",
-        "shouldPrefetch": false,
-      },
-      Object {
-        "href": "/sponsorship",
-        "name": "Sponsorship",
-      },
-      Object {
-        "href": "/leadership_circle",
-        "name": "Leadership Circle",
-      },
-    ]
-  }
-  openMenu={[Function]}
-/>
-`;
-
-exports[`Nav should render with props passed 1`] = `
-<header
-  className="header"
->
-  <div
-    className="navContainer"
+<React.Fragment>
+  <NavMobile
+    closeMenu={[Function]}
+    isOpen={false}
+    navItems={
+      Array [
+        Object {
+          "href": "/login",
+          "name": "Login",
+        },
+        Object {
+          "href": "/join",
+          "name": "Join",
+        },
+        Object {
+          "href": "/about",
+          "name": "About Us",
+          "shouldPrefetch": false,
+        },
+        Object {
+          "href": "/contact",
+          "name": "Contact Us",
+        },
+        Object {
+          "href": "/faq",
+          "name": "FAQ",
+        },
+        Object {
+          "href": "/who_we_serve",
+          "name": "Who We Serve",
+          "shouldPrefetch": false,
+        },
+        Object {
+          "href": "/events",
+          "name": "Events",
+          "shouldPrefetch": false,
+        },
+        Object {
+          "href": "/get_involved",
+          "name": "Get Involved",
+          "shouldPrefetch": false,
+        },
+        Object {
+          "href": "/sponsorship",
+          "name": "Sponsorship",
+        },
+        Object {
+          "href": "/leadership_circle",
+          "name": "Leadership Circle",
+        },
+      ]
+    }
+    openMenu={[Function]}
+  />
+  <header
+    className="header"
   >
-    <nav
-      className="Nav"
-      data-testid="Desktop Nav"
+    <div
+      className="navContainer"
     >
-      <Link
-        href="/"
+      <nav
+        className="Nav"
+        data-testid="Desktop Nav"
       >
-        <a
-          className="logoLink link"
+        <Link
+          href="/"
         >
-          <img
-            alt="Operation Code Logo"
-            className="logo"
-            src="https://s3.amazonaws.com/operationcode-assets/branding/logos/small-blue-logo.png"
-          />
-        </a>
-      </Link>
-      <ul
-        className="link"
-      >
-        <NavListItem
-          href="/about"
-          name="About Us"
-          shouldPrefetch={false}
-          sublinks={
-            Array [
-              Object {
-                "href": "/contact",
-                "name": "Contact Us",
-              },
-              Object {
-                "href": "/faq",
-                "name": "FAQ",
-              },
-            ]
-          }
-        />
-        <NavListItem
-          href="/who_we_serve"
-          name="Who We Serve"
-          shouldPrefetch={false}
-          sublinks={
-            Array [
-              Object {
-                "href": "/login",
-                "name": "Login",
-              },
-              Object {
-                "href": "/join",
-                "name": "Join",
-              },
-            ]
-          }
-        />
-        <NavListItem
-          href="/events"
-          name="Events"
-          shouldPrefetch={false}
-          sublinks={Array []}
-        />
-        <NavListItem
-          href="/get_involved"
-          name="Get Involved"
-          shouldPrefetch={false}
-          sublinks={
-            Array [
-              Object {
-                "href": "/sponsorship",
-                "name": "Sponsorship",
-              },
-              Object {
-                "href": "/leadership_circle",
-                "name": "Leadership Circle",
-              },
-            ]
-          }
-        />
-        <li>
-          <Link
-            href="https://secure.lglforms.com/form_engine/s/BRtP7QUKyHOyEYsZROsRew"
+          <a
+            className="logoLink link"
           >
-            <a
-              className="link donateLink"
+            <img
+              alt="Operation Code Logo"
+              className="logo"
+              src="https://s3.amazonaws.com/operationcode-assets/branding/logos/small-blue-logo.png"
+            />
+          </a>
+        </Link>
+        <ul
+          className="link"
+        >
+          <NavListItem
+            href="/about"
+            name="About Us"
+            shouldPrefetch={false}
+            sublinks={
+              Array [
+                Object {
+                  "href": "/contact",
+                  "name": "Contact Us",
+                },
+                Object {
+                  "href": "/faq",
+                  "name": "FAQ",
+                },
+              ]
+            }
+          />
+          <NavListItem
+            href="/who_we_serve"
+            name="Who We Serve"
+            shouldPrefetch={false}
+            sublinks={
+              Array [
+                Object {
+                  "href": "/login",
+                  "name": "Login",
+                },
+                Object {
+                  "href": "/join",
+                  "name": "Join",
+                },
+              ]
+            }
+          />
+          <NavListItem
+            href="/events"
+            name="Events"
+            shouldPrefetch={false}
+            sublinks={Array []}
+          />
+          <NavListItem
+            href="/get_involved"
+            name="Get Involved"
+            shouldPrefetch={false}
+            sublinks={
+              Array [
+                Object {
+                  "href": "/sponsorship",
+                  "name": "Sponsorship",
+                },
+                Object {
+                  "href": "/leadership_circle",
+                  "name": "Leadership Circle",
+                },
+              ]
+            }
+          />
+          <li>
+            <Link
+              href="https://secure.lglforms.com/form_engine/s/BRtP7QUKyHOyEYsZROsRew"
             >
-              <span>
-                Donate
-              </span>
-            </a>
-          </Link>
-        </li>
-      </ul>
-    </nav>
-  </div>
-</header>
+              <a
+                className="link donateLink"
+              >
+                <span>
+                  Donate
+                </span>
+              </a>
+            </Link>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+</React.Fragment>
 `;

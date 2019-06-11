@@ -3,34 +3,15 @@ import { shallow } from 'enzyme';
 import { networkErrorMessages } from 'common/constants/messages';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 
-// MultiStepForm is connected to redux, and is nested within UpdateProfileForm
-import MockStoreProvider from 'test-utils/mocks/MockStoreProvider';
-
 import UpdateProfileForm from '../UpdateProfileForm';
-
-const getUnconnectedWrapper = shallowWrapper =>
-  shallowWrapper
-    .dive()
-    .dive()
-    .dive();
 
 describe('UpdateProfileForm', () => {
   it('should render with required props', () => {
-    createSnapshotTest(
-      <MockStoreProvider>
-        <UpdateProfileForm />
-      </MockStoreProvider>,
-    );
+    createSnapshotTest(<UpdateProfileForm />);
   });
 
   it('generates proper error message for multi-field error response', () => {
-    const wrapper = getUnconnectedWrapper(
-      shallow(
-        <MockStoreProvider>
-          <UpdateProfileForm />
-        </MockStoreProvider>,
-      ),
-    );
+    const wrapper = shallow(<UpdateProfileForm />);
 
     const emailErrorMessage = 'A user is already registered with this e-mail address.';
     const passwordErrorMessage = 'Password is dumb.';
@@ -50,13 +31,7 @@ describe('UpdateProfileForm', () => {
   });
 
   it('generates proper error message for simple server error response', () => {
-    const wrapper = getUnconnectedWrapper(
-      shallow(
-        <MockStoreProvider>
-          <UpdateProfileForm />
-        </MockStoreProvider>,
-      ),
-    );
+    const wrapper = shallow(<UpdateProfileForm />);
 
     const someErrorMessage = 'An error.';
 
@@ -74,13 +49,7 @@ describe('UpdateProfileForm', () => {
   });
 
   it('generates proper error message for simple server error response when server is down', () => {
-    const wrapper = getUnconnectedWrapper(
-      shallow(
-        <MockStoreProvider>
-          <UpdateProfileForm />
-        </MockStoreProvider>,
-      ),
-    );
+    const wrapper = shallow(<UpdateProfileForm />);
 
     const multiFieldErrorResponse = {
       response: {},
@@ -92,13 +61,7 @@ describe('UpdateProfileForm', () => {
   });
 
   it('generates proper error message from JS error', () => {
-    const wrapper = getUnconnectedWrapper(
-      shallow(
-        <MockStoreProvider>
-          <UpdateProfileForm />
-        </MockStoreProvider>,
-      ),
-    );
+    const wrapper = shallow(<UpdateProfileForm />);
 
     const errorMessage = 'Fake JS error.';
     const multiFieldErrorResponse = new Error(errorMessage);

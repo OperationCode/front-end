@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import classNames from 'classnames';
 import Link from 'next/link';
 import Router from 'next/router';
-import { bool } from 'prop-types';
-import { connect } from 'react-redux';
-import { compose } from 'redux';
 import { donateLink, s3 } from 'common/constants/urls';
 import {
   loggedInNavItems,
@@ -14,21 +11,12 @@ import {
 } from 'common/constants/navigation';
 import NavListItem from 'components/Nav/NavListItem/NavListItem';
 import NavMobile from 'components/Nav/NavMobile/NavMobile';
+import { hasValidAuthToken } from 'common/utils/cookie-utils';
 import styles from './Nav.css';
 
 export class Nav extends Component {
-  static propTypes = {
-    isDesktopView: bool,
-    isLoggedIn: bool,
-  };
-
-  static defaultProps = {
-    isDesktopView: false,
-    isLoggedIn: false,
-  };
-
   state = {
-    isMobileMenuVisible: false,
+    isMobileNavOpen: false,
   };
 
   componentDidMount() {
@@ -40,16 +28,16 @@ export class Nav extends Component {
   }
 
   openMobileMenu = () => {
-    this.setState({ isMobileMenuVisible: true });
+    this.setState({ isMobileNavOpen: true });
   };
 
   closeMobileMenu = () => {
-    this.setState({ isMobileMenuVisible: false });
+    this.setState({ isMobileNavOpen: false });
   };
 
   render() {
-    const { isLoggedIn } = this.props;
-    const { isMobileMenuVisible } = this.state;
+    const { isMobileNavOpen } = this.state;
+    const isLoggedIn = hasValidAuthToken();
 
     const mobileNavItems = isLoggedIn ? mobileLoggedInNavItems : mobileLoggedOutNavItems;
 
@@ -58,12 +46,14 @@ export class Nav extends Component {
 
     return (
       <>
+        {/* Always rendered, but conditionally displayed via media query */}
         <NavMobile
-          isMenuVisible={isMobileMenuVisible}
+          isOpen={isMobileNavOpen}
           closeMenu={this.closeMobileMenu}
           openMenu={this.openMobileMenu}
           navItems={mobileNavItems}
         />
+
         <header className={styles.header}>
           <div className={styles.navContainer}>
             <nav className={styles.Nav} data-testid="Desktop Nav">
@@ -79,7 +69,6 @@ export class Nav extends Component {
 
               <ul className={styles.link}>
                 {navItems.map(navItem => (
-                  // NavListItem component API matches navItems structure
                   <NavListItem key={navItem.name} {...navItem} />
                 ))}
                 <li>
@@ -98,8 +87,4 @@ export class Nav extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  isLoggedIn: state.isLoggedIn,
-});
-
-export default compose(connect(mapStateToProps))(Nav);
+export default Nav;
