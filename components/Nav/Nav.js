@@ -12,7 +12,6 @@ import {
   mobileLoggedInNavItems,
   mobileLoggedOutNavItems,
 } from 'common/constants/navigation';
-import { isDesktopSelector } from 'store/screenSize/selectors';
 import NavListItem from 'components/Nav/NavListItem/NavListItem';
 import NavMobile from 'components/Nav/NavMobile/NavMobile';
 import styles from './Nav.css';
@@ -49,61 +48,57 @@ export class Nav extends Component {
   };
 
   render() {
-    const { isDesktopView, isLoggedIn } = this.props;
+    const { isLoggedIn } = this.props;
     const { isMobileMenuVisible } = this.state;
 
-    if (!isDesktopView) {
-      const mobileNavItems = isLoggedIn ? mobileLoggedInNavItems : mobileLoggedOutNavItems;
+    const mobileNavItems = isLoggedIn ? mobileLoggedInNavItems : mobileLoggedOutNavItems;
 
-      return (
+    // non-mobile
+    const navItems = isLoggedIn ? loggedInNavItems : loggedOutNavItems;
+
+    return (
+      <>
         <NavMobile
           isMenuVisible={isMobileMenuVisible}
           closeMenu={this.closeMobileMenu}
           openMenu={this.openMobileMenu}
           navItems={mobileNavItems}
         />
-      );
-    }
+        <header className={styles.header}>
+          <div className={styles.navContainer}>
+            <nav className={styles.Nav} data-testid="Desktop Nav">
+              <Link href="/">
+                <a className={classNames(styles.logoLink, styles.link)}>
+                  <img
+                    src={`${s3}branding/logos/small-blue-logo.png`}
+                    alt="Operation Code Logo"
+                    className={styles.logo}
+                  />
+                </a>
+              </Link>
 
-    // non-mobile
-    const navItems = isLoggedIn ? loggedInNavItems : loggedOutNavItems;
-
-    return (
-      <header className={styles.header}>
-        <div className={styles.navContainer}>
-          <nav className={styles.Nav} data-testid="Desktop Nav">
-            <Link href="/">
-              <a className={classNames(styles.logoLink, styles.link)}>
-                <img
-                  src={`${s3}branding/logos/small-blue-logo.png`}
-                  alt="Operation Code Logo"
-                  className={styles.logo}
-                />
-              </a>
-            </Link>
-
-            <ul className={styles.link}>
-              {navItems.map(navItem => (
-                // NavListItem component API matches navItems structure
-                <NavListItem key={navItem.name} {...navItem} />
-              ))}
-              <li>
-                <Link href={donateLink}>
-                  <a className={classNames(styles.link, styles.donateLink)}>
-                    <span>Donate</span>
-                  </a>
-                </Link>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </header>
+              <ul className={styles.link}>
+                {navItems.map(navItem => (
+                  // NavListItem component API matches navItems structure
+                  <NavListItem key={navItem.name} {...navItem} />
+                ))}
+                <li>
+                  <Link href={donateLink}>
+                    <a className={classNames(styles.link, styles.donateLink)}>
+                      <span>Donate</span>
+                    </a>
+                  </Link>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </header>
+      </>
     );
   }
 }
 
 const mapStateToProps = state => ({
-  isDesktopView: isDesktopSelector(state),
   isLoggedIn: state.isLoggedIn,
 });
 

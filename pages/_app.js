@@ -9,11 +9,8 @@ import ReactGA from 'react-ga';
 import LogRocket from 'logrocket';
 import setupLogRocketReact from 'logrocket-react';
 import * as Sentry from '@sentry/browser';
-import debounce from 'lodash/debounce';
 import { initStore } from 'store/store';
-import { screenResize } from 'store/screenSize/actions';
 import { setLoggedIn } from 'store/loggedIn/actions';
-import breakpoints from 'common/styles/breakpoints';
 import { isTokenValid } from 'common/utils/cookie-utils';
 import Nav from 'components/Nav/Nav';
 import Footer from 'components/Footer/Footer';
@@ -46,9 +43,6 @@ class OperationCodeApp extends App {
     if (this.props.isLoggedIn) {
       this.dispatchLogin();
     }
-
-    this.handleScreenResize(); // get initial size on load
-    window.addEventListener('resize', this.debouncedHandleScreenResize);
 
     if (isProduction) {
       Sentry.init({ dsn: process.env.SENTRY_DSN });
@@ -103,20 +97,10 @@ class OperationCodeApp extends App {
     super.componentDidCatch(error, errorInfo);
   }
 
-  handleScreenResize = () => {
-    const { store } = this.props;
-    store.dispatch(screenResize(window.innerWidth, window.innerHeight, breakpoints));
-  };
-
   dispatchLogin = () => {
     const { store } = this.props;
     store.dispatch(setLoggedIn());
   };
-
-  debouncedHandleScreenResize = debounce(this.handleScreenResize, 100, {
-    leading: true,
-    maxWait: 250,
-  });
 
   render() {
     // eslint-disable-next-line unicorn/prevent-abbreviations
