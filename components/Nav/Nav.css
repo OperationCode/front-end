@@ -1,4 +1,4 @@
-.header {
+.NavDesktop {
   height: var(--navBarHeight);
   position: absolute;
   top: var(--navBarTopGutterHeight);
@@ -6,23 +6,29 @@
   z-index: 10;
 }
 
+@media screen and (--mobile-viewport) {
+  .NavDesktop {
+    display: none;
+  }
+}
+
 .navContainer {
   margin: 0 auto;
   max-width: 1200px;
 }
 
-.Nav {
+.NavDesktop nav {
   background-color: var(--white);
   border-radius: var(--borderRadius);
   display: flex;
   justify-content: space-between;
 }
 
-.Nav a {
+.NavDesktop nav a {
   font-weight: bolder;
 }
 
-.Nav li {
+.NavDesktop nav li {
   list-style: none;
 }
 
@@ -63,10 +69,4 @@
   color: var(--white);
   cursor: pointer;
   transition: color 0.2s linear;
-}
-
-@media screen and (--mobile-viewport) {
-  .header {
-    display: none;
-  }
 }

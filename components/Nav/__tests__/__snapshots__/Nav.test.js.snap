@@ -56,15 +56,13 @@ exports[`Nav should render with no props passed 1`] = `
     openMenu={[Function]}
   />
   <header
-    className="header"
+    className="NavDesktop"
+    data-testid="Desktop Nav"
   >
     <div
       className="navContainer"
     >
-      <nav
-        className="Nav"
-        data-testid="Desktop Nav"
-      >
+      <nav>
         <Link
           href="/"
         >
