@@ -1,8 +1,14 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
+import cookie from 'js-cookie';
 import createShallowSnapshotTest from 'test-utils/createShallowSnapshotTest';
+import { VALID_AUTH_TOKEN } from 'test-utils/mocks/jwtMock';
 
 import { Nav } from '../Nav';
+
+beforeEach(() => {
+  cookie.get = jest.fn().mockImplementation(() => undefined);
+});
 
 describe('Nav', () => {
   const smallScreen = { isDesktopView: false };
@@ -24,12 +30,16 @@ describe('Nav', () => {
   });
 
   it('should render logout link when logged in', () => {
-    const wrapper = mount(<Nav isLoggedIn {...largeScreen} />);
+    cookie.get = jest.fn().mockImplementation(() => VALID_AUTH_TOKEN);
+
+    const wrapper = mount(<Nav {...largeScreen} />);
+
+    wrapper.debug();
 
     expect(wrapper.find('a[href="/login?loggedOut=true"]')).toExist();
   });
 
-  it('should render who we serve section when logged in', () => {
+  it('should render who we serve section when logged out', () => {
     const wrapper = mount(<Nav {...largeScreen} />);
 
     expect(wrapper.find('a[href="/who_we_serve"]')).toExist();

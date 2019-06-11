@@ -15,17 +15,16 @@ import {
 import { isDesktopSelector } from 'store/screenSize/selectors';
 import NavListItem from 'components/Nav/NavListItem/NavListItem';
 import NavMobile from 'components/Nav/NavMobile/NavMobile';
+import { hasValidAuthToken } from 'common/utils/cookie-utils';
 import styles from './Nav.css';
 
 export class Nav extends Component {
   static propTypes = {
     isDesktopView: bool,
-    isLoggedIn: bool,
   };
 
   static defaultProps = {
     isDesktopView: false,
-    isLoggedIn: false,
   };
 
   state = {
@@ -49,8 +48,9 @@ export class Nav extends Component {
   };
 
   render() {
-    const { isDesktopView, isLoggedIn } = this.props;
+    const { isDesktopView } = this.props;
     const { isMobileMenuVisible } = this.state;
+    const isLoggedIn = hasValidAuthToken();
 
     if (!isDesktopView) {
       const mobileNavItems = isLoggedIn ? mobileLoggedInNavItems : mobileLoggedOutNavItems;
@@ -104,7 +104,6 @@ export class Nav extends Component {
 
 const mapStateToProps = state => ({
   isDesktopView: isDesktopSelector(state),
-  isLoggedIn: state.isLoggedIn,
 });
 
 export default compose(connect(mapStateToProps))(Nav);

@@ -1,6 +1,6 @@
 import Router from 'next/router';
 import nextCookie from 'next-cookies';
-import { setAuthCookies, removeAuthCookies, isTokenValid } from './cookie-utils';
+import { setAuthCookies, removeAuthCookies, hasValidAuthToken } from './cookie-utils';
 
 export const login = ({ token, user }, routeTo = '/profile') => {
   setAuthCookies({ token, user });
@@ -33,7 +33,7 @@ export const logout = ({ routeTo = '/login', shouldRedirect = true } = {}) => {
 export const authenticate = ctx => {
   const { token } = nextCookie(ctx);
 
-  if (!token || !isTokenValid) {
+  if (!token || !hasValidAuthToken(token)) {
     isomorphicRedirect('/login', ctx);
     return '';
   }
