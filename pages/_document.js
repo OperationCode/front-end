@@ -1,7 +1,5 @@
 import Document, { Head, Main, NextScript } from 'next/document';
 import * as Sentry from '@sentry/browser';
-import { compose } from 'redux';
-import withFonts from '../decorators/withFonts/withFonts';
 
 process.on('unhandledRejection', error => {
   Sentry.captureException(error);
@@ -11,7 +9,13 @@ process.on('uncaughtException', error => {
   Sentry.captureException(error);
 });
 
-class MyDocument extends Document {
+export default class MyDocument extends Document {
+  static async getInitialProps(ctx) {
+    const initialProps = await Document.getInitialProps(ctx);
+
+    return { ...initialProps };
+  }
+
   render() {
     return (
       <html lang="en">
@@ -33,4 +37,3 @@ class MyDocument extends Document {
     );
   }
 }
-export default compose(withFonts)(MyDocument);
