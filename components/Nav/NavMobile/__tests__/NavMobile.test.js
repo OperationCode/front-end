@@ -10,17 +10,17 @@ describe('NavMobile', () => {
     createShallowSnapshotTest(
       <NavMobile
         navItems={mobileLoggedOutNavItems}
-        isMenuVisible={false}
+        isOpen={false}
         openMenu={() => {}}
         closeMenu={() => {}}
       />,
     ));
 
-  it('should not have a visible menu when isMenuVisible prop is false', () => {
+  it('should not have a visible menu when isOpen prop is false', () => {
     const wrapper = shallow(
       <NavMobile
         navItems={mobileLoggedOutNavItems}
-        isMenuVisible={false}
+        isOpen={false}
         openMenu={() => {}}
         closeMenu={() => {}}
       />,
@@ -29,11 +29,11 @@ describe('NavMobile', () => {
     expect(wrapper.find('ul')).not.toExist();
   });
 
-  it('should have a visible menu when isMenuVisible prop is true', () => {
+  it('should have a visible menu when isOpen prop is true', () => {
     const wrapper = shallow(
       <NavMobile
         navItems={mobileLoggedOutNavItems}
-        isMenuVisible
+        isOpen
         openMenu={() => {}}
         closeMenu={() => {}}
       />,
@@ -47,7 +47,7 @@ describe('NavMobile', () => {
     const wrapper = shallow(
       <NavMobile
         navItems={mobileLoggedOutNavItems}
-        isMenuVisible={false}
+        isOpen={false}
         openMenu={mockOpen}
         closeMenu={() => {}}
       />,
@@ -63,7 +63,7 @@ describe('NavMobile', () => {
     const wrapper = shallow(
       <NavMobile
         navItems={mobileLoggedOutNavItems}
-        isMenuVisible
+        isOpen
         openMenu={() => {}}
         closeMenu={mockClose}
       />,

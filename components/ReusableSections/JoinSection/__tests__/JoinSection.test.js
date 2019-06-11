@@ -1,14 +1,32 @@
 import React from 'react';
+import cookie from 'js-cookie';
+import { cleanup, render } from '@testing-library/react';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
-
+import { VALID_AUTH_TOKEN } from 'test-utils/mocks/jwtMock';
 import { JoinSection } from '../JoinSection';
 
+const originalCookieGet = cookie.get;
+
 describe('JoinSection', () => {
-  it('should render with required props', () => {
-    createSnapshotTest(<JoinSection isLoggedIn={false} />);
+  beforeEach(cleanup);
+
+  afterAll(() => {
+    cookie.get = originalCookieGet;
   });
 
-  it('should render correctly when logged in', () => {
-    createSnapshotTest(<JoinSection isLoggedIn />);
+  it('should render when not logged in', () => {
+    cookie.get = jest.fn().mockImplementation(() => undefined);
+
+    const { queryByTestId } = render(<JoinSection />);
+    expect(queryByTestId('Join Section')).not.toBeNull();
+
+    createSnapshotTest(<JoinSection />);
+  });
+
+  it('should not render when logged in', () => {
+    cookie.get = jest.fn().mockImplementation(() => VALID_AUTH_TOKEN);
+
+    const { queryByTestId } = render(<JoinSection />);
+    expect(queryByTestId('Join Section')).toBeNull();
   });
 });

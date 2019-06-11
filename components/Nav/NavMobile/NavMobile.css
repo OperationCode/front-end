@@ -81,3 +81,9 @@
   border: none;
   cursor: pointer;
 }
+
+@media screen and (--desktop-viewport) {
+  .NavMobile {
+    display: none;
+  }
+}

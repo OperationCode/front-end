@@ -1,22 +1,14 @@
 import App, { Container } from 'next/app';
 import Router from 'next/router';
-import { Provider } from 'react-redux';
-import { compose } from 'redux';
 import ScrollUpButton from 'react-scroll-up-button';
-import withRedux from 'next-redux-wrapper';
 import ReactGA from 'react-ga';
 import LogRocket from 'logrocket';
 import setupLogRocketReact from 'logrocket-react';
 import * as Sentry from '@sentry/browser';
-import debounce from 'lodash/debounce';
-import { initStore } from 'store/store';
-import { screenResize } from 'store/screenSize/actions';
-import { setLoggedIn } from 'store/loggedIn/actions';
-import breakpoints from 'common/styles/breakpoints';
-import { isTokenValid } from 'common/utils/cookie-utils';
 import Nav from 'components/Nav/Nav';
 import Footer from 'components/Footer/Footer';
 import Modal from 'components/Modal/Modal';
+import withFonts from 'decorators/withFonts/withFonts';
 import 'common/styles/globalStyles.css';
 
 const isProduction = process.env.NODE_ENV === 'production';
@@ -40,14 +32,6 @@ class Layout extends React.Component {
 
 class OperationCodeApp extends App {
   componentDidMount() {
-    // get initial logged-in state on load
-    if (isTokenValid()) {
-      this.dispatchLogin();
-    }
-
-    this.handleScreenResize(); // get initial size on load
-    window.addEventListener('resize', this.debouncedHandleScreenResize);
-
     if (isProduction) {
       Sentry.init({ dsn: process.env.SENTRY_DSN });
       LogRocket.init(`${process.env.LOGROCKET_KEY}/operation-code`);
@@ -86,32 +70,15 @@ class OperationCodeApp extends App {
     super.componentDidCatch(error, errorInfo);
   }
 
-  handleScreenResize = () => {
-    const { store } = this.props;
-    store.dispatch(screenResize(window.innerWidth, window.innerHeight, breakpoints));
-  };
-
-  dispatchLogin = () => {
-    const { store } = this.props;
-    store.dispatch(setLoggedIn());
-  };
-
-  debouncedHandleScreenResize = debounce(this.handleScreenResize, 100, {
-    leading: true,
-    maxWait: 250,
-  });
-
   render() {
     // eslint-disable-next-line unicorn/prevent-abbreviations
-    const { Component, pageProps, store } = this.props;
+    const { Component, pageProps } = this.props;
 
     return (
       <Container>
-        <Provider store={store}>
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
-        </Provider>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
       </Container>
     );
   }
@@ -131,4 +98,4 @@ if (!isProduction) {
   });
 }
 
-export default compose(withRedux(initStore))(OperationCodeApp);
+export default withFonts(OperationCodeApp);

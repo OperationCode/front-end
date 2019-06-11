@@ -6,11 +6,11 @@ exports[`UpdateProfileForm/Steps/MilitaryDetails should render in context of For
   onReset={[Function]}
   onSubmit={[Function]}
 >
-  <h2
+  <h3
     className="row"
   >
     Military Details
-  </h2>
+  </h3>
   <div
     className="row"
   >

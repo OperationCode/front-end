@@ -1,10 +1,9 @@
 import Link from 'next/link';
-import { func, bool } from 'prop-types';
-import { compose } from 'redux';
-import { connect } from 'react-redux';
-import { setLoggedIn, setLoggedOut } from 'store/loggedIn/actions';
+import { bool } from 'prop-types';
+import nextCookie from 'next-cookies';
 import { loginUser, loginSocial } from 'common/constants/api';
 import { login, logout, isomorphicRedirect } from 'common/utils/auth-utils';
+import { hasValidAuthToken } from 'common/utils/cookie-utils';
 import Head from 'components/head';
 import Alert from 'components/Alert/Alert';
 import Content from 'components/Content/Content';
@@ -15,9 +14,6 @@ import SocialLoginGroup from 'components/SocialLoginGroup/SocialLoginGroup';
 
 class Login extends React.Component {
   static propTypes = {
-    dispatchLogout: func.isRequired,
-    dispatchLogin: func.isRequired,
-
     // pulled out of query param
     loggedOut: bool,
   };
@@ -31,8 +27,11 @@ class Login extends React.Component {
       return { loggedOut: !!loggedOut };
     }
 
+    const { token } = nextCookie(ctx);
+    const isLoggedIn = hasValidAuthToken(token);
+
     // redirect to profile if already logged in
-    if (ctx.isLoggedIn) {
+    if (isLoggedIn) {
       isomorphicRedirect('/profile', ctx);
     }
 
@@ -40,19 +39,16 @@ class Login extends React.Component {
   }
 
   componentDidMount() {
-    const { dispatchLogout, loggedOut } = this.props;
+    const { loggedOut } = this.props;
 
     // initiate logout if user was routed
     // here by clicking the logout link
     if (loggedOut) {
       logout({ shouldRedirect: false });
-      dispatchLogout();
     }
   }
 
   handleSuccess = ({ token, user }) => {
-    const { dispatchLogin } = this.props;
-    dispatchLogin();
     login({ token, user });
   };
 
@@ -102,11 +98,4 @@ class Login extends React.Component {
   }
 }
 
-const mapStateToProps = ({ loggedIn }) => ({ loggedIn });
-
-export default compose(
-  connect(
-    mapStateToProps,
-    { dispatchLogin: setLoggedIn, dispatchLogout: setLoggedOut },
-  ),
-)(Login);
+export default Login;
