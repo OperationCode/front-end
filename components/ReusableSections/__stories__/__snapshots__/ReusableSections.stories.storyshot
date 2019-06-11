@@ -38,6 +38,7 @@ exports[`Storyshots ReusableSections DonateSection 1`] = `
 exports[`Storyshots ReusableSections JoinSection 1`] = `
 <div
   className="Container white"
+  data-testid="Join Section"
 >
   <div
     className="content"
