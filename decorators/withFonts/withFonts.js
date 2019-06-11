@@ -15,17 +15,9 @@ const fonts = [
   },
 ];
 
-const withFonts = WrappedComponent =>
-  class extends React.Component {
+const withFonts = WrappedComponent => {
+  class Fonts extends React.Component {
     static displayname = `withFonts(${getDisplayName(WrappedComponent)})`;
-
-    static async getInitialProps(ctx) {
-      // eslint-disable-next-line unicorn/prevent-abbreviations
-      const componentProps =
-        WrappedComponent.getInitialProps && (await WrappedComponent.getInitialProps(ctx));
-
-      return { ...componentProps };
-    }
 
     componentDidMount() {
       const observers = fonts.map(font => {
@@ -48,6 +40,12 @@ const withFonts = WrappedComponent =>
     render() {
       return <WrappedComponent {...this.props} />;
     }
-  };
+  }
 
+  if (WrappedComponent.getInitialProps) {
+    Fonts.getInitialProps = WrappedComponent.getInitialProps;
+  }
+
+  return Fonts;
+};
 export default withFonts;
