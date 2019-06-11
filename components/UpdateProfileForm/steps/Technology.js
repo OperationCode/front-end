@@ -65,7 +65,7 @@ class Technology extends React.Component {
 
     return (
       <>
-        <h2 className={styles.row}>Technology</h2>
+        <h3 className={styles.row}>Technology</h3>
 
         <div className={styles.row}>
           <Field

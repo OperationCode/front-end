@@ -1,12 +1,12 @@
 const goToNextStep = stepName => {
   cy.get('button[data-testid="Submit Step Button"]').click();
   cy.wait('@patchUser');
-  cy.get('h2').should('have.text', stepName);
+  cy.get('h3').should('have.text', stepName);
 };
 
 const goToPreviousStep = stepName => {
   cy.get('button[data-testid="Previous Step Button"]').click();
-  cy.get('h2').should('have.text', stepName);
+  cy.get('h3').should('have.text', stepName);
 };
 
 const firstStepName = 'Professional Details';
@@ -30,7 +30,7 @@ describe(`profile/update (from login)`, () => {
 
     cy.visitAndWaitFor('/profile/update');
     cy.get('h1').should('have.text', 'Update Profile');
-    cy.get('h2').should('have.text', firstStepName);
+    cy.get('h3').should('have.text', firstStepName);
   });
 
   after(() => cy.clearCookies());
@@ -79,7 +79,7 @@ describe(`profile/update (from login)`, () => {
 
     cy.get('button[data-testid="Submit Step Button"]').click();
     cy.get('div[role="alert"]').should('have.text', 'Request failed with status code 401');
-    cy.get('h2').should('have.text', secondStepName);
+    cy.get('h3').should('have.text', secondStepName);
   });
 
   it(`should not show military step if military status is non-military`, () => {

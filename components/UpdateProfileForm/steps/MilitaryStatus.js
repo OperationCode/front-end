@@ -35,7 +35,7 @@ class MilitaryStatus extends React.Component {
 
     return (
       <>
-        <h2 className={styles.row}>Military Status</h2>
+        <h3 className={styles.row}>Military Status</h3>
 
         <p>How do you classify yourself in regards to being part of the military?</p>
 
