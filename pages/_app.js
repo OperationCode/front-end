@@ -17,7 +17,6 @@ import { isTokenValid } from 'common/utils/cookie-utils';
 import Nav from 'components/Nav/Nav';
 import Footer from 'components/Footer/Footer';
 import Modal from 'components/Modal/Modal';
-import withFonts from 'decorators/withFonts/withFonts';
 import 'common/styles/globalStyles.css';
 
 const isProduction = process.env.NODE_ENV === 'production';
@@ -132,7 +131,4 @@ if (!isProduction) {
   });
 }
 
-export default compose(
-  withFonts,
-  withRedux(initStore),
-)(OperationCodeApp);
+export default compose(withRedux(initStore))(OperationCodeApp);
