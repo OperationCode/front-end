@@ -1,6 +1,7 @@
 import React from 'react';
 import { bool, node, number, oneOf, oneOfType, string } from 'prop-types';
 import classNames from 'classnames';
+import { getDataAttributes } from 'common/utils/prop-utils';
 import styles from './Container.css';
 
 Container.propTypes = {
@@ -28,6 +29,7 @@ function Container({
   id,
   isFullViewportHeight,
   theme,
+  ...props
 }) {
   // See https://css-tricks.com/tinted-images-multiple-backgrounds/ for explanation
   const darkOverlay = 'linear-gradient(rgba(33, 48, 69, 0.65),rgba(33, 48, 69, 0.65))';
@@ -37,6 +39,8 @@ function Container({
       }
     : undefined;
 
+  const customDataAttributes = getDataAttributes(props);
+
   return (
     <div
       className={classNames(className, styles.Container, styles[theme], {
@@ -44,6 +48,7 @@ function Container({
       })}
       id={id}
       style={dynamicBackgroundImage}
+      {...customDataAttributes}
     >
       <div className={styles.content}>{children}</div>
     </div>
