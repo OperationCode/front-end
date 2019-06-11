@@ -60,7 +60,8 @@ class OperationCodeApp extends App {
       document.documentElement.classList.add('fonts-loaded');
     });
 
-    if (isProduction) {
+    // Temporary method until we do dynamic now configs
+    if (window.location.host.includes('operationcode.org') && isProduction) {
       Sentry.init({ dsn: process.env.SENTRY_DSN });
       LogRocket.init(`${process.env.LOGROCKET_KEY}/operation-code`);
       ReactGA.initialize(process.env.GOOGLE_ANALYTICS_TRACKING_ID);
