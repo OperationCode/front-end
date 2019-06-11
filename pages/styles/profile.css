@@ -1,7 +1,12 @@
 .actionItems {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: center;
   width: 100%;
-  margin: 3rem auto;
+  margin: auto;
   text-align: center;
+}
+
+.actionItems > a {
+  margin: 1rem;
 }

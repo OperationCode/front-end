@@ -40,7 +40,7 @@ class ProfessionalDetails extends React.Component {
 
     return (
       <>
-        <h2 className={styles.row}>Professional Details</h2>
+        <h3 className={styles.row}>Professional Details</h3>
 
         <div className={styles.row}>
           <Field

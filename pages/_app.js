@@ -1,17 +1,10 @@
 import App, { Container } from 'next/app';
 import Router from 'next/router';
-import { Provider } from 'react-redux';
-import { compose } from 'redux';
 import ScrollUpButton from 'react-scroll-up-button';
-import withRedux from 'next-redux-wrapper';
 import ReactGA from 'react-ga';
 import LogRocket from 'logrocket';
 import setupLogRocketReact from 'logrocket-react';
 import * as Sentry from '@sentry/browser';
-import debounce from 'lodash/debounce';
-import { initStore } from 'store/store';
-import { screenResize } from 'store/screenSize/actions';
-import breakpoints from 'common/styles/breakpoints';
 import Nav from 'components/Nav/Nav';
 import Footer from 'components/Footer/Footer';
 import Modal from 'components/Modal/Modal';
@@ -39,9 +32,6 @@ class Layout extends React.Component {
 
 class OperationCodeApp extends App {
   componentDidMount() {
-    this.handleScreenResize(); // get initial size on load
-    window.addEventListener('resize', this.debouncedHandleScreenResize);
-
     if (isProduction) {
       Sentry.init({ dsn: process.env.SENTRY_DSN });
       LogRocket.init(`${process.env.LOGROCKET_KEY}/operation-code`);
@@ -80,27 +70,15 @@ class OperationCodeApp extends App {
     super.componentDidCatch(error, errorInfo);
   }
 
-  handleScreenResize = () => {
-    const { store } = this.props;
-    store.dispatch(screenResize(window.innerWidth, window.innerHeight, breakpoints));
-  };
-
-  debouncedHandleScreenResize = debounce(this.handleScreenResize, 100, {
-    leading: true,
-    maxWait: 250,
-  });
-
   render() {
     // eslint-disable-next-line unicorn/prevent-abbreviations
-    const { Component, pageProps, store } = this.props;
+    const { Component, pageProps } = this.props;
 
     return (
       <Container>
-        <Provider store={store}>
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
-        </Provider>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
       </Container>
     );
   }
@@ -120,7 +98,4 @@ if (!isProduction) {
   });
 }
 
-export default compose(
-  withFonts,
-  withRedux(initStore),
-)(OperationCodeApp);
+export default withFonts(OperationCodeApp);

@@ -10,7 +10,7 @@ import styles from './NavMobile.css';
 
 export default class NavMobile extends Component {
   static propTypes = {
-    isMenuVisible: bool.isRequired,
+    isOpen: bool.isRequired,
     openMenu: func.isRequired,
     closeMenu: func.isRequired,
     navItems: arrayOf(
@@ -29,7 +29,7 @@ export default class NavMobile extends Component {
   };
 
   render() {
-    const { isMenuVisible, openMenu, closeMenu, navItems } = this.props;
+    const { isOpen, openMenu, closeMenu, navItems } = this.props;
 
     return (
       <header className={styles.NavMobile}>
@@ -57,7 +57,7 @@ export default class NavMobile extends Component {
           <HamburgerIcon className={styles.hamburgerIcon} />
         </button>
 
-        {isMenuVisible && (
+        {isOpen && (
           <nav className={styles.dropdown}>
             <CloseButton onClick={closeMenu} theme="white" />
 

@@ -45,7 +45,7 @@ class MilitaryDetails extends React.Component {
 
     return (
       <>
-        <h2 className={styles.row}>Military Details</h2>
+        <h3 className={styles.row}>Military Details</h3>
 
         <div className={styles.row}>
           <Field
