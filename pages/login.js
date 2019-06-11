@@ -1,7 +1,9 @@
 import Link from 'next/link';
 import { bool } from 'prop-types';
+import nextCookie from 'next-cookies';
 import { loginUser, loginSocial } from 'common/constants/api';
 import { login, logout, isomorphicRedirect } from 'common/utils/auth-utils';
+import { hasValidAuthToken } from 'common/utils/cookie-utils';
 import Head from 'components/head';
 import Alert from 'components/Alert/Alert';
 import Content from 'components/Content/Content';
@@ -25,8 +27,11 @@ class Login extends React.Component {
       return { loggedOut: !!loggedOut };
     }
 
+    const { token } = nextCookie(ctx);
+    const isLoggedIn = hasValidAuthToken(token);
+
     // redirect to profile if already logged in
-    if (ctx.isLoggedIn) {
+    if (isLoggedIn) {
       isomorphicRedirect('/profile', ctx);
     }
 
