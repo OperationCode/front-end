@@ -16,7 +16,6 @@ describe(`profile/update (unauthorized)`, () => {
   it(`should redirect to login if not authorized`, () => {
     // assert that route can't be reached without being authorized
     cy.visit('/profile/update');
-    cy.get('nav[data-testid="Desktop Nav"]').should('exist');
     cy.url().should('contain', '/login');
     cy.url().should('not.contain', '/profile/update');
     cy.get('h1').should('have.text', 'Login'); // redirect confirmed
