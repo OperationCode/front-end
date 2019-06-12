@@ -9,6 +9,7 @@ import * as Sentry from '@sentry/browser';
 import Nav from 'components/Nav/Nav';
 import Footer from 'components/Footer/Footer';
 import Modal from 'components/Modal/Modal';
+import { version } from '../package.json';
 import 'common/styles/globalStyles.css';
 
 const isProduction = process.env.NODE_ENV === 'production';
@@ -44,25 +45,10 @@ class Layout extends React.Component {
 
 class OperationCodeApp extends App {
   componentDidMount() {
-    const observers = fonts.map(font => {
-      if (font.url) {
-        const link = document.createElement('link');
-        link.href = font.url;
-        link.rel = 'stylesheet'; // eslint-disable-line unicorn/prevent-abbreviations
-        document.head.append(link);
-      }
-
-      const observer = new FontFaceObserver(font.fontFamily);
-      return observer.load();
-    });
-
-    Promise.all(observers).then(() => {
-      document.documentElement.classList.add('fonts-loaded');
-    });
-
+    /* Analytics */
     // Temporary method until we do dynamic now configs
     if (window.location.host.includes('operationcode.org') && isProduction) {
-      Sentry.init({ dsn: process.env.SENTRY_DSN });
+      Sentry.init({ dsn: process.env.SENTRY_DSN, release: `front-end@${version}` });
       LogRocket.init(`${process.env.LOGROCKET_KEY}/operation-code`);
       ReactGA.initialize(process.env.GOOGLE_ANALYTICS_TRACKING_ID);
 
@@ -78,6 +64,28 @@ class OperationCodeApp extends App {
       ReactGA.set({ page: window.location.pathname });
     }
 
+    /* Non-render blocking font load */
+    const observers = fonts.map(font => {
+      if (font.url) {
+        const link = document.createElement('link');
+        link.href = font.url;
+        link.rel = 'stylesheet'; // eslint-disable-line unicorn/prevent-abbreviations
+        document.head.append(link);
+      }
+
+      const observer = new FontFaceObserver(font.fontFamily);
+      return observer.load(null, 10000); // increase the max timeout from default 3s to 10s
+    });
+
+    Promise.all(observers)
+      .then(() => {
+        document.documentElement.classList.add('fonts-loaded');
+      })
+      .catch(() =>
+        Sentry.captureException('FontFaceObserver took too long to resolve. Ignore this.'),
+      );
+
+    /* Modal anchor set */
     if (Modal.setAppElement) {
       Modal.setAppElement('body');
     }
