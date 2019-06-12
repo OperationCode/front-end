@@ -9,6 +9,7 @@ import * as Sentry from '@sentry/browser';
 import Nav from 'components/Nav/Nav';
 import Footer from 'components/Footer/Footer';
 import Modal from 'components/Modal/Modal';
+import { version } from '../package.json';
 import 'common/styles/globalStyles.css';
 
 const isProduction = process.env.NODE_ENV === 'production';
@@ -62,7 +63,7 @@ class OperationCodeApp extends App {
 
     // Temporary method until we do dynamic now configs
     if (window.location.host.includes('operationcode.org') && isProduction) {
-      Sentry.init({ dsn: process.env.SENTRY_DSN });
+      Sentry.init({ dsn: process.env.SENTRY_DSN, release: `front-end@${version}` });
       LogRocket.init(`${process.env.LOGROCKET_KEY}/operation-code`);
       ReactGA.initialize(process.env.GOOGLE_ANALYTICS_TRACKING_ID);
 
