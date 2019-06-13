@@ -28,8 +28,12 @@ const registrationSchema = Yup.object().shape({
   'confirm-password': Yup.string()
     .required(validationErrorMessages.required)
     .oneOf([Yup.ref('password')], validationErrorMessages.passwordMatch),
-  firstName: Yup.string().required(validationErrorMessages.required),
-  lastName: Yup.string().required(validationErrorMessages.required),
+  firstName: Yup.string()
+    .required(validationErrorMessages.required)
+    .matches(/^[a-zA-Z]+$/, 'Numbers not allowed'),
+  lastName: Yup.string()
+    .required(validationErrorMessages.required)
+    .matches(/^[a-zA-Z]+$/, 'Numbers not allowed'),
   zipcode: Yup.string()
     .required(validationErrorMessages.required)
     .test('zipcode', validationErrorMessages.zipcode, isValidZipcode),
