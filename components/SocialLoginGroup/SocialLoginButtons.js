@@ -34,6 +34,7 @@ function SocialLoginButtons({ onSuccess, onGoogleFailure }) {
       <FacebookLogin
         appId={facebookKey}
         callback={onSuccess('facebook')}
+        redirectUri={typeof window === 'object' && `${window.location.origin}/login`}
         render={renderProps => (
           <button
             type="button"
