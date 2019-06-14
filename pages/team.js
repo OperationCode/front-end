@@ -1,71 +1,80 @@
+import { arrayOf, object, string } from 'prop-types';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
-import Content from 'components/Content/Content';
-import Card from 'components/Cards/Card/Card';
-import FlatCard from 'components/Cards/FlatCard/FlatCard';
 import { getTeamMembersPromise } from 'common/constants/api';
 import { s3 } from 'common/constants/urls';
+import { getServerErrorMessage } from 'common/utils/api-utils';
+import Content from 'components/Content/Content';
+import Alert from 'components/Alert/Alert';
+import FlatCard from 'components/Cards/FlatCard/FlatCard';
 import styles from './styles/team.css';
 
-export default class team extends React.Component {
-  state = {
-    boardMembers: [],
-    staffMembers: [],
-  };
+export default class Team extends React.Component {
+  static async getInitialProps() {
+    try {
+      const { data } = await getTeamMembersPromise();
 
-  async componentDidMount() {
-    const { data } = await getTeamMembersPromise();
-    const boardMembers = data.filter(x => x.group === 'board');
-    const staffMembers = data.filter(x => x.group === 'team');
+      const boardMembers = data.filter(({ group }) => group === 'board' || group === 'staff');
 
-    const boardChair = 'David Molina';
-    const CEO = 'Conrad Hollomon';
+      const firstListedMemberName = 'David Molina';
 
-    this.setState({
-      boardMembers: this.getOrderedGroup(boardMembers, boardChair),
-      staffMembers: this.getOrderedGroup(staffMembers, CEO),
-    });
+      const firstBoardMember = boardMembers.find(({ name }) => name === firstListedMemberName);
+      const boardMembersExcludingFirst = boardMembers.filter(
+        ({ name }) => name !== firstListedMemberName,
+      );
+
+      const sortedBoardMembers = [firstBoardMember, ...boardMembersExcludingFirst];
+
+      return { boardMembers: sortedBoardMembers };
+    } catch (error) {
+      return { errorMessage: getServerErrorMessage(error) };
+    }
   }
 
-  getOrderedGroup = (group, leaderName) => {
-    const isLeader = member => member.name === leaderName;
-    const sortedMembers = group.sort((a, b) => a.id - b.id);
-    const leader = sortedMembers.filter(x => isLeader(x));
-    const remainingMembers = sortedMembers.filter(x => !isLeader(x));
-    return [...leader, ...remainingMembers];
+  static propTypes = {
+    boardMembers: arrayOf(object.isRequired),
+    errorMessage: string,
+  };
+
+  static defaultProps = {
+    boardMembers: [],
+    errorMessage: '',
   };
 
   render() {
-    const { boardMembers, staffMembers } = this.state;
+    const { boardMembers, errorMessage } = this.props;
 
     return (
       <div>
-        <HeroBanner
-          backgroundImageSource={`${s3}heroBanners/lincoln.jpg`}
-          className={styles.lincoln}
-        >
-          Abraham Lincoln To care for him who shall have borne the battle and for his widow, and his
-          orphan.
-        </HeroBanner>
-
+        <HeroBanner title="The Team" backgroundImageSource={`${s3}redesign/heroBanners/team.jpg`} />
         <Content
+          title="Our Board"
+          hasTitleUnderline
+          theme="white"
           columns={[
-            <div className={styles.boardMembers}>
-              {boardMembers.map(({ name, role, image_src: imageSource, description }) => (
-                <FlatCard
-                  key={`${name} + ${role}`}
-                  header={
-                    <>
-                      <h3>{name}</h3>
-                      <br />
-                      <h5>{role}</h5>
-                    </>
-                  }
-                  imageSource={imageSource}
-                >
-                  {description}
-                </FlatCard>
-              ))}
-            </div>,
+            errorMessage ? (
+              <Alert isOpen>{errorMessage}</Alert>
+            ) : (
+              <div className={styles.boardMembers}>
+                {boardMembers.map(({ name, role, imageSrc: imageSource, description }) => (
+                  <FlatCard
+                    key={name}
+                    header={
+                      <>
+                        <h3>{name}</h3>
+                        <br />
+                        <h5>{role}</h5>
+                      </>
+                    }
+                    image={{
+                      source: imageSource,
+                      alt: `Headshot of ${name}`,
+                    }}
+                  >
+                    {description}
+                  </FlatCard>
+                ))}
+              </div>
+            ),
             <div className={styles.foundingMembers}>
               <p>
                 Operation Code deeply appreciates the time, energy, and hard work of our{' '}
@@ -81,31 +90,6 @@ export default class team extends React.Component {
               </p>
             </div>,
           ]}
-          title="Our Board"
-          theme="white"
-        />
-
-        <Content
-          columns={staffMembers.map(({ name, role, slackUsername, email }) => (
-            <Card key={`${name} + ${role}`}>
-              <h4>{name}</h4>
-
-              <hr />
-
-              <h5>{role}</h5>
-
-              <br />
-
-              <p>
-                Slack: <i>{slackUsername}</i>
-              </p>
-              <p>
-                Email: <i>{email}</i>
-              </p>
-            </Card>
-          ))}
-          title="Our Staff"
-          theme="white"
         />
       </div>
     );

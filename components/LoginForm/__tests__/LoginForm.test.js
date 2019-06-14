@@ -1,16 +1,16 @@
 import React from 'react';
 import faker from 'faker';
 import { mount } from 'enzyme';
+import { wait } from '@testing-library/react';
 import { loginUser } from 'common/constants/api';
 import { networkErrorMessages, validationErrorMessages } from 'common/constants/messages';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 import OperationCodeAPIMock from 'test-utils/mocks/apiMock';
 import mockUser from 'test-utils/mockGenerators/mockUser';
 import asyncRenderDiff from 'test-utils/asyncRenderDiff';
-import wait from 'test-utils/wait';
 import LoginForm from '../LoginForm';
 
-afterEach(() => {
+beforeEach(() => {
   OperationCodeAPIMock.reset();
 });
 
@@ -67,26 +67,6 @@ describe('LoginForm', () => {
     ).toStrictEqual(validationErrorMessages.required);
   });
 
-  it('should show "invalid password" message when focusing off an invalid password', async () => {
-    const wrapper = mount(<LoginForm login={jest.fn()} onSuccess={jest.fn()} />);
-
-    const stringWithNoCapital = 'sillypassword1';
-
-    wrapper
-      .find('input#password')
-      .simulate('change', { target: { id: 'password', value: stringWithNoCapital } })
-      .simulate('blur');
-
-    await asyncRenderDiff(wrapper);
-
-    expect(
-      wrapper
-        .find('Input[type="password"]')
-        .find('Alert')
-        .text(),
-    ).toStrictEqual(validationErrorMessages.password);
-  });
-
   it('should submit with valid data in form', async () => {
     const user = mockUser();
 
@@ -95,13 +75,10 @@ describe('LoginForm', () => {
       password: user.password,
     };
 
-    OperationCodeAPIMock.onPost('sessions', { user: initialValues }).reply(200, {
+    OperationCodeAPIMock.onPost('auth/login/', initialValues).reply(200, {
       user: {
-        first_name: user.firstName,
-        last_name: user.lastName,
-        email: user.email,
-        zip: user.zipcode,
-        slack_name: faker.internet.userName(),
+        ...user,
+        slackName: faker.internet.userName(),
         mentor: false,
       },
       token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9',
@@ -109,15 +86,15 @@ describe('LoginForm', () => {
 
     const successSpy = jest.fn();
     const wrapper = mount(
-      <LoginForm onSuccess={successSpy} login={loginUser} {...initialValues} />,
+      <LoginForm onSuccess={successSpy} login={loginUser} initialValues={initialValues} />,
     );
 
     wrapper.find('Button').simulate('submit');
     await asyncRenderDiff(wrapper);
 
     await wait(() => {
-      expect(successSpy).toHaveBeenCalled();
       expect(OperationCodeAPIMock.history.post.length).toBeGreaterThan(0);
+      expect(successSpy).toHaveBeenCalledTimes(1);
     });
   });
 
@@ -147,23 +124,17 @@ describe('LoginForm', () => {
   it('should show error when trying to login with incorrect email or password', async () => {
     const invalidError = 'Invalid Email or password.';
 
-    const user = {
+    const initialValues = {
       email: 'testing123@gmail.com',
       password: 'Testing123',
     };
 
-    OperationCodeAPIMock.onPost('sessions', { user }).reply(401, { error: invalidError });
+    OperationCodeAPIMock.onPost('auth/login/', initialValues).reply(401, { error: invalidError });
 
     const successSpy = jest.fn();
 
     const wrapper = mount(
-      <LoginForm
-        login={loginUser}
-        onSuccess={successSpy}
-        initialValues={{
-          ...user,
-        }}
-      />,
+      <LoginForm login={loginUser} onSuccess={successSpy} initialValues={initialValues} />,
     );
 
     wrapper.find('Button').simulate('submit');
@@ -189,18 +160,18 @@ describe('LoginForm', () => {
       password: user.password,
     };
 
-    OperationCodeAPIMock.onPost('sessions', { user: initialValues }).reply(503);
+    OperationCodeAPIMock.onPost('auth/login/', initialValues).reply(503);
 
     const successSpy = jest.fn();
     const wrapper = mount(
-      <LoginForm onSuccess={successSpy} login={loginUser} {...initialValues} />,
+      <LoginForm onSuccess={successSpy} login={loginUser} initialValues={initialValues} />,
     );
 
     wrapper.find('Button').simulate('submit');
     await asyncRenderDiff(wrapper);
 
     await wait(() => {
-      expect(successSpy).toHaveBeenCalled();
+      expect(successSpy).not.toHaveBeenCalled();
       expect(OperationCodeAPIMock.history.post.length).toBeGreaterThan(0);
       expect(
         wrapper
@@ -209,5 +180,39 @@ describe('LoginForm', () => {
           .text(),
       ).toStrictEqual(networkErrorMessages.serverDown);
     });
+  });
+
+  it('should reset form and set form as "not submitting" after successful login', async () => {
+    const user = mockUser();
+
+    const initialValues = {
+      email: user.email,
+      password: user.password,
+    };
+
+    OperationCodeAPIMock.onPost('auth/login/', initialValues).reply(200, {
+      user: {
+        ...user,
+        slackName: faker.internet.userName(),
+        mentor: false,
+      },
+      token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9',
+    });
+
+    const successSpy = jest.fn();
+    const wrapper = mount(
+      <LoginForm onSuccess={successSpy} login={loginUser} initialValues={initialValues} />,
+    );
+
+    const mockedFormikBag = {
+      setSubmitting: jest.fn(),
+      resetForm: jest.fn(),
+    };
+
+    await wrapper.instance().handleSubmit(initialValues, mockedFormikBag);
+
+    expect(mockedFormikBag.setSubmitting).toHaveBeenCalledTimes(1);
+    expect(mockedFormikBag.setSubmitting).toHaveBeenCalledWith(false);
+    expect(mockedFormikBag.resetForm).toHaveBeenCalledTimes(1);
   });
 });

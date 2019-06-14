@@ -1,4 +1,3 @@
-/* eslint-env jest */
 import React from 'react';
 import { Formik, Field } from 'formik';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
@@ -31,7 +30,6 @@ describe('Select', () => {
     form: { touched: { [name]: false }, errors: { [name]: '' }, setFieldTouched, setFieldValue },
     label: 'Some Select:',
     options: [
-      { label: '-- Select One --', value: '' },
       { label: 'Taco Bell', value: 'tacobell' },
       { label: `Wendy's`, value: 'wendys' },
       { label: 'Panda Express', value: 'pandaexpress' },
@@ -125,6 +123,30 @@ describe('Select', () => {
 
       expect(setFieldTouched).toHaveBeenCalledTimes(2);
       expect(setFieldValue).toHaveBeenCalledTimes(2);
+    });
+
+    it('should be able to remove multiselect options', async () => {
+      const wrapper = mount(
+        <Select {...requiredProps} field={{ name: 'test', value: [] }} isMulti />,
+      );
+
+      const ReactSelect = getReactSelect(wrapper);
+
+      // down arrow once and enter
+      ReactSelect.simulate('blur');
+      ReactSelect.simulate('keyDown', { key: 'ArrowDown', keyCode: 40 });
+      await asyncRenderDiff(wrapper);
+      ReactSelect.simulate('keyDown', { key: 'Enter', keyCode: 13 });
+      await asyncRenderDiff(wrapper);
+
+      expect(setFieldValue).toHaveBeenCalledTimes(1);
+
+      // Remove single selected value
+      ReactSelect.simulate('keyDown', { key: 'Backspace', keyCode: 8 });
+
+      await asyncRenderDiff(wrapper);
+
+      expect(setFieldValue).toHaveBeenNthCalledWith(2, 'test', []);
     });
   });
 });

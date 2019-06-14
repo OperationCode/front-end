@@ -3,10 +3,10 @@ import existingUser from '../../test-utils/mocks/existingUser';
 import mockPassword from '../../test-utils/mockGenerators/mockPassword';
 import mockUser from '../../test-utils/mockGenerators/mockUser';
 
-describe('login', function() {
+describe('login', () => {
   beforeEach(() => {
     cy.server();
-    cy.route('POST', '/api/v1/sessions').as('postLogin');
+    cy.route('POST', 'auth/login/').as('postLogin');
 
     cy.clearCookies();
     cy.visitAndWaitFor('/login');
@@ -26,12 +26,9 @@ describe('login', function() {
     cy.get('p').contains('Hello Kyle Holmberg!');
 
     cy.getCookies().then(cookies => {
-      expect(
-        cookies.some(({ value }) => value.includes('eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9')),
-      ).to.equal(true);
-      expect(cookies.some(({ value }) => value === 'Kyle')).to.be.true;
-      expect(cookies.some(({ value }) => value === 'Holmberg')).to.be.true;
-      expect(cookies.some(({ value }) => value === '97214')).to.be.true;
+      expect(cookies.some(({ value }) => value === existingUser.firstName)).to.be.true;
+      expect(cookies.some(({ value }) => value === existingUser.lastName)).to.be.true;
+      expect(cookies.some(({ value }) => value === existingUser.zipcode)).to.be.true;
     });
   });
 
@@ -44,10 +41,13 @@ describe('login', function() {
 
     cy.wait('@postLogin')
       .its('status')
-      .should('eq', 401);
+      .should('eq', 400);
 
     cy.url().should('contain', '/login');
-    cy.get('div[role="alert"]').should('have.text', 'Invalid Email or password.');
+    cy.get('div[role="alert"]').should(
+      'have.text',
+      'The email or password you entered is incorrect!',
+    );
     cy.getCookies().should('have.length', 0);
   });
 
@@ -61,17 +61,20 @@ describe('login', function() {
 
     cy.wait('@postLogin')
       .its('status')
-      .should('eq', 401);
+      .should('eq', 400);
 
     cy.url().should('contain', '/login');
-    cy.get('div[role="alert"]').should('have.text', 'Invalid Email or password.');
+    cy.get('div[role="alert"]').should(
+      'have.text',
+      'The email or password you entered is incorrect!',
+    );
     cy.getCookies().should('have.length', 0);
   });
 
   it('should NOT be able to login to existing user when the server is unreachable', () => {
     cy.route({
       method: 'POST',
-      url: '/api/v1/sessions',
+      url: 'auth/login/',
       status: 502,
       response: [],
     }).as('postLogin');

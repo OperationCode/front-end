@@ -25,7 +25,6 @@ module.exports = {
     '<rootDir>/common/**/*.js',
     '<rootDir>/components/**/*.js',
     '<rootDir>/decorators/**/*.js',
-    '<rootDir>/store/**/*.js',
   ],
 
   // The directory where Jest should output its coverage files
@@ -46,9 +45,6 @@ module.exports = {
     '<rootDir>/components/FAQ/questions.js',
     '<rootDir>/components/ZipRecruiterJobs/ZipRecruiterJobs.js',
     '<rootDir>/components/Press/PressLinks/Articles.js',
-    '<rootDir>/store/store.js',
-    '<rootDir>/store/initialState.js',
-    '<rootDir>/store/(.*)/(types|actions).js',
 
     // Don't collect coverage from import/export mappers
     '<rootDir>/common/(.*)/index.js',

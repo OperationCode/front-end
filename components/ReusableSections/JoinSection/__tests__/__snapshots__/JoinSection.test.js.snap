@@ -1,8 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`JoinSection should render with required props 1`] = `
+exports[`JoinSection should render when not logged in 1`] = `
 <div
   className="Container white"
+  data-testid="Join Section"
 >
   <div
     className="content"
@@ -19,6 +20,7 @@ exports[`JoinSection should render with required props 1`] = `
       className="Button verticalSpacing secondary"
       href="/join"
       onClick={[Function]}
+      onMouseEnter={[Function]}
     >
       Register Now
     </a>

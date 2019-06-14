@@ -15,7 +15,7 @@ const successStories = [
     imageSource: `${s3}headshots/jameel_matin.jpg`,
   },
   {
-    title: 'Sean McBride, USMC, Software Engineer',
+    title: 'Sean McBride, US Army, Software Engineer',
     quote:
       'If you had told me when I separated from the military that I would eventually be the lead developer on a pretty complex piece of software, I would have told you that you were nuts. However, several years and pivots later here I am. While it was a hard slog to get here, I chalk up much of my success as due to Operation Code.',
     imageSource: `${s3}headshots/sean_mcbride.jpg`,

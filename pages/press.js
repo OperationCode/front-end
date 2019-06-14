@@ -110,7 +110,9 @@ export default () => (
       theme="white"
       columns={[
         <div className={styles.logos}>
-          <Link href="/branding">View Our Branding</Link>
+          <Link href="/branding">
+            <a>View Our Branding</a>
+          </Link>
         </div>,
       ]}
     />

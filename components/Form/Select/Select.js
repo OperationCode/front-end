@@ -1,5 +1,15 @@
 import React from 'react';
-import { string, bool, func, number, shape, arrayOf, oneOfType, objectOf } from 'prop-types';
+import {
+  arrayOf,
+  bool,
+  func,
+  number,
+  object,
+  objectOf,
+  oneOfType,
+  shape,
+  string,
+} from 'prop-types';
 import { ErrorMessage } from 'formik';
 import Alert from 'components/Alert/Alert';
 import Label from 'components/Form/Label/Label';
@@ -10,13 +20,13 @@ class Select extends React.Component {
   static propTypes = {
     field: shape({
       name: string.isRequired,
-      value: oneOfType([
-        string,
-        arrayOf(shape({ label: string.isRequired, value: string.isRequired })),
-      ]).isRequired,
+      value: oneOfType([string.isRequired, arrayOf(string.isRequired).isRequired]),
     }).isRequired,
     form: shape({
-      touched: objectOf(bool).isRequired,
+      // TODO: Resolve why multiselects can end up with touched: { key: array }
+      // see ThemedReactSelect as well
+      // touched: objectOf(bool).isRequired,
+      touched: object.isRequired,
       errors: objectOf(string).isRequired,
       setFieldTouched: func.isRequired,
       setFieldValue: func.isRequired,
@@ -30,7 +40,7 @@ class Select extends React.Component {
   };
 
   static defaultProps = {
-    id: '',
+    id: undefined,
     isLabelHidden: false,
     isMulti: false,
   };
@@ -53,8 +63,11 @@ class Select extends React.Component {
    */
   onChangeMulti = selectedArray => {
     const { field, form } = this.props;
-
-    form.setFieldValue(field.name, selectedArray.map(item => item.value));
+    if (selectedArray) {
+      form.setFieldValue(field.name, selectedArray.map(item => item.value));
+    } else {
+      form.setFieldValue(field.name, []);
+    }
   };
 
   /**
@@ -80,9 +93,12 @@ class Select extends React.Component {
   };
 
   handleBlur = () => {
-    const { field, form } = this.props;
+    const {
+      field: { name },
+      form,
+    } = this.props;
 
-    form.setFieldTouched(field.name, true);
+    form.setFieldTouched(name);
   };
 
   render() {
@@ -114,7 +130,7 @@ class Select extends React.Component {
             {...props}
             hasErrors={hasErrors}
             isTouched={touched[name]}
-            id={id}
+            id={id || name}
             isMulti={isMulti}
             name={name}
             onBlur={this.handleBlur}

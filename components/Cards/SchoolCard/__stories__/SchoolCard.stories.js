@@ -17,12 +17,12 @@ storiesOf('Cards/SchoolCard', module)
       hasOnlyOnline={boolean('hasOnlyOnline', false)}
       isFullTime={boolean('isFullTime', true)}
       locations={[
-        { city: 'Los Angeles', state: 'CA', va_accepted: false },
-        { city: 'Joshua Tree', state: 'CA', va_accepted: true },
-        { city: 'Boston', state: 'MA', va_accepted: false },
-        { city: 'New York', state: 'NY', va_accepted: false },
-        { city: 'Portland', state: 'OR', va_accepted: false },
-        { city: 'Seattle', state: 'WA', va_accepted: true },
+        { city: 'Los Angeles', state: 'CA', vaAccepted: false },
+        { city: 'Joshua Tree', state: 'CA', vaAccepted: true },
+        { city: 'Boston', state: 'MA', vaAccepted: false },
+        { city: 'New York', state: 'NY', vaAccepted: false },
+        { city: 'Portland', state: 'OR', vaAccepted: false },
+        { city: 'Seattle', state: 'WA', vaAccepted: true },
       ]}
       logoSource={text('logoSource', `${s3}codeSchoolLogos/general_assembly.jpg`)}
       name={text('name', 'General Assembly')}
@@ -41,7 +41,7 @@ storiesOf('Cards/SchoolCard', module)
         {
           city: 'Los Angeles',
           state: 'CA',
-          va_accepted: boolean('va_accepted', false),
+          vaAccepted: boolean('vaAccepted', false),
         },
       ]}
       logoSource={text('logoSource', `${s3}codeSchoolLogos/code_immersives.jpg`)}

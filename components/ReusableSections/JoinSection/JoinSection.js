@@ -1,31 +1,41 @@
 import React from 'react';
+import { hasValidAuthToken } from 'common/utils/cookie-utils';
 import Container from 'components/Container/Container';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 import LinkButton from 'components/LinkButton/LinkButton';
 import styles from './JoinSection.css';
 
-const JoinSection = () => (
-  <Container theme="white">
-    <h3>Join Our Thriving Community</h3>
+export function JoinSection() {
+  const isLoggedIn = hasValidAuthToken();
 
-    <p className={styles.justifyAlign}>
-      Are you ready to begin your journey towards a career in software development? Get the support
-      you need by joining our members-only Slack community!
-    </p>
+  if (isLoggedIn) {
+    // no need to tell somebody to join if they already have an account!
+    return null;
+  }
 
-    <LinkButton href="/join" theme="secondary" className={styles.verticalSpacing}>
-      Register Now
-    </LinkButton>
+  return (
+    <Container theme="white" data-testid="Join Section">
+      <h3>Join Our Thriving Community</h3>
 
-    <p>Slack is a community based collaboration tool where all the magic happens!</p>
+      <p className={styles.justifyAlign}>
+        Are you ready to begin your journey towards a career in software development? Get the
+        support you need by joining our members-only Slack community!
+      </p>
 
-    <OutboundLink
-      href="https://get.slack.help/hc/en-us/categories/360000049043-Getting-Started"
-      analyticsEventLabel="Learn More Slack"
-    >
-      Never heard of Slack before?
-    </OutboundLink>
-  </Container>
-);
+      <LinkButton href="/join" theme="secondary" className={styles.verticalSpacing}>
+        Register Now
+      </LinkButton>
+
+      <p>Slack is a community based collaboration tool where all the magic happens!</p>
+
+      <OutboundLink
+        href="https://get.slack.help/hc/en-us/categories/360000049043-Getting-Started"
+        analyticsEventLabel="Learn More Slack"
+      >
+        Never heard of Slack before?
+      </OutboundLink>
+    </Container>
+  );
+}
 
 export default JoinSection;

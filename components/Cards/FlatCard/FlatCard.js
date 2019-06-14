@@ -1,47 +1,52 @@
 import React from 'react';
-import { element, node, string } from 'prop-types';
+import { element, node, shape, string } from 'prop-types';
 import classNames from 'classnames';
 import styles from './FlatCard.css';
 
-FlatCard.propTypes = {
-  button: element,
-  children: node.isRequired,
-  className: string,
-  header: node,
-  imageAlt: string,
-  imageSource: string,
-};
+class FlatCard extends React.Component {
+  static propTypes = {
+    button: element,
+    children: node.isRequired,
+    className: string,
+    header: node,
+    image: shape({
+      source: string.isRequired,
+      alt: string.isRequired,
+    }),
+  };
 
-FlatCard.defaultProps = {
-  button: null,
-  className: undefined,
-  header: undefined,
-  imageAlt: undefined,
-  imageSource: undefined,
-};
+  static defaultProps = {
+    button: null,
+    className: undefined,
+    header: undefined,
+    image: undefined,
+  };
 
-function FlatCard({ button: Button, children, className, header, imageSource, imageAlt }) {
-  const cardClassNames = [styles.FlatCard];
+  render() {
+    const { button: Button, children, className, header, image } = this.props;
 
-  if (imageSource) {
-    cardClassNames.push(styles.cardWithImage);
+    const hasImage = image && image.alt && image.source;
+
+    return (
+      <article
+        className={classNames(styles.FlatCard, className, {
+          [styles.cardWithImage]: hasImage,
+        })}
+      >
+        <div className={styles.borderContainer}>
+          {header && <div className={styles.header}>{header}</div>}
+          {hasImage && (
+            <div className={styles.rowCenter}>
+              <img className={styles.image} src={image.source} alt={image.alt} />
+            </div>
+          )}
+          {header && <hr className={styles.divider} />}
+          <div className={styles.children}>{children}</div>
+          {Button && <div className={styles.flatCardButton}>{Button}</div>}
+        </div>
+      </article>
+    );
   }
-
-  return (
-    <article className={classNames(...cardClassNames, className)}>
-      <div className={styles.borderContainer}>
-        {header && <div className={styles.header}>{header}</div>}
-        {imageSource && (
-          <div className={styles.rowCenter}>
-            <img className={styles.image} src={imageSource} alt={imageAlt} />
-          </div>
-        )}
-        {header && <hr className={styles.divider} />}
-        <div className={styles.children}>{children}</div>
-        {Button && <div className={styles.flatCardButton}>{Button}</div>}
-      </div>
-    </article>
-  );
 }
 
 export default FlatCard;

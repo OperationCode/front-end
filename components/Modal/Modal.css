@@ -3,7 +3,7 @@
 }
 
 .scrollableContainer {
-  margin-top: 1rem;
+  margin-top: 2.5rem;
   overflow: auto;
   max-height: 75vh;
 }

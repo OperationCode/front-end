@@ -1,17 +1,18 @@
 import Router from 'next/router';
-import isEmpty from 'lodash/isEmpty';
 import nextCookie from 'next-cookies';
-import { setAuthCookies, removeAuthCookies, isTokenValid } from './cookie-utils';
+import { setAuthCookies, removeAuthCookies, hasValidAuthToken } from './cookie-utils';
 
 export const login = ({ token, user }, routeTo = '/profile') => {
   setAuthCookies({ token, user });
   Router.push(routeTo);
 };
 
-export const logout = (routeTo = '/login') => {
+export const logout = ({ routeTo = '/login', shouldRedirect = true } = {}) => {
   removeAuthCookies();
   window.localStorage.setItem('logout', Date.now()); // Log out from all windows
-  Router.push(routeTo);
+  if (shouldRedirect) {
+    Router.push(routeTo);
+  }
 };
 
 /**
@@ -32,18 +33,34 @@ export const logout = (routeTo = '/login') => {
 export const authenticate = ctx => {
   const { token } = nextCookie(ctx);
 
-  // server request without a token provided
-  if (!isEmpty(ctx.req) && (!token || !isTokenValid(token))) {
-    ctx.res.writeHead(302, { Location: '/login' });
+  if (!token || !hasValidAuthToken(token)) {
+    isomorphicRedirect('/login', ctx);
+    return '';
+  }
+
+  return token;
+};
+
+/**
+ * @description Utility for handling redirects.  Works on both server during
+ * SSR and on the client
+ *
+ * @export
+ * @param {string} path
+ * @param {{
+ *   pathname: string,
+ *   query: string,
+ *   asPath: string,
+ *   req: Object.<string, any>,
+ *   res: Object.<string, any>,
+ *   err: Object.<string, any>
+ * }} ctx
+ */
+export const isomorphicRedirect = (path, ctx) => {
+  if (ctx && ctx.res) {
+    ctx.res.writeHead(302, { Location: path });
     ctx.res.end();
-    return;
+  } else {
+    Router.push(path);
   }
-
-  // no token on client
-  if (!token || !isTokenValid(token)) {
-    Router.push('/login');
-    return;
-  }
-
-  return token; // eslint-disable-line consistent-return
 };

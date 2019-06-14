@@ -1,4 +1,3 @@
-import { coerceEmptyStringToUndefined } from 'common/utils/string-utils';
 import { isFilledArray } from 'common/utils/array-utils';
 
 // TODO: Remove eslint disable when more items are exported
@@ -29,45 +28,12 @@ import { isFilledArray } from 'common/utils/array-utils';
  * @param {UserData}
  * @returns {UserData} non-undefined values from UserData
  */
-export const formatUserData = ({
-  branchOfService,
-  companyName,
-  companyRole,
-  disciplines,
-  doesWantMentor,
-  doesWantScholarshipInfo,
-  doesWantToVolunteer,
-  employmentStatus,
-  militaryStatus,
-  payGrade,
-  programmingLanguages,
-  yearsOfService,
-}) => {
-  let interests;
-
-  const hasInterests = isFilledArray(disciplines) || isFilledArray(programmingLanguages);
-
-  if (hasInterests) {
-    const interestItems = [...programmingLanguages, ...disciplines];
-
-    // interests could be a string of many comma-separated items, or a single string
-    interests = interestItems.length > 1 ? interestItems.join(', ') : interestItems[0];
-  }
-
-  const user = {
-    branch_of_service: coerceEmptyStringToUndefined(branchOfService),
-    company_name: coerceEmptyStringToUndefined(companyName),
-    company_role: coerceEmptyStringToUndefined(companyRole),
-    mentor: doesWantMentor,
-    scholarship_info: doesWantScholarshipInfo,
-    volunteer: doesWantToVolunteer,
-    employment_status: coerceEmptyStringToUndefined(employmentStatus),
-    military_status:
-      militaryStatus === 'civilian' ? undefined : coerceEmptyStringToUndefined(militaryStatus),
-    pay_grade: coerceEmptyStringToUndefined(payGrade),
-    interests,
-    years_of_service: coerceEmptyStringToUndefined(yearsOfService),
+export const formatUserData = ({ programmingLanguages, disciplines, ...data }) => {
+  return {
+    ...data,
+    programmingLanguages: isFilledArray(programmingLanguages)
+      ? programmingLanguages.join(', ')
+      : '',
+    disciplines: isFilledArray(disciplines) ? disciplines.join(', ') : '',
   };
-
-  return user;
 };

@@ -1,6 +1,7 @@
+import flattenDepth from 'lodash/flattenDepth';
 import { donateLink } from 'common/constants/urls';
 
-// links shared between nav and footer (no duplicate code)
+// MARK: Links shared between nav and footer (no duplicate code)
 const contactLink = {
   name: 'Contact Us',
   href: '/contact',
@@ -21,53 +22,92 @@ const eventsLink = {
   href: '/events',
 };
 
-export const navItems = [
-  {
-    name: 'About Us',
-    href: '/about',
-    shouldPrefetch: false,
-    sublinks: [contactLink, faqLink],
-  },
-  {
-    name: 'Who We Serve',
-    href: '/who_we_serve',
-    shouldPrefetch: false,
-    sublinks: [
-      {
-        name: 'Member Login',
-        href: '/login',
-      },
-      {
-        name: 'Join',
-        href: '/join',
-      },
-    ],
-  },
-  {
-    ...eventsLink,
-    shouldPrefetch: false,
-    sublinks: [],
-  },
-  {
-    ...getInvolvedLink,
-    shouldPrefetch: false,
-    sublinks: [
-      {
-        name: 'Mentoring',
-        href: '/mentoring',
-      },
-      {
-        name: 'Sponsorship',
-        href: '/sponsorship',
-      },
-      {
-        name: 'Leadership Circle',
-        href: '/leadership_circle',
-      },
-    ],
-  },
-];
+// MARK: Top-level navigation items
+const whoWeServeWithoutSublinks = {
+  name: 'Who We Serve',
+  href: '/who_we_serve',
+  shouldPrefetch: false,
+};
 
+const whoWeServeWithSublinks = {
+  ...whoWeServeWithoutSublinks,
+  sublinks: [
+    {
+      name: 'Login',
+      href: '/login',
+    },
+    {
+      name: 'Join',
+      href: '/join',
+    },
+  ],
+};
+
+const aboutUs = {
+  name: 'About Us',
+  href: '/about',
+  shouldPrefetch: false,
+  sublinks: [contactLink, faqLink],
+};
+
+const events = {
+  ...eventsLink,
+  shouldPrefetch: false,
+};
+
+const getInvolved = {
+  ...getInvolvedLink,
+  shouldPrefetch: false,
+  sublinks: [
+    {
+      name: 'Sponsorship',
+      href: '/sponsorship',
+    },
+    {
+      name: 'Leadership Circle',
+      href: '/leadership_circle',
+    },
+  ],
+};
+
+const profile = {
+  name: 'Profile',
+  href: '/profile',
+  shouldPrefetch: false,
+};
+
+const logout = {
+  name: 'Logout',
+  href: '/login?loggedOut=true',
+  shouldPrefetch: false,
+};
+
+// MARK: Nav items
+export const loggedInNavItems = [
+  aboutUs,
+  whoWeServeWithoutSublinks,
+  events,
+  getInvolved,
+  profile,
+  logout,
+];
+export const loggedOutNavItems = [aboutUs, whoWeServeWithSublinks, events, getInvolved];
+
+// Extracts sublinks to list everything as a single, top-level list
+export const mobileLoggedInNavItems = flattenDepth(
+  [logout, profile, aboutUs, whoWeServeWithoutSublinks, events, getInvolved].map(
+    ({ sublinks = [], ...item }) => [item, sublinks],
+  ),
+  2,
+);
+export const mobileLoggedOutNavItems = flattenDepth(
+  [...whoWeServeWithSublinks.sublinks, aboutUs, whoWeServeWithoutSublinks, events, getInvolved].map(
+    ({ sublinks = [], ...item }) => [item, sublinks],
+  ),
+  2,
+);
+
+// MARK: Footer items
 export const footerItems = {
   column1: [
     {
@@ -87,13 +127,13 @@ export const footerItems = {
       name: 'Job Board',
     },
     eventsLink,
+    {
+      href: '/who_we_serve',
+      name: 'Who We Serve',
+    },
   ],
   column3: [
     getInvolvedLink,
-    // {
-    //   href: '/mentoring',
-    //   name: 'Become A Mentor',
-    // },
     {
       href: '/history',
       name: 'History',
@@ -105,10 +145,6 @@ export const footerItems = {
     },
   ],
   column4: [
-    // {
-    //   href: '/resources',
-    //   name: 'Resources',
-    // },
     {
       href: '/press',
       name: 'Press',
@@ -118,14 +154,9 @@ export const footerItems = {
       name: 'Branding',
     },
     {
-      // TODO: move this to column 2 when column 4 has 3 items
-      href: '/who_we_serve',
-      name: 'Who We Serve',
+      href: '/team',
+      name: 'Team',
     },
-    // {
-    //   href: '/blog',
-    //   name: 'Blog',
-    // },
   ],
   legal: [
     {
@@ -139,6 +170,7 @@ export const footerItems = {
     //   analyticsEventLabel: 'Cookies',
     // },
     {
+      // NOTE: If you change this route, please update the redirect in `now.json` as well
       href: 'https://www.iubenda.com/privacy-policy/8174861',
       name: 'Privacy',
       analyticsEventLabel: 'Privacy',

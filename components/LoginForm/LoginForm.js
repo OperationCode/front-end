@@ -2,10 +2,8 @@ import React, { Component } from 'react';
 import { func, shape, string } from 'prop-types';
 import { Formik, Field } from 'formik';
 import * as Yup from 'yup';
-import { getErrorMessage } from 'common/utils/api-utils';
+import { getServerErrorMessage } from 'common/utils/api-utils';
 import { validationErrorMessages } from 'common/constants/messages';
-import { minimumPasswordLength } from 'common/constants/validations';
-import { isMinPasswordStrength } from 'common/utils/validator-utils';
 import Button from 'components/Button/Button';
 import Form from 'components/Form/Form';
 import Input from 'components/Form/Input/Input';
@@ -22,10 +20,7 @@ const loginSchema = Yup.object().shape({
   email: Yup.string()
     .required(validationErrorMessages.required)
     .email(validationErrorMessages.email),
-  password: Yup.string()
-    .required(validationErrorMessages.required)
-    .min(minimumPasswordLength, validationErrorMessages.length(minimumPasswordLength))
-    .test('password-strength', validationErrorMessages.password, isMinPasswordStrength),
+  password: Yup.string().required(validationErrorMessages.required),
 });
 
 class LoginForm extends Component {
@@ -56,20 +51,11 @@ class LoginForm extends Component {
       const { user, token } = await login(values);
       actions.setSubmitting(false);
       actions.resetForm();
-      await onSuccess({
-        user: {
-          firstName: user.first_name,
-          lastName: user.last_name,
-          zipcode: user.zip,
-          slackName: user.slack_name,
-          isMentor: user.mentor,
-        },
-        token,
-      });
+      await onSuccess({ user, token });
     } catch (error) {
       actions.setSubmitting(false);
 
-      this.setState({ errorMessage: getErrorMessage(error) });
+      this.setState({ errorMessage: getServerErrorMessage(error) });
     }
   };
 

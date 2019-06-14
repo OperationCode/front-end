@@ -1,35 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FlatCard should render with image props 1`] = `
-<article
-  className="FlatCard cardWithImage"
->
-  <div
-    className="borderContainer"
-  >
-    <div
-      className="rowCenter"
-    >
-      <img
-        alt="David Molina's face"
-        className="image"
-        src="https://s3.amazonaws.com/operationcode-assets/headshots/david_molina.jpg"
-      />
-    </div>
-    <div
-      className="children"
-    >
-      <p>
-        Example content goes here
-      </p>
-      <p>
-        More content goes here
-      </p>
-    </div>
-  </div>
-</article>
-`;
-
 exports[`FlatCard should render with many props assigned 1`] = `
 <article
   className="FlatCard test-class"
@@ -67,6 +37,7 @@ exports[`FlatCard should render with many props assigned 1`] = `
         className="Button primary"
         href="/"
         onClick={[Function]}
+        onMouseEnter={[Function]}
       >
         Widget Action
       </a>

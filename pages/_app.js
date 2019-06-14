@@ -1,23 +1,32 @@
 import App, { Container } from 'next/app';
 import Router from 'next/router';
-import { Provider } from 'react-redux';
-import { compose } from 'redux';
+import FontFaceObserver from 'fontfaceobserver';
+import LogRocket from 'logrocket';
+import ReactGA from 'react-ga';
 import ScrollUpButton from 'react-scroll-up-button';
-import withRedux from 'next-redux-wrapper';
+import setupLogRocketReact from 'logrocket-react';
 import * as Sentry from '@sentry/browser';
-import debounce from 'lodash/debounce';
-import { initStore } from 'store/store';
-import { screenResize } from 'store/screenSize/actions';
-import breakpoints from 'common/styles/breakpoints';
 import Nav from 'components/Nav/Nav';
 import Footer from 'components/Footer/Footer';
 import Modal from 'components/Modal/Modal';
+import { version } from '../package.json';
 import 'common/styles/globalStyles.css';
-import withFonts from '../decorators/withFonts/withFonts';
 
-Sentry.init({ dsn: process.env.SENTRY_DSN });
+const isProduction = process.env.NODE_ENV === 'production';
 
-// eslint-disable-next-line react/prefer-stateless-function
+const fonts = [
+  {
+    fontFamily: 'Encode Sans',
+    url: 'https://fonts.googleapis.com/css?family=Encode+Sans:400,700',
+  },
+  {
+    fontFamily: 'DIN Condensed Bold',
+    // loading of this font is being handled by the @font-face rule on
+    // the global style sheet.
+    url: null,
+  },
+];
+
 class Layout extends React.Component {
   render() {
     // eslint-disable-next-line react/prop-types
@@ -36,9 +45,47 @@ class Layout extends React.Component {
 
 class OperationCodeApp extends App {
   componentDidMount() {
-    this.handleScreenResize(); // get initial size on load
-    window.addEventListener('resize', this.debouncedHandleScreenResize);
+    /* Analytics */
+    // Temporary method until we do dynamic now configs
+    if (window.location.host.includes('operationcode.org') && isProduction) {
+      Sentry.init({ dsn: process.env.SENTRY_DSN, release: `front-end@${version}` });
+      LogRocket.init(`${process.env.LOGROCKET_KEY}/operation-code`);
+      ReactGA.initialize(process.env.GOOGLE_ANALYTICS_TRACKING_ID);
 
+      // Every crash report will have a LogRocket session URL.
+      LogRocket.getSessionURL(sessionURL => {
+        Sentry.configureScope(scope => {
+          scope.setExtra('sessionURL', sessionURL);
+        });
+      });
+
+      setupLogRocketReact(LogRocket);
+
+      ReactGA.set({ page: window.location.pathname });
+    }
+
+    /* Non-render blocking font load */
+    const observers = fonts.map(font => {
+      if (font.url) {
+        const link = document.createElement('link');
+        link.href = font.url;
+        link.rel = 'stylesheet'; // eslint-disable-line unicorn/prevent-abbreviations
+        document.head.append(link);
+      }
+
+      const observer = new FontFaceObserver(font.fontFamily);
+      return observer.load(null, 10000); // increase the max timeout from default 3s to 10s
+    });
+
+    Promise.all(observers)
+      .then(() => {
+        document.documentElement.classList.add('fonts-loaded');
+      })
+      .catch(() =>
+        Sentry.captureException('FontFaceObserver took too long to resolve. Ignore this.'),
+      );
+
+    /* Modal anchor set */
     if (Modal.setAppElement) {
       Modal.setAppElement('body');
     }
@@ -46,19 +93,6 @@ class OperationCodeApp extends App {
 
   componentWillUnmount() {
     window.removeEventListener('resize', this.debouncedHandleScreenResize);
-  }
-
-  // eslint-disable-next-line unicorn/prevent-abbreviations
-  static async getInitialProps({ Component, ctx }) {
-    // eslint-disable-next-line unicorn/prevent-abbreviations
-    let pageProps = {};
-
-    // if page hits an API, make it async
-    if (Component.getInitialProps) {
-      pageProps = await Component.getInitialProps(ctx);
-    }
-
-    return { pageProps };
   }
 
   componentDidCatch(error, errorInfo) {
@@ -73,34 +107,26 @@ class OperationCodeApp extends App {
     super.componentDidCatch(error, errorInfo);
   }
 
-  handleScreenResize = () => {
-    const { store } = this.props;
-    store.dispatch(screenResize(window.innerWidth, window.innerHeight, breakpoints));
-  };
-
-  debouncedHandleScreenResize = debounce(this.handleScreenResize, 100, {
-    leading: true,
-    maxWait: 250,
-  });
-
   render() {
     // eslint-disable-next-line unicorn/prevent-abbreviations
-    const { Component, pageProps, store } = this.props;
+    const { Component, pageProps } = this.props;
 
     return (
       <Container>
-        <Provider store={store}>
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
-        </Provider>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
       </Container>
     );
   }
 }
 
+if (isProduction) {
+  Router.events.on('routeChangeComplete', url => ReactGA.pageview(url));
+}
+
 // Fixes Next CSS route change bug: https://github.com/zeit/next-plugins/issues/282
-if (process.env.NODE_ENV !== 'production') {
+if (!isProduction) {
   Router.events.on('routeChangeComplete', () => {
     const chunksSelector = 'link[href*="/_next/static/css/styles.chunk.css"]';
     const chunksNodes = document.querySelectorAll(chunksSelector);
@@ -109,7 +135,4 @@ if (process.env.NODE_ENV !== 'production') {
   });
 }
 
-export default compose(
-  withFonts,
-  withRedux(initStore),
-)(OperationCodeApp);
+export default OperationCodeApp;

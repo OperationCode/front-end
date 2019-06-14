@@ -2,14 +2,13 @@ import Link from 'next/link';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
-import PartnerLogoLink from 'components/PartnerLogoLink/PartnerLogoLink';
 import JoinSection from 'components/ReusableSections/JoinSection/JoinSection';
+import SponsorsSection from 'components/ReusableSections/SponsorsSection/SponsorsSection';
 import SuccessStory from 'components/SuccessStory/SuccessStory';
 import Heading from 'components/Heading/Heading';
 import LinkButton from 'components/LinkButton/LinkButton';
 import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
 import successStories from 'common/constants/successStories';
-import partners from 'common/constants/partners';
 import { donateLink, s3 } from 'common/constants/urls';
 import styles from './styles/index.css';
 
@@ -34,7 +33,7 @@ const featuredLinksArray = [
   },
 ];
 
-export default () => (
+const Home = () => (
   <>
     <Head title="Home" />
 
@@ -97,14 +96,10 @@ export default () => (
       ))}
     />
 
-    <Content
-      title="Sponsors"
-      theme="gray"
-      columns={partners.map(partner => (
-        <PartnerLogoLink key={partner.name} {...partner} />
-      ))}
-    />
+    <SponsorsSection />
 
     <JoinSection />
   </>
 );
+
+export default Home;

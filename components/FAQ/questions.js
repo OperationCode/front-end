@@ -156,11 +156,7 @@ const questions = {
       question: "My question isn't listed. How do I contact Operation Code?",
       answer: (
         <>
-          If you have a question that isn&apos;t listed here on our FAQ or our{' '}
-          <OutboundLink analyticsEventLabel="QnA Link" href="https://medium.com/@operation_code">
-            blog
-          </OutboundLink>{' '}
-          , write to{' '}
+          If you have a question that isn&apos;t listed here on our FAQ, write to{' '}
           <OutboundLink
             analyticsEventLabel="QnA Link"
             href="mailto:staff@operationcode.org?subject=Question Not On FAQ"

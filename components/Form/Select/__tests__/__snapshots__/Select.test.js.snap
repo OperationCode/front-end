@@ -12,22 +12,21 @@ exports[`Select should render with required props 1`] = `
   </label>
   <div>
     <div
-      className="css-1pcexqc-container"
-      id=""
+      className=" css-2b097c-container"
       onKeyDown={[Function]}
     >
       <div
-        className="css-1h6jeay-control"
+        className=" css-6k4gi9-control"
         onMouseDown={[Function]}
         onTouchEnd={[Function]}
       >
         <div
-          className="css-1hwfws3"
+          className=" css-1hwfws3"
         >
           <div
-            className="css-dvua67-singleValue"
+            className=" css-1wa3eu0-placeholder"
           >
-            -- Select One --
+            Select...
           </div>
           <div
             className="css-1g6gooi"
@@ -46,7 +45,7 @@ exports[`Select should render with required props 1`] = `
                 autoComplete="off"
                 autoCorrect="off"
                 disabled={false}
-                id="react-select-2-input"
+                id="react-select-someSelectName-input"
                 onBlur={[Function]}
                 onChange={[Function]}
                 onFocus={[Function]}
@@ -88,14 +87,14 @@ exports[`Select should render with required props 1`] = `
           </div>
         </div>
         <div
-          className="css-1wy0on6"
+          className=" css-1wy0on6"
         >
           <span
-            className="css-bgvzuu-indicatorSeparator"
+            className=" css-1okebmr-indicatorSeparator"
           />
           <div
             aria-hidden="true"
-            className="css-r2iad6-indicatorContainer"
+            className=" css-1vtn1ro-indicatorContainer"
             onMouseDown={[Function]}
             onTouchEnd={[Function]}
           >

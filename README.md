@@ -13,19 +13,17 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Twitter Follow](https://img.shields.io/twitter/follow/operation_code.svg?style=social&label=Follow&style=social)](https://twitter.com/operation_code)
 
-[![Build Status](https://travis-ci.org/OperationCode/front-end.svg?branch=master)](https://travis-ci.org/OperationCode/front-end)
+[![CircleCI](https://circleci.com/gh/OperationCode/front-end/tree/master.svg?style=svg)](https://circleci.com/gh/OperationCode/front-end/tree/master)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/5010b82ce5d8e319a597/test_coverage)](https://codeclimate.com/github/OperationCode/front-end/test_coverage)
 [![Maintainability](https://api.codeclimate.com/v1/badges/5010b82ce5d8e319a597/maintainability)](https://codeclimate.com/github/OperationCode/front-end/maintainability)
 [![Cypress.io tests](https://img.shields.io/badge/cypress.io-tests-green.svg?style=flat-square)](https://cypress.io)
 [![Greenkeeper badge](https://badges.greenkeeper.io/OperationCode/front-end.svg)](https://greenkeeper.io/)
 
-[![Good First Issue](https://img.shields.io/github/issues/OperationCode/front-end/good%20first%20issue.svg)](https://github.com/OperationCode/front-end/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22)
-
-[See unblocked, unassigned issues](https://github.com/OperationCode/front-end/issues?q=is%3Aopen+is%3Aissue+-label%3A%22Status%3A+Blocked%22+no%3Aassignee).
+[See unblocked, unassigned issues](https://github.com/OperationCode/front-end/issues?q=is%3Aopen+is%3Aissue+-label%3A%22Status%3A+Blocked%22+no%3Aassignee). We love our labels - feel free to filter issues to find what you want to work on.
 
 # Welcome!
 
-This is incoming v2 front-end application for [OperationCode](https://operationcode.org). We highly recommend [joining our organization](https://operationcode.org/join) to receive an invite to our Slack team. From there, you'll want to join the `#oc-projects` channel. You can get help from multiple professional developers, including people who have worked on the application since day 1! Our website is currently served by code located [here](https://github.com/operationcode/operationcode_frontend), but that repository is no longer being developed.
+This is the front-end application for [OperationCode](https://operationcode.org). We highly recommend [joining our organization](https://operationcode.org/join) to receive an invite to our Slack team. From there, you'll want to join the `#oc-projects` channel. You can get help from multiple professional developers, including people who have worked on the application since day 1!
 
 Before contributing, please review our [Contributing Guide](CONTRIBUTING.md)
 

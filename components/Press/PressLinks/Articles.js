@@ -55,11 +55,6 @@ const General = [
       'https://medium.com/the-hum/hacking-entrepreneurship-an-interview-with-david-molina-of-operation-code-12a7e199e4e0',
   },
   {
-    title: 'A Marine Vet’s Path into Coding Brings Him Back Home',
-    url:
-      'https://medium.com/operation-code/a-marine-vets-path-into-coding-brings-him-back-home-4fcf5645d740',
-  },
-  {
     title: 'Operation Code: Connecting Veterans with Code Skills',
     url: 'http://blog.teamtreehouse.com/operation-code-connecting-veterans-with-code',
   },

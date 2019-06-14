@@ -9,7 +9,7 @@ const locations = [
     address2: '3rd Floor',
     city: 'San Francisco',
     state: 'CA',
-    va_accepted: true,
+    vaAccepted: true,
     zip: 94111,
   },
   {
@@ -17,7 +17,7 @@ const locations = [
     address2: 'Ste 1',
     city: 'San Diego',
     state: 'CA',
-    va_accepted: false,
+    vaAccepted: false,
     zip: 90111,
   },
 ];

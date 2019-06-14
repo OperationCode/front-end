@@ -2,19 +2,21 @@ import React, { Component } from 'react';
 import classNames from 'classnames';
 import Link from 'next/link';
 import Router from 'next/router';
-import { bool } from 'prop-types';
-import { connect } from 'react-redux';
-import { compose } from 'redux';
 import { donateLink, s3 } from 'common/constants/urls';
-import { navItems } from 'common/constants/navigation';
-import { isDesktopSelector } from 'store/screenSize/selectors';
+import {
+  loggedInNavItems,
+  loggedOutNavItems,
+  mobileLoggedInNavItems,
+  mobileLoggedOutNavItems,
+} from 'common/constants/navigation';
 import NavListItem from 'components/Nav/NavListItem/NavListItem';
 import NavMobile from 'components/Nav/NavMobile/NavMobile';
+import { hasValidAuthToken } from 'common/utils/cookie-utils';
 import styles from './Nav.css';
 
 export class Nav extends Component {
   state = {
-    isMobileMenuVisible: false,
+    isMobileNavOpen: false,
   };
 
   componentDidMount() {
@@ -26,72 +28,63 @@ export class Nav extends Component {
   }
 
   openMobileMenu = () => {
-    this.setState({ isMobileMenuVisible: true });
+    this.setState({ isMobileNavOpen: true });
   };
 
   closeMobileMenu = () => {
-    this.setState({ isMobileMenuVisible: false });
+    this.setState({ isMobileNavOpen: false });
   };
 
   render() {
-    const { isDesktopView } = this.props;
-    const { isMobileMenuVisible } = this.state;
+    const { isMobileNavOpen } = this.state;
+    const isLoggedIn = hasValidAuthToken();
 
-    if (!isDesktopView) {
-      return (
-        <NavMobile
-          isMenuVisible={isMobileMenuVisible}
-          closeMenu={this.closeMobileMenu}
-          openMenu={this.openMobileMenu}
-        />
-      );
-    }
+    const mobileNavItems = isLoggedIn ? mobileLoggedInNavItems : mobileLoggedOutNavItems;
+
+    // non-mobile
+    const navItems = isLoggedIn ? loggedInNavItems : loggedOutNavItems;
 
     return (
-      <header className={styles.header}>
-        <div className={styles.navContainer}>
-          <nav className={styles.Nav}>
-            <Link href="/">
-              <a className={classNames(styles.logoLink, styles.link)}>
-                <img
-                  src={`${s3}branding/logos/small-blue-logo.png`}
-                  alt="Operation Code Logo"
-                  className={styles.logo}
-                />
-              </a>
-            </Link>
+      <>
+        {/* Always rendered, but conditionally displayed via media query */}
+        <NavMobile
+          isOpen={isMobileNavOpen}
+          closeMenu={this.closeMobileMenu}
+          openMenu={this.openMobileMenu}
+          navItems={mobileNavItems}
+        />
 
-            <ul className={styles.link}>
-              {navItems.map(navLink => (
-                // NavListItem component API matches navItems structure
-                <NavListItem key={navLink.name} {...navLink} />
-              ))}
+        <header className={styles.NavDesktop} data-testid="Desktop Nav">
+          <div className={styles.navContainer}>
+            <nav>
+              <Link href="/">
+                <a className={classNames(styles.logoLink, styles.link)}>
+                  <img
+                    src={`${s3}branding/logos/small-blue-logo.png`}
+                    alt="Operation Code Logo"
+                    className={styles.logo}
+                  />
+                </a>
+              </Link>
 
-              <li>
-                <Link href={donateLink}>
-                  <a className={classNames(styles.link, styles.donateLink)}>
-                    <span>Donate</span>
-                  </a>
-                </Link>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </header>
+              <ul className={styles.link}>
+                {navItems.map(navItem => (
+                  <NavListItem key={navItem.name} {...navItem} />
+                ))}
+                <li>
+                  <Link href={donateLink}>
+                    <a className={classNames(styles.link, styles.donateLink)}>
+                      <span>Donate</span>
+                    </a>
+                  </Link>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </header>
+      </>
     );
   }
 }
 
-Nav.propTypes = {
-  isDesktopView: bool,
-};
-
-Nav.defaultProps = {
-  isDesktopView: false,
-};
-
-const mapStateToProps = state => ({
-  isDesktopView: isDesktopSelector(state),
-});
-
-export default compose(connect(mapStateToProps))(Nav);
+export default Nav;

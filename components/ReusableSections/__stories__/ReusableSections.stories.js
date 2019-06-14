@@ -2,8 +2,10 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import DonateSection from '../DonateSection/DonateSection';
-import JoinSection from '../JoinSection/JoinSection';
+import { JoinSection } from '../JoinSection/JoinSection';
+import SponsorsSection from '../SponsorsSection/SponsorsSection';
 
 storiesOf('ReusableSections', module)
   .add('DonateSection', () => <DonateSection />)
-  .add('JoinSection', () => <JoinSection />);
+  .add('JoinSection', () => <JoinSection isLoggedIn={false} />)
+  .add('SponsorsSection', () => <SponsorsSection />);
