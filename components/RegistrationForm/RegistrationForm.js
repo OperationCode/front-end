@@ -30,10 +30,12 @@ const registrationSchema = Yup.object().shape({
     .oneOf([Yup.ref('password')], validationErrorMessages.passwordMatch),
   firstName: Yup.string()
     .required(validationErrorMessages.required)
-    .matches(/^[a-zA-Z]+$/, validationErrorMessages.name),
+    // eslint-disable-next-line no-useless-escape
+    .matches(/^[a-zA-Zà-žÀ-Ž \-]+$/, validationErrorMessages.name),
   lastName: Yup.string()
     .required(validationErrorMessages.required)
-    .matches(/^[a-zA-Z]+$/, validationErrorMessages.name),
+    // eslint-disable-next-line no-useless-escape
+    .matches(/^[a-zA-Zà-žÀ-Ž \-]+$/, validationErrorMessages.name),
   zipcode: Yup.string()
     .required(validationErrorMessages.required)
     .test('zipcode', validationErrorMessages.zipcode, isValidZipcode),
