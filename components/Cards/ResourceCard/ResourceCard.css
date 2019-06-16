@@ -1,0 +1,109 @@
+.ResourceCard {
+  width: 400px;
+  font-family: var(--secondaryFontFamily), sans-serif;
+  justify-content: normal;
+  box-shadow: 0 3px 6px 2px rgba(0, 0, 0, 0.12);
+  transition: 0.2s box-shadow linear;
+}
+
+.ResourceCard:focus,
+.ResourceCard:hover {
+  box-shadow: 0 3px 6px 2px var(--primary);
+}
+
+@media screen and (--small-viewport) {
+  .ResourceCard {
+    width: calc(100% - 5rem); /* subtracting margin/padding */
+  }
+}
+
+.titleSection {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.titleSection img {
+  height: 50px;
+}
+
+.titleSection h5 {
+  margin-left: 0.5rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@media screen and (--small-viewport) {
+  .titleSection h5 {
+    font-size: 1.25rem;
+  }
+}
+
+.descriptionText {
+  line-height: 1.25;
+  font-weight: 200;
+  overflow: hidden;
+  position: relative;
+  height: 6.2em; /* exactly five lines */
+}
+
+/* Text fade effect */
+.descriptionText::after {
+  content: "";
+  text-align: right;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 70%;
+  height: 1.2em;
+  background: linear-gradient(to right, rgba(247, 247, 247, 0), rgba(247, 247, 247, 1) 80%);
+}
+
+.footerSection {
+  display: flex;
+  width: 100%;
+  padding-top: 1rem;
+  align-items: center;
+  border-top: 1px solid var(--gray);
+}
+
+.footerText {
+  color: rgba(var(--rgbValuesSecondary), 0.75);
+  margin-right: 1.5rem;
+}
+
+.voteBtn {
+  display: flex;
+  text-decoration: none;
+  padding: 0.5rem 0.25rem;
+  margin: 0;
+  border: none;
+  background: inherit;
+}
+
+.voteBtn svg {
+  height: 1rem;
+  margin: 0 0.5rem;
+}
+
+.voteBtn:hover {
+  cursor: pointer;
+}
+
+.faded {
+  opacity: 0.4;
+}
+
+.icon > :global(.negative-space) {
+  color: white; /* whatever bg color is */
+}
+.icon.active > :global(.negative-space) {
+  color: var(--secondary);
+  stroke: var(--secondary);
+  stroke-width: 50;
+}
+
+.icon {
+  color: var(--secondary);
+}
