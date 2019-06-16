@@ -135,6 +135,10 @@ export const footerItems = {
   column3: [
     getInvolvedLink,
     {
+      href: '/podcasts',
+      name: 'Podcast',
+    },
+    {
       href: '/history',
       name: 'History',
     },
