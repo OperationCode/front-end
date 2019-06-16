@@ -46,6 +46,6 @@ export default [
     'Deitrich Smikle',
     'Christopher Torres',
     'Sepideh',
-    'Seanrad'
+    'Seanrad',
     'David Bledsoe'
 ]
