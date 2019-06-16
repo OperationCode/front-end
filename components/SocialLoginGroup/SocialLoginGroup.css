@@ -45,6 +45,16 @@
   box-shadow: inset 0 0 0 32px rgba(0, 0, 0, 0.1);
 }
 
+/* Alert Message */
+.alertContainer {
+  margin-bottom: 1rem;
+}
+
+.alertFill {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
 /* Facebook */
 .facebookButton {
   background-color: #4c69ba;
