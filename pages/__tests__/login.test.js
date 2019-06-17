@@ -1,8 +1,8 @@
 /* eslint-disable jest/expect-expect */
 import { render, fireEvent, cleanup } from '@testing-library/react';
 
+import OperationCodeAPIMock from 'test-utils/mocks/apiMock';
 import Login from '../login';
-import OperationCodeAPIMock from '../../test-utils/mocks/apiMock';
 
 afterEach(cleanup);
 
