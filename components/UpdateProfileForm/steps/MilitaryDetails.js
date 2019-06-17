@@ -25,6 +25,7 @@ class MilitaryDetails extends React.Component {
     yearsOfService: Yup.number()
       .nullable()
       .positive('Enter a number between 1 and 40.')
+      .lessThan(41, 'Enter a number between 1 and 40.')
       .required(validationErrorMessages.required),
     payGrade: Yup.string()
       .nullable()
