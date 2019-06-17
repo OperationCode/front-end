@@ -90,3 +90,39 @@ describe('login', () => {
     cy.getCookies().should('have.length', 0);
   });
 });
+
+describe('login?loggedOut=True', () => {
+  beforeEach(() => {
+    cy.clearCookies();
+    cy.getCookies().should('have.length', 0);
+  });
+
+  it('should display logged out alert if routed via logout button', () => {
+    cy.visit('/login?loggedOut=True');
+
+    cy.get('div[role="alert"]').should('have.text', 'Logged out successfully.');
+  });
+
+  it('should should not display logged out alert after re-render', () => {
+    cy.visit('/login?loggedOut=True');
+    cy.get('div[role="alert"]').should('have.text', 'Logged out successfully.');
+
+    cy.reload();
+
+    cy.get('div[role="alert"]').should('not.contain.text', 'Logged out successfully.');
+  });
+
+  it('should not display logged out alert after invalid login attempt', () => {
+    const fakeUser = mockUser('nonexistinguser@someemail.com');
+
+    cy.visit('/login?loggedOut=True');
+
+    cy.get('div[role="alert"]').should('have.text', 'Logged out successfully.');
+
+    cy.get('input#email').type(fakeUser.email);
+    cy.get('input#password').type(fakeUser.password);
+    cy.get('button[type="submit"]').click();
+
+    cy.get('div[role="alert"]').should('not.have.text', 'Logged out successfully.');
+  });
+});
