@@ -58,7 +58,7 @@ describe(`profile/update (from login)`, () => {
     goToNextStep('Military Details');
 
     cy.get('input[name="branchOfService"]').should('have.value', 'army');
-    cy.get('input[name="yearsOfService"]').should('have.value', '31');
+    cy.get('input[name="yearsOfService"]').should('have.value', '3');
     cy.get('input[name="payGrade"]').should('have.value', 'E20');
 
     goToNextStep('Technology');
@@ -102,20 +102,29 @@ describe(`profile/update (from login)`, () => {
     goToNextStep('Military Details');
   });
 
-  it(`should not allow negative or greater values than 40 for years of service`, () => {
+  it(`should not allow negative in the years of service input`, () => {
     goToNextStep(secondStepName);
     goToNextStep(thirdStepName);
 
-    cy.get('input[name=yearsOfService]')
+    cy.get('input[name="yearsOfService"]')
       .clear()
       .type('-1');
+    
     cy.get('button[data-testid="Submit Step Button"]').click();
+    
     cy.get('div[role="alert"]').should('have.text', 'Enter a number between 1 and 40.');
+  });
+  
+  it(`should not allow numbers greater than 40 in the years of service input`, () => {
+    goToNextStep(secondStepName);
+    goToNextStep(thirdStepName);
 
-    cy.get('input[name=yearsOfService]')
+    cy.get('input[name="yearsOfService"]')
       .clear()
       .type('41');
+    
     cy.get('button[data-testid="Submit Step Button"]').click();
+    
     cy.get('div[role="alert"]').should('have.text', 'Enter a number between 1 and 40.');
   });
 });
