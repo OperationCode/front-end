@@ -1,5 +1,6 @@
 export const validationErrorMessages = {
   required: 'Required',
+  name: 'No numbers please',
   email: 'Must be a valid email',
   emailMatch: 'Emails must match',
   password: 'Must include the following: lowercase letter, uppercase letter, number',
