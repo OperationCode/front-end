@@ -95,16 +95,14 @@ describe('login?loggedOut=True', () => {
   beforeEach(() => {
     cy.clearCookies();
     cy.getCookies().should('have.length', 0);
+    cy.visit('/login?loggedOut=True');
   });
 
   it('should display logged out alert if routed via logout button', () => {
-    cy.visit('/login?loggedOut=True');
-
     cy.get('div[role="alert"]').should('have.text', 'Logged out successfully.');
   });
 
   it('should should not display logged out alert after re-render', () => {
-    cy.visit('/login?loggedOut=True');
     cy.get('div[role="alert"]').should('have.text', 'Logged out successfully.');
 
     cy.reload();
@@ -114,8 +112,6 @@ describe('login?loggedOut=True', () => {
 
   it('should not display logged out alert after invalid login attempt', () => {
     const fakeUser = mockUser('nonexistinguser@someemail.com');
-
-    cy.visit('/login?loggedOut=True');
 
     cy.get('div[role="alert"]').should('have.text', 'Logged out successfully.');
 
