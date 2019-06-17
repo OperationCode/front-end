@@ -71,9 +71,9 @@ class Login extends React.Component {
     return loginUser(values);
   };
 
-  onLoginSocial = values => {
+  onLoginSocial = (provider, values) => {
     this.clearAlert();
-    return loginSocial(values);
+    return loginSocial(provider, values);
   };
 
   render() {
