@@ -154,6 +154,8 @@ exports[`UpdateProfileForm/Steps/MilitaryDetails should render in context of For
           className="Input"
           disabled={false}
           id="yearsOfService"
+          max="40"
+          min="1"
           name="yearsOfService"
           onBlur={[Function]}
           onChange={[Function]}
