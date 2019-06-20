@@ -79,7 +79,7 @@
     "nuka-carousel": "^4.5.8",
     "path": "^0.12.7",
     "postcss-custom-media": "^7.0.8",
-    "postcss-custom-properties": "^8.0.10",
+    "postcss-custom-properties": "^9.0.1",
     "postcss-export-custom-variables": "^1.0.0",
     "postcss-import": "^12.0.1",
     "postcss-loader": "^3.0.0",
