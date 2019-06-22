@@ -109,12 +109,12 @@ describe(`profile/update (from login)`, () => {
     cy.get('input[name="yearsOfService"]')
       .clear()
       .type('-1');
-    
+
     cy.get('button[data-testid="Submit Step Button"]').click();
-    
+
     cy.get('div[role="alert"]').should('have.text', 'Enter a number between 1 and 40.');
   });
-  
+
   it(`should not allow numbers greater than 40 in the years of service input`, () => {
     goToNextStep(secondStepName);
     goToNextStep(thirdStepName);
@@ -122,9 +122,9 @@ describe(`profile/update (from login)`, () => {
     cy.get('input[name="yearsOfService"]')
       .clear()
       .type('41');
-    
+
     cy.get('button[data-testid="Submit Step Button"]').click();
-    
+
     cy.get('div[role="alert"]').should('have.text', 'Enter a number between 1 and 40.');
   });
 });
