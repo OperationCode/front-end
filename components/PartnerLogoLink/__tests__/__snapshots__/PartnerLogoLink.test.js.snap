@@ -9,7 +9,6 @@ exports[`PartnerLogoLink should render with required props 1`] = `
     onClick={[Function]}
     rel="noopener noreferrer"
     target="_blank"
-    trackerNames={null}
   >
     <span
       className="ScreenReaderOnly"
