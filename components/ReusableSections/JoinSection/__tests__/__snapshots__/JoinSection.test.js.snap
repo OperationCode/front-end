@@ -32,6 +32,7 @@ exports[`JoinSection should render when not logged in 1`] = `
       onClick={[Function]}
       rel="noopener noreferrer"
       target="_blank"
+      trackerNames={null}
     >
       <span
         className="ScreenReaderOnly"

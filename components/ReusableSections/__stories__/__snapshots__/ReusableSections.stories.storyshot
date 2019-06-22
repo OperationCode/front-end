@@ -67,6 +67,7 @@ exports[`Storyshots ReusableSections JoinSection 1`] = `
       onClick={[Function]}
       rel="noopener noreferrer"
       target="_blank"
+      trackerNames={null}
     >
       <span
         className="ScreenReaderOnly"
@@ -105,6 +106,7 @@ exports[`Storyshots ReusableSections SponsorsSection 1`] = `
           onClick={[Function]}
           rel="noopener noreferrer"
           target="_blank"
+          trackerNames={null}
         >
           <span
             className="ScreenReaderOnly"
@@ -126,6 +128,7 @@ exports[`Storyshots ReusableSections SponsorsSection 1`] = `
           onClick={[Function]}
           rel="noopener noreferrer"
           target="_blank"
+          trackerNames={null}
         >
           <span
             className="ScreenReaderOnly"
@@ -147,6 +150,7 @@ exports[`Storyshots ReusableSections SponsorsSection 1`] = `
           onClick={[Function]}
           rel="noopener noreferrer"
           target="_blank"
+          trackerNames={null}
         >
           <span
             className="ScreenReaderOnly"
@@ -168,6 +172,7 @@ exports[`Storyshots ReusableSections SponsorsSection 1`] = `
           onClick={[Function]}
           rel="noopener noreferrer"
           target="_blank"
+          trackerNames={null}
         >
           <span
             className="ScreenReaderOnly"
@@ -189,6 +194,7 @@ exports[`Storyshots ReusableSections SponsorsSection 1`] = `
           onClick={[Function]}
           rel="noopener noreferrer"
           target="_blank"
+          trackerNames={null}
         >
           <span
             className="ScreenReaderOnly"
@@ -210,6 +216,7 @@ exports[`Storyshots ReusableSections SponsorsSection 1`] = `
           onClick={[Function]}
           rel="noopener noreferrer"
           target="_blank"
+          trackerNames={null}
         >
           <span
             className="ScreenReaderOnly"
@@ -231,6 +238,7 @@ exports[`Storyshots ReusableSections SponsorsSection 1`] = `
           onClick={[Function]}
           rel="noopener noreferrer"
           target="_blank"
+          trackerNames={null}
         >
           <span
             className="ScreenReaderOnly"
@@ -252,6 +260,7 @@ exports[`Storyshots ReusableSections SponsorsSection 1`] = `
           onClick={[Function]}
           rel="noopener noreferrer"
           target="_blank"
+          trackerNames={null}
         >
           <span
             className="ScreenReaderOnly"
@@ -273,6 +282,7 @@ exports[`Storyshots ReusableSections SponsorsSection 1`] = `
           onClick={[Function]}
           rel="noopener noreferrer"
           target="_blank"
+          trackerNames={null}
         >
           <span
             className="ScreenReaderOnly"
@@ -294,6 +304,7 @@ exports[`Storyshots ReusableSections SponsorsSection 1`] = `
           onClick={[Function]}
           rel="noopener noreferrer"
           target="_blank"
+          trackerNames={null}
         >
           <span
             className="ScreenReaderOnly"

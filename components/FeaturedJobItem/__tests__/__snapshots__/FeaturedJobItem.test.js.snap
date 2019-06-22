@@ -9,6 +9,7 @@ exports[`FeaturedJobItem should render with many props assigned 1`] = `
     onClick={[Function]}
     rel="noopener noreferrer"
     target="_blank"
+    trackerNames={null}
   >
     <span
       className="ScreenReaderOnly"
@@ -91,6 +92,7 @@ exports[`FeaturedJobItem should render with required props 1`] = `
     onClick={[Function]}
     rel="noopener noreferrer"
     target="_blank"
+    trackerNames={null}
   >
     <span
       className="ScreenReaderOnly"
