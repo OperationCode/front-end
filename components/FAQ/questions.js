@@ -97,12 +97,16 @@ const questions = {
       ),
     },
     {
-      question:
-        'Are mentors available? If so, how do I request one?',
+      question: 'Are mentors available? If so, how do I request one?',
       answer: (
         <>
-          While we do not have a long-term mentorship program, we do have mentors available for 30-minute sessions to assist you with things like mock interviews, code reviews, or general guidance.
-          To request a mentorship session, type /mentor in any of our Slack channels and fill out the form.
+          While we do not have a long-term mentorship program, mentors are available for 30-minute
+          sessions to assist you with things like mock interviews, code reviews, or general
+          guidance. To request a mentorship session, type &quot;/mentor&quot; in any of our{' '}
+          <OutboundLink analyticsEventLabel="QnA Link" href="http://operation-code.slack.com">
+            Slack channels
+          </OutboundLink>{' '}
+          and fill out the form.
         </>
       ),
     },
