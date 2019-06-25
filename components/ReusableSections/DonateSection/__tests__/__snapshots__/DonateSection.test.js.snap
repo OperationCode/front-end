@@ -2,7 +2,7 @@
 
 exports[`DonateSection should render with no props passed passed 1`] = `
 <Container
-  backgroundImageSource="https://s3.amazonaws.com/operationcode-assets/background_flag.jpg"
+  backgroundImageSource="https://operation-code-assets.s3.us-east-2.amazonaws.com/background_flag.jpg"
   isFullViewportHeight={false}
   theme="secondary"
 >

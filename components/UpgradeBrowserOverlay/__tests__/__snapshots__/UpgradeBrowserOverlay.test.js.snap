@@ -39,7 +39,7 @@ exports[`UpgradeBrowserOverlay should render with no props passed 1`] = `
         <img
           alt="Microsoft Edge Logo"
           className="browserImage"
-          src="https://s3.amazonaws.com/operationcode-assets/browserLogos/edge-icon.png"
+          src="https://operation-code-assets.s3.us-east-2.amazonaws.com/browserLogos/edge-icon.png"
         />
       </OutboundLink>
     </div>
@@ -59,7 +59,7 @@ exports[`UpgradeBrowserOverlay should render with no props passed 1`] = `
         <img
           alt="Google Chrome Logo"
           className="browserImage"
-          src="https://s3.amazonaws.com/operationcode-assets/browserLogos/chrome-icon.png"
+          src="https://operation-code-assets.s3.us-east-2.amazonaws.com/browserLogos/chrome-icon.png"
         />
       </OutboundLink>
     </div>
@@ -79,7 +79,7 @@ exports[`UpgradeBrowserOverlay should render with no props passed 1`] = `
         <img
           alt="Mozilla Firefox Logo"
           className="browserImage"
-          src="https://s3.amazonaws.com/operationcode-assets/browserLogos/firefox-icon.png"
+          src="https://operation-code-assets.s3.us-east-2.amazonaws.com/browserLogos/firefox-icon.png"
         />
       </OutboundLink>
     </div>
@@ -99,7 +99,7 @@ exports[`UpgradeBrowserOverlay should render with no props passed 1`] = `
         <img
           alt="Safari Logo"
           className="browserImage"
-          src="https://s3.amazonaws.com/operationcode-assets/browserLogos/safari-icon.png"
+          src="https://operation-code-assets.s3.us-east-2.amazonaws.com/browserLogos/safari-icon.png"
         />
       </OutboundLink>
     </div>
