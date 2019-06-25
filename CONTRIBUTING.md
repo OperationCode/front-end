@@ -190,7 +190,7 @@ Which will output the following when deployed:
 
 ### Installing Dependencies
 
-VERY IMPORTANT: Recommended versions of tools used within the repo are described [here](https://github.com/OperationCode/front-end#quick-start).
+VERY IMPORTANT: Required versions of tools used within the repo are described [here](https://github.com/OperationCode/front-end#quick-start). We do not use `npm`.
 
 _You can check to see your versions like so:_
 

@@ -40,7 +40,7 @@ Please read our [Contributing Guide](CONTRIBUTING.md) to learn everything you ne
 
 Our entire UI library is documented via [![Storybook](https://github.com/storybooks/brand/blob/master/badge/badge-storybook.svg)](http://storybook.operationcode.org)
 
-Recommended versions of tools used within the repo:
+Required versions of tools used within the repo:
 
 - Node: See [.nvmrc](https://github.com/OperationCode/front-end/blob/master/.nvmrc)
 - `yarn@1.12.1` or greater
