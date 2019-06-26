@@ -85,6 +85,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://chrismgonzalez.com"><img src="https://avatars3.githubusercontent.com/u/10368310?v=4" width="75px;" alt="Chris Gonzalez"/><br /><sub><b>Chris Gonzalez</b></sub></a><br /><a href="https://github.com/OperationCode/front-end/commits?author=chrismgonzalez" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/clsoar"><img src="https://avatars2.githubusercontent.com/u/28604435?v=4" width="75px;" alt="CL Mason"/><br /><sub><b>CL Mason</b></sub></a><br /><a href="https://github.com/OperationCode/front-end/commits?author=clsoar" title="Code">💻</a></td>
   </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/JohnGoure"><img src="https://avatars3.githubusercontent.com/u/8660448?v=4" width="75px;" alt="John Goure"/><br /><sub><b>John Goure</b></sub></a><br /><a href="https://github.com/OperationCode/front-end/commits?author=JohnGoure" title="Code">💻</a></td>
+  </tr>
 </table>
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
