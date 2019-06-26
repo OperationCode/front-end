@@ -133,6 +133,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tr>
     <td align="center"><a href="https://github.com/rsupak"><img src="https://avatars0.githubusercontent.com/u/28311826?v=4" width="100px;" alt="Richard Supak"/><br /><sub><b>Richard Supak</b></sub></a><br /><a href="https://github.com/OperationCode/front-end/commits?author=rsupak" title="Code">💻</a></td>
     <td align="center"><a href="https://codepen.io/TomerBenRachel/"><img src="https://avatars2.githubusercontent.com/u/23402988?v=4" width="100px;" alt="Tomer Ben-Rachel"/><br /><sub><b>Tomer Ben-Rachel</b></sub></a><br /><a href="https://github.com/OperationCode/front-end/commits?author=TomerPacific" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/dayvodddddddddddd"><img src="https://avatars2.githubusercontent.com/u/7948164?v=4" width="100px;" alt="David Yearwood"/><br /><sub><b>David Yearwood</b></sub></a><br /><a href="https://github.com/OperationCode/front-end/commits?author=dayvodddddddddddd" title="Code">💻</a></td>
   </tr>
 </table>
 
