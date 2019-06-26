@@ -23,6 +23,19 @@
         "doc",
         "question"
       ]
+    },
+    {
+      "login": "AllenAnthes",
+      "name": "Allen Anthes",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/27715246?v=4",
+      "profile": "https://www.linkedin.com/in/allen-anthes/",
+      "contributions": [
+        "infra",
+        "maintenance",
+        "ideas",
+        "code",
+        "question"
+      ]
     }
   ],
   "contributorsPerLine": 7
