@@ -260,6 +260,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "rlyost",
+      "name": "Rick",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/35543580?v=4",
+      "profile": "https://www.linkedin.com/in/ryostpmp/",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7

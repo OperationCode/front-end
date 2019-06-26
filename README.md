@@ -108,6 +108,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/marciojcoelho"><img src="https://avatars3.githubusercontent.com/u/8591171?v=4" width="100px;" alt="marciojcoelho"/><br /><sub><b>marciojcoelho</b></sub></a><br /><a href="https://github.com/OperationCode/front-end/commits?author=marciojcoelho" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/dtmle"><img src="https://avatars2.githubusercontent.com/u/35821286?v=4" width="100px;" alt="dennis"/><br /><sub><b>dennis</b></sub></a><br /><a href="https://github.com/OperationCode/front-end/commits?author=dtmle" title="Code">💻</a></td>
     <td align="center"><a href="http://sagarwal.xyz"><img src="https://avatars0.githubusercontent.com/u/4496335?v=4" width="100px;" alt="Shobhit"/><br /><sub><b>Shobhit</b></sub></a><br /><a href="https://github.com/OperationCode/front-end/commits?author=Shobhit1" title="Code">💻</a></td>
+    <td align="center"><a href="https://www.linkedin.com/in/ryostpmp/"><img src="https://avatars3.githubusercontent.com/u/35543580?v=4" width="100px;" alt="Rick"/><br /><sub><b>Rick</b></sub></a><br /><a href="https://github.com/OperationCode/front-end/commits?author=rlyost" title="Code">💻</a></td>
   </tr>
 </table>
 
