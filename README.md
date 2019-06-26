@@ -128,6 +128,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://ivanmartinez.codes/"><img src="https://avatars2.githubusercontent.com/u/35318080?v=4" width="100px;" alt="Ivan Martinez Morales"/><br /><sub><b>Ivan Martinez Morales</b></sub></a><br /><a href="https://github.com/OperationCode/front-end/commits?author=ivanmartinezmorales" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/joshcallahan"><img src="https://avatars2.githubusercontent.com/u/33660604?v=4" width="100px;" alt="Josh Callahan"/><br /><sub><b>Josh Callahan</b></sub></a><br /><a href="https://github.com/OperationCode/front-end/commits?author=joshcallahan" title="Code">💻</a></td>
     <td align="center"><a href="http://www.josiahdahl.com"><img src="https://avatars1.githubusercontent.com/u/5520415?v=4" width="100px;" alt="Josiah Dahl"/><br /><sub><b>Josiah Dahl</b></sub></a><br /><a href="https://github.com/OperationCode/front-end/commits?author=josiahdahl" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/KPGunner"><img src="https://avatars0.githubusercontent.com/u/31373828?v=4" width="100px;" alt="Kyle Gunn"/><br /><sub><b>Kyle Gunn</b></sub></a><br /><a href="https://github.com/OperationCode/front-end/commits?author=KPGunner" title="Code">💻</a></td>
   </tr>
 </table>
 
