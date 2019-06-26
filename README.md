@@ -77,7 +77,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- prettier-ignore -->
 <table>
   <tr>
-    <td align="center"><a href="https://kylemh.com"><img src="https://avatars1.githubusercontent.com/u/9523719?v=4" width="75px;" alt="Kyle Holmberg"/><br /><sub><b>Kyle Holmberg</b></sub></a><br /><a href="#maintenance-kylemh" title="Maintenance">🚧</a> <a href="#ideas-kylemh" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/OperationCode/front-end/commits?author=kylemh" title="Documentation">📖</a> <a href="https://github.com/OperationCode/front-end/commits?author=kylemh" title="Code">💻</a> <a href="#question-kylemh" title="Answering Questions">💬</a></td>
+    <td align="center"><a href="https://kylemh.com"><img src="https://avatars1.githubusercontent.com/u/9523719?v=4" width="75px;" alt="Kyle Holmberg"/><br /><sub><b>Kyle Holmberg</b></sub></a><br /><a href="#maintenance-kylemh" title="Maintenance">🚧</a> <a href="#ideas-kylemh" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/OperationCode/front-end/commits?author=kylemh" title="Documentation">📖</a> <a href="https://github.com/OperationCode/front-end/commits?author=kylemh" title="Code">💻</a> <a href="#question-kylemh" title="Answering Questions">💬</a> <a href="https://github.com/OperationCode/front-end/commits?author=kylemh" title="Tests">⚠️</a></td>
   </tr>
 </table>
 
