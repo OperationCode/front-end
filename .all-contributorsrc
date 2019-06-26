@@ -38,6 +38,19 @@
       ]
     },
     {
+      "login": "wimo7083",
+      "name": "William Montgomery",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/10781353?v=4",
+      "profile": "https://github.com/wimo7083",
+      "contributions": [
+        "code",
+        "review",
+        "ideas",
+        "infra",
+        "maintenance"
+      ]
+    },
+    {
       "login": "juliantrueflynn",
       "name": "Julian True Flynn",
       "avatar_url": "https://avatars2.githubusercontent.com/u/2691129?v=4",
@@ -47,6 +60,72 @@
         "ideas",
         "code",
         "question"
+      ]
+    },
+    {
+      "login": "jmayergit",
+      "name": "Julien Mayer",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/8594272?v=4",
+      "profile": "https://github.com/jmayergit",
+      "contributions": [
+        "code",
+        "test",
+        "ideas"
+      ]
+    },
+    {
+      "login": "takethefake",
+      "name": "Daniel Schulz",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/3123354?v=4",
+      "profile": "http://schulz.codes",
+      "contributions": [
+        "code",
+        "ideas",
+        "infra"
+      ]
+    },
+    {
+      "login": "sethbergman",
+      "name": "Seth Bergman",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/8031689?v=4",
+      "profile": "https://sethbergman.tech",
+      "contributions": [
+        "code",
+        "review",
+        "ideas"
+      ]
+    },
+    {
+      "login": "nryoung",
+      "name": "Nic Young",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1323750?v=4",
+      "profile": "https://nicyoung.io",
+      "contributions": [
+        "code",
+        "review",
+        "ideas"
+      ]
+    },
+    {
+      "login": "KrDimitrov",
+      "name": "Kristiyan Dimitrov",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/29924708?v=4",
+      "profile": "https://github.com/KrDimitrov",
+      "contributions": [
+        "code",
+        "maintenance",
+        "test"
+      ]
+    },
+    {
+      "login": "AshTemp",
+      "name": "Ashley Templet",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/19790104?v=4",
+      "profile": "https://github.com/AshTemp",
+      "contributions": [
+        "ideas",
+        "projectManagement",
+        "business"
       ]
     },
     {
@@ -113,17 +192,6 @@
       ]
     },
     {
-      "login": "jmayergit",
-      "name": "Julien Mayer",
-      "avatar_url": "https://avatars2.githubusercontent.com/u/8594272?v=4",
-      "profile": "https://github.com/jmayergit",
-      "contributions": [
-        "code",
-        "test",
-        "ideas"
-      ]
-    },
-    {
       "login": "RaevLogic",
       "name": "Roger Keith",
       "avatar_url": "https://avatars2.githubusercontent.com/u/38801291?v=4",
@@ -151,17 +219,6 @@
       ]
     },
     {
-      "login": "takethefake",
-      "name": "Daniel Schulz",
-      "avatar_url": "https://avatars3.githubusercontent.com/u/3123354?v=4",
-      "profile": "http://schulz.codes",
-      "contributions": [
-        "code",
-        "ideas",
-        "infra"
-      ]
-    },
-    {
       "login": "dayvod",
       "name": "David",
       "avatar_url": "https://avatars0.githubusercontent.com/u/28246170?v=4",
@@ -180,58 +237,12 @@
       ]
     },
     {
-      "login": "sethbergman",
-      "name": "Seth Bergman",
-      "avatar_url": "https://avatars3.githubusercontent.com/u/8031689?v=4",
-      "profile": "https://sethbergman.tech",
-      "contributions": [
-        "code",
-        "review",
-        "ideas"
-      ]
-    },
-    {
-      "login": "wimo7083",
-      "name": "William Montgomery",
-      "avatar_url": "https://avatars2.githubusercontent.com/u/10781353?v=4",
-      "profile": "https://github.com/wimo7083",
-      "contributions": [
-        "code",
-        "review",
-        "ideas",
-        "infra",
-        "maintenance"
-      ]
-    },
-    {
-      "login": "nryoung",
-      "name": "Nic Young",
-      "avatar_url": "https://avatars0.githubusercontent.com/u/1323750?v=4",
-      "profile": "https://nicyoung.io",
-      "contributions": [
-        "code",
-        "review",
-        "ideas"
-      ]
-    },
-    {
       "login": "ksmacleod99",
       "name": "K MacLeod",
       "avatar_url": "https://avatars0.githubusercontent.com/u/28678836?v=4",
       "profile": "http://www.macleodwebdev.com",
       "contributions": [
         "code"
-      ]
-    },
-    {
-      "login": "KrDimitrov",
-      "name": "Kristiyan Dimitrov",
-      "avatar_url": "https://avatars3.githubusercontent.com/u/29924708?v=4",
-      "profile": "https://github.com/KrDimitrov",
-      "contributions": [
-        "code",
-        "maintenance",
-        "test"
       ]
     },
     {
@@ -331,17 +342,6 @@
       "profile": "https://github.com/aasifkhan7",
       "contributions": [
         "code"
-      ]
-    },
-    {
-      "login": "AshTemp",
-      "name": "Ashley Templet",
-      "avatar_url": "https://avatars0.githubusercontent.com/u/19790104?v=4",
-      "profile": "https://github.com/AshTemp",
-      "contributions": [
-        "ideas",
-        "projectManagement",
-        "business"
       ]
     },
     {
