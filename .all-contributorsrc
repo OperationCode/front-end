@@ -269,6 +269,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "jimulle",
+      "name": "Jim",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/2433183?v=4",
+      "profile": "http://jimulle.com",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7
