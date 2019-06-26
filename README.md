@@ -123,6 +123,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/dwbledsoe"><img src="https://avatars2.githubusercontent.com/u/47822368?v=4" width="100px;" alt="David Bledsoe"/><br /><sub><b>David Bledsoe</b></sub></a><br /><a href="https://github.com/OperationCode/front-end/commits?author=dwbledsoe" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/eharris99"><img src="https://avatars2.githubusercontent.com/u/8528157?v=4" width="100px;" alt="eharris99"/><br /><sub><b>eharris99</b></sub></a><br /><a href="https://github.com/OperationCode/front-end/commits?author=eharris99" title="Code">💻</a></td>
   </tr>
 </table>
 
