@@ -213,6 +213,15 @@
         "review",
         "ideas"
       ]
+    },
+    {
+      "login": "ksmacleod99",
+      "name": "K MacLeod",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/28678836?v=4",
+      "profile": "http://www.macleodwebdev.com",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7
