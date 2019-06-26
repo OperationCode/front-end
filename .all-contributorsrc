@@ -111,6 +111,17 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "jmayergit",
+      "name": "Julien Mayer",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/8594272?v=4",
+      "profile": "https://github.com/jmayergit",
+      "contributions": [
+        "code",
+        "test",
+        "ideas"
+      ]
     }
   ],
   "contributorsPerLine": 7
