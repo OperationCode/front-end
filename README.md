@@ -126,6 +126,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/eharris99"><img src="https://avatars2.githubusercontent.com/u/8528157?v=4" width="100px;" alt="eharris99"/><br /><sub><b>eharris99</b></sub></a><br /><a href="https://github.com/OperationCode/front-end/commits?author=eharris99" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/iTechsTR"><img src="https://avatars1.githubusercontent.com/u/33372714?v=4" width="100px;" alt="Erdem Efe Erol"/><br /><sub><b>Erdem Efe Erol</b></sub></a><br /><a href="https://github.com/OperationCode/front-end/commits?author=iTechsTR" title="Code">💻</a></td>
     <td align="center"><a href="https://ivanmartinez.codes/"><img src="https://avatars2.githubusercontent.com/u/35318080?v=4" width="100px;" alt="Ivan Martinez Morales"/><br /><sub><b>Ivan Martinez Morales</b></sub></a><br /><a href="https://github.com/OperationCode/front-end/commits?author=ivanmartinezmorales" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/joshcallahan"><img src="https://avatars2.githubusercontent.com/u/33660604?v=4" width="100px;" alt="Josh Callahan"/><br /><sub><b>Josh Callahan</b></sub></a><br /><a href="https://github.com/OperationCode/front-end/commits?author=joshcallahan" title="Code">💻</a></td>
   </tr>
 </table>
 
