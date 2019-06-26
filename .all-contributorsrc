@@ -48,6 +48,15 @@
         "code",
         "question"
       ]
+    },
+    {
+      "login": "markchernov",
+      "name": "Mark Chernov",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/16090885?v=4",
+      "profile": "https://github.com/markchernov",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7
