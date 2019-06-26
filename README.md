@@ -103,6 +103,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://nicyoung.io"><img src="https://avatars0.githubusercontent.com/u/1323750?v=4" width="100px;" alt="Nic Young"/><br /><sub><b>Nic Young</b></sub></a><br /><a href="https://github.com/OperationCode/front-end/commits?author=nryoung" title="Code">💻</a> <a href="#review-nryoung" title="Reviewed Pull Requests">👀</a> <a href="#ideas-nryoung" title="Ideas, Planning, & Feedback">🤔</a></td>
     <td align="center"><a href="http://www.macleodwebdev.com"><img src="https://avatars0.githubusercontent.com/u/28678836?v=4" width="100px;" alt="K MacLeod"/><br /><sub><b>K MacLeod</b></sub></a><br /><a href="https://github.com/OperationCode/front-end/commits?author=ksmacleod99" title="Code">💻</a></td>
   </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/KrDimitrov"><img src="https://avatars3.githubusercontent.com/u/29924708?v=4" width="100px;" alt="Kristiyan Dimitrov"/><br /><sub><b>Kristiyan Dimitrov</b></sub></a><br /><a href="https://github.com/OperationCode/front-end/commits?author=KrDimitrov" title="Code">💻</a> <a href="#maintenance-KrDimitrov" title="Maintenance">🚧</a> <a href="https://github.com/OperationCode/front-end/commits?author=KrDimitrov" title="Tests">⚠️</a></td>
+  </tr>
 </table>
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->

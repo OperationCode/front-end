@@ -222,6 +222,17 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "KrDimitrov",
+      "name": "Kristiyan Dimitrov",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/29924708?v=4",
+      "profile": "https://github.com/KrDimitrov",
+      "contributions": [
+        "code",
+        "maintenance",
+        "test"
+      ]
     }
   ],
   "contributorsPerLine": 7
