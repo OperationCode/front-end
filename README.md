@@ -114,6 +114,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   </tr>
   <tr>
     <td align="center"><a href="https://www.thedyslexicdeveloper.com/"><img src="https://avatars0.githubusercontent.com/u/495517?v=4" width="100px;" alt="Chris Laughlin"/><br /><sub><b>Chris Laughlin</b></sub></a><br /><a href="https://github.com/OperationCode/front-end/commits?author=chrislaughlin" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/ecaoile"><img src="https://avatars3.githubusercontent.com/u/34725510?v=4" width="100px;" alt="Earl Jay"/><br /><sub><b>Earl Jay</b></sub></a><br /><a href="https://github.com/OperationCode/front-end/commits?author=ecaoile" title="Code">💻</a></td>
   </tr>
 </table>
 
