@@ -112,6 +112,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="http://jimulle.com"><img src="https://avatars3.githubusercontent.com/u/2433183?v=4" width="100px;" alt="Jim"/><br /><sub><b>Jim</b></sub></a><br /><a href="https://github.com/OperationCode/front-end/commits?author=jimulle" title="Code">💻</a></td>
     <td align="center"><a href="https://soris-codes.github.io"><img src="https://avatars1.githubusercontent.com/u/37656842?v=4" width="100px;" alt="Soris Cox"/><br /><sub><b>Soris Cox</b></sub></a><br /><a href="https://github.com/OperationCode/front-end/commits?author=soris-codes" title="Code">💻</a></td>
   </tr>
+  <tr>
+    <td align="center"><a href="https://www.thedyslexicdeveloper.com/"><img src="https://avatars0.githubusercontent.com/u/495517?v=4" width="100px;" alt="Chris Laughlin"/><br /><sub><b>Chris Laughlin</b></sub></a><br /><a href="https://github.com/OperationCode/front-end/commits?author=chrislaughlin" title="Code">💻</a></td>
+  </tr>
 </table>
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
