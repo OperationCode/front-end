@@ -77,7 +77,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- prettier-ignore -->
 <table>
   <tr>
-    <td align="center"><a href="https://kylemh.com"><img src="https://avatars1.githubusercontent.com/u/9523719?v=4" width="75px;" alt="Kyle Holmberg"/><br /><sub><b>Kyle Holmberg</b></sub></a><br /><a href="https://github.com/OperationCode/front-end/commits?author=kylemh" title="Code">💻</a></td>
+    <td align="center"><a href="https://kylemh.com"><img src="https://avatars1.githubusercontent.com/u/9523719?v=4" width="75px;" alt="Kyle Holmberg"/><br /><sub><b>Kyle Holmberg</b></sub></a><br /><a href="https://github.com/OperationCode/front-end/commits?author=kylemh" title="Code">💻</a> <a href="https://github.com/OperationCode/front-end/commits?author=kylemh" title="Tests">⚠️</a></td>
   </tr>
 </table>
 
