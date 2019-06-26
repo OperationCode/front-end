@@ -3,7 +3,7 @@
   <a href="https://operationcode.org">
     <img
       alt="Operation Code Hacktoberfest Banner"
-      src="https://s3.amazonaws.com/operationcode-assets/branding/logos/large-blue-logo.png"
+      src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/large-blue-logo.png"
     >
   </a>
   <br>

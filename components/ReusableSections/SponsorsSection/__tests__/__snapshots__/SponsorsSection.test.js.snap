@@ -32,7 +32,7 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
           <img
             alt="APEX Systems logo"
             className="logo"
-            src="https://s3.amazonaws.com/operationcode-assets/partnerLogos/apex_systems.png"
+            src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/apex_systems.png"
           />
         </a>
       </div>
@@ -53,7 +53,7 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
           <img
             alt="GitHub logo"
             className="logo"
-            src="https://s3.amazonaws.com/operationcode-assets/partnerLogos/github.png"
+            src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/github.png"
           />
         </a>
       </div>
@@ -74,7 +74,7 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
           <img
             alt="Slack logo"
             className="logo"
-            src="https://s3.amazonaws.com/operationcode-assets/partnerLogos/slack.png"
+            src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/slack.png"
           />
         </a>
       </div>
@@ -95,7 +95,7 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
           <img
             alt="Heroku logo"
             className="logo"
-            src="https://s3.amazonaws.com/operationcode-assets/partnerLogos/heroku.png"
+            src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/heroku.png"
           />
         </a>
       </div>
@@ -116,7 +116,7 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
           <img
             alt="1Password logo"
             className="logo"
-            src="https://s3.amazonaws.com/operationcode-assets/partnerLogos/1password.png"
+            src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/1password.png"
           />
         </a>
       </div>
@@ -137,7 +137,7 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
           <img
             alt="US Bank logo"
             className="logo"
-            src="https://s3.amazonaws.com/operationcode-assets/partnerLogos/usbank.png"
+            src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/usbank.png"
           />
         </a>
       </div>
@@ -158,7 +158,7 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
           <img
             alt="Threat Stack logo"
             className="logo"
-            src="https://s3.amazonaws.com/operationcode-assets/partnerLogos/threat_stack.png"
+            src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/threat_stack.png"
           />
         </a>
       </div>
@@ -179,7 +179,7 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
           <img
             alt="O'Reilly Media logo"
             className="logo"
-            src="https://s3.amazonaws.com/operationcode-assets/partnerLogos/oreilly.png"
+            src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/oreilly.png"
           />
         </a>
       </div>
@@ -200,7 +200,7 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
           <img
             alt="HackerRank logo"
             className="logo"
-            src="https://s3.amazonaws.com/operationcode-assets/partnerLogos/hackerrank.png"
+            src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/hackerrank.png"
           />
         </a>
       </div>
@@ -221,7 +221,7 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
           <img
             alt="Zapier logo"
             className="logo"
-            src="https://s3.amazonaws.com/operationcode-assets/partnerLogos/zapier.png"
+            src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/zapier.png"
           />
         </a>
       </div>
@@ -262,7 +262,7 @@ exports[`SponsorsSection should render with required props 1`] = `
           <img
             alt="APEX Systems logo"
             className="logo"
-            src="https://s3.amazonaws.com/operationcode-assets/partnerLogos/apex_systems.png"
+            src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/apex_systems.png"
           />
         </a>
       </div>
@@ -283,7 +283,7 @@ exports[`SponsorsSection should render with required props 1`] = `
           <img
             alt="GitHub logo"
             className="logo"
-            src="https://s3.amazonaws.com/operationcode-assets/partnerLogos/github.png"
+            src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/github.png"
           />
         </a>
       </div>
@@ -304,7 +304,7 @@ exports[`SponsorsSection should render with required props 1`] = `
           <img
             alt="Slack logo"
             className="logo"
-            src="https://s3.amazonaws.com/operationcode-assets/partnerLogos/slack.png"
+            src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/slack.png"
           />
         </a>
       </div>
@@ -325,7 +325,7 @@ exports[`SponsorsSection should render with required props 1`] = `
           <img
             alt="Heroku logo"
             className="logo"
-            src="https://s3.amazonaws.com/operationcode-assets/partnerLogos/heroku.png"
+            src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/heroku.png"
           />
         </a>
       </div>
@@ -346,7 +346,7 @@ exports[`SponsorsSection should render with required props 1`] = `
           <img
             alt="1Password logo"
             className="logo"
-            src="https://s3.amazonaws.com/operationcode-assets/partnerLogos/1password.png"
+            src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/1password.png"
           />
         </a>
       </div>
@@ -367,7 +367,7 @@ exports[`SponsorsSection should render with required props 1`] = `
           <img
             alt="US Bank logo"
             className="logo"
-            src="https://s3.amazonaws.com/operationcode-assets/partnerLogos/usbank.png"
+            src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/usbank.png"
           />
         </a>
       </div>
@@ -388,7 +388,7 @@ exports[`SponsorsSection should render with required props 1`] = `
           <img
             alt="Threat Stack logo"
             className="logo"
-            src="https://s3.amazonaws.com/operationcode-assets/partnerLogos/threat_stack.png"
+            src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/threat_stack.png"
           />
         </a>
       </div>
@@ -409,7 +409,7 @@ exports[`SponsorsSection should render with required props 1`] = `
           <img
             alt="O'Reilly Media logo"
             className="logo"
-            src="https://s3.amazonaws.com/operationcode-assets/partnerLogos/oreilly.png"
+            src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/oreilly.png"
           />
         </a>
       </div>
@@ -430,7 +430,7 @@ exports[`SponsorsSection should render with required props 1`] = `
           <img
             alt="HackerRank logo"
             className="logo"
-            src="https://s3.amazonaws.com/operationcode-assets/partnerLogos/hackerrank.png"
+            src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/hackerrank.png"
           />
         </a>
       </div>
@@ -451,7 +451,7 @@ exports[`SponsorsSection should render with required props 1`] = `
           <img
             alt="Zapier logo"
             className="logo"
-            src="https://s3.amazonaws.com/operationcode-assets/partnerLogos/zapier.png"
+            src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/zapier.png"
           />
         </a>
       </div>
