@@ -202,6 +202,17 @@
         "infra",
         "maintenance"
       ]
+    },
+    {
+      "login": "nryoung",
+      "name": "Nic Young",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1323750?v=4",
+      "profile": "https://nicyoung.io",
+      "contributions": [
+        "code",
+        "review",
+        "ideas"
+      ]
     }
   ],
   "contributorsPerLine": 7
