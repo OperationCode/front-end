@@ -189,6 +189,19 @@
         "review",
         "ideas"
       ]
+    },
+    {
+      "login": "Wimo",
+      "name": "Wim",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/29374906?v=4",
+      "profile": "https://github.com/Wimo",
+      "contributions": [
+        "code",
+        "review",
+        "ideas",
+        "infra",
+        "maintenance"
+      ]
     }
   ],
   "contributorsPerLine": 7
