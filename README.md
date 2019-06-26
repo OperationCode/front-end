@@ -107,6 +107,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/KrDimitrov"><img src="https://avatars3.githubusercontent.com/u/29924708?v=4" width="100px;" alt="Kristiyan Dimitrov"/><br /><sub><b>Kristiyan Dimitrov</b></sub></a><br /><a href="https://github.com/OperationCode/front-end/commits?author=KrDimitrov" title="Code">💻</a> <a href="#maintenance-KrDimitrov" title="Maintenance">🚧</a> <a href="https://github.com/OperationCode/front-end/commits?author=KrDimitrov" title="Tests">⚠️</a></td>
     <td align="center"><a href="https://github.com/marciojcoelho"><img src="https://avatars3.githubusercontent.com/u/8591171?v=4" width="100px;" alt="marciojcoelho"/><br /><sub><b>marciojcoelho</b></sub></a><br /><a href="https://github.com/OperationCode/front-end/commits?author=marciojcoelho" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/dtmle"><img src="https://avatars2.githubusercontent.com/u/35821286?v=4" width="100px;" alt="dennis"/><br /><sub><b>dennis</b></sub></a><br /><a href="https://github.com/OperationCode/front-end/commits?author=dtmle" title="Code">💻</a></td>
+    <td align="center"><a href="http://sagarwal.xyz"><img src="https://avatars0.githubusercontent.com/u/4496335?v=4" width="100px;" alt="Shobhit"/><br /><sub><b>Shobhit</b></sub></a><br /><a href="https://github.com/OperationCode/front-end/commits?author=Shobhit1" title="Code">💻</a></td>
   </tr>
 </table>
 
