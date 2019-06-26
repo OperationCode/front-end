@@ -352,6 +352,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "dwbledsoe",
+      "name": "David Bledsoe",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/47822368?v=4",
+      "profile": "https://github.com/dwbledsoe",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7

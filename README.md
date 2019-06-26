@@ -121,6 +121,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/AshTemp"><img src="https://avatars0.githubusercontent.com/u/19790104?v=4" width="100px;" alt="Ashley Templet"/><br /><sub><b>Ashley Templet</b></sub></a><br /><a href="#ideas-AshTemp" title="Ideas, Planning, & Feedback">🤔</a> <a href="#projectManagement-AshTemp" title="Project Management">📆</a> <a href="#business-AshTemp" title="Business development">💼</a></td>
     <td align="center"><a href="https://github.com/babu-thomas"><img src="https://avatars0.githubusercontent.com/u/13412867?v=4" width="100px;" alt="Babu Thomas"/><br /><sub><b>Babu Thomas</b></sub></a><br /><a href="https://github.com/OperationCode/front-end/commits?author=babu-thomas" title="Code">💻</a></td>
   </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/dwbledsoe"><img src="https://avatars2.githubusercontent.com/u/47822368?v=4" width="100px;" alt="David Bledsoe"/><br /><sub><b>David Bledsoe</b></sub></a><br /><a href="https://github.com/OperationCode/front-end/commits?author=dwbledsoe" title="Code">💻</a></td>
+  </tr>
 </table>
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
