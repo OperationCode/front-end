@@ -332,6 +332,17 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "AshTemp",
+      "name": "Ashley Templet",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/19790104?v=4",
+      "profile": "https://github.com/AshTemp",
+      "contributions": [
+        "ideas",
+        "projectManagement",
+        "business"
+      ]
     }
   ],
   "contributorsPerLine": 7
