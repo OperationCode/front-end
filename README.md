@@ -97,6 +97,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tr>
     <td align="center"><a href="http://schulz.codes"><img src="https://avatars3.githubusercontent.com/u/3123354?v=4" width="100px;" alt="Daniel Schulz"/><br /><sub><b>Daniel Schulz</b></sub></a><br /><a href="https://github.com/OperationCode/front-end/commits?author=takethefake" title="Code">💻</a> <a href="#ideas-takethefake" title="Ideas, Planning, & Feedback">🤔</a> <a href="#infra-takethefake" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
     <td align="center"><a href="https://github.com/dayvod"><img src="https://avatars0.githubusercontent.com/u/28246170?v=4" width="100px;" alt="David"/><br /><sub><b>David</b></sub></a><br /><a href="https://github.com/OperationCode/front-end/commits?author=dayvod" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/sumitparakh"><img src="https://avatars2.githubusercontent.com/u/4236211?v=4" width="100px;" alt="Sumit Parakh"/><br /><sub><b>Sumit Parakh</b></sub></a><br /><a href="https://github.com/OperationCode/front-end/commits?author=sumitparakh" title="Code">💻</a></td>
   </tr>
 </table>
 
