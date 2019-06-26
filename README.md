@@ -92,6 +92,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/jmayergit"><img src="https://avatars2.githubusercontent.com/u/8594272?v=4" width="75px;" alt="Julien Mayer"/><br /><sub><b>Julien Mayer</b></sub></a><br /><a href="https://github.com/OperationCode/front-end/commits?author=jmayergit" title="Code">💻</a> <a href="https://github.com/OperationCode/front-end/commits?author=jmayergit" title="Tests">⚠️</a> <a href="#ideas-jmayergit" title="Ideas, Planning, & Feedback">🤔</a></td>
     <td align="center"><a href="https://github.com/RaevLogic"><img src="https://avatars2.githubusercontent.com/u/38801291?v=4" width="75px;" alt="Roger Keith"/><br /><sub><b>Roger Keith</b></sub></a><br /><a href="https://github.com/OperationCode/front-end/commits?author=RaevLogic" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/chrisgalvan"><img src="https://avatars3.githubusercontent.com/u/1694600?v=4" width="75px;" alt="Chris Galvan"/><br /><sub><b>Chris Galvan</b></sub></a><br /><a href="https://github.com/OperationCode/front-end/commits?author=chrisgalvan" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/jfie5"><img src="https://avatars2.githubusercontent.com/u/2934166?v=4" width="75px;" alt="Jacob Fielding"/><br /><sub><b>Jacob Fielding</b></sub></a><br /><a href="https://github.com/OperationCode/front-end/commits?author=jfie5" title="Code">💻</a></td>
   </tr>
 </table>
 
