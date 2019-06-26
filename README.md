@@ -94,6 +94,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/chrisgalvan"><img src="https://avatars3.githubusercontent.com/u/1694600?v=4" width="75px;" alt="Chris Galvan"/><br /><sub><b>Chris Galvan</b></sub></a><br /><a href="https://github.com/OperationCode/front-end/commits?author=chrisgalvan" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/jfie5"><img src="https://avatars2.githubusercontent.com/u/2934166?v=4" width="75px;" alt="Jacob Fielding"/><br /><sub><b>Jacob Fielding</b></sub></a><br /><a href="https://github.com/OperationCode/front-end/commits?author=jfie5" title="Code">💻</a></td>
   </tr>
+  <tr>
+    <td align="center"><a href="http://schulz.codes"><img src="https://avatars3.githubusercontent.com/u/3123354?v=4" width="75px;" alt="Daniel Schulz"/><br /><sub><b>Daniel Schulz</b></sub></a><br /><a href="https://github.com/OperationCode/front-end/commits?author=takethefake" title="Code">💻</a> <a href="#ideas-takethefake" title="Ideas, Planning, & Feedback">🤔</a> <a href="#infra-takethefake" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
+  </tr>
 </table>
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
