@@ -36,6 +36,18 @@
         "code",
         "question"
       ]
+    },
+    {
+      "login": "juliantrueflynn",
+      "name": "Julian True Flynn",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/2691129?v=4",
+      "profile": "https://juliantrueflynn.com",
+      "contributions": [
+        "maintenance",
+        "ideas",
+        "code",
+        "question"
+      ]
     }
   ],
   "contributorsPerLine": 7
