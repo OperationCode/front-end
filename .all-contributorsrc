@@ -397,6 +397,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "josiahdahl",
+      "name": "Josiah Dahl",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/5520415?v=4",
+      "profile": "http://www.josiahdahl.com",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7
