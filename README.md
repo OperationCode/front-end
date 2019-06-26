@@ -83,6 +83,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/markchernov"><img src="https://avatars1.githubusercontent.com/u/16090885?v=4" width="75px;" alt="Mark Chernov"/><br /><sub><b>Mark Chernov</b></sub></a><br /><a href="https://github.com/OperationCode/front-end/commits?author=markchernov" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/tigclaw"><img src="https://avatars0.githubusercontent.com/u/6943858?v=4" width="75px;" alt="Angela Lin"/><br /><sub><b>Angela Lin</b></sub></a><br /><a href="https://github.com/OperationCode/front-end/commits?author=tigclaw" title="Code">💻</a></td>
     <td align="center"><a href="https://chrismgonzalez.com"><img src="https://avatars3.githubusercontent.com/u/10368310?v=4" width="75px;" alt="Chris Gonzalez"/><br /><sub><b>Chris Gonzalez</b></sub></a><br /><a href="https://github.com/OperationCode/front-end/commits?author=chrismgonzalez" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/clsoar"><img src="https://avatars2.githubusercontent.com/u/28604435?v=4" width="75px;" alt="CL Mason"/><br /><sub><b>CL Mason</b></sub></a><br /><a href="https://github.com/OperationCode/front-end/commits?author=clsoar" title="Code">💻</a></td>
   </tr>
 </table>
 
