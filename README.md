@@ -75,6 +75,12 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore -->
+<table>
+  <tr>
+    <td align="center"><a href="https://kylemh.com"><img src="https://avatars1.githubusercontent.com/u/9523719?v=4" width="75px;" alt="Kyle Holmberg"/><br /><sub><b>Kyle Holmberg</b></sub></a><br /><a href="#maintenance-kylemh" title="Maintenance">🚧</a> <a href="#ideas-kylemh" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/OperationCode/front-end/commits?author=kylemh" title="Documentation">📖</a> <a href="https://github.com/OperationCode/front-end/commits?author=kylemh" title="Code">💻</a> <a href="#question-kylemh" title="Answering Questions">💬</a></td>
+  </tr>
+</table>
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
