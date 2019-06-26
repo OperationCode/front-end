@@ -110,6 +110,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="http://sagarwal.xyz"><img src="https://avatars0.githubusercontent.com/u/4496335?v=4" width="100px;" alt="Shobhit"/><br /><sub><b>Shobhit</b></sub></a><br /><a href="https://github.com/OperationCode/front-end/commits?author=Shobhit1" title="Code">💻</a></td>
     <td align="center"><a href="https://www.linkedin.com/in/ryostpmp/"><img src="https://avatars3.githubusercontent.com/u/35543580?v=4" width="100px;" alt="Rick"/><br /><sub><b>Rick</b></sub></a><br /><a href="https://github.com/OperationCode/front-end/commits?author=rlyost" title="Code">💻</a></td>
     <td align="center"><a href="http://jimulle.com"><img src="https://avatars3.githubusercontent.com/u/2433183?v=4" width="100px;" alt="Jim"/><br /><sub><b>Jim</b></sub></a><br /><a href="https://github.com/OperationCode/front-end/commits?author=jimulle" title="Code">💻</a></td>
+    <td align="center"><a href="https://soris-codes.github.io"><img src="https://avatars1.githubusercontent.com/u/37656842?v=4" width="100px;" alt="Soris Cox"/><br /><sub><b>Soris Cox</b></sub></a><br /><a href="https://github.com/OperationCode/front-end/commits?author=soris-codes" title="Code">💻</a></td>
   </tr>
 </table>
 
