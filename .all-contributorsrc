@@ -343,6 +343,15 @@
         "projectManagement",
         "business"
       ]
+    },
+    {
+      "login": "babu-thomas",
+      "name": "Babu Thomas",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/13412867?v=4",
+      "profile": "https://github.com/babu-thomas",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7

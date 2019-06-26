@@ -119,6 +119,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/kanitsharma"><img src="https://avatars2.githubusercontent.com/u/23506120?v=4" width="100px;" alt="Kanit Sharma"/><br /><sub><b>Kanit Sharma</b></sub></a><br /><a href="https://github.com/OperationCode/front-end/commits?author=kanitsharma" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/aasifkhan7"><img src="https://avatars0.githubusercontent.com/u/25710869?v=4" width="100px;" alt="aasifkhan7"/><br /><sub><b>aasifkhan7</b></sub></a><br /><a href="https://github.com/OperationCode/front-end/commits?author=aasifkhan7" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/AshTemp"><img src="https://avatars0.githubusercontent.com/u/19790104?v=4" width="100px;" alt="Ashley Templet"/><br /><sub><b>Ashley Templet</b></sub></a><br /><a href="#ideas-AshTemp" title="Ideas, Planning, & Feedback">🤔</a> <a href="#projectManagement-AshTemp" title="Project Management">📆</a> <a href="#business-AshTemp" title="Business development">💼</a></td>
+    <td align="center"><a href="https://github.com/babu-thomas"><img src="https://avatars0.githubusercontent.com/u/13412867?v=4" width="100px;" alt="Babu Thomas"/><br /><sub><b>Babu Thomas</b></sub></a><br /><a href="https://github.com/OperationCode/front-end/commits?author=babu-thomas" title="Code">💻</a></td>
   </tr>
 </table>
 
