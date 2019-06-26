@@ -88,6 +88,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tr>
     <td align="center"><a href="https://github.com/JohnGoure"><img src="https://avatars3.githubusercontent.com/u/8660448?v=4" width="75px;" alt="John Goure"/><br /><sub><b>John Goure</b></sub></a><br /><a href="https://github.com/OperationCode/front-end/commits?author=JohnGoure" title="Code">💻</a></td>
     <td align="center"><a href="http://dirtyredz.com"><img src="https://avatars0.githubusercontent.com/u/7119499?v=4" width="75px;" alt="David McClain &#124; Dirtyredz"/><br /><sub><b>David McClain &#124; Dirtyredz</b></sub></a><br /><a href="https://github.com/OperationCode/front-end/commits?author=dirtyredz" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/PeterEckIII"><img src="https://avatars1.githubusercontent.com/u/35156163?v=4" width="75px;" alt="Peter Eck"/><br /><sub><b>Peter Eck</b></sub></a><br /><a href="https://github.com/OperationCode/front-end/commits?author=PeterEckIII" title="Code">💻</a></td>
   </tr>
 </table>
 
