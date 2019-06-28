@@ -4,17 +4,44 @@ import { networkErrorMessages } from 'common/constants/messages';
 import { apiUrl } from 'common/config/environment';
 import { setAuthorizationHeader } from 'common/utils/cookie-utils';
 
-export const OperationCodeAPI = axios.create({ baseURL: apiUrl });
+const axiosConfig = {
+  baseURL: apiUrl,
+  timeout: 5000,
+};
+
+export const OperationCodeAPI = axios.create(axiosConfig);
+
+/**
+ * @description These pieces allow us to throw errors on connection timeouts
+ * @see https://github.com/axios/axios/issues/647#issuecomment-459517694
+ * @returns {{ abort: { token: string, cancel: function }, connectionTimeout: setTimeout }}
+ */
+const getRequestAbortionPieces = () => {
+  const abort = axios.CancelToken.source();
+  const connectionTimeout = setTimeout(
+    () => abort.cancel(`Connection timeout of ${axiosConfig.timeout}ms.`),
+    axiosConfig.timeout,
+  );
+
+  return { abort, connectionTimeout };
+};
 
 /**
  * @param {string} path
  * @param {{token: string}} options
  * @returns {Promise<AxiosPromise<any>>}
  */
-export const get = async (path, { token } = {}) =>
-  OperationCodeAPI.get(`/${path}`, {
+export const get = async (path, { token } = {}) => {
+  const { abort, connectionTimeout } = getRequestAbortionPieces();
+
+  return OperationCodeAPI.get(`/${path}`, {
     headers: setAuthorizationHeader(token),
+    cancelToken: abort.token,
+  }).then(response => {
+    clearTimeout(connectionTimeout);
+    return response;
   });
+};
 
 /**
  * @param {string} path
@@ -22,10 +49,17 @@ export const get = async (path, { token } = {}) =>
  * @param {{token: string}} options
  * @returns {Promise<AxiosResponse<any>>}
  */
-export const post = async (path, body, { token } = {}) =>
-  OperationCodeAPI.post(`/${path}`, body, {
+export const post = async (path, body, { token } = {}) => {
+  const { abort, connectionTimeout } = getRequestAbortionPieces();
+
+  return OperationCodeAPI.post(`/${path}`, body, {
     headers: setAuthorizationHeader(token),
+    cancelToken: abort.token,
+  }).then(response => {
+    clearTimeout(connectionTimeout);
+    return response;
   });
+};
 
 /**
  * @param {string} path
@@ -33,10 +67,17 @@ export const post = async (path, body, { token } = {}) =>
  * @param {{token: string}} options
  * @returns {Promise<AxiosResponse<any>>}
  */
-export const patch = async (path, body, { token } = {}) =>
-  OperationCodeAPI.patch(`/${path}`, body, {
+export const patch = async (path, body, { token } = {}) => {
+  const { abort, connectionTimeout } = getRequestAbortionPieces();
+
+  return OperationCodeAPI.patch(`/${path}`, body, {
     headers: setAuthorizationHeader(token),
+    cancelToken: abort.token,
+  }).then(response => {
+    clearTimeout(connectionTimeout);
+    return response;
   });
+};
 
 /**
  * @description Take an expected server error object and return its error. If object is unexpected,
