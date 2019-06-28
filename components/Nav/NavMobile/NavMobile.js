@@ -33,7 +33,7 @@ export default class NavMobile extends Component {
 
     return (
       <header className={styles.NavMobile}>
-        <Link href="/">
+        <Link href="/" prefetch={false}>
           <button
             className={classNames(styles.button, styles.logoButton)}
             type="button"
@@ -62,8 +62,8 @@ export default class NavMobile extends Component {
             <CloseButton onClick={closeMenu} theme="white" />
 
             <ul className={styles.ul}>
-              <li className={styles.li}>
-                <Link href="/">
+              <li className={styles.li} key="Home">
+                <Link href="/" prefetch={false}>
                   <a className={styles.link} name="dropdown">
                     Home
                   </a>
@@ -71,13 +71,13 @@ export default class NavMobile extends Component {
               </li>
               {navItems.map(navlink => (
                 <li className={styles.li} key={navlink.name}>
-                  <Link href={navlink.href}>
+                  <Link href={navlink.href} prefetch={navlink.shouldPrefetch}>
                     <a className={styles.link}>{navlink.name}</a>
                   </Link>
                 </li>
               ))}
-              <li className={styles.li}>
-                <Link href={donateLink}>
+              <li className={styles.li} key="Donate">
+                <Link href={donateLink} prefetch={false}>
                   <a className={styles.link}>Donate</a>
                 </Link>
               </li>
