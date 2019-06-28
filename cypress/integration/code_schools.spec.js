@@ -120,6 +120,6 @@ describe('code schools', () => {
       cy.get('div[role="alert"]').should('have.text', networkErrorMessages.serverDown);
     });
 
-    it.todo('should fail gracefully when server has a connection timeout');
+    // it.todo('should fail gracefully when server has a connection timeout');
   });
 });
