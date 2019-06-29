@@ -1,5 +1,3 @@
-import { networkErrorMessages } from '../../common/constants/messages';
-
 describe('code schools', () => {
   const ReactSelectSelector = 'input#react-select-state_select-input';
 
@@ -81,45 +79,8 @@ describe('code schools', () => {
     });
   });
 
-  describe('when server does not respond', function() {
-    beforeEach(() => {
-      cy.server({ method: 'GET', status: 502 });
-      cy.visitAndWaitFor('/code_schools');
-      cy.get('h1').should('have.text', 'Code Schools');
-    });
-
-    it('should not render the "All Schools" button', () => {
-      cy.get('button')
-        .contains('All Schools')
-        .should('not.exist');
-    });
-
-    it('should not render the "VA Approved Schools" button', () => {
-      cy.get('button')
-        .contains('VA Approved Schools')
-        .should('not.exist');
-    });
-
-    it('should not render the "Online Schools" button', () => {
-      cy.get('button')
-        .contains('Online Schools')
-        .should('not.be.visible');
-    });
-
-    it('should not render the "Filter By State" select', () => {
-      cy.get(ReactSelectSelector).should('not.exist');
-    });
-
-    it('should not render a single SchoolCard', () => {
-      cy.get('[data-testid="SchoolCard"]').should('not.exist');
-    });
-
-    it('should fail gracefully when server is down', () => {
-      cy.url().should('contain', '/code_schools');
-
-      cy.get('div[role="alert"]').should('have.text', networkErrorMessages.serverDown);
-    });
-
-    it.todo('should fail gracefully when server has a connection timeout');
+  describe('when server does not respond', () => {
+    // unfortunately, Cypress doesn't have the ability to stub network requests, so it's not
+    // possible to test for this situation. Maybe some day!
   });
 });
