@@ -26,7 +26,7 @@ exports[`Storyshots Cards/SchoolCard with many locations 1`] = `
     <img
       alt="General Assembly logo"
       height="150"
-      src="https://s3.amazonaws.com/operationcode-assets/codeSchoolLogos/general_assembly.jpg"
+      src="https://operation-code-assets.s3.us-east-2.amazonaws.com/codeSchoolLogos/general_assembly.jpg"
     />
   </div>
   <div
@@ -168,7 +168,7 @@ exports[`Storyshots Cards/SchoolCard with no physical locations 1`] = `
     <img
       alt="Thinkful logo"
       height="150"
-      src="https://s3.amazonaws.com/operationcode-assets/codeSchoolLogos/thinkful.jpg"
+      src="https://operation-code-assets.s3.us-east-2.amazonaws.com/codeSchoolLogos/thinkful.jpg"
     />
   </div>
   <div
@@ -301,7 +301,7 @@ exports[`Storyshots Cards/SchoolCard with one location 1`] = `
     <img
       alt="Code Immersives logo"
       height="150"
-      src="https://s3.amazonaws.com/operationcode-assets/codeSchoolLogos/code_immersives.jpg"
+      src="https://operation-code-assets.s3.us-east-2.amazonaws.com/codeSchoolLogos/code_immersives.jpg"
     />
   </div>
   <div

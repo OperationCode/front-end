@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { bool } from 'prop-types';
+import { withRouter } from 'next/router';
+import { bool, shape, func } from 'prop-types';
 import nextCookie from 'next-cookies';
 import { loginUser, loginSocial } from 'common/constants/api';
 import { login, logout, isomorphicRedirect } from 'common/utils/auth-utils';
@@ -16,10 +17,17 @@ class Login extends React.Component {
   static propTypes = {
     // pulled out of query param
     loggedOut: bool,
+    router: shape({
+      push: func.isRequired,
+    }).isRequired,
   };
 
   static defaultProps = {
     loggedOut: false,
+  };
+
+  state = {
+    alertMessage: '',
   };
 
   static async getInitialProps({ query: { loggedOut }, ...ctx }) {
@@ -39,21 +47,37 @@ class Login extends React.Component {
   }
 
   componentDidMount() {
-    const { loggedOut } = this.props;
+    const { loggedOut, router } = this.props;
 
     // initiate logout if user was routed
     // here by clicking the logout link
     if (loggedOut) {
+      router.push('/login', '/login', { shallow: true });
       logout({ shouldRedirect: false });
+      this.setState({ alertMessage: 'Logged out successfully.' });
     }
   }
+
+  clearAlert = () => {
+    this.setState({ alertMessage: '' });
+  };
 
   handleSuccess = ({ token, user }) => {
     login({ token, user });
   };
 
+  onLogin = values => {
+    this.clearAlert();
+    return loginUser(values);
+  };
+
+  onLoginSocial = (provider, values) => {
+    this.clearAlert();
+    return loginSocial(provider, values);
+  };
+
   render() {
-    const { loggedOut } = this.props;
+    const { alertMessage } = this.state;
     return (
       <>
         <Head title="Login" />
@@ -64,13 +88,13 @@ class Login extends React.Component {
           theme="gray"
           columns={[
             <>
-              {loggedOut && (
+              {alertMessage && (
                 <Alert isOpen type="success">
-                  Logged out successfully.
+                  {alertMessage}
                 </Alert>
               )}
             </>,
-            <LoginForm login={loginUser} onSuccess={this.handleSuccess} />,
+            <LoginForm login={this.onLogin} onSuccess={this.handleSuccess} />,
             <p>
               Don&apos;t have an account?&nbsp;
               <Link href="/join">
@@ -86,7 +110,7 @@ class Login extends React.Component {
               </Link>
               .
             </p>,
-            <SocialLoginGroup handleSuccess={this.handleSuccess} loginSocial={loginSocial}>
+            <SocialLoginGroup handleSuccess={this.handleSuccess} loginSocial={this.onLoginSocial}>
               {({ onSuccess, onGoogleFailure }) => (
                 <SocialLoginButtons onSuccess={onSuccess} onGoogleFailure={onGoogleFailure} />
               )}
@@ -98,4 +122,4 @@ class Login extends React.Component {
   }
 }
 
-export default Login;
+export default withRouter(Login);

@@ -18,7 +18,7 @@ exports[`Storyshots PartnerLogoLink default 1`] = `
     <img
       alt="GitHub logo"
       className="logo"
-      src="https://s3.amazonaws.com/operationcode-assets/partnerLogos/github.png"
+      src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/github.png"
     />
   </a>
 </div>

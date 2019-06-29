@@ -20,12 +20,14 @@ OutboundLink.defaultProps = {
 };
 
 function OutboundLink({ analyticsEventLabel, children, className, hasIcon, href }) {
+  const isNotMailToLink = !href.startsWith('mailto:');
+
   return (
     <ReactGA.OutboundLink
       className={className}
       eventLabel={`OUTBOUND [${analyticsEventLabel}]`}
-      rel="noopener noreferrer"
-      target="_blank"
+      rel={isNotMailToLink ? 'noopener noreferrer' : undefined}
+      target={isNotMailToLink ? '_blank' : undefined}
       to={href}
     >
       <>
