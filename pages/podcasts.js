@@ -4,7 +4,7 @@ import RssParser from 'rss-parser';
 import Head from 'components/head';
 import Alert from 'components/Alert/Alert';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
-import ImageCard from 'components/Cards/ImageCard/ImageCard';
+import Card from 'components/Cards/Card/Card';
 import Content from 'components/Content/Content';
 import FAQItem from 'components/FAQ/FAQItem/FAQItem';
 import styles from './styles/podcasts.css';
@@ -47,10 +47,9 @@ class Podcasts extends React.Component {
       <>
         <Head title={pageTitle} />
 
-        {/* TODO: Set meta info to: Interviews with military veterans, spouses, and others from
-        the Operation Code community on their transition to careers to technology. */}
-
-        <HeroBanner title={pageTitle} />
+        <HeroBanner title={pageTitle}>
+          <p>Come listen to some inspiring stories of our vets transitioning into tech!</p>
+        </HeroBanner>
 
         <Content
           columns={
@@ -58,7 +57,7 @@ class Podcasts extends React.Component {
               <Alert isOpen>Something went wrong on our end...</Alert>
             ) : (
               episodes.map(episode => (
-                <ImageCard
+                <Card
                   alt="Default podcast Image"
                   className={styles.content}
                   imageSource={episode.image}
@@ -70,7 +69,7 @@ class Podcasts extends React.Component {
                     controls
                   />
                   <FAQItem question={episode.name} answer={episode.story} key={episode.name} />
-                </ImageCard>
+                </Card>
               ))
             )
           }
