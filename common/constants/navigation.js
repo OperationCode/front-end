@@ -5,28 +5,32 @@ import { donateLink } from 'common/constants/urls';
 const contactLink = {
   name: 'Contact Us',
   href: '/contact',
+  shouldPrefetch: false,
 };
 
 const faqLink = {
   name: 'FAQ',
   href: '/faq',
+  shouldPrefetch: false,
 };
 
 const getInvolvedLink = {
   name: 'Get Involved',
   href: '/get_involved',
+  shouldPrefetch: true,
 };
 
 const eventsLink = {
   name: 'Events',
   href: '/events',
+  shouldPrefetch: true,
 };
 
 // MARK: Top-level navigation items
 const whoWeServeWithoutSublinks = {
   name: 'Who We Serve',
   href: '/who_we_serve',
-  shouldPrefetch: false,
+  shouldPrefetch: true,
 };
 
 const whoWeServeWithSublinks = {
@@ -46,7 +50,7 @@ const whoWeServeWithSublinks = {
 const aboutUs = {
   name: 'About Us',
   href: '/about',
-  shouldPrefetch: false,
+  shouldPrefetch: true,
   sublinks: [contactLink, faqLink],
 };
 
@@ -57,7 +61,6 @@ const events = {
 
 const getInvolved = {
   ...getInvolvedLink,
-  shouldPrefetch: false,
   sublinks: [
     {
       name: 'Sponsorship',

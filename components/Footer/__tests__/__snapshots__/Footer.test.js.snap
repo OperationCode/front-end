@@ -37,6 +37,7 @@ exports[`Footer should render with no props passed 1`] = `
           <li>
             <Link
               href="/about"
+              prefetch={false}
             >
               <a>
                 About Us
@@ -46,6 +47,7 @@ exports[`Footer should render with no props passed 1`] = `
           <li>
             <Link
               href="/contact"
+              prefetch={false}
             >
               <a>
                 Contact Us
@@ -55,6 +57,7 @@ exports[`Footer should render with no props passed 1`] = `
           <li>
             <Link
               href="/faq"
+              prefetch={false}
             >
               <a>
                 FAQ
@@ -68,6 +71,7 @@ exports[`Footer should render with no props passed 1`] = `
           <li>
             <Link
               href="/code_schools"
+              prefetch={false}
             >
               <a>
                 Code Schools
@@ -77,6 +81,7 @@ exports[`Footer should render with no props passed 1`] = `
           <li>
             <Link
               href="/jobs"
+              prefetch={false}
             >
               <a>
                 Job Board
@@ -86,6 +91,7 @@ exports[`Footer should render with no props passed 1`] = `
           <li>
             <Link
               href="/events"
+              prefetch={false}
             >
               <a>
                 Events
@@ -95,6 +101,7 @@ exports[`Footer should render with no props passed 1`] = `
           <li>
             <Link
               href="/who_we_serve"
+              prefetch={false}
             >
               <a>
                 Who We Serve
@@ -112,6 +119,7 @@ exports[`Footer should render with no props passed 1`] = `
           <li>
             <Link
               href="/get_involved"
+              prefetch={false}
             >
               <a>
                 Get Involved
@@ -121,6 +129,7 @@ exports[`Footer should render with no props passed 1`] = `
           <li>
             <Link
               href="/history"
+              prefetch={false}
             >
               <a>
                 History
@@ -143,6 +152,7 @@ exports[`Footer should render with no props passed 1`] = `
           <li>
             <Link
               href="/press"
+              prefetch={false}
             >
               <a>
                 Press
@@ -152,6 +162,7 @@ exports[`Footer should render with no props passed 1`] = `
           <li>
             <Link
               href="/branding"
+              prefetch={false}
             >
               <a>
                 Branding
@@ -161,6 +172,7 @@ exports[`Footer should render with no props passed 1`] = `
           <li>
             <Link
               href="/team"
+              prefetch={false}
             >
               <a>
                 Team
@@ -186,6 +198,7 @@ exports[`Footer should render with no props passed 1`] = `
     >
       <Link
         href="/terms"
+        prefetch={false}
       >
         <a
           className="lineHeightFix"
