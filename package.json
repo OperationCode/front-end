@@ -136,7 +136,7 @@
     "jest": "^24.8.0",
     "jest-enzyme": "7.0.2",
     "jest-prop-type-error": "^1.1.0",
-    "lint-staged": "^8.2.1",
+    "lint-staged": "^9.0.0",
     "prettier": "^1.18.2",
     "react-addons-test-utils": "^15.6.2",
     "react-test-renderer": "^16.8.6",
