@@ -39,6 +39,16 @@ class Podcasts extends React.Component {
     error: undefined,
   };
 
+  // Podcasts.defaultProps = {
+  //   children: undefined,
+  //   title: undefined,
+  //   description:
+  // eslint-disable-next-line max-len
+  //     'Interviews with military veterans, spouses, and others from the Operation Code community on their transition to careers to technology',
+  //   url: 'https://operationcode.org',
+  //   ogImage: `${s3}branding/logos/small-blue-logo.png`,
+  // };
+
   render() {
     const { episodes, error } = this.props;
     const pageTitle = 'Podcasts';
@@ -58,6 +68,7 @@ class Podcasts extends React.Component {
             ) : (
               episodes.map(episode => (
                 <Card
+                  id="podcast-card"
                   alt="Default podcast Image"
                   className={styles.content}
                   imageSource={episode.image}
