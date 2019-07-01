@@ -1,8 +1,8 @@
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
-import FAQItem from 'components/FAQ/FAQItem/FAQItem';
-import QuestionAnswerData from 'components/FAQ/questions';
+import AccordionItem from 'components/Accordion/AccordionItem/AccordionItem';
+import QuestionAnswerData from 'components/Accordion/questions';
 
 export default () => (
   <>
@@ -14,7 +14,7 @@ export default () => (
       title="General Questions"
       hasTitleUnderline
       columns={QuestionAnswerData.general.map(faq => (
-        <FAQItem question={faq.question} answer={faq.answer} key={faq.question} />
+        <AccordionItem title={faq.title} content={faq.content} key={faq.title} />
       ))}
     />
 
@@ -22,7 +22,7 @@ export default () => (
       title="Donation Questions"
       hasTitleUnderline
       columns={QuestionAnswerData.donation.map(faq => (
-        <FAQItem question={faq.question} answer={faq.answer} key={faq.question} />
+        <AccordionItem title={faq.title} content={faq.content} key={faq.content} />
       ))}
     />
 
@@ -30,7 +30,7 @@ export default () => (
       title="Volunteer Questions"
       hasTitleUnderline
       columns={QuestionAnswerData.volunteer.map(faq => (
-        <FAQItem question={faq.question} answer={faq.answer} key={faq.question} />
+        <AccordionItem title={faq.title} content={faq.content} key={faq.title} />
       ))}
     />
   </>
