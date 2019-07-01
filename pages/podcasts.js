@@ -6,7 +6,7 @@ import Alert from 'components/Alert/Alert';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Card from 'components/Cards/Card/Card';
 import Content from 'components/Content/Content';
-import FAQItem from 'components/FAQ/FAQItem/FAQItem';
+import AccordionItem from 'components/Accordion/AccordionItem/AccordionItem';
 import styles from './styles/podcasts.css';
 
 class Podcasts extends React.Component {
@@ -79,7 +79,7 @@ class Podcasts extends React.Component {
                     // autoPlay
                     controls
                   />
-                  <FAQItem question={episode.name} answer={episode.story} key={episode.name} />
+                  <AccordionItem title={episode.name} content={episode.story} key={episode.name} />
                 </Card>
               ))
             )

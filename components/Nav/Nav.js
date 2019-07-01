@@ -57,7 +57,7 @@ export class Nav extends Component {
         <header className={styles.NavDesktop} data-testid="Desktop Nav">
           <div className={styles.navContainer}>
             <nav>
-              <Link href="/">
+              <Link href="/" key="Home" prefetch={false}>
                 <a className={classNames(styles.logoLink, styles.link)}>
                   <img
                     src={`${s3}branding/logos/small-blue-logo.png`}
@@ -71,8 +71,8 @@ export class Nav extends Component {
                 {navItems.map(navItem => (
                   <NavListItem key={navItem.name} {...navItem} />
                 ))}
-                <li>
-                  <Link href={donateLink}>
+                <li key="Donate">
+                  <Link href={donateLink} prefetch={false}>
                     <a className={classNames(styles.link, styles.donateLink)}>
                       <span>Donate</span>
                     </a>

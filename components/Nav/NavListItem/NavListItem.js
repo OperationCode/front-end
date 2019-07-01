@@ -15,6 +15,7 @@ export default class NavListItem extends Component {
       shape({
         name: string.isRequired,
         href: string.isRequired,
+        shouldPrefetch: bool,
       }),
     ),
   };
@@ -88,7 +89,7 @@ export default class NavListItem extends Component {
             >
               {props.sublinks.map(sublink => (
                 <li className={styles.sublinkListItem} key={sublink.name}>
-                  <Link href={sublink.href}>
+                  <Link href={sublink.href} prefetch={sublink.shouldPrefetch || false}>
                     <a
                       className={styles.link}
                       key={sublink.name}
