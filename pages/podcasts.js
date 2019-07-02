@@ -73,6 +73,8 @@ class Podcasts extends React.Component {
                   className={styles.content}
                   imageSource={episode.image}
                 >
+                  <img src={episode.image} alt={episode.name} className={styles.img} />
+
                   <ReactAudioPlayer
                     // title="Title"
                     src={episode.source}

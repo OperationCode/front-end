@@ -8,3 +8,8 @@
   height: calc(100% - 3rem); /* 1.5rem margin top AND bottom hence 3rem */
   width: calc(50% - 3rem); /* 1.5rem margin left AND right hence 3rem */
 }
+
+img {
+  width: calc(100% - 3rem);
+  height: auto;
+}
