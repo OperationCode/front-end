@@ -44,13 +44,7 @@ jobs:
       - run:
           name: Install dependencies
           command: |
-            yarn global add greenkeeper-lockfile@2
-
-            if [[ ${CIRCLE_BRANCH} == greenkeeper* ]]; then
-                  yarn;
-            else
-                  yarn  --frozen-lockfile --production=false;
-            fi
+            yarn
 
       - run:
           name: Initializing CodeClimate
@@ -75,7 +69,6 @@ jobs:
       - run:
           name: Post test scripts
           command: |
-            greenkeeper-lockfile-upload
             /usr/local/bin/cc-test-reporter after-build
 
   cypress_install:
@@ -89,13 +82,7 @@ jobs:
       - run:
           name: Yarn install
           command: |
-            yarn global add greenkeeper-lockfile@2
-
-            if [[ ${CIRCLE_BRANCH} == greenkeeper* ]]; then
-                  yarn;
-            else
-                  yarn  --frozen-lockfile --production=false;
-            fi
+            yarn
 
       - run:
           command: npx cypress verify
