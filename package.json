@@ -47,7 +47,7 @@
     "@storybook/addon-actions": "3.4.11",
     "@storybook/addon-backgrounds": "3.4.11",
     "@storybook/addon-info": "3.4.11",
-    "@storybook/addon-knobs": "3.4.11",
+    "@storybook/addon-knobs": "5.1.9",
     "@storybook/addon-options": "3.4.11",
     "@storybook/addon-storyshots": "3.4.11",
     "@storybook/addon-viewport": "3.4.11",
