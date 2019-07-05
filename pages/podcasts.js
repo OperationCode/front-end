@@ -77,7 +77,7 @@ class Podcasts extends React.Component {
 
                   <ReactPlayer
                   url={episode.source}
-                  controls="true"
+                  controls={true}
                   width="80%"
                   height="65px" 
                   />
