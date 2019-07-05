@@ -12,14 +12,14 @@ function AccordionItem({ title, content }) {
   const titleID = title.replace(/[.,/#!?@#$%^&*;:{}=\-_'`~()]/g, '').replace(/\s{2,}/g, ' ');
 
   return (
-    <div className={styles.accordionSingle}>
-      <input className={styles.accordionSingleHidden} type="checkbox" id={titleID} />
+    <div className={styles.accordion}>
+      <input className={styles.accordionHidden} type="checkbox" id={titleID} />
 
-      <label className={styles.accordionSingleQuestion} htmlFor={titleID}>
+      <label className={styles.accordion} htmlFor={titleID}>
         {title}
       </label>
 
-      <p className={styles.accordionSingleAnswer}>{content}</p>
+      <p className={styles.accordion}>{content}</p>
     </div>
   );
 }

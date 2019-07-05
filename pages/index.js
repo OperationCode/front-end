@@ -35,7 +35,7 @@ const featuredLinksArray = [
     href: 'podcasts',
     name: 'Podcasts',
     imageSource: `${s3}redesign/images/fist-bumping.jpg`, // change photo
-    lt: 'A team fist-bumping eachother over a table.',
+    alt: 'A team fist-bumping eachother over a table.',
   },
 ];
 
