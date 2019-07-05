@@ -1,5 +1,5 @@
 import { arrayOf, shape, string } from 'prop-types';
-import ReactAudioPlayer from 'react-audio-player';
+import ReactPlayer from 'react-player';
 import RssParser from 'rss-parser';
 import Head from 'components/head';
 import Alert from 'components/Alert/Alert';
@@ -65,12 +65,8 @@ class Podcasts extends React.Component {
                 >
                   <img src={episode.image} alt={episode.name} className={styles.img} />
 
-                  <ReactAudioPlayer
-                    // title="Title"
-                    src={episode.source}
-                    // autoPlay
-                    controls
-                  />
+                  <ReactPlayer url={episode.source} controls="true" width="80%" height="65px" />
+
                   <AccordionItem title={episode.name} content={episode.story} key={episode.name} />
                 </Card>
               ))
