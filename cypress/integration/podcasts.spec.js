@@ -12,4 +12,8 @@ describe('podcasts', () => {
   it('checks if audio is playing', () => {
     cy.audio('episode.source').should('be.playing', true);
   });
+
+  it('checks if play button is clicked', () => {
+    cy.click('controls').should('be.clicked', true);
+  });
 });

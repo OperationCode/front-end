@@ -1,58 +1,66 @@
-.accordion {
+.accordionSingleHidden {
+  display: none;
+}
+
+.accordionSingleContent {
   margin-top: 5px;
   max-height: 0;
   opacity: 0;
   transition: all 0.4s ease;
   position: relative;
   max-width: 100%;
-  border: 1px solid #c5c5c5;
-  padding: 20px;
-  border-radius: 5px;
-  margin-bottom: 10px;
-  font-weight: 600;
-  text-transform: uppercase;
-  cursor: pointer;
 }
 
-.accordionHidden {
-  display: none;
-}
-
-.accordion:hover,
-.accordion:focus {
-  text-decoration: underline;
-}
-
-.accordionHidden:not(:checked) ~ .accordion {
+.accordionSingleHidden:not(:checked) ~ .accordionSingleContent {
   height: 0;
   margin: 0;
 }
 
-.accordionHidden:checked ~ .accordion {
+.accordionSingleHidden:checked ~ .accordionSingleContent {
   max-height: 1000px;
   opacity: 1;
   margin-top: 14px;
 }
 
-.accordion::before {
+.accordionSingle {
+  border: 1px solid #c5c5c5;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.accordionSingleTitle {
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
+}
+
+.accordionSingleTitle:hover,
+.accordionSingleTitle:focus {
+  text-decoration: underline;
+}
+
+.accordionSingleTitle::before {
   display: inline-block;
   margin-right: 10px;
   color: var(--primary);
   content: "+";
 }
 
-.accordionHidden:checked ~ .accordion::after {
+.accordionSingleHidden:checked ~ .accordionSingleTitle::after {
   content: "-";
 }
 
 @media screen and (--medium-viewport) {
-  .accordion {
+  .accordionSingle {
     max-width: 270px;
   }
 }
 
 @media screen and (--small-viewport) {
-  .accordion {
+  .accordionSingle {
     max-width: 200px;
   }
 }
