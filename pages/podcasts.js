@@ -65,7 +65,7 @@ class Podcasts extends React.Component {
                 >
                   <img src={episode.image} alt={episode.name} className={styles.img} />
 
-                  <ReactPlayer url={episode.source} controls="true" width="80%" height="65px" />
+                  <ReactPlayer url={episode.source} controls width="80%" height="65px" />
 
                   <AccordionItem title={episode.name} content={episode.story} key={episode.name} />
                 </Card>

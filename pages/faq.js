@@ -9,8 +9,8 @@ import { donateLink } from 'common/constants/urls';
 const questions = {
   general: [
     {
-      question: 'When was Operation Code founded?',
-      answer: (
+      title: 'When was Operation Code founded?',
+      content: (
         <>
           The first line of code for the Operation Code site was pushed on August 21, 2014.
           Operation Code formally became a 501(c)3 nonprofit on May 4, 2016.
@@ -18,8 +18,8 @@ const questions = {
       ),
     },
     {
-      question: 'How was Operation Code founded?',
-      answer: (
+      title: 'How was Operation Code founded?',
+      content: (
         <>
           Operation Code was founded in Portland, Oregon by ex-Army Captain David Molina, who took
           action and built operationcode.org to petition Congress to expand the New GI Bill to
@@ -28,8 +28,8 @@ const questions = {
       ),
     },
     {
-      question: 'Is Operation Code a 501(c)(3) nonprofit organization?',
-      answer: (
+      title: 'Is Operation Code a 501(c)(3) nonprofit organization?',
+      content: (
         <>
           Yes. Operation Code was granted tax-exempt status by the Internal Revenue Service,
           functioning as a charity under 501(c)(3) of the Internal Revenue Code, effective 4 May
@@ -39,8 +39,8 @@ const questions = {
       ),
     },
     {
-      question: 'Where is Operation Code based? Do you have a location near me?',
-      answer: (
+      title: 'Where is Operation Code based? Do you have a location near me?',
+      content: (
         <>
           Operation Code, much like software, is built from anywhere with an internet connection,
           and is not based in one location. While we&apos;re headquartered in Portland, the entire
@@ -52,8 +52,8 @@ const questions = {
       ),
     },
     {
-      question: 'Who does Operation Code serve?',
-      answer: (
+      title: 'Who does Operation Code serve?',
+      content: (
         <>
           Operation Code serves our nation&apos;s finest who&apos;ve worn the uniform and their
           families who are interested in coding and software development. Our programs are offered
@@ -63,9 +63,9 @@ const questions = {
       ),
     },
     {
-      question:
+      title:
         'What do I need to start learning software development and how much is this going to cost?',
-      answer: (
+      content: (
         <>
           First off, you will need access to a solid computer, a good browser (ex. Chrome), and a
           strong internet connection. It costs nothing to start learning to code and receive
@@ -76,8 +76,8 @@ const questions = {
       ),
     },
     {
-      question: 'What is available to start learning to code today?',
-      answer: (
+      title: 'What is available to start learning to code today?',
+      content: (
         <>
           Our friends at the New York City-based, The Flatiron School created{' '}
           <OutboundLink analyticsEventLabel="QnA Link" href="https://learn.co/">
@@ -101,8 +101,8 @@ const questions = {
       ),
     },
     {
-      question: 'Are mentors available? If so, how do I request one?',
-      answer: (
+      title: 'Are mentors available? If so, how do I request one?',
+      content: (
         <>
           While we do not have a long-term mentorship program, mentors are available for 30-minute
           sessions to assist you with things like mock interviews, code reviews, or general
@@ -115,8 +115,8 @@ const questions = {
       ),
     },
     {
-      question: 'What are the hours of operation for Operation Code?',
-      answer: (
+      title: 'What are the hours of operation for Operation Code?',
+      content: (
         <>
           Operation Code is different in that we don&apos;t have regular business office hours. The
           team can usually be found in, our{' '}
@@ -135,8 +135,8 @@ const questions = {
       ),
     },
     {
-      question: "How can I help, if I can't afford to donate to Operation Code?",
-      answer: (
+      title: "How can I help, if I can't afford to donate to Operation Code?",
+      content: (
         <>
           In addition to requiring financial support, we also need{' '}
           <OutboundLink analyticsEventLabel="QnA Link" href="http://op.co.de/volunteer">
@@ -152,10 +152,10 @@ const questions = {
       ),
     },
     {
-      question:
+      title:
         'I would like to receive Operation Code updates and news. How can I receive these' +
         ' communications?',
-      answer: (
+      content: (
         <>
           We primarily use{' '}
           <OutboundLink analyticsEventLabel="QnA Link" href="https://twitter.com/operation_code">
@@ -171,8 +171,8 @@ const questions = {
       ),
     },
     {
-      question: "My question isn't listed. How do I contact Operation Code?",
-      answer: (
+      title: "My question isn't listed. How do I contact Operation Code?",
+      content: (
         <>
           If you have a question that isn&apos;t listed here on our FAQ, write to{' '}
           <OutboundLink
@@ -188,8 +188,8 @@ const questions = {
   ],
   donation: [
     {
-      question: 'What is the fastest way to make a donation?',
-      answer: (
+      title: 'What is the fastest way to make a donation?',
+      content: (
         <>
           The fastest way to make a donation is through our secured online form{' '}
           <OutboundLink analyticsEventLabel="QnA Link" href={donateLink}>
@@ -200,8 +200,8 @@ const questions = {
       ),
     },
     {
-      question: 'I would rather mail a check. To whom do I make it out and where do I send it?',
-      answer: (
+      title: 'I would rather mail a check. To whom do I make it out and where do I send it?',
+      content: (
         <>
           It&apos;s less administrative work to accept online donations. Get in touch so we can
           assess your situation and contribution commitment.
@@ -209,16 +209,16 @@ const questions = {
       ),
     },
     {
-      question: 'When will I receive a receipt for my contribution?',
-      answer: (
+      title: 'When will I receive a receipt for my contribution?',
+      content: (
         <>
           When you make a donation to Operation Code online, you will receive an receipt by email.
         </>
       ),
     },
     {
-      question: 'What percentage of my donation goes directly to helping the military community?',
-      answer: (
+      title: 'What percentage of my donation goes directly to helping the military community?',
+      content: (
         <>
           Our goal is to direct 100 percent of online donations for programs and services, and keep
           administrative costs low while our annual fundraiser, grants and services fund operations.
@@ -226,8 +226,8 @@ const questions = {
       ),
     },
     {
-      question: 'Can I donate items as gift in-kind?',
-      answer: (
+      title: 'Can I donate items as gift in-kind?',
+      content: (
         <>
           As a program-based nonprofit organization, Operation Code welcomes in-kind donations to
           directly benefit the organization, transitioning military, citizen-soldiers, veterans and
@@ -238,9 +238,9 @@ const questions = {
       ),
     },
     {
-      question: `I'd like to donate my software conference pass
+      title: `I'd like to donate my software conference pass
       to an Operation Code member. How do I do that?`,
-      answer: (
+      content: (
         <>
           Get in touch, and we&apos;ll make an announcement in our Slack, tweet and/or write a blog
           post, and find a veteran to take your spot. Even then, travel and lodging is often a
@@ -249,8 +249,8 @@ const questions = {
       ),
     },
     {
-      question: 'Can I make donations to a particular veteran or their family learning to code?',
-      answer: (
+      title: 'Can I make donations to a particular veteran or their family learning to code?',
+      content: (
         <>
           <OutboundLink
             analyticsEventLabel="QnA Link"
@@ -263,8 +263,8 @@ const questions = {
       ),
     },
     {
-      question: 'What is AmazonSmile and how can buying at Amazon help Operation Code?',
-      answer: (
+      title: 'What is AmazonSmile and how can buying at Amazon help Operation Code?',
+      content: (
         <>
           When you visit{' '}
           <OutboundLink
@@ -288,8 +288,8 @@ const questions = {
   ],
   volunteer: [
     {
-      question: 'How to Volunteer?',
-      answer: (
+      title: 'How to Volunteer?',
+      content: (
         <>
           If you would like to become a volunteer, please apply{' '}
           <OutboundLink analyticsEventLabel="QnA Link" href="http://op.co.de/volunteer">
@@ -300,8 +300,8 @@ const questions = {
       ),
     },
     {
-      question: 'What volunteer opportunities are there at Operation Code?',
-      answer: (
+      title: 'What volunteer opportunities are there at Operation Code?',
+      content: (
         <>Currently, fundraising, community leaders, and grant writers are our current needs.</>
       ),
     },
@@ -326,7 +326,7 @@ export default () => (
       title="Donation Questions"
       hasTitleUnderline
       columns={questions.donation.map(faq => (
-        <AccordionItem title={faq.title} content={faq.content} key={faq.content} />
+        <AccordionItem title={faq.title} content={faq.content} key={faq.title} />
       ))}
     />
 
