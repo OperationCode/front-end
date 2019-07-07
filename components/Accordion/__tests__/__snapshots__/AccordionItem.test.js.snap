@@ -10,13 +10,13 @@ exports[`AccordionItem should render with required props 1`] = `
     type="checkbox"
   />
   <label
-    className="accordionSingleQuestion"
+    className="accordionSingleTitle"
     htmlFor="How do I test things"
   >
     How do I test things?
   </label>
   <p
-    className="accordionSingleAnswer"
+    className="accordionSingleContent"
   >
     Like so!
   </p>

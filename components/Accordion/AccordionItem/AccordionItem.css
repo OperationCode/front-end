@@ -1,8 +1,8 @@
-.accordionSingleHidden {
+.accordionHidden {
   display: none;
 }
 
-.accordionSingleContent {
+.accordionContent {
   margin-top: 5px;
   max-height: 0;
   opacity: 0;
@@ -11,18 +11,18 @@
   max-width: 100%;
 }
 
-.accordionSingleHidden:not(:checked) ~ .accordionSingleContent {
+.accordionHidden:not(:checked) ~ .accordionContent {
   height: 0;
   margin: 0;
 }
 
-.accordionSingleHidden:checked ~ .accordionSingleContent {
+.accordionHidden:checked ~ .accordionContent {
   max-height: 1000px;
   opacity: 1;
   margin-top: 14px;
 }
 
-.accordionSingle {
+.accordion {
   border: 1px solid #c5c5c5;
   padding: 20px;
   border-radius: 5px;
@@ -30,37 +30,37 @@
   width: 100%;
 }
 
-.accordionSingleTitle {
+.accordionTitle {
   font-weight: 600;
   text-transform: uppercase;
   cursor: pointer;
   position: relative;
 }
 
-.accordionSingleTitle:hover,
-.accordionSingleTitle:focus {
+.accordionTitle:hover,
+.accordionTitle:focus {
   text-decoration: underline;
 }
 
-.accordionSingleTitle::before {
+.accordionTitle::before {
   display: inline-block;
   margin-right: 10px;
   color: var(--primary);
   content: "+";
 }
 
-.accordionSingleHidden:checked ~ .accordionSingleTitle::after {
+.accordionHidden:checked ~ .accordionTitle::after {
   content: "-";
 }
 
 @media screen and (--medium-viewport) {
-  .accordionSingle {
+  .accordion {
     max-width: 270px;
   }
 }
 
 @media screen and (--small-viewport) {
-  .accordionSingle {
+  .accordion {
     max-width: 200px;
   }
 }
