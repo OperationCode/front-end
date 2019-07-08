@@ -2,7 +2,6 @@ import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
 import AccordionItem from 'components/Accordion/AccordionItem/AccordionItem';
-
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 import { donateLink } from 'common/constants/urls';
 
