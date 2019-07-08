@@ -10379,10 +10379,10 @@ next-cookies@^1.1.2:
     component-cookie "1.1.3"
     cookie "^0.3.1"
 
-next-server@8.1.1-canary.66:
-  version "8.1.1-canary.66"
-  resolved "https://registry.yarnpkg.com/next-server/-/next-server-8.1.1-canary.66.tgz#f577d1faff1aa84c9fe74b3e0dc126641e04f2b6"
-  integrity sha512-TjCrEU0H+KL3OpU+mYja4N4gJ7P+3rBdiFFCGiPhw3KNBx5pkbUYa0esTT+hfMUqCaxrDfV7LkElFUTDAa3sEg==
+next-server@9.0.0:
+  version "9.0.0"
+  resolved "https://registry.yarnpkg.com/next-server/-/next-server-9.0.0.tgz#a90c6f7e10ce3b3d69cab17cbf9fbcb536c579c4"
+  integrity sha512-bKEuXxcY9Nv8GL4364rErlByRZzhfQbyBGrGvk1t6Nskp5fGhhSDXgH8oMP3DGx3w92sdA+tS2Zel4i9eWHSyw==
   dependencies:
     amp-toolbox-optimizer "1.2.0-alpha.1"
     content-type "1.0.4"
@@ -10403,10 +10403,10 @@ next-tick@1:
   resolved "https://registry.yarnpkg.com/next-tick/-/next-tick-1.0.0.tgz#ca86d1fe8828169b0120208e3dc8424b9db8342c"
   integrity sha1-yobR/ogoFpsBICCOPchCS524NCw=
 
-next@8.1.1-canary.66:
-  version "8.1.1-canary.66"
-  resolved "https://registry.yarnpkg.com/next/-/next-8.1.1-canary.66.tgz#4c0b860daecdbcf29c1520cc4fee31c59c3433b9"
-  integrity sha512-vfHhuYMrZY0wEfQG6VtaQTgDiROiEO5w6bkehengjjaXVlQKRRWpsP3JRwUOVq+XLvacLcu+A3jf8rBO2oQ6eQ==
+next@^9.0.0:
+  version "9.0.0"
+  resolved "https://registry.yarnpkg.com/next/-/next-9.0.0.tgz#c2cecdd279b5ff1df74b0f18c63fb04328ecd673"
+  integrity sha512-xMBVY3N/EAbjyb+7DbhP0JetJqZzCiYG44bJqDRh0QTYI+RYcYvW1Z+rxKQsm5CIyJuc2jCii+61DznKbpnrlA==
   dependencies:
     "@babel/core" "7.4.5"
     "@babel/plugin-proposal-class-properties" "7.4.4"
@@ -10434,7 +10434,7 @@ next@8.1.1-canary.66:
     launch-editor "2.2.1"
     loader-utils "1.2.3"
     mkdirp "0.5.1"
-    next-server "8.1.1-canary.66"
+    next-server "9.0.0"
     prop-types "15.7.2"
     prop-types-exact "1.2.0"
     react-error-overlay "5.1.6"
