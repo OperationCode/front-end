@@ -45,7 +45,7 @@
     "@sentry/browser": "^5.4.3",
     "@storybook/addon-a11y": "3.4.11",
     "@storybook/addon-actions": "3.4.11",
-    "@storybook/addon-backgrounds": "3.4.11",
+    "@storybook/addon-backgrounds": "5.1.9",
     "@storybook/addon-info": "3.4.11",
     "@storybook/addon-knobs": "3.4.11",
     "@storybook/addon-options": "3.4.11",
