@@ -9,7 +9,7 @@
   width: calc(50% - 3rem); /* 1.5rem margin left AND right hence 3rem */
 }
 
-img {
+.img {
   max-height: 300px;
   max-width: 100%;
 }
