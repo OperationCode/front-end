@@ -9,7 +9,6 @@ exports[`NavListItem should render with required props passed 1`] = `
     prefetch={false}
   >
     <a
-      aria-expanded={false}
       className="link navItemLink"
       data-testid="Nav Item Test"
       onMouseEnter={[Function]}

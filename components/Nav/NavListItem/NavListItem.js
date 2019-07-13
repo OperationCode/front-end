@@ -50,7 +50,6 @@ export default class NavListItem extends Component {
       <li className={styles.NavListItem}>
         <Link href={props.href} prefetch={props.shouldPrefetch}>
           <a
-            aria-expanded={state.areSublinksVisible}
             className={classNames(styles.link, styles.navItemLink)}
             onMouseEnter={this.showSublinks}
             onMouseLeave={this.hideSublinks}
