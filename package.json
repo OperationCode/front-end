@@ -26,7 +26,8 @@
     "test:changes": "yarn test --changedSince master",
     "test:changes:watch": "yarn test --changedSince master --watch",
     "test:watch": "yarn test --watch",
-    "test:update-snaps": "yarn test -u"
+    "test:update-snaps": "yarn test -u",
+    "test:sitemap": "node generate-sitemap.js"
   },
   "lint-staged": {
     "*.js": [
