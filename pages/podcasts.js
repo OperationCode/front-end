@@ -56,20 +56,26 @@ class Podcasts extends React.Component {
             error ? (
               <Alert isOpen>Something went wrong on our end...</Alert>
             ) : (
-              episodes.map(episode => (
-                <Card
-                  id="podcast-card"
-                  alt="Default podcast Image"
-                  className={styles.content}
-                  imageSource={episode.image}
-                >
-                  <img src={episode.image} alt={episode.name} className={styles.img} />
+              episodes.map(({ name, image, source, story }) => {
+                /*
+                 * Some episodes have multiple parts and are named like "${Name}, part 1".
+                 * Some episodes are named "${Name} Interview"
+                 *
+                 * Parsing them in this manner ensures that the name of the interviewee is
+                 * available and used for the image alt tag.
+                 */
+                const interviewee = name.replace(/ interview/gi, '').split(',')[0];
 
-                  <ReactPlayer url={episode.source} controls width="80%" height="65px" />
+                return (
+                  <Card data-testid="podcast-card" className={styles.content}>
+                    <img src={image} alt={interviewee} className={styles.img} />
 
-                  <AccordionItem title={episode.name} content={episode.story} key={episode.name} />
-                </Card>
-              ))
+                    <ReactPlayer url={source} controls width="80%" height="65px" />
+
+                    <AccordionItem title={name} content={story} key={name} />
+                  </Card>
+                );
+              })
             )
           }
         />
