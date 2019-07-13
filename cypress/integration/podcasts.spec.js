@@ -6,21 +6,21 @@ describe('podcasts', () => {
   });
 
   it('renders many podcast cards', () => {
-    cy.get('[data-testid="Card"]').should('have.length.greaterThan', 30);
+    cy.get('[data-testid="Card"]').should('have.length.greaterThan', 0);
   });
 
-  it('renders "Podcast Episodes" after filtering for Card', () => {
-    cy.get('[data-testid="Card"]')
+  it('renders "Episodes" after filtering for Card', () => {
+    cy.get('[data-testid="podcast-card"]')
       .type('podcast-card', { force: true })
       .type('{enter}');
 
-    cy.get('[data-testid="Card" podcast-card]').should('exist');
+    cy.get('[data-testid="podcast-card"]').should('exist');
   });
 
   it('checks if audio is playing after play button is clicked', () => {
-    cy.contains('podcast-episode')
+    cy.contains('episode.source')
       .click()
-      .audio('episode.source')
+      .audio()
       .should('be.playing', true);
   });
 
