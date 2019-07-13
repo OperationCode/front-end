@@ -51,7 +51,6 @@ export default class NavListItem extends Component {
         <Link href={props.href} prefetch={props.shouldPrefetch}>
           <a
             aria-expanded={state.areSublinksVisible}
-            aria-haspopup={hasSublinks}
             className={classNames(styles.link, styles.navItemLink)}
             onMouseEnter={this.showSublinks}
             onMouseLeave={this.hideSublinks}
@@ -67,6 +66,7 @@ export default class NavListItem extends Component {
           <>
             <button
               aria-expanded={state.areSublinksVisible}
+              aria-haspopup={hasSublinks}
               className={styles.sublinkToggleButton}
               onClick={this.toggleSublinkVisibility}
               onMouseEnter={this.showSublinks}
