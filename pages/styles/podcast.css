@@ -17,10 +17,6 @@
 
 @media screen and (--small-viewport) {
   .podcastCard {
-    align-items: center;
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
     width: 100%;
   }
 }
