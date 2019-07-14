@@ -128,6 +128,16 @@ exports[`Footer should render with no props passed 1`] = `
           </li>
           <li>
             <Link
+              href="/podcast"
+              prefetch={false}
+            >
+              <a>
+                Podcast
+              </a>
+            </Link>
+          </li>
+          <li>
+            <Link
               href="/history"
               prefetch={false}
             >
