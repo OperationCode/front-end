@@ -3,7 +3,7 @@ describe('podcast', () => {
     beforeEach(() => {
       cy.server();
       cy.visitAndWaitFor('/podcast');
-      cy.get('h1').should('have.text', 'podcast');
+      cy.get('h1').should('have.text', 'Podcast');
     });
 
     it('renders many podcast cards', () => {
