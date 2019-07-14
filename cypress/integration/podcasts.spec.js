@@ -1,9 +1,9 @@
-describe('podcasts', () => {
+describe('podcast', () => {
   describe('when server responds successfully', () => {
     beforeEach(() => {
       cy.server();
-      cy.visitAndWaitFor('/podcasts');
-      cy.get('h1').should('have.text', 'Podcasts');
+      cy.visitAndWaitFor('/podcast');
+      cy.get('h1').should('have.text', 'podcast');
     });
 
     it('renders many podcast cards', () => {

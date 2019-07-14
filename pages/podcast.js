@@ -7,14 +7,14 @@ import Alert from 'components/Alert/Alert';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Card from 'components/Cards/Card/Card';
 import Content from 'components/Content/Content';
-import styles from './styles/podcasts.css';
+import styles from './styles/podcast.css';
 
-class Podcasts extends React.Component {
+class Podcast extends React.Component {
   static async getInitialProps() {
     const parser = new RssParser();
 
     try {
-      const feed = await parser.parseURL('http://operationcode.libsyn.com/rss');
+      const feed = await parser.parseURL('https://operationcode.libsyn.com/rss');
 
       const episodes = feed.items.map(({ itunes: { image }, link, title, contentSnippet }) => ({
         image,
@@ -41,7 +41,7 @@ class Podcasts extends React.Component {
 
   render() {
     const { episodes, errorMessage } = this.props;
-    const pageTitle = 'Podcasts';
+    const pageTitle = 'Podcast';
 
     return (
       <>
@@ -87,4 +87,4 @@ class Podcasts extends React.Component {
   }
 }
 
-export default Podcasts;
+export default Podcast;
