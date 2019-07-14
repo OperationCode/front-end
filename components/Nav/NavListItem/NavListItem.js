@@ -66,6 +66,7 @@ export default class NavListItem extends Component {
             <button
               aria-expanded={state.areSublinksVisible}
               aria-haspopup={hasSublinks}
+              aria-label="submenu"
               className={styles.sublinkToggleButton}
               onClick={this.toggleSublinkVisibility}
               onMouseEnter={this.showSublinks}
