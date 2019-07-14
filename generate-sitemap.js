@@ -74,7 +74,7 @@ function generateSitemap() {
   });
   sitemapXml += '\n</urlset>';
 
-  fs.writeFileSync('static/sitemap_test.xml', sitemapXml);
+  fs.writeFileSync('static/sitemap.xml', sitemapXml);
 }
 
 readAndParseRoutes('pages/');
