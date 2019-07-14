@@ -9,7 +9,7 @@ const path = require('path');
 function readIgnoredSitemapLinks() {
   try {
     return fs
-      .readFileSync('.sitemapignore')
+      .readFileSync('SITEMAP_IGNORE')
       .toString()
       .split('\r\n')
       .filter(ele => ele !== '');

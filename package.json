@@ -13,7 +13,7 @@
     "lint": "yarn lint:scripts && yarn lint:styles && yarn format:md",
     "lint:scripts": "eslint --fix \"**/*.js\"",
     "lint:styles": "stylelint --fix \"**/*.css\"",
-    "precommit": "lint-staged && yarn test:changes && node generate-sitemap.js && git add static/sitemap_test.xml",
+    "precommit": "lint-staged && yarn test:changes && node scripts/generate-sitemap.js && git add static/sitemap.xml",
     "start": "next start",
     "storybook": "start-storybook -s ./static -p 9001 -c .storybook",
     "storybook:build": "build-storybook -s ./static -c .storybook -o .storybook-dist",
@@ -26,8 +26,7 @@
     "test:changes": "yarn test --changedSince master",
     "test:changes:watch": "yarn test --changedSince master --watch",
     "test:watch": "yarn test --watch",
-    "test:update-snaps": "yarn test -u",
-    "test:sitemap": "node generate-sitemap.js"
+    "test:update-snaps": "yarn test -u"
   },
   "lint-staged": {
     "*.js": [
