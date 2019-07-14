@@ -31,6 +31,12 @@ const featuredLinksArray = [
     imageSource: `${s3}redesign/images/meetup-lecture.jpg`,
     alt: 'Dozens of developers look at a lecturer.',
   },
+  {
+    href: 'podcasts',
+    name: 'Podcasts',
+    imageSource: `${s3}redesign/images/fist-bumping.jpg`, // change photo
+    alt: 'A team fist-bumping eachother over a table.',
+  },
 ];
 
 const Home = () => (
