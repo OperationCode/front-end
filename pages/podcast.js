@@ -25,7 +25,7 @@ class Podcast extends React.Component {
 
       return { episodes };
     } catch (error) {
-      return { errorMessage: getServerErrorMessage(error) };
+      return { errorMessage: getServerErrorMessage(error.length === 0) };
     }
   }
 
