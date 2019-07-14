@@ -1,7 +1,7 @@
 {
   "name": "operationcode",
   "license": "MIT",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "scripts": {
     "build": "next build",
     "build:analyze": "cross-env ANALYZE=1 next build",
@@ -94,12 +94,14 @@
     "react-google-login": "^5.0.4",
     "react-modal": "^3.8.2",
     "react-on-screen": "^2.1.1",
+    "react-player": "^1.11.1",
     "react-scroll": "^1.7.12",
     "react-scroll-up-button": "^1.6.4",
     "react-select": "^3.0.4",
     "react-svg-loader": "2.1.0",
     "react-youtube": "^7.8.0",
     "reselect": "^4.0.0",
+    "rss-parser": "^3.7.1",
     "style-loader": "^0.23.1",
     "url-loader": "^2.0.1",
     "webpack": "^4.35.3",
