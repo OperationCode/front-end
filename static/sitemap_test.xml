@@ -122,6 +122,11 @@
           <priority>0.80</priority>
       </url>
       <url>
+          <loc>https://www.operationcode.org/testing</loc>
+          <lastmod>Sun Jul 14 2019 15:45:12 GMT+0530 (India Standard Time)</lastmod>
+          <priority>0.80</priority>
+      </url>
+      <url>
           <loc>https://www.operationcode.org/who_we_serve</loc>
           <lastmod>Tue Jul 09 2019 23:14:50 GMT+0530 (India Standard Time)</lastmod>
           <priority>0.80</priority>
