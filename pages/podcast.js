@@ -10,12 +10,13 @@ import Content from 'components/Content/Content';
 import styles from './styles/podcast.css';
 
 class Podcast extends React.Component {
+  // We have atypical error handling because there exist errors thrown on nearly every request.
   static async getInitialProps() {
     const parser = new RssParser();
 
-    try {
-      const feed = await parser.parseURL('https://operationcode.libsyn.com/rss');
-      const error = 'No episodes found';
+    const feed = await parser.parseURL('https://operationcode.libsyn.com/rss');
+
+    if (feed && feed.items) {
       const episodes = feed.items.map(({ itunes: { image }, link, title, contentSnippet }) => ({
         image,
         name: title,
@@ -23,13 +24,17 @@ class Podcast extends React.Component {
         story: contentSnippet,
       }));
 
-      if (episodes.length === 0) {
-        return error;
+      if (Array.isArray(episodes) && episodes.length === 0) {
+        // RSS Feed is broken
+        return { episodes: [], errorMessage: getServerErrorMessage() };
       }
+
+      // Successful
       return { episodes };
-    } catch (error) {
-      return { errorMessage: getServerErrorMessage(error) };
     }
+
+    // Request failed
+    return { episodes: [], errorMessage: getServerErrorMessage() };
   }
 
   static propTypes = {
