@@ -14,7 +14,7 @@ class Podcast extends React.Component {
     const parser = new RssParser();
 
     try {
-      const feed = await parser.parseURL('http://operationcode.libsyn.com/rss');
+      const feed = await parser.parseURL('https://operationcode.libsyn.com/rss');
 
       const episodes = feed.items.map(({ itunes: { image }, link, title, contentSnippet }) => ({
         image,
