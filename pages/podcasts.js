@@ -1,12 +1,12 @@
 import { arrayOf, shape, string } from 'prop-types';
 import ReactPlayer from 'react-player';
 import RssParser from 'rss-parser';
+import { getServerErrorMessage } from 'common/utils/api-utils';
 import Head from 'components/head';
 import Alert from 'components/Alert/Alert';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Card from 'components/Cards/Card/Card';
 import Content from 'components/Content/Content';
-import AccordionItem from 'components/Accordion/AccordionItem/AccordionItem';
 import styles from './styles/podcasts.css';
 
 class Podcasts extends React.Component {
@@ -25,59 +25,62 @@ class Podcasts extends React.Component {
 
       return { episodes };
     } catch (error) {
-      return { error };
+      return { errorMessage: getServerErrorMessage(error) };
     }
   }
 
   static propTypes = {
     episodes: arrayOf(shape({ image: string, name: string, source: string, story: string })),
-    error: shape({ name: string }),
+    errorMessage: string,
   };
 
   static defaultProps = {
     episodes: [],
-    error: undefined,
+    errorMessage: '',
   };
 
   render() {
-    const { episodes, error } = this.props;
+    const { episodes, errorMessage } = this.props;
     const pageTitle = 'Podcasts';
 
     return (
       <>
         <Head title={pageTitle} />
 
-        <HeroBanner title={pageTitle}>
-          <p>Come listen to some inspiring stories of our vets transitioning into tech!</p>
-        </HeroBanner>
+        <HeroBanner title={pageTitle} />
 
         <Content
-          columns={
-            error ? (
-              <Alert isOpen>Something went wrong on our end...</Alert>
-            ) : (
-              episodes.map(({ name, image, source, story }) => {
-                /*
-                 * Some episodes have multiple parts and are named like "${Name}, part 1".
-                 * Some episodes are named "${Name} Interview"
-                 *
-                 * Parsing them in this manner ensures that the name of the interviewee is
-                 * available and used for the image alt tag.
-                 */
-                const interviewee = name.replace(/ interview/gi, '').split(',')[0];
+          columns={[
+            <p>Come listen to some inspiring stories of our vets transitioning into tech!</p>,
+            <div className={styles.podcastCards}>
+              {errorMessage ? (
+                <Alert isOpen>{errorMessage}</Alert>
+              ) : (
+                episodes.map(({ name, image, source, story }) => {
+                  /*
+                   * Some episodes have multiple parts and are named like "${Name}, part 1".
+                   * Some episodes are named "${Name} Interview"
+                   *
+                   * Parsing them in this manner ensures that the name of the interviewee is
+                   * available and used for the image alt tag.
+                   */
+                  const interviewee = name.replace(/ interview/gi, '').split(',')[0];
 
-                return (
-                  <Card data-testid="Podcast Card" className={styles.content}>
-                    <img src={image} alt={interviewee} className={styles.img} />
+                  return (
+                    <Card data-testid="Podcast Card" className={styles.podcastCard} key={name}>
+                      <h3>{interviewee}</h3>
 
-                    <ReactPlayer url={source} controls width="80%" height="65px" />
+                      <img src={image} alt={interviewee} className={styles.img} />
 
-                    <AccordionItem title={name} content={story} key={name} />
-                  </Card>
-                );
-              })
-            )
-          }
+                      <ReactPlayer url={source} controls width="80%" height="65px" />
+
+                      <p>{story}</p>
+                    </Card>
+                  );
+                })
+              )}
+            </div>,
+          ]}
         />
       </>
     );

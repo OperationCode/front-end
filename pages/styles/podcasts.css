@@ -1,15 +1,28 @@
-.content {
+.podcastCards {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.podcastCard {
   align-items: center;
   display: flex;
   flex-flow: column;
   justify-content: center;
   overflow: hidden; /* prevent devs from bloating content */
   margin: 1.5rem;
-  height: calc(100% - 3rem); /* 1.5rem margin top AND bottom hence 3rem */
-  width: calc(50% - 3rem); /* 1.5rem margin left AND right hence 3rem */
+  width: 500px;
+}
+
+@media screen and (--small-viewport) {
+  .podcastCard {
+    width: 100%;
+  }
 }
 
 .img {
   max-height: 300px;
   max-width: 100%;
+  object-fit: cover;
 }
