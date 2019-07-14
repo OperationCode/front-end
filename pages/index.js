@@ -32,8 +32,8 @@ const featuredLinksArray = [
     alt: 'Dozens of developers look at a lecturer.',
   },
   {
-    href: 'podcasts',
-    name: 'Podcasts',
+    href: 'podcast',
+    name: 'podcast',
     imageSource: `${s3}redesign/images/fist-bumping.jpg`, // change photo
     alt: 'A team fist-bumping eachother over a table.',
   },

@@ -138,7 +138,7 @@ export const footerItems = {
   column3: [
     getInvolvedLink,
     {
-      href: '/podcasts',
+      href: '/podcast',
       name: 'Podcast',
     },
     {
