@@ -15,7 +15,7 @@ class Podcast extends React.Component {
 
     try {
       const feed = await parser.parseURL('https://operationcode.libsyn.com/rss');
-
+      const error = 'No episodes found';
       const episodes = feed.items.map(({ itunes: { image }, link, title, contentSnippet }) => ({
         image,
         name: title,
@@ -23,6 +23,9 @@ class Podcast extends React.Component {
         story: contentSnippet,
       }));
 
+      if (episodes.length === 0) {
+        return error;
+      }
       return { episodes };
     } catch (error) {
       return { errorMessage: getServerErrorMessage(error) };
