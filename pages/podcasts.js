@@ -67,7 +67,7 @@ class Podcasts extends React.Component {
                 const interviewee = name.replace(/ interview/gi, '').split(',')[0];
 
                 return (
-                  <Card data-testid="podcast-card" className={styles.content}>
+                  <Card data-testid="Podcast Card" className={styles.content}>
                     <img src={image} alt={interviewee} className={styles.img} />
 
                     <ReactPlayer url={source} controls width="80%" height="65px" />
