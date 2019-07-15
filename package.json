@@ -1,7 +1,7 @@
 {
   "name": "operationcode",
   "license": "MIT",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "scripts": {
     "build": "next build",
     "build:analyze": "cross-env ANALYZE=1 next build",
@@ -79,7 +79,7 @@
     "nuka-carousel": "^4.5.9",
     "path": "^0.12.7",
     "postcss-custom-media": "^7.0.8",
-    "postcss-custom-properties": "^9.0.1",
+    "postcss-custom-properties": "^9.0.2",
     "postcss-export-custom-variables": "^1.0.0",
     "postcss-import": "^12.0.1",
     "postcss-loader": "^3.0.0",
@@ -124,7 +124,7 @@
     "eslint-config-prettier": "^6.0.0",
     "eslint-plugin-cypress": "^2.2.1",
     "eslint-plugin-import": "^2.18.0",
-    "eslint-plugin-jest": "^22.7.2",
+    "eslint-plugin-jest": "^22.8.0",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.14.2",
