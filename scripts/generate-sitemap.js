@@ -46,7 +46,7 @@ function readAndParseRoutes(directory) {
         // Add this file to `fileObject`
         fileObject[`/${cleanFileName}`] = {
           page: `/${cleanFileName}`,
-          lastModified: fileStat.mtime,
+          lastModified: new Date(fileStat.mtime).toUTCString(),
         };
       }
     }
