@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
+let sitemapConfig = { exclude: [], priority: {} };
 /**
  * Read ignored sitemal links from .sitemapignore file
  *
@@ -8,14 +9,10 @@ const path = require('path');
  */
 function readIgnoredSitemapLinks() {
   try {
-    return fs
-      .readFileSync('SITEMAP_IGNORE')
-      .toString()
-      .split('\r\n')
-      .filter(ele => ele !== '');
+    return JSON.parse(fs.readFileSync('scripts/SITEMAP_IGNORE.json', 'utf8'));
   } catch (error) {
-    // .sitemapignore doesn't exist? no worries.
-    return [];
+    // SITEMAP_IGNORE.json file doesn't have appropriate data? no worries, accept all urls.
+    return sitemapConfig;
   }
 }
 
@@ -27,7 +24,7 @@ const fileObject = [];
  */
 function readAndParseRoutes(directory) {
   const files = fs.readdirSync(directory);
-  const excludedFileList = readIgnoredSitemapLinks();
+  sitemapConfig = readIgnoredSitemapLinks();
 
   files.forEach(file => {
     const filePath = `${directory}${file}`;
@@ -45,7 +42,7 @@ function readAndParseRoutes(directory) {
         cleanFileName = cleanFileName.substr(0, cleanFileName.lastIndexOf('/index'));
       }
 
-      if (!excludedFileList.includes(`/${cleanFileName}`)) {
+      if (!sitemapConfig.exclude.includes(`/${cleanFileName}`)) {
         // Add this file to `fileObject`
         fileObject[`/${cleanFileName}`] = {
           page: `/${cleanFileName}`,
@@ -68,7 +65,9 @@ function generateSitemap() {
       <url>
           <loc>https://www.operationcode.org${routePath}</loc>
           <lastmod>${fileObject[routePath].lastModified}</lastmod>
-          <priority>0.80</priority>
+          <priority>${
+            sitemapConfig.priority[routePath] ? sitemapConfig.priority[routePath] : '0.80'
+          }</priority>
       </url>`;
     return routePath;
   });

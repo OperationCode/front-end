@@ -59,7 +59,7 @@
       <url>
           <loc>https://www.operationcode.org/</loc>
           <lastmod>Sun Jul 14 2019 14:53:00 GMT+0530 (India Standard Time)</lastmod>
-          <priority>0.80</priority>
+          <priority>1.00</priority>
       </url>
       <url>
           <loc>https://www.operationcode.org/jobs</loc>
@@ -93,7 +93,7 @@
       </url>
       <url>
           <loc>https://www.operationcode.org/podcast</loc>
-          <lastmod>Sun Jul 14 2019 14:53:00 GMT+0530 (India Standard Time)</lastmod>
+          <lastmod>Mon Jul 15 2019 21:14:41 GMT+0530 (India Standard Time)</lastmod>
           <priority>0.80</priority>
       </url>
       <url>
@@ -103,21 +103,6 @@
       </url>
       <url>
           <loc>https://www.operationcode.org/press</loc>
-          <lastmod>Tue Jul 09 2019 23:14:50 GMT+0530 (India Standard Time)</lastmod>
-          <priority>0.80</priority>
-      </url>
-      <url>
-          <loc>https://www.operationcode.org/profile/change_password</loc>
-          <lastmod>Tue Jul 09 2019 23:14:50 GMT+0530 (India Standard Time)</lastmod>
-          <priority>0.80</priority>
-      </url>
-      <url>
-          <loc>https://www.operationcode.org/profile</loc>
-          <lastmod>Tue Jul 09 2019 23:14:50 GMT+0530 (India Standard Time)</lastmod>
-          <priority>0.80</priority>
-      </url>
-      <url>
-          <loc>https://www.operationcode.org/profile/update</loc>
           <lastmod>Tue Jul 09 2019 23:14:50 GMT+0530 (India Standard Time)</lastmod>
           <priority>0.80</priority>
       </url>
@@ -143,21 +128,6 @@
       </url>
       <url>
           <loc>https://www.operationcode.org/who_we_serve</loc>
-          <lastmod>Tue Jul 09 2019 23:14:50 GMT+0530 (India Standard Time)</lastmod>
-          <priority>0.80</priority>
-      </url>
-      <url>
-          <loc>https://www.operationcode.org/_app</loc>
-          <lastmod>Tue Jul 09 2019 23:14:50 GMT+0530 (India Standard Time)</lastmod>
-          <priority>0.80</priority>
-      </url>
-      <url>
-          <loc>https://www.operationcode.org/_document</loc>
-          <lastmod>Tue Jul 09 2019 23:14:50 GMT+0530 (India Standard Time)</lastmod>
-          <priority>0.80</priority>
-      </url>
-      <url>
-          <loc>https://www.operationcode.org/_error</loc>
           <lastmod>Tue Jul 09 2019 23:14:50 GMT+0530 (India Standard Time)</lastmod>
           <priority>0.80</priority>
       </url>
