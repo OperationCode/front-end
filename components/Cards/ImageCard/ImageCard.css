@@ -9,6 +9,7 @@
 .image {
   height: 225px;
   width: 50%;
+  object-fit: cover;
 }
 
 .content {
