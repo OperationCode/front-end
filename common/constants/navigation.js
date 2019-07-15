@@ -14,6 +14,12 @@ const faqLink = {
   shouldPrefetch: false,
 };
 
+const podcastLink = {
+  name: 'Podcast',
+  href: '/podcast',
+  shouldPrefetch: false,
+};
+
 const getInvolvedLink = {
   name: 'Get Involved',
   href: '/get_involved',
@@ -51,7 +57,7 @@ const aboutUs = {
   name: 'About Us',
   href: '/about',
   shouldPrefetch: true,
-  sublinks: [contactLink, faqLink],
+  sublinks: [contactLink, faqLink, podcastLink],
 };
 
 const events = {
