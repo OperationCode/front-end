@@ -120,6 +120,17 @@ export default () => (
             members of the military community.
           </p>
         </ImageCard>,
+        <ImageCard
+          alt="A pair of orange headphones resting on a laptop keyboard"
+          className={styles.imageCard}
+          imageSource={`${s3}headphones.jpg`}
+        >
+          <h6>Podcast</h6>
+          <p>
+            We have a podcast! You can listen into the amazing stories of our members. Visualize
+            your success through others&apos; footsteps.
+          </p>
+        </ImageCard>,
       ]}
     />
 

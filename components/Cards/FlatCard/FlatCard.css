@@ -12,6 +12,7 @@
   width: 200px;
   position: absolute;
   top: -1rem;
+  object-fit: cover;
 }
 
 .rowCenter {
