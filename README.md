@@ -134,6 +134,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://codepen.io/TomerBenRachel/"><img src="https://avatars2.githubusercontent.com/u/23402988?v=4" width="100px;" alt="Tomer Ben-Rachel"/><br /><sub><b>Tomer Ben-Rachel</b></sub></a><br /><a href="https://github.com/OperationCode/front-end/commits?author=TomerPacific" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/dayvodddddddddddd"><img src="https://avatars2.githubusercontent.com/u/7948164?v=4" width="100px;" alt="David Yearwood"/><br /><sub><b>David Yearwood</b></sub></a><br /><a href="https://github.com/OperationCode/front-end/commits?author=dayvodddddddddddd" title="Code">💻</a></td>
     <td align="center"><a href="https://www.linkedin.com/in/timothyquirk/"><img src="https://avatars1.githubusercontent.com/u/44677020?v=4" width="100px;" alt="Timothy Quirk"/><br /><sub><b>Timothy Quirk</b></sub></a><br /><a href="https://github.com/OperationCode/front-end/commits?author=tfquirk" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/cbituin"><img src="https://avatars2.githubusercontent.com/u/38743840?v=4" width="100px;" alt="Conrad Bituin"/><br /><sub><b>Conrad Bituin</b></sub></a><br /><a href="https://github.com/OperationCode/front-end/commits?author=cbituin" title="Code">💻</a></td>
   </tr>
 </table>
 
