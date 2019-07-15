@@ -31,6 +31,11 @@ exports[`Nav should render with no props passed 1`] = `
           "shouldPrefetch": false,
         },
         Object {
+          "href": "/podcast",
+          "name": "Podcast",
+          "shouldPrefetch": false,
+        },
+        Object {
           "href": "/who_we_serve",
           "name": "Who We Serve",
           "shouldPrefetch": true,
@@ -96,6 +101,11 @@ exports[`Nav should render with no props passed 1`] = `
                 Object {
                   "href": "/faq",
                   "name": "FAQ",
+                  "shouldPrefetch": false,
+                },
+                Object {
+                  "href": "/podcast",
+                  "name": "Podcast",
                   "shouldPrefetch": false,
                 },
               ]
