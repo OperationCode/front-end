@@ -1,7 +1,7 @@
 import { arrayOf, shape, string } from 'prop-types';
 import ReactPlayer from 'react-player';
 import RssParser from 'rss-parser';
-import { getServerErrorMessage } from 'common/utils/api-utils';
+import { getServerErrorMessage, OperationCodeAPI } from 'common/utils/api-utils';
 import Head from 'components/head';
 import Alert from 'components/Alert/Alert';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
@@ -12,9 +12,10 @@ import styles from './styles/podcast.css';
 class Podcast extends React.Component {
   // We have atypical error handling because there exist errors thrown on nearly every request.
   static async getInitialProps() {
-    const parser = new RssParser();
+    const { data } = await OperationCodeAPI.get('https://operationcode.libsyn.com/rss');
 
-    const feed = await parser.parseURL('https://operationcode.libsyn.com/rss');
+    const parser = new RssParser();
+    const feed = await parser.parseString(data);
 
     if (feed && feed.items) {
       const episodes = feed.items.map(({ itunes: { image }, link, title, contentSnippet }) => ({
