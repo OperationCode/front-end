@@ -1,7 +1,7 @@
 import { arrayOf, shape, string } from 'prop-types';
 import ReactPlayer from 'react-player';
-import RssParser from 'rss-parser';
-import { getServerErrorMessage, OperationCodeAPI } from 'common/utils/api-utils';
+import { parse as parseXml } from 'fast-xml-parser';
+import { getServerErrorMessage, ExternalAPI } from 'common/utils/api-utils';
 import Head from 'components/head';
 import Alert from 'components/Alert/Alert';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
@@ -12,29 +12,28 @@ import styles from './styles/podcast.css';
 class Podcast extends React.Component {
   // We have atypical error handling because there exist errors thrown on nearly every request.
   static async getInitialProps() {
-    const { data } = await OperationCodeAPI.get('https://operationcode.libsyn.com/rss');
+    const { data } = await ExternalAPI.get('https://operationcode.libsyn.com/rss');
+    const { rss } = parseXml(data, {
+      ignoreNameSpace: true,
+      ignoreAttributes: false,
+      attributeNamePrefix: '',
+    });
 
-    const parser = new RssParser();
-    const feed = await parser.parseString(data);
-
-    if (feed && feed.items) {
-      const episodes = feed.items.map(({ itunes: { image }, link, title, contentSnippet }) => ({
-        image,
+    if (rss && rss.channel.item.length) {
+      const episodes = rss.channel.item.map(({ image: { href }, link, title, description }) => ({
+        image: href,
         name: title,
         source: link,
-        story: contentSnippet,
+        story: description.replace(/(<p>|<\/p>)/g, ''),
       }));
 
-      if (Array.isArray(episodes) && episodes.length === 0) {
-        // RSS Feed is broken
-        return { episodes: [], errorMessage: getServerErrorMessage() };
+      if (Array.isArray(episodes) && episodes.length !== 0) {
+        // Successful
+        return { episodes };
       }
-
-      // Successful
-      return { episodes };
     }
 
-    // Request failed
+    // Request failed or RSS Feed is broken
     return { episodes: [], errorMessage: getServerErrorMessage() };
   }
 
