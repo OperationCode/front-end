@@ -11,6 +11,10 @@ const axiosConfig = {
 
 export const OperationCodeAPI = axios.create(axiosConfig);
 
+export const ExternalAPI = axios.create({
+  timeout: 5000,
+});
+
 /**
  * @description These pieces allow us to throw errors on connection timeouts
  * @see https://github.com/axios/axios/issues/647#issuecomment-459517694
@@ -84,7 +88,7 @@ export const patch = async (path, body, { token } = {}) => {
  * assume the server is down and return a relavant error message.
  *
  * @export
- * @param {Error} errorObject
+ * @param {Error?} errorObject
  * @returns {string} A user-facing error message
  */
 export const getServerErrorMessage = errorObject => {
