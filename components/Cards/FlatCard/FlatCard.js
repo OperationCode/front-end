@@ -1,6 +1,7 @@
 import React from 'react';
 import { element, node, shape, string } from 'prop-types';
 import classNames from 'classnames';
+import { Image } from '@innocuous/components';
 import styles from './FlatCard.css';
 
 class FlatCard extends React.Component {
@@ -37,7 +38,7 @@ class FlatCard extends React.Component {
           {header && <div className={styles.header}>{header}</div>}
           {hasImage && (
             <div className={styles.rowCenter}>
-              <img className={styles.image} src={image.source} alt={image.alt} />
+              <Image className={styles.image} src={image.source} alt={image.alt} />
             </div>
           )}
           {header && <hr className={styles.divider} />}
