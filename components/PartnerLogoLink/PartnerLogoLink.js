@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { string } from 'prop-types';
+import { Image } from '@innocuous/components';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 import styles from './PartnerLogoLink.css';
 
@@ -20,7 +21,7 @@ export default class PartnerLogoLink extends Component {
           analyticsEventLabel={`Partner Logo Click - ${name}`}
           hasIcon={false}
         >
-          <img className={styles.logo} src={logoSource} alt={`${name} logo`} />
+          <Image className={styles.logo} src={logoSource} alt={`${name} logo`} />
         </OutboundLink>
       </div>
     );

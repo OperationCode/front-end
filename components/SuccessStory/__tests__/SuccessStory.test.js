@@ -10,9 +10,7 @@ describe('SuccessStory', () => {
         imageSource="image.png"
         quote="Best test of my life!"
         title="Great testing culture"
-      >
-        Test
-      </SuccessStory>,
+      />,
     );
   });
 });
