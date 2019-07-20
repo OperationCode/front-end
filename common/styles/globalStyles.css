@@ -145,11 +145,6 @@ code {
 
 /* TEMPORARY LOADING STATE OF IMAGES */
 
-/* Hide alt text */
-img {
-  text-indent: -9999px;
-}
-
 /* Shimmer - these styles only show for images whose source is not yet applied (lazy-loaded) */
 img::after {
   animation: slide 0.75s infinite 0s;
