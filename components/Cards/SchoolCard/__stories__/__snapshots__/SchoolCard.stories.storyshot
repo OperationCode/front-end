@@ -23,10 +23,17 @@ exports[`Storyshots Cards/SchoolCard with many locations 1`] = `
   <div
     className="cardBrand"
   >
+    <noscript>
+      <img
+        alt="General Assembly logo"
+        height="150"
+        src="https://operation-code-assets.s3.us-east-2.amazonaws.com/codeSchoolLogos/general_assembly.jpg"
+      />
+    </noscript>
     <img
       alt="General Assembly logo"
+      data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/codeSchoolLogos/general_assembly.jpg"
       height="150"
-      src="https://operation-code-assets.s3.us-east-2.amazonaws.com/codeSchoolLogos/general_assembly.jpg"
     />
   </div>
   <div
@@ -165,10 +172,17 @@ exports[`Storyshots Cards/SchoolCard with no physical locations 1`] = `
   <div
     className="cardBrand"
   >
+    <noscript>
+      <img
+        alt="Thinkful logo"
+        height="150"
+        src="https://operation-code-assets.s3.us-east-2.amazonaws.com/codeSchoolLogos/thinkful.jpg"
+      />
+    </noscript>
     <img
       alt="Thinkful logo"
+      data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/codeSchoolLogos/thinkful.jpg"
       height="150"
-      src="https://operation-code-assets.s3.us-east-2.amazonaws.com/codeSchoolLogos/thinkful.jpg"
     />
   </div>
   <div
@@ -298,10 +312,17 @@ exports[`Storyshots Cards/SchoolCard with one location 1`] = `
   <div
     className="cardBrand"
   >
+    <noscript>
+      <img
+        alt="Code Immersives logo"
+        height="150"
+        src="https://operation-code-assets.s3.us-east-2.amazonaws.com/codeSchoolLogos/code_immersives.jpg"
+      />
+    </noscript>
     <img
       alt="Code Immersives logo"
+      data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/codeSchoolLogos/code_immersives.jpg"
       height="150"
-      src="https://operation-code-assets.s3.us-east-2.amazonaws.com/codeSchoolLogos/code_immersives.jpg"
     />
   </div>
   <div
