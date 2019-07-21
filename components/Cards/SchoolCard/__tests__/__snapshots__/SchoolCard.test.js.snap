@@ -22,7 +22,7 @@ exports[`SchoolCard should render with required props 1`] = `
   <div
     className="cardBrand"
   >
-    <img
+    <Image
       alt="school name logo"
       height="150"
       src="source"

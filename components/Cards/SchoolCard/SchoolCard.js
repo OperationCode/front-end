@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { arrayOf, bool, func, string, shape } from 'prop-types';
 import classNames from 'classnames';
+import { Image } from '@innocuous/components';
 import Card from 'components/Cards/Card/Card';
 import OnlineIcon from 'static/images/icons/Custom/online.svg';
 import CampusIcon from 'static/images/icons/Custom/campus.svg';
@@ -82,7 +83,7 @@ export default class SchoolCard extends Component {
         )}
 
         <div className={styles.cardBrand}>
-          <img src={props.logoSource} alt={`${props.name} logo`} height="150" />
+          <Image src={props.logoSource} alt={`${props.name} logo`} height="150" />
         </div>
 
         <div className={styles.cardBlock}>

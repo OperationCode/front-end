@@ -111,10 +111,17 @@ exports[`Storyshots ReusableSections SponsorsSection 1`] = `
           >
             Opens in new window
           </span>
+          <noscript>
+            <img
+              alt="APEX Systems logo"
+              className="logo"
+              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/apex_systems.png"
+            />
+          </noscript>
           <img
             alt="APEX Systems logo"
             className="logo"
-            src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/apex_systems.png"
+            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/apex_systems.png"
           />
         </a>
       </div>
@@ -132,10 +139,17 @@ exports[`Storyshots ReusableSections SponsorsSection 1`] = `
           >
             Opens in new window
           </span>
+          <noscript>
+            <img
+              alt="GitHub logo"
+              className="logo"
+              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/github.png"
+            />
+          </noscript>
           <img
             alt="GitHub logo"
             className="logo"
-            src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/github.png"
+            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/github.png"
           />
         </a>
       </div>
@@ -153,10 +167,17 @@ exports[`Storyshots ReusableSections SponsorsSection 1`] = `
           >
             Opens in new window
           </span>
+          <noscript>
+            <img
+              alt="Slack logo"
+              className="logo"
+              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/slack.png"
+            />
+          </noscript>
           <img
             alt="Slack logo"
             className="logo"
-            src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/slack.png"
+            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/slack.png"
           />
         </a>
       </div>
@@ -174,10 +195,17 @@ exports[`Storyshots ReusableSections SponsorsSection 1`] = `
           >
             Opens in new window
           </span>
+          <noscript>
+            <img
+              alt="Heroku logo"
+              className="logo"
+              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/heroku.png"
+            />
+          </noscript>
           <img
             alt="Heroku logo"
             className="logo"
-            src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/heroku.png"
+            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/heroku.png"
           />
         </a>
       </div>
@@ -195,10 +223,17 @@ exports[`Storyshots ReusableSections SponsorsSection 1`] = `
           >
             Opens in new window
           </span>
+          <noscript>
+            <img
+              alt="1Password logo"
+              className="logo"
+              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/1password.png"
+            />
+          </noscript>
           <img
             alt="1Password logo"
             className="logo"
-            src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/1password.png"
+            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/1password.png"
           />
         </a>
       </div>
@@ -216,10 +251,17 @@ exports[`Storyshots ReusableSections SponsorsSection 1`] = `
           >
             Opens in new window
           </span>
+          <noscript>
+            <img
+              alt="US Bank logo"
+              className="logo"
+              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/usbank.png"
+            />
+          </noscript>
           <img
             alt="US Bank logo"
             className="logo"
-            src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/usbank.png"
+            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/usbank.png"
           />
         </a>
       </div>
@@ -237,10 +279,17 @@ exports[`Storyshots ReusableSections SponsorsSection 1`] = `
           >
             Opens in new window
           </span>
+          <noscript>
+            <img
+              alt="Threat Stack logo"
+              className="logo"
+              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/threat_stack.png"
+            />
+          </noscript>
           <img
             alt="Threat Stack logo"
             className="logo"
-            src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/threat_stack.png"
+            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/threat_stack.png"
           />
         </a>
       </div>
@@ -258,10 +307,17 @@ exports[`Storyshots ReusableSections SponsorsSection 1`] = `
           >
             Opens in new window
           </span>
+          <noscript>
+            <img
+              alt="O'Reilly Media logo"
+              className="logo"
+              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/oreilly.png"
+            />
+          </noscript>
           <img
             alt="O'Reilly Media logo"
             className="logo"
-            src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/oreilly.png"
+            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/oreilly.png"
           />
         </a>
       </div>
@@ -279,10 +335,17 @@ exports[`Storyshots ReusableSections SponsorsSection 1`] = `
           >
             Opens in new window
           </span>
+          <noscript>
+            <img
+              alt="HackerRank logo"
+              className="logo"
+              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/hackerrank.png"
+            />
+          </noscript>
           <img
             alt="HackerRank logo"
             className="logo"
-            src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/hackerrank.png"
+            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/hackerrank.png"
           />
         </a>
       </div>
@@ -300,10 +363,17 @@ exports[`Storyshots ReusableSections SponsorsSection 1`] = `
           >
             Opens in new window
           </span>
+          <noscript>
+            <img
+              alt="Zapier logo"
+              className="logo"
+              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/zapier.png"
+            />
+          </noscript>
           <img
             alt="Zapier logo"
             className="logo"
-            src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/zapier.png"
+            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/zapier.png"
           />
         </a>
       </div>
