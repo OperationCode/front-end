@@ -112,6 +112,12 @@ export default class CodeSchools extends React.Component {
     this.setState({ filteredSchools: vaApproved, selectedStates: [] });
   };
 
+  filterVetTecApproved = () => {
+    const { allSchools } = this.props;
+    const vetTecApprovedSchools = allSchools.filter(school => school.isVetTecApproved);
+    this.setState({ filteredSchools: vetTecApprovedSchools, selectedStates: [] });
+  };
+
   showAllSchools = () => {
     const { allSchools } = this.props;
     this.setState({ filteredSchools: allSchools, selectedStates: [] });
@@ -193,6 +199,9 @@ export default class CodeSchools extends React.Component {
                   <Button theme="primary" onClick={this.filterVaApproved}>
                     Schools Accepting GI Bill
                   </Button>,
+                  <Button theme="primary" onClick={this.filterVetTecApproved}>
+                    Schools Accepting Vet Tec
+                  </Button>,
                   <Button theme="primary" onClick={this.filterOnline}>
                     Online Schools
                   </Button>,
@@ -218,6 +227,7 @@ export default class CodeSchools extends React.Component {
                         hasOnline={school.hasOnline}
                         hasOnlyOnline={school.onlineOnly}
                         isFullTime={school.fullTime}
+                        isVetTecApproved={school.isVetTecApproved}
                         locations={school.locations}
                         logoSource={school.logo}
                         name={school.name}

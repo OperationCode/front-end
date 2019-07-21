@@ -34,6 +34,7 @@ describe('SchoolCard', () => {
         hasOnline
         hasOnlyOnline={false}
         isFullTime
+        isVetTecApproved
         locations={locations}
         logoSource="source"
         name="school name"

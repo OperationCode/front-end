@@ -97,6 +97,14 @@ exports[`SchoolCard should render with required props 1`] = `
     >
       Accepts GI Bill
     </span>
+    <span>
+      Yes
+    </span>
+    <span
+      className="cardBlockTitle"
+    >
+      Accepts Vet Tec
+    </span>
     Yes
   </div>
   <div
