@@ -100,12 +100,6 @@ exports[`SchoolCard should render with required props 1`] = `
     <span>
       Yes
     </span>
-    <span
-      className="cardBlockTitle"
-    >
-      Accepts Vet Tec
-    </span>
-    Yes
   </div>
   <div
     className="cardBlock"

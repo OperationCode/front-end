@@ -122,12 +122,6 @@ exports[`Storyshots Cards/SchoolCard with many locations 1`] = `
     <span>
       Yes
     </span>
-    <span
-      className="cardBlockTitle"
-    >
-      Accepts Vet Tec
-    </span>
-    No
   </div>
   <div
     className="cardBlock"
@@ -279,12 +273,6 @@ exports[`Storyshots Cards/SchoolCard with no physical locations 1`] = `
     <span>
       No
     </span>
-    <span
-      className="cardBlockTitle"
-    >
-      Accepts Vet Tec
-    </span>
-    No
   </div>
   <div
     className="cardBlock"
@@ -427,12 +415,6 @@ exports[`Storyshots Cards/SchoolCard with one location 1`] = `
     <span>
       No
     </span>
-    <span
-      className="cardBlockTitle"
-    >
-      Accepts Vet Tec
-    </span>
-    No
   </div>
   <div
     className="cardBlock"

@@ -90,10 +90,6 @@
   color: var(--secondary);
 }
 
-.cardBlock span {
-  padding-right: 1rem;
-}
-
 .SchoolCard .modalToggler {
   min-width: auto;
   text-transform: none;

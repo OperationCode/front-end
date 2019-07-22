@@ -227,7 +227,6 @@ export default class CodeSchools extends React.Component {
                         hasOnline={school.hasOnline}
                         hasOnlyOnline={school.onlineOnly}
                         isFullTime={school.fullTime}
-                        isVetTecApproved={school.isVetTecApproved}
                         locations={school.locations}
                         logoSource={school.logo}
                         name={school.name}
