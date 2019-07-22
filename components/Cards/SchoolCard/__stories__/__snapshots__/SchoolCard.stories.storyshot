@@ -119,9 +119,7 @@ exports[`Storyshots Cards/SchoolCard with many locations 1`] = `
     >
       Accepts GI Bill
     </span>
-    <span>
-      Yes
-    </span>
+    Yes
   </div>
   <div
     className="cardBlock"
@@ -270,9 +268,7 @@ exports[`Storyshots Cards/SchoolCard with no physical locations 1`] = `
     >
       Accepts GI Bill
     </span>
-    <span>
-      No
-    </span>
+    No
   </div>
   <div
     className="cardBlock"
@@ -412,9 +408,7 @@ exports[`Storyshots Cards/SchoolCard with one location 1`] = `
     >
       Accepts GI Bill
     </span>
-    <span>
-      No
-    </span>
+    No
   </div>
   <div
     className="cardBlock"

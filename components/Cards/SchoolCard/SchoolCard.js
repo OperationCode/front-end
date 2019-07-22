@@ -120,7 +120,7 @@ export default class SchoolCard extends Component {
 
         <div className={styles.cardBlock}>
           <span className={styles.cardBlockTitle}>Accepts GI Bill</span>
-          <span>{hasGiBill ? 'Yes' : 'No'}</span>
+          {hasGiBill ? 'Yes' : 'No'}
         </div>
 
         <div className={styles.cardBlock}>
