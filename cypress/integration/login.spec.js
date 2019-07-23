@@ -107,7 +107,7 @@ describe('login?loggedOut=True', () => {
 
     cy.reload();
 
-    cy.get('div[role="alert"]').should('not.contain.text', 'Logged out successfully.');
+    cy.get('div[role="alert"]').should('not.exist');
   });
 
   it('should not display logged out alert after invalid login attempt', () => {
