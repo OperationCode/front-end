@@ -80,7 +80,19 @@ class Podcast extends React.Component {
 
                       <img src={image} alt={interviewee} className={styles.img} />
 
-                      <ReactPlayer url={source} controls width="80%" height="65px" />
+                      <ReactPlayer
+                        url={source}
+                        controls
+                        width="80%"
+                        height="65px"
+                        config={{
+                          file: {
+                            attributes: {
+                              preload: 'none',
+                            },
+                          },
+                        }}
+                      />
 
                       <p>{story}</p>
                     </Card>
