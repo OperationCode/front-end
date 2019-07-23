@@ -1,43 +1,37 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { cleanup, fireEvent, render } from '@testing-library/react';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 
 import Alert from '../Alert';
 
 describe('Alert', () => {
+  afterEach(cleanup);
+
   it('should render with required props', () => {
-    createSnapshotTest(<Alert>Error Test Alert!</Alert>);
+    createSnapshotTest(<Alert type="error">Error Test Alert!</Alert>);
   });
 
-  it('should render with many props assigned', () => {
-    createSnapshotTest(
-      <Alert onToggle={jest.fn} type="success" isOpen>
-        Success Test Alert!
-      </Alert>,
-    );
-  });
+  it('should call close handler when close alert button clicked', () => {
+    const onCloseMock = jest.fn();
 
-  it('should call props.onToggle when isOpen and when CloseAlertButton is clicked', () => {
-    const onToggleMock = jest.fn();
-
-    const wrapper = mount(
-      <Alert onToggle={onToggleMock} type="success" isOpen>
+    const { queryByTestId } = render(
+      <Alert onClose={onCloseMock} type="success">
         Success Test Alert!
       </Alert>,
     );
 
-    const CloseAlertButton = wrapper.find('button');
+    const CloseAlertButton = queryByTestId('Close Alert Button');
 
-    expect(onToggleMock).toHaveBeenCalledTimes(0);
-    CloseAlertButton.simulate('click');
-    expect(onToggleMock).toHaveBeenCalledTimes(1);
+    expect(onCloseMock).toHaveBeenCalledTimes(0);
+    fireEvent.click(CloseAlertButton);
+    expect(onCloseMock).toHaveBeenCalledTimes(1);
   });
 
-  it('should not render button if isOpen is false or no onToggle function passed', () => {
-    const AlertNotOpen = mount(<Alert isOpen={false}>Testing!</Alert>);
-    const AlertNoonToggle = mount(<Alert isOpen>Testing!</Alert>);
+  it('should NOT render button if close handler not provided', () => {
+    const { queryByTestId } = render(<Alert type="warning">Warning Test Alert!</Alert>);
 
-    expect(AlertNotOpen.find('button')).not.toExist();
-    expect(AlertNoonToggle.find('button')).not.toExist();
+    const CloseAlertButton = queryByTestId('Close Alert Button');
+
+    expect(CloseAlertButton).toBeNull();
   });
 });

@@ -87,13 +87,7 @@ class Login extends React.Component {
         <Content
           theme="gray"
           columns={[
-            <>
-              {alertMessage && (
-                <Alert isOpen type="success">
-                  {alertMessage}
-                </Alert>
-              )}
-            </>,
+            <>{alertMessage && <Alert type="success">{alertMessage}</Alert>}</>,
             <LoginForm login={this.onLogin} onSuccess={this.handleSuccess} />,
             <p>
               Don&apos;t have an account?&nbsp;

@@ -191,7 +191,7 @@ export default class CodeSchools extends React.Component {
           hasTitleUnderline
           columns={
             errorMessage
-              ? [<Alert isOpen>{errorMessage}</Alert>]
+              ? [<Alert type="error">{errorMessage}</Alert>]
               : [
                   <Button theme="primary" onClick={this.showAllSchools}>
                     All Schools

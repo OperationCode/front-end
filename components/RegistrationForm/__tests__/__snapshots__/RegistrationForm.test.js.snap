@@ -201,12 +201,7 @@ exports[`RegistrationForm should render with required props 1`] = `
   <div
     className="row"
   >
-    <div
-      className="Alert error"
-      role="alert"
-    >
-      
-    </div>
+    
   </div>
   <div
     className="row"

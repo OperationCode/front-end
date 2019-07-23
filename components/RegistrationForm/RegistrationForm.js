@@ -186,9 +186,7 @@ class RegistrationForm extends Component {
             </div>
 
             <div className={styles.row}>
-              <Alert isOpen={Boolean(state.errorMessage)} type="error">
-                {state.errorMessage}
-              </Alert>
+              {state.errorMessage && <Alert type="error">{state.errorMessage}</Alert>}
             </div>
 
             <div className={styles.row}>

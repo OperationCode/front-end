@@ -2,36 +2,37 @@ import React from 'react';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 import { mount } from 'enzyme';
 import { loginSocial } from 'common/constants/api';
+import asyncRenderDiff from 'test-utils/asyncRenderDiff';
 import OperationCodeAPIMock from 'test-utils/mocks/apiMock';
 import SocialLoginGroup from '../SocialLoginGroup';
 
-const socialReturnToken = { accessToken: 'abc123' };
-
-beforeEach(() => {
-  OperationCodeAPIMock.reset();
-});
-
-function renderWithHelpers() {
-  const handleSuccessSpy = jest.fn();
-
-  let renderProps;
-
-  const wrapper = mount(
-    <SocialLoginGroup
-      className="test-class"
-      loginSocial={loginSocial}
-      handleSuccess={handleSuccessSpy}
-    >
-      {({ onSuccess, onGoogleFailure }) => {
-        renderProps = { onSuccess, onGoogleFailure };
-      }}
-    </SocialLoginGroup>,
-  );
-
-  return { wrapper, handleSuccessSpy, renderProps };
-}
-
 describe('SocialLoginGroup', () => {
+  const socialReturnToken = { accessToken: 'abc123' };
+
+  function renderWithHelpers() {
+    const handleSuccessSpy = jest.fn();
+
+    let renderProps;
+
+    const wrapper = mount(
+      <SocialLoginGroup
+        className="test-class"
+        loginSocial={loginSocial}
+        handleSuccess={handleSuccessSpy}
+      >
+        {({ onSuccess, onGoogleFailure }) => {
+          renderProps = { onSuccess, onGoogleFailure };
+        }}
+      </SocialLoginGroup>,
+    );
+
+    return { wrapper, handleSuccessSpy, renderProps };
+  }
+
+  beforeEach(() => {
+    OperationCodeAPIMock.reset();
+  });
+
   it('should render with required props', () => {
     createSnapshotTest(
       <SocialLoginGroup loginSocial={jest.fn()} handleSuccess={jest.fn()}>
@@ -66,6 +67,7 @@ describe('SocialLoginGroup', () => {
 
     const onSuccess = renderProps.onSuccess(providerName);
     await onSuccess(socialReturnToken);
+    await asyncRenderDiff(wrapper);
 
     expect(handleSuccessSpy).not.toHaveBeenCalled();
     expect(wrapper.find('Alert').text()).toStrictEqual(
