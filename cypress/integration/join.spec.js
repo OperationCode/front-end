@@ -169,10 +169,18 @@ describe('join', () => {
 
   it('should NOT be able to register without filling all required fields', () => {
     cy.get('button[type="submit"]').click();
+
+    // verify route didn't change
     cy.url().should('contain', '/join');
-    cy.get('div[role="alert"]')
-      .should('have.length', 8)
-      .should('contain', validationErrorMessages.required);
+
+    // verify no cookies populated
     cy.getCookies().should('have.length', 0);
+
+    // verify that errors rendered
+    const numberOfInputs = 7;
+    cy.get('input').should('have.length', numberOfInputs);
+    cy.get('div[role="alert"]')
+      .should('have.length', numberOfInputs)
+      .should('contain', validationErrorMessages.required);
   });
 });
