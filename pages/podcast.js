@@ -62,7 +62,7 @@ class Podcast extends React.Component {
             <p>Come listen to some inspiring stories of our vets transitioning into tech!</p>,
             <div className={styles.podcastCards}>
               {errorMessage ? (
-                <Alert isOpen>{errorMessage}</Alert>
+                <Alert type="error">{errorMessage}</Alert>
               ) : (
                 episodes.map(({ name, image, source, story }) => {
                   /*

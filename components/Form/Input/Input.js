@@ -90,11 +90,13 @@ function Input({
 
         <ErrorMessage
           name={name}
-          render={message => (
-            <Alert isOpen={hasErrors} className={styles.errorMessage}>
-              {message}
-            </Alert>
-          )}
+          render={message => {
+            return hasErrors ? (
+              <Alert className={styles.errorMessage} type="error">
+                {message}
+              </Alert>
+            ) : null;
+          }}
         />
       </div>
 
