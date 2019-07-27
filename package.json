@@ -13,7 +13,6 @@
     "lint": "yarn lint:scripts && yarn lint:styles && yarn format:md",
     "lint:scripts": "eslint --fix \"**/*.js\"",
     "lint:styles": "stylelint --fix \"**/*.css\"",
-    "precommit": "lint-staged && yarn test:changes",
     "start": "next start",
     "storybook": "start-storybook -s ./static -p 9001 -c .storybook",
     "storybook:build": "build-storybook -s ./static -c .storybook -o .storybook-dist",
@@ -27,6 +26,12 @@
     "test:changes:watch": "yarn test --changedSince master --watch",
     "test:watch": "yarn test --watch",
     "test:update-snaps": "yarn test -u"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint-staged",
+      "pre-push": "yarn test:changes"
+    }
   },
   "lint-staged": {
     "*.js": [
@@ -74,7 +79,7 @@
     "js-cookie": "^2.2.0",
     "jwt-decode": "^2.2.0",
     "lodash": "^4.17.15",
-    "logrocket": "^1.0.2",
+    "logrocket": "^1.0.3",
     "logrocket-react": "^3.0.0",
     "next": "^9.0.2",
     "next-cookies": "^1.1.2",
@@ -87,7 +92,7 @@
     "postcss-loader": "^3.0.0",
     "postcss-prepend-imports": "^1.0.1",
     "prop-types": "^15.6.2",
-    "query-string": "^6.8.1",
+    "query-string": "^6.8.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-facebook-login": "^4.1.1",
@@ -104,12 +109,12 @@
     "reselect": "^4.0.0",
     "style-loader": "^0.23.1",
     "url-loader": "^2.1.0",
-    "webpack": "^4.36.1",
+    "webpack": "^4.38.0",
     "yup": "^0.27.0"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.5.5",
-    "@testing-library/react": "^8.0.5",
+    "@testing-library/react": "^8.0.7",
     "all-contributors-cli": "^6.8.1",
     "axios-mock-adapter": "^1.17.0",
     "babel-eslint": "^10.0.2",
@@ -120,24 +125,24 @@
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
     "enzyme-to-json": "^3.3.5",
-    "eslint": "6.0.1",
+    "eslint": "6.1.0",
     "eslint-config-airbnb": "^17.1.1",
     "eslint-config-prettier": "^6.0.0",
     "eslint-plugin-cypress": "^2.6.0",
     "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-jest": "^22.13.6",
+    "eslint-plugin-jest": "^22.14.0",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.14.3",
-    "eslint-plugin-unicorn": "^9.1.1",
+    "eslint-plugin-unicorn": "^10.0.0",
     "express": "^4.17.1",
     "faker": "^4.1.0",
-    "husky": "0.14.3",
+    "husky": "3.0.1",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.8.0",
     "jest-enzyme": "7.0.2",
     "jest-prop-type-error": "^1.1.0",
-    "lint-staged": "^9.2.0",
+    "lint-staged": "^9.2.1",
     "prettier": "^1.18.2",
     "react-addons-test-utils": "^15.6.2",
     "react-test-renderer": "^16.8.6",
@@ -147,10 +152,5 @@
     "stylelint-config-standard": "^18.3.0",
     "stylelint-prettier": "^1.1.1",
     "webpack-filter-warnings-plugin": "^1.2.1"
-  },
-  "greenkeeper": {
-    "ignore": [
-      "husky"
-    ]
   }
 }
