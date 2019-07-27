@@ -44,14 +44,11 @@ class Layout extends React.Component {
 }
 
 class OperationCodeApp extends App {
-  async componentDidMount() {
+  componentDidMount() {
     /* Analytics */
     // Temporary method until we do dynamic now configs
     if (window.location.host.includes('operationcode.org') && isProduction) {
-      Sentry.init({
-        dsn: process.env.SENTRY_DSN,
-        release: `front-end@${version}`,
-      });
+      Sentry.init({ dsn: process.env.SENTRY_DSN, release: `front-end@${version}` });
       LogRocket.init(`${process.env.LOGROCKET_KEY}/operation-code`);
       ReactGA.initialize(process.env.GOOGLE_ANALYTICS_TRACKING_ID);
 
@@ -87,11 +84,6 @@ class OperationCodeApp extends App {
       .catch(() =>
         Sentry.captureException('FontFaceObserver took too long to resolve. Ignore this.'),
       );
-
-    // Do feature detection, to figure out which polyfills needs to be imported.
-    if (typeof window.IntersectionObserver === 'undefined') {
-      await import('intersection-observer');
-    }
 
     /* Modal anchor set */
     if (Modal.setAppElement) {

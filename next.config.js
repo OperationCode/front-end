@@ -78,7 +78,10 @@ const nextConfig = withCSS({
               limit: 8192,
               fallback: {
                 loader: 'file-loader',
-                options: { publicPath: '/_next/static/images', outputPath: 'static/images' },
+                options: {
+                  publicPath: '/_next/static/images',
+                  outputPath: 'static/images',
+                },
               },
               publicPath: '/_next/',
               outputPath: 'static/images/',
@@ -88,6 +91,20 @@ const nextConfig = withCSS({
         ],
       },
     );
+
+    // Add polyfills
+    const originalEntry = config.entry;
+
+    // eslint-disable-next-line no-param-reassign
+    config.entry = async () => {
+      const entries = await originalEntry();
+
+      if (entries['main.js'] && !entries['main.js'].includes('./polyfills.js')) {
+        entries['main.js'].unshift('./polyfills.js');
+      }
+
+      return entries;
+    };
 
     return config;
   },
