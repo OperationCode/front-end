@@ -14,6 +14,8 @@ workflows:
       - cypress/run:
           requires:
             - cypress_install
+          executor: cypress/browsers-chrome75
+          browser: chrome
           record: true # record results on Cypress Dashboard
           parallel: true # split all specs across machines
           parallelism: 3 # use 3 CircleCI machines to finish quickly
