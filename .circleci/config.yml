@@ -14,7 +14,7 @@ workflows:
       - cypress/run:
           requires:
             - cypress_install
-          executor: cypress/browsers-chrome75
+          executor: cypress/browsers-chrome69
           browser: chrome
           record: true # record results on Cypress Dashboard
           parallel: true # split all specs across machines
