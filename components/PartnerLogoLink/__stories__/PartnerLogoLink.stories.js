@@ -3,6 +3,8 @@ import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 import { withKnobs, text } from '@storybook/addon-knobs';
 
+import { s3 } from 'common/constants/urls';
+
 import PartnerLogoLink from '../PartnerLogoLink';
 
 storiesOf('PartnerLogoLink', module)
@@ -11,10 +13,7 @@ storiesOf('PartnerLogoLink', module)
     'default',
     withInfo()(() => (
       <PartnerLogoLink
-        logoSource={text(
-          'logoSource',
-          'https://s3.amazonaws.com/operationcode-assets/partnerLogos/github.png',
-        )}
+        logoSource={text('logoSource', `${s3}partnerLogos/github.png`)}
         name={text('name', 'GitHub')}
         url={text('url', 'https://github.com')}
       />

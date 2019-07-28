@@ -19,7 +19,8 @@ function Footer() {
             {name}
           </OutboundLink>
         ) : (
-          <Link href={href}>
+          // TODO: Attack prefetch to scroll listener
+          <Link href={href} prefetch={false}>
             <a>{name}</a>
           </Link>
         )}
@@ -75,7 +76,7 @@ function Footer() {
                 {link.name}
               </OutboundLink>
             ) : (
-              <Link href={link.href} key={link.href}>
+              <Link href={link.href} key={link.href} prefetch={false}>
                 <a className={styles.lineHeightFix}>{link.name}</a>
               </Link>
             ),

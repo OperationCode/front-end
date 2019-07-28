@@ -41,13 +41,13 @@ class SocialLoginGroup extends React.Component {
 
     return (
       <div className={classNames(className, styles.flexRow, styles.SocialLoginGroup)}>
-        <Alert
-          className={classNames(styles.flexRow, styles.fullWidth)}
-          isOpen={Boolean(errorMessage)}
-          type="error"
-        >
-          {errorMessage}
-        </Alert>
+        <div className={classNames(styles.alertContainer, styles.fullWidth)}>
+          {errorMessage && (
+            <Alert className={classNames(styles.flexRow, styles.alertFill)} type="error">
+              {errorMessage}
+            </Alert>
+          )}
+        </div>
 
         {children({ onSuccess: this.onSuccess, onGoogleFailure: this.onGoogleFailure })}
       </div>

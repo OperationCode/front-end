@@ -6,6 +6,10 @@
   width: 100%;
 }
 
+.boardMembers img {
+  object-fit: cover;
+}
+
 .foundingMembers {
   padding: 2rem 0 0 0;
 }

@@ -15,6 +15,7 @@ export default class NavListItem extends Component {
       shape({
         name: string.isRequired,
         href: string.isRequired,
+        shouldPrefetch: bool,
       }),
     ),
   };
@@ -49,8 +50,6 @@ export default class NavListItem extends Component {
       <li className={styles.NavListItem}>
         <Link href={props.href} prefetch={props.shouldPrefetch}>
           <a
-            aria-expanded={state.areSublinksVisible}
-            aria-haspopup={hasSublinks}
             className={classNames(styles.link, styles.navItemLink)}
             onMouseEnter={this.showSublinks}
             onMouseLeave={this.hideSublinks}
@@ -66,6 +65,8 @@ export default class NavListItem extends Component {
           <>
             <button
               aria-expanded={state.areSublinksVisible}
+              aria-haspopup={hasSublinks}
+              aria-label="submenu"
               className={styles.sublinkToggleButton}
               onClick={this.toggleSublinkVisibility}
               onMouseEnter={this.showSublinks}
@@ -88,7 +89,7 @@ export default class NavListItem extends Component {
             >
               {props.sublinks.map(sublink => (
                 <li className={styles.sublinkListItem} key={sublink.name}>
-                  <Link href={sublink.href}>
+                  <Link href={sublink.href} prefetch={sublink.shouldPrefetch || false}>
                     <a
                       className={styles.link}
                       key={sublink.name}

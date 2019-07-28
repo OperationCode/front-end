@@ -4,6 +4,7 @@ import LogoSection from 'components/Branding/LogoSection/LogoSection';
 import ColorSection from 'components/Branding/ColorSection/ColorSection';
 import FontSection from 'components/Branding/FontSection/FontSection';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
+import { s3 } from 'common/constants/urls';
 import styles from './styles/branding.css';
 
 const Branding = () => (
@@ -31,7 +32,7 @@ const Branding = () => (
       <p className={styles.justifyAlign}>
         <OutboundLink
           analyticsEventLabel="Branding EPS Download"
-          href="https://s3.us-east-2.amazonaws.com/operationcode-web/Operation-Code-Logo.eps"
+          href={`${s3}Operation-Code-Logo.eps`}
         >
           Download master EPS file
         </OutboundLink>

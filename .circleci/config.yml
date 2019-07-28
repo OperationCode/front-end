@@ -25,7 +25,7 @@ workflows:
 jobs:
   build_and_test:
     docker:
-      - image: circleci/node:8.15.1
+      - image: circleci/node:10.16.0
         environment: # environment variables for primary container
           CC_TEST_REPORTER_ID: 0f2bc6ef737019bfc8eda369cd06b66c54606b144b4d81cec010fb494d2559af
 
@@ -44,13 +44,7 @@ jobs:
       - run:
           name: Install dependencies
           command: |
-            yarn global add greenkeeper-lockfile@2
-
-            if [[ ${CIRCLE_BRANCH} == greenkeeper* ]]; then
-                  yarn;
-            else
-                  yarn  --frozen-lockfile --production=false;
-            fi
+            yarn
 
       - run:
           name: Initializing CodeClimate
@@ -75,7 +69,6 @@ jobs:
       - run:
           name: Post test scripts
           command: |
-            greenkeeper-lockfile-upload
             /usr/local/bin/cc-test-reporter after-build
 
   cypress_install:
@@ -89,13 +82,7 @@ jobs:
       - run:
           name: Yarn install
           command: |
-            yarn global add greenkeeper-lockfile@2
-
-            if [[ ${CIRCLE_BRANCH} == greenkeeper* ]]; then
-                  yarn;
-            else
-                  yarn  --frozen-lockfile --production=false;
-            fi
+            yarn
 
       - run:
           command: npx cypress verify

@@ -130,14 +130,12 @@ module.exports = {
         aspects: ['invalidHref', 'preferButton'],
       },
     ],
-    'jsx-a11y/label-has-for': [
+    'jsx-a11y/label-has-associated-control': [
       2,
       {
-        components: ['Label'],
-        required: {
-          some: ['for'],
-        },
-        allowChildren: true,
+        labelComponents: ['Label'],
+        labelAttributes: ['for'],
+        controlComponents: ['Input', 'Select'],
       },
     ],
 
@@ -208,6 +206,9 @@ module.exports = {
           props: true,
           renderProps: true,
           requiredProps: true,
+          'custom-props': true,
+          'prop-utils': true,
+          'prop-utils.test': true,
         },
       },
     ],

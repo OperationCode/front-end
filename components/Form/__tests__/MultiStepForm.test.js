@@ -289,6 +289,9 @@ describe('MultiStepForm', () => {
 
     const wrapper = mount(<MultiStepForm {...requiredProps} onFinalSubmit={onFinalSubmitMock} />);
 
+    // sanity check
+    expect(wrapper.find('Alert')).not.toExist();
+
     typeIntoInput(wrapper, 'firstName', faker.name.firstName());
     typeIntoInput(wrapper, 'lastName', faker.name.lastName());
     await submitForm(wrapper);
@@ -305,7 +308,7 @@ describe('MultiStepForm', () => {
 
     await submitForm(wrapper);
 
-    expect(wrapper.find('Alert').text()).toStrictEqual('');
+    expect(wrapper.find('Alert')).not.toExist();
   });
 
   it('should be able to go back and forth between steps, maintaining form state', async () => {

@@ -8,7 +8,7 @@ import { JoinSection } from '../JoinSection';
 const originalCookieGet = cookie.get;
 
 describe('JoinSection', () => {
-  beforeEach(cleanup);
+  afterEach(cleanup);
 
   afterAll(() => {
     cookie.get = originalCookieGet;

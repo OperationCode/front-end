@@ -11,6 +11,7 @@ const goToPreviousStep = stepName => {
 
 const firstStepName = 'Professional Details';
 const secondStepName = 'Military Status';
+const thirdStepName = 'Military Details';
 
 describe(`profile/update (unauthorized)`, () => {
   it(`should redirect to login if not authorized`, () => {
@@ -99,5 +100,31 @@ describe(`profile/update (from login)`, () => {
 
     // confirms that next step IS military details
     goToNextStep('Military Details');
+  });
+
+  it(`should not allow negative in the years of service input`, () => {
+    goToNextStep(secondStepName);
+    goToNextStep(thirdStepName);
+
+    cy.get('input[name="yearsOfService"]')
+      .clear()
+      .type('-1');
+
+    cy.get('button[data-testid="Submit Step Button"]').click();
+
+    cy.get('div[role="alert"]').should('have.text', 'Enter a number between 1 and 40.');
+  });
+
+  it(`should not allow numbers greater than 40 in the years of service input`, () => {
+    goToNextStep(secondStepName);
+    goToNextStep(thirdStepName);
+
+    cy.get('input[name="yearsOfService"]')
+      .clear()
+      .type('41');
+
+    cy.get('button[data-testid="Submit Step Button"]').click();
+
+    cy.get('div[role="alert"]').should('have.text', 'Enter a number between 1 and 40.');
   });
 });

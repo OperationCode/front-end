@@ -15,10 +15,17 @@ exports[`PartnerLogoLink should render with required props 1`] = `
     >
       Opens in new window
     </span>
+    <noscript>
+      <img
+        alt="Partner Inc. logo"
+        className="logo"
+        src="https://partnerinc.com/logo"
+      />
+    </noscript>
     <img
       alt="Partner Inc. logo"
       className="logo"
-      src="https://partnerinc.com/logo"
+      data-src="https://partnerinc.com/logo"
     />
   </a>
 </div>

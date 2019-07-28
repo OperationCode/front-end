@@ -112,6 +112,12 @@ export default class CodeSchools extends React.Component {
     this.setState({ filteredSchools: vaApproved, selectedStates: [] });
   };
 
+  filterVetTecApproved = () => {
+    const { allSchools } = this.props;
+    const vetTecApprovedSchools = allSchools.filter(school => school.isVetTecApproved);
+    this.setState({ filteredSchools: vetTecApprovedSchools, selectedStates: [] });
+  };
+
   showAllSchools = () => {
     const { allSchools } = this.props;
     this.setState({ filteredSchools: allSchools, selectedStates: [] });
@@ -185,13 +191,16 @@ export default class CodeSchools extends React.Component {
           hasTitleUnderline
           columns={
             errorMessage
-              ? [<Alert isOpen>{errorMessage}</Alert>]
+              ? [<Alert type="error">{errorMessage}</Alert>]
               : [
                   <Button theme="primary" onClick={this.showAllSchools}>
                     All Schools
                   </Button>,
                   <Button theme="primary" onClick={this.filterVaApproved}>
                     Schools Accepting GI Bill
+                  </Button>,
+                  <Button theme="primary" onClick={this.filterVetTecApproved}>
+                    Schools Accepting Vet Tec
                   </Button>,
                   <Button theme="primary" onClick={this.filterOnline}>
                     Online Schools

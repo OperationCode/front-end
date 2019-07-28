@@ -18,20 +18,27 @@ exports[`Nav should render with no props passed 1`] = `
         Object {
           "href": "/about",
           "name": "About Us",
-          "shouldPrefetch": false,
+          "shouldPrefetch": true,
         },
         Object {
           "href": "/contact",
           "name": "Contact Us",
+          "shouldPrefetch": false,
         },
         Object {
           "href": "/faq",
           "name": "FAQ",
+          "shouldPrefetch": false,
+        },
+        Object {
+          "href": "/podcast",
+          "name": "Podcast",
+          "shouldPrefetch": false,
         },
         Object {
           "href": "/who_we_serve",
           "name": "Who We Serve",
-          "shouldPrefetch": false,
+          "shouldPrefetch": true,
         },
         Object {
           "href": "/events",
@@ -41,7 +48,7 @@ exports[`Nav should render with no props passed 1`] = `
         Object {
           "href": "/get_involved",
           "name": "Get Involved",
-          "shouldPrefetch": false,
+          "shouldPrefetch": true,
         },
         Object {
           "href": "/sponsorship",
@@ -65,6 +72,7 @@ exports[`Nav should render with no props passed 1`] = `
       <nav>
         <Link
           href="/"
+          prefetch={false}
         >
           <a
             className="logoLink link"
@@ -72,7 +80,7 @@ exports[`Nav should render with no props passed 1`] = `
             <img
               alt="Operation Code Logo"
               className="logo"
-              src="https://s3.amazonaws.com/operationcode-assets/branding/logos/small-blue-logo.png"
+              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/small-blue-logo.png"
             />
           </a>
         </Link>
@@ -82,16 +90,23 @@ exports[`Nav should render with no props passed 1`] = `
           <NavListItem
             href="/about"
             name="About Us"
-            shouldPrefetch={false}
+            shouldPrefetch={true}
             sublinks={
               Array [
                 Object {
                   "href": "/contact",
                   "name": "Contact Us",
+                  "shouldPrefetch": false,
                 },
                 Object {
                   "href": "/faq",
                   "name": "FAQ",
+                  "shouldPrefetch": false,
+                },
+                Object {
+                  "href": "/podcast",
+                  "name": "Podcast",
+                  "shouldPrefetch": false,
                 },
               ]
             }
@@ -99,7 +114,7 @@ exports[`Nav should render with no props passed 1`] = `
           <NavListItem
             href="/who_we_serve"
             name="Who We Serve"
-            shouldPrefetch={false}
+            shouldPrefetch={true}
             sublinks={
               Array [
                 Object {
@@ -122,7 +137,7 @@ exports[`Nav should render with no props passed 1`] = `
           <NavListItem
             href="/get_involved"
             name="Get Involved"
-            shouldPrefetch={false}
+            shouldPrefetch={true}
             sublinks={
               Array [
                 Object {
@@ -139,6 +154,7 @@ exports[`Nav should render with no props passed 1`] = `
           <li>
             <Link
               href="https://secure.lglforms.com/form_engine/s/BRtP7QUKyHOyEYsZROsRew"
+              prefetch={false}
             >
               <a
                 className="link donateLink"

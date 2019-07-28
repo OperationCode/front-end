@@ -115,9 +115,7 @@ export class MultiStepForm extends React.Component {
             <CurrentStep {...formikBag} />
 
             <div className={styles.errorMessage}>
-              <Alert isOpen={Boolean(errorMessage)} type="error">
-                {errorMessage}
-              </Alert>
+              {errorMessage && <Alert type="error">{errorMessage}</Alert>}
             </div>
 
             <div className={styles.buttonGrouping}>

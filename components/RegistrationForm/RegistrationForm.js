@@ -28,8 +28,14 @@ const registrationSchema = Yup.object().shape({
   'confirm-password': Yup.string()
     .required(validationErrorMessages.required)
     .oneOf([Yup.ref('password')], validationErrorMessages.passwordMatch),
-  firstName: Yup.string().required(validationErrorMessages.required),
-  lastName: Yup.string().required(validationErrorMessages.required),
+  firstName: Yup.string()
+    .required(validationErrorMessages.required)
+    // eslint-disable-next-line no-useless-escape
+    .matches(/^[a-zA-Zà-žÀ-Ž \-]+$/, validationErrorMessages.name),
+  lastName: Yup.string()
+    .required(validationErrorMessages.required)
+    // eslint-disable-next-line no-useless-escape
+    .matches(/^[a-zA-Zà-žÀ-Ž \-]+$/, validationErrorMessages.name),
   zipcode: Yup.string()
     .required(validationErrorMessages.required)
     .test('zipcode', validationErrorMessages.zipcode, isValidZipcode),
@@ -180,9 +186,7 @@ class RegistrationForm extends Component {
             </div>
 
             <div className={styles.row}>
-              <Alert isOpen={Boolean(state.errorMessage)} type="error">
-                {state.errorMessage}
-              </Alert>
+              {state.errorMessage && <Alert type="error">{state.errorMessage}</Alert>}
             </div>
 
             <div className={styles.row}>

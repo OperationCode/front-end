@@ -1,22 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FAQItem should render with required props 1`] = `
+exports[`AccordionItem should render with required props 1`] = `
 <div
-  className="accordionSingle"
+  className="accordion"
 >
   <input
-    className="accordionSingleHidden"
+    className="accordionHidden"
     id="How do I test things"
     type="checkbox"
   />
   <label
-    className="accordionSingleQuestion"
+    className="accordionTitle"
     htmlFor="How do I test things"
   >
     How do I test things?
   </label>
   <p
-    className="accordionSingleAnswer"
+    className="accordionContent"
   >
     Like so!
   </p>

@@ -10,9 +10,7 @@ describe('PartnerLogoLink', () => {
         name="Partner Inc."
         logoSource="https://partnerinc.com/logo"
         url="https://partnerinc.com"
-      >
-        Test
-      </PartnerLogoLink>,
+      />,
     );
   });
 });

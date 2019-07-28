@@ -4,10 +4,17 @@ exports[`Storyshots SuccessStory default 1`] = `
 <div
   className="SuccessStory"
 >
+  <noscript>
+    <img
+      alt="Kyle Holmberg headshot"
+      className="image"
+      src="https://kylemh.com/public/img/me.jpg"
+    />
+  </noscript>
   <img
     alt="Kyle Holmberg headshot"
     className="image"
-    src="https://kylemh.com/public/img/me.jpg"
+    data-src="https://kylemh.com/public/img/me.jpg"
   />
   <div
     className="quote"

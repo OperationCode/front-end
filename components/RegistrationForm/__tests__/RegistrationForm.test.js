@@ -162,10 +162,7 @@ describe('RegistrationForm', () => {
       expect(OperationCodeAPIMock.history.post.length).not.toBeGreaterThan(0);
     });
 
-    // All fields + 1 because of always-rendered form error (as opposed to all the field errors)
-    expect(wrapper.find('Alert').children()).toHaveLength(
-      Object.keys(invalidFormValues).length + 1,
-    );
+    expect(wrapper.find('Alert').children()).toHaveLength(Object.keys(invalidFormValues).length);
   });
 
   it('should show "email already registered" message for dupe email registration', async () => {

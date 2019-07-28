@@ -1,31 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Alert should render with many props assigned 1`] = `
-<div
-  className="Alert success visible"
-  role="alert"
->
-  <button
-    className="alertCloseButton"
-    onClick={[Function]}
-    type="button"
-  >
-    <span
-      className="ScreenReaderOnly"
-    >
-      Close Alert
-    </span>
-    <span>
-      ×
-    </span>
-  </button>
-  Success Test Alert!
-</div>
-`;
-
 exports[`Alert should render with required props 1`] = `
 <div
-  className="Alert error visible"
+  className="Alert error"
   role="alert"
 >
   Error Test Alert!

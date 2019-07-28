@@ -52,7 +52,7 @@ export default class Team extends React.Component {
           theme="white"
           columns={[
             errorMessage ? (
-              <Alert isOpen>{errorMessage}</Alert>
+              <Alert type="error">{errorMessage}</Alert>
             ) : (
               <div className={styles.boardMembers}>
                 {boardMembers.map(({ name, role, imageSrc: imageSource, description }) => (

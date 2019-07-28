@@ -4,7 +4,7 @@ exports[`SuccessStory should render with required props 1`] = `
 <div
   className="SuccessStory"
 >
-  <img
+  <Image
     alt="Great testing culture headshot"
     className="image"
     src="image.png"
