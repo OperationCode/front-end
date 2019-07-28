@@ -1,0 +1,217 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Cards/ResourceCard with long name 1`] = `
+<article
+  className="Card ResourceCard"
+>
+  <div
+    className="titleSection"
+  >
+    <img
+      alt="logo"
+      src="/static/images/icons/javascript_logo.svg"
+    />
+    <h5>
+      Javascript for Super Duper Dummies
+    </h5>
+  </div>
+  <div>
+    <p
+      className="descriptionText"
+    >
+      Cliche umami truffaut scenester vice bespoke. Lomo copper mug seitan raw denim tousled coloring book kinfolk irony venmo fam austin. Pitchfork vape pork belly, fixie flannel enamel pin cold-pressed echo park. Organic sriracha waistcoat austin keytar, gentrify cardigan mumblecore PBR&B tumblr normcore meggings scenester. Enamel pin kitsch butcher, synth etsy next level gluten-free. Put a bird on it vexillologist XOXO iPhone wolf coloring book chicharrones 8-bit VHS unicorn. Leggings viral taxidermy keytar, cray schlitz hot chicken kogi truffaut art party XOXO.
+    </p>
+  </div>
+  <div
+    className="footerSection"
+  >
+    <span
+      className="footerText"
+    >
+      I found this useful 
+    </span>
+    <button
+      className="voteBtn"
+      onClick={[Function]}
+      type="button"
+    >
+      <svg
+        className="icon"
+      />
+      12
+    </button>
+    <button
+      className="voteBtn"
+      onClick={[Function]}
+      type="button"
+    >
+      <svg
+        className="icon"
+      />
+      25
+    </button>
+  </div>
+</article>
+`;
+
+exports[`Storyshots Cards/ResourceCard with short description 1`] = `
+<article
+  className="Card ResourceCard"
+>
+  <div
+    className="titleSection"
+  >
+    <img
+      alt="logo"
+      src="/static/images/icons/javascript_logo.svg"
+    />
+    <h5>
+      Javascript for Dummies
+    </h5>
+  </div>
+  <div>
+    <p
+      className="descriptionText"
+    >
+      Trust fund post-ironic austin offal. Asymmetrical knausgaard selfies, butcher celiac brunch brooklyn palo santo iceland gochujang chicharrones waistcoat plaid.
+    </p>
+  </div>
+  <div
+    className="footerSection"
+  >
+    <span
+      className="footerText"
+    >
+      I found this useful 
+    </span>
+    <button
+      className="voteBtn"
+      onClick={[Function]}
+      type="button"
+    >
+      <svg
+        className="icon active"
+      />
+      12
+    </button>
+    <button
+      className="voteBtn"
+      onClick={[Function]}
+      type="button"
+    >
+      <svg
+        className="icon"
+      />
+      25
+    </button>
+  </div>
+</article>
+`;
+
+exports[`Storyshots Cards/ResourceCard with truncated description 1`] = `
+<article
+  className="Card ResourceCard"
+>
+  <div
+    className="titleSection"
+  >
+    <img
+      alt="logo"
+      src="/static/images/icons/javascript_logo.svg"
+    />
+    <h5>
+      Javascript for Dummies
+    </h5>
+  </div>
+  <div>
+    <p
+      className="descriptionText"
+    >
+      Cliche umami truffaut scenester vice bespoke. Lomo copper mug seitan raw denim tousled coloring book kinfolk irony venmo fam austin. Pitchfork vape pork belly, fixie flannel enamel pin cold-pressed echo park. Organic sriracha waistcoat austin keytar, gentrify cardigan mumblecore PBR&B tumblr normcore meggings scenester. Enamel pin kitsch butcher, synth etsy next level gluten-free. Put a bird on it vexillologist XOXO iPhone wolf coloring book chicharrones 8-bit VHS unicorn. Leggings viral taxidermy keytar, cray schlitz hot chicken kogi truffaut art party XOXO.
+    </p>
+  </div>
+  <div
+    className="footerSection"
+  >
+    <span
+      className="footerText"
+    >
+      I found this useful 
+    </span>
+    <button
+      className="voteBtn"
+      onClick={[Function]}
+      type="button"
+    >
+      <svg
+        className="icon"
+      />
+      12
+    </button>
+    <button
+      className="voteBtn"
+      onClick={[Function]}
+      type="button"
+    >
+      <svg
+        className="icon"
+      />
+      25
+    </button>
+  </div>
+</article>
+`;
+
+exports[`Storyshots Cards/ResourceCard with zero up/downvotes 1`] = `
+<article
+  className="Card ResourceCard"
+>
+  <div
+    className="titleSection"
+  >
+    <img
+      alt="logo"
+      src="/static/images/icons/javascript_logo.svg"
+    />
+    <h5>
+      Javascript for Super Duper Dummies
+    </h5>
+  </div>
+  <div>
+    <p
+      className="descriptionText"
+    >
+      Cliche umami truffaut scenester vice bespoke. Lomo copper mug seitan raw denim tousled coloring book kinfolk irony venmo fam austin. Pitchfork vape pork belly, fixie flannel enamel pin cold-pressed echo park. Organic sriracha waistcoat austin keytar, gentrify cardigan mumblecore PBR&B tumblr normcore meggings scenester. Enamel pin kitsch butcher, synth etsy next level gluten-free. Put a bird on it vexillologist XOXO iPhone wolf coloring book chicharrones 8-bit VHS unicorn. Leggings viral taxidermy keytar, cray schlitz hot chicken kogi truffaut art party XOXO.
+    </p>
+  </div>
+  <div
+    className="footerSection"
+  >
+    <span
+      className="footerText"
+    >
+      I found this useful 
+    </span>
+    <button
+      className="voteBtn faded"
+      onClick={[Function]}
+      type="button"
+    >
+      <svg
+        className="icon"
+      />
+      0
+    </button>
+    <button
+      className="voteBtn faded"
+      onClick={[Function]}
+      type="button"
+    >
+      <svg
+        className="icon"
+      />
+      0
+    </button>
+  </div>
+</article>
+`;
