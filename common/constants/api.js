@@ -2,7 +2,7 @@ import { get, post, patch } from 'common/utils/api-utils';
 import { formatUserData } from 'common/utils/formatters';
 
 /* GET REQUESTS */
-export const getUserPromise = ({ token }) => get('auth/user', { token });
+export const getUserPromise = ({ token }) => get('auth/user/', { token });
 export const getCodeSchoolsPromise = () => get('api/v1/codeschools/');
 export const getTeamMembersPromise = () => get('api/v1/teamMembers/');
 
