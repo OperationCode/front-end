@@ -56,7 +56,7 @@
     "@storybook/addon-knobs": "3.4.11",
     "@storybook/addon-options": "3.4.11",
     "@storybook/addon-storyshots": "3.4.11",
-    "@storybook/addon-viewport": "3.4.11",
+    "@storybook/addon-viewport": "5.1.9",
     "@storybook/addons": "3.4.11",
     "@storybook/react": "3.4.11",
     "@zeit/next-bundle-analyzer": "^0.1.2",
