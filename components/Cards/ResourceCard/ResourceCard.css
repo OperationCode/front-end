@@ -101,6 +101,7 @@
 .icon.active > :global(.negative-space) {
   color: var(--secondary);
   stroke: var(--secondary);
+  fill: var(--secondary);
   stroke-width: 50;
 }
 
