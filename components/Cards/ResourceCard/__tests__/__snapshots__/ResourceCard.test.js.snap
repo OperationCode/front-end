@@ -32,6 +32,7 @@ exports[`ResourceCard should render properly with faded up/downvotes 1`] = `
     </span>
     <button
       className="voteBtn faded"
+      onClick={[Function]}
       type="button"
     >
       <svg
@@ -41,6 +42,7 @@ exports[`ResourceCard should render properly with faded up/downvotes 1`] = `
     </button>
     <button
       className="voteBtn faded"
+      onClick={[Function]}
       type="button"
     >
       <svg
@@ -84,6 +86,7 @@ exports[`ResourceCard should render properly with truncated description 1`] = `
     </span>
     <button
       className="voteBtn"
+      onClick={[Function]}
       type="button"
     >
       <svg
@@ -93,6 +96,7 @@ exports[`ResourceCard should render properly with truncated description 1`] = `
     </button>
     <button
       className="voteBtn"
+      onClick={[Function]}
       type="button"
     >
       <svg
@@ -136,6 +140,7 @@ exports[`ResourceCard should render with many props assigned 1`] = `
     </span>
     <button
       className="voteBtn"
+      onClick={[Function]}
       type="button"
     >
       <svg
@@ -145,6 +150,7 @@ exports[`ResourceCard should render with many props assigned 1`] = `
     </button>
     <button
       className="voteBtn"
+      onClick={[Function]}
       type="button"
     >
       <svg
@@ -188,6 +194,7 @@ exports[`ResourceCard should render with required props 1`] = `
     </span>
     <button
       className="voteBtn faded"
+      onClick={[Function]}
       type="button"
     >
       <svg
@@ -197,6 +204,7 @@ exports[`ResourceCard should render with required props 1`] = `
     </button>
     <button
       className="voteBtn faded"
+      onClick={[Function]}
       type="button"
     >
       <svg

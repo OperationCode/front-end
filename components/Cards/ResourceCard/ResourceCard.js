@@ -1,5 +1,5 @@
 import React from 'react';
-import { string, number, bool } from 'prop-types';
+import { string, number, bool, func } from 'prop-types';
 import classnames from 'classnames';
 
 import Card from 'components/Cards/Card/Card';
@@ -13,8 +13,10 @@ ResourceCard.propTypes = {
   description: string,
   upvotes: number,
   upvoted: bool,
+  onUpvote: func,
   downvotes: number,
   downvoted: bool,
+  onDownvote: func,
   href: string,
   className: string,
 };
@@ -24,8 +26,10 @@ ResourceCard.defaultProps = {
   description: '',
   upvotes: 0,
   upvoted: false,
+  onUpvote: () => {},
   downvotes: 0,
   downvoted: false,
+  onDownvote: () => {},
   href: '',
 };
 
@@ -35,8 +39,10 @@ export default function ResourceCard({
   description,
   upvotes,
   upvoted,
+  onUpvote,
   downvotes,
   downvoted,
+  onDownvote,
   className,
 }) {
   return (
@@ -52,7 +58,11 @@ export default function ResourceCard({
 
       <div className={styles.footerSection}>
         <span className={styles.footerText}>I found this useful </span>
-        <button type="button" className={classnames(styles.voteBtn, { [styles.faded]: !upvotes })}>
+        <button
+          type="button"
+          className={classnames(styles.voteBtn, { [styles.faded]: !upvotes })}
+          onClick={onUpvote}
+        >
           <ThumbsUp className={classnames(styles.icon, { [styles.active]: upvoted })} />
           {upvotes}
         </button>
@@ -60,9 +70,9 @@ export default function ResourceCard({
         <button
           type="button"
           className={classnames(styles.voteBtn, { [styles.faded]: !downvotes })}
+          onClick={onDownvote}
         >
           <ThumbsDown className={classnames(styles.icon, { [styles.active]: downvoted })} />
-
           {downvotes}
         </button>
       </div>
