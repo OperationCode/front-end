@@ -51,6 +51,11 @@ const partners = [
     logoSource: `${s3}partnerLogos/zapier.png`,
     url: 'https://zapier.com',
   },
+  {
+    name: 'LogRocket',
+    logoSource: `${s3}partnerLogos/logrocket.png`,
+    url: 'https://logrocket.com/',
+  },
 ];
 
 export default partners;
