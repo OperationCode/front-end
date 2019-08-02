@@ -136,6 +136,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://www.linkedin.com/in/timothyquirk/"><img src="https://avatars1.githubusercontent.com/u/44677020?v=4" width="100px;" alt="Timothy Quirk"/><br /><sub><b>Timothy Quirk</b></sub></a><br /><a href="https://github.com/OperationCode/front-end/commits?author=tfquirk" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/danielasannino"><img src="https://avatars2.githubusercontent.com/u/24445651?v=4" width="100px;" alt="danielasannino"/><br /><sub><b>danielasannino</b></sub></a><br /><a href="https://github.com/OperationCode/front-end/commits?author=danielasannino" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/cbituin"><img src="https://avatars2.githubusercontent.com/u/38743840?v=4" width="100px;" alt="Conrad Bituin"/><br /><sub><b>Conrad Bituin</b></sub></a><br /><a href="https://github.com/OperationCode/front-end/commits?author=cbituin" title="Code">💻</a></td>
+    <td align="center"><a href="http://www.linkedin.com/in/tunmise-profile"><img src="https://avatars0.githubusercontent.com/u/26048536?v=4" width="100px;" alt="Tunmise Ogunniyi"/><br /><sub><b>Tunmise Ogunniyi</b></sub></a><br /><a href="https://github.com/OperationCode/front-end/commits?author=IAMOTZ" title="Code">💻</a></td>
   </tr>
 </table>
 
