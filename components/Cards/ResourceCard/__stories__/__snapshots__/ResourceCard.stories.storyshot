@@ -4,7 +4,7 @@ exports[`Storyshots Cards/ResourceCard with long name 1`] = `
 <article
   className="Card ResourceCard"
 >
-  <div
+  <header
     className="titleSection"
   >
     <img
@@ -14,15 +14,15 @@ exports[`Storyshots Cards/ResourceCard with long name 1`] = `
     <h5>
       Javascript for Super Duper Dummies
     </h5>
-  </div>
-  <div>
+  </header>
+  <section>
     <p
       className="descriptionText"
     >
       Cliche umami truffaut scenester vice bespoke. Lomo copper mug seitan raw denim tousled coloring book kinfolk irony venmo fam austin. Pitchfork vape pork belly, fixie flannel enamel pin cold-pressed echo park. Organic sriracha waistcoat austin keytar, gentrify cardigan mumblecore PBR&B tumblr normcore meggings scenester. Enamel pin kitsch butcher, synth etsy next level gluten-free. Put a bird on it vexillologist XOXO iPhone wolf coloring book chicharrones 8-bit VHS unicorn. Leggings viral taxidermy keytar, cray schlitz hot chicken kogi truffaut art party XOXO.
     </p>
-  </div>
-  <div
+  </section>
+  <footer
     className="footerSection"
   >
     <span
@@ -50,7 +50,7 @@ exports[`Storyshots Cards/ResourceCard with long name 1`] = `
       />
       25
     </button>
-  </div>
+  </footer>
 </article>
 `;
 
@@ -58,7 +58,7 @@ exports[`Storyshots Cards/ResourceCard with short description 1`] = `
 <article
   className="Card ResourceCard"
 >
-  <div
+  <header
     className="titleSection"
   >
     <img
@@ -68,15 +68,15 @@ exports[`Storyshots Cards/ResourceCard with short description 1`] = `
     <h5>
       Javascript for Dummies
     </h5>
-  </div>
-  <div>
+  </header>
+  <section>
     <p
       className="descriptionText"
     >
       Trust fund post-ironic austin offal. Asymmetrical knausgaard selfies, butcher celiac brunch brooklyn palo santo iceland gochujang chicharrones waistcoat plaid.
     </p>
-  </div>
-  <div
+  </section>
+  <footer
     className="footerSection"
   >
     <span
@@ -104,7 +104,7 @@ exports[`Storyshots Cards/ResourceCard with short description 1`] = `
       />
       25
     </button>
-  </div>
+  </footer>
 </article>
 `;
 
@@ -112,7 +112,7 @@ exports[`Storyshots Cards/ResourceCard with truncated description 1`] = `
 <article
   className="Card ResourceCard"
 >
-  <div
+  <header
     className="titleSection"
   >
     <img
@@ -122,15 +122,15 @@ exports[`Storyshots Cards/ResourceCard with truncated description 1`] = `
     <h5>
       Javascript for Dummies
     </h5>
-  </div>
-  <div>
+  </header>
+  <section>
     <p
       className="descriptionText"
     >
       Cliche umami truffaut scenester vice bespoke. Lomo copper mug seitan raw denim tousled coloring book kinfolk irony venmo fam austin. Pitchfork vape pork belly, fixie flannel enamel pin cold-pressed echo park. Organic sriracha waistcoat austin keytar, gentrify cardigan mumblecore PBR&B tumblr normcore meggings scenester. Enamel pin kitsch butcher, synth etsy next level gluten-free. Put a bird on it vexillologist XOXO iPhone wolf coloring book chicharrones 8-bit VHS unicorn. Leggings viral taxidermy keytar, cray schlitz hot chicken kogi truffaut art party XOXO.
     </p>
-  </div>
-  <div
+  </section>
+  <footer
     className="footerSection"
   >
     <span
@@ -154,11 +154,11 @@ exports[`Storyshots Cards/ResourceCard with truncated description 1`] = `
       type="button"
     >
       <svg
-        className="icon"
+        className="icon active"
       />
       25
     </button>
-  </div>
+  </footer>
 </article>
 `;
 
@@ -166,7 +166,7 @@ exports[`Storyshots Cards/ResourceCard with zero up/downvotes 1`] = `
 <article
   className="Card ResourceCard"
 >
-  <div
+  <header
     className="titleSection"
   >
     <img
@@ -176,15 +176,15 @@ exports[`Storyshots Cards/ResourceCard with zero up/downvotes 1`] = `
     <h5>
       Javascript for Super Duper Dummies
     </h5>
-  </div>
-  <div>
+  </header>
+  <section>
     <p
       className="descriptionText"
     >
       Cliche umami truffaut scenester vice bespoke. Lomo copper mug seitan raw denim tousled coloring book kinfolk irony venmo fam austin. Pitchfork vape pork belly, fixie flannel enamel pin cold-pressed echo park. Organic sriracha waistcoat austin keytar, gentrify cardigan mumblecore PBR&B tumblr normcore meggings scenester. Enamel pin kitsch butcher, synth etsy next level gluten-free. Put a bird on it vexillologist XOXO iPhone wolf coloring book chicharrones 8-bit VHS unicorn. Leggings viral taxidermy keytar, cray schlitz hot chicken kogi truffaut art party XOXO.
     </p>
-  </div>
-  <div
+  </section>
+  <footer
     className="footerSection"
   >
     <span
@@ -212,6 +212,6 @@ exports[`Storyshots Cards/ResourceCard with zero up/downvotes 1`] = `
       />
       0
     </button>
-  </div>
+  </footer>
 </article>
 `;

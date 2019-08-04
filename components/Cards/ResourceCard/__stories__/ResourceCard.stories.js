@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, text, number, boolean } from '@storybook/addon-knobs';
+import { withKnobs, text, number, selectV2 } from '@storybook/addon-knobs';
 
 import ResourceCard from '../ResourceCard';
 
@@ -18,8 +18,7 @@ storiesOf('Cards/ResourceCard', module)
       downvotes={number('downvotes', 25)}
       description={text('description', shortDescription)}
       imageSource={text('imageSource', '/static/images/icons/javascript_logo.svg')}
-      upvoted={boolean('upvoted', true)}
-      downvoted={boolean('downvoted', false)}
+      userVote={selectV2('userVote', [undefined, 'downvote', 'upvote'], 'upvote')}
     />
   ))
   .add('with truncated description', () => (
@@ -29,8 +28,7 @@ storiesOf('Cards/ResourceCard', module)
       downvotes={number('downvotes', 25)}
       description={text('description', longDescription)}
       imageSource={text('imageSource', '/static/images/icons/javascript_logo.svg')}
-      upvoted={boolean('upvoted', false)}
-      downvoted={boolean('downvoted', false)}
+      userVote={selectV2('userVote', [undefined, 'downvote', 'upvote'], 'downvote')}
     />
   ))
   .add('with long name', () => (
@@ -40,8 +38,7 @@ storiesOf('Cards/ResourceCard', module)
       downvotes={number('downvotes', 25)}
       description={text('description', longDescription)}
       imageSource={text('imageSource', '/static/images/icons/javascript_logo.svg')}
-      upvoted={boolean('upvoted', false)}
-      downvoted={boolean('downvoted', false)}
+      userVote={selectV2('userVote', [undefined, 'downvote', 'upvote'])}
     />
   ))
   .add('with zero up/downvotes', () => (
@@ -51,7 +48,6 @@ storiesOf('Cards/ResourceCard', module)
       downvotes={number('downvotes', 0)}
       description={text('description', longDescription)}
       imageSource={text('imageSource', '/static/images/icons/javascript_logo.svg')}
-      upvoted={boolean('upvoted', false)}
-      downvoted={boolean('downvoted', false)}
+      userVote={selectV2('userVote', [undefined, 'downvote', 'upvote'])}
     />
   ));

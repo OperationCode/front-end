@@ -66,6 +66,7 @@
   padding-top: 1rem;
   align-items: center;
   border-top: 1px solid var(--gray);
+  background-color: inherit;
 }
 
 .footerText {
