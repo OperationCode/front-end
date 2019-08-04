@@ -98,7 +98,7 @@
     "react-dom": "^16.8.6",
     "react-facebook-login": "^4.1.1",
     "react-ga": "2.5.7",
-    "react-google-login": "^5.0.4",
+    "react-google-login": "^5.0.5",
     "react-modal": "^3.9.1",
     "react-on-screen": "^2.1.1",
     "react-player": "^1.11.1",
