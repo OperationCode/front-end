@@ -115,7 +115,7 @@
   },
   "devDependencies": {
     "@babel/preset-env": "^7.5.5",
-    "@testing-library/react": "^8.0.7",
+    "@testing-library/react": "^9.1.0",
     "all-contributors-cli": "^6.8.1",
     "axios-mock-adapter": "^1.17.0",
     "babel-eslint": "^10.0.2",
