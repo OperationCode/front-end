@@ -6,3 +6,11 @@
   text-align: center;
   margin-top: 2rem;
 }
+
+.honorRollCard {
+  width: 50%;
+}
+
+.honorRollList {
+  list-style-type: none;
+}

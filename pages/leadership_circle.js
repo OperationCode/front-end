@@ -2,6 +2,7 @@ import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
 import LinkButton from 'components/LinkButton/LinkButton';
+import Card from 'components/Cards/Card/Card';
 import { leadershipCircleLink } from 'common/constants/urls';
 import styles from './styles/leadership_circle.css';
 
@@ -57,44 +58,57 @@ export default () => (
       title="Operation Code Honor Roll"
       theme="gray"
       columns={[
-        <div>
+        <Card className={styles.honorRollCard}>
           <h6>Benefactor ($2500 or more)</h6>
-          <ul>
-            <li>Name</li>
+          <ul className={styles.honorRollList}>
+            <li>Conrad Hollomon</li>
+            <li>Chris Todd</li>
+            <li>Laura Wickett</li>
           </ul>
+        </Card>,
 
+        <Card className={styles.honorRollCard}>
           <h6>Patron ($1000 to $2499)</h6>
-          <ul>
-            <li>Name</li>
+          <ul className={styles.honorRollList}>
+            <li>Liliana Monge</li>
+            <li>Aaron Sahlstrom</li>
+            <li>Nic and Gwyn Benders</li>
           </ul>
+        </Card>,
 
+        <Card className={styles.honorRollCard}>
           <h6>Coder ($500 to $999)</h6>
-          <ul>
-            <li>Name</li>
+          <ul className={styles.honorRollList}>
+            <li>James Davis</li>
+            <li>Thomas McCuch</li>
+            <li>George Holmberg</li>
+            <li>Matthew Frost</li>
           </ul>
+        </Card>,
 
+        <Card className={styles.honorRollCard}>
           <h6>Advocate ($250 to $499)</h6>
-          <ul>
-            <li>Name</li>
+          <ul className={styles.honorRollList}>
+            <li>This could be you!</li>
           </ul>
+        </Card>,
 
+        <Card className={styles.honorRollCard}>
           <h6>Friend ($100 to $249)</h6>
-          <ul>
-            <li>Name</li>
+          <ul className={styles.honorRollList}>
+            <li>Nell Shamrell-Harrington</li>
+            <li>Walley Y. Yang</li>
+            <li>Laura Cabrera</li>
+            <li>Michael Bubb</li>
+            <li>Scott Weaver</li>
+            <li>Andrea Griffiths</li>
+            <li>Jim Shannon</li>
+            <li>John L. Carmichael</li>
           </ul>
-
-          <div className={styles.linkButtonContainer}>
-            <LinkButton
-              analyticsEventLabel="Join/Donate bottom"
-              href={leadershipCircleLink}
-              theme="secondary"
-            >
-              Join and Donate Now
-            </LinkButton>
-          </div>
-        </div>,
+        </Card>,
       ]}
     />
+
     <Content
       title="Membership Levels"
       theme="white"
