@@ -61,17 +61,13 @@ export default class CodeSchools extends React.Component {
     errorMessage: '',
   };
 
-  constructor(props) {
-    super(props);
-
-    const { allSchools } = this.props;
-
-    this.state = {
-      filteredSchools: allSchools,
-      selectedStates: [],
-      locationsModalInfo: { name: '', locations: [] },
-    };
-  }
+  /* eslint-disable react/destructuring-assignment */
+  state = {
+    filteredSchools: this.props.allSchools,
+    selectedStates: [],
+    locationsModalInfo: { name: '', locations: [] },
+  };
+  /* eslint-enable react/destructuring-assignment */
 
   handleModalOpen = ({ name, locations }) =>
     this.setState({ locationsModalInfo: { name, locations } });
