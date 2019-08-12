@@ -53,10 +53,51 @@ export default () => (
         </div>,
       ]}
     />
+    <Content
+      title="Operation Code Honor Roll"
+      theme="gray"
+      columns={[
+        <div>
+          <h6>Benefactor ($2500 or more)</h6>
+          <ul>
+            <li>Name</li>
+          </ul>
 
+          <h6>Patron ($1000 to $2499)</h6>
+          <ul>
+            <li>Name</li>
+          </ul>
+
+          <h6>Coder ($500 to $999)</h6>
+          <ul>
+            <li>Name</li>
+          </ul>
+
+          <h6>Advocate ($250 to $499)</h6>
+          <ul>
+            <li>Name</li>
+          </ul>
+
+          <h6>Friend ($100 to $249)</h6>
+          <ul>
+            <li>Name</li>
+          </ul>
+
+          <div className={styles.linkButtonContainer}>
+            <LinkButton
+              analyticsEventLabel="Join/Donate bottom"
+              href={leadershipCircleLink}
+              theme="secondary"
+            >
+              Join and Donate Now
+            </LinkButton>
+          </div>
+        </div>,
+      ]}
+    />
     <Content
       title="Membership Levels"
-      theme="gray"
+      theme="white"
       columns={[
         <div>
           <h6>Benefactor ($2500 or more)</h6>
