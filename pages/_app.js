@@ -1,3 +1,4 @@
+/* eslint-disable max-classes-per-file */
 import App, { Container } from 'next/app';
 import Router from 'next/router';
 import FontFaceObserver from 'fontfaceobserver';
