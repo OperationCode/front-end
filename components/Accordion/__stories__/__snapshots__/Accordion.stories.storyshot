@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Accordion default 1`] = `
+<article
+  className="accordion"
+>
+  <div
+    className="accordionHeaderGrouping"
+  >
+    <h6>
+      Test Title
+    </h6>
+    <button
+      className="accordionToggleButton"
+      data-testid="Accordion Toggle Button"
+      onClick={[Function]}
+      type="button"
+    >
+      Show
+    </button>
+  </div>
+  <div
+    className="accordionContent invisible"
+    data-testid="Accordion Content"
+    style={
+      Object {
+        "display": "none",
+      }
+    }
+  >
+    Test Content!!!
+  </div>
+</article>
+`;
