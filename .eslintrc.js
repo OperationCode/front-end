@@ -174,6 +174,8 @@ module.exports = {
     'react/no-unused-prop-types': 'off',
     'react/no-unused-state': 'error',
     'react/prefer-stateless-function': ['off'],
+    'react/static-property-placement': ['off'],
+    'react/jsx-props-no-spreading': ['off'],
 
     // Unicorn Plugin Rules
     'unicorn/catch-error-name': 'error',
