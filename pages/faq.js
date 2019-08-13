@@ -317,7 +317,7 @@ export default () => (
       title="General Questions"
       hasTitleUnderline
       columns={questions.general.map((faq, index) => (
-        <Accordion title={faq.title} content={faq.content} key={index} />
+        <Accordion title={faq.title} content={faq.content} key={index} accessibilityId={index} />
       ))}
     />
 
@@ -325,7 +325,7 @@ export default () => (
       title="Donation Questions"
       hasTitleUnderline
       columns={questions.donation.map((faq, index) => (
-        <Accordion title={faq.title} content={faq.content} key={index} />
+        <Accordion title={faq.title} content={faq.content} key={index} accessibilityId={index} />
       ))}
     />
 
@@ -333,7 +333,7 @@ export default () => (
       title="Volunteer Questions"
       hasTitleUnderline
       columns={questions.volunteer.map((faq, index) => (
-        <Accordion title={faq.title} content={faq.content} key={index} />
+        <Accordion title={faq.title} content={faq.content} key={index} accessibilityId={index} />
       ))}
     />
     {/* eslint-enable react/no-array-index-key */}

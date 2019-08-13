@@ -5,23 +5,23 @@ import styles from './Accordion.css';
 
 Accordion.propTypes = {
   content: node.isRequired,
-  key: oneOfType([number, string]).isRequired,
+  accessibilityId: oneOfType([number, string]).isRequired,
   title: string.isRequired,
 };
 
 /**
  * @description A component whose main content is invisible until revealed by the user
  * @see http://web-accessibility.carnegiemuseums.org/code/accordions/
- * @param {{ content: Element | string, key: number | string, title: Element | string }}
+ * @param {{ content: Element | string, accessibilityId: number | string, title: Element | string }}
  * @returns {Element}
  */
-function Accordion({ content, key, title }) {
+function Accordion({ content, accessibilityId, title }) {
   const [isContentVisible, setContentVisibility] = useState(false);
 
   const toggleAccordionContent = () => setContentVisibility(!isContentVisible);
 
-  const contentId = `content-${key}`;
-  const accordionId = `accordion-control-${key}`;
+  const contentId = `content-${accessibilityId}`;
+  const accordionId = `accordion-control-${accessibilityId}`;
 
   return (
     <article className={styles.accordion}>
