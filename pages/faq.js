@@ -1,7 +1,7 @@
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
-import AccordionItem from 'components/Accordion/AccordionItem/AccordionItem';
+import Accordion from 'components/Accordion/Accordion';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 import { donateLink } from 'common/constants/urls';
 
@@ -151,9 +151,8 @@ const questions = {
       ),
     },
     {
-      title:
-        'I would like to receive Operation Code updates and news. How can I receive these' +
-        ' communications?',
+      title: `I would like to receive Operation Code updates and news. How can I receive these
+      communications?`,
       content: (
         <>
           We primarily use{' '}
@@ -237,8 +236,8 @@ const questions = {
       ),
     },
     {
-      title: `I'd like to donate my software conference pass
-      to an Operation Code member. How do I do that?`,
+      title: `I'd like to donate my software conference pass to an Operation Code member. How do I
+      do that?`,
       content: (
         <>
           Get in touch, and we&apos;ll make an announcement in our Slack, tweet and/or write a blog
@@ -313,28 +312,30 @@ export default () => (
 
     <HeroBanner title="Frequently Asked Questions" />
 
+    {/* eslint-disable react/no-array-index-key */}
     <Content
       title="General Questions"
       hasTitleUnderline
-      columns={questions.general.map(faq => (
-        <AccordionItem title={faq.title} content={faq.content} key={faq.title} />
+      columns={questions.general.map((faq, index) => (
+        <Accordion title={faq.title} content={faq.content} key={index} />
       ))}
     />
 
     <Content
       title="Donation Questions"
       hasTitleUnderline
-      columns={questions.donation.map(faq => (
-        <AccordionItem title={faq.title} content={faq.content} key={faq.title} />
+      columns={questions.donation.map((faq, index) => (
+        <Accordion title={faq.title} content={faq.content} key={index} />
       ))}
     />
 
     <Content
       title="Volunteer Questions"
       hasTitleUnderline
-      columns={questions.volunteer.map(faq => (
-        <AccordionItem title={faq.title} content={faq.content} key={faq.title} />
+      columns={questions.volunteer.map((faq, index) => (
+        <Accordion title={faq.title} content={faq.content} key={index} />
       ))}
     />
+    {/* eslint-enable react/no-array-index-key */}
   </>
 );
