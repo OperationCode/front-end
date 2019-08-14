@@ -11,8 +11,11 @@ exports[`Storyshots Accordion default 1`] = `
       Test Title
     </h6>
     <button
+      aria-controls="content-1"
+      aria-expanded={false}
       className="accordionToggleButton"
       data-testid="Accordion Toggle Button"
+      id="accordion-control-1"
       onClick={[Function]}
       type="button"
     >
@@ -20,8 +23,10 @@ exports[`Storyshots Accordion default 1`] = `
     </button>
   </div>
   <div
+    aria-hidden={true}
     className="accordionContent invisible"
     data-testid="Accordion Content"
+    id="content-1"
     style={
       Object {
         "display": "none",
