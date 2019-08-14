@@ -4,8 +4,10 @@ import classNames from 'classnames';
 import styles from './Accordion.css';
 
 Accordion.propTypes = {
-  content: node.isRequired,
+  // required for joining elements together with aria attributes
   accessibilityId: oneOfType([number, string]).isRequired,
+
+  content: node.isRequired,
   title: string.isRequired,
 };
 

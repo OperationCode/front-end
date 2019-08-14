@@ -10,6 +10,10 @@ storiesOf('Accordion', module)
   .add(
     'default',
     withInfo()(() => (
-      <Accordion title={text('title', 'Test Title')} content={text('content', 'Test Content!!!')} />
+      <Accordion
+        title={text('title', 'Test Title')}
+        content={text('content', 'Test Content!!!')}
+        accessibilityId="1"
+      />
     )),
   );
