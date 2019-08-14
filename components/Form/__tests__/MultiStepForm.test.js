@@ -1,4 +1,5 @@
 /* eslint-disable react/no-multi-comp */
+/* eslint-disable max-classes-per-file */
 import React from 'react';
 import faker from 'faker';
 import get from 'lodash/get';
