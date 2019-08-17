@@ -34,7 +34,7 @@ export default class NavMobile extends Component {
     return (
       <header className={styles.NavMobile}>
         <Link href="/" prefetch={false}>
-          <button
+          <button role='button' aria-label='Mobile Navigation Button'
             className={classNames(styles.button, styles.logoButton)}
             type="button"
             name="dropdown"
@@ -47,14 +47,14 @@ export default class NavMobile extends Component {
           </button>
         </Link>
 
-        <button
+        <button role='button' aria-label='Mobile Navigation Button'
           className={classNames(styles.button, styles.hamburger)}
           onClick={openMenu}
           type="button"
           name="dropdown"
         >
           <ScreenReaderOnly>Open Menu</ScreenReaderOnly>
-          <HamburgerIcon className={styles.hamburgerIcon} />
+          <HamburgerIcon className={styles.hamburgerIcon} aria-label='Mobile Navigation Trigger'/>
         </button>
 
         {isOpen && (
