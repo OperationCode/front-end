@@ -8,33 +8,27 @@ exports[`NavMobile should render 1`] = `
     href="/"
     prefetch={false}
   >
-    <button
-      aria-label="Mobile Navigation Button"
+    <a
+      aria-label="Go Home"
       className="button logoButton"
-      name="dropdown"
-      role="button"
-      type="button"
     >
       <img
         alt="Operation Code Logo"
         className="logo"
         src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/small-blue-logo.png"
       />
-    </button>
+    </a>
   </Link>
   <button
-    aria-label="Mobile Navigation Button"
     className="button hamburger"
     name="dropdown"
     onClick={[Function]}
-    role="button"
     type="button"
   >
     <ScreenReaderOnly>
       Open Menu
     </ScreenReaderOnly>
     <Svg
-      aria-label="Mobile Navigation Trigger"
       className="hamburgerIcon"
     />
   </button>

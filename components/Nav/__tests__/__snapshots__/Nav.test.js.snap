@@ -69,9 +69,7 @@ exports[`Nav should render with no props passed 1`] = `
     <div
       className="navContainer"
     >
-      <nav
-        role="navigation"
-      >
+      <nav>
         <Link
           href="/"
           prefetch={false}
@@ -88,7 +86,6 @@ exports[`Nav should render with no props passed 1`] = `
         </Link>
         <ul
           className="link"
-          role="navigation"
         >
           <NavListItem
             href="/about"
