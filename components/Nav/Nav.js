@@ -14,7 +14,6 @@ import NavMobile from 'components/Nav/NavMobile/NavMobile';
 import { hasValidAuthToken } from 'common/utils/cookie-utils';
 import styles from './Nav.css';
 
-
 export class Nav extends Component {
   state = {
     isMobileNavOpen: false,
@@ -57,7 +56,7 @@ export class Nav extends Component {
 
         <header className={styles.NavDesktop} data-testid="Desktop Nav">
           <div className={styles.navContainer}>
-            <nav role='navigation'>
+            <nav>
               <Link href="/" key="Home" prefetch={false}>
                 <a className={classNames(styles.logoLink, styles.link)}>
                   <img
@@ -68,7 +67,7 @@ export class Nav extends Component {
                 </a>
               </Link>
 
-              <ul className={styles.link} role='navigation'>
+              <ul className={styles.link}>
                 {navItems.map(navItem => (
                   <NavListItem key={navItem.name} {...navItem} />
                 ))}

@@ -9,8 +9,10 @@ exports[`NavMobile should render 1`] = `
     prefetch={false}
   >
     <button
+      aria-label="Mobile Navigation Button"
       className="button logoButton"
       name="dropdown"
+      role="button"
       type="button"
     >
       <img
@@ -21,15 +23,18 @@ exports[`NavMobile should render 1`] = `
     </button>
   </Link>
   <button
+    aria-label="Mobile Navigation Button"
     className="button hamburger"
     name="dropdown"
     onClick={[Function]}
+    role="button"
     type="button"
   >
     <ScreenReaderOnly>
       Open Menu
     </ScreenReaderOnly>
     <Svg
+      aria-label="Mobile Navigation Trigger"
       className="hamburgerIcon"
     />
   </button>

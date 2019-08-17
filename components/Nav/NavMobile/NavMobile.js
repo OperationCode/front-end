@@ -34,27 +34,23 @@ export default class NavMobile extends Component {
     return (
       <header className={styles.NavMobile}>
         <Link href="/" prefetch={false}>
-          <button role='button' aria-label='Mobile Navigation Button'
-            className={classNames(styles.button, styles.logoButton)}
-            type="button"
-            name="dropdown"
-          >
+          <a aria-label="Go Home" className={classNames(styles.button, styles.logoButton)}>
             <img
               src={`${s3}branding/logos/small-blue-logo.png`}
               alt="Operation Code Logo"
               className={styles.logo}
             />
-          </button>
+          </a>
         </Link>
 
-        <button role='button' aria-label='Mobile Navigation Button'
+        <button
           className={classNames(styles.button, styles.hamburger)}
           onClick={openMenu}
           type="button"
           name="dropdown"
         >
           <ScreenReaderOnly>Open Menu</ScreenReaderOnly>
-          <HamburgerIcon className={styles.hamburgerIcon} aria-label='Mobile Navigation Trigger'/>
+          <HamburgerIcon className={styles.hamburgerIcon} />
         </button>
 
         {isOpen && (

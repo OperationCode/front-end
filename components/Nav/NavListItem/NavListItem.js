@@ -54,6 +54,7 @@ export default class NavListItem extends Component {
             onMouseEnter={this.showSublinks}
             onMouseLeave={this.hideSublinks}
             role="link"
+            onKeyDown={this.onKeyPressed}
             tabIndex={0}
             data-testid={`Nav Item ${props.name}`}
           >
@@ -94,6 +95,7 @@ export default class NavListItem extends Component {
                       className={styles.link}
                       key={sublink.name}
                       role="link"
+                      onKeyDown={this.onKeyPressed}
                       tabIndex={0}
                       data-testid={`Nav Item ${sublink.name}`}
                     >
