@@ -46,10 +46,14 @@ export default class NavListItem extends Component {
 
     const hasSublinks = props.sublinks.length > 0;
 
-    if (first.sublinkListItem || last.sublinkListItem) {
-      hideSublinks();
-    }
-
+    function tabDown() {
+      const anchor = document.querySelectorAll('a');
+      if (onKeyDown) {
+        if (first.sublinkListItem || last.sublinkListItem) {
+          hideSublinks();
+        }
+      }
+    };
     return (
       <li className={styles.NavListItem}>
         <Link href={props.href} prefetch={props.shouldPrefetch}>
