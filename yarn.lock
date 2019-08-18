@@ -1358,10 +1358,10 @@
   dependencies:
     "@hapi/hoek" "8.x.x"
 
-"@innocuous/components@^1.4.0":
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/@innocuous/components/-/components-1.4.0.tgz#9094824d904d7079f4cc719559dda35bcab2ce76"
-  integrity sha512-e7v5XVxE7lRqGNpLsyl5I6KS3v5s2NiDmaBtfB6fipza7ptHmHKVht8cDRSV4W89sgATpzchm6RfoJ5d5X7nhw==
+"@innocuous/components@^1.5.0":
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/@innocuous/components/-/components-1.5.0.tgz#b2041e61b59faf2340b1e4ba3abbbce186ec815e"
+  integrity sha512-F8etomOM08+MdYDqQ8lutuMljYG2eOfDvaQYbWZTuFmreMciysjjVEiqIZVDrMqRNL120ImkQU1pVpCSUV0kJA==
   dependencies:
     "@innocuous/hooks" "^1.0.2"
 
