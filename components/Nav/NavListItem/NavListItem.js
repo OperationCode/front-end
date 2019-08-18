@@ -30,7 +30,7 @@ export default class NavListItem extends Component {
   };
 
   hideSublinks = () => {
-    this.setState({ areSublinksVisible: false });
+      this.setState({ areSublinksVisible: false });
   };
 
   showSublinks = () => {
@@ -45,6 +45,12 @@ export default class NavListItem extends Component {
     const { props, state } = this;
 
     const hasSublinks = props.sublinks.length > 0;
+
+
+    if (first.sublinkListItem || last.sublinkListItem) {
+        onKeyDown={this.onKeyPressed};
+        hideSublinks();
+    }
 
     return (
       <li className={styles.NavListItem}>
