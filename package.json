@@ -47,7 +47,7 @@
   },
   "dependencies": {
     "@babel/core": "^7.5.5",
-    "@innocuous/components": "^1.5.1",
+    "@innocuous/components": "^2.0.1",
     "@sentry/browser": "^5.6.2",
     "@storybook/addon-a11y": "3.4.11",
     "@storybook/addon-actions": "3.4.11",

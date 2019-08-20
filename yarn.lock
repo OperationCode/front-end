@@ -1383,17 +1383,17 @@
   dependencies:
     "@hapi/hoek" "8.x.x"
 
-"@innocuous/components@^1.5.1":
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/@innocuous/components/-/components-1.5.1.tgz#23728eeb2498327ed12be53d221314073c8c4701"
-  integrity sha512-B25Gyn8wOZyflS70hoX/UWMF3RVkyc5DYStq0BM9N8ojzXqvnNFRdRUUG4glAzHw/PrZkxfFY0Z8RPV+NtESFA==
+"@innocuous/components@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@innocuous/components/-/components-2.0.1.tgz#cca629caacbfc00fd314211e4656fa064d85aaec"
+  integrity sha512-pywG2Jn/NJNimPOVySryQhAMiN4bv1ISTDJg5G5X0G0De8uge3quZxHzmOOvNU+k3bkcvx4VZN6baeR+IDFJaQ==
   dependencies:
-    "@innocuous/hooks" "^1.3.0"
+    "@innocuous/hooks" "^2.0.0"
 
-"@innocuous/hooks@^1.3.0":
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/@innocuous/hooks/-/hooks-1.3.0.tgz#ffec5b5f91ddfce91a16d34b1d4fa93e465e0433"
-  integrity sha512-MAP/d/xxQVnkqi8FiubtUxruTPpym/QJjCS72InLuKKAr4lbKxn271OiDgEGTT225lrQGQyn6Yq+vKEpY11p0Q==
+"@innocuous/hooks@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@innocuous/hooks/-/hooks-2.0.0.tgz#101595f1eb909f705f13e4d6d013d89a363600c1"
+  integrity sha512-XD+6Au1XTLb+OFdLaXlE9faMYSS3/hg7oVmIxwuAhRvT7wlHyv/6kC56SfbmEEiQnIPyhueFgwv8SfVBs4q/Yg==
 
 "@jest/console@^24.7.1":
   version "24.7.1"
