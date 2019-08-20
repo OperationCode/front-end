@@ -41,7 +41,7 @@ export default class NavListItem extends Component {
     this.setState(previousState => ({ areSublinksVisible: !previousState.areSublinksVisible }));
   };
 
-  onKeyDown = () => {
+  function KeyDown = () => {
     const sublink = document.QuerySelectorAll('li.NavListItem');
     Array.prototype.forEach.call(sublink, function(element) {
       const anchor = document.el.querySelector('a');
