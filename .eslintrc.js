@@ -176,6 +176,7 @@ module.exports = {
     'react/prefer-stateless-function': ['off'],
     'react/static-property-placement': ['off'],
     'react/jsx-props-no-spreading': ['off'],
+    'react/state-in-constructor': ['error', 'never'],
 
     // Unicorn Plugin Rules
     'unicorn/catch-error-name': 'error',
