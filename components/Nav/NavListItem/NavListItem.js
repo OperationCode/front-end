@@ -41,7 +41,7 @@ export default class NavListItem extends Component {
     this.setState(previousState => ({ areSublinksVisible: !previousState.areSublinksVisible }));
   };
 
-  function KeyDown = () => {
+  onKeyDown = () => {
     const sublink = document.QuerySelectorAll('li.NavListItem');
     Array.prototype.forEach.call(sublink, function(element) {
       const anchor = document.el.querySelector('a');
@@ -95,6 +95,7 @@ export default class NavListItem extends Component {
               onMouseEnter={this.showSublinks}
               onMouseLeave={this.hideSublinks}
               type="button"
+              onKeyDown={this.hideSublinks}
             >
               {state.areSublinksVisible ? (
                 <MinusIcon className={styles.icon} data-testid="minus-icon" />
@@ -117,7 +118,7 @@ export default class NavListItem extends Component {
                       className={styles.link}
                       key={sublink.name}
                       role="link"
-                      onKeyDown={this.onKeyPressed}
+                      onKeyDown={this.hideSublinks}
                       tabIndex={0}
                       data-testid={`Nav Item ${sublink.name}`}
                     >
