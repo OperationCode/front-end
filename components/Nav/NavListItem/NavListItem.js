@@ -58,7 +58,7 @@ export default class NavListItem extends Component {
           this.parentNode.querySelector('a').setAttribute('aria-expanded', 'false');
           this.parentNode.querySelector('button').setAttribute('aria-expanded', 'false');
         }
-        event.PreventDefault();
+        event.hideSublinks();
       });
     });
   };
