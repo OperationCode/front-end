@@ -29,6 +29,13 @@ export default class NavListItem extends Component {
     areSublinksVisible: false,
   };
 
+  constructor() {
+    super();
+
+    this.showSublinks = this.showSublinks.bind(this);
+    this.hideSublinks = this.hideSublinks.bind(this);
+  }
+
   hideSublinks = () => {
     this.setState({ areSublinksVisible: false });
   };
@@ -41,27 +48,18 @@ export default class NavListItem extends Component {
     this.setState(previousState => ({ areSublinksVisible: !previousState.areSublinksVisible }));
   };
 
-  onKeyDown = () => {
-    const sublink = document.QuerySelectorAll('li.NavListItem');
-    Array.prototype.forEach.call(sublink, function(element) {
-      const anchor = document.el.querySelector('a');
-      const b = `<button><span><span class="hideSublinks">" ${anchor.text}"</span></span></button>`;
-      anchor.insertAdjacentHTML('afterend', b);
-
-      element.querySelector('button').addEventListener('click', function(event) {
-        if (this.parentNode.className === 'NavListItem') {
-          this.parentNode.className = 'NavListItem aria-expanded';
-          this.parentNode.querySelector('a').setAttribute('aria-expanded', 'true');
-          this.parentNode.querySelector('button').setAttribute('aria-expanded', 'true');
-        } else {
-          this.parentNode.className = 'NavListItem';
-          this.parentNode.querySelector('a').setAttribute('aria-expanded', 'false');
-          this.parentNode.querySelector('button').setAttribute('aria-expanded', 'false');
-        }
-        event.hideSublinks();
+  areSublinksVisible(event) {
+    if (!this.submenu.contains(event.target)) {
+      this.setState({ areSublinksVisible: false }, () => {
+        document.removeEventListener('click', this.hideSublinks);
       });
+    }
+    event.preventDefault();
+
+    this.setState({ areSublinksVisible: true }, () => {
+      document.addEventListener('click', this.hideSublinks);
     });
-  };
+  }
 
   render() {
     const { props, state } = this;
@@ -76,7 +74,6 @@ export default class NavListItem extends Component {
             onMouseEnter={this.showSublinks}
             onMouseLeave={this.hideSublinks}
             role="link"
-            onKeyDown={this.hideSublinks}
             tabIndex={0}
             data-testid={`Nav Item ${props.name}`}
           >
@@ -95,7 +92,6 @@ export default class NavListItem extends Component {
               onMouseEnter={this.showSublinks}
               onMouseLeave={this.hideSublinks}
               type="button"
-              onKeyDown={this.hideSublinks}
             >
               {state.areSublinksVisible ? (
                 <MinusIcon className={styles.icon} data-testid="minus-icon" />
@@ -118,7 +114,6 @@ export default class NavListItem extends Component {
                       className={styles.link}
                       key={sublink.name}
                       role="link"
-                      onKeyDown={this.hideSublinks}
                       tabIndex={0}
                       data-testid={`Nav Item ${sublink.name}`}
                     >
