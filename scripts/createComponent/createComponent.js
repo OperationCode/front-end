@@ -119,6 +119,7 @@ const recurseStructure = (subObject, currPath, componentName) => {
   let newPath;
 
   /* eslint-disable no-restricted-syntax */
+  /* eslint-disable no-unused-vars */
   for (const key in subObject) {
     if (subObject[key]) {
       newPath = conditionallyAdjustPath(key, currPath, componentName);
@@ -146,6 +147,7 @@ const recurseStructure = (subObject, currPath, componentName) => {
     }
   }
   /* eslint-enable no-restricted-syntax */
+  /* eslint-enable no-unused-vars */
 };
 
 // Function runner
