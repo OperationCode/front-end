@@ -42,7 +42,6 @@ module.exports = {
 
     // No real logic to test here
     '<rootDir>/common/utils/api-utils.js',
-    '<rootDir>/components/Accordion/AccordionItem/AccordionItem.js',
     '<rootDir>/components/ZipRecruiterJobs/ZipRecruiterJobs.js',
     '<rootDir>/components/Press/PressLinks/Articles.js',
 
