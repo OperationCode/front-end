@@ -41,19 +41,33 @@ export default class NavListItem extends Component {
     this.setState(previousState => ({ areSublinksVisible: !previousState.areSublinksVisible }));
   };
 
+  onKeyDown = () => {
+    const sublink = document.QuerySelectorAll('li.NavListItem');
+    Array.prototype.forEach.call(sublink, function(element) {
+      const anchor = document.el.querySelector('a');
+      const b = `<button><span><span class="hideSublinks">" ${anchor.text}"</span></span></button>`;
+      anchor.insertAdjacentHTML('afterend', b);
+
+      element.querySelector('button').addEventListener('click', function(event) {
+        if (this.parentNode.className === 'NavListItem') {
+          this.parentNode.className = 'NavListItem aria-expanded';
+          this.parentNode.querySelector('a').setAttribute('aria-expanded', 'true');
+          this.parentNode.querySelector('button').setAttribute('aria-expanded', 'true');
+        } else {
+          this.parentNode.className = 'NavListItem';
+          this.parentNode.querySelector('a').setAttribute('aria-expanded', 'false');
+          this.parentNode.querySelector('button').setAttribute('aria-expanded', 'false');
+        }
+        event.PreventDefault();
+      });
+    });
+  };
+
   render() {
     const { props, state } = this;
 
     const hasSublinks = props.sublinks.length > 0;
 
-    function tabDown() {
-      const anchor = document.querySelectorAll('a');
-      if (onKeyDown) {
-        if (first.sublinkListItem || last.sublinkListItem) {
-          hideSublinks();
-        }
-      }
-    };
     return (
       <li className={styles.NavListItem}>
         <Link href={props.href} prefetch={props.shouldPrefetch}>
@@ -62,7 +76,7 @@ export default class NavListItem extends Component {
             onMouseEnter={this.showSublinks}
             onMouseLeave={this.hideSublinks}
             role="link"
-            onKeyDown={this.onKeyPressed}
+            onKeyDown={this.hideSublinks}
             tabIndex={0}
             data-testid={`Nav Item ${props.name}`}
           >

@@ -34,13 +34,13 @@ export default class NavMobile extends Component {
     return (
       <header className={styles.NavMobile}>
         <Link href="/" prefetch={false}>
-          <a aria-label="Go Home" className={classNames(styles.button, styles.logoButton)}>
+          <ScreenReaderOnly className={classNames(styles.button, styles.logoButton)}>
             <img
               src={`${s3}branding/logos/small-blue-logo.png`}
               alt="Operation Code Logo"
               className={styles.logo}
             />
-          </a>
+          </ScreenReaderOnly>
         </Link>
 
         <button
