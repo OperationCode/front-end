@@ -11,6 +11,7 @@ exports[`NavListItem should render with required props passed 1`] = `
     <a
       className="link navItemLink"
       data-testid="Nav Item Test"
+      onKeyDown={[Function]}
       onMouseEnter={[Function]}
       onMouseLeave={[Function]}
       role="link"

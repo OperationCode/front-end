@@ -8,8 +8,7 @@ exports[`NavMobile should render 1`] = `
     href="/"
     prefetch={false}
   >
-    <a
-      aria-label="Go Home"
+    <ScreenReaderOnly
       className="button logoButton"
     >
       <img
@@ -17,7 +16,7 @@ exports[`NavMobile should render 1`] = `
         className="logo"
         src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/small-blue-logo.png"
       />
-    </a>
+    </ScreenReaderOnly>
   </Link>
   <button
     className="button hamburger"
