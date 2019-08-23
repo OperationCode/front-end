@@ -1,4 +1,4 @@
-const { isFilledArray, mapStringsToSelectOptions } = require('../array-utils');
+const { isFilledArray } = require('../array-utils');
 
 describe('Array Utilities', () => {
   describe('isFilledArray', () => {
@@ -28,15 +28,6 @@ describe('Array Utilities', () => {
 
     it('should return true for an array of one number', () => {
       expect(isFilledArray([9])).toBe(true);
-    });
-  });
-
-  describe('mapStringsToSelectOptions', () => {
-    it('should return an arrray of specifically shaped objects from an array of strings', () => {
-      expect(mapStringsToSelectOptions(['army', 'navy'])).toStrictEqual([
-        { label: 'army', value: 'army' },
-        { label: 'navy', value: 'navy' },
-      ]);
     });
   });
 });
