@@ -1390,6 +1390,14 @@
   dependencies:
     "@innocuous/hooks" "^2.0.0"
 
+"@innocuous/functions@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@innocuous/functions/-/functions-2.0.1.tgz#90d0375743a93977d24671fc6cc0d785f6007352"
+  integrity sha512-uAwdL/L0UJ+JiqNQalItPjcZTKnzq8fj+ZSPNMevaHaGDUEJUUW0VQxZa0WOh+ebxags8+wdO92kIVf2I/snDA==
+  dependencies:
+    lodash "^4.17.15"
+    lodash-es "^4.17.15"
+
 "@innocuous/hooks@^2.0.0":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@innocuous/hooks/-/hooks-2.0.0.tgz#101595f1eb909f705f13e4d6d013d89a363600c1"
@@ -10188,6 +10196,11 @@ lodash-es@^4.17.14, lodash-es@^4.2.1:
   version "4.17.14"
   resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.14.tgz#12a95a963cc5955683cee3b74e85458954f37ecc"
   integrity sha512-7zchRrGa8UZXjD/4ivUWP1867jDkhzTG2c/uj739utSd7O/pFFdxspCemIFKEEjErbcqRzn8nKnGsi7mvTgRPA==
+
+lodash-es@^4.17.15:
+  version "4.17.15"
+  resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.15.tgz#21bd96839354412f23d7a10340e5eac6ee455d78"
+  integrity sha512-rlrc3yU3+JNOpZ9zj5pQtxnx2THmvRykwL4Xlxoa8I9lHBlVbbyPhgyPMioxVZ4NqyxaVVtaJnzsyOidQIhyyQ==
 
 lodash._baseisequal@^3.0.0:
   version "3.0.7"

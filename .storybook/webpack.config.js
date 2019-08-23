@@ -1,7 +1,7 @@
 const path = require('path');
 const svgoConfig = require('../common/config/svgo');
 const postCSSConfig = require('../postcss.config');
-const { insertIf } = require('../common/utils/array-utils');
+const { insertIf } = require('@innocuous/functions');
 
 // Export a function. Accept the base config as the only param.
 module.exports = (storybookBaseConfig, configType) => {
