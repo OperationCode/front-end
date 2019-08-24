@@ -23,20 +23,17 @@ const podcastLink = {
 const getInvolvedLink = {
   name: 'Get Involved',
   href: '/get_involved',
-  shouldPrefetch: true,
 };
 
 const eventsLink = {
   name: 'Events',
   href: '/events',
-  shouldPrefetch: true,
 };
 
 // MARK: Top-level navigation items
 const whoWeServeWithoutSublinks = {
   name: 'Who We Serve',
   href: '/who_we_serve',
-  shouldPrefetch: true,
 };
 
 const whoWeServeWithSublinks = {
@@ -56,7 +53,6 @@ const whoWeServeWithSublinks = {
 const aboutUs = {
   name: 'About Us',
   href: '/about',
-  shouldPrefetch: true,
   sublinks: [contactLink, faqLink, podcastLink],
 };
 
