@@ -72,11 +72,9 @@ export class Nav extends Component {
                   <NavListItem key={navItem.name} {...navItem} />
                 ))}
                 <li key="Donate">
-                  <Link href={donateLink} prefetch={false}>
-                    <a className={classNames(styles.link, styles.donateLink)}>
-                      <span>Donate</span>
-                    </a>
-                  </Link>
+                  <a href={donateLink} className={classNames(styles.link, styles.donateLink)}>
+                    <span>Donate</span>
+                  </a>
                 </li>
               </ul>
             </nav>

@@ -77,9 +77,9 @@ export default class NavMobile extends Component {
                 </li>
               ))}
               <li className={styles.li} key="Donate">
-                <Link href={donateLink} prefetch={false}>
-                  <a className={styles.link}>Donate</a>
-                </Link>
+                <a href={donateLink} className={styles.link}>
+                  Donate
+                </a>
               </li>
             </ul>
           </nav>
