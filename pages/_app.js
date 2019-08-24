@@ -1,5 +1,5 @@
 /* eslint-disable max-classes-per-file */
-import App, { Container } from 'next/app';
+import App from 'next/app';
 import Router from 'next/router';
 import FontFaceObserver from 'fontfaceobserver';
 import LogRocket from 'logrocket';
@@ -113,11 +113,9 @@ class OperationCodeApp extends App {
     const { Component, pageProps } = this.props;
 
     return (
-      <Container>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </Container>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     );
   }
 }
