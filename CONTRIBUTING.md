@@ -6,7 +6,7 @@ The team at Operation Code wants to reiterate that joining our Slack team is the
 
 ## For Everybody
 
-**Regardless of your experience level**, reading about our [technology choices](#technology) and our [development workflow](development-workflow) will prove beneficial.
+**Regardless of your experience level**, reading about our [technology choices](#technologies) and our [development workflow](#development-workflow) will prove beneficial.
 
 ## For Developers With Less Experience
 
