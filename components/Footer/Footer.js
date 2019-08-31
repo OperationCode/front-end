@@ -62,7 +62,7 @@ function Footer() {
 
       <div className={classNames(styles.row, styles.legalGrouping)}>
         <div className={classNames(styles.row, styles.copyright)}>
-        {'\u00A9'} {currentYear} Operation Code™
+            &#169; {currentYear} Operation Code™
         </div>
         <div className={classNames(styles.row, styles.legalLinks)}>
           {footerItems.legal.map(link =>
