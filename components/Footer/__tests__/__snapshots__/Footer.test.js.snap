@@ -13,10 +13,20 @@ exports[`Footer should render with no props passed 1`] = `
       <div
         className="logoGrouping"
       >
-        <img
-          alt="Operation Code Logo"
-          src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/small-blue-logo.png"
-        />
+        <Link
+          href="/"
+          prefetch={false}
+        >
+          <a
+            className="logoLink link"
+          >
+            <img
+              alt="Operation Code Logo"
+              className="logo"
+              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/small-blue-logo.png"
+            />
+          </a>
+        </Link>
       </div>
       <div
         className="capitalize marginBottom"

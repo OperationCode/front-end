@@ -33,7 +33,15 @@ function Footer() {
       <div className={classNames(styles.footerWrapper, styles.row)}>
         <div className={classNames(styles.footerGrouping, styles.socialGrouping)}>
           <div className={classNames(styles.logoGrouping)}>
-            <img src={`${s3}branding/logos/small-blue-logo.png`} alt="Operation Code Logo" />
+            <Link href="/" key="Home" prefetch={false}>
+              <a className={classNames(styles.logoLink, styles.link)}>
+                <img
+                  src={`${s3}branding/logos/small-blue-logo.png`}
+                  alt="Operation Code Logo"
+                  className={styles.logo}
+                />
+              </a>
+            </Link>
           </div>
           <div className={classNames(styles.capitalize, styles.marginBottom)}>Connect With Us!</div>
           <SocialMedia />
