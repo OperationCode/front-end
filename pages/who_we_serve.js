@@ -46,8 +46,8 @@ export default () => (
         <div>
           <p className={styles.justifyAlign}>
             We work closely with military veterans, service members, and spouses who are passionate
-            about transitioning into the tech industry. We work with over 4,000 members who are all
-            working towards relevant goals.
+            about transitioning into the tech industry. We work with over 5,000 members who are all
+            working towards relevant goals on Slack and in-person meet-ups. Membership is free!
           </p>
 
           <div className={classNames(styles.centeredText, styles.topMargin)}>
