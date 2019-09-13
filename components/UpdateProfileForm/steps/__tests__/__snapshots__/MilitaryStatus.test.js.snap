@@ -12,7 +12,7 @@ exports[`UpdateProfileForm/Steps/MilitaryStatus should render in context of Form
     Military Status
   </h3>
   <p>
-    How do you classify yourself in regards to being part of the military?
+    We welcome anyone to join Operation Code! Please note that many of our services are only for veterans or spouses. How do you classify yourself in regards to being part of the military?
   </p>
   <div
     className="row"
