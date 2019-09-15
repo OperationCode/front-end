@@ -5604,17 +5604,7 @@ cssstyle@^1.0.0:
   dependencies:
     cssom "0.3.x"
 
-csstype@^2.2.0:
-  version "2.5.7"
-  resolved "https://registry.yarnpkg.com/csstype/-/csstype-2.5.7.tgz#bf9235d5872141eccfb2d16d82993c6b149179ff"
-  integrity sha512-Nt5VDyOTIIV4/nRFswoCKps1R5CD1hkiyjBE9/thNaNZILLEviVw9yWQw15+O+CpNjQKB/uvdcxFFOrSflY3Yw==
-
-csstype@^2.5.7:
-  version "2.6.5"
-  resolved "https://registry.yarnpkg.com/csstype/-/csstype-2.6.5.tgz#1cd1dff742ebf4d7c991470ae71e12bb6751e034"
-  integrity sha512-JsTaiksRsel5n7XwqPAfB0l3TFKdpjW/kgAELf9vrb5adGA7UCPLajKK5s3nFrcFm3Rkyp/Qkgl73ENc1UY3cA==
-
-csstype@^2.6.6:
+csstype@^2.2.0, csstype@^2.5.7, csstype@^2.6.6:
   version "2.6.6"
   resolved "https://registry.yarnpkg.com/csstype/-/csstype-2.6.6.tgz#c34f8226a94bbb10c32cc0d714afdf942291fc41"
   integrity sha512-RpFbQGUE74iyPgvr46U9t1xoQBM8T4BL8SxrN66Le2xYAPSaDJJKeztV3awugusb3g3G9iL8StmkBBXhcbbXhg==
@@ -11412,10 +11402,10 @@ nth-check@~1.0.1:
   dependencies:
     boolbase "~1.0.0"
 
-nuka-carousel@^4.5.11:
-  version "4.5.11"
-  resolved "https://registry.yarnpkg.com/nuka-carousel/-/nuka-carousel-4.5.11.tgz#4d240631c2c3fb3b289c193f00e572bfeab04d38"
-  integrity sha512-JO2LrCt53nAX1I0eOyHlBMAgWKYhv8C4RyvY33BQ9i1C1qqV/uYEGmIJ4SFvzvjOyOQRNGdvPzhxntrmBAdYyQ==
+nuka-carousel@^4.5.12:
+  version "4.5.12"
+  resolved "https://registry.yarnpkg.com/nuka-carousel/-/nuka-carousel-4.5.12.tgz#8ec63838d0390fa99f676daf2c846a713c069275"
+  integrity sha512-pXcxHjD5aesfWuoPHMUD+Vm+axRy+OE081OVMUcK7ATSXz+BHsvDcOYy516NXFuPJ7D1vk4Vv9RuuYfrxk4giA==
   dependencies:
     csstype "^2.6.6"
     d3-ease "^1.0.3"
@@ -12714,7 +12704,7 @@ prop-types-exact@1.2.0, prop-types-exact@^1.2.0:
     object.assign "^4.1.0"
     reflect.ownkeys "^0.2.0"
 
-prop-types@15.7.2, prop-types@^15.5.3, prop-types@^15.5.4, prop-types@^15.5.6, prop-types@^15.5.8, prop-types@^15.5.9, prop-types@^15.6.0, prop-types@^15.6.2, prop-types@^15.7.2:
+prop-types@15.7.2, prop-types@^15.5.10, prop-types@^15.5.3, prop-types@^15.5.4, prop-types@^15.5.6, prop-types@^15.5.7, prop-types@^15.5.8, prop-types@^15.5.9, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2, prop-types@^15.7.2:
   version "15.7.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
@@ -12722,14 +12712,6 @@ prop-types@15.7.2, prop-types@^15.5.3, prop-types@^15.5.4, prop-types@^15.5.6, p
     loose-envify "^1.4.0"
     object-assign "^4.1.1"
     react-is "^16.8.1"
-
-prop-types@^15.5.10, prop-types@^15.5.7, prop-types@^15.6.1:
-  version "15.6.2"
-  resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.2.tgz#05d5ca77b4453e985d60fc7ff8c859094a497102"
-  integrity sha512-3pboPvLiWD7dkI3qf3KbUe6hKFKa52w+AE0VCqECtf+QHAKgOL37tTaNCnuX1nAAQ4ZhyP+kYVKf8rLmJ/feDQ==
-  dependencies:
-    loose-envify "^1.3.1"
-    object-assign "^4.1.1"
 
 property-expr@^1.5.0:
   version "1.5.1"
