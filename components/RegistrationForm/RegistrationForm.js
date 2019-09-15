@@ -189,6 +189,11 @@ class RegistrationForm extends Component {
               {state.errorMessage && <Alert type="error">{state.errorMessage}</Alert>}
             </div>
 
+            <p>
+              The information we collect is to help us personalize your experience on our Slack
+              community. We do not sell your information to anyone.
+            </p>
+
             <div className={styles.row}>
               <Button
                 className={styles.topMargin}
