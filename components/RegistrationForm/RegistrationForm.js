@@ -120,6 +120,7 @@ class RegistrationForm extends Component {
               who are all working towards relevant goals on Slack and in-person meet-ups. Membership
               is free!
             </p>
+
             <div className={styles.row}>
               <Field
                 type="email"
