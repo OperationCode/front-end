@@ -9,11 +9,6 @@
 // 6:
 // 7:
 
-const honorRoll = [
-    {
-
-    }
-
-];
+const honorRoll = [{}];
 
 export default honorRoll;

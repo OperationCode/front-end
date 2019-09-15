@@ -4,8 +4,8 @@ import Content from 'components/Content/Content';
 import LinkButton from 'components/LinkButton/LinkButton';
 import Card from 'components/Cards/Card/Card';
 import { leadershipCircleLink } from 'common/constants/urls';
-import styles from './styles/leadership_circle.css';
 import honorRoll from 'common/constants/leadershipCircle';
+import styles from './styles/leadership_circle.css';
 
 export default () => (
   <>
