@@ -11,3 +11,7 @@
 .topMargin {
   margin-top: 1rem;
 }
+
+p {
+  margin: 18px auto;
+}
