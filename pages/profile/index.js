@@ -41,10 +41,6 @@ class Profile extends React.Component {
                 Change Password
               </LinkButton>
             </div>,
-            <p>
-              The information we collect is to help us personalize your experience on our Slack
-              community. We do not sell your information to anyone.
-            </p>,
           ]}
         />
       </>
