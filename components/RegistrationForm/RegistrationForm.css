@@ -12,7 +12,7 @@
   margin-top: 1rem;
 }
 
-p {
+.RegistrationForm > p {
   margin: 18px auto;
   text-align: center;
 }
