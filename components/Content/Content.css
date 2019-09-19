@@ -10,6 +10,12 @@
   text-align: center;
 }
 
+.titleHasHashLink {
+  float: right;
+  text-align: center;
+  margin-right: 28px;
+}
+
 .underline {
   border-bottom: 4px solid var(--primary);
   margin-bottom: 1rem;

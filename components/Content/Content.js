@@ -2,6 +2,7 @@ import React from 'react';
 import { string, array, bool } from 'prop-types';
 import classNames from 'classnames';
 import Container from 'components/Container/Container';
+import HashLink from 'components/HashLink/HashLink';
 import styles from './Content.css';
 
 Content.propTypes = {
@@ -12,6 +13,7 @@ Content.propTypes = {
   isFullViewportHeight: bool,
   theme: string,
   title: string,
+  hasHashLink: bool,
 };
 
 Content.defaultProps = {
@@ -21,6 +23,7 @@ Content.defaultProps = {
   isFullViewportHeight: false,
   theme: 'secondary',
   title: undefined,
+  hasHashLink: false,
 };
 
 function Content({
@@ -31,6 +34,7 @@ function Content({
   theme,
   title,
   backgroundImageSource,
+  hasHashLink,
 }) {
   return (
     <Container
@@ -40,15 +44,30 @@ function Content({
       theme={theme}
     >
       {title && (
-        <h3
-          className={classNames(styles.title, {
-            [styles.underline]: hasTitleUnderline,
-          })}
-        >
-          {title}
-        </h3>
+        <div>
+          {hasHashLink && (
+            <div>
+              <HashLink id={title} theme={theme} />
+              <h3
+                className={classNames(styles.titleHasHashLink, {
+                  [styles.underline]: hasTitleUnderline,
+                })}
+              >
+                {title}
+              </h3>
+            </div>
+          )}
+          {!hasHashLink && (
+            <h3
+              className={classNames(styles.title, {
+                [styles.underline]: hasTitleUnderline,
+              })}
+            >
+              {title}
+            </h3>
+          )}
+        </div>
       )}
-
       <div className={styles.columnsContainer}>
         {/* eslint-disable-next-line react/no-array-index-key */}
         {columns.map((column, index) => React.cloneElement(column, { key: index }))}

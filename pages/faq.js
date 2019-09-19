@@ -316,6 +316,7 @@ export default () => (
     <Content
       title="General Questions"
       hasTitleUnderline
+      hasHashLink
       columns={questions.general.map((faq, index) => (
         <Accordion title={faq.title} content={faq.content} key={index} accessibilityId={index} />
       ))}
@@ -324,6 +325,7 @@ export default () => (
     <Content
       title="Donation Questions"
       hasTitleUnderline
+      hasHashLink
       columns={questions.donation.map((faq, index) => (
         <Accordion title={faq.title} content={faq.content} key={index} accessibilityId={index} />
       ))}
@@ -332,6 +334,7 @@ export default () => (
     <Content
       title="Volunteer Questions"
       hasTitleUnderline
+      hasHashLink
       columns={questions.volunteer.map((faq, index) => (
         <Accordion title={faq.title} content={faq.content} key={index} accessibilityId={index} />
       ))}

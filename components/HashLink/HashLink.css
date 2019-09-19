@@ -1,0 +1,28 @@
+.icon {
+  width: 18px;
+  pointer-events: none;
+}
+
+.iconFillWhite {
+  fill: #f7f7f7;
+}
+
+.iconFillBlue {
+  fill: #252e3e;
+}
+
+.iconVisible {
+  visibility: visible;
+}
+
+.iconHidden {
+  visibility: hidden;
+}
+
+.anchor {
+  float: left;
+  line-height: 2.25;
+  height: 36px;
+  margin-right: 10px;
+  outline: none;
+}
