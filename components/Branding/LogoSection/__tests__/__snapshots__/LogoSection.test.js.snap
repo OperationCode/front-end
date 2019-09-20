@@ -300,6 +300,7 @@ exports[`LogoSection should render with required props 1`] = `
       </ul>,
     ]
   }
+  hasHashLink={false}
   hasTitleUnderline={true}
   isFullViewportHeight={false}
   theme="gray"

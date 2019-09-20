@@ -8,11 +8,13 @@ exports[`Content should render with many props assigned 1`] = `
   <div
     className="content"
   >
-    <h3
-      className="title underline"
-    >
-      Testing!
-    </h3>
+    <div>
+      <h3
+        className="title underline"
+      >
+        Testing!
+      </h3>
+    </div>
     <div
       className="columnsContainer"
     >
