@@ -16,7 +16,10 @@ HashLink.defaultProps = {
 };
 
 function HashLink({ id, theme, customIconOffset }) {
-  const newId = id.replace(/\s+/g, '-').toLowerCase();
+  const newId = id
+    .replace(/\s+/g, '-')
+    .replace(/\?/g, '')
+    .toLowerCase();
   const [isVisible, setVisible] = useState();
 
   const stylesIconHidden = `${styles.icon} ${styles.iconHidden}`;

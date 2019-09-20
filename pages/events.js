@@ -273,7 +273,7 @@ export default () => {
                 <HashLink
                   id="Host Us At An Event"
                   theme="blue"
-                  customIconOffset="eventHeadingTitleOffset"
+                  customIconOffset="offsetLineHeightOne"
                 />
                 <span className={styles.eventHeadingTitle}>Host Us At An Event</span>
               </div>
