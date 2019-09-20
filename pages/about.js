@@ -127,7 +127,10 @@ export default () => (
         >
           <h6>Podcast</h6>
           <p>
-            We have a podcast! You can listen into the amazing stories of our members. Visualize
+            <Link href="/podcast">
+              <a>We have a podcast!</a>
+            </Link>
+            {' '} You can listen into the amazing stories of our members. Visualize
             your success through others&apos; footsteps.
           </p>
         </ImageCard>,
