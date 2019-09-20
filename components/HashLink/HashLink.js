@@ -4,8 +4,13 @@ import LinkIcon from 'static/images/icons/FontAwesome/link-solid.svg';
 import styles from './HashLink.css';
 
 HashLink.propTypes = {
-  id: string.isRequired,
-  theme: string.isRequired,
+  id: string,
+  theme: string,
+};
+
+HashLink.defaultProps = {
+  id: 'default',
+  theme: 'white',
 };
 
 function HashLink({ id, theme }) {

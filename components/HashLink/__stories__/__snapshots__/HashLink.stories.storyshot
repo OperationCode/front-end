@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots HashLink default 1`] = `
+<a
+  className="anchor"
+  href="#default"
+  id="default"
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  <svg
+    className="icon iconHidden"
+    data-testid="link-icon"
+  />
+</a>
+`;
