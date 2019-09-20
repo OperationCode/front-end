@@ -2,7 +2,7 @@
 
 exports[`HashLink should render with many props assigned 1`] = `
 <a
-  className="anchor"
+  className="anchorDefault"
   href="#default"
   id="default"
   onMouseEnter={[Function]}
@@ -17,7 +17,7 @@ exports[`HashLink should render with many props assigned 1`] = `
 
 exports[`HashLink should render with required props 1`] = `
 <a
-  className="anchor"
+  className="anchorDefault"
   href="#default"
   id="default"
   onMouseEnter={[Function]}

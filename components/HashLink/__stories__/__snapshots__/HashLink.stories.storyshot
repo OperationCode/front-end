@@ -2,7 +2,7 @@
 
 exports[`Storyshots HashLink default 1`] = `
 <a
-  className="anchor"
+  className="anchorDefault"
   href="#default"
   id="default"
   onMouseEnter={[Function]}

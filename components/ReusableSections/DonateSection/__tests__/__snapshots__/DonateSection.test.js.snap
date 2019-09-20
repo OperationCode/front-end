@@ -6,9 +6,18 @@ exports[`DonateSection should render with no props passed passed 1`] = `
   isFullViewportHeight={false}
   theme="secondary"
 >
-  <h3>
-    Donate
-  </h3>
+  <div>
+    <HashLink
+      customIconOffset="default"
+      id="Donate"
+      theme="white"
+    />
+    <h3
+      className="donateSectionHeading"
+    >
+      Donate
+    </h3>
+  </div>
   <p
     className="justifyAlign"
   >
