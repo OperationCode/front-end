@@ -105,6 +105,7 @@ const Home = () => (
 
     <Content
       title="Success Stories"
+      hasHashLink
       columns={successStories.map(story => (
         <SuccessStory {...story} key={story.title} />
       ))}

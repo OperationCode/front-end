@@ -3,6 +3,7 @@ import { hasValidAuthToken } from 'common/utils/cookie-utils';
 import Container from 'components/Container/Container';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 import LinkButton from 'components/LinkButton/LinkButton';
+import HashLink from 'components/HashLink/HashLink';
 import styles from './JoinSection.css';
 
 export function JoinSection() {
@@ -15,7 +16,10 @@ export function JoinSection() {
 
   return (
     <Container theme="white" data-testid="Join Section">
-      <h3>Join Our Thriving Community</h3>
+      <div>
+        <HashLink id="Join Our Thriving Community" />
+        <h3 className={styles.joinSectionHeading}>Join Our Thriving Community</h3>
+      </div>
 
       <p className={styles.justifyAlign}>
         Are you ready to begin your journey towards a career in software development? Get the

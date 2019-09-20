@@ -6,3 +6,9 @@
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
+
+.joinSectionHeading {
+  float: right;
+  text-align: center;
+  margin-right: 28px; /* offset for hashlink icon */
+}
