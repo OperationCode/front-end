@@ -45,6 +45,12 @@
   margin: 1rem 4rem;
 }
 
+.getInvolvedHeadingTitle {
+  float: right;
+  text-align: center;
+  margin-right: 28px; /* offset for hashlink icon */
+}
+
 @media screen and (--medium-viewport) {
   .heroBannerMobilePositioning {
     background-position: 60% center;

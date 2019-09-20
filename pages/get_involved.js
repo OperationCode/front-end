@@ -8,6 +8,7 @@ import LinkButton from 'components/LinkButton/LinkButton';
 import Heading from 'components/Heading/Heading';
 import DonateSection from 'components/ReusableSections/DonateSection/DonateSection';
 import JoinSection from 'components/ReusableSections/JoinSection/JoinSection';
+import HashLink from 'components/HashLink/HashLink';
 import HighfivingIcon from 'static/images/icons/Custom/high_fiving.svg';
 import BullseyeIcon from 'static/images/icons/Custom/bullseye.svg';
 import ManHoldingKeyIcon from 'static/images/icons/Custom/man_holding_key.svg';
@@ -74,6 +75,7 @@ export default () => (
     <Content
       title="The Power of Mentorship"
       theme="gray"
+      hasHashLink
       columns={[
         <p>By mentoring one of our members, you will help them:</p>,
         <div className={styles.badgeGroupings}>
@@ -98,7 +100,14 @@ export default () => (
         </TrackVisibility>,
         <div>
           <Heading hasHeadingLines={false} theme="white">
-            Empower Our Community
+            <div>
+              <HashLink
+                id="Empower Our Community"
+                theme="blue"
+                customIconOffset="offsetLineHeightOne"
+              />
+              <span className={styles.getInvolvedHeadingTitle}>Empower Our Community</span>
+            </div>
           </Heading>
 
           <p className={styles.justifyAlign}>
@@ -116,6 +125,7 @@ export default () => (
     <Content
       theme="gray"
       title="Ways You Can Support Operation Code"
+      hasHashLink
       columns={[
         <div>
           <p>
@@ -136,7 +146,14 @@ export default () => (
       columns={[
         <div>
           <Heading hasHeadingLines={false} theme="white">
-            Support Our Mission
+            <div>
+              <HashLink
+                id="Support Our Mission"
+                theme="blue"
+                customIconOffset="offsetLineHeightOne"
+              />
+              <span className={styles.getInvolvedHeadingTitle}>Support Our Mission</span>
+            </div>
           </Heading>
 
           <p className={styles.justifyAlign}>

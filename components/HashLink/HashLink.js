@@ -21,7 +21,7 @@ function HashLink({ id, theme, customIconOffset }) {
 
   const stylesIconHidden = `${styles.icon} ${styles.iconHidden}`;
   let stylesIconVisible = `${styles.icon} ${styles.iconVisible}`;
-  const { anchorDefault, anchorEventHeadingTitleOffset } = styles;
+  const { anchorDefault, anchorOffsetLineHeightOne } = styles;
   let customClass;
 
   if (theme === 'white' || theme === 'gray') {
@@ -30,8 +30,8 @@ function HashLink({ id, theme, customIconOffset }) {
     stylesIconVisible += `${styles.iconFillWhite}`;
   }
 
-  if (customIconOffset === 'eventHeadingTitleOffset') {
-    customClass = anchorEventHeadingTitleOffset;
+  if (customIconOffset === 'offsetLineHeightOne') {
+    customClass = anchorOffsetLineHeightOne;
   } else {
     customClass = anchorDefault;
   }

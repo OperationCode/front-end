@@ -2,12 +2,16 @@ import React from 'react';
 import { donateLink, s3 } from 'common/constants/urls';
 import Container from 'components/Container/Container';
 import LinkButton from 'components/LinkButton/LinkButton';
+import HashLink from 'components/HashLink/HashLink';
 import styles from './DonateSection.css';
 
 function DonateSection() {
   return (
     <Container backgroundImageSource={`${s3}background_flag.jpg`}>
-      <h3>Donate</h3>
+      <div>
+        <HashLink id="Donate" />
+        <h3 className={styles.donateSectionHeading}>Donate</h3>
+      </div>
 
       <p className={styles.justifyAlign}>
         As a 501(c)(3) veteran-led nonprofit organization, our programs and services are maintained
