@@ -6,32 +6,41 @@ import styles from './HashLink.css';
 HashLink.propTypes = {
   id: string,
   theme: string,
+  customIconOffset: string,
 };
 
 HashLink.defaultProps = {
   id: 'default',
   theme: 'white',
+  customIconOffset: 'default',
 };
 
-function HashLink({ id, theme }) {
+function HashLink({ id, theme, customIconOffset }) {
   const newId = id.replace(/\s+/g, '-').toLowerCase();
   const [isVisible, setVisible] = useState();
 
   const stylesIconHidden = `${styles.icon} ${styles.iconHidden}`;
-  let stylesIconVisible;
-  const { anchor } = styles;
+  let stylesIconVisible = `${styles.icon} ${styles.iconVisible}`;
+  const { anchorDefault, anchorEventHeadingTitleOffset } = styles;
+  let customClass;
 
   if (theme === 'white' || theme === 'gray') {
-    stylesIconVisible = `${styles.icon} ${styles.iconFillBlue} ${styles.iconVisible}`;
+    stylesIconVisible += `${styles.iconFillBlue}`;
   } else {
-    stylesIconVisible = `${styles.icon} ${styles.iconFillWhite} ${styles.iconVisible}`;
+    stylesIconVisible += `${styles.iconFillWhite}`;
+  }
+
+  if (customIconOffset === 'eventHeadingTitleOffset') {
+    customClass = anchorEventHeadingTitleOffset;
+  } else {
+    customClass = anchorDefault;
   }
 
   return (
     <a
       id={newId}
       href={`#${newId}`}
-      className={anchor}
+      className={customClass}
       onMouseEnter={() => setVisible(true)}
       onMouseLeave={() => setVisible(false)}
     >

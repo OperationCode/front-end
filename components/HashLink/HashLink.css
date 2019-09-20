@@ -19,9 +19,17 @@
   visibility: hidden;
 }
 
-.anchor {
+.anchorDefault {
   float: left;
   line-height: 2.25;
+  height: 36px;
+  margin-right: 10px;
+  outline: none;
+}
+
+.anchorEventHeadingTitleOffset {
+  float: left;
+  line-height: 1;
   height: 36px;
   margin-right: 10px;
   outline: none;

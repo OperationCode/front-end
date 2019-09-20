@@ -46,6 +46,12 @@
   margin: 1rem 4rem;
 }
 
+.eventHeadingTitle {
+  float: right;
+  text-align: center;
+  margin-right: 28px; /* offset for hashlink icon */
+}
+
 /*
 comment out carousel styles until api endpoint complete
 */

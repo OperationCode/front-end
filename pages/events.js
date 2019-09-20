@@ -8,6 +8,7 @@ import Badge from 'components/Badge/Badge';
 import Content from 'components/Content/Content';
 import JoinSection from 'components/ReusableSections/JoinSection/JoinSection';
 import FlatCard from 'components/Cards/FlatCard/FlatCard';
+import HashLink from 'components/HashLink/HashLink';
 // import Carousel from 'nuka-carousel';
 import BookIcon from 'static/images/icons/FontAwesome/book-solid.svg';
 import UtensilsIcon from 'static/images/icons/FontAwesome/utensils-solid.svg';
@@ -185,6 +186,7 @@ export default () => {
       <Content
         title="Want to become a sponsor?"
         theme="gray"
+        hasHashLink
         columns={[
           <p>Sponsoring a meetup ensures we have access to:</p>,
           <div className={styles.badgeGroupings}>
@@ -214,7 +216,14 @@ export default () => {
           </TrackVisibility>,
           <div>
             <Heading hasHeadingLines={false} theme="white">
-              Sponsor a Meetup
+              <div>
+                <HashLink
+                  id="Sponsor a Meetup"
+                  theme="blue"
+                  customIconOffset="eventHeadingTitleOffset"
+                />
+                <span className={styles.eventHeadingTitle}>Sponsor a Meetup</span>
+              </div>
             </Heading>
 
             <p className={styles.justifyAlign}>
@@ -240,6 +249,7 @@ export default () => {
       <Content
         title="Want to host us at your next event?"
         theme="gray"
+        hasHashLink
         columns={[
           <p>Hosting us at events helps us:</p>,
           <div className={styles.badgeGroupings}>
@@ -259,7 +269,14 @@ export default () => {
         columns={[
           <div>
             <Heading hasHeadingLines={false} theme="white">
-              Host Us At An Event
+              <div>
+                <HashLink
+                  id="Host Us At An Event"
+                  theme="blue"
+                  customIconOffset="eventHeadingTitleOffset"
+                />
+                <span className={styles.eventHeadingTitle}>Host Us At An Event</span>
+              </div>
             </Heading>
 
             <p className={styles.justifyAlign}>
