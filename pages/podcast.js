@@ -7,6 +7,7 @@ import Alert from 'components/Alert/Alert';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Card from 'components/Cards/Card/Card';
 import Content from 'components/Content/Content';
+import HashLink from 'components/HashLink/HashLink';
 import styles from './styles/podcast.css';
 
 class Podcast extends React.Component {
@@ -76,7 +77,10 @@ class Podcast extends React.Component {
 
                   return (
                     <Card data-testid="Podcast Card" className={styles.podcastCard} key={name}>
-                      <h3>{interviewee}</h3>
+                      <div>
+                        <HashLink id={interviewee} />
+                        <h3 className={styles.intervieweeName}>{interviewee}</h3>
+                      </div>
 
                       <img src={image} alt={interviewee} className={styles.img} />
 

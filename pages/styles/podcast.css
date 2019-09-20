@@ -15,6 +15,12 @@
   width: 500px;
 }
 
+.intervieweeName {
+  float: right;
+  text-align: center;
+  margin-right: 28px; /* offset for hashlink icon */
+}
+
 @media screen and (--small-viewport) {
   .podcastCard {
     width: 100%;
