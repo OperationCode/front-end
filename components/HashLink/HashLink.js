@@ -15,42 +15,54 @@ HashLink.defaultProps = {
   customIconOffset: 'default',
 };
 
-function HashLink({ id, theme, customIconOffset }) {
-  const newId = id
+function getId(id) {
+  return id
     .replace(/\s+/g, '-')
     .replace(/\?|!/g, '')
     .toLowerCase();
-  const [isVisible, setVisible] = useState();
+}
 
-  const stylesIconHidden = `${styles.icon} ${styles.iconHidden}`;
-  let stylesIconVisible = `${styles.icon} ${styles.iconVisible}`;
-  const { anchorDefault, anchorOffsetLineHeightOne } = styles;
-  let customClass;
+function getVisibleIcon(theme) {
+  let visibleIcon = `${styles.icon} ${styles.iconVisible}`;
 
   if (theme === 'white' || theme === 'gray') {
-    stylesIconVisible += `${styles.iconFillBlue}`;
+    visibleIcon += `${styles.iconFillBlue}`;
   } else {
-    stylesIconVisible += `${styles.iconFillWhite}`;
+    visibleIcon += `${styles.iconFillWhite}`;
   }
 
+  return visibleIcon;
+}
+
+function getAnchorClass(customIconOffset) {
+  const { anchorDefault, anchorOffsetLineHeightOne } = styles;
+  let anchorClass;
+
   if (customIconOffset === 'offsetLineHeightOne') {
-    customClass = anchorOffsetLineHeightOne;
+    anchorClass = anchorOffsetLineHeightOne;
   } else {
-    customClass = anchorDefault;
+    anchorClass = anchorDefault;
   }
+
+  return anchorClass;
+}
+
+function HashLink({ id, theme, customIconOffset }) {
+  const [isVisible, setVisible] = useState();
+  const anchorId = getId(id);
+  const anchorClass = getAnchorClass(customIconOffset);
+  const hiddenIcon = `${styles.icon} ${styles.iconHidden}`;
+  const visibleIcon = getVisibleIcon(theme);
 
   return (
     <a
-      id={newId}
-      href={`#${newId}`}
-      className={customClass}
+      id={anchorId}
+      href={`#${anchorId}`}
+      className={anchorClass}
       onMouseEnter={() => setVisible(true)}
       onMouseLeave={() => setVisible(false)}
     >
-      <LinkIcon
-        className={isVisible ? stylesIconVisible : stylesIconHidden}
-        data-testid="link-icon"
-      />
+      <LinkIcon className={isVisible ? visibleIcon : hiddenIcon} data-testid="link-icon" />
     </a>
   );
 }
