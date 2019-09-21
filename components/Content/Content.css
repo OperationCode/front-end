@@ -13,7 +13,7 @@
 .titleHasHashLink {
   float: right;
   text-align: center;
-  margin-right: 28px; /* offset for hashlink icon */
+  margin-right: var(--hashLinkIconOffset); /* offset for hashlink icon */
 }
 
 .underline {

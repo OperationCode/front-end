@@ -35,4 +35,7 @@
   --borderRadius: 3px;
   --navBarHeight: 65px;
   --navBarTopGutterHeight: 20px;
+
+  /* HashLink */
+  --hashLinkIconOffset: 28px;
 }

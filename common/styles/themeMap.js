@@ -19,3 +19,4 @@ export const extraLargeViewportWidth = "1200px";
 export const borderRadius = "3px";
 export const navBarHeight = "65px";
 export const navBarTopGutterHeight = "20px";
+export const hashLinkIconOffset = "28px";
