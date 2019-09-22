@@ -44,6 +44,7 @@ export default class SchoolCard extends Component {
       shape({
         city: string,
         vaAccepted: bool.isRequired,
+        vettecAccepted: bool.isRequired,
         state: string,
       }),
     ).isRequired,
@@ -66,6 +67,7 @@ export default class SchoolCard extends Component {
     const { props } = this;
 
     const hasGiBill = props.locations.some(location => location.vaAccepted);
+    const hasVetTec = props.locations.some(location => location.vettecAccepted);
     const badgeClassNames = isActive =>
       classNames(styles.badgeGroupItem, { [styles.active]: isActive });
 
@@ -79,6 +81,12 @@ export default class SchoolCard extends Component {
         {hasGiBill && (
           <div className={styles.giBillRibbon} data-testid="GI Bill Ribbon">
             GI Bill
+          </div>
+        )}
+
+        {hasVetTec && (
+          <div className={styles.vetTecRibbon} data-testid="Vet Tec Ribbon">
+            Vet Tec
           </div>
         )}
 
