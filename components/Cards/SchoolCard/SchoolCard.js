@@ -44,7 +44,7 @@ export default class SchoolCard extends Component {
       shape({
         city: string,
         vaAccepted: bool.isRequired,
-        vettecAccepted: bool.isRequired,
+        // vettecAccepted: bool.isRequired,
         state: string,
       }),
     ).isRequired,
