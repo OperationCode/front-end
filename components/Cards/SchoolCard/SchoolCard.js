@@ -67,7 +67,7 @@ export default class SchoolCard extends Component {
     const { props } = this;
 
     const hasGiBill = props.locations.some(location => location.vaAccepted);
-    const hasVetTec = props.locations.some(location => location.vettecAccepted);
+    // const hasVetTec = props.locations.some(location => location.vettecAccepted);
     const badgeClassNames = isActive =>
       classNames(styles.badgeGroupItem, { [styles.active]: isActive });
 
@@ -84,7 +84,7 @@ export default class SchoolCard extends Component {
           </div>
         )}
 
-        {hasVetTec && (
+        {hasGiBill && (
           <div className={styles.vetTecRibbon} data-testid="Vet Tec Ribbon">
             Vet Tec
           </div>
