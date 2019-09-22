@@ -21,6 +21,12 @@ exports[`Storyshots Cards/SchoolCard with many locations 1`] = `
     GI Bill
   </div>
   <div
+    className="vetTecRibbon"
+    data-testid="Vet Tec Ribbon"
+  >
+    Vet Tec
+  </div>
+  <div
     className="cardBrand"
   >
     <noscript>
