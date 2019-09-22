@@ -15,7 +15,60 @@ import States from 'common/constants/dropdown-states-values';
 import edx from 'static/images/moocs/edx.jpg';
 import treehouse from 'static/images/moocs/treehouse.jpg';
 import udacity from 'static/images/moocs/udacity.jpg';
+import galvanize from 'static/images/vettec/galvanize.jpg';
 import styles from './styles/code_schools.css';
+// Vet Tec
+// import sabio from 'static/images/vettec/sabio.jpg';
+// import skilldistillery from 'static/images/vettec/skilldistillery.jpg';
+// import zipcode from 'static/images/vettec/zipcode.jpg';
+// import leaderquest from 'static/images/vettec/leaderquest.jpg';
+// import codeplatoon from 'static/images/vettec/codeplatoon.jpg';
+// import dsdt from 'static/images/vettec/dsdt.jpg';
+// import pdx from 'static/images/vettec/pdx.jpg';
+
+const vettecSchools = [
+  {
+    logo: galvanize,
+    name: 'galvanize',
+    url: 'https://www.galvanize.com',
+    text: 'Eight campuses across the country bring together dedicated students.',
+  },
+];
+//   {
+//     logo: sabio,
+//     name: 'sabio',
+//     url: 'https://sabio.la/',
+//     text: 'Sabio is a comprehensive coding program taught by successful
+//     engineering professionals.',
+//   },
+//   {
+//     logo: skilldistillery,
+//     name: 'skilldistillery',
+//     url: 'https://skilldistillery.com/',
+//     text: 'Skill Distillery’s coding bootcamp is an immersive, hands-on
+//     program where you will learn the most critical coding skills to build a lasting career.',
+//   },
+//   {
+//     logo: zipcode,
+//     name: 'zipcode',
+//     url: 'https://www.zipcodewilmington.com/',
+//     text: 'Zip Code Wilmington coaches everyday, motivated people from diverse
+//     backgrounds into skilled, professional developers.',
+//   },
+//   {
+//     logo: leaderquest,
+//     name: 'leaderquest',
+//     url: 'https://www.leaderquestonline.com/',
+//     text: 'Offers 5 to 10 day courses and 3 to 6 week programs.',
+//   },
+//   {
+//     logo: codeplatoon,
+//     name: 'codeplatoon',
+//     url: 'https://www.codeplatoon.org/',
+//     text: 'Offers 14 week resident course as well as 14 week live remote program.',
+//   }
+//
+// ];
 
 const moocSchools = [
   {
@@ -245,6 +298,23 @@ export default class CodeSchools extends React.Component {
                 <div className={styles.centered}>
                   <OutboundLink href={mooc.url} analyticsEventLabel={`Link to ${mooc.name}`}>
                     {mooc.name}
+                  </OutboundLink>
+                </div>
+              </>
+            </FlatCard>
+          ))}
+        />
+
+        <Content
+          title="VetTec Schools"
+          hasTitleUnderline
+          columns={vettecSchools.map(vettec => (
+            <FlatCard key={vettec.name} image={{ source: vettec.logo, alt: `${vettec.name} logo` }}>
+              <>
+                {vettec.text}
+                <div className={styles.centered}>
+                  <OutboundLink href={vettec.url} analyticsEventLabel={`Link to ${vettec.name}`}>
+                    {vettec.name}
                   </OutboundLink>
                 </div>
               </>
