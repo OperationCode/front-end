@@ -13,64 +13,79 @@ describe('HashLink', () => {
     createSnapshotTest(<HashLink className="test-class">Test</HashLink>);
   });
 
-  it('should contain anchorId without spaces', () => {
-    const requiredProps = {
-      id: 'Who We Serve',
-    };
-
-    const wrapper = shallow(<HashLink {...requiredProps} />);
-
-    expect(wrapper.instance().getAnchorId()).toStrictEqual('who-we-serve');
-  });
-
-  it('should contain anchorId without exclamation mark', () => {
-    const requiredProps = {
-      id: 'JOIN TODAY!',
-    };
-
-    const wrapper = shallow(<HashLink {...requiredProps} />);
-
-    expect(wrapper.instance().getAnchorId()).toStrictEqual('join-today');
-  });
-
-  it('should contain anchorId without question mark', () => {
-    const requiredProps = {
+  it('should contain filtered anchorId', () => {
+    const questionMarkProperties = {
       id: 'WANT TO BECOME A SPONSOR?',
     };
 
-    const wrapper = shallow(<HashLink {...requiredProps} />);
-
-    expect(wrapper.instance().getAnchorId()).toStrictEqual('want-to-become-a-sponsor');
-  });
-
-  it('should contain id without spaces in link', () => {
-    const requiredProps = {
-      id: 'Who We Serve',
-    };
-
-    const wrapper = shallow(<HashLink {...requiredProps} />);
-
-    expect(wrapper.find('#who-we-serve')).toExist(true);
-  });
-
-  it('should contain id without an exclamation mark in link', () => {
-    const requiredProps = {
+    const exclamationMarkProperties = {
       id: 'JOIN TODAY!',
     };
 
-    const wrapper = shallow(<HashLink {...requiredProps} />);
+    const questionMarkWrapper = shallow(<HashLink {...questionMarkProperties} />);
+    const exclamationMarkWrapper = shallow(<HashLink {...exclamationMarkProperties} />);
 
-    expect(wrapper.find('#join-today')).toExist(true);
+    expect(questionMarkWrapper.instance().getAnchorId()).toStrictEqual('want-to-become-a-sponsor');
+    expect(exclamationMarkWrapper.instance().getAnchorId()).toStrictEqual('join-today');
   });
 
-  it('should contain id without a question mark in link', () => {
-    const requiredProps = {
+  it('should contain the anchor classes', () => {
+    const defaultProps = {
+      customIconOffset: 'default',
+    };
+
+    const offsetProperties = {
+      customIconOffset: 'offsetLineHeightOne',
+    };
+
+    const defaultWrapper = shallow(<HashLink {...defaultProps} />);
+    const offsetWrapper = shallow(<HashLink {...offsetProperties} />);
+
+    expect(defaultWrapper.instance().getAnchorClass()).toStrictEqual('anchorDefault');
+    expect(offsetWrapper.instance().getAnchorClass()).toStrictEqual('anchorOffsetLineHeightOne');
+  });
+
+  it('should contain visible icon class', () => {
+    const whiteProperties = {
+      theme: 'white',
+    };
+
+    const blueProperties = {
+      theme: 'blue',
+    };
+
+    const whiteWrapper = shallow(<HashLink {...whiteProperties} />);
+    const blueWrapper = shallow(<HashLink {...blueProperties} />);
+
+    expect(whiteWrapper.instance().getVisibleIcon()).toStrictEqual('icon iconVisibleiconFillBlue');
+    expect(blueWrapper.instance().getVisibleIcon()).toStrictEqual('icon iconVisibleiconFillWhite');
+  });
+
+  it('should toggle the visible link icon', () => {
+    const wrapper = shallow(<HashLink />);
+    const instance = wrapper.instance();
+
+    instance.toggleVisible(true);
+    expect(instance.state.isVisible).toStrictEqual(true);
+
+    instance.toggleVisible(false);
+    expect(instance.state.isVisible).toStrictEqual(false);
+  });
+
+  it('should contain id link', () => {
+    const questionMarkProperties = {
       id: 'WANT TO BECOME A SPONSOR?',
     };
 
-    const wrapper = shallow(<HashLink {...requiredProps} />);
+    const exclamationMarkProperties = {
+      id: 'JOIN TODAY!',
+    };
 
-    expect(wrapper.find('#want-to-become-a-sponsor')).toExist(true);
+    const questionMarkWrapper = shallow(<HashLink {...questionMarkProperties} />);
+    const exclamationMarkWrapper = shallow(<HashLink {...exclamationMarkProperties} />);
+
+    expect(questionMarkWrapper.find('#want-to-become-a-sponsor')).toExist(true);
+    expect(exclamationMarkWrapper.find('#join-today')).toExist(true);
   });
 
   it('should contain hashlink in href attribute', () => {
