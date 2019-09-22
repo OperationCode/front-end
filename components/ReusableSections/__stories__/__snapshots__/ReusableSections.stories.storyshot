@@ -22,7 +22,6 @@ exports[`Storyshots ReusableSections DonateSection 1`] = `
       >
         <svg
           className="icon iconHidden"
-          data-testid="link-icon"
         />
       </a>
       <h3
@@ -69,7 +68,6 @@ exports[`Storyshots ReusableSections JoinSection 1`] = `
       >
         <svg
           className="icon iconHidden"
-          data-testid="link-icon"
         />
       </a>
       <h3
@@ -132,7 +130,6 @@ exports[`Storyshots ReusableSections SponsorsSection 1`] = `
         >
           <svg
             className="icon iconHidden"
-            data-testid="link-icon"
           />
         </a>
         <h3

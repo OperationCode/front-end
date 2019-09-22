@@ -18,7 +18,6 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
         >
           <svg
             className="icon iconHidden"
-            data-testid="link-icon"
           />
         </a>
         <h3
@@ -362,7 +361,6 @@ exports[`SponsorsSection should render with required props 1`] = `
         >
           <svg
             className="icon iconHidden"
-            data-testid="link-icon"
           />
         </a>
         <h3

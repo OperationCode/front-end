@@ -10,7 +10,6 @@ exports[`HashLink should render with many props assigned 1`] = `
 >
   <svg
     className="icon iconHidden"
-    data-testid="link-icon"
   />
 </a>
 `;
@@ -25,7 +24,6 @@ exports[`HashLink should render with required props 1`] = `
 >
   <svg
     className="icon iconHidden"
-    data-testid="link-icon"
   />
 </a>
 `;

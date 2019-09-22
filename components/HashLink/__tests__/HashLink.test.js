@@ -13,7 +13,37 @@ describe('HashLink', () => {
     createSnapshotTest(<HashLink className="test-class">Test</HashLink>);
   });
 
-  it('should contain id without spaces', () => {
+  it('should contain anchorId without spaces', () => {
+    const requiredProps = {
+      id: 'Who We Serve',
+    };
+
+    const wrapper = shallow(<HashLink {...requiredProps} />);
+
+    expect(wrapper.instance().getAnchorId()).toStrictEqual('who-we-serve');
+  });
+
+  it('should contain anchorId without exclamation mark', () => {
+    const requiredProps = {
+      id: 'JOIN TODAY!',
+    };
+
+    const wrapper = shallow(<HashLink {...requiredProps} />);
+
+    expect(wrapper.instance().getAnchorId()).toStrictEqual('join-today');
+  });
+
+  it('should contain anchorId without question mark', () => {
+    const requiredProps = {
+      id: 'WANT TO BECOME A SPONSOR?',
+    };
+
+    const wrapper = shallow(<HashLink {...requiredProps} />);
+
+    expect(wrapper.instance().getAnchorId()).toStrictEqual('want-to-become-a-sponsor');
+  });
+
+  it('should contain id without spaces in link', () => {
     const requiredProps = {
       id: 'Who We Serve',
     };
@@ -23,7 +53,7 @@ describe('HashLink', () => {
     expect(wrapper.find('#who-we-serve')).toExist(true);
   });
 
-  it('should contain id without an exclamation mark', () => {
+  it('should contain id without an exclamation mark in link', () => {
     const requiredProps = {
       id: 'JOIN TODAY!',
     };
@@ -33,7 +63,7 @@ describe('HashLink', () => {
     expect(wrapper.find('#join-today')).toExist(true);
   });
 
-  it('should contain id without a question mark', () => {
+  it('should contain id without a question mark in link', () => {
     const requiredProps = {
       id: 'WANT TO BECOME A SPONSOR?',
     };
@@ -43,7 +73,7 @@ describe('HashLink', () => {
     expect(wrapper.find('#want-to-become-a-sponsor')).toExist(true);
   });
 
-  it('should contain hashlink', () => {
+  it('should contain hashlink in href attribute', () => {
     const requiredProps = {
       id: 'GENERAL QUESTIONS',
     };
