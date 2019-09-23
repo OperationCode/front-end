@@ -34,7 +34,7 @@
   justify-content: center;
   margin: 0;
   padding: 0.3rem 0 0.1rem; /* Add more padding on top to fix vertically center */
-  width: 35px;
+  width: 40px;
   background: var(--secondary);
   color: var(--primary);
   position: absolute;
