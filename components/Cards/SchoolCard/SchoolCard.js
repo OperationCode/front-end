@@ -56,7 +56,7 @@ export default class SchoolCard extends Component {
 
   static defaultProps = {
     hasHousing: false,
-    isVetTecApproved: true,
+    isVetTecApproved: false,
   };
 
   toggleModalClick = () => {
