@@ -20,12 +20,6 @@ exports[`SchoolCard should render with required props 1`] = `
     GI Bill
   </div>
   <div
-    className="vetTecRibbon"
-    data-testid="Vet Tec Ribbon"
-  >
-    Vet Tec
-  </div>
-  <div
     className="cardBrand"
   >
     <Image
@@ -113,7 +107,7 @@ exports[`SchoolCard should render with required props 1`] = `
     >
       Vet Tec Approved
     </span>
-    Yes
+    No
   </div>
   <div
     className="cardBlock"

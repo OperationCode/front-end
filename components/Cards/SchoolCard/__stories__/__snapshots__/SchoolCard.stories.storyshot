@@ -186,12 +186,6 @@ exports[`Storyshots Cards/SchoolCard with no physical locations 1`] = `
     </h6>
   </span>
   <div
-    className="vetTecRibbon"
-    data-testid="Vet Tec Ribbon"
-  >
-    Vet Tec
-  </div>
-  <div
     className="cardBrand"
   >
     <noscript>
@@ -300,7 +294,7 @@ exports[`Storyshots Cards/SchoolCard with no physical locations 1`] = `
     >
       Vet Tec Approved
     </span>
-    Yes
+    No
   </div>
   <div
     className="cardBlock"
@@ -341,12 +335,6 @@ exports[`Storyshots Cards/SchoolCard with one location 1`] = `
       Code Immersives
     </h6>
   </span>
-  <div
-    className="vetTecRibbon"
-    data-testid="Vet Tec Ribbon"
-  >
-    Vet Tec
-  </div>
   <div
     className="cardBrand"
   >
@@ -456,7 +444,7 @@ exports[`Storyshots Cards/SchoolCard with one location 1`] = `
     >
       Vet Tec Approved
     </span>
-    Yes
+    No
   </div>
   <div
     className="cardBlock"
