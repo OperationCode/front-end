@@ -118,7 +118,7 @@
     "@babel/preset-env": "^7.6.0",
     "@testing-library/jest-dom": "^4.1.0",
     "@testing-library/react": "^9.1.4",
-    "all-contributors-cli": "^6.9.0",
+    "all-contributors-cli": "^6.9.1",
     "axios-mock-adapter": "^1.17.0",
     "babel-eslint": "^10.0.3",
     "babel-jest": "^24.9.0",
