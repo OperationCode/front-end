@@ -111,6 +111,16 @@ exports[`SchoolCard should render with required props 1`] = `
     <span
       className="cardBlockTitle"
     >
+      Vet Tec Approved
+    </span>
+    Yes
+  </div>
+  <div
+    className="cardBlock"
+  >
+    <span
+      className="cardBlockTitle"
+    >
       Campus Locations
     </span>
     Multiple locations

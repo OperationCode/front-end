@@ -14,6 +14,7 @@ storiesOf('Cards/SchoolCard', module)
       hasHardwareIncluded={boolean('hasHardwareIncluded', false)}
       hasHousing={boolean('hasHousing', false)}
       hasOnline={boolean('hasOnline', true)}
+      isVetTecApproved={boolean('isVetTecApproved', true)}
       hasOnlyOnline={boolean('hasOnlyOnline', false)}
       isFullTime={boolean('isFullTime', true)}
       locations={[
