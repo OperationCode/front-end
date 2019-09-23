@@ -36,6 +36,7 @@ const LabelWithScreenReader = ({ isActive, label }) => (
 export default class SchoolCard extends Component {
   static propTypes = {
     hasHardwareIncluded: bool.isRequired,
+    isVetTecApproved: bool,
     hasHousing: bool,
     hasOnline: bool.isRequired,
     hasOnlyOnline: bool.isRequired,
@@ -44,7 +45,6 @@ export default class SchoolCard extends Component {
       shape({
         city: string,
         vaAccepted: bool.isRequired,
-        // vettecAccepted: bool.isRequired,
         state: string,
       }),
     ).isRequired,
@@ -56,6 +56,7 @@ export default class SchoolCard extends Component {
 
   static defaultProps = {
     hasHousing: false,
+    isVetTecApproved: true,
   };
 
   toggleModalClick = () => {
@@ -65,9 +66,9 @@ export default class SchoolCard extends Component {
 
   render() {
     const { props } = this;
-
     const hasGiBill = props.locations.some(location => location.vaAccepted);
-    // const hasVetTec = props.locations.some(location => location.vettecAccepted);
+    const hasVetTec = props.isVetTecApproved;
+
     const badgeClassNames = isActive =>
       classNames(styles.badgeGroupItem, { [styles.active]: isActive });
 
@@ -84,7 +85,7 @@ export default class SchoolCard extends Component {
           </div>
         )}
 
-        {hasGiBill && (
+        {hasVetTec && (
           <div className={styles.vetTecRibbon} data-testid="Vet Tec Ribbon">
             Vet Tec
           </div>
@@ -129,6 +130,11 @@ export default class SchoolCard extends Component {
         <div className={styles.cardBlock}>
           <span className={styles.cardBlockTitle}>Accepts GI Bill</span>
           {hasGiBill ? 'Yes' : 'No'}
+        </div>
+
+        <div className={styles.cardBlock}>
+          <span className={styles.cardBlockTitle}>Vet Tec Approved</span>
+          {hasVetTec ? 'Yes' : 'No'}
         </div>
 
         <div className={styles.cardBlock}>
