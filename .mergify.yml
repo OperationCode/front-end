@@ -4,9 +4,9 @@ pull_request_rules:
       - author=dependabot-preview[bot]
       - status-success=now
       - status-success=deploy/netlify
-      - status-success=ci/circleci: build_and_test
-      - status-success=ci/circleci: cypress_install
-      - status-success=ci/circleci: run
+      - "status-success=ci/circleci: build_and_test"
+      - "status-success=ci/circleci: cypress_install"
+      - "status-success=ci/circleci: run"
       - status-success=codeclimate
       - status-success=codeclimate/diff-coverage
       - status-success=codeclimate/total-coverage
