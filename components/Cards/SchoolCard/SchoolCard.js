@@ -36,11 +36,11 @@ const LabelWithScreenReader = ({ isActive, label }) => (
 export default class SchoolCard extends Component {
   static propTypes = {
     hasHardwareIncluded: bool.isRequired,
-    isVetTecApproved: bool,
     hasHousing: bool,
     hasOnline: bool.isRequired,
     hasOnlyOnline: bool.isRequired,
     isFullTime: bool.isRequired,
+    isVetTecApproved: bool,
     locations: arrayOf(
       shape({
         city: string,
@@ -133,7 +133,7 @@ export default class SchoolCard extends Component {
         </div>
 
         <div className={styles.cardBlock}>
-          <span className={styles.cardBlockTitle}>Vet Tec Approved</span>
+          <span className={styles.cardBlockTitle}>VET TEC Approved</span>
           {hasVetTec ? 'Yes' : 'No'}
         </div>
 

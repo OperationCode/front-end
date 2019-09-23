@@ -133,7 +133,7 @@ exports[`Storyshots Cards/SchoolCard with many locations 1`] = `
     <span
       className="cardBlockTitle"
     >
-      Vet Tec Approved
+      VET TEC Approved
     </span>
     Yes
   </div>
@@ -298,7 +298,7 @@ exports[`Storyshots Cards/SchoolCard with no physical locations 1`] = `
     <span
       className="cardBlockTitle"
     >
-      Vet Tec Approved
+      VET TEC Approved
     </span>
     Yes
   </div>
@@ -454,7 +454,7 @@ exports[`Storyshots Cards/SchoolCard with one location 1`] = `
     <span
       className="cardBlockTitle"
     >
-      Vet Tec Approved
+      VET TEC Approved
     </span>
     Yes
   </div>
