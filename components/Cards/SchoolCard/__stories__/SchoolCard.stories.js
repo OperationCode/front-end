@@ -16,6 +16,7 @@ storiesOf('Cards/SchoolCard', module)
       hasOnline={boolean('hasOnline', true)}
       hasOnlyOnline={boolean('hasOnlyOnline', false)}
       isFullTime={boolean('isFullTime', true)}
+      isVetTecApproved={boolean('isVetTecApproved', true)}
       locations={[
         { city: 'Los Angeles', state: 'CA', vaAccepted: false },
         { city: 'Joshua Tree', state: 'CA', vaAccepted: true },
@@ -37,6 +38,7 @@ storiesOf('Cards/SchoolCard', module)
       hasOnline={boolean('hasOnline', false)}
       hasOnlyOnline={boolean('hasOnlyOnline', false)}
       isFullTime={boolean('isFullTime', true)}
+      isVetTecApproved={boolean('isVetTecApproved', true)}
       locations={[
         {
           city: 'Los Angeles',
@@ -57,6 +59,7 @@ storiesOf('Cards/SchoolCard', module)
       hasOnline={boolean('hasOnline', true)}
       hasOnlyOnline={boolean('hasOnlyOnline', true)}
       isFullTime={boolean('isFullTime', false)}
+      isVetTecApproved={boolean('isVetTecApproved', true)}
       locations={[]}
       logoSource={text('logoSource', `${s3}codeSchoolLogos/thinkful.jpg`)}
       name={text('name', 'Thinkful')}

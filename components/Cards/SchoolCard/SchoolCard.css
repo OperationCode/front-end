@@ -28,13 +28,12 @@
   color: rgba(0, 0, 0, 0.7);
 }
 
-.giBillRibbon {
+.ribbon {
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0;
   padding: 0.3rem 0 0.1rem; /* Add more padding on top to fix vertically center */
-  width: 55px;
   background: var(--secondary);
   color: var(--primary);
   position: absolute;
@@ -46,8 +45,24 @@
   transform-origin: top left;
 }
 
-.giBillRibbon::before,
-.giBillRibbon::after {
+.ribbon::before {
+  right: 100%;
+}
+
+.ribbon::after {
+  left: 100%;
+}
+
+.gi {
+  width: 85px;
+  background: var(--secondary);
+  color: var(--primary);
+}
+
+.gi::before,
+.gi::after,
+.dual::before,
+.dual::after {
   content: "";
   position: absolute;
   top: 0;
@@ -57,12 +72,28 @@
   background: var(--secondary);
 }
 
-.giBillRibbon::before {
-  right: 100%;
+.vettec {
+  width: 85px;
+  background: var(--primary);
+  color: var(--secondary);
+  padding: 0.4rem 0 0.1rem;
 }
 
-.giBillRibbon::after {
-  left: 100%;
+.vettec::before,
+.vettec::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  margin: 0 -1px;
+  width: 100%;
+  height: 100%;
+  background: var(--primary);
+}
+
+.dual {
+  width: 40px;
+  background: var(--secondary);
+  color: var(--primary);
 }
 
 .cardBrand {
