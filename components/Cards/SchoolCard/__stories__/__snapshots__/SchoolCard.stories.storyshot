@@ -15,19 +15,19 @@ exports[`Storyshots Cards/SchoolCard with many locations 1`] = `
     </h6>
   </span>
   <div
-    className="giBillRibbon"
+    className="ribbon gi"
     data-testid="GI Bill Ribbon"
   >
     GI Bill
   </div>
   <div
-    className="vetTecRibbon"
+    className="ribbon vettec"
     data-testid="Vet Tec Ribbon"
   >
     Vet Tec
   </div>
   <div
-    className="dualRibbon"
+    className="ribbon dual"
     data-testid="Dual Ribbon"
   >
     GI Bill
@@ -192,7 +192,7 @@ exports[`Storyshots Cards/SchoolCard with no physical locations 1`] = `
     </h6>
   </span>
   <div
-    className="vetTecRibbon"
+    className="ribbon vettec"
     data-testid="Vet Tec Ribbon"
   >
     Vet Tec
@@ -348,7 +348,7 @@ exports[`Storyshots Cards/SchoolCard with one location 1`] = `
     </h6>
   </span>
   <div
-    className="vetTecRibbon"
+    className="ribbon vettec"
     data-testid="Vet Tec Ribbon"
   >
     Vet Tec

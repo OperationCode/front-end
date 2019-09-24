@@ -80,19 +80,19 @@ export default class SchoolCard extends Component {
         </ScreenReaderOnly>
 
         {hasGiBill && (
-          <div className={styles.giBillRibbon} data-testid="GI Bill Ribbon">
+          <div className={classNames(styles.ribbon, styles.gi)} data-testid="GI Bill Ribbon">
             GI Bill
           </div>
         )}
 
         {hasVetTec && (
-          <div className={styles.vetTecRibbon} data-testid="Vet Tec Ribbon">
+          <div className={classNames(styles.ribbon, styles.vettec)} data-testid="Vet Tec Ribbon">
             Vet Tec
           </div>
         )}
 
         {hasVetTec && hasGiBill && (
-          <div className={styles.dualRibbon} data-testid="Dual Ribbon">
+          <div className={classNames(styles.ribbon, styles.dual)} data-testid="Dual Ribbon">
             GI Bill
           </div>
         )}

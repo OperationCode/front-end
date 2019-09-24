@@ -14,7 +14,7 @@ exports[`SchoolCard should render with required props 1`] = `
     </h6>
   </ScreenReaderOnly>
   <div
-    className="giBillRibbon"
+    className="ribbon gi"
     data-testid="GI Bill Ribbon"
   >
     GI Bill
