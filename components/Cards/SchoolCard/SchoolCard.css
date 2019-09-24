@@ -34,7 +34,7 @@
   justify-content: center;
   margin: 0;
   padding: 0.3rem 0 0.1rem; /* Add more padding on top to fix vertically center */
-  width: 40px;
+  width: 85px;
   background: var(--secondary);
   color: var(--primary);
   position: absolute;
@@ -71,7 +71,7 @@
   justify-content: center;
   margin: 0;
   padding: 0.4rem 0 0.1rem; /* Add more padding on top to fix vertically center */
-  width: 90px;
+  width: 85px;
   background: var(--primary);
   color: var(--secondary);
   position: absolute;
@@ -100,6 +100,43 @@
 
 .vetTecRibbon::after {
   left: 100%;
+}
+
+.dualRibbon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0.3rem 0 0.1rem; /* Add more padding on top to fix vertically center */
+  width: 40px;
+  background: var(--secondary);
+  color: var(--primary);
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-transform: uppercase;
+  text-align: center;
+  transform: translateX(20%) translateY(0%) rotate(40deg);
+  transform-origin: top left;
+}
+
+.dualRibbon::before,
+.dualRibbon::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  margin: 0 -1px;
+  width: 100%;
+  height: 100%;
+  background: var(--secondary);
+}
+
+.dualRibbon::before {
+  left: 100%;
+}
+
+.dualRibbon::after {
+  right: 100%;
 }
 
 .cardBrand {
