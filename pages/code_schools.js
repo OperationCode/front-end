@@ -104,7 +104,6 @@ export default class CodeSchools extends React.Component {
     const vaApproved = allSchools.filter(school =>
       school.locations.some(location => location.vaAccepted),
     );
-
     this.setState({ filteredSchools: vaApproved, selectedStates: [] });
   };
 
@@ -177,6 +176,19 @@ export default class CodeSchools extends React.Component {
                   paying for premium aspects of MOOCs.
                 </p>
               </article>
+
+              <article className={styles.termDefinition}>
+                <h6>What is VET TEC?</h6>
+                <p>
+                  This innovative new pilot program pairs eligible Veterans with market-leading
+                  Training Providers offering the high-tech training and skills development sought
+                  by employers. You will have your classes and training paid for by VA and will
+                  receive a monthly housing stipend during your training. When you&apos;re accepted
+                  into the program, you&apos;ll train in one of the five areas (computer software,
+                  information science, computer programming, media application, or data processing)
+                  of high-tech training.
+                </p>
+              </article>
             </div>,
           ]}
         />
@@ -218,6 +230,7 @@ export default class CodeSchools extends React.Component {
                     {filteredSchools.map(school => (
                       <SchoolCard
                         key={`${school.name}`}
+                        isVetTecApproved={school.isVetTecApproved}
                         hasHardwareIncluded={school.hardwareIncluded}
                         hasHousing={school.hasHousing}
                         hasOnline={school.hasOnline}
