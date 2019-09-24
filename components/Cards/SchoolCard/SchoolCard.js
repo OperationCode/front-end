@@ -40,7 +40,7 @@ export default class SchoolCard extends Component {
     hasOnline: bool.isRequired,
     hasOnlyOnline: bool.isRequired,
     isFullTime: bool.isRequired,
-    isVetTecApproved: bool,
+    isVetTecApproved: bool.isRequired,
     locations: arrayOf(
       shape({
         city: string,
@@ -56,7 +56,6 @@ export default class SchoolCard extends Component {
 
   static defaultProps = {
     hasHousing: false,
-    isVetTecApproved: false,
   };
 
   toggleModalClick = () => {
