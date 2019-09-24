@@ -15,8 +15,20 @@ exports[`Storyshots Cards/SchoolCard with many locations 1`] = `
     </h6>
   </span>
   <div
-    className="giBillRibbon"
+    className="ribbon gi"
     data-testid="GI Bill Ribbon"
+  >
+    GI Bill
+  </div>
+  <div
+    className="ribbon vettec"
+    data-testid="Vet Tec Ribbon"
+  >
+    Vet Tec
+  </div>
+  <div
+    className="ribbon dual"
+    data-testid="Dual Ribbon"
   >
     GI Bill
   </div>
@@ -127,6 +139,16 @@ exports[`Storyshots Cards/SchoolCard with many locations 1`] = `
     <span
       className="cardBlockTitle"
     >
+      VET TEC Approved
+    </span>
+    Yes
+  </div>
+  <div
+    className="cardBlock"
+  >
+    <span
+      className="cardBlockTitle"
+    >
       Campus Locations
     </span>
     Multiple locations
@@ -169,6 +191,12 @@ exports[`Storyshots Cards/SchoolCard with no physical locations 1`] = `
       Thinkful
     </h6>
   </span>
+  <div
+    className="ribbon vettec"
+    data-testid="Vet Tec Ribbon"
+  >
+    Vet Tec
+  </div>
   <div
     className="cardBrand"
   >
@@ -276,6 +304,16 @@ exports[`Storyshots Cards/SchoolCard with no physical locations 1`] = `
     <span
       className="cardBlockTitle"
     >
+      VET TEC Approved
+    </span>
+    Yes
+  </div>
+  <div
+    className="cardBlock"
+  >
+    <span
+      className="cardBlockTitle"
+    >
       Campus Locations
     </span>
     Online only
@@ -309,6 +347,12 @@ exports[`Storyshots Cards/SchoolCard with one location 1`] = `
       Code Immersives
     </h6>
   </span>
+  <div
+    className="ribbon vettec"
+    data-testid="Vet Tec Ribbon"
+  >
+    Vet Tec
+  </div>
   <div
     className="cardBrand"
   >
@@ -409,6 +453,16 @@ exports[`Storyshots Cards/SchoolCard with one location 1`] = `
       Accepts GI Bill
     </span>
     No
+  </div>
+  <div
+    className="cardBlock"
+  >
+    <span
+      className="cardBlockTitle"
+    >
+      VET TEC Approved
+    </span>
+    Yes
   </div>
   <div
     className="cardBlock"
