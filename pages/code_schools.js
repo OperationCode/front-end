@@ -109,8 +109,8 @@ export default class CodeSchools extends React.Component {
 
   filterVetTecApproved = () => {
     const { allSchools } = this.props;
-    const vetTecApproved = allSchools.filter(school => school.isVetTecApproved);
-    this.setState({ filteredSchools: vetTecApproved, selectedStates: [] });
+    const vetTecApprovedSchools = allSchools.filter(school => school.isVetTecApproved);
+    this.setState({ filteredSchools: vetTecApprovedSchools, selectedStates: [] });
   };
 
   showAllSchools = () => {
