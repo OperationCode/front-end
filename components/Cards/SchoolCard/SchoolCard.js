@@ -91,6 +91,12 @@ export default class SchoolCard extends Component {
           </div>
         )}
 
+        {hasVetTec && hasGiBill && (
+          <div className={styles.dualRibbon} data-testid="Dual Ribbon">
+            GI Bill
+          </div>
+        )}
+
         <div className={styles.cardBrand}>
           <Image src={props.logoSource} alt={`${props.name} logo`} height="150" />
         </div>
