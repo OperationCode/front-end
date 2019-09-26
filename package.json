@@ -115,7 +115,7 @@
     "yup": "^0.27.0"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.6.0",
+    "@babel/preset-env": "^7.6.2",
     "@testing-library/jest-dom": "^4.1.0",
     "@testing-library/react": "^9.1.4",
     "all-contributors-cli": "^6.9.1",
