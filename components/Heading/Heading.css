@@ -4,7 +4,7 @@
   justify-content: center;
   text-align: center;
   text-transform: uppercase;
-  width: 85%;
+  width: 100%;
   margin: 1rem auto;
 }
 
@@ -18,15 +18,15 @@
   margin: 0 10px 5px 10px;
 }
 
-.secondary {
+.secondaryFont {
   color: var(--secondary);
 }
 
-.gray {
+.grayFont {
   color: var(--gray);
 }
 
-.white {
+.whiteFont {
   color: var(--white);
 }
 
@@ -56,19 +56,30 @@
   display: block;
   height: 100px;
   margin-top: -100px;
-  visibility: hidden;
+}
+
+.headingContainerWithLinkIcon {
+  display: flex;
+  align-items: stretch;
+}
+
+.headingContainerWithoutLinkIcon {
+  display: flex;
+}
+
+.headingTextWithLinkIconOffset {
+  margin-right: 26px;
 }
 
 .anchorDefault {
-  float: left;
   line-height: 2.25;
   height: 36px;
+  margin-top: 18px;
   margin-right: 10px;
   outline: none;
 }
 
 .anchorOffsetLineHeightOne {
-  float: left;
   line-height: 1;
   height: 36px;
   margin-right: 10px;

@@ -29,10 +29,6 @@ describe('Heading', () => {
     expect(HeaderInstance).not.toHaveClassName('headingLines');
   });
 });
-
-
-
-import React from 'react';
 // import { shallow } from 'enzyme';
 // import createSnapshotTest from 'test-utils/createSnapshotTest';
 
@@ -132,4 +128,3 @@ import React from 'react';
 //     expect(wrapper.find({ href: '#general-questions' })).toExist(true);
 //   });
 // });
-

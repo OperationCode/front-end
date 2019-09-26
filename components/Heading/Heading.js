@@ -20,7 +20,7 @@ class Heading extends Component {
     className: undefined,
     id: '',
     anchorId: 'default',
-    hasHeadingLines: true,
+    hasHeadingLines: false,
     hasHashLink: false,
     headingLevel: 2,
     theme: 'gray',
@@ -73,59 +73,91 @@ class Heading extends Component {
 
   getHeading = () => {
     const { props } = this;
-    const classes = classNames(props.className, styles.Heading, styles[theme], {
+
+    const withLinkIcon = classNames(
+      this.checkClassName(),
+      styles.headingTextWithLinkIconOffset,
+      styles.Heading,
+      styles[props.theme],
+      {
+        [`${styles.headingLines}`]: props.hasHeadingLines,
+      },
+    );
+    const withoutLinkIcon = classNames(this.checkClassName(), styles.Heading, styles[props.theme], {
       [`${styles.headingLines}`]: props.hasHeadingLines,
     });
+    const classes = props.hasHashLink ? withLinkIcon : withoutLinkIcon;
 
     switch (props.headingLevel) {
       case 1:
         return (
           <h1 className={classes} id={props.id}>
-            {children}
+            {props.children}
           </h1>
         );
       case 2:
         return (
           <h2 className={classes} id={props.id}>
-            {children}
+            {props.children}
           </h2>
         );
       case 3:
         return (
           <h3 className={classes} id={props.id}>
-            {children}
+            {props.children}
           </h3>
         );
       case 4:
         return (
           <h4 className={classes} id={props.id}>
-            {children}
+            {props.children}
           </h4>
         );
       case 5:
         return (
           <h5 className={classes} id={props.id}>
-            {children}
+            {props.children}
           </h5>
         );
       case 6:
         return (
           <h6 className={classes} id={props.id}>
-            {children}
+            {props.children}
           </h6>
         );
     }
   };
 
+  checkClassName = () => {
+    const { props } = this;
+
+    switch (props.className) {
+      case 'whiteFont':
+        return styles.whiteFont;
+      case 'grayFont':
+        return styles.grayFont;
+      case 'secondaryFont':
+        return styles.secondaryFont;
+      default:
+        return props.className;
+    }
+  };
+
   render() {
+    const { props } = this;
     const { isLinkIconVisible } = this.state;
     const anchorId = this.getAnchorId();
     const anchorClass = this.getAnchorClass();
     const visibleIcon = this.getVisibleIcon();
     const hiddenIcon = `${styles.icon} ${styles.iconHidden}`;
+    const headingContainerWithLinkIcon = `${styles.headingContainerWithLinkIcon}`;
+    const headingContainerWithoutLinkIcon = `${styles.headingContainerWithoutLinkIcon}`;
+    const headingContainer = props.hasHashLink
+      ? headingContainerWithLinkIcon
+      : headingContainerWithoutLinkIcon;
 
     return (
-      <div>
+      <div className={headingContainer}>
         <a
           id={anchorId}
           href={`#${anchorId}`}

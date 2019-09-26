@@ -10,12 +10,6 @@
   text-align: center;
 }
 
-.titleHasHashLink {
-  float: right;
-  text-align: center;
-  margin-right: var(--hashLinkIconOffset); /* offset for hashlink icon */
-}
-
 .underline {
   border-bottom: 4px solid var(--primary);
   margin-bottom: 1rem;
