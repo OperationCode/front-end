@@ -131,7 +131,7 @@
     "eslint": "6.4.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-config-prettier": "^6.3.0",
-    "eslint-plugin-cypress": "^2.6.1",
+    "eslint-plugin-cypress": "^2.7.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jest": "^22.17.0",
     "eslint-plugin-jsx-a11y": "^6.2.3",
