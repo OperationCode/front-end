@@ -49,10 +49,10 @@
   pointer-events: none;
 }
 
-:target {
+a:target {
   content: "";
   display: block;
-  height: 100px;
+  height: 65px;
   margin-top: -100px;
 }
 

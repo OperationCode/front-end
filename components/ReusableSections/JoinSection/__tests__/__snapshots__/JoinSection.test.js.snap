@@ -8,9 +8,11 @@ exports[`JoinSection should render when not logged in 1`] = `
   <div
     className="content"
   >
-    <div>
+    <div
+      className="headingContainer"
+    >
       <a
-        className="anchorDefault"
+        className="anchor"
         href="#join-our-thriving-community"
         id="join-our-thriving-community"
         onMouseEnter={[Function]}
@@ -21,7 +23,8 @@ exports[`JoinSection should render when not logged in 1`] = `
         />
       </a>
       <h3
-        className="joinSectionHeading"
+        className="secondaryFont headingTextWithLinkIconOffset Heading gray"
+        id=""
       >
         Join Our Thriving Community
       </h3>

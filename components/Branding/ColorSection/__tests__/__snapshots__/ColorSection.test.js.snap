@@ -29,7 +29,6 @@ exports[`ColorSection should render with required props 1`] = `
         </div>,
       ]
     }
-    hasHashLink={false}
     hasTitleUnderline={true}
     isFullViewportHeight={false}
     theme="white"
@@ -48,7 +47,6 @@ exports[`ColorSection should render with required props 1`] = `
         />,
       ]
     }
-    hasHashLink={false}
     hasTitleUnderline={false}
     isFullViewportHeight={false}
     theme="white"

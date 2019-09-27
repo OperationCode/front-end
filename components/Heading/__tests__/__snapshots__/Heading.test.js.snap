@@ -1,19 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Heading should render with many props assigned 1`] = `
-<h2
-  className="test-class Heading secondary"
-  id="test-heading-1"
+<div
+  className="headingContainer"
 >
-  Test
-</h2>
+  <h2
+    className="test-class Heading secondary"
+    id="test-heading-1"
+  >
+    Test
+  </h2>
+</div>
 `;
 
 exports[`Heading should render with required props 1`] = `
-<h2
-  className="Heading gray headingLines"
-  id=""
+<div
+  className="headingContainer"
 >
-  Test
-</h2>
+  <h2
+    className="Heading gray"
+    id=""
+  >
+    Test
+  </h2>
+</div>
 `;

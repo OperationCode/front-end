@@ -7,25 +7,26 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
   <div
     className="content"
   >
-    <div>
-      <div>
-        <a
-          className="anchorDefault"
-          href="#sponsors"
-          id="sponsors"
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-        >
-          <svg
-            className="icon iconHidden"
-          />
-        </a>
-        <h3
-          className="titleHasHashLink underline"
-        >
-          Sponsors
-        </h3>
-      </div>
+    <div
+      className="headingContainer"
+    >
+      <a
+        className="anchor"
+        href="#sponsors"
+        id="sponsors"
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+      >
+        <svg
+          className="icon iconHidden"
+        />
+      </a>
+      <h3
+        className="title underline headingTextWithLinkIconOffset Heading gray"
+        id=""
+      >
+        Sponsors
+      </h3>
     </div>
     <div
       className="columnsContainer"
@@ -350,25 +351,26 @@ exports[`SponsorsSection should render with required props 1`] = `
   <div
     className="content"
   >
-    <div>
-      <div>
-        <a
-          className="anchorDefault"
-          href="#sponsors"
-          id="sponsors"
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-        >
-          <svg
-            className="icon iconHidden"
-          />
-        </a>
-        <h3
-          className="titleHasHashLink underline"
-        >
-          Sponsors
-        </h3>
-      </div>
+    <div
+      className="headingContainer"
+    >
+      <a
+        className="anchor"
+        href="#sponsors"
+        id="sponsors"
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+      >
+        <svg
+          className="icon iconHidden"
+        />
+      </a>
+      <h3
+        className="title underline headingTextWithLinkIconOffset Heading gray"
+        id=""
+      >
+        Sponsors
+      </h3>
     </div>
     <div
       className="columnsContainer"
