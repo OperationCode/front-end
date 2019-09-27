@@ -46,7 +46,7 @@
     ]
   },
   "dependencies": {
-    "@babel/core": "^7.6.0",
+    "@babel/core": "^7.6.2",
     "@innocuous/components": "^2.1.0",
     "@innocuous/functions": "^2.1.0",
     "@sentry/browser": "^5.6.3",
