@@ -90,7 +90,7 @@ const Home = () => (
       theme="gray"
       columns={[
         <div className={styles.cta}>
-          <Heading hasHeadingLines theme="secondary">
+          <Heading className="headingOurMission" hasHeadingLines theme="secondary">
             Our Mission
           </Heading>
           <p className={styles.justifyAlign}>

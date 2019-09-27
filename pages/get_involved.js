@@ -8,7 +8,6 @@ import LinkButton from 'components/LinkButton/LinkButton';
 import Heading from 'components/Heading/Heading';
 import DonateSection from 'components/ReusableSections/DonateSection/DonateSection';
 import JoinSection from 'components/ReusableSections/JoinSection/JoinSection';
-import HashLink from 'components/HashLink/HashLink';
 import HighfivingIcon from 'static/images/icons/Custom/high_fiving.svg';
 import BullseyeIcon from 'static/images/icons/Custom/bullseye.svg';
 import ManHoldingKeyIcon from 'static/images/icons/Custom/man_holding_key.svg';
@@ -99,15 +98,13 @@ export default () => (
           )}
         </TrackVisibility>,
         <div>
-          <Heading hasHeadingLines={false} theme="white">
-            <div>
-              <HashLink
-                id="Empower Our Community"
-                theme="blue"
-                customIconOffset="offsetLineHeightOne"
-              />
-              <span className={styles.getInvolvedHeadingTitle}>Empower Our Community</span>
-            </div>
+          <Heading
+            className="primaryFont"
+            anchorId="Empower Our Community"
+            headingLevel={3}
+            hasHashLink
+          >
+            Empower Our Community
           </Heading>
 
           <p className={styles.justifyAlign}>
@@ -145,15 +142,13 @@ export default () => (
     <Content
       columns={[
         <div>
-          <Heading hasHeadingLines={false} theme="white">
-            <div>
-              <HashLink
-                id="Support Our Mission"
-                theme="blue"
-                customIconOffset="offsetLineHeightOne"
-              />
-              <span className={styles.getInvolvedHeadingTitle}>Support Our Mission</span>
-            </div>
+          <Heading
+            className="primaryFont"
+            anchorId="Support Our Mission"
+            headingLevel={3}
+            hasHashLink
+          >
+            Support Our Mission
           </Heading>
 
           <p className={styles.justifyAlign}>

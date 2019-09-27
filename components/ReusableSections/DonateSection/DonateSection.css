@@ -5,9 +5,3 @@
 .topMargin {
   margin-top: 1rem;
 }
-
-.donateSectionHeading {
-  float: right;
-  text-align: center;
-  margin-right: var(--hashLinkIconOffset); /* offset for hashlink icon */
-}

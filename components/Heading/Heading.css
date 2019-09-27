@@ -1,10 +1,24 @@
 .Heading {
+  text-transform: uppercase;
+  margin: 1rem 0;
+}
+
+.headingContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.headingTextWithLinkIconOffset {
+  margin-right: 26px;
+}
+
+.headingOurMission {
   display: flex;
   flex-direction: row;
   justify-content: center;
   text-align: center;
   text-transform: uppercase;
-  width: 100%;
+  width: 85%;
   margin: 1rem auto;
 }
 
@@ -35,6 +49,20 @@
   pointer-events: none;
 }
 
+:target {
+  content: "";
+  display: block;
+  height: 100px;
+  margin-top: -100px;
+}
+
+.anchor {
+  line-height: 2.25;
+  height: 2rem;
+  margin: 1rem 0.25rem;
+  outline: none;
+}
+
 .iconFillWhite {
   fill: #f7f7f7;
 }
@@ -49,41 +77,6 @@
 
 .iconHidden {
   visibility: hidden;
-}
-
-:target {
-  content: "";
-  display: block;
-  height: 100px;
-  margin-top: -100px;
-}
-
-.headingContainerWithLinkIcon {
-  display: flex;
-  align-items: stretch;
-}
-
-.headingContainerWithoutLinkIcon {
-  display: flex;
-}
-
-.headingTextWithLinkIconOffset {
-  margin-right: 26px;
-}
-
-.anchorDefault {
-  line-height: 2.25;
-  height: 36px;
-  margin-top: 18px;
-  margin-right: 10px;
-  outline: none;
-}
-
-.anchorOffsetLineHeightOne {
-  line-height: 1;
-  height: 36px;
-  margin-right: 10px;
-  outline: none;
 }
 
 @media screen and (--medium-viewport) {

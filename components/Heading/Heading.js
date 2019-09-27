@@ -39,20 +39,6 @@ class Heading extends Component {
       .toLowerCase();
   };
 
-  getAnchorClass = () => {
-    const { props } = this;
-    const { anchorDefault, anchorOffsetLineHeightOne } = styles;
-    let anchorClass;
-
-    if (props.customIconOffset === 'offsetLineHeightOne') {
-      anchorClass = anchorOffsetLineHeightOne;
-    } else {
-      anchorClass = anchorDefault;
-    }
-
-    return anchorClass;
-  };
-
   getVisibleIcon = () => {
     const { props } = this;
     const { theme } = props;
@@ -73,20 +59,7 @@ class Heading extends Component {
 
   getHeading = () => {
     const { props } = this;
-
-    const withLinkIcon = classNames(
-      this.checkClassName(),
-      styles.headingTextWithLinkIconOffset,
-      styles.Heading,
-      styles[props.theme],
-      {
-        [`${styles.headingLines}`]: props.hasHeadingLines,
-      },
-    );
-    const withoutLinkIcon = classNames(this.checkClassName(), styles.Heading, styles[props.theme], {
-      [`${styles.headingLines}`]: props.hasHeadingLines,
-    });
-    const classes = props.hasHashLink ? withLinkIcon : withoutLinkIcon;
+    const classes = this.getHeadingClasses();
 
     switch (props.headingLevel) {
       case 1:
@@ -119,13 +92,38 @@ class Heading extends Component {
             {props.children}
           </h5>
         );
-      case 6:
+      default:
         return (
           <h6 className={classes} id={props.id}>
             {props.children}
           </h6>
         );
     }
+  };
+
+  getHeadingClasses = () => {
+    const { props } = this;
+    const customHeadingClass =
+      props.className === 'headingOurMission' ? styles.headingOurMission : styles.Heading;
+    const withLinkIcon = classNames(
+      this.checkClassName(),
+      styles.headingTextWithLinkIconOffset,
+      customHeadingClass,
+      styles[props.theme],
+      {
+        [`${styles.headingLines}`]: props.hasHeadingLines,
+      },
+    );
+    const withoutLinkIcon = classNames(
+      this.checkClassName(),
+      customHeadingClass,
+      styles[props.theme],
+      {
+        [`${styles.headingLines}`]: props.hasHeadingLines,
+      },
+    );
+
+    return props.hasHashLink ? withLinkIcon : withoutLinkIcon;
   };
 
   checkClassName = () => {
@@ -143,21 +141,16 @@ class Heading extends Component {
     }
   };
 
-  render() {
+  getAnchorLinkIcon = () => {
     const { props } = this;
     const { isLinkIconVisible } = this.state;
     const anchorId = this.getAnchorId();
-    const anchorClass = this.getAnchorClass();
+    const anchorClass = `${styles.anchor}`;
     const visibleIcon = this.getVisibleIcon();
     const hiddenIcon = `${styles.icon} ${styles.iconHidden}`;
-    const headingContainerWithLinkIcon = `${styles.headingContainerWithLinkIcon}`;
-    const headingContainerWithoutLinkIcon = `${styles.headingContainerWithoutLinkIcon}`;
-    const headingContainer = props.hasHashLink
-      ? headingContainerWithLinkIcon
-      : headingContainerWithoutLinkIcon;
 
-    return (
-      <div className={headingContainer}>
+    if (props.hasHashLink) {
+      return (
         <a
           id={anchorId}
           href={`#${anchorId}`}
@@ -167,6 +160,18 @@ class Heading extends Component {
         >
           <LinkIcon className={isLinkIconVisible ? visibleIcon : hiddenIcon} />
         </a>
+      );
+    }
+
+    return undefined;
+  };
+
+  render() {
+    const headingContainer = `${styles.headingContainer}`;
+
+    return (
+      <div className={headingContainer}>
+        {this.getAnchorLinkIcon()}
         {this.getHeading()}
       </div>
     );

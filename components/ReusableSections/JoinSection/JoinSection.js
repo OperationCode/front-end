@@ -20,7 +20,6 @@ export function JoinSection() {
         className="secondaryFont"
         anchorId="Join Our Thriving Community"
         headingLevel={3}
-        hasHeadingLines={false}
         hasHashLink
       >
         Join Our Thriving Community
