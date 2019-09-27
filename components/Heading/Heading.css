@@ -54,6 +54,7 @@ a:target {
   display: block;
   height: 65px;
   margin-top: -100px;
+  visibility: hidden;
 }
 
 .anchor {
