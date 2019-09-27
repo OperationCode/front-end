@@ -37,8 +37,9 @@
   left: 0;
   top: 0;
   background: rgba(37, 46, 62, 0.97);
-  width: 97.5%;
+  width: 100%;
   height: 100vh;
+  overflow-y: scroll;
 }
 
 .ul {
