@@ -8,7 +8,6 @@ import Badge from 'components/Badge/Badge';
 import Content from 'components/Content/Content';
 import JoinSection from 'components/ReusableSections/JoinSection/JoinSection';
 import FlatCard from 'components/Cards/FlatCard/FlatCard';
-import HashLink from 'components/HashLink/HashLink';
 // import Carousel from 'nuka-carousel';
 import BookIcon from 'static/images/icons/FontAwesome/book-solid.svg';
 import UtensilsIcon from 'static/images/icons/FontAwesome/utensils-solid.svg';
@@ -215,15 +214,14 @@ export default () => {
             )}
           </TrackVisibility>,
           <div>
-            <Heading hasHeadingLines={false} theme="white">
-              <div>
-                <HashLink
-                  id="Sponsor a Meetup"
-                  theme="blue"
-                  customIconOffset="offsetLineHeightOne"
-                />
-                <span className={styles.eventHeadingTitle}>Sponsor a Meetup</span>
-              </div>
+            <Heading
+              theme="white"
+              className="primaryFont"
+              anchorId="Sponsor a Meetup"
+              headingLevel={2}
+              hasHashLink
+            >
+              Sponsor a Meetup
             </Heading>
 
             <p className={styles.justifyAlign}>
@@ -268,15 +266,14 @@ export default () => {
       <Content
         columns={[
           <div>
-            <Heading hasHeadingLines={false} theme="white">
-              <div>
-                <HashLink
-                  id="Host Us At An Event"
-                  theme="blue"
-                  customIconOffset="offsetLineHeightOne"
-                />
-                <span className={styles.eventHeadingTitle}>Host Us At An Event</span>
-              </div>
+            <Heading
+              theme="white"
+              className="primaryFont"
+              anchorId="Host Us At An Event"
+              headingLevel={2}
+              hasHashLink
+            >
+              Host Us At An Event
             </Heading>
 
             <p className={styles.justifyAlign}>
