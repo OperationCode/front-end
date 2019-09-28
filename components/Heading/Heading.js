@@ -21,7 +21,7 @@ class Heading extends Component {
     id: '',
     anchorId: 'default',
     hasHeadingLines: false,
-    hasHashLink: false,
+    hasHashLink: true,
     headingLevel: 2,
     theme: 'secondary',
   };

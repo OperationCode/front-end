@@ -48,7 +48,6 @@ function Content({
           theme={theme}
           anchorId={title}
           headingLevel={3}
-          hasHashLink
         >
           {title}
         </Heading>

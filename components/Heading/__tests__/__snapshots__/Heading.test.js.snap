@@ -4,8 +4,20 @@ exports[`Heading should render with many props assigned 1`] = `
 <div
   className="headingContainer"
 >
+  <a
+    className="anchor"
+    data-testid="Hash Link"
+    href="#default"
+    id="default"
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+  >
+    <svg
+      className="icon iconHidden"
+    />
+  </a>
   <h2
-    className="Heading secondary"
+    className="headingTextWithLinkIconOffset Heading secondary"
     id="test-heading-1"
   >
     Test
@@ -17,8 +29,20 @@ exports[`Heading should render with required props 1`] = `
 <div
   className="headingContainer"
 >
+  <a
+    className="anchor"
+    data-testid="Hash Link"
+    href="#default"
+    id="default"
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+  >
+    <svg
+      className="icon iconHidden"
+    />
+  </a>
   <h2
-    className="Heading secondary"
+    className="headingTextWithLinkIconOffset Heading secondary"
     id=""
   >
     Test

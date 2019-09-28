@@ -8,11 +8,7 @@ import styles from './DonateSection.css';
 function DonateSection() {
   return (
     <Container backgroundImageSource={`${s3}background_flag.jpg`}>
-      <Heading
-        anchorId="Donate"
-        headingLevel={3}
-        hasHashLink
-      >
+      <Heading anchorId="Donate" headingLevel={3}>
         Donate
       </Heading>
 

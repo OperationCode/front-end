@@ -4,8 +4,20 @@ exports[`Storyshots Heading default 1`] = `
 <div
   className="headingContainer"
 >
+  <a
+    className="anchor"
+    data-testid="Hash Link"
+    href="#default"
+    id="default"
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+  >
+    <svg
+      className="icon iconHidden"
+    />
+  </a>
   <h2
-    className="Heading gray headingLines"
+    className="headingTextWithLinkIconOffset Heading gray headingLines"
     id="heading1"
   >
     Heading Component

@@ -60,13 +60,21 @@ describe('Heading classes and icon visibility', () => {
   afterEach(cleanup);
 
   it('should render with "secondary" in classNames when theme="secondary"', () => {
-    const { container } = render(<Heading theme="secondary">Test</Heading>);
+    const { container } = render(
+      <Heading hasHashLink={false} theme="secondary">
+        Test
+      </Heading>,
+    );
 
     expect(container.firstChild.firstChild).toHaveClass('secondary');
   });
 
   it('should render with "headingLines" in classNames when hasHeadingLines={true}', () => {
-    const { container } = render(<Heading hasHeadingLines>Test</Heading>);
+    const { container } = render(
+      <Heading hasHashLink={false} hasHeadingLines>
+        Test
+      </Heading>,
+    );
 
     expect(container.firstChild.firstChild).toHaveClass('headingLines');
   });
@@ -114,13 +122,15 @@ describe('Heading classes and icon visibility', () => {
     const reference = React.createRef();
     render(<Heading ref={reference}>Test</Heading>);
 
-    expect(reference.current.getHeadingClasses()).toStrictEqual('Heading secondary');
+    expect(reference.current.getHeadingClasses()).toStrictEqual(
+      'headingTextWithLinkIconOffset Heading secondary',
+    );
   });
 
   it('should get the headingOurMission class when passed', () => {
     const reference = React.createRef();
     render(
-      <Heading ref={reference} className="headingOurMission">
+      <Heading ref={reference} hasHashLink={false} className="headingOurMission">
         Test
       </Heading>,
     );
@@ -154,7 +164,7 @@ describe('Heading element levels', () => {
     );
 
     expect(reference.current.getHeading()).toStrictEqual(
-      <h1 className="Heading secondary" id="">
+      <h1 className="headingTextWithLinkIconOffset Heading secondary" id="">
         Test
       </h1>,
     );
@@ -169,7 +179,7 @@ describe('Heading element levels', () => {
     );
 
     expect(reference.current.getHeading()).toStrictEqual(
-      <h2 className="Heading secondary" id="">
+      <h2 className="headingTextWithLinkIconOffset Heading secondary" id="">
         Test
       </h2>,
     );
@@ -184,7 +194,7 @@ describe('Heading element levels', () => {
     );
 
     expect(reference.current.getHeading()).toStrictEqual(
-      <h3 className="Heading secondary" id="">
+      <h3 className="headingTextWithLinkIconOffset Heading secondary" id="">
         Test
       </h3>,
     );
@@ -199,7 +209,7 @@ describe('Heading element levels', () => {
     );
 
     expect(reference.current.getHeading()).toStrictEqual(
-      <h4 className="Heading secondary" id="">
+      <h4 className="headingTextWithLinkIconOffset Heading secondary" id="">
         Test
       </h4>,
     );
@@ -214,7 +224,7 @@ describe('Heading element levels', () => {
     );
 
     expect(reference.current.getHeading()).toStrictEqual(
-      <h5 className="Heading secondary" id="">
+      <h5 className="headingTextWithLinkIconOffset Heading secondary" id="">
         Test
       </h5>,
     );
@@ -229,7 +239,7 @@ describe('Heading element levels', () => {
     );
 
     expect(reference.current.getHeading()).toStrictEqual(
-      <h6 className="Heading secondary" id="">
+      <h6 className="headingTextWithLinkIconOffset Heading secondary" id="">
         Test
       </h6>,
     );

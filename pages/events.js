@@ -185,7 +185,6 @@ export default () => {
       <Content
         title="Want to become a sponsor?"
         theme="gray"
-        hasHashLink
         columns={[
           <p>Sponsoring a meetup ensures we have access to:</p>,
           <div className={styles.badgeGroupings}>
@@ -214,7 +213,7 @@ export default () => {
             )}
           </TrackVisibility>,
           <div>
-            <Heading theme="secondary" anchorId="Sponsor a Meetup" headingLevel={2} hasHashLink>
+            <Heading theme="secondary" anchorId="Sponsor a Meetup" headingLevel={2}>
               Sponsor a Meetup
             </Heading>
 
@@ -241,7 +240,6 @@ export default () => {
       <Content
         title="Want to host us at your next event?"
         theme="gray"
-        hasHashLink
         columns={[
           <p>Hosting us at events helps us:</p>,
           <div className={styles.badgeGroupings}>
@@ -260,7 +258,7 @@ export default () => {
       <Content
         columns={[
           <div>
-            <Heading theme="secondary" anchorId="Host Us At An Event" headingLevel={2} hasHashLink>
+            <Heading theme="secondary" anchorId="Host Us At An Event" headingLevel={2}>
               Host Us At An Event
             </Heading>
 

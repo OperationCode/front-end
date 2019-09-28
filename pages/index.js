@@ -90,7 +90,12 @@ const Home = () => (
       theme="gray"
       columns={[
         <div className={styles.cta}>
-          <Heading className="headingOurMission" hasHeadingLines theme="secondary">
+          <Heading
+            className="headingOurMission"
+            hasHeadingLines
+            hasHashLink={false}
+            theme="secondary"
+          >
             Our Mission
           </Heading>
           <p className={styles.justifyAlign}>
@@ -105,7 +110,6 @@ const Home = () => (
 
     <Content
       title="Success Stories"
-      hasHashLink
       columns={successStories.map(story => (
         <SuccessStory {...story} key={story.title} />
       ))}

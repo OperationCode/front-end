@@ -33,7 +33,6 @@ export default () => {
         title="Become A Corporate Sponsor Today"
         theme="white"
         hasTitleUnderline
-        hasHashLink
         className={styles.justifyAlign}
         columns={[
           <p>
@@ -48,7 +47,6 @@ export default () => {
       <Content
         title="What We Offer"
         theme="secondary"
-        hasHashLink
         className={styles.justifyAlign}
         columns={[
           <FlatCard>
@@ -73,7 +71,6 @@ export default () => {
         title="Engagement Opportunities"
         theme="white"
         hasTitleUnderline
-        hasHashLink
         className={styles.justifyAlign}
         columns={[
           <Card className={styles.constrainDimensions}>
@@ -106,7 +103,6 @@ export default () => {
       <Content
         title="Corporate Partner Opportunities"
         theme="secondary"
-        hasHashLink
         className={styles.justifyAlign}
         columns={[
           <div className={styles.justifyAlign}>

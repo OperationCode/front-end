@@ -8,7 +8,6 @@ const SponsorsSection = () => (
     title="Sponsors"
     theme="gray"
     hasTitleUnderline
-    hasHashLink
     columns={partners.map(partner => (
       <PartnerLogoLink key={partner.name} {...partner} />
     ))}

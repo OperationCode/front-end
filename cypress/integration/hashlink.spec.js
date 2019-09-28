@@ -9,6 +9,11 @@ describe('hashlink', () => {
     { pathName: 'get_involved', pathValue: '/get_involved' },
     { pathName: 'sponsorship', pathValue: '/sponsorship' },
     { pathName: 'leadership_circle', pathValue: '/leadership_circle' },
+    { pathName: 'code_schools', pathValue: '/code_schools' },
+    { pathName: 'jobs', pathValue: '/jobs' },
+    { pathName: 'press', pathValue: '/press' },
+    { pathName: 'branding', pathValue: '/branding' },
+    { pathName: 'team', pathValue: '/team' },
   ];
 
   paths.forEach(path => {

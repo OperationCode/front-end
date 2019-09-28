@@ -42,7 +42,6 @@ export default () => (
     <Content
       title="Who Do We Serve?"
       theme="gray"
-      hasHashLink
       columns={[
         <div>
           <p className={styles.justifyAlign}>
@@ -78,7 +77,6 @@ export default () => (
 
     <Content
       title="Our Commitment To You"
-      hasHashLink
       theme="gray"
       columns={[
         <p className={styles.justifyAlign}>

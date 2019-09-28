@@ -64,7 +64,6 @@ export default () => (
       theme="secondary"
       title="What We Do"
       hasTitleUnderline
-      hasHashLink
       columns={[
         <ImageCard
           alt="Two women pair programming"
@@ -130,9 +129,9 @@ export default () => (
           <p>
             <Link href="/podcast">
               <a>We have a podcast!</a>
-            </Link>
-            {' '} You can listen into the amazing stories of our members. Visualize
-            your success through others&apos; footsteps.
+            </Link>{' '}
+            You can listen into the amazing stories of our members. Visualize your success through
+            others&apos; footsteps.
           </p>
         </ImageCard>,
       ]}
@@ -142,7 +141,6 @@ export default () => (
       theme="white"
       title="Mission"
       hasTitleUnderline
-      hasHashLink
       columns={[
         <p className={styles.justifyAlign}>
           Operation Code is leading the way to expand opportunities for military veterans and their
@@ -160,7 +158,6 @@ export default () => (
       theme="gray"
       title="Core Values"
       hasTitleUnderline
-      hasHashLink
       columns={[
         <ValueCard
           name="Integrity"

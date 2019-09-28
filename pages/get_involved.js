@@ -74,7 +74,6 @@ export default () => (
     <Content
       title="The Power of Mentorship"
       theme="gray"
-      hasHashLink
       columns={[
         <p>By mentoring one of our members, you will help them:</p>,
         <div className={styles.badgeGroupings}>
@@ -98,7 +97,7 @@ export default () => (
           )}
         </TrackVisibility>,
         <div>
-          <Heading anchorId="Empower Our Community" headingLevel={3} hasHashLink>
+          <Heading anchorId="Empower Our Community" headingLevel={3}>
             Empower Our Community
           </Heading>
 
@@ -117,7 +116,6 @@ export default () => (
     <Content
       theme="gray"
       title="Ways You Can Support Operation Code"
-      hasHashLink
       columns={[
         <div>
           <p>
@@ -137,7 +135,7 @@ export default () => (
     <Content
       columns={[
         <div>
-          <Heading anchorId="Support Our Mission" headingLevel={3} hasHashLink>
+          <Heading anchorId="Support Our Mission" headingLevel={3}>
             Support Our Mission
           </Heading>
 
