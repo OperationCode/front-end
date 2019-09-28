@@ -4,8 +4,11 @@
 }
 
 .logo {
-  filter: grayscale(100%);
+  width: 100px;
   height: 100px;
+  line-height: 50px;
+  text-align: center;
+  filter: grayscale(100%);
   transition: filter 0.2s linear;
 }
 
