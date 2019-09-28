@@ -12,6 +12,7 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
     >
       <a
         className="anchor"
+        data-testid="Hash Link"
         href="#sponsors"
         id="sponsors"
         onMouseEnter={[Function]}
@@ -356,6 +357,7 @@ exports[`SponsorsSection should render with required props 1`] = `
     >
       <a
         className="anchor"
+        data-testid="Hash Link"
         href="#sponsors"
         id="sponsors"
         onMouseEnter={[Function]}

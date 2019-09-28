@@ -35,7 +35,7 @@ class Heading extends Component {
 
     return props.anchorId
       .replace(/\s+/g, '-')
-      .replace(/\?|!/g, '')
+      .replace(/\?|!|\./g, '')
       .toLowerCase();
   };
 
@@ -136,6 +136,7 @@ class Heading extends Component {
           className={anchorClass}
           onMouseEnter={() => this.toggleVisible(true)}
           onMouseLeave={() => this.toggleVisible(false)}
+          data-testid="Hash Link"
         >
           <LinkIcon className={isLinkIconVisible ? visibleIcon : hiddenIcon} />
         </a>

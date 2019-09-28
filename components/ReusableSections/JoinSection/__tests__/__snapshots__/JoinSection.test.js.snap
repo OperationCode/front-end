@@ -13,6 +13,7 @@ exports[`JoinSection should render when not logged in 1`] = `
     >
       <a
         className="anchor"
+        data-testid="Hash Link"
         href="#join-our-thriving-community"
         id="join-our-thriving-community"
         onMouseEnter={[Function]}

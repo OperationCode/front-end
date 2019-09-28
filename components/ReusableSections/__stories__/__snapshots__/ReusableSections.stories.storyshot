@@ -17,6 +17,7 @@ exports[`Storyshots ReusableSections DonateSection 1`] = `
     >
       <a
         className="anchor"
+        data-testid="Hash Link"
         href="#donate"
         id="donate"
         onMouseEnter={[Function]}
@@ -66,6 +67,7 @@ exports[`Storyshots ReusableSections JoinSection 1`] = `
     >
       <a
         className="anchor"
+        data-testid="Hash Link"
         href="#join-our-thriving-community"
         id="join-our-thriving-community"
         onMouseEnter={[Function]}
@@ -130,6 +132,7 @@ exports[`Storyshots ReusableSections SponsorsSection 1`] = `
     >
       <a
         className="anchor"
+        data-testid="Hash Link"
         href="#sponsors"
         id="sponsors"
         onMouseEnter={[Function]}

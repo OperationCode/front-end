@@ -13,6 +13,7 @@ exports[`Content should render with many props assigned 1`] = `
     >
       <a
         className="anchor"
+        data-testid="Hash Link"
         href="#testing"
         id="testing"
         onMouseEnter={[Function]}

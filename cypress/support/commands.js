@@ -52,6 +52,19 @@ Cypress.Commands.add('setResolution', size => {
   }
 });
 
+Cypress.Commands.add('verifyHashLink', path => {
+  cy.visitAndWaitFor(path);
+  cy.get('[data-testid="Hash Link"]').each(link => {
+    const { hash } = link[0];
+
+    cy.get(hash)
+      .scrollIntoView()
+      .click()
+      .url()
+      .should('include', hash);
+  });
+});
+
 //
 // -- This is a child command --
 // Cypress.Commands.add("drag", { prevSubject: 'element'}, (subject, options) => { ... })

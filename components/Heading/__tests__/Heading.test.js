@@ -44,6 +44,16 @@ describe('Heading anchor id', () => {
     );
     expect(reference.current.getAnchorId()).toStrictEqual('join-today');
   });
+
+  it('should contain anchorId without a period when anchorId is included', () => {
+    const reference = React.createRef();
+    render(
+      <Heading ref={reference} anchorId="Jon Doe Jr.">
+        Test
+      </Heading>,
+    );
+    expect(reference.current.getAnchorId()).toStrictEqual('jon-doe-jr');
+  });
 });
 
 describe('Heading classes and icon visibility', () => {
