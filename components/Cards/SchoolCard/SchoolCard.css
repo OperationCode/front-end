@@ -19,7 +19,7 @@
 
 @media screen and (--small-viewport) {
   .SchoolCard {
-    width: 100%;
+    width: 75vw;
   }
 }
 
