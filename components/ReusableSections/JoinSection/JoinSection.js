@@ -16,12 +16,7 @@ export function JoinSection() {
 
   return (
     <Container theme="white" data-testid="Join Section">
-      <Heading
-        className="secondaryFont"
-        anchorId="Join Our Thriving Community"
-        headingLevel={3}
-        hasHashLink
-      >
+      <Heading theme="white" anchorId="Join Our Thriving Community" headingLevel={3} hasHashLink>
         Join Our Thriving Community
       </Heading>
 

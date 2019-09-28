@@ -5,7 +5,7 @@ exports[`Heading should render with many props assigned 1`] = `
   className="headingContainer"
 >
   <h2
-    className="test-class Heading secondary"
+    className="Heading secondary"
     id="test-heading-1"
   >
     Test
@@ -18,7 +18,7 @@ exports[`Heading should render with required props 1`] = `
   className="headingContainer"
 >
   <h2
-    className="Heading gray"
+    className="Heading secondary"
     id=""
   >
     Test

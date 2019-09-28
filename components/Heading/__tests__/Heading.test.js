@@ -1,10 +1,14 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+
+import { cleanup, render } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 
 import Heading from '../Heading';
 
 describe('Heading', () => {
+  afterEach(cleanup);
+
   it('should render with required props', () => {
     createSnapshotTest(<Heading>Test</Heading>);
   });
@@ -16,115 +20,208 @@ describe('Heading', () => {
       </Heading>,
     );
   });
+});
 
-  it('should render with "secondary" in classNames when theme="secondary"', () => {
-    const HeaderInstance = shallow(<Heading theme="secondary">Test</Heading>);
+describe('Heading anchor id', () => {
+  afterEach(cleanup);
 
-    expect(HeaderInstance).toHaveClassName('secondary');
+  it('should contain anchorId without a question mark when anchorId is included', () => {
+    const reference = React.createRef();
+    render(
+      <Heading ref={reference} anchorId="WANT TO BECOME A SPONSOR?">
+        Test
+      </Heading>,
+    );
+    expect(reference.current.getAnchorId()).toStrictEqual('want-to-become-a-sponsor');
   });
 
-  it('should render without "headingLines" in classNames when hasHeadingLines={false}', () => {
-    const HeaderInstance = shallow(<Heading hasHeadingLines={false}>Test</Heading>);
-
-    expect(HeaderInstance).not.toHaveClassName('headingLines');
+  it('should contain anchorId without exclamation mark when anchorId is included', () => {
+    const reference = React.createRef();
+    render(
+      <Heading ref={reference} anchorId="JOIN TODAY!">
+        Test
+      </Heading>,
+    );
+    expect(reference.current.getAnchorId()).toStrictEqual('join-today');
   });
 });
-// import { shallow } from 'enzyme';
-// import createSnapshotTest from 'test-utils/createSnapshotTest';
 
-// import HashLink from '../HashLink';
+describe('Heading classes and icon visibility', () => {
+  afterEach(cleanup);
 
-// describe('HashLink', () => {
-//   it('should render with required props', () => {
-//     createSnapshotTest(<HashLink>Test</HashLink>);
-//   });
+  it('should render with "secondary" in classNames when theme="secondary"', () => {
+    const { container } = render(<Heading theme="secondary">Test</Heading>);
 
-//   it('should render with many props assigned', () => {
-//     createSnapshotTest(<HashLink className="test-class">Test</HashLink>);
-//   });
+    expect(container.firstChild.firstChild).toHaveClass('secondary');
+  });
 
-//   it('should contain filtered anchorId', () => {
-//     const questionMarkProperties = {
-//       id: 'WANT TO BECOME A SPONSOR?',
-//     };
+  it('should render with "headingLines" in classNames when hasHeadingLines={true}', () => {
+    const { container } = render(<Heading hasHeadingLines>Test</Heading>);
 
-//     const exclamationMarkProperties = {
-//       id: 'JOIN TODAY!',
-//     };
+    expect(container.firstChild.firstChild).toHaveClass('headingLines');
+  });
 
-//     const questionMarkWrapper = shallow(<HashLink {...questionMarkProperties} />);
-//     const exclamationMarkWrapper = shallow(<HashLink {...exclamationMarkProperties} />);
+  it('should contain the anchor class when hasHashLink is true', () => {
+    const { container } = render(<Heading hasHashLink>Test</Heading>);
 
-//     expect(questionMarkWrapper.instance().getAnchorId()).toStrictEqual('want-to-become-a-sponsor');
-//     expect(exclamationMarkWrapper.instance().getAnchorId()).toStrictEqual('join-today');
-//   });
+    expect(container.firstChild.firstChild).toHaveClass('anchor');
+  });
 
-//   it('should contain the anchor classes', () => {
-//     const defaultProps = {
-//       customIconOffset: 'default',
-//     };
+  it('should contain the iconFillBlue class when theme is white or gray', () => {
+    const reference = React.createRef();
+    render(
+      <Heading ref={reference} theme="white">
+        Test
+      </Heading>,
+    );
 
-//     const offsetProperties = {
-//       customIconOffset: 'offsetLineHeightOne',
-//     };
+    expect(reference.current.getVisibleIcon()).toStrictEqual('icon iconVisible iconFillBlue');
+  });
 
-//     const defaultWrapper = shallow(<HashLink {...defaultProps} />);
-//     const offsetWrapper = shallow(<HashLink {...offsetProperties} />);
+  it('should contain the iconFillWhite class when theme is not white or gray', () => {
+    const reference = React.createRef();
+    render(
+      <Heading ref={reference} theme="secondary">
+        Test
+      </Heading>,
+    );
 
-//     expect(defaultWrapper.instance().getAnchorClass()).toStrictEqual('anchorDefault');
-//     expect(offsetWrapper.instance().getAnchorClass()).toStrictEqual('anchorOffsetLineHeightOne');
-//   });
+    expect(reference.current.getVisibleIcon()).toStrictEqual('icon iconVisible iconFillWhite');
+  });
 
-//   it('should contain visible icon class', () => {
-//     const whiteProperties = {
-//       theme: 'white',
-//     };
+  it('should toggle isLinkIconVisible state to true or false', () => {
+    const reference = React.createRef();
+    render(<Heading ref={reference}>Test</Heading>);
 
-//     const blueProperties = {
-//       theme: 'blue',
-//     };
+    reference.current.toggleVisible(true);
+    expect(reference.current.state.isLinkIconVisible).toBe(true);
 
-//     const whiteWrapper = shallow(<HashLink {...whiteProperties} />);
-//     const blueWrapper = shallow(<HashLink {...blueProperties} />);
+    reference.current.toggleVisible(false);
+    expect(reference.current.state.isLinkIconVisible).toBe(false);
+  });
 
-//     expect(whiteWrapper.instance().getVisibleIcon()).toStrictEqual('icon iconVisibleiconFillBlue');
-//     expect(blueWrapper.instance().getVisibleIcon()).toStrictEqual('icon iconVisibleiconFillWhite');
-//   });
+  it('should get default heading classes when nothing is passed', () => {
+    const reference = React.createRef();
+    render(<Heading ref={reference}>Test</Heading>);
 
-//   it('should toggle the visible link icon', () => {
-//     const wrapper = shallow(<HashLink />);
-//     const instance = wrapper.instance();
+    expect(reference.current.getHeadingClasses()).toStrictEqual('Heading secondary');
+  });
 
-//     instance.toggleVisible(true);
-//     expect(instance.state.isVisible).toStrictEqual(true);
+  it('should get the headingOurMission class when passed', () => {
+    const reference = React.createRef();
+    render(
+      <Heading ref={reference} className="headingOurMission">
+        Test
+      </Heading>,
+    );
 
-//     instance.toggleVisible(false);
-//     expect(instance.state.isVisible).toStrictEqual(false);
-//   });
+    expect(reference.current.getHeadingClasses()).toStrictEqual('headingOurMission secondary');
+  });
 
-//   it('should contain id link', () => {
-//     const questionMarkProperties = {
-//       id: 'WANT TO BECOME A SPONSOR?',
-//     };
+  it('should get the headingTextWithLinkIconOffset class when hasHashLink is true', () => {
+    const reference = React.createRef();
+    render(
+      <Heading ref={reference} hasHashLink>
+        Test
+      </Heading>,
+    );
 
-//     const exclamationMarkProperties = {
-//       id: 'JOIN TODAY!',
-//     };
+    expect(reference.current.getHeadingClasses()).toStrictEqual(
+      'headingTextWithLinkIconOffset Heading secondary',
+    );
+  });
+});
 
-//     const questionMarkWrapper = shallow(<HashLink {...questionMarkProperties} />);
-//     const exclamationMarkWrapper = shallow(<HashLink {...exclamationMarkProperties} />);
+describe('Heading element levels', () => {
+  afterEach(cleanup);
 
-//     expect(questionMarkWrapper.find('#want-to-become-a-sponsor')).toExist(true);
-//     expect(exclamationMarkWrapper.find('#join-today')).toExist(true);
-//   });
+  it('should contain h1 when headingLevel is 1', () => {
+    const reference = React.createRef();
+    render(
+      <Heading ref={reference} headingLevel={1}>
+        Test
+      </Heading>,
+    );
 
-//   it('should contain hashlink in href attribute', () => {
-//     const requiredProps = {
-//       id: 'GENERAL QUESTIONS',
-//     };
+    expect(reference.current.getHeading()).toStrictEqual(
+      <h1 className="Heading secondary" id="">
+        Test
+      </h1>,
+    );
+  });
 
-//     const wrapper = shallow(<HashLink {...requiredProps} />);
+  it('should contain h2 when headingLevel is 2', () => {
+    const reference = React.createRef();
+    render(
+      <Heading ref={reference} headingLevel={2}>
+        Test
+      </Heading>,
+    );
 
-//     expect(wrapper.find({ href: '#general-questions' })).toExist(true);
-//   });
-// });
+    expect(reference.current.getHeading()).toStrictEqual(
+      <h2 className="Heading secondary" id="">
+        Test
+      </h2>,
+    );
+  });
+
+  it('should contain h3 when headingLevel is 3', () => {
+    const reference = React.createRef();
+    render(
+      <Heading ref={reference} headingLevel={3}>
+        Test
+      </Heading>,
+    );
+
+    expect(reference.current.getHeading()).toStrictEqual(
+      <h3 className="Heading secondary" id="">
+        Test
+      </h3>,
+    );
+  });
+
+  it('should contain h4 when headingLevel is 4', () => {
+    const reference = React.createRef();
+    render(
+      <Heading ref={reference} headingLevel={4}>
+        Test
+      </Heading>,
+    );
+
+    expect(reference.current.getHeading()).toStrictEqual(
+      <h4 className="Heading secondary" id="">
+        Test
+      </h4>,
+    );
+  });
+
+  it('should contain h5 when headingLevel is 5', () => {
+    const reference = React.createRef();
+    render(
+      <Heading ref={reference} headingLevel={5}>
+        Test
+      </Heading>,
+    );
+
+    expect(reference.current.getHeading()).toStrictEqual(
+      <h5 className="Heading secondary" id="">
+        Test
+      </h5>,
+    );
+  });
+
+  it('should contain h6 when headingLevel is 6', () => {
+    const reference = React.createRef();
+    render(
+      <Heading ref={reference} headingLevel={6}>
+        Test
+      </Heading>,
+    );
+
+    expect(reference.current.getHeading()).toStrictEqual(
+      <h6 className="Heading secondary" id="">
+        Test
+      </h6>,
+    );
+  });
+});

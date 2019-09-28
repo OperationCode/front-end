@@ -98,12 +98,7 @@ export default () => (
           )}
         </TrackVisibility>,
         <div>
-          <Heading
-            className="primaryFont"
-            anchorId="Empower Our Community"
-            headingLevel={3}
-            hasHashLink
-          >
+          <Heading anchorId="Empower Our Community" headingLevel={3} hasHashLink>
             Empower Our Community
           </Heading>
 
@@ -142,12 +137,7 @@ export default () => (
     <Content
       columns={[
         <div>
-          <Heading
-            className="primaryFont"
-            anchorId="Support Our Mission"
-            headingLevel={3}
-            hasHashLink
-          >
+          <Heading anchorId="Support Our Mission" headingLevel={3} hasHashLink>
             Support Our Mission
           </Heading>
 

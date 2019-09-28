@@ -23,7 +23,7 @@ class Heading extends Component {
     hasHeadingLines: false,
     hasHashLink: false,
     headingLevel: 2,
-    theme: 'gray',
+    theme: 'secondary',
   };
 
   state = {
@@ -45,9 +45,9 @@ class Heading extends Component {
     let visibleIcon = `${styles.icon} ${styles.iconVisible}`;
 
     if (theme === 'white' || theme === 'gray') {
-      visibleIcon += `${styles.iconFillBlue}`;
+      visibleIcon += ` ${styles.iconFillBlue}`;
     } else {
-      visibleIcon += `${styles.iconFillWhite}`;
+      visibleIcon += ` ${styles.iconFillWhite}`;
     }
 
     return visibleIcon;
@@ -106,7 +106,6 @@ class Heading extends Component {
     const customHeadingClass =
       props.className === 'headingOurMission' ? styles.headingOurMission : styles.Heading;
     const withLinkIcon = classNames(
-      this.checkClassName(),
       styles.headingTextWithLinkIconOffset,
       customHeadingClass,
       styles[props.theme],
@@ -114,31 +113,11 @@ class Heading extends Component {
         [`${styles.headingLines}`]: props.hasHeadingLines,
       },
     );
-    const withoutLinkIcon = classNames(
-      this.checkClassName(),
-      customHeadingClass,
-      styles[props.theme],
-      {
-        [`${styles.headingLines}`]: props.hasHeadingLines,
-      },
-    );
+    const withoutLinkIcon = classNames(customHeadingClass, styles[props.theme], {
+      [`${styles.headingLines}`]: props.hasHeadingLines,
+    });
 
     return props.hasHashLink ? withLinkIcon : withoutLinkIcon;
-  };
-
-  checkClassName = () => {
-    const { props } = this;
-
-    switch (props.className) {
-      case 'whiteFont':
-        return styles.whiteFont;
-      case 'grayFont':
-        return styles.grayFont;
-      case 'secondaryFont':
-        return styles.secondaryFont;
-      default:
-        return props.className;
-    }
   };
 
   getAnchorLinkIcon = () => {

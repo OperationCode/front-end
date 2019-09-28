@@ -214,13 +214,7 @@ export default () => {
             )}
           </TrackVisibility>,
           <div>
-            <Heading
-              theme="white"
-              className="primaryFont"
-              anchorId="Sponsor a Meetup"
-              headingLevel={2}
-              hasHashLink
-            >
+            <Heading theme="secondary" anchorId="Sponsor a Meetup" headingLevel={2} hasHashLink>
               Sponsor a Meetup
             </Heading>
 
@@ -266,13 +260,7 @@ export default () => {
       <Content
         columns={[
           <div>
-            <Heading
-              theme="white"
-              className="primaryFont"
-              anchorId="Host Us At An Event"
-              headingLevel={2}
-              hasHashLink
-            >
+            <Heading theme="secondary" anchorId="Host Us At An Event" headingLevel={2} hasHashLink>
               Host Us At An Event
             </Heading>
 

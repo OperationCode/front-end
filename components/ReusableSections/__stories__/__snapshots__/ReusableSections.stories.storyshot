@@ -27,7 +27,7 @@ exports[`Storyshots ReusableSections DonateSection 1`] = `
         />
       </a>
       <h3
-        className="headingTextWithLinkIconOffset Heading gray"
+        className="headingTextWithLinkIconOffset Heading secondary"
         id=""
       >
         Donate
@@ -76,7 +76,7 @@ exports[`Storyshots ReusableSections JoinSection 1`] = `
         />
       </a>
       <h3
-        className="secondaryFont headingTextWithLinkIconOffset Heading gray"
+        className="headingTextWithLinkIconOffset Heading white"
         id=""
       >
         Join Our Thriving Community
@@ -140,7 +140,7 @@ exports[`Storyshots ReusableSections SponsorsSection 1`] = `
         />
       </a>
       <h3
-        className="title underline headingTextWithLinkIconOffset Heading gray"
+        className="headingTextWithLinkIconOffset Heading gray"
         id=""
       >
         Sponsors

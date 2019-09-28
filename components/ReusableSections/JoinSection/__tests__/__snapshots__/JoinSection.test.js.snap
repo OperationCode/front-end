@@ -23,7 +23,7 @@ exports[`JoinSection should render when not logged in 1`] = `
         />
       </a>
       <h3
-        className="secondaryFont headingTextWithLinkIconOffset Heading gray"
+        className="headingTextWithLinkIconOffset Heading white"
         id=""
       >
         Join Our Thriving Community

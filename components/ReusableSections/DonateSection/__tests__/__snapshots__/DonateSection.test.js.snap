@@ -12,7 +12,7 @@ exports[`DonateSection should render with no props passed passed 1`] = `
     hasHeadingLines={false}
     headingLevel={3}
     id=""
-    theme="gray"
+    theme="secondary"
   >
     Donate
   </Heading>

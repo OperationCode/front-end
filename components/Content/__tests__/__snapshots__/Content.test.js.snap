@@ -23,7 +23,7 @@ exports[`Content should render with many props assigned 1`] = `
         />
       </a>
       <h3
-        className="title underline headingTextWithLinkIconOffset Heading gray"
+        className="headingTextWithLinkIconOffset Heading secondary"
         id=""
       >
         Testing!
