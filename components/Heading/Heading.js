@@ -9,6 +9,7 @@ class Heading extends Component {
     className: string,
     id: oneOfType([string, number]), // reference for scroll anchors
     anchorId: string,
+    customAnchorClass: string,
     children: node.isRequired,
     hasHeadingLines: bool,
     hasHashLink: bool,
@@ -20,6 +21,7 @@ class Heading extends Component {
     className: undefined,
     id: '',
     anchorId: 'default',
+    customAnchorClass: '',
     hasHeadingLines: false,
     hasHashLink: true,
     headingLevel: 2,
@@ -124,18 +126,18 @@ class Heading extends Component {
     const { props } = this;
     const { isLinkIconVisible } = this.state;
     const anchorId = this.getAnchorId();
-    const anchorClass = `${styles.anchor}`;
+    const hashLinkClass = `${styles.hashLink}`;
     const visibleIcon = this.getVisibleIcon();
     const hiddenIcon = `${styles.icon} ${styles.iconHidden}`;
 
     if (props.hasHashLink) {
       return (
         <a
-          id={anchorId}
           href={`#${anchorId}`}
-          className={anchorClass}
+          className={hashLinkClass}
           onMouseEnter={() => this.toggleVisible(true)}
           onMouseLeave={() => this.toggleVisible(false)}
+          onClick={() => this.toggleVisible(false)}
           data-testid="Hash Link"
         >
           <LinkIcon className={isLinkIconVisible ? visibleIcon : hiddenIcon} />
@@ -146,11 +148,36 @@ class Heading extends Component {
     return undefined;
   };
 
+  getSpan = () => {
+    const { props } = this;
+    const anchorId = this.getAnchorId();
+    const anchorClass = this.getAnchorClass();
+
+    if (props.hasHashLink) {
+      return <span id={anchorId} className={anchorClass} />;
+    }
+    return '';
+  };
+
+  getAnchorClass = () => {
+    const { props } = this;
+    let anchorClass = `${styles.anchor}`;
+
+    if (props.customAnchorClass === 'podcast') {
+      anchorClass += ` ${styles.anchorMarginPodcast}`;
+    } else {
+      anchorClass += ` ${styles.anchorMargin}`;
+    }
+
+    return anchorClass;
+  };
+
   render() {
     const headingContainer = `${styles.headingContainer}`;
 
     return (
       <div className={headingContainer}>
+        {this.getSpan()}
         {this.getAnchorLinkIcon()}
         {this.getHeading()}
       </div>

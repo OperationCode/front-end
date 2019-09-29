@@ -22,62 +22,8 @@ describe('Heading', () => {
   });
 });
 
-describe('Heading anchor id', () => {
+describe('Heading anchor and hashlink', () => {
   afterEach(cleanup);
-
-  it('should contain anchorId without a question mark when anchorId is included', () => {
-    const reference = React.createRef();
-    render(
-      <Heading ref={reference} anchorId="WANT TO BECOME A SPONSOR?">
-        Test
-      </Heading>,
-    );
-    expect(reference.current.getAnchorId()).toStrictEqual('want-to-become-a-sponsor');
-  });
-
-  it('should contain anchorId without exclamation mark when anchorId is included', () => {
-    const reference = React.createRef();
-    render(
-      <Heading ref={reference} anchorId="JOIN TODAY!">
-        Test
-      </Heading>,
-    );
-    expect(reference.current.getAnchorId()).toStrictEqual('join-today');
-  });
-
-  it('should contain anchorId without a period when anchorId is included', () => {
-    const reference = React.createRef();
-    render(
-      <Heading ref={reference} anchorId="Jon Doe Jr.">
-        Test
-      </Heading>,
-    );
-    expect(reference.current.getAnchorId()).toStrictEqual('jon-doe-jr');
-  });
-});
-
-describe('Heading classes and icon visibility', () => {
-  afterEach(cleanup);
-
-  it('should render with "secondary" in classNames when theme="secondary"', () => {
-    const { container } = render(
-      <Heading hasHashLink={false} theme="secondary">
-        Test
-      </Heading>,
-    );
-
-    expect(container.firstChild.firstChild).toHaveClass('secondary');
-  });
-
-  it('should render with "headingLines" in classNames when hasHeadingLines={true}', () => {
-    const { container } = render(
-      <Heading hasHashLink={false} hasHeadingLines>
-        Test
-      </Heading>,
-    );
-
-    expect(container.firstChild.firstChild).toHaveClass('headingLines');
-  });
 
   it('should contain the anchor class when hasHashLink is true', () => {
     const { container } = render(<Heading hasHashLink>Test</Heading>);
@@ -118,6 +64,93 @@ describe('Heading classes and icon visibility', () => {
     expect(reference.current.state.isLinkIconVisible).toBe(false);
   });
 
+  it('should contain anchorId without a question mark when anchorId is included', () => {
+    const reference = React.createRef();
+    render(
+      <Heading ref={reference} anchorId="WANT TO BECOME A SPONSOR?">
+        Test
+      </Heading>,
+    );
+    expect(reference.current.getAnchorId()).toStrictEqual('want-to-become-a-sponsor');
+  });
+
+  it('should contain anchorId without exclamation mark when anchorId is included', () => {
+    const reference = React.createRef();
+    render(
+      <Heading ref={reference} anchorId="JOIN TODAY!">
+        Test
+      </Heading>,
+    );
+    expect(reference.current.getAnchorId()).toStrictEqual('join-today');
+  });
+
+  it('should contain anchorId without a period when anchorId is included', () => {
+    const reference = React.createRef();
+    render(
+      <Heading ref={reference} anchorId="Jon Doe Jr.">
+        Test
+      </Heading>,
+    );
+    expect(reference.current.getAnchorId()).toStrictEqual('jon-doe-jr');
+  });
+
+  it('should get the headingTextWithLinkIconOffset class when hasHashLink is true', () => {
+    const reference = React.createRef();
+    render(
+      <Heading ref={reference} hasHashLink>
+        Test
+      </Heading>,
+    );
+
+    expect(reference.current.getHeadingClasses()).toStrictEqual(
+      'headingTextWithLinkIconOffset Heading secondary',
+    );
+  });
+
+  it('should get the anchorMargin class if the customAnchorClass is empty', () => {
+    const reference = React.createRef();
+    render(<Heading ref={reference}>Test</Heading>);
+
+    expect(reference.current.getAnchorClass()).toStrictEqual('anchor anchorMargin');
+  });
+
+  it('should contain a span element when hasHashLink is true', () => {
+    const reference = React.createRef();
+    render(
+      <Heading ref={reference} anchorId="opcode" hasHashLink>
+        Test
+      </Heading>,
+    );
+
+    expect(reference.current.getSpan()).toStrictEqual(
+      <span className="anchor anchorMargin" id="opcode" />,
+    );
+  });
+});
+
+describe('Heading classes', () => {
+  afterEach(cleanup);
+
+  it('should render with "secondary" in classNames when theme="secondary"', () => {
+    const { container } = render(
+      <Heading hasHashLink={false} theme="secondary">
+        Test
+      </Heading>,
+    );
+
+    expect(container.firstChild.lastChild).toHaveClass('secondary');
+  });
+
+  it('should render with "headingLines" in classNames when hasHeadingLines={true}', () => {
+    const { container } = render(
+      <Heading hasHashLink={false} hasHeadingLines>
+        Test
+      </Heading>,
+    );
+
+    expect(container.firstChild.lastChild).toHaveClass('headingLines');
+  });
+
   it('should get default heading classes when nothing is passed', () => {
     const reference = React.createRef();
     render(<Heading ref={reference}>Test</Heading>);
@@ -136,19 +169,6 @@ describe('Heading classes and icon visibility', () => {
     );
 
     expect(reference.current.getHeadingClasses()).toStrictEqual('headingOurMission secondary');
-  });
-
-  it('should get the headingTextWithLinkIconOffset class when hasHashLink is true', () => {
-    const reference = React.createRef();
-    render(
-      <Heading ref={reference} hasHashLink>
-        Test
-      </Heading>,
-    );
-
-    expect(reference.current.getHeadingClasses()).toStrictEqual(
-      'headingTextWithLinkIconOffset Heading secondary',
-    );
   });
 });
 

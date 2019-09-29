@@ -10,11 +10,15 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
     <div
       className="headingContainer"
     >
+      <span
+        className="anchor anchorMargin"
+        id="sponsors"
+      />
       <a
-        className="anchor"
+        className="hashLink"
         data-testid="Hash Link"
         href="#sponsors"
-        id="sponsors"
+        onClick={[Function]}
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
       >
@@ -355,11 +359,15 @@ exports[`SponsorsSection should render with required props 1`] = `
     <div
       className="headingContainer"
     >
+      <span
+        className="anchor anchorMargin"
+        id="sponsors"
+      />
       <a
-        className="anchor"
+        className="hashLink"
         data-testid="Hash Link"
         href="#sponsors"
-        id="sponsors"
+        onClick={[Function]}
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
       >

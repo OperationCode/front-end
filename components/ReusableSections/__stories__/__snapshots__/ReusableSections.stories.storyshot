@@ -15,11 +15,15 @@ exports[`Storyshots ReusableSections DonateSection 1`] = `
     <div
       className="headingContainer"
     >
+      <span
+        className="anchor anchorMargin"
+        id="donate"
+      />
       <a
-        className="anchor"
+        className="hashLink"
         data-testid="Hash Link"
         href="#donate"
-        id="donate"
+        onClick={[Function]}
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
       >
@@ -65,11 +69,15 @@ exports[`Storyshots ReusableSections JoinSection 1`] = `
     <div
       className="headingContainer"
     >
+      <span
+        className="anchor anchorMargin"
+        id="join-our-thriving-community"
+      />
       <a
-        className="anchor"
+        className="hashLink"
         data-testid="Hash Link"
         href="#join-our-thriving-community"
-        id="join-our-thriving-community"
+        onClick={[Function]}
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
       >
@@ -130,11 +138,15 @@ exports[`Storyshots ReusableSections SponsorsSection 1`] = `
     <div
       className="headingContainer"
     >
+      <span
+        className="anchor anchorMargin"
+        id="sponsors"
+      />
       <a
-        className="anchor"
+        className="hashLink"
         data-testid="Hash Link"
         href="#sponsors"
-        id="sponsors"
+        onClick={[Function]}
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
       >

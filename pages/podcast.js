@@ -77,7 +77,12 @@ class Podcast extends React.Component {
 
                   return (
                     <Card data-testid="Podcast Card" className={styles.podcastCard} key={name}>
-                      <Heading theme="white" anchorId={interviewee} headingLevel={3}>
+                      <Heading
+                        theme="white"
+                        anchorId={interviewee}
+                        customAnchorClass="podcast"
+                        headingLevel={3}
+                      >
                         {interviewee}
                       </Heading>
 

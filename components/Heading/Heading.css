@@ -34,22 +34,27 @@
 
 .icon {
   width: 18px;
-  pointer-events: none;
 }
 
-a:target {
-  content: "";
-  display: block;
-  height: 65px;
-  margin-top: -100px;
-  visibility: hidden;
-}
-
-.anchor {
+.hashLink {
   line-height: 2.25;
   height: 2rem;
   margin: 1rem 0.25rem;
   outline: none;
+  transition: 0.3s;
+}
+
+.anchor {
+  display: block;
+  position: relative;
+}
+
+.anchorMargin {
+  top: -50px;
+}
+
+.anchorMarginPodcast {
+  top: -50px;
 }
 
 .iconFillWhite {
@@ -69,13 +74,25 @@ a:target {
 }
 
 @media screen and (--medium-viewport) {
-  .Heading {
-    width: 90%;
+  .anchorMargin {
+    top: -110px;
+  }
+
+  .anchorMarginPodcast {
+    top: -120px;
   }
 }
 
 @media screen and (--small-viewport) {
-  .Heading {
-    width: 100%;
+  .icon {
+    width: 16px;
+  }
+
+  .anchorMargin {
+    top: -110px;
+  }
+
+  .anchorMarginPodcast {
+    top: -120px;
   }
 }

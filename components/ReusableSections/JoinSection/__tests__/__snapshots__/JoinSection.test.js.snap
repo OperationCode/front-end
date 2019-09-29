@@ -11,11 +11,15 @@ exports[`JoinSection should render when not logged in 1`] = `
     <div
       className="headingContainer"
     >
+      <span
+        className="anchor anchorMargin"
+        id="join-our-thriving-community"
+      />
       <a
-        className="anchor"
+        className="hashLink"
         data-testid="Hash Link"
         href="#join-our-thriving-community"
-        id="join-our-thriving-community"
+        onClick={[Function]}
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
       >

@@ -11,11 +11,15 @@ exports[`Content should render with many props assigned 1`] = `
     <div
       className="headingContainer"
     >
+      <span
+        className="anchor anchorMargin"
+        id="testing"
+      />
       <a
-        className="anchor"
+        className="hashLink"
         data-testid="Hash Link"
         href="#testing"
-        id="testing"
+        onClick={[Function]}
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
       >

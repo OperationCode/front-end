@@ -58,6 +58,7 @@ Cypress.Commands.add('verifyHashLink', path => {
     const { hash } = link[0];
 
     cy.get(hash)
+      .siblings('a')
       .scrollIntoView()
       .click()
       .url()
