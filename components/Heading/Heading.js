@@ -36,8 +36,8 @@ class Heading extends Component {
     const { props } = this;
 
     return props.anchorId
-      .replace(/\s+/g, '-')
-      .replace(/\?|!|\./g, '')
+      .replace(/\s+/g, '-') // replaces spaces with dash
+      .replace(/[^a-zA-Z0-9-]/g, '') // removes special characters except dash
       .toLowerCase();
   };
 
