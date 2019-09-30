@@ -62,45 +62,14 @@ class Heading extends Component {
   getHeading = () => {
     const { props } = this;
     const classes = this.getHeadingClasses();
+    const { headingLevel } = props;
+    const HeadingElement = `h${headingLevel}`;
 
-    switch (props.headingLevel) {
-      case 1:
-        return (
-          <h1 className={classes} id={props.id}>
-            {props.children}
-          </h1>
-        );
-      case 2:
-        return (
-          <h2 className={classes} id={props.id}>
-            {props.children}
-          </h2>
-        );
-      case 3:
-        return (
-          <h3 className={classes} id={props.id}>
-            {props.children}
-          </h3>
-        );
-      case 4:
-        return (
-          <h4 className={classes} id={props.id}>
-            {props.children}
-          </h4>
-        );
-      case 5:
-        return (
-          <h5 className={classes} id={props.id}>
-            {props.children}
-          </h5>
-        );
-      default:
-        return (
-          <h6 className={classes} id={props.id}>
-            {props.children}
-          </h6>
-        );
-    }
+    return (
+      <HeadingElement className={classes} id={props.id}>
+        {props.children}
+      </HeadingElement>
+    );
   };
 
   getHeadingClasses = () => {

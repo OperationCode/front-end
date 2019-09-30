@@ -1,4 +1,4 @@
-describe('hashlink', () => {
+describe('pagesWithHashLink', () => {
   const paths = [
     { pathName: 'index', pathValue: '/' },
     { pathName: 'about', pathValue: '/about' },
@@ -17,10 +17,22 @@ describe('hashlink', () => {
   ];
 
   paths.forEach(path => {
-    const test = `checks hashlinks on ${path.pathName} page`;
-
-    it(test, () => {
-      cy.verifyHashLink(path.pathValue);
+    it(`checks hashlinks on ${path.pathName} page`, () => {
+      verifyHashLink(path.pathValue);
     });
   });
 });
+
+const verifyHashLink = path => {
+  cy.visitAndWaitFor(path);
+  cy.get('[data-testid="Hash Link"]').each(link => {
+    const { hash } = link[0];
+
+    cy.get(hash)
+      .siblings('a')
+      .scrollIntoView()
+      .click()
+      .url()
+      .should('include', hash);
+  });
+};
