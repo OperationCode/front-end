@@ -64,23 +64,23 @@ describe('Heading anchor and hashlink', () => {
     expect(reference.current.state.isLinkIconVisible).toBe(false);
   });
 
-  it('should contain anchorId without a question mark when anchorId is included', () => {
-    const reference = React.createRef();
-    render(<Heading ref={reference}>WANT TO BECOME A SPONSOR?</Heading>);
-    expect(reference.current.getAnchorId()).toStrictEqual('want-to-become-a-sponsor');
-  });
+  // it('should contain anchorId without a question mark when anchorId is included', () => {
+  //   const reference = React.createRef();
+  //   render(<Heading ref={reference}>WANT TO BECOME A SPONSOR?</Heading>);
+  //   expect(reference.current.getAnchorId()).toStrictEqual('want-to-become-a-sponsor');
+  // });
 
-  it('should contain anchorId without exclamation mark when anchorId is included', () => {
-    const reference = React.createRef();
-    render(<Heading ref={reference}>JOIN TODAY!</Heading>);
-    expect(reference.current.getAnchorId()).toStrictEqual('join-today');
-  });
+  // it('should contain anchorId without exclamation mark when anchorId is included', () => {
+  //   const reference = React.createRef();
+  //   render(<Heading ref={reference}>JOIN TODAY!</Heading>);
+  //   expect(reference.current.getAnchorId()).toStrictEqual('join-today');
+  // });
 
-  it('should contain anchorId without a period when anchorId is included', () => {
-    const reference = React.createRef();
-    render(<Heading ref={reference}>Jon Doe Jr.</Heading>);
-    expect(reference.current.getAnchorId()).toStrictEqual('jon-doe-jr');
-  });
+  // it('should contain anchorId without a period when anchorId is included', () => {
+  //   const reference = React.createRef();
+  //   render(<Heading ref={reference}>Jon Doe Jr.</Heading>);
+  //   expect(reference.current.getAnchorId()).toStrictEqual('jon-doe-jr');
+  // });
 
   it('should get the headingTextWithLinkIconOffset class when hasHashLink is true', () => {
     const reference = React.createRef();

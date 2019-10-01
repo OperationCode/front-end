@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { string, number, oneOfType, bool, oneOf } from 'prop-types';
 import classNames from 'classnames';
+import kebabCase from 'lodash/kebabCase';
 import LinkIcon from 'static/images/icons/FontAwesome/link-solid.svg';
 import styles from './Heading.css';
 
@@ -30,14 +31,14 @@ class Heading extends Component {
     isLinkIconVisible: false,
   };
 
-  getAnchorId = () => {
-    const { props } = this;
+  // getAnchorId = () => {
+  //   const { props } = this;
 
-    return props.children
-      .replace(/\s+/g, '-') // replaces spaces with dash
-      .replace(/[^a-zA-Z0-9-]/g, '') // removes special characters except dash
-      .toLowerCase();
-  };
+  //   return props.children
+  //     .replace(/\s+/g, '-') // replaces spaces with dash
+  //     .replace(/[^a-zA-Z0-9-]/g, '') // removes special characters except dash
+  //     .toLowerCase();
+  // };
 
   getVisibleIcon = () => {
     const { props } = this;
@@ -92,7 +93,7 @@ class Heading extends Component {
   getAnchorLinkIcon = () => {
     const { props } = this;
     const { isLinkIconVisible } = this.state;
-    const anchorId = this.getAnchorId();
+    const anchorId = kebabCase(props.children);
     const hashLinkClass = `${styles.hashLink}`;
     const visibleIcon = this.getVisibleIcon();
     const hiddenIcon = `${styles.icon} ${styles.iconHidden}`;
@@ -117,7 +118,7 @@ class Heading extends Component {
 
   getSpan = () => {
     const { props } = this;
-    const anchorId = this.getAnchorId();
+    const anchorId = kebabCase(props.children);
     const anchorClass = this.getAnchorClass();
 
     if (props.hasHashLink) {
