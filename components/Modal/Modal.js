@@ -31,7 +31,7 @@ function Modal({
   screenReaderLabel,
   shouldCloseOnOverlayClick,
 }) {
-  if (process.env.NODE_ENV === 'production' && process.env.GOOGLE_ANALYTICS_KEY) {
+  if (process.env.NODE_ENV === 'production') {
     ReactGA.modalview(screenReaderLabel);
   }
 

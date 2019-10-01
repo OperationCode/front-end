@@ -7,6 +7,7 @@ import ReactGA from 'react-ga';
 import ScrollUpButton from 'react-scroll-up-button';
 import setupLogRocketReact from 'logrocket-react';
 import * as Sentry from '@sentry/browser';
+import { clientTokens } from 'common/config/environment';
 import Nav from 'components/Nav/Nav';
 import Footer from 'components/Footer/Footer';
 import Modal from 'components/Modal/Modal';
@@ -48,10 +49,10 @@ class OperationCodeApp extends App {
   componentDidMount() {
     /* Analytics */
     // Temporary method until we do dynamic now configs
-    if (window.location.host.includes('operationcode.org') && isProduction) {
-      Sentry.init({ dsn: process.env.SENTRY_DSN, release: `front-end@${version}` });
-      LogRocket.init(`${process.env.LOGROCKET_KEY}/operation-code`);
-      ReactGA.initialize(process.env.GOOGLE_ANALYTICS_TRACKING_ID);
+    if (isProduction && window.location.host.includes('operationcode.org')) {
+      Sentry.init({ dsn: clientTokens.SENTRY_DSN, release: `front-end@${version}` });
+      LogRocket.init(`${clientTokens.LOGROCKET}/operation-code`);
+      ReactGA.initialize(clientTokens.GOOGLE_ANALYTICS);
 
       // Every crash report will have a LogRocket session URL.
       LogRocket.getSessionURL(sessionURL => {
