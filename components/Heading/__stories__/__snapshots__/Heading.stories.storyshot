@@ -16,6 +16,11 @@ exports[`Storyshots Heading default 1`] = `
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
   >
+    <span
+      className="ScreenReaderOnly"
+    >
+      Hashlink icon hidden
+    </span>
     <svg
       className="icon iconHidden"
     />

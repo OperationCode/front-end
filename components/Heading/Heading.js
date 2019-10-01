@@ -3,6 +3,7 @@ import { string, number, oneOfType, bool, oneOf } from 'prop-types';
 import classNames from 'classnames';
 import kebabCase from 'lodash/kebabCase';
 import LinkIcon from 'static/images/icons/FontAwesome/link-solid.svg';
+import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
 import styles from './Heading.css';
 
 class Heading extends Component {
@@ -30,15 +31,6 @@ class Heading extends Component {
   state = {
     isLinkIconVisible: false,
   };
-
-  // getAnchorId = () => {
-  //   const { props } = this;
-
-  //   return props.children
-  //     .replace(/\s+/g, '-') // replaces spaces with dash
-  //     .replace(/[^a-zA-Z0-9-]/g, '') // removes special characters except dash
-  //     .toLowerCase();
-  // };
 
   getVisibleIcon = () => {
     const { props } = this;
@@ -108,6 +100,9 @@ class Heading extends Component {
           onClick={() => this.toggleVisible(false)}
           data-testid="Hash Link"
         >
+          <ScreenReaderOnly>
+            {isLinkIconVisible ? 'Hashlink icon visible' : 'Hashlink icon hidden'}
+          </ScreenReaderOnly>
           <LinkIcon className={isLinkIconVisible ? visibleIcon : hiddenIcon} />
         </a>
       );

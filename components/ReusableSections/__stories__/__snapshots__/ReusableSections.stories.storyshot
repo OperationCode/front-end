@@ -27,6 +27,11 @@ exports[`Storyshots ReusableSections DonateSection 1`] = `
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
       >
+        <span
+          className="ScreenReaderOnly"
+        >
+          Hashlink icon hidden
+        </span>
         <svg
           className="icon iconHidden"
         />
@@ -81,6 +86,11 @@ exports[`Storyshots ReusableSections JoinSection 1`] = `
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
       >
+        <span
+          className="ScreenReaderOnly"
+        >
+          Hashlink icon hidden
+        </span>
         <svg
           className="icon iconHidden"
         />
@@ -150,6 +160,11 @@ exports[`Storyshots ReusableSections SponsorsSection 1`] = `
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
       >
+        <span
+          className="ScreenReaderOnly"
+        >
+          Hashlink icon hidden
+        </span>
         <svg
           className="icon iconHidden"
         />
