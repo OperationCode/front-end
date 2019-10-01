@@ -66,31 +66,19 @@ describe('Heading anchor and hashlink', () => {
 
   it('should contain anchorId without a question mark when anchorId is included', () => {
     const reference = React.createRef();
-    render(
-      <Heading ref={reference} anchorId="WANT TO BECOME A SPONSOR?">
-        Test
-      </Heading>,
-    );
+    render(<Heading ref={reference}>WANT TO BECOME A SPONSOR?</Heading>);
     expect(reference.current.getAnchorId()).toStrictEqual('want-to-become-a-sponsor');
   });
 
   it('should contain anchorId without exclamation mark when anchorId is included', () => {
     const reference = React.createRef();
-    render(
-      <Heading ref={reference} anchorId="JOIN TODAY!">
-        Test
-      </Heading>,
-    );
+    render(<Heading ref={reference}>JOIN TODAY!</Heading>);
     expect(reference.current.getAnchorId()).toStrictEqual('join-today');
   });
 
   it('should contain anchorId without a period when anchorId is included', () => {
     const reference = React.createRef();
-    render(
-      <Heading ref={reference} anchorId="Jon Doe Jr.">
-        Test
-      </Heading>,
-    );
+    render(<Heading ref={reference}>Jon Doe Jr.</Heading>);
     expect(reference.current.getAnchorId()).toStrictEqual('jon-doe-jr');
   });
 
@@ -117,8 +105,8 @@ describe('Heading anchor and hashlink', () => {
   it('should contain a span element when hasHashLink is true', () => {
     const reference = React.createRef();
     render(
-      <Heading ref={reference} anchorId="opcode" hasHashLink>
-        Test
+      <Heading ref={reference} hasHashLink>
+        opcode
       </Heading>,
     );
 

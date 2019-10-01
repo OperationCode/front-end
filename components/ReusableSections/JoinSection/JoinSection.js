@@ -16,7 +16,7 @@ export function JoinSection() {
 
   return (
     <Container theme="white" data-testid="Join Section">
-      <Heading theme="white" anchorId="Join Our Thriving Community" headingLevel={3}>
+      <Heading theme="white" headingLevel={3}>
         Join Our Thriving Community
       </Heading>
 

@@ -6,12 +6,12 @@ exports[`Storyshots Heading default 1`] = `
 >
   <span
     className="anchor anchorMargin"
-    id="default"
+    id="heading-component"
   />
   <a
     className="hashLink"
     data-testid="Hash Link"
-    href="#default"
+    href="#heading-component"
     onClick={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}

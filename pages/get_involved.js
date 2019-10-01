@@ -97,9 +97,7 @@ export default () => (
           )}
         </TrackVisibility>,
         <div>
-          <Heading anchorId="Empower Our Community" headingLevel={3}>
-            Empower Our Community
-          </Heading>
+          <Heading headingLevel={3}>Empower Our Community</Heading>
 
           <p className={styles.justifyAlign}>
             Make a difference in the lives of military veterans, service members, and spouses who
@@ -135,9 +133,7 @@ export default () => (
     <Content
       columns={[
         <div>
-          <Heading anchorId="Support Our Mission" headingLevel={3}>
-            Support Our Mission
-          </Heading>
+          <Heading headingLevel={3}>Support Our Mission</Heading>
 
           <p className={styles.justifyAlign}>
             Make a difference in the lives of military veterans, service members, and spouses who

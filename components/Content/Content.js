@@ -46,7 +46,6 @@ function Content({
             [styles.underline]: hasTitleUnderline,
           })}
           theme={theme}
-          anchorId={title}
           headingLevel={3}
         >
           {title}

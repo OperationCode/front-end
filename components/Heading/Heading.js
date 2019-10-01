@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { string, number, oneOfType, bool, node, oneOf } from 'prop-types';
+import { string, number, oneOfType, bool, oneOf } from 'prop-types';
 import classNames from 'classnames';
 import LinkIcon from 'static/images/icons/FontAwesome/link-solid.svg';
 import styles from './Heading.css';
@@ -8,9 +8,8 @@ class Heading extends Component {
   static propTypes = {
     className: string,
     id: oneOfType([string, number]), // reference for scroll anchors
-    anchorId: string,
     customAnchorClass: string,
-    children: node.isRequired,
+    children: string.isRequired,
     hasHeadingLines: bool,
     hasHashLink: bool,
     headingLevel: number,
@@ -20,7 +19,6 @@ class Heading extends Component {
   static defaultProps = {
     className: undefined,
     id: '',
-    anchorId: 'default',
     customAnchorClass: '',
     hasHeadingLines: false,
     hasHashLink: true,
@@ -35,7 +33,7 @@ class Heading extends Component {
   getAnchorId = () => {
     const { props } = this;
 
-    return props.anchorId
+    return props.children
       .replace(/\s+/g, '-') // replaces spaces with dash
       .replace(/[^a-zA-Z0-9-]/g, '') // removes special characters except dash
       .toLowerCase();

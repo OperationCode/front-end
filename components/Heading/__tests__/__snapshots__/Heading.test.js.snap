@@ -6,12 +6,12 @@ exports[`Heading should render with many props assigned 1`] = `
 >
   <span
     className="anchor anchorMargin"
-    id="default"
+    id="test"
   />
   <a
     className="hashLink"
     data-testid="Hash Link"
-    href="#default"
+    href="#test"
     onClick={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
@@ -35,12 +35,12 @@ exports[`Heading should render with required props 1`] = `
 >
   <span
     className="anchor anchorMargin"
-    id="default"
+    id="test"
   />
   <a
     className="hashLink"
     data-testid="Hash Link"
-    href="#default"
+    href="#test"
     onClick={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}

@@ -7,7 +7,6 @@ exports[`DonateSection should render with no props passed passed 1`] = `
   theme="secondary"
 >
   <Heading
-    anchorId="Donate"
     customAnchorClass=""
     hasHashLink={true}
     hasHeadingLines={false}

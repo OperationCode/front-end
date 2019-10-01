@@ -213,7 +213,7 @@ export default () => {
             )}
           </TrackVisibility>,
           <div>
-            <Heading theme="secondary" anchorId="Sponsor a Meetup" headingLevel={2}>
+            <Heading theme="secondary" headingLevel={2}>
               Sponsor a Meetup
             </Heading>
 
@@ -258,7 +258,7 @@ export default () => {
       <Content
         columns={[
           <div>
-            <Heading theme="secondary" anchorId="Host Us At An Event" headingLevel={2}>
+            <Heading theme="secondary" headingLevel={2}>
               Host Us At An Event
             </Heading>
 
