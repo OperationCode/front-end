@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { string, number, oneOfType, bool, oneOf } from 'prop-types';
 import classNames from 'classnames';
 import kebabCase from 'lodash/kebabCase';
+import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
 import LinkIcon from 'static/images/icons/FontAwesome/link-solid.svg';
 import styles from './Heading.css';
 
@@ -69,6 +70,7 @@ class Heading extends Component {
         <div className={hashLinkClass}>
           <a href={`#${anchorId}`} data-testid="Hash Link">
             <LinkIcon className={styles.icon} />
+            <ScreenReaderOnly>Scroll Link</ScreenReaderOnly>
           </a>
         </div>
       );
