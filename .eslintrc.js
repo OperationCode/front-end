@@ -63,6 +63,18 @@ module.exports = {
         'func-names': 'off',
       },
     },
+    {
+      files: 'components/UpdateProfileForm/**/*.js',
+      rules: {
+        'react/sort-comp': 'off',
+      },
+    },
+    {
+      files: 'test-utils/**/*.js',
+      rules: {
+        'react/sort-comp': 'off',
+      },
+    },
   ],
 
   rules: {
