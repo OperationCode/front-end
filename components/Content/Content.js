@@ -1,5 +1,5 @@
 import React from 'react';
-import { string, array, bool } from 'prop-types';
+import { array, bool, oneOf, string } from 'prop-types';
 import classNames from 'classnames';
 import Container from 'components/Container/Container';
 import styles from './Content.css';
@@ -10,7 +10,7 @@ Content.propTypes = {
   hasTitleUnderline: bool,
   id: string,
   isFullViewportHeight: bool,
-  theme: string,
+  theme: oneOf(['gray', 'secondary', 'white']),
   title: string,
 };
 
