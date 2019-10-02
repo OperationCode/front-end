@@ -1,17 +1,8 @@
 {
   "version": 2,
   "name": "operation-code",
-  "alias": ["operation-code.now.sh"],
+  "alias": ["operation-code.now.sh", "www.operationcode.org", "operationcode.org"],
   "builds": [{ "src": "package.json", "use": "@now/next@canary" }],
-  "build": {
-    "env": {
-      "GOOGLE_ANALYTICS_TRACKING_ID": "@google-analytics-tracking-id",
-      "LOGROCKET_KEY": "@logrocket-key",
-      "OC_FACEBOOK_KEY": "@facebook-sso",
-      "OC_GOOGLE_KEY": "@google-sso",
-      "SENTRY_DSN": "@sentry-dsn"
-    }
-  },
   "routes": [
     {
       "src": "/_next/static/(?:[^/]+/pages|chunks|runtime|css|fonts)/.+",
