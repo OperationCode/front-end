@@ -9,7 +9,7 @@
 }
 
 .headingTextWithLinkIconOffset {
-  margin-right: 26px;
+  margin-right: 2rem;
 }
 
 .headingOurMission {
@@ -36,27 +36,6 @@
   width: 18px;
 }
 
-.hashLink {
-  line-height: 2.25;
-  height: 2rem;
-  margin: 1rem 0.25rem;
-  outline: none;
-  transition: 0.3s;
-}
-
-.anchor {
-  display: block;
-  position: relative;
-}
-
-.anchorMargin {
-  top: -50px;
-}
-
-.anchorMarginPodcast {
-  top: -50px;
-}
-
 .iconFillWhite {
   fill: #f7f7f7;
 }
@@ -65,12 +44,41 @@
   fill: #252e3e;
 }
 
-.iconVisible {
+.hashLinkContainer {
+  line-height: 2.25;
+  height: 2rem;
+  margin: 1rem 0.5rem;
+  outline: none;
+}
+
+.hashLinkContainer a {
+  visibility: hidden;
+
+  /* border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px; */
+}
+
+.hashLinkContainer:hover a {
   visibility: visible;
 }
 
-.iconHidden {
-  visibility: hidden;
+.anchor {
+  display: block;
+  position: relative;
+}
+
+.anchorMargin {
+  top: -70px;
+}
+
+.anchorMarginPodcast {
+  top: -100px;
 }
 
 @media screen and (--medium-viewport) {
@@ -79,7 +87,7 @@
   }
 
   .anchorMarginPodcast {
-    top: -120px;
+    top: -110px;
   }
 }
 
@@ -93,6 +101,6 @@
   }
 
   .anchorMarginPodcast {
-    top: -120px;
+    top: -110px;
   }
 }

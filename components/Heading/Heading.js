@@ -3,7 +3,6 @@ import { string, number, oneOfType, bool, oneOf } from 'prop-types';
 import classNames from 'classnames';
 import kebabCase from 'lodash/kebabCase';
 import LinkIcon from 'static/images/icons/FontAwesome/link-solid.svg';
-import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
 import styles from './Heading.css';
 
 class Heading extends Component {
@@ -26,28 +25,6 @@ class Heading extends Component {
     hasHashLink: true,
     headingLevel: 2,
     theme: 'secondary',
-  };
-
-  state = {
-    isLinkIconVisible: false,
-  };
-
-  getVisibleIcon = () => {
-    const { props } = this;
-    const { theme } = props;
-    let visibleIcon = `${styles.icon} ${styles.iconVisible}`;
-
-    if (theme === 'white' || theme === 'gray') {
-      visibleIcon += ` ${styles.iconFillBlue}`;
-    } else {
-      visibleIcon += ` ${styles.iconFillWhite}`;
-    }
-
-    return visibleIcon;
-  };
-
-  toggleVisible = display => {
-    this.setState({ isLinkIconVisible: display });
   };
 
   getHeading = () => {
@@ -84,27 +61,16 @@ class Heading extends Component {
 
   getAnchorLinkIcon = () => {
     const { props } = this;
-    const { isLinkIconVisible } = this.state;
     const anchorId = kebabCase(props.children);
-    const hashLinkClass = `${styles.hashLink}`;
-    const visibleIcon = this.getVisibleIcon();
-    const hiddenIcon = `${styles.icon} ${styles.iconHidden}`;
+    const hashLinkClass = `${styles.hashLinkContainer}`;
 
     if (props.hasHashLink) {
       return (
-        <a
-          href={`#${anchorId}`}
-          className={hashLinkClass}
-          onMouseEnter={() => this.toggleVisible(true)}
-          onMouseLeave={() => this.toggleVisible(false)}
-          onClick={() => this.toggleVisible(false)}
-          data-testid="Hash Link"
-        >
-          <ScreenReaderOnly>
-            {isLinkIconVisible ? 'Hashlink icon visible' : 'Hashlink icon hidden'}
-          </ScreenReaderOnly>
-          <LinkIcon className={isLinkIconVisible ? visibleIcon : hiddenIcon} />
-        </a>
+        <div className={hashLinkClass}>
+          <a href={`#${anchorId}`} data-testid="Hash Link">
+            <LinkIcon className={styles.icon} />
+          </a>
+        </div>
       );
     }
 
