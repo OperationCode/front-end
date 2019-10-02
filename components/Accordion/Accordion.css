@@ -12,7 +12,7 @@
 
 .accordion {
   border-radius: 5px;
-  border: 1px solid #c5c5c5;
+  border: 1px solid #303075;
   margin: 10px 0;
   padding: 1.125rem;
   width: 100%;
@@ -22,11 +22,11 @@
   align-items: center;
   display: flex;
   flex-wrap: nowrap;
-  font-family: var(--primaryFontFamily), sans-serif;
+  font-family: var(--primaryFontFamily), monospace;
   font-size: 1.25rem;
   font-weight: bold;
   justify-content: space-between;
-  text-transform: uppercase;
+  text-transform: lowercase;
 }
 
 .accordionHeaderGrouping header {
@@ -41,7 +41,7 @@
   cursor: pointer;
   font-size: 1rem;
   padding: 0.325rem 0.125rem 0.125rem;
-  text-decoration: none;
+  text-decoration: underline;
   width: 50px; /* for a non-jank outline */
 }
 
