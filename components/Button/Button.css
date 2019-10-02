@@ -9,11 +9,6 @@
   text-decoration: none;
   text-transform: uppercase;
   vertical-align: middle;
-  line-height: 1.25;
-  min-width: 175px;
-  padding: 0.75rem;
-  white-space: nowrap;
-  transition: 0.2s linear background-color, 0.2s linear color;
   text-shadow: none;
 }
 
