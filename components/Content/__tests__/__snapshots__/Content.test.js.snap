@@ -12,7 +12,7 @@ exports[`Content should render with many props assigned 1`] = `
       className="headingContainer"
     >
       <span
-        className="anchor anchorMargin"
+        className="anchor customAnchorClass"
         id="testing"
       />
       <div
@@ -33,8 +33,7 @@ exports[`Content should render with many props assigned 1`] = `
         </a>
       </div>
       <h3
-        className="headingTextWithLinkIconOffset Heading secondary"
-        id=""
+        className="secondary Heading title underline headingTextWithLinkIconOffset"
       >
         Testing!
       </h3>

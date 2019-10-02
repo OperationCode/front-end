@@ -1,5 +1,3 @@
-import { Children } from "react";
-
 describe('pagesWithHashLink', () => {
   const paths = [
     { pathName: 'index', pathValue: '/' },

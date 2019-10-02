@@ -11,6 +11,7 @@ storiesOf('Heading', module)
     'default',
     withInfo()(() => (
       <Heading
+        text="Test Heading"
         id={text('id', 'heading1')}
         hasHeadingLines={boolean('hasHeadingLines', true)}
         theme={select('theme', ['gray', 'secondary', 'white'], 'gray')}

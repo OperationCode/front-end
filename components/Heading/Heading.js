@@ -21,96 +21,44 @@ class Heading extends Component {
   static defaultProps = {
     className: undefined,
     id: '',
-    customAnchorClass: '',
+    customAnchorClass: 'anchorMargin',
     hasHeadingLines: false,
     hasHashLink: true,
     headingLevel: 2,
     theme: 'secondary',
   };
 
-  getHeading = () => {
-    const { props } = this;
-    const classes = this.getHeadingClasses();
-    const { headingLevel } = props;
-    const HeadingElement = `h${headingLevel}`;
-
-    return (
-      <HeadingElement className={classes} id={props.id}>
-        {props.text}
-      </HeadingElement>
-    );
-  };
-
-  getHeadingClasses = () => {
-    const { props } = this;
-    const customHeadingClass =
-      props.className === 'headingOurMission' ? styles.headingOurMission : styles.Heading;
-    const withLinkIcon = classNames(
-      styles.headingTextWithLinkIconOffset,
-      customHeadingClass,
-      styles[props.theme],
-      {
-        [`${styles.headingLines}`]: props.hasHeadingLines,
-      },
-    );
-    const withoutLinkIcon = classNames(customHeadingClass, styles[props.theme], {
-      [`${styles.headingLines}`]: props.hasHeadingLines,
-    });
-
-    return props.hasHashLink ? withLinkIcon : withoutLinkIcon;
-  };
-
-  getAnchorLinkIcon = () => {
-    const { props } = this;
-    const anchorId = kebabCase(props.text);
-    const hashLinkClass = `${styles.hashLinkContainer}`;
-
-    if (props.hasHashLink) {
-      return (
-        <div className={hashLinkClass}>
-          <a href={`#${anchorId}`} data-testid="Hash Link">
-            <LinkIcon className={styles.icon} />
-            <ScreenReaderOnly>Scroll Link</ScreenReaderOnly>
-          </a>
-        </div>
-      );
-    }
-
-    return undefined;
-  };
-
-  getSpan = () => {
-    const { props } = this;
-    const anchorId = kebabCase(props.text);
-    const anchorClass = this.getAnchorClass();
-
-    if (props.hasHashLink) {
-      return <span id={anchorId} className={anchorClass} />;
-    }
-    return '';
-  };
-
-  getAnchorClass = () => {
-    const { props } = this;
-    let anchorClass = `${styles.anchor}`;
-
-    if (props.customAnchorClass === 'podcast') {
-      anchorClass += ` ${styles.anchorMarginPodcast}`;
-    } else {
-      anchorClass += ` ${styles.anchorMargin}`;
-    }
-
-    return anchorClass;
-  };
-
   render() {
-    const headingContainer = `${styles.headingContainer}`;
+    const { props } = this;
+    const anchorId = kebabCase(props.text);
+    const classes = classNames(styles[props.theme], {
+      [`${styles.Heading} ${props.className}`]: !props.hasHeadingLines,
+      [`${styles.headingOurMission}`]: props.className === 'headingOurMission',
+      [`${styles.headingLines}`]: props.hasHeadingLines,
+      [`${styles.headingTextWithLinkIconOffset}`]: props.hasHashLink,
+    });
+    const HeadingElement = `h${props.headingLevel}`;
 
     return (
-      <div className={headingContainer}>
-        {this.getSpan()}
-        {this.getAnchorLinkIcon()}
-        {this.getHeading()}
+      <div className={`${styles.headingContainer}`}>
+        {props.hasHashLink && (
+          <span
+            id={anchorId}
+            className={classNames(styles.anchor, {
+              [styles.customAnchorClass]: props.customAnchorClass === 'anchorMargin',
+              [styles.anchorMarginPodcast]: props.customAnchorClass === 'podcast',
+            })}
+          />
+        )}
+        {props.hasHashLink && (
+          <div className={`${styles.hashLinkContainer}`}>
+            <a href={`#${anchorId}`} data-testid="Hash Link">
+              <LinkIcon className={styles.icon} />
+              <ScreenReaderOnly>Scroll Link</ScreenReaderOnly>
+            </a>
+          </div>
+        )}
+        <HeadingElement className={classes}>{props.text}</HeadingElement>
       </div>
     );
   }

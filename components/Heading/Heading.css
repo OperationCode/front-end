@@ -53,15 +53,6 @@
 
 .hashLinkContainer a {
   visibility: hidden;
-
-  /* border: 0;
-  clip: rect(0, 0, 0, 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px; */
 }
 
 .hashLinkContainer:hover a {
@@ -81,7 +72,7 @@
   top: -100px;
 }
 
-@media screen and (--medium-viewport) {
+@media screen and (--medium-viewport), (--small-viewport) {
   .anchorMargin {
     top: -110px;
   }
@@ -94,13 +85,5 @@
 @media screen and (--small-viewport) {
   .icon {
     width: 16px;
-  }
-
-  .anchorMargin {
-    top: -110px;
-  }
-
-  .anchorMarginPodcast {
-    top: -110px;
   }
 }

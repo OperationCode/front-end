@@ -16,7 +16,7 @@ exports[`Storyshots ReusableSections DonateSection 1`] = `
       className="headingContainer"
     >
       <span
-        className="anchor anchorMargin"
+        className="anchor customAnchorClass"
         id="donate"
       />
       <div
@@ -37,8 +37,7 @@ exports[`Storyshots ReusableSections DonateSection 1`] = `
         </a>
       </div>
       <h3
-        className="headingTextWithLinkIconOffset Heading secondary"
-        id=""
+        className="secondary Heading undefined headingTextWithLinkIconOffset"
       >
         Donate
       </h3>
@@ -75,7 +74,7 @@ exports[`Storyshots ReusableSections JoinSection 1`] = `
       className="headingContainer"
     >
       <span
-        className="anchor anchorMargin"
+        className="anchor customAnchorClass"
         id="join-our-thriving-community"
       />
       <div
@@ -96,8 +95,7 @@ exports[`Storyshots ReusableSections JoinSection 1`] = `
         </a>
       </div>
       <h3
-        className="headingTextWithLinkIconOffset Heading white"
-        id=""
+        className="white Heading undefined headingTextWithLinkIconOffset"
       >
         Join Our Thriving Community
       </h3>
@@ -149,7 +147,7 @@ exports[`Storyshots ReusableSections SponsorsSection 1`] = `
       className="headingContainer"
     >
       <span
-        className="anchor anchorMargin"
+        className="anchor customAnchorClass"
         id="sponsors"
       />
       <div
@@ -170,8 +168,7 @@ exports[`Storyshots ReusableSections SponsorsSection 1`] = `
         </a>
       </div>
       <h3
-        className="headingTextWithLinkIconOffset Heading gray"
-        id=""
+        className="gray Heading title underline headingTextWithLinkIconOffset"
       >
         Sponsors
       </h3>

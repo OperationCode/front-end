@@ -11,7 +11,7 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
       className="headingContainer"
     >
       <span
-        className="anchor anchorMargin"
+        className="anchor customAnchorClass"
         id="sponsors"
       />
       <div
@@ -32,8 +32,7 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
         </a>
       </div>
       <h3
-        className="headingTextWithLinkIconOffset Heading gray"
-        id=""
+        className="gray Heading title underline headingTextWithLinkIconOffset"
       >
         Sponsors
       </h3>
@@ -365,7 +364,7 @@ exports[`SponsorsSection should render with required props 1`] = `
       className="headingContainer"
     >
       <span
-        className="anchor anchorMargin"
+        className="anchor customAnchorClass"
         id="sponsors"
       />
       <div
@@ -386,8 +385,7 @@ exports[`SponsorsSection should render with required props 1`] = `
         </a>
       </div>
       <h3
-        className="headingTextWithLinkIconOffset Heading gray"
-        id=""
+        className="gray Heading title underline headingTextWithLinkIconOffset"
       >
         Sponsors
       </h3>

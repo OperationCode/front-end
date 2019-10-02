@@ -5,15 +5,15 @@ exports[`Heading should render with many props assigned 1`] = `
   className="headingContainer"
 >
   <span
-    className="anchor anchorMargin"
-    id=""
+    className="anchor customAnchorClass"
+    id="test"
   />
   <div
     className="hashLinkContainer"
   >
     <a
       data-testid="Hash Link"
-      href="#"
+      href="#test"
     >
       <svg
         className="icon"
@@ -26,9 +26,10 @@ exports[`Heading should render with many props assigned 1`] = `
     </a>
   </div>
   <h2
-    className="headingTextWithLinkIconOffset Heading secondary"
-    id="test-heading-1"
-  />
+    className="secondary Heading test-class headingTextWithLinkIconOffset"
+  >
+    Test
+  </h2>
 </div>
 `;
 
@@ -37,29 +38,28 @@ exports[`Heading should render with required props 1`] = `
   className="headingContainer"
 >
   <span
-    className="anchor anchorMargin"
+    className="anchor customAnchorClass"
     id="test"
   />
-  <a
-    className="hashLink"
-    data-testid="Hash Link"
-    href="#test"
-    onClick={[Function]}
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
+  <div
+    className="hashLinkContainer"
   >
-    <span
-      className="ScreenReaderOnly"
+    <a
+      data-testid="Hash Link"
+      href="#test"
     >
-      Hashlink icon hidden
-    </span>
-    <svg
-      className="icon iconHidden"
-    />
-  </a>
+      <svg
+        className="icon"
+      />
+      <span
+        className="ScreenReaderOnly"
+      >
+        Scroll Link
+      </span>
+    </a>
+  </div>
   <h2
-    className="headingTextWithLinkIconOffset Heading secondary"
-    id=""
+    className="secondary Heading undefined headingTextWithLinkIconOffset"
   >
     Test
   </h2>

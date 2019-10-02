@@ -5,31 +5,30 @@ exports[`Storyshots Heading default 1`] = `
   className="headingContainer"
 >
   <span
-    className="anchor anchorMargin"
-    id="heading-component"
+    className="anchor customAnchorClass"
+    id="test-heading"
   />
-  <a
-    className="hashLink"
-    data-testid="Hash Link"
-    href="#heading-component"
-    onClick={[Function]}
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
+  <div
+    className="hashLinkContainer"
   >
-    <span
-      className="ScreenReaderOnly"
+    <a
+      data-testid="Hash Link"
+      href="#test-heading"
     >
-      Hashlink icon hidden
-    </span>
-    <svg
-      className="icon iconHidden"
-    />
-  </a>
+      <svg
+        className="icon"
+      />
+      <span
+        className="ScreenReaderOnly"
+      >
+        Scroll Link
+      </span>
+    </a>
+  </div>
   <h2
-    className="headingTextWithLinkIconOffset Heading gray headingLines"
-    id="heading1"
+    className="gray headingLines headingTextWithLinkIconOffset"
   >
-    Heading Component
+    Test Heading
   </h2>
 </div>
 `;
