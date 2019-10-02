@@ -3,7 +3,7 @@
   height: 225px;
   justify-content: flex-start;
   padding: 0;
-  width: 650px;
+  width: 450px;
 }
 
 .image {
@@ -32,7 +32,7 @@
   }
 
   .image {
-    height: 50%;
+    height: 100%;
     width: 100%;
   }
 
