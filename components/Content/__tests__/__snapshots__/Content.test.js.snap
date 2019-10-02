@@ -15,23 +15,23 @@ exports[`Content should render with many props assigned 1`] = `
         className="anchor anchorMargin"
         id="testing"
       />
-      <a
-        className="hashLink"
-        data-testid="Hash Link"
-        href="#testing"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
+      <div
+        className="hashLinkContainer"
       >
-        <span
-          className="ScreenReaderOnly"
+        <a
+          data-testid="Hash Link"
+          href="#testing"
         >
-          Hashlink icon hidden
-        </span>
-        <svg
-          className="icon iconHidden"
-        />
-      </a>
+          <svg
+            className="icon"
+          />
+          <span
+            className="ScreenReaderOnly"
+          >
+            Scroll Link
+          </span>
+        </a>
+      </div>
       <h3
         className="headingTextWithLinkIconOffset Heading secondary"
         id=""

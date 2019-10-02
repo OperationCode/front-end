@@ -15,23 +15,23 @@ exports[`JoinSection should render when not logged in 1`] = `
         className="anchor anchorMargin"
         id="join-our-thriving-community"
       />
-      <a
-        className="hashLink"
-        data-testid="Hash Link"
-        href="#join-our-thriving-community"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
+      <div
+        className="hashLinkContainer"
       >
-        <span
-          className="ScreenReaderOnly"
+        <a
+          data-testid="Hash Link"
+          href="#join-our-thriving-community"
         >
-          Hashlink icon hidden
-        </span>
-        <svg
-          className="icon iconHidden"
-        />
-      </a>
+          <svg
+            className="icon"
+          />
+          <span
+            className="ScreenReaderOnly"
+          >
+            Scroll Link
+          </span>
+        </a>
+      </div>
       <h3
         className="headingTextWithLinkIconOffset Heading white"
         id=""

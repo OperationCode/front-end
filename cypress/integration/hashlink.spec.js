@@ -1,3 +1,5 @@
+import { Children } from "react";
+
 describe('pagesWithHashLink', () => {
   const paths = [
     { pathName: 'index', pathValue: '/' },
@@ -29,9 +31,10 @@ const verifyHashLink = path => {
     const { hash } = link[0];
 
     cy.get(hash)
-      .siblings('a')
+      .siblings('div')
+      .children()
       .scrollIntoView()
-      .click()
+      .click({ force: true })
       .url()
       .should('include', hash);
   });

@@ -12,10 +12,9 @@ exports[`DonateSection should render with no props passed passed 1`] = `
     hasHeadingLines={false}
     headingLevel={3}
     id=""
+    text="Donate"
     theme="secondary"
-  >
-    Donate
-  </Heading>
+  />
   <p
     className="justifyAlign"
   >

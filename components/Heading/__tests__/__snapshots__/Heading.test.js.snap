@@ -6,31 +6,29 @@ exports[`Heading should render with many props assigned 1`] = `
 >
   <span
     className="anchor anchorMargin"
-    id="test"
+    id=""
   />
-  <a
-    className="hashLink"
-    data-testid="Hash Link"
-    href="#test"
-    onClick={[Function]}
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
+  <div
+    className="hashLinkContainer"
   >
-    <span
-      className="ScreenReaderOnly"
+    <a
+      data-testid="Hash Link"
+      href="#"
     >
-      Hashlink icon hidden
-    </span>
-    <svg
-      className="icon iconHidden"
-    />
-  </a>
+      <svg
+        className="icon"
+      />
+      <span
+        className="ScreenReaderOnly"
+      >
+        Scroll Link
+      </span>
+    </a>
+  </div>
   <h2
     className="headingTextWithLinkIconOffset Heading secondary"
     id="test-heading-1"
-  >
-    Test
-  </h2>
+  />
 </div>
 `;
 

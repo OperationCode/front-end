@@ -14,23 +14,23 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
         className="anchor anchorMargin"
         id="sponsors"
       />
-      <a
-        className="hashLink"
-        data-testid="Hash Link"
-        href="#sponsors"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
+      <div
+        className="hashLinkContainer"
       >
-        <span
-          className="ScreenReaderOnly"
+        <a
+          data-testid="Hash Link"
+          href="#sponsors"
         >
-          Hashlink icon hidden
-        </span>
-        <svg
-          className="icon iconHidden"
-        />
-      </a>
+          <svg
+            className="icon"
+          />
+          <span
+            className="ScreenReaderOnly"
+          >
+            Scroll Link
+          </span>
+        </a>
+      </div>
       <h3
         className="headingTextWithLinkIconOffset Heading gray"
         id=""
@@ -368,23 +368,23 @@ exports[`SponsorsSection should render with required props 1`] = `
         className="anchor anchorMargin"
         id="sponsors"
       />
-      <a
-        className="hashLink"
-        data-testid="Hash Link"
-        href="#sponsors"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
+      <div
+        className="hashLinkContainer"
       >
-        <span
-          className="ScreenReaderOnly"
+        <a
+          data-testid="Hash Link"
+          href="#sponsors"
         >
-          Hashlink icon hidden
-        </span>
-        <svg
-          className="icon iconHidden"
-        />
-      </a>
+          <svg
+            className="icon"
+          />
+          <span
+            className="ScreenReaderOnly"
+          >
+            Scroll Link
+          </span>
+        </a>
+      </div>
       <h3
         className="headingTextWithLinkIconOffset Heading gray"
         id=""

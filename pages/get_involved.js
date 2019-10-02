@@ -97,7 +97,7 @@ export default () => (
           )}
         </TrackVisibility>,
         <div>
-          <Heading headingLevel={3}>Empower Our Community</Heading>
+          <Heading text="Empower Our Community" headingLevel={3} />
 
           <p className={styles.justifyAlign}>
             Make a difference in the lives of military veterans, service members, and spouses who
@@ -133,7 +133,7 @@ export default () => (
     <Content
       columns={[
         <div>
-          <Heading headingLevel={3}>Support Our Mission</Heading>
+          <Heading text="Support Our Mission" headingLevel={3} />
 
           <p className={styles.justifyAlign}>
             Make a difference in the lives of military veterans, service members, and spouses who

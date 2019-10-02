@@ -19,23 +19,23 @@ exports[`Storyshots ReusableSections DonateSection 1`] = `
         className="anchor anchorMargin"
         id="donate"
       />
-      <a
-        className="hashLink"
-        data-testid="Hash Link"
-        href="#donate"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
+      <div
+        className="hashLinkContainer"
       >
-        <span
-          className="ScreenReaderOnly"
+        <a
+          data-testid="Hash Link"
+          href="#donate"
         >
-          Hashlink icon hidden
-        </span>
-        <svg
-          className="icon iconHidden"
-        />
-      </a>
+          <svg
+            className="icon"
+          />
+          <span
+            className="ScreenReaderOnly"
+          >
+            Scroll Link
+          </span>
+        </a>
+      </div>
       <h3
         className="headingTextWithLinkIconOffset Heading secondary"
         id=""
@@ -78,23 +78,23 @@ exports[`Storyshots ReusableSections JoinSection 1`] = `
         className="anchor anchorMargin"
         id="join-our-thriving-community"
       />
-      <a
-        className="hashLink"
-        data-testid="Hash Link"
-        href="#join-our-thriving-community"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
+      <div
+        className="hashLinkContainer"
       >
-        <span
-          className="ScreenReaderOnly"
+        <a
+          data-testid="Hash Link"
+          href="#join-our-thriving-community"
         >
-          Hashlink icon hidden
-        </span>
-        <svg
-          className="icon iconHidden"
-        />
-      </a>
+          <svg
+            className="icon"
+          />
+          <span
+            className="ScreenReaderOnly"
+          >
+            Scroll Link
+          </span>
+        </a>
+      </div>
       <h3
         className="headingTextWithLinkIconOffset Heading white"
         id=""
@@ -152,23 +152,23 @@ exports[`Storyshots ReusableSections SponsorsSection 1`] = `
         className="anchor anchorMargin"
         id="sponsors"
       />
-      <a
-        className="hashLink"
-        data-testid="Hash Link"
-        href="#sponsors"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
+      <div
+        className="hashLinkContainer"
       >
-        <span
-          className="ScreenReaderOnly"
+        <a
+          data-testid="Hash Link"
+          href="#sponsors"
         >
-          Hashlink icon hidden
-        </span>
-        <svg
-          className="icon iconHidden"
-        />
-      </a>
+          <svg
+            className="icon"
+          />
+          <span
+            className="ScreenReaderOnly"
+          >
+            Scroll Link
+          </span>
+        </a>
+      </div>
       <h3
         className="headingTextWithLinkIconOffset Heading gray"
         id=""

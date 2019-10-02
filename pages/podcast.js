@@ -77,9 +77,12 @@ class Podcast extends React.Component {
 
                   return (
                     <Card data-testid="Podcast Card" className={styles.podcastCard} key={name}>
-                      <Heading theme="white" customAnchorClass="podcast" headingLevel={3}>
-                        {interviewee}
-                      </Heading>
+                      <Heading
+                        text={interviewee}
+                        theme="white"
+                        customAnchorClass="podcast"
+                        headingLevel={3}
+                      />
 
                       <img src={image} alt={interviewee} className={styles.img} />
 

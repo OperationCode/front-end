@@ -42,14 +42,13 @@ function Content({
     >
       {title && (
         <Heading
+          text={title}
           className={classNames(styles.title, {
             [styles.underline]: hasTitleUnderline,
           })}
           theme={theme}
           headingLevel={3}
-        >
-          {title}
-        </Heading>
+        />
       )}
 
       <div className={styles.columnsContainer}>

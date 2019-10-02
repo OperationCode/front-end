@@ -11,7 +11,7 @@ class Heading extends Component {
     className: string,
     id: oneOfType([string, number]), // reference for scroll anchors
     customAnchorClass: string,
-    children: string.isRequired,
+    text: string.isRequired,
     hasHeadingLines: bool,
     hasHashLink: bool,
     headingLevel: number,
@@ -36,7 +36,7 @@ class Heading extends Component {
 
     return (
       <HeadingElement className={classes} id={props.id}>
-        {props.children}
+        {props.text}
       </HeadingElement>
     );
   };
@@ -62,7 +62,7 @@ class Heading extends Component {
 
   getAnchorLinkIcon = () => {
     const { props } = this;
-    const anchorId = kebabCase(props.children);
+    const anchorId = kebabCase(props.text);
     const hashLinkClass = `${styles.hashLinkContainer}`;
 
     if (props.hasHashLink) {
@@ -81,7 +81,7 @@ class Heading extends Component {
 
   getSpan = () => {
     const { props } = this;
-    const anchorId = kebabCase(props.children);
+    const anchorId = kebabCase(props.text);
     const anchorClass = this.getAnchorClass();
 
     if (props.hasHashLink) {

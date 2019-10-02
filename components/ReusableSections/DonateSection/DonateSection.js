@@ -8,7 +8,7 @@ import styles from './DonateSection.css';
 function DonateSection() {
   return (
     <Container backgroundImageSource={`${s3}background_flag.jpg`}>
-      <Heading headingLevel={3}>Donate</Heading>
+      <Heading text="Donate" headingLevel={3} />
 
       <p className={styles.justifyAlign}>
         As a 501(c)(3) veteran-led nonprofit organization, our programs and services are maintained
