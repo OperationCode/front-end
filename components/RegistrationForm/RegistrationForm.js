@@ -114,6 +114,13 @@ class RegistrationForm extends Component {
       >
         {({ isSubmitting }) => (
           <Form className={styles.RegistrationForm}>
+            <p>
+              We work closely with military veterans, service members, and spouses who are
+              passionate about transitioning into the tech industry. We work with over 5,000 members
+              who are all working towards relevant goals on Slack and in-person meet-ups. Membership
+              is free!
+            </p>
+
             <div className={styles.row}>
               <Field
                 type="email"
@@ -188,6 +195,11 @@ class RegistrationForm extends Component {
             <div className={styles.row}>
               {state.errorMessage && <Alert type="error">{state.errorMessage}</Alert>}
             </div>
+
+            <p>
+              The information we collect is to help us personalize your experience on our Slack
+              community. We do not sell your information to anyone.
+            </p>
 
             <div className={styles.row}>
               <Button

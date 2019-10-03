@@ -1,8 +1,8 @@
 .intro {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: -5rem;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
 .termDefinition {

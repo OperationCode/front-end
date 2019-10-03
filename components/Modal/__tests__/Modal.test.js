@@ -32,7 +32,6 @@ describe('Modal', () => {
     ReactGA.initialize('foo', { testMode: true });
 
     process.env.NODE_ENV = 'production';
-    process.env.GOOGLE_ANALYTICS_KEY = 'debug';
 
     const props = {
       onRequestClose: () => {},
