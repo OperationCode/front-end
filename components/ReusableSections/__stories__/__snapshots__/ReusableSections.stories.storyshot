@@ -37,7 +37,7 @@ exports[`Storyshots ReusableSections DonateSection 1`] = `
         </a>
       </div>
       <h3
-        className="secondary Heading undefined headingTextWithLinkIconOffset"
+        className="transparentWhite Heading undefined headingTextWithLinkIconOffset"
       >
         Donate
       </h3>

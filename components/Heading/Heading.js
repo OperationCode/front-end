@@ -15,7 +15,7 @@ class Heading extends Component {
     hasHeadingLines: bool,
     hasHashLink: bool,
     headingLevel: number,
-    theme: oneOf(['gray', 'secondary', 'white']),
+    theme: oneOf(['gray', 'secondary', 'white', 'transparentWhite']),
   };
 
   static defaultProps = {

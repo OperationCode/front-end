@@ -32,16 +32,36 @@
   margin: 0 10px 5px 10px;
 }
 
+.secondary {
+  background-color: var(--secondary);
+  color: var(--white);
+}
+
+.gray {
+  background-color: var(--gray);
+  color: var(--secondary);
+}
+
+.white {
+  background-color: var(--white);
+  color: var(--secondary);
+}
+
+.transparentWhite {
+  background-color: transparent;
+  color: var(--white);
+}
+
 .icon {
   width: 18px;
 }
 
 .iconFillBlue {
-  fill: #252e3e;
+  fill: var(--secondary);
 }
 
 .iconFillWhite {
-  fill: #f7f7f7;
+  fill: var(--white);
 }
 
 .hashLinkContainer {

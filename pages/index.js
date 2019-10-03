@@ -95,7 +95,7 @@ const Home = () => (
             className="headingOurMission"
             hasHeadingLines
             hasHashLink={false}
-            theme="secondary"
+            theme="gray"
           />
           <p className={styles.justifyAlign}>
             At Operation Code, we strongly believe in improving the lives of military veterans,
