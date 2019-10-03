@@ -36,12 +36,12 @@
   width: 18px;
 }
 
-.iconFillWhite {
-  fill: #f7f7f7;
-}
-
 .iconFillBlue {
   fill: #252e3e;
+}
+
+.iconFillWhite {
+  fill: #f7f7f7;
 }
 
 .hashLinkContainer {
