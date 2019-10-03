@@ -10198,10 +10198,10 @@ log-update@^2.3.0:
     cli-cursor "^2.0.0"
     wrap-ansi "^3.0.1"
 
-logrocket-react@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/logrocket-react/-/logrocket-react-3.0.1.tgz#fed9d04f89e1ff94972daf356ab23dae97ccf453"
-  integrity sha512-xRkeQIZxaP+Mzqh20X7c1Urxv2mEES877eIumgB2e2BDhICGngHyK8NqNHeDLiMej+unus9svKZxAWH5e+BAGQ==
+logrocket-react@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/logrocket-react/-/logrocket-react-4.0.0.tgz#f44d8cab4454b03eb6162ed68b896d4bf0b47ec5"
+  integrity sha512-mXU1xGwlCu6cROv54Gu5Gli+EpPo+Hg7G3Y0h36i2VUrHEKyzGLOd1mTYa5DgYeg4gwzSvnVQfnMDn4uRaU9Bw==
 
 logrocket@^1.0.3:
   version "1.0.3"
