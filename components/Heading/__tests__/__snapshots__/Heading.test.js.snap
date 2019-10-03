@@ -5,7 +5,7 @@ exports[`Heading should render with many props assigned 1`] = `
   className="headingContainer"
 >
   <span
-    className="anchor customAnchorClass"
+    className="anchor anchorMargin"
     id="test"
   />
   <div
@@ -38,7 +38,7 @@ exports[`Heading should render with required props 1`] = `
   className="headingContainer"
 >
   <span
-    className="anchor customAnchorClass"
+    className="anchor anchorMargin"
     id="test"
   />
   <div

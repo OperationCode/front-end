@@ -12,7 +12,7 @@ exports[`JoinSection should render when not logged in 1`] = `
       className="headingContainer"
     >
       <span
-        className="anchor customAnchorClass"
+        className="anchor anchorMargin"
         id="join-our-thriving-community"
       />
       <div

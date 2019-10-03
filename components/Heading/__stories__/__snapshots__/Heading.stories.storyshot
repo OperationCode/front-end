@@ -5,7 +5,7 @@ exports[`Storyshots Heading default 1`] = `
   className="headingContainer"
 >
   <span
-    className="anchor customAnchorClass"
+    className="anchor anchorMargin"
     id="test-heading"
   />
   <div

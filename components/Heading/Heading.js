@@ -45,7 +45,7 @@ class Heading extends Component {
           <span
             id={anchorId}
             className={classNames(styles.anchor, {
-              [styles.customAnchorClass]: props.customAnchorClass === 'anchorMargin',
+              [styles.anchorMargin]: props.customAnchorClass === 'anchorMargin',
               [styles.anchorMarginPodcast]: props.customAnchorClass === 'podcast',
             })}
           />
