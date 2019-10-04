@@ -96,7 +96,7 @@
     "prop-types": "^15.6.2",
     "query-string": "^6.8.3",
     "react": "^16.10.1",
-    "react-dom": "^16.10.1",
+    "react-dom": "^16.10.2",
     "react-facebook-login": "^4.1.1",
     "react-ga": "2.5.7",
     "react-google-login": "^5.0.5",
