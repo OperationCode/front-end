@@ -91,6 +91,7 @@ module.exports = {
         groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
       },
     ],
+    'import/prefer-default-export': 'off',
 
     // Jest Plugin Rules
     'jest/consistent-test-it': [
