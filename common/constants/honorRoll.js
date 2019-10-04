@@ -4,10 +4,10 @@ export const honorRoll = {
     donationRange:
       '$2500 or more',
     benefits: [
-      'The knowledge that your gift of $2,500 or more supports a scholarship that will help a veteran or military spouse to enter code school ',
-      'An invitation to the Chairman’s Dinner, with an opportunity to meet leading thinkers in today’s technology companies and the coders of the future ',
-      'Verbal and print recognition of your generous gift at the Operation Code Annual Benefit Dinner & Auction ',
-      'And all benefits listed below',
+      'The knowledge that your gift of $2,500 or more supports a scholarship that will help a veteran or military spouse to enter code school.',
+      'An invitation to the Chairman’s Dinner, with an opportunity to meet leading thinkers in today’s technology companies and the coders of the future.',
+      'Verbal and print recognition of your generous gift at the Operation Code Annual Benefit Dinner & Auction.',
+      'And all benefits listed below.',
     ],
     members: [
       'Conrad Hollomon',
@@ -19,10 +19,10 @@ export const honorRoll = {
     donationRange:
       '$1000 to $2499',
     benefits: [
-      'The knowledge that your gift of $1,000 or more supports scholarships that will bring veterans and military spouses to networking opportunities at tech conferences ',
-      'Opportunity to join the Leadership Circle Council as a volunteer leader for the cause ',
-      'Recognition at a Leadership Circle event',
-      'And all benefits listed below',
+      'The knowledge that your gift of $1,000 or more supports scholarships that will bring veterans and military spouses to networking opportunities at tech conferences.',
+      'Opportunity to join the Leadership Circle Council as a volunteer leader for the cause.',
+      'Recognition at a Leadership Circle event.',
+      'And all benefits listed below.',
     ],
     members: [
       'Liliana Monge',
@@ -34,9 +34,9 @@ export const honorRoll = {
     donationRange:
       '$500 to $999',
     benefits: [
-      'The knowledge that your gift of $500 or more supports at least one chapter meetup—an invaluable networking and learning opportunity for transitioning veterans and military spouses to learn to code ',
-      'Recognition on website’s Leadership Circle Wall of Honor',
-      'And all benefits listed below',
+      'The knowledge that your gift of $500 or more supports at least one chapter meetup—an invaluable networking and learning opportunity for transitioning veterans and military spouses to learn to code.',
+      'Recognition on website’s Leadership Circle Wall of Honor.',
+      'And all benefits listed below.',
     ],
     members: [
       'James Davis',
@@ -49,9 +49,9 @@ export const honorRoll = {
     donationRange:
       '$250 to $499',
     benefits: [
-      'The knowledge that your gift of $250 or more supports Operation Code’s mentoring program, ensuring that a mentee will gain the knowledge and confidence they need to obtain and keep the job of their dreams ',
-      'Invitations to all Leadership Circle events both virtual and in-person',
-      'And all benefits listed below',
+      'The knowledge that your gift of $250 or more supports Operation Code’s mentoring program, ensuring that a mentee will gain the knowledge and confidence they need to obtain and keep the job of their dreams.',
+      'Invitations to all Leadership Circle events both virtual and in-person.',
+      'And all benefits listed below.',
     ],
     members: [
       'This could be you!',
@@ -61,8 +61,8 @@ export const honorRoll = {
     donationRange:
       '$100 to $249',
     benefits: [
-      'The knowledge that your gift of $100 or more supports Operation Code’s advocacy programs to ensure our men and women who’ve served have access to technical training ',
-      'Recognition in the annual State of Operation Code report',
+      'The knowledge that your gift of $100 or more supports Operation Code’s advocacy programs to ensure our men and women who’ve served have access to technical training.',
+      'Recognition in the annual State of Operation Code report.',
     ],
     members: [
       'Nell Shamrell-Harrington',
