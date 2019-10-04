@@ -172,7 +172,7 @@ module.exports = {
     ],
     'react/jsx-one-expression-per-line': 'off',
     'react/no-did-mount-set-state': 'off',
-    'react/no-unused-prop-types': 'off',
+    'react/no-unused-prop-types': 'error',
     'react/no-unused-state': 'error',
     'react/prefer-stateless-function': ['off'],
     'react/static-property-placement': ['off'],
