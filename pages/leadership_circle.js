@@ -4,8 +4,10 @@ import Content from 'components/Content/Content';
 import LinkButton from 'components/LinkButton/LinkButton';
 import Card from 'components/Cards/Card/Card';
 import { leadershipCircleLink } from 'common/constants/urls';
-import honorRoll from 'common/constants/leadershipCircle';
+import { honorRoll } from 'common/constants/honorRoll';
 import styles from './styles/leadership_circle.css';
+
+const honorRollLevels = Object.keys(honorRoll);
 
 export default () => (
   <>
@@ -55,59 +57,28 @@ export default () => (
         </div>,
       ]}
     />
+
     <Content
       title="Operation Code Honor Roll"
       theme="gray"
-      columns={[
-        <Card className={styles.honorRollCard}>
-          <h6>Benefactor ($2500 or more)</h6>
-          <ul className={styles.honorRollList}>
-            <li>Conrad Hollomon</li>
-            <li>Chris Todd</li>
-            <li>Laura Wickett</li>
-          </ul>
-        </Card>,
+      columns={honorRollLevels.map(level => {
+        const { donationRange, members } = honorRoll[level];
 
-        <Card className={styles.honorRollCard}>
-          <h6>Patron ($1000 to $2499)</h6>
-          <ul className={styles.honorRollList}>
-            <li>Liliana Monge</li>
-            <li>Aaron Sahlstrom</li>
-            <li>Nic and Gwyn Benders</li>
-          </ul>
-        </Card>,
+        return (
+          <Card className={styles.honorRollCard} key={level}>
+            <h5>
+              {level} (contributed {donationRange})
+            </h5>
 
-        <Card className={styles.honorRollCard}>
-          <h6>Coder ($500 to $999)</h6>
-          <ul className={styles.honorRollList}>
-            <li>James Davis</li>
-            <li>Thomas McCuch</li>
-            <li>George Holmberg</li>
-            <li>Matthew Frost</li>
-          </ul>
-        </Card>,
-
-        <Card className={styles.honorRollCard}>
-          <h6>Advocate ($250 to $499)</h6>
-          <ul className={styles.honorRollList}>
-            <li>This could be you!</li>
-          </ul>
-        </Card>,
-
-        <Card className={styles.honorRollCard}>
-          <h6>Friend ($100 to $249)</h6>
-          <ul className={styles.honorRollList}>
-            <li>Nell Shamrell-Harrington</li>
-            <li>Walley Y. Yang</li>
-            <li>Laura Cabrera</li>
-            <li>Michael Bubb</li>
-            <li>Scott Weaver</li>
-            <li>Andrea Griffiths</li>
-            <li>Jim Shannon</li>
-            <li>John L. Carmichael</li>
-          </ul>
-        </Card>,
-      ]}
+            <span className={styles.honorRollListHeader}>Members:</span>
+            <ul className={styles.honorRollList}>
+              {members.map(name => (
+                <li key={name}>{name}</li>
+              ))}
+            </ul>
+          </Card>
+        );
+      })}
     />
 
     <Content
@@ -115,66 +86,23 @@ export default () => (
       theme="white"
       columns={[
         <div>
-          <h6>Benefactor ($2500 or more)</h6>
-          <ul>
-            <li>
-              The knowledge that your gift of $2,500 or more supports a scholarship that will help a
-              veteran or military spouse to enter code school
-            </li>
-            <li>
-              An invitation to the Chairman’s Dinner, with an opportunity to meet leading thinkers
-              in today’s technology companies and the coders of the future
-            </li>
-            <li>
-              Verbal and print recognition of your generous gift at the Operation Code Annual
-              Benefit Dinner & Auction
-            </li>
-            <li>And all benefits listed below</li>
-          </ul>
+          {honorRollLevels.map(level => {
+            const { benefits } = honorRoll[level];
 
-          <h6>Patron ($1000 to $2499)</h6>
-          <ul>
-            <li>
-              The knowledge that your gift of $1,000 or more supports scholarships that will bring
-              veterans and military spouses to networking opportunities at tech conferences
-            </li>
-            <li>
-              Opportunity to join the Leadership Circle Council as a volunteer leader for the cause
-            </li>
-            <li>Recognition at a Leadership Circle event</li>
-            <li>And all benefits listed below</li>
-          </ul>
+            return (
+              <article key={level}>
+                <h6>{level}</h6>
 
-          <h6>Coder ($500 to $999)</h6>
-          <ul>
-            <li>
-              The knowledge that your gift of $500 or more supports at least one chapter meetup—an
-              invaluable networking and learning opportunity for transitioning veterans and military
-              spouses to learn to code
-            </li>
-            <li>Recognition on website’s Leadership Circle Wall of Honor</li>
-            <li>And all benefits listed below</li>
-          </ul>
+                <ul className={styles.benefitsList}>
+                  {benefits.map((benefit, index) => {
+                    const key = `${level}_${index}`;
 
-          <h6>Advocate ($250 to $499)</h6>
-          <ul>
-            <li>
-              The knowledge that your gift of $250 or more supports Operation Code’s mentoring
-              program, ensuring that a mentee will gain the knowledge and confidence they need to
-              obtain and keep the job of their dreams
-            </li>
-            <li>Invitations to all Leadership Circle events both virtual and in-person</li>
-            <li>And all benefits listed below</li>
-          </ul>
-
-          <h6>Friend ($100 to $249)</h6>
-          <ul>
-            <li>
-              The knowledge that your gift of $100 or more supports Operation Code’s advocacy
-              programs to ensure our men and women who’ve served have access to technical training
-            </li>
-            <li>Recognition in the annual State of Operation Code report</li>
-          </ul>
+                    return <li key={key}>{benefit}</li>;
+                  })}
+                </ul>
+              </article>
+            );
+          })}
 
           <div className={styles.linkButtonContainer}>
             <LinkButton
