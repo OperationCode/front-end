@@ -110,7 +110,7 @@
     "react-youtube": "^7.8.0",
     "reselect": "^4.0.0",
     "style-loader": "^0.23.1",
-    "url-loader": "^2.1.0",
+    "url-loader": "^2.2.0",
     "webpack": "^4.41.0",
     "yup": "^0.27.0"
   },
