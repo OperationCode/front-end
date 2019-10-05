@@ -6,13 +6,13 @@ import styles from './TimelineNav.css';
 const TimelineNav = () => {
   return (
     <section className={styles.timelineNav}>
-      <div className={styles.timelineNavLinksContainer}>
+      <nav className={styles.timelineNavLinksContainer}>
         {Object.keys(historyData).map(year => (
           <Link key={year} to={`event-${year}`} smooth className={styles.timelineNavLink}>
             {year}
           </Link>
         ))}
-      </div>
+      </nav>
       <div className={styles.timelineNavSeperator} />
     </section>
   );
