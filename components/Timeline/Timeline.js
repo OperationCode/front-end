@@ -18,7 +18,7 @@ function Timeline() {
             <div className={styles.bubble} />
           </div>
 
-          <div name={`event-${year}`} className={styles.timelineEvent}>
+          <div id={`event-${year}`} className={styles.timelineEvent}>
             {historyData[year].map(({ title, content }) => (
               <TimelineEvent key={`${year} - ${title}`} title={title} content={content} />
             ))}
