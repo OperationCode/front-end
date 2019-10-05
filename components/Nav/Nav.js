@@ -29,10 +29,12 @@ export class Nav extends Component {
 
   openMobileMenu = () => {
     this.setState({ isMobileNavOpen: true });
+    document.body.style.overflow = 'hidden';
   };
 
   closeMobileMenu = () => {
     this.setState({ isMobileNavOpen: false });
+    document.body.style.overflow = 'auto';
   };
 
   render() {
