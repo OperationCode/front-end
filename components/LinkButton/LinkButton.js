@@ -10,7 +10,6 @@ LinkButton.propTypes = {
   analyticsEventLabel: string,
   children: node.isRequired,
   className: string,
-  disabled: bool,
   fullWidth: bool,
   href: string.isRequired,
   shouldPrefetch: bool,
@@ -20,7 +19,6 @@ LinkButton.propTypes = {
 LinkButton.defaultProps = {
   analyticsEventLabel: '',
   className: undefined,
-  disabled: false,
   fullWidth: false,
   shouldPrefetch: false,
   theme: 'primary',

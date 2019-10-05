@@ -39,6 +39,14 @@ module.exports = {
       },
     },
     {
+      files: ['cypress/**/*.js'],
+      rules: {
+        'jest/expect-expect': 'off',
+        'jest/valid-expect': 'off',
+        'func-names': 'off',
+      },
+    },
+    {
       files: [
         'pages/**.js',
         'components/head.js',
@@ -56,11 +64,9 @@ module.exports = {
       },
     },
     {
-      files: ['cypress/**/*.js'],
+      files: ['components/UpdateProfileForm/**/*.js'],
       rules: {
-        'jest/expect-expect': 'off',
-        'jest/valid-expect': 'off',
-        'func-names': 'off',
+        'react/sort-comp': 'off',
       },
     },
   ],
@@ -172,7 +178,7 @@ module.exports = {
     ],
     'react/jsx-one-expression-per-line': 'off',
     'react/no-did-mount-set-state': 'off',
-    'react/no-unused-prop-types': 'off',
+    'react/no-unused-prop-types': 'error',
     'react/no-unused-state': 'error',
     'react/prefer-stateless-function': ['off'],
     'react/static-property-placement': ['off'],
