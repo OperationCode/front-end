@@ -41,11 +41,22 @@ export default class NavListItem extends Component {
     this.setState(previousState => ({ areSublinksVisible: !previousState.areSublinksVisible }));
   };
 
-  handleKey = (event, isLastSublink) => {
-    if (event.key === 'Tab') {
-      if ((isLastSublink && !event.shiftKey) || (!isLastSublink && event.shiftKey)) {
-        this.hideSublinks();
-      }
+  handleKeyDown = (event, indexKeyedOn) => {
+    const { sublinks } = this.props;
+
+    const lastSublinkIndex = sublinks.length - 1;
+    const isLastSublink = indexKeyedOn === lastSublinkIndex;
+    const isFirstSublink = indexKeyedOn === 0;
+
+    const didHitTab = event.key === 'Tab';
+    const didTabForward = didHitTab && !event.shiftKey;
+    const didTabBackward = didHitTab && event.shiftKey;
+
+    const shouldHideSublinks =
+      (isLastSublink && didTabForward) || (isFirstSublink && didTabBackward);
+
+    if (shouldHideSublinks) {
+      this.hideSublinks();
     }
   };
 
@@ -53,7 +64,6 @@ export default class NavListItem extends Component {
     const { props, state } = this;
 
     const hasSublinks = props.sublinks.length > 0;
-    const lastSublinkIndex = props.sublinks.length - 1;
 
     return (
       <li className={styles.NavListItem}>
@@ -96,7 +106,7 @@ export default class NavListItem extends Component {
               onMouseEnter={this.showSublinks}
               onMouseLeave={this.hideSublinks}
             >
-              {props.sublinks.map((sublink, i) => (
+              {props.sublinks.map((sublink, index) => (
                 <li className={styles.sublinkListItem} key={sublink.name}>
                   <Link href={sublink.href} prefetch={sublink.shouldPrefetch || false}>
                     <a
@@ -105,9 +115,7 @@ export default class NavListItem extends Component {
                       role="link"
                       tabIndex={0}
                       data-testid={`Nav Item ${sublink.name}`}
-                      onKeyDown={
-                        i === 0 || i === lastSublinkIndex ? event => this.handleKey(event, i) : null
-                      }
+                      onKeyDown={event => this.handleKeyDown(event, index)}
                     >
                       <span className={styles.linkContent}>{sublink.name}</span>
                     </a>
