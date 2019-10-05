@@ -1,8 +1,8 @@
 /* eslint-disable max-len */
 import React from 'react';
-import TimelineEvent from './TimelineEvent/TimelineEvent';
 import historyData from './historyData';
 import styles from './Timeline.css';
+import TimelineEvent from './TimelineEvent/TimelineEvent';
 
 function Timeline() {
   return (
@@ -18,7 +18,7 @@ function Timeline() {
             <div className={styles.bubble} />
           </div>
 
-          <div className={styles.timelineEvent}>
+          <div id={`event-${year}`} className={styles.timelineEvent}>
             {historyData[year].map(({ title, content }) => (
               <TimelineEvent key={`${year} - ${title}`} title={title} content={content} />
             ))}
