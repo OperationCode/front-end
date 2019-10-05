@@ -30,7 +30,7 @@ const verifyHashLink = path => {
 
     cy.get(hash)
       .siblings('div')
-      .children()
+      .children('a')
       .scrollIntoView()
       .click({ force: true })
       .url()

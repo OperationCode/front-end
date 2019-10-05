@@ -5,7 +5,7 @@ exports[`Storyshots Heading default 1`] = `
   className="headingContainer"
 >
   <span
-    className="anchor anchorMargin"
+    className="anchorSpan anchorMargin"
     id="test-heading"
   />
   <div
@@ -15,20 +15,20 @@ exports[`Storyshots Heading default 1`] = `
       data-testid="Hash Link"
       href="#test-heading"
     >
-      <svg
-        className="icon"
-      />
       <span
         className="ScreenReaderOnly"
       >
         Scroll Link
       </span>
+      <svg
+        className="icon"
+      />
     </a>
+    <h2
+      className="gray headingTextWithLinkIconOffset Heading"
+    >
+      Test Heading
+    </h2>
   </div>
-  <h2
-    className="gray headingLines headingTextWithLinkIconOffset"
-  >
-    Test Heading
-  </h2>
 </div>
 `;

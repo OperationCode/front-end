@@ -16,7 +16,7 @@ exports[`Storyshots ReusableSections DonateSection 1`] = `
       className="headingContainer"
     >
       <span
-        className="anchor anchorMargin"
+        className="anchorSpan anchorMargin"
         id="donate"
       />
       <div
@@ -26,21 +26,21 @@ exports[`Storyshots ReusableSections DonateSection 1`] = `
           data-testid="Hash Link"
           href="#donate"
         >
-          <svg
-            className="icon"
-          />
           <span
             className="ScreenReaderOnly"
           >
             Scroll Link
           </span>
+          <svg
+            className="icon"
+          />
         </a>
+        <h3
+          className="transparentWhite headingTextWithLinkIconOffset Heading"
+        >
+          Donate
+        </h3>
       </div>
-      <h3
-        className="transparentWhite Heading undefined headingTextWithLinkIconOffset"
-      >
-        Donate
-      </h3>
     </div>
     <p
       className="justifyAlign"
@@ -74,7 +74,7 @@ exports[`Storyshots ReusableSections JoinSection 1`] = `
       className="headingContainer"
     >
       <span
-        className="anchor anchorMargin"
+        className="anchorSpan anchorMargin"
         id="join-our-thriving-community"
       />
       <div
@@ -84,21 +84,21 @@ exports[`Storyshots ReusableSections JoinSection 1`] = `
           data-testid="Hash Link"
           href="#join-our-thriving-community"
         >
-          <svg
-            className="icon"
-          />
           <span
             className="ScreenReaderOnly"
           >
             Scroll Link
           </span>
+          <svg
+            className="icon"
+          />
         </a>
+        <h3
+          className="white headingTextWithLinkIconOffset Heading"
+        >
+          Join Our Thriving Community
+        </h3>
       </div>
-      <h3
-        className="white Heading undefined headingTextWithLinkIconOffset"
-      >
-        Join Our Thriving Community
-      </h3>
     </div>
     <p
       className="justifyAlign"
@@ -147,7 +147,7 @@ exports[`Storyshots ReusableSections SponsorsSection 1`] = `
       className="headingContainer"
     >
       <span
-        className="anchor anchorMargin"
+        className="anchorSpan anchorMargin"
         id="sponsors"
       />
       <div
@@ -157,21 +157,21 @@ exports[`Storyshots ReusableSections SponsorsSection 1`] = `
           data-testid="Hash Link"
           href="#sponsors"
         >
-          <svg
-            className="icon"
-          />
           <span
             className="ScreenReaderOnly"
           >
             Scroll Link
           </span>
+          <svg
+            className="icon"
+          />
         </a>
+        <h3
+          className="gray title underline headingTextWithLinkIconOffset Heading"
+        >
+          Sponsors
+        </h3>
       </div>
-      <h3
-        className="gray Heading title underline headingTextWithLinkIconOffset"
-      >
-        Sponsors
-      </h3>
     </div>
     <div
       className="columnsContainer"

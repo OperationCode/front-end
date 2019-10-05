@@ -12,7 +12,7 @@ exports[`Content should render with many props assigned 1`] = `
       className="headingContainer"
     >
       <span
-        className="anchor anchorMargin"
+        className="anchorSpan anchorMargin"
         id="testing"
       />
       <div
@@ -22,21 +22,21 @@ exports[`Content should render with many props assigned 1`] = `
           data-testid="Hash Link"
           href="#testing"
         >
-          <svg
-            className="icon"
-          />
           <span
             className="ScreenReaderOnly"
           >
             Scroll Link
           </span>
+          <svg
+            className="icon"
+          />
         </a>
+        <h3
+          className="secondary title underline headingTextWithLinkIconOffset Heading"
+        >
+          Testing!
+        </h3>
       </div>
-      <h3
-        className="secondary Heading title underline headingTextWithLinkIconOffset"
-      >
-        Testing!
-      </h3>
     </div>
     <div
       className="columnsContainer"

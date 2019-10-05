@@ -80,7 +80,7 @@ class Podcast extends React.Component {
                       <Heading
                         text={interviewee}
                         theme="white"
-                        customAnchorClass="podcast"
+                        customAnchorClass="anchorMarginPodcast"
                         headingLevel={3}
                       />
 

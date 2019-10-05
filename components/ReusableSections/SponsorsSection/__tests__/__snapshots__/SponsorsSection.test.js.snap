@@ -11,7 +11,7 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
       className="headingContainer"
     >
       <span
-        className="anchor anchorMargin"
+        className="anchorSpan anchorMargin"
         id="sponsors"
       />
       <div
@@ -21,21 +21,21 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
           data-testid="Hash Link"
           href="#sponsors"
         >
-          <svg
-            className="icon"
-          />
           <span
             className="ScreenReaderOnly"
           >
             Scroll Link
           </span>
+          <svg
+            className="icon"
+          />
         </a>
+        <h3
+          className="gray title underline headingTextWithLinkIconOffset Heading"
+        >
+          Sponsors
+        </h3>
       </div>
-      <h3
-        className="gray Heading title underline headingTextWithLinkIconOffset"
-      >
-        Sponsors
-      </h3>
     </div>
     <div
       className="columnsContainer"
@@ -364,7 +364,7 @@ exports[`SponsorsSection should render with required props 1`] = `
       className="headingContainer"
     >
       <span
-        className="anchor anchorMargin"
+        className="anchorSpan anchorMargin"
         id="sponsors"
       />
       <div
@@ -374,21 +374,21 @@ exports[`SponsorsSection should render with required props 1`] = `
           data-testid="Hash Link"
           href="#sponsors"
         >
-          <svg
-            className="icon"
-          />
           <span
             className="ScreenReaderOnly"
           >
             Scroll Link
           </span>
+          <svg
+            className="icon"
+          />
         </a>
+        <h3
+          className="gray title underline headingTextWithLinkIconOffset Heading"
+        >
+          Sponsors
+        </h3>
       </div>
-      <h3
-        className="gray Heading title underline headingTextWithLinkIconOffset"
-      >
-        Sponsors
-      </h3>
     </div>
     <div
       className="columnsContainer"

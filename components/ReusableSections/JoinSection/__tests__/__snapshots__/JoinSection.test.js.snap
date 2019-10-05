@@ -12,7 +12,7 @@ exports[`JoinSection should render when not logged in 1`] = `
       className="headingContainer"
     >
       <span
-        className="anchor anchorMargin"
+        className="anchorSpan anchorMargin"
         id="join-our-thriving-community"
       />
       <div
@@ -22,21 +22,21 @@ exports[`JoinSection should render when not logged in 1`] = `
           data-testid="Hash Link"
           href="#join-our-thriving-community"
         >
-          <svg
-            className="icon"
-          />
           <span
             className="ScreenReaderOnly"
           >
             Scroll Link
           </span>
+          <svg
+            className="icon"
+          />
         </a>
+        <h3
+          className="white headingTextWithLinkIconOffset Heading"
+        >
+          Join Our Thriving Community
+        </h3>
       </div>
-      <h3
-        className="white Heading undefined headingTextWithLinkIconOffset"
-      >
-        Join Our Thriving Community
-      </h3>
     </div>
     <p
       className="justifyAlign"

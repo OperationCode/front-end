@@ -54,6 +54,10 @@
 
 .icon {
   width: 18px;
+  line-height: 2.25;
+  height: 2rem;
+  margin: 1rem 0.5rem;
+  outline: none;
 }
 
 .iconFillBlue {
@@ -65,13 +69,11 @@
 }
 
 .hashLinkContainer {
-  line-height: 2.25;
-  height: 2rem;
-  margin: 1rem 0.5rem;
-  outline: none;
+  display: flex;
+  justify-content: center;
 }
 
-.hashLinkContainer a {
+.hashLinkContainer > a {
   visibility: hidden;
 }
 
@@ -79,7 +81,7 @@
   visibility: visible;
 }
 
-.anchor {
+.anchorSpan {
   display: block;
   position: relative;
 }

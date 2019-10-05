@@ -5,7 +5,7 @@ exports[`Heading should render with many props assigned 1`] = `
   className="headingContainer"
 >
   <span
-    className="anchor anchorMargin"
+    className="anchorSpan anchorMargin"
     id="test"
   />
   <div
@@ -15,21 +15,21 @@ exports[`Heading should render with many props assigned 1`] = `
       data-testid="Hash Link"
       href="#test"
     >
-      <svg
-        className="icon"
-      />
       <span
         className="ScreenReaderOnly"
       >
         Scroll Link
       </span>
+      <svg
+        className="icon"
+      />
     </a>
+    <h2
+      className="secondary test-class headingTextWithLinkIconOffset Heading"
+    >
+      Test
+    </h2>
   </div>
-  <h2
-    className="secondary Heading test-class headingTextWithLinkIconOffset"
-  >
-    Test
-  </h2>
 </div>
 `;
 
@@ -38,7 +38,7 @@ exports[`Heading should render with required props 1`] = `
   className="headingContainer"
 >
   <span
-    className="anchor anchorMargin"
+    className="anchorSpan anchorMargin"
     id="test"
   />
   <div
@@ -48,20 +48,20 @@ exports[`Heading should render with required props 1`] = `
       data-testid="Hash Link"
       href="#test"
     >
-      <svg
-        className="icon"
-      />
       <span
         className="ScreenReaderOnly"
       >
         Scroll Link
       </span>
+      <svg
+        className="icon"
+      />
     </a>
+    <h2
+      className="secondary headingTextWithLinkIconOffset Heading"
+    >
+      Test
+    </h2>
   </div>
-  <h2
-    className="secondary Heading undefined headingTextWithLinkIconOffset"
-  >
-    Test
-  </h2>
 </div>
 `;

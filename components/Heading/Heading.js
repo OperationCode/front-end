@@ -31,34 +31,45 @@ class Heading extends Component {
   render() {
     const { props } = this;
     const anchorId = kebabCase(props.text);
-    const classes = classNames(styles[props.theme], {
-      [`${styles.Heading} ${props.className}`]: !props.hasHeadingLines,
-      [`${styles.headingOurMission}`]: props.className === 'headingOurMission',
-      [`${styles.headingLines}`]: props.hasHeadingLines,
-      [`${styles.headingTextWithLinkIconOffset}`]: props.hasHashLink,
-    });
     const HeadingElement = `h${props.headingLevel}`;
 
     return (
       <div className={`${styles.headingContainer}`}>
         {props.hasHashLink && (
-          <span
-            id={anchorId}
-            className={classNames(styles.anchor, {
-              [styles.anchorMargin]: props.customAnchorClass === 'anchorMargin',
-              [styles.anchorMarginPodcast]: props.customAnchorClass === 'podcast',
-            })}
-          />
+          <>
+            <span
+              id={anchorId}
+              className={classNames(styles.anchorSpan, styles[props.customAnchorClass])}
+            />
+            <div className={`${styles.hashLinkContainer}`}>
+              <a href={`#${anchorId}`} data-testid="Hash Link">
+                <ScreenReaderOnly>Scroll Link</ScreenReaderOnly>
+                <LinkIcon className={styles.icon} />
+              </a>
+              <HeadingElement
+                className={classNames(
+                  styles[props.theme],
+                  props.className,
+                  styles.headingTextWithLinkIconOffset,
+                  styles.Heading,
+                )}
+              >
+                {props.text}
+              </HeadingElement>
+            </div>
+          </>
         )}
-        {props.hasHashLink && (
-          <div className={`${styles.hashLinkContainer}`}>
-            <a href={`#${anchorId}`} data-testid="Hash Link">
-              <LinkIcon className={styles.icon} />
-              <ScreenReaderOnly>Scroll Link</ScreenReaderOnly>
-            </a>
-          </div>
+        {props.className === 'headingOurMission' && (
+          <HeadingElement
+            className={classNames(
+              styles[props.theme],
+              styles.headingOurMission,
+              styles.headingLines,
+            )}
+          >
+            {props.text}
+          </HeadingElement>
         )}
-        <HeadingElement className={classes}>{props.text}</HeadingElement>
       </div>
     );
   }
