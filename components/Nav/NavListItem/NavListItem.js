@@ -41,10 +41,19 @@ export default class NavListItem extends Component {
     this.setState(previousState => ({ areSublinksVisible: !previousState.areSublinksVisible }));
   };
 
+  handleKey = (event, isLastSublink) => {
+    if (event.key === 'Tab') {
+      if ((isLastSublink && !event.shiftKey) || (!isLastSublink && event.shiftKey)) {
+        this.hideSublinks();
+      }
+    }
+  };
+
   render() {
     const { props, state } = this;
 
     const hasSublinks = props.sublinks.length > 0;
+    const lastSublinkIndex = props.sublinks.length - 1;
 
     return (
       <li className={styles.NavListItem}>
@@ -87,7 +96,7 @@ export default class NavListItem extends Component {
               onMouseEnter={this.showSublinks}
               onMouseLeave={this.hideSublinks}
             >
-              {props.sublinks.map(sublink => (
+              {props.sublinks.map((sublink, i) => (
                 <li className={styles.sublinkListItem} key={sublink.name}>
                   <Link href={sublink.href} prefetch={sublink.shouldPrefetch || false}>
                     <a
@@ -96,6 +105,9 @@ export default class NavListItem extends Component {
                       role="link"
                       tabIndex={0}
                       data-testid={`Nav Item ${sublink.name}`}
+                      onKeyDown={
+                        i === 0 || i === lastSublinkIndex ? event => this.handleKey(event, i) : null
+                      }
                     >
                       <span className={styles.linkContent}>{sublink.name}</span>
                     </a>
