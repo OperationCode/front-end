@@ -1,15 +1,21 @@
+import { s3 } from 'common/constants/urls';
+import Content from 'components/Content/Content';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
-import Content from 'components/Content/Content';
 import Timeline from 'components/Timeline/Timeline';
-import { s3 } from 'common/constants/urls';
+import TimelineNav from 'components/Timeline/TimelineNav/TimelineNav';
 import styles from './styles/history.css';
 
 export default function() {
+  const pageContent = (
+    <section>
+      <TimelineNav />
+      <Timeline />
+    </section>
+  );
   return (
     <>
       <Head title="History" />
-
       <HeroBanner
         backgroundImageSource={`${s3}heroBanners/colin-powell.jpg`}
         className={styles.hero}
@@ -24,7 +30,7 @@ export default function() {
         </>
       </HeroBanner>
 
-      <Content theme="white" columns={[<Timeline />]} />
+      <Content theme="white" columns={[pageContent]} />
     </>
   );
 }

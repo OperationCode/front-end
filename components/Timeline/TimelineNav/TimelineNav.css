@@ -1,0 +1,18 @@
+.timelineNavContainer {
+  display: flex;
+  justify-content: space-around;
+}
+
+.timelineNavLink {
+  cursor: pointer;
+  transition: transform 100ms ease-in-out;
+}
+
+.timelineNavLink:not(:hover) {
+  opacity: 0.7;
+}
+
+.timelineNavLink:hover {
+  text-decoration: underline;
+  transform: scale(1.1);
+}
