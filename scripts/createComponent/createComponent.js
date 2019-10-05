@@ -102,7 +102,7 @@ const writeFileData = (fileData, fileName) => {
 };
 
 // Changes path when the configuration tree needs to be modified to respect user input.
-const conditionallyAdjustPath = (key, currPath, componentName) => {
+const conditionallyAdjustPath = (key, currentPath, componentName) => {
   let pathBase;
   if (key.indexOf(replacementString) === 0) {
     pathBase = key.replace(replacementString, componentName);
@@ -111,18 +111,18 @@ const conditionallyAdjustPath = (key, currPath, componentName) => {
   }
 
   // Adjusted path
-  return path.join(currPath, pathBase);
+  return path.join(currentPath, pathBase);
 };
 
 // Interacts with the configuration tree based on what it finds in each object.
-const recurseStructure = (subObject, currPath, componentName) => {
+const recurseStructure = (subObject, currentPath, componentName) => {
   let newPath;
 
   /* eslint-disable no-restricted-syntax */
   /* eslint-disable no-unused-vars */
   for (const key in subObject) {
     if (subObject[key]) {
-      newPath = conditionallyAdjustPath(key, currPath, componentName);
+      newPath = conditionallyAdjustPath(key, currentPath, componentName);
 
       // Recursive base case - write file data when a function is found
       if (typeof subObject[key] === 'function') {

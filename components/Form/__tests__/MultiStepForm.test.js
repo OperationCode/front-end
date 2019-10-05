@@ -3,7 +3,7 @@
 import React from 'react';
 import faker from 'faker';
 import get from 'lodash/get';
-import { mount } from 'enzyme';
+import { mount } from 'enzyme'; // eslint-disable-line no-restricted-imports
 import { Field } from 'formik';
 import * as Yup from 'yup';
 import { networkErrorMessages } from 'common/constants/messages';
