@@ -1,38 +1,63 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TimelineNav should render with no props passed passed 1`] = `
-<div
-  className="timelineNavContainer"
+<section
+  className="timelineNav"
 >
-  <span
-    className="timelineNavLink"
+  <div
+    className="timelineNavLinksContainer"
   >
-    2012
-  </span>
-  <span
-    className="timelineNavLink"
-  >
-    2013
-  </span>
-  <span
-    className="timelineNavLink"
-  >
-    2014
-  </span>
-  <span
-    className="timelineNavLink"
-  >
-    2015
-  </span>
-  <span
-    className="timelineNavLink"
-  >
-    2016
-  </span>
-  <span
-    className="timelineNavLink"
-  >
-    2017
-  </span>
-</div>
+    <Link
+      className="timelineNavLink"
+      offset={0}
+      smooth={true}
+      to="event-2012"
+    >
+      2012
+    </Link>
+    <Link
+      className="timelineNavLink"
+      offset={0}
+      smooth={true}
+      to="event-2013"
+    >
+      2013
+    </Link>
+    <Link
+      className="timelineNavLink"
+      offset={0}
+      smooth={true}
+      to="event-2014"
+    >
+      2014
+    </Link>
+    <Link
+      className="timelineNavLink"
+      offset={0}
+      smooth={true}
+      to="event-2015"
+    >
+      2015
+    </Link>
+    <Link
+      className="timelineNavLink"
+      offset={0}
+      smooth={true}
+      to="event-2016"
+    >
+      2016
+    </Link>
+    <Link
+      className="timelineNavLink"
+      offset={0}
+      smooth={true}
+      to="event-2017"
+    >
+      2017
+    </Link>
+  </div>
+  <div
+    className="timelineNavSeperator"
+  />
+</section>
 `;
