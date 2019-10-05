@@ -1,4 +1,4 @@
-import Enzyme from 'enzyme';
+import Enzyme from 'enzyme'; // eslint-disable-line no-restricted-imports
 import Adapter from 'enzyme-adapter-react-16';
 import 'jest-enzyme';
 import '@testing-library/jest-dom/extend-expect';

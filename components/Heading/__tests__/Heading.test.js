@@ -1,8 +1,6 @@
 import React from 'react';
-
 import { cleanup } from '@testing-library/react';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
-
 import Heading from '../Heading';
 
 describe('Heading', () => {

@@ -2,7 +2,7 @@ import React from 'react';
 import { Formik, Field } from 'formik';
 import { wait } from '@testing-library/react';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
-import { shallow, mount } from 'enzyme';
+import { shallow, mount } from 'enzyme'; // eslint-disable-line no-restricted-imports
 
 import Form from '../../Form';
 import Input from '../Input';
