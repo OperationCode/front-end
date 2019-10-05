@@ -1,6 +1,6 @@
 import React from 'react';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
-import { mount } from 'enzyme';
+import { mount } from 'enzyme'; // eslint-disable-line no-restricted-imports
 import { loginSocial } from 'common/constants/api';
 import asyncRenderDiff from 'test-utils/asyncRenderDiff';
 import OperationCodeAPIMock from 'test-utils/mocks/apiMock';

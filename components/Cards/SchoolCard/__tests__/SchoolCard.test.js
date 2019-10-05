@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { mount } from 'enzyme'; // eslint-disable-line no-restricted-imports
 import createShallowSnapshotTest from 'test-utils/createShallowSnapshotTest';
 import SchoolCard, { getSchoolLocationText } from '../SchoolCard';
 
