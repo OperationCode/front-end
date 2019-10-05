@@ -17,7 +17,7 @@ describe('String Utilities', () => {
 
   describe('coerceEmptyStringToUndefined', () => {
     it('should return undefined when passed string is empty', () => {
-      expect(coerceEmptyStringToUndefined('')).toStrictEqual(undefined);
+      expect(coerceEmptyStringToUndefined('')).toBeUndefined();
     });
 
     it('should return the string itself if it is not empty', () => {
