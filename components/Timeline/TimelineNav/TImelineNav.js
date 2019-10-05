@@ -6,9 +6,9 @@ const TimelineNav = () => {
   return (
     <div className={styles.timelineNavContainer}>
       {Object.keys(historyData).map(year => (
-        <span key={year} className={styles.timelineNavLink}>
+        <a href={`#event-${year}`} key={year} className={styles.timelineNavLink}>
           {year}
-        </span>
+        </a>
       ))}
     </div>
   );
