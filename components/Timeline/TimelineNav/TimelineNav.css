@@ -1,13 +1,16 @@
-.timelineNavContainer {
-  display: flex;
+.timelineNav {
   padding: 0 4rem;
-  justify-content: space-around;
 }
 
 @media screen and (--small-viewport) {
-  .timelineNavContainer {
+  .timelineNav {
     padding: 0;
   }
+}
+
+.timelineNavLinksContainer {
+  display: flex;
+  justify-content: space-around;
 }
 
 .timelineNavLink {
@@ -22,4 +25,10 @@
 
 .timelineNavLink:hover {
   transform: scale(1.1);
+}
+
+.timelineNavSeperator {
+  margin-top: 1rem;
+  background-color: #d7d7d7;
+  height: 2px;
 }

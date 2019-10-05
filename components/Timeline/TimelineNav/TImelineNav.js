@@ -5,13 +5,16 @@ import styles from './TimelineNav.css';
 
 const TimelineNav = () => {
   return (
-    <div className={styles.timelineNavContainer}>
-      {Object.keys(historyData).map(year => (
-        <Link key={year} to={`event-${year}`} smooth className={styles.timelineNavLink}>
-          {year}
-        </Link>
-      ))}
-    </div>
+    <section className={styles.timelineNav}>
+      <div className={styles.timelineNavLinksContainer}>
+        {Object.keys(historyData).map(year => (
+          <Link key={year} to={`event-${year}`} smooth className={styles.timelineNavLink}>
+            {year}
+          </Link>
+        ))}
+      </div>
+      <div className={styles.timelineNavSeperator} />
+    </section>
   );
 };
 
