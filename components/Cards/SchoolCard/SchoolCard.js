@@ -39,7 +39,7 @@ export default class SchoolCard extends Component {
     hasHousing: bool,
     hasOnline: bool.isRequired,
     hasOnlyOnline: bool.isRequired,
-    isFullTime: bool.isRequired,
+    // isFullTime: bool.isRequired,
     isVetTecApproved: bool,
     locations: arrayOf(
       shape({
