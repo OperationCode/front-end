@@ -143,7 +143,6 @@ exports[`SchoolCard should render with required props 1`] = `
   >
     <LinkButton
       analyticsEventLabel="school name | Website"
-      disabled={false}
       fullWidth={true}
       href="website"
       shouldPrefetch={false}
