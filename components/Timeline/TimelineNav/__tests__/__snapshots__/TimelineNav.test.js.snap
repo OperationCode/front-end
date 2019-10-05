@@ -4,7 +4,7 @@ exports[`TimelineNav should render with no props passed passed 1`] = `
 <section
   className="timelineNav"
 >
-  <div
+  <nav
     className="timelineNavLinksContainer"
   >
     <Link
@@ -55,7 +55,7 @@ exports[`TimelineNav should render with no props passed passed 1`] = `
     >
       2017
     </Link>
-  </div>
+  </nav>
   <div
     className="timelineNavSeperator"
   />
