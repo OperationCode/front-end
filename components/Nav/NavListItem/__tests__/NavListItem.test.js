@@ -94,4 +94,26 @@ describe('NavListItem', () => {
 
     expect(wrapper.find('ul')).toHaveClassName('invisible');
   });
+
+  it('should hide sublinks on pressing Shift+Tab on first sublink', () => {
+    const wrapper = shallow(<NavListItem {...testDataWithSublinks} />);
+
+    wrapper.find('button').simulate('click');
+    wrapper
+      .find('[data-testid="Nav Item Test - 1"]')
+      .simulate('keyDown', { key: 'Tab', shiftKey: true });
+
+    expect(wrapper.find('ul')).toHaveClassName('invisible');
+  });
+
+  it('should hide sublinks on pressing Tab on last sublink', () => {
+    const wrapper = shallow(<NavListItem {...testDataWithSublinks} />);
+
+    wrapper.find('button').simulate('click');
+    wrapper
+      .find('[data-testid="Nav Item Test - 2"]')
+      .simulate('keyDown', { key: 'Tab', shiftKey: false });
+
+    expect(wrapper.find('ul')).toHaveClassName('invisible');
+  });
 });
