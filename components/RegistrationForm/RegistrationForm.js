@@ -76,10 +76,9 @@ class RegistrationForm extends Component {
 
     try {
       const { token } = await createUser(values);
+      await onSuccess({ user: values, token });
       actions.setSubmitting(false);
       actions.resetForm();
-
-      await onSuccess({ user: values, token });
     } catch (error) {
       actions.setSubmitting(false);
 
