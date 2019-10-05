@@ -1,18 +1,25 @@
 .timelineNavContainer {
   display: flex;
+  padding: 0 4rem;
   justify-content: space-around;
 }
 
+@media screen and (--small-viewport) {
+  .timelineNavContainer {
+    padding: 0;
+  }
+}
+
 .timelineNavLink {
+  font-weight: 700;
   cursor: pointer;
-  transition: transform 100ms ease-in-out;
+  transition: transform opacity 100ms ease-in-out;
 }
 
 .timelineNavLink:not(:hover) {
-  opacity: 0.7;
+  opacity: 0.6;
 }
 
 .timelineNavLink:hover {
-  text-decoration: underline;
   transform: scale(1.1);
 }
