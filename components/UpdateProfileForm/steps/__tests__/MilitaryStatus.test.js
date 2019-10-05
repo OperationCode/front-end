@@ -1,6 +1,6 @@
 import React from 'react';
 import { Formik } from 'formik';
-import { mount } from 'enzyme';
+import { mount } from 'enzyme'; // eslint-disable-line no-restricted-imports
 import OperationCodeAPIMock from 'test-utils/mocks/apiMock';
 import asyncRenderDiff from 'test-utils/asyncRenderDiff';
 import createSnapshotTest from 'test-utils/createSnapshotTest';

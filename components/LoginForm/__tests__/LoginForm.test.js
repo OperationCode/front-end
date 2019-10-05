@@ -1,6 +1,6 @@
 import React from 'react';
 import faker from 'faker';
-import { mount } from 'enzyme';
+import { mount } from 'enzyme'; // eslint-disable-line no-restricted-imports
 import { wait } from '@testing-library/react';
 import { loginUser } from 'common/constants/api';
 import { networkErrorMessages, validationErrorMessages } from 'common/constants/messages';
