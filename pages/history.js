@@ -7,12 +7,6 @@ import TimelineNav from 'components/Timeline/TimelineNav/TimelineNav';
 import styles from './styles/history.css';
 
 export default function() {
-  const pageContent = (
-    <section>
-      <TimelineNav />
-      <Timeline />
-    </section>
-  );
   return (
     <>
       <Head title="History" />
@@ -30,7 +24,15 @@ export default function() {
         </>
       </HeroBanner>
 
-      <Content theme="white" columns={[pageContent]} />
+      <Content
+        theme="white"
+        columns={[
+          <section>
+            <TimelineNav />
+            <Timeline />
+          </section>,
+        ]}
+      />
     </>
   );
 }
