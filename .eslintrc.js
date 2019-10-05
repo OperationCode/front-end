@@ -39,6 +39,14 @@ module.exports = {
       },
     },
     {
+      files: ['cypress/**/*.js'],
+      rules: {
+        'jest/expect-expect': 'off',
+        'jest/valid-expect': 'off',
+        'func-names': 'off',
+      },
+    },
+    {
       files: [
         'pages/**.js',
         'components/head.js',
@@ -56,11 +64,9 @@ module.exports = {
       },
     },
     {
-      files: ['cypress/**/*.js'],
+      files: ['components/UpdateProfileForm/**/*.js'],
       rules: {
-        'jest/expect-expect': 'off',
-        'jest/valid-expect': 'off',
-        'func-names': 'off',
+        'react/sort-comp': 'off',
       },
     },
   ],
