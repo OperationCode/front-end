@@ -1,6 +1,6 @@
 import React from 'react';
 import createShallowSnapshotTest from 'test-utils/createShallowSnapshotTest';
-import { mount, shallow } from 'enzyme';
+import { mount, shallow } from 'enzyme'; // eslint-disable-line no-restricted-imports
 
 import ArticleGroup from '../ArticleGroup';
 
