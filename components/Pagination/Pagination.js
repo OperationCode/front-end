@@ -54,11 +54,13 @@ const PaginationItems = ({ currentPage, totalPages }) => {
 
 function Pagination({ className, currentPage, totalPages }) {
   return (
-    <div className={classNames(styles.Pagination, className)}>
-      <PaginationItem key="leftAngle" value={<LeftAngleIcon />} />
-      <PaginationItems currentPage={currentPage} totalPages={totalPages} />
-      <PaginationItem key="rightAngle" value={<RightAngleIcon />} />
-    </div>
+    <nav className={classNames(styles.Pagination, className)}>
+      <ol>
+        <PaginationItem key="leftAngle" value={<LeftAngleIcon />} />
+        <PaginationItems currentPage={currentPage} totalPages={totalPages} />
+        <PaginationItem key="rightAngle" value={<RightAngleIcon />} />
+      </ol>
+    </nav>
   );
 }
 

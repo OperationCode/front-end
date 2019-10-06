@@ -16,7 +16,7 @@ PaginationItem.defaultProps = {
 
 function PaginationItem({ value, isCurrent, isClickable }) {
   return (
-    <span
+    <li
       className={classNames(styles.PaginationItem, {
         [styles.current]: isCurrent,
         [styles.notClickable]: !isClickable,
@@ -24,7 +24,7 @@ function PaginationItem({ value, isCurrent, isClickable }) {
       data-testid={`Pagination Item - ${value}`}
     >
       {value}
-    </span>
+    </li>
   );
 }
 
