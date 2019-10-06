@@ -1,7 +1,7 @@
 import React from 'react';
 import FacebookLogo from 'static/images/icons/facebook_logo.svg';
 import TwitterLogo from 'static/images/icons/twitter_logo.svg';
-import GithubLogo from 'static/images/icons/github_logo.svg';
+import GithubLogoCircle from 'static/images/icons/github_logo_circle.svg';
 import InstagramLogo from 'static/images/icons/instagram_logo.svg';
 import SocialMediaContainer from './SocialMediaContainer/SocialMediaContainer';
 import SocialMediaItem from './SocialMediaItem/SocialMediaItem';
@@ -28,7 +28,7 @@ function SocialMedia() {
       <SocialMediaItem
         href="https://github.com/OperationCode/"
         name="GitHub"
-        svg={<GithubLogo className={styles.logo} />}
+        svg={<GithubLogoCircle className={styles.logo} />}
       />
     </SocialMediaContainer>
   );
