@@ -12,7 +12,6 @@ exports[`DonateSection should render with no props passed passed 1`] = `
     hasHeadingLines={false}
     hasTitleUnderline={false}
     headingLevel={3}
-    id=""
     text="Donate"
     theme="transparentWhite"
   />

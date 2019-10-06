@@ -38,5 +38,10 @@ exports[`Storyshots Heading default 1`] = `
       </div>
     </h2>
   </div>
+  <h2
+    className="gray undefined headingLines"
+  >
+    Test Heading
+  </h2>
 </div>
 `;

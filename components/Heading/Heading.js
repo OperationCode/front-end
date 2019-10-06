@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { string, number, oneOfType, bool, oneOf } from 'prop-types';
+import { string, number, bool, oneOf } from 'prop-types';
 import classNames from 'classnames';
 import kebabCase from 'lodash/kebabCase';
 import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
@@ -9,7 +9,6 @@ import styles from './Heading.css';
 class Heading extends Component {
   static propTypes = {
     className: string,
-    id: oneOfType([string, number]), // reference for scroll anchors
     customAnchorClass: string,
     text: string.isRequired,
     hasTitleUnderline: bool,
@@ -21,7 +20,6 @@ class Heading extends Component {
 
   static defaultProps = {
     className: undefined,
-    id: '',
     customAnchorClass: 'anchorMargin',
     hasTitleUnderline: false,
     hasHeadingLines: false,
@@ -67,11 +65,11 @@ class Heading extends Component {
             </div>
           </>
         )}
-        {props.className === 'headingOurMission' && (
+        {props.hasHeadingLines && (
           <HeadingElement
             className={classNames(
               styles[props.theme],
-              styles.headingOurMission,
+              styles[props.className],
               styles.headingLines,
             )}
           >
