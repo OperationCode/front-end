@@ -213,7 +213,7 @@ export default () => {
             )}
           </TrackVisibility>,
           <div>
-            <Heading text="Sponsor a Meetup" theme="secondary" headingLevel={2} />
+            <Heading text="Sponsor a Meetup" headingLevel={2} />
 
             <p className={styles.justifyAlign}>
               From classes, to hackathons, to contributing to open source projects as a group. Our
@@ -256,7 +256,7 @@ export default () => {
       <Content
         columns={[
           <div>
-            <Heading text="Host Us At An Event" theme="secondary" headingLevel={2} />
+            <Heading text="Host Us At An Event" headingLevel={2} />
 
             <p className={styles.justifyAlign}>
               Not only are we working to get veterans into tech, we are also working to raise

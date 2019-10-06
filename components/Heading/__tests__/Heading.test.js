@@ -12,13 +12,7 @@ describe('Heading', () => {
 
   it('should render with many props assigned', () => {
     createSnapshotTest(
-      <Heading
-        text="Test"
-        className="test-class"
-        id="test-heading-1"
-        hasHeadingLines={false}
-        theme="secondary"
-      />,
+      <Heading text="Test" className="test-class" id="test-heading-1" hasHeadingLines={false} />,
     );
   });
 });

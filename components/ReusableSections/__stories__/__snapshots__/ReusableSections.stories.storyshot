@@ -23,7 +23,7 @@ exports[`Storyshots ReusableSections DonateSection 1`] = `
         className="hashLinkContainer"
       >
         <h3
-          className="transparentWhite headingTextWithLinkIconOffset Heading"
+          className="headingTextWithLinkIconOffset Heading"
         >
           <div
             className="hashLink"
@@ -89,7 +89,7 @@ exports[`Storyshots ReusableSections JoinSection 1`] = `
         className="hashLinkContainer"
       >
         <h3
-          className="white headingTextWithLinkIconOffset Heading"
+          className="headingTextWithLinkIconOffset Heading"
         >
           <div
             className="hashLink"
@@ -170,7 +170,7 @@ exports[`Storyshots ReusableSections SponsorsSection 1`] = `
         className="hashLinkContainer"
       >
         <h3
-          className="gray headingTextWithLinkIconOffset Heading"
+          className="headingTextWithLinkIconOffset Heading"
         >
           <div
             className="hashLink"

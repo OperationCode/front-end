@@ -16,7 +16,7 @@ export function JoinSection() {
 
   return (
     <Container theme="white" data-testid="Join Section">
-      <Heading text="Join Our Thriving Community" theme="white" headingLevel={3} />
+      <Heading text="Join Our Thriving Community" headingLevel={3} />
 
       <p className={styles.justifyAlign}>
         Are you ready to begin your journey towards a career in software development? Get the

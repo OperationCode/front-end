@@ -13,7 +13,6 @@ exports[`DonateSection should render with no props passed passed 1`] = `
     hasTitleUnderline={false}
     headingLevel={3}
     text="Donate"
-    theme="transparentWhite"
   />
   <p
     className="justifyAlign"

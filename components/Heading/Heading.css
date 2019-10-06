@@ -36,7 +36,7 @@
   margin-bottom: 1rem;
 }
 
-.secondary {
+/* .secondary {
   background-color: var(--secondary);
   color: var(--white);
 }
@@ -54,7 +54,7 @@
 .transparentWhite {
   background-color: transparent;
   color: var(--white);
-}
+} */
 
 .icon {
   width: 18px;

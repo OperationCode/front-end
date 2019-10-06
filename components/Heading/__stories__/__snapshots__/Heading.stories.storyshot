@@ -12,7 +12,7 @@ exports[`Storyshots Heading default 1`] = `
     className="hashLinkContainer"
   >
     <h2
-      className="gray headingTextWithLinkIconOffset Heading"
+      className="headingTextWithLinkIconOffset Heading"
     >
       <div
         className="hashLink"
@@ -39,7 +39,7 @@ exports[`Storyshots Heading default 1`] = `
     </h2>
   </div>
   <h2
-    className="gray undefined headingLines"
+    className="undefined headingLines"
   >
     Test Heading
   </h2>

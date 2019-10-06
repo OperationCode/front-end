@@ -12,7 +12,7 @@ exports[`Heading should render with many props assigned 1`] = `
     className="hashLinkContainer"
   >
     <h2
-      className="secondary test-class headingTextWithLinkIconOffset Heading"
+      className="test-class headingTextWithLinkIconOffset Heading"
     >
       <div
         className="hashLink"
@@ -53,7 +53,7 @@ exports[`Heading should render with required props 1`] = `
     className="hashLinkContainer"
   >
     <h2
-      className="secondary headingTextWithLinkIconOffset Heading"
+      className="headingTextWithLinkIconOffset Heading"
     >
       <div
         className="hashLink"

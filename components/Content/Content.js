@@ -39,14 +39,7 @@ function Content({
       isFullViewportHeight={isFullViewportHeight}
       theme={theme}
     >
-      {title && (
-        <Heading
-          text={title}
-          hasTitleUnderline={hasTitleUnderline}
-          theme={theme}
-          headingLevel={3}
-        />
-      )}
+      {title && <Heading text={title} hasTitleUnderline={hasTitleUnderline} headingLevel={3} />}
 
       <div className={styles.columnsContainer}>
         {/* eslint-disable-next-line react/no-array-index-key */}

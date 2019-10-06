@@ -19,7 +19,7 @@ exports[`Content should render with many props assigned 1`] = `
         className="hashLinkContainer"
       >
         <h3
-          className="secondary headingTextWithLinkIconOffset Heading"
+          className="headingTextWithLinkIconOffset Heading"
         >
           <div
             className="hashLink"

@@ -19,7 +19,7 @@ exports[`JoinSection should render when not logged in 1`] = `
         className="hashLinkContainer"
       >
         <h3
-          className="white headingTextWithLinkIconOffset Heading"
+          className="headingTextWithLinkIconOffset Heading"
         >
           <div
             className="hashLink"

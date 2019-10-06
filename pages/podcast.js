@@ -79,7 +79,6 @@ class Podcast extends React.Component {
                     <Card data-testid="Podcast Card" className={styles.podcastCard} key={name}>
                       <Heading
                         text={interviewee}
-                        theme="white"
                         customAnchorClass="anchorMarginPodcast"
                         headingLevel={3}
                       />

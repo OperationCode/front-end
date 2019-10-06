@@ -18,7 +18,7 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
         className="hashLinkContainer"
       >
         <h3
-          className="gray headingTextWithLinkIconOffset Heading"
+          className="headingTextWithLinkIconOffset Heading"
         >
           <div
             className="hashLink"
@@ -381,7 +381,7 @@ exports[`SponsorsSection should render with required props 1`] = `
         className="hashLinkContainer"
       >
         <h3
-          className="gray headingTextWithLinkIconOffset Heading"
+          className="headingTextWithLinkIconOffset Heading"
         >
           <div
             className="hashLink"

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { string, number, bool, oneOf } from 'prop-types';
+import { string, number, bool } from 'prop-types';
 import classNames from 'classnames';
 import kebabCase from 'lodash/kebabCase';
 import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
@@ -15,7 +15,6 @@ class Heading extends Component {
     hasHeadingLines: bool,
     hasHashLink: bool,
     headingLevel: number,
-    theme: oneOf(['gray', 'secondary', 'white', 'transparentWhite']),
   };
 
   static defaultProps = {
@@ -25,7 +24,6 @@ class Heading extends Component {
     hasHeadingLines: false,
     hasHashLink: true,
     headingLevel: 2,
-    theme: 'secondary',
   };
 
   render() {
@@ -44,7 +42,6 @@ class Heading extends Component {
             <div className={`${styles.hashLinkContainer}`}>
               <HeadingElement
                 className={classNames(
-                  styles[props.theme],
                   props.className,
                   styles.headingTextWithLinkIconOffset,
                   styles.Heading,
@@ -66,13 +63,7 @@ class Heading extends Component {
           </>
         )}
         {props.hasHeadingLines && (
-          <HeadingElement
-            className={classNames(
-              styles[props.theme],
-              styles[props.className],
-              styles.headingLines,
-            )}
-          >
+          <HeadingElement className={classNames(styles[props.className], styles.headingLines)}>
             {props.text}
           </HeadingElement>
         )}
