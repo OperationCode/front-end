@@ -11,6 +11,9 @@ import { clientTokens } from 'common/config/environment';
 import Nav from 'components/Nav/Nav';
 import Footer from 'components/Footer/Footer';
 import Modal from 'components/Modal/Modal';
+
+import Fingerprint2 from 'fingerprintjs2';
+import hash from 'object-hash';
 import { version } from '../package.json';
 import 'common/styles/globalStyles.css';
 
@@ -45,6 +48,15 @@ class Layout extends React.Component {
   }
 }
 
+// Same test used by EFF for identifying users
+// https://panopticlick.eff.org/
+const setLogRocketFingerprint = () => {
+  Fingerprint2.get(components => {
+    const fingerprint = hash(components);
+    LogRocket.identify(fingerprint);
+  });
+};
+
 class OperationCodeApp extends App {
   componentDidMount() {
     /* Analytics */
@@ -62,6 +74,13 @@ class OperationCodeApp extends App {
       });
 
       setupLogRocketReact(LogRocket);
+
+      // Per library docs, Fingerprint2 should not run immediately
+      if (window.requestIdleCallback) {
+        requestIdleCallback(setLogRocketFingerprint);
+      } else {
+        setTimeout(setLogRocketFingerprint, 500);
+      }
 
       ReactGA.set({ page: window.location.pathname });
     }

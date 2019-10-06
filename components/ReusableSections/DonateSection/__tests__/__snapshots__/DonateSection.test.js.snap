@@ -26,7 +26,6 @@ exports[`DonateSection should render with no props passed passed 1`] = `
   <LinkButton
     analyticsEventLabel="Donate"
     className="topMargin"
-    disabled={false}
     fullWidth={false}
     href="https://secure.lglforms.com/form_engine/s/BRtP7QUKyHOyEYsZROsRew"
     shouldPrefetch={false}

@@ -116,12 +116,11 @@ export default () => (
         >
           <h6>Community Events</h6>
           <p>
-            Join one of our {' '}
+            Join one of our{' '}
             <Link href="/events">
               <a>local meetup chapters</a>
-            </Link>
-            {` `} throughout the country, and learn with fellow
-            members of the military community.
+            </Link>{' '}
+            throughout the country, and learn with fellow members of the military community.
           </p>
         </ImageCard>,
         <ImageCard
