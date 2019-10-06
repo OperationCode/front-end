@@ -3,11 +3,12 @@
 exports[`Storyshots Pagination default 1`] = `
 <nav
   className="Pagination"
+  data-testid="Pagination"
 >
   <ol>
     <li
       className="PaginationItem"
-      data-testid="Pagination Item - [object Object]"
+      data-testid="Pagination Item - leftAngle"
     >
       <svg />
     </li>
@@ -19,7 +20,7 @@ exports[`Storyshots Pagination default 1`] = `
     </li>
     <li
       className="PaginationItem notClickable"
-      data-testid="Pagination Item - …"
+      data-testid="Pagination Item - seperatorStart"
     >
       …
     </li>
@@ -79,7 +80,7 @@ exports[`Storyshots Pagination default 1`] = `
     </li>
     <li
       className="PaginationItem notClickable"
-      data-testid="Pagination Item - …"
+      data-testid="Pagination Item - seperatorEnd"
     >
       …
     </li>
@@ -91,7 +92,7 @@ exports[`Storyshots Pagination default 1`] = `
     </li>
     <li
       className="PaginationItem"
-      data-testid="Pagination Item - [object Object]"
+      data-testid="Pagination Item - rightAngle"
     >
       <svg />
     </li>

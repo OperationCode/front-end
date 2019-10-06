@@ -7,6 +7,7 @@ PaginationItem.propTypes = {
   value: oneOfType([string, element]).isRequired,
   isCurrent: bool,
   isClickable: bool,
+  testId: string.isRequired,
 };
 
 PaginationItem.defaultProps = {
@@ -14,14 +15,14 @@ PaginationItem.defaultProps = {
   isClickable: true,
 };
 
-function PaginationItem({ value, isCurrent, isClickable }) {
+function PaginationItem({ value, isCurrent, isClickable, testId }) {
   return (
     <li
       className={classNames(styles.PaginationItem, {
         [styles.current]: isCurrent,
         [styles.notClickable]: !isClickable,
       })}
-      data-testid={`Pagination Item - ${value}`}
+      data-testid={`Pagination Item - ${testId}`}
     >
       {value}
     </li>

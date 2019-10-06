@@ -30,22 +30,32 @@ const PaginationItems = ({ currentPage, totalPages }) => {
     const page = index + paginationStart;
     const isCurrent = page === currentPage;
 
-    return <PaginationItem key={page} value={`${page}`} isCurrent={isCurrent} />;
+    return <PaginationItem key={page} value={`${page}`} isCurrent={isCurrent} testId={`${page}`} />;
   });
 
   return (
     <>
       {shouldTruncateStart && (
         <>
-          <PaginationItem key="1" value="1" />
-          <PaginationItem key="seperatorStart" value="&hellip;" isClickable={false} />
+          <PaginationItem key="1" value="1" testId="1" />
+          <PaginationItem
+            key="seperatorStart"
+            value="&hellip;"
+            isClickable={false}
+            testId="seperatorStart"
+          />
         </>
       )}
       {PaginationItemArray}
       {shouldTruncateEnd && (
         <>
-          <PaginationItem key="seperatorEnd" value="&hellip;" isClickable={false} />
-          <PaginationItem key={totalPages} value={`${totalPages}`} />
+          <PaginationItem
+            key="seperatorEnd"
+            value="&hellip;"
+            isClickable={false}
+            testId="seperatorEnd"
+          />
+          <PaginationItem key={totalPages} value={`${totalPages}`} testId={`${totalPages}`} />
         </>
       )}
     </>
@@ -54,11 +64,11 @@ const PaginationItems = ({ currentPage, totalPages }) => {
 
 function Pagination({ className, currentPage, totalPages }) {
   return (
-    <nav className={classNames(styles.Pagination, className)}>
+    <nav className={classNames(styles.Pagination, className)} data-testid="Pagination">
       <ol>
-        <PaginationItem key="leftAngle" value={<LeftAngleIcon />} />
+        <PaginationItem key="leftAngle" value={<LeftAngleIcon />} testId="leftAngle" />
         <PaginationItems currentPage={currentPage} totalPages={totalPages} />
-        <PaginationItem key="rightAngle" value={<RightAngleIcon />} />
+        <PaginationItem key="rightAngle" value={<RightAngleIcon />} testId="rightAngle" />
       </ol>
     </nav>
   );
