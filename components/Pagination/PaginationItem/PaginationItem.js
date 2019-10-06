@@ -21,6 +21,7 @@ function PaginationItem({ value, isCurrent, isClickable }) {
         [styles.current]: isCurrent,
         [styles.notClickable]: !isClickable,
       })}
+      data-testid={`Pagination Item - ${value}`}
     >
       {value}
     </span>

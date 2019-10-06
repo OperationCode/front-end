@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PaginationItem should render with required props 1`] = `
+<span
+  className="PaginationItem"
+  data-testid="Pagination Item - 1"
+>
+  1
+</span>
+`;

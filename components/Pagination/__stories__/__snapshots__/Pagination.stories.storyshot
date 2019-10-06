@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Pagination default 1`] = `
+<div
+  className="Pagination"
+>
+  <span
+    className="PaginationItem"
+  >
+    <svg />
+  </span>
+  <span
+    className="PaginationItem"
+  >
+    1
+  </span>
+  <span
+    className="PaginationItem notClickable"
+  >
+    …
+  </span>
+  <span
+    className="PaginationItem"
+  >
+    3
+  </span>
+  <span
+    className="PaginationItem"
+  >
+    4
+  </span>
+  <span
+    className="PaginationItem"
+  >
+    5
+  </span>
+  <span
+    className="PaginationItem"
+  >
+    6
+  </span>
+  <span
+    className="PaginationItem current"
+  >
+    7
+  </span>
+  <span
+    className="PaginationItem"
+  >
+    8
+  </span>
+  <span
+    className="PaginationItem"
+  >
+    9
+  </span>
+  <span
+    className="PaginationItem"
+  >
+    10
+  </span>
+  <span
+    className="PaginationItem"
+  >
+    11
+  </span>
+  <span
+    className="PaginationItem notClickable"
+  >
+    …
+  </span>
+  <span
+    className="PaginationItem"
+  >
+    14
+  </span>
+  <span
+    className="PaginationItem"
+  >
+    <svg />
+  </span>
+</div>
+`;
