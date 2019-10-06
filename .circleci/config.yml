@@ -63,7 +63,7 @@ jobs:
       - run:
           name: Run Tests
           command: |
-            yarn lint
+            yarn lint:ci
             yarn test:ci --max-workers=2
 
       - run:
