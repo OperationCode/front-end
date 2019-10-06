@@ -6,76 +6,91 @@ exports[`Storyshots Pagination default 1`] = `
 >
   <span
     className="PaginationItem"
+    data-testid="Pagination Item - [object Object]"
   >
     <svg />
   </span>
   <span
     className="PaginationItem"
+    data-testid="Pagination Item - 1"
   >
     1
   </span>
   <span
     className="PaginationItem notClickable"
+    data-testid="Pagination Item - …"
   >
     …
   </span>
   <span
     className="PaginationItem"
+    data-testid="Pagination Item - 3"
   >
     3
   </span>
   <span
     className="PaginationItem"
+    data-testid="Pagination Item - 4"
   >
     4
   </span>
   <span
     className="PaginationItem"
+    data-testid="Pagination Item - 5"
   >
     5
   </span>
   <span
     className="PaginationItem"
+    data-testid="Pagination Item - 6"
   >
     6
   </span>
   <span
     className="PaginationItem current"
+    data-testid="Pagination Item - 7"
   >
     7
   </span>
   <span
     className="PaginationItem"
+    data-testid="Pagination Item - 8"
   >
     8
   </span>
   <span
     className="PaginationItem"
+    data-testid="Pagination Item - 9"
   >
     9
   </span>
   <span
     className="PaginationItem"
+    data-testid="Pagination Item - 10"
   >
     10
   </span>
   <span
     className="PaginationItem"
+    data-testid="Pagination Item - 11"
   >
     11
   </span>
   <span
     className="PaginationItem notClickable"
+    data-testid="Pagination Item - …"
   >
     …
   </span>
   <span
     className="PaginationItem"
+    data-testid="Pagination Item - 14"
   >
     14
   </span>
   <span
     className="PaginationItem"
+    data-testid="Pagination Item - [object Object]"
   >
     <svg />
   </span>
