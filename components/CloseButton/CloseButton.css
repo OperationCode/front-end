@@ -5,6 +5,7 @@
   right: 1rem;
   border: none;
   margin: 0.5rem;
+  z-index: 1;
 }
 
 .CloseButton:disabled {

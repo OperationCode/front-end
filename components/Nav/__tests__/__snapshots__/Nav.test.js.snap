@@ -18,7 +18,6 @@ exports[`Nav should render with no props passed 1`] = `
         Object {
           "href": "/about",
           "name": "About Us",
-          "shouldPrefetch": true,
         },
         Object {
           "href": "/contact",
@@ -38,7 +37,6 @@ exports[`Nav should render with no props passed 1`] = `
         Object {
           "href": "/who_we_serve",
           "name": "Who We Serve",
-          "shouldPrefetch": true,
         },
         Object {
           "href": "/events",
@@ -48,7 +46,6 @@ exports[`Nav should render with no props passed 1`] = `
         Object {
           "href": "/get_involved",
           "name": "Get Involved",
-          "shouldPrefetch": true,
         },
         Object {
           "href": "/sponsorship",
@@ -90,7 +87,7 @@ exports[`Nav should render with no props passed 1`] = `
           <NavListItem
             href="/about"
             name="About Us"
-            shouldPrefetch={true}
+            shouldPrefetch={false}
             sublinks={
               Array [
                 Object {
@@ -114,7 +111,7 @@ exports[`Nav should render with no props passed 1`] = `
           <NavListItem
             href="/who_we_serve"
             name="Who We Serve"
-            shouldPrefetch={true}
+            shouldPrefetch={false}
             sublinks={
               Array [
                 Object {
@@ -137,7 +134,7 @@ exports[`Nav should render with no props passed 1`] = `
           <NavListItem
             href="/get_involved"
             name="Get Involved"
-            shouldPrefetch={true}
+            shouldPrefetch={false}
             sublinks={
               Array [
                 Object {
@@ -152,18 +149,14 @@ exports[`Nav should render with no props passed 1`] = `
             }
           />
           <li>
-            <Link
+            <a
+              className="link donateLink"
               href="https://secure.lglforms.com/form_engine/s/BRtP7QUKyHOyEYsZROsRew"
-              prefetch={false}
             >
-              <a
-                className="link donateLink"
-              >
-                <span>
-                  Donate
-                </span>
-              </a>
-            </Link>
+              <span>
+                Donate
+              </span>
+            </a>
           </li>
         </ul>
       </nav>

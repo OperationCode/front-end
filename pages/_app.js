@@ -1,5 +1,5 @@
 /* eslint-disable max-classes-per-file */
-import App, { Container } from 'next/app';
+import App from 'next/app';
 import Router from 'next/router';
 import FontFaceObserver from 'fontfaceobserver';
 import LogRocket from 'logrocket';
@@ -7,9 +7,13 @@ import ReactGA from 'react-ga';
 import ScrollUpButton from 'react-scroll-up-button';
 import setupLogRocketReact from 'logrocket-react';
 import * as Sentry from '@sentry/browser';
+import { clientTokens } from 'common/config/environment';
 import Nav from 'components/Nav/Nav';
 import Footer from 'components/Footer/Footer';
 import Modal from 'components/Modal/Modal';
+
+import Fingerprint2 from 'fingerprintjs2';
+import hash from 'object-hash';
 import { version } from '../package.json';
 import 'common/styles/globalStyles.css';
 
@@ -44,14 +48,23 @@ class Layout extends React.Component {
   }
 }
 
+// Same test used by EFF for identifying users
+// https://panopticlick.eff.org/
+const setLogRocketFingerprint = () => {
+  Fingerprint2.get(components => {
+    const fingerprint = hash(components);
+    LogRocket.identify(fingerprint);
+  });
+};
+
 class OperationCodeApp extends App {
   componentDidMount() {
     /* Analytics */
     // Temporary method until we do dynamic now configs
-    if (window.location.host.includes('operationcode.org') && isProduction) {
-      Sentry.init({ dsn: process.env.SENTRY_DSN, release: `front-end@${version}` });
-      LogRocket.init(`${process.env.LOGROCKET_KEY}/operation-code`);
-      ReactGA.initialize(process.env.GOOGLE_ANALYTICS_TRACKING_ID);
+    if (isProduction && window.location.host.includes('operationcode.org')) {
+      Sentry.init({ dsn: clientTokens.SENTRY_DSN, release: `front-end@${version}` });
+      LogRocket.init(`${clientTokens.LOGROCKET}/operation-code`);
+      ReactGA.initialize(clientTokens.GOOGLE_ANALYTICS);
 
       // Every crash report will have a LogRocket session URL.
       LogRocket.getSessionURL(sessionURL => {
@@ -61,6 +74,13 @@ class OperationCodeApp extends App {
       });
 
       setupLogRocketReact(LogRocket);
+
+      // Per library docs, Fingerprint2 should not run immediately
+      if (window.requestIdleCallback) {
+        requestIdleCallback(setLogRocketFingerprint);
+      } else {
+        setTimeout(setLogRocketFingerprint, 500);
+      }
 
       ReactGA.set({ page: window.location.pathname });
     }
@@ -113,11 +133,9 @@ class OperationCodeApp extends App {
     const { Component, pageProps } = this.props;
 
     return (
-      <Container>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </Container>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     );
   }
 }

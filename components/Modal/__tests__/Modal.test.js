@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow } from 'enzyme'; // eslint-disable-line no-restricted-imports
 import ReactGA from 'react-ga';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 
@@ -32,7 +32,6 @@ describe('Modal', () => {
     ReactGA.initialize('foo', { testMode: true });
 
     process.env.NODE_ENV = 'production';
-    process.env.GOOGLE_ANALYTICS_KEY = 'debug';
 
     const props = {
       onRequestClose: () => {},

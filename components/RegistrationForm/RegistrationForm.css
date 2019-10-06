@@ -11,3 +11,7 @@
 .topMargin {
   margin-top: 1rem;
 }
+
+.RegistrationForm > p {
+  margin: 1.25rem auto;
+}

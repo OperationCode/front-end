@@ -39,7 +39,8 @@ export default class SchoolCard extends Component {
     hasHousing: bool,
     hasOnline: bool.isRequired,
     hasOnlyOnline: bool.isRequired,
-    isFullTime: bool.isRequired,
+    // isFullTime: bool.isRequired,
+    isVetTecApproved: bool,
     locations: arrayOf(
       shape({
         city: string,
@@ -55,6 +56,7 @@ export default class SchoolCard extends Component {
 
   static defaultProps = {
     hasHousing: false,
+    isVetTecApproved: false,
   };
 
   toggleModalClick = () => {
@@ -64,8 +66,9 @@ export default class SchoolCard extends Component {
 
   render() {
     const { props } = this;
-
     const hasGiBill = props.locations.some(location => location.vaAccepted);
+    const hasVetTec = props.isVetTecApproved;
+
     const badgeClassNames = isActive =>
       classNames(styles.badgeGroupItem, { [styles.active]: isActive });
 
@@ -77,7 +80,19 @@ export default class SchoolCard extends Component {
         </ScreenReaderOnly>
 
         {hasGiBill && (
-          <div className={styles.giBillRibbon} data-testid="GI Bill Ribbon">
+          <div className={classNames(styles.ribbon, styles.gi)} data-testid="GI Bill Ribbon">
+            GI Bill
+          </div>
+        )}
+
+        {hasVetTec && (
+          <div className={classNames(styles.ribbon, styles.vettec)} data-testid="Vet Tec Ribbon">
+            Vet Tec
+          </div>
+        )}
+
+        {hasVetTec && hasGiBill && (
+          <div className={classNames(styles.ribbon, styles.dual)} data-testid="Dual Ribbon">
             GI Bill
           </div>
         )}
@@ -121,6 +136,11 @@ export default class SchoolCard extends Component {
         <div className={styles.cardBlock}>
           <span className={styles.cardBlockTitle}>Accepts GI Bill</span>
           {hasGiBill ? 'Yes' : 'No'}
+        </div>
+
+        <div className={styles.cardBlock}>
+          <span className={styles.cardBlockTitle}>VET TEC Approved</span>
+          {hasVetTec ? 'Yes' : 'No'}
         </div>
 
         <div className={styles.cardBlock}>

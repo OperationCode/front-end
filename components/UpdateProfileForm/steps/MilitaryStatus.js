@@ -37,8 +37,11 @@ class MilitaryStatus extends React.Component {
       <>
         <h3 className={styles.row}>Military Status</h3>
 
+        <p>
+          We welcome anyone to join Operation Code! Please note that many of our services are only
+          for veterans or spouses.
+        </p>
         <p>How do you classify yourself in regards to being part of the military?</p>
-
         <div className={styles.row}>
           <Field
             className={styles.fullWidth}

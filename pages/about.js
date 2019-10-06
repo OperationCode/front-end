@@ -33,7 +33,7 @@ export default () => (
             and their families. We work directly with Senators, Congressmen, and Congresswomen to
             allow veterans total control of their future by permitting the use of the GI Bill on
             coding bootcamps. We also have a page where you can read about our{' '}
-            <Link href="/history" prefetch>
+            <Link href="/history">
               <a>organization&apos;s history</a>
             </Link>
             .
@@ -116,8 +116,11 @@ export default () => (
         >
           <h6>Community Events</h6>
           <p>
-            Join one of our local meetup chapters throughout the country, and learn with fellow
-            members of the military community.
+            Join one of our{' '}
+            <Link href="/events">
+              <a>local meetup chapters</a>
+            </Link>{' '}
+            throughout the country, and learn with fellow members of the military community.
           </p>
         </ImageCard>,
         <ImageCard
@@ -127,8 +130,11 @@ export default () => (
         >
           <h6>Podcast</h6>
           <p>
-            We have a podcast! You can listen into the amazing stories of our members. Visualize
-            your success through others&apos; footsteps.
+            <Link href="/podcast">
+              <a>We have a podcast!</a>
+            </Link>{' '}
+            You can listen into the amazing stories of our members. Visualize your success through
+            others&apos; footsteps.
           </p>
         </ImageCard>,
       ]}

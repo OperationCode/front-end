@@ -3,7 +3,7 @@ import get from 'lodash/get';
 import Router from 'next/router';
 import { getServerErrorMessage } from 'common/utils/api-utils';
 import { array, objectOf, oneOfType, string, number, bool } from 'prop-types';
-import { insertIf } from 'common/utils/array-utils';
+import { insertIf } from '@innocuous/functions';
 import MultiStepForm from 'components/Form/MultiStepForm';
 import { ProfessionalDetails, MilitaryStatus, MilitaryDetails, Technology } from './steps';
 
