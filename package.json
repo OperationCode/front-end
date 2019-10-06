@@ -125,7 +125,7 @@
     "babel-eslint": "^10.0.3",
     "babel-jest": "^24.9.0",
     "cross-env": "^6.0.3",
-    "cypress": "3.2.0",
+    "cypress": "3.4.1",
     "cypress-image-snapshot": "^3.1.1",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
