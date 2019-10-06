@@ -32,14 +32,14 @@ class Heading extends Component {
     const HeadingElement = `h${props.headingLevel}`;
 
     return (
-      <div className={`${styles.headingContainer}`}>
+      <div className={styles.headingContainer}>
         {props.hasHashLink && (
           <>
             <span
               id={anchorId}
               className={classNames(styles.anchorSpan, styles[props.customAnchorClass])}
             />
-            <div className={`${styles.hashLinkContainer}`}>
+            <div className={styles.hashLinkContainer}>
               <HeadingElement
                 className={classNames(
                   props.className,
@@ -47,13 +47,13 @@ class Heading extends Component {
                   styles.Heading,
                 )}
               >
-                <div className={`${styles.hashLink}`}>
+                <div className={styles.hashLink}>
                   <a id={`${anchorId}-link`} href={`#${anchorId}`} data-testid="Hash Link">
                     <ScreenReaderOnly>Scroll Link for {props.text}</ScreenReaderOnly>
                     <LinkIcon className={styles.icon} />
                   </a>
                   {props.hasTitleUnderline ? (
-                    <span className={`${styles.underline}`}>{props.text}</span>
+                    <span className={styles.underline}>{props.text}</span>
                   ) : (
                     <span>{props.text}</span>
                   )}
