@@ -1,3 +1,4 @@
+/* eslint-disable react/sort-comp */
 import React from 'react';
 import { any, object } from 'prop-types';
 import MockedRouter from './nextRouterMock';
