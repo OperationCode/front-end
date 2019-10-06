@@ -16,46 +16,47 @@ Pagination.defaultProps = {
   className: undefined,
 };
 
+// eslint-disable-next-line react/prop-types
+const PaginationItems = ({ currentPage, totalPages }) => {
+  const shouldTruncateStart = currentPage - 1 > 5;
+  const shouldTruncateEnd = totalPages - currentPage > 5;
+
+  const paginationStart = shouldTruncateStart ? currentPage - 4 : 1;
+  const paginationEnd = shouldTruncateEnd ? currentPage + 4 : totalPages;
+
+  const paginationLength = paginationEnd - paginationStart + 1;
+
+  const PaginationItemArray = [...Array(paginationLength)].map((_, index) => {
+    const page = index + paginationStart;
+    const isCurrent = page === currentPage;
+
+    return <PaginationItem key={page} value={`${page}`} isCurrent={isCurrent} />;
+  });
+
+  return (
+    <>
+      {shouldTruncateStart && (
+        <>
+          <PaginationItem key="1" value="1" />
+          <PaginationItem key="seperatorStart" value="&hellip;" isClickable={false} />
+        </>
+      )}
+      {PaginationItemArray}
+      {shouldTruncateEnd && (
+        <>
+          <PaginationItem key="seperatorEnd" value="&hellip;" isClickable={false} />
+          <PaginationItem key={totalPages} value={`${totalPages}`} />
+        </>
+      )}
+    </>
+  );
+};
+
 function Pagination({ className, currentPage, totalPages }) {
-  const PaginationItems = () => {
-    const shouldTruncateStart = currentPage - 1 > 5;
-    const shouldTruncateEnd = totalPages - currentPage > 5;
-
-    const paginationStart = shouldTruncateStart ? currentPage - 4 : 1;
-    const paginationEnd = shouldTruncateEnd ? currentPage + 4 : totalPages;
-
-    const paginationLength = paginationEnd - paginationStart + 1;
-
-    const PaginationItemArray = [...Array(paginationLength)].map((_, index) => {
-      const page = index + paginationStart;
-      const isCurrent = page === currentPage;
-
-      return <PaginationItem key={page} value={page} isCurrent={isCurrent} />;
-    });
-
-    return (
-      <>
-        {shouldTruncateStart && (
-          <>
-            <PaginationItem key="1" value="1" />
-            <PaginationItem key="seperatorStart" value="&hellip;" isClickable={false} />
-          </>
-        )}
-        {PaginationItemArray}
-        {shouldTruncateEnd && (
-          <>
-            <PaginationItem key="seperatorEnd" value="&hellip;" isClickable={false} />
-            <PaginationItem key={totalPages} value={totalPages} />
-          </>
-        )}
-      </>
-    );
-  };
-
   return (
     <div className={classNames(styles.Pagination, className)}>
       <PaginationItem key="leftAngle" value={<LeftAngleIcon />} />
-      <PaginationItems />
+      <PaginationItems currentPage={currentPage} totalPages={totalPages} />
       <PaginationItem key="rightAngle" value={<RightAngleIcon />} />
     </div>
   );
