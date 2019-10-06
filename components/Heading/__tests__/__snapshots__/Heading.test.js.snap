@@ -25,7 +25,8 @@ exports[`Heading should render with many props assigned 1`] = `
           <span
             className="ScreenReaderOnly"
           >
-            Scroll Link
+            Scroll Link for 
+            Test
           </span>
           <svg
             className="icon"
@@ -65,7 +66,8 @@ exports[`Heading should render with required props 1`] = `
           <span
             className="ScreenReaderOnly"
           >
-            Scroll Link
+            Scroll Link for 
+            Test
           </span>
           <svg
             className="icon"

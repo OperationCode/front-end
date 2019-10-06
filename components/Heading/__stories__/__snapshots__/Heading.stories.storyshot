@@ -25,7 +25,8 @@ exports[`Storyshots Heading default 1`] = `
           <span
             className="ScreenReaderOnly"
           >
-            Scroll Link
+            Scroll Link for 
+            Test Heading
           </span>
           <svg
             className="icon"

@@ -32,7 +32,8 @@ exports[`JoinSection should render when not logged in 1`] = `
               <span
                 className="ScreenReaderOnly"
               >
-                Scroll Link
+                Scroll Link for 
+                Join Our Thriving Community
               </span>
               <svg
                 className="icon"

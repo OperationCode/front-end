@@ -36,7 +36,8 @@ exports[`Storyshots ReusableSections DonateSection 1`] = `
               <span
                 className="ScreenReaderOnly"
               >
-                Scroll Link
+                Scroll Link for 
+                Donate
               </span>
               <svg
                 className="icon"
@@ -101,7 +102,8 @@ exports[`Storyshots ReusableSections JoinSection 1`] = `
               <span
                 className="ScreenReaderOnly"
               >
-                Scroll Link
+                Scroll Link for 
+                Join Our Thriving Community
               </span>
               <svg
                 className="icon"
@@ -181,7 +183,8 @@ exports[`Storyshots ReusableSections SponsorsSection 1`] = `
               <span
                 className="ScreenReaderOnly"
               >
-                Scroll Link
+                Scroll Link for 
+                Sponsors
               </span>
               <svg
                 className="icon"

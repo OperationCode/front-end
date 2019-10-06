@@ -32,7 +32,8 @@ exports[`Content should render with many props assigned 1`] = `
               <span
                 className="ScreenReaderOnly"
               >
-                Scroll Link
+                Scroll Link for 
+                Testing!
               </span>
               <svg
                 className="icon"
