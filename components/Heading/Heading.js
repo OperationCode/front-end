@@ -54,7 +54,7 @@ class Heading extends Component {
               >
                 <div className={`${styles.hashLink}`}>
                   <a id={`${anchorId}-link`} href={`#${anchorId}`} data-testid="Hash Link">
-                    <ScreenReaderOnly>Scroll Link</ScreenReaderOnly>
+                    <ScreenReaderOnly>Scroll Link for {props.text}</ScreenReaderOnly>
                     <LinkIcon className={styles.icon} />
                   </a>
                   {props.hasTitleUnderline ? (
