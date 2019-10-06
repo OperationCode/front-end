@@ -1,98 +1,100 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Pagination default 1`] = `
-<div
+<nav
   className="Pagination"
 >
-  <span
-    className="PaginationItem"
-    data-testid="Pagination Item - [object Object]"
-  >
-    <svg />
-  </span>
-  <span
-    className="PaginationItem"
-    data-testid="Pagination Item - 1"
-  >
-    1
-  </span>
-  <span
-    className="PaginationItem notClickable"
-    data-testid="Pagination Item - …"
-  >
-    …
-  </span>
-  <span
-    className="PaginationItem"
-    data-testid="Pagination Item - 3"
-  >
-    3
-  </span>
-  <span
-    className="PaginationItem"
-    data-testid="Pagination Item - 4"
-  >
-    4
-  </span>
-  <span
-    className="PaginationItem"
-    data-testid="Pagination Item - 5"
-  >
-    5
-  </span>
-  <span
-    className="PaginationItem"
-    data-testid="Pagination Item - 6"
-  >
-    6
-  </span>
-  <span
-    className="PaginationItem current"
-    data-testid="Pagination Item - 7"
-  >
-    7
-  </span>
-  <span
-    className="PaginationItem"
-    data-testid="Pagination Item - 8"
-  >
-    8
-  </span>
-  <span
-    className="PaginationItem"
-    data-testid="Pagination Item - 9"
-  >
-    9
-  </span>
-  <span
-    className="PaginationItem"
-    data-testid="Pagination Item - 10"
-  >
-    10
-  </span>
-  <span
-    className="PaginationItem"
-    data-testid="Pagination Item - 11"
-  >
-    11
-  </span>
-  <span
-    className="PaginationItem notClickable"
-    data-testid="Pagination Item - …"
-  >
-    …
-  </span>
-  <span
-    className="PaginationItem"
-    data-testid="Pagination Item - 14"
-  >
-    14
-  </span>
-  <span
-    className="PaginationItem"
-    data-testid="Pagination Item - [object Object]"
-  >
-    <svg />
-  </span>
-</div>
+  <ol>
+    <li
+      className="PaginationItem"
+      data-testid="Pagination Item - [object Object]"
+    >
+      <svg />
+    </li>
+    <li
+      className="PaginationItem"
+      data-testid="Pagination Item - 1"
+    >
+      1
+    </li>
+    <li
+      className="PaginationItem notClickable"
+      data-testid="Pagination Item - …"
+    >
+      …
+    </li>
+    <li
+      className="PaginationItem"
+      data-testid="Pagination Item - 3"
+    >
+      3
+    </li>
+    <li
+      className="PaginationItem"
+      data-testid="Pagination Item - 4"
+    >
+      4
+    </li>
+    <li
+      className="PaginationItem"
+      data-testid="Pagination Item - 5"
+    >
+      5
+    </li>
+    <li
+      className="PaginationItem"
+      data-testid="Pagination Item - 6"
+    >
+      6
+    </li>
+    <li
+      className="PaginationItem current"
+      data-testid="Pagination Item - 7"
+    >
+      7
+    </li>
+    <li
+      className="PaginationItem"
+      data-testid="Pagination Item - 8"
+    >
+      8
+    </li>
+    <li
+      className="PaginationItem"
+      data-testid="Pagination Item - 9"
+    >
+      9
+    </li>
+    <li
+      className="PaginationItem"
+      data-testid="Pagination Item - 10"
+    >
+      10
+    </li>
+    <li
+      className="PaginationItem"
+      data-testid="Pagination Item - 11"
+    >
+      11
+    </li>
+    <li
+      className="PaginationItem notClickable"
+      data-testid="Pagination Item - …"
+    >
+      …
+    </li>
+    <li
+      className="PaginationItem"
+      data-testid="Pagination Item - 14"
+    >
+      14
+    </li>
+    <li
+      className="PaginationItem"
+      data-testid="Pagination Item - [object Object]"
+    >
+      <svg />
+    </li>
+  </ol>
+</nav>
 `;
