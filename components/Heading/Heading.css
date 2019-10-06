@@ -1,5 +1,6 @@
 .Heading {
   text-transform: uppercase;
+  text-align: center;
   margin: 1rem 0;
 }
 
@@ -14,8 +15,6 @@
 
 .headingOurMission {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
   text-align: center;
   text-transform: uppercase;
   width: 85%;
@@ -30,6 +29,11 @@
   background-color: var(--primary);
   align-self: center;
   margin: 0 10px 5px 10px;
+}
+
+.underline {
+  border-bottom: 4px solid var(--primary);
+  margin-bottom: 1rem;
 }
 
 .secondary {
@@ -56,7 +60,7 @@
   width: 18px;
   line-height: 2.25;
   height: 2rem;
-  margin: 1rem 0.5rem;
+  margin: -0.2rem 0.5rem;
   outline: none;
 }
 
@@ -68,17 +72,17 @@
   fill: var(--white);
 }
 
-.hashLinkContainer {
-  display: flex;
-  justify-content: center;
-}
-
-.hashLinkContainer > a {
+.hashLink > a {
   visibility: hidden;
 }
 
-.hashLinkContainer:hover a {
+.hashLink:hover a {
   visibility: visible;
+}
+
+.hashLinkContainer {
+  display: flex;
+  justify-content: center;
 }
 
 .anchorSpan {

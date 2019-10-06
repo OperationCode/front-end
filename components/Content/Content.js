@@ -1,6 +1,5 @@
 import React from 'react';
 import { array, bool, oneOf, string } from 'prop-types';
-import classNames from 'classnames';
 import Container from 'components/Container/Container';
 import Heading from 'components/Heading/Heading';
 import styles from './Content.css';
@@ -43,9 +42,7 @@ function Content({
       {title && (
         <Heading
           text={title}
-          className={classNames(styles.title, {
-            [styles.underline]: hasTitleUnderline,
-          })}
+          hasTitleUnderline={hasTitleUnderline}
           theme={theme}
           headingLevel={3}
         />

@@ -11,23 +11,30 @@ exports[`Heading should render with many props assigned 1`] = `
   <div
     className="hashLinkContainer"
   >
-    <a
-      data-testid="Hash Link"
-      href="#test"
-    >
-      <span
-        className="ScreenReaderOnly"
-      >
-        Scroll Link
-      </span>
-      <svg
-        className="icon"
-      />
-    </a>
     <h2
       className="secondary test-class headingTextWithLinkIconOffset Heading"
     >
-      Test
+      <div
+        className="hashLink"
+      >
+        <a
+          data-testid="Hash Link"
+          href="#test"
+          id="test-link"
+        >
+          <span
+            className="ScreenReaderOnly"
+          >
+            Scroll Link
+          </span>
+          <svg
+            className="icon"
+          />
+        </a>
+        <span>
+          Test
+        </span>
+      </div>
     </h2>
   </div>
 </div>
@@ -44,23 +51,30 @@ exports[`Heading should render with required props 1`] = `
   <div
     className="hashLinkContainer"
   >
-    <a
-      data-testid="Hash Link"
-      href="#test"
-    >
-      <span
-        className="ScreenReaderOnly"
-      >
-        Scroll Link
-      </span>
-      <svg
-        className="icon"
-      />
-    </a>
     <h2
       className="secondary headingTextWithLinkIconOffset Heading"
     >
-      Test
+      <div
+        className="hashLink"
+      >
+        <a
+          data-testid="Hash Link"
+          href="#test"
+          id="test-link"
+        >
+          <span
+            className="ScreenReaderOnly"
+          >
+            Scroll Link
+          </span>
+          <svg
+            className="icon"
+          />
+        </a>
+        <span>
+          Test
+        </span>
+      </div>
     </h2>
   </div>
 </div>

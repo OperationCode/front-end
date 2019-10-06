@@ -17,23 +17,32 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
       <div
         className="hashLinkContainer"
       >
-        <a
-          data-testid="Hash Link"
-          href="#sponsors"
-        >
-          <span
-            className="ScreenReaderOnly"
-          >
-            Scroll Link
-          </span>
-          <svg
-            className="icon"
-          />
-        </a>
         <h3
-          className="gray title underline headingTextWithLinkIconOffset Heading"
+          className="gray headingTextWithLinkIconOffset Heading"
         >
-          Sponsors
+          <div
+            className="hashLink"
+          >
+            <a
+              data-testid="Hash Link"
+              href="#sponsors"
+              id="sponsors-link"
+            >
+              <span
+                className="ScreenReaderOnly"
+              >
+                Scroll Link
+              </span>
+              <svg
+                className="icon"
+              />
+            </a>
+            <span
+              className="underline"
+            >
+              Sponsors
+            </span>
+          </div>
         </h3>
       </div>
     </div>
@@ -370,23 +379,32 @@ exports[`SponsorsSection should render with required props 1`] = `
       <div
         className="hashLinkContainer"
       >
-        <a
-          data-testid="Hash Link"
-          href="#sponsors"
-        >
-          <span
-            className="ScreenReaderOnly"
-          >
-            Scroll Link
-          </span>
-          <svg
-            className="icon"
-          />
-        </a>
         <h3
-          className="gray title underline headingTextWithLinkIconOffset Heading"
+          className="gray headingTextWithLinkIconOffset Heading"
         >
-          Sponsors
+          <div
+            className="hashLink"
+          >
+            <a
+              data-testid="Hash Link"
+              href="#sponsors"
+              id="sponsors-link"
+            >
+              <span
+                className="ScreenReaderOnly"
+              >
+                Scroll Link
+              </span>
+              <svg
+                className="icon"
+              />
+            </a>
+            <span
+              className="underline"
+            >
+              Sponsors
+            </span>
+          </div>
         </h3>
       </div>
     </div>

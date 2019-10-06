@@ -18,23 +18,32 @@ exports[`Content should render with many props assigned 1`] = `
       <div
         className="hashLinkContainer"
       >
-        <a
-          data-testid="Hash Link"
-          href="#testing"
-        >
-          <span
-            className="ScreenReaderOnly"
-          >
-            Scroll Link
-          </span>
-          <svg
-            className="icon"
-          />
-        </a>
         <h3
-          className="secondary title underline headingTextWithLinkIconOffset Heading"
+          className="secondary headingTextWithLinkIconOffset Heading"
         >
-          Testing!
+          <div
+            className="hashLink"
+          >
+            <a
+              data-testid="Hash Link"
+              href="#testing"
+              id="testing-link"
+            >
+              <span
+                className="ScreenReaderOnly"
+              >
+                Scroll Link
+              </span>
+              <svg
+                className="icon"
+              />
+            </a>
+            <span
+              className="underline"
+            >
+              Testing!
+            </span>
+          </div>
         </h3>
       </div>
     </div>

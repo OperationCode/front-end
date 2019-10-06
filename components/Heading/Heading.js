@@ -12,6 +12,7 @@ class Heading extends Component {
     id: oneOfType([string, number]), // reference for scroll anchors
     customAnchorClass: string,
     text: string.isRequired,
+    hasTitleUnderline: bool,
     hasHeadingLines: bool,
     hasHashLink: bool,
     headingLevel: number,
@@ -22,6 +23,7 @@ class Heading extends Component {
     className: undefined,
     id: '',
     customAnchorClass: 'anchorMargin',
+    hasTitleUnderline: false,
     hasHeadingLines: false,
     hasHashLink: true,
     headingLevel: 2,
@@ -42,10 +44,6 @@ class Heading extends Component {
               className={classNames(styles.anchorSpan, styles[props.customAnchorClass])}
             />
             <div className={`${styles.hashLinkContainer}`}>
-              <a href={`#${anchorId}`} data-testid="Hash Link">
-                <ScreenReaderOnly>Scroll Link</ScreenReaderOnly>
-                <LinkIcon className={styles.icon} />
-              </a>
               <HeadingElement
                 className={classNames(
                   styles[props.theme],
@@ -54,7 +52,17 @@ class Heading extends Component {
                   styles.Heading,
                 )}
               >
-                {props.text}
+                <div className={`${styles.hashLink}`}>
+                  <a id={`${anchorId}-link`} href={`#${anchorId}`} data-testid="Hash Link">
+                    <ScreenReaderOnly>Scroll Link</ScreenReaderOnly>
+                    <LinkIcon className={styles.icon} />
+                  </a>
+                  {props.hasTitleUnderline ? (
+                    <span className={`${styles.underline}`}>{props.text}</span>
+                  ) : (
+                    <span>{props.text}</span>
+                  )}
+                </div>
               </HeadingElement>
             </div>
           </>

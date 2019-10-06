@@ -28,9 +28,7 @@ const verifyHashLink = path => {
   cy.get('[data-testid="Hash Link"]').each(link => {
     const { hash } = link[0];
 
-    cy.get(hash)
-      .siblings('div')
-      .children('a')
+    cy.get(`${hash}-link`)
       .scrollIntoView()
       .click({ force: true })
       .url()

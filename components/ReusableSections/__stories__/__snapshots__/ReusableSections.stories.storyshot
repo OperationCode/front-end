@@ -22,23 +22,30 @@ exports[`Storyshots ReusableSections DonateSection 1`] = `
       <div
         className="hashLinkContainer"
       >
-        <a
-          data-testid="Hash Link"
-          href="#donate"
-        >
-          <span
-            className="ScreenReaderOnly"
-          >
-            Scroll Link
-          </span>
-          <svg
-            className="icon"
-          />
-        </a>
         <h3
           className="transparentWhite headingTextWithLinkIconOffset Heading"
         >
-          Donate
+          <div
+            className="hashLink"
+          >
+            <a
+              data-testid="Hash Link"
+              href="#donate"
+              id="donate-link"
+            >
+              <span
+                className="ScreenReaderOnly"
+              >
+                Scroll Link
+              </span>
+              <svg
+                className="icon"
+              />
+            </a>
+            <span>
+              Donate
+            </span>
+          </div>
         </h3>
       </div>
     </div>
@@ -80,23 +87,30 @@ exports[`Storyshots ReusableSections JoinSection 1`] = `
       <div
         className="hashLinkContainer"
       >
-        <a
-          data-testid="Hash Link"
-          href="#join-our-thriving-community"
-        >
-          <span
-            className="ScreenReaderOnly"
-          >
-            Scroll Link
-          </span>
-          <svg
-            className="icon"
-          />
-        </a>
         <h3
           className="white headingTextWithLinkIconOffset Heading"
         >
-          Join Our Thriving Community
+          <div
+            className="hashLink"
+          >
+            <a
+              data-testid="Hash Link"
+              href="#join-our-thriving-community"
+              id="join-our-thriving-community-link"
+            >
+              <span
+                className="ScreenReaderOnly"
+              >
+                Scroll Link
+              </span>
+              <svg
+                className="icon"
+              />
+            </a>
+            <span>
+              Join Our Thriving Community
+            </span>
+          </div>
         </h3>
       </div>
     </div>
@@ -153,23 +167,32 @@ exports[`Storyshots ReusableSections SponsorsSection 1`] = `
       <div
         className="hashLinkContainer"
       >
-        <a
-          data-testid="Hash Link"
-          href="#sponsors"
-        >
-          <span
-            className="ScreenReaderOnly"
-          >
-            Scroll Link
-          </span>
-          <svg
-            className="icon"
-          />
-        </a>
         <h3
-          className="gray title underline headingTextWithLinkIconOffset Heading"
+          className="gray headingTextWithLinkIconOffset Heading"
         >
-          Sponsors
+          <div
+            className="hashLink"
+          >
+            <a
+              data-testid="Hash Link"
+              href="#sponsors"
+              id="sponsors-link"
+            >
+              <span
+                className="ScreenReaderOnly"
+              >
+                Scroll Link
+              </span>
+              <svg
+                className="icon"
+              />
+            </a>
+            <span
+              className="underline"
+            >
+              Sponsors
+            </span>
+          </div>
         </h3>
       </div>
     </div>
