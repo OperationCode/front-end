@@ -11,6 +11,7 @@
 //
 // -- This is a parent command --
 // Cypress.Commands.add("login", (email, password) => { ... })
+import '@testing-library/cypress/add-commands';
 import { addMatchImageSnapshotCommand } from 'cypress-image-snapshot/command';
 import existingUser from '../../test-utils/mocks/existingUser';
 import { apiUrl } from '../../common/config/environment';
@@ -18,8 +19,8 @@ import { userInfoCookieNames } from '../../common/utils/cookie-utils';
 
 Cypress.Commands.add('visitAndWaitFor', path => {
   cy.visit(path);
-  cy.dataTestId('Desktop Nav').should('exist');
-  cy.dataTestId('Desktop Nav').should('be.visible');
+  cy.findByTestId('Desktop Nav').should('exist');
+  cy.findByTestId('Desktop Nav').should('be.visible');
   cy.url().should('contain', path);
 });
 
@@ -50,13 +51,6 @@ Cypress.Commands.add('setResolution', size => {
   } else {
     cy.viewport(size);
   }
-});
-
-// ***********************************************
-// Find an element by its "data-testid" attribute
-// ***********************************************
-Cypress.Commands.add('dataTestId', id => {
-  return cy.get(`[data-testid="${id}"]`);
 });
 
 //
