@@ -53,7 +53,7 @@ Cypress.Commands.add('setResolution', size => {
 });
 
 // ***********************************************
-// Find an element by its "data-testod" attribute
+// Find an element by its "data-testid" attribute
 // ***********************************************
 Cypress.Commands.add('dataTestId', id => {
   return cy.get(`[data-testid="${id}"]`);
