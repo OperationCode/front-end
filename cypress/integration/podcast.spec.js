@@ -7,7 +7,7 @@ describe('podcast', () => {
     });
 
     it('renders many podcast cards', () => {
-      cy.get('[data-testid="Podcast Card"]').should('have.length.greaterThan', 0);
+      cy.dataTestId('Podcast Card').should('have.length.greaterThan', 0);
     });
   });
 

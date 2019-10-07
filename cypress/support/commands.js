@@ -18,8 +18,8 @@ import { userInfoCookieNames } from '../../common/utils/cookie-utils';
 
 Cypress.Commands.add('visitAndWaitFor', path => {
   cy.visit(path);
-  cy.get('[data-testid="Desktop Nav"]').should('exist');
-  cy.get('[data-testid="Desktop Nav"]').should('be.visible');
+  cy.dataTestId('Desktop Nav').should('exist');
+  cy.dataTestId('Desktop Nav').should('be.visible');
   cy.url().should('contain', path);
 });
 
