@@ -52,6 +52,13 @@ Cypress.Commands.add('setResolution', size => {
   }
 });
 
+// ***********************************************
+// Find an element by its "data-testod" attribute
+// ***********************************************
+Cypress.Commands.add('dataTestId', id => {
+  return cy.get(`[data-testid="${id}"]`);
+});
+
 //
 // -- This is a child command --
 // Cypress.Commands.add("drag", { prevSubject: 'element'}, (subject, options) => { ... })
