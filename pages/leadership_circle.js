@@ -59,7 +59,7 @@ export default () => (
     />
 
     <Content
-      title="Operation Code Honor Roll"
+      title="Operation Code Leadership Circle"
       theme="gray"
       columns={leadershipCircleLevels.map(level => {
         const { donationRange, members } = leadershipCircleMembers[level];
