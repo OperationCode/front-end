@@ -4,10 +4,10 @@ import Content from 'components/Content/Content';
 import LinkButton from 'components/LinkButton/LinkButton';
 import Card from 'components/Cards/Card/Card';
 import { leadershipCircleLink } from 'common/constants/urls';
-import { honorRoll } from 'common/constants/honorRoll';
+import { leadershipCircleMembers } from 'common/constants/leadershipCircleMembers';
 import styles from './styles/leadership_circle.css';
 
-const honorRollLevels = Object.keys(honorRoll);
+const leadershipCircleLevels = Object.keys(leadershipCircleMembers);
 
 export default () => (
   <>
@@ -61,17 +61,16 @@ export default () => (
     <Content
       title="Operation Code Honor Roll"
       theme="gray"
-      columns={honorRollLevels.map(level => {
-        const { donationRange, members } = honorRoll[level];
+      columns={leadershipCircleLevels.map(level => {
+        const { donationRange, members } = leadershipCircleMembers[level];
 
         return (
-          <Card className={styles.honorRollCard} key={level}>
+          <Card className={styles.leadershipCircleMembersCard} key={level}>
             <h5>
               {level} (contributed {donationRange})
             </h5>
 
-            <span className={styles.honorRollListHeader}>Members:</span>
-            <ul className={styles.honorRollList}>
+            <ul className={styles.leadershipCircleMembersList}>
               {members.map(name => (
                 <li key={name}>{name}</li>
               ))}
@@ -86,8 +85,8 @@ export default () => (
       theme="white"
       columns={[
         <div>
-          {honorRollLevels.map(level => {
-            const { benefits } = honorRoll[level];
+          {leadershipCircleLevels.map(level => {
+            const { benefits } = leadershipCircleMembers[level];
 
             return (
               <article key={level}>
