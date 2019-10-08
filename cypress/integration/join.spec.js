@@ -38,8 +38,8 @@ describe('join', () => {
       expect(cookies.some(({ value }) => value === newUser.zipcode)).to.be.true;
     });
 
-    cy.get('[data-testid="Nav Item Login"]').should('not.exist');
-    cy.get('[data-testid="Nav Item Logout"]').should('exist');
+    cy.findByTestId('Nav Item Login').should('not.exist');
+    cy.findByTestId('Nav Item Logout').should('exist');
   });
 
   it('should NOT be able to register with an existing email', () => {
