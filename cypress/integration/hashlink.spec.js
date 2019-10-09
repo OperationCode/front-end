@@ -1,37 +1,29 @@
-describe('pagesWithHashLink', () => {
-  const paths = [
-    { pathName: 'index', pathValue: '/' },
-    { pathName: 'about', pathValue: '/about' },
-    { pathName: 'faq', pathValue: '/faq' },
-    { pathName: 'podcast', pathValue: '/podcast' },
-    { pathName: 'who_we_serve', pathValue: '/who_we_serve' },
-    { pathName: 'events', pathValue: '/events' },
-    { pathName: 'get_involved', pathValue: '/get_involved' },
-    { pathName: 'sponsorship', pathValue: '/sponsorship' },
-    { pathName: 'leadership_circle', pathValue: '/leadership_circle' },
-    { pathName: 'code_schools', pathValue: '/code_schools' },
-    { pathName: 'jobs', pathValue: '/jobs' },
-    { pathName: 'press', pathValue: '/press' },
-    { pathName: 'branding', pathValue: '/branding' },
-    { pathName: 'team', pathValue: '/team' },
+describe('Hash Links', () => {
+  const verifyHashLink = path => {
+    cy.visitAndWaitFor(path);
+
+    cy.findAllByTestId('Hash Link').each(link => {
+      const { hash } = link[0];
+
+      cy.get(hash)
+        .scrollIntoView()
+        .click({ force: true })
+        .url()
+        .should('include', hash);
+    });
+  };
+
+  const someRandomPagesWithHashLinks = [
+    { title: 'Home', path: '/' },
+    { title: 'About', path: '/about' },
+    { title: 'Who We Serve', path: '/who_we_serve' },
   ];
 
-  paths.forEach(path => {
-    it(`checks hashlinks on ${path.pathName} page`, () => {
-      verifyHashLink(path.pathValue);
+  someRandomPagesWithHashLinks.forEach(({ title, path }) => {
+    describe(`on ${title} page`, () => {
+      it(`will change route when clicked`, () => {
+        verifyHashLink(path);
+      });
     });
   });
 });
-
-const verifyHashLink = path => {
-  cy.visitAndWaitFor(path);
-  cy.get('[data-testid="Hash Link"]').each(link => {
-    const { hash } = link[0];
-
-    cy.get(`${hash}-link`)
-      .scrollIntoView()
-      .click({ force: true })
-      .url()
-      .should('include', hash);
-  });
-};
