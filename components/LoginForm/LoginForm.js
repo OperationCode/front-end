@@ -49,9 +49,10 @@ class LoginForm extends Component {
 
     try {
       const { user, token } = await login(values);
+
+      await onSuccess({ token, user });
       actions.setSubmitting(false);
       actions.resetForm();
-      await onSuccess({ user, token });
     } catch (error) {
       actions.setSubmitting(false);
 

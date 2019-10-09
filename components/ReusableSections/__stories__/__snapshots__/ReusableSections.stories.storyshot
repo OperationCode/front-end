@@ -12,9 +12,34 @@ exports[`Storyshots ReusableSections DonateSection 1`] = `
   <div
     className="content"
   >
-    <h3>
-      Donate
-    </h3>
+    <div
+      className="headingContainer"
+    >
+      <h3
+        className="Heading"
+      >
+        <div
+          className="hashLinkContainer"
+        >
+          <a
+            data-testid="Hash Link"
+            href="#donate-link"
+            id="donate-link"
+          >
+            <span
+              className="ScreenReaderOnly"
+            >
+              Scroll Link for 
+              Donate
+            </span>
+            <svg
+              className="icon"
+            />
+          </a>
+          Donate
+        </div>
+      </h3>
+    </div>
     <p
       className="justifyAlign"
     >
@@ -43,9 +68,34 @@ exports[`Storyshots ReusableSections JoinSection 1`] = `
   <div
     className="content"
   >
-    <h3>
-      Join Our Thriving Community
-    </h3>
+    <div
+      className="headingContainer"
+    >
+      <h3
+        className="Heading"
+      >
+        <div
+          className="hashLinkContainer"
+        >
+          <a
+            data-testid="Hash Link"
+            href="#join-our-thriving-community-link"
+            id="join-our-thriving-community-link"
+          >
+            <span
+              className="ScreenReaderOnly"
+            >
+              Scroll Link for 
+              Join Our Thriving Community
+            </span>
+            <svg
+              className="icon"
+            />
+          </a>
+          Join Our Thriving Community
+        </div>
+      </h3>
+    </div>
     <p
       className="justifyAlign"
     >
@@ -89,11 +139,34 @@ exports[`Storyshots ReusableSections SponsorsSection 1`] = `
   <div
     className="content"
   >
-    <h3
-      className="title underline"
+    <div
+      className="headingContainer"
     >
-      Sponsors
-    </h3>
+      <h3
+        className="Heading underline"
+      >
+        <div
+          className="hashLinkContainer"
+        >
+          <a
+            data-testid="Hash Link"
+            href="#sponsors-link"
+            id="sponsors-link"
+          >
+            <span
+              className="ScreenReaderOnly"
+            >
+              Scroll Link for 
+              Sponsors
+            </span>
+            <svg
+              className="icon"
+            />
+          </a>
+          Sponsors
+        </div>
+      </h3>
+    </div>
     <div
       className="columnsContainer"
     >

@@ -10,7 +10,7 @@ describe('code schools', () => {
 
     it('renders many code school cards', () => {
       // 40 is arbitrary, but it proves that the API is working and leading to rendered content
-      cy.get('[data-testid="SchoolCard"]').should('have.length.greaterThan', 30);
+      cy.findAllByTestId('SchoolCard').should('have.length.greaterThan', 30);
     });
 
     it('renders "Cincy Code IT Bootcamps" and "Tech Elevator" after filtering for Ohio', () => {
@@ -18,16 +18,16 @@ describe('code schools', () => {
         .type('Ohio', { force: true })
         .type('{enter}');
 
-      cy.get('[data-testid="SchoolCard Name: Cincy Code IT Bootcamps"]').should('exist');
-      cy.get('[data-testid="SchoolCard Name: Tech Elevator"]').should('exist');
+      cy.findByTestId('SchoolCard Name: Cincy Code IT Bootcamps').should('exist');
+      cy.findByTestId('SchoolCard Name: Tech Elevator').should('exist');
     });
 
     it('only renders relevant schools after clicking on "Schools Accepting GI Bill"', () => {
       cy.contains('Schools Accepting GI Bill').click();
 
-      cy.get('[data-testid="SchoolCard"]').each(card => {
+      cy.findAllByTestId('SchoolCard').each(card => {
         cy.wrap(card)
-          .find('[data-testid="GI Bill Ribbon"]')
+          .findAllByTestId('GI Bill Ribbon')
           .should('exist');
       });
     });
@@ -35,9 +35,9 @@ describe('code schools', () => {
     it('only renders code schools with an online option after clicking "Online Schools"', () => {
       cy.contains('Online Schools').click();
 
-      cy.get('[data-testid="SchoolCard"]').each(card => {
+      cy.findAllByTestId('SchoolCard').each(card => {
         cy.wrap(card)
-          .get('[data-testid="School has online"]')
+          .findAllByTestId('School has online')
           .should('exist');
       });
     });
@@ -47,7 +47,7 @@ describe('code schools', () => {
         .type('Alaska', { force: true })
         .type('{enter}');
 
-      cy.get('[data-testid="SchoolCard"]').should('have.length', 0);
+      cy.findByTestId('SchoolCard').should('have.length', 0);
     });
 
     it('renders no school cards after filtering for Alaska then all after selecting all', () => {
@@ -55,10 +55,10 @@ describe('code schools', () => {
         .type('Alaska', { force: true })
         .type('{enter}');
 
-      cy.get('[data-testid="SchoolCard"]').should('have.length', 0);
+      cy.findByTestId('SchoolCard').should('have.length', 0);
 
       cy.contains('All Schools').click();
-      cy.get('[data-testid="SchoolCard"]').should('have.length.greaterThan', 30);
+      cy.findAllByTestId('SchoolCard').should('have.length.greaterThan', 30);
     });
 
     it('renders all cards after un-filtering Alaska', () => {
@@ -67,7 +67,7 @@ describe('code schools', () => {
         .type('{enter}')
         .type('{backspace}');
 
-      cy.get('[data-testid="SchoolCard"]').should('have.length.greaterThan', 30);
+      cy.findAllByTestId('SchoolCard').should('have.length.greaterThan', 30);
     });
 
     it('should close when user clicks close button', () => {

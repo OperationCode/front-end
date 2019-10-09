@@ -8,9 +8,34 @@ exports[`JoinSection should render when not logged in 1`] = `
   <div
     className="content"
   >
-    <h3>
-      Join Our Thriving Community
-    </h3>
+    <div
+      className="headingContainer"
+    >
+      <h3
+        className="Heading"
+      >
+        <div
+          className="hashLinkContainer"
+        >
+          <a
+            data-testid="Hash Link"
+            href="#join-our-thriving-community-link"
+            id="join-our-thriving-community-link"
+          >
+            <span
+              className="ScreenReaderOnly"
+            >
+              Scroll Link for 
+              Join Our Thriving Community
+            </span>
+            <svg
+              className="icon"
+            />
+          </a>
+          Join Our Thriving Community
+        </div>
+      </h3>
+    </div>
     <p
       className="justifyAlign"
     >
