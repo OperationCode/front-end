@@ -10,10 +10,6 @@
   justify-content: center;
 }
 
-.headingTextWithLinkIconOffset {
-  margin-right: 2rem;
-}
-
 .headingOurMission {
   display: flex;
   text-align: center;
@@ -41,8 +37,23 @@
   margin-bottom: 1rem;
 }
 
+.hashLinkContainer {
+  position: relative;
+}
+
+@media screen and (--small-viewport) {
+  .hashLinkContainer {
+    width: min-content;
+  }
+}
+
+.hashLinkContainer > a {
+  position: absolute;
+  left: -2rem;
+}
+
 .icon {
-  width: 18px;
+  width: 1rem;
   line-height: 2.25;
   height: 2rem;
   margin: -0.2rem 0.5rem;

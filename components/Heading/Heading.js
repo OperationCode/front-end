@@ -31,21 +31,20 @@ function Heading({
   hasHashLink,
   headingLevel,
 }) {
-  const anchorId = kebabCase(text);
+  const anchorId = `${kebabCase(text)}-link`;
   const HeadingElement = `h${headingLevel}`;
 
   return (
     <div className={styles.headingContainer}>
       <HeadingElement
         className={classNames(className, styles.Heading, {
-          [styles.headingTextWithLinkIconOffset]: hasHashLink,
           [styles.underline]: hasTitleUnderline,
           [styles.headingLines]: hasHeadingLines,
         })}
       >
         {hasHashLink ? (
-          <div className={styles.hashLink}>
-            <a id={`${anchorId}-link`} href={`#${anchorId}-link`} data-testid="Hash Link">
+          <div className={styles.hashLinkContainer}>
+            <a id={anchorId} href={`#${anchorId}`} data-testid="Hash Link">
               <ScreenReaderOnly>Scroll Link for {text}</ScreenReaderOnly>
               <LinkIcon className={styles.icon} />
             </a>
