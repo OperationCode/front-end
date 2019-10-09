@@ -55,7 +55,6 @@ export default function Select({
   ...props // disabled, placeholder, etc.
 }) {
   /**
-   * @memberof Select
    * @description handle changing of non-multi select
    * @param {string} selected
    */
@@ -64,7 +63,6 @@ export default function Select({
   };
 
   /**
-   * @memberof Select
    * @description handle changing of multi select
    * @param {string[]} selectedArray
    */
@@ -77,7 +75,6 @@ export default function Select({
   };
 
   /**
-   * @memberof Select
    * @description Return the selected value as a string
    * @returns {string}
    */
@@ -86,7 +83,6 @@ export default function Select({
   };
 
   /**
-   * @memberof Select
    * @description Return an array of selected values for multi selects
    * @returns {string[]}
    */
