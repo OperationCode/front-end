@@ -1,23 +1,23 @@
 import React from 'react';
-import { number, string } from 'prop-types';
-import classNames from 'classnames';
+import { number } from 'prop-types';
 import LeftAngleIcon from 'static/images/icons/FontAwesome/angle-left-solid.svg';
 import RightAngleIcon from 'static/images/icons/FontAwesome/angle-right-solid.svg';
 import PaginationItem from './PaginationItem/PaginationItem';
 import styles from './Pagination.css';
 
 Pagination.propTypes = {
-  className: string,
   currentPage: number.isRequired,
   totalPages: number.isRequired,
 };
 
-Pagination.defaultProps = {
-  className: undefined,
+const developmentErrors = {
+  currentPageValue: value => `The value passed for currentPage is ${value}.`,
+  currentPageTooSmall: '"currentPage" cannot be less than 1.',
+  currentPageTooBig: '"currentPage" cannot be larger than "totalPages".',
 };
 
 const getPagination = (currentPage, totalPages) => {
-  // maximum length of the Pagination Bar, should be an odd integer, delault is 11
+  // maximum length of the Pagination Bar, should be an odd integer, default is 11
   const MAX_VISIBLE_ELEMENTS = 11;
   const ELEMENTS_ON_ONE_SIDE = (MAX_VISIBLE_ELEMENTS - 1) / 2; // 5
 
@@ -101,20 +101,25 @@ const PaginationItems = ({ currentPage, totalPages }) => {
   );
 };
 
-function Pagination({ className, currentPage, totalPages }) {
+function Pagination({ currentPage, totalPages }) {
   const isCurrentPageTooSmall = currentPage < 1;
+  if (isCurrentPageTooSmall && process.env.NODE_ENV !== 'production') {
+    const errorMessage = `${developmentErrors.currentPageValue(currentPage)} ${
+      developmentErrors.currentPageTooSmall
+    }`;
+    throw new Error(errorMessage);
+  }
+
   const isCurrentPageTooBig = currentPage > totalPages;
-
-  const isCurrentPageInvalid = isCurrentPageTooSmall || isCurrentPageTooBig;
-
-  const isDevelopmentEnvironment = process.env.NODE_ENV !== 'production';
-
-  if (isDevelopmentEnvironment && isCurrentPageInvalid) {
-    throw new Error('Invalid value for prop currentPage');
+  if (isCurrentPageTooBig && process.env.NODE_ENV !== 'production') {
+    const errorMessage = `${developmentErrors.currentPageValue(currentPage)} ${
+      developmentErrors.currentPageTooBig
+    }`;
+    throw new Error(errorMessage);
   }
 
   return (
-    <nav className={classNames(styles.Pagination, className)} data-testid="Pagination">
+    <nav className={styles.Pagination} data-testid="Pagination">
       <ol>
         <PaginationItem key="leftAngle" value={<LeftAngleIcon />} testId="leftAngle" />
         <PaginationItems currentPage={currentPage} totalPages={totalPages} />
