@@ -10,23 +10,24 @@ Pagination.propTypes = {
   className: string,
   currentPage: number.isRequired,
   totalPages: number.isRequired,
-  maxElements: number,
 };
 
 Pagination.defaultProps = {
   className: undefined,
-  maxElements: 11,
 };
 
-// eslint-disable-next-line react/prop-types
-const PaginationItems = ({ currentPage, totalPages, maxLength }) => {
-  // maxElements is maximum length of the Pagination Bar, should be an odd integer, delault is 11
-  const maxElements = maxLength % 2 === 0 ? maxLength - 1 : maxLength;
-  const elementsOnOneSide = (maxElements - 1) / 2;
+const getPagination = (currentPage, totalPages) => {
+  // maximum length of the Pagination Bar, should be an odd integer, delault is 11
+  const MAX_VISIBLE_ELEMENTS = 11;
+  const ELEMENTS_ON_ONE_SIDE = (MAX_VISIBLE_ELEMENTS - 1) / 2; // 5
 
-  const shouldTruncateStart = currentPage - 1 > elementsOnOneSide && totalPages >= maxElements;
-  const shouldTruncateEnd =
-    totalPages - currentPage > elementsOnOneSide && totalPages >= maxElements;
+  const isTruncatingRequired = totalPages >= MAX_VISIBLE_ELEMENTS;
+
+  const isLeftSideLengthy = currentPage - 1 > ELEMENTS_ON_ONE_SIDE;
+  const isRightSideLengthy = totalPages - currentPage > ELEMENTS_ON_ONE_SIDE;
+
+  const shouldTruncateStart = isTruncatingRequired && isLeftSideLengthy;
+  const shouldTruncateEnd = isTruncatingRequired && isRightSideLengthy;
 
   const truncateStartOnly = shouldTruncateStart && !shouldTruncateEnd;
   const truncateEndOnly = !shouldTruncateStart && shouldTruncateEnd;
@@ -35,17 +36,34 @@ const PaginationItems = ({ currentPage, totalPages, maxLength }) => {
   let paginationEnd;
 
   if (truncateStartOnly) {
-    paginationStart = totalPages - maxElements + 3;
+    paginationStart = totalPages - MAX_VISIBLE_ELEMENTS + 3;
     paginationEnd = totalPages;
   } else if (truncateEndOnly) {
     paginationStart = 1;
-    paginationEnd = maxElements - 2;
+    paginationEnd = MAX_VISIBLE_ELEMENTS - 2;
   } else {
-    paginationStart = shouldTruncateStart ? currentPage - (elementsOnOneSide - 2) : 1;
-    paginationEnd = shouldTruncateEnd ? currentPage + (elementsOnOneSide - 2) : totalPages;
+    paginationStart = shouldTruncateStart ? currentPage - (ELEMENTS_ON_ONE_SIDE - 2) : 1;
+    paginationEnd = shouldTruncateEnd ? currentPage + (ELEMENTS_ON_ONE_SIDE - 2) : totalPages;
   }
 
   const paginationLength = paginationEnd - paginationStart + 1;
+
+  return {
+    paginationStart,
+    paginationLength,
+    shouldTruncateStart,
+    shouldTruncateEnd,
+  };
+};
+
+// eslint-disable-next-line react/prop-types
+const PaginationItems = ({ currentPage, totalPages }) => {
+  const {
+    paginationStart,
+    paginationLength,
+    shouldTruncateStart,
+    shouldTruncateEnd,
+  } = getPagination(currentPage, totalPages);
 
   const PaginationItemArray = [...Array(paginationLength)].map((_, index) => {
     const page = index + paginationStart;
@@ -83,16 +101,23 @@ const PaginationItems = ({ currentPage, totalPages, maxLength }) => {
   );
 };
 
-function Pagination({ className, currentPage, totalPages, maxElements }) {
+function Pagination({ className, currentPage, totalPages }) {
+  const isCurrentPageTooSmall = currentPage < 1;
+  const isCurrentPageTooBig = currentPage > totalPages;
+
+  const isCurrentPageInvalid = isCurrentPageTooSmall || isCurrentPageTooBig;
+
+  const isDevelopmentEnvironment = process.env.NODE_ENV !== 'production';
+
+  if (isDevelopmentEnvironment && isCurrentPageInvalid) {
+    throw new Error('Invalid value for prop currentPage');
+  }
+
   return (
     <nav className={classNames(styles.Pagination, className)} data-testid="Pagination">
       <ol>
         <PaginationItem key="leftAngle" value={<LeftAngleIcon />} testId="leftAngle" />
-        <PaginationItems
-          currentPage={currentPage}
-          totalPages={totalPages}
-          maxLength={maxElements}
-        />
+        <PaginationItems currentPage={currentPage} totalPages={totalPages} />
         <PaginationItem key="rightAngle" value={<RightAngleIcon />} testId="rightAngle" />
       </ol>
     </nav>
