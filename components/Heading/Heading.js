@@ -9,7 +9,6 @@ import styles from './Heading.css';
 Heading.propTypes = {
   className: string,
   hasHashLink: bool,
-  hasHeadingLines: bool,
   hasTitleUnderline: bool,
   headingLevel: number,
   text: string.isRequired,
@@ -18,19 +17,11 @@ Heading.propTypes = {
 Heading.defaultProps = {
   className: undefined,
   hasHashLink: true,
-  hasHeadingLines: false,
   hasTitleUnderline: false,
   headingLevel: 2,
 };
 
-function Heading({
-  className,
-  hasHashLink,
-  hasHeadingLines,
-  hasTitleUnderline,
-  headingLevel,
-  text,
-}) {
+function Heading({ className, hasHashLink, hasTitleUnderline, headingLevel, text }) {
   const anchorId = `${kebabCase(text)}-link`;
   const HeadingElement = `h${headingLevel}`;
 
@@ -39,7 +30,6 @@ function Heading({
       <HeadingElement
         className={classNames(className, styles.Heading, {
           [styles.underline]: hasTitleUnderline,
-          [styles.headingLines]: hasHeadingLines,
         })}
       >
         {hasHashLink ? (

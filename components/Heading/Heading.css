@@ -10,28 +10,6 @@
   justify-content: center;
 }
 
-.headingOurMission {
-  display: flex;
-  text-align: center;
-  text-transform: uppercase;
-  width: 85%;
-  margin: 1rem auto;
-}
-
-.headingLines {
-  width: 85%;
-}
-
-.headingLines::before,
-.headingLines::after {
-  flex-grow: 1;
-  height: 3px;
-  content: "\a0";
-  background-color: var(--primary);
-  align-self: center;
-  margin: 0 10px 5px 10px;
-}
-
 .underline {
   border-bottom: 4px solid var(--primary);
   margin-bottom: 1rem;

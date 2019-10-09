@@ -8,7 +8,6 @@ exports[`DonateSection should render with no props passed passed 1`] = `
 >
   <Heading
     hasHashLink={true}
-    hasHeadingLines={false}
     hasTitleUnderline={false}
     headingLevel={3}
     text="Donate"

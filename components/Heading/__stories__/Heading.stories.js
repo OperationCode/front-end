@@ -12,7 +12,6 @@ storiesOf('Heading', module)
     withInfo()(() => (
       <Heading
         hasHashLink={boolean('hasHashLink', true)}
-        hasHeadingLines={boolean('hasHeadingLines', false)}
         hasTitleUnderline={boolean('hasTitleUnderline', false)}
         headingLevel={number('headingLevel', 2)}
         text={text('text', 'Test Heading')}

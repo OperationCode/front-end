@@ -90,12 +90,7 @@ const Home = () => (
       theme="gray"
       columns={[
         <div className={styles.cta}>
-          <Heading
-            text="Our Mission"
-            className="headingOurMission"
-            hasHeadingLines
-            hasHashLink={false}
-          />
+          <Heading text="Our Mission" hasTitleUnderline />
           <p className={styles.justifyAlign}>
             At Operation Code, we strongly believe in improving the lives of military veterans,
             service members, and their spouses. We increase their chances for success in the tech
