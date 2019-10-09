@@ -15,40 +15,30 @@ exports[`Storyshots ReusableSections DonateSection 1`] = `
     <div
       className="headingContainer"
     >
-      <span
-        className="anchorSpan anchorMargin"
-        id="donate"
-      />
-      <div
-        className="hashLinkContainer"
+      <h3
+        className="Heading"
       >
-        <h3
-          className="headingTextWithLinkIconOffset Heading"
+        <div
+          className="hashLinkContainer"
         >
-          <div
-            className="hashLink"
+          <a
+            data-testid="Hash Link"
+            href="#donate-link"
+            id="donate-link"
           >
-            <a
-              data-testid="Hash Link"
-              href="#donate"
-              id="donate-link"
+            <span
+              className="ScreenReaderOnly"
             >
-              <span
-                className="ScreenReaderOnly"
-              >
-                Scroll Link for 
-                Donate
-              </span>
-              <svg
-                className="icon"
-              />
-            </a>
-            <span>
+              Scroll Link for 
               Donate
             </span>
-          </div>
-        </h3>
-      </div>
+            <svg
+              className="icon"
+            />
+          </a>
+          Donate
+        </div>
+      </h3>
     </div>
     <p
       className="justifyAlign"
@@ -81,40 +71,30 @@ exports[`Storyshots ReusableSections JoinSection 1`] = `
     <div
       className="headingContainer"
     >
-      <span
-        className="anchorSpan anchorMargin"
-        id="join-our-thriving-community"
-      />
-      <div
-        className="hashLinkContainer"
+      <h3
+        className="Heading"
       >
-        <h3
-          className="headingTextWithLinkIconOffset Heading"
+        <div
+          className="hashLinkContainer"
         >
-          <div
-            className="hashLink"
+          <a
+            data-testid="Hash Link"
+            href="#join-our-thriving-community-link"
+            id="join-our-thriving-community-link"
           >
-            <a
-              data-testid="Hash Link"
-              href="#join-our-thriving-community"
-              id="join-our-thriving-community-link"
+            <span
+              className="ScreenReaderOnly"
             >
-              <span
-                className="ScreenReaderOnly"
-              >
-                Scroll Link for 
-                Join Our Thriving Community
-              </span>
-              <svg
-                className="icon"
-              />
-            </a>
-            <span>
+              Scroll Link for 
               Join Our Thriving Community
             </span>
-          </div>
-        </h3>
-      </div>
+            <svg
+              className="icon"
+            />
+          </a>
+          Join Our Thriving Community
+        </div>
+      </h3>
     </div>
     <p
       className="justifyAlign"
@@ -162,42 +142,30 @@ exports[`Storyshots ReusableSections SponsorsSection 1`] = `
     <div
       className="headingContainer"
     >
-      <span
-        className="anchorSpan anchorMargin"
-        id="sponsors"
-      />
-      <div
-        className="hashLinkContainer"
+      <h3
+        className="Heading underline"
       >
-        <h3
-          className="headingTextWithLinkIconOffset Heading"
+        <div
+          className="hashLinkContainer"
         >
-          <div
-            className="hashLink"
+          <a
+            data-testid="Hash Link"
+            href="#sponsors-link"
+            id="sponsors-link"
           >
-            <a
-              data-testid="Hash Link"
-              href="#sponsors"
-              id="sponsors-link"
-            >
-              <span
-                className="ScreenReaderOnly"
-              >
-                Scroll Link for 
-                Sponsors
-              </span>
-              <svg
-                className="icon"
-              />
-            </a>
             <span
-              className="underline"
+              className="ScreenReaderOnly"
             >
+              Scroll Link for 
               Sponsors
             </span>
-          </div>
-        </h3>
-      </div>
+            <svg
+              className="icon"
+            />
+          </a>
+          Sponsors
+        </div>
+      </h3>
     </div>
     <div
       className="columnsContainer"

@@ -4,40 +4,30 @@ exports[`Heading should render with many props assigned 1`] = `
 <div
   className="headingContainer"
 >
-  <span
-    className="anchorSpan anchorMargin"
-    id="test"
-  />
-  <div
-    className="hashLinkContainer"
+  <h5
+    className="Heading"
   >
-    <h2
-      className="test-class headingTextWithLinkIconOffset Heading"
+    <div
+      className="hashLinkContainer"
     >
-      <div
-        className="hashLink"
+      <a
+        data-testid="Hash Link"
+        href="#test-link"
+        id="test-link"
       >
-        <a
-          data-testid="Hash Link"
-          href="#test"
-          id="test-link"
+        <span
+          className="ScreenReaderOnly"
         >
-          <span
-            className="ScreenReaderOnly"
-          >
-            Scroll Link for 
-            Test
-          </span>
-          <svg
-            className="icon"
-          />
-        </a>
-        <span>
+          Scroll Link for 
           Test
         </span>
-      </div>
-    </h2>
-  </div>
+        <svg
+          className="icon"
+        />
+      </a>
+      Test
+    </div>
+  </h5>
 </div>
 `;
 
@@ -45,39 +35,29 @@ exports[`Heading should render with required props 1`] = `
 <div
   className="headingContainer"
 >
-  <span
-    className="anchorSpan anchorMargin"
-    id="test"
-  />
-  <div
-    className="hashLinkContainer"
+  <h2
+    className="Heading"
   >
-    <h2
-      className="headingTextWithLinkIconOffset Heading"
+    <div
+      className="hashLinkContainer"
     >
-      <div
-        className="hashLink"
+      <a
+        data-testid="Hash Link"
+        href="#test-link"
+        id="test-link"
       >
-        <a
-          data-testid="Hash Link"
-          href="#test"
-          id="test-link"
+        <span
+          className="ScreenReaderOnly"
         >
-          <span
-            className="ScreenReaderOnly"
-          >
-            Scroll Link for 
-            Test
-          </span>
-          <svg
-            className="icon"
-          />
-        </a>
-        <span>
+          Scroll Link for 
           Test
         </span>
-      </div>
-    </h2>
-  </div>
+        <svg
+          className="icon"
+        />
+      </a>
+      Test
+    </div>
+  </h2>
 </div>
 `;

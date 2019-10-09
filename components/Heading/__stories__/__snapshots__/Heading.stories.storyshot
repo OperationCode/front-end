@@ -4,44 +4,29 @@ exports[`Storyshots Heading default 1`] = `
 <div
   className="headingContainer"
 >
-  <span
-    className="anchorSpan anchorMargin"
-    id="test-heading"
-  />
-  <div
-    className="hashLinkContainer"
+  <h2
+    className="Heading headingLines"
   >
-    <h2
-      className="headingTextWithLinkIconOffset Heading"
+    <div
+      className="hashLinkContainer"
     >
-      <div
-        className="hashLink"
+      <a
+        data-testid="Hash Link"
+        href="#test-heading-link"
+        id="test-heading-link"
       >
-        <a
-          data-testid="Hash Link"
-          href="#test-heading"
-          id="test-heading-link"
+        <span
+          className="ScreenReaderOnly"
         >
-          <span
-            className="ScreenReaderOnly"
-          >
-            Scroll Link for 
-            Test Heading
-          </span>
-          <svg
-            className="icon"
-          />
-        </a>
-        <span>
+          Scroll Link for 
           Test Heading
         </span>
-      </div>
-    </h2>
-  </div>
-  <h2
-    className="undefined headingLines"
-  >
-    Test Heading
+        <svg
+          className="icon"
+        />
+      </a>
+      Test Heading
+    </div>
   </h2>
 </div>
 `;
