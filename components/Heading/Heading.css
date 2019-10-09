@@ -36,26 +36,6 @@
   margin-bottom: 1rem;
 }
 
-/* .secondary {
-  background-color: var(--secondary);
-  color: var(--white);
-}
-
-.gray {
-  background-color: var(--gray);
-  color: var(--secondary);
-}
-
-.white {
-  background-color: var(--white);
-  color: var(--secondary);
-}
-
-.transparentWhite {
-  background-color: transparent;
-  color: var(--white);
-} */
-
 .icon {
   width: 18px;
   line-height: 2.25;
