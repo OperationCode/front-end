@@ -45,8 +45,8 @@ Select.defaultProps = {
 };
 
 export default function Select({
-  field,
-  form,
+  field: { name, value: fieldValue },
+  form: { errors, setFieldTouched, setFieldValue, touched },
   id,
   isLabelHidden,
   isMulti,
@@ -54,16 +54,13 @@ export default function Select({
   options,
   ...props // disabled, placeholder, etc.
 }) {
-  const { errors, touched } = form;
-  const { name } = field;
-
   /**
    * @memberof Select
    * @description handle changing of non-multi select
    * @param {string} selected
    */
   const onChangeSingle = selected => {
-    form.setFieldValue(name, selected.value);
+    setFieldValue(name, selected.value);
   };
 
   /**
@@ -73,9 +70,9 @@ export default function Select({
    */
   const onChangeMulti = selectedArray => {
     if (selectedArray) {
-      form.setFieldValue(name, selectedArray.map(item => item.value));
+      setFieldValue(name, selectedArray.map(item => item.value));
     } else {
-      form.setFieldValue(name, []);
+      setFieldValue(name, []);
     }
   };
 
@@ -85,7 +82,7 @@ export default function Select({
    * @returns {string}
    */
   const getValueFromSingle = () => {
-    return options.find(option => option.value === field.value);
+    return options.find(option => option.value === fieldValue);
   };
 
   /**
@@ -94,11 +91,11 @@ export default function Select({
    * @returns {string[]}
    */
   const getValueFromMulti = () => {
-    return options.filter(option => field.value.includes(option.value));
+    return options.filter(option => fieldValue.includes(option.value));
   };
 
   const handleBlur = () => {
-    form.setFieldTouched(name);
+    setFieldTouched(name);
   };
 
   const hasErrors = Boolean(errors[name]);
