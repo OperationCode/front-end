@@ -9,7 +9,6 @@ import styles from './Heading.css';
 class Heading extends Component {
   static propTypes = {
     className: string,
-    customAnchorClass: string,
     text: string.isRequired,
     hasTitleUnderline: bool,
     hasHeadingLines: bool,
@@ -19,7 +18,6 @@ class Heading extends Component {
 
   static defaultProps = {
     className: undefined,
-    customAnchorClass: 'anchorMargin',
     hasTitleUnderline: false,
     hasHeadingLines: false,
     hasHashLink: true,
@@ -33,40 +31,26 @@ class Heading extends Component {
 
     return (
       <div className={styles.headingContainer}>
-        {props.hasHashLink && (
-          <>
-            <span
-              id={anchorId}
-              className={classNames(styles.anchorSpan, styles[props.customAnchorClass])}
-            />
-            <div className={styles.hashLinkContainer}>
-              <HeadingElement
-                className={classNames(
-                  props.className,
-                  styles.headingTextWithLinkIconOffset,
-                  styles.Heading,
-                )}
-              >
-                <div className={styles.hashLink}>
-                  <a id={`${anchorId}-link`} href={`#${anchorId}`} data-testid="Hash Link">
-                    <ScreenReaderOnly>Scroll Link for {props.text}</ScreenReaderOnly>
-                    <LinkIcon className={styles.icon} />
-                  </a>
-                  {props.hasTitleUnderline ? (
-                    <span className={styles.underline}>{props.text}</span>
-                  ) : (
-                    <span>{props.text}</span>
-                  )}
-                </div>
-              </HeadingElement>
+        <HeadingElement
+          className={classNames(props.className, styles.Heading, {
+            [styles.headingTextWithLinkIconOffset]: props.hasHashLink,
+            [styles.underline]: props.hasTitleUnderline,
+            [styles.headingLines]: props.hasHeadingLines,
+          })}
+        >
+          {props.hasHashLink ? (
+            <div className={styles.hashLink}>
+              <a id={`${anchorId}-link`} href={`#${anchorId}-link`} data-testid="Hash Link">
+                <ScreenReaderOnly>Scroll Link for {props.text}</ScreenReaderOnly>
+                <LinkIcon className={styles.icon} />
+              </a>
+
+              {props.text}
             </div>
-          </>
-        )}
-        {props.hasHeadingLines && (
-          <HeadingElement className={classNames(styles[props.className], styles.headingLines)}>
-            {props.text}
-          </HeadingElement>
-        )}
+          ) : (
+            props.text
+          )}
+        </HeadingElement>
       </div>
     );
   }
