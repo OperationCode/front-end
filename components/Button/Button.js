@@ -34,21 +34,20 @@ Button.defaultProps = {
   type: 'button',
 };
 
-export default function Button(props) {
-  const customDataAttributes = getDataAttributes(props);
-  const ariaAttributes = getAriaAttributes(props);
-
-  const {
-    analyticsObject,
-    children,
-    className,
-    disabled,
-    fullWidth,
-    onClick,
-    tabIndex,
-    theme,
-    type,
-  } = props;
+export default function Button({
+  analyticsObject,
+  children,
+  className,
+  disabled,
+  fullWidth,
+  onClick,
+  tabIndex,
+  theme,
+  type,
+  ...rest,
+}) {
+  const customDataAttributes = getDataAttributes(rest);
+  const ariaAttributes = getAriaAttributes(rest);
 
   const clickHandler = () => {
     if (process.env.NODE_ENV === 'production') {
