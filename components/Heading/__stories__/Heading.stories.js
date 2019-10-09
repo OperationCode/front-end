@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
-import { withKnobs, boolean, text } from '@storybook/addon-knobs';
+import { withKnobs, boolean, number, text } from '@storybook/addon-knobs';
 
 import Heading from '../Heading';
 
@@ -11,11 +11,11 @@ storiesOf('Heading', module)
     'default',
     withInfo()(() => (
       <Heading
-        text="Test Heading"
-        id={text('id', 'heading1')}
-        hasHeadingLines={boolean('hasHeadingLines', true)}
-      >
-        {text('children', 'Heading Component')}
-      </Heading>
+        hasHashLink={boolean('hasHashLink', true)}
+        hasHeadingLines={boolean('hasHeadingLines', false)}
+        hasTitleUnderline={boolean('hasTitleUnderline', false)}
+        headingLevel={number('headingLevel', 2)}
+        text={text('text', 'Test Heading')}
+      />
     )),
   );
