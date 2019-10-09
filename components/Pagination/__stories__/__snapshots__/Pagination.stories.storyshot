@@ -26,12 +26,6 @@ exports[`Storyshots Pagination default 1`] = `
     </li>
     <li
       className="PaginationItem"
-      data-testid="Pagination Item - 3"
-    >
-      3
-    </li>
-    <li
-      className="PaginationItem"
       data-testid="Pagination Item - 4"
     >
       4
@@ -71,12 +65,6 @@ exports[`Storyshots Pagination default 1`] = `
       data-testid="Pagination Item - 10"
     >
       10
-    </li>
-    <li
-      className="PaginationItem"
-      data-testid="Pagination Item - 11"
-    >
-      11
     </li>
     <li
       className="PaginationItem notClickable"

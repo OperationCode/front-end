@@ -10,6 +10,10 @@ storiesOf('Pagination', module)
   .add(
     'default',
     withInfo()(() => (
-      <Pagination currentPage={number('currentPage', 7)} totalPages={number('totalPages', 14)} />
+      <Pagination
+        currentPage={number('currentPage', 7)}
+        totalPages={number('totalPages', 14)}
+        maxElements={number('maxElements', 11)}
+      />
     )),
   );

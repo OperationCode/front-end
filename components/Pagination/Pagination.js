@@ -10,19 +10,40 @@ Pagination.propTypes = {
   className: string,
   currentPage: number.isRequired,
   totalPages: number.isRequired,
+  maxElements: number,
 };
 
 Pagination.defaultProps = {
   className: undefined,
+  maxElements: 11,
 };
 
 // eslint-disable-next-line react/prop-types
-const PaginationItems = ({ currentPage, totalPages }) => {
-  const shouldTruncateStart = currentPage - 1 > 5;
-  const shouldTruncateEnd = totalPages - currentPage > 5;
+const PaginationItems = ({ currentPage, totalPages, maxLength }) => {
+  // maxElements is maximum length of the Pagination Bar, should be an odd integer, delault is 11
+  const maxElements = maxLength % 2 === 0 ? maxLength - 1 : maxLength;
+  const elementsOnOneSide = (maxElements - 1) / 2;
 
-  const paginationStart = shouldTruncateStart ? currentPage - 4 : 1;
-  const paginationEnd = shouldTruncateEnd ? currentPage + 4 : totalPages;
+  const shouldTruncateStart = currentPage - 1 > elementsOnOneSide && totalPages >= maxElements;
+  const shouldTruncateEnd =
+    totalPages - currentPage > elementsOnOneSide && totalPages >= maxElements;
+
+  const truncateStartOnly = shouldTruncateStart && !shouldTruncateEnd;
+  const truncateEndOnly = !shouldTruncateStart && shouldTruncateEnd;
+
+  let paginationStart;
+  let paginationEnd;
+
+  if (truncateStartOnly) {
+    paginationStart = totalPages - maxElements + 3;
+    paginationEnd = totalPages;
+  } else if (truncateEndOnly) {
+    paginationStart = 1;
+    paginationEnd = maxElements - 2;
+  } else {
+    paginationStart = shouldTruncateStart ? currentPage - (elementsOnOneSide - 2) : 1;
+    paginationEnd = shouldTruncateEnd ? currentPage + (elementsOnOneSide - 2) : totalPages;
+  }
 
   const paginationLength = paginationEnd - paginationStart + 1;
 
@@ -62,12 +83,16 @@ const PaginationItems = ({ currentPage, totalPages }) => {
   );
 };
 
-function Pagination({ className, currentPage, totalPages }) {
+function Pagination({ className, currentPage, totalPages, maxElements }) {
   return (
     <nav className={classNames(styles.Pagination, className)} data-testid="Pagination">
       <ol>
         <PaginationItem key="leftAngle" value={<LeftAngleIcon />} testId="leftAngle" />
-        <PaginationItems currentPage={currentPage} totalPages={totalPages} />
+        <PaginationItems
+          currentPage={currentPage}
+          totalPages={totalPages}
+          maxLength={maxElements}
+        />
         <PaginationItem key="rightAngle" value={<RightAngleIcon />} testId="rightAngle" />
       </ol>
     </nav>
