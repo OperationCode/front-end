@@ -2,7 +2,7 @@ import React from 'react';
 import { cleanup, render } from '@testing-library/react';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 
-import Pagination from '../Pagination';
+import Pagination, { developmentErrors } from '../Pagination';
 
 describe('Pagination', () => {
   afterEach(cleanup);
@@ -36,16 +36,14 @@ describe('Pagination', () => {
   });
 
   it('should throw an error if given value of currentPage is less than 1', () => {
-    const errorMessage =
-      'The value passed for currentPage is 0. "currentPage" cannot be less than 1.';
-
-    expect(() => Pagination({ currentPage: 0, totalPages: 5 })).toThrow(errorMessage);
+    expect(() => Pagination({ currentPage: 0, totalPages: 5 })).toThrow(
+      developmentErrors.currentPageTooSmall,
+    );
   });
 
   it('should throw an error if given value of currentPage is greater than totalPages', () => {
-    const errorMessage =
-      'The value passed for currentPage is 6. "currentPage" cannot be larger than "totalPages".';
-
-    expect(() => Pagination({ currentPage: 6, totalPages: 5 })).toThrow(errorMessage);
+    expect(() => Pagination({ currentPage: 6, totalPages: 5 })).toThrow(
+      developmentErrors.currentPageTooBig,
+    );
   });
 });

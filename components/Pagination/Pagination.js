@@ -10,7 +10,7 @@ Pagination.propTypes = {
   totalPages: number.isRequired,
 };
 
-const developmentErrors = {
+export const developmentErrors = {
   currentPageValue: value => `The value passed for currentPage is ${value}.`,
   currentPageTooSmall: '"currentPage" cannot be less than 1.',
   currentPageTooBig: '"currentPage" cannot be larger than "totalPages".',
@@ -102,20 +102,22 @@ const PaginationItems = ({ currentPage, totalPages }) => {
 };
 
 function Pagination({ currentPage, totalPages }) {
-  const isCurrentPageTooSmall = currentPage < 1;
-  if (isCurrentPageTooSmall && process.env.NODE_ENV !== 'production') {
-    const errorMessage = `${developmentErrors.currentPageValue(currentPage)} ${
-      developmentErrors.currentPageTooSmall
-    }`;
-    throw new Error(errorMessage);
-  }
+  if (process.env.NODE_ENV !== 'production') {
+    const isCurrentPageTooSmall = currentPage < 1;
+    if (isCurrentPageTooSmall) {
+      const errorMessage = `${developmentErrors.currentPageValue(currentPage)} ${
+        developmentErrors.currentPageTooSmall
+      }`;
+      throw new Error(errorMessage);
+    }
 
-  const isCurrentPageTooBig = currentPage > totalPages;
-  if (isCurrentPageTooBig && process.env.NODE_ENV !== 'production') {
-    const errorMessage = `${developmentErrors.currentPageValue(currentPage)} ${
-      developmentErrors.currentPageTooBig
-    }`;
-    throw new Error(errorMessage);
+    const isCurrentPageTooBig = currentPage > totalPages;
+    if (isCurrentPageTooBig) {
+      const errorMessage = `${developmentErrors.currentPageValue(currentPage)} ${
+        developmentErrors.currentPageTooBig
+      }`;
+      throw new Error(errorMessage);
+    }
   }
 
   return (
