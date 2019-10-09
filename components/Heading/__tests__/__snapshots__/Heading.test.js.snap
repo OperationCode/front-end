@@ -5,28 +5,9 @@ exports[`Heading should render with many props assigned 1`] = `
   className="headingContainer"
 >
   <h5
-    className="Heading"
+    className="Heading underline"
   >
-    <div
-      className="hashLinkContainer"
-    >
-      <a
-        data-testid="Hash Link"
-        href="#test-link"
-        id="test-link"
-      >
-        <span
-          className="ScreenReaderOnly"
-        >
-          Scroll Link for 
-          Test
-        </span>
-        <svg
-          className="icon"
-        />
-      </a>
-      Test
-    </div>
+    Test
   </h5>
 </div>
 `;

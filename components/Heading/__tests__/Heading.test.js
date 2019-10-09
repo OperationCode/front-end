@@ -12,6 +12,8 @@ describe('Heading', () => {
   });
 
   it('should render with many props assigned', () => {
-    createSnapshotTest(<Heading {...requiredProps} headingLevel={5} hasHashLink />);
+    createSnapshotTest(
+      <Heading {...requiredProps} headingLevel={5} hasHashLink={false} hasTitleUnderline />,
+    );
   });
 });
