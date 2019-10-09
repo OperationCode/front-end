@@ -1,4 +1,5 @@
 .Heading {
+  display: flex;
   text-transform: uppercase;
   text-align: center;
   margin: 1rem 0;
@@ -19,6 +20,10 @@
   text-transform: uppercase;
   width: 85%;
   margin: 1rem auto;
+}
+
+.headingLines {
+  width: 85%;
 }
 
 .headingLines::before,
