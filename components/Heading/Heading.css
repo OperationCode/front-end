@@ -60,14 +60,6 @@
   outline: none;
 }
 
-.iconFillBlue {
-  fill: var(--secondary);
-}
-
-.iconFillWhite {
-  fill: var(--white);
-}
-
 .Heading .icon {
   opacity: 0;
   visibility: hidden;
@@ -79,33 +71,4 @@
   opacity: 1;
   visibility: visible;
   transition: 0.2s linear opacity, 0.2s linear visibility;
-}
-
-.anchorSpan {
-  display: block;
-  position: relative;
-}
-
-.anchorMargin {
-  top: -70px;
-}
-
-.anchorMarginPodcast {
-  top: -100px;
-}
-
-@media screen and (--medium-viewport), (--small-viewport) {
-  .anchorMargin {
-    top: -110px;
-  }
-
-  .anchorMarginPodcast {
-    top: -110px;
-  }
-}
-
-@media screen and (--small-viewport) {
-  .icon {
-    width: 16px;
-  }
 }
