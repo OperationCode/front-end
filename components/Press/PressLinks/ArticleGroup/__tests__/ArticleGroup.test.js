@@ -1,6 +1,6 @@
 import React from 'react';
 import createShallowSnapshotTest from 'test-utils/createShallowSnapshotTest';
-import { mount, shallow } from 'enzyme'; // eslint-disable-line no-restricted-imports
+import { mount } from 'enzyme'; // eslint-disable-line no-restricted-imports
 
 import ArticleGroup from '../ArticleGroup';
 
@@ -27,22 +27,24 @@ describe('ArticleGroup', () => {
       />,
     ));
 
-  it('should setState when clicking Show All button', () => {
-    const ArticleGroupShallowInstance = shallow(
+  it('should show all links when clicking Show All button', () => {
+    const ArticleGroupShallowInstance = mount(
       <ArticleGroup
         region="test"
         articles={[
-          { title: 'Example', url: 'https://example.com' },
-          { title: 'Example', url: 'https://example.com' },
-          { title: 'Example', url: 'https://example.com' },
+          { title: 'Example1', url: 'https://example1.com' },
+          { title: 'Example2', url: 'https://example2.com' },
+          { title: 'Example3', url: 'https://example3.com' },
         ]}
         numberOfInitiallyVisibleLinks={1}
       />,
     );
 
-    ArticleGroupShallowInstance.instance().clickHandler();
+    expect(ArticleGroupShallowInstance.find('li')).toHaveLength(1);
 
-    expect(ArticleGroupShallowInstance.state().areAllLinksVisible).toStrictEqual(true);
+    ArticleGroupShallowInstance.find('button').simulate('click');
+
+    expect(ArticleGroupShallowInstance.find('li')).toHaveLength(3);
   });
 
   it('should not create a button if not enough links', () => {
