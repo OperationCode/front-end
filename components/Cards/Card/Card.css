@@ -12,6 +12,10 @@
   padding: 1.5rem;
 }
 
+.Card svg {
+  fill: var(--secondary);
+}
+
 .Card:focus {
   outline: none;
 }
