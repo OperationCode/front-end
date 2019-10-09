@@ -8,28 +8,28 @@ import styles from './Heading.css';
 
 Heading.propTypes = {
   className: string,
-  text: string.isRequired,
-  hasTitleUnderline: bool,
-  hasHeadingLines: bool,
   hasHashLink: bool,
+  hasHeadingLines: bool,
+  hasTitleUnderline: bool,
   headingLevel: number,
+  text: string.isRequired,
 };
 
 Heading.defaultProps = {
   className: undefined,
-  hasTitleUnderline: false,
-  hasHeadingLines: false,
   hasHashLink: true,
+  hasHeadingLines: false,
+  hasTitleUnderline: false,
   headingLevel: 2,
 };
 
 function Heading({
   className,
-  text,
-  hasTitleUnderline,
-  hasHeadingLines,
   hasHashLink,
+  hasHeadingLines,
+  hasTitleUnderline,
   headingLevel,
+  text,
 }) {
   const anchorId = `${kebabCase(text)}-link`;
   const HeadingElement = `h${headingLevel}`;
