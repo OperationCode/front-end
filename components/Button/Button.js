@@ -44,7 +44,7 @@ export default function Button({
   tabIndex,
   theme,
   type,
-  ...rest,
+  ...rest
 }) {
   const customDataAttributes = getDataAttributes(rest);
   const ariaAttributes = getAriaAttributes(rest);
