@@ -2,6 +2,12 @@ import React from 'react';
 import { number } from 'prop-types';
 import styles from './ProgressIndicator.css';
 
+export const developmentErrors = {
+  currentStepTooLow: '"currentStep" cannot be negative',
+  currentStepTooHigh: '"currentStep" cannot be greater than "totalSteps"',
+  totalStepsTooLow: '"totalSteps" cannot be negative',
+};
+
 ProgressIndicator.propTypes = {
   stepNumber: number,
   totalSteps: number,
@@ -13,21 +19,19 @@ ProgressIndicator.defaultProps = {
 };
 
 export default function ProgressIndicator({ stepNumber, totalSteps }) {
-  if (totalSteps < 1) return null;
+  if (totalSteps === 0) return null;
+  if (totalSteps < 1) throw new Error(developmentErrors.totalStepsTooLow);
+  if (stepNumber < 0) throw new Error(developmentErrors.currentStepTooLow);
+  if (stepNumber > totalSteps) throw new Error(developmentErrors.currentStepTooHigh);
 
-  let currentStep = stepNumber;
-
-  if (currentStep < 0) currentStep = 0;
-  if (currentStep > totalSteps) currentStep = totalSteps;
-
-  const percentageCompleted = (currentStep / totalSteps) * 100;
+  const percentageCompleted = (stepNumber / totalSteps) * 100;
 
   return (
     <div className={styles.ProgressIndicator}>
       <label htmlFor="steps-indicator">
-        {currentStep}/{totalSteps} Complete
+        {stepNumber}/{totalSteps} Complete
       </label>
-      <progress id="steps-indicator" max={totalSteps} value={currentStep}>
+      <progress id="steps-indicator" max={totalSteps} value={stepNumber}>
         {percentageCompleted}%
       </progress>
     </div>
