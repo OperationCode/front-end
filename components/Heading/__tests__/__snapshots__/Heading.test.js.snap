@@ -21,6 +21,7 @@ exports[`Heading should render with required props 1`] = `
   >
     <div
       className="hashLinkContainer"
+      data-testid="Heading Content test-link"
     >
       <a
         data-testid="Hash Link"

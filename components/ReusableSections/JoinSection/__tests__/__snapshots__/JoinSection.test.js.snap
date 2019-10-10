@@ -16,6 +16,7 @@ exports[`JoinSection should render when not logged in 1`] = `
       >
         <div
           className="hashLinkContainer"
+          data-testid="Heading Content join-our-thriving-community-link"
         >
           <a
             data-testid="Hash Link"
