@@ -34,11 +34,12 @@
           "./"
         ],
         "alias": {
-          "components": "./components",
           "common": "./common",
+          "components": "./components",
           "pages": "./pages",
+          "public": "./public",
           "scripts": "./scripts",
-          "static": "./static",
+          "static": "./public/static",
           "store": "./store",
           "test-utils": "./test-utils"
         }
