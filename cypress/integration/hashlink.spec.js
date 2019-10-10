@@ -25,5 +25,18 @@ describe('Hash Links', () => {
         verifyHashLink(path);
       });
     });
+
+    describe('on small viewports', () => {
+      it('renders the anchors invisibly', () => {
+        cy.visitAndWaitFor(path);
+        cy.viewport('iphone-6');
+
+        cy.findAllByTestId('Hash Link').each(link => {
+          const { hash } = link[0];
+
+          cy.get(hash).should('not.be.visible');
+        });
+      });
+    });
   });
 });
