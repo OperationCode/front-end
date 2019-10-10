@@ -1,7 +1,6 @@
+import { fireEvent, render } from '@testing-library/react';
 import React from 'react';
 import createShallowSnapshotTest from 'test-utils/createShallowSnapshotTest';
-import { mount } from 'enzyme'; // eslint-disable-line no-restricted-imports
-
 import ArticleGroup from '../ArticleGroup';
 
 describe('ArticleGroup', () => {
@@ -28,7 +27,7 @@ describe('ArticleGroup', () => {
     ));
 
   it('should show all links when clicking Show All button', () => {
-    const ArticleGroupShallowInstance = mount(
+    const ArticleGroupShallowInstance = render(
       <ArticleGroup
         region="test"
         articles={[
@@ -40,15 +39,15 @@ describe('ArticleGroup', () => {
       />,
     );
 
-    expect(ArticleGroupShallowInstance.find('li')).toHaveLength(1);
+    expect(ArticleGroupShallowInstance.container.querySelectorAll('li').length).toBe(1);
 
-    ArticleGroupShallowInstance.find('button').simulate('click');
+    fireEvent.click(ArticleGroupShallowInstance.container.querySelector('button'));
 
-    expect(ArticleGroupShallowInstance.find('li')).toHaveLength(3);
+    expect(ArticleGroupShallowInstance.container.querySelectorAll('li').length).toBe(3);
   });
 
   it('should not create a button if not enough links', () => {
-    const wrap = mount(
+    const wrap = render(
       <ArticleGroup
         region="test"
         articles={[{ title: 'Example', url: 'https://example.com' }]}
@@ -56,11 +55,11 @@ describe('ArticleGroup', () => {
       />,
     );
 
-    expect(wrap.find('button').exists()).toStrictEqual(false);
+    expect(wrap.container.querySelector('button')).toBeNull();
   });
 
   it('should create a button if enough links are available', () => {
-    const wrap = mount(
+    const wrap = render(
       <ArticleGroup
         region="test"
         articles={[
@@ -72,6 +71,6 @@ describe('ArticleGroup', () => {
       />,
     );
 
-    expect(wrap.find('button').exists()).toStrictEqual(true);
+    expect(wrap.container.querySelector('button')).not.toBeNull();
   });
 });
