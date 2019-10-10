@@ -20,6 +20,7 @@ exports[`Storyshots ReusableSections DonateSection 1`] = `
       >
         <div
           className="hashLinkContainer"
+          data-testid="Heading Content donate-link"
         >
           <a
             data-testid="Hash Link"
@@ -76,6 +77,7 @@ exports[`Storyshots ReusableSections JoinSection 1`] = `
       >
         <div
           className="hashLinkContainer"
+          data-testid="Heading Content join-our-thriving-community-link"
         >
           <a
             data-testid="Hash Link"
@@ -147,6 +149,7 @@ exports[`Storyshots ReusableSections SponsorsSection 1`] = `
       >
         <div
           className="hashLinkContainer"
+          data-testid="Heading Content sponsors-link"
         >
           <a
             data-testid="Hash Link"
