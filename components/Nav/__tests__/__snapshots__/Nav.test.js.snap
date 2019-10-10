@@ -61,12 +61,14 @@ exports[`Nav should render with no props passed 1`] = `
   />
   <header
     className="NavDesktop"
-    data-testid="Desktop Nav"
   >
     <div
-      className="navContainer"
+      className="desktopNavContainer"
+      data-testid="Desktop Nav Container"
     >
-      <nav>
+      <nav
+        data-testid="Desktop Nav"
+      >
         <Link
           href="/"
           prefetch={false}

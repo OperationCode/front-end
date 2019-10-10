@@ -15,6 +15,7 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
       >
         <div
           className="hashLinkContainer"
+          data-testid="Heading Content sponsors-link"
         >
           <a
             data-testid="Hash Link"
@@ -366,6 +367,7 @@ exports[`SponsorsSection should render with required props 1`] = `
       >
         <div
           className="hashLinkContainer"
+          data-testid="Heading Content sponsors-link"
         >
           <a
             data-testid="Hash Link"

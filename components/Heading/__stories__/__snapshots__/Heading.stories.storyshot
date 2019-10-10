@@ -9,6 +9,7 @@ exports[`Storyshots Heading default 1`] = `
   >
     <div
       className="hashLinkContainer"
+      data-testid="Heading Content test-heading-link"
     >
       <a
         data-testid="Hash Link"
