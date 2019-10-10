@@ -18,7 +18,13 @@ CloseButton.defaultProps = {
 
 export default function CloseButton({ disabled, onClick, theme }) {
   return (
-    <button className={styles.CloseButton} disabled={disabled} onClick={onClick} type="button">
+    <button
+      className={styles.CloseButton}
+      data-testid="Close Button"
+      disabled={disabled}
+      onClick={onClick}
+      type="button"
+    >
       <ScreenReaderOnly>Close</ScreenReaderOnly>
 
       <PlusIcon className={classNames(styles.icon, styles[theme])} />
