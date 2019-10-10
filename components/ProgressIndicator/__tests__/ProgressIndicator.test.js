@@ -5,10 +5,6 @@ import ProgressIndicator from '../ProgressIndicator';
 
 describe('ProgressIndicator', () => {
   it('should render with required props', () => {
-    createSnapshotTest(<ProgressIndicator>Test</ProgressIndicator>);
-  });
-
-  it('should render with many props assigned', () => {
-    createSnapshotTest(<ProgressIndicator className="test-class">Test</ProgressIndicator>);
+    createSnapshotTest(<ProgressIndicator stepNumber={1} totalSteps={3} />);
   });
 });
