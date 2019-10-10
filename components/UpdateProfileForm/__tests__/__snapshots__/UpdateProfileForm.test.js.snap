@@ -13,6 +13,28 @@ exports[`UpdateProfileForm should render with required props 1`] = `
     Professional Details
   </h3>
   <div
+    className="ProgressIndicator"
+  >
+    <div>
+      0
+      /
+      3
+       Complete
+    </div>
+    <div
+      className="bar"
+    >
+      <div
+        className="progress"
+        style={
+          Object {
+            "width": "0%",
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
     className="row"
   >
     <div
