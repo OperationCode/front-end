@@ -89,13 +89,9 @@ class LoginForm extends Component {
                 disabled={isSubmitting}
                 autoComplete="new-password"
               />
-            </div>
 
-            <div className={styles.row}>
               {state.errorMessage && <Alert type="error">{state.errorMessage}</Alert>}
-            </div>
 
-            <div className={styles.row}>
               <Button
                 className={styles.topMargin}
                 type="submit"
