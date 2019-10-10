@@ -1,26 +1,23 @@
 import React from 'react';
-import { bool, number } from 'prop-types';
+import { bool } from 'prop-types';
 import { Field } from 'formik';
 import * as Yup from 'yup';
 import { updateUser } from 'common/constants/api';
 import { validationErrorMessages } from 'common/constants/messages';
 import Input from 'components/Form/Input/Input';
 import Select from 'components/Form/Select/Select';
-import ProgressIndicator from 'components/ProgressIndicator/ProgressIndicator';
 import styles from './_steps.css';
 
 class ProfessionalDetails extends React.Component {
   static propTypes = {
     isSubmitting: bool,
-    stepNumber: number,
-    totalSteps: number,
   };
 
   static defaultProps = {
     isSubmitting: false,
-    stepNumber: 0,
-    totalSteps: 0,
   };
+
+  static title = 'Professional Details';
 
   static validationSchema = Yup.object().shape({
     employmentStatus: Yup.string()
@@ -41,14 +38,10 @@ class ProfessionalDetails extends React.Component {
   };
 
   render() {
-    const { isSubmitting, stepNumber, totalSteps } = this.props;
+    const { isSubmitting } = this.props;
 
     return (
       <>
-        <h3 className={styles.row}>Professional Details</h3>
-
-        <ProgressIndicator stepNumber={stepNumber} totalSteps={totalSteps} />
-
         <div className={styles.row}>
           <Field
             className={styles.fullWidth}
