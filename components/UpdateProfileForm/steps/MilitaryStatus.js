@@ -1,19 +1,24 @@
 import React from 'react';
-import { bool } from 'prop-types';
+import { bool, number } from 'prop-types';
 import { Field } from 'formik';
 import * as Yup from 'yup';
 import { updateUser } from 'common/constants/api';
 import { validationErrorMessages } from 'common/constants/messages';
 import Select from 'components/Form/Select/Select';
+import ProgressIndicator from 'components/ProgressIndicator/ProgressIndicator';
 import styles from './_steps.css';
 
 class MilitaryStatus extends React.Component {
   static propTypes = {
     isSubmitting: bool,
+    stepNumber: number,
+    totalSteps: number,
   };
 
   static defaultProps = {
     isSubmitting: false,
+    stepNumber: 0,
+    totalSteps: 0,
   };
 
   static validationSchema = Yup.object().shape({
@@ -31,11 +36,13 @@ class MilitaryStatus extends React.Component {
   };
 
   render() {
-    const { isSubmitting } = this.props;
+    const { isSubmitting, stepNumber, totalSteps } = this.props;
 
     return (
       <>
         <h3 className={styles.row}>Military Status</h3>
+
+        <ProgressIndicator stepNumber={stepNumber} totalSteps={totalSteps} />
 
         <p>
           We welcome anyone to join Operation Code! Please note that many of our services are only

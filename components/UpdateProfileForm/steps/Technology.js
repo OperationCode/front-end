@@ -1,10 +1,11 @@
 import React from 'react';
-import { bool } from 'prop-types';
+import { bool, number } from 'prop-types';
 import { Field } from 'formik';
 import * as Yup from 'yup';
 import { updateUser } from 'common/constants/api';
 import { mapStringsToSelectOptions } from '@innocuous/functions';
 import Select from 'components/Form/Select/Select';
+import ProgressIndicator from 'components/ProgressIndicator/ProgressIndicator';
 import styles from './_steps.css';
 
 const programmingLanguages = [
@@ -37,10 +38,14 @@ const disciplines = [
 class Technology extends React.Component {
   static propTypes = {
     isSubmitting: bool,
+    stepNumber: number,
+    totalSteps: number,
   };
 
   static defaultProps = {
     isSubmitting: false,
+    stepNumber: 0,
+    totalSteps: 0,
   };
 
   static validationSchema = Yup.object().shape({
@@ -58,7 +63,7 @@ class Technology extends React.Component {
   };
 
   render() {
-    const { isSubmitting } = this.props;
+    const { isSubmitting, stepNumber, totalSteps } = this.props;
 
     const programmingLanguageOptions = [...mapStringsToSelectOptions(programmingLanguages)];
     const disciplineOptions = [...mapStringsToSelectOptions(disciplines)];
@@ -66,6 +71,8 @@ class Technology extends React.Component {
     return (
       <>
         <h3 className={styles.row}>Technology</h3>
+
+        <ProgressIndicator stepNumber={stepNumber} totalSteps={totalSteps} />
 
         <div className={styles.row}>
           <Field
