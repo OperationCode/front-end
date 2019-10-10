@@ -112,7 +112,7 @@ export class MultiStepForm extends React.Component {
         onSubmit={this.handleSubmit}
         render={formikBag => (
           <Form className={styles.MultiStepForm} onSubmit={formikBag.handleSubmit}>
-            <CurrentStep {...formikBag} />
+            <CurrentStep {...formikBag} stepNumber={stepNumber} totalSteps={steps.length} />
 
             <div className={styles.errorMessage}>
               {errorMessage && <Alert type="error">{errorMessage}</Alert>}
