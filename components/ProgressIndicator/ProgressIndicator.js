@@ -24,12 +24,13 @@ export default function ProgressIndicator({ stepNumber, totalSteps }) {
 
   return (
     <div className={styles.ProgressIndicator}>
-      <div>
+      <label htmlFor="steps-indicator">
         {currentStep}/{totalSteps} Complete
-      </div>
-      <div className={styles.bar}>
-        <div className={styles.progress} style={{ width: `${percentageCompleted}%` }} />
-      </div>
+      </label>
+      <progress id="steps-indicator" max={totalSteps} value={currentStep}>
+        {' '}
+        {percentageCompleted}%{' '}
+      </progress>
     </div>
   );
 }

@@ -4,17 +4,3 @@
   align-items: center;
   margin: 25px 0;
 }
-
-.bar {
-  width: 50%;
-  margin-top: 10px;
-  border-radius: 8px;
-  background-color: #bfc9d9;
-  height: 10px;
-}
-
-.progress {
-  border-radius: 8px;
-  background-color: #252e3e;
-  height: 10px;
-}
