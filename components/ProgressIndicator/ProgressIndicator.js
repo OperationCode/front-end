@@ -28,8 +28,7 @@ export default function ProgressIndicator({ stepNumber, totalSteps }) {
         {currentStep}/{totalSteps} Complete
       </label>
       <progress id="steps-indicator" max={totalSteps} value={currentStep}>
-        {' '}
-        {percentageCompleted}%{' '}
+        {percentageCompleted}%
       </progress>
     </div>
   );
