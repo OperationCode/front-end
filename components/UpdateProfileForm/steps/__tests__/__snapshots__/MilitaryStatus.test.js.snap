@@ -29,7 +29,9 @@ exports[`UpdateProfileForm/Steps/MilitaryStatus should render in context of Form
       >
         Military Status*
       </label>
-      <div>
+      <div
+        className="selectFeedbackGrouping"
+      >
         <div
           className="fullWidth css-2b097c-container"
           onKeyDown={[Function]}
