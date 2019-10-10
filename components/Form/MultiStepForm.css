@@ -27,6 +27,10 @@
   margin-left: 1rem;
 }
 
+.centerAligned {
+  text-align: center;
+}
+
 @media screen and (--small-viewport) {
   .buttonGrouping button {
     min-width: 100px;
