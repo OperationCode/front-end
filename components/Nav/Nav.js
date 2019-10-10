@@ -56,9 +56,9 @@ export class Nav extends Component {
           navItems={mobileNavItems}
         />
 
-        <header className={styles.NavDesktop} data-testid="Desktop Nav">
-          <div className={styles.navContainer}>
-            <nav>
+        <header className={styles.NavDesktop}>
+          <div className={styles.desktopNavContainer} data-testid="Desktop Nav Container">
+            <nav data-testid="Desktop Nav">
               <Link href="/" key="Home" prefetch={false}>
                 <a className={classNames(styles.logoLink, styles.link)}>
                   <img

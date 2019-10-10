@@ -32,7 +32,7 @@ export default class NavMobile extends Component {
     const { isOpen, openMenu, closeMenu, navItems } = this.props;
 
     return (
-      <header className={styles.NavMobile}>
+      <header className={styles.NavMobile} data-testid="Mobile Nav Container">
         <Link href="/" prefetch={false}>
           <button
             className={classNames(styles.button, styles.logoButton)}
@@ -52,13 +52,14 @@ export default class NavMobile extends Component {
           onClick={openMenu}
           type="button"
           name="dropdown"
+          data-testid="Hamburger Button"
         >
           <ScreenReaderOnly>Open Menu</ScreenReaderOnly>
           <HamburgerIcon className={styles.hamburgerIcon} />
         </button>
 
         {isOpen && (
-          <nav className={styles.dropdown}>
+          <nav data-testid="Mobile Nav">
             <CloseButton onClick={closeMenu} theme="white" />
 
             <ul className={styles.ul}>
