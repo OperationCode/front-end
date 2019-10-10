@@ -8,7 +8,7 @@ exports[`UpdateProfileForm should render with required props 1`] = `
   onSubmit={[Function]}
 >
   <h3
-    className="row"
+    className="centerAligned"
   >
     Professional Details
   </h3>

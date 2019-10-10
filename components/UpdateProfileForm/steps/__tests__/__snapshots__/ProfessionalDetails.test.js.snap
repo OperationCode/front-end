@@ -6,11 +6,6 @@ exports[`UpdateProfileForm/Steps/ProfessionalDetails should render in context of
   onReset={[Function]}
   onSubmit={[Function]}
 >
-  <h3
-    className="row"
-  >
-    Professional Details
-  </h3>
   <div
     className="row"
   >
