@@ -12,21 +12,24 @@ ProgressIndicator.defaultProps = {
   totalSteps: 0,
 };
 
-const ProgressIndicator = ({ stepNumber, totalSteps }) => {
+export default function ProgressIndicator({ stepNumber, totalSteps }) {
   if (totalSteps < 1) return null;
 
-  const percentageCompleted = (stepNumber / totalSteps) * 100;
+  let currentStep = stepNumber;
+
+  if (currentStep < 0) currentStep = 0;
+  if (currentStep > totalSteps) currentStep = totalSteps;
+
+  const percentageCompleted = (currentStep / totalSteps) * 100;
 
   return (
     <div className={styles.ProgressIndicator}>
       <div>
-        {stepNumber}/{totalSteps} Complete
+        {currentStep}/{totalSteps} Complete
       </div>
       <div className={styles.bar}>
         <div className={styles.progress} style={{ width: `${percentageCompleted}%` }} />
       </div>
     </div>
   );
-};
-
-export default ProgressIndicator;
+}
