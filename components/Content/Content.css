@@ -6,15 +6,6 @@
   margin: 1rem auto;
 }
 
-.title {
-  text-align: center;
-}
-
-.underline {
-  border-bottom: 4px solid var(--primary);
-  margin-bottom: 1rem;
-}
-
 .columnsContainer {
   display: flex;
   justify-content: center;
