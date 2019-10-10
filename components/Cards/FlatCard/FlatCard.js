@@ -4,25 +4,7 @@ import classNames from 'classnames';
 import { Image } from '@innocuous/components';
 import styles from './FlatCard.css';
 
-FlatCard.propTypes = {
-  button: element,
-  children: node.isRequired,
-  className: string,
-  header: node,
-  image: shape({
-    source: string.isRequired,
-    alt: string.isRequired,
-  }),
-};
-
-FlatCard.defaultProps = {
-  button: null,
-  className: undefined,
-  header: undefined,
-  image: undefined,
-};
-
-function FlatCard({ button: Button, children, className, header, image }) {
+const FlatCard = ({ button: Button, children, className, header, image }) => {
   const hasImage = image && image.alt && image.source;
 
   return (
@@ -44,6 +26,24 @@ function FlatCard({ button: Button, children, className, header, image }) {
       </div>
     </article>
   );
-}
+};
+
+FlatCard.propTypes = {
+  button: element,
+  children: node.isRequired,
+  className: string,
+  header: node,
+  image: shape({
+    source: string.isRequired,
+    alt: string.isRequired,
+  }),
+};
+
+FlatCard.defaultProps = {
+  button: null,
+  className: undefined,
+  header: undefined,
+  image: undefined,
+};
 
 export default FlatCard;

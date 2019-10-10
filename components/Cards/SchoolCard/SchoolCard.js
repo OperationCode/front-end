@@ -33,32 +33,7 @@ const LabelWithScreenReader = ({ isActive, label }) => (
   </>
 );
 
-SchoolCard.propTypes = {
-  hasHardwareIncluded: bool.isRequired,
-  hasHousing: bool,
-  hasOnline: bool.isRequired,
-  hasOnlyOnline: bool.isRequired,
-  // isFullTime: bool.isRequired,
-  isVetTecApproved: bool,
-  locations: arrayOf(
-    shape({
-      city: string,
-      vaAccepted: bool.isRequired,
-      state: string,
-    }),
-  ).isRequired,
-  logoSource: string.isRequired,
-  name: string.isRequired,
-  website: string.isRequired,
-  toggleModal: func.isRequired,
-};
-
-SchoolCard.defaultProps = {
-  hasHousing: false,
-  isVetTecApproved: false,
-};
-
-export default function SchoolCard(props) {
+export const SchoolCard = props => {
   const {
     name,
     locations,
@@ -179,4 +154,31 @@ export default function SchoolCard(props) {
       </div>
     </Card>
   );
-}
+};
+
+SchoolCard.propTypes = {
+  hasHardwareIncluded: bool.isRequired,
+  hasHousing: bool,
+  hasOnline: bool.isRequired,
+  hasOnlyOnline: bool.isRequired,
+  // isFullTime: bool.isRequired,
+  isVetTecApproved: bool,
+  locations: arrayOf(
+    shape({
+      city: string,
+      vaAccepted: bool.isRequired,
+      state: string,
+    }),
+  ).isRequired,
+  logoSource: string.isRequired,
+  name: string.isRequired,
+  website: string.isRequired,
+  toggleModal: func.isRequired,
+};
+
+SchoolCard.defaultProps = {
+  hasHousing: false,
+  isVetTecApproved: false,
+};
+
+export default SchoolCard;
