@@ -20,8 +20,9 @@
 }
 
 @media screen and (--small-viewport) {
-  .hashLinkContainer {
-    width: min-content;
+  .hashLinkContainer a {
+    visibility: hidden;
+    display: none;
   }
 }
 
