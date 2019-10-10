@@ -18,7 +18,9 @@ exports[`UpdateProfileForm/Steps/MilitaryDetails should render in context of For
       >
         Branch Of Service*
       </label>
-      <div>
+      <div
+        className="selectFeedbackGrouping"
+      >
         <div
           className="fullWidth css-2b097c-container"
           onKeyDown={[Function]}
@@ -129,10 +131,6 @@ exports[`UpdateProfileForm/Steps/MilitaryDetails should render in context of For
         </div>
       </div>
     </div>
-  </div>
-  <div
-    className="row"
-  >
     <div
       className="field"
     >

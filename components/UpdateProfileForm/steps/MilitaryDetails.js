@@ -79,9 +79,7 @@ class MilitaryDetails extends React.Component {
             ]}
             disabled={isSubmitting}
           />
-        </div>
 
-        <div className={styles.row}>
           <Field
             type="number"
             name="yearsOfService"

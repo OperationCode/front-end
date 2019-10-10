@@ -44,7 +44,9 @@ exports[`UpdateProfileForm should render with required props 1`] = `
       >
         Employment Status*
       </label>
-      <div>
+      <div
+        className="selectFeedbackGrouping"
+      >
         <div
           className="fullWidth css-2b097c-container"
           onKeyDown={[Function]}
@@ -155,10 +157,6 @@ exports[`UpdateProfileForm should render with required props 1`] = `
         </div>
       </div>
     </div>
-  </div>
-  <div
-    className="row"
-  >
     <div
       className="field"
     >

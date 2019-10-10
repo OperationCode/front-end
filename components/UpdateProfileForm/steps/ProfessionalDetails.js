@@ -64,9 +64,7 @@ class ProfessionalDetails extends React.Component {
             ]}
             disabled={isSubmitting}
           />
-        </div>
 
-        <div className={styles.row}>
           <Field
             type="text"
             name="companyName"
