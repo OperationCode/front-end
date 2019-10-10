@@ -23,7 +23,9 @@ exports[`UpdateProfileForm/Steps/ProfessionalDetails should render in context of
       >
         Employment Status*
       </label>
-      <div>
+      <div
+        className="selectFeedbackGrouping"
+      >
         <div
           className="fullWidth css-2b097c-container"
           onKeyDown={[Function]}
@@ -134,10 +136,6 @@ exports[`UpdateProfileForm/Steps/ProfessionalDetails should render in context of
         </div>
       </div>
     </div>
-  </div>
-  <div
-    className="row"
-  >
     <div
       className="field"
     >

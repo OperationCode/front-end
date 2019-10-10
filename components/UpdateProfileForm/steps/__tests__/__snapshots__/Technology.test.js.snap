@@ -23,7 +23,9 @@ exports[`UpdateProfileForm/Steps/Technology should render in context of Formik 1
       >
         Programming Languages That Interest You
       </label>
-      <div>
+      <div
+        className="selectFeedbackGrouping"
+      >
         <div
           className="fullWidth css-2b097c-container"
           onKeyDown={[Function]}
@@ -148,7 +150,9 @@ exports[`UpdateProfileForm/Steps/Technology should render in context of Formik 1
       >
         Disciplines That Interest You
       </label>
-      <div>
+      <div
+        className="selectFeedbackGrouping"
+      >
         <div
           className="fullWidth css-2b097c-container"
           onKeyDown={[Function]}
