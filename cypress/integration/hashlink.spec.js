@@ -26,8 +26,27 @@ describe('Hash Links', () => {
       });
     });
 
+    // TODO: Uncomment when https://github.com/cypress-io/cypress/issues/10 is resolved
+    // describe('on large viewports', () => {
+    //   it('is invisible until hovered', () => {
+    //     cy.visitAndWaitFor(path);
+
+    //     cy.findAllByTestId('Hash Link').each(link => {
+    //       const { hash, id } = link[0];
+
+    //       cy.get(hash)
+    //         .scrollIntoView()
+    //         .should('not.be.visible');
+
+    //       cy.queryByTestId(`Heading Content ${id}`).hover()
+
+    //       cy.get(hash).should('be.visible');
+    //     });
+    //   });
+    // });
+
     describe('on small viewports', () => {
-      it('renders the anchors invisibly', () => {
+      it('is always invisible', () => {
         cy.visitAndWaitFor(path);
         cy.viewport('iphone-6');
 
