@@ -8,7 +8,26 @@ import CloseButton from 'components/CloseButton/CloseButton';
 import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
 import styles from './NavMobile.css';
 
-const NavMobile = ({ isOpen, openMenu, closeMenu, navItems }) => {
+NavMobile.propTypes = {
+  isOpen: bool.isRequired,
+  openMenu: func.isRequired,
+  closeMenu: func.isRequired,
+  navItems: arrayOf(
+    shape({
+      href: string.isRequired,
+      name: string.isRequired,
+      shouldPrefetch: bool,
+      sublinks: arrayOf(
+        shape({
+          name: string.isRequired,
+          href: string.isRequired,
+        }),
+      ),
+    }),
+  ).isRequired,
+};
+
+function NavMobile({ isOpen, openMenu, closeMenu, navItems }) {
   return (
     <header className={styles.NavMobile} data-testid="Mobile Nav Container">
       <Link href="/" prefetch={false}>
@@ -65,25 +84,6 @@ const NavMobile = ({ isOpen, openMenu, closeMenu, navItems }) => {
       )}
     </header>
   );
-};
-
-NavMobile.propTypes = {
-  isOpen: bool.isRequired,
-  openMenu: func.isRequired,
-  closeMenu: func.isRequired,
-  navItems: arrayOf(
-    shape({
-      href: string.isRequired,
-      name: string.isRequired,
-      shouldPrefetch: bool,
-      sublinks: arrayOf(
-        shape({
-          name: string.isRequired,
-          href: string.isRequired,
-        }),
-      ),
-    }),
-  ).isRequired,
-};
+}
 
 export default NavMobile;

@@ -15,15 +15,15 @@ import { hasValidAuthToken } from 'common/utils/cookie-utils';
 import styles from './Nav.css';
 
 export const Nav = () => {
-  const [isMobileNavOpen, changeMobileNavStatus] = useState(false);
+  const [isMobileNavOpen, setMobileNavOpen] = useState(false);
 
   const openMobileMenu = () => {
-    changeMobileNavStatus(true);
+    setMobileNavOpen(true);
     document.body.style.overflow = 'hidden';
   };
 
   const closeMobileMenu = () => {
-    changeMobileNavStatus(false);
+    setMobileNavOpen(false);
     document.body.style.overflow = 'auto';
   };
 

@@ -6,8 +6,26 @@ import PlusIcon from 'static/images/icons/plus.svg';
 import MinusIcon from 'static/images/icons/minus.svg';
 import styles from './NavListItem.css';
 
-const NavListItem = ({ sublinks, href, shouldPrefetch, name }) => {
-  const [areSublinksVisible, changeSublinkVisibility] = useState(false);
+NavListItem.propTypes = {
+  href: string.isRequired,
+  name: string.isRequired,
+  shouldPrefetch: bool,
+  sublinks: arrayOf(
+    shape({
+      name: string.isRequired,
+      href: string.isRequired,
+      shouldPrefetch: bool,
+    }),
+  ),
+};
+
+NavListItem.defaultProps = {
+  shouldPrefetch: false,
+  sublinks: [],
+};
+
+function NavListItem({ sublinks, href, shouldPrefetch, name }) {
+  const [areSublinksVisible, setSublinksVisible] = useState(false);
 
   const handleKeyDown = (event, indexKeyedOn) => {
     const lastSublinkIndex = sublinks.length - 1;
@@ -22,7 +40,7 @@ const NavListItem = ({ sublinks, href, shouldPrefetch, name }) => {
       (isLastSublink && didTabForward) || (isFirstSublink && didTabBackward);
 
     if (shouldHideSublinks) {
-      changeSublinkVisibility(false);
+      setSublinksVisible(false);
     }
   };
 
@@ -33,8 +51,8 @@ const NavListItem = ({ sublinks, href, shouldPrefetch, name }) => {
       <Link href={href} prefetch={shouldPrefetch}>
         <a
           className={classNames(styles.link, styles.navItemLink)}
-          onMouseEnter={() => changeSublinkVisibility(true)}
-          onMouseLeave={() => changeSublinkVisibility(false)}
+          onMouseEnter={() => setSublinksVisible(true)}
+          onMouseLeave={() => setSublinksVisible(false)}
           role="link"
           tabIndex={0}
           data-testid={`Nav Item ${name}`}
@@ -50,9 +68,9 @@ const NavListItem = ({ sublinks, href, shouldPrefetch, name }) => {
             aria-haspopup={hasSublinks}
             aria-label="submenu"
             className={styles.sublinkToggleButton}
-            onClick={() => changeSublinkVisibility(!areSublinksVisible)}
-            onMouseEnter={() => changeSublinkVisibility(true)}
-            onMouseLeave={() => changeSublinkVisibility(false)}
+            onClick={() => setSublinksVisible(previousState => !previousState)}
+            onMouseEnter={() => setSublinksVisible(true)}
+            onMouseLeave={() => setSublinksVisible(false)}
             type="button"
           >
             {areSublinksVisible ? (
@@ -66,8 +84,8 @@ const NavListItem = ({ sublinks, href, shouldPrefetch, name }) => {
             className={classNames(styles.sublinksList, {
               [styles.invisible]: !areSublinksVisible,
             })}
-            onMouseEnter={() => changeSublinkVisibility(true)}
-            onMouseLeave={() => changeSublinkVisibility(false)}
+            onMouseEnter={() => setSublinksVisible(true)}
+            onMouseLeave={() => setSublinksVisible(false)}
           >
             {sublinks.map((sublink, index) => (
               <li className={styles.sublinkListItem} key={sublink.name}>
@@ -90,24 +108,6 @@ const NavListItem = ({ sublinks, href, shouldPrefetch, name }) => {
       )}
     </li>
   );
-};
-
-NavListItem.propTypes = {
-  href: string.isRequired,
-  name: string.isRequired,
-  shouldPrefetch: bool,
-  sublinks: arrayOf(
-    shape({
-      name: string.isRequired,
-      href: string.isRequired,
-      shouldPrefetch: bool,
-    }),
-  ),
-};
-
-NavListItem.defaultProps = {
-  shouldPrefetch: false,
-  sublinks: [],
-};
+}
 
 export default NavListItem;
