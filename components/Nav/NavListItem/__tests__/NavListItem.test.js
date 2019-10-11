@@ -71,11 +71,11 @@ describe('NavListItem', () => {
   it('should change plus icon to minus icon, when sublinks are visible', () => {
     const wrapper = shallow(<NavListItem {...testDataWithSublinks} />);
 
-    expect(wrapper.state().areSublinksVisible).toStrictEqual(false);
     expect(wrapper.find('[data-testid="minus-icon"]')).not.toExist();
     expect(wrapper.find('[data-testid="plus-icon"]')).toExist();
 
-    wrapper.setState({ areSublinksVisible: true });
+    wrapper.find('button').simulate('mouseenter');
+
     expect(wrapper.find('[data-testid="minus-icon"]')).toExist();
     expect(wrapper.find('[data-testid="plus-icon"]')).not.toExist();
   });

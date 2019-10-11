@@ -84,13 +84,9 @@ function ChangePasswordForm({ onSubmit, onSuccess, initialValues }) {
               disabled={isSubmitting}
               autoComplete="new-password"
             />
-          </div>
 
-          <div className={styles.row}>
-            {errorMessage && <Alert type="error">{errorMessage}</Alert>}
-          </div>
+            {state.errorMessage && <Alert type="error">{state.errorMessage}</Alert>}
 
-          <div className={styles.row}>
             <Button
               className={styles.topMargin}
               type="submit"
