@@ -43,6 +43,8 @@ class Technology extends React.Component {
     isSubmitting: false,
   };
 
+  static title = 'Technology';
+
   static validationSchema = Yup.object().shape({
     programmingLanguages: Yup.array().of(Yup.string()),
     disciplines: Yup.array().of(Yup.string()),
@@ -65,8 +67,6 @@ class Technology extends React.Component {
 
     return (
       <>
-        <h3 className={styles.row}>Technology</h3>
-
         <div className={styles.row}>
           <Field
             className={styles.fullWidth}
