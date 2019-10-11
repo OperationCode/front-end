@@ -13,7 +13,7 @@ describe('OutboundLink', () => {
   });
 
   it('should render SVG when `hasIcon` is true', () => {
-    const wrapperWithIcon = render(
+    const { container } = render(
       <OutboundLink
         analyticsEventLabel="Test"
         className="test-class"
@@ -24,11 +24,11 @@ describe('OutboundLink', () => {
       </OutboundLink>,
     );
 
-    expect(wrapperWithIcon.container.querySelector('svg')).not.toBeNull();
+    expect(container.querySelector('svg')).not.toBeNull();
   });
 
   it('should not render SVG when `hasIcon` is false', () => {
-    const wrapperWithoutIcon = render(
+    const { container } = render(
       <OutboundLink
         analyticsEventLabel="Test"
         className="test-class"
@@ -39,6 +39,6 @@ describe('OutboundLink', () => {
       </OutboundLink>,
     );
 
-    expect(wrapperWithoutIcon.container.querySelector('svg')).toBeNull();
+    expect(container.querySelector('svg')).toBeNull();
   });
 });
