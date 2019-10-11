@@ -5,7 +5,7 @@ import styles from './ProgressIndicator.css';
 export const developmentErrors = {
   currentStepTooLow: '"currentStep" cannot be negative',
   currentStepTooHigh: '"currentStep" cannot be greater than "totalSteps"',
-  totalStepsTooLow: '"totalSteps" cannot be negative',
+  totalStepsTooLow: '"totalSteps" must be greater than zero',
 };
 
 ProgressIndicator.propTypes = {
@@ -19,10 +19,11 @@ ProgressIndicator.defaultProps = {
 };
 
 export default function ProgressIndicator({ stepNumber, totalSteps }) {
-  if (totalSteps === 0) return null;
-  if (totalSteps < 1) throw new Error(developmentErrors.totalStepsTooLow);
-  if (stepNumber < 0) throw new Error(developmentErrors.currentStepTooLow);
-  if (stepNumber > totalSteps) throw new Error(developmentErrors.currentStepTooHigh);
+  if (process.env.NODE_ENV !== 'production') {
+    if (totalSteps < 1) throw new Error(developmentErrors.totalStepsTooLow);
+    if (stepNumber < 0) throw new Error(developmentErrors.currentStepTooLow);
+    if (stepNumber > totalSteps) throw new Error(developmentErrors.currentStepTooHigh);
+  }
 
   const percentageCompleted = (stepNumber / totalSteps) * 100;
 
