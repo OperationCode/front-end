@@ -8,6 +8,12 @@ export const developmentErrors = {
   totalStepsTooLow: '"totalSteps" must be greater than zero',
 };
 
+const throwDevelopmentException = (expression, message) => {
+  if (process.env.NODE_ENV !== 'production' && expression) {
+    throw new Error(message);
+  }
+};
+
 ProgressIndicator.propTypes = {
   stepNumber: number,
   totalSteps: number,
@@ -19,11 +25,9 @@ ProgressIndicator.defaultProps = {
 };
 
 export default function ProgressIndicator({ stepNumber, totalSteps }) {
-  if (process.env.NODE_ENV !== 'production') {
-    if (totalSteps < 1) throw new Error(developmentErrors.totalStepsTooLow);
-    if (stepNumber < 0) throw new Error(developmentErrors.currentStepTooLow);
-    if (stepNumber > totalSteps) throw new Error(developmentErrors.currentStepTooHigh);
-  }
+  throwDevelopmentException(totalSteps < 1, developmentErrors.totalStepsTooLow);
+  throwDevelopmentException(stepNumber < 0, developmentErrors.currentStepTooLow);
+  throwDevelopmentException(stepNumber > totalSteps, developmentErrors.currentStepTooHigh);
 
   const percentageCompleted = (stepNumber / totalSteps) * 100;
 
