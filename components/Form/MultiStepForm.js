@@ -6,6 +6,7 @@ import { validStep } from 'common/constants/custom-props';
 import Button from 'components/Button/Button';
 import Form from 'components/Form/Form';
 import Alert from 'components/Alert/Alert';
+import ProgressIndicator from 'components/ProgressIndicator/ProgressIndicator';
 import styles from './MultiStepForm.css';
 
 export class MultiStepForm extends React.Component {
@@ -112,6 +113,10 @@ export class MultiStepForm extends React.Component {
         onSubmit={this.handleSubmit}
         render={formikBag => (
           <Form className={styles.MultiStepForm} onSubmit={formikBag.handleSubmit}>
+            <h3 className={styles.centerAligned}>{CurrentStep.title}</h3>
+
+            <ProgressIndicator stepNumber={stepNumber} totalSteps={steps.length} />
+
             <CurrentStep {...formikBag} />
 
             <div className={styles.errorMessage}>

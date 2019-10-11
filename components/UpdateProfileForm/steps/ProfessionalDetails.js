@@ -17,6 +17,8 @@ class ProfessionalDetails extends React.Component {
     isSubmitting: false,
   };
 
+  static title = 'Professional Details';
+
   static validationSchema = Yup.object().shape({
     employmentStatus: Yup.string()
       .nullable()
@@ -40,8 +42,6 @@ class ProfessionalDetails extends React.Component {
 
     return (
       <>
-        <h3 className={styles.row}>Professional Details</h3>
-
         <div className={styles.row}>
           <Field
             className={styles.fullWidth}
@@ -64,9 +64,7 @@ class ProfessionalDetails extends React.Component {
             ]}
             disabled={isSubmitting}
           />
-        </div>
 
-        <div className={styles.row}>
           <Field
             type="text"
             name="companyName"

@@ -120,7 +120,7 @@ class RegistrationForm extends Component {
               is free!
             </p>
 
-            <div className={styles.row}>
+            <div>
               <Field
                 type="email"
                 name="email"
@@ -138,9 +138,7 @@ class RegistrationForm extends Component {
                 disabled={isSubmitting}
                 autoComplete="username email"
               />
-            </div>
 
-            <div className={styles.row}>
               <Field
                 type="password"
                 name="password"
@@ -158,9 +156,7 @@ class RegistrationForm extends Component {
                 disabled={isSubmitting}
                 autoComplete="new-password"
               />
-            </div>
 
-            <div className={styles.row}>
               <Field
                 type="text"
                 name="firstName"
@@ -178,9 +174,7 @@ class RegistrationForm extends Component {
                 disabled={isSubmitting}
                 autoComplete="family-name"
               />
-            </div>
 
-            <div className={styles.row}>
               <Field
                 type="text"
                 name="zipcode"
@@ -191,25 +185,20 @@ class RegistrationForm extends Component {
               />
             </div>
 
-            <div className={styles.row}>
-              {state.errorMessage && <Alert type="error">{state.errorMessage}</Alert>}
-            </div>
+            {state.errorMessage && <Alert type="error">{state.errorMessage}</Alert>}
 
             <p>
               The information we collect is to help us personalize your experience on our Slack
               community. We do not sell your information to anyone.
             </p>
-
-            <div className={styles.row}>
-              <Button
-                className={styles.topMargin}
-                type="submit"
-                theme="secondary"
-                disabled={isSubmitting}
-              >
-                Submit
-              </Button>
-            </div>
+            <Button
+              className={styles.topMargin}
+              type="submit"
+              theme="secondary"
+              disabled={isSubmitting}
+            >
+              Submit
+            </Button>
           </Form>
         )}
       </Formik>

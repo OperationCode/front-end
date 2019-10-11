@@ -13,7 +13,7 @@ describe('SocialLoginGroup', () => {
 
     let renderProps;
 
-    const wrapper = render(
+    const component = render(
       <SocialLoginGroup
         className="test-class"
         loginSocial={loginSocial}
@@ -25,7 +25,7 @@ describe('SocialLoginGroup', () => {
       </SocialLoginGroup>,
     );
 
-    return { wrapper, handleSuccessSpy, renderProps };
+    return { component, handleSuccessSpy, renderProps };
   }
 
   beforeEach(() => {
@@ -58,7 +58,7 @@ describe('SocialLoginGroup', () => {
   it('does NOT call handleSuccess when loginSocial fails', async () => {
     const providerName = 'facebook';
 
-    const { wrapper, handleSuccessSpy, renderProps } = renderWithHelpers();
+    const { component, handleSuccessSpy, renderProps } = renderWithHelpers();
 
     OperationCodeAPIMock.onPost(`auth/social/${providerName}/`, socialReturnToken).reply(400, {
       error: 'User is already registered with this e-mail address.',
@@ -66,7 +66,7 @@ describe('SocialLoginGroup', () => {
 
     const onSuccess = renderProps.onSuccess(providerName);
     await onSuccess(socialReturnToken);
-    const { queryByRole } = wrapper;
+    const { queryByRole } = component;
 
     expect(handleSuccessSpy).not.toHaveBeenCalled();
     expect(queryByRole('alert').textContent).toStrictEqual(

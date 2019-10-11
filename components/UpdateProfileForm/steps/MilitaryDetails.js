@@ -17,6 +17,8 @@ class MilitaryDetails extends React.Component {
     isSubmitting: false,
   };
 
+  static title = 'Military Details';
+
   static validationSchema = Yup.object().shape({
     // TODO: use when() on these
     branchOfService: Yup.string()
@@ -47,8 +49,6 @@ class MilitaryDetails extends React.Component {
 
     return (
       <>
-        <h3 className={styles.row}>Military Details</h3>
-
         <div className={styles.row}>
           <Field
             className={styles.fullWidth}
@@ -79,9 +79,7 @@ class MilitaryDetails extends React.Component {
             ]}
             disabled={isSubmitting}
           />
-        </div>
 
-        <div className={styles.row}>
           <Field
             type="number"
             name="yearsOfService"

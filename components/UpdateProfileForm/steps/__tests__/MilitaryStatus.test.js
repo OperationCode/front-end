@@ -47,8 +47,8 @@ describe('UpdateProfileForm/Steps/MilitaryStatus', () => {
     fireEvent.keyDown(ReactSelect, { key: 'Enter', keyCode: 13 });
 
     fireEvent.submit(container.querySelector('form'));
-    await wait();
-
-    expect(OperationCodeAPIMock.history.patch.length).toStrictEqual(1);
+    await wait(() => {
+      expect(OperationCodeAPIMock.history.patch.length).toStrictEqual(1);
+    });
   });
 });

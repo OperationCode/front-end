@@ -80,8 +80,8 @@ describe('UpdateProfileForm/Steps/Technology', () => {
 
     // Submit form
     fireEvent.submit(container.querySelector('form'));
-    await wait();
-
-    expect(OperationCodeAPIMock.history.patch.length).toStrictEqual(1);
+    await wait(() => {
+      expect(OperationCodeAPIMock.history.patch.length).toStrictEqual(1);
+    });
   });
 });
