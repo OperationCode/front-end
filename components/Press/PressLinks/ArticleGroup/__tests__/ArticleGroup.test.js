@@ -27,7 +27,7 @@ describe('ArticleGroup', () => {
     ));
 
   it('should show all links when clicking Show All button', () => {
-    const ArticleGroupShallowInstance = render(
+    const { container } = render(
       <ArticleGroup
         region="test"
         articles={[
@@ -39,11 +39,11 @@ describe('ArticleGroup', () => {
       />,
     );
 
-    expect(ArticleGroupShallowInstance.container.querySelectorAll('li').length).toBe(1);
+    expect(container.querySelectorAll('li').length).toBe(1);
 
-    fireEvent.click(ArticleGroupShallowInstance.container.querySelector('button'));
+    fireEvent.click(container.querySelector('button'));
 
-    expect(ArticleGroupShallowInstance.container.querySelectorAll('li').length).toBe(3);
+    expect(container.querySelectorAll('li').length).toBe(3);
   });
 
   it('should not create a button if not enough links', () => {
@@ -59,7 +59,7 @@ describe('ArticleGroup', () => {
   });
 
   it('should create a button if enough links are available', () => {
-    const wrap = render(
+    const { container } = render(
       <ArticleGroup
         region="test"
         articles={[
@@ -71,6 +71,6 @@ describe('ArticleGroup', () => {
       />,
     );
 
-    expect(wrap.container.querySelector('button')).not.toBeNull();
+    expect(container.querySelector('button')).not.toBeNull();
   });
 });
