@@ -8,10 +8,30 @@ exports[`UpdateProfileForm should render with required props 1`] = `
   onSubmit={[Function]}
 >
   <h3
-    className="row"
+    className="centerAligned"
   >
     Professional Details
   </h3>
+  <div
+    className="ProgressIndicator"
+  >
+    <label
+      htmlFor="steps-indicator"
+    >
+      0
+      /
+      3
+       Complete
+    </label>
+    <progress
+      id="steps-indicator"
+      max={3}
+      value={0}
+    >
+      0
+      %
+    </progress>
+  </div>
   <div
     className="row"
   >
