@@ -1,8 +1,7 @@
 import React from 'react';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
-import { mount } from 'enzyme'; // eslint-disable-line no-restricted-imports
+import { render } from '@testing-library/react';
 import { loginSocial } from 'common/constants/api';
-import asyncRenderDiff from 'test-utils/asyncRenderDiff';
 import OperationCodeAPIMock from 'test-utils/mocks/apiMock';
 import SocialLoginGroup from '../SocialLoginGroup';
 
@@ -14,7 +13,7 @@ describe('SocialLoginGroup', () => {
 
     let renderProps;
 
-    const wrapper = mount(
+    const wrapper = render(
       <SocialLoginGroup
         className="test-class"
         loginSocial={loginSocial}
@@ -67,10 +66,10 @@ describe('SocialLoginGroup', () => {
 
     const onSuccess = renderProps.onSuccess(providerName);
     await onSuccess(socialReturnToken);
-    await asyncRenderDiff(wrapper);
+    const { queryByRole } = wrapper;
 
     expect(handleSuccessSpy).not.toHaveBeenCalled();
-    expect(wrapper.find('Alert').text()).toStrictEqual(
+    expect(queryByRole('alert').textContent).toStrictEqual(
       'User is already registered with this e-mail address.',
     );
   });

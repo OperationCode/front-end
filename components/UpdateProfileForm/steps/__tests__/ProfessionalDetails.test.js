@@ -1,8 +1,7 @@
 import React from 'react';
 import { Formik } from 'formik';
-import { mount } from 'enzyme'; // eslint-disable-line no-restricted-imports
+import { render, fireEvent, wait } from '@testing-library/react';
 import OperationCodeAPIMock from 'test-utils/mocks/apiMock';
-import asyncRenderDiff from 'test-utils/asyncRenderDiff';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 import Form from 'components/Form/Form';
 
@@ -29,7 +28,7 @@ describe('UpdateProfileForm/Steps/ProfessionalDetails', () => {
   it('should update user on submit', async () => {
     OperationCodeAPIMock.onPatch('auth/profile/').reply(200);
 
-    const wrapper = mount(
+    const { container } = render(
       <Formik
         initialValues={ProfessionalDetails.initialValues}
         validationSchema={ProfessionalDetails.validationSchema}
@@ -40,27 +39,22 @@ describe('UpdateProfileForm/Steps/ProfessionalDetails', () => {
         </Form>
       </Formik>,
     );
+    const ReactSelect = container.querySelector('#react-select-employmentStatus-input');
+    fireEvent.blur(ReactSelect);
+    fireEvent.keyDown(ReactSelect, { key: 'ArrowDown', keyCode: 40 });
 
-    const ReactSelect = wrapper.find('input').first();
+    fireEvent.keyDown(ReactSelect, { key: 'Enter', keyCode: 13 });
 
-    ReactSelect.simulate('blur').simulate('keyDown', { key: 'ArrowDown', keyCode: 40 });
+    fireEvent.change(container.querySelector('input#companyName'), {
+      target: { id: 'companyName', value: 'Fake Company' },
+    });
 
-    await asyncRenderDiff(wrapper);
+    fireEvent.change(container.querySelector('input#companyRole'), {
+      target: { id: 'companyRole', value: 'QA Engineer' },
+    });
 
-    ReactSelect.simulate('keyDown', { key: 'Enter', keyCode: 13 });
-
-    await asyncRenderDiff(wrapper);
-
-    wrapper
-      .find('input#companyName')
-      .simulate('change', { target: { id: 'companyName', value: 'Fake Company' } });
-
-    wrapper
-      .find('input#companyRole')
-      .simulate('change', { target: { id: 'companyRole', value: 'QA Engineer' } });
-
-    wrapper.find('form').simulate('submit');
-    await asyncRenderDiff(wrapper);
+    fireEvent.submit(container.querySelector('form'));
+    await wait();
 
     expect(OperationCodeAPIMock.history.patch.length).toStrictEqual(1);
   });
