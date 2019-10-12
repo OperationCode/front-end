@@ -9,7 +9,7 @@ describe('ErrorDisplay', () => {
   });
 
   it('should render h1, even when no statusCode is passed', () => {
-    const wrapper = render(<ErrorDisplay />);
-    expect(wrapper.container.querySelector('h1').textContent).toStrictEqual('Oh no!');
+    const { container } = render(<ErrorDisplay />);
+    expect(container.querySelector('h1').textContent).toStrictEqual('Oh no!');
   });
 });

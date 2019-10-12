@@ -47,7 +47,7 @@ describe('ArticleGroup', () => {
   });
 
   it('should not create a button if not enough links', () => {
-    const wrap = render(
+    const { container } = render(
       <ArticleGroup
         region="test"
         articles={[{ title: 'Example', url: 'https://example.com' }]}
@@ -55,7 +55,7 @@ describe('ArticleGroup', () => {
       />,
     );
 
-    expect(wrap.container.querySelector('button')).toBeNull();
+    expect(container.querySelector('button')).toBeNull();
   });
 
   it('should create a button if enough links are available', () => {

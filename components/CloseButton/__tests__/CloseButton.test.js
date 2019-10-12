@@ -10,9 +10,9 @@ describe('CloseButton', () => {
 
   it('should not be clickable when disabled', () => {
     const onClickMock = jest.fn();
-    const wrapper = render(<CloseButton disabled onClick={onClickMock} />);
+    const { queryByTestId } = render(<CloseButton disabled onClick={onClickMock} />);
 
-    fireEvent.click(wrapper.queryByTestId('Close Button'));
+    fireEvent.click(queryByTestId('Close Button'));
     expect(onClickMock).toHaveBeenCalledTimes(0);
   });
 });
