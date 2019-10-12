@@ -66,10 +66,9 @@ describe('SocialLoginGroup', () => {
 
     const onSuccess = renderProps.onSuccess(providerName);
     await onSuccess(socialReturnToken);
-    const { queryByRole } = component;
 
     expect(handleSuccessSpy).not.toHaveBeenCalled();
-    expect(queryByRole('alert').textContent).toStrictEqual(
+    expect(component.queryByRole('alert').textContent).toStrictEqual(
       'User is already registered with this e-mail address.',
     );
   });
