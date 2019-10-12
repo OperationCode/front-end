@@ -40,7 +40,6 @@
           "public": "./public",
           "scripts": "./scripts",
           "static": "./public/static",
-          "store": "./store",
           "test-utils": "./test-utils"
         }
       }
