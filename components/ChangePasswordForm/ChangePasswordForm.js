@@ -85,7 +85,7 @@ function ChangePasswordForm({ onSubmit, onSuccess, initialValues }) {
               autoComplete="new-password"
             />
 
-            {state.errorMessage && <Alert type="error">{state.errorMessage}</Alert>}
+            {errorMessage && <Alert type="error">{errorMessage}</Alert>}
 
             <Button
               className={styles.topMargin}
