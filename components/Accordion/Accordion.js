@@ -20,7 +20,7 @@ Accordion.propTypes = {
 function Accordion({ content, accessibilityId, title }) {
   const [isContentVisible, setContentVisibility] = useState(false);
 
-  const toggleAccordionContent = () => setContentVisibility(!isContentVisible);
+  const toggleAccordionContent = () => setContentVisibility(previousState => !previousState);
 
   const contentId = `content-${accessibilityId}`;
   const accordionId = `accordion-control-${accessibilityId}`;
