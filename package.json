@@ -110,7 +110,7 @@
     "react-scroll": "^1.7.14",
     "react-scroll-up-button": "^1.6.4",
     "react-select": "^3.0.8",
-    "react-svg-loader": "2.1.0",
+    "react-svg-loader": "3.0.3",
     "react-youtube": "^7.8.0",
     "reselect": "^4.0.0",
     "style-loader": "^0.23.1",
