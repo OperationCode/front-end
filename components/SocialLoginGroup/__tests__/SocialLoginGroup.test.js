@@ -1,6 +1,6 @@
 import React from 'react';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
-import { render } from '@testing-library/react';
+import { render, act } from '@testing-library/react';
 import { loginSocial } from 'common/constants/api';
 import OperationCodeAPIMock from 'test-utils/mocks/apiMock';
 import SocialLoginGroup from '../SocialLoginGroup';
@@ -13,19 +13,21 @@ describe('SocialLoginGroup', () => {
 
     let renderProps;
 
-    const component = render(
-      <SocialLoginGroup
-        className="test-class"
-        loginSocial={loginSocial}
-        handleSuccess={handleSuccessSpy}
-      >
-        {({ onSuccess, onGoogleFailure }) => {
-          renderProps = { onSuccess, onGoogleFailure };
-        }}
-      </SocialLoginGroup>,
-    );
+    act(() => {
+      render(
+        <SocialLoginGroup
+          className="test-class"
+          loginSocial={loginSocial}
+          handleSuccess={handleSuccessSpy}
+        >
+          {({ onSuccess, onGoogleFailure }) => {
+            renderProps = { onSuccess, onGoogleFailure };
+          }}
+        </SocialLoginGroup>,
+      );
+    });
 
-    return { component, handleSuccessSpy, renderProps };
+    return { handleSuccessSpy, renderProps };
   }
 
   beforeEach(() => {
@@ -58,17 +60,19 @@ describe('SocialLoginGroup', () => {
   it('does NOT call handleSuccess when loginSocial fails', async () => {
     const providerName = 'facebook';
 
-    const { component, handleSuccessSpy, renderProps } = renderWithHelpers();
+    const { handleSuccessSpy, renderProps } = renderWithHelpers();
 
     OperationCodeAPIMock.onPost(`auth/social/${providerName}/`, socialReturnToken).reply(400, {
       error: 'User is already registered with this e-mail address.',
     });
 
-    const onSuccess = renderProps.onSuccess(providerName);
-    await onSuccess(socialReturnToken);
+    await act(async () => {
+      const onSuccess = renderProps.onSuccess(providerName);
+      await onSuccess(socialReturnToken);
+    });
 
     expect(handleSuccessSpy).not.toHaveBeenCalled();
-    expect(component.queryByRole('alert').textContent).toStrictEqual(
+    expect(document.querySelector('div[role="alert"]').textContent).toStrictEqual(
       'User is already registered with this e-mail address.',
     );
   });
