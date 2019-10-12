@@ -1,8 +1,7 @@
 import React from 'react';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
-import { mount } from 'enzyme'; // eslint-disable-line no-restricted-imports
+import { render } from '@testing-library/react';
 import { loginSocial } from 'common/constants/api';
-import asyncRenderDiff from 'test-utils/asyncRenderDiff';
 import OperationCodeAPIMock from 'test-utils/mocks/apiMock';
 import SocialLoginGroup from '../SocialLoginGroup';
 
@@ -14,7 +13,7 @@ describe('SocialLoginGroup', () => {
 
     let renderProps;
 
-    const wrapper = mount(
+    const component = render(
       <SocialLoginGroup
         className="test-class"
         loginSocial={loginSocial}
@@ -26,7 +25,7 @@ describe('SocialLoginGroup', () => {
       </SocialLoginGroup>,
     );
 
-    return { wrapper, handleSuccessSpy, renderProps };
+    return { component, handleSuccessSpy, renderProps };
   }
 
   beforeEach(() => {
@@ -59,7 +58,7 @@ describe('SocialLoginGroup', () => {
   it('does NOT call handleSuccess when loginSocial fails', async () => {
     const providerName = 'facebook';
 
-    const { wrapper, handleSuccessSpy, renderProps } = renderWithHelpers();
+    const { component, handleSuccessSpy, renderProps } = renderWithHelpers();
 
     OperationCodeAPIMock.onPost(`auth/social/${providerName}/`, socialReturnToken).reply(400, {
       error: 'User is already registered with this e-mail address.',
@@ -67,10 +66,9 @@ describe('SocialLoginGroup', () => {
 
     const onSuccess = renderProps.onSuccess(providerName);
     await onSuccess(socialReturnToken);
-    await asyncRenderDiff(wrapper);
 
     expect(handleSuccessSpy).not.toHaveBeenCalled();
-    expect(wrapper.find('Alert').text()).toStrictEqual(
+    expect(component.queryByRole('alert').textContent).toStrictEqual(
       'User is already registered with this e-mail address.',
     );
   });
