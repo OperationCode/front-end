@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pagination should render with required props 1`] = `
+<nav
+  className="Pagination"
+  data-testid="Pagination"
+>
+  <ol>
+    <li
+      className="PaginationItem"
+      data-testid="Pagination Item - leftAngle"
+    >
+      <svg />
+    </li>
+    <li
+      className="PaginationItem"
+      data-testid="Pagination Item - 1"
+    >
+      1
+    </li>
+    <li
+      className="PaginationItem"
+      data-testid="Pagination Item - 2"
+    >
+      2
+    </li>
+    <li
+      className="PaginationItem current"
+      data-testid="Pagination Item - 3"
+    >
+      3
+    </li>
+    <li
+      className="PaginationItem"
+      data-testid="Pagination Item - 4"
+    >
+      4
+    </li>
+    <li
+      className="PaginationItem"
+      data-testid="Pagination Item - 5"
+    >
+      5
+    </li>
+    <li
+      className="PaginationItem"
+      data-testid="Pagination Item - rightAngle"
+    >
+      <svg />
+    </li>
+  </ol>
+</nav>
+`;

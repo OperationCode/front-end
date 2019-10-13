@@ -33,7 +33,7 @@ function Heading({ className, hasHashLink, hasTitleUnderline, headingLevel, text
         })}
       >
         {hasHashLink ? (
-          <div className={styles.hashLinkContainer}>
+          <div className={styles.hashLinkContainer} data-testid={`Heading Content ${anchorId}`}>
             <a id={anchorId} href={`#${anchorId}`} data-testid="Hash Link">
               <ScreenReaderOnly>Scroll Link for {text}</ScreenReaderOnly>
               <LinkIcon className={styles.icon} />

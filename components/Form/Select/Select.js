@@ -106,7 +106,7 @@ export default function Select({
         {label}
       </Label>
 
-      <div>
+      <div className={styles.selectFeedbackGrouping}>
         <ThemedReactSelect
           {...props}
           hasErrors={hasErrors}

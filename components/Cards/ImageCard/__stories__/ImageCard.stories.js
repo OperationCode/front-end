@@ -11,7 +11,7 @@ storiesOf('Cards/ImageCard', module)
       alt={text('alt', 'Image Card')}
       imageSource={text(
         'imageSource',
-        'https://operationcode.org/static/media/ThinkstockPhotos-489787502.812e.jpg',
+        'https://operationcode.org/public/static/media/ThinkstockPhotos-489787502.812e.jpg',
       )}
       isImageFirst={boolean('isImageFirst', true)}
     >
