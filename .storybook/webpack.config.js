@@ -53,9 +53,9 @@ module.exports = (storybookBaseConfig, configType) => {
       test: /\.svg$/,
       use: [
         {
-          loader: 'react-svg-loader',
+          loader: '@svgr/webpack',
           options: {
-            svgo: svgoConfig,
+            svgoConfig,
           },
         },
       ],
