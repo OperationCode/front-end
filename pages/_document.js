@@ -22,7 +22,7 @@ export default class MyDocument extends Document {
         <Head>
           {/* Constants */}
           <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <link rel="icon" href="/static/favicon.ico" />
+          <link rel="icon" href="/public/favicon.ico" />
           <link rel="icon" sizes="192x192" href="/static/apple-icon-180x180.png" />
           <link rel="apple-touch-icon" href="/static/apple-icon-180x180.png" />
           <meta name="twitter:card" content="summary_large_image" />

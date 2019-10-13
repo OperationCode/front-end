@@ -3,6 +3,7 @@
 exports[`NavMobile should render 1`] = `
 <header
   className="NavMobile"
+  data-testid="Mobile Nav Container"
 >
   <Link
     href="/"
@@ -22,6 +23,7 @@ exports[`NavMobile should render 1`] = `
   </Link>
   <button
     className="button hamburger"
+    data-testid="Hamburger Button"
     name="dropdown"
     onClick={[Function]}
     type="button"

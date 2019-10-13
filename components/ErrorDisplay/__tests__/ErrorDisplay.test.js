@@ -1,7 +1,6 @@
+import { render } from '@testing-library/react';
 import React from 'react';
-import { mount } from 'enzyme'; // eslint-disable-line no-restricted-imports
 import createSnapshotTest from 'test-utils/createSnapshotTest';
-
 import ErrorDisplay from '../ErrorDisplay';
 
 describe('ErrorDisplay', () => {
@@ -10,7 +9,7 @@ describe('ErrorDisplay', () => {
   });
 
   it('should render h1, even when no statusCode is passed', () => {
-    const wrapper = mount(<ErrorDisplay />);
-    expect(wrapper.find('h1').text()).toStrictEqual('Oh no!');
+    const { container } = render(<ErrorDisplay />);
+    expect(container.querySelector('h1').textContent).toStrictEqual('Oh no!');
   });
 });

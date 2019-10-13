@@ -7,17 +7,11 @@
   margin-top: 2rem;
 }
 
-.honorRollCard {
+.leadershipCircleMembersCard {
   width: 50%;
 }
 
-.honorRollListHeader {
-  margin-top: 2rem;
-  text-decoration: underline;
-}
-
-.honorRollListHeader,
-.honorRollList {
+.leadershipCircleMembersList {
   width: 90%;
 }
 

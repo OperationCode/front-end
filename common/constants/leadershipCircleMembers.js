@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-export const honorRoll = {
+export const leadershipCircleMembers = {
   Benefactor: {
     donationRange:
       '$2500 or more',

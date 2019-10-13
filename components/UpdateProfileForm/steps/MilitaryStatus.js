@@ -16,6 +16,8 @@ class MilitaryStatus extends React.Component {
     isSubmitting: false,
   };
 
+  static title = 'Military Status';
+
   static validationSchema = Yup.object().shape({
     militaryStatus: Yup.string()
       .nullable()
@@ -35,8 +37,6 @@ class MilitaryStatus extends React.Component {
 
     return (
       <>
-        <h3 className={styles.row}>Military Status</h3>
-
         <p>
           We welcome anyone to join Operation Code! Please note that many of our services are only
           for veterans or spouses.
