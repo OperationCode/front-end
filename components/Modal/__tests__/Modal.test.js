@@ -1,8 +1,7 @@
+import { render } from '@testing-library/react';
 import React from 'react';
-import { shallow } from 'enzyme'; // eslint-disable-line no-restricted-imports
 import ReactGA from 'react-ga';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
-
 import Modal from '../Modal';
 
 describe('Modal', () => {
@@ -38,7 +37,7 @@ describe('Modal', () => {
       screenReaderLabel: 'Test',
     };
 
-    shallow(<Modal {...props}>Testing</Modal>);
+    render(<Modal {...props}>Testing</Modal>);
 
     expect(ReactGA.testModeAPI.calls).toContainEqual(['send', 'pageview', '/modal/Test']);
   });

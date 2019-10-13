@@ -10,7 +10,7 @@
     },
     {
       "src": "^/(favicon.ico|robots.txt|manifest.json|humans.txt|sitemap.xml|sitemap.xsl)$",
-      "dest": "/static/$1",
+      "dest": "/public/$1",
       "headers": { "cache-control": "max-age=10000 must-revalidate" }
     },
     {
