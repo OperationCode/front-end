@@ -43,46 +43,54 @@ exports[`Storyshots Cards/ResourceCard default 1`] = `
       >
         Did you find this useful?
       </span>
-      <button
-        className="voteBtn"
-        data-testid="Upvote Button"
-        onClick={[Function]}
-        type="button"
+      <div
+        className="voteInfo"
       >
-        <span
-          className="ScreenReaderOnly"
+        <button
+          className="voteButton"
+          data-testid="Upvote Button"
+          onClick={[Function]}
+          type="button"
         >
-          Yes
+          <span
+            className="ScreenReaderOnly"
+          >
+            Yes
+          </span>
+          <svg
+            className="icon"
+          />
+        </button>
+        <span
+          className="voteCount"
+        >
+          <span
+            className="ScreenReaderOnly"
+          >
+            Upvotes:
+          </span>
+          0
         </span>
-        <svg
-          className="icon"
-        />
-      </button>
-      <span
-        className="voteCount"
+      </div>
+      <div
+        className="voteInfo"
       >
-        <span
-          className="ScreenReaderOnly"
+        <button
+          className="voteButton"
+          data-testid="Downvote Button"
+          onClick={[Function]}
+          type="button"
         >
-          Upvotes:
-        </span>
-        0
-      </span>
-      <button
-        className="voteBtn"
-        data-testid="Downvote Button"
-        onClick={[Function]}
-        type="button"
-      >
-        <span
-          className="ScreenReaderOnly"
-        >
-          No
-        </span>
-        <svg
-          className="icon"
-        />
-      </button>
+          <span
+            className="ScreenReaderOnly"
+          >
+            No
+          </span>
+          <svg
+            className="icon"
+          />
+        </button>
+      </div>
       <span
         className="voteCount"
       >
@@ -141,46 +149,54 @@ exports[`Storyshots Cards/ResourceCard with long name 1`] = `
       >
         Did you find this useful?
       </span>
-      <button
-        className="voteBtn"
-        data-testid="Upvote Button"
-        onClick={[Function]}
-        type="button"
+      <div
+        className="voteInfo"
       >
-        <span
-          className="ScreenReaderOnly"
+        <button
+          className="voteButton"
+          data-testid="Upvote Button"
+          onClick={[Function]}
+          type="button"
         >
-          Yes
+          <span
+            className="ScreenReaderOnly"
+          >
+            Yes
+          </span>
+          <svg
+            className="icon"
+          />
+        </button>
+        <span
+          className="voteCount"
+        >
+          <span
+            className="ScreenReaderOnly"
+          >
+            Upvotes:
+          </span>
+          12
         </span>
-        <svg
-          className="icon"
-        />
-      </button>
-      <span
-        className="voteCount"
+      </div>
+      <div
+        className="voteInfo"
       >
-        <span
-          className="ScreenReaderOnly"
+        <button
+          className="voteButton active"
+          data-testid="Downvote Button"
+          onClick={[Function]}
+          type="button"
         >
-          Upvotes:
-        </span>
-        12
-      </span>
-      <button
-        className="voteBtn active"
-        data-testid="Downvote Button"
-        onClick={[Function]}
-        type="button"
-      >
-        <span
-          className="ScreenReaderOnly"
-        >
-          No
-        </span>
-        <svg
-          className="icon active"
-        />
-      </button>
+          <span
+            className="ScreenReaderOnly"
+          >
+            No
+          </span>
+          <svg
+            className="icon active"
+          />
+        </button>
+      </div>
       <span
         className="voteCount active"
       >
@@ -239,46 +255,54 @@ exports[`Storyshots Cards/ResourceCard with truncated description 1`] = `
       >
         Did you find this useful?
       </span>
-      <button
-        className="voteBtn active"
-        data-testid="Upvote Button"
-        onClick={[Function]}
-        type="button"
+      <div
+        className="voteInfo"
       >
-        <span
-          className="ScreenReaderOnly"
+        <button
+          className="voteButton active"
+          data-testid="Upvote Button"
+          onClick={[Function]}
+          type="button"
         >
-          Yes
+          <span
+            className="ScreenReaderOnly"
+          >
+            Yes
+          </span>
+          <svg
+            className="icon active"
+          />
+        </button>
+        <span
+          className="voteCount active"
+        >
+          <span
+            className="ScreenReaderOnly"
+          >
+            Upvotes:
+          </span>
+          12
         </span>
-        <svg
-          className="icon active"
-        />
-      </button>
-      <span
-        className="voteCount active"
+      </div>
+      <div
+        className="voteInfo"
       >
-        <span
-          className="ScreenReaderOnly"
+        <button
+          className="voteButton"
+          data-testid="Downvote Button"
+          onClick={[Function]}
+          type="button"
         >
-          Upvotes:
-        </span>
-        12
-      </span>
-      <button
-        className="voteBtn"
-        data-testid="Downvote Button"
-        onClick={[Function]}
-        type="button"
-      >
-        <span
-          className="ScreenReaderOnly"
-        >
-          No
-        </span>
-        <svg
-          className="icon"
-        />
-      </button>
+          <span
+            className="ScreenReaderOnly"
+          >
+            No
+          </span>
+          <svg
+            className="icon"
+          />
+        </button>
+      </div>
       <span
         className="voteCount"
       >
@@ -337,46 +361,54 @@ exports[`Storyshots Cards/ResourceCard with zero up/downvotes 1`] = `
       >
         Did you find this useful?
       </span>
-      <button
-        className="voteBtn"
-        data-testid="Upvote Button"
-        onClick={[Function]}
-        type="button"
+      <div
+        className="voteInfo"
       >
-        <span
-          className="ScreenReaderOnly"
+        <button
+          className="voteButton"
+          data-testid="Upvote Button"
+          onClick={[Function]}
+          type="button"
         >
-          Yes
+          <span
+            className="ScreenReaderOnly"
+          >
+            Yes
+          </span>
+          <svg
+            className="icon"
+          />
+        </button>
+        <span
+          className="voteCount"
+        >
+          <span
+            className="ScreenReaderOnly"
+          >
+            Upvotes:
+          </span>
+          0
         </span>
-        <svg
-          className="icon"
-        />
-      </button>
-      <span
-        className="voteCount"
+      </div>
+      <div
+        className="voteInfo"
       >
-        <span
-          className="ScreenReaderOnly"
+        <button
+          className="voteButton"
+          data-testid="Downvote Button"
+          onClick={[Function]}
+          type="button"
         >
-          Upvotes:
-        </span>
-        0
-      </span>
-      <button
-        className="voteBtn"
-        data-testid="Downvote Button"
-        onClick={[Function]}
-        type="button"
-      >
-        <span
-          className="ScreenReaderOnly"
-        >
-          No
-        </span>
-        <svg
-          className="icon"
-        />
-      </button>
+          <span
+            className="ScreenReaderOnly"
+          >
+            No
+          </span>
+          <svg
+            className="icon"
+          />
+        </button>
+      </div>
       <span
         className="voteCount"
       >
