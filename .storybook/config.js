@@ -2,12 +2,12 @@ import React from 'react';
 import Router from 'next/router';
 import MockedRouter from 'test-utils/mocks/nextRouterMock';
 import MockNextContext from 'test-utils/mocks/nextContextMock';
-import { addDecorator, configure } from '@storybook/react';
+import { addDecorator, configure, addParameters } from '@storybook/react';
 import { setDefaults } from '@storybook/addon-info';
 import { setOptions } from '@storybook/addon-options';
 import { checkA11y } from '@storybook/addon-a11y';
 
-import brandingBackgrounds from './backgrounds';
+import backgroundsPaletteArray from './backgrounds';
 
 import 'common/styles/globalStyles.css';
 
@@ -37,7 +37,7 @@ Router.router = MockedRouter;
 
 const mockWithRouterDecorator = storyFn => <MockNextContext>{storyFn()}</MockNextContext>;
 
-addDecorator(brandingBackgrounds);
+addParameters({ backgrounds: backgroundsPaletteArray });
 addDecorator(checkA11y);
 addDecorator(mockWithRouterDecorator);
 
