@@ -1,6 +1,6 @@
 import React from 'react';
-import { shallow } from 'enzyme'; // eslint-disable-line no-restricted-imports
 import createShallowSnapshotTest from 'test-utils/createShallowSnapshotTest';
+import { render, fireEvent } from '@testing-library/react';
 
 import NavListItem from '../NavListItem';
 
@@ -30,92 +30,83 @@ describe('NavListItem', () => {
     createShallowSnapshotTest(<NavListItem {...testDataWithoutSublinks} />));
 
   it('should not render unordered list without passed sublinks', () => {
-    const wrapper = shallow(<NavListItem {...testDataWithoutSublinks} />);
+    const { container } = render(<NavListItem {...testDataWithoutSublinks} />);
 
-    expect(wrapper.find('ul')).not.toExist();
+    expect(container.querySelector('ul')).toBeNull();
   });
 
   it('should render an invisible, unordered list when passed sublinks', () => {
-    const wrapper = shallow(<NavListItem {...testDataWithSublinks} />);
+    const { container } = render(<NavListItem {...testDataWithSublinks} />);
 
-    expect(wrapper.find('ul')).toExist();
-    expect(wrapper.find('ul')).toHaveClassName('invisible');
+    const ul = container.querySelector('ul');
+    expect(ul).toBeDefined();
+    expect(ul).toHaveClass('invisible');
   });
 
   it('should have visible sublinks on mouse hover', () => {
-    const wrapper = shallow(<NavListItem {...testDataWithSublinks} />);
+    const { container, getByText } = render(<NavListItem {...testDataWithSublinks} />);
+    const ul = container.querySelector('ul');
+    const link = getByText(testDataWithSublinks.sublinks[0].name);
 
-    wrapper
-      .find('a')
-      .first()
-      .simulate('mouseenter');
+    fireEvent.mouseEnter(link);
 
-    expect(wrapper.find('ul')).not.toHaveClassName('invisible');
+    expect(ul).not.toHaveClass('invisible');
 
-    wrapper
-      .find('a')
-      .first()
-      .simulate('mouseleave');
+    fireEvent.mouseLeave(link);
 
-    expect(wrapper.find('ul')).toHaveClassName('invisible');
+    expect(ul).toHaveClass('invisible');
   });
 
   it('should have visible sublinks on when button is clicked', () => {
-    const wrapper = shallow(<NavListItem {...testDataWithSublinks} />);
+    const { container } = render(<NavListItem {...testDataWithSublinks} />);
 
-    wrapper.find('button').simulate('click');
+    const button = container.querySelector('button');
 
-    expect(wrapper.find('ul')).not.toHaveClassName('invisible');
+    fireEvent.click(button);
+
+    expect(container.querySelector('ul')).not.toHaveClass('invisible');
   });
 
   it('should change plus icon to minus icon, when sublinks are visible', () => {
-    const wrapper = shallow(<NavListItem {...testDataWithSublinks} />);
+    const { container, queryByTestId } = render(<NavListItem {...testDataWithSublinks} />);
 
-    expect(wrapper.find('[data-testid="minus-icon"]')).not.toExist();
-    expect(wrapper.find('[data-testid="plus-icon"]')).toExist();
+    expect(queryByTestId('minus-icon')).toBeNull();
+    expect(queryByTestId('plus-icon')).toBeDefined();
 
-    wrapper.find('button').simulate('mouseenter');
+    fireEvent.mouseEnter(container.querySelector('button'));
 
-    expect(wrapper.find('[data-testid="minus-icon"]')).toExist();
-    expect(wrapper.find('[data-testid="plus-icon"]')).not.toExist();
+    expect(queryByTestId('minus-icon')).toBeDefined();
+    expect(queryByTestId('plus-icon')).toBeNull();
   });
 
   it('should show sublinks on hover, and then hide them on button click', () => {
-    const wrapper = shallow(<NavListItem {...testDataWithSublinks} />);
+    const { container, getByText } = render(<NavListItem {...testDataWithSublinks} />);
+    const link = getByText(testDataWithSublinks.sublinks[0].name);
 
-    wrapper
-      .find('a')
-      .first()
-      .simulate('mouseenter');
+    fireEvent.mouseEnter(link);
+    expect(container.querySelector('ul')).not.toHaveClass('invisible');
 
-    expect(wrapper.find('ul')).not.toHaveClassName('invisible');
-
-    wrapper.find('button').simulate('click');
-
-    expect(wrapper.find('ul')).toHaveClassName('invisible');
+    fireEvent.click(container.querySelector('button'));
+    expect(container.querySelector('ul')).toHaveClass('invisible');
   });
 
   it('should show sublinks on click, then hide them on pressing Shift+Tab on first sublink', () => {
-    const wrapper = shallow(<NavListItem {...testDataWithSublinks} />);
+    const { container, getByTestId } = render(<NavListItem {...testDataWithSublinks} />);
 
-    wrapper.find('button').simulate('click');
-    expect(wrapper.find('ul')).not.toHaveClassName('invisible');
+    fireEvent.click(container.querySelector('button'));
+    expect(container.querySelector('ul')).not.toHaveClass('invisible');
 
-    wrapper
-      .find('[data-testid="Nav Item Test - 1"]')
-      .simulate('keyDown', { key: 'Tab', shiftKey: true });
-    expect(wrapper.find('ul')).toHaveClassName('invisible');
+    fireEvent.keyDown(getByTestId('Nav Item Test - 1'), { key: 'Tab', keyCode: 9, shiftKey: true });
+    expect(container.querySelector('ul')).toHaveClass('invisible');
   });
 
   it('should show sublinks on click, then hide them on pressing Tab on last sublink', () => {
-    const wrapper = shallow(<NavListItem {...testDataWithSublinks} />);
+    const { container, getByTestId } = render(<NavListItem {...testDataWithSublinks} />);
 
-    wrapper.find('button').simulate('click');
-    expect(wrapper.find('ul')).not.toHaveClassName('invisible');
+    fireEvent.click(container.querySelector('button'));
+    expect(container.querySelector('ul')).not.toHaveClass('invisible');
 
-    wrapper
-      .find('[data-testid="Nav Item Test - 2"]')
-      .simulate('keyDown', { key: 'Tab', shiftKey: false });
-    expect(wrapper.find('ul')).toHaveClassName('invisible');
+    fireEvent.keyDown(getByTestId('Nav Item Test - 2'), { key: 'Tab', keycode: 9 });
+    expect(container.querySelector('ul')).toHaveClass('invisible');
   });
 });
