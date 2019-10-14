@@ -1,5 +1,7 @@
+const path = require('path');
 const svgoConfig = require('../common/config/svgo');
 const postCSSConfig = require('../postcss.config');
+const { insertIf } = require('@innocuous/functions');
 
 // Export a function. Accept the base config as the only param.
 module.exports = async ({ config, mode }) => {
@@ -10,10 +12,10 @@ module.exports = async ({ config, mode }) => {
   // remove existing css-loader rules
   config.module.rules = config.module.rules.filter(f => f.test.toString() !== '/\\.css$/');
 
-  //required for importing svgs
+  // Required for importing svgs
   config.resolve.extensions.push('.svg');
 
-  // extend config to our liking
+  // Make whatever fine-grained changes you need
   config.module.rules.push(
     {
       test: /\.css$/,
