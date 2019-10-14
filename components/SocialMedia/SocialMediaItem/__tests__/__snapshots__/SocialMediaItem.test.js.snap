@@ -15,9 +15,13 @@ exports[`SocialMediaItem should render with required props 1`] = `
     >
       Opens in new window
     </span>
-    <svg
-      fill="blue"
-    />
+    <span
+      className="ScreenReaderOnly"
+    >
+      Operation Code's 
+      Facebook
+    </span>
+    <svg />
   </a>
 </div>
 `;
