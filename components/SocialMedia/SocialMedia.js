@@ -3,7 +3,7 @@ import FacebookLogo from 'static/images/icons/facebook_logo.svg';
 import TwitterLogo from 'static/images/icons/twitter_logo.svg';
 import GitHubLogo from 'static/images/icons/github_logo_circle.svg';
 import InstagramLogo from 'static/images/icons/instagram_logo.svg';
-import LinkedInLogo from 'static/images/icons/linkedin_logo.svg';
+import LinkedInLogo from 'static/images/icons/linkedin_logo_circle.svg';
 import SocialMediaContainer from './SocialMediaContainer/SocialMediaContainer';
 import SocialMediaItem from './SocialMediaItem/SocialMediaItem';
 import styles from './SocialMedia.css';
