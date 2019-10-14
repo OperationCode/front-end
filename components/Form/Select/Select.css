@@ -4,7 +4,7 @@
 
 .errorMessage {
   /* Alert's border is only 1px - not 2px (account for Select's left and right border) */
-  max-width: calc(inherit + 2px);
+  max-width: calc(100% + 2px);
 }
 
 @media screen and (--desktop-viewport) {
@@ -20,7 +20,7 @@
     left: 100%;
     min-width: 150px;
     max-width: 300px;
-    width: max-content;
+    width: auto;
     padding: 0 10px;
     height: 100%;
     display: flex;
