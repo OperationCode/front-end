@@ -81,38 +81,43 @@ function ResourceCard({
 
         <footer className={styles.footerSection}>
           <span className={styles.footerText}>Did you find this useful?</span>
-          <button
-            className={classNames(styles.voteBtn, { [styles.active]: didUpvote })}
-            data-testid="Upvote Button"
-            onClick={onUpvoteHandler}
-            type="button"
-          >
-            <ScreenReaderOnly>Yes</ScreenReaderOnly>
-            <ThumbsUp
-              className={classNames(styles.icon, {
-                [styles.active]: didUpvote,
-              })}
-            />
-          </button>
 
-          <span className={classNames(styles.voteCount, { [styles.active]: didUpvote })}>
-            <ScreenReaderOnly>Upvotes:</ScreenReaderOnly>
-            {upvotes.toString()}
-          </span>
+          <div className={styles.voteInfo}>
+            <button
+              className={classNames(styles.voteButton, { [styles.active]: didUpvote })}
+              data-testid="Upvote Button"
+              onClick={onUpvoteHandler}
+              type="button"
+            >
+              <ScreenReaderOnly>Yes</ScreenReaderOnly>
+              <ThumbsUp
+                className={classNames(styles.icon, {
+                  [styles.active]: didUpvote,
+                })}
+              />
+            </button>
 
-          <button
-            className={classNames(styles.voteBtn, { [styles.active]: didDownvote })}
-            data-testid="Downvote Button"
-            onClick={onDownvoteHandler}
-            type="button"
-          >
-            <ScreenReaderOnly>No</ScreenReaderOnly>
-            <ThumbsDown
-              className={classNames(styles.icon, {
-                [styles.active]: didDownvote,
-              })}
-            />
-          </button>
+            <span className={classNames(styles.voteCount, { [styles.active]: didUpvote })}>
+              <ScreenReaderOnly>Upvotes:</ScreenReaderOnly>
+              {upvotes.toString()}
+            </span>
+          </div>
+
+          <div className={styles.voteInfo}>
+            <button
+              className={classNames(styles.voteButton, { [styles.active]: didDownvote })}
+              data-testid="Downvote Button"
+              onClick={onDownvoteHandler}
+              type="button"
+            >
+              <ScreenReaderOnly>No</ScreenReaderOnly>
+              <ThumbsDown
+                className={classNames(styles.icon, {
+                  [styles.active]: didDownvote,
+                })}
+              />
+            </button>
+          </div>
 
           <span className={classNames(styles.voteCount, { [styles.active]: didDownvote })}>
             <ScreenReaderOnly>Downvotes:</ScreenReaderOnly>
