@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { string, func, shape } from 'prop-types';
 import { Field, Formik } from 'formik';
 import * as Yup from 'yup';
@@ -22,32 +22,30 @@ const passwordResetSubmitSchema = Yup.object().shape({
     .oneOf([Yup.ref('newPassword1')], validationErrorMessages.passwordMatch),
 });
 
+ChangePasswordForm.propTypes = {
+  onSubmit: func.isRequired,
+  onSuccess: func.isRequired,
+  initialValues: shape({
+    email: string,
+  }),
+};
+
+ChangePasswordForm.defaultProps = {
+  initialValues: {
+    newPassword1: '',
+    newPassword2: '',
+  },
+};
+
 /**
  * Form component used for changing a password either during a password reset
  * or standard change password request.
  */
-export default class ChangePasswordForm extends React.Component {
-  static propTypes = {
-    onSubmit: func.isRequired,
-    onSuccess: func.isRequired,
-    initialValues: shape({
-      email: string,
-    }),
-  };
 
-  static defaultProps = {
-    initialValues: {
-      newPassword1: '',
-      newPassword2: '',
-    },
-  };
+function ChangePasswordForm({ onSubmit, onSuccess, initialValues }) {
+  const [errorMessage, setErrorMessage] = useState('');
 
-  state = {
-    errorMessage: '',
-  };
-
-  handleSubmit = async (values, actions) => {
-    const { onSubmit, onSuccess } = this.props;
+  const handleSubmit = async (values, actions) => {
     try {
       await onSubmit(values);
       actions.setSubmitting(false);
@@ -56,60 +54,52 @@ export default class ChangePasswordForm extends React.Component {
       await onSuccess();
     } catch (error) {
       actions.setSubmitting(false);
-      this.setState({ errorMessage: getServerErrorMessage(error) });
+      setErrorMessage(getServerErrorMessage(error));
     }
   };
 
-  render() {
-    const { props, state } = this;
+  return (
+    <Formik
+      initialValues={initialValues}
+      onSubmit={handleSubmit}
+      validationSchema={passwordResetSubmitSchema}
+    >
+      {({ isSubmitting }) => (
+        <Form className={styles.PasswordResetSubmitForm}>
+          <div className={styles.row}>
+            <Field
+              type="password"
+              name="newPassword1"
+              label="Password*"
+              component={Input}
+              disabled={isSubmitting}
+              autoComplete="new-password"
+            />
 
-    return (
-      <Formik
-        initialValues={props.initialValues}
-        onSubmit={this.handleSubmit}
-        validationSchema={passwordResetSubmitSchema}
-      >
-        {({ isSubmitting }) => (
-          <Form className={styles.PasswordResetSubmitForm}>
-            <div className={styles.row}>
-              <Field
-                type="password"
-                name="newPassword1"
-                label="Password*"
-                component={Input}
-                disabled={isSubmitting}
-                autoComplete="new-password"
-              />
+            <Field
+              type="password"
+              name="newPassword2"
+              label="Confirm Password*"
+              component={Input}
+              disabled={isSubmitting}
+              autoComplete="new-password"
+            />
 
-              <Field
-                type="password"
-                name="newPassword2"
-                label="Confirm Password*"
-                component={Input}
-                disabled={isSubmitting}
-                autoComplete="new-password"
-              />
-            </div>
+            {errorMessage && <Alert type="error">{errorMessage}</Alert>}
 
-            <div className={styles.row}>
-              <Alert isOpen={Boolean(state.errorMessage)} type="error">
-                {state.errorMessage}
-              </Alert>
-            </div>
-
-            <div className={styles.row}>
-              <Button
-                className={styles.topMargin}
-                type="submit"
-                theme="secondary"
-                disabled={isSubmitting}
-              >
-                Submit
-              </Button>
-            </div>
-          </Form>
-        )}
-      </Formik>
-    );
-  }
+            <Button
+              className={styles.topMargin}
+              type="submit"
+              theme="secondary"
+              disabled={isSubmitting}
+            >
+              Submit
+            </Button>
+          </div>
+        </Form>
+      )}
+    </Formik>
+  );
 }
+
+export default ChangePasswordForm;

@@ -5,7 +5,7 @@ exports[`HeroBanner should render with many props assigned 1`] = `
   className="HeroBanner test Container secondary fullViewportHeight"
   style={
     Object {
-      "backgroundImage": "linear-gradient(rgba(33, 48, 69, 0.65),rgba(33, 48, 69, 0.65)), url(https://s3.amazonaws.com/operationcode-assets/heroBanner/stock_family-2.jpg)",
+      "backgroundImage": "linear-gradient(rgba(33, 48, 69, 0.65),rgba(33, 48, 69, 0.65)), url(https://operation-code-assets.s3.us-east-2.amazonaws.com/heroBanner/stock_family-2.jpg)",
     }
   }
 >

@@ -2,11 +2,12 @@
 
 exports[`Storyshots Alert default 1`] = `
 <div
-  className="Alert error visible"
+  className="Alert error"
   role="alert"
 >
   <button
     className="alertCloseButton"
+    data-testid="Close Alert Button"
     onClick={[Function]}
     type="button"
   >
@@ -19,6 +20,6 @@ exports[`Storyshots Alert default 1`] = `
       ×
     </span>
   </button>
-  PropTypes.string or .node
+  Some JSX or string here...
 </div>
 `;

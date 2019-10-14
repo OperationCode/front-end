@@ -6,11 +6,6 @@ exports[`UpdateProfileForm/Steps/MilitaryDetails should render in context of For
   onReset={[Function]}
   onSubmit={[Function]}
 >
-  <h3
-    className="row"
-  >
-    Military Details
-  </h3>
   <div
     className="row"
   >
@@ -23,7 +18,9 @@ exports[`UpdateProfileForm/Steps/MilitaryDetails should render in context of For
       >
         Branch Of Service*
       </label>
-      <div>
+      <div
+        className="selectFeedbackGrouping"
+      >
         <div
           className="fullWidth css-2b097c-container"
           onKeyDown={[Function]}
@@ -134,10 +131,6 @@ exports[`UpdateProfileForm/Steps/MilitaryDetails should render in context of For
         </div>
       </div>
     </div>
-  </div>
-  <div
-    className="row"
-  >
     <div
       className="field"
     >
@@ -154,6 +147,8 @@ exports[`UpdateProfileForm/Steps/MilitaryDetails should render in context of For
           className="Input"
           disabled={false}
           id="yearsOfService"
+          max="40"
+          min="1"
           name="yearsOfService"
           onBlur={[Function]}
           onChange={[Function]}

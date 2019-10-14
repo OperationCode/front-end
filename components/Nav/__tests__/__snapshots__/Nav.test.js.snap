@@ -18,20 +18,25 @@ exports[`Nav should render with no props passed 1`] = `
         Object {
           "href": "/about",
           "name": "About Us",
-          "shouldPrefetch": false,
         },
         Object {
           "href": "/contact",
           "name": "Contact Us",
+          "shouldPrefetch": false,
         },
         Object {
           "href": "/faq",
           "name": "FAQ",
+          "shouldPrefetch": false,
+        },
+        Object {
+          "href": "/podcast",
+          "name": "Podcast",
+          "shouldPrefetch": false,
         },
         Object {
           "href": "/who_we_serve",
           "name": "Who We Serve",
-          "shouldPrefetch": false,
         },
         Object {
           "href": "/events",
@@ -41,7 +46,6 @@ exports[`Nav should render with no props passed 1`] = `
         Object {
           "href": "/get_involved",
           "name": "Get Involved",
-          "shouldPrefetch": false,
         },
         Object {
           "href": "/sponsorship",
@@ -57,14 +61,17 @@ exports[`Nav should render with no props passed 1`] = `
   />
   <header
     className="NavDesktop"
-    data-testid="Desktop Nav"
   >
     <div
-      className="navContainer"
+      className="desktopNavContainer"
+      data-testid="Desktop Nav Container"
     >
-      <nav>
+      <nav
+        data-testid="Desktop Nav"
+      >
         <Link
           href="/"
+          prefetch={false}
         >
           <a
             className="logoLink link"
@@ -72,7 +79,7 @@ exports[`Nav should render with no props passed 1`] = `
             <img
               alt="Operation Code Logo"
               className="logo"
-              src="https://s3.amazonaws.com/operationcode-assets/branding/logos/small-blue-logo.png"
+              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/small-blue-logo.png"
             />
           </a>
         </Link>
@@ -88,10 +95,17 @@ exports[`Nav should render with no props passed 1`] = `
                 Object {
                   "href": "/contact",
                   "name": "Contact Us",
+                  "shouldPrefetch": false,
                 },
                 Object {
                   "href": "/faq",
                   "name": "FAQ",
+                  "shouldPrefetch": false,
+                },
+                Object {
+                  "href": "/podcast",
+                  "name": "Podcast",
+                  "shouldPrefetch": false,
                 },
               ]
             }
@@ -137,17 +151,14 @@ exports[`Nav should render with no props passed 1`] = `
             }
           />
           <li>
-            <Link
+            <a
+              className="link donateLink"
               href="https://secure.lglforms.com/form_engine/s/BRtP7QUKyHOyEYsZROsRew"
             >
-              <a
-                className="link donateLink"
-              >
-                <span>
-                  Donate
-                </span>
-              </a>
-            </Link>
+              <span>
+                Donate
+              </span>
+            </a>
           </li>
         </ul>
       </nav>

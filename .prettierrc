@@ -3,5 +3,8 @@
   "printWidth": 100,
   "singleQuote": true,
   "trailingComma": "all",
-  "overrides": [{ "files": "**/*.css", "options": { "singleQuote": false } }]
+  "overrides": [
+    { "files": "**/*.css", "options": { "singleQuote": false } },
+    { "files": "common/constants/leadershipCircleMembers.js", "options": { "printWidth": 1 } }
+  ]
 }

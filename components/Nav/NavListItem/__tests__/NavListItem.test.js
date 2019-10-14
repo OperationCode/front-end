@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow } from 'enzyme'; // eslint-disable-line no-restricted-imports
 import createShallowSnapshotTest from 'test-utils/createShallowSnapshotTest';
 
 import NavListItem from '../NavListItem';
@@ -71,11 +71,11 @@ describe('NavListItem', () => {
   it('should change plus icon to minus icon, when sublinks are visible', () => {
     const wrapper = shallow(<NavListItem {...testDataWithSublinks} />);
 
-    expect(wrapper.state().areSublinksVisible).toStrictEqual(false);
     expect(wrapper.find('[data-testid="minus-icon"]')).not.toExist();
     expect(wrapper.find('[data-testid="plus-icon"]')).toExist();
 
-    wrapper.setState({ areSublinksVisible: true });
+    wrapper.find('button').simulate('mouseenter');
+
     expect(wrapper.find('[data-testid="minus-icon"]')).toExist();
     expect(wrapper.find('[data-testid="plus-icon"]')).not.toExist();
   });
@@ -92,6 +92,30 @@ describe('NavListItem', () => {
 
     wrapper.find('button').simulate('click');
 
+    expect(wrapper.find('ul')).toHaveClassName('invisible');
+  });
+
+  it('should show sublinks on click, then hide them on pressing Shift+Tab on first sublink', () => {
+    const wrapper = shallow(<NavListItem {...testDataWithSublinks} />);
+
+    wrapper.find('button').simulate('click');
+    expect(wrapper.find('ul')).not.toHaveClassName('invisible');
+
+    wrapper
+      .find('[data-testid="Nav Item Test - 1"]')
+      .simulate('keyDown', { key: 'Tab', shiftKey: true });
+    expect(wrapper.find('ul')).toHaveClassName('invisible');
+  });
+
+  it('should show sublinks on click, then hide them on pressing Tab on last sublink', () => {
+    const wrapper = shallow(<NavListItem {...testDataWithSublinks} />);
+
+    wrapper.find('button').simulate('click');
+    expect(wrapper.find('ul')).not.toHaveClassName('invisible');
+
+    wrapper
+      .find('[data-testid="Nav Item Test - 2"]')
+      .simulate('keyDown', { key: 'Tab', shiftKey: false });
     expect(wrapper.find('ul')).toHaveClassName('invisible');
   });
 });

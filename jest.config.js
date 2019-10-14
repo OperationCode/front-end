@@ -42,7 +42,6 @@ module.exports = {
 
     // No real logic to test here
     '<rootDir>/common/utils/api-utils.js',
-    '<rootDir>/components/FAQ/questions.js',
     '<rootDir>/components/ZipRecruiterJobs/ZipRecruiterJobs.js',
     '<rootDir>/components/Press/PressLinks/Articles.js',
 
@@ -190,7 +189,7 @@ module.exports = {
   // unmockedModulePathPatterns: undefined,
 
   // Indicates whether each individual test should be reported during the run
-  verbose: true,
+  // verbose: false,
 
   // An array of regexp patterns that are matched against all source file paths before re-running tests in watch mode
   // watchPathIgnorePatterns: [],

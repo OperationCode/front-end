@@ -17,6 +17,8 @@ class MilitaryDetails extends React.Component {
     isSubmitting: false,
   };
 
+  static title = 'Military Details';
+
   static validationSchema = Yup.object().shape({
     // TODO: use when() on these
     branchOfService: Yup.string()
@@ -24,6 +26,8 @@ class MilitaryDetails extends React.Component {
       .required(validationErrorMessages.required),
     yearsOfService: Yup.number()
       .nullable()
+      .positive('Enter a number between 1 and 40.')
+      .lessThan(41, 'Enter a number between 1 and 40.')
       .required(validationErrorMessages.required),
     payGrade: Yup.string()
       .nullable()
@@ -45,8 +49,6 @@ class MilitaryDetails extends React.Component {
 
     return (
       <>
-        <h3 className={styles.row}>Military Details</h3>
-
         <div className={styles.row}>
           <Field
             className={styles.fullWidth}
@@ -77,15 +79,15 @@ class MilitaryDetails extends React.Component {
             ]}
             disabled={isSubmitting}
           />
-        </div>
 
-        <div className={styles.row}>
           <Field
             type="number"
             name="yearsOfService"
             label="Years Of Service*"
             component={Input}
             disabled={isSubmitting}
+            min="1"
+            max="40"
           />
 
           <Field

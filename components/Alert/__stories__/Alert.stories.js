@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 import { action } from '@storybook/addon-actions';
-import { withKnobs, boolean, select, text } from '@storybook/addon-knobs';
+import { withKnobs, select, text } from '@storybook/addon-knobs';
 
 import Alert from '../Alert';
 
@@ -12,11 +12,10 @@ storiesOf('Alert', module)
     'default',
     withInfo()(() => (
       <Alert
-        isOpen={boolean('isOpen', true)}
-        onToggle={action('onToggle for Alert')}
-        type={select('type', ['error', 'success', 'warning'])}
+        onClose={action('onToggle for Alert')}
+        type={select('type', ['error', 'success', 'warning'], 'error')}
       >
-        {text('children', 'PropTypes.string or .node')}
+        {text('children', 'Some JSX or string here...')}
       </Alert>
     )),
   );

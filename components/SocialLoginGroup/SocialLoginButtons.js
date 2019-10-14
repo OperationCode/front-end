@@ -3,7 +3,7 @@ import { func } from 'prop-types';
 import classNames from 'classnames';
 import GoogleLogin from 'react-google-login';
 import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props';
-import { facebookKey, googleKey } from 'common/config/environment';
+import { clientTokens } from 'common/config/environment';
 import styles from './SocialLoginGroup.css';
 
 SocialLoginButtons.propTypes = {
@@ -15,7 +15,7 @@ function SocialLoginButtons({ onSuccess, onGoogleFailure }) {
   return (
     <>
       <GoogleLogin
-        clientId={googleKey}
+        clientId={clientTokens.OC_GOOGLE_KEY}
         buttonText="Login"
         onSuccess={onSuccess('google')}
         onFailure={onGoogleFailure}
@@ -32,7 +32,7 @@ function SocialLoginButtons({ onSuccess, onGoogleFailure }) {
       />
 
       <FacebookLogin
-        appId={facebookKey}
+        appId={clientTokens.OC_FACEBOOK_KEY}
         callback={onSuccess('facebook')}
         redirectUri={typeof window === 'object' && `${window.location.origin}/login`}
         render={renderProps => (

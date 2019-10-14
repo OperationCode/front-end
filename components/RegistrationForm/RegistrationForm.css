@@ -1,13 +1,14 @@
 .RegistrationForm {
   width: 100%;
-}
-
-.row {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .topMargin {
   margin-top: 1rem;
+}
+
+.RegistrationForm > p {
+  margin: 1.25rem auto;
 }

@@ -14,7 +14,7 @@ exports[`SchoolCard should render with required props 1`] = `
     </h6>
   </ScreenReaderOnly>
   <div
-    className="giBillRibbon"
+    className="ribbon gi"
     data-testid="GI Bill Ribbon"
   >
     GI Bill
@@ -22,7 +22,7 @@ exports[`SchoolCard should render with required props 1`] = `
   <div
     className="cardBrand"
   >
-    <img
+    <Image
       alt="school name logo"
       height="150"
       src="source"
@@ -105,6 +105,16 @@ exports[`SchoolCard should render with required props 1`] = `
     <span
       className="cardBlockTitle"
     >
+      VET TEC Approved
+    </span>
+    No
+  </div>
+  <div
+    className="cardBlock"
+  >
+    <span
+      className="cardBlockTitle"
+    >
       Campus Locations
     </span>
     Multiple locations
@@ -133,7 +143,6 @@ exports[`SchoolCard should render with required props 1`] = `
   >
     <LinkButton
       analyticsEventLabel="school name | Website"
-      disabled={false}
       fullWidth={true}
       href="website"
       shouldPrefetch={false}

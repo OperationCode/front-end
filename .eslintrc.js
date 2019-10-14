@@ -39,6 +39,14 @@ module.exports = {
       },
     },
     {
+      files: ['cypress/**/*.js'],
+      rules: {
+        'jest/expect-expect': 'off',
+        'jest/valid-expect': 'off',
+        'func-names': 'off',
+      },
+    },
+    {
       files: [
         'pages/**.js',
         'components/head.js',
@@ -56,11 +64,9 @@ module.exports = {
       },
     },
     {
-      files: ['cypress/**/*.js'],
+      files: ['components/UpdateProfileForm/**/*.js'],
       rules: {
-        'jest/expect-expect': 'off',
-        'jest/valid-expect': 'off',
-        'func-names': 'off',
+        'react/sort-comp': 'off',
       },
     },
   ],
@@ -91,6 +97,7 @@ module.exports = {
         groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
       },
     ],
+    'import/prefer-default-export': 'off',
 
     // Jest Plugin Rules
     'jest/consistent-test-it': [
@@ -130,14 +137,12 @@ module.exports = {
         aspects: ['invalidHref', 'preferButton'],
       },
     ],
-    'jsx-a11y/label-has-for': [
+    'jsx-a11y/label-has-associated-control': [
       2,
       {
-        components: ['Label'],
-        required: {
-          some: ['for'],
-        },
-        allowChildren: true,
+        labelComponents: ['Label'],
+        labelAttributes: ['for'],
+        controlComponents: ['Input', 'Select'],
       },
     ],
 
@@ -173,9 +178,12 @@ module.exports = {
     ],
     'react/jsx-one-expression-per-line': 'off',
     'react/no-did-mount-set-state': 'off',
-    'react/no-unused-prop-types': 'off',
+    'react/no-unused-prop-types': 'error',
     'react/no-unused-state': 'error',
     'react/prefer-stateless-function': ['off'],
+    'react/static-property-placement': ['off'],
+    'react/jsx-props-no-spreading': ['off'],
+    'react/state-in-constructor': ['error', 'never'],
 
     // Unicorn Plugin Rules
     'unicorn/catch-error-name': 'error',
@@ -208,6 +216,9 @@ module.exports = {
           props: true,
           renderProps: true,
           requiredProps: true,
+          'custom-props': true,
+          'prop-utils': true,
+          'prop-utils.test': true,
         },
       },
     ],
@@ -237,6 +248,10 @@ module.exports = {
             importNames: ['default'],
             message:
               "Please use non-default imports of `prop-types`. Example: `import { func } from 'prop-types';`",
+          },
+          {
+            name: 'enzyme',
+            message: 'Please use `@testing-library/react` from now onwards.',
           },
         ],
       },

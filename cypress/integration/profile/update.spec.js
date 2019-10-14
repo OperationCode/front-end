@@ -1,16 +1,17 @@
 const goToNextStep = stepName => {
-  cy.get('button[data-testid="Submit Step Button"]').click();
+  cy.findByTestId('Submit Step Button').click();
   cy.wait('@patchUser');
   cy.get('h3').should('have.text', stepName);
 };
 
 const goToPreviousStep = stepName => {
-  cy.get('button[data-testid="Previous Step Button"]').click();
+  cy.findByTestId('Previous Step Button').click();
   cy.get('h3').should('have.text', stepName);
 };
 
 const firstStepName = 'Professional Details';
 const secondStepName = 'Military Status';
+const thirdStepName = 'Military Details';
 
 describe(`profile/update (unauthorized)`, () => {
   it(`should redirect to login if not authorized`, () => {
@@ -39,7 +40,7 @@ describe(`profile/update (from login)`, () => {
     goToNextStep(secondStepName);
     goToNextStep('Military Details');
     goToNextStep('Technology');
-    cy.get('button[data-testid="Submit Multi-Step Form"]').click();
+    cy.findByTestId('Submit Multi-Step Form').click();
     cy.wait('@patchUser');
     cy.url().should('contain', '/profile');
     cy.url().should('not.contain', '/profile/update');
@@ -77,7 +78,7 @@ describe(`profile/update (from login)`, () => {
 
     cy.clearCookies();
 
-    cy.get('button[data-testid="Submit Step Button"]').click();
+    cy.findByTestId('Submit Step Button').click();
     cy.get('div[role="alert"]').should('have.text', 'Request failed with status code 401');
     cy.get('h3').should('have.text', secondStepName);
   });
@@ -99,5 +100,31 @@ describe(`profile/update (from login)`, () => {
 
     // confirms that next step IS military details
     goToNextStep('Military Details');
+  });
+
+  it(`should not allow negative in the years of service input`, () => {
+    goToNextStep(secondStepName);
+    goToNextStep(thirdStepName);
+
+    cy.get('input[name="yearsOfService"]')
+      .clear()
+      .type('-1');
+
+    cy.findByTestId('Submit Step Button').click();
+
+    cy.get('div[role="alert"]').should('have.text', 'Enter a number between 1 and 40.');
+  });
+
+  it(`should not allow numbers greater than 40 in the years of service input`, () => {
+    goToNextStep(secondStepName);
+    goToNextStep(thirdStepName);
+
+    cy.get('input[name="yearsOfService"]')
+      .clear()
+      .type('41');
+
+    cy.findByTestId('Submit Step Button').click();
+
+    cy.get('div[role="alert"]').should('have.text', 'Enter a number between 1 and 40.');
   });
 });

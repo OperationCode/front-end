@@ -1,5 +1,5 @@
+import { fireEvent, render } from '@testing-library/react';
 import React from 'react';
-import { mount } from 'enzyme';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 import CloseButton from '../CloseButton';
 
@@ -10,9 +10,9 @@ describe('CloseButton', () => {
 
   it('should not be clickable when disabled', () => {
     const onClickMock = jest.fn();
-    const wrapper = mount(<CloseButton disabled onClick={onClickMock} />);
+    const { queryByTestId } = render(<CloseButton disabled onClick={onClickMock} />);
 
-    wrapper.find('button').simulate('click');
+    fireEvent.click(queryByTestId('Close Button'));
     expect(onClickMock).toHaveBeenCalledTimes(0);
   });
 });

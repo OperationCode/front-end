@@ -1,6 +1,6 @@
 import React from 'react';
 import faker from 'faker';
-import { mount } from 'enzyme';
+import { mount } from 'enzyme'; // eslint-disable-line no-restricted-imports
 import { wait } from '@testing-library/react';
 import { loginUser } from 'common/constants/api';
 import { networkErrorMessages, validationErrorMessages } from 'common/constants/messages';
@@ -199,7 +199,7 @@ describe('LoginForm', () => {
       token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9',
     });
 
-    const successSpy = jest.fn();
+    const successSpy = jest.fn(() => Promise.resolve(true));
     const wrapper = mount(
       <LoginForm onSuccess={successSpy} login={loginUser} initialValues={initialValues} />,
     );

@@ -49,9 +49,10 @@ class LoginForm extends Component {
 
     try {
       const { user, token } = await login(values);
+
+      await onSuccess({ token, user });
       actions.setSubmitting(false);
       actions.resetForm();
-      await onSuccess({ user, token });
     } catch (error) {
       actions.setSubmitting(false);
 
@@ -88,15 +89,9 @@ class LoginForm extends Component {
                 disabled={isSubmitting}
                 autoComplete="new-password"
               />
-            </div>
 
-            <div className={styles.row}>
-              <Alert isOpen={Boolean(state.errorMessage)} type="error">
-                {state.errorMessage}
-              </Alert>
-            </div>
+              {state.errorMessage && <Alert type="error">{state.errorMessage}</Alert>}
 
-            <div className={styles.row}>
               <Button
                 className={styles.topMargin}
                 type="submit"

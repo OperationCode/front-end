@@ -1,4 +1,4 @@
-const withCSS = require('@zeit/next-css');
+const withCSS = require('@innocuous/next-css');
 const withSourceMaps = require('@zeit/next-source-maps')();
 const withBundleAnalyzer = require('@zeit/next-bundle-analyzer');
 const svgoConfig = require('./common/config/svgo');
@@ -8,25 +8,12 @@ const nextConfig = withCSS({
   // see: https://zeit.co/guides/deploying-nextjs-with-now/
   target: 'serverless',
 
-  // Enable dynamic static exports (if a page can be static, it will be)
-  experimental: {
-    autoExport: true,
-  },
-
-  // eslint-disable-next-line unicorn/prevent-abbreviations
-  env: {
-    GOOGLE_ANALYTICS_TRACKING_ID: process.env.GOOGLE_ANALYTICS_TRACKING_ID,
-    LOGROCKET_KEY: process.env.LOGROCKET_KEY,
-    OC_FACEBOOK_KEY: process.env.OC_FACEBOOK_KEY,
-    OC_GOOGLE_KEY: process.env.OC_GOOGLE_KEY,
-    SENTRY_DSN: process.env.SENTRY_DSN,
-  },
-
   // NextCSS Config
   cssModules: true,
   cssLoaderOptions: {
-    // No need for importLoaders: 1 as its set to 1 when postcss.config.js exists
-    localIdentName: '[name]_[local]__[hash:base64:5]',
+    modules: {
+      localIdentName: '[name]_[local]__[hash:base64:5]',
+    },
   },
 
   // Bundle Analyzer Config (only used when running `yarn build:analyze`)
@@ -67,9 +54,9 @@ const nextConfig = withCSS({
         test: /\.svg$/,
         use: [
           {
-            loader: 'react-svg-loader',
+            loader: '@svgr/webpack',
             options: {
-              svgo: svgoConfig,
+              svgoConfig,
             },
           },
         ],
@@ -83,7 +70,10 @@ const nextConfig = withCSS({
               limit: 8192,
               fallback: {
                 loader: 'file-loader',
-                options: { publicPath: '/_next/static/images', outputPath: 'static/images' },
+                options: {
+                  publicPath: '/_next/static/images',
+                  outputPath: 'static/images',
+                },
               },
               publicPath: '/_next/',
               outputPath: 'static/images/',
@@ -93,6 +83,20 @@ const nextConfig = withCSS({
         ],
       },
     );
+
+    // Add polyfills
+    const originalEntry = config.entry;
+
+    // eslint-disable-next-line no-param-reassign
+    config.entry = async () => {
+      const entries = await originalEntry();
+
+      if (entries['main.js'] && !entries['main.js'].includes('./polyfills.js')) {
+        entries['main.js'].unshift('./polyfills.js');
+      }
+
+      return entries;
+    };
 
     return config;
   },

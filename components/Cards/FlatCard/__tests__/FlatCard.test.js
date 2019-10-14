@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow } from 'enzyme'; // eslint-disable-line no-restricted-imports
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 
 import { s3 } from 'common/constants/urls';
@@ -50,7 +50,7 @@ describe('FlatCard', () => {
 
   it('only renders an image when both source and alt are passed in image prop', () => {
     const wrapperWithNoImageProperty = shallow(<FlatCard {...requiredProps} />);
-    expect(wrapperWithNoImageProperty.find('img').exists()).toBe(false);
+    expect(wrapperWithNoImageProperty.find('Image').exists()).toBe(false);
 
     const wrapperWithAllImageProperties = shallow(
       <FlatCard
@@ -61,6 +61,6 @@ describe('FlatCard', () => {
         }}
       />,
     );
-    expect(wrapperWithAllImageProperties.find('img').exists()).toBe(true);
+    expect(wrapperWithAllImageProperties.find('Image').exists()).toBe(true);
   });
 });

@@ -2,13 +2,16 @@
 
 exports[`DonateSection should render with no props passed passed 1`] = `
 <Container
-  backgroundImageSource="https://s3.amazonaws.com/operationcode-assets/background_flag.jpg"
+  backgroundImageSource="https://operation-code-assets.s3.us-east-2.amazonaws.com/background_flag.jpg"
   isFullViewportHeight={false}
   theme="secondary"
 >
-  <h3>
-    Donate
-  </h3>
+  <Heading
+    hasHashLink={true}
+    hasTitleUnderline={false}
+    headingLevel={3}
+    text="Donate"
+  />
   <p
     className="justifyAlign"
   >
@@ -20,7 +23,6 @@ exports[`DonateSection should render with no props passed passed 1`] = `
   <LinkButton
     analyticsEventLabel="Donate"
     className="topMargin"
-    disabled={false}
     fullWidth={false}
     href="https://secure.lglforms.com/form_engine/s/BRtP7QUKyHOyEYsZROsRew"
     shouldPrefetch={false}

@@ -7,6 +7,7 @@ import SponsorsSection from 'components/ReusableSections/SponsorsSection/Sponsor
 import SuccessStory from 'components/SuccessStory/SuccessStory';
 import Heading from 'components/Heading/Heading';
 import LinkButton from 'components/LinkButton/LinkButton';
+import OutboundLink from 'components/OutboundLink/OutboundLink';
 import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
 import successStories from 'common/constants/successStories';
 import { donateLink, s3 } from 'common/constants/urls';
@@ -24,6 +25,7 @@ const featuredLinksArray = [
     name: 'Donate',
     imageSource: `${s3}redesign/images/fist-bumping.jpg`,
     alt: 'A team fist-bumping eachother over a table.',
+    analyticsEventLabel: 'CTA Donate Homepage',
   },
   {
     href: 'events',
@@ -53,10 +55,10 @@ const Home = () => (
         <LinkButton href="/who_we_serve">Learn More</LinkButton>
 
         <div className={styles.featuredLinks}>
-          {featuredLinksArray.map(({ href, name, imageSource, alt }) => (
+          {featuredLinksArray.map(({ href, name, imageSource, alt, analyticsEventLabel }) => (
             <div className={styles.featuredLinkItem} key={name}>
-              <Link href={href}>
-                <a>
+              {analyticsEventLabel ? (
+                <OutboundLink analyticsEventLabel={analyticsEventLabel} href={href} hasIcon={false}>
                   <h6>{name}</h6>
                   <ScreenReaderOnly>{`Image: ${alt}`}</ScreenReaderOnly>
                   <div
@@ -64,8 +66,20 @@ const Home = () => (
                     className={styles.featuredLinkImage}
                     aria-hidden="true"
                   />
-                </a>
-              </Link>
+                </OutboundLink>
+              ) : (
+                <Link href={href}>
+                  <a>
+                    <h6>{name}</h6>
+                    <ScreenReaderOnly>{`Image: ${alt}`}</ScreenReaderOnly>
+                    <div
+                      style={{ backgroundImage: `url(${imageSource})` }}
+                      className={styles.featuredLinkImage}
+                      aria-hidden="true"
+                    />
+                  </a>
+                </Link>
+              )}
             </div>
           ))}
         </div>
@@ -76,9 +90,7 @@ const Home = () => (
       theme="gray"
       columns={[
         <div className={styles.cta}>
-          <Heading hasHeadingLines theme="secondary">
-            Our Mission
-          </Heading>
+          <Heading text="Our Mission" hasTitleUnderline />
           <p className={styles.justifyAlign}>
             At Operation Code, we strongly believe in improving the lives of military veterans,
             service members, and their spouses. We increase their chances for success in the tech

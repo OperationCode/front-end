@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { mount } from 'enzyme'; // eslint-disable-line no-restricted-imports
 import { wait } from '@testing-library/react';
 import { networkErrorMessages, validationErrorMessages } from 'common/constants/messages';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
@@ -137,6 +137,42 @@ describe('RegistrationForm', () => {
     });
   });
 
+  it('should reset form and set form as "not submitting" after successful login', async () => {
+    const user = mockUser();
+
+    const initialValues = {
+      email: user.email,
+      password: user.password,
+      firstName: user.firstName,
+      lastName: user.lastName,
+      zipcode: user.zipcode,
+    };
+
+    OperationCodeAPIMock.onPost('auth/registration/', initialValues).reply(200, {
+      token: 'fake-token',
+    });
+
+    const successSpy = jest.fn(() => Promise.resolve(true));
+    const wrapper = mount(
+      <RegistrationForm onSuccess={successSpy} initialValues={initialValues} />,
+    );
+
+    const mockedFormikBag = {
+      setSubmitting: jest.fn(),
+      resetForm: jest.fn(),
+    };
+
+    await wrapper.instance().handleSubmit(initialValues, mockedFormikBag);
+
+    await wait(() => {
+      expect(OperationCodeAPIMock.history.post.length).toStrictEqual(1);
+      expect(successSpy).toHaveBeenCalledTimes(1);
+      expect(mockedFormikBag.setSubmitting).toHaveBeenCalledTimes(1);
+      expect(mockedFormikBag.setSubmitting).toHaveBeenCalledWith(false);
+      expect(mockedFormikBag.resetForm).toHaveBeenCalledTimes(1);
+    });
+  });
+
   it('should NOT submit with some invalid data in form', async () => {
     const successSpy = jest.fn();
 
@@ -162,10 +198,7 @@ describe('RegistrationForm', () => {
       expect(OperationCodeAPIMock.history.post.length).not.toBeGreaterThan(0);
     });
 
-    // All fields + 1 because of always-rendered form error (as opposed to all the field errors)
-    expect(wrapper.find('Alert').children()).toHaveLength(
-      Object.keys(invalidFormValues).length + 1,
-    );
+    expect(wrapper.find('Alert').children()).toHaveLength(Object.keys(invalidFormValues).length);
   });
 
   it('should show "email already registered" message for dupe email registration', async () => {

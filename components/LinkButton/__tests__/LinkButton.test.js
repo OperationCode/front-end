@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactGA from 'react-ga';
-import { mount } from 'enzyme';
+import noop from 'lodash/noop';
+import { mount } from 'enzyme'; // eslint-disable-line no-restricted-imports
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 import LinkButton from '../LinkButton';
 
@@ -36,6 +37,9 @@ describe('LinkButton', () => {
   });
 
   it('should create ReactGA event on click when in prod environment', () => {
+    const realConsoleError = console.error;
+    console.error = noop;
+
     process.env.NODE_ENV = 'production';
     const wrapper = mount(OutboundLinkButton);
 
@@ -47,5 +51,7 @@ describe('LinkButton', () => {
     expect(newGAEventPayload.eventLabel).toStrictEqual('OUTBOUND [Test]');
 
     ReactGA.testModeAPI.calls = [];
+
+    console.error = realConsoleError;
   });
 });

@@ -1,9 +1,15 @@
 # Operation Code-specific
 backend
 
+# No npm allowed
+package-lock.json
+
 # Cypress local support artifacts
 cypress/screenshots
 cypress/videos
+
+# All Contributors
+!.all-contributorsrc
 
 # Logs
 logs

@@ -1,3 +1,4 @@
+// VS Code Configuration
 {
   "compilerOptions": {
     "target": "es2017",
@@ -5,11 +6,13 @@
     "experimentalDecorators": true,
     "baseUrl": ".",
     "paths": {
-      "components/*": ["./components/*"],
+      // Ensure intellisense continues to operate - match with webpack aliases
       "common/*": ["./common/*"],
+      "components/*": ["./components/*"],
       "pages/*": ["./pages/*"],
+      "public/*": ["./public/*"],
       "scripts/*": ["./scripts/*"],
-      "static/*": ["./static/*"],
+      "static/*": ["./public/static/*"],
       "test-utils/*": ["./test-utils/*"]
     }
   },

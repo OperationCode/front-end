@@ -1,8 +1,7 @@
+import { render } from '@testing-library/react';
 import React from 'react';
-import { shallow } from 'enzyme';
 import ReactGA from 'react-ga';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
-
 import Modal from '../Modal';
 
 describe('Modal', () => {
@@ -32,14 +31,13 @@ describe('Modal', () => {
     ReactGA.initialize('foo', { testMode: true });
 
     process.env.NODE_ENV = 'production';
-    process.env.GOOGLE_ANALYTICS_KEY = 'debug';
 
     const props = {
       onRequestClose: () => {},
       screenReaderLabel: 'Test',
     };
 
-    shallow(<Modal {...props}>Testing</Modal>);
+    render(<Modal {...props}>Testing</Modal>);
 
     expect(ReactGA.testModeAPI.calls).toContainEqual(['send', 'pageview', '/modal/Test']);
   });

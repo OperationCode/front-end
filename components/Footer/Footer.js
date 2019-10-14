@@ -19,7 +19,8 @@ function Footer() {
             {name}
           </OutboundLink>
         ) : (
-          <Link href={href}>
+          // TODO: Attack prefetch to scroll listener
+          <Link href={href} prefetch={false}>
             <a>{name}</a>
           </Link>
         )}
@@ -32,7 +33,15 @@ function Footer() {
       <div className={classNames(styles.footerWrapper, styles.row)}>
         <div className={classNames(styles.footerGrouping, styles.socialGrouping)}>
           <div className={classNames(styles.logoGrouping)}>
-            <img src={`${s3}branding/logos/small-blue-logo.png`} alt="Operation Code Logo" />
+            <Link href="/" key="Home" prefetch={false}>
+              <a className={classNames(styles.logoLink, styles.link)}>
+                <img
+                  src={`${s3}branding/logos/small-blue-logo.png`}
+                  alt="Operation Code Logo"
+                  className={styles.logo}
+                />
+              </a>
+            </Link>
           </div>
           <div className={classNames(styles.capitalize, styles.marginBottom)}>Connect With Us!</div>
           <SocialMedia />
@@ -61,7 +70,7 @@ function Footer() {
 
       <div className={classNames(styles.row, styles.legalGrouping)}>
         <div className={classNames(styles.row, styles.copyright)}>
-          Copyright {currentYear} Operation Code™
+          &#169; 2014-{currentYear} Operation Code™
         </div>
         <div className={classNames(styles.row, styles.legalLinks)}>
           {footerItems.legal.map(link =>
@@ -75,7 +84,7 @@ function Footer() {
                 {link.name}
               </OutboundLink>
             ) : (
-              <Link href={link.href} key={link.href}>
+              <Link href={link.href} key={link.href} prefetch={false}>
                 <a className={styles.lineHeightFix}>{link.name}</a>
               </Link>
             ),

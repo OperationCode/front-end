@@ -1,8 +1,7 @@
 import React from 'react';
 import { Formik } from 'formik';
-import { mount } from 'enzyme';
+import { render, fireEvent, wait } from '@testing-library/react';
 import OperationCodeAPIMock from 'test-utils/mocks/apiMock';
-import asyncRenderDiff from 'test-utils/asyncRenderDiff';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 import Form from 'components/Form/Form';
 
@@ -29,7 +28,7 @@ describe('UpdateProfileForm/Steps/MilitaryStatus', () => {
   it('should update user on submit', async () => {
     OperationCodeAPIMock.onPatch('auth/profile/').reply(200);
 
-    const wrapper = mount(
+    const { container } = render(
       <Formik
         initialValues={MilitaryStatus.initialValues}
         validationSchema={MilitaryStatus.validationSchema}
@@ -40,22 +39,16 @@ describe('UpdateProfileForm/Steps/MilitaryStatus', () => {
         </Form>
       </Formik>,
     );
+    const ReactSelect = container.querySelector('#react-select-militaryStatus-input');
+    fireEvent.blur(ReactSelect);
+    fireEvent.keyDown(ReactSelect, { key: 'ArrowDown', keyCode: 40 });
+    fireEvent.keyDown(ReactSelect, { key: 'ArrowDown', keyCode: 40 });
 
-    const ReactSelect = wrapper.find('input').first();
+    fireEvent.keyDown(ReactSelect, { key: 'Enter', keyCode: 13 });
 
-    ReactSelect.simulate('blur')
-      .simulate('keyDown', { key: 'ArrowDown', keyCode: 40 })
-      .simulate('keyDown', { key: 'ArrowDown', keyCode: 40 });
-
-    await asyncRenderDiff(wrapper);
-
-    ReactSelect.simulate('keyDown', { key: 'Enter', keyCode: 13 });
-
-    await asyncRenderDiff(wrapper);
-
-    wrapper.find('form').simulate('submit');
-    await asyncRenderDiff(wrapper);
-
-    expect(OperationCodeAPIMock.history.patch.length).toStrictEqual(1);
+    fireEvent.submit(container.querySelector('form'));
+    await wait(() => {
+      expect(OperationCodeAPIMock.history.patch.length).toStrictEqual(1);
+    });
   });
 });

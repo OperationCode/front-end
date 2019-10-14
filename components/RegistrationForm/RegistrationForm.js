@@ -28,8 +28,14 @@ const registrationSchema = Yup.object().shape({
   'confirm-password': Yup.string()
     .required(validationErrorMessages.required)
     .oneOf([Yup.ref('password')], validationErrorMessages.passwordMatch),
-  firstName: Yup.string().required(validationErrorMessages.required),
-  lastName: Yup.string().required(validationErrorMessages.required),
+  firstName: Yup.string()
+    .required(validationErrorMessages.required)
+    // eslint-disable-next-line no-useless-escape
+    .matches(/^[a-zA-Zà-žÀ-Ž \-]+$/, validationErrorMessages.name),
+  lastName: Yup.string()
+    .required(validationErrorMessages.required)
+    // eslint-disable-next-line no-useless-escape
+    .matches(/^[a-zA-Zà-žÀ-Ž \-]+$/, validationErrorMessages.name),
   zipcode: Yup.string()
     .required(validationErrorMessages.required)
     .test('zipcode', validationErrorMessages.zipcode, isValidZipcode),
@@ -70,10 +76,9 @@ class RegistrationForm extends Component {
 
     try {
       const { token } = await createUser(values);
+      await onSuccess({ user: values, token });
       actions.setSubmitting(false);
       actions.resetForm();
-
-      await onSuccess({ user: values, token });
     } catch (error) {
       actions.setSubmitting(false);
 
@@ -108,7 +113,14 @@ class RegistrationForm extends Component {
       >
         {({ isSubmitting }) => (
           <Form className={styles.RegistrationForm}>
-            <div className={styles.row}>
+            <p>
+              We work closely with military veterans, service members, and spouses who are
+              passionate about transitioning into the tech industry. We work with over 5,000 members
+              who are all working towards relevant goals on Slack and in-person meet-ups. Membership
+              is free!
+            </p>
+
+            <div>
               <Field
                 type="email"
                 name="email"
@@ -126,9 +138,7 @@ class RegistrationForm extends Component {
                 disabled={isSubmitting}
                 autoComplete="username email"
               />
-            </div>
 
-            <div className={styles.row}>
               <Field
                 type="password"
                 name="password"
@@ -146,9 +156,7 @@ class RegistrationForm extends Component {
                 disabled={isSubmitting}
                 autoComplete="new-password"
               />
-            </div>
 
-            <div className={styles.row}>
               <Field
                 type="text"
                 name="firstName"
@@ -166,9 +174,7 @@ class RegistrationForm extends Component {
                 disabled={isSubmitting}
                 autoComplete="family-name"
               />
-            </div>
 
-            <div className={styles.row}>
               <Field
                 type="text"
                 name="zipcode"
@@ -179,22 +185,20 @@ class RegistrationForm extends Component {
               />
             </div>
 
-            <div className={styles.row}>
-              <Alert isOpen={Boolean(state.errorMessage)} type="error">
-                {state.errorMessage}
-              </Alert>
-            </div>
+            {state.errorMessage && <Alert type="error">{state.errorMessage}</Alert>}
 
-            <div className={styles.row}>
-              <Button
-                className={styles.topMargin}
-                type="submit"
-                theme="secondary"
-                disabled={isSubmitting}
-              >
-                Submit
-              </Button>
-            </div>
+            <p>
+              The information we collect is to help us personalize your experience on our Slack
+              community. We do not sell your information to anyone.
+            </p>
+            <Button
+              className={styles.topMargin}
+              type="submit"
+              theme="secondary"
+              disabled={isSubmitting}
+            >
+              Submit
+            </Button>
           </Form>
         )}
       </Formik>

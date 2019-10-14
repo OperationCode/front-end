@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactGA from 'react-ga';
-import { shallow } from 'enzyme';
+import { shallow } from 'enzyme'; // eslint-disable-line no-restricted-imports
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 
 import Button from '../Button';
@@ -57,13 +57,13 @@ describe('Button', () => {
     expect(wrapper.prop(attribute)).toBeUndefined();
   });
 
-  it('should send log to console when clickHandler is called in non-prod environment', () => {
+  it('should send log to console when button is clicked in non-prod environment', () => {
     /* eslint-disable no-console */
     console.log = jest.fn();
 
     const ButtonShallowInstance = shallow(<Button>Testing</Button>);
 
-    ButtonShallowInstance.instance().clickHandler();
+    ButtonShallowInstance.simulate('click');
 
     expect(console.log.mock.calls).toHaveLength(1);
     /* eslint-enable no-console */

@@ -7,9 +7,10 @@ exports[`RegistrationForm should render with required props 1`] = `
   onReset={[Function]}
   onSubmit={[Function]}
 >
-  <div
-    className="row"
-  >
+  <p>
+    We work closely with military veterans, service members, and spouses who are passionate about transitioning into the tech industry. We work with over 5,000 members who are all working towards relevant goals on Slack and in-person meet-ups. Membership is free!
+  </p>
+  <div>
     <div
       className="field"
     >
@@ -60,10 +61,6 @@ exports[`RegistrationForm should render with required props 1`] = `
         />
       </div>
     </div>
-  </div>
-  <div
-    className="row"
-  >
     <div
       className="field"
     >
@@ -114,10 +111,6 @@ exports[`RegistrationForm should render with required props 1`] = `
         />
       </div>
     </div>
-  </div>
-  <div
-    className="row"
-  >
     <div
       className="field"
     >
@@ -168,10 +161,6 @@ exports[`RegistrationForm should render with required props 1`] = `
         />
       </div>
     </div>
-  </div>
-  <div
-    className="row"
-  >
     <div
       className="field"
     >
@@ -198,28 +187,18 @@ exports[`RegistrationForm should render with required props 1`] = `
       </div>
     </div>
   </div>
-  <div
-    className="row"
+  
+  <p>
+    The information we collect is to help us personalize your experience on our Slack community. We do not sell your information to anyone.
+  </p>
+  <button
+    className="Button topMargin secondary"
+    disabled={false}
+    onClick={[Function]}
+    tabIndex={0}
+    type="submit"
   >
-    <div
-      className="Alert error"
-      role="alert"
-    >
-      
-    </div>
-  </div>
-  <div
-    className="row"
-  >
-    <button
-      className="Button topMargin secondary"
-      disabled={false}
-      onClick={[Function]}
-      tabIndex={0}
-      type="submit"
-    >
-      Submit
-    </button>
-  </div>
+    Submit
+  </button>
 </form>
 `;

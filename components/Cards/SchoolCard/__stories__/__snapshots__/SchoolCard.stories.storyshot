@@ -15,18 +15,37 @@ exports[`Storyshots Cards/SchoolCard with many locations 1`] = `
     </h6>
   </span>
   <div
-    className="giBillRibbon"
+    className="ribbon gi"
     data-testid="GI Bill Ribbon"
+  >
+    GI Bill
+  </div>
+  <div
+    className="ribbon vettec"
+    data-testid="Vet Tec Ribbon"
+  >
+    Vet Tec
+  </div>
+  <div
+    className="ribbon dual"
+    data-testid="Dual Ribbon"
   >
     GI Bill
   </div>
   <div
     className="cardBrand"
   >
+    <noscript>
+      <img
+        alt="General Assembly logo"
+        height="150"
+        src="https://operation-code-assets.s3.us-east-2.amazonaws.com/codeSchoolLogos/general_assembly.jpg"
+      />
+    </noscript>
     <img
       alt="General Assembly logo"
+      data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/codeSchoolLogos/general_assembly.jpg"
       height="150"
-      src="https://s3.amazonaws.com/operationcode-assets/codeSchoolLogos/general_assembly.jpg"
     />
   </div>
   <div
@@ -120,6 +139,16 @@ exports[`Storyshots Cards/SchoolCard with many locations 1`] = `
     <span
       className="cardBlockTitle"
     >
+      VET TEC Approved
+    </span>
+    Yes
+  </div>
+  <div
+    className="cardBlock"
+  >
+    <span
+      className="cardBlockTitle"
+    >
       Campus Locations
     </span>
     Multiple locations
@@ -163,12 +192,25 @@ exports[`Storyshots Cards/SchoolCard with no physical locations 1`] = `
     </h6>
   </span>
   <div
+    className="ribbon vettec"
+    data-testid="Vet Tec Ribbon"
+  >
+    Vet Tec
+  </div>
+  <div
     className="cardBrand"
   >
+    <noscript>
+      <img
+        alt="Thinkful logo"
+        height="150"
+        src="https://operation-code-assets.s3.us-east-2.amazonaws.com/codeSchoolLogos/thinkful.jpg"
+      />
+    </noscript>
     <img
       alt="Thinkful logo"
+      data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/codeSchoolLogos/thinkful.jpg"
       height="150"
-      src="https://s3.amazonaws.com/operationcode-assets/codeSchoolLogos/thinkful.jpg"
     />
   </div>
   <div
@@ -262,6 +304,16 @@ exports[`Storyshots Cards/SchoolCard with no physical locations 1`] = `
     <span
       className="cardBlockTitle"
     >
+      VET TEC Approved
+    </span>
+    Yes
+  </div>
+  <div
+    className="cardBlock"
+  >
+    <span
+      className="cardBlockTitle"
+    >
       Campus Locations
     </span>
     Online only
@@ -296,12 +348,25 @@ exports[`Storyshots Cards/SchoolCard with one location 1`] = `
     </h6>
   </span>
   <div
+    className="ribbon vettec"
+    data-testid="Vet Tec Ribbon"
+  >
+    Vet Tec
+  </div>
+  <div
     className="cardBrand"
   >
+    <noscript>
+      <img
+        alt="Code Immersives logo"
+        height="150"
+        src="https://operation-code-assets.s3.us-east-2.amazonaws.com/codeSchoolLogos/code_immersives.jpg"
+      />
+    </noscript>
     <img
       alt="Code Immersives logo"
+      data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/codeSchoolLogos/code_immersives.jpg"
       height="150"
-      src="https://s3.amazonaws.com/operationcode-assets/codeSchoolLogos/code_immersives.jpg"
     />
   </div>
   <div
@@ -388,6 +453,16 @@ exports[`Storyshots Cards/SchoolCard with one location 1`] = `
       Accepts GI Bill
     </span>
     No
+  </div>
+  <div
+    className="cardBlock"
+  >
+    <span
+      className="cardBlockTitle"
+    >
+      VET TEC Approved
+    </span>
+    Yes
   </div>
   <div
     className="cardBlock"

@@ -11,6 +11,12 @@
   --gutterWidth: 30px;
 }
 
+@media screen and (--desktop-viewport) {
+  .NavMobile {
+    display: none;
+  }
+}
+
 .logoButton {
   padding: 0;
   max-width: 50%;
@@ -32,13 +38,15 @@
   width: 35px;
 }
 
-.dropdown {
+.NavMobile nav {
   position: absolute;
   left: 0;
   top: 0;
   background: rgba(37, 46, 62, 0.97);
-  width: 97.5%;
+  width: 100%;
   height: 100vh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .ul {
@@ -57,7 +65,7 @@
 }
 
 .li:last-child {
-  padding-bottom: 3rem;
+  padding-bottom: 5rem;
 }
 
 .link {
@@ -80,10 +88,4 @@
   background: none;
   border: none;
   cursor: pointer;
-}
-
-@media screen and (--desktop-viewport) {
-  .NavMobile {
-    display: none;
-  }
 }

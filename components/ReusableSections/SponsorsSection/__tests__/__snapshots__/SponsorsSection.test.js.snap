@@ -7,11 +7,35 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
   <div
     className="content"
   >
-    <h3
-      className="title underline"
+    <div
+      className="headingContainer"
     >
-      Sponsors
-    </h3>
+      <h3
+        className="Heading underline"
+      >
+        <div
+          className="hashLinkContainer"
+          data-testid="Heading Content sponsors-link"
+        >
+          <a
+            data-testid="Hash Link"
+            href="#sponsors-link"
+            id="sponsors-link"
+          >
+            <span
+              className="ScreenReaderOnly"
+            >
+              Scroll Link for 
+              Sponsors
+            </span>
+            <svg
+              className="icon"
+            />
+          </a>
+          Sponsors
+        </div>
+      </h3>
+    </div>
     <div
       className="columnsContainer"
     >
@@ -29,10 +53,17 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
           >
             Opens in new window
           </span>
+          <noscript>
+            <img
+              alt="APEX Systems logo"
+              className="logo"
+              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/apex_systems.png"
+            />
+          </noscript>
           <img
             alt="APEX Systems logo"
             className="logo"
-            src="https://s3.amazonaws.com/operationcode-assets/partnerLogos/apex_systems.png"
+            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/apex_systems.png"
           />
         </a>
       </div>
@@ -50,10 +81,17 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
           >
             Opens in new window
           </span>
+          <noscript>
+            <img
+              alt="GitHub logo"
+              className="logo"
+              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/github.png"
+            />
+          </noscript>
           <img
             alt="GitHub logo"
             className="logo"
-            src="https://s3.amazonaws.com/operationcode-assets/partnerLogos/github.png"
+            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/github.png"
           />
         </a>
       </div>
@@ -71,10 +109,17 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
           >
             Opens in new window
           </span>
+          <noscript>
+            <img
+              alt="Slack logo"
+              className="logo"
+              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/slack.png"
+            />
+          </noscript>
           <img
             alt="Slack logo"
             className="logo"
-            src="https://s3.amazonaws.com/operationcode-assets/partnerLogos/slack.png"
+            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/slack.png"
           />
         </a>
       </div>
@@ -92,10 +137,17 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
           >
             Opens in new window
           </span>
+          <noscript>
+            <img
+              alt="Heroku logo"
+              className="logo"
+              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/heroku.png"
+            />
+          </noscript>
           <img
             alt="Heroku logo"
             className="logo"
-            src="https://s3.amazonaws.com/operationcode-assets/partnerLogos/heroku.png"
+            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/heroku.png"
           />
         </a>
       </div>
@@ -113,10 +165,17 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
           >
             Opens in new window
           </span>
+          <noscript>
+            <img
+              alt="1Password logo"
+              className="logo"
+              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/1password.png"
+            />
+          </noscript>
           <img
             alt="1Password logo"
             className="logo"
-            src="https://s3.amazonaws.com/operationcode-assets/partnerLogos/1password.png"
+            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/1password.png"
           />
         </a>
       </div>
@@ -134,10 +193,17 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
           >
             Opens in new window
           </span>
+          <noscript>
+            <img
+              alt="US Bank logo"
+              className="logo"
+              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/usbank.png"
+            />
+          </noscript>
           <img
             alt="US Bank logo"
             className="logo"
-            src="https://s3.amazonaws.com/operationcode-assets/partnerLogos/usbank.png"
+            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/usbank.png"
           />
         </a>
       </div>
@@ -155,10 +221,17 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
           >
             Opens in new window
           </span>
+          <noscript>
+            <img
+              alt="Threat Stack logo"
+              className="logo"
+              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/threat_stack.png"
+            />
+          </noscript>
           <img
             alt="Threat Stack logo"
             className="logo"
-            src="https://s3.amazonaws.com/operationcode-assets/partnerLogos/threat_stack.png"
+            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/threat_stack.png"
           />
         </a>
       </div>
@@ -176,10 +249,17 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
           >
             Opens in new window
           </span>
+          <noscript>
+            <img
+              alt="O'Reilly Media logo"
+              className="logo"
+              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/oreilly.png"
+            />
+          </noscript>
           <img
             alt="O'Reilly Media logo"
             className="logo"
-            src="https://s3.amazonaws.com/operationcode-assets/partnerLogos/oreilly.png"
+            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/oreilly.png"
           />
         </a>
       </div>
@@ -197,10 +277,17 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
           >
             Opens in new window
           </span>
+          <noscript>
+            <img
+              alt="HackerRank logo"
+              className="logo"
+              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/hackerrank.png"
+            />
+          </noscript>
           <img
             alt="HackerRank logo"
             className="logo"
-            src="https://s3.amazonaws.com/operationcode-assets/partnerLogos/hackerrank.png"
+            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/hackerrank.png"
           />
         </a>
       </div>
@@ -218,10 +305,45 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
           >
             Opens in new window
           </span>
+          <noscript>
+            <img
+              alt="Zapier logo"
+              className="logo"
+              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/zapier.png"
+            />
+          </noscript>
           <img
             alt="Zapier logo"
             className="logo"
-            src="https://s3.amazonaws.com/operationcode-assets/partnerLogos/zapier.png"
+            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/zapier.png"
+          />
+        </a>
+      </div>
+      <div
+        className="PartnerLogoLink"
+      >
+        <a
+          href="https://logrocket.com/"
+          onClick={[Function]}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <span
+            className="ScreenReaderOnly"
+          >
+            Opens in new window
+          </span>
+          <noscript>
+            <img
+              alt="LogRocket logo"
+              className="logo"
+              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/logrocket.png"
+            />
+          </noscript>
+          <img
+            alt="LogRocket logo"
+            className="logo"
+            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/logrocket.png"
           />
         </a>
       </div>
@@ -237,11 +359,35 @@ exports[`SponsorsSection should render with required props 1`] = `
   <div
     className="content"
   >
-    <h3
-      className="title underline"
+    <div
+      className="headingContainer"
     >
-      Sponsors
-    </h3>
+      <h3
+        className="Heading underline"
+      >
+        <div
+          className="hashLinkContainer"
+          data-testid="Heading Content sponsors-link"
+        >
+          <a
+            data-testid="Hash Link"
+            href="#sponsors-link"
+            id="sponsors-link"
+          >
+            <span
+              className="ScreenReaderOnly"
+            >
+              Scroll Link for 
+              Sponsors
+            </span>
+            <svg
+              className="icon"
+            />
+          </a>
+          Sponsors
+        </div>
+      </h3>
+    </div>
     <div
       className="columnsContainer"
     >
@@ -259,10 +405,17 @@ exports[`SponsorsSection should render with required props 1`] = `
           >
             Opens in new window
           </span>
+          <noscript>
+            <img
+              alt="APEX Systems logo"
+              className="logo"
+              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/apex_systems.png"
+            />
+          </noscript>
           <img
             alt="APEX Systems logo"
             className="logo"
-            src="https://s3.amazonaws.com/operationcode-assets/partnerLogos/apex_systems.png"
+            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/apex_systems.png"
           />
         </a>
       </div>
@@ -280,10 +433,17 @@ exports[`SponsorsSection should render with required props 1`] = `
           >
             Opens in new window
           </span>
+          <noscript>
+            <img
+              alt="GitHub logo"
+              className="logo"
+              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/github.png"
+            />
+          </noscript>
           <img
             alt="GitHub logo"
             className="logo"
-            src="https://s3.amazonaws.com/operationcode-assets/partnerLogos/github.png"
+            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/github.png"
           />
         </a>
       </div>
@@ -301,10 +461,17 @@ exports[`SponsorsSection should render with required props 1`] = `
           >
             Opens in new window
           </span>
+          <noscript>
+            <img
+              alt="Slack logo"
+              className="logo"
+              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/slack.png"
+            />
+          </noscript>
           <img
             alt="Slack logo"
             className="logo"
-            src="https://s3.amazonaws.com/operationcode-assets/partnerLogos/slack.png"
+            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/slack.png"
           />
         </a>
       </div>
@@ -322,10 +489,17 @@ exports[`SponsorsSection should render with required props 1`] = `
           >
             Opens in new window
           </span>
+          <noscript>
+            <img
+              alt="Heroku logo"
+              className="logo"
+              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/heroku.png"
+            />
+          </noscript>
           <img
             alt="Heroku logo"
             className="logo"
-            src="https://s3.amazonaws.com/operationcode-assets/partnerLogos/heroku.png"
+            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/heroku.png"
           />
         </a>
       </div>
@@ -343,10 +517,17 @@ exports[`SponsorsSection should render with required props 1`] = `
           >
             Opens in new window
           </span>
+          <noscript>
+            <img
+              alt="1Password logo"
+              className="logo"
+              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/1password.png"
+            />
+          </noscript>
           <img
             alt="1Password logo"
             className="logo"
-            src="https://s3.amazonaws.com/operationcode-assets/partnerLogos/1password.png"
+            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/1password.png"
           />
         </a>
       </div>
@@ -364,10 +545,17 @@ exports[`SponsorsSection should render with required props 1`] = `
           >
             Opens in new window
           </span>
+          <noscript>
+            <img
+              alt="US Bank logo"
+              className="logo"
+              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/usbank.png"
+            />
+          </noscript>
           <img
             alt="US Bank logo"
             className="logo"
-            src="https://s3.amazonaws.com/operationcode-assets/partnerLogos/usbank.png"
+            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/usbank.png"
           />
         </a>
       </div>
@@ -385,10 +573,17 @@ exports[`SponsorsSection should render with required props 1`] = `
           >
             Opens in new window
           </span>
+          <noscript>
+            <img
+              alt="Threat Stack logo"
+              className="logo"
+              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/threat_stack.png"
+            />
+          </noscript>
           <img
             alt="Threat Stack logo"
             className="logo"
-            src="https://s3.amazonaws.com/operationcode-assets/partnerLogos/threat_stack.png"
+            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/threat_stack.png"
           />
         </a>
       </div>
@@ -406,10 +601,17 @@ exports[`SponsorsSection should render with required props 1`] = `
           >
             Opens in new window
           </span>
+          <noscript>
+            <img
+              alt="O'Reilly Media logo"
+              className="logo"
+              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/oreilly.png"
+            />
+          </noscript>
           <img
             alt="O'Reilly Media logo"
             className="logo"
-            src="https://s3.amazonaws.com/operationcode-assets/partnerLogos/oreilly.png"
+            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/oreilly.png"
           />
         </a>
       </div>
@@ -427,10 +629,17 @@ exports[`SponsorsSection should render with required props 1`] = `
           >
             Opens in new window
           </span>
+          <noscript>
+            <img
+              alt="HackerRank logo"
+              className="logo"
+              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/hackerrank.png"
+            />
+          </noscript>
           <img
             alt="HackerRank logo"
             className="logo"
-            src="https://s3.amazonaws.com/operationcode-assets/partnerLogos/hackerrank.png"
+            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/hackerrank.png"
           />
         </a>
       </div>
@@ -448,10 +657,45 @@ exports[`SponsorsSection should render with required props 1`] = `
           >
             Opens in new window
           </span>
+          <noscript>
+            <img
+              alt="Zapier logo"
+              className="logo"
+              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/zapier.png"
+            />
+          </noscript>
           <img
             alt="Zapier logo"
             className="logo"
-            src="https://s3.amazonaws.com/operationcode-assets/partnerLogos/zapier.png"
+            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/zapier.png"
+          />
+        </a>
+      </div>
+      <div
+        className="PartnerLogoLink"
+      >
+        <a
+          href="https://logrocket.com/"
+          onClick={[Function]}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <span
+            className="ScreenReaderOnly"
+          >
+            Opens in new window
+          </span>
+          <noscript>
+            <img
+              alt="LogRocket logo"
+              className="logo"
+              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/logrocket.png"
+            />
+          </noscript>
+          <img
+            alt="LogRocket logo"
+            className="logo"
+            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/logrocket.png"
           />
         </a>
       </div>

@@ -3,9 +3,11 @@
 exports[`NavMobile should render 1`] = `
 <header
   className="NavMobile"
+  data-testid="Mobile Nav Container"
 >
   <Link
     href="/"
+    prefetch={false}
   >
     <button
       className="button logoButton"
@@ -15,12 +17,13 @@ exports[`NavMobile should render 1`] = `
       <img
         alt="Operation Code Logo"
         className="logo"
-        src="https://s3.amazonaws.com/operationcode-assets/branding/logos/small-blue-logo.png"
+        src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/small-blue-logo.png"
       />
     </button>
   </Link>
   <button
     className="button hamburger"
+    data-testid="Hamburger Button"
     name="dropdown"
     onClick={[Function]}
     type="button"

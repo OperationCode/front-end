@@ -6,7 +6,7 @@ The team at Operation Code wants to reiterate that joining our Slack team is the
 
 ## For Everybody
 
-**Regardless of your experience level**, reading about our [technology choices](#technology) and our [development workflow](development-workflow) will prove beneficial.
+**Regardless of your experience level**, reading about our [technology choices](#technologies) and our [development workflow](#development-workflow) will prove beneficial.
 
 ## For Developers With Less Experience
 
@@ -60,13 +60,13 @@ There are many resources in the wild to learn about all forms of version control
 
 ### GitHub Workflow
 
-1. Before working on an issue, post a comment on the issue asking to claim it. One of our maintainers will assign themselves as a placeholder on the issue, at which point you are good to start working on it. We don't like competition in open source, nor do we enjoy closing pull requests resolving the same issue... Please only ask to claim unassigned issues!
-2. Once you've claimed an issue, feel free to [fork the repo](https://help.github.com/articles/fork-a-repo/).
+1. Before working on an issue, review the issue and post a comment to clarify if there has been any progress made.
+2. Once you've reviewed an issue, feel free to [fork the repo](https://help.github.com/articles/fork-a-repo/).
 3. If you follow all of the instructions in the help article above, you'll be able to create a branch. That's `git checkout -b YOUR_BRANCH_NAME` Note that some companies and organizations have branch-naming conventions - we do not.
 4. Once you make a branch, you're free to open your preferred text editor and code. If you don't have a preferred text editor, Operation Code recommends [Visual Studio Code](https://code.visualstudio.com/) (more commonly referred to as "VS Code" and not to be confused with Visual Studio). You'll want to follow along with [Development Workflow](#development-workflow) to see how you should go about coding in the repo.
 5. When your changes are complete, commit your changes. If you use `git commit` often, you'll notice your commit is taking longer than usual! That's because we have a "pre-commit hook". This hook is [linting](https://stackoverflow.com/questions/8503559/what-is-linting), formatting (example: changing tabs to spaces), and testing all of your changes. If a test fails, so does the commit. If your code had changes after formatting, you'll need to re-stage those file(s) and use `git commit --amend` to add the linted/formatted code to your original commit.
 6. After committing, push your branch to your forked repo. `git push -u origin YOUR_BRANCH_NAME` should do the trick.
-7. Create a pull request within two weeks of claiming the issue, [using that branch on your fork](https://help.github.com/articles/creating-a-pull-request-from-a-fork/). You are at risk of being unassigned from the issue otherwise. While we like reserving issues out for others, this is necessary to prevent bogarting.
+7. Create a pull request within two weeks of working on the issue, [using that branch on your fork](https://help.github.com/articles/creating-a-pull-request-from-a-fork/).
 
 ## Explanations
 
@@ -80,7 +80,7 @@ When you visit our website you're interacting with two systems, a front-end appl
 
 _Quick Note_: Our back-end API is not currently connected to this repo.
 
-The back-end is responsible for providing data for the front-end to display. This sometimes involves processing the data entered into the front-end, and running various jobs like inviting new users to Slack, or signing them up for our newsletter. Our back-end is written in Rails and it's source code can be viewed [here](https://github.com/OperationCode/operationcode_backend). It acts primarily as a "REST API".
+The back-end is responsible for providing data for the front-end to display. This sometimes involves processing the data entered into the front-end, and running various jobs like inviting new users to Slack, or signing them up for our newsletter. Our back-end is written in Rails and it's source code can be viewed [here](https://github.com/OperationCode/back-end). It acts primarily as a "REST API".
 
 > "back-end" is synonymous with server, server-side, and "models & controllers".
 
@@ -92,19 +92,19 @@ The back-end is responsible for providing data for the front-end to display. Thi
 
 ## Technologies
 
-Here is an list of technologies this project leverages:
+Here is an alphabetically-sorted list of technologies this project leverages:
 
 - [Babel](https://babeljs.io/) - JavaScript compiler to unify all the different versions of JS that may have been used or will be used in the future. [Here's a blog post from Scotch.io on why JavaScript utilizes "transpiling" with Babel](https://scotch.io/tutorials/javascript-transpilers-what-they-are-why-we-need-them).
 - [CSS Modules](https://github.com/css-modules/css-modules) - CSS Modules allow us to encapsulate CSS within components. Instead of HTML/CSS - our project structure is basically JSX/CSS.
+- [Cypress](https://cypress.io/) - Hand-picked resources [here](https://github.com/OperationCode/front-end/tree/master/cypress/README.md).
 - [Jest](https://jestjs.io/) - A JavaScript testing framework from Facebook. We use it for all of our unit and some of our integration/regression tests.
 - [Next.js](https://nextjs.org/) - Next is a framework for creating ["server-side rendered"](https://medium.freecodecamp.org/demystifying-reacts-server-side-render-de335d408fe4) React applications with a lot of performance and [search engine optimizations](https://searchengineland.com/guide/what-is-seo) out-of-the-box.
 - [Node.js](https://www.nodejs.org/) - Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine. React utilizes a tiny Node/Express server for it's development environment.
+- [PostCSS](#PostCSS) - Extensive documentation listed below...
 - [React.js](https://facebook.github.io/react/) - Facebook's popular JavaScript front-end framework.
 - [Storybook](https://storybook.js.org) - Storybook acts as a "component workbench" and source for component documentation. You can learn more about Storybook on your own [here](https://www.learnstorybook.com/). You can see our Storybook here: [![Storybook](https://github.com/storybooks/brand/blob/master/badge/badge-storybook.svg)](http://storybook.operationcode.org)
 - [Webpack](https://webpack.js.org/) - The premier module bundler for JavaScript. Read [this article](https://survivejs.com/webpack/what-is-webpack/) for more information.
 - [Yarn](https://yarnpkg.com/) - Facebook's open source JavaScript package manager. It has very subtle differences from npm, but essentially does the same thing.
-- [PostCSS](#PostCSS) - Extensive documentation listed below...
-- [Cypress](https://cypress.io/) - Hand-picked resources [here](https://github.com/OperationCode/front-end/tree/master/cypress/README.md).
 
 ### PostCSS
 
@@ -190,7 +190,7 @@ Which will output the following when deployed:
 
 ### Installing Dependencies
 
-VERY IMPORTANT: Recommended versions of tools used within the repo are described [here](https://github.com/OperationCode/front-end#quick-start).
+VERY IMPORTANT: Required versions of tools used within the repo are described [here](https://github.com/OperationCode/front-end#quick-start). We do not use `npm`.
 
 _You can check to see your versions like so:_
 

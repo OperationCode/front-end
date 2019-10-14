@@ -1,8 +1,9 @@
 /* eslint-disable react/no-multi-comp */
+/* eslint-disable max-classes-per-file */
 import React from 'react';
 import faker from 'faker';
 import get from 'lodash/get';
-import { mount } from 'enzyme';
+import { mount } from 'enzyme'; // eslint-disable-line no-restricted-imports
 import { Field } from 'formik';
 import * as Yup from 'yup';
 import { networkErrorMessages } from 'common/constants/messages';
@@ -289,6 +290,9 @@ describe('MultiStepForm', () => {
 
     const wrapper = mount(<MultiStepForm {...requiredProps} onFinalSubmit={onFinalSubmitMock} />);
 
+    // sanity check
+    expect(wrapper.find('Alert')).not.toExist();
+
     typeIntoInput(wrapper, 'firstName', faker.name.firstName());
     typeIntoInput(wrapper, 'lastName', faker.name.lastName());
     await submitForm(wrapper);
@@ -305,7 +309,7 @@ describe('MultiStepForm', () => {
 
     await submitForm(wrapper);
 
-    expect(wrapper.find('Alert').text()).toStrictEqual('');
+    expect(wrapper.find('Alert')).not.toExist();
   });
 
   it('should be able to go back and forth between steps, maintaining form state', async () => {

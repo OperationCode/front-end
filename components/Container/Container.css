@@ -37,6 +37,10 @@
   color: var(--white);
 }
 
+.secondary svg {
+  fill: var(--white);
+}
+
 /* Light Themes */
 .gray {
   background-color: var(--gray);
@@ -46,4 +50,9 @@
 .white {
   background-color: var(--white);
   color: var(--secondary);
+}
+
+.white svg,
+.gray svg {
+  fill: var(--secondary);
 }

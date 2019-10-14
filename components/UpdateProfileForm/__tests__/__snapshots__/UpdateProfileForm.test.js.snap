@@ -8,10 +8,30 @@ exports[`UpdateProfileForm should render with required props 1`] = `
   onSubmit={[Function]}
 >
   <h3
-    className="row"
+    className="centerAligned"
   >
     Professional Details
   </h3>
+  <div
+    className="ProgressIndicator"
+  >
+    <label
+      htmlFor="steps-indicator"
+    >
+      0
+      /
+      3
+       Complete
+    </label>
+    <progress
+      id="steps-indicator"
+      max={3}
+      value={0}
+    >
+      0
+      %
+    </progress>
+  </div>
   <div
     className="row"
   >
@@ -24,7 +44,9 @@ exports[`UpdateProfileForm should render with required props 1`] = `
       >
         Employment Status*
       </label>
-      <div>
+      <div
+        className="selectFeedbackGrouping"
+      >
         <div
           className="fullWidth css-2b097c-container"
           onKeyDown={[Function]}
@@ -135,10 +157,6 @@ exports[`UpdateProfileForm should render with required props 1`] = `
         </div>
       </div>
     </div>
-  </div>
-  <div
-    className="row"
-  >
     <div
       className="field"
     >
@@ -191,12 +209,7 @@ exports[`UpdateProfileForm should render with required props 1`] = `
   <div
     className="errorMessage"
   >
-    <div
-      className="Alert error"
-      role="alert"
-    >
-      
-    </div>
+    
   </div>
   <div
     className="buttonGrouping"

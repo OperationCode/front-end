@@ -53,7 +53,7 @@ class PasswordResetConfirm extends React.Component {
     const { uid, token } = this.props;
 
     if (!uid || !token) {
-      return <Alert>The provided credentials were either invalid or expired.</Alert>;
+      return <Alert type="error">The provided credentials were either invalid or expired.</Alert>;
     }
 
     return <ChangePasswordForm onSubmit={this.onSubmit} onSuccess={this.onSuccess} />;

@@ -1,4 +1,3 @@
-const path = require('path');
 const svgoConfig = require('../common/config/svgo');
 const postCSSConfig = require('../postcss.config');
 
@@ -25,7 +24,6 @@ module.exports = async ({ config, mode }) => {
           options: {
             modules: true,
             importLoaders: 1,
-            localIdentName: '[name]_[local]__[hash:base64:5]',
             sourceMap: true,
           },
         },
@@ -54,8 +52,12 @@ module.exports = async ({ config, mode }) => {
     {
       test: /\.svg$/,
       use: [
-        { loader: require.resolve('babel-loader') },
-        { loader: require.resolve('react-svg-loader') },
+        {
+          loader: '@svgr/webpack',
+          options: {
+            svgoConfig,
+          },
+        },
       ],
     },
   );

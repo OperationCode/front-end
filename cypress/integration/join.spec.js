@@ -38,8 +38,8 @@ describe('join', () => {
       expect(cookies.some(({ value }) => value === newUser.zipcode)).to.be.true;
     });
 
-    cy.get('[data-testid="Nav Item Login"]').should('not.exist');
-    cy.get('[data-testid="Nav Item Logout"]').should('exist');
+    cy.findByTestId('Nav Item Login').should('not.exist');
+    cy.findByTestId('Nav Item Logout').should('exist');
   });
 
   it('should NOT be able to register with an existing email', () => {
@@ -169,10 +169,18 @@ describe('join', () => {
 
   it('should NOT be able to register without filling all required fields', () => {
     cy.get('button[type="submit"]').click();
+
+    // verify route didn't change
     cy.url().should('contain', '/join');
-    cy.get('div[role="alert"]')
-      .should('have.length', 8)
-      .should('contain', validationErrorMessages.required);
+
+    // verify no cookies populated
     cy.getCookies().should('have.length', 0);
+
+    // verify that errors rendered
+    const numberOfInputs = 7;
+    cy.get('input').should('have.length', numberOfInputs);
+    cy.get('div[role="alert"]')
+      .should('have.length', numberOfInputs)
+      .should('contain', validationErrorMessages.required);
   });
 });
