@@ -6425,6 +6425,9 @@ eslint-plugin-babel@^5.3.0:
   dependencies:
     eslint-rule-composer "^0.3.0"
 
+"eslint-plugin-custom-rules@file:eslint":
+  version "1.0.0"
+
 eslint-plugin-cypress@^2.7.0:
   version "2.7.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-cypress/-/eslint-plugin-cypress-2.7.0.tgz#117f14ce63698e4c4f3afea3d7e27025c8d504f0"

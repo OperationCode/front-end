@@ -18,7 +18,7 @@ module.exports = {
   },
   parser: 'babel-eslint',
 
-  plugins: ['prettier', 'unicorn', 'jest', 'cypress'],
+  plugins: ['prettier', 'unicorn', 'jest', 'cypress', 'custom-rules'],
 
   globals: {
     cy: true,
@@ -84,6 +84,7 @@ module.exports = {
         svg: 'always',
       },
     ],
+    'custom-rules/proptype-definition': 2,
     'import/no-unresolved': 'off',
     'import/no-extraneous-dependencies': [
       'error',
