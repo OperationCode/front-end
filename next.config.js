@@ -1,4 +1,4 @@
-const withCSS = require('@zeit/next-css');
+const withCSS = require('@innocuous/next-css');
 const withSourceMaps = require('@zeit/next-source-maps')();
 const withBundleAnalyzer = require('@zeit/next-bundle-analyzer');
 const svgoConfig = require('./common/config/svgo');
@@ -11,8 +11,9 @@ const nextConfig = withCSS({
   // NextCSS Config
   cssModules: true,
   cssLoaderOptions: {
-    // No need for importLoaders: 1 as its set to 1 when postcss.config.js exists
-    localIdentName: '[name]_[local]__[hash:base64:5]',
+    modules: {
+      localIdentName: '[name]_[local]__[hash:base64:5]',
+    },
   },
 
   // Bundle Analyzer Config (only used when running `yarn build:analyze`)
