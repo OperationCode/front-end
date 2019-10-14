@@ -1,4 +1,5 @@
 import React from 'react';
+import requireContext from 'require-context.macro';
 import Router from 'next/router';
 import MockedRouter from 'test-utils/mocks/nextRouterMock';
 import MockNextContext from 'test-utils/mocks/nextContextMock';
@@ -16,7 +17,7 @@ setOptions({
 });
 
 // Dynamically load all files matching `*.stories.js` pattern within the components folder
-const requireComponents = require.context('../components/', true, /stories\.js$/);
+const requireComponents = requireContext('../components/', true, /stories\.js$/);
 
 function loadStories() {
   requireComponents.keys().forEach(requireComponents);

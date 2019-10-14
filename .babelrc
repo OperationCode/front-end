@@ -43,6 +43,7 @@
           "test-utils": "./test-utils"
         }
       }
-    ]
+    ],
+    "macros"
   ]
 }

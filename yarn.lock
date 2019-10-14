@@ -2638,7 +2638,7 @@
     "@types/unist" "*"
     "@types/vfile-message" "*"
 
-"@types/webpack-env@^1.13.7":
+"@types/webpack-env@^1.13.7", "@types/webpack-env@^1.14.0":
   version "1.14.1"
   resolved "https://registry.yarnpkg.com/@types/webpack-env/-/webpack-env-1.14.1.tgz#0d8a53f308f017c53a5ddc3d07f4d6fa76b790d7"
   integrity sha512-0Ki9jAAhKDSuLDXOIMADg54Hu60SuBTEsWaJGGy5cV+SSUQ63J2a+RrYYGrErzz39fXzTibhKrAQJAb8M7PNcA==
@@ -3616,7 +3616,7 @@ babel-plugin-jest-hoist@^24.9.0:
   dependencies:
     "@types/babel__traverse" "^7.0.6"
 
-babel-plugin-macros@2.6.1, babel-plugin-macros@^2.4.5:
+babel-plugin-macros@2.6.1, babel-plugin-macros@^2.4.5, babel-plugin-macros@^2.6.1:
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/babel-plugin-macros/-/babel-plugin-macros-2.6.1.tgz#41f7ead616fc36f6a93180e89697f69f51671181"
   integrity sha512-6W2nwiXme6j1n2erPOnmRiWfObUhWH7Qw1LMi9XZy8cj+KtESu3T6asZvtk5bMQQjX8te35o7CFueiSdL/2NmQ==
@@ -13798,6 +13798,13 @@ request@2.88.0, request@^2.72.0, request@^2.87.0, request@^2.88.0:
     tough-cookie "~2.4.3"
     tunnel-agent "^0.6.0"
     uuid "^3.3.2"
+
+require-context.macro@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/require-context.macro/-/require-context.macro-1.2.2.tgz#84bc90f6b9c6dec3a840c84cfd6b2dd92884e34d"
+  integrity sha512-qibgUj+t0YeBAIsQSqgY3iwFrwQoAV7mmZmvdEpGwe1eAS7iunLpINsRYX/lyuHtJDeJdF7U92jXNzbuDeM2RA==
+  dependencies:
+    "@types/webpack-env" "^1.14.0"
 
 require-directory@^2.1.1:
   version "2.1.1"
