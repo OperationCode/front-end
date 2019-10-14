@@ -4,7 +4,6 @@ import { networkErrorMessages, validationErrorMessages } from 'common/constants/
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 import mockUser from 'test-utils/mockGenerators/mockUser';
 import mockPassword from 'test-utils/mockGenerators/mockPassword';
-import '@testing-library/jest-dom/extend-expect';
 import OperationCodeAPIMock from 'test-utils/mocks/apiMock';
 import RegistrationForm from '../RegistrationForm';
 
@@ -84,8 +83,6 @@ describe('RegistrationForm', () => {
     const successSpy = jest.fn();
     const { getByText } = render(<RegistrationForm onSuccess={successSpy} initialValues={user} />);
 
-    // wrapper.find('Button').simulate('submit');
-    // await asyncRenderDiff(wrapper);
     fireEvent.click(getByText('Submit'));
 
     await wait(() => {

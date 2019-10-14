@@ -1,6 +1,5 @@
 import React from 'react';
 import createShallowSnapshotTest from 'test-utils/createShallowSnapshotTest';
-import '@testing-library/jest-dom/extend-expect';
 import { render, fireEvent } from '@testing-library/react';
 
 import NavListItem from '../NavListItem';
