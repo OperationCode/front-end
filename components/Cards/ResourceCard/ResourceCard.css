@@ -115,15 +115,14 @@
   opacity: 1;
 }
 
-.icon > :global(.negative-space) {
-  color: white; /* whatever bg color is */
+/* `.icon g` represents the negative space of Thumb icons */
+.icon g {
+  fill: var(--white);
 }
 
-.icon.active > :global(.negative-space) {
-  color: var(--secondary);
-  fill: var(--secondary);
-  stroke: var(--secondary);
-  stroke-width: 50;
+/* not targeting circle leaves the cuff whole alone */
+.icon.active g > path {
+  fill: rgba(var(--rgbValuesSecondary), 0.5);
 }
 
 .icon {
