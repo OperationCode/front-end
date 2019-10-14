@@ -1,217 +1,393 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Cards/ResourceCard with long name 1`] = `
-<article
-  className="Card ResourceCard"
+exports[`Storyshots Cards/ResourceCard default 1`] = `
+<a
+  className="link"
+  href="https://google.com/"
+  onClick={[Function]}
+  rel="noopener noreferrer"
+  target="_blank"
 >
-  <header
-    className="titleSection"
+  <span
+    className="ScreenReaderOnly"
   >
-    <img
-      alt="logo"
-      src="/static/images/icons/javascript_logo.svg"
-    />
-    <h5>
-      Javascript for Super Duper Dummies
-    </h5>
-  </header>
-  <section>
-    <p
-      className="descriptionText"
-    >
-      Cliche umami truffaut scenester vice bespoke. Lomo copper mug seitan raw denim tousled coloring book kinfolk irony venmo fam austin. Pitchfork vape pork belly, fixie flannel enamel pin cold-pressed echo park. Organic sriracha waistcoat austin keytar, gentrify cardigan mumblecore PBR&B tumblr normcore meggings scenester. Enamel pin kitsch butcher, synth etsy next level gluten-free. Put a bird on it vexillologist XOXO iPhone wolf coloring book chicharrones 8-bit VHS unicorn. Leggings viral taxidermy keytar, cray schlitz hot chicken kogi truffaut art party XOXO.
-    </p>
-  </section>
-  <footer
-    className="footerSection"
+    Opens in new window
+  </span>
+  <article
+    className="Card ResourceCard animatedCard"
   >
-    <span
-      className="footerText"
+    <header
+      className="titleSection"
     >
-      I found this useful 
-    </span>
-    <button
-      className="voteBtn"
-      onClick={[Function]}
-      type="button"
-    >
-      <svg
-        className="icon"
+      <img
+        alt="logo"
+        aria-hidden="true"
+        src="/static/images/icons/javascript_logo.svg"
       />
-      12
-    </button>
-    <button
-      className="voteBtn"
-      onClick={[Function]}
-      type="button"
+      <h5>
+        Javascript for Dummies
+      </h5>
+    </header>
+    <section>
+      <p
+        className="descriptionText"
+      >
+        
+      </p>
+    </section>
+    <footer
+      className="footerSection"
     >
-      <svg
-        className="icon"
-      />
-      25
-    </button>
-  </footer>
-</article>
+      <span
+        className="footerText"
+      >
+        Did you find this useful?
+      </span>
+      <button
+        className="voteBtn"
+        data-testid="Upvote Button"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          className="ScreenReaderOnly"
+        >
+          Yes
+        </span>
+        <svg
+          className="icon"
+        />
+      </button>
+      <span
+        className="voteCount"
+      >
+        <span
+          className="ScreenReaderOnly"
+        >
+          Upvotes:
+        </span>
+        0
+      </span>
+      <button
+        className="voteBtn"
+        data-testid="Downvote Button"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          className="ScreenReaderOnly"
+        >
+          No
+        </span>
+        <svg
+          className="icon"
+        />
+      </button>
+      <span
+        className="voteCount"
+      >
+        <span
+          className="ScreenReaderOnly"
+        >
+          Downvotes:
+        </span>
+        0
+      </span>
+    </footer>
+  </article>
+</a>
 `;
 
-exports[`Storyshots Cards/ResourceCard with short description 1`] = `
-<article
-  className="Card ResourceCard"
+exports[`Storyshots Cards/ResourceCard with long name 1`] = `
+<a
+  className="link"
+  href="https://google.com/"
+  onClick={[Function]}
+  rel="noopener noreferrer"
+  target="_blank"
 >
-  <header
-    className="titleSection"
+  <span
+    className="ScreenReaderOnly"
   >
-    <img
-      alt="logo"
-      src="/static/images/icons/javascript_logo.svg"
-    />
-    <h5>
-      Javascript for Dummies
-    </h5>
-  </header>
-  <section>
-    <p
-      className="descriptionText"
-    >
-      Trust fund post-ironic austin offal. Asymmetrical knausgaard selfies, butcher celiac brunch brooklyn palo santo iceland gochujang chicharrones waistcoat plaid.
-    </p>
-  </section>
-  <footer
-    className="footerSection"
+    Opens in new window
+  </span>
+  <article
+    className="Card ResourceCard animatedCard"
   >
-    <span
-      className="footerText"
+    <header
+      className="titleSection"
     >
-      I found this useful 
-    </span>
-    <button
-      className="voteBtn"
-      onClick={[Function]}
-      type="button"
-    >
-      <svg
-        className="icon active"
+      <img
+        alt="logo"
+        aria-hidden="true"
+        src="/static/images/icons/javascript_logo.svg"
       />
-      12
-    </button>
-    <button
-      className="voteBtn"
-      onClick={[Function]}
-      type="button"
+      <h5>
+        Javascript for Super Duper Dummies
+      </h5>
+    </header>
+    <section>
+      <p
+        className="descriptionText"
+      >
+        Trust fund post-ironic austin offal. Asymmetrical knausgaard selfies, butcher celiac brunch brooklyn palo santo iceland gochujang chicharrones waistcoat plaid.
+      </p>
+    </section>
+    <footer
+      className="footerSection"
     >
-      <svg
-        className="icon"
-      />
-      25
-    </button>
-  </footer>
-</article>
+      <span
+        className="footerText"
+      >
+        Did you find this useful?
+      </span>
+      <button
+        className="voteBtn"
+        data-testid="Upvote Button"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          className="ScreenReaderOnly"
+        >
+          Yes
+        </span>
+        <svg
+          className="icon"
+        />
+      </button>
+      <span
+        className="voteCount"
+      >
+        <span
+          className="ScreenReaderOnly"
+        >
+          Upvotes:
+        </span>
+        12
+      </span>
+      <button
+        className="voteBtn active"
+        data-testid="Downvote Button"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          className="ScreenReaderOnly"
+        >
+          No
+        </span>
+        <svg
+          className="icon active"
+        />
+      </button>
+      <span
+        className="voteCount active"
+      >
+        <span
+          className="ScreenReaderOnly"
+        >
+          Downvotes:
+        </span>
+        25
+      </span>
+    </footer>
+  </article>
+</a>
 `;
 
 exports[`Storyshots Cards/ResourceCard with truncated description 1`] = `
-<article
-  className="Card ResourceCard"
+<a
+  className="link"
+  href="https://google.com/"
+  onClick={[Function]}
+  rel="noopener noreferrer"
+  target="_blank"
 >
-  <header
-    className="titleSection"
+  <span
+    className="ScreenReaderOnly"
   >
-    <img
-      alt="logo"
-      src="/static/images/icons/javascript_logo.svg"
-    />
-    <h5>
-      Javascript for Dummies
-    </h5>
-  </header>
-  <section>
-    <p
-      className="descriptionText"
-    >
-      Cliche umami truffaut scenester vice bespoke. Lomo copper mug seitan raw denim tousled coloring book kinfolk irony venmo fam austin. Pitchfork vape pork belly, fixie flannel enamel pin cold-pressed echo park. Organic sriracha waistcoat austin keytar, gentrify cardigan mumblecore PBR&B tumblr normcore meggings scenester. Enamel pin kitsch butcher, synth etsy next level gluten-free. Put a bird on it vexillologist XOXO iPhone wolf coloring book chicharrones 8-bit VHS unicorn. Leggings viral taxidermy keytar, cray schlitz hot chicken kogi truffaut art party XOXO.
-    </p>
-  </section>
-  <footer
-    className="footerSection"
+    Opens in new window
+  </span>
+  <article
+    className="Card ResourceCard animatedCard"
   >
-    <span
-      className="footerText"
+    <header
+      className="titleSection"
     >
-      I found this useful 
-    </span>
-    <button
-      className="voteBtn"
-      onClick={[Function]}
-      type="button"
-    >
-      <svg
-        className="icon"
+      <img
+        alt="logo"
+        aria-hidden="true"
+        src="/static/images/icons/javascript_logo.svg"
       />
-      12
-    </button>
-    <button
-      className="voteBtn"
-      onClick={[Function]}
-      type="button"
+      <h5>
+        Javascript for Dummies
+      </h5>
+    </header>
+    <section>
+      <p
+        className="descriptionText"
+      >
+        Cliche umami truffaut scenester vice bespoke. Lomo copper mug seitan raw denim tousled coloring book kinfolk irony venmo fam austin. Pitchfork vape pork belly, fixie flannel enamel pin cold-pressed echo park. Organic sriracha waistcoat austin keytar, gentrify cardigan mumblecore PBR&B tumblr normcore meggings scenester. Enamel pin kitsch butcher, synth etsy next level gluten-free. Put a bird on it vexillologist XOXO iPhone wolf coloring book chicharrones 8-bit VHS unicorn. Leggings viral taxidermy keytar, cray schlitz hot chicken kogi truffaut art party XOXO.
+      </p>
+    </section>
+    <footer
+      className="footerSection"
     >
-      <svg
-        className="icon active"
-      />
-      25
-    </button>
-  </footer>
-</article>
+      <span
+        className="footerText"
+      >
+        Did you find this useful?
+      </span>
+      <button
+        className="voteBtn active"
+        data-testid="Upvote Button"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          className="ScreenReaderOnly"
+        >
+          Yes
+        </span>
+        <svg
+          className="icon active"
+        />
+      </button>
+      <span
+        className="voteCount active"
+      >
+        <span
+          className="ScreenReaderOnly"
+        >
+          Upvotes:
+        </span>
+        12
+      </span>
+      <button
+        className="voteBtn"
+        data-testid="Downvote Button"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          className="ScreenReaderOnly"
+        >
+          No
+        </span>
+        <svg
+          className="icon"
+        />
+      </button>
+      <span
+        className="voteCount"
+      >
+        <span
+          className="ScreenReaderOnly"
+        >
+          Downvotes:
+        </span>
+        25
+      </span>
+    </footer>
+  </article>
+</a>
 `;
 
 exports[`Storyshots Cards/ResourceCard with zero up/downvotes 1`] = `
-<article
-  className="Card ResourceCard"
+<a
+  className="link"
+  href="https://google.com/"
+  onClick={[Function]}
+  rel="noopener noreferrer"
+  target="_blank"
 >
-  <header
-    className="titleSection"
+  <span
+    className="ScreenReaderOnly"
   >
-    <img
-      alt="logo"
-      src="/static/images/icons/javascript_logo.svg"
-    />
-    <h5>
-      Javascript for Super Duper Dummies
-    </h5>
-  </header>
-  <section>
-    <p
-      className="descriptionText"
-    >
-      Cliche umami truffaut scenester vice bespoke. Lomo copper mug seitan raw denim tousled coloring book kinfolk irony venmo fam austin. Pitchfork vape pork belly, fixie flannel enamel pin cold-pressed echo park. Organic sriracha waistcoat austin keytar, gentrify cardigan mumblecore PBR&B tumblr normcore meggings scenester. Enamel pin kitsch butcher, synth etsy next level gluten-free. Put a bird on it vexillologist XOXO iPhone wolf coloring book chicharrones 8-bit VHS unicorn. Leggings viral taxidermy keytar, cray schlitz hot chicken kogi truffaut art party XOXO.
-    </p>
-  </section>
-  <footer
-    className="footerSection"
+    Opens in new window
+  </span>
+  <article
+    className="Card ResourceCard animatedCard"
   >
-    <span
-      className="footerText"
+    <header
+      className="titleSection"
     >
-      I found this useful 
-    </span>
-    <button
-      className="voteBtn faded"
-      onClick={[Function]}
-      type="button"
-    >
-      <svg
-        className="icon"
+      <img
+        alt="logo"
+        aria-hidden="true"
+        src="/static/images/icons/javascript_logo.svg"
       />
-      0
-    </button>
-    <button
-      className="voteBtn faded"
-      onClick={[Function]}
-      type="button"
+      <h5>
+        Javascript for Super Duper Dummies
+      </h5>
+    </header>
+    <section>
+      <p
+        className="descriptionText"
+      >
+        Trust fund post-ironic austin offal. Asymmetrical knausgaard selfies, butcher celiac brunch brooklyn palo santo iceland gochujang chicharrones waistcoat plaid.
+      </p>
+    </section>
+    <footer
+      className="footerSection"
     >
-      <svg
-        className="icon"
-      />
-      0
-    </button>
-  </footer>
-</article>
+      <span
+        className="footerText"
+      >
+        Did you find this useful?
+      </span>
+      <button
+        className="voteBtn"
+        data-testid="Upvote Button"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          className="ScreenReaderOnly"
+        >
+          Yes
+        </span>
+        <svg
+          className="icon"
+        />
+      </button>
+      <span
+        className="voteCount"
+      >
+        <span
+          className="ScreenReaderOnly"
+        >
+          Upvotes:
+        </span>
+        0
+      </span>
+      <button
+        className="voteBtn"
+        data-testid="Downvote Button"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          className="ScreenReaderOnly"
+        >
+          No
+        </span>
+        <svg
+          className="icon"
+        />
+      </button>
+      <span
+        className="voteCount"
+      >
+        <span
+          className="ScreenReaderOnly"
+        >
+          Downvotes:
+        </span>
+        0
+      </span>
+    </footer>
+  </article>
+</a>
 `;
