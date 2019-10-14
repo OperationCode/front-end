@@ -121,10 +121,12 @@
 
 /* `.icon g` represents the negative space of Thumb icons */
 .icon g {
+  transition: 0.2s fill linear;
   fill: var(--white);
 }
 
 /* not targeting circle leaves the cuff whole alone */
 .icon.active g {
+  transition: 0.2s fill linear;
   fill: var(--primary);
 }
