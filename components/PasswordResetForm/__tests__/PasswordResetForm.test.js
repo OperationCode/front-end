@@ -1,12 +1,10 @@
 import React from 'react';
-import { mount } from 'enzyme'; // eslint-disable-line no-restricted-imports
-import { wait } from '@testing-library/react';
+import { wait, render, fireEvent } from '@testing-library/react';
 import { passwordReset } from 'common/constants/api';
 import { validationErrorMessages } from 'common/constants/messages';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 import OperationCodeAPIMock from 'test-utils/mocks/apiMock';
 import mockUser from 'test-utils/mockGenerators/mockUser';
-import asyncRenderDiff from 'test-utils/asyncRenderDiff';
 import PasswordResetForm from '../PasswordResetForm';
 
 afterEach(() => {
@@ -19,35 +17,23 @@ describe('PasswordResetForm', () => {
   });
 
   it('should display required error message when blurring past email input', async () => {
-    const wrapper = mount(<PasswordResetForm onSuccess={jest.fn()} passwordReset={jest.fn()} />);
+    const { getByLabelText, findByText } = render(
+      <PasswordResetForm onSuccess={jest.fn()} passwordReset={jest.fn()} />,
+    );
 
-    wrapper.find('input#email').simulate('blur');
-
-    await asyncRenderDiff(wrapper);
-
-    expect(
-      wrapper
-        .find('Input[type="email"]')
-        .find('Alert')
-        .text(),
-    ).toStrictEqual(validationErrorMessages.required);
+    fireEvent.blur(getByLabelText(/Email/));
+    expect(findByText(validationErrorMessages.required)).toBeDefined();
   });
 
   it('should show error when providing non-email to email input', async () => {
-    const wrapper = mount(<PasswordResetForm onSuccess={jest.fn()} passwordReset={jest.fn()} />);
-    wrapper
-      .find('input#email')
-      .simulate('change', { target: { id: 'email', value: 'email' } })
-      .simulate('blur');
+    const { getByLabelText, findByText } = render(
+      <PasswordResetForm onSuccess={jest.fn()} passwordReset={jest.fn()} />,
+    );
 
-    await asyncRenderDiff(wrapper);
+    fireEvent.change(getByLabelText(/Email/), { target: { value: 'email' } });
+    fireEvent.blur(getByLabelText(/Email/));
 
-    expect(
-      wrapper
-        .find('Input[type="email"]')
-        .find('Alert')
-        .text(),
-    ).toStrictEqual(validationErrorMessages.email);
+    expect(findByText(validationErrorMessages.email)).toBeDefined();
   });
 
   it('should submit with valid data in form', async () => {
@@ -59,18 +45,13 @@ describe('PasswordResetForm', () => {
 
     const successSpy = jest.fn();
 
-    const wrapper = mount(
+    const { getByLabelText, getByText } = render(
       <PasswordResetForm onSuccess={successSpy} passwordReset={passwordReset} />,
     );
 
-    wrapper
-      .find('input#email')
-      .simulate('change', { target: { id: 'email', value: user.email } })
-      .simulate('blur');
-
-    wrapper.find('Button').simulate('submit');
-
-    await asyncRenderDiff(wrapper);
+    fireEvent.change(getByLabelText(/Email/), { target: { value: user.email } });
+    fireEvent.blur(getByLabelText(/Email/));
+    fireEvent.click(getByText('Submit'));
 
     await wait(() => {
       expect(successSpy).toHaveBeenCalledWith({ detail: 'success' });
@@ -86,19 +67,15 @@ describe('PasswordResetForm', () => {
 
     const successSpy = jest.fn();
 
-    const wrapper = mount(
+    const { getByLabelText, getByText, findByText } = render(
       <PasswordResetForm onSuccess={successSpy} passwordReset={passwordReset} />,
     );
 
-    wrapper
-      .find('input#email')
-      .simulate('change', { target: { id: 'email', value: user.email } })
-      .simulate('blur');
+    fireEvent.change(getByLabelText(/Email/), { target: { value: user.email } });
+    fireEvent.blur(getByLabelText(/Email/));
+    fireEvent.click(getByText('Submit'));
 
-    wrapper.find('Button').simulate('submit');
-    await asyncRenderDiff(wrapper);
-
-    expect(wrapper.find('Alert').text()).toStrictEqual('test error');
+    expect(findByText('test error')).toBeDefined();
   });
 
   it('should NOT submit with invalid data in form', async () => {
@@ -109,7 +86,7 @@ describe('PasswordResetForm', () => {
     const successSpy = jest.fn();
     const passwordResetSpy = jest.fn();
 
-    const wrapper = mount(
+    const { getByText } = render(
       <PasswordResetForm
         onSuccess={successSpy}
         passwordReset={passwordResetSpy}
@@ -117,8 +94,7 @@ describe('PasswordResetForm', () => {
       />,
     );
 
-    wrapper.find('Button').simulate('submit');
-    await asyncRenderDiff(wrapper);
+    fireEvent.click(getByText('Submit'));
 
     await wait(() => {
       expect(passwordResetSpy).not.toHaveBeenCalled();
