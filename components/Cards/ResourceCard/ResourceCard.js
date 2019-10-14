@@ -1,82 +1,127 @@
 import React from 'react';
 import { string, number, func, oneOf } from 'prop-types';
-import classnames from 'classnames';
-
+import classNames from 'classnames';
 import Card from 'components/Cards/Card/Card';
+import OutboundLink from 'components/OutboundLink/OutboundLink';
+import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
 import ThumbsUp from 'static/images/icons/FontAwesome/thumbs-up.svg';
 import ThumbsDown from 'static/images/icons/FontAwesome/thumbs-down.svg';
 import styles from './ResourceCard.css';
 
+export const possibleUserVotes = {
+  upvote: 'upvote',
+  downvote: 'downvote',
+  none: null,
+};
+
 ResourceCard.propTypes = {
-  name: string.isRequired,
-  imageSource: string.isRequired,
-  description: string,
-  userVote: oneOf(['upvote', 'downvote', '']),
-  upvotes: number,
-  onUpvote: func,
-  downvotes: number,
-  onDownvote: func,
-  href: string,
   className: string,
+  description: string,
+  downvotes: number,
+  href: string.isRequired,
+  imageSource: string.isRequired,
+  name: string.isRequired,
+  onDownvote: func,
+  onUpvote: func,
+  upvotes: number,
+  userVote: oneOf(Object.values(possibleUserVotes)),
 };
 
 ResourceCard.defaultProps = {
   className: undefined,
   description: '',
-  userVote: '',
-  upvotes: 0,
-  onUpvote: () => {},
   downvotes: 0,
   onDownvote: () => {},
-  href: '',
+  onUpvote: () => {},
+  upvotes: 0,
+  userVote: possibleUserVotes.none,
 };
 
-export default function ResourceCard({
+function ResourceCard({
+  className,
+  description,
+  downvotes,
+  href,
   imageSource,
   name,
-  description,
-  userVote,
-  upvotes,
-  onUpvote,
-  downvotes,
   onDownvote,
-  className,
+  onUpvote,
+  upvotes,
+  userVote,
 }) {
+  const onUpvoteHandler = event => {
+    event.preventDefault(); // prevent link from being clicked
+    onUpvote(event);
+  };
+
+  const onDownvoteHandler = event => {
+    event.preventDefault(); // prevent link from being clicked
+    onDownvote(event);
+  };
+
+  const didUpvote = userVote === possibleUserVotes.upvote;
+  const didDownvote = userVote === possibleUserVotes.downvote;
+
   return (
-    <Card className={classnames(styles.ResourceCard, className)}>
-      <header className={styles.titleSection}>
-        <img src={imageSource} alt="logo" />
-        <h5>{name}</h5>
-      </header>
+    <OutboundLink
+      href={href}
+      hasIcon={false}
+      className={styles.link}
+      analyticsEventLabel={`Resource: ${name}`}
+    >
+      <Card className={classNames(styles.ResourceCard, className)} hasAnimationOnHover>
+        <header className={styles.titleSection}>
+          <img src={imageSource} alt="logo" aria-hidden="true" />
+          <h5>{name}</h5>
+        </header>
 
-      <section>
-        <p className={styles.descriptionText}>{description}</p>
-      </section>
+        <section>
+          <p className={styles.descriptionText}>{description}</p>
+        </section>
 
-      <footer className={styles.footerSection}>
-        <span className={styles.footerText}>I found this useful </span>
-        <button
-          type="button"
-          className={classnames(styles.voteBtn, { [styles.faded]: !upvotes })}
-          onClick={onUpvote}
-        >
-          <ThumbsUp
-            className={classnames(styles.icon, { [styles.active]: userVote === 'upvote' })}
-          />
-          {upvotes}
-        </button>
+        <footer className={styles.footerSection}>
+          <span className={styles.footerText}>Did you find this useful?</span>
+          <button
+            className={classNames(styles.voteBtn, { [styles.active]: didUpvote })}
+            data-testid="Upvote Button"
+            onClick={onUpvoteHandler}
+            type="button"
+          >
+            <ScreenReaderOnly>Yes</ScreenReaderOnly>
+            <ThumbsUp
+              className={classNames(styles.icon, {
+                [styles.active]: didUpvote,
+              })}
+            />
+          </button>
 
-        <button
-          type="button"
-          className={classnames(styles.voteBtn, { [styles.faded]: !downvotes })}
-          onClick={onDownvote}
-        >
-          <ThumbsDown
-            className={classnames(styles.icon, { [styles.active]: userVote === 'downvote' })}
-          />
-          {downvotes}
-        </button>
-      </footer>
-    </Card>
+          <span className={classNames(styles.voteCount, { [styles.active]: didUpvote })}>
+            <ScreenReaderOnly>Upvotes:</ScreenReaderOnly>
+            {upvotes.toString()}
+          </span>
+
+          <button
+            className={classNames(styles.voteBtn, { [styles.active]: didDownvote })}
+            data-testid="Downvote Button"
+            onClick={onDownvoteHandler}
+            type="button"
+          >
+            <ScreenReaderOnly>No</ScreenReaderOnly>
+            <ThumbsDown
+              className={classNames(styles.icon, {
+                [styles.active]: didDownvote,
+              })}
+            />
+          </button>
+
+          <span className={classNames(styles.voteCount, { [styles.active]: didDownvote })}>
+            <ScreenReaderOnly>Downvotes:</ScreenReaderOnly>
+            {downvotes.toString()}
+          </span>
+        </footer>
+      </Card>
+    </OutboundLink>
   );
 }
+
+export default ResourceCard;

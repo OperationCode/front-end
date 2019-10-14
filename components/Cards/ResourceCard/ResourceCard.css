@@ -1,9 +1,19 @@
+.link {
+  display: block;
+  margin: 1rem;
+  text-decoration: none;
+  width: var(--resourceCardWidth);
+
+  --resourceCardWidth: 400px;
+}
+
 .ResourceCard {
-  width: 400px;
   font-family: var(--secondaryFontFamily), sans-serif;
-  justify-content: normal;
-  box-shadow: 0 3px 6px 2px rgba(0, 0, 0, 0.12);
-  transition: 0.2s box-shadow linear;
+  margin: 0; /* Override Card css so top-level element can have margin */
+  padding-bottom: var(--resourceCardBottomPadding);
+  width: var(--resourceCardWidth);
+
+  --resourceCardBottomPadding: 1rem;
 }
 
 .ResourceCard:focus,
@@ -13,13 +23,14 @@
 
 @media screen and (--small-viewport) {
   .ResourceCard {
-    width: calc(100% - 5rem); /* subtracting margin/padding */
+    /* subtracting margin/padding */
+    width: calc(100% - 5rem);
   }
 }
 
 .titleSection {
-  display: flex;
   align-items: center;
+  display: flex;
   width: 100%;
 }
 
@@ -30,8 +41,9 @@
 .titleSection h5 {
   margin-left: 0.5rem;
   overflow: hidden;
-  white-space: nowrap;
+  padding-top: 0.5rem; /* vertically center with image */
   text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 @media screen and (--small-viewport) {
@@ -41,32 +53,33 @@
 }
 
 .descriptionText {
-  line-height: 1.25;
   font-weight: 200;
+  height: 6.2em; /* exactly five lines */
+  line-height: 1.25;
   overflow: hidden;
   position: relative;
-  height: 6.2em; /* exactly five lines */
 }
 
 /* Text fade effect */
 .descriptionText::after {
-  content: "";
-  text-align: right;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 70%;
-  height: 1.2em;
   background: linear-gradient(to right, rgba(247, 247, 247, 0), rgba(247, 247, 247, 1) 80%);
+  bottom: 0;
+  content: "";
+  height: 1.2em;
+  position: absolute;
+  right: 0;
+  text-align: right;
+  width: 70%;
 }
 
 .footerSection {
-  display: flex;
-  width: 100%;
-  padding-top: 1rem;
   align-items: center;
-  border-top: 1px solid var(--gray);
   background-color: inherit;
+  border-top: 1px solid var(--gray);
+  color: var(--secondary);
+  display: flex;
+  padding-top: var(--resourceCardBottomPadding);
+  width: 100%;
 }
 
 .footerText {
@@ -75,12 +88,18 @@
 }
 
 .voteBtn {
-  display: flex;
-  text-decoration: none;
-  padding: 0.5rem 0.25rem;
-  margin: 0;
-  border: none;
   background: inherit;
+  border: none;
+  display: flex;
+  margin: 0;
+  margin-bottom: 0.35rem; /* vertically centering with rest of content */
+  padding: 0.5rem 0.25rem;
+  text-decoration: none;
+}
+
+.voteBtn,
+.voteCount {
+  opacity: 0.6;
 }
 
 .voteBtn svg {
@@ -92,17 +111,18 @@
   cursor: pointer;
 }
 
-.faded {
-  opacity: 0.4;
+.active {
+  opacity: 1;
 }
 
 .icon > :global(.negative-space) {
   color: white; /* whatever bg color is */
 }
+
 .icon.active > :global(.negative-space) {
   color: var(--secondary);
-  stroke: var(--secondary);
   fill: var(--secondary);
+  stroke: var(--secondary);
   stroke-width: 50;
 }
 
