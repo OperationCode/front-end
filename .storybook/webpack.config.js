@@ -30,8 +30,8 @@ module.exports = (storybookBaseConfig, configType) => {
                 file: {
                   dirname: '../',
                 },
-                options: config,
-                env: mode.toLowerCase(),
+                options: storybookBaseConfig,
+                env: configType.toLowerCase(),
               }).plugins,
               require('postcss-export-custom-variables')({
                 exporter: 'js',
