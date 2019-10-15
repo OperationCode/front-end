@@ -54,7 +54,7 @@ storiesOf('${componentName}', module)
   // Output generated for component's test file
   buildTestJs: componentName =>
     `import React from 'react';
-import { render, act } from '@testing-library/react';
+import { render } from '@testing-library/react';
 
 import ${componentName} from '../${componentName}';
 
