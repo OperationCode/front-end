@@ -1,3 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots UpgradeBrowserOverlay Default 1`] = `null`;
+
 exports[`Storyshots UpgradeBrowserOverlay default 1`] = `null`;

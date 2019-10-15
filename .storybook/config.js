@@ -4,20 +4,20 @@ import Router from 'next/router';
 import MockedRouter from 'test-utils/mocks/nextRouterMock';
 import MockNextContext from 'test-utils/mocks/nextContextMock';
 import { addDecorator, configure, addParameters } from '@storybook/react';
-import { setDefaults } from '@storybook/addon-info';
-import { setOptions } from '@storybook/addon-options';
-import { checkA11y } from '@storybook/addon-a11y';
+import { withInfo } from '@storybook/addon-info';
+import { withOptions } from '@storybook/addon-options';
+import { withA11y } from '@storybook/addon-a11y';
 
 import backgroundsPaletteArray from './backgrounds';
 
 import 'common/styles/globalStyles.css';
 
-setOptions({
+withOptions({
   name: 'Operation-Code',
 });
 
 // Dynamically load all files matching `*.stories.js` pattern within the components folder
-const requireComponents = requireContext('../components/', true, /stories\.js$/);
+configure(requireContext('../components/', true, /stories\.js$/), module);
 
 function loadStories() {
   requireComponents.keys().forEach(requireComponents);
@@ -25,7 +25,7 @@ function loadStories() {
 }
 
 // addon-info
-setDefaults({
+withInfo({
   header: false,
   maxPropsIntoLine: 1,
 });
@@ -39,7 +39,5 @@ Router.router = MockedRouter;
 const mockWithRouterDecorator = storyFn => <MockNextContext>{storyFn()}</MockNextContext>;
 
 addParameters({ backgrounds: backgroundsPaletteArray });
-addDecorator(checkA11y);
+addDecorator(withA11y);
 addDecorator(mockWithRouterDecorator);
-
-configure(loadStories, module);

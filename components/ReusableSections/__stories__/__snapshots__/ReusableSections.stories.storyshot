@@ -1,5 +1,66 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots ReusableSections Donate Section 1`] = `
+<div
+  className="Container secondary"
+  style={
+    Object {
+      "backgroundImage": "linear-gradient(rgba(33, 48, 69, 0.65),rgba(33, 48, 69, 0.65)), url(https://operation-code-assets.s3.us-east-2.amazonaws.com/background_flag.jpg)",
+    }
+  }
+>
+  <div
+    className="content"
+  >
+    <div
+      className="headingContainer"
+    >
+      <h3
+        className="Heading"
+      >
+        <div
+          className="hashLinkContainer"
+          data-testid="Heading Content donate-link"
+        >
+          <a
+            data-testid="Hash Link"
+            href="#donate-link"
+            id="donate-link"
+          >
+            <span
+              className="ScreenReaderOnly"
+            >
+              Scroll Link for 
+              Donate
+            </span>
+            <svg
+              className="icon"
+            />
+          </a>
+          Donate
+        </div>
+      </h3>
+    </div>
+    <p
+      className="justifyAlign"
+    >
+      As a 501(c)(3) veteran-led nonprofit organization, our programs and services are maintained through the efforts of our volunteer staff. Your financial support allows us to continue helping the military community learn software development, enter the tech industry, and code the future.
+    </p>
+    <p>
+      Thank you for supporting our mission!
+    </p>
+    <a
+      className="Button topMargin primary"
+      href="https://secure.lglforms.com/form_engine/s/BRtP7QUKyHOyEYsZROsRew"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      Donate Now
+    </a>
+  </div>
+</div>
+`;
+
 exports[`Storyshots ReusableSections DonateSection 1`] = `
 <div
   className="Container secondary"
@@ -56,6 +117,79 @@ exports[`Storyshots ReusableSections DonateSection 1`] = `
       onMouseEnter={[Function]}
     >
       Donate Now
+    </a>
+  </div>
+</div>
+`;
+
+exports[`Storyshots ReusableSections Join Section 1`] = `
+<div
+  className="Container white"
+  data-testid="Join Section"
+>
+  <div
+    className="content"
+  >
+    <div
+      className="headingContainer"
+    >
+      <h3
+        className="Heading"
+      >
+        <div
+          className="hashLinkContainer"
+          data-testid="Heading Content join-our-thriving-community-link"
+        >
+          <a
+            data-testid="Hash Link"
+            href="#join-our-thriving-community-link"
+            id="join-our-thriving-community-link"
+          >
+            <span
+              className="ScreenReaderOnly"
+            >
+              Scroll Link for 
+              Join Our Thriving Community
+            </span>
+            <svg
+              className="icon"
+            />
+          </a>
+          Join Our Thriving Community
+        </div>
+      </h3>
+    </div>
+    <p
+      className="justifyAlign"
+    >
+      Are you ready to begin your journey towards a career in software development? Get the support you need by joining our members-only Slack community!
+    </p>
+    <a
+      className="Button verticalSpacing secondary"
+      href="/join"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      Register Now
+    </a>
+    <p>
+      Slack is a community based collaboration tool where all the magic happens!
+    </p>
+    <a
+      href="https://get.slack.help/hc/en-us/categories/360000049043-Getting-Started"
+      onClick={[Function]}
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      <span
+        className="ScreenReaderOnly"
+      >
+        Opens in new window
+      </span>
+      Never heard of Slack before?
+      <svg
+        className="externalLinkIcon"
+      />
     </a>
   </div>
 </div>
@@ -130,6 +264,358 @@ exports[`Storyshots ReusableSections JoinSection 1`] = `
         className="externalLinkIcon"
       />
     </a>
+  </div>
+</div>
+`;
+
+exports[`Storyshots ReusableSections Sponsors Section 1`] = `
+<div
+  className="Container gray"
+>
+  <div
+    className="content"
+  >
+    <div
+      className="headingContainer"
+    >
+      <h3
+        className="Heading underline"
+      >
+        <div
+          className="hashLinkContainer"
+          data-testid="Heading Content sponsors-link"
+        >
+          <a
+            data-testid="Hash Link"
+            href="#sponsors-link"
+            id="sponsors-link"
+          >
+            <span
+              className="ScreenReaderOnly"
+            >
+              Scroll Link for 
+              Sponsors
+            </span>
+            <svg
+              className="icon"
+            />
+          </a>
+          Sponsors
+        </div>
+      </h3>
+    </div>
+    <div
+      className="columnsContainer"
+    >
+      <div
+        className="PartnerLogoLink"
+      >
+        <a
+          href="https://apexsystems.com"
+          onClick={[Function]}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <span
+            className="ScreenReaderOnly"
+          >
+            Opens in new window
+          </span>
+          <noscript>
+            <img
+              alt="APEX Systems logo"
+              className="logo"
+              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/apex_systems.png"
+            />
+          </noscript>
+          <img
+            alt="APEX Systems logo"
+            className="logo"
+            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/apex_systems.png"
+          />
+        </a>
+      </div>
+      <div
+        className="PartnerLogoLink"
+      >
+        <a
+          href="https://github.com"
+          onClick={[Function]}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <span
+            className="ScreenReaderOnly"
+          >
+            Opens in new window
+          </span>
+          <noscript>
+            <img
+              alt="GitHub logo"
+              className="logo"
+              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/github.png"
+            />
+          </noscript>
+          <img
+            alt="GitHub logo"
+            className="logo"
+            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/github.png"
+          />
+        </a>
+      </div>
+      <div
+        className="PartnerLogoLink"
+      >
+        <a
+          href="https://slack.com/"
+          onClick={[Function]}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <span
+            className="ScreenReaderOnly"
+          >
+            Opens in new window
+          </span>
+          <noscript>
+            <img
+              alt="Slack logo"
+              className="logo"
+              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/slack.png"
+            />
+          </noscript>
+          <img
+            alt="Slack logo"
+            className="logo"
+            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/slack.png"
+          />
+        </a>
+      </div>
+      <div
+        className="PartnerLogoLink"
+      >
+        <a
+          href="https://heroku.com/"
+          onClick={[Function]}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <span
+            className="ScreenReaderOnly"
+          >
+            Opens in new window
+          </span>
+          <noscript>
+            <img
+              alt="Heroku logo"
+              className="logo"
+              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/heroku.png"
+            />
+          </noscript>
+          <img
+            alt="Heroku logo"
+            className="logo"
+            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/heroku.png"
+          />
+        </a>
+      </div>
+      <div
+        className="PartnerLogoLink"
+      >
+        <a
+          href="https://1password.com/"
+          onClick={[Function]}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <span
+            className="ScreenReaderOnly"
+          >
+            Opens in new window
+          </span>
+          <noscript>
+            <img
+              alt="1Password logo"
+              className="logo"
+              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/1password.png"
+            />
+          </noscript>
+          <img
+            alt="1Password logo"
+            className="logo"
+            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/1password.png"
+          />
+        </a>
+      </div>
+      <div
+        className="PartnerLogoLink"
+      >
+        <a
+          href="https://usbank.com/index.html"
+          onClick={[Function]}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <span
+            className="ScreenReaderOnly"
+          >
+            Opens in new window
+          </span>
+          <noscript>
+            <img
+              alt="US Bank logo"
+              className="logo"
+              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/usbank.png"
+            />
+          </noscript>
+          <img
+            alt="US Bank logo"
+            className="logo"
+            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/usbank.png"
+          />
+        </a>
+      </div>
+      <div
+        className="PartnerLogoLink"
+      >
+        <a
+          href="https://threatstack.com"
+          onClick={[Function]}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <span
+            className="ScreenReaderOnly"
+          >
+            Opens in new window
+          </span>
+          <noscript>
+            <img
+              alt="Threat Stack logo"
+              className="logo"
+              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/threat_stack.png"
+            />
+          </noscript>
+          <img
+            alt="Threat Stack logo"
+            className="logo"
+            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/threat_stack.png"
+          />
+        </a>
+      </div>
+      <div
+        className="PartnerLogoLink"
+      >
+        <a
+          href="https://oreilly.com"
+          onClick={[Function]}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <span
+            className="ScreenReaderOnly"
+          >
+            Opens in new window
+          </span>
+          <noscript>
+            <img
+              alt="O'Reilly Media logo"
+              className="logo"
+              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/oreilly.png"
+            />
+          </noscript>
+          <img
+            alt="O'Reilly Media logo"
+            className="logo"
+            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/oreilly.png"
+          />
+        </a>
+      </div>
+      <div
+        className="PartnerLogoLink"
+      >
+        <a
+          href="https://hackerrank.com"
+          onClick={[Function]}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <span
+            className="ScreenReaderOnly"
+          >
+            Opens in new window
+          </span>
+          <noscript>
+            <img
+              alt="HackerRank logo"
+              className="logo"
+              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/hackerrank.png"
+            />
+          </noscript>
+          <img
+            alt="HackerRank logo"
+            className="logo"
+            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/hackerrank.png"
+          />
+        </a>
+      </div>
+      <div
+        className="PartnerLogoLink"
+      >
+        <a
+          href="https://zapier.com"
+          onClick={[Function]}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <span
+            className="ScreenReaderOnly"
+          >
+            Opens in new window
+          </span>
+          <noscript>
+            <img
+              alt="Zapier logo"
+              className="logo"
+              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/zapier.png"
+            />
+          </noscript>
+          <img
+            alt="Zapier logo"
+            className="logo"
+            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/zapier.png"
+          />
+        </a>
+      </div>
+      <div
+        className="PartnerLogoLink"
+      >
+        <a
+          href="https://logrocket.com/"
+          onClick={[Function]}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <span
+            className="ScreenReaderOnly"
+          >
+            Opens in new window
+          </span>
+          <noscript>
+            <img
+              alt="LogRocket logo"
+              className="logo"
+              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/logrocket.png"
+            />
+          </noscript>
+          <img
+            alt="LogRocket logo"
+            className="logo"
+            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/logrocket.png"
+          />
+        </a>
+      </div>
+    </div>
   </div>
 </div>
 `;

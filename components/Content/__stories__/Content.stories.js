@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 import { withKnobs, boolean, select, text } from '@storybook/addon-knobs';
 
@@ -32,47 +31,55 @@ const threeItemArray = [
   </div>,
 ];
 
-storiesOf('Content', module)
-  .addDecorator(withKnobs)
-  .add(
-    'with one column',
-    withInfo()(() => (
-      <Content
-        backgroundImageSource={text('backgroundImageSource', '')}
-        columns={oneItemArray}
-        hasTitleUnderline={boolean('hasTitleUnderline', false)}
-        id={text('id', '')}
-        isFullViewportHeight={boolean('isFullViewportHeight', false)}
-        theme={select('theme', ['gray', 'secondary', 'white'], 'secondary')}
-        title={text('title', '')}
-      />
-    )),
-  )
-  .add(
-    'with two columns',
-    withInfo()(() => (
-      <Content
-        backgroundImageSource={text('backgroundImageSource', '')}
-        columns={twoItemArray}
-        hasTitleUnderline={boolean('hasTitleUnderline', false)}
-        id={text('id', '')}
-        isFullViewportHeight={boolean('isFullViewportHeight', false)}
-        theme={select('theme', ['gray', 'secondary', 'white'], 'secondary')}
-        title={text('title', '')}
-      />
-    )),
-  )
-  .add(
-    'with three columns',
-    withInfo()(() => (
-      <Content
-        backgroundImageSource={text('backgroundImageSource', '')}
-        columns={threeItemArray}
-        hasTitleUnderline={boolean('hasTitleUnderline', false)}
-        id={text('id', '')}
-        isFullViewportHeight={boolean('isFullViewportHeight', false)}
-        theme={select('theme', ['gray', 'secondary', 'white'], 'secondary')}
-        title={text('title', '')}
-      />
-    )),
-  );
+export default {
+  title: 'Content',
+  decorators: [withKnobs, withInfo],
+};
+
+export const one = () => (
+  <Content
+    backgroundImageSource={text('backgroundImageSource', '')}
+    columns={oneItemArray}
+    hasTitleUnderline={boolean('hasTitleUnderline', false)}
+    id={text('id', '')}
+    isFullViewportHeight={boolean('isFullViewportHeight', false)}
+    theme={select('theme', ['gray', 'secondary', 'white'], 'secondary')}
+    title={text('title', '')}
+  />
+);
+
+one.story = {
+  name: 'with one column',
+};
+
+export const two = () => (
+  <Content
+    backgroundImageSource={text('backgroundImageSource', '')}
+    columns={twoItemArray}
+    hasTitleUnderline={boolean('hasTitleUnderline', false)}
+    id={text('id', '')}
+    isFullViewportHeight={boolean('isFullViewportHeight', false)}
+    theme={select('theme', ['gray', 'secondary', 'white'], 'secondary')}
+    title={text('title', '')}
+  />
+);
+
+two.story = {
+  name: 'with two columns',
+};
+
+export const three = () => (
+  <Content
+    backgroundImageSource={text('backgroundImageSource', '')}
+    columns={threeItemArray}
+    hasTitleUnderline={boolean('hasTitleUnderline', false)}
+    id={text('id', '')}
+    isFullViewportHeight={boolean('isFullViewportHeight', false)}
+    theme={select('theme', ['gray', 'secondary', 'white'], 'secondary')}
+    title={text('title', '')}
+  />
+);
+
+three.story = {
+  name: 'with three columns',
+};

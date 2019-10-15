@@ -1,5 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots Content One 1`] = `null`;
+
+exports[`Storyshots Content Three 1`] = `null`;
+
+exports[`Storyshots Content Two 1`] = `null`;
+
 exports[`Storyshots Content with one column 1`] = `
 <div
   className="Container secondary"

@@ -1,17 +1,16 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 import { withKnobs, boolean, text } from '@storybook/addon-knobs';
 
 import Card from '../Card';
 
-storiesOf('Card/Card', module)
-  .addDecorator(withKnobs)
-  .add(
-    'default',
-    withInfo()(() => (
-      <Card hasAnimationOnHover={boolean('hasAnimationOnHover', false)}>
-        {text('children', 'This is the card content...')}
-      </Card>
-    )),
-  );
+export default {
+  title: 'Cards/Card',
+  decorators: [withKnobs, withInfo],
+};
+
+export const Default = () => (
+  <Card hasAnimationOnHover={boolean('hasAnimationOnHover', false)}>
+    {text('children', 'This is the card content...')}
+  </Card>
+);

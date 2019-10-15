@@ -69,6 +69,14 @@ exports[`Storyshots ProgressIndicator 3 of 3 1`] = `
 </div>
 `;
 
+exports[`Storyshots ProgressIndicator Default 1`] = `null`;
+
+exports[`Storyshots ProgressIndicator One 1`] = `null`;
+
+exports[`Storyshots ProgressIndicator Three 1`] = `null`;
+
+exports[`Storyshots ProgressIndicator Two 1`] = `null`;
+
 exports[`Storyshots ProgressIndicator default 1`] = `
 <div
   className="ProgressIndicator"

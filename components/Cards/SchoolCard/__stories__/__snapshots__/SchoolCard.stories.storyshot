@@ -1,5 +1,494 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots Cards/SchoolCard Many 1`] = `
+<article
+  className="Card SchoolCard"
+  data-testid="SchoolCard"
+>
+  <span
+    className="ScreenReaderOnly"
+  >
+    <h6
+      data-testid="SchoolCard Name: General Assembly"
+    >
+      General Assembly
+    </h6>
+  </span>
+  <div
+    className="ribbon gi"
+    data-testid="GI Bill Ribbon"
+  >
+    GI Bill
+  </div>
+  <div
+    className="ribbon vettec"
+    data-testid="Vet Tec Ribbon"
+  >
+    Vet Tec
+  </div>
+  <div
+    className="ribbon dual"
+    data-testid="Dual Ribbon"
+  >
+    GI Bill
+  </div>
+  <div
+    className="cardBrand"
+  >
+    <noscript>
+      <img
+        alt="General Assembly logo"
+        height="150"
+        src="https://operation-code-assets.s3.us-east-2.amazonaws.com/codeSchoolLogos/general_assembly.jpg"
+      />
+    </noscript>
+    <img
+      alt="General Assembly logo"
+      data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/codeSchoolLogos/general_assembly.jpg"
+      height="150"
+    />
+  </div>
+  <div
+    className="cardBlock"
+  >
+    <span
+      className="cardBlockTitle"
+    >
+      Availability
+    </span>
+    <div
+      className="badgeGroup"
+    >
+      <figure
+        className="Badge badgeGroupItem active"
+      >
+        <svg
+          data-testid="School has online"
+        />
+        <figcaption
+          className="label"
+        >
+          <span
+            className="ScreenReaderOnly"
+          >
+            Has 
+          </span>
+          Online
+        </figcaption>
+      </figure>
+      <figure
+        className="Badge badgeGroupItem active"
+      >
+        <svg />
+        <figcaption
+          className="label"
+        >
+          <span
+            className="ScreenReaderOnly"
+          >
+            Has 
+          </span>
+          Campus
+        </figcaption>
+      </figure>
+      <figure
+        className="Badge badgeGroupItem"
+      >
+        <svg />
+        <figcaption
+          className="label"
+        >
+          <span
+            className="ScreenReaderOnly"
+          >
+            Does not have 
+          </span>
+          Housing
+        </figcaption>
+      </figure>
+      <figure
+        className="Badge badgeGroupItem"
+      >
+        <svg />
+        <figcaption
+          className="label"
+        >
+          <span
+            className="ScreenReaderOnly"
+          >
+            Does not have 
+          </span>
+          Equipment
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+  <div
+    className="cardBlock"
+  >
+    <span
+      className="cardBlockTitle"
+    >
+      Accepts GI Bill
+    </span>
+    Yes
+  </div>
+  <div
+    className="cardBlock"
+  >
+    <span
+      className="cardBlockTitle"
+    >
+      VET TEC Approved
+    </span>
+    Yes
+  </div>
+  <div
+    className="cardBlock"
+  >
+    <span
+      className="cardBlockTitle"
+    >
+      Campus Locations
+    </span>
+    Multiple locations
+    <button
+      className="Button modalToggler primary"
+      disabled={false}
+      onClick={[Function]}
+      tabIndex={0}
+      type="button"
+    >
+      view all
+    </button>
+  </div>
+  <div
+    className="cardBlock"
+  >
+    <a
+      className="Button secondary fullWidth"
+      href="https://generalassembly.com"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      Visit Website
+    </a>
+  </div>
+</article>
+`;
+
+exports[`Storyshots Cards/SchoolCard None 1`] = `
+<article
+  className="Card SchoolCard"
+  data-testid="SchoolCard"
+>
+  <span
+    className="ScreenReaderOnly"
+  >
+    <h6
+      data-testid="SchoolCard Name: Thinkful"
+    >
+      Thinkful
+    </h6>
+  </span>
+  <div
+    className="ribbon vettec"
+    data-testid="Vet Tec Ribbon"
+  >
+    Vet Tec
+  </div>
+  <div
+    className="cardBrand"
+  >
+    <noscript>
+      <img
+        alt="Thinkful logo"
+        height="150"
+        src="https://operation-code-assets.s3.us-east-2.amazonaws.com/codeSchoolLogos/thinkful.jpg"
+      />
+    </noscript>
+    <img
+      alt="Thinkful logo"
+      data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/codeSchoolLogos/thinkful.jpg"
+      height="150"
+    />
+  </div>
+  <div
+    className="cardBlock"
+  >
+    <span
+      className="cardBlockTitle"
+    >
+      Availability
+    </span>
+    <div
+      className="badgeGroup"
+    >
+      <figure
+        className="Badge badgeGroupItem active"
+      >
+        <svg
+          data-testid="School has online"
+        />
+        <figcaption
+          className="label"
+        >
+          <span
+            className="ScreenReaderOnly"
+          >
+            Has 
+          </span>
+          Online
+        </figcaption>
+      </figure>
+      <figure
+        className="Badge badgeGroupItem"
+      >
+        <svg />
+        <figcaption
+          className="label"
+        >
+          <span
+            className="ScreenReaderOnly"
+          >
+            Does not have 
+          </span>
+          Campus
+        </figcaption>
+      </figure>
+      <figure
+        className="Badge badgeGroupItem"
+      >
+        <svg />
+        <figcaption
+          className="label"
+        >
+          <span
+            className="ScreenReaderOnly"
+          >
+            Does not have 
+          </span>
+          Housing
+        </figcaption>
+      </figure>
+      <figure
+        className="Badge badgeGroupItem"
+      >
+        <svg />
+        <figcaption
+          className="label"
+        >
+          <span
+            className="ScreenReaderOnly"
+          >
+            Does not have 
+          </span>
+          Equipment
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+  <div
+    className="cardBlock"
+  >
+    <span
+      className="cardBlockTitle"
+    >
+      Accepts GI Bill
+    </span>
+    No
+  </div>
+  <div
+    className="cardBlock"
+  >
+    <span
+      className="cardBlockTitle"
+    >
+      VET TEC Approved
+    </span>
+    Yes
+  </div>
+  <div
+    className="cardBlock"
+  >
+    <span
+      className="cardBlockTitle"
+    >
+      Campus Locations
+    </span>
+    Online only
+  </div>
+  <div
+    className="cardBlock"
+  >
+    <a
+      className="Button secondary fullWidth"
+      href="https://thinkful.com"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      Visit Website
+    </a>
+  </div>
+</article>
+`;
+
+exports[`Storyshots Cards/SchoolCard One 1`] = `
+<article
+  className="Card SchoolCard"
+  data-testid="SchoolCard"
+>
+  <span
+    className="ScreenReaderOnly"
+  >
+    <h6
+      data-testid="SchoolCard Name: Code Immersives"
+    >
+      Code Immersives
+    </h6>
+  </span>
+  <div
+    className="ribbon vettec"
+    data-testid="Vet Tec Ribbon"
+  >
+    Vet Tec
+  </div>
+  <div
+    className="cardBrand"
+  >
+    <noscript>
+      <img
+        alt="Code Immersives logo"
+        height="150"
+        src="https://operation-code-assets.s3.us-east-2.amazonaws.com/codeSchoolLogos/code_immersives.jpg"
+      />
+    </noscript>
+    <img
+      alt="Code Immersives logo"
+      data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/codeSchoolLogos/code_immersives.jpg"
+      height="150"
+    />
+  </div>
+  <div
+    className="cardBlock"
+  >
+    <span
+      className="cardBlockTitle"
+    >
+      Availability
+    </span>
+    <div
+      className="badgeGroup"
+    >
+      <figure
+        className="Badge badgeGroupItem"
+      >
+        <svg
+          data-testid="School has no online"
+        />
+        <figcaption
+          className="label"
+        >
+          <span
+            className="ScreenReaderOnly"
+          >
+            Does not have 
+          </span>
+          Online
+        </figcaption>
+      </figure>
+      <figure
+        className="Badge badgeGroupItem active"
+      >
+        <svg />
+        <figcaption
+          className="label"
+        >
+          <span
+            className="ScreenReaderOnly"
+          >
+            Has 
+          </span>
+          Campus
+        </figcaption>
+      </figure>
+      <figure
+        className="Badge badgeGroupItem"
+      >
+        <svg />
+        <figcaption
+          className="label"
+        >
+          <span
+            className="ScreenReaderOnly"
+          >
+            Does not have 
+          </span>
+          Housing
+        </figcaption>
+      </figure>
+      <figure
+        className="Badge badgeGroupItem active"
+      >
+        <svg />
+        <figcaption
+          className="label"
+        >
+          <span
+            className="ScreenReaderOnly"
+          >
+            Has 
+          </span>
+          Equipment
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+  <div
+    className="cardBlock"
+  >
+    <span
+      className="cardBlockTitle"
+    >
+      Accepts GI Bill
+    </span>
+    No
+  </div>
+  <div
+    className="cardBlock"
+  >
+    <span
+      className="cardBlockTitle"
+    >
+      VET TEC Approved
+    </span>
+    Yes
+  </div>
+  <div
+    className="cardBlock"
+  >
+    <span
+      className="cardBlockTitle"
+    >
+      Campus Locations
+    </span>
+    Los Angeles, CA
+  </div>
+  <div
+    className="cardBlock"
+  >
+    <a
+      className="Button secondary fullWidth"
+      href="https://codeimmersives.com"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      Visit Website
+    </a>
+  </div>
+</article>
+`;
+
 exports[`Storyshots Cards/SchoolCard with many locations 1`] = `
 <article
   className="Card SchoolCard"

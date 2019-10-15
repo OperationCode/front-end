@@ -7,3 +7,5 @@ exports[`Storyshots Card/Card default 1`] = `
   This is the card content...
 </article>
 `;
+
+exports[`Storyshots Cards/Card Default 1`] = `null`;
