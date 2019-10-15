@@ -3,30 +3,27 @@
 module.exports = {
   // Output generated for component's definition file
   buildJS: componentName =>
-    `import React from 'react';
-import { oneOfType, arrayOf, element, string, node } from 'prop-types';
+    `import React, { useState, useEffect } from 'react';
+import { oneOfType, arrayOf, element, string, node, number } from 'prop-types';
 import classNames from 'classnames';
 import styles from './${componentName}.css';
 
-export default class ${componentName} extends React.Component {
-  static propTypes = {
-    children: oneOfType([
-      arrayOf(node),
-      element,
-      string,
-    ]).isRequired,
-    className: string,
-  };
+${componentName}.propTypes = {
+  children: oneOfType([
+    arrayOf(node),
+    element,
+    string,
+  ]),
+  className: string,
+};
 
-  static defaultProps = {
-    className: undefined,
-  };
+${componentName}.defaultProps = {
+  className: undefined,
+  children: null,
+};
 
-  render() {
-    const { props } = this;
-
-    return <div className={classNames(props.className, styles.${componentName})}>{props.children}</div>;
-  }
+export default function ${componentName}({ className, children }) {
+  return <div className={classNames(className, styles.${componentName})}>{children}</div>
 }
 `,
 
@@ -58,6 +55,7 @@ storiesOf('${componentName}', module)
   buildTestJs: componentName =>
     `import React from 'react';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
+import { render, act } from '@testing-library/react';
 
 import ${componentName} from '../${componentName}';
 
@@ -73,6 +71,12 @@ describe('${componentName}', () => {
       </${componentName}>,
     );
   });
+
+  it('should not render', () => {
+    const { container } = render(<${componentName} />);
+
+    expect(container.firstChild).toBeNull();
+  })
 });
 `,
 };
