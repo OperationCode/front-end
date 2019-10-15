@@ -147,9 +147,9 @@ if (isProduction) {
 // Fixes Next CSS route change bug: https://github.com/zeit/next-plugins/issues/282
 if (!isProduction) {
   Router.events.on('routeChangeComplete', () => {
-    const els = document.querySelectorAll('link[href*="/_next/static/css/styles.chunk.css"]');
+    const els = document.querySelectorAll('link[href*="/_next/static/chunks/styles.chunk.css"]');
     const timestamp = new Date().valueOf();
-    els[0].href = `/_next/static/css/styles.chunk.css?v=${timestamp}`;
+    els[0].href = `/_next/static/chunks/styles.chunk.css?v=${timestamp}`;
   });
 }
 

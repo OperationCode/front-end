@@ -1,7 +1,6 @@
+import { render } from '@testing-library/react';
 import React from 'react';
-import { mount } from 'enzyme'; // eslint-disable-line no-restricted-imports
 import createSnapshotTest from 'test-utils/createSnapshotTest';
-
 import OutboundLink from '../OutboundLink';
 
 describe('OutboundLink', () => {
@@ -14,7 +13,7 @@ describe('OutboundLink', () => {
   });
 
   it('should render SVG when `hasIcon` is true', () => {
-    const wrapperWithIcon = mount(
+    const { container } = render(
       <OutboundLink
         analyticsEventLabel="Test"
         className="test-class"
@@ -25,11 +24,11 @@ describe('OutboundLink', () => {
       </OutboundLink>,
     );
 
-    expect(wrapperWithIcon.find('svg')).toExist();
+    expect(container.querySelector('svg')).not.toBeNull();
   });
 
   it('should not render SVG when `hasIcon` is false', () => {
-    const wrapperWithoutIcon = mount(
+    const { container } = render(
       <OutboundLink
         analyticsEventLabel="Test"
         className="test-class"
@@ -40,6 +39,6 @@ describe('OutboundLink', () => {
       </OutboundLink>,
     );
 
-    expect(wrapperWithoutIcon.find('svg')).not.toExist();
+    expect(container.querySelector('svg')).toBeNull();
   });
 });

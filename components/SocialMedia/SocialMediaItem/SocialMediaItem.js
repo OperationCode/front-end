@@ -1,6 +1,7 @@
 import React from 'react';
 import { node, string } from 'prop-types';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
+import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
 import styles from './SocialMediaItem.css';
 
 SocialMediaItem.propTypes = {
@@ -17,6 +18,7 @@ function SocialMediaItem({ name, href, svg }) {
         hasIcon={false}
         href={href}
       >
+        <ScreenReaderOnly>Operation Code&apos;s {name}</ScreenReaderOnly>
         {svg}
       </OutboundLink>
     </div>

@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 
-export default class ZipRecruiterJobs extends Component {
-  componentDidMount() {
+const ZipRecruiterJobs = () => {
+  useEffect(() => {
     const zipRecruiterScript = document.createElement('script');
 
     // eslint-disable-next-line unicorn/prevent-abbreviations
@@ -32,9 +32,9 @@ export default class ZipRecruiterJobs extends Component {
     };
 
     tryRunInit();
-  }
+  }, []);
 
-  render() {
-    return <div id="zipsearch_container" />;
-  }
-}
+  return <div id="zipsearch_container" />;
+};
+
+export default ZipRecruiterJobs;

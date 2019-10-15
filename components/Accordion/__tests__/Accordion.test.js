@@ -6,27 +6,27 @@ import Accordion from '../Accordion';
 describe('Accordion', () => {
   afterEach(cleanup);
 
-  it('should have invisible text on render', () => {
-    const { queryByTestId } = render(
+  it('should have invisible text on render', async () => {
+    const component = render(
       <Accordion title="Test" content={<p>Invisible Initially!</p>} accessibilityId="1" />,
     );
 
-    expect(queryByTestId('Accordion Content')).not.toBeVisible();
+    const Content = component.queryByTestId('Accordion Content');
 
-    fireEvent.click(queryByTestId('Accordion Toggle Button'));
-
-    expect(queryByTestId('Accordion Content')).toBeVisible();
+    expect(Content).not.toBeVisible();
+    fireEvent.click(component.queryByTestId('Accordion Toggle Button'));
+    expect(Content).toBeVisible();
   });
 
-  it('should display the correct text for the toggle button', () => {
-    const { findByText, queryByTestId } = render(
+  it('should display the correct text for the toggle button', async () => {
+    const component = render(
       <Accordion title="Test" content={<p>Invisible Initially!</p>} accessibilityId="1" />,
     );
 
-    expect(findByText(/Show/)).not.toBeNull();
+    const Button = component.queryByTestId('Accordion Toggle Button');
 
-    fireEvent.click(queryByTestId('Accordion Toggle Button'));
-
-    expect(findByText(/Hide/)).not.toBeNull();
+    expect(Button.textContent).toBe('Show');
+    fireEvent.click(Button);
+    expect(Button.textContent).toBe('Hide');
   });
 });
