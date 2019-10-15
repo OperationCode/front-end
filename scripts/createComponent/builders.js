@@ -3,23 +3,18 @@
 module.exports = {
   // Output generated for component's definition file
   buildJS: componentName =>
-    `import React, { useState, useEffect } from 'react';
-import { oneOfType, arrayOf, element, string, node, number } from 'prop-types';
+    `import React from 'react';
+import { string, node } from 'prop-types';
 import classNames from 'classnames';
 import styles from './${componentName}.css';
 
 ${componentName}.propTypes = {
-  children: oneOfType([
-    arrayOf(node),
-    element,
-    string,
-  ]),
+  children: node.isRequired,
   className: string,
 };
 
 ${componentName}.defaultProps = {
   className: undefined,
-  children: null,
 };
 
 export default function ${componentName}({ className, children }) {
