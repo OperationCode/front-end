@@ -54,24 +54,11 @@ storiesOf('${componentName}', module)
   // Output generated for component's test file
   buildTestJs: componentName =>
     `import React from 'react';
-import createSnapshotTest from 'test-utils/createSnapshotTest';
 import { render, act } from '@testing-library/react';
 
 import ${componentName} from '../${componentName}';
 
 describe('${componentName}', () => {
-  it('should render with required props', () => {
-    createSnapshotTest(<${componentName}>Test</${componentName}>);
-  });
-
-  it('should render with many props assigned', () => {
-    createSnapshotTest(
-      <${componentName} className="test-class">
-        Test
-      </${componentName}>,
-    );
-  });
-
   it('should not render', () => {
     const { container } = render(<${componentName} />);
 
