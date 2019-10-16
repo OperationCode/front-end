@@ -7,6 +7,12 @@ import styles from './SponsorsSection.css';
 
 const isPaidSponsor = partner => partner.type === PARTNER_TYPES.PAID;
 
+const compareFunction = (first, second) => {
+  if (first.name < second.name) return -1;
+  if (first.name > second.name) return 1;
+  return 0;
+};
+
 const SponsorsSection = () => (
   <Container theme="gray">
     <Heading text="Sponsors" hasTitleUnderline headingLevel={3} />
@@ -19,6 +25,7 @@ const SponsorsSection = () => (
     <div className={styles.columnsContainer}>
       {partners
         .filter(x => isPaidSponsor(x))
+        .sort(compareFunction)
         .map(partner => (
           <PartnerLogoLink key={partner.name} {...partner} size="large" />
         ))}
@@ -32,6 +39,7 @@ const SponsorsSection = () => (
     <div className={styles.columnsContainer}>
       {partners
         .filter(x => !isPaidSponsor(x))
+        .sort(compareFunction)
         .map(partner => (
           <PartnerLogoLink key={partner.name} {...partner} />
         ))}

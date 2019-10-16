@@ -103,34 +103,6 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
         className="PartnerLogoLink"
       >
         <a
-          href="https://usbank.com/index.html"
-          onClick={[Function]}
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          <span
-            className="ScreenReaderOnly"
-          >
-            Opens in new window
-          </span>
-          <noscript>
-            <img
-              alt="US Bank logo"
-              className="logo large"
-              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/usbank.png"
-            />
-          </noscript>
-          <img
-            alt="US Bank logo"
-            className="logo large"
-            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/usbank.png"
-          />
-        </a>
-      </div>
-      <div
-        className="PartnerLogoLink"
-      >
-        <a
           href="https://threatstack.com"
           onClick={[Function]}
           rel="noopener noreferrer"
@@ -152,6 +124,34 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
             alt="Threat Stack logo"
             className="logo large"
             data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/threat_stack.png"
+          />
+        </a>
+      </div>
+      <div
+        className="PartnerLogoLink"
+      >
+        <a
+          href="https://usbank.com/index.html"
+          onClick={[Function]}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <span
+            className="ScreenReaderOnly"
+          >
+            Opens in new window
+          </span>
+          <noscript>
+            <img
+              alt="US Bank logo"
+              className="logo large"
+              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/usbank.png"
+            />
+          </noscript>
+          <img
+            alt="US Bank logo"
+            className="logo large"
+            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/usbank.png"
           />
         </a>
       </div>
@@ -191,6 +191,34 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
     <div
       className="columnsContainer"
     >
+      <div
+        className="PartnerLogoLink"
+      >
+        <a
+          href="https://1password.com/"
+          onClick={[Function]}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <span
+            className="ScreenReaderOnly"
+          >
+            Opens in new window
+          </span>
+          <noscript>
+            <img
+              alt="1Password logo"
+              className="logo"
+              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/1password.png"
+            />
+          </noscript>
+          <img
+            alt="1Password logo"
+            className="logo"
+            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/1password.png"
+          />
+        </a>
+      </div>
       <div
         className="PartnerLogoLink"
       >
@@ -251,6 +279,34 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
         className="PartnerLogoLink"
       >
         <a
+          href="https://hackerrank.com"
+          onClick={[Function]}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <span
+            className="ScreenReaderOnly"
+          >
+            Opens in new window
+          </span>
+          <noscript>
+            <img
+              alt="HackerRank logo"
+              className="logo"
+              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/hackerrank.png"
+            />
+          </noscript>
+          <img
+            alt="HackerRank logo"
+            className="logo"
+            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/hackerrank.png"
+          />
+        </a>
+      </div>
+      <div
+        className="PartnerLogoLink"
+      >
+        <a
           href="https://heroku.com/"
           onClick={[Function]}
           rel="noopener noreferrer"
@@ -279,7 +335,7 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
         className="PartnerLogoLink"
       >
         <a
-          href="https://1password.com/"
+          href="https://logrocket.com/"
           onClick={[Function]}
           rel="noopener noreferrer"
           target="_blank"
@@ -291,15 +347,15 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
           </span>
           <noscript>
             <img
-              alt="1Password logo"
+              alt="LogRocket logo"
               className="logo"
-              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/1password.png"
+              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/logrocket.png"
             />
           </noscript>
           <img
-            alt="1Password logo"
+            alt="LogRocket logo"
             className="logo"
-            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/1password.png"
+            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/logrocket.png"
           />
         </a>
       </div>
@@ -335,34 +391,6 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
         className="PartnerLogoLink"
       >
         <a
-          href="https://hackerrank.com"
-          onClick={[Function]}
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          <span
-            className="ScreenReaderOnly"
-          >
-            Opens in new window
-          </span>
-          <noscript>
-            <img
-              alt="HackerRank logo"
-              className="logo"
-              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/hackerrank.png"
-            />
-          </noscript>
-          <img
-            alt="HackerRank logo"
-            className="logo"
-            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/hackerrank.png"
-          />
-        </a>
-      </div>
-      <div
-        className="PartnerLogoLink"
-      >
-        <a
           href="https://zapier.com"
           onClick={[Function]}
           rel="noopener noreferrer"
@@ -384,34 +412,6 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
             alt="Zapier logo"
             className="logo"
             data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/zapier.png"
-          />
-        </a>
-      </div>
-      <div
-        className="PartnerLogoLink"
-      >
-        <a
-          href="https://logrocket.com/"
-          onClick={[Function]}
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          <span
-            className="ScreenReaderOnly"
-          >
-            Opens in new window
-          </span>
-          <noscript>
-            <img
-              alt="LogRocket logo"
-              className="logo"
-              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/logrocket.png"
-            />
-          </noscript>
-          <img
-            alt="LogRocket logo"
-            className="logo"
-            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/logrocket.png"
           />
         </a>
       </div>
@@ -523,34 +523,6 @@ exports[`SponsorsSection should render with required props 1`] = `
         className="PartnerLogoLink"
       >
         <a
-          href="https://usbank.com/index.html"
-          onClick={[Function]}
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          <span
-            className="ScreenReaderOnly"
-          >
-            Opens in new window
-          </span>
-          <noscript>
-            <img
-              alt="US Bank logo"
-              className="logo large"
-              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/usbank.png"
-            />
-          </noscript>
-          <img
-            alt="US Bank logo"
-            className="logo large"
-            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/usbank.png"
-          />
-        </a>
-      </div>
-      <div
-        className="PartnerLogoLink"
-      >
-        <a
           href="https://threatstack.com"
           onClick={[Function]}
           rel="noopener noreferrer"
@@ -572,6 +544,34 @@ exports[`SponsorsSection should render with required props 1`] = `
             alt="Threat Stack logo"
             className="logo large"
             data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/threat_stack.png"
+          />
+        </a>
+      </div>
+      <div
+        className="PartnerLogoLink"
+      >
+        <a
+          href="https://usbank.com/index.html"
+          onClick={[Function]}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <span
+            className="ScreenReaderOnly"
+          >
+            Opens in new window
+          </span>
+          <noscript>
+            <img
+              alt="US Bank logo"
+              className="logo large"
+              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/usbank.png"
+            />
+          </noscript>
+          <img
+            alt="US Bank logo"
+            className="logo large"
+            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/usbank.png"
           />
         </a>
       </div>
@@ -611,6 +611,34 @@ exports[`SponsorsSection should render with required props 1`] = `
     <div
       className="columnsContainer"
     >
+      <div
+        className="PartnerLogoLink"
+      >
+        <a
+          href="https://1password.com/"
+          onClick={[Function]}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <span
+            className="ScreenReaderOnly"
+          >
+            Opens in new window
+          </span>
+          <noscript>
+            <img
+              alt="1Password logo"
+              className="logo"
+              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/1password.png"
+            />
+          </noscript>
+          <img
+            alt="1Password logo"
+            className="logo"
+            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/1password.png"
+          />
+        </a>
+      </div>
       <div
         className="PartnerLogoLink"
       >
@@ -671,6 +699,34 @@ exports[`SponsorsSection should render with required props 1`] = `
         className="PartnerLogoLink"
       >
         <a
+          href="https://hackerrank.com"
+          onClick={[Function]}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <span
+            className="ScreenReaderOnly"
+          >
+            Opens in new window
+          </span>
+          <noscript>
+            <img
+              alt="HackerRank logo"
+              className="logo"
+              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/hackerrank.png"
+            />
+          </noscript>
+          <img
+            alt="HackerRank logo"
+            className="logo"
+            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/hackerrank.png"
+          />
+        </a>
+      </div>
+      <div
+        className="PartnerLogoLink"
+      >
+        <a
           href="https://heroku.com/"
           onClick={[Function]}
           rel="noopener noreferrer"
@@ -699,7 +755,7 @@ exports[`SponsorsSection should render with required props 1`] = `
         className="PartnerLogoLink"
       >
         <a
-          href="https://1password.com/"
+          href="https://logrocket.com/"
           onClick={[Function]}
           rel="noopener noreferrer"
           target="_blank"
@@ -711,15 +767,15 @@ exports[`SponsorsSection should render with required props 1`] = `
           </span>
           <noscript>
             <img
-              alt="1Password logo"
+              alt="LogRocket logo"
               className="logo"
-              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/1password.png"
+              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/logrocket.png"
             />
           </noscript>
           <img
-            alt="1Password logo"
+            alt="LogRocket logo"
             className="logo"
-            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/1password.png"
+            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/logrocket.png"
           />
         </a>
       </div>
@@ -755,34 +811,6 @@ exports[`SponsorsSection should render with required props 1`] = `
         className="PartnerLogoLink"
       >
         <a
-          href="https://hackerrank.com"
-          onClick={[Function]}
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          <span
-            className="ScreenReaderOnly"
-          >
-            Opens in new window
-          </span>
-          <noscript>
-            <img
-              alt="HackerRank logo"
-              className="logo"
-              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/hackerrank.png"
-            />
-          </noscript>
-          <img
-            alt="HackerRank logo"
-            className="logo"
-            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/hackerrank.png"
-          />
-        </a>
-      </div>
-      <div
-        className="PartnerLogoLink"
-      >
-        <a
           href="https://zapier.com"
           onClick={[Function]}
           rel="noopener noreferrer"
@@ -804,34 +832,6 @@ exports[`SponsorsSection should render with required props 1`] = `
             alt="Zapier logo"
             className="logo"
             data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/zapier.png"
-          />
-        </a>
-      </div>
-      <div
-        className="PartnerLogoLink"
-      >
-        <a
-          href="https://logrocket.com/"
-          onClick={[Function]}
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          <span
-            className="ScreenReaderOnly"
-          >
-            Opens in new window
-          </span>
-          <noscript>
-            <img
-              alt="LogRocket logo"
-              className="logo"
-              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/logrocket.png"
-            />
-          </noscript>
-          <img
-            alt="LogRocket logo"
-            className="logo"
-            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/logrocket.png"
           />
         </a>
       </div>
