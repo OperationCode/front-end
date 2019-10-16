@@ -1,4 +1,5 @@
 import { s3 } from 'common/constants/urls';
+import sortBy from 'lodash/sortBy';
 
 export const PARTNER_TYPES = {
   PAID: 'PAID',
@@ -74,4 +75,4 @@ const partners = [
   },
 ];
 
-export default partners;
+export default sortBy(partners, 'name');
