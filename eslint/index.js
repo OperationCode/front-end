@@ -31,14 +31,17 @@ module.exports = {
           AssignmentExpression(node) {
             const propTypeNode = node.left.object;
             const compareValue = propTypeNode.start;
-            if (node.left.property.name === 'propTypes') {
+            if (
+              node.left.property.name === 'propTypes' ||
+              node.left.property.name === 'defaultProps'
+            ) {
               const body = get(node, 'parent.parent.body', []);
               const targetNode = body.find(element => hasDeclaration(element, propTypeNode));
               if (targetNode && targetNode.end < compareValue) {
                 return context.report(
                   node,
                   node.loc,
-                  'PropTypes definitions should exist above component declaration.',
+                  'PropTypes/defaultProps definitions should exist above component declaration.',
                 );
               }
             }
