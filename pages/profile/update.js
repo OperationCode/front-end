@@ -8,50 +8,46 @@ import UpdateProfileForm from 'components/UpdateProfileForm/UpdateProfileForm';
 import withAuthSync from 'decorators/withAuthSync/withAuthSync';
 import { getUserPromise } from 'common/constants/api';
 
-class UpdateProfile extends React.Component {
-  static async getInitialProps(ctx) {
-    const { token } = nextCookie(ctx);
-    const { data } = await getUserPromise({ token });
+UpdateProfile.propTypes = {
+  initialValues: objectOf(oneOfType([array, oneOfType([string, number, bool])])),
+};
 
-    // We get disciplines and programmingLanguages as a comma-separated string back from the server
-    // Turn it into an array if trying to populate initialValues.
-    const disciplines = get(data, 'disciplines') || '';
-    const programmingLanguages = get(data, 'programmingLanguages') || '';
+UpdateProfile.defaultProps = {
+  initialValues: undefined,
+};
 
-    const formattedData = {
-      ...data,
-      disciplines: disciplines.split(', '),
-      programmingLanguages: programmingLanguages.split(', '),
-    };
+UpdateProfile.getInitialProps = async ctx => {
+  const { token } = nextCookie(ctx);
+  const { data } = await getUserPromise({ token });
 
-    return {
-      initialValues: { ...UpdateProfileForm.defaultProps.initialValues, ...formattedData },
-    };
-  }
+  // We get disciplines and programmingLanguages as a comma-separated string back from the server
+  // Turn it into an array if trying to populate initialValues.
+  const disciplines = get(data, 'disciplines') || '';
+  const programmingLanguages = get(data, 'programmingLanguages') || '';
 
-  static propTypes = {
-    initialValues: objectOf(oneOfType([array, oneOfType([string, number, bool])])),
+  const formattedData = {
+    ...data,
+    disciplines: disciplines.split(', '),
+    programmingLanguages: programmingLanguages.split(', '),
   };
 
-  static defaultProps = {
-    initialValues: undefined,
+  return {
+    initialValues: { ...UpdateProfileForm.defaultProps.initialValues, ...formattedData },
   };
+};
 
-  render() {
-    const { initialValues } = this.props;
+function UpdateProfile({ initialValues }) {
+  const pageTitle = 'Update Profile';
 
-    const pageTitle = 'Update Profile';
+  return (
+    <>
+      <Head title={pageTitle} />
 
-    return (
-      <>
-        <Head title={pageTitle} />
+      <HeroBanner title={pageTitle} />
 
-        <HeroBanner title={pageTitle} />
-
-        <Content theme="gray" columns={[<UpdateProfileForm initialValues={initialValues} />]} />
-      </>
-    );
-  }
+      <Content theme="gray" columns={[<UpdateProfileForm initialValues={initialValues} />]} />
+    </>
+  );
 }
 
 export default withAuthSync(UpdateProfile);
