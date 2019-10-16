@@ -1,45 +1,39 @@
+/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable unicorn/prevent-abbreviations */
+
+const { get } = require('lodash');
+
+// helper func which targets possible react components
+const hasDeclaration = (singleNode, propTypeNode) => {
+  if (!singleNode.type.match(/[Function|Variable|Class|Export(Named|Default)]Declaration/)) {
+    return false;
+  }
+
+  const isDefaultOrNamedExport =
+    get(singleNode, 'declaration.id.name') === propTypeNode.name ||
+    get(singleNode, 'declaration.id.name.declarations[0].id.name') === propTypeNode.name;
+
+  if (isDefaultOrNamedExport) return true;
+
+  const isVariableOrFunctionStatement =
+    get(singleNode, 'id.name') === propTypeNode.name ||
+    get(singleNode, 'declaration[0].id.name') === propTypeNode.name;
+
+  if (isVariableOrFunctionStatement) return true;
+  return false;
+};
+
 module.exports = {
   rules: {
-    'proptype-definition': {
+    'proptype-definition-above-fn': {
       create(context) {
         return {
           AssignmentExpression(node) {
-            // helper func which targets possible react components
-            const findDeclaration = singleNode => {
-              if (
-                singleNode.type.match(/[Function|Variable|Class|Export(Named|Default)]Declaration/)
-              ) {
-                // deal with default or named export
-                if (singleNode.declaration) {
-                  const { declarations } = singleNode.declaration;
-                  if (
-                    (declarations && declarations[0].id.name === propertyTypeNode.name) ||
-                    singleNode.declaration.id.name === propertyTypeNode.name
-                  ) {
-                    return true;
-                  }
-                  // deal with variable declaration or function statement
-                } else if (
-                  (singleNode.id && singleNode.id.name === propertyTypeNode.name) ||
-                  (singleNode.declarations &&
-                    singleNode.declarations[0].id.name === propertyTypeNode.name)
-                ) {
-                  return true;
-                }
-              }
-              return false;
-            };
-            // PropType node
-            const propertyTypeNode = node.left.object;
-            // start loc of PropType node
-            const compareValue = propertyTypeNode.start;
+            const propTypeNode = node.left.object;
+            const compareValue = propTypeNode.start;
             if (node.left.property.name === 'propTypes') {
-              // find the component the proptype declaration was intended for
-              // Had to implement it this way otherwise eslint would error
-              const targetNode =
-                node.parent.parent &&
-                node.parent.parent.body &&
-                node.parent.parent.body.find(element => findDeclaration(element));
+              const body = get(node, 'parent.parent.body', []);
+              const targetNode = body.find(element => hasDeclaration(element, propTypeNode));
               if (targetNode && targetNode.end < compareValue) {
                 return context.report(
                   node,

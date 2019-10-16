@@ -84,7 +84,7 @@ module.exports = {
         svg: 'always',
       },
     ],
-    'custom-rules/proptype-definition': 2,
+    'custom-rules/proptype-definition-above-fn': 'error',
     'import/no-unresolved': 'off',
     'import/no-extraneous-dependencies': [
       'error',
