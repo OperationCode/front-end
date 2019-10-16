@@ -54,10 +54,10 @@ import { render } from '@testing-library/react';
 import ${componentName} from '../${componentName}';
 
 describe('${componentName}', () => {
-  it('should not render', () => {
+  it('should render', () => {
     const { container } = render(<${componentName} />);
 
-    expect(container.firstChild).toBeNull();
+    expect(container.firstChild).not.toBeNull();
   })
 });
 `,
