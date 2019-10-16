@@ -96,53 +96,6 @@
 }
 
 /* Github */
-
-/* WHITE */
-
-/* .githubButton {
-  color: #24292e;
-  background: #eff3f6;
-  transition: opacity 0.15s linear;
-  border: 1px solid #1b1f23;
-}
-
-.githubButton::before {
-  border-right: #1b1f23 1px solid;
-  background-color: #eff3f6;
-  background-image: url("http://localhost:3000/static/images/icons/github_logo_black.svg");
-  background-repeat: no-repeat;
-}
-
-.githubButton:active,
-.githubButton:hover,
-.githubButton:focus {
-  opacity: 0.8;
-  cursor: pointer;
-} */
-
-/* .githubButton {
-  color: #24292e;
-  background: #eff3f6;
-  transition: opacity 0.15s linear;
-  border: 1px solid #1b1f23;
-}
-
-.githubButton::before {
-  content: url("http://localhost:3000/static/images/icons/github_logo_black.svg");
-  border-right: #1b1f23 1px solid;
-  /* background-color: #eff3f6;
-  background-image: url("http://localhost:3000/static/images/icons/github_logo.svg");
-  background-repeat: no-repeat; 
-}
-
-.githubButton:active,
-.githubButton:hover,
-.githubButton:focus {
-  opacity: 0.8;
-  cursor: pointer;
-} */
-
-/* BLACK */
 .githubButton {
   color: #eff3f6;
   background: #24292e;
@@ -152,8 +105,7 @@
 
 .githubButton::before {
   border-right: #b0b0b0 1px solid;
-  background: url("http://localhost:3000/static/images/icons/github_octocat_logo.svg") 4px 4px
-    no-repeat;
+  background: url("/static/images/icons/github_octocat_logo.svg") 4px 4px no-repeat;
 }
 
 .githubButton:active,
