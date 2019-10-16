@@ -34,73 +34,69 @@ const disciplines = [
   'Agile / Scrum Management',
 ];
 
-class Technology extends React.Component {
-  static propTypes = {
-    isSubmitting: bool,
-  };
+Technology.propTypes = {
+  isSubmitting: bool,
+};
 
-  static defaultProps = {
-    isSubmitting: false,
-  };
+Technology.defaultProps = {
+  isSubmitting: false,
+};
 
-  static title = 'Technology';
+Technology.title = 'Technology';
 
-  static validationSchema = Yup.object().shape({
-    programmingLanguages: Yup.array().of(Yup.string()),
-    disciplines: Yup.array().of(Yup.string()),
-  });
+Technology.validationSchema = Yup.object().shape({
+  programmingLanguages: Yup.array().of(Yup.string()),
+  disciplines: Yup.array().of(Yup.string()),
+});
 
-  static initialValues = {
-    programmingLanguages: [],
-    disciplines: [],
-  };
+Technology.initialValues = {
+  programmingLanguages: [],
+  disciplines: [],
+};
 
-  static submitHandler = async values => {
-    await updateUser(values);
-  };
+Technology.submitHandler = async values => {
+  await updateUser(values);
+};
 
-  render() {
-    const { isSubmitting } = this.props;
+function Technology({ isSubmitting }) {
+  const programmingLanguageOptions = [...mapStringsToSelectOptions(programmingLanguages)];
+  const disciplineOptions = [...mapStringsToSelectOptions(disciplines)];
 
-    const programmingLanguageOptions = [...mapStringsToSelectOptions(programmingLanguages)];
-    const disciplineOptions = [...mapStringsToSelectOptions(disciplines)];
+  return (
+    <>
+      <div className={styles.row}>
+        <Field
+          className={styles.fullWidth}
+          name="programmingLanguages"
+          label="Programming Languages That Interest You"
+          component={Select}
+          isMulti
+          options={[
+            ...programmingLanguageOptions,
+            // TODO: investigate creatable
+          ]}
+          disabled={isSubmitting}
+          placeholder="Select at least one..."
+        />
+      </div>
 
-    return (
-      <>
-        <div className={styles.row}>
-          <Field
-            className={styles.fullWidth}
-            name="programmingLanguages"
-            label="Programming Languages That Interest You"
-            component={Select}
-            isMulti
-            options={[
-              ...programmingLanguageOptions,
-              // TODO: investigate creatable
-            ]}
-            disabled={isSubmitting}
-            placeholder="Select at least one..."
-          />
-        </div>
-
-        <div className={styles.row}>
-          <Field
-            className={styles.fullWidth}
-            name="disciplines"
-            label="Disciplines That Interest You"
-            component={Select}
-            isMulti
-            options={[
-              ...disciplineOptions,
-              // TODO: investigate creatable
-            ]}
-            disabled={isSubmitting}
-            placeholder="Select at least one..."
-          />
-        </div>
-      </>
-    );
-  }
+      <div className={styles.row}>
+        <Field
+          className={styles.fullWidth}
+          name="disciplines"
+          label="Disciplines That Interest You"
+          component={Select}
+          isMulti
+          options={[
+            ...disciplineOptions,
+            // TODO: investigate creatable
+          ]}
+          disabled={isSubmitting}
+          placeholder="Select at least one..."
+        />
+      </div>
+    </>
+  );
 }
 
 export default Technology;
