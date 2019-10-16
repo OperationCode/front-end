@@ -1,12 +1,10 @@
 import React from 'react';
-import { mount } from 'enzyme'; // eslint-disable-line no-restricted-imports
-import { wait } from '@testing-library/react';
+import { wait, render, fireEvent } from '@testing-library/react';
 import { networkErrorMessages, validationErrorMessages } from 'common/constants/messages';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 import mockUser from 'test-utils/mockGenerators/mockUser';
 import mockPassword from 'test-utils/mockGenerators/mockPassword';
 import OperationCodeAPIMock from 'test-utils/mocks/apiMock';
-import asyncRenderDiff from 'test-utils/asyncRenderDiff';
 import RegistrationForm from '../RegistrationForm';
 
 beforeEach(() => {
@@ -19,99 +17,56 @@ describe('RegistrationForm', () => {
   });
 
   it('should display required error message when blurring past email input', async () => {
-    const wrapper = mount(<RegistrationForm onSuccess={jest.fn()} />);
+    const { getByLabelText, findByText } = render(<RegistrationForm onSuccess={jest.fn()} />);
 
-    wrapper.find('input#email').simulate('blur');
+    fireEvent.blur(getByLabelText('Email*'));
 
-    await asyncRenderDiff(wrapper);
-
-    expect(
-      wrapper
-        .find('Input[type="email"]')
-        .find('Alert')
-        .text(),
-    ).toStrictEqual(validationErrorMessages.required);
+    const errorMessage = await findByText(validationErrorMessages.required);
+    expect(errorMessage).toBeDefined();
   });
 
   it('should show error when providing non-email to email input', async () => {
-    const wrapper = mount(<RegistrationForm onSuccess={jest.fn()} />);
+    const { getByLabelText, findByText } = render(<RegistrationForm onSuccess={jest.fn()} />);
 
-    wrapper
-      .find('input#email')
-      .simulate('change', { target: { id: 'email', value: 'email' } })
-      .simulate('blur');
+    fireEvent.change(getByLabelText('Email*'), { target: { value: 'email' } });
+    fireEvent.blur(getByLabelText('Email*'));
 
-    await asyncRenderDiff(wrapper);
-
-    expect(
-      wrapper
-        .find('Input[type="email"]')
-        .find('Alert')
-        .text(),
-    ).toStrictEqual(validationErrorMessages.email);
+    const errorMessage = await findByText(validationErrorMessages.email);
+    expect(errorMessage).toBeDefined();
   });
 
   it('should show "password required" message when blurring past input', async () => {
-    const wrapper = mount(<RegistrationForm onSuccess={jest.fn()} />);
+    const { getByLabelText, findByText } = render(<RegistrationForm onSuccess={jest.fn()} />);
 
-    wrapper.find('input#password').simulate('blur');
+    fireEvent.blur(getByLabelText('Password*'));
 
-    await asyncRenderDiff(wrapper);
-
-    expect(
-      wrapper
-        .find('Input[type="password"]')
-        .find('Alert')
-        .text(),
-    ).toStrictEqual(validationErrorMessages.required);
+    const errorMessage = await findByText(validationErrorMessages.required);
+    expect(errorMessage).toBeDefined();
   });
 
   it('should show "invalid password" message when focusing off an invalid password', async () => {
-    const wrapper = mount(<RegistrationForm onSuccess={jest.fn()} />);
+    const { getByLabelText, findByText } = render(<RegistrationForm onSuccess={jest.fn()} />);
 
     const stringWithoutNumber = 'SillyPassword';
 
-    wrapper
-      .find('input#password')
-      .simulate('change', { target: { id: 'password', value: stringWithoutNumber } })
-      .simulate('blur');
+    fireEvent.change(getByLabelText('Password*'), { target: { value: stringWithoutNumber } });
+    fireEvent.blur(getByLabelText('Password*'));
 
-    await asyncRenderDiff(wrapper);
-
-    expect(
-      wrapper
-        .find('Input[type="password"]')
-        .find('Alert')
-        .text(),
-    ).toStrictEqual(validationErrorMessages.password);
+    const errorMessage = await findByText(validationErrorMessages.password);
+    expect(errorMessage).toBeDefined();
   });
 
   it('should display password match message when both password inputs do not match', async () => {
-    const wrapper = mount(<RegistrationForm onSuccess={jest.fn()} />);
+    const { getByLabelText, findByText } = render(<RegistrationForm onSuccess={jest.fn()} />);
 
-    wrapper
-      .find('input#password')
-      .simulate('change', {
-        target: { id: 'password', value: mockPassword() },
-      })
-      .simulate('blur');
+    fireEvent.change(getByLabelText('Password*'), { target: { value: mockPassword() } });
+    fireEvent.blur(getByLabelText('Password*'));
 
-    wrapper
-      .find('input#confirm-password')
-      .simulate('change', {
-        target: { id: 'confirm-password', value: 'something-else' },
-      })
-      .simulate('blur');
+    fireEvent.change(getByLabelText('Confirm Password*'), { target: { value: 'something-else' } });
+    fireEvent.blur(getByLabelText('Confirm Password*'));
 
-    await asyncRenderDiff(wrapper);
-
-    expect(
-      wrapper
-        .find('input#confirm-password')
-        .closest('Input')
-        .find('Alert')
-        .text(),
-    ).toStrictEqual(validationErrorMessages.passwordMatch);
+    const errorMessage = await findByText(validationErrorMessages.passwordMatch);
+    expect(errorMessage).toBeDefined();
   });
 
   it('should submit with valid data in form', async () => {
@@ -126,10 +81,9 @@ describe('RegistrationForm', () => {
     }).reply(200, { token: 'fake-token' });
 
     const successSpy = jest.fn();
-    const wrapper = mount(<RegistrationForm onSuccess={successSpy} initialValues={user} />);
+    const { getByText } = render(<RegistrationForm onSuccess={successSpy} initialValues={user} />);
 
-    wrapper.find('Button').simulate('submit');
-    await asyncRenderDiff(wrapper);
+    fireEvent.click(getByText('Submit'));
 
     await wait(() => {
       expect(OperationCodeAPIMock.history.post.length).toStrictEqual(1);
@@ -153,23 +107,16 @@ describe('RegistrationForm', () => {
     });
 
     const successSpy = jest.fn(() => Promise.resolve(true));
-    const wrapper = mount(
+    const { container, getByText, findByText } = render(
       <RegistrationForm onSuccess={successSpy} initialValues={initialValues} />,
     );
 
-    const mockedFormikBag = {
-      setSubmitting: jest.fn(),
-      resetForm: jest.fn(),
-    };
+    fireEvent.click(getByText('Submit'));
 
-    await wrapper.instance().handleSubmit(initialValues, mockedFormikBag);
-
-    await wait(() => {
-      expect(OperationCodeAPIMock.history.post.length).toStrictEqual(1);
-      expect(successSpy).toHaveBeenCalledTimes(1);
-      expect(mockedFormikBag.setSubmitting).toHaveBeenCalledTimes(1);
-      expect(mockedFormikBag.setSubmitting).toHaveBeenCalledWith(false);
-      expect(mockedFormikBag.resetForm).toHaveBeenCalledTimes(1);
+    const submit = await findByText('Submit');
+    expect(submit).not.toBeDisabled();
+    container.querySelectorAll('input').forEach(input => {
+      expect(input.textContent).toBeFalsy();
     });
   });
 
@@ -186,19 +133,17 @@ describe('RegistrationForm', () => {
       zipcode: '',
     };
 
-    const wrapper = mount(
+    const { getByText, getAllByRole } = render(
       <RegistrationForm onSuccess={successSpy} initialValues={invalidFormValues} />,
     );
 
-    wrapper.find('Button').simulate('submit');
-    await asyncRenderDiff(wrapper);
+    fireEvent.click(getByText('Submit'));
 
     await wait(() => {
       expect(successSpy).not.toHaveBeenCalled();
       expect(OperationCodeAPIMock.history.post.length).not.toBeGreaterThan(0);
     });
-
-    expect(wrapper.find('Alert').children()).toHaveLength(Object.keys(invalidFormValues).length);
+    expect(getAllByRole(/alert/)).toHaveLength(Object.keys(invalidFormValues).length);
   });
 
   it('should show "email already registered" message for dupe email registration', async () => {
@@ -215,18 +160,15 @@ describe('RegistrationForm', () => {
     });
 
     const successSpy = jest.fn();
-    const wrapper = mount(<RegistrationForm onSuccess={successSpy} initialValues={existingUser} />);
+    const { getByText, findByText } = render(
+      <RegistrationForm onSuccess={successSpy} initialValues={existingUser} />,
+    );
 
-    wrapper.find('Button').simulate('submit');
-    await asyncRenderDiff(wrapper);
-
+    fireEvent.click(getByText('Submit'));
     expect(successSpy).not.toHaveBeenCalled();
-    expect(
-      wrapper
-        .find('Alert')
-        .last()
-        .text(),
-    ).toStrictEqual('Email has been taken.');
+
+    const alert = await findByText('Email has been taken.');
+    expect(alert).toBeDefined();
   });
 
   it('should show a helpful error if the server is down', async () => {
@@ -235,17 +177,14 @@ describe('RegistrationForm', () => {
     OperationCodeAPIMock.onPost('auth/registration/', user).reply(503);
 
     const successSpy = jest.fn();
-    const wrapper = mount(<RegistrationForm onSuccess={successSpy} initialValues={user} />);
+    const { findByText, getByText } = render(
+      <RegistrationForm onSuccess={successSpy} initialValues={user} />,
+    );
 
-    wrapper.find('button[type="submit"]').simulate('submit');
-    await asyncRenderDiff(wrapper);
-
+    fireEvent.click(getByText('Submit'));
     expect(successSpy).not.toHaveBeenCalled();
-    expect(
-      wrapper
-        .find('Alert')
-        .last()
-        .text(),
-    ).toStrictEqual(networkErrorMessages.serverDown);
+
+    const alert = await findByText(networkErrorMessages.serverDown);
+    expect(alert).toBeDefined();
   });
 });
