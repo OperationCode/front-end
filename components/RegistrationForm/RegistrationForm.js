@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { func, number, oneOfType, shape, string } from 'prop-types';
 import { Formik, Field } from 'formik';
 import * as Yup from 'yup';
@@ -41,39 +41,35 @@ const registrationSchema = Yup.object().shape({
     .test('zipcode', validationErrorMessages.zipcode, isValidZipcode),
 });
 
-class RegistrationForm extends Component {
-  static propTypes = {
-    onSuccess: func.isRequired,
-    initialValues: shape({
-      email: string,
-      'confirm-email': string,
-      password: string,
-      'confirm-password': string,
-      firstName: string,
-      lastName: string,
-      zipcode: oneOfType([string, number]),
-    }),
-  };
+RegistrationForm.propTypes = {
+  onSuccess: func.isRequired,
+  initialValues: shape({
+    email: string,
+    'confirm-email': string,
+    password: string,
+    'confirm-password': string,
+    firstName: string,
+    lastName: string,
+    zipcode: oneOfType([string, number]),
+  }),
+};
 
-  static defaultProps = {
-    initialValues: {
-      email: '',
-      'confirm-email': '',
-      password: '',
-      'confirm-password': '',
-      firstName: '',
-      lastName: '',
-      zipcode: '',
-    },
-  };
+RegistrationForm.defaultProps = {
+  initialValues: {
+    email: '',
+    'confirm-email': '',
+    password: '',
+    'confirm-password': '',
+    firstName: '',
+    lastName: '',
+    zipcode: '',
+  },
+};
 
-  state = {
-    errorMessage: '',
-  };
+function RegistrationForm({ initialValues, onSuccess }) {
+  const [errorMessage, setErrorMessage] = useState('');
 
-  handleSubmit = async (values, actions) => {
-    const { onSuccess } = this.props;
-
+  const handleSubmit = async (values, actions) => {
     try {
       const { token } = await createUser(values);
       await onSuccess({ user: values, token });
@@ -86,7 +82,7 @@ class RegistrationForm extends Component {
       if (data) {
         // TODO: Create back-end ticket for checking if email has been taken for a debounced,
         // client-side validation of emails instead of waiting for submission.
-        const errorMessage = Object.keys(data)
+        const newErrorMessage = Object.keys(data)
           .map(key => {
             const fieldName = capitalizeFirstLetter(key);
 
@@ -95,115 +91,110 @@ class RegistrationForm extends Component {
           })
           .join('\n');
 
-        this.setState({ errorMessage });
+        setErrorMessage(newErrorMessage);
       } else {
-        this.setState({ errorMessage: getServerErrorMessage(error) });
+        setErrorMessage(getServerErrorMessage(error));
       }
     }
   };
 
-  render() {
-    const { props, state } = this;
+  return (
+    <Formik
+      initialValues={initialValues}
+      onSubmit={handleSubmit}
+      validationSchema={registrationSchema}
+    >
+      {({ isSubmitting }) => (
+        <Form className={styles.RegistrationForm}>
+          <p>
+            We work closely with military veterans, service members, and spouses who are passionate
+            about transitioning into the tech industry. We work with over 5,000 members who are all
+            working towards relevant goals on Slack and in-person meet-ups. Membership is free!
+          </p>
 
-    return (
-      <Formik
-        initialValues={props.initialValues}
-        onSubmit={this.handleSubmit}
-        validationSchema={registrationSchema}
-      >
-        {({ isSubmitting }) => (
-          <Form className={styles.RegistrationForm}>
-            <p>
-              We work closely with military veterans, service members, and spouses who are
-              passionate about transitioning into the tech industry. We work with over 5,000 members
-              who are all working towards relevant goals on Slack and in-person meet-ups. Membership
-              is free!
-            </p>
-
-            <div>
-              <Field
-                type="email"
-                name="email"
-                label="Email*"
-                component={Input}
-                disabled={isSubmitting}
-                autoComplete="username email"
-              />
-
-              <Field
-                type="email"
-                name="confirm-email"
-                label="Confirm Email*"
-                component={Input}
-                disabled={isSubmitting}
-                autoComplete="username email"
-              />
-
-              <Field
-                type="password"
-                name="password"
-                label="Password*"
-                component={Input}
-                disabled={isSubmitting}
-                autoComplete="new-password"
-              />
-
-              <Field
-                type="password"
-                name="confirm-password"
-                label="Confirm Password*"
-                component={Input}
-                disabled={isSubmitting}
-                autoComplete="new-password"
-              />
-
-              <Field
-                type="text"
-                name="firstName"
-                label="First Name*"
-                component={Input}
-                disabled={isSubmitting}
-                autoComplete="given-name"
-              />
-
-              <Field
-                type="text"
-                name="lastName"
-                label="Last Name*"
-                component={Input}
-                disabled={isSubmitting}
-                autoComplete="family-name"
-              />
-
-              <Field
-                type="text"
-                name="zipcode"
-                label="Zipcode*"
-                component={Input}
-                disabled={isSubmitting}
-                autoComplete="postal-code"
-              />
-            </div>
-
-            {state.errorMessage && <Alert type="error">{state.errorMessage}</Alert>}
-
-            <p>
-              The information we collect is to help us personalize your experience on our Slack
-              community. We do not sell your information to anyone.
-            </p>
-            <Button
-              className={styles.topMargin}
-              type="submit"
-              theme="secondary"
+          <div>
+            <Field
+              type="email"
+              name="email"
+              label="Email*"
+              component={Input}
               disabled={isSubmitting}
-            >
-              Submit
-            </Button>
-          </Form>
-        )}
-      </Formik>
-    );
-  }
+              autoComplete="username email"
+            />
+
+            <Field
+              type="email"
+              name="confirm-email"
+              label="Confirm Email*"
+              component={Input}
+              disabled={isSubmitting}
+              autoComplete="username email"
+            />
+
+            <Field
+              type="password"
+              name="password"
+              label="Password*"
+              component={Input}
+              disabled={isSubmitting}
+              autoComplete="new-password"
+            />
+
+            <Field
+              type="password"
+              name="confirm-password"
+              label="Confirm Password*"
+              component={Input}
+              disabled={isSubmitting}
+              autoComplete="new-password"
+            />
+
+            <Field
+              type="text"
+              name="firstName"
+              label="First Name*"
+              component={Input}
+              disabled={isSubmitting}
+              autoComplete="given-name"
+            />
+
+            <Field
+              type="text"
+              name="lastName"
+              label="Last Name*"
+              component={Input}
+              disabled={isSubmitting}
+              autoComplete="family-name"
+            />
+
+            <Field
+              type="text"
+              name="zipcode"
+              label="Zipcode*"
+              component={Input}
+              disabled={isSubmitting}
+              autoComplete="postal-code"
+            />
+          </div>
+
+          {errorMessage && <Alert type="error">{errorMessage}</Alert>}
+
+          <p>
+            The information we collect is to help us personalize your experience on our Slack
+            community. We do not sell your information to anyone.
+          </p>
+          <Button
+            className={styles.topMargin}
+            type="submit"
+            theme="secondary"
+            disabled={isSubmitting}
+          >
+            Submit
+          </Button>
+        </Form>
+      )}
+    </Formik>
+  );
 }
 
 export default RegistrationForm;
