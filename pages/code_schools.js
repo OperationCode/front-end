@@ -76,6 +76,11 @@ function CodeSchools({ allSchools, errorMessage }) {
     setSelectedStates([]);
   };
 
+  const showAllSchools = () => {
+    setFilterSchools(allSchools);
+    setSelectedStates([]);
+  };
+
   const filterState = selectedOptions => {
     if (!selectedOptions) {
       showAllSchools();
@@ -105,11 +110,6 @@ function CodeSchools({ allSchools, errorMessage }) {
   const filterVetTecApproved = () => {
     const vetTecApprovedSchools = allSchools.filter(school => school.isVetTecApproved);
     setFilterSchools(vetTecApprovedSchools);
-    setSelectedStates([]);
-  };
-
-  const showAllSchools = () => {
-    setFilterSchools(allSchools);
     setSelectedStates([]);
   };
 
