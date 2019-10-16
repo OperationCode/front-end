@@ -37,6 +37,158 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
       </h3>
     </div>
     <div
+      className="headingContainer"
+    >
+      <h4
+        className="Heading"
+      >
+        <div
+          className="hashLinkContainer"
+          data-testid="Heading Content paid-sponsors-link"
+        >
+          <a
+            data-testid="Hash Link"
+            href="#paid-sponsors-link"
+            id="paid-sponsors-link"
+          >
+            <span
+              className="ScreenReaderOnly"
+            >
+              Scroll Link for 
+              Paid Sponsors
+            </span>
+            <svg
+              className="icon"
+            />
+          </a>
+          Paid Sponsors
+        </div>
+      </h4>
+    </div>
+    <p>
+      These sponsors have donated cash to help keep the mission going here at Operation Code. They may or may not have also donated to our cause via others means.
+    </p>
+    <div
+      className="columnsContainer"
+    >
+      <div
+        className="PartnerLogoLink"
+      >
+        <a
+          href="https://slack.com/"
+          onClick={[Function]}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <span
+            className="ScreenReaderOnly"
+          >
+            Opens in new window
+          </span>
+          <noscript>
+            <img
+              alt="Slack logo"
+              className="logo large"
+              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/slack.png"
+            />
+          </noscript>
+          <img
+            alt="Slack logo"
+            className="logo large"
+            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/slack.png"
+          />
+        </a>
+      </div>
+      <div
+        className="PartnerLogoLink"
+      >
+        <a
+          href="https://usbank.com/index.html"
+          onClick={[Function]}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <span
+            className="ScreenReaderOnly"
+          >
+            Opens in new window
+          </span>
+          <noscript>
+            <img
+              alt="US Bank logo"
+              className="logo large"
+              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/usbank.png"
+            />
+          </noscript>
+          <img
+            alt="US Bank logo"
+            className="logo large"
+            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/usbank.png"
+          />
+        </a>
+      </div>
+      <div
+        className="PartnerLogoLink"
+      >
+        <a
+          href="https://threatstack.com"
+          onClick={[Function]}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <span
+            className="ScreenReaderOnly"
+          >
+            Opens in new window
+          </span>
+          <noscript>
+            <img
+              alt="Threat Stack logo"
+              className="logo large"
+              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/threat_stack.png"
+            />
+          </noscript>
+          <img
+            alt="Threat Stack logo"
+            className="logo large"
+            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/threat_stack.png"
+          />
+        </a>
+      </div>
+    </div>
+    <div
+      className="headingContainer"
+    >
+      <h4
+        className="Heading"
+      >
+        <div
+          className="hashLinkContainer"
+          data-testid="Heading Content in-kind-sponsors-link"
+        >
+          <a
+            data-testid="Hash Link"
+            href="#in-kind-sponsors-link"
+            id="in-kind-sponsors-link"
+          >
+            <span
+              className="ScreenReaderOnly"
+            >
+              Scroll Link for 
+              In-Kind Sponsors
+            </span>
+            <svg
+              className="icon"
+            />
+          </a>
+          In-Kind Sponsors
+        </div>
+      </h4>
+    </div>
+    <p>
+      The following organizations have helped Operation Code through services, products, advertisements, scholarships, or sponsorships. We thank them for their contributions.
+    </p>
+    <div
       className="columnsContainer"
     >
       <div
@@ -99,34 +251,6 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
         className="PartnerLogoLink"
       >
         <a
-          href="https://slack.com/"
-          onClick={[Function]}
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          <span
-            className="ScreenReaderOnly"
-          >
-            Opens in new window
-          </span>
-          <noscript>
-            <img
-              alt="Slack logo"
-              className="logo"
-              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/slack.png"
-            />
-          </noscript>
-          <img
-            alt="Slack logo"
-            className="logo"
-            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/slack.png"
-          />
-        </a>
-      </div>
-      <div
-        className="PartnerLogoLink"
-      >
-        <a
           href="https://heroku.com/"
           onClick={[Function]}
           rel="noopener noreferrer"
@@ -176,62 +300,6 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
             alt="1Password logo"
             className="logo"
             data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/1password.png"
-          />
-        </a>
-      </div>
-      <div
-        className="PartnerLogoLink"
-      >
-        <a
-          href="https://usbank.com/index.html"
-          onClick={[Function]}
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          <span
-            className="ScreenReaderOnly"
-          >
-            Opens in new window
-          </span>
-          <noscript>
-            <img
-              alt="US Bank logo"
-              className="logo"
-              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/usbank.png"
-            />
-          </noscript>
-          <img
-            alt="US Bank logo"
-            className="logo"
-            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/usbank.png"
-          />
-        </a>
-      </div>
-      <div
-        className="PartnerLogoLink"
-      >
-        <a
-          href="https://threatstack.com"
-          onClick={[Function]}
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          <span
-            className="ScreenReaderOnly"
-          >
-            Opens in new window
-          </span>
-          <noscript>
-            <img
-              alt="Threat Stack logo"
-              className="logo"
-              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/threat_stack.png"
-            />
-          </noscript>
-          <img
-            alt="Threat Stack logo"
-            className="logo"
-            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/threat_stack.png"
           />
         </a>
       </div>
@@ -389,6 +457,158 @@ exports[`SponsorsSection should render with required props 1`] = `
       </h3>
     </div>
     <div
+      className="headingContainer"
+    >
+      <h4
+        className="Heading"
+      >
+        <div
+          className="hashLinkContainer"
+          data-testid="Heading Content paid-sponsors-link"
+        >
+          <a
+            data-testid="Hash Link"
+            href="#paid-sponsors-link"
+            id="paid-sponsors-link"
+          >
+            <span
+              className="ScreenReaderOnly"
+            >
+              Scroll Link for 
+              Paid Sponsors
+            </span>
+            <svg
+              className="icon"
+            />
+          </a>
+          Paid Sponsors
+        </div>
+      </h4>
+    </div>
+    <p>
+      These sponsors have donated cash to help keep the mission going here at Operation Code. They may or may not have also donated to our cause via others means.
+    </p>
+    <div
+      className="columnsContainer"
+    >
+      <div
+        className="PartnerLogoLink"
+      >
+        <a
+          href="https://slack.com/"
+          onClick={[Function]}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <span
+            className="ScreenReaderOnly"
+          >
+            Opens in new window
+          </span>
+          <noscript>
+            <img
+              alt="Slack logo"
+              className="logo large"
+              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/slack.png"
+            />
+          </noscript>
+          <img
+            alt="Slack logo"
+            className="logo large"
+            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/slack.png"
+          />
+        </a>
+      </div>
+      <div
+        className="PartnerLogoLink"
+      >
+        <a
+          href="https://usbank.com/index.html"
+          onClick={[Function]}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <span
+            className="ScreenReaderOnly"
+          >
+            Opens in new window
+          </span>
+          <noscript>
+            <img
+              alt="US Bank logo"
+              className="logo large"
+              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/usbank.png"
+            />
+          </noscript>
+          <img
+            alt="US Bank logo"
+            className="logo large"
+            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/usbank.png"
+          />
+        </a>
+      </div>
+      <div
+        className="PartnerLogoLink"
+      >
+        <a
+          href="https://threatstack.com"
+          onClick={[Function]}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <span
+            className="ScreenReaderOnly"
+          >
+            Opens in new window
+          </span>
+          <noscript>
+            <img
+              alt="Threat Stack logo"
+              className="logo large"
+              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/threat_stack.png"
+            />
+          </noscript>
+          <img
+            alt="Threat Stack logo"
+            className="logo large"
+            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/threat_stack.png"
+          />
+        </a>
+      </div>
+    </div>
+    <div
+      className="headingContainer"
+    >
+      <h4
+        className="Heading"
+      >
+        <div
+          className="hashLinkContainer"
+          data-testid="Heading Content in-kind-sponsors-link"
+        >
+          <a
+            data-testid="Hash Link"
+            href="#in-kind-sponsors-link"
+            id="in-kind-sponsors-link"
+          >
+            <span
+              className="ScreenReaderOnly"
+            >
+              Scroll Link for 
+              In-Kind Sponsors
+            </span>
+            <svg
+              className="icon"
+            />
+          </a>
+          In-Kind Sponsors
+        </div>
+      </h4>
+    </div>
+    <p>
+      The following organizations have helped Operation Code through services, products, advertisements, scholarships, or sponsorships. We thank them for their contributions.
+    </p>
+    <div
       className="columnsContainer"
     >
       <div
@@ -451,34 +671,6 @@ exports[`SponsorsSection should render with required props 1`] = `
         className="PartnerLogoLink"
       >
         <a
-          href="https://slack.com/"
-          onClick={[Function]}
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          <span
-            className="ScreenReaderOnly"
-          >
-            Opens in new window
-          </span>
-          <noscript>
-            <img
-              alt="Slack logo"
-              className="logo"
-              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/slack.png"
-            />
-          </noscript>
-          <img
-            alt="Slack logo"
-            className="logo"
-            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/slack.png"
-          />
-        </a>
-      </div>
-      <div
-        className="PartnerLogoLink"
-      >
-        <a
           href="https://heroku.com/"
           onClick={[Function]}
           rel="noopener noreferrer"
@@ -528,62 +720,6 @@ exports[`SponsorsSection should render with required props 1`] = `
             alt="1Password logo"
             className="logo"
             data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/1password.png"
-          />
-        </a>
-      </div>
-      <div
-        className="PartnerLogoLink"
-      >
-        <a
-          href="https://usbank.com/index.html"
-          onClick={[Function]}
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          <span
-            className="ScreenReaderOnly"
-          >
-            Opens in new window
-          </span>
-          <noscript>
-            <img
-              alt="US Bank logo"
-              className="logo"
-              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/usbank.png"
-            />
-          </noscript>
-          <img
-            alt="US Bank logo"
-            className="logo"
-            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/usbank.png"
-          />
-        </a>
-      </div>
-      <div
-        className="PartnerLogoLink"
-      >
-        <a
-          href="https://threatstack.com"
-          onClick={[Function]}
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          <span
-            className="ScreenReaderOnly"
-          >
-            Opens in new window
-          </span>
-          <noscript>
-            <img
-              alt="Threat Stack logo"
-              className="logo"
-              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/threat_stack.png"
-            />
-          </noscript>
-          <img
-            alt="Threat Stack logo"
-            className="logo"
-            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/threat_stack.png"
           />
         </a>
       </div>
