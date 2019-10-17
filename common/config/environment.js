@@ -18,7 +18,7 @@ export const clientTokens = isProduction
       LOGROCKET: '',
       OC_FACEBOOK_KEY: '399113557601038',
       OC_GOOGLE_KEY: '973655216990-vvl9vfp9v13lfoq7ccm36e8ouukrgdfh.apps.googleusercontent.com',
-      OC_GITHUB_KEY: 'b3ca1d92467258ccc3bc',
+      OC_GITHUB_KEY: '47dcf02deddbd08473c3',
       SENTRY_DSN: '',
     };
 
