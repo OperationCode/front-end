@@ -17,12 +17,14 @@ withOptions({
 });
 
 // Dynamically load all files matching `*.stories.js` pattern within the components folder
-configure(requireContext('../components/', true, /stories\.js$/), module);
+const req = requireContext('../components/', true, /stories\.js$/);
 
 function loadStories() {
-  requireComponents.keys().forEach(requireComponents);
+  req.keys().forEach(filename => req(filename));
   // Add any new component folders with stories here, using the patterns defined above
 }
+
+configure(loadStories, module);
 
 // addon-info
 withInfo({
