@@ -105,7 +105,6 @@
     "react-dom": "^16.10.2",
     "react-facebook-login": "^4.1.1",
     "react-ga": "2.7.0",
-    "react-github-login": "^1.0.3",
     "react-google-login": "^5.0.5",
     "react-modal": "^3.10.1",
     "react-on-screen": "^2.1.1",
