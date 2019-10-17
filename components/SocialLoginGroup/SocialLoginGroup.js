@@ -16,11 +16,21 @@ SocialLoginGroup.defaultProps = {
   className: undefined,
 };
 
+/* 
+ AccessToken is received from oauth providers.
+ The name of the parameter depends on the provider
+   Google:   accessToken
+   Facebook: accessToken
+   GitHub:   code
+*/
+const getToken = data => data.accessToken || data.code;
+
 function SocialLoginGroup(props) {
   const [errorMessage, setErrorMessage] = useState('');
 
-  const onSuccess = provider => async ({ accessToken }) => {
+  const onSuccess = provider => async data => {
     try {
+      const accessToken = getToken(data);
       const { handleSuccess, loginSocial } = props;
       const result = await loginSocial(provider, { accessToken });
       handleSuccess(result);
