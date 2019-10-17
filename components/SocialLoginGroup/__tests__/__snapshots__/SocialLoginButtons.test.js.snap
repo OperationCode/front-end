@@ -17,5 +17,11 @@ Array [
   >
     Login with Facebook
   </button>,
+  <button
+    className="loginButton githubButton"
+    onClick={[Function]}
+  >
+    Login with GitHub
+  </button>,
 ]
 `;
