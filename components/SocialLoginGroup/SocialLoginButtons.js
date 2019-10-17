@@ -52,7 +52,7 @@ function SocialLoginButtons({ onSuccess, onGoogleFailure }) {
         buttonText="Login with GitHub"
         className={classNames(styles.loginButton, styles.githubButton)}
         onSuccess={onSuccess('github')}
-        redirectUri={typeof window === 'object' && `${window.location.origin}/login`}
+        redirectUri=""
       />
     </>
   );
