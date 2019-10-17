@@ -3,6 +3,7 @@ import { func } from 'prop-types';
 import classNames from 'classnames';
 import GoogleLogin from 'react-google-login';
 import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props';
+import GitHubLogin from 'react-github-login';
 import { clientTokens } from 'common/config/environment';
 import styles from './SocialLoginGroup.css';
 
@@ -44,6 +45,14 @@ function SocialLoginButtons({ onSuccess, onGoogleFailure }) {
             Login with Facebook
           </button>
         )}
+      />
+
+      <GitHubLogin
+        clientId={clientTokens.OC_GITHUB_KEY}
+        buttonText="Login with GitHub"
+        className={classNames(styles.loginButton, styles.githubButton)}
+        onSuccess={onSuccess('github')}
+        redirectUri={typeof window === 'object' && `${window.location.origin}/login`}
       />
     </>
   );
