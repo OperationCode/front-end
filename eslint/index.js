@@ -29,14 +29,14 @@ module.exports = {
       create(context) {
         return {
           AssignmentExpression(node) {
-            const propTypeNode = node.left.object;
-            const compareValue = propTypeNode.start;
-            if (
-              node.left.property.name === 'propTypes' ||
-              node.left.property.name === 'defaultProps'
-            ) {
+            const propTypeNode = get(node, 'left.object');
+            const compareValue = get(propTypeNode, 'start');
+            const propName = get(node, 'left.property.name');
+
+            if (['propTypes', 'defaultProps'].includes(propName)) {
               const body = get(node, 'parent.parent.body', []);
               const targetNode = body.find(element => hasDeclaration(element, propTypeNode));
+
               if (targetNode && targetNode.end < compareValue) {
                 return context.report(
                   node,
