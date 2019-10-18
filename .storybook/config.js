@@ -20,9 +20,11 @@ withOptions({
 configure(require.context('../components/', true, /stories\.js$/), module);
 
 function loadStories() {
-  requireComponents.keys().forEach(requireComponents);
+  req.keys().forEach(filename => req(filename));
   // Add any new component folders with stories here, using the patterns defined above
 }
+
+configure(loadStories, module);
 
 // addon-info
 withInfo({
