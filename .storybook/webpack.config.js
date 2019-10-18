@@ -14,6 +14,7 @@ module.exports = async ({ config, mode }) => {
   //required for importing svgs
   config.resolve.extensions.push('.svg');
 
+  config.node = { fs: 'empty' };
   // extend config to our liking
   config.module.rules.push(
     {

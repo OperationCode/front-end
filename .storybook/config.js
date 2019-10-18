@@ -17,6 +17,7 @@ withOptions({
 });
 
 // Dynamically load all files matching `*.stories.js` pattern within the components folder
+require('babel-plugin-require-context-hook/register')();
 const req = require.context('../components/', true, /stories\.js$/);
 configure(req, module);
 function loadStories() {
