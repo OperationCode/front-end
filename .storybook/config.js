@@ -17,7 +17,7 @@ withOptions({
 });
 
 // Dynamically load all files matching `*.stories.js` pattern within the components folder
-configure(requireContext('../components/', true, /stories\.js$/), module);
+configure(require.context('../components/', true, /stories\.js$/), module);
 
 function loadStories() {
   requireComponents.keys().forEach(requireComponents);
