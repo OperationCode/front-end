@@ -17,10 +17,7 @@ withOptions({
 });
 
 // Dynamically load all files matching `*.stories.js` pattern within the components folder
-const req =
-  process.env.NODE_ENV === 'test'
-    ? requireContext('../components/', true, /stories\.js$/)
-    : require.context('../components/', true, /stories\.js$/);
+const req = require.context('../components/', true, /stories\.js$/);
 configure(req, module);
 function loadStories() {
   req.keys().forEach(filename => req(filename));

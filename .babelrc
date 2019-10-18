@@ -23,7 +23,8 @@
             }
           }
         ]
-      ]
+      ],
+      "plugins": ["require-context-hook"]
     }
   },
   "plugins": [
