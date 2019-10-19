@@ -26,7 +26,17 @@
     "test:changes": "yarn test --changedSince master --verbose=true",
     "test:changes:watch": "yarn test --changedSince master --watch --verbose=true",
     "test:watch": "yarn test --watch",
-    "test:update-snaps": "yarn test -u"
+    "test:update-snaps": "yarn test -u",
+    "testing": "yarn test:ci && yarn test:e2e:headless",
+    "pretesting": "rm -rf .nyc_output || true",
+    "posttesting": "yarn report:combined",
+    "mkdir:reports": "mkdir reports || true",
+    "precopy:reports": "yarn mkdir:reports",
+    "copy:reports": "cp cypress-coverage/coverage-final.json reports/from-cypress.json && cp jest-coverage/coverage-final.json reports/from-jest.json",
+    "precombine:reports": "yarn copy:reports && mkdir .nyc_output || true",
+    "combine:reports": "nyc merge reports && mv coverage.json .nyc_output/out.json",
+    "prereport:combined": "yarn combine:reports",
+    "report:combined": "nyc report --reporter lcov --report-dir coverage && rm -rf cypress-coverage && rm -rf jest-coverage"
   },
   "husky": {
     "hooks": {
@@ -44,6 +54,32 @@
       "prettier --write",
       "stylelint --fix",
       "git add"
+    ]
+  },
+  "nyc": {
+    "report-dir": "cypress-coverage",
+    "include": [
+      "common/**/*.js",
+      "components/**/*.js",
+      "decorators/**/*.js",
+      "pages"
+    ],
+    "exclude": [
+      "node_modules",
+      "common/config",
+      "common/styles",
+      "common/constants",
+      "scripts",
+      "cypress",
+      "test-utils",
+      "pages/api/__coverage__.js",
+      "jest.setup.js",
+      ".storybook",
+      "common/utils/api-utils.js",
+      "components/head.js"
+    ],
+    "reporter": [
+      "json"
     ]
   },
   "dependencies": {
@@ -121,15 +157,17 @@
   },
   "devDependencies": {
     "@babel/preset-env": "^7.6.3",
+    "@cypress/code-coverage": "^1.10.1",
     "@testing-library/jest-dom": "^4.1.2",
     "@testing-library/react": "^9.3.0",
     "all-contributors-cli": "^6.9.1",
     "axios-mock-adapter": "^1.17.0",
     "babel-eslint": "^10.0.3",
     "babel-jest": "^24.9.0",
+    "babel-plugin-istanbul": "^5.2.0",
     "cross-env": "^6.0.3",
-    "cypress": "3.2.0",
     "cypress-image-snapshot": "^3.1.1",
+    "cypress": "3.2.0",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.15.1",
     "enzyme-to-json": "^3.4.2",
@@ -147,10 +185,12 @@
     "faker": "^4.1.0",
     "husky": "3.0.9",
     "identity-obj-proxy": "^3.0.0",
+    "istanbul-lib-coverage": "^2.0.5",
     "jest": "^24.9.0",
     "jest-enzyme": "7.1.1",
     "jest-prop-type-error": "^1.1.0",
     "lint-staged": "^9.4.2",
+    "nyc": "^14.1.1",
     "prettier": "^1.18.2",
     "react-addons-test-utils": "^15.6.2",
     "react-test-renderer": "^16.10.2",
