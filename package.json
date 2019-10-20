@@ -51,7 +51,7 @@
     "@innocuous/components": "^2.1.0",
     "@innocuous/functions": "^2.1.0",
     "@innocuous/next-css": "^3.0.0-1",
-    "@sentry/browser": "^5.7.0",
+    "@sentry/browser": "^5.7.1",
     "@storybook/addon-a11y": "3.4.11",
     "@storybook/addon-actions": "3.4.11",
     "@storybook/addon-backgrounds": "3.4.11",
