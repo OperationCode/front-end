@@ -1206,10 +1206,10 @@
   resolved "https://registry.yarnpkg.com/@innocuous/hooks/-/hooks-2.1.0.tgz#8d0384e1778250b98f6d82e20cce2d9964da775f"
   integrity sha512-L7XKnXLXFbwhPT1ROezeXWm7OAbv5nHAPKxeaa4gXpxWHDvMJT/5jAgAAUleTHe0d021jBCYT/+sZQpsx/zi5g==
 
-"@innocuous/next-css@^3.0.0-1":
-  version "3.0.0-1"
-  resolved "https://registry.yarnpkg.com/@innocuous/next-css/-/next-css-3.0.0-1.tgz#e6d51a0d997deb089ff57ea815addcd83334cba8"
-  integrity sha512-Hd8Xd+UA+af20HU55YZ7nMm/MnjYl8gK2Rvr3uxulSbP0u2Y/Whidk/8eI5ymZKBE/liaFu7glw5ScyvqXQH7g==
+"@innocuous/next-css@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@innocuous/next-css/-/next-css-3.0.0.tgz#25db5f964b5e4c52c7f8e77ac29f5a820b82ecc3"
+  integrity sha512-PQZC4VAo5KJLB+JQC8cwrofQ6nar8BlLhwYb/rbV0WWUqPO0eL8mK3/s9aTIHsriWesd/Mzhw4nkldS8ZJNX8w==
   dependencies:
     css-loader "^3.2.0"
     extract-css-chunks-webpack-plugin "^4.6.0"
