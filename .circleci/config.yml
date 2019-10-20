@@ -3,11 +3,12 @@ version: 2.1
 orbs:
   cypress: cypress-io/cypress@1
 
-
 workflows:
   build:
     jobs:
-      - build_and_test
+      - build_and_test:
+          requires:
+            - cypress/run
 
       - cypress_install
 
@@ -17,10 +18,14 @@ workflows:
           record: true # record results on Cypress Dashboard
           parallel: true # split all specs across machines
           parallelism: 3 # use 3 CircleCI machines to finish quickly
-          group: 'all tests' # name this group "all tests" on the dashboard
-          start: 'yarn dev' # start server before running tests
+          group: "all tests" # name this group "all tests" on the dashboard
+          start: "yarn dev" # start server before running tests
           yarn: true # use yarn instead of npm
           wait-on: http://localhost:3000 # wait until server is ready
+          post-steps:
+            - persist_to_workspace:
+                root: ~/
+                path: cypress-coverage
 
 jobs:
   build_and_test:
