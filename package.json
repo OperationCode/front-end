@@ -121,6 +121,7 @@
   },
   "devDependencies": {
     "@babel/preset-env": "^7.6.3",
+    "@operation_code/eslint-plugin-custom-rules": "^1.0.1",
     "@testing-library/jest-dom": "^4.1.2",
     "@testing-library/react": "^9.3.0",
     "all-contributors-cli": "^6.9.1",
@@ -143,7 +144,6 @@
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-react": "^7.16.0",
     "eslint-plugin-unicorn": "^12.1.0",
-    "eslint-plugin-custom-rules": "file:eslint",
     "express": "^4.17.1",
     "faker": "^4.1.0",
     "husky": "3.0.9",

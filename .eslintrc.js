@@ -18,7 +18,7 @@ module.exports = {
   },
   parser: 'babel-eslint',
 
-  plugins: ['prettier', 'unicorn', 'jest', 'cypress', 'custom-rules'],
+  plugins: ['prettier', 'unicorn', 'jest', 'cypress', '@operation_code/custom-rules'],
 
   globals: {
     cy: true,
@@ -84,7 +84,6 @@ module.exports = {
         svg: 'always',
       },
     ],
-    'custom-rules/proptype-definition-above-fn': 'error',
     'import/no-unresolved': 'off',
     'import/no-extraneous-dependencies': [
       'error',
@@ -99,7 +98,8 @@ module.exports = {
       },
     ],
     'import/prefer-default-export': 'off',
-
+    //OC eslint Plugin Rules
+    '@operation_code/custom-rules/proptype-definition-above-fn': 'error',
     // Jest Plugin Rules
     'jest/consistent-test-it': [
       'error',
