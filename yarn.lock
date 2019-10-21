@@ -1427,6 +1427,11 @@
     "@nodelib/fs.scandir" "2.1.1"
     fastq "^1.6.0"
 
+"@operation_code/eslint-plugin-custom-rules@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@operation_code/eslint-plugin-custom-rules/-/eslint-plugin-custom-rules-1.0.1.tgz#dff43a7cab7e98ada693e7ee121855108c49f5ec"
+  integrity sha512-LYzWhUD6Nz+0adFgyNNoT7qxg2C3FfuU+QWJ8dcDf3K5aFCYdNKncHANcbfRwfPiDuxwA1ruednaRhDD7y0UQw==
+
 "@samverschueren/stream-to-observable@^0.3.0":
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/@samverschueren/stream-to-observable/-/stream-to-observable-0.3.0.tgz#ecdf48d532c58ea477acfcab80348424f8d0662f"
