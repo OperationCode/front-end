@@ -10,8 +10,6 @@ workflows:
           requires:
             - cypress/run
 
-      - cypress_install
-
       - cypress/run:
           requires:
             - cypress_install
@@ -23,9 +21,12 @@ workflows:
           yarn: true # use yarn instead of npm
           wait-on: http://localhost:3000 # wait until server is ready
           post-steps:
-            - persist_to_workspace:
-                root: ~/
-                path: cypress-coverage
+            - save_cache:
+                paths:
+                  - cypress-coverage
+                key: cypress-result-cache-{{ .BuildNum }}-{{ .Revision }}
+
+      - cypress_install
 
 jobs:
   build_and_test:
@@ -45,6 +46,7 @@ jobs:
             - v1-dependencies-{{ checksum "package.json" }}
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
+            - cypress-result-cache-{{ .BuildNum }}-{{ .Revision }}
 
       - run:
           name: Install dependencies

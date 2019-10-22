@@ -35,7 +35,7 @@
     "precombine:reports": "yarn copy:reports && mkdir .nyc_output || true",
     "combine:reports": "nyc merge reports && mv coverage.json .nyc_output/out.json",
     "prereport:combined": "yarn combine:reports",
-    "report:combined": "nyc report --reporter lcov --report-dir coverage && rm -rf cypress-coverage && rm -rf jest-coverage"
+    "report:combined": "nyc report --reporter lcov --report-dir coverage && rm -rf cypress-coverage jest-coverage .nyc_output reports"
   },
   "husky": {
     "hooks": {
