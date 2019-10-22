@@ -21,10 +21,10 @@ workflows:
           yarn: true # use yarn instead of npm
           wait-on: http://localhost:3000 # wait until server is ready
           post-steps:
-            - save_cache:
+            - persist_to_workspace:
+                root: cypress-coverage
                 paths:
-                  - cypress-coverage
-                key: cypress-result-cache-{{ .BuildNum }}-{{ .Revision }}
+                  - coverage-final.json
 
       - cypress_install
 
@@ -40,15 +40,16 @@ jobs:
 
       - run: sudo chown -R circleci:circleci /usr/local/bin
 
+      # restore files from persist_to_workspace step
+      - attach_workspace:
+          at: ~/project
+
       # Download and cache dependencies
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "package.json" }}
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
-
-      - restore_cache:
-          key: cypress-result-cache-{{ .BuildNum }}-{{ .Revision }}
 
       - run:
           name: Install dependencies
