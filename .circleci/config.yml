@@ -25,9 +25,9 @@ workflows:
                 name: Use CodeClimate to Format Results From Each Parallel Job
                 command: |
                   mkdir -p coverage/
-                  curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./tmp/cc-test-reporter
-                  chmod +x ./tmp/cc-test-reporter
-                  ./tmp/cc-test-reporter format-coverage -t lcov -o "coverage/codeclimate.$CIRCLE_NODE_INDEX.json" cypress-coverage/lcov.info
+                  curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+                  chmod +x ./cc-test-reporter
+                  ./cc-test-reporter format-coverage -t lcov -o "coverage/codeclimate.$CIRCLE_NODE_INDEX.json" cypress-coverage/lcov.info
 
             - persist_to_workspace:
                 root: coverage
