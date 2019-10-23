@@ -21,10 +21,18 @@ workflows:
           yarn: true # use yarn instead of npm
           wait-on: http://localhost:3000 # wait until server is ready
           post-steps:
+            - run:
+                name: Use CodeClimate to Format Results From Each Parallel Job
+                command: |
+                  mkdir -p tmp/
+                  curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./tmp/cc-test-reporter
+                  chmod +x ./tmp/cc-test-reporter
+                  ./tmp/cc-test-reporter format-coverage -t lcov -o tmp/codeclimate.$CIRCLE_NODE_INDEX.json cypress-coverage/lcov.info
+
             - persist_to_workspace:
-                root: cypress-coverage
+                root: tmp
                 paths:
-                  - coverage-final.json
+                  - codeclimate.*.json
 
       - cypress_install
 
@@ -42,7 +50,7 @@ jobs:
 
       # restore files from persist_to_workspace step
       - attach_workspace:
-          at: ~/project
+          at: ~/
 
       # Download and cache dependencies
       - restore_cache:
@@ -57,10 +65,11 @@ jobs:
             yarn
 
       - run:
-          name: Initializing CodeClimate
+          name: Initialize CodeClimate and Merge Parallel Cypress Tests
           command: |
             curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > /usr/local/bin/cc-test-reporter
             chmod +x /usr/local/bin/cc-test-reporter
+            /usr/local/bin/cc-test-reporter sum-coverage tmp/codeclimate.*.json -p 3 -o tmp/coverage-final.json
             /usr/local/bin/cc-test-reporter before-build
 
       - save_cache:
