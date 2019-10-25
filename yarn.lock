@@ -7344,10 +7344,10 @@ fast-memoize@^2.2.7:
   resolved "https://registry.yarnpkg.com/fast-memoize/-/fast-memoize-2.5.1.tgz#c3519241e80552ce395e1a32dcdde8d1fd680f5d"
   integrity sha512-xdmw296PCL01tMOXx9mdJSmWY29jQgxyuZdq0rEHMu+Tpe1eOEtCycoG6chzlcrWsNgpZP7oL8RiQr7+G6Bl6g==
 
-fast-xml-parser@^3.13.0:
-  version "3.13.0"
-  resolved "https://registry.yarnpkg.com/fast-xml-parser/-/fast-xml-parser-3.13.0.tgz#3d46f517c0ac6c87393c6b6946808e9c799bb368"
-  integrity sha512-XYXC39VjE9dH6jpp5Gm5gsuR8Z4bMz44qMpT1PmqR+iyOJMhC0LcsN81asYkHP4OkEX8TTR8d6V/caCmy8Q8jQ==
+fast-xml-parser@^3.14.0:
+  version "3.14.0"
+  resolved "https://registry.yarnpkg.com/fast-xml-parser/-/fast-xml-parser-3.14.0.tgz#6fc1e927d13ac2e2ff8ccc5812c4f881fbc91284"
+  integrity sha512-3SzQnPNtMVqaBVDzYqYt0BTaaLwkd45wTbsUsH1eiE9dnyc4b8mYcm1Q0Rcx9AWkeTj5UZFTTm55Io5yVWS1tg==
 
 fastparse@^1.1.1:
   version "1.1.2"
@@ -13932,10 +13932,10 @@ react-youtube@^7.8.0:
     prop-types "^15.5.3"
     youtube-player "^5.5.1"
 
-react@^16.10.2:
-  version "16.10.2"
-  resolved "https://registry.yarnpkg.com/react/-/react-16.10.2.tgz#a5ede5cdd5c536f745173c8da47bda64797a4cf0"
-  integrity sha512-MFVIq0DpIhrHFyqLU0S3+4dIcBhhOvBE8bJ/5kHPVOVaGdo0KuiQzpcjCPsf585WvhypqtrMILyoE2th6dT+Lw==
+react@^16.11.0:
+  version "16.11.0"
+  resolved "https://registry.yarnpkg.com/react/-/react-16.11.0.tgz#d294545fe62299ccee83363599bf904e4a07fdbb"
+  integrity sha512-M5Y8yITaLmU0ynd0r1Yvfq98Rmll6q8AxaEe88c8e7LxO8fZ2cNgmFt0aGAS9wzf1Ao32NKXtCl+/tVVtkxq6g==
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
