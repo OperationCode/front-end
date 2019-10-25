@@ -52,10 +52,8 @@ export default function Button({
   const clickHandler = () => {
     if (process.env.NODE_ENV === 'production') {
       ReactGA.event(analyticsObject);
-    } else {
-      // eslint-disable-next-line no-console
-      console.log('Analytics Disabled', analyticsObject);
     }
+
     onClick();
   };
 

@@ -57,18 +57,6 @@ describe('Button', () => {
     expect(wrapper.prop(attribute)).toBeUndefined();
   });
 
-  it('should send log to console when button is clicked in non-prod environment', () => {
-    /* eslint-disable no-console */
-    console.log = jest.fn();
-
-    const ButtonShallowInstance = shallow(<Button>Testing</Button>);
-
-    ButtonShallowInstance.simulate('click');
-
-    expect(console.log.mock.calls).toHaveLength(1);
-    /* eslint-enable no-console */
-  });
-
   it('call props.onClick when button is clicked', () => {
     const onClickMock = jest.fn();
     const ButtonShallowInstance = shallow(<Button onClick={onClickMock}>Test</Button>);
