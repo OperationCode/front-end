@@ -1,5 +1,5 @@
 import React from 'react';
-import { wait, render, fireEvent } from '@testing-library/react';
+import { wait, render, fireEvent, cleanup } from '@testing-library/react';
 import { passwordReset } from 'common/constants/api';
 import { validationErrorMessages } from 'common/constants/messages';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
@@ -7,33 +7,39 @@ import OperationCodeAPIMock from 'test-utils/mocks/apiMock';
 import mockUser from 'test-utils/mockGenerators/mockUser';
 import PasswordResetForm from '../PasswordResetForm';
 
-afterEach(() => {
-  OperationCodeAPIMock.reset();
-});
-
 describe('PasswordResetForm', () => {
+  afterEach(() => {
+    cleanup();
+    OperationCodeAPIMock.reset();
+  });
+
   it('should render with required props', () => {
     createSnapshotTest(<PasswordResetForm onSuccess={jest.fn()} passwordReset={jest.fn()} />);
   });
 
   it('should display required error message when blurring past email input', async () => {
-    const { getByLabelText, findByText } = render(
+    const { getByLabelText, findByRole } = render(
       <PasswordResetForm onSuccess={jest.fn()} passwordReset={jest.fn()} />,
     );
 
     fireEvent.blur(getByLabelText(/Email/));
-    expect(findByText(validationErrorMessages.required)).toBeDefined();
+
+    const Alert = await findByRole('alert');
+
+    expect(Alert.textContent).toBe(validationErrorMessages.required);
   });
 
   it('should show error when providing non-email to email input', async () => {
-    const { getByLabelText, findByText } = render(
+    const { getByLabelText, findByRole } = render(
       <PasswordResetForm onSuccess={jest.fn()} passwordReset={jest.fn()} />,
     );
 
     fireEvent.change(getByLabelText(/Email/), { target: { value: 'email' } });
     fireEvent.blur(getByLabelText(/Email/));
 
-    expect(findByText(validationErrorMessages.email)).toBeDefined();
+    const Alert = await findByRole('alert');
+
+    expect(Alert.textContent).toBe(validationErrorMessages.email);
   });
 
   it('should submit with valid data in form', async () => {
@@ -86,15 +92,15 @@ describe('PasswordResetForm', () => {
     const successSpy = jest.fn();
     const passwordResetSpy = jest.fn();
 
-    const { getByText } = render(
+    const { queryByText } = render(
       <PasswordResetForm
         onSuccess={successSpy}
         passwordReset={passwordResetSpy}
-        {...initialValues}
+        initialValues={initialValues}
       />,
     );
 
-    fireEvent.click(getByText('Submit'));
+    fireEvent.click(queryByText(/Submit/));
 
     await wait(() => {
       expect(passwordResetSpy).not.toHaveBeenCalled();
