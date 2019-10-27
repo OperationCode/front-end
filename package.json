@@ -106,7 +106,7 @@
     "react-facebook-login": "^4.1.1",
     "react-ga": "2.7.0",
     "react-google-login": "^5.0.7",
-    "react-modal": "^3.10.1",
+    "react-modal": "^3.11.1",
     "react-on-screen": "^2.1.1",
     "react-player": "^1.13.0",
     "react-scroll": "^1.7.14",
