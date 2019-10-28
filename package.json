@@ -52,21 +52,24 @@
       "common/**/*.js",
       "components/**/*.js",
       "decorators/**/*.js",
-      "pages"
+      "pages/**/*.js"
     ],
     "exclude": [
       "node_modules",
-      "common/config",
-      "common/styles",
-      "common/constants",
       "scripts",
       "cypress",
       "test-utils",
-      "pages/api/__coverage__.js",
       "jest.setup.js",
       ".storybook",
+      "pages/api/__coverage__.js",
+      "common/config",
+      "common/styles",
+      "common/constants",
       "common/utils/api-utils.js",
-      "components/head.js"
+      "common/utils/api-utils.js",
+      "components/head.js",
+      "components/ZipRecruiterJobs/ZipRecruiterJobs.js",
+      "components/Press/PressLinks/Articles.js"
     ],
     "reporter": [
       "lcov"

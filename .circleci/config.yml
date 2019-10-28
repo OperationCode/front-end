@@ -90,8 +90,8 @@ jobs:
           name: Sum Up Test Results and Report to CodeClimate
           command: |
             /usr/local/bin/cc-test-reporter format-coverage -t lcov -o coverage/codeclimate.jest.json jest-coverage/lcov.info
-            du | awk '{print $2}' | grep -v node_modules | grep coverage
-            /usr/local/bin/cc-test-reporter sum-coverage codeclimate.*.json --output - | /usr/local/bin/cc-test-reporter upload-coverage --debug --input -
+            ls coverage/codeclimate.*.json
+            /usr/local/bin/cc-test-reporter sum-coverage codeclimate.*.json -p 4 --output - | /usr/local/bin/cc-test-reporter upload-coverage --debug --input -
 
   cypress_install:
     docker:
