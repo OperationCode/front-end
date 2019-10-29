@@ -1,0 +1,5 @@
+/* TODO: determine how to put a gutter in between the resources */
+.resourcesWrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
