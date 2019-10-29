@@ -1,6 +1,7 @@
 /* eslint-disable max-classes-per-file */
 import App from 'next/app';
 import Router from 'next/router';
+import PropTypes from 'prop-types';
 import FontFaceObserver from 'fontfaceobserver';
 import LogRocket from 'logrocket';
 import ReactGA from 'react-ga';
@@ -32,20 +33,19 @@ const fonts = [
   },
 ];
 
-class Layout extends React.Component {
-  render() {
-    // eslint-disable-next-line react/prop-types
-    const { children } = this.props;
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 
-    return (
-      <>
-        <Nav />
-        <main>{children}</main>
-        <Footer />
-        <ScrollUpButton />
-      </>
-    );
-  }
+function Layout({ children }) {
+  return (
+    <>
+      <Nav />
+      <main>{children}</main>
+      <Footer />
+      <ScrollUpButton />
+    </>
+  );
 }
 
 // Same test used by EFF for identifying users
