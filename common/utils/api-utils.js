@@ -39,15 +39,17 @@ const getRequestAbortionPieces = () => {
 /**
  * @param {string} path
  * @param {{token: string}} options
+ * @param {?Object.<string, any>} parameters URL parameters to include in the query string
  * @returns {Promise<AxiosPromise<any>>}
  */
-export const get = async (path, { token } = {}, axiosClient = OperationCodeAPI) => {
+export const get = async (path, { token, parameters } = {}, axiosClient = OperationCodeAPI) => {
   const { abort, connectionTimeout } = getRequestAbortionPieces();
 
   return axiosClient
     .get(`/${path}`, {
       headers: setAuthorizationHeader(token),
       cancelToken: abort.token,
+      params: parameters,
     })
     .then(response => {
       clearTimeout(connectionTimeout);

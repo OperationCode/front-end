@@ -12,6 +12,7 @@ const ResourcesContent = ({ resources, currentPage, totalPages }) => {
   // For local development, only do server-side data fetching because of CSRF policy
   const resourceMarkup = resources.map(resource => (
     <ResourceCard
+      key={resource.id}
       description={resource.notes}
       downvotes={resource.downvotes}
       upvotes={resource.upvotes}
@@ -31,9 +32,10 @@ const ResourcesContent = ({ resources, currentPage, totalPages }) => {
 };
 
 const ResourceType = PropTypes.shape({
+  id: PropTypes.number, // integer, unique ID
+  name: PropTypes.title,
   notes: PropTypes.string, // possibly null
   url: PropTypes.string.isRequired,
-  name: PropTypes.title,
   upvotes: PropTypes.number,
   downvotes: PropTypes.number,
 });
@@ -78,7 +80,8 @@ ResourcesPage.defaultProps = {
 };
 
 ResourcesPage.getInitialProps = async () => {
-  const response = await getResourcesPromise();
+  const page = 1;
+  const response = await getResourcesPromise(page);
   const { data: resources, number_of_pages: totalPages, page: currentPage } = response.data;
   return {
     resources,
