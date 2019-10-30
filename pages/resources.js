@@ -8,8 +8,7 @@ import Pagination from 'components/Pagination/Pagination';
 import { getResourcesPromise } from 'common/constants/api';
 import styles from './resources.css';
 
-const ResourcesContent = ({ resources, currentPage, totalPages }) => {
-  // For local development, only do server-side data fetching because of CSRF policy
+const ResourcesPage = ({ resources, currentPage, totalPages }) => {
   const resourceMarkup = resources.map(resource => (
     <ResourceCard
       key={resource.id}
@@ -22,12 +21,19 @@ const ResourcesContent = ({ resources, currentPage, totalPages }) => {
   ));
 
   return (
-    <div>
-      <div className={styles.resourcesWrapper}>{resourceMarkup}</div>
-      <div>
-        <Pagination currentPage={currentPage} totalPages={totalPages} />
-      </div>
-    </div>
+    <>
+      <Head title="Resources" />
+      <HeroBanner title="Resources" className="smallHero" />
+      <Content
+        theme="white"
+        columns={[
+          <section>
+            <div className={styles.resourcesWrapper}>{resourceMarkup}</div>
+            <Pagination currentPage={currentPage} totalPages={totalPages} />
+          </section>,
+        ]}
+      />
+    </>
   );
 };
 
@@ -39,33 +45,6 @@ const ResourceType = PropTypes.shape({
   upvotes: PropTypes.number,
   downvotes: PropTypes.number,
 });
-
-ResourcesContent.propTypes = {
-  resources: PropTypes.arrayOf(ResourceType).isRequired,
-  currentPage: PropTypes.number.isRequired,
-  totalPages: PropTypes.number.isRequired,
-};
-
-const ResourcesPage = ({ resources, currentPage, totalPages }) => {
-  return (
-    <>
-      <Head title="Resources" />
-      <HeroBanner title="Resources" className="smallHero" />
-      <Content
-        theme="white"
-        columns={[
-          <section>
-            <ResourcesContent
-              resources={resources}
-              currentPage={currentPage}
-              totalPages={totalPages}
-            />
-          </section>,
-        ]}
-      />
-    </>
-  );
-};
 
 ResourcesPage.propTypes = {
   resources: PropTypes.arrayOf(ResourceType),
