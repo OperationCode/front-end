@@ -3,3 +3,7 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+.resourceCard {
+  margin-right: 60px; /* Magic number, TODO replace with design spacing tokens */
+}

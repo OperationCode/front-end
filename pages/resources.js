@@ -15,8 +15,9 @@ const ResourcesPage = ({ resources, currentPage, totalPages }) => {
       description={resource.notes}
       downvotes={resource.downvotes}
       upvotes={resource.upvotes}
-      href={resource.url}
+      href={resource.url || ''}
       name={resource.name}
+      className={styles.resourceCard}
     />
   ));
 
