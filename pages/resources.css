@@ -1,9 +1,9 @@
-/* TODO: determine how to put a gutter in between the resources */
 .resourcesWrapper {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-evenly space-between;
 }
 
 .resourceCard {
-  margin-right: 60px; /* Magic number, TODO replace with design spacing tokens */
+  margin: 0 20px;
 }
