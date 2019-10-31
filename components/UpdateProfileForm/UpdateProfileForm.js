@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import get from 'lodash/get';
 import Router from 'next/router';
 import { getServerErrorMessage } from 'common/utils/api-utils';
@@ -7,12 +7,11 @@ import { insertIf } from '@innocuous/functions';
 import MultiStepForm from 'components/Form/MultiStepForm';
 import { ProfessionalDetails, MilitaryStatus, MilitaryDetails, Technology } from './steps';
 
-class UpdateProfileForm extends Component {
-  static propTypes = {
+  UpdateProfileForm.propTypes = {
     initialValues: objectOf(oneOfType([array, string, number, bool])),
   };
 
-  static defaultProps = {
+  UpdateProfileForm.defaultProps = {
     initialValues: {
       ...ProfessionalDetails.initialValues,
       ...MilitaryStatus.initialValues,
@@ -21,12 +20,14 @@ class UpdateProfileForm extends Component {
     },
   };
 
-  state = {
-    shouldShowMilitaryStep: false,
-  };
+function UpdateProfileForm ({
+  initialValues
+}) {
+
+  const [shouldShowMilitaryStep, handleShouldShowMilitaryStep] = useState(false);
 
   // TODO: Abstract method to utility and use for all error-handling purposes
-  generateError = errorObject => {
+  const generateError = errorObject => {
     if (errorObject.message) {
       // regular JS error
       return errorObject.message;
@@ -53,7 +54,7 @@ class UpdateProfileForm extends Component {
     return getServerErrorMessage(errorObject);
   };
 
-  onValueChange = values => {
+  const onValueChange = values => {
     if (values.militaryStatus === '') {
       return;
     }
@@ -61,28 +62,16 @@ class UpdateProfileForm extends Component {
     const isMilitary = values.militaryStatus === 'veteran' || values.militaryStatus === 'current';
 
     if (isMilitary) {
-      this.showMilitaryStep();
+      handleShouldShowMilitaryStep(true);
     } else {
       // setValues remove military values OR on submit, don't pass military values
-      this.hideMilitaryStep();
+      handleShouldShowMilitaryStep(false);
     }
   };
 
-  showMilitaryStep = () => {
-    this.setState({ shouldShowMilitaryStep: true });
-  };
-
-  hideMilitaryStep = () => {
-    this.setState({ shouldShowMilitaryStep: false });
-  };
-
-  goToProfile = () => {
+  const goToProfile = () => {
     Router.push('/profile');
   };
-
-  render() {
-    const { initialValues } = this.props;
-    const { shouldShowMilitaryStep } = this.state;
 
     // ordered
     const steps = [
@@ -95,13 +84,12 @@ class UpdateProfileForm extends Component {
     return (
       <MultiStepForm
         initialValues={initialValues}
-        getErrorMessage={this.generateError}
-        onEachStepSubmit={this.onValueChange}
-        onFinalSubmit={this.goToProfile}
+        getErrorMessage={generateError}
+        onEachStepSubmit={onValueChange}
+        onFinalSubmit={goToProfile}
         steps={steps}
       />
     );
-  }
 }
 
 export default UpdateProfileForm;
