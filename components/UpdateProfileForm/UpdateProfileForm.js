@@ -7,23 +7,20 @@ import { insertIf } from '@innocuous/functions';
 import MultiStepForm from 'components/Form/MultiStepForm';
 import { ProfessionalDetails, MilitaryStatus, MilitaryDetails, Technology } from './steps';
 
-  UpdateProfileForm.propTypes = {
-    initialValues: objectOf(oneOfType([array, string, number, bool])),
-  };
+UpdateProfileForm.propTypes = {
+  initialValues: objectOf(oneOfType([array, string, number, bool])),
+};
 
-  UpdateProfileForm.defaultProps = {
-    initialValues: {
-      ...ProfessionalDetails.initialValues,
-      ...MilitaryStatus.initialValues,
-      ...MilitaryDetails.initialValues,
-      ...Technology.initialValues,
-    },
-  };
+UpdateProfileForm.defaultProps = {
+  initialValues: {
+    ...ProfessionalDetails.initialValues,
+    ...MilitaryStatus.initialValues,
+    ...MilitaryDetails.initialValues,
+    ...Technology.initialValues,
+  },
+};
 
-function UpdateProfileForm ({
-  initialValues
-}) {
-
+function UpdateProfileForm({ initialValues }) {
   const [shouldShowMilitaryStep, handleShouldShowMilitaryStep] = useState(false);
 
   // TODO: Abstract method to utility and use for all error-handling purposes
@@ -73,23 +70,23 @@ function UpdateProfileForm ({
     Router.push('/profile');
   };
 
-    // ordered
-    const steps = [
-      ProfessionalDetails,
-      MilitaryStatus,
-      ...insertIf(shouldShowMilitaryStep, MilitaryDetails),
-      Technology,
-    ];
+  // ordered
+  const steps = [
+    ProfessionalDetails,
+    MilitaryStatus,
+    ...insertIf(shouldShowMilitaryStep, MilitaryDetails),
+    Technology,
+  ];
 
-    return (
-      <MultiStepForm
-        initialValues={initialValues}
-        getErrorMessage={generateError}
-        onEachStepSubmit={onValueChange}
-        onFinalSubmit={goToProfile}
-        steps={steps}
-      />
-    );
+  return (
+    <MultiStepForm
+      initialValues={initialValues}
+      getErrorMessage={generateError}
+      onEachStepSubmit={onValueChange}
+      onFinalSubmit={goToProfile}
+      steps={steps}
+    />
+  );
 }
 
 export default UpdateProfileForm;
