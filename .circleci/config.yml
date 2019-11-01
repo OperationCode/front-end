@@ -49,7 +49,11 @@ jobs:
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
 
-      - run: rm -rf ~/project/project ~/project/.cache
+      - run:
+          name: Copy Cypress Test Results and Remove Unnecessary Paths
+          command: |
+            mkdir cypress-coverage && find . -name 'coverage-final.json' -print0 | xargs -0 -I{} cp {} cypress-coverage/coverage-final.json
+            rm -rf ~/project/project ~/project/.cache
 
       - run:
           name: Install dependencies
