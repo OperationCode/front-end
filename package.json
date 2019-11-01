@@ -68,6 +68,7 @@
       "scripts",
       "cypress",
       "test-utils",
+      "jest.config.js",
       "jest.setup.js",
       ".storybook",
       "pages/api/__coverage__.js",
@@ -81,7 +82,6 @@
       "components/Press/PressLinks/Articles.js"
     ],
     "reporter": [
-      "lcov",
       "json"
     ]
   },
