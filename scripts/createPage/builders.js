@@ -9,31 +9,27 @@ const builder = {
     const componentName = pascalCase(pageTitle);
 
     return `import Head from 'components/head';
-import HeroBanner from 'components/HeroBanner/HeroBanner';
+      import HeroBanner from 'components/HeroBanner/HeroBanner';
 
-class ${componentName} extends React.Component {
-  // declare propTypes and defaultProps as static properties here, if needed
+      export default function ${componentName}() {
+        // declare propTypes and defaultProps as static properties here, if needed
+        
+        const pageTitle = '${pageTitle}';
 
-  render() {
-    const pageTitle = '${pageTitle}';
+        return (
+          <>
+            <Head title={pageTitle} />
 
-    return (
-      <>
-        <Head title={pageTitle} />
+            <HeroBanner title={pageTitle}>
+              {/* Don't forget to define the imageSource prop in the HeroBanner Component */}
+              {/* Call-to-action goes here */}
+            </HeroBanner>
 
-        <HeroBanner title={pageTitle}>
-          {/* Don't forget to define the imageSource prop in the HeroBanner Component */}
-          {/* Call-to-action goes here */}
-        </HeroBanner>
-
-        {/* Rest of page content goes in here */}
-      </>
-    );
-  }
-};
-
-export default ${componentName};
-`;
+            {/* Rest of page content goes in here */}
+          </>
+        );
+      };
+    `;
   },
 };
 
