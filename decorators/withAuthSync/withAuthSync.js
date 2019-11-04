@@ -1,40 +1,35 @@
-import React from 'react';
+import { useEffect } from 'react';
 import Router from 'next/router';
 import { authenticate } from 'common/utils/auth-utils';
 import getDisplayName from 'decorators/getDisplayName';
 
-const withAuthSync = WrappedComponent =>
-  class extends React.Component {
-    static displayName = `withAuthSync(${getDisplayName(WrappedComponent)})`;
+const syncLogout = event => {
+  if (event.key === 'logout') {
+    Router.push('/login');
+  }
+};
 
-    static async getInitialProps(ctx) {
-      const token = authenticate(ctx);
+function useWithAuthSync() {
+  useEffect(() => {
+    window.addEventListener('storage', syncLogout);
 
-      // eslint-disable-next-line unicorn/prevent-abbreviations
-      const componentProps =
-        WrappedComponent.getInitialProps && (await WrappedComponent.getInitialProps(ctx));
-
-      return { ...componentProps, token };
-    }
-
-    componentDidMount() {
-      window.addEventListener('storage', this.syncLogout);
-    }
-
-    componentWillUnmount() {
-      window.removeEventListener('storage', this.syncLogout);
+    return () => {
+      window.removeEventListener('storage', syncLogout);
       window.localStorage.removeItem('logout');
-    }
-
-    syncLogout = event => {
-      if (event.key === 'logout') {
-        Router.push('/login');
-      }
     };
+  }, []);
+}
 
-    render() {
-      return <WrappedComponent {...this.props} />;
-    }
-  };
+useWithAuthSync.displayName = `withAuthSync(${getDisplayName(useWithAuthSync)})`;
 
-export default withAuthSync;
+useWithAuthSync.getInitialProps = async ctx => {
+  const token = authenticate(ctx);
+
+  // eslint-disable-next-line unicorn/prevent-abbreviations
+  const componentProps =
+    useWithAuthSync.getInitialProps && (await useWithAuthSync.getInitialProps(ctx));
+
+  return { ...componentProps, token };
+};
+
+export default useWithAuthSync;
