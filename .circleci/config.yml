@@ -14,15 +14,19 @@ workflows:
           requires:
             - cypress_install
           record: true # record results on Cypress Dashboard
+          parallel: true # split all specs across machines
+          parallelism: 3 # use 3 CircleCI machines to finish quickly
           group: "all tests" # name this group "all tests" on the dashboard
           start: "yarn dev" # start server before running tests
           yarn: true # use yarn instead of npm
           wait-on: http://localhost:3000 # wait until server is ready
           post-steps:
+            - run:
+                command: mv cypress-coverage/coverage-final.json "cypress-coverage/coverage.$CIRCLE_NODE_INDEX.json"
             - persist_to_workspace:
-                root: cypress-coverage
+                root: ~/
                 paths:
-                  - coverage-final.json
+                  - project/cypress-coverage/*
 
       - cypress_install
 
@@ -48,11 +52,10 @@ jobs:
             - v1-dependencies-{{ checksum "package.json" }}
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
-
       - run:
           name: Copy Cypress Test Results and Remove Unnecessary Paths
           command: |
-            mkdir cypress-coverage && find . -name 'coverage-final.json' -print0 | xargs -0 -I{} cp {} cypress-coverage/coverage-final.json
+            mkdir cypress-coverage && find . -name "coverage.*.json" -exec cp -av {} cypress-coverage \;
             rm -rf ~/project/project ~/project/.cache
 
       - run:

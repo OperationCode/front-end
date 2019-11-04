@@ -31,7 +31,7 @@
     "posttest:ci": "yarn report:combined",
     "mkdir:reports": "mkdir reports || true",
     "precopy:reports": "yarn mkdir:reports",
-    "copy:reports": "cp cypress-coverage/coverage-final.json reports/from-cypress.json && cp jest-coverage/coverage-final.json reports/from-jest.json",
+    "copy:reports": "cp cypress-coverage/* reports && cp jest-coverage/coverage-final.json reports/from-jest.json",
     "precombine:reports": "yarn copy:reports && mkdir .nyc_output || true",
     "combine:reports": "nyc merge reports && mv coverage.json .nyc_output/out.json",
     "prereport:combined": "yarn combine:reports",
@@ -56,31 +56,8 @@
     ]
   },
   "nyc": {
+    "extends": "./nyc.config.js",
     "report-dir": "cypress-coverage",
-    "include": [
-      "common/**/*.js",
-      "components/**/*.js",
-      "decorators/**/*.js",
-      "pages/**/*.js"
-    ],
-    "exclude": [
-      "node_modules",
-      "scripts",
-      "cypress",
-      "test-utils",
-      "jest.config.js",
-      "jest.setup.js",
-      ".storybook",
-      "pages/api/__coverage__.js",
-      "common/config",
-      "common/styles",
-      "common/constants",
-      "common/utils/api-utils.js",
-      "common/utils/api-utils.js",
-      "components/head.js",
-      "components/ZipRecruiterJobs/ZipRecruiterJobs.js",
-      "components/Press/PressLinks/Articles.js"
-    ],
     "reporter": [
       "json"
     ]
