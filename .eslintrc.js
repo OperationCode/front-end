@@ -18,7 +18,7 @@ module.exports = {
   },
   parser: 'babel-eslint',
 
-  plugins: ['prettier', 'unicorn', 'jest', 'cypress', '@operation_code/custom-rules'],
+  plugins: ['prettier', 'unicorn', 'jest', 'cypress', '@operation_code/custom-rules', 'import'],
 
   globals: {
     cy: true,
@@ -98,8 +98,10 @@ module.exports = {
       },
     ],
     'import/prefer-default-export': 'off',
+
     //OC eslint Plugin Rules
     '@operation_code/custom-rules/proptype-definition-above-fn': 'error',
+
     // Jest Plugin Rules
     'jest/consistent-test-it': [
       'error',
@@ -129,7 +131,7 @@ module.exports = {
     'jest/require-tothrow-message': 'error',
     'jest/valid-describe': 'error',
 
-    // JSX Plugin Rules
+    // JSX-A11Y Plugin Rules
     'jsx-a11y/anchor-is-valid': [
       'error',
       {
