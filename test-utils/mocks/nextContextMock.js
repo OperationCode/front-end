@@ -1,29 +1,28 @@
 /* eslint-disable react/sort-comp */
-import React from 'react';
 import { any, object } from 'prop-types';
 import MockedRouter from './nextRouterMock';
 
 // https://github.com/zeit/next.js/issues/5205#issuecomment-422846339
-export default class MockNextContext extends React.Component {
-  static propTypes = {
-    // eslint-disable-next-line react/forbid-prop-types
-    children: any.isRequired,
-    headManager: object,
-    router: object,
-  };
 
-  static defaultProps = {
-    headManager: {},
-    router: {},
-  };
+MockNextContext.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
+  children: any.isRequired,
+  headManager: object,
+  router: object,
+};
 
-  static childContextTypes = {
-    headManager: object,
-    router: object,
-  };
+MockNextContext.defaultProps = {
+  headManager: {},
+  router: {},
+};
 
-  getChildContext() {
-    const { headManager, router } = this.props;
+MockNextContext.childContextTypes = {
+  headManager: object,
+  router: object,
+};
+
+export default function MockNextContext({ headManager, router }) {
+  const getChildContext = () => {
     return {
       headManager: {
         updateHead() {},
@@ -49,10 +48,7 @@ export default class MockNextContext extends React.Component {
         ...router,
       },
     };
-  }
+  };
 
-  render() {
-    const { children } = this.props;
-    return children;
-  }
+  return getChildContext;
 }
