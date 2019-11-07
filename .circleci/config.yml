@@ -86,7 +86,8 @@ jobs:
       - run:
           name: Report to CodeClimate
           command: |
-            /usr/local/bin/cc-test-reporter after-build
+            /usr/local/bin/cc-test-reporter format-coverage -t lcov coverage/lcov.info
+            /usr/local/bin/cc-test-reporter upload-coverage
 
   cypress_install:
     docker:
