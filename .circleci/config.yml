@@ -22,11 +22,15 @@ workflows:
           wait-on: http://localhost:3000 # wait until server is ready
           post-steps:
             - run:
-                command: mv cypress-coverage/coverage-final.json "cypress-coverage/coverage.$CIRCLE_NODE_INDEX.json"
+                command: |
+                  curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+                  chmod +x ./cc-test-reporter
+                  mkdir coverage && ./cc-test-reporter format-coverage -t lcov -o "coverage/codeclimate.$CIRCLE_NODE_INDEX.json" cypress-coverage/lcov.info
+
             - persist_to_workspace:
                 root: ~/
                 paths:
-                  - project/cypress-coverage/*
+                  - project/coverage/*
 
       - cypress_install
 
@@ -55,7 +59,7 @@ jobs:
       - run:
           name: Copy Cypress Test Results and Remove Unnecessary Paths
           command: |
-            mkdir cypress-coverage && find . -name "coverage.*.json" -exec cp -av {} cypress-coverage \;
+            mkdir coverage && find . -name "codeclimate.*.json" -exec cp -av {} coverage \;
             rm -rf ~/project/project ~/project/.cache
 
       - run:
@@ -84,10 +88,10 @@ jobs:
             yarn test:ci --max-workers=2
 
       - run:
-          name: Report to CodeClimate
+          name: Merge Results and Report to CodeClimate
           command: |
-            /usr/local/bin/cc-test-reporter format-coverage -t lcov coverage/lcov.info
-            /usr/local/bin/cc-test-reporter upload-coverage
+            /usr/local/bin/cc-test-reporter format-coverage -t lcov -o "coverage/codeclimate.jest.json" jest-coverage/lcov.info
+            /usr/local/bin/cc-test-reporter sum-coverage -p 4 --output - "coverage/codeclimate.*.json" | /usr/local/bin/cc-test-reporter upload-coverage --debug --input -
 
   cypress_install:
     docker:

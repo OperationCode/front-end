@@ -26,16 +26,7 @@
     "test:changes": "yarn test --changedSince master --verbose=true",
     "test:changes:watch": "yarn test --changedSince master --watch --verbose=true",
     "test:watch": "yarn test --watch",
-    "test:update-snaps": "yarn test -u",
-    "pretest:ci": "rm -rf .nyc_output || true",
-    "posttest:ci": "yarn report:combined",
-    "mkdir:reports": "mkdir reports || true",
-    "precopy:reports": "yarn mkdir:reports",
-    "copy:reports": "cp cypress-coverage/* reports && cp jest-coverage/coverage-final.json reports/from-jest.json",
-    "precombine:reports": "yarn copy:reports && mkdir .nyc_output || true",
-    "combine:reports": "nyc merge reports && mv coverage.json .nyc_output/out.json",
-    "prereport:combined": "yarn combine:reports",
-    "report:combined": "nyc report --reporter lcov --report-dir coverage"
+    "test:update-snaps": "yarn test -u"
   },
   "husky": {
     "hooks": {
@@ -59,7 +50,8 @@
     "extends": "./nyc.config.js",
     "report-dir": "cypress-coverage",
     "reporter": [
-      "json"
+      "json",
+      "lcov"
     ]
   },
   "dependencies": {
