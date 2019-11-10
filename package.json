@@ -152,7 +152,7 @@
     "jest-enzyme": "7.1.2",
     "jest-prop-type-error": "^1.1.0",
     "lint-staged": "^9.4.2",
-    "prettier": "^1.18.2",
+    "prettier": "^1.19.1",
     "react-addons-test-utils": "^15.6.2",
     "react-test-renderer": "^16.11.0",
     "start-server-and-test": "^1.10.6",
