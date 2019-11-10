@@ -47,7 +47,7 @@
     ]
   },
   "dependencies": {
-    "@babel/core": "^7.6.4",
+    "@babel/core": "^7.7.2",
     "@innocuous/components": "^2.1.0",
     "@innocuous/functions": "^2.1.0",
     "@innocuous/next-css": "^3.0.0",
