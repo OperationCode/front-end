@@ -3,5 +3,10 @@
   "baseUrl": "http://localhost:3000",
   "viewportWidth": 1600,
   "viewportHeight": 1200,
-  "requestTimeout": 10000
+  "requestTimeout": 10000,
+  "env": {
+    "codeCoverage": {
+      "url": "/api/__coverage__"
+    }
+  }
 }
