@@ -9,6 +9,7 @@
     "create-component": "node scripts/createComponent/createComponent.js",
     "create-page": "node scripts/createPage/createPage.js",
     "dev": "next",
+    "format": "prettier --write \"**/*\"",
     "format:md": "prettier --write \"**/*.md\"",
     "lint": "yarn lint:scripts && yarn lint:styles && yarn format:md",
     "lint:ci": "yarn eslint \"**/*.js\" && yarn stylelint \"**/*.css\"",
