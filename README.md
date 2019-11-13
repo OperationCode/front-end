@@ -1,3 +1,15 @@
+<div align="center">
+  <br>
+  <a href="https://operationcode.org">
+    <img
+      alt="Operation Code Hacktoberfest Banner"
+      src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/large-blue-logo.png"
+    >
+  </a>
+  <br>
+  <br>
+</div>
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Twitter Follow](https://img.shields.io/twitter/follow/operation_code.svg?style=social&label=Follow&style=social)](https://twitter.com/operation_code)
 
