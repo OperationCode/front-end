@@ -163,7 +163,7 @@
     "jest": "^24.9.0",
     "jest-enzyme": "7.1.2",
     "jest-prop-type-error": "^1.1.0",
-    "lint-staged": "^9.4.2",
+    "lint-staged": "^9.4.3",
     "nyc": "^14.1.1",
     "prettier": "^1.19.1",
     "react-addons-test-utils": "^15.6.2",
