@@ -1,7 +1,8 @@
-describe('retry', () => {
-  let retry = 0;
-  it('retries a test up to 3 times in case it fails', () => {
-    retry += 1;
-    cy.expect(retry === 3).to.be.true;
+describe('Retrying Cypress tests', () => {
+  let tryCount = 0;
+
+  it('retries a test up to 2 times in case it fails', () => {    
+    tryCount += 1;
+    cy.expect(tryCount === 3).to.be.true;
   });
 });
