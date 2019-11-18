@@ -6,5 +6,10 @@ const removeRootDirectory = pathArray => {
 
 module.exports = {
   include: [...removeRootDirectory(config.collectCoverageFrom), 'pages/**/*.js'],
-  exclude: [...removeRootDirectory(config.coveragePathIgnorePatterns), 'pages/api/__coverage__.js'],
+  exclude: [
+    ...removeRootDirectory(config.coveragePathIgnorePatterns),
+    'pages/api/__coverage__.js',
+    'common/**/index.js',
+    'components/**/index.js',
+  ],
 };
