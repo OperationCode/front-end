@@ -11,7 +11,7 @@ const SponsorsSection = () => (
   <Container theme="gray">
     <Heading text="Sponsors" hasTitleUnderline headingLevel={3} />
 
-    <Heading text="Paid Sponsors" headingLevel={4} />
+    <Heading text="Corporate Sponsors" headingLevel={4} />
     <p>
       These sponsors have donated cash to help keep the mission going here at Operation Code. They
       may or may not have also donated to our cause via others means.
@@ -24,7 +24,7 @@ const SponsorsSection = () => (
         ))}
     </div>
 
-    <Heading text="In-Kind Sponsors" headingLevel={4} />
+    <Heading text="Corporate Supporters" headingLevel={4} />
     <p>
       The following organizations have helped Operation Code through services, products,
       advertisements, scholarships, or sponsorships. We thank them for their contributions.
