@@ -1,6 +1,7 @@
 /* eslint-disable max-classes-per-file */
 import App from 'next/app';
 import Router from 'next/router';
+import PropTypes from 'prop-types';
 import FontFaceObserver from 'fontfaceobserver';
 import LogRocket from 'logrocket';
 import ReactGA from 'react-ga';
@@ -32,20 +33,19 @@ const fonts = [
   },
 ];
 
-class Layout extends React.Component {
-  render() {
-    // eslint-disable-next-line react/prop-types
-    const { children } = this.props;
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 
-    return (
-      <>
-        <Nav />
-        <main>{children}</main>
-        <Footer />
-        <ScrollUpButton />
-      </>
-    );
-  }
+function Layout({ children }) {
+  return (
+    <>
+      <Nav />
+      <main>{children}</main>
+      <Footer />
+      <ScrollUpButton />
+    </>
+  );
 }
 
 // Same test used by EFF for identifying users
@@ -147,9 +147,13 @@ if (isProduction) {
 // Fixes Next CSS route change bug: https://github.com/zeit/next-plugins/issues/282
 if (!isProduction) {
   Router.events.on('routeChangeComplete', () => {
-    const els = document.querySelectorAll('link[href*="/_next/static/chunks/styles.chunk.css"]');
-    const timestamp = new Date().valueOf();
-    els[0].href = `/_next/static/chunks/styles.chunk.css?v=${timestamp}`;
+    const path = '/_next/static/chunks/styles.chunk.css';
+    const chunksSelector = `link[href*="${path}"]:not([rel=preload])`;
+    const chunksNodes = document.querySelectorAll(chunksSelector);
+    if (chunksNodes.length) {
+      const timestamp = new Date().valueOf();
+      chunksNodes[0].href = `${path}?ts=${timestamp}`;
+    }
   });
 }
 
