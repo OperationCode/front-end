@@ -1,10 +1,10 @@
 const config = require('./jest.config');
 
-const removeRootDirectory = pathArray => {
-  return pathArray.map(path => path.slice(10));
+const removeRootDirectoryFromPaths = pathArray => {
+  return pathArray.map(path => path.replace('<rootDir>/', ''));
 };
 
 module.exports = {
-  include: [...removeRootDirectory(config.collectCoverageFrom), 'pages/**/*.js'],
-  exclude: [...removeRootDirectory(config.coveragePathIgnorePatterns), 'pages/api/__coverage__.js'],
+  include: ['pages/**/*.js', ...removeRootDirectoryFromPaths(config.collectCoverageFrom)],
+  exclude: ['pages/api/__coverage__.js'],
 };

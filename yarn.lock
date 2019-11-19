@@ -6329,6 +6329,11 @@ cypress-image-snapshot@^3.1.1:
     pkg-dir "^3.0.0"
     term-img "^4.0.0"
 
+cypress-plugin-retries@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/cypress-plugin-retries/-/cypress-plugin-retries-1.4.0.tgz#30477294a22e368c874d50dc282e657906080955"
+  integrity sha512-Pudna9+dn0wp3flUVWt1ttn6hKTnD1MIBUSznYkw+uRv3JPNJhxHIv9cfxrZmig49/R1fIyGBVNORchtnFedEw==
+
 cypress@3.2.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/cypress/-/cypress-3.2.0.tgz#c2d5befd5077dab6fb52ad70721e0868ac057001"
