@@ -44,6 +44,7 @@ module.exports = {
     '<rootDir>/common/utils/api-utils.js',
     '<rootDir>/components/ZipRecruiterJobs/ZipRecruiterJobs.js',
     '<rootDir>/components/Press/PressLinks/Articles.js',
+    '<rootDir>/components/Timeline/historyData.js',
 
     // Don't collect coverage from import/export mappers
     '<rootDir>/common/(.*)/index.js',
