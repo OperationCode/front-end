@@ -11,6 +11,9 @@
     "development": {
       "presets": [
         "next/babel"
+      ],
+      "plugins":[
+        ["istanbul"]
       ]
     },
     "test": {
