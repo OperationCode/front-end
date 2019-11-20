@@ -1,7 +1,8 @@
 .resourcesWrapper {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly space-between;
+  justify-content: space-between; /* fallback for incompatible browsers */
+  justify-content: space-evenly;
 }
 
 .resourceCard {
