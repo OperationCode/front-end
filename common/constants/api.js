@@ -1,10 +1,18 @@
-import { get, post, patch } from 'common/utils/api-utils';
+import { get, post, patch, ResourcesAPI } from 'common/utils/api-utils';
 import { formatUserData } from 'common/utils/formatters';
 
 /* GET REQUESTS */
 export const getUserPromise = ({ token }) => get('auth/user/', { token });
 export const getCodeSchoolsPromise = () => get('api/v1/codeschools/');
 export const getTeamMembersPromise = () => get('api/v1/teamMembers/');
+
+/* Resources API */
+export const getResourcesPromise = ({ page = 1 }) => {
+  const parameters = {
+    page,
+  };
+  return get('api/v1/resources/', { parameters }, ResourcesAPI);
+};
 
 /* POST REQUESTS */
 export const createUser = ({ email, password, firstName, lastName, zipcode }) =>
