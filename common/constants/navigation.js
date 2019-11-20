@@ -100,15 +100,24 @@ export const loggedOutNavItems = [aboutUs, whoWeServeWithSublinks, events, getIn
 
 // Extracts sublinks to list everything as a single, top-level list
 export const mobileLoggedInNavItems = flattenDepth(
-  [logout, profile, aboutUs, whoWeServeWithoutSublinks, events, getInvolved].map(
-    ({ sublinks = [], ...item }) => [item, sublinks],
-  ),
+  [
+    logout,
+    profile,
+    aboutUs,
+    whoWeServeWithoutSublinks,
+    events,
+    getInvolved,
+  ].map(({ sublinks = [], ...item }) => [item, sublinks]),
   2,
 );
 export const mobileLoggedOutNavItems = flattenDepth(
-  [...whoWeServeWithSublinks.sublinks, aboutUs, whoWeServeWithoutSublinks, events, getInvolved].map(
-    ({ sublinks = [], ...item }) => [item, sublinks],
-  ),
+  [
+    ...whoWeServeWithSublinks.sublinks,
+    aboutUs,
+    whoWeServeWithoutSublinks,
+    events,
+    getInvolved,
+  ].map(({ sublinks = [], ...item }) => [item, sublinks]),
   2,
 );
 

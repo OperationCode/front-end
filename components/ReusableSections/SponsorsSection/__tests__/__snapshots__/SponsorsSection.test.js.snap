@@ -44,24 +44,24 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
       >
         <div
           className="hashLinkContainer"
-          data-testid="Heading Content paid-sponsors-link"
+          data-testid="Heading Content corporate-sponsors-link"
         >
           <a
             data-testid="Hash Link"
-            href="#paid-sponsors-link"
-            id="paid-sponsors-link"
+            href="#corporate-sponsors-link"
+            id="corporate-sponsors-link"
           >
             <span
               className="ScreenReaderOnly"
             >
               Scroll Link for 
-              Paid Sponsors
+              Corporate Sponsors
             </span>
             <svg
               className="icon"
             />
           </a>
-          Paid Sponsors
+          Corporate Sponsors
         </div>
       </h4>
     </div>
@@ -164,24 +164,24 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
       >
         <div
           className="hashLinkContainer"
-          data-testid="Heading Content in-kind-sponsors-link"
+          data-testid="Heading Content corporate-supporters-link"
         >
           <a
             data-testid="Hash Link"
-            href="#in-kind-sponsors-link"
-            id="in-kind-sponsors-link"
+            href="#corporate-supporters-link"
+            id="corporate-supporters-link"
           >
             <span
               className="ScreenReaderOnly"
             >
               Scroll Link for 
-              In-Kind Sponsors
+              Corporate Supporters
             </span>
             <svg
               className="icon"
             />
           </a>
-          In-Kind Sponsors
+          Corporate Supporters
         </div>
       </h4>
     </div>
@@ -464,24 +464,24 @@ exports[`SponsorsSection should render with required props 1`] = `
       >
         <div
           className="hashLinkContainer"
-          data-testid="Heading Content paid-sponsors-link"
+          data-testid="Heading Content corporate-sponsors-link"
         >
           <a
             data-testid="Hash Link"
-            href="#paid-sponsors-link"
-            id="paid-sponsors-link"
+            href="#corporate-sponsors-link"
+            id="corporate-sponsors-link"
           >
             <span
               className="ScreenReaderOnly"
             >
               Scroll Link for 
-              Paid Sponsors
+              Corporate Sponsors
             </span>
             <svg
               className="icon"
             />
           </a>
-          Paid Sponsors
+          Corporate Sponsors
         </div>
       </h4>
     </div>
@@ -584,24 +584,24 @@ exports[`SponsorsSection should render with required props 1`] = `
       >
         <div
           className="hashLinkContainer"
-          data-testid="Heading Content in-kind-sponsors-link"
+          data-testid="Heading Content corporate-supporters-link"
         >
           <a
             data-testid="Hash Link"
-            href="#in-kind-sponsors-link"
-            id="in-kind-sponsors-link"
+            href="#corporate-supporters-link"
+            id="corporate-supporters-link"
           >
             <span
               className="ScreenReaderOnly"
             >
               Scroll Link for 
-              In-Kind Sponsors
+              Corporate Supporters
             </span>
             <svg
               className="icon"
             />
           </a>
-          In-Kind Sponsors
+          Corporate Supporters
         </div>
       </h4>
     </div>

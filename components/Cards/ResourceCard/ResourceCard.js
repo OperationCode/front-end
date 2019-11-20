@@ -66,10 +66,10 @@ function ResourceCard({
     <OutboundLink
       href={href}
       hasIcon={false}
-      className={styles.link}
+      className={classNames(styles.link, className)}
       analyticsEventLabel={`Resource: ${name}`}
     >
-      <Card className={classNames(styles.ResourceCard, className)} hasAnimationOnHover>
+      <Card className={styles.ResourceCard} hasAnimationOnHover>
         <header className={styles.titleSection}>
           <img src={imageSource} alt="logo" aria-hidden="true" />
           <h5>{name}</h5>
