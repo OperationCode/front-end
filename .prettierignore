@@ -8,3 +8,4 @@ yarn.lock
 bin
 node_modules
 static
+cypress-coverage
