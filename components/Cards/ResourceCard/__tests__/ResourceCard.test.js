@@ -1,6 +1,6 @@
 /* eslint-env jest */
 import React from 'react';
-import { fireEvent, render } from '@testing-library/react';
+import { act, fireEvent, render } from '@testing-library/react';
 
 import ResourceCard from '../ResourceCard';
 // import ResourceCard, { possibleUserVotes } from '../ResourceCard';
@@ -31,12 +31,16 @@ describe('ResourceCard', () => {
 
     const UpvoteButton = component.queryByTestId('Upvote Button');
     expect(onUpvoteMock).not.toHaveBeenCalled();
-    fireEvent.click(UpvoteButton);
+    act(() => {
+      fireEvent.click(UpvoteButton);
+    });
     expect(onUpvoteMock).toHaveBeenCalledTimes(1);
 
     const DownvoteButton = component.queryByTestId('Downvote Button');
     expect(onDownvoteMock).not.toHaveBeenCalled();
-    fireEvent.click(DownvoteButton);
+    act(() => {
+      fireEvent.click(DownvoteButton);
+    });
     expect(onDownvoteMock).toHaveBeenCalledTimes(1);
   });
 });

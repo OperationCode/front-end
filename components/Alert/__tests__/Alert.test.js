@@ -1,5 +1,5 @@
 import React from 'react';
-import { cleanup, fireEvent, render } from '@testing-library/react';
+import { act, cleanup, fireEvent, render } from '@testing-library/react';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 
 import Alert from '../Alert';
@@ -23,7 +23,11 @@ describe('Alert', () => {
     const CloseAlertButton = queryByTestId('Close Alert Button');
 
     expect(onCloseMock).toHaveBeenCalledTimes(0);
-    fireEvent.click(CloseAlertButton);
+
+    act(() => {
+      fireEvent.click(CloseAlertButton);
+    });
+
     expect(onCloseMock).toHaveBeenCalledTimes(1);
   });
 
