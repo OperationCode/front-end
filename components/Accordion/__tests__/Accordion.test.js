@@ -1,5 +1,5 @@
 import React from 'react';
-import { cleanup, fireEvent, render } from '@testing-library/react';
+import { act, cleanup, fireEvent, render } from '@testing-library/react';
 
 import Accordion from '../Accordion';
 
@@ -14,7 +14,11 @@ describe('Accordion', () => {
     const Content = component.queryByTestId('Accordion Content');
 
     expect(Content).not.toBeVisible();
-    fireEvent.click(component.queryByTestId('Accordion Toggle Button'));
+
+    act(() => {
+      fireEvent.click(component.queryByTestId('Accordion Toggle Button'));
+    });
+
     expect(Content).toBeVisible();
   });
 
@@ -26,7 +30,11 @@ describe('Accordion', () => {
     const Button = component.queryByTestId('Accordion Toggle Button');
 
     expect(Button.textContent).toBe('Show');
-    fireEvent.click(Button);
+
+    act(() => {
+      fireEvent.click(Button);
+    });
+
     expect(Button.textContent).toBe('Hide');
   });
 });
