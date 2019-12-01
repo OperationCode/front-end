@@ -106,49 +106,6 @@ describe(`profile/update (from login)`, () => {
     goToNextStep('Military Details');
   });
 
-  it('should render an uncaught server error', () => {
-    goToNextStep(secondStepName);
-
-    const ErrorAPICall = 'PATCH_USER_FAIL_UNCAUGHT';
-
-    cy.route({
-      method: 'PATCH',
-      url: 'auth/profile/',
-      status: 500,
-      response: {},
-    }).as(ErrorAPICall);
-
-    cy.findByTestId(SubmitButtonID).click();
-    cy.wait(`@${ErrorAPICall}`);
-
-    cy.queryByRole('alert').should('have.text', networkErrorMessages.serverDown);
-  });
-
-  // TODO: Get this working!
-  // it('should render a caught server error', () => {
-  //   goToNextStep(secondStepName);
-
-  //   const ErrorAPICall = 'PATCH_USER_FAIL_CAUGHT';
-
-  //   const error = 'Fix this shit.';
-
-  //   cy.route({
-  //     method: 'PATCH',
-  //     url: 'auth/profile/',
-  //     status: 500,
-  //     response: {
-  //       data: {
-  //         error,
-  //       },
-  //     },
-  //   }).as(ErrorAPICall);
-
-  //   cy.findByTestId(SubmitButtonID).click();
-  //   cy.wait(`@${ErrorAPICall}`);
-
-  //   cy.queryByRole('alert').should('have.text', error);
-  // });
-
   it(`should not allow negative in the years of service input`, () => {
     goToNextStep(secondStepName);
     goToNextStep(thirdStepName);
@@ -174,4 +131,55 @@ describe(`profile/update (from login)`, () => {
 
     cy.get('div[role="alert"]').should('have.text', 'Enter a number between 1 and 40.');
   });
+});
+
+describe(`profile/update (from login) [server errors]`, () => {
+  beforeEach(() => {
+    cy.server();
+    cy.login();
+  });
+
+  after(() => cy.clearCookies());
+
+  it('should render an uncaught server error', () => {
+    const ErrorAPICall = 'PATCH_USER_FAIL_UNCAUGHT';
+
+    cy.route({
+      method: 'PATCH',
+      url: 'auth/profile/',
+      status: 500,
+      response: {},
+    }).as(ErrorAPICall);
+
+    cy.visitAndWaitFor('/profile/update');
+
+    cy.findByTestId(SubmitButtonID).click();
+    cy.wait(`@${ErrorAPICall}`);
+
+    cy.queryByRole('alert').should('have.text', networkErrorMessages.serverDown);
+  });
+
+  // TODO: Get this working!
+  // it('should render a caught server error', () => {
+
+  //   const ErrorAPICall = 'PATCH_USER_FAIL_CAUGHT';
+
+  //   const error = 'Fix this shit.';
+
+  //   cy.route({
+  //     method: 'PATCH',
+  //     url: 'auth/profile/',
+  //     status: 500,
+  //     response: {
+  //       data: {
+  //         error,
+  //       },
+  //     },
+  //   }).as(ErrorAPICall);
+
+  //   cy.findByTestId(SubmitButtonID).click();
+  //   cy.wait(`@${ErrorAPICall}`);
+
+  //   cy.queryByRole('alert').should('have.text', error);
+  // });
 });
