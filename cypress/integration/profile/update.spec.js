@@ -107,6 +107,8 @@ describe(`profile/update (from login)`, () => {
   });
 
   it('should render an uncaught server error', () => {
+    goToNextStep(secondStepName);
+
     const ErrorAPICall = 'PATCH_USER_FAIL_UNCAUGHT';
 
     cy.route({
@@ -124,6 +126,8 @@ describe(`profile/update (from login)`, () => {
 
   // TODO: Get this working!
   // it('should render a caught server error', () => {
+  //   goToNextStep(secondStepName);
+
   //   const ErrorAPICall = 'PATCH_USER_FAIL_CAUGHT';
 
   //   const error = 'Fix this shit.';
