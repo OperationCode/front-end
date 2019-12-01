@@ -8,47 +8,17 @@ import Pagination from 'components/Pagination/Pagination';
 import { getResourcesPromise } from 'common/constants/api';
 import styles from './resources.css';
 
-const ResourcesPage = ({ resources, currentPage, totalPages }) => {
-  const resourceMarkup = resources.map(resource => (
-    <ResourceCard
-      key={resource.id}
-      description={resource.notes}
-      downvotes={resource.downvotes}
-      upvotes={resource.upvotes}
-      href={resource.url || ''}
-      name={resource.name}
-      className={styles.resourceCard}
-    />
-  ));
-
-  return (
-    <>
-      <Head title="Resources" />
-      <HeroBanner title="Resources" className="smallHero" />
-      <Content
-        theme="white"
-        columns={[
-          <section>
-            <div className={styles.resourcesWrapper}>{resourceMarkup}</div>
-            <Pagination currentPage={currentPage} totalPages={totalPages} />
-          </section>,
-        ]}
-      />
-    </>
-  );
-};
-
-const ResourceType = PropTypes.shape({
-  id: PropTypes.number, // integer, unique ID
-  name: PropTypes.title,
-  notes: PropTypes.string, // possibly null
-  url: PropTypes.string.isRequired,
-  upvotes: PropTypes.number,
-  downvotes: PropTypes.number,
-});
-
 ResourcesPage.propTypes = {
-  resources: PropTypes.arrayOf(ResourceType),
+  resources: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number, // integer, unique ID
+      name: PropTypes.title,
+      notes: PropTypes.string, // possibly null
+      url: PropTypes.string.isRequired,
+      upvotes: PropTypes.number,
+      downvotes: PropTypes.number,
+    }),
+  ),
   currentPage: PropTypes.number,
   totalPages: PropTypes.number,
 };
@@ -69,5 +39,35 @@ ResourcesPage.getInitialProps = async () => {
     totalPages,
   };
 };
+
+function ResourcesPage({ resources, currentPage, totalPages }) {
+  return (
+    <>
+      <Head title="Resources" />
+      <HeroBanner title="Resources" className="smallHero" />
+      <Content
+        theme="white"
+        columns={[
+          <section>
+            <div className={styles.resourcesWrapper}>
+              {resources.map(resource => (
+                <ResourceCard
+                  key={resource.id}
+                  description={resource.notes}
+                  downvotes={resource.downvotes}
+                  upvotes={resource.upvotes}
+                  href={resource.url || ''}
+                  name={resource.name}
+                  className={styles.resourceCard}
+                />
+              ))}
+            </div>
+            <Pagination currentPage={currentPage} totalPages={totalPages} />
+          </section>,
+        ]}
+      />
+    </>
+  );
+}
 
 export default ResourcesPage;
