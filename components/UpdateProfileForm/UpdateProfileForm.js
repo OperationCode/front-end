@@ -25,7 +25,7 @@ function UpdateProfileForm({ initialValues }) {
   const [shouldShowMilitaryStep, handleShouldShowMilitaryStep] = useState(false);
 
   // TODO: Abstract method to utility and use for all error-handling purposes
-  generateError = errorObject => {
+  const generateError = errorObject => {
     const serverResponse = get(errorObject, 'response.data', {});
     const responseDataValues = Object.values(serverResponse);
     const isHandledServerError = responseDataValues.length > 0;
