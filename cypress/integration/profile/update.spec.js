@@ -83,7 +83,10 @@ describe(`profile/update (from login)`, () => {
     cy.clearCookies();
 
     cy.findByTestId('Submit Step Button').click();
-    cy.get('div[role="alert"]').should('have.text', 'Request failed with status code 401');
+    cy.get('div[role="alert"]').should(
+      'have.text',
+      'Authentication credentials were not provided.',
+    );
     cy.get('h3').should('have.text', secondStepName);
   });
 
