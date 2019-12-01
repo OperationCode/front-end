@@ -8,6 +8,7 @@ import MultiStepForm from 'components/Form/MultiStepForm';
 import { ProfessionalDetails, MilitaryStatus, MilitaryDetails, Technology } from './steps';
 
 UpdateProfileForm.propTypes = {
+  // Not required to allow for diff props in testing
   initialValues: objectOf(oneOfType([array, string, number, bool])),
 };
 
