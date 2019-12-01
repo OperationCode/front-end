@@ -3,7 +3,7 @@
 import React from 'react';
 import faker from 'faker';
 import get from 'lodash/get';
-import { render, fireEvent, wait } from '@testing-library/react';
+import { act, fireEvent, render, wait } from '@testing-library/react';
 import { Field } from 'formik';
 import * as Yup from 'yup';
 import { networkErrorMessages } from 'common/constants/messages';
@@ -11,15 +11,19 @@ import { MultiStepForm } from '../MultiStepForm';
 
 const submitForm = async container => {
   const button = container.querySelector('button[type="submit"]');
-  await wait(() => {
-    fireEvent.submit(button);
+
+  await act(async () => {
+    await fireEvent.click(button);
   });
 };
 
 const typeIntoInput = (container, inputName, value) => {
   const input = container.querySelector(`input#${inputName}`);
-  fireEvent.change(input, { target: { id: inputName, value } });
-  fireEvent.blur(input);
+
+  act(() => {
+    fireEvent.change(input, { target: { id: inputName, value } });
+    fireEvent.blur(input);
+  });
 };
 
 function makeNameForm(submitHandler = jest.fn()) {
@@ -343,7 +347,9 @@ describe('MultiStepForm', () => {
     expect(goToPreviousStepButton).not.toBeNull();
     expect(goToPreviousStepButton.textContent).toContain('Previous');
 
-    fireEvent.click(goToPreviousStepButton);
+    act(() => {
+      fireEvent.click(goToPreviousStepButton);
+    });
 
     await wait(() => {
       expect(queryByTestId('ultimateAnswer')).toBeNull();
@@ -374,7 +380,9 @@ describe('MultiStepForm', () => {
     const goToPreviousStepButton = queryByTestId('Previous Step Button');
     expect(goToPreviousStepButton).not.toBeNull();
     expect(goToPreviousStepButton.textContent).toContain('Previous');
-    fireEvent.click(goToPreviousStepButton);
+    act(() => {
+      fireEvent.click(goToPreviousStepButton);
+    });
 
     // make sure that step 1's inputs have persisted & visible after clicking "Previous" from step 1
     expect(container.querySelectorAll('input')).toHaveLength(2);

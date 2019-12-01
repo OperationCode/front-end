@@ -1,4 +1,4 @@
-import { fireEvent, render } from '@testing-library/react';
+import { act, fireEvent, render } from '@testing-library/react';
 import React from 'react';
 import createShallowSnapshotTest from 'test-utils/createShallowSnapshotTest';
 import ArticleGroup from '../ArticleGroup';
@@ -41,7 +41,9 @@ describe('ArticleGroup', () => {
 
     expect(container.querySelectorAll('li').length).toBe(1);
 
-    fireEvent.click(container.querySelector('button'));
+    act(() => {
+      fireEvent.click(container.querySelector('button'));
+    });
 
     expect(container.querySelectorAll('li').length).toBe(3);
   });

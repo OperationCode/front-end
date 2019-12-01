@@ -1,6 +1,6 @@
 import React from 'react';
 import faker from 'faker';
-import { wait, render, fireEvent } from '@testing-library/react';
+import { act, fireEvent, render, wait } from '@testing-library/react';
 import { loginUser } from 'common/constants/api';
 import { networkErrorMessages, validationErrorMessages } from 'common/constants/messages';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
@@ -22,7 +22,9 @@ describe('LoginForm', () => {
       <LoginForm login={jest.fn()} onSuccess={jest.fn()} />,
     );
 
-    fireEvent.blur(getByLabelText(/Email/));
+    await act(async () => {
+      await fireEvent.blur(getByLabelText(/Email/));
+    });
 
     expect(findByText(validationErrorMessages.required)).toBeDefined();
   });
@@ -32,8 +34,10 @@ describe('LoginForm', () => {
       <LoginForm login={jest.fn()} onSuccess={jest.fn()} />,
     );
 
-    fireEvent.change(getByLabelText(/Email/), { target: { value: 'email' } });
-    fireEvent.blur(getByLabelText(/Email/));
+    await act(async () => {
+      await fireEvent.change(getByLabelText(/Email/), { target: { value: 'email' } });
+      await fireEvent.blur(getByLabelText(/Email/));
+    });
 
     expect(findByText(validationErrorMessages.required)).toBeDefined();
   });
@@ -43,7 +47,9 @@ describe('LoginForm', () => {
       <LoginForm login={jest.fn()} onSuccess={jest.fn()} />,
     );
 
-    fireEvent.blur(getByLabelText(/Password/));
+    await act(async () => {
+      await fireEvent.blur(getByLabelText(/Password/));
+    });
 
     expect(findByText(validationErrorMessages.required)).toBeDefined();
   });
@@ -70,11 +76,13 @@ describe('LoginForm', () => {
       <LoginForm onSuccess={successSpy} login={loginUser} initialValues={initialValues} />,
     );
 
-    fireEvent.click(getByText('Submit'));
+    await act(async () => {
+      await fireEvent.click(getByText('Submit'));
+    });
 
     await wait(() => {
-      expect(OperationCodeAPIMock.history.post.length).toBeGreaterThan(0);
       expect(successSpy).toHaveBeenCalledTimes(1);
+      expect(OperationCodeAPIMock.history.post.length).toBeGreaterThan(0);
     });
   });
 
@@ -92,7 +100,9 @@ describe('LoginForm', () => {
       />,
     );
 
-    fireEvent.click(getByText('Submit'));
+    await act(async () => {
+      await fireEvent.click(getByText('Submit'));
+    });
 
     await wait(() => {
       expect(successSpy).not.toHaveBeenCalled();
@@ -116,13 +126,14 @@ describe('LoginForm', () => {
       <LoginForm login={loginUser} onSuccess={successSpy} initialValues={initialValues} />,
     );
 
-    fireEvent.click(getByText('Submit'));
-
-    wait(() => {
-      expect(successSpy).not.toHaveBeenCalled();
+    await act(async () => {
+      await fireEvent.click(getByText('Submit'));
     });
 
-    expect(findByText(invalidError)).toBeDefined();
+    wait(() => {
+      expect(findByText(invalidError)).toBeDefined();
+      expect(successSpy).not.toHaveBeenCalled();
+    });
   });
 
   it('should show a helpful error if the server is down', async () => {
@@ -140,12 +151,14 @@ describe('LoginForm', () => {
       <LoginForm onSuccess={successSpy} login={loginUser} initialValues={initialValues} />,
     );
 
-    fireEvent.click(getByText('Submit'));
+    await act(async () => {
+      await fireEvent.click(getByText('Submit'));
+    });
 
     await wait(() => {
+      expect(findByText(networkErrorMessages.serverDown)).toBeDefined();
       expect(successSpy).not.toHaveBeenCalled();
       expect(OperationCodeAPIMock.history.post.length).toBeGreaterThan(0);
-      expect(findByText(networkErrorMessages.serverDown)).toBeDefined();
     });
   });
 
@@ -172,11 +185,15 @@ describe('LoginForm', () => {
     );
 
     const submit = getByText('Submit');
-    fireEvent.click(submit);
+
+    await act(async () => {
+      await fireEvent.click(submit);
+    });
 
     await wait(() => {
       expect(submit).not.toBeDisabled();
     });
+
     container.querySelectorAll('input').forEach(input => {
       expect(input.textContent).toBeFalsy();
     });
