@@ -1,0 +1,10 @@
+.resourcesWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* fallback for incompatible browsers */
+  justify-content: space-evenly;
+}
+
+.resourceCard {
+  margin: 0 20px;
+}

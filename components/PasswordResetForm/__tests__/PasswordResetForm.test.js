@@ -1,5 +1,5 @@
 import React from 'react';
-import { wait, render, fireEvent, cleanup } from '@testing-library/react';
+import { act, fireEvent, render, wait } from '@testing-library/react';
 import { passwordReset } from 'common/constants/api';
 import { validationErrorMessages } from 'common/constants/messages';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
@@ -18,28 +18,28 @@ describe('PasswordResetForm', () => {
   });
 
   it('should display required error message when blurring past email input', async () => {
-    const { getByLabelText, findByRole } = render(
+    const { findByLabelText, findByText } = render(
       <PasswordResetForm onSuccess={jest.fn()} passwordReset={jest.fn()} />,
     );
 
-    fireEvent.blur(getByLabelText(/Email/));
+    await act(async () => {
+      fireEvent.blur(await findByLabelText(/Email/));
+    });
 
-    const Alert = await findByRole('alert');
-
-    expect(Alert.textContent).toBe(validationErrorMessages.required);
+    expect(await findByText(validationErrorMessages.required)).toBeDefined();
   });
 
   it('should show error when providing non-email to email input', async () => {
-    const { getByLabelText, findByRole } = render(
+    const { findByLabelText, findByText } = render(
       <PasswordResetForm onSuccess={jest.fn()} passwordReset={jest.fn()} />,
     );
 
-    fireEvent.change(getByLabelText(/Email/), { target: { value: 'email' } });
-    fireEvent.blur(getByLabelText(/Email/));
+    await act(async () => {
+      fireEvent.change(await findByLabelText(/Email/), { target: { value: 'email' } });
+      fireEvent.blur(await findByLabelText(/Email/));
+    });
 
-    const Alert = await findByRole('alert');
-
-    expect(Alert.textContent).toBe(validationErrorMessages.email);
+    expect(await findByText(validationErrorMessages.email)).toBeDefined();
   });
 
   it('should submit with valid data in form', async () => {
@@ -51,13 +51,15 @@ describe('PasswordResetForm', () => {
 
     const successSpy = jest.fn();
 
-    const { getByLabelText, getByText } = render(
+    const { findByLabelText, findByText } = render(
       <PasswordResetForm onSuccess={successSpy} passwordReset={passwordReset} />,
     );
 
-    fireEvent.change(getByLabelText(/Email/), { target: { value: user.email } });
-    fireEvent.blur(getByLabelText(/Email/));
-    fireEvent.click(getByText('Submit'));
+    await act(async () => {
+      fireEvent.change(await findByLabelText(/Email/), { target: { value: user.email } });
+      fireEvent.blur(await findByLabelText(/Email/));
+      fireEvent.click(await findByText('Submit'));
+    });
 
     await wait(() => {
       expect(successSpy).toHaveBeenCalledWith({ detail: 'success' });
@@ -73,15 +75,17 @@ describe('PasswordResetForm', () => {
 
     const successSpy = jest.fn();
 
-    const { getByLabelText, getByText, findByText } = render(
+    const { findByLabelText, findByText } = render(
       <PasswordResetForm onSuccess={successSpy} passwordReset={passwordReset} />,
     );
 
-    fireEvent.change(getByLabelText(/Email/), { target: { value: user.email } });
-    fireEvent.blur(getByLabelText(/Email/));
-    fireEvent.click(getByText('Submit'));
+    await act(async () => {
+      fireEvent.change(await findByLabelText(/Email/), { target: { value: user.email } });
+      fireEvent.blur(await findByLabelText(/Email/));
+      fireEvent.click(await findByText('Submit'));
+    });
 
-    expect(findByText('test error')).toBeDefined();
+    expect(await findByText('test error')).toBeDefined();
   });
 
   it('should NOT submit with invalid data in form', async () => {
@@ -92,7 +96,7 @@ describe('PasswordResetForm', () => {
     const successSpy = jest.fn();
     const passwordResetSpy = jest.fn();
 
-    const { queryByText } = render(
+    const { findByText } = render(
       <PasswordResetForm
         onSuccess={successSpy}
         passwordReset={passwordResetSpy}
@@ -100,7 +104,9 @@ describe('PasswordResetForm', () => {
       />,
     );
 
-    fireEvent.click(queryByText(/Submit/));
+    await act(async () => {
+      fireEvent.click(await findByText('Submit'));
+    });
 
     await wait(() => {
       expect(passwordResetSpy).not.toHaveBeenCalled();

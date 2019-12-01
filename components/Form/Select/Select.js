@@ -68,7 +68,10 @@ export default function Select({
    */
   const onChangeMulti = selectedArray => {
     if (selectedArray) {
-      setFieldValue(name, selectedArray.map(item => item.value));
+      setFieldValue(
+        name,
+        selectedArray.map(item => item.value),
+      );
     } else {
       setFieldValue(name, []);
     }

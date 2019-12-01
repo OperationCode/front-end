@@ -1,10 +1,11 @@
 import React from 'react';
 import { Formik } from 'formik';
-import { render, fireEvent, wait } from '@testing-library/react';
+import { act, fireEvent, render, wait } from '@testing-library/react';
 import OperationCodeAPIMock from 'test-utils/mocks/apiMock';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 import Form from 'components/Form/Form';
 
+import { KEY_CODES } from 'test-utils/identifiers';
 import Technology from '../Technology';
 
 describe('UpdateProfileForm/Steps/Technology', () => {
@@ -39,47 +40,47 @@ describe('UpdateProfileForm/Steps/Technology', () => {
         </Form>
       </Formik>,
     );
-    /** ************************** */
-    // Select 2 items in first select
+
     const FirstReactSelect = container.querySelector(
       'input#react-select-programmingLanguages-input',
     );
-    fireEvent.blur(FirstReactSelect);
-    fireEvent.keyDown(FirstReactSelect, { key: 'ArrowDown', keyCode: 40 });
-    fireEvent.keyDown(FirstReactSelect, { key: 'ArrowDown', keyCode: 40 });
-    fireEvent.keyDown(FirstReactSelect, { key: 'Enter', keyCode: 13 });
-    fireEvent.blur(FirstReactSelect);
 
-    fireEvent.blur(FirstReactSelect);
-    fireEvent.keyDown(FirstReactSelect, { key: 'ArrowDown', keyCode: 40 });
-    fireEvent.keyDown(FirstReactSelect, { key: 'ArrowDown', keyCode: 40 });
-    fireEvent.keyDown(FirstReactSelect, { key: 'ArrowDown', keyCode: 40 });
+    await act(async () => {
+      // Select 2 items in first select
+      fireEvent.blur(FirstReactSelect);
+      fireEvent.keyDown(FirstReactSelect, KEY_CODES.DOWN_ARROW);
+      fireEvent.keyDown(FirstReactSelect, KEY_CODES.DOWN_ARROW);
+      await fireEvent.keyDown(FirstReactSelect, KEY_CODES.ENTER);
+      fireEvent.blur(FirstReactSelect);
 
-    fireEvent.keyDown(FirstReactSelect, { key: 'Enter', keyCode: 13 });
-    fireEvent.blur(FirstReactSelect);
+      fireEvent.blur(FirstReactSelect);
+      fireEvent.keyDown(FirstReactSelect, KEY_CODES.DOWN_ARROW);
+      fireEvent.keyDown(FirstReactSelect, KEY_CODES.DOWN_ARROW);
+      fireEvent.keyDown(FirstReactSelect, KEY_CODES.DOWN_ARROW);
+      await fireEvent.keyDown(FirstReactSelect, KEY_CODES.ENTER);
+      fireEvent.blur(FirstReactSelect);
+    });
 
-    /** ************************** */
-
-    /** ************************** */
-    // Select 2 items in second select
     const SecondReactSelect = container.querySelector('input#react-select-disciplines-input');
 
-    fireEvent.blur(SecondReactSelect);
-    fireEvent.keyDown(SecondReactSelect, { key: 'ArrowDown', keyCode: 40 });
-    fireEvent.keyDown(SecondReactSelect, { key: 'ArrowDown', keyCode: 40 });
+    await act(async () => {
+      // Select 2 items in second select
+      fireEvent.blur(SecondReactSelect);
+      fireEvent.keyDown(SecondReactSelect, KEY_CODES.DOWN_ARROW);
+      fireEvent.keyDown(SecondReactSelect, KEY_CODES.DOWN_ARROW);
+      await fireEvent.keyDown(SecondReactSelect, KEY_CODES.ENTER);
 
-    fireEvent.keyDown(SecondReactSelect, { key: 'Enter', keyCode: 13 });
+      fireEvent.blur(SecondReactSelect);
+      fireEvent.keyDown(SecondReactSelect, KEY_CODES.DOWN_ARROW);
+      fireEvent.keyDown(SecondReactSelect, KEY_CODES.DOWN_ARROW);
+      fireEvent.keyDown(SecondReactSelect, KEY_CODES.DOWN_ARROW);
+      await fireEvent.keyDown(SecondReactSelect, KEY_CODES.ENTER);
+      fireEvent.blur(SecondReactSelect);
 
-    fireEvent.blur(SecondReactSelect);
-    fireEvent.keyDown(SecondReactSelect, { key: 'ArrowDown', keyCode: 40 });
-    fireEvent.keyDown(SecondReactSelect, { key: 'ArrowDown', keyCode: 40 });
-    fireEvent.keyDown(SecondReactSelect, { key: 'ArrowDown', keyCode: 40 });
+      // Submit form
+      await fireEvent.submit(container.querySelector('form'));
+    });
 
-    fireEvent.keyDown(SecondReactSelect, { key: 'Enter', keyCode: 13 });
-    fireEvent.blur(SecondReactSelect);
-
-    // Submit form
-    fireEvent.submit(container.querySelector('form'));
     await wait(() => {
       expect(OperationCodeAPIMock.history.patch.length).toStrictEqual(1);
     });

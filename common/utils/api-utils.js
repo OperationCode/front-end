@@ -11,6 +11,12 @@ const axiosConfig = {
 
 export const OperationCodeAPI = axios.create(axiosConfig);
 
+// This API is also part of operation code, and documented here:
+// https://github.com/OperationCode/resources_api
+export const ResourcesAPI = axios.create({
+  baseURL: 'https://resources.operationcode.org',
+  timeout: 5000,
+});
 export const ExternalAPI = axios.create({
   timeout: 5000,
 });
@@ -33,18 +39,22 @@ const getRequestAbortionPieces = () => {
 /**
  * @param {string} path
  * @param {{token: string}} options
+ * @param {?Object.<string, any>} parameters URL parameters to include in the query string
  * @returns {Promise<AxiosPromise<any>>}
  */
-export const get = async (path, { token } = {}) => {
+export const get = async (path, { token, parameters } = {}, axiosClient = OperationCodeAPI) => {
   const { abort, connectionTimeout } = getRequestAbortionPieces();
 
-  return OperationCodeAPI.get(`/${path}`, {
-    headers: setAuthorizationHeader(token),
-    cancelToken: abort.token,
-  }).then(response => {
-    clearTimeout(connectionTimeout);
-    return response;
-  });
+  return axiosClient
+    .get(`/${path}`, {
+      headers: setAuthorizationHeader(token),
+      cancelToken: abort.token,
+      params: parameters,
+    })
+    .then(response => {
+      clearTimeout(connectionTimeout);
+      return response;
+    });
 };
 
 /**
