@@ -24,28 +24,27 @@ function UpdateProfileForm({ initialValues }) {
   const [shouldShowMilitaryStep, handleShouldShowMilitaryStep] = useState(false);
 
   // TODO: Abstract method to utility and use for all error-handling purposes
-  const generateError = errorObject => {
-    if (errorObject.message) {
-      // regular JS error
-      return errorObject.message;
-    }
-
+  generateError = errorObject => {
     const serverResponse = get(errorObject, 'response.data', {});
+    const responseDataValues = Object.values(serverResponse);
+    const isHandledServerError = responseDataValues.length > 0;
 
-    const hasMultiError = Object.values(serverResponse).some(
-      value => Array.isArray(value) && value.length > 0,
-    );
+    if (isHandledServerError) {
+      const hasMultiError = responseDataValues.some(
+        value => Array.isArray(value) && value.length > 0,
+      );
 
-    if (hasMultiError) {
-      const errorMessage = Object.values(serverResponse)
-        .map(messages => {
-          // Only return the first item of a potential array of errors.
-          // Rather than make this code more complex, just let the user resolve them per submit.
-          return messages[0];
-        })
-        .join('\n'); // could span many fields as well, so have a new line per field with error
+      if (hasMultiError) {
+        const errorMessage = responseDataValues
+          .map(messages => {
+            // Only return the first item of a potential array of errors.
+            // Rather than make this code more complex, just let the user resolve them per submit.
+            return messages[0];
+          })
+          .join('\n'); // could span many fields as well, so have a new line per field with error
 
-      return errorMessage;
+        return errorMessage;
+      }
     }
 
     return getServerErrorMessage(errorObject);
