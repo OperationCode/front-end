@@ -17,7 +17,7 @@ const firstStepName = 'Professional Details';
 const secondStepName = 'Military Status';
 const thirdStepName = 'Military Details';
 
-describe(`profile/update (unauthorized)`, () => {
+describe.skip(`profile/update (unauthorized)`, () => {
   it(`should redirect to login if not authorized`, () => {
     // assert that route can't be reached without being authorized
     cy.visit('/profile/update');
@@ -27,7 +27,7 @@ describe(`profile/update (unauthorized)`, () => {
   });
 });
 
-describe(`profile/update (from login)`, () => {
+describe.skip(`profile/update (from login)`, () => {
   beforeEach(() => {
     cy.server();
     cy.login();
@@ -135,7 +135,7 @@ describe(`profile/update (from login)`, () => {
 
 describe(`profile/update (from login) [server errors]`, () => {
   beforeEach(() => {
-    cy.server();
+    cy.server({ method: 'PATCH', status: 500, response: {} });
     cy.login();
   });
 
@@ -144,12 +144,7 @@ describe(`profile/update (from login) [server errors]`, () => {
   it('should render an uncaught server error', () => {
     const ErrorAPICall = 'PATCH_USER_FAIL_UNCAUGHT';
 
-    cy.route({
-      method: 'PATCH',
-      url: 'auth/profile/',
-      status: 500,
-      response: {},
-    }).as(ErrorAPICall);
+    cy.route({ url: 'auth/profile/' }).as(ErrorAPICall);
 
     cy.visitAndWaitFor('/profile/update');
 
