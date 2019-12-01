@@ -20,6 +20,7 @@ workflows:
           group: 'all tests' # name this group "all tests" on the dashboard
           start: 'yarn dev' # start server before running tests
           wait-on: http://localhost:3000 # wait until server is ready
+          no-workspace: true # no proceeding jobs; no need to save the workspace files (saves time)
           post-steps:
             - run:
                 command: |
@@ -31,8 +32,6 @@ workflows:
                 root: ~/
                 paths:
                   - project/coverage/*
-
-      - cypress_install
 
 jobs:
   build_and_test:
