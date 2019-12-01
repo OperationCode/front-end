@@ -49,8 +49,6 @@ class UpdateProfileForm extends Component {
       }
     }
 
-    console.log('errorObject', JSON.stringify(errorObject, null, 2));
-
     return getServerErrorMessage(errorObject);
   };
 
