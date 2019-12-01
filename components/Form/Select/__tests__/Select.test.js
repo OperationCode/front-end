@@ -1,8 +1,9 @@
 import React from 'react';
 import { Formik, Field } from 'formik';
+import { act, fireEvent, render, wait } from '@testing-library/react';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
-import { render, fireEvent } from '@testing-library/react';
 
+import { KEY_CODES } from 'test-utils/identifiers';
 import Form from '../../Form';
 import Select from '../Select';
 
@@ -28,6 +29,11 @@ describe('Select', () => {
       { label: 'Halal Guys', value: 'halalguys' },
     ],
   };
+
+  afterEach(() => {
+    setFieldTouched.mockReset();
+    setFieldValue.mockReset();
+  });
 
   it('should render with required props', () => {
     createSnapshotTest(<Select {...requiredProps} />);
@@ -63,7 +69,10 @@ describe('Select', () => {
       );
 
       const ReactSelect = getReactSelect(container);
-      fireEvent.blur(ReactSelect);
+
+      await act(async () => {
+        await fireEvent.blur(ReactSelect);
+      });
 
       const alert = await findByText('Required');
       expect(alert).toBeDefined();
@@ -73,12 +82,16 @@ describe('Select', () => {
       const { container } = render(<Select {...requiredProps} />);
       const ReactSelect = getReactSelect(container);
 
-      fireEvent.blur(ReactSelect);
-      fireEvent.keyDown(ReactSelect, { key: 'ArrowDown', keyCode: 40 });
-      fireEvent.keyDown(ReactSelect, { key: 'Enter', keyCode: 13 });
+      await act(async () => {
+        await fireEvent.blur(ReactSelect);
+        await fireEvent.keyDown(ReactSelect, KEY_CODES.DOWN_ARROW);
+        await fireEvent.keyDown(ReactSelect, KEY_CODES.ENTER);
+      });
 
-      expect(setFieldTouched).toHaveBeenCalledTimes(1);
-      expect(setFieldValue).toHaveBeenCalledTimes(1);
+      await wait(() => {
+        expect(setFieldTouched).toHaveBeenCalledTimes(1);
+        expect(setFieldValue).toHaveBeenCalledTimes(1);
+      });
     });
 
     it('should fire formik-related callbacks when changing multi select', async () => {
@@ -88,19 +101,23 @@ describe('Select', () => {
 
       const ReactSelect = getReactSelect(container);
 
-      // down arrow once and enter
-      fireEvent.blur(ReactSelect);
-      fireEvent.keyDown(ReactSelect, { key: 'ArrowDown', keyCode: 40 });
-      fireEvent.keyDown(ReactSelect, { key: 'Enter', keyCode: 13 });
+      await act(async () => {
+        // down arrow once and enter
+        await fireEvent.blur(ReactSelect);
+        await fireEvent.keyDown(ReactSelect, KEY_CODES.DOWN_ARROW);
+        await fireEvent.keyDown(ReactSelect, KEY_CODES.ENTER);
 
-      // down arrow twice and enter
-      fireEvent.blur(ReactSelect);
-      fireEvent.keyDown(ReactSelect, { key: 'ArrowDown', keyCode: 40 });
-      fireEvent.keyDown(ReactSelect, { key: 'ArrowDown', keyCode: 40 });
-      fireEvent.keyDown(ReactSelect, { key: 'Enter', keyCode: 13 });
+        // down arrow twice and enter
+        await fireEvent.blur(ReactSelect);
+        await fireEvent.keyDown(ReactSelect, KEY_CODES.DOWN_ARROW);
+        await fireEvent.keyDown(ReactSelect, KEY_CODES.DOWN_ARROW);
+        await fireEvent.keyDown(ReactSelect, KEY_CODES.ENTER);
+      });
 
-      expect(setFieldTouched).toHaveBeenCalledTimes(2);
-      expect(setFieldValue).toHaveBeenCalledTimes(2);
+      await wait(() => {
+        expect(setFieldTouched).toHaveBeenCalledTimes(2);
+        expect(setFieldValue).toHaveBeenCalledTimes(2);
+      });
     });
 
     it('should be able to remove multiselect options', async () => {
@@ -110,18 +127,26 @@ describe('Select', () => {
 
       const ReactSelect = getReactSelect(container);
 
-      // down arrow once and enter
-      fireEvent.blur(ReactSelect);
-      fireEvent.keyDown(ReactSelect, { key: 'ArrowDown', keyCode: 40 });
-      fireEvent.keyDown(ReactSelect, { key: 'ArrowDown', keyCode: 40 });
-      fireEvent.keyDown(ReactSelect, { key: 'Enter', keyCode: 13 });
+      await act(async () => {
+        // down arrow once and enter
+        await fireEvent.blur(ReactSelect);
+        await fireEvent.keyDown(ReactSelect, KEY_CODES.DOWN_ARROW);
+        await fireEvent.keyDown(ReactSelect, KEY_CODES.DOWN_ARROW);
+        await fireEvent.keyDown(ReactSelect, KEY_CODES.ENTER);
+      });
 
-      expect(setFieldValue).toHaveBeenCalledTimes(1);
+      await wait(() => {
+        expect(setFieldValue).toHaveBeenCalledTimes(1);
+      });
 
-      // Remove single selected value
-      fireEvent.keyDown(ReactSelect, { key: 'Backspace', keyCode: 8 });
+      await act(async () => {
+        // Remove single selected value
+        await fireEvent.keyDown(ReactSelect, KEY_CODES.BACKSPACE);
+      });
 
-      expect(setFieldValue).toHaveBeenNthCalledWith(2, 'test', []);
+      await wait(() => {
+        expect(setFieldValue).toHaveBeenNthCalledWith(2, 'test', []);
+      });
     });
   });
 });

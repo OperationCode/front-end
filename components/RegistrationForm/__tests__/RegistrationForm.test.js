@@ -1,5 +1,5 @@
 import React from 'react';
-import { wait, render, fireEvent } from '@testing-library/react';
+import { act, fireEvent, render, wait } from '@testing-library/react';
 import { networkErrorMessages, validationErrorMessages } from 'common/constants/messages';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 import mockUser from 'test-utils/mockGenerators/mockUser';
@@ -19,7 +19,9 @@ describe('RegistrationForm', () => {
   it('should display required error message when blurring past email input', async () => {
     const { getByLabelText, findByText } = render(<RegistrationForm onSuccess={jest.fn()} />);
 
-    fireEvent.blur(getByLabelText('Email*'));
+    act(() => {
+      fireEvent.blur(getByLabelText('Email*'));
+    });
 
     const errorMessage = await findByText(validationErrorMessages.required);
     expect(errorMessage).toBeDefined();
@@ -28,8 +30,10 @@ describe('RegistrationForm', () => {
   it('should show error when providing non-email to email input', async () => {
     const { getByLabelText, findByText } = render(<RegistrationForm onSuccess={jest.fn()} />);
 
-    fireEvent.change(getByLabelText('Email*'), { target: { value: 'email' } });
-    fireEvent.blur(getByLabelText('Email*'));
+    act(() => {
+      fireEvent.change(getByLabelText('Email*'), { target: { value: 'email' } });
+      fireEvent.blur(getByLabelText('Email*'));
+    });
 
     const errorMessage = await findByText(validationErrorMessages.email);
     expect(errorMessage).toBeDefined();
@@ -38,7 +42,9 @@ describe('RegistrationForm', () => {
   it('should show "password required" message when blurring past input', async () => {
     const { getByLabelText, findByText } = render(<RegistrationForm onSuccess={jest.fn()} />);
 
-    fireEvent.blur(getByLabelText('Password*'));
+    act(() => {
+      fireEvent.blur(getByLabelText('Password*'));
+    });
 
     const errorMessage = await findByText(validationErrorMessages.required);
     expect(errorMessage).toBeDefined();
@@ -49,8 +55,10 @@ describe('RegistrationForm', () => {
 
     const stringWithoutNumber = 'SillyPassword';
 
-    fireEvent.change(getByLabelText('Password*'), { target: { value: stringWithoutNumber } });
-    fireEvent.blur(getByLabelText('Password*'));
+    act(() => {
+      fireEvent.change(getByLabelText('Password*'), { target: { value: stringWithoutNumber } });
+      fireEvent.blur(getByLabelText('Password*'));
+    });
 
     const errorMessage = await findByText(validationErrorMessages.password);
     expect(errorMessage).toBeDefined();
@@ -59,11 +67,15 @@ describe('RegistrationForm', () => {
   it('should display password match message when both password inputs do not match', async () => {
     const { getByLabelText, findByText } = render(<RegistrationForm onSuccess={jest.fn()} />);
 
-    fireEvent.change(getByLabelText('Password*'), { target: { value: mockPassword() } });
-    fireEvent.blur(getByLabelText('Password*'));
+    act(() => {
+      fireEvent.change(getByLabelText('Password*'), { target: { value: mockPassword() } });
+      fireEvent.blur(getByLabelText('Password*'));
 
-    fireEvent.change(getByLabelText('Confirm Password*'), { target: { value: 'something-else' } });
-    fireEvent.blur(getByLabelText('Confirm Password*'));
+      fireEvent.change(getByLabelText('Confirm Password*'), {
+        target: { value: 'something-else' },
+      });
+      fireEvent.blur(getByLabelText('Confirm Password*'));
+    });
 
     const errorMessage = await findByText(validationErrorMessages.passwordMatch);
     expect(errorMessage).toBeDefined();
@@ -83,7 +95,9 @@ describe('RegistrationForm', () => {
     const successSpy = jest.fn();
     const { getByText } = render(<RegistrationForm onSuccess={successSpy} initialValues={user} />);
 
-    fireEvent.click(getByText('Submit'));
+    act(() => {
+      fireEvent.click(getByText('Submit'));
+    });
 
     await wait(() => {
       expect(OperationCodeAPIMock.history.post.length).toStrictEqual(1);
@@ -111,7 +125,9 @@ describe('RegistrationForm', () => {
       <RegistrationForm onSuccess={successSpy} initialValues={initialValues} />,
     );
 
-    fireEvent.click(getByText('Submit'));
+    act(() => {
+      fireEvent.click(getByText('Submit'));
+    });
 
     const submit = await findByText('Submit');
     expect(submit).not.toBeDisabled();
