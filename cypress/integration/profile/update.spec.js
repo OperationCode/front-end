@@ -17,7 +17,7 @@ const firstStepName = 'Professional Details';
 const secondStepName = 'Military Status';
 const thirdStepName = 'Military Details';
 
-describe.skip(`profile/update (unauthorized)`, () => {
+describe(`profile/update (unauthorized)`, () => {
   it(`should redirect to login if not authorized`, () => {
     // assert that route can't be reached without being authorized
     cy.visit('/profile/update');
@@ -27,7 +27,7 @@ describe.skip(`profile/update (unauthorized)`, () => {
   });
 });
 
-describe.skip(`profile/update (from login)`, () => {
+describe(`profile/update (from login)`, () => {
   beforeEach(() => {
     cy.server();
     cy.login();
