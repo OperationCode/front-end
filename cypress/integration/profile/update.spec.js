@@ -155,8 +155,8 @@ describe(`profile/update (from login) [server errors]`, () => {
   });
 
   // TODO: Get this working!
+  // @see https://github.com/cypress-io/cypress/issues/5840
   // it('should render a caught server error', () => {
-
   //   const ErrorAPICall = 'PATCH_USER_FAIL_CAUGHT';
 
   //   const error = 'Fix this shit.';
