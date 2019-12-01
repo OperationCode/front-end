@@ -1,5 +1,9 @@
+import { networkErrorMessages } from '../../../common/constants/messages';
+
+const SubmitButtonID = 'Submit Step Button';
+
 const goToNextStep = stepName => {
-  cy.findByTestId('Submit Step Button').click();
+  cy.findByTestId(SubmitButtonID).click();
   cy.wait('@patchUser');
   cy.get('h3').should('have.text', stepName);
 };
@@ -101,6 +105,45 @@ describe(`profile/update (from login)`, () => {
     // confirms that next step IS military details
     goToNextStep('Military Details');
   });
+
+  it('should render an uncaught server error', () => {
+    const ErrorAPICall = 'PATCH_USER_FAIL_UNCAUGHT';
+
+    cy.route({
+      method: 'PATCH',
+      url: 'auth/profile/',
+      status: 500,
+      response: {},
+    }).as(ErrorAPICall);
+
+    cy.findByTestId(SubmitButtonID).click();
+    cy.wait(`@${ErrorAPICall}`);
+
+    cy.queryByRole('alert').should('have.text', networkErrorMessages.serverDown);
+  });
+
+  // TODO: Get this working!
+  // it('should render a caught server error', () => {
+  //   const ErrorAPICall = 'PATCH_USER_FAIL_CAUGHT';
+
+  //   const error = 'Fix this shit.';
+
+  //   cy.route({
+  //     method: 'PATCH',
+  //     url: 'auth/profile/',
+  //     status: 500,
+  //     response: {
+  //       data: {
+  //         error,
+  //       },
+  //     },
+  //   }).as(ErrorAPICall);
+
+  //   cy.findByTestId(SubmitButtonID).click();
+  //   cy.wait(`@${ErrorAPICall}`);
+
+  //   cy.queryByRole('alert').should('have.text', error);
+  // });
 
   it(`should not allow negative in the years of service input`, () => {
     goToNextStep(secondStepName);
