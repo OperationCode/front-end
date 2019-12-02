@@ -24,6 +24,7 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
           >
             <span
               className="ScreenReaderOnly"
+              data-testid="SCREEN_READER_ONLY"
             >
               Scroll Link for 
               Sponsors
@@ -53,6 +54,7 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
           >
             <span
               className="ScreenReaderOnly"
+              data-testid="SCREEN_READER_ONLY"
             >
               Scroll Link for 
               Corporate Sponsors
@@ -82,6 +84,7 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
         >
           <span
             className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
           >
             Opens in new window
           </span>
@@ -110,6 +113,7 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
         >
           <span
             className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
           >
             Opens in new window
           </span>
@@ -138,6 +142,7 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
         >
           <span
             className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
           >
             Opens in new window
           </span>
@@ -173,6 +178,7 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
           >
             <span
               className="ScreenReaderOnly"
+              data-testid="SCREEN_READER_ONLY"
             >
               Scroll Link for 
               Corporate Supporters
@@ -202,6 +208,7 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
         >
           <span
             className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
           >
             Opens in new window
           </span>
@@ -230,6 +237,7 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
         >
           <span
             className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
           >
             Opens in new window
           </span>
@@ -258,6 +266,7 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
         >
           <span
             className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
           >
             Opens in new window
           </span>
@@ -286,6 +295,7 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
         >
           <span
             className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
           >
             Opens in new window
           </span>
@@ -314,6 +324,7 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
         >
           <span
             className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
           >
             Opens in new window
           </span>
@@ -342,6 +353,7 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
         >
           <span
             className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
           >
             Opens in new window
           </span>
@@ -370,6 +382,7 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
         >
           <span
             className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
           >
             Opens in new window
           </span>
@@ -398,6 +411,7 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
         >
           <span
             className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
           >
             Opens in new window
           </span>
@@ -444,6 +458,7 @@ exports[`SponsorsSection should render with required props 1`] = `
           >
             <span
               className="ScreenReaderOnly"
+              data-testid="SCREEN_READER_ONLY"
             >
               Scroll Link for 
               Sponsors
@@ -473,6 +488,7 @@ exports[`SponsorsSection should render with required props 1`] = `
           >
             <span
               className="ScreenReaderOnly"
+              data-testid="SCREEN_READER_ONLY"
             >
               Scroll Link for 
               Corporate Sponsors
@@ -502,6 +518,7 @@ exports[`SponsorsSection should render with required props 1`] = `
         >
           <span
             className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
           >
             Opens in new window
           </span>
@@ -530,6 +547,7 @@ exports[`SponsorsSection should render with required props 1`] = `
         >
           <span
             className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
           >
             Opens in new window
           </span>
@@ -558,6 +576,7 @@ exports[`SponsorsSection should render with required props 1`] = `
         >
           <span
             className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
           >
             Opens in new window
           </span>
@@ -593,6 +612,7 @@ exports[`SponsorsSection should render with required props 1`] = `
           >
             <span
               className="ScreenReaderOnly"
+              data-testid="SCREEN_READER_ONLY"
             >
               Scroll Link for 
               Corporate Supporters
@@ -622,6 +642,7 @@ exports[`SponsorsSection should render with required props 1`] = `
         >
           <span
             className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
           >
             Opens in new window
           </span>
@@ -650,6 +671,7 @@ exports[`SponsorsSection should render with required props 1`] = `
         >
           <span
             className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
           >
             Opens in new window
           </span>
@@ -678,6 +700,7 @@ exports[`SponsorsSection should render with required props 1`] = `
         >
           <span
             className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
           >
             Opens in new window
           </span>
@@ -706,6 +729,7 @@ exports[`SponsorsSection should render with required props 1`] = `
         >
           <span
             className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
           >
             Opens in new window
           </span>
@@ -734,6 +758,7 @@ exports[`SponsorsSection should render with required props 1`] = `
         >
           <span
             className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
           >
             Opens in new window
           </span>
@@ -762,6 +787,7 @@ exports[`SponsorsSection should render with required props 1`] = `
         >
           <span
             className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
           >
             Opens in new window
           </span>
@@ -790,6 +816,7 @@ exports[`SponsorsSection should render with required props 1`] = `
         >
           <span
             className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
           >
             Opens in new window
           </span>
@@ -818,6 +845,7 @@ exports[`SponsorsSection should render with required props 1`] = `
         >
           <span
             className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
           >
             Opens in new window
           </span>

@@ -12,6 +12,7 @@ exports[`Storyshots FeaturedJobItem default 1`] = `
   >
     <span
       className="ScreenReaderOnly"
+      data-testid="SCREEN_READER_ONLY"
     >
       Opens in new window
     </span>

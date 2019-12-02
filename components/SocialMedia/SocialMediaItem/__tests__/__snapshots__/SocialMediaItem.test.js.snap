@@ -12,11 +12,13 @@ exports[`SocialMediaItem should render with required props 1`] = `
   >
     <span
       className="ScreenReaderOnly"
+      data-testid="SCREEN_READER_ONLY"
     >
       Opens in new window
     </span>
     <span
       className="ScreenReaderOnly"
+      data-testid="SCREEN_READER_ONLY"
     >
       Operation Code's 
       Facebook

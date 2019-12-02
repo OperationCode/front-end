@@ -14,6 +14,7 @@ exports[`UpdateProfileForm/Steps/Technology should render in context of Formik 1
     >
       <label
         className="Label"
+        data-testid="LABEL"
         htmlFor="programmingLanguages"
       >
         Programming Languages That Interest You
@@ -141,6 +142,7 @@ exports[`UpdateProfileForm/Steps/Technology should render in context of Formik 1
     >
       <label
         className="Label"
+        data-testid="LABEL"
         htmlFor="disciplines"
       >
         Disciplines That Interest You

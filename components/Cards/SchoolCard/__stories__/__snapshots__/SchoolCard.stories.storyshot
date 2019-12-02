@@ -7,6 +7,7 @@ exports[`Storyshots Cards/SchoolCard with many locations 1`] = `
 >
   <span
     className="ScreenReaderOnly"
+    data-testid="SCREEN_READER_ONLY"
   >
     <h6
       data-testid="SchoolCard Name: General Assembly"
@@ -70,6 +71,7 @@ exports[`Storyshots Cards/SchoolCard with many locations 1`] = `
         >
           <span
             className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
           >
             Has 
           </span>
@@ -85,6 +87,7 @@ exports[`Storyshots Cards/SchoolCard with many locations 1`] = `
         >
           <span
             className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
           >
             Has 
           </span>
@@ -100,6 +103,7 @@ exports[`Storyshots Cards/SchoolCard with many locations 1`] = `
         >
           <span
             className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
           >
             Does not have 
           </span>
@@ -115,6 +119,7 @@ exports[`Storyshots Cards/SchoolCard with many locations 1`] = `
         >
           <span
             className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
           >
             Does not have 
           </span>
@@ -185,6 +190,7 @@ exports[`Storyshots Cards/SchoolCard with no physical locations 1`] = `
 >
   <span
     className="ScreenReaderOnly"
+    data-testid="SCREEN_READER_ONLY"
   >
     <h6
       data-testid="SchoolCard Name: Thinkful"
@@ -236,6 +242,7 @@ exports[`Storyshots Cards/SchoolCard with no physical locations 1`] = `
         >
           <span
             className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
           >
             Has 
           </span>
@@ -251,6 +258,7 @@ exports[`Storyshots Cards/SchoolCard with no physical locations 1`] = `
         >
           <span
             className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
           >
             Does not have 
           </span>
@@ -266,6 +274,7 @@ exports[`Storyshots Cards/SchoolCard with no physical locations 1`] = `
         >
           <span
             className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
           >
             Does not have 
           </span>
@@ -281,6 +290,7 @@ exports[`Storyshots Cards/SchoolCard with no physical locations 1`] = `
         >
           <span
             className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
           >
             Does not have 
           </span>
@@ -341,6 +351,7 @@ exports[`Storyshots Cards/SchoolCard with one location 1`] = `
 >
   <span
     className="ScreenReaderOnly"
+    data-testid="SCREEN_READER_ONLY"
   >
     <h6
       data-testid="SchoolCard Name: Code Immersives"
@@ -392,6 +403,7 @@ exports[`Storyshots Cards/SchoolCard with one location 1`] = `
         >
           <span
             className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
           >
             Does not have 
           </span>
@@ -407,6 +419,7 @@ exports[`Storyshots Cards/SchoolCard with one location 1`] = `
         >
           <span
             className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
           >
             Has 
           </span>
@@ -422,6 +435,7 @@ exports[`Storyshots Cards/SchoolCard with one location 1`] = `
         >
           <span
             className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
           >
             Does not have 
           </span>
@@ -437,6 +451,7 @@ exports[`Storyshots Cards/SchoolCard with one location 1`] = `
         >
           <span
             className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
           >
             Has 
           </span>

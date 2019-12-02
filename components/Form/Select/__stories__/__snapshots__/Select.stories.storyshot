@@ -17,6 +17,7 @@ Array [
   >
     <label
       className="Label"
+      data-testid="LABEL"
       htmlFor="someSelect"
     >
       Some Select:
