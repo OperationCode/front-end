@@ -2,7 +2,7 @@ import React from 'react';
 import { shape, string, number, object, objectOf, oneOfType, bool, oneOf } from 'prop-types';
 import classNames from 'classnames';
 import { ErrorMessage } from 'formik';
-import { INPUT_ERROR } from 'common/constants/testIDs';
+import { INPUT, INPUT_ERROR, INPUT_FEEDBACK_GROUPING } from 'common/constants/testIDs';
 import Alert from 'components/Alert/Alert';
 import Label from 'components/Form/Label/Label';
 import styles from './Input.css';
@@ -68,14 +68,14 @@ function Input({
   const isLabelBeforeInput = !isLabelAfterInput;
 
   return (
-    <div className={styles.field}>
+    <div className={styles.field} data-testid={INPUT}>
       {isLabelBeforeInput && (
         <Label for={name} isHidden={isLabelHidden}>
           {label}
         </Label>
       )}
 
-      <div className={styles.inputFeedbackGrouping}>
+      <div className={styles.inputFeedbackGrouping} data-testid={INPUT_FEEDBACK_GROUPING}>
         <input
           {...field}
           {...props}
