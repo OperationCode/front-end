@@ -251,10 +251,6 @@ module.exports = {
             message:
               "Please use non-default imports of `prop-types`. Example: `import { func } from 'prop-types';`",
           },
-          {
-            name: 'enzyme',
-            message: 'Please use `@testing-library/react` from now onwards.',
-          },
         ],
       },
     ],
