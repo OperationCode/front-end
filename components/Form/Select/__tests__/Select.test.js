@@ -75,7 +75,7 @@ describe('Select', () => {
       });
 
       const alert = await findByText('Required');
-      expect(alert).toBeDefined();
+      expect(alert).not.toBeNull();
     });
 
     it('should fire formik-related callbacks when changing non-multi select', async () => {
