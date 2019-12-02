@@ -154,6 +154,7 @@ exports[`Storyshots Cards/SchoolCard with many locations 1`] = `
     Multiple locations
     <button
       className="Button modalToggler primary"
+      data-testid="BUTTON"
       disabled={false}
       onClick={[Function]}
       tabIndex={0}
