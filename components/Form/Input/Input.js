@@ -2,6 +2,7 @@ import React from 'react';
 import { shape, string, number, object, objectOf, oneOfType, bool, oneOf } from 'prop-types';
 import classNames from 'classnames';
 import { ErrorMessage } from 'formik';
+import { INPUT_ERROR } from 'common/constants/testIDs';
 import Alert from 'components/Alert/Alert';
 import Label from 'components/Form/Label/Label';
 import styles from './Input.css';
@@ -92,7 +93,7 @@ function Input({
           name={name}
           render={message => {
             return hasErrors ? (
-              <Alert className={styles.errorMessage} type="error">
+              <Alert className={styles.errorMessage} data-testid={INPUT_ERROR} type="error">
                 {message}
               </Alert>
             ) : null;
