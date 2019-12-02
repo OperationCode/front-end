@@ -13,16 +13,25 @@ import Badge from 'components/Badge/Badge';
 import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
 import styles from './SchoolCard.css';
 
+export const ONLINE_ONLY = 'Online only';
+export const UNKNOWN = 'Unknown';
+export const MULTIPLE = 'Multiple locations';
+
 export const getSchoolLocationText = (hasOnlyOnline, locations) => {
-  let locationText = 'Multiple locations';
   if (hasOnlyOnline) {
-    locationText = 'Online only';
-  } else if (locations.length === 1) {
-    const [location] = locations;
-    locationText = `${location.city}, ${location.state}`;
+    return ONLINE_ONLY;
   }
 
-  return locationText;
+  if (!Array.isArray(locations)) {
+    return 'Unknown';
+  }
+
+  if (locations.length === 1) {
+    const [location] = locations;
+    return `${location.city}, ${location.state}`;
+  }
+
+  return 'Multiple locations';
 };
 
 // eslint-disable-next-line react/prop-types
