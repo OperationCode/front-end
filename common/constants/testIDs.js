@@ -4,4 +4,5 @@ export const BUTTON = 'BUTTON';
 export const CHANGE_PASSWORD_FORM_ERROR = 'CHANGE_PASSWORD_FORM_ERROR';
 export const FLAT_CARD_IMAGE = 'FLAT_CARD_IMAGE';
 export const INPUT_ERROR = 'INPUT_ERROR';
+export const LABEL = 'LABEL';
 export const SCREEN_READER_ONLY = 'SCREEN_READER_ONLY';
