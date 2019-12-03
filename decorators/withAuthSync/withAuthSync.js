@@ -3,13 +3,13 @@ import Router from 'next/router';
 import { authenticate } from 'common/utils/auth-utils';
 import getDisplayName from 'decorators/getDisplayName';
 
-const syncLogout = event => {
-  if (event.key === 'logout') {
-    Router.push('/login');
-  }
-};
-
 function useWithAuthSync() {
+  const syncLogout = event => {
+    if (event.key === 'logout') {
+      Router.push('/login');
+    }
+  };
+
   useEffect(() => {
     window.addEventListener('storage', syncLogout);
 
