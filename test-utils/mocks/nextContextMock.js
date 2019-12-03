@@ -1,28 +1,30 @@
-/* eslint-disable react/sort-comp */
+import React from 'react';
 import { any, object } from 'prop-types';
 import MockedRouter from './nextRouterMock';
 
+// Reason for this mock's existence:
 // https://github.com/zeit/next.js/issues/5205#issuecomment-422846339
 
-MockNextContext.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
-  children: any.isRequired,
-  headManager: object,
-  router: object,
-};
+export default class MockNextContext extends React.Component {
+  static propTypes = {
+    children: any.isRequired, // eslint-disable-line react/forbid-prop-types
+    headManager: object,
+    router: object,
+  };
 
-MockNextContext.defaultProps = {
-  headManager: {},
-  router: {},
-};
+  // eslint-disable-next-line react/sort-comp
+  static defaultProps = {
+    headManager: {},
+    router: {},
+  };
 
-MockNextContext.childContextTypes = {
-  headManager: object,
-  router: object,
-};
+  static childContextTypes = {
+    headManager: object,
+    router: object,
+  };
 
-export default function MockNextContext({ headManager, router }) {
-  const getChildContext = () => {
+  getChildContext() {
+    const { headManager, router } = this.props;
     return {
       headManager: {
         updateHead() {},
@@ -48,7 +50,10 @@ export default function MockNextContext({ headManager, router }) {
         ...router,
       },
     };
-  };
+  }
 
-  return getChildContext;
+  render() {
+    const { children } = this.props;
+    return children;
+  }
 }
