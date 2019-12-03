@@ -29,6 +29,7 @@ exports[`Storyshots ReusableSections DonateSection 1`] = `
           >
             <span
               className="ScreenReaderOnly"
+              data-testid="SCREEN_READER_ONLY"
             >
               Scroll Link for 
               Donate
@@ -86,6 +87,7 @@ exports[`Storyshots ReusableSections JoinSection 1`] = `
           >
             <span
               className="ScreenReaderOnly"
+              data-testid="SCREEN_READER_ONLY"
             >
               Scroll Link for 
               Join Our Thriving Community
@@ -122,6 +124,7 @@ exports[`Storyshots ReusableSections JoinSection 1`] = `
     >
       <span
         className="ScreenReaderOnly"
+        data-testid="SCREEN_READER_ONLY"
       >
         Opens in new window
       </span>
@@ -158,6 +161,7 @@ exports[`Storyshots ReusableSections SponsorsSection 1`] = `
           >
             <span
               className="ScreenReaderOnly"
+              data-testid="SCREEN_READER_ONLY"
             >
               Scroll Link for 
               Sponsors
@@ -187,6 +191,7 @@ exports[`Storyshots ReusableSections SponsorsSection 1`] = `
           >
             <span
               className="ScreenReaderOnly"
+              data-testid="SCREEN_READER_ONLY"
             >
               Scroll Link for 
               Corporate Sponsors
@@ -216,6 +221,7 @@ exports[`Storyshots ReusableSections SponsorsSection 1`] = `
         >
           <span
             className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
           >
             Opens in new window
           </span>
@@ -244,6 +250,7 @@ exports[`Storyshots ReusableSections SponsorsSection 1`] = `
         >
           <span
             className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
           >
             Opens in new window
           </span>
@@ -272,6 +279,7 @@ exports[`Storyshots ReusableSections SponsorsSection 1`] = `
         >
           <span
             className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
           >
             Opens in new window
           </span>
@@ -307,6 +315,7 @@ exports[`Storyshots ReusableSections SponsorsSection 1`] = `
           >
             <span
               className="ScreenReaderOnly"
+              data-testid="SCREEN_READER_ONLY"
             >
               Scroll Link for 
               Corporate Supporters
@@ -336,6 +345,7 @@ exports[`Storyshots ReusableSections SponsorsSection 1`] = `
         >
           <span
             className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
           >
             Opens in new window
           </span>
@@ -364,6 +374,7 @@ exports[`Storyshots ReusableSections SponsorsSection 1`] = `
         >
           <span
             className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
           >
             Opens in new window
           </span>
@@ -392,6 +403,7 @@ exports[`Storyshots ReusableSections SponsorsSection 1`] = `
         >
           <span
             className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
           >
             Opens in new window
           </span>
@@ -420,6 +432,7 @@ exports[`Storyshots ReusableSections SponsorsSection 1`] = `
         >
           <span
             className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
           >
             Opens in new window
           </span>
@@ -448,6 +461,7 @@ exports[`Storyshots ReusableSections SponsorsSection 1`] = `
         >
           <span
             className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
           >
             Opens in new window
           </span>
@@ -476,6 +490,7 @@ exports[`Storyshots ReusableSections SponsorsSection 1`] = `
         >
           <span
             className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
           >
             Opens in new window
           </span>
@@ -504,6 +519,7 @@ exports[`Storyshots ReusableSections SponsorsSection 1`] = `
         >
           <span
             className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
           >
             Opens in new window
           </span>
@@ -532,6 +548,7 @@ exports[`Storyshots ReusableSections SponsorsSection 1`] = `
         >
           <span
             className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
           >
             Opens in new window
           </span>

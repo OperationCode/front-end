@@ -20,6 +20,7 @@ exports[`UpdateProfileForm/Steps/MilitaryStatus should render in context of Form
     >
       <label
         className="Label"
+        data-testid="LABEL"
         htmlFor="militaryStatus"
       >
         Military Status*

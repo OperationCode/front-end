@@ -10,6 +10,7 @@ exports[`Storyshots CloseButton default 1`] = `
 >
   <span
     className="ScreenReaderOnly"
+    data-testid="SCREEN_READER_ONLY"
   >
     Close
   </span>

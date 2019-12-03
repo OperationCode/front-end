@@ -26,7 +26,7 @@ describe('LoginForm', () => {
       await fireEvent.blur(getByLabelText(/Email/));
     });
 
-    expect(findByText(validationErrorMessages.required)).toBeDefined();
+    expect(findByText(validationErrorMessages.required)).not.toBeNull();
   });
 
   it('should show error when providing non-email to email input', async () => {
@@ -39,7 +39,7 @@ describe('LoginForm', () => {
       await fireEvent.blur(getByLabelText(/Email/));
     });
 
-    expect(findByText(validationErrorMessages.required)).toBeDefined();
+    expect(findByText(validationErrorMessages.required)).not.toBeNull();
   });
 
   it('should show "password required" message when blurring past input', async () => {
@@ -51,7 +51,7 @@ describe('LoginForm', () => {
       await fireEvent.blur(getByLabelText(/Password/));
     });
 
-    expect(findByText(validationErrorMessages.required)).toBeDefined();
+    expect(findByText(validationErrorMessages.required)).not.toBeNull();
   });
 
   it('should submit with valid data in form', async () => {
@@ -131,7 +131,7 @@ describe('LoginForm', () => {
     });
 
     wait(() => {
-      expect(findByText(invalidError)).toBeDefined();
+      expect(findByText(invalidError)).not.toBeNull();
       expect(successSpy).not.toHaveBeenCalled();
     });
   });
@@ -156,7 +156,7 @@ describe('LoginForm', () => {
     });
 
     await wait(() => {
-      expect(findByText(networkErrorMessages.serverDown)).toBeDefined();
+      expect(findByText(networkErrorMessages.serverDown)).not.toBeNull();
       expect(successSpy).not.toHaveBeenCalled();
       expect(OperationCodeAPIMock.history.post.length).toBeGreaterThan(0);
     });

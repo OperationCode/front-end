@@ -6,6 +6,7 @@ import Button from 'components/Button/Button';
 import Form from 'components/Form/Form';
 import Input from 'components/Form/Input/Input';
 import Alert from 'components/Alert/Alert';
+import { CHANGE_PASSWORD_FORM_ERROR } from 'common/constants/testIDs';
 import { validationErrorMessages } from 'common/constants/messages';
 import { getServerErrorMessage } from 'common/utils/api-utils';
 import { minimumPasswordLength } from 'common/constants/validations';
@@ -41,7 +42,6 @@ ChangePasswordForm.defaultProps = {
  * Form component used for changing a password either during a password reset
  * or standard change password request.
  */
-
 function ChangePasswordForm({ onSubmit, onSuccess, initialValues }) {
   const [errorMessage, setErrorMessage] = useState('');
 
@@ -85,7 +85,11 @@ function ChangePasswordForm({ onSubmit, onSuccess, initialValues }) {
               autoComplete="new-password"
             />
 
-            {errorMessage && <Alert type="error">{errorMessage}</Alert>}
+            {errorMessage && (
+              <Alert data-testid={CHANGE_PASSWORD_FORM_ERROR} type="error">
+                {errorMessage}
+              </Alert>
+            )}
 
             <Button
               className={styles.topMargin}

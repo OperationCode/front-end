@@ -25,7 +25,7 @@ describe('PasswordResetForm', () => {
       fireEvent.blur(await findByLabelText(/Email/));
     });
 
-    expect(await findByText(validationErrorMessages.required)).toBeDefined();
+    expect(await findByText(validationErrorMessages.required)).not.toBeNull();
   });
 
   it('should show error when providing non-email to email input', async () => {
@@ -38,7 +38,7 @@ describe('PasswordResetForm', () => {
       fireEvent.blur(await findByLabelText(/Email/));
     });
 
-    expect(await findByText(validationErrorMessages.email)).toBeDefined();
+    expect(await findByText(validationErrorMessages.email)).not.toBeNull();
   });
 
   it('should submit with valid data in form', async () => {
@@ -84,7 +84,7 @@ describe('PasswordResetForm', () => {
       fireEvent.click(await findByText('Submit'));
     });
 
-    expect(await findByText('test error')).toBeDefined();
+    expect(await findByText('test error')).not.toBeNull();
   });
 
   it('should NOT submit with invalid data in form', async () => {

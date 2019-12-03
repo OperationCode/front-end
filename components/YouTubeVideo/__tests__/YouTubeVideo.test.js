@@ -1,5 +1,4 @@
 import React from 'react';
-import { shallow } from 'enzyme'; // eslint-disable-line no-restricted-imports
 import createShallowSnapshotTest from 'test-utils/createShallowSnapshotTest';
 
 import YouTubeVideo from '../YouTubeVideo';
@@ -15,15 +14,5 @@ describe('YouTubeVideo', () => {
         test 3
       </YouTubeVideo>,
     );
-  });
-
-  it('should call onReady function on mount', () => {
-    const mockFunc = jest.fn();
-    const event = { target: { pauseVideo: mockFunc } };
-
-    const YouTubeVideoShallowInstance = shallow(<YouTubeVideo videoId="d2L8IPJql3Q" />);
-    YouTubeVideoShallowInstance.find('YouTube').simulate('ready', event);
-
-    expect(mockFunc).toHaveBeenCalledTimes(1);
   });
 });

@@ -2,6 +2,7 @@ import React from 'react';
 import { any, bool, func, node, number, oneOf, oneOfType, string } from 'prop-types';
 import classNames from 'classnames';
 import ReactGA from 'react-ga';
+import { BUTTON } from 'common/constants/testIDs';
 import { googleAnalyticsEventPropType } from 'common/constants/custom-props';
 import { getDataAttributes, getAriaAttributes } from 'common/utils/prop-utils';
 import styles from './Button.css';
@@ -66,6 +67,7 @@ export default function Button({
         [styles.disabled]: disabled,
         [styles.fullWidth]: fullWidth,
       })}
+      data-testid={BUTTON}
       disabled={disabled}
       onClick={clickHandler}
       tabIndex={tabIndex}

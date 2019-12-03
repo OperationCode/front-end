@@ -3,6 +3,7 @@
 exports[`Storyshots Button default 1`] = `
 <button
   className="Button primary"
+  data-testid="BUTTON"
   disabled={false}
   onClick={[Function]}
   tabIndex={0}

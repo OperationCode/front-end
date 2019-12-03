@@ -13,15 +13,18 @@ exports[`RegistrationForm should render with required props 1`] = `
   <div>
     <div
       className="field"
+      data-testid="INPUT"
     >
       <label
         className="Label"
+        data-testid="LABEL"
         htmlFor="email"
       >
         Email*
       </label>
       <div
         className="inputFeedbackGrouping"
+        data-testid="INPUT_FEEDBACK_GROUPING"
       >
         <input
           autoComplete="username email"
@@ -38,15 +41,18 @@ exports[`RegistrationForm should render with required props 1`] = `
     </div>
     <div
       className="field"
+      data-testid="INPUT"
     >
       <label
         className="Label"
+        data-testid="LABEL"
         htmlFor="confirm-email"
       >
         Confirm Email*
       </label>
       <div
         className="inputFeedbackGrouping"
+        data-testid="INPUT_FEEDBACK_GROUPING"
       >
         <input
           autoComplete="username email"
@@ -63,15 +69,18 @@ exports[`RegistrationForm should render with required props 1`] = `
     </div>
     <div
       className="field"
+      data-testid="INPUT"
     >
       <label
         className="Label"
+        data-testid="LABEL"
         htmlFor="password"
       >
         Password*
       </label>
       <div
         className="inputFeedbackGrouping"
+        data-testid="INPUT_FEEDBACK_GROUPING"
       >
         <input
           autoComplete="new-password"
@@ -88,15 +97,18 @@ exports[`RegistrationForm should render with required props 1`] = `
     </div>
     <div
       className="field"
+      data-testid="INPUT"
     >
       <label
         className="Label"
+        data-testid="LABEL"
         htmlFor="confirm-password"
       >
         Confirm Password*
       </label>
       <div
         className="inputFeedbackGrouping"
+        data-testid="INPUT_FEEDBACK_GROUPING"
       >
         <input
           autoComplete="new-password"
@@ -113,15 +125,18 @@ exports[`RegistrationForm should render with required props 1`] = `
     </div>
     <div
       className="field"
+      data-testid="INPUT"
     >
       <label
         className="Label"
+        data-testid="LABEL"
         htmlFor="firstName"
       >
         First Name*
       </label>
       <div
         className="inputFeedbackGrouping"
+        data-testid="INPUT_FEEDBACK_GROUPING"
       >
         <input
           autoComplete="given-name"
@@ -138,15 +153,18 @@ exports[`RegistrationForm should render with required props 1`] = `
     </div>
     <div
       className="field"
+      data-testid="INPUT"
     >
       <label
         className="Label"
+        data-testid="LABEL"
         htmlFor="lastName"
       >
         Last Name*
       </label>
       <div
         className="inputFeedbackGrouping"
+        data-testid="INPUT_FEEDBACK_GROUPING"
       >
         <input
           autoComplete="family-name"
@@ -163,15 +181,18 @@ exports[`RegistrationForm should render with required props 1`] = `
     </div>
     <div
       className="field"
+      data-testid="INPUT"
     >
       <label
         className="Label"
+        data-testid="LABEL"
         htmlFor="zipcode"
       >
         Zipcode*
       </label>
       <div
         className="inputFeedbackGrouping"
+        data-testid="INPUT_FEEDBACK_GROUPING"
       >
         <input
           autoComplete="postal-code"
@@ -193,6 +214,7 @@ exports[`RegistrationForm should render with required props 1`] = `
   </p>
   <button
     className="Button topMargin secondary"
+    data-testid="BUTTON"
     disabled={false}
     onClick={[Function]}
     tabIndex={0}

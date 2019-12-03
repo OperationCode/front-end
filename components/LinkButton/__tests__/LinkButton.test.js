@@ -1,27 +1,30 @@
 import React from 'react';
 import ReactGA from 'react-ga';
 import noop from 'lodash/noop';
-import { mount } from 'enzyme'; // eslint-disable-line no-restricted-imports
+import { act, fireEvent, render } from '@testing-library/react';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 import LinkButton from '../LinkButton';
 
-const OutboundLinkButton = (
-  <LinkButton
-    href="https://tests.com"
-    analyticsEventLabel="Test"
-    className="test-class"
-    fullWidth
-    theme="secondary"
-  >
-    Test
-  </LinkButton>
-);
-
 describe('LinkButton', () => {
+  const requiredProps = {
+    children: 'Test',
+    href: 'https://tests.com',
+  };
+
+  const OutboundLinkButton = (
+    <LinkButton
+      {...requiredProps}
+      analyticsEventLabel="Test"
+      className="test-class"
+      fullWidth
+      theme="secondary"
+    />
+  );
+
   ReactGA.initialize('foo', { testMode: true });
 
   it('should render with required props', () => {
-    createSnapshotTest(<LinkButton href="https://tests.com">Test</LinkButton>);
+    createSnapshotTest(<LinkButton {...requiredProps} />);
   });
 
   it('should render with many props assigned', () => {
@@ -29,22 +32,33 @@ describe('LinkButton', () => {
   });
 
   it('should not create ReactGA event on click when in dev environment', () => {
-    const wrapper = mount(OutboundLinkButton);
+    const component = render(OutboundLinkButton);
 
     expect(ReactGA.testModeAPI.calls).toHaveLength(1);
-    wrapper.find('a').simulate('click');
+
+    act(() => {
+      fireEvent.click(component.container.querySelector('a'));
+    });
+
     expect(ReactGA.testModeAPI.calls).toHaveLength(1);
   });
 
   it('should create ReactGA event on click when in prod environment', () => {
+    process.env.NODE_ENV = 'production';
+
+    /* eslint-disable no-console */
     const realConsoleError = console.error;
     console.error = noop;
+    /* eslint-enable no-console */
 
-    process.env.NODE_ENV = 'production';
-    const wrapper = mount(OutboundLinkButton);
+    const component = render(OutboundLinkButton);
 
     expect(ReactGA.testModeAPI.calls).toHaveLength(1);
-    wrapper.find('a').simulate('click');
+
+    act(() => {
+      fireEvent.click(component.container.querySelector('a'));
+    });
+
     expect(ReactGA.testModeAPI.calls).toHaveLength(2);
 
     const newGAEventPayload = ReactGA.testModeAPI.calls[1][1];
@@ -52,6 +66,7 @@ describe('LinkButton', () => {
 
     ReactGA.testModeAPI.calls = [];
 
+    // eslint-disable-next-line no-console
     console.error = realConsoleError;
   });
 });
