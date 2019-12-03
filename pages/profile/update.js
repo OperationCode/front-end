@@ -5,7 +5,7 @@ import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
 import UpdateProfileForm from 'components/UpdateProfileForm/UpdateProfileForm';
-import useWithAuthSync from 'decorators/withAuthSync/withAuthSync';
+import withAuthSync from 'decorators/withAuthSync/withAuthSync';
 import { getUserPromise } from 'common/constants/api';
 
 UpdateProfile.propTypes = {
@@ -50,4 +50,4 @@ function UpdateProfile({ initialValues }) {
   );
 }
 
-export default useWithAuthSync(UpdateProfile);
+export default withAuthSync(UpdateProfile);

@@ -1,35 +1,40 @@
-import { useEffect } from 'react';
+import React from 'react';
 import Router from 'next/router';
 import { authenticate } from 'common/utils/auth-utils';
 import getDisplayName from 'decorators/getDisplayName';
 
-function useWithAuthSync() {
-  const syncLogout = event => {
-    if (event.key === 'logout') {
-      Router.push('/login');
+const withAuthSync = WrappedComponent =>
+  class extends React.Component {
+    static displayName = `withAuthSync(${getDisplayName(WrappedComponent)})`;
+
+    static async getInitialProps(ctx) {
+      const token = authenticate(ctx);
+
+      // eslint-disable-next-line unicorn/prevent-abbreviations
+      const componentProps =
+        WrappedComponent.getInitialProps && (await WrappedComponent.getInitialProps(ctx));
+
+      return { ...componentProps, token };
+    }
+
+    componentDidMount() {
+      window.addEventListener('storage', this.syncLogout);
+    }
+
+    componentWillUnmount() {
+      window.removeEventListener('storage', this.syncLogout);
+      window.localStorage.removeItem('logout');
+    }
+
+    syncLogout = event => {
+      if (event.key === 'logout') {
+        Router.push('/login');
+      }
+    };
+
+    render() {
+      return <WrappedComponent {...this.props} />;
     }
   };
 
-  useEffect(() => {
-    window.addEventListener('storage', syncLogout);
-
-    return () => {
-      window.removeEventListener('storage', syncLogout);
-      window.localStorage.removeItem('logout');
-    };
-  }, []);
-}
-
-useWithAuthSync.displayName = `withAuthSync(${getDisplayName(useWithAuthSync)})`;
-
-useWithAuthSync.getInitialProps = async ctx => {
-  const token = authenticate(ctx);
-
-  // eslint-disable-next-line unicorn/prevent-abbreviations
-  const componentProps =
-    useWithAuthSync.getInitialProps && (await useWithAuthSync.getInitialProps(ctx));
-
-  return { ...componentProps, token };
-};
-
-export default useWithAuthSync;
+export default withAuthSync;

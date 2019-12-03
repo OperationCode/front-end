@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import useWithAuthSync from 'decorators/withAuthSync/withAuthSync';
+import withAuthSync from 'decorators/withAuthSync/withAuthSync';
 import { changePassword } from 'common/constants/api';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
@@ -39,4 +39,4 @@ const ChangePassword = () => {
   );
 };
 
-export default useWithAuthSync(ChangePassword);
+export default withAuthSync(ChangePassword);

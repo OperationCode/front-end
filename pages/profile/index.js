@@ -4,7 +4,7 @@ import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
 import LinkButton from 'components/LinkButton/LinkButton';
-import useWithAuthSync from 'decorators/withAuthSync/withAuthSync';
+import withAuthSync from 'decorators/withAuthSync/withAuthSync';
 import styles from '../styles/profile.css';
 
 Profile.propTypes = {
@@ -44,4 +44,4 @@ function Profile({ firstName, lastName }) {
   );
 }
 
-export default useWithAuthSync(Profile);
+export default withAuthSync(Profile);
