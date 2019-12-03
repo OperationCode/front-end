@@ -40,7 +40,7 @@ describe('NavListItem', () => {
     const { container } = render(<NavListItem {...testDataWithSublinks} />);
 
     const ul = container.querySelector('ul');
-    expect(ul).toBeDefined();
+    expect(ul).not.toBeNull();
     expect(ul).toHaveClass('invisible');
   });
 
@@ -78,13 +78,13 @@ describe('NavListItem', () => {
     const { container, queryByTestId } = render(<NavListItem {...testDataWithSublinks} />);
 
     expect(queryByTestId('minus-icon')).toBeNull();
-    expect(queryByTestId('plus-icon')).toBeDefined();
+    expect(queryByTestId('plus-icon')).not.toBeNull();
 
     act(() => {
       fireEvent.mouseEnter(container.querySelector('button'));
     });
 
-    expect(queryByTestId('minus-icon')).toBeDefined();
+    expect(queryByTestId('minus-icon')).not.toBeNull();
     expect(queryByTestId('plus-icon')).toBeNull();
   });
 

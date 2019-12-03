@@ -18,6 +18,7 @@ exports[`Storyshots Heading default 1`] = `
       >
         <span
           className="ScreenReaderOnly"
+          data-testid="SCREEN_READER_ONLY"
         >
           Scroll Link for 
           Test Heading

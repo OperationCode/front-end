@@ -4,6 +4,7 @@ exports[`Button should render with many props assigned 1`] = `
 <button
   className="Button test-class secondary disabled fullWidth"
   data-id="test-id"
+  data-testid="BUTTON"
   disabled={true}
   onClick={[Function]}
   tabIndex={-1}
@@ -16,6 +17,7 @@ exports[`Button should render with many props assigned 1`] = `
 exports[`Button should render with required props 1`] = `
 <button
   className="Button primary"
+  data-testid="BUTTON"
   disabled={false}
   onClick={[Function]}
   tabIndex={0}

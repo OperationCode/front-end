@@ -2,8 +2,9 @@ import React from 'react';
 import { Formik, Field } from 'formik';
 import { act, fireEvent, render, wait } from '@testing-library/react';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
-
 import { KEY_CODES } from 'test-utils/identifiers';
+
+import { LABEL } from 'common/constants/testIDs';
 import Form from '../../Form';
 import Select from '../Select';
 
@@ -40,17 +41,12 @@ describe('Select', () => {
   });
 
   it('should render with label, even if hidden', () => {
-    const { container } = render(<Select {...requiredProps} isLabelHidden />);
+    const { queryAllByTestId } = render(<Select {...requiredProps} isLabelHidden />);
 
-    expect(container.querySelectorAll('label').length).toBe(1);
+    expect(queryAllByTestId(LABEL).length).toBe(1);
   });
 
   describe('interactions', () => {
-    // You'll notice that interactions with react-select are usually tested via keyboard
-    // interactions. This is only due to the difficulty enzyme has with interacting with
-    // react-select.
-    // @see https://stackoverflow.com/a/46201546/7304377
-
     it('should display an error message when a required field is touched', async () => {
       const fieldName = 'favoriteFastFood';
       const validate = () => ({ [fieldName]: 'Required' });
@@ -75,7 +71,7 @@ describe('Select', () => {
       });
 
       const alert = await findByText('Required');
-      expect(alert).toBeDefined();
+      expect(alert).not.toBeNull();
     });
 
     it('should fire formik-related callbacks when changing non-multi select', async () => {

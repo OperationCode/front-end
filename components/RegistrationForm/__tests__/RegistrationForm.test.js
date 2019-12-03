@@ -24,7 +24,7 @@ describe('RegistrationForm', () => {
     });
 
     const errorMessage = await findByText(validationErrorMessages.required);
-    expect(errorMessage).toBeDefined();
+    expect(errorMessage).not.toBeNull();
   });
 
   it('should show error when providing non-email to email input', async () => {
@@ -36,7 +36,7 @@ describe('RegistrationForm', () => {
     });
 
     const errorMessage = await findByText(validationErrorMessages.email);
-    expect(errorMessage).toBeDefined();
+    expect(errorMessage).not.toBeNull();
   });
 
   it('should show "password required" message when blurring past input', async () => {
@@ -47,7 +47,7 @@ describe('RegistrationForm', () => {
     });
 
     const errorMessage = await findByText(validationErrorMessages.required);
-    expect(errorMessage).toBeDefined();
+    expect(errorMessage).not.toBeNull();
   });
 
   it('should show "invalid password" message when focusing off an invalid password', async () => {
@@ -61,7 +61,7 @@ describe('RegistrationForm', () => {
     });
 
     const errorMessage = await findByText(validationErrorMessages.password);
-    expect(errorMessage).toBeDefined();
+    expect(errorMessage).not.toBeNull();
   });
 
   it('should display password match message when both password inputs do not match', async () => {
@@ -78,7 +78,7 @@ describe('RegistrationForm', () => {
     });
 
     const errorMessage = await findByText(validationErrorMessages.passwordMatch);
-    expect(errorMessage).toBeDefined();
+    expect(errorMessage).not.toBeNull();
   });
 
   it('should submit with valid data in form', async () => {
@@ -184,7 +184,7 @@ describe('RegistrationForm', () => {
     expect(successSpy).not.toHaveBeenCalled();
 
     const alert = await findByText('Email has been taken.');
-    expect(alert).toBeDefined();
+    expect(alert).not.toBeNull();
   });
 
   it('should show a helpful error if the server is down', async () => {
@@ -201,6 +201,6 @@ describe('RegistrationForm', () => {
     expect(successSpy).not.toHaveBeenCalled();
 
     const alert = await findByText(networkErrorMessages.serverDown);
-    expect(alert).toBeDefined();
+    expect(alert).not.toBeNull();
   });
 });

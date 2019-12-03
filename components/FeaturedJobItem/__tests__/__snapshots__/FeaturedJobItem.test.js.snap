@@ -12,6 +12,7 @@ exports[`FeaturedJobItem should render with many props assigned 1`] = `
   >
     <span
       className="ScreenReaderOnly"
+      data-testid="SCREEN_READER_ONLY"
     >
       Opens in new window
     </span>
@@ -94,6 +95,7 @@ exports[`FeaturedJobItem should render with required props 1`] = `
   >
     <span
       className="ScreenReaderOnly"
+      data-testid="SCREEN_READER_ONLY"
     >
       Opens in new window
     </span>

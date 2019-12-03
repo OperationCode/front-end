@@ -25,6 +25,7 @@ exports[`Content should render with many props assigned 1`] = `
           >
             <span
               className="ScreenReaderOnly"
+              data-testid="SCREEN_READER_ONLY"
             >
               Scroll Link for 
               Testing!

@@ -2,6 +2,7 @@ import React from 'react';
 import { element, node, shape, string } from 'prop-types';
 import classNames from 'classnames';
 import { Image } from '@innocuous/components';
+import { FLAT_CARD_IMAGE } from 'common/constants/testIDs';
 import styles from './FlatCard.css';
 
 FlatCard.propTypes = {
@@ -34,7 +35,7 @@ function FlatCard({ button: Button, children, className, header, image }) {
       <div className={styles.borderContainer}>
         {header && <div className={styles.header}>{header}</div>}
         {hasImage && (
-          <div className={styles.rowCenter}>
+          <div data-testid={FLAT_CARD_IMAGE} className={styles.rowCenter}>
             <Image className={styles.image} src={image.source} alt={image.alt} />
           </div>
         )}

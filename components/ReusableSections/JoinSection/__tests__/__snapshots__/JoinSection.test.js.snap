@@ -25,6 +25,7 @@ exports[`JoinSection should render when not logged in 1`] = `
           >
             <span
               className="ScreenReaderOnly"
+              data-testid="SCREEN_READER_ONLY"
             >
               Scroll Link for 
               Join Our Thriving Community
@@ -61,6 +62,7 @@ exports[`JoinSection should render when not logged in 1`] = `
     >
       <span
         className="ScreenReaderOnly"
+        data-testid="SCREEN_READER_ONLY"
       >
         Opens in new window
       </span>
