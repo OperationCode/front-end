@@ -56,7 +56,7 @@
     ]
   },
   "dependencies": {
-    "@babel/core": "^7.7.4",
+    "@babel/core": "^7.7.5",
     "@babel/plugin-syntax-jsx": "^7.7.4",
     "@innocuous/components": "^2.1.0",
     "@innocuous/functions": "^2.1.0",
