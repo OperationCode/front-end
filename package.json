@@ -56,12 +56,12 @@
     ]
   },
   "dependencies": {
-    "@babel/core": "^7.7.4",
+    "@babel/core": "^7.7.5",
     "@babel/plugin-syntax-jsx": "^7.7.4",
     "@innocuous/components": "^2.1.0",
     "@innocuous/functions": "^2.1.0",
     "@innocuous/next-css": "^3.0.0",
-    "@sentry/browser": "^5.9.1",
+    "@sentry/browser": "^5.10.1",
     "@storybook/addon-a11y": "3.4.11",
     "@storybook/addon-actions": "3.4.11",
     "@storybook/addon-backgrounds": "3.4.11",
@@ -85,7 +85,7 @@
     "babel-plugin-module-resolver": "^3.1.1",
     "babel-plugin-react-remove-properties": "^0.3.0",
     "classnames": "^2.2.6",
-    "css-loader": "^3.2.0",
+    "css-loader": "^3.2.1",
     "fast-xml-parser": "^3.15.0",
     "file-loader": "^5.0.2",
     "fingerprintjs2": "^2.1.0",
@@ -130,7 +130,7 @@
     "yup": "^0.27.0"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.7.4",
+    "@babel/preset-env": "^7.7.6",
     "@cypress/code-coverage": "^1.10.2",
     "@operation_code/eslint-plugin-custom-rules": "^1.0.1",
     "@testing-library/jest-dom": "^4.2.4",
