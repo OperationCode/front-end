@@ -1,6 +1,6 @@
 .link {
+  box-sizing: border-box;
   display: block;
-  margin: 1rem;
   text-decoration: none;
   width: var(--resourceCardWidth);
 
@@ -8,6 +8,7 @@
 }
 
 .ResourceCard {
+  box-sizing: border-box;
   font-family: var(--secondaryFontFamily), sans-serif;
   margin: 0; /* Override Card css so top-level element can have margin */
   padding-bottom: var(--resourceCardBottomPadding);
