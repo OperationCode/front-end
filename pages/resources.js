@@ -49,7 +49,7 @@ function ResourcesPage({ resources, currentPage, totalPages }) {
         theme="white"
         columns={[
           <section>
-            <div className={styles.resourcesWrapper}>
+            <div className={styles.grid}>
               {resources.map(resource => (
                 <ResourceCard
                   key={resource.id}
