@@ -5892,23 +5892,23 @@ css-loader@1.0.0:
     postcss-value-parser "^3.3.0"
     source-list-map "^2.0.0"
 
-css-loader@3.2.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/css-loader/-/css-loader-3.2.0.tgz#bb570d89c194f763627fcf1f80059c6832d009b2"
-  integrity sha512-QTF3Ud5H7DaZotgdcJjGMvyDj5F3Pn1j/sC6VBEOVp94cbwqyIBdcs/quzj4MC1BKQSrTpQznegH/5giYbhnCQ==
+css-loader@3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/css-loader/-/css-loader-3.3.0.tgz#65f889807baec3197313965d6cda9899f936734d"
+  integrity sha512-x9Y1vvHe5RR+4tzwFdWExPueK00uqFTCw7mZy+9aE/X1SKWOArm5luaOrtJ4d05IpOwJ6S86b/tVcIdhw1Bu4A==
   dependencies:
     camelcase "^5.3.1"
     cssesc "^3.0.0"
     icss-utils "^4.1.1"
     loader-utils "^1.2.3"
     normalize-path "^3.0.0"
-    postcss "^7.0.17"
+    postcss "^7.0.23"
     postcss-modules-extract-imports "^2.0.0"
     postcss-modules-local-by-default "^3.0.2"
-    postcss-modules-scope "^2.1.0"
+    postcss-modules-scope "^2.1.1"
     postcss-modules-values "^3.0.0"
-    postcss-value-parser "^4.0.0"
-    schema-utils "^2.0.0"
+    postcss-value-parser "^4.0.2"
+    schema-utils "^2.6.0"
 
 css-loader@^0.28.11:
   version "0.28.11"
@@ -5948,10 +5948,10 @@ css-loader@^3.2.0:
     postcss-value-parser "^4.0.2"
     schema-utils "^2.6.0"
 
-css-loader@^3.3.2:
-  version "3.3.2"
-  resolved "https://registry.yarnpkg.com/css-loader/-/css-loader-3.3.2.tgz#41b2086528aa4fbf8c0692e874bc14f081129b21"
-  integrity sha512-4XSiURS+YEK2fQhmSaM1onnUm0VKWNf6WWBYjkp9YbSDGCBTVZ5XOM6Gkxo8tLgQlzkZOBJvk9trHlDk4gjEYg==
+css-loader@^3.4.0:
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/css-loader/-/css-loader-3.4.0.tgz#9fb263436783117a41d014e45e8eaeba54dd6670"
+  integrity sha512-JornYo4RAXl1Mzt0lOSVPmArzAMV3rGY2VuwtaDc732WTWjdwTaeS19nCGWMcSCf305Q396lhhDAJEWWM0SgPQ==
   dependencies:
     camelcase "^5.3.1"
     cssesc "^3.0.0"
@@ -8654,6 +8654,14 @@ gzip-size@3.0.0:
   dependencies:
     duplexer "^0.1.1"
 
+gzip-size@5.1.1:
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/gzip-size/-/gzip-size-5.1.1.tgz#cb9bee692f87c0612b232840a873904e4c135274"
+  integrity sha512-FNHi6mmoHvs1mxZAds4PpdCS6QG8B4C1krxJsMutgxl5t3+GlRTzzI3NEkifXx2pVsOvJdOGSmIgDhQ55FwdPA==
+  dependencies:
+    duplexer "^0.1.1"
+    pify "^4.0.1"
+
 gzip-size@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/gzip-size/-/gzip-size-4.1.0.tgz#8ae096257eabe7d69c45be2b67c448124ffb517c"
@@ -10866,6 +10874,11 @@ lodash.clonedeep@4.5.0:
   resolved "https://registry.yarnpkg.com/lodash.clonedeep/-/lodash.clonedeep-4.5.0.tgz#e23f3f9c4f8fbdde872529c1071857a086e5ccef"
   integrity sha1-4j8/nE+Pvd6HJSnBBxhXoIblzO8=
 
+lodash.curry@4.1.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/lodash.curry/-/lodash.curry-4.1.1.tgz#248e36072ede906501d75966200a86dab8b23170"
+  integrity sha1-JI42By7ekGUB11lmIAqG2riyMXA=
+
 lodash.debounce@^4.0.8:
   version "4.0.8"
   resolved "https://registry.yarnpkg.com/lodash.debounce/-/lodash.debounce-4.0.8.tgz#82d79bff30a67c4005ffd5e2515300ad9ca4d7af"
@@ -11703,10 +11716,10 @@ next-tick@^1.0.0:
   resolved "https://registry.yarnpkg.com/next-tick/-/next-tick-1.0.0.tgz#ca86d1fe8828169b0120208e3dc8424b9db8342c"
   integrity sha1-yobR/ogoFpsBICCOPchCS524NCw=
 
-next@9.1.5:
-  version "9.1.5"
-  resolved "https://registry.yarnpkg.com/next/-/next-9.1.5.tgz#3163e1d36b896a73d6da3c55f3aab1a0f7bb1f26"
-  integrity sha512-iXjXbZFKi8WxRFPUOxQmpgTHRvbE0Ln7lZ8LYqqIRXvggM51SeLrgLHYBJTBGw+RVbIT6gYokNE044IKTNgEGw==
+next@9.1.6:
+  version "9.1.6"
+  resolved "https://registry.yarnpkg.com/next/-/next-9.1.6.tgz#b3ede59d9069214807d9bde7d05b42e7fabcae51"
+  integrity sha512-sqvEZBEirXQhDPOsHTLka0swKjp8KB3PmNnX9iWn5nPdOFw0/CIlfa0hFl6aAQY0bP6ucKRQqtwGY4D8mKtM2g==
   dependencies:
     "@ampproject/toolbox-optimizer" "1.1.1"
     "@babel/core" "7.7.2"
@@ -11738,7 +11751,7 @@ next@9.1.5:
     conf "5.0.0"
     content-type "1.0.4"
     cookie "0.4.0"
-    css-loader "3.2.0"
+    css-loader "3.3.0"
     cssnano-simple "1.0.0"
     devalue "2.0.1"
     etag "1.8.1"
@@ -11746,6 +11759,7 @@ next@9.1.5:
     find-up "4.0.0"
     fork-ts-checker-webpack-plugin "3.1.1"
     fresh "0.5.2"
+    gzip-size "5.1.1"
     ignore-loader "0.1.2"
     is-docker "2.0.0"
     is-wsl "2.1.1"
@@ -11753,6 +11767,7 @@ next@9.1.5:
     json5 "2.1.1"
     launch-editor "2.2.1"
     loader-utils "1.2.3"
+    lodash.curry "4.1.1"
     lru-cache "5.1.1"
     mini-css-extract-plugin "0.8.0"
     mkdirp "0.5.1"
@@ -11999,10 +12014,10 @@ nth-check@^1.0.2, nth-check@~1.0.1:
   dependencies:
     boolbase "~1.0.0"
 
-nuka-carousel@^4.5.13:
-  version "4.5.13"
-  resolved "https://registry.yarnpkg.com/nuka-carousel/-/nuka-carousel-4.5.13.tgz#a27d4ed1eca4e3ba73e70322f893092384d17fce"
-  integrity sha512-uM5FNX6zb23Cbu4ou4cBHVcyfddsfWD7ksmWiu1uXLoEMM9eSRvOVhkRcefGMqtGsq0CTwrP4F0bFS172r5gTw==
+nuka-carousel@^4.6.0:
+  version "4.6.0"
+  resolved "https://registry.yarnpkg.com/nuka-carousel/-/nuka-carousel-4.6.0.tgz#694992dd8cbcd7a29c33aef984eebf2a84844e53"
+  integrity sha512-zgGu6KKlbMpErH7xLtQWRBDZ9NsrMaPVdCWXlZ/PSabKeFUPHaAhy+lD4LeRUgXYf1qD++pQ/F2v63swpu+m8w==
   dependencies:
     csstype "^2.6.6"
     d3-ease "^1.0.3"
@@ -13347,7 +13362,7 @@ postcss-modules-scope@^1.1.0:
     css-selector-tokenizer "^0.7.0"
     postcss "^6.0.1"
 
-postcss-modules-scope@^2.1.0, postcss-modules-scope@^2.1.1:
+postcss-modules-scope@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/postcss-modules-scope/-/postcss-modules-scope-2.1.1.tgz#33d4fc946602eb5e9355c4165d68a10727689dba"
   integrity sha512-OXRUPecnHCg8b9xWvldG/jUpRIGPNRka0r4D4j0ESUU2/5IOnpsjfPPmDprM3Ih8CgZ8FXjWqaniK5v4rWt3oQ==
@@ -15413,6 +15428,11 @@ serialize-javascript@^1.7.0:
   resolved "https://registry.yarnpkg.com/serialize-javascript/-/serialize-javascript-1.7.0.tgz#d6e0dfb2a3832a8c94468e6eb1db97e55a192a65"
   integrity sha512-ke8UG8ulpFOxO8f8gRYabHQe/ZntKlcig2Mp+8+URDP1D8vJZ0KUt7LYo07q25Z/+JVSgpr/cui9PIp5H6/+nA==
 
+serialize-javascript@^2.1.2:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/serialize-javascript/-/serialize-javascript-2.1.2.tgz#ecec53b0e0317bdc95ef76ab7074b7384785fa61"
+  integrity sha512-rs9OggEUF0V4jUSecXazOYsLfu7OGK2qIn3c7IPBiffz32XniEp/TX9Xmc9LQfK2nQ2QKHvZ2oygKUGU0lG4jQ==
+
 serve-favicon@^2.4.5:
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/serve-favicon/-/serve-favicon-2.5.0.tgz#935d240cdfe0f5805307fdfe967d88942a2cbcf0"
@@ -16177,10 +16197,10 @@ style-loader@^0.20.3:
     loader-utils "^1.1.0"
     schema-utils "^0.4.5"
 
-style-loader@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/style-loader/-/style-loader-1.0.1.tgz#aec6d4c61d0ed8d0a442faed741d4dfc6573888a"
-  integrity sha512-CnpEkSR1C+REjudiTWCv4+ssP7SCiuaQZJTZDWBRwTJoS90mdqkB8uOGMHKgVeUzpaU7IfLWoyQbvvs5Joj3Xw==
+style-loader@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/style-loader/-/style-loader-1.0.2.tgz#433d72eab8d1dd7d64c648b8ad7d9cbff3184111"
+  integrity sha512-xehHGWeCPrr+R/bU82To0j7L7ENzH30RHYmMhmAumbuIpQ/bHmv3SAj1aTRfBSszkXoqNtpKnJyWXEDydS+KeA==
   dependencies:
     loader-utils "^1.2.3"
     schema-utils "^2.0.1"
@@ -16492,6 +16512,21 @@ terser-webpack-plugin@^1.4.1:
     is-wsl "^1.1.0"
     schema-utils "^1.0.0"
     serialize-javascript "^1.7.0"
+    source-map "^0.6.1"
+    terser "^4.1.2"
+    webpack-sources "^1.4.0"
+    worker-farm "^1.7.0"
+
+terser-webpack-plugin@^1.4.3:
+  version "1.4.3"
+  resolved "https://registry.yarnpkg.com/terser-webpack-plugin/-/terser-webpack-plugin-1.4.3.tgz#5ecaf2dbdc5fb99745fd06791f46fc9ddb1c9a7c"
+  integrity sha512-QMxecFz/gHQwteWwSo5nTc6UaICqN1bMedC5sMtUc7y3Ha3Q8y6ZO0iCR8pq4RJC8Hjf0FEPEHZqcMB/+DFCrA==
+  dependencies:
+    cacache "^12.0.2"
+    find-cache-dir "^2.1.0"
+    is-wsl "^1.1.0"
+    schema-utils "^1.0.0"
+    serialize-javascript "^2.1.2"
     source-map "^0.6.1"
     terser "^4.1.2"
     webpack-sources "^1.4.0"
@@ -17465,7 +17500,7 @@ webpack-sources@1.4.3, webpack-sources@^1.0.1, webpack-sources@^1.1.0, webpack-s
     source-list-map "^2.0.0"
     source-map "~0.6.1"
 
-webpack@4.41.2, webpack@^4.33.0, webpack@^4.41.2:
+webpack@4.41.2, webpack@^4.33.0:
   version "4.41.2"
   resolved "https://registry.yarnpkg.com/webpack/-/webpack-4.41.2.tgz#c34ec76daa3a8468c9b61a50336d8e3303dce74e"
   integrity sha512-Zhw69edTGfbz9/8JJoyRQ/pq8FYUoY0diOXqW0T6yhgdhCv6wr0hra5DwwWexNRns2Z2+gsnrNcbe9hbGBgk/A==
@@ -17521,6 +17556,35 @@ webpack@^3.11.0:
     watchpack "^1.4.0"
     webpack-sources "^1.0.1"
     yargs "^8.0.2"
+
+webpack@^4.41.3:
+  version "4.41.3"
+  resolved "https://registry.yarnpkg.com/webpack/-/webpack-4.41.3.tgz#cb7592c43080337dbc9be9e98fc6478eb3981026"
+  integrity sha512-EcNzP9jGoxpQAXq1VOoTet0ik7/VVU1MovIfcUSAjLowc7GhcQku/sOXALvq5nPpSei2HF6VRhibeJSC3i/Law==
+  dependencies:
+    "@webassemblyjs/ast" "1.8.5"
+    "@webassemblyjs/helper-module-context" "1.8.5"
+    "@webassemblyjs/wasm-edit" "1.8.5"
+    "@webassemblyjs/wasm-parser" "1.8.5"
+    acorn "^6.2.1"
+    ajv "^6.10.2"
+    ajv-keywords "^3.4.1"
+    chrome-trace-event "^1.0.2"
+    enhanced-resolve "^4.1.0"
+    eslint-scope "^4.0.3"
+    json-parse-better-errors "^1.0.2"
+    loader-runner "^2.4.0"
+    loader-utils "^1.2.3"
+    memory-fs "^0.4.1"
+    micromatch "^3.1.10"
+    mkdirp "^0.5.1"
+    neo-async "^2.6.1"
+    node-libs-browser "^2.2.1"
+    schema-utils "^1.0.0"
+    tapable "^1.1.3"
+    terser-webpack-plugin "^1.4.3"
+    watchpack "^1.6.0"
+    webpack-sources "^1.4.1"
 
 websocket-driver@>=0.5.1:
   version "0.7.0"
@@ -17907,10 +17971,10 @@ youtube-player@^5.5.1:
     load-script "^1.0.0"
     sister "^3.0.0"
 
-yup@^0.27.0:
-  version "0.27.0"
-  resolved "https://registry.yarnpkg.com/yup/-/yup-0.27.0.tgz#f8cb198c8e7dd2124beddc2457571329096b06e7"
-  integrity sha512-v1yFnE4+u9za42gG/b/081E7uNW9mUj3qtkmelLbW5YPROZzSH/KUUyJu9Wt8vxFJcT9otL/eZopS0YK1L5yPQ==
+yup@^0.28.0:
+  version "0.28.0"
+  resolved "https://registry.yarnpkg.com/yup/-/yup-0.28.0.tgz#fdc04d1a495465c83d3757a80c47616884baeddc"
+  integrity sha512-9ZmsB/PT6/m+oUKF8rT9lWhMMGfx5s/aNCCf8pMu/GEQA0Ro2tLOc+aX12GjfL67Vif5a3c7eZVuxGFqFScnJQ==
   dependencies:
     "@babel/runtime" "^7.0.0"
     fn-name "~2.0.1"
