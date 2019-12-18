@@ -3,7 +3,7 @@ import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
 import { Videos, Photos, CivicXBadge, Links } from 'components/Press';
-import styles from './styles/press.css';
+import styles from './styles/press.module.css';
 
 export default () => (
   <>

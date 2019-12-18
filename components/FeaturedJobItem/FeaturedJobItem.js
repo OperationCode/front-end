@@ -4,7 +4,7 @@ import OutboundLink from 'components/OutboundLink/OutboundLink';
 import BuildingIcon from 'static/images/icons/FontAwesome/building_icon.svg';
 import CloudUploadIcon from 'static/images/icons/FontAwesome/cloud_upload_icon.svg';
 import MapMarkerIcon from 'static/images/icons/FontAwesome/map_marker_icon.svg';
-import styles from './FeaturedJobItem.css';
+import styles from './FeaturedJobItem.module.css';
 
 FeaturedJobItem.propTypes = {
   title: string.isRequired,

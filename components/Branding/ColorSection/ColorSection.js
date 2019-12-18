@@ -2,7 +2,7 @@ import React from 'react';
 import { brandColorsObject } from 'common/styles/styleExports';
 import Swatch from 'components/Branding/Swatch/Swatch';
 import Content from 'components/Content/Content';
-import styles from './ColorSection.css';
+import styles from './ColorSection.module.css';
 
 function ColorSection() {
   // TODO: Name our primary and secondary colors

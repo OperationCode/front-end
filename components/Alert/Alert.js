@@ -3,7 +3,7 @@ import { func, node, oneOf, string } from 'prop-types';
 import classNames from 'classnames';
 import { ALERT, ALERT_CLOSE_BUTTON } from 'common/constants/testIDs';
 import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
-import styles from './Alert.css';
+import styles from './Alert.module.css';
 
 Alert.propTypes = {
   children: node.isRequired,

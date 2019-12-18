@@ -3,7 +3,7 @@ import { bool, node, string } from 'prop-types';
 import classNames from 'classnames';
 import { Image } from '@innocuous/components';
 import Card from 'components/Cards/Card/Card';
-import styles from './ImageCard.css';
+import styles from './ImageCard.module.css';
 
 ImageCard.propTypes = {
   alt: string.isRequired,

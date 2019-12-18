@@ -60,7 +60,6 @@
     "@babel/plugin-syntax-jsx": "^7.7.4",
     "@innocuous/components": "^2.1.0",
     "@innocuous/functions": "^2.1.0",
-    "@innocuous/next-css": "^3.0.0",
     "@sentry/browser": "^5.10.2",
     "@storybook/addon-a11y": "3.4.11",
     "@storybook/addon-actions": "3.4.11",

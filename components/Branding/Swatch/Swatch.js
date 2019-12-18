@@ -1,7 +1,7 @@
 import React from 'react';
 import { string } from 'prop-types';
 import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
-import styles from './Swatch.css';
+import styles from './Swatch.module.css';
 
 Swatch.propTypes = {
   colorName: string.isRequired,

@@ -2,7 +2,7 @@ import React from 'react';
 import { string, node, bool } from 'prop-types';
 import classNames from 'classnames';
 import Container from 'components/Container/Container';
-import styles from './HeroBanner.css';
+import styles from './HeroBanner.module.css';
 
 HeroBanner.propTypes = {
   backgroundImageSource: string,

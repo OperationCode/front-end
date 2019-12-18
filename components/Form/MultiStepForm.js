@@ -8,7 +8,7 @@ import Button from 'components/Button/Button';
 import Form from 'components/Form/Form';
 import Alert from 'components/Alert/Alert';
 import ProgressIndicator from 'components/ProgressIndicator/ProgressIndicator';
-import styles from './MultiStepForm.css';
+import styles from './MultiStepForm.module.css';
 
 MultiStepForm.propTypes = {
   // initialValues must be object where entire form's shape is described

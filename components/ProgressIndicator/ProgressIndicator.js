@@ -1,6 +1,6 @@
 import React from 'react';
 import { number } from 'prop-types';
-import styles from './ProgressIndicator.css';
+import styles from './ProgressIndicator.module.css';
 
 export const developmentErrors = {
   currentStepTooLow: '"currentStep" cannot be negative',

@@ -3,7 +3,7 @@ import { donateLink, s3 } from 'common/constants/urls';
 import Container from 'components/Container/Container';
 import LinkButton from 'components/LinkButton/LinkButton';
 import Heading from 'components/Heading/Heading';
-import styles from './DonateSection.css';
+import styles from './DonateSection.module.css';
 
 function DonateSection() {
   return (

@@ -5,7 +5,7 @@ import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
 import ChangePasswordForm from 'components/ChangePasswordForm/ChangePasswordForm';
-import styles from '../styles/password_reset.css';
+import styles from '../styles/password_reset.module.css';
 
 const ChangePassword = () => {
   const [didChange, setDidChange] = React.useState(false);

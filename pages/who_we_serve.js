@@ -11,7 +11,7 @@ import CareerServicesIcon from 'static/images/icons/Custom/career_services.svg';
 import MentorshipIcon from 'static/images/icons/Custom/mentorship.svg';
 import ScholarshipsIcon from 'static/images/icons/Custom/scholarships.svg';
 import { s3 } from 'common/constants/urls';
-import styles from './styles/who_we_serve.css';
+import styles from './styles/who_we_serve.module.css';
 
 const VISIBILITY_OFFSET = 400;
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { arrayOf, element } from 'prop-types';
-import styles from './SocialMediaContainer.css';
+import styles from './SocialMediaContainer.module.css';
 
 SocialMediaContainer.propTypes = { children: arrayOf(element).isRequired };
 

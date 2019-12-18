@@ -2,7 +2,7 @@ import React from 'react';
 import { bool, node, string } from 'prop-types';
 import classNames from 'classnames';
 import { getDataAttributes } from 'common/utils/prop-utils';
-import styles from './Card.css';
+import styles from './Card.module.css';
 
 Card.propTypes = {
   children: node.isRequired,

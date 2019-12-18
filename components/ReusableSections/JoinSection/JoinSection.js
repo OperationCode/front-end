@@ -4,7 +4,7 @@ import Container from 'components/Container/Container';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 import LinkButton from 'components/LinkButton/LinkButton';
 import Heading from 'components/Heading/Heading';
-import styles from './JoinSection.css';
+import styles from './JoinSection.module.css';
 
 export function JoinSection() {
   const isLoggedIn = hasValidAuthToken();

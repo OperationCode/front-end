@@ -1,7 +1,7 @@
 import React from 'react';
 import { string } from 'prop-types';
 import Card from 'components/Cards/Card/Card';
-import styles from './ValueCard.css';
+import styles from './ValueCard.module.css';
 
 ValueCard.propTypes = {
   name: string.isRequired,

@@ -5,7 +5,7 @@ import ReactGA from 'react-ga';
 import { BUTTON } from 'common/constants/testIDs';
 import { googleAnalyticsEventPropType } from 'common/constants/custom-props';
 import { getDataAttributes, getAriaAttributes } from 'common/utils/prop-utils';
-import styles from './Button.css';
+import styles from './Button.module.css';
 
 Button.propTypes = {
   analyticsObject: googleAnalyticsEventPropType,

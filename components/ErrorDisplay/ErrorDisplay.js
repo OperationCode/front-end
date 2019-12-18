@@ -1,7 +1,7 @@
 import React from 'react';
 import { number } from 'prop-types';
 import Head from 'components/head';
-import styles from './ErrorDisplay.css';
+import styles from './ErrorDisplay.module.css';
 
 ErrorDisplay.propTypes = { statusCode: number };
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import Content from 'components/Content/Content';
 import { fontsObject } from 'common/styles/styleExports';
-import styles from './FontSection.css';
+import styles from './FontSection.module.css';
 
 function FontSection() {
   // Every letter of the alphabet in one string

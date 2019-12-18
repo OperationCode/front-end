@@ -18,7 +18,7 @@ import BullhornIcon from 'static/images/icons/FontAwesome/bullhorn-solid.svg';
 import UserIcon from 'static/images/icons/FontAwesome/user-solid.svg';
 import DiversityIcon from 'static/images/icons/FontAwesome/users-solid.svg';
 import { donateLink, s3 } from 'common/constants/urls';
-import styles from './styles/events.css';
+import styles from './styles/events.module.css';
 
 const VISIBILITY_OFFSET = 400;
 

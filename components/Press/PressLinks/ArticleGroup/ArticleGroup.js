@@ -2,7 +2,7 @@ import React from 'react';
 import { arrayOf, number, shape, string } from 'prop-types';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 import Button from 'components/Button/Button';
-import styles from './ArticleGroup.css';
+import styles from './ArticleGroup.module.css';
 
 ArticleGroup.propTypes = {
   articles: arrayOf(

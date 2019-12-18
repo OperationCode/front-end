@@ -1,7 +1,7 @@
 import React from 'react';
 import { string } from 'prop-types';
 import { Image } from '@innocuous/components';
-import styles from './SuccessStory.css';
+import styles from './SuccessStory.module.css';
 
 SuccessStory.propTypes = {
   imageSource: string.isRequired,

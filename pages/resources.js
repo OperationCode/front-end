@@ -6,7 +6,7 @@ import HeroBanner from 'components/HeroBanner/HeroBanner';
 import ResourceCard from 'components/Cards/ResourceCard/ResourceCard';
 import Pagination from 'components/Pagination/Pagination';
 import { getResourcesPromise } from 'common/constants/api';
-import styles from './resources.css';
+import styles from './styles/resources.module.css';
 
 ResourcesPage.propTypes = {
   resources: PropTypes.arrayOf(

@@ -4,7 +4,7 @@ import Modal from 'components/Modal/Modal';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 import WarningSign from 'static/images/icons/FontAwesome/exclamation-triangle-solid.svg';
 import { s3 } from 'common/constants/urls';
-import styles from './UpgradeBrowserOverlay.css';
+import styles from './UpgradeBrowserOverlay.module.css';
 
 function UpgradeBrowserOverlay() {
   const browsers = [

@@ -3,7 +3,7 @@ import { string, func } from 'prop-types';
 import classNames from 'classnames';
 import { getServerErrorMessage } from 'common/utils/api-utils';
 import Alert from 'components/Alert/Alert';
-import styles from './SocialLoginGroup.css';
+import styles from './SocialLoginGroup.module.css';
 
 SocialLoginGroup.propTypes = {
   className: string,

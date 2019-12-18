@@ -6,7 +6,7 @@ import { getServerErrorMessage } from 'common/utils/api-utils';
 import Content from 'components/Content/Content';
 import Alert from 'components/Alert/Alert';
 import FlatCard from 'components/Cards/FlatCard/FlatCard';
-import styles from './styles/team.css';
+import styles from './styles/team.module.css';
 
 Team.propTypes = {
   boardMembers: arrayOf(object.isRequired),

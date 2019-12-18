@@ -8,7 +8,7 @@ import Input from 'components/Form/Input/Input';
 import Alert from 'components/Alert/Alert';
 import { validationErrorMessages } from 'common/constants/messages';
 import { getServerErrorMessage } from 'common/utils/api-utils';
-import styles from './PasswordResetForm.css';
+import styles from './PasswordResetForm.module.css';
 
 const passwordResetSchema = Yup.object().shape({
   email: Yup.string()

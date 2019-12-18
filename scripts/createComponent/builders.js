@@ -6,7 +6,7 @@ module.exports = {
     `import React from 'react';
 import { string, node } from 'prop-types';
 import classNames from 'classnames';
-import styles from './${componentName}.css';
+import styles from './${componentName}.module.css';
 
 ${componentName}.propTypes = {
   children: node.isRequired,

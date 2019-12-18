@@ -3,7 +3,7 @@ import { element, node, shape, string } from 'prop-types';
 import classNames from 'classnames';
 import { Image } from '@innocuous/components';
 import { FLAT_CARD_IMAGE } from 'common/constants/testIDs';
-import styles from './FlatCard.css';
+import styles from './FlatCard.module.css';
 
 FlatCard.propTypes = {
   button: element,

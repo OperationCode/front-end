@@ -1,6 +1,6 @@
 import React from 'react';
 import { number } from 'prop-types';
-import styles from './PressLinks.css';
+import styles from './PressLinks.module.css';
 import * as Articles from './Articles';
 import ArticleGroup from './ArticleGroup/ArticleGroup';
 
