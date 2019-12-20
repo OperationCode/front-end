@@ -18,6 +18,10 @@
       "dest": "/branding"
     },
     {
+      "src": "/donate",
+      "dest": "https://secure.lglforms.com/form_engine/s/BRtP7QUKyHOyEYsZROsRew"
+    },
+    {
       "src": "/privacy",
       "dest": "https://www.iubenda.com/privacy-policy/8174861"
     },
