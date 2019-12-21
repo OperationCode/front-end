@@ -3,22 +3,11 @@
   "name": "operation-code",
   "alias": ["operation-code.now.sh", "www.operationcode.org", "operationcode.org"],
   "builds": [{ "src": "package.json", "use": "@now/next@canary" }],
-  "routes": [
-    {
-      "src": "/_next/static/(?:[^/]+/pages|chunks|runtime|css|fonts)/.+",
-      "headers": { "cache-control": "max-age=31536000" }
-    },
-    {
-      "src": "^/(favicon.ico|robots.txt|manifest.json|humans.txt|sitemap.xml|sitemap.xsl)$",
-      "dest": "/$1",
-      "headers": { "cache-control": "max-age=10000 must-revalidate" }
-    },
+  "rewrites": [
     {
       "src": "/media",
       "dest": "/branding"
     },
-    { "handle": "filesystem" },
-    { "src": "/*/.*", "dest": "/_error" }
   ],
   "redirects": [
     {
@@ -28,6 +17,26 @@
     {
       "src": "/privacy",
       "dest": "https://www.iubenda.com/privacy-policy/8174861"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/_next/static/(?:[^/]+/pages|chunks|runtime|css|fonts)/.+",
+      "headers": [
+        {
+          "key": "cache-control",
+          "value": "max-age=31536000"
+        }
+      ]
+    },
+    {
+      "source": "^/(favicon.ico|robots.txt|manifest.json|humans.txt|sitemap.xml|sitemap.xsl)",
+      "headers" : [
+        {
+          "key" : "Cache-Control",
+          "value" : "public, max-age=0, must-revalidate"
+        }
+      ]
     }
   ],
   "public": true
