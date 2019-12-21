@@ -5,18 +5,18 @@
   "builds": [{ "src": "package.json", "use": "@now/next@canary" }],
   "rewrites": [
     {
-      "src": "/media",
-      "dest": "/branding"
+      "source": "/media",
+      "destination": "/branding"
     },
   ],
   "redirects": [
     {
-      "src": "/donate",
-      "dest": "https://secure.lglforms.com/form_engine/s/BRtP7QUKyHOyEYsZROsRew"
+      "source": "/donate",
+      "destination": "https://secure.lglforms.com/form_engine/s/BRtP7QUKyHOyEYsZROsRew"
     },
     {
-      "src": "/privacy",
-      "dest": "https://www.iubenda.com/privacy-policy/8174861"
+      "source": "/privacy",
+      "destination": "https://www.iubenda.com/privacy-policy/8174861"
     }
   ],
   "headers": [
