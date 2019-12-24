@@ -7,7 +7,7 @@
     {
       "source": "/media",
       "destination": "/branding"
-    },
+    }
   ],
   "redirects": [
     {
