@@ -72,7 +72,7 @@
     "@storybook/addon-viewport": "3.4.11",
     "@storybook/addons": "3.4.11",
     "@storybook/react": "3.4.11",
-    "@svgr/webpack": "^4.3.3",
+    "@svgr/webpack": "^5.0.1",
     "@testing-library/cypress": "^5.0.2",
     "@zeit/next-bundle-analyzer": "^0.1.2",
     "@zeit/next-css": "^1.0.1",
