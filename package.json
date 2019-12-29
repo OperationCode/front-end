@@ -158,7 +158,7 @@
     "faker": "^4.1.0",
     "husky": "3.1.0",
     "identity-obj-proxy": "^3.0.0",
-    "istanbul-lib-coverage": "^2.0.5",
+    "istanbul-lib-coverage": "^3.0.0",
     "jest": "^24.9.0",
     "jest-prop-type-error": "^1.1.0",
     "lint-staged": "^9.5.0",
