@@ -56,7 +56,7 @@
     ]
   },
   "dependencies": {
-    "@babel/core": "^7.7.5",
+    "@babel/core": "^7.7.7",
     "@babel/plugin-syntax-jsx": "^7.7.4",
     "@innocuous/components": "^2.1.0",
     "@innocuous/functions": "^2.1.0",
@@ -123,13 +123,13 @@
     "react-select": "^3.0.8",
     "react-youtube": "^7.8.0",
     "reselect": "^4.0.0",
-    "style-loader": "^1.0.2",
+    "style-loader": "^1.1.1",
     "url-loader": "^3.0.0",
-    "webpack": "^4.41.3",
+    "webpack": "^4.41.4",
     "yup": "^0.28.0"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.7.6",
+    "@babel/preset-env": "^7.7.7",
     "@cypress/code-coverage": "^1.10.4",
     "@operation_code/eslint-plugin-custom-rules": "^1.0.1",
     "@testing-library/jest-dom": "^4.2.4",
@@ -143,10 +143,10 @@
     "cypress": "3.8.0",
     "cypress-image-snapshot": "^3.1.1",
     "cypress-plugin-retries": "^1.5.0",
-    "eslint": "6.7.2",
+    "eslint": "6.8.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-config-prettier": "^6.7.0",
-    "eslint-plugin-cypress": "^2.8.0",
+    "eslint-plugin-cypress": "^2.8.1",
     "eslint-plugin-import": "^2.19.1",
     "eslint-plugin-jest": "^23.1.1",
     "eslint-plugin-jsx-a11y": "^6.2.3",
