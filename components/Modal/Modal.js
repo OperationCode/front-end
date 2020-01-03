@@ -37,7 +37,8 @@ function Modal({
 
   return (
     <ReactModal
-      className={classNames(CardStyles.Card, ModalStyles.ModalCard, className)}
+      portalClassName={ModalStyles.Modal}
+      className={classNames(CardStyles.Card, className)}
       contentLabel={screenReaderLabel}
       isOpen={isOpen}
       onRequestClose={onRequestClose}
