@@ -85,7 +85,7 @@
     "babel-plugin-module-resolver": "^4.0.0",
     "babel-plugin-react-remove-properties": "^0.3.0",
     "classnames": "^2.2.6",
-    "css-loader": "^3.4.0",
+    "css-loader": "^3.4.1",
     "fast-xml-parser": "^3.15.1",
     "file-loader": "^5.0.2",
     "fingerprintjs2": "^2.1.0",
