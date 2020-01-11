@@ -147,7 +147,7 @@ if (isProduction) {
 // Fixes Next CSS route change bug: https://github.com/zeit/next-plugins/issues/282
 if (!isProduction) {
   Router.events.on('routeChangeComplete', () => {
-    const path = '/_next/static/chunks/styles.chunk.css';
+    const path = '/_next/static/chunks/styles.chunk.module.css';
     const chunksSelector = `link[href*="${path}"]:not([rel=preload])`;
     const chunksNodes = document.querySelectorAll(chunksSelector);
     if (chunksNodes.length) {

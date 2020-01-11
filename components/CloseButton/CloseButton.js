@@ -3,7 +3,7 @@ import { bool, func, oneOf } from 'prop-types';
 import classNames from 'classnames';
 import PlusIcon from 'static/images/icons/plus.svg';
 import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
-import styles from './CloseButton.css';
+import styles from './CloseButton.module.css';
 
 CloseButton.propTypes = {
   disabled: bool,

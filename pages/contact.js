@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
-import styles from './styles/contact.css';
+import styles from './styles/contact.module.css';
 
 export default () => (
   <>

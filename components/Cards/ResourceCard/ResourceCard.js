@@ -6,7 +6,7 @@ import OutboundLink from 'components/OutboundLink/OutboundLink';
 import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
 import ThumbsUp from 'static/images/icons/FontAwesome/thumbs-up.svg';
 import ThumbsDown from 'static/images/icons/FontAwesome/thumbs-down.svg';
-import styles from './ResourceCard.css';
+import styles from './ResourceCard.module.css';
 
 export const possibleUserVotes = {
   upvote: 'upvote',

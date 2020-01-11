@@ -3,7 +3,7 @@ import Container from 'components/Container/Container';
 import Heading from 'components/Heading/Heading';
 import PartnerLogoLink from 'components/PartnerLogoLink/PartnerLogoLink';
 import partners, { PARTNER_TYPES } from 'common/constants/partners';
-import styles from './SponsorsSection.css';
+import styles from './SponsorsSection.module.css';
 
 const isPaidSponsor = partner => partner.type === PARTNER_TYPES.PAID;
 

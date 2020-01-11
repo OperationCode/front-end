@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { arrayOf, bool, shape, string } from 'prop-types';
 import PlusIcon from 'static/images/icons/plus.svg';
 import MinusIcon from 'static/images/icons/minus.svg';
-import styles from './NavListItem.css';
+import styles from './NavListItem.module.css';
 
 NavListItem.propTypes = {
   href: string.isRequired,

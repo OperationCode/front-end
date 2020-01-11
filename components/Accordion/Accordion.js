@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { node, number, string, oneOfType } from 'prop-types';
 import classNames from 'classnames';
-import styles from './Accordion.css';
+import styles from './Accordion.module.css';
 
 Accordion.propTypes = {
   // required for joining elements together with aria attributes

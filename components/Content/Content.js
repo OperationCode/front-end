@@ -2,7 +2,7 @@ import React from 'react';
 import { array, bool, oneOf, string } from 'prop-types';
 import Container from 'components/Container/Container';
 import Heading from 'components/Heading/Heading';
-import styles from './Content.css';
+import styles from './Content.module.css';
 
 Content.propTypes = {
   backgroundImageSource: string,
