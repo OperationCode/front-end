@@ -14,7 +14,7 @@ import { ErrorMessage } from 'formik';
 import Alert from 'components/Alert/Alert';
 import Label from 'components/Form/Label/Label';
 import ThemedReactSelect from './ThemedReactSelect';
-import styles from './Select.css';
+import styles from './Select.module.css';
 
 Select.propTypes = {
   field: shape({

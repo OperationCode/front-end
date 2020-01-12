@@ -1,5 +1,8 @@
 const svgoConfig = require('../common/config/svgo');
-const postCSSConfig = require('../postcss.config');
+const autoPrefixer = require('autoprefixer');
+const postcssImport = require('postcss-import');
+const postcssCustomMedia = require('postcss-custom-media');
+const postcssPrependImports = require('postcss-prepend-imports');
 
 // Export a function. Accept the base config as the only param.
 module.exports = (storybookBaseConfig, configType) => {
@@ -24,15 +27,15 @@ module.exports = (storybookBaseConfig, configType) => {
         {
           loader: 'postcss-loader',
           options: {
+            // Keep in sync with PostCSS.config.js
             plugins: [
-              // Use PostCSS.config.js, but also use `postcss-export-custom-variables` plugin
-              ...postCSSConfig({
-                file: {
-                  dirname: '../',
-                },
-                options: storybookBaseConfig,
-                env: configType.toLowerCase(),
-              }).plugins,
+              postcssPrependImports({
+                path: 'common/styles',
+                files: ['media-queries.css'],
+              }),
+              postcssImport(),
+              autoPrefixer(),
+              postcssCustomMedia(),
               require('postcss-export-custom-variables')({
                 exporter: 'js',
                 destination: 'common/styles/themeMap.js',

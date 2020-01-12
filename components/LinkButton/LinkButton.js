@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { string, node, bool, oneOf } from 'prop-types';
 import Link from 'next/link';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
-import styles from 'components/Button/Button.css';
+import styles from 'components/Button/Button.module.css';
 
 LinkButton.propTypes = {
   // Only pass analytics event label if you're href is to an external website

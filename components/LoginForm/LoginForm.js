@@ -8,7 +8,7 @@ import Button from 'components/Button/Button';
 import Form from 'components/Form/Form';
 import Input from 'components/Form/Input/Input';
 import Alert from 'components/Alert/Alert';
-import styles from './LoginForm.css';
+import styles from './LoginForm.module.css';
 
 /*
  * NOTE: We're repeating hardcode between the registration schema and passing an asterisk

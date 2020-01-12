@@ -3,7 +3,7 @@ import { string, oneOf } from 'prop-types';
 import classNames from 'classnames';
 import { Image } from '@innocuous/components';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
-import styles from './PartnerLogoLink.css';
+import styles from './PartnerLogoLink.module.css';
 
 PartnerLogoLink.propTypes = {
   logoSource: string.isRequired,

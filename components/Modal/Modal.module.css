@@ -1,4 +1,4 @@
-.ModalCard {
+.Modal {
   position: relative;
 }
 
@@ -11,18 +11,18 @@
 /* React-Modal Overrides
  * Remove scroll on the body when react-modal is open */
 /* stylelint-disable */
-:global(.ReactModal__Html--open),
-:global(.ReactModal__Body--open) {
+.Modal :global(.ReactModal__Html--open),
+.Modal :global(.ReactModal__Body--open) {
   height: 100%;
   overflow: hidden;
 }
 
-:global(.ReactModal__Overlay) {
+.Modal :global(.ReactModal__Overlay) {
   align-items: center;
   display: flex;
   justify-content: center;
 }
 
-:global(.ReactModal__Content) {
+.Modal :global(.ReactModal__Content) {
   width: 80%;
 }
