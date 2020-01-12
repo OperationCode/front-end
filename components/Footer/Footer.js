@@ -5,7 +5,7 @@ import OutboundLink from 'components/OutboundLink/OutboundLink';
 import SocialMedia from 'components/SocialMedia/SocialMedia';
 import { footerItems } from 'common/constants/navigation';
 import { s3 } from 'common/constants/urls';
-import styles from './Footer.css';
+import styles from './Footer.module.css';
 
 function Footer() {
   const currentYear = new Date().getFullYear();

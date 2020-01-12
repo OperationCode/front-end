@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 import React from 'react';
 import historyData from './historyData';
-import styles from './Timeline.css';
+import styles from './Timeline.module.css';
 import TimelineEvent from './TimelineEvent/TimelineEvent';
 
 function Timeline() {

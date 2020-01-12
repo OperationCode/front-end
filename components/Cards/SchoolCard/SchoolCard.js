@@ -11,7 +11,7 @@ import LinkButton from 'components/LinkButton/LinkButton';
 import Button from 'components/Button/Button';
 import Badge from 'components/Badge/Badge';
 import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
-import styles from './SchoolCard.css';
+import styles from './SchoolCard.module.css';
 
 export const ONLINE_ONLY = 'Online only';
 export const UNKNOWN = 'Unknown';
