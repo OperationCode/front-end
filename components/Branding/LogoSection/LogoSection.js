@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import Badge from 'components/Badge/Badge';
 import Content from 'components/Content/Content';
 import { s3 } from 'common/constants/urls';
-import styles from './LogoSection.css';
+import styles from './LogoSection.module.css';
 
 function LogoSection() {
   return (

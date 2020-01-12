@@ -2,7 +2,7 @@ import React from 'react';
 import { node, string } from 'prop-types';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
-import styles from './SocialMediaItem.css';
+import styles from './SocialMediaItem.module.css';
 
 SocialMediaItem.propTypes = {
   name: string.isRequired,

@@ -11,7 +11,7 @@ import { validationErrorMessages } from 'common/constants/messages';
 import { getServerErrorMessage } from 'common/utils/api-utils';
 import { minimumPasswordLength } from 'common/constants/validations';
 import { isMinPasswordStrength } from 'common/utils/validator-utils';
-import styles from './ChangePasswordForm.css';
+import styles from './ChangePasswordForm.module.css';
 
 const passwordResetSubmitSchema = Yup.object().shape({
   newPassword1: Yup.string()

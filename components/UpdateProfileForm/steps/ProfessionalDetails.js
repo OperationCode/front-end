@@ -6,7 +6,7 @@ import { updateUser } from 'common/constants/api';
 import { validationErrorMessages } from 'common/constants/messages';
 import Input from 'components/Form/Input/Input';
 import Select from 'components/Form/Select/Select';
-import styles from './_steps.css';
+import styles from './_steps.module.css';
 
 ProfessionalDetails.propTypes = {
   isSubmitting: bool,

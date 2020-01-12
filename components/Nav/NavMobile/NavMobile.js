@@ -6,7 +6,7 @@ import { donateLink, s3 } from 'common/constants/urls';
 import HamburgerIcon from 'static/images/icons/hamburger.svg';
 import CloseButton from 'components/CloseButton/CloseButton';
 import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
-import styles from './NavMobile.css';
+import styles from './NavMobile.module.css';
 
 NavMobile.propTypes = {
   isOpen: bool.isRequired,

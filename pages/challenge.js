@@ -4,7 +4,7 @@ import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 import challengers from 'static/operationcode_challenge/names';
-import styles from './styles/challenge.css';
+import styles from './styles/challenge.module.css';
 
 const RepoLink = 'https://github.com/OperationCode/front-end/';
 const ChallengeLink = `${RepoLink}blob/master/pages/challenge.js`;

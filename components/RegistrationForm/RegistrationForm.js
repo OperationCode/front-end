@@ -12,7 +12,7 @@ import Button from 'components/Button/Button';
 import Form from 'components/Form/Form';
 import Input from 'components/Form/Input/Input';
 import Alert from 'components/Alert/Alert';
-import styles from './RegistrationForm.css';
+import styles from './RegistrationForm.module.css';
 
 const registrationSchema = Yup.object().shape({
   email: Yup.string()

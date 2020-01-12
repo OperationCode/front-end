@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-scroll';
 import historyData from '../historyData';
-import styles from './TimelineNav.css';
+import styles from './TimelineNav.module.css';
 
 const TimelineNav = () => {
   return (

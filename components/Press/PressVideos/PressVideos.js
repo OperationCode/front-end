@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './PressVideos.css';
+import styles from './PressVideos.module.css';
 
 function PressVideos() {
   return (

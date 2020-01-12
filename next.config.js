@@ -1,20 +1,13 @@
-const withCSS = require('@innocuous/next-css');
 const withSourceMaps = require('@zeit/next-source-maps')();
 const withBundleAnalyzer = require('@zeit/next-bundle-analyzer');
 const svgoConfig = require('./common/config/svgo');
 
-const nextConfig = withCSS({
+const nextConfig = withBundleAnalyzer({
   // For now.sh
   // see: https://zeit.co/guides/deploying-nextjs-with-now/
   target: 'serverless',
 
-  // NextCSS Config
-  cssModules: true,
-  cssLoaderOptions: {
-    modules: {
-      localIdentName: '[name]_[local]__[hash:base64:5]',
-    },
-  },
+  experimental: { css: true },
 
   // Bundle Analyzer Config (only used when running `yarn build:analyze`)
   analyzeServer: process.env.ANALYZE,
@@ -102,4 +95,4 @@ const nextConfig = withCSS({
   },
 });
 
-module.exports = withSourceMaps(withBundleAnalyzer(nextConfig));
+module.exports = withSourceMaps(nextConfig);

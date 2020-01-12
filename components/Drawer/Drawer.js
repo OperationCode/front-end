@@ -1,7 +1,7 @@
 import React from 'react';
 import { node, string, bool } from 'prop-types';
 import classNames from 'classnames';
-import styles from './Drawer.css';
+import styles from './Drawer.module.css';
 
 Drawer.propTypes = {
   children: node.isRequired,

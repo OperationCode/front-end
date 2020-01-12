@@ -12,7 +12,7 @@ import {
 import NavListItem from 'components/Nav/NavListItem/NavListItem';
 import NavMobile from 'components/Nav/NavMobile/NavMobile';
 import { hasValidAuthToken } from 'common/utils/cookie-utils';
-import styles from './Nav.css';
+import styles from './Nav.module.css';
 
 export const Nav = () => {
   const [isMobileNavOpen, setMobileNavOpen] = useState(false);

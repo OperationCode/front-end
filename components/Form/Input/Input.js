@@ -5,7 +5,7 @@ import { ErrorMessage } from 'formik';
 import { INPUT, INPUT_ERROR, INPUT_FEEDBACK_GROUPING } from 'common/constants/testIDs';
 import Alert from 'components/Alert/Alert';
 import Label from 'components/Form/Label/Label';
-import styles from './Input.css';
+import styles from './Input.module.css';
 
 Input.propTypes = {
   field: shape({
