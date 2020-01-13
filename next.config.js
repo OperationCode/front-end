@@ -7,8 +7,6 @@ const nextConfig = withBundleAnalyzer({
   // see: https://zeit.co/guides/deploying-nextjs-with-now/
   target: 'serverless',
 
-  experimental: { css: true },
-
   // Bundle Analyzer Config (only used when running `yarn build:analyze`)
   analyzeServer: process.env.ANALYZE,
   analyzeBrowser: process.env.ANALYZE,
