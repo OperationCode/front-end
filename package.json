@@ -29,24 +29,6 @@
     "test:watch": "yarn test --watch",
     "test:update-snaps": "yarn test -u"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn lint-staged",
-      "pre-push": "yarn test:changes"
-    }
-  },
-  "lint-staged": {
-    "*.js": [
-      "prettier --write",
-      "eslint --fix",
-      "git add"
-    ],
-    "*.css": [
-      "prettier --write",
-      "stylelint --fix",
-      "git add"
-    ]
-  },
   "nyc": {
     "extends": "./nyc.config.js",
     "report-dir": "cypress-coverage",
