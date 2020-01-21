@@ -6,6 +6,10 @@
     {
       "source": "/media",
       "destination": "/branding"
+    },
+    {
+      "source": "/resources",
+      "destination": "/resources/1"
     }
   ],
   "redirects": [
@@ -30,10 +34,10 @@
     },
     {
       "source": "^/(favicon.ico|robots.txt|manifest.json|humans.txt|sitemap.xml|sitemap.xsl)",
-      "headers" : [
+      "headers": [
         {
-          "key" : "Cache-Control",
-          "value" : "public, max-age=0, must-revalidate"
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
         }
       ]
     }
