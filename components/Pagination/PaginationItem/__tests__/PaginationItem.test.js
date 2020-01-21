@@ -5,21 +5,31 @@ import createSnapshotTest from 'test-utils/createSnapshotTest';
 import PaginationItem from '../PaginationItem';
 
 describe('PaginationItem', () => {
+  const requiredProps = {
+    children: '1',
+    pathname: '/resources/[page]',
+    testId: 'test',
+  };
+
   afterEach(cleanup);
 
-  it('should render with required props', () => {
-    createSnapshotTest(<PaginationItem value="1" testId="1" />);
+  it('renders with required props', () => {
+    createSnapshotTest(<PaginationItem {...requiredProps} />);
   });
 
-  it('should have class current when isCurrent prop is true', () => {
-    const { queryByTestId } = render(<PaginationItem value="1" isCurrent testId="1" />);
-
-    expect(queryByTestId('Pagination Item - 1')).toHaveClass('current');
+  it('renders correctly as a current item with value', () => {
+    createSnapshotTest(<PaginationItem {...requiredProps} value={1} isCurrent />);
   });
 
-  it('should have class notClickable when isClickable prop is false', () => {
-    const { queryByTestId } = render(<PaginationItem value="1" isClickable={false} testId="1" />);
+  it('should be marked as current if current', () => {
+    const { queryByTestId } = render(<PaginationItem {...requiredProps} value={1} isCurrent />);
 
-    expect(queryByTestId('Pagination Item - 1')).toHaveClass('notClickable');
+    expect(queryByTestId(requiredProps.testId)).toHaveClass('current');
+  });
+
+  it('is not clickable when value is undefined', () => {
+    const { queryByTestId } = render(<PaginationItem {...requiredProps} />);
+
+    expect(queryByTestId(requiredProps.testId)).toHaveClass('notClickable');
   });
 });

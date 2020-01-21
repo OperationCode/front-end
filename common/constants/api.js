@@ -7,11 +7,19 @@ export const getCodeSchoolsPromise = () => get('api/v1/codeschools/');
 export const getTeamMembersPromise = () => get('api/v1/teamMembers/');
 
 /* Resources API */
-export const getResourcesPromise = ({ page = 1 }) => {
-  const parameters = {
-    page,
-  };
-  return get('api/v1/resources/', { parameters }, ResourcesAPI);
+export const getResourcesPromise = parameters => {
+  const { page = 1 } = parameters;
+
+  return get(
+    'api/v1/resources/',
+    {
+      parameters: {
+        ...parameters,
+        page,
+      },
+    },
+    ResourcesAPI,
+  );
 };
 
 /* POST REQUESTS */

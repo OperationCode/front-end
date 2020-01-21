@@ -21,5 +21,31 @@
 }
 
 .notClickable {
+  opacity: 0.8;
   cursor: default;
+}
+
+.unstyledLink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  appearance: none;
+  background-color: inherit;
+  font-size: inherit;
+  color: inherit;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.unstyledLink:focus {
+  border: 2px dashed var(--primary);
+  outline: none;
+}
+
+.unstyledLink:hover {
+  cursor: pointer;
 }

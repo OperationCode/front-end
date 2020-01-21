@@ -5,45 +5,63 @@ import createSnapshotTest from 'test-utils/createSnapshotTest';
 import Pagination, { developmentErrors } from '../Pagination';
 
 describe('Pagination', () => {
+  const requiredProps = {
+    currentPage: 1,
+    totalPages: 20,
+    pathname: '/resources/[page]',
+  };
+
   afterEach(cleanup);
 
   it('should render with required props', () => {
-    createSnapshotTest(<Pagination currentPage={3} totalPages={5} />);
+    createSnapshotTest(<Pagination {...requiredProps} />);
   });
 
-  it('should not have a seperator at start if not needed', () => {
-    const { queryByTestId } = render(<Pagination currentPage={6} totalPages={11} />);
+  it('should not have a separator at start if not needed', () => {
+    const { queryByTestId } = render(
+      <Pagination {...requiredProps} currentPage={6} totalPages={11} />,
+    );
 
-    expect(queryByTestId('Pagination Item - seperatorStart')).not.toBeInTheDocument();
+    expect(queryByTestId('Pagination Item - separatorStart')).not.toBeInTheDocument();
   });
 
-  it('should not have a seperator at end if not needed', () => {
-    const { queryByTestId } = render(<Pagination currentPage={6} totalPages={11} />);
+  it('should not have a separator at end if not needed', () => {
+    const { queryByTestId } = render(
+      <Pagination {...requiredProps} currentPage={6} totalPages={11} />,
+    );
 
-    expect(queryByTestId('Pagination Item - seperatorEnd')).not.toBeInTheDocument();
+    expect(queryByTestId('Pagination Item - separatorEnd')).not.toBeInTheDocument();
   });
 
-  it('should have a seperator at start if needed', () => {
-    const { queryByTestId } = render(<Pagination currentPage={7} totalPages={11} />);
+  it('should have a separator at start if needed', () => {
+    const { queryByTestId } = render(
+      <Pagination {...requiredProps} currentPage={7} totalPages={11} />,
+    );
 
-    expect(queryByTestId('Pagination Item - seperatorStart')).toBeInTheDocument();
+    expect(queryByTestId('separatorStart')).toBeInTheDocument();
   });
 
-  it('should have a seperator at end if needed', () => {
-    const { queryByTestId } = render(<Pagination currentPage={5} totalPages={11} />);
+  it('should have a separator at end if needed', () => {
+    const { queryByTestId } = render(
+      <Pagination {...requiredProps} currentPage={5} totalPages={11} />,
+    );
 
-    expect(queryByTestId('Pagination Item - seperatorEnd')).toBeInTheDocument();
+    expect(queryByTestId('separatorEnd')).toBeInTheDocument();
   });
 
   it('should throw an error if given value of currentPage is less than 1', () => {
-    expect(() => Pagination({ currentPage: 0, totalPages: 5 })).toThrow(
-      developmentErrors.currentPageTooSmall,
-    );
+    /* eslint-disable function-paren-newline */
+    expect(() =>
+      Pagination({ currentPage: 0, totalPages: 5, pathname: requiredProps.pathname }),
+    ).toThrow(developmentErrors.currentPageTooSmall);
+    /* eslint-enable function-paren-newline */
   });
 
   it('should throw an error if given value of currentPage is greater than totalPages', () => {
-    expect(() => Pagination({ currentPage: 6, totalPages: 5 })).toThrow(
-      developmentErrors.currentPageTooBig,
-    );
+    /* eslint-disable function-paren-newline */
+    expect(() =>
+      Pagination({ currentPage: 6, totalPages: 5, pathname: requiredProps.pathname }),
+    ).toThrow(developmentErrors.currentPageTooBig);
   });
+  /* eslint-enable function-paren-newline */
 });
