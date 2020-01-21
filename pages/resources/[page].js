@@ -2,13 +2,14 @@ import PropTypes from 'prop-types';
 import Content from 'components/Content/Content';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
-
 import ResourceCard from 'components/Cards/ResourceCard/ResourceCard';
 import Pagination from 'components/Pagination/Pagination';
 import { getResourcesPromise } from 'common/constants/api';
-import styles from './styles/resources.module.css';
+import styles from '../styles/resources.module.css';
 
 ResourcesPage.propTypes = {
+  currentPage: PropTypes.number.isRequired,
+  pathname: PropTypes.string.isRequired,
   resources: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number, // integer, unique ID
@@ -18,29 +19,26 @@ ResourcesPage.propTypes = {
       upvotes: PropTypes.number,
       downvotes: PropTypes.number,
     }),
-  ),
-  currentPage: PropTypes.number,
-  totalPages: PropTypes.number,
+  ).isRequired,
+  totalPages: PropTypes.number.isRequired,
 };
 
-ResourcesPage.defaultProps = {
-  resources: [],
-  currentPage: 1, // 1 indexed
-  totalPages: 1,
-};
+ResourcesPage.getInitialProps = async ({ pathname, query }) => {
+  const { page = 1 } = query;
 
-ResourcesPage.getInitialProps = async () => {
-  const page = 1;
-  const response = await getResourcesPromise(page);
+  const response = await getResourcesPromise({ page });
+
   const { data: resources, number_of_pages: totalPages, page: currentPage } = response.data;
+
   return {
-    resources,
     currentPage,
+    pathname,
+    resources,
     totalPages,
   };
 };
 
-function ResourcesPage({ resources, currentPage, totalPages }) {
+function ResourcesPage({ currentPage, pathname, resources, totalPages }) {
   return (
     <>
       <Head title="Resources" />
@@ -62,7 +60,7 @@ function ResourcesPage({ resources, currentPage, totalPages }) {
                 />
               ))}
             </div>
-            <Pagination currentPage={currentPage} totalPages={totalPages} />
+            <Pagination currentPage={currentPage} totalPages={totalPages} pathname={pathname} />
           </section>,
         ]}
       />

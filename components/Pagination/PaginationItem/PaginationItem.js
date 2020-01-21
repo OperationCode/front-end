@@ -1,30 +1,44 @@
 import React from 'react';
-import { bool, element, oneOfType, string } from 'prop-types';
+import Link from 'next/link';
+import { bool, node, number, string } from 'prop-types';
 import classNames from 'classnames';
+import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
 import styles from './PaginationItem.module.css';
 
 PaginationItem.propTypes = {
-  value: oneOfType([string, element]).isRequired,
+  children: node.isRequired,
   isCurrent: bool,
-  isClickable: bool,
+  pathname: string.isRequired,
   testId: string.isRequired,
+  value: number,
 };
 
 PaginationItem.defaultProps = {
   isCurrent: false,
-  isClickable: true,
+  value: undefined,
 };
 
-function PaginationItem({ value, isCurrent, isClickable, testId }) {
+function PaginationItem({ children, isCurrent, pathname, testId, value }) {
+  const isClickable = !!value;
+
   return (
     <li
       className={classNames(styles.PaginationItem, {
         [styles.current]: isCurrent,
         [styles.notClickable]: !isClickable,
       })}
-      data-testid={`Pagination Item - ${testId}`}
+      data-testid={testId}
     >
-      {value}
+      {isClickable ? (
+        <Link href={pathname} as={pathname.replace('[page]', value)}>
+          <a className={styles.unstyledLink}>
+            <ScreenReaderOnly>Go to page</ScreenReaderOnly>
+            {children}
+          </a>
+        </Link>
+      ) : (
+        children
+      )}
     </li>
   );
 }

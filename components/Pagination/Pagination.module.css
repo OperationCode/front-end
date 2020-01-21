@@ -6,3 +6,7 @@
   align-items: center;
   max-width: fit-content;
 }
+
+.icon {
+  width: 100%;
+}
