@@ -37,7 +37,7 @@ workflows:
 jobs:
   build_and_test:
     docker:
-      - image: circleci/node:10.16.0
+      - image: circleci/node:10.18.1 # keep in sync with .nvmrc
         environment: # environment variables for primary container
           CC_TEST_REPORTER_ID: 0f2bc6ef737019bfc8eda369cd06b66c54606b144b4d81cec010fb494d2559af
 
