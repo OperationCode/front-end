@@ -109,7 +109,6 @@
     "postcss-loader": "^3.0.0",
     "postcss-prepend-imports": "^1.0.1",
     "prop-types": "^15.6.2",
-    "query-string": "^6.10.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-facebook-login": "^4.1.1",
