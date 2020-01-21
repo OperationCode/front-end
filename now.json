@@ -20,6 +20,18 @@
     {
       "source": "/privacy",
       "destination": "https://www.iubenda.com/privacy-policy/8174861"
+    },
+    {
+      "source": "/swag",
+      "destination": "https://operationcode.threadless.com/"
+    },
+    {
+      "source": "/store",
+      "destination": "https://operationcode.threadless.com/"
+    },
+    {
+      "source": "/shop",
+      "destination": "https://operationcode.threadless.com/"
     }
   ],
   "headers": [
