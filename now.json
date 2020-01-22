@@ -6,10 +6,6 @@
     {
       "source": "/media",
       "destination": "/branding"
-    },
-    {
-      "source": "/resources",
-      "destination": "/resources/1"
     }
   ],
   "redirects": [
