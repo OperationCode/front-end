@@ -1,48 +1,68 @@
-/* Defined as inline styles for testing purposes, but kept/used for applied styles */
-
-/*
-.visible {
-  display: block;
-}
-
-.invisible {
-  display: none;
-}
-*/
-
-.accordion {
-  border-radius: 5px;
-  border: 1px solid #c5c5c5;
-  margin: 10px 0;
-  padding: 1.125rem;
-  width: 100%;
-}
-
-.accordionHeaderGrouping {
-  align-items: center;
+.Accordion {
+  box-sizing: border-box;
   display: flex;
-  flex-wrap: nowrap;
-  font-family: var(--primaryFontFamily), sans-serif;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+  margin: 1rem auto;
+  min-height: unset;
+  min-width: unset;
+  width: calc(100% - 1rem);
+
+  --widthUpToButtonInAccordion: 90%;
+}
+
+.headingContainer {
   font-size: 1.25rem;
   font-weight: bold;
-  justify-content: space-between;
   text-transform: uppercase;
+  width: var(--widthUpToButtonInAccordion);
 }
 
-.accordionHeaderGrouping header {
-  color: var(--secondary);
+.icon {
+  fill: currentColor;
+  position: absolute;
+  top: 1.25rem; /* Should correspond with heading content height (vertically centered with rest of content */
+  right: 1.25rem;
+  width: 30px;
+}
+
+@media screen and (--medium-viewport) {
+  .icon {
+    right: 0.5rem;
+  }
+}
+
+.rotate90 {
+  transform: rotate(90deg);
 }
 
 .accordionToggleButton {
+  position: absolute;
+  top: 0;
+  right: 0;
   appearance: none;
   background: none;
   border: none;
-  color: var(--primary);
+  color: currentColor;
   cursor: pointer;
   font-size: 1rem;
-  padding: 0.325rem 0.125rem 0.125rem;
+  padding: 0.25rem;
   text-decoration: none;
-  width: 50px; /* for a non-jank outline */
+  height: 100%;
+  width: 75px;
+}
+
+@media screen and (--medium-viewport) {
+  .accordionToggleButton {
+    width: 50px;
+  }
+}
+
+@media screen and (--small-viewport) {
+  .accordionToggleButton {
+    width: 40px;
+  }
 }
 
 .accordionToggleButton:hover {
@@ -50,12 +70,14 @@
 }
 
 .accordionToggleButton:focus {
-  outline: 1px solid var(--primary);
+  border: 1px solid var(--primary);
+  border-radius: inherit;
+  outline: none;
 }
 
 .accordionContent {
   position: relative;
-  width: 100%;
+  width: var(--widthUpToButtonInAccordion);
 }
 
 .accordionContent.invisible {
@@ -64,17 +86,5 @@
 
 .accordionContent.visible {
   height: auto;
-  margin-top: 0.5rem;
-}
-
-@media screen and (--medium-viewport) {
-  .accordion {
-    max-width: 270px;
-  }
-}
-
-@media screen and (--small-viewport) {
-  .accordion {
-    max-width: 200px;
-  }
+  margin-top: 1rem;
 }

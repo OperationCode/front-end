@@ -1,40 +1,40 @@
 import React from 'react';
-import { act, cleanup, fireEvent, render } from '@testing-library/react';
+import { cleanup, fireEvent, render } from '@testing-library/react';
 
-import Accordion from '../Accordion';
+import Accordion, { screenReaderToggleMessages } from '../Accordion';
 
 describe('Accordion', () => {
+  const requiredProps = {
+    accessibilityId: '1',
+    content: {
+      headingChildren: 'Can be JSX',
+      bodyChildren: <p>Can also be JSX</p>,
+    },
+  };
+
   afterEach(cleanup);
 
   it('should have invisible text on render', async () => {
-    const component = render(
-      <Accordion title="Test" content={<p>Invisible Initially!</p>} accessibilityId="1" />,
-    );
+    const component = render(<Accordion {...requiredProps} />);
 
     const Content = component.queryByTestId('Accordion Content');
 
     expect(Content).not.toBeVisible();
 
-    act(() => {
-      fireEvent.click(component.queryByTestId('Accordion Toggle Button'));
-    });
+    fireEvent.click(component.queryByTestId('Accordion Toggle Button'));
 
     expect(Content).toBeVisible();
   });
 
   it('should display the correct text for the toggle button', async () => {
-    const component = render(
-      <Accordion title="Test" content={<p>Invisible Initially!</p>} accessibilityId="1" />,
-    );
+    const component = render(<Accordion {...requiredProps} />);
 
     const Button = component.queryByTestId('Accordion Toggle Button');
 
-    expect(Button.textContent).toBe('Show');
+    expect(Button.textContent).toBe(screenReaderToggleMessages.open);
 
-    act(() => {
-      fireEvent.click(Button);
-    });
+    fireEvent.click(Button);
 
-    expect(Button.textContent).toBe('Hide');
+    expect(Button.textContent).toBe(screenReaderToggleMessages.close);
   });
 });
