@@ -24,8 +24,8 @@
   outline-color: var(--primary);
 }
 
-.primary:hover:enabled,
-.primary:focus:enabled {
+.primary:hover:not(:disabled),
+.primary:focus:not(:disabled) {
   background-color: rgba(0, 0, 0, 0);
   color: var(--primary);
 }
@@ -37,8 +37,8 @@
   outline-color: var(--secondary);
 }
 
-.secondary:hover:enabled,
-.secondary:focus:enabled {
+.secondary:hover:not(:disabled),
+.secondary:focus:not(:disabled) {
   background-color: rgba(0, 0, 0, 0);
   color: var(--secondary);
 }
