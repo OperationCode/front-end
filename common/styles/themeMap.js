@@ -1,3 +1,5 @@
+export const resourceCardWidth = "400px";
+export const resourceCardBottomPadding = "1rem";
 export const primary = "#3ed6f0";
 export const secondary = "#252e3e";
 export const gray = "#e2e2e2";
@@ -19,5 +21,4 @@ export const extraLargeViewportWidth = "1200px";
 export const borderRadius = "3px";
 export const navBarHeight = "65px";
 export const navBarTopGutterHeight = "20px";
-export const resourceCardWidth = "425px";
-export const resourceCardBottomPadding = "1rem";
+export const widthUpToButtonInAccordion = "90%";
