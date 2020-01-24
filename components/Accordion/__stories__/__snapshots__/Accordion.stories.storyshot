@@ -1,28 +1,36 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Accordion default 1`] = `
+exports[`Storyshots Accordion FAQAccordion 1`] = `
 <article
-  className="accordion"
+  className="Card Accordion FAQAccordion"
 >
   <div
-    className="accordionHeaderGrouping"
+    className="headingContainer"
   >
     <h6>
       Test Title
     </h6>
-    <button
-      aria-controls="content-1"
-      aria-expanded={false}
-      className="accordionToggleButton"
-      data-testid="Accordion Toggle Button"
-      id="accordion-control-1"
-      onClick={[Function]}
-      type="button"
-    >
-      Show
-    </button>
   </div>
-  <div
+  <button
+    aria-controls="content-1"
+    aria-expanded={false}
+    className="accordionToggleButton"
+    data-testid="Accordion Toggle Button"
+    id="accordion-control-1"
+    onClick={[Function]}
+    type="button"
+  >
+    <span
+      className="ScreenReaderOnly"
+      data-testid="SCREEN_READER_ONLY"
+    >
+      Show more
+    </span>
+    <svg
+      className="icon"
+    />
+  </button>
+  <section
     aria-hidden={true}
     className="accordionContent invisible"
     data-testid="Accordion Content"
@@ -33,7 +41,57 @@ exports[`Storyshots Accordion default 1`] = `
       }
     }
   >
-    Test Content!!!
+    <p>
+      Test Content!!!
+    </p>
+  </section>
+</article>
+`;
+
+exports[`Storyshots Accordion default 1`] = `
+<article
+  className="Card Accordion"
+>
+  <div
+    className="headingContainer"
+  >
+    <h5>
+      Can be JSX
+    </h5>
   </div>
+  <button
+    aria-controls="content-1"
+    aria-expanded={false}
+    className="accordionToggleButton"
+    data-testid="Accordion Toggle Button"
+    id="accordion-control-1"
+    onClick={[Function]}
+    type="button"
+  >
+    <span
+      className="ScreenReaderOnly"
+      data-testid="SCREEN_READER_ONLY"
+    >
+      Show more
+    </span>
+    <svg
+      className="icon"
+    />
+  </button>
+  <section
+    aria-hidden={true}
+    className="accordionContent invisible"
+    data-testid="Accordion Content"
+    id="content-1"
+    style={
+      Object {
+        "display": "none",
+      }
+    }
+  >
+    <p>
+      Can also be JSX
+    </p>
+  </section>
 </article>
 `;
