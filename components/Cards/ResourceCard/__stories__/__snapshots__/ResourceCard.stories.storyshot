@@ -42,7 +42,7 @@ exports[`Storyshots Cards/ResourceCard default 1`] = `
       <span
         className="footerText"
       >
-        Did you find this useful?
+        Useful?
       </span>
       <div
         className="voteInfo"
@@ -153,7 +153,7 @@ exports[`Storyshots Cards/ResourceCard with long name 1`] = `
       <span
         className="footerText"
       >
-        Did you find this useful?
+        Useful?
       </span>
       <div
         className="voteInfo"
@@ -264,7 +264,7 @@ exports[`Storyshots Cards/ResourceCard with truncated description 1`] = `
       <span
         className="footerText"
       >
-        Did you find this useful?
+        Useful?
       </span>
       <div
         className="voteInfo"
@@ -375,7 +375,7 @@ exports[`Storyshots Cards/ResourceCard with zero up/downvotes 1`] = `
       <span
         className="footerText"
       >
-        Did you find this useful?
+        Useful?
       </span>
       <div
         className="voteInfo"
