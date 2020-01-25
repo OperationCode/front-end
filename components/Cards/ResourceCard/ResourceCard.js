@@ -80,7 +80,7 @@ function ResourceCard({
         </section>
 
         <footer className={styles.footerSection}>
-          <span className={styles.footerText}>Did you find this useful?</span>
+          <span className={styles.footerText}>Useful?</span>
 
           <div className={styles.voteInfo}>
             <button
