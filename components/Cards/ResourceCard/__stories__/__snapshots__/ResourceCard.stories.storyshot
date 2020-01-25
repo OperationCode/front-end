@@ -375,7 +375,7 @@ exports[`Storyshots Cards/ResourceCard with zero up/downvotes 1`] = `
       <span
         className="footerText"
       >
-        Did you find this useful?
+        Useful?
       </span>
       <div
         className="voteInfo"
