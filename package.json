@@ -146,7 +146,7 @@
     "prettier": "^1.19.1",
     "react-addons-test-utils": "^15.6.2",
     "react-test-renderer": "^16.12.0",
-    "start-server-and-test": "^1.10.6",
+    "start-server-and-test": "^1.10.7",
     "stylelint": "^13.0.0",
     "stylelint-config-prettier": "^8.0.1",
     "stylelint-config-standard": "^19.0.0",
