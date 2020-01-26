@@ -141,7 +141,7 @@
     "istanbul-lib-coverage": "^3.0.0",
     "jest": "^24.9.0",
     "jest-prop-type-error": "^1.1.0",
-    "lint-staged": "^10.0.1",
+    "lint-staged": "^10.0.2",
     "nyc": "^15.0.0",
     "prettier": "^1.19.1",
     "react-addons-test-utils": "^15.6.2",
