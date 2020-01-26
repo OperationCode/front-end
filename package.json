@@ -113,7 +113,7 @@
     "@babel/preset-env": "^7.8.3",
     "@cypress/code-coverage": "^1.10.4",
     "@operation_code/eslint-plugin-custom-rules": "^1.0.1",
-    "@testing-library/jest-dom": "^5.0.0",
+    "@testing-library/jest-dom": "^5.0.2",
     "@testing-library/react": "^9.4.0",
     "all-contributors-cli": "^6.13.0",
     "axios-mock-adapter": "^1.17.0",
