@@ -95,7 +95,7 @@ jobs:
 
   cypress_install:
     docker:
-      - image: cypress/base:10
+      - image: cypress/base:12
     steps:
       - checkout
       - restore_cache:
