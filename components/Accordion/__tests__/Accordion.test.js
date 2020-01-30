@@ -14,7 +14,7 @@ describe('Accordion', () => {
 
   afterEach(cleanup);
 
-  it('should have invisible text on render', async () => {
+  it('should have invisible text on render that turns visible on click', async () => {
     const component = render(<Accordion {...requiredProps} />);
 
     const Content = component.queryByTestId('Accordion Content');
