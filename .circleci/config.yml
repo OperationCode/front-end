@@ -3,6 +3,10 @@ version: 2.1
 orbs:
   cypress: cypress-io/cypress@1.13.0
 
+references:
+  cache_key: &cache_key
+    key: operation-code-front-end-{{ checksum "yarn.lock" }}
+
 workflows:
   build:
     jobs:
@@ -52,8 +56,8 @@ jobs:
 
       # Download and cache dependencies
       - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "yarn.lock" }}
+        <<: *cache_key
+
       - run:
           name: Copy Cypress Test Results and Remove Unnecessary Paths
           command: |
@@ -71,10 +75,10 @@ jobs:
             /usr/local/bin/cc-test-reporter before-build
 
       - save_cache:
+          <<: *cache_key
           paths:
             - node_modules
             - ~/.cache
-          key: v1-dependencies-{{ checksum "package.json" }}
 
       # Run tests
       - run:
@@ -96,16 +100,19 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - cache-{{ arch }}-{{ .Branch }}-{{ checksum "yarn.lock" }}
+            <<: *cache_key
+
       - run:
           name: yarn install --frozen-lockfile
 
       - run:
           command: npx cypress verify
+
       - save_cache:
-          key: cache-{{ arch }}-{{ .Branch }}-{{ checksum "yarn.lock" }}
+          <<: *cache_key
           paths:
             - ~/.cache
+
       - persist_to_workspace:
           root: ~/
           paths:
