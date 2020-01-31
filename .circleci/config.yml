@@ -53,9 +53,7 @@ jobs:
       # Download and cache dependencies
       - restore_cache:
           keys:
-            - v1-dependencies-{{ checksum "package.json" }}
-            # fallback to using the latest cache if no exact match is found
-            - v1-dependencies-
+            - v1-dependencies-{{ checksum "yarn.lock" }}
       - run:
           name: Copy Cypress Test Results and Remove Unnecessary Paths
           command: |
@@ -63,9 +61,7 @@ jobs:
             rm -rf ~/project/project ~/project/.cache
 
       - run:
-          name: Install dependencies
-          command: |
-            yarn
+          name: yarn install --frozen-lockfile
 
       - run:
           name: Initialize CodeClimate
@@ -100,16 +96,14 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - cache-{{ arch }}-{{ .Branch }}-{{ checksum "package.json" }}
+            - cache-{{ arch }}-{{ .Branch }}-{{ checksum "yarn.lock" }}
       - run:
-          name: Yarn install
-          command: |
-            yarn
+          name: yarn install --frozen-lockfile
 
       - run:
           command: npx cypress verify
       - save_cache:
-          key: cache-{{ arch }}-{{ .Branch }}-{{ checksum "package.json" }}
+          key: cache-{{ arch }}-{{ .Branch }}-{{ checksum "yarn.lock" }}
           paths:
             - ~/.cache
       - persist_to_workspace:
