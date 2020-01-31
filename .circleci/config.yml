@@ -52,7 +52,7 @@ jobs:
 
       # Download and cache dependencies
       - restore_cache:
-        key: operation-code-front-end-{{ checksum "yarn.lock" }}
+          key: operation-code-front-end-{{ checksum "yarn.lock" }}
 
       - run:
           name: Copy Cypress Test Results and Remove Unnecessary Paths
@@ -97,8 +97,7 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          keys:
-            key: operation-code-front-end-{{ checksum "yarn.lock" }}
+          key: operation-code-front-end-{{ checksum "yarn.lock" }}
 
       - run:
           name: Install dependencies
