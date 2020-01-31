@@ -61,7 +61,9 @@ jobs:
             rm -rf ~/project/project ~/project/.cache
 
       - run:
-          name: yarn install --frozen-lockfile
+          name: Install dependencies
+          command: |
+            yarn install --frozen-lockfile
 
       - run:
           name: Initialize CodeClimate
@@ -99,10 +101,14 @@ jobs:
             key: operation-code-front-end-{{ checksum "yarn.lock" }}
 
       - run:
-          name: yarn install --frozen-lockfile
+          name: Install dependencies
+          command: |
+            yarn install --frozen-lockfile
 
       - run:
-          command: npx cypress verify
+          name: Check Cypress image
+          command: |
+            npx cypress verify
 
       - save_cache:
           key: operation-code-front-end-{{ checksum "yarn.lock" }}
