@@ -44,7 +44,7 @@ jobs:
     steps:
       - checkout
 
-      - run: sudo chown -R circleci:circleci /usr/local/bin
+      - run: sudo chown -R circleci:circleci /usr/local/bin .cache/Cypress
 
       # restore files from persist_to_workspace step
       - attach_workspace:
