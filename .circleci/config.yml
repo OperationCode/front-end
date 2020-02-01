@@ -44,7 +44,7 @@ jobs:
     steps:
       - checkout
 
-      - run: sudo chown -R circleci:circleci /usr/local/bin .cache/Cypress
+      - run: sudo chown -R circleci:circleci
 
       # restore files from persist_to_workspace step
       - attach_workspace:
@@ -97,7 +97,7 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: operation-code-front-end-{{ checksum "yarn.lock" }}
+          key: operation-code-front-end-cypress-{{ checksum "yarn.lock" }}
 
       - run:
           name: Install dependencies
@@ -110,7 +110,7 @@ jobs:
             npx cypress verify
 
       - save_cache:
-          key: operation-code-front-end-{{ checksum "yarn.lock" }}
+          key: operation-code-front-end-cypress-{{ checksum "yarn.lock" }}
           paths:
             - ~/.cache
 
