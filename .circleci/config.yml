@@ -97,23 +97,19 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: operation-code-front-end-cypress-{{ checksum "yarn.lock" }}
-
+          key: cache-{{ arch }}-{{ .Branch }}-{{ checksum "package.json" }}
       - run:
           name: Install dependencies
           command: |
             yarn install --frozen-lockfile
-
       - run:
           name: Check Cypress image
           command: |
             npx cypress verify
-
       - save_cache:
-          key: operation-code-front-end-cypress-{{ checksum "yarn.lock" }}
+          key: cache-{{ arch }}-{{ .Branch }}-{{ checksum "package.json" }}
           paths:
             - ~/.cache
-
       - persist_to_workspace:
           root: ~/
           paths:
