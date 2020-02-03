@@ -1,5 +1,6 @@
 .ResourceCard {
   font-family: var(--secondaryFontFamily), sans-serif;
+  margin: 1rem 0;
 }
 
 .header {
@@ -53,7 +54,7 @@
   padding-top: 1rem;
 }
 
-@media screen and (--small-viewport) {
+@media screen and (--medium-viewport) {
   .desktopVotingBlock {
     display: none;
   }

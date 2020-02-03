@@ -7,7 +7,7 @@
   margin: 1rem auto;
   min-height: unset;
   min-width: unset;
-  width: calc(100% - 1rem);
+  width: 100%;
 
   --widthUpToButtonInAccordion: 90%;
 }
