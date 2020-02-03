@@ -118,14 +118,3 @@
 .voteButton:hover .icon:not(.active) g {
   fill: var(--gray);
 }
-
-/* overriding toggle button icon positioning */
-.ResourceCard > button > svg {
-  top: 2rem;
-}
-
-@media screen and (--small-viewport) {
-  .ResourceCard > button > svg {
-    left: 5px;
-  }
-}
