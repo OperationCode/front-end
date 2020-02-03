@@ -10,12 +10,6 @@ exports[`PartnerLogoLink should render with required props 1`] = `
     rel="noopener noreferrer"
     target="_blank"
   >
-    <span
-      className="ScreenReaderOnly"
-      data-testid="SCREEN_READER_ONLY"
-    >
-      Opens in new window
-    </span>
     <noscript>
       <img
         alt="Partner Inc. logo"
@@ -28,6 +22,12 @@ exports[`PartnerLogoLink should render with required props 1`] = `
       className="logo"
       data-src="https://partnerinc.com/logo"
     />
+    <span
+      className="ScreenReaderOnly"
+      data-testid="SCREEN_READER_ONLY"
+    >
+      Opens in new window
+    </span>
   </a>
 </div>
 `;

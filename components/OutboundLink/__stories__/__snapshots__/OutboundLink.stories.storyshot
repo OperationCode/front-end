@@ -7,13 +7,13 @@ exports[`Storyshots OutboundLink default 1`] = `
   rel="noopener noreferrer"
   target="_blank"
 >
+  White House Official Website
   <span
     className="ScreenReaderOnly"
     data-testid="SCREEN_READER_ONLY"
   >
     Opens in new window
   </span>
-  White House Official Website
   <svg
     className="externalLinkIcon"
   />

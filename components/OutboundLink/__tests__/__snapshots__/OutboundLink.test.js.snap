@@ -7,13 +7,13 @@ exports[`OutboundLink should render with required props 1`] = `
   rel="noopener noreferrer"
   target="_blank"
 >
+  Test
   <span
     className="ScreenReaderOnly"
     data-testid="SCREEN_READER_ONLY"
   >
     Opens in new window
   </span>
-  Test
   <svg
     className="externalLinkIcon"
   />

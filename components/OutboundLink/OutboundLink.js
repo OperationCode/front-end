@@ -31,8 +31,8 @@ function OutboundLink({ analyticsEventLabel, children, className, hasIcon, href 
       to={href}
     >
       <>
-        <ScreenReaderOnly>Opens in new window</ScreenReaderOnly>
         {children}
+        <ScreenReaderOnly>Opens in new window</ScreenReaderOnly>
         {hasIcon && <ExternalLinkIcon className={styles.externalLinkIcon} />}
       </>
     </ReactGA.OutboundLink>
