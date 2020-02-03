@@ -4,7 +4,8 @@ import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import ResourceCard from 'components/Cards/ResourceCard/ResourceCard';
 import Pagination from 'components/Pagination/Pagination';
-import { getResourcesPromise } from 'common/constants/api';
+import { getResourcesPromise } from 'common/constants/api'
+import JavaScriptLogo from 'static/images/icons/javascript_logo.svg';
 import styles from '../styles/resources.module.css';
 
 ResourcesPage.propTypes = {
@@ -57,6 +58,7 @@ function ResourcesPage({ currentPage, pathname, resources, totalPages }) {
                   href={resource.url || ''}
                   name={resource.name}
                   className={styles.resourceCard}
+                  imageSource={JavaScriptLogo} // temporarily hard-coding
                 />
               ))}
             </div>
