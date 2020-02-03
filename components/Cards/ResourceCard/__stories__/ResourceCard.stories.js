@@ -16,7 +16,6 @@ storiesOf('Cards/ResourceCard', module)
       description={text('description', '')}
       downvotes={number('downvotes', 0)}
       href={text('href', 'https://google.com/')}
-      imageSource={text('imageSource', '/static/images/icons/javascript_logo.svg')}
       name={text('name', 'Javascript for Dummies')}
       onDownvote={action('props.onDownvote called!')}
       onUpvote={action('props.onUpvote called!')}
@@ -29,7 +28,6 @@ storiesOf('Cards/ResourceCard', module)
       description={text('description', longDescription)}
       downvotes={number('downvotes', 25)}
       href={text('href', 'https://google.com/')}
-      imageSource={text('imageSource', '/static/images/icons/javascript_logo.svg')}
       name={text('name', 'Javascript for Dummies')}
       onDownvote={action('props.onDownvote called!')}
       onUpvote={action('props.onUpvote called!')}
@@ -42,7 +40,6 @@ storiesOf('Cards/ResourceCard', module)
       description={text('description', shortDescription)}
       downvotes={number('downvotes', 25)}
       href={text('href', 'https://google.com/')}
-      imageSource={text('imageSource', '/static/images/icons/javascript_logo.svg')}
       name={text('name', 'Javascript for Super Duper Dummies')}
       onDownvote={action('props.onDownvote called!')}
       onUpvote={action('props.onUpvote called!')}
@@ -55,7 +52,6 @@ storiesOf('Cards/ResourceCard', module)
       description={text('description', shortDescription)}
       downvotes={number('downvotes', 0)}
       href={text('href', 'https://google.com/')}
-      imageSource={text('imageSource', '/static/images/icons/javascript_logo.svg')}
       name={text('name', 'Javascript for Super Duper Dummies')}
       onDownvote={action('props.onDownvote called!')}
       onUpvote={action('props.onUpvote called!')}

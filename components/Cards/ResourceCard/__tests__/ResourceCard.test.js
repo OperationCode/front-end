@@ -8,7 +8,6 @@ import ResourceCard from '../ResourceCard';
 describe('ResourceCard', () => {
   const requiredProps = {
     href: 'https://all-the-javascripts.com/',
-    imageSource: '/static/images/icons/javascript_logo.svg',
     name: 'JavaScript for Dummies',
   };
 

@@ -9,17 +9,6 @@
   align-items: center;
 }
 
-.image {
-  height: 50px;
-  margin-right: 1.5rem;
-}
-
-@media screen and (--small-viewport) {
-  .image {
-    height: 35px;
-  }
-}
-
 .resourceName {
   display: inline;
   flex: 1;

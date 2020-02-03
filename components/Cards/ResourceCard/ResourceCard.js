@@ -19,7 +19,6 @@ ResourceCard.propTypes = {
   description: string,
   downvotes: number,
   href: string.isRequired,
-  imageSource: string.isRequired,
   name: string.isRequired,
   onDownvote: func,
   onUpvote: func,
@@ -109,9 +108,6 @@ function ResourceCard({
       content={{
         headingChildren: (
           <div className={styles.header}>
-            {/* TODO: Change alt to represent technology name */}
-            <img className={styles.image} src={imageSource} alt="logo" />
-
             <h5 className={styles.resourceName}>
               <OutboundLink
                 analyticsEventLabel={`Resource: ${name}`}

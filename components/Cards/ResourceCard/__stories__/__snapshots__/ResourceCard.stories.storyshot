@@ -10,11 +10,6 @@ exports[`Storyshots Cards/ResourceCard default 1`] = `
     <div
       className="header"
     >
-      <img
-        alt="logo"
-        className="image"
-        src="/static/images/icons/javascript_logo.svg"
-      />
       <h5
         className="resourceName"
       >
@@ -235,11 +230,6 @@ exports[`Storyshots Cards/ResourceCard with long name 1`] = `
     <div
       className="header"
     >
-      <img
-        alt="logo"
-        className="image"
-        src="/static/images/icons/javascript_logo.svg"
-      />
       <h5
         className="resourceName"
       >
@@ -460,11 +450,6 @@ exports[`Storyshots Cards/ResourceCard with truncated description 1`] = `
     <div
       className="header"
     >
-      <img
-        alt="logo"
-        className="image"
-        src="/static/images/icons/javascript_logo.svg"
-      />
       <h5
         className="resourceName"
       >
@@ -685,11 +670,6 @@ exports[`Storyshots Cards/ResourceCard with zero up/downvotes 1`] = `
     <div
       className="header"
     >
-      <img
-        alt="logo"
-        className="image"
-        src="/static/images/icons/javascript_logo.svg"
-      />
       <h5
         className="resourceName"
       >

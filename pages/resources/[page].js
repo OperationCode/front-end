@@ -58,7 +58,6 @@ function ResourcesPage({ currentPage, pathname, resources, totalPages }) {
                   href={resource.url || ''}
                   name={resource.name}
                   className={styles.resourceCard}
-                  imageSource={JavaScriptLogo} // temporarily hard-coding
                 />
               ))}
             </div>
