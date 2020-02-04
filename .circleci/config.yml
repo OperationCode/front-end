@@ -69,7 +69,7 @@ jobs:
             root: << pipeline.parameters.workspace_root >>
             paths:
               - node_modules
-              - .cache
+              - ~/.cache
 
   unit-tests:
     executor: default
