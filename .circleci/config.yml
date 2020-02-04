@@ -43,17 +43,9 @@ jobs:
           keys:
             - << pipeline.parameters.cache_key >>
       - run:
-          name: Install dependencies # See https://github.com/yarnpkg/yarn/issues/5840#issuecomment-468782288
+          name: Install dependencies
           command: |
-            ls -al
-            CKSUM_BEFORE=$(cksum yarn.lock)
-            yarn
-            CKSUM_AFTER=$(cksum yarn.lock)
-
-            if [[ $CKSUM_BEFORE != $CKSUM_AFTER ]]; then
-              echo "yarn.lock was modified unexpectedly - terminating"
-              exit 1
-            fi
+            yarn --frozen-lockfile
       - save_cache:
           key: << pipeline.parameters.cache_key >>
           paths:
@@ -62,7 +54,6 @@ jobs:
       - run:
           name: Move dependencies to workspace
           command: |
-            ls -al
             mv node_modules << pipeline.parameters.workspace_root >>/
             mv ~/.cache << pipeline.parameters.workspace_root >>/
       - persist_to_workspace:
