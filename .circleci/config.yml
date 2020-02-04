@@ -76,16 +76,16 @@ jobs:
           name: Run tests
           command: |
             yarn test:ci --max-workers=2
-    - run:
-        name: Copy Cypress test results and remove unnecessary paths
-        command: |
-          mkdir coverage && find . -name "codeclimate.*.json" -exec cp -av {} coverage \;
-          rm -rf ~/project/project ~/project/.cache
-    - run:
-        name: Merge results and report to CodeClimate
-        command: |
-          /usr/local/bin/cc-test-reporter format-coverage -t lcov -o coverage/codeclimate.jest.json jest-coverage/lcov.info
-          /usr/local/bin/cc-test-reporter sum-coverage -p 4 --output - coverage/* | /usr/local/bin/cc-test-reporter upload-coverage --debug --input -
+      - run:
+          name: Copy Cypress test results and remove unnecessary paths
+          command: |
+            mkdir coverage && find . -name "codeclimate.*.json" -exec cp -av {} coverage \;
+            rm -rf ~/project/project ~/project/.cache
+      - run:
+          name: Merge results and report to CodeClimate
+          command: |
+            /usr/local/bin/cc-test-reporter format-coverage -t lcov -o coverage/codeclimate.jest.json jest-coverage/lcov.info
+            /usr/local/bin/cc-test-reporter sum-coverage -p 4 --output - coverage/* | /usr/local/bin/cc-test-reporter upload-coverage --debug --input -
 
   lint:
     executor: default
