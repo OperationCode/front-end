@@ -21,6 +21,10 @@ commands:
       - run:
           name: Restore cached artifacts (install dependenciess once, and pass around the folder)
           command: |
+            ls -al
+            cd ~/
+            echo ""
+            ls -al
             mv ~/tmp/workspace/node_modules .
             mv ~/tmp/workspace/.cache .
 
