@@ -10,15 +10,15 @@ exports[`FeaturedJobItem should render with many props assigned 1`] = `
     rel="noopener noreferrer"
     target="_blank"
   >
+    <h6>
+      Experienced React Engineer
+    </h6>
     <span
       className="ScreenReaderOnly"
       data-testid="SCREEN_READER_ONLY"
     >
       Opens in new window
     </span>
-    <h6>
-      Experienced React Engineer
-    </h6>
     <svg
       className="externalLinkIcon"
     />
@@ -93,15 +93,15 @@ exports[`FeaturedJobItem should render with required props 1`] = `
     rel="noopener noreferrer"
     target="_blank"
   >
+    <h6>
+      DevOps Engineer
+    </h6>
     <span
       className="ScreenReaderOnly"
       data-testid="SCREEN_READER_ONLY"
     >
       Opens in new window
     </span>
-    <h6>
-      DevOps Engineer
-    </h6>
     <svg
       className="externalLinkIcon"
     />

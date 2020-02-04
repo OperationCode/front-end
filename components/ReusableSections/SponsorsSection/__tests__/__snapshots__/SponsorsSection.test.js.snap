@@ -82,12 +82,6 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
           rel="noopener noreferrer"
           target="_blank"
         >
-          <span
-            className="ScreenReaderOnly"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Opens in new window
-          </span>
           <noscript>
             <img
               alt="Slack logo"
@@ -100,6 +94,12 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
             className="logo large"
             data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/slack.png"
           />
+          <span
+            className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
+          >
+            Opens in new window
+          </span>
         </a>
       </div>
       <div
@@ -111,12 +111,6 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
           rel="noopener noreferrer"
           target="_blank"
         >
-          <span
-            className="ScreenReaderOnly"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Opens in new window
-          </span>
           <noscript>
             <img
               alt="Threat Stack logo"
@@ -129,6 +123,12 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
             className="logo large"
             data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/threat_stack.png"
           />
+          <span
+            className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
+          >
+            Opens in new window
+          </span>
         </a>
       </div>
       <div
@@ -140,12 +140,6 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
           rel="noopener noreferrer"
           target="_blank"
         >
-          <span
-            className="ScreenReaderOnly"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Opens in new window
-          </span>
           <noscript>
             <img
               alt="US Bank logo"
@@ -158,6 +152,12 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
             className="logo large"
             data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/usbank.png"
           />
+          <span
+            className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
+          >
+            Opens in new window
+          </span>
         </a>
       </div>
     </div>
@@ -206,12 +206,6 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
           rel="noopener noreferrer"
           target="_blank"
         >
-          <span
-            className="ScreenReaderOnly"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Opens in new window
-          </span>
           <noscript>
             <img
               alt="1Password logo"
@@ -224,6 +218,12 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
             className="logo"
             data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/1password.png"
           />
+          <span
+            className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
+          >
+            Opens in new window
+          </span>
         </a>
       </div>
       <div
@@ -235,12 +235,6 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
           rel="noopener noreferrer"
           target="_blank"
         >
-          <span
-            className="ScreenReaderOnly"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Opens in new window
-          </span>
           <noscript>
             <img
               alt="APEX Systems logo"
@@ -253,6 +247,12 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
             className="logo"
             data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/apex_systems.png"
           />
+          <span
+            className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
+          >
+            Opens in new window
+          </span>
         </a>
       </div>
       <div
@@ -264,12 +264,6 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
           rel="noopener noreferrer"
           target="_blank"
         >
-          <span
-            className="ScreenReaderOnly"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Opens in new window
-          </span>
           <noscript>
             <img
               alt="GitHub logo"
@@ -282,6 +276,12 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
             className="logo"
             data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/github.png"
           />
+          <span
+            className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
+          >
+            Opens in new window
+          </span>
         </a>
       </div>
       <div
@@ -293,12 +293,6 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
           rel="noopener noreferrer"
           target="_blank"
         >
-          <span
-            className="ScreenReaderOnly"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Opens in new window
-          </span>
           <noscript>
             <img
               alt="HackerRank logo"
@@ -311,6 +305,12 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
             className="logo"
             data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/hackerrank.png"
           />
+          <span
+            className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
+          >
+            Opens in new window
+          </span>
         </a>
       </div>
       <div
@@ -322,12 +322,6 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
           rel="noopener noreferrer"
           target="_blank"
         >
-          <span
-            className="ScreenReaderOnly"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Opens in new window
-          </span>
           <noscript>
             <img
               alt="Heroku logo"
@@ -340,6 +334,12 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
             className="logo"
             data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/heroku.png"
           />
+          <span
+            className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
+          >
+            Opens in new window
+          </span>
         </a>
       </div>
       <div
@@ -351,12 +351,6 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
           rel="noopener noreferrer"
           target="_blank"
         >
-          <span
-            className="ScreenReaderOnly"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Opens in new window
-          </span>
           <noscript>
             <img
               alt="LogRocket logo"
@@ -369,6 +363,12 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
             className="logo"
             data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/logrocket.png"
           />
+          <span
+            className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
+          >
+            Opens in new window
+          </span>
         </a>
       </div>
       <div
@@ -380,12 +380,6 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
           rel="noopener noreferrer"
           target="_blank"
         >
-          <span
-            className="ScreenReaderOnly"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Opens in new window
-          </span>
           <noscript>
             <img
               alt="O'Reilly Media logo"
@@ -398,6 +392,12 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
             className="logo"
             data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/oreilly.png"
           />
+          <span
+            className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
+          >
+            Opens in new window
+          </span>
         </a>
       </div>
       <div
@@ -409,12 +409,6 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
           rel="noopener noreferrer"
           target="_blank"
         >
-          <span
-            className="ScreenReaderOnly"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Opens in new window
-          </span>
           <noscript>
             <img
               alt="Zapier logo"
@@ -427,6 +421,12 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
             className="logo"
             data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/zapier.png"
           />
+          <span
+            className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
+          >
+            Opens in new window
+          </span>
         </a>
       </div>
     </div>
@@ -516,12 +516,6 @@ exports[`SponsorsSection should render with required props 1`] = `
           rel="noopener noreferrer"
           target="_blank"
         >
-          <span
-            className="ScreenReaderOnly"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Opens in new window
-          </span>
           <noscript>
             <img
               alt="Slack logo"
@@ -534,6 +528,12 @@ exports[`SponsorsSection should render with required props 1`] = `
             className="logo large"
             data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/slack.png"
           />
+          <span
+            className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
+          >
+            Opens in new window
+          </span>
         </a>
       </div>
       <div
@@ -545,12 +545,6 @@ exports[`SponsorsSection should render with required props 1`] = `
           rel="noopener noreferrer"
           target="_blank"
         >
-          <span
-            className="ScreenReaderOnly"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Opens in new window
-          </span>
           <noscript>
             <img
               alt="Threat Stack logo"
@@ -563,6 +557,12 @@ exports[`SponsorsSection should render with required props 1`] = `
             className="logo large"
             data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/threat_stack.png"
           />
+          <span
+            className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
+          >
+            Opens in new window
+          </span>
         </a>
       </div>
       <div
@@ -574,12 +574,6 @@ exports[`SponsorsSection should render with required props 1`] = `
           rel="noopener noreferrer"
           target="_blank"
         >
-          <span
-            className="ScreenReaderOnly"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Opens in new window
-          </span>
           <noscript>
             <img
               alt="US Bank logo"
@@ -592,6 +586,12 @@ exports[`SponsorsSection should render with required props 1`] = `
             className="logo large"
             data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/usbank.png"
           />
+          <span
+            className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
+          >
+            Opens in new window
+          </span>
         </a>
       </div>
     </div>
@@ -640,12 +640,6 @@ exports[`SponsorsSection should render with required props 1`] = `
           rel="noopener noreferrer"
           target="_blank"
         >
-          <span
-            className="ScreenReaderOnly"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Opens in new window
-          </span>
           <noscript>
             <img
               alt="1Password logo"
@@ -658,6 +652,12 @@ exports[`SponsorsSection should render with required props 1`] = `
             className="logo"
             data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/1password.png"
           />
+          <span
+            className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
+          >
+            Opens in new window
+          </span>
         </a>
       </div>
       <div
@@ -669,12 +669,6 @@ exports[`SponsorsSection should render with required props 1`] = `
           rel="noopener noreferrer"
           target="_blank"
         >
-          <span
-            className="ScreenReaderOnly"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Opens in new window
-          </span>
           <noscript>
             <img
               alt="APEX Systems logo"
@@ -687,6 +681,12 @@ exports[`SponsorsSection should render with required props 1`] = `
             className="logo"
             data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/apex_systems.png"
           />
+          <span
+            className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
+          >
+            Opens in new window
+          </span>
         </a>
       </div>
       <div
@@ -698,12 +698,6 @@ exports[`SponsorsSection should render with required props 1`] = `
           rel="noopener noreferrer"
           target="_blank"
         >
-          <span
-            className="ScreenReaderOnly"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Opens in new window
-          </span>
           <noscript>
             <img
               alt="GitHub logo"
@@ -716,6 +710,12 @@ exports[`SponsorsSection should render with required props 1`] = `
             className="logo"
             data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/github.png"
           />
+          <span
+            className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
+          >
+            Opens in new window
+          </span>
         </a>
       </div>
       <div
@@ -727,12 +727,6 @@ exports[`SponsorsSection should render with required props 1`] = `
           rel="noopener noreferrer"
           target="_blank"
         >
-          <span
-            className="ScreenReaderOnly"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Opens in new window
-          </span>
           <noscript>
             <img
               alt="HackerRank logo"
@@ -745,6 +739,12 @@ exports[`SponsorsSection should render with required props 1`] = `
             className="logo"
             data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/hackerrank.png"
           />
+          <span
+            className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
+          >
+            Opens in new window
+          </span>
         </a>
       </div>
       <div
@@ -756,12 +756,6 @@ exports[`SponsorsSection should render with required props 1`] = `
           rel="noopener noreferrer"
           target="_blank"
         >
-          <span
-            className="ScreenReaderOnly"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Opens in new window
-          </span>
           <noscript>
             <img
               alt="Heroku logo"
@@ -774,6 +768,12 @@ exports[`SponsorsSection should render with required props 1`] = `
             className="logo"
             data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/heroku.png"
           />
+          <span
+            className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
+          >
+            Opens in new window
+          </span>
         </a>
       </div>
       <div
@@ -785,12 +785,6 @@ exports[`SponsorsSection should render with required props 1`] = `
           rel="noopener noreferrer"
           target="_blank"
         >
-          <span
-            className="ScreenReaderOnly"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Opens in new window
-          </span>
           <noscript>
             <img
               alt="LogRocket logo"
@@ -803,6 +797,12 @@ exports[`SponsorsSection should render with required props 1`] = `
             className="logo"
             data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/logrocket.png"
           />
+          <span
+            className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
+          >
+            Opens in new window
+          </span>
         </a>
       </div>
       <div
@@ -814,12 +814,6 @@ exports[`SponsorsSection should render with required props 1`] = `
           rel="noopener noreferrer"
           target="_blank"
         >
-          <span
-            className="ScreenReaderOnly"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Opens in new window
-          </span>
           <noscript>
             <img
               alt="O'Reilly Media logo"
@@ -832,6 +826,12 @@ exports[`SponsorsSection should render with required props 1`] = `
             className="logo"
             data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/oreilly.png"
           />
+          <span
+            className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
+          >
+            Opens in new window
+          </span>
         </a>
       </div>
       <div
@@ -843,12 +843,6 @@ exports[`SponsorsSection should render with required props 1`] = `
           rel="noopener noreferrer"
           target="_blank"
         >
-          <span
-            className="ScreenReaderOnly"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Opens in new window
-          </span>
           <noscript>
             <img
               alt="Zapier logo"
@@ -861,6 +855,12 @@ exports[`SponsorsSection should render with required props 1`] = `
             className="logo"
             data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/zapier.png"
           />
+          <span
+            className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
+          >
+            Opens in new window
+          </span>
         </a>
       </div>
     </div>

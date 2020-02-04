@@ -60,13 +60,13 @@ exports[`JoinSection should render when not logged in 1`] = `
       rel="noopener noreferrer"
       target="_blank"
     >
+      Never heard of Slack before?
       <span
         className="ScreenReaderOnly"
         data-testid="SCREEN_READER_ONLY"
       >
         Opens in new window
       </span>
-      Never heard of Slack before?
       <svg
         className="externalLinkIcon"
       />

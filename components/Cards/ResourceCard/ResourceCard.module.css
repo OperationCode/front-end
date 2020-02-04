@@ -1,112 +1,80 @@
-.link {
-  box-sizing: border-box;
-  display: block;
-  text-decoration: none;
-  width: var(--resourceCardWidth);
-
-  --resourceCardWidth: 400px;
-}
-
 .ResourceCard {
-  box-sizing: border-box;
   font-family: var(--secondaryFontFamily), sans-serif;
-  margin: 0; /* Override Card css so top-level element can have margin */
-  padding-bottom: var(--resourceCardBottomPadding);
-  width: var(--resourceCardWidth);
-
-  --resourceCardBottomPadding: 1rem;
+  margin: 1rem 0;
 }
 
-.ResourceCard:focus,
-.ResourceCard:hover {
-  box-shadow: 0 3px 6px 2px var(--primary);
-}
-
-@media screen and (--small-viewport) {
-  .ResourceCard {
-    /* subtracting margin/padding */
-    width: calc(100vw - 5rem);
-  }
-}
-
-.titleSection {
-  align-items: center;
+.header {
   display: flex;
-  width: 100%;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.titleSection img {
-  height: 50px;
+.resourceName {
+  display: inline;
+  flex: 1;
 }
 
-.titleSection h5 {
-  margin-left: 0.5rem;
-  overflow: hidden;
-  padding-top: 0.5rem; /* vertically center with image */
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-@media screen and (--small-viewport) {
-  .titleSection h5 {
-    font-size: 1.25rem;
-  }
+.link svg {
+  top: 0;
+  left: 0.5rem;
 }
 
 .descriptionText {
-  font-weight: 200;
-  height: 6.2em; /* exactly five lines */
-  line-height: 1.25;
   overflow: hidden;
   position: relative;
 }
 
-/* Text fade effect */
-.descriptionText::after {
-  background: linear-gradient(to right, rgba(247, 247, 247, 0), rgba(247, 247, 247, 1) 80%);
-  bottom: 0;
-  content: "";
-  height: 1.2em;
-  position: absolute;
-  right: 0;
-  text-align: right;
-  width: 70%;
-}
-
-.footerSection {
+.votingBlock {
   align-items: center;
-  background-color: inherit;
-  border-top: 1px solid var(--gray);
-  color: var(--secondary);
-  display: flex;
-  padding-top: var(--resourceCardBottomPadding);
-  width: 100%;
+  font-size: 1rem;
+  font-weight: 200;
+  text-transform: none;
 }
 
-.footerText {
-  color: rgba(var(--rgbValuesSecondary), 0.75);
-  margin-right: 1.5rem;
+.desktopVotingBlock {
+  display: flex;
+  margin: 0 -2rem 0 1rem;
+}
+
+.mobileVotingBlock {
+  display: none;
+  justify-content: space-between;
+  border-top: 1px solid var(--gray);
+  padding-top: 1rem;
+}
+
+@media screen and (--medium-viewport) {
+  .desktopVotingBlock {
+    display: none;
+  }
+
+  .mobileVotingBlock {
+    display: flex;
+  }
+}
+
+.votingBlockHeader {
+  margin-right: 1rem;
 }
 
 .voteInfo {
-  align-items: center;
-  justify-content: space-around;
   display: flex;
+  justify-content: space-around;
+  align-items: center;
   flex-wrap: nowrap;
   position: relative;
 }
 
 .voteCount {
-  margin-right: 0.75rem;
+  margin: 0 0.75rem;
 }
 
 .voteButton {
   background-color: inherit;
-  border: none;
+  border: 1px solid var(--secondary);
   display: flex;
   font-size: 1rem;
   margin: 0 0.25rem;
-  margin-bottom: 0.35rem; /* vertically centering with rest of content */
   padding: 0.5rem 0.35rem;
   text-decoration: none;
 }

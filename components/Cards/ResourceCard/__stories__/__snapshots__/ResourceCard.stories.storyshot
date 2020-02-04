@@ -1,445 +1,661 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Cards/ResourceCard default 1`] = `
-<a
-  className="link"
-  href="https://google.com/"
-  onClick={[Function]}
-  rel="noopener noreferrer"
-  target="_blank"
+<article
+  className="Card Accordion ResourceCard"
 >
-  <span
-    className="ScreenReaderOnly"
-    data-testid="SCREEN_READER_ONLY"
+  <div
+    className="headingContainer"
   >
-    Opens in new window
-  </span>
-  <article
-    className="Card ResourceCard animatedCard"
-  >
-    <header
-      className="titleSection"
+    <div
+      className="header"
     >
-      <img
-        alt="logo"
-        aria-hidden="true"
-        src="/static/images/icons/javascript_logo.svg"
-      />
-      <h5>
-        Javascript for Dummies
+      <h5
+        className="resourceName"
+      >
+        <a
+          className="link"
+          href="https://google.com/"
+          onClick={[Function]}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Javascript for Dummies
+          <span
+            className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
+          >
+            Opens in new window
+          </span>
+        </a>
       </h5>
-    </header>
-    <section>
+      <div
+        className="votingBlock desktopVotingBlock"
+      >
+        <span
+          className="votingBlockHeader"
+        >
+          Useful?
+        </span>
+        <div
+          className="voteInfo"
+        >
+          <button
+            aria-pressed={false}
+            className="voteButton"
+            data-testid="UPVOTE_BUTTON"
+            onClick={[Function]}
+            type="button"
+          >
+            <span
+              className="ScreenReaderOnly"
+              data-testid="SCREEN_READER_ONLY"
+            >
+              Yes
+            </span>
+            <svg
+              className="icon"
+            />
+          </button>
+          <span
+            className="voteCount"
+          >
+            <span
+              className="ScreenReaderOnly"
+              data-testid="SCREEN_READER_ONLY"
+            >
+              Number of upvotes:
+            </span>
+            0
+          </span>
+        </div>
+        <div
+          className="voteInfo"
+        >
+          <button
+            aria-pressed={false}
+            className="voteButton"
+            data-testid="DOWNVOTE_BUTTON"
+            onClick={[Function]}
+            type="button"
+          >
+            <span
+              className="ScreenReaderOnly"
+              data-testid="SCREEN_READER_ONLY"
+            >
+              No
+            </span>
+            <svg
+              className="icon"
+            />
+          </button>
+          <span
+            className="voteCount"
+          >
+            <span
+              className="ScreenReaderOnly"
+              data-testid="SCREEN_READER_ONLY"
+            >
+              Number of downvotes:
+            </span>
+            0
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    aria-controls="content-Javascript for Dummies"
+    aria-expanded={false}
+    className="accordionToggleButton"
+    data-testid="Accordion Toggle Button"
+    id="accordion-control-Javascript for Dummies"
+    onClick={[Function]}
+    type="button"
+  >
+    <span
+      className="ScreenReaderOnly"
+      data-testid="SCREEN_READER_ONLY"
+    >
+      Show more
+    </span>
+    <svg
+      className="icon"
+    />
+  </button>
+  <section
+    aria-hidden={true}
+    className="accordionContent invisible"
+    data-testid="Accordion Content"
+    id="content-Javascript for Dummies"
+    style={
+      Object {
+        "display": "none",
+      }
+    }
+  >
+    <div
+      className="content"
+    >
       <p
         className="descriptionText"
       >
         
       </p>
-    </section>
-    <footer
-      className="footerSection"
-    >
-      <span
-        className="footerText"
-      >
-        Useful?
-      </span>
       <div
-        className="voteInfo"
-      >
-        <button
-          className="voteButton"
-          data-testid="Upvote Button"
-          onClick={[Function]}
-          type="button"
-        >
-          <span
-            className="ScreenReaderOnly"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Yes
-          </span>
-          <svg
-            className="icon"
-          />
-        </button>
-        <span
-          className="voteCount"
-        >
-          <span
-            className="ScreenReaderOnly"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Upvotes:
-          </span>
-          0
-        </span>
-      </div>
-      <div
-        className="voteInfo"
-      >
-        <button
-          className="voteButton"
-          data-testid="Downvote Button"
-          onClick={[Function]}
-          type="button"
-        >
-          <span
-            className="ScreenReaderOnly"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            No
-          </span>
-          <svg
-            className="icon"
-          />
-        </button>
-      </div>
-      <span
-        className="voteCount"
+        className="votingBlock mobileVotingBlock"
       >
         <span
-          className="ScreenReaderOnly"
-          data-testid="SCREEN_READER_ONLY"
+          className="votingBlockHeader"
         >
-          Downvotes:
+          Useful?
         </span>
-        0
-      </span>
-    </footer>
-  </article>
-</a>
+        <div
+          className="voteInfo"
+        >
+          <button
+            aria-pressed={false}
+            className="voteButton"
+            data-testid="UPVOTE_BUTTON"
+            onClick={[Function]}
+            type="button"
+          >
+            <span
+              className="ScreenReaderOnly"
+              data-testid="SCREEN_READER_ONLY"
+            >
+              Yes
+            </span>
+            <svg
+              className="icon"
+            />
+          </button>
+          <span
+            className="voteCount"
+          >
+            <span
+              className="ScreenReaderOnly"
+              data-testid="SCREEN_READER_ONLY"
+            >
+              Number of upvotes:
+            </span>
+            0
+          </span>
+        </div>
+        <div
+          className="voteInfo"
+        >
+          <button
+            aria-pressed={false}
+            className="voteButton"
+            data-testid="DOWNVOTE_BUTTON"
+            onClick={[Function]}
+            type="button"
+          >
+            <span
+              className="ScreenReaderOnly"
+              data-testid="SCREEN_READER_ONLY"
+            >
+              No
+            </span>
+            <svg
+              className="icon"
+            />
+          </button>
+          <span
+            className="voteCount"
+          >
+            <span
+              className="ScreenReaderOnly"
+              data-testid="SCREEN_READER_ONLY"
+            >
+              Number of downvotes:
+            </span>
+            0
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+</article>
 `;
 
 exports[`Storyshots Cards/ResourceCard with long name 1`] = `
-<a
-  className="link"
-  href="https://google.com/"
-  onClick={[Function]}
-  rel="noopener noreferrer"
-  target="_blank"
+<article
+  className="Card Accordion ResourceCard"
 >
-  <span
-    className="ScreenReaderOnly"
-    data-testid="SCREEN_READER_ONLY"
+  <div
+    className="headingContainer"
   >
-    Opens in new window
-  </span>
-  <article
-    className="Card ResourceCard animatedCard"
-  >
-    <header
-      className="titleSection"
+    <div
+      className="header"
     >
-      <img
-        alt="logo"
-        aria-hidden="true"
-        src="/static/images/icons/javascript_logo.svg"
-      />
-      <h5>
-        Javascript for Super Duper Dummies
+      <h5
+        className="resourceName"
+      >
+        <a
+          className="link"
+          href="https://google.com/"
+          onClick={[Function]}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          The Ultimate Guide to the language of JavaScript for Super Duper Dummies Who Write Code Bad
+          <span
+            className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
+          >
+            Opens in new window
+          </span>
+        </a>
       </h5>
-    </header>
-    <section>
+      <div
+        className="votingBlock desktopVotingBlock"
+      >
+        <span
+          className="votingBlockHeader"
+        >
+          Useful?
+        </span>
+        <div
+          className="voteInfo"
+        >
+          <button
+            aria-pressed={false}
+            className="voteButton"
+            data-testid="UPVOTE_BUTTON"
+            onClick={[Function]}
+            type="button"
+          >
+            <span
+              className="ScreenReaderOnly"
+              data-testid="SCREEN_READER_ONLY"
+            >
+              Yes
+            </span>
+            <svg
+              className="icon"
+            />
+          </button>
+          <span
+            className="voteCount"
+          >
+            <span
+              className="ScreenReaderOnly"
+              data-testid="SCREEN_READER_ONLY"
+            >
+              Number of upvotes:
+            </span>
+            12
+          </span>
+        </div>
+        <div
+          className="voteInfo"
+        >
+          <button
+            aria-pressed={true}
+            className="voteButton active"
+            data-testid="DOWNVOTE_BUTTON"
+            onClick={[Function]}
+            type="button"
+          >
+            <span
+              className="ScreenReaderOnly"
+              data-testid="SCREEN_READER_ONLY"
+            >
+              No
+            </span>
+            <svg
+              className="icon active"
+            />
+          </button>
+          <span
+            className="voteCount active"
+          >
+            <span
+              className="ScreenReaderOnly"
+              data-testid="SCREEN_READER_ONLY"
+            >
+              Number of downvotes:
+            </span>
+            25
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    aria-controls="content-The Ultimate Guide to the language of JavaScript for Super Duper Dummies Who Write Code Bad"
+    aria-expanded={false}
+    className="accordionToggleButton"
+    data-testid="Accordion Toggle Button"
+    id="accordion-control-The Ultimate Guide to the language of JavaScript for Super Duper Dummies Who Write Code Bad"
+    onClick={[Function]}
+    type="button"
+  >
+    <span
+      className="ScreenReaderOnly"
+      data-testid="SCREEN_READER_ONLY"
+    >
+      Show more
+    </span>
+    <svg
+      className="icon"
+    />
+  </button>
+  <section
+    aria-hidden={true}
+    className="accordionContent invisible"
+    data-testid="Accordion Content"
+    id="content-The Ultimate Guide to the language of JavaScript for Super Duper Dummies Who Write Code Bad"
+    style={
+      Object {
+        "display": "none",
+      }
+    }
+  >
+    <div
+      className="content"
+    >
       <p
         className="descriptionText"
       >
         Trust fund post-ironic austin offal. Asymmetrical knausgaard selfies, butcher celiac brunch brooklyn palo santo iceland gochujang chicharrones waistcoat plaid.
       </p>
-    </section>
-    <footer
-      className="footerSection"
-    >
-      <span
-        className="footerText"
-      >
-        Useful?
-      </span>
       <div
-        className="voteInfo"
-      >
-        <button
-          className="voteButton"
-          data-testid="Upvote Button"
-          onClick={[Function]}
-          type="button"
-        >
-          <span
-            className="ScreenReaderOnly"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Yes
-          </span>
-          <svg
-            className="icon"
-          />
-        </button>
-        <span
-          className="voteCount"
-        >
-          <span
-            className="ScreenReaderOnly"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Upvotes:
-          </span>
-          12
-        </span>
-      </div>
-      <div
-        className="voteInfo"
-      >
-        <button
-          className="voteButton active"
-          data-testid="Downvote Button"
-          onClick={[Function]}
-          type="button"
-        >
-          <span
-            className="ScreenReaderOnly"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            No
-          </span>
-          <svg
-            className="icon active"
-          />
-        </button>
-      </div>
-      <span
-        className="voteCount active"
+        className="votingBlock mobileVotingBlock"
       >
         <span
-          className="ScreenReaderOnly"
-          data-testid="SCREEN_READER_ONLY"
+          className="votingBlockHeader"
         >
-          Downvotes:
+          Useful?
         </span>
-        25
-      </span>
-    </footer>
-  </article>
-</a>
-`;
-
-exports[`Storyshots Cards/ResourceCard with truncated description 1`] = `
-<a
-  className="link"
-  href="https://google.com/"
-  onClick={[Function]}
-  rel="noopener noreferrer"
-  target="_blank"
->
-  <span
-    className="ScreenReaderOnly"
-    data-testid="SCREEN_READER_ONLY"
-  >
-    Opens in new window
-  </span>
-  <article
-    className="Card ResourceCard animatedCard"
-  >
-    <header
-      className="titleSection"
-    >
-      <img
-        alt="logo"
-        aria-hidden="true"
-        src="/static/images/icons/javascript_logo.svg"
-      />
-      <h5>
-        Javascript for Dummies
-      </h5>
-    </header>
-    <section>
-      <p
-        className="descriptionText"
-      >
-        Cliche umami truffaut scenester vice bespoke. Lomo copper mug seitan raw denim tousled coloring book kinfolk irony venmo fam austin. Pitchfork vape pork belly, fixie flannel enamel pin cold-pressed echo park. Organic sriracha waistcoat austin keytar, gentrify cardigan mumblecore PBR&B tumblr normcore meggings scenester. Enamel pin kitsch butcher, synth etsy next level gluten-free. Put a bird on it vexillologist XOXO iPhone wolf coloring book chicharrones 8-bit VHS unicorn. Leggings viral taxidermy keytar, cray schlitz hot chicken kogi truffaut art party XOXO.
-      </p>
-    </section>
-    <footer
-      className="footerSection"
-    >
-      <span
-        className="footerText"
-      >
-        Useful?
-      </span>
-      <div
-        className="voteInfo"
-      >
-        <button
-          className="voteButton active"
-          data-testid="Upvote Button"
-          onClick={[Function]}
-          type="button"
+        <div
+          className="voteInfo"
         >
-          <span
-            className="ScreenReaderOnly"
-            data-testid="SCREEN_READER_ONLY"
+          <button
+            aria-pressed={false}
+            className="voteButton"
+            data-testid="UPVOTE_BUTTON"
+            onClick={[Function]}
+            type="button"
           >
-            Yes
+            <span
+              className="ScreenReaderOnly"
+              data-testid="SCREEN_READER_ONLY"
+            >
+              Yes
+            </span>
+            <svg
+              className="icon"
+            />
+          </button>
+          <span
+            className="voteCount"
+          >
+            <span
+              className="ScreenReaderOnly"
+              data-testid="SCREEN_READER_ONLY"
+            >
+              Number of upvotes:
+            </span>
+            12
           </span>
-          <svg
-            className="icon active"
-          />
-        </button>
-        <span
-          className="voteCount active"
+        </div>
+        <div
+          className="voteInfo"
         >
-          <span
-            className="ScreenReaderOnly"
-            data-testid="SCREEN_READER_ONLY"
+          <button
+            aria-pressed={true}
+            className="voteButton active"
+            data-testid="DOWNVOTE_BUTTON"
+            onClick={[Function]}
+            type="button"
           >
-            Upvotes:
+            <span
+              className="ScreenReaderOnly"
+              data-testid="SCREEN_READER_ONLY"
+            >
+              No
+            </span>
+            <svg
+              className="icon active"
+            />
+          </button>
+          <span
+            className="voteCount active"
+          >
+            <span
+              className="ScreenReaderOnly"
+              data-testid="SCREEN_READER_ONLY"
+            >
+              Number of downvotes:
+            </span>
+            25
           </span>
-          12
-        </span>
+        </div>
       </div>
-      <div
-        className="voteInfo"
-      >
-        <button
-          className="voteButton"
-          data-testid="Downvote Button"
-          onClick={[Function]}
-          type="button"
-        >
-          <span
-            className="ScreenReaderOnly"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            No
-          </span>
-          <svg
-            className="icon"
-          />
-        </button>
-      </div>
-      <span
-        className="voteCount"
-      >
-        <span
-          className="ScreenReaderOnly"
-          data-testid="SCREEN_READER_ONLY"
-        >
-          Downvotes:
-        </span>
-        25
-      </span>
-    </footer>
-  </article>
-</a>
+    </div>
+  </section>
+</article>
 `;
 
 exports[`Storyshots Cards/ResourceCard with zero up/downvotes 1`] = `
-<a
-  className="link"
-  href="https://google.com/"
-  onClick={[Function]}
-  rel="noopener noreferrer"
-  target="_blank"
+<article
+  className="Card Accordion ResourceCard"
 >
-  <span
-    className="ScreenReaderOnly"
-    data-testid="SCREEN_READER_ONLY"
+  <div
+    className="headingContainer"
   >
-    Opens in new window
-  </span>
-  <article
-    className="Card ResourceCard animatedCard"
-  >
-    <header
-      className="titleSection"
+    <div
+      className="header"
     >
-      <img
-        alt="logo"
-        aria-hidden="true"
-        src="/static/images/icons/javascript_logo.svg"
-      />
-      <h5>
-        Javascript for Super Duper Dummies
+      <h5
+        className="resourceName"
+      >
+        <a
+          className="link"
+          href="https://google.com/"
+          onClick={[Function]}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Javascript for Super Duper Dummies
+          <span
+            className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
+          >
+            Opens in new window
+          </span>
+        </a>
       </h5>
-    </header>
-    <section>
+      <div
+        className="votingBlock desktopVotingBlock"
+      >
+        <span
+          className="votingBlockHeader"
+        >
+          Useful?
+        </span>
+        <div
+          className="voteInfo"
+        >
+          <button
+            aria-pressed={false}
+            className="voteButton"
+            data-testid="UPVOTE_BUTTON"
+            onClick={[Function]}
+            type="button"
+          >
+            <span
+              className="ScreenReaderOnly"
+              data-testid="SCREEN_READER_ONLY"
+            >
+              Yes
+            </span>
+            <svg
+              className="icon"
+            />
+          </button>
+          <span
+            className="voteCount"
+          >
+            <span
+              className="ScreenReaderOnly"
+              data-testid="SCREEN_READER_ONLY"
+            >
+              Number of upvotes:
+            </span>
+            0
+          </span>
+        </div>
+        <div
+          className="voteInfo"
+        >
+          <button
+            aria-pressed={false}
+            className="voteButton"
+            data-testid="DOWNVOTE_BUTTON"
+            onClick={[Function]}
+            type="button"
+          >
+            <span
+              className="ScreenReaderOnly"
+              data-testid="SCREEN_READER_ONLY"
+            >
+              No
+            </span>
+            <svg
+              className="icon"
+            />
+          </button>
+          <span
+            className="voteCount"
+          >
+            <span
+              className="ScreenReaderOnly"
+              data-testid="SCREEN_READER_ONLY"
+            >
+              Number of downvotes:
+            </span>
+            0
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    aria-controls="content-Javascript for Super Duper Dummies"
+    aria-expanded={false}
+    className="accordionToggleButton"
+    data-testid="Accordion Toggle Button"
+    id="accordion-control-Javascript for Super Duper Dummies"
+    onClick={[Function]}
+    type="button"
+  >
+    <span
+      className="ScreenReaderOnly"
+      data-testid="SCREEN_READER_ONLY"
+    >
+      Show more
+    </span>
+    <svg
+      className="icon"
+    />
+  </button>
+  <section
+    aria-hidden={true}
+    className="accordionContent invisible"
+    data-testid="Accordion Content"
+    id="content-Javascript for Super Duper Dummies"
+    style={
+      Object {
+        "display": "none",
+      }
+    }
+  >
+    <div
+      className="content"
+    >
       <p
         className="descriptionText"
       >
         Trust fund post-ironic austin offal. Asymmetrical knausgaard selfies, butcher celiac brunch brooklyn palo santo iceland gochujang chicharrones waistcoat plaid.
       </p>
-    </section>
-    <footer
-      className="footerSection"
-    >
-      <span
-        className="footerText"
-      >
-        Useful?
-      </span>
       <div
-        className="voteInfo"
-      >
-        <button
-          className="voteButton"
-          data-testid="Upvote Button"
-          onClick={[Function]}
-          type="button"
-        >
-          <span
-            className="ScreenReaderOnly"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Yes
-          </span>
-          <svg
-            className="icon"
-          />
-        </button>
-        <span
-          className="voteCount"
-        >
-          <span
-            className="ScreenReaderOnly"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Upvotes:
-          </span>
-          0
-        </span>
-      </div>
-      <div
-        className="voteInfo"
-      >
-        <button
-          className="voteButton"
-          data-testid="Downvote Button"
-          onClick={[Function]}
-          type="button"
-        >
-          <span
-            className="ScreenReaderOnly"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            No
-          </span>
-          <svg
-            className="icon"
-          />
-        </button>
-      </div>
-      <span
-        className="voteCount"
+        className="votingBlock mobileVotingBlock"
       >
         <span
-          className="ScreenReaderOnly"
-          data-testid="SCREEN_READER_ONLY"
+          className="votingBlockHeader"
         >
-          Downvotes:
+          Useful?
         </span>
-        0
-      </span>
-    </footer>
-  </article>
-</a>
+        <div
+          className="voteInfo"
+        >
+          <button
+            aria-pressed={false}
+            className="voteButton"
+            data-testid="UPVOTE_BUTTON"
+            onClick={[Function]}
+            type="button"
+          >
+            <span
+              className="ScreenReaderOnly"
+              data-testid="SCREEN_READER_ONLY"
+            >
+              Yes
+            </span>
+            <svg
+              className="icon"
+            />
+          </button>
+          <span
+            className="voteCount"
+          >
+            <span
+              className="ScreenReaderOnly"
+              data-testid="SCREEN_READER_ONLY"
+            >
+              Number of upvotes:
+            </span>
+            0
+          </span>
+        </div>
+        <div
+          className="voteInfo"
+        >
+          <button
+            aria-pressed={false}
+            className="voteButton"
+            data-testid="DOWNVOTE_BUTTON"
+            onClick={[Function]}
+            type="button"
+          >
+            <span
+              className="ScreenReaderOnly"
+              data-testid="SCREEN_READER_ONLY"
+            >
+              No
+            </span>
+            <svg
+              className="icon"
+            />
+          </button>
+          <span
+            className="voteCount"
+          >
+            <span
+              className="ScreenReaderOnly"
+              data-testid="SCREEN_READER_ONLY"
+            >
+              Number of downvotes:
+            </span>
+            0
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+</article>
 `;

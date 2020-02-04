@@ -10,15 +10,15 @@ exports[`Storyshots FeaturedJobItem default 1`] = `
     rel="noopener noreferrer"
     target="_blank"
   >
+    <h6>
+      Director of Awesome
+    </h6>
     <span
       className="ScreenReaderOnly"
       data-testid="SCREEN_READER_ONLY"
     >
       Opens in new window
     </span>
-    <h6>
-      Director of Awesome
-    </h6>
     <svg
       className="externalLinkIcon"
     />

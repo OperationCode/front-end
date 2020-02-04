@@ -1,14 +1,13 @@
 /* eslint-env jest */
 import React from 'react';
-import { act, fireEvent, render } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
+import { UPVOTE_BUTTON, DOWNVOTE_BUTTON } from 'common/constants/testIDs';
 
 import ResourceCard from '../ResourceCard';
-// import ResourceCard, { possibleUserVotes } from '../ResourceCard';
 
 describe('ResourceCard', () => {
   const requiredProps = {
     href: 'https://all-the-javascripts.com/',
-    imageSource: '/static/images/icons/javascript_logo.svg',
     name: 'JavaScript for Dummies',
   };
 
@@ -29,18 +28,14 @@ describe('ResourceCard', () => {
       <ResourceCard {...requiredProps} onDownvote={onDownvoteMock} onUpvote={onUpvoteMock} />,
     );
 
-    const UpvoteButton = component.queryByTestId('Upvote Button');
+    const UpvoteButton = component.queryAllByTestId(UPVOTE_BUTTON)[0];
     expect(onUpvoteMock).not.toHaveBeenCalled();
-    act(() => {
-      fireEvent.click(UpvoteButton);
-    });
+    fireEvent.click(UpvoteButton);
     expect(onUpvoteMock).toHaveBeenCalledTimes(1);
 
-    const DownvoteButton = component.queryByTestId('Downvote Button');
+    const DownvoteButton = component.queryAllByTestId(DOWNVOTE_BUTTON)[0];
     expect(onDownvoteMock).not.toHaveBeenCalled();
-    act(() => {
-      fireEvent.click(DownvoteButton);
-    });
+    fireEvent.click(DownvoteButton);
     expect(onDownvoteMock).toHaveBeenCalledTimes(1);
   });
 });

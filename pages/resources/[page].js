@@ -46,8 +46,8 @@ function ResourcesPage({ currentPage, pathname, resources, totalPages }) {
       <Content
         theme="white"
         columns={[
-          <section>
-            <div className={styles.grid}>
+          <section className={styles.fullWidth}>
+            <div className={styles.fullWidth}>
               {resources.map(resource => (
                 <ResourceCard
                   key={resource.id}
@@ -60,6 +60,7 @@ function ResourcesPage({ currentPage, pathname, resources, totalPages }) {
                 />
               ))}
             </div>
+
             <Pagination currentPage={currentPage} totalPages={totalPages} pathname={pathname} />
           </section>,
         ]}

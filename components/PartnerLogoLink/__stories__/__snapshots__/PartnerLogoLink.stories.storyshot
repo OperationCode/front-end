@@ -10,12 +10,6 @@ exports[`Storyshots PartnerLogoLink default 1`] = `
     rel="noopener noreferrer"
     target="_blank"
   >
-    <span
-      className="ScreenReaderOnly"
-      data-testid="SCREEN_READER_ONLY"
-    >
-      Opens in new window
-    </span>
     <noscript>
       <img
         alt="GitHub logo"
@@ -28,6 +22,12 @@ exports[`Storyshots PartnerLogoLink default 1`] = `
       className="logo"
       data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/github.png"
     />
+    <span
+      className="ScreenReaderOnly"
+      data-testid="SCREEN_READER_ONLY"
+    >
+      Opens in new window
+    </span>
   </a>
 </div>
 `;
