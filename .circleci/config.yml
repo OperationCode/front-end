@@ -45,6 +45,7 @@ jobs:
       - run:
           name: Install dependencies # See https://github.com/yarnpkg/yarn/issues/5840#issuecomment-468782288
           command: |
+            ls -al
             CKSUM_BEFORE=$(cksum yarn.lock)
             yarn
             CKSUM_AFTER=$(cksum yarn.lock)
@@ -61,6 +62,7 @@ jobs:
       - run:
           name: Move dependencies to workspace
           command: |
+            ls -al
             mv node_modules /tmp/workspace/
             mv .cache /tmp/workspace/
       - persist_to_workspace:
