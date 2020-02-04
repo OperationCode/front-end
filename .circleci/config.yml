@@ -21,12 +21,6 @@ commands:
       - run:
           name: Restore cached artifacts (install dependenciess once, and pass around the folder)
           command: |
-            cd /tmp/workspace
-            echo ''
-            ls -al
-            cd ../..
-            echo ''
-            ls -al
             mv ~/tmp/workspace/node_modules .
             mv ~/tmp/workspace/.cache .
 
@@ -64,6 +58,16 @@ jobs:
           paths:
             - node_modules
             - .cache
+      - run:
+          name: Move dependencies to workspace
+          command: |
+            mv node_modules /tmp/workspace/
+            mv .cache /tmp/workspace/
+      - persist_to_workspace:
+            root: << pipeline.parameters.workspace_root >>
+            paths:
+              - node_modules
+              - .cache
 
   unit-tests:
     executor: default
