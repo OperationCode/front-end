@@ -39,7 +39,6 @@ function ResourceCard({
   description,
   downvotes,
   href,
-  imageSource,
   name,
   onDownvote,
   onUpvote,
