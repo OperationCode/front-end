@@ -63,13 +63,13 @@ jobs:
           name: Move dependencies to workspace
           command: |
             ls -al
-            mv node_modules /tmp/workspace/
-            mv .cache /tmp/workspace/
+            mv node_modules << pipeline.parameters.workspace_root >>/
+            mv ~/.cache << pipeline.parameters.workspace_root >>/
       - persist_to_workspace:
             root: << pipeline.parameters.workspace_root >>
             paths:
               - node_modules
-              - ~/.cache
+              - .cache
 
   unit-tests:
     executor: default
