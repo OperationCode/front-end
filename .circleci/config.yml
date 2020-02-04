@@ -21,6 +21,13 @@ commands:
       - run:
           name: Restore cached artifacts (install dependenciess once, and pass around the folder)
           command: |
+            ls -al
+            cd ~/
+            echo ''
+            ls -al
+            cd ~/project
+            echo ''
+            ls -al
             mv ~/node_modules .
             mv ~/.cache ~/
 
