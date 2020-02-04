@@ -21,20 +21,19 @@ commands:
       - run:
           name: Restore cached artifacts (install dependenciess once, and pass around the folder)
           command: |
-            ls -al
-            cd ~/
+            cd /tmp/workspace
             echo ''
             ls -al
-            cd ~/project
+            cd ../..
             echo ''
             ls -al
-            mv ~/node_modules .
-            mv ~/.cache ~/
+            mv ~/tmp/workspace/node_modules .
+            mv ~/tmp/workspace/.cache .
 
 parameters:
   workspace_root:
     type: string
-    default: '~/project'
+    default: '/tmp/workspace'
   cache_key:
     type: string
     default: operation-code-{{ checksum "yarn.lock" }}
@@ -63,8 +62,8 @@ jobs:
       - save_cache:
           key: << pipeline.parameters.cache_key >>
           paths:
-            - ~/node_modules
-            - ~/.cache
+            - node_modules
+            - .cache
 
   unit-tests:
     executor: default
