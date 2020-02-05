@@ -77,8 +77,7 @@ jobs:
             rm -rf ~/project/project ~/project/.cache
       - run:
           name: Run tests
-          command: |
-            yarn test:ci
+          command: yarn test:ci --silent=false
       - run:
           name: Initialize CodeClimate
           command: |
@@ -88,10 +87,11 @@ jobs:
       - run:
           name: Merge results and report to CodeClimate
           command: |
-            ls -al ./coverage
-            /usr/local/bin/cc-test-reporter format-coverage -t lcov -o ./coverage/codeclimate.jest.json jest-coverage/lcov.info
-            /usr/local/bin/cc-test-reporter sum-coverage -p 4 --output - ./coverage/*
-            /usr/local/bin/cc-test-reporter upload-coverage --debug --input -
+            ls -al
+            ls -al coverage
+            ls -al jest-coverage
+            /usr/local/bin/cc-test-reporter format-coverage -t lcov -o coverage/codeclimate.jest.json jest-coverage/lcov.info
+            /usr/local/bin/cc-test-reporter sum-coverage -p 4 --output - coverage/* | /usr/local/bin/cc-test-reporter upload-coverage --debug --input -
 
   lint:
     executor: default
