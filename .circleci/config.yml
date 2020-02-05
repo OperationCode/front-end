@@ -113,6 +113,7 @@ workflows:
       - unit-tests:
           requires:
             - install_dependencies
+            - cypress/run
 
       - lint:
           requires:
