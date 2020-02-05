@@ -71,20 +71,20 @@ jobs:
       - restore_node_modules
       - run: sudo chown -R circleci:circleci /usr/local/bin
       - run:
+          name: Copy Cypress test results and remove unnecessary paths
+          command: |
+            mkdir coverage && find . -name "codeclimate.*.json" -exec cp -av {} coverage \;
+            rm -rf ~/project/project ~/project/.cache
+      - run:
+          name: Run tests
+          command: |
+            yarn test:ci
+      - run:
           name: Initialize CodeClimate
           command: |
             curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > /usr/local/bin/cc-test-reporter
             chmod +x /usr/local/bin/cc-test-reporter
             /usr/local/bin/cc-test-reporter before-build
-      - run:
-          name: Run tests
-          command: |
-            yarn test:ci --max-workers=2
-      - run:
-          name: Copy Cypress test results and remove unnecessary paths
-          command: |
-            mkdir coverage && find . -name "codeclimate.*.json" -exec cp -av {} coverage \;
-            rm -rf ~/project/project ~/project/.cache
       - run:
           name: Merge results and report to CodeClimate
           command: |
