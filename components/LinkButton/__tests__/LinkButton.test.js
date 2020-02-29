@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactGA from 'react-ga';
 import noop from 'lodash/noop';
-import { act, fireEvent, render } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 import LinkButton from '../LinkButton';
 
@@ -36,9 +36,7 @@ describe('LinkButton', () => {
 
     expect(ReactGA.testModeAPI.calls).toHaveLength(1);
 
-    act(() => {
-      fireEvent.click(component.container.querySelector('a'));
-    });
+    fireEvent.click(component.container.querySelector('a'));
 
     expect(ReactGA.testModeAPI.calls).toHaveLength(1);
   });
@@ -55,9 +53,7 @@ describe('LinkButton', () => {
 
     expect(ReactGA.testModeAPI.calls).toHaveLength(1);
 
-    act(() => {
-      fireEvent.click(component.container.querySelector('a'));
-    });
+    fireEvent.click(component.container.querySelector('a'));
 
     expect(ReactGA.testModeAPI.calls).toHaveLength(2);
 

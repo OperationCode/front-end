@@ -1,5 +1,5 @@
 import React from 'react';
-import { act, wait, render, fireEvent } from '@testing-library/react';
+import { fireEvent, render, wait } from '@testing-library/react';
 import { passwordReset } from 'common/constants/api';
 import { validationErrorMessages } from 'common/constants/messages';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
@@ -21,9 +21,7 @@ describe('PasswordResetForm', () => {
       <PasswordResetForm onSuccess={jest.fn()} passwordReset={jest.fn()} />,
     );
 
-    await act(async () => {
-      fireEvent.blur(await findByLabelText(/Email/));
-    });
+    fireEvent.blur(await findByLabelText(/Email/));
 
     expect(await findByText(validationErrorMessages.required)).not.toBeNull();
   });
@@ -33,10 +31,8 @@ describe('PasswordResetForm', () => {
       <PasswordResetForm onSuccess={jest.fn()} passwordReset={jest.fn()} />,
     );
 
-    await act(async () => {
-      fireEvent.change(await findByLabelText(/Email/), { target: { value: 'email' } });
-      fireEvent.blur(await findByLabelText(/Email/));
-    });
+    fireEvent.change(await findByLabelText(/Email/), { target: { value: 'email' } });
+    fireEvent.blur(await findByLabelText(/Email/));
 
     expect(await findByText(validationErrorMessages.email)).not.toBeNull();
   });
@@ -54,11 +50,9 @@ describe('PasswordResetForm', () => {
       <PasswordResetForm onSuccess={successSpy} passwordReset={passwordReset} />,
     );
 
-    await act(async () => {
-      fireEvent.change(await findByLabelText(/Email/), { target: { value: user.email } });
-      fireEvent.blur(await findByLabelText(/Email/));
-      fireEvent.click(await findByText('Submit'));
-    });
+    fireEvent.change(await findByLabelText(/Email/), { target: { value: user.email } });
+    fireEvent.blur(await findByLabelText(/Email/));
+    fireEvent.click(await findByText('Submit'));
 
     await wait(() => {
       expect(successSpy).toHaveBeenCalledWith({ detail: 'success' });
@@ -78,11 +72,9 @@ describe('PasswordResetForm', () => {
       <PasswordResetForm onSuccess={successSpy} passwordReset={passwordReset} />,
     );
 
-    await act(async () => {
-      fireEvent.change(await findByLabelText(/Email/), { target: { value: user.email } });
-      fireEvent.blur(await findByLabelText(/Email/));
-      fireEvent.click(await findByText('Submit'));
-    });
+    fireEvent.change(await findByLabelText(/Email/), { target: { value: user.email } });
+    fireEvent.blur(await findByLabelText(/Email/));
+    fireEvent.click(await findByText('Submit'));
 
     expect(await findByText('test error')).not.toBeNull();
   });
@@ -103,9 +95,7 @@ describe('PasswordResetForm', () => {
       />,
     );
 
-    await act(async () => {
-      fireEvent.click(await findByText('Submit'));
-    });
+    fireEvent.click(await findByText('Submit'));
 
     await wait(() => {
       expect(passwordResetSpy).not.toHaveBeenCalled();

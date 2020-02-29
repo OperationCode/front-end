@@ -1,5 +1,6 @@
-import { act, fireEvent, render } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 import React from 'react';
+import { CLOSE_BUTTON } from 'common/constants/testIDs';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 import CloseButton from '../CloseButton';
 
@@ -12,9 +13,7 @@ describe('CloseButton', () => {
     const onClickMock = jest.fn();
     const { queryByTestId } = render(<CloseButton disabled onClick={onClickMock} />);
 
-    act(() => {
-      fireEvent.click(queryByTestId('Close Button'));
-    });
+    fireEvent.click(queryByTestId(CLOSE_BUTTON));
 
     expect(onClickMock).toHaveBeenCalledTimes(0);
   });
