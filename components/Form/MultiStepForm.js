@@ -4,6 +4,7 @@ import { arrayOf, func, object } from 'prop-types';
 import noop from 'lodash/noop';
 import { Formik } from 'formik';
 import { validStep } from 'common/constants/custom-props';
+import { MULTI_STEP_STEP_BUTTON, MULTI_STEP_SUBMIT_BUTTON } from 'common/constants/testIDs';
 import Button from 'components/Button/Button';
 import Form from 'components/Form/Form';
 import Alert from 'components/Alert/Alert';
@@ -126,7 +127,7 @@ export function MultiStepForm({
                 type="submit"
                 theme="secondary"
                 disabled={formikBag.isSubmitting}
-                data-testid="Submit Multi-Step Form"
+                data-testid={MULTI_STEP_SUBMIT_BUTTON}
               >
                 Submit ✓
               </Button>
@@ -136,7 +137,7 @@ export function MultiStepForm({
                 theme="secondary"
                 disabled={formikBag.isSubmitting}
                 fullWidth={isFirstStep}
-                data-testid="Submit Step Button"
+                data-testid={MULTI_STEP_STEP_BUTTON}
               >
                 Next →
               </Button>

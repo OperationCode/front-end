@@ -1,6 +1,6 @@
 import React from 'react';
 import { Formik, Field } from 'formik';
-import { act, cleanup, fireEvent, render } from '@testing-library/react';
+import { cleanup, fireEvent, render } from '@testing-library/react';
 import { INPUT, INPUT_ERROR, INPUT_FEEDBACK_GROUPING, LABEL } from 'common/constants/testIDs';
 import { validationErrorMessages } from 'common/constants/messages';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
@@ -41,9 +41,7 @@ describe('Input', () => {
       </Formik>,
     );
 
-    act(() => {
-      fireEvent.blur(component.queryByLabelText(label));
-    });
+    fireEvent.blur(component.queryByLabelText(label));
 
     const Alert = await component.findByTestId(INPUT_ERROR);
     expect(Alert.textContent).toBe(validationErrorMessages.required);

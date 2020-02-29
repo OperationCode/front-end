@@ -1,13 +1,11 @@
 import React from 'react';
-import { act, cleanup, fireEvent, render } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 import { ALERT_CLOSE_BUTTON } from 'common/constants/testIDs';
 
 import Alert from '../Alert';
 
 describe('Alert', () => {
-  afterEach(cleanup);
-
   it('should render with required props', () => {
     createSnapshotTest(<Alert type="error">Error Test Alert!</Alert>);
   });
@@ -23,9 +21,7 @@ describe('Alert', () => {
 
     expect(onCloseMock).toHaveBeenCalledTimes(0);
 
-    act(() => {
-      fireEvent.click(queryByTestId(ALERT_CLOSE_BUTTON));
-    });
+    fireEvent.click(queryByTestId(ALERT_CLOSE_BUTTON));
 
     expect(onCloseMock).toHaveBeenCalledTimes(1);
   });

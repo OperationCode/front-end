@@ -1,8 +1,9 @@
 import React from 'react';
 import { bool, func, oneOf } from 'prop-types';
 import classNames from 'classnames';
-import PlusIcon from 'static/images/icons/plus.svg';
+import { CLOSE_BUTTON } from 'common/constants/testIDs';
 import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
+import PlusIcon from 'static/images/icons/plus.svg';
 import styles from './CloseButton.module.css';
 
 CloseButton.propTypes = {
@@ -20,7 +21,7 @@ export default function CloseButton({ disabled, onClick, theme }) {
   return (
     <button
       className={styles.CloseButton}
-      data-testid="Close Button"
+      data-testid={CLOSE_BUTTON}
       disabled={disabled}
       onClick={onClick}
       type="button"

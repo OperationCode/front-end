@@ -1,5 +1,5 @@
 import React from 'react';
-import { act, fireEvent, render, wait } from '@testing-library/react';
+import { fireEvent, render, wait } from '@testing-library/react';
 import { passwordResetSubmit } from 'common/constants/api';
 import { validationErrorMessages } from 'common/constants/messages';
 import { BUTTON, INPUT_ERROR, CHANGE_PASSWORD_FORM_ERROR } from 'common/constants/testIDs';
@@ -25,9 +25,7 @@ describe('ChangePasswordForm', () => {
   it('should display required error message when blurring past password input', async () => {
     const component = render(<ChangePasswordForm {...requiredProps} />);
 
-    act(() => {
-      fireEvent.blur(component.queryByLabelText(/^Password/));
-    });
+    fireEvent.blur(component.queryByLabelText(/^Password/));
 
     const InputError = await component.findByTestId(INPUT_ERROR);
 
@@ -44,9 +42,7 @@ describe('ChangePasswordForm', () => {
       />,
     );
 
-    act(() => {
-      fireEvent.click(component.queryByTestId(BUTTON));
-    });
+    fireEvent.click(component.queryByTestId(BUTTON));
 
     const InputError = await component.findByTestId(INPUT_ERROR);
 
@@ -73,9 +69,7 @@ describe('ChangePasswordForm', () => {
     expect(passwordResetSubmitSpy).not.toHaveBeenCalled();
     expect(successSpy).not.toHaveBeenCalled();
 
-    act(() => {
-      fireEvent.click(component.queryByTestId(BUTTON));
-    });
+    fireEvent.click(component.queryByTestId(BUTTON));
 
     await wait(() => {
       expect(passwordResetSubmitSpy).toHaveBeenCalledTimes(1);
@@ -98,9 +92,7 @@ describe('ChangePasswordForm', () => {
       />,
     );
 
-    act(() => {
-      fireEvent.click(component.queryByTestId(BUTTON));
-    });
+    fireEvent.click(component.queryByTestId(BUTTON));
 
     await wait(() => {
       expect(passwordResetSubmitSpy).not.toHaveBeenCalled();
@@ -131,9 +123,7 @@ describe('ChangePasswordForm', () => {
       />,
     );
 
-    act(() => {
-      fireEvent.click(component.queryByTestId(BUTTON));
-    });
+    fireEvent.click(component.queryByTestId(BUTTON));
 
     await wait(() => {
       expect(OperationCodeAPIMock.history.post.length).toBeGreaterThan(0);

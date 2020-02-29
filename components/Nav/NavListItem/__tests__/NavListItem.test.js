@@ -1,6 +1,6 @@
 import React from 'react';
 import createShallowSnapshotTest from 'test-utils/createShallowSnapshotTest';
-import { render, fireEvent, act } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import { KEY_CODES } from 'test-utils/identifiers';
 
 import NavListItem from '../NavListItem';
@@ -49,15 +49,11 @@ describe('NavListItem', () => {
     const ul = container.querySelector('ul');
     const link = getByText(testDataWithSublinks.sublinks[0].name);
 
-    act(() => {
-      fireEvent.mouseEnter(link);
-    });
+    fireEvent.mouseEnter(link);
 
     expect(ul).not.toHaveClass('invisible');
 
-    act(() => {
-      fireEvent.mouseLeave(link);
-    });
+    fireEvent.mouseLeave(link);
 
     expect(ul).toHaveClass('invisible');
   });
@@ -67,9 +63,7 @@ describe('NavListItem', () => {
 
     const button = container.querySelector('button');
 
-    act(() => {
-      fireEvent.click(button);
-    });
+    fireEvent.click(button);
 
     expect(container.querySelector('ul')).not.toHaveClass('invisible');
   });
@@ -80,9 +74,7 @@ describe('NavListItem', () => {
     expect(queryByTestId('minus-icon')).toBeNull();
     expect(queryByTestId('plus-icon')).not.toBeNull();
 
-    act(() => {
-      fireEvent.mouseEnter(container.querySelector('button'));
-    });
+    fireEvent.mouseEnter(container.querySelector('button'));
 
     expect(queryByTestId('minus-icon')).not.toBeNull();
     expect(queryByTestId('plus-icon')).toBeNull();
@@ -92,42 +84,30 @@ describe('NavListItem', () => {
     const { container, getByText } = render(<NavListItem {...testDataWithSublinks} />);
     const link = getByText(testDataWithSublinks.sublinks[0].name);
 
-    act(() => {
-      fireEvent.mouseEnter(link);
-    });
+    fireEvent.mouseEnter(link);
     expect(container.querySelector('ul')).not.toHaveClass('invisible');
 
-    act(() => {
-      fireEvent.click(container.querySelector('button'));
-    });
+    fireEvent.click(container.querySelector('button'));
     expect(container.querySelector('ul')).toHaveClass('invisible');
   });
 
   it('should show sublinks on click, then hide them on pressing Shift+Tab on first sublink', () => {
     const { container, getByTestId } = render(<NavListItem {...testDataWithSublinks} />);
 
-    act(() => {
-      fireEvent.click(container.querySelector('button'));
-    });
+    fireEvent.click(container.querySelector('button'));
     expect(container.querySelector('ul')).not.toHaveClass('invisible');
 
-    act(() => {
-      fireEvent.keyDown(getByTestId('Nav Item Test - 1'), KEY_CODES.TAB_AND_SHIFT);
-    });
+    fireEvent.keyDown(getByTestId('Nav Item Test - 1'), KEY_CODES.TAB_AND_SHIFT);
     expect(container.querySelector('ul')).toHaveClass('invisible');
   });
 
   it('should show sublinks on click, then hide them on pressing Tab on last sublink', () => {
     const { container, getByTestId } = render(<NavListItem {...testDataWithSublinks} />);
 
-    act(() => {
-      fireEvent.click(container.querySelector('button'));
-    });
+    fireEvent.click(container.querySelector('button'));
     expect(container.querySelector('ul')).not.toHaveClass('invisible');
 
-    act(() => {
-      fireEvent.keyDown(getByTestId('Nav Item Test - 2'), KEY_CODES.TAB);
-    });
+    fireEvent.keyDown(getByTestId('Nav Item Test - 2'), KEY_CODES.TAB);
     expect(container.querySelector('ul')).toHaveClass('invisible');
   });
 });

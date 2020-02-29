@@ -1,5 +1,5 @@
 import React from 'react';
-import { act, fireEvent, render } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 import createShallowSnapshotTest from 'test-utils/createShallowSnapshotTest';
 import { BUTTON } from 'common/constants/testIDs';
 import SchoolCard, { getSchoolLocationText, ONLINE_ONLY, UNKNOWN, MULTIPLE } from '../SchoolCard';
@@ -48,9 +48,7 @@ describe('SchoolCard', () => {
 
     expect(toggleModal).not.toHaveBeenCalled();
 
-    act(() => {
-      fireEvent.click(queryByTestId(BUTTON));
-    });
+    fireEvent.click(queryByTestId(BUTTON));
 
     expect(toggleModal).toHaveBeenCalledTimes(1);
   });
