@@ -42,7 +42,7 @@
     "@babel/plugin-syntax-jsx": "^7.8.3",
     "@innocuous/components": "^2.1.0",
     "@innocuous/functions": "^2.1.0",
-    "@sentry/browser": "^5.12.4",
+    "@sentry/browser": "^5.13.0",
     "@storybook/addon-a11y": "3.4.11",
     "@storybook/addon-actions": "3.4.11",
     "@storybook/addon-backgrounds": "3.4.11",
