@@ -92,7 +92,7 @@
     "postcss-prepend-imports": "^1.0.1",
     "prop-types": "^15.6.2",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0",
+    "react-dom": "^16.13.0",
     "react-facebook-login": "^4.1.1",
     "react-ga": "2.7.0",
     "react-google-login": "^5.1.1",
