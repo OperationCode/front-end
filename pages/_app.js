@@ -7,7 +7,7 @@ import LogRocket from 'logrocket';
 import ReactGA from 'react-ga';
 import ScrollUpButton from 'react-scroll-up-button';
 import setupLogRocketReact from 'logrocket-react';
-import * as Sentry from '@sentry/browser';
+import * as Sentry from '@sentry/node';
 import { clientTokens } from 'common/config/environment';
 import Nav from 'components/Nav/Nav';
 import Footer from 'components/Footer/Footer';
@@ -62,7 +62,7 @@ class OperationCodeApp extends App {
     /* Analytics */
     // Temporary method until we do dynamic now configs
     if (isProduction && window.location.host.includes('operationcode.org')) {
-      Sentry.init({ dsn: clientTokens.SENTRY_DSN, release: `front-end@${version}` });
+      Sentry.init({ dsn: clientTokens.SENTRY_DSN, release: `${version}` });
       LogRocket.init(`${clientTokens.LOGROCKET}/operation-code`);
       ReactGA.initialize(clientTokens.GOOGLE_ANALYTICS);
 
@@ -130,11 +130,15 @@ class OperationCodeApp extends App {
 
   render() {
     // eslint-disable-next-line unicorn/prevent-abbreviations
-    const { Component, pageProps } = this.props;
+    const { Component, err, pageProps } = this.props;
+
+    // Workaround for https://github.com/zeit/next.js/issues/8592
+    // eslint-disable-next-line unicorn/prevent-abbreviations
+    const modifiedPageProps = { ...pageProps, err };
 
     return (
       <Layout>
-        <Component {...pageProps} />
+        <Component {...modifiedPageProps} />
       </Layout>
     );
   }
