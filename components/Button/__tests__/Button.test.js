@@ -1,5 +1,5 @@
 import React from 'react';
-import { act, fireEvent, render } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 import ReactGA from 'react-ga';
 import { BUTTON } from 'common/constants/testIDs';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
@@ -37,9 +37,7 @@ describe('Button', () => {
 
     const { queryByTestId } = render(<Button data-testid={BUTTON}>Testing</Button>);
 
-    act(() => {
-      fireEvent.click(queryByTestId(BUTTON));
-    });
+    fireEvent.click(queryByTestId(BUTTON));
 
     // eslint-disable-next-line no-console
     expect(console.log.mock.calls).toHaveLength(1);
@@ -51,9 +49,7 @@ describe('Button', () => {
 
     expect(onClickMock).toHaveBeenCalledTimes(0);
 
-    act(() => {
-      fireEvent.click(queryByTestId(BUTTON));
-    });
+    fireEvent.click(queryByTestId(BUTTON));
 
     expect(onClickMock).toHaveBeenCalledTimes(1);
   });
@@ -63,9 +59,7 @@ describe('Button', () => {
 
     expect(ReactGA.testModeAPI.calls).toHaveLength(1);
 
-    act(() => {
-      fireEvent.click(queryByTestId(BUTTON));
-    });
+    fireEvent.click(queryByTestId(BUTTON));
 
     expect(ReactGA.testModeAPI.calls).toHaveLength(1);
   });
@@ -85,9 +79,7 @@ describe('Button', () => {
 
     expect(ReactGA.testModeAPI.calls).not.toContainEqual(buttonEventPayload);
 
-    act(() => {
-      fireEvent.click(queryByTestId(BUTTON));
-    });
+    fireEvent.click(queryByTestId(BUTTON));
 
     expect(ReactGA.testModeAPI.calls).toContainEqual(buttonEventPayload);
   });

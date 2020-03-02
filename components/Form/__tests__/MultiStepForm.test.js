@@ -3,27 +3,28 @@
 import React from 'react';
 import faker from 'faker';
 import get from 'lodash/get';
-import { act, fireEvent, render, wait } from '@testing-library/react';
+import { fireEvent, render, wait, waitForElement, getByTestId } from '@testing-library/react';
 import { Field } from 'formik';
 import * as Yup from 'yup';
 import { networkErrorMessages } from 'common/constants/messages';
+import { MULTI_STEP_SUBMIT_BUTTON, MULTI_STEP_STEP_BUTTON } from 'common/constants/testIDs';
 import { MultiStepForm } from '../MultiStepForm';
 
-const submitForm = async container => {
-  const button = container.querySelector('button[type="submit"]');
+const submitForm = async ({ container, isFinalStep = false }) => {
+  const button = await waitForElement(
+    () =>
+      isFinalStep
+        ? getByTestId(container, MULTI_STEP_SUBMIT_BUTTON)
+        : getByTestId(container, MULTI_STEP_STEP_BUTTON),
+    { container },
+  );
 
-  await act(async () => {
-    await fireEvent.click(button);
-  });
+  await fireEvent.click(button);
 };
 
-const typeIntoInput = (container, inputName, value) => {
-  const input = container.querySelector(`input#${inputName}`);
-
-  act(() => {
-    fireEvent.change(input, { target: { id: inputName, value } });
-    fireEvent.blur(input);
-  });
+const typeIntoInput = (input, inputName, value) => {
+  fireEvent.change(input, { target: { id: inputName, value } });
+  fireEvent.blur(input);
 };
 
 function makeNameForm(submitHandler = jest.fn()) {
@@ -44,21 +45,21 @@ function makeNameForm(submitHandler = jest.fn()) {
       const { props } = this;
       return (
         <>
+          <label htmlFor="firstName">First Name*</label>
           <Field
             type="text"
             name="firstName"
             id="firstName"
             data-testid="firstName"
-            label="First Name*"
             component="input"
             {...props}
           />
+          <label htmlFor="lastName">Last Name*</label>
           <Field
             type="text"
             name="lastName"
             id="lastName"
             data-testid="lastName"
-            label="Last Name*"
             component="input"
             {...props}
           />
@@ -94,15 +95,19 @@ describe('MultiStepForm', () => {
     render() {
       const { props } = this;
       return (
-        <Field
-          type="text"
-          name="ultimateAnswer"
-          id="ultimateAnswer"
-          data-testid="ultimateAnswer"
-          label="What is the answer to the Ultimate Question of Life?*"
-          component="input"
-          {...props}
-        />
+        <>
+          <label htmlFor="ultimateAnswer">
+            What is the answer to the Ultimate Question of Life?*
+          </label>
+          <Field
+            type="text"
+            name="ultimateAnswer"
+            id="ultimateAnswer"
+            data-testid="ultimateAnswer"
+            component="input"
+            {...props}
+          />
+        </>
       );
     }
   }
@@ -126,21 +131,21 @@ describe('MultiStepForm', () => {
       const { props } = this;
       return (
         <>
+          <label htmlFor="favoriteNumber">Favorite Number*</label>
           <Field
             type="text"
             name="favoriteNumber"
             id="favoriteNumber"
             data-testid="favoriteNumber"
-            label="Favorite Number*"
             component="input"
             {...props}
           />
+          <label htmlFor="favoritePerson">Favorite Person*</label>
           <Field
             type="text"
             name="favoritePerson"
             id="favoritePerson"
             data-testid="favoritePerson"
-            label="Favorite Person*"
             component="input"
             {...props}
           />
@@ -194,59 +199,67 @@ describe('MultiStepForm', () => {
   });
 
   it('should render 2nd step after completing first step', async () => {
-    const { container, queryByTestId } = render(<MultiStepForm {...requiredProps} />);
+    const { container, findByLabelText, findByTestId } = render(
+      <MultiStepForm {...requiredProps} />,
+    );
 
-    typeIntoInput(container, 'firstName', faker.name.firstName());
-    typeIntoInput(container, 'lastName', faker.name.lastName());
-    await submitForm(container);
+    typeIntoInput(await findByLabelText(/first name/gim), 'firstName', faker.name.firstName());
+    typeIntoInput(await findByLabelText(/last name/gim), 'lastName', faker.name.lastName());
+    await submitForm({ container });
 
-    expect(queryByTestId('ultimateAnswer')).not.toBeNull();
+    expect(await findByTestId('ultimateAnswer')).not.toBeNull();
   });
 
   it('should call final handlers after last step submission in happy-path', async () => {
     const onFinalSubmitMock = jest.fn();
-    const { container, queryByTestId } = render(
+    const { container, findByLabelText } = render(
       <MultiStepForm {...requiredProps} onFinalSubmit={onFinalSubmitMock} />,
     );
 
-    typeIntoInput(container, 'firstName', faker.name.firstName());
-    typeIntoInput(container, 'lastName', faker.name.lastName());
-    await submitForm(container);
+    typeIntoInput(await findByLabelText(/first name/gim), 'firstName', faker.name.firstName());
+    typeIntoInput(await findByLabelText(/last name/gim), 'lastName', faker.name.lastName());
+    await submitForm({ container });
 
-    typeIntoInput(container, 'ultimateAnswer', '42');
-    await submitForm(container);
+    typeIntoInput(await findByLabelText(/ultimate/gim), 'ultimateAnswer', '42');
+    await submitForm({ container });
 
-    expect(queryByTestId('Submit Multi-Step Form').textContent).toContain('Submit');
+    typeIntoInput(await findByLabelText(/number/gim), 'favoriteNumber', faker.random.number());
+    typeIntoInput(await findByLabelText(/person/gim), 'favoritePerson', faker.name.firstName());
+    await submitForm({ container, isFinalStep: true });
 
-    typeIntoInput(container, 'favoriteNumber', faker.random.number());
-    typeIntoInput(container, 'favoritePerson', faker.name.firstName());
-    await submitForm(container);
-
-    expect(onFinalSubmitMock).toHaveBeenCalledTimes(1);
+    await wait(() => {
+      expect(onFinalSubmitMock).toHaveBeenCalledTimes(1);
+    });
   });
 
   it('should call onEachStepSubmit handler after each step submission in happy-path', async () => {
     const onEachStepSubmit = jest.fn();
-    const { container } = render(
+    const { container, findByLabelText } = render(
       <MultiStepForm {...requiredProps} onEachStepSubmit={onEachStepSubmit} />,
     );
 
-    typeIntoInput(container, 'firstName', faker.name.firstName());
-    typeIntoInput(container, 'lastName', faker.name.lastName());
-    await submitForm(container);
+    typeIntoInput(await findByLabelText(/first name/gim), 'firstName', faker.name.firstName());
+    typeIntoInput(await findByLabelText(/last name/gim), 'lastName', faker.name.lastName());
+    await submitForm({ container });
 
-    expect(onEachStepSubmit).toHaveBeenCalledTimes(1);
+    await wait(() => {
+      expect(onEachStepSubmit).toHaveBeenCalledTimes(1);
+    });
 
-    typeIntoInput(container, 'ultimateAnswer', '42');
-    await submitForm(container);
+    typeIntoInput(await findByLabelText(/ultimate/gim), 'ultimateAnswer', '42');
+    await submitForm({ container });
 
-    expect(onEachStepSubmit).toHaveBeenCalledTimes(2);
+    await wait(() => {
+      expect(onEachStepSubmit).toHaveBeenCalledTimes(2);
+    });
 
-    typeIntoInput(container, 'favoriteNumber', faker.random.number());
-    typeIntoInput(container, 'favoritePerson', faker.name.firstName());
-    await submitForm(container);
+    typeIntoInput(await findByLabelText(/number/gim), 'favoriteNumber', faker.random.number());
+    typeIntoInput(await findByLabelText(/person/gim), 'favoritePerson', faker.name.firstName());
+    await submitForm({ container, isFinalStep: true });
 
-    expect(onEachStepSubmit).toHaveBeenCalledTimes(3);
+    await wait(() => {
+      expect(onEachStepSubmit).toHaveBeenCalledTimes(3);
+    });
   });
 
   it('should handle error on final submit if success handler throws', async () => {
@@ -254,23 +267,25 @@ describe('MultiStepForm', () => {
       .fn()
       .mockRejectedValue(new Error(networkErrorMessages.serverDown));
 
-    const { container, queryByRole, queryByTestId } = render(
+    const { container, findByLabelText, queryByRole } = render(
       <MultiStepForm {...requiredProps} onFinalSubmit={onFinalSubmitMock} />,
     );
 
-    typeIntoInput(container, 'firstName', faker.name.firstName());
-    typeIntoInput(container, 'lastName', faker.name.lastName());
-    await submitForm(container);
+    typeIntoInput(await findByLabelText(/first name/gim), 'firstName', faker.name.firstName());
+    typeIntoInput(await findByLabelText(/last name/gim), 'lastName', faker.name.lastName());
+    await submitForm({ container });
 
-    typeIntoInput(container, 'ultimateAnswer', '42');
-    await submitForm(container);
+    typeIntoInput(await findByLabelText(/ultimate/gim), 'ultimateAnswer', '42');
+    await submitForm({ container });
 
-    expect(queryByTestId('Submit Multi-Step Form').textContent).toContain('Submit');
-    typeIntoInput(container, 'favoriteNumber', faker.random.number());
-    typeIntoInput(container, 'favoritePerson', faker.name.firstName());
-    await submitForm(container);
+    // expect(queryByTestId(MULTI_STEP_SUBMIT_BUTTON).textContent).toContain('Submit');
+    typeIntoInput(await findByLabelText(/number/gim), 'favoriteNumber', faker.random.number());
+    typeIntoInput(await findByLabelText(/person/gim), 'favoritePerson', faker.name.firstName());
+    await submitForm({ container, isFinalStep: true });
 
-    expect(queryByRole('alert').textContent).toStrictEqual(networkErrorMessages.serverDown);
+    await wait(() => {
+      expect(queryByRole('alert').textContent).toStrictEqual(networkErrorMessages.serverDown);
+    });
   });
 
   it('should handle server error on final submit', async () => {
@@ -280,23 +295,25 @@ describe('MultiStepForm', () => {
       .fn()
       .mockRejectedValue({ response: { data: { error: errorMessage } } });
 
-    const { container, queryByRole, queryByTestId } = render(
+    const { container, findByLabelText, queryByRole } = render(
       <MultiStepForm {...requiredProps} onFinalSubmit={onFinalSubmitMock} />,
     );
 
-    typeIntoInput(container, 'firstName', faker.name.firstName());
-    typeIntoInput(container, 'lastName', faker.name.lastName());
-    await submitForm(container);
+    typeIntoInput(await findByLabelText(/first name/gim), 'firstName', faker.name.firstName());
+    typeIntoInput(await findByLabelText(/last name/gim), 'lastName', faker.name.lastName());
+    await submitForm({ container });
 
-    typeIntoInput(container, 'ultimateAnswer', '42');
-    await submitForm(container);
+    typeIntoInput(await findByLabelText(/ultimate/gim), 'ultimateAnswer', '42');
+    await submitForm({ container });
 
-    expect(queryByTestId('Submit Multi-Step Form').textContent).toContain('Submit');
-    typeIntoInput(container, 'favoriteNumber', faker.random.number());
-    typeIntoInput(container, 'favoritePerson', faker.name.firstName());
-    await submitForm(container);
+    // expect(queryByTestId(MULTI_STEP_SUBMIT_BUTTON).textContent).toContain('Submit');
+    typeIntoInput(await findByLabelText(/number/gim), 'favoriteNumber', faker.random.number());
+    typeIntoInput(await findByLabelText(/person/gim), 'favoritePerson', faker.name.firstName());
+    await submitForm({ container, isFinalStep: true });
 
-    expect(queryByRole('alert').textContent).toStrictEqual(errorMessage);
+    await wait(() => {
+      expect(queryByRole('alert').textContent).toStrictEqual(errorMessage);
+    });
   });
 
   it('should wipe error message between an invalid and valid submit', async () => {
@@ -305,51 +322,59 @@ describe('MultiStepForm', () => {
       .mockRejectedValueOnce(new Error(networkErrorMessages.serverDown))
       .mockResolvedValueOnce();
 
-    const { container, queryByRole, queryByTestId } = render(
+    const { container, findByLabelText, queryByRole } = render(
       <MultiStepForm {...requiredProps} onFinalSubmit={onFinalSubmitMock} />,
     );
 
     // sanity check
     expect(queryByRole('alert')).toBeNull();
 
-    typeIntoInput(container, 'firstName', faker.name.firstName());
-    typeIntoInput(container, 'lastName', faker.name.lastName());
-    await submitForm(container);
+    typeIntoInput(await findByLabelText(/first name/gim), 'firstName', faker.name.firstName());
+    typeIntoInput(await findByLabelText(/last name/gim), 'lastName', faker.name.lastName());
+    await submitForm({ container });
 
-    typeIntoInput(container, 'ultimateAnswer', '42');
-    await submitForm(container);
+    typeIntoInput(await findByLabelText(/ultimate/gim), 'ultimateAnswer', '42');
+    await submitForm({ container });
 
-    expect(queryByTestId('Submit Multi-Step Form').textContent).toContain('Submit');
-    typeIntoInput(container, 'favoriteNumber', faker.random.number());
-    typeIntoInput(container, 'favoritePerson', faker.name.firstName());
-    await submitForm(container);
+    typeIntoInput(await findByLabelText(/number/gim), 'favoriteNumber', faker.random.number());
+    typeIntoInput(await findByLabelText(/person/gim), 'favoritePerson', faker.name.firstName());
+    await submitForm({ container, isFinalStep: true });
 
-    expect(queryByRole('alert').textContent).toStrictEqual(networkErrorMessages.serverDown);
+    await wait(() => {
+      expect(queryByRole('alert').textContent).toStrictEqual(networkErrorMessages.serverDown);
+    });
 
-    await submitForm(container);
+    await submitForm({ container, isFinalStep: true });
 
-    expect(queryByRole('alert')).toBeNull();
+    await wait(() => {
+      expect(queryByRole('alert')).toBeNull();
+    });
   });
 
   it('should be able to go back and forth between steps, maintaining form state', async () => {
-    const { container, queryByTestId } = render(<MultiStepForm {...requiredProps} />);
+    const { container, findByLabelText, queryByTestId } = render(
+      <MultiStepForm {...requiredProps} />,
+    );
 
     const firstNameValue = faker.name.firstName();
     const lastNameValue = faker.name.lastName();
 
-    typeIntoInput(container, 'firstName', firstNameValue);
-    typeIntoInput(container, 'lastName', lastNameValue);
-    await submitForm(container);
+    typeIntoInput(await findByLabelText(/first name/gim), 'firstName', firstNameValue);
+    typeIntoInput(await findByLabelText(/last name/gim), 'lastName', lastNameValue);
+    await submitForm({ container });
 
-    expect(queryByTestId('ultimateAnswer')).not.toBeNull();
+    await wait(() => {
+      expect(queryByTestId('ultimateAnswer')).not.toBeNull();
+    });
 
     const goToPreviousStepButton = queryByTestId('Previous Step Button');
-    expect(goToPreviousStepButton).not.toBeNull();
-    expect(goToPreviousStepButton.textContent).toContain('Previous');
 
-    act(() => {
-      fireEvent.click(goToPreviousStepButton);
+    await wait(() => {
+      expect(goToPreviousStepButton).not.toBeNull();
+      expect(goToPreviousStepButton.textContent).toContain('Previous');
     });
+
+    fireEvent.click(goToPreviousStepButton);
 
     await wait(() => {
       expect(queryByTestId('ultimateAnswer')).toBeNull();
@@ -361,46 +386,52 @@ describe('MultiStepForm', () => {
   });
 
   it('calls setFieldTouched for every field on prev step if calling showPreviousStep', async () => {
-    const { container, queryByTestId } = render(<MultiStepForm {...requiredProps} />);
+    const { container, findByLabelText, queryByTestId } = render(
+      <MultiStepForm {...requiredProps} />,
+    );
 
     const firstNameValue = faker.name.firstName();
     const lastNameValue = faker.name.lastName();
-    typeIntoInput(container, 'firstName', firstNameValue);
-    typeIntoInput(container, 'lastName', lastNameValue);
-    await submitForm(container);
+
+    typeIntoInput(await findByLabelText(/first name/gim), 'firstName', firstNameValue);
+    typeIntoInput(await findByLabelText(/last name/gim), 'lastName', lastNameValue);
+    await submitForm({ container });
 
     // make sure that step 2's input has initialValue & visible after step 1 submission
-    expect(container.querySelectorAll('input')).toHaveLength(1);
-    expect(queryByTestId('ultimateAnswer')).not.toBeNull();
-    expect(queryByTestId('ultimateAnswer').value).toStrictEqual(
-      UltimateAnswerForm.initialValues.ultimateAnswer,
-    );
+    await wait(() => {
+      expect(container.querySelectorAll('input')).toHaveLength(1);
+      expect(queryByTestId('ultimateAnswer')).not.toBeNull();
+      expect(queryByTestId('ultimateAnswer').value).toStrictEqual(
+        UltimateAnswerForm.initialValues.ultimateAnswer,
+      );
+    });
 
     // click on "Previous" button
     const goToPreviousStepButton = queryByTestId('Previous Step Button');
     expect(goToPreviousStepButton).not.toBeNull();
     expect(goToPreviousStepButton.textContent).toContain('Previous');
-    act(() => {
-      fireEvent.click(goToPreviousStepButton);
-    });
+    fireEvent.click(goToPreviousStepButton);
 
     // make sure that step 1's inputs have persisted & visible after clicking "Previous" from step 1
-    expect(container.querySelectorAll('input')).toHaveLength(2);
-    expect(queryByTestId('firstName')).not.toBeNull();
-    expect(queryByTestId('lastName')).not.toBeNull();
-
-    expect(queryByTestId('firstName').value).toStrictEqual(firstNameValue);
-    expect(queryByTestId('lastName').value).toStrictEqual(lastNameValue);
+    await wait(() => {
+      expect(container.querySelectorAll('input')).toHaveLength(2);
+      expect(queryByTestId('firstName')).not.toBeNull();
+      expect(queryByTestId('lastName')).not.toBeNull();
+      expect(queryByTestId('firstName').value).toStrictEqual(firstNameValue);
+      expect(queryByTestId('lastName').value).toStrictEqual(lastNameValue);
+    });
   });
 
   it('should call custom step handler after submitting', async () => {
-    const { container } = render(<MultiStepForm {...requiredProps} />);
+    const { container, findByLabelText } = render(<MultiStepForm {...requiredProps} />);
 
-    typeIntoInput(container, 'firstName', faker.name.firstName());
-    typeIntoInput(container, 'lastName', faker.name.lastName());
-    await submitForm(container);
+    typeIntoInput(await findByLabelText(/first name/gim), 'firstName', faker.name.firstName());
+    typeIntoInput(await findByLabelText(/last name/gim), 'lastName', faker.name.lastName());
+    await submitForm({ container });
 
-    expect(nameFormSubmitHandler).toHaveBeenCalledTimes(1);
+    await wait(() => {
+      expect(nameFormSubmitHandler).toHaveBeenCalledTimes(1);
+    });
   });
 
   it('should handle error if custom handler throws after submitting', async () => {
@@ -410,15 +441,19 @@ describe('MultiStepForm', () => {
 
     const steps = [makeNameForm(mockedSubmitHandler), requiredProps.steps[1]];
 
-    const { container, queryByRole } = render(<MultiStepForm {...requiredProps} steps={steps} />);
+    const { container, findByLabelText, queryByRole } = render(
+      <MultiStepForm {...requiredProps} steps={steps} />,
+    );
 
-    typeIntoInput(container, 'firstName', faker.name.firstName());
-    typeIntoInput(container, 'lastName', faker.name.lastName());
-    await submitForm(container);
+    typeIntoInput(await findByLabelText(/first name/gim), 'firstName', faker.name.firstName());
+    typeIntoInput(await findByLabelText(/last name/gim), 'lastName', faker.name.lastName());
+    await submitForm({ container });
 
-    expect(nameFormSubmitHandler).toHaveBeenCalledTimes(0);
-    expect(mockedSubmitHandler).toHaveBeenCalledTimes(1);
-    expect(queryByRole('alert').textContent).toStrictEqual(networkErrorMessages.serverDown);
+    await wait(() => {
+      expect(nameFormSubmitHandler).toHaveBeenCalledTimes(0);
+      expect(mockedSubmitHandler).toHaveBeenCalledTimes(1);
+      expect(queryByRole('alert').textContent).toStrictEqual(networkErrorMessages.serverDown);
+    });
   });
 
   it('should handle server error on custom handler submit', async () => {
@@ -429,14 +464,18 @@ describe('MultiStepForm', () => {
 
     const steps = [makeNameForm(mockedSubmitHandler), requiredProps.steps[1]];
 
-    const { container, queryByRole } = render(<MultiStepForm {...requiredProps} steps={steps} />);
+    const { container, findByLabelText, queryByRole } = render(
+      <MultiStepForm {...requiredProps} steps={steps} />,
+    );
 
-    typeIntoInput(container, 'firstName', faker.name.firstName());
-    typeIntoInput(container, 'lastName', faker.name.lastName());
-    await submitForm(container);
+    typeIntoInput(await findByLabelText(/first name/gim), 'firstName', faker.name.firstName());
+    typeIntoInput(await findByLabelText(/last name/gim), 'lastName', faker.name.lastName());
+    await submitForm({ container });
 
-    expect(nameFormSubmitHandler).toHaveBeenCalledTimes(0);
-    expect(mockedSubmitHandler).toHaveBeenCalledTimes(1);
-    expect(queryByRole('alert').textContent).toStrictEqual(errorMessage);
+    await wait(() => {
+      expect(nameFormSubmitHandler).toHaveBeenCalledTimes(0);
+      expect(mockedSubmitHandler).toHaveBeenCalledTimes(1);
+      expect(queryByRole('alert').textContent).toStrictEqual(errorMessage);
+    });
   });
 });

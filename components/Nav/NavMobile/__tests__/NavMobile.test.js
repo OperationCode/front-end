@@ -1,7 +1,8 @@
 import React from 'react';
-import { act, fireEvent, render } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 import createShallowSnapshotTest from 'test-utils/createShallowSnapshotTest';
 import { mobileLoggedOutNavItems } from 'common/constants/navigation';
+import { CLOSE_BUTTON } from 'common/constants/testIDs';
 
 import NavMobile from '../NavMobile';
 
@@ -54,9 +55,7 @@ describe('NavMobile', () => {
       />,
     );
 
-    act(() => {
-      fireEvent.click(wrapper.queryByTestId('Hamburger Button'));
-    });
+    fireEvent.click(wrapper.queryByTestId('Hamburger Button'));
 
     expect(mockOpen).toHaveBeenCalled();
   });
@@ -73,9 +72,7 @@ describe('NavMobile', () => {
       />,
     );
 
-    act(() => {
-      fireEvent.click(wrapper.queryByTestId('Close Button'));
-    });
+    fireEvent.click(wrapper.queryByTestId(CLOSE_BUTTON));
 
     expect(mockClose).toHaveBeenCalled();
   });

@@ -3,7 +3,7 @@
 exports[`CloseButton should render with just required props passed 1`] = `
 <button
   className="CloseButton"
-  data-testid="Close Button"
+  data-testid="CLOSE_BUTTON"
   disabled={false}
   onClick={[MockFunction]}
   type="button"

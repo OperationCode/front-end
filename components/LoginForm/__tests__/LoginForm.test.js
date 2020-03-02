@@ -1,6 +1,6 @@
 import React from 'react';
 import faker from 'faker';
-import { act, fireEvent, render, wait } from '@testing-library/react';
+import { fireEvent, render, wait } from '@testing-library/react';
 import { loginUser } from 'common/constants/api';
 import { networkErrorMessages, validationErrorMessages } from 'common/constants/messages';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
@@ -22,9 +22,7 @@ describe('LoginForm', () => {
       <LoginForm login={jest.fn()} onSuccess={jest.fn()} />,
     );
 
-    await act(async () => {
-      await fireEvent.blur(getByLabelText(/Email/));
-    });
+    fireEvent.blur(getByLabelText(/Email/));
 
     expect(findByText(validationErrorMessages.required)).not.toBeNull();
   });
@@ -34,10 +32,8 @@ describe('LoginForm', () => {
       <LoginForm login={jest.fn()} onSuccess={jest.fn()} />,
     );
 
-    await act(async () => {
-      await fireEvent.change(getByLabelText(/Email/), { target: { value: 'email' } });
-      await fireEvent.blur(getByLabelText(/Email/));
-    });
+    fireEvent.change(getByLabelText(/Email/), { target: { value: 'email' } });
+    fireEvent.blur(getByLabelText(/Email/));
 
     expect(findByText(validationErrorMessages.required)).not.toBeNull();
   });
@@ -47,9 +43,7 @@ describe('LoginForm', () => {
       <LoginForm login={jest.fn()} onSuccess={jest.fn()} />,
     );
 
-    await act(async () => {
-      await fireEvent.blur(getByLabelText(/Password/));
-    });
+    fireEvent.blur(getByLabelText(/Password/));
 
     expect(findByText(validationErrorMessages.required)).not.toBeNull();
   });
@@ -76,9 +70,7 @@ describe('LoginForm', () => {
       <LoginForm onSuccess={successSpy} login={loginUser} initialValues={initialValues} />,
     );
 
-    await act(async () => {
-      await fireEvent.click(getByText('Submit'));
-    });
+    fireEvent.click(getByText('Submit'));
 
     await wait(() => {
       expect(successSpy).toHaveBeenCalledTimes(1);
@@ -100,9 +92,7 @@ describe('LoginForm', () => {
       />,
     );
 
-    await act(async () => {
-      await fireEvent.click(getByText('Submit'));
-    });
+    fireEvent.click(getByText('Submit'));
 
     await wait(() => {
       expect(successSpy).not.toHaveBeenCalled();
@@ -126,9 +116,7 @@ describe('LoginForm', () => {
       <LoginForm login={loginUser} onSuccess={successSpy} initialValues={initialValues} />,
     );
 
-    await act(async () => {
-      await fireEvent.click(getByText('Submit'));
-    });
+    fireEvent.click(getByText('Submit'));
 
     wait(() => {
       expect(findByText(invalidError)).not.toBeNull();
@@ -151,9 +139,7 @@ describe('LoginForm', () => {
       <LoginForm onSuccess={successSpy} login={loginUser} initialValues={initialValues} />,
     );
 
-    await act(async () => {
-      await fireEvent.click(getByText('Submit'));
-    });
+    fireEvent.click(getByText('Submit'));
 
     await wait(() => {
       expect(findByText(networkErrorMessages.serverDown)).not.toBeNull();
@@ -186,9 +172,7 @@ describe('LoginForm', () => {
 
     const submit = getByText('Submit');
 
-    await act(async () => {
-      await fireEvent.click(submit);
-    });
+    fireEvent.click(submit);
 
     await wait(() => {
       expect(submit).not.toBeDisabled();

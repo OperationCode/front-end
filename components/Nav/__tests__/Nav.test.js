@@ -1,6 +1,7 @@
 import React from 'react';
 import cookie from 'js-cookie';
-import { act, fireEvent, render } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
+import { CLOSE_BUTTON } from 'common/constants/testIDs';
 import createShallowSnapshotTest from 'test-utils/createShallowSnapshotTest';
 import { VALID_AUTH_TOKEN } from 'test-utils/mocks/jwtMock';
 
@@ -43,10 +44,7 @@ describe('Nav', () => {
     expect(wrapper.queryByTestId('Mobile Nav')).toBeNull();
 
     const HamburgerButton = wrapper.queryByTestId('Hamburger Button');
-
-    act(() => {
-      fireEvent.click(HamburgerButton);
-    });
+    fireEvent.click(HamburgerButton);
 
     expect(wrapper.findByTestId('Mobile Nav')).not.toBeNull();
   });
@@ -55,14 +53,10 @@ describe('Nav', () => {
     const wrapper = render(<Nav />);
 
     const HamburgerButton = wrapper.queryByTestId('Hamburger Button');
-    act(() => {
-      fireEvent.click(HamburgerButton);
-    });
+    fireEvent.click(HamburgerButton);
 
-    const CloseButton = await wrapper.findByTestId('Close Button');
-    act(() => {
-      fireEvent.click(CloseButton);
-    });
+    const CloseButton = await wrapper.findByTestId(CLOSE_BUTTON);
+    fireEvent.click(CloseButton);
 
     expect(wrapper.queryByTestId('Mobile Nav')).toBeNull();
   });
