@@ -148,6 +148,6 @@ workflows:
                   chmod +x ./cc-test-reporter
                   mkdir coverage && ./cc-test-reporter format-coverage -t lcov -o "coverage/codeclimate.$CIRCLE_NODE_INDEX.json" cypress-coverage/lcov.info
             - persist_to_workspace:
-                root: ~/
+                root: << pipeline.parameters.workspace_root >>
                 paths:
                   - project/coverage/*
