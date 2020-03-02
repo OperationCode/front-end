@@ -19,15 +19,15 @@ commands:
   restore_node_modules:
     steps:
       - run:
-          name: Restore cached artifacts (install dependenciess once, and pass around the folder)
+          name: Restore cached artifacts (install dependencies once, and pass around the folder)
           command: |
-            mv /tmp/workspace/node_modules .
-            mv /tmp/workspace/.cache .
+            mv ~/node_modules .
+            mv ~/.cache .
 
 parameters:
   workspace_root:
     type: string
-    default: '/tmp/workspace'
+    default: '~/'
   cache_key:
     type: string
     default: operation-code-{{ checksum "yarn.lock" }}
@@ -152,4 +152,4 @@ workflows:
             - persist_to_workspace:
                 root: << pipeline.parameters.workspace_root >>
                 paths:
-                  - project/coverage/*
+                  - coverage
