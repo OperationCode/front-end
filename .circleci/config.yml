@@ -102,6 +102,7 @@ jobs:
       - checkout
       - attach_workspace:
           at: << pipeline.parameters.workspace_root >>
+      - run: ls -al
       - restore_node_modules
       - run:
           name: Lint
