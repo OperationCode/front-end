@@ -14,7 +14,7 @@ export const OperationCodeAPI = axios.create(axiosConfig);
 // This API is also part of operation code, and documented here:
 // https://github.com/OperationCode/resources_api
 export const ResourcesAPI = axios.create({
-  baseURL: 'https://resources.operationcode.org',
+  baseURL: 'https://resources.k8s.operationcode.org',
   timeout: 5000,
 });
 export const ExternalAPI = axios.create({
