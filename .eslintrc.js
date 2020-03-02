@@ -236,7 +236,7 @@ module.exports = {
       },
     ],
     'multiline-ternary': ['error', 'always-multiline'],
-    'no-console': 'warn',
+    'no-console': 'off',
     'no-restricted-imports': [
       'error',
       {
