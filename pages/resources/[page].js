@@ -1,4 +1,5 @@
-import PropTypes from 'prop-types';
+import { arrayOf, number, shape, string } from 'prop-types';
+import * as Sentry from '@sentry/node';
 import Content from 'components/Content/Content';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
@@ -8,34 +9,41 @@ import { getResourcesPromise } from 'common/constants/api';
 import styles from '../styles/resources.module.css';
 
 ResourcesPage.propTypes = {
-  currentPage: PropTypes.number.isRequired,
-  pathname: PropTypes.string.isRequired,
-  resources: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number, // integer, unique ID
-      name: PropTypes.title,
-      notes: PropTypes.string, // possibly null
-      url: PropTypes.string.isRequired,
-      upvotes: PropTypes.number,
-      downvotes: PropTypes.number,
+  currentPage: number.isRequired,
+  pathname: string.isRequired,
+  resources: arrayOf(
+    shape({
+      id: number, // integer, unique ID
+      name: string,
+      notes: string, // possibly null
+      url: string.isRequired,
+      upvotes: number,
+      downvotes: number,
     }),
   ).isRequired,
-  totalPages: PropTypes.number.isRequired,
+  totalPages: number.isRequired,
 };
 
 ResourcesPage.getInitialProps = async ({ pathname, query }) => {
   const { page = 1 } = query;
 
-  const response = await getResourcesPromise({ page });
+  try {
+    const response = await getResourcesPromise({ page });
 
-  const { data: resources, number_of_pages: totalPages, page: currentPage } = response.data;
+    const { data: resources, number_of_pages: totalPages, page: currentPage } = response.data;
 
-  return {
-    currentPage,
-    pathname,
-    resources,
-    totalPages,
-  };
+    return {
+      currentPage,
+      pathname,
+      resources,
+      totalPages,
+    };
+  } catch (error) {
+    console.error(error);
+    Sentry.captureException(error);
+
+    return { currentPage: 1, data: [], totalPages: 1, pathname };
+  }
 };
 
 function ResourcesPage({ currentPage, pathname, resources, totalPages }) {

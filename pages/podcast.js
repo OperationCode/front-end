@@ -1,4 +1,5 @@
 import { arrayOf, shape, string } from 'prop-types';
+import * as Sentry from '@sentry/node';
 import ReactPlayer from 'react-player';
 import { parse as parseXml } from 'fast-xml-parser';
 import { getServerErrorMessage, ExternalAPI } from 'common/utils/api-utils';
@@ -44,6 +45,9 @@ Podcast.getInitialProps = async () => {
   }
 
   // Request failed or RSS Feed is broken
+  const error = `Podcasts query failed.`;
+  console.error(error);
+  Sentry.captureException(error);
   return { episodes: [], errorMessage: getServerErrorMessage() };
 };
 

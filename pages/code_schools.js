@@ -1,5 +1,6 @@
 import { useState } from 'react'; // eslint-disable-line  no-restricted-imports
 import { array, string } from 'prop-types';
+import * as Sentry from '@sentry/node';
 import Head from 'components/head';
 import { getServerErrorMessage } from 'common/utils/api-utils';
 import ThemedReactSelect from 'components/Form/Select/ThemedReactSelect';
@@ -43,10 +44,11 @@ CodeSchools.getInitialProps = async () => {
   try {
     const { data } = await getCodeSchoolsPromise();
 
-    return {
-      allSchools: data,
-    };
+    return { allSchools: data };
   } catch (error) {
+    console.error(error);
+    Sentry.captureException(error);
+
     return { errorMessage: getServerErrorMessage(error) };
   }
 };

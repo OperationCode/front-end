@@ -1,4 +1,5 @@
 import { arrayOf, object, string } from 'prop-types';
+import * as Sentry from '@sentry/node';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import { getTeamMembersPromise } from 'common/constants/api';
 import { s3 } from 'common/constants/urls';
@@ -35,6 +36,9 @@ Team.getInitialProps = async () => {
 
     return { boardMembers: sortedBoardMembers };
   } catch (error) {
+    console.error(error);
+    Sentry.captureException(error);
+
     return { errorMessage: getServerErrorMessage(error) };
   }
 };

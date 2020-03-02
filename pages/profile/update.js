@@ -1,5 +1,6 @@
-import { array, objectOf, oneOfType, string, number, bool } from 'prop-types';
 import nextCookie from 'next-cookies';
+import { array, objectOf, oneOfType, string, number, bool } from 'prop-types';
+import * as Sentry from '@sentry/node';
 import get from 'lodash/get';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
@@ -18,22 +19,33 @@ UpdateProfile.defaultProps = {
 
 UpdateProfile.getInitialProps = async ctx => {
   const { token } = nextCookie(ctx);
-  const { data } = await getUserPromise({ token });
 
-  // We get disciplines and programmingLanguages as a comma-separated string back from the server
-  // Turn it into an array if trying to populate initialValues.
-  const disciplines = get(data, 'disciplines') || '';
-  const programmingLanguages = get(data, 'programmingLanguages') || '';
+  try {
+    const { data } = await getUserPromise({ token });
 
-  const formattedData = {
-    ...data,
-    disciplines: disciplines.split(', '),
-    programmingLanguages: programmingLanguages.split(', '),
-  };
+    // We get disciplines and programmingLanguages as a comma-separated string back from the server
+    // Turn it into an array if trying to populate initialValues.
+    const disciplines = get(data, 'disciplines') || '';
+    const programmingLanguages = get(data, 'programmingLanguages') || '';
 
-  return {
-    initialValues: { ...UpdateProfileForm.defaultProps.initialValues, ...formattedData },
-  };
+    const formattedData = {
+      ...data,
+      disciplines: disciplines.split(', '),
+      programmingLanguages: programmingLanguages.split(', '),
+    };
+
+    return {
+      initialValues: { ...UpdateProfileForm.defaultProps.initialValues, ...formattedData },
+    };
+  } catch (error) {
+    console.error(error);
+    Sentry.captureException(error);
+
+    // TODO: Handle error better
+    return {
+      initialValues: { ...UpdateProfileForm.defaultProps.initialValues },
+    };
+  }
 };
 
 function UpdateProfile({ initialValues }) {

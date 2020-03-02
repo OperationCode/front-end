@@ -1,6 +1,7 @@
-import { useState } from 'react'; // eslint-disable-line  no-restricted-imports
+import { useState } from 'react'; // eslint-disable-line no-restricted-imports
 import Link from 'next/link';
 import { string } from 'prop-types';
+import * as Sentry from '@sentry/node';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
@@ -24,6 +25,18 @@ PasswordResetConfirm.getInitialProps = ({ query: { uid, token } }) => {
 };
 
 function PasswordResetConfirm({ uid, token }) {
+  if (!uid || !token) {
+    const error = `One of token or uid undefined when confirming password reset.
+      \nuid: ${uid}
+      \ntoken: ${token}
+      \n`;
+
+    console.error(error);
+    Sentry.captureException(error);
+
+    return <Alert type="error">The provided credentials were either invalid or expired.</Alert>;
+  }
+
   const [didReset, setDidReset] = useState(false);
 
   const onSubmit = async values => passwordResetSubmit({ ...values, uid, token });
@@ -39,10 +52,6 @@ function PasswordResetConfirm({ uid, token }) {
           </Link>
         </div>
       );
-    }
-
-    if (!uid || !token) {
-      return <Alert type="error">The provided credentials were either invalid or expired.</Alert>;
     }
 
     return <ChangePasswordForm onSubmit={onSubmit} onSuccess={onSuccess} />;

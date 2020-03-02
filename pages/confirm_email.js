@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import * as Sentry from '@sentry/node';
 import { bool } from 'prop-types';
 import { confirmEmail } from 'common/constants/api';
 import Head from 'components/head';
@@ -15,7 +16,10 @@ ConfirmEmail.getInitialProps = async ({ query: { key } }) => {
     const data = await confirmEmail({ key });
 
     return { isVerified: data.detail === 'ok' };
-  } catch {
+  } catch (error) {
+    console.error(error);
+    Sentry.captureException(error);
+
     return { isVerified: false };
   }
 };
