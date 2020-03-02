@@ -15,15 +15,6 @@ executors:
     environment:
       CC_TEST_REPORTER_ID: 0f2bc6ef737019bfc8eda369cd06b66c54606b144b4d81cec010fb494d2559af
 
-commands:
-  restore_node_modules:
-    steps:
-      - run:
-          name: Restore cached artifacts (install dependencies once, and pass around the folder)
-          command: |
-            mv ~/node_modules .
-            mv ~/.cache .
-
 parameters:
   workspace_root:
     type: string
@@ -68,7 +59,6 @@ jobs:
       - checkout
       - attach_workspace:
           at: << pipeline.parameters.workspace_root >>
-      - restore_node_modules
       - run: sudo chown -R circleci:circleci /usr/local/bin
       - run:
           name: Copy Cypress test results and remove unnecessary paths
@@ -102,7 +92,6 @@ jobs:
       - attach_workspace:
           at: << pipeline.parameters.workspace_root >>
       - run: ls -al
-      - restore_node_modules
       - run:
           name: Lint
           command: |
