@@ -1,15 +1,27 @@
 import Router from 'next/router';
+import * as Sentry from '@sentry/node';
 import nextCookie from 'next-cookies';
 import { setAuthCookies, removeAuthCookies, hasValidAuthToken } from './cookie-utils';
 
 export const login = async ({ token, user }, routeTo = '/profile') => {
   setAuthCookies({ token, user });
+
+  Sentry.configureScope(scope => {
+    scope.setUser({ id: user.email });
+  });
+
   await Router.push(routeTo);
 };
 
 export const logout = ({ routeTo = '/login', shouldRedirect = true } = {}) => {
   removeAuthCookies();
+
   window.localStorage.setItem('logout', Date.now()); // Log out from all windows
+
+  Sentry.configureScope(scope => {
+    scope.clear();
+  });
+
   if (shouldRedirect) {
     Router.push(routeTo);
   }
