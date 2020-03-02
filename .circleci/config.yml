@@ -126,6 +126,7 @@ workflows:
           executor: cypress
           requires:
             - install_dependencies
+          name: cypress/install
           yarn: true
           cache-key: << pipeline.parameters.cache_key >>
 
@@ -133,6 +134,7 @@ workflows:
           executor: cypress
           requires:
             - cypress/install
+          name: cypress/run
           record: true # record results on Cypress Dashboard
           yarn: true # use yarn instead of npm
           cache-key: << pipeline.parameters.cache_key >>
