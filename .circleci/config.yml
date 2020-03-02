@@ -50,6 +50,11 @@ jobs:
           key: << pipeline.parameters.cache_key >>
           paths:
             - .cache/yarn
+      - run:
+          name: Move dependencies to workspace
+          command: |
+            mv node_modules << pipeline.parameters.workspace_root >>/
+            mv .cache << pipeline.parameters.workspace_root >>/
       - persist_to_workspace:
             root: << pipeline.parameters.workspace_root >>
             paths:
@@ -69,7 +74,7 @@ jobs:
           name: Copy Cypress test results and remove unnecessary paths
           command: |
             mkdir coverage && find . -name "codeclimate.*.json" -exec cp -av {} coverage \;
-            ls ~/project/.cache
+            ls ~/ -al
             rm -rf ~/project/project ~/project/.cache
       - run:
           name: Run tests
