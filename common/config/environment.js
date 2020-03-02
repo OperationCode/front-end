@@ -22,5 +22,5 @@ export const clientTokens = isProduction
 
 // TODO: Use GH Actions to enable environment-based Now deploys and stop using prod on PR deploys
 export const apiUrl = isProduction
-  ? 'https://backend.k8s.operationcode.org'
-  : 'https://backend-staging.k8s.operationcode.org';
+  ? 'https://api.operationcode.org'
+  : 'https://api.staging.operationcode.org';
