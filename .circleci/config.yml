@@ -54,14 +54,12 @@ jobs:
           name: Move dependencies to workspace
           command: |
             mv node_modules << pipeline.parameters.workspace_root >>/
-            mv ~/.cache/Cypress << pipeline.parameters.workspace_root >>/
             mv ~/.cache/yarn << pipeline.parameters.workspace_root >>/
       - persist_to_workspace:
             root: << pipeline.parameters.workspace_root >>
             paths:
               - project
               - node_modules
-              - .cache/Cypress
               - .cache/yarn
 
   unit-tests:
@@ -127,6 +125,7 @@ workflows:
           executor: cypress
           requires:
             - install_dependencies
+            - restore_node_modules
           yarn: true
           cache-key: << pipeline.parameters.cache_key >>
 
@@ -134,6 +133,7 @@ workflows:
           executor: cypress
           requires:
             - cypress/install
+            - restore_node_modules
           record: true # record results on Cypress Dashboard
           yarn: true # use yarn instead of npm
           cache-key: << pipeline.parameters.cache_key >>
