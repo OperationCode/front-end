@@ -1,7 +1,7 @@
 {
   "name": "operationcode",
   "license": "MIT",
-  "version": "2.0.15",
+  "version": "3.0.0",
   "scripts": {
     "build": "next build",
     "build:analyze": "cross-env ANALYZE=1 next build",
@@ -43,6 +43,7 @@
     "@innocuous/components": "^2.1.0",
     "@innocuous/functions": "^2.1.0",
     "@sentry/browser": "^5.12.4",
+    "@sentry/node": "^5.13.1",
     "@storybook/addon-a11y": "3.4.11",
     "@storybook/addon-actions": "3.4.11",
     "@storybook/addon-backgrounds": "3.4.11",
