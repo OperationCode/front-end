@@ -15,6 +15,15 @@ executors:
     environment:
       CC_TEST_REPORTER_ID: 0f2bc6ef737019bfc8eda369cd06b66c54606b144b4d81cec010fb494d2559af
 
+commands:
+  restore_node_modules:
+    steps:
+      - run:
+          name: Restore cached artifacts (install dependenciess once, and pass around the folder)
+          command: |
+            mv /tmp/workspace/node_modules .
+            mv /tmp/workspace/.cache .
+
 parameters:
   workspace_root:
     type: string
@@ -45,11 +54,13 @@ jobs:
           name: Move dependencies to workspace
           command: |
             mv node_modules << pipeline.parameters.workspace_root >>/
-            mv ~/.cache << pipeline.parameters.workspace_root >>/
+            mv ~/.cache/Cypress << pipeline.parameters.workspace_root >>/
+            mv ~/.cache/yarn << pipeline.parameters.workspace_root >>/
       - persist_to_workspace:
             root: << pipeline.parameters.workspace_root >>
             paths:
               - project
+              - node_modules
               - .cache/Cypress
               - .cache/yarn
 
@@ -59,9 +70,7 @@ jobs:
       - checkout
       - attach_workspace:
           at: << pipeline.parameters.workspace_root >>
-      - restore_cache:
-          keys:
-            - << pipeline.parameters.cache_key >>
+      - restore_node_modules
       - run: sudo chown -R circleci:circleci /usr/local/bin
       - run:
           name: Copy Cypress test results and remove unnecessary paths
@@ -93,6 +102,7 @@ jobs:
       - checkout
       - attach_workspace:
           at: << pipeline.parameters.workspace_root >>
+      - restore_node_modules
       - run:
           name: Lint
           command: |
@@ -116,6 +126,7 @@ workflows:
           executor: cypress
           requires:
             - install_dependencies
+            - restore_node_modules
           yarn: true
           cache-key: << pipeline.parameters.cache_key >>
 
@@ -123,6 +134,7 @@ workflows:
           executor: cypress
           requires:
             - cypress/install
+            - restore_node_modules
           record: true # record results on Cypress Dashboard
           yarn: true # use yarn instead of npm
           cache-key: << pipeline.parameters.cache_key >>
