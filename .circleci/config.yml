@@ -50,11 +50,6 @@ jobs:
           key: << pipeline.parameters.cache_key >>
           paths:
             - .cache/yarn
-      - run:
-          name: Move dependencies to workspace
-          command: |
-            mv node_modules << pipeline.parameters.workspace_root >>/
-            mv ~/.cache << pipeline.parameters.workspace_root >>/
       - persist_to_workspace:
             root: << pipeline.parameters.workspace_root >>
             paths:
