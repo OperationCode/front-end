@@ -13,7 +13,11 @@ import ScholarshipsIcon from 'static/images/icons/Custom/scholarships.svg';
 import { s3 } from 'common/constants/urls';
 import axios from 'axios';
 import PropTypes from 'prop-types';
-import { slackApiUrl, slackGeneralChannelId } from '../common/config/environment';
+import {
+  slackApiUrl,
+  slackGeneralChannelId,
+  slackConversationsMembersEndpoint,
+} from '../common/config/environment';
 import styles from './styles/who_we_serve.module.css';
 
 const VISIBILITY_OFFSET = 400;
@@ -142,22 +146,15 @@ function WhoWeServe(props) {
 WhoWeServe.getInitialProps = getMemberCount;
 
 async function getMemberCount() {
-  let count = null;
-  const url = '/conversations.members';
-
-  const response = await axios.get(slackApiUrl.concat(url), {
+  const response = await axios.get(slackApiUrl.concat(slackConversationsMembersEndpoint), {
     params: {
       token: process.env.SLACK_API_TOKEN,
       channel: slackGeneralChannelId,
     },
   });
 
-  if (response.data.members !== undefined) {
-    count = response.data.members.length;
-  }
-
   return {
-    memberCount: count,
+    memberCount: response.data.ok ? response.data.members.length : null,
   };
 }
 
