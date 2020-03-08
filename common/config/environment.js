@@ -27,5 +27,5 @@ export const apiUrl = isProduction
 
 export const slackApiUrl = 'https://slack.com/api';
 // If running in production — Use OC-Actual Slack general channel
-export const slackGeneralChannelId = isProduction ? 'C03GSNF6X' : 'CURH72A9X';
+export const slackGeneralChannelId = 'C03GSNF6X';
 export const slackConversationsMembersEndpoint = '/conversations.members';
