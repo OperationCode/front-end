@@ -24,3 +24,6 @@ export const clientTokens = isProduction
 export const apiUrl = isProduction
   ? 'https://backend.k8s.operationcode.org'
   : 'https://backend-staging.k8s.operationcode.org';
+
+export const slackApiUrl = 'https://slack.com/api';
+export const slackGeneralChannelId = isProduction ? '1234567890' : 'CURH72A9X';
