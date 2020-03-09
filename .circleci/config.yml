@@ -16,7 +16,7 @@ parameters:
     default: '~/'
   cache_key:
     type: string
-    default: operation-code-{{ checksum "yarn.lock" }}
+    default: operation-code-deps-{{ checksum "yarn.lock" }}
 
 jobs:
   install_dependencies:
