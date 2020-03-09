@@ -42,7 +42,7 @@ jobs:
             - << pipeline.parameters.workspace_root >>.cache/yarn
             - << pipeline.parameters.workspace_root >>.cache/Cypress
 
-  unit-tests:
+  unit_tests:
     executor: default
     steps:
       - checkout
@@ -71,7 +71,7 @@ jobs:
           command: |
             yarn lint:ci
 
-  report-coverage:
+  report_coverage:
     executor: default
     steps:
       - checkout
@@ -114,7 +114,7 @@ workflows:
     jobs:
       - install_dependencies
 
-      - unit-tests:
+      - unit_tests:
           requires:
             - install_dependencies
 
@@ -123,11 +123,11 @@ workflows:
             - install_dependencies
 
       - cypress/run:
-          name: integration-tests
+          name: integration_tests
           executor: default
           requires:
             - install_dependencies
-            - unit-tests
+            - unit_tests
           record: true # record results on Cypress Dashboard
           yarn: true # use yarn instead of npm
           cache-key: << pipeline.parameters.cache_key >>
@@ -142,8 +142,8 @@ workflows:
                 paths:
                   - project/cypress-coverage
 
-      - report-coverage:
+      - report_coverage:
           requires:
             - install_dependencies
-            - unit-tests
-            - integration-tests
+            - unit_tests
+            - integration_tests
