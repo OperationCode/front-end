@@ -6,12 +6,7 @@ orbs:
 executors:
   default:
     docker:
-      - image: circleci/node:12.14.0 # keep in sync with .nvmrc and other executors
-    environment:
-      CC_TEST_REPORTER_ID: 0f2bc6ef737019bfc8eda369cd06b66c54606b144b4d81cec010fb494d2559af
-  cypress:
-    docker:
-      - image: cypress/base:12.14.0 # keep in sync with .nvmrc and other executors
+      - image: cypress/base:12.16.1 # keep in sync with .nvmrc and other executors
     environment:
       CC_TEST_REPORTER_ID: 0f2bc6ef737019bfc8eda369cd06b66c54606b144b4d81cec010fb494d2559af
 
@@ -112,7 +107,7 @@ workflows:
             - install_dependencies
 
       - cypress/install:
-          executor: cypress
+          executor: default
           requires:
             - install_dependencies
           name: cypress/install
