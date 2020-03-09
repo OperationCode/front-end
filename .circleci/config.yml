@@ -122,22 +122,22 @@ workflows:
                   ls -al jest-coverage
             - run:
                 name: Move reports to one folder
-                run: |
+                command: |
                   cp cypress-coverage/coverage-final.json reports/from-cypress.json && cp jest-coverage/coverage-final.json reports/from-jest.json
             - run:
                 name: Merging reports into one file
-                run: |
+                command: |
                   yarn nyc merge reports
                   mv coverage.json .nyc_output/out.json
             - run:
                 name: Creating lcov report from final
-                run: |
+                command: |
                   yarn nyc report --reporter lcov --report-dir coverage
             - run:
                 name: Formatting CodeClimate Test Report
-                run: |
+                command: |
                   ./cc_test_reporter format-coverage -t lcov -o coverage/codeclimate.json coverage/lcov.info
             - run:
                 name: Uploading CodeClimate Test Report
-                run: |
+                command: |
                   ./cc_test_reporter upload-coverage --debug --input coverage/codeclimate.json
