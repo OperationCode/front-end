@@ -116,8 +116,6 @@ workflows:
             - run:
                 name: Debug
                 command: |
-                  ls -al
-                  ls -al coverage
                   ls -al cypress-coverage
                   ls -al jest-coverage
             - run:
