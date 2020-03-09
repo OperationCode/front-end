@@ -71,13 +71,10 @@ jobs:
       - run:
           name: Merge results and report to CodeClimate
           command: |
-            ls -al
-            mkdir coverage
             ./code_climate_test_reporter format-coverage -t lcov -o coverage/codeclimate.jest.json jest-coverage/lcov.info
       - persist_to_workspace:
           root: << pipeline.parameters.workspace_root >>
           paths:
-            - .cache
             - coverage
             - ./code_climate_test_reporter
 
