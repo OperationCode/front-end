@@ -76,13 +76,13 @@ workflows:
     jobs:
       - install_dependencies
 
-      # - unit-tests:
-      #     requires:
-      #       - install_dependencies
+      - unit-tests:
+          requires:
+            - install_dependencies
 
-      # - lint:
-      #     requires:
-      #       - install_dependencies
+      - lint:
+          requires:
+            - install_dependencies
 
       # Only created to ensure maximum possible simultaneous work
       - cypress/install:
