@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  cypress: cypress-io/cypress@1.13.0
+  cypress: cypress-io/cypress@1.16.1
 
 executors:
   default:
