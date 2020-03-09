@@ -6,7 +6,7 @@ orbs:
 executors:
   default:
     docker:
-      - image: cypress/base:12.16.1 # keep in sync with .nvmrc and other executors
+      - image: cypress/base:12.16.1 # keep in sync with .nvmrc and any other executors
     environment:
       CC_TEST_REPORTER_ID: 0f2bc6ef737019bfc8eda369cd06b66c54606b144b4d81cec010fb494d2559af
 
@@ -36,17 +36,18 @@ jobs:
           key: << pipeline.parameters.cache_key >>
           paths:
             - .cache/yarn
+            # - .cache/Cypress
       - run:
           name: Move dependencies to workspace
           command: |
             mv node_modules << pipeline.parameters.workspace_root >>/
             mv .cache << pipeline.parameters.workspace_root >>/
       - persist_to_workspace:
-            root: << pipeline.parameters.workspace_root >>
-            paths:
-              - project
-              - node_modules
-              - .cache
+          root: << pipeline.parameters.workspace_root >>
+          paths:
+            - project
+            - node_modules
+            - .cache
 
   unit-tests:
     executor: default
@@ -68,17 +69,24 @@ jobs:
       - run:
           name: Initialize CodeClimate
           command: |
-            curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > /usr/local/bin/cc-test-reporter
-            chmod +x /usr/local/bin/cc-test-reporter
-            /usr/local/bin/cc-test-reporter before-build
+            curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > /code_climate_test_reporter
+            chmod +x /code_climate_test_reporter
+            /code_climate_test_reporter before-build
       - run:
           name: Merge results and report to CodeClimate
           command: |
             ls -al
-            ls -al coverage
-            ls -al jest-coverage
-            /usr/local/bin/cc-test-reporter format-coverage -t lcov -o coverage/codeclimate.jest.json jest-coverage/lcov.info
-            /usr/local/bin/cc-test-reporter sum-coverage -p 4 --output - coverage/* | /usr/local/bin/cc-test-reporter upload-coverage --debug --input -
+            mkdir coverage
+            /code_climate_test_reporter format-coverage -t lcov -o coverage/codeclimate.jest.json jest-coverage/lcov.info
+      - persist_to_workspace:
+          root: << pipeline.parameters.workspace_root >>
+          paths:
+            - project
+            - node_modules
+            - .cache
+            - coverage
+            - /code_climate_test_reporter
+
 
   lint:
     executor: default
@@ -100,7 +108,6 @@ workflows:
       - unit-tests:
           requires:
             - install_dependencies
-            - cypress/run
 
       - lint:
           requires:
@@ -115,8 +122,9 @@ workflows:
           cache-key: << pipeline.parameters.cache_key >>
 
       - cypress/run:
-          executor: cypress
+          executor: default
           requires:
+            - unit-tests
             - cypress/install
           name: cypress/run
           record: true # record results on Cypress Dashboard
@@ -130,10 +138,8 @@ workflows:
           post-steps:
             - run:
                 command: |
+                  ls -al
                   curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
                   chmod +x ./cc-test-reporter
-                  mkdir coverage && ./cc-test-reporter format-coverage -t lcov -o "coverage/codeclimate.$CIRCLE_NODE_INDEX.json" cypress-coverage/lcov.info
-            - persist_to_workspace:
-                root: << pipeline.parameters.workspace_root >>
-                paths:
-                  - coverage
+                  ./cc-test-reporter format-coverage -t lcov -o "coverage/codeclimate.$CIRCLE_NODE_INDEX.json" cypress-coverage/lcov.info
+                  /cc-test-reporter sum-coverage -p 4 --output - coverage/* | /cc-test-reporter upload-coverage --debug --input -
