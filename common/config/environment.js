@@ -25,7 +25,6 @@ export const apiUrl = isProduction
   ? 'https://backend.k8s.operationcode.org'
   : 'https://backend-staging.k8s.operationcode.org';
 
-export const slackApiUrl = 'https://slack.com/api';
+export const slackMembersAPIUrl = 'https://slack.com/api/conversations.members';
 // If running in production — Use OC-Actual Slack general channel
 export const slackGeneralChannelId = isProduction ? 'C03GSNF6X' : 'CURH72A9X';
-export const slackConversationsMembersEndpoint = '/conversations.members';

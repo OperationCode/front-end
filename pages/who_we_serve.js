@@ -1,3 +1,5 @@
+import axios from 'axios';
+import PropTypes from 'prop-types';
 import TrackVisibility from 'react-on-screen';
 import classNames from 'classnames';
 import Head from 'components/head';
@@ -11,13 +13,7 @@ import CareerServicesIcon from 'static/images/icons/Custom/career_services.svg';
 import MentorshipIcon from 'static/images/icons/Custom/mentorship.svg';
 import ScholarshipsIcon from 'static/images/icons/Custom/scholarships.svg';
 import { s3 } from 'common/constants/urls';
-import axios from 'axios';
-import PropTypes from 'prop-types';
-import {
-  slackApiUrl,
-  slackGeneralChannelId,
-  slackConversationsMembersEndpoint,
-} from '../common/config/environment';
+import { slackMembersAPIUrl, slackGeneralChannelId } from 'common/config/environment';
 import styles from './styles/who_we_serve.module.css';
 
 const VISIBILITY_OFFSET = 400;
@@ -43,6 +39,20 @@ WhoWeServe.propTypes = {
 
 WhoWeServe.defaultProps = {
   memberCount: null,
+};
+
+WhoWeServe.getInitialProps = async () => {
+  const response = await axios.get(slackMembersAPIUrl, {
+    params: {
+      token: process.env.SLACK_API_TOKEN,
+      channel: slackGeneralChannelId,
+    },
+  });
+
+  return {
+    memberCount:
+      response.data.ok && response.data && response ? response.data.members.length : null,
+  };
 };
 
 function WhoWeServe(props) {
@@ -141,21 +151,6 @@ function WhoWeServe(props) {
       <JoinSection />
     </>
   );
-}
-
-WhoWeServe.getInitialProps = getMemberCount;
-
-async function getMemberCount() {
-  const response = await axios.get(slackApiUrl.concat(slackConversationsMembersEndpoint), {
-    params: {
-      token: process.env.SLACK_API_TOKEN,
-      channel: slackGeneralChannelId,
-    },
-  });
-
-  return {
-    memberCount: response.data.ok ? response.data.members.length : null,
-  };
 }
 
 export default WhoWeServe;
