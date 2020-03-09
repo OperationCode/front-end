@@ -25,7 +25,7 @@ parameters:
     default: '~/'
   cache_key:
     type: string
-    default: 'dependencies-1-{{ checksum "yarn.lock" }}'
+    default: 'dependencies-{{ checksum "yarn.lock" }}'
 
 jobs:
   install_dependencies:
@@ -42,6 +42,7 @@ jobs:
             - << pipeline.parameters.workspace_root >>.cache
             - << pipeline.parameters.workspace_root >>.cache/yarn
             - << pipeline.parameters.workspace_root >>.cache/Cypress
+            - node_modules
 
   unit-tests:
     executor: default
@@ -50,7 +51,6 @@ jobs:
       - attach_workspace:
           at: << pipeline.parameters.workspace_root >>
       - restore_cache: *restore_cache
-      - run: *yarn_install
       - run:
           name: Run tests
           command: |
@@ -79,7 +79,6 @@ jobs:
       - attach_workspace:
           at: << pipeline.parameters.workspace_root >>
       - restore_cache: *restore_cache
-      - run: *yarn_install
       - run:
           name: Lint
           command: |
@@ -105,6 +104,8 @@ workflows:
           name: cypress/install
           yarn: true
           cache-key: << pipeline.parameters.cache_key >>
+          post-steps:
+            - run: ls -al
 
       - cypress/run:
           executor: default
