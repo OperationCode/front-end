@@ -24,3 +24,6 @@ export const clientTokens = isProduction
 export const apiUrl = isProduction
   ? 'https://api.operationcode.org'
   : 'https://api.staging.operationcode.org';
+
+export const slackMembersAPIUrl = 'https://slack.com/api/conversations.members';
+export const slackGeneralChannelId = 'C03GSNF6X';
