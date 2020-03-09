@@ -92,7 +92,7 @@ jobs:
           name: Merge reports into one file
           command: |
             mkdir reports
-            cp cypress-coverage/coverage-final.json reports/from-cypress.json
+            rsync -a cypress-coverage/*.json reports
             cp jest-coverage/coverage-final.json reports/from-jest.json
             mkdir .nyc_output
             yarn nyc merge reports
