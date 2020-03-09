@@ -22,6 +22,9 @@ parameters:
   workspace_root:
     type: string
     default: '~/'
+  cache_key:
+    type: string
+    default: 'dependencies-{{ checksum "yarn.lock" }}'
 
 jobs:
   install_dependencies:
@@ -120,7 +123,7 @@ workflows:
           name: cypress/run
           record: true # record results on Cypress Dashboard
           yarn: true # use yarn instead of npm
-          cache-key: dependencies-{{ checksum "yarn.lock" }}
+          cache-key: << pipeline.parameters.cache_key >>
           parallel: true # split all specs across machines
           parallelism: 3 # use 3 CircleCI machines to finish quickly
           group: 'all tests' # name this group "all tests" on the dashboard
