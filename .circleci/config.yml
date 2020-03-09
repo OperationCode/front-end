@@ -10,6 +10,14 @@ executors:
     environment:
       CC_TEST_REPORTER_ID: 0f2bc6ef737019bfc8eda369cd06b66c54606b144b4d81cec010fb494d2559af
 
+parameters:
+  workspace_root:
+    type: string
+    default: '~/'
+  cache_key:
+    type: string
+    default: 'dependencies-2-{{ checksum "yarn.lock" }}'
+
 aliases:
   - &yarn_install
     name: Install dependencies
@@ -17,21 +25,13 @@ aliases:
 
   - &restore_cache
     keys:
-      - dependencies-1-{{ checksum "yarn.lock" }}
+      - << pipeline.parameters.cache_key >>
 
   - &initialize_code_climate
     name: Initialize CodeClimate
     command: |
       curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./code_climate_test_reporter
       chmod +x ./code_climate_test_reporter
-
-parameters:
-  workspace_root:
-    type: string
-    default: '~/'
-  cache_key:
-    type: string
-    default: 'dependencies-_3_-{{ checksum "yarn.lock" }}'
 
 jobs:
   install_dependencies:
