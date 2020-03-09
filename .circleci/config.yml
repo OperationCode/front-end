@@ -49,7 +49,6 @@ jobs:
       - attach_workspace:
           at: << pipeline.parameters.workspace_root >>
       - restore_cache: *restore_cache
-      - run: sudo chown -R circleci:circleci /usr/local/bin
       - run:
           name: Copy Cypress test results and remove unnecessary paths
           command: |
