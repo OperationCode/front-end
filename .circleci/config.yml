@@ -89,13 +89,11 @@ jobs:
             ls -al cypress-coverage
             ls -al jest-coverage
       - run:
-          name: Move reports to one folder
+          name: Merge reports into one file
           command: |
             mkdir reports
-            cp cypress-coverage/coverage-final.json reports/from-cypress.json && cp jest-coverage/coverage-final.json reports/from-jest.json
-      - run:
-          name: Merging reports into one file
-          command: |
+            cp cypress-coverage/coverage-final.json reports/from-cypress.json
+            cp jest-coverage/coverage-final.json reports/from-jest.json
             yarn nyc merge reports
             mv coverage.json .nyc_output/out.json
       - run:
