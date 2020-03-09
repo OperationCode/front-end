@@ -12,7 +12,8 @@ executors:
 
 aliases:
   - &yarn_install |
-    yarn install --non-interactive --frozen-lockfile --production=false --cache-folder ~/.cache/yarn
+    name: Install dependencies
+    command: yarn install --non-interactive --frozen-lockfile --production=false --cache-folder ~/.cache/yarn
 
   - &restore_cache
     keys:
@@ -34,9 +35,7 @@ jobs:
       - attach_workspace:
           at: << pipeline.parameters.workspace_root >>
       - restore_cache: *restore_cache
-      - run:
-          name: Install dependencies
-          command: *yarn_install
+      - run: *yarn_install
       - save_cache:
           key: << pipeline.parameters.cache_key >>
           paths:
@@ -51,9 +50,7 @@ jobs:
       - attach_workspace:
           at: << pipeline.parameters.workspace_root >>
       - restore_cache: *restore_cache
-      - run:
-          name: Install dependencies
-          command: *yarn_install
+      - run: *yarn_install
       - run:
           name: Copy Cypress test results and remove unnecessary paths
           command: |
@@ -88,9 +85,7 @@ jobs:
       - attach_workspace:
           at: << pipeline.parameters.workspace_root >>
       - restore_cache: *restore_cache
-      - run:
-          name: Install dependencies
-          command: *yarn_install
+      - run: *yarn_install
       - run:
           name: Lint
           command: |
