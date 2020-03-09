@@ -31,7 +31,7 @@ jobs:
       - run:
           name: Install dependencies
           command: |
-            yarn --frozen-lockfile
+            yarn --frozen-lockfile --production=false --cache-folder=.cache/yarn
       - save_cache:
           key: << pipeline.parameters.cache_key >>
           paths:
