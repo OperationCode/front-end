@@ -11,13 +11,13 @@ executors:
       CC_TEST_REPORTER_ID: 0f2bc6ef737019bfc8eda369cd06b66c54606b144b4d81cec010fb494d2559af
 
 aliases:
-  - &yarn_install |
+  - &yarn_install
     name: Install dependencies
     command: yarn install --non-interactive --frozen-lockfile --production=false --cache-folder ~/.cache/yarn
 
   - &restore_cache
     keys:
-      - dependencies-{{ checksum "yarn.lock" }}
+      - dependencies-1-{{ checksum "yarn.lock" }}
 
 parameters:
   workspace_root:
