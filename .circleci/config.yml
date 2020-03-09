@@ -116,16 +116,8 @@ workflows:
             - run:
                 name: Merge coverage reports and upload to Code Climate
                 command: |
-                  ls -al
-                  echo ''
-                  ls -al cypress-coverage
-                  echo ''
-                  ls -al jest-coverage
-                  echo ''
                   cp cypress-coverage/coverage-final.json reports/from-cypress.json && cp jest-coverage/coverage-final.json reports/from-jest.json
-                  mkdir .nyc_output && yarn nyc merge reports && mv coverage.json .nyc_output/out.json
-                  yarn nyc report --reporter lcov --report-dir coverage
-                  ls -al coverage
-                  echo ''
-                  ./cc_test_reporter format-coverage -t lcov -o coverage/codeclimate.json coverage/lcov.info
-                  ./cc_test_reporter upload-coverage --debug --input coverage/codeclimate.json
+                  echo "Merging test reports" && yarn nyc merge reports && mv coverage.json .nyc_output/out.json
+                  echo "Creating final report" && yarn nyc report --reporter lcov --report-dir coverage
+                  echo "Formatting CodeClimate test report" && ./cc_test_reporter format-coverage -t lcov -o coverage/codeclimate.json coverage/lcov.info
+                  echo "Uploading CodeClimate test report" && ./cc_test_reporter upload-coverage --debug --input coverage/codeclimate.json
