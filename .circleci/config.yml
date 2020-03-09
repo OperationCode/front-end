@@ -76,13 +76,13 @@ workflows:
     jobs:
       - install_dependencies
 
-      - unit-tests:
-          requires:
-            - install_dependencies
+      # - unit-tests:
+      #     requires:
+      #       - install_dependencies
 
-      - lint:
-          requires:
-            - install_dependencies
+      # - lint:
+      #     requires:
+      #       - install_dependencies
 
       # Only created to ensure maximum possible simultaneous work
       - cypress/install:
@@ -114,10 +114,30 @@ workflows:
                   curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc_test_reporter
                   chmod +x ./cc_test_reporter
             - run:
-                name: Merge coverage reports and upload to Code Climate
+                name: Debug
                 command: |
+                  ls -al
+                  ls -al coverage
+                  ls -al cypress-coverage
+                  ls -al jest-coverage
+            - run:
+                name: Move reports to one folder
+                run: |
                   cp cypress-coverage/coverage-final.json reports/from-cypress.json && cp jest-coverage/coverage-final.json reports/from-jest.json
-                  echo "Merging test reports" && yarn nyc merge reports && mv coverage.json .nyc_output/out.json
-                  echo "Creating final report" && yarn nyc report --reporter lcov --report-dir coverage
-                  echo "Formatting CodeClimate test report" && ./cc_test_reporter format-coverage -t lcov -o coverage/codeclimate.json coverage/lcov.info
-                  echo "Uploading CodeClimate test report" && ./cc_test_reporter upload-coverage --debug --input coverage/codeclimate.json
+            - run:
+                name: Merging reports into one file
+                run: |
+                  yarn nyc merge reports
+                  mv coverage.json .nyc_output/out.json
+            - run:
+                name: Creating lcov report from final
+                run: |
+                  yarn nyc report --reporter lcov --report-dir coverage
+            - run:
+                name: Formatting CodeClimate Test Report
+                run: |
+                  ./cc_test_reporter format-coverage -t lcov -o coverage/codeclimate.json coverage/lcov.info
+            - run:
+                name: Uploading CodeClimate Test Report
+                run: |
+                  ./cc_test_reporter upload-coverage --debug --input coverage/codeclimate.json
