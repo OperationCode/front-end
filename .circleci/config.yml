@@ -61,7 +61,7 @@ jobs:
           name: Run tests
           command: |
             yarn test:ci --silent=false
-      - run: &initialize_code_climate
+      - run: *initialize_code_climate
       - run:
           name: Create coverage report
           command: |
@@ -125,7 +125,7 @@ workflows:
           start: 'yarn dev' # start server before running tests
           wait-on: http://localhost:3000 # wait until server is ready
           post-steps:
-            - run: &initialize_code_climate
+            - run: *initialize_code_climate
             - run:
                 name: Merge coverage reports and upload to Code Climate
                 command: |
