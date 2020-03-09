@@ -64,7 +64,8 @@ jobs:
       - run:
           name: Create coverage report
           command: |
-            mkdir coverage && ./code_climate_test_reporter format-coverage -t lcov -o coverage/codeclimate.jest.json jest-coverage/lcov.info
+            mkdir coverage
+            ./code_climate_test_reporter format-coverage -t lcov -o coverage/codeclimate.jest.json jest-coverage/lcov.info
       - persist_to_workspace:
           root: << pipeline.parameters.workspace_root >>
           paths:
