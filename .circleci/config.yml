@@ -10,13 +10,18 @@ executors:
     environment:
       CC_TEST_REPORTER_ID: 0f2bc6ef737019bfc8eda369cd06b66c54606b144b4d81cec010fb494d2559af
 
+aliases:
+  - &yarn_install |
+    yarn install --non-interactive --frozen-lockfile --production=false --cache-folder ~/.cache/yarn
+
+  - &restore_cache
+    keys:
+      - dependencies-{{ checksum "yarn.lock" }}
+
 parameters:
   workspace_root:
     type: string
     default: '~/'
-  cache_key:
-    type: string
-    default: dependencies-{{ checksum "yarn.lock" }}
 
 jobs:
   install_dependencies:
@@ -25,13 +30,10 @@ jobs:
       - checkout
       - attach_workspace:
           at: << pipeline.parameters.workspace_root >>
-      - restore_cache:
-          keys:
-            - << pipeline.parameters.cache_key >>
+      - restore_cache: *restore_cache
       - run:
           name: Install dependencies
-          command: |
-            yarn --frozen-lockfile --production=false --cache-folder=.cache/yarn
+          command: *yarn_install
       - save_cache:
           key: << pipeline.parameters.cache_key >>
           paths:
@@ -46,9 +48,7 @@ jobs:
       - checkout
       - attach_workspace:
           at: << pipeline.parameters.workspace_root >>
-      - restore_cache:
-          keys:
-            - << pipeline.parameters.cache_key >>
+      - restore_cache: *restore_cache
       - run: sudo chown -R circleci:circleci /usr/local/bin
       - run:
           name: Copy Cypress test results and remove unnecessary paths
@@ -86,9 +86,7 @@ jobs:
       - checkout
       - attach_workspace:
           at: << pipeline.parameters.workspace_root >>
-      - restore_cache:
-          keys:
-            - << pipeline.parameters.cache_key >>
+      - restore_cache: *restore_cache
       - run:
           name: Lint
           command: |
@@ -123,7 +121,7 @@ workflows:
           name: cypress/run
           record: true # record results on Cypress Dashboard
           yarn: true # use yarn instead of npm
-          cache-key: << pipeline.parameters.cache_key >>
+          cache-key: dependencies-{{ checksum "yarn.lock" }}
           parallel: true # split all specs across machines
           parallelism: 3 # use 3 CircleCI machines to finish quickly
           group: 'all tests' # name this group "all tests" on the dashboard
