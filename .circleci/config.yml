@@ -23,12 +23,6 @@ aliases:
     keys:
       - << pipeline.parameters.cache_key >>
 
-  - &initialize_code_climate
-    name: Initialize CodeClimate
-    command: |
-      curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./code_climate_test_reporter
-      chmod +x ./code_climate_test_reporter
-
 jobs:
   install_dependencies:
     executor: default
@@ -59,17 +53,10 @@ jobs:
           name: Run tests
           command: |
             yarn test:ci --silent=false
-      - run: *initialize_code_climate
-      - run:
-          name: Create coverage report
-          command: |
-            mkdir coverage
-            ./code_climate_test_reporter format-coverage -t lcov -o coverage/codeclimate.jest.json jest-coverage/lcov.info
       - persist_to_workspace:
           root: << pipeline.parameters.workspace_root >>
           paths:
-            - project/coverage
-            - ./code_climate_test_reporter
+            - project/jest-coverage
 
 
   lint:
@@ -121,19 +108,24 @@ workflows:
           start: 'yarn dev' # start server before running tests
           wait-on: http://localhost:3000 # wait until server is ready
           post-steps:
-            - run: *initialize_code_climate
+            - run:
+                name: Initialize CodeClimate
+                command: |
+                  curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc_test_reporter
+                  chmod +x ./cc_test_reporter
             - run:
                 name: Merge coverage reports and upload to Code Climate
                 command: |
                   ls -al
                   echo ''
+                  ls -al cypress-coverage
+                  echo ''
+                  ls -al jest-coverage
+                  echo ''
+                  cp cypress-coverage/coverage-final.json reports/from-cypress.json && cp jest-coverage/coverage-final.json reports/from-jest.json
+                  mkdir .nyc_output && yarn nyc merge reports && mv coverage.json .nyc_output/out.json
+                  yarn nyc report --reporter lcov --report-dir coverage
                   ls -al coverage
                   echo ''
-                  mkdir && find . -name codeclimate.jest.json -exec cp -av {} coverage \;
-                  ls -al coverage
-                  echo ''
-                  rm -rf ~/project/project ~/project/.cache
-                  ls -al coverage
-                  echo ''
-                  ./code_climate_test_reporter format-coverage -t lcov -o "coverage/codeclimate.$CIRCLE_NODE_INDEX.json" cypress-coverage/lcov.info
-                  ./code_climate_test_reporter sum-coverage -p 4 --output - coverage/* | ./code_climate_test_reporter upload-coverage --debug --input -
+                  ./cc_test_reporter format-coverage -t lcov -o coverage/codeclimate.json coverage/lcov.info
+                  ./cc_test_reporter upload-coverage --debug --input coverage/codeclimate.json
