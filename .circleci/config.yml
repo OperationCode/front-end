@@ -36,17 +36,10 @@ jobs:
           key: << pipeline.parameters.cache_key >>
           paths:
             - .cache/yarn
-            # - .cache/Cypress
-      - run:
-          name: Move dependencies to workspace
-          command: |
-            mv node_modules << pipeline.parameters.workspace_root >>/
-            mv .cache << pipeline.parameters.workspace_root >>/
+            - .cache/Cypress
       - persist_to_workspace:
           root: << pipeline.parameters.workspace_root >>
           paths:
-            - project
-            - node_modules
             - .cache
 
   unit-tests:
@@ -81,8 +74,6 @@ jobs:
       - persist_to_workspace:
           root: << pipeline.parameters.workspace_root >>
           paths:
-            - project
-            - node_modules
             - .cache
             - coverage
             - /code_climate_test_reporter
