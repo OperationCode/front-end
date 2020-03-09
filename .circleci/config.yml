@@ -123,17 +123,22 @@ workflows:
           requires:
             - install_dependencies
 
+      - cypress/install:
+          name: cypress_install
+          executor: default
+          requires:
+            - install_dependencies
+          yarn: true
+          cache-key: << pipeline.parameters.cache_key >>
+
       - cypress/run:
           name: integration_tests
           executor: default
           requires:
-            - install_dependencies
-            - unit_tests
+            - cypress_install
           record: true # record results on Cypress Dashboard
-          yarn: true # use yarn instead of npm
-          cache-key: << pipeline.parameters.cache_key >>
           parallel: true # split all specs across machines
-          parallelism: 3 # use 3 CircleCI machines to finish quickly
+          parallelism: 3 # use 3 CircleCI machines
           group: 'all tests' # name this group "all tests" on the dashboard
           start: 'yarn dev' # start server before running tests
           wait-on: http://localhost:3000 # wait until server is ready
