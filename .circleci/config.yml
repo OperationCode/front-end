@@ -122,20 +122,12 @@ workflows:
           requires:
             - install_dependencies
 
-      - cypress/install:
-          name: cypress/install
+      - cypress/run:
+          name: integration-tests
           executor: default
           requires:
             - install_dependencies
-          yarn: true
-          cache-key: << pipeline.parameters.cache_key >>
-
-      - cypress/run:
-          name: cypress/run
-          executor: default
-          requires:
             - unit-tests
-            - cypress/install
           record: true # record results on Cypress Dashboard
           yarn: true # use yarn instead of npm
           cache-key: << pipeline.parameters.cache_key >>
@@ -154,4 +146,4 @@ workflows:
           requires:
             - install_dependencies
             - unit-tests
-            - cypress/run
+            - integration-tests
