@@ -91,6 +91,7 @@ jobs:
       - run:
           name: Move reports to one folder
           command: |
+            mkdir reports
             cp cypress-coverage/coverage-final.json reports/from-cypress.json && cp jest-coverage/coverage-final.json reports/from-jest.json
       - run:
           name: Merging reports into one file
