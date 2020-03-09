@@ -24,7 +24,7 @@ parameters:
     default: '~/'
   cache_key:
     type: string
-    default: 'dependencies-{{ checksum "yarn.lock" }}'
+    default: 'dependencies-1-{{ checksum "yarn.lock" }}'
 
 jobs:
   install_dependencies:
@@ -40,10 +40,9 @@ jobs:
       - save_cache:
           key: << pipeline.parameters.cache_key >>
           paths:
-            - .cache
-            - .cache/yarn
-            - .cache/Cypress
-            - node_modules
+            - << pipeline.parameters.workspace_root >>.cache
+            - << pipeline.parameters.workspace_root >>.cache/yarn
+            - << pipeline.parameters.workspace_root >>.cache/Cypress
 
   unit-tests:
     executor: default
@@ -52,6 +51,9 @@ jobs:
       - attach_workspace:
           at: << pipeline.parameters.workspace_root >>
       - restore_cache: *restore_cache
+      - run:
+          name: Install dependencies
+          command: *yarn_install
       - run:
           name: Copy Cypress test results and remove unnecessary paths
           command: |
@@ -86,6 +88,9 @@ jobs:
       - attach_workspace:
           at: << pipeline.parameters.workspace_root >>
       - restore_cache: *restore_cache
+      - run:
+          name: Install dependencies
+          command: *yarn_install
       - run:
           name: Lint
           command: |
