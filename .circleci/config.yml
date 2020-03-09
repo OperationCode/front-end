@@ -35,6 +35,7 @@ jobs:
       - save_cache:
           key: << pipeline.parameters.cache_key >>
           paths:
+            - .cache
             - .cache/yarn
             - .cache/Cypress
       - persist_to_workspace:
