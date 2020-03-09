@@ -31,7 +31,7 @@ parameters:
     default: '~/'
   cache_key:
     type: string
-    default: 'dependencies-{{ checksum "yarn.lock" }}'
+    default: 'dependencies-2-{{ checksum "yarn.lock" }}'
 
 jobs:
   install_dependencies:
@@ -45,10 +45,10 @@ jobs:
       - save_cache:
           key: << pipeline.parameters.cache_key >>
           paths:
+            - node_modules
             - << pipeline.parameters.workspace_root >>.cache
             - << pipeline.parameters.workspace_root >>.cache/yarn
             - << pipeline.parameters.workspace_root >>.cache/Cypress
-            - node_modules
 
   unit-tests:
     executor: default
