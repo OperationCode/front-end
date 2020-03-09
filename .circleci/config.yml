@@ -38,10 +38,6 @@ jobs:
             - .cache
             - .cache/yarn
             - .cache/Cypress
-      - persist_to_workspace:
-          root: << pipeline.parameters.workspace_root >>
-          paths:
-            - .cache
 
   unit-tests:
     executor: default
@@ -49,6 +45,9 @@ jobs:
       - checkout
       - attach_workspace:
           at: << pipeline.parameters.workspace_root >>
+      - restore_cache:
+          keys:
+            - << pipeline.parameters.cache_key >>
       - run: sudo chown -R circleci:circleci /usr/local/bin
       - run:
           name: Copy Cypress test results and remove unnecessary paths
@@ -86,7 +85,9 @@ jobs:
       - checkout
       - attach_workspace:
           at: << pipeline.parameters.workspace_root >>
-      - run: ls -al
+      - restore_cache:
+          keys:
+            - << pipeline.parameters.cache_key >>
       - run:
           name: Lint
           command: |
