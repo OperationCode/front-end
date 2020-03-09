@@ -16,7 +16,7 @@ parameters:
     default: '~/'
   cache_key:
     type: string
-    default: operation-code-deps-{{ checksum "yarn.lock" }}
+    default: dependencies-{{ checksum "yarn.lock" }}
 
 jobs:
   install_dependencies:
@@ -38,6 +38,7 @@ jobs:
             - .cache
             - .cache/yarn
             - .cache/Cypress
+            - node_modules
 
   unit-tests:
     executor: default
