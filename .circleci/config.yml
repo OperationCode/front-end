@@ -71,6 +71,45 @@ jobs:
           command: |
             yarn lint:ci
 
+  report-coverage:
+    executor: default
+    steps:
+      - checkout
+      - attach_workspace:
+          at: << pipeline.parameters.workspace_root >>
+      - restore_cache: *restore_cache
+      - run:
+          name: Initialize CodeClimate
+          command: |
+            curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc_test_reporter
+            chmod +x ./cc_test_reporter
+      - run:
+          name: Debug
+          command: |
+            ls -al cypress-coverage
+            ls -al jest-coverage
+      - run:
+          name: Move reports to one folder
+          command: |
+            cp cypress-coverage/coverage-final.json reports/from-cypress.json && cp jest-coverage/coverage-final.json reports/from-jest.json
+      - run:
+          name: Merging reports into one file
+          command: |
+            yarn nyc merge reports
+            mv coverage.json .nyc_output/out.json
+      - run:
+          name: Creating lcov report from final
+          command: |
+            yarn nyc report --reporter lcov --report-dir coverage
+      - run:
+          name: Formatting CodeClimate Test Report
+          command: |
+            ./cc_test_reporter format-coverage -t lcov -o coverage/codeclimate.json coverage/lcov.info
+      - run:
+          name: Uploading CodeClimate Test Report
+          command: |
+            ./cc_test_reporter upload-coverage --debug --input coverage/codeclimate.json
+
 workflows:
   default:
     jobs:
@@ -84,12 +123,11 @@ workflows:
           requires:
             - install_dependencies
 
-      # Only created to ensure maximum possible simultaneous work
       - cypress/install:
           executor: default
           requires:
             - install_dependencies
-          name: cypress/install
+          name: cypress_install
           yarn: true
           cache-key: << pipeline.parameters.cache_key >>
 
@@ -98,7 +136,7 @@ workflows:
           requires:
             - unit-tests
             - cypress/install
-          name: cypress/run
+          name: cypress_run
           record: true # record results on Cypress Dashboard
           yarn: true # use yarn instead of npm
           cache-key: << pipeline.parameters.cache_key >>
@@ -108,34 +146,13 @@ workflows:
           start: 'yarn dev' # start server before running tests
           wait-on: http://localhost:3000 # wait until server is ready
           post-steps:
-            - run:
-                name: Initialize CodeClimate
-                command: |
-                  curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc_test_reporter
-                  chmod +x ./cc_test_reporter
-            - run:
-                name: Debug
-                command: |
-                  ls -al cypress-coverage
-                  ls -al jest-coverage
-            - run:
-                name: Move reports to one folder
-                command: |
-                  cp cypress-coverage/coverage-final.json reports/from-cypress.json && cp jest-coverage/coverage-final.json reports/from-jest.json
-            - run:
-                name: Merging reports into one file
-                command: |
-                  yarn nyc merge reports
-                  mv coverage.json .nyc_output/out.json
-            - run:
-                name: Creating lcov report from final
-                command: |
-                  yarn nyc report --reporter lcov --report-dir coverage
-            - run:
-                name: Formatting CodeClimate Test Report
-                command: |
-                  ./cc_test_reporter format-coverage -t lcov -o coverage/codeclimate.json coverage/lcov.info
-            - run:
-                name: Uploading CodeClimate Test Report
-                command: |
-                  ./cc_test_reporter upload-coverage --debug --input coverage/codeclimate.json
+            - persist_to_workspace:
+                root: << pipeline.parameters.workspace_root >>
+                paths:
+                  - project/cypress-coverage
+
+      - report-coverage:
+          requires:
+            - install_dependencies
+            - unit-tests
+            - cypress/run
