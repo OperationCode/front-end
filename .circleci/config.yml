@@ -21,7 +21,7 @@ parameters:
 aliases:
   - &yarn_install
     name: Install dependencies
-    command: yarn install --non-interactive --frozen-lockfile --production=false --cache-folder ~/.cache/yarn
+    command: yarn install --non-interactive --frozen-lockfile --production=false --cache-folder << pipeline.parameters.workspace_root >>.cache/yarn
 
   - &restore_cache
     keys:
