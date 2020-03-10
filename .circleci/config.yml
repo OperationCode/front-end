@@ -120,7 +120,7 @@ workflows:
                   mkdir reports
                   cp cypress-coverage/*.json reports
                   cp jest-coverage/coverage-final.json reports/from-jest.json
-                  mkdir .nyc_output
+                  ls -al .nyc_output
                   yarn nyc merge reports
                   mv coverage.json .nyc_output/out.json
             - run:
