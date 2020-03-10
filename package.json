@@ -23,7 +23,7 @@
     "test:e2e:update-snaps": "cypress run --env updateSnapshots=true",
     "test:e2e:ci": "cypress run --record",
     "test": "cross-env NODE_ENV=test BABEL_ENV=test jest --maxWorkers=2",
-    "test:ci": "yarn test --ci --coverage --verbose=false --silent=true",
+    "test:ci": "yarn test --ci --coverage=true --verbose=false --silent=true",
     "test:changes": "yarn test --changedSince master --verbose=true",
     "test:changes:watch": "yarn test --changedSince master --watch --verbose=true",
     "test:watch": "yarn test --watch",
