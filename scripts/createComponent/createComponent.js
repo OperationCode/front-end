@@ -24,7 +24,7 @@ const componentStruct = {
           ],
         },
         {
-          'Component.css': buildCss,
+          'Component.module.css': buildCss,
         },
         {
           'Component.js': buildJS,
