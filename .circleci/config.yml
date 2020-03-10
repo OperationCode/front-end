@@ -117,9 +117,13 @@ workflows:
             - run:
                 name: Merge reports into one file
                 command: |
+                  rm -rf .nyc_output
+                  ls -al cypress-coverage
                   mkdir reports
+                  mkdir .nyc_output
                   cp cypress-coverage/*.json reports
                   cp jest-coverage/coverage-final.json reports/from-jest.json
+                  ls -al reports
                   ls -al .nyc_output
                   yarn nyc merge reports
                   mv coverage.json .nyc_output/out.json
