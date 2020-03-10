@@ -16,9 +16,13 @@ parameters:
     default: '~/'
   cache_key:
     type: string
-    default: 'dependencies-2-{{ checksum "yarn.lock" }}'
+    default: 'operation-code-front-end-{{ checksum "yarn.lock" }}'
 
 aliases:
+  - &yarn_install |
+    name: Install dependencies
+    command: yarn install --non-interactive --frozen-lockfile --production=false --cache-folder << pipeline.parameters.workspace_root >>.cache/yarn
+
   - &restore_cache
     keys:
       - << pipeline.parameters.cache_key >>
@@ -31,14 +35,10 @@ jobs:
       - attach_workspace:
           at: << pipeline.parameters.workspace_root >>
       - restore_cache: *restore_cache
-      - run:
-          name: Install dependencies
-          command: yarn install --non-interactive --frozen-lockfile --production=false --cache-folder << pipeline.parameters.workspace_root >>.cache/yarn
+      - run: *yarn_install
       - save_cache:
           key: << pipeline.parameters.cache_key >>
           paths:
-            - node_modules
-            - << pipeline.parameters.workspace_root >>.cache
             - << pipeline.parameters.workspace_root >>.cache/yarn
             - << pipeline.parameters.workspace_root >>.cache/Cypress
 
@@ -49,6 +49,7 @@ jobs:
       - attach_workspace:
           at: << pipeline.parameters.workspace_root >>
       - restore_cache: *restore_cache
+      - run: *yarn_install
       - run:
           name: Run tests
           command: |
@@ -66,6 +67,7 @@ jobs:
       - attach_workspace:
           at: << pipeline.parameters.workspace_root >>
       - restore_cache: *restore_cache
+      - run: *yarn_install
       - run:
           name: Lint
           command: |
@@ -78,6 +80,7 @@ jobs:
       - attach_workspace:
           at: << pipeline.parameters.workspace_root >>
       - restore_cache: *restore_cache
+      - run: *yarn_install
       - run:
           name: Initialize CodeClimate
           command: |
