@@ -71,6 +71,41 @@ jobs:
           command: |
             yarn lint:ci
 
+  report_coverage:
+    executor: default
+    steps:
+      - checkout
+      - attach_workspace:
+          at: << pipeline.parameters.workspace_root >>
+      - restore_cache: *restore_cache
+      - run:
+          name: Initialize CodeClimate
+          command: |
+            curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc_test_reporter
+            chmod +x ./cc_test_reporter
+      - run:
+          name: Merge reports into one file
+          command: |
+            mkdir reports
+            mkdir .nyc_output
+            cp cypress-coverage/coverage.node-*.json reports
+            cp jest-coverage/coverage-final.json reports/from-jest.json
+            yarn nyc merge reports
+            mv coverage.json .nyc_output/out.json
+      - run:
+          name: Convert finalized report from JSON to lcov
+          command: |
+            yarn nyc report --reporter lcov --report-dir coverage
+      - run:
+          name: Format report for Code Climate
+          command: |
+            ./cc_test_reporter format-coverage -t lcov -o coverage/codeclimate.json coverage/lcov.info
+      - run:
+          name: Upload the report to CodeClimate
+          command: |
+            ./cc_test_reporter upload-coverage --debug --input coverage/codeclimate.json
+
+
 workflows:
   default:
     jobs:
@@ -109,33 +144,12 @@ workflows:
                 name: Get each parallelized node's coverage report
                 command: |
                   cp cypress-coverage/coverage-final.json "cypress-coverage/coverage.node-$CIRCLE_NODE_INDEX.json"
-            - run:
-                name: Initialize CodeClimate
-                command: |
-                  curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc_test_reporter
-                  chmod +x ./cc_test_reporter
-            - run:
-                name: Merge reports into one file
-                command: |
-                  rm -rf .nyc_output
-                  ls -al cypress-coverage
-                  mkdir reports
-                  mkdir .nyc_output
-                  cp cypress-coverage/*.json reports
-                  cp jest-coverage/coverage-final.json reports/from-jest.json
-                  ls -al reports
-                  ls -al .nyc_output
-                  yarn nyc merge reports
-                  mv coverage.json .nyc_output/out.json
-            - run:
-                name: Convert finalized report from JSON to lcov
-                command: |
-                  yarn nyc report --reporter lcov --report-dir coverage
-            - run:
-                name: Format report for Code Climate
-                command: |
-                  ./cc_test_reporter format-coverage -t lcov -o coverage/codeclimate.json coverage/lcov.info
-            - run:
-                name: Upload the report to CodeClimate
-                command: |
-                  ./cc_test_reporter upload-coverage --debug --input coverage/codeclimate.json
+            - persist_to_workspace:
+                root: << pipeline.parameters.workspace_root >>
+                paths:
+                  - project/cypress-coverage
+
+      - report_coverage:
+          requires:
+            - unit_tests
+            - integration_tests
