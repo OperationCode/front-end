@@ -23,6 +23,9 @@ aliases:
     name: Install dependencies
     command: yarn install --non-interactive --frozen-lockfile --production=false --cache-folder << pipeline.parameters.workspace_root >>.cache/yarn
 
+  - &attach_workspace
+    at: << pipeline.parameters.workspace_root >>
+
   - &restore_cache
     keys:
       - << pipeline.parameters.cache_key >>
@@ -32,8 +35,7 @@ jobs:
     executor: default
     steps:
       - checkout
-      - attach_workspace:
-          at: << pipeline.parameters.workspace_root >>
+      - attach_workspace: *attach_workspace
       - restore_cache: *restore_cache
       - run: *yarn_install
       - save_cache:
@@ -46,8 +48,7 @@ jobs:
     executor: default
     steps:
       - checkout
-      - attach_workspace:
-          at: << pipeline.parameters.workspace_root >>
+      - attach_workspace: *attach_workspace
       - restore_cache: *restore_cache
       - run: *yarn_install
       - run:
@@ -64,8 +65,7 @@ jobs:
     executor: default
     steps:
       - checkout
-      - attach_workspace:
-          at: << pipeline.parameters.workspace_root >>
+      - attach_workspace: *attach_workspace
       - restore_cache: *restore_cache
       - run: *yarn_install
       - run:
@@ -77,8 +77,7 @@ jobs:
     executor: default
     steps:
       - checkout
-      - attach_workspace:
-          at: << pipeline.parameters.workspace_root >>
+      - attach_workspace: *attach_workspace
       - restore_cache: *restore_cache
       - run: *yarn_install
       - run:
