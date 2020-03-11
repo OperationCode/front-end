@@ -26,14 +26,9 @@ aliases:
   - &attach_workspace
     at: << pipeline.parameters.workspace_root >>
 
-
-# references:
-#   - initial_steps: &initial_steps
-#     - checkout
-#     - attach_workspace: *attach_workspace
-#     - run: *inject_private_npm
-#     - restore_cache: *restore_cache
-#     - run: *yarn_install
+  - &restore_cache
+    keys:
+      - << pipeline.parameters.cache_key >>
 
 jobs:
   install_dependencies:
