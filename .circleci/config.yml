@@ -30,14 +30,18 @@ aliases:
     keys:
       - << pipeline.parameters.cache_key >>
 
+references:
+  - initial_steps: &initial_steps
+    - checkout
+    - attach_workspace: *attach_workspace
+    - restore_cache: *restore_cache
+    - run: *yarn_install
+
 jobs:
   install_dependencies:
     executor: default
     steps:
-      - checkout
-      - attach_workspace: *attach_workspace
-      - restore_cache: *restore_cache
-      - run: *yarn_install
+      <<: *initial_steps
       - save_cache:
           key: << pipeline.parameters.cache_key >>
           paths:
