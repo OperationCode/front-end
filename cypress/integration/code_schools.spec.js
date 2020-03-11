@@ -9,7 +9,7 @@ describe('code schools', () => {
     });
 
     it('renders many code school cards', () => {
-      // 40 is arbitrary, but it proves that the API is working and leading to rendered content
+      // Arbitrary value, but it proves that the API is working and leading to rendered content
       cy.findAllByTestId('SchoolCard').should('have.length.greaterThan', 30);
     });
 
