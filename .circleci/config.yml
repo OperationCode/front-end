@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  cypress: cypress-io/cypress@1.16.1
+  cypress: cypress-io/cypress@1.18.0
 
 executors:
   default:
@@ -14,6 +14,9 @@ parameters:
   workspace_root:
     type: string
     default: '~/'
+  yarn_cache_location:
+    type: string
+    default: '~/.cache/yarn'
   cache_key:
     type: string
     default: 'operation-code-front-end-{{ checksum "yarn.lock" }}'
@@ -21,7 +24,7 @@ parameters:
 aliases:
   - &yarn_install
     name: Install dependencies
-    command: yarn install --non-interactive --frozen-lockfile --production=false --cache-folder << pipeline.parameters.workspace_root >>.cache/yarn
+    command: yarn install --non-interactive --frozen-lockfile --production=false --cache-folder << pipeline.parameters.yarn_cache_location >>
 
   - &attach_workspace
     at: << pipeline.parameters.workspace_root >>
@@ -126,7 +129,7 @@ workflows:
           executor: default
           requires:
             - install_dependencies
-          yarn: true
+          install-command: yarn install --non-interactive --frozen-lockfile --production=false --cache-folder << pipeline.parameters.yarn_cache_location >>
           cache-key: << pipeline.parameters.cache_key >>
 
       - cypress/run:
