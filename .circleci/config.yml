@@ -135,7 +135,6 @@ workflows:
           executor: default
           requires:
             - cypress_install
-            - unit_tests
           record: true # record results on Cypress Dashboard
           parallel: true # split all specs across machines
           parallelism: 3 # use 3 CircleCI machines
