@@ -34,7 +34,7 @@ describe('Hash Links', () => {
     //         .scrollIntoView()
     //         .should('not.be.visible');
 
-    //       cy.queryByTestId(`Heading Content ${id}`).hover()
+    //       cy.findByTestId(`Heading Content ${id}`).hover()
 
     //       cy.get(hash).should('be.visible');
     //     });
