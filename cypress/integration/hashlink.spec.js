@@ -5,11 +5,7 @@ describe('Hash Links', () => {
     cy.findAllByTestId('Hash Link').each(link => {
       const { hash } = link[0];
 
-      cy.get(hash)
-        .scrollIntoView()
-        .click({ force: true })
-        .url()
-        .should('include', hash);
+      cy.get(hash).scrollIntoView().click({ force: true }).url().should('include', hash);
     });
   };
 

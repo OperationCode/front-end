@@ -18,9 +18,7 @@ MilitaryStatus.defaultProps = {
 MilitaryStatus.title = 'Military Status';
 
 MilitaryStatus.validationSchema = Yup.object().shape({
-  militaryStatus: Yup.string()
-    .nullable()
-    .required(validationErrorMessages.required),
+  militaryStatus: Yup.string().nullable().required(validationErrorMessages.required),
 });
 
 MilitaryStatus.initialValues = {

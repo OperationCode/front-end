@@ -15,7 +15,7 @@ beforeAll(() => {
   const unobserve = jest.fn();
 
   // eslint-disable-next-line func-names
-  global.IntersectionObserver = jest.fn().mockImplementation(function() {
+  global.IntersectionObserver = jest.fn().mockImplementation(function () {
     this.observe = observe;
     this.unobserve = unobserve;
   });

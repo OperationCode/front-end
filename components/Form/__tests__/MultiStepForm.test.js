@@ -81,9 +81,7 @@ describe('MultiStepForm', () => {
 
   class UltimateAnswerForm extends React.Component {
     static validationSchema = Yup.object().shape({
-      ultimateAnswer: Yup.string()
-        .matches(/42/, ultimateAnswerIncorrectMessage)
-        .required(),
+      ultimateAnswer: Yup.string().matches(/42/, ultimateAnswerIncorrectMessage).required(),
     });
 
     static initialValues = {
@@ -267,7 +265,7 @@ describe('MultiStepForm', () => {
       .fn()
       .mockRejectedValue(new Error(networkErrorMessages.serverDown));
 
-    const { container, findByLabelText, queryByRole } = render(
+    const { container, findByLabelText, findByRole } = render(
       <MultiStepForm {...requiredProps} onFinalSubmit={onFinalSubmitMock} />,
     );
 
@@ -283,9 +281,8 @@ describe('MultiStepForm', () => {
     typeIntoInput(await findByLabelText(/person/gim), 'favoritePerson', faker.name.firstName());
     await submitForm({ container, isFinalStep: true });
 
-    await wait(() => {
-      expect(queryByRole('alert').textContent).toStrictEqual(networkErrorMessages.serverDown);
-    });
+    const { textContent: alertText } = await findByRole('alert');
+    expect(alertText).toStrictEqual(networkErrorMessages.serverDown);
   });
 
   it('should handle server error on final submit', async () => {
@@ -295,7 +292,7 @@ describe('MultiStepForm', () => {
       .fn()
       .mockRejectedValue({ response: { data: { error: errorMessage } } });
 
-    const { container, findByLabelText, queryByRole } = render(
+    const { container, findByLabelText, findByRole } = render(
       <MultiStepForm {...requiredProps} onFinalSubmit={onFinalSubmitMock} />,
     );
 
@@ -311,9 +308,8 @@ describe('MultiStepForm', () => {
     typeIntoInput(await findByLabelText(/person/gim), 'favoritePerson', faker.name.firstName());
     await submitForm({ container, isFinalStep: true });
 
-    await wait(() => {
-      expect(queryByRole('alert').textContent).toStrictEqual(errorMessage);
-    });
+    const { textContent: alertText } = await findByRole('alert');
+    expect(alertText).toStrictEqual(errorMessage);
   });
 
   it('should wipe error message between an invalid and valid submit', async () => {
@@ -322,12 +318,12 @@ describe('MultiStepForm', () => {
       .mockRejectedValueOnce(new Error(networkErrorMessages.serverDown))
       .mockResolvedValueOnce();
 
-    const { container, findByLabelText, queryByRole } = render(
+    const { container, findByLabelText, findByRole } = render(
       <MultiStepForm {...requiredProps} onFinalSubmit={onFinalSubmitMock} />,
     );
 
     // sanity check
-    expect(queryByRole('alert')).toBeNull();
+    expect(await findByRole('alert')).toBeNull();
 
     typeIntoInput(await findByLabelText(/first name/gim), 'firstName', faker.name.firstName());
     typeIntoInput(await findByLabelText(/last name/gim), 'lastName', faker.name.lastName());
@@ -340,15 +336,12 @@ describe('MultiStepForm', () => {
     typeIntoInput(await findByLabelText(/person/gim), 'favoritePerson', faker.name.firstName());
     await submitForm({ container, isFinalStep: true });
 
-    await wait(() => {
-      expect(queryByRole('alert').textContent).toStrictEqual(networkErrorMessages.serverDown);
-    });
+    const { textContent: alertText } = await findByRole('alert');
+    expect(alertText).toStrictEqual(networkErrorMessages.serverDown);
 
     await submitForm({ container, isFinalStep: true });
 
-    await wait(() => {
-      expect(queryByRole('alert')).toBeNull();
-    });
+    expect(await findByRole('alert')).toBeNull();
   });
 
   it('should be able to go back and forth between steps, maintaining form state', async () => {
@@ -441,7 +434,7 @@ describe('MultiStepForm', () => {
 
     const steps = [makeNameForm(mockedSubmitHandler), requiredProps.steps[1]];
 
-    const { container, findByLabelText, queryByRole } = render(
+    const { container, findByLabelText, findByRole } = render(
       <MultiStepForm {...requiredProps} steps={steps} />,
     );
 
@@ -452,8 +445,10 @@ describe('MultiStepForm', () => {
     await wait(() => {
       expect(nameFormSubmitHandler).toHaveBeenCalledTimes(0);
       expect(mockedSubmitHandler).toHaveBeenCalledTimes(1);
-      expect(queryByRole('alert').textContent).toStrictEqual(networkErrorMessages.serverDown);
     });
+
+    const { textContent: alertText } = await findByRole('alert');
+    expect(alertText).toStrictEqual(networkErrorMessages.serverDown);
   });
 
   it('should handle server error on custom handler submit', async () => {
@@ -464,7 +459,7 @@ describe('MultiStepForm', () => {
 
     const steps = [makeNameForm(mockedSubmitHandler), requiredProps.steps[1]];
 
-    const { container, findByLabelText, queryByRole } = render(
+    const { container, findByLabelText, findByRole } = render(
       <MultiStepForm {...requiredProps} steps={steps} />,
     );
 
@@ -475,7 +470,9 @@ describe('MultiStepForm', () => {
     await wait(() => {
       expect(nameFormSubmitHandler).toHaveBeenCalledTimes(0);
       expect(mockedSubmitHandler).toHaveBeenCalledTimes(1);
-      expect(queryByRole('alert').textContent).toStrictEqual(errorMessage);
     });
+
+    const { textContent: alertText } = await findByRole('alert');
+    expect(alertText).toStrictEqual(errorMessage);
   });
 });

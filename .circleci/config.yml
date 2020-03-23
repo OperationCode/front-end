@@ -63,7 +63,6 @@ jobs:
           paths:
             - project/jest-coverage
 
-
   lint:
     executor: default
     steps:
@@ -109,7 +108,6 @@ jobs:
           name: Upload the report to CodeClimate
           command: |
             ./cc_test_reporter upload-coverage --debug --input coverage/codeclimate.json
-
 
 workflows:
   default:
