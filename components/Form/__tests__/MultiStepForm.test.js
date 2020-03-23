@@ -19,7 +19,7 @@ const submitForm = async ({ container, isFinalStep = false }) => {
     { container },
   );
 
-  await fireEvent.click(button);
+  fireEvent.click(button);
 };
 
 const typeIntoInput = (input, inputName, value) => {
@@ -303,7 +303,6 @@ describe('MultiStepForm', () => {
     typeIntoInput(await findByLabelText(/ultimate/gim), 'ultimateAnswer', '42');
     await submitForm({ container });
 
-    // expect(queryByTestId(MULTI_STEP_SUBMIT_BUTTON).textContent).toContain('Submit');
     typeIntoInput(await findByLabelText(/number/gim), 'favoriteNumber', faker.random.number());
     typeIntoInput(await findByLabelText(/person/gim), 'favoritePerson', faker.name.firstName());
     await submitForm({ container, isFinalStep: true });
@@ -318,30 +317,33 @@ describe('MultiStepForm', () => {
       .mockRejectedValueOnce(new Error(networkErrorMessages.serverDown))
       .mockResolvedValueOnce();
 
-    const { container, findByLabelText, findByRole } = render(
+    const { container, findByLabelText, findByRole, queryByRole } = render(
       <MultiStepForm {...requiredProps} onFinalSubmit={onFinalSubmitMock} />,
     );
 
-    // sanity check
-    expect(await findByRole('alert')).toBeNull();
+    // Ensure no alert exists at the start
+    expect(queryByRole('alert')).toBeNull();
 
-    typeIntoInput(await findByLabelText(/first name/gim), 'firstName', faker.name.firstName());
-    typeIntoInput(await findByLabelText(/last name/gim), 'lastName', faker.name.lastName());
+    typeIntoInput(await findByLabelText(/first name/i), 'firstName', faker.name.firstName());
+    typeIntoInput(await findByLabelText(/last name/i), 'lastName', faker.name.lastName());
     await submitForm({ container });
 
-    typeIntoInput(await findByLabelText(/ultimate/gim), 'ultimateAnswer', '42');
+    typeIntoInput(await findByLabelText(/ultimate/i), 'ultimateAnswer', '42');
     await submitForm({ container });
 
-    typeIntoInput(await findByLabelText(/number/gim), 'favoriteNumber', faker.random.number());
-    typeIntoInput(await findByLabelText(/person/gim), 'favoritePerson', faker.name.firstName());
+    typeIntoInput(await findByLabelText(/number/i), 'favoriteNumber', faker.random.number());
+    typeIntoInput(await findByLabelText(/person/i), 'favoritePerson', faker.name.firstName());
     await submitForm({ container, isFinalStep: true });
 
-    const { textContent: alertText } = await findByRole('alert');
-    expect(alertText).toStrictEqual(networkErrorMessages.serverDown);
+    const alert = await findByRole('alert');
+    expect(alert.textContent).toStrictEqual(networkErrorMessages.serverDown);
 
     await submitForm({ container, isFinalStep: true });
 
-    expect(await findByRole('alert')).toBeNull();
+    await wait(() => {
+      expect(onFinalSubmitMock).toHaveBeenCalledTimes(2);
+      expect(queryByRole('alert')).toBeNull();
+    });
   });
 
   it('should be able to go back and forth between steps, maintaining form state', async () => {
