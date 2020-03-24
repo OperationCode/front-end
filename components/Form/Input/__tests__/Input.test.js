@@ -116,7 +116,9 @@ describe('Input', () => {
     expect(otherInputTypes).not.toContain('checkbox');
 
     otherInputTypes.forEach(inputType => {
-      const { container, queryByTestId } = render(<Input {...requiredProps} type={inputType} />);
+      const { container, queryByTestId, unmount } = render(
+        <Input {...requiredProps} type={inputType} />,
+      );
 
       const SomeInput = queryByTestId(INPUT);
 
@@ -135,6 +137,7 @@ describe('Input', () => {
       expect(SomeInput.childNodes[1]).toBe(InputFeedbackGrouping);
 
       // The iteration seems to happen faster than the tests...
+      unmount();
       cleanup();
     });
   });

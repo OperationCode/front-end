@@ -5,11 +5,7 @@ describe('Hash Links', () => {
     cy.findAllByTestId('Hash Link').each(link => {
       const { hash } = link[0];
 
-      cy.get(hash)
-        .scrollIntoView()
-        .click({ force: true })
-        .url()
-        .should('include', hash);
+      cy.get(hash).scrollIntoView().click({ force: true }).url().should('include', hash);
     });
   };
 
@@ -38,7 +34,7 @@ describe('Hash Links', () => {
     //         .scrollIntoView()
     //         .should('not.be.visible');
 
-    //       cy.queryByTestId(`Heading Content ${id}`).hover()
+    //       cy.findByTestId(`Heading Content ${id}`).hover()
 
     //       cy.get(hash).should('be.visible');
     //     });
