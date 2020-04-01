@@ -130,7 +130,7 @@
     "husky": "^4.2.3",
     "identity-obj-proxy": "^3.0.0",
     "istanbul-lib-coverage": "^3.0.0",
-    "jest": "^25.1.0",
+    "jest": "^25.2.4",
     "jest-prop-type-error": "^1.1.0",
     "lint-staged": "^10.0.9",
     "nyc": "^15.0.0",
