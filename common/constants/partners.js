@@ -73,6 +73,12 @@ const partners = [
     url: 'https://logrocket.com/',
     type: PARTNER_TYPES.KIND,
   },
+  {
+    name: 'Zeit',
+    logoSource: `${s3}partnerLogos/zeit.png`,
+    url: 'https://zeit.co/home',
+    type: PARTNER_TYPES.KIND,
+  },
 ];
 
 export default sortBy(partners, 'name');
