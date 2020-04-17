@@ -1,4 +1,5 @@
 import '@testing-library/jest-dom/extend-expect';
+import ReactModal from 'react-modal';
 
 /* MOCKS */
 // Storybook Info Addon
@@ -8,7 +9,7 @@ jest.mock('@storybook/addon-info', () => ({
 }));
 
 // React Modal
-jest.mock('react-modal');
+ReactModal.setAppElement(document.createElement('div').setAttribute('id', 'app-root'));
 
 beforeAll(() => {
   const observe = jest.fn();

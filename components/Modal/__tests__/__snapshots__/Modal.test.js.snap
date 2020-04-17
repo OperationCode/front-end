@@ -1,5 +1,64 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Modal should render with many props assigned 1`] = `null`;
+exports[`Modal should render with many props assigned 1`] = `
+<body
+  class="ReactModal__Body--open"
+>
+  <div
+    data-react-modal-body-trap=""
+    style="position: absolute; opacity: 0;"
+    tabindex="0"
+  />
+  <div />
+  <div
+    data-react-modal-body-trap=""
+    style="position: absolute; opacity: 0;"
+    tabindex="0"
+  />
+  <div
+    class="Modal"
+  >
+    <div
+      class="ReactModal__Overlay ReactModal__Overlay--after-open"
+      style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75);"
+    >
+      <div
+        aria-label="Test"
+        class="ReactModal__Content ReactModal__Content--after-open Card test-class"
+        role="dialog"
+        tabindex="-1"
+      >
+        <button
+          class="CloseButton"
+          data-testid="CLOSE_BUTTON"
+          type="button"
+        >
+          <span
+            class="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
+          >
+            Close
+          </span>
+          <svg
+            class="icon secondary"
+          />
+        </button>
+        <div
+          class="scrollableContainer"
+        >
+          Test
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
 
-exports[`Modal should render with required props 1`] = `null`;
+exports[`Modal should render with required props 1`] = `
+<body>
+  <div />
+  <div
+    class="Modal"
+  />
+</body>
+`;

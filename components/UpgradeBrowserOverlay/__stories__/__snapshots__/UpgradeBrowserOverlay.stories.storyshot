@@ -1,3 +1,150 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots UpgradeBrowserOverlay default 1`] = `null`;
+exports[`Storyshots UpgradeBrowserOverlay default 1`] = `
+Array [
+  <button
+    className="CloseButton"
+    data-testid="CLOSE_BUTTON"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    <span
+      className="ScreenReaderOnly"
+      data-testid="SCREEN_READER_ONLY"
+    >
+      Close
+    </span>
+    <svg
+      className="icon secondary"
+    />
+  </button>,
+  <div
+    className="scrollableContainer"
+  >
+    <svg
+      className="warningLogo"
+    />
+    <h1>
+      Please Upgrade Your Browser
+    </h1>
+    <div
+      className="message"
+    >
+      You might be experiencing some problems viewing this page. Use the links below to download or upgrade your existing browser for a seamless experience.
+    </div>
+    <div
+      className="browsersList"
+    >
+      <div
+        className="browser"
+      >
+        <span
+          className="browserName"
+        >
+          Microsoft Edge
+        </span>
+        <a
+          href="https://www.microsoft.com/windows/microsoft-edge"
+          onClick={[Function]}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <img
+            alt="Microsoft Edge Logo"
+            className="browserImage"
+            src="https://operation-code-assets.s3.us-east-2.amazonaws.com/browserLogos/edge-icon.png"
+          />
+          <span
+            className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
+          >
+            Opens in new window
+          </span>
+        </a>
+      </div>
+      <div
+        className="browser"
+      >
+        <span
+          className="browserName"
+        >
+          Google Chrome
+        </span>
+        <a
+          href="https://www.google.com/chrome"
+          onClick={[Function]}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <img
+            alt="Google Chrome Logo"
+            className="browserImage"
+            src="https://operation-code-assets.s3.us-east-2.amazonaws.com/browserLogos/chrome-icon.png"
+          />
+          <span
+            className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
+          >
+            Opens in new window
+          </span>
+        </a>
+      </div>
+      <div
+        className="browser"
+      >
+        <span
+          className="browserName"
+        >
+          Mozilla Firefox
+        </span>
+        <a
+          href="https://www.mozilla.org/firefox/new"
+          onClick={[Function]}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <img
+            alt="Mozilla Firefox Logo"
+            className="browserImage"
+            src="https://operation-code-assets.s3.us-east-2.amazonaws.com/browserLogos/firefox-icon.png"
+          />
+          <span
+            className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
+          >
+            Opens in new window
+          </span>
+        </a>
+      </div>
+      <div
+        className="browser"
+      >
+        <span
+          className="browserName"
+        >
+          Safari
+        </span>
+        <a
+          href="https://support.apple.com/downloads/safari"
+          onClick={[Function]}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <img
+            alt="Safari Logo"
+            className="browserImage"
+            src="https://operation-code-assets.s3.us-east-2.amazonaws.com/browserLogos/safari-icon.png"
+          />
+          <span
+            className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
+          >
+            Opens in new window
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>,
+]
+`;
