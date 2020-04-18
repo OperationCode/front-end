@@ -29,10 +29,9 @@ export default () => (
           </p>
 
           <p className={styles.justifyAlign}>
-            We at Operation Code strive to provide an efficient way into a tech career for veterans
-            and their families. We work directly with Senators, Congressmen, and Congresswomen to
-            allow veterans total control of their future by permitting the use of the GI Bill on
-            coding bootcamps. We also have a page where you can read about our{' '}
+            We at Operation Code strive to provide an efficient way into a tech career for veterans,
+            military spouses, and transitioning servicemembers. We also have a page where you can
+            read about our{' '}
             <Link href="/history">
               <a>organization&apos;s history</a>
             </Link>
@@ -42,11 +41,10 @@ export default () => (
           <p className={styles.justifyAlign}>
             Aside from our work on the Hill, we offer many services to the military community and
             are continuing to expand our offerings as often as possible. First and foremost, our
-            staff works tirelessly to provide mentorship for veterans interested in learning about
-            various tech careers. Dozens of software engineers, product managers, system architects,
-            security engineers, and various other IT professionals act as 1 - on - 1 mentors to all
-            of our members. We also have a hardware loan program to help veterans in need of a
-            laptop!
+            volunteer team works tirelessly to provide mentorship for veterans and military spouses 
+            interested in learning about tech careers. Dozens of software engineers, product
+            managers, system architects, security engineers, and various other IT professionals act
+            as 1 - on - 1 mentors to our members.
           </p>
 
           <p className={styles.justifyAlign}>
