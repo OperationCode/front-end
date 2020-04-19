@@ -429,6 +429,35 @@ exports[`SponsorsSection should render with many props assigned 1`] = `
           </span>
         </a>
       </div>
+      <div
+        className="PartnerLogoLink"
+      >
+        <a
+          href="https://zeit.co/home"
+          onClick={[Function]}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <noscript>
+            <img
+              alt="Zeit logo"
+              className="logo"
+              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/zeit.png"
+            />
+          </noscript>
+          <img
+            alt="Zeit logo"
+            className="logo"
+            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/zeit.png"
+          />
+          <span
+            className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
+          >
+            Opens in new window
+          </span>
+        </a>
+      </div>
     </div>
   </div>
 </div>
@@ -854,6 +883,35 @@ exports[`SponsorsSection should render with required props 1`] = `
             alt="Zapier logo"
             className="logo"
             data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/zapier.png"
+          />
+          <span
+            className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
+          >
+            Opens in new window
+          </span>
+        </a>
+      </div>
+      <div
+        className="PartnerLogoLink"
+      >
+        <a
+          href="https://zeit.co/home"
+          onClick={[Function]}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <noscript>
+            <img
+              alt="Zeit logo"
+              className="logo"
+              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/zeit.png"
+            />
+          </noscript>
+          <img
+            alt="Zeit logo"
+            className="logo"
+            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/zeit.png"
           />
           <span
             className="ScreenReaderOnly"

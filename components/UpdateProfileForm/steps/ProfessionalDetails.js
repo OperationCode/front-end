@@ -19,9 +19,7 @@ ProfessionalDetails.defaultProps = {
 ProfessionalDetails.title = 'Professional Details';
 
 ProfessionalDetails.validationSchema = Yup.object().shape({
-  employmentStatus: Yup.string()
-    .nullable()
-    .required(validationErrorMessages.required),
+  employmentStatus: Yup.string().nullable().required(validationErrorMessages.required),
   companyName: Yup.string().nullable(),
   companyRole: Yup.string().nullable(),
 });

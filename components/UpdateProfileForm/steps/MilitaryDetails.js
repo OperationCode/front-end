@@ -20,17 +20,13 @@ MilitaryDetails.title = 'Military Details';
 
 MilitaryDetails.validationSchema = Yup.object().shape({
   // TODO: use when() on these
-  branchOfService: Yup.string()
-    .nullable()
-    .required(validationErrorMessages.required),
+  branchOfService: Yup.string().nullable().required(validationErrorMessages.required),
   yearsOfService: Yup.number()
     .nullable()
     .positive('Enter a number between 1 and 40.')
     .lessThan(41, 'Enter a number between 1 and 40.')
     .required(validationErrorMessages.required),
-  payGrade: Yup.string()
-    .nullable()
-    .required(validationErrorMessages.required),
+  payGrade: Yup.string().nullable().required(validationErrorMessages.required),
 });
 
 MilitaryDetails.initialValues = {

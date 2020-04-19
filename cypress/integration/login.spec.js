@@ -39,9 +39,7 @@ describe('login', () => {
     cy.get('input#password').type(fakeUser.password);
     cy.get('button[type="submit"]').click();
 
-    cy.wait('@postLogin')
-      .its('status')
-      .should('eq', 400);
+    cy.wait('@postLogin').its('status').should('eq', 400);
 
     cy.url().should('contain', '/login');
     cy.get('div[role="alert"]').should(
@@ -59,9 +57,7 @@ describe('login', () => {
 
     cy.get('button[type="submit"]').click();
 
-    cy.wait('@postLogin')
-      .its('status')
-      .should('eq', 400);
+    cy.wait('@postLogin').its('status').should('eq', 400);
 
     cy.url().should('contain', '/login');
     cy.get('div[role="alert"]').should(

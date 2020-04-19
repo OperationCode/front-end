@@ -6,7 +6,7 @@ import Timeline from 'components/Timeline/Timeline';
 import TimelineNav from 'components/Timeline/TimelineNav/TimelineNav';
 import styles from './styles/history.module.css';
 
-export default function() {
+export default function () {
   return (
     <>
       <Head title="History" />

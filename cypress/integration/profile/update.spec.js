@@ -113,9 +113,7 @@ describe(`profile/update (from login)`, () => {
     goToNextStep(secondStepName);
     goToNextStep(thirdStepName);
 
-    cy.get('input[name="yearsOfService"]')
-      .clear()
-      .type('-1');
+    cy.get('input[name="yearsOfService"]').clear().type('-1');
 
     cy.findByTestId('Submit Step Button').click();
 
@@ -126,9 +124,7 @@ describe(`profile/update (from login)`, () => {
     goToNextStep(secondStepName);
     goToNextStep(thirdStepName);
 
-    cy.get('input[name="yearsOfService"]')
-      .clear()
-      .type('41');
+    cy.get('input[name="yearsOfService"]').clear().type('41');
 
     cy.findByTestId('Submit Step Button').click();
 
@@ -154,7 +150,7 @@ describe(`profile/update (from login) [server errors]`, () => {
     cy.findByTestId(SubmitButtonID).click();
     cy.wait(`@${ErrorAPICall}`);
 
-    cy.queryByRole('alert').should('have.text', networkErrorMessages.serverDown);
+    cy.findByRole('alert').should('have.text', networkErrorMessages.serverDown);
   });
 
   // TODO: Get this working!
@@ -178,6 +174,6 @@ describe(`profile/update (from login) [server errors]`, () => {
   //   cy.findByTestId(SubmitButtonID).click();
   //   cy.wait(`@${ErrorAPICall}`);
 
-  //   cy.queryByRole('alert').should('have.text', error);
+  //   cy.findByRole('alert').should('have.text', error);
   // });
 });

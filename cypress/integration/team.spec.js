@@ -12,10 +12,7 @@ describe('team', () => {
 
   it('renders board members with their image on display', () => {
     cy.get('article').each(boardMemberCard => {
-      cy.wrap(boardMemberCard)
-        .find('img')
-        .should('exist')
-        .should('have.attr', 'alt');
+      cy.wrap(boardMemberCard).find('img').should('exist').should('have.attr', 'alt');
     });
   });
 });

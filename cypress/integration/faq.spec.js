@@ -5,20 +5,11 @@ describe('faq', () => {
   });
 
   it('reveals text after clicking "SHOW"', () => {
-    cy.get('article')
-      .first()
-      .find('[data-testid="Accordion Content"]')
-      .should('not.be.visible');
+    cy.get('article').first().find('[data-testid="Accordion Content"]').should('not.be.visible');
 
-    cy.get('article')
-      .first()
-      .find('[data-testid="Accordion Toggle Button"]')
-      .click();
+    cy.get('article').first().find('[data-testid="Accordion Toggle Button"]').click();
 
-    cy.get('article')
-      .first()
-      .find('[data-testid="Accordion Content"]')
-      .should('be.visible');
+    cy.get('article').first().find('[data-testid="Accordion Content"]').should('be.visible');
   });
 
   // TODO: Enable when native keyboard events are supported by Cypress
