@@ -1,13 +1,26 @@
+import Error from 'next/error';
 import * as Sentry from '@sentry/node';
 import { bool, number, object } from 'prop-types';
 import ErrorDisplay from 'components/ErrorDisplay/ErrorDisplay';
 
-Error.getInitialProps = async ({ res, err, asPath }) => {
-  const props = await Error.getInitialProps({ res, err });
+// NOTE: We have a custom 404 page.
+// This will pretty much only render if we get issues on getInitialProps calls.
+const CustomErrorPage = ({ statusCode, didGetInitialPropsRun, err }) => {
+  if (!didGetInitialPropsRun && err) {
+    // getInitialProps is not called in case of https://github.com/zeit/next.js/issues/8592.
+    // As a workaround, we pass err via _app.js so it can be captured
+    Sentry.captureException(err);
+  }
+
+  return <ErrorDisplay statusCode={statusCode} />;
+};
+
+CustomErrorPage.getInitialProps = async ({ res, err, asPath }) => {
+  const errorPageProperties = await Error.getInitialProps({ res, err });
 
   // Workaround for https://github.com/zeit/next.js/issues/8592, mark when
   // getInitialProps has run
-  props.hasGetInitialPropsRun = true;
+  errorPageProperties.didGetInitialPropsRun = true;
 
   if (res && err) {
     // Running on the server, the response object is available.
@@ -16,7 +29,7 @@ Error.getInitialProps = async ({ res, err, asPath }) => {
     // threw or returned a Promise that rejected
     Sentry.captureException(err);
 
-    return props;
+    return errorPageProperties;
   }
 
   // Running on the client (browser).
@@ -31,7 +44,7 @@ Error.getInitialProps = async ({ res, err, asPath }) => {
   if (err) {
     Sentry.captureException(err);
 
-    return props;
+    return errorPageProperties;
   }
 
   // If this point is reached, getInitialProps was called without any
@@ -39,30 +52,19 @@ Error.getInitialProps = async ({ res, err, asPath }) => {
   // indicate a bug introduced in Next.js, so record it in Sentry
   Sentry.captureException(new Error(`_error.js getInitialProps missing data at path: ${asPath}`));
 
-  return props;
+  return errorPageProperties;
 };
 
-Error.propTypes = {
+CustomErrorPage.propTypes = {
   statusCode: number,
-  hasGetInitialPropsRun: bool,
+  didGetInitialPropsRun: bool,
   err: object,
 };
 
-Error.defaultProps = {
+CustomErrorPage.defaultProps = {
   statusCode: undefined,
-  hasGetInitialPropsRun: false,
+  didGetInitialPropsRun: false,
   err: {},
 };
 
-const Error = ({ statusCode, hasGetInitialPropsRun, err }) => {
-  if (!hasGetInitialPropsRun && err) {
-    // getInitialProps is not called in case of
-    // https://github.com/zeit/next.js/issues/8592. As a workaround, we pass
-    // err via _app.js so it can be captured
-    Sentry.captureException(err);
-  }
-
-  return <ErrorDisplay statusCode={statusCode} />;
-};
-
-export default Error;
+export default CustomErrorPage;
