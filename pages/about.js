@@ -38,15 +38,15 @@ export default () => (
           </p>
 
           <p className={styles.justifyAlign}>
-            Our volunteer team works tirelessly to provide mentorship for veterans and military  
+            Our volunteer team works tirelessly to provide mentorship for veterans and military
             spouses interested in learning about tech careers. Dozens of software engineers, product
             managers, system architects, security engineers, and various other IT professionals act
             as 1-on-1 mentors to our members.
           </p>
 
           <p className={styles.justifyAlign}>
-            As a non-profit organization, we rely heavily on your support. If you are interested
-            in helping us financially, please donate here or set your Amazon Smile organization to
+            As a non-profit organization, we rely heavily on your support. If you are interested in
+            helping us financially, please donate here or set your Amazon Smile organization to
             &ldquo;Operation Code&rdquo;. If you have questions about our organization, platforms,
             or services, please reference our FAQ page. Otherwise, do not hesitate to reach out to
             our staff.
@@ -78,8 +78,8 @@ export default () => (
         >
           <h6>Online Scholarships</h6>
           <p>
-            Operation Code&apos;s online scholarships provide you the opportunity to kickstart
-            your career in software development.
+            Operation Code&apos;s online scholarships provide you the opportunity to kickstart your
+            career in software development.
           </p>
         </ImageCard>,
         <ImageCard
