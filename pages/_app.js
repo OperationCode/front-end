@@ -59,10 +59,14 @@ const setLogRocketFingerprint = () => {
 
 class OperationCodeApp extends App {
   componentDidMount() {
-    /* Analytics */
     // Temporary method until we do dynamic now configs
-    if (isProduction && window.location.host.includes('operationcode.org')) {
-      Sentry.init({ dsn: clientTokens.SENTRY_DSN, release: `${version}` });
+    const hasRealUsers = isProduction && window.location.host.includes('operationcode.org');
+
+    // Use something from https://zeit.co/docs/v2/build-step#system-environment-variables to
+    // dynamically change release version.
+    Sentry.init({ dsn: clientTokens.SENTRY_DSN, release: `${version}`, enabled: hasRealUsers });
+
+    if (hasRealUsers) {
       LogRocket.init(`${clientTokens.LOGROCKET}/operation-code`);
       ReactGA.initialize(clientTokens.GOOGLE_ANALYTICS);
 
