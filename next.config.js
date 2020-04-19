@@ -22,6 +22,10 @@ const nextConfig = withSourceMaps(
       },
     },
 
+    env: {
+      SENTRY_DSN: process.env.SENTRY_DSN,
+    },
+
     // eslint-disable-next-line unicorn/prevent-abbreviations
     webpack: (config, { dev, isServer }) => {
       // Fixes npm packages that depend on `fs` module
