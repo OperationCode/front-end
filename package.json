@@ -82,6 +82,7 @@
     "@babel/preset-env": "^7.9.5",
     "@cypress/code-coverage": "2.0.5",
     "@operation_code/eslint-plugin-custom-rules": "^1.0.1",
+    "@sentry/webpack-plugin": "^1.10.0",
     "@storybook/addon-a11y": "3.4.11",
     "@storybook/addon-actions": "3.4.11",
     "@storybook/addon-backgrounds": "3.4.11",

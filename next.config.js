@@ -1,6 +1,9 @@
+const SentryWebpackPlugin = require('@sentry/webpack-plugin');
 const withSourceMaps = require('@zeit/next-source-maps')();
 const withBundleAnalyzer = require('@zeit/next-bundle-analyzer');
 const svgoConfig = require('./common/config/svgo');
+
+const { SENTRY_DSN, SENTRY_ORG, SENTRY_PROJECT } = process.env;
 
 const nextConfig = withSourceMaps(
   withBundleAnalyzer({
@@ -20,10 +23,6 @@ const nextConfig = withSourceMaps(
         analyzerMode: 'server',
         analyzerPort: 8889,
       },
-    },
-
-    env: {
-      SENTRY_DSN: process.env.SENTRY_DSN,
     },
 
     // eslint-disable-next-line unicorn/prevent-abbreviations
@@ -98,6 +97,17 @@ const nextConfig = withSourceMaps(
           ],
         },
       );
+
+      // Upload sourcemaps to Next.js per build.
+      if (SENTRY_DSN && SENTRY_ORG && SENTRY_PROJECT) {
+        config.plugins.push(
+          new SentryWebpackPlugin({
+            include: '.next',
+            ignore: ['node_modules'],
+            urlPrefix: '~/_next',
+          }),
+        );
+      }
 
       // Add polyfills
       const originalEntry = config.entry;
