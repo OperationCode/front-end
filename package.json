@@ -80,6 +80,8 @@
     "@babel/plugin-syntax-jsx": "^7.8.3",
     "@babel/preset-env": "^7.9.5",
     "@cypress/code-coverage": "2.0.5",
+    "@mdx-js/loader": "^1.5.8",
+    "@next/mdx": "^9.3.4",
     "@operation_code/eslint-plugin-custom-rules": "^1.0.1",
     "@storybook/addon-a11y": "3.4.11",
     "@storybook/addon-actions": "3.4.11",
