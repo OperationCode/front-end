@@ -69,6 +69,12 @@ module.exports = {
         'react/sort-comp': 'off',
       },
     },
+    {
+      files: ['pages/_error.js'],
+      rules: {
+        '@operation_code/custom-rules/proptype-definition-above-fn': 'off',
+      },
+    },
   ],
 
   rules: {
