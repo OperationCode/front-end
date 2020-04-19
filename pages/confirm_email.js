@@ -1,11 +1,11 @@
 import Link from 'next/link';
-import * as Sentry from '@sentry/node';
 import { bool } from 'prop-types';
 import { confirmEmail } from 'common/constants/api';
+import { logAndCaptureError } from 'common/utils/error-utils';
+import Alert from 'components/Alert/Alert';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
-import Alert from '../components/Alert/Alert';
 
 ConfirmEmail.propTypes = {
   isVerified: bool.isRequired,
@@ -17,8 +17,7 @@ ConfirmEmail.getInitialProps = async ({ query: { key } }) => {
 
     return { isVerified: data.detail === 'ok' };
   } catch (error) {
-    console.error(error);
-    Sentry.captureException(error);
+    logAndCaptureError(error);
 
     return { isVerified: false };
   }

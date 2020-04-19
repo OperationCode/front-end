@@ -9,6 +9,7 @@ import ScrollUpButton from 'react-scroll-up-button';
 import setupLogRocketReact from 'logrocket-react';
 import * as Sentry from '@sentry/node';
 import { clientTokens } from 'common/config/environment';
+import { logAndCaptureError } from 'common/utils/error-utils';
 import Nav from 'components/Nav/Nav';
 import Footer from 'components/Footer/Footer';
 import Modal from 'components/Modal/Modal';
@@ -106,9 +107,9 @@ class OperationCodeApp extends App {
       .then(() => {
         document.documentElement.classList.add('fonts-loaded');
       })
-      .catch(() =>
-        Sentry.captureException('FontFaceObserver took too long to resolve. Ignore this.'),
-      );
+      .catch(() => {
+        logAndCaptureError('FontFaceObserver took too long to resolve. Ignore this.');
+      });
 
     /* Modal anchor set */
     if (Modal.setAppElement) {
@@ -126,7 +127,7 @@ class OperationCodeApp extends App {
         scope.setExtra(key, errorInfo[key]);
       });
 
-      Sentry.captureException(error);
+      logAndCaptureError(error);
     });
 
     super.componentDidCatch(error, errorInfo);

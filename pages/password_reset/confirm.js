@@ -1,7 +1,7 @@
 import { useState } from 'react'; // eslint-disable-line no-restricted-imports
 import Link from 'next/link';
 import { string } from 'prop-types';
-import * as Sentry from '@sentry/node';
+import { logAndCaptureError } from 'common/utils/error-utils';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
@@ -31,8 +31,7 @@ function PasswordResetConfirm({ uid, token }) {
       \ntoken: ${token}
       \n`;
 
-    console.error(error);
-    Sentry.captureException(error);
+    logAndCaptureError(error);
 
     return <Alert type="error">The provided credentials were either invalid or expired.</Alert>;
   }

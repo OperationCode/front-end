@@ -1,13 +1,13 @@
 import nextCookie from 'next-cookies';
 import { array, objectOf, oneOfType, string, number, bool } from 'prop-types';
-import * as Sentry from '@sentry/node';
 import get from 'lodash/get';
+import { getUserPromise } from 'common/constants/api';
+import { logAndCaptureError } from 'common/utils/error-utils';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
 import UpdateProfileForm from 'components/UpdateProfileForm/UpdateProfileForm';
 import withAuthSync from 'decorators/withAuthSync/withAuthSync';
-import { getUserPromise } from 'common/constants/api';
 
 UpdateProfile.propTypes = {
   initialValues: objectOf(oneOfType([array, oneOfType([string, number, bool])])),
@@ -38,8 +38,7 @@ UpdateProfile.getInitialProps = async ctx => {
       initialValues: { ...UpdateProfileForm.defaultProps.initialValues, ...formattedData },
     };
   } catch (error) {
-    console.error(error);
-    Sentry.captureException(error);
+    logAndCaptureError(error);
 
     // TODO: Handle error better
     return {

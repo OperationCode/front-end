@@ -1,8 +1,8 @@
 import { useState } from 'react'; // eslint-disable-line  no-restricted-imports
 import { array, string } from 'prop-types';
-import * as Sentry from '@sentry/node';
 import Head from 'components/head';
 import { getServerErrorMessage } from 'common/utils/api-utils';
+import { logAndCaptureError } from 'common/utils/error-utils';
 import ThemedReactSelect from 'components/Form/Select/ThemedReactSelect';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
@@ -46,8 +46,7 @@ CodeSchools.getInitialProps = async () => {
 
     return { allSchools: data };
   } catch (error) {
-    console.error(error);
-    Sentry.captureException(error);
+    logAndCaptureError(error);
 
     return { errorMessage: getServerErrorMessage(error) };
   }

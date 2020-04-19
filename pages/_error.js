@@ -1,7 +1,7 @@
 import Error from 'next/error';
-import * as Sentry from '@sentry/node';
 import { bool, number, object } from 'prop-types';
 import ErrorDisplay from 'components/ErrorDisplay/ErrorDisplay';
+import { logAndCaptureError } from 'common/utils/error-utils';
 
 // NOTE: We have a custom 404 page.
 // This will pretty much only render if we get issues on getInitialProps calls.
@@ -9,7 +9,7 @@ const CustomErrorPage = ({ statusCode, didGetInitialPropsRun, err }) => {
   if (!didGetInitialPropsRun && err) {
     // getInitialProps is not called in case of https://github.com/zeit/next.js/issues/8592.
     // As a workaround, we pass err via _app.js so it can be captured
-    Sentry.captureException(err);
+    logAndCaptureError(err);
   }
 
   return <ErrorDisplay statusCode={statusCode} />;
@@ -27,7 +27,7 @@ CustomErrorPage.getInitialProps = async ({ res, err, asPath }) => {
     //
     // Next.js will pass an err on the server if a page's `getInitialProps`
     // threw or returned a Promise that rejected
-    Sentry.captureException(err);
+    logAndCaptureError(err);
 
     return errorPageProperties;
   }
@@ -42,7 +42,7 @@ CustomErrorPage.getInitialProps = async ({ res, err, asPath }) => {
   //    Boundary. Read more about what types of exceptions are caught by Error
   //    Boundaries: https://reactjs.org/docs/error-boundaries.html
   if (err) {
-    Sentry.captureException(err);
+    logAndCaptureError(err);
 
     return errorPageProperties;
   }
@@ -50,7 +50,7 @@ CustomErrorPage.getInitialProps = async ({ res, err, asPath }) => {
   // If this point is reached, getInitialProps was called without any
   // information about what the error might be. This is unexpected and may
   // indicate a bug introduced in Next.js, so record it in Sentry
-  Sentry.captureException(new Error(`_error.js getInitialProps missing data at path: ${asPath}`));
+  logAndCaptureError(new Error(`_error.js getInitialProps missing data at path: ${asPath}`));
 
   return errorPageProperties;
 };

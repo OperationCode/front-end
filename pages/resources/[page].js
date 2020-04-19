@@ -1,11 +1,11 @@
 import { arrayOf, number, shape, string } from 'prop-types';
-import * as Sentry from '@sentry/node';
+import { getResourcesPromise } from 'common/constants/api';
+import { logAndCaptureError } from 'common/utils/error-utils';
 import Content from 'components/Content/Content';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import ResourceCard from 'components/Cards/ResourceCard/ResourceCard';
 import Pagination from 'components/Pagination/Pagination';
-import { getResourcesPromise } from 'common/constants/api';
 import styles from '../styles/resources.module.css';
 
 ResourcesPage.propTypes = {
@@ -39,8 +39,7 @@ ResourcesPage.getInitialProps = async ({ pathname, query }) => {
       totalPages,
     };
   } catch (error) {
-    console.error(error);
-    Sentry.captureException(error);
+    logAndCaptureError(error);
 
     return { currentPage: 1, data: [], totalPages: 1, pathname };
   }

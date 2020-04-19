@@ -1,8 +1,8 @@
 import { arrayOf, shape, string } from 'prop-types';
-import * as Sentry from '@sentry/node';
 import ReactPlayer from 'react-player';
 import { parse as parseXml } from 'fast-xml-parser';
 import { getServerErrorMessage, ExternalAPI } from 'common/utils/api-utils';
+import { logAndCaptureError } from 'common/utils/error-utils';
 import Head from 'components/head';
 import Alert from 'components/Alert/Alert';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
@@ -44,10 +44,8 @@ Podcast.getInitialProps = async () => {
     }
   }
 
-  // Request failed or RSS Feed is broken
-  const error = `Podcasts query failed.`;
-  console.error(error);
-  Sentry.captureException(error);
+  logAndCaptureError('Podcasts query failed.');
+
   return { episodes: [], errorMessage: getServerErrorMessage() };
 };
 
