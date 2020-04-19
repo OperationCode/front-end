@@ -16,5 +16,5 @@
       "test-utils/*": ["./test-utils/*"]
     }
   },
-  "exclude": ["node_modules"]
+  "include": ["node_modules/cypress", "./cypress/**/*.js"]
 }
