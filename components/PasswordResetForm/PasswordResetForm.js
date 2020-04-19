@@ -48,41 +48,48 @@ function PasswordResetForm({ initialValues, onSuccess, passwordReset }) {
   };
 
   return (
-    <Formik
-      initialValues={initialValues}
-      onSubmit={handleSubmit}
-      validationSchema={passwordResetSchema}
-    >
-      {({ isSubmitting }) => (
-        <Form className={styles.PasswordResetForm}>
-          <div className={styles.row}>
-            <Field
-              type="email"
-              name="email"
-              label="Email*"
-              component={Input}
-              disabled={isSubmitting}
-              autoComplete="username email"
-            />
-          </div>
+    <div>
+      <Alert type="warning">
+        After you submit your email address below, we will send you an email with a link thay you
+        can use to finalize a password reset for your account.
+      </Alert>
 
-          <div className={styles.row}>
-            {errorMessage && <Alert type="error">{errorMessage}</Alert>}
-          </div>
+      <Formik
+        initialValues={initialValues}
+        onSubmit={handleSubmit}
+        validationSchema={passwordResetSchema}
+      >
+        {({ isSubmitting }) => (
+          <Form className={styles.PasswordResetForm}>
+            <div className={styles.row}>
+              <Field
+                type="email"
+                name="email"
+                label="Email*"
+                component={Input}
+                disabled={isSubmitting}
+                autoComplete="username email"
+              />
+            </div>
 
-          <div className={styles.row}>
-            <Button
-              className={styles.topMargin}
-              type="submit"
-              theme="secondary"
-              disabled={isSubmitting}
-            >
-              Submit
-            </Button>
-          </div>
-        </Form>
-      )}
-    </Formik>
+            <div className={styles.row}>
+              {errorMessage && <Alert type="error">{errorMessage}</Alert>}
+            </div>
+
+            <div className={styles.row}>
+              <Button
+                className={styles.topMargin}
+                type="submit"
+                theme="secondary"
+                disabled={isSubmitting}
+              >
+                Submit
+              </Button>
+            </div>
+          </Form>
+        )}
+      </Formik>
+    </div>
   );
 }
 

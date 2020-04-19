@@ -25,6 +25,9 @@ PasswordResetConfirm.getInitialProps = ({ query: { uid, token } }) => {
 };
 
 function PasswordResetConfirm({ uid, token }) {
+  const pageTitle = 'Password Reset';
+  const pageHeader = 'Enter new password';
+
   if (!uid || !token) {
     const error = `One of token or uid undefined when confirming password reset.
       \nuid: ${uid}
@@ -33,7 +36,28 @@ function PasswordResetConfirm({ uid, token }) {
 
     logAndCaptureError(error);
 
-    return <Alert type="error">The provided credentials were either invalid or expired.</Alert>;
+    return (
+      <>
+        <Head title={pageTitle} />
+
+        <HeroBanner title={pageHeader} />
+
+        <Content
+          theme="gray"
+          columns={[
+            <div className={styles.centerAlign}>
+              <Alert type="error">The provided credentials were either invalid or expired.</Alert>
+
+              <div className={styles.margin}>
+                <Link href="/password_reset">
+                  <a>Want to try resetting it again?</a>
+                </Link>
+              </div>
+            </div>,
+          ]}
+        />
+      </>
+    );
   }
 
   const [didReset, setDidReset] = useState(false);
@@ -41,28 +65,27 @@ function PasswordResetConfirm({ uid, token }) {
   const onSubmit = async values => passwordResetSubmit({ ...values, uid, token });
   const onSuccess = () => setDidReset(true);
 
-  const getContent = () => {
-    if (didReset) {
-      return (
-        <div className={styles.centerAlign}>
-          <p>You password has been reset with the new password.</p>
-          <Link href="/login">
-            <a>Click here to Login</a>
-          </Link>
-        </div>
-      );
-    }
-
-    return <ChangePasswordForm onSubmit={onSubmit} onSuccess={onSuccess} />;
-  };
-
   return (
     <>
-      <Head title="PasswordReset" />
+      <Head title={pageTitle} />
 
-      <HeroBanner title="Enter new password" />
+      <HeroBanner title={pageHeader} />
 
-      <Content theme="gray" columns={[getContent()]} />
+      <Content
+        theme="gray"
+        columns={[
+          didReset ? (
+            <div className={styles.centerAlign}>
+              <p>You password has been reset with the new password.</p>
+              <Link href="/login">
+                <a>Click here to Login</a>
+              </Link>
+            </div>
+          ) : (
+            <ChangePasswordForm onSubmit={onSubmit} onSuccess={onSuccess} />
+          ),
+        ]}
+      />
     </>
   );
 }
