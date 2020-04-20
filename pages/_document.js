@@ -1,4 +1,5 @@
 import Document, { Head, Main, NextScript } from 'next/document';
+import { clientTokens } from 'common/config/environment';
 import * as Sentry from '@sentry/browser';
 
 process.on('unhandledRejection', error => {
@@ -31,6 +32,25 @@ export default class MyDocument extends Document {
           <meta property="og:image:alt" content="Operation Code Logo" />
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="630" />
+
+          {/* Global Site Tag (gtag.js) - Google Analytics */}
+          <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${clientTokens.GOOGLE_ANALYTICS_ID}`}
+          />
+          <script
+            // eslint-disable-next-line react/no-danger
+            dangerouslySetInnerHTML={{
+              __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${clientTokens.GOOGLE_ANALYTICS_ID}', {
+              page_path: window.location.pathname,
+            });
+          `,
+            }}
+          />
         </Head>
         <body>
           <Main />

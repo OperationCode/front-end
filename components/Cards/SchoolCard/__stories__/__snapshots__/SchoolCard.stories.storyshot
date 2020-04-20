@@ -175,9 +175,16 @@ exports[`Storyshots Cards/SchoolCard with many locations 1`] = `
       className="Button secondary fullWidth"
       href="https://generalassembly.com"
       onClick={[Function]}
-      onMouseEnter={[Function]}
+      rel="noopener noreferrer"
+      target="_blank"
     >
       Visit Website
+      <span
+        className="ScreenReaderOnly"
+        data-testid="SCREEN_READER_ONLY"
+      >
+        Opens in new window
+      </span>
     </a>
   </div>
 </article>
@@ -336,9 +343,16 @@ exports[`Storyshots Cards/SchoolCard with no physical locations 1`] = `
       className="Button secondary fullWidth"
       href="https://thinkful.com"
       onClick={[Function]}
-      onMouseEnter={[Function]}
+      rel="noopener noreferrer"
+      target="_blank"
     >
       Visit Website
+      <span
+        className="ScreenReaderOnly"
+        data-testid="SCREEN_READER_ONLY"
+      >
+        Opens in new window
+      </span>
     </a>
   </div>
 </article>
@@ -497,9 +511,16 @@ exports[`Storyshots Cards/SchoolCard with one location 1`] = `
       className="Button secondary fullWidth"
       href="https://codeimmersives.com"
       onClick={[Function]}
-      onMouseEnter={[Function]}
+      rel="noopener noreferrer"
+      target="_blank"
     >
       Visit Website
+      <span
+        className="ScreenReaderOnly"
+        data-testid="SCREEN_READER_ONLY"
+      >
+        Opens in new window
+      </span>
     </a>
   </div>
 </article>

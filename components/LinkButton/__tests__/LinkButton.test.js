@@ -1,27 +1,27 @@
 import React from 'react';
-import ReactGA from 'react-ga';
-import noop from 'lodash/noop';
 import { fireEvent, render } from '@testing-library/react';
+import { gtag } from 'common/utils/thirdParty/gtag';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 import LinkButton from '../LinkButton';
 
 describe('LinkButton', () => {
+  const testID = 'Test';
+
   const requiredProps = {
-    children: 'Test',
+    children: testID,
     href: 'https://tests.com',
   };
 
   const OutboundLinkButton = (
     <LinkButton
       {...requiredProps}
-      analyticsEventLabel="Test"
+      data-testid={testID}
+      analyticsEventLabel={testID}
       className="test-class"
       fullWidth
       theme="secondary"
     />
   );
-
-  ReactGA.initialize('foo', { testMode: true });
 
   it('should render with required props', () => {
     createSnapshotTest(<LinkButton {...requiredProps} />);
@@ -31,38 +31,14 @@ describe('LinkButton', () => {
     createSnapshotTest(OutboundLinkButton);
   });
 
-  it('should not create ReactGA event on click when in dev environment', () => {
+  it('fires gtag event onclick', () => {
     const component = render(OutboundLinkButton);
 
-    expect(ReactGA.testModeAPI.calls).toHaveLength(1);
+    expect(gtag.outboundLink).toHaveBeenCalledTimes(0);
 
-    fireEvent.click(component.container.querySelector('a'));
+    fireEvent.click(component.queryByTestId(testID));
 
-    expect(ReactGA.testModeAPI.calls).toHaveLength(1);
-  });
-
-  it('should create ReactGA event on click when in prod environment', () => {
-    process.env.NODE_ENV = 'production';
-
-    /* eslint-disable no-console */
-    const realConsoleError = console.error;
-    console.error = noop;
-    /* eslint-enable no-console */
-
-    const component = render(OutboundLinkButton);
-
-    expect(ReactGA.testModeAPI.calls).toHaveLength(1);
-
-    fireEvent.click(component.container.querySelector('a'));
-
-    expect(ReactGA.testModeAPI.calls).toHaveLength(2);
-
-    const newGAEventPayload = ReactGA.testModeAPI.calls[1][1];
-    expect(newGAEventPayload.eventLabel).toStrictEqual('OUTBOUND [Test]');
-
-    ReactGA.testModeAPI.calls = [];
-
-    // eslint-disable-next-line no-console
-    console.error = realConsoleError;
+    expect(gtag.outboundLink).toHaveBeenCalledTimes(1);
+    expect(gtag.outboundLink).toHaveBeenCalledWith(testID, requiredProps.href);
   });
 });

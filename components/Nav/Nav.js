@@ -9,6 +9,7 @@ import {
   mobileLoggedInNavItems,
   mobileLoggedOutNavItems,
 } from 'common/constants/navigation';
+import OutboundLink from 'components/OutboundLink/OutboundLink';
 import NavListItem from 'components/Nav/NavListItem/NavListItem';
 import NavMobile from 'components/Nav/NavMobile/NavMobile';
 import { hasValidAuthToken } from 'common/utils/cookie-utils';
@@ -69,10 +70,17 @@ export const Nav = () => {
               {navItems.map(navItem => (
                 <NavListItem key={navItem.name} {...navItem} />
               ))}
+
+              {/* stylistic one-off */}
               <li key="Donate">
-                <a href={donateLink} className={classNames(styles.link, styles.donateLink)}>
-                  <span>Donate</span>
-                </a>
+                <OutboundLink
+                  analyticsEventLabel="Navigation Bar Donate"
+                  className={classNames(styles.link, styles.donateLink)}
+                  hasIcon={false}
+                  href={donateLink}
+                >
+                  Donate
+                </OutboundLink>
               </li>
             </ul>
           </nav>
