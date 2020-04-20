@@ -5,8 +5,15 @@ exports[`Storyshots LinkButton default 1`] = `
   className="Button primary"
   href="https://tests.com"
   onClick={[Function]}
-  onMouseEnter={[Function]}
+  rel="noopener noreferrer"
+  target="_blank"
 >
   Click Me!
+  <span
+    className="ScreenReaderOnly"
+    data-testid="SCREEN_READER_ONLY"
+  >
+    Opens in new window
+  </span>
 </a>
 `;

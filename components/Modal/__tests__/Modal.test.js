@@ -1,6 +1,6 @@
-import { cleanup, render } from '@testing-library/react';
 import React from 'react';
-import ReactGA from 'react-ga';
+import { cleanup, render } from '@testing-library/react';
+import { gtag } from 'scripts/thirdParty/gtag';
 import Modal from '../Modal';
 
 describe('Modal', () => {
@@ -27,13 +27,28 @@ describe('Modal', () => {
     expect(container.parentElement).toMatchSnapshot();
   });
 
-  it('should call ReactGA when in prod environment', () => {
-    ReactGA.initialize('foo', { testMode: true });
+  it('does not fire gtag.modalView on render unopened render', () => {
+    expect(gtag.modalView).toHaveBeenCalledTimes(0);
 
-    process.env.NODE_ENV = 'production';
+    render(
+      <Modal {...requiredProps} isOpen={false}>
+        Testing
+      </Modal>,
+    );
 
-    render(<Modal {...requiredProps}>Testing</Modal>);
+    expect(gtag.modalView).toHaveBeenCalledTimes(0);
+  });
 
-    expect(ReactGA.testModeAPI.calls).toContainEqual(['send', 'pageview', '/modal/Test']);
+  it('fires gtag.modalView on render when open', () => {
+    expect(gtag.modalView).toHaveBeenCalledTimes(0);
+
+    render(
+      <Modal {...requiredProps} isOpen>
+        Testing
+      </Modal>,
+    );
+
+    expect(gtag.modalView).toHaveBeenCalledTimes(1);
+    expect(gtag.modalView).toHaveBeenCalledWith(requiredProps.screenReaderLabel);
   });
 });

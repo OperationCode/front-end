@@ -54,9 +54,16 @@ exports[`Storyshots ReusableSections DonateSection 1`] = `
       className="Button topMargin primary"
       href="https://secure.lglforms.com/form_engine/s/BRtP7QUKyHOyEYsZROsRew"
       onClick={[Function]}
-      onMouseEnter={[Function]}
+      rel="noopener noreferrer"
+      target="_blank"
     >
       Donate Now
+      <span
+        className="ScreenReaderOnly"
+        data-testid="SCREEN_READER_ONLY"
+      >
+        Opens in new window
+      </span>
     </a>
   </div>
 </div>
