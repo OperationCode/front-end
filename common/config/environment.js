@@ -6,6 +6,7 @@ const isProduction = process.env.NODE_ENV === 'production';
 // These are all exposed by the client, so there's no way to protect them anyways.
 export const clientTokens = isProduction
   ? {
+      GOOGLE_TAG_MANAGER_ID: 'GTM-PTPTHST',
       GOOGLE_ANALYTICS: 'UA-75642413-1',
       LOGROCKET: 'uquzri',
       OC_FACEBOOK_KEY: '207055783236912',
@@ -13,6 +14,7 @@ export const clientTokens = isProduction
       SENTRY_DSN: 'https://90edfb8d1d9640cf86d8aefd57218d71@sentry.io/1443656',
     }
   : {
+      GOOGLE_TAG_MANAGER_ID: 'GTM-PTPTHST',
       GOOGLE_ANALYTICS: '',
       LOGROCKET: '',
       OC_FACEBOOK_KEY: '399113557601038',

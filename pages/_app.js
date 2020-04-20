@@ -1,20 +1,20 @@
 /* eslint-disable max-classes-per-file */
+import * as Sentry from '@sentry/browser';
 import App from 'next/app';
-import Router from 'next/router';
-import PropTypes from 'prop-types';
+import Fingerprint2 from 'fingerprintjs2';
 import FontFaceObserver from 'fontfaceobserver';
+import hash from 'object-hash';
 import LogRocket from 'logrocket';
+import PropTypes from 'prop-types';
 import ReactGA from 'react-ga';
+import Router from 'next/router';
 import ScrollUpButton from 'react-scroll-up-button';
 import setupLogRocketReact from 'logrocket-react';
-import * as Sentry from '@sentry/browser';
 import { clientTokens } from 'common/config/environment';
 import Nav from 'components/Nav/Nav';
 import Footer from 'components/Footer/Footer';
 import Modal from 'components/Modal/Modal';
-
-import Fingerprint2 from 'fingerprintjs2';
-import hash from 'object-hash';
+import { gtag } from 'scripts/thirdParty/gtag';
 import { version } from '../package.json';
 import 'common/styles/globalStyles.css';
 
@@ -141,7 +141,7 @@ class OperationCodeApp extends App {
 }
 
 if (isProduction) {
-  Router.events.on('routeChangeComplete', url => ReactGA.pageview(url));
+  Router.events.on('routeChangeComplete', url => gtag.pageview(url));
 }
 
 // Fixes Next CSS route change bug: https://github.com/zeit/next-plugins/issues/282
