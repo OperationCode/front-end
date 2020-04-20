@@ -1,9 +1,9 @@
 import React from 'react';
 import { any, bool, func, node, number, oneOf, oneOfType, string } from 'prop-types';
 import classNames from 'classnames';
-import { gtag } from 'scripts/thirdParty/gtag';
 import { BUTTON } from 'common/constants/testIDs';
 import { googleAnalyticsEventPropType } from 'common/constants/custom-props';
+import { gtag } from 'common/utils/thirdParty/gtag';
 import { getDataAttributes, getAriaAttributes } from 'common/utils/prop-utils';
 import styles from './Button.module.css';
 

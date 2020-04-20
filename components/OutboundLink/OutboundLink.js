@@ -1,6 +1,6 @@
 import React from 'react';
 import { bool, node, string } from 'prop-types';
-import { gtag } from 'scripts/thirdParty/gtag';
+import { gtag } from 'common/utils/thirdParty/gtag';
 import ExternalLinkIcon from 'static/images/icons/FontAwesome/external-link-square-alt-solid.svg';
 import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
 import styles from './OutboundLink.module.css';

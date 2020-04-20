@@ -10,10 +10,10 @@ import Router from 'next/router';
 import ScrollUpButton from 'react-scroll-up-button';
 import setupLogRocketReact from 'logrocket-react';
 import { clientTokens } from 'common/config/environment';
+import { gtag } from 'common/utils/thirdParty/gtag';
 import Nav from 'components/Nav/Nav';
 import Footer from 'components/Footer/Footer';
 import Modal from 'components/Modal/Modal';
-import { gtag } from 'scripts/thirdParty/gtag';
 import { version } from '../package.json';
 import 'common/styles/globalStyles.css';
 

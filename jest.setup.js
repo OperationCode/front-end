@@ -8,7 +8,7 @@ jest.mock('@storybook/addon-info', () => ({
   setDefaults: () => {},
 }));
 
-jest.mock('./scripts/thirdParty/gtag');
+jest.mock('./common/utils/thirdParty/gtag');
 
 // React Modal
 ReactModal.setAppElement(document.createElement('div').setAttribute('id', 'app-root'));

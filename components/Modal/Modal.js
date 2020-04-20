@@ -2,7 +2,7 @@ import React from 'react';
 import { node, string, bool, func } from 'prop-types';
 import classNames from 'classnames';
 import ReactModal from 'react-modal';
-import { gtag } from 'scripts/thirdParty/gtag';
+import { gtag } from 'common/utils/thirdParty/gtag';
 import CardStyles from 'components/Cards/Card/Card.module.css';
 import CloseButton from 'components/CloseButton/CloseButton';
 
