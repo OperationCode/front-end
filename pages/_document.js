@@ -36,7 +36,7 @@ export default class MyDocument extends Document {
           {/* Global Site Tag (gtag.js) - Google Analytics */}
           <script
             async
-            src={`https://www.googletagmanager.com/gtag/js?id=${clientTokens.GOOGLE_TAG_MANAGER_ID}`}
+            src={`https://www.googletagmanager.com/gtag/js?id=${clientTokens.GOOGLE_ANALYTICS_ID}`}
           />
           <script
             // eslint-disable-next-line react/no-danger
@@ -45,7 +45,7 @@ export default class MyDocument extends Document {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', '${clientTokens.GOOGLE_TAG_MANAGER_ID}', {
+            gtag('config', '${clientTokens.GOOGLE_ANALYTICS_ID}', {
               page_path: window.location.pathname,
             });
           `,

@@ -22,7 +22,7 @@ const pageView = (url, isModalView = false) => {
   log({ methodName: 'pageview', url, isModalView });
 
   if (isProduction) {
-    window.gtag('config', clientTokens.GOOGLE_TAG_MANAGER_ID, {
+    window.gtag('config', clientTokens.GOOGLE_ANALYTICS_ID, {
       page_path: url,
     });
   }
@@ -66,9 +66,9 @@ const event = ({ action, category, label, value, callback }) => {
  */
 const outboundLink = (label, url) => {
   event({
-    action: 'Click',
+    action: `To: ${label}`,
     category: 'Outbound',
-    label: `OUTBOUND [${label}]`,
+    label: `URL: ${url}`,
     value: url,
   });
 };
