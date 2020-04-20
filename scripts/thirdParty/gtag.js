@@ -1,9 +1,8 @@
 const snakeCase = require('lodash/snakeCase');
 const { clientTokens } = require('common/config/environment');
 
-// TODO: Leverage master-build-time-only env vars instead of window check
-const isProduction =
-  process.env.NODE_ENV === 'production' && window.location.host.includes('operationcode.org');
+// TODO: Leverage master-build-time-only env vars instead NODE_ENV for prod check
+const isProduction = process.env.NODE_ENV === 'production';
 const isDevelopment = process.env.NODE_ENV === 'development';
 
 /**
