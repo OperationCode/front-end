@@ -1,30 +1,92 @@
+const snakeCase = require('lodash/snakeCase');
 const { clientTokens } = require('common/config/environment');
+
+const isProduction = process.env.NODE_ENV === 'production';
+const isDevelopment = process.env.NODE_ENV === 'development';
+
+const log = ({ methodName, ...rest }) => {
+  if (isDevelopment) {
+    console.log(`gtag.${methodName}\n`, rest); // eslint-disable-line no-console
+  }
+};
 
 /**
  * @description Log a pageview with google tag manager
  * @param {string} url
+ * @param {boolean} isModalView
  * @see https://developers.google.com/analytics/devguides/collection/gtagjs/pages
  */
-const pageview = url => {
-  window.gtag('config', clientTokens.GOOGLE_TAG_MANAGER_ID, {
-    page_path: url,
-  });
+const pageView = (url, isModalView = false) => {
+  log({ methodName: 'pageview', url, isModalView });
+
+  if (isProduction) {
+    window.gtag('config', clientTokens.GOOGLE_TAG_MANAGER_ID, {
+      page_path: url,
+    });
+  }
 };
 
 /**
  * @description Log an event with google tag manager
- * @param {{ action: string, category: string, label: string, value: number }}
+ * @param {{
+ *  action: string,
+ *  category: string,
+ *  label?: string,
+ *  value?: number,
+ *  callback?: () => void
+ * }}
  * @see https://developers.google.com/analytics/devguides/collection/gtagjs/events
  */
-const event = ({ action, category, label, value }) => {
-  window.gtag('event', action, {
-    event_category: category,
-    event_label: label,
+const event = ({ action, category, label, value, callback }) => {
+  console.log('\nhello!\n');
+  log({
+    methodName: 'event',
+    action,
+    category,
+    label,
     value,
+    hasCallback: typeof callback === 'function',
   });
+
+  if (isProduction) {
+    window.gtag('event', action, {
+      event_callback: callback,
+      event_category: category,
+      event_label: label,
+      value,
+    });
+  }
+};
+
+/**
+ * @description Log a link click which takes users away from our site
+ * @param {string} label describe where the user is going
+ * @param {string} url
+ */
+const outboundLink = (label, url) => {
+  event({
+    action: 'Click',
+    category: 'Outbound',
+    label: `OUTBOUND [${label}]`,
+    value: url,
+  });
+};
+
+/**
+ * @description Log a modal view as if it were a page view with google tag manager
+ * @param {string} modalName
+ */
+const modalView = modalName => {
+  const url = `/modal/${snakeCase(modalName.toLowerCase())}`;
+
+  const isModalView = true;
+
+  pageView(url, isModalView);
 };
 
 export const gtag = {
   event,
-  pageview,
+  modalView,
+  outboundLink,
+  pageView,
 };
