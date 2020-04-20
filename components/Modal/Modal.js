@@ -2,7 +2,7 @@ import React from 'react';
 import { node, string, bool, func } from 'prop-types';
 import classNames from 'classnames';
 import ReactModal from 'react-modal';
-import ReactGA from 'react-ga';
+import { gtag } from 'scripts/thirdParty/gtag';
 import CardStyles from 'components/Cards/Card/Card.module.css';
 import CloseButton from 'components/CloseButton/CloseButton';
 
@@ -31,8 +31,8 @@ function Modal({
   screenReaderLabel,
   shouldCloseOnOverlayClick,
 }) {
-  if (process.env.NODE_ENV === 'production') {
-    ReactGA.modalview(screenReaderLabel);
+  if (isOpen) {
+    gtag.modalView(screenReaderLabel);
   }
 
   return (

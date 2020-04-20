@@ -10,6 +10,7 @@ LinkButton.propTypes = {
   analyticsEventLabel: string,
   children: node.isRequired,
   className: string,
+  'data-testid': string,
   fullWidth: bool,
   href: string.isRequired,
   shouldPrefetch: bool,
@@ -19,6 +20,7 @@ LinkButton.propTypes = {
 LinkButton.defaultProps = {
   analyticsEventLabel: '',
   className: undefined,
+  'data-testid': undefined,
   fullWidth: false,
   shouldPrefetch: false,
   theme: 'primary',
@@ -28,6 +30,7 @@ export default function LinkButton({
   analyticsEventLabel,
   children,
   className,
+  'data-testid': testID,
   fullWidth,
   href,
   shouldPrefetch,
@@ -37,21 +40,23 @@ export default function LinkButton({
     [styles.fullWidth]: fullWidth,
   });
 
-  return (
+  const hasAnalyticsEventLabel = !!analyticsEventLabel;
+
+  return hasAnalyticsEventLabel ? (
+    <OutboundLink
+      analyticsEventLabel={analyticsEventLabel}
+      className={linkButtonClassNames}
+      data-testid={testID}
+      hasIcon={false}
+      href={href}
+    >
+      {children}
+    </OutboundLink>
+  ) : (
     <Link href={href} prefetch={shouldPrefetch}>
-      {analyticsEventLabel && process.env.NODE_ENV === 'production' ? (
-        <OutboundLink
-          analyticsEventLabel={analyticsEventLabel}
-          href={href}
-          className={linkButtonClassNames}
-        >
-          {children}
-        </OutboundLink>
-      ) : (
-        <a className={linkButtonClassNames} href={href}>
-          {children}
-        </a>
-      )}
+      <a className={linkButtonClassNames} data-testid={testID} href={href}>
+        {children}
+      </a>
     </Link>
   );
 }

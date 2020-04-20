@@ -6,7 +6,6 @@ import FontFaceObserver from 'fontfaceobserver';
 import hash from 'object-hash';
 import LogRocket from 'logrocket';
 import PropTypes from 'prop-types';
-import ReactGA from 'react-ga';
 import Router from 'next/router';
 import ScrollUpButton from 'react-scroll-up-button';
 import setupLogRocketReact from 'logrocket-react';
@@ -60,11 +59,10 @@ const setLogRocketFingerprint = () => {
 class OperationCodeApp extends App {
   componentDidMount() {
     /* Analytics */
-    // Temporary method until we do dynamic now configs
+    // TODO: Leverage master-build-time-only env vars instead of window check
     if (isProduction && window.location.host.includes('operationcode.org')) {
       Sentry.init({ dsn: clientTokens.SENTRY_DSN, release: `front-end@${version}` });
       LogRocket.init(`${clientTokens.LOGROCKET}/operation-code`);
-      ReactGA.initialize(clientTokens.GOOGLE_ANALYTICS);
 
       // Every crash report will have a LogRocket session URL.
       LogRocket.getSessionURL(sessionURL => {
@@ -81,8 +79,6 @@ class OperationCodeApp extends App {
       } else {
         setTimeout(setLogRocketFingerprint, 500);
       }
-
-      ReactGA.set({ page: window.location.pathname });
     }
 
     /* Non-render blocking font load */
@@ -140,9 +136,7 @@ class OperationCodeApp extends App {
   }
 }
 
-if (isProduction) {
-  Router.events.on('routeChangeComplete', url => gtag.pageview(url));
-}
+Router.events.on('routeChangeComplete', url => gtag.pageView(url));
 
 // Fixes Next CSS route change bug: https://github.com/zeit/next-plugins/issues/282
 if (!isProduction) {
