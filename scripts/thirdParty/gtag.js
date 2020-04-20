@@ -6,6 +6,10 @@ const isProduction =
   process.env.NODE_ENV === 'production' && window.location.host.includes('operationcode.org');
 const isDevelopment = process.env.NODE_ENV === 'development';
 
+/**
+ * @description dev-only logging of gtag methods
+ * @param {{ methodName: string }} { methodName, ...rest }
+ */
 const log = ({ methodName, ...rest }) => {
   if (isDevelopment) {
     console.log(`gtag.${methodName}\n`, rest); // eslint-disable-line no-console
@@ -15,7 +19,7 @@ const log = ({ methodName, ...rest }) => {
 /**
  * @description Log a pageview with google tag manager
  * @param {string} url
- * @param {boolean} isModalView
+ * @param {boolean?} isModalView
  * @see https://developers.google.com/analytics/devguides/collection/gtagjs/pages
  */
 const pageView = (url, isModalView = false) => {
@@ -39,7 +43,17 @@ const pageView = (url, isModalView = false) => {
  * }}
  * @see https://developers.google.com/analytics/devguides/collection/gtagjs/events
  */
-const event = ({ action, category, label, value, callback }) => {
+const event = ({
+  action,
+  category,
+  label = undefined,
+  value = undefined,
+  callback = undefined,
+}) => {
+  if (!action || !category) {
+    throw new Error('Google Events must be called with at least an action and category.');
+  }
+
   log({
     methodName: 'event',
     action,
