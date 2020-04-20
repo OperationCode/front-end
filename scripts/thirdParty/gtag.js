@@ -1,7 +1,9 @@
 const snakeCase = require('lodash/snakeCase');
 const { clientTokens } = require('common/config/environment');
 
-const isProduction = process.env.NODE_ENV === 'production';
+// TODO: Leverage master-build-time-only env vars instead of window check
+const isProduction =
+  process.env.NODE_ENV === 'production' && window.location.host.includes('operationcode.org');
 const isDevelopment = process.env.NODE_ENV === 'development';
 
 const log = ({ methodName, ...rest }) => {
@@ -38,7 +40,6 @@ const pageView = (url, isModalView = false) => {
  * @see https://developers.google.com/analytics/devguides/collection/gtagjs/events
  */
 const event = ({ action, category, label, value, callback }) => {
-  console.log('\nhello!\n');
   log({
     methodName: 'event',
     action,
