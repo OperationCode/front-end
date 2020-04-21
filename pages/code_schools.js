@@ -1,12 +1,9 @@
 import { useState } from 'react'; // eslint-disable-line  no-restricted-imports
-import { array, string } from 'prop-types';
+import { array } from 'prop-types';
 import Head from 'components/head';
-import { getServerErrorMessage } from 'common/utils/api-utils';
-import { logAndCaptureError } from 'common/utils/error-utils';
 import ThemedReactSelect from 'components/Form/Select/ThemedReactSelect';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
-import Alert from 'components/Alert/Alert';
 import FlatCard from 'components/Cards/FlatCard/FlatCard';
 import SchoolCard from 'components/Cards/SchoolCard/SchoolCard';
 import Button from 'components/Button/Button';
@@ -40,29 +37,25 @@ const moocSchools = [
   },
 ];
 
-CodeSchools.getInitialProps = async () => {
-  try {
-    const { data } = await getCodeSchoolsPromise();
+export async function getStaticProps() {
+  const { data: allSchools } = await getCodeSchoolsPromise();
 
-    return { allSchools: data };
-  } catch (error) {
-    logAndCaptureError(error);
-
-    return { errorMessage: getServerErrorMessage(error) };
+  if (allSchools?.length <= 0) {
+    throw new Error('`getCodeSchoolsPromise` returned an empty list');
   }
-};
+
+  return {
+    props: {
+      allSchools,
+    },
+  };
+}
 
 CodeSchools.propTypes = {
-  allSchools: array,
-  errorMessage: string,
+  allSchools: array.isRequired,
 };
 
-CodeSchools.defaultProps = {
-  allSchools: [],
-  errorMessage: '',
-};
-
-function CodeSchools({ allSchools, errorMessage }) {
+function CodeSchools({ allSchools }) {
   const [filteredSchools, setFilterSchools] = useState(allSchools);
   const [selectedStates, setSelectedStates] = useState([]);
   const [locationsModalInfo, setLocationsModalInfo] = useState({ name: '', locations: [] });
@@ -215,55 +208,51 @@ function CodeSchools({ allSchools, errorMessage }) {
         theme="gray"
         title="Schools"
         hasTitleUnderline
-        columns={
-          errorMessage
-            ? [<Alert type="error">{errorMessage}</Alert>]
-            : [
-                <Button theme="primary" onClick={showAllSchools}>
-                  All Schools
-                </Button>,
-                <Button theme="primary" onClick={filterVaApproved}>
-                  Schools Accepting GI Bill
-                </Button>,
-                <Button theme="primary" onClick={filterVetTecApproved}>
-                  Schools Accepting Vet Tec
-                </Button>,
-                <Button theme="primary" onClick={filterOnline}>
-                  Online Schools
-                </Button>,
-                <div className={styles.filterContainer}>
-                  <h5>Filter By State</h5>
-                  <ThemedReactSelect
-                    instanceId="state_select"
-                    placeholder="Start typing a state..."
-                    className={styles.select}
-                    isMulti
-                    name="States"
-                    options={States}
-                    onChange={filterState}
-                    value={selectedStates}
-                  />
-                </div>,
-                <div className={styles.schoolCardsWrapper}>
-                  {filteredSchools.map(school => (
-                    <SchoolCard
-                      key={`${school.name}`}
-                      isVetTecApproved={school.isVetTecApproved}
-                      hasHardwareIncluded={school.hardwareIncluded}
-                      hasHousing={school.hasHousing}
-                      hasOnline={school.hasOnline}
-                      hasOnlyOnline={school.onlineOnly}
-                      isFullTime={school.fullTime}
-                      locations={school.locations}
-                      logoSource={school.logo}
-                      name={school.name}
-                      website={school.url}
-                      toggleModal={handleModalOpen}
-                    />
-                  ))}
-                </div>,
-              ]
-        }
+        columns={[
+          <Button theme="primary" onClick={showAllSchools}>
+            All Schools
+          </Button>,
+          <Button theme="primary" onClick={filterVaApproved}>
+            Schools Accepting GI Bill
+          </Button>,
+          <Button theme="primary" onClick={filterVetTecApproved}>
+            Schools Accepting Vet Tec
+          </Button>,
+          <Button theme="primary" onClick={filterOnline}>
+            Online Schools
+          </Button>,
+          <div className={styles.filterContainer}>
+            <h5>Filter By State</h5>
+            <ThemedReactSelect
+              instanceId="state_select"
+              placeholder="Start typing a state..."
+              className={styles.select}
+              isMulti
+              name="States"
+              options={States}
+              onChange={filterState}
+              value={selectedStates}
+            />
+          </div>,
+          <div className={styles.schoolCardsWrapper}>
+            {filteredSchools.map(school => (
+              <SchoolCard
+                key={`${school.name}`}
+                isVetTecApproved={school.isVetTecApproved}
+                hasHardwareIncluded={school.hardwareIncluded}
+                hasHousing={school.hasHousing}
+                hasOnline={school.hasOnline}
+                hasOnlyOnline={school.onlineOnly}
+                isFullTime={school.fullTime}
+                locations={school.locations}
+                logoSource={school.logo}
+                name={school.name}
+                website={school.url}
+                toggleModal={handleModalOpen}
+              />
+            ))}
+          </div>,
+        ]}
       />
 
       <Content
@@ -283,23 +272,21 @@ function CodeSchools({ allSchools, errorMessage }) {
         ))}
       />
 
-      {!errorMessage && (
-        <Modal
-          isOpen={isModalOpen}
-          screenReaderLabel="Campus locations"
-          onRequestClose={handleModalClose}
-          className={styles.schoolLocationModal}
-        >
-          <>
-            <h3>{locationsModalInfo.name} Campuses</h3>
-            {locationsModalInfo.locations.map(location => (
-              <div className={styles.schoolLocalModalItem}>
-                {`${location.city}, ${location.state}`}
-              </div>
-            ))}
-          </>
-        </Modal>
-      )}
+      <Modal
+        isOpen={isModalOpen}
+        screenReaderLabel="Campus locations"
+        onRequestClose={handleModalClose}
+        className={styles.schoolLocationModal}
+      >
+        <>
+          <h3>{locationsModalInfo.name} Campuses</h3>
+          {locationsModalInfo.locations.map(location => (
+            <div className={styles.schoolLocalModalItem}>
+              {`${location.city}, ${location.state}`}
+            </div>
+          ))}
+        </>
+      </Modal>
     </>
   );
 }
