@@ -18,7 +18,7 @@ import BullhornIcon from 'static/images/icons/FontAwesome/bullhorn-solid.svg';
 import UserIcon from 'static/images/icons/FontAwesome/user-solid.svg';
 import DiversityIcon from 'static/images/icons/FontAwesome/users-solid.svg';
 import { donateLink, s3 } from 'common/constants/urls';
-import styles from './styles/events.css';
+import styles from './styles/events.module.css';
 
 const VISIBILITY_OFFSET = 400;
 
@@ -213,9 +213,7 @@ export default () => {
             )}
           </TrackVisibility>,
           <div>
-            <Heading hasHeadingLines={false} theme="white">
-              Sponsor a Meetup
-            </Heading>
+            <Heading text="Sponsor a Meetup" headingLevel={2} />
 
             <p className={styles.justifyAlign}>
               From classes, to hackathons, to contributing to open source projects as a group. Our
@@ -258,9 +256,7 @@ export default () => {
       <Content
         columns={[
           <div>
-            <Heading hasHeadingLines={false} theme="white">
-              Host Us At An Event
-            </Heading>
+            <Heading text="Host Us At An Event" headingLevel={2} />
 
             <p className={styles.justifyAlign}>
               Not only are we working to get veterans into tech, we are also working to raise

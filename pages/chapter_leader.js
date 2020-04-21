@@ -3,7 +3,7 @@ import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
-import styles from './styles/chapter_leader.css';
+import styles from './styles/chapter_leader.module.css';
 
 const ChapterLeader = () => (
   <>

@@ -5,3 +5,5 @@ bin
 node_modules
 static
 coverage
+cypress-coverage
+jest-coverage

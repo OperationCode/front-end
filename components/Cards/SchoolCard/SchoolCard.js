@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { arrayOf, bool, func, string, shape } from 'prop-types';
 import classNames from 'classnames';
 import { Image } from '@innocuous/components';
@@ -11,18 +11,27 @@ import LinkButton from 'components/LinkButton/LinkButton';
 import Button from 'components/Button/Button';
 import Badge from 'components/Badge/Badge';
 import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
-import styles from './SchoolCard.css';
+import styles from './SchoolCard.module.css';
+
+export const ONLINE_ONLY = 'Online only';
+export const UNKNOWN = 'Unknown';
+export const MULTIPLE = 'Multiple locations';
 
 export const getSchoolLocationText = (hasOnlyOnline, locations) => {
-  let locationText = 'Multiple locations';
   if (hasOnlyOnline) {
-    locationText = 'Online only';
-  } else if (locations.length === 1) {
-    const [location] = locations;
-    locationText = `${location.city}, ${location.state}`;
+    return ONLINE_ONLY;
   }
 
-  return locationText;
+  if (!Array.isArray(locations)) {
+    return 'Unknown';
+  }
+
+  if (locations.length === 1) {
+    const [location] = locations;
+    return `${location.city}, ${location.state}`;
+  }
+
+  return 'Multiple locations';
 };
 
 // eslint-disable-next-line react/prop-types
@@ -33,145 +42,150 @@ const LabelWithScreenReader = ({ isActive, label }) => (
   </>
 );
 
-export default class SchoolCard extends Component {
-  static propTypes = {
-    hasHardwareIncluded: bool.isRequired,
-    hasHousing: bool,
-    hasOnline: bool.isRequired,
-    hasOnlyOnline: bool.isRequired,
-    // isFullTime: bool.isRequired,
-    isVetTecApproved: bool,
-    locations: arrayOf(
-      shape({
-        city: string,
-        vaAccepted: bool.isRequired,
-        state: string,
-      }),
-    ).isRequired,
-    logoSource: string.isRequired,
-    name: string.isRequired,
-    website: string.isRequired,
-    toggleModal: func.isRequired,
-  };
+SchoolCard.propTypes = {
+  hasHardwareIncluded: bool.isRequired,
+  hasHousing: bool,
+  hasOnline: bool.isRequired,
+  hasOnlyOnline: bool.isRequired,
+  // isFullTime: bool.isRequired,
+  isVetTecApproved: bool,
+  locations: arrayOf(
+    shape({
+      city: string,
+      vaAccepted: bool.isRequired,
+      state: string,
+    }),
+  ).isRequired,
+  logoSource: string.isRequired,
+  name: string.isRequired,
+  website: string.isRequired,
+  toggleModal: func.isRequired,
+};
 
-  static defaultProps = {
-    hasHousing: false,
-    isVetTecApproved: false,
-  };
+SchoolCard.defaultProps = {
+  hasHousing: false,
+  isVetTecApproved: false,
+};
 
-  toggleModalClick = () => {
-    const { name, locations, toggleModal } = this.props;
+function SchoolCard({
+  name,
+  locations,
+  toggleModal,
+  isVetTecApproved,
+  logoSource,
+  hasOnline,
+  hasHousing,
+  hasOnlyOnline,
+  hasHardwareIncluded,
+  website,
+}) {
+  const toggleModalClick = () => {
     toggleModal({ name, locations });
   };
 
-  render() {
-    const { props } = this;
-    const hasGiBill = props.locations.some(location => location.vaAccepted);
-    const hasVetTec = props.isVetTecApproved;
+  const hasGiBill = locations.some(location => location.vaAccepted);
+  const hasVetTec = isVetTecApproved;
 
-    const badgeClassNames = isActive =>
-      classNames(styles.badgeGroupItem, { [styles.active]: isActive });
+  const badgeClassNames = isActive =>
+    classNames(styles.badgeGroupItem, { [styles.active]: isActive });
 
-    return (
-      <Card className={styles.SchoolCard} hasAnimationOnHover={false} data-testid="SchoolCard">
-        {/* Clearly express code school name to screen readers */}
-        <ScreenReaderOnly>
-          <h6 data-testid={`SchoolCard Name: ${props.name}`}>{props.name}</h6>
-        </ScreenReaderOnly>
+  return (
+    <Card className={styles.SchoolCard} hasAnimationOnHover={false} data-testid="SchoolCard">
+      {/* Clearly express code school name to screen readers */}
+      <ScreenReaderOnly>
+        <h6 data-testid={`SchoolCard Name: ${name}`}>{name}</h6>
+      </ScreenReaderOnly>
 
-        {hasGiBill && (
-          <div className={classNames(styles.ribbon, styles.gi)} data-testid="GI Bill Ribbon">
-            GI Bill
-          </div>
-        )}
-
-        {hasVetTec && (
-          <div className={classNames(styles.ribbon, styles.vettec)} data-testid="Vet Tec Ribbon">
-            Vet Tec
-          </div>
-        )}
-
-        {hasVetTec && hasGiBill && (
-          <div className={classNames(styles.ribbon, styles.dual)} data-testid="Dual Ribbon">
-            GI Bill
-          </div>
-        )}
-
-        <div className={styles.cardBrand}>
-          <Image src={props.logoSource} alt={`${props.name} logo`} height="150" />
+      {hasGiBill && (
+        <div className={classNames(styles.ribbon, styles.gi)} data-testid="GI Bill Ribbon">
+          GI Bill
         </div>
+      )}
 
-        <div className={styles.cardBlock}>
-          <span className={styles.cardBlockTitle}>Availability</span>
-          <div className={styles.badgeGroup}>
-            <Badge
-              label={<LabelWithScreenReader label="Online" isActive={props.hasOnline} />}
-              icon={
-                <OnlineIcon
-                  data-testid={props.hasOnline ? 'School has online' : 'School has no online'}
-                />
-              }
-              className={badgeClassNames(props.hasOnline)}
-            />
-            <Badge
-              label={<LabelWithScreenReader label="Campus" isActive={!props.hasOnlyOnline} />}
-              icon={<CampusIcon />}
-              className={badgeClassNames(!props.hasOnlyOnline)}
-            />
-            <Badge
-              label={<LabelWithScreenReader label="Housing" isActive={props.hasHousing} />}
-              icon={<HousingIcon />}
-              className={badgeClassNames(props.hasHousing)}
-            />
-            <Badge
-              label={
-                <LabelWithScreenReader label="Equipment" isActive={props.hasHardwareIncluded} />
-              }
-              icon={<EquipmentIcon />}
-              className={badgeClassNames(props.hasHardwareIncluded)}
-            />
-          </div>
+      {hasVetTec && (
+        <div className={classNames(styles.ribbon, styles.vettec)} data-testid="Vet Tec Ribbon">
+          Vet Tec
         </div>
+      )}
 
-        <div className={styles.cardBlock}>
-          <span className={styles.cardBlockTitle}>Accepts GI Bill</span>
-          {hasGiBill ? 'Yes' : 'No'}
+      {hasVetTec && hasGiBill && (
+        <div className={classNames(styles.ribbon, styles.dual)} data-testid="Dual Ribbon">
+          GI Bill
         </div>
+      )}
 
-        <div className={styles.cardBlock}>
-          <span className={styles.cardBlockTitle}>VET TEC Approved</span>
-          {hasVetTec ? 'Yes' : 'No'}
+      <div className={styles.cardBrand}>
+        <Image src={logoSource} alt={`${name} logo`} height="150" />
+      </div>
+
+      <div className={styles.cardBlock}>
+        <span className={styles.cardBlockTitle}>Availability</span>
+        <div className={styles.badgeGroup}>
+          <Badge
+            label={<LabelWithScreenReader label="Online" isActive={hasOnline} />}
+            icon={
+              <OnlineIcon data-testid={hasOnline ? 'School has online' : 'School has no online'} />
+            }
+            className={badgeClassNames(hasOnline)}
+          />
+          <Badge
+            label={<LabelWithScreenReader label="Campus" isActive={!hasOnlyOnline} />}
+            icon={<CampusIcon />}
+            className={badgeClassNames(!hasOnlyOnline)}
+          />
+          <Badge
+            label={<LabelWithScreenReader label="Housing" isActive={hasHousing} />}
+            icon={<HousingIcon />}
+            className={badgeClassNames(hasHousing)}
+          />
+          <Badge
+            label={<LabelWithScreenReader label="Equipment" isActive={hasHardwareIncluded} />}
+            icon={<EquipmentIcon />}
+            className={badgeClassNames(hasHardwareIncluded)}
+          />
         </div>
+      </div>
 
-        <div className={styles.cardBlock}>
-          <span className={styles.cardBlockTitle}>Campus Locations</span>
-          {getSchoolLocationText(props.hasOnlyOnline, props.locations)}
-          {props.locations.length > 1 && (
-            <Button
-              analyticsObject={{
-                action: 'Button Selected',
-                category: 'Interactions',
-                label: `${props.name} | Locations`,
-              }}
-              onClick={this.toggleModalClick}
-              className={styles.modalToggler}
-            >
-              view all
-            </Button>
-          )}
-        </div>
+      <div className={styles.cardBlock}>
+        <span className={styles.cardBlockTitle}>Accepts GI Bill</span>
+        {hasGiBill ? 'Yes' : 'No'}
+      </div>
 
-        <div className={styles.cardBlock}>
-          <LinkButton
-            analyticsEventLabel={`${props.name} | Website`}
-            href={props.website}
-            fullWidth
-            theme="secondary"
+      <div className={styles.cardBlock}>
+        <span className={styles.cardBlockTitle}>VET TEC Approved</span>
+        {hasVetTec ? 'Yes' : 'No'}
+      </div>
+
+      <div className={styles.cardBlock}>
+        <span className={styles.cardBlockTitle}>Campus Locations</span>
+        {getSchoolLocationText(hasOnlyOnline, locations)}
+        {locations.length > 1 && (
+          <Button
+            analyticsObject={{
+              action: 'Button Selected',
+              category: 'Interactions',
+              label: `${name} | Locations`,
+            }}
+            onClick={toggleModalClick}
+            className={styles.modalToggler}
           >
-            Visit Website
-          </LinkButton>
-        </div>
-      </Card>
-    );
-  }
+            view all
+          </Button>
+        )}
+      </div>
+
+      <div className={styles.cardBlock}>
+        <LinkButton
+          analyticsEventLabel={`${name} | Website`}
+          href={website}
+          fullWidth
+          theme="secondary"
+        >
+          Visit Website
+        </LinkButton>
+      </div>
+    </Card>
+  );
 }
+
+export default SchoolCard;

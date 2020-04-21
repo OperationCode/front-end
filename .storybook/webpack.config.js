@@ -1,7 +1,8 @@
-const path = require('path');
 const svgoConfig = require('../common/config/svgo');
-const postCSSConfig = require('../postcss.config');
-const { insertIf } = require('@innocuous/functions');
+const autoPrefixer = require('autoprefixer');
+const postcssImport = require('postcss-import');
+const postcssCustomMedia = require('postcss-custom-media');
+const postcssPrependImports = require('postcss-prepend-imports');
 
 // Export a function. Accept the base config as the only param.
 module.exports = (storybookBaseConfig, configType) => {
@@ -20,30 +21,25 @@ module.exports = (storybookBaseConfig, configType) => {
           options: {
             modules: true,
             importLoaders: 1,
-            localIdentName: '[name]_[local]__[hash:base64:5]',
             sourceMap: true,
-            sourceMapContents: true,
           },
         },
         {
           loader: 'postcss-loader',
           options: {
+            // Keep in sync with PostCSS.config.js
             plugins: [
-              // Use PostCSS.config.js, but also use `postcss-export-custom-variables` plugin in dev
-              ...postCSSConfig({
-                file: {
-                  dirname: '../',
-                },
-                options: storybookBaseConfig,
-                env: configType.toLowerCase(),
-              }).plugins,
-              ...insertIf(
-                configType === 'DEVELOPMENT',
-                require('postcss-export-custom-variables')({
-                  exporter: 'js',
-                  destination: 'common/styles/themeMap.js',
-                }),
-              ),
+              postcssPrependImports({
+                path: 'common/styles',
+                files: ['media-queries.css'],
+              }),
+              postcssImport(),
+              autoPrefixer(),
+              postcssCustomMedia(),
+              require('postcss-export-custom-variables')({
+                exporter: 'js',
+                destination: 'common/styles/themeMap.js',
+              }),
             ],
           },
         },
@@ -53,9 +49,9 @@ module.exports = (storybookBaseConfig, configType) => {
       test: /\.svg$/,
       use: [
         {
-          loader: 'react-svg-loader',
+          loader: '@svgr/webpack',
           options: {
-            svgo: svgoConfig,
+            svgoConfig,
           },
         },
       ],

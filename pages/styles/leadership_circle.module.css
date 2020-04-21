@@ -1,0 +1,20 @@
+.justifyAlign {
+  text-align: justify;
+}
+
+.linkButtonContainer {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.leadershipCircleMembersCard {
+  width: 50%;
+}
+
+.leadershipCircleMembersList {
+  width: 90%;
+}
+
+.benefitsList {
+  margin-bottom: 2rem;
+}

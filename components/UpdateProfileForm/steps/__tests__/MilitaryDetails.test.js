@@ -1,9 +1,9 @@
 import React from 'react';
 import { Formik } from 'formik';
-import { mount } from 'enzyme'; // eslint-disable-line no-restricted-imports
+import { fireEvent, render, wait } from '@testing-library/react';
 import OperationCodeAPIMock from 'test-utils/mocks/apiMock';
-import asyncRenderDiff from 'test-utils/asyncRenderDiff';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
+import { KEY_CODES } from 'test-utils/identifiers';
 import Form from 'components/Form/Form';
 
 import MilitaryDetails from '../MilitaryDetails';
@@ -29,7 +29,7 @@ describe('UpdateProfileForm/Steps/MilitaryDetails', () => {
   it('should update user on submit', async () => {
     OperationCodeAPIMock.onPatch('auth/profile/').reply(200);
 
-    const wrapper = mount(
+    const { container } = render(
       <Formik
         initialValues={MilitaryDetails.initialValues}
         validationSchema={MilitaryDetails.validationSchema}
@@ -41,27 +41,23 @@ describe('UpdateProfileForm/Steps/MilitaryDetails', () => {
       </Formik>,
     );
 
-    const ReactSelect = wrapper.find('input').first();
+    const ReactSelect = container.querySelector('#react-select-branchOfService-input');
 
-    ReactSelect.simulate('blur')
-      .simulate('keyDown', { key: 'ArrowDown', keyCode: 40 })
-      .simulate('keyDown', { key: 'ArrowDown', keyCode: 40 });
+    fireEvent.blur(ReactSelect);
+    fireEvent.keyDown(ReactSelect, KEY_CODES.DOWN_ARROW);
+    fireEvent.keyDown(ReactSelect, KEY_CODES.DOWN_ARROW);
 
-    await asyncRenderDiff(wrapper);
+    fireEvent.keyDown(ReactSelect, KEY_CODES.ENTER);
+    fireEvent.change(container.querySelector('input#yearsOfService'), {
+      target: { id: 'yearsOfService', value: '3' },
+    });
+    fireEvent.change(container.querySelector('input#payGrade'), {
+      target: { id: 'payGrade', value: 'E-5' },
+    });
+    fireEvent.submit(container.querySelector('form'));
 
-    ReactSelect.simulate('keyDown', { key: 'Enter', keyCode: 13 });
-
-    await asyncRenderDiff(wrapper);
-
-    wrapper
-      .find('input#yearsOfService')
-      .simulate('change', { target: { id: 'yearsOfService', value: '3' } });
-
-    wrapper.find('input#payGrade').simulate('change', { target: { id: 'payGrade', value: 'E-5' } });
-
-    wrapper.find('form').simulate('submit');
-    await asyncRenderDiff(wrapper);
-
-    expect(OperationCodeAPIMock.history.patch.length).toStrictEqual(1);
+    await wait(() => {
+      expect(OperationCodeAPIMock.history.patch.length).toStrictEqual(1);
+    });
   });
 });

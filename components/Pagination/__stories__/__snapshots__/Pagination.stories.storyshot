@@ -1,0 +1,242 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Pagination default 1`] = `
+Array [
+  <p
+    style={
+      Object {
+        "margin": "1rem auto",
+        "textAlign": "center",
+      }
+    }
+  >
+    Note that this component cannot be interactive outside the context of Next.js's router.
+    <br />
+    To see the different states, simply adjust the knobs.
+  </p>,
+  <nav
+    className="Pagination"
+    data-testid="Pagination"
+  >
+    <ol>
+      <li
+        className="PaginationItem current"
+        data-testid="1"
+      >
+        <a
+          className="unstyledLink"
+          href="/resources/1"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          <span
+            className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
+          >
+            Go to page
+          </span>
+          1
+        </a>
+      </li>
+      <li
+        className="PaginationItem"
+        data-testid="2"
+      >
+        <a
+          className="unstyledLink"
+          href="/resources/2"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          <span
+            className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
+          >
+            Go to page
+          </span>
+          2
+        </a>
+      </li>
+      <li
+        className="PaginationItem"
+        data-testid="3"
+      >
+        <a
+          className="unstyledLink"
+          href="/resources/3"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          <span
+            className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
+          >
+            Go to page
+          </span>
+          3
+        </a>
+      </li>
+      <li
+        className="PaginationItem"
+        data-testid="4"
+      >
+        <a
+          className="unstyledLink"
+          href="/resources/4"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          <span
+            className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
+          >
+            Go to page
+          </span>
+          4
+        </a>
+      </li>
+      <li
+        className="PaginationItem"
+        data-testid="5"
+      >
+        <a
+          className="unstyledLink"
+          href="/resources/5"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          <span
+            className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
+          >
+            Go to page
+          </span>
+          5
+        </a>
+      </li>
+      <li
+        className="PaginationItem"
+        data-testid="6"
+      >
+        <a
+          className="unstyledLink"
+          href="/resources/6"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          <span
+            className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
+          >
+            Go to page
+          </span>
+          6
+        </a>
+      </li>
+      <li
+        className="PaginationItem"
+        data-testid="7"
+      >
+        <a
+          className="unstyledLink"
+          href="/resources/7"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          <span
+            className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
+          >
+            Go to page
+          </span>
+          7
+        </a>
+      </li>
+      <li
+        className="PaginationItem"
+        data-testid="8"
+      >
+        <a
+          className="unstyledLink"
+          href="/resources/8"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          <span
+            className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
+          >
+            Go to page
+          </span>
+          8
+        </a>
+      </li>
+      <li
+        className="PaginationItem"
+        data-testid="9"
+      >
+        <a
+          className="unstyledLink"
+          href="/resources/9"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          <span
+            className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
+          >
+            Go to page
+          </span>
+          9
+        </a>
+      </li>
+      <li
+        className="PaginationItem notClickable"
+        data-testid="separatorEnd"
+      >
+        …
+      </li>
+      <li
+        className="PaginationItem"
+        data-testid="20"
+      >
+        <a
+          className="unstyledLink"
+          href="/resources/20"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          <span
+            className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
+          >
+            Go to page
+          </span>
+          20
+        </a>
+      </li>
+      <li
+        className="PaginationItem"
+        data-testid="rightAngle"
+      >
+        <a
+          className="unstyledLink"
+          href="/resources/2"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          <span
+            className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
+          >
+            Go to page
+          </span>
+          <svg
+            className="icon"
+          />
+        </a>
+      </li>
+    </ol>
+  </nav>,
+]
+`;

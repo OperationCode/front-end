@@ -7,12 +7,7 @@ import SocialMediaItem from '../SocialMediaItem';
 describe('SocialMediaItem', () => {
   it('should render with required props', () => {
     createSnapshotTest(
-      <SocialMediaItem
-        alt="Facebook"
-        name="social-media-nate-test"
-        href="https://facebook.com"
-        svg={<FacebookLogo fill="blue" />}
-      />,
+      <SocialMediaItem name="Facebook" href="https://facebook.com" svg={<FacebookLogo />} />,
     );
   });
 });

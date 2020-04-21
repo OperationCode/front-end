@@ -1,7 +1,8 @@
 import React from 'react';
-import { shallow } from 'enzyme'; // eslint-disable-line no-restricted-imports
+import { fireEvent, render } from '@testing-library/react';
 import createShallowSnapshotTest from 'test-utils/createShallowSnapshotTest';
 import { mobileLoggedOutNavItems } from 'common/constants/navigation';
+import { CLOSE_BUTTON } from 'common/constants/testIDs';
 
 import NavMobile from '../NavMobile';
 
@@ -17,7 +18,7 @@ describe('NavMobile', () => {
     ));
 
   it('should not have a visible menu when isOpen prop is false', () => {
-    const wrapper = shallow(
+    const wrapper = render(
       <NavMobile
         navItems={mobileLoggedOutNavItems}
         isOpen={false}
@@ -26,11 +27,11 @@ describe('NavMobile', () => {
       />,
     );
 
-    expect(wrapper.find('ul')).not.toExist();
+    expect(wrapper.container.querySelector('ul')).toBeNull();
   });
 
   it('should have a visible menu when isOpen prop is true', () => {
-    const wrapper = shallow(
+    const wrapper = render(
       <NavMobile
         navItems={mobileLoggedOutNavItems}
         isOpen
@@ -39,12 +40,13 @@ describe('NavMobile', () => {
       />,
     );
 
-    expect(wrapper.find('ul')).toExist();
+    expect(wrapper.container.querySelector('ul')).not.toBeNull();
   });
 
   it('should invoke callback when hamburger button is clicked', () => {
     const mockOpen = jest.fn();
-    const wrapper = shallow(
+
+    const wrapper = render(
       <NavMobile
         navItems={mobileLoggedOutNavItems}
         isOpen={false}
@@ -53,14 +55,15 @@ describe('NavMobile', () => {
       />,
     );
 
-    wrapper.find('.hamburger').simulate('click');
+    fireEvent.click(wrapper.queryByTestId('Hamburger Button'));
 
     expect(mockOpen).toHaveBeenCalled();
   });
 
   it('should invoke callback when close button is pressed', () => {
     const mockClose = jest.fn();
-    const wrapper = shallow(
+
+    const wrapper = render(
       <NavMobile
         navItems={mobileLoggedOutNavItems}
         isOpen
@@ -69,7 +72,7 @@ describe('NavMobile', () => {
       />,
     );
 
-    wrapper.find('CloseButton').simulate('click');
+    fireEvent.click(wrapper.queryByTestId(CLOSE_BUTTON));
 
     expect(mockClose).toHaveBeenCalled();
   });

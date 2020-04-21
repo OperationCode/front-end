@@ -1,13 +1,16 @@
 /* eslint-disable max-classes-per-file */
+import * as Sentry from '@sentry/browser';
 import App from 'next/app';
-import Router from 'next/router';
+import Fingerprint2 from 'fingerprintjs2';
 import FontFaceObserver from 'fontfaceobserver';
+import hash from 'object-hash';
 import LogRocket from 'logrocket';
-import ReactGA from 'react-ga';
+import PropTypes from 'prop-types';
+import Router from 'next/router';
 import ScrollUpButton from 'react-scroll-up-button';
 import setupLogRocketReact from 'logrocket-react';
-import * as Sentry from '@sentry/browser';
 import { clientTokens } from 'common/config/environment';
+import { gtag } from 'common/utils/thirdParty/gtag';
 import Nav from 'components/Nav/Nav';
 import Footer from 'components/Footer/Footer';
 import Modal from 'components/Modal/Modal';
@@ -29,30 +32,37 @@ const fonts = [
   },
 ];
 
-class Layout extends React.Component {
-  render() {
-    // eslint-disable-next-line react/prop-types
-    const { children } = this.props;
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 
-    return (
-      <>
-        <Nav />
-        <main>{children}</main>
-        <Footer />
-        <ScrollUpButton />
-      </>
-    );
-  }
+function Layout({ children }) {
+  return (
+    <>
+      <Nav />
+      <main>{children}</main>
+      <Footer />
+      <ScrollUpButton />
+    </>
+  );
 }
+
+// Same test used by EFF for identifying users
+// https://panopticlick.eff.org/
+const setLogRocketFingerprint = () => {
+  Fingerprint2.get(components => {
+    const fingerprint = hash(components);
+    LogRocket.identify(fingerprint);
+  });
+};
 
 class OperationCodeApp extends App {
   componentDidMount() {
     /* Analytics */
-    // Temporary method until we do dynamic now configs
+    // TODO: Leverage master-build-time-only env vars instead of window check
     if (isProduction && window.location.host.includes('operationcode.org')) {
       Sentry.init({ dsn: clientTokens.SENTRY_DSN, release: `front-end@${version}` });
       LogRocket.init(`${clientTokens.LOGROCKET}/operation-code`);
-      ReactGA.initialize(clientTokens.GOOGLE_ANALYTICS);
 
       // Every crash report will have a LogRocket session URL.
       LogRocket.getSessionURL(sessionURL => {
@@ -63,7 +73,12 @@ class OperationCodeApp extends App {
 
       setupLogRocketReact(LogRocket);
 
-      ReactGA.set({ page: window.location.pathname });
+      // Per library docs, Fingerprint2 should not run immediately
+      if (window.requestIdleCallback) {
+        requestIdleCallback(setLogRocketFingerprint);
+      } else {
+        setTimeout(setLogRocketFingerprint, 500);
+      }
     }
 
     /* Non-render blocking font load */
@@ -121,16 +136,18 @@ class OperationCodeApp extends App {
   }
 }
 
-if (isProduction) {
-  Router.events.on('routeChangeComplete', url => ReactGA.pageview(url));
-}
+Router.events.on('routeChangeComplete', url => gtag.pageView(url));
 
 // Fixes Next CSS route change bug: https://github.com/zeit/next-plugins/issues/282
 if (!isProduction) {
   Router.events.on('routeChangeComplete', () => {
-    const els = document.querySelectorAll('link[href*="/_next/static/css/styles.chunk.css"]');
-    const timestamp = new Date().valueOf();
-    els[0].href = `/_next/static/css/styles.chunk.css?v=${timestamp}`;
+    const path = '/_next/static/chunks/styles.chunk.module.css';
+    const chunksSelector = `link[href*="${path}"]:not([rel=preload])`;
+    const chunksNodes = document.querySelectorAll(chunksSelector);
+    if (chunksNodes.length) {
+      const timestamp = new Date().valueOf();
+      chunksNodes[0].href = `${path}?ts=${timestamp}`;
+    }
   });
 }
 

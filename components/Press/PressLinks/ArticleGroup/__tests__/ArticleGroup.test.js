@@ -1,7 +1,6 @@
+import { fireEvent, render } from '@testing-library/react';
 import React from 'react';
 import createShallowSnapshotTest from 'test-utils/createShallowSnapshotTest';
-import { mount, shallow } from 'enzyme'; // eslint-disable-line no-restricted-imports
-
 import ArticleGroup from '../ArticleGroup';
 
 describe('ArticleGroup', () => {
@@ -27,26 +26,28 @@ describe('ArticleGroup', () => {
       />,
     ));
 
-  it('should setState when clicking Show All button', () => {
-    const ArticleGroupShallowInstance = shallow(
+  it('should show all links when clicking Show All button', () => {
+    const { container } = render(
       <ArticleGroup
         region="test"
         articles={[
-          { title: 'Example', url: 'https://example.com' },
-          { title: 'Example', url: 'https://example.com' },
-          { title: 'Example', url: 'https://example.com' },
+          { title: 'Example1', url: 'https://example1.com' },
+          { title: 'Example2', url: 'https://example2.com' },
+          { title: 'Example3', url: 'https://example3.com' },
         ]}
         numberOfInitiallyVisibleLinks={1}
       />,
     );
 
-    ArticleGroupShallowInstance.instance().clickHandler();
+    expect(container.querySelectorAll('li').length).toBe(1);
 
-    expect(ArticleGroupShallowInstance.state().areAllLinksVisible).toStrictEqual(true);
+    fireEvent.click(container.querySelector('button'));
+
+    expect(container.querySelectorAll('li').length).toBe(3);
   });
 
   it('should not create a button if not enough links', () => {
-    const wrap = mount(
+    const { container } = render(
       <ArticleGroup
         region="test"
         articles={[{ title: 'Example', url: 'https://example.com' }]}
@@ -54,11 +55,11 @@ describe('ArticleGroup', () => {
       />,
     );
 
-    expect(wrap.find('button').exists()).toStrictEqual(false);
+    expect(container.querySelector('button')).toBeNull();
   });
 
   it('should create a button if enough links are available', () => {
-    const wrap = mount(
+    const { container } = render(
       <ArticleGroup
         region="test"
         articles={[
@@ -70,6 +71,6 @@ describe('ArticleGroup', () => {
       />,
     );
 
-    expect(wrap.find('button').exists()).toStrictEqual(true);
+    expect(container.querySelector('button')).not.toBeNull();
   });
 });

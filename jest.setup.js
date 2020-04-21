@@ -1,9 +1,5 @@
-import Enzyme from 'enzyme'; // eslint-disable-line no-restricted-imports
-import Adapter from 'enzyme-adapter-react-16';
-import 'jest-enzyme';
+import ReactModal from 'react-modal';
 import '@testing-library/jest-dom/extend-expect';
-
-Enzyme.configure({ adapter: new Adapter() });
 
 /* MOCKS */
 // Storybook Info Addon
@@ -12,15 +8,17 @@ jest.mock('@storybook/addon-info', () => ({
   setDefaults: () => {},
 }));
 
+jest.mock('./common/utils/thirdParty/gtag');
+
 // React Modal
-jest.mock('react-modal');
+ReactModal.setAppElement(document.createElement('div').setAttribute('id', 'app-root'));
 
 beforeAll(() => {
   const observe = jest.fn();
   const unobserve = jest.fn();
 
   // eslint-disable-next-line func-names
-  global.IntersectionObserver = jest.fn().mockImplementation(function() {
+  global.IntersectionObserver = jest.fn().mockImplementation(function () {
     this.observe = observe;
     this.unobserve = unobserve;
   });

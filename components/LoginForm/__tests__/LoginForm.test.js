@@ -1,13 +1,11 @@
 import React from 'react';
 import faker from 'faker';
-import { mount } from 'enzyme'; // eslint-disable-line no-restricted-imports
-import { wait } from '@testing-library/react';
+import { fireEvent, render, wait } from '@testing-library/react';
 import { loginUser } from 'common/constants/api';
 import { networkErrorMessages, validationErrorMessages } from 'common/constants/messages';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 import OperationCodeAPIMock from 'test-utils/mocks/apiMock';
 import mockUser from 'test-utils/mockGenerators/mockUser';
-import asyncRenderDiff from 'test-utils/asyncRenderDiff';
 import LoginForm from '../LoginForm';
 
 beforeEach(() => {
@@ -20,51 +18,34 @@ describe('LoginForm', () => {
   });
 
   it('should display required error message when blurring past email input', async () => {
-    const wrapper = mount(<LoginForm login={jest.fn()} onSuccess={jest.fn()} />);
+    const { getByLabelText, findByText } = render(
+      <LoginForm login={jest.fn()} onSuccess={jest.fn()} />,
+    );
 
-    wrapper.find('input#email').simulate('blur');
+    fireEvent.blur(getByLabelText(/Email/));
 
-    await asyncRenderDiff(wrapper);
-
-    expect(
-      wrapper
-        .find('Input[type="email"]')
-        .find('Alert')
-        .text(),
-    ).toStrictEqual(validationErrorMessages.required);
+    expect(findByText(validationErrorMessages.required)).not.toBeNull();
   });
 
   it('should show error when providing non-email to email input', async () => {
-    const wrapper = mount(<LoginForm login={jest.fn()} onSuccess={jest.fn()} />);
+    const { getByLabelText, findByText } = render(
+      <LoginForm login={jest.fn()} onSuccess={jest.fn()} />,
+    );
 
-    wrapper
-      .find('input#email')
-      .simulate('change', { target: { id: 'email', value: 'email' } })
-      .simulate('blur');
+    fireEvent.change(getByLabelText(/Email/), { target: { value: 'email' } });
+    fireEvent.blur(getByLabelText(/Email/));
 
-    await asyncRenderDiff(wrapper);
-
-    expect(
-      wrapper
-        .find('Input[type="email"]')
-        .find('Alert')
-        .text(),
-    ).toStrictEqual(validationErrorMessages.email);
+    expect(findByText(validationErrorMessages.required)).not.toBeNull();
   });
 
   it('should show "password required" message when blurring past input', async () => {
-    const wrapper = mount(<LoginForm login={jest.fn()} onSuccess={jest.fn()} />);
+    const { getByLabelText, findByText } = render(
+      <LoginForm login={jest.fn()} onSuccess={jest.fn()} />,
+    );
 
-    wrapper.find('input#password').simulate('blur');
+    fireEvent.blur(getByLabelText(/Password/));
 
-    await asyncRenderDiff(wrapper);
-
-    expect(
-      wrapper
-        .find('Input[type="password"]')
-        .find('Alert')
-        .text(),
-    ).toStrictEqual(validationErrorMessages.required);
+    expect(findByText(validationErrorMessages.required)).not.toBeNull();
   });
 
   it('should submit with valid data in form', async () => {
@@ -85,23 +66,22 @@ describe('LoginForm', () => {
     });
 
     const successSpy = jest.fn();
-    const wrapper = mount(
+    const { getByText } = render(
       <LoginForm onSuccess={successSpy} login={loginUser} initialValues={initialValues} />,
     );
 
-    wrapper.find('Button').simulate('submit');
-    await asyncRenderDiff(wrapper);
+    fireEvent.click(getByText('Submit'));
 
     await wait(() => {
-      expect(OperationCodeAPIMock.history.post.length).toBeGreaterThan(0);
       expect(successSpy).toHaveBeenCalledTimes(1);
+      expect(OperationCodeAPIMock.history.post.length).toBeGreaterThan(0);
     });
   });
 
   it('should NOT submit with invalid data in form', async () => {
     const successSpy = jest.fn();
 
-    const wrapper = mount(
+    const { getByText } = render(
       <LoginForm
         onSuccess={successSpy}
         login={jest.fn()}
@@ -112,8 +92,7 @@ describe('LoginForm', () => {
       />,
     );
 
-    wrapper.find('Button').simulate('submit');
-    await asyncRenderDiff(wrapper);
+    fireEvent.click(getByText('Submit'));
 
     await wait(() => {
       expect(successSpy).not.toHaveBeenCalled();
@@ -133,23 +112,16 @@ describe('LoginForm', () => {
 
     const successSpy = jest.fn();
 
-    const wrapper = mount(
+    const { getByText, findByText } = render(
       <LoginForm login={loginUser} onSuccess={successSpy} initialValues={initialValues} />,
     );
 
-    wrapper.find('Button').simulate('submit');
-    await asyncRenderDiff(wrapper);
+    fireEvent.click(getByText('Submit'));
 
     wait(() => {
+      expect(findByText(invalidError)).not.toBeNull();
       expect(successSpy).not.toHaveBeenCalled();
     });
-
-    expect(
-      wrapper
-        .find('Alert')
-        .last()
-        .text(),
-    ).toStrictEqual(invalidError);
   });
 
   it('should show a helpful error if the server is down', async () => {
@@ -163,22 +135,16 @@ describe('LoginForm', () => {
     OperationCodeAPIMock.onPost('auth/login/', initialValues).reply(503);
 
     const successSpy = jest.fn();
-    const wrapper = mount(
+    const { getByText, findByText } = render(
       <LoginForm onSuccess={successSpy} login={loginUser} initialValues={initialValues} />,
     );
 
-    wrapper.find('Button').simulate('submit');
-    await asyncRenderDiff(wrapper);
+    fireEvent.click(getByText('Submit'));
 
     await wait(() => {
+      expect(findByText(networkErrorMessages.serverDown)).not.toBeNull();
       expect(successSpy).not.toHaveBeenCalled();
       expect(OperationCodeAPIMock.history.post.length).toBeGreaterThan(0);
-      expect(
-        wrapper
-          .find('Alert')
-          .last()
-          .text(),
-      ).toStrictEqual(networkErrorMessages.serverDown);
     });
   });
 
@@ -199,20 +165,21 @@ describe('LoginForm', () => {
       token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9',
     });
 
-    const successSpy = jest.fn();
-    const wrapper = mount(
+    const successSpy = jest.fn(() => Promise.resolve(true));
+    const { container, getByText } = render(
       <LoginForm onSuccess={successSpy} login={loginUser} initialValues={initialValues} />,
     );
 
-    const mockedFormikBag = {
-      setSubmitting: jest.fn(),
-      resetForm: jest.fn(),
-    };
+    const submit = getByText('Submit');
 
-    await wrapper.instance().handleSubmit(initialValues, mockedFormikBag);
+    fireEvent.click(submit);
 
-    expect(mockedFormikBag.setSubmitting).toHaveBeenCalledTimes(1);
-    expect(mockedFormikBag.setSubmitting).toHaveBeenCalledWith(false);
-    expect(mockedFormikBag.resetForm).toHaveBeenCalledTimes(1);
+    await wait(() => {
+      expect(submit).not.toBeDisabled();
+    });
+
+    container.querySelectorAll('input').forEach(input => {
+      expect(input.textContent).toBeFalsy();
+    });
   });
 });

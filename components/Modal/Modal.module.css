@@ -1,0 +1,28 @@
+.Modal {
+  position: relative;
+}
+
+.scrollableContainer {
+  margin-top: 2.5rem;
+  overflow: auto;
+  max-height: 75vh;
+}
+
+/* React-Modal Overrides
+ * Remove scroll on the body when react-modal is open */
+/* stylelint-disable */
+.Modal :global(.ReactModal__Html--open),
+.Modal :global(.ReactModal__Body--open) {
+  height: 100%;
+  overflow: hidden;
+}
+
+.Modal :global(.ReactModal__Overlay) {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.Modal :global(.ReactModal__Content) {
+  width: 80%;
+}

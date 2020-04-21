@@ -1,8 +1,8 @@
 import React from 'react';
 import { array, bool, oneOf, string } from 'prop-types';
-import classNames from 'classnames';
 import Container from 'components/Container/Container';
-import styles from './Content.css';
+import Heading from 'components/Heading/Heading';
+import styles from './Content.module.css';
 
 Content.propTypes = {
   backgroundImageSource: string,
@@ -39,15 +39,7 @@ function Content({
       isFullViewportHeight={isFullViewportHeight}
       theme={theme}
     >
-      {title && (
-        <h3
-          className={classNames(styles.title, {
-            [styles.underline]: hasTitleUnderline,
-          })}
-        >
-          {title}
-        </h3>
-      )}
+      {title && <Heading text={title} hasTitleUnderline={hasTitleUnderline} headingLevel={3} />}
 
       <div className={styles.columnsContainer}>
         {/* eslint-disable-next-line react/no-array-index-key */}

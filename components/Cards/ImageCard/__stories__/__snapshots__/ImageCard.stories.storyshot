@@ -8,13 +8,13 @@ exports[`Storyshots Cards/ImageCard default 1`] = `
     <img
       alt="Image Card"
       className="image"
-      src="https://operationcode.org/static/media/ThinkstockPhotos-489787502.812e.jpg"
+      src="https://operationcode.org/public/static/media/ThinkstockPhotos-489787502.812e.jpg"
     />
   </noscript>
   <img
     alt="Image Card"
     className="image"
-    data-src="https://operationcode.org/static/media/ThinkstockPhotos-489787502.812e.jpg"
+    data-src="https://operationcode.org/public/static/media/ThinkstockPhotos-489787502.812e.jpg"
   />
   <div
     className="content"

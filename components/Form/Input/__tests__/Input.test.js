@@ -1,8 +1,9 @@
 import React from 'react';
 import { Formik, Field } from 'formik';
-import { wait } from '@testing-library/react';
+import { cleanup, fireEvent, render } from '@testing-library/react';
+import { INPUT, INPUT_ERROR, INPUT_FEEDBACK_GROUPING, LABEL } from 'common/constants/testIDs';
+import { validationErrorMessages } from 'common/constants/messages';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
-import { shallow, mount } from 'enzyme'; // eslint-disable-line no-restricted-imports
 
 import Form from '../../Form';
 import Input from '../Input';
@@ -13,6 +14,8 @@ describe('Input', () => {
       name: 'someInputName',
     },
     form: { touched: { someInputName: false }, errors: { someInputName: '' } },
+    onBlur: jest.fn(),
+    onChange: jest.fn(),
     label: 'Some Input:',
   };
 
@@ -21,41 +24,70 @@ describe('Input', () => {
   });
 
   it('should render with label, even if hidden', () => {
-    const wrapper = shallow(<Input {...requiredProps} isLabelHidden />);
+    const component = render(<Input {...requiredProps} isLabelHidden />);
 
-    expect(wrapper).toContainExactlyOneMatchingElement('Label');
+    expect(component.container.querySelectorAll('label').length).toBe(1);
   });
 
   it('should display an error message when a required field is touched', async () => {
+    const label = 'label';
     const validate = () => ({ test: 'Required' });
 
-    const wrapper = mount(
+    const component = render(
       <Formik validate={validate}>
         <Form>
-          <Field id="test" name="test" label="label" component={Input} />,
+          <Field id="test" name="test" label={label} component={Input} />,
         </Form>
       </Formik>,
     );
 
-    wrapper.find('input').simulate('blur'); // trigger validation
-    await wait();
-    wrapper.update();
-    expect(wrapper.find('Alert')).toHaveText('Required');
+    fireEvent.blur(component.queryByLabelText(label));
+
+    const Alert = await component.findByTestId(INPUT_ERROR);
+    expect(Alert.textContent).toBe(validationErrorMessages.required);
   });
 
-  it('should render the label after input, but only when input type is radio or checkbox', () => {
-    const checkboxInput = shallow(<Input {...requiredProps} type="checkbox" />);
-    const radioInput = shallow(<Input {...requiredProps} type="radio" />);
+  it('should render the label after the input for checkbox inputs', () => {
+    const component = render(<Input {...requiredProps} type="checkbox" />);
 
-    const checkboxField = checkboxInput.find('.field');
-    const radioField = radioInput.find('.field');
+    const Checkbox = component.queryByTestId(INPUT);
 
-    expect(checkboxField.childAt(0)).toContainExactlyOneMatchingElement('input');
-    expect(checkboxField.childAt(1)).toContainExactlyOneMatchingElement('Label');
+    const InputFeedbackGrouping = component.queryByTestId(INPUT_FEEDBACK_GROUPING);
+    const Label = component.queryByTestId(LABEL);
 
-    expect(radioField.childAt(0)).toContainExactlyOneMatchingElement('input');
-    expect(radioField.childAt(1)).toContainExactlyOneMatchingElement('Label');
+    // Selectors are rendered
+    expect(InputFeedbackGrouping).not.toBeNull();
+    expect(Label).not.toBeNull();
 
+    // Grouping has input element
+    expect(InputFeedbackGrouping.firstChild).toBe(component.container.querySelector('input'));
+
+    // Assert ordering
+    expect(Checkbox.childNodes[0]).toBe(InputFeedbackGrouping);
+    expect(Checkbox.childNodes[1]).toBe(Label);
+  });
+
+  it('should render the label after the input for radio inputs', () => {
+    const component = render(<Input {...requiredProps} type="radio" />);
+
+    const Radio = component.queryByTestId(INPUT);
+
+    const InputFeedbackGrouping = component.queryByTestId(INPUT_FEEDBACK_GROUPING);
+    const Label = component.queryByTestId(LABEL);
+
+    // Selectors are rendered
+    expect(InputFeedbackGrouping).not.toBeNull();
+    expect(Label).not.toBeNull();
+
+    // Grouping has input element
+    expect(InputFeedbackGrouping.firstChild).toBe(component.container.querySelector('input'));
+
+    // Assert ordering
+    expect(Radio.childNodes[0]).toBe(InputFeedbackGrouping);
+    expect(Radio.childNodes[1]).toBe(Label);
+  });
+
+  it('should render the label before the input for all other input types', () => {
     const otherInputTypes = [
       'button',
       'color',
@@ -79,16 +111,34 @@ describe('Input', () => {
       'week',
     ];
 
+    // enforce list correctness
     expect(otherInputTypes).not.toContain('radio');
     expect(otherInputTypes).not.toContain('checkbox');
 
     otherInputTypes.forEach(inputType => {
-      const input = shallow(<Input {...requiredProps} type={inputType} />);
+      const { container, queryByTestId, unmount } = render(
+        <Input {...requiredProps} type={inputType} />,
+      );
 
-      expect(input.find('.field').childAt(0)).toContainExactlyOneMatchingElement('Label');
-      expect(input.find('.field').childAt(1)).toContainExactlyOneMatchingElement('input');
+      const SomeInput = queryByTestId(INPUT);
+
+      const InputFeedbackGrouping = queryByTestId(INPUT_FEEDBACK_GROUPING);
+      const Label = queryByTestId(LABEL);
+
+      // Selectors are rendered
+      expect(InputFeedbackGrouping).not.toBeNull();
+      expect(Label).not.toBeNull();
+
+      // Grouping has input element
+      expect(InputFeedbackGrouping.firstChild).toBe(container.querySelector('input'));
+
+      // Assert ordering
+      expect(SomeInput.childNodes[0]).toBe(Label);
+      expect(SomeInput.childNodes[1]).toBe(InputFeedbackGrouping);
+
+      // The iteration seems to happen faster than the tests...
+      unmount();
+      cleanup();
     });
   });
-
-  // TODO: Add test for valid/invalid styles based on touched/errors
 });

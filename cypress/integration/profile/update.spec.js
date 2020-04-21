@@ -1,11 +1,15 @@
+import { networkErrorMessages } from '../../../common/constants/messages';
+
+const SubmitButtonID = 'Submit Step Button';
+
 const goToNextStep = stepName => {
-  cy.get('button[data-testid="Submit Step Button"]').click();
+  cy.findByTestId(SubmitButtonID).click();
   cy.wait('@patchUser');
   cy.get('h3').should('have.text', stepName);
 };
 
 const goToPreviousStep = stepName => {
-  cy.get('button[data-testid="Previous Step Button"]').click();
+  cy.findByTestId('Previous Step Button').click();
   cy.get('h3').should('have.text', stepName);
 };
 
@@ -40,7 +44,7 @@ describe(`profile/update (from login)`, () => {
     goToNextStep(secondStepName);
     goToNextStep('Military Details');
     goToNextStep('Technology');
-    cy.get('button[data-testid="Submit Multi-Step Form"]').click();
+    cy.findByTestId('Submit Multi-Step Form').click();
     cy.wait('@patchUser');
     cy.url().should('contain', '/profile');
     cy.url().should('not.contain', '/profile/update');
@@ -78,8 +82,11 @@ describe(`profile/update (from login)`, () => {
 
     cy.clearCookies();
 
-    cy.get('button[data-testid="Submit Step Button"]').click();
-    cy.get('div[role="alert"]').should('have.text', 'Request failed with status code 401');
+    cy.findByTestId('Submit Step Button').click();
+    cy.get('div[role="alert"]').should(
+      'have.text',
+      'Authentication credentials were not provided.',
+    );
     cy.get('h3').should('have.text', secondStepName);
   });
 
@@ -106,11 +113,9 @@ describe(`profile/update (from login)`, () => {
     goToNextStep(secondStepName);
     goToNextStep(thirdStepName);
 
-    cy.get('input[name="yearsOfService"]')
-      .clear()
-      .type('-1');
+    cy.get('input[name="yearsOfService"]').clear().type('-1');
 
-    cy.get('button[data-testid="Submit Step Button"]').click();
+    cy.findByTestId('Submit Step Button').click();
 
     cy.get('div[role="alert"]').should('have.text', 'Enter a number between 1 and 40.');
   });
@@ -119,12 +124,56 @@ describe(`profile/update (from login)`, () => {
     goToNextStep(secondStepName);
     goToNextStep(thirdStepName);
 
-    cy.get('input[name="yearsOfService"]')
-      .clear()
-      .type('41');
+    cy.get('input[name="yearsOfService"]').clear().type('41');
 
-    cy.get('button[data-testid="Submit Step Button"]').click();
+    cy.findByTestId('Submit Step Button').click();
 
     cy.get('div[role="alert"]').should('have.text', 'Enter a number between 1 and 40.');
   });
+});
+
+describe(`profile/update (from login) [server errors]`, () => {
+  beforeEach(() => {
+    cy.server({ method: 'PATCH', status: 500, response: {} });
+    cy.login();
+  });
+
+  after(() => cy.clearCookies());
+
+  it('should render an uncaught server error', () => {
+    const ErrorAPICall = 'PATCH_USER_FAIL_UNCAUGHT';
+
+    cy.route({ url: 'auth/profile/' }).as(ErrorAPICall);
+
+    cy.visitAndWaitFor('/profile/update');
+
+    cy.findByTestId(SubmitButtonID).click();
+    cy.wait(`@${ErrorAPICall}`);
+
+    cy.findByRole('alert').should('have.text', networkErrorMessages.serverDown);
+  });
+
+  // TODO: Get this working!
+  // @see https://github.com/cypress-io/cypress/issues/5840
+  // it('should render a caught server error', () => {
+  //   const ErrorAPICall = 'PATCH_USER_FAIL_CAUGHT';
+
+  //   const error = 'Fix this shit.';
+
+  //   cy.route({
+  //     method: 'PATCH',
+  //     url: 'auth/profile/',
+  //     status: 500,
+  //     response: {
+  //       data: {
+  //         error,
+  //       },
+  //     },
+  //   }).as(ErrorAPICall);
+
+  //   cy.findByTestId(SubmitButtonID).click();
+  //   cy.wait(`@${ErrorAPICall}`);
+
+  //   cy.findByRole('alert').should('have.text', error);
+  // });
 });

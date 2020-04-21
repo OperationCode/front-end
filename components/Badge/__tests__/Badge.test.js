@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme'; // eslint-disable-line no-restricted-imports
+import { render } from '@testing-library/react';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 import Icon from 'static/images/icons/github_logo.svg';
 
@@ -17,19 +17,26 @@ describe('Badge', () => {
   });
 
   it('should render the image after the label when `isImageFirst` is true', () => {
-    const wrapper = mount(<Badge icon={badgeIcon} label="Badge Icon" isImageFirst />);
-    const iconIsFirst = wrapper
-      .find('figure')
-      .childAt(0)
-      .is(Icon);
-    expect(iconIsFirst).toBe(true);
+    const { container } = render(<Badge icon={badgeIcon} label="Badge Icon" isImageFirst />);
+
+    const { childNodes } = container.firstChild;
+
+    const [firstItem, secondItem] = childNodes;
+
+    expect(firstItem).toBe(container.querySelector('svg'));
+    expect(secondItem).toBe(container.querySelector('figcaption'));
   });
+
   it('should render the image before the label when `isImageFirst` is false', () => {
-    const wrapper = mount(<Badge icon={badgeIcon} label="Badge Icon" isImageFirst={false} />);
-    const figcaptionIsFirst = wrapper
-      .find('figure')
-      .childAt(0)
-      .is('figcaption');
-    expect(figcaptionIsFirst).toBe(true);
+    const { container } = render(
+      <Badge icon={badgeIcon} label="Badge Icon" isImageFirst={false} />,
+    );
+
+    const { childNodes } = container.firstChild;
+
+    const [firstItem, secondItem] = childNodes;
+
+    expect(firstItem).toBe(container.querySelector('figcaption'));
+    expect(secondItem).toBe(container.querySelector('svg'));
   });
 });

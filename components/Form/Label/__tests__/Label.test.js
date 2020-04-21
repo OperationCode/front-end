@@ -1,7 +1,8 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
-import { shallow } from 'enzyme'; // eslint-disable-line no-restricted-imports
+import { render } from '@testing-library/react';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
+import { LABEL, SCREEN_READER_ONLY } from 'common/constants/testIDs';
 
 import Label from '../Label';
 
@@ -11,17 +12,15 @@ describe('Label', () => {
   });
 
   it('should be visually hidden with isHidden passed', () => {
-    const wrapper = shallow(
+    const component = render(
       <Label for="someInputName" isHidden>
         Visually Hidden?
       </Label>,
     );
 
-    const actualLabelElement = wrapper.find('label');
+    const ScreenReaderOnly = component.queryByTestId(SCREEN_READER_ONLY);
+    const ActualLabelElement = component.queryByTestId(LABEL);
 
-    expect(actualLabelElement).toContainExactlyOneMatchingElement('label');
-
-    // proves that label is wrapped by the SR-only component
-    expect(actualLabelElement.parent()).toMatchSelector('ScreenReaderOnly');
+    expect(ScreenReaderOnly.childNodes[0]).toBe(ActualLabelElement);
   });
 });

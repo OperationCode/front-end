@@ -5,6 +5,6 @@
   "trailingComma": "all",
   "overrides": [
     { "files": "**/*.css", "options": { "singleQuote": false } },
-    { "files": "common/constants/honorRoll.js", "options": { "printWidth": 1 } }
+    { "files": "common/constants/leadershipCircleMembers.js", "options": { "printWidth": 1 } }
   ]
 }

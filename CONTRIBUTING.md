@@ -195,8 +195,8 @@ VERY IMPORTANT: Required versions of tools used within the repo are described [h
 _You can check to see your versions like so:_
 
 - Run `node -v`. You can download the latest LTS release of node at [nodejs.org](https://nodejs.org) or you can use [nvm](https://github.com/creationix/nvm) to be able to switch between node versions easily for many projects. If you use Windows, you will need to use [nvm-windows](https://github.com/coreybutler/nvm-windows) instead.
-- Run `npm -v`. If you do not have version 4 or greater, run `npm install -g npm`
-- Run `yarn --version`. If you do not have version 1.12.1 or greater, run `npm install --global yarn`.
+- Run `npm -v`. If you need to install or upgrade npm, run `npm install -g npm`
+- Run `yarn --version`. If you need to install yarn, run `npm install --global yarn`.
 - Once you have all the required tooling, you should be able to run `yarn` at the root level of your forked repo. You should see a bunch of emojis and progress bars - that is how you will know it is working!
 
 ### Run The Development Server

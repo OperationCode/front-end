@@ -11,6 +11,9 @@
     "development": {
       "presets": [
         "next/babel"
+      ],
+      "plugins":[
+        ["istanbul"]
       ]
     },
     "test": {
@@ -34,12 +37,12 @@
           "./"
         ],
         "alias": {
-          "components": "./components",
           "common": "./common",
+          "components": "./components",
           "pages": "./pages",
+          "public": "./public",
           "scripts": "./scripts",
-          "static": "./static",
-          "store": "./store",
+          "static": "./public/static",
           "test-utils": "./test-utils"
         }
       }

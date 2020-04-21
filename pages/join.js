@@ -9,44 +9,40 @@ import RegistrationForm from 'components/RegistrationForm/RegistrationForm';
 
 const profileUpdateURL = '/profile/update';
 
-class Join extends React.Component {
-  static propTypes = {
-    router: object.isRequired,
-  };
+Join.propTypes = {
+  router: object.isRequired,
+};
 
-  componentDidMount() {
-    const { router } = this.props;
-
+function Join({ router }) {
+  React.useEffect(() => {
     router.prefetch(profileUpdateURL);
-  }
+  }, []);
 
-  handleSuccess = ({ token, user }) => {
+  const handleSuccess = ({ token, user }) => {
     login({ token, user }, profileUpdateURL);
   };
 
-  render() {
-    return (
-      <>
-        <Head title="Join" />
+  return (
+    <>
+      <Head title="Join" />
 
-        <HeroBanner title="Join" />
+      <HeroBanner title="Join" />
 
-        <Content
-          theme="gray"
-          columns={[
-            <RegistrationForm onSuccess={this.handleSuccess} />,
-            <p>
-              Already registered?&nbsp;
-              <Link href="/login">
-                <a>Login</a>
-              </Link>
-              .
-            </p>,
-          ]}
-        />
-      </>
-    );
-  }
+      <Content
+        theme="gray"
+        columns={[
+          <RegistrationForm onSuccess={handleSuccess} />,
+          <p>
+            Already registered?&nbsp;
+            <Link href="/login">
+              <a>Login</a>
+            </Link>
+            .
+          </p>,
+        ]}
+      />
+    </>
+  );
 }
 
 export default withRouter(Join);

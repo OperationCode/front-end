@@ -2,11 +2,11 @@ import React from 'react';
 import { node, string, bool, func } from 'prop-types';
 import classNames from 'classnames';
 import ReactModal from 'react-modal';
-import ReactGA from 'react-ga';
-import CardStyles from 'components/Cards/Card/Card.css';
+import { gtag } from 'common/utils/thirdParty/gtag';
+import CardStyles from 'components/Cards/Card/Card.module.css';
 import CloseButton from 'components/CloseButton/CloseButton';
 
-import ModalStyles from './Modal.css';
+import ModalStyles from './Modal.module.css';
 
 Modal.propTypes = {
   children: node.isRequired,
@@ -31,13 +31,14 @@ function Modal({
   screenReaderLabel,
   shouldCloseOnOverlayClick,
 }) {
-  if (process.env.NODE_ENV === 'production') {
-    ReactGA.modalview(screenReaderLabel);
+  if (isOpen) {
+    gtag.modalView(screenReaderLabel);
   }
 
   return (
     <ReactModal
-      className={classNames(CardStyles.Card, ModalStyles.ModalCard, className)}
+      portalClassName={ModalStyles.Modal}
+      className={classNames(CardStyles.Card, className)}
       contentLabel={screenReaderLabel}
       isOpen={isOpen}
       onRequestClose={onRequestClose}

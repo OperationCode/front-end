@@ -1,11 +1,11 @@
 import React from 'react';
 import { Formik } from 'formik';
-import { mount } from 'enzyme'; // eslint-disable-line no-restricted-imports
+import { fireEvent, render, wait } from '@testing-library/react';
 import OperationCodeAPIMock from 'test-utils/mocks/apiMock';
-import asyncRenderDiff from 'test-utils/asyncRenderDiff';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 import Form from 'components/Form/Form';
 
+import { KEY_CODES } from 'test-utils/identifiers';
 import Technology from '../Technology';
 
 describe('UpdateProfileForm/Steps/Technology', () => {
@@ -29,7 +29,7 @@ describe('UpdateProfileForm/Steps/Technology', () => {
   it('should update user on submit', async () => {
     OperationCodeAPIMock.onPatch('auth/profile/').reply(200);
 
-    const wrapper = mount(
+    const { container } = render(
       <Formik
         initialValues={Technology.initialValues}
         validationSchema={Technology.validationSchema}
@@ -41,61 +41,43 @@ describe('UpdateProfileForm/Steps/Technology', () => {
       </Formik>,
     );
 
-    /** ************************** */
+    const FirstReactSelect = container.querySelector(
+      'input#react-select-programmingLanguages-input',
+    );
+
     // Select 2 items in first select
-    const FirstReactSelect = wrapper.find('input#react-select-programmingLanguages-input');
+    fireEvent.blur(FirstReactSelect);
+    fireEvent.keyDown(FirstReactSelect, KEY_CODES.DOWN_ARROW);
+    fireEvent.keyDown(FirstReactSelect, KEY_CODES.DOWN_ARROW);
+    fireEvent.keyDown(FirstReactSelect, KEY_CODES.ENTER);
+    fireEvent.blur(FirstReactSelect);
 
-    FirstReactSelect.simulate('blur')
-      .simulate('keyDown', { key: 'ArrowDown', keyCode: 40 })
-      .simulate('keyDown', { key: 'ArrowDown', keyCode: 40 })
-      .simulate('keyDown', { key: 'Enter', keyCode: 13 })
-      .simulate('blur');
+    fireEvent.blur(FirstReactSelect);
+    fireEvent.keyDown(FirstReactSelect, KEY_CODES.DOWN_ARROW);
+    fireEvent.keyDown(FirstReactSelect, KEY_CODES.DOWN_ARROW);
+    fireEvent.keyDown(FirstReactSelect, KEY_CODES.DOWN_ARROW);
+    fireEvent.keyDown(FirstReactSelect, KEY_CODES.ENTER);
+    fireEvent.blur(FirstReactSelect);
 
-    await asyncRenderDiff(wrapper);
+    const SecondReactSelect = container.querySelector('input#react-select-disciplines-input');
 
-    FirstReactSelect.simulate('blur')
-      .simulate('keyDown', { key: 'ArrowDown', keyCode: 40 })
-      .simulate('keyDown', { key: 'ArrowDown', keyCode: 40 })
-      .simulate('keyDown', { key: 'ArrowDown', keyCode: 40 });
-
-    await asyncRenderDiff(wrapper);
-
-    FirstReactSelect.simulate('keyDown', { key: 'Enter', keyCode: 13 });
-    FirstReactSelect.simulate('blur');
-
-    await asyncRenderDiff(wrapper);
-    /** ************************** */
-
-    /** ************************** */
     // Select 2 items in second select
-    const SecondReactSelect = wrapper.find('input#react-select-disciplines-input');
+    fireEvent.blur(SecondReactSelect);
+    fireEvent.keyDown(SecondReactSelect, KEY_CODES.DOWN_ARROW);
+    fireEvent.keyDown(SecondReactSelect, KEY_CODES.DOWN_ARROW);
+    fireEvent.keyDown(SecondReactSelect, KEY_CODES.ENTER);
 
-    SecondReactSelect.simulate('blur')
-      .simulate('keyDown', { key: 'ArrowDown', keyCode: 40 })
-      .simulate('keyDown', { key: 'ArrowDown', keyCode: 40 });
+    fireEvent.blur(SecondReactSelect);
+    fireEvent.keyDown(SecondReactSelect, KEY_CODES.DOWN_ARROW);
+    fireEvent.keyDown(SecondReactSelect, KEY_CODES.DOWN_ARROW);
+    fireEvent.keyDown(SecondReactSelect, KEY_CODES.DOWN_ARROW);
+    fireEvent.keyDown(SecondReactSelect, KEY_CODES.ENTER);
+    fireEvent.blur(SecondReactSelect);
 
-    await asyncRenderDiff(wrapper);
+    fireEvent.submit(container.querySelector('form'));
 
-    SecondReactSelect.simulate('keyDown', { key: 'Enter', keyCode: 13 });
-
-    await asyncRenderDiff(wrapper);
-
-    SecondReactSelect.simulate('blur')
-      .simulate('keyDown', { key: 'ArrowDown', keyCode: 40 })
-      .simulate('keyDown', { key: 'ArrowDown', keyCode: 40 })
-      .simulate('keyDown', { key: 'ArrowDown', keyCode: 40 });
-
-    await asyncRenderDiff(wrapper);
-
-    SecondReactSelect.simulate('keyDown', { key: 'Enter', keyCode: 13 });
-    SecondReactSelect.simulate('blur');
-
-    await asyncRenderDiff(wrapper);
-
-    // Submit form
-    wrapper.find('form').simulate('submit');
-    await asyncRenderDiff(wrapper);
-
-    expect(OperationCodeAPIMock.history.patch.length).toStrictEqual(1);
+    await wait(() => {
+      expect(OperationCodeAPIMock.history.patch.length).toStrictEqual(1);
+    });
   });
 });

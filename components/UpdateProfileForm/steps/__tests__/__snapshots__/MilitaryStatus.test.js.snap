@@ -6,11 +6,6 @@ exports[`UpdateProfileForm/Steps/MilitaryStatus should render in context of Form
   onReset={[Function]}
   onSubmit={[Function]}
 >
-  <h3
-    className="row"
-  >
-    Military Status
-  </h3>
   <p>
     We welcome anyone to join Operation Code! Please note that many of our services are only for veterans or spouses.
   </p>
@@ -25,11 +20,14 @@ exports[`UpdateProfileForm/Steps/MilitaryStatus should render in context of Form
     >
       <label
         className="Label"
+        data-testid="LABEL"
         htmlFor="militaryStatus"
       >
         Military Status*
       </label>
-      <div>
+      <div
+        className="selectFeedbackGrouping"
+      >
         <div
           className="fullWidth css-2b097c-container"
           onKeyDown={[Function]}

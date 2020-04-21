@@ -3,20 +3,25 @@
 exports[`Input should render with required props 1`] = `
 <div
   className="field"
+  data-testid="INPUT"
 >
   <label
     className="Label"
+    data-testid="LABEL"
     htmlFor="someInputName"
   >
     Some Input:
   </label>
   <div
     className="inputFeedbackGrouping"
+    data-testid="INPUT_FEEDBACK_GROUPING"
   >
     <input
       className="Input"
       id="someInputName"
       name="someInputName"
+      onBlur={[MockFunction]}
+      onChange={[MockFunction]}
       type="text"
       value=""
     />

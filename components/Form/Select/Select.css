@@ -1,8 +1,0 @@
-.field {
-  margin: 1rem;
-}
-
-.errorMessage {
-  /* Alert's border is only 1px - not 2px (account for Select's left and right border) */
-  max-width: calc(inherit + 2px);
-}

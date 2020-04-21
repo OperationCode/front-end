@@ -3,12 +3,14 @@
 exports[`Storyshots CloseButton default 1`] = `
 <button
   className="CloseButton"
+  data-testid="CLOSE_BUTTON"
   disabled={false}
   onClick={[Function]}
   type="button"
 >
   <span
     className="ScreenReaderOnly"
+    data-testid="SCREEN_READER_ONLY"
   >
     Close
   </span>

@@ -1,5 +1,6 @@
+import { fireEvent, render } from '@testing-library/react';
 import React from 'react';
-import { mount } from 'enzyme'; // eslint-disable-line no-restricted-imports
+import { CLOSE_BUTTON } from 'common/constants/testIDs';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 import CloseButton from '../CloseButton';
 
@@ -10,9 +11,10 @@ describe('CloseButton', () => {
 
   it('should not be clickable when disabled', () => {
     const onClickMock = jest.fn();
-    const wrapper = mount(<CloseButton disabled onClick={onClickMock} />);
+    const { queryByTestId } = render(<CloseButton disabled onClick={onClickMock} />);
 
-    wrapper.find('button').simulate('click');
+    fireEvent.click(queryByTestId(CLOSE_BUTTON));
+
     expect(onClickMock).toHaveBeenCalledTimes(0);
   });
 });

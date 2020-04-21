@@ -1,29 +1,36 @@
-import React, { Component } from 'react';
-import { string } from 'prop-types';
+import React from 'react';
+import { string, oneOf } from 'prop-types';
+import classNames from 'classnames';
 import { Image } from '@innocuous/components';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
-import styles from './PartnerLogoLink.css';
+import styles from './PartnerLogoLink.module.css';
 
-export default class PartnerLogoLink extends Component {
-  static propTypes = {
-    logoSource: string.isRequired,
-    name: string.isRequired,
-    url: string.isRequired,
-  };
+PartnerLogoLink.propTypes = {
+  logoSource: string.isRequired,
+  name: string.isRequired,
+  url: string.isRequired,
+  size: oneOf(['small', 'medium', 'large']),
+};
 
-  render() {
-    const { logoSource, name, url } = this.props;
+PartnerLogoLink.defaultProps = {
+  size: 'medium',
+};
 
-    return (
-      <div className={styles.PartnerLogoLink}>
-        <OutboundLink
-          href={url}
-          analyticsEventLabel={`Partner Logo Click - ${name}`}
-          hasIcon={false}
-        >
-          <Image className={styles.logo} src={logoSource} alt={`${name} logo`} />
-        </OutboundLink>
-      </div>
-    );
-  }
+const sizeStyles = {
+  small: styles.small,
+  large: styles.large,
+};
+
+export default function PartnerLogoLink({ logoSource, name, url, size }) {
+  return (
+    <div className={styles.PartnerLogoLink}>
+      <OutboundLink href={url} analyticsEventLabel={`Partner Logo Click - ${name}`} hasIcon={false}>
+        <Image
+          className={classNames(styles.logo, sizeStyles[size])}
+          src={logoSource}
+          alt={`${name} logo`}
+        />
+      </OutboundLink>
+    </div>
+  );
 }

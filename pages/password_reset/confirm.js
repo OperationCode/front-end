@@ -1,3 +1,4 @@
+import { useState } from 'react'; // eslint-disable-line  no-restricted-imports
 import Link from 'next/link';
 import { string } from 'prop-types';
 import Head from 'components/head';
@@ -6,39 +7,29 @@ import Content from 'components/Content/Content';
 import ChangePasswordForm from 'components/ChangePasswordForm/ChangePasswordForm';
 import Alert from 'components/Alert/Alert';
 import { passwordResetSubmit } from 'common/constants/api';
-import styles from '../styles/password_reset.css';
+import styles from '../styles/password_reset.module.css';
 
-class PasswordResetConfirm extends React.Component {
-  static propTypes = {
-    uid: string,
-    token: string,
-  };
+PasswordResetConfirm.propTypes = {
+  uid: string,
+  token: string,
+};
 
-  static defaultProps = {
-    uid: '',
-    token: '',
-  };
+PasswordResetConfirm.defaultProps = {
+  uid: '',
+  token: '',
+};
 
-  state = {
-    didReset: false,
-  };
+PasswordResetConfirm.getInitialProps = ({ query: { uid, token } }) => {
+  return { uid, token };
+};
 
-  static async getInitialProps({ query: { uid, token } }) {
-    return { uid, token };
-  }
+function PasswordResetConfirm({ uid, token }) {
+  const [didReset, setDidReset] = useState(false);
 
-  onSubmit = async values => {
-    const { uid, token } = this.props;
-    return passwordResetSubmit({ ...values, uid, token });
-  };
+  const onSubmit = async values => passwordResetSubmit({ ...values, uid, token });
+  const onSuccess = () => setDidReset(true);
 
-  onSuccess = () => {
-    this.setState({ didReset: true });
-  };
-
-  getContent = () => {
-    const { didReset } = this.state;
-
+  const getContent = () => {
     if (didReset) {
       return (
         <div className={styles.centerAlign}>
@@ -50,26 +41,22 @@ class PasswordResetConfirm extends React.Component {
       );
     }
 
-    const { uid, token } = this.props;
-
     if (!uid || !token) {
       return <Alert type="error">The provided credentials were either invalid or expired.</Alert>;
     }
 
-    return <ChangePasswordForm onSubmit={this.onSubmit} onSuccess={this.onSuccess} />;
+    return <ChangePasswordForm onSubmit={onSubmit} onSuccess={onSuccess} />;
   };
 
-  render() {
-    return (
-      <>
-        <Head title="PasswordReset" />
+  return (
+    <>
+      <Head title="PasswordReset" />
 
-        <HeroBanner title="Enter new password" />
+      <HeroBanner title="Enter new password" />
 
-        <Content theme="gray" columns={[this.getContent()]} />
-      </>
-    );
-  }
+      <Content theme="gray" columns={[getContent()]} />
+    </>
+  );
 }
 
 export default PasswordResetConfirm;

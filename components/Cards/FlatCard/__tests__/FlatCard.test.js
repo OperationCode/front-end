@@ -1,7 +1,7 @@
 import React from 'react';
-import { shallow } from 'enzyme'; // eslint-disable-line no-restricted-imports
+import { render } from '@testing-library/react';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
-
+import { FLAT_CARD_IMAGE } from 'common/constants/testIDs';
 import { s3 } from 'common/constants/urls';
 import LinkButton from 'components/LinkButton/LinkButton';
 import FlatCard from '../FlatCard';
@@ -37,22 +37,27 @@ describe('FlatCard', () => {
   });
 
   it('should not render a horizontal ruler when header is undefined', () => {
-    const wrapper = shallow(<FlatCard {...requiredProps} header={undefined} />);
+    const { container } = render(<FlatCard {...requiredProps} header={undefined} />);
 
-    expect(wrapper.find('hr').exists()).toStrictEqual(false);
+    expect(container.querySelector('hr')).toBeNull();
   });
 
   it('should render a horizontal ruler when header is passed', () => {
-    const wrapper = shallow(<FlatCard {...requiredProps} header={<h1>Howdy!</h1>} />);
+    const { container } = render(<FlatCard {...requiredProps} header={<h1>Howdy!</h1>} />);
 
-    expect(wrapper.find('hr').exists()).toStrictEqual(true);
+    expect(container.querySelector('hr')).not.toBeNull();
   });
 
-  it('only renders an image when both source and alt are passed in image prop', () => {
-    const wrapperWithNoImageProperty = shallow(<FlatCard {...requiredProps} />);
-    expect(wrapperWithNoImageProperty.find('Image').exists()).toBe(false);
+  it('does not render image when not passed both source and alt details via image prop', () => {
+    const component = render(<FlatCard {...requiredProps} />);
 
-    const wrapperWithAllImageProperties = shallow(
+    const Image = component.queryByTestId(FLAT_CARD_IMAGE);
+
+    expect(Image).toBeNull();
+  });
+
+  it('renders an image when passed a valid image prop', () => {
+    const component = render(
       <FlatCard
         {...requiredProps}
         image={{
@@ -61,6 +66,9 @@ describe('FlatCard', () => {
         }}
       />,
     );
-    expect(wrapperWithAllImageProperties.find('Image').exists()).toBe(true);
+
+    const Image = component.queryByTestId(FLAT_CARD_IMAGE);
+
+    expect(Image).not.toBeNull();
   });
 });

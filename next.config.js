@@ -1,19 +1,11 @@
-const withCSS = require('@zeit/next-css');
 const withSourceMaps = require('@zeit/next-source-maps')();
 const withBundleAnalyzer = require('@zeit/next-bundle-analyzer');
 const svgoConfig = require('./common/config/svgo');
 
-const nextConfig = withCSS({
+const nextConfig = withBundleAnalyzer({
   // For now.sh
   // see: https://zeit.co/guides/deploying-nextjs-with-now/
   target: 'serverless',
-
-  // NextCSS Config
-  cssModules: true,
-  cssLoaderOptions: {
-    // No need for importLoaders: 1 as its set to 1 when postcss.config.js exists
-    localIdentName: '[name]_[local]__[hash:base64:5]',
-  },
 
   // Bundle Analyzer Config (only used when running `yarn build:analyze`)
   analyzeServer: process.env.ANALYZE,
@@ -53,9 +45,9 @@ const nextConfig = withCSS({
         test: /\.svg$/,
         use: [
           {
-            loader: 'react-svg-loader',
+            loader: '@svgr/webpack',
             options: {
-              svgo: svgoConfig,
+              svgoConfig,
             },
           },
         ],
@@ -101,4 +93,4 @@ const nextConfig = withCSS({
   },
 });
 
-module.exports = withSourceMaps(withBundleAnalyzer(nextConfig));
+module.exports = withSourceMaps(nextConfig);

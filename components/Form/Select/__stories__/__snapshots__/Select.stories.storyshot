@@ -17,11 +17,14 @@ Array [
   >
     <label
       className="Label"
+      data-testid="LABEL"
       htmlFor="someSelect"
     >
       Some Select:
     </label>
-    <div>
+    <div
+      className="selectFeedbackGrouping"
+    >
       <div
         className=" css-2b097c-container"
         onKeyDown={[Function]}

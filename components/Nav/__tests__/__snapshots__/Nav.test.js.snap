@@ -61,12 +61,14 @@ exports[`Nav should render with no props passed 1`] = `
   />
   <header
     className="NavDesktop"
-    data-testid="Desktop Nav"
   >
     <div
-      className="navContainer"
+      className="desktopNavContainer"
+      data-testid="Desktop Nav Container"
     >
-      <nav>
+      <nav
+        data-testid="Desktop Nav"
+      >
         <Link
           href="/"
           prefetch={false}
@@ -149,14 +151,14 @@ exports[`Nav should render with no props passed 1`] = `
             }
           />
           <li>
-            <a
+            <OutboundLink
+              analyticsEventLabel="Navigation Bar Donate"
               className="link donateLink"
+              hasIcon={false}
               href="https://secure.lglforms.com/form_engine/s/BRtP7QUKyHOyEYsZROsRew"
             >
-              <span>
-                Donate
-              </span>
-            </a>
+              Donate
+            </OutboundLink>
           </li>
         </ul>
       </nav>

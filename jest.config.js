@@ -28,7 +28,7 @@ module.exports = {
   ],
 
   // The directory where Jest should output its coverage files
-  coverageDirectory: '<rootDir>/coverage',
+  coverageDirectory: '<rootDir>/jest-coverage',
 
   // An array of regexp pattern strings used to skip coverage collection
   coveragePathIgnorePatterns: [
@@ -44,6 +44,7 @@ module.exports = {
     '<rootDir>/common/utils/api-utils.js',
     '<rootDir>/components/ZipRecruiterJobs/ZipRecruiterJobs.js',
     '<rootDir>/components/Press/PressLinks/Articles.js',
+    '<rootDir>/components/Timeline/historyData.js',
 
     // Don't collect coverage from import/export mappers
     '<rootDir>/common/(.*)/index.js',
@@ -54,7 +55,7 @@ module.exports = {
   ],
 
   // A list of reporter names that Jest uses when writing coverage reports
-  coverageReporters: ['lcov'],
+  coverageReporters: ['json', 'lcov'],
 
   // An object that configures minimum threshold enforcement for coverage results
   // coverageThreshold: null,
@@ -142,7 +143,7 @@ module.exports = {
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'], // eslint-disable-line unicorn/prevent-abbreviations
 
   // A list of paths to snapshot serializer modules Jest should use for snapshot testing
-  snapshotSerializers: ['enzyme-to-json/serializer'],
+  // snapshotSerializers: ['enzyme-to-json/serializer'],
 
   // The test environment that will be used for testing
   // testEnvironment: "jest-environment-jsdom",

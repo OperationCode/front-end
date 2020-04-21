@@ -1,0 +1,91 @@
+.NavMobile {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--white);
+  height: var(--navBarHeight);
+  width: 100%;
+  z-index: 500;
+
+  --gutterWidth: 30px;
+}
+
+@media screen and (--desktop-viewport) {
+  .NavMobile {
+    display: none;
+  }
+}
+
+.logoButton {
+  padding: 0;
+  max-width: 50%;
+  height: var(--navBarHeight);
+  margin-left: var(--gutterWidth);
+}
+
+.logo {
+  max-width: 100%;
+  max-height: calc(var(--navBarHeight) - 20px);
+  vertical-align: middle;
+}
+
+.hamburger {
+  margin-right: var(--gutterWidth);
+}
+
+.hamburgerIcon {
+  width: 35px;
+}
+
+.NavMobile nav {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: rgba(37, 46, 62, 0.97);
+  width: 100%;
+  height: 100vh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.ul {
+  padding: 1rem;
+  margin: 0;
+  list-style: none;
+  overflow-y: auto;
+}
+
+.li {
+  padding: 1rem;
+}
+
+.li:first-child {
+  padding-top: 2rem;
+}
+
+.li:last-child {
+  padding-bottom: 5rem;
+}
+
+.link {
+  color: var(--white);
+  fill: var(--white);
+  transition: color 0.2s linear, fill 0.2s linear;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.link:hover {
+  color: var(--primary);
+  fill: var(--primary);
+  transition: color 0.2s linear, fill 0.2s linear;
+}
+
+.button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}

@@ -1,58 +1,53 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { string, func } from 'prop-types';
 import classNames from 'classnames';
 import { getServerErrorMessage } from 'common/utils/api-utils';
 import Alert from 'components/Alert/Alert';
-import styles from './SocialLoginGroup.css';
+import styles from './SocialLoginGroup.module.css';
 
-class SocialLoginGroup extends React.Component {
-  static propTypes = {
-    className: string,
-    handleSuccess: func.isRequired,
-    children: func.isRequired,
-    loginSocial: func.isRequired,
-  };
+SocialLoginGroup.propTypes = {
+  className: string,
+  handleSuccess: func.isRequired,
+  children: func.isRequired,
+  loginSocial: func.isRequired,
+};
 
-  static defaultProps = {
-    className: undefined,
-  };
+SocialLoginGroup.defaultProps = {
+  className: undefined,
+};
 
-  state = {
-    errorMessage: '',
-  };
+function SocialLoginGroup(props) {
+  const [errorMessage, setErrorMessage] = useState('');
 
-  onSuccess = provider => async ({ accessToken }) => {
+  const onSuccess = provider => async ({ accessToken }) => {
     try {
-      const { handleSuccess, loginSocial } = this.props;
+      const { handleSuccess, loginSocial } = props;
       const result = await loginSocial(provider, { accessToken });
       handleSuccess(result);
     } catch (error) {
-      this.setState({ errorMessage: getServerErrorMessage(error) });
+      setErrorMessage(getServerErrorMessage(error));
     }
   };
 
-  onGoogleFailure = () => {
-    this.setState({ errorMessage: "Couldn't log in with Google" });
+  const onGoogleFailure = () => {
+    setErrorMessage("Couldn't log in with Google");
   };
 
-  render() {
-    const { errorMessage } = this.state;
-    const { className, children } = this.props;
+  const { className, children } = props;
 
-    return (
-      <div className={classNames(className, styles.flexRow, styles.SocialLoginGroup)}>
-        <div className={classNames(styles.alertContainer, styles.fullWidth)}>
-          {errorMessage && (
-            <Alert className={classNames(styles.flexRow, styles.alertFill)} type="error">
-              {errorMessage}
-            </Alert>
-          )}
-        </div>
-
-        {children({ onSuccess: this.onSuccess, onGoogleFailure: this.onGoogleFailure })}
+  return (
+    <div className={classNames(className, styles.flexRow, styles.SocialLoginGroup)}>
+      <div className={classNames(styles.alertContainer, styles.fullWidth)}>
+        {errorMessage && (
+          <Alert className={classNames(styles.flexRow, styles.alertFill)} type="error">
+            {errorMessage}
+          </Alert>
+        )}
       </div>
-    );
-  }
+
+      {children({ onSuccess, onGoogleFailure })}
+    </div>
+  );
 }
 
 export default SocialLoginGroup;

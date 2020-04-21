@@ -3,6 +3,7 @@
 exports[`Storyshots ScreenReaderOnly default 1`] = `
 <span
   className="ScreenReaderOnly"
+  data-testid="SCREEN_READER_ONLY"
 >
   This content is never displayed, but it is rendered
 </span>

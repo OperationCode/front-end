@@ -3,6 +3,7 @@
 exports[`Alert should render with required props 1`] = `
 <div
   className="Alert error"
+  data-testid="ALERT"
   role="alert"
 >
   Error Test Alert!

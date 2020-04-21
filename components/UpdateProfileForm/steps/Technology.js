@@ -5,7 +5,7 @@ import * as Yup from 'yup';
 import { updateUser } from 'common/constants/api';
 import { mapStringsToSelectOptions } from '@innocuous/functions';
 import Select from 'components/Form/Select/Select';
-import styles from './_steps.css';
+import styles from './_steps.module.css';
 
 const programmingLanguages = [
   'JavaScript',
@@ -34,73 +34,69 @@ const disciplines = [
   'Agile / Scrum Management',
 ];
 
-class Technology extends React.Component {
-  static propTypes = {
-    isSubmitting: bool,
-  };
+Technology.propTypes = {
+  isSubmitting: bool,
+};
 
-  static defaultProps = {
-    isSubmitting: false,
-  };
+Technology.defaultProps = {
+  isSubmitting: false,
+};
 
-  static validationSchema = Yup.object().shape({
-    programmingLanguages: Yup.array().of(Yup.string()),
-    disciplines: Yup.array().of(Yup.string()),
-  });
+Technology.title = 'Technology';
 
-  static initialValues = {
-    programmingLanguages: [],
-    disciplines: [],
-  };
+Technology.validationSchema = Yup.object().shape({
+  programmingLanguages: Yup.array().of(Yup.string()),
+  disciplines: Yup.array().of(Yup.string()),
+});
 
-  static submitHandler = async values => {
-    await updateUser(values);
-  };
+Technology.initialValues = {
+  programmingLanguages: [],
+  disciplines: [],
+};
 
-  render() {
-    const { isSubmitting } = this.props;
+Technology.submitHandler = async values => {
+  await updateUser(values);
+};
 
-    const programmingLanguageOptions = [...mapStringsToSelectOptions(programmingLanguages)];
-    const disciplineOptions = [...mapStringsToSelectOptions(disciplines)];
+function Technology({ isSubmitting }) {
+  const programmingLanguageOptions = [...mapStringsToSelectOptions(programmingLanguages)];
+  const disciplineOptions = [...mapStringsToSelectOptions(disciplines)];
 
-    return (
-      <>
-        <h3 className={styles.row}>Technology</h3>
+  return (
+    <>
+      <div className={styles.row}>
+        <Field
+          className={styles.fullWidth}
+          name="programmingLanguages"
+          label="Programming Languages That Interest You"
+          component={Select}
+          isMulti
+          options={[
+            ...programmingLanguageOptions,
+            // TODO: investigate creatable
+          ]}
+          disabled={isSubmitting}
+          placeholder="Select at least one..."
+        />
+      </div>
 
-        <div className={styles.row}>
-          <Field
-            className={styles.fullWidth}
-            name="programmingLanguages"
-            label="Programming Languages That Interest You"
-            component={Select}
-            isMulti
-            options={[
-              ...programmingLanguageOptions,
-              // TODO: investigate creatable
-            ]}
-            disabled={isSubmitting}
-            placeholder="Select at least one..."
-          />
-        </div>
-
-        <div className={styles.row}>
-          <Field
-            className={styles.fullWidth}
-            name="disciplines"
-            label="Disciplines That Interest You"
-            component={Select}
-            isMulti
-            options={[
-              ...disciplineOptions,
-              // TODO: investigate creatable
-            ]}
-            disabled={isSubmitting}
-            placeholder="Select at least one..."
-          />
-        </div>
-      </>
-    );
-  }
+      <div className={styles.row}>
+        <Field
+          className={styles.fullWidth}
+          name="disciplines"
+          label="Disciplines That Interest You"
+          component={Select}
+          isMulti
+          options={[
+            ...disciplineOptions,
+            // TODO: investigate creatable
+          ]}
+          disabled={isSubmitting}
+          placeholder="Select at least one..."
+        />
+      </div>
+    </>
+  );
 }
 
 export default Technology;

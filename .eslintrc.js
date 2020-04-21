@@ -18,7 +18,7 @@ module.exports = {
   },
   parser: 'babel-eslint',
 
-  plugins: ['prettier', 'unicorn', 'jest', 'cypress'],
+  plugins: ['prettier', 'unicorn', 'jest', 'cypress', '@operation_code/custom-rules', 'import'],
 
   globals: {
     cy: true,
@@ -99,6 +99,9 @@ module.exports = {
     ],
     'import/prefer-default-export': 'off',
 
+    //OC eslint Plugin Rules
+    '@operation_code/custom-rules/proptype-definition-above-fn': 'error',
+
     // Jest Plugin Rules
     'jest/consistent-test-it': [
       'error',
@@ -125,10 +128,9 @@ module.exports = {
     'jest/prefer-strict-equal': 'error',
     'jest/prefer-to-be-null': 'error',
     'jest/prefer-to-be-undefined': 'error',
-    'jest/require-tothrow-message': 'error',
     'jest/valid-describe': 'error',
 
-    // JSX Plugin Rules
+    // JSX-A11Y Plugin Rules
     'jsx-a11y/anchor-is-valid': [
       'error',
       {
@@ -248,10 +250,6 @@ module.exports = {
             importNames: ['default'],
             message:
               "Please use non-default imports of `prop-types`. Example: `import { func } from 'prop-types';`",
-          },
-          {
-            name: 'enzyme',
-            message: 'Please use `@testing-library/react` from now onwards.',
           },
         ],
       },

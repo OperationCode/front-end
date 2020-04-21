@@ -3,6 +3,7 @@
 exports[`Storyshots Alert default 1`] = `
 <div
   className="Alert error"
+  data-testid="ALERT"
   role="alert"
 >
   <button
@@ -13,6 +14,7 @@ exports[`Storyshots Alert default 1`] = `
   >
     <span
       className="ScreenReaderOnly"
+      data-testid="SCREEN_READER_ONLY"
     >
       Close Alert
     </span>

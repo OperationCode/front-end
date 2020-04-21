@@ -1,7 +1,17 @@
 {
-  "extends": ["stylelint-config-standard", "stylelint-prettier/recommended"],
-  "plugins": ["stylelint-prettier"],
-  "ignoreFiles": ["**/*.js", "coverage/**/*"],
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-prettier/recommended"
+  ],
+  "plugins": [
+    "stylelint-prettier"
+  ],
+  "ignoreFiles": [
+    "**/*.js",
+    "coverage/**/*",
+    "cypress-coverage/**/*",
+    "jest-coverage/**/*"
+  ],
   "rules": {
     "prettier/prettier": true,
     "color-hex-case": "lower",
@@ -11,9 +21,20 @@
     "property-no-unknown": [
       true,
       {
-        "ignoreProperties": ["composes", "composes-with"]
+        "ignoreProperties": [
+          "composes",
+          "composes-with"
+        ]
       }
     ],
-    "string-quotes": "double"
+    "string-quotes": "double",
+    "selector-pseudo-class-no-unknown": [
+      true,
+      {
+        "ignorePseudoClasses": [
+          "global"
+        ]
+      }
+    ]
   }
 }

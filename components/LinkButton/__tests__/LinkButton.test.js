@@ -1,51 +1,44 @@
 import React from 'react';
-import ReactGA from 'react-ga';
-import { mount } from 'enzyme'; // eslint-disable-line no-restricted-imports
+import { fireEvent, render } from '@testing-library/react';
+import { gtag } from 'common/utils/thirdParty/gtag';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 import LinkButton from '../LinkButton';
 
-const OutboundLinkButton = (
-  <LinkButton
-    href="https://tests.com"
-    analyticsEventLabel="Test"
-    className="test-class"
-    fullWidth
-    theme="secondary"
-  >
-    Test
-  </LinkButton>
-);
-
 describe('LinkButton', () => {
-  ReactGA.initialize('foo', { testMode: true });
+  const testID = 'Test';
+
+  const requiredProps = {
+    children: testID,
+    href: 'https://tests.com',
+  };
+
+  const OutboundLinkButton = (
+    <LinkButton
+      {...requiredProps}
+      data-testid={testID}
+      analyticsEventLabel={testID}
+      className="test-class"
+      fullWidth
+      theme="secondary"
+    />
+  );
 
   it('should render with required props', () => {
-    createSnapshotTest(<LinkButton href="https://tests.com">Test</LinkButton>);
+    createSnapshotTest(<LinkButton {...requiredProps} />);
   });
 
   it('should render with many props assigned', () => {
     createSnapshotTest(OutboundLinkButton);
   });
 
-  it('should not create ReactGA event on click when in dev environment', () => {
-    const wrapper = mount(OutboundLinkButton);
+  it('fires gtag event onclick', () => {
+    const component = render(OutboundLinkButton);
 
-    expect(ReactGA.testModeAPI.calls).toHaveLength(1);
-    wrapper.find('a').simulate('click');
-    expect(ReactGA.testModeAPI.calls).toHaveLength(1);
-  });
+    expect(gtag.outboundLink).toHaveBeenCalledTimes(0);
 
-  it('should create ReactGA event on click when in prod environment', () => {
-    process.env.NODE_ENV = 'production';
-    const wrapper = mount(OutboundLinkButton);
+    fireEvent.click(component.queryByTestId(testID));
 
-    expect(ReactGA.testModeAPI.calls).toHaveLength(1);
-    wrapper.find('a').simulate('click');
-    expect(ReactGA.testModeAPI.calls).toHaveLength(2);
-
-    const newGAEventPayload = ReactGA.testModeAPI.calls[1][1];
-    expect(newGAEventPayload.eventLabel).toStrictEqual('OUTBOUND [Test]');
-
-    ReactGA.testModeAPI.calls = [];
+    expect(gtag.outboundLink).toHaveBeenCalledTimes(1);
+    expect(gtag.outboundLink).toHaveBeenCalledWith(testID, requiredProps.href);
   });
 });

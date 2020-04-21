@@ -1,0 +1,30 @@
+.field {
+  margin: 1rem;
+}
+
+.errorMessage {
+  /* Alert's border is only 1px - not 2px (account for Select's left and right border) */
+  max-width: calc(100% + 2px);
+}
+
+@media screen and (--desktop-viewport) {
+  .selectFeedbackGrouping {
+    position: relative;
+  }
+
+  .errorMessage {
+    margin-top: 0;
+    margin-left: 1rem;
+    position: absolute;
+    top: -2px;
+    left: 100%;
+    min-width: 150px;
+    max-width: 300px;
+    width: auto;
+    padding: 0 10px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

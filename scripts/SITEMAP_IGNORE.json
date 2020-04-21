@@ -1,14 +1,13 @@
 {
-    "exclude": [
-      "/profile/change_password",
-      "/profile",
-      "/profile/update",
-      "/_app",
-      "/_document",
-      "/_error"
-    ],
-    "priority": {
-      "/": "1.00"  
-    }
+  "exclude": [
+    "/profile/change_password",
+    "/profile",
+    "/profile/update",
+    "/_app",
+    "/_document",
+    "/_error"
+  ],
+  "priority": {
+    "/": "1.00"
   }
-  
+}

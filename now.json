@@ -2,27 +2,57 @@
   "version": 2,
   "name": "operation-code",
   "alias": ["operation-code.now.sh", "www.operationcode.org", "operationcode.org"],
-  "builds": [{ "src": "package.json", "use": "@now/next@canary" }],
-  "routes": [
+  "rewrites": [
     {
-      "src": "/_next/static/(?:[^/]+/pages|chunks|runtime|css|fonts)/.+",
-      "headers": { "cache-control": "max-age=31536000" }
+      "source": "/media",
+      "destination": "/branding"
     },
     {
-      "src": "^/(favicon.ico|robots.txt|manifest.json|humans.txt|sitemap.xml|sitemap.xsl)$",
-      "dest": "/static/$1",
-      "headers": { "cache-control": "max-age=10000 must-revalidate" }
+      "source": "/resources",
+      "destination": "/resources/1"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/donate",
+      "destination": "https://secure.lglforms.com/form_engine/s/BRtP7QUKyHOyEYsZROsRew"
     },
     {
-      "src": "/media",
-      "dest": "/branding"
+      "source": "/privacy",
+      "destination": "https://www.iubenda.com/privacy-policy/8174861"
     },
     {
-      "src": "/privacy",
-      "dest": "https://www.iubenda.com/privacy-policy/8174861"
+      "source": "/swag",
+      "destination": "https://operationcode.threadless.com/"
     },
-    { "handle": "filesystem" },
-    { "src": "/*/.*", "dest": "/_error" }
+    {
+      "source": "/store",
+      "destination": "https://operationcode.threadless.com/"
+    },
+    {
+      "source": "/shop",
+      "destination": "https://operationcode.threadless.com/"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/_next/static/([^/]+/pages|chunks|runtime|css|fonts)/(.+)",
+      "headers": [
+        {
+          "key": "cache-control",
+          "value": "max-age=31536000"
+        }
+      ]
+    },
+    {
+      "source": "^/(favicon.ico|robots.txt|manifest.json|humans.txt|sitemap.xml|sitemap.xsl)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    }
   ],
   "public": true
 }

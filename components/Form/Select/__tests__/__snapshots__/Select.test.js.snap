@@ -6,11 +6,14 @@ exports[`Select should render with required props 1`] = `
 >
   <label
     className="Label"
+    data-testid="LABEL"
     htmlFor="someSelectName"
   >
     Some Select:
   </label>
-  <div>
+  <div
+    className="selectFeedbackGrouping"
+  >
     <div
       className=" css-2b097c-container"
       onKeyDown={[Function]}

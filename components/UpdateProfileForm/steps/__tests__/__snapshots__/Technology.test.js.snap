@@ -6,11 +6,6 @@ exports[`UpdateProfileForm/Steps/Technology should render in context of Formik 1
   onReset={[Function]}
   onSubmit={[Function]}
 >
-  <h3
-    className="row"
-  >
-    Technology
-  </h3>
   <div
     className="row"
   >
@@ -19,11 +14,14 @@ exports[`UpdateProfileForm/Steps/Technology should render in context of Formik 1
     >
       <label
         className="Label"
+        data-testid="LABEL"
         htmlFor="programmingLanguages"
       >
         Programming Languages That Interest You
       </label>
-      <div>
+      <div
+        className="selectFeedbackGrouping"
+      >
         <div
           className="fullWidth css-2b097c-container"
           onKeyDown={[Function]}
@@ -144,11 +142,14 @@ exports[`UpdateProfileForm/Steps/Technology should render in context of Formik 1
     >
       <label
         className="Label"
+        data-testid="LABEL"
         htmlFor="disciplines"
       >
         Disciplines That Interest You
       </label>
-      <div>
+      <div
+        className="selectFeedbackGrouping"
+      >
         <div
           className="fullWidth css-2b097c-container"
           onKeyDown={[Function]}

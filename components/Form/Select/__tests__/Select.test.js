@@ -1,21 +1,14 @@
 import React from 'react';
 import { Formik, Field } from 'formik';
+import { fireEvent, render, wait } from '@testing-library/react';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
-import asyncRenderDiff from 'test-utils/asyncRenderDiff';
-import { shallow, mount } from 'enzyme'; // eslint-disable-line no-restricted-imports
+import { KEY_CODES } from 'test-utils/identifiers';
 
+import { LABEL } from 'common/constants/testIDs';
 import Form from '../../Form';
 import Select from '../Select';
 
-const getReactSelect = enzymeWrapper => {
-  const ReactSelect = enzymeWrapper
-    .find('Select')
-    .first()
-    .find('input')
-    .first();
-
-  return ReactSelect;
-};
+const getReactSelect = domElement => domElement.querySelector('[id^=react-select]');
 
 describe('Select', () => {
   const name = 'someSelectName';
@@ -38,27 +31,27 @@ describe('Select', () => {
     ],
   };
 
+  afterEach(() => {
+    setFieldTouched.mockReset();
+    setFieldValue.mockReset();
+  });
+
   it('should render with required props', () => {
     createSnapshotTest(<Select {...requiredProps} />);
   });
 
   it('should render with label, even if hidden', () => {
-    const wrapper = shallow(<Select {...requiredProps} isLabelHidden />);
+    const { queryAllByTestId } = render(<Select {...requiredProps} isLabelHidden />);
 
-    expect(wrapper).toContainExactlyOneMatchingElement('Label');
+    expect(queryAllByTestId(LABEL).length).toBe(1);
   });
 
   describe('interactions', () => {
-    // You'll notice that interactions with react-select are usually tested via keyboard
-    // interactions. This is only due to the difficulty enzyme has with interacting with
-    // react-select.
-    // @see https://stackoverflow.com/a/46201546/7304377
-
     it('should display an error message when a required field is touched', async () => {
       const fieldName = 'favoriteFastFood';
       const validate = () => ({ [fieldName]: 'Required' });
 
-      const wrapper = mount(
+      const { container, findByText } = render(
         <Formik initialValues={{ [fieldName]: '' }} validate={validate}>
           <Form>
             <Field
@@ -71,82 +64,75 @@ describe('Select', () => {
         </Formik>,
       );
 
-      const ReactSelect = getReactSelect(wrapper);
+      const ReactSelect = getReactSelect(container);
 
-      ReactSelect.simulate('blur'); // trigger validation
+      fireEvent.blur(ReactSelect);
 
-      await asyncRenderDiff(wrapper);
-
-      expect(wrapper.find('Alert')).toHaveText('Required');
+      const alert = await findByText('Required');
+      expect(alert).not.toBeNull();
     });
 
     it('should fire formik-related callbacks when changing non-multi select', async () => {
-      const wrapper = mount(<Select {...requiredProps} />);
+      const { container } = render(<Select {...requiredProps} />);
+      const ReactSelect = getReactSelect(container);
 
-      const ReactSelect = getReactSelect(wrapper);
+      fireEvent.blur(ReactSelect);
+      fireEvent.keyDown(ReactSelect, KEY_CODES.DOWN_ARROW);
+      fireEvent.keyDown(ReactSelect, KEY_CODES.ENTER);
 
-      // Simulate the arrow down event to open the dropdown menu.
-      ReactSelect.simulate('blur');
-      ReactSelect.simulate('keyDown', { key: 'ArrowDown', keyCode: 40 });
-      await asyncRenderDiff(wrapper);
-
-      // Simulate the enter key to select the first option.
-      ReactSelect.simulate('keyDown', { key: 'Enter', keyCode: 13 });
-      await asyncRenderDiff(wrapper);
-
-      expect(setFieldTouched).toHaveBeenCalledTimes(1);
-      expect(setFieldValue).toHaveBeenCalledTimes(1);
+      await wait(() => {
+        expect(setFieldTouched).toHaveBeenCalledTimes(1);
+        expect(setFieldValue).toHaveBeenCalledTimes(1);
+      });
     });
 
     it('should fire formik-related callbacks when changing multi select', async () => {
-      const wrapper = mount(
+      const { container } = render(
         <Select {...requiredProps} field={{ name: 'test', value: [] }} isMulti />,
       );
 
-      const ReactSelect = getReactSelect(wrapper);
+      const ReactSelect = getReactSelect(container);
 
       // down arrow once and enter
-      ReactSelect.simulate('blur');
-      ReactSelect.simulate('keyDown', { key: 'ArrowDown', keyCode: 40 });
-      await asyncRenderDiff(wrapper);
-      ReactSelect.simulate('keyDown', { key: 'Enter', keyCode: 13 });
-      await asyncRenderDiff(wrapper);
+      fireEvent.blur(ReactSelect);
+      fireEvent.keyDown(ReactSelect, KEY_CODES.DOWN_ARROW);
+      fireEvent.keyDown(ReactSelect, KEY_CODES.ENTER);
 
       // down arrow twice and enter
-      ReactSelect.simulate('blur');
-      ReactSelect.simulate('keyDown', { key: 'ArrowDown', keyCode: 40 });
-      await asyncRenderDiff(wrapper);
-      ReactSelect.simulate('keyDown', { key: 'ArrowDown', keyCode: 40 });
-      await asyncRenderDiff(wrapper);
-      ReactSelect.simulate('keyDown', { key: 'Enter', keyCode: 13 });
-      await asyncRenderDiff(wrapper);
+      fireEvent.blur(ReactSelect);
+      fireEvent.keyDown(ReactSelect, KEY_CODES.DOWN_ARROW);
+      fireEvent.keyDown(ReactSelect, KEY_CODES.DOWN_ARROW);
+      fireEvent.keyDown(ReactSelect, KEY_CODES.ENTER);
 
-      expect(setFieldTouched).toHaveBeenCalledTimes(2);
-      expect(setFieldValue).toHaveBeenCalledTimes(2);
+      await wait(() => {
+        expect(setFieldTouched).toHaveBeenCalledTimes(2);
+        expect(setFieldValue).toHaveBeenCalledTimes(2);
+      });
     });
 
     it('should be able to remove multiselect options', async () => {
-      const wrapper = mount(
+      const { container } = render(
         <Select {...requiredProps} field={{ name: 'test', value: [] }} isMulti />,
       );
 
-      const ReactSelect = getReactSelect(wrapper);
+      const ReactSelect = getReactSelect(container);
 
       // down arrow once and enter
-      ReactSelect.simulate('blur');
-      ReactSelect.simulate('keyDown', { key: 'ArrowDown', keyCode: 40 });
-      await asyncRenderDiff(wrapper);
-      ReactSelect.simulate('keyDown', { key: 'Enter', keyCode: 13 });
-      await asyncRenderDiff(wrapper);
+      fireEvent.blur(ReactSelect);
+      fireEvent.keyDown(ReactSelect, KEY_CODES.DOWN_ARROW);
+      fireEvent.keyDown(ReactSelect, KEY_CODES.DOWN_ARROW);
+      fireEvent.keyDown(ReactSelect, KEY_CODES.ENTER);
 
-      expect(setFieldValue).toHaveBeenCalledTimes(1);
+      await wait(() => {
+        expect(setFieldValue).toHaveBeenCalledTimes(1);
+      });
 
       // Remove single selected value
-      ReactSelect.simulate('keyDown', { key: 'Backspace', keyCode: 8 });
+      fireEvent.keyDown(ReactSelect, KEY_CODES.BACKSPACE);
 
-      await asyncRenderDiff(wrapper);
-
-      expect(setFieldValue).toHaveBeenNthCalledWith(2, 'test', []);
+      await wait(() => {
+        expect(setFieldValue).toHaveBeenNthCalledWith(2, 'test', []);
+      });
     });
   });
 });

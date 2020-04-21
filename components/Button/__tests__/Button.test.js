@@ -1,20 +1,24 @@
 import React from 'react';
-import ReactGA from 'react-ga';
-import { shallow } from 'enzyme'; // eslint-disable-line no-restricted-imports
+import { fireEvent, render } from '@testing-library/react';
+import { BUTTON } from 'common/constants/testIDs';
+import { gtag } from 'common/utils/thirdParty/gtag';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 
 import Button from '../Button';
 
 describe('Button', () => {
-  ReactGA.initialize('foo', { testMode: true });
+  const requiredProps = {
+    children: 'Test',
+  };
 
   it('should render with required props', () => {
-    createSnapshotTest(<Button>Test</Button>);
+    createSnapshotTest(<Button {...requiredProps} />);
   });
 
   it('should render with many props assigned', () => {
     createSnapshotTest(
       <Button
+        {...requiredProps}
         analyticsObject={{ action: 'Test Button Selected', category: 'Testing' }}
         className="test-class"
         disabled
@@ -24,82 +28,33 @@ describe('Button', () => {
         theme="secondary"
         type="submit"
         data-id="test-id"
-      >
-        Test
-      </Button>,
+      />,
     );
-  });
-
-  it('should spread data- and aria- props', () => {
-    const ariaProperty = 'aria-label';
-    const dataAttributeProperty = 'data-attr';
-
-    // eslint-disable-next-line unicorn/prevent-abbreviations
-    const testProps = {
-      [`${ariaProperty}`]: 'test',
-      [`${dataAttributeProperty}`]: 'test-attr',
-    };
-
-    const wrapper = shallow(<Button {...testProps}>Test</Button>);
-
-    expect(wrapper.prop(ariaProperty)).toStrictEqual('test');
-    expect(wrapper.prop(dataAttributeProperty)).toStrictEqual('test-attr');
-  });
-
-  it('should should not spread an unexpected prop', () => {
-    const attribute = 'fakey-data-prop';
-
-    // eslint-disable-next-line unicorn/prevent-abbreviations
-    const testProps = { [`${attribute}`]: 'test' };
-
-    const wrapper = shallow(<Button {...testProps}>Test</Button>);
-
-    expect(wrapper.prop(attribute)).toBeUndefined();
-  });
-
-  it('should send log to console when clickHandler is called in non-prod environment', () => {
-    /* eslint-disable no-console */
-    console.log = jest.fn();
-
-    const ButtonShallowInstance = shallow(<Button>Testing</Button>);
-
-    ButtonShallowInstance.instance().clickHandler();
-
-    expect(console.log.mock.calls).toHaveLength(1);
-    /* eslint-enable no-console */
   });
 
   it('call props.onClick when button is clicked', () => {
     const onClickMock = jest.fn();
-    const ButtonShallowInstance = shallow(<Button onClick={onClickMock}>Test</Button>);
+    const { queryByTestId } = render(<Button onClick={onClickMock}>Testing</Button>);
 
     expect(onClickMock).toHaveBeenCalledTimes(0);
-    ButtonShallowInstance.simulate('click');
+
+    fireEvent.click(queryByTestId(BUTTON));
+
     expect(onClickMock).toHaveBeenCalledTimes(1);
   });
 
-  it('should not create ReactGA event on click when in dev environment', () => {
-    const wrapper = shallow(<Button>Testing</Button>);
+  it('fires gtag event onclick', () => {
+    const { queryByTestId } = render(<Button {...requiredProps} />);
 
-    expect(ReactGA.testModeAPI.calls).toHaveLength(1);
-    wrapper.find('button').simulate('click');
-    expect(ReactGA.testModeAPI.calls).toHaveLength(1);
-  });
+    expect(gtag.event).toHaveBeenCalledTimes(0);
 
-  it('should create ReactGA event on click when in prod environment', () => {
-    process.env.NODE_ENV = 'production';
-    const ButtonShallowInstance = shallow(<Button>Testing</Button>);
-    const buttonEventPayload = [
-      'send',
-      {
-        eventAction: 'Button Selected',
-        eventCategory: 'Interactions',
-        hitType: 'event',
-      },
-    ];
+    fireEvent.click(queryByTestId(BUTTON));
 
-    expect(ReactGA.testModeAPI.calls).not.toContainEqual(buttonEventPayload);
-    ButtonShallowInstance.simulate('click');
-    expect(ReactGA.testModeAPI.calls).toContainEqual(buttonEventPayload);
+    expect(gtag.event).toHaveBeenCalledTimes(1);
+    expect(gtag.event).toHaveBeenCalledWith({
+      action: 'Button Selected',
+      category: 'Interactions',
+      label: requiredProps.children,
+    });
   });
 });

@@ -7,11 +7,12 @@
     "baseUrl": ".",
     "paths": {
       // Ensure intellisense continues to operate - match with webpack aliases
-      "components/*": ["./components/*"],
       "common/*": ["./common/*"],
+      "components/*": ["./components/*"],
       "pages/*": ["./pages/*"],
+      "public/*": ["./public/*"],
       "scripts/*": ["./scripts/*"],
-      "static/*": ["./static/*"],
+      "static/*": ["./public/static/*"],
       "test-utils/*": ["./test-utils/*"]
     }
   },

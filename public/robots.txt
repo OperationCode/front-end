@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /404.html
+Disallow: /employers.html
+Disallow: /password_reset.html

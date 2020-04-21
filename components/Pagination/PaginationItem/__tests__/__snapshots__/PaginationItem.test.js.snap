@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PaginationItem renders correctly as a current item with value 1`] = `
+<li
+  className="PaginationItem current"
+  data-testid="test"
+>
+  <a
+    className="unstyledLink"
+    href="/resources/1"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+  >
+    <span
+      className="ScreenReaderOnly"
+      data-testid="SCREEN_READER_ONLY"
+    >
+      Go to page
+    </span>
+    1
+  </a>
+</li>
+`;
+
+exports[`PaginationItem renders with required props 1`] = `
+<li
+  className="PaginationItem notClickable"
+  data-testid="test"
+>
+  1
+</li>
+`;

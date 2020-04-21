@@ -1,7 +1,8 @@
 import React from 'react';
-import { mount } from 'enzyme'; // eslint-disable-line no-restricted-imports
+import { fireEvent, render } from '@testing-library/react';
 import createShallowSnapshotTest from 'test-utils/createShallowSnapshotTest';
-import SchoolCard, { getSchoolLocationText } from '../SchoolCard';
+import { BUTTON } from 'common/constants/testIDs';
+import SchoolCard, { getSchoolLocationText, ONLINE_ONLY, UNKNOWN, MULTIPLE } from '../SchoolCard';
 
 const locations = [
   {
@@ -23,49 +24,73 @@ const locations = [
 ];
 
 describe('SchoolCard', () => {
-  let componentInstance;
-  let wrapper;
   const toggleModal = jest.fn();
-  beforeEach(() => {
-    componentInstance = (
-      <SchoolCard
-        hasHardwareIncluded
-        hasHousing
-        hasOnline
-        hasOnlyOnline={false}
-        isFullTime
-        locations={locations}
-        logoSource="source"
-        name="school name"
-        website="website"
-        toggleModal={toggleModal}
-      />
-    );
-    wrapper = mount(componentInstance);
-  });
+
+  const requiredProps = {
+    hasHardwareIncluded: true,
+    hasHousing: true,
+    hasOnline: true,
+    hasOnlyOnline: false,
+    isFullTime: true,
+    locations,
+    logoSource: 'source',
+    name: 'school name',
+    website: 'website',
+    toggleModal,
+  };
 
   it('should render with required props', () => {
-    createShallowSnapshotTest(componentInstance);
+    createShallowSnapshotTest(<SchoolCard {...requiredProps} />);
   });
 
-  it('should call toggleModal on click', () => {
-    wrapper.find('button').simulate('click');
-    expect(toggleModal).toHaveBeenCalled();
+  it('should open modal when clicking button', () => {
+    const { queryByTestId } = render(<SchoolCard {...requiredProps} />);
+
+    expect(toggleModal).not.toHaveBeenCalled();
+
+    fireEvent.click(queryByTestId(BUTTON));
+
+    expect(toggleModal).toHaveBeenCalledTimes(1);
   });
 
-  it('should display correct text based on location', () => {
-    const [location] = locations;
+  it('should not render a button when passed a single location', () => {
+    const arrayOfOneLocation = [locations[0]];
+    expect(arrayOfOneLocation.length).toBe(1);
 
-    expect(getSchoolLocationText(false, [location])).toBe(`${location.city}, ${location.state}`);
-    expect(getSchoolLocationText(false, locations)).toBe('Multiple locations');
-    expect(getSchoolLocationText(true, locations)).toBe('Online only');
+    const { queryByTestId } = render(
+      <SchoolCard {...requiredProps} locations={arrayOfOneLocation} />,
+    );
+
+    expect(queryByTestId(BUTTON)).toBeNull();
   });
 
-  it('should render the "(view all)" button when multiple locations exist', () => {
-    // ensure wrapper has multiple locations at this point
-    expect(wrapper.prop('locations').length).toBeGreaterThan(1);
-    expect(
-      wrapper.find('button.modalToggler').filterWhere(node => node.text() === 'view all'),
-    ).toExist();
+  it('should not render a button when passed no locations', () => {
+    const emptyArray = [];
+    expect(emptyArray.length).toBe(0);
+
+    const { queryByTestId } = render(<SchoolCard {...requiredProps} locations={emptyArray} />);
+
+    expect(queryByTestId(BUTTON)).toBeNull();
+  });
+});
+
+describe('getSchoolLocationText', () => {
+  const [firstLocation] = locations;
+  const { city, state } = firstLocation;
+
+  it('returns expectedly with online-only school', () => {
+    expect(getSchoolLocationText(true, locations)).toBe(ONLINE_ONLY);
+  });
+
+  it('returns expectedly when locations is undefined and school is not online-only', () => {
+    expect(getSchoolLocationText(false, undefined)).toBe(UNKNOWN);
+  });
+
+  it('returns expectedly when passed multiple locations', () => {
+    expect(getSchoolLocationText(false, locations)).toBe(MULTIPLE);
+  });
+
+  it('returns expectedly when passed a single non-online location', () => {
+    expect(getSchoolLocationText(false, [firstLocation])).toBe(`${city}, ${state}`);
   });
 });

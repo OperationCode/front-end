@@ -3,11 +3,19 @@
 exports[`LinkButton should render with many props assigned 1`] = `
 <a
   className="Button test-class secondary fullWidth"
+  data-testid="Test"
   href="https://tests.com"
   onClick={[Function]}
-  onMouseEnter={[Function]}
+  rel="noopener noreferrer"
+  target="_blank"
 >
   Test
+  <span
+    className="ScreenReaderOnly"
+    data-testid="SCREEN_READER_ONLY"
+  >
+    Opens in new window
+  </span>
 </a>
 `;
 

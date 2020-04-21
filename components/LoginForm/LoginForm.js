@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { func, shape, string } from 'prop-types';
 import { Formik, Field } from 'formik';
 import * as Yup from 'yup';
@@ -8,7 +8,7 @@ import Button from 'components/Button/Button';
 import Form from 'components/Form/Form';
 import Input from 'components/Form/Input/Input';
 import Alert from 'components/Alert/Alert';
-import styles from './LoginForm.css';
+import styles from './LoginForm.module.css';
 
 /*
  * NOTE: We're repeating hardcode between the registration schema and passing an asterisk
@@ -23,92 +23,77 @@ const loginSchema = Yup.object().shape({
   password: Yup.string().required(validationErrorMessages.required),
 });
 
-class LoginForm extends Component {
-  static propTypes = {
-    login: func.isRequired, // essentially onSubmit
-    onSuccess: func.isRequired,
-    initialValues: shape({
-      email: string,
-      password: string,
-    }),
-  };
+LoginForm.propTypes = {
+  login: func.isRequired, // essentially onSubmit
+  onSuccess: func.isRequired,
+  initialValues: shape({
+    email: string,
+    password: string,
+  }),
+};
 
-  static defaultProps = {
-    initialValues: {
-      email: '',
-      password: '',
-    },
-  };
+LoginForm.defaultProps = {
+  initialValues: {
+    email: '',
+    password: '',
+  },
+};
 
-  state = {
-    errorMessage: '',
-  };
+function LoginForm({ initialValues, login, onSuccess }) {
+  const [errorMessage, setErrorMessage] = useState('');
 
-  handleSubmit = async (values, actions) => {
-    const { login, onSuccess } = this.props;
-
+  const handleSubmit = async (values, actions) => {
     try {
       const { user, token } = await login(values);
+
+      await onSuccess({ token, user });
       actions.setSubmitting(false);
       actions.resetForm();
-      await onSuccess({ user, token });
     } catch (error) {
       actions.setSubmitting(false);
 
-      this.setState({ errorMessage: getServerErrorMessage(error) });
+      setErrorMessage(getServerErrorMessage(error));
     }
   };
 
-  render() {
-    const { props, state } = this;
+  return (
+    <Formik initialValues={initialValues} onSubmit={handleSubmit} validationSchema={loginSchema}>
+      {({ isSubmitting }) => (
+        <Form className={styles.LoginForm}>
+          <div className={styles.row}>
+            <Field
+              type="email"
+              name="email"
+              label="Email*"
+              component={Input}
+              disabled={isSubmitting}
+              autoComplete="username email"
+            />
 
-    return (
-      <Formik
-        initialValues={props.initialValues}
-        onSubmit={this.handleSubmit}
-        validationSchema={loginSchema}
-      >
-        {({ isSubmitting }) => (
-          <Form className={styles.LoginForm}>
-            <div className={styles.row}>
-              <Field
-                type="email"
-                name="email"
-                label="Email*"
-                component={Input}
-                disabled={isSubmitting}
-                autoComplete="username email"
-              />
+            <Field
+              type="password"
+              name="password"
+              label="Password*"
+              component={Input}
+              disabled={isSubmitting}
+              autoComplete="new-password"
+            />
 
-              <Field
-                type="password"
-                name="password"
-                label="Password*"
-                component={Input}
-                disabled={isSubmitting}
-                autoComplete="new-password"
-              />
-            </div>
+            {errorMessage && <Alert type="error">{errorMessage}</Alert>}
 
-            <div className={styles.row}>
-              {state.errorMessage && <Alert type="error">{state.errorMessage}</Alert>}
-            </div>
-
-            <div className={styles.row}>
-              <Button
-                className={styles.topMargin}
-                type="submit"
-                theme="secondary"
-                disabled={isSubmitting}
-              >
-                Submit
-              </Button>
-            </div>
-          </Form>
-        )}
-      </Formik>
-    );
-  }
+            <Button
+              className={styles.topMargin}
+              type="submit"
+              theme="secondary"
+              disabled={isSubmitting}
+            >
+              Submit
+            </Button>
+          </div>
+        </Form>
+      )}
+    </Formik>
+  );
 }
 
 export default LoginForm;

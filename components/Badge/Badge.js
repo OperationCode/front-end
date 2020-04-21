@@ -1,14 +1,11 @@
 import React from 'react';
 import { bool, element, oneOfType, string } from 'prop-types';
 import classNames from 'classnames';
-import styles from './Badge.css';
+import styles from './Badge.module.css';
 
 Badge.propTypes = {
   className: string,
-
-  // TODO: Create custom proptype accepting only `<svg>` or `<img>`
-  // TODO: Once above is done, add integration tests regarding proptype
-  icon: element.isRequired,
+  icon: element.isRequired, // TODO: Create custom proptype accepting only `<svg>` or `<img>`
   label: oneOfType([string, element]).isRequired,
   isImageFirst: bool,
 };

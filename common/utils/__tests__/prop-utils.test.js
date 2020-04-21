@@ -1,7 +1,7 @@
-import { getPropsStartingWith, getDataAttributes, getAriaAttributes } from '../prop-utils';
+import { getPropertiesStartingWith, getDataAttributes, getAriaAttributes } from '../prop-utils';
 
 describe('Prop Utilities', () => {
-  describe('getPropsStartingWith', () => {
+  describe('getPropertiesStartingWith', () => {
     it('should return the props that start with the given string', () => {
       const props = {
         'test-1': 'test',
@@ -9,7 +9,7 @@ describe('Prop Utilities', () => {
         'another-prop': 'test 3',
       };
 
-      const result = getPropsStartingWith('test-', props);
+      const result = getPropertiesStartingWith('test-', props);
       expect(result).toStrictEqual({
         'test-1': 'test',
         'test-2': 'test 2',

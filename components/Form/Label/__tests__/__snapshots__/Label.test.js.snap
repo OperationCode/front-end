@@ -3,6 +3,7 @@
 exports[`Label should render with required props 1`] = `
 <label
   className="Label"
+  data-testid="LABEL"
   htmlFor="someInputName"
 >
   Test

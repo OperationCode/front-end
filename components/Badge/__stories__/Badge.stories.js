@@ -2,9 +2,9 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 import { withKnobs, boolean, text, select } from '@storybook/addon-knobs';
-import GithubIcon from 'static/images/icons/github_logo.svg';
-import TwitterIcon from 'static/images/icons/twitter_logo.svg';
-import PinterestIcon from 'static/images/icons/pinterest_logo.svg';
+import GithubIcon from 'public/static/images/icons/github_logo.svg';
+import TwitterIcon from 'public/static/images/icons/twitter_logo.svg';
+import PinterestIcon from 'public/static/images/icons/pinterest_logo.svg';
 
 import Badge from '../Badge';
 

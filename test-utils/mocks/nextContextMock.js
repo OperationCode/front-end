@@ -1,17 +1,18 @@
-/* eslint-disable react/sort-comp */
 import React from 'react';
 import { any, object } from 'prop-types';
 import MockedRouter from './nextRouterMock';
 
+// Reason for this mock's existence:
 // https://github.com/zeit/next.js/issues/5205#issuecomment-422846339
+
 export default class MockNextContext extends React.Component {
   static propTypes = {
-    // eslint-disable-next-line react/forbid-prop-types
-    children: any.isRequired,
+    children: any.isRequired, // eslint-disable-line react/forbid-prop-types
     headManager: object,
     router: object,
   };
 
+  // eslint-disable-next-line react/sort-comp
   static defaultProps = {
     headManager: {},
     router: {},

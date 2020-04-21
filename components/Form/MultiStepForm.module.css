@@ -1,0 +1,42 @@
+.MultiStepForm {
+  width: auto;
+}
+
+.containerFormErrorMessage {
+  display: flex;
+  justify-content: center;
+}
+
+.buttonGrouping {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2rem;
+
+  /*
+   * Specific value just so outer edges of each button visually aligns with
+   * the outer edges of inputs in our often-existing two-column forms
+   */
+  width: 92.5%;
+}
+
+.buttonGrouping button + button {
+  margin-left: 1rem;
+}
+
+.centerAligned {
+  text-align: center;
+}
+
+@media screen and (--small-viewport) {
+  .buttonGrouping button {
+    min-width: 100px;
+  }
+}
+
+.forceButtonRight {
+  justify-content: flex-end;
+}

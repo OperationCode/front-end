@@ -14,145 +14,126 @@ import { ErrorMessage } from 'formik';
 import Alert from 'components/Alert/Alert';
 import Label from 'components/Form/Label/Label';
 import ThemedReactSelect from './ThemedReactSelect';
-import styles from './Select.css';
+import styles from './Select.module.css';
 
-class Select extends React.Component {
-  static propTypes = {
-    field: shape({
-      name: string.isRequired,
-      value: oneOfType([string.isRequired, arrayOf(string.isRequired).isRequired]),
-    }).isRequired,
-    form: shape({
-      // TODO: Resolve why multiselects can end up with touched: { key: array }
-      // see ThemedReactSelect as well
-      // touched: objectOf(bool).isRequired,
-      touched: object.isRequired,
-      errors: objectOf(string).isRequired,
-      setFieldTouched: func.isRequired,
-      setFieldValue: func.isRequired,
-    }).isRequired,
-    id: oneOfType([string, number]),
-    isLabelHidden: bool,
-    isMulti: bool,
-    label: string.isRequired,
-    options: arrayOf(shape({ label: string.isRequired, value: string.isRequired }).isRequired)
-      .isRequired,
-  };
+Select.propTypes = {
+  field: shape({
+    name: string.isRequired,
+    value: oneOfType([string.isRequired, arrayOf(string.isRequired).isRequired]),
+  }).isRequired,
+  form: shape({
+    // TODO: Resolve why multiselects can end up with touched: { key: array }
+    // see ThemedReactSelect as well
+    // touched: objectOf(bool).isRequired,
+    touched: object.isRequired,
+    errors: objectOf(string).isRequired,
+    setFieldTouched: func.isRequired,
+    setFieldValue: func.isRequired,
+  }).isRequired,
+  id: oneOfType([string, number]),
+  isLabelHidden: bool,
+  isMulti: bool,
+  label: string.isRequired,
+  options: arrayOf(shape({ label: string.isRequired, value: string.isRequired }).isRequired)
+    .isRequired,
+};
 
-  static defaultProps = {
-    id: undefined,
-    isLabelHidden: false,
-    isMulti: false,
-  };
+Select.defaultProps = {
+  id: undefined,
+  isLabelHidden: false,
+  isMulti: false,
+};
 
+export default function Select({
+  field: { name, value: fieldValue },
+  form: { errors, setFieldTouched, setFieldValue, touched },
+  id,
+  isLabelHidden,
+  isMulti,
+  label,
+  options,
+  ...props // disabled, placeholder, etc.
+}) {
   /**
-   * @memberof Select
    * @description handle changing of non-multi select
    * @param {string} selected
    */
-  onChangeSingle = selected => {
-    const { field, form } = this.props;
-
-    form.setFieldValue(field.name, selected.value);
+  const onChangeSingle = selected => {
+    setFieldValue(name, selected.value);
   };
 
   /**
-   * @memberof Select
    * @description handle changing of multi select
    * @param {string[]} selectedArray
    */
-  onChangeMulti = selectedArray => {
-    const { field, form } = this.props;
+  const onChangeMulti = selectedArray => {
     if (selectedArray) {
-      form.setFieldValue(field.name, selectedArray.map(item => item.value));
+      setFieldValue(
+        name,
+        selectedArray.map(item => item.value),
+      );
     } else {
-      form.setFieldValue(field.name, []);
+      setFieldValue(name, []);
     }
   };
 
   /**
-   * @memberof Select
    * @description Return the selected value as a string
    * @returns {string}
    */
-  getValueFromSingle = () => {
-    const { field, options } = this.props;
-
-    return options.find(option => option.value === field.value);
+  const getValueFromSingle = () => {
+    return options.find(option => option.value === fieldValue);
   };
 
   /**
-   * @memberof Select
    * @description Return an array of selected values for multi selects
    * @returns {string[]}
    */
-  getValueFromMulti = () => {
-    const { field, options } = this.props;
-
-    return options.filter(option => field.value.includes(option.value));
+  const getValueFromMulti = () => {
+    return options.filter(option => fieldValue.includes(option.value));
   };
 
-  handleBlur = () => {
-    const {
-      field: { name },
-      form,
-    } = this.props;
-
-    form.setFieldTouched(name);
+  const handleBlur = () => {
+    setFieldTouched(name);
   };
 
-  render() {
-    const {
-      field: { name },
-      form: { errors, touched },
-      id,
-      isLabelHidden,
-      isMulti,
-      label,
-      options,
-      ...props // disabled, placeholder, etc.
-    } = this.props;
+  const hasErrors = Boolean(errors[name]);
 
-    const hasErrors = Boolean(errors[name]);
+  // handlers and value depend on whether or not select allows for multiple selections.
+  const value = isMulti ? getValueFromMulti() : getValueFromSingle();
+  const onChangeHandler = isMulti ? onChangeMulti : onChangeSingle;
 
-    // handlers and value depend on whether or not select allows for multiple selections.
-    const value = isMulti ? this.getValueFromMulti() : this.getValueFromSingle();
-    const onChangeHandler = isMulti ? this.onChangeMulti : this.onChangeSingle;
+  return (
+    <div className={styles.field}>
+      <Label for={name} isHidden={isLabelHidden}>
+        {label}
+      </Label>
 
-    return (
-      <div className={styles.field}>
-        <Label for={name} isHidden={isLabelHidden}>
-          {label}
-        </Label>
+      <div className={styles.selectFeedbackGrouping}>
+        <ThemedReactSelect
+          {...props}
+          hasErrors={hasErrors}
+          isTouched={touched[name]}
+          id={id || name}
+          isMulti={isMulti}
+          name={name}
+          onBlur={handleBlur}
+          onChange={onChangeHandler}
+          options={options}
+          value={value}
+        />
 
-        <div>
-          <ThemedReactSelect
-            {...props}
-            hasErrors={hasErrors}
-            isTouched={touched[name]}
-            id={id || name}
-            isMulti={isMulti}
-            name={name}
-            onBlur={this.handleBlur}
-            onChange={onChangeHandler}
-            options={options}
-            value={value}
-          />
-
-          <ErrorMessage
-            name={name}
-            render={message => {
-              return hasErrors ? (
-                <Alert className={styles.errorMessage} type="error">
-                  {message}
-                </Alert>
-              ) : null;
-            }}
-          />
-        </div>
+        <ErrorMessage
+          name={name}
+          render={message => {
+            return hasErrors ? (
+              <Alert className={styles.errorMessage} type="error">
+                {message}
+              </Alert>
+            ) : null;
+          }}
+        />
       </div>
-    );
-  }
+    </div>
+  );
 }
-
-export default Select;

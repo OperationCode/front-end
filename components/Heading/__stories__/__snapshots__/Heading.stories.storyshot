@@ -1,10 +1,34 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Heading default 1`] = `
-<h2
-  className="Heading gray headingLines"
-  id="heading1"
+<div
+  className="headingContainer"
 >
-  Heading Component
-</h2>
+  <h2
+    className="Heading"
+  >
+    <div
+      className="hashLinkContainer"
+      data-testid="Heading Content test-heading-link"
+    >
+      <a
+        data-testid="Hash Link"
+        href="#test-heading-link"
+        id="test-heading-link"
+      >
+        <span
+          className="ScreenReaderOnly"
+          data-testid="SCREEN_READER_ONLY"
+        >
+          Scroll Link for 
+          Test Heading
+        </span>
+        <svg
+          className="icon"
+        />
+      </a>
+      Test Heading
+    </div>
+  </h2>
+</div>
 `;

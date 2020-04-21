@@ -1,59 +1,63 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme'; // eslint-disable-line no-restricted-imports
 import cookie from 'js-cookie';
+import { fireEvent, render } from '@testing-library/react';
+import { CLOSE_BUTTON } from 'common/constants/testIDs';
 import createShallowSnapshotTest from 'test-utils/createShallowSnapshotTest';
 import { VALID_AUTH_TOKEN } from 'test-utils/mocks/jwtMock';
 
 import { Nav } from '../Nav';
 
-beforeEach(() => {
-  cookie.get = jest.fn().mockImplementation(() => undefined);
-});
-
 describe('Nav', () => {
+  beforeEach(() => {
+    cookie.get = jest.fn().mockImplementation(() => undefined);
+  });
+
   it('should render with no props passed', () => createShallowSnapshotTest(<Nav />));
 
   it('should render both desktop and mobile navigations', () => {
-    // we conditionally display them via CSS
-    const wrapper = shallow(<Nav />);
+    // we conditionally display them via CSS, but always render them
+    const wrapper = render(<Nav />);
 
-    expect(wrapper.find('[data-testid="Desktop Nav"]')).toExist();
-    expect(wrapper.find('NavMobile')).toExist();
+    expect(wrapper.queryByTestId('Desktop Nav Container')).not.toBeNull();
+    expect(wrapper.queryByTestId('Mobile Nav Container')).not.toBeNull();
   });
 
   it('should render logout link when logged in', () => {
     cookie.get = jest.fn().mockImplementation(() => VALID_AUTH_TOKEN);
 
-    const wrapper = mount(<Nav />);
+    const wrapper = render(<Nav />);
 
-    expect(wrapper.find('a[href="/login?loggedOut=true"]')).toExist();
+    expect(wrapper.container.querySelector('a[href="/login?loggedOut=true"]')).not.toBeNull();
   });
 
   it('should render who we serve section when logged out', () => {
-    const wrapper = mount(<Nav />);
+    const wrapper = render(<Nav />);
 
-    expect(wrapper.find('a[href="/who_we_serve"]')).toExist();
-    expect(wrapper.find('a[href="/login"]')).toExist();
-    expect(wrapper.find('a[href="/join"]')).toExist();
+    expect(wrapper.container.querySelector('a[href="/who_we_serve"]')).not.toBeNull();
+    expect(wrapper.container.querySelector('a[href="/login"]')).not.toBeNull();
+    expect(wrapper.container.querySelector('a[href="/join"]')).not.toBeNull();
   });
 
-  it('should change state accordingly when child component invokes openMenu callback', () => {
-    const wrapper = mount(<Nav />);
+  it('should only reveal mobile nav when hamburger button is clicked', () => {
+    const wrapper = render(<Nav />);
 
-    wrapper.find('.hamburger').simulate('click');
+    expect(wrapper.queryByTestId('Mobile Nav')).toBeNull();
 
-    expect(wrapper.state('isMobileNavOpen')).toBe(true);
+    const HamburgerButton = wrapper.queryByTestId('Hamburger Button');
+    fireEvent.click(HamburgerButton);
+
+    expect(wrapper.findByTestId('Mobile Nav')).not.toBeNull();
   });
 
-  it('should change state accordingly when child component invokes closeMenu callback', () => {
-    const wrapper = mount(<Nav />);
+  it('should hide mobile nav when hamburger button is clicked', async () => {
+    const wrapper = render(<Nav />);
 
-    wrapper.setState({ isMobileNavOpen: true });
-    wrapper.update();
+    const HamburgerButton = wrapper.queryByTestId('Hamburger Button');
+    fireEvent.click(HamburgerButton);
 
-    wrapper.find('CloseButton').simulate('click');
-    wrapper.update();
+    const CloseButton = await wrapper.findByTestId(CLOSE_BUTTON);
+    fireEvent.click(CloseButton);
 
-    expect(wrapper.state('isMobileNavOpen')).toBe(false);
+    expect(wrapper.queryByTestId('Mobile Nav')).toBeNull();
   });
 });

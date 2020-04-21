@@ -3,6 +3,7 @@
 exports[`Storyshots Form/Label default 1`] = `
 <label
   className="Label"
+  data-testid="LABEL"
   htmlFor="someInputName"
 >
   This component is always paired with an input

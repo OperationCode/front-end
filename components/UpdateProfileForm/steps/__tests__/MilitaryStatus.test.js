@@ -1,9 +1,9 @@
 import React from 'react';
 import { Formik } from 'formik';
-import { mount } from 'enzyme'; // eslint-disable-line no-restricted-imports
+import { fireEvent, render, wait } from '@testing-library/react';
 import OperationCodeAPIMock from 'test-utils/mocks/apiMock';
-import asyncRenderDiff from 'test-utils/asyncRenderDiff';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
+import { KEY_CODES } from 'test-utils/identifiers';
 import Form from 'components/Form/Form';
 
 import MilitaryStatus from '../MilitaryStatus';
@@ -29,7 +29,7 @@ describe('UpdateProfileForm/Steps/MilitaryStatus', () => {
   it('should update user on submit', async () => {
     OperationCodeAPIMock.onPatch('auth/profile/').reply(200);
 
-    const wrapper = mount(
+    const { container } = render(
       <Formik
         initialValues={MilitaryStatus.initialValues}
         validationSchema={MilitaryStatus.validationSchema}
@@ -40,22 +40,16 @@ describe('UpdateProfileForm/Steps/MilitaryStatus', () => {
         </Form>
       </Formik>,
     );
+    const ReactSelect = container.querySelector('#react-select-militaryStatus-input');
 
-    const ReactSelect = wrapper.find('input').first();
+    fireEvent.blur(ReactSelect);
+    fireEvent.keyDown(ReactSelect, KEY_CODES.DOWN_ARROW);
+    fireEvent.keyDown(ReactSelect, KEY_CODES.DOWN_ARROW);
+    fireEvent.keyDown(ReactSelect, KEY_CODES.ENTER);
+    fireEvent.submit(container.querySelector('form'));
 
-    ReactSelect.simulate('blur')
-      .simulate('keyDown', { key: 'ArrowDown', keyCode: 40 })
-      .simulate('keyDown', { key: 'ArrowDown', keyCode: 40 });
-
-    await asyncRenderDiff(wrapper);
-
-    ReactSelect.simulate('keyDown', { key: 'Enter', keyCode: 13 });
-
-    await asyncRenderDiff(wrapper);
-
-    wrapper.find('form').simulate('submit');
-    await asyncRenderDiff(wrapper);
-
-    expect(OperationCodeAPIMock.history.patch.length).toStrictEqual(1);
+    await wait(() => {
+      expect(OperationCodeAPIMock.history.patch.length).toStrictEqual(1);
+    });
   });
 });

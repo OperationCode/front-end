@@ -8,9 +8,36 @@ exports[`JoinSection should render when not logged in 1`] = `
   <div
     className="content"
   >
-    <h3>
-      Join Our Thriving Community
-    </h3>
+    <div
+      className="headingContainer"
+    >
+      <h3
+        className="Heading"
+      >
+        <div
+          className="hashLinkContainer"
+          data-testid="Heading Content join-our-thriving-community-link"
+        >
+          <a
+            data-testid="Hash Link"
+            href="#join-our-thriving-community-link"
+            id="join-our-thriving-community-link"
+          >
+            <span
+              className="ScreenReaderOnly"
+              data-testid="SCREEN_READER_ONLY"
+            >
+              Scroll Link for 
+              Join Our Thriving Community
+            </span>
+            <svg
+              className="icon"
+            />
+          </a>
+          Join Our Thriving Community
+        </div>
+      </h3>
+    </div>
     <p
       className="justifyAlign"
     >
@@ -33,12 +60,13 @@ exports[`JoinSection should render when not logged in 1`] = `
       rel="noopener noreferrer"
       target="_blank"
     >
+      Never heard of Slack before?
       <span
         className="ScreenReaderOnly"
+        data-testid="SCREEN_READER_ONLY"
       >
         Opens in new window
       </span>
-      Never heard of Slack before?
       <svg
         className="externalLinkIcon"
       />

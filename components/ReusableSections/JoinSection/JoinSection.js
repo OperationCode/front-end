@@ -3,7 +3,8 @@ import { hasValidAuthToken } from 'common/utils/cookie-utils';
 import Container from 'components/Container/Container';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 import LinkButton from 'components/LinkButton/LinkButton';
-import styles from './JoinSection.css';
+import Heading from 'components/Heading/Heading';
+import styles from './JoinSection.module.css';
 
 export function JoinSection() {
   const isLoggedIn = hasValidAuthToken();
@@ -15,7 +16,7 @@ export function JoinSection() {
 
   return (
     <Container theme="white" data-testid="Join Section">
-      <h3>Join Our Thriving Community</h3>
+      <Heading text="Join Our Thriving Community" headingLevel={3} />
 
       <p className={styles.justifyAlign}>
         Are you ready to begin your journey towards a career in software development? Get the

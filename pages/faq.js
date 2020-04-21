@@ -1,7 +1,7 @@
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
-import Accordion from 'components/Accordion/Accordion';
+import FAQAccordion from 'components/Accordion/FAQAccordion';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 import { donateLink } from 'common/constants/urls';
 
@@ -317,7 +317,7 @@ export default () => (
       title="General Questions"
       hasTitleUnderline
       columns={questions.general.map((faq, index) => (
-        <Accordion title={faq.title} content={faq.content} key={index} accessibilityId={index} />
+        <FAQAccordion title={faq.title} content={faq.content} key={index} accessibilityId={index} />
       ))}
     />
 
@@ -325,7 +325,7 @@ export default () => (
       title="Donation Questions"
       hasTitleUnderline
       columns={questions.donation.map((faq, index) => (
-        <Accordion title={faq.title} content={faq.content} key={index} accessibilityId={index} />
+        <FAQAccordion title={faq.title} content={faq.content} key={index} accessibilityId={index} />
       ))}
     />
 
@@ -333,7 +333,7 @@ export default () => (
       title="Volunteer Questions"
       hasTitleUnderline
       columns={questions.volunteer.map((faq, index) => (
-        <Accordion title={faq.title} content={faq.content} key={index} accessibilityId={index} />
+        <FAQAccordion title={faq.title} content={faq.content} key={index} accessibilityId={index} />
       ))}
     />
     {/* eslint-enable react/no-array-index-key */}

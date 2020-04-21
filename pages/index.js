@@ -11,7 +11,7 @@ import OutboundLink from 'components/OutboundLink/OutboundLink';
 import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
 import successStories from 'common/constants/successStories';
 import { donateLink, s3 } from 'common/constants/urls';
-import styles from './styles/index.css';
+import styles from './styles/index.module.css';
 
 const featuredLinksArray = [
   {
@@ -90,9 +90,7 @@ const Home = () => (
       theme="gray"
       columns={[
         <div className={styles.cta}>
-          <Heading hasHeadingLines theme="secondary">
-            Our Mission
-          </Heading>
+          <Heading text="Our Mission" hasTitleUnderline />
           <p className={styles.justifyAlign}>
             At Operation Code, we strongly believe in improving the lives of military veterans,
             service members, and their spouses. We increase their chances for success in the tech
