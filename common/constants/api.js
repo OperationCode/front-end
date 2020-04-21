@@ -22,6 +22,21 @@ export const getResourcesPromise = parameters => {
   );
 };
 
+export const searchResourcesPromise = parameters => {
+  const { page = 1 } = parameters;
+
+  return get(
+    'api/v1/search/',
+    {
+      parameters: {
+        ...parameters,
+        page,
+      },
+    },
+    ResourcesAPI,
+  );
+};
+
 /* POST REQUESTS */
 export const createUser = ({ email, password, firstName, lastName, zipcode }) =>
   post('auth/registration/', {
