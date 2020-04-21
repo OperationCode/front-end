@@ -68,9 +68,4 @@ describe('code schools', () => {
       });
     });
   });
-
-  describe('when server does not respond', () => {
-    // unfortunately, Cypress doesn't have the ability to stub network requests, so it's not
-    // possible to test for this situation. Maybe some day!
-  });
 });
