@@ -1,5 +1,5 @@
 import React from 'react';
-import { number, string } from 'prop-types';
+import { number, string, object } from 'prop-types';
 import LeftAngleIcon from 'static/images/icons/FontAwesome/angle-left-solid.svg';
 import RightAngleIcon from 'static/images/icons/FontAwesome/angle-right-solid.svg';
 import PaginationItem from './PaginationItem/PaginationItem';
@@ -9,6 +9,11 @@ Pagination.propTypes = {
   currentPage: number.isRequired,
   pathname: string.isRequired,
   totalPages: number.isRequired,
+  query: object,
+};
+
+Pagination.defaultProps = {
+  query: {},
 };
 
 export const developmentErrors = {
@@ -119,7 +124,7 @@ const PaginationItems = ({ currentPage, pathname, totalPages }) => {
   );
 };
 
-function Pagination({ currentPage, pathname, totalPages }) {
+function Pagination({ currentPage, pathname, totalPages, query }) {
   if (process.env.NODE_ENV !== 'production') {
     const isCurrentPageTooSmall = currentPage < 1;
 
@@ -144,15 +149,30 @@ function Pagination({ currentPage, pathname, totalPages }) {
     <nav className={styles.Pagination} data-testid="Pagination">
       <ol>
         {currentPage > 1 && (
-          <PaginationItem value={currentPage - 1} pathname={pathname} testId="leftAngle">
+          <PaginationItem
+            query={query}
+            value={currentPage - 1}
+            pathname={pathname}
+            testId="leftAngle"
+          >
             <LeftAngleIcon className={styles.icon} />
           </PaginationItem>
         )}
 
-        <PaginationItems currentPage={currentPage} totalPages={totalPages} pathname={pathname} />
+        <PaginationItems
+          query={query}
+          currentPage={currentPage}
+          totalPages={totalPages}
+          pathname={pathname}
+        />
 
         {currentPage < totalPages && (
-          <PaginationItem value={currentPage + 1} pathname={pathname} testId="rightAngle">
+          <PaginationItem
+            query={query}
+            value={currentPage + 1}
+            pathname={pathname}
+            testId="rightAngle"
+          >
             <RightAngleIcon className={styles.icon} />
           </PaginationItem>
         )}
