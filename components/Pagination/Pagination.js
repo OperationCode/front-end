@@ -4,7 +4,7 @@ import LeftAngleIcon from 'static/images/icons/FontAwesome/angle-left-solid.svg'
 import RightAngleIcon from 'static/images/icons/FontAwesome/angle-right-solid.svg';
 import PaginationItem from './PaginationItem/PaginationItem';
 import styles from './Pagination.module.css';
-
+/***/
 Pagination.propTypes = {
   currentPage: number.isRequired,
   pathname: string.isRequired,

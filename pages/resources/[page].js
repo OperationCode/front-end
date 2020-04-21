@@ -6,7 +6,7 @@ import ResourceCard from 'components/Cards/ResourceCard/ResourceCard';
 import Pagination from 'components/Pagination/Pagination';
 import { getResourcesPromise } from 'common/constants/api';
 import styles from '../styles/resources.module.css';
-
+/***/
 ResourcesPage.propTypes = {
   currentPage: PropTypes.number.isRequired,
   pathname: PropTypes.string.isRequired,

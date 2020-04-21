@@ -4,7 +4,7 @@ import { bool, node, number, string } from 'prop-types';
 import classNames from 'classnames';
 import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
 import styles from './PaginationItem.module.css';
-
+/***/
 PaginationItem.propTypes = {
   children: node.isRequired,
   isCurrent: bool,
