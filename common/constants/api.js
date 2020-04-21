@@ -38,6 +38,7 @@ export const searchResourcesPromise = parameters => {
 };
 
 /* POST REQUESTS */
+
 export const createUser = ({ email, password, firstName, lastName, zipcode }) =>
   post('auth/registration/', {
     email,
