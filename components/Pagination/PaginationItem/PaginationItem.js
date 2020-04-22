@@ -12,12 +12,13 @@ PaginationItem.propTypes = {
   pathname: string.isRequired,
   testId: string.isRequired,
   value: number,
-  query: object.isRequired,
+  query: object,
 };
 
 PaginationItem.defaultProps = {
   isCurrent: false,
   value: undefined,
+  query: {},
 };
 
 function PaginationItem({ children, isCurrent, pathname, testId, value, query }) {
