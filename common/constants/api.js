@@ -37,6 +37,9 @@ export const searchResourcesPromise = parameters => {
   );
 };
 
+export const getResourcesCategories = () => {
+  return get('api/v1/categories', {}, ResourcesAPI);
+};
 /* POST REQUESTS */
 
 export const createUser = ({ email, password, firstName, lastName, zipcode }) =>

@@ -1,7 +1,10 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable no-console */
 import React from 'react';
 import Link from 'next/link';
-import { bool, node, number, string, object } from 'prop-types';
+import { bool, node, number, string, func } from 'prop-types';
 import classNames from 'classnames';
 import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
 import styles from './PaginationItem.module.css';
@@ -12,7 +15,7 @@ PaginationItem.propTypes = {
   pathname: string.isRequired,
   testId: string.isRequired,
   value: number,
-  query: object.isRequired,
+  handlePagination: func.isRequired,
 };
 
 PaginationItem.defaultProps = {
@@ -20,7 +23,7 @@ PaginationItem.defaultProps = {
   value: undefined,
 };
 
-function PaginationItem({ children, isCurrent, pathname, testId, value, query }) {
+function PaginationItem({ children, isCurrent, pathname, testId, value, handlePagination }) {
   const isClickable = !!value;
 
   return (
@@ -30,14 +33,11 @@ function PaginationItem({ children, isCurrent, pathname, testId, value, query })
         [styles.notClickable]: !isClickable,
       })}
       data-testid={testId}
+      value={value}
     >
       {isClickable ? (
-        <Link
-          href={{ pathname, query }}
-          as={{ pathname: pathname.replace('[page]', value), query }}
-          scroll={false}
-        >
-          <a className={styles.unstyledLink}>
+        <Link href={pathname} as={pathname.replace('[page]', value)} scroll={false} passHref>
+          <a onClick={handlePagination} className={styles.unstyledLink} value={value}>
             <ScreenReaderOnly>Go to page</ScreenReaderOnly>
             {children}
           </a>
