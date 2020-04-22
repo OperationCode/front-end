@@ -5,7 +5,7 @@ import { formatUserData } from 'common/utils/formatters';
 export const getUserPromise = ({ token }) => get('auth/user/', { token });
 export const getCodeSchoolsPromise = () => get('api/v1/codeschools/');
 export const getTeamMembersPromise = () => get('api/v1/teamMembers/');
-
+/***/
 /* Resources API */
 export const getResourcesPromise = parameters => {
   const { page = 1 } = parameters;
@@ -37,7 +37,11 @@ export const searchResourcesPromise = parameters => {
   );
 };
 
+export const getResourcesCategories = () => {
+  return get('api/v1/categories', {}, ResourcesAPI);
+};
 /* POST REQUESTS */
+
 export const createUser = ({ email, password, firstName, lastName, zipcode }) =>
   post('auth/registration/', {
     email,

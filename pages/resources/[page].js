@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
-import { useState, useEffect } from 'react'; // eslint-disable-line  no-restricted-imports
+// eslint-disable-next-line no-restricted-imports
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 import Content from 'components/Content/Content';
 import Head from 'components/head';
@@ -9,14 +10,18 @@ import Pagination from 'components/Pagination/Pagination';
 import { Field, Formik } from 'formik';
 import Form from 'components/Form/Form';
 import Input from 'components/Form/Input/Input';
-import { getResourcesPromise, searchResourcesPromise } from 'common/constants/api';
+import {
+  getResourcesPromise,
+  // getResourcesCategories,
+  searchResourcesPromise,
+} from 'common/constants/api';
 import styles from '../styles/resources.module.css';
 
 ResourcesPage.propTypes = {
-  currentPage: PropTypes.number.isRequired,
+  currentPage: PropTypes.number,
   pathname: PropTypes.string.isRequired,
-  query: PropTypes.object,
-  defaultResources: PropTypes.arrayOf(
+  query: PropTypes.object.isRequired,
+  resources: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number, // integer, unique ID
       name: PropTypes.title,
@@ -26,63 +31,73 @@ ResourcesPage.propTypes = {
       downvotes: PropTypes.number,
     }),
   ).isRequired,
+  // eslint-disable-next-line react/no-unused-prop-types
   defaultTotalPages: PropTypes.number.isRequired,
 };
 
 ResourcesPage.defaultProps = {
-  query: { page: 1 },
+  currentPage: 1,
 };
 
-ResourcesPage.getInitialProps = async ({ pathname, query, asPath }) => {
-  const response = asPath.includes('search')
+ResourcesPage.getInitialProps = async ({ pathname, query }) => {
+  const { q = null, page } = query;
+  /* eventually need some sort of handler to decide which api call to use */
+  const response = query.search
     ? await searchResourcesPromise(query)
     : await getResourcesPromise(query);
-
-  const {
-    data: defaultResources,
-    number_of_pages: defaultTotalPages,
-    page: currentPage,
-  } = response.data;
+  console.log('configURL=', response.config.url);
+  console.log('QQuery', query);
+  const { data: resources, number_of_pages: totalPages, page: currentPage } = response.data;
 
   return {
     currentPage,
     pathname,
-    defaultResources,
-    defaultTotalPages,
+    resources,
+    totalPages,
     query,
+    page,
+    q,
   };
 };
 
-function ResourcesPage({ currentPage, pathname, defaultResources, defaultTotalPages, query }) {
-  const [currentQuery, setCurrentQuery] = useState(query);
-  const [currentResources, setCurrentResources] = useState(defaultResources);
-  const [currentTotalPages, setCurrentTotalPages] = useState(defaultTotalPages);
+// eslint-disable-next-line react/prop-types
+function ResourcesPage({ currentPage = 1, pathname, resources, totalPages, query }) {
+  // const [categories, setCategories] = useState([]);
+  const [currentResources, setCurrentResources] = useState(resources);
+  const [inputQuery, setInputQuery] = useState(query);
+  const [currentRoute, setCurrentRoute] = useState('');
 
-  console.log('currentQuery is:', currentQuery);
+  // const handlePagination = event => {
+  //   event.preventDefault();
+  //   console.log('slow down there partner');
+  //   const paginationPageNumber = event.currentTarget.getAttribute('value');
 
-  const handleSearch = async q => {
-    setCurrentQuery({ ...q, ...query });
-    await searchResourcesPromise({ ...q, ...query }).then(response => {
-      setCurrentResources(response.data.data);
-      setCurrentTotalPages(response.data.number_of_pages);
+  //   router.push({
+  //     pathname: `${pathname.replace('[page]', `${paginationPageNumber}`)}`,
+  //     query: query.q !== null ? { q: query.q } : null,
+  //     shallow: true,
+  //   });
+  // };
+
+  const handleSearch = async searchInputQuery => {
+    setInputQuery(previousState => {
+      return {
+        ...previousState,
+        ...searchInputQuery,
+        search: 'search',
+      };
     });
+    setCurrentRoute('search');
+
+    const response = await searchResourcesPromise({ ...searchInputQuery, ...query });
+    setCurrentResources(response.data.data);
   };
 
-  useEffect(() => {
-    setCurrentResources(previousState => {
-      return {
-        ...previousState,
-        defaultResources,
-      };
-    });
-
-    setCurrentQuery(previousState => {
-      return {
-        ...previousState,
-        page: currentPage,
-      };
-    });
-  }, [defaultResources, currentPage]);
+  console.group(
+    `currentRoute is: ${currentRoute},
+  inputQuery is`,
+    inputQuery,
+  );
 
   return (
     <>
@@ -100,10 +115,11 @@ function ResourcesPage({ currentPage, pathname, defaultResources, defaultTotalPa
           </Formik>,
           <section className={styles.fullWidth}>
             <Pagination
-              currentPage={currentPage}
-              totalPages={currentTotalPages}
+              currentPage={currentPage || 1}
+              totalPages={totalPages}
               pathname={pathname}
-              query={currentQuery}
+              route={currentRoute}
+              query={inputQuery}
             />
             <div className={styles.fullWidth}>
               {currentResources.map(resource => (
@@ -126,3 +142,20 @@ function ResourcesPage({ currentPage, pathname, defaultResources, defaultTotalPa
 }
 
 export default ResourcesPage;
+
+/* i think this is because the searchResources starts on page 0... */
+
+// Error: The value passed for currentPage is 0. "currentPage" cannot be less than 1.
+// Pagination
+// ./components/Pagination/Pagination.js:149
+//   146 |   const errorMessage = `${developmentErrors.currentPageValue(currentPage)} ${
+//   147 |     developmentErrors.currentPageTooSmall
+//   148 |   }`;
+// > 149 |   throw new Error(errorMessage);
+//       | ^  150 | }
+//   151 |
+//   152 | const isCurrentPageTooBig = currentPage > totalPages;
+
+// For the initial page load, getInitialProps will run on the server only.
+// getInitialProps will then run on the client when navigating to a different route via
+// the next/link component or by using next/router.
