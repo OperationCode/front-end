@@ -80,7 +80,7 @@ When you visit our website you're interacting with two systems, a front-end appl
 
 _Quick Note_: Our back-end API is not currently connected to this repo.
 
-The back-end is responsible for providing data for the front-end to display. This sometimes involves processing the data entered into the front-end, and running various jobs like inviting new users to Slack, or signing them up for our newsletter. Our back-end is written in Rails and it's source code can be viewed [here](https://github.com/OperationCode/back-end). It acts primarily as a "REST API".
+The back-end is responsible for providing data for the front-end to display. This sometimes involves processing the data entered into the front-end, and running various jobs like inviting new users to Slack, or signing them up for our newsletter. Our back-end is composed of multiple services written with Python using Django and Flask and it's source code can be viewed in [back-end](https://github.com/OperationCode/back-end) and [resources_api](https://github.com/OperationCode/resources_api). It acts primarily as a "REST API".
 
 > "back-end" is synonymous with server, server-side, and "models & controllers".
 
