@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
-// import { useState, useEffect } from 'react';
+// eslint-disable-next-line no-restricted-imports
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 import Content from 'components/Content/Content';
 import Head from 'components/head';
@@ -10,11 +11,10 @@ import { Field, Formik } from 'formik';
 import Form from 'components/Form/Form';
 import Input from 'components/Form/Input/Input';
 import {
-  // getResourcesPromise,
+  getResourcesPromise,
   // getResourcesCategories,
   searchResourcesPromise,
 } from 'common/constants/api';
-import { useRouter } from 'next/router';
 import styles from '../styles/resources.module.css';
 
 ResourcesPage.propTypes = {
@@ -39,10 +39,13 @@ ResourcesPage.defaultProps = {
 };
 
 ResourcesPage.getInitialProps = async ({ pathname, query }) => {
-  const { page = 1, q = null } = query;
+  const { q = null, page } = query;
   /* eventually need some sort of handler to decide which api call to use */
-  const response = await searchResourcesPromise(query);
-  console.log(response);
+  const response = query.search
+    ? await searchResourcesPromise(query)
+    : await getResourcesPromise(query);
+  console.log('configURL=', response.config.url);
+  console.log('QQuery', query);
   const { data: resources, number_of_pages: totalPages, page: currentPage } = response.data;
 
   return {
@@ -58,34 +61,41 @@ ResourcesPage.getInitialProps = async ({ pathname, query }) => {
 
 function ResourcesPage({ currentPage = 1, pathname, resources, totalPages, query }) {
   // const [categories, setCategories] = useState([]);
+  const [currentResources, setCurrentResources] = useState(resources);
+  const [inputQuery, setInputQuery] = useState(query);
+  const [currentRoute, setCurrentRoute] = useState('');
 
-  // useEffect(() => {
-  //   getResourcesCategories().then(response => {
-  //     console.log(response.data);
+  // const handlePagination = event => {
+  //   event.preventDefault();
+  //   console.log('slow down there partner');
+  //   const paginationPageNumber = event.currentTarget.getAttribute('value');
+
+  //   router.push({
+  //     pathname: `${pathname.replace('[page]', `${paginationPageNumber}`)}`,
+  //     query: query.q !== null ? { q: query.q } : null,
+  //     shallow: true,
   //   });
-  // }, []);
-
-  const router = useRouter();
-
-  const handlePagination = event => {
-    event.preventDefault();
-    console.log('slow down there partner');
-    const paginationPageNumber = event.currentTarget.getAttribute('value');
-
-    router.push({
-      pathname: `${pathname.replace('[page]', `${paginationPageNumber}`)}`,
-      query: query.q !== null ? { q: query.q } : null,
-      shallow: true,
-    });
-  };
+  // };
 
   const handleSearch = async searchInputQuery => {
-    router.push({
-      pathname: `${pathname.replace('[page]', `${currentPage}`)}`,
-      query: { ...searchInputQuery },
-      shallow: true,
+    setInputQuery(previousState => {
+      return {
+        ...previousState,
+        ...searchInputQuery,
+        search: 'search',
+      };
     });
+    setCurrentRoute('search');
+
+    const response = await searchResourcesPromise({ ...searchInputQuery, ...query });
+    setCurrentResources(response.data.data);
   };
+
+  console.group(
+    `currentRoute is: ${currentRoute},
+  inputQuery is`,
+    inputQuery,
+  );
 
   return (
     <>
@@ -103,13 +113,14 @@ function ResourcesPage({ currentPage = 1, pathname, resources, totalPages, query
           </Formik>,
           <section className={styles.fullWidth}>
             <Pagination
-              currentPage={currentPage + 1}
+              currentPage={currentPage || 1}
               totalPages={totalPages}
               pathname={pathname}
-              handlePagination={handlePagination}
+              route={currentRoute}
+              query={inputQuery}
             />
             <div className={styles.fullWidth}>
-              {resources.map(resource => (
+              {currentResources.map(resource => (
                 <ResourceCard
                   key={resource.id}
                   description={resource.notes}

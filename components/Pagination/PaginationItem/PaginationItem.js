@@ -4,9 +4,10 @@
 /* eslint-disable no-console */
 import React from 'react';
 import Link from 'next/link';
-import { bool, node, number, string, func } from 'prop-types';
+import { bool, node, number, string } from 'prop-types';
 import classNames from 'classnames';
 import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
+import { useRouter } from 'next/router';
 import styles from './PaginationItem.module.css';
 
 PaginationItem.propTypes = {
@@ -15,16 +16,40 @@ PaginationItem.propTypes = {
   pathname: string.isRequired,
   testId: string.isRequired,
   value: number,
-  handlePagination: func.isRequired,
+  query: string,
+  route: string,
 };
 
 PaginationItem.defaultProps = {
   isCurrent: false,
   value: undefined,
+  query: null,
+  route: null,
 };
 
-function PaginationItem({ children, isCurrent, pathname, testId, value, handlePagination }) {
+function PaginationItem({ children, isCurrent, pathname, testId, value, query, route }) {
+  const router = useRouter();
+
   const isClickable = !!value;
+
+  function handlePagination(event) {
+    event.preventDefault();
+
+    if (route === 'search') {
+      console.log('searching');
+      router.push({
+        pathname: `${pathname.replace('[page]', `${value}`)}/search`,
+        query: query.q ? { q: query.q } : null,
+        shallow: true,
+      });
+    } else {
+      router.push({
+        pathname: `${pathname.replace('[page]', `${value}`)}`,
+        query: query.q ? { q: query.q } : null,
+        shallow: true,
+      });
+    }
+  }
 
   return (
     <li

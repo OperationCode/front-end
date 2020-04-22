@@ -1,5 +1,5 @@
 import React from 'react';
-import { number, string, func } from 'prop-types';
+import { number, string, object } from 'prop-types';
 import LeftAngleIcon from 'static/images/icons/FontAwesome/angle-left-solid.svg';
 import RightAngleIcon from 'static/images/icons/FontAwesome/angle-right-solid.svg';
 import PaginationItem from './PaginationItem/PaginationItem';
@@ -9,7 +9,13 @@ Pagination.propTypes = {
   currentPage: number.isRequired,
   pathname: string.isRequired,
   totalPages: number.isRequired,
-  handlePagination: func.isRequired,
+  route: string,
+  query: object,
+};
+
+Pagination.defaultProps = {
+  route: null,
+  query: {},
 };
 
 export const developmentErrors = {
@@ -59,7 +65,7 @@ const getPagination = (currentPage, totalPages) => {
 };
 
 // eslint-disable-next-line react/prop-types
-const PaginationItems = ({ currentPage, pathname, totalPages, handlePagination }) => {
+const PaginationItems = ({ currentPage, pathname, totalPages, query, route }) => {
   const {
     paginationStart,
     paginationLength,
@@ -73,7 +79,8 @@ const PaginationItems = ({ currentPage, pathname, totalPages, handlePagination }
 
     return (
       <PaginationItem
-        handlePagination={handlePagination}
+        query={query}
+        route={route}
         key={page}
         value={page}
         isCurrent={isCurrent}
@@ -90,20 +97,22 @@ const PaginationItems = ({ currentPage, pathname, totalPages, handlePagination }
       {shouldTruncateStart && (
         <>
           <PaginationItem
+            query={query}
+            route={route}
             key="1"
             value={1}
             testId="1"
             pathname={pathname}
-            handlePagination={handlePagination}
           >
             1
           </PaginationItem>
 
           <PaginationItem
+            query={query}
+            route={route}
             key="separatorStart"
             testId="separatorStart"
             pathname={pathname}
-            handlePagination={handlePagination}
           >
             &hellip;
           </PaginationItem>
@@ -115,20 +124,22 @@ const PaginationItems = ({ currentPage, pathname, totalPages, handlePagination }
       {shouldTruncateEnd && (
         <>
           <PaginationItem
+            query={query}
+            route={route}
             key="separatorEnd"
             testId="separatorEnd"
             pathname={pathname}
-            handlePagination={handlePagination}
           >
             &hellip;
           </PaginationItem>
 
           <PaginationItem
+            query={query}
+            route={route}
             key={totalPages}
             value={totalPages}
             testId={`${totalPages}`}
             pathname={pathname}
-            handlePagination={handlePagination}
           >
             {totalPages}
           </PaginationItem>
@@ -138,7 +149,7 @@ const PaginationItems = ({ currentPage, pathname, totalPages, handlePagination }
   );
 };
 
-function Pagination({ currentPage, pathname, totalPages, handlePagination }) {
+function Pagination({ currentPage, pathname, totalPages, query, route }) {
   if (process.env.NODE_ENV !== 'production') {
     const isCurrentPageTooSmall = currentPage < 1;
 
@@ -164,28 +175,31 @@ function Pagination({ currentPage, pathname, totalPages, handlePagination }) {
       <ol>
         {currentPage > 1 && (
           <PaginationItem
+            query={query}
+            route={route}
             value={currentPage - 1}
             pathname={pathname}
             testId="leftAngle"
-            handlePagination={handlePagination}
           >
             <LeftAngleIcon className={styles.icon} />
           </PaginationItem>
         )}
 
         <PaginationItems
+          query={query}
+          route={route}
           currentPage={currentPage}
           totalPages={totalPages}
           pathname={pathname}
-          handlePagination={handlePagination}
         />
 
         {currentPage < totalPages && (
           <PaginationItem
+            query={query}
+            route={route}
             value={currentPage + 1}
             pathname={pathname}
             testId="rightAngle"
-            handlePagination={handlePagination}
           >
             <RightAngleIcon className={styles.icon} />
           </PaginationItem>
