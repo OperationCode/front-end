@@ -11,45 +11,35 @@ import { useRouter } from 'next/router';
 import styles from './PaginationItem.module.css';
 
 PaginationItem.propTypes = {
-  children: node.isRequired,
+  children: node,
   isCurrent: bool,
-  pathname: string.isRequired,
-  testId: string.isRequired,
+  pathname: string,
+  testId: string,
   value: number,
   query: object,
-  route: string,
 };
-
+/* will addresss proptypes later */
 PaginationItem.defaultProps = {
   isCurrent: false,
   value: undefined,
+  children: null,
+  pathname: null,
+  testId: null,
   query: {},
-  route: null,
 };
 
-function PaginationItem({ children, isCurrent, pathname, testId, value, query, route }) {
+function PaginationItem({ children, isCurrent, pathname, testId, value, query }) {
+  const isClickable = !!value;
   const router = useRouter();
 
-  const isClickable = !!value;
-
-  function handlePagination(event) {
+  const handlePagination = event => {
     event.preventDefault();
 
-    if (route === 'search') {
-      console.log('searching');
-      router.push({
-        pathname: `${pathname.replace('[page]', `${value}`)}`,
-        query: query.q ? { q: query.q } : null,
-        shallow: true,
-      });
-    } else {
-      router.push({
-        pathname: `${pathname.replace('[page]', `${value}`)}`,
-        query: query.q ? { q: query.q } : null,
-        shallow: true,
-      });
-    }
-  }
+    router.push({
+      pathname: router.pathname.replace('[page]', `${value}`),
+      query: { ...query, page: value },
+    });
+  };
 
   return (
     <li
@@ -61,8 +51,8 @@ function PaginationItem({ children, isCurrent, pathname, testId, value, query, r
       value={value}
     >
       {isClickable ? (
-        <Link href={pathname} as={pathname.replace('[page]', value)} scroll={false} passHref>
-          <a onClick={handlePagination} className={styles.unstyledLink} value={value}>
+        <Link href={pathname} as={pathname.replace('[page]', `${value}`)} scroll={false}>
+          <a onClick={handlePagination} className={styles.unstyledLink}>
             <ScreenReaderOnly>Go to page</ScreenReaderOnly>
             {children}
           </a>
@@ -75,3 +65,22 @@ function PaginationItem({ children, isCurrent, pathname, testId, value, query, r
 }
 
 export default PaginationItem;
+
+// function handlePagination(event) {
+//   event.preventDefault();
+
+//   if (route === 'search') {
+//     console.log('searching');
+//     router.push({
+//       pathname: `${pathname.replace('[page]', `${value}`)}`,
+//       query: query.q ? { q: query.q } : null,
+//       shallow: true,
+//     });
+//   } else {
+//     router.push({
+//       pathname: `${pathname.replace('[page]', `${value}`)}`,
+//       query: query.q ? { q: query.q } : null,
+//       shallow: true,
+//     });
+//   }
+// }

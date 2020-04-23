@@ -6,15 +6,16 @@ import PaginationItem from './PaginationItem/PaginationItem';
 import styles from './Pagination.module.css';
 
 Pagination.propTypes = {
-  currentPage: number.isRequired,
-  pathname: string.isRequired,
-  totalPages: number.isRequired,
-  route: string,
+  currentPage: number,
+  pathname: string,
+  totalPages: number,
   query: object,
 };
 
 Pagination.defaultProps = {
-  route: null,
+  currentPage: 1,
+  pathname: null,
+  totalPages: 1,
   query: {},
 };
 
@@ -65,7 +66,7 @@ const getPagination = (currentPage, totalPages) => {
 };
 
 // eslint-disable-next-line react/prop-types
-const PaginationItems = ({ currentPage, pathname, totalPages, query, route }) => {
+const PaginationItems = ({ currentPage, pathname, totalPages, query }) => {
   const {
     paginationStart,
     paginationLength,
@@ -79,13 +80,12 @@ const PaginationItems = ({ currentPage, pathname, totalPages, query, route }) =>
 
     return (
       <PaginationItem
-        query={query}
-        route={route}
         key={page}
         value={page}
         isCurrent={isCurrent}
         testId={`${page}`}
         pathname={pathname}
+        query={query}
       >
         {page}
       </PaginationItem>
@@ -96,23 +96,15 @@ const PaginationItems = ({ currentPage, pathname, totalPages, query, route }) =>
     <>
       {shouldTruncateStart && (
         <>
-          <PaginationItem
-            query={query}
-            route={route}
-            key="1"
-            value={1}
-            testId="1"
-            pathname={pathname}
-          >
+          <PaginationItem key="1" value={1} testId="1" pathname={pathname} query={query}>
             1
           </PaginationItem>
 
           <PaginationItem
-            query={query}
-            route={route}
             key="separatorStart"
             testId="separatorStart"
             pathname={pathname}
+            query={query}
           >
             &hellip;
           </PaginationItem>
@@ -124,22 +116,20 @@ const PaginationItems = ({ currentPage, pathname, totalPages, query, route }) =>
       {shouldTruncateEnd && (
         <>
           <PaginationItem
-            query={query}
-            route={route}
             key="separatorEnd"
             testId="separatorEnd"
             pathname={pathname}
+            query={query}
           >
             &hellip;
           </PaginationItem>
 
           <PaginationItem
-            query={query}
-            route={route}
             key={totalPages}
             value={totalPages}
             testId={`${totalPages}`}
             pathname={pathname}
+            query={query}
           >
             {totalPages}
           </PaginationItem>
@@ -149,7 +139,7 @@ const PaginationItems = ({ currentPage, pathname, totalPages, query, route }) =>
   );
 };
 
-function Pagination({ currentPage, pathname, totalPages, query, route }) {
+function Pagination({ currentPage, pathname, totalPages, query }) {
   if (process.env.NODE_ENV !== 'production') {
     const isCurrentPageTooSmall = currentPage < 1;
 
@@ -175,31 +165,28 @@ function Pagination({ currentPage, pathname, totalPages, query, route }) {
       <ol>
         {currentPage > 1 && (
           <PaginationItem
-            query={query}
-            route={route}
             value={currentPage - 1}
             pathname={pathname}
             testId="leftAngle"
+            query={query}
           >
             <LeftAngleIcon className={styles.icon} />
           </PaginationItem>
         )}
 
         <PaginationItems
-          query={query}
-          route={route}
           currentPage={currentPage}
           totalPages={totalPages}
           pathname={pathname}
+          query={query}
         />
 
         {currentPage < totalPages && (
           <PaginationItem
-            query={query}
-            route={route}
             value={currentPage + 1}
             pathname={pathname}
             testId="rightAngle"
+            query={query}
           >
             <RightAngleIcon className={styles.icon} />
           </PaginationItem>

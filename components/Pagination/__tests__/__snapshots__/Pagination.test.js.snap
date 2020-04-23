@@ -16,7 +16,6 @@ exports[`Pagination should render with required props 1`] = `
         href="/resources/1"
         onClick={[Function]}
         onMouseEnter={[Function]}
-        value={1}
       >
         <span
           className="ScreenReaderOnly"
@@ -37,7 +36,6 @@ exports[`Pagination should render with required props 1`] = `
         href="/resources/2"
         onClick={[Function]}
         onMouseEnter={[Function]}
-        value={2}
       >
         <span
           className="ScreenReaderOnly"
@@ -58,7 +56,6 @@ exports[`Pagination should render with required props 1`] = `
         href="/resources/3"
         onClick={[Function]}
         onMouseEnter={[Function]}
-        value={3}
       >
         <span
           className="ScreenReaderOnly"
@@ -79,7 +76,6 @@ exports[`Pagination should render with required props 1`] = `
         href="/resources/4"
         onClick={[Function]}
         onMouseEnter={[Function]}
-        value={4}
       >
         <span
           className="ScreenReaderOnly"
@@ -100,7 +96,6 @@ exports[`Pagination should render with required props 1`] = `
         href="/resources/5"
         onClick={[Function]}
         onMouseEnter={[Function]}
-        value={5}
       >
         <span
           className="ScreenReaderOnly"
@@ -121,7 +116,6 @@ exports[`Pagination should render with required props 1`] = `
         href="/resources/6"
         onClick={[Function]}
         onMouseEnter={[Function]}
-        value={6}
       >
         <span
           className="ScreenReaderOnly"
@@ -142,7 +136,6 @@ exports[`Pagination should render with required props 1`] = `
         href="/resources/7"
         onClick={[Function]}
         onMouseEnter={[Function]}
-        value={7}
       >
         <span
           className="ScreenReaderOnly"
@@ -163,7 +156,6 @@ exports[`Pagination should render with required props 1`] = `
         href="/resources/8"
         onClick={[Function]}
         onMouseEnter={[Function]}
-        value={8}
       >
         <span
           className="ScreenReaderOnly"
@@ -184,7 +176,6 @@ exports[`Pagination should render with required props 1`] = `
         href="/resources/9"
         onClick={[Function]}
         onMouseEnter={[Function]}
-        value={9}
       >
         <span
           className="ScreenReaderOnly"
@@ -211,7 +202,6 @@ exports[`Pagination should render with required props 1`] = `
         href="/resources/20"
         onClick={[Function]}
         onMouseEnter={[Function]}
-        value={20}
       >
         <span
           className="ScreenReaderOnly"
@@ -232,7 +222,6 @@ exports[`Pagination should render with required props 1`] = `
         href="/resources/2"
         onClick={[Function]}
         onMouseEnter={[Function]}
-        value={2}
       >
         <span
           className="ScreenReaderOnly"
