@@ -4,7 +4,7 @@
 /* eslint-disable no-console */
 import React from 'react';
 import Link from 'next/link';
-import { bool, node, number, string } from 'prop-types';
+import { bool, node, number, string, object } from 'prop-types';
 import classNames from 'classnames';
 import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
 import { useRouter } from 'next/router';
@@ -16,14 +16,14 @@ PaginationItem.propTypes = {
   pathname: string.isRequired,
   testId: string.isRequired,
   value: number,
-  query: string,
+  query: object,
   route: string,
 };
 
 PaginationItem.defaultProps = {
   isCurrent: false,
   value: undefined,
-  query: null,
+  query: {},
   route: null,
 };
 
