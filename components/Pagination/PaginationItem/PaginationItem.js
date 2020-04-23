@@ -38,7 +38,7 @@ function PaginationItem({ children, isCurrent, pathname, testId, value, query, r
     if (route === 'search') {
       console.log('searching');
       router.push({
-        pathname: `${pathname.replace('[page]', `${value}`)}/search`,
+        pathname: `${pathname.replace('[page]', `${value}`)}`,
         query: query.q ? { q: query.q } : null,
         shallow: true,
       });
