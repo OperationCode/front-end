@@ -42,7 +42,7 @@ ResourcesPage.defaultProps = {
 ResourcesPage.getInitialProps = async ({ pathname, query }) => {
   const { q = null, page } = query;
   /* eventually need some sort of handler to decide which api call to use */
-  const response = query.search
+  const response = !query.search
     ? await searchResourcesPromise(query)
     : await getResourcesPromise(query);
   console.log('configURL=', response.config.url);
