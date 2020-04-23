@@ -9,12 +9,14 @@ exports[`Pagination should render with required props 1`] = `
     <li
       className="PaginationItem current"
       data-testid="1"
+      value={1}
     >
       <a
         className="unstyledLink"
         href="/resources/1"
         onClick={[Function]}
         onMouseEnter={[Function]}
+        value={1}
       >
         <span
           className="ScreenReaderOnly"
@@ -28,12 +30,14 @@ exports[`Pagination should render with required props 1`] = `
     <li
       className="PaginationItem"
       data-testid="2"
+      value={2}
     >
       <a
         className="unstyledLink"
         href="/resources/2"
         onClick={[Function]}
         onMouseEnter={[Function]}
+        value={2}
       >
         <span
           className="ScreenReaderOnly"
@@ -47,12 +51,14 @@ exports[`Pagination should render with required props 1`] = `
     <li
       className="PaginationItem"
       data-testid="3"
+      value={3}
     >
       <a
         className="unstyledLink"
         href="/resources/3"
         onClick={[Function]}
         onMouseEnter={[Function]}
+        value={3}
       >
         <span
           className="ScreenReaderOnly"
@@ -66,12 +72,14 @@ exports[`Pagination should render with required props 1`] = `
     <li
       className="PaginationItem"
       data-testid="4"
+      value={4}
     >
       <a
         className="unstyledLink"
         href="/resources/4"
         onClick={[Function]}
         onMouseEnter={[Function]}
+        value={4}
       >
         <span
           className="ScreenReaderOnly"
@@ -85,12 +93,14 @@ exports[`Pagination should render with required props 1`] = `
     <li
       className="PaginationItem"
       data-testid="5"
+      value={5}
     >
       <a
         className="unstyledLink"
         href="/resources/5"
         onClick={[Function]}
         onMouseEnter={[Function]}
+        value={5}
       >
         <span
           className="ScreenReaderOnly"
@@ -104,12 +114,14 @@ exports[`Pagination should render with required props 1`] = `
     <li
       className="PaginationItem"
       data-testid="6"
+      value={6}
     >
       <a
         className="unstyledLink"
         href="/resources/6"
         onClick={[Function]}
         onMouseEnter={[Function]}
+        value={6}
       >
         <span
           className="ScreenReaderOnly"
@@ -123,12 +135,14 @@ exports[`Pagination should render with required props 1`] = `
     <li
       className="PaginationItem"
       data-testid="7"
+      value={7}
     >
       <a
         className="unstyledLink"
         href="/resources/7"
         onClick={[Function]}
         onMouseEnter={[Function]}
+        value={7}
       >
         <span
           className="ScreenReaderOnly"
@@ -142,12 +156,14 @@ exports[`Pagination should render with required props 1`] = `
     <li
       className="PaginationItem"
       data-testid="8"
+      value={8}
     >
       <a
         className="unstyledLink"
         href="/resources/8"
         onClick={[Function]}
         onMouseEnter={[Function]}
+        value={8}
       >
         <span
           className="ScreenReaderOnly"
@@ -161,12 +177,14 @@ exports[`Pagination should render with required props 1`] = `
     <li
       className="PaginationItem"
       data-testid="9"
+      value={9}
     >
       <a
         className="unstyledLink"
         href="/resources/9"
         onClick={[Function]}
         onMouseEnter={[Function]}
+        value={9}
       >
         <span
           className="ScreenReaderOnly"
@@ -186,12 +204,14 @@ exports[`Pagination should render with required props 1`] = `
     <li
       className="PaginationItem"
       data-testid="20"
+      value={20}
     >
       <a
         className="unstyledLink"
         href="/resources/20"
         onClick={[Function]}
         onMouseEnter={[Function]}
+        value={20}
       >
         <span
           className="ScreenReaderOnly"
@@ -205,12 +225,14 @@ exports[`Pagination should render with required props 1`] = `
     <li
       className="PaginationItem"
       data-testid="rightAngle"
+      value={2}
     >
       <a
         className="unstyledLink"
         href="/resources/2"
         onClick={[Function]}
         onMouseEnter={[Function]}
+        value={2}
       >
         <span
           className="ScreenReaderOnly"
