@@ -9,6 +9,7 @@ describe('Pagination', () => {
     currentPage: 1,
     totalPages: 20,
     pathname: '/resources/[page]',
+    query: {},
   };
 
   afterEach(cleanup);
@@ -62,6 +63,14 @@ describe('Pagination', () => {
     expect(() =>
       Pagination({ currentPage: 6, totalPages: 5, pathname: requiredProps.pathname }),
     ).toThrow(developmentErrors.currentPageTooBig);
+    /* eslint-enable function-paren-newline */
   });
-  /* eslint-enable function-paren-newline */
+
+  it('should throw an error if not using `[page]` in route path param', () => {
+    /* eslint-disable function-paren-newline */
+    expect(() => Pagination({ ...requiredProps, pathname: '/resources' })).toThrow(
+      developmentErrors.mustUsePageAsPathParam,
+    );
+    /* eslint-enable function-paren-newline */
+  });
 });

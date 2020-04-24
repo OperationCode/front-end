@@ -21,6 +21,7 @@ storiesOf('Pagination', module)
         <Pagination
           currentPage={number('currentPage', 1) || 1}
           pathname="/resources/[page]"
+          query={{}}
           totalPages={number('totalPages', 20) || 20}
         />
       </>
