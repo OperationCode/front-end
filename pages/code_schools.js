@@ -1,4 +1,4 @@
-import { useState } from 'react'; // eslint-disable-line  no-restricted-imports
+import { useState } from 'react';
 import { array } from 'prop-types';
 import Head from 'components/head';
 import ThemedReactSelect from 'components/Form/Select/ThemedReactSelect';
