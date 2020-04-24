@@ -12,7 +12,7 @@ function ResourcesPageIndex() {
   const router = useRouter();
 
   useEffect(() => {
-    router.push('/resources/1');
+    router.push({ pathname: '/resources/1', query: router.query });
   }, []);
 
   return (
