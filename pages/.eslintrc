@@ -13,6 +13,7 @@
           },
           {
             "name": "react",
+            "importNames": ["default"],
             "message": "React is globally availble for all page files."
           }
         ]
