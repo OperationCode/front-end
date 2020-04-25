@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'; // eslint-disable-line  no-restricted-imports
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { withRouter } from 'next/router';
 import { bool, shape, func } from 'prop-types';

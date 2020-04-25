@@ -1,3 +1,25 @@
-.fullWidth {
-  width: 90vw;
+.resourcesCardWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.searchContainer {
+  margin: 2rem 0;
+  width: 100%;
+}
+
+.searchContainer > h5 {
+  text-align: center;
+}
+
+.selectContainer {
+  display: flex;
+  margin: 2rem 0;
+  width: 100%;
+}
+
+.selectColumn {
+  flex: 50%;
+  margin: 1rem;
 }

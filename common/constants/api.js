@@ -5,43 +5,18 @@ import { formatUserData } from 'common/utils/formatters';
 export const getUserPromise = ({ token }) => get('auth/user/', { token });
 export const getCodeSchoolsPromise = () => get('api/v1/codeschools/');
 export const getTeamMembersPromise = () => get('api/v1/teamMembers/');
-/***/
-/* Resources API */
-export const getResourcesPromise = parameters => {
-  const { page = 1 } = parameters;
-
-  return get(
-    'api/v1/resources/',
-    {
-      parameters: {
-        ...parameters,
-        page,
-      },
-    },
-    ResourcesAPI,
-  );
-};
-
-export const searchResourcesPromise = parameters => {
-  const { page = 1 } = parameters;
-
-  return get(
-    'api/v1/search/',
-    {
-      parameters: {
-        ...parameters,
-        page,
-      },
-    },
-    ResourcesAPI,
-  );
-};
-
+export const getResourcesPromise = parameters =>
+  get('api/v1/resources/', { parameters }, ResourcesAPI);
+export const getResourcesBySearch = parameters =>
+  get('api/v1/search/', { parameters }, ResourcesAPI);
 export const getResourcesCategories = () => {
   return get('api/v1/categories', {}, ResourcesAPI);
 };
-/* POST REQUESTS */
+export const getResourcesLanguages = () => {
+  return get('api/v1/languages', {}, ResourcesAPI);
+};
 
+/* POST REQUESTS */
 export const createUser = ({ email, password, firstName, lastName, zipcode }) =>
   post('auth/registration/', {
     email,

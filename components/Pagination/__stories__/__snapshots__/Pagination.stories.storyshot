@@ -22,7 +22,6 @@ Array [
       <li
         className="PaginationItem current"
         data-testid="1"
-        value={1}
       >
         <a
           className="unstyledLink"
@@ -42,7 +41,6 @@ Array [
       <li
         className="PaginationItem"
         data-testid="2"
-        value={2}
       >
         <a
           className="unstyledLink"
@@ -62,7 +60,6 @@ Array [
       <li
         className="PaginationItem"
         data-testid="3"
-        value={3}
       >
         <a
           className="unstyledLink"
@@ -82,7 +79,6 @@ Array [
       <li
         className="PaginationItem"
         data-testid="4"
-        value={4}
       >
         <a
           className="unstyledLink"
@@ -102,7 +98,6 @@ Array [
       <li
         className="PaginationItem"
         data-testid="5"
-        value={5}
       >
         <a
           className="unstyledLink"
@@ -122,7 +117,6 @@ Array [
       <li
         className="PaginationItem"
         data-testid="6"
-        value={6}
       >
         <a
           className="unstyledLink"
@@ -142,7 +136,6 @@ Array [
       <li
         className="PaginationItem"
         data-testid="7"
-        value={7}
       >
         <a
           className="unstyledLink"
@@ -162,7 +155,6 @@ Array [
       <li
         className="PaginationItem"
         data-testid="8"
-        value={8}
       >
         <a
           className="unstyledLink"
@@ -182,7 +174,6 @@ Array [
       <li
         className="PaginationItem"
         data-testid="9"
-        value={9}
       >
         <a
           className="unstyledLink"
@@ -208,7 +199,6 @@ Array [
       <li
         className="PaginationItem"
         data-testid="20"
-        value={20}
       >
         <a
           className="unstyledLink"
@@ -228,7 +218,6 @@ Array [
       <li
         className="PaginationItem"
         data-testid="rightAngle"
-        value={2}
       >
         <a
           className="unstyledLink"

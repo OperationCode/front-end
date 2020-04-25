@@ -1,4 +1,4 @@
-import { useState } from 'react'; // eslint-disable-line  no-restricted-imports
+import { useState } from 'react';
 import Link from 'next/link';
 import { string } from 'prop-types';
 import Head from 'components/head';

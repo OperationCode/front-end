@@ -6,23 +6,17 @@ import PaginationItem from './PaginationItem/PaginationItem';
 import styles from './Pagination.module.css';
 
 Pagination.propTypes = {
-  currentPage: number,
-  pathname: string,
-  totalPages: number,
-  query: object,
-};
-
-Pagination.defaultProps = {
-  currentPage: 1,
-  pathname: null,
-  totalPages: 1,
-  query: {},
+  currentPage: number.isRequired,
+  pathname: string.isRequired,
+  query: object.isRequired,
+  totalPages: number.isRequired,
 };
 
 export const developmentErrors = {
   currentPageValue: value => `The value passed for currentPage is ${value}.`,
   currentPageTooSmall: '"currentPage" cannot be less than 1.',
   currentPageTooBig: '"currentPage" cannot be larger than "totalPages".',
+  mustUsePageAsPathParam: `Your path parameter must be "[page]". See https://nextjs.org/docs/routing/dynamic-routes for more`,
 };
 
 const getPagination = (currentPage, totalPages) => {
@@ -66,7 +60,7 @@ const getPagination = (currentPage, totalPages) => {
 };
 
 // eslint-disable-next-line react/prop-types
-const PaginationItems = ({ currentPage, pathname, totalPages, query }) => {
+const PaginationItems = ({ currentPage, pathname, query, totalPages }) => {
   const {
     paginationStart,
     paginationLength,
@@ -96,16 +90,11 @@ const PaginationItems = ({ currentPage, pathname, totalPages, query }) => {
     <>
       {shouldTruncateStart && (
         <>
-          <PaginationItem key="1" value={1} testId="1" pathname={pathname} query={query}>
+          <PaginationItem key="1" value={1} testId="1" pathname={pathname}>
             1
           </PaginationItem>
 
-          <PaginationItem
-            key="separatorStart"
-            testId="separatorStart"
-            pathname={pathname}
-            query={query}
-          >
+          <PaginationItem key="separatorStart" testId="separatorStart" pathname={pathname}>
             &hellip;
           </PaginationItem>
         </>
@@ -115,12 +104,7 @@ const PaginationItems = ({ currentPage, pathname, totalPages, query }) => {
 
       {shouldTruncateEnd && (
         <>
-          <PaginationItem
-            key="separatorEnd"
-            testId="separatorEnd"
-            pathname={pathname}
-            query={query}
-          >
+          <PaginationItem key="separatorEnd" testId="separatorEnd" pathname={pathname}>
             &hellip;
           </PaginationItem>
 
@@ -129,7 +113,6 @@ const PaginationItems = ({ currentPage, pathname, totalPages, query }) => {
             value={totalPages}
             testId={`${totalPages}`}
             pathname={pathname}
-            query={query}
           >
             {totalPages}
           </PaginationItem>
@@ -139,7 +122,8 @@ const PaginationItems = ({ currentPage, pathname, totalPages, query }) => {
   );
 };
 
-function Pagination({ currentPage, pathname, totalPages, query }) {
+function Pagination({ currentPage, pathname, query, totalPages }) {
+  /* Developer Errors */
   if (process.env.NODE_ENV !== 'production') {
     const isCurrentPageTooSmall = currentPage < 1;
 
@@ -147,6 +131,7 @@ function Pagination({ currentPage, pathname, totalPages, query }) {
       const errorMessage = `${developmentErrors.currentPageValue(currentPage)} ${
         developmentErrors.currentPageTooSmall
       }`;
+
       throw new Error(errorMessage);
     }
 
@@ -158,6 +143,10 @@ function Pagination({ currentPage, pathname, totalPages, query }) {
 
       throw new Error(errorMessage);
     }
+
+    if (!pathname.endsWith('[page]')) {
+      throw new Error(developmentErrors.mustUsePageAsPathParam);
+    }
   }
 
   return (
@@ -167,8 +156,8 @@ function Pagination({ currentPage, pathname, totalPages, query }) {
           <PaginationItem
             value={currentPage - 1}
             pathname={pathname}
-            testId="leftAngle"
             query={query}
+            testId="leftAngle"
           >
             <LeftAngleIcon className={styles.icon} />
           </PaginationItem>
@@ -185,8 +174,8 @@ function Pagination({ currentPage, pathname, totalPages, query }) {
           <PaginationItem
             value={currentPage + 1}
             pathname={pathname}
-            testId="rightAngle"
             query={query}
+            testId="rightAngle"
           >
             <RightAngleIcon className={styles.icon} />
           </PaginationItem>

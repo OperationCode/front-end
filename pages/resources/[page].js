@@ -1,83 +1,151 @@
-// eslint-disable-next-line no-restricted-imports
-import { useState, useEffect } from 'react';
+/* eslint-disable no-console */
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+import get from 'lodash/get';
+import isNumber from 'lodash/isNumber';
 import Content from 'components/Content/Content';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
-import ResourceCard from 'components/Cards/ResourceCard/ResourceCard';
 import Pagination from 'components/Pagination/Pagination';
+import ResourceCard from 'components/Cards/ResourceCard/ResourceCard';
+import {
+  // getResourcesPromise,
+  getResourcesCategories,
+  getResourcesLanguages,
+  getResourcesBySearch,
+} from 'common/constants/api';
 import { Field, Formik } from 'formik';
 import Form from 'components/Form/Form';
 import Input from 'components/Form/Input/Input';
-import { useRouter } from 'next/router';
-import {
-  // getResourcesCategories,
-  searchResourcesPromise,
-} from 'common/constants/api';
+import omit from 'lodash/omit';
 import styles from '../styles/resources.module.css';
+import ThemedReactSelect from '../../components/Form/Select/ThemedReactSelect';
+import Alert from '../../components/Alert/Alert';
 
 function ResourcesPage() {
-  const [resources, setResources] = useState([]);
-  const [query, setQuery] = useState({});
-  // const [endpoint, setEndpoint] = useState({ search: false, resources: true });
-  const [currentPage, setCurrentPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(1);
-  const [pathname, setPathname] = useState('resources/[page]');
-
   const router = useRouter();
-  const { pageFromRouter = 1, q } = router.query;
+  const { pathname, query } = router;
+  const currentPage = parseInt(query.page, 10);
+
+  if (!isNumber(currentPage)) {
+    // TODO: Handle situation where user tried some funny business, like `/resources/fuck-you`
+
+    throw new Error(`'currentPage' is not a number`);
+  }
+
+  // error/loading control
+  const [errorMessage, setErrorMessage] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+
+  // flow control
+  const [resources, setResources] = useState([]);
+  const [totalPages, setTotalPages] = useState(currentPage);
+  const [searchQuery, setSearchQuery] = useState(null);
+
+  // categories
+  const [categories, setCategories] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState('');
+
+  // languages
+  const [allLanguages, setAllLanguages] = useState([]);
+  const [selectedLanguages, setSelectedLanguages] = useState([]);
 
   useEffect(() => {
-    setPathname(router.pathname);
-    setQuery(router.query);
+    Promise.all([getResourcesCategories(), getResourcesLanguages()])
+      .then(([categoriesResponse, languagesResponse]) => {
+        const {
+          data: { data: categoriesData },
+        } = categoriesResponse;
+        const {
+          data: { data: languagesData },
+        } = languagesResponse;
+
+        setAllLanguages(
+          languagesData.map(language => {
+            return {
+              value: language.name.replace(/ /g, '-').toLowerCase(),
+              label: language.name,
+            };
+          }),
+        );
+        setCategories(
+          categoriesData.map(category => {
+            return {
+              value: category.name.replace(/ /g, '-').toLowerCase(),
+              label: category.name,
+            };
+          }),
+        );
+      })
+      .catch(error => {
+        console.warn(`There was an error trying to fetch the initial resources.: ${error}`);
+        setErrorMessage('There was an error finding these resources.');
+      });
   }, []);
 
-  const handleSearch = userInput => {
-    // setEndpoint({ search: true, resources: false });
-    setQuery(previousQuery => {
-      return {
-        ...previousQuery,
-        ...userInput,
-      };
-    });
+  useEffect(() => {
+    /* TODO: 
+    need some sort of handler to know when to use the resources api 
+    vs when to use the search api for rn i just hardcode to test */
 
+    const { page, category, languages } = query;
+    getResourcesBySearch({ page, category, languages, ...searchQuery })
+      .then(response => {
+        const fetchedResources = get(response, 'data.data', []);
+        const fetchedNumberOfPages = get(response, 'data.number_of_pages', 0);
+
+        if (fetchedResources.length === 0 || fetchedNumberOfPages === 0) {
+          /* TODO: set state for variable which conditionally renders "No resources" view */
+          return;
+        }
+
+        setResources(fetchedResources);
+        setTotalPages(fetchedNumberOfPages);
+        setIsLoading(false);
+      })
+      .catch(error => {
+        // TODO: Do something with erroror state
+        console.log('error', error);
+        setErrorMessage('There was an error gathering those resources.');
+        setIsLoading(false);
+      });
+
+    return () => {
+      setIsLoading(true);
+    };
+  }, [query]);
+
+  const updateQuery = newQueryObject => {
+    const { page } = query;
+    const relevantQueryStringObject = omit(query, ['page']);
     router.push(
       {
-        pathname: `${pathname}`,
-        query,
+        pathname,
+        query: { page, ...newQueryObject },
       },
-      `${pathname.replace('[page]', currentPage)}?q=${q}&page=${pageFromRouter}`,
+      { pathname: pathname.replace('[page]', '1'), query: relevantQueryStringObject },
     );
   };
 
-  useEffect(() => {
-    async function updateResources() {
-      const response = await searchResourcesPromise(query);
-      // eslint-disable-next-line camelcase
-      const { data, number_of_pages, page } = response.data;
-      setResources(data);
-      setTotalPages(number_of_pages);
-      setCurrentPage(page);
+  const handleSearch = userInput => {
+    setSearchQuery(userInput);
+    updateQuery(userInput);
+  };
+
+  const handleCategory = category => {
+    const { label } = category;
+    setSelectedCategory(label);
+    updateQuery({ category: label });
+  };
+
+  const handleLanguages = language => {
+    if (!language) {
+      /* TODO: handle if multi select is empty */
+      return;
     }
-    updateResources();
-  }, [query]);
-
-  /* this one uses the routeChangeStart event.. thought I would have success with it, but no luck */
-
-  // useEffect(() => {
-  //   const handleQueryChange = async () => {
-  //     const response = await searchResourcesPromise(query);
-  //     console.log('query inside endpoint', query);
-  //     // eslint-disable-next-line camelcase
-  //     const { data, number_of_pages, page } = response.data;
-  //     setResources(data);
-  //     setTotalPages(number_of_pages);
-  //     setCurrentPage(page);
-  //   };
-  //   router.events.on('routeChangeStart', handleQueryChange);
-  //   return () => {
-  //     router.events.off('routeChangeStart', handleQueryChange);
-  //   };
-  // }, [query]);
+    setSelectedLanguages(language.map(lang => lang.label));
+    updateQuery({ languages: selectedLanguages });
+  };
 
   return (
     <>
@@ -86,35 +154,91 @@ function ResourcesPage() {
       <Content
         theme="white"
         columns={[
-          <Formik onSubmit={handleSearch}>
-            <Form>
-              <div className={styles.fullWidth}>
-                <Field type="search" name="q" label="Search" component={Input} />
-              </div>
-            </Form>
-          </Formik>,
           <section className={styles.fullWidth}>
-            {resources && !!resources.length && (
-              <Pagination
-                currentPage={currentPage}
-                totalPages={totalPages}
-                pathname={pathname}
-                query={q}
-              />
-            )}
-            <div className={styles.fullWidth}>
-              {resources.map(resource => (
-                <ResourceCard
-                  key={resource.id}
-                  description={resource.notes}
-                  downvotes={resource.downvotes}
-                  upvotes={resource.upvotes}
-                  href={resource.url || ''}
-                  name={resource.name}
-                  className={styles.resourceCard}
-                />
-              ))}
+            <div className={styles.searchContainer}>
+              <h5>By Keyword</h5>
+              <Formik onSubmit={handleSearch}>
+                <Form>
+                  <Field type="search" name="q" component={Input} />
+                </Form>
+              </Formik>
             </div>
+            ,
+            <div className={styles.selectContainer}>
+              <div className={styles.selectColumn}>
+                <h5>By Category</h5>
+                <ThemedReactSelect
+                  instanceId="category_select"
+                  placeholder="Start typing a category..."
+                  className={styles.select}
+                  name="Categories"
+                  options={categories}
+                  onChange={handleCategory}
+                  selected={selectedCategory}
+                />
+              </div>
+
+              <div className={styles.selectColumn}>
+                <h5>By Language</h5>
+                <ThemedReactSelect
+                  instanceId="language_select"
+                  placeholder="Start typing a language..."
+                  className={styles.select}
+                  isMulti
+                  name="Languages"
+                  options={allLanguages}
+                  onChange={handleLanguages}
+                  selected={selectedLanguages}
+                />
+              </div>
+            </div>
+            ,
+            {isLoading ? (
+              <>
+                {/* TODO: Create with skeleton loading screen to avoid jank between routing */}
+                {/* below is just a temp fix for my own sanity */}
+
+                <div className={styles.resourcesCardWrapper}>
+                  {allLanguages.map(language => (
+                    <>
+                      <ResourceCard
+                        key={language.name}
+                        description=""
+                        downvotes={0}
+                        upvotes={0}
+                        href=""
+                        name="A rather long loading title"
+                        className={styles.skeletonItem}
+                      />
+                    </>
+                  ))}
+                </div>
+              </>
+            ) : (
+              <>
+                {errorMessage && <Alert type="error">{`${errorMessage}`}</Alert>}
+                <div className={styles.resourcesCardWrapper}>
+                  {resources.map(resource => (
+                    <ResourceCard
+                      key={resource.id}
+                      description={resource.notes}
+                      downvotes={resource.downvotes}
+                      upvotes={resource.upvotes}
+                      href={resource.url || ''}
+                      name={resource.name}
+                      className={styles.resourceCard}
+                    />
+                  ))}
+                </div>
+                ,
+                <Pagination
+                  currentPage={currentPage}
+                  totalPages={totalPages}
+                  pathname={pathname}
+                  query={query}
+                />
+              </>
+            )}
           </section>,
         ]}
       />
@@ -123,96 +247,3 @@ function ResourcesPage() {
 }
 
 export default ResourcesPage;
-
-/* i think this is because the searchResources starts on page 0... */
-
-// Error: The value passed for currentPage is 0. "currentPage" cannot be less than 1.
-// Pagination
-// ./components/Pagination/Pagination.js:149
-//   146 |   const errorMessage = `${developmentErrors.currentPageValue(currentPage)} ${
-//   147 |     developmentErrors.currentPageTooSmall
-//   148 |   }`;
-// > 149 |   throw new Error(errorMessage);
-//       | ^  150 | }
-//   151 |
-//   152 | const isCurrentPageTooBig = currentPage > totalPages;
-
-// For the initial page load, getInitialProps will run on the server only.
-// getInitialProps will then run on the client when navigating to a different route via
-// the next/link component or by using next/router.
-
-// ResourcesPage.getInitialProps = async ({ pathname, query }) => {
-//   const { q = null, page } = query;
-//   /* eventually need some sort of handler to decide which api call to use */
-//   const response = !query.search
-//     ? await searchResourcesPromise(query)
-//     : await getResourcesPromise(query);
-//   console.log('configURL=', response.config.url);
-//   console.log('QQuery', query);
-//   const { data: resources, number_of_pages: totalPages, page: currentPage } = response.data;
-
-//   return {
-//     currentPage,
-//     pathname,
-//     resources,
-//     totalPages,
-//     query,
-//     page,
-//     q,
-//   };
-// };
-
-// const handlePagination = event => {
-//   event.preventDefault();
-//   console.log('slow down there partner');
-//   const paginationPageNumber = event.currentTarget.getAttribute('value');
-
-//   router.push({
-//     pathname: `${pathname.replace('[page]', `${paginationPageNumber}`)}`,
-//     query: query.q !== null ? { q: query.q } : null,
-//     shallow: true,
-//   });
-// };
-
-// const handleSearch = async searchInputQuery => {
-//   setInputQuery(previousState => {
-//     return {
-//       ...previousState,
-//       ...searchInputQuery,
-//       search: 'search',
-//     };
-//   });
-//   setCurrentRoute('search');
-
-//   const response = await searchResourcesPromise({ ...searchInputQuery, ...query });
-//   setCurrentResources(response.data.data);
-// };
-
-// console.group(
-//   `currentRoute is: ${currentRoute},
-// inputQuery is`,
-//   inputQuery,
-// );
-
-// ResourcesPage.propTypes = {
-//   currentPage: number,
-//   pathname: string,
-//   query: object,
-//   resources: arrayOf(
-//     shape({
-//       id: number, // integer, unique ID
-//       name: title,
-//       notes: string, // possibly null
-//       url: string,
-//       upvotes: number,
-//       downvotes: number,
-//     }),
-//   ),
-// };
-
-// ResourcesPage.defaultProps = {
-//   currentPage: 1,
-//   pathname: null,
-//   query: null,
-//   resources: [],
-// };

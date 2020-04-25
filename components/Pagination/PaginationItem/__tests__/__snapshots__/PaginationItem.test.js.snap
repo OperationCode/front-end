@@ -4,7 +4,6 @@ exports[`PaginationItem renders correctly as a current item with value 1`] = `
 <li
   className="PaginationItem current"
   data-testid="test"
-  value={1}
 >
   <a
     className="unstyledLink"
