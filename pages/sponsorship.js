@@ -1,5 +1,4 @@
 import Head from 'components/head';
-import { donateLink } from 'common/constants/urls';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
 import Badge from 'components/Badge/Badge';
@@ -19,12 +18,7 @@ export default () => {
       <Head title={pageTitle} />
 
       <HeroBanner title={pageTitle}>
-        <LinkButton
-          href={donateLink}
-          analyticsEventLabel="Donate"
-          theme="primary"
-          className={styles.topMargin}
-        >
+        <LinkButton href="/donate" theme="primary" className={styles.topMargin}>
           Donate Now
         </LinkButton>
       </HeroBanner>

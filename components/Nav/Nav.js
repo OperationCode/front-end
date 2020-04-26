@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import classNames from 'classnames';
 import Link from 'next/link';
 import Router from 'next/router';
-import { donateLink, s3 } from 'common/constants/urls';
+import classNames from 'classnames';
+import { s3 } from 'common/constants/urls';
 import {
   loggedInNavItems,
   loggedOutNavItems,
   mobileLoggedInNavItems,
   mobileLoggedOutNavItems,
 } from 'common/constants/navigation';
-import OutboundLink from 'components/OutboundLink/OutboundLink';
 import NavListItem from 'components/Nav/NavListItem/NavListItem';
 import NavMobile from 'components/Nav/NavMobile/NavMobile';
 import { hasValidAuthToken } from 'common/utils/cookie-utils';
@@ -73,14 +72,9 @@ export const Nav = () => {
 
               {/* stylistic one-off */}
               <li key="Donate">
-                <OutboundLink
-                  analyticsEventLabel="Navigation Bar Donate"
-                  className={classNames(styles.link, styles.donateLink)}
-                  hasIcon={false}
-                  href={donateLink}
-                >
-                  Donate
-                </OutboundLink>
+                <Link href="/donate">
+                  <a className={classNames(styles.link, styles.donateLink)}>Donate</a>
+                </Link>
               </li>
             </ul>
           </nav>

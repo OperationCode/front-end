@@ -1,9 +1,9 @@
+import Link from 'next/link';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
 import FAQAccordion from 'components/Accordion/FAQAccordion';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
-import { donateLink } from 'common/constants/urls';
 
 const questions = {
   general: [
@@ -143,9 +143,9 @@ const questions = {
           </OutboundLink>{' '}
           and interns. The larger our community, the more we can spread the word about our work.
           Also, remember that every{' '}
-          <OutboundLink analyticsEventLabel="QnA Link" href={donateLink}>
-            donation
-          </OutboundLink>{' '}
+          <Link href="/donate">
+            <a>donation</a>
+          </Link>{' '}
           , no matter how modest, brings us closer to our goals.
         </>
       ),
@@ -190,9 +190,9 @@ const questions = {
       content: (
         <>
           The fastest way to make a donation is through our secured online form{' '}
-          <OutboundLink analyticsEventLabel="QnA Link" href={donateLink}>
-            here
-          </OutboundLink>{' '}
+          <Link href="/donate">
+            <a>here</a>
+          </Link>
           .
         </>
       ),

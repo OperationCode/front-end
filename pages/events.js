@@ -17,7 +17,7 @@ import BullhornIcon from 'static/images/icons/FontAwesome/bullhorn-solid.svg';
 // import RightAngleIcon from 'static/images/icons/FontAwesome/angle-right-solid.svg';
 import UserIcon from 'static/images/icons/FontAwesome/user-solid.svg';
 import DiversityIcon from 'static/images/icons/FontAwesome/users-solid.svg';
-import { donateLink, s3 } from 'common/constants/urls';
+import { s3 } from 'common/constants/urls';
 import styles from './styles/events.module.css';
 
 const VISIBILITY_OFFSET = 400;
@@ -170,13 +170,7 @@ export default () => {
           >
             <span className={styles.meetupCardHeader}>Start A Meetup In Your Area</span>
           </FlatCard>,
-          <FlatCard
-            button={
-              <LinkButton href={donateLink} analyticsEventLabel="Donate">
-                Find Out How
-              </LinkButton>
-            }
-          >
+          <FlatCard button={<LinkButton href="/donate">Find Out How</LinkButton>}>
             <span className={styles.meetupCardHeader}>Donate To Your Local Meetup</span>
           </FlatCard>,
         ]}

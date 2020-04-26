@@ -10,7 +10,7 @@ import LinkButton from 'components/LinkButton/LinkButton';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
 import successStories from 'common/constants/successStories';
-import { donateLink, s3 } from 'common/constants/urls';
+import { s3 } from 'common/constants/urls';
 import styles from './styles/index.module.css';
 
 const featuredLinksArray = [
@@ -21,11 +21,10 @@ const featuredLinksArray = [
     alt: 'Group of coders smiling at each other',
   },
   {
-    href: donateLink,
+    href: '/donate',
     name: 'Donate',
     imageSource: `${s3}redesign/images/fist-bumping.jpg`,
     alt: 'A team fist-bumping eachother over a table.',
-    analyticsEventLabel: 'CTA Donate Homepage',
   },
   {
     href: 'events',
