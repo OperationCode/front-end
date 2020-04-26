@@ -1,7 +1,6 @@
 import Head from 'components/head';
 import Container from 'components/Container/Container';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
-import styles from './styles/donate.module.css';
 
 const pageTitle = 'Donate';
 
@@ -15,7 +14,6 @@ function DonatePage() {
       <Container theme="white">
         <iframe
           title="Donation Form"
-          className={styles.iframe}
           src="https://secure.lglforms.com/form_engine/s/BRtP7QUKyHOyEYsZROsRew"
           height="1500px"
           width="110%"
