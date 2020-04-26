@@ -1,8 +1,10 @@
 {
   "exclude": [
+    "/api/__coverage__",
     "/profile/change_password",
     "/profile",
     "/profile/update",
+    "/thank_you",
     "/_app",
     "/_document",
     "/_error"

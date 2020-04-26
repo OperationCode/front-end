@@ -18,6 +18,8 @@ function readIgnoredSitemapLinks() {
 
 const fileObject = [];
 
+const paginatedPageFileName = '[page]';
+
 /**
  * Get and parse unauthenticated routes.
  * @param {} directory Directory path
@@ -40,6 +42,20 @@ function readAndParseRoutes(directory) {
          * password_reset/index etc. are not valid url.. So remove /index from them.
          */
         cleanFileName = cleanFileName.substr(0, cleanFileName.lastIndexOf('/index'));
+      }
+
+      const isPaginatedRoute = cleanFileName.endsWith(paginatedPageFileName);
+
+      if (isPaginatedRoute) {
+        const firstPage = cleanFileName.replace(paginatedPageFileName, 1);
+
+        // Add this file to `fileObject`
+        fileObject[`/${firstPage}`] = {
+          page: `/${firstPage}`,
+          lastModified: new Date(fileStat.mtime).toUTCString(),
+        };
+
+        return;
       }
 
       if (!sitemapConfig.exclude.includes(`/${cleanFileName}`)) {
