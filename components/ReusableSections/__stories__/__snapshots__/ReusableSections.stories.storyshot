@@ -541,6 +541,35 @@ exports[`Storyshots ReusableSections SponsorsSection 1`] = `
         className="PartnerLogoLink"
       >
         <a
+          href="https://vercel.com/home"
+          onClick={[Function]}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <noscript>
+            <img
+              alt="Vercel logo"
+              className="logo"
+              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/vercel.png"
+            />
+          </noscript>
+          <img
+            alt="Vercel logo"
+            className="logo"
+            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/vercel.png"
+          />
+          <span
+            className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
+          >
+            Opens in new window
+          </span>
+        </a>
+      </div>
+      <div
+        className="PartnerLogoLink"
+      >
+        <a
           href="https://zapier.com"
           onClick={[Function]}
           rel="noopener noreferrer"
@@ -557,35 +586,6 @@ exports[`Storyshots ReusableSections SponsorsSection 1`] = `
             alt="Zapier logo"
             className="logo"
             data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/zapier.png"
-          />
-          <span
-            className="ScreenReaderOnly"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Opens in new window
-          </span>
-        </a>
-      </div>
-      <div
-        className="PartnerLogoLink"
-      >
-        <a
-          href="https://zeit.co/home"
-          onClick={[Function]}
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          <noscript>
-            <img
-              alt="Zeit logo"
-              className="logo"
-              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/zeit.png"
-            />
-          </noscript>
-          <img
-            alt="Zeit logo"
-            className="logo"
-            data-src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/zeit.png"
           />
           <span
             className="ScreenReaderOnly"
