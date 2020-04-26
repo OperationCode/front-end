@@ -6,16 +6,12 @@
     {
       "source": "/media",
       "destination": "/branding"
-    },
-    {
-      "source": "/resources",
-      "destination": "/resources/1"
     }
   ],
   "redirects": [
     {
-      "source": "/donate",
-      "destination": "https://secure.lglforms.com/form_engine/s/BRtP7QUKyHOyEYsZROsRew"
+      "source": "/resources",
+      "destination": "/resources/1"
     },
     {
       "source": "/privacy",
