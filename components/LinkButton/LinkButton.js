@@ -18,7 +18,7 @@ LinkButton.propTypes = {
 };
 
 LinkButton.defaultProps = {
-  analyticsEventLabel: '',
+  analyticsEventLabel: undefined,
   className: undefined,
   'data-testid': undefined,
   fullWidth: false,

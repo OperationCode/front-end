@@ -151,14 +151,15 @@ exports[`Nav should render with no props passed 1`] = `
             }
           />
           <li>
-            <OutboundLink
-              analyticsEventLabel="Navigation Bar Donate"
-              className="link donateLink"
-              hasIcon={false}
-              href="https://secure.lglforms.com/form_engine/s/BRtP7QUKyHOyEYsZROsRew"
+            <Link
+              href="/donate"
             >
-              Donate
-            </OutboundLink>
+              <a
+                className="link donateLink"
+              >
+                Donate
+              </a>
+            </Link>
           </li>
         </ul>
       </nav>
