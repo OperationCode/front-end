@@ -78,7 +78,7 @@ const event = ({
 
 /**
  * @description Log a conversion event with gtag (connected to Google Ads ID of a conversion)
- * @param {{ adId: string, category?: string }} { adId, category = '' }
+ * @param {{ adId: string, category?: string }} { adId, category = 'engagement' }
  */
 const conversionEvent = ({ adId, category = 'engagement' }) => {
   log({ methodName: 'adEvent', adId, category });
