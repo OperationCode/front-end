@@ -48,6 +48,7 @@ export default class MyDocument extends Document {
             gtag('config', '${clientTokens.GOOGLE_ANALYTICS_ID}', {
               page_path: window.location.pathname,
             });
+            gtag('config', '${clientTokens.GOOGLE_ADS_ID}');
           `,
             }}
           />
