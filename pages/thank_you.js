@@ -4,7 +4,7 @@ import styles from './styles/thank_you.module.css';
 
 const pageTitle = 'Thank You';
 
-function DonatePage() {
+function ThankYouPage() {
   return (
     <>
       <Head title={pageTitle} />
@@ -22,4 +22,4 @@ function DonatePage() {
   );
 }
 
-export default DonatePage;
+export default ThankYouPage;
