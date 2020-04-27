@@ -7,12 +7,11 @@ import FlatCard from 'components/Cards/FlatCard/FlatCard';
 import LinkButton from 'components/LinkButton/LinkButton';
 import SponsorsSection from 'components/ReusableSections/SponsorsSection/SponsorsSection';
 import MedalSolid from 'static/images/icons/FontAwesome/medal-solid.svg';
-
 import styles from './styles/sponsorship.module.css';
 
-export default () => {
-  const pageTitle = 'Corporate Sponsorship';
+const pageTitle = 'Corporate Sponsorship';
 
+function Sponsorship() {
   return (
     <>
       <Head title={pageTitle} />
@@ -134,4 +133,6 @@ export default () => {
       <SponsorsSection />
     </>
   );
-};
+}
+
+export default Sponsorship;

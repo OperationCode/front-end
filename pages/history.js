@@ -6,14 +6,16 @@ import Timeline from 'components/Timeline/Timeline';
 import TimelineNav from 'components/Timeline/TimelineNav/TimelineNav';
 import styles from './styles/history.module.css';
 
-export default function () {
+const pageTitle = 'History';
+
+function History() {
   return (
     <>
-      <Head title="History" />
+      <Head title={pageTitle} />
       <HeroBanner
         backgroundImageSource={`${s3}heroBanners/colin-powell.jpg`}
         className={styles.hero}
-        title="History"
+        title={pageTitle}
       >
         <>
           <blockquote className={styles.quote}>
@@ -36,3 +38,5 @@ export default function () {
     </>
   );
 }
+
+export default History;

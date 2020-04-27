@@ -34,41 +34,35 @@ const featuredLinksArray = [
   },
 ];
 
-const Home = () => (
-  <>
-    <Head title="Home" />
+function Home() {
+  return (
+    <>
+      <Head title="Home" />
 
-    <HeroBanner
-      backgroundImageSource={`${s3}redesign/heroBanners/homepage.jpg`}
-      className={styles.hero}
-      isFullViewportHeight
-      title="Deploy The Future"
-    >
-      <>
-        <p className={styles.justifyAlign}>
-          We&apos;re the largest community of military veterans, service members, and spouses
-          committed to becoming software developers with the help of mentors, scholarships, and our
-          tech partners.
-        </p>
+      <HeroBanner
+        backgroundImageSource={`${s3}redesign/heroBanners/homepage.jpg`}
+        className={styles.hero}
+        isFullViewportHeight
+        title="Deploy The Future"
+      >
+        <>
+          <p className={styles.justifyAlign}>
+            We&apos;re the largest community of military veterans, service members, and spouses
+            committed to becoming software developers with the help of mentors, scholarships, and
+            our tech partners.
+          </p>
 
-        <LinkButton href="/who_we_serve">Learn More</LinkButton>
+          <LinkButton href="/who_we_serve">Learn More</LinkButton>
 
-        <div className={styles.featuredLinks}>
-          {featuredLinksArray.map(({ href, name, imageSource, alt, analyticsEventLabel }) => (
-            <div className={styles.featuredLinkItem} key={name}>
-              {analyticsEventLabel ? (
-                <OutboundLink analyticsEventLabel={analyticsEventLabel} href={href} hasIcon={false}>
-                  <h6>{name}</h6>
-                  <ScreenReaderOnly>{`Image: ${alt}`}</ScreenReaderOnly>
-                  <div
-                    style={{ backgroundImage: `url(${imageSource})` }}
-                    className={styles.featuredLinkImage}
-                    aria-hidden="true"
-                  />
-                </OutboundLink>
-              ) : (
-                <Link href={href}>
-                  <a>
+          <div className={styles.featuredLinks}>
+            {featuredLinksArray.map(({ href, name, imageSource, alt, analyticsEventLabel }) => (
+              <div className={styles.featuredLinkItem} key={name}>
+                {analyticsEventLabel ? (
+                  <OutboundLink
+                    analyticsEventLabel={analyticsEventLabel}
+                    href={href}
+                    hasIcon={false}
+                  >
                     <h6>{name}</h6>
                     <ScreenReaderOnly>{`Image: ${alt}`}</ScreenReaderOnly>
                     <div
@@ -76,41 +70,53 @@ const Home = () => (
                       className={styles.featuredLinkImage}
                       aria-hidden="true"
                     />
-                  </a>
-                </Link>
-              )}
-            </div>
-          ))}
-        </div>
-      </>
-    </HeroBanner>
+                  </OutboundLink>
+                ) : (
+                  <Link href={href}>
+                    <a>
+                      <h6>{name}</h6>
+                      <ScreenReaderOnly>{`Image: ${alt}`}</ScreenReaderOnly>
+                      <div
+                        style={{ backgroundImage: `url(${imageSource})` }}
+                        className={styles.featuredLinkImage}
+                        aria-hidden="true"
+                      />
+                    </a>
+                  </Link>
+                )}
+              </div>
+            ))}
+          </div>
+        </>
+      </HeroBanner>
 
-    <Content
-      theme="gray"
-      columns={[
-        <div className={styles.cta}>
-          <Heading text="Our Mission" hasTitleUnderline />
-          <p className={styles.justifyAlign}>
-            At Operation Code, we strongly believe in improving the lives of military veterans,
-            service members, and their spouses. We increase their chances for success in the tech
-            industry as software developers through thoughtful mentorship, code school scholarships,
-            and career services.
-          </p>
-        </div>,
-      ]}
-    />
+      <Content
+        theme="gray"
+        columns={[
+          <div className={styles.cta}>
+            <Heading text="Our Mission" hasTitleUnderline />
+            <p className={styles.justifyAlign}>
+              At Operation Code, we strongly believe in improving the lives of military veterans,
+              service members, and their spouses. We increase their chances for success in the tech
+              industry as software developers through thoughtful mentorship, code school
+              scholarships, and career services.
+            </p>
+          </div>,
+        ]}
+      />
 
-    <Content
-      title="Success Stories"
-      columns={successStories.map(story => (
-        <SuccessStory {...story} key={story.title} />
-      ))}
-    />
+      <Content
+        title="Success Stories"
+        columns={successStories.map(story => (
+          <SuccessStory {...story} key={story.title} />
+        ))}
+      />
 
-    <SponsorsSection />
+      <SponsorsSection />
 
-    <JoinSection />
-  </>
-);
+      <JoinSection />
+    </>
+  );
+}
 
 export default Home;

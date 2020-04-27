@@ -20,6 +20,8 @@ import DiversityIcon from 'static/images/icons/FontAwesome/users-solid.svg';
 import { s3 } from 'common/constants/urls';
 import styles from './styles/events.module.css';
 
+const pageTitle = 'Events';
+
 const VISIBILITY_OFFSET = 400;
 
 const sponsorItems = [
@@ -82,9 +84,7 @@ const hostEventItems = [
 //   },
 // ];
 
-export default () => {
-  const pageTitle = 'Events';
-
+function Events() {
   return (
     <>
       <Head title={pageTitle} />
@@ -285,4 +285,6 @@ export default () => {
       <JoinSection />
     </>
   );
-};
+}
+
+export default Events;

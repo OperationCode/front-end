@@ -7,6 +7,8 @@ import LinkButton from 'components/LinkButton/LinkButton';
 import withAuthSync from 'decorators/withAuthSync/withAuthSync';
 import styles from '../styles/profile.module.css';
 
+const pageTitle = 'Profile';
+
 Profile.propTypes = {
   firstName: string.isRequired,
   lastName: string.isRequired,
@@ -20,9 +22,9 @@ Profile.getInitialProps = async ctx => {
 function Profile({ firstName, lastName }) {
   return (
     <>
-      <Head title="Profile" />
+      <Head title={pageTitle} />
 
-      <HeroBanner title="Profile" />
+      <HeroBanner title={pageTitle} />
 
       <Content
         theme="gray"

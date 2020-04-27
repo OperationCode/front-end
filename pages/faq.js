@@ -306,36 +306,55 @@ const questions = {
   ],
 };
 
-export default () => (
-  <>
-    <Head title="FAQ" />
+function FAQ() {
+  return (
+    <>
+      <Head title="FAQ" />
 
-    <HeroBanner title="Frequently Asked Questions" />
+      <HeroBanner title="Frequently Asked Questions" />
 
-    {/* eslint-disable react/no-array-index-key */}
-    <Content
-      title="General Questions"
-      hasTitleUnderline
-      columns={questions.general.map((faq, index) => (
-        <FAQAccordion title={faq.title} content={faq.content} key={index} accessibilityId={index} />
-      ))}
-    />
+      {/* eslint-disable react/no-array-index-key */}
+      <Content
+        title="General Questions"
+        hasTitleUnderline
+        columns={questions.general.map((faq, index) => (
+          <FAQAccordion
+            title={faq.title}
+            content={faq.content}
+            key={index}
+            accessibilityId={index}
+          />
+        ))}
+      />
 
-    <Content
-      title="Donation Questions"
-      hasTitleUnderline
-      columns={questions.donation.map((faq, index) => (
-        <FAQAccordion title={faq.title} content={faq.content} key={index} accessibilityId={index} />
-      ))}
-    />
+      <Content
+        title="Donation Questions"
+        hasTitleUnderline
+        columns={questions.donation.map((faq, index) => (
+          <FAQAccordion
+            title={faq.title}
+            content={faq.content}
+            key={index}
+            accessibilityId={index}
+          />
+        ))}
+      />
 
-    <Content
-      title="Volunteer Questions"
-      hasTitleUnderline
-      columns={questions.volunteer.map((faq, index) => (
-        <FAQAccordion title={faq.title} content={faq.content} key={index} accessibilityId={index} />
-      ))}
-    />
-    {/* eslint-enable react/no-array-index-key */}
-  </>
-);
+      <Content
+        title="Volunteer Questions"
+        hasTitleUnderline
+        columns={questions.volunteer.map((faq, index) => (
+          <FAQAccordion
+            title={faq.title}
+            content={faq.content}
+            key={index}
+            accessibilityId={index}
+          />
+        ))}
+      />
+      {/* eslint-enable react/no-array-index-key */}
+    </>
+  );
+}
+
+export default FAQ;

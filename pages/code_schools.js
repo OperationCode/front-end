@@ -16,6 +16,8 @@ import treehouse from 'static/images/moocs/treehouse.jpg';
 import udacity from 'static/images/moocs/udacity.jpg';
 import styles from './styles/code_schools.module.css';
 
+const pageTitle = 'Code Schools';
+
 const moocSchools = [
   {
     logo: edx,
@@ -111,9 +113,9 @@ function CodeSchools({ allSchools }) {
 
   return (
     <>
-      <Head title="Code Schools" />
+      <Head title={pageTitle} />
 
-      <HeroBanner title="Code Schools">
+      <HeroBanner title={pageTitle}>
         <p>
           Whether you&apos;re trying to find out more about a chosen school, or are just gettting
           started in your search, we&apos;re here to help. We&apos;ve even partnered with some

@@ -50,7 +50,7 @@ function PasswordResetConfirm({ uid, token }) {
 
   return (
     <>
-      <Head title="PasswordReset" />
+      <Head title="Password Reset" />
 
       <HeroBanner title="Enter new password" />
 

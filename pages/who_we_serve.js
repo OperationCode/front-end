@@ -57,6 +57,7 @@ WhoWeServe.getInitialProps = async () => {
 
 function WhoWeServe(props) {
   const { memberCount } = props;
+
   return (
     <>
       <Head title="Who We Serve" />
