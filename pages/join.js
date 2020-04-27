@@ -8,6 +8,8 @@ import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
 import RegistrationForm from 'components/RegistrationForm/RegistrationForm';
 
+const pageTitle = 'Join';
+
 const profileUpdateURL = '/profile/update';
 
 Join.propTypes = {
@@ -26,9 +28,9 @@ function Join({ router }) {
 
   return (
     <>
-      <Head title="Join" />
+      <Head title={pageTitle} />
 
-      <HeroBanner title="Join" />
+      <HeroBanner title={pageTitle} />
 
       <Content
         theme="gray"

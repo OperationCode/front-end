@@ -7,7 +7,7 @@ import Content from 'components/Content/Content';
 import ChangePasswordForm from 'components/ChangePasswordForm/ChangePasswordForm';
 import styles from '../styles/password_reset.module.css';
 
-const ChangePassword = () => {
+function ChangePassword() {
   const [didChange, setDidChange] = React.useState(false);
 
   const onSuccess = () => {
@@ -16,7 +16,7 @@ const ChangePassword = () => {
 
   return (
     <>
-      <Head title="PasswordReset" />
+      <Head title="Change Password" />
 
       <HeroBanner title="Enter new password" />
 
@@ -37,6 +37,6 @@ const ChangePassword = () => {
       />
     </>
   );
-};
+}
 
 export default withAuthSync(ChangePassword);

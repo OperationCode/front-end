@@ -10,7 +10,9 @@ import ResourceCard from 'components/Cards/ResourceCard/ResourceCard';
 import { getResourcesPromise } from 'common/constants/api';
 import styles from '../styles/resources.module.css';
 
-function ResourcesPage() {
+const pageTitle = 'Resources';
+
+function Resources() {
   const router = useRouter();
   const { pathname, query } = router;
   const currentPage = parseInt(query.page, 10);
@@ -52,8 +54,8 @@ function ResourcesPage() {
 
   return (
     <>
-      <Head title="Resources" />
-      <HeroBanner title="Resources" className="smallHero" />
+      <Head title={pageTitle} />
+      <HeroBanner title={pageTitle} className="smallHero" />
       <Content
         theme="white"
         columns={[
@@ -94,4 +96,4 @@ function ResourcesPage() {
   );
 }
 
-export default ResourcesPage;
+export default Resources;

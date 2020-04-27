@@ -5,6 +5,8 @@ import PasswordResetForm from 'components/PasswordResetForm/PasswordResetForm';
 import Alert from 'components/Alert/Alert';
 import { passwordReset } from 'common/constants/api';
 
+const pageTitle = 'Reset Password';
+
 function PasswordReset() {
   const [didSubmitSuccessfully, setDidSubmitSuccessfully] = React.useState(false);
 
@@ -14,9 +16,9 @@ function PasswordReset() {
 
   return (
     <>
-      <Head title="Reset Password" />
+      <Head title={pageTitle} />
 
-      <HeroBanner title="Reset Password" />
+      <HeroBanner title={pageTitle} />
 
       <Content
         theme="gray"

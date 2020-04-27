@@ -6,7 +6,7 @@ import styles from './styles/thank_you.module.css';
 
 const pageTitle = 'Thank You';
 
-function ThankYouPage() {
+function ThankYou() {
   useEffect(() => {
     gtag.conversionEvent({ adId: 'h6epCOC_os4BEK-Rnp4D' });
   }, []);
@@ -28,4 +28,4 @@ function ThankYouPage() {
   );
 }
 
-export default ThankYouPage;
+export default ThankYou;
