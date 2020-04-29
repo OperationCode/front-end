@@ -13,3 +13,4 @@ export const MULTI_STEP_SUBMIT_BUTTON = 'Submit Multi-Step Form';
 export const MULTI_STEP_STEP_BUTTON = 'Submit Step Button';
 export const SCREEN_READER_ONLY = 'SCREEN_READER_ONLY';
 export const UPVOTE_BUTTON = 'UPVOTE_BUTTON';
+export const SKELETON_CARD = 'SKELETON_CARD';
