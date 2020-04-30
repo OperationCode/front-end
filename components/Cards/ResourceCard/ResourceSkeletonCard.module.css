@@ -24,7 +24,7 @@
   top: 0;
   position: absolute;
   overflow: overlay;
-  width: 100%;
+  width: 50%;
   height: 100%;
   transform: translateX(-100%);
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);

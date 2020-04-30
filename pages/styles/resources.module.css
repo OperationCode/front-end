@@ -2,13 +2,19 @@
   width: 90vw;
 }
 
-.selectContainer {
+.searchContainer {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .selectColumn {
-  flex: 50%;
+  flex: 30%;
   margin: 0 1rem;
+}
+
+.filterContainer {
+  margin: 2rem 0;
+  width: 100%;
 }
 
 .resourcesCardsWrapper {

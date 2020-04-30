@@ -1,5 +1,4 @@
-/* eslint-disable no-console */
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import get from 'lodash/get';
 import Content from 'components/Content/Content';
@@ -25,10 +24,8 @@ import Alert from '../../components/Alert/Alert';
 function ResourcesPage() {
   const router = useRouter();
   const { pathname, query } = router;
-  const currentPage = parseInt(query.page, 10);
-
-  // eslint-disable-next-line camelcase
-  const { page, category, languages, paid, updatedAfter: updated_after, q } = query;
+  const { page, category, languages, paid, q } = query;
+  const currentPage = parseInt(page, 10);
 
   const [errorMessage, setErrorMessage] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -36,16 +33,17 @@ function ResourcesPage() {
   const [resources, setResources] = useState([]);
   const [totalPages, setTotalPages] = useState(currentPage);
 
-  const [categories, setCategories] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState('');
-
+  const [allCategories, setAllCategories] = useState([]);
   const [allLanguages, setAllLanguages] = useState([]);
+
   const [selectedLanguages, setSelectedLanguages] = useState([]);
 
-  const componentIsMounted = useRef(false);
+  const costOptions = [
+    { label: 'Paid', value: true },
+    { label: 'Free', value: false },
+  ];
 
   useEffect(() => {
-    componentIsMounted.current = true;
     Promise.all([getResourcesByCategories(), getResourcesByLanguages()])
       .then(([categoriesResponse, languagesResponse]) => {
         const {
@@ -54,105 +52,81 @@ function ResourcesPage() {
         const {
           data: { data: languagesData },
         } = languagesResponse;
-        console.log('updatig resource');
+
         setAllLanguages(
-          languagesData.map(language => {
+          languagesData.map(languageObject => {
             return {
-              value: language.name.replace(/ /g, ' ').toLowerCase(),
-              label: language.name,
+              value: languageObject.name.replace(/ /g, ' ').toLowerCase(),
+              label: languageObject.name,
             };
           }),
         );
-        setCategories(
-          // eslint-disable-next-line no-shadow
-          categoriesData.map(category => {
+        setAllCategories(
+          categoriesData.map(categoryObject => {
             return {
-              value: category.name.replace(/ /g, ' ').toLowerCase(),
-              label: category.name,
+              value: categoryObject.name.replace(/ /g, ' ').toLowerCase(),
+              label: categoryObject.name,
             };
           }),
         );
       })
-
-      .catch(error => {
-        console.warn(`There was an error trying to fetch the initial resources.: ${error}`);
+      .catch(() => {
         setErrorMessage('There was an error finding these resources.');
       });
   }, []);
 
   const handleEndpoint = () => {
-    if (q) {
-      return getResourcesBySearch({ page, q });
+    if (q || paid) {
+      return getResourcesBySearch({ page, q, paid });
     }
     if (languages || category) {
-      return getResourcesPromise({ page, category, languages, paid, updated_after });
+      return getResourcesPromise({ page, category, languages, paid });
     }
-    return getResourcesBySearch({ page, q });
+    return getResourcesBySearch({ page, q, paid });
   };
-  console.log(currentPage, componentIsMounted.current);
-  // eslint-disable-next-line consistent-return
+
   useEffect(() => {
+    setErrorMessage(null);
+
     // eslint-disable-next-line no-restricted-globals
-    if (isNaN(currentPage) && componentIsMounted.current) {
-      // eslint-disable-next-line no-restricted-globals
-      console.log(isNaN(currentPage));
-      setTotalPages(1);
+    if (isNaN(currentPage)) {
       setResources([]);
       setIsLoading(false);
+      setTotalPages(1);
       setErrorMessage(
-        `Invalid page number. All search input after /resources/
-        must be a number value, EG .../resources/1`,
+        `${page} is an invalid page number. Pages must be numbers, EG https://operationcode.org/resources/1`,
       );
-    } else {
-      handleEndpoint()
-        .then(response => {
-          const fetchedResources = get(response, 'data.data', []);
-          const fetchedNumberOfPages = get(response, 'data.number_of_pages', 0);
-
-          if (fetchedResources.length === 0 || fetchedNumberOfPages === 0) {
-            /* TODO: set state for variable which conditionally renders "No resources" view */
-            return;
-          }
-
-          setResources(fetchedResources);
-          if (q) {
-            setTotalPages(fetchedNumberOfPages - 1);
-          } else {
-            setTotalPages(fetchedNumberOfPages);
-          }
-
-          setIsLoading(false);
-        })
-        .catch(error => {
-          console.warn(error);
-          setErrorMessage('There was an error gathering those resources.');
-          setIsLoading(false);
-        });
-
-      return () => {
-        setIsLoading(true);
-      };
+      return;
     }
+    handleEndpoint()
+      .then(response => {
+        const fetchedResources = get(response, 'data.data', []);
+        const fetchedNumberOfPages = get(response, 'data.number_of_pages', 0);
+
+        if (fetchedResources.length === 0 || fetchedNumberOfPages === 0) {
+          /* TODO: set state for variable which conditionally renders "No resources" view */
+          /* this wont ever run because of the response from the server is blank on 404s */
+          return;
+        }
+        setResources(fetchedResources);
+        if (q) {
+          setTotalPages(fetchedNumberOfPages - 1);
+        } else {
+          setTotalPages(fetchedNumberOfPages);
+        }
+        setIsLoading(false);
+      })
+      .catch(() => {
+        setErrorMessage('There was an error gathering those resources.');
+        setIsLoading(false);
+      });
+    // eslint-disable-next-line consistent-return
+    return () => setIsLoading(true);
   }, [query]);
 
   const updateQuery = newQueryObject => {
     setErrorMessage(null);
     const relevantQueryStringObject = omit(query, ['page']);
-
-    /* I realize I can't really do this because then the query string changes on rerender 
-    after changing pages etc. trying to figure out how to make it pretty in the url bar 
-    without uriencoded characters */
-
-    // const formatQueryStringObject = () => {
-    //   const slugifiedArray = Object.entries(query).map(value => [
-    //     [value[0]],
-    //     value[1].replace(' ', '-'),
-    //   ]);
-    //   const slugifiedObject = Object.fromEntries(slugifiedArray);
-    //   const relevantQueryStringObject = omit(slugifiedObject, ['page']);
-    //   return relevantQueryStringObject;
-    // };
-
     router.push(
       {
         pathname,
@@ -165,22 +139,26 @@ function ResourcesPage() {
     );
   };
 
-  const handleSearch = userInput => {
-    updateQuery(userInput);
+  const handleSearch = search => {
+    updateQuery(search);
   };
 
-  // eslint-disable-next-line no-shadow
-  const handleCategory = category => {
-    const { value } = category;
-    setSelectedCategory(value);
+  const handleCost = isPaid => {
+    const { value } = isPaid;
+    updateQuery({ paid: value });
+  };
+
+  const handleCategory = categoryInput => {
+    const { value } = categoryInput;
     updateQuery({ category: value });
   };
 
-  const handleLanguages = language => {
-    if (!language) {
+  const handleLanguages = languageList => {
+    if (!languageList) {
       return;
     }
-    const languageValues = language && !!language.length ? language.map(lang => lang.value) : null;
+    const languageValues =
+      languageList && !!languageList.length ? languageList.map(language => language.value) : null;
     setSelectedLanguages(languageValues);
     updateQuery({ languages: languageValues });
   };
@@ -194,16 +172,12 @@ function ResourcesPage() {
         columns={[
           <section className={styles.fullWidth}>
             <div className={styles.searchContainer}>
-              <h5>Search</h5>
               <Formik onSubmit={handleSearch}>
                 <Form>
-                  {/* TODO: there are some errors getting thrown for input component 
-                  having some of its required props */}
-                  <Field type="search" name="q" component={Input} />
+                  <Field type="search" name="q" label="Search" component={Input} />
                 </Form>
               </Formik>
             </div>
-
             <div className={styles.selectContainer}>
               <div className={styles.selectColumn}>
                 <h5>By Category</h5>
@@ -212,9 +186,8 @@ function ResourcesPage() {
                   placeholder="Start typing a category..."
                   className={styles.select}
                   name="Categories"
-                  options={categories}
+                  options={allCategories}
                   onChange={handleCategory}
-                  selected={selectedCategory}
                 />
               </div>
 
@@ -231,16 +204,29 @@ function ResourcesPage() {
                   selected={selectedLanguages}
                 />
               </div>
+
+              <div className={styles.selectColumn}>
+                <h5>By Cost</h5>
+                <ThemedReactSelect
+                  instanceId="cost_select"
+                  placeholder="Course cost..."
+                  className={styles.select}
+                  name="Paid"
+                  options={costOptions}
+                  onChange={handleCost}
+                />
+              </div>
             </div>
 
+            <Pagination
+              currentPage={currentPage}
+              totalPages={totalPages}
+              pathname={pathname}
+              query={query}
+            />
             {isLoading ? (
               <>
-                {/* TODO: Create with skeleton loading screen to avoid jank between routing */}
-                {/* below is just a temp fix for my own sanity */}
-
-                <div className={styles.resourcesCardWrapper}>
-                  <ResourceSkeletonCard numberOfSkeletons={10} />
-                </div>
+                <ResourceSkeletonCard numberOfSkeletons={10} />
               </>
             ) : (
               <>
@@ -258,7 +244,6 @@ function ResourcesPage() {
                     />
                   ))}
                 </div>
-                ,
                 <Pagination
                   currentPage={currentPage}
                   totalPages={totalPages}
@@ -275,3 +260,17 @@ function ResourcesPage() {
 }
 
 export default ResourcesPage;
+
+/* I realize I can't really do this because then the query string changes on rerender 
+after changing pages etc. trying to figure out how to make it pretty in the url bar 
+without uriencoded characters */
+
+// const formatQueryStringObject = () => {
+//   const slugifiedArray = Object.entries(query).map(value => [
+//     [value[0]],
+//     value[1].replace(' ', '-'),
+//   ]);
+//   const slugifiedObject = Object.fromEntries(slugifiedArray);
+//   const relevantQueryStringObject = omit(slugifiedObject, ['page']);
+//   return relevantQueryStringObject;
+// };
