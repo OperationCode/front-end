@@ -21,7 +21,9 @@ import styles from '../styles/resources.module.css';
 import ThemedReactSelect from '../../components/Form/Select/ThemedReactSelect';
 import Alert from '../../components/Alert/Alert';
 
-function ResourcesPage() {
+const pageTitle = 'Resources';
+
+function Resources() {
   const router = useRouter();
   const { pathname, query } = router;
   const { page, category, languages, paid, q } = query;
@@ -165,8 +167,8 @@ function ResourcesPage() {
 
   return (
     <>
-      <Head title="Resources" />
-      <HeroBanner title="Resources" className="smallHero" />
+      <Head title={pageTitle} />
+      <HeroBanner title={pageTitle} className="smallHero" />
       <Content
         theme="white"
         columns={[
@@ -259,7 +261,7 @@ function ResourcesPage() {
   );
 }
 
-export default ResourcesPage;
+export default Resources;
 
 /* I realize I can't really do this because then the query string changes on rerender 
 after changing pages etc. trying to figure out how to make it pretty in the url bar 

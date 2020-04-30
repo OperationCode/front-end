@@ -8,6 +8,8 @@ import UpdateProfileForm from 'components/UpdateProfileForm/UpdateProfileForm';
 import withAuthSync from 'decorators/withAuthSync/withAuthSync';
 import { getUserPromise } from 'common/constants/api';
 
+const pageTitle = 'Update Profile';
+
 UpdateProfile.propTypes = {
   initialValues: objectOf(oneOfType([array, oneOfType([string, number, bool])])),
 };
@@ -37,8 +39,6 @@ UpdateProfile.getInitialProps = async ctx => {
 };
 
 function UpdateProfile({ initialValues }) {
-  const pageTitle = 'Update Profile';
-
   return (
     <>
       <Head title={pageTitle} />

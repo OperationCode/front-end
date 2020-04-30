@@ -16,7 +16,7 @@ const log = ({ methodName, ...rest }) => {
 };
 
 /**
- * @description Log a pageview with google tag manager
+ * @description Log a pageview with gtag
  * @param {string} url
  * @param {boolean?} isModalView
  * @see https://developers.google.com/analytics/devguides/collection/gtagjs/pages
@@ -32,22 +32,24 @@ const pageView = (url, isModalView = false) => {
 };
 
 /**
- * @description Log an event with google tag manager
+ * @description Log an event with gtag
  * @param {{
  *  action: string,
+ *  callback?: () => void,
  *  category: string,
  *  label?: string,
+ *  otherEventParameters?: object,
  *  value?: number,
- *  callback?: () => void
  * }}
  * @see https://developers.google.com/analytics/devguides/collection/gtagjs/events
  */
 const event = ({
   action,
+  callback = undefined,
   category,
   label = undefined,
   value = undefined,
-  callback = undefined,
+  otherEventParameters = {}, // https://developers.google.com/gtagjs/reference/parameter
 }) => {
   if (!action || !category) {
     throw new Error('Google Events must be called with at least an action and category.');
@@ -60,6 +62,7 @@ const event = ({
     label,
     value,
     hasCallback: typeof callback === 'function',
+    ...otherEventParameters,
   });
 
   if (isProduction) {
@@ -68,6 +71,23 @@ const event = ({
       event_category: category,
       event_label: label,
       value,
+      ...otherEventParameters,
+    });
+  }
+};
+
+/**
+ * @description Log a conversion event with gtag (connected to Google Ads ID of a conversion)
+ * @param {{ adId: string, category?: string }} { adId, category = 'engagement' }
+ */
+const conversionEvent = ({ adId, category = 'engagement' }) => {
+  log({ methodName: 'adEvent', adId, category });
+
+  if (isProduction) {
+    event({
+      action: 'conversion',
+      category,
+      otherEventParameters: { send_to: `${clientTokens.GOOGLE_ADS_ID}/${adId}` },
     });
   }
 };
@@ -87,7 +107,7 @@ const outboundLink = (label, url) => {
 };
 
 /**
- * @description Log a modal view as if it were a page view with google tag manager
+ * @description Log a modal view as if it were a gtag page view event
  * @param {string} modalName
  */
 const modalView = modalName => {
@@ -99,6 +119,7 @@ const modalView = modalName => {
 };
 
 export const gtag = {
+  conversionEvent,
   event,
   modalView,
   outboundLink,

@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { func, bool, string, arrayOf, shape } from 'prop-types';
 import classNames from 'classnames';
-import { donateLink, s3 } from 'common/constants/urls';
+import { s3 } from 'common/constants/urls';
 import HamburgerIcon from 'static/images/icons/hamburger.svg';
 import CloseButton from 'components/CloseButton/CloseButton';
 import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
@@ -75,9 +75,9 @@ function NavMobile({ isOpen, openMenu, closeMenu, navItems }) {
               </li>
             ))}
             <li className={styles.li} key="Donate">
-              <a href={donateLink} className={styles.link}>
-                Donate
-              </a>
+              <Link href="/donate">
+                <a className={styles.link}>Donate</a>
+              </Link>
             </li>
           </ul>
         </nav>

@@ -14,6 +14,8 @@ import HeroBanner from 'components/HeroBanner/HeroBanner';
 import SocialLoginButtons from 'components/SocialLoginGroup/SocialLoginButtons';
 import SocialLoginGroup from 'components/SocialLoginGroup/SocialLoginGroup';
 
+const pageTitle = 'Login';
+
 Login.propTypes = {
   // pulled out of query param
   loggedOut: bool,
@@ -73,8 +75,10 @@ function Login({ loggedOut, router }) {
 
   return (
     <>
-      <Head title="Login" />
-      <HeroBanner title="Login" />
+      <Head title={pageTitle} />
+
+      <HeroBanner title={pageTitle} />
+
       <Content
         theme="gray"
         columns={[

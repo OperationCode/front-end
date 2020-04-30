@@ -74,9 +74,9 @@ const partners = [
     type: PARTNER_TYPES.KIND,
   },
   {
-    name: 'Zeit',
-    logoSource: `${s3}partnerLogos/zeit.png`,
-    url: 'https://zeit.co/home',
+    name: 'Vercel',
+    logoSource: `${s3}partnerLogos/vercel.png`,
+    url: 'https://vercel.com/home',
     type: PARTNER_TYPES.KIND,
   },
 ];

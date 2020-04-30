@@ -11,11 +11,9 @@ const builder = {
     return `import Head from 'components/head';
       import HeroBanner from 'components/HeroBanner/HeroBanner';
 
-      export default function ${componentName}() {
-        // declare propTypes and defaultProps as static properties here, if needed
-        
-        const pageTitle = '${pageTitle}';
+      const pageTitle = '${pageTitle}';
 
+      function ${componentName}() {
         return (
           <>
             <Head title={pageTitle} />
@@ -28,7 +26,9 @@ const builder = {
             {/* Rest of page content goes in here */}
           </>
         );
-      };
+      }
+
+      export default ${componentName};
     `;
   },
 };

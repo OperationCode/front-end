@@ -10,6 +10,8 @@ import Content from 'components/Content/Content';
 import Heading from 'components/Heading/Heading';
 import styles from './styles/podcast.module.css';
 
+const pageTitle = 'Podcast';
+
 Podcast.propTypes = {
   episodes: arrayOf(shape({ image: string, name: string, source: string, story: string })),
   errorMessage: string,
@@ -48,8 +50,6 @@ Podcast.getInitialProps = async () => {
 };
 
 function Podcast({ episodes, errorMessage }) {
-  const pageTitle = 'Podcast';
-
   return (
     <>
       <Head title={pageTitle} />

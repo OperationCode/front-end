@@ -1,5 +1,4 @@
 import flattenDepth from 'lodash/flattenDepth';
-import { donateLink } from 'common/constants/urls';
 
 // MARK: Links shared between nav and footer (no duplicate code)
 const contactLink = {
@@ -157,9 +156,8 @@ export const footerItems = {
       name: 'History',
     },
     {
-      href: donateLink,
+      href: '/donate',
       name: 'Donate',
-      analyticsEventLabel: 'Donate',
     },
   ],
   column4: [

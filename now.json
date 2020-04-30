@@ -3,21 +3,12 @@
   "name": "operation-code",
   "alias": ["operation-code.now.sh", "www.operationcode.org", "operationcode.org"],
   "rewrites": [{
-      "source": "/media",
-      "destination": "/branding"
-    },
-    {
+    "source": "/media",
+    "destination": "/branding"
+  }],
+  "redirects": [{
       "source": "/resources",
       "destination": "/resources/1"
-    },
-    {
-      "source": "/resources/([^0-9])",
-      "destination": "/resources/1"
-    }
-  ],
-  "redirects": [{
-      "source": "/donate",
-      "destination": "https://secure.lglforms.com/form_engine/s/BRtP7QUKyHOyEYsZROsRew"
     },
     {
       "source": "/privacy",
