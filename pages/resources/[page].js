@@ -16,7 +16,6 @@ import {
 import { Field, Formik } from 'formik';
 import Form from 'components/Form/Form';
 import Input from 'components/Form/Input/Input';
-import omit from 'lodash/omit';
 import styles from '../styles/resources.module.css';
 import ThemedReactSelect from '../../components/Form/Select/ThemedReactSelect';
 import Alert from '../../components/Alert/Alert';
@@ -128,7 +127,6 @@ function Resources() {
 
   const updateQuery = newQueryObject => {
     setErrorMessage(null);
-    const relevantQueryStringObject = omit(query, ['page']);
     router.push(
       {
         pathname,
@@ -136,7 +134,7 @@ function Resources() {
       },
       {
         pathname: pathname.replace('[page]', '1'),
-        query: relevantQueryStringObject,
+        query: { ...newQueryObject },
       },
     );
   };
