@@ -173,50 +173,50 @@ function Resources() {
         theme="white"
         columns={[
           <section className={styles.fullWidth}>
-            <div className={styles.searchContainer}>
-              <Formik onSubmit={handleSearch}>
-                <Form>
-                  <Field type="search" name="q" label="Search" component={Input} />
-                </Form>
-              </Formik>
-            </div>
+            <Formik onSubmit={handleSearch}>
+              <Form>
+                <Field type="search" name="q" label="Search" component={Input} />
+              </Form>
+            </Formik>
 
-            <div className={styles.selectColumn}>
-              <h5>By Category</h5>
-              <ThemedReactSelect
-                instanceId="category_select"
-                placeholder="Start typing a category..."
-                className={styles.select}
-                name="Categories"
-                options={allCategories}
-                onChange={handleCategory}
-              />
-            </div>
+            <div className={styles.selectContainer}>
+              <div className={styles.selectColumn}>
+                <h5>By Category</h5>
+                <ThemedReactSelect
+                  instanceId="category_select"
+                  placeholder="Start typing a category..."
+                  className={styles.select}
+                  name="Categories"
+                  options={allCategories}
+                  onChange={handleCategory}
+                />
+              </div>
 
-            <div className={styles.selectColumn}>
-              <h5>By Language</h5>
-              <ThemedReactSelect
-                instanceId="language_select"
-                placeholder="Start typing a language..."
-                className={styles.select}
-                isMulti
-                name="Languages"
-                options={allLanguages}
-                onChange={handleLanguages}
-                selected={selectedLanguages}
-              />
-            </div>
+              <div className={styles.selectColumn}>
+                <h5>By Language</h5>
+                <ThemedReactSelect
+                  instanceId="language_select"
+                  placeholder="Start typing a language..."
+                  className={styles.select}
+                  isMulti
+                  name="Languages"
+                  options={allLanguages}
+                  onChange={handleLanguages}
+                  selected={selectedLanguages}
+                />
+              </div>
 
-            <div className={styles.selectColumn}>
-              <h5>By Cost</h5>
-              <ThemedReactSelect
-                instanceId="cost_select"
-                placeholder="Course cost..."
-                className={styles.select}
-                name="Paid"
-                options={costOptions}
-                onChange={handleCost}
-              />
+              <div className={styles.selectColumn}>
+                <h5>By Cost</h5>
+                <ThemedReactSelect
+                  instanceId="cost_select"
+                  placeholder="Course cost..."
+                  className={styles.select}
+                  name="Paid"
+                  options={costOptions}
+                  onChange={handleCost}
+                />
+              </div>
             </div>
 
             {isLoading ? (
