@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import get from 'lodash/get';
@@ -19,6 +20,7 @@ import Input from 'components/Form/Input/Input';
 import styles from '../styles/resources.module.css';
 import ThemedReactSelect from '../../components/Form/Select/ThemedReactSelect';
 import Alert from '../../components/Alert/Alert';
+// import { RESOURCE_CARD } from '../../common/constants/testIDs';
 
 const pageTitle = 'Resources';
 
@@ -44,6 +46,16 @@ function Resources() {
     { label: 'Free', value: false },
   ];
 
+  const handleEndpoint = () => {
+    if (q || paid) {
+      return getResourcesBySearch({ page, q, paid });
+    }
+    if (languages || category) {
+      return getResourcesPromise({ page, category, languages, paid });
+    }
+    return getResourcesBySearch({ page, q, paid });
+  };
+
   useEffect(() => {
     Promise.all([getResourcesByCategories(), getResourcesByLanguages()])
       .then(([categoriesResponse, languagesResponse]) => {
@@ -57,7 +69,7 @@ function Resources() {
         setAllLanguages(
           languagesData.map(languageObject => {
             return {
-              value: languageObject.name.replace(/ /g, ' ').toLowerCase(),
+              value: languageObject.name.toLowerCase(),
               label: languageObject.name,
             };
           }),
@@ -65,7 +77,7 @@ function Resources() {
         setAllCategories(
           categoriesData.map(categoryObject => {
             return {
-              value: categoryObject.name.replace(/ /g, ' ').toLowerCase(),
+              value: categoryObject.name.toLowerCase(),
               label: categoryObject.name,
             };
           }),
@@ -74,30 +86,11 @@ function Resources() {
       .catch(() => {
         setErrorMessage('There was an error finding these resources.');
       });
-  }, []);
 
-  const handleEndpoint = () => {
-    if (q || paid) {
-      return getResourcesBySearch({ page, q, paid });
-    }
-    if (languages || category) {
-      return getResourcesPromise({ page, category, languages, paid });
-    }
-    return getResourcesBySearch({ page, q, paid });
-  };
-
-  useEffect(() => {
     setErrorMessage(null);
-
     // eslint-disable-next-line no-restricted-globals
     if (isNaN(currentPage)) {
-      setResources([]);
-      setIsLoading(false);
-      setTotalPages(1);
-      setErrorMessage(
-        `${page} is an invalid page number. Pages must be numbers, EG https://operationcode.org/resources/1`,
-      );
-      return;
+      console.warn('invalid page');
     }
     handleEndpoint()
       .then(response => {
@@ -105,8 +98,7 @@ function Resources() {
         const fetchedNumberOfPages = get(response, 'data.number_of_pages', 0);
 
         if (fetchedResources.length === 0 || fetchedNumberOfPages === 0) {
-          /* TODO: set state for variable which conditionally renders "No resources" view */
-          /* this wont ever run because of the response from the server is blank on 404s */
+          console.log('nothing returned');
           return;
         }
         setResources(fetchedResources);
@@ -121,8 +113,6 @@ function Resources() {
         setErrorMessage('There was an error gathering those resources.');
         setIsLoading(false);
       });
-    // eslint-disable-next-line consistent-return
-    return () => setIsLoading(true);
   }, [query]);
 
   const updateQuery = newQueryObject => {
@@ -215,6 +205,18 @@ function Resources() {
                   onChange={handleCost}
                 />
               </div>
+
+              <div className={styles.selectColumn}>
+                <h5>By Date</h5>
+                <ThemedReactSelect
+                  instanceId="cost_select"
+                  placeholder="Resources added before..."
+                  className={styles.select}
+                  name="Paid"
+                  options={costOptions}
+                  onChange={handleCost}
+                />
+              </div>
             </div>
 
             {isLoading ? (
@@ -227,6 +229,7 @@ function Resources() {
                 <div className={styles.resourcesCardWrapper}>
                   {resources.map(resource => (
                     <ResourceCard
+                      data-testid="RESOURCE_CARD"
                       key={resource.id}
                       description={resource.notes}
                       downvotes={resource.downvotes}
