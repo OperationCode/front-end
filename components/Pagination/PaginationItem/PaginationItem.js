@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
-import { bool, node, number, string } from 'prop-types';
+import omit from 'lodash/omit';
+import { bool, node, number, object, string } from 'prop-types';
 import classNames from 'classnames';
 import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
 import styles from './PaginationItem.module.css';
@@ -9,16 +10,21 @@ PaginationItem.propTypes = {
   children: node.isRequired,
   isCurrent: bool,
   pathname: string.isRequired,
+  query: object,
   testId: string.isRequired,
   value: number,
 };
 
 PaginationItem.defaultProps = {
   isCurrent: false,
+  query: {},
   value: undefined,
 };
 
-function PaginationItem({ children, isCurrent, pathname, testId, value }) {
+function PaginationItem({ children, isCurrent, pathname, query, testId, value }) {
+  const relevantQueryStringObject = omit(query, ['page']);
+  const realURL = { pathname: pathname.replace('[page]', value), query: relevantQueryStringObject };
+
   const isClickable = !!value;
 
   return (
@@ -30,7 +36,7 @@ function PaginationItem({ children, isCurrent, pathname, testId, value }) {
       data-testid={testId}
     >
       {isClickable ? (
-        <Link href={pathname} as={pathname.replace('[page]', value)}>
+        <Link href={{ pathname, query }} as={realURL}>
           <a className={styles.unstyledLink}>
             <ScreenReaderOnly>Go to page</ScreenReaderOnly>
             {children}

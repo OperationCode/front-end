@@ -23,11 +23,6 @@
   }
 }
 
-.SchoolCard,
-.badgeGroup .active {
-  color: rgba(0, 0, 0, 0.7);
-}
-
 .ribbon {
   display: flex;
   align-items: center;
@@ -108,10 +103,10 @@
 }
 
 .cardBlock {
-  display: flex;
-  width: 100%;
-  padding: 1rem 0.75rem;
   border-top: 1px solid var(--gray);
+  display: flex;
+  padding: 1rem 0.75rem;
+  width: 100%;
 }
 
 .cardBlockTitle {
@@ -120,6 +115,10 @@
   margin-right: auto;
   padding-right: 6px;
   color: var(--secondary);
+}
+
+.cardBlockValue {
+  font-weight: normal;
 }
 
 .SchoolCard .modalToggler {
@@ -146,23 +145,45 @@
 }
 
 .badgeGroup {
-  display: flex;
-  color: var(--gray);
+  display: grid;
+  padding: 0.75rem 0;
+  width: 100%;
+  grid-template: 50% 50% / 50% 50%;
+  justify-items: center;
+  align-items: center;
+}
+
+.active figcaption::after,
+.inactive figcaption::after {
+  position: absolute;
+  top: -0.75rem;
+  right: 1rem;
+  width: 1.25rem;
+}
+
+.active figcaption::after {
+  stroke: var(--successDeep);
+  content: url("/static/images/icons/Custom/check-circle.svg");
+}
+
+.inactive figcaption::after {
+  stroke: var(--errorDeep);
+  content: url("/static/images/icons/Custom/x-circle.svg");
+}
+
+.badgeGroupItem.inactive {
+  opacity: 0.75;
+}
+
+.badgeGroupItem.inactive figcaption::after {
+  opacity: 1;
 }
 
 .badgeGroupItem {
-  margin: 0 8px;
+  margin: 0.75rem 0;
+  position: relative;
+  width: 95px;
   font-size: 15px;
-}
-
-@media screen and (--large-viewport) {
-  .badgeGroupItem {
-    margin: 0 6px;
-  }
-}
-
-.badgeGroupItem:last-child {
-  margin-right: 0;
 }
 
 .badgeGroupItem svg {
@@ -170,30 +191,6 @@
   margin: 0;
 }
 
-@media screen and (--large-viewport) {
-  .badgeGroupItem svg {
-    height: 28px;
-  }
-}
-
-@media screen and (--medium-viewport) {
-  .badgeGroupItem svg {
-    height: 26px;
-  }
-}
-
-@media screen and (--small-viewport) {
-  .badgeGroupItem svg {
-    height: 22px;
-  }
-}
-
 .badgeGroupItem figcaption {
   margin-top: 10px;
-}
-
-@media screen and (--small-viewport) {
-  .badgeGroupItem figcaption {
-    font-size: 0.875em;
-  }
 }

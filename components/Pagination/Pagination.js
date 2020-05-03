@@ -1,5 +1,5 @@
 import React from 'react';
-import { number, string } from 'prop-types';
+import { number, string, object } from 'prop-types';
 import LeftAngleIcon from 'static/images/icons/FontAwesome/angle-left-solid.svg';
 import RightAngleIcon from 'static/images/icons/FontAwesome/angle-right-solid.svg';
 import PaginationItem from './PaginationItem/PaginationItem';
@@ -8,6 +8,7 @@ import styles from './Pagination.module.css';
 Pagination.propTypes = {
   currentPage: number.isRequired,
   pathname: string.isRequired,
+  query: object.isRequired,
   totalPages: number.isRequired,
 };
 
@@ -15,6 +16,7 @@ export const developmentErrors = {
   currentPageValue: value => `The value passed for currentPage is ${value}.`,
   currentPageTooSmall: '"currentPage" cannot be less than 1.',
   currentPageTooBig: '"currentPage" cannot be larger than "totalPages".',
+  mustUsePageAsPathParam: `Your path parameter must be "[page]". See https://nextjs.org/docs/routing/dynamic-routes for more`,
 };
 
 const getPagination = (currentPage, totalPages) => {
@@ -58,7 +60,7 @@ const getPagination = (currentPage, totalPages) => {
 };
 
 // eslint-disable-next-line react/prop-types
-const PaginationItems = ({ currentPage, pathname, totalPages }) => {
+const PaginationItems = ({ currentPage, pathname, query, totalPages }) => {
   const {
     paginationStart,
     paginationLength,
@@ -77,6 +79,7 @@ const PaginationItems = ({ currentPage, pathname, totalPages }) => {
         isCurrent={isCurrent}
         testId={`${page}`}
         pathname={pathname}
+        query={query}
       >
         {page}
       </PaginationItem>
@@ -119,7 +122,8 @@ const PaginationItems = ({ currentPage, pathname, totalPages }) => {
   );
 };
 
-function Pagination({ currentPage, pathname, totalPages }) {
+function Pagination({ currentPage, pathname, query, totalPages }) {
+  /* Developer Errors */
   if (process.env.NODE_ENV !== 'production') {
     const isCurrentPageTooSmall = currentPage < 1;
 
@@ -127,6 +131,7 @@ function Pagination({ currentPage, pathname, totalPages }) {
       const errorMessage = `${developmentErrors.currentPageValue(currentPage)} ${
         developmentErrors.currentPageTooSmall
       }`;
+
       throw new Error(errorMessage);
     }
 
@@ -138,21 +143,40 @@ function Pagination({ currentPage, pathname, totalPages }) {
 
       throw new Error(errorMessage);
     }
+
+    if (!pathname.endsWith('[page]')) {
+      throw new Error(developmentErrors.mustUsePageAsPathParam);
+    }
   }
 
   return (
     <nav className={styles.Pagination} data-testid="Pagination">
       <ol>
         {currentPage > 1 && (
-          <PaginationItem value={currentPage - 1} pathname={pathname} testId="leftAngle">
+          <PaginationItem
+            value={currentPage - 1}
+            pathname={pathname}
+            query={query}
+            testId="leftAngle"
+          >
             <LeftAngleIcon className={styles.icon} />
           </PaginationItem>
         )}
 
-        <PaginationItems currentPage={currentPage} totalPages={totalPages} pathname={pathname} />
+        <PaginationItems
+          currentPage={currentPage}
+          totalPages={totalPages}
+          pathname={pathname}
+          query={query}
+        />
 
         {currentPage < totalPages && (
-          <PaginationItem value={currentPage + 1} pathname={pathname} testId="rightAngle">
+          <PaginationItem
+            value={currentPage + 1}
+            pathname={pathname}
+            query={query}
+            testId="rightAngle"
+          >
             <RightAngleIcon className={styles.icon} />
           </PaginationItem>
         )}

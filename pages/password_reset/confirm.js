@@ -1,4 +1,4 @@
-import { useState } from 'react'; // eslint-disable-line  no-restricted-imports
+import { useState } from 'react';
 import Link from 'next/link';
 import { string } from 'prop-types';
 import Head from 'components/head';
@@ -50,7 +50,7 @@ function PasswordResetConfirm({ uid, token }) {
 
   return (
     <>
-      <Head title="PasswordReset" />
+      <Head title="Password Reset" />
 
       <HeroBanner title="Enter new password" />
 

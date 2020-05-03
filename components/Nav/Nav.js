@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import classNames from 'classnames';
 import Link from 'next/link';
 import Router from 'next/router';
-import { donateLink, s3 } from 'common/constants/urls';
+import classNames from 'classnames';
+import { s3 } from 'common/constants/urls';
 import {
   loggedInNavItems,
   loggedOutNavItems,
@@ -69,10 +69,12 @@ export const Nav = () => {
               {navItems.map(navItem => (
                 <NavListItem key={navItem.name} {...navItem} />
               ))}
+
+              {/* stylistic one-off */}
               <li key="Donate">
-                <a href={donateLink} className={classNames(styles.link, styles.donateLink)}>
-                  <span>Donate</span>
-                </a>
+                <Link href="/donate">
+                  <a className={classNames(styles.link, styles.donateLink)}>Donate</a>
+                </Link>
               </li>
             </ul>
           </nav>

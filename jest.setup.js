@@ -1,5 +1,5 @@
-import '@testing-library/jest-dom/extend-expect';
 import ReactModal from 'react-modal';
+import '@testing-library/jest-dom/extend-expect';
 
 /* MOCKS */
 // Storybook Info Addon
@@ -7,6 +7,8 @@ jest.mock('@storybook/addon-info', () => ({
   withInfo: () => storyFn => storyFn,
   setDefaults: () => {},
 }));
+
+jest.mock('./common/utils/thirdParty/gtag');
 
 // React Modal
 ReactModal.setAppElement(document.createElement('div').setAttribute('id', 'app-root'));

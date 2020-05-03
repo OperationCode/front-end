@@ -151,14 +151,15 @@ exports[`Nav should render with no props passed 1`] = `
             }
           />
           <li>
-            <a
-              className="link donateLink"
-              href="https://secure.lglforms.com/form_engine/s/BRtP7QUKyHOyEYsZROsRew"
+            <Link
+              href="/donate"
             >
-              <span>
+              <a
+                className="link donateLink"
+              >
                 Donate
-              </span>
-            </a>
+              </a>
+            </Link>
           </li>
         </ul>
       </nav>

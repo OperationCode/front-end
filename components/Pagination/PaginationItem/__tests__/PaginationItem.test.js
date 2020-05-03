@@ -8,6 +8,7 @@ describe('PaginationItem', () => {
   const requiredProps = {
     children: '1',
     pathname: '/resources/[page]',
+    query: {},
     testId: 'test',
   };
 

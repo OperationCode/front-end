@@ -157,13 +157,14 @@ exports[`Footer should render with no props passed 1`] = `
             </Link>
           </li>
           <li>
-            <OutboundLink
-              analyticsEventLabel="Donate footer link"
-              hasIcon={false}
-              href="https://secure.lglforms.com/form_engine/s/BRtP7QUKyHOyEYsZROsRew"
+            <Link
+              href="/donate"
+              prefetch={false}
             >
-              Donate
-            </OutboundLink>
+              <a>
+                Donate
+              </a>
+            </Link>
           </li>
         </ul>
         <ul

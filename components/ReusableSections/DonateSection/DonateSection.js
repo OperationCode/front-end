@@ -1,5 +1,5 @@
 import React from 'react';
-import { donateLink, s3 } from 'common/constants/urls';
+import { s3 } from 'common/constants/urls';
 import Container from 'components/Container/Container';
 import LinkButton from 'components/LinkButton/LinkButton';
 import Heading from 'components/Heading/Heading';
@@ -19,12 +19,7 @@ function DonateSection() {
 
       <p>Thank you for supporting our mission!</p>
 
-      <LinkButton
-        href={donateLink}
-        analyticsEventLabel="Donate"
-        theme="primary"
-        className={styles.topMargin}
-      >
+      <LinkButton href="/donate" theme="primary" className={styles.topMargin}>
         Donate Now
       </LinkButton>
     </Container>

@@ -87,7 +87,7 @@ function SchoolCard({
   const hasVetTec = isVetTecApproved;
 
   const badgeClassNames = isActive =>
-    classNames(styles.badgeGroupItem, { [styles.active]: isActive });
+    classNames(styles.badgeGroupItem, { [styles.active]: isActive, [styles.inactive]: !isActive });
 
   return (
     <Card className={styles.SchoolCard} hasAnimationOnHover={false} data-testid="SchoolCard">
@@ -118,47 +118,38 @@ function SchoolCard({
         <Image src={logoSource} alt={`${name} logo`} height="150" />
       </div>
 
-      <div className={styles.cardBlock}>
-        <span className={styles.cardBlockTitle}>Availability</span>
-        <div className={styles.badgeGroup}>
-          <Badge
-            label={<LabelWithScreenReader label="Online" isActive={hasOnline} />}
-            icon={
-              <OnlineIcon data-testid={hasOnline ? 'School has online' : 'School has no online'} />
-            }
-            className={badgeClassNames(hasOnline)}
-          />
-          <Badge
-            label={<LabelWithScreenReader label="Campus" isActive={!hasOnlyOnline} />}
-            icon={<CampusIcon />}
-            className={badgeClassNames(!hasOnlyOnline)}
-          />
-          <Badge
-            label={<LabelWithScreenReader label="Housing" isActive={hasHousing} />}
-            icon={<HousingIcon />}
-            className={badgeClassNames(hasHousing)}
-          />
-          <Badge
-            label={<LabelWithScreenReader label="Equipment" isActive={hasHardwareIncluded} />}
-            icon={<EquipmentIcon />}
-            className={badgeClassNames(hasHardwareIncluded)}
-          />
-        </div>
+      <div className={classNames(styles.cardBlock, styles.badgeGroup)}>
+        <Badge
+          label={<LabelWithScreenReader label="Physical campus" isActive={!hasOnlyOnline} />}
+          icon={<CampusIcon />}
+          className={badgeClassNames(!hasOnlyOnline)}
+        />
+        <Badge
+          label={<LabelWithScreenReader label="Online classes" isActive={hasOnline} />}
+          icon={
+            <OnlineIcon data-testid={hasOnline ? 'School has online' : 'School has no online'} />
+          }
+          className={badgeClassNames(hasOnline)}
+        />
+        <Badge
+          label={<LabelWithScreenReader label="Housing options" isActive={hasHousing} />}
+          icon={<HousingIcon />}
+          className={badgeClassNames(hasHousing)}
+        />
+        <Badge
+          label={
+            <LabelWithScreenReader label="Provided equipment" isActive={hasHardwareIncluded} />
+          }
+          icon={<EquipmentIcon />}
+          className={badgeClassNames(hasHardwareIncluded)}
+        />
       </div>
 
       <div className={styles.cardBlock}>
-        <span className={styles.cardBlockTitle}>Accepts GI Bill</span>
-        {hasGiBill ? 'Yes' : 'No'}
-      </div>
+        <span className={styles.cardBlockTitle}>Campus Locations:</span>
 
-      <div className={styles.cardBlock}>
-        <span className={styles.cardBlockTitle}>VET TEC Approved</span>
-        {hasVetTec ? 'Yes' : 'No'}
-      </div>
-
-      <div className={styles.cardBlock}>
-        <span className={styles.cardBlockTitle}>Campus Locations</span>
         {getSchoolLocationText(hasOnlyOnline, locations)}
+
         {locations.length > 1 && (
           <Button
             analyticsObject={{

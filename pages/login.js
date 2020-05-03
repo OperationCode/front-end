@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'; // eslint-disable-line  no-restricted-imports
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { withRouter } from 'next/router';
 import { bool, shape, func } from 'prop-types';
@@ -13,6 +13,8 @@ import LoginForm from 'components/LoginForm/LoginForm';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import SocialLoginButtons from 'components/SocialLoginGroup/SocialLoginButtons';
 import SocialLoginGroup from 'components/SocialLoginGroup/SocialLoginGroup';
+
+const pageTitle = 'Login';
 
 Login.propTypes = {
   // pulled out of query param
@@ -73,8 +75,10 @@ function Login({ loggedOut, router }) {
 
   return (
     <>
-      <Head title="Login" />
-      <HeroBanner title="Login" />
+      <Head title={pageTitle} />
+
+      <HeroBanner title={pageTitle} />
+
       <Content
         theme="gray"
         columns={[

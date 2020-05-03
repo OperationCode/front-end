@@ -52,6 +52,7 @@
 
 /* One-off differences from other link items */
 .donateLink {
+  align-items: center;
   background-color: var(--primary);
   border-radius: 0 var(--borderRadius) var(--borderRadius) 0;
   color: var(--secondary);
