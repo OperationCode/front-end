@@ -3,6 +3,8 @@ import lodashGet from 'lodash/get';
 import { networkErrorMessages } from 'common/constants/messages';
 import { apiUrl } from 'common/config/environment';
 import { setAuthorizationHeader } from 'common/utils/cookie-utils';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import qs from 'qs';
 
 const axiosConfig = {
   baseURL: apiUrl,
@@ -42,6 +44,7 @@ const getRequestAbortionPieces = () => {
  * @param {?Object.<string, any>} parameters URL parameters to include in the query string
  * @returns {Promise<AxiosPromise<any>>}
  */
+
 export const get = async (path, { token, parameters } = {}, axiosClient = OperationCodeAPI) => {
   const { abort, connectionTimeout } = getRequestAbortionPieces();
 
@@ -50,6 +53,7 @@ export const get = async (path, { token, parameters } = {}, axiosClient = Operat
       headers: setAuthorizationHeader(token),
       cancelToken: abort.token,
       params: parameters,
+      paramsSerializer: parameters_ => qs.stringify(parameters_, { arrayFormat: 'repeat' }),
     })
     .then(response => {
       clearTimeout(connectionTimeout);
