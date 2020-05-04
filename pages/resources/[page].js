@@ -40,33 +40,38 @@ function Resources() {
   const [allLanguages, setAllLanguages] = useState([]);
 
   const [selectedLanguages, setSelectedLanguages] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState([]);
+  const [selectedCost, setSelectedCost] = useState({});
 
   const costOptions = [
-    { label: 'Paid', value: true },
-    { label: 'Free', value: false },
+    { label: 'Paid', value: 'paid', isPaid: true },
+    { label: 'Free', value: 'free', isPaid: false },
   ];
 
   const handleEndpoint = () => {
-    if (q || paid) {
+    if (q) {
       return getResourcesBySearch({ page, q, paid });
     }
     if (languages || category) {
-      return getResourcesPromise({ page, category, languages, paid });
+      return getResourcesPromise({ page, languages, category, paid });
     }
-    return getResourcesBySearch({ page, q, paid });
+    return getResourcesPromise({ page, languages, category, paid });
   };
 
-  const handleSearch = search => {
+  const handleSearch = (search, { resetForm }) => {
     updateQuery(search);
+    resetForm({});
   };
 
-  const handleCost = isPaid => {
-    const { value } = isPaid;
-    updateQuery({ paid: value });
+  const handleCost = costInput => {
+    const { isPaid } = costInput;
+    updateQuery({ paid: isPaid }, query);
+    setSelectedCost(costInput);
   };
 
   const handleCategory = categoryInput => {
     const { value } = categoryInput;
+    setSelectedCategory(categoryInput);
     updateQuery({ category: value });
   };
 
@@ -74,9 +79,9 @@ function Resources() {
     if (!languageList) {
       return;
     }
+    setSelectedLanguages(languageList);
     const languageValues =
       languageList && !!languageList.length ? languageList.map(language => language.value) : null;
-    setSelectedLanguages(languageValues);
     updateQuery({ languages: languageValues });
   };
 
@@ -112,10 +117,6 @@ function Resources() {
       });
 
     setErrorMessage(null);
-    // eslint-disable-next-line no-restricted-globals
-    if (isNaN(currentPage)) {
-      console.warn('invalid page');
-    }
     handleEndpoint()
       .then(response => {
         const fetchedResources = get(response, 'data.data', []);
@@ -142,18 +143,31 @@ function Resources() {
       });
   }, [query]);
 
-  const updateQuery = newQueryParameters => {
+  const updateQuery = (newQueryParameters, existingQueryParameters) => {
     setErrorMessage(null);
+    syncInputsWithParameters({ ...newQueryParameters, ...existingQueryParameters });
     router.push(
       {
         pathname,
-        query: { page, ...newQueryParameters },
+        query: { page, ...(existingQueryParameters || null), ...newQueryParameters },
       },
       {
         pathname: pathname.replace('[page]', '1'),
-        query: { ...newQueryParameters },
+        query: { ...(existingQueryParameters || null), ...newQueryParameters },
       },
     );
+  };
+
+  const syncInputsWithParameters = currentParameters => {
+    if (!currentParameters.category) {
+      setSelectedCategory([]);
+    }
+    if (!currentParameters.paid) {
+      setSelectedCost([]);
+    }
+    if (!currentParameters.languages) {
+      setSelectedLanguages([]);
+    }
   };
 
   return (
@@ -187,6 +201,7 @@ function Resources() {
                   className={styles.select}
                   name="Categories"
                   options={allCategories}
+                  value={selectedCategory}
                   onChange={handleCategory}
                 />
               </div>
@@ -200,8 +215,8 @@ function Resources() {
                   isMulti
                   name="Languages"
                   options={allLanguages}
+                  value={selectedLanguages}
                   onChange={handleLanguages}
-                  selected={selectedLanguages}
                 />
               </div>
 
@@ -209,10 +224,11 @@ function Resources() {
                 <h5>By Cost</h5>
                 <ThemedReactSelect
                   instanceId="cost_select"
-                  placeholder="Course cost..."
+                  placeholder="Resource cost..."
                   className={styles.select}
                   name="Paid"
                   options={costOptions}
+                  value={selectedCost}
                   onChange={handleCost}
                 />
               </div>
