@@ -1,42 +1,52 @@
+import fs from 'fs';
+import { join } from 'path';
+import dynamic from 'next/dynamic';
 import Content from 'components/Content/Content';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import PropTypes from 'prop-types';
-import { getArticlePath } from 'common/utils/path-utils';
-import ErrorPage from 'next/error';
+
+const articlesDirectory = join(process.cwd(), 'blogArticles');
+
+function getAllArticleNames() {
+  const articleNames = fs.readdirSync(articlesDirectory);
+  return articleNames.map(name => {
+    return {
+      params: {
+        article: name.replace(/\.mdx$/, ''),
+      },
+    };
+  });
+}
+
+export async function getStaticPaths() {
+  return {
+    paths: getAllArticleNames(),
+    fallback: false,
+  };
+}
+
+export async function getStaticProps({ params }) {
+  const articleName = `${params.article}.mdx`;
+  return {
+    props: {
+      articleName,
+    },
+  };
+}
 
 BlogArticle.propTypes = {
-  Article: PropTypes.object,
-  statusCode: PropTypes.number,
+  articleName: PropTypes.string.isRequired,
 };
 
-BlogArticle.defaultProps = {
-  Article: {},
-  statusCode: null,
-};
+function BlogArticle({ articleName }) {
+  const Article = dynamic(() => import(`../../blogArticles/${articleName}`));
 
-BlogArticle.getInitialProps = async ({ query }) => {
-  const articlePath = getArticlePath(`${query.article}.mdx`);
-  const props = {};
-  if (articlePath === '') {
-    props.statusCode = 404;
-  } else {
-    // eslint-disable-next-line prefer-template
-    const Article = await import('../../blogArticles' + articlePath);
-    props.Article = Article;
-  }
-  return props;
-};
-
-function BlogArticle({ Article, statusCode }) {
-  if (statusCode) {
-    return <ErrorPage statusCode={statusCode} />;
-  }
   return (
     <>
       <Head title="Blog" />
       <HeroBanner title="Blog" className="smallHero" />
-      <Content theme="gray" columns={[<Article.default />]} />
+      <Content theme="gray" columns={[<Article />]} />
     </>
   );
 }

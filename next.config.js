@@ -1,7 +1,7 @@
 const withSourceMaps = require('@zeit/next-source-maps')();
 const withBundleAnalyzer = require('@zeit/next-bundle-analyzer');
 const withMDX = require('@next/mdx')({
-  extension: /\.mdx?$/,
+  extension: /\.mdx$/,
 });
 const svgoConfig = require('./common/config/svgo');
 
