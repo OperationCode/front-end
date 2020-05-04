@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import get from 'lodash/get';
+import omit from 'lodash/omit';
 import Content from 'components/Content/Content';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
@@ -150,6 +151,7 @@ function Resources() {
 
   const updateQuery = (newQueryParameters, previousQueryParameters) => {
     setErrorMessage(null);
+    const previousParametersWithoutPage = omit(previousQueryParameters, ['page']);
     syncInputsWithParameters({ ...newQueryParameters, ...previousQueryParameters });
     router.push(
       {
@@ -158,7 +160,7 @@ function Resources() {
       },
       {
         pathname: pathname.replace('[page]', '1'),
-        query: { ...(previousQueryParameters || null), ...newQueryParameters },
+        query: { ...(previousParametersWithoutPage || null), ...newQueryParameters },
       },
     );
   };
