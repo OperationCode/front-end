@@ -58,6 +58,10 @@ export const get = async (path, { token, parameters } = {}, axiosClient = Operat
     .then(response => {
       clearTimeout(connectionTimeout);
       return response;
+    })
+    .catch(error => {
+      clearTimeout(connectionTimeout);
+      return error.response.data;
     });
 };
 

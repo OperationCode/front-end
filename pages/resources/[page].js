@@ -20,7 +20,7 @@ import Input from 'components/Form/Input/Input';
 import styles from '../styles/resources.module.css';
 import ThemedReactSelect from '../../components/Form/Select/ThemedReactSelect';
 import Alert from '../../components/Alert/Alert';
-// import { RESOURCE_CARD } from '../../common/constants/testIDs';
+import { RESOURCE_SEARCH } from '../../common/constants/testIDs';
 
 const pageTitle = 'Resources';
 
@@ -56,6 +56,30 @@ function Resources() {
     return getResourcesBySearch({ page, q, paid });
   };
 
+  const handleSearch = search => {
+    updateQuery(search);
+  };
+
+  const handleCost = isPaid => {
+    const { value } = isPaid;
+    updateQuery({ paid: value });
+  };
+
+  const handleCategory = categoryInput => {
+    const { value } = categoryInput;
+    updateQuery({ category: value });
+  };
+
+  const handleLanguages = languageList => {
+    if (!languageList) {
+      return;
+    }
+    const languageValues =
+      languageList && !!languageList.length ? languageList.map(language => language.value) : null;
+    setSelectedLanguages(languageValues);
+    updateQuery({ languages: languageValues });
+  };
+
   useEffect(() => {
     Promise.all([getResourcesByCategories(), getResourcesByLanguages()])
       .then(([categoriesResponse, languagesResponse]) => {
@@ -84,7 +108,7 @@ function Resources() {
         );
       })
       .catch(() => {
-        setErrorMessage('There was an error finding these resources.');
+        setErrorMessage('There was a problem loading resources.');
       });
 
     setErrorMessage(null);
@@ -98,9 +122,12 @@ function Resources() {
         const fetchedNumberOfPages = get(response, 'data.number_of_pages', 0);
 
         if (fetchedResources.length === 0 || fetchedNumberOfPages === 0) {
-          console.log('nothing returned');
+          setErrorMessage(response.errors['not-found'].message);
+          setResources([]);
+          setTotalPages(1);
           return;
         }
+
         setResources(fetchedResources);
         if (q) {
           setTotalPages(fetchedNumberOfPages - 1);
@@ -115,42 +142,18 @@ function Resources() {
       });
   }, [query]);
 
-  const updateQuery = newQueryObject => {
+  const updateQuery = newQueryParameters => {
     setErrorMessage(null);
     router.push(
       {
         pathname,
-        query: { page, ...newQueryObject },
+        query: { page, ...newQueryParameters },
       },
       {
         pathname: pathname.replace('[page]', '1'),
-        query: { ...newQueryObject },
+        query: { ...newQueryParameters },
       },
     );
-  };
-
-  const handleSearch = search => {
-    updateQuery(search);
-  };
-
-  const handleCost = isPaid => {
-    const { value } = isPaid;
-    updateQuery({ paid: value });
-  };
-
-  const handleCategory = categoryInput => {
-    const { value } = categoryInput;
-    updateQuery({ category: value });
-  };
-
-  const handleLanguages = languageList => {
-    if (!languageList) {
-      return;
-    }
-    const languageValues =
-      languageList && !!languageList.length ? languageList.map(language => language.value) : null;
-    setSelectedLanguages(languageValues);
-    updateQuery({ languages: languageValues });
   };
 
   return (
@@ -161,13 +164,21 @@ function Resources() {
         theme="white"
         columns={[
           <section className={styles.fullWidth}>
-            <Formik onSubmit={handleSearch}>
-              <Form>
-                <Field type="search" name="q" label="Search" component={Input} />
-              </Form>
-            </Formik>
-
             <div className={styles.selectContainer}>
+              <div className={styles.selectColumn}>
+                <Formik onSubmit={handleSearch}>
+                  <Form>
+                    <Field
+                      data-testid={RESOURCE_SEARCH}
+                      type="search"
+                      name="q"
+                      label="Search"
+                      component={Input}
+                    />
+                  </Form>
+                </Formik>
+              </div>
+
               <div className={styles.selectColumn}>
                 <h5>By Category</h5>
                 <ThemedReactSelect
@@ -199,18 +210,6 @@ function Resources() {
                 <ThemedReactSelect
                   instanceId="cost_select"
                   placeholder="Course cost..."
-                  className={styles.select}
-                  name="Paid"
-                  options={costOptions}
-                  onChange={handleCost}
-                />
-              </div>
-
-              <div className={styles.selectColumn}>
-                <h5>By Date</h5>
-                <ThemedReactSelect
-                  instanceId="cost_select"
-                  placeholder="Resources added before..."
                   className={styles.select}
                   name="Paid"
                   options={costOptions}
