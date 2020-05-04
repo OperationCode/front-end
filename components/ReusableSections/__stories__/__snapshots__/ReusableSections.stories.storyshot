@@ -214,7 +214,7 @@ exports[`Storyshots ReusableSections SponsorsSection 1`] = `
         className="PartnerLogoLink"
       >
         <a
-          href="https://slack.com/"
+          href="https://slack.com/?utm_source=operationcode"
           onClick={[Function]}
           rel="noopener noreferrer"
           target="_blank"
@@ -243,7 +243,7 @@ exports[`Storyshots ReusableSections SponsorsSection 1`] = `
         className="PartnerLogoLink"
       >
         <a
-          href="https://threatstack.com"
+          href="https://threatstack.com/?utm_source=operationcode"
           onClick={[Function]}
           rel="noopener noreferrer"
           target="_blank"
@@ -272,7 +272,7 @@ exports[`Storyshots ReusableSections SponsorsSection 1`] = `
         className="PartnerLogoLink"
       >
         <a
-          href="https://usbank.com/index.html"
+          href="https://www.usbank.com/index.html?utm_source=operationcode"
           onClick={[Function]}
           rel="noopener noreferrer"
           target="_blank"
@@ -338,7 +338,7 @@ exports[`Storyshots ReusableSections SponsorsSection 1`] = `
         className="PartnerLogoLink"
       >
         <a
-          href="https://1password.com/"
+          href="https://1password.com/?utm_source=operationcode"
           onClick={[Function]}
           rel="noopener noreferrer"
           target="_blank"
@@ -367,7 +367,7 @@ exports[`Storyshots ReusableSections SponsorsSection 1`] = `
         className="PartnerLogoLink"
       >
         <a
-          href="https://apexsystems.com"
+          href="https://apexsystems.com/?utm_source=operationcode"
           onClick={[Function]}
           rel="noopener noreferrer"
           target="_blank"
@@ -396,7 +396,7 @@ exports[`Storyshots ReusableSections SponsorsSection 1`] = `
         className="PartnerLogoLink"
       >
         <a
-          href="https://github.com"
+          href="https://github.com/?utm_source=operationcode"
           onClick={[Function]}
           rel="noopener noreferrer"
           target="_blank"
@@ -425,7 +425,7 @@ exports[`Storyshots ReusableSections SponsorsSection 1`] = `
         className="PartnerLogoLink"
       >
         <a
-          href="https://hackerrank.com"
+          href="https://hackerrank.com/?utm_source=operationcode"
           onClick={[Function]}
           rel="noopener noreferrer"
           target="_blank"
@@ -454,7 +454,7 @@ exports[`Storyshots ReusableSections SponsorsSection 1`] = `
         className="PartnerLogoLink"
       >
         <a
-          href="https://heroku.com/"
+          href="https://heroku.com/?utm_source=operationcode"
           onClick={[Function]}
           rel="noopener noreferrer"
           target="_blank"
@@ -483,7 +483,7 @@ exports[`Storyshots ReusableSections SponsorsSection 1`] = `
         className="PartnerLogoLink"
       >
         <a
-          href="https://logrocket.com/"
+          href="https://logrocket.com/?utm_source=operationcode"
           onClick={[Function]}
           rel="noopener noreferrer"
           target="_blank"
@@ -512,7 +512,7 @@ exports[`Storyshots ReusableSections SponsorsSection 1`] = `
         className="PartnerLogoLink"
       >
         <a
-          href="https://oreilly.com"
+          href="https://oreilly.com/?utm_source=operationcode"
           onClick={[Function]}
           rel="noopener noreferrer"
           target="_blank"
@@ -541,7 +541,7 @@ exports[`Storyshots ReusableSections SponsorsSection 1`] = `
         className="PartnerLogoLink"
       >
         <a
-          href="https://vercel.com/home"
+          href="https://vercel.com/home?utm_source=operationcode"
           onClick={[Function]}
           rel="noopener noreferrer"
           target="_blank"
@@ -570,7 +570,7 @@ exports[`Storyshots ReusableSections SponsorsSection 1`] = `
         className="PartnerLogoLink"
       >
         <a
-          href="https://zapier.com"
+          href="https://zapier.com/?utm_source=operationcode"
           onClick={[Function]}
           rel="noopener noreferrer"
           target="_blank"

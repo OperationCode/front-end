@@ -50,83 +50,74 @@ exports[`Storyshots Cards/SchoolCard with many locations 1`] = `
     />
   </div>
   <div
-    className="cardBlock"
+    className="cardBlock badgeGroup"
   >
-    <span
-      className="cardBlockTitle"
+    <figure
+      className="Badge badgeGroupItem active"
     >
-      Availability
-    </span>
-    <div
-      className="badgeGroup"
+      <svg />
+      <figcaption
+        className="label"
+      >
+        <span
+          className="ScreenReaderOnly"
+          data-testid="SCREEN_READER_ONLY"
+        >
+          Has 
+        </span>
+        Physical campus
+      </figcaption>
+    </figure>
+    <figure
+      className="Badge badgeGroupItem active"
     >
-      <figure
-        className="Badge badgeGroupItem active"
+      <svg
+        data-testid="School has online"
+      />
+      <figcaption
+        className="label"
       >
-        <svg
-          data-testid="School has online"
-        />
-        <figcaption
-          className="label"
+        <span
+          className="ScreenReaderOnly"
+          data-testid="SCREEN_READER_ONLY"
         >
-          <span
-            className="ScreenReaderOnly"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Has 
-          </span>
-          Online
-        </figcaption>
-      </figure>
-      <figure
-        className="Badge badgeGroupItem active"
+          Has 
+        </span>
+        Online classes
+      </figcaption>
+    </figure>
+    <figure
+      className="Badge badgeGroupItem inactive"
+    >
+      <svg />
+      <figcaption
+        className="label"
       >
-        <svg />
-        <figcaption
-          className="label"
+        <span
+          className="ScreenReaderOnly"
+          data-testid="SCREEN_READER_ONLY"
         >
-          <span
-            className="ScreenReaderOnly"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Has 
-          </span>
-          Campus
-        </figcaption>
-      </figure>
-      <figure
-        className="Badge badgeGroupItem"
+          Does not have 
+        </span>
+        Housing options
+      </figcaption>
+    </figure>
+    <figure
+      className="Badge badgeGroupItem inactive"
+    >
+      <svg />
+      <figcaption
+        className="label"
       >
-        <svg />
-        <figcaption
-          className="label"
+        <span
+          className="ScreenReaderOnly"
+          data-testid="SCREEN_READER_ONLY"
         >
-          <span
-            className="ScreenReaderOnly"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Does not have 
-          </span>
-          Housing
-        </figcaption>
-      </figure>
-      <figure
-        className="Badge badgeGroupItem"
-      >
-        <svg />
-        <figcaption
-          className="label"
-        >
-          <span
-            className="ScreenReaderOnly"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Does not have 
-          </span>
-          Equipment
-        </figcaption>
-      </figure>
-    </div>
+          Does not have 
+        </span>
+        Provided equipment
+      </figcaption>
+    </figure>
   </div>
   <div
     className="cardBlock"
@@ -134,27 +125,7 @@ exports[`Storyshots Cards/SchoolCard with many locations 1`] = `
     <span
       className="cardBlockTitle"
     >
-      Accepts GI Bill
-    </span>
-    Yes
-  </div>
-  <div
-    className="cardBlock"
-  >
-    <span
-      className="cardBlockTitle"
-    >
-      VET TEC Approved
-    </span>
-    Yes
-  </div>
-  <div
-    className="cardBlock"
-  >
-    <span
-      className="cardBlockTitle"
-    >
-      Campus Locations
+      Campus Locations:
     </span>
     Multiple locations
     <button
@@ -228,83 +199,74 @@ exports[`Storyshots Cards/SchoolCard with no physical locations 1`] = `
     />
   </div>
   <div
-    className="cardBlock"
+    className="cardBlock badgeGroup"
   >
-    <span
-      className="cardBlockTitle"
+    <figure
+      className="Badge badgeGroupItem inactive"
     >
-      Availability
-    </span>
-    <div
-      className="badgeGroup"
+      <svg />
+      <figcaption
+        className="label"
+      >
+        <span
+          className="ScreenReaderOnly"
+          data-testid="SCREEN_READER_ONLY"
+        >
+          Does not have 
+        </span>
+        Physical campus
+      </figcaption>
+    </figure>
+    <figure
+      className="Badge badgeGroupItem active"
     >
-      <figure
-        className="Badge badgeGroupItem active"
+      <svg
+        data-testid="School has online"
+      />
+      <figcaption
+        className="label"
       >
-        <svg
-          data-testid="School has online"
-        />
-        <figcaption
-          className="label"
+        <span
+          className="ScreenReaderOnly"
+          data-testid="SCREEN_READER_ONLY"
         >
-          <span
-            className="ScreenReaderOnly"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Has 
-          </span>
-          Online
-        </figcaption>
-      </figure>
-      <figure
-        className="Badge badgeGroupItem"
+          Has 
+        </span>
+        Online classes
+      </figcaption>
+    </figure>
+    <figure
+      className="Badge badgeGroupItem inactive"
+    >
+      <svg />
+      <figcaption
+        className="label"
       >
-        <svg />
-        <figcaption
-          className="label"
+        <span
+          className="ScreenReaderOnly"
+          data-testid="SCREEN_READER_ONLY"
         >
-          <span
-            className="ScreenReaderOnly"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Does not have 
-          </span>
-          Campus
-        </figcaption>
-      </figure>
-      <figure
-        className="Badge badgeGroupItem"
+          Does not have 
+        </span>
+        Housing options
+      </figcaption>
+    </figure>
+    <figure
+      className="Badge badgeGroupItem inactive"
+    >
+      <svg />
+      <figcaption
+        className="label"
       >
-        <svg />
-        <figcaption
-          className="label"
+        <span
+          className="ScreenReaderOnly"
+          data-testid="SCREEN_READER_ONLY"
         >
-          <span
-            className="ScreenReaderOnly"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Does not have 
-          </span>
-          Housing
-        </figcaption>
-      </figure>
-      <figure
-        className="Badge badgeGroupItem"
-      >
-        <svg />
-        <figcaption
-          className="label"
-        >
-          <span
-            className="ScreenReaderOnly"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Does not have 
-          </span>
-          Equipment
-        </figcaption>
-      </figure>
-    </div>
+          Does not have 
+        </span>
+        Provided equipment
+      </figcaption>
+    </figure>
   </div>
   <div
     className="cardBlock"
@@ -312,27 +274,7 @@ exports[`Storyshots Cards/SchoolCard with no physical locations 1`] = `
     <span
       className="cardBlockTitle"
     >
-      Accepts GI Bill
-    </span>
-    No
-  </div>
-  <div
-    className="cardBlock"
-  >
-    <span
-      className="cardBlockTitle"
-    >
-      VET TEC Approved
-    </span>
-    Yes
-  </div>
-  <div
-    className="cardBlock"
-  >
-    <span
-      className="cardBlockTitle"
-    >
-      Campus Locations
+      Campus Locations:
     </span>
     Online only
   </div>
@@ -396,83 +338,74 @@ exports[`Storyshots Cards/SchoolCard with one location 1`] = `
     />
   </div>
   <div
-    className="cardBlock"
+    className="cardBlock badgeGroup"
   >
-    <span
-      className="cardBlockTitle"
+    <figure
+      className="Badge badgeGroupItem active"
     >
-      Availability
-    </span>
-    <div
-      className="badgeGroup"
+      <svg />
+      <figcaption
+        className="label"
+      >
+        <span
+          className="ScreenReaderOnly"
+          data-testid="SCREEN_READER_ONLY"
+        >
+          Has 
+        </span>
+        Physical campus
+      </figcaption>
+    </figure>
+    <figure
+      className="Badge badgeGroupItem inactive"
     >
-      <figure
-        className="Badge badgeGroupItem"
+      <svg
+        data-testid="School has no online"
+      />
+      <figcaption
+        className="label"
       >
-        <svg
-          data-testid="School has no online"
-        />
-        <figcaption
-          className="label"
+        <span
+          className="ScreenReaderOnly"
+          data-testid="SCREEN_READER_ONLY"
         >
-          <span
-            className="ScreenReaderOnly"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Does not have 
-          </span>
-          Online
-        </figcaption>
-      </figure>
-      <figure
-        className="Badge badgeGroupItem active"
+          Does not have 
+        </span>
+        Online classes
+      </figcaption>
+    </figure>
+    <figure
+      className="Badge badgeGroupItem inactive"
+    >
+      <svg />
+      <figcaption
+        className="label"
       >
-        <svg />
-        <figcaption
-          className="label"
+        <span
+          className="ScreenReaderOnly"
+          data-testid="SCREEN_READER_ONLY"
         >
-          <span
-            className="ScreenReaderOnly"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Has 
-          </span>
-          Campus
-        </figcaption>
-      </figure>
-      <figure
-        className="Badge badgeGroupItem"
+          Does not have 
+        </span>
+        Housing options
+      </figcaption>
+    </figure>
+    <figure
+      className="Badge badgeGroupItem active"
+    >
+      <svg />
+      <figcaption
+        className="label"
       >
-        <svg />
-        <figcaption
-          className="label"
+        <span
+          className="ScreenReaderOnly"
+          data-testid="SCREEN_READER_ONLY"
         >
-          <span
-            className="ScreenReaderOnly"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Does not have 
-          </span>
-          Housing
-        </figcaption>
-      </figure>
-      <figure
-        className="Badge badgeGroupItem active"
-      >
-        <svg />
-        <figcaption
-          className="label"
-        >
-          <span
-            className="ScreenReaderOnly"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Has 
-          </span>
-          Equipment
-        </figcaption>
-      </figure>
-    </div>
+          Has 
+        </span>
+        Provided equipment
+      </figcaption>
+    </figure>
   </div>
   <div
     className="cardBlock"
@@ -480,27 +413,7 @@ exports[`Storyshots Cards/SchoolCard with one location 1`] = `
     <span
       className="cardBlockTitle"
     >
-      Accepts GI Bill
-    </span>
-    No
-  </div>
-  <div
-    className="cardBlock"
-  >
-    <span
-      className="cardBlockTitle"
-    >
-      VET TEC Approved
-    </span>
-    Yes
-  </div>
-  <div
-    className="cardBlock"
-  >
-    <span
-      className="cardBlockTitle"
-    >
-      Campus Locations
+      Campus Locations:
     </span>
     Los Angeles, CA
   </div>

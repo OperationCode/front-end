@@ -29,65 +29,56 @@ exports[`SchoolCard should render with required props 1`] = `
     />
   </div>
   <div
-    className="cardBlock"
+    className="cardBlock badgeGroup"
   >
-    <span
-      className="cardBlockTitle"
-    >
-      Availability
-    </span>
-    <div
-      className="badgeGroup"
-    >
-      <Badge
-        className="badgeGroupItem active"
-        icon={
-          <Svg
-            data-testid="School has online"
-          />
-        }
-        isImageFirst={true}
-        label={
-          <LabelWithScreenReader
-            isActive={true}
-            label="Online"
-          />
-        }
-      />
-      <Badge
-        className="badgeGroupItem active"
-        icon={<Svg />}
-        isImageFirst={true}
-        label={
-          <LabelWithScreenReader
-            isActive={true}
-            label="Campus"
-          />
-        }
-      />
-      <Badge
-        className="badgeGroupItem active"
-        icon={<Svg />}
-        isImageFirst={true}
-        label={
-          <LabelWithScreenReader
-            isActive={true}
-            label="Housing"
-          />
-        }
-      />
-      <Badge
-        className="badgeGroupItem active"
-        icon={<Svg />}
-        isImageFirst={true}
-        label={
-          <LabelWithScreenReader
-            isActive={true}
-            label="Equipment"
-          />
-        }
-      />
-    </div>
+    <Badge
+      className="badgeGroupItem active"
+      icon={<Svg />}
+      isImageFirst={true}
+      label={
+        <LabelWithScreenReader
+          isActive={true}
+          label="Physical campus"
+        />
+      }
+    />
+    <Badge
+      className="badgeGroupItem active"
+      icon={
+        <Svg
+          data-testid="School has online"
+        />
+      }
+      isImageFirst={true}
+      label={
+        <LabelWithScreenReader
+          isActive={true}
+          label="Online classes"
+        />
+      }
+    />
+    <Badge
+      className="badgeGroupItem active"
+      icon={<Svg />}
+      isImageFirst={true}
+      label={
+        <LabelWithScreenReader
+          isActive={true}
+          label="Housing options"
+        />
+      }
+    />
+    <Badge
+      className="badgeGroupItem active"
+      icon={<Svg />}
+      isImageFirst={true}
+      label={
+        <LabelWithScreenReader
+          isActive={true}
+          label="Provided equipment"
+        />
+      }
+    />
   </div>
   <div
     className="cardBlock"
@@ -95,27 +86,7 @@ exports[`SchoolCard should render with required props 1`] = `
     <span
       className="cardBlockTitle"
     >
-      Accepts GI Bill
-    </span>
-    Yes
-  </div>
-  <div
-    className="cardBlock"
-  >
-    <span
-      className="cardBlockTitle"
-    >
-      VET TEC Approved
-    </span>
-    No
-  </div>
-  <div
-    className="cardBlock"
-  >
-    <span
-      className="cardBlockTitle"
-    >
-      Campus Locations
+      Campus Locations:
     </span>
     Multiple locations
     <Button
