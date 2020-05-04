@@ -7,6 +7,7 @@ import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
 import { UPVOTE_BUTTON, DOWNVOTE_BUTTON } from 'common/constants/testIDs';
 import ThumbsUp from 'static/images/icons/FontAwesome/thumbs-up.svg';
 import ThumbsDown from 'static/images/icons/FontAwesome/thumbs-down.svg';
+import { RESOURCE_CARD } from '../../../common/constants/testIDs';
 import styles from './ResourceCard.module.css';
 
 export const possibleUserVotes = {
@@ -106,7 +107,7 @@ function ResourceCard({
       className={styles.ResourceCard}
       content={{
         headingChildren: (
-          <div className={styles.header}>
+          <div data-testid={RESOURCE_CARD} className={styles.header}>
             <h5 className={styles.resourceName}>
               <OutboundLink
                 analyticsEventLabel={`Resource: ${name}`}
