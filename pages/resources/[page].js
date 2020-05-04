@@ -86,6 +86,11 @@ function Resources() {
   };
 
   useEffect(() => {
+    console.log(currentPage); // flashes NaN at least once causing infinite loop
+    // eslint-disable-next-line no-restricted-globals
+    if (currentPage && currentPage && isNaN(currentPage)) {
+      router.push({ pathname: pathname.replace('[page]', '1') });
+    }
     Promise.all([getResourcesByCategories(), getResourcesByLanguages()])
       .then(([categoriesResponse, languagesResponse]) => {
         const {
@@ -143,17 +148,17 @@ function Resources() {
       });
   }, [query]);
 
-  const updateQuery = (newQueryParameters, existingQueryParameters) => {
+  const updateQuery = (newQueryParameters, previousQueryParameters) => {
     setErrorMessage(null);
-    syncInputsWithParameters({ ...newQueryParameters, ...existingQueryParameters });
+    syncInputsWithParameters({ ...newQueryParameters, ...previousQueryParameters });
     router.push(
       {
         pathname,
-        query: { page, ...(existingQueryParameters || null), ...newQueryParameters },
+        query: { page, ...(previousQueryParameters || null), ...newQueryParameters },
       },
       {
         pathname: pathname.replace('[page]', '1'),
-        query: { ...(existingQueryParameters || null), ...newQueryParameters },
+        query: { ...(previousQueryParameters || null), ...newQueryParameters },
       },
     );
   };
