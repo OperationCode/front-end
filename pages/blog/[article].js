@@ -6,20 +6,20 @@ import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import PropTypes from 'prop-types';
 
-const articlesDirectory = join(process.cwd(), 'blogArticles');
-
-function getAllArticleNames() {
-  const articleNames = fs.readdirSync(articlesDirectory);
-  return articleNames.map(name => {
-    return {
-      params: {
-        article: name.replace(/\.mdx$/, ''),
-      },
-    };
-  });
-}
-
 export async function getStaticPaths() {
+  const articlesDirectory = join(process.cwd(), 'blogArticles');
+
+  function getAllArticleNames() {
+    const articleNames = fs.readdirSync(articlesDirectory);
+    return articleNames.map(name => {
+      return {
+        params: {
+          article: name.replace(/\.mdx$/, ''),
+        },
+      };
+    });
+  }
+
   return {
     paths: getAllArticleNames(),
     fallback: false,
