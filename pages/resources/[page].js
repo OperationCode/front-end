@@ -31,6 +31,11 @@ function Resources() {
   const { page, category, languages, paid, q } = query;
   const currentPage = parseInt(page, 10);
 
+  // eslint-disable-next-line no-restricted-globals
+  if (page && isNaN(page)) {
+    router.push({ pathname: pathname.replace('[page]', '1') });
+  }
+
   const [errorMessage, setErrorMessage] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -87,11 +92,6 @@ function Resources() {
   };
 
   useEffect(() => {
-    console.log(currentPage); // flashes NaN at least once causing infinite loop
-    // eslint-disable-next-line no-restricted-globals
-    if (currentPage && currentPage && isNaN(currentPage)) {
-      router.push({ pathname: pathname.replace('[page]', '1') });
-    }
     Promise.all([getResourcesByCategories(), getResourcesByLanguages()])
       .then(([categoriesResponse, languagesResponse]) => {
         const {
