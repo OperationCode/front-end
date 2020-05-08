@@ -5,6 +5,7 @@ import Content from 'components/Content/Content';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import PropTypes from 'prop-types';
+import styles from '../styles/article.module.css';
 
 export async function getStaticPaths() {
   const articlesDirectory = join(process.cwd(), 'blogArticles');
@@ -46,7 +47,7 @@ function BlogArticle({ articleName }) {
     <>
       <Head title="Blog" />
       <HeroBanner title="Blog" className="smallHero" />
-      <Content theme="gray" columns={[<Article />]} />
+      <Content theme="gray" style={styles.article} columns={[<Article />]} />
     </>
   );
 }
