@@ -1,11 +1,11 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import ReCaptcha from '../ReCaptcha';
+import Captcha from '../ReCaptcha';
 
-describe('ReCaptcha', () => {
+describe('Captcha', () => {
   it('should render', () => {
-    const { container } = render(<ReCaptcha />);
+    const { container } = render(<Captcha />);
 
     expect(container.firstChild).not.toBeNull();
   });
