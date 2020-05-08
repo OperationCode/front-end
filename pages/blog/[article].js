@@ -47,7 +47,16 @@ function BlogArticle({ articleName }) {
     <>
       <Head title="Blog" />
       <HeroBanner title="Blog" className="smallHero" />
-      <Content theme="gray" style={styles.article} columns={[<Article />]} />
+      <Content
+        theme="gray"
+        columns={[
+          <div>
+            <p className={styles.article}>
+              <Article />
+            </p>
+          </div>,
+        ]}
+      />
     </>
   );
 }
