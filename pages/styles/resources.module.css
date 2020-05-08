@@ -1,15 +1,24 @@
-.fullWidth {
-  width: 80vw;
+.resourcesContainer {
+  width: 70vw;
 }
 
-.selectContainer {
+.formContainer {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .selectColumn {
   flex: 30%;
   margin: 0 1rem;
+}
+
+.buttonGroup {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin: 10px;
 }
 
 .resourcesCardsWrapper {

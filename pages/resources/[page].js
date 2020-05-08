@@ -1,13 +1,14 @@
 /* eslint-disable no-console */
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
+import dynamic from 'next/dynamic';
+import { oneOfType, array, shape, string } from 'prop-types';
 import get from 'lodash/get';
 import omit from 'lodash/omit';
 import Content from 'components/Content/Content';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Pagination from 'components/Pagination/Pagination';
-import ResourceCard from 'components/Cards/ResourceCard/ResourceCard';
 import ResourceSkeletonCard from 'components/Cards/ResourceCard/ResourceSkeletonCard';
 import {
   getResourcesPromise,
@@ -18,14 +19,37 @@ import {
 import { Field, Formik } from 'formik';
 import Form from 'components/Form/Form';
 import Input from 'components/Form/Input/Input';
+import Button from '../../components/Button/Button';
 import styles from '../styles/resources.module.css';
-import ThemedReactSelect from '../../components/Form/Select/ThemedReactSelect';
+import Select from '../../components/Form/Select/Select';
 import Alert from '../../components/Alert/Alert';
 import { RESOURCE_SEARCH } from '../../common/constants/testIDs';
 
 const pageTitle = 'Resources';
 
-function Resources() {
+const ResourceCard = dynamic(() => import('../../components/Cards/ResourceCard/ResourceCard'), {
+  loading: () => <ResourceSkeletonCard numberOfSkeletons={5} />,
+});
+
+Resources.propTypes = {
+  initialValues: shape({
+    category: string,
+    q: string,
+    languages: oneOfType([string, array]),
+    paid: string,
+  }),
+};
+
+Resources.defaultProps = {
+  initialValues: {
+    category: '',
+    q: '',
+    languages: [],
+    paid: '',
+  },
+};
+
+function Resources({ initialValues }) {
   const router = useRouter();
   const { pathname, query } = router;
   const { page, category, languages, paid, q } = query;
@@ -35,9 +59,7 @@ function Resources() {
   if (page && isNaN(page)) {
     router.push({ pathname: pathname.replace('[page]', '1') });
   }
-
   const [errorMessage, setErrorMessage] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
 
   const [resources, setResources] = useState([]);
   const [totalPages, setTotalPages] = useState(currentPage);
@@ -45,50 +67,36 @@ function Resources() {
   const [allCategories, setAllCategories] = useState([]);
   const [allLanguages, setAllLanguages] = useState([]);
 
-  const [selectedLanguages, setSelectedLanguages] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState([]);
-  const [selectedCost, setSelectedCost] = useState({});
-
   const costOptions = [
-    { label: 'Paid', value: 'paid', isPaid: true },
-    { label: 'Free', value: 'free', isPaid: false },
+    { label: 'Paid', value: 'true' },
+    { label: 'Free', value: 'false' },
   ];
+
+  const handleError = error =>
+    error.errors
+      ? error.errors['not-found'].message
+      : 'There was a problem loading those resources.';
 
   const handleEndpoint = () => {
     if (q) {
-      return getResourcesBySearch({ page, q, paid });
+      return getResourcesBySearch({ page, category, languages, paid, q });
     }
-    if (languages || category) {
-      return getResourcesPromise({ page, languages, category, paid });
-    }
-    return getResourcesPromise({ page, languages, category, paid });
+    return getResourcesPromise({ page, category, languages, paid });
   };
 
-  const handleSearch = (search, { resetForm }) => {
-    updateQuery(search);
-    resetForm({});
-  };
+  const handleSubmit = (values, actions) => {
+    const emptyQueryParameters = Object.entries(values).filter(
+      item => item[1] === null || !item[1].length,
+    );
+    const activeParameters = omit(
+      values,
+      emptyQueryParameters.map(parameter => parameter[0]),
+    );
 
-  const handleCost = costInput => {
-    const { isPaid } = costInput;
-    updateQuery({ paid: isPaid }, query);
-    setSelectedCost(costInput);
-  };
-
-  const handleCategory = categoryInput => {
-    const { value } = categoryInput;
-    setSelectedCategory(categoryInput);
-    updateQuery({ category: value });
-  };
-
-  const handleLanguages = languageList => {
-    if (!languageList) {
-      return;
-    }
-    setSelectedLanguages(languageList);
-    const languageValues =
-      languageList && !!languageList.length ? languageList.map(language => language.value) : null;
-    updateQuery({ languages: languageValues });
+    updateQuery(activeParameters);
+    setTimeout(() => {
+      actions.setSubmitting(false);
+    }, 500);
   };
 
   useEffect(() => {
@@ -118,8 +126,8 @@ function Resources() {
           }),
         );
       })
-      .catch(() => {
-        setErrorMessage('There was a problem loading resources.');
+      .catch(error => {
+        setErrorMessage(handleError(error));
       });
 
     setErrorMessage(null);
@@ -129,7 +137,7 @@ function Resources() {
         const fetchedNumberOfPages = get(response, 'data.number_of_pages', 0);
 
         if (fetchedResources.length === 0 || fetchedNumberOfPages === 0) {
-          setErrorMessage(response.errors['not-found'].message);
+          setErrorMessage(handleError(response));
           setResources([]);
           setTotalPages(1);
           return;
@@ -141,40 +149,24 @@ function Resources() {
         } else {
           setTotalPages(fetchedNumberOfPages);
         }
-        setIsLoading(false);
       })
-      .catch(() => {
-        setErrorMessage('There was an error gathering those resources.');
-        setIsLoading(false);
+      .catch(error => {
+        setErrorMessage(handleError(error));
       });
   }, [query]);
 
-  const updateQuery = (newQueryParameters, previousQueryParameters) => {
+  const updateQuery = formData => {
     setErrorMessage(null);
-    const previousParametersWithoutPage = omit(previousQueryParameters, ['page']);
-    syncInputsWithParameters({ ...newQueryParameters, ...previousQueryParameters });
     router.push(
       {
         pathname,
-        query: { page, ...(previousQueryParameters || null), ...newQueryParameters },
+        query: { page, ...formData },
       },
       {
         pathname: pathname.replace('[page]', '1'),
-        query: { ...(previousParametersWithoutPage || null), ...newQueryParameters },
+        query: { ...formData },
       },
     );
-  };
-
-  const syncInputsWithParameters = currentParameters => {
-    if (!currentParameters.category) {
-      setSelectedCategory([]);
-    }
-    if (!currentParameters.paid) {
-      setSelectedCost([]);
-    }
-    if (!currentParameters.languages) {
-      setSelectedLanguages([]);
-    }
   };
 
   return (
@@ -184,70 +176,75 @@ function Resources() {
       <Content
         theme="white"
         columns={[
-          <section className={styles.fullWidth}>
-            <div className={styles.selectContainer}>
-              <div className={styles.selectColumn}>
-                <Formik onSubmit={handleSearch}>
-                  <Form>
-                    <Field
-                      data-testid={RESOURCE_SEARCH}
-                      type="search"
-                      name="q"
-                      label="Search"
-                      component={Input}
-                    />
-                  </Form>
-                </Formik>
-              </div>
+          <section className={styles.resourcesContainer}>
+            <Formik
+              initialValues={initialValues}
+              enableReinitialize={false}
+              onSubmit={(values, actions) => {
+                handleSubmit(values, actions);
+                actions.setSubmitting(true);
+              }}
+            >
+              {({ isSubmitting }) => (
+                <Form>
+                  <Field
+                    data-testid={RESOURCE_SEARCH}
+                    disabled={isSubmitting}
+                    type="search"
+                    name="q"
+                    label="Search Keywords"
+                    component={Input}
+                  />
+                  <div className={styles.formContainer}>
+                    <div className={styles.selectColumn}>
+                      <Field
+                        isDisabled={isSubmitting}
+                        placeholder="Start typing a category..."
+                        label="By Category"
+                        name="category"
+                        options={allCategories}
+                        component={Select}
+                      />
+                    </div>
 
-              <div className={styles.selectColumn}>
-                <h5>By Category</h5>
-                <ThemedReactSelect
-                  instanceId="category_select"
-                  placeholder="Start typing a category..."
-                  className={styles.select}
-                  name="Categories"
-                  options={allCategories}
-                  value={selectedCategory}
-                  onChange={handleCategory}
-                />
-              </div>
+                    <div className={styles.selectColumn}>
+                      <Field
+                        isDisabled={isSubmitting}
+                        placeholder="Resource cost..."
+                        label="By Cost"
+                        name="paid"
+                        options={costOptions}
+                        component={Select}
+                      />
+                    </div>
 
-              <div className={styles.selectColumn}>
-                <h5>By Language</h5>
-                <ThemedReactSelect
-                  instanceId="language_select"
-                  placeholder="Start typing a language..."
-                  className={styles.select}
-                  isMulti
-                  name="Languages"
-                  options={allLanguages}
-                  value={selectedLanguages}
-                  onChange={handleLanguages}
-                />
-              </div>
+                    <div className={styles.selectColumn}>
+                      <Field
+                        isDisabled={isSubmitting}
+                        placeholder="Start typing a language..."
+                        isMulti
+                        label="By Language(s)"
+                        name="languages"
+                        options={allLanguages}
+                        component={Select}
+                      />
+                    </div>
+                  </div>
+                  <div className={styles.buttonGroup}>
+                    <Button disabled={isSubmitting} type="submit">
+                      Search
+                    </Button>
 
-              <div className={styles.selectColumn}>
-                <h5>By Cost</h5>
-                <ThemedReactSelect
-                  instanceId="cost_select"
-                  placeholder="Resource cost..."
-                  className={styles.select}
-                  name="Paid"
-                  options={costOptions}
-                  value={selectedCost}
-                  onChange={handleCost}
-                />
-              </div>
-            </div>
-
-            {isLoading ? (
+                    <Button disabled={isSubmitting} type="reset">
+                      Reset
+                    </Button>
+                  </div>
+                </Form>
+              )}
+            </Formik>
+            {errorMessage && <Alert type="error">{`${errorMessage}`}</Alert>}
+            {resources && !!resources.length && (
               <>
-                <ResourceSkeletonCard numberOfSkeletons={10} />
-              </>
-            ) : (
-              <>
-                {errorMessage && <Alert type="error">{`${errorMessage}`}</Alert>}
                 <div className={styles.resourcesCardWrapper}>
                   {resources.map(resource => (
                     <ResourceCard
@@ -262,9 +259,10 @@ function Resources() {
                     />
                   ))}
                 </div>
+
                 <Pagination
                   currentPage={currentPage}
-                  totalPages={totalPages}
+                  totalPages={totalPages || 1}
                   pathname={pathname}
                   query={query}
                 />
@@ -278,17 +276,3 @@ function Resources() {
 }
 
 export default Resources;
-
-/* I realize I can't really do this because then the query string changes on rerender 
-after changing pages etc. trying to figure out how to make it pretty in the url bar 
-without uriencoded characters */
-
-// const formatQueryStringObject = () => {
-//   const slugifiedArray = Object.entries(query).map(value => [
-//     [value[0]],
-//     value[1].replace(' ', '-'),
-//   ]);
-//   const slugifiedObject = Object.fromEntries(slugifiedArray);
-//   const relevantQueryStringObject = omit(slugifiedObject, ['page']);
-//   return relevantQueryStringObject;
-// };
