@@ -11,7 +11,6 @@ class Captcha extends Component {
   componentDidMount() {
     if (this.Captcha) {
       this.Captcha.reset();
-      this.Captcha.execute();
     }
   }
 
@@ -19,6 +18,10 @@ class Captcha extends Component {
     if (this.Captcha) {
       this.Captcha.reset();
     }
+  }
+
+  verifyCallback(recaptchaToken) {
+    this.setState('recaptchaResponse', recaptchaToken);
   }
 
   render() {
