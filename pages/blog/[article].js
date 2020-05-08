@@ -50,10 +50,8 @@ function BlogArticle({ articleName }) {
       <Content
         theme="gray"
         columns={[
-          <div>
-            <p className={styles.article}>
-              <Article />
-            </p>
+          <div className={styles.article}>
+            <Article />
           </div>,
         ]}
       />
