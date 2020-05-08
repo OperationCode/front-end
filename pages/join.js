@@ -7,6 +7,7 @@ import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
 import RegistrationForm from 'components/RegistrationForm/RegistrationForm';
+import Captcha from 'components/ReCaptcha/ReCaptcha';
 
 const pageTitle = 'Join';
 
@@ -42,6 +43,7 @@ function Join({ router }) {
               <a>Login</a>
             </Link>
             .
+            <Captcha />
           </p>,
         ]}
       />

@@ -14,6 +14,7 @@ import { gtag } from 'common/utils/thirdParty/gtag';
 import Nav from 'components/Nav/Nav';
 import Footer from 'components/Footer/Footer';
 import Modal from 'components/Modal/Modal';
+import { loadReCaptcha } from 'react-recaptcha-google';
 import { version } from '../package.json';
 import 'common/styles/globalStyles.css';
 
@@ -60,6 +61,8 @@ class OperationCodeApp extends App {
   componentDidMount() {
     /* Analytics */
     // TODO: Leverage master-build-time-only env vars instead of window check
+    loadReCaptcha();
+
     if (isProduction && window.location.host.includes('operationcode.org')) {
       Sentry.init({ dsn: clientTokens.SENTRY_DSN, release: `front-end@${version}` });
       LogRocket.init(`${clientTokens.LOGROCKET}/operation-code`);
