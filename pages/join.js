@@ -7,6 +7,7 @@ import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
 import RegistrationForm from 'components/RegistrationForm/RegistrationForm';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 const pageTitle = 'Join';
 
@@ -20,6 +21,18 @@ function Join({ router }) {
   React.useEffect(() => {
     router.prefetch(profileUpdateURL);
   }, []);
+
+  function onChange() {
+    // I believe this is where the value gets sent to the API for the backend.
+    // value is the prop passed into this function.
+  }
+
+  const recaptchaReference = React.createRef();
+
+  const onSubmit = () => {
+    const { recaptchaValue } = recaptchaReference.current.getValue();
+    onSubmit(recaptchaValue);
+  };
 
   const handleSuccess = ({ token, user }) => {
     gtag.conversionEvent({ adId: '9ZvVCOOFmrkBEK-Rnp4D', category: 'sign_up' });
@@ -35,8 +48,13 @@ function Join({ router }) {
       <Content
         theme="gray"
         columns={[
-          <RegistrationForm onSuccess={handleSuccess} />,
+          <RegistrationForm onSuccess={handleSuccess} onSubmit={onSubmit} />,
           <p>
+            <ReCAPTCHA
+              ref={recaptchaReference}
+              sitekey="6LcIHfMUAAAAANEzSejRpPilev7Hj0vI9fxc9q9D"
+              onChange={onChange}
+            />
             Already registered?&nbsp;
             <Link href="/login">
               <a>Login</a>
