@@ -21,6 +21,7 @@ Input.propTypes = {
   isLabelHidden: bool,
   id: oneOfType([string, number]),
   label: string.isRequired,
+  hasValidationStyling: bool,
   type: oneOf([
     'button',
     'checkbox',
@@ -48,6 +49,7 @@ Input.propTypes = {
 };
 
 Input.defaultProps = {
+  hasValidationStyling: true,
   isLabelHidden: false,
   id: '',
   type: 'text',
@@ -56,9 +58,10 @@ Input.defaultProps = {
 function Input({
   field: { name, value, ...field },
   form: { touched, errors },
-  label,
-  isLabelHidden,
+  hasValidationStyling,
   id,
+  isLabelHidden,
+  label,
   type,
   ...props // input simply has too many possible attributes... we'd be redocumenting the web
   // See: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Attributes_common_to_all_input_types
@@ -79,9 +82,9 @@ function Input({
         <input
           {...field}
           {...props}
-          className={classNames(styles.Input, {
-            [styles.valid]: touched[name] && !hasErrors,
-            [styles.invalid]: touched[name] && hasErrors,
+          className={classNames(styles.Input, hasValidationStyling, {
+            [styles.valid]: touched[name] && !hasErrors && hasValidationStyling,
+            [styles.invalid]: touched[name] && hasErrors && hasValidationStyling,
           })}
           id={id || name}
           name={name}

@@ -14,6 +14,7 @@ import {
 ThemedReactSelect.propTypes = {
   disabled: bool,
   hasErrors: bool,
+  hasValidationStyling: bool,
   id: string,
   instanceId: string,
   // TODO: Resolve why multiselects can end up with touched: { key: array }
@@ -25,12 +26,20 @@ ThemedReactSelect.propTypes = {
 ThemedReactSelect.defaultProps = {
   disabled: false,
   hasErrors: false,
+  hasValidationStyling: true,
   id: undefined,
   instanceId: undefined,
   isTouched: false,
 };
 
-function ThemedReactSelect({ disabled, hasErrors, id, instanceId, ...props }) {
+function ThemedReactSelect({
+  disabled,
+  hasErrors,
+  hasValidationStyling,
+  id,
+  instanceId,
+  ...props
+}) {
   // See TODO in propTypes definition
   // eslint-disable-next-line react/destructuring-assignment
   const isTouched = Array.isArray(props.isTouched) ? true : props.isTouched; // coerce to boolean
@@ -52,8 +61,12 @@ function ThemedReactSelect({ disabled, hasErrors, id, instanceId, ...props }) {
         control: base => {
           return {
             ...base,
-            borderColor: isTouched ? getOuterColor() : `rgba(${rgbValuesSecondary}, 0.5)`,
-            boxShadow: isTouched ? `0 0 1px 1px ${getOuterColor()}` : 'none',
+            borderColor:
+              isTouched && hasValidationStyling
+                ? getOuterColor()
+                : `rgba(${rgbValuesSecondary}, 0.5)`,
+            boxShadow:
+              isTouched && hasValidationStyling ? `0 0 1px 1px ${getOuterColor()}` : 'none',
             fontSize: '1.125rem',
             marginTop: '0.25rem',
             marginBottom: '1rem',
