@@ -99,7 +99,7 @@ module.exports = {
     ],
     'import/prefer-default-export': 'off',
 
-    //OC eslint Plugin Rules
+    // OC eslint Plugin Rules
     '@operation_code/custom-rules/proptype-definition-above-fn': 'error',
 
     // Jest Plugin Rules
@@ -251,8 +251,8 @@ module.exports = {
           {
             name: 'prop-types',
             importNames: ['default'],
-            message:
-              "Please use non-default imports of `prop-types`. Example: `import { func } from 'prop-types';`",
+            message: `Please use named imports of "prop-types".\n
+              Example: "import { func } from 'prop-types';"`,
           },
         ],
       },
