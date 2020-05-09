@@ -21,6 +21,7 @@ storiesOf('Form/Input', module)
         <Input
           field={{ name: inputName }}
           form={object('form', { touched: { [inputName]: false }, errors: { [inputName]: '' } })}
+          hasValidationStyling={boolean('hasValidationStyling', true)}
           id={text('id', '')}
           isLabelHidden={boolean('isLabelHidden', false)}
           label={text('label', 'Some Input:')}

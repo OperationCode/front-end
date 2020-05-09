@@ -30,6 +30,7 @@ Select.propTypes = {
     setFieldTouched: func.isRequired,
     setFieldValue: func.isRequired,
   }).isRequired,
+  hasValidationStyling: bool,
   id: oneOfType([string, number]),
   isLabelHidden: bool,
   isMulti: bool,
@@ -39,6 +40,7 @@ Select.propTypes = {
 };
 
 Select.defaultProps = {
+  hasValidationStyling: true,
   id: undefined,
   isLabelHidden: false,
   isMulti: false,
@@ -47,6 +49,7 @@ Select.defaultProps = {
 export default function Select({
   field: { name, value: fieldValue },
   form: { errors, setFieldTouched, setFieldValue, touched },
+  hasValidationStyling,
   id,
   isLabelHidden,
   isMulti,
@@ -113,6 +116,7 @@ export default function Select({
         <ThemedReactSelect
           {...props}
           hasErrors={hasErrors}
+          hasValidationStyling={hasValidationStyling}
           isTouched={touched[name]}
           id={id || name}
           isMulti={isMulti}
