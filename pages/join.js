@@ -27,7 +27,9 @@ function Join({ router }) {
     // value is the prop passed into this function.
   }
 
-  const recaptchaReference = React.createRef();
+  import { useRef } from 'react'
+  // ...
+  const recaptchaReference = useRef(null)
 
   const onSubmit = () => {
     const { recaptchaValue } = recaptchaReference.current.getValue();
