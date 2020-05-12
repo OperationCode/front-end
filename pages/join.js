@@ -22,11 +22,6 @@ function Join({ router }) {
     router.prefetch(profileUpdateURL);
   }, []);
 
-  function onChange() {
-    // I believe this is where the value gets sent to the API for the backend.
-    // value is the prop passed into this function.
-  }
-
   const recaptchaReference = React.createRef();
 
   const onSubmit = () => {
@@ -51,9 +46,10 @@ function Join({ router }) {
           <RegistrationForm onSuccess={handleSuccess} onSubmit={onSubmit} />,
           <p>
             <ReCAPTCHA
-              ref={recaptchaReference}
+              theme="dark"
               sitekey="6LcIHfMUAAAAANEzSejRpPilev7Hj0vI9fxc9q9D"
-              onChange={onChange}
+              onChange={() => {}}
+              onErrored={() => {}}
             />
             Already registered?&nbsp;
             <Link href="/login">
