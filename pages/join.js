@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { useRef } from 'react';
 import { object } from 'prop-types';
 import { withRouter } from 'next/router';
 import { login } from 'common/utils/auth-utils';
@@ -22,7 +23,7 @@ function Join({ router }) {
     router.prefetch(profileUpdateURL);
   }, []);
 
-  const recaptchaReference = React.createRef();
+  const recaptchaReference = useRef(null);
 
   const onSubmit = () => {
     const { recaptchaValue } = recaptchaReference.current.getValue();
