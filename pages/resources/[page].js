@@ -44,7 +44,7 @@ Resources.defaultProps = {
   initialValues: {
     category: '',
     q: '',
-    languages: [],
+    languages: [''],
     paid: '',
   },
 };
