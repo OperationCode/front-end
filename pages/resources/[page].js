@@ -20,11 +20,11 @@ import {
 import { Field, Formik } from 'formik';
 import Form from 'components/Form/Form';
 import Input from 'components/Form/Input/Input';
-import Button from '../../components/Button/Button';
+import Button from 'components/Button/Button';
+import Select from 'components/Form/Select/Select';
+import Alert from 'components/Alert/Alert';
+import { RESOURCE_SEARCH } from 'common/constants/testIDs';
 import styles from '../styles/resources.module.css';
-import Select from '../../components/Form/Select/Select';
-import Alert from '../../components/Alert/Alert';
-import { RESOURCE_SEARCH } from '../../common/constants/testIDs';
 
 const pageTitle = 'Resources';
 
