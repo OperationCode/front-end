@@ -60,6 +60,7 @@
     "object-hash": "^2.0.3",
     "path": "^0.12.7",
     "prop-types": "^15.6.2",
+    "qs": "^6.9.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-facebook-login": "^4.1.1",

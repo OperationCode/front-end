@@ -3,7 +3,6 @@ import lodashGet from 'lodash/get';
 import { networkErrorMessages } from 'common/constants/messages';
 import { apiUrl } from 'common/config/environment';
 import { setAuthorizationHeader } from 'common/utils/cookie-utils';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import qs from 'qs';
 
 const axiosConfig = {
@@ -53,6 +52,11 @@ export const get = async (path, { token, parameters } = {}, axiosClient = Operat
       headers: setAuthorizationHeader(token),
       cancelToken: abort.token,
       params: parameters,
+      /**
+       * @description paramsSerializer takes an array of query params that is usually
+       * serialized like this '/api/?id[]=1&id[]=2' and converts it into '/api/?id=1&id=2'
+       * to better work with the API
+       * */
       paramsSerializer: parameters_ => qs.stringify(parameters_, { arrayFormat: 'repeat' }),
     })
     .then(response => {
