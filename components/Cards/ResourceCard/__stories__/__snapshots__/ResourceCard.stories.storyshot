@@ -9,6 +9,7 @@ exports[`Storyshots Cards/ResourceCard default 1`] = `
   >
     <div
       className="header"
+      data-testid="RESOURCE_CARD"
     >
       <h5
         className="resourceName"
@@ -229,6 +230,7 @@ exports[`Storyshots Cards/ResourceCard with long name 1`] = `
   >
     <div
       className="header"
+      data-testid="RESOURCE_CARD"
     >
       <h5
         className="resourceName"
@@ -449,6 +451,7 @@ exports[`Storyshots Cards/ResourceCard with zero up/downvotes 1`] = `
   >
     <div
       className="header"
+      data-testid="RESOURCE_CARD"
     >
       <h5
         className="resourceName"
