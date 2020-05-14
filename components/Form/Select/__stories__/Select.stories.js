@@ -6,23 +6,14 @@ import { action } from '@storybook/addon-actions';
 
 import Select from '../Select';
 
+const setFieldTouched = action('setFieldTouched');
+const setFieldValue = action('setFieldValue');
+
 storiesOf('Form/Select', module)
   .addDecorator(withKnobs)
   .add(
-    'default',
+    'Single default',
     withInfo()(() => {
-      const selectName = text('field.name', 'someSelect');
-      const isMulti = boolean('isMulti', false);
-
-      const initialValue = isMulti ? [] : '';
-
-      const options = isMulti
-        ? array('options', [
-            { label: 'Option #1', value: 'option1' },
-            { label: 'Option #2', value: 'option2' },
-          ])
-        : [text('options', { label: 'Some Option', value: 'option1' })];
-
       return (
         <>
           <h3 style={{ textAlign: 'center', marginTop: '2rem' }}>
@@ -32,18 +23,53 @@ storiesOf('Form/Select', module)
 
           <Select
             disabled={boolean('disabled', false)}
-            field={{ name: selectName, value: initialValue }}
+            field={{ name: 'someSelect', value: '' }}
             form={object('form', {
-              touched: { [selectName]: false },
-              errors: { [selectName]: '' },
-              setFieldTouched: action('setFieldTouched'),
-              setFieldValue: action('setFieldValue'),
+              touched: { someSelect: false },
+              errors: { someSelect: '' },
+              setFieldTouched,
+              setFieldValue,
             })}
+            hasValidationStyling={boolean('hasValidationStyling', true)}
             id={text('id', '')}
             isLabelHidden={boolean('isLabelHidden', false)}
-            isMulti={isMulti}
+            isMulti={false}
             label={text('label', 'Some Select:')}
-            options={options}
+            options={[text('options', { label: 'Some Option', value: 'option1' })]}
+            placeholder={text('placeholder', '')}
+          />
+        </>
+      );
+    }),
+  )
+  .add(
+    'Multi default',
+    withInfo()(() => {
+      return (
+        <>
+          <h3 style={{ textAlign: 'center', marginTop: '2rem' }}>
+            Please Note: This component&apos;s story has no context of Formik and will not function
+            properly.
+          </h3>
+
+          <Select
+            disabled={boolean('disabled', false)}
+            field={{ name: 'someSelect', value: [] }}
+            form={object('form', {
+              touched: { someSelect: false },
+              errors: { someSelect: '' },
+              setFieldTouched,
+              setFieldValue,
+            })}
+            hasValidationStyling={boolean('hasValidationStyling', true)}
+            id={text('id', '')}
+            isLabelHidden={boolean('isLabelHidden', false)}
+            isMulti
+            label={text('label', 'Some Select:')}
+            options={array('options', [
+              { label: 'Option #1', value: 'option1' },
+              { label: 'Option #2', value: 'option2' },
+            ])}
             placeholder={text('placeholder', '')}
           />
         </>
