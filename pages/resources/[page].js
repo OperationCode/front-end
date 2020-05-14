@@ -5,6 +5,7 @@ import dynamic from 'next/dynamic';
 import { oneOfType, array, shape, string } from 'prop-types';
 import get from 'lodash/get';
 import omit from 'lodash/omit';
+import isNaN from 'lodash/isNaN';
 import Content from 'components/Content/Content';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
@@ -55,7 +56,6 @@ function Resources({ initialValues }) {
   const { page, category, languages, paid, q } = query;
   const currentPage = parseInt(page, 10);
 
-  // eslint-disable-next-line no-restricted-globals
   if (page && isNaN(page)) {
     router.push({ pathname: pathname.replace('[page]', '1') });
   }
