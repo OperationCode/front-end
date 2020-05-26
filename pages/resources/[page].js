@@ -1,8 +1,7 @@
-/* eslint-disable no-console */
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import dynamic from 'next/dynamic';
-import { oneOfType, array, shape, string } from 'prop-types';
+import { array, shape, string } from 'prop-types';
 import get from 'lodash/get';
 import omit from 'lodash/omit';
 import isNaN from 'lodash/isNaN';
@@ -29,23 +28,23 @@ import styles from '../styles/resources.module.css';
 const pageTitle = 'Resources';
 
 const ResourceCard = dynamic(() => import('../../components/Cards/ResourceCard/ResourceCard'), {
-  loading: () => <ResourceSkeletonCard numberOfSkeletons={5} />,
+  loading: () => <ResourceSkeletonCard numberOfSkeletons={1} />,
 });
 
 Resources.propTypes = {
   initialValues: shape({
-    category: string,
+    category: array,
     q: string,
-    languages: oneOfType([string, array]),
+    languages: array,
     paid: string,
   }),
 };
 
 Resources.defaultProps = {
   initialValues: {
-    category: '',
+    category: [],
     q: '',
-    languages: [''],
+    languages: [],
     paid: '',
   },
 };
@@ -68,8 +67,8 @@ function Resources({ initialValues }) {
   const [allLanguages, setAllLanguages] = useState([]);
 
   const costOptions = [
-    { label: 'Paid', value: 'true' },
-    { label: 'Free', value: 'false' },
+    { value: 'true', label: 'Paid' },
+    { value: 'false', label: 'Free' },
   ];
 
   const handleError = error =>
@@ -97,6 +96,11 @@ function Resources({ initialValues }) {
     setTimeout(() => {
       actions.setSubmitting(false);
     }, 500);
+  };
+
+  const handleReset = (values, actions) => {
+    router.push(pathname, '/resources/1', { shallow: true });
+    actions.resetForm({ initialValues });
   };
 
   useEffect(() => {
@@ -178,11 +182,14 @@ function Resources({ initialValues }) {
         columns={[
           <section className={styles.resourcesContainer}>
             <Formik
-              initialValues={initialValues}
               enableReinitialize={false}
+              initialValues={initialValues}
               onSubmit={(values, actions) => {
                 handleSubmit(values, actions);
                 actions.setSubmitting(true);
+              }}
+              onReset={(values, actions) => {
+                handleReset(values, actions);
               }}
             >
               {({ isSubmitting }) => (
@@ -199,6 +206,7 @@ function Resources({ initialValues }) {
                     <div className={styles.selectColumn}>
                       <Field
                         isDisabled={isSubmitting}
+                        isMulti
                         placeholder="Start typing a category..."
                         label="By Category"
                         name="category"

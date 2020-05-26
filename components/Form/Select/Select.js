@@ -62,7 +62,7 @@ export default function Select({
    * @param {string} selected
    */
   const onChangeSingle = selected => {
-    setFieldValue(name, selected.value);
+    setFieldValue(name, selected === null ? '' : selected.value);
   };
 
   /**
@@ -124,7 +124,7 @@ export default function Select({
           onBlur={handleBlur}
           onChange={onChangeHandler}
           options={options}
-          value={value}
+          value={value || ''}
         />
 
         <ErrorMessage
