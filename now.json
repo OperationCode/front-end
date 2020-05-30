@@ -2,11 +2,14 @@
   "version": 2,
   "name": "operation-code",
   "alias": ["operation-code.now.sh", "www.operationcode.org", "operationcode.org"],
-  "rewrites": [{
-    "source": "/media",
-    "destination": "/branding"
-  }],
-  "redirects": [{
+  "rewrites": [
+    {
+      "source": "/media",
+      "destination": "/branding"
+    }
+  ],
+  "redirects": [
+    {
       "source": "/resources",
       "destination": "/resources/1"
     },
@@ -27,19 +30,24 @@
       "destination": "https://operationcode.threadless.com/"
     }
   ],
-  "headers": [{
+  "headers": [
+    {
       "source": "/_next/static/([^/]+/pages|chunks|runtime|css|fonts)/(.+)",
-      "headers": [{
-        "key": "cache-control",
-        "value": "max-age=31536000"
-      }]
+      "headers": [
+        {
+          "key": "cache-control",
+          "value": "max-age=31536000"
+        }
+      ]
     },
     {
       "source": "^/(favicon.ico|robots.txt|manifest.json|humans.txt|sitemap.xml|sitemap.xsl)",
-      "headers": [{
-        "key": "Cache-Control",
-        "value": "public, max-age=0, must-revalidate"
-      }]
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
     }
   ],
   "public": true
