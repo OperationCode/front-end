@@ -150,5 +150,8 @@
     "url-loader": "^4.1.0",
     "webpack": "^4.42.1",
     "webpack-filter-warnings-plugin": "^1.2.1"
+  },
+  "resolutions": {
+    "cypress": "4.7.0"
   }
 }
