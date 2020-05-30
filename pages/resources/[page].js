@@ -22,7 +22,14 @@ import Input from 'components/Form/Input/Input';
 import Button from 'components/Button/Button';
 import Select from 'components/Form/Select/Select';
 import Alert from 'components/Alert/Alert';
-import { RESOURCE_SEARCH } from 'common/constants/testIDs';
+import {
+  RESOURCE_SEARCH,
+  CATEGORY_SELECT,
+  PAID_SELECT,
+  LANGUAGES_SELECT,
+  RESOURCE_SEARCH_BUTTON,
+  RESOURCE_RESET_BUTTON,
+} from 'common/constants/testIDs';
 import styles from '../styles/resources.module.css';
 
 const pageTitle = 'Resources';
@@ -107,10 +114,10 @@ function Resources({ initialValues }) {
     Promise.all([getResourcesByCategories(), getResourcesByLanguages()])
       .then(([categoriesResponse, languagesResponse]) => {
         const {
-          data: { data: categoriesData },
+          data: { categories: categoriesData },
         } = categoriesResponse;
         const {
-          data: { data: languagesData },
+          data: { languages: languagesData },
         } = languagesResponse;
 
         setAllLanguages(
@@ -137,7 +144,12 @@ function Resources({ initialValues }) {
     setErrorMessage(null);
     handleEndpoint()
       .then(response => {
-        const fetchedResources = get(response, 'data.data', []);
+        console.log(response);
+        const fetchedResources = get(
+          response,
+          'data.resources' || 'data.category' || 'data.language',
+          [],
+        );
         const fetchedNumberOfPages = get(response, 'data.number_of_pages', 0);
 
         if (fetchedResources.length === 0 || fetchedNumberOfPages === 0) {
@@ -205,6 +217,7 @@ function Resources({ initialValues }) {
                   <div className={styles.formContainer}>
                     <div className={styles.selectColumn}>
                       <Field
+                        data-testid={CATEGORY_SELECT}
                         isDisabled={isSubmitting}
                         isMulti
                         placeholder="Start typing a category..."
@@ -217,6 +230,7 @@ function Resources({ initialValues }) {
 
                     <div className={styles.selectColumn}>
                       <Field
+                        data-testid={PAID_SELECT}
                         isDisabled={isSubmitting}
                         placeholder="Resource cost..."
                         label="By Cost"
@@ -228,6 +242,7 @@ function Resources({ initialValues }) {
 
                     <div className={styles.selectColumn}>
                       <Field
+                        data-testid={LANGUAGES_SELECT}
                         isDisabled={isSubmitting}
                         placeholder="Start typing a language..."
                         isMulti
@@ -239,11 +254,15 @@ function Resources({ initialValues }) {
                     </div>
                   </div>
                   <div className={styles.buttonGroup}>
-                    <Button disabled={isSubmitting} type="submit">
+                    <Button
+                      data-testid={RESOURCE_SEARCH_BUTTON}
+                      disabled={isSubmitting}
+                      type="submit"
+                    >
                       Search
                     </Button>
 
-                    <Button disabled={isSubmitting} type="reset">
+                    <Button data-tesid={RESOURCE_RESET_BUTTON} disabled={isSubmitting} type="reset">
                       Reset
                     </Button>
                   </div>
