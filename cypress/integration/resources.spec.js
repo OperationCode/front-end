@@ -1,4 +1,12 @@
-import { RESOURCE_CARD, RESOURCE_SEARCH } from '../../common/constants/testIDs';
+import {
+  RESOURCE_CARD,
+  // RESOURCE_SEARCH,
+  // CATEGORY_SELECT,
+  // LANGUAGES_SELECT,
+  // PAID_SELECT,
+  // RESOURCE_SEARCH_BUTTON,
+  // RESOURCE_RESET_BUTTON,
+} from '../../common/constants/testIDs';
 
 describe('resources', () => {
   // const CostSelect = 'input#react-select-cost_select-input';
@@ -44,11 +52,11 @@ the Accordion inside ResourceCard */
     cy.location('pathname').should('eq', '/resources/50');
   });
 
-  it('returns javascript related resources when a user searches for "javascript"', () => {
-    cy.findByTestId(RESOURCE_SEARCH).click().type('javascript', { force: true }).type('{enter}');
-    // cy.location('pathname').should('eq', '/resources/1?q=javascript');
-    cy.findAllByTestId(RESOURCE_CARD).each(card => {
-      expect(card).to.contain('javascript');
-    });
-  });
+  // it('returns javascript related resources when a user searches for "javascript"', () => {
+  //   cy.findByTestId(RESOURCE_SEARCH).click().type('javascript', { force: true }).type('{enter}');
+  //   // cy.location('pathname').should('eq', '/resources/1?q=javascript');
+  //   cy.findAllByTestId(RESOURCE_CARD).each(card => {
+  //     expect(card).to.contain('javascript');
+  //   });
+  // });
 });

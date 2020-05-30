@@ -90,7 +90,7 @@ const PaginationItems = ({ currentPage, pathname, query, totalPages }) => {
     <>
       {shouldTruncateStart && (
         <>
-          <PaginationItem key="1" value={1} testId="1" pathname={pathname}>
+          <PaginationItem key="1" value={1} query={query} testId="1" pathname={pathname}>
             1
           </PaginationItem>
 
@@ -111,6 +111,7 @@ const PaginationItems = ({ currentPage, pathname, query, totalPages }) => {
           <PaginationItem
             key={totalPages}
             value={totalPages}
+            query={query}
             testId={`${totalPages}`}
             pathname={pathname}
           >

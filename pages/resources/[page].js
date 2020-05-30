@@ -3,8 +3,8 @@ import { useRouter } from 'next/router';
 import dynamic from 'next/dynamic';
 import { array, shape, string } from 'prop-types';
 import get from 'lodash/get';
+import isFinite from 'lodash/isFinite';
 import omit from 'lodash/omit';
-import isNaN from 'lodash/isNaN';
 import Content from 'components/Content/Content';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
@@ -62,7 +62,7 @@ function Resources({ initialValues }) {
   const { page, category, languages, paid, q } = query;
   const currentPage = parseInt(page, 10);
 
-  if (page && isNaN(page)) {
+  if (page && !isFinite(currentPage)) {
     router.push({ pathname: pathname.replace('[page]', '1') });
   }
   const [errorMessage, setErrorMessage] = useState(null);
@@ -144,7 +144,6 @@ function Resources({ initialValues }) {
     setErrorMessage(null);
     handleEndpoint()
       .then(response => {
-        console.log(response);
         const fetchedResources = get(
           response,
           'data.resources' || 'data.category' || 'data.language',
