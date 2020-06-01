@@ -77,7 +77,7 @@
     "@babel/core": "^7.10.2",
     "@babel/plugin-syntax-jsx": "^7.10.1",
     "@babel/preset-env": "^7.10.2",
-    "@cypress/code-coverage": "3.8.0",
+    "@cypress/code-coverage": "3.8.1",
     "@mdx-js/loader": "^1.6.5",
     "@next/mdx": "^9.4.4",
     "@operation_code/eslint-plugin-custom-rules": "^1.0.1",
