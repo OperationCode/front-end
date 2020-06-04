@@ -24,9 +24,6 @@ import Select from 'components/Form/Select/Select';
 import Alert from 'components/Alert/Alert';
 import {
   RESOURCE_SEARCH,
-  CATEGORY_SELECT,
-  PAID_SELECT,
-  LANGUAGES_SELECT,
   RESOURCE_SEARCH_BUTTON,
   RESOURCE_RESET_BUTTON,
 } from 'common/constants/testIDs';
@@ -69,7 +66,6 @@ function Resources({ initialValues }) {
 
   const [resources, setResources] = useState([]);
   const [totalPages, setTotalPages] = useState(currentPage);
-
   const [allCategories, setAllCategories] = useState([]);
   const [allLanguages, setAllLanguages] = useState([]);
 
@@ -216,9 +212,7 @@ function Resources({ initialValues }) {
                   <div className={styles.formContainer}>
                     <div className={styles.selectColumn}>
                       <Field
-                        data-testid={CATEGORY_SELECT}
                         isDisabled={isSubmitting}
-                        isMulti
                         placeholder="Start typing a category..."
                         label="By Category"
                         name="category"
@@ -229,7 +223,6 @@ function Resources({ initialValues }) {
 
                     <div className={styles.selectColumn}>
                       <Field
-                        data-testid={PAID_SELECT}
                         isDisabled={isSubmitting}
                         placeholder="Resource cost..."
                         label="By Cost"
@@ -241,7 +234,6 @@ function Resources({ initialValues }) {
 
                     <div className={styles.selectColumn}>
                       <Field
-                        data-testid={LANGUAGES_SELECT}
                         isDisabled={isSubmitting}
                         placeholder="Start typing a language..."
                         isMulti
@@ -261,7 +253,11 @@ function Resources({ initialValues }) {
                       Search
                     </Button>
 
-                    <Button data-tesid={RESOURCE_RESET_BUTTON} disabled={isSubmitting} type="reset">
+                    <Button
+                      data-testid={RESOURCE_RESET_BUTTON}
+                      disabled={isSubmitting}
+                      type="reset"
+                    >
                       Reset
                     </Button>
                   </div>
@@ -281,6 +277,9 @@ function Resources({ initialValues }) {
                       upvotes={resource.upvotes}
                       href={resource.url || ''}
                       name={resource.name}
+                      category={resource.category}
+                      languages={resource.languages}
+                      paid={resource.paid}
                       className={styles.resourceCard}
                     />
                   ))}
@@ -288,7 +287,7 @@ function Resources({ initialValues }) {
 
                 <Pagination
                   currentPage={currentPage}
-                  totalPages={totalPages || 1}
+                  totalPages={totalPages || currentPage + 1}
                   pathname={pathname}
                   query={query}
                 />
