@@ -43,8 +43,18 @@ describe('resources', () => {
   });
 
   it('renders the last page of results when paginating to the last page', () => {
-    cy.findByTestId('130').click();
-    cy.location('pathname').should('eq', '/resources/130');
+    let pageValue;
+    cy.get('ol')
+      .find('li')
+      .eq(-2)
+      .click()
+      .then($li => {
+        pageValue = $li.text().match(/[0-9]+/);
+      });
+    cy.location().should(loc => {
+      expect(loc.pathname).to.eq(`/resources/${pageValue}`);
+      expect(loc.search).to.eq('');
+    });
   });
 
   it('will allow a user to search matching resources by input', () => {

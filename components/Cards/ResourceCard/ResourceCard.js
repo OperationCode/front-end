@@ -1,5 +1,5 @@
 import React from 'react';
-import { string, number, func, oneOf, array } from 'prop-types';
+import { string, number, func, oneOf, array, bool } from 'prop-types';
 import classNames from 'classnames';
 import Accordion from 'components/Accordion/Accordion';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
@@ -25,9 +25,9 @@ ResourceCard.propTypes = {
   downvotes: number,
   href: string.isRequired,
   name: string.isRequired,
-  category: string.isRequired,
+  category: string,
   languages: array,
-  paid: string,
+  paid: bool,
   onDownvote: func,
   onUpvote: func,
   upvotes: number,
@@ -37,6 +37,7 @@ ResourceCard.propTypes = {
 ResourceCard.defaultProps = {
   description: '',
   downvotes: 0,
+  category: '',
   languages: [],
   paid: false,
   onDownvote: () => {},
