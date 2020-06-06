@@ -202,6 +202,7 @@ function Resources({ initialValues }) {
               {({ isSubmitting }) => (
                 <Form>
                   <Field
+                    hasValidationStyling={false}
                     data-testid={RESOURCE_SEARCH}
                     disabled={isSubmitting}
                     type="search"
@@ -212,6 +213,7 @@ function Resources({ initialValues }) {
                   <div className={styles.formContainer}>
                     <div className={styles.selectColumn}>
                       <Field
+                        hasValidationStyling={false}
                         isDisabled={isSubmitting}
                         placeholder="Start typing a category..."
                         label="By Category"
@@ -223,6 +225,7 @@ function Resources({ initialValues }) {
 
                     <div className={styles.selectColumn}>
                       <Field
+                        hasValidationStyling={false}
                         isDisabled={isSubmitting}
                         placeholder="Resource cost..."
                         label="By Cost"
@@ -234,6 +237,7 @@ function Resources({ initialValues }) {
 
                     <div className={styles.selectColumn}>
                       <Field
+                        hasValidationStyling={false}
                         isDisabled={isSubmitting}
                         placeholder="Start typing a language..."
                         isMulti
@@ -278,8 +282,8 @@ function Resources({ initialValues }) {
                       href={resource.url || ''}
                       name={resource.name}
                       category={resource.category}
-                      languages={resource.languages}
-                      paid={resource.paid}
+                      languages={resource.languages.join('-')}
+                      isPaid={resource.paid}
                       className={styles.resourceCard}
                     />
                   ))}
