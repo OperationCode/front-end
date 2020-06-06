@@ -10,8 +10,8 @@ exports[`Storyshots Cards/ResourceCard default 1`] = `
     <div
       className="header"
       data-test-category=""
+      data-test-isPaid={false}
       data-test-languages={Array []}
-      data-test-paid={false}
       data-testid="RESOURCE_CARD"
     >
       <h5
@@ -235,8 +235,8 @@ exports[`Storyshots Cards/ResourceCard with long name 1`] = `
     <div
       className="header"
       data-test-category=""
+      data-test-isPaid={false}
       data-test-languages={Array []}
-      data-test-paid={false}
       data-testid="RESOURCE_CARD"
     >
       <h5
@@ -460,8 +460,8 @@ exports[`Storyshots Cards/ResourceCard with zero up/downvotes 1`] = `
     <div
       className="header"
       data-test-category=""
+      data-test-isPaid={false}
       data-test-languages={Array []}
-      data-test-paid={false}
       data-testid="RESOURCE_CARD"
     >
       <h5
