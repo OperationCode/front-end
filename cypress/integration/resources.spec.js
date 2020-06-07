@@ -3,18 +3,36 @@ import {
   RESOURCE_SEARCH,
   RESOURCE_SEARCH_BUTTON,
   RESOURCE_RESET_BUTTON,
+  RESOURCE_TITLE,
   PREV_PAGE_BUTTON,
   NEXT_PAGE_BUTTON,
+  DATA_TEST_CATEGORY,
+  DATA_TEST_LANGUAGES,
+  DATA_TEST_COST,
 } from '../../common/constants/testIDs';
 
 describe('resources', () => {
-  const CostSelect = 'input#react-select-paid-input';
-  const LanguageSelect = 'input#react-select-languages-input';
-  const CategorySelect = 'input#react-select-category-input';
+  const COST_SELECT = 'input#react-select-paid-input';
+  const LANGUAGES_SELECT = 'input#react-select-languages-input';
+  const CATEGORY_SELECT = 'input#react-select-category-input';
+
+  Cypress.Commands.add('checkCustomDataAttribute', (attribute, value) => {
+    const attributeWithoutBrackets = attribute.replace(/[[\]]/g, '');
+    cy.get(attribute).should('have.attr', attributeWithoutBrackets, value);
+  });
+
+  Cypress.Commands.add('compareResourceNames', () => {
+    cy.findAllByTestId(RESOURCE_TITLE)
+      .invoke('text')
+      .then($currentResourceNames => {
+        cy.get('@previousResourceNames').should('not.eq', $currentResourceNames);
+      });
+  });
 
   beforeEach(() => {
     cy.visitAndWaitFor('/resources/1');
     cy.get('h1').should('have.text', 'Resources');
+    cy.findAllByTestId(RESOURCE_TITLE).invoke('text').as('previousResourceNames');
   });
 
   it('redirects on /resources to resources/1', () => {
@@ -43,21 +61,6 @@ describe('resources', () => {
     cy.location('pathname').should('eq', '/resources/3');
   });
 
-  it('loads the last page of results when paginating to the last page', () => {
-    let pageValue;
-    cy.get('ol')
-      .find('li')
-      .eq(-2)
-      .click()
-      .then($li => {
-        pageValue = $li.text().match(/[0-9]+/);
-      });
-    cy.location().should(loc => {
-      expect(loc.pathname).to.eq(`/resources/${pageValue}`);
-      expect(loc.search).to.eq('');
-    });
-  });
-
   it('will allow a user to search matching resources by input', () => {
     cy.findByTestId(RESOURCE_SEARCH).click().type('javascript', { force: true }).type('{enter}');
 
@@ -65,6 +68,8 @@ describe('resources', () => {
       expect(loc.pathname).to.eq('/resources/1');
       expect(loc.search).to.eq('?q=javascript');
     });
+
+    cy.compareResourceNames();
 
     cy.findByTestId(NEXT_PAGE_BUTTON).click();
     cy.location().should(loc => {
@@ -93,7 +98,7 @@ describe('resources', () => {
   });
 
   it('will allow a user to filter resources by category', () => {
-    cy.get(CategorySelect).click({ force: true }).type('Books').type('{enter}');
+    cy.get(CATEGORY_SELECT).click({ force: true }).type('Books').type('{enter}');
     cy.findByTestId(RESOURCE_SEARCH_BUTTON).click();
 
     cy.location().should(loc => {
@@ -102,18 +107,17 @@ describe('resources', () => {
     });
 
     cy.findAllByTestId(RESOURCE_CARD).each(card => {
-      cy.wrap(card)
-        .get('[data-test-category]')
-        .invoke('attr', 'data-test-category')
-        .should('eq', 'Books');
+      cy.wrap(card).checkCustomDataAttribute(DATA_TEST_CATEGORY, 'Books');
     });
 
-    cy.get(CategorySelect).click({ force: true }).type('Getting Started').type('{enter}');
+    cy.get(CATEGORY_SELECT).click({ force: true }).type('Getting Started').type('{enter}');
     cy.findByTestId(RESOURCE_SEARCH_BUTTON).click();
     cy.location().should(loc => {
       expect(loc.pathname).to.eq('/resources/1');
       expect(loc.search).to.eq('?category=getting%20started');
     });
+
+    cy.compareResourceNames();
 
     cy.findByTestId(NEXT_PAGE_BUTTON).click();
     cy.location().should(loc => {
@@ -141,7 +145,7 @@ describe('resources', () => {
   });
 
   it('will allow a user to filter resources by cost', () => {
-    cy.get(CostSelect).click({ force: true }).type('Free').type('{enter}');
+    cy.get(COST_SELECT).click({ force: true }).type('Free').type('{enter}');
     cy.findByTestId(RESOURCE_SEARCH_BUTTON).click();
     cy.location().should(loc => {
       expect(loc.pathname).to.eq('/resources/1');
@@ -149,18 +153,17 @@ describe('resources', () => {
     });
 
     cy.findAllByTestId(RESOURCE_CARD).each(card => {
-      cy.wrap(card)
-        .get('[data-test-isPaid]')
-        .invoke('attr', 'data-test-isPaid')
-        .should('eq', 'false');
+      cy.wrap(card).checkCustomDataAttribute(DATA_TEST_COST, 'false');
     });
 
-    cy.get(CostSelect).click({ force: true }).type('Paid').type('{enter}');
+    cy.get(COST_SELECT).click({ force: true }).type('Paid').type('{enter}');
     cy.findByTestId(RESOURCE_SEARCH_BUTTON).click();
     cy.location().should(loc => {
       expect(loc.pathname).to.eq('/resources/1');
       expect(loc.search).to.eq('?paid=true');
     });
+
+    cy.compareResourceNames();
 
     cy.findByTestId(NEXT_PAGE_BUTTON).click();
     cy.location().should(loc => {
@@ -188,7 +191,7 @@ describe('resources', () => {
   });
 
   it('will allow a user to filter resources by language(s)', () => {
-    cy.get(LanguageSelect).click({ force: true }).type('javascript').type('{enter}');
+    cy.get(LANGUAGES_SELECT).click({ force: true }).type('javascript').type('{enter}');
     cy.findByTestId(RESOURCE_SEARCH_BUTTON).click();
     cy.location().should(loc => {
       expect(loc.pathname).to.eq('/resources/1');
@@ -213,14 +216,13 @@ describe('resources', () => {
       expect(loc.search).to.eq('?languages=javascript');
     });
 
+    cy.compareResourceNames();
+
     cy.findAllByTestId(RESOURCE_CARD).each(card => {
-      cy.wrap(card)
-        .get('[data-test-languages]')
-        .invoke('attr', 'data-test-languages')
-        .should('contain', 'JavaScript');
+      cy.wrap(card).checkCustomDataAttribute(DATA_TEST_LANGUAGES, 'JavaScript');
     });
 
-    cy.get(LanguageSelect).click({ force: true }).type('python').type('{enter}');
+    cy.get(LANGUAGES_SELECT).click({ force: true }).type('python').type('{enter}');
     cy.findByTestId(RESOURCE_SEARCH_BUTTON).click();
     cy.location().should(loc => {
       expect(loc.pathname).to.eq('/resources/1');
