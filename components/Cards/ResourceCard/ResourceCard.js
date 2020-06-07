@@ -26,7 +26,7 @@ ResourceCard.propTypes = {
   href: string.isRequired,
   name: string.isRequired,
   category: string,
-  languages: array,
+  languages: oneOf([string, array]),
   isPaid: bool,
   onDownvote: func,
   onUpvote: func,

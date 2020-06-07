@@ -1,7 +1,5 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import dynamic from 'next/dynamic';
-import { array, shape, string } from 'prop-types';
 import get from 'lodash/get';
 import isFinite from 'lodash/isFinite';
 import omit from 'lodash/omit';
@@ -9,7 +7,6 @@ import Content from 'components/Content/Content';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Pagination from 'components/Pagination/Pagination';
-import ResourceSkeletonCard from 'components/Cards/ResourceCard/ResourceSkeletonCard';
 import {
   getResourcesPromise,
   getResourcesByCategories,
@@ -23,37 +20,18 @@ import Button from 'components/Button/Button';
 import Select from 'components/Form/Select/Select';
 import Alert from 'components/Alert/Alert';
 import {
+  RESOURCE_CARD,
   RESOURCE_SEARCH,
   RESOURCE_SEARCH_BUTTON,
   RESOURCE_RESET_BUTTON,
 } from 'common/constants/testIDs';
 import styles from '../styles/resources.module.css';
+import ResourceCard from '../../components/Cards/ResourceCard/ResourceCard';
+import ResourceSkeletonCard from '../../components/Cards/ResourceCard/ResourceSkeletonCard';
 
 const pageTitle = 'Resources';
 
-const ResourceCard = dynamic(() => import('../../components/Cards/ResourceCard/ResourceCard'), {
-  loading: () => <ResourceSkeletonCard numberOfSkeletons={1} />,
-});
-
-Resources.propTypes = {
-  initialValues: shape({
-    category: array,
-    q: string,
-    languages: array,
-    paid: string,
-  }),
-};
-
-Resources.defaultProps = {
-  initialValues: {
-    category: [],
-    q: '',
-    languages: [],
-    paid: '',
-  },
-};
-
-function Resources({ initialValues }) {
+function Resources() {
   const router = useRouter();
   const { pathname, query } = router;
   const { page, category, languages, paid, q } = query;
@@ -62,7 +40,9 @@ function Resources({ initialValues }) {
   if (page && !isFinite(currentPage)) {
     router.push({ pathname: pathname.replace('[page]', '1') });
   }
+
   const [errorMessage, setErrorMessage] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   const [resources, setResources] = useState([]);
   const [totalPages, setTotalPages] = useState(currentPage);
@@ -73,6 +53,13 @@ function Resources({ initialValues }) {
     { value: 'true', label: 'Paid' },
     { value: 'false', label: 'Free' },
   ];
+
+  const initialValues = {
+    category: [],
+    q: '',
+    languages: [],
+    paid: '',
+  };
 
   const handleError = error =>
     error.errors
@@ -87,6 +74,7 @@ function Resources({ initialValues }) {
   };
 
   const handleSubmit = (values, actions) => {
+    setIsLoading(true);
     const emptyQueryParameters = Object.entries(values).filter(
       item => item[1] === null || !item[1].length,
     );
@@ -102,6 +90,7 @@ function Resources({ initialValues }) {
   };
 
   const handleReset = (values, actions) => {
+    setErrorMessage(null);
     router.push(pathname, '/resources/1', { shallow: true });
     actions.resetForm({ initialValues });
   };
@@ -135,9 +124,9 @@ function Resources({ initialValues }) {
       })
       .catch(error => {
         setErrorMessage(handleError(error));
+        setIsLoading(false);
       });
 
-    setErrorMessage(null);
     handleEndpoint()
       .then(response => {
         const fetchedResources = get(
@@ -164,6 +153,10 @@ function Resources({ initialValues }) {
       .catch(error => {
         setErrorMessage(handleError(error));
       });
+    return () =>
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 500);
   }, [query]);
 
   const updateQuery = formData => {
@@ -249,52 +242,62 @@ function Resources({ initialValues }) {
                     </div>
                   </div>
                   <div className={styles.buttonGroup}>
-                    <Button
-                      data-testid={RESOURCE_SEARCH_BUTTON}
-                      disabled={isSubmitting}
-                      type="submit"
-                    >
-                      Search
-                    </Button>
+                    <div className={styles.buttonSingle}>
+                      <Button
+                        data-testid={RESOURCE_SEARCH_BUTTON}
+                        disabled={isSubmitting}
+                        type="submit"
+                      >
+                        Search
+                      </Button>
+                    </div>
 
-                    <Button
-                      data-testid={RESOURCE_RESET_BUTTON}
-                      disabled={isSubmitting}
-                      type="reset"
-                    >
-                      Reset
-                    </Button>
+                    <div className={styles.buttonSingle}>
+                      <Button
+                        data-testid={RESOURCE_RESET_BUTTON}
+                        disabled={isSubmitting}
+                        type="reset"
+                      >
+                        Reset
+                      </Button>
+                    </div>
                   </div>
                 </Form>
               )}
             </Formik>
-            {errorMessage && <Alert type="error">{`${errorMessage}`}</Alert>}
-            {resources && !!resources.length && (
+            {isLoading ? (
+              <ResourceSkeletonCard numberOfSkeletons={10} />
+            ) : (
               <>
-                <div className={styles.resourcesCardWrapper}>
-                  {resources.map(resource => (
-                    <ResourceCard
-                      data-testid="RESOURCE_CARD"
-                      key={resource.id}
-                      description={resource.notes}
-                      downvotes={resource.downvotes}
-                      upvotes={resource.upvotes}
-                      href={resource.url || ''}
-                      name={resource.name}
-                      category={resource.category}
-                      languages={resource.languages.join('-')}
-                      isPaid={resource.paid}
-                      className={styles.resourceCard}
-                    />
-                  ))}
-                </div>
+                {errorMessage && <Alert type="error">{`${errorMessage}`}</Alert>}
+                {resources && !!resources.length && (
+                  <>
+                    <div className={styles.resourcesCardWrapper}>
+                      {resources.map(resource => (
+                        <ResourceCard
+                          data-testid={RESOURCE_CARD}
+                          key={resource.id}
+                          description={resource.notes}
+                          downvotes={resource.downvotes}
+                          upvotes={resource.upvotes}
+                          href={resource.url || ''}
+                          name={resource.name}
+                          category={resource.category}
+                          languages={resource.languages.join('-')}
+                          isPaid={resource.paid}
+                          className={styles.resourceCard}
+                        />
+                      ))}
+                    </div>
 
-                <Pagination
-                  currentPage={currentPage}
-                  totalPages={totalPages || currentPage + 1}
-                  pathname={pathname}
-                  query={query}
-                />
+                    <Pagination
+                      currentPage={currentPage}
+                      totalPages={totalPages || currentPage + 1}
+                      pathname={pathname}
+                      query={query}
+                    />
+                  </>
+                )}
               </>
             )}
           </section>,
