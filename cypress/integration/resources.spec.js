@@ -16,18 +16,13 @@ describe('resources', () => {
   const LANGUAGES_SELECT = 'input#react-select-languages-input';
   const CATEGORY_SELECT = 'input#react-select-category-input';
 
-  Cypress.Commands.add('checkCustomDataAttribute', (attribute, value) => {
-    const attributeWithoutBrackets = attribute.replace(/[[\]]/g, '');
-    cy.get(attribute).should('have.attr', attributeWithoutBrackets, value);
-  });
-
-  Cypress.Commands.add('compareResourceNames', () => {
+  const compareResourceNames = () => {
     cy.findAllByTestId(RESOURCE_TITLE)
       .invoke('text')
       .then($currentResourceNames => {
         cy.get('@previousResourceNames').should('not.eq', $currentResourceNames);
       });
-  });
+  };
 
   beforeEach(() => {
     cy.visitAndWaitFor('/resources/1');
@@ -69,7 +64,7 @@ describe('resources', () => {
       expect(loc.search).to.eq('?q=javascript');
     });
 
-    cy.compareResourceNames();
+    compareResourceNames();
 
     cy.findByTestId(NEXT_PAGE_BUTTON).click();
     cy.location().should(loc => {
@@ -117,7 +112,7 @@ describe('resources', () => {
       expect(loc.search).to.eq('?category=getting%20started');
     });
 
-    cy.compareResourceNames();
+    compareResourceNames();
 
     cy.findByTestId(NEXT_PAGE_BUTTON).click();
     cy.location().should(loc => {
@@ -163,7 +158,7 @@ describe('resources', () => {
       expect(loc.search).to.eq('?paid=true');
     });
 
-    cy.compareResourceNames();
+    compareResourceNames();
 
     cy.findByTestId(NEXT_PAGE_BUTTON).click();
     cy.location().should(loc => {
@@ -216,7 +211,7 @@ describe('resources', () => {
       expect(loc.search).to.eq('?languages=javascript');
     });
 
-    cy.compareResourceNames();
+    compareResourceNames();
 
     cy.findAllByTestId(RESOURCE_CARD).each(card => {
       cy.wrap(card).checkCustomDataAttribute(DATA_TEST_LANGUAGES, 'JavaScript');
