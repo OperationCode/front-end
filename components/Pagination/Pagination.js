@@ -2,6 +2,7 @@ import React from 'react';
 import { number, string, object } from 'prop-types';
 import LeftAngleIcon from 'static/images/icons/FontAwesome/angle-left-solid.svg';
 import RightAngleIcon from 'static/images/icons/FontAwesome/angle-right-solid.svg';
+import { PREV_PAGE_BUTTON, NEXT_PAGE_BUTTON } from '../../common/constants/testIDs';
 import PaginationItem from './PaginationItem/PaginationItem';
 import styles from './Pagination.module.css';
 
@@ -77,7 +78,7 @@ const PaginationItems = ({ currentPage, pathname, query, totalPages }) => {
         key={page}
         value={page}
         isCurrent={isCurrent}
-        testId={`${page}`}
+        testId={`page ${page}`}
         pathname={pathname}
         query={query}
       >
@@ -90,7 +91,7 @@ const PaginationItems = ({ currentPage, pathname, query, totalPages }) => {
     <>
       {shouldTruncateStart && (
         <>
-          <PaginationItem key="1" value={1} testId="1" pathname={pathname}>
+          <PaginationItem key="1" value={1} query={query} testId="page 1" pathname={pathname}>
             1
           </PaginationItem>
 
@@ -111,7 +112,8 @@ const PaginationItems = ({ currentPage, pathname, query, totalPages }) => {
           <PaginationItem
             key={totalPages}
             value={totalPages}
-            testId={`${totalPages}`}
+            query={query}
+            testId={`page ${totalPages}`}
             pathname={pathname}
           >
             {totalPages}
@@ -157,7 +159,7 @@ function Pagination({ currentPage, pathname, query, totalPages }) {
             value={currentPage - 1}
             pathname={pathname}
             query={query}
-            testId="leftAngle"
+            testId={PREV_PAGE_BUTTON}
           >
             <LeftAngleIcon className={styles.icon} />
           </PaginationItem>
@@ -175,7 +177,7 @@ function Pagination({ currentPage, pathname, query, totalPages }) {
             value={currentPage + 1}
             pathname={pathname}
             query={query}
-            testId="rightAngle"
+            testId={NEXT_PAGE_BUTTON}
           >
             <RightAngleIcon className={styles.icon} />
           </PaginationItem>
