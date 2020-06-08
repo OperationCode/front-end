@@ -1,56 +1,172 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import get from 'lodash/get';
-import isNumber from 'lodash/isNumber';
+import isFinite from 'lodash/isFinite';
+import omit from 'lodash/omit';
 import Content from 'components/Content/Content';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Pagination from 'components/Pagination/Pagination';
-import ResourceCard from 'components/Cards/ResourceCard/ResourceCard';
-import { getResourcesPromise } from 'common/constants/api';
+import {
+  getResourcesPromise,
+  getResourcesByCategories,
+  getResourcesByLanguages,
+  getResourcesBySearch,
+} from 'common/constants/api';
+import { Field, Formik } from 'formik';
+import Form from 'components/Form/Form';
+import Input from 'components/Form/Input/Input';
+import Button from 'components/Button/Button';
+import Select from 'components/Form/Select/Select';
+import Alert from 'components/Alert/Alert';
+import {
+  RESOURCE_CARD,
+  RESOURCE_SEARCH,
+  RESOURCE_SEARCH_BUTTON,
+  RESOURCE_RESET_BUTTON,
+} from 'common/constants/testIDs';
 import styles from '../styles/resources.module.css';
+import ResourceCard from '../../components/Cards/ResourceCard/ResourceCard';
+import ResourceSkeletonCard from '../../components/Cards/ResourceCard/ResourceSkeletonCard';
 
 const pageTitle = 'Resources';
 
 function Resources() {
   const router = useRouter();
   const { pathname, query } = router;
-  const currentPage = parseInt(query.page, 10);
+  const { page, category, languages, paid, q } = query;
+  const currentPage = parseInt(page, 10);
 
-  if (!isNumber(currentPage)) {
-    // TODO: Handle situation where user tried some funny business, like `/resources/fuck-you`
-    throw new Error(`'currentPage' is not a number`);
+  if (page && !isFinite(currentPage)) {
+    router.push({ pathname: pathname.replace('[page]', '1') });
   }
 
+  const [errorMessage, setErrorMessage] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+
   const [resources, setResources] = useState([]);
   const [totalPages, setTotalPages] = useState(currentPage);
+  const [allCategories, setAllCategories] = useState([]);
+  const [allLanguages, setAllLanguages] = useState([]);
+
+  const costOptions = [
+    { value: 'true', label: 'Paid' },
+    { value: 'false', label: 'Free' },
+  ];
+
+  const initialValues = {
+    category: [],
+    q: '',
+    languages: [],
+    paid: '',
+  };
+
+  const handleEndpoint = () => {
+    if (q) {
+      return getResourcesBySearch({ page, category, languages, paid, q });
+    }
+    return getResourcesPromise({ page, category, languages, paid });
+  };
+
+  const handleSubmit = (values, actions) => {
+    setIsLoading(true);
+    const emptyQueryParameters = Object.entries(values).filter(
+      item => item[1] === null || !item[1].length,
+    );
+    const activeParameters = omit(
+      values,
+      emptyQueryParameters.map(parameter => parameter[0]),
+    );
+
+    updateQuery(activeParameters);
+    setTimeout(() => {
+      actions.setSubmitting(false);
+    }, 500);
+  };
+
+  const handleReset = (values, actions) => {
+    setErrorMessage(null);
+    router.push(pathname, '/resources/1', { shallow: true });
+    actions.resetForm({ initialValues });
+  };
 
   useEffect(() => {
-    getResourcesPromise({ page: query.page })
+    Promise.all([getResourcesByCategories(), getResourcesByLanguages()])
+      .then(([categoriesResponse, languagesResponse]) => {
+        const {
+          data: { categories: categoriesData },
+        } = categoriesResponse;
+        const {
+          data: { languages: languagesData },
+        } = languagesResponse;
+
+        setAllLanguages(
+          languagesData.map(languageObject => {
+            return {
+              value: languageObject.name.toLowerCase(),
+              label: languageObject.name,
+            };
+          }),
+        );
+        setAllCategories(
+          categoriesData.map(categoryObject => {
+            return {
+              value: categoryObject.name.toLowerCase(),
+              label: categoryObject.name,
+            };
+          }),
+        );
+      })
+      .catch(() => {
+        setErrorMessage('There was a problem gathering those resources.');
+        setIsLoading(false);
+      });
+
+    handleEndpoint()
       .then(response => {
-        const fetchedResources = get(response, 'data.data', []);
+        const fetchedResources = get(
+          response,
+          'data.resources' || 'data.category' || 'data.language',
+          [],
+        );
         const fetchedNumberOfPages = get(response, 'data.number_of_pages', 0);
 
         if (fetchedResources.length === 0 || fetchedNumberOfPages === 0) {
-          // TODO: set state for variable which conditionally renders "No resources" view
+          setErrorMessage('This search yielded no results. Try searching for something else.');
+          setResources([]);
+          setTotalPages(1);
           return;
         }
 
         setResources(fetchedResources);
-        setTotalPages(fetchedNumberOfPages);
-        setIsLoading(false);
+        if (q) {
+          setTotalPages(fetchedNumberOfPages - 1);
+        } else {
+          setTotalPages(fetchedNumberOfPages);
+        }
       })
-      .catch(error => {
-        // TODO: Do something with erroror state
-        console.log('error', error);
-        setIsLoading(false);
+      .catch(() => {
+        setErrorMessage('There was a problem gathering those resources.');
       });
-
-    return () => {
-      setIsLoading(true);
-    };
+    return () =>
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 500);
   }, [query]);
+
+  const updateQuery = formData => {
+    setErrorMessage(null);
+    router.push(
+      {
+        pathname,
+        query: { page, ...formData },
+      },
+      {
+        pathname: pathname.replace('[page]', '1'),
+        query: { ...formData },
+      },
+    );
+  };
 
   return (
     <>
@@ -59,34 +175,124 @@ function Resources() {
       <Content
         theme="white"
         columns={[
-          <section className={styles.fullWidth}>
+          <section className={styles.resourcesContainer}>
+            <Formik
+              enableReinitialize={false}
+              initialValues={initialValues}
+              onSubmit={(values, actions) => {
+                handleSubmit(values, actions);
+                actions.setSubmitting(true);
+              }}
+              onReset={(values, actions) => {
+                handleReset(values, actions);
+              }}
+            >
+              {({ isSubmitting }) => (
+                <Form>
+                  <Field
+                    hasValidationStyling={false}
+                    data-testid={RESOURCE_SEARCH}
+                    disabled={isSubmitting}
+                    type="search"
+                    name="q"
+                    label="Search Keywords"
+                    component={Input}
+                  />
+                  <div className={styles.formContainer}>
+                    <div className={styles.selectColumn}>
+                      <Field
+                        hasValidationStyling={false}
+                        isDisabled={isSubmitting}
+                        placeholder="Start typing a category..."
+                        label="By Category"
+                        name="category"
+                        options={allCategories}
+                        component={Select}
+                      />
+                    </div>
+
+                    <div className={styles.selectColumn}>
+                      <Field
+                        hasValidationStyling={false}
+                        isDisabled={isSubmitting}
+                        placeholder="Resource cost..."
+                        label="By Cost"
+                        name="paid"
+                        options={costOptions}
+                        component={Select}
+                      />
+                    </div>
+
+                    <div className={styles.selectColumn}>
+                      <Field
+                        hasValidationStyling={false}
+                        isDisabled={isSubmitting}
+                        placeholder="Start typing a language..."
+                        isMulti
+                        label="By Language(s)"
+                        name="languages"
+                        options={allLanguages}
+                        component={Select}
+                      />
+                    </div>
+                  </div>
+                  <div className={styles.buttonGroup}>
+                    <div className={styles.buttonSingle}>
+                      <Button
+                        data-testid={RESOURCE_SEARCH_BUTTON}
+                        disabled={isSubmitting}
+                        type="submit"
+                      >
+                        Search
+                      </Button>
+                    </div>
+
+                    <div className={styles.buttonSingle}>
+                      <Button
+                        data-testid={RESOURCE_RESET_BUTTON}
+                        disabled={isSubmitting}
+                        type="reset"
+                      >
+                        Reset
+                      </Button>
+                    </div>
+                  </div>
+                </Form>
+              )}
+            </Formik>
             {isLoading ? (
-              <p style={{ margin: '2rem auto', textAlign: 'center' }}>
-                {/* TODO: Create with skeleton loading screen to avoid jank between routing */}
-                Loading...
-              </p>
+              <ResourceSkeletonCard numberOfSkeletons={10} />
             ) : (
               <>
-                <div className={styles.fullWidth}>
-                  {resources.map(resource => (
-                    <ResourceCard
-                      key={resource.id}
-                      description={resource.notes}
-                      downvotes={resource.downvotes}
-                      upvotes={resource.upvotes}
-                      href={resource.url || ''}
-                      name={resource.name}
-                      className={styles.resourceCard}
-                    />
-                  ))}
-                </div>
+                {errorMessage && <Alert type="error">{`${errorMessage}`}</Alert>}
+                {resources && !!resources.length && (
+                  <>
+                    <div className={styles.resourcesCardWrapper}>
+                      {resources.map(resource => (
+                        <ResourceCard
+                          data-testid={RESOURCE_CARD}
+                          key={resource.id}
+                          description={resource.notes}
+                          downvotes={resource.downvotes}
+                          upvotes={resource.upvotes}
+                          href={resource.url || ''}
+                          name={resource.name}
+                          category={resource.category}
+                          languages={resource.languages.join('-')}
+                          isPaid={resource.paid}
+                          className={styles.resourceCard}
+                        />
+                      ))}
+                    </div>
 
-                <Pagination
-                  currentPage={currentPage}
-                  totalPages={totalPages}
-                  pathname={pathname}
-                  query={query}
-                />
+                    <Pagination
+                      currentPage={currentPage}
+                      totalPages={totalPages || currentPage + 1}
+                      pathname={pathname}
+                      query={query}
+                    />
+                  </>
+                )}
               </>
             )}
           </section>,

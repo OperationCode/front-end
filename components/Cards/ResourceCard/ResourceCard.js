@@ -1,10 +1,15 @@
 import React from 'react';
-import { string, number, func, oneOf } from 'prop-types';
+import { string, number, func, oneOf, oneOfType, array, bool } from 'prop-types';
 import classNames from 'classnames';
 import Accordion from 'components/Accordion/Accordion';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
-import { UPVOTE_BUTTON, DOWNVOTE_BUTTON } from 'common/constants/testIDs';
+import {
+  UPVOTE_BUTTON,
+  DOWNVOTE_BUTTON,
+  RESOURCE_CARD,
+  RESOURCE_TITLE,
+} from 'common/constants/testIDs';
 import ThumbsUp from 'static/images/icons/FontAwesome/thumbs-up.svg';
 import ThumbsDown from 'static/images/icons/FontAwesome/thumbs-down.svg';
 import styles from './ResourceCard.module.css';
@@ -20,6 +25,9 @@ ResourceCard.propTypes = {
   downvotes: number,
   href: string.isRequired,
   name: string.isRequired,
+  category: string,
+  languages: oneOfType([string, array]),
+  isPaid: bool,
   onDownvote: func,
   onUpvote: func,
   upvotes: number,
@@ -29,6 +37,9 @@ ResourceCard.propTypes = {
 ResourceCard.defaultProps = {
   description: '',
   downvotes: 0,
+  category: '',
+  languages: [],
+  isPaid: false,
   onDownvote: () => {},
   onUpvote: () => {},
   upvotes: 0,
@@ -40,6 +51,9 @@ function ResourceCard({
   downvotes,
   href,
   name,
+  category,
+  languages,
+  isPaid,
   onDownvote,
   onUpvote,
   upvotes,
@@ -106,8 +120,14 @@ function ResourceCard({
       className={styles.ResourceCard}
       content={{
         headingChildren: (
-          <div className={styles.header}>
-            <h5 className={styles.resourceName}>
+          <div
+            data-testid={RESOURCE_CARD}
+            data-test-category={category}
+            data-test-languages={languages}
+            data-test-isPaid={isPaid}
+            className={styles.header}
+          >
+            <h5 data-testid={RESOURCE_TITLE} className={styles.resourceName}>
               <OutboundLink
                 analyticsEventLabel={`Resource: ${name}`}
                 className={styles.link}
