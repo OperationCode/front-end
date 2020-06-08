@@ -61,11 +61,6 @@ function Resources() {
     paid: '',
   };
 
-  const handleError = error =>
-    error.errors
-      ? error.errors['not-found'].message
-      : 'There was a problem loading those resources.';
-
   const handleEndpoint = () => {
     if (q) {
       return getResourcesBySearch({ page, category, languages, paid, q });
@@ -122,8 +117,8 @@ function Resources() {
           }),
         );
       })
-      .catch(error => {
-        setErrorMessage(handleError(error));
+      .catch(() => {
+        setErrorMessage('There was a problem gathering those resources.');
         setIsLoading(false);
       });
 
@@ -137,7 +132,7 @@ function Resources() {
         const fetchedNumberOfPages = get(response, 'data.number_of_pages', 0);
 
         if (fetchedResources.length === 0 || fetchedNumberOfPages === 0) {
-          setErrorMessage(handleError(response));
+          setErrorMessage('This search yielded no results. Try searching for something else.');
           setResources([]);
           setTotalPages(1);
           return;
@@ -150,8 +145,8 @@ function Resources() {
           setTotalPages(fetchedNumberOfPages);
         }
       })
-      .catch(error => {
-        setErrorMessage(handleError(error));
+      .catch(() => {
+        setErrorMessage('There was a problem gathering those resources.');
       });
     return () =>
       setTimeout(() => {
