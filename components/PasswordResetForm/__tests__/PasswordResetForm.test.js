@@ -1,5 +1,5 @@
 import React from 'react';
-import { fireEvent, render, wait } from '@testing-library/react';
+import { fireEvent, render, waitFor } from '@testing-library/react';
 import { passwordReset } from 'common/constants/api';
 import { validationErrorMessages } from 'common/constants/messages';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
@@ -54,7 +54,7 @@ describe('PasswordResetForm', () => {
     fireEvent.blur(await findByLabelText(/Email/));
     fireEvent.click(await findByText('Submit'));
 
-    await wait(() => {
+    await waitFor(() => {
       expect(successSpy).toHaveBeenCalledWith({ detail: 'success' });
       expect(OperationCodeAPIMock.history.post.length).toBeGreaterThan(0);
     });
@@ -97,7 +97,7 @@ describe('PasswordResetForm', () => {
 
     fireEvent.click(await findByText('Submit'));
 
-    await wait(() => {
+    await waitFor(() => {
       expect(passwordResetSpy).not.toHaveBeenCalled();
       expect(successSpy).not.toHaveBeenCalled();
       expect(OperationCodeAPIMock.history.post.length).not.toBeGreaterThan(0);

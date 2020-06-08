@@ -1,5 +1,5 @@
 import React from 'react';
-import { fireEvent, render, wait } from '@testing-library/react';
+import { fireEvent, render, waitFor } from '@testing-library/react';
 import { networkErrorMessages, validationErrorMessages } from 'common/constants/messages';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 import mockUser from 'test-utils/mockGenerators/mockUser';
@@ -87,7 +87,7 @@ describe('RegistrationForm', () => {
 
     fireEvent.click(getByText('Submit'));
 
-    await wait(() => {
+    await waitFor(() => {
       expect(OperationCodeAPIMock.history.post.length).toStrictEqual(1);
       expect(successSpy).toHaveBeenCalledTimes(1);
     });
@@ -141,7 +141,7 @@ describe('RegistrationForm', () => {
 
     fireEvent.click(getByText('Submit'));
 
-    await wait(() => {
+    await waitFor(() => {
       expect(successSpy).not.toHaveBeenCalled();
       expect(OperationCodeAPIMock.history.post.length).not.toBeGreaterThan(0);
     });

@@ -3,7 +3,7 @@
 import React from 'react';
 import faker from 'faker';
 import get from 'lodash/get';
-import { fireEvent, render, wait, waitForElement, getByTestId } from '@testing-library/react';
+import { fireEvent, render, waitFor, getByTestId } from '@testing-library/react';
 import { Field } from 'formik';
 import * as Yup from 'yup';
 import { networkErrorMessages } from 'common/constants/messages';
@@ -11,7 +11,7 @@ import { MULTI_STEP_SUBMIT_BUTTON, MULTI_STEP_STEP_BUTTON } from 'common/constan
 import { MultiStepForm } from '../MultiStepForm';
 
 const submitForm = async ({ container, isFinalStep = false }) => {
-  const button = await waitForElement(
+  const button = await waitFor(
     () =>
       isFinalStep
         ? getByTestId(container, MULTI_STEP_SUBMIT_BUTTON)
@@ -225,7 +225,7 @@ describe('MultiStepForm', () => {
     typeIntoInput(await findByLabelText(/person/gim), 'favoritePerson', faker.name.firstName());
     await submitForm({ container, isFinalStep: true });
 
-    await wait(() => {
+    await waitFor(() => {
       expect(onFinalSubmitMock).toHaveBeenCalledTimes(1);
     });
   });
@@ -240,14 +240,14 @@ describe('MultiStepForm', () => {
     typeIntoInput(await findByLabelText(/last name/gim), 'lastName', faker.name.lastName());
     await submitForm({ container });
 
-    await wait(() => {
+    await waitFor(() => {
       expect(onEachStepSubmit).toHaveBeenCalledTimes(1);
     });
 
     typeIntoInput(await findByLabelText(/ultimate/gim), 'ultimateAnswer', '42');
     await submitForm({ container });
 
-    await wait(() => {
+    await waitFor(() => {
       expect(onEachStepSubmit).toHaveBeenCalledTimes(2);
     });
 
@@ -255,7 +255,7 @@ describe('MultiStepForm', () => {
     typeIntoInput(await findByLabelText(/person/gim), 'favoritePerson', faker.name.firstName());
     await submitForm({ container, isFinalStep: true });
 
-    await wait(() => {
+    await waitFor(() => {
       expect(onEachStepSubmit).toHaveBeenCalledTimes(3);
     });
   });
@@ -340,7 +340,7 @@ describe('MultiStepForm', () => {
 
     await submitForm({ container, isFinalStep: true });
 
-    await wait(() => {
+    await waitFor(() => {
       expect(onFinalSubmitMock).toHaveBeenCalledTimes(2);
       expect(queryByRole('alert')).toBeNull();
     });
@@ -358,20 +358,20 @@ describe('MultiStepForm', () => {
     typeIntoInput(await findByLabelText(/last name/gim), 'lastName', lastNameValue);
     await submitForm({ container });
 
-    await wait(() => {
+    await waitFor(() => {
       expect(queryByTestId('ultimateAnswer')).not.toBeNull();
     });
 
     const goToPreviousStepButton = queryByTestId('Previous Step Button');
 
-    await wait(() => {
+    await waitFor(() => {
       expect(goToPreviousStepButton).not.toBeNull();
       expect(goToPreviousStepButton.textContent).toContain('Previous');
     });
 
     fireEvent.click(goToPreviousStepButton);
 
-    await wait(() => {
+    await waitFor(() => {
       expect(queryByTestId('ultimateAnswer')).toBeNull();
       expect(queryByTestId('firstName')).not.toBeNull();
       expect(queryByTestId('lastName')).not.toBeNull();
@@ -393,7 +393,7 @@ describe('MultiStepForm', () => {
     await submitForm({ container });
 
     // make sure that step 2's input has initialValue & visible after step 1 submission
-    await wait(() => {
+    await waitFor(() => {
       expect(container.querySelectorAll('input')).toHaveLength(1);
       expect(queryByTestId('ultimateAnswer')).not.toBeNull();
       expect(queryByTestId('ultimateAnswer').value).toStrictEqual(
@@ -408,7 +408,7 @@ describe('MultiStepForm', () => {
     fireEvent.click(goToPreviousStepButton);
 
     // make sure that step 1's inputs have persisted & visible after clicking "Previous" from step 1
-    await wait(() => {
+    await waitFor(() => {
       expect(container.querySelectorAll('input')).toHaveLength(2);
       expect(queryByTestId('firstName')).not.toBeNull();
       expect(queryByTestId('lastName')).not.toBeNull();
@@ -424,7 +424,7 @@ describe('MultiStepForm', () => {
     typeIntoInput(await findByLabelText(/last name/gim), 'lastName', faker.name.lastName());
     await submitForm({ container });
 
-    await wait(() => {
+    await waitFor(() => {
       expect(nameFormSubmitHandler).toHaveBeenCalledTimes(1);
     });
   });
@@ -444,7 +444,7 @@ describe('MultiStepForm', () => {
     typeIntoInput(await findByLabelText(/last name/gim), 'lastName', faker.name.lastName());
     await submitForm({ container });
 
-    await wait(() => {
+    await waitFor(() => {
       expect(nameFormSubmitHandler).toHaveBeenCalledTimes(0);
       expect(mockedSubmitHandler).toHaveBeenCalledTimes(1);
     });
@@ -469,7 +469,7 @@ describe('MultiStepForm', () => {
     typeIntoInput(await findByLabelText(/last name/gim), 'lastName', faker.name.lastName());
     await submitForm({ container });
 
-    await wait(() => {
+    await waitFor(() => {
       expect(nameFormSubmitHandler).toHaveBeenCalledTimes(0);
       expect(mockedSubmitHandler).toHaveBeenCalledTimes(1);
     });
