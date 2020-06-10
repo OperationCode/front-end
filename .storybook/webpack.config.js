@@ -8,6 +8,10 @@ module.exports = async ({ config, mode }) => {
   // You can change the configuration based on that.
   // 'PRODUCTION' is used when building the static version of storybook.
 
+  config.node = {
+    fs: 'empty',
+  };
+
   config.resolve.extensions.push('.svg');
 
   config.module.rules = config.module.rules.map(data => {
@@ -64,7 +68,7 @@ module.exports = async ({ config, mode }) => {
       test: /\.svg$/,
       use: [
         {
-          loader: 'react-svg-loader',
+          loader: '@svgr/webpack',
           options: {
             svgo: svgoConfig,
           },
