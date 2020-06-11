@@ -59,60 +59,60 @@ function ResourceCard({
   upvotes,
   userVote,
 }) {
-  const didUpvote = userVote === possibleUserVotes.upvote;
-  const didDownvote = userVote === possibleUserVotes.downvote;
+  // const didUpvote = userVote === possibleUserVotes.upvote;
+  // const didDownvote = userVote === possibleUserVotes.downvote;
 
   // Sync IDs with stylesheet
   // eslint-disable-next-line react/prop-types
-  const VotingBlock = ({ id }) => (
-    <div className={classNames(styles.votingBlock, styles[id])}>
-      <span className={styles.votingBlockHeader}>Useful?</span>
+  // const VotingBlock = ({ id }) => (
+  //   <div className={classNames(styles.votingBlock, styles[id])}>
+  //     <span className={styles.votingBlockHeader}>Useful?</span>
 
-      <div className={styles.voteInfo}>
-        <button
-          className={classNames(styles.voteButton, { [styles.active]: didUpvote })}
-          aria-pressed={didUpvote}
-          data-testid={UPVOTE_BUTTON}
-          onClick={onUpvote}
-          type="button"
-        >
-          <ScreenReaderOnly>Yes</ScreenReaderOnly>
-          <ThumbsUp
-            className={classNames(styles.icon, {
-              [styles.active]: didUpvote,
-            })}
-          />
-        </button>
+  //     <div className={styles.voteInfo}>
+  //       <button
+  //         className={classNames(styles.voteButton, { [styles.active]: didUpvote })}
+  //         aria-pressed={didUpvote}
+  //         data-testid={UPVOTE_BUTTON}
+  //         onClick={onUpvote}
+  //         type="button"
+  //       >
+  //         <ScreenReaderOnly>Yes</ScreenReaderOnly>
+  //         <ThumbsUp
+  //           className={classNames(styles.icon, {
+  //             [styles.active]: didUpvote,
+  //           })}
+  //         />
+  //       </button>
 
-        <span className={classNames(styles.voteCount, { [styles.active]: didUpvote })}>
-          <ScreenReaderOnly>Number of upvotes:</ScreenReaderOnly>
-          {upvotes.toString()}
-        </span>
-      </div>
+  //       <span className={classNames(styles.voteCount, { [styles.active]: didUpvote })}>
+  //         <ScreenReaderOnly>Number of upvotes:</ScreenReaderOnly>
+  //         {upvotes.toString()}
+  //       </span>
+  //     </div>
 
-      <div className={styles.voteInfo}>
-        <button
-          className={classNames(styles.voteButton, { [styles.active]: didDownvote })}
-          aria-pressed={didDownvote}
-          data-testid={DOWNVOTE_BUTTON}
-          onClick={onDownvote}
-          type="button"
-        >
-          <ScreenReaderOnly>No</ScreenReaderOnly>
-          <ThumbsDown
-            className={classNames(styles.icon, {
-              [styles.active]: didDownvote,
-            })}
-          />
-        </button>
+  //     <div className={styles.voteInfo}>
+  //       <button
+  //         className={classNames(styles.voteButton, { [styles.active]: didDownvote })}
+  //         aria-pressed={didDownvote}
+  //         data-testid={DOWNVOTE_BUTTON}
+  //         onClick={onDownvote}
+  //         type="button"
+  //       >
+  //         <ScreenReaderOnly>No</ScreenReaderOnly>
+  //         <ThumbsDown
+  //           className={classNames(styles.icon, {
+  //             [styles.active]: didDownvote,
+  //           })}
+  //         />
+  //       </button>
 
-        <span className={classNames(styles.voteCount, { [styles.active]: didDownvote })}>
-          <ScreenReaderOnly>Number of downvotes:</ScreenReaderOnly>
-          {downvotes.toString()}
-        </span>
-      </div>
-    </div>
-  );
+  //       <span className={classNames(styles.voteCount, { [styles.active]: didDownvote })}>
+  //         <ScreenReaderOnly>Number of downvotes:</ScreenReaderOnly>
+  //         {downvotes.toString()}
+  //       </span>
+  //     </div>
+  //   </div>
+  // );
 
   return (
     <Accordion
@@ -138,14 +138,14 @@ function ResourceCard({
               </OutboundLink>
             </h5>
 
-            <VotingBlock id="desktopVotingBlock" />
+            {/* <VotingBlock id="desktopVotingBlock" /> */}
           </div>
         ),
         bodyChildren: (
           <div className={styles.content}>
             <p className={styles.descriptionText}>{description}</p>
 
-            <VotingBlock id="mobileVotingBlock" />
+            {/* <VotingBlock id="mobileVotingBlock" /> */}
           </div>
         ),
       }}
