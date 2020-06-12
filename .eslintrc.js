@@ -238,7 +238,7 @@ module.exports = {
         ignoreUrls: true,
       },
     ],
-    'multiline-ternary': ['error', 'always-multiline'],
+    'multiline-ternary': 'off',
     'no-console': 'warn',
     'no-restricted-imports': [
       'error',
