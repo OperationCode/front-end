@@ -124,7 +124,7 @@ function ResourceCard({
           <div
             data-testid={RESOURCE_CARD}
             data-test-category={category}
-            data-test-languages={languages}
+            data-test-languages={languages.join('-')}
             data-test-isPaid={isPaid}
             className={styles.header}
           >
@@ -145,6 +145,15 @@ function ResourceCard({
         bodyChildren: (
           <div className={styles.content}>
             <p className={styles.descriptionText}>{description}</p>
+
+            <div className={styles.metadata}>
+              <p>
+                <span className={styles.metadataLabel}>Languages:</span> {languages.join(', ')}
+              </p>
+              <p>
+                <span className={styles.metadataLabel}>Category:</span> {category}
+              </p>
+            </div>
 
             {/* <VotingBlock id="mobileVotingBlock" /> */}
           </div>
