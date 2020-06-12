@@ -153,6 +153,6 @@
     "webpack-filter-warnings-plugin": "^1.2.1"
   },
   "resolutions": {
-    "cypress": "4.7.0"
+    "cypress": "4.8.0"
   }
 }
