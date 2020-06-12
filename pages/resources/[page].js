@@ -278,7 +278,7 @@ function Resources() {
                           href={resource.url || ''}
                           name={resource.name}
                           category={resource.category}
-                          languages={resource.languages.join('-')}
+                          languages={resource.languages}
                           isPaid={resource.paid}
                           className={styles.resourceCard}
                         />
