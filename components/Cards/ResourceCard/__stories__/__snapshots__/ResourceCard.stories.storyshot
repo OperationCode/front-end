@@ -11,7 +11,7 @@ exports[`Storyshots Cards/ResourceCard default 1`] = `
       className="header"
       data-test-category=""
       data-test-isPaid={false}
-      data-test-languages={Array []}
+      data-test-languages=""
       data-testid="RESOURCE_CARD"
     >
       <h5
@@ -74,6 +74,28 @@ exports[`Storyshots Cards/ResourceCard default 1`] = `
       >
         
       </p>
+      <div
+        className="metadata"
+      >
+        <p>
+          <span
+            className="metadataLabel"
+          >
+            Languages:
+          </span>
+           
+          
+        </p>
+        <p>
+          <span
+            className="metadataLabel"
+          >
+            Category:
+          </span>
+           
+          
+        </p>
+      </div>
     </div>
   </section>
 </article>
@@ -88,9 +110,9 @@ exports[`Storyshots Cards/ResourceCard with long name 1`] = `
   >
     <div
       className="header"
-      data-test-category=""
+      data-test-category="Tutorials"
       data-test-isPaid={false}
-      data-test-languages={Array []}
+      data-test-languages="JavaScript-HTML-CSS"
       data-testid="RESOURCE_CARD"
     >
       <h5
@@ -153,6 +175,28 @@ exports[`Storyshots Cards/ResourceCard with long name 1`] = `
       >
         Trust fund post-ironic austin offal. Asymmetrical knausgaard selfies, butcher celiac brunch brooklyn palo santo iceland gochujang chicharrones waistcoat plaid.
       </p>
+      <div
+        className="metadata"
+      >
+        <p>
+          <span
+            className="metadataLabel"
+          >
+            Languages:
+          </span>
+           
+          JavaScript, HTML, CSS
+        </p>
+        <p>
+          <span
+            className="metadataLabel"
+          >
+            Category:
+          </span>
+           
+          Tutorials
+        </p>
+      </div>
     </div>
   </section>
 </article>
@@ -169,7 +213,7 @@ exports[`Storyshots Cards/ResourceCard with zero up/downvotes 1`] = `
       className="header"
       data-test-category=""
       data-test-isPaid={false}
-      data-test-languages={Array []}
+      data-test-languages="JavaScript"
       data-testid="RESOURCE_CARD"
     >
       <h5
@@ -232,6 +276,28 @@ exports[`Storyshots Cards/ResourceCard with zero up/downvotes 1`] = `
       >
         Trust fund post-ironic austin offal. Asymmetrical knausgaard selfies, butcher celiac brunch brooklyn palo santo iceland gochujang chicharrones waistcoat plaid.
       </p>
+      <div
+        className="metadata"
+      >
+        <p>
+          <span
+            className="metadataLabel"
+          >
+            Languages:
+          </span>
+           
+          JavaScript
+        </p>
+        <p>
+          <span
+            className="metadataLabel"
+          >
+            Category:
+          </span>
+           
+          
+        </p>
+      </div>
     </div>
   </section>
 </article>
