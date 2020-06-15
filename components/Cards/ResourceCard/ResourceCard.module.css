@@ -24,6 +24,18 @@
   position: relative;
 }
 
+.metadata {
+  margin: 1rem 0;
+}
+
+.metadata p {
+  margin: 0;
+}
+
+.metadataLabel {
+  font-weight: bold;
+}
+
 .votingBlock {
   align-items: center;
   font-size: 1rem;

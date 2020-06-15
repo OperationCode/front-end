@@ -11,7 +11,7 @@ exports[`Storyshots Cards/ResourceCard default 1`] = `
       className="header"
       data-test-category=""
       data-test-isPaid={false}
-      data-test-languages={Array []}
+      data-test-languages=""
       data-testid="RESOURCE_CARD"
     >
       <h5
@@ -34,79 +34,6 @@ exports[`Storyshots Cards/ResourceCard default 1`] = `
           </span>
         </a>
       </h5>
-      <div
-        className="votingBlock desktopVotingBlock"
-      >
-        <span
-          className="votingBlockHeader"
-        >
-          Useful?
-        </span>
-        <div
-          className="voteInfo"
-        >
-          <button
-            aria-pressed={false}
-            className="voteButton"
-            data-testid="UPVOTE_BUTTON"
-            onClick={[Function]}
-            type="button"
-          >
-            <span
-              className="ScreenReaderOnly"
-              data-testid="SCREEN_READER_ONLY"
-            >
-              Yes
-            </span>
-            <svg
-              className="icon"
-            />
-          </button>
-          <span
-            className="voteCount"
-          >
-            <span
-              className="ScreenReaderOnly"
-              data-testid="SCREEN_READER_ONLY"
-            >
-              Number of upvotes:
-            </span>
-            0
-          </span>
-        </div>
-        <div
-          className="voteInfo"
-        >
-          <button
-            aria-pressed={false}
-            className="voteButton"
-            data-testid="DOWNVOTE_BUTTON"
-            onClick={[Function]}
-            type="button"
-          >
-            <span
-              className="ScreenReaderOnly"
-              data-testid="SCREEN_READER_ONLY"
-            >
-              No
-            </span>
-            <svg
-              className="icon"
-            />
-          </button>
-          <span
-            className="voteCount"
-          >
-            <span
-              className="ScreenReaderOnly"
-              data-testid="SCREEN_READER_ONLY"
-            >
-              Number of downvotes:
-            </span>
-            0
-          </span>
-        </div>
-      </div>
     </div>
   </div>
   <button
@@ -148,77 +75,26 @@ exports[`Storyshots Cards/ResourceCard default 1`] = `
         
       </p>
       <div
-        className="votingBlock mobileVotingBlock"
+        className="metadata"
       >
-        <span
-          className="votingBlockHeader"
-        >
-          Useful?
-        </span>
-        <div
-          className="voteInfo"
-        >
-          <button
-            aria-pressed={false}
-            className="voteButton"
-            data-testid="UPVOTE_BUTTON"
-            onClick={[Function]}
-            type="button"
-          >
-            <span
-              className="ScreenReaderOnly"
-              data-testid="SCREEN_READER_ONLY"
-            >
-              Yes
-            </span>
-            <svg
-              className="icon"
-            />
-          </button>
+        <p>
           <span
-            className="voteCount"
+            className="metadataLabel"
           >
-            <span
-              className="ScreenReaderOnly"
-              data-testid="SCREEN_READER_ONLY"
-            >
-              Number of upvotes:
-            </span>
-            0
+            Languages:
           </span>
-        </div>
-        <div
-          className="voteInfo"
-        >
-          <button
-            aria-pressed={false}
-            className="voteButton"
-            data-testid="DOWNVOTE_BUTTON"
-            onClick={[Function]}
-            type="button"
-          >
-            <span
-              className="ScreenReaderOnly"
-              data-testid="SCREEN_READER_ONLY"
-            >
-              No
-            </span>
-            <svg
-              className="icon"
-            />
-          </button>
+           
+          
+        </p>
+        <p>
           <span
-            className="voteCount"
+            className="metadataLabel"
           >
-            <span
-              className="ScreenReaderOnly"
-              data-testid="SCREEN_READER_ONLY"
-            >
-              Number of downvotes:
-            </span>
-            0
+            Category:
           </span>
-        </div>
+           
+          
+        </p>
       </div>
     </div>
   </section>
@@ -234,9 +110,9 @@ exports[`Storyshots Cards/ResourceCard with long name 1`] = `
   >
     <div
       className="header"
-      data-test-category=""
+      data-test-category="Tutorials"
       data-test-isPaid={false}
-      data-test-languages={Array []}
+      data-test-languages="JavaScript-HTML-CSS"
       data-testid="RESOURCE_CARD"
     >
       <h5
@@ -259,79 +135,6 @@ exports[`Storyshots Cards/ResourceCard with long name 1`] = `
           </span>
         </a>
       </h5>
-      <div
-        className="votingBlock desktopVotingBlock"
-      >
-        <span
-          className="votingBlockHeader"
-        >
-          Useful?
-        </span>
-        <div
-          className="voteInfo"
-        >
-          <button
-            aria-pressed={false}
-            className="voteButton"
-            data-testid="UPVOTE_BUTTON"
-            onClick={[Function]}
-            type="button"
-          >
-            <span
-              className="ScreenReaderOnly"
-              data-testid="SCREEN_READER_ONLY"
-            >
-              Yes
-            </span>
-            <svg
-              className="icon"
-            />
-          </button>
-          <span
-            className="voteCount"
-          >
-            <span
-              className="ScreenReaderOnly"
-              data-testid="SCREEN_READER_ONLY"
-            >
-              Number of upvotes:
-            </span>
-            12
-          </span>
-        </div>
-        <div
-          className="voteInfo"
-        >
-          <button
-            aria-pressed={true}
-            className="voteButton active"
-            data-testid="DOWNVOTE_BUTTON"
-            onClick={[Function]}
-            type="button"
-          >
-            <span
-              className="ScreenReaderOnly"
-              data-testid="SCREEN_READER_ONLY"
-            >
-              No
-            </span>
-            <svg
-              className="icon active"
-            />
-          </button>
-          <span
-            className="voteCount active"
-          >
-            <span
-              className="ScreenReaderOnly"
-              data-testid="SCREEN_READER_ONLY"
-            >
-              Number of downvotes:
-            </span>
-            25
-          </span>
-        </div>
-      </div>
     </div>
   </div>
   <button
@@ -373,77 +176,26 @@ exports[`Storyshots Cards/ResourceCard with long name 1`] = `
         Trust fund post-ironic austin offal. Asymmetrical knausgaard selfies, butcher celiac brunch brooklyn palo santo iceland gochujang chicharrones waistcoat plaid.
       </p>
       <div
-        className="votingBlock mobileVotingBlock"
+        className="metadata"
       >
-        <span
-          className="votingBlockHeader"
-        >
-          Useful?
-        </span>
-        <div
-          className="voteInfo"
-        >
-          <button
-            aria-pressed={false}
-            className="voteButton"
-            data-testid="UPVOTE_BUTTON"
-            onClick={[Function]}
-            type="button"
-          >
-            <span
-              className="ScreenReaderOnly"
-              data-testid="SCREEN_READER_ONLY"
-            >
-              Yes
-            </span>
-            <svg
-              className="icon"
-            />
-          </button>
+        <p>
           <span
-            className="voteCount"
+            className="metadataLabel"
           >
-            <span
-              className="ScreenReaderOnly"
-              data-testid="SCREEN_READER_ONLY"
-            >
-              Number of upvotes:
-            </span>
-            12
+            Languages:
           </span>
-        </div>
-        <div
-          className="voteInfo"
-        >
-          <button
-            aria-pressed={true}
-            className="voteButton active"
-            data-testid="DOWNVOTE_BUTTON"
-            onClick={[Function]}
-            type="button"
-          >
-            <span
-              className="ScreenReaderOnly"
-              data-testid="SCREEN_READER_ONLY"
-            >
-              No
-            </span>
-            <svg
-              className="icon active"
-            />
-          </button>
+           
+          JavaScript, HTML, CSS
+        </p>
+        <p>
           <span
-            className="voteCount active"
+            className="metadataLabel"
           >
-            <span
-              className="ScreenReaderOnly"
-              data-testid="SCREEN_READER_ONLY"
-            >
-              Number of downvotes:
-            </span>
-            25
+            Category:
           </span>
-        </div>
+           
+          Tutorials
+        </p>
       </div>
     </div>
   </section>
@@ -461,7 +213,7 @@ exports[`Storyshots Cards/ResourceCard with zero up/downvotes 1`] = `
       className="header"
       data-test-category=""
       data-test-isPaid={false}
-      data-test-languages={Array []}
+      data-test-languages="JavaScript"
       data-testid="RESOURCE_CARD"
     >
       <h5
@@ -484,79 +236,6 @@ exports[`Storyshots Cards/ResourceCard with zero up/downvotes 1`] = `
           </span>
         </a>
       </h5>
-      <div
-        className="votingBlock desktopVotingBlock"
-      >
-        <span
-          className="votingBlockHeader"
-        >
-          Useful?
-        </span>
-        <div
-          className="voteInfo"
-        >
-          <button
-            aria-pressed={false}
-            className="voteButton"
-            data-testid="UPVOTE_BUTTON"
-            onClick={[Function]}
-            type="button"
-          >
-            <span
-              className="ScreenReaderOnly"
-              data-testid="SCREEN_READER_ONLY"
-            >
-              Yes
-            </span>
-            <svg
-              className="icon"
-            />
-          </button>
-          <span
-            className="voteCount"
-          >
-            <span
-              className="ScreenReaderOnly"
-              data-testid="SCREEN_READER_ONLY"
-            >
-              Number of upvotes:
-            </span>
-            0
-          </span>
-        </div>
-        <div
-          className="voteInfo"
-        >
-          <button
-            aria-pressed={false}
-            className="voteButton"
-            data-testid="DOWNVOTE_BUTTON"
-            onClick={[Function]}
-            type="button"
-          >
-            <span
-              className="ScreenReaderOnly"
-              data-testid="SCREEN_READER_ONLY"
-            >
-              No
-            </span>
-            <svg
-              className="icon"
-            />
-          </button>
-          <span
-            className="voteCount"
-          >
-            <span
-              className="ScreenReaderOnly"
-              data-testid="SCREEN_READER_ONLY"
-            >
-              Number of downvotes:
-            </span>
-            0
-          </span>
-        </div>
-      </div>
     </div>
   </div>
   <button
@@ -598,77 +277,26 @@ exports[`Storyshots Cards/ResourceCard with zero up/downvotes 1`] = `
         Trust fund post-ironic austin offal. Asymmetrical knausgaard selfies, butcher celiac brunch brooklyn palo santo iceland gochujang chicharrones waistcoat plaid.
       </p>
       <div
-        className="votingBlock mobileVotingBlock"
+        className="metadata"
       >
-        <span
-          className="votingBlockHeader"
-        >
-          Useful?
-        </span>
-        <div
-          className="voteInfo"
-        >
-          <button
-            aria-pressed={false}
-            className="voteButton"
-            data-testid="UPVOTE_BUTTON"
-            onClick={[Function]}
-            type="button"
-          >
-            <span
-              className="ScreenReaderOnly"
-              data-testid="SCREEN_READER_ONLY"
-            >
-              Yes
-            </span>
-            <svg
-              className="icon"
-            />
-          </button>
+        <p>
           <span
-            className="voteCount"
+            className="metadataLabel"
           >
-            <span
-              className="ScreenReaderOnly"
-              data-testid="SCREEN_READER_ONLY"
-            >
-              Number of upvotes:
-            </span>
-            0
+            Languages:
           </span>
-        </div>
-        <div
-          className="voteInfo"
-        >
-          <button
-            aria-pressed={false}
-            className="voteButton"
-            data-testid="DOWNVOTE_BUTTON"
-            onClick={[Function]}
-            type="button"
-          >
-            <span
-              className="ScreenReaderOnly"
-              data-testid="SCREEN_READER_ONLY"
-            >
-              No
-            </span>
-            <svg
-              className="icon"
-            />
-          </button>
+           
+          JavaScript
+        </p>
+        <p>
           <span
-            className="voteCount"
+            className="metadataLabel"
           >
-            <span
-              className="ScreenReaderOnly"
-              data-testid="SCREEN_READER_ONLY"
-            >
-              Number of downvotes:
-            </span>
-            0
+            Category:
           </span>
-        </div>
+           
+          
+        </p>
       </div>
     </div>
   </section>
