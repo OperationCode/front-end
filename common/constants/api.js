@@ -12,6 +12,9 @@ export const getResourcesBySearch = parameters =>
 export const getResourcesByCategories = () => {
   return get('api/v1/categories', {}, ResourcesAPI);
 };
+export const getResourcesByLanguages = () => {
+  return get('api/v1/languages', {}, ResourcesAPI);
+};
 
 /* POST REQUESTS */
 export const createUser = ({ email, password, firstName, lastName, zipcode }) =>

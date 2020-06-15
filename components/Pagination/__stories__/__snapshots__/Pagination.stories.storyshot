@@ -21,7 +21,7 @@ Array [
     <ol>
       <li
         className="PaginationItem current"
-        data-testid="1"
+        data-testid="page 1"
       >
         <a
           className="unstyledLink"
@@ -40,7 +40,7 @@ Array [
       </li>
       <li
         className="PaginationItem"
-        data-testid="2"
+        data-testid="page 2"
       >
         <a
           className="unstyledLink"
@@ -59,7 +59,7 @@ Array [
       </li>
       <li
         className="PaginationItem"
-        data-testid="3"
+        data-testid="page 3"
       >
         <a
           className="unstyledLink"
@@ -78,7 +78,7 @@ Array [
       </li>
       <li
         className="PaginationItem"
-        data-testid="4"
+        data-testid="page 4"
       >
         <a
           className="unstyledLink"
@@ -97,7 +97,7 @@ Array [
       </li>
       <li
         className="PaginationItem"
-        data-testid="5"
+        data-testid="page 5"
       >
         <a
           className="unstyledLink"
@@ -116,7 +116,7 @@ Array [
       </li>
       <li
         className="PaginationItem"
-        data-testid="6"
+        data-testid="page 6"
       >
         <a
           className="unstyledLink"
@@ -135,7 +135,7 @@ Array [
       </li>
       <li
         className="PaginationItem"
-        data-testid="7"
+        data-testid="page 7"
       >
         <a
           className="unstyledLink"
@@ -154,7 +154,7 @@ Array [
       </li>
       <li
         className="PaginationItem"
-        data-testid="8"
+        data-testid="page 8"
       >
         <a
           className="unstyledLink"
@@ -173,7 +173,7 @@ Array [
       </li>
       <li
         className="PaginationItem"
-        data-testid="9"
+        data-testid="page 9"
       >
         <a
           className="unstyledLink"
@@ -198,7 +198,7 @@ Array [
       </li>
       <li
         className="PaginationItem"
-        data-testid="20"
+        data-testid="page 20"
       >
         <a
           className="unstyledLink"
@@ -217,7 +217,7 @@ Array [
       </li>
       <li
         className="PaginationItem"
-        data-testid="rightAngle"
+        data-testid="NEXT_PAGE_BUTTON"
       >
         <a
           className="unstyledLink"

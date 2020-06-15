@@ -53,6 +53,11 @@ Cypress.Commands.add('setResolution', size => {
   }
 });
 
+Cypress.Commands.add('checkCustomDataAttribute', (attribute, value) => {
+  const attributeWithoutBrackets = attribute.replace(/[[\]]/g, '');
+  cy.get(attribute).should('have.attr', attributeWithoutBrackets, value);
+});
+
 //
 // -- This is a child command --
 // Cypress.Commands.add("drag", { prevSubject: 'element'}, (subject, options) => { ... })

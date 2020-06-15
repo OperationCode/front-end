@@ -1,3 +1,33 @@
-.fullWidth {
-  width: 90vw;
+.resourcesContainer {
+  width: 70vw;
+}
+
+.formContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.selectColumn {
+  flex: 30%;
+  margin: 0 1rem;
+}
+
+.buttonGroup {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.buttonSingle {
+  margin: 0.5rem;
+  display: flex;
+}
+
+.resourcesCardsWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }

@@ -3,6 +3,7 @@ import lodashGet from 'lodash/get';
 import { networkErrorMessages } from 'common/constants/messages';
 import { apiUrl } from 'common/config/environment';
 import { setAuthorizationHeader } from 'common/utils/cookie-utils';
+import qs from 'qs';
 
 const axiosConfig = {
   baseURL: apiUrl,
@@ -42,6 +43,7 @@ const getRequestAbortionPieces = () => {
  * @param {?Object.<string, any>} parameters URL parameters to include in the query string
  * @returns {Promise<AxiosPromise<any>>}
  */
+
 export const get = async (path, { token, parameters } = {}, axiosClient = OperationCodeAPI) => {
   const { abort, connectionTimeout } = getRequestAbortionPieces();
 
@@ -50,10 +52,20 @@ export const get = async (path, { token, parameters } = {}, axiosClient = Operat
       headers: setAuthorizationHeader(token),
       cancelToken: abort.token,
       params: parameters,
+      /**
+       * @description paramsSerializer takes an array of query params that is usually
+       * serialized like this '/api/?id[]=1&id[]=2' and converts it into '/api/?id=1&id=2'
+       * to better work with the API
+       * */
+      paramsSerializer: parameters_ => qs.stringify(parameters_, { arrayFormat: 'repeat' }),
     })
     .then(response => {
       clearTimeout(connectionTimeout);
       return response;
+    })
+    .catch(error => {
+      clearTimeout(connectionTimeout);
+      return error;
     });
 };
 

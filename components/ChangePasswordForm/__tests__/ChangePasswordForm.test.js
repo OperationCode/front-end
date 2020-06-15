@@ -1,5 +1,5 @@
 import React from 'react';
-import { fireEvent, render, wait } from '@testing-library/react';
+import { fireEvent, render, waitFor } from '@testing-library/react';
 import { passwordResetSubmit } from 'common/constants/api';
 import { validationErrorMessages } from 'common/constants/messages';
 import { BUTTON, INPUT_ERROR, CHANGE_PASSWORD_FORM_ERROR } from 'common/constants/testIDs';
@@ -71,7 +71,7 @@ describe('ChangePasswordForm', () => {
 
     fireEvent.click(component.queryByTestId(BUTTON));
 
-    await wait(() => {
+    await waitFor(() => {
       expect(passwordResetSubmitSpy).toHaveBeenCalledTimes(1);
       expect(successSpy).toHaveBeenCalledTimes(1);
     });
@@ -94,7 +94,7 @@ describe('ChangePasswordForm', () => {
 
     fireEvent.click(component.queryByTestId(BUTTON));
 
-    await wait(() => {
+    await waitFor(() => {
       expect(passwordResetSubmitSpy).not.toHaveBeenCalled();
       expect(successSpy).not.toHaveBeenCalled();
       expect(OperationCodeAPIMock.history.post.length).not.toBeGreaterThan(0);
@@ -125,7 +125,7 @@ describe('ChangePasswordForm', () => {
 
     fireEvent.click(component.queryByTestId(BUTTON));
 
-    await wait(() => {
+    await waitFor(() => {
       expect(OperationCodeAPIMock.history.post.length).toBeGreaterThan(0);
     });
 

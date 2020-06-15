@@ -1,6 +1,6 @@
 import React from 'react';
 import { Formik, Field } from 'formik';
-import { fireEvent, render, wait } from '@testing-library/react';
+import { fireEvent, render, waitFor } from '@testing-library/react';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 import { KEY_CODES } from 'test-utils/identifiers';
 
@@ -80,7 +80,7 @@ describe('Select', () => {
       fireEvent.keyDown(ReactSelect, KEY_CODES.DOWN_ARROW);
       fireEvent.keyDown(ReactSelect, KEY_CODES.ENTER);
 
-      await wait(() => {
+      await waitFor(() => {
         expect(setFieldTouched).toHaveBeenCalledTimes(1);
         expect(setFieldValue).toHaveBeenCalledTimes(1);
       });
@@ -104,7 +104,7 @@ describe('Select', () => {
       fireEvent.keyDown(ReactSelect, KEY_CODES.DOWN_ARROW);
       fireEvent.keyDown(ReactSelect, KEY_CODES.ENTER);
 
-      await wait(() => {
+      await waitFor(() => {
         expect(setFieldTouched).toHaveBeenCalledTimes(2);
         expect(setFieldValue).toHaveBeenCalledTimes(2);
       });
@@ -123,14 +123,14 @@ describe('Select', () => {
       fireEvent.keyDown(ReactSelect, KEY_CODES.DOWN_ARROW);
       fireEvent.keyDown(ReactSelect, KEY_CODES.ENTER);
 
-      await wait(() => {
+      await waitFor(() => {
         expect(setFieldValue).toHaveBeenCalledTimes(1);
       });
 
       // Remove single selected value
       fireEvent.keyDown(ReactSelect, KEY_CODES.BACKSPACE);
 
-      await wait(() => {
+      await waitFor(() => {
         expect(setFieldValue).toHaveBeenNthCalledWith(2, 'test', []);
       });
     });
