@@ -1,6 +1,6 @@
 import React from 'react';
 import { Formik } from 'formik';
-import { fireEvent, render, wait } from '@testing-library/react';
+import { fireEvent, render, waitFor } from '@testing-library/react';
 import OperationCodeAPIMock from 'test-utils/mocks/apiMock';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 import { KEY_CODES } from 'test-utils/identifiers';
@@ -53,7 +53,7 @@ describe('UpdateProfileForm/Steps/ProfessionalDetails', () => {
     });
     fireEvent.submit(container.querySelector('form'));
 
-    await wait(() => {
+    await waitFor(() => {
       expect(OperationCodeAPIMock.history.patch.length).toStrictEqual(1);
     });
   });

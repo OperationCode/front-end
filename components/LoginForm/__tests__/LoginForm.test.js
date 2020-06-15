@@ -1,6 +1,6 @@
 import React from 'react';
 import faker from 'faker';
-import { fireEvent, render, wait } from '@testing-library/react';
+import { fireEvent, render, waitFor } from '@testing-library/react';
 import { loginUser } from 'common/constants/api';
 import { networkErrorMessages, validationErrorMessages } from 'common/constants/messages';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
@@ -72,7 +72,7 @@ describe('LoginForm', () => {
 
     fireEvent.click(getByText('Submit'));
 
-    await wait(() => {
+    await waitFor(() => {
       expect(successSpy).toHaveBeenCalledTimes(1);
       expect(OperationCodeAPIMock.history.post.length).toBeGreaterThan(0);
     });
@@ -94,7 +94,7 @@ describe('LoginForm', () => {
 
     fireEvent.click(getByText('Submit'));
 
-    await wait(() => {
+    await waitFor(() => {
       expect(successSpy).not.toHaveBeenCalled();
       expect(OperationCodeAPIMock.history.post.length).not.toBeGreaterThan(0);
     });
@@ -118,7 +118,7 @@ describe('LoginForm', () => {
 
     fireEvent.click(getByText('Submit'));
 
-    wait(() => {
+    waitFor(() => {
       expect(findByText(invalidError)).not.toBeNull();
       expect(successSpy).not.toHaveBeenCalled();
     });
@@ -141,7 +141,7 @@ describe('LoginForm', () => {
 
     fireEvent.click(getByText('Submit'));
 
-    await wait(() => {
+    await waitFor(() => {
       expect(findByText(networkErrorMessages.serverDown)).not.toBeNull();
       expect(successSpy).not.toHaveBeenCalled();
       expect(OperationCodeAPIMock.history.post.length).toBeGreaterThan(0);
@@ -174,7 +174,7 @@ describe('LoginForm', () => {
 
     fireEvent.click(submit);
 
-    await wait(() => {
+    await waitFor(() => {
       expect(submit).not.toBeDisabled();
     });
 

@@ -2,7 +2,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { withKnobs, array, boolean, text, number, selectV2 } from '@storybook/addon-knobs';
+import { withKnobs, array, boolean, text, number, select } from '@storybook/addon-knobs';
 
 import ResourceCard, { possibleUserVotes } from '../ResourceCard';
 
@@ -22,7 +22,7 @@ storiesOf('Cards/ResourceCard', module)
       onDownvote={action('props.onDownvote called!')}
       onUpvote={action('props.onUpvote called!')}
       upvotes={number('upvotes', 0)}
-      userVote={selectV2('userVote', Object.values(possibleUserVotes), possibleUserVotes.none)}
+      userVote={select('userVote', Object.values(possibleUserVotes), possibleUserVotes.none)}
     />
   ))
   .add('with long name', () => (
@@ -40,7 +40,7 @@ storiesOf('Cards/ResourceCard', module)
       onDownvote={action('props.onDownvote called!')}
       onUpvote={action('props.onUpvote called!')}
       upvotes={number('upvotes', 12)}
-      userVote={selectV2('userVote', Object.values(possibleUserVotes), possibleUserVotes.downvote)}
+      userVote={select('userVote', Object.values(possibleUserVotes), possibleUserVotes.downvote)}
     />
   ))
   .add('with zero up/downvotes', () => (
@@ -55,6 +55,6 @@ storiesOf('Cards/ResourceCard', module)
       onDownvote={action('props.onDownvote called!')}
       onUpvote={action('props.onUpvote called!')}
       upvotes={number('upvotes', 0)}
-      userVote={selectV2('userVote', Object.values(possibleUserVotes), possibleUserVotes.none)}
+      userVote={select('userVote', Object.values(possibleUserVotes), possibleUserVotes.none)}
     />
   ));
