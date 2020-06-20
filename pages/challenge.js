@@ -9,7 +9,7 @@ import styles from './styles/challenge.module.css';
 const pageTitle = 'Challenge';
 
 const RepoLink = 'https://github.com/OperationCode/front-end/';
-const ChallengeLink = `${RepoLink}blob/master/pages/challenge.js`;
+const ChallengeLink = `${RepoLink}blob/main/pages/challenge.js`;
 const CompareLink = `${RepoLink}compare`;
 
 function Challenge() {
@@ -135,7 +135,7 @@ function Challenge() {
                 the text:&nbsp; &apos;compare across forks&apos; - click it. Now, click on the
                 selector that says &apos; head fork&apos; at the beginning, and choose your fork.
                 Click the next selector to the right, and choose your new branch. Now, you&apos;re
-                comparing Operation Code&apos;s master branch with your new fork&apos;s branch, and
+                comparing Operation Code&apos;s main branch with your new fork&apos;s branch, and
                 you may click
                 <img
                   src={`${s3}github_demo/pr-button.png`}

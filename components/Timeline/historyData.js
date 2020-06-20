@@ -326,7 +326,7 @@ export default {
           participation in open source development with our first{' '}
           <OutboundLink
             analyticsEventLabel="History Link"
-            href="https://github.com/OperationCode/operationcode/blob/master/CONTRIBUTING.md"
+            href="https://github.com/OperationCode/operationcode/blob/main/CONTRIBUTING.md"
             alt="Operation Code Old GitHub Contributing Guide"
           >
             contributing guide

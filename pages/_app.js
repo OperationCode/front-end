@@ -59,7 +59,7 @@ const setLogRocketFingerprint = () => {
 class OperationCodeApp extends App {
   componentDidMount() {
     /* Analytics */
-    // TODO: Leverage master-build-time-only env vars instead of window check
+    // TODO: Leverage prod-build-time-only env vars instead of window check
     if (isProduction && window.location.host.includes('operationcode.org')) {
       Sentry.init({ dsn: clientTokens.SENTRY_DSN, release: `front-end@${version}` });
       LogRocket.init(`${clientTokens.LOGROCKET}/operation-code`);

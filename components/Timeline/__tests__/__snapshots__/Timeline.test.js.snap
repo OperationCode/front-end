@@ -32,7 +32,7 @@ exports[`Timeline should render with no props passed passed 1`] = `
         content={
           <p>
             Operation Code's founder, and retired U.S. Army Captain, David Molina, attends his first hackathon in New York City. After a weekend learning at
-             
+
             <OutboundLink
               alt="Angel Hack"
               analyticsEventLabel="History Link"
@@ -41,7 +41,7 @@ exports[`Timeline should render with no props passed passed 1`] = `
             >
               AngelHack
             </OutboundLink>
-             
+
             , he is inspired to pursue software engineering as a post-military occupation. He submits an application to The Flatiron School while on active-duty, only to discover that the program did not accept the "New GI Bill" as payment.
           </p>
         }
@@ -77,7 +77,7 @@ exports[`Timeline should render with no props passed passed 1`] = `
         content={
           <p>
             Molina exits military service in early 2013 and begins to self-teach Ruby on Rails, a full-stack web development platform for building comprehensive web applications. He also starts attending meetups with
-             
+
             <OutboundLink
               alt="Bmore On Rails"
               analyticsEventLabel="History Link"
@@ -86,9 +86,9 @@ exports[`Timeline should render with no props passed passed 1`] = `
             >
               "Bmore on Rails"
             </OutboundLink>
-             
+
             while finishing
-             
+
             <OutboundLink
               alt="One Mounth Rails"
               analyticsEventLabel="History Link"
@@ -105,7 +105,7 @@ exports[`Timeline should render with no props passed passed 1`] = `
         content={
           <p>
             Molina attended
-             
+
             <OutboundLink
               alt="Rails Conf"
               analyticsEventLabel="History Link"
@@ -114,7 +114,7 @@ exports[`Timeline should render with no props passed passed 1`] = `
             >
               RailsConf
             </OutboundLink>
-             
+
             as a scholarship fellow. After meeting Rubyists from around the world, he is introduced to the Portland Ruby group.
           </p>
         }
@@ -124,7 +124,7 @@ exports[`Timeline should render with no props passed passed 1`] = `
         content={
           <p>
             Molina joins
-             
+
             <OutboundLink
               alt="Patriot Boot Camp"
               analyticsEventLabel="History Link"
@@ -133,7 +133,7 @@ exports[`Timeline should render with no props passed passed 1`] = `
             >
               Patriot Boot Camp (PBC)
             </OutboundLink>
-             
+
             presented by Techstars, at George Washington University. During this time, Molina tells Virginia Senator, Tim Kaine, of the inability to use the New GI Bill for coding bootcamps. Before departing D.C., Molina receives advice from U.S. Army Congressional Fellow, Ben Culver, on gathering data to address the problem.
           </p>
         }
@@ -177,7 +177,7 @@ exports[`Timeline should render with no props passed passed 1`] = `
         content={
           <p>
             At
-             
+
             <OutboundLink
               alt="Cascadia Conference"
               analyticsEventLabel="History Link"
@@ -186,9 +186,9 @@ exports[`Timeline should render with no props passed passed 1`] = `
             >
               Cascadia Ruby
             </OutboundLink>
-             
+
             Molina receives encouragement from fellow Rubyist, Whitney Rose, to launch Operation Code's petition using "Launchrock". After lengthy discussions with Kristin Smith, Adam Enbar (representing The Flatiron School), and
-             
+
             <OutboundLink
               alt="Operation Code Is A Go"
               analyticsEventLabel="History Link"
@@ -197,9 +197,9 @@ exports[`Timeline should render with no props passed passed 1`] = `
             >
               Code Fellows
             </OutboundLink>
-             
+
             the first line of code is
-             
+
             <OutboundLink
               alt="Operation Code Old Repository"
               analyticsEventLabel="History Link"
@@ -208,7 +208,7 @@ exports[`Timeline should render with no props passed passed 1`] = `
             >
               committed to GitHub
             </OutboundLink>
-             
+
             .
           </p>
         }
@@ -234,7 +234,7 @@ exports[`Timeline should render with no props passed passed 1`] = `
         content={
           <p>
             Web developer, teacher, entrepreneur, and co-founder of
-             
+
             <OutboundLink
               alt="Code Fellows"
               analyticsEventLabel="History Link"
@@ -243,7 +243,7 @@ exports[`Timeline should render with no props passed passed 1`] = `
             >
               Code Fellows
             </OutboundLink>
-             
+
             , Ivan Storck, purchases the domain "operationcode.org" becoming our first donor in the process.
           </p>
         }
@@ -260,7 +260,7 @@ exports[`Timeline should render with no props passed passed 1`] = `
             >
               DNSimple
             </OutboundLink>
-             
+
             joined Operation Code as the sole domain management service provider, ensuring maximum uptime.
           </p>
         }
@@ -270,7 +270,7 @@ exports[`Timeline should render with no props passed passed 1`] = `
         content={
           <p>
             Army veteran and aspiring software developer, Charles Sipe, writes a viral, Veteran's Day article called
-             
+
             <OutboundLink
               alt="Blog Article: Why Veterans Will Make Excellent Programmers"
               analyticsEventLabel="History Link"
@@ -288,7 +288,7 @@ exports[`Timeline should render with no props passed passed 1`] = `
         content={
           <p>
             HackHands co-founders, Forest Good and Geraldo Ramos, join Operation Code, designing our logo and providing veterans free access to
-             
+
             <OutboundLink
               analyticsEventLabel="History Link"
               hasIcon={true}
@@ -296,7 +296,7 @@ exports[`Timeline should render with no props passed passed 1`] = `
             >
               hack.summit()
             </OutboundLink>
-             
+
             , a virtual conference to learn from the world's most renowned programmers.
           </p>
         }
@@ -364,7 +364,7 @@ exports[`Timeline should render with no props passed passed 1`] = `
         content={
           <p>
             Operation Code changes it's Twitter handle to
-             
+
             <OutboundLink
               alt="Operation Code Twitter"
               analyticsEventLabel="History Link"
@@ -373,9 +373,9 @@ exports[`Timeline should render with no props passed passed 1`] = `
             >
               @operation_code
             </OutboundLink>
-             
+
             , for more effective branding.
-             
+
             <OutboundLink
               alt="Operation Code Instagram"
               analyticsEventLabel="History Link"
@@ -384,9 +384,9 @@ exports[`Timeline should render with no props passed passed 1`] = `
             >
               Instagram
             </OutboundLink>
-             
+
             and
-             
+
             <OutboundLink
               alt="Operation Code Facebook"
               analyticsEventLabel="History Link"
@@ -395,7 +395,7 @@ exports[`Timeline should render with no props passed passed 1`] = `
             >
               Facebook
             </OutboundLink>
-             
+
             , accounts are created.
           </p>
         }
@@ -412,7 +412,7 @@ exports[`Timeline should render with no props passed passed 1`] = `
             >
               Formal launch of Operation Code
             </OutboundLink>
-             
+
             . The event hosts dozens of veterans, software developers, media representatives, and staff members from U.S. Senator Ron Wyden and Congressman Blumenauer's offices.
           </p>
         }
@@ -422,7 +422,7 @@ exports[`Timeline should render with no props passed passed 1`] = `
         content={
           <p>
             Army veteran and software engineer, Fernando Paredes, joins Operation Code, expanding the Software Mentor Protégé Program using
-             
+
             <OutboundLink
               alt="Operation Code Slack Team"
               analyticsEventLabel="History Link"
@@ -431,7 +431,7 @@ exports[`Timeline should render with no props passed passed 1`] = `
             >
               our newly created Slack Team
             </OutboundLink>
-             
+
             . Veterans now have real-time access to a helpful coding community and one-on-one software mentorship at their fingertips.
           </p>
         }
@@ -441,16 +441,16 @@ exports[`Timeline should render with no props passed passed 1`] = `
         content={
           <p>
             Fernando Paredes, Nell Shamrell, and Eric McKenna improve Operation Code's participation in open source development with our first
-             
+
             <OutboundLink
               alt="Operation Code Old GitHub Contributing Guide"
               analyticsEventLabel="History Link"
               hasIcon={true}
-              href="https://github.com/OperationCode/operationcode/blob/master/CONTRIBUTING.md"
+              href="https://github.com/OperationCode/operationcode/blob/main/CONTRIBUTING.md"
             >
               contributing guide
             </OutboundLink>
-             
+
             .
           </p>
         }
@@ -460,7 +460,7 @@ exports[`Timeline should render with no props passed passed 1`] = `
         content={
           <p>
             Global hospitality provider,
-             
+
             <OutboundLink
               alt="AirBnB"
               analyticsEventLabel="History Link"
@@ -469,9 +469,9 @@ exports[`Timeline should render with no props passed passed 1`] = `
             >
               AirBnB
             </OutboundLink>
-             
+
             sponsors lodging for Operation Code members attending SignalConf in San Francisco.
-             
+
             <OutboundLink
               alt="Link to Instagram photo of Operation Code at SignalConf"
               analyticsEventLabel="History Link"
@@ -480,7 +480,7 @@ exports[`Timeline should render with no props passed passed 1`] = `
             >
               They also invited our members to tour their headquarters
             </OutboundLink>
-             
+
             ! Airbnb forges their partnership with Operation Code in steel by offering sponsored lodgings for veterans interviewing for a career in tech.
           </p>
         }
@@ -497,9 +497,9 @@ exports[`Timeline should render with no props passed passed 1`] = `
             >
               SignalConf
             </OutboundLink>
-             
+
             provides multiple Operation Code members with sponsored tickets.
-             
+
             <OutboundLink
               alt="Twilio"
               analyticsEventLabel="History Link"
@@ -508,7 +508,7 @@ exports[`Timeline should render with no props passed passed 1`] = `
             >
               Twilio
             </OutboundLink>
-             
+
             - the conference's main sponsor - hosts an insightful tour of their headquarters.
           </p>
         }
@@ -526,7 +526,7 @@ exports[`Timeline should render with no props passed passed 1`] = `
         content={
           <p>
             To meet growth demands, Operation Code
-             
+
             <OutboundLink
               alt="Old Operation Code tweet"
               analyticsEventLabel="History Link"
@@ -535,7 +535,7 @@ exports[`Timeline should render with no props passed passed 1`] = `
             >
               separates from its financial supporter
             </OutboundLink>
-             
+
             . The Cogostar Foundation - Operation Code's current sponsor - helps to reorganize a new governing Board of Directors, comprised of Josh Carter, Aimee Knight, Nick Frost, Pete Runyon, Laura Gómez, Fernando Paredes, and Elmer Thomas. Operation Code incorporates as an Oregon non-profit organization.
           </p>
         }
@@ -552,7 +552,7 @@ exports[`Timeline should render with no props passed passed 1`] = `
             >
               Sticker Mule
             </OutboundLink>
-             
+
             provides free stickers to all members! Laptops around the nation equip our logo.
           </p>
         }
@@ -570,7 +570,7 @@ exports[`Timeline should render with no props passed passed 1`] = `
         content={
           <p>
             Jared Zoneraich, founder of
-             
+
             <OutboundLink
               alt="hackBCA"
               analyticsEventLabel="History Link"
@@ -579,7 +579,7 @@ exports[`Timeline should render with no props passed passed 1`] = `
             >
               hackBCA
             </OutboundLink>
-             
+
             joins the Operation Code advisory team. Mark Kerr - attorney, entrepreneur, and ex-Army Captain - joins the Operation Code board of directors. He is elected chair of the board, and the board begins having regular conference calls focusing on infrastructure, processes/procedures, and fundraising strategy.
           </p>
         }
@@ -622,7 +622,7 @@ exports[`Timeline should render with no props passed passed 1`] = `
             >
               hack.summit()
             </OutboundLink>
-             
+
             adds Operation Code to its list of coding non-profits.
           </p>
         }
@@ -639,7 +639,7 @@ exports[`Timeline should render with no props passed passed 1`] = `
             >
               Speakeasy
             </OutboundLink>
-             
+
             joins as the Operation Code conference sponsor.
           </p>
         }
@@ -683,7 +683,7 @@ exports[`Timeline should render with no props passed passed 1`] = `
         content={
           <p>
             Multiple Operation Code veterans attend
-             
+
             <OutboundLink
               alt="O'Reilly OSCON"
               analyticsEventLabel="History Link"
@@ -692,7 +692,7 @@ exports[`Timeline should render with no props passed passed 1`] = `
             >
               OSCON
             </OutboundLink>
-             
+
             to advertise the open source development opportunity in Operation Code's planned website redesign.
           </p>
         }
@@ -710,7 +710,7 @@ exports[`Timeline should render with no props passed passed 1`] = `
         content={
           <p>
             On Independence Day,
-             
+
             <OutboundLink
               alt="Slack Archive of 2000th Message"
               analyticsEventLabel="History Link"

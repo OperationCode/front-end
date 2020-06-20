@@ -37,7 +37,7 @@ function Branding() {
             analyticsEventLabel="Branding EPS Download"
             href={`${s3}Operation-Code-Logo.eps`}
           >
-            Download master EPS file
+            Download main EPS file
           </OutboundLink>
         </p>
       </HeroBanner>
