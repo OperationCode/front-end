@@ -31,3 +31,7 @@
   flex-wrap: wrap;
   justify-content: center;
 }
+
+.algoliaLink {
+  float: right;
+}
