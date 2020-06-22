@@ -199,7 +199,6 @@ function Resources() {
                     label="Search Keywords"
                     component={Input}
                   />
-                  <div />
                   <OutboundLink
                     href="https://www.algolia.com/doc/"
                     analyticsEventLabel="Powered by Algolia"
