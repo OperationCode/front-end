@@ -55,7 +55,8 @@ Cypress.Commands.add('setResolution', size => {
 
 Cypress.Commands.add('checkCustomDataAttribute', (attribute, value) => {
   const attributeWithoutBrackets = attribute.replace(/[[\]]/g, '');
-  cy.get(attribute).should('have.attr', attributeWithoutBrackets, value);
+
+  cy.get(attribute).invoke('attr', attributeWithoutBrackets).should('contain', value);
 });
 
 //
