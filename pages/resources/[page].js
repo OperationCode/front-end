@@ -25,6 +25,7 @@ import {
   RESOURCE_SEARCH_BUTTON,
   RESOURCE_RESET_BUTTON,
 } from 'common/constants/testIDs';
+import OutboundLink from 'components/OutboundLink/OutboundLink';
 import styles from '../styles/resources.module.css';
 import ResourceCard from '../../components/Cards/ResourceCard/ResourceCard';
 import ResourceSkeletonCard from '../../components/Cards/ResourceCard/ResourceSkeletonCard';
@@ -198,6 +199,13 @@ function Resources() {
                     label="Search Keywords"
                     component={Input}
                   />
+                  <OutboundLink
+                    href="https://www.algolia.com/doc/"
+                    analyticsEventLabel="Powered by Algolia"
+                    className={styles.algoliaLink}
+                  >
+                    Powered by Algolia
+                  </OutboundLink>
                   <div className={styles.formContainer}>
                     <div className={styles.selectColumn}>
                       <Field
