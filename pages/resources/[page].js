@@ -197,7 +197,7 @@ function Resources() {
               }}
             >
               {({ isSubmitting }) => (
-                <Form>
+                <Form role="search">
                   <Field
                     hasValidationStyling={false}
                     data-testid={RESOURCE_SEARCH}
