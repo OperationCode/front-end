@@ -45,7 +45,9 @@ function OutboundLink({
       target={isNotMailToLink ? '_blank' : undefined}
     >
       {children}
+
       <ScreenReaderOnly>Opens in new window</ScreenReaderOnly>
+
       {hasIcon && <ExternalLinkIcon className={styles.externalLinkIcon} />}
     </a>
   );

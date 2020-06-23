@@ -34,6 +34,80 @@ exports[`Storyshots Cards/ResourceCard default 1`] = `
           </span>
         </a>
       </h5>
+      <div
+        className="votingBlock desktopVotingBlock"
+      >
+        <span
+          className="votingBlockHeader"
+        >
+          Useful?
+        </span>
+        <div
+          className="voteInfo"
+        >
+          <button
+            aria-pressed={false}
+            className="voteButton"
+            data-testid="UPVOTE_BUTTON"
+            onClick={[Function]}
+            type="button"
+          >
+            <span
+              className="ScreenReaderOnly"
+              data-testid="SCREEN_READER_ONLY"
+            >
+              Yes
+            </span>
+            <svg
+              className="icon"
+            />
+            <span
+              aria-live="polite"
+              className="voteCount"
+            >
+              <span
+                className="ScreenReaderOnly"
+                data-testid="SCREEN_READER_ONLY"
+              >
+                Number of upvotes:
+              </span>
+              0
+            </span>
+          </button>
+        </div>
+        <div
+          className="voteInfo"
+        >
+          <button
+            aria-pressed={false}
+            className="voteButton"
+            data-testid="DOWNVOTE_BUTTON"
+            onClick={[Function]}
+            type="button"
+          >
+            <span
+              className="ScreenReaderOnly"
+              data-testid="SCREEN_READER_ONLY"
+            >
+              No
+            </span>
+            <svg
+              className="icon"
+            />
+            <span
+              className="voteCount"
+            >
+              <span
+                className="ScreenReaderOnly"
+                data-testid="SCREEN_READER_ONLY"
+              >
+                Number of downvotes:
+              </span>
+              0
+            </span>
+          </button>
+        </div>
+      </div>
     </div>
   </div>
   <button
@@ -96,6 +170,80 @@ exports[`Storyshots Cards/ResourceCard default 1`] = `
           
         </p>
       </div>
+      <div
+        className="votingBlock mobileVotingBlock"
+      >
+        <span
+          className="votingBlockHeader"
+        >
+          Useful?
+        </span>
+        <div
+          className="voteInfo"
+        >
+          <button
+            aria-pressed={false}
+            className="voteButton"
+            data-testid="UPVOTE_BUTTON"
+            onClick={[Function]}
+            type="button"
+          >
+            <span
+              className="ScreenReaderOnly"
+              data-testid="SCREEN_READER_ONLY"
+            >
+              Yes
+            </span>
+            <svg
+              className="icon"
+            />
+            <span
+              aria-live="polite"
+              className="voteCount"
+            >
+              <span
+                className="ScreenReaderOnly"
+                data-testid="SCREEN_READER_ONLY"
+              >
+                Number of upvotes:
+              </span>
+              0
+            </span>
+          </button>
+        </div>
+        <div
+          className="voteInfo"
+        >
+          <button
+            aria-pressed={false}
+            className="voteButton"
+            data-testid="DOWNVOTE_BUTTON"
+            onClick={[Function]}
+            type="button"
+          >
+            <span
+              className="ScreenReaderOnly"
+              data-testid="SCREEN_READER_ONLY"
+            >
+              No
+            </span>
+            <svg
+              className="icon"
+            />
+            <span
+              className="voteCount"
+            >
+              <span
+                className="ScreenReaderOnly"
+                data-testid="SCREEN_READER_ONLY"
+              >
+                Number of downvotes:
+              </span>
+              0
+            </span>
+          </button>
+        </div>
+      </div>
     </div>
   </section>
 </article>
@@ -135,6 +283,80 @@ exports[`Storyshots Cards/ResourceCard with long name 1`] = `
           </span>
         </a>
       </h5>
+      <div
+        className="votingBlock desktopVotingBlock"
+      >
+        <span
+          className="votingBlockHeader"
+        >
+          Useful?
+        </span>
+        <div
+          className="voteInfo"
+        >
+          <button
+            aria-pressed={false}
+            className="voteButton"
+            data-testid="UPVOTE_BUTTON"
+            onClick={[Function]}
+            type="button"
+          >
+            <span
+              className="ScreenReaderOnly"
+              data-testid="SCREEN_READER_ONLY"
+            >
+              Yes
+            </span>
+            <svg
+              className="icon"
+            />
+            <span
+              aria-live="polite"
+              className="voteCount"
+            >
+              <span
+                className="ScreenReaderOnly"
+                data-testid="SCREEN_READER_ONLY"
+              >
+                Number of upvotes:
+              </span>
+              12
+            </span>
+          </button>
+        </div>
+        <div
+          className="voteInfo"
+        >
+          <button
+            aria-pressed={true}
+            className="voteButton active"
+            data-testid="DOWNVOTE_BUTTON"
+            onClick={[Function]}
+            type="button"
+          >
+            <span
+              className="ScreenReaderOnly"
+              data-testid="SCREEN_READER_ONLY"
+            >
+              No
+            </span>
+            <svg
+              className="icon active"
+            />
+            <span
+              className="voteCount active"
+            >
+              <span
+                className="ScreenReaderOnly"
+                data-testid="SCREEN_READER_ONLY"
+              >
+                Number of downvotes:
+              </span>
+              25
+            </span>
+          </button>
+        </div>
+      </div>
     </div>
   </div>
   <button
@@ -197,6 +419,80 @@ exports[`Storyshots Cards/ResourceCard with long name 1`] = `
           Tutorials
         </p>
       </div>
+      <div
+        className="votingBlock mobileVotingBlock"
+      >
+        <span
+          className="votingBlockHeader"
+        >
+          Useful?
+        </span>
+        <div
+          className="voteInfo"
+        >
+          <button
+            aria-pressed={false}
+            className="voteButton"
+            data-testid="UPVOTE_BUTTON"
+            onClick={[Function]}
+            type="button"
+          >
+            <span
+              className="ScreenReaderOnly"
+              data-testid="SCREEN_READER_ONLY"
+            >
+              Yes
+            </span>
+            <svg
+              className="icon"
+            />
+            <span
+              aria-live="polite"
+              className="voteCount"
+            >
+              <span
+                className="ScreenReaderOnly"
+                data-testid="SCREEN_READER_ONLY"
+              >
+                Number of upvotes:
+              </span>
+              12
+            </span>
+          </button>
+        </div>
+        <div
+          className="voteInfo"
+        >
+          <button
+            aria-pressed={true}
+            className="voteButton active"
+            data-testid="DOWNVOTE_BUTTON"
+            onClick={[Function]}
+            type="button"
+          >
+            <span
+              className="ScreenReaderOnly"
+              data-testid="SCREEN_READER_ONLY"
+            >
+              No
+            </span>
+            <svg
+              className="icon active"
+            />
+            <span
+              className="voteCount active"
+            >
+              <span
+                className="ScreenReaderOnly"
+                data-testid="SCREEN_READER_ONLY"
+              >
+                Number of downvotes:
+              </span>
+              25
+            </span>
+          </button>
+        </div>
+      </div>
     </div>
   </section>
 </article>
@@ -236,6 +532,80 @@ exports[`Storyshots Cards/ResourceCard with zero up/downvotes 1`] = `
           </span>
         </a>
       </h5>
+      <div
+        className="votingBlock desktopVotingBlock"
+      >
+        <span
+          className="votingBlockHeader"
+        >
+          Useful?
+        </span>
+        <div
+          className="voteInfo"
+        >
+          <button
+            aria-pressed={false}
+            className="voteButton"
+            data-testid="UPVOTE_BUTTON"
+            onClick={[Function]}
+            type="button"
+          >
+            <span
+              className="ScreenReaderOnly"
+              data-testid="SCREEN_READER_ONLY"
+            >
+              Yes
+            </span>
+            <svg
+              className="icon"
+            />
+            <span
+              aria-live="polite"
+              className="voteCount"
+            >
+              <span
+                className="ScreenReaderOnly"
+                data-testid="SCREEN_READER_ONLY"
+              >
+                Number of upvotes:
+              </span>
+              0
+            </span>
+          </button>
+        </div>
+        <div
+          className="voteInfo"
+        >
+          <button
+            aria-pressed={false}
+            className="voteButton"
+            data-testid="DOWNVOTE_BUTTON"
+            onClick={[Function]}
+            type="button"
+          >
+            <span
+              className="ScreenReaderOnly"
+              data-testid="SCREEN_READER_ONLY"
+            >
+              No
+            </span>
+            <svg
+              className="icon"
+            />
+            <span
+              className="voteCount"
+            >
+              <span
+                className="ScreenReaderOnly"
+                data-testid="SCREEN_READER_ONLY"
+              >
+                Number of downvotes:
+              </span>
+              0
+            </span>
+          </button>
+        </div>
+      </div>
     </div>
   </div>
   <button
@@ -297,6 +667,80 @@ exports[`Storyshots Cards/ResourceCard with zero up/downvotes 1`] = `
            
           
         </p>
+      </div>
+      <div
+        className="votingBlock mobileVotingBlock"
+      >
+        <span
+          className="votingBlockHeader"
+        >
+          Useful?
+        </span>
+        <div
+          className="voteInfo"
+        >
+          <button
+            aria-pressed={false}
+            className="voteButton"
+            data-testid="UPVOTE_BUTTON"
+            onClick={[Function]}
+            type="button"
+          >
+            <span
+              className="ScreenReaderOnly"
+              data-testid="SCREEN_READER_ONLY"
+            >
+              Yes
+            </span>
+            <svg
+              className="icon"
+            />
+            <span
+              aria-live="polite"
+              className="voteCount"
+            >
+              <span
+                className="ScreenReaderOnly"
+                data-testid="SCREEN_READER_ONLY"
+              >
+                Number of upvotes:
+              </span>
+              0
+            </span>
+          </button>
+        </div>
+        <div
+          className="voteInfo"
+        >
+          <button
+            aria-pressed={false}
+            className="voteButton"
+            data-testid="DOWNVOTE_BUTTON"
+            onClick={[Function]}
+            type="button"
+          >
+            <span
+              className="ScreenReaderOnly"
+              data-testid="SCREEN_READER_ONLY"
+            >
+              No
+            </span>
+            <svg
+              className="icon"
+            />
+            <span
+              className="voteCount"
+            >
+              <span
+                className="ScreenReaderOnly"
+                data-testid="SCREEN_READER_ONLY"
+              >
+                Number of downvotes:
+              </span>
+              0
+            </span>
+          </button>
+        </div>
       </div>
     </div>
   </section>

@@ -14,21 +14,21 @@ import {
   getResourcesBySearch,
 } from 'common/constants/api';
 import { Field, Formik } from 'formik';
+import Alert from 'components/Alert/Alert';
+import Button from 'components/Button/Button';
 import Form from 'components/Form/Form';
 import Input from 'components/Form/Input/Input';
-import Button from 'components/Button/Button';
+import OutboundLink from 'components/OutboundLink/OutboundLink';
+import ResourceCard from 'components/Cards/ResourceCard/ResourceCard';
+import ResourceSkeletonCard from 'components/Cards/ResourceCard/ResourceSkeletonCard';
 import Select from 'components/Form/Select/Select';
-import Alert from 'components/Alert/Alert';
 import {
   RESOURCE_CARD,
   RESOURCE_SEARCH,
   RESOURCE_SEARCH_BUTTON,
   RESOURCE_RESET_BUTTON,
 } from 'common/constants/testIDs';
-import OutboundLink from 'components/OutboundLink/OutboundLink';
 import styles from '../styles/resources.module.css';
-import ResourceCard from '../../components/Cards/ResourceCard/ResourceCard';
-import ResourceSkeletonCard from '../../components/Cards/ResourceCard/ResourceSkeletonCard';
 
 const pageTitle = 'Resources';
 
@@ -177,6 +177,14 @@ function Resources() {
         theme="white"
         columns={[
           <section className={styles.resourcesContainer}>
+            <OutboundLink
+              href="https://www.algolia.com/doc/"
+              analyticsEventLabel="Powered by Algolia"
+              className={styles.algoliaLink}
+            >
+              Powered by Algolia
+            </OutboundLink>
+
             <Formik
               enableReinitialize={false}
               initialValues={initialValues}
@@ -189,7 +197,7 @@ function Resources() {
               }}
             >
               {({ isSubmitting }) => (
-                <Form>
+                <Form role="search">
                   <Field
                     hasValidationStyling={false}
                     data-testid={RESOURCE_SEARCH}
@@ -199,13 +207,6 @@ function Resources() {
                     label="Search Keywords"
                     component={Input}
                   />
-                  <OutboundLink
-                    href="https://www.algolia.com/doc/"
-                    analyticsEventLabel="Powered by Algolia"
-                    className={styles.algoliaLink}
-                  >
-                    Powered by Algolia
-                  </OutboundLink>
                   <div className={styles.formContainer}>
                     <div className={styles.selectColumn}>
                       <Field
@@ -244,30 +245,32 @@ function Resources() {
                       />
                     </div>
                   </div>
-                  <div className={styles.buttonGroup}>
-                    <div className={styles.buttonSingle}>
-                      <Button
-                        data-testid={RESOURCE_SEARCH_BUTTON}
-                        disabled={isSubmitting}
-                        type="submit"
-                      >
-                        Search
-                      </Button>
-                    </div>
 
-                    <div className={styles.buttonSingle}>
-                      <Button
-                        data-testid={RESOURCE_RESET_BUTTON}
-                        disabled={isSubmitting}
-                        type="reset"
-                      >
-                        Reset
-                      </Button>
-                    </div>
+                  <div className={styles.buttonGroup}>
+                    <Button
+                      className={styles.buttonSingle}
+                      data-testid={RESOURCE_SEARCH_BUTTON}
+                      disabled={isSubmitting}
+                      theme="secondary"
+                      type="submit"
+                    >
+                      Search
+                    </Button>
+
+                    <Button
+                      className={styles.buttonSingle}
+                      data-testid={RESOURCE_RESET_BUTTON}
+                      disabled={isSubmitting}
+                      theme="secondary"
+                      type="reset"
+                    >
+                      Reset
+                    </Button>
                   </div>
                 </Form>
               )}
             </Formik>
+
             {isLoading ? (
               <ResourceSkeletonCard numberOfSkeletons={10} />
             ) : (

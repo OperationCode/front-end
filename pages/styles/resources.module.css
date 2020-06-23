@@ -2,6 +2,12 @@
   width: 70vw;
 }
 
+@media screen and (--medium-viewport) {
+  .resourcesContainer {
+    width: 90vw;
+  }
+}
+
 .formContainer {
   display: flex;
   flex-wrap: wrap;
@@ -10,20 +16,32 @@
 }
 
 .selectColumn {
-  flex: 30%;
-  margin: 0 1rem;
+  flex: 50%;
 }
 
 .buttonGroup {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-end;
   width: 100%;
   flex-wrap: wrap;
+  margin: 1rem auto 4rem;
+}
+
+@media screen and (--small-viewport) {
+  .buttonGroup {
+    justify-content: center;
+  }
 }
 
 .buttonSingle {
   margin: 0.5rem;
-  display: flex;
+}
+
+@media screen and (--small-viewport) {
+  .buttonSingle {
+    box-sizing: border-box;
+    width: 92.5%;
+  }
 }
 
 .resourcesCardsWrapper {
@@ -34,5 +52,7 @@
 
 .algoliaLink {
   float: right;
+  color: rgba(var(--rgbValuesSecondary), 0.75);
+  font-size: 0.75rem;
   margin-right: 1rem;
 }

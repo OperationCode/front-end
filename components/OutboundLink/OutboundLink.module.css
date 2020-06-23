@@ -1,8 +1,8 @@
 .externalLinkIcon {
-  fill: currentColor;
+  fill: currentColor !important;
   left: 4px;
   top: 2px;
   padding-right: 0.25rem;
   position: relative;
-  width: 13px;
+  width: 0.825em;
 }
