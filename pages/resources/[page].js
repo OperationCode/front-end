@@ -64,7 +64,7 @@ function Resources() {
 
   const handleEndpoint = () => {
     if (q) {
-      return getResourcesBySearch({ page, category, languages, paid, q });
+      return getResourcesBySearch({ page: page - 1, category, languages, paid, q });
     }
     return getResourcesPromise({ page, category, languages, paid });
   };
@@ -298,7 +298,7 @@ function Resources() {
 
                     <Pagination
                       currentPage={currentPage}
-                      totalPages={totalPages || currentPage + 1}
+                      totalPages={totalPages || currentPage}
                       pathname={pathname}
                       query={query}
                     />
