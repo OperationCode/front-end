@@ -102,7 +102,7 @@ Here is an alphabetically-sorted list of technologies this project leverages:
 - [Node.js](https://www.nodejs.org/) - Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine. React utilizes a tiny Node/Express server for it's development environment.
 - [PostCSS](#PostCSS) - Extensive documentation listed below...
 - [React.js](https://facebook.github.io/react/) - Facebook's popular JavaScript front-end framework.
-- [Storybook](https://storybook.js.org) - Storybook acts as a "component workbench" and source for component documentation. You can learn more about Storybook on your own [here](https://www.learnstorybook.com/). You can see our Storybook here: [![Storybook](https://github.com/storybooks/brand/blob/main/badge/badge-storybook.svg)](http://storybook.operationcode.org)
+- [Storybook](https://storybook.js.org) - Storybook acts as a "component workbench" and source for component documentation. You can learn more about Storybook on your own [here](https://www.learnstorybook.com/). You can see our Storybook here: [![Storybook](https://github.com/storybookjs/brand/blob/8d28584c89959d7075c237e9345955c895048977/badge/badge-storybook.svg)](http://storybook.operationcode.org)
 - [Webpack](https://webpack.js.org/) - The premier module bundler for JavaScript. Read [this article](https://survivejs.com/webpack/what-is-webpack/) for more information.
 - [Yarn](https://yarnpkg.com/) - Facebook's open source JavaScript package manager. It has very subtle differences from npm, but essentially does the same thing.
 
@@ -218,7 +218,7 @@ Some issues take awhile to code a solution for. It is very normal to take a larg
 
 ### Knowing The Tools At Your Disposal
 
-You can see interactive documentation on all of our components via [![Storybook](https://github.com/storybooks/brand/blob/main/badge/badge-storybook.svg)](http://storybook.operationcode.org)
+You can see interactive documentation on all of our components via [![Storybook](https://github.com/storybookjs/brand/blob/8d28584c89959d7075c237e9345955c895048977/badge/badge-storybook.svg)](http://storybook.operationcode.org)
 
 ### File Structure
 
