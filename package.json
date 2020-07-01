@@ -94,7 +94,7 @@
     "@svgr/webpack": "^5.4.0",
     "@testing-library/cypress": "^6.0.0",
     "@testing-library/jest-dom": "^5.10.1",
-    "@testing-library/react": "^10.3.0",
+    "@testing-library/react": "^10.4.3",
     "@zeit/next-bundle-analyzer": "^0.1.2",
     "@zeit/next-css": "^1.0.1",
     "@zeit/next-source-maps": "0.0.4-canary.1",
