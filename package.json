@@ -40,7 +40,7 @@
   "dependencies": {
     "@innocuous/components": "^2.1.1",
     "@innocuous/functions": "^2.1.1",
-    "@sentry/browser": "^5.17.0",
+    "@sentry/browser": "^5.18.1",
     "axios": "^0.19.2",
     "classnames": "^2.2.6",
     "fast-xml-parser": "^3.17.4",
