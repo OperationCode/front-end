@@ -6,17 +6,17 @@ import Content from 'components/Content/Content';
 import LinkButton from 'components/LinkButton/LinkButton';
 import withAuthSync from 'decorators/withAuthSync/withAuthSync';
 import { getUserPromise } from 'common/constants/api';
-import styles from '../styles/profile.module.css';
 import { boolean } from 'yup';
+import _ from 'lodash';
+import styles from '../styles/profile.module.css';
 
 const pageTitle = 'Profile';
 
 Profile.propTypes = {
   firstName: string.isRequired,
   lastName: string.isRequired,
-  username: string.isRequired,
-  companyName: string.isRequired,
   branchOfService: string.isRequired,
+  companyName: string.isRequired,
   companyRole: string.isRequired,
   createdAt: string.isRequired,
   disciplines: string.isRequired,
@@ -25,21 +25,54 @@ Profile.propTypes = {
   isMentor: boolean.isRequired,
   militaryStatus: string.isRequired,
   programmingLanguages: string.isRequired,
-  yearsOfService: string.isRequired
 };
 
 Profile.getInitialProps = async ctx => {
   const { firstName, lastName, token } = nextCookie(ctx);
   const { data } = await getUserPromise({ token });
-
-  const { username, companyName, branchOfService, companyRole, createdAt, disciplines, email, employmentStatus, isMentor, militaryStatus, programmingLanguages, yearsOfService } = data;
-
-  console.log(data)
-
-  return { firstName, lastName, username, companyName, branchOfService, companyRole, createdAt, disciplines, email, employmentStatus, isMentor, militaryStatus, programmingLanguages, yearsOfService };
+  const {
+    branchOfService,
+    companyName,
+    companyRole,
+    createdAt,
+    disciplines,
+    email,
+    employmentStatus,
+    isMentor,
+    militaryStatus,
+    programmingLanguages,
+  } = data;
+  return {
+    firstName,
+    lastName,
+    branchOfService,
+    companyName,
+    companyRole,
+    createdAt,
+    disciplines,
+    email,
+    employmentStatus,
+    isMentor,
+    militaryStatus,
+    programmingLanguages,
+  };
 };
 
-function Profile({ firstName, lastName, username, companyName, branchOfService, companyRole, createdAt, disciplines, email, employmentStatus, isMentor, militaryStatus, programmingLanguages, yearsOfService }) {
+function Profile({
+  firstName,
+  lastName,
+  branchOfService,
+  companyName,
+  companyRole,
+  createdAt,
+  disciplines,
+  email,
+  employmentStatus,
+  isMentor,
+  militaryStatus,
+  programmingLanguages,
+}) {
+  const dateJoined = createdAt.slice(0, 10);
   return (
     <>
       <Head title={pageTitle} />
@@ -49,21 +82,53 @@ function Profile({ firstName, lastName, username, companyName, branchOfService, 
       <Content
         theme="gray"
         columns={[
-          <div style={{width: '100%'}}>
-            <h3 style={{textAlign: 'center'}}>
-              Hello Jeffrey Seneff!
+          <div style={{ width: '100%' }}>
+            <h3 style={{ textAlign: 'center' }}>
+              Hello {_.capitalize(firstName)} {_.capitalize(lastName)}!
             </h3>
-            <p style={{border: '1px solid red', width: 'auto', display: 'inline', fontWeight: 'bold'}}>Employment Status :</p> <p style={{border: '1px solid blue', display: 'inline'}}>{employmentStatus}</p>
-            <p>Company Name : {companyName}</p>
-            <p>Company Role : {companyRole}</p>
-            <p>Military Status : {militaryStatus}</p>
-            <p>Branch of Service : {branchOfService}</p>
-            <p>Years of Service : {yearsOfService}</p>
-            <p>Programming Language Interest : {programmingLanguages}</p>
-            <p>Career Interest : {disciplines}</p>
+            <p>
+              <strong>Email : </strong>
+              {email}
+            </p>
+            <p>
+              <strong>Date Joined : </strong>
+              {dateJoined}
+            </p>
+            <p>
+              <strong>Employment Status : </strong>
+              {_.capitalize(employmentStatus)}
+            </p>
+            <p>
+              <strong>Company Name : </strong>
+              {companyName}
+            </p>
+            <p>
+              <strong>Company Role : </strong>
+              {_.capitalize(companyRole)}
+            </p>
+            <p>
+              <strong>Military Status : </strong>
+              {_.capitalize(militaryStatus)}
+            </p>
+            <p>
+              <strong>Branch of Service : </strong>
+              {_.capitalize(branchOfService)}
+            </p>
+            <p>
+              <strong>Programming Language Interest : </strong>
+              {programmingLanguages}
+            </p>
+            <p>
+              <strong>Career Interest : </strong>
+              {disciplines}
+            </p>
 
+            {isMentor ? (
+              <p>
+                <strong>Mentor : </strong>Yes
+              </p>
+            ) : null}
           </div>,
-          
           <div className={styles.actionItems}>
             <LinkButton theme="secondary" href="/profile/update" shouldPrefetch>
               Update Profile
