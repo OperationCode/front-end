@@ -37,7 +37,7 @@ Please read our [Contributing Guide](CONTRIBUTING.md) to learn everything you ne
 
 **In continuing with the quick start instructions, it is assumed that you are no stranger to React applications, the JavaScript ecosystem, and standard GitHub workflows such as forking, cloning, and branching.**
 
-Our entire UI library is documented via [![Storybook](https://github.com/storybooks/brand/blob/main/badge/badge-storybook.svg)](http://storybook.operationcode.org)
+Our entire UI library is documented via [![Storybook](https://github.com/storybookjs/brand/blob/8d28584c89959d7075c237e9345955c895048977/badge/badge-storybook.svg)](http://storybook.operationcode.org)
 
 Required versions of tools used within the repo:
 
