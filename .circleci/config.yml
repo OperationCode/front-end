@@ -144,7 +144,8 @@ workflows:
           post-steps:
             - run:
                 name: Get each parallelized node's coverage report
-                command: cp cypress-coverage/coverage-final.json "cypress-coverage/coverage.node-$CIRCLE_NODE_INDEX.json"
+                command: |
+                  cp cypress-coverage/coverage-final.json "cypress-coverage/coverage.node-$CIRCLE_NODE_INDEX.json"
             - persist_to_workspace:
                 root: << pipeline.parameters.workspace_root >>
                 paths:
