@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  cypress: cypress-io/cypress@1.18.0
+  cypress: cypress-io/cypress@1.25.0
 
 executors:
   default:
@@ -145,6 +145,8 @@ workflows:
             - run:
                 name: Get each parallelized node's coverage report
                 command: |
+                  ls
+                  ls cypress-coverage
                   cp cypress-coverage/coverage-final.json "cypress-coverage/coverage.node-$CIRCLE_NODE_INDEX.json"
             - persist_to_workspace:
                 root: << pipeline.parameters.workspace_root >>
