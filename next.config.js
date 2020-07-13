@@ -1,5 +1,4 @@
-const withSourceMaps = require('@zeit/next-source-maps')();
-const withBundleAnalyzer = require('@zeit/next-bundle-analyzer');
+const withBundleAnalyzer = require('@next/bundle-analyzer');
 const withMDX = require('@next/mdx')({
   extension: /\.mdx$/,
 });
@@ -22,6 +21,10 @@ const nextConfig = withBundleAnalyzer({
       analyzerMode: 'server',
       analyzerPort: 8889,
     },
+  },
+
+  experimental: {
+    productionBrowserSourceMaps: true,
   },
 
   // eslint-disable-next-line unicorn/prevent-abbreviations
@@ -83,4 +86,4 @@ const nextConfig = withBundleAnalyzer({
   },
 });
 
-module.exports = withSourceMaps(withMDX(nextConfig));
+module.exports = withMDX(nextConfig);
