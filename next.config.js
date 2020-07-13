@@ -5,8 +5,8 @@ const withMDX = require('@next/mdx')({
 const svgoConfig = require('./common/config/svgo');
 
 const nextConfig = withBundleAnalyzer({
-  // For now.sh
-  // see: https://zeit.co/guides/deploying-nextjs-with-now/
+  // For Vercel
+  // see: https://vercel.com/guides/deploying-nextjs-with-vercel
   target: 'serverless',
 
   // Bundle Analyzer Config (only used when running `yarn build:analyze`)
