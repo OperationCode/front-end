@@ -16,7 +16,6 @@ NavMobile.propTypes = {
     shape({
       href: string.isRequired,
       name: string.isRequired,
-      shouldPrefetch: bool,
       sublinks: arrayOf(
         shape({
           name: string.isRequired,
@@ -30,7 +29,7 @@ NavMobile.propTypes = {
 function NavMobile({ isOpen, openMenu, closeMenu, navItems }) {
   return (
     <header className={styles.NavMobile} data-testid="Mobile Nav Container">
-      <Link href="/" prefetch={false}>
+      <Link href="/">
         <button
           className={classNames(styles.button, styles.logoButton)}
           type="button"
@@ -61,7 +60,7 @@ function NavMobile({ isOpen, openMenu, closeMenu, navItems }) {
 
           <ul className={styles.ul}>
             <li className={styles.li} key="Home">
-              <Link href="/" prefetch={false}>
+              <Link href="/">
                 <a className={styles.link} name="dropdown">
                   Home
                 </a>
@@ -69,7 +68,7 @@ function NavMobile({ isOpen, openMenu, closeMenu, navItems }) {
             </li>
             {navItems.map(navlink => (
               <li className={styles.li} key={navlink.name}>
-                <Link href={navlink.href} prefetch={navlink.shouldPrefetch}>
+                <Link href={navlink.href}>
                   <a className={styles.link}>{navlink.name}</a>
                 </Link>
               </li>

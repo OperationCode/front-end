@@ -20,7 +20,7 @@ function Footer() {
           </OutboundLink>
         ) : (
           // TODO: Attack prefetch to scroll listener
-          <Link href={href} prefetch={false}>
+          <Link href={href}>
             <a>{name}</a>
           </Link>
         )}
@@ -33,7 +33,7 @@ function Footer() {
       <div className={classNames(styles.footerWrapper, styles.row)}>
         <div className={classNames(styles.footerGrouping, styles.socialGrouping)}>
           <div className={classNames(styles.logoGrouping)}>
-            <Link href="/" key="Home" prefetch={false}>
+            <Link href="/" key="Home">
               <a className={classNames(styles.logoLink, styles.link)}>
                 <img
                   src={`${s3}branding/logos/small-blue-logo.png`}
@@ -84,7 +84,7 @@ function Footer() {
                 {link.name}
               </OutboundLink>
             ) : (
-              <Link href={link.href} key={link.href} prefetch={false}>
+              <Link href={link.href} key={link.href}>
                 <a className={styles.lineHeightFix}>{link.name}</a>
               </Link>
             ),

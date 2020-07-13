@@ -22,17 +22,14 @@ exports[`Nav should render with no props passed 1`] = `
         Object {
           "href": "/contact",
           "name": "Contact Us",
-          "shouldPrefetch": false,
         },
         Object {
           "href": "/faq",
           "name": "FAQ",
-          "shouldPrefetch": false,
         },
         Object {
           "href": "/podcast",
           "name": "Podcast",
-          "shouldPrefetch": false,
         },
         Object {
           "href": "/who_we_serve",
@@ -41,7 +38,6 @@ exports[`Nav should render with no props passed 1`] = `
         Object {
           "href": "/events",
           "name": "Events",
-          "shouldPrefetch": false,
         },
         Object {
           "href": "/get_involved",
@@ -71,7 +67,6 @@ exports[`Nav should render with no props passed 1`] = `
       >
         <Link
           href="/"
-          prefetch={false}
         >
           <a
             className="logoLink link"
@@ -89,23 +84,19 @@ exports[`Nav should render with no props passed 1`] = `
           <NavListItem
             href="/about"
             name="About Us"
-            shouldPrefetch={false}
             sublinks={
               Array [
                 Object {
                   "href": "/contact",
                   "name": "Contact Us",
-                  "shouldPrefetch": false,
                 },
                 Object {
                   "href": "/faq",
                   "name": "FAQ",
-                  "shouldPrefetch": false,
                 },
                 Object {
                   "href": "/podcast",
                   "name": "Podcast",
-                  "shouldPrefetch": false,
                 },
               ]
             }
@@ -113,7 +104,6 @@ exports[`Nav should render with no props passed 1`] = `
           <NavListItem
             href="/who_we_serve"
             name="Who We Serve"
-            shouldPrefetch={false}
             sublinks={
               Array [
                 Object {
@@ -130,13 +120,11 @@ exports[`Nav should render with no props passed 1`] = `
           <NavListItem
             href="/events"
             name="Events"
-            shouldPrefetch={false}
             sublinks={Array []}
           />
           <NavListItem
             href="/get_involved"
             name="Get Involved"
-            shouldPrefetch={false}
             sublinks={
               Array [
                 Object {

@@ -116,7 +116,6 @@ exports[`SchoolCard should render with required props 1`] = `
       analyticsEventLabel="school name | Website"
       fullWidth={true}
       href="website"
-      shouldPrefetch={false}
       theme="secondary"
     >
       Visit Website

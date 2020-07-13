@@ -9,7 +9,6 @@ describe('NavListItem', () => {
   const testDataWithoutSublinks = {
     href: '/test',
     name: 'Test',
-    shouldPrefetch: false,
     sublinks: [],
   };
 

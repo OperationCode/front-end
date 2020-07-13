@@ -55,7 +55,7 @@ export const Nav = () => {
       <header className={styles.NavDesktop}>
         <div className={styles.desktopNavContainer} data-testid="Desktop Nav Container">
           <nav data-testid="Desktop Nav">
-            <Link href="/" key="Home" prefetch={false}>
+            <Link href="/" key="Home">
               <a className={classNames(styles.logoLink, styles.link)}>
                 <img
                   src={`${s3}branding/logos/small-blue-logo.png`}
