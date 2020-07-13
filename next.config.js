@@ -1,4 +1,6 @@
-const withBundleAnalyzer = require('@next/bundle-analyzer');
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+});
 const withMDX = require('@next/mdx')({
   extension: /\.mdx$/,
 });
@@ -8,20 +10,6 @@ const nextConfig = withBundleAnalyzer({
   // For Vercel
   // see: https://vercel.com/guides/deploying-nextjs-with-vercel
   target: 'serverless',
-
-  // Bundle Analyzer Config (only used when running `yarn build:analyze`)
-  analyzeServer: process.env.ANALYZE,
-  analyzeBrowser: process.env.ANALYZE,
-  bundleAnalyzerConfig: {
-    server: {
-      analyzerMode: 'server',
-      analyzerPort: 8888,
-    },
-    browser: {
-      analyzerMode: 'server',
-      analyzerPort: 8889,
-    },
-  },
 
   experimental: {
     productionBrowserSourceMaps: true,
