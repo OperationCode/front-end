@@ -5,7 +5,6 @@
   "scripts": {
     "build": "next build",
     "build:analyze": "cross-env ANALYZE=1 next build",
-    "now-build": "next build",
     "create-component": "node scripts/createComponent/createComponent.js",
     "create-page": "node scripts/createPage/createPage.js",
     "dev": "next",

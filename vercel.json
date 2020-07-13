@@ -1,7 +1,7 @@
 {
   "version": 2,
   "name": "operation-code",
-  "alias": ["operation-code.now.sh", "www.operationcode.org", "operationcode.org"],
+  "alias": ["operation-code.vercel.co", "www.operationcode.org", "operationcode.org"],
   "rewrites": [
     {
       "source": "/media",
