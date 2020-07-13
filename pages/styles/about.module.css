@@ -1,15 +1,15 @@
-.hero {
+.About .hero {
   background-position: top center;
 }
 
-.justifyAlign {
+.About .justifyAlign {
   text-align: justify;
 }
 
-.imageCard h6 {
+.About .imageCard h6 {
   font-size: 1.125rem;
 }
 
-.imageCard p {
+.About .imageCard p {
   font-size: 85%;
 }

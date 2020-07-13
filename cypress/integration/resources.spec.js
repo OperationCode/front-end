@@ -16,13 +16,18 @@ describe('resources', () => {
   const LANGUAGES_SELECT = 'input#react-select-languages-input';
   const CATEGORY_SELECT = 'input#react-select-category-input';
 
-  const compareResourceNames = () => {
+  const compareResourceNames = ({ shouldBeEqual = false }) => {
+    const assertion = shouldBeEqual ? 'eq' : 'not.eq';
+
     cy.findAllByTestId(RESOURCE_TITLE)
       .invoke('text')
       .then($currentResourceNames => {
-        cy.get('@previousResourceNames').should('not.eq', $currentResourceNames);
+        cy.get('@previousResourceNames').should(assertion, $currentResourceNames);
       });
   };
+
+  const assertThatListHasDifferentItems = () => compareResourceNames({ shouldBeEqual: false });
+  const assertThatListHasSameItems = () => compareResourceNames({ shouldBeEqual: true });
 
   beforeEach(() => {
     cy.visitAndWaitFor('/resources/1');
@@ -64,7 +69,7 @@ describe('resources', () => {
       expect(loc.search).to.eq('?q=javascript');
     });
 
-    compareResourceNames();
+    assertThatListHasDifferentItems();
 
     cy.findByTestId(NEXT_PAGE_BUTTON).click();
     cy.location().should(loc => {
@@ -112,7 +117,8 @@ describe('resources', () => {
       expect(loc.search).to.eq('?category=getting%20started');
     });
 
-    compareResourceNames();
+    // Starting page
+    assertThatListHasSameItems();
 
     cy.findByTestId(NEXT_PAGE_BUTTON).click();
     cy.location().should(loc => {
@@ -158,7 +164,7 @@ describe('resources', () => {
       expect(loc.search).to.eq('?paid=true');
     });
 
-    compareResourceNames();
+    assertThatListHasDifferentItems();
 
     cy.findByTestId(NEXT_PAGE_BUTTON).click();
     cy.location().should(loc => {
@@ -211,7 +217,7 @@ describe('resources', () => {
       expect(loc.search).to.eq('?languages=javascript');
     });
 
-    compareResourceNames();
+    assertThatListHasDifferentItems();
 
     cy.findAllByTestId(RESOURCE_CARD).each(card => {
       cy.wrap(card).checkCustomDataAttribute(DATA_TEST_LANGUAGES, 'JavaScript');

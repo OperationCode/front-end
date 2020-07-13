@@ -6,7 +6,6 @@ exports[`NavListItem should render with required props passed 1`] = `
 >
   <Link
     href="/test"
-    prefetch={false}
   >
     <a
       className="link navItemLink"

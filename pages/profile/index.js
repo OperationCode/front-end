@@ -33,10 +33,10 @@ function Profile({ firstName, lastName }) {
             Hello {firstName} {lastName}!
           </p>,
           <div className={styles.actionItems}>
-            <LinkButton theme="secondary" href="/profile/update" shouldPrefetch>
+            <LinkButton theme="secondary" href="/profile/update">
               Update Profile
             </LinkButton>
-            <LinkButton theme="secondary" href="/profile/change_password" shouldPrefetch>
+            <LinkButton theme="secondary" href="/profile/change_password">
               Change Password
             </LinkButton>
           </div>,
