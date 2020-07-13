@@ -17,8 +17,8 @@ function About() {
       <div className={styles.About}>
         <HeroBanner
           backgroundImageSource={`${s3}redesign/heroBanners/about.jpg`}
+          className={styles.hero}
           title={pageTitle}
-          style={{ backgroundPosition: 'top center' }}
         />
 
         <Content

@@ -9,4 +9,4 @@ See [the React docs](https://reactjs.org/docs/higher-order-components.html) for 
 ALWAYS supply `getInitialProps` as a static property of the wrapped component. If not, we'll break
 the entire app.
 
-- Source of information: https://github.com/zeit/next.js/issues/3899
+- Source of information: https://github.com/vercel/next.js/issues/3899

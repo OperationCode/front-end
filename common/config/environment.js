@@ -24,7 +24,7 @@ export const clientTokens = isProduction
       SENTRY_DSN: '',
     };
 
-// TODO: Use GH Actions to enable environment-based Now deploys and stop using prod on PR deploys
+// TODO: Use GH Actions to enable environment-based deploys and stop using prod on PR deploys
 export const apiUrl = isProduction
   ? 'https://api.operationcode.org'
   : 'https://api.staging.operationcode.org';

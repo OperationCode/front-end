@@ -6,8 +6,8 @@ import HeroBanner from 'components/HeroBanner/HeroBanner';
 const pageTitle = 'Resources';
 
 /**
- * @description This is only to avoid 404s locally on `/resources`. `now.json` redirects on prod
- * @see https://github.com/zeit/next.js/issues/10488
+ * @description This is only to avoid 404s locally on `/resources`. `vercel.json` redirects on prod
+ * @see https://github.com/vercel/next.js/issues/10488
  * @returns {null} will client-side redirect on render for devs
  */
 function ResourcesIndex() {
