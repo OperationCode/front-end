@@ -138,7 +138,7 @@ class OperationCodeApp extends App {
 
 Router.events.on('routeChangeComplete', url => gtag.pageView(url));
 
-// Fixes Next CSS route change bug: https://github.com/zeit/next-plugins/issues/282
+// Fixes Next CSS route change bug: https://github.com/vercel/next-plugins/issues/282
 if (!isProduction) {
   Router.events.on('routeChangeComplete', () => {
     const path = '/_next/static/chunks/styles.chunk.module.css';
