@@ -1,4 +1,4 @@
-import { string } from 'prop-types';
+import { string, bool } from 'prop-types';
 import nextCookie from 'next-cookies';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
@@ -6,8 +6,8 @@ import Content from 'components/Content/Content';
 import LinkButton from 'components/LinkButton/LinkButton';
 import withAuthSync from 'decorators/withAuthSync/withAuthSync';
 import { getUserPromise } from 'common/constants/api';
-import { boolean } from 'yup';
-import _ from 'lodash';
+// import { boolean } from 'yup';
+import capitalize from 'lodash/capitalize';
 import styles from '../styles/profile.module.css';
 
 const pageTitle = 'Profile';
@@ -22,40 +22,16 @@ Profile.propTypes = {
   disciplines: string.isRequired,
   email: string.isRequired,
   employmentStatus: string.isRequired,
-  isMentor: boolean.isRequired,
+  isMentor: bool.isRequired,
   militaryStatus: string.isRequired,
   programmingLanguages: string.isRequired,
 };
 
 Profile.getInitialProps = async ctx => {
-  const { firstName, lastName, token } = nextCookie(ctx);
+  const { token } = nextCookie(ctx);
   const { data } = await getUserPromise({ token });
-  const {
-    branchOfService,
-    companyName,
-    companyRole,
-    createdAt,
-    disciplines,
-    email,
-    employmentStatus,
-    isMentor,
-    militaryStatus,
-    programmingLanguages,
-  } = data;
-  return {
-    firstName,
-    lastName,
-    branchOfService,
-    companyName,
-    companyRole,
-    createdAt,
-    disciplines,
-    email,
-    employmentStatus,
-    isMentor,
-    militaryStatus,
-    programmingLanguages,
-  };
+  // console.log(data)
+  return data;
 };
 
 function Profile({
@@ -84,19 +60,21 @@ function Profile({
         columns={[
           <div style={{ width: '100%' }}>
             <h3 style={{ textAlign: 'center' }}>
-              Hello {_.capitalize(firstName)} {_.capitalize(lastName)}!
+              Hello {capitalize(firstName)} {capitalize(lastName)}!
             </h3>
             <p>
               <strong>Email : </strong>
               {email}
             </p>
-            <p>
-              <strong>Date Joined : </strong>
-              {dateJoined}
-            </p>
+            {dateJoined ? (
+              <p>
+                <strong>Date Joined : </strong>
+                {dateJoined}
+              </p>
+            ) : null}
             <p>
               <strong>Employment Status : </strong>
-              {_.capitalize(employmentStatus)}
+              {capitalize(employmentStatus)}
             </p>
             <p>
               <strong>Company Name : </strong>
@@ -104,15 +82,15 @@ function Profile({
             </p>
             <p>
               <strong>Company Role : </strong>
-              {_.capitalize(companyRole)}
+              {capitalize(companyRole)}
             </p>
             <p>
               <strong>Military Status : </strong>
-              {_.capitalize(militaryStatus)}
+              {capitalize(militaryStatus)}
             </p>
             <p>
               <strong>Branch of Service : </strong>
-              {_.capitalize(branchOfService)}
+              {capitalize(branchOfService)}
             </p>
             <p>
               <strong>Programming Language Interest : </strong>
