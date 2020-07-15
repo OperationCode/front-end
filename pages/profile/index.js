@@ -6,7 +6,6 @@ import Content from 'components/Content/Content';
 import LinkButton from 'components/LinkButton/LinkButton';
 import withAuthSync from 'decorators/withAuthSync/withAuthSync';
 import { getUserPromise } from 'common/constants/api';
-// import { boolean } from 'yup';
 import capitalize from 'lodash/capitalize';
 import styles from '../styles/profile.module.css';
 
@@ -48,7 +47,11 @@ function Profile({
   militaryStatus,
   programmingLanguages,
 }) {
-  const dateJoined = createdAt.slice(0, 10);
+  let dateJoined;
+  if (createdAt) {
+    dateJoined = createdAt.slice(0, 10).split('-').reverse().join('-');
+  }
+
   return (
     <>
       <Head title={pageTitle} />
