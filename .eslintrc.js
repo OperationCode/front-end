@@ -249,7 +249,7 @@ module.exports = {
         paths: [
           {
             name: 'lodash',
-            importNames: ['default'],  
+            importNames: ['default'],
             message: `Please add an import line for each method you want to use instead.\n
              Example: import drop from 'lodash/drop';`,
           },
