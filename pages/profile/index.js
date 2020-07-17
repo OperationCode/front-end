@@ -30,7 +30,6 @@ Profile.propTypes = {
 Profile.getInitialProps = async ctx => {
   const { token } = nextCookie(ctx);
   const { data } = await getUserPromise({ token });
-  // console.log(data)
   return data;
 };
 
