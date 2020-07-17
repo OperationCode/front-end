@@ -6,8 +6,9 @@ import Content from 'components/Content/Content';
 import LinkButton from 'components/LinkButton/LinkButton';
 import withAuthSync from 'decorators/withAuthSync/withAuthSync';
 import { getUserPromise } from 'common/constants/api';
-import capitalize from 'lodash/capitalize';
+import { capitalize, startCase, toLower } from 'lodash';
 import styles from '../styles/profile.module.css';
+import { PROFILE_GREETING } from '../../common/constants/testIDs';
 
 const pageTitle = 'Profile';
 
@@ -47,9 +48,12 @@ function Profile({
   militaryStatus,
   programmingLanguages,
 }) {
+  // Gets date of sign up then converts to mmm dd yyyy
   let dateJoined;
   if (createdAt) {
-    dateJoined = createdAt.slice(0, 10).split('-').reverse().join('-');
+    dateJoined = new Date(createdAt.slice(0, 10).split('-').reverse().join('-').replace(/-/g, '/'))
+      .toString()
+      .slice(4, 15);
   }
 
   return (
@@ -62,7 +66,7 @@ function Profile({
         theme="gray"
         columns={[
           <div style={{ width: '100%' }}>
-            <h3 style={{ textAlign: 'center' }}>
+            <h3 data-testid={PROFILE_GREETING} style={{ textAlign: 'center' }}>
               Hello {capitalize(firstName)} {capitalize(lastName)}!
             </h3>
             <p>
@@ -77,15 +81,15 @@ function Profile({
             ) : null}
             <p>
               <strong>Employment Status : </strong>
-              {capitalize(employmentStatus)}
+              {employmentStatus}
             </p>
             <p>
               <strong>Company Name : </strong>
-              {companyName}
+              {startCase(toLower(companyName))}
             </p>
             <p>
               <strong>Company Role : </strong>
-              {capitalize(companyRole)}
+              {startCase(toLower(companyRole))}
             </p>
             <p>
               <strong>Military Status : </strong>

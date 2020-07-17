@@ -2,6 +2,7 @@ import { networkErrorMessages } from '../../common/constants/messages';
 import existingUser from '../../test-utils/mocks/existingUser';
 import mockPassword from '../../test-utils/mockGenerators/mockPassword';
 import mockUser from '../../test-utils/mockGenerators/mockUser';
+import { PROFILE_GREETING } from '../../common/constants/testIDs';
 
 describe('login', () => {
   beforeEach(() => {
@@ -23,7 +24,7 @@ describe('login', () => {
 
     cy.url().should('contain', '/profile');
     cy.get('h1').should('have.text', 'Profile');
-    cy.get('p').contains('Hello Kyle Holmberg!');
+    cy.get(`[data-testid='${PROFILE_GREETING}']`).contains('Hello Kyle Holmberg!');
 
     cy.getCookies().then(cookies => {
       expect(cookies.some(({ value }) => value === existingUser.firstName)).to.be.true;

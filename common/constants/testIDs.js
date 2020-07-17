@@ -27,3 +27,4 @@ export const DATA_TEST_COST = '[data-test-isPaid]';
 export const COST_SELECT = 'input#react-select-paid-input';
 export const LANGUAGE_SELECT = 'input#react-select-languages-input';
 export const CATEGORY_SELECT = 'input#react-select-category-input';
+export const PROFILE_GREETING = '[PROFILE_GREETING]';
