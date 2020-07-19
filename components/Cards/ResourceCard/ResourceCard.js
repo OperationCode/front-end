@@ -127,7 +127,7 @@ function ResourceCard({
             data-testid={RESOURCE_CARD}
             data-test-category={category}
             data-test-languages={languages.join('-')}
-            data-test-isPaid={isPaid}
+            data-test-ispaid={isPaid}
             className={styles.header}
           >
             <h5 data-testid={RESOURCE_TITLE} className={styles.resourceName}>
