@@ -56,10 +56,10 @@ function Resources() {
   ];
 
   const initialValues = {
-    category: [],
-    q: '',
-    languages: [],
-    paid: '',
+    category: category || '',
+    q: q || '',
+    languages: Array.isArray(languages) ? languages : [languages].filter(Boolean),
+    paid: paid || '',
   };
 
   const handleEndpoint = () => {
@@ -120,9 +120,10 @@ function Resources() {
       })
       .catch(() => {
         setErrorMessage('There was a problem gathering those resources.');
-        setIsLoading(false);
       });
+  }, []);
 
+  useEffect(() => {
     handleEndpoint()
       .then(response => {
         const fetchedResources = get(
@@ -148,11 +149,10 @@ function Resources() {
       })
       .catch(() => {
         setErrorMessage('There was a problem gathering those resources.');
-      });
-    return () =>
-      setTimeout(() => {
+      })
+      .finally(() => {
         setIsLoading(false);
-      }, 500);
+      });
   }, [query]);
 
   const updateQuery = formData => {
@@ -186,7 +186,7 @@ function Resources() {
             </OutboundLink>
 
             <Formik
-              enableReinitialize={false}
+              enableReinitialize
               initialValues={initialValues}
               onSubmit={(values, actions) => {
                 handleSubmit(values, actions);
