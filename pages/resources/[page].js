@@ -56,10 +56,10 @@ function Resources() {
   ];
 
   const initialValues = {
-    category: category ?? '',
-    q: q ?? '',
+    category: category || '',
+    q: q || '',
     languages: Array.isArray(languages) ? languages : [languages].filter(Boolean),
-    paid: paid ?? '',
+    paid: paid || '',
   };
 
   const handleEndpoint = () => {
