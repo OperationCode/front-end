@@ -55,9 +55,7 @@ export async function getStaticProps() {
   };
 }
 
-function WhoWeServe(props) {
-  const { memberCount } = props;
-
+function WhoWeServe({ memberCount }) {
   return (
     <>
       <Head title="Who We Serve" />
