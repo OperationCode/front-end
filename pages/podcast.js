@@ -23,8 +23,9 @@ Podcast.defaultProps = {
 };
 
 // We have atypical error handling because there exist errors thrown on nearly every request.
-Podcast.getInitialProps = async () => {
+export async function getStaticProps() {
   const { data } = await ExternalAPI.get('https://operationcode.libsyn.com/rss');
+
   const { rss } = parseXml(data, {
     ignoreNameSpace: true,
     ignoreAttributes: false,
@@ -47,7 +48,7 @@ Podcast.getInitialProps = async () => {
 
   // Request failed or RSS Feed is broken
   return { episodes: [], errorMessage: getServerErrorMessage() };
-};
+}
 
 function Podcast({ episodes, errorMessage }) {
   return (

@@ -8,17 +8,7 @@ import Alert from 'components/Alert/Alert';
 import FlatCard from 'components/Cards/FlatCard/FlatCard';
 import styles from './styles/team.module.css';
 
-Team.propTypes = {
-  boardMembers: arrayOf(object.isRequired),
-  errorMessage: string,
-};
-
-Team.defaultProps = {
-  boardMembers: [],
-  errorMessage: '',
-};
-
-Team.getInitialProps = async () => {
+export async function getStaticProps() {
   try {
     const { data } = await getTeamMembersPromise();
 
@@ -37,6 +27,16 @@ Team.getInitialProps = async () => {
   } catch (error) {
     return { errorMessage: getServerErrorMessage(error) };
   }
+}
+
+Team.propTypes = {
+  boardMembers: arrayOf(object.isRequired),
+  errorMessage: string,
+};
+
+Team.defaultProps = {
+  boardMembers: [],
+  errorMessage: '',
 };
 
 function Team({ boardMembers, errorMessage }) {

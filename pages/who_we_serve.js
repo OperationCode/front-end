@@ -41,7 +41,7 @@ WhoWeServe.defaultProps = {
   memberCount: null,
 };
 
-WhoWeServe.getInitialProps = async () => {
+export async function getStaticProps() {
   const response = await axios.get(slackMembersAPIUrl, {
     params: {
       token: process.env.SLACK_API_TOKEN,
@@ -53,7 +53,7 @@ WhoWeServe.getInitialProps = async () => {
     memberCount:
       response.data.ok && response.data && response ? response.data.members.length : null,
   };
-};
+}
 
 function WhoWeServe(props) {
   const { memberCount } = props;
