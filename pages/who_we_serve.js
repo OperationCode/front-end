@@ -1,6 +1,7 @@
 import axios from 'axios';
 import PropTypes from 'prop-types';
 import TrackVisibility from 'react-on-screen';
+import get from 'lodash/get';
 import classNames from 'classnames';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
@@ -34,11 +35,11 @@ const mentorItems = [
 ];
 
 WhoWeServe.propTypes = {
-  memberCount: PropTypes.number,
+  numberOfMembers: PropTypes.number,
 };
 
 WhoWeServe.defaultProps = {
-  memberCount: null,
+  numberOfMembers: null,
 };
 
 export async function getStaticProps() {
@@ -49,15 +50,20 @@ export async function getStaticProps() {
     },
   });
 
-  return {
-    memberCount:
-      response.data.ok && response.data && response ? response.data.members.length : null,
-  };
+  const numberOfMembers = get(response, 'data.members.length', 0);
+
+  if (numberOfMembers > 0) {
+    return {
+      props: {
+        numberOfMembers,
+      },
+    };
+  }
+
+  throw new Error('getStaticProps in /who_we_serve failed.');
 }
 
-function WhoWeServe(props) {
-  const { memberCount } = props;
-
+function WhoWeServe({ numberOfMembers }) {
   return (
     <>
       <Head title="Who We Serve" />
@@ -75,8 +81,8 @@ function WhoWeServe(props) {
             <p className={styles.justifyAlign}>
               We work closely with military veterans, service members, and spouses who are
               passionate about transitioning into the tech industry. We work with{' '}
-              {!memberCount ? 'over 5,000' : `${memberCount}`} members who are all working towards
-              relevant goals on Slack and in-person meet-ups. Membership is free!
+              {!numberOfMembers ? 'over 5,000' : `${numberOfMembers}`} members who are all working
+              towards relevant goals on Slack and in-person meet-ups. Membership is free!
             </p>
 
             <div className={classNames(styles.centeredText, styles.topMargin)}>
