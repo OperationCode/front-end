@@ -21,8 +21,8 @@ describe('resources', () => {
 
     cy.findAllByTestId(RESOURCE_TITLE)
       .invoke('text')
-      .then($currentResourceNames => {
-        cy.get('@previousResourceNames').should(assertion, $currentResourceNames);
+      .then(currentResourceNames => {
+        cy.get('@previousResourceNames').should(assertion, currentResourceNames);
       });
   };
 

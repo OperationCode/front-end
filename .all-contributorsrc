@@ -488,6 +488,17 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "jeffsnff",
+      "name": "Jeffrey Seneff",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/22498613?v=4",
+      "profile": "http://jeffreyseneff.com",
+      "contributions": [
+        "code",
+        "design"
+      ]
     }
-  ]
+  ],
+  "skipCi": true
 }
