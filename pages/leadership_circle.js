@@ -13,7 +13,7 @@ const leadershipCircleLevels = Object.keys(leadershipCircleMembers);
 
 function LeadershipCircle() {
   return (
-    <>
+    <div className={styles.LeadershipCircle}>
       <Head title={pageTitle} />
 
       <HeroBanner title={pageTitle} />
@@ -118,7 +118,7 @@ function LeadershipCircle() {
           </div>,
         ]}
       />
-    </>
+    </div>
   );
 }
 

@@ -12,7 +12,7 @@ function ThankYou() {
   }, []);
 
   return (
-    <>
+    <div className={styles.ThankYou}>
       <Head title={pageTitle} />
 
       <HeroBanner title={pageTitle} className={styles.main}>
@@ -24,7 +24,7 @@ function ThankYou() {
           as your donation receipt.
         </p>
       </HeroBanner>
-    </>
+    </div>
   );
 }
 

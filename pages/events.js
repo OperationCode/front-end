@@ -86,7 +86,7 @@ const hostEventItems = [
 
 function Events() {
   return (
-    <>
+    <div className={styles.Events}>
       <Head title={pageTitle} />
 
       <HeroBanner title={pageTitle} backgroundImageSource={`${s3}redesign/heroBanners/events.jpg`}>
@@ -283,7 +283,7 @@ function Events() {
       />
 
       <JoinSection />
-    </>
+    </div>
   );
 }
 

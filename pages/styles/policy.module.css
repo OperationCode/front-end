@@ -1,11 +1,11 @@
-.statisticContainer {
+.Policy .statisticContainer {
   display: flex;
   flex-direction: column;
   font-family: var(--primaryFontFamily), sans-serif;
   margin-top: 3em;
 }
 
-.statistic {
+.Policy .statistic {
   background-color: rgba(0, 5, 30, 0.7);
   display: flex;
   margin: 0;
@@ -13,15 +13,15 @@
   max-width: 500px;
 }
 
-.statistic + .statistic {
+.Policy .statistic + .statistic {
   margin-top: 1rem;
 }
 
-.shortenedStatistic {
+.Policy .shortenedStatistic {
   max-width: 370px;
 }
 
-.statisticNumber {
+.Policy .statisticNumber {
   display: flex;
   align-items: center;
   flex-grow: 1;
@@ -33,19 +33,19 @@
 }
 
 @media screen and (--large-viewport) {
-  .statisticNumber {
+  .Policy .statisticNumber {
     font-size: 2rem;
     line-height: 2rem;
   }
 }
 
 @media screen and (--medium-viewport) {
-  .statisticNumber {
+  .Policy .statisticNumber {
     flex-grow: 0;
   }
 }
 
-.statisticDescription {
+.Policy .statisticDescription {
   color: var(--white);
   font-size: 1.5rem;
   line-height: 1.7rem;

@@ -5,7 +5,7 @@ import styles from './styles/policy.module.css';
 
 function Policy() {
   return (
-    <>
+    <div className={styles.Policy}>
       <Head title="Policy" />
 
       <HeroBanner
@@ -34,7 +34,7 @@ function Policy() {
           </figure>
         </div>
       </HeroBanner>
-    </>
+    </div>
   );
 }
 

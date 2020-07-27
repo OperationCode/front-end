@@ -1,28 +1,24 @@
 /* On this component, all non-classed images are inline */
-.instructionList img {
+.Challenge .instructionList img {
   max-width: 100%;
   height: auto;
   padding: 0 10px;
 }
 
-.displayBlock > div {
-  display: block;
-}
-
-.instructionList {
+.Challenge .instructionList {
   line-height: 1.5;
   padding: 0 0 0 5px;
   margin: 0;
 }
 
-.instructionList li {
+.Challenge .instructionList li {
   padding: 0 0 25px 0;
 }
 
-.blockImage {
+.Challenge .blockImage {
   padding: 0 !important;
 }
 
-.centerText {
+.Challenge .centerText {
   text-align: center;
 }

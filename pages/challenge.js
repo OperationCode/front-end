@@ -14,7 +14,7 @@ const CompareLink = `${RepoLink}compare`;
 
 function Challenge() {
   return (
-    <>
+    <div className={styles.Challenge}>
       <Head title={pageTitle} />
 
       <HeroBanner title={`Operation Code ${pageTitle}`}>
@@ -184,7 +184,7 @@ function Challenge() {
           </div>,
         ]}
       />
-    </>
+    </div>
   );
 }
 

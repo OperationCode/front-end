@@ -1,32 +1,32 @@
-.justifyAlign {
+.Sponsorship .justifyAlign {
   text-align: justify;
 }
 
-.constrainDimensions {
+.Sponsorship .constrainDimensions {
   justify-content: flex-start;
   max-width: 350px;
   height: 250px;
 }
 
-.badgeFormat {
+.Sponsorship .badgeFormat {
   font-size: 1.5rem;
   font-weight: 550;
   margin-top: 1.5rem;
 }
 
-.gold {
+.Sponsorship .gold {
   color: #ffaa22;
 }
 
-.silver {
+.Sponsorship .silver {
   color: silver;
 }
 
-.bronze {
+.Sponsorship .bronze {
   color: #cd7f32;
 }
 
-.paragraphFormat {
+.Sponsorship .paragraphFormat {
   text-align: justify;
   padding: 0 2rem;
 }

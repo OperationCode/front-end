@@ -1,12 +1,12 @@
-.hero {
+.History .hero {
   background-position: right center;
 }
 
-.quote {
+.History .quote {
   font-size: 1.5rem;
 }
 
-.author {
+.History .author {
   font-size: 1.75rem;
   float: right;
 }

@@ -1,25 +1,25 @@
-.resourcesContainer {
+.Resources .resourcesContainer {
   width: 70vw;
 }
 
 @media screen and (--medium-viewport) {
-  .resourcesContainer {
+  .Resources .resourcesContainer {
     width: 90vw;
   }
 }
 
-.formContainer {
+.Resources .formContainer {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
 }
 
-.selectColumn {
+.Resources .selectColumn {
   flex: 50%;
 }
 
-.buttonGroup {
+.Resources .buttonGroup {
   display: flex;
   justify-content: flex-end;
   width: 100%;
@@ -28,29 +28,29 @@
 }
 
 @media screen and (--small-viewport) {
-  .buttonGroup {
+  .Resources .buttonGroup {
     justify-content: center;
   }
 }
 
-.buttonSingle {
+.Resources .buttonSingle {
   margin: 0.5rem;
 }
 
 @media screen and (--small-viewport) {
-  .buttonSingle {
+  .Resources .buttonSingle {
     box-sizing: border-box;
     width: 92.5%;
   }
 }
 
-.resourcesCardsWrapper {
+.Resources .resourcesCardsWrapper {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.algoliaLink {
+.Resources .algoliaLink {
   float: right;
   color: rgba(var(--rgbValuesSecondary), 0.75);
   font-size: 0.75rem;

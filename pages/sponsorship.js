@@ -13,7 +13,7 @@ const pageTitle = 'Corporate Sponsorship';
 
 function Sponsorship() {
   return (
-    <>
+    <div className={styles.Sponsorship}>
       <Head title={pageTitle} />
 
       <HeroBanner title={pageTitle}>
@@ -131,7 +131,7 @@ function Sponsorship() {
       />
 
       <SponsorsSection />
-    </>
+    </div>
   );
 }
 
