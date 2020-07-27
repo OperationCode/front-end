@@ -11,7 +11,7 @@ const pageTitle = 'Branding';
 
 function Branding() {
   return (
-    <>
+    <div className={styles.Branding}>
       <Head title={pageTitle} />
 
       <HeroBanner isFullViewportHeight title={pageTitle}>
@@ -45,7 +45,7 @@ function Branding() {
       <LogoSection />
       <ColorSection />
       <FontSection />
-    </>
+    </div>
   );
 }
 

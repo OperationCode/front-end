@@ -1,52 +1,52 @@
-.justifyAlign {
+.GetInvolved .justifyAlign {
   text-align: justify;
 }
 
-.topMargin {
+.GetInvolved .topMargin {
   margin-top: 1rem;
 }
 
-.extraTopMargin {
+.GetInvolved .extraTopMargin {
   margin-top: 2rem;
 }
 
-.image {
+.GetInvolved .image {
   margin: 2rem;
   max-width: 500px;
 }
 
-.cta {
+.GetInvolved .cta {
   display: flex;
   flex-direction: column;
 }
 
-.centeredText {
+.GetInvolved .centeredText {
   text-align: center;
 }
 
-.image img {
+.GetInvolved .image img {
   max-width: 100%;
   opacity: 0;
   transition: opacity 1s;
 }
 
-.showImage img {
+.GetInvolved .showImage img {
   opacity: 1;
 }
 
-.badgeGroupings {
+.GetInvolved .badgeGroupings {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   margin-top: -1rem;
 }
 
-.badge {
+.GetInvolved .badge {
   margin: 1rem 4rem;
 }
 
 @media screen and (--medium-viewport) {
-  .heroBannerMobilePositioning {
+  .GetInvolved .heroBannerMobilePositioning {
     background-position: 60% center;
   }
 }

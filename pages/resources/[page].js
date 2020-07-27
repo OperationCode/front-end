@@ -170,9 +170,11 @@ function Resources() {
   };
 
   return (
-    <>
+    <div className={styles.Resources}>
       <Head title={pageTitle} />
+
       <HeroBanner title={pageTitle} className="smallHero" />
+
       <Content
         theme="white"
         columns={[
@@ -309,7 +311,7 @@ function Resources() {
           </section>,
         ]}
       />
-    </>
+    </div>
   );
 }
 

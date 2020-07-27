@@ -56,7 +56,7 @@ function Profile({
   }
 
   return (
-    <>
+    <div className={styles.Profile}>
       <Head title={pageTitle} />
 
       <HeroBanner title={pageTitle} />
@@ -123,7 +123,7 @@ function Profile({
           </div>,
         ]}
       />
-    </>
+    </div>
   );
 }
 

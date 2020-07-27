@@ -9,7 +9,7 @@ const pageTitle = 'Press';
 
 function Press() {
   return (
-    <>
+    <div className={styles.Press}>
       <Head title={pageTitle} />
 
       <HeroBanner title={pageTitle}>
@@ -129,7 +129,7 @@ function Press() {
           </div>,
         ]}
       />
-    </>
+    </div>
   );
 }
 

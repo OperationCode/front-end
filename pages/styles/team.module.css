@@ -1,4 +1,4 @@
-.boardMembers {
+.Team .boardMembers {
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -6,10 +6,10 @@
   width: 100%;
 }
 
-.boardMembers img {
+.Team .boardMembers img {
   object-fit: cover;
 }
 
-.foundingMembers {
+.Team .foundingMembers {
   padding: 2rem 0 0 0;
 }

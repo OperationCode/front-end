@@ -1,11 +1,11 @@
-.podcastCards {
+.Podcast .podcastCards {
   display: flex;
   justify-content: center;
   align-items: flex-start;
   flex-wrap: wrap;
 }
 
-.podcastCard {
+.Podcast .podcastCard {
   align-items: center;
   display: flex;
   flex-flow: column;
@@ -16,12 +16,12 @@
 }
 
 @media screen and (--small-viewport) {
-  .podcastCard {
+  .Podcast .podcastCard {
     width: 100%;
   }
 }
 
-.img {
+.Podcast .img {
   max-height: 300px;
   max-width: 100%;
   object-fit: cover;

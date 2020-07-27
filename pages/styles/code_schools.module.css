@@ -1,62 +1,62 @@
-.intro {
+.CodeSchools .intro {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
 }
 
-.termDefinition {
+.CodeSchools .intro .termDefinition {
   margin: 1rem 2rem;
   max-width: 500px;
 }
 
-.filterContainer {
+.CodeSchools .filterContainer {
   margin: 2rem 0;
   width: 100%;
 }
 
-.filterContainer > h5 {
+.CodeSchools .filterContainer > h5 {
   text-align: center;
 }
 
-.select {
+.CodeSchools .select {
   margin: 0.5rem auto;
   min-width: 20rem;
   width: 90%;
   max-width: 50rem;
 }
 
-.schoolCardsWrapper {
+.CodeSchools .schoolCardsWrapper {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.centered {
+.CodeSchools .centered {
   margin: 1rem 0;
   text-align: center;
 }
 
-.schoolLocationModal {
+.CodeSchools .schoolLocationModal {
   width: 500px;
 }
 
 @media screen and (--small-viewport) {
-  .schoolLocationModal {
+  .CodeSchools .schoolLocationModal {
     width: 100%;
   }
 }
 
-.schoolLocationModal > div {
+.CodeSchools .schoolLocationModal > div {
   width: 100%;
 }
 
-.schoolLocalModalItem {
+.CodeSchools .schoolLocalModalItem {
   padding: 8px 10px;
   border-bottom: 1px solid var(--gray);
 }
 
-.schoolLocalModalItem:last-child {
+.CodeSchools .schoolLocalModalItem:last-child {
   border-bottom: 0;
   margin-bottom: 15px;
 }

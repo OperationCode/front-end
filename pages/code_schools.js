@@ -112,7 +112,7 @@ function CodeSchools({ allSchools }) {
   const isModalOpen = Boolean(locationsModalInfo.name);
 
   return (
-    <>
+    <div className={styles.CodeSchools}>
       <Head title={pageTitle} />
 
       <HeroBanner title={pageTitle}>
@@ -289,7 +289,7 @@ function CodeSchools({ allSchools }) {
           ))}
         </>
       </Modal>
-    </>
+    </div>
   );
 }
 

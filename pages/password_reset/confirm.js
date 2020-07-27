@@ -49,13 +49,13 @@ function PasswordResetConfirm({ uid, token }) {
   };
 
   return (
-    <>
+    <div className={styles.PasswordReset}>
       <Head title="Password Reset" />
 
       <HeroBanner title="Enter new password" />
 
       <Content theme="gray" columns={[getContent()]} />
-    </>
+    </div>
   );
 }
 
