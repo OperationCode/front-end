@@ -1,4 +1,4 @@
-.FAQAccordion {
+.FAQ .FAQAccordion {
   background-color: rgba(0, 0, 0, 0);
   border-radius: 5px;
   border: 1px solid #c5c5c5;
@@ -9,7 +9,7 @@
   width: 100%;
 }
 
-.FAQAccordion svg {
+.FAQ .FAQAccordion svg {
   fill: currentColor;
   top: 0.75rem;
 }
