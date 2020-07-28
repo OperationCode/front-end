@@ -69,9 +69,10 @@ function Challenge() {
 
               <li>
                 Now that you have a fork of the &quot;repo&quot;, it&apos;s time to edit the
-                necessary file to add your name to the list below! Inside the <code>/static</code>
-                {` folder`}, click on the <code>operationcode_challenge</code> directory and click
-                on the file called <code>names.js</code>. On the right-hand side, you should see
+                necessary file to add your name to the list below! Go to the <code>/public</code>
+                {` folder`}, then the <code>/static</code> {` folder`}, click on the
+                <code>operationcode_challenge</code> directory and click on the file called
+                <code>names.js</code>. On the right-hand side, you should see
                 <img
                   src={`${s3}github_demo/pencil-icon.png`}
                   alt="a button with a pencil icon"
