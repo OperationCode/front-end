@@ -48,5 +48,6 @@ export default [
     'Sepideh',
     'Seanrad',
     'David Bledsoe',
-    'Sairina Merino Tsui'
+    'Sairina Merino Tsui',
+    'Justin Reeves'
 ]
