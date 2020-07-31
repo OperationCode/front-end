@@ -51,7 +51,7 @@ const supportItems = [
 
 function GetInvolved() {
   return (
-    <>
+    <div className={styles.GetInvolved}>
       <Head title="Get Involved" />
 
       <HeroBanner
@@ -172,7 +172,7 @@ function GetInvolved() {
       <DonateSection />
 
       <JoinSection />
-    </>
+    </div>
   );
 }
 

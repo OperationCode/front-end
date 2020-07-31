@@ -2,8 +2,9 @@ import Link from 'next/link';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
-import FAQAccordion from 'components/Accordion/FAQAccordion';
+import Accordion from 'components/Accordion/Accordion';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
+import styles from './styles/faq.module.css';
 
 const questions = {
   general: [
@@ -308,7 +309,7 @@ const questions = {
 
 function FAQ() {
   return (
-    <>
+    <div className={styles.FAQ}>
       <Head title="FAQ" />
 
       <HeroBanner title="Frequently Asked Questions" />
@@ -318,11 +319,14 @@ function FAQ() {
         title="General Questions"
         hasTitleUnderline
         columns={questions.general.map((faq, index) => (
-          <FAQAccordion
-            title={faq.title}
-            content={faq.content}
-            key={index}
+          <Accordion
+            className={styles.FAQAccordion}
+            content={{
+              headingChildren: <h6>{faq.title}</h6>,
+              bodyChildren: <p>{faq.content}</p>,
+            }}
             accessibilityId={index}
+            key={index}
           />
         ))}
       />
@@ -331,11 +335,14 @@ function FAQ() {
         title="Donation Questions"
         hasTitleUnderline
         columns={questions.donation.map((faq, index) => (
-          <FAQAccordion
-            title={faq.title}
-            content={faq.content}
-            key={index}
+          <Accordion
+            className={styles.FAQAccordion}
+            content={{
+              headingChildren: <h6>{faq.title}</h6>,
+              bodyChildren: <p>{faq.content}</p>,
+            }}
             accessibilityId={index}
+            key={index}
           />
         ))}
       />
@@ -344,16 +351,19 @@ function FAQ() {
         title="Volunteer Questions"
         hasTitleUnderline
         columns={questions.volunteer.map((faq, index) => (
-          <FAQAccordion
-            title={faq.title}
-            content={faq.content}
-            key={index}
+          <Accordion
+            className={styles.FAQAccordion}
+            content={{
+              headingChildren: <h6>{faq.title}</h6>,
+              bodyChildren: <p>{faq.content}</p>,
+            }}
             accessibilityId={index}
+            key={index}
           />
         ))}
       />
       {/* eslint-enable react/no-array-index-key */}
-    </>
+    </div>
   );
 }
 

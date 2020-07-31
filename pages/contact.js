@@ -9,7 +9,7 @@ const pageTitle = 'Contact Us';
 
 function Contact() {
   return (
-    <>
+    <div className={styles.Contact}>
       <Head title={pageTitle} />
 
       <HeroBanner className={styles.contactHero} isFullViewportHeight title={pageTitle}>
@@ -66,7 +66,7 @@ function Contact() {
           </span>
         </address>
       </HeroBanner>
-    </>
+    </div>
   );
 }
 

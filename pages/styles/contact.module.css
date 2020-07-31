@@ -1,27 +1,27 @@
-.verticalSpacing {
+.Contact .verticalSpacing {
   margin: 1rem 0;
 }
 
-.justifyAlign {
+.Contact .justifyAlign {
   text-align: justify;
 }
 
-.contactHero a {
+.Contact .contactHero a {
   transition: color 0.2s linear;
 }
 
-.contactHero a:focus,
-.contactHero a:hover {
+.Contact .contactHero a:focus,
+.Contact .contactHero a:hover {
   text-shadow: none;
   color: var(--primary);
 }
 
-.contactMethod {
+.Contact .contactMethod {
   margin: 0 auto 2rem;
   max-width: 700px; /* keep in sync with paragraph max-width */
   font-style: normal;
 }
 
-.forceWidth {
+.Contact .forceWidth {
   width: 100%;
 }

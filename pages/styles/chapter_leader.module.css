@@ -1,8 +1,8 @@
-.justifyAlign {
+.ChapterLeader .justifyAlign {
   text-align: justify;
 }
 
-.fullWidth {
+.ChapterLeader .fullWidth {
   width: 100%;
   max-width: 100%;
 }

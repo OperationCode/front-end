@@ -46,7 +46,7 @@ export async function getStaticProps() {
 
 function Podcast({ episodes }) {
   return (
-    <>
+    <div className={styles.Podcast}>
       <Head title={pageTitle} />
 
       <HeroBanner title={pageTitle} />
@@ -92,7 +92,7 @@ function Podcast({ episodes }) {
           </div>,
         ]}
       />
-    </>
+    </div>
   );
 }
 

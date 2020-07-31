@@ -65,7 +65,7 @@ export async function getStaticProps() {
 
 function WhoWeServe({ numberOfMembers }) {
   return (
-    <>
+    <div className={styles.WhoWeServe}>
       <Head title="Who We Serve" />
 
       <HeroBanner
@@ -156,7 +156,7 @@ function WhoWeServe({ numberOfMembers }) {
       />
 
       <JoinSection />
-    </>
+    </div>
   );
 }
 

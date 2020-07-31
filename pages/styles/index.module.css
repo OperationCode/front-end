@@ -1,12 +1,12 @@
-.Index .hero {
+.Home .hero {
   padding-top: 8rem;
 }
 
-.Index .justifyAlign {
+.Home .justifyAlign {
   text-align: justify;
 }
 
-.Index .featuredLinks {
+.Home .featuredLinks {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -15,12 +15,12 @@
   margin: 3rem 0;
 }
 
-.Index .featuredLinks a {
+.Home .featuredLinks a {
   text-decoration: none;
   transition: color 0.2s linear;
 }
 
-.Index .featuredLinkItem {
+.Home .featuredLinkItem {
   display: flex;
   flex-direction: column;
   margin: 1rem;
@@ -30,7 +30,7 @@
   width: auto;
 }
 
-.Index .featuredLinkImage {
+.Home .featuredLinkImage {
   background-position: center center;
   background-size: cover;
   margin-top: 1rem;
@@ -40,36 +40,36 @@
   transition: 0.2s linear border, 0.2s linear color;
 }
 
-.Index .featuredLinkImage:active,
-.Index .featuredLinkImage:focus,
-.Index .featuredLinkImage:hover,
-.Index .featuredLinkItem a:active .featuredLinkImage,
-.Index .featuredLinkItem a:focus .featuredLinkImage,
-.Index .featuredLinkItem a:hover .featuredLinkImage {
+.Home .featuredLinkImage:active,
+.Home .featuredLinkImage:focus,
+.Home .featuredLinkImage:hover,
+.Home .featuredLinkItem a:active .featuredLinkImage,
+.Home .featuredLinkItem a:focus .featuredLinkImage,
+.Home .featuredLinkItem a:hover .featuredLinkImage {
   border: 2px solid var(--primary);
   transition: 0.2s linear border;
 }
 
-.Index .featuredLinkItem:active a,
-.Index .featuredLinkItem:focus a,
-.Index .featuredLinkItem:hover a {
+.Home .featuredLinkItem:active a,
+.Home .featuredLinkItem:focus a,
+.Home .featuredLinkItem:hover a {
   color: var(--primary);
   transition: 0.2s linear color;
 }
 
-.Index .cta {
+.Home .cta {
   display: flex;
   flex-direction: column;
 }
 
-.Index .successStories {
+.Home .successStories {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
 }
 
-.Index .partnerLogos {
+.Home .partnerLogos {
   display: flex;
   align-self: center;
   justify-content: center;
@@ -78,7 +78,7 @@
   max-width: 900px;
 }
 
-.Index .joinThrivingSection {
+.Home .joinThrivingSection {
   display: flex;
   align-self: center;
   justify-content: space-between;
@@ -86,14 +86,14 @@
 }
 
 @media screen and (--large-viewport) {
-  .Index .featuredLinkImage {
+  .Home .featuredLinkImage {
     width: 300px;
     height: 125px;
   }
 }
 
 @media screen and (--small-viewport) {
-  .Index .featuredLinkImage {
+  .Home .featuredLinkImage {
     width: 250px;
     height: 100px;
   }
