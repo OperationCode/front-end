@@ -12,6 +12,32 @@ const RepoLink = 'https://github.com/OperationCode/front-end/';
 const ChallengeLink = `${RepoLink}blob/main/pages/challenge.js`;
 const CompareLink = `${RepoLink}compare`;
 
+export const MakeColumnsFromArray = ({ ary }) => {
+  const numberNamesPerColumn = 20;
+  const numberCols = Math.floor(ary.length / numberNamesPerColumn) + 1;
+
+  const content = [];
+  let col = 0;
+
+  while (col < numberCols) {
+    const colPersonStartIndex = col * numberNamesPerColumn;
+    const colPersonEndIndex = col * numberNamesPerColumn + numberNamesPerColumn;
+    const elements = challengers.slice(colPersonStartIndex, colPersonEndIndex);
+
+    content.push(
+      <div key={col} className={styles.challengerListColumn}>
+        {elements.map(element => (
+          <li key={colPersonStartIndex}>{element}</li>
+        ))}
+      </div>,
+    );
+
+    col += 1;
+  }
+
+  return content;
+};
+
 function Challenge() {
   return (
     <div className={styles.Challenge}>
@@ -177,10 +203,8 @@ function Challenge() {
             <h6 className={styles.centerText}>
               Here is a list of the people that have completed this before you:
             </h6>
-            <ol>
-              {challengers.map(name => (
-                <li key={name}>{name}</li>
-              ))}
+            <ol className={styles.challengerList}>
+              <Content columns={[<MakeColumnsFromArray ary={challengers} />]} />
             </ol>
           </div>,
         ]}
