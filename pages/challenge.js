@@ -27,7 +27,7 @@ export const MakeColumnsFromArray = ({ ary }) => {
     content.push(
       <div key={col} className={styles.challengerListColumn}>
         {elements.map(element => (
-          <li key={colPersonStartIndex}>{element}</li>
+          <li key={element}>{element}</li>
         ))}
       </div>,
     );
