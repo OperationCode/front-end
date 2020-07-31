@@ -4,6 +4,7 @@ import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 import challengers from 'static/operationcode_challenge/names';
+import range from 'lodash/range';
 import styles from './styles/challenge.module.css';
 
 const pageTitle = 'Challenge';
@@ -12,28 +13,24 @@ const RepoLink = 'https://github.com/OperationCode/front-end/';
 const ChallengeLink = `${RepoLink}blob/main/pages/challenge.js`;
 const CompareLink = `${RepoLink}compare`;
 
-export const MakeColumnsFromArray = ({ ary }) => {
+export const NamesColumns = () => {
   const numberNamesPerColumn = 20;
-  const numberCols = Math.floor(ary.length / numberNamesPerColumn) + 1;
+  const numberCols = Math.floor(challengers.length / numberNamesPerColumn) + 1;
+  const columns = range(1, numberCols + 1);
 
-  const content = [];
-  let col = 0;
+  const content = columns.map((columnNumber, index) => {
+    const startIndex = index * numberNamesPerColumn;
+    const endIndex = columnNumber * numberNamesPerColumn;
+    const namesInColumn = challengers.slice(startIndex, endIndex);
 
-  while (col < numberCols) {
-    const colPersonStartIndex = col * numberNamesPerColumn;
-    const colPersonEndIndex = col * numberNamesPerColumn + numberNamesPerColumn;
-    const elements = challengers.slice(colPersonStartIndex, colPersonEndIndex);
-
-    content.push(
-      <div key={col} className={styles.challengerListColumn}>
-        {elements.map(element => (
-          <li key={element}>{element}</li>
+    return (
+      <ol key={columnNumber} start={startIndex + 1} className={styles.challengerListColumn}>
+        {namesInColumn.map(name => (
+          <li key={name}>{name}</li>
         ))}
-      </div>,
+      </ol>
     );
-
-    col += 1;
-  }
+  });
 
   return content;
 };
@@ -203,9 +200,9 @@ function Challenge() {
             <h6 className={styles.centerText}>
               Here is a list of the people that have completed this before you:
             </h6>
-            <ol className={styles.challengerList}>
-              <Content columns={[<MakeColumnsFromArray ary={challengers} />]} />
-            </ol>
+            <div className={styles.challengerListContainer}>
+              <Content columns={[<NamesColumns />]} />
+            </div>
           </div>,
         ]}
       />

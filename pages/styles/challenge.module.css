@@ -23,12 +23,14 @@
   text-align: center;
 }
 
-.Challenge .challengerList {
-  width: 90vw;
-  padding: 0 10px;
+.Challenge .challengerListColumn {
+  padding: 0;
+  align-self: flex-start;
+  flex-basis: 225px;
+  list-style-position: inside;
 }
 
-.Challenge .challengerListColumn {
-  align-self: flex-start;
-  margin: 25px;
+.Challenge .challengerListContainer div {
+  width: 99vw;
+  margin: 0;
 }
