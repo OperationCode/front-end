@@ -75,7 +75,7 @@
     "yup": "^0.29.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.10.4",
+    "@babel/core": "^7.11.0",
     "@babel/plugin-syntax-jsx": "^7.10.4",
     "@babel/preset-env": "^7.10.4",
     "@cypress/code-coverage": "3.8.1",
