@@ -4750,10 +4750,10 @@ axe-core@^3.3.2, axe-core@^3.5.4:
   resolved "https://registry.yarnpkg.com/axe-core/-/axe-core-3.5.5.tgz#84315073b53fa3c0c51676c588d59da09a192227"
   integrity sha512-5P0QZ6J5xGikH780pghEdbEKijCTrruK9KxtPZCFWUpef0f6GipO+xEZ5GKCb020mmqgbiNO6TcA55CriL784Q==
 
-axios-mock-adapter@^1.18.1:
-  version "1.18.1"
-  resolved "https://registry.yarnpkg.com/axios-mock-adapter/-/axios-mock-adapter-1.18.1.tgz#a2ba2638ef513d954793f96bde3e26bd4a1b7940"
-  integrity sha512-kFBZsG1Ma5yxjRGHq5KuuL55mPb7WzFULhypquEhzPg8SH5CXICb+qwC2CCA5u+GQVpiqGPwKSRkd3mBCs6gdw==
+axios-mock-adapter@^1.18.2:
+  version "1.18.2"
+  resolved "https://registry.yarnpkg.com/axios-mock-adapter/-/axios-mock-adapter-1.18.2.tgz#01fa9e88e692e8f1bbc1ad1200dde672486e03c7"
+  integrity sha512-e5aTsPy2Viov22zNpFTlid76W1Scz82pXeEwwCXdtO85LROhHAF8pHF2qDhiyMONLxKyY3lQ+S4UCsKgrlx8Hw==
   dependencies:
     fast-deep-equal "^3.1.1"
     is-buffer "^2.0.3"
