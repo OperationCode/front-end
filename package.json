@@ -82,7 +82,7 @@
     "@mdx-js/loader": "^1.6.6",
     "@next/mdx": "^9.4.4",
     "@operation_code/eslint-plugin-custom-rules": "^1.0.1",
-    "@storybook/addon-a11y": "5.1.11",
+    "@storybook/addon-a11y": "5.3.19",
     "@storybook/addon-actions": "5.1.11",
     "@storybook/addon-backgrounds": "5.1.11",
     "@storybook/addon-info": "5.1.11",
