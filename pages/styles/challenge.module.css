@@ -22,3 +22,15 @@
 .Challenge .centerText {
   text-align: center;
 }
+
+.Challenge .challengerListColumn {
+  padding: 0;
+  align-self: flex-start;
+  flex-basis: 225px;
+  list-style-position: inside;
+}
+
+.Challenge .challengerListContainer div {
+  width: 85vw;
+  margin: 0;
+}
