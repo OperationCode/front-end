@@ -6,7 +6,7 @@ import { createUser } from 'common/constants/api';
 import { getServerErrorMessage } from 'common/utils/api-utils';
 import { validationErrorMessages } from 'common/constants/messages';
 import { capitalizeFirstLetter } from 'common/utils/string-utils';
-import { isMinPasswordStrength, isValidZipcode } from 'common/utils/validator-utils';
+import { isMinPasswordStrength } from 'common/utils/validator-utils';
 import Button from 'components/Button/Button';
 import Form from 'components/Form/Form';
 import Input from 'components/Form/Input/Input';
@@ -19,18 +19,16 @@ const registrationSchema = Yup.object().shape({
     .email(validationErrorMessages.email),
   'confirm-email': Yup.string()
     .required(validationErrorMessages.required)
-    .oneOf([Yup.ref('email')], validationErrorMessages.emailMatch),
+    .oneOf([Yup.ref('email')], validationErrorMessages.emailsMatch),
   password: Yup.string()
     .required(validationErrorMessages.required)
     .test('password-strength', validationErrorMessages.password, isMinPasswordStrength),
   'confirm-password': Yup.string()
     .required(validationErrorMessages.required)
-    .oneOf([Yup.ref('password')], validationErrorMessages.passwordMatch),
+    .oneOf([Yup.ref('password')], validationErrorMessages.passwordsMatch),
   firstName: Yup.string().trim().required(validationErrorMessages.required),
   lastName: Yup.string().trim().required(validationErrorMessages.required),
-  zipcode: Yup.string()
-    .required(validationErrorMessages.required)
-    .test('zipcode', validationErrorMessages.zipcode, isValidZipcode),
+  zipcode: Yup.string().trim().required(validationErrorMessages.required),
 });
 
 RegistrationForm.propTypes = {
@@ -79,7 +77,7 @@ function RegistrationForm({ initialValues, onSuccess }) {
             const fieldName = capitalizeFirstLetter(key);
 
             // example: Email has already been taken.
-            return `${fieldName} ${data[key][0]}.`;
+            return `${fieldName}: ${data[key][0]}.`;
           })
           .join('\n');
 

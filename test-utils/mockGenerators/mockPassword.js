@@ -1,15 +1,48 @@
 import faker from 'faker';
 import { minimumPasswordLength } from '../../common/constants/validations';
 
+const invalidLength = 7;
+const validPasswordRegex = /^[\w]*$/;
+const invalidPasswordRegex = /^[\W]*$/;
+
 /**
  * @description generate a mocked password for registration tests
  *
  * @export
- * @param {boolean} [isValid=true] Determine if the returned password is valid
+ * @param {boolean} [hasMinimumLength=true] Password should have minimum length
+ * @param {boolean} [hasOneLowercaseChar=true] Password should contain a lowercase char
+ * @param {boolean} [hasOneUppercaseChar=true] Password should contain an uppercase char
+ * @param {boolean} [hasOneNumber=true] Password should contain a number
  * @returns {string}
  */
-export default function mockPassword(isValid = true) {
-  return isValid
-    ? `${faker.internet.password(minimumPasswordLength)}!1Aa${faker.internet.password(1)}`
-    : `${faker.internet.password(minimumPasswordLength - 2)}`;
+export default function mockPassword({
+  hasMinimumLength = true,
+  hasOneLowercaseChar = true,
+  hasOneUppercaseChar = true,
+  hasOneNumber = true,
+} = {}) {
+  const isValid = hasMinimumLength && hasOneLowercaseChar && hasOneUppercaseChar && hasOneNumber;
+  let password = '';
+
+  if (isValid) {
+    return faker.internet.password(minimumPasswordLength, false, validPasswordRegex, 'aA1');
+  }
+
+  if (hasOneLowercaseChar) {
+    password += 'a';
+  }
+
+  if (hasOneUppercaseChar) {
+    password += 'A';
+  }
+
+  if (hasOneNumber) {
+    password += '1';
+  }
+
+  password = hasMinimumLength
+    ? faker.internet.password(minimumPasswordLength, false, invalidPasswordRegex, mockPassword)
+    : faker.internet.password(invalidLength, false, invalidPasswordRegex, mockPassword);
+
+  return password;
 }
