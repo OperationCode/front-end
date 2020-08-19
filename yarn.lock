@@ -2785,10 +2785,10 @@
   resolved "https://registry.yarnpkg.com/@next/mdx/-/mdx-9.5.2.tgz#71d28fa3a43270a681a75eabaef8486811e378d0"
   integrity sha512-KJLi1cNrrX0q++e0VIWRDmwnMA2NdG5CKp09YZY1tDn+7wC6Xs4bEScoXIiFThfB4uXSrzrvHUEijDKCoMTabA==
 
-"@next/react-dev-overlay@9.5.3-canary.6":
-  version "9.5.3-canary.6"
-  resolved "https://registry.yarnpkg.com/@next/react-dev-overlay/-/react-dev-overlay-9.5.3-canary.6.tgz#e90755bbd285b426a304790888421258303232f2"
-  integrity sha512-bcI2f1FNptPITpdySYVXXeBEeLEX7zvprWtuc3mFqF9bbpusBnsImW1Osnoy0g/RZctAm7BMwmI87c8w4VCnDA==
+"@next/react-dev-overlay@9.5.3-canary.10":
+  version "9.5.3-canary.10"
+  resolved "https://registry.yarnpkg.com/@next/react-dev-overlay/-/react-dev-overlay-9.5.3-canary.10.tgz#9d75fc0531af3b3113b7e33f44ec3cad5ba73d83"
+  integrity sha512-pWqwaXXL6/pkAG/hDCLaYovS4O3DVAqNxlZ/w/1mcqUX0zjr866cMJ+z+3xWzSVDRC0Au7Q9Ln7PgZVBum5ivQ==
   dependencies:
     "@babel/code-frame" "7.8.3"
     ally.js "1.4.1"
@@ -2801,10 +2801,10 @@
     stacktrace-parser "0.1.10"
     strip-ansi "6.0.0"
 
-"@next/react-refresh-utils@9.5.3-canary.6":
-  version "9.5.3-canary.6"
-  resolved "https://registry.yarnpkg.com/@next/react-refresh-utils/-/react-refresh-utils-9.5.3-canary.6.tgz#9967da8a9cf657d74e0a98882ac4069c1a99961f"
-  integrity sha512-RsPWp0hgbTDRSTiF72FqB+iB542RIFmOt7Mp2zGyUb5aJRLBkptHggKl3tkkPj+En2MFbMxzsUk++Xq3mXiTDA==
+"@next/react-refresh-utils@9.5.3-canary.10":
+  version "9.5.3-canary.10"
+  resolved "https://registry.yarnpkg.com/@next/react-refresh-utils/-/react-refresh-utils-9.5.3-canary.10.tgz#43f5b08d097e63f2e57e162797feb30be09179f4"
+  integrity sha512-pByXU6QeFPfUDCCKzD1ZlaPcPrRWNqfktqckwRzssckgB9s7IYSS+yIuIZg56UJ7UwC6gS8Vs2fwDTvP2y2iWA==
 
 "@nodelib/fs.scandir@2.1.3":
   version "2.1.3"
@@ -11999,10 +11999,10 @@ next-tick@~1.0.0:
   resolved "https://registry.yarnpkg.com/next-tick/-/next-tick-1.0.0.tgz#ca86d1fe8828169b0120208e3dc8424b9db8342c"
   integrity sha1-yobR/ogoFpsBICCOPchCS524NCw=
 
-next@^9.5.3-canary.6:
-  version "9.5.3-canary.6"
-  resolved "https://registry.yarnpkg.com/next/-/next-9.5.3-canary.6.tgz#984aed5d651d38d01e2f2f217fa6977edb7079ad"
-  integrity sha512-Afsp8Yqk1aSYkuCdLzDy0Ipqt+YgBUJGJMR3K9RT+jCpZUxQ536OKGECKaa99QY/ic/9ro+/FtVYyHlkf+utNA==
+next@^9.5.3-canary.10:
+  version "9.5.3-canary.10"
+  resolved "https://registry.yarnpkg.com/next/-/next-9.5.3-canary.10.tgz#b884b9055d422d0656ab56b6a902a0c1b902e539"
+  integrity sha512-nC8vMAVDbclufxBPs0JDxYnAOXaaWM3JmDamwlQTpMNd8FzZN6Pys//Ezxxk1550agrvU/IerzEpl99fEwTULw==
   dependencies:
     "@ampproject/toolbox-optimizer" "2.6.0"
     "@babel/code-frame" "7.8.3"
@@ -12023,8 +12023,8 @@ next@^9.5.3-canary.6:
     "@babel/preset-typescript" "7.9.0"
     "@babel/runtime" "7.9.6"
     "@babel/types" "7.9.6"
-    "@next/react-dev-overlay" "9.5.3-canary.6"
-    "@next/react-refresh-utils" "9.5.3-canary.6"
+    "@next/react-dev-overlay" "9.5.3-canary.10"
+    "@next/react-refresh-utils" "9.5.3-canary.10"
     ast-types "0.13.2"
     babel-plugin-syntax-jsx "6.18.0"
     babel-plugin-transform-define "2.0.0"
@@ -12050,7 +12050,6 @@ next@^9.5.3-canary.6:
     postcss "7.0.32"
     process "0.11.10"
     prop-types "15.7.2"
-    prop-types-exact "1.2.0"
     react-is "16.13.1"
     react-refresh "0.8.3"
     resolve-url-loader "3.1.1"
@@ -13386,15 +13385,6 @@ prompts@^2.0.1:
     kleur "^3.0.3"
     sisteransi "^1.0.4"
 
-prop-types-exact@1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/prop-types-exact/-/prop-types-exact-1.2.0.tgz#825d6be46094663848237e3925a98c6e944e9869"
-  integrity sha512-K+Tk3Kd9V0odiXFP9fwDHUYRyvK3Nun3GVyPapSIs5OBkITAm15W0CPFD/YKTkMUAbc0b9CUwRQp2ybiBIq+eA==
-  dependencies:
-    has "^1.0.3"
-    object.assign "^4.1.0"
-    reflect.ownkeys "^0.2.0"
-
 prop-types@15.7.2, prop-types@^15.5.10, prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2, prop-types@^15.7.2:
   version "15.7.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
@@ -14199,11 +14189,6 @@ redux@^4.0.1:
   dependencies:
     loose-envify "^1.4.0"
     symbol-observable "^1.2.0"
-
-reflect.ownkeys@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/reflect.ownkeys/-/reflect.ownkeys-0.2.0.tgz#749aceec7f3fdf8b63f927a04809e90c5c0b3460"
-  integrity sha1-dJrO7H8/34tj+SegSAnpDFwLNGA=
 
 refractor@^2.4.1:
   version "2.10.1"
