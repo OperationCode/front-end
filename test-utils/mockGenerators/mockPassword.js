@@ -22,10 +22,12 @@ export default function mockPassword({
   hasOneNumber = true,
 } = {}) {
   const isValid = hasMinimumLength && hasOneLowercaseChar && hasOneUppercaseChar && hasOneNumber;
+
   let password = '';
 
   if (isValid) {
-    return faker.internet.password(minimumPasswordLength, false, validPasswordRegex, 'aA1');
+    password = faker.internet.password(minimumPasswordLength, false, validPasswordRegex, 'aA1');
+    return password;
   }
 
   if (hasOneLowercaseChar) {
@@ -41,8 +43,8 @@ export default function mockPassword({
   }
 
   password = hasMinimumLength
-    ? faker.internet.password(minimumPasswordLength, false, invalidPasswordRegex, mockPassword)
-    : faker.internet.password(invalidLength, false, invalidPasswordRegex, mockPassword);
+    ? faker.internet.password(minimumPasswordLength, false, invalidPasswordRegex, password)
+    : faker.internet.password(invalidLength, false, invalidPasswordRegex, password);
 
   return password;
 }

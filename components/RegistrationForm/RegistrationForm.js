@@ -13,6 +13,14 @@ import Input from 'components/Form/Input/Input';
 import Alert from 'components/Alert/Alert';
 import styles from './RegistrationForm.module.css';
 
+/**
+ * Zipcode issues solved via a trim check from Yup.
+ *
+ * This may seem counter-intuitive, but it's difficult to get a zipcode regex correctly.
+ * See https://stackoverflow.com/questions/578406/what-is-the-ultimate-postal-code-and-zip-regex
+ * for more info
+ *
+ */
 const registrationSchema = Yup.object().shape({
   email: Yup.string()
     .required(validationErrorMessages.required)
