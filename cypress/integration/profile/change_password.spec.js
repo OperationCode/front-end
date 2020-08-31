@@ -40,7 +40,7 @@ describe('change_password', () => {
     cy.get('#newPassword2').type(`${existingUser.password}1`);
     cy.get('button[type="submit"]').click();
 
-    cy.get('div[role="alert"]').should('contain', validationErrorMessages.passwordMatch);
+    cy.get('div[role="alert"]').should('contain', validationErrorMessages.passwordsMatch);
   });
 
   it('should NOT be able to change password when server is unreachable', () => {

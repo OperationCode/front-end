@@ -136,9 +136,9 @@ describe('join', () => {
   });
 
   it('should display strength error with a short password', () => {
-    const password = mockPassword({ hasMinimumLength: false });
+    const newPassword = mockPassword({ hasMinimumLength: false });
 
-    cy.get(inputFields.password).type(password).blur();
+    cy.get(inputFields.password).type(newPassword).blur();
 
     cy.get('div[role="alert"]')
       .should('have.length', 1)
