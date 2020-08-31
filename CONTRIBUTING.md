@@ -96,13 +96,13 @@ Here is an alphabetically-sorted list of technologies this project leverages:
 
 - [Babel](https://babeljs.io/) - JavaScript compiler to unify all the different versions of JS that may have been used or will be used in the future. [Here's a blog post from Scotch.io on why JavaScript utilizes "transpiling" with Babel](https://scotch.io/tutorials/javascript-transpilers-what-they-are-why-we-need-them).
 - [CSS Modules](https://github.com/css-modules/css-modules) - CSS Modules allow us to encapsulate CSS within components. Instead of HTML/CSS - our project structure is basically JSX/CSS.
-- [Cypress](https://cypress.io/) - Hand-picked resources [here](https://github.com/OperationCode/front-end/tree/master/cypress/README.md).
+- [Cypress](https://cypress.io/) - Hand-picked resources [here](https://github.com/OperationCode/front-end/tree/main/cypress/README.md).
 - [Jest](https://jestjs.io/) - A JavaScript testing framework from Facebook. We use it for all of our unit and some of our integration/regression tests.
 - [Next.js](https://nextjs.org/) - Next is a framework for creating ["server-side rendered"](https://medium.freecodecamp.org/demystifying-reacts-server-side-render-de335d408fe4) React applications with a lot of performance and [search engine optimizations](https://searchengineland.com/guide/what-is-seo) out-of-the-box.
 - [Node.js](https://www.nodejs.org/) - Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine. React utilizes a tiny Node/Express server for it's development environment.
 - [PostCSS](#PostCSS) - Extensive documentation listed below...
 - [React.js](https://facebook.github.io/react/) - Facebook's popular JavaScript front-end framework.
-- [Storybook](https://storybook.js.org) - Storybook acts as a "component workbench" and source for component documentation. You can learn more about Storybook on your own [here](https://www.learnstorybook.com/). You can see our Storybook here: [![Storybook](https://github.com/storybooks/brand/blob/master/badge/badge-storybook.svg)](http://storybook.operationcode.org)
+- [Storybook](https://storybook.js.org) - Storybook acts as a "component workbench" and source for component documentation. You can learn more about Storybook on your own [here](https://www.learnstorybook.com/). You can see our Storybook here: [![Storybook](https://github.com/storybookjs/brand/blob/8d28584c89959d7075c237e9345955c895048977/badge/badge-storybook.svg)](http://storybook.operationcode.org)
 - [Webpack](https://webpack.js.org/) - The premier module bundler for JavaScript. Read [this article](https://survivejs.com/webpack/what-is-webpack/) for more information.
 - [Yarn](https://yarnpkg.com/) - Facebook's open source JavaScript package manager. It has very subtle differences from npm, but essentially does the same thing.
 
@@ -182,7 +182,7 @@ Which will output the following when deployed:
 }
 ```
 
-- [PostCSS Export Custom Variables](https://github.com/jonathantneal/postcss-export-custom-variables): We use this plug-in simply to export our collection of CSS variables to [common/styles/themeMap.js](https://github.com/OperationCode/front-end/blob/master/common/styles/themeMap.js) so that they're leveragable within any JavaScript context.
+- [PostCSS Export Custom Variables](https://github.com/jonathantneal/postcss-export-custom-variables): We use this plug-in simply to export our collection of CSS variables to [common/styles/themeMap.js](https://github.com/OperationCode/front-end/blob/main/common/styles/themeMap.js) so that they're leveragable within any JavaScript context.
 
 - [PostCSS Import](https://github.com/postcss/postcss-import): This plug-in essentially tries to emulate the existing [CSS Import spec](https://developer.mozilla.org/en-US/docs/Web/CSS/@import) allowing for modularization and concatenation of CSS files.
 
@@ -210,15 +210,15 @@ Now that you've installed your dependencies and your new branch in your fork, yo
 
 ### Returning To Work After A Break
 
-Some issues take awhile to code a solution for. It is very normal to take a large amount of time to turn in well-written work that resolves an issue! In the meantime, there could be many other people contributing to the code base. Since we use Git, you'll want to keep you project up-to-date with the `master` branch so there are no [merge conflicts](https://help.github.com/articles/about-merge-conflicts/) to resolve when you make your pull request.
+Some issues take awhile to code a solution for. It is very normal to take a large amount of time to turn in well-written work that resolves an issue! In the meantime, there could be many other people contributing to the code base. Since we use Git, you'll want to keep you project up-to-date with the `main` branch so there are no [merge conflicts](https://help.github.com/articles/about-merge-conflicts/) to resolve when you make your pull request.
 
-1. [Keep your fork in sync with Operation Code's master branch.](https://help.github.com/articles/syncing-a-fork/)
+1. [Keep your fork in sync with Operation Code's main branch.](https://help.github.com/articles/syncing-a-fork/)
 2. Run `yarn` to install any updated dependencies
 3. Run `yarn dev` to restart local development environment
 
 ### Knowing The Tools At Your Disposal
 
-You can see interactive documentation on all of our components via [![Storybook](https://github.com/storybooks/brand/blob/master/badge/badge-storybook.svg)](http://storybook.operationcode.org)
+You can see interactive documentation on all of our components via [![Storybook](https://github.com/storybookjs/brand/blob/8d28584c89959d7075c237e9345955c895048977/badge/badge-storybook.svg)](http://storybook.operationcode.org)
 
 ### File Structure
 
@@ -303,10 +303,10 @@ yarn test
 # Update all snapshot tests
 yarn test -u OR yarn test:update-snaps
 
-# Only run tests for files changed from master branch
+# Only run tests for files changed from main branch
 yarn test:changes
 
-# Start a test runner for files changed from master branch
+# Start a test runner for files changed from main branch
 yarn test:changes:watch
 
 # Start a test runner for all tests
@@ -399,7 +399,7 @@ Thread model: posix
 - Paste the code below into a terminal window to install homebrew.
 
 ```
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/main/install)"
 ```
 
 #### Git
@@ -435,7 +435,7 @@ The other option is to install the nodejs package from the official website. Sim
 
 Install the LTS version [Node.js](https://nodejs.org/en/download/).
 
-Follow the steps found in the [Quick Start Guide](https://github.com/OperationCode/operationcode_frontend/blob/master/CONTRIBUTING.md#quick-start-guide)
+Follow the steps found in the [Quick Start Guide](https://github.com/OperationCode/operationcode_frontend/blob/main/CONTRIBUTING.md#quick-start-guide)
 
 If you have any errors, make sure Node, npm, and Yarn is in your environment path by typing `PATH` in CMDER.
 Look for any path like the ones listed below. `{USER}` is your username you used to login into the computer.
@@ -461,7 +461,7 @@ There are many ways and guides to install NodeJS on Windows. We recommend using 
 The resources below are from Microsoft.
 
 - [NodeJS On Windows Guidelines](https://github.com/Microsoft/nodejs-guidelines)
-- [Configuring your Windows development environment for NodeJS](https://github.com/Microsoft/nodejs-guidelines/blob/master/windows-environment.md#configuring-your-windows-development-environment)
+- [Configuring your Windows development environment for NodeJS](https://github.com/Microsoft/nodejs-guidelines/blob/main/windows-environment.md#configuring-your-windows-development-environment)
 
 One way to install NodeJS for windows is to simply download and execute the MSI Package from the official downloads page.
 

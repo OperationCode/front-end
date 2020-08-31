@@ -24,7 +24,6 @@ exports[`DonateSection should render with no props passed passed 1`] = `
     className="topMargin"
     fullWidth={false}
     href="/donate"
-    shouldPrefetch={false}
     theme="primary"
   >
     Donate Now

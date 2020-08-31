@@ -59,7 +59,7 @@ const setLogRocketFingerprint = () => {
 class OperationCodeApp extends App {
   componentDidMount() {
     /* Analytics */
-    // TODO: Leverage master-build-time-only env vars instead of window check
+    // TODO: Leverage prod-build-time-only env vars instead of window check
     if (isProduction && window.location.host.includes('operationcode.org')) {
       Sentry.init({ dsn: clientTokens.SENTRY_DSN, release: `front-end@${version}` });
       LogRocket.init(`${clientTokens.LOGROCKET}/operation-code`);
@@ -138,7 +138,7 @@ class OperationCodeApp extends App {
 
 Router.events.on('routeChangeComplete', url => gtag.pageView(url));
 
-// Fixes Next CSS route change bug: https://github.com/zeit/next-plugins/issues/282
+// Fixes Next CSS route change bug: https://github.com/vercel/next-plugins/issues/282
 if (!isProduction) {
   Router.events.on('routeChangeComplete', () => {
     const path = '/_next/static/chunks/styles.chunk.module.css';

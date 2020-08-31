@@ -13,7 +13,6 @@ LinkButton.propTypes = {
   'data-testid': string,
   fullWidth: bool,
   href: string.isRequired,
-  shouldPrefetch: bool,
   theme: oneOf(['primary', 'secondary']),
 };
 
@@ -22,7 +21,6 @@ LinkButton.defaultProps = {
   className: undefined,
   'data-testid': undefined,
   fullWidth: false,
-  shouldPrefetch: false,
   theme: 'primary',
 };
 
@@ -33,7 +31,6 @@ export default function LinkButton({
   'data-testid': testID,
   fullWidth,
   href,
-  shouldPrefetch,
   theme,
 }) {
   const linkButtonClassNames = classNames(styles.Button, className, styles[theme], {
@@ -53,7 +50,7 @@ export default function LinkButton({
       {children}
     </OutboundLink>
   ) : (
-    <Link href={href} prefetch={shouldPrefetch}>
+    <Link href={href}>
       <a className={linkButtonClassNames} data-testid={testID} href={href}>
         {children}
       </a>

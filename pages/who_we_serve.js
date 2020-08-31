@@ -59,7 +59,7 @@ function WhoWeServe(props) {
   const { memberCount } = props;
 
   return (
-    <>
+    <div className={styles.WhoWeServe}>
       <Head title="Who We Serve" />
 
       <HeroBanner
@@ -150,7 +150,7 @@ function WhoWeServe(props) {
       />
 
       <JoinSection />
-    </>
+    </div>
   );
 }
 

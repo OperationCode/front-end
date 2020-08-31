@@ -7,7 +7,6 @@ exports[`NavMobile should render 1`] = `
 >
   <Link
     href="/"
-    prefetch={false}
   >
     <button
       className="button logoButton"

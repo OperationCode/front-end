@@ -51,7 +51,7 @@ Podcast.getInitialProps = async () => {
 
 function Podcast({ episodes, errorMessage }) {
   return (
-    <>
+    <div className={styles.Podcast}>
       <Head title={pageTitle} />
 
       <HeroBanner title={pageTitle} />
@@ -101,7 +101,7 @@ function Podcast({ episodes, errorMessage }) {
           </div>,
         ]}
       />
-    </>
+    </div>
   );
 }
 

@@ -10,7 +10,7 @@ const pageTitle = 'History';
 
 function History() {
   return (
-    <>
+    <div className={styles.History}>
       <Head title={pageTitle} />
       <HeroBanner
         backgroundImageSource={`${s3}heroBanners/colin-powell.jpg`}
@@ -35,7 +35,7 @@ function History() {
           </section>,
         ]}
       />
-    </>
+    </div>
   );
 }
 

@@ -4,19 +4,16 @@ import flattenDepth from 'lodash/flattenDepth';
 const contactLink = {
   name: 'Contact Us',
   href: '/contact',
-  shouldPrefetch: false,
 };
 
 const faqLink = {
   name: 'FAQ',
   href: '/faq',
-  shouldPrefetch: false,
 };
 
 const podcastLink = {
   name: 'Podcast',
   href: '/podcast',
-  shouldPrefetch: false,
 };
 
 const getInvolvedLink = {
@@ -57,7 +54,6 @@ const aboutUs = {
 
 const events = {
   ...eventsLink,
-  shouldPrefetch: false,
 };
 
 const getInvolved = {
@@ -77,13 +73,11 @@ const getInvolved = {
 const profile = {
   name: 'Profile',
   href: '/profile',
-  shouldPrefetch: false,
 };
 
 const logout = {
   name: 'Logout',
   href: '/login?loggedOut=true',
-  shouldPrefetch: false,
 };
 
 // MARK: Nav items
@@ -186,7 +180,7 @@ export const footerItems = {
     //   analyticsEventLabel: 'Cookies',
     // },
     {
-      // NOTE: If you change this route, please update the redirect in `now.json` as well
+      // NOTE: If you change this route, please update the redirect in `vercel.json` as well
       href: 'https://www.iubenda.com/privacy-policy/8174861',
       name: 'Privacy',
       analyticsEventLabel: 'Privacy',

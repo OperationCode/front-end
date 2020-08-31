@@ -20,7 +20,7 @@ describe('ResourceCard', () => {
     console.warn = realConsoleWarn;
   });
 
-  it('fires appropriate method when upvote button clicked', () => {
+  it.skip('fires appropriate method when upvote button clicked', () => {
     const onUpvoteMock = jest.fn();
     const onDownvoteMock = jest.fn();
 

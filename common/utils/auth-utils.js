@@ -22,7 +22,7 @@ export const logout = ({ routeTo = '/login', shouldRedirect = true } = {}) => {
  * @export
  * @param {{
  *   pathname: string,
- *   query: string,
+ *   query: Object.<string, any>,
  *   asPath: string,
  *   req: Object.<string, any>,
  *   res: Object.<string, any>,
@@ -49,7 +49,7 @@ export const authenticate = ctx => {
  * @param {string} path
  * @param {{
  *   pathname: string,
- *   query: string,
+ *   query: Object.<string, any>,
  *   asPath: string,
  *   req: Object.<string, any>,
  *   res: Object.<string, any>,

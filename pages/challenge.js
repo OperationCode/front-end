@@ -4,17 +4,40 @@ import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 import challengers from 'static/operationcode_challenge/names';
+import range from 'lodash/range';
 import styles from './styles/challenge.module.css';
 
 const pageTitle = 'Challenge';
 
 const RepoLink = 'https://github.com/OperationCode/front-end/';
-const ChallengeLink = `${RepoLink}blob/master/pages/challenge.js`;
+const ChallengeLink = `${RepoLink}blob/main/pages/challenge.js`;
 const CompareLink = `${RepoLink}compare`;
+
+export const NamesColumns = () => {
+  const numberNamesPerColumn = 20;
+  const numberCols = Math.floor(challengers.length / numberNamesPerColumn) + 1;
+  const columns = range(1, numberCols + 1);
+
+  const content = columns.map((columnNumber, index) => {
+    const startIndex = index * numberNamesPerColumn;
+    const endIndex = columnNumber * numberNamesPerColumn;
+    const namesInColumn = challengers.slice(startIndex, endIndex);
+
+    return (
+      <ol key={columnNumber} start={startIndex + 1} className={styles.challengerListColumn}>
+        {namesInColumn.map(name => (
+          <li key={name}>{name}</li>
+        ))}
+      </ol>
+    );
+  });
+
+  return content;
+};
 
 function Challenge() {
   return (
-    <>
+    <div className={styles.Challenge}>
       <Head title={pageTitle} />
 
       <HeroBanner title={`Operation Code ${pageTitle}`}>
@@ -69,9 +92,10 @@ function Challenge() {
 
               <li>
                 Now that you have a fork of the &quot;repo&quot;, it&apos;s time to edit the
-                necessary file to add your name to the list below! Inside the <code>/static</code>
-                {` folder`}, click on the <code>operationcode_challenge</code> directory and click
-                on the file called <code>names.js</code>. On the right-hand side, you should see
+                necessary file to add your name to the list below! Go to the <code>/public</code>
+                {` folder`}, then the <code>/static</code> {` folder`}, click on the
+                <code>operationcode_challenge</code> directory and click on the file called
+                <code>names.js</code>. On the right-hand side, you should see
                 <img
                   src={`${s3}github_demo/pencil-icon.png`}
                   alt="a button with a pencil icon"
@@ -135,7 +159,7 @@ function Challenge() {
                 the text:&nbsp; &apos;compare across forks&apos; - click it. Now, click on the
                 selector that says &apos; head fork&apos; at the beginning, and choose your fork.
                 Click the next selector to the right, and choose your new branch. Now, you&apos;re
-                comparing Operation Code&apos;s master branch with your new fork&apos;s branch, and
+                comparing Operation Code&apos;s main branch with your new fork&apos;s branch, and
                 you may click
                 <img
                   src={`${s3}github_demo/pr-button.png`}
@@ -176,15 +200,13 @@ function Challenge() {
             <h6 className={styles.centerText}>
               Here is a list of the people that have completed this before you:
             </h6>
-            <ol>
-              {challengers.map(name => (
-                <li key={name}>{name}</li>
-              ))}
-            </ol>
+            <div className={styles.challengerListContainer}>
+              <Content columns={[<NamesColumns />]} />
+            </div>
           </div>,
         ]}
       />
-    </>
+    </div>
   );
 }
 

@@ -11,7 +11,7 @@ exports[`ThemedReactSelect should render with required props 1`] = `
     onTouchEnd={[Function]}
   >
     <div
-      className=" css-1hwfws3"
+      className=" css-g1d714-ValueContainer"
     >
       <div
         className=" css-1wa3eu0-placeholder"
@@ -19,7 +19,7 @@ exports[`ThemedReactSelect should render with required props 1`] = `
         Select...
       </div>
       <div
-        className="css-1g6gooi"
+        className="css-b8ldur-Input"
       >
         <div
           className=""
@@ -77,7 +77,7 @@ exports[`ThemedReactSelect should render with required props 1`] = `
       </div>
     </div>
     <div
-      className=" css-1wy0on6"
+      className=" css-1hb7zxy-IndicatorsContainer"
     >
       <span
         className=" css-1okebmr-indicatorSeparator"
@@ -90,7 +90,7 @@ exports[`ThemedReactSelect should render with required props 1`] = `
       >
         <svg
           aria-hidden="true"
-          className="css-19bqh2r"
+          className="css-6q0nyr-Svg"
           focusable="false"
           height={20}
           viewBox="0 0 20 20"

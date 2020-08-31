@@ -36,12 +36,12 @@ const featuredLinksArray = [
 
 function Home() {
   return (
-    <>
+    <div className={styles.Home}>
       <Head title="Home" />
 
       <HeroBanner
-        backgroundImageSource={`${s3}redesign/heroBanners/homepage.jpg`}
         className={styles.hero}
+        backgroundImageSource={`${s3}redesign/heroBanners/homepage.jpg`}
         isFullViewportHeight
         title="Deploy The Future"
       >
@@ -115,7 +115,7 @@ function Home() {
       <SponsorsSection />
 
       <JoinSection />
-    </>
+    </div>
   );
 }
 

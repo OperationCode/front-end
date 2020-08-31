@@ -1,53 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Accordion FAQAccordion 1`] = `
-<article
-  className="Card Accordion FAQAccordion"
->
-  <div
-    className="headingContainer"
-  >
-    <h6>
-      Test Title
-    </h6>
-  </div>
-  <button
-    aria-controls="content-1"
-    aria-expanded={false}
-    className="accordionToggleButton"
-    data-testid="Accordion Toggle Button"
-    id="accordion-control-1"
-    onClick={[Function]}
-    type="button"
-  >
-    <span
-      className="ScreenReaderOnly"
-      data-testid="SCREEN_READER_ONLY"
-    >
-      Show more
-    </span>
-    <svg
-      className="icon"
-    />
-  </button>
-  <section
-    aria-hidden={true}
-    className="accordionContent invisible"
-    data-testid="Accordion Content"
-    id="content-1"
-    style={
-      Object {
-        "display": "none",
-      }
-    }
-  >
-    <p>
-      Test Content!!!
-    </p>
-  </section>
-</article>
-`;
-
 exports[`Storyshots Accordion default 1`] = `
 <article
   className="Card Accordion"

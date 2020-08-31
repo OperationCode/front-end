@@ -9,7 +9,7 @@ const pageTitle = 'Chapter Leaders';
 
 function ChapterLeader() {
   return (
-    <>
+    <div className={styles.ChapterLeader}>
       <Head title={pageTitle} />
 
       <HeroBanner title={pageTitle}>
@@ -97,7 +97,7 @@ function ChapterLeader() {
           </div>,
         ]}
       />
-    </>
+    </div>
   );
 }
 

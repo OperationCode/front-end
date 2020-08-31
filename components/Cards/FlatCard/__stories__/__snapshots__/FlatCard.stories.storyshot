@@ -14,7 +14,7 @@ exports[`Storyshots Cards/FlatCard default 1`] = `
       className="children"
     >
       
-            David Molina is Founder & Board Chairman of Operation Code and self-taught himself Ruby
+            David Molina is Founder &amp; Board Chairman of Operation Code and self-taught himself Ruby
             on Rails writing the first line of code for operationcode.org to petition Congress to
             expand the New GI Bill to include coding schools, a benefit he couldn’t use after
             exiting Dover AFB after 12 years in uniform. An entrepreneur, David has built numerous

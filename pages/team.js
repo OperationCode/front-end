@@ -1,4 +1,5 @@
 import { arrayOf, object, string } from 'prop-types';
+import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import { getTeamMembersPromise } from 'common/constants/api';
 import { s3 } from 'common/constants/urls';
@@ -41,8 +42,11 @@ Team.getInitialProps = async () => {
 
 function Team({ boardMembers, errorMessage }) {
   return (
-    <div>
+    <div className={styles.Team}>
+      <Head title="Team" />
+
       <HeroBanner title="The Team" backgroundImageSource={`${s3}redesign/heroBanners/team.jpg`} />
+
       <Content
         title="Our Board"
         hasTitleUnderline

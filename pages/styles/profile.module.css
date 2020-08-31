@@ -1,4 +1,4 @@
-.actionItems {
+.Profile .actionItems {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -7,6 +7,6 @@
   text-align: center;
 }
 
-.actionItems > a {
+.Profile .actionItems > a {
   margin: 1rem;
 }

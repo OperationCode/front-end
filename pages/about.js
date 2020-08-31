@@ -11,13 +11,13 @@ const pageTitle = 'About Us';
 
 function About() {
   return (
-    <>
+    <div className={styles.About}>
       <Head title={pageTitle} />
 
       <HeroBanner
         backgroundImageSource={`${s3}redesign/heroBanners/about.jpg`}
-        title={pageTitle}
         className={styles.hero}
+        title={pageTitle}
       />
 
       <Content
@@ -184,7 +184,7 @@ function About() {
           />,
         ]}
       />
-    </>
+    </div>
   );
 }
 

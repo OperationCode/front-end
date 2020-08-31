@@ -1,47 +1,25 @@
-const withSourceMaps = require('@zeit/next-source-maps')();
-const withBundleAnalyzer = require('@zeit/next-bundle-analyzer');
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+});
 const withMDX = require('@next/mdx')({
   extension: /\.mdx$/,
 });
 const svgoConfig = require('./common/config/svgo');
 
 const nextConfig = withBundleAnalyzer({
-  // For now.sh
-  // see: https://zeit.co/guides/deploying-nextjs-with-now/
+  // For Vercel
+  // see: https://vercel.com/guides/deploying-nextjs-with-vercel
   target: 'serverless',
 
-  // Bundle Analyzer Config (only used when running `yarn build:analyze`)
-  analyzeServer: process.env.ANALYZE,
-  analyzeBrowser: process.env.ANALYZE,
-  bundleAnalyzerConfig: {
-    server: {
-      analyzerMode: 'server',
-      analyzerPort: 8888,
-    },
-    browser: {
-      analyzerMode: 'server',
-      analyzerPort: 8889,
-    },
+  experimental: {
+    productionBrowserSourceMaps: true,
   },
 
   // eslint-disable-next-line unicorn/prevent-abbreviations
-  webpack: (config, { dev }) => {
+  webpack: config => {
     // Fixes npm packages that depend on `fs` module
     // eslint-disable-next-line no-param-reassign
     config.node = { fs: 'empty' };
-
-    if (dev) {
-      // eslint-disable-next-line global-require
-      const FilterWarningsPlugin = require('webpack-filter-warnings-plugin');
-
-      // Filters Mini CSS Extract Plugin bug
-      // https://github.com/webpack-contrib/mini-css-extract-plugin/issues/250#issuecomment-415345126
-      config.plugins.push(
-        new FilterWarningsPlugin({
-          exclude: /mini-css-extract-plugin[^]*Conflicting order between:/,
-        }),
-      );
-    }
 
     config.module.rules.push(
       {
@@ -96,4 +74,4 @@ const nextConfig = withBundleAnalyzer({
   },
 });
 
-module.exports = withSourceMaps(withMDX(nextConfig));
+module.exports = withMDX(nextConfig);

@@ -1,3 +1,6 @@
+/**
+ * @type {import("eslint").Linter.Config}
+ */
 module.exports = {
   extends: [
     'airbnb',
@@ -238,12 +241,18 @@ module.exports = {
         ignoreUrls: true,
       },
     ],
-    'multiline-ternary': ['error', 'always-multiline'],
+    'multiline-ternary': 'off',
     'no-console': 'warn',
     'no-restricted-imports': [
       'error',
       {
         paths: [
+          {
+            name: 'lodash',
+            importNames: ['default'],
+            message: `Please add an import line for each method you want to use instead.\n
+             Example: import drop from 'lodash/drop';`,
+          },
           {
             name: 'react-select',
             message: 'Please use `components/Form/Select/ThemedReactSelect` instead.',

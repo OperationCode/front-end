@@ -11,7 +11,7 @@ const pageTitle = 'Branding';
 
 function Branding() {
   return (
-    <>
+    <div className={styles.Branding}>
       <Head title={pageTitle} />
 
       <HeroBanner isFullViewportHeight title={pageTitle}>
@@ -37,7 +37,7 @@ function Branding() {
             analyticsEventLabel="Branding EPS Download"
             href={`${s3}Operation-Code-Logo.eps`}
           >
-            Download master EPS file
+            Download main EPS file
           </OutboundLink>
         </p>
       </HeroBanner>
@@ -45,7 +45,7 @@ function Branding() {
       <LogoSection />
       <ColorSection />
       <FontSection />
-    </>
+    </div>
   );
 }
 

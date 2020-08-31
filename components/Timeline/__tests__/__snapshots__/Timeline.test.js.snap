@@ -446,7 +446,7 @@ exports[`Timeline should render with no props passed passed 1`] = `
               alt="Operation Code Old GitHub Contributing Guide"
               analyticsEventLabel="History Link"
               hasIcon={true}
-              href="https://github.com/OperationCode/operationcode/blob/master/CONTRIBUTING.md"
+              href="https://github.com/OperationCode/operationcode/blob/main/CONTRIBUTING.md"
             >
               contributing guide
             </OutboundLink>
