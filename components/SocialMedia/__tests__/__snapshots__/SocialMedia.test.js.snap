@@ -30,6 +30,15 @@ exports[`SocialMedia should render with no props passed passed 1`] = `
     }
   />
   <SocialMediaItem
+    href="https://www.youtube.com/channel/UCAoJt4a_KEBmgXfoQUrNbSA"
+    name="YouTube"
+    svg={
+      <Svg
+        className="logo"
+      />
+    }
+  />
+  <SocialMediaItem
     href="https://www.linkedin.com/school/operationcode/"
     name="LinkedIn"
     svg={
