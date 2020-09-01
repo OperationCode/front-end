@@ -5,11 +5,10 @@ import { passwordStrengthRegex } from '../constants/validations';
  * 1. one lowercase letter
  * 2. one uppercase letter
  * 3. one number
- * 4. minimum 8 characters
  *
  * @param {string} val
  * @return {boolean} true if min requirements are met
  */
-export function isMinPasswordStrength(value) {
+export function hasRequiredCharacters(value) {
   return passwordStrengthRegex.test(value);
 }

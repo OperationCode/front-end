@@ -3,7 +3,6 @@ import { fireEvent, render, waitFor } from '@testing-library/react';
 import { networkErrorMessages } from 'common/constants/messages';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 import mockUser from 'test-utils/mockGenerators/mockUser';
-/* import mockPassword from 'test-utils/mockGenerators/mockPassword'; */
 import OperationCodeAPIMock from 'test-utils/mocks/apiMock';
 import RegistrationForm from '../RegistrationForm';
 

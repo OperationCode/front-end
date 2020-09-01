@@ -1,7 +1,6 @@
 import faker from 'faker';
 import { minimumPasswordLength } from '../../common/constants/validations';
 
-const invalidLength = 7;
 const validPasswordRegex = /^[\w]*$/;
 const invalidPasswordRegex = /^[\W]*$/;
 
@@ -44,7 +43,7 @@ export default function mockPassword({
 
   password = hasMinimumLength
     ? faker.internet.password(minimumPasswordLength, false, invalidPasswordRegex, password)
-    : faker.internet.password(invalidLength, false, invalidPasswordRegex, password);
+    : faker.internet.password(minimumPasswordLength - 1, false, invalidPasswordRegex, password);
 
   return password;
 }

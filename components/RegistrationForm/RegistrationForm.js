@@ -6,7 +6,8 @@ import { createUser } from 'common/constants/api';
 import { getServerErrorMessage } from 'common/utils/api-utils';
 import { validationErrorMessages } from 'common/constants/messages';
 import { capitalizeFirstLetter } from 'common/utils/string-utils';
-import { isMinPasswordStrength } from 'common/utils/validator-utils';
+import { minimumPasswordLength } from 'common/constants/validations';
+import { hasRequiredCharacters } from 'common/utils/validator-utils';
 import Button from 'components/Button/Button';
 import Form from 'components/Form/Form';
 import Input from 'components/Form/Input/Input';
@@ -30,7 +31,8 @@ const registrationSchema = Yup.object().shape({
     .oneOf([Yup.ref('email')], validationErrorMessages.emailsMatch),
   password: Yup.string()
     .required(validationErrorMessages.required)
-    .test('password-strength', validationErrorMessages.password, isMinPasswordStrength),
+    .min(minimumPasswordLength, validationErrorMessages.password)
+    .test('password-strength', validationErrorMessages.password, hasRequiredCharacters),
   'confirm-password': Yup.string()
     .required(validationErrorMessages.required)
     .oneOf([Yup.ref('password')], validationErrorMessages.passwordsMatch),

@@ -9,13 +9,15 @@ import Alert from 'components/Alert/Alert';
 import { CHANGE_PASSWORD_FORM_ERROR } from 'common/constants/testIDs';
 import { validationErrorMessages } from 'common/constants/messages';
 import { getServerErrorMessage } from 'common/utils/api-utils';
-import { isMinPasswordStrength } from 'common/utils/validator-utils';
+import { minimumPasswordLength } from 'common/constants/validations';
+import { hasRequiredCharacters } from 'common/utils/validator-utils';
 import styles from './ChangePasswordForm.module.css';
 
 const passwordResetSubmitSchema = Yup.object().shape({
   newPassword1: Yup.string()
     .required(validationErrorMessages.required)
-    .test('password-strength', validationErrorMessages.password, isMinPasswordStrength),
+    .min(minimumPasswordLength, validationErrorMessages.password)
+    .test('password-strength', validationErrorMessages.password, hasRequiredCharacters),
   newPassword2: Yup.string()
     .required(validationErrorMessages.required)
     .oneOf([Yup.ref('newPassword1')], validationErrorMessages.passwordsMatch),
