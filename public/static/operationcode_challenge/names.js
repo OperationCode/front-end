@@ -49,5 +49,7 @@ export default [
     'Seanrad',
     'David Bledsoe',
     'Sairina Merino Tsui',
-    'Justin Reeves'
+    'Justin Reeves',
+    'Yusoof Moh',
+    'Aditya Goparaju'
 ]
