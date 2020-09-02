@@ -1,8 +1,8 @@
 import { validationErrorMessages } from '../../common/constants/messages';
-import { minimumPasswordLength } from '../../common/constants/validations';
 import existingUser from '../../test-utils/mocks/existingUser';
 import mockUser from '../../test-utils/mockGenerators/mockUser';
 
+const validUser = mockUser();
 const inputFields = {
   email: 'input#email',
   confirmEmail: 'input#confirm-email',
@@ -11,6 +11,32 @@ const inputFields = {
   firstName: 'input#firstName',
   lastName: 'input#lastName',
   zipcode: 'input#zipcode',
+};
+
+const assertError = ({
+  numberOfErrors = 1,
+  errorMessage = validationErrorMessages.required,
+} = {}) => {
+  cy.get('div[role="alert"]').should('have.length', numberOfErrors).should('contain', errorMessage);
+};
+
+const assertFailedLogin = ({
+  numberOfErrors = 1,
+  errorMessage = validationErrorMessages.required,
+  shouldWait = false,
+  routeToWaitFor = '@postRegister',
+} = {}) => {
+  cy.get('button[type="submit"]').click();
+
+  if (shouldWait) {
+    cy.wait(routeToWaitFor);
+  }
+
+  cy.url().should('contain', '/join');
+
+  assertError({ numberOfErrors, errorMessage });
+
+  cy.getCookies().should('have.length', 0);
 };
 
 describe('join', () => {
@@ -24,79 +50,87 @@ describe('join', () => {
     cy.get('h1').should('have.text', 'Join');
   });
 
-  it('should be able to register with valid data', () => {
-    const newUser = mockUser();
+  /**
+   * Test Invalid Entries
+   */
 
-    cy.get(inputFields.email).type(newUser.email);
-    cy.get(inputFields.confirmEmail).type(newUser.email);
-    cy.get(inputFields.password).type(newUser.password);
-    cy.get(inputFields.confirmPassword).type(newUser.password);
-    cy.get(inputFields.firstName).type(newUser.firstName);
-    cy.get(inputFields.lastName).type(newUser.lastName);
-    cy.get(inputFields.zipcode).type(newUser.zipcode);
-    cy.get('button[type="submit"]').click();
+  /**
+   * E-mail & ConfrimEmail fields
+   */
+  it('should NOT be able to register when blurring past email', () => {
+    cy.get(inputFields.email).focus().blur();
+    assertError();
 
-    cy.wait('@postRegister');
+    cy.get(inputFields.confirmEmail).type(validUser.email);
+    cy.get(inputFields.password).type(validUser.password);
+    cy.get(inputFields.confirmPassword).type(validUser.password);
+    cy.get(inputFields.firstName).type(validUser.firstName);
+    cy.get(inputFields.lastName).type(validUser.lastName);
+    cy.get(inputFields.zipcode).type(validUser.zipcode);
 
-    cy.url({ timeout: 10000 }).should('contain', '/profile/update');
-    cy.get('h1').should('have.text', 'Update Profile');
+    assertFailedLogin({ numberOfErrors: 2 });
+  });
 
-    cy.getCookies().then(cookies => {
-      expect(cookies.some(({ value }) => value === newUser.firstName)).to.be.true;
-      expect(cookies.some(({ value }) => value === newUser.lastName)).to.be.true;
-      expect(cookies.some(({ value }) => value === newUser.zipcode)).to.be.true;
+  it('should NOT be able to register when email contains only spaces', () => {
+    cy.get(inputFields.email).type('   ').blur();
+    assertError();
+
+    cy.get(inputFields.confirmEmail).type(validUser.email);
+    cy.get(inputFields.password).type(validUser.password);
+    cy.get(inputFields.confirmPassword).type(validUser.password);
+    cy.get(inputFields.firstName).type(validUser.firstName);
+    cy.get(inputFields.lastName).type(validUser.lastName);
+    cy.get(inputFields.zipcode).type(validUser.zipcode);
+
+    assertFailedLogin({ numberOfErrors: 2 });
+  });
+
+  it('should NOT be able to register with an invalid email', () => {
+    const invalidUser = mockUser({
+      desiredEmail: 'invalidemail@.com',
     });
 
-    cy.findByTestId('Nav Item Login').should('not.exist');
-    cy.findByTestId('Nav Item Logout').should('exist');
+    cy.get(inputFields.email).type(invalidUser.email).blur();
+    assertError({ errorMessage: validationErrorMessages.email });
+
+    cy.get(inputFields.confirmEmail).type(invalidUser.email);
+    cy.get(inputFields.password).type(invalidUser.password);
+    cy.get(inputFields.confirmPassword).type(invalidUser.password);
+    cy.get(inputFields.firstName).type(invalidUser.firstName);
+    cy.get(inputFields.lastName).type(invalidUser.lastName);
+    cy.get(inputFields.zipcode).type(invalidUser.zipcode);
+
+    assertFailedLogin({ errorMessage: validationErrorMessages.email });
   });
 
-  it('should display required error message when blurring past first name', () => {
-    cy.get(inputFields.firstName).focus().blur();
+  it('should NOT be able to register when blurring past confirmEmail', () => {
+    cy.get(inputFields.email).type(validUser.email);
 
-    // verify no cookies populated
-    cy.getCookies().should('have.length', 0);
+    cy.get(inputFields.confirmEmail).focus().blur();
+    assertError();
 
-    // verify that errors rendered
-    cy.get('div[role="alert"]')
-      .should('have.length', 1)
-      .should('contain', validationErrorMessages.required);
+    cy.get(inputFields.password).type(validUser.password);
+    cy.get(inputFields.confirmPassword).type(validUser.password);
+    cy.get(inputFields.firstName).type(validUser.firstName);
+    cy.get(inputFields.lastName).type(validUser.lastName);
+    cy.get(inputFields.zipcode).type(validUser.zipcode);
+
+    assertFailedLogin();
   });
 
-  it('should display required error message when first name contains only spaces', () => {
-    cy.get(inputFields.firstName).type('   ').blur();
+  it('should NOT be able to register when emails do not match', () => {
+    cy.get(inputFields.email).type(validUser.email);
 
-    // verify no cookies populated
-    cy.getCookies().should('have.length', 0);
+    cy.get(inputFields.confirmEmail).type(existingUser.email).blur();
+    assertError({ errorMessage: validationErrorMessages.emailsMatch });
 
-    // verify that errors rendered
-    cy.get('div[role="alert"]')
-      .should('have.length', 1)
-      .should('contain', validationErrorMessages.required);
-  });
+    cy.get(inputFields.password).type(validUser.password);
+    cy.get(inputFields.confirmPassword).type(validUser.password);
+    cy.get(inputFields.firstName).type(validUser.firstName);
+    cy.get(inputFields.lastName).type(validUser.lastName);
+    cy.get(inputFields.zipcode).type(validUser.zipcode);
 
-  it('should display required error message when blurring past last name', () => {
-    cy.get(inputFields.lastName).focus().blur();
-
-    // verify no cookies populated
-    cy.getCookies().should('have.length', 0);
-
-    // verify that errors rendered
-    cy.get('div[role="alert"]')
-      .should('have.length', 1)
-      .should('contain', validationErrorMessages.required);
-  });
-
-  it('should display required error message when last name contains only spaces', () => {
-    cy.get(inputFields.lastName).type('   ').blur();
-
-    // verify no cookies populated
-    cy.getCookies().should('have.length', 0);
-
-    // verify that errors rendered
-    cy.get('div[role="alert"]')
-      .should('have.length', 1)
-      .should('contain', validationErrorMessages.required);
+    assertFailedLogin({ errorMessage: validationErrorMessages.emailsMatch });
   });
 
   it('should NOT be able to register with an existing email', () => {
@@ -107,137 +141,268 @@ describe('join', () => {
     cy.get(inputFields.firstName).type(existingUser.firstName);
     cy.get(inputFields.lastName).type(existingUser.lastName);
     cy.get(inputFields.zipcode).type(existingUser.zipcode);
+
+    assertFailedLogin({ errorMessage: validationErrorMessages.emailExists, shouldWait: true });
+  });
+
+  /**
+   * Password & ConfirmPassword fields
+   */
+  it('should NOT be able to register when blurring past password', () => {
+    cy.get(inputFields.email).type(validUser.email);
+    cy.get(inputFields.confirmEmail).type(validUser.email);
+
+    cy.get(inputFields.password).focus().blur();
+    assertError();
+
+    cy.get(inputFields.confirmPassword).type(validUser.password);
+    cy.get(inputFields.firstName).type(validUser.firstName);
+    cy.get(inputFields.lastName).type(validUser.lastName);
+    cy.get(inputFields.zipcode).type(validUser.zipcode);
+
+    assertFailedLogin({ numberOfErrors: 2 });
+  });
+
+  it('should NOT be able to register with short password', () => {
+    const invalidUser = mockUser({
+      passwordOptions: {
+        hasMinimumLength: false,
+      },
+    });
+
+    cy.get(inputFields.email).type(invalidUser.email);
+    cy.get(inputFields.confirmEmail).type(invalidUser.email);
+
+    cy.get(inputFields.password).type(invalidUser.password).blur();
+    assertError({ errorMessage: validationErrorMessages.password });
+
+    cy.get(inputFields.confirmPassword).type(invalidUser.password);
+    cy.get(inputFields.firstName).type(invalidUser.firstName);
+    cy.get(inputFields.lastName).type(invalidUser.lastName);
+    cy.get(inputFields.zipcode).type(invalidUser.zipcode);
+
+    assertFailedLogin({ errorMessage: validationErrorMessages.password });
+  });
+
+  it('should NOT be able to register with password missing lowercase', () => {
+    const invalidUser = mockUser({
+      passwordOptions: {
+        hasOneLowercaseChar: false,
+      },
+    });
+
+    cy.get(inputFields.email).type(invalidUser.email);
+    cy.get(inputFields.confirmEmail).type(invalidUser.email);
+
+    cy.get(inputFields.password).type(invalidUser.password).blur();
+    assertError({ errorMessage: validationErrorMessages.password });
+
+    cy.get(inputFields.confirmPassword).type(invalidUser.password);
+    cy.get(inputFields.firstName).type(invalidUser.firstName);
+    cy.get(inputFields.lastName).type(invalidUser.lastName);
+    cy.get(inputFields.zipcode).type(invalidUser.zipcode);
+
+    assertFailedLogin({ errorMessage: validationErrorMessages.password });
+  });
+
+  it('should NOT be able to register with password missing uppercase', () => {
+    const invalidUser = mockUser({
+      passwordOptions: {
+        hasOneUppercaseChar: false,
+      },
+    });
+
+    cy.get(inputFields.email).type(invalidUser.email);
+    cy.get(inputFields.confirmEmail).type(invalidUser.email);
+
+    cy.get(inputFields.password).type(invalidUser.password).blur();
+    assertError({ errorMessage: validationErrorMessages.password });
+
+    cy.get(inputFields.confirmPassword).type(invalidUser.password);
+    cy.get(inputFields.firstName).type(invalidUser.firstName);
+    cy.get(inputFields.lastName).type(invalidUser.lastName);
+    cy.get(inputFields.zipcode).type(invalidUser.zipcode);
+
+    assertFailedLogin({ errorMessage: validationErrorMessages.password });
+  });
+
+  it('should NOT be able to register with password missing number', () => {
+    const invalidUser = mockUser({
+      passwordOptions: {
+        hasOneNumber: false,
+      },
+    });
+
+    cy.get(inputFields.email).type(invalidUser.email);
+    cy.get(inputFields.confirmEmail).type(invalidUser.email);
+
+    cy.get(inputFields.password).type(invalidUser.password).blur();
+    assertError({ errorMessage: validationErrorMessages.password });
+
+    cy.get(inputFields.confirmPassword).type(invalidUser.password);
+    cy.get(inputFields.firstName).type(invalidUser.firstName);
+    cy.get(inputFields.lastName).type(invalidUser.lastName);
+    cy.get(inputFields.zipcode).type(invalidUser.zipcode);
+
+    assertFailedLogin({ errorMessage: validationErrorMessages.password });
+  });
+
+  it('should NOT be able to register when blurring past confirmPassword', () => {
+    cy.get(inputFields.email).type(validUser.email);
+    cy.get(inputFields.confirmEmail).type(validUser.email);
+    cy.get(inputFields.password).type(validUser.password);
+
+    cy.get(inputFields.confirmPassword).focus().blur();
+    assertError();
+
+    cy.get(inputFields.firstName).type(validUser.firstName);
+    cy.get(inputFields.lastName).type(validUser.lastName);
+    cy.get(inputFields.zipcode).type(validUser.zipcode);
+
+    assertFailedLogin();
+  });
+
+  it('should NOT be able to register when passwords do not match', () => {
+    cy.get(inputFields.email).type(validUser.email);
+    cy.get(inputFields.confirmEmail).type(validUser.email);
+    cy.get(inputFields.password).type(validUser.password);
+
+    cy.get(inputFields.confirmPassword).type(existingUser.password).blur();
+    assertError({ errorMessage: validationErrorMessages.passwordsMatch });
+
+    cy.get(inputFields.firstName).type(validUser.firstName);
+    cy.get(inputFields.lastName).type(validUser.lastName);
+    cy.get(inputFields.zipcode).type(validUser.zipcode);
+
+    assertFailedLogin({ errorMessage: validationErrorMessages.passwordsMatch });
+  });
+
+  /**
+   * FirstName & LastName Fields
+   */
+  it('should NOT be able to register when blurring past firstName', () => {
+    cy.get(inputFields.email).type(validUser.email);
+    cy.get(inputFields.confirmEmail).type(validUser.email);
+    cy.get(inputFields.password).type(validUser.password);
+    cy.get(inputFields.confirmPassword).type(validUser.password);
+
+    cy.get(inputFields.firstName).focus().blur();
+    assertError();
+
+    cy.get(inputFields.lastName).type(validUser.lastName);
+    cy.get(inputFields.zipcode).type(validUser.zipcode);
+
+    assertFailedLogin();
+  });
+
+  it('should NOT be able to register when firstName contains only spaces', () => {
+    cy.get(inputFields.email).type(validUser.email);
+    cy.get(inputFields.confirmEmail).type(validUser.email);
+    cy.get(inputFields.password).type(validUser.password);
+    cy.get(inputFields.confirmPassword).type(validUser.password);
+
+    cy.get(inputFields.firstName).type('     ').blur();
+    assertError();
+
+    cy.get(inputFields.lastName).type(validUser.lastName);
+    cy.get(inputFields.zipcode).type(validUser.zipcode);
+
+    assertFailedLogin();
+  });
+
+  it('should NOT be able to register when blurring past lastName', () => {
+    cy.get(inputFields.email).type(validUser.email);
+    cy.get(inputFields.confirmEmail).type(validUser.email);
+    cy.get(inputFields.password).type(validUser.password);
+    cy.get(inputFields.confirmPassword).type(validUser.password);
+    cy.get(inputFields.firstName).type(validUser.firstName);
+
+    cy.get(inputFields.lastName).focus().blur();
+    assertError();
+
+    cy.get(inputFields.zipcode).type(validUser.zipcode);
+
+    assertFailedLogin();
+  });
+
+  it('should NOT be able to register when lastName contains only spaces', () => {
+    cy.get(inputFields.email).type(validUser.email);
+    cy.get(inputFields.confirmEmail).type(validUser.email);
+    cy.get(inputFields.password).type(validUser.password);
+    cy.get(inputFields.confirmPassword).type(validUser.password);
+    cy.get(inputFields.firstName).type(validUser.firstName);
+
+    cy.get(inputFields.lastName).type('     ').blur();
+    assertError();
+
+    cy.get(inputFields.zipcode).type(validUser.zipcode);
+
+    assertFailedLogin();
+  });
+
+  /**
+   * Zipcode field
+   */
+  it('should NOT be able to register when blurring past zipcode', () => {
+    cy.get(inputFields.email).type(validUser.email);
+    cy.get(inputFields.confirmEmail).type(validUser.email);
+    cy.get(inputFields.password).type(validUser.password);
+    cy.get(inputFields.confirmPassword).type(validUser.password);
+    cy.get(inputFields.firstName).type(validUser.firstName);
+    cy.get(inputFields.lastName).type(validUser.lastName);
+
+    cy.get(inputFields.zipcode).focus().blur();
+    assertError();
+
+    assertFailedLogin();
+  });
+
+  it('should NOT be able to register when zipcode contains only spaces', () => {
+    cy.get(inputFields.email).type(validUser.email);
+    cy.get(inputFields.confirmEmail).type(validUser.email);
+    cy.get(inputFields.password).type(validUser.password);
+    cy.get(inputFields.confirmPassword).type(validUser.password);
+    cy.get(inputFields.firstName).type(validUser.firstName);
+    cy.get(inputFields.lastName).type(validUser.lastName);
+
+    cy.get(inputFields.zipcode).type('     ').blur();
+    assertError();
+
+    assertFailedLogin();
+  });
+
+  /**
+   * Registration without all fields
+   */
+  it('should NOT be able to register without filling all required fields', () => {
+    assertFailedLogin({ numberOfErrors: 7 });
+  });
+
+  /**
+   * Test Valid User
+   */
+  it('should be able to register with valid data', () => {
+    cy.get(inputFields.email).type(validUser.email);
+    cy.get(inputFields.confirmEmail).type(validUser.email);
+    cy.get(inputFields.password).type(validUser.password);
+    cy.get(inputFields.confirmPassword).type(validUser.password);
+    cy.get(inputFields.firstName).type(validUser.firstName);
+    cy.get(inputFields.lastName).type(validUser.lastName);
+    cy.get(inputFields.zipcode).type(validUser.zipcode);
     cy.get('button[type="submit"]').click();
 
     cy.wait('@postRegister');
 
-    cy.url().should('contain', '/join');
-    cy.get('div[role="alert"]').should(
-      'contain',
-      'A user is already registered with this e-mail address',
-    );
-    cy.getCookies().should('have.length', 0);
-  });
+    cy.url({ timeout: 10000 }).should('contain', '/profile/update');
+    cy.get('h1').should('have.text', 'Update Profile');
 
-  it('should NOT be able to register with an invalid email', () => {
-    const newUser = mockUser();
+    cy.getCookies().then(cookies => {
+      expect(cookies.some(({ value }) => value === validUser.firstName)).to.be.true;
+      expect(cookies.some(({ value }) => value === validUser.lastName)).to.be.true;
+      expect(cookies.some(({ value }) => value === validUser.zipcode)).to.be.true;
+    });
 
-    cy.get(inputFields.email).type('notavalidemail');
-    cy.get(inputFields.confirmEmail).type('notavalidemail');
-    cy.get(inputFields.password).type(newUser.password);
-    cy.get(inputFields.confirmPassword).type(newUser.password);
-    cy.get(inputFields.firstName).type(newUser.firstName);
-    cy.get(inputFields.lastName).type(newUser.lastName);
-    cy.get(inputFields.zipcode).type(newUser.zipcode);
-    cy.get('button[type="submit"]').click();
-
-    cy.url().should('contain', '/join');
-    cy.get('div[role="alert"]').should('contain', validationErrorMessages.email);
-    cy.getCookies().should('have.length', 0);
-  });
-
-  it('should NOT be able to register without matching emails', () => {
-    const newUser = mockUser();
-
-    cy.get(inputFields.email).type(newUser.email);
-    cy.get(inputFields.confirmEmail).type(existingUser.email);
-    cy.get(inputFields.password).type(newUser.password);
-    cy.get(inputFields.confirmPassword).type(newUser.password);
-    cy.get(inputFields.firstName).type(newUser.firstName);
-    cy.get(inputFields.lastName).type(newUser.lastName);
-    cy.get(inputFields.zipcode).type(newUser.zipcode);
-    cy.get('button[type="submit"]').click();
-
-    cy.url().should('contain', '/join');
-    cy.get('div[role="alert"]').should('contain', validationErrorMessages.emailMatch);
-    cy.getCookies().should('have.length', 0);
-  });
-
-  it('should NOT be able to register with a short password', () => {
-    const newUser = mockUser();
-
-    cy.get(inputFields.email).type(newUser.email);
-    cy.get(inputFields.confirmEmail).type(newUser.email);
-    cy.get(inputFields.password).type('kek1');
-    cy.get(inputFields.confirmPassword).type('kek1');
-    cy.get(inputFields.firstName).type(newUser.firstName);
-    cy.get(inputFields.lastName).type(newUser.lastName);
-    cy.get(inputFields.zipcode).type(newUser.zipcode);
-    cy.get('button[type="submit"]').click();
-
-    cy.url().should('contain', '/join');
-    cy.get('div[role="alert"]').should(
-      'contain',
-      validationErrorMessages.length(minimumPasswordLength),
-    );
-    cy.getCookies().should('have.length', 0);
-  });
-
-  it('should NOT be able to register with a weak password', () => {
-    const newUser = mockUser();
-
-    cy.get(inputFields.email).type(newUser.email);
-    cy.get(inputFields.confirmEmail).type(newUser.email);
-    cy.get(inputFields.password).type('12345678');
-    cy.get(inputFields.confirmPassword).type('12345678');
-    cy.get(inputFields.firstName).type(newUser.firstName);
-    cy.get(inputFields.lastName).type(newUser.lastName);
-    cy.get(inputFields.zipcode).type(newUser.zipcode);
-    cy.get('button[type="submit"]').click();
-
-    cy.url().should('contain', '/join');
-    cy.get('div[role="alert"]').should('contain', validationErrorMessages.password);
-    cy.getCookies().should('have.length', 0);
-  });
-
-  it('should NOT be able to register with an invalid password match ', () => {
-    const newUser = mockUser();
-
-    cy.get(inputFields.email).type(newUser.email);
-    cy.get(inputFields.confirmEmail).type(newUser.email);
-    cy.get(inputFields.password).type(newUser.password);
-    cy.get(inputFields.confirmPassword).type('Kekmhm123!');
-    cy.get(inputFields.firstName).type(newUser.firstName);
-    cy.get(inputFields.lastName).type(newUser.lastName);
-    cy.get(inputFields.zipcode).type(newUser.zipcode);
-    cy.get('button[type="submit"]').click();
-
-    cy.url().should('contain', '/join');
-    cy.get('div[role="alert"]').should('contain', validationErrorMessages.passwordMatch);
-    cy.getCookies().should('have.length', 0);
-  });
-
-  it('should NOT be able to register with an invalid zip code', () => {
-    const newUser = mockUser();
-
-    cy.get(inputFields.email).type(newUser.email);
-    cy.get(inputFields.confirmEmail).type(newUser.email);
-    cy.get(inputFields.password).type(newUser.password);
-    cy.get(inputFields.confirmPassword).type(newUser.password);
-    cy.get(inputFields.firstName).type(newUser.firstName);
-    cy.get(inputFields.lastName).type(newUser.lastName);
-    cy.get(inputFields.zipcode).type('           ');
-    cy.get('button[type="submit"]').click();
-
-    cy.url().should('contain', '/join');
-    cy.get('div[role="alert"]').should('contain', validationErrorMessages.zipcode);
-    cy.getCookies().should('have.length', 0);
-  });
-
-  it('should NOT be able to register without filling all required fields', () => {
-    cy.get('button[type="submit"]').click();
-
-    // verify route didn't change
-    cy.url().should('contain', '/join');
-
-    // verify no cookies populated
-    cy.getCookies().should('have.length', 0);
-
-    // verify that errors rendered
-    const numberOfInputs = 7;
-    cy.get('input').should('have.length', numberOfInputs);
-    cy.get('div[role="alert"]')
-      .should('have.length', numberOfInputs)
-      .should('contain', validationErrorMessages.required);
+    cy.findByTestId('Nav Item Login').should('not.exist');
+    cy.findByTestId('Nav Item Logout').should('exist');
   });
 });

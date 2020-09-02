@@ -34,7 +34,7 @@ describe('login', () => {
   });
 
   it('should NOT be able to login with valid, but non-existent credentials', () => {
-    const fakeUser = mockUser('nonexistinguser@someemail.com');
+    const fakeUser = mockUser({ desiredEmail: 'nonexistinguser@someemail.com' });
 
     cy.get('input#email').type(fakeUser.email);
     cy.get('input#password').type(fakeUser.password);
@@ -108,7 +108,7 @@ describe('login?loggedOut=True', () => {
   });
 
   it('should not display logged out alert after invalid login attempt', () => {
-    const fakeUser = mockUser('nonexistinguser@someemail.com');
+    const fakeUser = mockUser({ desiredEmail: 'nonexistinguser@someemail.com' });
 
     cy.get('div[role="alert"]').should('have.text', 'Logged out successfully.');
 
