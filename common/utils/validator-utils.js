@@ -1,4 +1,4 @@
-import { passwordStrengthRegex } from '../constants/validations';
+import { requiredCharactersRegex } from '../constants/validations';
 
 /**
  * Check if provided value meets minimum password strength requirements.
@@ -10,5 +10,5 @@ import { passwordStrengthRegex } from '../constants/validations';
  * @return {boolean} true if min requirements are met
  */
 export function hasRequiredCharacters(value) {
-  return passwordStrengthRegex.test(value);
+  return requiredCharactersRegex.test(value);
 }
