@@ -114,7 +114,7 @@ describe('resources', () => {
     cy.findByTestId(RESOURCE_SEARCH_BUTTON).click();
     cy.location().should(loc => {
       expect(loc.pathname).to.eq('/resources/1');
-      expect(loc.search).to.eq('?category=getting%20started');
+      expect(loc.search).to.eq('?category=getting+started');
     });
 
     // Starting page
@@ -123,19 +123,19 @@ describe('resources', () => {
     cy.findByTestId(NEXT_PAGE_BUTTON).click();
     cy.location().should(loc => {
       expect(loc.pathname).to.eq('/resources/2');
-      expect(loc.search).to.eq('?category=getting%20started');
+      expect(loc.search).to.eq('?category=getting+started');
     });
 
     cy.findByTestId(PREV_PAGE_BUTTON).click();
     cy.location().should(loc => {
       expect(loc.pathname).to.eq('/resources/1');
-      expect(loc.search).to.eq('?category=getting%20started');
+      expect(loc.search).to.eq('?category=getting+started');
     });
 
     cy.findByTestId('page 3').click();
     cy.location().should(loc => {
       expect(loc.pathname).to.eq('/resources/3');
-      expect(loc.search).to.eq('?category=getting%20started');
+      expect(loc.search).to.eq('?category=getting+started');
     });
 
     cy.findByTestId(RESOURCE_RESET_BUTTON).click();
