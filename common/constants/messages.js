@@ -1,11 +1,11 @@
 export const validationErrorMessages = {
   required: 'Required',
   email: 'Must be a valid email',
-  emailMatch: 'Emails must match',
-  password: 'Must include the following: lowercase letter, uppercase letter, number',
-  passwordMatch: 'Passwords must match',
-  length: value => `Must be at least ${value} characters`,
-  zipcode: 'Must be a valid zipcode',
+  emailsMatch: 'Emails must match',
+  emailExists: 'A user is already registered with this e-mail address',
+  password:
+    'Minimum password requirements: 8 characters, 1 Lowercase Letter, 1 Uppercase Letter, 1 Number',
+  passwordsMatch: 'Passwords must match',
 };
 
 export const networkErrorMessages = {

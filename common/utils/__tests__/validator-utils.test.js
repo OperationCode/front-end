@@ -1,64 +1,57 @@
-import { isMinPasswordStrength, isValidZipcode } from '../validator-utils';
+import { hasRequiredCharacters } from '../validator-utils';
+import mockPassword from '../../../test-utils/mockGenerators/mockPassword';
+
+const validPassword = mockPassword();
 
 describe('Validator Utilities', () => {
-  describe('isValidZipcode', () => {
-    it('should return true for any string', () => {
-      expect(isValidZipcode('testString')).toStrictEqual(true);
-    });
-
-    it('should return false when passed an empty string', () => {
-      expect(isValidZipcode('')).toStrictEqual(false);
-    });
-
-    it('should return false when passed undefined', () => {
-      expect(isValidZipcode()).toStrictEqual(false);
-    });
-  });
-
-  describe('isMinPasswordStrength', () => {
+  describe('hasRequiredCharacters', () => {
     it('should work with a lowercase letter, an uppercase letter, and a number', () => {
-      const password = 'aA1';
-      expect(isMinPasswordStrength(password)).toStrictEqual(true);
+      expect(hasRequiredCharacters(validPassword)).toStrictEqual(true);
     });
 
     it('should pass with a space', () => {
-      const password = 'a A1';
-      expect(isMinPasswordStrength(password)).toStrictEqual(true);
+      expect(hasRequiredCharacters(`${validPassword} `)).toStrictEqual(true);
     });
 
     it('should pass with symbols', () => {
-      const password = 'aA1@$';
-      expect(isMinPasswordStrength(password)).toStrictEqual(true);
+      expect(hasRequiredCharacters(`${validPassword}@$`)).toStrictEqual(true);
     });
 
-    it('should pass with multiple spaces', () => {
-      const password = '111a d G';
-      expect(isMinPasswordStrength(password)).toStrictEqual(true);
-    });
-
-    it('should pass with password that broke CI on 5/3/2019', () => {
-      const password = '_DGMaDV4!1Aa';
-      expect(isMinPasswordStrength(password)).toStrictEqual(true);
+    it('should pass with multiple seperated spaces', () => {
+      expect(hasRequiredCharacters(`${validPassword}_ ! _`)).toStrictEqual(true);
     });
 
     it('should pass leading and trailing whitespace', () => {
-      const password = ' _DGMaDV4!1Aa ';
-      expect(isMinPasswordStrength(password)).toStrictEqual(true);
+      expect(hasRequiredCharacters(` ${validPassword} `)).toStrictEqual(true);
+    });
+
+    it('should pass with password that broke CI on 5/3/2019', () => {
+      const specialPassword = '_DGMaDV4!1Aa';
+      expect(hasRequiredCharacters(specialPassword)).toStrictEqual(true);
     });
 
     it('should fail when missing a number', () => {
-      const password = 'aA';
-      expect(isMinPasswordStrength(password)).toStrictEqual(false);
+      const passwordWithoutNumber = mockPassword({
+        hasOneNumber: false,
+      });
+
+      expect(hasRequiredCharacters(passwordWithoutNumber)).toStrictEqual(false);
     });
 
-    it('should fail when missing a uppercase letter', () => {
-      const password = 'a^&*@ba1';
-      expect(isMinPasswordStrength(password)).toStrictEqual(false);
+    it('should fail when missing an uppercase letter', () => {
+      const passwordWithoutUppercase = mockPassword({
+        hasOneUppercaseChar: false,
+      });
+
+      expect(hasRequiredCharacters(passwordWithoutUppercase)).toStrictEqual(false);
     });
 
     it('should fail when missing a lowercase letter', () => {
-      const password = 'A#$#(&(1';
-      expect(isMinPasswordStrength(password)).toStrictEqual(false);
+      const passwordWithoutLowercase = mockPassword({
+        hasOneLowercaseChar: false,
+      });
+
+      expect(hasRequiredCharacters(passwordWithoutLowercase)).toStrictEqual(false);
     });
   });
 });

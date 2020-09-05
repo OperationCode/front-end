@@ -1,18 +1,4 @@
-import { passwordStrengthRegex } from '../constants/validations';
-
-/**
- * Take a string and determine if it has non-whitespace characters in it
- *
- * This may seem counter-intuitive, but it's difficult to get a zipcode regex correctly.
- * See https://stackoverflow.com/questions/578406/what-is-the-ultimate-postal-code-and-zip-regex
- * for more info
- *
- * @param {string} zipcode
- * @returns {boolean}
- */
-export function isValidZipcode(zipcode = '') {
-  return zipcode.length !== 0 && zipcode.trim().length !== 0;
-}
+import { requiredCharactersRegex } from '../constants/validations';
 
 /**
  * Check if provided value meets minimum password strength requirements.
@@ -23,6 +9,6 @@ export function isValidZipcode(zipcode = '') {
  * @param {string} val
  * @return {boolean} true if min requirements are met
  */
-export function isMinPasswordStrength(value) {
-  return passwordStrengthRegex.test(value);
+export function hasRequiredCharacters(value) {
+  return requiredCharactersRegex.test(value);
 }
