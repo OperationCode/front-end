@@ -24,6 +24,7 @@ function Head({ children, title, description, url, ogImage }) {
   return (
     <NextHead>
       <meta charSet="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
       <title>Operation Code{` | ${title}`}</title>
       <meta name="description" content={description} />
 
