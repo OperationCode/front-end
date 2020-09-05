@@ -19,7 +19,7 @@ exports[`ErrorDisplay should render with just required props 1`] = `
       <p
         className="paragraph"
       >
-        You definitely weren't supposed to see this...
+        We're so ashamed. You definitely weren't supposed to see this...
       </p>
     </div>
   </div>

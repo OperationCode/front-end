@@ -1,19 +1,26 @@
 .ErrorDisplay {
   background: #121212;
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
 }
 
 .ErrorDisplay .bg {
   align-items: center;
   background-image: url("/static/images/TankFlip.gif");
   background-size: cover;
+  background-position-x: center;
   color: white;
   display: flex;
   flex-direction: column;
-  height: 100vh;
   justify-content: center;
-  width: 100vw;
+  width: 100%;
+  height: calc(100vh - 390px);
+}
+
+@media screen and (--medium-viewport) {
+  .ErrorDisplay .bg {
+    height: 100vh;
+  }
 }
 
 .textContainer {
