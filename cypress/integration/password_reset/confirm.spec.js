@@ -55,7 +55,7 @@ describe('reset_password_confirm', () => {
     cy.get('div[role="alert"]').should('contain', validationErrorMessages.passwordsMatch);
   });
 
-  it('should NOT be able to change password with expired or invalid token ', () => {
+  it('should NOT be able to change password with expired or invalid token', () => {
     cy.visit(`/password_reset/confirm?uid=${uid}&token=${token}`);
     cy.get('#newPassword1').type(existingUser.password);
     cy.get('#newPassword2').type(existingUser.password);
