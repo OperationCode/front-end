@@ -9,5 +9,9 @@
     "codeCoverage": {
       "url": "/api/__coverage__"
     }
+  },
+  "retries": {
+    "runMode": 2,
+    "openMode": 2
   }
 }
