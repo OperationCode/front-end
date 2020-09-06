@@ -1,15 +1,15 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import Router from 'next/router';
 import MockedRouter from 'test-utils/mocks/nextRouterMock';
 import MockNextContext from 'test-utils/mocks/nextContextMock';
-import { addDecorator, configure } from '@storybook/react';
 import { setDefaults } from '@storybook/addon-info';
 import { withA11y } from '@storybook/addon-a11y';
 import requireContext from 'require-context.macro';
 
-import { addParameters } from '@storybook/react';
-import { create, themes } from '@storybook/theming';
+import { addParameters, addDecorator, configure } from '@storybook/react';
 
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { create, themes } from '@storybook/theming';
 import backgroundsPaletteArray from './backgrounds';
 
 import 'common/styles/globalStyles.css';
@@ -45,8 +45,8 @@ addParameters({
 function loadStories() {
   const allExports = [];
   // Dynamically load all files matching `*.stories.js` pattern within the components folder
-  const req = requireContext('../components/', true, /stories\.js$/);
-  req.keys().forEach(filename => allExports.push(req(filename)));
+  const requireStoryContext = requireContext('../components/', true, /stories\.js$/);
+  requireStoryContext.keys().forEach(filename => allExports.push(requireStoryContext(filename)));
   return allExports;
   // Add any new component folders with stories here, using the patterns defined above
 }
