@@ -1,4 +1,4 @@
-import Document, { Head, Main, NextScript } from 'next/document';
+import Document, { Html, Head, Main, NextScript } from 'next/document';
 import { clientTokens } from 'common/config/environment';
 import * as Sentry from '@sentry/browser';
 
@@ -19,10 +19,9 @@ export default class MyDocument extends Document {
 
   render() {
     return (
-      <html lang="en">
+      <Html lang="en">
         <Head>
           {/* Constants */}
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link rel="icon" href="/public/favicon.ico" />
           <link rel="icon" sizes="192x192" href="/static/apple-icon-180x180.png" />
           <link rel="apple-touch-icon" href="/static/apple-icon-180x180.png" />
@@ -57,7 +56,7 @@ export default class MyDocument extends Document {
           <Main />
           <NextScript />
         </body>
-      </html>
+      </Html>
     );
   }
 }
