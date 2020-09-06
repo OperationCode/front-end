@@ -13,6 +13,7 @@ const nextConfig = withBundleAnalyzer({
 
   experimental: {
     productionBrowserSourceMaps: true,
+    scrollRestoration: true,
   },
 
   // eslint-disable-next-line unicorn/prevent-abbreviations
