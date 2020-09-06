@@ -10,6 +10,7 @@ describe('NavListItem', () => {
     href: '/test',
     name: 'Test',
     sublinks: [],
+    icon: null,
   };
 
   const testDataWithSublinks = {
