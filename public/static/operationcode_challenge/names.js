@@ -53,5 +53,5 @@ export default [
     'Yusoof Moh',
     'Aditya Goparaju',
     'Jerry Rogers',
-		'Kenneth Ofosu'
+    'Kenneth Ofosu',
 ]
