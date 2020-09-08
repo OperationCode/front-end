@@ -24,7 +24,8 @@
 
 This is the front-end application for [OperationCode](https://operationcode.org). We highly recommend [joining our organization](https://operationcode.org/join) to receive an invite to our Slack team. From there, you'll want to join the `#oc-projects` channel. You can get help from multiple professional developers, including people who have worked on the application since day 1!
 
-Before contributing, please review our [Contributing Guide](CONTRIBUTING.md)
+Before contributing, please review our [Contributing Guide](CONTRIBUTING.md).
+<br />
 Designers, please review our [Contributing Guide for Designers](CONTRIBUTING_TO_DESIGN.md)
 
 ## Maintainers
