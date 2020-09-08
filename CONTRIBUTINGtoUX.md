@@ -1,10 +1,10 @@
-# Guide To Contribution
+# Guide To Contributing As A Designer
 
 Firstly, thank you for considering contributing to our project! It's people like you that make Operation Code such a great community.
 
 The team at Operation Code wants to reiterate that joining our Slack team is the ultimate way to set yourself up for success when contributing to our repository (repo). You can get an invite to our Slack channel by [requesting to join Operation Code](https://operationcode.org/join). Once in our Slack team, click the **+** icon next to **Channels** on the left sidebar, select **Browse channels**, and join **#oc-projects** and **#uxui**. Feel free to ask for help; everyone is a beginner at first :smile_cat:!
 
-## About OC's GitHub Repo
+## About Operation Code's GitHub Repositories
 
 <em>Note: GitHub is a platform that uses Git, a version control collaboration tool. Most GitHub guides reference things like forking, branching, and pull requests - You do **not** need to know any of these to do design work!</em> :tada::tada::tada:
 
@@ -30,7 +30,8 @@ The team at Operation Code wants to reiterate that joining our Slack team is the
 * Ask for help if you need help getting started or need to be pointed in the right direction!
 
 ### 5. Use your tool of choice (Adobe XD, Sketch, Figma, etc.) to create a design!
-</br>**Our entire UI library is documented via [![Storybook](https://github.com/storybookjs/brand/blob/8d28584c89959d7075c237e9345955c895048977/badge/badge-storybook.svg)](http://storybook.operationcode.org)**
+<br />**Our entire UI library is documented via [![Storybook](https://github.com/storybookjs/brand/blob/8d28584c89959d7075c237e9345955c895048977/badge/badge-storybook.svg)](http://storybook.operationcode.org)**
+<br />You may wish to copy and paste screenshots of these symbols to better translate the designers tools to your ideas!
 
 ### 6. Attach your design to the Issue comment section and tag Cyn @datphotogurl for review on GiHub (@CynK on Slack)
 
