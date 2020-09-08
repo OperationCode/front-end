@@ -52,5 +52,6 @@ export default [
     'Justin Reeves',
     'Yusoof Moh',
     'Aditya Goparaju',
-    'Jerry Rogers'
+    'Jerry Rogers',
+    'Kenneth Ofosu',
 ]
