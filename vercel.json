@@ -1,7 +1,4 @@
 {
-  "version": 2,
-  "name": "operation-code",
-  "alias": ["operation-code.vercel.app", "www.operationcode.org", "operationcode.org"],
   "rewrites": [
     {
       "source": "/media",
