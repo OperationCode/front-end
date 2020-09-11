@@ -36,14 +36,17 @@ const nextConfig = withBundleAnalyzer({
       {
         source: '/swag',
         destination: 'https://operationcode.threadless.com/',
+        permanent: true,
       },
       {
         source: '/store',
         destination: 'https://operationcode.threadless.com/',
+        permanent: true,
       },
       {
         source: '/shop',
         destination: 'https://operationcode.threadless.com/',
+        permanent: true,
       },
     ];
   },
