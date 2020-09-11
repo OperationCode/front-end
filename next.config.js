@@ -61,7 +61,7 @@ const nextConfig = withBundleAnalyzer({
         ],
       },
       {
-        source: '^/(favicon.ico|robots.txt|manifest.json|humans.txt|sitemap.xml|sitemap.xsl)',
+        source: '/(favicon.ico|robots.txt|manifest.json|humans.txt|sitemap.xml|sitemap.xsl)',
         headers: [
           {
             key: 'Cache-Control',
