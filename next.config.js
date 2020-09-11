@@ -16,7 +16,62 @@ const nextConfig = withBundleAnalyzer({
     scrollRestoration: true,
   },
 
-  // eslint-disable-next-line unicorn/prevent-abbreviations
+  /** @see https://nextjs.org/docs/api-reference/next.config.js/rewrites */
+  async rewrites() {
+    return [
+      {
+        source: '/media',
+        destination: '/branding',
+      },
+      {
+        source: '/privacy',
+        destination: 'https://www.iubenda.com/privacy-policy/8174861',
+      },
+    ];
+  },
+
+  /** @see https://nextjs.org/docs/api-reference/next.config.js/redirects */
+  async redirects() {
+    return [
+      {
+        source: '/swag',
+        destination: 'https://operationcode.threadless.com/',
+      },
+      {
+        source: '/store',
+        destination: 'https://operationcode.threadless.com/',
+      },
+      {
+        source: '/shop',
+        destination: 'https://operationcode.threadless.com/',
+      },
+    ];
+  },
+
+  /** @see https://nextjs.org/docs/api-reference/next.config.js/headers */
+  async headers() {
+    return [
+      {
+        source: '/_next/static/([^/]+/pages|chunks|runtime|css|fonts)/(.+)',
+        headers: [
+          {
+            key: 'cache-control',
+            value: 'max-age=31536000',
+          },
+        ],
+      },
+      {
+        source: '^/(favicon.ico|robots.txt|manifest.json|humans.txt|sitemap.xml|sitemap.xsl)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=0, must-revalidate',
+          },
+        ],
+      },
+    ];
+  },
+
   webpack: config => {
     // Fixes npm packages that depend on `fs` module
     // eslint-disable-next-line no-param-reassign
