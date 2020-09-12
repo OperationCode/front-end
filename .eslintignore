@@ -7,3 +7,5 @@ static
 coverage
 cypress-coverage
 jest-coverage
+!.storybook
+.storybook-dist
