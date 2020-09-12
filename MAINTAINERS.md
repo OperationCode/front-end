@@ -1,4 +1,8 @@
+
+# Traslations
+- [Spanish](./internationalized-documentation/Spanish/MAINTAINERS_ES.md)
 # Maintainers
+
 
 This file lists how the Operation Code Front End project is maintained. When making changes to the system, this file tells you who needs to review your contribution - you need a simple majority of maintainers for the relevant subsystems to provide a 👍 on your pull request. Additionally, you need to not receive a veto from a Sergeant or the Project Lead.
 
