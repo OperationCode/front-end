@@ -5,9 +5,6 @@ package-lock.json
 cypress/screenshots
 cypress/videos
 
-# All Contributors
-!.all-contributorsrc
-
 # Logs
 logs
 *.log

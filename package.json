@@ -28,14 +28,6 @@
     "test:watch": "yarn test --watch",
     "test:update-snaps": "yarn test -u"
   },
-  "nyc": {
-    "extends": "./nyc.config.js",
-    "report-dir": "cypress-coverage",
-    "reporter": [
-      "json",
-      "lcov"
-    ]
-  },
   "dependencies": {
     "@innocuous/components": "^2.1.1",
     "@innocuous/functions": "^2.1.1",
@@ -95,7 +87,6 @@
     "@testing-library/cypress": "^7.0.0",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.0.2",
-    "all-contributors-cli": "^6.17.2",
     "autoprefixer": "^9.8.6",
     "axios-mock-adapter": "^1.18.2",
     "babel-core": "7.0.0-bridge.0",

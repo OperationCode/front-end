@@ -10,7 +10,8 @@
     "**/*.js",
     "coverage/**/*",
     "cypress-coverage/**/*",
-    "jest-coverage/**/*"
+    "jest-coverage/**/*",
+    "node_modules/**/*"
   ],
   "rules": {
     "prettier/prettier": true,
