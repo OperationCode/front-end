@@ -3,15 +3,11 @@ pull_request_rules:
     conditions:
       - author=dependabot-preview[bot]
       - '#changes-requested-reviews-by=0'
-      - status-success=Vercel
-      - status-success=deploy/netlify
-      - 'status-success=ci/circleci: install_dependencies'
+      - 'status-success=Vercel - operation-code'
+      - 'status-success=Vercel - storybook'
       - 'status-success=ci/circleci: lint'
       - 'status-success=ci/circleci: unit_tests'
-      - 'status-success=ci/circleci: cypress_install'
-      - 'status-success=ci/circleci: integration_tests'
-      - 'status-success=ci/circleci: report_coverage'
-      - status-success=codeclimate
+      - 'status-success=cypress: all tests'
       - status-success=codeclimate/diff-coverage
       - status-success=codeclimate/total-coverage
     actions:

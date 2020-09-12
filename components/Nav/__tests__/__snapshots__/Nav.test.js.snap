@@ -20,6 +20,10 @@ exports[`Nav should render with no props passed 1`] = `
           "name": "About Us",
         },
         Object {
+          "href": "/who_we_serve",
+          "name": "Who We Serve",
+        },
+        Object {
           "href": "/contact",
           "name": "Contact Us",
         },
@@ -88,6 +92,10 @@ exports[`Nav should render with no props passed 1`] = `
             sublinks={
               Array [
                 Object {
+                  "href": "/who_we_serve",
+                  "name": "Who We Serve",
+                },
+                Object {
                   "href": "/contact",
                   "name": "Contact Us",
                 },
@@ -101,12 +109,6 @@ exports[`Nav should render with no props passed 1`] = `
                 },
               ]
             }
-          />
-          <NavListItem
-            href="/who_we_serve"
-            icon={null}
-            name="Who We Serve"
-            sublinks={Array []}
           />
           <NavListItem
             href="/events"

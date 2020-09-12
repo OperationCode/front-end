@@ -37,7 +37,7 @@ function Join({ router }) {
         columns={[
           <RegistrationForm onSuccess={handleSuccess} />,
           <p>
-            Already registered?&nbsp;
+            {'Already registered? '}
             <Link href="/login">
               <a>Login</a>
             </Link>

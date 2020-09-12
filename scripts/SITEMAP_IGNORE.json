@@ -5,11 +5,15 @@
     "/profile",
     "/profile/update",
     "/thank_you",
+    "/404",
     "/_app",
     "/_document",
     "/_error"
   ],
   "priority": {
-    "/": "1.00"
+    "/": "1.00",
+    "/login": "1.00",
+    "/join": "1.00",
+    "/code_schools": "1.00"
   }
 }
