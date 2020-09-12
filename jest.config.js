@@ -22,9 +22,9 @@ module.exports = {
 
   // An array of glob patterns indicating a set of files for which coverage information should be collected
   collectCoverageFrom: [
-    '<rootDir>/common/**/*.js',
-    '<rootDir>/components/**/*.js',
-    '<rootDir>/decorators/**/*.js',
+    // '<rootDir>/common/**/*.js',
+    // '<rootDir>/components/**/*.js',
+    // '<rootDir>/decorators/**/*.js',
   ],
 
   // The directory where Jest should output its coverage files
@@ -33,25 +33,22 @@ module.exports = {
   // An array of regexp pattern strings used to skip coverage collection
   coveragePathIgnorePatterns: [
     '<rootDir>/node_modules',
-    '<rootDir>/common/config',
-    '<rootDir>/common/styles',
-    '<rootDir>/common/constants',
-    '<rootDir>/scripts',
     '<rootDir>/cypress',
-    '<rootDir>/test-utils',
+    // '<rootDir>/common/config',
+    // '<rootDir>/common/styles',
+    // '<rootDir>/common/constants',
+    // '<rootDir>/scripts',
+    // '<rootDir>/test-utils',
 
-    // No real logic to test here
-    '<rootDir>/common/utils/api-utils.js',
-    '<rootDir>/components/ZipRecruiterJobs/ZipRecruiterJobs.js',
-    '<rootDir>/components/Press/PressLinks/Articles.js',
-    '<rootDir>/components/Timeline/historyData.js',
+    // // No real logic to test here
+    // '<rootDir>/common/utils/api-utils.js',
+    // '<rootDir>/components/ZipRecruiterJobs/ZipRecruiterJobs.js',
+    // '<rootDir>/components/Press/PressLinks/Articles.js',
+    // '<rootDir>/components/Timeline/historyData.js',
 
-    // Don't collect coverage from import/export mappers
-    '<rootDir>/common/(.*)/index.js',
-    '<rootDir>/components/(.*)/index.js',
-
-    // Ignore Next.js files
-    '<rootDir>/components/head.js',
+    // // Don't collect coverage from import/export mappers
+    // '<rootDir>/common/(.*)/index.js',
+    // '<rootDir>/components/(.*)/index.js',
   ],
 
   // A list of reporter names that Jest uses when writing coverage reports
