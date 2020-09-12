@@ -1,5 +1,4 @@
 .next
-.storybook
 cypress
 internationalized-documentation
 node_modules
@@ -7,4 +6,3 @@ test-utils
 scripts
 *.md
 src/**/*.test.js
-src/**/*.stories.js
