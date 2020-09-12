@@ -14,7 +14,8 @@ jobs:
     steps:
       - checkout
       - node/install:
-          install-yarn: '1.22.5'
+          install-yarn: true
+          install-npm: false
           node-version: '12.18.3' # keep in sync with .nvmrc
       - run:
           name: Run tests
