@@ -27,13 +27,14 @@ const eventsLink = {
 };
 
 // MARK: Top-level navigation items
-const whoWeServeWithoutSublinks = {
+const whoWeServeLink = {
   name: 'Who We Serve',
   href: '/who_we_serve',
 };
 
-const whoWeServeWithSublinks = {
-  ...whoWeServeWithoutSublinks,
+const accountWithSublinks = {
+  name: 'Account',
+  href: '/login',
   sublinks: [
     {
       name: 'Login',
@@ -44,6 +45,7 @@ const whoWeServeWithSublinks = {
       href: '/join',
     },
   ],
+  icon: 'UserLogo',
 };
 
 const aboutUs = {
@@ -81,15 +83,14 @@ const logout = {
 };
 
 // MARK: Nav items
-export const loggedInNavItems = [
+export const loggedInNavItems = [aboutUs, whoWeServeLink, events, getInvolved, profile, logout];
+export const loggedOutNavItems = [
   aboutUs,
-  whoWeServeWithoutSublinks,
+  whoWeServeLink,
   events,
   getInvolved,
-  profile,
-  logout,
+  accountWithSublinks,
 ];
-export const loggedOutNavItems = [aboutUs, whoWeServeWithSublinks, events, getInvolved];
 
 // Extracts sublinks to list everything as a single, top-level list
 export const mobileLoggedInNavItems = flattenDepth(
@@ -97,7 +98,7 @@ export const mobileLoggedInNavItems = flattenDepth(
     logout,
     profile,
     aboutUs,
-    whoWeServeWithoutSublinks,
+    whoWeServeLink,
     events,
     getInvolved,
   ].map(({ sublinks = [], ...item }) => [item, sublinks]),
@@ -105,9 +106,9 @@ export const mobileLoggedInNavItems = flattenDepth(
 );
 export const mobileLoggedOutNavItems = flattenDepth(
   [
-    ...whoWeServeWithSublinks.sublinks,
+    ...accountWithSublinks.sublinks,
     aboutUs,
-    whoWeServeWithoutSublinks,
+    whoWeServeLink,
     events,
     getInvolved,
   ].map(({ sublinks = [], ...item }) => [item, sublinks]),
