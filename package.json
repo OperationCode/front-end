@@ -28,6 +28,14 @@
     "test:watch": "yarn test --watch",
     "test:update-snaps": "yarn test -u"
   },
+  "nyc": {
+    "extends": "./nyc.config.js",
+    "report-dir": "cypress-coverage",
+    "reporter": [
+      "json",
+      "lcov"
+    ]
+  },
   "dependencies": {
     "@innocuous/components": "^2.1.1",
     "@innocuous/functions": "^2.1.1",
