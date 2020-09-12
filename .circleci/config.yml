@@ -13,10 +13,8 @@ jobs:
     executor: default
     steps:
       - checkout
-      - node/install:
-          install-yarn: true
-          install-npm: false
-          node-version: '12.18.3' # keep in sync with .nvmrc
+      - node/install-packages:
+          pkg-manager: yarn
       - run:
           name: Run tests
           command: |
@@ -26,8 +24,8 @@ jobs:
     executor: default
     steps:
       - checkout
-      - node/install:
-          install-yarn: true
+      - node/install-packages:
+          pkg-manager: yarn
       - run:
           name: Lint
           command: |
