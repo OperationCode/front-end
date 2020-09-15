@@ -44,9 +44,9 @@ function LoginForm({ initialValues, login, onSuccess }) {
 
   const handleSubmit = async (values, actions) => {
     try {
-      const { user, token } = await login(values);
+      const { token } = await login(values);
 
-      await onSuccess({ token, user });
+      await onSuccess({ token });
       actions.setSubmitting(false);
       actions.resetForm();
     } catch (error) {
