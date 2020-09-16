@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Router from 'next/router';
 import classNames from 'classnames';
 import { s3 } from 'common/constants/urls';
+
 import {
   loggedInNavItems,
   loggedOutNavItems,
@@ -12,6 +13,7 @@ import {
 import NavListItem from 'components/Nav/NavListItem/NavListItem';
 import NavMobile from 'components/Nav/NavMobile/NavMobile';
 import { hasValidAuthToken } from 'common/utils/cookie-utils';
+import UserLogo from '../../public/static/images/icons/FontAwesome/user.svg';
 import styles from './Nav.module.css';
 
 export const Nav = () => {
@@ -67,7 +69,13 @@ export const Nav = () => {
 
             <ul className={styles.link}>
               {navItems.map(navItem => (
-                <NavListItem key={navItem.name} {...navItem} />
+                <NavListItem
+                  key={navItem.name}
+                  {...navItem}
+                  icon={
+                    navItem.icon === 'UserLogo' ? <UserLogo className={styles.navIcon} /> : null
+                  }
+                />
               ))}
 
               {/* stylistic one-off */}

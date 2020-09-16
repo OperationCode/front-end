@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
 import Link from 'next/link';
-import { arrayOf, shape, string } from 'prop-types';
+import { arrayOf, shape, string, element } from 'prop-types';
 import PlusIcon from 'static/images/icons/plus.svg';
 import MinusIcon from 'static/images/icons/minus.svg';
 import styles from './NavListItem.module.css';
@@ -15,13 +15,15 @@ NavListItem.propTypes = {
       href: string.isRequired,
     }),
   ),
+  icon: element,
 };
 
 NavListItem.defaultProps = {
   sublinks: [],
+  icon: null,
 };
 
-function NavListItem({ sublinks, href, name }) {
+function NavListItem({ sublinks, href, name, icon }) {
   const [areSublinksVisible, setSublinksVisible] = useState(false);
 
   const handleKeyDown = (event, indexKeyedOn) => {
@@ -58,6 +60,7 @@ function NavListItem({ sublinks, href, name }) {
           data-testid={`Nav Item ${name}`}
         >
           <span className={styles.linkContent}>{name}</span>
+          {icon && icon}
         </a>
       </Link>
 

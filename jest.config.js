@@ -33,25 +33,22 @@ module.exports = {
   // An array of regexp pattern strings used to skip coverage collection
   coveragePathIgnorePatterns: [
     '<rootDir>/node_modules',
+    '<rootDir>/cypress',
     '<rootDir>/common/config',
     '<rootDir>/common/styles',
     '<rootDir>/common/constants',
     '<rootDir>/scripts',
-    '<rootDir>/cypress',
     '<rootDir>/test-utils',
 
-    // No real logic to test here
+    // // No real logic to test here
     '<rootDir>/common/utils/api-utils.js',
     '<rootDir>/components/ZipRecruiterJobs/ZipRecruiterJobs.js',
     '<rootDir>/components/Press/PressLinks/Articles.js',
     '<rootDir>/components/Timeline/historyData.js',
 
-    // Don't collect coverage from import/export mappers
+    // // Don't collect coverage from import/export mappers
     '<rootDir>/common/(.*)/index.js',
     '<rootDir>/components/(.*)/index.js',
-
-    // Ignore Next.js files
-    '<rootDir>/components/head.js',
   ],
 
   // A list of reporter names that Jest uses when writing coverage reports

@@ -1,3 +1,4 @@
+import jwt_decode from 'jwt-decode'; // eslint-disable-line camelcase
 import { validationErrorMessages } from '../../common/constants/messages';
 import existingUser from '../../test-utils/mocks/existingUser';
 import mockUser from '../../test-utils/mockGenerators/mockUser';
@@ -396,10 +397,12 @@ describe('join', () => {
     cy.url({ timeout: 10000 }).should('contain', '/profile/update');
     cy.get('h1').should('have.text', 'Update Profile');
 
-    cy.getCookies().then(cookies => {
-      expect(cookies.some(({ value }) => value === validUser.firstName)).to.be.true;
-      expect(cookies.some(({ value }) => value === validUser.lastName)).to.be.true;
-      expect(cookies.some(({ value }) => value === validUser.zipcode)).to.be.true;
+    cy.getCookies().then(([tokenCookie]) => {
+      const jwt = jwt_decode(tokenCookie.value);
+
+      expect(jwt.firstName).to.exist;
+      expect(jwt.lastName).to.exist;
+      expect(jwt.zipcode).to.exist;
     });
 
     cy.findByTestId('Nav Item Login').should('not.exist');

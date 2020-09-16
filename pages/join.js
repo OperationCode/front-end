@@ -21,9 +21,9 @@ function Join({ router }) {
     router.prefetch(profileUpdateURL);
   }, []);
 
-  const handleSuccess = ({ token, user }) => {
+  const handleSuccess = ({ token }) => {
     gtag.conversionEvent({ adId: '9ZvVCOOFmrkBEK-Rnp4D', category: 'sign_up' });
-    login({ token, user }, profileUpdateURL);
+    login({ token }, profileUpdateURL);
   };
 
   return (
@@ -37,7 +37,7 @@ function Join({ router }) {
         columns={[
           <RegistrationForm onSuccess={handleSuccess} />,
           <p>
-            Already registered?&nbsp;
+            {'Already registered? '}
             <Link href="/login">
               <a>Login</a>
             </Link>

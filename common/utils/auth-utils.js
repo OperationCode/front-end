@@ -2,8 +2,8 @@ import Router from 'next/router';
 import nextCookie from 'next-cookies';
 import { setAuthCookies, removeAuthCookies, hasValidAuthToken } from './cookie-utils';
 
-export const login = async ({ token, user }, routeTo = '/profile') => {
-  setAuthCookies({ token, user });
+export const login = async ({ token }, routeTo = '/profile') => {
+  setAuthCookies({ token });
   await Router.push(routeTo);
 };
 
