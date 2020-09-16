@@ -4,9 +4,9 @@ exports[`Swatch should render with required props 1`] = `
 <figure
   className="Swatch"
 >
-  <ScreenReaderOnly>
+  <UNDEFINED>
     A block of the color Blue
-  </ScreenReaderOnly>
+  </UNDEFINED>
   <div
     className="colorBlock"
     style={

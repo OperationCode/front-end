@@ -1,22 +1,20 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withInfo } from '@storybook/addon-info';
-import { withKnobs, boolean, object, text } from '@storybook/addon-knobs';
 
 import Accordion from '../Accordion';
 
-storiesOf('Accordion', module)
-  .addDecorator(withKnobs)
-  .add(
-    'default',
-    withInfo()(() => (
-      <Accordion
-        accessibilityId={text('accessibilityId', '1')}
-        content={object('content', {
-          headingChildren: <h5>Can be JSX</h5>,
-          bodyChildren: <p>Can also be JSX</p>,
-        })}
-        hasAnimationOnHover={boolean('hasAnimationOnHover', false)}
-      />
-    )),
-  );
+export default {
+  component: Accordion,
+  title: 'Accordion',
+};
+
+const Template = arguments_ => <Accordion {...arguments_} />;
+
+// Default Accordion supplied with only required args
+export const Default = Template.bind({});
+Default.args = {
+  accessibilityId: '1',
+  content: {
+    headingChildren: <h5>Can be JSX</h5>,
+    bodyChildren: <p>Can also be JSX</p>,
+  },
+};

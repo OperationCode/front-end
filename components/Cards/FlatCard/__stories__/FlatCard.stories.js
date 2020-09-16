@@ -1,43 +1,22 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
-import { withInfo } from '@storybook/addon-info';
-import { withKnobs, object, text } from '@storybook/addon-knobs';
 
-import Button from 'components/Button/Button';
 import FlatCard from '../FlatCard';
 
-storiesOf('Cards/FlatCard', module)
-  .addDecorator(withKnobs)
-  .add(
-    'default',
-    withInfo()(() => {
-      const buttonText = text('button (render prop)', '');
+export default {
+  component: FlatCard,
+  title: 'Cards/FlatCard',
+};
 
-      const buttonRenderer = () => {
-        return buttonText ? (
-          <Button onClick={action('Button clicked!')}>{buttonText}</Button>
-        ) : null;
-      };
+const Template = arguments_ => <FlatCard {...arguments_} />;
 
-      return (
-        <FlatCard
-          button={buttonRenderer()}
-          header={text('header (render prop)', '')}
-          image={object('image', { source: '', alt: '' })}
-        >
-          {text(
-            'children (render prop)',
-            `
-            David Molina is Founder & Board Chairman of Operation Code and self-taught himself Ruby
-            on Rails writing the first line of code for operationcode.org to petition Congress to
-            expand the New GI Bill to include coding schools, a benefit he couldn’t use after
-            exiting Dover AFB after 12 years in uniform. An entrepreneur, David has built numerous
-            startups, has testified before members of Congress to expand technical education for
-            veterans and spouses, and as a former captain in the Army was recipient of the Lt. Rowan
-            Award, Meritorious Service Medal and Army Commendation Medal.          `,
-          )}
-        </FlatCard>
-      );
-    }),
-  );
+// Default FlatCard supplied with only required args
+export const Default = Template.bind({});
+Default.args = {
+  /* eslint-disable max-len */
+  children:
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed efficitur lacinia semper. Donec finibus lacus ipsum. Duis rhoncus ante sollicitudin erat commodo varius. Integer odio enim, gravida ac lacus ac, porta tincidunt magna. Ut semper nibh sit amet neque facilisis, et hendrerit enim volutpat. Praesent consequat, eros ut condimentum posuere, diam felis blandit quam, ac varius libero lectus accumsan nulla. Sed fringilla elementum sem eu porttitor. Phasellus pretium magna quis mauris sagittis finibus.',
+  image: {
+    source: '',
+    alt: '',
+  },
+};
