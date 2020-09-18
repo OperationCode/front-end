@@ -2,11 +2,11 @@ import React from 'react';
 import { hasValidAuthToken } from 'common/utils/cookie-utils';
 import Container from 'components/Container/Container';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
-import LinkButton from 'components/LinkButton/LinkButton';
+import LinkButton from 'components/Buttons/LinkButton/LinkButton';
 import Heading from 'components/Heading/Heading';
 import styles from './JoinSection.module.css';
 
-export function JoinSection() {
+function JoinSection() {
   const isLoggedIn = hasValidAuthToken();
 
   if (isLoggedIn) {

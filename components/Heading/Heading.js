@@ -1,16 +1,32 @@
 import React from 'react';
-import { string, number, bool } from 'prop-types';
+import { string, bool } from 'prop-types';
 import classNames from 'classnames';
 import kebabCase from 'lodash/kebabCase';
 import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
 import LinkIcon from 'static/images/icons/FontAwesome/link-solid.svg';
 import styles from './Heading.module.css';
 
+function verifyHeadingLevel(props, propertyName, componentName) {
+  const cName = componentName || 'ANONYMOUS';
+
+  if ({ props }[propertyName]) {
+    const value = props[propertyName];
+    if (typeof value === 'number') {
+      return value >= 1 && value <= 6
+        ? null
+        : new Error(`${propertyName} in ${cName} is not within 1 to 6`);
+    }
+  }
+
+  // assume all ok
+  return null;
+}
+
 Heading.propTypes = {
   className: string,
   hasHashLink: bool,
   hasTitleUnderline: bool,
-  headingLevel: number,
+  headingLevel: verifyHeadingLevel,
   text: string.isRequired,
 };
 

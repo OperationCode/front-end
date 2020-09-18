@@ -9,7 +9,7 @@ import styles from './PaginationItem.module.css';
 PaginationItem.propTypes = {
   children: node.isRequired,
   isCurrent: bool,
-  pathname: string.isRequired,
+  pathName: string.isRequired,
   query: object,
   testId: string.isRequired,
   value: number,
@@ -21,9 +21,9 @@ PaginationItem.defaultProps = {
   value: undefined,
 };
 
-function PaginationItem({ children, isCurrent, pathname, query, testId, value }) {
+function PaginationItem({ children, isCurrent, pathName, query, testId, value }) {
   const relevantQueryStringObject = omit(query, ['page']);
-  const realURL = { pathname: pathname.replace('[page]', value), query: relevantQueryStringObject };
+  const realURL = { pathName: pathName.replace('[page]', value), query: relevantQueryStringObject };
 
   const isClickable = !!value;
 
@@ -36,7 +36,7 @@ function PaginationItem({ children, isCurrent, pathname, query, testId, value })
       data-testid={testId}
     >
       {isClickable ? (
-        <Link href={{ pathname, query }} as={realURL}>
+        <Link href={{ pathName, query }} as={realURL}>
           <a className={styles.unstyledLink}>
             <ScreenReaderOnly>Go to page</ScreenReaderOnly>
             {children}

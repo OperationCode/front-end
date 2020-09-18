@@ -14,7 +14,7 @@ CloseButton.propTypes = {
 
 CloseButton.defaultProps = {
   disabled: false,
-  theme: 'secondary',
+  theme: 'primary',
 };
 
 export default function CloseButton({ disabled, onClick, theme }) {

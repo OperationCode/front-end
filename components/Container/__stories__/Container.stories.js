@@ -1,21 +1,17 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withInfo } from '@storybook/addon-info';
-import { withKnobs, boolean, select, text } from '@storybook/addon-knobs';
 
+import { descriptions } from 'common/constants/descriptions';
 import Container from '../Container';
 
-storiesOf('Container', module)
-  .addDecorator(withKnobs)
-  .add(
-    'default',
-    withInfo()(() => (
-      <Container
-        backgroundImageSource={text('backgroundImageSource', '')}
-        isFullViewportHeight={boolean('isFullViewportHeight', false)}
-        theme={select('theme', ['gray', 'secondary', 'white'], 'secondary')}
-      >
-        {text('children', 'You can put anything here!')}
-      </Container>
-    )),
-  );
+export default {
+  component: Container,
+  title: 'Container',
+};
+
+const Template = arguments_ => <Container {...arguments_} />;
+
+// Default Container supplied with only required args
+export const Default = Template.bind({});
+Default.args = {
+  children: descriptions.long,
+};

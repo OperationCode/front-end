@@ -8,7 +8,7 @@ import styles from './Pagination.module.css';
 
 Pagination.propTypes = {
   currentPage: number.isRequired,
-  pathname: string.isRequired,
+  pathName: string.isRequired,
   query: object.isRequired,
   totalPages: number.isRequired,
 };
@@ -61,7 +61,7 @@ const getPagination = (currentPage, totalPages) => {
 };
 
 // eslint-disable-next-line react/prop-types
-const PaginationItems = ({ currentPage, pathname, query, totalPages }) => {
+const PaginationItems = ({ currentPage, pathName, query, totalPages }) => {
   const {
     paginationStart,
     paginationLength,
@@ -79,7 +79,7 @@ const PaginationItems = ({ currentPage, pathname, query, totalPages }) => {
         value={page}
         isCurrent={isCurrent}
         testId={`page ${page}`}
-        pathname={pathname}
+        pathName={pathName}
         query={query}
       >
         {page}
@@ -91,11 +91,11 @@ const PaginationItems = ({ currentPage, pathname, query, totalPages }) => {
     <>
       {shouldTruncateStart && (
         <>
-          <PaginationItem key="1" value={1} query={query} testId="page 1" pathname={pathname}>
+          <PaginationItem key="1" value={1} query={query} testId="page 1" pathName={pathName}>
             1
           </PaginationItem>
 
-          <PaginationItem key="separatorStart" testId="separatorStart" pathname={pathname}>
+          <PaginationItem key="separatorStart" testId="separatorStart" pathName={pathName}>
             &hellip;
           </PaginationItem>
         </>
@@ -105,7 +105,7 @@ const PaginationItems = ({ currentPage, pathname, query, totalPages }) => {
 
       {shouldTruncateEnd && (
         <>
-          <PaginationItem key="separatorEnd" testId="separatorEnd" pathname={pathname}>
+          <PaginationItem key="separatorEnd" testId="separatorEnd" pathName={pathName}>
             &hellip;
           </PaginationItem>
 
@@ -114,7 +114,7 @@ const PaginationItems = ({ currentPage, pathname, query, totalPages }) => {
             value={totalPages}
             query={query}
             testId={`page ${totalPages}`}
-            pathname={pathname}
+            pathName={pathName}
           >
             {totalPages}
           </PaginationItem>
@@ -124,7 +124,7 @@ const PaginationItems = ({ currentPage, pathname, query, totalPages }) => {
   );
 };
 
-function Pagination({ currentPage, pathname, query, totalPages }) {
+function Pagination({ currentPage, pathName, query, totalPages }) {
   /* Developer Errors */
   if (process.env.NODE_ENV !== 'production') {
     const isCurrentPageTooSmall = currentPage < 1;
@@ -146,7 +146,7 @@ function Pagination({ currentPage, pathname, query, totalPages }) {
       throw new Error(errorMessage);
     }
 
-    if (!pathname.endsWith('[page]')) {
+    if (!pathName.endsWith('[page]')) {
       throw new Error(developmentErrors.mustUsePageAsPathParam);
     }
   }
@@ -157,7 +157,7 @@ function Pagination({ currentPage, pathname, query, totalPages }) {
         {currentPage > 1 && (
           <PaginationItem
             value={currentPage - 1}
-            pathname={pathname}
+            pathName={pathName}
             query={query}
             testId={PREV_PAGE_BUTTON}
           >
@@ -168,14 +168,14 @@ function Pagination({ currentPage, pathname, query, totalPages }) {
         <PaginationItems
           currentPage={currentPage}
           totalPages={totalPages}
-          pathname={pathname}
+          pathName={pathName}
           query={query}
         />
 
         {currentPage < totalPages && (
           <PaginationItem
             value={currentPage + 1}
-            pathname={pathname}
+            pathName={pathName}
             query={query}
             testId={NEXT_PAGE_BUTTON}
           >

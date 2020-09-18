@@ -6,7 +6,7 @@ import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
 import FlatCard from 'components/Cards/FlatCard/FlatCard';
 import SchoolCard from 'components/Cards/SchoolCard/SchoolCard';
-import Button from 'components/Button/Button';
+import Button from 'components/Buttons/Button/Button';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 import Modal from 'components/Modal/Modal';
 import { getCodeSchoolsPromise } from 'common/constants/api';

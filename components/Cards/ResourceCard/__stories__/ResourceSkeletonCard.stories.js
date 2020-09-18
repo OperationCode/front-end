@@ -1,10 +1,17 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import ResourceSkeletonCard from '../ResourceSkeletonCard';
 
-storiesOf('Cards/ResourceSkeletonCard', module)
-  .add('default', () => <ResourceSkeletonCard numberOfSkeletons={1} />)
-  .add('multiple skeletons mimicking a list of results loading', () => (
-    <ResourceSkeletonCard numberOfSkeletons={10} />
-  ));
+export default {
+  component: ResourceSkeletonCard,
+  title: 'Cards/ResourceSkeletonCard',
+};
+
+const Template = arguments_ => <ResourceSkeletonCard {...arguments_} />;
+
+// Default ResourceSkeletonCard supplied with only required args
+// Should mimic a list of results loading
+export const Default = Template.bind({});
+Default.args = {
+  numberOfSkeletons: 10,
+};

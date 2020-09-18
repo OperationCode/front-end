@@ -4,7 +4,7 @@ import { func, bool, string, arrayOf, shape } from 'prop-types';
 import classNames from 'classnames';
 import { s3 } from 'common/constants/urls';
 import HamburgerIcon from 'static/images/icons/hamburger.svg';
-import CloseButton from 'components/CloseButton/CloseButton';
+import CloseButton from 'components/Buttons/CloseButton/CloseButton';
 import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
 import styles from './NavMobile.module.css';
 

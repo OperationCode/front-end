@@ -24,7 +24,7 @@
   width: 100%;
 }
 
-@media screen and (--medium-viewport) {
+@media screen and (--large-viewport) {
   .body {
     display: block;
   }

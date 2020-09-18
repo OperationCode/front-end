@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import ReactModal from 'react-modal';
 import { gtag } from 'common/utils/thirdParty/gtag';
 import CardStyles from 'components/Cards/Card/Card.module.css';
-import CloseButton from 'components/CloseButton/CloseButton';
+import CloseButton from 'components/Buttons/CloseButton/CloseButton';
 
 import ModalStyles from './Modal.module.css';
 

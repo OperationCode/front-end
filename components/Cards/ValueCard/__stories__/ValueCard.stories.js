@@ -1,17 +1,25 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withKnobs, text } from '@storybook/addon-knobs';
 
+import { descriptions } from 'common/constants/descriptions';
 import ValueCard from '../ValueCard';
 
-storiesOf('Cards/ValueCard', module)
-  .addDecorator(withKnobs)
-  .add('default', () => (
-    <ValueCard
-      name={text('name', 'Community')}
-      description={text(
-        'description',
-        'We look out for the people to our left and right, and always keep a hand free to help...',
-      )}
-    />
-  ));
+export default {
+  component: ValueCard,
+  title: 'Cards/ValueCard',
+};
+
+const Template = arguments_ => <ValueCard {...arguments_} />;
+
+// Default ValueCard supplied with only required args
+export const Default = Template.bind({});
+Default.args = {
+  name: 'Card name',
+  description: descriptions.short,
+};
+
+// ValueCard supplied with long description
+export const WithLongDescription = Template.bind({});
+WithLongDescription.args = {
+  ...Default.args,
+  description: descriptions.long,
+};

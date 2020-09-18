@@ -5,7 +5,7 @@ import noop from 'lodash/noop';
 import { Formik } from 'formik';
 import { validStep } from 'common/constants/custom-props';
 import { MULTI_STEP_STEP_BUTTON, MULTI_STEP_SUBMIT_BUTTON } from 'common/constants/testIDs';
-import Button from 'components/Button/Button';
+import Button from 'components/Buttons/Button/Button';
 import Form from 'components/Form/Form';
 import Alert from 'components/Alert/Alert';
 import ProgressIndicator from 'components/ProgressIndicator/ProgressIndicator';

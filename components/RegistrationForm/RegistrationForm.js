@@ -8,7 +8,7 @@ import { validationErrorMessages } from 'common/constants/messages';
 import { capitalizeFirstLetter } from 'common/utils/string-utils';
 import { minimumPasswordLength } from 'common/constants/validations';
 import { hasRequiredCharacters } from 'common/utils/validator-utils';
-import Button from 'components/Button/Button';
+import Button from 'components/Buttons/Button/Button';
 import Form from 'components/Form/Form';
 import Input from 'components/Form/Input/Input';
 import Alert from 'components/Alert/Alert';

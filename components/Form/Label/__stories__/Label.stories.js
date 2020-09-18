@@ -1,21 +1,28 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withInfo } from '@storybook/addon-info';
-import { withKnobs, boolean, text } from '@storybook/addon-knobs';
 
 import Label from '../Label';
 
-storiesOf('Form/Label', module)
-  .addDecorator(withKnobs)
-  .add(
-    'default',
-    withInfo()(() => {
-      const inputName = text('for', 'someInputName');
+export default {
+  component: Label,
+  title: 'Form/Label',
+};
 
-      return (
-        <Label for={inputName} isHidden={boolean('isHidden', false)}>
-          {text('children', 'This component is always paired with an input')}
-        </Label>
-      );
-    }),
+const pairedInputName = 'pairedInputName';
+
+const Template = arguments_ => {
+  return (
+    <>
+      <span>NOTE: This component is always paired with an input</span>
+      <div>
+        <Label htmlFor={pairedInputName} {...arguments_} />
+      </div>
+    </>
   );
+};
+
+// Default Label supplied with only required args
+export const Default = Template.bind({});
+Default.args = {
+  children: 'Label',
+  for: pairedInputName,
+};
