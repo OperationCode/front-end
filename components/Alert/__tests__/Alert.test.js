@@ -3,21 +3,17 @@ import { fireEvent, render } from '@testing-library/react';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 import { ALERT_CLOSE_BUTTON } from 'common/constants/testIDs';
 
-import Alert from '../Alert';
+import { ErrorAlert, SuccessAlert, WarningAlert } from '../__stories__/Alert.stories';
 
 describe('Alert', () => {
-  it('should render with required props', () => {
-    createSnapshotTest(<Alert type="error">Error Test Alert!</Alert>);
+  it('should render error alert with required props', () => {
+    createSnapshotTest(<ErrorAlert {...ErrorAlert.args} />);
   });
 
   it('should call close handler when close alert button clicked', () => {
     const onCloseMock = jest.fn();
 
-    const { queryByTestId } = render(
-      <Alert onClose={onCloseMock} type="success">
-        Success Test Alert!
-      </Alert>,
-    );
+    const { queryByTestId } = render(<SuccessAlert {...SuccessAlert.args} onClose={onCloseMock} />);
 
     expect(onCloseMock).toHaveBeenCalledTimes(0);
 
@@ -27,7 +23,7 @@ describe('Alert', () => {
   });
 
   it('should NOT render button if close handler not provided', () => {
-    const { queryByTestId } = render(<Alert type="warning">Warning Test Alert!</Alert>);
+    const { queryByTestId } = render(<WarningAlert {...WarningAlert.args} />);
 
     expect(queryByTestId(ALERT_CLOSE_BUTTON)).toBeNull();
   });

@@ -1,10 +1,10 @@
 import React from 'react';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 
-import ScreenReaderOnly from '../ScreenReaderOnly';
+import { Default } from '../__stories__/ScreenReaderOnly.stories';
 
 describe('ScreenReaderOnly', () => {
   it('should render with required props', () => {
-    createSnapshotTest(<ScreenReaderOnly>Test</ScreenReaderOnly>);
+    createSnapshotTest(<Default {...Default.args} />);
   });
 });

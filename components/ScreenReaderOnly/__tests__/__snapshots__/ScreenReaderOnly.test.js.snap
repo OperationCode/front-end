@@ -5,6 +5,6 @@ exports[`ScreenReaderOnly should render with required props 1`] = `
   className="ScreenReaderOnly"
   data-testid="SCREEN_READER_ONLY"
 >
-  Test
+  This content is never displayed, but it is rendered
 </span>
 `;

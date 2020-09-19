@@ -27,9 +27,9 @@ exports[`NavMobile should render 1`] = `
     onClick={[Function]}
     type="button"
   >
-    <ScreenReaderOnly>
+    <UNDEFINED>
       Open Menu
-    </ScreenReaderOnly>
+    </UNDEFINED>
     <Svg
       className="hamburgerIcon"
     />

@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Accordion Default 1`] = `
+<article
+  className="Card Accordion"
+>
+  <div
+    className="headingContainer"
+  >
+    <h5>
+      Can be JSX
+    </h5>
+  </div>
+  <button
+    aria-controls="content-1"
+    aria-expanded={false}
+    className="accordionToggleButton"
+    data-testid="ACCORDION_TOGGLE_BUTTON"
+    id="accordion-control-1"
+    onClick={[Function]}
+    type="button"
+  >
+    <span
+      className="ScreenReaderOnly"
+      data-testid="SCREEN_READER_ONLY"
+    >
+      Show more
+    </span>
+    <svg
+      className="icon"
+    />
+  </button>
+  <section
+    aria-hidden={true}
+    className="accordionContent invisible"
+    data-testid="ACCORDION_CONTENT"
+    id="content-1"
+    style={
+      Object {
+        "display": "none",
+      }
+    }
+  >
+    <p>
+      Can also be JSX
+    </p>
+  </section>
+</article>
+`;
+
+exports[`Storyshots ScreenReaderOnly Default 1`] = `
+<span
+  className="ScreenReaderOnly"
+  data-testid="SCREEN_READER_ONLY"
+>
+  This content is never displayed, but it is rendered
+</span>
+`;
