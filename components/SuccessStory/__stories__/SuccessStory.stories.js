@@ -1,18 +1,19 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withKnobs, text } from '@storybook/addon-knobs';
 
+import { descriptions } from 'common/constants/descriptions';
+import { s3 } from 'common/constants/urls';
 import SuccessStory from '../SuccessStory';
 
-storiesOf('SuccessStory', module)
-  .addDecorator(withKnobs)
-  .add('default', () => (
-    <SuccessStory
-      imageSource={text('imageSource', 'https://kylemh.com/public/img/me.jpg')}
-      quote={text(
-        'quote',
-        'Operation Code is literally the greatest thing since sliced bread and Taco Bell.',
-      )}
-      title={text('title', 'Kyle Holmberg')}
-    />
-  ));
+export default {
+  component: SuccessStory,
+  title: 'SuccessStory',
+};
+
+const Template = arguments_ => <SuccessStory {...arguments_} />;
+
+export const Default = Template.bind({});
+Default.args = {
+  imageSource: `${s3}headshots/david_molina.jpg`,
+  quote: descriptions.long,
+  title: 'Name of Person',
+};

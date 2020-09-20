@@ -1,45 +1,31 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withInfo } from '@storybook/addon-info';
-import { withKnobs, number } from '@storybook/addon-knobs';
 
 import ProgressIndicator from '../ProgressIndicator';
 
-storiesOf('ProgressIndicator', module)
-  .addDecorator(withKnobs)
-  .add(
-    'default',
-    withInfo()(() => (
-      <ProgressIndicator
-        stepNumber={number('stepNumber', 0)}
-        totalSteps={number('totalSteps', 3)}
-      />
-    )),
-  )
-  .add(
-    '1 of 3',
-    withInfo()(() => (
-      <ProgressIndicator
-        stepNumber={number('stepNumber', 1)}
-        totalSteps={number('totalSteps', 3)}
-      />
-    )),
-  )
-  .add(
-    '2 of 3',
-    withInfo()(() => (
-      <ProgressIndicator
-        stepNumber={number('stepNumber', 2)}
-        totalSteps={number('totalSteps', 3)}
-      />
-    )),
-  )
-  .add(
-    '3 of 3',
-    withInfo()(() => (
-      <ProgressIndicator
-        stepNumber={number('stepNumber', 3)}
-        totalSteps={number('totalSteps', 3)}
-      />
-    )),
-  );
+const totalSteps = 10;
+
+export default {
+  component: ProgressIndicator,
+  title: 'ProgressIndicator',
+  argTypes: {
+    stepNumber: {
+      control: {
+        type: 'number',
+        min: 0,
+        max: totalSteps,
+      },
+    },
+    totalSteps: {
+      control: {
+        type: 'number',
+        min: totalSteps,
+      },
+    },
+  },
+};
+
+const Template = arguments_ => <ProgressIndicator {...arguments_} />;
+
+/** Default ProgressIndicator with 0 progress */
+export const Default = Template.bind({});
+Default.args = {};

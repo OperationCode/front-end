@@ -1,17 +1,22 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withInfo } from '@storybook/addon-info';
-import { withKnobs, text } from '@storybook/addon-knobs';
 
 import ScreenReaderOnly from '../ScreenReaderOnly';
 
-storiesOf('ScreenReaderOnly', module)
-  .addDecorator(withKnobs)
-  .add(
-    'default',
-    withInfo()(() => (
-      <ScreenReaderOnly>
-        {text('children', 'This content is never displayed, but it is rendered')}
-      </ScreenReaderOnly>
-    )),
+export default {
+  component: ScreenReaderOnly,
+  title: 'ScreenReaderOnly',
+};
+
+const Template = arguments_ => {
+  return (
+    <>
+      <span>Content never displayed, but it is rendered</span>
+      <ScreenReaderOnly {...arguments_} />
+    </>
   );
+};
+
+export const Default = Template.bind({});
+Default.args = {
+  children: 'ScreenReader content',
+};

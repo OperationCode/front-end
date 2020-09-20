@@ -1,5 +1,5 @@
 import React from 'react';
-import { string, number, bool } from 'prop-types';
+import { string, bool, oneOf } from 'prop-types';
 import classNames from 'classnames';
 import kebabCase from 'lodash/kebabCase';
 import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
@@ -10,7 +10,7 @@ Heading.propTypes = {
   className: string,
   hasHashLink: bool,
   hasTitleUnderline: bool,
-  headingLevel: number,
+  headingLevel: oneOf([1, 2, 3, 4, 5, 6]),
   text: string.isRequired,
 };
 

@@ -8,7 +8,7 @@ import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Badge from 'components/Badge/Badge';
 import Content from 'components/Content/Content';
 import ImageCard from 'components/Cards/ImageCard/ImageCard';
-import LinkButton from 'components/LinkButton/LinkButton';
+import LinkButton from 'components/Buttons/LinkButton/LinkButton';
 import JoinSection from 'components/ReusableSections/JoinSection/JoinSection';
 import CareerServicesIcon from 'static/images/icons/Custom/career_services.svg';
 import MentorshipIcon from 'static/images/icons/Custom/mentorship.svg';

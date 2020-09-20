@@ -4,7 +4,7 @@ import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Badge from 'components/Badge/Badge';
 import Content from 'components/Content/Content';
-import LinkButton from 'components/LinkButton/LinkButton';
+import LinkButton from 'components/Buttons/LinkButton/LinkButton';
 import Heading from 'components/Heading/Heading';
 import DonateSection from 'components/ReusableSections/DonateSection/DonateSection';
 import JoinSection from 'components/ReusableSections/JoinSection/JoinSection';

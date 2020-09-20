@@ -6,7 +6,7 @@ import JoinSection from 'components/ReusableSections/JoinSection/JoinSection';
 import SponsorsSection from 'components/ReusableSections/SponsorsSection/SponsorsSection';
 import SuccessStory from 'components/SuccessStory/SuccessStory';
 import Heading from 'components/Heading/Heading';
-import LinkButton from 'components/LinkButton/LinkButton';
+import LinkButton from 'components/Buttons/LinkButton/LinkButton';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
 import successStories from 'common/constants/successStories';

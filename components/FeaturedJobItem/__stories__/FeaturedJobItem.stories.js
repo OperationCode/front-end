@@ -1,20 +1,20 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 
+import { descriptions } from 'common/constants/descriptions';
 import FeaturedJobItem from '../FeaturedJobItem';
 
-storiesOf('FeaturedJobItem', module)
-  .addDecorator(withKnobs)
-  .add('default', () => (
-    <FeaturedJobItem
-      title={text('title', 'Director of Awesome')}
-      source={text('source', 'GitLab')}
-      sourceUrl={text('sourceUrl', 'https://www.gitlab.com')}
-      city={text('city', 'Los Angeles')}
-      state={text('state', 'California')}
-      country={text('country', 'USA')}
-      remote={boolean('remote', false)}
-      description={text('description', 'You will be awesome at this job, apply for it!')}
-    />
-  ));
+export default {
+  component: FeaturedJobItem,
+  title: 'FeaturedJobItem',
+};
+
+const Template = arguments_ => <FeaturedJobItem {...arguments_} />;
+
+// Default FeaturedJobItem supplied with only required args
+export const Default = Template.bind({});
+Default.args = {
+  title: 'Job Title',
+  source: 'Company Name',
+  sourceUrl: '#',
+  description: descriptions.long,
+};

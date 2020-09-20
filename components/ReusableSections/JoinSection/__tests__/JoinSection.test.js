@@ -3,7 +3,7 @@ import cookie from 'js-cookie';
 import { cleanup, render } from '@testing-library/react';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 import { VALID_AUTH_TOKEN } from 'test-utils/mocks/jwtMock';
-import { JoinSection } from '../JoinSection';
+import JoinSection from '../JoinSection';
 
 const originalCookieGet = cookie.get;
 

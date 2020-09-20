@@ -4,7 +4,7 @@ import { Formik, Field } from 'formik';
 import * as Yup from 'yup';
 import { getServerErrorMessage } from 'common/utils/api-utils';
 import { validationErrorMessages } from 'common/constants/messages';
-import Button from 'components/Button/Button';
+import Button from 'components/Buttons/Button/Button';
 import Form from 'components/Form/Form';
 import Input from 'components/Form/Input/Input';
 import Alert from 'components/Alert/Alert';

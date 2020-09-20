@@ -21,7 +21,7 @@ ProgressIndicator.propTypes = {
 
 ProgressIndicator.defaultProps = {
   stepNumber: 0,
-  totalSteps: 0,
+  totalSteps: 1,
 };
 
 export default function ProgressIndicator({ stepNumber, totalSteps }) {

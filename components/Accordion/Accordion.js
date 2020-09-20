@@ -2,26 +2,28 @@ import React, { useState } from 'react';
 import { arrayOf, bool, node, number, shape, string, oneOfType } from 'prop-types';
 import classNames from 'classnames';
 import Chevron from 'public/static/images/icons/FontAwesome/angle-right-solid.svg';
-import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
-import Card from 'components/Cards/Card/Card';
+import { ACCORDION_CONTENT, ACCORDION_TOGGLE_BUTTON } from 'common/constants/testIDs';
+import ScreenReaderOnly, { toggleMessages } from '../ScreenReaderOnly/ScreenReaderOnly';
+import Card from '../Cards/Card/Card';
 import styles from './Accordion.module.css';
 
 const ChevronRight = () => <Chevron className={styles.icon} />;
 const ChevronDown = () => <Chevron className={classNames(styles.icon, styles.rotate90)} />;
 
-export const screenReaderToggleMessages = {
-  open: 'Show more',
-  close: 'Hide expanded',
-};
-
 Accordion.propTypes = {
-  // required for joining elements together with aria attributes
+  /** Accessibility ID to use for joining elements together
+   * with ARIA attributes */
   accessibilityId: oneOfType([number, string]).isRequired,
+  /** Name of style class to use */
   className: string,
+  /** Composition of the Accordion */
   content: shape({
+    /** Labels or thumbnails representing sections of content */
     headingChildren: oneOfType([node, arrayOf(node)]).isRequired,
+    /** Section of content associated with header */
     bodyChildren: oneOfType([node, arrayOf(node)]).isRequired,
   }).isRequired,
+  /** Should Accordion have animation on hover */
   hasAnimationOnHover: bool,
 };
 
@@ -53,19 +55,19 @@ function Accordion({ accessibilityId, className, content, hasAnimationOnHover })
         aria-controls={contentId}
         aria-expanded={isContentVisible}
         className={styles.accordionToggleButton}
-        data-testid="Accordion Toggle Button"
+        data-testid={ACCORDION_TOGGLE_BUTTON}
         id={accordionId}
         onClick={toggleAccordionContent}
         type="button"
       >
         {isContentVisible ? (
           <>
-            <ScreenReaderOnly>{screenReaderToggleMessages.close}</ScreenReaderOnly>
+            <ScreenReaderOnly>{toggleMessages.close}</ScreenReaderOnly>
             <ChevronDown />
           </>
         ) : (
           <>
-            <ScreenReaderOnly>{screenReaderToggleMessages.open}</ScreenReaderOnly>
+            <ScreenReaderOnly>{toggleMessages.open}</ScreenReaderOnly>
             <ChevronRight />
           </>
         )}
@@ -77,7 +79,7 @@ function Accordion({ accessibilityId, className, content, hasAnimationOnHover })
           [styles.visible]: isContentVisible,
           [styles.invisible]: !isContentVisible,
         })}
-        data-testid="Accordion Content"
+        data-testid={ACCORDION_CONTENT}
         id={contentId}
         style={{ display: isContentVisible ? 'block' : 'none' }}
       >

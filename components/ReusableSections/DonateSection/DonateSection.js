@@ -1,7 +1,7 @@
 import React from 'react';
 import { s3 } from 'common/constants/urls';
 import Container from 'components/Container/Container';
-import LinkButton from 'components/LinkButton/LinkButton';
+import LinkButton from 'components/Buttons/LinkButton/LinkButton';
 import Heading from 'components/Heading/Heading';
 import styles from './DonateSection.module.css';
 
