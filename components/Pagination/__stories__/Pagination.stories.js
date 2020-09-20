@@ -34,6 +34,6 @@ export const Default = Template.bind({});
 Default.args = {
   currentPage: 1,
   pathname: '/resources/[page]',
-  query: '{}',
+  query: {},
   totalPages,
 };

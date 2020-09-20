@@ -7,6 +7,7 @@ import SchoolCard from '../SchoolCard';
 export default {
   component: SchoolCard,
   title: 'Cards/SchoolCard',
+  argTypes: { toggleModal: { action: 'Modal opened!' } },
 };
 
 const Template = arguments_ => <SchoolCard {...arguments_} />;
@@ -21,7 +22,6 @@ Default.args = {
   logoSource: `${s3}codeSchoolLogos/general_assembly.jpg`,
   name: 'General Assembly',
   website: 'https://generalassembly.com',
-  toggleModal: { action: 'Modal opened!' },
 };
 
 // SchoolCard supplied with multiple locations

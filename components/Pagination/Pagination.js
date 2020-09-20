@@ -146,7 +146,6 @@ function Pagination({ currentPage, pathname, query, totalPages }) {
       throw new Error(errorMessage);
     }
 
-    console.log(pathname);
     if (!pathname.endsWith('[page]')) {
       throw new Error(developmentErrors.mustUsePageAsPathParam);
     }
