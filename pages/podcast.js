@@ -3,6 +3,7 @@ import { arrayOf, shape, string } from 'prop-types';
 import get from 'lodash/get';
 import ReactPlayer from 'react-player';
 import { parse as parseXml } from 'fast-xml-parser';
+import { ONE_DAY } from 'common/constants/unitsOfTime';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Card from 'components/Cards/Card/Card';
@@ -37,7 +38,7 @@ export async function getStaticProps() {
       story: description.replace(/(<p>|<\/p>)/g, ''),
     }));
 
-    return { props: { episodes } };
+    return { props: { episodes }, revalidate: ONE_DAY };
   }
 
   // Request failed or RSS Feed is broken

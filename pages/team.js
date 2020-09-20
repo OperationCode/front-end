@@ -3,6 +3,7 @@ import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import { getTeamMembersPromise } from 'common/constants/api';
 import { s3 } from 'common/constants/urls';
+import { TWO_WEEKS } from 'common/constants/unitsOfTime';
 import Content from 'components/Content/Content';
 import FlatCard from 'components/Cards/FlatCard/FlatCard';
 import styles from './styles/team.module.css';
@@ -22,7 +23,7 @@ export async function getStaticProps() {
 
     const sortedBoardMembers = [firstBoardMember, ...boardMembersExcludingFirst];
 
-    return { props: { boardMembers: sortedBoardMembers } };
+    return { props: { boardMembers: sortedBoardMembers }, revalidate: TWO_WEEKS };
   } catch (error) {
     throw new Error('getStaticProps in /team failed.');
   }

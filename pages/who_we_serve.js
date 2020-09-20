@@ -13,6 +13,7 @@ import JoinSection from 'components/ReusableSections/JoinSection/JoinSection';
 import CareerServicesIcon from 'static/images/icons/Custom/career_services.svg';
 import MentorshipIcon from 'static/images/icons/Custom/mentorship.svg';
 import ScholarshipsIcon from 'static/images/icons/Custom/scholarships.svg';
+import { ONE_WEEK } from 'common/constants/unitsOfTime';
 import { s3 } from 'common/constants/urls';
 import { slackMembersAPIUrl, slackGeneralChannelId } from 'common/config/environment';
 import styles from './styles/who_we_serve.module.css';
@@ -60,6 +61,7 @@ export async function getStaticProps() {
     props: {
       numberOfMembers,
     },
+    revalidate: ONE_WEEK,
   };
 }
 
