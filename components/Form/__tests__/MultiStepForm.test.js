@@ -7,7 +7,11 @@ import { fireEvent, render, waitFor, getByTestId } from '@testing-library/react'
 import { Field } from 'formik';
 import * as Yup from 'yup';
 import { networkErrorMessages } from 'common/constants/messages';
-import { MULTI_STEP_SUBMIT_BUTTON, MULTI_STEP_STEP_BUTTON } from 'common/constants/testIDs';
+import {
+  MULTI_STEP_SUBMIT_BUTTON,
+  MULTI_STEP_STEP_BUTTON,
+  MULTI_STEP_PREVIOUS_BUTTON,
+} from 'common/constants/testIDs';
 import { MultiStepForm } from '../MultiStepForm';
 
 const submitForm = async ({ container, isFinalStep = false }) => {
@@ -362,7 +366,7 @@ describe('MultiStepForm', () => {
       expect(queryByTestId('ultimateAnswer')).not.toBeNull();
     });
 
-    const goToPreviousStepButton = queryByTestId('Previous Step Button');
+    const goToPreviousStepButton = queryByTestId(MULTI_STEP_PREVIOUS_BUTTON);
 
     await waitFor(() => {
       expect(goToPreviousStepButton).not.toBeNull();
@@ -402,7 +406,7 @@ describe('MultiStepForm', () => {
     });
 
     // click on "Previous" button
-    const goToPreviousStepButton = queryByTestId('Previous Step Button');
+    const goToPreviousStepButton = queryByTestId(MULTI_STEP_PREVIOUS_BUTTON);
     expect(goToPreviousStepButton).not.toBeNull();
     expect(goToPreviousStepButton.textContent).toContain('Previous');
     fireEvent.click(goToPreviousStepButton);

@@ -1,29 +1,39 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withInfo } from '@storybook/addon-info';
-import { withKnobs, number } from '@storybook/addon-knobs';
 
 import Pagination from '../Pagination';
 
-storiesOf('Pagination', module)
-  .addDecorator(withKnobs)
-  .add(
-    'default',
-    withInfo()(() => (
-      <>
-        <p style={{ margin: '1rem auto', textAlign: 'center' }}>
-          Note that this component cannot be interactive outside the context of Next.js&apos;s
-          router.
-          <br />
-          To see the different states, simply adjust the knobs.
-        </p>
+const totalPages = 20;
 
-        <Pagination
-          currentPage={number('currentPage', 1) || 1}
-          pathname="/resources/[page]"
-          query={{}}
-          totalPages={number('totalPages', 20) || 20}
-        />
-      </>
-    )),
+export default {
+  component: Pagination,
+  title: 'Pagination',
+  argTypes: {
+    currentPage: {
+      control: {
+        type: 'number',
+        min: 1,
+        max: totalPages,
+      },
+    },
+  },
+};
+
+const Template = arguments_ => {
+  return (
+    <>
+      <span>
+        NOTE: This component cannot be interactive outside of the context of a Next.js router.
+        <br />
+        To see the different states, adjuct controls.
+      </span>
+      <Pagination {...arguments_} />
+    </>
   );
+};
+export const Default = Template.bind({});
+Default.args = {
+  currentPage: 1,
+  pathname: '/resources/[page]',
+  query: {},
+  totalPages,
+};

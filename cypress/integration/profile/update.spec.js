@@ -1,15 +1,18 @@
 import { networkErrorMessages } from '../../../common/constants/messages';
-
-const SubmitButtonID = 'Submit Step Button';
+import {
+  MULTI_STEP_STEP_BUTTON,
+  MULTI_STEP_PREVIOUS_BUTTON,
+  MULTI_STEP_SUBMIT_BUTTON,
+} from '../../../common/constants/testIDs';
 
 const goToNextStep = stepName => {
-  cy.findByTestId(SubmitButtonID).click();
+  cy.findByTestId(MULTI_STEP_STEP_BUTTON).click();
   cy.wait('@patchUser');
   cy.get('h3').should('have.text', stepName);
 };
 
 const goToPreviousStep = stepName => {
-  cy.findByTestId('Previous Step Button').click();
+  cy.findByTestId(MULTI_STEP_PREVIOUS_BUTTON).click();
   cy.get('h3').should('have.text', stepName);
 };
 
@@ -44,7 +47,7 @@ describe(`profile/update (from login)`, () => {
     goToNextStep(secondStepName);
     goToNextStep('Military Details');
     goToNextStep('Technology');
-    cy.findByTestId('Submit Multi-Step Form').click();
+    cy.findByTestId(MULTI_STEP_SUBMIT_BUTTON).click();
     cy.wait('@patchUser');
     cy.url().should('contain', '/profile');
     cy.url().should('not.contain', '/profile/update');
@@ -82,7 +85,7 @@ describe(`profile/update (from login)`, () => {
 
     cy.clearCookies();
 
-    cy.findByTestId('Submit Step Button').click();
+    cy.findByTestId(MULTI_STEP_STEP_BUTTON).click();
     cy.get('div[role="alert"]').should(
       'have.text',
       'Authentication credentials were not provided.',
@@ -115,7 +118,7 @@ describe(`profile/update (from login)`, () => {
 
     cy.get('input[name="yearsOfService"]').clear().type('-1');
 
-    cy.findByTestId('Submit Step Button').click();
+    cy.findByTestId(MULTI_STEP_STEP_BUTTON).click();
 
     cy.get('div[role="alert"]').should('have.text', 'Enter a number between 1 and 40.');
   });
@@ -126,7 +129,7 @@ describe(`profile/update (from login)`, () => {
 
     cy.get('input[name="yearsOfService"]').clear().type('41');
 
-    cy.findByTestId('Submit Step Button').click();
+    cy.findByTestId(MULTI_STEP_STEP_BUTTON).click();
 
     cy.get('div[role="alert"]').should('have.text', 'Enter a number between 1 and 40.');
   });
@@ -147,7 +150,7 @@ describe(`profile/update (from login) [server errors]`, () => {
 
     cy.visitAndWaitFor('/profile/update');
 
-    cy.findByTestId(SubmitButtonID).click();
+    cy.findByTestId(MULTI_STEP_STEP_BUTTON).click();
     cy.wait(`@${ErrorAPICall}`);
 
     cy.findByRole('alert').should('have.text', networkErrorMessages.serverDown);

@@ -1,17 +1,22 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withInfo } from '@storybook/addon-info';
-import { withKnobs, boolean, text } from '@storybook/addon-knobs';
 
 import Drawer from '../Drawer';
 
-storiesOf('Drawer', module)
-  .addDecorator(withKnobs)
-  .add(
-    'default',
-    withInfo()(() => (
-      <Drawer isVisible={boolean('isVisible', false)}>
-        {text('children', 'Only visible on Tablet view port size and under')}
-      </Drawer>
-    )),
-  );
+export default {
+  component: Drawer,
+  title: 'Drawer',
+  parameters: {
+    viewport: {
+      defaultViewport: 'tablet',
+    },
+  },
+};
+
+const Template = arguments_ => <Drawer {...arguments_} />;
+
+// Default Drawer supplied with only required args
+export const Default = Template.bind({});
+Default.args = {
+  children: 'Drawer content will only display on display size of Tablet or smaller',
+  isVisible: true,
+};

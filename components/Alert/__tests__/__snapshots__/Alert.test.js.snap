@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Alert should render with required props 1`] = `
+exports[`Alert should render error alert with required props 1`] = `
 <div
   className="Alert error"
   data-testid="ALERT"
   role="alert"
 >
-  Error Test Alert!
+  Error Alert JSX or Text
 </div>
 `;

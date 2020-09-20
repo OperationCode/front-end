@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import TrackVisibility from 'react-on-screen';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
-import LinkButton from 'components/LinkButton/LinkButton';
+import LinkButton from 'components/Buttons/LinkButton/LinkButton';
 import Heading from 'components/Heading/Heading';
 import Badge from 'components/Badge/Badge';
 import Content from 'components/Content/Content';

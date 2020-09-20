@@ -1,21 +1,16 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withInfo } from '@storybook/addon-info';
-import { withKnobs, boolean, text } from '@storybook/addon-knobs';
 
 import HeroBanner from '../HeroBanner';
 
-storiesOf('HeroBanner', module)
-  .addDecorator(withKnobs)
-  .add(
-    'default',
-    withInfo()(() => (
-      <HeroBanner
-        backgroundImageSource={text('backgroundImageSource', '')}
-        isFullViewportHeight={boolean('isFullViewportHeight', false)}
-        title={text('title', 'Hero Banner')}
-      >
-        {text('children', '')}
-      </HeroBanner>
-    )),
-  );
+export default {
+  component: HeroBanner,
+  title: 'HeroBanner',
+};
+
+const Template = arguments_ => <HeroBanner {...arguments_} />;
+
+// Default HeroBanner supplied with only required args
+export const Default = Template.bind({});
+Default.args = {
+  title: 'Banner Title',
+};

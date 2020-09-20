@@ -4,8 +4,12 @@ import { arrayOf, func, object } from 'prop-types';
 import noop from 'lodash/noop';
 import { Formik } from 'formik';
 import { validStep } from 'common/constants/custom-props';
-import { MULTI_STEP_STEP_BUTTON, MULTI_STEP_SUBMIT_BUTTON } from 'common/constants/testIDs';
-import Button from 'components/Button/Button';
+import {
+  MULTI_STEP_STEP_BUTTON,
+  MULTI_STEP_SUBMIT_BUTTON,
+  MULTI_STEP_PREVIOUS_BUTTON,
+} from 'common/constants/testIDs';
+import Button from 'components/Buttons/Button/Button';
 import Form from 'components/Form/Form';
 import Alert from 'components/Alert/Alert';
 import ProgressIndicator from 'components/ProgressIndicator/ProgressIndicator';
@@ -116,7 +120,7 @@ export function MultiStepForm({
                 theme="secondary"
                 disabled={formikBag.isSubmitting}
                 onClick={() => showPreviousStep(formikBag)}
-                data-testid="Previous Step Button"
+                data-testid={MULTI_STEP_PREVIOUS_BUTTON}
               >
                 ← Previous
               </Button>

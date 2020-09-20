@@ -1,7 +1,7 @@
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
-import LinkButton from 'components/LinkButton/LinkButton';
+import LinkButton from 'components/Buttons/LinkButton/LinkButton';
 import Card from 'components/Cards/Card/Card';
 import { leadershipCircleLink } from 'common/constants/urls';
 import { leadershipCircleMembers } from 'common/constants/leadershipCircleMembers';

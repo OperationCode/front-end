@@ -1,21 +1,19 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withInfo } from '@storybook/addon-info';
-import { withKnobs, boolean, text } from '@storybook/addon-knobs';
 
+import { descriptions } from 'common/constants/descriptions';
 import OutboundLink from '../OutboundLink';
 
-storiesOf('OutboundLink', module)
-  .addDecorator(withKnobs)
-  .add(
-    'default',
-    withInfo()(() => (
-      <OutboundLink
-        analyticsEventLabel={text('analyticsEventLabel', 'White House Official Website')}
-        hasIcon={boolean('hasIcon', true)}
-        href={text('href', 'https://whitehouse.gov')}
-      >
-        {text('children', 'White House Official Website')}
-      </OutboundLink>
-    )),
-  );
+export default {
+  component: OutboundLink,
+  title: 'OutboundLink',
+};
+
+const Template = arguments_ => <OutboundLink {...arguments_} />;
+
+// Default OutboundLink supplied with only required args
+export const Default = Template.bind({});
+Default.args = {
+  analyticsEventLabel: 'Event label',
+  children: descriptions.short,
+  href: '#',
+};
