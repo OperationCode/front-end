@@ -15,7 +15,7 @@ exports[`CloseButton should render with just required props passed 1`] = `
     Close
   </span>
   <svg
-    className="icon secondary"
+    className="icon primary"
   />
 </button>
 `;

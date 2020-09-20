@@ -1,10 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ScreenReaderOnly should render with required props 1`] = `
-<span
-  className="ScreenReaderOnly"
-  data-testid="SCREEN_READER_ONLY"
->
-  This content is never displayed, but it is rendered
-</span>
+Array [
+  <span>
+    Content never displayed, but it is rendered
+  </span>,
+  <span
+    className="ScreenReaderOnly"
+    data-testid="SCREEN_READER_ONLY"
+  >
+    ScreenReader content
+  </span>,
+]
 `;

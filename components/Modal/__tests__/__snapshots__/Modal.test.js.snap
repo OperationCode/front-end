@@ -40,7 +40,7 @@ exports[`Modal should render with many props assigned 1`] = `
             Close
           </span>
           <svg
-            class="icon secondary"
+            class="icon primary"
           />
         </button>
         <div

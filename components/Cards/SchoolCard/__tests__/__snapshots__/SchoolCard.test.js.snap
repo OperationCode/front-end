@@ -6,13 +6,13 @@ exports[`SchoolCard should render with required props 1`] = `
   data-testid="SchoolCard"
   hasAnimationOnHover={false}
 >
-  <UNDEFINED>
+  <ScreenReaderOnly>
     <h6
       data-testid="SchoolCard Name: school name"
     >
       school name
     </h6>
-  </UNDEFINED>
+  </ScreenReaderOnly>
   <div
     className="ribbon gi"
     data-testid="GI Bill Ribbon"
