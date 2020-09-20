@@ -36,17 +36,13 @@ module.exports = {
       },
     },
     {
-      files: ['*.spec.js'],
-      rules: {
-        'no-unused-expressions': ['off'],
-      },
-    },
-    {
       files: ['cypress/**/*.js'],
       rules: {
+        'func-names': 'off',
         'jest/expect-expect': 'off',
         'jest/valid-expect': 'off',
-        'func-names': 'off',
+        'jest/valid-expect-in-promise': ['off'],
+        'no-unused-expressions': ['off'],
       },
     },
     {
