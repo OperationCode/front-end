@@ -43,24 +43,24 @@ WhoWeServe.defaultProps = {
 };
 
 export async function getStaticProps() {
-  const response = await axios.get(slackMembersAPIUrl, {
-    params: {
-      token: process.env.SLACK_API_TOKEN,
-      channel: slackGeneralChannelId,
-    },
-  });
+  let numberOfMembers = null;
 
-  const numberOfMembers = get(response, 'data.members.length', 0);
-
-  if (numberOfMembers > 0) {
-    return {
-      props: {
-        numberOfMembers,
+  if (process.env.NODE_ENV === 'production') {
+    const response = await axios.get(slackMembersAPIUrl, {
+      params: {
+        token: process.env.SLACK_API_TOKEN,
+        channel: slackGeneralChannelId,
       },
-    };
+    });
+
+    numberOfMembers = get(response, 'data.members.length', 0);
   }
 
-  throw new Error('getStaticProps in /who_we_serve failed.');
+  return {
+    props: {
+      numberOfMembers,
+    },
+  };
 }
 
 function WhoWeServe({ numberOfMembers }) {
