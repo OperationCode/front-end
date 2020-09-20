@@ -1,5 +1,6 @@
 import React from 'react';
 import { any, bool, func, node, number, oneOf, oneOfType, string } from 'prop-types';
+import noop from 'lodash/noop';
 import classNames from 'classnames';
 import { BUTTON } from 'common/constants/testIDs';
 import { googleAnalyticsEventPropType } from 'common/constants/custom-props';
@@ -13,7 +14,7 @@ Button.propTypes = {
   className: string,
   disabled: bool,
   fullWidth: bool,
-  onClick: func.isRequired,
+  onClick: func, // why optional? form buttons typically act off of a form's submit/reset events
   tabIndex: oneOfType([string, number]),
   theme: oneOf(['primary', 'secondary']),
   type: oneOf(['button', 'reset', 'submit']),
@@ -29,6 +30,7 @@ Button.defaultProps = {
   datum: '',
   disabled: false,
   fullWidth: false,
+  onClick: noop,
   tabIndex: 0,
   theme: 'primary',
   type: 'button',
