@@ -1,3 +1,5 @@
+import { ACCORDION_CONTENT, ACCORDION_TOGGLE_BUTTON } from '../../common/constants/testIDs';
+
 describe('faq', () => {
   beforeEach(() => {
     cy.visitAndWaitFor('/faq');
@@ -5,11 +7,9 @@ describe('faq', () => {
   });
 
   it('reveals text after clicking "SHOW"', () => {
-    cy.get('article').first().find('[data-testid="Accordion Content"]').should('not.be.visible');
-
-    cy.get('article').first().find('[data-testid="Accordion Toggle Button"]').click();
-
-    cy.get('article').first().find('[data-testid="Accordion Content"]').should('be.visible');
+    cy.findByTestId(ACCORDION_CONTENT).should('not.be.visible');
+    cy.findAllByTestId(ACCORDION_TOGGLE_BUTTON).then(([firstButton]) => firstButton.click());
+    cy.findAllByTestId(ACCORDION_CONTENT).should('be.visible');
   });
 
   // TODO: Enable when native keyboard events are supported by Cypress
