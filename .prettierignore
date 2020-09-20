@@ -1,4 +1,4 @@
-common/styles/themeMap.js
+node_modules
 package.json
 yarn.lock
 .babelrc
@@ -6,7 +6,8 @@ yarn.lock
 .next
 .github
 bin
-node_modules
 static
 cypress-coverage
 jest-coverage
+.storybook-dist
+common/styles/themeMap.js

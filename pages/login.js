@@ -59,8 +59,8 @@ function Login({ loggedOut, router }) {
     setAlertMessage('');
   };
 
-  const handleSuccess = ({ token, user }) => {
-    login({ token, user });
+  const handleSuccess = ({ token }) => {
+    login({ token });
   };
 
   const onLogin = values => {

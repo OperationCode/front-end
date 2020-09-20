@@ -20,6 +20,10 @@ exports[`Nav should render with no props passed 1`] = `
           "name": "About Us",
         },
         Object {
+          "href": "/who_we_serve",
+          "name": "Who We Serve",
+        },
+        Object {
           "href": "/contact",
           "name": "Contact Us",
         },
@@ -83,9 +87,14 @@ exports[`Nav should render with no props passed 1`] = `
         >
           <NavListItem
             href="/about"
+            icon={null}
             name="About Us"
             sublinks={
               Array [
+                Object {
+                  "href": "/who_we_serve",
+                  "name": "Who We Serve",
+                },
                 Object {
                   "href": "/contact",
                   "name": "Contact Us",
@@ -102,28 +111,14 @@ exports[`Nav should render with no props passed 1`] = `
             }
           />
           <NavListItem
-            href="/who_we_serve"
-            name="Who We Serve"
-            sublinks={
-              Array [
-                Object {
-                  "href": "/login",
-                  "name": "Login",
-                },
-                Object {
-                  "href": "/join",
-                  "name": "Join",
-                },
-              ]
-            }
-          />
-          <NavListItem
             href="/events"
+            icon={null}
             name="Events"
             sublinks={Array []}
           />
           <NavListItem
             href="/get_involved"
+            icon={null}
             name="Get Involved"
             sublinks={
               Array [
@@ -134,6 +129,27 @@ exports[`Nav should render with no props passed 1`] = `
                 Object {
                   "href": "/leadership_circle",
                   "name": "Leadership Circle",
+                },
+              ]
+            }
+          />
+          <NavListItem
+            href="/login"
+            icon={
+              <Svg
+                className="navIcon"
+              />
+            }
+            name="Account"
+            sublinks={
+              Array [
+                Object {
+                  "href": "/login",
+                  "name": "Login",
+                },
+                Object {
+                  "href": "/join",
+                  "name": "Join",
                 },
               ]
             }

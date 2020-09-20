@@ -1,3 +1,4 @@
+import jwt_decode from 'jwt-decode'; // eslint-disable-line camelcase
 import { networkErrorMessages } from '../../common/constants/messages';
 import existingUser from '../../test-utils/mocks/existingUser';
 import mockPassword from '../../test-utils/mockGenerators/mockPassword';
@@ -26,10 +27,12 @@ describe('login', () => {
     cy.get('h1').should('have.text', 'Profile');
     cy.get(`[data-testid='${PROFILE_GREETING}']`).contains('Hello Kyle Holmberg!');
 
-    cy.getCookies().then(cookies => {
-      expect(cookies.some(({ value }) => value === existingUser.firstName)).to.be.true;
-      expect(cookies.some(({ value }) => value === existingUser.lastName)).to.be.true;
-      expect(cookies.some(({ value }) => value === existingUser.zipcode)).to.be.true;
+    cy.getCookies().then(([tokenCookie]) => {
+      const jwt = jwt_decode(tokenCookie.value);
+
+      expect(jwt.firstName).to.exist;
+      expect(jwt.lastName).to.exist;
+      expect(jwt.zipcode).to.exist;
     });
   });
 

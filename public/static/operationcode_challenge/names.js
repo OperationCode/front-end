@@ -51,5 +51,7 @@ export default [
     'Sairina Merino Tsui',
     'Justin Reeves',
     'Yusoof Moh',
-    'Aditya Goparaju'
+    'Aditya Goparaju',
+    'Jerry Rogers',
+    'Kenneth Ofosu',
 ]

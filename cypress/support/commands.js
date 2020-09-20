@@ -15,7 +15,6 @@ import '@testing-library/cypress/add-commands';
 import { addMatchImageSnapshotCommand } from 'cypress-image-snapshot/command';
 import existingUser from '../../test-utils/mocks/existingUser';
 import { apiUrl } from '../../common/config/environment';
-import { userInfoCookieNames } from '../../common/utils/cookie-utils';
 
 Cypress.Commands.add('visitAndWaitFor', path => {
   cy.visit(path);
@@ -32,9 +31,8 @@ Cypress.Commands.add('login', () => {
     body: {
       ...existingUser,
     },
-  }).then(({ body: { token, user } }) => {
+  }).then(({ body: { token } }) => {
     cy.setCookie('token', token);
-    userInfoCookieNames.forEach(cookieName => cy.setCookie(cookieName, `${user[cookieName]}`));
   });
 });
 
