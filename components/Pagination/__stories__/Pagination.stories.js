@@ -33,7 +33,7 @@ const Template = arguments_ => {
 export const Default = Template.bind({});
 Default.args = {
   currentPage: 1,
-  pathName: '/resources/[page]',
+  pathname: '/resources/[page]',
   query: '{}',
   totalPages,
 };
