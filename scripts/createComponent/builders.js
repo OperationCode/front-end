@@ -28,22 +28,23 @@ export default function ${componentName}({ className, children }) {
   // Output generated for component's story file
   buildStoryJs: componentName =>
     `import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withInfo } from '@storybook/addon-info';
-import { withKnobs, text } from '@storybook/addon-knobs';
 
 import ${componentName} from '../${componentName}';
 
-storiesOf('${componentName}', module)
-  .addDecorator(withKnobs)
-  .add(
-    'default',
-    withInfo()(() => (
-      <${componentName}>
-        {text('children', 'string or .node')}
-      </${componentName}>
-    )),
-  );
+export default {
+  component: ${componentName},
+  title: '${componentName}',
+};
+
+const Template = (args) => <${componentName} {...args} />;
+
+export const Default = Template.bind({});
+
+/** Default ${componentName} supplied with only required args */
+Default.args = {
+  children: '',
+};
+
 `,
 
   // Output generated for component's test file
