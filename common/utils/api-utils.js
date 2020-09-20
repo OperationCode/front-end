@@ -18,9 +18,6 @@ export const ResourcesAPI = axios.create({
   baseURL: 'https://resources.operationcode.org',
   timeout: 5000,
 });
-export const ExternalAPI = axios.create({
-  timeout: 5000,
-});
 
 /**
  * @description These pieces allow us to throw errors on connection timeouts

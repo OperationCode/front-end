@@ -1,10 +1,11 @@
 import fs from 'fs';
 import { join } from 'path';
 import dynamic from 'next/dynamic';
+import PropTypes from 'prop-types';
+import { ONE_WEEK } from 'common/constants/unitsOfTime';
 import Content from 'components/Content/Content';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
-import PropTypes from 'prop-types';
 
 export async function getStaticPaths() {
   const articlesDirectory = join(process.cwd(), 'blogArticles');
@@ -32,6 +33,7 @@ export async function getStaticProps({ params }) {
     props: {
       articleName,
     },
+    revalidate: ONE_WEEK,
   };
 }
 

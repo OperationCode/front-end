@@ -12,7 +12,7 @@ describe('Hash Links', () => {
   const someRandomPagesWithHashLinks = [
     { title: 'Home', path: '/' },
     { title: 'About', path: '/about' },
-    { title: 'Who We Serve', path: '/who_we_serve' },
+    { title: 'Corporate Sponsorship', path: '/sponsorship' },
   ];
 
   someRandomPagesWithHashLinks.forEach(({ title, path }) => {
