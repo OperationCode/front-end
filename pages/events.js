@@ -93,7 +93,7 @@ function Events() {
         <>
           <p className={styles.justifyAlign}>
             Need more Operation Code in your life? From conventions to tech meetups, we are where
-            you are! There are 4,000+ members across more than 20 states!
+            you are! There are 7,000+ members across more than 20 states!
           </p>
 
           <LinkButton
