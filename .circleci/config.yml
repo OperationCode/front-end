@@ -125,9 +125,9 @@ workflows:
             - install_dependencies
           pre-steps:
             - attach_workspace: *attach_workspace
+            - run: ls -al
             - node/install-packages:
                 pkg-manager: yarn
-                app-dir:
           install-command: yarn install --non-interactive --frozen-lockfile --production=false
           cache-key: << pipeline.parameters.cache_key >>
 
