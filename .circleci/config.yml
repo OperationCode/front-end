@@ -127,7 +127,7 @@ workflows:
           executor: default
           requires:
             - install_dependencies
-          - pre-steps:
+          pre-steps:
             - node/install-yarn
           install-command: yarn install --non-interactive --frozen-lockfile --production=false
           cache-key: << pipeline.parameters.cache_key >>
