@@ -124,6 +124,7 @@ workflows:
           requires:
             - install_dependencies
           pre-steps:
+            - attach_workspace: *attach_workspace
             - node/install-packages:
                 pkg-manager: yarn
                 app-dir:
