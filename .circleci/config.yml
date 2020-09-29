@@ -1,6 +1,7 @@
 version: 2.1
 
 orbs:
+  node: circleci/node@4.0.1
   cypress: cypress-io/cypress@1.26.0
 
 executors:
@@ -22,10 +23,6 @@ parameters:
     default: 'operation-code-front-end-{{ checksum "yarn.lock" }}'
 
 aliases:
-  - &yarn_install
-    name: Install dependencies
-    command: yarn install --non-interactive --frozen-lockfile --production=false --cache-folder << pipeline.parameters.yarn_cache_location >>
-
   - &attach_workspace
     at: << pipeline.parameters.workspace_root >>
 
@@ -40,7 +37,9 @@ jobs:
       - checkout
       - attach_workspace: *attach_workspace
       - restore_cache: *restore_cache
-      - run: *yarn_install
+      - node/install-yarn
+      - run: node --version
+      - run: yarn --version
       - save_cache:
           key: << pipeline.parameters.cache_key >>
           paths:
@@ -54,7 +53,7 @@ jobs:
       - checkout
       - attach_workspace: *attach_workspace
       - restore_cache: *restore_cache
-      - run: *yarn_install
+      - node/install-yarn
       - run:
           name: Run tests
           command: |
@@ -70,7 +69,7 @@ jobs:
       - checkout
       - attach_workspace: *attach_workspace
       - restore_cache: *restore_cache
-      - run: *yarn_install
+      - node/install-yarn
       - run:
           name: Lint
           command: |
@@ -82,7 +81,7 @@ jobs:
       - checkout
       - attach_workspace: *attach_workspace
       - restore_cache: *restore_cache
-      - run: *yarn_install
+      - node/install-yarn
       - run:
           name: Initialize CodeClimate
           command: |
@@ -128,7 +127,9 @@ workflows:
           executor: default
           requires:
             - install_dependencies
-          install-command: yarn install --non-interactive --frozen-lockfile --production=false --cache-folder << pipeline.parameters.yarn_cache_location >>
+          - pre-steps:
+            - node/install-yarn
+          install-command: yarn install --non-interactive --frozen-lockfile --production=false
           cache-key: << pipeline.parameters.cache_key >>
 
       - cypress/run:
