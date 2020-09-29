@@ -37,7 +37,8 @@ jobs:
       - checkout
       - attach_workspace: *attach_workspace
       - restore_cache: *restore_cache
-      - node/install-yarn
+      - node/install-packages
+          pkg-manager: yarn
       - run: node --version
       - run: yarn --version
       - save_cache:
@@ -45,7 +46,6 @@ jobs:
           paths:
             - node_modules
             - << pipeline.parameters.workspace_root >>.cache/yarn
-            - << pipeline.parameters.workspace_root >>.cache/Cypress
 
   unit_tests:
     executor: default
@@ -53,7 +53,8 @@ jobs:
       - checkout
       - attach_workspace: *attach_workspace
       - restore_cache: *restore_cache
-      - node/install-yarn
+      - node/install-packages
+          pkg-manager: yarn
       - run:
           name: Run tests
           command: |
@@ -69,7 +70,8 @@ jobs:
       - checkout
       - attach_workspace: *attach_workspace
       - restore_cache: *restore_cache
-      - node/install-yarn
+      - node/install-packages
+          pkg-manager: yarn
       - run:
           name: Lint
           command: |
@@ -81,7 +83,8 @@ jobs:
       - checkout
       - attach_workspace: *attach_workspace
       - restore_cache: *restore_cache
-      - node/install-yarn
+      - node/install-packages
+          pkg-manager: yarn
       - run:
           name: Initialize CodeClimate
           command: |
@@ -128,7 +131,8 @@ workflows:
           requires:
             - install_dependencies
           pre-steps:
-            - node/install-yarn
+            - node/install-packages
+                pkg-manager: yarn
           install-command: yarn install --non-interactive --frozen-lockfile --production=false
           cache-key: << pipeline.parameters.cache_key >>
 
