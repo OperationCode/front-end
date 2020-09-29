@@ -121,10 +121,10 @@ workflows:
       - cypress/install:
           name: cypress_install
           executor: default
+          attach_workspace: *attach_workspace
           requires:
             - install_dependencies
           pre-steps:
-            - attach_workspace: *attach_workspace
             - run: ls -al
             - node/install-packages:
                 pkg-manager: yarn
@@ -134,6 +134,7 @@ workflows:
       - cypress/run:
           name: integration_tests
           executor: default
+          attach_workspace: *attach_workspace
           requires:
             - cypress_install
           record: true # record results on Cypress Dashboard
