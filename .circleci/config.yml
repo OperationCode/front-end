@@ -16,13 +16,13 @@ parameters:
     default: '~/'
   primary_cache_key:
     type: string
-    default: 'oc-ci-{{ .Branch }}-{{ checksum "yarn.lock" }}'
+    default: 'oc-ci-2-{{ .Branch }}-{{ checksum "yarn.lock" }}'
   backup_cache_key:
     type: string
-    default: 'oc-ci-{{ .Branch }}-'
+    default: 'oc-ci-2-{{ .Branch }}-'
   org_level_cache_key:
     type: string
-    default: 'oc-ci-'
+    default: 'oc-ci-2-'
 
 aliases:
   - &attach_workspace
