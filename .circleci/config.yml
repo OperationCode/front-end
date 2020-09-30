@@ -20,7 +20,7 @@ parameters:
     default: '~/.cache/yarn'
   cache_key:
     type: string
-    default: 'operation-code-front-end-{{ checksum "yarn.lock" }}'
+    default: 'oc-{{ checksum "yarn.lock" }}'
 
 aliases:
   - &attach_workspace
@@ -43,6 +43,7 @@ jobs:
             - node_modules
             - << pipeline.parameters.workspace_root >>.cache/yarn
             - << pipeline.parameters.workspace_root >>.cache/Cypress
+      - run: ls -al
       - run:
           name: Verify Cypress Binary
           command: yarn cypress verify
