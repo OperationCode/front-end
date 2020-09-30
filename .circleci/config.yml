@@ -37,14 +37,15 @@ jobs:
       - run: node --version
       - run: yarn --version
       - run: pwd && echo '' && ls -al
-      - run:
-          name: Verify Cypress Binary
-          command: yarn cypress verify
       - save_cache:
           key: << pipeline.parameters.cache_key >>
           paths:
             - node_modules
             - << pipeline.parameters.workspace_root >>.cache/yarn
+            - << pipeline.parameters.workspace_root >>.cache/Cypress
+      - run:
+          name: Verify Cypress Binary
+          command: yarn cypress verify
 
   unit_tests:
     executor: default
