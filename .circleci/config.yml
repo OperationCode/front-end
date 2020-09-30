@@ -132,7 +132,6 @@ workflows:
                 paths:
                   - project
                   - .cache/Cypress
-          cache-key: << pipeline.parameters.cache_key >>
           attach-workspace: true
           record: true # record results on Cypress Dashboard
           parallel: true # split all specs across machines
