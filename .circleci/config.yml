@@ -25,25 +25,29 @@ parameters:
     default: 'oc-ci-'
 
 aliases:
-  - &scaffold
-    - attach_workspace:
-        at: << pipeline.parameters.workspace_root >>
-    - restore_cache:
-        keys:
-          - << pipeline.parameters.primary_cache_key >>
-          # Fallback in case checksum fails.
-          - << pipeline.parameters.backup_cache_key >>
-          - << pipeline.parameters.org_level_cache_key >>
-    - run:
-        name: 'Installing dependencies...'
-        command: |
-          yarn install --non-interactive --frozen-lockfile --cache_folder << pipeline.parameters.workspace_root >>.cache/yarn
+  - &attach_workspace
+    attach_workspace:
+      at: << pipeline.parameters.workspace_root >>
+  - &restore_cache:
+    restore_cache:
+      keys:
+        - << pipeline.parameters.primary_cache_key >>
+        # Fallback in case checksum fails.
+        - << pipeline.parameters.backup_cache_key >>
+        - << pipeline.parameters.org_level_cache_key >>
+  - &yarn_install
+    run:
+      name: 'Installing dependencies...'
+      command: |
+        yarn install --non-interactive --frozen-lockfile --cache_folder << pipeline.parameters.workspace_root >>.cache/yarn
 
 jobs:
   install_dependencies:
     executor: default
     steps:
-      - *scaffold
+      - *attach_workspace
+      - *restore_cache
+      - *yarn_install
       - save_cache:
           key: << pipeline.parameters.primary_cache_key >>
           paths:
@@ -60,7 +64,9 @@ jobs:
   unit_tests:
     executor: default
     steps:
-      - *scaffold
+      - *attach_workspace
+      - *restore_cache
+      - *yarn_install
       - run:
           name: Run tests
           command: yarn test:ci --silent=false
@@ -72,7 +78,9 @@ jobs:
   lint:
     executor: default
     steps:
-      - *scaffold
+      - *attach_workspace
+      - *restore_cache
+      - *yarn_install
       - run:
           name: Lint
           command: |
@@ -81,7 +89,9 @@ jobs:
   report_coverage:
     executor: default
     steps:
-      - *scaffold
+      - *attach_workspace
+      - *restore_cache
+      - *yarn_install
       - run:
           name: Initialize CodeClimate
           command: |
@@ -129,7 +139,9 @@ workflows:
           executor: default
           pre-steps:
             - run: ls -al && ls -al << pipeline.parameters.workspace_root >> && ls -al << pipeline.parameters.workspace_root >>.cache/
-            - *scaffold
+            - *attach_workspace
+            - *restore_cache
+            - *yarn_install
           attach-workspace: true
           record: true # record results on Cypress Dashboard
           parallel: true # split all specs across machines
