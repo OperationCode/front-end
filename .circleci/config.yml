@@ -15,9 +15,6 @@ parameters:
   workspace_root:
     type: string
     default: '~/'
-  yarn_cache_location:
-    type: string
-    default: '~/.cache/yarn'
 
 aliases:
   - &attach_workspace
@@ -31,6 +28,7 @@ jobs:
       - attach_workspace: *attach_workspace
       - node/install-packages:
           pkg-manager: yarn
+          cache-version: 'v2'
       - run: node --version
       - run: yarn --version
       - persist_to_workspace:
@@ -46,8 +44,7 @@ jobs:
       - attach_workspace: *attach_workspace
       - run:
           name: Run tests
-          command: |
-            yarn test:ci --silent=false
+          command: yarn test:ci --silent=false
       - persist_to_workspace:
           root: << pipeline.parameters.workspace_root >>
           paths:
