@@ -125,7 +125,7 @@ workflows:
           attach-workspace: true
           record: true # record results on Cypress Dashboard
           parallel: true # split all specs across machines
-          parallelism: 4 # use X number of CircleCI machines
+          parallelism: 3 # use X number of CircleCI machines
           command-prefix: yarn # dont use npx
           group: 'all tests' # name this group "all tests" on the dashboard
           start: 'yarn dev' # start server before running tests
