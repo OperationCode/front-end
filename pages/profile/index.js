@@ -7,6 +7,7 @@ import LinkButton from 'components/Buttons/LinkButton/LinkButton';
 import withAuthSync from 'decorators/withAuthSync/withAuthSync';
 import { getUserPromise } from 'common/constants/api';
 import { capitalize, startCase, toLower } from 'lodash';
+import { format } from 'date-fns';
 import styles from '../styles/profile.module.css';
 import { PROFILE_GREETING } from '../../common/constants/testIDs';
 
@@ -50,9 +51,7 @@ function Profile({
   // Gets date of sign up then converts to mmm dd yyyy
   let dateJoined;
   if (createdAt) {
-    dateJoined = new Date(createdAt.slice(0, 10).split('-').reverse().join('-').replace(/-/g, '/'))
-      .toString()
-      .slice(4, 15);
+    dateJoined = format(new Date(createdAt), 'MM-dd-yyyy');
   }
 
   return (
@@ -119,6 +118,13 @@ function Profile({
             </LinkButton>
             <LinkButton theme="secondary" href="/profile/change_password">
               Change Password
+            </LinkButton>
+            <LinkButton
+              theme="secondary"
+              href="https://drive.google.com/file/d/1s4PsrUzs2MU4itCA44x1VBzX7Gd77H8n/view"
+              analyticsEventLabel="Viewed Scholarship Policy"
+            >
+              View Scholarship Policy
             </LinkButton>
           </div>,
         ]}
