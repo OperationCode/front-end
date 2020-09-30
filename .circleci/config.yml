@@ -121,7 +121,7 @@ workflows:
       - cypress/install:
           name: cypress_install
           executor: default
-          pre-steps:
+          post-checkout:
             - run: echo "hello" && ls -al && ls -al ../
             - attach_workspace: *attach_workspace
             - node/install-packages:
@@ -129,6 +129,7 @@ workflows:
             - run: echo "bye" && ls -al && ls -al ../
           cache-key: << pipeline.parameters.cache_key >>
           install-command: yarn install --non-interactive --frozen-lockfile
+          yarn: true
           verify-command: yarn cypress verify
 
       - cypress/run:
@@ -138,7 +139,7 @@ workflows:
             - cypress_install
           record: true # record results on Cypress Dashboard
           parallel: true # split all specs across machines
-          parallelism: 3 # use 3 CircleCI machines
+          parallelism: 4 # use 4 CircleCI machines
           group: 'all tests' # name this group "all tests" on the dashboard
           start: 'yarn dev' # start server before running tests
           wait-on: http://localhost:3000 # wait until server is ready
