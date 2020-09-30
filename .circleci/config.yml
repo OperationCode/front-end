@@ -71,6 +71,17 @@ jobs:
           command: |
             yarn lint:ci
 
+  cypress_install:
+    executor: default
+    steps:
+      - checkout
+      - attach_workspace: *attach_workspace
+      - node/install-packages:
+          pkg-manager: yarn
+      - run:
+          name: Verify Cypress Binary
+          run: yarn cypress verify
+
   report_coverage:
     executor: default
     steps:
@@ -118,25 +129,21 @@ workflows:
           requires:
             - install_dependencies
 
-      - cypress/install:
-          name: cypress_install
-          executor: default
-          cache-key: << pipeline.parameters.cache_key >>
-          yarn: true
-          install-command: yarn install --non-interactive --frozen-lockfile
-          verify-command: yarn cypress verify
-
       - cypress/run:
           name: integration_tests
-          executor: default
           requires:
             - cypress_install
+          executor: default
+          attach_workspace: true
           record: true # record results on Cypress Dashboard
           parallel: true # split all specs across machines
-          parallelism: 3 # use 4 CircleCI machines
+          parallelism: 3 # use 3 CircleCI machines
+          command-prefix: yarn # dont use npx
           group: 'all tests' # name this group "all tests" on the dashboard
           start: 'yarn dev' # start server before running tests
           wait-on: http://localhost:3000 # wait until server is ready
+          pre-steps:
+            - run: echo "hello" && pwd && ls -al && ls -al ../
           post-steps:
             - run:
                 name: Get each parallelized node's coverage report
