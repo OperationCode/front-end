@@ -37,6 +37,9 @@ jobs:
       - run: node --version
       - run: yarn --version
       - run: pwd && echo '' && ls -al
+      - run:
+          name: Verify Cypress Binary
+          command: yarn cypress verify
       - save_cache:
           key: << pipeline.parameters.cache_key >>
           paths:
@@ -70,17 +73,6 @@ jobs:
           name: Lint
           command: |
             yarn lint:ci
-
-  cypress_install:
-    executor: default
-    steps:
-      - checkout
-      - attach_workspace: *attach_workspace
-      - node/install-packages:
-          pkg-manager: yarn
-      - run:
-          name: Verify Cypress Binary
-          command: yarn cypress verify
 
   report_coverage:
     executor: default
@@ -132,7 +124,7 @@ workflows:
       - cypress/run:
           name: integration_tests
           requires:
-            - cypress_install
+            - install_dependencies
           executor: default
           attach_workspace: true
           record: true # record results on Cypress Dashboard
