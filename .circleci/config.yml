@@ -24,24 +24,25 @@ parameters:
     type: string
     default: 'oc-ci-'
 
-scaffold: &scaffold
-  - attach_workspace:
-      at: << pipeline.parameters.workspace_root >>
-  - restore_cache:
-      keys:
-        - << pipeline.parameters.primary_cache_key >>
-        # Fallback in case checksum fails.
-        - << pipeline.parameters.backup_cache_key >>
-        - << pipeline.parameters.org_level_cache_key >>
-  - run:
-      name: 'Installing dependencies...'
-      command: yarn install --non-interactive --frozen-lockfile --cache_folder << pipeline.parameters.workspace_root >>.cache/yarn
+aliases:
+  - &scaffold
+    - attach_workspace:
+        at: << pipeline.parameters.workspace_root >>
+    - restore_cache:
+        keys:
+          - << pipeline.parameters.primary_cache_key >>
+          # Fallback in case checksum fails.
+          - << pipeline.parameters.backup_cache_key >>
+          - << pipeline.parameters.org_level_cache_key >>
+    - run:
+        name: 'Installing dependencies...'
+        command: yarn install --non-interactive --frozen-lockfile --cache_folder << pipeline.parameters.workspace_root >>.cache/yarn
 
 jobs:
   install_dependencies:
     executor: default
     steps:
-      <<: *scaffold
+      - *scaffold
       - save_cache:
           key: << pipeline.parameters.primary_cache_key >>
           paths:
@@ -54,7 +55,7 @@ jobs:
   unit_tests:
     executor: default
     steps:
-      <<: *scaffold
+      - *scaffold
       - run:
           name: Run tests
           command: yarn test:ci --silent=false
@@ -66,7 +67,7 @@ jobs:
   lint:
     executor: default
     steps:
-      <<: *scaffold
+      - *scaffold
       - run:
           name: Lint
           command: |
@@ -75,7 +76,7 @@ jobs:
   report_coverage:
     executor: default
     steps:
-      <<: *scaffold
+      - *scaffold
       - run:
           name: Initialize CodeClimate
           command: |
@@ -122,8 +123,8 @@ workflows:
             - install_dependencies
           executor: default
           pre-steps:
-            run: ls -al && ls -al << pipeline.parameters.workspace_root >> && ls -al << pipeline.parameters.workspace_root >>.cache/
-            <<: *scaffold
+            - run: ls -al && ls -al << pipeline.parameters.workspace_root >> && ls -al << pipeline.parameters.workspace_root >>.cache/
+            - *scaffold
           attach-workspace: true
           record: true # record results on Cypress Dashboard
           parallel: true # split all specs across machines
