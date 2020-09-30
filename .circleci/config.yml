@@ -20,7 +20,7 @@ parameters:
     default: '~/.cache/yarn'
   cache_key:
     type: string
-    default: 'oc-fe-ci-{{ checksum "yarn.lock" }}'
+    default: 'oc-ci-{{ checksum "yarn.lock" }}'
 
 aliases:
   - &attach_workspace
@@ -40,8 +40,8 @@ jobs:
           key: << pipeline.parameters.cache_key >>
           paths:
             - node_modules
+            - << pipeline.parameters.workspace_root >>.cache
             - << pipeline.parameters.workspace_root >>.cache/yarn
-            - << pipeline.parameters.workspace_root >>.cache/Cypress
 
   unit_tests:
     executor: default
@@ -122,12 +122,13 @@ workflows:
           name: integration_tests
           requires:
             - install_dependencies
+          executor: default
           pre-steps:
             - checkout
             - attach_workspace: *attach_workspace
             - node/install-packages:
                 pkg-manager: yarn
-          executor: default
+          cache-key: << pipeline.parameters.cache_key >>
           attach-workspace: true
           record: true # record results on Cypress Dashboard
           parallel: true # split all specs across machines
