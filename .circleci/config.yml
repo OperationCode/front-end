@@ -118,16 +118,24 @@ workflows:
           requires:
             - install_dependencies
 
-      - cypress/run:
-          name: integration_tests
+      - cypress/install:
+          name: cypress_install
           executor: default
-          post-checkout:
+          pre-steps:
+            - run: echo "hello" && ls -al && ls -al ../
             - attach_workspace: *attach_workspace
             - node/install-packages:
                 pkg-manager: yarn
-            - run: ls -al && ls -al ../
-          install-command: ls -al && ls -al ../ && yarn install --frozen-lockfile
+            - run: echo "bye" && ls -al && ls -al ../
+          install_command: yarn install --non-interactive --frozen-lockfile
+          cache-key: << pipeline.parameters.cache_key >>
           verify-command: yarn cypress verify
+
+      - cypress/run:
+          name: integration_tests
+          executor: default
+          requires:
+            - cypress_install
           record: true # record results on Cypress Dashboard
           parallel: true # split all specs across machines
           parallelism: 3 # use 3 CircleCI machines
