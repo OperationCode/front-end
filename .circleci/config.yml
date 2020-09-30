@@ -20,7 +20,7 @@ parameters:
     default: '~/.cache/yarn'
   cache_key:
     type: string
-    default: 'oc-ci-{{ checksum "yarn.lock" }}'
+    default: 'operation-code-ci-{{ checksum "yarn.lock" }}'
 
 aliases:
   - &attach_workspace
@@ -42,6 +42,7 @@ jobs:
             - node_modules
             - << pipeline.parameters.workspace_root >>.cache
             - << pipeline.parameters.workspace_root >>.cache/yarn
+            - << pipeline.parameters.workspace_root >>.cache/Cypress
 
   unit_tests:
     executor: default
@@ -128,6 +129,11 @@ workflows:
             - attach_workspace: *attach_workspace
             - node/install-packages:
                 pkg-manager: yarn
+            - persist_to_workspace:
+                root: << pipeline.parameters.workspace_root >>
+                paths:
+                  - project
+                  - .cache/Cypress
           cache-key: << pipeline.parameters.cache_key >>
           attach-workspace: true
           record: true # record results on Cypress Dashboard
