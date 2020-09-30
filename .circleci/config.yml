@@ -36,7 +36,7 @@ jobs:
           pkg-manager: yarn
       - run: node --version
       - run: yarn --version
-      - run: pwd && echo '' && ls -al
+      - run: pwd && echo '' && ls -al && ls -al ~/
       - save_cache:
           key: << pipeline.parameters.cache_key >>
           paths:
