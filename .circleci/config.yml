@@ -36,7 +36,8 @@ aliases:
           - << pipeline.parameters.org_level_cache_key >>
     - run:
         name: 'Installing dependencies...'
-        command: yarn install --non-interactive --frozen-lockfile --cache_folder << pipeline.parameters.workspace_root >>.cache/yarn
+        command: |
+          yarn install --non-interactive --frozen-lockfile --cache_folder << pipeline.parameters.workspace_root >>.cache/yarn
 
 jobs:
   install_dependencies:
@@ -51,6 +52,10 @@ jobs:
             - << pipeline.parameters.workspace_root >>.cache/Cypress
       - run: node --version
       - run: yarn --version
+      - persist_to_workspace:
+          root: << pipeline.parameters.workspace_root >>
+          paths:
+            - .cache/Cypress
 
   unit_tests:
     executor: default
