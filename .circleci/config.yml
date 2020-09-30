@@ -55,7 +55,7 @@ jobs:
             - << pipeline.parameters.workspace_root >>.cache/yarn
             - << pipeline.parameters.workspace_root >>.cache/Cypress
       - run: node --version
-      - run: yarn --version
+      - run: yarn --version && ls -al && ls -al << pipeline.parameters.workspace_root >>.cache/Cypress
 
   unit_tests:
     executor: default
