@@ -37,9 +37,8 @@ jobs:
       - persist_to_workspace:
           root: << pipeline.parameters.workspace_root >>
           paths:
-            - node_modules
-            - << pipeline.parameters.workspace_root >>.cache/yarn
-            - << pipeline.parameters.workspace_root >>.cache/Cypress
+            - .cache/yarn
+            - .cache/Cypress
 
   unit_tests:
     executor: default
