@@ -1,7 +1,6 @@
 version: 2.1
 
 orbs:
-  node: circleci/node@4.0.1
   cypress: cypress-io/cypress@1.26.0
 
 executors:
@@ -15,16 +14,36 @@ parameters:
   workspace_root:
     type: string
     default: '~/'
+  primary_cache_key:
+    type: string
+    default: 'oc-ci-{{ .Branch }}-{{ checksum "yarn.lock" }}'
+  backup_cache_key:
+    type: string
+    default: 'oc-ci-{{ .Branch }}-'
+  org_level_cache_key:
+    type: string
+    default: 'oc-ci-'
 
 aliases:
   - &attach_workspace
     attach_workspace:
       at: << pipeline.parameters.workspace_root >>
   - &yarn_install
-    node/install-packages:
-      pkg-manager: yarn
-      cache-version: 'v4'
-      cache-path: '~/.cache'
+    restore_cache:
+      keys:
+        - << pipeline.parameters.primary_cache_key >>
+        # Fallback in case checksum fails.
+        - << pipeline.parameters.backup_cache_key >>
+        - << pipeline.parameters.org_level_cache_key >>
+    run:
+      name: 'Installing dependencies...'
+      command: yarn install --non-interactive --frozen-lockfile --cache_folder << pipeline.parameters.workspace_root >>.cache/yarn
+    save_cache:
+      paths:
+        - node_modules
+        - << pipeline.parameters.workspace_root >>.cache/yarn
+        - << pipeline.parameters.workspace_root >>.cache/Cypress
+      key: primary_cache_key
 
 jobs:
   install_dependencies:
@@ -35,6 +54,7 @@ jobs:
       - *yarn_install
       - run: node --version
       - run: yarn --version
+      - run: ls -al && ls -al ../
       - persist_to_workspace:
           root: << pipeline.parameters.workspace_root >>
           paths:
