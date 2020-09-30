@@ -122,6 +122,7 @@ workflows:
           name: integration_tests
           executor: default
           install-command: yarn install --frozen-lockfile
+          verify-command: yarn cypress verify
           record: true # record results on Cypress Dashboard
           parallel: true # split all specs across machines
           parallelism: 3 # use 3 CircleCI machines
