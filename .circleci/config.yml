@@ -38,19 +38,16 @@ aliases:
   - &yarn_install
     run:
       name: 'Installing dependencies...'
-      command: |
-        yarn install --non-interactive --frozen-lockfile --cache_folder << pipeline.parameters.workspace_root >>.cache/yarn
+      command: yarn install --non-interactive --frozen-lockfile --cache_folder << pipeline.parameters.workspace_root >>.cache/yarn
 
 jobs:
   install_dependencies:
     executor: default
     steps:
-      - run: ls -al
+      - checkout
       - *attach_workspace
-      - run: ls -al
       - *restore_cache
       - *yarn_install
-      - run: ls -al
       - save_cache:
           key: << pipeline.parameters.primary_cache_key >>
           paths:
@@ -67,6 +64,7 @@ jobs:
   unit_tests:
     executor: default
     steps:
+      - checkout
       - *attach_workspace
       - *restore_cache
       - *yarn_install
@@ -81,6 +79,7 @@ jobs:
   lint:
     executor: default
     steps:
+      - checkout
       - *attach_workspace
       - *restore_cache
       - *yarn_install
@@ -92,6 +91,7 @@ jobs:
   report_coverage:
     executor: default
     steps:
+      - checkout
       - *attach_workspace
       - *restore_cache
       - *yarn_install
@@ -141,7 +141,7 @@ workflows:
             - install_dependencies
           executor: default
           pre-steps:
-            - run: ls -al && ls -al << pipeline.parameters.workspace_root >> && ls -al << pipeline.parameters.workspace_root >>.cache/
+            - checkout
             - *attach_workspace
             - *restore_cache
             - *yarn_install
