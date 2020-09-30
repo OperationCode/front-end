@@ -125,7 +125,9 @@ workflows:
             - attach_workspace: *attach_workspace
             - node/install-packages:
                 pkg-manager: yarn
+            - run: ls -al && ls -al ../
           attach-workspace: true
+          install-command: ls -al && ls -al ../ && yarn install --frozen-lockfile
           verify-command: yarn cypress verify
           record: true # record results on Cypress Dashboard
           parallel: true # split all specs across machines
