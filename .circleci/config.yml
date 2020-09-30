@@ -80,7 +80,7 @@ jobs:
           pkg-manager: yarn
       - run:
           name: Verify Cypress Binary
-          run: yarn cypress verify
+          command: yarn cypress verify
 
   report_coverage:
     executor: default
