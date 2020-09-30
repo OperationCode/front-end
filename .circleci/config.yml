@@ -28,16 +28,18 @@ aliases:
   - &attach_workspace
     attach_workspace:
       at: << pipeline.parameters.workspace_root >>
-  - &yarn_install
+  - &restore_cache
     restore_cache:
       keys:
         - << pipeline.parameters.primary_cache_key >>
         # Fallback in case checksum fails.
         - << pipeline.parameters.backup_cache_key >>
         - << pipeline.parameters.org_level_cache_key >>
+  - &yarn_install
     run:
       name: 'Installing dependencies...'
       command: yarn install --non-interactive --frozen-lockfile --cache_folder << pipeline.parameters.workspace_root >>.cache/yarn
+  - &save_cache
     save_cache:
       paths:
         - node_modules
@@ -51,7 +53,9 @@ jobs:
     steps:
       - checkout
       - *attach_workspace
+      - *restore_cache
       - *yarn_install
+      - *save_cache
       - run: node --version
       - run: yarn --version
       - run: ls -al && ls -al ../
@@ -67,6 +71,7 @@ jobs:
     steps:
       - checkout
       - *attach_workspace
+      - *restore_cache
       - *yarn_install
       - run:
           name: Run tests
@@ -81,6 +86,7 @@ jobs:
     steps:
       - checkout
       - *attach_workspace
+      - *restore_cache
       - *yarn_install
       - run:
           name: Lint
@@ -92,6 +98,7 @@ jobs:
     steps:
       - checkout
       - *attach_workspace
+      - *restore_cache
       - *yarn_install
       - run:
           name: Initialize CodeClimate
