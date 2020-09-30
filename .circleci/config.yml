@@ -126,7 +126,7 @@ workflows:
           requires:
             - install_dependencies
           executor: default
-          attach_workspace: true
+          attach-workspace: true
           record: true # record results on Cypress Dashboard
           parallel: true # split all specs across machines
           parallelism: 3 # use 3 CircleCI machines
