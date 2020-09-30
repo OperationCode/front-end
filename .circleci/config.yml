@@ -36,14 +36,14 @@ jobs:
           pkg-manager: yarn
       - run: node --version
       - run: yarn --version
-      - run: pwd && echo '' && ls -al && ls -al ~/
+      - run: pwd && ls -al && ls -al ~/
       - save_cache:
           key: << pipeline.parameters.cache_key >>
           paths:
             - node_modules
             - << pipeline.parameters.workspace_root >>.cache/yarn
             - << pipeline.parameters.workspace_root >>.cache/Cypress
-      - run: ls -al
+      - run: ls -al &&  && ls -al ~/
       - run:
           name: Verify Cypress Binary
           command: yarn cypress verify
