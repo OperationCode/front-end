@@ -121,8 +121,7 @@ workflows:
       - cypress/run:
           name: integration_tests
           executor: default
-          attach-workspace: true
-          install-command: yarn install --frozen-lockfile
+          install-command: ls -al ../ && yarn install --frozen-lockfile
           verify-command: yarn cypress verify
           record: true # record results on Cypress Dashboard
           parallel: true # split all specs across machines
