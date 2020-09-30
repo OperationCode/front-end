@@ -18,17 +18,20 @@ parameters:
 
 aliases:
   - &attach_workspace
-    at: << pipeline.parameters.workspace_root >>
+    attach_workspace:
+      at: << pipeline.parameters.workspace_root >>
+  - &yarn_install
+    node/install-packages:
+      pkg-manager: yarn
+      cache-version: 'v3'
 
 jobs:
   install_dependencies:
     executor: default
     steps:
       - checkout
-      - attach_workspace: *attach_workspace
-      - node/install-packages:
-          pkg-manager: yarn
-          cache-version: 'operation-code'
+      - *attach_workspace
+      - *yarn_install
       - run: node --version
       - run: yarn --version
       - persist_to_workspace:
@@ -42,7 +45,8 @@ jobs:
     executor: default
     steps:
       - checkout
-      - attach_workspace: *attach_workspace
+      - *attach_workspace
+      - *yarn_install
       - run:
           name: Run tests
           command: yarn test:ci --silent=false
@@ -55,7 +59,8 @@ jobs:
     executor: default
     steps:
       - checkout
-      - attach_workspace: *attach_workspace
+      - *attach_workspace
+      - *yarn_install
       - run:
           name: Lint
           command: |
@@ -65,7 +70,8 @@ jobs:
     executor: default
     steps:
       - checkout
-      - attach_workspace: *attach_workspace
+      - *attach_workspace
+      - *yarn_install
       - run:
           name: Initialize CodeClimate
           command: |
@@ -113,7 +119,8 @@ workflows:
           executor: default
           pre-steps:
             - checkout
-            - attach_workspace: *attach_workspace
+            - *attach_workspace
+            - *yarn_install
           attach-workspace: true
           record: true # record results on Cypress Dashboard
           parallel: true # split all specs across machines
