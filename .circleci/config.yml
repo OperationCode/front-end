@@ -23,7 +23,8 @@ aliases:
   - &yarn_install
     node/install-packages:
       pkg-manager: yarn
-      cache-version: 'v3'
+      cache-version: 'v4'
+      cache-path: '~/.cache'
 
 jobs:
   install_dependencies:
