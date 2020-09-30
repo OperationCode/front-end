@@ -43,6 +43,7 @@
     "@sentry/browser": "^5.22.3",
     "axios": "^0.20.0",
     "classnames": "^2.2.6",
+    "date-fns": "^2.16.1",
     "fast-xml-parser": "^3.17.4",
     "fingerprintjs2": "^2.1.2",
     "fontfaceobserver": "^2.1.0",
