@@ -18,9 +18,6 @@ parameters:
   yarn_cache_location:
     type: string
     default: '~/.cache/yarn'
-  cache_key:
-    type: string
-    default: 'operation-code-ci-{{ checksum "yarn.lock" }}'
 
 aliases:
   - &attach_workspace
@@ -33,14 +30,14 @@ jobs:
       - checkout
       - attach_workspace: *attach_workspace
       - node/install-packages:
+          with-cache: false
           pkg-manager: yarn
       - run: node --version
       - run: yarn --version
-      - save_cache:
-          key: << pipeline.parameters.cache_key >>
+      - persist_to_workspace:
+          root: << pipeline.parameters.workspace_root >>
           paths:
             - node_modules
-            - << pipeline.parameters.workspace_root >>.cache
             - << pipeline.parameters.workspace_root >>.cache/yarn
             - << pipeline.parameters.workspace_root >>.cache/Cypress
 
@@ -129,6 +126,7 @@ workflows:
             - attach_workspace: *attach_workspace
             - node/install-packages:
                 pkg-manager: yarn
+                with-cache: false
             - persist_to_workspace:
                 root: << pipeline.parameters.workspace_root >>
                 paths:
