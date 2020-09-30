@@ -31,13 +31,11 @@ jobs:
       - attach_workspace: *attach_workspace
       - node/install-packages:
           pkg-manager: yarn
-          cache-version: 'temp'
       - run: node --version
       - run: yarn --version
       - persist_to_workspace:
           root: << pipeline.parameters.workspace_root >>
           paths:
-            - node_modules
             - .cache/yarn
             - .cache/Cypress
 
