@@ -36,19 +36,18 @@ scaffold: &scaffold
   - run:
     name: 'Installing dependencies...'
     command: yarn install --non-interactive --frozen-lockfile --cache_folder << pipeline.parameters.workspace_root >>.cache/yarn
-  - save_cache:
-    paths:
-      - node_modules
-      - << pipeline.parameters.workspace_root >>.cache/yarn
-      - << pipeline.parameters.workspace_root >>.cache/Cypress
-    key: primary_cache_key
 
 jobs:
   install_dependencies:
     executor: default
     steps:
       <<: *scaffold
-      - *save_cache
+      - save_cache:
+          key: << pipeline.parameters.primary_cache_key >>
+          paths:
+            - node_modules
+            - << pipeline.parameters.workspace_root >>.cache/yarn
+            - << pipeline.parameters.workspace_root >>.cache/Cypress
       - run: node --version
       - run: yarn --version
 
