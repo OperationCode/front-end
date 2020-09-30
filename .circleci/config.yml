@@ -25,7 +25,7 @@ parameters:
     default: 'oc-ci-'
 
 aliases:
-  - &attach_workspace
+  - &attach_workspace:
     attach_workspace:
       at: << pipeline.parameters.workspace_root >>
   - &restore_cache:
@@ -35,7 +35,7 @@ aliases:
         # Fallback in case checksum fails.
         - << pipeline.parameters.backup_cache_key >>
         - << pipeline.parameters.org_level_cache_key >>
-  - &yarn_install
+  - &yarn_install:
     run:
       name: 'Installing dependencies...'
       command: |
