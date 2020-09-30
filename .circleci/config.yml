@@ -45,9 +45,12 @@ jobs:
   install_dependencies:
     executor: default
     steps:
+      - run: ls -al
       - *attach_workspace
+      - run: ls -al
       - *restore_cache
       - *yarn_install
+      - run: ls -al
       - save_cache:
           key: << pipeline.parameters.primary_cache_key >>
           paths:
