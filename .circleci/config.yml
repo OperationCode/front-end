@@ -20,7 +20,7 @@ parameters:
     default: '~/.cache/yarn'
   cache_key:
     type: string
-    default: 'oc-{{ checksum "yarn.lock" }}'
+    default: 'oc-front-end-{{ checksum "yarn.lock" }}'
 
 aliases:
   - &attach_workspace
