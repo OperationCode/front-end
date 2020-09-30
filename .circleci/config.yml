@@ -43,7 +43,7 @@ jobs:
             - node_modules
             - << pipeline.parameters.workspace_root >>.cache/yarn
             - << pipeline.parameters.workspace_root >>.cache/Cypress
-      - run: ls -al &&  && ls -al ~/
+      - run: ls -al && ls -al ~/
       - run:
           name: Verify Cypress Binary
           command: yarn cypress verify
