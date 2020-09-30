@@ -58,13 +58,6 @@ jobs:
       - *save_cache
       - run: node --version
       - run: yarn --version
-      # - run: ls -al && ls -al ../
-      # - persist_to_workspace:
-      #     root: << pipeline.parameters.workspace_root >>
-      #     paths:
-      #       - node_modules
-      #       - .cache/yarn
-      #       - .cache/Cypress
 
   unit_tests:
     executor: default
@@ -148,6 +141,7 @@ workflows:
           pre-steps:
             - checkout
             - *attach_workspace
+            - *restore_cache
             - *yarn_install
           attach-workspace: true
           record: true # record results on Cypress Dashboard
