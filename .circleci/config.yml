@@ -30,13 +30,14 @@ jobs:
       - checkout
       - attach_workspace: *attach_workspace
       - node/install-packages:
-          with-cache: false
           pkg-manager: yarn
+          cache-version: 'temp'
       - run: node --version
       - run: yarn --version
       - persist_to_workspace:
           root: << pipeline.parameters.workspace_root >>
           paths:
+            - node_modules
             - .cache/yarn
             - .cache/Cypress
 
@@ -45,8 +46,6 @@ jobs:
     steps:
       - checkout
       - attach_workspace: *attach_workspace
-      - node/install-packages:
-          pkg-manager: yarn
       - run:
           name: Run tests
           command: |
@@ -61,8 +60,6 @@ jobs:
     steps:
       - checkout
       - attach_workspace: *attach_workspace
-      - node/install-packages:
-          pkg-manager: yarn
       - run:
           name: Lint
           command: |
@@ -73,8 +70,6 @@ jobs:
     steps:
       - checkout
       - attach_workspace: *attach_workspace
-      - node/install-packages:
-          pkg-manager: yarn
       - run:
           name: Initialize CodeClimate
           command: |
@@ -123,14 +118,6 @@ workflows:
           pre-steps:
             - checkout
             - attach_workspace: *attach_workspace
-            - node/install-packages:
-                pkg-manager: yarn
-                with-cache: false
-            - persist_to_workspace:
-                root: << pipeline.parameters.workspace_root >>
-                paths:
-                  - project
-                  - .cache/Cypress
           attach-workspace: true
           record: true # record results on Cypress Dashboard
           parallel: true # split all specs across machines
@@ -142,10 +129,7 @@ workflows:
           post-steps:
             - run:
                 name: Get each parallelized node's coverage report
-                command: |
-                  ls
-                  ls cypress-coverage
-                  cp cypress-coverage/coverage-final.json "cypress-coverage/coverage.node-$CIRCLE_NODE_INDEX.json"
+                command: cp cypress-coverage/coverage-final.json "cypress-coverage/coverage.node-$CIRCLE_NODE_INDEX.json"
             - persist_to_workspace:
                 root: << pipeline.parameters.workspace_root >>
                 paths:
