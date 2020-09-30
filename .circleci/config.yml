@@ -127,8 +127,8 @@ workflows:
             - node/install-packages:
                 pkg-manager: yarn
             - run: echo "bye" && ls -al && ls -al ../
-          install_command: yarn install --non-interactive --frozen-lockfile
           cache-key: << pipeline.parameters.cache_key >>
+          install-command: yarn install --non-interactive --frozen-lockfile
           verify-command: yarn cypress verify
 
       - cypress/run:
