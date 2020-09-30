@@ -133,14 +133,17 @@ workflows:
             - cypress_install
           record: true # record results on Cypress Dashboard
           parallel: true # split all specs across machines
-          parallelism: 4 # use 4 CircleCI machines
+          parallelism: 3 # use 4 CircleCI machines
           group: 'all tests' # name this group "all tests" on the dashboard
           start: 'yarn dev' # start server before running tests
           wait-on: http://localhost:3000 # wait until server is ready
           post-steps:
             - run:
                 name: Get each parallelized node's coverage report
-                command: cp cypress-coverage/coverage-final.json "cypress-coverage/coverage.node-$CIRCLE_NODE_INDEX.json"
+                command: |
+                  ls
+                  ls cypress-coverage
+                  cp cypress-coverage/coverage-final.json "cypress-coverage/coverage.node-$CIRCLE_NODE_INDEX.json"
             - persist_to_workspace:
                 root: << pipeline.parameters.workspace_root >>
                 paths:
