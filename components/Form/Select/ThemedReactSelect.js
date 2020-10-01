@@ -21,6 +21,7 @@ ThemedReactSelect.propTypes = {
   // see ThemedReactSelect as well
   // isTouched: bool,
   isTouched: oneOfType([array, bool]),
+  closeMenuOnSelect: bool,
 };
 
 ThemedReactSelect.defaultProps = {
@@ -30,6 +31,7 @@ ThemedReactSelect.defaultProps = {
   id: undefined,
   instanceId: undefined,
   isTouched: false,
+  closeMenuOnSelect: true,
 };
 
 function ThemedReactSelect({
