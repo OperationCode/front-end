@@ -48,15 +48,15 @@ describe(`profile/update (from login)`, () => {
     goToNextStep('Military Details');
     goToNextStep('Technology');
     cy.findByTestId(MULTI_STEP_SUBMIT_BUTTON).click();
-    cy.wait('@patchUser');
+    // cy.wait('@patchUser');
     cy.url().should('contain', '/profile');
     cy.url().should('not.contain', '/profile/update');
   });
 
   it(`should see initial values populated when going to profile update from login`, () => {
     cy.get('input[name="employmentStatus"]').should('have.value', 'fulltime');
-    cy.get('input[name="companyName"]').should('have.value', 'Googles');
-    cy.get('input[name="companyRole"]').should('have.value', 'CEO');
+    cy.findByLabelText('Company Name').should('have.value', 'Googles');
+    cy.findByLabelText('Company Role').should('have.value', 'CEO');
 
     goToNextStep(secondStepName);
 
@@ -65,8 +65,8 @@ describe(`profile/update (from login)`, () => {
     goToNextStep('Military Details');
 
     cy.get('input[name="branchOfService"]').should('have.value', 'army');
-    cy.get('input[name="yearsOfService"]').should('have.value', '3');
-    cy.get('input[name="payGrade"]').should('have.value', 'E20');
+    cy.findByLabelText('Years Of Service*').should('have.value', '3');
+    cy.findByLabelText('Pay Grade*').should('have.value', 'E20');
 
     goToNextStep('Technology');
 
@@ -86,10 +86,7 @@ describe(`profile/update (from login)`, () => {
     cy.clearCookies();
 
     cy.findByTestId(MULTI_STEP_STEP_BUTTON).click();
-    cy.get('div[role="alert"]').should(
-      'have.text',
-      'Authentication credentials were not provided.',
-    );
+    cy.findByRole('alert').should('have.text', 'Authentication credentials were not provided.');
     cy.get('h3').should('have.text', secondStepName);
   });
 
@@ -116,22 +113,22 @@ describe(`profile/update (from login)`, () => {
     goToNextStep(secondStepName);
     goToNextStep(thirdStepName);
 
-    cy.get('input[name="yearsOfService"]').clear().type('-1');
+    cy.findByLabelText('Years Of Service*').clear().type('-1');
 
     cy.findByTestId(MULTI_STEP_STEP_BUTTON).click();
 
-    cy.get('div[role="alert"]').should('have.text', 'Enter a number between 1 and 40.');
+    cy.findByRole('alert').should('have.text', 'Enter a number between 1 and 40.');
   });
 
   it(`should not allow numbers greater than 40 in the years of service input`, () => {
     goToNextStep(secondStepName);
     goToNextStep(thirdStepName);
 
-    cy.get('input[name="yearsOfService"]').clear().type('41');
+    cy.findByLabelText('Years Of Service*').clear().type('41');
 
     cy.findByTestId(MULTI_STEP_STEP_BUTTON).click();
 
-    cy.get('div[role="alert"]').should('have.text', 'Enter a number between 1 and 40.');
+    cy.findByRole('alert').should('have.text', 'Enter a number between 1 and 40.');
   });
 });
 
@@ -151,7 +148,6 @@ describe(`profile/update (from login) [server errors]`, () => {
     cy.visitAndWaitFor('/profile/update');
 
     cy.findByTestId(MULTI_STEP_STEP_BUTTON).click();
-    cy.wait(`@${ErrorAPICall}`);
 
     cy.findByRole('alert').should('have.text', networkErrorMessages.serverDown);
   });
