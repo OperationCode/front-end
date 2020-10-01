@@ -65,7 +65,7 @@ export const Nav = () => {
             <Link href="/" key="Home">
               <a
                 className={classNames(styles.logoLink, styles.link)}
-                onContextMenu={event_ => redirectRightClick(event_)}
+                onContextMenu={redirectRightClick}
               >
                 <img
                   src={`${s3}branding/logos/small-blue-logo.png`}
