@@ -79,6 +79,12 @@ const partners = [
     url: 'https://vercel.com/home?utm_source=operationcode',
     type: PARTNER_TYPES.KIND,
   },
+  {
+    name: 'Secure Code Warrior',
+    logoSource: `https://user-images.githubusercontent.com/51661129/92973323-3d540b80-f484-11ea-85dd-d202fc751cd9.png`,
+    url: 'https://securecodewarrior.com/?utm_source=operationcode',
+    type: PARTNER_TYPES.KIND,
+  },
 ];
 
 export default sortBy(partners, 'name');
