@@ -125,6 +125,7 @@ export default function Select({
           onChange={onChangeHandler}
           options={options}
           value={value || ''}
+          closeMenuOnSelect={!isMulti}
         />
 
         <ErrorMessage
