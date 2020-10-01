@@ -38,6 +38,7 @@ function ThemedReactSelect({
   hasValidationStyling,
   id,
   instanceId,
+  isMulti,
   ...props
 }) {
   // See TODO in propTypes definition
@@ -57,6 +58,8 @@ function ThemedReactSelect({
       {...props}
       instanceId={instanceId || id}
       disabled={disabled}
+      closeMenuOnSelect={!isMulti}
+      isMulti={isMulti}
       styles={{
         control: base => {
           return {
