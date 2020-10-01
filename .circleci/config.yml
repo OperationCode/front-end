@@ -14,50 +14,59 @@ parameters:
   workspace_root:
     type: string
     default: '~/'
-  yarn_cache_location:
+  primary_cache_key:
     type: string
-    default: '~/.cache/yarn'
-  cache_key:
+    default: 'oc-ci-2-{{ .Branch }}-{{ checksum "yarn.lock" }}'
+  backup_cache_key:
     type: string
-    default: 'operation-code-front-end-{{ checksum "yarn.lock" }}'
+    default: 'oc-ci-2-{{ .Branch }}-'
+  org_level_cache_key:
+    type: string
+    default: 'oc-ci-2-'
 
 aliases:
-  - &yarn_install
-    name: Install dependencies
-    command: yarn install --non-interactive --frozen-lockfile --production=false --cache-folder << pipeline.parameters.yarn_cache_location >>
-
   - &attach_workspace
-    at: << pipeline.parameters.workspace_root >>
-
+    attach_workspace:
+      at: << pipeline.parameters.workspace_root >>
   - &restore_cache
-    keys:
-      - << pipeline.parameters.cache_key >>
+    restore_cache:
+      keys:
+        - << pipeline.parameters.primary_cache_key >>
+        # Fallback in case checksum fails.
+        - << pipeline.parameters.backup_cache_key >>
+        - << pipeline.parameters.org_level_cache_key >>
+  - &yarn_install
+    run:
+      name: 'Installing dependencies...'
+      command: yarn install --non-interactive --frozen-lockfile --cache_folder << pipeline.parameters.workspace_root >>.cache/yarn
 
 jobs:
   install_dependencies:
     executor: default
     steps:
       - checkout
-      - attach_workspace: *attach_workspace
-      - restore_cache: *restore_cache
-      - run: *yarn_install
+      - *attach_workspace
+      - *restore_cache
+      - *yarn_install
       - save_cache:
-          key: << pipeline.parameters.cache_key >>
+          key: << pipeline.parameters.primary_cache_key >>
           paths:
+            - node_modules
             - << pipeline.parameters.workspace_root >>.cache/yarn
             - << pipeline.parameters.workspace_root >>.cache/Cypress
+      - run: node --version
+      - run: yarn --version
 
   unit_tests:
     executor: default
     steps:
       - checkout
-      - attach_workspace: *attach_workspace
-      - restore_cache: *restore_cache
-      - run: *yarn_install
+      - *attach_workspace
+      - *restore_cache
+      - *yarn_install
       - run:
           name: Run tests
-          command: |
-            yarn test:ci --silent=false
+          command: yarn test:ci --silent=false
       - persist_to_workspace:
           root: << pipeline.parameters.workspace_root >>
           paths:
@@ -67,9 +76,9 @@ jobs:
     executor: default
     steps:
       - checkout
-      - attach_workspace: *attach_workspace
-      - restore_cache: *restore_cache
-      - run: *yarn_install
+      - *attach_workspace
+      - *restore_cache
+      - *yarn_install
       - run:
           name: Lint
           command: |
@@ -79,9 +88,9 @@ jobs:
     executor: default
     steps:
       - checkout
-      - attach_workspace: *attach_workspace
-      - restore_cache: *restore_cache
-      - run: *yarn_install
+      - *attach_workspace
+      - *restore_cache
+      - *yarn_install
       - run:
           name: Initialize CodeClimate
           command: |
@@ -122,32 +131,28 @@ workflows:
           requires:
             - install_dependencies
 
-      - cypress/install:
-          name: cypress_install
-          executor: default
-          requires:
-            - install_dependencies
-          install-command: yarn install --non-interactive --frozen-lockfile --production=false --cache-folder << pipeline.parameters.yarn_cache_location >>
-          cache-key: << pipeline.parameters.cache_key >>
-
       - cypress/run:
           name: integration_tests
-          executor: default
           requires:
-            - cypress_install
+            - install_dependencies
+          executor: default
+          pre-steps:
+            - checkout
+            - *attach_workspace
+            - *restore_cache
+            - *yarn_install
+          attach-workspace: true
           record: true # record results on Cypress Dashboard
           parallel: true # split all specs across machines
-          parallelism: 3 # use 3 CircleCI machines
+          parallelism: 3 # use X number of CircleCI machines
+          command-prefix: yarn # dont use npx
           group: 'all tests' # name this group "all tests" on the dashboard
           start: 'yarn dev' # start server before running tests
           wait-on: http://localhost:3000 # wait until server is ready
           post-steps:
             - run:
                 name: Get each parallelized node's coverage report
-                command: |
-                  ls
-                  ls cypress-coverage
-                  cp cypress-coverage/coverage-final.json "cypress-coverage/coverage.node-$CIRCLE_NODE_INDEX.json"
+                command: cp cypress-coverage/coverage-final.json "cypress-coverage/coverage.node-$CIRCLE_NODE_INDEX.json"
             - persist_to_workspace:
                 root: << pipeline.parameters.workspace_root >>
                 paths:

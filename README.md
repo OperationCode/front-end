@@ -1,14 +1,19 @@
 <div align="center">
-  <br>
-  <a href="https://operationcode.org">
+  <a href="https://operationcode.org" height="750" width="750">
     <img
-      alt="Operation Code Logo"
-      src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/large-blue-logo.png"
+      alt="Operation Code Hacktoberfest Banner"
+      src="https://operation-code-assets.s3.us-east-2.amazonaws.com/operationcode_hacktoberfest_2020.jpg"
     >
   </a>
-  <br>
-  <br>
 </div>
+<br />
+<br />
+
+# 🎃 Hacktoberfest 🎃	
+
+[All the details you need](https://github.com/OperationCode/START_HERE/blob/master/README.md#-hacktoberfest-) before participating with us during Hacktoberfest.	
+
+<br />
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Twitter Follow](https://img.shields.io/twitter/follow/operation_code.svg?style=social&label=Follow&style=social)](https://twitter.com/operation_code)

@@ -1,7 +1,7 @@
 .Footer {
   align-items: center;
   display: flex;
-  height: 320px;
+  height: 500px;
   justify-content: center;
   flex-direction: column;
   padding: 2rem 0;
@@ -39,7 +39,7 @@
 }
 
 .logoGrouping img {
-  height: 40px;
+  height: 50px;
 }
 
 .linksGrouping {
@@ -88,7 +88,7 @@
 }
 
 .footerWrapper {
-  max-width: 1300px;
+  max-width: 1100px;
 }
 
 @media screen and (min-width: 1120px) {

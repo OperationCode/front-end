@@ -41,6 +41,7 @@
     "@innocuous/functions": "^2.1.1",
     "@next/bundle-analyzer": "^9.5.3",
     "@sentry/browser": "^5.22.3",
+    "@storybook/addon-controls": "^6.0.22",
     "axios": "^0.20.0",
     "classnames": "^2.2.6",
     "date-fns": "^2.16.1",
