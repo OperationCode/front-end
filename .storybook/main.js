@@ -5,7 +5,7 @@ const postCSSConfig = require('../postcss.config');
 // Export a function. Accept the base config as the only param.
 module.exports = {
   stories: ['../components/**/__stories__/*.stories.js'],
-  addons: ['@storybook/addon-essentials'],
+  addons: ['@storybook/addon-controls', '@storybook/addon-essentials'],
   webpackFinal: async (config, { configType }) => {
     // 'configType' has a value of 'DEVELOPMENT' or 'PRODUCTION'
     // You can change the configuration based on that.
