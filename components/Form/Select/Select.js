@@ -115,6 +115,7 @@ export default function Select({
       <div className={styles.selectFeedbackGrouping}>
         <ThemedReactSelect
           {...props}
+          closeMenuOnSelect={false}
           hasErrors={hasErrors}
           hasValidationStyling={hasValidationStyling}
           isTouched={touched[name]}
