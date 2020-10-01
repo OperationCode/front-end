@@ -1,9 +1,9 @@
 import jwt_decode from 'jwt-decode'; // eslint-disable-line camelcase
-import { networkErrorMessages } from '../../common/constants/messages';
-import existingUser from '../../test-utils/mocks/existingUser';
-import mockPassword from '../../test-utils/mockGenerators/mockPassword';
-import mockUser from '../../test-utils/mockGenerators/mockUser';
-import { PROFILE_GREETING } from '../../common/constants/testIDs';
+import { networkErrorMessages } from 'common/constants/messages';
+import existingUser from 'test-utils/mocks/existingUser';
+import mockPassword from 'test-utils/mockGenerators/mockPassword';
+import mockUser from 'test-utils/mockGenerators/mockUser';
+import { PROFILE_GREETING } from 'common/constants/testIDs';
 
 describe('login', () => {
   beforeEach(() => {

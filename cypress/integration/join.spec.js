@@ -1,7 +1,7 @@
 import jwt_decode from 'jwt-decode'; // eslint-disable-line camelcase
-import { validationErrorMessages } from '../../common/constants/messages';
-import existingUser from '../../test-utils/mocks/existingUser';
-import mockUser from '../../test-utils/mockGenerators/mockUser';
+import { validationErrorMessages } from 'common/constants/messages';
+import existingUser from 'test-utils/mocks/existingUser';
+import mockUser from 'test-utils/mockGenerators/mockUser';
 
 const validUser = mockUser();
 const inputFields = {
