@@ -30,23 +30,22 @@ function Footer() {
 
   return (
     <footer className={styles.Footer}>
-      <div className={classNames(styles.footerWrapper, styles.row)}>
-        <div className={classNames(styles.footerGrouping, styles.socialGrouping)}>
-          <div className={classNames(styles.logoGrouping)}>
-            <Link href="/" key="Home">
-              <a className={classNames(styles.logoLink, styles.link)}>
-                <img
-                  src={`${s3}branding/logos/small-blue-logo.png`}
-                  alt="Operation Code Logo"
-                  className={styles.logo}
-                />
-              </a>
-            </Link>
-          </div>
-          <div className={classNames(styles.capitalize, styles.marginBottom)}>Connect With Us!</div>
-          <SocialMedia />
+      <div className={classNames(styles.footerGrouping, styles.socialGrouping)}>
+        <div className={classNames(styles.logoGrouping)}>
+          <Link href="/" key="Home">
+            <a className={classNames(styles.logoLink, styles.link)}>
+              <img
+                src={`${s3}branding/logos/small-blue-logo.png`}
+                alt="Operation Code Logo"
+                className={styles.logo}
+              />
+            </a>
+          </Link>
         </div>
-
+        <div className={classNames(styles.capitalize, styles.marginBottom)}>Connect With Us!</div>
+        <SocialMedia />
+      </div>
+      <div className={classNames(styles.footerWrapper, styles.row)}>
         <div className={classNames(styles.footerGrouping, styles.linksGrouping, styles.capitalize)}>
           <div className={styles.linksRow}>
             <ul className={styles.linksColumn}>

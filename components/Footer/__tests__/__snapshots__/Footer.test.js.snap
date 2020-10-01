@@ -5,35 +5,35 @@ exports[`Footer should render with no props passed 1`] = `
   className="Footer"
 >
   <div
-    className="footerWrapper row"
+    className="footerGrouping socialGrouping"
   >
     <div
-      className="footerGrouping socialGrouping"
+      className="logoGrouping"
     >
-      <div
-        className="logoGrouping"
+      <Link
+        href="/"
       >
-        <Link
-          href="/"
+        <a
+          className="logoLink link"
         >
-          <a
-            className="logoLink link"
-          >
-            <img
-              alt="Operation Code Logo"
-              className="logo"
-              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/small-blue-logo.png"
-            />
-          </a>
-        </Link>
-      </div>
-      <div
-        className="capitalize marginBottom"
-      >
-        Connect With Us!
-      </div>
-      <SocialMedia />
+          <img
+            alt="Operation Code Logo"
+            className="logo"
+            src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/small-blue-logo.png"
+          />
+        </a>
+      </Link>
     </div>
+    <div
+      className="capitalize marginBottom"
+    >
+      Connect With Us!
+    </div>
+    <SocialMedia />
+  </div>
+  <div
+    className="footerWrapper row"
+  >
     <div
       className="footerGrouping linksGrouping capitalize"
     >
