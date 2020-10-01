@@ -121,7 +121,7 @@
     "express": "^4.17.1",
     "faker": "^5.1.0",
     "file-loader": "^6.1.0",
-    "husky": "^4.2.5",
+    "husky": "^4.3.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "25",
     "jest-prop-type-error": "^1.1.0",
