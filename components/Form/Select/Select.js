@@ -119,7 +119,6 @@ export default function Select({
           hasValidationStyling={hasValidationStyling}
           isTouched={touched[name]}
           id={id || name}
-          closeMenuOnSelect={!isMulti}
           isMulti={isMulti}
           name={name}
           onBlur={handleBlur}

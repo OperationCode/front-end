@@ -21,6 +21,7 @@ ThemedReactSelect.propTypes = {
   // see ThemedReactSelect as well
   // isTouched: bool,
   isTouched: oneOfType([array, bool]),
+  isMulti: bool,
   closeMenuOnSelect: bool,
 };
 
@@ -31,10 +32,12 @@ ThemedReactSelect.defaultProps = {
   id: undefined,
   instanceId: undefined,
   isTouched: false,
+  isMulti: false,
   closeMenuOnSelect: true,
 };
 
 function ThemedReactSelect({
+  isMulti,
   disabled,
   hasErrors,
   hasValidationStyling,
@@ -57,6 +60,8 @@ function ThemedReactSelect({
   return (
     <ReactSelect
       {...props}
+      isMulti={isMulti}
+      closeMenuOnSelect={!isMulti}
       instanceId={instanceId || id}
       disabled={disabled}
       styles={{
