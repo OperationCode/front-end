@@ -68,6 +68,10 @@ module.exports = {
         'react/sort-comp': 'off',
       },
     },
+    {
+      files: '*.mdx',
+      extends: 'plugin:mdx/recommended',
+    },
   ],
 
   rules: {
