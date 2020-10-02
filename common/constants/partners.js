@@ -85,6 +85,12 @@ const partners = [
     url: 'https://securecodewarrior.com/?utm_source=operationcode',
     type: PARTNER_TYPES.KIND,
   },
+  {
+    name: 'Chromatic',
+    logoSource: `${s3}partnerLogos/chromatic.png`,
+    url: 'https://chromatic.com/?utm_source=operationcode',
+    type: PARTNER_TYPES.KIND,
+  },
 ];
 
 export default sortBy(partners, 'name');
