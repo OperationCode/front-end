@@ -87,7 +87,7 @@ const partners = [
   },
   {
     name: 'Chromatic',
-    logoSource: `https://user-images.githubusercontent.com/321738/84662277-e3db4f80-af1b-11ea-88f5-91d67a5e59f6.png`,
+    logoSource: `${s3}partnerLogos/chromatic.png`,
     url: 'https://chromatic.com/?utm_source=operationcode',
     type: PARTNER_TYPES.KIND,
   },
