@@ -100,7 +100,7 @@ Thanks to LogRocket for providing time-saving context on every error and insight
 
 ### Sentry
 
-<a href="https://www.sentry.io/"><img src="https://cdn.rawgit.com/OperationCode/front-end/main/public/static/images/sentry.svg" width="306" height="90" alt="Sentry" /></a>
+<a href="https://www.sentry.io/"><img src="https://raw.githubusercontent.com/OperationCode/front-end/main/public/static/images/sentry.svg" width="306" height="90" alt="Sentry" /></a>
 
 Thanks to Sentry for a wonderful experience with cataloguing and managing errors.
 
@@ -108,6 +108,6 @@ Thanks to Sentry for a wonderful experience with cataloguing and managing errors
 
 ### Vercel
 
-<a href="https://vercel.com"><img src="https://cdn.rawgit.com/OperationCode/front-end/main/public/static/images/vercel.svg" width="306" height="90" alt="Vercel" /></svg></a>
+<a href="https://vercel.com"><img src="https://raw.githubusercontent.com/OperationCode/front-end/main/public/static/images/vercel.svg" width="306" height="90" alt="Vercel" /></svg></a>
 
 Thanks to Vercel for hosting and continuous deployment of all our web applications.
