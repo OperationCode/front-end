@@ -94,7 +94,7 @@ Thanks to [Chromatic](https://www.chromatic.com/) for providing the visual testi
 
 <a href="https://logrocket.com/"><img src="https://logrocket-assets.io/img/logo.png" alt="LogRocket" width="306" /></a>
 
-Thanks to LogRocket for providing time-saving context on every error and insight into our user's behavior,
+Thanks to [LogRocket](https://logrocket.com/) for providing time-saving context on every error and insight into our user's behavior,
 
 ---
 
@@ -102,7 +102,7 @@ Thanks to LogRocket for providing time-saving context on every error and insight
 
 <a href="https://www.sentry.io/"><img src="https://raw.githubusercontent.com/OperationCode/front-end/main/public/static/images/sentry.svg" width="306" height="90" alt="Sentry" /></a>
 
-Thanks to Sentry for a wonderful experience with cataloguing and managing errors.
+Thanks to [Sentry](https://getsentry.io) for a wonderful experience with cataloguing and managing errors.
 
 ---
 
@@ -110,4 +110,4 @@ Thanks to Sentry for a wonderful experience with cataloguing and managing errors
 
 <a href="https://vercel.com"><img src="https://raw.githubusercontent.com/OperationCode/front-end/main/public/static/images/vercel.svg" width="306" height="90" alt="Vercel" /></svg></a>
 
-Thanks to Vercel for hosting and continuous deployment of all our web applications.
+Thanks to [Vercel](https://vercel.com) for hosting and continuous deployment of all our web applications.
