@@ -232,6 +232,7 @@ function CodeSchools({ allSchools }) {
               placeholder="Start typing a state..."
               className={styles.select}
               isMulti
+              closeMenuOnSelect={false}
               name="States"
               options={States}
               onChange={filterState}
