@@ -1,0 +1,139 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SurveyForm should render with required props 1`] = `
+<form
+  className="SurveyForm"
+  noValidate={true}
+  onReset={[Function]}
+  onSubmit={[Function]}
+>
+  <p>
+    Thank you for your interest in Operation Code! Please fill out the form below so we can stay in touch!
+  </p>
+  <div>
+    <div
+      className="field"
+      data-testid="INPUT"
+    >
+      <label
+        className="Label"
+        data-testid="LABEL"
+        htmlFor="email"
+      >
+        Email*
+      </label>
+      <div
+        className="inputFeedbackGrouping"
+        data-testid="INPUT_FEEDBACK_GROUPING"
+      >
+        <input
+          autoComplete="username email"
+          className="Input"
+          disabled={false}
+          id="email"
+          name="email"
+          onBlur={[Function]}
+          onChange={[Function]}
+          type="email"
+          value=""
+        />
+      </div>
+    </div>
+    <div
+      className="field"
+      data-testid="INPUT"
+    >
+      <label
+        className="Label"
+        data-testid="LABEL"
+        htmlFor="firstName"
+      >
+        First Name*
+      </label>
+      <div
+        className="inputFeedbackGrouping"
+        data-testid="INPUT_FEEDBACK_GROUPING"
+      >
+        <input
+          autoComplete="given-name"
+          className="Input"
+          disabled={false}
+          id="firstName"
+          name="firstName"
+          onBlur={[Function]}
+          onChange={[Function]}
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+    <div
+      className="field"
+      data-testid="INPUT"
+    >
+      <label
+        className="Label"
+        data-testid="LABEL"
+        htmlFor="lastName"
+      >
+        Last Name*
+      </label>
+      <div
+        className="inputFeedbackGrouping"
+        data-testid="INPUT_FEEDBACK_GROUPING"
+      >
+        <input
+          autoComplete="family-name"
+          className="Input"
+          disabled={false}
+          id="lastName"
+          name="lastName"
+          onBlur={[Function]}
+          onChange={[Function]}
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+    <div
+      className="field"
+      data-testid="INPUT"
+    >
+      <label
+        className="Label"
+        data-testid="LABEL"
+        htmlFor="zipcode"
+      >
+        Zipcode*
+      </label>
+      <div
+        className="inputFeedbackGrouping"
+        data-testid="INPUT_FEEDBACK_GROUPING"
+      >
+        <input
+          autoComplete="postal-code"
+          className="Input"
+          disabled={false}
+          id="zipcode"
+          name="zipcode"
+          onBlur={[Function]}
+          onChange={[Function]}
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+  </div>
+  
+  <button
+    className="Button topMargin secondary"
+    data-testid="BUTTON"
+    disabled={false}
+    onClick={[Function]}
+    tabIndex={0}
+    type="submit"
+  >
+    Submit
+  </button>
+</form>
+`;

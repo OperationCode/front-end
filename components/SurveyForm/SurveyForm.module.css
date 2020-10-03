@@ -1,0 +1,14 @@
+.SurveyForm {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.topMargin {
+  margin-top: 1rem;
+}
+
+.SurveyForm > p {
+  margin: 1.25rem auto;
+}
