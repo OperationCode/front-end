@@ -16,7 +16,7 @@ const pageTitle = 'Profile';
 Profile.propTypes = {
   firstName: string.isRequired,
   lastName: string.isRequired,
-  branchOfService: string.isRequired,
+  branchOfService: string,
   companyName: string.isRequired,
   companyRole: string.isRequired,
   createdAt: string.isRequired,
@@ -26,6 +26,10 @@ Profile.propTypes = {
   isMentor: bool.isRequired,
   militaryStatus: string.isRequired,
   programmingLanguages: string.isRequired,
+};
+
+Profile.defaultProps = {
+  branchOfService: '',
 };
 
 Profile.getInitialProps = async ctx => {

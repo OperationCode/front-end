@@ -30,6 +30,7 @@ LoginForm.propTypes = {
     email: string,
     password: string,
   }),
+  redirectFunc: func,
 };
 
 LoginForm.defaultProps = {
@@ -37,9 +38,10 @@ LoginForm.defaultProps = {
     email: '',
     password: '',
   },
+  redirectFunc: undefined,
 };
 
-function LoginForm({ initialValues, login, onSuccess }) {
+function LoginForm({ initialValues, login, onSuccess, redirectFunc }) {
   const [errorMessage, setErrorMessage] = useState('');
 
   const handleSubmit = async (values, actions) => {
@@ -49,6 +51,7 @@ function LoginForm({ initialValues, login, onSuccess }) {
       await onSuccess({ token });
       actions.setSubmitting(false);
       actions.resetForm();
+      redirectFunc();
     } catch (error) {
       actions.setSubmitting(false);
 
@@ -64,8 +67,9 @@ function LoginForm({ initialValues, login, onSuccess }) {
             <Field
               type="email"
               name="email"
-              label="Email*"
+              label={redirectFunc ? '' : 'Email*'}
               component={Input}
+              placeholder={redirectFunc ? 'Enter Your Username' : ''}
               disabled={isSubmitting}
               autoComplete="username email"
             />
@@ -73,7 +77,8 @@ function LoginForm({ initialValues, login, onSuccess }) {
             <Field
               type="password"
               name="password"
-              label="Password*"
+              label={redirectFunc ? '' : 'Password*'}
+              placeholder={redirectFunc ? 'Enter Your Password' : ''}
               component={Input}
               disabled={isSubmitting}
               autoComplete="new-password"
@@ -84,10 +89,10 @@ function LoginForm({ initialValues, login, onSuccess }) {
             <Button
               className={styles.topMargin}
               type="submit"
-              theme="secondary"
+              theme={redirectFunc ? 'primary' : 'secondary'}
               disabled={isSubmitting}
             >
-              Submit
+              {redirectFunc ? 'Login' : 'Submit'}
             </Button>
           </div>
         </Form>

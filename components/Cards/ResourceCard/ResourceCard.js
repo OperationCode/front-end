@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { string, number, func, oneOf, oneOfType, array, bool } from 'prop-types';
 import classNames from 'classnames';
 import Accordion from 'components/Accordion/Accordion';
@@ -28,8 +28,7 @@ ResourceCard.propTypes = {
   category: string,
   languages: oneOfType([string, array]),
   isPaid: bool,
-  onDownvote: func,
-  onUpvote: func,
+  handleVote: func,
   upvotes: number,
   userVote: oneOf(Object.values(possibleUserVotes)),
 };
@@ -40,8 +39,7 @@ ResourceCard.defaultProps = {
   category: '',
   languages: [],
   isPaid: false,
-  onDownvote: () => {},
-  onUpvote: () => {},
+  handleVote: () => {},
   upvotes: 0,
   userVote: possibleUserVotes.none,
 };
@@ -54,11 +52,12 @@ function ResourceCard({
   category,
   languages,
   isPaid,
-  onDownvote,
-  onUpvote,
+  handleVote,
   upvotes,
   userVote,
 }) {
+  const [upVotes, setUpVotes] = useState(upvotes);
+  const [downVotes, setDownVotes] = useState(downvotes);
   const didUpvote = userVote === possibleUserVotes.upvote;
   const didDownvote = userVote === possibleUserVotes.downvote;
 
@@ -73,7 +72,7 @@ function ResourceCard({
           className={classNames(styles.voteButton, { [styles.active]: didUpvote })}
           aria-pressed={didUpvote}
           data-testid={UPVOTE_BUTTON}
-          onClick={onUpvote}
+          onClick={() => handleVote('upvotes', setUpVotes)}
           type="button"
         >
           <ScreenReaderOnly>Yes</ScreenReaderOnly>
@@ -88,7 +87,7 @@ function ResourceCard({
             className={classNames(styles.voteCount, { [styles.active]: didUpvote })}
           >
             <ScreenReaderOnly>Number of upvotes:</ScreenReaderOnly>
-            {upvotes.toString()}
+            {upVotes.toString()}
           </span>
         </button>
       </div>
@@ -98,7 +97,7 @@ function ResourceCard({
           className={classNames(styles.voteButton, { [styles.active]: didDownvote })}
           aria-pressed={didDownvote}
           data-testid={DOWNVOTE_BUTTON}
-          onClick={onDownvote}
+          onClick={() => handleVote('downvotes', setDownVotes)}
           type="button"
         >
           <ScreenReaderOnly>No</ScreenReaderOnly>
@@ -110,7 +109,7 @@ function ResourceCard({
 
           <span className={classNames(styles.voteCount, { [styles.active]: didDownvote })}>
             <ScreenReaderOnly>Number of downvotes:</ScreenReaderOnly>
-            {downvotes.toString()}
+            {downVotes.toString()}
           </span>
         </button>
       </div>

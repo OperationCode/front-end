@@ -36,10 +36,6 @@ exports[`Nav should render with no props passed 1`] = `
           "name": "Podcast",
         },
         Object {
-          "href": "/who_we_serve",
-          "name": "Who We Serve",
-        },
-        Object {
           "href": "/events",
           "name": "Events",
         },

@@ -3,6 +3,7 @@
 exports[`UpgradeBrowserOverlay should render with no props passed 1`] = `
 <Modal
   className="UpgradeBrowserOverlay"
+  isContainerScrollable={true}
   isOpen={true}
   onRequestClose={[Function]}
   overlayClassName="overlay"

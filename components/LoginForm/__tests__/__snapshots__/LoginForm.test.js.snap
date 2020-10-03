@@ -33,6 +33,7 @@ exports[`LoginForm should render with required props 1`] = `
           name="email"
           onBlur={[Function]}
           onChange={[Function]}
+          placeholder=""
           type="email"
           value=""
         />
@@ -61,6 +62,7 @@ exports[`LoginForm should render with required props 1`] = `
           name="password"
           onBlur={[Function]}
           onChange={[Function]}
+          placeholder=""
           type="password"
           value=""
         />
