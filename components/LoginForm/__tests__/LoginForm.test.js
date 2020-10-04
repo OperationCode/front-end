@@ -17,6 +17,18 @@ describe('LoginForm', () => {
     createSnapshotTest(<LoginForm login={jest.fn()} onSuccess={jest.fn()} />);
   });
 
+  it('should have different styling when prompted from resources page', () => {
+    const { queryByLabelText, getByPlaceholderText, findByText } = render(
+      <LoginForm login={jest.fn()} onSuccess={jest.fn()} redirectFunc={jest.fn()} />,
+    );
+
+    expect(queryByLabelText('Email*')).toBeNull();
+    expect(getByPlaceholderText('Enter Your Username')).not.toBeNull();
+    expect(queryByLabelText('Password*')).toBeNull();
+    expect(getByPlaceholderText('Enter Your Password')).not.toBeNull();
+    expect(findByText('Login')).not.toBeNull();
+  });
+
   it('should display required error message when blurring past email input', async () => {
     const { getByLabelText, findByText } = render(
       <LoginForm login={jest.fn()} onSuccess={jest.fn()} />,
@@ -74,6 +86,43 @@ describe('LoginForm', () => {
 
     await waitFor(() => {
       expect(successSpy).toHaveBeenCalledTimes(1);
+      expect(OperationCodeAPIMock.history.post.length).toBeGreaterThan(0);
+    });
+  });
+
+  it('should submit with valid data in form when prompted from resources page', async () => {
+    const user = mockUser();
+
+    const initialValues = {
+      email: user.email,
+      password: user.password,
+    };
+
+    OperationCodeAPIMock.onPost('auth/login/', initialValues).reply(200, {
+      user: {
+        ...user,
+        slackName: faker.internet.userName(),
+        mentor: false,
+      },
+      token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9',
+    });
+
+    const successSpy = jest.fn();
+    const redirectSpy = jest.fn();
+    const { getByText } = render(
+      <LoginForm
+        onSuccess={successSpy}
+        login={loginUser}
+        initialValues={initialValues}
+        redirectFunc={redirectSpy}
+      />,
+    );
+
+    fireEvent.click(getByText('Login'));
+
+    await waitFor(() => {
+      expect(successSpy).toHaveBeenCalledTimes(1);
+      expect(redirectSpy).toHaveBeenCalledTimes(1);
       expect(OperationCodeAPIMock.history.post.length).toBeGreaterThan(0);
     });
   });

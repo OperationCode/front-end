@@ -51,7 +51,9 @@ function LoginForm({ initialValues, login, onSuccess, redirectFunc }) {
       await onSuccess({ token });
       actions.setSubmitting(false);
       actions.resetForm();
-      redirectFunc();
+      if (redirectFunc) {
+        redirectFunc();
+      }
     } catch (error) {
       actions.setSubmitting(false);
 

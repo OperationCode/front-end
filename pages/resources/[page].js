@@ -83,7 +83,7 @@ function Resources() {
     // Make api calls to update vote
 
     // If successful, set new vote count
-    // e.g. updateVoteCountFunc(// response[voteDirection]);
+    // e.g. updateVoteCountFunc(response[voteDirection]);
 
     // If not, handle error
     // e.g. setErrorMessage('Failed to upvote or downvote....');

@@ -5,6 +5,7 @@ import ReactModal from 'react-modal';
 import { gtag } from 'common/utils/thirdParty/gtag';
 import CardStyles from 'components/Cards/Card/Card.module.css';
 import CloseButton from 'components/Buttons/CloseButton/CloseButton';
+import { SCROLLABLE_CONTAINER } from 'common/constants/testIDs';
 
 import ModalStyles from './Modal.module.css';
 
@@ -50,7 +51,9 @@ function Modal({
     >
       <CloseButton onClick={onRequestClose} />
       {isContainerScrollable ? (
-        <div className={ModalStyles.scrollableContainer}>{children}</div>
+        <div className={ModalStyles.scrollableContainer} data-testid={SCROLLABLE_CONTAINER}>
+          {children}
+        </div>
       ) : (
         children
       )}

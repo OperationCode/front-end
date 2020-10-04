@@ -45,6 +45,7 @@ exports[`Modal should render with many props assigned 1`] = `
         </button>
         <div
           class="scrollableContainer"
+          data-testid="SCROLLABLE_CONTAINER"
         >
           Test
         </div>

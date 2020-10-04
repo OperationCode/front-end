@@ -1,6 +1,7 @@
 import React from 'react';
 import { cleanup, render } from '@testing-library/react';
 import { gtag } from 'common/utils/thirdParty/gtag';
+import { SCROLLABLE_CONTAINER } from 'common/constants/testIDs';
 import Modal from '../Modal';
 
 describe('Modal', () => {
@@ -50,5 +51,14 @@ describe('Modal', () => {
 
     expect(gtag.modalView).toHaveBeenCalledTimes(1);
     expect(gtag.modalView).toHaveBeenCalledWith(requiredProps.screenReaderLabel);
+  });
+
+  it('is not scrollable when prompted from resources page', () => {
+    const { queryByTestId } = render(
+      <Modal {...requiredProps} isOpen isContainerScrollable={false}>
+        Testing
+      </Modal>,
+    );
+    expect(queryByTestId(SCROLLABLE_CONTAINER)).toBeNull();
   });
 });
