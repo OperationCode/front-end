@@ -54,4 +54,5 @@ export default [
     'Aditya Goparaju',
     'Jerry Rogers',
     'Kenneth Ofosu',
+    'Nithin KS'
 ]
