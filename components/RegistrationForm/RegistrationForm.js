@@ -40,8 +40,13 @@ const registrationSchema = Yup.object().shape({
   firstName: Yup.string().trim().required(validationErrorMessages.required),
   lastName: Yup.string().trim().required(validationErrorMessages.required),
   zipcode: Yup.string().trim().required(validationErrorMessages.required),
+<<<<<<< HEAD
   codeOfConduct: Yup.boolean().oneOf([true], (validationErrorMessages.required)),
   communityGuidelines: Yup.boolean().oneOf([true], (validationErrorMessages.required)),
+=======
+  codeOfConduct: Yup.boolean().oneOf([true]).required(validationErrorMessages.required),
+  communityGuidelines: Yup.boolean().oneOf([true]).required(validationErrorMessages.required),
+>>>>>>> e79b0ce6... added label controls
 });
 
 RegistrationForm.propTypes = {
@@ -183,40 +188,37 @@ function RegistrationForm({ initialValues, onSuccess }) {
               autoComplete="postal-code"
             />
 
+            <label htmlFor="codeOfConduct">
               <Field
                 type="checkbox"
                 name="codeOfConduct"
-                label=" "
-                component={Input}
+                label="Code of Conduct*"
                 disabled={isSubmitting}
               />
-              <p className={styles.floatLeft}>
               I agree to abide by the &nbsp;
-                <OutboundLink
-                  href="https://github.com/OperationCode/operationcode_docs/blob/master/community/code_of_conduct.md"
-                  analyticsEventLabel="Code of Conduct"
-                >
-                  Code of Conduct
-                </OutboundLink>
-              </p>
+              <OutboundLink
+                href="https://github.com/OperationCode/operationcode_docs/blob/master/community/code_of_conduct.md"
+                analyticsEventLabel="Code of Conduct"
+              >
+                Code of Conduct
+              </OutboundLink>
+            </label>
 
+            <label htmlFor="communityGuidelines">
               <Field
                 type="checkbox"
                 name="communityGuidelines"
-                label=" "
-                component={Input}
+                label="Community Guidelines*"
                 disabled={isSubmitting}
               />
-              <p className={styles.floatLeft}>
               I have read the &nbsp;
-                <OutboundLink
-                  href="https://github.com/OperationCode/START_HERE/blob/master/community_guidelines.md"
-                  analyticsEventLabel="Community Guidelines"
-                >
-                  Community Guidelines
-                </OutboundLink>
-              </p>
-        
+              <OutboundLink
+                href="https://github.com/OperationCode/START_HERE/blob/master/community_guidelines.md"
+                analyticsEventLabel="Community Guidelines"
+              >
+                Community Guidelines
+              </OutboundLink>
+            </label>
           </div>
 
           {errorMessage && <Alert type="error">{errorMessage}</Alert>}

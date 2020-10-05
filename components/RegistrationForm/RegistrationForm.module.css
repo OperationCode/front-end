@@ -13,14 +13,7 @@
   margin: 1.25rem auto;
 }
 
-.Input[type="checkbox"] {
-  border: 3px blue dotted;
-  width: 40px;
-  height: 40px;
-  display: flex;
-}
-
-.floatLeft {
-  float:right;
-  border: 3px green dashed;
+.RegistrationForm label {
+  display: block;
+  margin: 1rem;
 }
