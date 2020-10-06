@@ -56,4 +56,5 @@ export default [
     'Kenneth Ofosu',
     'Nithin KS',
     'Krishna AL'
+    'Vibhor Garg'
 ]
