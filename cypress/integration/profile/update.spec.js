@@ -1,9 +1,9 @@
-import { networkErrorMessages } from '../../../common/constants/messages';
+import { networkErrorMessages } from 'common/constants/messages';
 import {
   MULTI_STEP_STEP_BUTTON,
   MULTI_STEP_PREVIOUS_BUTTON,
   MULTI_STEP_SUBMIT_BUTTON,
-} from '../../../common/constants/testIDs';
+} from 'common/constants/testIDs';
 
 const goToNextStep = stepName => {
   cy.findByTestId(MULTI_STEP_STEP_BUTTON).click();

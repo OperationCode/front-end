@@ -15,6 +15,6 @@ const Template = arguments_ => <ImageCard {...arguments_} />;
 export const Default = Template.bind({});
 Default.args = {
   alt: 'Image Card',
-  children: <p>{descriptions.long}</p>,
+  children: descriptions.long,
   imageSource: `${s3}redesign/heroBanners/about.jpg`,
 };

@@ -8,6 +8,7 @@
 // https://on.cypress.io/plugins-guide
 // ***********************************************************
 const { addMatchImageSnapshotPlugin } = require('cypress-image-snapshot/plugin');
+const webpack = require('@cypress/webpack-preprocessor');
 // This function is called when a project is opened or re-opened (e.g. due to
 // the project's config changing)
 // eslint-disable-next-line no-unused-vars
@@ -18,5 +19,15 @@ module.exports = (on, config) => {
   addMatchImageSnapshotPlugin(on, config);
   require('@cypress/code-coverage/task')(on, config);
   on('file:preprocessor', require('@cypress/code-coverage/use-browserify-istanbul'));
+
+  // this fixes aliasing in cypres e2e tests
+  // https://github.com/cypress-io/cypress/issues/3262#issuecomment-462646891
+  on(
+    'file:preprocessor',
+    webpack({
+      webpackOptions: { resolve: { alias: require('../../pathAliases.js') } },
+      watchOptions: {},
+    }),
+  );
   return config;
 };

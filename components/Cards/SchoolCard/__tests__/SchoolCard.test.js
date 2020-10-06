@@ -1,7 +1,7 @@
 import React from 'react';
 import { fireEvent, render } from '@testing-library/react';
 import createShallowSnapshotTest from 'test-utils/createShallowSnapshotTest';
-import { BUTTON } from 'common/constants/testIDs';
+import { SCHOOL_CARD_LOCATION_LIST_MODAL_BUTTON } from 'common/constants/testIDs';
 import SchoolCard, { getSchoolLocationText, ONLINE_ONLY, UNKNOWN, MULTIPLE } from '../SchoolCard';
 
 const locations = [
@@ -48,7 +48,7 @@ describe('SchoolCard', () => {
 
     expect(toggleModal).not.toHaveBeenCalled();
 
-    fireEvent.click(queryByTestId(BUTTON));
+    fireEvent.click(queryByTestId(SCHOOL_CARD_LOCATION_LIST_MODAL_BUTTON));
 
     expect(toggleModal).toHaveBeenCalledTimes(1);
   });
@@ -61,7 +61,7 @@ describe('SchoolCard', () => {
       <SchoolCard {...requiredProps} locations={arrayOfOneLocation} />,
     );
 
-    expect(queryByTestId(BUTTON)).toBeNull();
+    expect(queryByTestId(SCHOOL_CARD_LOCATION_LIST_MODAL_BUTTON)).toBeNull();
   });
 
   it('should not render a button when passed no locations', () => {
@@ -70,7 +70,7 @@ describe('SchoolCard', () => {
 
     const { queryByTestId } = render(<SchoolCard {...requiredProps} locations={emptyArray} />);
 
-    expect(queryByTestId(BUTTON)).toBeNull();
+    expect(queryByTestId(SCHOOL_CARD_LOCATION_LIST_MODAL_BUTTON)).toBeNull();
   });
 });
 

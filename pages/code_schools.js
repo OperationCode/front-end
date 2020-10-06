@@ -12,6 +12,7 @@ import Modal from 'components/Modal/Modal';
 import { getCodeSchoolsPromise } from 'common/constants/api';
 import States from 'common/constants/dropdown-states-values';
 import { ONE_DAY } from 'common/constants/unitsOfTime';
+import { SCHOOL_LOCATION_LIST_ITEM } from 'common/constants/testIDs';
 import edx from 'static/images/moocs/edx.jpg';
 import treehouse from 'static/images/moocs/treehouse.jpg';
 import udacity from 'static/images/moocs/udacity.jpg';
@@ -114,7 +115,7 @@ function CodeSchools({ allSchools }) {
   const isModalOpen = Boolean(locationsModalInfo.name);
 
   return (
-    <div className={styles.CodeSchools}>
+    <>
       <Head title={pageTitle} />
 
       <HeroBanner title={pageTitle}>
@@ -283,15 +284,26 @@ function CodeSchools({ allSchools }) {
         className={styles.schoolLocationModal}
       >
         <>
-          <h3>{locationsModalInfo.name} Campuses</h3>
-          {locationsModalInfo.locations.map(location => (
-            <div className={styles.schoolLocalModalItem}>
-              {`${location.city}, ${location.state}`}
-            </div>
-          ))}
+          <h4>{locationsModalInfo.name} Campuses</h4>
+
+          <ul className={styles.schoolLocationList}>
+            {locationsModalInfo.locations.map(({ city, state }) => {
+              const location = `${city}, ${state}`;
+
+              return (
+                <li
+                  className={styles.schoolLocalModalItem}
+                  key={location}
+                  data-testid={SCHOOL_LOCATION_LIST_ITEM}
+                >
+                  {location}
+                </li>
+              );
+            })}
+          </ul>
         </>
       </Modal>
-    </div>
+    </>
   );
 }
 

@@ -24,7 +24,7 @@ const log = ({ methodName, ...rest }) => {
 const pageView = (url, isModalView = false) => {
   log({ methodName: 'pageview', url, isModalView });
 
-  if (isProduction) {
+  if (isProduction && !!window && !!window.gtag) {
     window.gtag('config', clientTokens.GOOGLE_ANALYTICS_ID, {
       page_path: url,
     });
@@ -65,7 +65,7 @@ const event = ({
     ...otherEventParameters,
   });
 
-  if (isProduction) {
+  if (isProduction && !!window && !!window.gtag) {
     window.gtag('event', action, {
       event_callback: callback,
       event_category: category,

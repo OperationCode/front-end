@@ -9,9 +9,9 @@
 <br />
 <br />
 
-# 🎃 Hacktoberfest 🎃	
+# 🎃 Hacktoberfest 🎃
 
-[All the details you need](https://github.com/OperationCode/START_HERE/blob/master/README.md#-hacktoberfest-) before participating with us during Hacktoberfest.	
+[All the details you need](https://github.com/OperationCode/START_HERE/blob/master/README.md#-hacktoberfest-) before participating with us during Hacktoberfest.
 
 <br />
 
@@ -31,10 +31,6 @@ This is the front-end application for [OperationCode](https://operationcode.org)
 Before contributing, please review our [Contributing Guide](CONTRIBUTING.md).
 <br />
 Designers, please review our [Contributing Guide for Designers](CONTRIBUTING_TO_DESIGN.md)
-
-## Maintainers
-
-For information about the maintainers of the project, check out [MAINTAINERS.md](MAINTAINERS.md).
 
 ## Quick Start
 
@@ -73,3 +69,41 @@ yarn create-component $ComponentName
 # Create the necessary file with a small boilerplate for a new page
 yarn create-page $PageName
 ```
+
+## Open Source Gratitude
+
+We appreciate the following tools/companies that are providing us a service or platform for free or a heavily discounted rate.
+
+Sorted alphabetically:
+
+---
+
+### Chromatic
+
+<a href="https://www.chromatic.com/"><img src="https://user-images.githubusercontent.com/321738/84662277-e3db4f80-af1b-11ea-88f5-91d67a5e59f6.png" width="306" height="60" alt="Chromatic" /></a>
+
+Thanks to [Chromatic](https://www.chromatic.com/) for providing the visual testing platform that helps us review UI changes and catch visual regressions.
+
+---
+
+### LogRocket
+
+<a href="https://logrocket.com/"><img src="https://logrocket-assets.io/img/logo.png" alt="LogRocket" width="306" /></a>
+
+Thanks to [LogRocket](https://logrocket.com/) for providing time-saving context on every error and insight into our user's behavior,
+
+---
+
+### Sentry
+
+<a href="https://www.sentry.io/"><img src="https://raw.githubusercontent.com/OperationCode/front-end/main/public/static/images/sentry.svg" width="306" height="90" alt="Sentry" /></a>
+
+Thanks to [Sentry](https://getsentry.io) for a wonderful experience with cataloguing and managing errors.
+
+---
+
+### Vercel
+
+<a href="https://vercel.com"><img src="https://raw.githubusercontent.com/OperationCode/front-end/main/public/static/images/vercel.svg" width="306" height="90" alt="Vercel" /></svg></a>
+
+Thanks to [Vercel](https://vercel.com) for hosting and continuous deployment of all our web applications.
