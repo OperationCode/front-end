@@ -13,6 +13,8 @@
   margin: 1.25rem auto;
 }
 
-.RegistrationForm label {
-  display: block;
+.Field > .checkWidth {
+  min-width: 0px !important;
+  width: 40px;
+  height: 40px;
 }
