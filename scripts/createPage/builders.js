@@ -10,6 +10,7 @@ const builder = {
 
     return `import Head from 'components/head';
       import HeroBanner from 'components/HeroBanner/HeroBanner';
+      // customize styles by creating and importing a stylesheet in the ~/styles folder
 
       const pageTitle = '${pageTitle}';
 
