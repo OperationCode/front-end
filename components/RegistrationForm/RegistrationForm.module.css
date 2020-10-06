@@ -13,7 +13,15 @@
   margin: 1.25rem auto;
 }
 
+<<<<<<< HEAD
 .RegistrationForm label {
   display: block;
   margin: 1rem;
 }
+=======
+.Field > .checkWidth {
+  min-width: 0px !important;
+  width: 40px;
+  height: 40px;
+}
+>>>>>>> 98f86fed... stylint

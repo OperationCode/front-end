@@ -42,6 +42,7 @@ const registrationSchema = Yup.object().shape({
   zipcode: Yup.string().trim().required(validationErrorMessages.required),
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   codeOfConduct: Yup.boolean().oneOf([true], (validationErrorMessages.required)),
   communityGuidelines: Yup.boolean().oneOf([true], (validationErrorMessages.required)),
 =======
@@ -52,6 +53,10 @@ const registrationSchema = Yup.object().shape({
   codeOfConduct: Yup.boolean().oneOf([true], 'Field must be checked'),
   communityGuidelines: Yup.boolean().oneOf([true], 'Field must be checked'),
 >>>>>>> cc17e5e9... gets validation working, messes with styles
+=======
+  codeOfConduct: Yup.boolean().oneOf([true], (validationErrorMessages.required)),
+  communityGuidelines: Yup.boolean().oneOf([true], (validationErrorMessages.required)),
+>>>>>>> 98f86fed... stylint
 });
 
 RegistrationForm.propTypes = {
@@ -193,39 +198,42 @@ function RegistrationForm({ initialValues, onSuccess }) {
               autoComplete="postal-code"
             />
 
-            <label htmlFor="codeOfConduct">
               <Field
+                className={styles.checkWidth}
                 type="checkbox"
                 name="codeOfConduct"
                 label=" "
                 component={Input}
                 disabled={isSubmitting}
               />
+              <p>
               I agree to abide by the &nbsp;
-              <OutboundLink
-                href="https://github.com/OperationCode/operationcode_docs/blob/master/community/code_of_conduct.md"
-                analyticsEventLabel="Code of Conduct"
-              >
-                Code of Conduct
-              </OutboundLink>
-            </label>
+                <OutboundLink
+                  href="https://github.com/OperationCode/operationcode_docs/blob/master/community/code_of_conduct.md"
+                  analyticsEventLabel="Code of Conduct"
+                >
+                  Code of Conduct
+                </OutboundLink>
+              </p>
 
-            <label htmlFor="communityGuidelines">
               <Field
+                className={styles.checkWidth}
                 type="checkbox"
                 name="communityGuidelines"
-                label="I have read the <a>Community Guidelines</a> "
+                label=" "
                 component={Input}
                 disabled={isSubmitting}
               />
+              <p>
               I have read the &nbsp;
-              <OutboundLink
-                href="https://github.com/OperationCode/START_HERE/blob/master/community_guidelines.md"
-                analyticsEventLabel="Community Guidelines"
-              >
-                Community Guidelines
-              </OutboundLink>
-            </label>
+                <OutboundLink
+                  href="https://github.com/OperationCode/START_HERE/blob/master/community_guidelines.md"
+                  analyticsEventLabel="Community Guidelines"
+                >
+                  Community Guidelines
+                </OutboundLink>
+              </p>
+        
           </div>
 
           {errorMessage && <Alert type="error">{errorMessage}</Alert>}
