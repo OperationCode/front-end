@@ -102,7 +102,7 @@
     "@testing-library/cypress": "^7.0.1",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.0.4",
-    "autoprefixer": "^10.0.1",
+    "autoprefixer": "9.8.6",
     "axios-mock-adapter": "^1.18.2",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.1.0",
