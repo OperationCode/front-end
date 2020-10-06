@@ -12,32 +12,28 @@ describe('reset_password', () => {
   });
 
   it('should be able to submit a request with a valid email', () => {
-    cy.get('input#email').type(existingUser.email);
-    cy.get('button[type="submit"]').click();
+    cy.findByLabelText('Email*').type(existingUser.email);
+    cy.findByText('Submit').click();
 
-    cy.wait('@postReset');
-
-    cy.get('div[role="alert"]').should(
+    cy.findByRole('alert').should(
       'have.text',
       'A confirmation has been sent to the provided email address.',
     );
   });
 
   it('should show the same message for an invalid email', () => {
-    cy.get('input#email').type('fake@test.test');
-    cy.get('button[type="submit"]').click();
+    cy.findByLabelText('Email*').type('fake@test.test');
+    cy.findByText('Submit').click();
 
-    cy.wait('@postReset');
-
-    cy.get('div[role="alert"]').should(
+    cy.findByRole('alert').should(
       'have.text',
       'A confirmation has been sent to the provided email address.',
     );
   });
 
   it('should NOT submit a request with an invalid email', () => {
-    cy.get('input#email').type('notEmail');
-    cy.get('button[type="submit"]').click();
-    cy.get('div[role="alert"]').should('contain', validationErrorMessages.email);
+    cy.findByLabelText('Email*').type('notEmail');
+    cy.findByText('Submit').click();
+    cy.findByRole('alert').should('contain', validationErrorMessages.email);
   });
 });

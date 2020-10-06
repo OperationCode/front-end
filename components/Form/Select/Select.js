@@ -127,16 +127,15 @@ export default function Select({
           value={value || ''}
         />
 
-        <ErrorMessage
-          name={name}
-          render={message => {
+        <ErrorMessage name={name}>
+          {message => {
             return hasErrors ? (
               <Alert className={styles.errorMessage} type="error">
                 {message}
               </Alert>
             ) : null;
           }}
-        />
+        </ErrorMessage>
       </div>
     </div>
   );

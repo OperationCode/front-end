@@ -20,11 +20,19 @@ describe('Input', () => {
   };
 
   it('should render with required props', () => {
-    createSnapshotTest(<Input {...requiredProps} />);
+    createSnapshotTest(
+      <Formik>
+        <Input {...requiredProps} />
+      </Formik>,
+    );
   });
 
   it('should render with label, even if hidden', () => {
-    const component = render(<Input {...requiredProps} isLabelHidden />);
+    const component = render(
+      <Formik>
+        <Input {...requiredProps} isLabelHidden />
+      </Formik>,
+    );
 
     expect(component.container.querySelectorAll('label').length).toBe(1);
   });
@@ -48,7 +56,11 @@ describe('Input', () => {
   });
 
   it('should render the label after the input for checkbox inputs', () => {
-    const component = render(<Input {...requiredProps} type="checkbox" />);
+    const component = render(
+      <Formik>
+        <Input {...requiredProps} type="checkbox" />
+      </Formik>,
+    );
 
     const Checkbox = component.queryByTestId(INPUT);
 
@@ -68,7 +80,11 @@ describe('Input', () => {
   });
 
   it('should render the label after the input for radio inputs', () => {
-    const component = render(<Input {...requiredProps} type="radio" />);
+    const component = render(
+      <Formik>
+        <Input {...requiredProps} type="radio" />
+      </Formik>,
+    );
 
     const Radio = component.queryByTestId(INPUT);
 
@@ -117,7 +133,9 @@ describe('Input', () => {
 
     otherInputTypes.forEach(inputType => {
       const { container, queryByTestId, unmount } = render(
-        <Input {...requiredProps} type={inputType} />,
+        <Formik>
+          <Input {...requiredProps} type={inputType} />
+        </Formik>,
       );
 
       const SomeInput = queryByTestId(INPUT);
