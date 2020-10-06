@@ -2,6 +2,7 @@
 
 exports[`Modal should render with many props assigned 1`] = `
 <body
+  aria-hidden="true"
   class="ReactModal__Body--open"
 >
   <div
