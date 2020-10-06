@@ -53,24 +53,24 @@ describe(`profile/update (from login)`, () => {
   });
 
   it(`should see initial values populated when going to profile update from login`, () => {
-    cy.get('input[name="employmentStatus"]').should('have.value', 'fulltime');
+    cy.findSelectByLabelText('Employment Status*').should('have.value', 'fulltime');
     cy.findByLabelText('Company Name').should('have.value', 'Googles');
     cy.findByLabelText('Company Role').should('have.value', 'CEO');
 
     goToNextStep(secondStepName);
 
-    cy.get('input[name="militaryStatus"]').should('have.value', 'veteran');
+    cy.findSelectByLabelText('Military Status*').should('have.value', 'veteran');
 
     goToNextStep('Military Details');
 
-    cy.get('input[name="branchOfService"]').should('have.value', 'army');
+    cy.findSelectByLabelText('Branch Of Service*').should('have.value', 'army');
     cy.findByLabelText('Years Of Service*').should('have.value', '3');
     cy.findByLabelText('Pay Grade*').should('have.value', 'E20');
 
     goToNextStep('Technology');
 
-    cy.get('input[name="programmingLanguages"]').should('have.value', '');
-    cy.get('input[name="disciplines"]').should('have.value', '');
+    cy.findSelectByLabelText('Programming Languages That Interest You').should('have.value', '');
+    cy.findSelectByLabelText('Disciplines That Interest You').should('have.value', '');
   });
 
   it(`should be able to navigate back and forth`, () => {
@@ -92,7 +92,7 @@ describe(`profile/update (from login)`, () => {
   it(`should not show military step if military status is non-military`, () => {
     goToNextStep(secondStepName);
 
-    cy.get('input#react-select-militaryStatus-input')
+    cy.findSelectByLabelText('Military Status*', { edit: true })
       .type('Not Applicable', { force: true })
       .type('{enter}');
 
@@ -100,7 +100,7 @@ describe(`profile/update (from login)`, () => {
     goToNextStep('Technology');
     goToPreviousStep('Military Status');
 
-    cy.get('input#react-select-militaryStatus-input')
+    cy.findSelectByLabelText('Military Status*', { edit: true })
       .type('Veteran', { force: true })
       .type('{enter}');
 
