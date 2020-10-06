@@ -40,8 +40,8 @@ const registrationSchema = Yup.object().shape({
   firstName: Yup.string().trim().required(validationErrorMessages.required),
   lastName: Yup.string().trim().required(validationErrorMessages.required),
   zipcode: Yup.string().trim().required(validationErrorMessages.required),
-  codeOfConduct: Yup.boolean().oneOf([true]).required(validationErrorMessages.required),
-  communityGuidelines: Yup.boolean().oneOf([true]).required(validationErrorMessages.required),
+  codeOfConduct: Yup.boolean().oneOf([true], 'Field must be checked'),
+  communityGuidelines: Yup.boolean().oneOf([true], 'Field must be checked'),
 });
 
 RegistrationForm.propTypes = {
@@ -187,7 +187,8 @@ function RegistrationForm({ initialValues, onSuccess }) {
               <Field
                 type="checkbox"
                 name="codeOfConduct"
-                label="Code of Conduct*"
+                label=" "
+                component={Input}
                 disabled={isSubmitting}
               />
               I agree to abide by the &nbsp;
@@ -203,7 +204,8 @@ function RegistrationForm({ initialValues, onSuccess }) {
               <Field
                 type="checkbox"
                 name="communityGuidelines"
-                label="Community Guidelines*"
+                label="I have read the <a>Community Guidelines</a> "
+                component={Input}
                 disabled={isSubmitting}
               />
               I have read the &nbsp;
