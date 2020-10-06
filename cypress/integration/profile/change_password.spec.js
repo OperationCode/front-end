@@ -24,23 +24,21 @@ describe('change_password', () => {
   });
 
   it('should be able to change with valid passwords', () => {
-    cy.get('#newPassword1').type(existingUser.password);
-    cy.get('#newPassword2').type(existingUser.password);
+    cy.findByLabelText('Password*').type(existingUser.password);
+    cy.findByLabelText('Confirm Password*').type(existingUser.password);
 
-    cy.get('button[type="submit"]').click();
+    cy.findByText('Submit').click();
 
-    cy.wait('@postChange');
-
-    cy.contains(/You password has been changed to the new password/i);
+    cy.findByText(/You password has been changed to the new password/i);
     cy.get('a[href="/profile"]').should('contain', 'Click here to return to Profile');
   });
 
   it('should NOT be able to change with mis-matched passwords', () => {
-    cy.get('#newPassword1').type(existingUser.password);
-    cy.get('#newPassword2').type(`${existingUser.password}1`);
-    cy.get('button[type="submit"]').click();
+    cy.findByLabelText('Password*').type(existingUser.password);
+    cy.findByLabelText('Confirm Password*').type(`${existingUser.password}1`);
+    cy.findByText('Submit').click();
 
-    cy.get('div[role="alert"]').should('contain', validationErrorMessages.passwordsMatch);
+    cy.findByRole('alert').should('contain', validationErrorMessages.passwordsMatch);
   });
 
   it('should NOT be able to change password when server is unreachable', () => {
@@ -51,12 +49,10 @@ describe('change_password', () => {
       response: [],
     }).as('postChange');
 
-    cy.get('#newPassword1').type(existingUser.password);
-    cy.get('#newPassword2').type(existingUser.password);
-    cy.get('button[type="submit"]').click();
+    cy.findByLabelText('Password*').type(existingUser.password);
+    cy.findByLabelText('Confirm Password*').type(existingUser.password);
+    cy.findByText('Submit').click();
 
-    cy.wait('@postChange');
-
-    cy.get('div[role="alert"]').should('have.text', networkErrorMessages.serverDown);
+    cy.findByRole('alert').should('have.text', networkErrorMessages.serverDown);
   });
 });

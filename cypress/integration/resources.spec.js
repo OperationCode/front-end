@@ -12,9 +12,9 @@ import {
 } from 'common/constants/testIDs';
 
 describe('resources', () => {
-  const COST_SELECT = 'input#react-select-paid-input';
-  const LANGUAGES_SELECT = 'input#react-select-languages-input';
-  const CATEGORY_SELECT = 'input#react-select-category-input';
+  const COST_SELECT = 'By Cost';
+  const LANGUAGES_SELECT = 'By Language(s)';
+  const CATEGORY_SELECT = 'By Category';
 
   const compareResourceNames = ({ shouldBeEqual = false }) => {
     const assertion = shouldBeEqual ? 'eq' : 'not.eq';
@@ -98,7 +98,10 @@ describe('resources', () => {
   });
 
   it('will allow a user to filter resources by category', () => {
-    cy.get(CATEGORY_SELECT).click({ force: true }).type('Books').type('{enter}');
+    cy.findSelectByLabelText(CATEGORY_SELECT, { edit: true })
+      .click({ force: true })
+      .type('Books')
+      .type('{enter}');
     cy.findByTestId(RESOURCE_SEARCH_BUTTON).click();
 
     cy.location().should(loc => {
@@ -110,7 +113,10 @@ describe('resources', () => {
       cy.wrap(card).checkCustomDataAttribute(DATA_TEST_CATEGORY, 'Books');
     });
 
-    cy.get(CATEGORY_SELECT).click({ force: true }).type('Getting Started').type('{enter}');
+    cy.findSelectByLabelText(CATEGORY_SELECT, { edit: true })
+      .click({ force: true })
+      .type('Getting Started')
+      .type('{enter}');
     cy.findByTestId(RESOURCE_SEARCH_BUTTON).click();
     cy.location().should(loc => {
       expect(loc.pathname).to.eq('/resources/1');
@@ -146,7 +152,10 @@ describe('resources', () => {
   });
 
   it('will allow a user to filter resources by cost', () => {
-    cy.get(COST_SELECT).click({ force: true }).type('Free').type('{enter}');
+    cy.findSelectByLabelText(COST_SELECT, { edit: true })
+      .click({ force: true })
+      .type('Free')
+      .type('{enter}');
     cy.findByTestId(RESOURCE_SEARCH_BUTTON).click();
     cy.location().should(loc => {
       expect(loc.pathname).to.eq('/resources/1');
@@ -157,7 +166,10 @@ describe('resources', () => {
       cy.wrap(card).checkCustomDataAttribute(DATA_TEST_COST, 'false');
     });
 
-    cy.get(COST_SELECT).click({ force: true }).type('Paid').type('{enter}');
+    cy.findSelectByLabelText(COST_SELECT, { edit: true })
+      .click({ force: true })
+      .type('Paid')
+      .type('{enter}');
     cy.findByTestId(RESOURCE_SEARCH_BUTTON).click();
     cy.location().should(loc => {
       expect(loc.pathname).to.eq('/resources/1');
@@ -192,7 +204,10 @@ describe('resources', () => {
   });
 
   it('will allow a user to filter resources by language(s)', () => {
-    cy.get(LANGUAGES_SELECT).click({ force: true }).type('javascript').type('{enter}');
+    cy.findSelectByLabelText(LANGUAGES_SELECT, { edit: true })
+      .click({ force: true })
+      .type('javascript')
+      .type('{enter}');
     cy.findByTestId(RESOURCE_SEARCH_BUTTON).click();
     cy.location().should(loc => {
       expect(loc.pathname).to.eq('/resources/1');
@@ -223,7 +238,10 @@ describe('resources', () => {
       cy.wrap(card).checkCustomDataAttribute(DATA_TEST_LANGUAGES, 'JavaScript');
     });
 
-    cy.get(LANGUAGES_SELECT).click({ force: true }).type('python').type('{enter}');
+    cy.findSelectByLabelText(LANGUAGES_SELECT, { edit: true })
+      .click({ force: true })
+      .type('python')
+      .type('{enter}');
     cy.findByTestId(RESOURCE_SEARCH_BUTTON).click();
     cy.location().should(loc => {
       expect(loc.pathname).to.eq('/resources/1');
