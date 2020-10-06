@@ -74,6 +74,7 @@ exports[`Nav should render with no props passed 1`] = `
         >
           <a
             className="logoLink link"
+            onContextMenu={[Function]}
           >
             <img
               alt="Operation Code Logo"
