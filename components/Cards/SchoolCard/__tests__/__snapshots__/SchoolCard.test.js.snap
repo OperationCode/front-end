@@ -98,6 +98,7 @@ exports[`SchoolCard should render with required props 1`] = `
         }
       }
       className="modalToggler"
+      data-testid="SCHOOL_CARD_LOCATION_LIST_MODAL_BUTTON"
       datum=""
       disabled={false}
       fullWidth={false}
