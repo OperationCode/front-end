@@ -28,6 +28,18 @@ Profile.propTypes = {
   programmingLanguages: string,
 };
 
+Profile.defaultProps = {
+  branchOfService: undefined,
+  companyName: undefined,
+  companyRole: undefined,
+  createdAt: undefined,
+  disciplines: undefined,
+  employmentStatus: undefined,
+  isMentor: undefined,
+  militaryStatus: undefined,
+  programmingLanguages: undefined,
+};
+
 Profile.getInitialProps = async ctx => {
   const { token } = nextCookie(ctx);
   const { data } = await getUserPromise({ token });
@@ -113,7 +125,7 @@ function Profile({
                 {programmingLanguages}
               </p>
             )}
-            {!!disciplines  && (
+            {!!disciplines && (
               <p>
                 <strong>Career Interest : </strong>
                 {disciplines}
