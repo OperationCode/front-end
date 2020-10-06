@@ -37,11 +37,19 @@ describe('Select', () => {
   });
 
   it('should render with required props', () => {
-    createSnapshotTest(<Select {...requiredProps} />);
+    createSnapshotTest(
+      <Formik>
+        <Select {...requiredProps} />
+      </Formik>,
+    );
   });
 
   it('should render with label, even if hidden', () => {
-    const { queryAllByTestId } = render(<Select {...requiredProps} isLabelHidden />);
+    const { queryAllByTestId } = render(
+      <Formik>
+        <Select {...requiredProps} isLabelHidden />
+      </Formik>,
+    );
 
     expect(queryAllByTestId(LABEL).length).toBe(1);
   });
@@ -73,7 +81,11 @@ describe('Select', () => {
     });
 
     it('should fire formik-related callbacks when changing non-multi select', async () => {
-      const { container } = render(<Select {...requiredProps} />);
+      const { container } = render(
+        <Formik>
+          <Select {...requiredProps} />
+        </Formik>,
+      );
       const ReactSelect = getReactSelect(container);
 
       fireEvent.blur(ReactSelect);
@@ -88,7 +100,9 @@ describe('Select', () => {
 
     it('should fire formik-related callbacks when changing multi select', async () => {
       const { container } = render(
-        <Select {...requiredProps} field={{ name: 'test', value: [] }} isMulti />,
+        <Formik>
+          <Select {...requiredProps} field={{ name: 'test', value: [] }} isMulti />
+        </Formik>,
       );
 
       const ReactSelect = getReactSelect(container);
@@ -112,7 +126,9 @@ describe('Select', () => {
 
     it('should be able to remove multiselect options', async () => {
       const { container } = render(
-        <Select {...requiredProps} field={{ name: 'test', value: [] }} isMulti />,
+        <Formik>
+          <Select {...requiredProps} field={{ name: 'test', value: [] }} isMulti />
+        </Formik>,
       );
 
       const ReactSelect = getReactSelect(container);
