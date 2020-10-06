@@ -31,3 +31,6 @@ export const COST_SELECT = 'input#react-select-paid-input';
 export const LANGUAGE_SELECT = 'input#react-select-languages-input';
 export const CATEGORY_SELECT = 'input#react-select-category-input';
 export const PROFILE_GREETING = '[PROFILE_GREETING]';
+export const SCHOOL_CARD_LOCATION_LIST_MODAL_BUTTON = 'SCHOOL_CARD_LOCATION_LIST_MODAL_BUTTON';
+export const SCHOOL_LOCATION_LIST_ITEM = 'SCHOOL_LOCATION_LIST_ITEM';
+export const MODAL_CONTENT = 'MODAL_CONTENT';
