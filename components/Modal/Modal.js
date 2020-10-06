@@ -47,7 +47,6 @@ function Modal({
       isOpen={isOpen}
       onRequestClose={onRequestClose}
       shouldCloseOnOverlayClick={shouldCloseOnOverlayClick}
-      ariaHideApp={false}
     >
       <CloseButton onClick={onRequestClose} />
       {isContainerScrollable ? (

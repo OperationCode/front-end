@@ -285,7 +285,7 @@ function CodeSchools({ allSchools }) {
         <>
           <h3>{locationsModalInfo.name} Campuses</h3>
           {locationsModalInfo.locations.map(location => (
-            <div className={styles.schoolLocalModalItem}>
+            <div key={location.city} className={styles.schoolLocalModalItem}>
               {`${location.city}, ${location.state}`}
             </div>
           ))}

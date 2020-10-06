@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { func, shape, string } from 'prop-types';
 import { Formik, Field } from 'formik';
 import * as Yup from 'yup';
+import noop from 'lodash/noop';
 import { getServerErrorMessage } from 'common/utils/api-utils';
 import { validationErrorMessages } from 'common/constants/messages';
 import Button from 'components/Buttons/Button/Button';
@@ -30,7 +31,7 @@ LoginForm.propTypes = {
     email: string,
     password: string,
   }),
-  redirectFunc: func,
+  redirectFunction: func,
 };
 
 LoginForm.defaultProps = {
@@ -38,10 +39,12 @@ LoginForm.defaultProps = {
     email: '',
     password: '',
   },
-  redirectFunc: undefined,
+  redirectFunction: noop,
 };
 
-function LoginForm({ initialValues, login, onSuccess, redirectFunc }) {
+function LoginForm({ initialValues, login, onSuccess, redirectFunction }) {
+  const isInLoginModal = redirectFunction.name !== 'noop';
+
   const [errorMessage, setErrorMessage] = useState('');
 
   const handleSubmit = async (values, actions) => {
@@ -51,9 +54,7 @@ function LoginForm({ initialValues, login, onSuccess, redirectFunc }) {
       await onSuccess({ token });
       actions.setSubmitting(false);
       actions.resetForm();
-      if (redirectFunc) {
-        redirectFunc();
-      }
+      redirectFunction();
     } catch (error) {
       actions.setSubmitting(false);
 
@@ -69,9 +70,8 @@ function LoginForm({ initialValues, login, onSuccess, redirectFunc }) {
             <Field
               type="email"
               name="email"
-              label={redirectFunc ? '' : 'Email*'}
+              label="Email*"
               component={Input}
-              placeholder={redirectFunc ? 'Enter Your Username' : ''}
               disabled={isSubmitting}
               autoComplete="username email"
             />
@@ -79,8 +79,7 @@ function LoginForm({ initialValues, login, onSuccess, redirectFunc }) {
             <Field
               type="password"
               name="password"
-              label={redirectFunc ? '' : 'Password*'}
-              placeholder={redirectFunc ? 'Enter Your Password' : ''}
+              label="Password*"
               component={Input}
               disabled={isSubmitting}
               autoComplete="new-password"
@@ -91,10 +90,10 @@ function LoginForm({ initialValues, login, onSuccess, redirectFunc }) {
             <Button
               className={styles.topMargin}
               type="submit"
-              theme={redirectFunc ? 'primary' : 'secondary'}
+              theme={isInLoginModal ? 'primary' : 'secondary'}
               disabled={isSubmitting}
             >
-              {redirectFunc ? 'Login' : 'Submit'}
+              {isInLoginModal ? 'Login' : 'Submit'}
             </Button>
           </div>
         </Form>

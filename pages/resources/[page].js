@@ -344,24 +344,24 @@ function Resources() {
         screenReaderLabel="Login Modal"
         onRequestClose={() => setIsModalOpen(false)}
         className={CardStyles.CardModal}
-        isContainerScrollable={false}
       >
-        <h1>Login to Proceed</h1>
+        <h2>Login to Proceed</h2>
+
         <LoginForm
           login={handleLogin}
           onSuccess={handleLoginSuccess}
-          redirectFunc={() => {
+          redirectFunction={() => {
             setIsModalOpen(false);
             router.push(router.asPath);
           }}
         />
-        <br />
-        <h2>
+
+        <p>
           Forgot your password? Reset it&nbsp;
           <Link href="/password_reset">
             <a>here</a>
           </Link>
-        </h2>
+        </p>
       </Modal>
     </div>
   );
