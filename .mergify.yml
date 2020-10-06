@@ -8,9 +8,11 @@ pull_request_rules:
       - 'status-success=ci/circleci: lint'
       - 'status-success=ci/circleci: unit_tests'
       - 'status-success=cypress: all tests'
+      - 'status-success=lighthouse/performance_check'
       - status-success=codeclimate/diff-coverage
       - status-success=codeclimate/total-coverage
     actions:
       merge:
         method: rebase
         strict: true
+ 

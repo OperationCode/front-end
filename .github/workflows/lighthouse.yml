@@ -1,11 +1,11 @@
-name: Lighthouse CI
+name: lighthouse
 on:
   push:
     branches-ignore:
       - master
 
 jobs:
-  build:
+  performance_check:
     runs-on: ubuntu-latest
 
     steps:
