@@ -1,6 +1,6 @@
-import { token, uid } from '../../../test-utils/mocks/passwordResetMock';
-import existingUser from '../../../test-utils/mocks/existingUser';
-import { validationErrorMessages } from '../../../common/constants/messages';
+import { token, uid } from 'test-utils/mocks/passwordResetMock';
+import existingUser from 'test-utils/mocks/existingUser';
+import { validationErrorMessages } from 'common/constants/messages';
 
 describe('reset_password_confirm', () => {
   beforeEach(() => {

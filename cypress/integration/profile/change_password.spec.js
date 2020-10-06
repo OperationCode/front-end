@@ -1,5 +1,5 @@
-import existingUser from '../../../test-utils/mocks/existingUser';
-import { networkErrorMessages, validationErrorMessages } from '../../../common/constants/messages';
+import existingUser from 'test-utils/mocks/existingUser';
+import { networkErrorMessages, validationErrorMessages } from 'common/constants/messages';
 
 describe(`profile/change_password (unauthorized)`, () => {
   it(`should redirect to login if not authorized`, () => {

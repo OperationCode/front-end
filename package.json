@@ -10,8 +10,9 @@
     "dev": "next",
     "format": "prettier --write \"**/*\"",
     "format:md": "prettier --write \"**/*.md\"",
-    "lint": "yarn lint:scripts && yarn lint:styles && yarn format:md",
+    "lint": "yarn lint:scripts && yarn lint:styles && yarn lint:md && yarn format:md",
     "lint:ci": "yarn eslint \"**/*.js\" && yarn stylelint \"**/*.css\"",
+    "lint:md": "eslint --fix \"**/*.mdx\" && remark .",
     "lint:scripts": "eslint --fix \"**/*.js\"",
     "lint:styles": "stylelint --fix \"**/*.css\"",
     "start": "next start",
@@ -23,8 +24,8 @@
     "test:e2e:ci": "cypress run --record",
     "test": "cross-env NODE_ENV=test BABEL_ENV=test jest --maxWorkers=2",
     "test:ci": "yarn test --ci --coverage=true --verbose=false --silent=true",
-    "test:changes": "yarn test --changedSince main --verbose=true",
-    "test:changes:watch": "yarn test --changedSince main --watch --verbose=true",
+    "test:changes": "yarn test --changedSince=main --verbose=true",
+    "test:changes:watch": "yarn test:changes --watch",
     "test:watch": "yarn test --watch",
     "test:update-snaps": "yarn test -u"
   },
@@ -34,6 +35,12 @@
     "reporter": [
       "json",
       "lcov"
+    ]
+  },
+  "remarkConfig": {
+    "plugins": [
+      "remark-preset-lint-recommended",
+      "remark-lint-are-links-valid"
     ]
   },
   "dependencies": {
@@ -81,6 +88,7 @@
     "@babel/plugin-syntax-jsx": "^7.10.4",
     "@babel/preset-env": "^7.11.5",
     "@cypress/code-coverage": "3.8.1",
+    "@cypress/webpack-preprocessor": "^5.4.6",
     "@mdx-js/loader": "^1.6.16",
     "@next/mdx": "^9.5.3",
     "@operation_code/eslint-plugin-custom-rules": "^1.0.1",
@@ -105,6 +113,7 @@
     "babel-plugin-macros": "^2.6.1",
     "babel-plugin-module-resolver": "^4.0.0",
     "babel-plugin-react-remove-properties": "^0.3.0",
+    "chromatic": "^5.2.0",
     "cross-env": "^7.0.2",
     "cypress": "5.1.0",
     "cypress-image-snapshot": "^3.1.1",
@@ -115,6 +124,7 @@
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-jest": "^24.0.0",
     "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-mdx": "^1.8.2",
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.20.6",
     "eslint-plugin-unicorn": "^21.0.0",
@@ -135,6 +145,9 @@
     "react-addons-test-utils": "^15.6.2",
     "react-is": "^16.13.1",
     "react-test-renderer": "^16.13.1",
+    "remark-cli": "^8.0.1",
+    "remark-lint-are-links-valid": "^1.0.3",
+    "remark-preset-lint-recommended": "^4.0.1",
     "require-context.macro": "^1.2.2",
     "start-server-and-test": "^1.11.3",
     "style-loader": "^1.2.1",

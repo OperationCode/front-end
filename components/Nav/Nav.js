@@ -29,6 +29,11 @@ export const Nav = () => {
     document.body.style.overflow = 'auto';
   };
 
+  const redirectRightClick = event_ => {
+    event_.preventDefault();
+    Router.push('/branding');
+  };
+
   useEffect(() => {
     Router.events.on('routeChangeComplete', closeMobileMenu);
 
@@ -58,7 +63,10 @@ export const Nav = () => {
         <div className={styles.desktopNavContainer} data-testid="Desktop Nav Container">
           <nav data-testid="Desktop Nav">
             <Link href="/" key="Home">
-              <a className={classNames(styles.logoLink, styles.link)}>
+              <a
+                className={classNames(styles.logoLink, styles.link)}
+                onContextMenu={redirectRightClick}
+              >
                 <img
                   src={`${s3}branding/logos/small-blue-logo.png`}
                   alt="Operation Code Logo"

@@ -1,3 +1,9 @@
+import {
+  MODAL_CONTENT,
+  SCHOOL_CARD_LOCATION_LIST_MODAL_BUTTON,
+  SCHOOL_LOCATION_LIST_ITEM,
+} from 'common/constants/testIDs';
+
 describe('code schools', () => {
   const ReactSelectSelector = 'input#react-select-state_select-input';
 
@@ -60,12 +66,10 @@ describe('code schools', () => {
       cy.findAllByTestId('SchoolCard').should('have.length.greaterThan', 30);
     });
 
-    it('should close when user clicks close button', () => {
-      cy.findAllByText('view all').each(button => {
-        cy.wrap(button).click();
-        cy.findByTestId('CLOSE_BUTTON').click();
-        cy.get('.ReactModal_Content').should('not.exist');
-      });
+    it('renders all locations when opening the "view all" modal', () => {
+      cy.findAllByTestId(SCHOOL_CARD_LOCATION_LIST_MODAL_BUTTON).first().click();
+      cy.findByTestId(MODAL_CONTENT).should('exist').and('be.visible');
+      cy.findAllByTestId(SCHOOL_LOCATION_LIST_ITEM).should('have.length.greaterThan', 1);
     });
   });
 });

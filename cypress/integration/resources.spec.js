@@ -9,7 +9,7 @@ import {
   DATA_TEST_CATEGORY,
   DATA_TEST_LANGUAGES,
   DATA_TEST_COST,
-} from '../../common/constants/testIDs';
+} from 'common/constants/testIDs';
 
 describe('resources', () => {
   const COST_SELECT = 'By Cost';

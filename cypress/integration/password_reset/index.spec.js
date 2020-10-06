@@ -1,5 +1,5 @@
-import existingUser from '../../../test-utils/mocks/existingUser';
-import { validationErrorMessages } from '../../../common/constants/messages';
+import existingUser from 'test-utils/mocks/existingUser';
+import { validationErrorMessages } from 'common/constants/messages';
 
 describe('reset_password', () => {
   beforeEach(() => {
