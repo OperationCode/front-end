@@ -41,12 +41,17 @@ const registrationSchema = Yup.object().shape({
   lastName: Yup.string().trim().required(validationErrorMessages.required),
   zipcode: Yup.string().trim().required(validationErrorMessages.required),
 <<<<<<< HEAD
+<<<<<<< HEAD
   codeOfConduct: Yup.boolean().oneOf([true], (validationErrorMessages.required)),
   communityGuidelines: Yup.boolean().oneOf([true], (validationErrorMessages.required)),
 =======
   codeOfConduct: Yup.boolean().oneOf([true]).required(validationErrorMessages.required),
   communityGuidelines: Yup.boolean().oneOf([true]).required(validationErrorMessages.required),
 >>>>>>> e79b0ce6... added label controls
+=======
+  codeOfConduct: Yup.boolean().oneOf([true], 'Field must be checked'),
+  communityGuidelines: Yup.boolean().oneOf([true], 'Field must be checked'),
+>>>>>>> cc17e5e9... gets validation working, messes with styles
 });
 
 RegistrationForm.propTypes = {
@@ -192,7 +197,8 @@ function RegistrationForm({ initialValues, onSuccess }) {
               <Field
                 type="checkbox"
                 name="codeOfConduct"
-                label="Code of Conduct*"
+                label=" "
+                component={Input}
                 disabled={isSubmitting}
               />
               I agree to abide by the &nbsp;
@@ -208,7 +214,8 @@ function RegistrationForm({ initialValues, onSuccess }) {
               <Field
                 type="checkbox"
                 name="communityGuidelines"
-                label="Community Guidelines*"
+                label="I have read the <a>Community Guidelines</a> "
+                component={Input}
                 disabled={isSubmitting}
               />
               I have read the &nbsp;
