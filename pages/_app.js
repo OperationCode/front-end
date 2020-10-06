@@ -13,7 +13,7 @@ import { clientTokens } from 'common/config/environment';
 import { gtag } from 'common/utils/thirdParty/gtag';
 import Nav from 'components/Nav/Nav';
 import Footer from 'components/Footer/Footer';
-import Modal from 'components/Modal/Modal';
+import ReactModal from 'react-modal';
 import { version } from '../package.json';
 import 'common/styles/globalStyles.css';
 
@@ -102,10 +102,8 @@ class OperationCodeApp extends App {
         Sentry.captureException('FontFaceObserver took too long to resolve. Ignore this.'),
       );
 
-    /* Modal anchor set */
-    if (Modal.setAppElement) {
-      Modal.setAppElement('body');
-    }
+    // Accessibility: Tell application which DOM node to hide during focus-locking of modal
+    ReactModal.setAppElement('#__next');
   }
 
   componentWillUnmount() {
