@@ -192,7 +192,11 @@ describe('resources', () => {
   });
 
   it('will allow a user to filter resources by language(s)', () => {
-    cy.get(LANGUAGES_SELECT).click({ force: true }).type('javascript').type('{enter}');
+    cy.get(LANGUAGES_SELECT)
+      .click({ force: true })
+      .type('javascript')
+      .type('{enter}')
+      .type('{esc}');
     cy.findByTestId(RESOURCE_SEARCH_BUTTON).click();
     cy.location().should(loc => {
       expect(loc.pathname).to.eq('/resources/1');
@@ -223,7 +227,7 @@ describe('resources', () => {
       cy.wrap(card).checkCustomDataAttribute(DATA_TEST_LANGUAGES, 'JavaScript');
     });
 
-    cy.get(LANGUAGES_SELECT).click({ force: true }).type('python').type('{enter}');
+    cy.get(LANGUAGES_SELECT).click({ force: true }).type('python').type('{enter}').type('{esc}');
     cy.findByTestId(RESOURCE_SEARCH_BUTTON).click();
     cy.location().should(loc => {
       expect(loc.pathname).to.eq('/resources/1');
