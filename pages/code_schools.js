@@ -16,7 +16,7 @@ import { SCHOOL_LOCATION_LIST_ITEM } from 'common/constants/testIDs';
 import edx from 'static/images/moocs/edx.jpg';
 import treehouse from 'static/images/moocs/treehouse.jpg';
 import udacity from 'static/images/moocs/udacity.jpg';
-import styles from './styles/code_schools.module.css';
+import styles from 'styles/code_schools.module.css';
 
 const pageTitle = 'Code Schools';
 

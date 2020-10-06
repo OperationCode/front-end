@@ -28,7 +28,7 @@ import {
   RESOURCE_SEARCH_BUTTON,
   RESOURCE_RESET_BUTTON,
 } from 'common/constants/testIDs';
-import styles from '../styles/resources.module.css';
+import styles from 'styles/resources.module.css';
 
 const pageTitle = 'Resources';
 
