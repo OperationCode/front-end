@@ -57,6 +57,18 @@ Cypress.Commands.add('checkCustomDataAttribute', (attribute, value) => {
   cy.get(attribute).invoke('attr', attributeWithoutBrackets).should('contain', value);
 });
 
+Cypress.Commands.add('findSelectByLabelText', (label, options = {}) => {
+  cy.findByText(label)
+    .invoke('attr', 'for')
+    .then(name => {
+      if (options.edit) {
+        cy.get(`input#react-select-${name}-input`);
+      } else {
+        cy.get(`input[name="${name}"]`);
+      }
+    });
+});
+
 //
 // -- This is a child command --
 // Cypress.Commands.add("drag", { prevSubject: 'element'}, (subject, options) => { ... })

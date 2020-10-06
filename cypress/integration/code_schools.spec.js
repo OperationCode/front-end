@@ -27,7 +27,7 @@ describe('code schools', () => {
     });
 
     it('only renders relevant schools after clicking on "Schools Accepting GI Bill"', () => {
-      cy.contains('Schools Accepting GI Bill').click();
+      cy.findByText('Schools Accepting GI Bill').click();
 
       cy.findAllByTestId('SchoolCard').each(card => {
         cy.wrap(card).findAllByTestId('GI Bill Ribbon').should('exist');
@@ -35,7 +35,7 @@ describe('code schools', () => {
     });
 
     it('only renders code schools with an online option after clicking "Online Schools"', () => {
-      cy.contains('Online Schools').click();
+      cy.findByText('Online Schools').click();
 
       cy.findAllByTestId('SchoolCard').each(card => {
         cy.wrap(card).findAllByTestId('School has online').should('exist');
@@ -53,7 +53,7 @@ describe('code schools', () => {
 
       cy.findByTestId('SchoolCard').should('have.length', 0);
 
-      cy.contains('All Schools').click();
+      cy.findByText('All Schools').click();
       cy.findAllByTestId('SchoolCard').should('have.length.greaterThan', 30);
     });
 
