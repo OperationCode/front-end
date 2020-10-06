@@ -92,16 +92,15 @@ function Input({
           value={value || ''}
         />
 
-        <ErrorMessage
-          name={name}
-          render={message => {
+        <ErrorMessage name={name}>
+          {message => {
             return hasErrors ? (
               <Alert className={styles.errorMessage} data-testid={INPUT_ERROR} type="error">
                 {message}
               </Alert>
             ) : null;
           }}
-        />
+        </ErrorMessage>
       </div>
 
       {isLabelAfterInput && (
