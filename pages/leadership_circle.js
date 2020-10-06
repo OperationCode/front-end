@@ -5,7 +5,7 @@ import LinkButton from 'components/Buttons/LinkButton/LinkButton';
 import Card from 'components/Cards/Card/Card';
 import { leadershipCircleLink } from 'common/constants/urls';
 import { leadershipCircleMembers } from 'common/constants/leadershipCircleMembers';
-import styles from './styles/leadership_circle.module.css';
+import styles from 'styles/leadership_circle.module.css';
 
 const pageTitle = 'Leadership Circle';
 

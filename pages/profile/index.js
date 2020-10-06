@@ -8,7 +8,7 @@ import withAuthSync from 'decorators/withAuthSync/withAuthSync';
 import { getUserPromise } from 'common/constants/api';
 import { capitalize, startCase, toLower } from 'lodash';
 import { format } from 'date-fns';
-import styles from '../styles/profile.module.css';
+import styles from 'styles/profile.module.css';
 import { PROFILE_GREETING } from '../../common/constants/testIDs';
 
 const pageTitle = 'Profile';
