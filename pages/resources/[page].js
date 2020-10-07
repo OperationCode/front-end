@@ -24,7 +24,7 @@ import ResourceCard from 'components/Cards/ResourceCard/ResourceCard';
 import ResourceSkeletonCard from 'components/Cards/ResourceCard/ResourceSkeletonCard';
 import { RESOURCE_CARD } from 'common/constants/testIDs';
 import styles from 'styles/resources.module.css';
-import ResourceSearchForm from 'components/ResourceSearchForm/ResourceSearchForm';
+import ResourceSearchForm from 'components/Forms/ResourceSearchForm/ResourceSearchForm';
 import isUndefined from 'lodash/isUndefined';
 
 const pageTitle = 'Resources';

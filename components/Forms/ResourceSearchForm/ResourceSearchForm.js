@@ -1,16 +1,16 @@
 import React from 'react';
 import { Field, Formik, Form } from 'formik';
-import Button from 'components/Buttons/Button/Button';
-import Input from 'components/Form/Input/Input';
-import Select from 'components/Form/Select/Select';
 import omit from 'lodash/omit';
+import styles from 'styles/resources.module.css';
+import { string, func, shape, array } from 'prop-types';
+import Button from '../../Buttons/Button/Button';
+import Input from '../../Form/Input/Input';
+import Select from '../../Form/Select/Select';
 import {
   RESOURCE_SEARCH,
   RESOURCE_SEARCH_BUTTON,
   RESOURCE_RESET_BUTTON,
-} from 'common/constants/testIDs';
-import styles from 'styles/resources.module.css';
-import { string, func, shape, array } from 'prop-types';
+} from '../../../common/constants/testIDs';
 
 ResourceSearchForm.propTypes = {
   setIsLoading: func.isRequired,

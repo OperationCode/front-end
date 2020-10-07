@@ -23,3 +23,5 @@ describe('ResourceSearchForm', () => {
     );
   });
 });
+
+// TODO Write more tests for this form
