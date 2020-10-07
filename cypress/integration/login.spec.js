@@ -3,7 +3,7 @@ import { networkErrorMessages } from 'common/constants/messages';
 import existingUser from 'test-utils/mocks/existingUser';
 import mockPassword from 'test-utils/mockGenerators/mockPassword';
 import mockUser from 'test-utils/mockGenerators/mockUser';
-import { PROFILE_GREETING } from 'common/constants/testIDs';
+import { PROFILE_GREETING, LOGIN_BUTTON } from 'common/constants/testIDs';
 
 describe('login', () => {
   beforeEach(() => {
@@ -19,7 +19,7 @@ describe('login', () => {
   it('should be able to login with valid credentials', () => {
     cy.findByLabelText('Email*').type(existingUser.email);
     cy.findByLabelText('Password*').type(existingUser.password);
-    cy.findByText('Submit').click();
+    cy.findByTestId(LOGIN_BUTTON).click();
 
     cy.url().should('contain', '/profile');
     cy.get('h1').should('have.text', 'Profile');
@@ -39,7 +39,7 @@ describe('login', () => {
 
     cy.findByLabelText('Email*').type(fakeUser.email);
     cy.findByLabelText('Password*').type(fakeUser.password);
-    cy.findByText('Submit').click();
+    cy.findByTestId(LOGIN_BUTTON).click();
 
     cy.wait('@postLogin').its('status').should('eq', 400);
 
@@ -54,7 +54,7 @@ describe('login', () => {
     cy.findByLabelText('Email*').type(existingUser.email);
     cy.findByLabelText('Password*').type(randomValidPassword);
 
-    cy.findByText('Submit').click();
+    cy.findByTestId(LOGIN_BUTTON).click();
 
     cy.wait('@postLogin').its('status').should('eq', 400);
 
@@ -73,7 +73,7 @@ describe('login', () => {
 
     cy.findByLabelText('Email*').type(existingUser.email);
     cy.findByLabelText('Password*').type(existingUser.password);
-    cy.findByText('Submit').click();
+    cy.findByTestId(LOGIN_BUTTON).click();
 
     cy.url().should('contain', '/login');
     cy.findByRole('alert').should('have.text', networkErrorMessages.serverDown);
@@ -107,7 +107,7 @@ describe('login?loggedOut=True', () => {
 
     cy.findByLabelText('Email*').type(fakeUser.email);
     cy.findByLabelText('Password*').type(fakeUser.password);
-    cy.findByText('Submit').click();
+    cy.findByTestId(LOGIN_BUTTON).click();
 
     cy.findByRole('alert').should('not.have.text', 'Logged out successfully.');
   });

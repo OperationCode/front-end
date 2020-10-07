@@ -12,6 +12,19 @@
   padding: 1.5rem;
 }
 
+.CardModal {
+  background-color: var(--secondary);
+  color: var(--white);
+}
+
+.CardModal a {
+  color: var(--primary);
+}
+
+.CardModal h2 {
+  font-size: 1.5em;
+}
+
 .Card svg {
   fill: var(--secondary);
 }
