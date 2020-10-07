@@ -13,7 +13,7 @@ const nextConfig = withBundleAnalyzer({
 
   experimental: {
     productionBrowserSourceMaps: true,
-    scrollRestoration: true,
+    scrollRestoration: false,
   },
 
   /** @see https://nextjs.org/docs/api-reference/next.config.js/rewrites */
