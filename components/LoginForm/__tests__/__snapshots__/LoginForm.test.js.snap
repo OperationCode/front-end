@@ -75,7 +75,7 @@ exports[`LoginForm should render with required props 1`] = `
       tabIndex={0}
       type="submit"
     >
-      Submit
+      Login
     </button>
   </div>
 </form>
