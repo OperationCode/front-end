@@ -10,24 +10,18 @@ import {
   RESOURCE_RESET_BUTTON,
 } from 'common/constants/testIDs';
 import styles from 'styles/resources.module.css';
-import { string, object, func, shape } from 'prop-types';
+import { string, func, shape, array } from 'prop-types';
 
 ResourceSearchForm.propTypes = {
   setIsLoading: func.isRequired,
   updateQuery: func.isRequired,
   setErrorMessage: func.isRequired,
-  allLanguages: shape({
-    value: string,
-    label: string,
-  }).isRequired,
-  allCategories: shape({
-    value: string,
-    label: string,
-  }).isRequired,
+  allLanguages: array.isRequired,
+  allCategories: array.isRequired,
   fields: shape({
-    languages: object,
+    languages: string,
     category: string,
-    paid: object,
+    paid: string,
     q: string,
   }).isRequired,
 };
