@@ -9,7 +9,7 @@ import { hasValidAuthToken } from 'common/utils/cookie-utils';
 import Head from 'components/head';
 import Alert from 'components/Alert/Alert';
 import Content from 'components/Content/Content';
-import LoginForm from 'components/LoginForm/LoginForm';
+import LoginForm from 'components/Forms/LoginForm/LoginForm';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import SocialLoginButtons from 'components/SocialLoginGroup/SocialLoginButtons';
 import SocialLoginGroup from 'components/SocialLoginGroup/SocialLoginGroup';

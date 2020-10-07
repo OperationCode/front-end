@@ -2,13 +2,11 @@ import React, { useState } from 'react';
 import { func, shape, string } from 'prop-types';
 import { Formik, Field, Form } from 'formik';
 import * as Yup from 'yup';
-import noop from 'lodash/noop';
-import { getServerErrorMessage } from 'common/utils/api-utils';
-import { validationErrorMessages } from 'common/constants/messages';
-import { LOGIN_BUTTON, LOGIN_FORM } from 'common/constants/testIDs';
-import Button from 'components/Buttons/Button/Button';
-import Input from 'components/Form/Input/Input';
-import Alert from 'components/Alert/Alert';
+import { getServerErrorMessage } from '../../../common/utils/api-utils';
+import { validationErrorMessages } from '../../../common/constants/messages';
+import Button from '../../Buttons/Button/Button';
+import Input from '../../Form/Input/Input';
+import Alert from '../../Alert/Alert';
 import styles from './LoginForm.module.css';
 
 /*
@@ -31,8 +29,6 @@ LoginForm.propTypes = {
     email: string,
     password: string,
   }),
-  redirectFunction: func,
-  buttonTheme: string,
 };
 
 LoginForm.defaultProps = {
@@ -40,11 +36,9 @@ LoginForm.defaultProps = {
     email: '',
     password: '',
   },
-  redirectFunction: noop,
-  buttonTheme: 'secondary',
 };
 
-function LoginForm({ initialValues, login, onSuccess, redirectFunction, buttonTheme }) {
+function LoginForm({ initialValues, login, onSuccess }) {
   const [errorMessage, setErrorMessage] = useState('');
 
   const handleSubmit = async (values, actions) => {
@@ -54,7 +48,6 @@ function LoginForm({ initialValues, login, onSuccess, redirectFunction, buttonTh
       await onSuccess({ token });
       actions.setSubmitting(false);
       actions.resetForm();
-      redirectFunction();
     } catch (error) {
       actions.setSubmitting(false);
 
@@ -65,7 +58,7 @@ function LoginForm({ initialValues, login, onSuccess, redirectFunction, buttonTh
   return (
     <Formik initialValues={initialValues} onSubmit={handleSubmit} validationSchema={loginSchema}>
       {({ isSubmitting }) => (
-        <Form className={styles.LoginForm} data-testid={LOGIN_FORM}>
+        <Form className={styles.LoginForm}>
           <div className={styles.row}>
             <Field
               type="email"
@@ -90,11 +83,10 @@ function LoginForm({ initialValues, login, onSuccess, redirectFunction, buttonTh
             <Button
               className={styles.topMargin}
               type="submit"
-              theme={buttonTheme}
+              theme="secondary"
               disabled={isSubmitting}
-              data-testid={LOGIN_BUTTON}
             >
-              Login
+              Submit
             </Button>
           </div>
         </Form>
