@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import { string, func, shape } from 'prop-types';
 import { Field, Formik, Form } from 'formik';
 import * as Yup from 'yup';
-import Button from 'components/Buttons/Button/Button';
-import Input from 'components/Form/Input/Input';
-import Alert from 'components/Alert/Alert';
-import { CHANGE_PASSWORD_FORM_ERROR } from 'common/constants/testIDs';
-import { validationErrorMessages } from 'common/constants/messages';
-import { getServerErrorMessage } from 'common/utils/api-utils';
-import { minimumPasswordLength } from 'common/constants/validations';
-import { hasRequiredCharacters } from 'common/utils/validator-utils';
+import Button from '../../Buttons/Button/Button';
+import Input from '../../Form/Input/Input';
+import Alert from '../../Alert/Alert';
+import { CHANGE_PASSWORD_FORM_ERROR } from '../../../common/constants/testIDs';
+import { validationErrorMessages } from '../../../common/constants/messages';
+import { getServerErrorMessage } from '../../../common/utils/api-utils';
+import { minimumPasswordLength } from '../../../common/constants/validations';
+import { hasRequiredCharacters } from '../../../common/utils/validator-utils';
 import styles from './ChangePasswordForm.module.css';
 
 const passwordResetSubmitSchema = Yup.object().shape({
