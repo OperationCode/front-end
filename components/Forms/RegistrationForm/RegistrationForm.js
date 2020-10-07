@@ -2,15 +2,15 @@ import React, { useState } from 'react';
 import { func, number, oneOfType, shape, string } from 'prop-types';
 import { Formik, Field, Form } from 'formik';
 import * as Yup from 'yup';
-import { createUser } from '../../../common/constants/api';
-import { getServerErrorMessage } from '../../../common/utils/api-utils';
-import { validationErrorMessages } from '../../../common/constants/messages';
-import { capitalizeFirstLetter } from '../../../common/utils/string-utils';
-import { minimumPasswordLength } from '../../../common/constants/validations';
-import { hasRequiredCharacters } from '../../../common/utils/validator-utils';
-import Button from '../../Buttons/Button/Button';
-import Input from '../../Form/Input/Input';
-import Alert from '../../Alert/Alert';
+import { createUser } from 'common/constants/api';
+import { getServerErrorMessage } from 'common/utils/api-utils';
+import { validationErrorMessages } from 'common/constants/messages';
+import { capitalizeFirstLetter } from 'common/utils/string-utils';
+import { minimumPasswordLength } from 'common/constants/validations';
+import { hasRequiredCharacters } from 'common/utils/validator-utils';
+import Button from 'components/Buttons/Button/Button';
+import Input from 'components/Form/Input/Input';
+import Alert from 'components/Alert/Alert';
 import styles from './RegistrationForm.module.css';
 
 /**
