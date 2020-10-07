@@ -11,7 +11,7 @@ import OutboundLink from 'components/OutboundLink/OutboundLink';
 import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
 import successStories from 'common/constants/successStories';
 import { s3 } from 'common/constants/urls';
-import styles from './styles/index.module.css';
+import styles from 'styles/index.module.css';
 
 const featuredLinksArray = [
   {

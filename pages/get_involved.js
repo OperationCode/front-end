@@ -15,7 +15,7 @@ import NetworkingIcon from 'static/images/icons/Custom/networked_people.svg';
 import ChartIcon from 'static/images/icons/Custom/chart.svg';
 import PeopleMeetingIcon from 'static/images/icons/Custom/people_meeting.svg';
 import { s3 } from 'common/constants/urls';
-import styles from './styles/get_involved.module.css';
+import styles from 'styles/get_involved.module.css';
 
 const VISIBILITY_OFFSET = 400;
 

@@ -8,7 +8,7 @@ import withAuthSync from 'decorators/withAuthSync/withAuthSync';
 import { getUserPromise } from 'common/constants/api';
 import { capitalize, startCase, toLower } from 'lodash';
 import { format } from 'date-fns';
-import styles from '../styles/profile.module.css';
+import styles from 'styles/profile.module.css';
 import { PROFILE_GREETING } from '../../common/constants/testIDs';
 
 const pageTitle = 'Profile';
@@ -16,16 +16,28 @@ const pageTitle = 'Profile';
 Profile.propTypes = {
   firstName: string.isRequired,
   lastName: string.isRequired,
-  branchOfService: string.isRequired,
-  companyName: string.isRequired,
-  companyRole: string.isRequired,
-  createdAt: string.isRequired,
-  disciplines: string.isRequired,
+  branchOfService: string,
+  companyName: string,
+  companyRole: string,
+  createdAt: string,
+  disciplines: string,
   email: string.isRequired,
-  employmentStatus: string.isRequired,
-  isMentor: bool.isRequired,
-  militaryStatus: string.isRequired,
-  programmingLanguages: string.isRequired,
+  employmentStatus: string,
+  isMentor: bool,
+  militaryStatus: string,
+  programmingLanguages: string,
+};
+
+Profile.defaultProps = {
+  branchOfService: undefined,
+  companyName: undefined,
+  companyRole: undefined,
+  createdAt: undefined,
+  disciplines: undefined,
+  employmentStatus: undefined,
+  isMentor: undefined,
+  militaryStatus: undefined,
+  programmingLanguages: undefined,
 };
 
 Profile.getInitialProps = async ctx => {
@@ -71,46 +83,59 @@ function Profile({
               <strong>Email : </strong>
               {email}
             </p>
-            {dateJoined ? (
+            {!!dateJoined && (
               <p>
                 <strong>Date Joined : </strong>
                 {dateJoined}
               </p>
-            ) : null}
-            <p>
-              <strong>Employment Status : </strong>
-              {employmentStatus}
-            </p>
-            <p>
-              <strong>Company Name : </strong>
-              {startCase(toLower(companyName))}
-            </p>
-            <p>
-              <strong>Company Role : </strong>
-              {startCase(toLower(companyRole))}
-            </p>
-            <p>
-              <strong>Military Status : </strong>
-              {capitalize(militaryStatus)}
-            </p>
-            <p>
-              <strong>Branch of Service : </strong>
-              {capitalize(branchOfService)}
-            </p>
-            <p>
-              <strong>Programming Language Interest : </strong>
-              {programmingLanguages}
-            </p>
-            <p>
-              <strong>Career Interest : </strong>
-              {disciplines}
-            </p>
-
-            {isMentor ? (
+            )}
+            {!!employmentStatus && (
+              <p>
+                <strong>Employment Status : </strong>
+                {employmentStatus}
+              </p>
+            )}
+            {!!companyName && (
+              <p>
+                <strong>Company Name : </strong>
+                {startCase(toLower(companyName))}
+              </p>
+            )}
+            {!!companyRole && (
+              <p>
+                <strong>Company Role : </strong>
+                {startCase(toLower(companyRole))}
+              </p>
+            )}
+            {!!militaryStatus && (
+              <p>
+                <strong>Military Status : </strong>
+                {capitalize(militaryStatus)}
+              </p>
+            )}
+            {!!branchOfService && (
+              <p>
+                <strong>Branch of Service : </strong>
+                {capitalize(branchOfService)}
+              </p>
+            )}
+            {!!programmingLanguages && (
+              <p>
+                <strong>Programming Language Interest : </strong>
+                {programmingLanguages}
+              </p>
+            )}
+            {!!disciplines && (
+              <p>
+                <strong>Career Interest : </strong>
+                {disciplines}
+              </p>
+            )}
+            {!!isMentor && (
               <p>
                 <strong>Mentor : </strong>Yes
               </p>
-            ) : null}
+            )}
           </div>,
           <div className={styles.actionItems}>
             <LinkButton theme="secondary" href="/profile/update">

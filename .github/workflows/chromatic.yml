@@ -1,10 +1,5 @@
 name: ci
 
-on:
-  push:
-    branches-ignore:
-      - master
-
 jobs:
   Chromatic:
     runs-on: ubuntu-latest
@@ -45,5 +40,6 @@ jobs:
       - uses: chromaui/action@v1
         with:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          autoAcceptChanges: main
           token: ${{ secrets.GITHUB_TOKEN }}
           buildScriptName: storybook:build

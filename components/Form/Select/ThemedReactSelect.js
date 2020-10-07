@@ -17,6 +17,7 @@ ThemedReactSelect.propTypes = {
   hasValidationStyling: bool,
   id: string,
   instanceId: string,
+  isMulti: bool,
   // TODO: Resolve why multiselects can end up with touched: { key: array }
   // see ThemedReactSelect as well
   // isTouched: bool,
@@ -29,6 +30,7 @@ ThemedReactSelect.defaultProps = {
   hasValidationStyling: true,
   id: undefined,
   instanceId: undefined,
+  isMulti: false,
   isTouched: false,
 };
 
@@ -38,6 +40,7 @@ function ThemedReactSelect({
   hasValidationStyling,
   id,
   instanceId,
+  isMulti,
   ...props
 }) {
   // See TODO in propTypes definition
@@ -57,6 +60,8 @@ function ThemedReactSelect({
       {...props}
       instanceId={instanceId || id}
       disabled={disabled}
+      closeMenuOnSelect={!isMulti}
+      isMulti={isMulti}
       styles={{
         control: base => {
           return {

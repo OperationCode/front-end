@@ -2,6 +2,7 @@
 
 exports[`Modal should render with many props assigned 1`] = `
 <body
+  aria-hidden="true"
   class="ReactModal__Body--open"
 >
   <div
@@ -45,7 +46,7 @@ exports[`Modal should render with many props assigned 1`] = `
         </button>
         <div
           class="scrollableContainer"
-          data-testid="SCROLLABLE_CONTAINER"
+          data-testid="MODAL_CONTENT"
         >
           Test
         </div>

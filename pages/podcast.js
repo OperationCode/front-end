@@ -9,7 +9,7 @@ import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Card from 'components/Cards/Card/Card';
 import Content from 'components/Content/Content';
 import Heading from 'components/Heading/Heading';
-import styles from './styles/podcast.module.css';
+import styles from 'styles/podcast.module.css';
 
 const pageTitle = 'Podcast';
 

@@ -34,7 +34,7 @@ import {
   RESOURCE_RESET_BUTTON,
 } from 'common/constants/testIDs';
 import CardStyles from 'components/Cards/Card/Card.module.css';
-import styles from '../styles/resources.module.css';
+import styles from 'styles/resources.module.css';
 
 const pageTitle = 'Resources';
 
@@ -112,10 +112,10 @@ function Resources() {
     }, 500);
   };
 
-  const handleReset = (values, actions) => {
+  const handleReset = resetForm => {
     setErrorMessage(null);
     router.push(pathname, '/resources/1', { shallow: true });
-    actions.resetForm({ initialValues });
+    resetForm({ values: initialValues });
   };
 
   useEffect(() => {
@@ -221,11 +221,8 @@ function Resources() {
                 handleSubmit(values, actions);
                 actions.setSubmitting(true);
               }}
-              onReset={(values, actions) => {
-                handleReset(values, actions);
-              }}
             >
-              {({ isSubmitting }) => (
+              {({ isSubmitting, resetForm }) => (
                 <Form role="search">
                   <Field
                     hasValidationStyling={false}
@@ -287,6 +284,7 @@ function Resources() {
                     </Button>
 
                     <Button
+                      onClick={() => handleReset(resetForm)}
                       className={styles.buttonSingle}
                       data-testid={RESOURCE_RESET_BUTTON}
                       disabled={isSubmitting}
