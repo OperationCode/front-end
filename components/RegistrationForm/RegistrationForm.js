@@ -184,14 +184,13 @@ function RegistrationForm({ initialValues, onSuccess }) {
             />
 
               <Field
-                className={styles.checkWidth}
                 type="checkbox"
                 name="codeOfConduct"
                 label=" "
                 component={Input}
                 disabled={isSubmitting}
               />
-              <p>
+              <p className={styles.floatLeft}>
               I agree to abide by the &nbsp;
                 <OutboundLink
                   href="https://github.com/OperationCode/operationcode_docs/blob/master/community/code_of_conduct.md"
@@ -202,14 +201,13 @@ function RegistrationForm({ initialValues, onSuccess }) {
               </p>
 
               <Field
-                className={styles.checkWidth}
                 type="checkbox"
                 name="communityGuidelines"
                 label=" "
                 component={Input}
                 disabled={isSubmitting}
               />
-              <p>
+              <p className={styles.floatLeft}>
               I have read the &nbsp;
                 <OutboundLink
                   href="https://github.com/OperationCode/START_HERE/blob/master/community_guidelines.md"
