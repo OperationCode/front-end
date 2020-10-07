@@ -352,6 +352,7 @@ function Resources() {
             setIsModalOpen(false);
             router.push(router.asPath);
           }}
+          buttonTheme="primary"
         />
 
         <p>

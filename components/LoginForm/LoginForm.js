@@ -32,6 +32,7 @@ LoginForm.propTypes = {
     password: string,
   }),
   redirectFunction: func,
+  buttonTheme: string,
 };
 
 LoginForm.defaultProps = {
@@ -40,11 +41,10 @@ LoginForm.defaultProps = {
     password: '',
   },
   redirectFunction: noop,
+  buttonTheme: 'secondary',
 };
 
-function LoginForm({ initialValues, login, onSuccess, redirectFunction }) {
-  const isInLoginModal = redirectFunction.name !== 'noop';
-
+function LoginForm({ initialValues, login, onSuccess, redirectFunction, buttonTheme }) {
   const [errorMessage, setErrorMessage] = useState('');
 
   const handleSubmit = async (values, actions) => {
@@ -90,10 +90,10 @@ function LoginForm({ initialValues, login, onSuccess, redirectFunction }) {
             <Button
               className={styles.topMargin}
               type="submit"
-              theme={isInLoginModal ? 'primary' : 'secondary'}
+              theme={buttonTheme}
               disabled={isSubmitting}
             >
-              {isInLoginModal ? 'Login' : 'Submit'}
+              Login
             </Button>
           </div>
         </Form>
