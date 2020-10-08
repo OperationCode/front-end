@@ -1,8 +1,5 @@
 name: lighthouse
-on:
-  push:
-    branches-ignore:
-      - master
+on: [push, pull_request]
 
 jobs:
   performance_check:
@@ -43,10 +40,6 @@ jobs:
         with:
           urls: |
             https://operationcode.org/
-            https://operationcode.org/about/
-            https://operationcode.org/events/
-            https://operationcode.org/get_involved/
-            https://operationcode.org/donate/
           configPath: './lighthouserc.js'
           uploadArtifacts: true
           temporaryPublicStorage: true
