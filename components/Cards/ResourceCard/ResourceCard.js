@@ -25,6 +25,7 @@ ResourceCard.propTypes = {
   downvotes: number,
   href: string.isRequired,
   name: string.isRequired,
+  id: number.isRequired,
   category: string,
   languages: oneOfType([string, array]),
   isPaid: bool,
@@ -55,6 +56,7 @@ function ResourceCard({
   handleVote,
   upvotes,
   userVote,
+  id,
 }) {
   const [upVotes, setUpVotes] = useState(upvotes);
   const [downVotes, setDownVotes] = useState(downvotes);
@@ -63,12 +65,11 @@ function ResourceCard({
 
   // Sync IDs with stylesheet
   // eslint-disable-next-line react/prop-types
-  const VotingBlock = ({ id }) => {
-    const onUpvote = () => handleVote('upvotes', setUpVotes);
-    const downUpvote = () => handleVote('downvotes', setDownVotes);
+  const VotingBlock = ({ blockID }) => {
+    const onVote = voteDirection => handleVote(voteDirection, id, setUpVotes, setDownVotes);
 
     return (
-      <div className={classNames(styles.votingBlock, styles[id])}>
+      <div className={classNames(styles.votingBlock, styles[blockID])}>
         <span className={styles.votingBlockHeader}>Useful?</span>
 
         <div className={styles.voteInfo}>
@@ -76,7 +77,7 @@ function ResourceCard({
             className={classNames(styles.voteButton, { [styles.active]: didUpvote })}
             aria-pressed={didUpvote}
             data-testid={UPVOTE_BUTTON}
-            onClick={onUpvote}
+            onClick={() => onVote('upvote')}
             type="button"
           >
             <ScreenReaderOnly>Yes</ScreenReaderOnly>
@@ -101,7 +102,7 @@ function ResourceCard({
             className={classNames(styles.voteButton, { [styles.active]: didDownvote })}
             aria-pressed={didDownvote}
             data-testid={DOWNVOTE_BUTTON}
-            onClick={downUpvote}
+            onClick={() => onVote('downvote')}
             type="button"
           >
             <ScreenReaderOnly>No</ScreenReaderOnly>
@@ -145,7 +146,7 @@ function ResourceCard({
               </OutboundLink>
             </h5>
 
-            <VotingBlock id="desktopVotingBlock" />
+            <VotingBlock blockID="desktopVotingBlock" />
           </div>
         ),
         bodyChildren: (
@@ -161,7 +162,7 @@ function ResourceCard({
               </p>
             </div>
 
-            <VotingBlock id="mobileVotingBlock" />
+            <VotingBlock blockID="mobileVotingBlock" />
           </div>
         ),
       }}

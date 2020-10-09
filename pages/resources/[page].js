@@ -14,6 +14,7 @@ import {
   getResourcesByLanguages,
   getResourcesBySearch,
   loginUser,
+  updateResourceVoteCount,
 } from 'common/constants/api';
 import { hasValidAuthToken, setAuthCookies } from 'common/utils/cookie-utils';
 import { Field, Formik } from 'formik';
@@ -75,18 +76,19 @@ function Resources() {
     setAuthCookies({ token });
   };
 
-  const handleVote = (/* voteDirection, updateVoteCountFunc */) => {
+  const handleVote = (voteDirection, id, setUpVotes, setDownVotes) => {
     setErrorMessage(null);
     if (!hasValidAuthToken()) {
       setIsModalOpen(true);
     }
-    // Make api calls to update vote
-
-    // If successful, set new vote count
-    // e.g. updateVoteCountFunc(response[voteDirection]);
-
-    // If not, handle error
-    // e.g. setErrorMessage('Failed to upvote or downvote....');
+    updateResourceVoteCount({ id, voteDirection })
+      .then(({ data: { resource } }) => {
+        setUpVotes(resource.upvotes);
+        setDownVotes(resource.downvotes);
+      })
+      .catch(() => {
+        setErrorMessage(`There was a problem ${voteDirection.slice(0, -1)}ing a resource.`);
+      });
   };
 
   const handleEndpoint = () => {
@@ -309,6 +311,7 @@ function Resources() {
                       {resources.map(resource => (
                         <ResourceCard
                           data-testid={RESOURCE_CARD}
+                          id={resource.id}
                           key={resource.id}
                           description={resource.notes}
                           downvotes={resource.downvotes}
