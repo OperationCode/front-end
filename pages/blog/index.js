@@ -32,11 +32,11 @@ function BlogIndex({ articles }) {
       <ul>
         {articles.map(article => {
           return (
-            <div key={article}>
+            <li key={article}>
               <Link href="/blog/[article]" as={`/blog/${article}`}>
                 <a>{article}</a>
               </Link>
-            </div>
+            </li>
           );
         })}
       </ul>
