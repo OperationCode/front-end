@@ -9,8 +9,6 @@ import {
   DOWNVOTE_BUTTON,
   RESOURCE_CARD,
   RESOURCE_TITLE,
-  UPVOTE_COUNT,
-  DOWNVOTE_COUNT,
 } from 'common/constants/testIDs';
 import ThumbsUp from 'static/images/icons/FontAwesome/thumbs-up.svg';
 import ThumbsDown from 'static/images/icons/FontAwesome/thumbs-down.svg';
@@ -94,7 +92,6 @@ function ResourceCard({
             <span
               aria-live="polite"
               className={classNames(styles.voteCount, { [styles.active]: didUpvote })}
-              data-testid={UPVOTE_COUNT}
             >
               <ScreenReaderOnly>Number of upvotes:</ScreenReaderOnly>
               {upVotes.toString()}
@@ -117,10 +114,7 @@ function ResourceCard({
               })}
             />
 
-            <span
-              className={classNames(styles.voteCount, { [styles.active]: didDownvote })}
-              data-testid={DOWNVOTE_COUNT}
-            >
+            <span className={classNames(styles.voteCount, { [styles.active]: didDownvote })}>
               <ScreenReaderOnly>Number of downvotes:</ScreenReaderOnly>
               {downVotes.toString()}
             </span>

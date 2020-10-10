@@ -10,10 +10,8 @@ import {
   DATA_TEST_LANGUAGES,
   DATA_TEST_COST,
   UPVOTE_BUTTON,
-  // DOWNVOTE_BUTTON,
+  DOWNVOTE_BUTTON,
   LOGIN_BUTTON,
-  // UPVOTE_COUNT,
-  // DOWNVOTE_COUNT,
 } from 'common/constants/testIDs';
 import existingUser from 'test-utils/mocks/existingUser';
 
@@ -266,19 +264,37 @@ describe('resources', () => {
 
   it('upvote and downvote', () => {
     // Before login - modal should pop up
-    cy.findAllByTestId(UPVOTE_BUTTON).first().click();
-    cy.get('h2').should('have.text', 'Login to Proceed');
-    cy.findByLabelText('Email*').should('exist');
-    cy.findByLabelText('Password*').should('exist');
+    cy.findAllByTestId(UPVOTE_BUTTON)
+      .first()
+      .click()
+      .then(() => {
+        cy.get('h2').should('have.text', 'Login to Proceed');
+        cy.findByLabelText('Email*').should('exist');
+        cy.findByLabelText('Password*').should('exist');
+      });
 
-    // Logging in
+    // Logging in - modal should not exist after log in
     cy.findByLabelText('Email*').type(existingUser.email);
     cy.findByLabelText('Password*').type(existingUser.password);
-    cy.findByTestId(LOGIN_BUTTON).click();
-    cy.get('h2').should('not.exist');
-    cy.findByLabelText('Email*').should('not.exist');
-    cy.findByLabelText('Password*').should('not.exist');
+    cy.findByTestId(LOGIN_BUTTON)
+      .click()
+      .then(() => {
+        cy.get('h2').should('not.exist');
+        cy.findByLabelText('Email*').should('not.exist');
+        cy.findByLabelText('Password*').should('not.exist');
+      });
 
     // Test Upvote/Downvote
+    cy.findAllByTestId(UPVOTE_BUTTON)
+      .first()
+      .children('span')
+      .invoke('text')
+      .as('currentUpVoteSpanText');
+
+    cy.findAllByTestId(DOWNVOTE_BUTTON)
+      .first()
+      .children('span')
+      .invoke('text')
+      .as('currentDownVoteSpanText');
   });
 });

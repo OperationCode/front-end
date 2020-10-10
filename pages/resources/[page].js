@@ -80,6 +80,7 @@ function Resources() {
     setErrorMessage(null);
     if (!hasValidAuthToken()) {
       setIsModalOpen(true);
+      return;
     }
     updateResourceVoteCount({ id, voteDirection })
       .then(({ data: { resource } }) => {
