@@ -55,5 +55,7 @@ export default [
     'Jerry Rogers',
     'Kenneth Ofosu',
     'Nithin KS',
-    'Krishna AL'
+    'Krishna AL',
+    'Akshaya Subramanian',
+    'Parshwa Shah'
 ]
