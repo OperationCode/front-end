@@ -9,6 +9,8 @@ import {
   DOWNVOTE_BUTTON,
   RESOURCE_CARD,
   RESOURCE_TITLE,
+  UPVOTE_COUNT,
+  DOWNVOTE_COUNT,
 } from 'common/constants/testIDs';
 import ThumbsUp from 'static/images/icons/FontAwesome/thumbs-up.svg';
 import ThumbsDown from 'static/images/icons/FontAwesome/thumbs-down.svg';
@@ -67,6 +69,8 @@ function ResourceCard({
   // eslint-disable-next-line react/prop-types
   const VotingBlock = ({ blockID }) => {
     const onVote = voteDirection => handleVote(voteDirection, id, setUpVotes, setDownVotes);
+    const onUpvote = () => onVote('upvote');
+    const onDownvote = () => onVote('downvote');
 
     return (
       <div className={classNames(styles.votingBlock, styles[blockID])}>
@@ -77,7 +81,7 @@ function ResourceCard({
             className={classNames(styles.voteButton, { [styles.active]: didUpvote })}
             aria-pressed={didUpvote}
             data-testid={UPVOTE_BUTTON}
-            onClick={() => onVote('upvote')}
+            onClick={onUpvote}
             type="button"
           >
             <ScreenReaderOnly>Yes</ScreenReaderOnly>
@@ -90,6 +94,7 @@ function ResourceCard({
             <span
               aria-live="polite"
               className={classNames(styles.voteCount, { [styles.active]: didUpvote })}
+              data-testid={UPVOTE_COUNT}
             >
               <ScreenReaderOnly>Number of upvotes:</ScreenReaderOnly>
               {upVotes.toString()}
@@ -102,7 +107,7 @@ function ResourceCard({
             className={classNames(styles.voteButton, { [styles.active]: didDownvote })}
             aria-pressed={didDownvote}
             data-testid={DOWNVOTE_BUTTON}
-            onClick={() => onVote('downvote')}
+            onClick={onDownvote}
             type="button"
           >
             <ScreenReaderOnly>No</ScreenReaderOnly>
@@ -112,7 +117,10 @@ function ResourceCard({
               })}
             />
 
-            <span className={classNames(styles.voteCount, { [styles.active]: didDownvote })}>
+            <span
+              className={classNames(styles.voteCount, { [styles.active]: didDownvote })}
+              data-testid={DOWNVOTE_COUNT}
+            >
               <ScreenReaderOnly>Number of downvotes:</ScreenReaderOnly>
               {downVotes.toString()}
             </span>
