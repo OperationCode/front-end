@@ -1,11 +1,12 @@
 import fs from 'fs';
 import { join } from 'path';
 import PropTypes from 'prop-types';
-import { ONE_WEEK } from 'common/constants/unitsOfTime';
+import { ONE_DAY } from 'common/constants/unitsOfTime';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
+import Link from 'next/link';
 
-const pageTitle = 'Blog';
+const pageTitle = 'Blogs';
 
 export async function getStaticProps() {
   const articlesDirectory = join(process.cwd(), 'blogArticles');
@@ -13,25 +14,31 @@ export async function getStaticProps() {
 
   return {
     props: {
-      articleNames,
+      articles: articleNames.map(articleName => articleName.replace('.mdx', '')),
     },
-    revalidate: ONE_WEEK, // TODO: Verify this optional arg
+    revalidate: ONE_DAY,
   };
 }
 
 BlogIndex.propTypes = {
-  articleNames: PropTypes.array.isRequired,
+  articles: PropTypes.array.isRequired,
 };
 
-function BlogIndex({ articleNames }) {
+function BlogIndex({ articles }) {
   return (
     <>
       <Head title={pageTitle} />
       <HeroBanner title={pageTitle} />
       <ul>
-        {articleNames.map(article => (
-          <h1>{article}</h1>
-        ))}
+        {articles.map(article => {
+          return (
+            <div key={article}>
+              <Link href="/blog/[article]" as={`/blog/${article}`}>
+                <a>{article}</a>
+              </Link>
+            </div>
+          );
+        })}
       </ul>
     </>
   );
