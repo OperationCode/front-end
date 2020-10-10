@@ -11,6 +11,7 @@ import LinkButton from 'components/Buttons/LinkButton/LinkButton';
 import Button from 'components/Buttons/Button/Button';
 import Badge from 'components/Badge/Badge';
 import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
+import { SCHOOL_CARD_LOCATION_LIST_MODAL_BUTTON } from 'common/constants/testIDs';
 import styles from './SchoolCard.module.css';
 
 export const ONLINE_ONLY = 'Online only';
@@ -158,6 +159,7 @@ function SchoolCard({
               label: `${name} | Locations`,
             }}
             onClick={toggleModalClick}
+            data-testid={SCHOOL_CARD_LOCATION_LIST_MODAL_BUTTON}
             className={styles.modalToggler}
           >
             view all

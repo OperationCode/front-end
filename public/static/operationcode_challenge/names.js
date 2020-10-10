@@ -54,4 +54,8 @@ export default [
     'Aditya Goparaju',
     'Jerry Rogers',
     'Kenneth Ofosu',
+    'Nithin KS',
+    'Krishna AL',
+    'Akshaya Subramanian',
+    'Parshwa Shah'
 ]

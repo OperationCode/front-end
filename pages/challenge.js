@@ -5,7 +5,7 @@ import Content from 'components/Content/Content';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 import challengers from 'static/operationcode_challenge/names';
 import range from 'lodash/range';
-import styles from './styles/challenge.module.css';
+import styles from 'styles/challenge.module.css';
 
 const pageTitle = 'Challenge';
 

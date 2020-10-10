@@ -16,7 +16,7 @@ import ScholarshipsIcon from 'static/images/icons/Custom/scholarships.svg';
 import { ONE_WEEK } from 'common/constants/unitsOfTime';
 import { s3 } from 'common/constants/urls';
 import { slackMembersAPIUrl, slackGeneralChannelId } from 'common/config/environment';
-import styles from './styles/who_we_serve.module.css';
+import styles from 'styles/who_we_serve.module.css';
 
 const VISIBILITY_OFFSET = 400;
 

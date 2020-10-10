@@ -14,7 +14,7 @@ describe('reset_password_confirm', () => {
     cy.visit('/password_reset/confirm');
     cy.get('h1').should('have.text', 'Enter new password');
 
-    cy.get('div[role="alert"]').should(
+    cy.findByRole('alert').should(
       'have.text',
       'The provided credentials were either invalid or expired.',
     );
@@ -22,8 +22,8 @@ describe('reset_password_confirm', () => {
 
   it('should show rest password form when provided query params', () => {
     cy.visit(`/password_reset/confirm?uid=${uid}&token=${token}`);
-    cy.get('#newPassword1');
-    cy.get('#newPassword2');
+    cy.findByLabelText('Password*');
+    cy.findByLabelText('Confirm Password*');
   });
 
   it('should be able to reset with valid passwords', () => {
@@ -34,37 +34,33 @@ describe('reset_password_confirm', () => {
 
     cy.visit(`/password_reset/confirm?uid=${uid}&token=${token}`);
 
-    cy.get('#newPassword1').type(existingUser.password);
-    cy.get('#newPassword2').type(existingUser.password);
+    cy.findByLabelText('Password*').type(existingUser.password);
+    cy.findByLabelText('Confirm Password*').type(existingUser.password);
 
-    cy.get('button[type="submit"]').click();
+    cy.findByText('Submit').click();
 
-    cy.wait('@postResetSuccess');
-
-    cy.contains(/You password has been reset with the new password./i);
+    cy.findByText(/You password has been reset with the new password./i);
     cy.get('a[href="/login"]').should('contain', 'Click here to Login');
   });
 
   it('should NOT be able to reset with mis-matched passwords', () => {
     cy.visit(`/password_reset/confirm?uid=${uid}&token=${token}`);
 
-    cy.get('#newPassword1').type(existingUser.password);
-    cy.get('#newPassword2').type(`${existingUser.password}1`);
-    cy.get('button[type="submit"]').click();
+    cy.findByLabelText('Password*').type(existingUser.password);
+    cy.findByLabelText('Confirm Password*').type(`${existingUser.password}1`);
+    cy.findByText('Submit').click();
 
-    cy.get('div[role="alert"]').should('contain', validationErrorMessages.passwordsMatch);
+    cy.findByRole('alert').should('contain', validationErrorMessages.passwordsMatch);
   });
 
   it('should NOT be able to change password with expired or invalid token', () => {
     cy.visit(`/password_reset/confirm?uid=${uid}&token=${token}`);
-    cy.get('#newPassword1').type(existingUser.password);
-    cy.get('#newPassword2').type(existingUser.password);
+    cy.findByLabelText('Password*').type(existingUser.password);
+    cy.findByLabelText('Confirm Password*').type(existingUser.password);
 
-    cy.get('button[type="submit"]').click();
+    cy.findByText('Submit').click();
 
-    cy.wait('@postReset');
-
-    cy.get('div[role="alert"]').should(
+    cy.findByRole('alert').should(
       'have.text',
       'Could not reset password.  Reset token expired or invalid.',
     );

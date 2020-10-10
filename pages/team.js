@@ -6,7 +6,7 @@ import { s3 } from 'common/constants/urls';
 import { TWO_WEEKS } from 'common/constants/unitsOfTime';
 import Content from 'components/Content/Content';
 import FlatCard from 'components/Cards/FlatCard/FlatCard';
-import styles from './styles/team.module.css';
+import styles from 'styles/team.module.css';
 
 export async function getStaticProps() {
   try {

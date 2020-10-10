@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { func, shape, string } from 'prop-types';
 import { Formik, Field } from 'formik';
 import * as Yup from 'yup';
+import noop from 'lodash/noop';
 import { getServerErrorMessage } from 'common/utils/api-utils';
 import { validationErrorMessages } from 'common/constants/messages';
+import { LOGIN_BUTTON } from 'common/constants/testIDs';
 import Button from 'components/Buttons/Button/Button';
 import Form from 'components/Form/Form';
 import Input from 'components/Form/Input/Input';
@@ -30,6 +32,8 @@ LoginForm.propTypes = {
     email: string,
     password: string,
   }),
+  redirectFunction: func,
+  buttonTheme: string,
 };
 
 LoginForm.defaultProps = {
@@ -37,9 +41,11 @@ LoginForm.defaultProps = {
     email: '',
     password: '',
   },
+  redirectFunction: noop,
+  buttonTheme: 'secondary',
 };
 
-function LoginForm({ initialValues, login, onSuccess }) {
+function LoginForm({ initialValues, login, onSuccess, redirectFunction, buttonTheme }) {
   const [errorMessage, setErrorMessage] = useState('');
 
   const handleSubmit = async (values, actions) => {
@@ -49,6 +55,7 @@ function LoginForm({ initialValues, login, onSuccess }) {
       await onSuccess({ token });
       actions.setSubmitting(false);
       actions.resetForm();
+      redirectFunction();
     } catch (error) {
       actions.setSubmitting(false);
 
@@ -84,10 +91,11 @@ function LoginForm({ initialValues, login, onSuccess }) {
             <Button
               className={styles.topMargin}
               type="submit"
-              theme="secondary"
+              theme={buttonTheme}
               disabled={isSubmitting}
+              data-testid={LOGIN_BUTTON}
             >
-              Submit
+              Login
             </Button>
           </div>
         </Form>

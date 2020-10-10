@@ -5,7 +5,7 @@ import '@testing-library/jest-dom/extend-expect';
 jest.mock('./common/utils/thirdParty/gtag');
 
 // React Modal
-ReactModal.setAppElement(document.createElement('div').setAttribute('id', 'app-root'));
+ReactModal.setAppElement('body');
 
 beforeAll(() => {
   const observe = jest.fn();

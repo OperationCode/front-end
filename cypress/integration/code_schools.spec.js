@@ -1,3 +1,9 @@
+import {
+  MODAL_CONTENT,
+  SCHOOL_CARD_LOCATION_LIST_MODAL_BUTTON,
+  SCHOOL_LOCATION_LIST_ITEM,
+} from 'common/constants/testIDs';
+
 describe('code schools', () => {
   const ReactSelectSelector = 'input#react-select-state_select-input';
 
@@ -21,7 +27,7 @@ describe('code schools', () => {
     });
 
     it('only renders relevant schools after clicking on "Schools Accepting GI Bill"', () => {
-      cy.contains('Schools Accepting GI Bill').click();
+      cy.findByText('Schools Accepting GI Bill').click();
 
       cy.findAllByTestId('SchoolCard').each(card => {
         cy.wrap(card).findAllByTestId('GI Bill Ribbon').should('exist');
@@ -29,7 +35,7 @@ describe('code schools', () => {
     });
 
     it('only renders code schools with an online option after clicking "Online Schools"', () => {
-      cy.contains('Online Schools').click();
+      cy.findByText('Online Schools').click();
 
       cy.findAllByTestId('SchoolCard').each(card => {
         cy.wrap(card).findAllByTestId('School has online').should('exist');
@@ -47,7 +53,7 @@ describe('code schools', () => {
 
       cy.findByTestId('SchoolCard').should('have.length', 0);
 
-      cy.contains('All Schools').click();
+      cy.findByText('All Schools').click();
       cy.findAllByTestId('SchoolCard').should('have.length.greaterThan', 30);
     });
 
@@ -60,12 +66,10 @@ describe('code schools', () => {
       cy.findAllByTestId('SchoolCard').should('have.length.greaterThan', 30);
     });
 
-    it('should close when user clicks close button', () => {
-      cy.get('button:contains(view all)').each(button => {
-        cy.wrap(button).click();
-        cy.contains('Close').click();
-        cy.get('.ReactModal_Content').should('not.exist');
-      });
+    it('renders all locations when opening the "view all" modal', () => {
+      cy.findAllByTestId(SCHOOL_CARD_LOCATION_LIST_MODAL_BUTTON).first().click();
+      cy.findByTestId(MODAL_CONTENT).should('exist').and('be.visible');
+      cy.findAllByTestId(SCHOOL_LOCATION_LIST_ITEM).should('have.length.greaterThan', 1);
     });
   });
 });
