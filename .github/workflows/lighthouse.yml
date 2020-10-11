@@ -7,6 +7,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
       
       - name: Read .nvmrc
         run: echo ::set-output name=NVMRC::$(cat .nvmrc)
@@ -37,9 +39,9 @@ jobs:
 
       - name: Audit URLs using Lighthouse
         uses: treosh/lighthouse-ci-action@v3
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
         with:
-          urls: |
-            https://operationcode.org/
           configPath: './lighthouserc.js'
           uploadArtifacts: true
           temporaryPublicStorage: true
