@@ -37,7 +37,7 @@ The team at Operation Code wants to reiterate that joining our Slack team is the
 
 ### 6. Attach your design to the Issue comment section and tag Cyn @datphotogurl for review on GiHub (@CynK on Slack)
 
-### 7. Cyn or a [Project Maintainer](https://github.com/OperationCode/front-end/blob/main/MAINTAINERS.md) will respond and either approve the design or provide feedback.
+### 7. A product manager or maintainer will respond and either approve the design or provide feedback.
 
 ## Other Ways to Contribute to UX/UI
 

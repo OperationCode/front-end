@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import { gtag } from 'common/utils/thirdParty/gtag';
-import styles from './styles/thank_you.module.css';
+import styles from 'styles/thank_you.module.css';
 
 const pageTitle = 'Thank You';
 

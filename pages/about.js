@@ -5,7 +5,7 @@ import Content from 'components/Content/Content';
 import ImageCard from 'components/Cards/ImageCard/ImageCard';
 import ValueCard from 'components/Cards/ValueCard/ValueCard';
 import { s3 } from 'common/constants/urls';
-import styles from './styles/about.module.css';
+import styles from 'styles/about.module.css';
 
 const pageTitle = 'About Us';
 

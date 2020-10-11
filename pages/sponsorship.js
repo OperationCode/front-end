@@ -7,7 +7,7 @@ import FlatCard from 'components/Cards/FlatCard/FlatCard';
 import LinkButton from 'components/Buttons/LinkButton/LinkButton';
 import SponsorsSection from 'components/ReusableSections/SponsorsSection/SponsorsSection';
 import MedalSolid from 'static/images/icons/FontAwesome/medal-solid.svg';
-import styles from './styles/sponsorship.module.css';
+import styles from 'styles/sponsorship.module.css';
 
 const pageTitle = 'Corporate Sponsorship';
 

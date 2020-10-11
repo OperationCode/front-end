@@ -102,7 +102,8 @@ export function MultiStepForm({
       initialValues={initialValues}
       validationSchema={CurrentStep.validationSchema}
       onSubmit={handleSubmit}
-      render={formikBag => (
+    >
+      {formikBag => (
         <Form className={styles.MultiStepForm} onSubmit={formikBag.handleSubmit}>
           <h3 className={styles.centerAligned}>{CurrentStep.title}</h3>
 
@@ -149,7 +150,7 @@ export function MultiStepForm({
           </div>
         </Form>
       )}
-    />
+    </Formik>
   );
 }
 

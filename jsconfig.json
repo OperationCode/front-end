@@ -13,6 +13,7 @@
       "public/*": ["./public/*"],
       "scripts/*": ["./scripts/*"],
       "static/*": ["./public/static/*"],
+      "styles/*": ["./styles/*"],
       "test-utils/*": ["./test-utils/*"]
     }
   },

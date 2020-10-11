@@ -69,13 +69,13 @@ exports[`LoginForm should render with required props 1`] = `
     
     <button
       className="Button topMargin secondary"
-      data-testid="BUTTON"
+      data-testid="LOGIN_BUTTON"
       disabled={false}
       onClick={[Function]}
       tabIndex={0}
       type="submit"
     >
-      Submit
+      Login
     </button>
   </div>
 </form>

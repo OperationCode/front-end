@@ -32,10 +32,6 @@ Before contributing, please review our [Contributing Guide](CONTRIBUTING.md).
 <br />
 Designers, please review our [Contributing Guide for Designers](CONTRIBUTING_TO_DESIGN.md)
 
-## Maintainers
-
-For information about the maintainers of the project, check out [MAINTAINERS.md](MAINTAINERS.md).
-
 ## Quick Start
 
 If you're unsure of how to start this app or code for it, don't worry! You're our target audience!
