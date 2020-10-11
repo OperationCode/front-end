@@ -37,6 +37,17 @@ describe('resources', () => {
     cy.visitAndWaitFor('/resources/1');
     cy.get('h1').should('have.text', 'Resources');
     cy.findAllByTestId(RESOURCE_TITLE).invoke('text').as('previousResourceNames');
+    cy.findAllByTestId(UPVOTE_BUTTON)
+      .first()
+      .children('span')
+      .invoke('text')
+      .as('currentUpVoteCountText');
+    cy.findAllByTestId(DOWNVOTE_BUTTON)
+      .first()
+      .children('span')
+      .invoke('text')
+      .as('currentDownVoteCountText');
+    Cypress.Cookies.preserveOnce('token');
   });
 
   it('redirects on /resources to resources/1', () => {
@@ -262,39 +273,56 @@ describe('resources', () => {
     });
   });
 
-  it('upvote and downvote', () => {
-    // Before login - modal should pop up
-    cy.findAllByTestId(UPVOTE_BUTTON)
-      .first()
-      .click()
-      .then(() => {
-        cy.get('h2').should('have.text', 'Login to Proceed');
-        cy.findByLabelText('Email*').should('exist');
-        cy.findByLabelText('Password*').should('exist');
-      });
+  it('will prompt user to login when voting without being logged in', () => {
+    cy.server();
+    cy.route('POST', 'auth/login/').as('postLogin');
 
-    // Logging in - modal should not exist after log in
+    cy.findAllByTestId(UPVOTE_BUTTON).first().click();
+
+    cy.get('h2').should('have.text', 'Login to Proceed');
+    cy.findByLabelText('Email*').should('exist');
+    cy.findByLabelText('Password*').should('exist');
+
     cy.findByLabelText('Email*').type(existingUser.email);
     cy.findByLabelText('Password*').type(existingUser.password);
-    cy.findByTestId(LOGIN_BUTTON)
-      .click()
-      .then(() => {
-        cy.get('h2').should('not.exist');
-        cy.findByLabelText('Email*').should('not.exist');
-        cy.findByLabelText('Password*').should('not.exist');
-      });
+    cy.findByTestId(LOGIN_BUTTON).click();
 
-    // Test Upvote/Downvote
-    cy.findAllByTestId(UPVOTE_BUTTON)
-      .first()
-      .children('span')
-      .invoke('text')
-      .as('currentUpVoteSpanText');
+    cy.wait('@postLogin').its('status').should('eq', 200);
 
-    cy.findAllByTestId(DOWNVOTE_BUTTON)
-      .first()
-      .children('span')
-      .invoke('text')
-      .as('currentDownVoteSpanText');
+    cy.get('h2').should('not.exist');
+    cy.findByLabelText('Email*').should('not.exist');
+    cy.findByLabelText('Password*').should('not.exist');
+  });
+
+  it('will allow user to upvote once logged in', () => {
+    cy.server();
+    cy.route('PUT', 'api/v1/resources/**/upvote').as('upvote');
+
+    cy.findAllByTestId(UPVOTE_BUTTON).first().click({ force: true });
+    cy.wait('@upvote');
+
+    cy.get('@upvote').then(({ status, response }) => {
+      expect(status).to.eq(200);
+      cy.get('@currentUpVoteCountText').should(
+        'not.eq',
+        `Number of Number of upvotes:${response.body.resource.upvotes}`,
+      );
+    });
+  });
+
+  it('will allow user to downvote once logged in', () => {
+    cy.server();
+    cy.route('PUT', 'api/v1/resources/**/downvote').as('downvote');
+
+    cy.findAllByTestId(DOWNVOTE_BUTTON).first().click({ force: true });
+    cy.wait('@downvote');
+
+    cy.get('@downvote').then(({ status, response }) => {
+      expect(status).to.eq(200);
+      cy.get('@currentDownVoteCountText').should(
+        'not.eq',
+        `Number of Number of downvotes:${response.body.resource.upvotes}`,
+      );
+    });
   });
 });
