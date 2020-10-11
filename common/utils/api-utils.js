@@ -1,23 +1,25 @@
 import axios from 'axios';
 import lodashGet from 'lodash/get';
 import { networkErrorMessages } from 'common/constants/messages';
-import { apiUrl } from 'common/config/environment';
+import { apiUrl, resourcesAPIURL } from 'common/config/environment';
 import { setAuthorizationHeader } from 'common/utils/cookie-utils';
 import qs from 'qs';
 
-const axiosConfig = {
+const baseAxiosConfig = {
   baseURL: apiUrl,
   timeout: 5000,
 };
 
-export const OperationCodeAPI = axios.create(axiosConfig);
+const resourcesAxiosConfig = {
+  baseURL: resourcesAPIURL,
+  timeout: 5000,
+};
+
+export const OperationCodeAPI = axios.create(baseAxiosConfig);
 
 // This API is also part of operation code, and documented here:
 // https://github.com/OperationCode/resources_api
-export const ResourcesAPI = axios.create({
-  baseURL: 'https://resources.operationcode.org',
-  timeout: 5000,
-});
+export const ResourcesAPI = axios.create(resourcesAxiosConfig);
 
 /**
  * @description These pieces allow us to throw errors on connection timeouts
@@ -27,8 +29,8 @@ export const ResourcesAPI = axios.create({
 const getRequestAbortionPieces = () => {
   const abort = axios.CancelToken.source();
   const connectionTimeout = setTimeout(
-    () => abort.cancel(`Connection timeout of ${axiosConfig.timeout}ms.`),
-    axiosConfig.timeout,
+    () => abort.cancel(`Connection timeout of ${baseAxiosConfig.timeout}ms.`),
+    baseAxiosConfig.timeout,
   );
 
   return { abort, connectionTimeout };
