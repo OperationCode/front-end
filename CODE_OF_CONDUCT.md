@@ -5,7 +5,7 @@ _Translations:_
 - [German](./internationalized-documentation/Germany/CODE_OF_CONDUCT_DE.md)
 - [Turkish](./internationalized-documentation/Turkey/CODE_OF_CONDUCT_TR.md)
 - [Spanish](./internationalized-documentation/Spanish/CODE_OF_CONDUCT_ES.md)
-- [India](./internationalized-documentation/Spanish/CODE_OF_CONDUCT_HI.md)
+- [Hindi](./internationalized-documentation/Spanish/CODE_OF_CONDUCT_HI.md)
 
 ## Our Pledge
 
