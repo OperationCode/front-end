@@ -12,6 +12,7 @@ import {
   UPVOTE_BUTTON,
   DOWNVOTE_BUTTON,
   LOGIN_BUTTON,
+  LOGIN_FORM,
 } from 'common/constants/testIDs';
 import existingUser from 'test-utils/mocks/existingUser';
 
@@ -278,10 +279,7 @@ describe('resources', () => {
     cy.route('POST', 'auth/login/').as('postLogin');
 
     cy.findAllByTestId(UPVOTE_BUTTON).first().click();
-
-    cy.get('h2').should('have.text', 'Login to Proceed');
-    cy.findByLabelText('Email*').should('exist');
-    cy.findByLabelText('Password*').should('exist');
+    cy.findByTestId(LOGIN_FORM).should('exist');
 
     cy.findByLabelText('Email*').type(existingUser.email);
     cy.findByLabelText('Password*').type(existingUser.password);
@@ -289,9 +287,7 @@ describe('resources', () => {
 
     cy.wait('@postLogin').its('status').should('eq', 200);
 
-    cy.get('h2').should('not.exist');
-    cy.findByLabelText('Email*').should('not.exist');
-    cy.findByLabelText('Password*').should('not.exist');
+    cy.findByTestId(LOGIN_FORM).should('not.exist');
   });
 
   it('will allow user to upvote once logged in', () => {

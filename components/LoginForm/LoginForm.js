@@ -5,7 +5,7 @@ import * as Yup from 'yup';
 import noop from 'lodash/noop';
 import { getServerErrorMessage } from 'common/utils/api-utils';
 import { validationErrorMessages } from 'common/constants/messages';
-import { LOGIN_BUTTON } from 'common/constants/testIDs';
+import { LOGIN_BUTTON, LOGIN_FORM } from 'common/constants/testIDs';
 import Button from 'components/Buttons/Button/Button';
 import Form from 'components/Form/Form';
 import Input from 'components/Form/Input/Input';
@@ -66,7 +66,7 @@ function LoginForm({ initialValues, login, onSuccess, redirectFunction, buttonTh
   return (
     <Formik initialValues={initialValues} onSubmit={handleSubmit} validationSchema={loginSchema}>
       {({ isSubmitting }) => (
-        <Form className={styles.LoginForm}>
+        <Form className={styles.LoginForm} data-testid={LOGIN_FORM}>
           <div className={styles.row}>
             <Field
               type="email"
