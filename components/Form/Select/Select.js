@@ -93,7 +93,7 @@ export default function Select({
    * @returns {string[]}
    */
   const getValueFromMulti = () => {
-    return options.filter(option => fieldValue.includes(option.value));
+    return options.filter(option => (fieldValue || []).includes(option.value));
   };
 
   const handleBlur = () => {

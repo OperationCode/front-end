@@ -35,19 +35,10 @@ describe('resources', () => {
   const assertThatListHasSameItems = () => compareResourceNames({ shouldBeEqual: true });
 
   beforeEach(() => {
+    cy.wait(2000); // eslint-disable-line cypress/no-unnecessary-waiting
     cy.visitAndWaitFor('/resources/1');
     cy.get('h1').should('have.text', 'Resources');
     cy.findAllByTestId(RESOURCE_TITLE).invoke('text').as('previousResourceNames');
-    cy.findAllByTestId(UPVOTE_BUTTON)
-      .first()
-      .children('span')
-      .invoke('text')
-      .as('currentUpVoteCountText');
-    cy.findAllByTestId(DOWNVOTE_BUTTON)
-      .first()
-      .children('span')
-      .invoke('text')
-      .as('currentDownVoteCountText');
     Cypress.Cookies.preserveOnce('token');
   });
 
@@ -278,7 +269,7 @@ describe('resources', () => {
     cy.server();
     cy.route('POST', 'auth/login/').as('postLogin');
 
-    cy.findAllByTestId(UPVOTE_BUTTON).first().click();
+    cy.findAllByTestId(UPVOTE_BUTTON).first().click({ force: true });
     cy.findByTestId(LOGIN_FORM).should('exist');
 
     cy.findByLabelText('Email*').type(existingUser.email);
@@ -291,6 +282,12 @@ describe('resources', () => {
   });
 
   it('will allow user to upvote once logged in', () => {
+    cy.findAllByTestId(UPVOTE_BUTTON)
+      .first()
+      .children('span')
+      .invoke('text')
+      .as('currentUpVoteCountText');
+
     cy.server();
     cy.route('PUT', 'api/v1/resources/**/upvote').as('upvote');
 
@@ -307,6 +304,12 @@ describe('resources', () => {
   });
 
   it('will allow user to downvote once logged in', () => {
+    cy.findAllByTestId(DOWNVOTE_BUTTON)
+      .first()
+      .children('span')
+      .invoke('text')
+      .as('currentDownVoteCountText');
+
     cy.server();
     cy.route('PUT', 'api/v1/resources/**/downvote').as('downvote');
 
