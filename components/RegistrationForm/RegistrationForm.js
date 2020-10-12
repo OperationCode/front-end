@@ -40,23 +40,8 @@ const registrationSchema = Yup.object().shape({
   firstName: Yup.string().trim().required(validationErrorMessages.required),
   lastName: Yup.string().trim().required(validationErrorMessages.required),
   zipcode: Yup.string().trim().required(validationErrorMessages.required),
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
   codeOfConduct: Yup.boolean().oneOf([true], (validationErrorMessages.required)),
   communityGuidelines: Yup.boolean().oneOf([true], (validationErrorMessages.required)),
-=======
-  codeOfConduct: Yup.boolean().oneOf([true]).required(validationErrorMessages.required),
-  communityGuidelines: Yup.boolean().oneOf([true]).required(validationErrorMessages.required),
->>>>>>> e79b0ce6... added label controls
-=======
-  codeOfConduct: Yup.boolean().oneOf([true], 'Field must be checked'),
-  communityGuidelines: Yup.boolean().oneOf([true], 'Field must be checked'),
->>>>>>> cc17e5e9... gets validation working, messes with styles
-=======
-  codeOfConduct: Yup.boolean().oneOf([true], (validationErrorMessages.required)),
-  communityGuidelines: Yup.boolean().oneOf([true], (validationErrorMessages.required)),
->>>>>>> 98f86fed... stylint
 });
 
 RegistrationForm.propTypes = {
@@ -197,8 +182,7 @@ function RegistrationForm({ initialValues, onSuccess }) {
               disabled={isSubmitting}
               autoComplete="postal-code"
             />
-
-         </div>
+       </div>
 
           {errorMessage && <Alert type="error">{errorMessage}</Alert>}
 
