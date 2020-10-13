@@ -6,19 +6,24 @@ import { s3 } from 'common/constants/urls';
 import { TWO_WEEKS } from 'common/constants/unitsOfTime';
 import Content from 'components/Content/Content';
 import FlatCard from 'components/Cards/FlatCard/FlatCard';
+import sortBy from 'lodash/sortBy';
 import styles from 'styles/team.module.css';
 
 export async function getStaticProps() {
   try {
     const { data } = await getTeamMembersPromise();
 
+    // Only members of the "team" group are not to be included under "board member"
     const boardMembers = data.filter(({ group }) => group === 'board' || group === 'staff');
 
-    const firstListedMemberName = 'David Molina';
-
+    // Get first board member
+    const firstListedMemberName = 'Conrad Hollomon';
     const firstBoardMember = boardMembers.find(({ name }) => name === firstListedMemberName);
-    const boardMembersExcludingFirst = boardMembers.filter(
-      ({ name }) => name !== firstListedMemberName,
+
+    // Sorted list of the board members excluding whomever should be listed first
+    const boardMembersExcludingFirst = sortBy(
+      boardMembers.filter(({ name }) => name !== firstListedMemberName),
+      'name',
     );
 
     const sortedBoardMembers = [firstBoardMember, ...boardMembersExcludingFirst];
