@@ -1,5 +1,5 @@
 import React from 'react';
-import { shape, string, number, object, objectOf, oneOfType, bool, oneOf} from 'prop-types';
+import { shape, string, number, object, objectOf, oneOfType, bool } from 'prop-types';
 import classNames from 'classnames';
 import { ErrorMessage } from 'formik';
 import { CHECKBOX, CHECKBOX_ERROR, CHECKBOX_GROUPING } from 'common/constants/testIDs';
@@ -34,7 +34,6 @@ function Checkbox({
   id,
   isLabelHidden,
   label,
-  type,
   ...props // input simply has too many possible attributes... we'd be redocumenting the web
   // See: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Attributes_common_to_all_input_types
 }) {
@@ -42,20 +41,27 @@ function Checkbox({
 
   return (
     <div data-testid={CHECKBOX}>
-
       <div className={styles.checkboxGrouping} data-testid={CHECKBOX_GROUPING}>
-        <input
-          {...field}
-          {...props}
-          className={classNames(styles.Checkbox, hasValidationStyling, {
-            [styles.goodCheck]: touched[name] && !hasErrors && hasValidationStyling,
-            [styles.badCheck]: touched[name] && hasErrors && hasValidationStyling,
-          })}
-          id={id || name}
-          name={name}
-          type='checkbox'
-          value={value || ''}
-        />
+        <div>
+          <input
+            {...field}
+            {...props}
+            className={classNames(styles.checkboxGrouping, hasValidationStyling, {
+              [styles.goodCheck]: touched[name] && !hasErrors && hasValidationStyling,
+              [styles.badCheck]: touched[name] && hasErrors && hasValidationStyling,
+            })}
+            id={id || name}
+            name={name}
+            type="checkbox"
+            value={value || ''}
+          />
+        </div>
+
+        <div className={styles.floatRight}>
+          <Label for={name} isHidden={isLabelHidden} className={styles.labelAfterCheckbox}>
+            {label}
+          </Label>
+        </div>
 
         <ErrorMessage name={name}>
           {message => {
@@ -67,9 +73,6 @@ function Checkbox({
           }}
         </ErrorMessage>
       </div>
-        <Label for={name} isHidden={isLabelHidden} className={styles.labelAfterCheckbox}>
-          {label}
-        </Label> 
     </div>
   );
 }

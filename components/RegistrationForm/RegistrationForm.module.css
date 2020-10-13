@@ -13,29 +13,7 @@
   margin: 1.25rem auto;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 .RegistrationForm label {
   display: block;
   margin: 1rem;
 }
-=======
-.Field > .checkWidth {
-  min-width: 0px !important;
-=======
-.Input[type="checkbox"] {
-  border: 3px blue dotted;
->>>>>>> 25c9c84e... add unset
-  width: 40px;
-  height: 40px;
-  display: flex;
-}
-<<<<<<< HEAD
->>>>>>> 98f86fed... stylint
-=======
-
-.floatLeft {
-  float:right;
-  border: 3px green dashed;
-}
->>>>>>> 25c9c84e... add unset

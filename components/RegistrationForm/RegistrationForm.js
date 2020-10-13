@@ -11,6 +11,7 @@ import { hasRequiredCharacters } from 'common/utils/validator-utils';
 import Button from 'components/Buttons/Button/Button';
 import Form from 'components/Form/Form';
 import Input from 'components/Form/Input/Input';
+import Checkbox from 'components/Form/Checkbox/Checkbox';
 import Alert from 'components/Alert/Alert';
 import styles from './RegistrationForm.module.css';
 
@@ -39,6 +40,8 @@ const registrationSchema = Yup.object().shape({
   firstName: Yup.string().trim().required(validationErrorMessages.required),
   lastName: Yup.string().trim().required(validationErrorMessages.required),
   zipcode: Yup.string().trim().required(validationErrorMessages.required),
+  codeOfConduct: Yup.boolean().oneOf([true], validationErrorMessages.required),
+  communityGuidelines: Yup.boolean().oneOf([true], validationErrorMessages.required),
 });
 
 RegistrationForm.propTypes = {
@@ -178,6 +181,20 @@ function RegistrationForm({ initialValues, onSuccess }) {
               component={Input}
               disabled={isSubmitting}
               autoComplete="postal-code"
+            />
+
+            <Field
+              name="codeOfConduct"
+              label="I have read the Code of Conduct"
+              component={Checkbox}
+              disabled={isSubmitting}
+            />
+
+            <Field
+              name="communityGuidelines"
+              label="I have read the Community Guideliens"
+              component={Checkbox}
+              disabled={isSubmitting}
             />
           </div>
 
