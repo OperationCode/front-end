@@ -6,8 +6,8 @@ import { s3 } from 'common/constants/urls';
 import { TWO_WEEKS } from 'common/constants/unitsOfTime';
 import Content from 'components/Content/Content';
 import FlatCard from 'components/Cards/FlatCard/FlatCard';
+import sortBy from 'lodash/sortBy';
 import styles from 'styles/team.module.css';
-import { sortBy } from 'lodash';
 
 export async function getStaticProps() {
   try {
