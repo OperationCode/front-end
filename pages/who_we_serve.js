@@ -23,15 +23,15 @@ const VISIBILITY_OFFSET = 400;
 const mentorItems = [
   {
     icon: <MentorshipIcon />,
-    label: 'One-on-one mentorship',
+    label: 'One-on-One Mentorship & Networking',
   },
   {
     icon: <ScholarshipsIcon />,
-    label: 'Coding scholarships',
+    label: 'Coding Scholarships and Licenses',
   },
   {
     icon: <CareerServicesIcon />,
-    label: 'Career services',
+    label: 'Career Services and Professional Development',
   },
 ];
 
