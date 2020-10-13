@@ -106,8 +106,8 @@ function WhoWeServe({ numberOfMembers }) {
               isImageFirst
             >
               <p className={styles.centeredText}>
-                Currently 1,000,000+ <br /> software development jobs available in the United
-                States.
+                There are 12.1 million net jobs for tech employment in the U.S. alone, with an
+                addition of 307,000 jobs in a year.
               </p>
             </ImageCard>
           </TrackVisibility>,
