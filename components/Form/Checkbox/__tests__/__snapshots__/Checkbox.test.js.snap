@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Checkbox should render with required props 1`] = `
+<div
+  data-testid="CHECKBOX"
+>
+  <div
+    className="checkboxGrouping"
+    data-testid="CHECKBOX_GROUPING"
+  >
+    <div>
+      <input
+        className="checkboxGrouping"
+        id="someInputName"
+        name="someInputName"
+        onBlur={[MockFunction]}
+        onChange={[MockFunction]}
+        type="checkbox"
+        value=""
+      />
+    </div>
+    <div
+      className="floatRight"
+    >
+      <label
+        className="Label labelAfterCheckbox"
+        data-testid="LABEL"
+        htmlFor="someInputName"
+      >
+        Some Input:
+      </label>
+    </div>
+  </div>
+</div>
+`;

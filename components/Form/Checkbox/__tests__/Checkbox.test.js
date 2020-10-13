@@ -11,12 +11,12 @@ import Checkbox from '../Checkbox';
 describe('Checkbox', () => {
   const requiredProps = {
     field: {
-      name: 'someInputName',
+      name: 'someBoxName',
     },
-    form: { touched: { someInputName: false }, errors: { someInputName: '' } },
+    form: { touched: { someBoxName: false }, errors: { someBoxName: '' } },
     onBlur: jest.fn(),
     onChange: jest.fn(),
-    label: 'Some Input:',
+    label: 'Some Name:',
   };
 
   it('should render with required props', () => {
