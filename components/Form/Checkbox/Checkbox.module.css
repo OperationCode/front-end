@@ -1,1 +1,21 @@
-.Checkbox {}
+.Checkbox {
+    border: 2px green solid;
+}
+
+.checkboxGrouping {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .goodCheck {
+    border-color: var(--successDeep);
+    box-shadow: 0 0 1px 1px var(--successDeep);
+    outline: none;
+  }
+  
+  .badCheck {
+    border-color: var(--errorDeep);
+    box-shadow: 0 0 1px 1px var(--errorDeep);
+    outline: none;
+  }

@@ -1,8 +1,8 @@
 import React from 'react';
-import { shape, string, number, object, objectOf, oneOfType, bool, oneOf } from 'prop-types';
+import { shape, string, number, object, objectOf, oneOfType, bool, oneOf} from 'prop-types';
 import classNames from 'classnames';
 import { ErrorMessage } from 'formik';
-import { CHECKBOX, INPUT_ERROR, INPUT_FEEDBACK_GROUPING } from 'common/constants/testIDs';
+import { CHECKBOX, CHECKBOX_ERROR, CHECKBOX_GROUPING } from 'common/constants/testIDs';
 import Alert from 'components/Alert/Alert';
 import Label from 'components/Form/Label/Label';
 import styles from './Checkbox.module.css';
@@ -12,9 +12,6 @@ Checkbox.propTypes = {
     name: string.isRequired,
   }).isRequired,
   form: shape({
-    // TODO: Resolve why multiselects can end up with touched: { key: array }
-    // see ThemedReactSelect as well
-    // touched: objectOf(bool).isRequired,
     touched: object.isRequired,
     errors: objectOf(string),
   }).isRequired,
@@ -22,14 +19,12 @@ Checkbox.propTypes = {
   id: oneOfType([string, number]),
   label: string.isRequired,
   hasValidationStyling: bool,
-  type: 'checkbox',
 };
 
 Checkbox.defaultProps = {
   hasValidationStyling: true,
   isLabelHidden: false,
   id: '',
-  type: 'text',
 };
 
 function Checkbox({
@@ -44,46 +39,37 @@ function Checkbox({
   // See: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Attributes_common_to_all_input_types
 }) {
   const hasErrors = Boolean(errors[name]);
-  const isLabelAfterInput = type === 'radio' || type === 'checkbox';
-  const isLabelBeforeInput = !isLabelAfterInput;
 
   return (
     <div data-testid={CHECKBOX}>
-     {isLabelBeforeInput && (
-        <Label for={name} isHidden={isLabelHidden}>
-          {label}
-        </Label>
-      )}
-      <div className={styles.inputFeedbackGrouping} data-testid={INPUT_FEEDBACK_GROUPING}>
+
+      <div className={styles.checkboxGrouping} data-testid={CHECKBOX_GROUPING}>
         <input
           {...field}
           {...props}
-          className={classNames(styles.Input, hasValidationStyling, {
-            [styles.valid]: touched[name] && !hasErrors && hasValidationStyling,
-            [styles.invalid]: touched[name] && hasErrors && hasValidationStyling,
+          className={classNames(styles.Checkbox, hasValidationStyling, {
+            [styles.goodCheck]: touched[name] && !hasErrors && hasValidationStyling,
+            [styles.badCheck]: touched[name] && hasErrors && hasValidationStyling,
           })}
           id={id || name}
           name={name}
-          type={type}
+          type='checkbox'
           value={value || ''}
         />
 
         <ErrorMessage name={name}>
           {message => {
             return hasErrors ? (
-              <Alert className={styles.errorMessage} data-testid={INPUT_ERROR} type="error">
+              <Alert className={styles.errorMessage} data-testid={CHECKBOX_ERROR} type="error">
                 {message}
               </Alert>
             ) : null;
           }}
         </ErrorMessage>
       </div>
-
-      {isLabelAfterInput && (
-        <Label for={name} isHidden={isLabelHidden} className={styles.labelAfterInput}>
+        <Label for={name} isHidden={isLabelHidden} className={styles.labelAfterCheckbox}>
           {label}
-        </Label>
-      )}
+        </Label> 
     </div>
   );
 }
