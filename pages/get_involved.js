@@ -61,10 +61,11 @@ function GetInvolved() {
       >
         <>
           <p className={styles.justifyAlign}>
-            Whether you&apos;re interested in mentoring, corporate sponsorship, volunteering your
-            time, or simply donating to help military veterans, service members, and spouses launch
-            a career in software development, Operation Code is always looking for supporters like
-            you.
+            Help make an impact to transitioning service members, military veterans, military
+            spouses and dependents! You can help in several ways: Donate to help provide
+            scholarships and keep our daily operations afloat (add hyperlink in the word Donate),
+            Volunteer (hyperlink to Who We Serve Page), or become a Corporate Partner (hyperlink to
+            Sponsorship/Partnership page).
           </p>
 
           <LinkButton href="/who_we_serve" className={styles.topMargin}>
