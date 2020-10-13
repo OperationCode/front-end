@@ -115,11 +115,11 @@ function GetInvolved() {
             )}
           </TrackVisibility>,
           <div>
-            <Heading text="Empower Our Community" headingLevel={3} />
+            <Heading text="Empower Our Community and Support Our Mission" headingLevel={3} />
 
             <p className={styles.justifyAlign}>
-              Make a difference in the lives of military veterans, service members, and spouses who
-              are eager to transition into a software development career.
+              Make a difference in the lives of our military community and help them reach their
+              pursuits of a tech career.
             </p>
 
             <div className={classNames(styles.centeredText, styles.extraTopMargin)}>
@@ -150,33 +150,6 @@ function GetInvolved() {
               />
             ))}
           </div>,
-        ]}
-      />
-
-      <Content
-        columns={[
-          <div>
-            <Heading text="Support Our Mission" headingLevel={3} />
-
-            <p className={styles.justifyAlign}>
-              Make a difference in the lives of military veterans, service members, and spouses who
-              are eager to transition into a software development career.
-            </p>
-
-            <div className={classNames(styles.centeredText, styles.extraTopMargin)}>
-              <LinkButton href="/get_involved">Get Involved</LinkButton>
-            </div>
-          </div>,
-          <TrackVisibility offset={VISIBILITY_OFFSET}>
-            {({ isVisible }) => (
-              <div className={classNames(styles.image, { [styles.showImage]: isVisible })}>
-                <img
-                  src={`${s3}redesign/images/utah_meetup.jpg`}
-                  alt="Operation Code members collaborate on a problem"
-                />
-              </div>
-            )}
-          </TrackVisibility>,
         ]}
       />
 
