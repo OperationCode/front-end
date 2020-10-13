@@ -41,7 +41,7 @@ exports[`JoinSection should render when not logged in 1`] = `
     <p
       className="justifyAlign"
     >
-      Are you ready to begin your journey towards a career in software development? Get the support you need by joining our members-only Slack community!
+      Are you ready to begin your journey towards a career in tech? Get the support you need by joining our members-only Slack community!
     </p>
     <a
       className="Button verticalSpacing secondary"
