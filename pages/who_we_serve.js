@@ -81,10 +81,11 @@ function WhoWeServe({ numberOfMembers }) {
         columns={[
           <div>
             <p className={styles.justifyAlign}>
-              We work closely with military veterans, service members, and spouses who are
-              passionate about transitioning into the tech industry. We work with{' '}
-              {!numberOfMembers ? 'over 7,000' : `${numberOfMembers}`} members who are all working
-              towards relevant goals on Slack and in-person meet-ups. Membership is free!
+              We work closely with military veterans, service members, and military spouses and
+              dependents who are passionate about transitioning into the tech industry. On Slack and
+              in-person meet-ups, we work with{' '}
+              {!numberOfMembers ? 'over 7,000+' : `${numberOfMembers}`} members who are all working
+              towards relevant career and personal goals. Membership is free!
             </p>
 
             <div className={classNames(styles.centeredText, styles.topMargin)}>
