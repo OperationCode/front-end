@@ -12,7 +12,6 @@ import Button from 'components/Buttons/Button/Button';
 import Form from 'components/Form/Form';
 import Input from 'components/Form/Input/Input';
 import Alert from 'components/Alert/Alert';
-import OutboundLink from 'components/OutboundLink/OutboundLink';
 import styles from './RegistrationForm.module.css';
 
 /**
@@ -40,8 +39,6 @@ const registrationSchema = Yup.object().shape({
   firstName: Yup.string().trim().required(validationErrorMessages.required),
   lastName: Yup.string().trim().required(validationErrorMessages.required),
   zipcode: Yup.string().trim().required(validationErrorMessages.required),
-  codeOfConduct: Yup.boolean().oneOf([true], (validationErrorMessages.required)),
-  communityGuidelines: Yup.boolean().oneOf([true], (validationErrorMessages.required)),
 });
 
 RegistrationForm.propTypes = {
@@ -182,7 +179,7 @@ function RegistrationForm({ initialValues, onSuccess }) {
               disabled={isSubmitting}
               autoComplete="postal-code"
             />
-       </div>
+          </div>
 
           {errorMessage && <Alert type="error">{errorMessage}</Alert>}
 

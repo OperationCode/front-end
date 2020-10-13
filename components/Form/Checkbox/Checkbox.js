@@ -1,17 +1,36 @@
 import React from 'react';
-import { string, node } from 'prop-types';
+import { shape, string, number, object, objectOf, oneOfType, bool, oneOf } from 'prop-types';
 import classNames from 'classnames';
+import { ErrorMessage } from 'formik';
+import { CHECKBOX, INPUT_ERROR, INPUT_FEEDBACK_GROUPING } from 'common/constants/testIDs';
+import Alert from 'components/Alert/Alert';
+import Label from 'components/Form/Label/Label';
 import styles from './Checkbox.module.css';
 
 Checkbox.propTypes = {
-  children: node.isRequired,
-  className: string,
+  field: shape({
+    name: string.isRequired,
+  }).isRequired,
+  form: shape({
+    // TODO: Resolve why multiselects can end up with touched: { key: array }
+    // see ThemedReactSelect as well
+    // touched: objectOf(bool).isRequired,
+    touched: object.isRequired,
+    errors: objectOf(string),
+  }).isRequired,
+  isLabelHidden: bool,
+  id: oneOfType([string, number]),
+  label: string.isRequired,
+  hasValidationStyling: bool,
+  type: 'checkbox',
 };
 
 Checkbox.defaultProps = {
-  className: undefined,
+  hasValidationStyling: true,
+  isLabelHidden: false,
+  id: '',
+  type: 'text',
 };
-
 
 function Checkbox({
   field: { name, value, ...field },
@@ -29,42 +48,44 @@ function Checkbox({
   const isLabelBeforeInput = !isLabelAfterInput;
 
   return (
-    <div>
-      <Field
-        type="checkbox"
-        name="codeOfConduct"
-        label=" "
-        component={Input}
-        disabled={isSubmitting}
-      />
-      <p className={styles.floatLeft}>
-      I agree to abide by the &nbsp;
-        <OutboundLink
-          href="https://github.com/OperationCode/operationcode_docs/blob/master/community/code_of_conduct.md"
-          analyticsEventLabel="Code of Conduct"
-        >
-          Code of Conduct
-        </OutboundLink>
-      </p>
+    <div data-testid={CHECKBOX}>
+     {isLabelBeforeInput && (
+        <Label for={name} isHidden={isLabelHidden}>
+          {label}
+        </Label>
+      )}
+      <div className={styles.inputFeedbackGrouping} data-testid={INPUT_FEEDBACK_GROUPING}>
+        <input
+          {...field}
+          {...props}
+          className={classNames(styles.Input, hasValidationStyling, {
+            [styles.valid]: touched[name] && !hasErrors && hasValidationStyling,
+            [styles.invalid]: touched[name] && hasErrors && hasValidationStyling,
+          })}
+          id={id || name}
+          name={name}
+          type={type}
+          value={value || ''}
+        />
 
-      <Field
-        type="checkbox"
-        name="communityGuidelines"
-        label=" "
-        component={Input}
-        disabled={isSubmitting}
-      />
-      <p className={styles.floatLeft}>
-      I have read the &nbsp;
-        <OutboundLink
-          href="https://github.com/OperationCode/START_HERE/blob/master/community_guidelines.md"
-          analyticsEventLabel="Community Guidelines"
-        >
-          Community Guidelines
-        </OutboundLink>
-      </p>
-  </div>
-  )
+        <ErrorMessage name={name}>
+          {message => {
+            return hasErrors ? (
+              <Alert className={styles.errorMessage} data-testid={INPUT_ERROR} type="error">
+                {message}
+              </Alert>
+            ) : null;
+          }}
+        </ErrorMessage>
+      </div>
+
+      {isLabelAfterInput && (
+        <Label for={name} isHidden={isLabelHidden} className={styles.labelAfterInput}>
+          {label}
+        </Label>
+      )}
+    </div>
+  );
 }
 
 export default Checkbox;
