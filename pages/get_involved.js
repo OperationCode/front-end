@@ -4,6 +4,7 @@ import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Badge from 'components/Badge/Badge';
 import Content from 'components/Content/Content';
+import Link from 'next/link';
 import LinkButton from 'components/Buttons/LinkButton/LinkButton';
 import Heading from 'components/Heading/Heading';
 import DonateSection from 'components/ReusableSections/DonateSection/DonateSection';
@@ -62,10 +63,19 @@ function GetInvolved() {
         <>
           <p className={styles.justifyAlign}>
             Help make an impact to transitioning service members, military veterans, military
-            spouses and dependents! You can help in several ways: Donate to help provide
-            scholarships and keep our daily operations afloat (add hyperlink in the word Donate),
-            Volunteer (hyperlink to Who We Serve Page), or become a Corporate Partner (hyperlink to
-            Sponsorship/Partnership page).
+            spouses and dependents! You can help in several ways:{' '}
+            <Link href="/donate">
+              <a>Donate</a>
+            </Link>{' '}
+            to help provide scholarships and keep our daily operations afloat,{' '}
+            <Link href="/who_we_serve">
+              <a>Volunteer</a>
+            </Link>
+            , or become a{' '}
+            <Link href="/sponsorship">
+              <a>Corporate Partner</a>
+            </Link>
+            .
           </p>
 
           <LinkButton href="/who_we_serve" className={styles.topMargin}>
