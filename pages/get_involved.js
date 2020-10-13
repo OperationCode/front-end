@@ -104,11 +104,11 @@ function GetInvolved() {
             )}
           </TrackVisibility>,
           <div>
-            <Heading text="Empower Our Community" headingLevel={3} />
+            <Heading text="Empower Our Community and Support Our Mission" headingLevel={3} />
 
             <p className={styles.justifyAlign}>
-              Make a difference in the lives of military veterans, service members, and spouses who
-              are eager to transition into a software development career.
+              Make a difference in the lives of our military community and help them reach their
+              pursuits of a tech career.
             </p>
 
             <div className={classNames(styles.centeredText, styles.extraTopMargin)}>
