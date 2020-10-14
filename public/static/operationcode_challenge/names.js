@@ -62,5 +62,6 @@ export default [
     'Ryan Diffenbaugh',
     'Ron Yonker',
     'Quan Nguyen',
-    'Brian McPhillips
+    'Brian McPhillips',
+    'Richard Burd'
 ]
