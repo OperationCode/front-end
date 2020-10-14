@@ -57,5 +57,6 @@ export default [
     'Nithin KS',
     'Krishna AL',
     'Akshaya Subramanian',
-    'Parshwa Shah'
+    'Parshwa Shah',
+    'Elise Harris'
 ]
