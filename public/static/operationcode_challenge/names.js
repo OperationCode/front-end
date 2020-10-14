@@ -68,5 +68,6 @@ export default [
     'Jack Toumey',
     'Jerud-Moyer',
     'Darren Bridenbeck',
-    'Josh Olloqui'
+    'Josh Olloqui',
+    'Sean Jackson'
 ]
