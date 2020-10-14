@@ -62,5 +62,5 @@ export default [
     'Ryan Diffenbaugh',
     'Ron Yonker',
     'Quan Nguyen',
-    'Dusty McCord
+    'Dusty McCord'
 ]
