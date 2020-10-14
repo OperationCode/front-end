@@ -65,5 +65,6 @@ export default [
     'Brian McPhillips',
     'Richard Burd',
     'Jaime Sanders',
-    'Jack Toumey'
+    'Jack Toumey',
+    'Jerud-Moyer'
 ]
