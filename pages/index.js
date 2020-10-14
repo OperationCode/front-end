@@ -96,9 +96,9 @@ function Home() {
           <div className={styles.cta}>
             <Heading text="Our Mission" hasTitleUnderline />
             <p className={styles.justifyAlign}>
-            We serve our veterans, service members, and their families,
-            work alongside their journey through the tech industry,
-            and help them thrive in their careers to code a better future.
+              We serve our veterans, service members, and their families, work alongside their
+              journey through the tech industry, and help them thrive in their careers to code a
+              better future.
             </p>
           </div>,
         ]}
