@@ -70,7 +70,7 @@ describe('LoginForm', () => {
       <LoginForm onSuccess={successSpy} login={loginUser} initialValues={initialValues} />,
     );
 
-    fireEvent.click(getByText('Submit'));
+    fireEvent.click(getByText('Login'));
 
     await waitFor(() => {
       expect(successSpy).toHaveBeenCalledTimes(1);
@@ -92,7 +92,7 @@ describe('LoginForm', () => {
       />,
     );
 
-    fireEvent.click(getByText('Submit'));
+    fireEvent.click(getByText('Login'));
 
     await waitFor(() => {
       expect(successSpy).not.toHaveBeenCalled();
@@ -116,7 +116,7 @@ describe('LoginForm', () => {
       <LoginForm login={loginUser} onSuccess={successSpy} initialValues={initialValues} />,
     );
 
-    fireEvent.click(getByText('Submit'));
+    fireEvent.click(getByText('Login'));
 
     waitFor(() => {
       expect(findByText(invalidError)).not.toBeNull();
@@ -139,7 +139,7 @@ describe('LoginForm', () => {
       <LoginForm onSuccess={successSpy} login={loginUser} initialValues={initialValues} />,
     );
 
-    fireEvent.click(getByText('Submit'));
+    fireEvent.click(getByText('Login'));
 
     await waitFor(() => {
       expect(findByText(networkErrorMessages.serverDown)).not.toBeNull();
@@ -170,7 +170,7 @@ describe('LoginForm', () => {
       <LoginForm onSuccess={successSpy} login={loginUser} initialValues={initialValues} />,
     );
 
-    const submit = getByText('Submit');
+    const submit = getByText('Login');
 
     fireEvent.click(submit);
 

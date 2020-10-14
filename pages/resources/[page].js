@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import get from 'lodash/get';
 import isFinite from 'lodash/isFinite';
@@ -12,8 +13,12 @@ import {
   getResourcesByCategories,
   getResourcesByLanguages,
   getResourcesBySearch,
+  loginUser,
 } from 'common/constants/api';
+import { hasValidAuthToken, setAuthCookies } from 'common/utils/cookie-utils';
 import { Field, Formik } from 'formik';
+import Modal from 'components/Modal/Modal';
+import LoginForm from 'components/LoginForm/LoginForm';
 import Alert from 'components/Alert/Alert';
 import Button from 'components/Buttons/Button/Button';
 import Form from 'components/Form/Form';
@@ -28,6 +33,7 @@ import {
   RESOURCE_SEARCH_BUTTON,
   RESOURCE_RESET_BUTTON,
 } from 'common/constants/testIDs';
+import CardStyles from 'components/Cards/Card/Card.module.css';
 import styles from 'styles/resources.module.css';
 
 const pageTitle = 'Resources';
@@ -49,6 +55,7 @@ function Resources() {
   const [totalPages, setTotalPages] = useState(currentPage);
   const [allCategories, setAllCategories] = useState([]);
   const [allLanguages, setAllLanguages] = useState([]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const costOptions = [
     { value: 'true', label: 'Paid' },
@@ -60,6 +67,26 @@ function Resources() {
     q: q || '',
     languages: Array.isArray(languages) ? languages : [languages].filter(Boolean),
     paid: paid || '',
+  };
+
+  const handleLogin = value => loginUser(value);
+
+  const handleLoginSuccess = ({ token }) => {
+    setAuthCookies({ token });
+  };
+
+  const handleVote = (/* voteDirection, updateVoteCountFunc */) => {
+    setErrorMessage(null);
+    if (!hasValidAuthToken()) {
+      setIsModalOpen(true);
+    }
+    // Make api calls to update vote
+
+    // If successful, set new vote count
+    // e.g. updateVoteCountFunc(response[voteDirection]);
+
+    // If not, handle error
+    // e.g. setErrorMessage('Failed to upvote or downvote....');
   };
 
   const handleEndpoint = () => {
@@ -286,6 +313,7 @@ function Resources() {
                           description={resource.notes}
                           downvotes={resource.downvotes}
                           upvotes={resource.upvotes}
+                          handleVote={handleVote}
                           href={resource.url || ''}
                           name={resource.name}
                           category={resource.category}
@@ -309,6 +337,31 @@ function Resources() {
           </section>,
         ]}
       />
+      <Modal
+        isOpen={isModalOpen}
+        screenReaderLabel="Login Modal"
+        onRequestClose={() => setIsModalOpen(false)}
+        className={CardStyles.CardModal}
+      >
+        <h2>Login to Proceed</h2>
+
+        <LoginForm
+          login={handleLogin}
+          onSuccess={handleLoginSuccess}
+          redirectFunction={() => {
+            setIsModalOpen(false);
+            router.push(router.asPath);
+          }}
+          buttonTheme="primary"
+        />
+
+        <p>
+          Forgot your password? Reset it&nbsp;
+          <Link href="/password_reset">
+            <a>here</a>
+          </Link>
+        </p>
+      </Modal>
     </div>
   );
 }

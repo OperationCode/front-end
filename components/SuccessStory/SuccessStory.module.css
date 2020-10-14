@@ -7,7 +7,7 @@
   padding-top: 60px;
   position: relative;
   max-width: 320px;
-  height: 670px;
+  height: 940px;
 }
 
 .image {
@@ -41,7 +41,7 @@
 
 @media screen and (--medium-viewport) {
   .SuccessStory {
-    height: 575px;
+    height: 748px;
   }
 }
 
