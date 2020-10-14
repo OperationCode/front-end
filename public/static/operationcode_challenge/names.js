@@ -62,5 +62,12 @@ export default [
     'Ryan Diffenbaugh',
     'Ron Yonker',
     'Quan Nguyen',
-    'Sean Jackson',
+    'Brian McPhillips',
+    'Richard Burd',
+    'Jaime Sanders',
+    'Jack Toumey',
+    'Jerud-Moyer',
+    'Darren Bridenbeck',
+    'Josh Olloqui',
+    'Sean Jackson'
 ]
