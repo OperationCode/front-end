@@ -61,5 +61,6 @@ export default [
     'Elise Harris',
     'Ryan Diffenbaugh',
     'Ron Yonker',
-    'Quan Nguyen'
+    'Quan Nguyen',
+    'Dusty McCord
 ]
