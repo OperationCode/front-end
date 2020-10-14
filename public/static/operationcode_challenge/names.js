@@ -59,9 +59,10 @@ export default [
     'Akshaya Subramanian',
     'Parshwa Shah',
     'Elise Harris',
-    'Ryan Diffenbaugh',
+    'Ryan Diffenbaugh', 
     'Ron Yonker',
     'Quan Nguyen',
     'Brian McPhillips',
-    'Richard Burd'
+    'Richard Burd',
+    'Jaime Sanders'
 ]
