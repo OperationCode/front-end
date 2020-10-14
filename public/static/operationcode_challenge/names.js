@@ -59,5 +59,6 @@ export default [
     'Akshaya Subramanian',
     'Parshwa Shah',
     'Elise Harris',
-    'Ryan Diffenbaugh'
+    'Ryan Diffenbaugh',
+    'Quan Nguyen',
 ]
