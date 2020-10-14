@@ -43,7 +43,7 @@ function Home() {
         className={styles.hero}
         backgroundImageSource={`${s3}redesign/heroBanners/homepage.jpg`}
         isFullViewportHeight
-        title="Deploy The Future"
+        title="Build The Future"
       >
         <>
           <p className={styles.justifyAlign}>
