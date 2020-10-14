@@ -13,7 +13,6 @@
   overflow: hidden; /* prevent devs from bloating content */
   margin: 1.5rem;
   width: 500px;
-  height: 600px;
 }
 
 .Podcast .podcastCard p {
