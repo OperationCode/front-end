@@ -70,5 +70,6 @@ export default [
     'Darren Bridenbeck',
     'Josh Olloqui',
     'Sean Jackson',
-    'Dusty McCord'
+    'Dusty McCord',
+    'Briseida Pagador'
 ]
