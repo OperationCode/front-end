@@ -13,6 +13,12 @@
   overflow: hidden; /* prevent devs from bloating content */
   margin: 1.5rem;
   width: 500px;
+  height: 600px;
+}
+
+.Podcast .podcastCard p {
+  overflow-y: scroll;
+  height: 200px;
 }
 
 @media screen and (--small-viewport) {
@@ -22,7 +28,7 @@
 }
 
 .Podcast .img {
-  max-height: 300px;
+  max-height: 200px;
   max-width: 100%;
   object-fit: cover;
 }
