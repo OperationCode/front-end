@@ -60,4 +60,5 @@ export default [
     'Parshwa Shah',
     'Elise Harris',
     'Ryan Diffenbaugh'
+    'Paul Stevens'
 ]
