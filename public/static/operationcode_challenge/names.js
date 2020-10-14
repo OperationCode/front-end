@@ -71,5 +71,6 @@ export default [
     'Josh Olloqui',
     'Sean Jackson',
     'Dusty McCord',
-    'Briseida Pagador'
+    'Briseida Pagador',
+    'Johnny Huang'
 ]
