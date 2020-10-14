@@ -60,5 +60,9 @@ export default [
     'Parshwa Shah',
     'Elise Harris',
     'Ryan Diffenbaugh', 
+    'Ron Yonker',
+    'Quan Nguyen',
+    'Brian McPhillips',
+    'Richard Burd',
     'Jaime Sanders'
 ]
