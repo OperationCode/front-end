@@ -15,6 +15,11 @@
   width: 500px;
 }
 
+.Podcast .podcastCard p {
+  overflow-y: scroll;
+  height: 250px;
+}
+
 @media screen and (--small-viewport) {
   .Podcast .podcastCard {
     width: 100%;
@@ -22,7 +27,7 @@
 }
 
 .Podcast .img {
-  max-height: 300px;
+  max-height: 200px;
   max-width: 100%;
   object-fit: cover;
 }
