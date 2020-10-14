@@ -59,5 +59,14 @@ export default [
     'Akshaya Subramanian',
     'Parshwa Shah',
     'Elise Harris',
-    'Josh Olloqui
+    'Ryan Diffenbaugh',
+    'Ron Yonker',
+    'Quan Nguyen',
+    'Brian McPhillips',
+    'Richard Burd',
+    'Jaime Sanders',
+    'Jack Toumey',
+    'Jerud-Moyer',
+    'Darren Bridenbeck',
+    'Josh Olloqui'
 ]
