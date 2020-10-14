@@ -59,5 +59,5 @@ export default [
     'Akshaya Subramanian',
     'Parshwa Shah',
     'Elise Harris',
-    'Jerud Moyer'
+    'Jerud-Moyer'
 ]
