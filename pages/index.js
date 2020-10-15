@@ -43,7 +43,7 @@ function Home() {
         className={styles.hero}
         backgroundImageSource={`${s3}redesign/heroBanners/homepage.jpg`}
         isFullViewportHeight
-        title="Deploy The Future"
+        title="Build The Future"
       >
         <>
           <p className={styles.justifyAlign}>
@@ -96,10 +96,9 @@ function Home() {
           <div className={styles.cta}>
             <Heading text="Our Mission" hasTitleUnderline />
             <p className={styles.justifyAlign}>
-              At Operation Code, we strongly believe in improving the lives of military veterans,
-              service members, and their spouses. We increase their chances for success in the tech
-              industry as software developers through thoughtful mentorship, code school
-              scholarships, and career services.
+              We serve our veterans, service members, and their families, work alongside their
+              journey through the tech industry, and help them thrive in their careers to code a
+              better future.
             </p>
           </div>,
         ]}

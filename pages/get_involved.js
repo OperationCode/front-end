@@ -4,6 +4,7 @@ import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Badge from 'components/Badge/Badge';
 import Content from 'components/Content/Content';
+import Link from 'next/link';
 import LinkButton from 'components/Buttons/LinkButton/LinkButton';
 import Heading from 'components/Heading/Heading';
 import DonateSection from 'components/ReusableSections/DonateSection/DonateSection';
@@ -61,10 +62,20 @@ function GetInvolved() {
       >
         <>
           <p className={styles.justifyAlign}>
-            Whether you&apos;re interested in mentoring, corporate sponsorship, volunteering your
-            time, or simply donating to help military veterans, service members, and spouses launch
-            a career in software development, Operation Code is always looking for supporters like
-            you.
+            Help make an impact to transitioning service members, military veterans, military
+            spouses and dependents! You can help in several ways:{' '}
+            <Link href="/donate">
+              <a>Donate</a>
+            </Link>{' '}
+            to help provide scholarships and keep our daily operations afloat,{' '}
+            <Link href="/who_we_serve">
+              <a>Volunteer</a>
+            </Link>
+            , or become a{' '}
+            <Link href="/sponsorship">
+              <a>Corporate Partner</a>
+            </Link>
+            .
           </p>
 
           <LinkButton href="/who_we_serve" className={styles.topMargin}>
@@ -104,11 +115,11 @@ function GetInvolved() {
             )}
           </TrackVisibility>,
           <div>
-            <Heading text="Empower Our Community" headingLevel={3} />
+            <Heading text="Empower Our Community and Support Our Mission" headingLevel={3} />
 
             <p className={styles.justifyAlign}>
-              Make a difference in the lives of military veterans, service members, and spouses who
-              are eager to transition into a software development career.
+              Make a difference in the lives of our military community and help them reach their
+              pursuits of a tech career.
             </p>
 
             <div className={classNames(styles.centeredText, styles.extraTopMargin)}>
