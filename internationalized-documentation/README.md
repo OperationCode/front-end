@@ -3,7 +3,6 @@
 ## Files Which Need Translations
 
 - [CODE_OF_CONDUCT.md](../CODE_OF_CONDUCT.md)
-- [MAINTAINERS.md](../MAINTAINERS.md)
 
 ## Files Which DO NOT Need Translations
 
