@@ -13,6 +13,7 @@ import Form from 'components/Form/Form';
 import Input from 'components/Form/Input/Input';
 import Checkbox from 'components/Form/Checkbox/Checkbox';
 import Alert from 'components/Alert/Alert';
+import OutboundLink from 'components/OutboundLink/OutboundLink';
 import styles from './RegistrationForm.module.css';
 
 /**
@@ -185,14 +186,36 @@ function RegistrationForm({ initialValues, onSuccess }) {
 
             <Field
               name="codeOfConduct"
-              label="I have read the Code of Conduct"
+              label={
+                <>
+                  I have read the{' '}
+                  <OutboundLink
+                    hasIcon={false}
+                    href="https://github.com/OperationCode/operationcode_docs/blob/master/community/code_of_conduct.md"
+                    analyticsEventLabel="Looked at Code of Conduct"
+                  >
+                    Code of Conduct
+                  </OutboundLink>
+                </>
+              }
               component={Checkbox}
               disabled={isSubmitting}
             />
 
             <Field
               name="communityGuidelines"
-              label="I have read the Community Guideliens"
+              label={
+                <>
+                  I have read the{' '}
+                  <OutboundLink
+                    hasIcon={false}
+                    href="https://github.com/OperationCode/START_HERE/blob/master/community_guidelines.md"
+                    analyticsEventLabel="Looked at Community Guidelines"
+                  >
+                    Community Guidelines
+                  </OutboundLink>
+                </>
+              }
               component={Checkbox}
               disabled={isSubmitting}
             />

@@ -16,7 +16,7 @@ describe('RegistrationForm', () => {
   });
 
   it('should submit with valid data in form', async () => {
-    const user = mockUser();
+    const user = { ...mockUser(), codeOfConduct: true, communityGuidelines: true };
 
     OperationCodeAPIMock.onPost('auth/registration/', {
       email: user.email,

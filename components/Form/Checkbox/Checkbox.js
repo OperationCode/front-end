@@ -1,5 +1,5 @@
 import React from 'react';
-import { shape, string, number, object, objectOf, oneOfType, bool } from 'prop-types';
+import { shape, string, node, number, object, objectOf, oneOfType, bool } from 'prop-types';
 import classNames from 'classnames';
 import { ErrorMessage } from 'formik';
 import { CHECKBOX, CHECKBOX_ERROR, CHECKBOX_GROUPING } from 'common/constants/testIDs';
@@ -17,7 +17,7 @@ Checkbox.propTypes = {
   }).isRequired,
   isLabelHidden: bool,
   id: oneOfType([string, number]),
-  label: string.isRequired,
+  label: oneOfType([node, string]).isRequired,
   hasValidationStyling: bool,
 };
 
@@ -42,37 +42,32 @@ function Checkbox({
   return (
     <div data-testid={CHECKBOX}>
       <div className={styles.checkboxGrouping} data-testid={CHECKBOX_GROUPING}>
-        <div>
-          <input
-            {...field}
-            {...props}
-            className={classNames(styles.checkboxGrouping, hasValidationStyling, {
-              [styles.goodCheck]: touched[name] && !hasErrors && hasValidationStyling,
-              [styles.badCheck]: touched[name] && hasErrors && hasValidationStyling,
-            })}
-            id={id || name}
-            name={name}
-            type="checkbox"
-            value={value || ''}
-          />
-        </div>
-
-        <div className={styles.floatRight}>
-          <Label for={name} isHidden={isLabelHidden} className={styles.labelAfterCheckbox}>
-            {label}
-          </Label>
-        </div>
-
-        <ErrorMessage name={name}>
-          {message => {
-            return hasErrors ? (
-              <Alert className={styles.errorMessage} data-testid={CHECKBOX_ERROR} type="error">
-                {message}
-              </Alert>
-            ) : null;
-          }}
-        </ErrorMessage>
+        <Label for={name} isHidden={isLabelHidden} className={styles.labelAfterCheckbox}>
+          {label}
+        </Label>
+        <input
+          {...field}
+          {...props}
+          className={classNames(hasValidationStyling, {
+            [styles.goodCheck]: touched[name] && !hasErrors && hasValidationStyling,
+            [styles.badCheck]: touched[name] && hasErrors && hasValidationStyling,
+          })}
+          id={id || name}
+          name={name}
+          type="checkbox"
+          value={value || ''}
+        />
       </div>
+
+      <ErrorMessage name={name}>
+        {message => {
+          return hasErrors ? (
+            <Alert className={styles.errorMessage} data-testid={CHECKBOX_ERROR} type="error">
+              {message}
+            </Alert>
+          ) : null;
+        }}
+      </ErrorMessage>
     </div>
   );
 }
