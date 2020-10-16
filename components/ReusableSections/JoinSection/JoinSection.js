@@ -19,8 +19,8 @@ function JoinSection() {
       <Heading text="Join Our Thriving Community" headingLevel={3} />
 
       <p className={styles.justifyAlign}>
-        Are you ready to begin your journey towards a career in software development? Get the
-        support you need by joining our members-only Slack community!
+        Are you ready to begin your journey towards a career in tech? Get the support you need by
+        joining our members-only Slack community!
       </p>
 
       <LinkButton href="/join" theme="secondary" className={styles.verticalSpacing}>

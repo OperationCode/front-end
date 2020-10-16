@@ -23,15 +23,15 @@ const VISIBILITY_OFFSET = 400;
 const mentorItems = [
   {
     icon: <MentorshipIcon />,
-    label: 'One-on-one mentorship',
+    label: 'One-on-One Mentorship & Networking',
   },
   {
     icon: <ScholarshipsIcon />,
-    label: 'Coding scholarships',
+    label: 'Coding Scholarships and Licenses',
   },
   {
     icon: <CareerServicesIcon />,
-    label: 'Career services',
+    label: 'Career Services and Professional Development',
   },
 ];
 
@@ -81,10 +81,11 @@ function WhoWeServe({ numberOfMembers }) {
         columns={[
           <div>
             <p className={styles.justifyAlign}>
-              We work closely with military veterans, service members, and spouses who are
-              passionate about transitioning into the tech industry. We work with{' '}
-              {!numberOfMembers ? 'over 7,000' : `${numberOfMembers}`} members who are all working
-              towards relevant goals on Slack and in-person meet-ups. Membership is free!
+              We work closely with military veterans, service members, and military spouses and
+              dependents who are passionate about transitioning into the tech industry. On Slack and
+              in-person meet-ups, we work with{' '}
+              {!numberOfMembers ? 'over 7,000+' : `${numberOfMembers}`} members who are all working
+              towards relevant career and personal goals. Membership is free!
             </p>
 
             <div className={classNames(styles.centeredText, styles.topMargin)}>
@@ -105,8 +106,8 @@ function WhoWeServe({ numberOfMembers }) {
               isImageFirst
             >
               <p className={styles.centeredText}>
-                Currently 1,000,000+ <br /> software development jobs available in the United
-                States.
+                There are 12.1 million net jobs for tech employment in the U.S. alone, with an
+                addition of 307,000 jobs in a year.
               </p>
             </ImageCard>
           </TrackVisibility>,
