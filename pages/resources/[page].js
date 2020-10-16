@@ -41,7 +41,7 @@ const pageTitle = 'Resources';
 function Resources() {
   const router = useRouter();
   const { pathname, query } = router;
-  const { page, category, languages, paid, q } = query;
+  const { page, category, languages, free, q } = query;
   const currentPage = parseInt(page, 10);
 
   if (page && !isFinite(currentPage)) {
@@ -58,15 +58,15 @@ function Resources() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const costOptions = [
-    { value: 'true', label: 'Paid' },
-    { value: 'false', label: 'Free' },
+    { value: 'false', label: 'Paid' },
+    { value: 'true', label: 'Free' },
   ];
 
   const initialValues = {
     category: category || '',
     q: q || '',
     languages: Array.isArray(languages) ? languages : [languages].filter(Boolean),
-    paid: paid || '',
+    free: free || false,
   };
 
   const handleLogin = value => loginUser(value);
@@ -91,9 +91,9 @@ function Resources() {
 
   const handleEndpoint = () => {
     if (q) {
-      return getResourcesBySearch({ page: page - 1, category, languages, paid, q });
+      return getResourcesBySearch({ page: page - 1, category, languages, free, q });
     }
-    return getResourcesPromise({ page, category, languages, paid });
+    return getResourcesPromise({ page, category, languages, free });
   };
 
   const handleSubmit = (values, actions) => {
@@ -105,6 +105,7 @@ function Resources() {
       values,
       emptyQueryParameters.map(parameter => parameter[0]),
     );
+    console.log(activeParameters);
 
     updateQuery(activeParameters);
     setTimeout(() => {
@@ -252,7 +253,7 @@ function Resources() {
                         isDisabled={isSubmitting}
                         placeholder="Resource cost..."
                         label="By Cost"
-                        name="paid"
+                        name="free"
                         options={costOptions}
                         component={Select}
                       />
@@ -318,7 +319,7 @@ function Resources() {
                           name={resource.name}
                           category={resource.category}
                           languages={resource.languages}
-                          isPaid={resource.paid}
+                          isFree={resource.free}
                           className={styles.resourceCard}
                         />
                       ))}
