@@ -27,7 +27,7 @@ ResourceCard.propTypes = {
   name: string.isRequired,
   category: string,
   languages: oneOfType([string, array]),
-  isPaid: bool,
+  isFree: bool,
   handleVote: func,
   upvotes: number,
   userVote: oneOf(Object.values(possibleUserVotes)),
@@ -38,7 +38,7 @@ ResourceCard.defaultProps = {
   downvotes: 0,
   category: '',
   languages: [],
-  isPaid: false,
+  isFree: false,
   handleVote: () => {},
   upvotes: 0,
   userVote: possibleUserVotes.none,
@@ -51,7 +51,7 @@ function ResourceCard({
   name,
   category,
   languages,
-  isPaid,
+  isFree,
   handleVote,
   upvotes,
   userVote,
@@ -131,7 +131,7 @@ function ResourceCard({
             data-testid={RESOURCE_CARD}
             data-test-category={category}
             data-test-languages={languages.join('-')}
-            data-test-ispaid={isPaid}
+            data-test-isfree={isFree}
             className={styles.header}
           >
             <h5 data-testid={RESOURCE_TITLE} className={styles.resourceName}>
