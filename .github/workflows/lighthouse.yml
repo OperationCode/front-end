@@ -37,8 +37,13 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile --non-interactive
 
+      - name: Run Build
+        run: yarn build
+
       - name: Audit URLs using Lighthouse
-        uses: treosh/lighthouse-ci-action@v3
+        run: |
+          npm install -g @lhci/cli@0.4.x
+          lhci autorun
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
         with:
