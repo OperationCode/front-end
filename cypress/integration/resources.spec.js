@@ -166,7 +166,7 @@ describe('resources', () => {
     cy.findByTestId(RESOURCE_SEARCH_BUTTON).click();
     cy.location().should(loc => {
       expect(loc.pathname).to.eq('/resources/1');
-      expect(loc.search).to.eq('?paid=false');
+      expect(loc.search).to.eq('?free=true');
     });
 
     cy.findAllByTestId(RESOURCE_CARD).each(card => {
@@ -180,7 +180,7 @@ describe('resources', () => {
     cy.findByTestId(RESOURCE_SEARCH_BUTTON).click();
     cy.location().should(loc => {
       expect(loc.pathname).to.eq('/resources/1');
-      expect(loc.search).to.eq('?paid=true');
+      expect(loc.search).to.eq('?free=false');
     });
 
     assertThatListHasDifferentItems();
@@ -188,19 +188,19 @@ describe('resources', () => {
     cy.findByTestId(NEXT_PAGE_BUTTON).click();
     cy.location().should(loc => {
       expect(loc.pathname).to.eq('/resources/2');
-      expect(loc.search).to.eq('?paid=true');
+      expect(loc.search).to.eq('?free=false');
     });
 
     cy.findByTestId(PREV_PAGE_BUTTON).click();
     cy.location().should(loc => {
       expect(loc.pathname).to.eq('/resources/1');
-      expect(loc.search).to.eq('?paid=true');
+      expect(loc.search).to.eq('?free=false');
     });
 
     cy.findByTestId('page 3').click();
     cy.location().should(loc => {
       expect(loc.pathname).to.eq('/resources/3');
-      expect(loc.search).to.eq('?paid=true');
+      expect(loc.search).to.eq('?free=false');
     });
 
     cy.findByTestId(RESOURCE_RESET_BUTTON).click();
