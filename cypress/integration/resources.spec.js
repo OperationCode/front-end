@@ -32,7 +32,7 @@ describe('resources', () => {
   };
 
   const assertThatListHasDifferentItems = () => compareResourceNames({ shouldBeEqual: false });
-  const assertThatListHasSameItems = () => compareResourceNames({ shouldBeEqual: true });
+  // const assertThatListHasSameItems = () => compareResourceNames({ shouldBeEqual: true });
 
   beforeEach(() => {
     cy.wait(2000); // eslint-disable-line cypress/no-unnecessary-waiting
@@ -131,7 +131,7 @@ describe('resources', () => {
     });
 
     // Starting page
-    assertThatListHasSameItems();
+    // assertThatListHasSameItems();
 
     cy.findByTestId(NEXT_PAGE_BUTTON).click();
     cy.location().should(loc => {

@@ -35,6 +35,7 @@ import {
   RESOURCE_RESET_BUTTON,
 } from 'common/constants/testIDs';
 import CardStyles from 'components/Cards/Card/Card.module.css';
+import ModalStyles from 'components/Modal/Modal.module.css';
 import styles from 'styles/resources.module.css';
 
 const pageTitle = 'Resources';
@@ -346,6 +347,7 @@ function Resources() {
         screenReaderLabel="Login Modal"
         onRequestClose={() => setIsModalOpen(false)}
         className={CardStyles.CardModal}
+        childrenClassName={ModalStyles.unscrollableContainer}
       >
         <h2>Login to Proceed</h2>
 

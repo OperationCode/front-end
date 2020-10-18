@@ -15,12 +15,14 @@ Modal.propTypes = {
   onRequestClose: func.isRequired,
   screenReaderLabel: string.isRequired, // basically a summarizing title
   shouldCloseOnOverlayClick: bool,
+  childrenClassName: string,
 };
 
 Modal.defaultProps = {
   className: undefined,
   isOpen: false,
   shouldCloseOnOverlayClick: true,
+  childrenClassName: undefined,
 };
 
 function Modal({
@@ -30,6 +32,7 @@ function Modal({
   onRequestClose,
   screenReaderLabel,
   shouldCloseOnOverlayClick,
+  childrenClassName,
 }) {
   if (isOpen) {
     gtag.modalView(screenReaderLabel);
@@ -45,7 +48,10 @@ function Modal({
       shouldCloseOnOverlayClick={shouldCloseOnOverlayClick}
     >
       <CloseButton onClick={onRequestClose} />
-      <div className={ModalStyles.scrollableContainer} data-testid={MODAL_CONTENT}>
+      <div
+        className={childrenClassName || ModalStyles.scrollableContainer}
+        data-testid={MODAL_CONTENT}
+      >
         {children}
       </div>
     </ReactModal>
