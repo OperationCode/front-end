@@ -61,6 +61,8 @@ function ResourceCard({
   const didUpvote = userVote === possibleUserVotes.upvote;
   const didDownvote = userVote === possibleUserVotes.downvote;
 
+  const DESKTOP_VOTING_BLOCK = 'desktopVotingBlock';
+
   // Sync IDs with stylesheet
   // eslint-disable-next-line react/prop-types
   const VotingBlock = ({ id }) => {
@@ -75,7 +77,7 @@ function ResourceCard({
           <button
             className={classNames(styles.voteButton, { [styles.active]: didUpvote })}
             aria-pressed={didUpvote}
-            data-testid={UPVOTE_BUTTON}
+            data-testid={id === DESKTOP_VOTING_BLOCK ? UPVOTE_BUTTON : undefined}
             onClick={onUpvote}
             type="button"
           >
@@ -100,7 +102,7 @@ function ResourceCard({
           <button
             className={classNames(styles.voteButton, { [styles.active]: didDownvote })}
             aria-pressed={didDownvote}
-            data-testid={DOWNVOTE_BUTTON}
+            data-testid={id === DESKTOP_VOTING_BLOCK ? DOWNVOTE_BUTTON : undefined}
             onClick={downUpvote}
             type="button"
           >
@@ -145,7 +147,7 @@ function ResourceCard({
               </OutboundLink>
             </h5>
 
-            <VotingBlock id="desktopVotingBlock" />
+            <VotingBlock id={DESKTOP_VOTING_BLOCK} />
           </div>
         ),
         bodyChildren: (
