@@ -35,6 +35,7 @@ import {
 } from 'common/constants/testIDs';
 import CardStyles from 'components/Cards/Card/Card.module.css';
 import styles from 'styles/resources.module.css';
+import isUndefined from 'lodash/isUndefined';
 
 const pageTitle = 'Resources';
 
@@ -105,7 +106,6 @@ function Resources() {
       values,
       emptyQueryParameters.map(parameter => parameter[0]),
     );
-    console.log(activeParameters);
 
     updateQuery(activeParameters);
     setTimeout(() => {
@@ -319,7 +319,7 @@ function Resources() {
                           name={resource.name}
                           category={resource.category}
                           languages={resource.languages}
-                          isFree={resource.free}
+                          isFree={isUndefined(resource.free) ? !resource.paid : resource.free}
                           className={styles.resourceCard}
                         />
                       ))}
