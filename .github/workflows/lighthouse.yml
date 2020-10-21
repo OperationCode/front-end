@@ -1,52 +1,65 @@
-name: lighthouse
+name: Lighthouse Audit
+
 on: [push, pull_request]
 
 jobs:
-  performance_check:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          ref: ${{ github.event.pull_request.head.sha }}
-      
-      - name: Read .nvmrc
-        run: echo ::set-output name=NVMRC::$(cat .nvmrc)
-        id: nvm
-
-      - name: Use Node
-        uses: actions/setup-node@v1
-        with:
-          always-auth: true
-          registry-url: https://registry.npmjs.org
-          node-version: '${{ steps.nvm.outputs.NVMRC }}'
-
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-
-      - name: Use cached node_modules
-        uses: actions/cache@v2
-        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
-        with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-
-      - name: Install dependencies
-        run: yarn install --frozen-lockfile --non-interactive
-
-      - name: Run Build
-        run: yarn build
-
-      - name: Audit URLs using Lighthouse
-        run: |
-          npm install -g @lhci/cli@0.4.x
-          lhci autorun
-        env:
-          LHCI_GITHUB_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
-        with:
-          configPath: './lighthouserc.js'
-          uploadArtifacts: true
-          temporaryPublicStorage: true
+    performance_check:
+      timeout-minutes: 60
+      runs-on: ubuntu-latest
+      steps:
+        - name: Add comment to PR
+          id: loading_comment_to_pr
+          uses: marocchino/sticky-pull-request-comment@v1
+          with:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            number: ${{ github.event.issue.number }}
+            header: lighthouse
+            message: |
+              Running Lighthouse audit...
+        - name: Capture Vercel preview URL
+          id: vercel_preview_url
+          uses: aaron-binary/vercel-preview-url-action@v0.0.2
+          with:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        - uses: actions/checkout@v2
+        - name: Audit preview URL with Lighthouse
+          id: lighthouse_audit
+          uses: treosh/lighthouse-ci-action@v3
+          with:
+            urls: |
+              ${{ steps.vercel_preview_url.outputs.vercel_preview_url }}
+            uploadArtifacts: true
+            temporaryPublicStorage: true
+        - name: Format lighthouse score
+          id: format_lighthouse_score
+          uses: actions/github-script@v3
+          with:
+            github-token: ${{secrets.GITHUB_TOKEN}}
+            script: |
+              const result = ${{ steps.lighthouse_audit.outputs.manifest }}[0].summary
+              const links = ${{ steps.lighthouse_audit.outputs.links }}
+              const formatResult = (res) => Math.round((res * 100))
+              Object.keys(result).forEach(key => result[key] = formatResult(result[key]))
+              const score = res => res >= 90 ? '🟢' : res >= 50 ? '🟠' : '🔴'
+              const comment = [
+                  `⚡️ [Lighthouse report](${Object.values(links)[0]}) for the changes in this PR:`,
+                  '| Category | Score |',
+                  '| --- | --- |',
+                  `| ${score(result.performance)} Performance | ${result.performance} |`,
+                  `| ${score(result.accessibility)} Accessibility | ${result.accessibility} |`,
+                  `| ${score(result['best-practices'])} Best practices | ${result['best-practices']} |`,
+                  `| ${score(result.seo)} SEO | ${result.seo} |`,
+                  `| ${score(result.pwa)} PWA | ${result.pwa} |`,
+                  ' ',
+                  `*Lighthouse ran on [${Object.keys(links)[0]}](${Object.keys(links)[0]})*`
+              ].join('\n')
+              core.setOutput("comment", comment); 
+        - name: Add comment to PR
+          id: comment_to_pr
+          uses: marocchino/sticky-pull-request-comment@v1
+          with:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            number: ${{ github.event.issue.number }}
+            header: lighthouse
+            message: |
+              ${{ steps.format_lighthouse_score.outputs.comment }}
