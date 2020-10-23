@@ -12,3 +12,8 @@
 .RegistrationForm > p {
   margin: 1.25rem auto;
 }
+
+.RegistrationForm label {
+  display: block;
+  margin: 1rem;
+}

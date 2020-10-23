@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { func, number, oneOfType, shape, string } from 'prop-types';
+import { func, number, oneOfType, shape, string, boolean } from 'prop-types';
 import { Formik, Field } from 'formik';
 import * as Yup from 'yup';
 import { createUser } from 'common/constants/api';
@@ -11,7 +11,9 @@ import { hasRequiredCharacters } from 'common/utils/validator-utils';
 import Button from 'components/Buttons/Button/Button';
 import Form from 'components/Form/Form';
 import Input from 'components/Form/Input/Input';
+import Checkbox from 'components/Form/Checkbox/Checkbox';
 import Alert from 'components/Alert/Alert';
+import OutboundLink from 'components/OutboundLink/OutboundLink';
 import styles from './RegistrationForm.module.css';
 
 /**
@@ -39,6 +41,8 @@ const registrationSchema = Yup.object().shape({
   firstName: Yup.string().trim().required(validationErrorMessages.required),
   lastName: Yup.string().trim().required(validationErrorMessages.required),
   zipcode: Yup.string().trim().required(validationErrorMessages.required),
+  codeOfConduct: Yup.boolean().oneOf([true], validationErrorMessages.required),
+  communityGuidelines: Yup.boolean().oneOf([true], validationErrorMessages.required),
 });
 
 RegistrationForm.propTypes = {
@@ -51,6 +55,8 @@ RegistrationForm.propTypes = {
     firstName: string,
     lastName: string,
     zipcode: oneOfType([string, number]),
+    codeOfConduct: boolean,
+    communityGuidelines: boolean,
   }),
 };
 
@@ -63,6 +69,8 @@ RegistrationForm.defaultProps = {
     firstName: '',
     lastName: '',
     zipcode: '',
+    codeOfConduct: false,
+    communityGuidelines: false,
   },
 };
 
@@ -174,6 +182,42 @@ function RegistrationForm({ initialValues, onSuccess }) {
               component={Input}
               disabled={isSubmitting}
               autoComplete="postal-code"
+            />
+
+            <Field
+              name="codeOfConduct"
+              label={
+                <>
+                  I have read the{' '}
+                  <OutboundLink
+                    hasIcon={false}
+                    href="https://github.com/OperationCode/operationcode_docs/blob/master/community/code_of_conduct.md"
+                    analyticsEventLabel="Looked at Code of Conduct"
+                  >
+                    Code of Conduct
+                  </OutboundLink>
+                </>
+              }
+              component={Checkbox}
+              disabled={isSubmitting}
+            />
+
+            <Field
+              name="communityGuidelines"
+              label={
+                <>
+                  I have read the{' '}
+                  <OutboundLink
+                    hasIcon={false}
+                    href="https://github.com/OperationCode/START_HERE/blob/master/community_guidelines.md"
+                    analyticsEventLabel="Looked at Community Guidelines"
+                  >
+                    Community Guidelines
+                  </OutboundLink>
+                </>
+              }
+              component={Checkbox}
+              disabled={isSubmitting}
             />
           </div>
 

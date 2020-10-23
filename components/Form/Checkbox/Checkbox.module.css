@@ -1,0 +1,28 @@
+.checkboxGrouping {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: flex-start;
+  min-width: 200px;
+}
+
+.checkboxGrouping > input {
+  flex: 1 0;
+  border: 1px green solid;
+}
+
+.checkboxGrouping > label {
+  flex: 3 3 auto;
+}
+
+.goodCheck {
+  border-color: var(--successDeep);
+  box-shadow: 0 0 1px 1px var(--successDeep);
+  outline: none;
+}
+
+.badCheck {
+  border-color: var(--errorDeep);
+  box-shadow: 0 0 1px 1px var(--errorDeep);
+  outline: none;
+}

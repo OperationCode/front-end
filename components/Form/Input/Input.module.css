@@ -16,6 +16,11 @@
   min-width: 200px;
 }
 
+.Input[type="checkbox"],
+.Input[type="radio"] {
+  min-width: unset;
+}
+
 .Input[type="number"] {
   inline-size: auto;
 }
