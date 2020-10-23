@@ -1,9 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 35">
-  <title>
-    Housing Icon
-  </title>
-  <g fill="currentColor" fill-rule="nonzero">
-    <path d="M0 13.6V16L17.5 2.4 35 16v-2.4L17.5 0zM32 10V1h-5v5l1.7 1.5V2.7h1.6v5.9z"/>
-    <path d="M24 33.5V35h8V16.2L30.4 15v18.5zM12 35h9V19h-9v16zm1.5-14.4h6v12.8h-6V20.6zM3 16.3V35h8v-1.6H4.6V15z"/>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 35"><title>Housing Icon</title><g fill="currentColor" fill-rule="nonzero"><path d="M0 13.6V16L17.5 2.4 35 16v-2.4L17.5 0zM32 10V1h-5v5l1.7 1.5V2.7h1.6v5.9z"/><path d="M24 33.5V35h8V16.2L30.4 15v18.5zM12 35h9V19h-9v16zm1.5-14.4h6v12.8h-6V20.6zM3 16.3V35h8v-1.6H4.6V15z"/></g></svg>

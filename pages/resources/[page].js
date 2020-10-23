@@ -14,6 +14,7 @@ import {
   getResourcesByLanguages,
   getResourcesBySearch,
   loginUser,
+  updateResourceVoteCount,
 } from 'common/constants/api';
 import { hasValidAuthToken, setAuthCookies } from 'common/utils/cookie-utils';
 import { Field, Formik } from 'formik';
@@ -34,14 +35,16 @@ import {
   RESOURCE_RESET_BUTTON,
 } from 'common/constants/testIDs';
 import CardStyles from 'components/Cards/Card/Card.module.css';
+import ModalStyles from 'components/Modal/Modal.module.css';
 import styles from 'styles/resources.module.css';
+import isUndefined from 'lodash/isUndefined';
 
 const pageTitle = 'Resources';
 
 function Resources() {
   const router = useRouter();
   const { pathname, query } = router;
-  const { page, category, languages, paid, q } = query;
+  const { page, category, languages, free, q } = query;
   const currentPage = parseInt(page, 10);
 
   if (page && !isFinite(currentPage)) {
@@ -58,15 +61,15 @@ function Resources() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const costOptions = [
-    { value: 'true', label: 'Paid' },
-    { value: 'false', label: 'Free' },
+    { value: 'false', label: 'Paid' },
+    { value: 'true', label: 'Free' },
   ];
 
   const initialValues = {
     category: category || '',
     q: q || '',
     languages: Array.isArray(languages) ? languages : [languages].filter(Boolean),
-    paid: paid || '',
+    free: free || false,
   };
 
   const handleLogin = value => loginUser(value);
@@ -75,25 +78,27 @@ function Resources() {
     setAuthCookies({ token });
   };
 
-  const handleVote = (/* voteDirection, updateVoteCountFunc */) => {
+  const handleVote = (voteDirection, id, setUpVotes, setDownVotes) => {
     setErrorMessage(null);
     if (!hasValidAuthToken()) {
       setIsModalOpen(true);
+      return;
     }
-    // Make api calls to update vote
-
-    // If successful, set new vote count
-    // e.g. updateVoteCountFunc(response[voteDirection]);
-
-    // If not, handle error
-    // e.g. setErrorMessage('Failed to upvote or downvote....');
+    updateResourceVoteCount({ id, voteDirection })
+      .then(({ data: { resource } }) => {
+        setUpVotes(resource.upvotes);
+        setDownVotes(resource.downvotes);
+      })
+      .catch(() => {
+        setErrorMessage(`There was a problem ${voteDirection.slice(0, -1)}ing a resource.`);
+      });
   };
 
   const handleEndpoint = () => {
     if (q) {
-      return getResourcesBySearch({ page: page - 1, category, languages, paid, q });
+      return getResourcesBySearch({ page: page - 1, category, languages, free, q });
     }
-    return getResourcesPromise({ page, category, languages, paid });
+    return getResourcesPromise({ page, category, languages, free });
   };
 
   const handleSubmit = (values, actions) => {
@@ -252,7 +257,7 @@ function Resources() {
                         isDisabled={isSubmitting}
                         placeholder="Resource cost..."
                         label="By Cost"
-                        name="paid"
+                        name="free"
                         options={costOptions}
                         component={Select}
                       />
@@ -309,6 +314,7 @@ function Resources() {
                       {resources.map(resource => (
                         <ResourceCard
                           data-testid={RESOURCE_CARD}
+                          id={resource.id}
                           key={resource.id}
                           description={resource.notes}
                           downvotes={resource.downvotes}
@@ -318,7 +324,7 @@ function Resources() {
                           name={resource.name}
                           category={resource.category}
                           languages={resource.languages}
-                          isPaid={resource.paid}
+                          isFree={isUndefined(resource.free) ? !resource.paid : resource.free}
                           className={styles.resourceCard}
                         />
                       ))}
@@ -342,6 +348,7 @@ function Resources() {
         screenReaderLabel="Login Modal"
         onRequestClose={() => setIsModalOpen(false)}
         className={CardStyles.CardModal}
+        childrenClassName={ModalStyles.unscrollableContainer}
       >
         <h2>Login to Proceed</h2>
 
