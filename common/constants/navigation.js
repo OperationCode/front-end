@@ -65,10 +65,6 @@ const getInvolved = {
       name: 'Sponsorship',
       href: '/sponsorship',
     },
-    {
-      name: 'Leadership Circle',
-      href: '/leadership_circle',
-    },
   ],
 };
 

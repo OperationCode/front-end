@@ -47,10 +47,6 @@ exports[`Nav should render with no props passed 1`] = `
           "href": "/sponsorship",
           "name": "Sponsorship",
         },
-        Object {
-          "href": "/leadership_circle",
-          "name": "Leadership Circle",
-        },
       ]
     }
     openMenu={[Function]}
@@ -122,10 +118,6 @@ exports[`Nav should render with no props passed 1`] = `
                 Object {
                   "href": "/sponsorship",
                   "name": "Sponsorship",
-                },
-                Object {
-                  "href": "/leadership_circle",
-                  "name": "Leadership Circle",
                 },
               ]
             }
