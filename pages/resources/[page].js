@@ -16,16 +16,18 @@ import {
   updateResourceVoteCount,
 } from 'common/constants/api';
 import { hasValidAuthToken, setAuthCookies } from 'common/utils/cookie-utils';
-import LoginForm from 'components/LoginForm/LoginForm';
 import Modal from 'components/Modal/Modal';
+import LoginForm from 'components/Forms/LoginForm/LoginForm';
 import Alert from 'components/Alert/Alert';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 import ResourceCard from 'components/Cards/ResourceCard/ResourceCard';
 import ResourceSkeletonCard from 'components/Cards/ResourceCard/ResourceSkeletonCard';
 import { RESOURCE_CARD } from 'common/constants/testIDs';
+import ModalStyles from 'components/Modal/Modal.module.css';
 import styles from 'styles/resources.module.css';
-import ResourceSearchForm from 'components/Forms/ResourceSearchForm/ResourceSearchForm';
 import isUndefined from 'lodash/isUndefined';
+import ResourceSearchForm from 'components/Forms/ResourceSearchForm/ResourceSearchForm';
+import CardStyles from 'components/Cards/Card/Card.module.css';
 
 const pageTitle = 'Resources';
 
@@ -53,20 +55,20 @@ function Resources() {
   const handleLoginSuccess = ({ token }) => {
     setAuthCookies({ token });
   };
-  const handleVote = (voteDirection, id, setUpVotes, setDownVotes) => {
 
+  const handleVote = (voteDirection, id, setUpVotes, setDownVotes) => {
     setErrorMessage(null);
     if (!hasValidAuthToken()) {
       setIsModalOpen(true);
-    }
       return;
+    }
     updateResourceVoteCount({ id, voteDirection })
       .then(({ data: { resource } }) => {
-        setDownVotes(resource.downvotes);
         setUpVotes(resource.upvotes);
+        setDownVotes(resource.downvotes);
       })
-        setErrorMessage(`There was a problem ${voteDirection.slice(0, -1)}ing a resource.`);
       .catch(() => {
+        setErrorMessage(`There was a problem ${voteDirection.slice(0, -1)}ing a resource.`);
       });
   };
 
@@ -176,7 +178,7 @@ function Resources() {
               fields={{
                 languages,
                 category,
-                paid,
+                free,
                 q,
               }}
               setIsLoading={setIsLoading}
