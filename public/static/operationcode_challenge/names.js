@@ -56,6 +56,7 @@ export default [
     'Kenneth Ofosu',
     'Nithin KS',
     'Krishna AL',
+    'Vibhor Garg',
     'Akshaya Subramanian',
     'Parshwa Shah',
     'Elise Harris',
