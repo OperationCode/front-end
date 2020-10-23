@@ -2,8 +2,8 @@
 
 exports[`RegistrationForm should render with required props 1`] = `
 <form
+  action="#"
   className="RegistrationForm"
-  noValidate={true}
   onReset={[Function]}
   onSubmit={[Function]}
 >

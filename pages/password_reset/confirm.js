@@ -4,7 +4,7 @@ import { string } from 'prop-types';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
-import ChangePasswordForm from 'components/ChangePasswordForm/ChangePasswordForm';
+import ChangePasswordForm from 'components/Forms/ChangePasswordForm/ChangePasswordForm';
 import Alert from 'components/Alert/Alert';
 import { passwordResetSubmit } from 'common/constants/api';
 import styles from 'styles/password_reset.module.css';

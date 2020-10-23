@@ -4,7 +4,7 @@ import { changePassword } from 'common/constants/api';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
-import ChangePasswordForm from 'components/ChangePasswordForm/ChangePasswordForm';
+import ChangePasswordForm from 'components/Forms/ChangePasswordForm/ChangePasswordForm';
 import styles from 'styles/password_reset.module.css';
 
 function ChangePassword() {
