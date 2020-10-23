@@ -174,7 +174,7 @@ exports[`ResourceSearchForm should render with required props 1`] = `
         <label
           className="Label"
           data-testid="LABEL"
-          htmlFor="paid"
+          htmlFor="free"
         >
           By Cost
         </label>
@@ -215,7 +215,7 @@ exports[`ResourceSearchForm should render with required props 1`] = `
                       autoComplete="off"
                       autoCorrect="off"
                       disabled={false}
-                      id="react-select-paid-input"
+                      id="react-select-free-input"
                       onBlur={[Function]}
                       onChange={[Function]}
                       onFocus={[Function]}
@@ -284,7 +284,7 @@ exports[`ResourceSearchForm should render with required props 1`] = `
               </div>
             </div>
             <input
-              name="paid"
+              name="free"
               type="hidden"
               value=""
             />

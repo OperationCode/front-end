@@ -2,8 +2,9 @@
 
 exports[`LoginForm should render with required props 1`] = `
 <form
-  action="#"
   className="LoginForm"
+  data-testid="LOGIN_FORM"
+  noValidate={true}
   onReset={[Function]}
   onSubmit={[Function]}
 >

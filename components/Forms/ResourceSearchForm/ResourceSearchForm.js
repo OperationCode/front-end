@@ -40,12 +40,12 @@ function ResourceSearchForm({
     languages: Array.isArray(fields.languages)
       ? fields.languages
       : [fields.languages].filter(Boolean),
-    paid: fields.paid || '',
+    free: fields.free || false,
   };
 
   const costOptions = [
-    { value: 'true', label: 'Paid' },
-    { value: 'false', label: 'Free' },
+    { value: 'false', label: 'Paid' },
+    { value: 'true', label: 'Free' },
   ];
 
   const handleSubmit = (values, actions) => {
@@ -109,7 +109,7 @@ function ResourceSearchForm({
                 isDisabled={isSubmitting}
                 placeholder="Resource cost..."
                 label="By Cost"
-                name="paid"
+                name="free"
                 options={costOptions}
                 component={Select}
               />
