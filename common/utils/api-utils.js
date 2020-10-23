@@ -105,6 +105,26 @@ export const patch = async (path, body, { token } = {}) => {
 };
 
 /**
+ * @param {string} path
+ * @param {?Object.<string, any>} body
+ * @param {{token: string}} options
+ * @returns {Promise<AxiosResponse<any>>}
+ */
+export const put = async (path, body, { token } = {}, axiosClient = ResourcesAPI) => {
+  const { abort, connectionTimeout } = getRequestAbortionPieces();
+
+  return axiosClient
+    .put(`/${path}`, body, {
+      headers: setAuthorizationHeader(token),
+      cancelToken: abort.token,
+    })
+    .then(response => {
+      clearTimeout(connectionTimeout);
+      return response;
+    });
+};
+
+/**
  * @description Take an expected server error object and return its error. If object is unexpected,
  * assume the server is down and return a relavant error message.
  *

@@ -9,6 +9,7 @@ describe('ResourceCard', () => {
   const requiredProps = {
     href: 'https://all-the-javascripts.com/',
     name: 'JavaScript for Dummies',
+    id: 4,
   };
 
   it('fires appropriate method when upvote button clicked', () => {
@@ -20,7 +21,12 @@ describe('ResourceCard', () => {
     expect(handleVoteMock).not.toHaveBeenCalled();
     fireEvent.click(UpvoteButton);
     expect(handleVoteMock).toHaveBeenCalledTimes(1);
-    expect(handleVoteMock).toHaveBeenCalledWith('upvotes', expect.any(Function));
+    expect(handleVoteMock).toHaveBeenCalledWith(
+      'upvote',
+      4,
+      expect.any(Function),
+      expect.any(Function),
+    );
   });
 
   it('fires appropriate method when downvote button clicked', () => {
@@ -32,6 +38,11 @@ describe('ResourceCard', () => {
     expect(handleVoteMock).not.toHaveBeenCalled();
     fireEvent.click(DownvoteButton);
     expect(handleVoteMock).toHaveBeenCalledTimes(1);
-    expect(handleVoteMock).toHaveBeenCalledWith('downvotes', expect.any(Function));
+    expect(handleVoteMock).toHaveBeenCalledWith(
+      'downvote',
+      4,
+      expect.any(Function),
+      expect.any(Function),
+    );
   });
 });

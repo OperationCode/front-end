@@ -14,6 +14,7 @@ import {
   getResourcesByLanguages,
   getResourcesBySearch,
   loginUser,
+  updateResourceVoteCount,
 } from 'common/constants/api';
 import { hasValidAuthToken, setAuthCookies } from 'common/utils/cookie-utils';
 import { Field, Formik } from 'formik';
@@ -34,6 +35,7 @@ import {
   RESOURCE_RESET_BUTTON,
 } from 'common/constants/testIDs';
 import CardStyles from 'components/Cards/Card/Card.module.css';
+import ModalStyles from 'components/Modal/Modal.module.css';
 import styles from 'styles/resources.module.css';
 import isUndefined from 'lodash/isUndefined';
 
@@ -76,18 +78,20 @@ function Resources() {
     setAuthCookies({ token });
   };
 
-  const handleVote = (/* voteDirection, updateVoteCountFunc */) => {
+  const handleVote = (voteDirection, id, setUpVotes, setDownVotes) => {
     setErrorMessage(null);
     if (!hasValidAuthToken()) {
       setIsModalOpen(true);
+      return;
     }
-    // Make api calls to update vote
-
-    // If successful, set new vote count
-    // e.g. updateVoteCountFunc(response[voteDirection]);
-
-    // If not, handle error
-    // e.g. setErrorMessage('Failed to upvote or downvote....');
+    updateResourceVoteCount({ id, voteDirection })
+      .then(({ data: { resource } }) => {
+        setUpVotes(resource.upvotes);
+        setDownVotes(resource.downvotes);
+      })
+      .catch(() => {
+        setErrorMessage(`There was a problem ${voteDirection.slice(0, -1)}ing a resource.`);
+      });
   };
 
   const handleEndpoint = () => {
@@ -310,6 +314,7 @@ function Resources() {
                       {resources.map(resource => (
                         <ResourceCard
                           data-testid={RESOURCE_CARD}
+                          id={resource.id}
                           key={resource.id}
                           description={resource.notes}
                           downvotes={resource.downvotes}
@@ -343,6 +348,7 @@ function Resources() {
         screenReaderLabel="Login Modal"
         onRequestClose={() => setIsModalOpen(false)}
         className={CardStyles.CardModal}
+        childrenClassName={ModalStyles.unscrollableContainer}
       >
         <h2>Login to Proceed</h2>
 

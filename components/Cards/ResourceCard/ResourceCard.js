@@ -25,6 +25,7 @@ ResourceCard.propTypes = {
   downvotes: number,
   href: string.isRequired,
   name: string.isRequired,
+  id: number.isRequired,
   category: string,
   languages: oneOfType([string, array]),
   isFree: bool,
@@ -55,6 +56,7 @@ function ResourceCard({
   handleVote,
   upvotes,
   userVote,
+  id,
 }) {
   const [upVotes, setUpVotes] = useState(upvotes);
   const [downVotes, setDownVotes] = useState(downvotes);
@@ -65,19 +67,20 @@ function ResourceCard({
 
   // Sync IDs with stylesheet
   // eslint-disable-next-line react/prop-types
-  const VotingBlock = ({ id }) => {
-    const onUpvote = () => handleVote('upvotes', setUpVotes);
-    const downUpvote = () => handleVote('downvotes', setDownVotes);
+  const VotingBlock = ({ blockID, resourceID }) => {
+    const onVote = voteDirection => handleVote(voteDirection, resourceID, setUpVotes, setDownVotes);
+    const onUpvote = () => onVote('upvote');
+    const onDownvote = () => onVote('downvote');
 
     return (
-      <div className={classNames(styles.votingBlock, styles[id])}>
+      <div className={classNames(styles.votingBlock, styles[blockID])}>
         <span className={styles.votingBlockHeader}>Useful?</span>
 
         <div className={styles.voteInfo}>
           <button
             className={classNames(styles.voteButton, { [styles.active]: didUpvote })}
             aria-pressed={didUpvote}
-            data-testid={id === DESKTOP_VOTING_BLOCK ? UPVOTE_BUTTON : undefined}
+            data-testid={blockID === DESKTOP_VOTING_BLOCK ? UPVOTE_BUTTON : undefined}
             onClick={onUpvote}
             type="button"
           >
@@ -102,8 +105,8 @@ function ResourceCard({
           <button
             className={classNames(styles.voteButton, { [styles.active]: didDownvote })}
             aria-pressed={didDownvote}
-            data-testid={id === DESKTOP_VOTING_BLOCK ? DOWNVOTE_BUTTON : undefined}
-            onClick={downUpvote}
+            data-testid={blockID === DESKTOP_VOTING_BLOCK ? DOWNVOTE_BUTTON : undefined}
+            onClick={onDownvote}
             type="button"
           >
             <ScreenReaderOnly>No</ScreenReaderOnly>
@@ -147,7 +150,7 @@ function ResourceCard({
               </OutboundLink>
             </h5>
 
-            <VotingBlock id={DESKTOP_VOTING_BLOCK} />
+            <VotingBlock blockID={DESKTOP_VOTING_BLOCK} resourceID={id} />
           </div>
         ),
         bodyChildren: (
@@ -163,7 +166,7 @@ function ResourceCard({
               </p>
             </div>
 
-            <VotingBlock id="mobileVotingBlock" />
+            <VotingBlock blockID="mobileVotingBlock" resourceID={id} />
           </div>
         ),
       }}

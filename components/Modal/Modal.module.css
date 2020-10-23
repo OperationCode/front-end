@@ -8,6 +8,13 @@
   max-height: 75vh;
 }
 
+.unscrollableContainer {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 /* React-Modal Overrides
  * Remove scroll on the body when react-modal is open */
 /* stylelint-disable */

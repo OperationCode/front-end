@@ -8,7 +8,12 @@ import {
   DATA_TEST_CATEGORY,
   DATA_TEST_LANGUAGES,
   DATA_TEST_IS_FREE,
+  UPVOTE_BUTTON,
+  DOWNVOTE_BUTTON,
+  LOGIN_BUTTON,
+  LOGIN_FORM,
 } from 'common/constants/testIDs';
+import existingUser from 'test-utils/mocks/existingUser';
 import noop from 'lodash/noop';
 
 describe('resources', () => {
@@ -33,6 +38,7 @@ describe('resources', () => {
   beforeEach(() => {
     cy.visitAndWaitFor('/resources/1');
     cy.get('h1').should('have.text', 'Resources');
+    Cypress.Cookies.preserveOnce('token');
   });
 
   it('redirects on /resources to resources/1', () => {
@@ -239,4 +245,63 @@ describe('resources', () => {
   //   checkAllCardsForDataAttribute(DATA_TEST_LANGUAGES, 'JavaScript');
   //   checkAllCardsForDataAttribute(DATA_TEST_LANGUAGES, 'Python');
   // });
+  it('will prompt user to login when voting without being logged in', () => {
+    cy.server();
+    cy.route('POST', 'auth/login/').as('postLogin');
+
+    cy.findAllByTestId(UPVOTE_BUTTON).first().click({ force: true });
+    cy.findByTestId(LOGIN_FORM).should('exist');
+
+    cy.findByLabelText('Email*').type(existingUser.email);
+    cy.findByLabelText('Password*').type(existingUser.password);
+    cy.findByTestId(LOGIN_BUTTON).click();
+
+    cy.wait('@postLogin').its('status').should('eq', 200);
+
+    cy.findByTestId(LOGIN_FORM).should('not.exist');
+  });
+
+  it('will allow user to upvote once logged in', () => {
+    cy.findAllByTestId(UPVOTE_BUTTON)
+      .first()
+      .children('span')
+      .invoke('text')
+      .as('currentUpVoteCountText');
+
+    cy.server();
+    cy.route('PUT', 'api/v1/resources/**/upvote').as('upvote');
+
+    cy.findAllByTestId(UPVOTE_BUTTON).first().click({ force: true });
+    cy.wait('@upvote');
+
+    cy.get('@upvote').then(({ status, response }) => {
+      expect(status).to.eq(200);
+      cy.get('@currentUpVoteCountText').should(
+        'not.eq',
+        `Number of Number of upvotes:${response.body.resource.upvotes}`,
+      );
+    });
+  });
+
+  it('will allow user to downvote once logged in', () => {
+    cy.findAllByTestId(DOWNVOTE_BUTTON)
+      .first()
+      .children('span')
+      .invoke('text')
+      .as('currentDownVoteCountText');
+
+    cy.server();
+    cy.route('PUT', 'api/v1/resources/**/downvote').as('downvote');
+
+    cy.findAllByTestId(DOWNVOTE_BUTTON).first().click({ force: true });
+    cy.wait('@downvote');
+
+    cy.get('@downvote').then(({ status, response }) => {
+      expect(status).to.eq(200);
+      cy.get('@currentDownVoteCountText').should(
+        'not.eq',
+        `Number of Number of downvotes:${response.body.resource.upvotes}`,
+      );
+    });
+  });
 });
