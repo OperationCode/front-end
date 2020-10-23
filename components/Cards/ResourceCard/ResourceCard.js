@@ -67,8 +67,8 @@ function ResourceCard({
 
   // Sync IDs with stylesheet
   // eslint-disable-next-line react/prop-types
-  const VotingBlock = ({ blockID }) => {
-    const onVote = voteDirection => handleVote(voteDirection, id, setUpVotes, setDownVotes);
+  const VotingBlock = ({ blockID, resourceID }) => {
+    const onVote = voteDirection => handleVote(voteDirection, resourceID, setUpVotes, setDownVotes);
     const onUpvote = () => onVote('upvote');
     const onDownvote = () => onVote('downvote');
 
@@ -80,7 +80,7 @@ function ResourceCard({
           <button
             className={classNames(styles.voteButton, { [styles.active]: didUpvote })}
             aria-pressed={didUpvote}
-            data-testid={id === DESKTOP_VOTING_BLOCK ? UPVOTE_BUTTON : undefined}
+            data-testid={blockID === DESKTOP_VOTING_BLOCK ? UPVOTE_BUTTON : undefined}
             onClick={onUpvote}
             type="button"
           >
@@ -105,7 +105,7 @@ function ResourceCard({
           <button
             className={classNames(styles.voteButton, { [styles.active]: didDownvote })}
             aria-pressed={didDownvote}
-            data-testid={id === DESKTOP_VOTING_BLOCK ? DOWNVOTE_BUTTON : undefined}
+            data-testid={blockID === DESKTOP_VOTING_BLOCK ? DOWNVOTE_BUTTON : undefined}
             onClick={onDownvote}
             type="button"
           >
@@ -150,7 +150,7 @@ function ResourceCard({
               </OutboundLink>
             </h5>
 
-            <VotingBlock id={DESKTOP_VOTING_BLOCK} />
+            <VotingBlock blockID={DESKTOP_VOTING_BLOCK} resourceID={id} />
           </div>
         ),
         bodyChildren: (
@@ -166,7 +166,7 @@ function ResourceCard({
               </p>
             </div>
 
-            <VotingBlock blockID="mobileVotingBlock" />
+            <VotingBlock blockID="mobileVotingBlock" resourceID={id} />
           </div>
         ),
       }}

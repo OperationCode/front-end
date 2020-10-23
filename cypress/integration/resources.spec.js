@@ -36,7 +36,6 @@ describe('resources', () => {
   };
 
   beforeEach(() => {
-    cy.wait(2000); // eslint-disable-line cypress/no-unnecessary-waiting
     cy.visitAndWaitFor('/resources/1');
     cy.get('h1').should('have.text', 'Resources');
     Cypress.Cookies.preserveOnce('token');
