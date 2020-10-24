@@ -245,18 +245,6 @@ describe('resources', () => {
   //   checkAllCardsForDataAttribute(DATA_TEST_LANGUAGES, 'Python');
   // });
   it('will allow user to upvote/downvote once logged in', () => {
-    cy.findAllByTestId(UPVOTE_BUTTON)
-      .first()
-      .children('span')
-      .invoke('text')
-      .as('currentUpVoteCountText');
-
-    cy.findAllByTestId(DOWNVOTE_BUTTON)
-      .first()
-      .children('span')
-      .invoke('text')
-      .as('currentDownVoteCountText');
-
     cy.server();
     cy.route('POST', 'auth/login/').as('postLogin');
     cy.route('PUT', 'api/v1/resources/**/upvote').as('upvote');
@@ -273,8 +261,11 @@ describe('resources', () => {
 
     cy.findByTestId(LOGIN_FORM).should('not.exist');
 
-    cy.findAllByTestId(UPVOTE_BUTTON).first().click({ force: true });
-    cy.wait('@upvote');
+    cy.findAllByTestId(UPVOTE_BUTTON)
+      .first()
+      .children('span')
+      .invoke('text')
+      .as('currentUpVoteCountText');
 
     cy.findAllByTestId(UPVOTE_BUTTON).first().click({ force: true });
     cy.wait('@upvote');
@@ -282,13 +273,16 @@ describe('resources', () => {
     cy.get('@upvote').then(({ status, response }) => {
       expect(status).to.eq(200);
       cy.get('@currentUpVoteCountText').should(
-        'eq',
+        'not.eq',
         `YesNumber of upvotes:${response.body.resource.upvotes}`,
       );
     });
 
-    cy.findAllByTestId(DOWNVOTE_BUTTON).first().click({ force: true });
-    cy.wait('@downvote');
+    cy.findAllByTestId(DOWNVOTE_BUTTON)
+      .first()
+      .children('span')
+      .invoke('text')
+      .as('currentDownVoteCountText');
 
     cy.findAllByTestId(DOWNVOTE_BUTTON).first().click({ force: true });
     cy.wait('@downvote');
@@ -296,7 +290,7 @@ describe('resources', () => {
     cy.get('@downvote').then(({ status, response }) => {
       expect(status).to.eq(200);
       cy.get('@currentDownVoteCountText').should(
-        'eq',
+        'not.eq',
         `NoNumber of downvotes:${response.body.resource.downvotes}`,
       );
     });
