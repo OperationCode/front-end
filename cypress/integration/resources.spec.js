@@ -38,7 +38,6 @@ describe('resources', () => {
   beforeEach(() => {
     cy.visitAndWaitFor('/resources/1');
     cy.get('h1').should('have.text', 'Resources');
-    Cypress.Cookies.preserveOnce('token');
   });
 
   it('redirects on /resources to resources/1', () => {
@@ -245,9 +244,23 @@ describe('resources', () => {
   //   checkAllCardsForDataAttribute(DATA_TEST_LANGUAGES, 'JavaScript');
   //   checkAllCardsForDataAttribute(DATA_TEST_LANGUAGES, 'Python');
   // });
-  it('will prompt user to login when voting without being logged in', () => {
+  it('will allow user to upvote/downvote once logged in', () => {
+    cy.findAllByTestId(UPVOTE_BUTTON)
+      .first()
+      .children('span')
+      .invoke('text')
+      .as('currentUpVoteCountText');
+
+    cy.findAllByTestId(DOWNVOTE_BUTTON)
+      .first()
+      .children('span')
+      .invoke('text')
+      .as('currentDownVoteCountText');
+
     cy.server();
     cy.route('POST', 'auth/login/').as('postLogin');
+    cy.route('PUT', 'api/v1/resources/**/upvote').as('upvote');
+    cy.route('PUT', 'api/v1/resources/**/downvote').as('downvote');
 
     cy.findAllByTestId(UPVOTE_BUTTON).first().click({ force: true });
     cy.findByTestId(LOGIN_FORM).should('exist');
@@ -259,17 +272,9 @@ describe('resources', () => {
     cy.wait('@postLogin').its('status').should('eq', 200);
 
     cy.findByTestId(LOGIN_FORM).should('not.exist');
-  });
 
-  it('will allow user to upvote once logged in', () => {
-    cy.findAllByTestId(UPVOTE_BUTTON)
-      .first()
-      .children('span')
-      .invoke('text')
-      .as('currentUpVoteCountText');
-
-    cy.server();
-    cy.route('PUT', 'api/v1/resources/**/upvote').as('upvote');
+    cy.findAllByTestId(UPVOTE_BUTTON).first().click({ force: true });
+    cy.wait('@upvote');
 
     cy.findAllByTestId(UPVOTE_BUTTON).first().click({ force: true });
     cy.wait('@upvote');
@@ -277,21 +282,13 @@ describe('resources', () => {
     cy.get('@upvote').then(({ status, response }) => {
       expect(status).to.eq(200);
       cy.get('@currentUpVoteCountText').should(
-        'not.eq',
-        `Number of Number of upvotes:${response.body.resource.upvotes}`,
+        'eq',
+        `YesNumber of upvotes:${response.body.resource.upvotes}`,
       );
     });
-  });
 
-  it('will allow user to downvote once logged in', () => {
-    cy.findAllByTestId(DOWNVOTE_BUTTON)
-      .first()
-      .children('span')
-      .invoke('text')
-      .as('currentDownVoteCountText');
-
-    cy.server();
-    cy.route('PUT', 'api/v1/resources/**/downvote').as('downvote');
+    cy.findAllByTestId(DOWNVOTE_BUTTON).first().click({ force: true });
+    cy.wait('@downvote');
 
     cy.findAllByTestId(DOWNVOTE_BUTTON).first().click({ force: true });
     cy.wait('@downvote');
@@ -299,8 +296,8 @@ describe('resources', () => {
     cy.get('@downvote').then(({ status, response }) => {
       expect(status).to.eq(200);
       cy.get('@currentDownVoteCountText').should(
-        'not.eq',
-        `Number of Number of downvotes:${response.body.resource.upvotes}`,
+        'eq',
+        `NoNumber of downvotes:${response.body.resource.downvotes}`,
       );
     });
   });
