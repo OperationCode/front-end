@@ -9,7 +9,9 @@ import {
   DATA_TEST_LANGUAGES,
   DATA_TEST_IS_FREE,
   UPVOTE_BUTTON,
+  UPVOTE_COUNT,
   DOWNVOTE_BUTTON,
+  DOWNVOTE_COUNT,
   LOGIN_BUTTON,
   LOGIN_FORM,
 } from 'common/constants/testIDs';
@@ -261,38 +263,33 @@ describe('resources', () => {
 
     cy.findByTestId(LOGIN_FORM).should('not.exist');
 
-    cy.findAllByTestId(UPVOTE_BUTTON)
-      .first()
-      .children('span')
-      .invoke('text')
-      .as('currentUpVoteCountText');
+    cy.findAllByTestId(UPVOTE_COUNT).invoke('text').as('currentUpVoteCountText');
 
     cy.findAllByTestId(UPVOTE_BUTTON).first().click({ force: true });
     cy.wait('@upvote');
 
     cy.get('@upvote').then(({ status, response }) => {
       expect(status).to.eq(200);
-      cy.get('@currentUpVoteCountText').should(
-        'not.eq',
-        `YesNumber of upvotes:${response.body.resource.upvotes}`,
-      );
+      cy.get('@currentUpVoteCountText').then(upVoteText => {
+        const upVoteNumber = parseInt(upVoteText, 10);
+        expect(response.body.resource.upvotes).to.be.oneOf([upVoteNumber + 1, upVoteNumber - 1]);
+      });
     });
 
-    cy.findAllByTestId(DOWNVOTE_BUTTON)
-      .first()
-      .children('span')
-      .invoke('text')
-      .as('currentDownVoteCountText');
+    cy.findAllByTestId(DOWNVOTE_COUNT).invoke('text').as('currentDownVoteCountText');
 
     cy.findAllByTestId(DOWNVOTE_BUTTON).first().click({ force: true });
     cy.wait('@downvote');
 
     cy.get('@downvote').then(({ status, response }) => {
       expect(status).to.eq(200);
-      cy.get('@currentDownVoteCountText').should(
-        'not.eq',
-        `NoNumber of downvotes:${response.body.resource.downvotes}`,
-      );
+      cy.get('@currentDownVoteCountText').then(downVoteText => {
+        const downVoteNumber = parseInt(downVoteText, 10);
+        expect(response.body.resource.downvotes).to.be.oneOf([
+          downVoteNumber + 1,
+          downVoteNumber - 1,
+        ]);
+      });
     });
   });
 });
