@@ -1,12 +1,13 @@
-import Link from 'next/link';
-import { object } from 'prop-types';
-import { withRouter } from 'next/router';
 import { login } from 'common/utils/auth-utils';
 import { gtag } from 'common/utils/thirdParty/gtag';
-import Head from 'components/head';
-import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
 import RegistrationForm from 'components/Forms/RegistrationForm/RegistrationForm';
+import Head from 'components/head';
+import HeroBanner from 'components/HeroBanner/HeroBanner';
+import Link from 'next/link';
+import { withRouter } from 'next/router';
+import { object } from 'prop-types';
+import { useEffect } from 'react';
 
 const pageTitle = 'Join';
 
@@ -17,7 +18,7 @@ Join.propTypes = {
 };
 
 function Join({ router }) {
-  React.useEffect(() => {
+  useEffect(() => {
     router.prefetch(profileUpdateURL);
   }, []);
 

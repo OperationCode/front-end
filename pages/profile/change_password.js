@@ -1,14 +1,15 @@
-import Link from 'next/link';
-import withAuthSync from 'decorators/withAuthSync/withAuthSync';
 import { changePassword } from 'common/constants/api';
-import Head from 'components/head';
-import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
 import ChangePasswordForm from 'components/Forms/ChangePasswordForm/ChangePasswordForm';
+import Head from 'components/head';
+import HeroBanner from 'components/HeroBanner/HeroBanner';
+import withAuthSync from 'decorators/withAuthSync/withAuthSync';
+import Link from 'next/link';
+import { useState } from 'react';
 import styles from 'styles/password_reset.module.css';
 
 function ChangePassword() {
-  const [didChange, setDidChange] = React.useState(false);
+  const [didChange, setDidChange] = useState(false);
 
   const onSuccess = () => {
     setDidChange(true);
