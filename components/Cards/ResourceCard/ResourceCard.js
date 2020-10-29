@@ -6,7 +6,9 @@ import OutboundLink from 'components/OutboundLink/OutboundLink';
 import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
 import {
   UPVOTE_BUTTON,
+  UPVOTE_COUNT,
   DOWNVOTE_BUTTON,
+  DOWNVOTE_COUNT,
   RESOURCE_CARD,
   RESOURCE_TITLE,
 } from 'common/constants/testIDs';
@@ -96,7 +98,7 @@ function ResourceCard({
               className={classNames(styles.voteCount, { [styles.active]: didUpvote })}
             >
               <ScreenReaderOnly>Number of upvotes:</ScreenReaderOnly>
-              {upVotes.toString()}
+              <span data-testid={UPVOTE_COUNT}>{upVotes.toString()}</span>
             </span>
           </button>
         </div>
@@ -118,7 +120,7 @@ function ResourceCard({
 
             <span className={classNames(styles.voteCount, { [styles.active]: didDownvote })}>
               <ScreenReaderOnly>Number of downvotes:</ScreenReaderOnly>
-              {downVotes.toString()}
+              <span data-testid={DOWNVOTE_COUNT}>{downVotes.toString()}</span>
             </span>
           </button>
         </div>
