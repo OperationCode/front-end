@@ -75,5 +75,6 @@ export default [
     'Briseida Pagador',
     'Johnny Huang',
     'Paul Stevens',
-    'Asher Ferri'
+    'Asher Ferri',
+    'Kyle Holmberg'
 ]
