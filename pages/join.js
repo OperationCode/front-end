@@ -6,7 +6,7 @@ import { gtag } from 'common/utils/thirdParty/gtag';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
-import RegistrationForm from 'components/RegistrationForm/RegistrationForm';
+import RegistrationForm from 'components/Forms/RegistrationForm/RegistrationForm';
 
 const pageTitle = 'Join';
 

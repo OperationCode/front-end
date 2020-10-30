@@ -1,7 +1,7 @@
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
-import PasswordResetForm from 'components/PasswordResetForm/PasswordResetForm';
+import PasswordResetForm from 'components/Forms/PasswordResetForm/PasswordResetForm';
 import Alert from 'components/Alert/Alert';
 import { passwordReset } from 'common/constants/api';
 

@@ -1,4 +1,4 @@
-import { get, post, patch, ResourcesAPI } from 'common/utils/api-utils';
+import { get, post, patch, put, ResourcesAPI } from 'common/utils/api-utils';
 import { formatUserData } from 'common/utils/formatters';
 
 /* GET REQUESTS */
@@ -52,3 +52,7 @@ export const updateUser = userInfo => {
     ...formatUserData(userInfo),
   }).then(({ data }) => data);
 };
+
+/* PUT REQUESTS */
+export const updateResourceVoteCount = ({ id, voteDirection }) =>
+  put(`api/v1/resources/${id}/${voteDirection}`);

@@ -21,7 +21,15 @@ module.exports = {
   },
   parser: 'babel-eslint',
 
-  plugins: ['prettier', 'unicorn', 'jest', 'cypress', '@operation_code/custom-rules', 'import'],
+  plugins: [
+    'prettier',
+    'unicorn',
+    'jest',
+    'cypress',
+    '@operation_code/custom-rules',
+    'import',
+    'lodash',
+  ],
 
   globals: {
     cy: true,
@@ -151,6 +159,9 @@ module.exports = {
       },
     ],
 
+    // Lodash Plugin Rules
+    'lodash/import-scope': ['error', 'method'],
+
     // Prettier Plugin Rules
     'prettier/prettier': 'error',
 
@@ -247,12 +258,6 @@ module.exports = {
       'error',
       {
         paths: [
-          {
-            name: 'lodash',
-            importNames: ['default'],
-            message: `Please add an import line for each method you want to use instead.\n
-             Example: import drop from 'lodash/drop';`,
-          },
           {
             name: 'react-select',
             message: 'Please use `components/Form/Select/ThemedReactSelect` instead.',

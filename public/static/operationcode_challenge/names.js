@@ -56,6 +56,7 @@ export default [
     'Kenneth Ofosu',
     'Nithin KS',
     'Krishna AL',
+    'Vibhor Garg',
     'Akshaya Subramanian',
     'Parshwa Shah',
     'Elise Harris',
@@ -73,5 +74,6 @@ export default [
     'Dusty McCord',
     'Briseida Pagador',
     'Johnny Huang',
-    'Paul Stevens'
+    'Paul Stevens',
+    'Asher Ferri'
 ]

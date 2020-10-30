@@ -9,33 +9,40 @@ describe('ResourceCard', () => {
   const requiredProps = {
     href: 'https://all-the-javascripts.com/',
     name: 'JavaScript for Dummies',
+    id: 4,
   };
 
-  // Swallowing warnings from ReactGA
-  const realConsoleWarn = console.warn;
-  beforeAll(() => {
-    console.warn = () => {};
-  });
-  afterAll(() => {
-    console.warn = realConsoleWarn;
-  });
+  it('fires appropriate method when upvote button clicked', () => {
+    const handleVoteMock = jest.fn();
 
-  it.skip('fires appropriate method when upvote button clicked', () => {
-    const onUpvoteMock = jest.fn();
-    const onDownvoteMock = jest.fn();
+    const component = render(<ResourceCard {...requiredProps} handleVote={handleVoteMock} />);
 
-    const component = render(
-      <ResourceCard {...requiredProps} onDownvote={onDownvoteMock} onUpvote={onUpvoteMock} />,
-    );
-
-    const UpvoteButton = component.queryAllByTestId(UPVOTE_BUTTON)[0];
-    expect(onUpvoteMock).not.toHaveBeenCalled();
+    const UpvoteButton = component.queryByTestId(UPVOTE_BUTTON);
+    expect(handleVoteMock).not.toHaveBeenCalled();
     fireEvent.click(UpvoteButton);
-    expect(onUpvoteMock).toHaveBeenCalledTimes(1);
+    expect(handleVoteMock).toHaveBeenCalledTimes(1);
+    expect(handleVoteMock).toHaveBeenCalledWith(
+      'upvote',
+      4,
+      expect.any(Function),
+      expect.any(Function),
+    );
+  });
 
-    const DownvoteButton = component.queryAllByTestId(DOWNVOTE_BUTTON)[0];
-    expect(onDownvoteMock).not.toHaveBeenCalled();
+  it('fires appropriate method when downvote button clicked', () => {
+    const handleVoteMock = jest.fn();
+
+    const component = render(<ResourceCard {...requiredProps} handleVote={handleVoteMock} />);
+
+    const DownvoteButton = component.queryByTestId(DOWNVOTE_BUTTON);
+    expect(handleVoteMock).not.toHaveBeenCalled();
     fireEvent.click(DownvoteButton);
-    expect(onDownvoteMock).toHaveBeenCalledTimes(1);
+    expect(handleVoteMock).toHaveBeenCalledTimes(1);
+    expect(handleVoteMock).toHaveBeenCalledWith(
+      'downvote',
+      4,
+      expect.any(Function),
+      expect.any(Function),
+    );
   });
 });

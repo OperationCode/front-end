@@ -6,7 +6,9 @@ import OutboundLink from 'components/OutboundLink/OutboundLink';
 import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
 import {
   UPVOTE_BUTTON,
+  UPVOTE_COUNT,
   DOWNVOTE_BUTTON,
+  DOWNVOTE_COUNT,
   RESOURCE_CARD,
   RESOURCE_TITLE,
 } from 'common/constants/testIDs';
@@ -25,6 +27,7 @@ ResourceCard.propTypes = {
   downvotes: number,
   href: string.isRequired,
   name: string.isRequired,
+  id: number.isRequired,
   category: string,
   languages: oneOfType([string, array]),
   isFree: bool,
@@ -55,27 +58,31 @@ function ResourceCard({
   handleVote,
   upvotes,
   userVote,
+  id,
 }) {
   const [upVotes, setUpVotes] = useState(upvotes);
   const [downVotes, setDownVotes] = useState(downvotes);
   const didUpvote = userVote === possibleUserVotes.upvote;
   const didDownvote = userVote === possibleUserVotes.downvote;
 
+  const DESKTOP_VOTING_BLOCK = 'desktopVotingBlock';
+
   // Sync IDs with stylesheet
   // eslint-disable-next-line react/prop-types
-  const VotingBlock = ({ id }) => {
-    const onUpvote = () => handleVote('upvotes', setUpVotes);
-    const downUpvote = () => handleVote('downvotes', setDownVotes);
+  const VotingBlock = ({ blockID, resourceID }) => {
+    const onVote = voteDirection => handleVote(voteDirection, resourceID, setUpVotes, setDownVotes);
+    const onUpvote = () => onVote('upvote');
+    const onDownvote = () => onVote('downvote');
 
     return (
-      <div className={classNames(styles.votingBlock, styles[id])}>
+      <div className={classNames(styles.votingBlock, styles[blockID])}>
         <span className={styles.votingBlockHeader}>Useful?</span>
 
         <div className={styles.voteInfo}>
           <button
             className={classNames(styles.voteButton, { [styles.active]: didUpvote })}
             aria-pressed={didUpvote}
-            data-testid={UPVOTE_BUTTON}
+            data-testid={blockID === DESKTOP_VOTING_BLOCK ? UPVOTE_BUTTON : undefined}
             onClick={onUpvote}
             type="button"
           >
@@ -91,7 +98,7 @@ function ResourceCard({
               className={classNames(styles.voteCount, { [styles.active]: didUpvote })}
             >
               <ScreenReaderOnly>Number of upvotes:</ScreenReaderOnly>
-              {upVotes.toString()}
+              <span data-testid={UPVOTE_COUNT}>{upVotes.toString()}</span>
             </span>
           </button>
         </div>
@@ -100,8 +107,8 @@ function ResourceCard({
           <button
             className={classNames(styles.voteButton, { [styles.active]: didDownvote })}
             aria-pressed={didDownvote}
-            data-testid={DOWNVOTE_BUTTON}
-            onClick={downUpvote}
+            data-testid={blockID === DESKTOP_VOTING_BLOCK ? DOWNVOTE_BUTTON : undefined}
+            onClick={onDownvote}
             type="button"
           >
             <ScreenReaderOnly>No</ScreenReaderOnly>
@@ -113,7 +120,7 @@ function ResourceCard({
 
             <span className={classNames(styles.voteCount, { [styles.active]: didDownvote })}>
               <ScreenReaderOnly>Number of downvotes:</ScreenReaderOnly>
-              {downVotes.toString()}
+              <span data-testid={DOWNVOTE_COUNT}>{downVotes.toString()}</span>
             </span>
           </button>
         </div>
@@ -145,7 +152,7 @@ function ResourceCard({
               </OutboundLink>
             </h5>
 
-            <VotingBlock id="desktopVotingBlock" />
+            <VotingBlock blockID={DESKTOP_VOTING_BLOCK} resourceID={id} />
           </div>
         ),
         bodyChildren: (
@@ -161,7 +168,7 @@ function ResourceCard({
               </p>
             </div>
 
-            <VotingBlock id="mobileVotingBlock" />
+            <VotingBlock blockID="mobileVotingBlock" resourceID={id} />
           </div>
         ),
       }}
