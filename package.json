@@ -88,7 +88,7 @@
     "@babel/preset-env": "^7.11.5",
     "@cypress/code-coverage": "3.8.1",
     "@cypress/webpack-preprocessor": "^5.4.6",
-    "@mdx-js/loader": "^1.6.18",
+    "@mdx-js/loader": "^1.6.19",
     "@next/mdx": "^9.5.3",
     "@operation_code/eslint-plugin-custom-rules": "^1.0.1",
     "@storybook/addon-actions": "^6.0.26",
