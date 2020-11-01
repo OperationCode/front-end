@@ -263,7 +263,7 @@ describe('resources', () => {
 
     cy.findByTestId(LOGIN_FORM).should('not.exist');
 
-    cy.findAllByTestId(UPVOTE_COUNT).invoke('text').as('currentUpVoteCountText');
+    cy.findAllByTestId(UPVOTE_COUNT).first().invoke('text').as('currentUpVoteCountText');
 
     cy.findAllByTestId(UPVOTE_BUTTON).first().click({ force: true });
     cy.wait('@upvote');
@@ -276,7 +276,7 @@ describe('resources', () => {
       });
     });
 
-    cy.findAllByTestId(DOWNVOTE_COUNT).invoke('text').as('currentDownVoteCountText');
+    cy.findAllByTestId(DOWNVOTE_COUNT).first().invoke('text').as('currentDownVoteCountText');
 
     cy.findAllByTestId(DOWNVOTE_BUTTON).first().click({ force: true });
     cy.wait('@downvote');
@@ -285,10 +285,7 @@ describe('resources', () => {
       expect(status).to.eq(200);
       cy.get('@currentDownVoteCountText').then(downVoteText => {
         const downVoteNumber = parseInt(downVoteText, 10);
-        expect(response.body.resource.downvotes).to.be.oneOf([
-          downVoteNumber + 1,
-          downVoteNumber - 1,
-        ]);
+        expect(response.body.resource.downvotes).to.eq(downVoteNumber + 1);
       });
     });
   });
