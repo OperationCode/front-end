@@ -62,15 +62,18 @@ function ResourceCard({
 }) {
   const [upVotes, setUpVotes] = useState(upvotes);
   const [downVotes, setDownVotes] = useState(downvotes);
-  const didUpvote = userVote === possibleUserVotes.upvote;
-  const didDownvote = userVote === possibleUserVotes.downvote;
+  const [userVoteDirection, setUserVoteDirection] = useState(userVote);
+
+  const didUpvote = userVoteDirection === possibleUserVotes.upvote;
+  const didDownvote = userVoteDirection === possibleUserVotes.downvote;
 
   const DESKTOP_VOTING_BLOCK = 'desktopVotingBlock';
 
   // Sync IDs with stylesheet
   // eslint-disable-next-line react/prop-types
   const VotingBlock = ({ blockID, resourceID }) => {
-    const onVote = voteDirection => handleVote(voteDirection, resourceID, setUpVotes, setDownVotes);
+    const onVote = voteDirection =>
+      handleVote(voteDirection, resourceID, setUpVotes, setDownVotes, setUserVoteDirection);
     const onUpvote = () => onVote('upvote');
     const onDownvote = () => onVote('downvote');
 

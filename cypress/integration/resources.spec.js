@@ -265,14 +265,20 @@ describe('resources', () => {
 
     cy.findAllByTestId(UPVOTE_COUNT).first().invoke('text').as('currentUpVoteCountText');
 
-    cy.findAllByTestId(UPVOTE_BUTTON).first().click({ force: true });
-    cy.wait('@upvote');
+    cy.findAllByTestId(UPVOTE_BUTTON).first().as('upvoteButton');
 
-    cy.get('@upvote').then(({ status, response }) => {
-      expect(status).to.eq(200);
-      cy.get('@currentUpVoteCountText').then(upVoteText => {
-        const upVoteNumber = parseInt(upVoteText, 10);
-        expect(response.body.resource.upvotes).to.be.oneOf([upVoteNumber + 1, upVoteNumber - 1]);
+    cy.get('@upvoteButton').then(button => {
+      const diff = button[0].className.includes('active') ? -1 : 1;
+
+      cy.get('@upvoteButton').click({ force: true });
+      cy.wait('@upvote');
+
+      cy.get('@upvote').then(({ status, response }) => {
+        expect(status).to.eq(200);
+        cy.get('@currentUpVoteCountText').then(upVoteText => {
+          const upVoteNumber = parseInt(upVoteText, 10);
+          expect(response.body.resource.upvotes).to.be.eq(upVoteNumber + diff);
+        });
       });
     });
 

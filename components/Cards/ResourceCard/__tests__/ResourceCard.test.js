@@ -26,6 +26,7 @@ describe('ResourceCard', () => {
       4,
       expect.any(Function),
       expect.any(Function),
+      expect.any(Function),
     );
   });
 
@@ -41,6 +42,7 @@ describe('ResourceCard', () => {
     expect(handleVoteMock).toHaveBeenCalledWith(
       'downvote',
       4,
+      expect.any(Function),
       expect.any(Function),
       expect.any(Function),
     );
