@@ -21,13 +21,7 @@ describe('ResourceCard', () => {
     expect(handleVoteMock).not.toHaveBeenCalled();
     fireEvent.click(UpvoteButton);
     expect(handleVoteMock).toHaveBeenCalledTimes(1);
-    expect(handleVoteMock).toHaveBeenCalledWith(
-      'upvote',
-      4,
-      expect.any(Function),
-      expect.any(Function),
-      expect.any(Function),
-    );
+    expect(handleVoteMock).toHaveBeenCalledWith('upvote', 4);
   });
 
   it('fires appropriate method when downvote button clicked', () => {
@@ -39,12 +33,6 @@ describe('ResourceCard', () => {
     expect(handleVoteMock).not.toHaveBeenCalled();
     fireEvent.click(DownvoteButton);
     expect(handleVoteMock).toHaveBeenCalledTimes(1);
-    expect(handleVoteMock).toHaveBeenCalledWith(
-      'downvote',
-      4,
-      expect.any(Function),
-      expect.any(Function),
-      expect.any(Function),
-    );
+    expect(handleVoteMock).toHaveBeenCalledWith('downvote', 4);
   });
 });

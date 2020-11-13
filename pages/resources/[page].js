@@ -56,17 +56,20 @@ function Resources() {
     setAuthCookies({ token });
   };
 
-  const handleVote = (voteDirection, id, setUpVotes, setDownVotes, setUserVoteDirection) => {
+  const handleVote = (voteDirection, id) => {
     setErrorMessage(null);
     if (!hasValidAuthToken()) {
       setIsModalOpen(true);
       return;
     }
     updateResourceVoteCount({ id, voteDirection })
-      .then(({ data: { resource } }) => {
-        setUpVotes(resource.upvotes);
-        setDownVotes(resource.downvotes);
-        setUserVoteDirection(resource.user_vote_direction);
+      .then(({ data: { resource: updatedResource } }) => {
+        const updatedResourceIndex = resources.findIndex(resource => resource.id === id);
+        setResources([
+          ...resources.slice(0, updatedResourceIndex),
+          updatedResource,
+          ...resources.slice(updatedResourceIndex + 1),
+        ]);
       })
       .catch(() => {
         setErrorMessage(`There was a problem ${voteDirection.slice(0, -1)}ing a resource.`);
