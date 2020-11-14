@@ -42,33 +42,33 @@ describe('resources', () => {
     cy.get('h1').should('have.text', 'Resources');
   });
 
-  it.skip('redirects on /resources to resources/1', () => {
+  it('redirects on /resources to resources/1', () => {
     cy.visitAndWaitFor('/resources');
     cy.location('pathname').should('eq', '/resources/1');
   });
 
-  it.skip('loads many resource cards', () => {
+  it('loads many resource cards', () => {
     cy.visitAndWaitFor('/resources/1');
     cy.findAllByTestId(RESOURCE_CARD).should('have.length.greaterThan', 1);
   });
 
-  it.skip('loads the next page of results when using pagination to visit next page', () => {
+  it('loads the next page of results when using pagination to visit next page', () => {
     cy.findByTestId(NEXT_PAGE_BUTTON).click();
     cy.location('pathname').should('eq', '/resources/2');
   });
 
-  it.skip('loads the previous page of results when using pagination to visit previous page', () => {
+  it('loads the previous page of results when using pagination to visit previous page', () => {
     cy.visitAndWaitFor('/resources/2');
     cy.findByTestId(PREV_PAGE_BUTTON).click();
     cy.location('pathname').should('eq', '/resources/1');
   });
 
-  it.skip('loads the second page of results when using pagination to visit page 2', () => {
+  it('loads the second page of results when using pagination to visit page 2', () => {
     cy.findByTestId('page 3').click();
     cy.location('pathname').should('eq', '/resources/3');
   });
 
-  it.skip('will allow a user to search matching resources by input', () => {
+  it('will allow a user to search matching resources by input', () => {
     cy.findByTestId(RESOURCE_SEARCH).click().type('javascript', { force: true }).type('{enter}');
 
     cy.location().should(({ pathname, search }) => {
@@ -96,7 +96,7 @@ describe('resources', () => {
     });
   });
 
-  it.skip('will allow a user reset their search form', () => {
+  it('will allow a user reset their search form', () => {
     cy.findByTestId(RESOURCE_SEARCH).click().type('javascript', { force: true }).type('{enter}');
 
     cy.location().should(({ pathname, search }) => {
@@ -117,7 +117,7 @@ describe('resources', () => {
     });
   });
 
-  it.skip('will allow a user to filter resources by category', () => {
+  it('will allow a user to filter resources by category', () => {
     cy.findSelectByLabelText(CATEGORY_SELECT, { edit: true })
       .click({ force: true })
       .type('Books')
@@ -150,7 +150,7 @@ describe('resources', () => {
     });
   });
 
-  it.skip('will allow a user to filter resources by cost', () => {
+  it('will allow a user to filter resources by cost', () => {
     cy.findSelectByLabelText(COST_SELECT, { edit: true })
       .click({ force: true })
       .type('Free')
@@ -194,7 +194,7 @@ describe('resources', () => {
     });
   });
 
-  it.skip('will allow a user to filter resources by a language', () => {
+  it('will allow a user to filter resources by a language', () => {
     cy.findSelectByLabelText(LANGUAGES_SELECT, { edit: true })
       .click({ force: true })
       .type('javascript')
@@ -228,7 +228,7 @@ describe('resources', () => {
   });
 
   /** @see https://github.com/OperationCode/resources_api/issues/401 */
-  // it.skip('will allow a user to filter resources by many languages', () => {
+  // it('will allow a user to filter resources by many languages', () => {
   //   cy.findSelectByLabelText(LANGUAGES_SELECT, { edit: true })
   //     .click({ force: true })
   //     .type('javascript')
@@ -277,7 +277,7 @@ describe('resources', () => {
       cy.get('@beforeUpVoteCountText').then(upVoteCountText => {
         const beforeUpVoteCount = parseInt(upVoteCountText, 10);
         const diff = response.body.resource.user_vote_direction === 'upvote' ? 1 : -1;
-        expect(response.body.resource.upvotes).to.be.eq(beforeUpVoteCount + diff);
+        expect(response.body.resource.upvotes).to.eq(beforeUpVoteCount + diff);
       });
     });
   });
