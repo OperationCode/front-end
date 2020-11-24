@@ -132,6 +132,7 @@
     "express": "^4.17.1",
     "faker": "^5.1.0",
     "file-loader": "^6.1.0",
+    "gray-matter": "^4.0.2",
     "husky": "^4.3.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "26.5.0",

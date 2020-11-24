@@ -113,6 +113,14 @@ const nextConfig = withBundleAnalyzer({
           },
         ],
       },
+      {
+        test: /\.md$/,
+        use: [
+          {
+            loader: 'raw-loader',
+          },
+        ],
+      },
     );
 
     // Add polyfills
