@@ -138,6 +138,7 @@
     "jest": "26.5.0",
     "jest-prop-type-error": "^1.1.0",
     "lint-staged": "^10.4.0",
+    "marked": "^1.2.5",
     "postcss-custom-media": "^7.0.8",
     "postcss-custom-properties": "^10.0.0",
     "postcss-export-custom-variables": "^1.0.0",
