@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import fs from 'fs';
 import { join } from 'path';
 import dynamic from 'next/dynamic';

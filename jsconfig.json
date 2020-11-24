@@ -7,6 +7,9 @@
     "baseUrl": ".",
     "paths": {
       // Ensure intellisense continues to operate - match with webpack aliases
+      "@blogApi/*": ["./pages/api/blogIndex"],
+      "@blogArticles/*": ["./blogArticles/*"],
+      "@blogLayouts/*": ["./pages/blog/_blogLayouts/*"],
       "common/*": ["./common/*"],
       "components/*": ["./components/*"],
       "pages/*": ["./pages/*"],

@@ -1,15 +1,23 @@
+/* eslint-disable prettier/prettier */
 import fs from 'fs';
 import { join } from 'path';
-import PropTypes from 'prop-types';
 import { ONE_DAY } from 'common/constants/unitsOfTime';
+import matter from 'gray-matter';
+import PropTypes from 'prop-types';
 // import Card from 'components/Cards/Card/Card';
 import Head from 'components/head';
 // import Heading from 'components/Heading/Heading';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 // import Link from 'next/link';
 // import styles from 'styles/podcast.module.css';
+import { meta } from '../'
 
 const pageTitle = 'Blogs';
+
+
+BlogIndex.propTypes = {
+  articles: PropTypes.array.isRequired,
+};
 
 export async function getStaticProps() {
   const articlesDirectory = join(process.cwd(), 'blogArticles');
@@ -17,28 +25,25 @@ export async function getStaticProps() {
 
   return {
     props: {
-      articles: articleNames.map(articleName => articleName.replace('.mdx', '')),
+      articleNames.map(articleName => articleName.replace('.mdx', '')),
     },
-    revalidate: ONE_DAY,
+    revalidate: ONE_DAY
   };
-}
 
-BlogIndex.propTypes = {
-  articles: PropTypes.array.isRequired,
-};
+}
 
 function BlogIndex({ articles }) {
   return (
     // TODO: Need to create css file for Blog Cards
     // <div className={styles.Blog}>
     <div>
-    <Head title={pageTitle} />
+      <Head title={pageTitle} />
 
-    <HeroBanner title={pageTitle} />
+      <HeroBanner title={pageTitle} />
 
-    <p>{articles}</p>
+      <p>{articles}</p>
 
-    {/* //   {articles.map(article => {
+      {/* //   {articles.map(article => {
     //     return (
     //       //  TODO: Update classname for .blogCard
     //       <>
