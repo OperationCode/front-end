@@ -76,5 +76,6 @@ export default [
     'Johnny Huang',
     'Paul Stevens',
     'Asher Ferri',
-    'Kyle Holmberg'
+    'Kyle Holmberg',
+    'Alexander Verhulst',
 ]
