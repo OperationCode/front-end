@@ -10,22 +10,24 @@ export async function getAllPosts() {
     const content = await import(`../../blogArticles/${post}`);
     const meta = matter(content.default);
     posts.push({
-      slug: post.replace('.mdx',''),
-      title: meta.data.title
+      slug: post.replace('.md',''),
+      author: meta.data.author,
+      publishDate: meta.data.publishDate,
+      title: meta.data.title,
     });
   };
   return posts;
 };
 
 export async function getPostBySlug(slug) {
-  const fileContent = await import(`../../blogArticles/${slug}.mdx`);
+  const fileContent = await import(`../../blogArticles/${slug}.md`);
   const meta = matter(fileContent.default);
   const content = marked(meta.content);
 
   return {
     author: meta.data.author,
+    body: content,
     publishDate: meta.data.publishDate,
     title: meta.data.title,
-    body: content,
   }
-}
+};
