@@ -16,7 +16,7 @@ export async function getStaticPaths() {
     return articleNames.map(name => {
       return {
         params: {
-          article: name.replace(/\.mdx$/, ''),
+          article: name.replace(/\.md$/, ''),
         },
       };
     });
@@ -29,7 +29,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const articleName = `${params.article}.mdx`;
+  const articleName = `${params.article}.md`;
   return {
     props: {
       articleName,

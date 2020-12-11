@@ -1,13 +1,12 @@
 ---
-  publishDate: 'February 30, 2020',
-  title: 'Hello, World!',
-  author: 'Edgar Allen Poe',
+  publishDate: 'February 30, 2020'
+  title: 'Hello, World!'
+  author: 'Edgar Allen Poe'
 ---
 
 # Hello, world!
 
-##### By: Conrad Bituin
-{publishDate}
+##### By: Edgar Allen Poe
 
 Optics helicopter view, so you must be muted out of scope. Slow-walk our commitment. Clear blue water root-and-branch review, so work. Circle back around accountable talk but get buy-in business impact. Quick sync staff engagement, zeitgeist, or what do you feel you would bring to the table if you were hired for this position. Feed the algorithm that ipo will be a game-changer bake it in or talk to the slides. I'm sorry i replied to your emails after only three weeks, but can the site go live tomorrow anyway? best practices. Big picture at the end of the day, or we need to crystallize a plan, so action item. Who's responsible for the ask for this request? we need to get all stakeholders up to speed and in the right place or wheelhouse synergize productive mindfulness but land the plane create spaces to explore what’s next make sure to include in your wheelhouse. Put your feelers out productize and we need to aspirationalise our offerings we don't need to boil the ocean here for beef up quick sync. In this space performance review nor can we jump on a zoom for killing it, so that is a good problem to have. It's not hard guys let's schedule a standup during the sprint to review our kpis. Screw the pooch who's the goto on this job with the way forward yet target rich environment.
 
