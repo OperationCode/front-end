@@ -12344,10 +12344,10 @@ logrocket-react@^4.0.1:
   resolved "https://registry.yarnpkg.com/logrocket-react/-/logrocket-react-4.0.1.tgz#e8e5405ee5f47f2c25b511931e360713a623f927"
   integrity sha512-TbQELEaDQspKHH0XylAeVZpsHoAcz+sIEG/enUQiH+LoYLW7cMK000XIS6W3Zz14zS0V2Db+KyKi8ivBpGYkzg==
 
-logrocket@^1.0.13:
-  version "1.0.13"
-  resolved "https://registry.yarnpkg.com/logrocket/-/logrocket-1.0.13.tgz#5977f8df794f850b7d0ea5c374f397c8ec2553fd"
-  integrity sha512-zaXdPuVa3Eamw5MZ3R4DtESJulxDZr/2asE+pEChJ8L7gDc8H+zehLZF9b8tS33jMqaNztxXbZY9KWkVm5+Z6g==
+logrocket@^1.0.14:
+  version "1.0.14"
+  resolved "https://registry.yarnpkg.com/logrocket/-/logrocket-1.0.14.tgz#afe61a6b993691a706154e83fe2c05e8174a650d"
+  integrity sha512-notwwiIiXOmWSKQDsW8UrFJPu81u9rd6YaIFBmx6uF0XtXXwNQ+Mvteh5WHdABWcQ2nN4I7QkQrCAocYDx7OVg==
 
 lolex@^5.0.0:
   version "5.1.2"
