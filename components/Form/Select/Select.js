@@ -83,7 +83,7 @@ export default function Select({
 
   /**
    * @description Return the selected value as a string
-   * @returns {string}
+   * @returns {{ label: string; value: string; }}
    */
   const getValueFromSingle = () => {
     return options.find(option => option.value === fieldValue);
@@ -91,7 +91,7 @@ export default function Select({
 
   /**
    * @description Return an array of selected values for multi selects
-   * @returns {string[]}
+   * @returns {{ label: string; value: string; }[]}
    */
   const getValueFromMulti = () => {
     return options.filter(option => fieldValue.includes(option.value));

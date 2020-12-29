@@ -1,17 +1,4 @@
-<div align="center">
-  <a href="https://operationcode.org" height="750" width="750">
-    <img
-      alt="Operation Code Hacktoberfest Banner"
-      src="https://operation-code-assets.s3.us-east-2.amazonaws.com/operationcode_hacktoberfest_2020.jpg"
-    >
-  </a>
-</div>
-<br />
-<br />
-
-# 🎃 Hacktoberfest 🎃
-
-[All the details you need](https://github.com/OperationCode/START_HERE/blob/master/README.md#-hacktoberfest-) before participating with us during Hacktoberfest.
+![Operation Code Logo](https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/large-blue-logo.png)
 
 <br />
 
