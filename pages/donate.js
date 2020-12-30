@@ -1,8 +1,9 @@
+/* eslint-disable prettier/prettier */
 import Head from 'components/head';
 import Container from 'components/Container/Container';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 
-const pageTitle = 'Donate';
+const pageTitle = 'Donation';
 
 function DonatePage() {
   return (

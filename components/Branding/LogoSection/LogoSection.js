@@ -1,3 +1,8 @@
+/* eslint-disable prettier/prettier */
+/* eslint-disable react/no-unescaped-entities */
+// eslint-disable-next-line prettier/prettier
+/* eslint-disable max-len */
+/* eslint-disable prettier/prettier */
 import React from 'react';
 import classNames from 'classnames';
 import Badge from 'components/Badge/Badge';
@@ -15,8 +20,8 @@ function LogoSection() {
         <ul className={styles.logoSizeList}>
           {/* - SMALL LOGOS - */}
           <li className={classNames(styles.logoSizeListItem, styles.smallLogos)}>
-            <h5>SMALL</h5>
-            <p>For use when the medal is between 0 and 1-inch tall.</p>
+            <h5>Small Logos</h5>
+            <p>For use when Operation Code's logo name is between 0-1 inch in height. In most cases, use the Original Small Logo. The Stacked Small Logo is to be used where graphics needs are larger in vertical height than horizontal width with the Operation Code logo name still under 1 inch in height.</p>
 
             <ul className={styles.logoTypeList}>
               <li className={styles.logoTypeListItem}>
@@ -78,15 +83,15 @@ function LogoSection() {
               </li>
 
               <li className={styles.logoTypeListItem}>
-                <h6>STACKED</h6>
-
+                <h6>Stacked Logos</h6>
+                <p>Use the Large Stacked Original logo in areas where you have more vertical space than horizontal. Only use the Red Stacked Logo for special holidays such as Thanksgiving, fall events, and Christmas. The Light Stacked Logo is to be used with dark or contrasting bright colored backgrounds.</p>
                 <ul className={styles.badgeList}>
                   <li>
                     <Badge
                       icon={
                         <img
                           src={`${s3}branding/logos/small-stacked-logo-blue.png`}
-                          alt="Stacked Small Blue Logo"
+                          alt="Large Stacked Original"
                         />
                       }
                       isImageFirst={false}
@@ -99,7 +104,7 @@ function LogoSection() {
                       icon={
                         <img
                           src={`${s3}branding/logos/small-stacked-logo-red.png`}
-                          alt="Stacked Small Red Logo"
+                          alt="Red Stacked Logo"
                         />
                       }
                       isImageFirst={false}
@@ -112,7 +117,7 @@ function LogoSection() {
                       icon={
                         <img
                           src={`${s3}branding/logos/small-stacked-logo.png`}
-                          alt="Stacked Unaccented Slate Logo"
+                          alt="Light Stacked Logo"
                         />
                       }
                       isImageFirst={false}
@@ -123,17 +128,16 @@ function LogoSection() {
               </li>
 
               <li className={styles.logoTypeListItem}>
-                <h6>MEDALS</h6>
+                <h6>Medals</h6>
                 <p>
-                  For use as an icon reference, when no other logo representations will fit the
-                  media space.
+                Use the following medals when you are prompted to upload a thumbnail logo only or profile photo. In most cases, use the OC Blue Medal. The Red Medal should only be used for holidays and special events (such as Thanksgiving, fall, or Christmas). The Navy Medal should be used memorandums or lighter bright colored backgrounds.
                 </p>
 
                 <ul className={styles.badgeList}>
                   <li>
                     <Badge
                       icon={
-                        <img src={`${s3}branding/logos/large-blue-medal.png`} alt="Blue Medal" />
+                        <img src={`${s3}branding/logos/large-blue-medal.png`} alt="OC Blue Medal" />
                       }
                       isImageFirst={false}
                       label="Blue"
@@ -151,21 +155,58 @@ function LogoSection() {
                   <li>
                     <Badge
                       icon={
-                        <img src={`${s3}branding/logos/large-slate-medal.png`} alt="Slate Medal" />
+                        <img src={`${s3}branding/logos/large-slate-medal.png`} alt="Navy Medal" />
                       }
                       isImageFirst={false}
-                      label="Slate"
+                      label="Navy"
                     />
                   </li>
                 </ul>
               </li>
+
+              <li className={styles.logoTypeListItem}>
+                <h6>Badges</h6>
+                <p>
+                You may also use badges as a profile photo or thumbnail. Badges should be used to accompany corporate sponsors or alliance partnerships on shared branding. Use the original OC Blue Badge in most cases, except the Red Badge for special events and holidays (Thanksgiving, fall and Christmas). The Navy Badge may be used with light backgrounds and bright colored backgrounds.
+                </p>
+                <ul className={styles.badgeList}>
+                  <li>
+                    <Badge
+                      icon={
+                        <img src={`${s3}branding/logos/large-blue-medal.png`} alt="OC Blue Badge" />
+                      }
+                      isImageFirst={false}
+                      label="OC Blue Badge"
+                      />
+                  </li>
+
+                  <li>
+                    <Badge
+                    icon={
+                      <img src={`${s3}branding/logos/large-red-medal.png`} alt="Red Badge" />}
+                      isImageFirst={false}
+                      label="Red Badge"
+                     />
+                  </li>
+
+                  <li>
+                    <Badge
+                    icon={
+                      <img src={`${s3}branding/logos/large-slate-medal.png`} alt="Navy" />}
+                      isImageFirst={false}
+                      label="Navy Badge"
+                    />
+                  </li>
+                </ul>
+              </li>
+
             </ul>
           </li>
 
           {/* - LARGE LOGOS - */}
           <li className={classNames(styles.logoSizeListItem, styles.largeLogos)}>
-            <h5>LARGE</h5>
-            <p>For use when the medal is above 1-inch tall.</p>
+            <h5>Large Logos</h5>
+            <p>Use the Original Large Logo in almost all cases above 1 inch in height. The Red Large Logo is to be used in special events (such as Thanksgiving, fall or Christmas), and the Light Large Logo is to be used with dark backgrounds or bright colored backgrounds.</p>
 
             <ul className={styles.logoTypeList}>
               <li className={styles.logoTypeListItem}>
@@ -177,7 +218,7 @@ function LogoSection() {
                       icon={
                         <img
                           src={`${s3}branding/logos/large-blue-logo.png`}
-                          alt="Large Blue Accented Logo"
+                          alt="Original Large Logo"
                         />
                       }
                       isImageFirst={false}
@@ -190,7 +231,7 @@ function LogoSection() {
                       icon={
                         <img
                           src={`${s3}branding/logos/large-red-logo.png`}
-                          alt="Large Red Accented Logo"
+                          alt="Red Large Logo"
                         />
                       }
                       isImageFirst={false}
@@ -203,7 +244,7 @@ function LogoSection() {
                       icon={
                         <img
                           src={`${s3}branding/logos/large-logo.png`}
-                          alt="Large Unaccenteded Logo"
+                          alt="Large Unaccented Logo"
                         />
                       }
                       isImageFirst={false}
@@ -221,51 +262,6 @@ function LogoSection() {
                       }
                       isImageFirst={false}
                       label="White"
-                    />
-                  </li>
-                </ul>
-              </li>
-
-              <li className={styles.logoTypeListItem}>
-                <h6>STACKED</h6>
-
-                <ul className={styles.badgeList}>
-                  <li>
-                    <Badge
-                      icon={
-                        <img
-                          src={`${s3}branding/logos/large-stacked-logo-blue.png`}
-                          alt="Stacked Large Blue Logo"
-                        />
-                      }
-                      isImageFirst={false}
-                      label="Blue"
-                    />
-                  </li>
-
-                  <li>
-                    <Badge
-                      icon={
-                        <img
-                          src={`${s3}branding/logos/large-stacked-logo-red.png`}
-                          alt="Stacked Large Red Logo"
-                        />
-                      }
-                      isImageFirst={false}
-                      label="Red"
-                    />
-                  </li>
-
-                  <li>
-                    <Badge
-                      icon={
-                        <img
-                          src={`${s3}branding/logos/large-stacked-logo.png`}
-                          alt="Stacked Large Slate Logo"
-                        />
-                      }
-                      isImageFirst={false}
-                      label="Slate"
                     />
                   </li>
                 </ul>

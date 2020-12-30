@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import flattenDepth from 'lodash/flattenDepth';
 
 // MARK: Links shared between nav and footer (no duplicate code)
@@ -19,6 +20,11 @@ const faqLink = {
 const podcastLink = {
   name: 'Podcast',
   href: '/podcast',
+};
+
+const brandingLink = {
+  name: 'Branding',
+  href: '/branding',
 };
 
 const getInvolvedLink = {
@@ -51,7 +57,7 @@ const accountWithSublinks = {
 const aboutUs = {
   name: 'About Us',
   href: '/about',
-  sublinks: [whoWeServeLink, contactLink, faqLink, podcastLink],
+  sublinks: [whoWeServeLink, contactLink, faqLink, podcastLink, brandingLink],
 };
 
 const events = {

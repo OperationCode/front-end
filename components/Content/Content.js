@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React from 'react';
 import { array, bool, oneOf, string } from 'prop-types';
 import Container from 'components/Container/Container';

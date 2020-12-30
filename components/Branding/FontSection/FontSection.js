@@ -1,3 +1,8 @@
+/* eslint-disable prettier/prettier */
+
+/* eslint-disable prettier/prettier */
+/* eslint-disable react/self-closing-comp */
+/* eslint-disable prettier/prettier */
 import React from 'react';
 import Content from 'components/Content/Content';
 import { fontsObject } from 'common/styles/styleExports';
@@ -9,7 +14,7 @@ function FontSection() {
 
   return (
     <Content
-      title="Fonts"
+      title="Typography"
       theme="gray"
       hasTitleUnderline
       columns={[
@@ -30,7 +35,9 @@ function FontSection() {
         </ul>,
       ]}
     />
+
   );
+  
 }
 
 export default FontSection;

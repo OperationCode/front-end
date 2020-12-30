@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';

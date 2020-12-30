@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { isHexColor } from 'common/utils/style-utils';
 import * as themeMap from './themeMap';
 

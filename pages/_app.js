@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 /* eslint-disable max-classes-per-file */
 import * as Sentry from '@sentry/browser';
 import App from 'next/app';
