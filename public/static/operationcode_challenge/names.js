@@ -78,4 +78,5 @@ export default [
     'Asher Ferri',
     'Kyle Holmberg',
     'Alexander Verhulst',
+    'Christian Gonzalez',
 ]
