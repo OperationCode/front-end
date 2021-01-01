@@ -84,7 +84,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
-    "@babel/plugin-syntax-jsx": "^7.10.4",
+    "@babel/plugin-syntax-jsx": "^7.12.1",
     "@babel/preset-env": "^7.11.5",
     "@cypress/code-coverage": "3.8.1",
     "@cypress/webpack-preprocessor": "^5.4.6",
