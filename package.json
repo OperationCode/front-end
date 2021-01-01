@@ -96,7 +96,7 @@
     "@storybook/addon-links": "^6.0.26",
     "@storybook/addons": "^6.0.26",
     "@storybook/react": "^6.0.26",
-    "@storybook/theming": "^6.0.26",
+    "@storybook/theming": "^6.1.11",
     "@svgr/webpack": "^5.4.0",
     "@testing-library/cypress": "^7.0.1",
     "@testing-library/jest-dom": "^5.11.4",
