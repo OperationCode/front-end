@@ -1,7 +1,7 @@
 # Operation Code: Còdigo de conducta
 
-
 ## Nuestra misión
+
 Con el fin de fomentar un entorno abierto y acogedor, como
 colaboradores y administradores, nos comprometemos a mantener participación en nuestro proyecto y
 nuestra comunidad con la finalidad de otorgar una experiencia libre de acoso para todos, independientemente de su edad, cuerpo tamaño, discapacidad, etnia, identidad y expresión de género, nivel de experiencia,
@@ -9,23 +9,25 @@ nacionalidad, apariencia personal, raza, religión o identidad sexual y
 orientación.
 
 ## Nuestros estándares
-Ejemplos de conductas que contribuyen a la creación de un ambiente positivo 
+
+Ejemplos de conductas que contribuyen a la creación de un ambiente positivo
 dentro de la comunidad incluyen:
+
 - El uso de un lenguaje moderado e inclusivo
 - Ser respetuoso con respecto a los diferentes puntos de vista y experiencias de otras personas
 - Ser positivo entorno a las críticas constructivas
-- Pensar en lo mejor para la comunidad 
+- Pensar en lo mejor para la comunidad
 - Mostrar empatía hacia otros miembros de la comunidad
 
 Ejemplos de conducta inaceptable dentro de los participantes:
-- El uso de lenguaje, contenido o acciones malintencionadas/sexualizadas.
-- El trolleo, comentarios insultantes/degradantes, al igual que los ataques 
-    personales u polìticos
-- Acoso público o privado
-- La publicación de información privada de otros miembros como direcciones físicas u electrónica 
-    sin permiso
-- Otro tipo de conductas que se consideren inapropiadas en un entorno profesional
 
+- El uso de lenguaje, contenido o acciones malintencionadas/sexualizadas.
+- El trolleo, comentarios insultantes/degradantes, al igual que los ataques
+  personales u polìticos
+- Acoso público o privado
+- La publicación de información privada de otros miembros como direcciones físicas u electrónica
+  sin permiso
+- Otro tipo de conductas que se consideren inapropiadas en un entorno profesional
 
 ## Nuestras responsabilidades
 
@@ -36,7 +38,6 @@ Los administradores de la comunidad tendrán el derecho y la responsabilidad de 
 ## Alcance
 
 Este código de conducta aplica tanto a espacios del proyecto como a espacios públicos donde un individuo esté en representación del proyecto o comunidad. Ejemplos de esto incluyen el uso de la cuenta oficial de correo electrónico, publicaciones a través de las redes sociales oficiales, o presentaciones con personas designadas en eventos en línea o no.
-
 
 ## Aplicación
 
