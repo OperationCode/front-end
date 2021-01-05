@@ -159,5 +159,9 @@
     "url-loader": "^4.1.0",
     "webpack": "^4.44.2",
     "webpack-filter-warnings-plugin": "^1.2.1"
-  }
+  },
+  "description": "![Operation Code Logo](https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/large-blue-logo.png)",
+  "main": ".babelrc.js",
+  "keywords": [],
+  "author": ""
 }

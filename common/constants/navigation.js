@@ -21,6 +21,12 @@ const podcastLink = {
   href: '/podcast',
 };
 
+
+const brandingLink = {
+  name: 'Branding',
+  href: '/branding',
+};
+
 const getInvolvedLink = {
   name: 'Get Involved',
   href: '/get_involved',
@@ -51,7 +57,7 @@ const accountWithSublinks = {
 const aboutUs = {
   name: 'About Us',
   href: '/about',
-  sublinks: [whoWeServeLink, contactLink, faqLink, podcastLink],
+  sublinks: [whoWeServeLink, contactLink, faqLink, podcastLink, brandingLink],
 };
 
 const events = {
