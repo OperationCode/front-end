@@ -57,6 +57,6 @@ exports[`FontSection should render with required props 1`] = `
   hasTitleUnderline={true}
   isFullViewportHeight={false}
   theme="gray"
-  title="Fonts"
+  title="Typography"
 />
 `;
