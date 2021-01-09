@@ -4,6 +4,7 @@ import Badge from 'components/Badge/Badge';
 import Content from 'components/Content/Content';
 import { s3 } from 'common/constants/urls';
 import styles from './LogoSection.module.css';
+
 function LogoSection() {
   return (
     <Content
@@ -15,7 +16,12 @@ function LogoSection() {
           {/* - SMALL LOGOS - */}
           <li className={classNames(styles.logoSizeListItem, styles.smallLogos)}>
             <h5>Small Logos</h5>
-            <p>For use when Operation Code's logo name is between 0-1 inch in height. In most cases, use the Original Small Logo. The Stacked Small Logo is to be used where graphics needs are larger in vertical height than horizontal width with the Operation Code logo name still under 1 inch in height.</p>
+            <p>
+              For use when Operation Code&apos;s logo name is between 0-1 inch in height. In most
+              cases, use the Original Small Logo. The Stacked Small Logo is to be used where
+              graphics needs are larger in vertical height than horizontal width with the Operation
+              Code logo name still under 1 inch in height.
+            </p>
 
             <ul className={styles.logoTypeList}>
               <li className={styles.logoTypeListItem}>
@@ -74,7 +80,12 @@ function LogoSection() {
 
               <li className={styles.logoTypeListItem}>
                 <h6>Stacked Logos</h6>
-                <p>Use the Large Stacked Original logo in areas where you have more vertical space than horizontal. Only use the Red Stacked Logo for special holidays such as Thanksgiving, fall events, and Christmas. The Light Stacked Logo is to be used with dark or contrasting bright colored backgrounds.</p>
+                <p>
+                  Use the Large Stacked Original logo in areas where you have more vertical space
+                  than horizontal. Only use the Red Stacked Logo for special holidays such as
+                  Thanksgiving, fall events, and Christmas. The Light Stacked Logo is to be used
+                  with dark or contrasting bright colored backgrounds.
+                </p>
                 <ul className={styles.badgeList}>
                   <li>
                     <Badge
@@ -118,7 +129,10 @@ function LogoSection() {
               <li className={styles.logoTypeListItem}>
                 <h6>Medals</h6>
                 <p>
-                Use the following medals when you are prompted to upload a thumbnail logo only or profile photo. In most cases, use the OC Blue Medal. The Red Medal should only be used for holidays and special events (such as Thanksgiving, fall, or Christmas). The Navy Medal should be used memorandums or lighter bright colored backgrounds.
+                  Use the following medals when you are prompted to upload a thumbnail logo only or
+                  profile photo. In most cases, use the OC Blue Medal. The Red Medal should only be
+                  used for holidays and special events (such as Thanksgiving, fall, or Christmas).
+                  The Navy Medal should be used memorandums or lighter bright colored backgrounds.
                 </p>
 
                 <ul className={styles.badgeList}>
@@ -144,7 +158,6 @@ function LogoSection() {
                         <img src={`${s3}branding/logos/large-slate-medal.png`} alt="Navy Medal" />
                       }
                       isImageFirst={false}
-                      label="Slate"
                       label="Navy"
                     />
                   </li>
@@ -154,7 +167,11 @@ function LogoSection() {
               <li className={styles.logoTypeListItem}>
                 <h6>Badges</h6>
                 <p>
-                You may also use badges as a profile photo or thumbnail. Badges should be used to accompany corporate sponsors or alliance partnerships on shared branding. Use the original OC Blue Badge in most cases, except the Red Badge for special events and holidays (Thanksgiving, fall and Christmas). The Navy Badge may be used with light backgrounds and bright colored backgrounds.
+                  You may also use badges as a profile photo or thumbnail. Badges should be used to
+                  accompany corporate sponsors or alliance partnerships on shared branding. Use the
+                  original OC Blue Badge in most cases, except the Red Badge for special events and
+                  holidays (Thanksgiving, fall and Christmas). The Navy Badge may be used with light
+                  backgrounds and bright colored backgrounds.
                 </p>
                 <ul className={styles.badgeList}>
                   <li>
@@ -164,13 +181,12 @@ function LogoSection() {
                       }
                       isImageFirst={false}
                       label="OC Blue Badge"
-                      />
+                    />
                   </li>
 
                   <li>
                     <Badge
-                    icon={
-                      <img src={`${s3}branding/logos/large-red-medal.png`} alt="Red Badge" />}
+                      icon={<img src={`${s3}branding/logos/large-red-medal.png`} alt="Red Badge" />}
                       isImageFirst={false}
                       label="Red Badge"
                     />
@@ -178,22 +194,25 @@ function LogoSection() {
 
                   <li>
                     <Badge
-                    icon={
-                      <img src={`${s3}branding/logos/large-slate-medal.png`} alt="Navy" />}
+                      icon={<img src={`${s3}branding/logos/large-slate-medal.png`} alt="Navy" />}
                       isImageFirst={false}
                       label="Navy Badge"
                     />
                   </li>
                 </ul>
               </li>
-
             </ul>
           </li>
 
           {/* - LARGE LOGOS - */}
           <li className={classNames(styles.logoSizeListItem, styles.largeLogos)}>
             <h5>Large Logos</h5>
-            <p>Use the Original Large Logo in almost all cases above 1 inch in height. The Red Large Logo is to be used in special events (such as Thanksgiving, fall or Christmas), and the Light Large Logo is to be used with dark backgrounds or bright colored backgrounds.</p>
+            <p>
+              Use the Original Large Logo in almost all cases above 1 inch in height. The Red Large
+              Logo is to be used in special events (such as Thanksgiving, fall or Christmas), and
+              the Light Large Logo is to be used with dark backgrounds or bright colored
+              backgrounds.
+            </p>
 
             <ul className={styles.logoTypeList}>
               <li className={styles.logoTypeListItem}>
@@ -216,10 +235,7 @@ function LogoSection() {
                   <li>
                     <Badge
                       icon={
-                        <img
-                          src={`${s3}branding/logos/large-red-logo.png`}
-                          alt="Red Large Logo"
-                        />
+                        <img src={`${s3}branding/logos/large-red-logo.png`} alt="Red Large Logo" />
                       }
                       isImageFirst={false}
                       label="Red"

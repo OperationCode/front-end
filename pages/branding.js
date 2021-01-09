@@ -15,10 +15,14 @@ function Branding() {
       <Head title={pageTitle} />
 
       <HeroBanner isFullViewportHeight title={pageTitle}>
-        <h6 className={styles.justifyAlign}>For external organizations, corporate sponsors and press, please obtain specific guidance and approval from the Director of Communications prior to using Operation Code Branding on public platforms. You may email your request to marketing@operationcode.org</h6>
+        <h6 className={styles.justifyAlign}>
+          For external organizations, corporate sponsors and press, please obtain specific guidance
+          and approval from the Director of Communications prior to using Operation Code Branding on
+          public platforms. You may email your request to marketing@operationcode.org
+        </h6>
 
         <br />
-        
+
         <h6 className={styles.topMargin}>General Guidelines</h6>
 
         <p className={styles.justifyAlign}>
@@ -36,7 +40,16 @@ function Branding() {
           files linked are &quot;large&quot; or &quot;small&quot; as described.
         </p>
 
-        <p className={styles.justifyAlign}>View <a rel="noreferrer" target="_blank" href="https://storybook.operationcode.org/?path=/story/heading--default">Operation Code's Storybook Component Library here.</a></p>        
+        <p className={styles.justifyAlign}>
+          View{' '}
+          <a
+            rel="noreferrer"
+            target="_blank"
+            href="https://storybook.operationcode.org/?path=/story/heading--default"
+          >
+            Operation Code&apos;s Storybook Component Library here.
+          </a>
+        </p>
 
         <p className={styles.justifyAlign}>
           <OutboundLink

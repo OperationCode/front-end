@@ -21,7 +21,6 @@ const podcastLink = {
   href: '/podcast',
 };
 
-
 const brandingLink = {
   name: 'Branding',
   href: '/branding',
