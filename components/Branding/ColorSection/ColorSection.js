@@ -5,7 +5,6 @@ import Content from 'components/Content/Content';
 import styles from './ColorSection.module.css';
 
 function ColorSection() {
-  // TODO: Name our primary and secondary colors
   const primaryColor = { name: 'Primary', hexCode: brandColorsObject.primary };
   const secondaryColor = { name: 'Secondary', hexCode: brandColorsObject.secondary };
 

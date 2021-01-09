@@ -9,7 +9,7 @@ function FontSection() {
 
   return (
     <Content
-      title="Fonts"
+      title="Typography"
       theme="gray"
       hasTitleUnderline
       columns={[

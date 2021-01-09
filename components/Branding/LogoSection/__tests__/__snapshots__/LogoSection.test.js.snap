@@ -11,10 +11,10 @@ exports[`LogoSection should render with required props 1`] = `
           className="logoSizeListItem smallLogos"
         >
           <h5>
-            SMALL
+            Small Logos
           </h5>
           <p>
-            For use when the medal is between 0 and 1-inch tall.
+            For use when Operation Code's logo name is between 0-1 inch in height. In most cases, use the Original Small Logo. The Stacked Small Logo is to be used where graphics needs are larger in vertical height than horizontal width with the Operation Code logo name still under 1 inch in height.
           </p>
           <ul
             className="logoTypeList"
@@ -82,8 +82,11 @@ exports[`LogoSection should render with required props 1`] = `
               className="logoTypeListItem"
             >
               <h6>
-                STACKED
+                Stacked Logos
               </h6>
+              <p>
+                Use the Large Stacked Original logo in areas where you have more vertical space than horizontal. Only use the Red Stacked Logo for special holidays such as Thanksgiving, fall events, and Christmas. The Light Stacked Logo is to be used with dark or contrasting bright colored backgrounds.
+              </p>
               <ul
                 className="badgeList"
               >
@@ -91,7 +94,7 @@ exports[`LogoSection should render with required props 1`] = `
                   <Badge
                     icon={
                       <img
-                        alt="Stacked Small Blue Logo"
+                        alt="Large Stacked Original"
                         src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/small-stacked-logo-blue.png"
                       />
                     }
@@ -103,7 +106,7 @@ exports[`LogoSection should render with required props 1`] = `
                   <Badge
                     icon={
                       <img
-                        alt="Stacked Small Red Logo"
+                        alt="Red Stacked Logo"
                         src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/small-stacked-logo-red.png"
                       />
                     }
@@ -115,7 +118,7 @@ exports[`LogoSection should render with required props 1`] = `
                   <Badge
                     icon={
                       <img
-                        alt="Stacked Unaccented Slate Logo"
+                        alt="Light Stacked Logo"
                         src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/small-stacked-logo.png"
                       />
                     }
@@ -129,10 +132,10 @@ exports[`LogoSection should render with required props 1`] = `
               className="logoTypeListItem"
             >
               <h6>
-                MEDALS
+                Medals
               </h6>
               <p>
-                For use as an icon reference, when no other logo representations will fit the media space.
+                Use the following medals when you are prompted to upload a thumbnail logo only or profile photo. In most cases, use the OC Blue Medal. The Red Medal should only be used for holidays and special events (such as Thanksgiving, fall, or Christmas). The Navy Medal should be used memorandums or lighter bright colored backgrounds.
               </p>
               <ul
                 className="badgeList"
@@ -141,7 +144,7 @@ exports[`LogoSection should render with required props 1`] = `
                   <Badge
                     icon={
                       <img
-                        alt="Blue Medal"
+                        alt="OC Blue Medal"
                         src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/large-blue-medal.png"
                       />
                     }
@@ -165,12 +168,62 @@ exports[`LogoSection should render with required props 1`] = `
                   <Badge
                     icon={
                       <img
-                        alt="Slate Medal"
+                        alt="Navy Medal"
                         src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/large-slate-medal.png"
                       />
                     }
                     isImageFirst={false}
-                    label="Slate"
+                    label="Navy"
+                  />
+                </li>
+              </ul>
+            </li>
+            <li
+              className="logoTypeListItem"
+            >
+              <h6>
+                Badges
+              </h6>
+              <p>
+                You may also use badges as a profile photo or thumbnail. Badges should be used to accompany corporate sponsors or alliance partnerships on shared branding. Use the original OC Blue Badge in most cases, except the Red Badge for special events and holidays (Thanksgiving, fall and Christmas). The Navy Badge may be used with light backgrounds and bright colored backgrounds.
+              </p>
+              <ul
+                className="badgeList"
+              >
+                <li>
+                  <Badge
+                    icon={
+                      <img
+                        alt="OC Blue Badge"
+                        src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/large-blue-medal.png"
+                      />
+                    }
+                    isImageFirst={false}
+                    label="OC Blue Badge"
+                  />
+                </li>
+                <li>
+                  <Badge
+                    icon={
+                      <img
+                        alt="Red Badge"
+                        src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/large-red-medal.png"
+                      />
+                    }
+                    isImageFirst={false}
+                    label="Red Badge"
+                  />
+                </li>
+                <li>
+                  <Badge
+                    icon={
+                      <img
+                        alt="Navy"
+                        src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/large-slate-medal.png"
+                      />
+                    }
+                    isImageFirst={false}
+                    label="Navy Badge"
                   />
                 </li>
               </ul>
@@ -181,10 +234,10 @@ exports[`LogoSection should render with required props 1`] = `
           className="logoSizeListItem largeLogos"
         >
           <h5>
-            LARGE
+            Large Logos
           </h5>
           <p>
-            For use when the medal is above 1-inch tall.
+            Use the Original Large Logo in almost all cases above 1 inch in height. The Red Large Logo is to be used in special events (such as Thanksgiving, fall or Christmas), and the Light Large Logo is to be used with dark backgrounds or bright colored backgrounds.
           </p>
           <ul
             className="logoTypeList"
@@ -202,7 +255,7 @@ exports[`LogoSection should render with required props 1`] = `
                   <Badge
                     icon={
                       <img
-                        alt="Large Blue Accented Logo"
+                        alt="Original Large Logo"
                         src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/large-blue-logo.png"
                       />
                     }
@@ -214,7 +267,7 @@ exports[`LogoSection should render with required props 1`] = `
                   <Badge
                     icon={
                       <img
-                        alt="Large Red Accented Logo"
+                        alt="Red Large Logo"
                         src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/large-red-logo.png"
                       />
                     }
@@ -226,7 +279,7 @@ exports[`LogoSection should render with required props 1`] = `
                   <Badge
                     icon={
                       <img
-                        alt="Large Unaccenteded Logo"
+                        alt="Large Unaccented Logo"
                         src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/large-logo.png"
                       />
                     }
@@ -244,53 +297,6 @@ exports[`LogoSection should render with required props 1`] = `
                     }
                     isImageFirst={false}
                     label="White"
-                  />
-                </li>
-              </ul>
-            </li>
-            <li
-              className="logoTypeListItem"
-            >
-              <h6>
-                STACKED
-              </h6>
-              <ul
-                className="badgeList"
-              >
-                <li>
-                  <Badge
-                    icon={
-                      <img
-                        alt="Stacked Large Blue Logo"
-                        src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/large-stacked-logo-blue.png"
-                      />
-                    }
-                    isImageFirst={false}
-                    label="Blue"
-                  />
-                </li>
-                <li>
-                  <Badge
-                    icon={
-                      <img
-                        alt="Stacked Large Red Logo"
-                        src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/large-stacked-logo-red.png"
-                      />
-                    }
-                    isImageFirst={false}
-                    label="Red"
-                  />
-                </li>
-                <li>
-                  <Badge
-                    icon={
-                      <img
-                        alt="Stacked Large Slate Logo"
-                        src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/large-stacked-logo.png"
-                      />
-                    }
-                    isImageFirst={false}
-                    label="Slate"
                   />
                 </li>
               </ul>

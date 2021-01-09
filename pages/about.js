@@ -35,7 +35,7 @@ function About() {
               We at Operation Code strive to provide an efficient way into a tech career for
               veterans, military spouses, and transitioning servicemembers. Read about our{' '}
               <Link href="/history">
-                <a>organization&apos;s history</a>
+                <a>organization&apos;s history </a>
               </Link>
               to learn more!
             </p>
