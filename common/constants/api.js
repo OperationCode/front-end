@@ -46,6 +46,9 @@ export const changePassword = values =>
 
 export const confirmEmail = key => post('auth/verify-email/', key).then(({ data }) => data);
 
+export const createResource = ({ category, languages, name, notes, free, url }) =>
+  post('api/v1/resources/', { category, languages, name, notes, free, url }, ResourcesAPI);
+
 /* PATCH REQUESTS */
 export const updateUser = userInfo => {
   return patch('auth/profile/', {
