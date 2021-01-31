@@ -22,20 +22,22 @@ describe('Nav', () => {
     expect(screen.queryByTestId('Mobile Nav Container')).not.toBeNull();
   });
 
-  it('should render logout link when logged in', () => {
+  it('should render specific content when logged in', () => {
     cookie.get = jest.fn().mockImplementation(() => VALID_AUTH_TOKEN);
 
     render(<Nav />);
 
-    expect(screen.container.querySelector('a[href="/login?loggedOut=true"]')).not.toBeNull();
+    expect(screen.queryByText('Account')).toBeNull();
+    expect(screen.queryByText('Profile')).not.toBeNull();
+    expect(screen.queryByText('Logout')).not.toBeNull();
   });
 
-  it('should render who we serve section when logged out', () => {
+  it('should render specific content when logged out', () => {
     render(<Nav />);
 
-    expect(screen.container.querySelector('a[href="/who_we_serve"]')).not.toBeNull();
-    expect(screen.container.querySelector('a[href="/login"]')).not.toBeNull();
-    expect(screen.container.querySelector('a[href="/join"]')).not.toBeNull();
+    expect(screen.queryByText('Account')).not.toBeNull();
+    expect(screen.queryByText('Profile')).toBeNull();
+    expect(screen.queryByText('Logout')).toBeNull();
   });
 
   it('should only reveal mobile nav when hamburger button is clicked', async () => {
