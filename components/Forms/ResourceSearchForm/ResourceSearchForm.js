@@ -1,9 +1,10 @@
 import React from 'react';
-import { Field, Formik, Form } from 'formik';
+import { Field, Formik } from 'formik';
 import omit from 'lodash/omit';
 import styles from 'styles/resources.module.css';
 import { string, func, shape, array } from 'prop-types';
 import Button from 'components/Buttons/Button/Button';
+import Form from 'components/Form/Form';
 import Input from 'components/Form/Input/Input';
 import Select from 'components/Form/Select/Select';
 import {

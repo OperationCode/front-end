@@ -200,6 +200,7 @@ module.exports = {
     'react/static-property-placement': ['off'],
     'react/jsx-props-no-spreading': ['off'],
     'react/state-in-constructor': ['error', 'never'],
+    'react/jsx-no-target-blank': 'off', // browsers protect against this vulnerability now
 
     // Unicorn Plugin Rules
     'unicorn/catch-error-name': 'error',
@@ -244,7 +245,9 @@ module.exports = {
     'unicorn/throw-new-error': 'error',
 
     // Vanilla ESLint Rules
+    'arrow-body-style': 'off', // prettier
     'comma-dangle': ['error', 'only-multiline'],
+    'implicit-arrow-linebreak': 'off', // prettier
     'max-len': [
       'error',
       {
@@ -267,6 +270,12 @@ module.exports = {
             importNames: ['default'],
             message: `Please use named imports of "prop-types".\n
               Example: "import { func } from 'prop-types';"`,
+          },
+          {
+            name: 'formik',
+            importNames: ['Form'],
+            message: `Please use our Form component to have good defaults defined.\n
+              "import Form from 'components/Form/Form';"`,
           },
         ],
       },
