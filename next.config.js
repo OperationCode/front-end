@@ -34,6 +34,11 @@ const nextConfig = withBundleAnalyzer({
   async redirects() {
     return [
       {
+        source: '/resources',
+        destination: '/resources/1',
+        permanent: true,
+      },
+      {
         source: '/swag',
         destination: 'https://operationcode.threadless.com/',
         permanent: true,
