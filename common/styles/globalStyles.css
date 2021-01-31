@@ -79,7 +79,7 @@ footer a {
 
 p {
   line-height: 1.75;
-  max-width: 700px;
+  max-width: var(--typicalMaxWidth);
 }
 
 #root {
