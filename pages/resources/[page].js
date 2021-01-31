@@ -9,8 +9,8 @@ import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Pagination from 'components/Pagination/Pagination';
 import {
   getResourcesPromise,
-  getResourcesByCategories,
-  getResourcesByLanguages,
+  getResourceCategories,
+  getResourceLanguages,
   getResourcesBySearch,
   loginUser,
   updateResourceVoteCount,
@@ -80,7 +80,7 @@ function Resources() {
   };
 
   useEffect(() => {
-    Promise.all([getResourcesByCategories(), getResourcesByLanguages()])
+    Promise.all([getResourceCategories(), getResourceLanguages()])
       .then(([categoriesResponse, languagesResponse]) => {
         const {
           data: { categories: categoriesData },

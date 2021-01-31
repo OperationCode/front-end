@@ -9,10 +9,10 @@ export const getResourcesPromise = parameters =>
   get('api/v1/resources/', { parameters }, ResourcesAPI);
 export const getResourcesBySearch = parameters =>
   get('api/v1/search/', { parameters }, ResourcesAPI);
-export const getResourcesByCategories = () => {
+export const getResourceCategories = () => {
   return get('api/v1/categories', {}, ResourcesAPI);
 };
-export const getResourcesByLanguages = () => {
+export const getResourceLanguages = () => {
   return get('api/v1/languages', {}, ResourcesAPI);
 };
 
