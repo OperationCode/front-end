@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { func, number, oneOfType, shape, string } from 'prop-types';
-import { Formik, Field, Form } from 'formik';
+import { Formik, Field } from 'formik';
 import * as Yup from 'yup';
 import { createUser } from 'common/constants/api';
 import { getServerErrorMessage } from 'common/utils/api-utils';
@@ -9,6 +9,7 @@ import { capitalizeFirstLetter } from 'common/utils/string-utils';
 import { minimumPasswordLength } from 'common/constants/validations';
 import { hasRequiredCharacters } from 'common/utils/validator-utils';
 import Button from 'components/Buttons/Button/Button';
+import Form from 'components/Form/Form';
 import Input from 'components/Form/Input/Input';
 import Alert from 'components/Alert/Alert';
 import styles from './RegistrationForm.module.css';

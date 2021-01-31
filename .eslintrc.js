@@ -268,6 +268,12 @@ module.exports = {
             message: `Please use named imports of "prop-types".\n
               Example: "import { func } from 'prop-types';"`,
           },
+          {
+            name: 'formik',
+            importNames: ['Form'],
+            message: `Please use our Form component to have good defaults defined.\n
+              "import Form from 'components/Form/Form';"`,
+          },
         ],
       },
     ],

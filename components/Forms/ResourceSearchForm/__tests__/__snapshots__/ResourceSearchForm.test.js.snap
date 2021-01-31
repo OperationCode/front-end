@@ -2,7 +2,7 @@
 
 exports[`ResourceSearchForm should render with required props 1`] = `
 <form
-  action="#"
+  noValidate={true}
   onReset={[Function]}
   onSubmit={[Function]}
   role="search"
