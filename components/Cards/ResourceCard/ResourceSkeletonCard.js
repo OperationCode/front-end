@@ -10,9 +10,9 @@ ResourceSkeletonCard.propTypes = {
 function ResourceSkeletonCard({ numberOfSkeletons }) {
   return (
     <div className={styles.resourcesCardWrapper}>
-      {[...Array(numberOfSkeletons)].map((skeleton, i) => (
+      {[...Array(numberOfSkeletons)].map((skeleton, index) => (
         // eslint-disable-next-line react/no-array-index-key
-        <div data-testid={SKELETON_CARD} key={i} className={styles.Skeleton}>
+        <div data-testid={SKELETON_CARD} key={index} className={styles.Skeleton}>
           <div className={styles.loading}>
             <div className={styles.skeletonInner} />
           </div>
