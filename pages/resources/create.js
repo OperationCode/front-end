@@ -6,7 +6,6 @@ import Content from 'components/Content/Content';
 import CreateResourceForm from 'components/Forms/CreateResourceForm/CreateResourceForm';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
-import styles from 'styles/create_resource.module.css';
 
 const alerts = {
   none: null,
@@ -55,7 +54,7 @@ export default function CreateResource({ categories, languages }) {
   }, []);
 
   return (
-    <div className={styles.CreateResource}>
+    <>
       <Head title={pageTitle} />
 
       <HeroBanner title={pageTitle} />
@@ -74,6 +73,6 @@ export default function CreateResource({ categories, languages }) {
 
       {alert === alerts.success && <Alert type="success">{alert}</Alert>}
       {alert && alert !== alerts.success && <Alert type="error">{alert}</Alert>}
-    </div>
+    </>
   );
 }
