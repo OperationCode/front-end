@@ -47,7 +47,7 @@ export const changePassword = values =>
 export const confirmEmail = key => post('auth/verify-email/', key).then(({ data }) => data);
 
 export const createResource = ({ category, languages, name, notes, free, url }) =>
-  post('api/v1/resources/', { category, languages, name, notes, free, url }, ResourcesAPI);
+  post('api/v1/resources/', [{ category, languages, name, notes, free, url }], {}, ResourcesAPI);
 
 /* PATCH REQUESTS */
 export const updateUser = userInfo => {
@@ -58,4 +58,4 @@ export const updateUser = userInfo => {
 
 /* PUT REQUESTS */
 export const updateResourceVoteCount = ({ id, voteDirection }) =>
-  put(`api/v1/resources/${id}/${voteDirection}`);
+  put(`api/v1/resources/${id}/${voteDirection}`, {}, ResourcesAPI);
