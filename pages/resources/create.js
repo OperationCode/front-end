@@ -1,12 +1,16 @@
 import { arrayOf, shape, string, number } from 'prop-types';
+import { useRouter } from 'next/router';
 import { getResourceCategories, getResourceLanguages } from 'common/constants/api';
 import { ONE_DAY } from 'common/constants/unitsOfTime';
 import Alert from 'components/Alert/Alert';
 import Content from 'components/Content/Content';
 import CreateResourceForm from 'components/Forms/CreateResourceForm/CreateResourceForm';
 import Head from 'components/head';
+import Button from 'components/Buttons/Button/Button';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import styles from 'styles/create_resource.module.css';
+import { hasValidAuthToken } from 'common/utils/cookie-utils';
+import LinkButton from 'components/Buttons/LinkButton/LinkButton';
 
 const alerts = {
   none: null,
@@ -45,7 +49,16 @@ CreateResource.propTypes = {
 };
 
 export default function CreateResource({ categories, languages }) {
+  const isLoggedIn = hasValidAuthToken();
+  const router = useRouter();
   const [alert, setAlert] = React.useState('');
+
+  React.useEffect(() => {
+    if (!isLoggedIn) {
+      router.push('/login?unauthorized=true');
+    }
+  }, [isLoggedIn]);
+
   const clearAlert = () => setAlert(alerts.none);
   const showSuccessAlert = () => setAlert(alerts.success);
   const showErrorAlert = serverMessage => setAlert(serverMessage);
@@ -64,23 +77,47 @@ export default function CreateResource({ categories, languages }) {
         theme="white"
         columns={[
           <>
+            {alert === alerts.success && (
+              <div className={styles.success}>
+                <Alert type="success" className={styles.alert}>
+                  {alert}
+                </Alert>
+
+                <div className={styles.buttonGrouping}>
+                  <LinkButton href="/resources" theme="secondary">
+                    View Resources
+                  </LinkButton>
+
+                  <Button onClick={router.reload} theme="secondary">
+                    Create Another
+                  </Button>
+                </div>
+              </div>
+            )}
+            {alert && alert !== alerts.success && (
+              <div className={styles.error}>
+                <Alert type="error" className={styles.alert}>
+                  {alert}
+                </Alert>
+
+                <div className={styles.buttonGrouping}>
+                  <Button onClick={router.back} theme="secondary">
+                    Go Back
+                  </Button>
+
+                  <Button onClick={router.reload} theme="secondary">
+                    Reset Form
+                  </Button>
+                </div>
+              </div>
+            )}
+
             <CreateResourceForm
               onFailure={showErrorAlert}
               onSuccess={showSuccessAlert}
-              categories={categories}
-              languages={languages}
+              categoryOptions={categories}
+              languageOptions={languages}
             />
-
-            {alert === alerts.success && (
-              <Alert type="success" className={styles.alert}>
-                {alert}
-              </Alert>
-            )}
-            {alert && alert !== alerts.success && (
-              <Alert type="error" className={styles.alert}>
-                {alert}
-              </Alert>
-            )}
           </>,
         ]}
       />

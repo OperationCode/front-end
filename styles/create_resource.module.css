@@ -1,4 +1,12 @@
-.CreateResource .alert {
+.CreateResource .success,
+.CreateResource .error {
   width: 100%;
   max-width: var(--typicalMaxWidth);
+}
+
+.CreateResource .buttonGrouping {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 2rem;
 }
