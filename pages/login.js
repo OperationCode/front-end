@@ -19,6 +19,7 @@ const pageTitle = 'Login';
 Login.propTypes = {
   // pulled out of query param
   loggedOut: bool,
+  unauthorized: bool,
   router: shape({
     push: func.isRequired,
   }).isRequired,
@@ -26,11 +27,13 @@ Login.propTypes = {
 
 Login.defaultProps = {
   loggedOut: false,
+  unauthorized: false,
 };
 
-Login.getInitialProps = async ({ query: { loggedOut }, ...ctx }) => {
-  if (loggedOut) {
-    return { loggedOut: !!loggedOut };
+Login.getInitialProps = async ({ query: { loggedOut, unauthorized }, ...ctx }) => {
+  if (loggedOut || unauthorized) {
+    // Pass props immediately when query parameters are included in route
+    return { loggedOut: !!loggedOut, unauthorized: !!unauthorized };
   }
 
   const { token } = nextCookie(ctx);
@@ -44,7 +47,7 @@ Login.getInitialProps = async ({ query: { loggedOut }, ...ctx }) => {
   return {};
 };
 
-function Login({ loggedOut, router }) {
+function Login({ loggedOut, unauthorized, router }) {
   const [alertMessage, setAlertMessage] = useState('');
 
   useEffect(() => {
@@ -52,6 +55,11 @@ function Login({ loggedOut, router }) {
       router.push('/login', '/login', { shallow: true });
       logout({ shouldRedirect: false });
       setAlertMessage('Logged out successfully.');
+    }
+
+    if (unauthorized) {
+      router.push('/login', '/login', { shallow: true });
+      setAlertMessage('You tried viewing a page that requires authorization. Please login first!');
     }
   }, [loggedOut]);
 
