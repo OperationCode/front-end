@@ -231,7 +231,7 @@ function Resources() {
                           description={resource.notes}
                           downvotes={resource.downvotes}
                           upvotes={resource.upvotes}
-                          onVote={onVote}
+                          handleVote={onVote}
                           href={resource.url || ''}
                           name={resource.name}
                           category={resource.category}
