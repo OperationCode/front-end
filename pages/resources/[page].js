@@ -64,6 +64,7 @@ function Resources() {
   const onLogin = value => loginUser(value);
   const onLoginSuccess = ({ token }) => {
     setAuthCookies({ token });
+    closeLoginModal();
     router.push(afterLoginRedirectPath);
   };
 

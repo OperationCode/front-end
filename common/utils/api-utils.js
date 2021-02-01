@@ -124,7 +124,7 @@ export const patch = async (path, body, { token } = {}, axiosClient = OperationC
  * @param {import('node_modules/axios/index').AxiosInstance} axiosClient
  * @returns {Promise<import('node_modules/axios/index').AxiosPromise<any>>}
  */
-export const put = async (path, body, { token } = {}, axiosClient = OperationCodeAPI) => {
+export const put = async (path, { token, body } = {}, axiosClient = OperationCodeAPI) => {
   const { abort, connectionTimeout } = getRequestAbortionPieces();
 
   return axiosClient
