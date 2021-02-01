@@ -246,11 +246,10 @@ describe('resources', () => {
   //   checkAllCardsForDataAttribute(DATA_TEST_LANGUAGES, 'JavaScript');
   //   checkAllCardsForDataAttribute(DATA_TEST_LANGUAGES, 'Python');
   // });
-  it('will allow user to upvote/downvote once logged in', () => {
+
+  it('will prompt user to login if they attempt to vote without being logged in', () => {
     cy.server();
     cy.route('POST', 'auth/login/').as('postLogin');
-    cy.route('PUT', 'api/v1/resources/**/upvote').as('upvote');
-    cy.route('PUT', 'api/v1/resources/**/downvote').as('downvote');
 
     cy.findAllByTestId(UPVOTE_BUTTON).first().click({ force: true });
     cy.findByTestId(LOGIN_FORM).should('exist');
@@ -262,31 +261,44 @@ describe('resources', () => {
     cy.wait('@postLogin').its('status').should('eq', 200);
 
     cy.findByTestId(LOGIN_FORM).should('not.exist');
+  });
 
-    cy.findAllByTestId(UPVOTE_COUNT).first().invoke('text').as('currentUpVoteCountText');
+  it('will not allow user to upvote once logged in', () => {
+    cy.server();
+    cy.login();
+    cy.route('PUT', 'api/v1/resources/**/upvote').as('upvote');
 
+    cy.findAllByTestId(UPVOTE_COUNT).first().invoke('text').as('beforeUpVoteCountText');
     cy.findAllByTestId(UPVOTE_BUTTON).first().click({ force: true });
     cy.wait('@upvote');
 
     cy.get('@upvote').then(({ status, response }) => {
       expect(status).to.eq(200);
-      cy.get('@currentUpVoteCountText').then(upVoteText => {
-        const upVoteNumber = parseInt(upVoteText, 10);
-        expect(response.body.resource.upvotes).to.be.oneOf([upVoteNumber + 1, upVoteNumber - 1]);
+      cy.get('@beforeUpVoteCountText').then(upVoteCountText => {
+        const beforeUpVoteCount = parseInt(upVoteCountText, 10);
+        const diff = response.body.resource.user_vote_direction === 'upvote' ? 1 : -1;
+        expect(response.body.resource.upvotes).to.eq(beforeUpVoteCount + diff);
       });
     });
+  });
 
-    cy.findAllByTestId(DOWNVOTE_COUNT).first().invoke('text').as('currentDownVoteCountText');
+  it('will allow user to downvote once logged in', () => {
+    cy.server();
+    cy.login();
+    cy.route('PUT', 'api/v1/resources/**/downvote').as('downvote');
 
+    cy.findAllByTestId(DOWNVOTE_COUNT).first().invoke('text').as('beforeDownVoteCountText');
     cy.findAllByTestId(DOWNVOTE_BUTTON).first().click({ force: true });
     cy.wait('@downvote');
 
-    cy.get('@downvote').then(({ status, response }) => {
-      expect(status).to.eq(200);
-      cy.get('@currentDownVoteCountText').then(downVoteText => {
-        const downVoteNumber = parseInt(downVoteText, 10);
-        expect(response.body.resource.downvotes).to.eq(downVoteNumber + 1);
-      });
+    cy.get('@beforeDownVoteCountText').then(downVoteCountText => {
+      const beforeDownVoteCount = parseInt(downVoteCountText, 10);
+      cy.findAllByTestId(DOWNVOTE_COUNT)
+        .first()
+        .invoke('text')
+        .then(currentDownVoteCountText => {
+          expect(parseInt(currentDownVoteCountText, 10)).to.eq(beforeDownVoteCount + 1);
+        });
     });
   });
 });

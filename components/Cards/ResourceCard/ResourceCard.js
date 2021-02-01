@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { string, number, func, oneOf, oneOfType, array, bool } from 'prop-types';
 import classNames from 'classnames';
 import Accordion from 'components/Accordion/Accordion';
@@ -60,8 +60,6 @@ function ResourceCard({
   userVote,
   id,
 }) {
-  const [upVotes, setUpVotes] = useState(upvotes);
-  const [downVotes, setDownVotes] = useState(downvotes);
   const didUpvote = userVote === possibleUserVotes.upvote;
   const didDownvote = userVote === possibleUserVotes.downvote;
 
@@ -70,7 +68,7 @@ function ResourceCard({
   // Sync IDs with stylesheet
   // eslint-disable-next-line react/prop-types
   const VotingBlock = ({ blockID, resourceID }) => {
-    const onVote = voteDirection => handleVote(voteDirection, resourceID, setUpVotes, setDownVotes);
+    const onVote = voteDirection => handleVote(voteDirection, resourceID);
     const onUpvote = () => onVote('upvote');
     const onDownvote = () => onVote('downvote');
 
@@ -98,7 +96,7 @@ function ResourceCard({
               className={classNames(styles.voteCount, { [styles.active]: didUpvote })}
             >
               <ScreenReaderOnly>Number of upvotes:</ScreenReaderOnly>
-              <span data-testid={UPVOTE_COUNT}>{upVotes.toString()}</span>
+              <span data-testid={UPVOTE_COUNT}>{upvotes.toString()}</span>
             </span>
           </button>
         </div>
@@ -120,7 +118,7 @@ function ResourceCard({
 
             <span className={classNames(styles.voteCount, { [styles.active]: didDownvote })}>
               <ScreenReaderOnly>Number of downvotes:</ScreenReaderOnly>
-              <span data-testid={DOWNVOTE_COUNT}>{downVotes.toString()}</span>
+              <span data-testid={DOWNVOTE_COUNT}>{downvotes.toString()}</span>
             </span>
           </button>
         </div>
