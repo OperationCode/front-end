@@ -148,7 +148,7 @@ workflows:
           command-prefix: yarn # dont use npx
           group: 'all tests' # name this group "all tests" on the dashboard
           start: 'yarn dev' # start server before running tests
-          wait-on: http://localhost:9000 # wait until server is ready
+          wait-on: http://localhost:3000 # wait until server is ready
           post-steps:
             - run:
                 name: Get each parallelized node's coverage report

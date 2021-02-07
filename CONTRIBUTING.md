@@ -203,7 +203,7 @@ _You can check to see your versions like so:_
 
 Now that you've installed your dependencies and your new branch in your fork, you can launch the "dev server" with `yarn dev`.
 
-**Note:** The dev server should be running on http://localhost:9000/ shortly after you run `yarn dev`
+**Note:** The dev server should be running on http://localhost:3000/ shortly after you run `yarn dev`
 
 <center>⚠️ Warning ⚠️ </center>
 <aside>Unfortunately, you may need to refresh a page on navigation in development to have all styles be applied. This is the result of a bug within NextCSS plugin. It's being worked on!</aside>
@@ -276,7 +276,7 @@ You can see interactive documentation on all of our components via [![Storybook]
 # Install dependencies defined in `package.json`
 yarn
 
-# Run local development server accessible in the browser via http://localhost:9000
+# Run local development server accessible in the browser via http://localhost:3000
 yarn dev
 
 # Run Storybook development server. Used as a workbench when developing new common components. Accessible in the browser via http://localhost:9001
