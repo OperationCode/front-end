@@ -35,6 +35,7 @@ Select.propTypes = {
   id: oneOfType([string, number]),
   isLabelHidden: bool,
   isMulti: bool,
+  isSearchable: bool,
   label: string.isRequired,
   options: arrayOf(shape({ label: string.isRequired, value: string.isRequired }).isRequired)
     .isRequired,
@@ -45,6 +46,7 @@ Select.defaultProps = {
   id: undefined,
   isLabelHidden: false,
   isMulti: false,
+  isSearchable: true,
 };
 
 export default function Select({
@@ -54,6 +56,7 @@ export default function Select({
   id,
   isLabelHidden,
   isMulti,
+  isSearchable,
   label,
   options,
   ...props // disabled, placeholder, etc.
@@ -121,6 +124,7 @@ export default function Select({
           isTouched={touched[name]}
           id={id || name}
           isMulti={isMulti}
+          isSearchable={isSearchable}
           name={name}
           onBlur={handleBlur}
           onChange={onChangeHandler}

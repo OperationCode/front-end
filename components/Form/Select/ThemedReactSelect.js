@@ -18,6 +18,7 @@ ThemedReactSelect.propTypes = {
   id: string,
   instanceId: string,
   isMulti: bool,
+  isSearchable: bool,
   // TODO: Resolve why multiselects can end up with touched: { key: array }
   // see ThemedReactSelect as well
   // isTouched: bool,
@@ -31,6 +32,7 @@ ThemedReactSelect.defaultProps = {
   id: undefined,
   instanceId: undefined,
   isMulti: false,
+  isSearchable: true,
   isTouched: false,
 };
 
@@ -41,6 +43,7 @@ function ThemedReactSelect({
   id,
   instanceId,
   isMulti,
+  isSearchable,
   ...props
 }) {
   // See TODO in propTypes definition
@@ -62,6 +65,7 @@ function ThemedReactSelect({
       disabled={disabled}
       closeMenuOnSelect={!isMulti}
       isMulti={isMulti}
+      isSearchable={isSearchable}
       styles={{
         control: base => {
           return {
@@ -99,6 +103,11 @@ function ThemedReactSelect({
               cursor: disabled ? 'not-allowed' : 'pointer',
             },
           };
+        },
+        indicatorSeparator: base => {
+          if (!isSearchable) return {};
+
+          return base;
         },
         multiValueRemove: base => {
           return {

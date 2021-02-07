@@ -2,6 +2,18 @@
   width: 70vw;
 }
 
+.Resources .resourcesContainer .cta {
+  margin: 0 auto 2rem;
+  text-align: center;
+}
+
+.Resources .resourcesContainer .cta a,
+.Resources .resourcesContainer .cta button {
+  display: block;
+  margin: 1rem auto;
+  width: fit-content;
+}
+
 @media screen and (--medium-viewport) {
   .Resources .resourcesContainer {
     width: 90vw;

@@ -38,11 +38,10 @@ const getRequestAbortionPieces = () => {
 
 /**
  * @param {string} path
- * @param {{token: string}} options
- * @param {?Object.<string, any>} parameters URL parameters to include in the query string
- * @returns {Promise<AxiosPromise<any>>}
+ * @param {{ token: string, parameters?: Object.<string, any> }} options
+ * @param {import('node_modules/axios/index').AxiosInstance} axiosClient
+ * @returns {Promise<import('node_modules/axios/index').AxiosPromise<any>>}
  */
-
 export const get = async (path, { token, parameters } = {}, axiosClient = OperationCodeAPI) => {
   const { abort, connectionTimeout } = getRequestAbortionPieces();
 
@@ -64,53 +63,68 @@ export const get = async (path, { token, parameters } = {}, axiosClient = Operat
     })
     .catch(error => {
       clearTimeout(connectionTimeout);
-      return error;
+      throw error;
     });
 };
 
 /**
  * @param {string} path
- * @param {?Object.<string, any>} body
- * @param {{token: string}} options
- * @returns {Promise<AxiosResponse<any>>}
+ * @param {Object.<string, any>} body
+ * @param {{ token: string, parameters?: Object.<string, any> }} options
+ * @param {import('node_modules/axios/index').AxiosInstance} axiosClient
+ * @returns {Promise<import('node_modules/axios/index').AxiosPromise<any>>}
  */
-export const post = async (path, body, { token } = {}) => {
+export const post = async (path, body, { token } = {}, axiosClient = OperationCodeAPI) => {
   const { abort, connectionTimeout } = getRequestAbortionPieces();
 
-  return OperationCodeAPI.post(`/${path}`, body, {
-    headers: setAuthorizationHeader(token),
-    cancelToken: abort.token,
-  }).then(response => {
-    clearTimeout(connectionTimeout);
-    return response;
-  });
+  return axiosClient
+    .post(`/${path}`, body, {
+      headers: setAuthorizationHeader(token),
+      cancelToken: abort.token,
+    })
+    .then(response => {
+      clearTimeout(connectionTimeout);
+      return response;
+    })
+    .catch(error => {
+      clearTimeout(connectionTimeout);
+      throw error;
+    });
 };
 
 /**
  * @param {string} path
- * @param {?Object.<string, any>} body
- * @param {{token: string}} options
- * @returns {Promise<AxiosResponse<any>>}
+ * @param {Object.<string, any>} body
+ * @param {{ token: string, parameters?: Object.<string, any> }} options
+ * @param {import('node_modules/axios/index').AxiosInstance} axiosClient
+ * @returns {Promise<import('node_modules/axios/index').AxiosPromise<any>>}
  */
-export const patch = async (path, body, { token } = {}) => {
+export const patch = async (path, body, { token } = {}, axiosClient = OperationCodeAPI) => {
   const { abort, connectionTimeout } = getRequestAbortionPieces();
 
-  return OperationCodeAPI.patch(`/${path}`, body, {
-    headers: setAuthorizationHeader(token),
-    cancelToken: abort.token,
-  }).then(response => {
-    clearTimeout(connectionTimeout);
-    return response;
-  });
+  return axiosClient
+    .patch(`/${path}`, body, {
+      headers: setAuthorizationHeader(token),
+      cancelToken: abort.token,
+    })
+    .then(response => {
+      clearTimeout(connectionTimeout);
+      return response;
+    })
+    .catch(error => {
+      clearTimeout(connectionTimeout);
+      throw error;
+    });
 };
 
 /**
  * @param {string} path
- * @param {?Object.<string, any>} body
- * @param {{token: string}} options
- * @returns {Promise<AxiosResponse<any>>}
+ * @param {Object.<string, any>} body
+ * @param {{ token: string, parameters?: Object.<string, any> }} options
+ * @param {import('node_modules/axios/index').AxiosInstance} axiosClient
+ * @returns {Promise<import('node_modules/axios/index').AxiosPromise<any>>}
  */
-export const put = async (path, body, { token } = {}, axiosClient = ResourcesAPI) => {
+export const put = async (path, { token, body } = {}, axiosClient = OperationCodeAPI) => {
   const { abort, connectionTimeout } = getRequestAbortionPieces();
 
   return axiosClient
@@ -121,11 +135,16 @@ export const put = async (path, body, { token } = {}, axiosClient = ResourcesAPI
     .then(response => {
       clearTimeout(connectionTimeout);
       return response;
+    })
+    .catch(error => {
+      clearTimeout(connectionTimeout);
+      throw error;
     });
 };
 
 /**
- * @description Take an expected server error object and return its error. If object is unexpected,
+ * @description Not for usage with Resources API.
+ * Take an expected server error object and return its error. If object is unexpected,
  * assume the server is down and return a relavant error message.
  *
  * @export
@@ -134,7 +153,8 @@ export const put = async (path, body, { token } = {}, axiosClient = ResourcesAPI
  */
 export const getServerErrorMessage = errorObject => {
   // _.get's third argument is the default message
-  // if errorObject.response.data.error doesn't resolve, it means that the server is down
+  // if errorObject.response.data.error doesn't resolve, it means that the server is down}
+
   const errorMessage = lodashGet(
     errorObject,
     'response.data.error',

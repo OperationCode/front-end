@@ -222,6 +222,7 @@ module.exports = {
       'error',
       {
         whitelist: {
+          args: true, // arguments is a reserved keyword we sometimes need to avoid
           ctx: true,
           defaultProps: true,
           getInitialProps: true,

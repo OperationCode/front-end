@@ -9,16 +9,18 @@ import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Pagination from 'components/Pagination/Pagination';
 import {
   getResourcesPromise,
-  getResourcesByCategories,
-  getResourcesByLanguages,
+  getResourceCategories,
+  getResourceLanguages,
   getResourcesBySearch,
   loginUser,
   updateResourceVoteCount,
 } from 'common/constants/api';
 import { hasValidAuthToken, setAuthCookies } from 'common/utils/cookie-utils';
 import Modal from 'components/Modal/Modal';
+
 import LoginForm from 'components/Forms/LoginForm/LoginForm';
 import Alert from 'components/Alert/Alert';
+import Button from 'components/Buttons/Button/Button';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 import ResourceCard from 'components/Cards/ResourceCard/ResourceCard';
 import ResourceSkeletonCard from 'components/Cards/ResourceCard/ResourceSkeletonCard';
@@ -28,10 +30,12 @@ import styles from 'styles/resources.module.css';
 import isUndefined from 'lodash/isUndefined';
 import ResourceSearchForm from 'components/Forms/ResourceSearchForm/ResourceSearchForm';
 import CardStyles from 'components/Cards/Card/Card.module.css';
+import LinkButton from 'components/Buttons/LinkButton/LinkButton';
 
 const pageTitle = 'Resources';
 
 function Resources() {
+  const isLoggedIn = hasValidAuthToken();
   const router = useRouter();
   const { pathname, query } = router;
   const { page, category, languages, free, q } = query;
@@ -48,28 +52,37 @@ function Resources() {
   const [totalPages, setTotalPages] = useState(currentPage);
   const [allCategories, setAllCategories] = useState([]);
   const [allLanguages, setAllLanguages] = useState([]);
+  const [afterLoginRedirectPath, setLoginRedirectPath] = useState(router.asPath);
+
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const openLoginModal = (redirectPath = router.asPath) => {
+    setLoginRedirectPath(redirectPath);
+    setIsModalOpen(true);
+  };
+  const closeLoginModal = () => setIsModalOpen(false);
 
-  const handleLogin = value => loginUser(value);
-
-  const handleLoginSuccess = ({ token }) => {
+  const onLogin = value => loginUser(value);
+  const onLoginSuccess = ({ token }) => {
     setAuthCookies({ token });
+    closeLoginModal();
+    router.push(afterLoginRedirectPath);
   };
 
-  const handleVote = (voteDirection, id, setUpVotes, setDownVotes) => {
+  const onVote = (voteDirection, id, setUpVotes, setDownVotes) => {
     setErrorMessage(null);
-    if (!hasValidAuthToken()) {
-      setIsModalOpen(true);
-      return;
+
+    if (!isLoggedIn) {
+      openLoginModal();
+    } else {
+      updateResourceVoteCount({ id, voteDirection })
+        .then(({ data: { resource } }) => {
+          setUpVotes(resource.upvotes);
+          setDownVotes(resource.downvotes);
+        })
+        .catch(() => {
+          setErrorMessage(`There was a problem ${voteDirection.slice(0, -1)}ing a resource.`);
+        });
     }
-    updateResourceVoteCount({ id, voteDirection })
-      .then(({ data: { resource } }) => {
-        setUpVotes(resource.upvotes);
-        setDownVotes(resource.downvotes);
-      })
-      .catch(() => {
-        setErrorMessage(`There was a problem ${voteDirection.slice(0, -1)}ing a resource.`);
-      });
   };
 
   const handleEndpoint = () => {
@@ -80,7 +93,7 @@ function Resources() {
   };
 
   useEffect(() => {
-    Promise.all([getResourcesByCategories(), getResourcesByLanguages()])
+    Promise.all([getResourceCategories(), getResourceLanguages()])
       .then(([categoriesResponse, languagesResponse]) => {
         const {
           data: { categories: categoriesData },
@@ -107,7 +120,9 @@ function Resources() {
         );
       })
       .catch(() => {
-        setErrorMessage('There was a problem gathering those resources.');
+        setErrorMessage(
+          'There was a problem setting up this form. Try reloading or try again later!',
+        );
       });
   }, []);
 
@@ -167,6 +182,19 @@ function Resources() {
         theme="white"
         columns={[
           <section className={styles.resourcesContainer}>
+            <p className={styles.cta}>
+              Want to submit your own favorite resource?
+              {isLoggedIn ? (
+                <LinkButton theme="secondary" href="/resources/create">
+                  Add Resource
+                </LinkButton>
+              ) : (
+                <Button onClick={() => openLoginModal('/resources/create')} theme="secondary">
+                  Log In
+                </Button>
+              )}
+            </p>
+
             <OutboundLink
               href="https://www.algolia.com/doc/"
               analyticsEventLabel="Powered by Algolia"
@@ -174,6 +202,7 @@ function Resources() {
             >
               Powered by Algolia
             </OutboundLink>
+
             <ResourceSearchForm
               fields={{
                 languages,
@@ -203,7 +232,7 @@ function Resources() {
                           description={resource.notes}
                           downvotes={resource.downvotes}
                           upvotes={resource.upvotes}
-                          handleVote={handleVote}
+                          handleVote={onVote}
                           href={resource.url || ''}
                           name={resource.name}
                           category={resource.category}
@@ -227,24 +256,17 @@ function Resources() {
           </section>,
         ]}
       />
+
       <Modal
         isOpen={isModalOpen}
         screenReaderLabel="Login Modal"
-        onRequestClose={() => setIsModalOpen(false)}
+        onRequestClose={closeLoginModal}
         className={CardStyles.CardModal}
         childrenClassName={ModalStyles.unscrollableContainer}
       >
         <h2>Login to Proceed</h2>
 
-        <LoginForm
-          login={handleLogin}
-          onSuccess={handleLoginSuccess}
-          redirectFunction={() => {
-            setIsModalOpen(false);
-            router.push(router.asPath);
-          }}
-          buttonTheme="primary"
-        />
+        <LoginForm login={onLogin} onSuccess={onLoginSuccess} buttonTheme="primary" />
 
         <p>
           Forgot your password? Reset it&nbsp;

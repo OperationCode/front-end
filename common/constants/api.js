@@ -9,10 +9,10 @@ export const getResourcesPromise = parameters =>
   get('api/v1/resources/', { parameters }, ResourcesAPI);
 export const getResourcesBySearch = parameters =>
   get('api/v1/search/', { parameters }, ResourcesAPI);
-export const getResourcesByCategories = () => {
+export const getResourceCategories = () => {
   return get('api/v1/categories', {}, ResourcesAPI);
 };
-export const getResourcesByLanguages = () => {
+export const getResourceLanguages = () => {
   return get('api/v1/languages', {}, ResourcesAPI);
 };
 
@@ -46,6 +46,9 @@ export const changePassword = values =>
 
 export const confirmEmail = key => post('auth/verify-email/', key).then(({ data }) => data);
 
+export const createResource = ({ category, languages, name, notes, free, url }) =>
+  post('api/v1/resources/', [{ category, languages, name, notes, free, url }], {}, ResourcesAPI);
+
 /* PATCH REQUESTS */
 export const updateUser = userInfo => {
   return patch('auth/profile/', {
@@ -55,4 +58,4 @@ export const updateUser = userInfo => {
 
 /* PUT REQUESTS */
 export const updateResourceVoteCount = ({ id, voteDirection }) =>
-  put(`api/v1/resources/${id}/${voteDirection}`);
+  put(`api/v1/resources/${id}/${voteDirection}`, {}, ResourcesAPI);

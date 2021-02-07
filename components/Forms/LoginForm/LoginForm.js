@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { func, shape, string } from 'prop-types';
 import { Formik, Field } from 'formik';
 import * as Yup from 'yup';
-import noop from 'lodash/noop';
 import { getServerErrorMessage } from 'common/utils/api-utils';
 import { validationErrorMessages } from 'common/constants/messages';
 import { LOGIN_BUTTON, LOGIN_FORM } from 'common/constants/testIDs';
@@ -32,7 +31,6 @@ LoginForm.propTypes = {
     email: string,
     password: string,
   }),
-  redirectFunction: func,
   buttonTheme: string,
 };
 
@@ -41,11 +39,10 @@ LoginForm.defaultProps = {
     email: '',
     password: '',
   },
-  redirectFunction: noop,
   buttonTheme: 'secondary',
 };
 
-function LoginForm({ initialValues, login, onSuccess, redirectFunction, buttonTheme }) {
+function LoginForm({ initialValues, login, onSuccess, buttonTheme }) {
   const [errorMessage, setErrorMessage] = useState('');
 
   const handleSubmit = async (values, actions) => {
@@ -55,7 +52,6 @@ function LoginForm({ initialValues, login, onSuccess, redirectFunction, buttonTh
       await onSuccess({ token });
       actions.setSubmitting(false);
       actions.resetForm();
-      redirectFunction();
     } catch (error) {
       actions.setSubmitting(false);
 
