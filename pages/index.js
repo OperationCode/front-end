@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
@@ -7,32 +6,9 @@ import SponsorsSection from 'components/ReusableSections/SponsorsSection/Sponsor
 import SuccessStory from 'components/SuccessStory/SuccessStory';
 import Heading from 'components/Heading/Heading';
 import LinkButton from 'components/Buttons/LinkButton/LinkButton';
-import OutboundLink from 'components/OutboundLink/OutboundLink';
-import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
 import successStories from 'common/constants/successStories';
 import { s3 } from 'common/constants/urls';
 import styles from 'styles/index.module.css';
-
-const featuredLinksArray = [
-  {
-    href: 'get_involved',
-    name: 'Get Involved',
-    imageSource: `${s3}redesign/images/smiling-group.jpg`,
-    alt: 'Group of coders smiling at each other',
-  },
-  {
-    href: '/donate',
-    name: 'Donate',
-    imageSource: `${s3}redesign/images/fist-bumping.jpg`,
-    alt: 'A team fist-bumping eachother over a table.',
-  },
-  {
-    href: 'events',
-    name: 'Events',
-    imageSource: `${s3}redesign/images/meetup-lecture.jpg`,
-    alt: 'Dozens of developers look at a lecturer.',
-  },
-];
 
 function Home() {
   return (
@@ -52,40 +28,9 @@ function Home() {
             our tech partners.
           </p>
 
-          <LinkButton href="/who_we_serve">Learn More</LinkButton>
-
-          <div className={styles.featuredLinks}>
-            {featuredLinksArray.map(({ href, name, imageSource, alt, analyticsEventLabel }) => (
-              <div className={styles.featuredLinkItem} key={name}>
-                {analyticsEventLabel ? (
-                  <OutboundLink
-                    analyticsEventLabel={analyticsEventLabel}
-                    href={href}
-                    hasIcon={false}
-                  >
-                    <h6>{name}</h6>
-                    <ScreenReaderOnly>{`Image: ${alt}`}</ScreenReaderOnly>
-                    <div
-                      style={{ backgroundImage: `url(${imageSource})` }}
-                      className={styles.featuredLinkImage}
-                      aria-hidden="true"
-                    />
-                  </OutboundLink>
-                ) : (
-                  <Link href={href}>
-                    <a>
-                      <h6>{name}</h6>
-                      <ScreenReaderOnly>{`Image: ${alt}`}</ScreenReaderOnly>
-                      <div
-                        style={{ backgroundImage: `url(${imageSource})` }}
-                        className={styles.featuredLinkImage}
-                        aria-hidden="true"
-                      />
-                    </a>
-                  </Link>
-                )}
-              </div>
-            ))}
+          <div className={styles.ctaContainer}>
+            <LinkButton href="/about">Learn More</LinkButton>
+            <LinkButton href="/join">Join Us</LinkButton>
           </div>
         </>
       </HeroBanner>

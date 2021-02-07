@@ -1,60 +1,21 @@
 .Home .hero {
-  padding-top: 8rem;
+  padding: 0;
+}
+
+.Home .hero h1 {
+  margin: 0;
+}
+
+.Home .hero p {
+  margin: 2rem auto;
+}
+
+.Home .ctaContainer > a:first-of-type {
+  margin-right: 1rem;
 }
 
 .Home .justifyAlign {
   text-align: justify;
-}
-
-.Home .featuredLinks {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-  margin: 3rem 0;
-}
-
-.Home .featuredLinks a {
-  text-decoration: none;
-  transition: color 0.2s linear;
-}
-
-.Home .featuredLinkItem {
-  display: flex;
-  flex-direction: column;
-  margin: 1rem;
-  color: var(--white);
-  text-align: left;
-  text-transform: uppercase;
-  width: auto;
-}
-
-.Home .featuredLinkImage {
-  background-position: center center;
-  background-size: cover;
-  margin-top: 1rem;
-  width: 390px;
-  height: 150px;
-  border: 2px solid rgb(0, 0, 0);
-  transition: 0.2s linear border, 0.2s linear color;
-}
-
-.Home .featuredLinkImage:active,
-.Home .featuredLinkImage:focus,
-.Home .featuredLinkImage:hover,
-.Home .featuredLinkItem a:active .featuredLinkImage,
-.Home .featuredLinkItem a:focus .featuredLinkImage,
-.Home .featuredLinkItem a:hover .featuredLinkImage {
-  border: 2px solid var(--primary);
-  transition: 0.2s linear border;
-}
-
-.Home .featuredLinkItem:active a,
-.Home .featuredLinkItem:focus a,
-.Home .featuredLinkItem:hover a {
-  color: var(--primary);
-  transition: 0.2s linear color;
 }
 
 .Home .cta {

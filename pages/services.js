@@ -1,4 +1,5 @@
 import axios from 'axios';
+import Link from 'next/link';
 import PropTypes from 'prop-types';
 import TrackVisibility from 'react-on-screen';
 import get from 'lodash/get';
@@ -16,7 +17,7 @@ import ScholarshipsIcon from 'static/images/icons/Custom/scholarships.svg';
 import { ONE_WEEK } from 'common/constants/unitsOfTime';
 import { s3 } from 'common/constants/urls';
 import { slackMembersAPIUrl, slackGeneralChannelId } from 'common/config/environment';
-import styles from 'styles/who_we_serve.module.css';
+import styles from 'styles/services.module.css';
 
 const VISIBILITY_OFFSET = 400;
 
@@ -35,11 +36,11 @@ const mentorItems = [
   },
 ];
 
-WhoWeServe.propTypes = {
+Services.propTypes = {
   numberOfMembers: PropTypes.number,
 };
 
-WhoWeServe.defaultProps = {
+Services.defaultProps = {
   numberOfMembers: null,
 };
 
@@ -65,25 +66,26 @@ export async function getStaticProps() {
   };
 }
 
-function WhoWeServe({ numberOfMembers }) {
+function Services({ numberOfMembers }) {
   return (
-    <div className={styles.WhoWeServe}>
-      <Head title="Who We Serve" />
+    <div className={styles.Services}>
+      <Head title="Services" />
 
       <HeroBanner
         backgroundImageSource={`${s3}redesign/heroBanners/who_we_serve.jpg`}
-        title="We're A Community"
+        title="Services"
       />
 
       <Content
-        title="Who Do We Serve?"
+        title="We're A Community"
         theme="gray"
         columns={[
           <div>
             <p className={styles.justifyAlign}>
-              We work closely with military veterans, service members, and military spouses and
-              dependents who are passionate about transitioning into the tech industry. On Slack and
-              in-person meet-ups, we work with{' '}
+              We believe that the best way to take advantage of Operation Code is simply to become a
+              member of the organization. We work closely with military veterans, service members,
+              and military spouses and dependents who are passionate about transitioning into the
+              tech industry. On Slack and in-person meet-ups, we work with{' '}
               {!numberOfMembers ? 'over 7,000+' : `${numberOfMembers}`} members who are all working
               towards relevant career and personal goals. Membership is free!
             </p>
@@ -132,6 +134,20 @@ function WhoWeServe({ numberOfMembers }) {
               />
             ))}
           </div>,
+          <p className={styles.justifyAlign}>
+            We also offer information on many of America&apos;s best{' '}
+            <Link href="/code_schools">
+              <a>&ldquo;coding bootcamps&rdquo;</a>
+            </Link>
+            , a community-maintained database of{' '}
+            <Link href="/resources">
+              <a>learning resources</a>
+            </Link>
+            , and a listing of{' '}
+            <Link href="/events">
+              <a>ongoing events</a>
+            </Link>
+          </p>,
         ]}
       />
 
@@ -163,4 +179,4 @@ function WhoWeServe({ numberOfMembers }) {
   );
 }
 
-export default WhoWeServe;
+export default Services;

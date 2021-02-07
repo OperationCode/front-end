@@ -108,9 +108,9 @@ function About() {
             </p>
           </ImageCard>,
           <ImageCard
-            alt="Operation Code Seattle Meet-up In 2017"
+            alt="Operation Code NYC Meet-up In 2019"
             className={styles.imageCard}
-            imageSource={`${s3}photo_oc-seattle-meetup.jpg`}
+            imageSource={`${s3}nyc_meetup.jpg`}
           >
             <h6>Community Events</h6>
             <p>
@@ -133,6 +133,36 @@ function About() {
               </Link>{' '}
               You can listen into the amazing stories of our members. Visualize your success through
               others&apos; footsteps.
+            </p>
+          </ImageCard>,
+          <ImageCard
+            alt="Somebody lectures in front of a classroom"
+            className={styles.imageCard}
+            imageSource={`${s3}photo_oc-seattle-meetup.jpg`}
+          >
+            <h6>Code School Finder</h6>
+            <p>
+              We provide{' '}
+              <Link href="/code_schools">
+                <a>coding bootcamp finder</a>
+              </Link>{' '}
+              to help you find the best school for you. Disclaimer: We don&apos;t accept money from
+              any coding bootcamps.
+            </p>
+          </ImageCard>,
+          <ImageCard
+            alt="An arm reaches for a book in a library"
+            className={styles.imageCard}
+            imageSource={`${s3}grab_book.jpg`}
+          >
+            <h6>Resources Database</h6>
+            <p>
+              We know there is an overwhelming amount of ways to teach yourself topics in tech, so
+              our community maintains a{' '}
+              <Link href="/resources">
+                <a>resources database</a>
+              </Link>{' '}
+              to help you cope.
             </p>
           </ImageCard>,
         ]}

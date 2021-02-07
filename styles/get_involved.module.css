@@ -1,3 +1,7 @@
+.GetInvolved .ctaContainer > a:first-of-type {
+  margin-right: 1rem;
+}
+
 .GetInvolved .justifyAlign {
   text-align: justify;
 }
