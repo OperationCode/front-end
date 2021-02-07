@@ -70,6 +70,15 @@ exports[`Footer should render with no props passed 1`] = `
               </a>
             </Link>
           </li>
+          <li>
+            <Link
+              href="/services"
+            >
+              <a>
+                Services
+              </a>
+            </Link>
+          </li>
         </ul>
         <ul
           className="linksColumn"
@@ -80,6 +89,15 @@ exports[`Footer should render with no props passed 1`] = `
             >
               <a>
                 Code Schools
+              </a>
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/resources"
+            >
+              <a>
+                Resources
               </a>
             </Link>
           </li>
@@ -98,15 +116,6 @@ exports[`Footer should render with no props passed 1`] = `
             >
               <a>
                 Events
-              </a>
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/who_we_serve"
-            >
-              <a>
-                Who We Serve
               </a>
             </Link>
           </li>
@@ -181,7 +190,7 @@ exports[`Footer should render with no props passed 1`] = `
               href="/team"
             >
               <a>
-                Team
+                Our Team
               </a>
             </Link>
           </li>

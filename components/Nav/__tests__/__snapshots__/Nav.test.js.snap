@@ -8,36 +8,16 @@ exports[`Nav should render with no props passed 1`] = `
     navItems={
       Array [
         Object {
-          "href": "/login",
-          "name": "Login",
+          "href": "/profile",
+          "name": "Profile",
         },
         Object {
-          "href": "/join",
-          "name": "Join",
+          "href": "/logout",
+          "name": "Logout",
         },
         Object {
           "href": "/about",
           "name": "About Us",
-        },
-        Object {
-          "href": "/who_we_serve",
-          "name": "Who We Serve",
-        },
-        Object {
-          "href": "/contact",
-          "name": "Contact Us",
-        },
-        Object {
-          "href": "/faq",
-          "name": "FAQ",
-        },
-        Object {
-          "href": "/podcast",
-          "name": "Podcast",
-        },
-        Object {
-          "href": "/branding",
-          "name": "Branding",
         },
         Object {
           "href": "/events",
@@ -46,10 +26,6 @@ exports[`Nav should render with no props passed 1`] = `
         Object {
           "href": "/get_involved",
           "name": "Get Involved",
-        },
-        Object {
-          "href": "/sponsorship",
-          "name": "Sponsorship",
         },
       ]
     }
@@ -89,20 +65,12 @@ exports[`Nav should render with no props passed 1`] = `
             sublinks={
               Array [
                 Object {
-                  "href": "/who_we_serve",
-                  "name": "Who We Serve",
-                },
-                Object {
                   "href": "/contact",
                   "name": "Contact Us",
                 },
                 Object {
                   "href": "/faq",
                   "name": "FAQ",
-                },
-                Object {
-                  "href": "/podcast",
-                  "name": "Podcast",
                 },
                 Object {
                   "href": "/branding",
@@ -112,10 +80,29 @@ exports[`Nav should render with no props passed 1`] = `
             }
           />
           <NavListItem
-            href="/events"
+            href="/services"
             icon={null}
-            name="Events"
-            sublinks={Array []}
+            name="Services"
+            sublinks={
+              Array [
+                Object {
+                  "href": "/events",
+                  "name": "Events",
+                },
+                Object {
+                  "href": "/podcast",
+                  "name": "Podcast",
+                },
+                Object {
+                  "href": "/resources",
+                  "name": "Resources",
+                },
+                Object {
+                  "href": "/code_schools",
+                  "name": "Code Schools",
+                },
+              ]
+            }
           />
           <NavListItem
             href="/get_involved"
@@ -132,24 +119,9 @@ exports[`Nav should render with no props passed 1`] = `
           />
           <NavListItem
             href="/login"
-            icon={
-              <Svg
-                className="navIcon"
-              />
-            }
-            name="Account"
-            sublinks={
-              Array [
-                Object {
-                  "href": "/login",
-                  "name": "Login",
-                },
-                Object {
-                  "href": "/join",
-                  "name": "Join",
-                },
-              ]
-            }
+            icon={null}
+            name="Login"
+            sublinks={Array []}
           />
           <li>
             <Link
