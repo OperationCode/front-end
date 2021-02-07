@@ -27,17 +27,15 @@ describe('Nav', () => {
 
     render(<Nav />);
 
-    expect(screen.queryByText('Account')).toBeNull();
-    expect(screen.queryByText('Profile')).not.toBeNull();
-    expect(screen.queryByText('Logout')).not.toBeNull();
+    expect(screen.queryByText('Account')).not.toBeNull();
+    expect(screen.queryByText('Login')).toBeNull();
   });
 
   it('should render specific content when logged out', () => {
     render(<Nav />);
 
-    expect(screen.queryByText('Account')).not.toBeNull();
-    expect(screen.queryByText('Profile')).toBeNull();
-    expect(screen.queryByText('Logout')).toBeNull();
+    expect(screen.queryByText('Account')).toBeNull();
+    expect(screen.queryByText('Login')).not.toBeNull();
   });
 
   it('should only reveal mobile nav when hamburger button is clicked', async () => {

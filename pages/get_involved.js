@@ -68,7 +68,7 @@ function GetInvolved() {
               <a>Donate</a>
             </Link>{' '}
             to help provide scholarships and keep our daily operations afloat,{' '}
-            <Link href="/who_we_serve">
+            <Link href="/services">
               <a>Volunteer</a>
             </Link>
             , or become a{' '}
@@ -78,9 +78,10 @@ function GetInvolved() {
             .
           </p>
 
-          <LinkButton href="/who_we_serve" className={styles.topMargin}>
-            Learn More
-          </LinkButton>
+          <div className={styles.ctaContainer}>
+            <LinkButton href="/about`">Learn More</LinkButton>
+            <LinkButton href="/join">Join Us</LinkButton>
+          </div>
         </>
       </HeroBanner>
 

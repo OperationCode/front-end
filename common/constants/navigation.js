@@ -1,70 +1,100 @@
 import flattenDepth from 'lodash/flattenDepth';
 
-// MARK: Links shared between nav and footer (no duplicate code)
-const whoWeServeLink = {
-  name: 'Who We Serve',
-  href: '/who_we_serve',
+const donate = {
+  href: '/donate',
+  name: 'Donate',
 };
 
-const contactLink = {
+const services = {
+  name: 'Services',
+  href: '/services',
+};
+
+const about = {
+  name: 'About Us',
+  href: '/about',
+};
+
+const team = {
+  name: 'Our Team',
+  href: '/team',
+};
+
+const contact = {
   name: 'Contact Us',
   href: '/contact',
 };
 
-const faqLink = {
+const faq = {
   name: 'FAQ',
   href: '/faq',
 };
 
-const podcastLink = {
+const podcast = {
   name: 'Podcast',
   href: '/podcast',
 };
 
-const brandingLink = {
+const branding = {
   name: 'Branding',
   href: '/branding',
 };
 
-const getInvolvedLink = {
+const getInvolved = {
   name: 'Get Involved',
   href: '/get_involved',
 };
 
-const eventsLink = {
+const events = {
   name: 'Events',
   href: '/events',
 };
 
+const profile = {
+  name: 'Profile',
+  href: '/profile',
+};
+
+const codeSchools = {
+  name: 'Code Schools',
+  href: '/code_schools',
+};
+
+const resources = {
+  name: 'Resources',
+  href: '/resources',
+};
+
+const logout = {
+  name: 'Logout',
+  href: '/logout', // has a redirect in Next configuration file.
+};
+
+const login = {
+  name: 'Login',
+  href: '/login', // has a redirect in Next configuration file.
+};
+
 // MARK: Top-level navigation items
-const accountWithSublinks = {
+const accountGroup = {
   name: 'Account',
-  href: '/login',
-  sublinks: [
-    {
-      name: 'Login',
-      href: '/login',
-    },
-    {
-      name: 'Join',
-      href: '/join',
-    },
-  ],
+  href: profile.href,
+  sublinks: [profile, logout],
   icon: 'UserLogo',
 };
 
-const aboutUs = {
-  name: 'About Us',
-  href: '/about',
-  sublinks: [whoWeServeLink, contactLink, faqLink, podcastLink, brandingLink],
+const servicesGroup = {
+  ...services,
+  sublinks: [events, podcast, resources, codeSchools],
 };
 
-const events = {
-  ...eventsLink,
+const aboutUsGroup = {
+  ...about,
+  sublinks: [contact, faq, branding],
 };
 
-const getInvolved = {
-  ...getInvolvedLink,
+const getInvolvedGroup = {
+  ...getInvolved,
   sublinks: [
     {
       name: 'Sponsorship',
@@ -73,62 +103,41 @@ const getInvolved = {
   ],
 };
 
-const profile = {
-  name: 'Profile',
-  href: '/profile',
-};
-
-const logout = {
-  name: 'Logout',
-  href: '/login?loggedOut=true',
-};
-
 // MARK: Nav items
-export const loggedInNavItems = [aboutUs, events, getInvolved, profile, logout];
-export const loggedOutNavItems = [aboutUs, events, getInvolved, accountWithSublinks];
+export const loggedInNavItems = [aboutUsGroup, servicesGroup, getInvolvedGroup, accountGroup];
+export const loggedOutNavItems = [aboutUsGroup, servicesGroup, getInvolvedGroup, login];
 
 // Extracts sublinks to list everything as a single, top-level list
 export const mobileLoggedInNavItems = flattenDepth(
-  [logout, profile, aboutUs, events, getInvolved].map(({ sublinks = [], ...item }) => [
+  [logout, profile, about, events, getInvolved].map(({ sublinks = [], ...item }) => [
     item,
     sublinks,
   ]),
   2,
 );
+
 export const mobileLoggedOutNavItems = flattenDepth(
-  [
-    ...accountWithSublinks.sublinks,
-    aboutUs,
-    events,
-    getInvolved,
-  ].map(({ sublinks = [], ...item }) => [item, sublinks]),
+  [...accountGroup.sublinks, about, events, getInvolved].map(({ sublinks = [], ...item }) => [
+    item,
+    sublinks,
+  ]),
   2,
 );
 
 // MARK: Footer items
 export const footerItems = {
-  column1: [
-    {
-      href: '/about',
-      name: 'About Us',
-    },
-    contactLink,
-    faqLink,
-  ],
+  column1: [about, contact, faq, services],
   column2: [
-    {
-      href: '/code_schools',
-      name: 'Code Schools',
-    },
+    codeSchools,
+    resources,
     {
       href: '/jobs',
       name: 'Job Board',
     },
-    eventsLink,
-    whoWeServeLink,
+    events,
   ],
   column3: [
-    getInvolvedLink,
+    getInvolved,
     {
       href: '/podcast',
       name: 'Podcast',
@@ -137,24 +146,15 @@ export const footerItems = {
       href: '/history',
       name: 'History',
     },
-    {
-      href: '/donate',
-      name: 'Donate',
-    },
+    donate,
   ],
   column4: [
     {
       href: '/press',
       name: 'Press',
     },
-    {
-      href: '/branding',
-      name: 'Branding',
-    },
-    {
-      href: '/team',
-      name: 'Team',
-    },
+    branding,
+    team,
   ],
   legal: [
     {

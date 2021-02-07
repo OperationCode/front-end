@@ -85,7 +85,7 @@ describe('login?loggedOut=True', () => {
   beforeEach(() => {
     cy.clearCookies();
     cy.getCookies().should('have.length', 0);
-    cy.visit('/login?loggedOut=True');
+    cy.visit('/logout');
   });
 
   it('should display logged out alert if routed via logout button', () => {

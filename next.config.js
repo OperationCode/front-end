@@ -39,6 +39,16 @@ const nextConfig = withBundleAnalyzer({
         permanent: true,
       },
       {
+        source: '/logout',
+        destination: '/login?loggedOut=true',
+        permanent: true,
+      },
+      {
+        source: '/who_we_serve',
+        destination: '/services',
+        permanent: true,
+      },
+      {
         source: '/swag',
         destination: 'https://operationcode.threadless.com/',
         permanent: true,

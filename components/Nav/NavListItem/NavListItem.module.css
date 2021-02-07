@@ -15,6 +15,7 @@
   display: flex;
   fill: currentColor;
   height: 100%;
+  min-width: 100px;
   justify-content: center;
   transition: all 0.2s linear;
 }
