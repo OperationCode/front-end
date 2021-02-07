@@ -38,7 +38,7 @@ function Home() {
       <Content
         theme="gray"
         columns={[
-          <div className={styles.cta}>
+          <div className={styles.mission}>
             <Heading text="Our Mission" hasTitleUnderline />
             <p className={styles.justifyAlign}>
               We serve our veterans, service members, and their families, work alongside their

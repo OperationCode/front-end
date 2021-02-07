@@ -1,5 +1,13 @@
-.GetInvolved .ctaContainer > a:first-of-type {
-  margin-right: 1rem;
+.GetInvolved .ctaContainer {
+  display: flex;
+  width: 100%;
+  max-width: var(--typicalMaxWidth);
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.GetInvolved .ctaContainer > * {
+  margin-top: 1rem;
 }
 
 .GetInvolved .justifyAlign {
