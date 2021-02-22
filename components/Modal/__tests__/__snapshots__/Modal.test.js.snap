@@ -25,7 +25,6 @@ exports[`Modal should render with many props assigned 1`] = `
     >
       <div
         aria-label="Test"
-        aria-modal="true"
         class="ReactModal__Content ReactModal__Content--after-open Card test-class"
         role="dialog"
         tabindex="-1"
