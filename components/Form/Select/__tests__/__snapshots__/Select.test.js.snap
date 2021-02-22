@@ -103,7 +103,7 @@ exports[`Select should render with required props 1`] = `
           >
             <svg
               aria-hidden="true"
-              className="css-tj5bde-Svg"
+              className="css-6q0nyr-Svg"
               focusable="false"
               height={20}
               viewBox="0 0 20 20"
