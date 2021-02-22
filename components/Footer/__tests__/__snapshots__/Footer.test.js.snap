@@ -31,6 +31,13 @@ exports[`Footer should render with no props passed 1`] = `
     </div>
     <SocialMedia />
   </div>
+  <div>
+    <img
+      alt="GuideStar Gold Transparency Seal"
+      className="sealImg"
+      src="https://user-images.githubusercontent.com/51661129/108640355-749a0000-7499-11eb-89af-4fdb6efaff97.gif"
+    />
+  </div>
   <div
     className="footerWrapper row"
   >
