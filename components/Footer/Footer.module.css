@@ -14,7 +14,7 @@
 .Footer a {
   color: var(--white);
 }
-.sealImg {
+.goldSealImg {
   height: 200px;
   width: 200px;
   padding: 0;
@@ -97,7 +97,7 @@
 }
 
 @media screen and (min-width: 768px) {
-  .sealImg {
+  .goldSealImg {
     height: 175px;
     width: 175px;
     padding-top: 15px;
@@ -125,7 +125,7 @@
 }
 
 @media screen and (min-width: 1200px) {
-  .sealImg {
+  .goldSealImg {
     height: 120px;
     width: 120px;
     padding: 0 0 15px;
