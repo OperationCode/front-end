@@ -16,8 +16,8 @@
 }
 
 .goldSealImg {
-  height: 200px;
-  width: 200px;
+  height: 120px;
+  width: 120px;
   padding: 0;
 }
 
@@ -203,11 +203,5 @@
 @media screen and (--extra-large-viewport) {
   .lineHeightFix {
     line-height: 24px;
-  }
-
-  .goldSealImg {
-    height: 120px;
-    width: 120px;
-    padding: 0 0 15px;
   }
 }
