@@ -111,7 +111,7 @@ exports[`UpdateProfileForm/Steps/MilitaryDetails should render in context of For
               >
                 <svg
                   aria-hidden="true"
-                  className="css-6q0nyr-Svg"
+                  className="css-tj5bde-Svg"
                   focusable="false"
                   height={20}
                   viewBox="0 0 20 20"
