@@ -47,9 +47,9 @@ function Footer() {
       </div>
       <div>
         <img
-          src="https://user-images.githubusercontent.com/51661129/108640355-749a0000-7499-11eb-89af-4fdb6efaff97.gif"
+          src={`${s3}guidestar_gold.png`}
           alt="GuideStar Gold Transparency Seal"
-          className={styles.sealImg}
+          className={styles.goldSealImg}
         />
       </div>
       <div className={classNames(styles.footerWrapper, styles.row)}>
