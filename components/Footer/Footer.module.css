@@ -101,7 +101,8 @@
   .goldSealImg {
     height: 175px;
     width: 175px;
-    padding-top: 15px;
+    margin-top: 1rem;
+    margin-bottom: 0;
   }
 }
 
