@@ -18,7 +18,7 @@
 .goldSealImg {
   height: 120px;
   width: 120px;
-  padding: 0;
+  margin-bottom: 1rem;
 }
 
 .Footer:not(.logoGrouping) a:hover {
@@ -101,7 +101,8 @@
   .goldSealImg {
     height: 175px;
     width: 175px;
-    padding-top: 15px;
+    margin-top: 1rem;
+    margin-bottom: 0;
   }
 }
 
