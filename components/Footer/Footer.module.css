@@ -1,7 +1,7 @@
 .Footer {
   align-items: center;
   display: flex;
-  height: 500px;
+  height: 550px;
   justify-content: center;
   flex-direction: column;
   padding: 2rem 0;
@@ -13,6 +13,12 @@
 
 .Footer a {
   color: var(--white);
+}
+
+.goldSealImg {
+  height: 120px;
+  width: 120px;
+  margin-bottom: 1rem;
 }
 
 .Footer:not(.logoGrouping) a:hover {
@@ -89,6 +95,15 @@
 
 .footerWrapper {
   max-width: 1100px;
+}
+
+@media screen and (--medium-viewport) {
+  .goldSealImg {
+    height: 175px;
+    width: 175px;
+    margin-top: 1rem;
+    margin-bottom: 0;
+  }
 }
 
 @media screen and (min-width: 1120px) {

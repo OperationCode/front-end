@@ -31,6 +31,13 @@ exports[`Footer should render with no props passed 1`] = `
     </div>
     <SocialMedia />
   </div>
+  <div>
+    <img
+      alt="GuideStar Gold Transparency Seal"
+      className="goldSealImg"
+      src="https://operation-code-assets.s3.us-east-2.amazonaws.com/guidestar_gold.png"
+    />
+  </div>
   <div
     className="footerWrapper row"
   >
