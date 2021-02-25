@@ -61,9 +61,9 @@ function Footer() {
             <ul className={styles.linksColumn}>
               {footerItems.column2.map(link => renderLink(link))}
             </ul>
-          </div>
+            {/* </div> */}
 
-          <div className={styles.linksRow}>
+            {/* <div className={styles.linksRow}> */}
             <ul className={styles.linksColumn}>
               {footerItems.column3.map(link => renderLink(link))}
             </ul>
