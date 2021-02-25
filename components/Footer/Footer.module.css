@@ -51,7 +51,7 @@
 .linksGrouping {
   flex-direction: row;
   align-items: flex-start;
-  padding-left: 3rem;
+  padding-left: 7rem;
 }
 
 .linksGrouping ul {
@@ -164,6 +164,7 @@
 
   .linksRow {
     flex: 1 1 100%;
+    flex-wrap: wrap;
   }
 
   .linksColumn {

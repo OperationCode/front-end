@@ -127,10 +127,6 @@ exports[`Footer should render with no props passed 1`] = `
             </Link>
           </li>
         </ul>
-      </div>
-      <div
-        className="linksRow"
-      >
         <ul
           className="linksColumn"
         >
