@@ -172,7 +172,7 @@
   }
 
   .linksGrouping {
-    margin-left: 15%;
+    margin-left: 2.5rem;
   }
 
   .linksGrouping li:not(:last-child) {
@@ -190,7 +190,7 @@
 
 @media screen and (--extra-small-viewport) {
   .linksGrouping {
-    margin-left: 10%;
+    margin-left: 1.5rem;
   }
 }
 
