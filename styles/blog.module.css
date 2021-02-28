@@ -1,0 +1,16 @@
+.blogsList {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+.blogTitle {
+  text-decoration: none;
+}
+
+.blogTitle:hover {
+  text-decoration: underline;
+}
