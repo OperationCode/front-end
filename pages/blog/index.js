@@ -7,6 +7,7 @@ import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Link from 'next/link';
 // import Content from 'components/Content/Content';
 import ImageCard from 'components/Cards/ImageCard/ImageCard';
+import { s3 } from 'common/constants/urls';
 import styles from 'styles/blog.module.css';
 
 const pageTitle = 'Blogs';
@@ -36,7 +37,10 @@ function BlogIndex({ articles }) {
       <ul className={styles.blogsList}>
         {articles.map(article => {
           return (
-            <ImageCard>
+            <ImageCard
+              alt="Two women pair programming"
+              imageSource={`${s3}stock_paired-programming.jpg`}
+            >
               <li key={article}>
                 <Link href="/blog/[article]" as={`/blog/${article}`}>
                   <a className={styles.blogTitle}>{article}</a>
