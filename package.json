@@ -148,7 +148,7 @@
     "require-context.macro": "^1.2.2",
     "start-server-and-test": "^1.11.7",
     "style-loader": "^2.0.0",
-    "stylelint": "^13.9.0",
+    "stylelint": "^13.11.0",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-standard": "^20.0.0",
     "stylelint-prettier": "^1.1.2",
