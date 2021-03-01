@@ -43,7 +43,7 @@ function BlogIndex({ articles }) {
             >
               <li key={article}>
                 <Link href="/blog/[article]" as={`/blog/${article}`}>
-                  <a className={styles.blogTitle}>{article}</a>
+                  <a>{article}</a>
                 </Link>
               </li>
             </ImageCard>
