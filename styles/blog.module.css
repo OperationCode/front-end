@@ -6,11 +6,3 @@
   padding: 0;
   margin: 0;
 }
-
-.blogTitle {
-  text-decoration: none;
-}
-
-.blogTitle:hover {
-  text-decoration: underline;
-}
