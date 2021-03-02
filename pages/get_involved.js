@@ -79,7 +79,7 @@ function GetInvolved() {
           </p>
 
           <div className={styles.ctaContainer}>
-            <LinkButton href="/about`">Learn More</LinkButton>
+            <LinkButton href="/about">Learn More</LinkButton>
             <LinkButton href="/join">Join Us</LinkButton>
           </div>
         </>

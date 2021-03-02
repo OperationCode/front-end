@@ -7,9 +7,6 @@ const withMDX = require('@next/mdx')({
 const svgoConfig = require('./common/config/svgo');
 
 const nextConfig = withBundleAnalyzer({
-  // For Vercel
-  // see: https://vercel.com/guides/deploying-nextjs-with-vercel
-  target: 'serverless',
   productionBrowserSourceMaps: true,
 
   experimental: {
