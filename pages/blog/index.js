@@ -5,7 +5,6 @@ import { ONE_DAY } from 'common/constants/unitsOfTime';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Link from 'next/link';
-// import Content from 'components/Content/Content';
 import ImageCard from 'components/Cards/ImageCard/ImageCard';
 import { s3 } from 'common/constants/urls';
 import styles from 'styles/blog.module.css';
@@ -37,16 +36,16 @@ function BlogIndex({ articles }) {
       <ul className={styles.blogsList}>
         {articles.map(article => {
           return (
-            <ImageCard
-              alt="Two women pair programming"
-              imageSource={`${s3}stock_paired-programming.jpg`}
-            >
-              <li key={article}>
+            <li key={article} className={styles.blog}>
+              <ImageCard
+                alt="Two women pair programming"
+                imageSource={`${s3}stock_paired-programming.jpg`}
+              >
                 <Link href="/blog/[article]" as={`/blog/${article}`}>
                   <a>{article}</a>
                 </Link>
-              </li>
-            </ImageCard>
+              </ImageCard>
+            </li>
           );
         })}
       </ul>
