@@ -9,6 +9,7 @@
   width: 100%;
 }
 
-.FAQ .FAQAccordion svg {
+.FAQ .FAQAccordion > button > svg {
   fill: currentColor;
+  top: 0.825rem;
 }
