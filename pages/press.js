@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
-import { Videos, Photos, CivicXBadge, Links } from 'components/Press';
+import { Videos, Photos, Links } from 'components/Press';
 import styles from 'styles/press.module.css';
 
 const pageTitle = 'Press';
@@ -116,16 +116,6 @@ function Press() {
             <Link href="/branding">
               <a>View Our Branding</a>
             </Link>
-          </div>,
-        ]}
-      />
-
-      <Content
-        title="Accelerator Completions"
-        theme="gray"
-        columns={[
-          <div>
-            <CivicXBadge />
           </div>,
         ]}
       />
