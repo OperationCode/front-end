@@ -732,6 +732,40 @@ exports[`Timeline should render with no props passed passed 1`] = `
       className="date"
     >
       <h3>
+        2020
+      </h3>
+    </div>
+    <div
+      className="vertLine"
+    >
+      <div
+        className="line"
+      />
+      <div
+        className="bubble"
+      />
+    </div>
+    <div
+      className="timelineEvent"
+      id="event-2020"
+    >
+      <TimelineEvent
+        content={
+          <p>
+            Operation Code reached 7000 members.
+          </p>
+        }
+        title="7000 Members"
+      />
+    </div>
+  </div>
+  <div
+    className="segment"
+  >
+    <div
+      className="date"
+    >
+      <h3>
         2021
       </h3>
     </div>
