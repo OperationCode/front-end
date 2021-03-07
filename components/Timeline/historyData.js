@@ -537,4 +537,10 @@ export default {
       ),
     },
   ],
+  2021: [
+    {
+      title: `GuideStar Gold Transparency Seal`,
+      content: <p>Operation Code received the GuideStar Gold Transparency Seal</p>,
+    },
+  ],
 };
