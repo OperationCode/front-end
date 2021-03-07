@@ -537,6 +537,12 @@ export default {
       ),
     },
   ],
+  2020: [
+    {
+      title: `7000 Members`,
+      content: <p>Operation Code reached 7000 members.</p>,
+    },
+  ],
   2021: [
     {
       title: `GuideStar Gold Transparency Seal`,
