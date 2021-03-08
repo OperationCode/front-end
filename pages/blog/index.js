@@ -40,6 +40,7 @@ function BlogIndex({ articles }) {
               <ImageCard
                 alt="Two women pair programming"
                 imageSource={`${s3}stock_paired-programming.jpg`}
+                className={styles.cardWidth}
               >
                 <Link href="/blog/[article]" as={`/blog/${article}`}>
                   <a>{article}</a>
