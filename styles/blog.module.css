@@ -11,6 +11,12 @@
   width: 100%;
 }
 
+@media screen and (min-width: 425px) {
+  .cardWidth {
+    max-width: 425px;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .blog {
     width: 50%;
@@ -20,5 +26,8 @@
 @media screen and (min-width: 1024px) {
   .blog {
     width: 33%;
+  }
+  .cardWidth {
+    width: auto;
   }
 }
