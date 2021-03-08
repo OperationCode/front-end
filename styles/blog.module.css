@@ -4,30 +4,27 @@
   flex-wrap: wrap;
   justify-content: space-around;
   padding: 0;
-  margin: 0;
+  margin: 0 1.25rem;
 }
 
 .blog {
-  width: 100%;
+  width: 32%;
+  margin: 0 0.25rem;
 }
 
-@media screen and (min-width: 425px) {
-  .cardWidth {
-    max-width: 425px;
-  }
+.blogCard {
+  width: auto;
+  margin: 0.75rem auto;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (--medium-viewport) {
   .blog {
-    width: 50%;
+    width: 48%;
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (--small-viewport) {
   .blog {
-    width: 33%;
-  }
-  .cardWidth {
-    width: auto;
+    width: 100%;
   }
 }
