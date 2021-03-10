@@ -8,7 +8,6 @@
 }
 
 .blog {
-  width: 33%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,16 +15,4 @@
 
 .blogCard {
   width: auto;
-}
-
-@media screen and (--medium-viewport) {
-  .blog {
-    width: 50%;
-  }
-}
-
-@media screen and (--small-viewport) {
-  .blog {
-    width: 100%;
-  }
 }
