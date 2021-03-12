@@ -5,6 +5,9 @@ import { ONE_DAY } from 'common/constants/unitsOfTime';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Link from 'next/link';
+import ImageCard from 'components/Cards/ImageCard/ImageCard';
+import { s3 } from 'common/constants/urls';
+import styles from 'styles/blog.module.css';
 
 const pageTitle = 'Blogs';
 
@@ -29,13 +32,20 @@ function BlogIndex({ articles }) {
     <>
       <Head title={pageTitle} />
       <HeroBanner title={pageTitle} />
-      <ul>
+
+      <ul className={styles.blogsList}>
         {articles.map(article => {
           return (
-            <li key={article}>
-              <Link href="/blog/[article]" as={`/blog/${article}`}>
-                <a>{article}</a>
-              </Link>
+            <li key={article} className={styles.blog}>
+              <ImageCard
+                alt="Two women pair programming"
+                imageSource={`${s3}stock_paired-programming.jpg`}
+                className={styles.blogCard}
+              >
+                <Link href="/blog/[article]" as={`/blog/${article}`}>
+                  <a>{article}</a>
+                </Link>
+              </ImageCard>
             </li>
           );
         })}
