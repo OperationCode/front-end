@@ -12,7 +12,9 @@ import Button from 'components/Buttons/Button/Button';
 import Form from 'components/Form/Form';
 import Input from 'components/Form/Input/Input';
 import Alert from 'components/Alert/Alert';
+import Link from 'next/link';
 import styles from './RegistrationForm.module.css';
+// import OutboundLink from 'components/OutboundLink/OutboundLink';
 
 /**
  * Zipcode issues solved via a trim check from Yup.
@@ -51,6 +53,7 @@ RegistrationForm.propTypes = {
     firstName: string,
     lastName: string,
     zipcode: oneOfType([string, number]),
+    href: string.isRequired,
   }),
 };
 
@@ -110,6 +113,17 @@ function RegistrationForm({ initialValues, onSuccess }) {
             We work closely with military veterans, service members, and spouses who are passionate
             about transitioning into the tech industry. We work with over 7,000 members who are all
             working towards relevant goals on Slack and in-person meet-ups. Membership is free!
+            Unfamiliar with Slack?{` `}
+            <Link href="/slack_guide">
+              <a>Learn how to use it!</a>
+            </Link>
+            {/* <OutboundLink
+              className={styles.link}
+              href={href}
+
+            >
+              {'Learn how to use it!'}
+            </OutboundLink> */}
           </p>
 
           <div>
