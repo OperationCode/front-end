@@ -117,13 +117,6 @@ function RegistrationForm({ initialValues, onSuccess }) {
             <Link href="/slack_guide">
               <a>Learn how to use it!</a>
             </Link>
-            {/* <OutboundLink
-              className={styles.link}
-              href={href}
-
-            >
-              {'Learn how to use it!'}
-            </OutboundLink> */}
           </p>
 
           <div>
