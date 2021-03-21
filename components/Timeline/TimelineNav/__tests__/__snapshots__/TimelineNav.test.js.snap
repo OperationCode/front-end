@@ -59,6 +59,22 @@ exports[`TimelineNav should render with no props passed passed 1`] = `
       className="timelineNavLink"
       offset={0}
       smooth={true}
+      to="event-2018"
+    >
+      2018
+    </Link>
+    <Link
+      className="timelineNavLink"
+      offset={0}
+      smooth={true}
+      to="event-2019"
+    >
+      2019
+    </Link>
+    <Link
+      className="timelineNavLink"
+      offset={0}
+      smooth={true}
       to="event-2020"
     >
       2020

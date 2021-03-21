@@ -732,6 +732,74 @@ exports[`Timeline should render with no props passed passed 1`] = `
       className="date"
     >
       <h3>
+        2018
+      </h3>
+    </div>
+    <div
+      className="vertLine"
+    >
+      <div
+        className="line"
+      />
+      <div
+        className="bubble"
+      />
+    </div>
+    <div
+      className="timelineEvent"
+      id="event-2018"
+    >
+      <TimelineEvent
+        content={
+          <p>
+            Placeholder
+          </p>
+        }
+        title="2018 Major Milestone Placeholder"
+      />
+    </div>
+  </div>
+  <div
+    className="segment"
+  >
+    <div
+      className="date"
+    >
+      <h3>
+        2019
+      </h3>
+    </div>
+    <div
+      className="vertLine"
+    >
+      <div
+        className="line"
+      />
+      <div
+        className="bubble"
+      />
+    </div>
+    <div
+      className="timelineEvent"
+      id="event-2019"
+    >
+      <TimelineEvent
+        content={
+          <p>
+            Placeholder
+          </p>
+        }
+        title="2019 Major Milestone Placeholder"
+      />
+    </div>
+  </div>
+  <div
+    className="segment"
+  >
+    <div
+      className="date"
+    >
+      <h3>
         2020
       </h3>
     </div>
@@ -752,10 +820,10 @@ exports[`Timeline should render with no props passed passed 1`] = `
       <TimelineEvent
         content={
           <p>
-            Operation Code reached 7000 members.
+            Placeholder
           </p>
         }
-        title="7000 Members"
+        title="2020 Major Milestone Placeholder"
       />
     </div>
   </div>

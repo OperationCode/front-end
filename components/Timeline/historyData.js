@@ -537,10 +537,22 @@ export default {
       ),
     },
   ],
+  2018: [
+    {
+      title: `2018 Major Milestone Placeholder`,
+      content: <p>Placeholder</p>,
+    },
+  ],
+  2019: [
+    {
+      title: `2019 Major Milestone Placeholder`,
+      content: <p>Placeholder</p>,
+    },
+  ],
   2020: [
     {
-      title: `7000 Members`,
-      content: <p>Operation Code reached 7000 members.</p>,
+      title: `2020 Major Milestone Placeholder`,
+      content: <p>Placeholder</p>,
     },
   ],
   2021: [
