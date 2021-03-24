@@ -79,4 +79,5 @@ export default [
     'Kyle Holmberg',
     'Alexander Verhulst',
     'Christian Gonzalez',
+    'Sean Mangosing',
 ]
