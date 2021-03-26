@@ -53,7 +53,6 @@ RegistrationForm.propTypes = {
     firstName: string,
     lastName: string,
     zipcode: oneOfType([string, number]),
-    href: string.isRequired,
   }),
 };
 
