@@ -14,7 +14,6 @@ import Input from 'components/Form/Input/Input';
 import Alert from 'components/Alert/Alert';
 import Link from 'next/link';
 import styles from './RegistrationForm.module.css';
-// import OutboundLink from 'components/OutboundLink/OutboundLink';
 
 /**
  * Zipcode issues solved via a trim check from Yup.

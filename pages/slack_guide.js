@@ -1,6 +1,5 @@
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
-import Content from 'components/Content/Content';
 import styles from 'styles/slack_guide.module.css';
 
 const pageTitle = 'Slack Guide';
