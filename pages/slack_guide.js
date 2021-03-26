@@ -1,15 +1,14 @@
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
-import styles from 'styles/slack_guide.module.css';
 
 const pageTitle = 'Slack Guide';
 
 function SlackGuide() {
   return (
-    <div className={styles.slackGuide}>
+    <div>
       <Head title={pageTitle} />
 
-      <HeroBanner className={styles.hero} title={pageTitle}>
+      <HeroBanner title={pageTitle}>
         <iframe
           title="Slack Guide"
           src="https://youtube.com/embed/m2JuAa6-ors"
