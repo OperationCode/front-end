@@ -3,31 +3,29 @@ import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
 import styles from 'styles/slack_guide.module.css';
 
-const pageTitle = "Slack Guide";
+const pageTitle = 'Slack Guide';
 
 function SlackGuide() {
-    return (
-      <div className={styles.slackGuide}>
-        <Head title={pageTitle} />
+  return (
+    <div className={styles.slackGuide}>
+      <Head title={pageTitle} />
 
-        <HeroBanner
-        className={styles.hero}
-        title={pageTitle}
-        />
+      <HeroBanner className={styles.hero} title={pageTitle} />
 
-        <Content
-          columns={[
-            <iframe
+      <Content
+        columns={[
+          <iframe
             title="Slack Guide"
             src="https://youtube.com/embed/m2JuAa6-ors"
             frameBorder="0"
             allowFullScreen
             width="755"
             height="425"
-          />
-        ]} />
-      </div>
-    );
-  }
-  
-  export default SlackGuide;
+          />,
+        ]}
+      />
+    </div>
+  );
+}
+
+export default SlackGuide;
