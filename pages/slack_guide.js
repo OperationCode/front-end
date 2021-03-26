@@ -10,20 +10,16 @@ function SlackGuide() {
     <div className={styles.slackGuide}>
       <Head title={pageTitle} />
 
-      <HeroBanner className={styles.hero} title={pageTitle} />
-
-      <Content
-        columns={[
-          <iframe
-            title="Slack Guide"
-            src="https://youtube.com/embed/m2JuAa6-ors"
-            frameBorder="0"
-            allowFullScreen
-            width="755"
-            height="425"
-          />,
-        ]}
-      />
+      <HeroBanner className={styles.hero} title={pageTitle}>
+        <iframe
+          title="Slack Guide"
+          src="https://youtube.com/embed/m2JuAa6-ors"
+          frameBorder="0"
+          allowFullScreen
+          width="755"
+          height="425"
+        />
+      </HeroBanner>
     </div>
   );
 }
