@@ -15,6 +15,11 @@ const about = {
   href: '/about',
 };
 
+const history = {
+  name: 'History',
+  href: '/history',
+};
+
 const team = {
   name: 'Our Team',
   href: '/team',
@@ -90,7 +95,7 @@ const servicesGroup = {
 
 const aboutUsGroup = {
   ...about,
-  sublinks: [contact, faq, branding],
+  sublinks: [history, contact, faq, branding],
 };
 
 const getInvolvedGroup = {
