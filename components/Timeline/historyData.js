@@ -6,7 +6,7 @@ export default {
       title: 'Humble Beginnings',
       content: (
         <p>
-          Operation Code&apos;s founder - retired U.S. Army Captain, David Molina, attended his
+          Operation Code&apos;s founder - retired U.S. Army Captain, David Molina - attended his
           first hackathon in New York City. After a weekend learning to code at{' '}
           <OutboundLink
             analyticsEventLabel="History Link"
