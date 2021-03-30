@@ -116,7 +116,7 @@ exports[`Timeline should render with no props passed passed 1`] = `
       <TimelineEvent
         content={
           <p>
-            During this time, Molina met with Virginia Senator Tim Kaine, to speak about the inability to use the Post 9/11 GI Bill for coding bootcamps. Before departing D.C., Molina received advice from U.S. Army Congressional Fellow Ben Culver, on gathering data to address the problem.  This was the beginning efforts for the current VET TEC pilot program under the Forever G.I. Bill.
+            During this time, Molina met with Virginia Senator Tim Kaine, to speak about the inability to use the Post 9/11 GI Bill for coding bootcamps. Before departing D.C., Molina received advice from U.S. Army Congressional Fellow Ben Culver, on gathering data to address the problem. This was the beginning efforts for the current VET TEC pilot program under the Forever G.I. Bill.
           </p>
         }
         title="Grassroots Advocacy"
@@ -210,7 +210,7 @@ exports[`Timeline should render with no props passed passed 1`] = `
               Code Fellows,
             </OutboundLink>
              
-            Ivan Storck, purchased the domain 'operationcode.org' and became our first donor in the process.  To round out 2014, HackHands co-founders Forest Good and Geraldo Ramos joined Operation Code, designing our logo and providing veterans free access to
+            Ivan Storck, purchased the domain 'operationcode.org' and became our first donor in the process. To round out 2014, HackHands co-founders Forest Good and Geraldo Ramos joined Operation Code, designing our logo and providing veterans free access to
              
             <OutboundLink
               alt="Hack Summit"
