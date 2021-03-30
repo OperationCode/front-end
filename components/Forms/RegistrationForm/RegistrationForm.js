@@ -185,8 +185,9 @@ function RegistrationForm({ initialValues, onSuccess }) {
           {errorMessage && <Alert type="error">{errorMessage}</Alert>}
 
           <p>
-            The information we collect is to help us personalize your experience on our Slack
-            community. We do not sell your information to anyone.
+            The demographic information you provide, helps us understand our community needs, ensure
+            diversity, and provide specific resources to reach our mission. Thank you in advance for
+            providing honest answers. We do not sell your information to anyone.
           </p>
           <Button
             className={styles.topMargin}
