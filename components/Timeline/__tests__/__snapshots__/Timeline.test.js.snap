@@ -31,7 +31,7 @@ exports[`Timeline should render with no props passed passed 1`] = `
       <TimelineEvent
         content={
           <p>
-            Operation Code's founder - retired U.S. Army Captain, David Molina, attended his first hackathon in New York City. After a weekend learning to code at
+            Operation Code's founder - retired U.S. Army Captain, David Molina - attended his first hackathon in New York City. After a weekend learning to code at
              
             <OutboundLink
               alt="Angel Hack"
