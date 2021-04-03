@@ -77,6 +77,10 @@ exports[`Nav should render with no props passed 1`] = `
             sublinks={
               Array [
                 Object {
+                  "href": "/history",
+                  "name": "History",
+                },
+                Object {
                   "href": "/contact",
                   "name": "Contact Us",
                 },
