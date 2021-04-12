@@ -169,8 +169,8 @@ const questions = {
               Specific geographic channels such as <b>#san-diego</b>, <b>#san-francisco</b>, etc.
             </li>
             <li>
-              Specific channels such as <b>#web-dev</b>, <b>#cyber-security</b>, <br />
-              <b>#dotnet</b>, <b>#computer-science</b> etc.
+              Specific channels such as <b>#web-dev</b>, <b>#cyber-security</b>, <b>#dotnet</b>,
+              <br /> <b>#computer-science</b> etc.
             </li>
             <li>
               <b>#random</b> for socializing, memes and other miscellaneous chatter
