@@ -5,6 +5,7 @@ import Accordion from 'components/Accordion/Accordion';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 import { s3 } from 'common/constants/urls';
 import styles from 'styles/faq.module.css';
+import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
 
 const pageTitle = 'Slack Guide';
 
@@ -205,18 +206,21 @@ const questions = {
       title: `How to explore other Operation Code channels?`,
       content: (
         <>
-          <img
-            src={`${s3}redesign/images/chef_seattle_meetup.jpg`}
-            alt="Nell Shamrell-Harrington gives a talk at Chef in Seattle"
-          />
+          <ScreenReaderOnly>
+            Our instructions are focused on seeing-eye users. If you use assistive technology on
+            your computer, [Slack&apos;s own
+            guide](https://slack.com/help/articles/360000411963-Use-Slack-with-a-screen-reader) will
+            be more helpful.
+          </ScreenReaderOnly>
+
+          <img src={`${s3}slack_tutorial/explore_channels.jpg`} alt="" />
+
           <p>
             Once you’ve found a channel that interests you, click the green “Join Channel” button.
             You’re ready to go! Have fun, learn, and connect with others!
           </p>
-          <img
-            src={`${s3}redesign/images/chef_seattle_meetup.jpg`}
-            alt="Nell Shamrell-Harrington gives a talk at Chef in Seattle"
-          />
+
+          <img src={`${s3}slack_tutorial/join_channel.jpg`} alt="" />
         </>
       ),
     },
