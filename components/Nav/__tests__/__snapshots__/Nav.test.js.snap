@@ -8,12 +8,8 @@ exports[`Nav should render with no props passed 1`] = `
     navItems={
       Array [
         Object {
-          "href": "/profile",
-          "name": "Profile",
-        },
-        Object {
-          "href": "/logout",
-          "name": "Logout",
+          "href": "/login",
+          "name": "Login",
         },
         Object {
           "href": "/about",
@@ -26,6 +22,22 @@ exports[`Nav should render with no props passed 1`] = `
         Object {
           "href": "/get_involved",
           "name": "Get Involved",
+        },
+        Object {
+          "href": "/events",
+          "name": "Events",
+        },
+        Object {
+          "href": "/podcast",
+          "name": "Podcast",
+        },
+        Object {
+          "href": "/resources",
+          "name": "Resources",
+        },
+        Object {
+          "href": "/code_schools",
+          "name": "Code Schools",
         },
       ]
     }
@@ -64,6 +76,10 @@ exports[`Nav should render with no props passed 1`] = `
             name="About Us"
             sublinks={
               Array [
+                Object {
+                  "href": "/history",
+                  "name": "History",
+                },
                 Object {
                   "href": "/contact",
                   "name": "Contact Us",
