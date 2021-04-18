@@ -4,8 +4,8 @@ import Content from 'components/Content/Content';
 import Accordion from 'components/Accordion/Accordion';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 import { s3 } from 'common/constants/urls';
-import styles from 'styles/faq.module.css';
 import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
+import styles from 'styles/slack_guide.module.css';
 
 const pageTitle = 'Slack Guide';
 
@@ -213,14 +213,22 @@ const questions = {
             be more helpful.
           </ScreenReaderOnly>
 
-          <img src={`${s3}slack_tutorial/explore_channels.jpg`} alt="" />
+          <img
+            className={styles.exploreChannels}
+            src={`${s3}slack_tutorial/explore_channels.jpg`}
+            alt=""
+          />
 
           <p>
             Once you’ve found a channel that interests you, click the green “Join Channel” button.
             You’re ready to go! Have fun, learn, and connect with others!
           </p>
 
-          <img src={`${s3}slack_tutorial/join_channel.jpg`} alt="" />
+          <img
+            className={styles.joinChannels}
+            src={`${s3}slack_tutorial/join_channel.jpg`}
+            alt=""
+          />
         </>
       ),
     },
@@ -240,6 +248,7 @@ function SlackGuide() {
           allowFullScreen
           width="755"
           height="425"
+          className={styles.slackVideo}
         />
       </HeroBanner>
 
