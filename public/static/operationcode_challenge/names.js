@@ -80,4 +80,5 @@ export default [
     'Alexander Verhulst',
     'Christian Gonzalez',
     'Sean Mangosing',
+    'Frank (franklyspeaking) Gauss',
 ]
