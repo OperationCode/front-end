@@ -18,19 +18,17 @@ function DonatePage() {
             tech industry, and code the future.
           </p>
           <p>
-            As the largest community of military veterans, service members, and spouses, we have
-            ample experience and have helped thousands of members enter into the tech industry.
-          </p>
-          <p>
             Your donation helps keep our mentorship program up and running, allows us to provide
             coding scholarships and licenses, and more.
           </p>
+          <p>Our community consists of over 8,000 members and is only continuing to grow.</p>
           <p>
-            We pride ourselves in transparency, making sure that our community knows what their
-            contributions are going towards.
+            We pride ourselves in operating with transparency, which has led to us receiving the
+            Gold Seal of Transparency from GuideStar in 2021.
           </p>
           <br />
         </div>
+        <br />
         <iframe
           title="Donation Form"
           src="https://secure.lglforms.com/form_engine/s/BRtP7QUKyHOyEYsZROsRew"
