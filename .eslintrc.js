@@ -6,7 +6,6 @@ module.exports = {
     'airbnb',
     'plugin:jsx-a11y/recommended',
     'prettier',
-    'prettier/react',
     'plugin:jest/recommended',
     'plugin:cypress/recommended',
   ],
@@ -218,31 +217,6 @@ module.exports = {
     'unicorn/prefer-starts-ends-with': 'error',
     'unicorn/prefer-text-content': 'error',
     'unicorn/prefer-type-error': 'error',
-    'unicorn/prevent-abbreviations': [
-      'error',
-      {
-        whitelist: {
-          args: true, // arguments is a reserved keyword we sometimes need to avoid
-          ctx: true,
-          defaultProps: true,
-          getInitialProps: true,
-          getStaticProps: true,
-          getStaticPaths: true,
-          getServerSideProps: true,
-          initialProps: true,
-          mapStateToProps: true,
-          mapDispatchToProps: true,
-          propFullName: true,
-          propValue: true,
-          props: true,
-          renderProps: true,
-          requiredProps: true,
-          'custom-props': true,
-          'prop-utils': true,
-          'prop-utils.test': true,
-        },
-      },
-    ],
     'unicorn/throw-new-error': 'error',
 
     // Vanilla ESLint Rules
