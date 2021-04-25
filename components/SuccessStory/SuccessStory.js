@@ -1,6 +1,6 @@
 import React from 'react';
 import { string } from 'prop-types';
-import { Image } from '@innocuous/components';
+import Image from 'next/image';
 import styles from './SuccessStory.module.css';
 
 SuccessStory.propTypes = {
@@ -12,7 +12,16 @@ SuccessStory.propTypes = {
 function SuccessStory({ imageSource, quote, title }) {
   return (
     <div className={styles.SuccessStory}>
-      <Image alt={`${title} headshot`} className={styles.image} src={imageSource} />
+      <div className={styles.imageWrapper}>
+        <Image
+          alt={`${title} headshot`}
+          src={imageSource}
+          width={200}
+          height={200}
+          layout="fixed"
+        />
+      </div>
+
       <div className={styles.quote}>
         <h6 className={styles.title}>{title}</h6>
         <blockquote>{`"${quote}"`}</blockquote>

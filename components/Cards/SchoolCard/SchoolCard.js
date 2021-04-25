@@ -1,7 +1,7 @@
 import React from 'react';
 import { arrayOf, bool, func, string, shape } from 'prop-types';
 import classNames from 'classnames';
-import { Image } from '@innocuous/components';
+import Image from 'next/image';
 import Card from 'components/Cards/Card/Card';
 import OnlineIcon from 'static/images/icons/Custom/online.svg';
 import CampusIcon from 'static/images/icons/Custom/campus.svg';
@@ -116,7 +116,7 @@ function SchoolCard({
       )}
 
       <div className={styles.cardBrand}>
-        <Image src={logoSource} alt={`${name} logo`} height="150" />
+        <Image src={logoSource} alt={`${name} logo`} height={150} width={150} layout="fixed" />
       </div>
 
       <div className={classNames(styles.cardBlock, styles.badgeGroup)}>

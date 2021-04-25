@@ -38,6 +38,7 @@
   text-align: center;
   transform: translateX(20%) translateY(0%) rotate(40deg);
   transform-origin: top left;
+  z-index: 1;
 }
 
 .ribbon::before {
