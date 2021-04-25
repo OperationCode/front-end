@@ -1,13 +1,14 @@
-const withBundleAnalyzer = require('@next/bundle-analyzer')({
-  enabled: process.env.ANALYZE === 'true',
-});
-const withMDX = require('@next/mdx')({
-  extension: /\.mdx$/,
-});
+const hasBundleAnalyzerEnabled = process.env.ANALYZE === 'true';
+const withBundleAnalyzer = require('@next/bundle-analyzer')({ enabled: hasBundleAnalyzerEnabled });
+const withMDX = require('@next/mdx')({ extension: /\.mdx$/ });
 const svgoConfig = require('./common/config/svgo');
 
 const nextConfig = withBundleAnalyzer({
   productionBrowserSourceMaps: true,
+
+  future: {
+    webpack5: true,
+  },
 
   experimental: {
     scrollRestoration: false, // see: https://github.com/OperationCode/front-end/pull/1280
