@@ -1,6 +1,7 @@
 const hasBundleAnalyzerEnabled = process.env.ANALYZE === 'true';
 const withBundleAnalyzer = require('@next/bundle-analyzer')({ enabled: hasBundleAnalyzerEnabled });
 const withMDX = require('@next/mdx')({ extension: /\.mdx$/ });
+const { s3hostName } = require('./common/constants/urls');
 const svgoConfig = require('./common/config/svgo');
 
 const nextConfig = withBundleAnalyzer({
@@ -12,6 +13,10 @@ const nextConfig = withBundleAnalyzer({
 
   experimental: {
     scrollRestoration: false, // see: https://github.com/OperationCode/front-end/pull/1280
+  },
+
+  images: {
+    domains: [s3hostName, 'user-images.githubusercontent.com'],
   },
 
   /** @see https://nextjs.org/docs/api-reference/next.config.js/rewrites */
@@ -89,10 +94,6 @@ const nextConfig = withBundleAnalyzer({
   },
 
   webpack: config => {
-    // Fixes npm packages that depend on `fs` module
-    // eslint-disable-next-line no-param-reassign
-    config.node = { fs: 'empty' };
-
     config.module.rules.push(
       {
         test: /\.svg$/,
