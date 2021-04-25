@@ -11,7 +11,7 @@
  * @returns {string} Returns string with the first character capitalized
  */
 function capitalizeFirstLetter(someString = '') {
-  const stringCopy = someString.slice(0);
+  const stringCopy = [...someString];
 
   return stringCopy.charAt(0).toUpperCase() + stringCopy.slice(1);
 }
