@@ -191,6 +191,7 @@ module.exports = {
         when: 'multiline',
       },
     ],
+    'react/react-in-jsx-scope': 'off',
     'react/jsx-one-expression-per-line': 'off',
     'react/no-did-mount-set-state': 'off',
     'react/no-unused-prop-types': 'error',
@@ -251,6 +252,11 @@ module.exports = {
             importNames: ['Form'],
             message: `Please use our Form component to have good defaults defined.\n
               "import Form from 'components/Form/Form';"`,
+          },
+          {
+            name: 'react',
+            importNames: ['default'],
+            message: 'React is globally availble for all page files.',
           },
         ],
       },
