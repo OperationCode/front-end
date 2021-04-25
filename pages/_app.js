@@ -5,7 +5,7 @@ import Fingerprint2 from 'fingerprintjs2';
 import FontFaceObserver from 'fontfaceobserver';
 import hash from 'object-hash';
 import LogRocket from 'logrocket';
-import PropTypes from 'prop-types';
+import { node } from 'prop-types';
 import Router from 'next/router';
 import ScrollUpButton from 'react-scroll-up-button';
 import setupLogRocketReact from 'logrocket-react';
@@ -14,7 +14,7 @@ import { gtag } from 'common/utils/thirdParty/gtag';
 import Nav from 'components/Nav/Nav';
 import Footer from 'components/Footer/Footer';
 import ReactModal from 'react-modal';
-import { version } from '../package.json';
+import packageJSON from '../package.json';
 import 'common/styles/globalStyles.css';
 
 const isProduction = process.env.NODE_ENV === 'production';
@@ -33,7 +33,7 @@ const fonts = [
 ];
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: node.isRequired,
 };
 
 function Layout({ children }) {
@@ -61,7 +61,7 @@ class OperationCodeApp extends App {
     /* Analytics */
     // TODO: Leverage prod-build-time-only env vars instead of window check
     if (isProduction && window.location.host.includes('operationcode.org')) {
-      Sentry.init({ dsn: clientTokens.SENTRY_DSN, release: `front-end@${version}` });
+      Sentry.init({ dsn: clientTokens.SENTRY_DSN, release: `front-end@${packageJSON.version}` });
       LogRocket.init(`${clientTokens.LOGROCKET}/operation-code`);
 
       // Every crash report will have a LogRocket session URL.

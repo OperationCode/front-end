@@ -1,5 +1,3 @@
-import React from 'react';
-
 import ProgressIndicator from '../ProgressIndicator';
 
 const totalSteps = 10;

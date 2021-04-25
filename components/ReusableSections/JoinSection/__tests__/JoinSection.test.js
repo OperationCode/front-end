@@ -1,4 +1,3 @@
-import React from 'react';
 import cookie from 'js-cookie';
 import { cleanup, render } from '@testing-library/react';
 import createSnapshotTest from 'test-utils/createSnapshotTest';

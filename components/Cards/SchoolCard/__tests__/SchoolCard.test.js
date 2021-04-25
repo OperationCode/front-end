@@ -1,4 +1,3 @@
-import React from 'react';
 import { fireEvent, render } from '@testing-library/react';
 import createShallowSnapshotTest from 'test-utils/createShallowSnapshotTest';
 import { SCHOOL_CARD_LOCATION_LIST_MODAL_BUTTON } from 'common/constants/testIDs';

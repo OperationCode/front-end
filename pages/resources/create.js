@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { arrayOf, shape, string, number } from 'prop-types';
 import { useRouter } from 'next/router';
 import { getResourceCategories, getResourceLanguages } from 'common/constants/api';
@@ -51,9 +52,9 @@ CreateResource.propTypes = {
 export default function CreateResource({ categories, languages }) {
   const isLoggedIn = hasValidAuthToken();
   const router = useRouter();
-  const [alert, setAlert] = React.useState('');
+  const [alert, setAlert] = useState('');
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (!isLoggedIn) {
       router.push('/login?unauthorized=true');
     }
@@ -63,7 +64,7 @@ export default function CreateResource({ categories, languages }) {
   const showSuccessAlert = () => setAlert(alerts.success);
   const showErrorAlert = serverMessage => setAlert(serverMessage);
 
-  React.useEffect(() => {
+  useEffect(() => {
     return clearAlert;
   }, []);
 

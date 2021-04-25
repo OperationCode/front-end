@@ -1,4 +1,3 @@
-import React from 'react';
 import { string, oneOf } from 'prop-types';
 import Image from 'next/image';
 import OutboundLink from 'components/OutboundLink/OutboundLink';

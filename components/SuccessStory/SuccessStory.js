@@ -1,4 +1,3 @@
-import React from 'react';
 import { string } from 'prop-types';
 import Image from 'next/image';
 import styles from './SuccessStory.module.css';

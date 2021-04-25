@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { string, func } from 'prop-types';
 import classNames from 'classnames';
 import { getServerErrorMessage } from 'common/utils/api-utils';

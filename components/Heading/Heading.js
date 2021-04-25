@@ -1,4 +1,3 @@
-import React from 'react';
 import { string, bool, oneOf } from 'prop-types';
 import classNames from 'classnames';
 import kebabCase from 'lodash/kebabCase';

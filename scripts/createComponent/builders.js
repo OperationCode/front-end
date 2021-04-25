@@ -3,8 +3,7 @@
 module.exports = {
   // Output generated for component's definition file
   buildJS: componentName =>
-    `import React from 'react';
-import { string, node } from 'prop-types';
+    `import { string, node } from 'prop-types';
 import classNames from 'classnames';
 import styles from './${componentName}.module.css';
 
@@ -27,8 +26,7 @@ export default function ${componentName}({ className, children }) {
 
   // Output generated for component's story file
   buildStoryJs: componentName =>
-    `import React from 'react';
-
+    `
 import ${componentName} from '../${componentName}';
 
 export default {
@@ -49,8 +47,7 @@ Default.args = {
 
   // Output generated for component's test file
   buildTestJs: componentName =>
-    `import React from 'react';
-import { render } from '@testing-library/react';
+    `import { render } from '@testing-library/react';
 
 import ${componentName} from '../${componentName}';
 

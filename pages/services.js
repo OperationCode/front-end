@@ -1,6 +1,6 @@
 import axios from 'axios';
 import Link from 'next/link';
-import PropTypes from 'prop-types';
+import { number } from 'prop-types';
 import TrackVisibility from 'react-on-screen';
 import get from 'lodash/get';
 import classNames from 'classnames';
@@ -37,7 +37,7 @@ const mentorItems = [
 ];
 
 Services.propTypes = {
-  numberOfMembers: PropTypes.number,
+  numberOfMembers: number,
 };
 
 Services.defaultProps = {

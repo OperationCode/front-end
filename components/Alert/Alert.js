@@ -1,4 +1,3 @@
-import React from 'react';
 import { func, node, oneOf, string } from 'prop-types';
 import classNames from 'classnames';
 import { ALERT, ALERT_CLOSE_BUTTON } from 'common/constants/testIDs';

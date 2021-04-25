@@ -1,4 +1,3 @@
-import React from 'react';
 import { Formik, Field } from 'formik';
 import { fireEvent, render, waitFor } from '@testing-library/react';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
