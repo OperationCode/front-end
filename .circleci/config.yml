@@ -147,7 +147,7 @@ workflows:
           parallelism: 3 # use X number of CircleCI machines
           command-prefix: yarn # dont use npx
           group: 'all tests' # name this group "all tests" on the dashboard
-          start: 'yarn dev' # start server before running tests
+          start: 'yarn build && yarn start' # start server before running tests
           wait-on: http://localhost:3000 # wait until server is ready
           post-steps:
             - run:
