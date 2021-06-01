@@ -83,7 +83,7 @@
     "yup": "^0.32.8"
   },
   "devDependencies": {
-    "@babel/core": "^7.0.0-0",
+    "@babel/core": "^7.14.3",
     "@cypress/code-coverage": "3.9.2",
     "@cypress/webpack-preprocessor": "^5.5.0",
     "@mdx-js/loader": "^1.6.22",
