@@ -13,10 +13,12 @@ exports[`ImageCard should render with many props assigned 1`] = `
         Testing!
       </p>
     </div>
-    <Image
+    <MockedNextImage
       alt="Test title"
-      className="image"
+      height={225}
+      layout="fixed"
       src="/static/images/Family1.jpg"
+      width={325}
     />
   </React.Fragment>
 </Card>
@@ -28,10 +30,12 @@ exports[`ImageCard should render with required props 1`] = `
   hasAnimationOnHover={false}
 >
   <React.Fragment>
-    <Image
+    <MockedNextImage
       alt="Test title"
-      className="image"
+      height={225}
+      layout="fixed"
       src="/static/images/Family1.jpg"
+      width={325}
     />
     <div
       className="content"

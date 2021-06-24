@@ -1,6 +1,7 @@
 import { fireEvent, render } from '@testing-library/react';
 import createShallowSnapshotTest from 'test-utils/createShallowSnapshotTest';
 import { SCHOOL_CARD_LOCATION_LIST_MODAL_BUTTON } from 'common/constants/testIDs';
+import { s3 } from 'common/constants/urls';
 import SchoolCard, { getSchoolLocationText, ONLINE_ONLY, UNKNOWN, MULTIPLE } from '../SchoolCard';
 
 const locations = [
@@ -32,7 +33,7 @@ describe('SchoolCard', () => {
     hasOnlyOnline: false,
     isFullTime: true,
     locations,
-    logoSource: 'source',
+    logoSource: `${s3}/codeSchoolLogos/momentum.jpg`,
     name: 'school name',
     website: 'website',
     toggleModal,

@@ -7,8 +7,8 @@ describe('PartnerLogoLink', () => {
     createSnapshotTest(
       <PartnerLogoLink
         name="Partner Inc."
-        logoSource="https://partnerinc.com/logo"
-        url="https://partnerinc.com"
+        logoSource="https://user-images.githubusercontent.com/logo"
+        url="https://user-images.githubusercontent.com"
       />,
     );
   });

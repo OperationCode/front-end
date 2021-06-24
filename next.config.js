@@ -4,15 +4,11 @@ const withMDX = require('@next/mdx')({ extension: /\.mdx$/ });
 const { s3hostName } = require('./common/constants/urls');
 const svgoConfig = require('./common/config/svgo');
 
-const nextConfig = withBundleAnalyzer({
-  productionBrowserSourceMaps: true,
+const nextConfig = {
+  productionBrowserSourceMaps: false,
 
-  future: {
-    webpack5: true,
-  },
-
-  experimental: {
-    scrollRestoration: false, // see: https://github.com/OperationCode/front-end/pull/1280
+  eslint: {
+    ignoreDuringBuilds: true, // We lint during CI.
   },
 
   images: {
@@ -94,40 +90,17 @@ const nextConfig = withBundleAnalyzer({
   },
 
   webpack: config => {
-    config.module.rules.push(
-      {
-        test: /\.svg$/,
-        use: [
-          {
-            loader: '@svgr/webpack',
-            options: {
-              svgoConfig,
-            },
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: [
+        {
+          loader: '@svgr/webpack',
+          options: {
+            svgoConfig,
           },
-        ],
-      },
-      {
-        test: /\.(jpe?g|png|gif)$/,
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              limit: 8192,
-              fallback: {
-                loader: 'file-loader',
-                options: {
-                  publicPath: '/_next/static/images',
-                  outputPath: 'static/images',
-                },
-              },
-              publicPath: '/_next/',
-              outputPath: 'static/images/',
-              name: '[name]-[hash].[ext]',
-            },
-          },
-        ],
-      },
-    );
+        },
+      ],
+    });
 
     // Add polyfills
     const originalEntry = config.entry;
@@ -145,6 +118,6 @@ const nextConfig = withBundleAnalyzer({
 
     return config;
   },
-});
+};
 
-module.exports = withMDX(nextConfig);
+module.exports = withBundleAnalyzer(withMDX(nextConfig));
