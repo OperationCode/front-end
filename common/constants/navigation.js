@@ -70,6 +70,11 @@ const resources = {
   href: '/resources',
 };
 
+const merchStore = {
+  name: 'Merch Store',
+  href: '/swag',
+};
+
 const logout = {
   name: 'Logout',
   href: '/logout', // has a redirect in Next configuration file.
@@ -90,7 +95,7 @@ const accountGroup = {
 
 const servicesGroup = {
   ...services,
-  sublinks: [events, podcast, resources, codeSchools],
+  sublinks: [merchStore, events, podcast, resources, codeSchools],
 };
 
 const aboutUsGroup = {
