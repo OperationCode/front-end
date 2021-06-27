@@ -3,6 +3,7 @@ import {
   MULTI_STEP_STEP_BUTTON,
   MULTI_STEP_PREVIOUS_BUTTON,
   MULTI_STEP_SUBMIT_BUTTON,
+  ALERT,
 } from 'common/constants/testIDs';
 
 const goToNextStep = stepName => {
@@ -85,7 +86,7 @@ describe(`profile/update (from login)`, () => {
     cy.clearCookies();
 
     cy.findByTestId(MULTI_STEP_STEP_BUTTON).click();
-    cy.findByRole('alert').should('have.text', 'Authentication credentials were not provided.');
+    cy.findByTestId(ALERT).should('have.text', 'Authentication credentials were not provided.');
     cy.get('h3').should('have.text', secondStepName);
   });
 
@@ -116,7 +117,7 @@ describe(`profile/update (from login)`, () => {
 
     cy.findByTestId(MULTI_STEP_STEP_BUTTON).click();
 
-    cy.findByRole('alert').should('have.text', 'Enter a number between 1 and 40.');
+    cy.findByTestId(ALERT).should('have.text', 'Enter a number between 1 and 40.');
   });
 
   it(`should not allow numbers greater than 40 in the years of service input`, () => {
@@ -127,7 +128,7 @@ describe(`profile/update (from login)`, () => {
 
     cy.findByTestId(MULTI_STEP_STEP_BUTTON).click();
 
-    cy.findByRole('alert').should('have.text', 'Enter a number between 1 and 40.');
+    cy.findByTestId(ALERT).should('have.text', 'Enter a number between 1 and 40.');
   });
 });
 
@@ -148,7 +149,7 @@ describe(`profile/update (from login) [server errors]`, () => {
 
     cy.findByTestId(MULTI_STEP_STEP_BUTTON).click();
 
-    cy.findByRole('alert').should('have.text', networkErrorMessages.serverDown);
+    cy.findByTestId(ALERT).should('have.text', networkErrorMessages.serverDown);
   });
 
   // TODO: Get this working!
@@ -172,6 +173,6 @@ describe(`profile/update (from login) [server errors]`, () => {
   //   cy.findByTestId(SubmitButtonID).click();
   //   cy.wait(`@${ErrorAPICall}`);
 
-  //   cy.findByRole('alert').should('have.text', error);
+  //   cy.findByTestId(ALERT).should('have.text', error);
   // });
 });

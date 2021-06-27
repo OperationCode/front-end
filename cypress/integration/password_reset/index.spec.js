@@ -1,5 +1,6 @@
 import existingUser from 'test-utils/mocks/existingUser';
 import { validationErrorMessages } from 'common/constants/messages';
+import { ALERT } from 'common/constants/testIDs';
 
 describe('reset_password', () => {
   beforeEach(() => {
@@ -15,7 +16,7 @@ describe('reset_password', () => {
     cy.findByLabelText('Email*').type(existingUser.email);
     cy.findByText('Submit').click();
 
-    cy.findByRole('alert').should(
+    cy.findByTestId(ALERT).should(
       'have.text',
       'A confirmation has been sent to the provided email address.',
     );
@@ -25,7 +26,7 @@ describe('reset_password', () => {
     cy.findByLabelText('Email*').type('fake@test.test');
     cy.findByText('Submit').click();
 
-    cy.findByRole('alert').should(
+    cy.findByTestId(ALERT).should(
       'have.text',
       'A confirmation has been sent to the provided email address.',
     );
@@ -34,6 +35,6 @@ describe('reset_password', () => {
   it('should NOT submit a request with an invalid email', () => {
     cy.findByLabelText('Email*').type('notEmail');
     cy.findByText('Submit').click();
-    cy.findByRole('alert').should('contain', validationErrorMessages.email);
+    cy.findByTestId(ALERT).should('contain', validationErrorMessages.email);
   });
 });
