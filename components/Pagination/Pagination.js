@@ -1,4 +1,3 @@
-import React from 'react';
 import { number, string, object } from 'prop-types';
 import LeftAngleIcon from 'static/images/icons/FontAwesome/angle-left-solid.svg';
 import RightAngleIcon from 'static/images/icons/FontAwesome/angle-right-solid.svg';

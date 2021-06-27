@@ -1,5 +1,3 @@
-import React from 'react';
-
 import DonateSection from '../DonateSection';
 
 export default {

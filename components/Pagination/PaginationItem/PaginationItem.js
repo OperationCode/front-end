@@ -1,4 +1,3 @@
-import React from 'react';
 import Link from 'next/link';
 import omit from 'lodash/omit';
 import { bool, node, number, object, string } from 'prop-types';

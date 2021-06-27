@@ -14,7 +14,7 @@ export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const initialProps = await Document.getInitialProps(ctx);
 
-    return { ...initialProps };
+    return initialProps;
   }
 
   render() {
@@ -33,14 +33,17 @@ export default class MyDocument extends Document {
           <meta property="og:image:height" content="630" />
 
           {/* Global Site Tag (gtag.js) - Google Analytics */}
-          <script
-            async
-            src={`https://www.googletagmanager.com/gtag/js?id=${clientTokens.GOOGLE_ANALYTICS_ID}`}
-          />
-          <script
-            // eslint-disable-next-line react/no-danger
-            dangerouslySetInnerHTML={{
-              __html: `
+          {process.env.VERCEL_ENV === 'production' && (
+            <script
+              async
+              src={`https://www.googletagmanager.com/gtag/js?id=${clientTokens.GOOGLE_ANALYTICS_ID}`}
+            />
+          )}
+          {process.env.VERCEL_ENV === 'production' && (
+            <script
+              // eslint-disable-next-line react/no-danger
+              dangerouslySetInnerHTML={{
+                __html: `
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
@@ -49,8 +52,9 @@ export default class MyDocument extends Document {
             });
             gtag('config', '${clientTokens.GOOGLE_ADS_ID}');
           `,
-            }}
-          />
+              }}
+            />
+          )}
         </Head>
         <body>
           <Main />

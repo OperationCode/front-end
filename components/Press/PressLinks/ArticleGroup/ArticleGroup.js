@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 import { arrayOf, number, shape, string } from 'prop-types';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 import Button from 'components/Buttons/Button/Button';
@@ -16,7 +16,7 @@ ArticleGroup.propTypes = {
 };
 
 export default function ArticleGroup({ articles, region, numberOfInitiallyVisibleLinks }) {
-  const [areAllLinksVisible, setAreAllLinksVisible] = React.useState(false);
+  const [areAllLinksVisible, setAreAllLinksVisible] = useState(false);
 
   const clickHandler = () => {
     setAreAllLinksVisible(previousState => !previousState);

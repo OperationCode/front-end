@@ -1,5 +1,4 @@
 /* eslint-env jest */
-import React from 'react';
 import { fireEvent, render } from '@testing-library/react';
 import { UPVOTE_BUTTON, DOWNVOTE_BUTTON } from 'common/constants/testIDs';
 

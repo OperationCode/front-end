@@ -1,4 +1,3 @@
-import React from 'react';
 import { bool, node, number, oneOf, oneOfType, string } from 'prop-types';
 import classNames from 'classnames';
 import { getDataAttributes } from 'common/utils/prop-utils';

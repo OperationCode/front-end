@@ -1,7 +1,7 @@
 import fs from 'fs';
 import { join } from 'path';
 import dynamic from 'next/dynamic';
-import PropTypes from 'prop-types';
+import { string } from 'prop-types';
 import { ONE_WEEK } from 'common/constants/unitsOfTime';
 import Content from 'components/Content/Content';
 import Head from 'components/head';
@@ -38,7 +38,7 @@ export async function getStaticProps({ params }) {
 }
 
 BlogArticle.propTypes = {
-  articleName: PropTypes.string.isRequired,
+  articleName: string.isRequired,
 };
 
 function BlogArticle({ articleName }) {

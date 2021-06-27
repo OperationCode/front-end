@@ -4,9 +4,7 @@ module.exports = {
   env: {
     production: {
       presets: ['next/babel'],
-      plugins: [
-        ['react-remove-properties', { properties: ['data-testid'] }, 'add-react-displayname'],
-      ],
+      plugins: [['add-react-displayname']],
     },
     development: {
       presets: ['next/babel'],

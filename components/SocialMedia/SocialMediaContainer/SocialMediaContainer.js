@@ -1,4 +1,3 @@
-import React from 'react';
 import { arrayOf, element } from 'prop-types';
 import styles from './SocialMediaContainer.module.css';
 

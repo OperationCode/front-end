@@ -1,5 +1,4 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React from 'react';
 import { render } from '@testing-library/react';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 import { LABEL, SCREEN_READER_ONLY } from 'common/constants/testIDs';

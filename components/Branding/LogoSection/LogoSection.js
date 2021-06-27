@@ -1,4 +1,3 @@
-import React from 'react';
 import classNames from 'classnames';
 import Badge from 'components/Badge/Badge';
 import Content from 'components/Content/Content';

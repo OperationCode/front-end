@@ -22,10 +22,12 @@ exports[`SchoolCard should render with required props 1`] = `
   <div
     className="cardBrand"
   >
-    <Image
+    <MockedNextImage
       alt="school name logo"
-      height="150"
-      src="source"
+      height={150}
+      layout="fixed"
+      src="https://operation-code-assets.s3.us-east-2.amazonaws.com//codeSchoolLogos/momentum.jpg"
+      width={150}
     />
   </div>
   <div

@@ -1,4 +1,3 @@
-import React from 'react';
 import { render } from '@testing-library/react';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 import { FLAT_CARD_IMAGE } from 'common/constants/testIDs';

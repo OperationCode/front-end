@@ -1,17 +1,29 @@
+import { useEffect } from 'react';
+import { number, object } from 'prop-types';
+import * as Sentry from '@sentry/browser';
 import ErrorDisplay from 'components/ErrorDisplay/ErrorDisplay';
-import { number } from 'prop-types';
 
 Error.getInitialProps = ({ response, error }) => {
   const currentError = error ? error.statusCode : null;
   const statusCode = response ? response.statusCode : currentError;
-  return { statusCode };
+  return { error, statusCode };
 };
 
-Error.propTypes = { statusCode: number };
-Error.defaultProps = { statusCode: undefined };
+Error.propTypes = { error: object, statusCode: number };
+Error.defaultProps = { error: undefined, statusCode: undefined };
 
 // This acts as an override necessary to use a custom ErrorDisplay handler
-function Error({ statusCode }) {
+function Error({ error, statusCode }) {
+  useEffect(() => {
+    Sentry.withScope(scope => {
+      Object.keys(error).forEach(key => {
+        scope.setExtra(key, error[key]);
+      });
+
+      Sentry.captureException(error);
+    });
+  }, []);
+
   return <ErrorDisplay statusCode={statusCode} />;
 }
 

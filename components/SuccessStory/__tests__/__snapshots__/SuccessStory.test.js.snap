@@ -4,11 +4,17 @@ exports[`SuccessStory should render with required props 1`] = `
 <div
   className="SuccessStory"
 >
-  <Image
-    alt="Great testing culture headshot"
-    className="image"
-    src="image.png"
-  />
+  <div
+    className="imageWrapper"
+  >
+    <MockedNextImage
+      alt="Great testing culture headshot"
+      height={200}
+      layout="fixed"
+      src="image.png"
+      width={200}
+    />
+  </div>
   <div
     className="quote"
   >

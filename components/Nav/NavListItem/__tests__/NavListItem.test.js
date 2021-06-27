@@ -1,4 +1,3 @@
-import React from 'react';
 import createShallowSnapshotTest from 'test-utils/createShallowSnapshotTest';
 import { render, fireEvent } from '@testing-library/react';
 import { KEY_CODES } from 'test-utils/identifiers';

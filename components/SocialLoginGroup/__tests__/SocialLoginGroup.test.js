@@ -1,4 +1,3 @@
-import React from 'react';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 import { render, act } from '@testing-library/react';
 import { loginSocial } from 'common/constants/api';

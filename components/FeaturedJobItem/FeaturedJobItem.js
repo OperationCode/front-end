@@ -1,4 +1,3 @@
-import React from 'react';
 import { string, bool } from 'prop-types';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 import BuildingIcon from 'static/images/icons/FontAwesome/building_icon.svg';

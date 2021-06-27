@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
@@ -8,7 +9,7 @@ import { passwordReset } from 'common/constants/api';
 const pageTitle = 'Reset Password';
 
 function PasswordReset() {
-  const [didSubmitSuccessfully, setDidSubmitSuccessfully] = React.useState(false);
+  const [didSubmitSuccessfully, setDidSubmitSuccessfully] = useState(false);
 
   const onSuccess = () => {
     setDidSubmitSuccessfully(true);

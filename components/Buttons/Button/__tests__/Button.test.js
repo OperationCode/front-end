@@ -1,4 +1,3 @@
-import React from 'react';
 import { fireEvent, render } from '@testing-library/react';
 import { BUTTON } from 'common/constants/testIDs';
 import { gtag } from 'common/utils/thirdParty/gtag';

@@ -134,7 +134,7 @@ module.exports = {
   // runner: "jest-runner",
 
   // The paths to modules that run some code to configure or set up the testing environment before each test
-  setupFiles: ['jest-prop-type-error'],
+  setupFiles: ['jest-prop-type-error', './test-utils/jest-next-image.js'],
 
   // A list of paths to modules that run some code to configure or set up the testing framework before each test.
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'], // eslint-disable-line unicorn/prevent-abbreviations

@@ -1,6 +1,6 @@
-const React = require('react');
+const { createElement } = require('react');
 
-const Svg = props => React.createElement('svg', props, null);
+const Svg = props => createElement('svg', props, null);
 
 module.exports = {
   __esModule: true,

@@ -1,4 +1,3 @@
-import React from 'react';
 import { string, node, bool } from 'prop-types';
 import classNames from 'classnames';
 import Container from 'components/Container/Container';

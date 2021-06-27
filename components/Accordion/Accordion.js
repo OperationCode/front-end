@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { arrayOf, bool, node, number, shape, string, oneOfType } from 'prop-types';
 import classNames from 'classnames';
 import Chevron from 'public/static/images/icons/FontAwesome/angle-right-solid.svg';

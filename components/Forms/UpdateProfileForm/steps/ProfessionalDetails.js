@@ -1,4 +1,3 @@
-import React from 'react';
 import { bool } from 'prop-types';
 import { Field } from 'formik';
 import * as Yup from 'yup';

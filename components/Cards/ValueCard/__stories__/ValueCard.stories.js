@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { descriptions } from 'common/constants/descriptions';
 import ValueCard from '../ValueCard';
 

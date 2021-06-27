@@ -1,4 +1,3 @@
-import React from 'react';
 import { bool, func, oneOf } from 'prop-types';
 import classNames from 'classnames';
 import { CLOSE_BUTTON } from 'common/constants/testIDs';

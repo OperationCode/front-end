@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { number } from 'prop-types';
 import Head from 'components/head';
 import styles from './ErrorDisplay.module.css';

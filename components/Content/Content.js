@@ -1,4 +1,4 @@
-import React from 'react';
+import { cloneElement } from 'react';
 import { array, bool, oneOf, string } from 'prop-types';
 import Container from 'components/Container/Container';
 import Heading from 'components/Heading/Heading';
@@ -43,7 +43,7 @@ function Content({
 
       <div className={styles.columnsContainer}>
         {/* eslint-disable-next-line react/no-array-index-key */}
-        {columns.map((column, index) => React.cloneElement(column, { key: index }))}
+        {columns.map((column, index) => cloneElement(column, { key: index }))}
       </div>
     </Container>
   );

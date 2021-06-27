@@ -1,11 +1,11 @@
-import React from 'react';
+import { Component } from 'react';
 import { any, object } from 'prop-types';
 import MockedRouter from './nextRouterMock';
 
 // Reason for this mock's existence:
 // https://github.com/vercel/next.js/issues/5205#issuecomment-422846339
 
-export default class MockNextContext extends React.Component {
+export default class MockNextContext extends Component {
   static propTypes = {
     children: any.isRequired, // eslint-disable-line react/forbid-prop-types
     headManager: object,

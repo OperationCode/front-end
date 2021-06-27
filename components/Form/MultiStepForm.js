@@ -1,5 +1,5 @@
 /* eslint-disable unicorn/prevent-abbreviations */
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { arrayOf, func, object } from 'prop-types';
 import noop from 'lodash/noop';
 import { Formik } from 'formik';

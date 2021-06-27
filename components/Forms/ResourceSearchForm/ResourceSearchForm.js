@@ -1,4 +1,3 @@
-import React from 'react';
 import { Field, Formik } from 'formik';
 import omit from 'lodash/omit';
 import styles from 'styles/resources.module.css';

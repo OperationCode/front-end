@@ -1,5 +1,3 @@
-import React from 'react';
-
 import Pagination from '../Pagination';
 
 const totalPages = 20;

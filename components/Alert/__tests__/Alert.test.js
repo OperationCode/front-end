@@ -1,4 +1,3 @@
-import React from 'react';
 import { fireEvent, render } from '@testing-library/react';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 import { ALERT_CLOSE_BUTTON } from 'common/constants/testIDs';

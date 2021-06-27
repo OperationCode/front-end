@@ -1,4 +1,4 @@
-import React from 'react';
+import { useMemo } from 'react';
 import { func, arrayOf, shape, string, number } from 'prop-types';
 import { Formik, Field } from 'formik';
 import * as Yup from 'yup';
@@ -43,7 +43,7 @@ function CreateResourceForm({
   onSuccess,
   onFailure,
 }) {
-  const initialValues = React.useMemo(() => validationSchema.cast(), []);
+  const initialValues = useMemo(() => validationSchema.cast(), []);
 
   const categoryOptions = _categoryOptions.map(({ name }) => ({
     value: name.toLowerCase(),

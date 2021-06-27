@@ -1,9 +1,9 @@
 import jwt_decode from 'jwt-decode'; // eslint-disable-line camelcase
+import { PROFILE_GREETING, LOGIN_BUTTON, ALERT } from 'common/constants/testIDs';
 import { networkErrorMessages } from 'common/constants/messages';
 import existingUser from 'test-utils/mocks/existingUser';
 import mockPassword from 'test-utils/mockGenerators/mockPassword';
 import mockUser from 'test-utils/mockGenerators/mockUser';
-import { PROFILE_GREETING, LOGIN_BUTTON } from 'common/constants/testIDs';
 
 describe('login', () => {
   beforeEach(() => {
@@ -44,7 +44,7 @@ describe('login', () => {
     cy.wait('@postLogin').its('status').should('eq', 400);
 
     cy.url().should('contain', '/login');
-    cy.findByRole('alert').should('have.text', 'The email or password you entered is incorrect!');
+    cy.findByTestId(ALERT).should('have.text', 'The email or password you entered is incorrect!');
     cy.getCookies().should('have.length', 0);
   });
 
@@ -59,7 +59,7 @@ describe('login', () => {
     cy.wait('@postLogin').its('status').should('eq', 400);
 
     cy.url().should('contain', '/login');
-    cy.findByRole('alert').should('have.text', 'The email or password you entered is incorrect!');
+    cy.findByTestId(ALERT).should('have.text', 'The email or password you entered is incorrect!');
     cy.getCookies().should('have.length', 0);
   });
 
@@ -76,7 +76,7 @@ describe('login', () => {
     cy.findByTestId(LOGIN_BUTTON).click();
 
     cy.url().should('contain', '/login');
-    cy.findByRole('alert').should('have.text', networkErrorMessages.serverDown);
+    cy.findByTestId(ALERT).should('have.text', networkErrorMessages.serverDown);
     cy.getCookies().should('have.length', 0);
   });
 });
@@ -89,26 +89,26 @@ describe('login?loggedOut=True', () => {
   });
 
   it('should display logged out alert if routed via logout button', () => {
-    cy.findByRole('alert').should('have.text', 'Logged out successfully.');
+    cy.findByTestId(ALERT).should('have.text', 'Logged out successfully.');
   });
 
   it('should should not display logged out alert after re-render', () => {
-    cy.findByRole('alert').should('have.text', 'Logged out successfully.');
+    cy.findByTestId(ALERT).should('have.text', 'Logged out successfully.');
 
     cy.reload();
 
-    cy.findByRole('alert').should('not.exist');
+    cy.findByTestId(ALERT).should('not.exist');
   });
 
   it('should not display logged out alert after invalid login attempt', () => {
     const fakeUser = mockUser({ desiredEmail: 'nonexistinguser@someemail.com' });
 
-    cy.findByRole('alert').should('have.text', 'Logged out successfully.');
+    cy.findByTestId(ALERT).should('have.text', 'Logged out successfully.');
 
     cy.findByLabelText('Email*').type(fakeUser.email);
     cy.findByLabelText('Password*').type(fakeUser.password);
     cy.findByTestId(LOGIN_BUTTON).click();
 
-    cy.findByRole('alert').should('not.have.text', 'Logged out successfully.');
+    cy.findByTestId(ALERT).should('not.have.text', 'Logged out successfully.');
   });
 });

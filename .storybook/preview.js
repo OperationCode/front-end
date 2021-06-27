@@ -1,6 +1,7 @@
 import backgroundsPalleteArray from './backgrounds';
 import 'common/styles/globalStyles.css';
 import * as viewports from '@storybook/addon-viewport';
+import * as nextImage from 'next/image';
 
 export const decorators = [
   Story => (
@@ -9,6 +10,13 @@ export const decorators = [
     </div>
   ),
 ];
+
+Object.defineProperty(nextImage, 'default', {
+  configurable: true,
+  value: props => {
+    return <img {...props} />;
+  },
+});
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },

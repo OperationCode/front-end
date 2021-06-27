@@ -1,4 +1,3 @@
-import React from 'react';
 import { fireEvent, render } from '@testing-library/react';
 import { gtag } from 'common/utils/thirdParty/gtag';
 import createSnapshotTest from 'test-utils/createSnapshotTest';

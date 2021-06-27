@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-scroll';
 import historyData from '../historyData';
 import styles from './TimelineNav.module.css';

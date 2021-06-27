@@ -1,5 +1,3 @@
-import React from 'react';
-
 import UpdateProfileForm from '../UpdateProfileForm';
 import { ProfessionalDetails, MilitaryStatus, MilitaryDetails, Technology } from '../steps';
 

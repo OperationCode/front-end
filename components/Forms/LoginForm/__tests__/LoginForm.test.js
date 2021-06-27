@@ -1,4 +1,3 @@
-import React from 'react';
 import faker from 'faker';
 import { fireEvent, render, waitFor } from '@testing-library/react';
 import { loginUser } from 'common/constants/api';
