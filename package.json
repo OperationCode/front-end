@@ -89,7 +89,7 @@
     "@mdx-js/loader": "^1.6.22",
     "@next/mdx": "^10.0.6",
     "@operation_code/eslint-plugin-custom-rules": "^1.0.1",
-    "@storybook/addon-actions": "6.0.28",
+    "@storybook/addon-actions": "6.3.2",
     "@storybook/addon-essentials": "6.0.28",
     "@storybook/addon-links": "6.0.28",
     "@storybook/addons": "6.0.28",
