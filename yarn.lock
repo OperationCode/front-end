@@ -2535,7 +2535,7 @@
     core-js-pure "^3.0.0"
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime@7.12.5", "@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.10.2", "@babel/runtime@^7.10.5", "@babel/runtime@^7.11.2", "@babel/runtime@^7.12.1", "@babel/runtime@^7.12.5", "@babel/runtime@^7.3.1", "@babel/runtime@^7.4.4", "@babel/runtime@^7.5.0", "@babel/runtime@^7.5.5", "@babel/runtime@^7.7.2", "@babel/runtime@^7.7.6", "@babel/runtime@^7.7.7", "@babel/runtime@^7.8.4", "@babel/runtime@^7.8.7", "@babel/runtime@^7.9.2":
+"@babel/runtime@7.12.5", "@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.10.2", "@babel/runtime@^7.10.5", "@babel/runtime@^7.11.2", "@babel/runtime@^7.12.1", "@babel/runtime@^7.12.5", "@babel/runtime@^7.3.1", "@babel/runtime@^7.4.4", "@babel/runtime@^7.5.0", "@babel/runtime@^7.5.5", "@babel/runtime@^7.7.2", "@babel/runtime@^7.7.6", "@babel/runtime@^7.8.4", "@babel/runtime@^7.8.7", "@babel/runtime@^7.9.2":
   version "7.12.5"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.12.5.tgz#410e7e487441e1b360c29be715d870d9b985882e"
   integrity sha512-plcc+hbExy3McchJCEQG3knOsuh3HH+Prx1P6cLIkET/0dLuQDEnrT+s27Axgc9bqfsmNUNHfscgMUdBpC9xfg==
@@ -2548,6 +2548,13 @@
   integrity sha512-7jGW8ppV0ant637pIqAcFfQDDH1orEPGJb8aXfUozuCU3QqX7rX4DA8iwrbPrR1hcH0FTTHz47yQnk+bl5xHQA==
   dependencies:
     regenerator-runtime "^0.12.0"
+
+"@babel/runtime@^7.14.5":
+  version "7.14.8"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.14.8.tgz#7119a56f421018852694290b9f9148097391b446"
+  integrity sha512-twj3L8Og5SaCRCErB4x4ajbvBIVV77CGeFglHpeg5WC5FF8TZzBWXtTJ4MqaD9QszLYTtr+IsaAL2rEUevb+eg==
+  dependencies:
+    regenerator-runtime "^0.13.4"
 
 "@babel/template@^7.10.1", "@babel/template@^7.10.4", "@babel/template@^7.12.7", "@babel/template@^7.3.3", "@babel/template@^7.4.4":
   version "7.12.7"
@@ -13762,16 +13769,16 @@ nth-check@^1.0.2, nth-check@~1.0.1:
   dependencies:
     boolbase "~1.0.0"
 
-nuka-carousel@^4.7.5:
-  version "4.7.5"
-  resolved "https://registry.yarnpkg.com/nuka-carousel/-/nuka-carousel-4.7.5.tgz#820f18afdd06b3f23474f0d2d102409f12a1375e"
-  integrity sha512-E5zsWgRZQxNz6lJaaioz+/3aTJr5pAAkZpxTIW+lK+9OpGz813rGEGEroO9FzHhnMGhV7KcuUnQ8bJgdoUq+1w==
+nuka-carousel@^4.7.9:
+  version "4.7.9"
+  resolved "https://registry.yarnpkg.com/nuka-carousel/-/nuka-carousel-4.7.9.tgz#6d7aaba6380e260e7eece1e50ddb7bd79aadcc22"
+  integrity sha512-n5QuCvaiNH1KQJk2B82GmSWihBQ+6+hpDssh85Lmes5isd98I2+17gQiqsLWcdFPJzB1A+dcrzRz6Z9R4EyhHA==
   dependencies:
     csstype "^2.6.6"
     d3-ease "^1.0.3"
     exenv "^1.2.0"
     prop-types "^15.6.0"
-    react-move "^6.1.0"
+    react-move "^6.5.0"
     wicg-inert "^3.1.0"
 
 num2fraction@^1.2.2:
@@ -15401,12 +15408,12 @@ react-modal@^3.12.1:
     react-lifecycles-compat "^3.0.0"
     warning "^4.0.3"
 
-react-move@^6.1.0:
-  version "6.1.0"
-  resolved "https://registry.yarnpkg.com/react-move/-/react-move-6.1.0.tgz#c1cc8211f0d722bca0077816a0666992fbe600c8"
-  integrity sha512-tLCXmiG3VI7OI4+pAplIcZXsBW2dj6cwXJw3lxI+vDPjPSoBmwKVlmlw01goC08NdCZvZyGSMEOaHafQRu4TXQ==
+react-move@^6.5.0:
+  version "6.5.0"
+  resolved "https://registry.yarnpkg.com/react-move/-/react-move-6.5.0.tgz#4b337d75987f9266426193f80e982604d49e97ff"
+  integrity sha512-tl8zwCqtXXWfmrUJGnkyPMNhx8DUTy1NugEuPW/JTMp2TGSEC819aMXGYMG8FWFzV9I6jy4kbgoZJnBpmZRktA==
   dependencies:
-    "@babel/runtime" "^7.7.7"
+    "@babel/runtime" "^7.14.5"
     kapellmeister "^3.0.1"
     prop-types "^15.7.2"
 
