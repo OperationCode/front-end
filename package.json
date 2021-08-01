@@ -52,7 +52,7 @@
     "classnames": "^2.2.6",
     "date-fns": "^2.16.1",
     "fast-xml-parser": "^3.17.6",
-    "fingerprintjs2": "^2.1.2",
+    "fingerprintjs2": "^2.1.4",
     "fontfaceobserver": "^2.1.0",
     "formik": "^2.2.6",
     "history": "^5.0.0",

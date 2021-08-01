@@ -9702,10 +9702,10 @@ find-versions@^4.0.0:
   dependencies:
     semver-regex "^3.1.2"
 
-fingerprintjs2@^2.1.2:
-  version "2.1.2"
-  resolved "https://registry.yarnpkg.com/fingerprintjs2/-/fingerprintjs2-2.1.2.tgz#d4812e627356f04b279c63b995b72591b2ab5ed5"
-  integrity sha512-ZPsLgjziFRbUb5tXWpEMtWp4XFnzSah8SiNfl3aoURDZ+2zi2tuIOYUULqDBV+Cb6paN+raWT+Q2qpOaCbX/Yw==
+fingerprintjs2@^2.1.4:
+  version "2.1.4"
+  resolved "https://registry.yarnpkg.com/fingerprintjs2/-/fingerprintjs2-2.1.4.tgz#a39deb947aa187c098306a0b5dd41ceaa2e15fc5"
+  integrity sha512-veP2yVsnYvjDVkzZMyIEwpqCAQfsBLH+U4PK5MlFAnLjZrttbdRqEArE1fPcnJFz5oS5CrdONbsV7J6FGpIJEQ==
 
 flat-cache@^3.0.4:
   version "3.0.4"
