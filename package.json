@@ -62,7 +62,7 @@
     "lodash": "^4.17.20",
     "logrocket": "^1.0.14",
     "logrocket-react": "^4.0.1",
-    "next": "^10.0.6",
+    "next": "^11.1.0",
     "next-cookies": "^2.0.3",
     "nuka-carousel": "^4.7.5",
     "object-hash": "^2.1.1",
