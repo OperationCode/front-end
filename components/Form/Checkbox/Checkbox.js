@@ -1,5 +1,5 @@
 import React from 'react';
-import { shape, string, number, object, objectOf, oneOfType } from 'prop-types';
+import { shape, string, node, number, object, objectOf, oneOfType } from 'prop-types';
 import classNames from 'classnames';
 import { ErrorMessage } from 'formik';
 import { CHECKBOX, CHECKBOX_ERROR } from 'common/constants/testIDs';
@@ -19,7 +19,7 @@ Checkbox.propTypes = {
     errors: objectOf(string),
   }).isRequired,
   id: oneOfType([string, number]),
-  label: string.isRequired,
+  label: oneOfType([node, string]).isRequired,
 };
 
 Checkbox.defaultProps = {

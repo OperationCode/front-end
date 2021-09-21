@@ -193,7 +193,11 @@ function RegistrationForm({ initialValues, onSuccess }) {
               label={
                 <span>
                   I have read and agree to&nbsp;
-                  <OutboundLink hasIcon={false} href={codeOfConduct}>
+                  <OutboundLink
+                    hasIcon={false}
+                    href={codeOfConduct}
+                    analyticsEventLabel="Registration CoC Checkbox Link"
+                  >
                     Operation Code&apos;s Code of Conduct.
                   </OutboundLink>
                   *
