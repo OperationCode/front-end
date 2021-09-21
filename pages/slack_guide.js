@@ -3,7 +3,7 @@ import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
 import Accordion from 'components/Accordion/Accordion';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
-import { s3 } from 'common/constants/urls';
+import { s3, codeOfConduct } from 'common/constants/urls';
 import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
 import styles from 'styles/slack_guide.module.css';
 
@@ -21,7 +21,6 @@ const questions = {
               <OutboundLink
                 analyticsEventLabel="freeCodeCamp Link"
                 href="https://www.freecodecamp.org/"
-                alt="freeCodeCamp"
               >
                 freeCodeCamp
               </OutboundLink>{' '}
@@ -29,7 +28,6 @@ const questions = {
               <OutboundLink
                 analyticsEventLabel="Operation Code Resources Link"
                 href="https://operationcode.org/resources/1"
-                alt="Operation Code Resources"
               >
                 Operation Code Resources
               </OutboundLink>{' '}
@@ -37,11 +35,7 @@ const questions = {
             </li>
             <li>
               Contribute to our open - source software on{' '}
-              <OutboundLink
-                analyticsEventLabel="Github"
-                href="https://github.com/OperationCode/"
-                alt="Github"
-              >
+              <OutboundLink analyticsEventLabel="Github" href="https://github.com/OperationCode/">
                 Github
               </OutboundLink>{' '}
               .
@@ -132,7 +126,7 @@ const questions = {
           and{' '}
           <OutboundLink
             analyticsEventLabel="Code of Conduct"
-            href="https://github.com/OperationCode/operationcode_docs/blob/master/community/code_of_conduct.md"
+            href={codeOfConduct}
             alt="Code of Conduct"
           >
             Code of Conduct
