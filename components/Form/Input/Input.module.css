@@ -20,6 +20,10 @@
   inline-size: auto;
 }
 
+.Input[type="checkbox"] {
+  height: 1rem;
+}
+
 .Input:focus {
   border-color: var(--primary);
   box-shadow: 0 0 1px 1px rgba(var(--rgbValuesPrimary), 0.75);
