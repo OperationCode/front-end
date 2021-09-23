@@ -18,7 +18,9 @@ exports[`RegistrationForm should render with required props 1`] = `
       Learn how to use it!
     </a>
   </p>
-  <div>
+  <div
+    className="formContainer"
+  >
     <div
       className="field"
       data-testid="INPUT"
@@ -215,11 +217,60 @@ exports[`RegistrationForm should render with required props 1`] = `
         />
       </div>
     </div>
+    <div
+      className="field"
+      data-testid="CHECKBOX"
+    >
+      <label
+        className="Label"
+        data-testid="LABEL"
+        htmlFor="codeOfConduct"
+      >
+        <input
+          checked={false}
+          className="Checkbox"
+          id="codeOfConduct"
+          name="codeOfConduct"
+          onBlur={[Function]}
+          onChange={[Function]}
+          type="checkbox"
+          value=""
+        />
+        <span>
+          I have read and agree to 
+          <a
+            href="https://github.com/OperationCode/operationcode_docs/blob/master/community/code_of_conduct.md"
+            onClick={[Function]}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Operation Code's Code of Conduct.
+            <span
+              className="ScreenReaderOnly"
+              data-testid="SCREEN_READER_ONLY"
+            >
+              Opens in new window
+            </span>
+          </a>
+          *
+        </span>
+      </label>
+    </div>
   </div>
   
-  <p>
-    The demographic information you provide, helps us understand our community needs, ensure diversity, and provide specific resources to reach our mission. Thank you in advance for providing honest answers. We do not sell your information to anyone.
+  <hr
+    className="seperator"
+  />
+  <p
+    className="aside"
+  >
+    The demographic information you provide, helps us understand our community needs, ensure diversity, and provide specific resources to reach our mission. Thank you in advance for providing honest answers.
+    <br />
+    We do not sell your information to anyone.
   </p>
+  <hr
+    className="seperator"
+  />
   <button
     className="Button topMargin secondary"
     data-testid="BUTTON"

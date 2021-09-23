@@ -27,6 +27,7 @@ export default function mockUser({
     hasOneNumber: passwordOptions.hasOneNumber,
   });
   const zipcode = `${faker.address.zipCode()}`; // force to be string
+  const codeOfConduct = ' '; // This represents the spacebar being hit to check the box
 
   const user = {
     email,
@@ -36,6 +37,7 @@ export default function mockUser({
     firstName,
     lastName,
     zipcode,
+    codeOfConduct,
   };
 
   return user;
