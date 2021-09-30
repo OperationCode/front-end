@@ -5,6 +5,9 @@ const postCSSConfig = require('../postcss.config');
 
 // Export a function. Accept the base config as the only param.
 module.exports = {
+  core: {
+    builder: 'webpack5',
+  },
   stories: ['../components/**/__stories__/*.stories.js'],
   addons: [
     '@storybook/addon-essentials',
@@ -30,10 +33,6 @@ module.exports = {
     // 'configType' has a value of 'DEVELOPMENT' or 'PRODUCTION'
     // You can change the configuration based on that.
     // 'PRODUCTION' is used when building the static version of storybook.
-
-    config.node = {
-      fs: 'empty',
-    };
 
     config.resolve.extensions.push('.svg');
 
