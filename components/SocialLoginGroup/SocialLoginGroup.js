@@ -19,15 +19,17 @@ SocialLoginGroup.defaultProps = {
 function SocialLoginGroup(props) {
   const [errorMessage, setErrorMessage] = useState('');
 
-  const onSuccess = provider => async ({ accessToken }) => {
-    try {
-      const { handleSuccess, loginSocial } = props;
-      const result = await loginSocial(provider, { accessToken });
-      handleSuccess(result);
-    } catch (error) {
-      setErrorMessage(getServerErrorMessage(error));
-    }
-  };
+  const onSuccess =
+    provider =>
+    async ({ accessToken }) => {
+      try {
+        const { handleSuccess, loginSocial } = props;
+        const result = await loginSocial(provider, { accessToken });
+        handleSuccess(result);
+      } catch (error) {
+        setErrorMessage(getServerErrorMessage(error));
+      }
+    };
 
   const onGoogleFailure = () => {
     setErrorMessage("Couldn't log in with Google");

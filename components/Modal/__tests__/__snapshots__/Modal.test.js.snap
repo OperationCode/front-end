@@ -20,13 +20,13 @@ exports[`Modal should render with many props assigned 1`] = `
     class="Modal"
   >
     <div
-      class="ReactModal__Overlay ReactModal__Overlay--after-open"
+      class="ReactModal__Overlay"
       style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75);"
     >
       <div
         aria-label="Test"
         aria-modal="true"
-        class="ReactModal__Content ReactModal__Content--after-open Card test-class"
+        class="ReactModal__Content Card test-class"
         role="dialog"
         tabindex="-1"
       >

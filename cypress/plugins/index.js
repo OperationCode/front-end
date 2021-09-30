@@ -25,7 +25,7 @@ module.exports = (on, config) => {
   on(
     'file:preprocessor',
     webpack({
-      webpackOptions: { resolve: { alias: require('../../pathAliases.js') } },
+      webpackOptions: { resolve: { alias: require('../../pathAliases') } },
       watchOptions: {},
     }),
   );

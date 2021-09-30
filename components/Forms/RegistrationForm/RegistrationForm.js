@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { func, number, oneOfType, shape, string, boolean } from 'prop-types';
 import { Formik, Field } from 'formik';
 import * as Yup from 'yup';
+import noop from 'lodash/noop';
 import { createUser } from 'common/constants/api';
 import { getServerErrorMessage } from 'common/utils/api-utils';
 import { validationErrorMessages } from 'common/constants/messages';
@@ -17,6 +18,17 @@ import Alert from 'components/Alert/Alert';
 import Link from 'next/link';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 import styles from './RegistrationForm.module.css';
+
+const defaultValues = {
+  email: '',
+  'confirm-email': '',
+  password: '',
+  'confirm-password': '',
+  firstName: '',
+  lastName: '',
+  zipcode: '',
+  codeOfConduct: false,
+};
 
 /**
  * Zipcode issues solved via a trim check from Yup.
@@ -47,6 +59,7 @@ const registrationSchema = Yup.object().shape({
 });
 
 RegistrationForm.propTypes = {
+  onSubmit: func,
   onSuccess: func.isRequired,
   initialValues: shape({
     email: string,
@@ -61,27 +74,20 @@ RegistrationForm.propTypes = {
 };
 
 RegistrationForm.defaultProps = {
-  initialValues: {
-    email: '',
-    'confirm-email': '',
-    password: '',
-    'confirm-password': '',
-    firstName: '',
-    lastName: '',
-    zipcode: '',
-    codeOfConduct: false,
-  },
+  onSubmit: noop,
+  initialValues: defaultValues,
 };
 
-function RegistrationForm({ initialValues, onSuccess }) {
+function RegistrationForm({ initialValues, onSubmit, onSuccess }) {
   const [errorMessage, setErrorMessage] = useState('');
 
   const handleSubmit = async (values, actions) => {
     try {
+      onSubmit();
       const { token } = await createUser(values);
       await onSuccess({ user: values, token });
       actions.setSubmitting(false);
-      actions.resetForm();
+      actions.resetForm({ values: defaultValues });
     } catch (error) {
       actions.setSubmitting(false);
 
