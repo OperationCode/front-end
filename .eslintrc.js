@@ -37,12 +37,6 @@ module.exports = {
 
   overrides: [
     {
-      files: ['*.test.js', '*.spec.js'],
-      rules: {
-        'function-paren-newline': ['error', 'consistent'],
-      },
-    },
-    {
       files: ['cypress/**/*.js'],
       rules: {
         'func-names': 'off',
