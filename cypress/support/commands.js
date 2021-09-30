@@ -18,8 +18,7 @@ import { apiUrl } from '../../common/config/environment';
 
 Cypress.Commands.add('visitAndWaitFor', path => {
   cy.visit(path);
-  cy.findByTestId('Desktop Nav').should('exist');
-  cy.findByTestId('Desktop Nav').should('be.visible');
+  cy.findByTestId('Desktop Nav').should('exist').and('be.visible');
   cy.url().should('contain', path);
 });
 

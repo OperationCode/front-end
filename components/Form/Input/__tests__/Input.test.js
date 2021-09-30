@@ -54,30 +54,6 @@ describe('Input', () => {
     expect(Alert.textContent).toBe(validationErrorMessages.required);
   });
 
-  it('should render the label after the input for checkbox inputs', () => {
-    const component = render(
-      <Formik>
-        <Input {...requiredProps} type="checkbox" />
-      </Formik>,
-    );
-
-    const Checkbox = component.queryByTestId(INPUT);
-
-    const InputFeedbackGrouping = component.queryByTestId(INPUT_FEEDBACK_GROUPING);
-    const Label = component.queryByTestId(LABEL);
-
-    // Selectors are rendered
-    expect(InputFeedbackGrouping).not.toBeNull();
-    expect(Label).not.toBeNull();
-
-    // Grouping has input element
-    expect(InputFeedbackGrouping.firstChild).toBe(component.container.querySelector('input'));
-
-    // Assert ordering
-    expect(Checkbox.childNodes[0]).toBe(InputFeedbackGrouping);
-    expect(Checkbox.childNodes[1]).toBe(Label);
-  });
-
   it('should render the label after the input for radio inputs', () => {
     const component = render(
       <Formik>

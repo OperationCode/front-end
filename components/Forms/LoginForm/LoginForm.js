@@ -11,6 +11,11 @@ import Input from 'components/Form/Input/Input';
 import Alert from 'components/Alert/Alert';
 import styles from './LoginForm.module.css';
 
+const defaultValues = {
+  email: '',
+  password: '',
+};
+
 /*
  * NOTE: We're repeating hardcode between the registration schema and passing an asterisk
  * to the label of required fields. This seems to an unfortunate negative aspect of an otherwise
@@ -35,10 +40,7 @@ LoginForm.propTypes = {
 };
 
 LoginForm.defaultProps = {
-  initialValues: {
-    email: '',
-    password: '',
-  },
+  initialValues: defaultValues,
   buttonTheme: 'secondary',
 };
 
@@ -51,7 +53,7 @@ function LoginForm({ initialValues, login, onSuccess, buttonTheme }) {
 
       await onSuccess({ token });
       actions.setSubmitting(false);
-      actions.resetForm();
+      actions.resetForm({ values: defaultValues });
     } catch (error) {
       actions.setSubmitting(false);
 

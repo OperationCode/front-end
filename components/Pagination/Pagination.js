@@ -61,12 +61,8 @@ const getPagination = (currentPage, totalPages) => {
 
 // eslint-disable-next-line react/prop-types
 const PaginationItems = ({ currentPage, pathname, query, totalPages }) => {
-  const {
-    paginationStart,
-    paginationLength,
-    shouldTruncateStart,
-    shouldTruncateEnd,
-  } = getPagination(currentPage, totalPages);
+  const { paginationStart, paginationLength, shouldTruncateStart, shouldTruncateEnd } =
+    getPagination(currentPage, totalPages);
 
   const PaginationItemArray = [...Array(paginationLength)].map((_, index) => {
     const page = index + paginationStart;
