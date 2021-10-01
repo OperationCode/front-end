@@ -78,7 +78,7 @@
     "react-player": "^2.9.0",
     "react-scroll": "^1.8.4",
     "react-scroll-up-button": "^1.6.4",
-    "react-select": "^4.0.2",
+    "react-select": "^5.0.0",
     "react-youtube": "7.13.1",
     "yup": "^0.32.9"
   },
