@@ -70,7 +70,7 @@
     "prop-types": "^15.6.2",
     "qs": "^6.10.1",
     "react": "^16.14.0",
-    "react-dom": "^16.13.1",
+    "react-dom": "^16.14.0",
     "react-facebook-login": "^4.1.1",
     "react-google-login": "^5.2.2",
     "react-modal": "^3.14.3",
