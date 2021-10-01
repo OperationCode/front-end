@@ -91,7 +91,7 @@
     "@operation_code/eslint-plugin-custom-rules": "^1.0.1",
     "@storybook/addon-actions": "6.0.28",
     "@storybook/addon-essentials": "6.0.28",
-    "@storybook/addon-links": "6.0.28",
+    "@storybook/addon-links": "6.3.8",
     "@storybook/addons": "6.0.28",
     "@storybook/react": "6.0.28",
     "@storybook/theming": "^6.1.15",
