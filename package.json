@@ -46,7 +46,7 @@
   "dependencies": {
     "@innocuous/components": "^2.1.1",
     "@innocuous/functions": "^2.1.1",
-    "@next/bundle-analyzer": "^10.0.6",
+    "@next/bundle-analyzer": "^11.1.2",
     "@sentry/browser": "^5.28.0",
     "axios": "^0.21.4",
     "classnames": "^2.3.1",
