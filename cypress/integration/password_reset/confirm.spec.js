@@ -1,7 +1,7 @@
 import { token, uid } from 'test-utils/mocks/passwordResetMock';
 import existingUser from 'test-utils/mocks/existingUser';
 import { validationErrorMessages } from 'common/constants/messages';
-import { ALERT } from 'common/constants/testIDs';
+import { ALERT, CHANGE_PASSWORD_FORM_ERROR, INPUT_ERROR } from 'common/constants/testIDs';
 
 describe('reset_password_confirm', () => {
   beforeEach(() => {
@@ -51,7 +51,7 @@ describe('reset_password_confirm', () => {
     cy.findByLabelText('Confirm Password*').type(`${existingUser.password}1`);
     cy.findByText('Submit').click();
 
-    cy.findByTestId(ALERT).should('contain', validationErrorMessages.passwordsMatch);
+    cy.findByTestId(INPUT_ERROR).should('contain', validationErrorMessages.passwordsMatch);
   });
 
   it('should NOT be able to change password with expired or invalid token', () => {
@@ -61,7 +61,7 @@ describe('reset_password_confirm', () => {
 
     cy.findByText('Submit').click();
 
-    cy.findByTestId(ALERT).should(
+    cy.findByTestId(CHANGE_PASSWORD_FORM_ERROR).should(
       'have.text',
       'Could not reset password.  Reset token expired or invalid.',
     );

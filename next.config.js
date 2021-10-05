@@ -123,16 +123,18 @@
 
 // module.exports = withBundleAnalyzer(withMDX(nextConfig));
 
-const withBundleAnalyzer = require('@next/bundle-analyzer')({
-  enabled: process.env.ANALYZE === 'true',
-});
-const withMDX = require('@next/mdx')({
-  extension: /\.mdx$/,
-});
+const hasBundleAnalyzer = process.env.ANALYZE === 'true';
+const withBundleAnalyzer = require('@next/bundle-analyzer')({ enabled: hasBundleAnalyzer });
+const withMDX = require('@next/mdx')({ extension: /\.mdx$/ });
 const svgoConfig = require('./common/config/svgo');
+const { s3hostName } = require('./common/constants/urls');
 
 const nextConfig = withBundleAnalyzer({
   productionBrowserSourceMaps: true,
+
+  images: {
+    domains: [s3hostName, 'user-images.githubusercontent.com'],
+  },
 
   experimental: {
     scrollRestoration: false, // see: https://github.com/OperationCode/front-end/pull/1280

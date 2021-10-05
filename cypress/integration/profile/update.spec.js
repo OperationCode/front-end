@@ -4,6 +4,7 @@ import {
   MULTI_STEP_PREVIOUS_BUTTON,
   MULTI_STEP_SUBMIT_BUTTON,
   ALERT,
+  INPUT_ERROR,
 } from 'common/constants/testIDs';
 
 const goToNextStep = stepName => {
@@ -117,7 +118,7 @@ describe(`profile/update (from login)`, () => {
 
     cy.findByTestId(MULTI_STEP_STEP_BUTTON).click();
 
-    cy.findByTestId(ALERT).should('have.text', 'Enter a number between 1 and 40.');
+    cy.findByTestId(INPUT_ERROR).first().should('have.text', 'Enter a number between 1 and 40.');
   });
 
   it(`should not allow numbers greater than 40 in the years of service input`, () => {
@@ -128,7 +129,7 @@ describe(`profile/update (from login)`, () => {
 
     cy.findByTestId(MULTI_STEP_STEP_BUTTON).click();
 
-    cy.findByTestId(ALERT).should('have.text', 'Enter a number between 1 and 40.');
+    cy.findByTestId(INPUT_ERROR).first().should('have.text', 'Enter a number between 1 and 40.');
   });
 });
 

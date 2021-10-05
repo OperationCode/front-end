@@ -1,6 +1,6 @@
 import existingUser from 'test-utils/mocks/existingUser';
 import { validationErrorMessages } from 'common/constants/messages';
-import { ALERT } from 'common/constants/testIDs';
+import { ALERT, INPUT_ERROR } from 'common/constants/testIDs';
 
 describe('reset_password', () => {
   beforeEach(() => {
@@ -35,6 +35,6 @@ describe('reset_password', () => {
   it('should NOT submit a request with an invalid email', () => {
     cy.findByLabelText('Email*').type('notEmail');
     cy.findByText('Submit').click();
-    cy.findByTestId(ALERT).should('contain', validationErrorMessages.email);
+    cy.findByTestId(INPUT_ERROR).should('contain', validationErrorMessages.email);
   });
 });
