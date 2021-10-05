@@ -1,6 +1,6 @@
 import fs from 'fs';
 import { join } from 'path';
-import PropTypes from 'prop-types';
+import { array } from 'prop-types';
 import { ONE_DAY } from 'common/constants/unitsOfTime';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
@@ -24,7 +24,7 @@ export async function getStaticProps() {
 }
 
 BlogIndex.propTypes = {
-  articles: PropTypes.array.isRequired,
+  articles: array.isRequired,
 };
 
 function BlogIndex({ articles }) {

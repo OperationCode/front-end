@@ -1,7 +1,5 @@
-import React from 'react';
 import { string, oneOf } from 'prop-types';
-import classNames from 'classnames';
-import { Image } from '@innocuous/components';
+import Image from 'next/image';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 import styles from './PartnerLogoLink.module.css';
 
@@ -16,9 +14,19 @@ PartnerLogoLink.defaultProps = {
   size: 'medium',
 };
 
-const sizeStyles = {
-  small: styles.small,
-  large: styles.large,
+const sizeMappings = {
+  small: {
+    width: 50,
+    height: 50,
+  },
+  medium: {
+    width: 100,
+    height: 100,
+  },
+  large: {
+    width: 150,
+    height: 150,
+  },
 };
 
 export default function PartnerLogoLink({ logoSource, name, url, size }) {
@@ -26,9 +34,11 @@ export default function PartnerLogoLink({ logoSource, name, url, size }) {
     <div className={styles.PartnerLogoLink}>
       <OutboundLink href={url} analyticsEventLabel={`Partner Logo Click - ${name}`} hasIcon={false}>
         <Image
-          className={classNames(styles.logo, sizeStyles[size])}
+          className={styles.logo}
           src={logoSource}
           alt={`${name} logo`}
+          {...sizeMappings[size]}
+          layout="fixed"
         />
       </OutboundLink>
     </div>

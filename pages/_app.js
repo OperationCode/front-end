@@ -1,20 +1,20 @@
 /* eslint-disable max-classes-per-file */
+import { useEffect } from 'react';
+import { node } from 'prop-types';
 import * as Sentry from '@sentry/browser';
-import App from 'next/app';
+import Router from 'next/router';
 import Fingerprint2 from 'fingerprintjs2';
 import FontFaceObserver from 'fontfaceobserver';
 import hash from 'object-hash';
 import LogRocket from 'logrocket';
-import PropTypes from 'prop-types';
-import Router from 'next/router';
-import ScrollUpButton from 'react-scroll-up-button';
 import setupLogRocketReact from 'logrocket-react';
+import ScrollUpButton from 'react-scroll-up-button';
 import { clientTokens } from 'common/config/environment';
 import { gtag } from 'common/utils/thirdParty/gtag';
 import Nav from 'components/Nav/Nav';
 import Footer from 'components/Footer/Footer';
 import ReactModal from 'react-modal';
-import { version } from '../package.json';
+import packageJSON from '../package.json';
 import 'common/styles/globalStyles.css';
 
 const isProduction = process.env.NODE_ENV === 'production';
@@ -33,17 +33,17 @@ const fonts = [
 ];
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: node.isRequired,
 };
 
 function Layout({ children }) {
   return (
-    <>
+    <div>
       <Nav />
       <main>{children}</main>
       <Footer />
       <ScrollUpButton />
-    </>
+    </div>
   );
 }
 
@@ -56,12 +56,28 @@ const setLogRocketFingerprint = () => {
   });
 };
 
-class OperationCodeApp extends App {
-  componentDidMount() {
+Router.events.on('routeChangeComplete', url => gtag.pageView(url));
+
+// Fixes Next CSS route change bug: https://github.com/vercel/next-plugins/issues/282
+if (!isProduction) {
+  Router.events.on('routeChangeComplete', () => {
+    const path = '/_next/static/chunks/styles.chunk.module.css';
+    const chunksSelector = `link[href*="${path}"]:not([rel=preload])`;
+    const chunksNodes = document.querySelectorAll(chunksSelector);
+    if (chunksNodes.length) {
+      const timestamp = new Date().valueOf();
+      chunksNodes[0].href = `${path}?ts=${timestamp}`;
+    }
+  });
+}
+
+// eslint-disable-next-line react/prop-types
+const App = ({ Component, pageProps, err }) => {
+  useEffect(() => {
     /* Analytics */
     // TODO: Leverage prod-build-time-only env vars instead of window check
     if (isProduction && window.location.host.includes('operationcode.org')) {
-      Sentry.init({ dsn: clientTokens.SENTRY_DSN, release: `front-end@${version}` });
+      Sentry.init({ dsn: clientTokens.SENTRY_DSN, release: `front-end@${packageJSON.version}` });
       LogRocket.init(`${clientTokens.LOGROCKET}/operation-code`);
 
       // Every crash report will have a LogRocket session URL.
@@ -104,49 +120,14 @@ class OperationCodeApp extends App {
 
     // Accessibility: Tell application which DOM node to hide during focus-locking of modal
     ReactModal.setAppElement('#__next');
-  }
+  }, []);
 
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.debouncedHandleScreenResize);
-  }
+  return (
+    <Layout>
+      {/** @see // Workaround for https://github.com/vercel/next.js/issues/8592 */}
+      <Component {...pageProps} err={err} />
+    </Layout>
+  );
+};
 
-  componentDidCatch(error, errorInfo) {
-    Sentry.withScope(scope => {
-      Object.keys(errorInfo).forEach(key => {
-        scope.setExtra(key, errorInfo[key]);
-      });
-
-      Sentry.captureException(error);
-    });
-
-    super.componentDidCatch(error, errorInfo);
-  }
-
-  render() {
-    // eslint-disable-next-line unicorn/prevent-abbreviations
-    const { Component, pageProps } = this.props;
-
-    return (
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    );
-  }
-}
-
-Router.events.on('routeChangeComplete', url => gtag.pageView(url));
-
-// Fixes Next CSS route change bug: https://github.com/vercel/next-plugins/issues/282
-if (!isProduction) {
-  Router.events.on('routeChangeComplete', () => {
-    const path = '/_next/static/chunks/styles.chunk.module.css';
-    const chunksSelector = `link[href*="${path}"]:not([rel=preload])`;
-    const chunksNodes = document.querySelectorAll(chunksSelector);
-    if (chunksNodes.length) {
-      const timestamp = new Date().valueOf();
-      chunksNodes[0].href = `${path}?ts=${timestamp}`;
-    }
-  });
-}
-
-export default OperationCodeApp;
+export default App;

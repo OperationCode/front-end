@@ -19,7 +19,10 @@ const assertError = ({
   numberOfErrors = 1,
   errorMessage = validationErrorMessages.required,
 } = {}) => {
-  cy.findAllByRole('alert').should('have.length', numberOfErrors).should('contain', errorMessage);
+  cy.findAllByRole('alert')
+    .should('have.length', numberOfErrors) // +1 because next announcer exists
+    // .should('have.length', numberOfErrors + 1) // TODO: For next@11 add 1 cuz announcer exists
+    .should('contain', errorMessage);
 };
 
 const assertFailedLogin = ({

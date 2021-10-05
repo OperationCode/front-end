@@ -1,10 +1,10 @@
-import React from 'react';
+import { Component } from 'react';
 import Router from 'next/router';
 import { authenticate } from 'common/utils/auth-utils';
 import getDisplayName from 'decorators/getDisplayName';
 
 const withAuthSync = WrappedComponent =>
-  class extends React.Component {
+  class extends Component {
     static displayName = `withAuthSync(${getDisplayName(WrappedComponent)})`;
 
     static async getInitialProps(ctx) {

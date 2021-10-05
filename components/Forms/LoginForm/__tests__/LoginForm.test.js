@@ -1,4 +1,3 @@
-import React from 'react';
 import faker from 'faker';
 import { render, fireEvent, waitFor, screen } from '@testing-library/react';
 import { loginUser } from 'common/constants/api';
@@ -22,7 +21,7 @@ describe('LoginForm', () => {
 
     fireEvent.blur(screen.getByLabelText(/Email/));
 
-    expect(screen.findByText(validationErrorMessages.required)).not.toBeNull();
+    expect(await screen.findByText(validationErrorMessages.required)).toBeInTheDocument();
   });
 
   it('should show error when providing non-email to email input', async () => {
@@ -31,7 +30,7 @@ describe('LoginForm', () => {
     fireEvent.change(screen.getByLabelText(/Email/), { target: { value: 'email' } });
     fireEvent.blur(screen.getByLabelText(/Email/));
 
-    expect(screen.findByText(validationErrorMessages.required)).not.toBeNull();
+    expect(await screen.findByText(validationErrorMessages.email)).toBeInTheDocument();
   });
 
   it('should show "password required" message when blurring past input', async () => {
@@ -39,7 +38,7 @@ describe('LoginForm', () => {
 
     fireEvent.blur(screen.getByLabelText(/Password/));
 
-    expect(screen.findByText(validationErrorMessages.required)).not.toBeNull();
+    expect(await screen.findByText(validationErrorMessages.required)).toBeInTheDocument();
   });
 
   it('should submit with valid data in form', async () => {
@@ -101,7 +100,7 @@ describe('LoginForm', () => {
 
     fireEvent.click(screen.getByText('Login'));
 
-    await waitFor(() => expect(screen.findByText(invalidError)).not.toBeNull());
+    expect(await screen.findByText(invalidError)).toBeInTheDocument();
     await waitFor(() => expect(successSpy).not.toHaveBeenCalled());
   });
 
@@ -120,7 +119,9 @@ describe('LoginForm', () => {
 
     fireEvent.click(screen.getByText('Login'));
 
-    await waitFor(() => expect(screen.getByText(networkErrorMessages.serverDown)).not.toBeNull());
+    await waitFor(() =>
+      expect(screen.getByText(networkErrorMessages.serverDown)).toBeInTheDocument(),
+    );
     await waitFor(() => expect(successSpy).not.toHaveBeenCalled());
     await waitFor(() => expect(OperationCodeAPIMock.history.post.length).toBeGreaterThan(0));
   });

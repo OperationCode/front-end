@@ -6,7 +6,6 @@ module.exports = {
     'airbnb',
     'plugin:jsx-a11y/recommended',
     'prettier',
-    'prettier/react',
     'plugin:jest/recommended',
     'plugin:cypress/recommended',
   ],
@@ -37,12 +36,6 @@ module.exports = {
   },
 
   overrides: [
-    {
-      files: ['*.test.js', '*.spec.js'],
-      rules: {
-        'function-paren-newline': ['error', 'consistent'],
-      },
-    },
     {
       files: ['cypress/**/*.js'],
       rules: {
@@ -192,6 +185,7 @@ module.exports = {
         when: 'multiline',
       },
     ],
+    'react/react-in-jsx-scope': 'off',
     'react/jsx-one-expression-per-line': 'off',
     'react/no-did-mount-set-state': 'off',
     'react/no-unused-prop-types': 'error',
@@ -218,31 +212,6 @@ module.exports = {
     'unicorn/prefer-starts-ends-with': 'error',
     'unicorn/prefer-text-content': 'error',
     'unicorn/prefer-type-error': 'error',
-    'unicorn/prevent-abbreviations': [
-      'error',
-      {
-        whitelist: {
-          args: true, // arguments is a reserved keyword we sometimes need to avoid
-          ctx: true,
-          defaultProps: true,
-          getInitialProps: true,
-          getStaticProps: true,
-          getStaticPaths: true,
-          getServerSideProps: true,
-          initialProps: true,
-          mapStateToProps: true,
-          mapDispatchToProps: true,
-          propFullName: true,
-          propValue: true,
-          props: true,
-          renderProps: true,
-          requiredProps: true,
-          'custom-props': true,
-          'prop-utils': true,
-          'prop-utils.test': true,
-        },
-      },
-    ],
     'unicorn/throw-new-error': 'error',
 
     // Vanilla ESLint Rules
@@ -277,6 +246,11 @@ module.exports = {
             importNames: ['Form'],
             message: `Please use our Form component to have good defaults defined.\n
               "import Form from 'components/Form/Form';"`,
+          },
+          {
+            name: 'react',
+            importNames: ['default'],
+            message: 'React is globally availble for all page files.',
           },
         ],
       },

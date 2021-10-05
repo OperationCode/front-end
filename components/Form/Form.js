@@ -1,4 +1,3 @@
-import React from 'react';
 import { connect } from 'formik';
 
 const FormikConnectedForm = connect(({ formik: { handleReset, handleSubmit }, ...props }) => (

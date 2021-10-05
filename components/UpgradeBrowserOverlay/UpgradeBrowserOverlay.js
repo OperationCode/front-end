@@ -1,4 +1,3 @@
-import React from 'react';
 import noop from 'lodash/noop';
 import Modal from 'components/Modal/Modal';
 import OutboundLink from 'components/OutboundLink/OutboundLink';

@@ -1,4 +1,3 @@
-import React from 'react';
 import { s3 } from 'common/constants/urls';
 import styles from './PressPhotos.module.css';
 

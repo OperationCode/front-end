@@ -1,5 +1,3 @@
-import React from 'react';
-
 import ResourceSkeletonCard from '../ResourceSkeletonCard';
 
 export default {

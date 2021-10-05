@@ -1,19 +1,38 @@
+const webpack = require('webpack');
 const path = require('path');
 const svgoConfig = require('../common/config/svgo');
-const postCSSConfig = require('../postcss.config');
+// const postCSSConfig = require('../postcss.config');
 
 // Export a function. Accept the base config as the only param.
 module.exports = {
   stories: ['../components/**/__stories__/*.stories.js'],
-  addons: ['@storybook/addon-essentials'],
+  addons: [
+    '@storybook/addon-essentials',
+    // TODO: Use for storybook@^6.2.0
+    // {
+    //   name: '@storybook/addon-postcss',
+    //   options: {
+    //     cssLoaderOptions: {
+    //       sourceMap: true,
+    //       modules: {
+    //         localIdentName: '[name]_[local]__[hash:base64:5]',
+    //       },
+    //     },
+    //     postcssLoaderOptions: {
+    //       implementation: require('postcss'),
+    //       postcssOptions: {
+    //         config: path.resolve(__dirname, '../postcss.config.js'),
+    //       },
+    //     },
+    //   },
+    // },
+  ],
   webpackFinal: async (config, { configType }) => {
     // 'configType' has a value of 'DEVELOPMENT' or 'PRODUCTION'
     // You can change the configuration based on that.
     // 'PRODUCTION' is used when building the static version of storybook.
 
-    config.node = {
-      fs: 'empty',
-    };
+    config.node = { fs: 'empty' };
 
     config.resolve.extensions.push('.svg');
 
@@ -60,7 +79,7 @@ module.exports = {
                 }),
                 require('postcss-export-custom-variables')({
                   exporter: 'js',
-                  destination: 'common/styles/themeMap.js',
+                  destination: './common/styles/themeMap.js',
                 }),
               ],
             },
@@ -81,7 +100,18 @@ module.exports = {
       },
     );
 
-    // Return the altered config
+    config.plugins.push(
+      new webpack.DefinePlugin({
+        'process.env.__NEXT_IMAGE_OPTS': JSON.stringify({
+          deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+          imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+          domains: [],
+          path: '/',
+          loader: 'default',
+        }),
+      }),
+    );
+
     return config;
   },
 };

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import classNames from 'classnames';
 import Link from 'next/link';
 import { arrayOf, shape, string, element } from 'prop-types';

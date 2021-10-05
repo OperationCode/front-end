@@ -1,4 +1,3 @@
-import React from 'react';
 import { Formik, Field } from 'formik';
 import { cleanup, fireEvent, render } from '@testing-library/react';
 import { INPUT, INPUT_ERROR, INPUT_FEEDBACK_GROUPING, LABEL } from 'common/constants/testIDs';

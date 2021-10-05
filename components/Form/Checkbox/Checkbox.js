@@ -1,4 +1,3 @@
-import React from 'react';
 import { shape, string, node, number, object, objectOf, oneOfType } from 'prop-types';
 import classNames from 'classnames';
 import { ErrorMessage } from 'formik';

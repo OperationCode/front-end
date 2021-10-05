@@ -1,4 +1,3 @@
-import React from 'react';
 import { Formik } from 'formik';
 import { fireEvent, render, waitFor } from '@testing-library/react';
 import OperationCodeAPIMock from 'test-utils/mocks/apiMock';

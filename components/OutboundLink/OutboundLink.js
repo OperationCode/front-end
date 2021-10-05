@@ -1,4 +1,3 @@
-import React from 'react';
 import { bool, node, string } from 'prop-types';
 import { gtag } from 'common/utils/thirdParty/gtag';
 import ExternalLinkIcon from 'static/images/icons/FontAwesome/external-link-square-alt-solid.svg';
