@@ -4,11 +4,11 @@ module.exports = {
   env: {
     production: {
       presets: ['next/babel'],
-      plugins: [['add-react-displayname']],
+      plugins: ['add-react-displayname'],
     },
     development: {
       presets: ['next/babel'],
-      plugins: [['istanbul']],
+      plugins: ['istanbul'],
     },
     test: {
       presets: [
