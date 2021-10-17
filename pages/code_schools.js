@@ -127,7 +127,7 @@ function CodeSchools({ allSchools }) {
 
         <br />
 
-        <aside style={{ textAlign: 'center' }}>
+        <aside>
           <h6>Would you like your school listed here?</h6>
           <p>
             Please fill out our request form,{' '}

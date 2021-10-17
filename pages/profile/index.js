@@ -78,7 +78,7 @@ function Profile({
         theme="gray"
         columns={[
           <div style={{ width: '100%' }}>
-            <h3 data-testid={PROFILE_GREETING} style={{ textAlign: 'center' }}>
+            <h3 data-testid={PROFILE_GREETING}>
               Hello {capitalize(firstName)} {capitalize(lastName)}!
             </h3>
             <p>

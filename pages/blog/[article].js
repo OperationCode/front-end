@@ -53,9 +53,7 @@ function BlogArticle({ articleName }) {
       <Content
         theme="gray"
         columns={[
-          <div
-            style={{ textAlign: 'left', display: 'flex', flexDirection: 'column', width: '100%' }}
-          >
+          <div style={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
             <Article />
           </div>,
         ]}

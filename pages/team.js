@@ -80,7 +80,7 @@ function Team({ boardMembers }) {
               commitment in the early days.
             </p>
 
-            <p style={{ textAlign: 'center' }}>
+            <p>
               <em>Thank you for setting us up for success!</em>
             </p>
           </div>,
