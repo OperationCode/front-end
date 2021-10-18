@@ -26,7 +26,6 @@ function Sponsorship() {
         title="Become A Corporate Sponsor Today"
         theme="white"
         hasTitleUnderline
-        className
         columns={[
           <p>
             Operation Code is pleased to invite America&apos;s leading technology companies to
@@ -40,7 +39,6 @@ function Sponsorship() {
       <Content
         title="What We Offer"
         theme="secondary"
-        className={styles.jutifyAlign}
         columns={[
           <FlatCard>
             The largest national volunteer service organization devoted to software engineering.
