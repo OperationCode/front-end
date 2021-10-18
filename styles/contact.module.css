@@ -2,10 +2,6 @@
   margin: 1rem 0;
 }
 
-.Contact .justifyAlign {
-  text-align: justify;
-}
-
 .Contact .contactHero a {
   transition: color 0.2s linear;
 }

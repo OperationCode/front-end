@@ -38,9 +38,7 @@ exports[`JoinSection should render when not logged in 1`] = `
         </div>
       </h3>
     </div>
-    <p
-      className="justifyAlign"
-    >
+    <p>
       Are you ready to begin your journey towards a career in tech? Get the support you need by joining our members-only Slack community!
     </p>
     <a

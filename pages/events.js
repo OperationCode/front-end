@@ -91,7 +91,7 @@ function Events() {
 
       <HeroBanner title={pageTitle} backgroundImageSource={`${s3}redesign/heroBanners/events.jpg`}>
         <>
-          <p className={styles.justifyAlign}>
+          <p>
             Need more Operation Code in your life? From conventions to tech meetups, we are where
             you are! There are 7,000+ members across more than 20 states!
           </p>
@@ -209,7 +209,7 @@ function Events() {
           <div>
             <Heading text="Sponsor a Meetup" headingLevel={2} />
 
-            <p className={styles.justifyAlign}>
+            <p>
               From classes, to hackathons, to contributing to open source projects as a group. Our
               meetups are just one way we engage with our veterans and our community. Wanna help
               out? Find out how you can sponsor us, from food, to educational materials, and a space
@@ -252,7 +252,7 @@ function Events() {
           <div>
             <Heading text="Host Us At An Event" headingLevel={2} />
 
-            <p className={styles.justifyAlign}>
+            <p>
               Not only are we working to get veterans into tech, we are also working to raise
               awareness of vets in the job market. From technical knowledge to diversity,
               we&rsquo;re not only a community of veterans, we also house a group of content experts

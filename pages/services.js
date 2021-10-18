@@ -82,7 +82,7 @@ function Services({ numberOfMembers }) {
         theme="gray"
         columns={[
           <div>
-            <p className={styles.justifyAlign}>
+            <p>
               We believe that the best way to take advantage of Operation Code is simply to become a
               member of the organization. We work closely with military veterans, service members,
               and military spouses and dependents who are passionate about transitioning into the
@@ -135,7 +135,7 @@ function Services({ numberOfMembers }) {
         title="Our Commitment To You"
         theme="gray"
         columns={[
-          <p className={styles.justifyAlign}>
+          <p>
             Whether you are looking to change careers or starting a new one in the tech industry, we
             are here to help you succeed by providing:
           </p>,
@@ -149,7 +149,7 @@ function Services({ numberOfMembers }) {
               />
             ))}
           </div>,
-          <p className={styles.justifyAlign}>
+          <p>
             We also offer information on many of America&apos;s best{' '}
             <Link href="/code_schools">
               <a>&ldquo;coding bootcamps&rdquo;</a>
