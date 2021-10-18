@@ -14,10 +14,6 @@
   margin-top: 1rem;
 }
 
-.Home .justifyAlign {
-  text-align: justify;
-}
-
 .Home .mission {
   display: flex;
   flex-direction: column;
