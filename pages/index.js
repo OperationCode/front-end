@@ -22,7 +22,7 @@ function Home() {
         title="Build The Future"
       >
         <>
-          <p className={styles.justifyAlign}>
+          <p>
             We&apos;re the largest community of military veterans, service members, and spouses
             committed to becoming software developers with the help of mentors, scholarships, and
             our tech partners.
@@ -40,7 +40,7 @@ function Home() {
         columns={[
           <div className={styles.mission}>
             <Heading text="Our Mission" hasTitleUnderline />
-            <p className={styles.justifyAlign}>
+            <p>
               We serve our veterans, service members, and their families, work alongside their
               journey through the tech industry, and help them thrive in their careers to code a
               better future.

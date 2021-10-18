@@ -14,7 +14,7 @@ function Press() {
 
       <HeroBanner title={pageTitle}>
         <>
-          <p className={styles.justifyAlign}>
+          <p>
             This page is designed to make a journalist&apos;s job easy in writing, blogging, or
             documenting Operation Code. Below you will find targeted information corresponding to
             common representative visitors, videos, photos, press releases, and branding details.
@@ -26,7 +26,7 @@ function Press() {
         theme="white"
         columns={[
           <aside>
-            <p className={styles.justifyAlign}>
+            <p>
               If you are looking for our mission statement or our values, please{' '}
               <Link href="/about">
                 <a>go to the About page</a>
@@ -55,7 +55,7 @@ function Press() {
             <div className={styles.column}>
               <div className={styles.textGrouping}>
                 <h4>Code Schools</h4>
-                <p className={styles.justifyAlign}>
+                <p>
                   Firstly, if your code school&apos;s information is not listed on our directory,
                   please contact us at{' '}
                   <a href="mailto:staff@operationcode.org?subject=Add Code School">
@@ -72,7 +72,7 @@ function Press() {
             <div className={styles.column}>
               <div className={styles.textGrouping}>
                 <h4>Partnered Organizations</h4>
-                <p className={styles.justifyAlign}>
+                <p>
                   We have long-standing, productive partnerships with some amazing companies, and
                   yours could be one of them! Organizations that put our members and our open source
                   work on a pedastal, can look forward to receive social media blasts and the
@@ -88,7 +88,7 @@ function Press() {
             <div className={styles.column}>
               <div className={styles.textGrouping}>
                 <h4>Media Outlets</h4>
-                <p className={styles.justifyAlign}>
+                <p>
                   The staff at Operation Code thank you for taking your time to represent us in your
                   work. If your piece has a specific theme or target, and you&apos;d like some
                   custom contributions, please join our organization to receive a Slack team invite.

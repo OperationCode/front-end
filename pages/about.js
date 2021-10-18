@@ -24,14 +24,14 @@ function About() {
         theme="white"
         columns={[
           <>
-            <p className={styles.justifyAlign}>
+            <p>
               <b>
                 Operation Code is a non-profit charity helping the military community learn software
                 development, enter the tech industry, and code the future.
               </b>
             </p>
 
-            <p className={styles.justifyAlign}>
+            <p>
               We at Operation Code strive to provide an efficient way into a tech career for
               veterans, military spouses, and transitioning servicemembers. Read about our{' '}
               <Link href="/history">
@@ -40,14 +40,14 @@ function About() {
               to learn more!
             </p>
 
-            <p className={styles.justifyAlign}>
+            <p>
               Our volunteer team works tirelessly to provide mentorship for veterans and military
               spouses interested in learning about tech careers. Dozens of software engineers,
               product managers, system architects, security engineers, and various other IT
               professionals act as 1-on-1 mentors to our members.
             </p>
 
-            <p className={styles.justifyAlign}>
+            <p>
               As a non-profit organization, we rely heavily on your support. If you are interested
               in helping us financially, please donate here or set your Amazon Smile organization to
               &ldquo;Operation Code&rdquo;. If you have questions about our organization, platforms,
@@ -176,7 +176,7 @@ function About() {
         title="Mission"
         hasTitleUnderline
         columns={[
-          <p className={styles.justifyAlign}>
+          <p>
             Operation Code is leading the way to expand opportunities for military veterans and
             their families. We aim to help veterans learn new skills and build their careers in the
             fast-growing technology sector. Our team’s mission - led by veterans and other
