@@ -12,9 +12,7 @@ exports[`DonateSection should render with no props passed passed 1`] = `
     headingLevel={3}
     text="Donate"
   />
-  <p
-    className={true}
-  >
+  <p>
     As a 501(c)(3) veteran-led nonprofit organization, our programs and services are maintained through the efforts of our volunteer staff. Your financial support allows us to continue helping the military community learn software development, enter the tech industry, and code the future.
   </p>
   <p>
