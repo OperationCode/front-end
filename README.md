@@ -75,7 +75,7 @@ Thanks to [Chromatic](https://www.chromatic.com/) for providing the visual testi
 
 ### LogRocket
 
-<a href="https://logrocket.com/"><img src="https://logrocket-assets.io/img/logo.png" alt="LogRocket" width="306" /></a>
+<a href="https://logrocket.com/"><img src="https://raw.githubusercontent.com/OperationCode/front-end/main/public/static/images/logrocker.svg" alt="LogRocket" width="306" /></a>
 
 Thanks to [LogRocket](https://logrocket.com/) for providing time-saving context on every error and insight into our user's behavior,
 
