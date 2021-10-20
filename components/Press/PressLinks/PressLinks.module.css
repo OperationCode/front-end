@@ -4,9 +4,53 @@
 }
 
 .logos .flexContainer {
-  width: 100%;
+  width: 80ch;
   display: flex;
-  flex-flow: row wrap;
+  flex-direction: column;
   justify-content: space-around;
   padding: 15px 0 0 0;
+}
+
+.logos .tabsList {
+  display: flex;
+  flex-shrink: 0;
+}
+
+.logos .tabsTrigger {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  border-bottom: 2px solid #3a414e;
+}
+
+.logos .tabsTrigger:hover {
+  border-bottom: 2px solid #249cbc;
+}
+
+.logos .tabsTrigger[data-state="active"] {
+  border-bottom: 2px solid var(--primary);
+}
+
+.logos .tabsContent {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+.logos li {
+  padding-bottom: 5px;
+  text-align: center;
+  list-style: none;
+  font-size: 16px;
+}
+
+.logos li svg {
+  top: 0;
+  left: 5px;
+  width: 0.6em;
+}
+
+.logos li::marker {
+  display: none;
 }

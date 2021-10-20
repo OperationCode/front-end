@@ -1,28 +1,40 @@
-import { number } from 'prop-types';
-import styles from './PressLinks.module.css';
+import * as Tabs from '@radix-ui/react-tabs';
+import OutboundLink from 'components/OutboundLink/OutboundLink';
 import * as Articles from './Articles';
-import ArticleGroup from './ArticleGroup/ArticleGroup';
+import styles from './PressLinks.module.css';
 
-PressLinks.propTypes = {
-  numberOfInitiallyVisibleLinks: number,
-};
-
-PressLinks.defaultProps = {
-  numberOfInitiallyVisibleLinks: 5,
-};
-
-function PressLinks({ numberOfInitiallyVisibleLinks }) {
+function PressLinks() {
   return (
     <div className={styles.logos}>
       <div className={styles.flexContainer}>
-        {Object.keys(Articles).map(region => (
-          <ArticleGroup
-            key={`ArticleGroup_${region}`}
-            region={region}
-            articles={Articles[region]}
-            numberOfInitiallyVisibleLinks={numberOfInitiallyVisibleLinks}
-          />
-        ))}
+        <Tabs.Root defaultValue={Object.keys(Articles)[0]}>
+          <Tabs.List className={styles.tabsList}>
+            {Object.keys(Articles).map(region => (
+              <Tabs.Trigger
+                key={`TabsTrigger_${region}`}
+                value={region}
+                className={styles.tabsTrigger}
+              >
+                <h3>{region}</h3>
+              </Tabs.Trigger>
+            ))}
+          </Tabs.List>
+          {Object.keys(Articles).map(region => (
+            <Tabs.Content
+              key={`TabsContent_${region}`}
+              value={region}
+              className={styles.tabsContent}
+            >
+              {Articles[region].map(link => (
+                <li key={`GroupLink_${link.url}`}>
+                  <OutboundLink href={link.url} analyticsEventLabel="Press Article">
+                    {link.title}
+                  </OutboundLink>
+                </li>
+              ))}
+            </Tabs.Content>
+          ))}
+        </Tabs.Root>
       </div>
     </div>
   );
