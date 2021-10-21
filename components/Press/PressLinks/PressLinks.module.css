@@ -27,6 +27,7 @@
 
 .logos .tabsTrigger:hover {
   border-bottom: 2px solid var(--primaryDark);
+  cursor: pointer;
 }
 
 .logos .tabsTrigger[data-state="active"] {
