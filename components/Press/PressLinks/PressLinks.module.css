@@ -4,7 +4,7 @@
 }
 
 .logos .flexContainer {
-  width: 80ch;
+  width: 70ch;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
