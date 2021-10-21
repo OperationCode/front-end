@@ -21,13 +21,17 @@
   flex: 1;
   align-items: center;
   justify-content: center;
-  padding: 0 20px;
+  padding: 10px 20px 0;
   border-bottom: 2px solid var(--secondaryLight);
 }
 
 .logos .tabsTrigger:hover {
   border-bottom: 2px solid var(--primaryDark);
   cursor: pointer;
+}
+
+.logos .tabsTrigger:focus-visible {
+  outline: 1px solid var(--primary);
 }
 
 .logos .tabsTrigger[data-state="active"] {
