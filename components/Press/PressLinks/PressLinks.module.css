@@ -1,5 +1,5 @@
 .logos a {
-  color: #249cbc;
+  color: var(--primaryDark);
   text-decoration: none;
 }
 
@@ -22,11 +22,11 @@
   align-items: center;
   justify-content: center;
   padding: 0 20px;
-  border-bottom: 2px solid #3a414e;
+  border-bottom: 2px solid var(--secondaryLight);
 }
 
 .logos .tabsTrigger:hover {
-  border-bottom: 2px solid #249cbc;
+  border-bottom: 2px solid var(--primaryDark);
 }
 
 .logos .tabsTrigger[data-state="active"] {
