@@ -40,7 +40,7 @@
 }
 
 .Press .logos a {
-  color: var(--primaryDark);
+  color: var(--primary);
   text-decoration: none;
 }
 

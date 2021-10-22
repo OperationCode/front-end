@@ -1,5 +1,5 @@
 .logos a {
-  color: var(--primaryDark);
+  color: var(--primary);
   text-decoration: none;
 }
 
@@ -22,11 +22,11 @@
   align-items: center;
   justify-content: center;
   padding: 10px 20px 0;
-  border-bottom: 2px solid var(--secondaryLight);
+  border-bottom: 2px solid rgba(var(--rgbValuesPrimary), 0.2);
 }
 
 .logos .tabsTrigger:hover {
-  border-bottom: 2px solid var(--primaryDark);
+  border-bottom: 2px solid rgba(var(--rgbValuesPrimary), 0.6);
   cursor: pointer;
 }
 
