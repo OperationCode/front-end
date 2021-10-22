@@ -17,7 +17,7 @@ function JoinSection() {
     <Container theme="white" data-testid="Join Section">
       <Heading text="Join Our Thriving Community" headingLevel={3} />
 
-      <p className={styles.justifyAlign}>
+      <p>
         Are you ready to begin your journey towards a career in tech? Get the support you need by
         joining our members-only Slack community!
       </p>

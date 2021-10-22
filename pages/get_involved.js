@@ -61,7 +61,7 @@ function GetInvolved() {
         title="You Can Make An Impact"
       >
         <>
-          <p className={styles.justifyAlign}>
+          <p>
             Help make an impact to transitioning service members, military veterans, military
             spouses and dependents! You can help in several ways:{' '}
             <Link href="/donate">
@@ -118,7 +118,7 @@ function GetInvolved() {
           <div>
             <Heading text="Empower Our Community and Support Our Mission" headingLevel={3} />
 
-            <p className={styles.justifyAlign}>
+            <p>
               Make a difference in the lives of our military community and help them reach their
               pursuits of a tech career.
             </p>

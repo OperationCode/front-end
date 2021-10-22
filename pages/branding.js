@@ -15,7 +15,7 @@ function Branding() {
       <Head title={pageTitle} />
 
       <HeroBanner isFullViewportHeight title={pageTitle}>
-        <h6 className={styles.justifyAlign}>
+        <h6>
           For external organizations, corporate sponsors and press, please obtain specific guidance
           and approval from the Director of Communications prior to using Operation Code Branding on
           public platforms. You may email your request to marketing@operationcode.org
@@ -25,22 +25,22 @@ function Branding() {
 
         <h6 className={styles.topMargin}>General Guidelines</h6>
 
-        <p className={styles.justifyAlign}>
+        <p>
           The size ratio between the star and the medallion changes depending on the size of
           reproduction. Please make use of the appropriate sized logo when creating collateral.
         </p>
 
-        <p className={styles.justifyAlign}>
+        <p>
           In most cases, use the blue-accent version of the logo. The red-accent is delivered for
           special uses only.
         </p>
 
-        <p className={styles.justifyAlign}>
+        <p>
           Please note: Images may appear larger or smaller than they appear on your device, but the
           files linked are &quot;large&quot; or &quot;small&quot; as described.
         </p>
 
-        <p className={styles.justifyAlign}>
+        <p>
           View{' '}
           <a
             rel="noreferrer"
@@ -51,7 +51,7 @@ function Branding() {
           </a>
         </p>
 
-        <p className={styles.justifyAlign}>
+        <p>
           <OutboundLink
             analyticsEventLabel="Branding EPS Download"
             href={`${s3}Operation-Code-Logo.eps`}
