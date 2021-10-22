@@ -1,6 +1,5 @@
 const hasBundleAnalyzer = process.env.ANALYZE === 'true';
 const withBundleAnalyzer = require('@next/bundle-analyzer')({ enabled: hasBundleAnalyzer });
-const withMDX = require('@next/mdx')({ extension: /\.mdx$/ });
 const { s3hostName } = require('./common/constants/urls');
 const svgoConfig = require('./common/config/svgo');
 
@@ -120,4 +119,4 @@ const nextConfig = {
   },
 };
 
-module.exports = withBundleAnalyzer(withMDX(nextConfig));
+module.exports = withBundleAnalyzer(nextConfig);

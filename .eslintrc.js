@@ -18,7 +18,8 @@ module.exports = {
     jest: true,
     node: true,
   },
-  parser: 'babel-eslint',
+
+  parser: '@babel/eslint-parser',
 
   plugins: [
     'prettier',
@@ -69,10 +70,6 @@ module.exports = {
         'react/sort-comp': 'off',
       },
     },
-    {
-      files: '*.mdx',
-      extends: 'plugin:mdx/recommended',
-    },
   ],
 
   rules: {
@@ -80,26 +77,13 @@ module.exports = {
     'import/extensions': [
       'error',
       'never',
-      {
-        css: 'always',
-        jpg: 'always',
-        json: 'always',
-        png: 'always',
-        svg: 'always',
-      },
+      { css: 'always', jpg: 'always', json: 'always', png: 'always', svg: 'always' },
     ],
     'import/no-unresolved': 'off',
-    'import/no-extraneous-dependencies': [
-      'error',
-      {
-        devDependencies: true,
-      },
-    ],
+    'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
     'import/order': [
       'error',
-      {
-        groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
-      },
+      { groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'] },
     ],
     'import/prefer-default-export': 'off',
 
@@ -107,32 +91,17 @@ module.exports = {
     '@operation_code/custom-rules/proptype-definition-above-fn': 'error',
 
     // Jest Plugin Rules
-    'jest/consistent-test-it': [
-      'error',
-      {
-        fn: 'it',
-        withinDescribe: 'it',
-      },
-    ],
+    'jest/consistent-test-it': ['error', { fn: 'it', withinDescribe: 'it' }],
     'jest/expect-expect': [
       'error',
-      {
-        assertFunctionNames: ['expect', 'createShallowSnapshotTest', 'createSnapshotTest'],
-      },
+      { assertFunctionNames: ['expect', 'createShallowSnapshotTest', 'createSnapshotTest'] },
     ],
-    'jest/lowercase-name': [
-      'error',
-      {
-        ignore: ['describe'],
-      },
-    ],
+    'jest/prefer-lowercase-title': ['error', { ignore: ['describe'] }],
     'jest/no-jasmine-globals': 'error',
     'jest/no-test-prefixes': 'error',
     'jest/no-test-return-statement': 'error',
     'jest/prefer-strict-equal': 'error',
-    'jest/prefer-to-be-null': 'error',
-    'jest/prefer-to-be-undefined': 'error',
-    'jest/valid-describe': 'error',
+    'jest/valid-describe-callback': 'error',
 
     // JSX-A11Y Plugin Rules
     'jsx-a11y/anchor-is-valid': [
@@ -159,32 +128,10 @@ module.exports = {
     'prettier/prettier': 'error',
 
     // React Plugin Rules
-    'react/forbid-prop-types': [
-      'error',
-      {
-        forbid: ['any'],
-      },
-    ],
-    'react/jsx-curly-brace-presence': [
-      'error',
-      {
-        props: 'never',
-        children: 'never',
-      },
-    ],
-    'react/jsx-filename-extension': [
-      'error',
-      {
-        extensions: ['.js'],
-      },
-    ],
-    'react/jsx-max-props-per-line': [
-      'error',
-      {
-        maximum: 1,
-        when: 'multiline',
-      },
-    ],
+    'react/forbid-prop-types': ['error', { forbid: ['any'] }],
+    'react/jsx-curly-brace-presence': ['error', { props: 'never', children: 'never' }],
+    'react/jsx-filename-extension': ['error', { extensions: ['.js'] }],
+    'react/jsx-max-props-per-line': ['error', { maximum: 1, when: 'multiline' }],
     'react/react-in-jsx-scope': 'off',
     'react/jsx-one-expression-per-line': 'off',
     'react/no-did-mount-set-state': 'off',
@@ -218,13 +165,7 @@ module.exports = {
     'arrow-body-style': 'off', // prettier
     'comma-dangle': ['error', 'only-multiline'],
     'implicit-arrow-linebreak': 'off', // prettier
-    'max-len': [
-      'error',
-      {
-        code: 100,
-        ignoreUrls: true,
-      },
-    ],
+    'max-len': ['error', { code: 100, ignoreUrls: true }],
     'multiline-ternary': 'off',
     'no-console': 'warn',
     'no-restricted-imports': [
