@@ -246,7 +246,7 @@ describe('resources', () => {
   //   checkAllCardsForDataAttribute(DATA_TEST_LANGUAGES, 'JavaScript');
   //   checkAllCardsForDataAttribute(DATA_TEST_LANGUAGES, 'Python');
   // });
-  it('will allow user to upvote/downvote once logged in', () => {
+  it.skip('will allow user to upvote/downvote once logged in', () => {
     cy.server();
     cy.route('POST', 'auth/login/').as('postLogin');
     cy.route('PUT', 'api/v1/resources/**/upvote').as('upvote');
