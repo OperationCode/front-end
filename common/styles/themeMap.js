@@ -1,10 +1,7 @@
-export const widthUpToButtonInAccordion = "90%";
 export const primary = "#3ed6f0";
 export const secondary = "#252e3e";
 export const gray = "#e2e2e2";
 export const white = "#f7f7f7";
-export const primaryDark = "#259cbb";
-export const secondaryLight = "#47576b";
 export const rgbValuesPrimary = "62, 214, 240";
 export const rgbValuesSecondary = "37, 46, 62";
 export const success = "hsla(134, 41%, 88%, 0.6)";
@@ -23,3 +20,4 @@ export const borderRadius = "3px";
 export const navBarHeight = "65px";
 export const navBarTopGutterHeight = "20px";
 export const typicalMaxWidth = "700px";
+export const widthUpToButtonInAccordion = "90%";

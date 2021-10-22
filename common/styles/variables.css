@@ -5,8 +5,6 @@
   --secondary: #252e3e; /* navy */
   --gray: #e2e2e2; /* gainsboro */
   --white: #f7f7f7; /* offwhite */
-  --primaryDark: #259cbb; /* logo color "code" */
-  --secondaryLight: #47576b; /* logo color of "operation" */
 
   /* Colors as RGB values for rgba() usage */
   --rgbValuesPrimary: 62, 214, 240;
