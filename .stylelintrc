@@ -1,11 +1,6 @@
 {
-  "extends": [
-    "stylelint-config-standard",
-    "stylelint-prettier/recommended"
-  ],
-  "plugins": [
-    "stylelint-prettier"
-  ],
+  "extends": ["stylelint-config-standard", "stylelint-prettier/recommended"],
+  "plugins": ["stylelint-prettier"],
   "ignoreFiles": [
     "**/*.js",
     "coverage/**/*",
@@ -15,27 +10,19 @@
   ],
   "rules": {
     "prettier/prettier": true,
+    "alpha-value-notation": null,
     "color-hex-case": "lower",
     "color-hex-length": "long",
+    "custom-property-pattern": null,
+    "hue-degree-notation": null,
     "indentation": 2,
+    "keyframes-name-pattern": null,
+    "color-function-notation": "legacy",
     "no-duplicate-selectors": true,
-    "property-no-unknown": [
-      true,
-      {
-        "ignoreProperties": [
-          "composes",
-          "composes-with"
-        ]
-      }
-    ],
-    "string-quotes": "double",
-    "selector-pseudo-class-no-unknown": [
-      true,
-      {
-        "ignorePseudoClasses": [
-          "global"
-        ]
-      }
-    ]
+    "property-no-unknown": [true, { "ignoreProperties": ["composes", "composes-with"] }],
+    "selector-class-pattern": null,
+    "selector-pseudo-class-no-unknown": [true, { "ignorePseudoClasses": ["global"] }],
+    "shorthand-property-no-redundant-values": null,
+    "string-quotes": "double"
   }
 }

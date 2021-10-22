@@ -21,8 +21,7 @@
 
 .Home .successStories {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
   justify-content: space-around;
 }
 
@@ -30,8 +29,7 @@
   display: flex;
   align-self: center;
   justify-content: center;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
   max-width: 900px;
 }
 
