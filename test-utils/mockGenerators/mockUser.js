@@ -29,13 +29,13 @@ export default function mockUser({
   const zipcode = `${faker.address.zipCode()}`; // force to be string
 
   /**
-   * In Cypress, ✅ing the checkbox requires hitting the space bar, which is done by LITERALLY
+   * In Cypress, ✅ ing the checkbox requires hitting the space bar, which is done by LITERALLY
    * typing a string with an space character. Cute.
    *
    * This causes issues with Jest, so I found an environment variable used in Jest, but not Cypress
    * so that the mocked value is correct in all contexts.
    */
-  const codeOfConduct = process.env.JEST_WORKER_ID ? true : ' ';
+  const codeOfConduct = typeof Cypress === 'object' ? ' ' : true;
 
   const user = {
     email,
