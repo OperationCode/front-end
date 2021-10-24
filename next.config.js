@@ -22,7 +22,7 @@ const sentryWebpackPluginOptions = {
  * @type {import('next/dist/next-server/server/config').NextConfig}
  */
 const nextConfig = withPlugins([withBundleAnalyzer], {
-  productionBrowserSourceMaps: false,
+  productionBrowserSourceMaps: true,
 
   eslint: {
     ignoreDuringBuilds: true, // We lint during CI.
