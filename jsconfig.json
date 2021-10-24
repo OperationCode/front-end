@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
-    "checkJs": true,
+    "jsx": "react",
+    "checkJs": false,
     "target": "esnext",
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
@@ -16,6 +17,5 @@
       "styles/*": ["./styles/*"],
       "test-utils/*": ["./test-utils/*"]
     }
-  },
-  "exclude": ["node_modules"]
+  }
 }

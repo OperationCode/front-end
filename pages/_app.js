@@ -1,7 +1,7 @@
 /* eslint-disable max-classes-per-file */
 import { useEffect } from 'react';
+import * as Sentry from '@sentry/nextjs';
 import { node } from 'prop-types';
-import * as Sentry from '@sentry/browser';
 import Router from 'next/router';
 import Fingerprint2 from 'fingerprintjs2';
 import FontFaceObserver from 'fontfaceobserver';
@@ -14,7 +14,6 @@ import { gtag } from 'common/utils/thirdParty/gtag';
 import Nav from 'components/Nav/Nav';
 import Footer from 'components/Footer/Footer';
 import ReactModal from 'react-modal';
-import packageJSON from '../package.json';
 import 'common/styles/globalStyles.css';
 
 const isProduction = process.env.NODE_ENV === 'production';
@@ -77,7 +76,6 @@ const App = ({ Component, pageProps, err }) => {
     /* Analytics */
     // TODO: Leverage prod-build-time-only env vars instead of window check
     if (isProduction && window.location.host.includes('operationcode.org')) {
-      Sentry.init({ dsn: clientTokens.SENTRY_DSN, release: `front-end@${packageJSON.version}` });
       LogRocket.init(`${clientTokens.LOGROCKET}/operation-code`);
 
       // Every crash report will have a LogRocket session URL.
