@@ -81,5 +81,6 @@ export default [
     'Christian Gonzalez',
     'Sean Mangosing',
     'Frank (franklyspeaking) Gauss',
-    'Sung Paik'
+    'Sung Paik',
+    'Tri Tran'
 ]
