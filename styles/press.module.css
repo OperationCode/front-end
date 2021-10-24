@@ -40,7 +40,7 @@
 }
 
 .Press .logos a {
-  color: #249cbc;
+  color: var(--primary);
   text-decoration: none;
 }
 

@@ -1,12 +1,85 @@
 .logos a {
-  color: #249cbc;
+  color: var(--primary);
   text-decoration: none;
 }
 
 .logos .flexContainer {
-  width: 100%;
+  width: 70ch;
   display: flex;
-  flex-flow: row wrap;
+  flex-direction: column;
   justify-content: space-around;
   padding: 15px 0 0 0;
+}
+
+.logos .tabsList {
+  display: flex;
+  flex-shrink: 0;
+}
+
+.logos .tabsTrigger {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px 0;
+  border-bottom: 2px solid rgba(var(--rgbValuesPrimary), 0.2);
+}
+
+.logos .tabsTrigger:hover {
+  border-bottom: 2px solid rgba(var(--rgbValuesPrimary), 0.6);
+  cursor: pointer;
+}
+
+.logos .tabsTrigger:focus-visible {
+  outline: 1px solid var(--primary);
+}
+
+.logos .tabsTrigger[data-state="active"] {
+  border-bottom: 2px solid var(--primary);
+}
+
+.logos .tabsContent {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+.logos li {
+  padding-bottom: 5px;
+  text-align: center;
+  list-style: none;
+  font-size: 16px;
+}
+
+.logos li svg {
+  top: 0;
+  left: 5px;
+  width: 0.6em;
+}
+
+.logos li::marker {
+  display: none;
+}
+
+@media screen and (--medium-viewport) {
+  .logos .flexContainer {
+    width: 60ch;
+  }
+}
+
+@media screen and (--small-viewport) {
+  .logos {
+    width: 80%;
+  }
+
+  .logos .flexContainer {
+    width: 100%;
+  }
+
+  .logos .tabsList {
+    flex-wrap: wrap;
+  }
+
+  .logos .tabsTrigger {
+    min-width: 80%;
+  }
 }

@@ -7,206 +7,449 @@ exports[`PressLinks should render with no props passed 1`] = `
   <div
     className="flexContainer"
   >
-    <ArticleGroup
-      articles={
-        Array [
-          Object {
-            "title": "New program aims to help veterans land jobs in tech industry",
-            "url": "https://wtkr.com/2018/05/16/new-program-aims-to-help-veterans-land-jobs-in-tech-industry/",
-          },
-          Object {
-            "title": "Veterans in Residence",
-            "url": "http://www.wdtv.com/content/news/Veterans-in-Residence-program-helping-veterans-grow-businesses-482707221.html",
-          },
-          Object {
-            "title": "After Flying Solo, Veterans Find Others Who Have Their Backs",
-            "url": "https://www.wework.com/blog/posts/after-flying-solo-veterans-find-others-who-have-their-back",
-          },
-        ]
-      }
-      numberOfInitiallyVisibleLinks={5}
-      region="NYC"
-    />
-    <ArticleGroup
-      articles={
-        Array [
-          Object {
-            "title": "How Tech Pros Can Volunteer in Fun Ways",
-            "url": "https://insights.dice.com/2017/01/11/tech-pros-volunteer-fun-ways/",
-          },
-          Object {
-            "title": "MassChallenge Finalists: Finnest, Operation Code, Sunrise Health",
-            "url": "https://www.necn.com/news/business/MassChallenge-Finnest_-Operation-Code_-Sunrise-Health_NECN-441063423.html",
-          },
-          Object {
-            "title": "TechBreakfast at Microsoft NERD",
-            "url": "http://www.wickedbandwidth.com/02072017-techbreakfast-microsoft-nerd/",
-          },
-          Object {
-            "title": "Operation Code - #BNT80 Boston New Technology Startup Demo",
-            "url": "https://www.youtube.com/watch?v=YGaG_HL3oEQ",
-          },
-          Object {
-            "title": "MassChallenge Finalist | Operation Code | Conrad Hollomon",
-            "url": "https://www.youtube.com/watch?v=GcvVsVsH-Gg",
-          },
-          Object {
-            "title": "Operation Code – Creating a Coding Community with Veterans and Citizens",
-            "url": "https://venturefizz.com/stories/boston/operation-code-creating-coding-community-veterans-and-citizens",
-          },
-          Object {
-            "title": "Innovation Spotlight: Operation Code",
-            "url": "https://www.deepcoredata.com/innovation-spotlight-veterans-mission-operation-code/",
-          },
-          Object {
-            "title": "tech4vets Masschallenge Veterans",
-            "url": "https://blogs.microsoft.com/newengland/2017/11/10/tech4vets-masschallenge-veterans/",
-          },
-        ]
-      }
-      numberOfInitiallyVisibleLinks={5}
-      region="Boston"
-    />
-    <ArticleGroup
-      articles={
-        Array [
-          Object {
-            "title": "TechHire Educator Spotlight: Operation Code",
-            "url": "https://blog.opportunityatwork.org/techhire-educator-spotlight-operation-code-debd0a796f9d",
-          },
-          Object {
-            "title": "Why Veterans Will Make Excellent Programmers",
-            "url": "https://www.switchup.org/blog/why-veterans-will-make-excellent-programmers",
-          },
-          Object {
-            "title": "THOUSANDS OF VETERANS WANT TO LEARN TO CODE — BUT CAN’T",
-            "url": "https://www.wired.com/story/thousands-of-veterans-want-to-learn-to-code-but-cant/",
-          },
-          Object {
-            "title": "Hacking Entrepreneurship — An Interview with David Molina of Operation Code",
-            "url": "https://medium.com/the-hum/hacking-entrepreneurship-an-interview-with-david-molina-of-operation-code-12a7e199e4e0",
-          },
-          Object {
-            "title": "Operation Code: Connecting Veterans with Code Skills",
-            "url": "http://blog.teamtreehouse.com/operation-code-connecting-veterans-with-code",
-          },
-          Object {
-            "title": "Operation Code: connecting tech and veterans",
-            "url": "https://blog.github.com/2016-11-11-operation-code-connecting-tech-and-veterans/",
-          },
-          Object {
-            "title": "When the call of duty is technology, veterans rally to support each other through Operation Code",
-            "url": "https://www.geekwire.com/2016/call-duty-technology-veterans-rally-support-operation-code/",
-          },
-          Object {
-            "title": "Get Coding Now with Operation Code Army Veteran and Founder David Molina",
-            "url": "https://www.youtube.com/watch?v=qoy7scC2SHk",
-          },
-          Object {
-            "title": "The New Developer - Operation Code - GitHub Universe 2016",
-            "url": "https://www.youtube.com/watch?v=xN7yMoe38xc",
-          },
-          Object {
-            "title": "What happens when military veterans learn to code - CodeConf 2016",
-            "url": "https://www.youtube.com/watch?v=-wSwlLeKFdE",
-          },
-          Object {
-            "title": "How Operation Code helps veterans learn programming skills",
-            "url": "https://opensource.com/article/17/4/operation-code-mentors-veterans",
-          },
-          Object {
-            "title": "Helping Veterans Learn to Code with David Molina",
-            "url": "https://softwareengineeringdaily.com/2016/03/20/helping-veterans-learn-code-david-molina/",
-          },
-          Object {
-            "title": "Podcast: a developing story as told by developers",
-            "url": "https://developingstory.netlify.com/tds-66-david-molina-from-operation-code",
-          },
-          Object {
-            "title": "Instagram: David Molina",
-            "url": "https://www.instagram.com/p/21p5bFxUjd/?taken-by=davidcmolina",
-          },
-          Object {
-            "title": "From Aviation Electrician to Back End Engineering: Bret Funk’s Operation Code story",
-            "url": "http://blog.teamtreehouse.com/from-aviation-electrician-to-back-end-engineering-bret-funk-operation-code-story",
-          },
-          Object {
-            "title": "Navy Veteran to Software Developer: Geno Guerrero’s Operation Code Story",
-            "url": "http://blog.teamtreehouse.com/navy-veteran-to-software-developer-geno-guerreros-operation-code-story",
-          },
-          Object {
-            "title": "From Marine Corps Veteran to Front End Developer: Billy Le’s Operation Code Story",
-            "url": "http://blog.teamtreehouse.com/marine-corps-veteran-front-end-developer-billy-le",
-          },
-          Object {
-            "title": "Few Options For Veterans Looking To Enter Tech",
-            "url": "https://techcrunch.com/2015/11/11/few-options-for-veterans-looking-to-enter-tech/",
-          },
-          Object {
-            "title": "Coding Boot Camps Go After Veterans To Take Silicon Valley's Vacant Tech Jobs",
-            "url": "https://www.ibtimes.com/coding-boot-camps-go-after-veterans-take-silicon-valleys-vacant-tech-jobs-2174421",
-          },
-          Object {
-            "title": "20 Diversity and Inclusion Leaders to Follow in 2018",
-            "url": "https://www.makeschool.com/blog/20-diversity-and-inclusion-leaders-to-follow-in-2018",
-          },
-          Object {
-            "title": "Tech innovation meets military service: GeekWire’s Memorial Day remembrance and update",
-            "url": "http://bitshare.cm/news/tech-innovation-meets-military-service-geekwires-memorial-day-remembrance-and-update/",
-          },
-          Object {
-            "title": "MAP HOSTS CONGRESSIONAL BRIEFING ON VETERANS' READINESS IN TECH CAREERS",
-            "url": "https://www.millennialaction.org/press-archives/vetstechpr",
-          },
-          Object {
-            "title": "Analytics Pros, Inc. Hosts Training for Veterans and Veterans' Spouses",
-            "url": "https://www.advfn.com/news_Analytics-Pros-Inc-Hosts-Training-for-Veterans-a_72657464.html",
-          },
-          Object {
-            "title": "Episode 36 – How to pick a programming language to learn for new developers – Part 2",
-            "url": "http://mentoringdevelopers.com/episode-36-how-to-pick-a-programming-language-to-learn-for-new-developers-part-2/",
-          },
-          Object {
-            "title": "How to “upskill” Veterans’ training for technology jobs",
-            "url": "https://www.blogs.va.gov/VAntage/33028/upskill-veterans-training-technology-jobs/",
-          },
-          Object {
-            "title": "Instagram: Operation Code made the front cover of Oregon Veterans News Magazine",
-            "url": "https://www.instagram.com/p/BbZT3Q-BBDC/",
-          },
-          Object {
-            "title": "Jameel: From Marines to SoftwareEngineer",
-            "url": "https://blog.sabio.la/jameel-from-jarhead-to-softwareengineer-9130702da5c1",
-          },
-          Object {
-            "title": "Seattle coding-school tuition to be covered by GI Bill",
-            "url": "https://www.seattletimes.com/business/technology/seattles-code-fellows-wins-approval-under-gi-bill/",
-          },
-          Object {
-            "title": "Veteran: GI Bill should cover code school",
-            "url": "https://www.koin.com/news/veteran-gi-bill-should-cover-code-school_20180208085618706/960235415",
-          },
-          Object {
-            "title": "Patriot Boot Camp And Operation Code Join Forces To Help Military Veterans Become Technology Entrepreneurs",
-            "url": "http://patriotbootcamp.org/blog/operation-code",
-          },
-          Object {
-            "title": "Operation Code wants veterans to work in tech",
-            "url": "http://www.maswired.com/operation-code-wants-veterans-to-work-in-tech/",
-          },
-          Object {
-            "title": "Coding Bootcamps Accepts GI Bill",
-            "url": "http://diversemilitary.net/2017/06/27/coding-bootcamps-accepts-gi-bill/",
-          },
-          Object {
-            "title": "Operation Code Looks to Help Veterans Land IT Careers",
-            "url": "https://news.clearancejobs.com/2017/07/17/operation-code-looks-help-veterans-land-careers/",
-          },
-        ]
-      }
-      numberOfInitiallyVisibleLinks={5}
-      region="General"
-    />
+    <ForwardRef
+      defaultValue="NYC"
+    >
+      <ForwardRef
+        className="tabsList"
+      >
+        <ForwardRef
+          className="tabsTrigger"
+          value="NYC"
+        >
+          <h3>
+            NYC
+          </h3>
+        </ForwardRef>
+        <ForwardRef
+          className="tabsTrigger"
+          value="Boston"
+        >
+          <h3>
+            Boston
+          </h3>
+        </ForwardRef>
+        <ForwardRef
+          className="tabsTrigger"
+          value="General"
+        >
+          <h3>
+            General
+          </h3>
+        </ForwardRef>
+      </ForwardRef>
+      <ForwardRef
+        className="tabsContent"
+        value="NYC"
+      >
+        <li>
+          <OutboundLink
+            analyticsEventLabel="Press Article"
+            hasIcon={true}
+            href="https://wtkr.com/2018/05/16/new-program-aims-to-help-veterans-land-jobs-in-tech-industry/"
+          >
+            New program aims to help veterans land jobs in tech industry
+          </OutboundLink>
+        </li>
+        <li>
+          <OutboundLink
+            analyticsEventLabel="Press Article"
+            hasIcon={true}
+            href="http://www.wdtv.com/content/news/Veterans-in-Residence-program-helping-veterans-grow-businesses-482707221.html"
+          >
+            Veterans in Residence
+          </OutboundLink>
+        </li>
+        <li>
+          <OutboundLink
+            analyticsEventLabel="Press Article"
+            hasIcon={true}
+            href="https://www.wework.com/blog/posts/after-flying-solo-veterans-find-others-who-have-their-back"
+          >
+            After Flying Solo, Veterans Find Others Who Have Their Backs
+          </OutboundLink>
+        </li>
+      </ForwardRef>
+      <ForwardRef
+        className="tabsContent"
+        value="Boston"
+      >
+        <li>
+          <OutboundLink
+            analyticsEventLabel="Press Article"
+            hasIcon={true}
+            href="https://insights.dice.com/2017/01/11/tech-pros-volunteer-fun-ways/"
+          >
+            How Tech Pros Can Volunteer in Fun Ways
+          </OutboundLink>
+        </li>
+        <li>
+          <OutboundLink
+            analyticsEventLabel="Press Article"
+            hasIcon={true}
+            href="https://www.necn.com/news/business/MassChallenge-Finnest_-Operation-Code_-Sunrise-Health_NECN-441063423.html"
+          >
+            MassChallenge Finalists: Finnest, Operation Code, Sunrise Health
+          </OutboundLink>
+        </li>
+        <li>
+          <OutboundLink
+            analyticsEventLabel="Press Article"
+            hasIcon={true}
+            href="http://www.wickedbandwidth.com/02072017-techbreakfast-microsoft-nerd/"
+          >
+            TechBreakfast at Microsoft NERD
+          </OutboundLink>
+        </li>
+        <li>
+          <OutboundLink
+            analyticsEventLabel="Press Article"
+            hasIcon={true}
+            href="https://www.youtube.com/watch?v=YGaG_HL3oEQ"
+          >
+            Operation Code - #BNT80 Boston New Technology Startup Demo
+          </OutboundLink>
+        </li>
+        <li>
+          <OutboundLink
+            analyticsEventLabel="Press Article"
+            hasIcon={true}
+            href="https://www.youtube.com/watch?v=GcvVsVsH-Gg"
+          >
+            MassChallenge Finalist | Operation Code | Conrad Hollomon
+          </OutboundLink>
+        </li>
+        <li>
+          <OutboundLink
+            analyticsEventLabel="Press Article"
+            hasIcon={true}
+            href="https://venturefizz.com/stories/boston/operation-code-creating-coding-community-veterans-and-citizens"
+          >
+            Operation Code – Creating a Coding Community with Veterans and Citizens
+          </OutboundLink>
+        </li>
+        <li>
+          <OutboundLink
+            analyticsEventLabel="Press Article"
+            hasIcon={true}
+            href="https://www.deepcoredata.com/innovation-spotlight-veterans-mission-operation-code/"
+          >
+            Innovation Spotlight: Operation Code
+          </OutboundLink>
+        </li>
+        <li>
+          <OutboundLink
+            analyticsEventLabel="Press Article"
+            hasIcon={true}
+            href="https://blogs.microsoft.com/newengland/2017/11/10/tech4vets-masschallenge-veterans/"
+          >
+            tech4vets Masschallenge Veterans
+          </OutboundLink>
+        </li>
+      </ForwardRef>
+      <ForwardRef
+        className="tabsContent"
+        value="General"
+      >
+        <li>
+          <OutboundLink
+            analyticsEventLabel="Press Article"
+            hasIcon={true}
+            href="https://blog.opportunityatwork.org/techhire-educator-spotlight-operation-code-debd0a796f9d"
+          >
+            TechHire Educator Spotlight: Operation Code
+          </OutboundLink>
+        </li>
+        <li>
+          <OutboundLink
+            analyticsEventLabel="Press Article"
+            hasIcon={true}
+            href="https://www.switchup.org/blog/why-veterans-will-make-excellent-programmers"
+          >
+            Why Veterans Will Make Excellent Programmers
+          </OutboundLink>
+        </li>
+        <li>
+          <OutboundLink
+            analyticsEventLabel="Press Article"
+            hasIcon={true}
+            href="https://www.wired.com/story/thousands-of-veterans-want-to-learn-to-code-but-cant/"
+          >
+            THOUSANDS OF VETERANS WANT TO LEARN TO CODE — BUT CAN’T
+          </OutboundLink>
+        </li>
+        <li>
+          <OutboundLink
+            analyticsEventLabel="Press Article"
+            hasIcon={true}
+            href="https://medium.com/the-hum/hacking-entrepreneurship-an-interview-with-david-molina-of-operation-code-12a7e199e4e0"
+          >
+            Hacking Entrepreneurship — An Interview with David Molina of Operation Code
+          </OutboundLink>
+        </li>
+        <li>
+          <OutboundLink
+            analyticsEventLabel="Press Article"
+            hasIcon={true}
+            href="http://blog.teamtreehouse.com/operation-code-connecting-veterans-with-code"
+          >
+            Operation Code: Connecting Veterans with Code Skills
+          </OutboundLink>
+        </li>
+        <li>
+          <OutboundLink
+            analyticsEventLabel="Press Article"
+            hasIcon={true}
+            href="https://blog.github.com/2016-11-11-operation-code-connecting-tech-and-veterans/"
+          >
+            Operation Code: connecting tech and veterans
+          </OutboundLink>
+        </li>
+        <li>
+          <OutboundLink
+            analyticsEventLabel="Press Article"
+            hasIcon={true}
+            href="https://www.geekwire.com/2016/call-duty-technology-veterans-rally-support-operation-code/"
+          >
+            When the call of duty is technology, veterans rally to support each other through Operation Code
+          </OutboundLink>
+        </li>
+        <li>
+          <OutboundLink
+            analyticsEventLabel="Press Article"
+            hasIcon={true}
+            href="https://www.youtube.com/watch?v=qoy7scC2SHk"
+          >
+            Get Coding Now with Operation Code Army Veteran and Founder David Molina
+          </OutboundLink>
+        </li>
+        <li>
+          <OutboundLink
+            analyticsEventLabel="Press Article"
+            hasIcon={true}
+            href="https://www.youtube.com/watch?v=xN7yMoe38xc"
+          >
+            The New Developer - Operation Code - GitHub Universe 2016
+          </OutboundLink>
+        </li>
+        <li>
+          <OutboundLink
+            analyticsEventLabel="Press Article"
+            hasIcon={true}
+            href="https://www.youtube.com/watch?v=-wSwlLeKFdE"
+          >
+            What happens when military veterans learn to code - CodeConf 2016
+          </OutboundLink>
+        </li>
+        <li>
+          <OutboundLink
+            analyticsEventLabel="Press Article"
+            hasIcon={true}
+            href="https://opensource.com/article/17/4/operation-code-mentors-veterans"
+          >
+            How Operation Code helps veterans learn programming skills
+          </OutboundLink>
+        </li>
+        <li>
+          <OutboundLink
+            analyticsEventLabel="Press Article"
+            hasIcon={true}
+            href="https://softwareengineeringdaily.com/2016/03/20/helping-veterans-learn-code-david-molina/"
+          >
+            Helping Veterans Learn to Code with David Molina
+          </OutboundLink>
+        </li>
+        <li>
+          <OutboundLink
+            analyticsEventLabel="Press Article"
+            hasIcon={true}
+            href="https://developingstory.netlify.com/tds-66-david-molina-from-operation-code"
+          >
+            Podcast: a developing story as told by developers
+          </OutboundLink>
+        </li>
+        <li>
+          <OutboundLink
+            analyticsEventLabel="Press Article"
+            hasIcon={true}
+            href="https://www.instagram.com/p/21p5bFxUjd/?taken-by=davidcmolina"
+          >
+            Instagram: David Molina
+          </OutboundLink>
+        </li>
+        <li>
+          <OutboundLink
+            analyticsEventLabel="Press Article"
+            hasIcon={true}
+            href="http://blog.teamtreehouse.com/from-aviation-electrician-to-back-end-engineering-bret-funk-operation-code-story"
+          >
+            From Aviation Electrician to Back End Engineering: Bret Funk’s Operation Code story
+          </OutboundLink>
+        </li>
+        <li>
+          <OutboundLink
+            analyticsEventLabel="Press Article"
+            hasIcon={true}
+            href="http://blog.teamtreehouse.com/navy-veteran-to-software-developer-geno-guerreros-operation-code-story"
+          >
+            Navy Veteran to Software Developer: Geno Guerrero’s Operation Code Story
+          </OutboundLink>
+        </li>
+        <li>
+          <OutboundLink
+            analyticsEventLabel="Press Article"
+            hasIcon={true}
+            href="http://blog.teamtreehouse.com/marine-corps-veteran-front-end-developer-billy-le"
+          >
+            From Marine Corps Veteran to Front End Developer: Billy Le’s Operation Code Story
+          </OutboundLink>
+        </li>
+        <li>
+          <OutboundLink
+            analyticsEventLabel="Press Article"
+            hasIcon={true}
+            href="https://techcrunch.com/2015/11/11/few-options-for-veterans-looking-to-enter-tech/"
+          >
+            Few Options For Veterans Looking To Enter Tech
+          </OutboundLink>
+        </li>
+        <li>
+          <OutboundLink
+            analyticsEventLabel="Press Article"
+            hasIcon={true}
+            href="https://www.ibtimes.com/coding-boot-camps-go-after-veterans-take-silicon-valleys-vacant-tech-jobs-2174421"
+          >
+            Coding Boot Camps Go After Veterans To Take Silicon Valley's Vacant Tech Jobs
+          </OutboundLink>
+        </li>
+        <li>
+          <OutboundLink
+            analyticsEventLabel="Press Article"
+            hasIcon={true}
+            href="https://www.makeschool.com/blog/20-diversity-and-inclusion-leaders-to-follow-in-2018"
+          >
+            20 Diversity and Inclusion Leaders to Follow in 2018
+          </OutboundLink>
+        </li>
+        <li>
+          <OutboundLink
+            analyticsEventLabel="Press Article"
+            hasIcon={true}
+            href="http://bitshare.cm/news/tech-innovation-meets-military-service-geekwires-memorial-day-remembrance-and-update/"
+          >
+            Tech innovation meets military service: GeekWire’s Memorial Day remembrance and update
+          </OutboundLink>
+        </li>
+        <li>
+          <OutboundLink
+            analyticsEventLabel="Press Article"
+            hasIcon={true}
+            href="https://www.millennialaction.org/press-archives/vetstechpr"
+          >
+            MAP HOSTS CONGRESSIONAL BRIEFING ON VETERANS' READINESS IN TECH CAREERS
+          </OutboundLink>
+        </li>
+        <li>
+          <OutboundLink
+            analyticsEventLabel="Press Article"
+            hasIcon={true}
+            href="https://www.advfn.com/news_Analytics-Pros-Inc-Hosts-Training-for-Veterans-a_72657464.html"
+          >
+            Analytics Pros, Inc. Hosts Training for Veterans and Veterans' Spouses
+          </OutboundLink>
+        </li>
+        <li>
+          <OutboundLink
+            analyticsEventLabel="Press Article"
+            hasIcon={true}
+            href="http://mentoringdevelopers.com/episode-36-how-to-pick-a-programming-language-to-learn-for-new-developers-part-2/"
+          >
+            Episode 36 – How to pick a programming language to learn for new developers – Part 2
+          </OutboundLink>
+        </li>
+        <li>
+          <OutboundLink
+            analyticsEventLabel="Press Article"
+            hasIcon={true}
+            href="https://www.blogs.va.gov/VAntage/33028/upskill-veterans-training-technology-jobs/"
+          >
+            How to “upskill” Veterans’ training for technology jobs
+          </OutboundLink>
+        </li>
+        <li>
+          <OutboundLink
+            analyticsEventLabel="Press Article"
+            hasIcon={true}
+            href="https://www.instagram.com/p/BbZT3Q-BBDC/"
+          >
+            Instagram: Operation Code made the front cover of Oregon Veterans News Magazine
+          </OutboundLink>
+        </li>
+        <li>
+          <OutboundLink
+            analyticsEventLabel="Press Article"
+            hasIcon={true}
+            href="https://blog.sabio.la/jameel-from-jarhead-to-softwareengineer-9130702da5c1"
+          >
+            Jameel: From Marines to SoftwareEngineer
+          </OutboundLink>
+        </li>
+        <li>
+          <OutboundLink
+            analyticsEventLabel="Press Article"
+            hasIcon={true}
+            href="https://www.seattletimes.com/business/technology/seattles-code-fellows-wins-approval-under-gi-bill/"
+          >
+            Seattle coding-school tuition to be covered by GI Bill
+          </OutboundLink>
+        </li>
+        <li>
+          <OutboundLink
+            analyticsEventLabel="Press Article"
+            hasIcon={true}
+            href="https://www.koin.com/news/veteran-gi-bill-should-cover-code-school_20180208085618706/960235415"
+          >
+            Veteran: GI Bill should cover code school
+          </OutboundLink>
+        </li>
+        <li>
+          <OutboundLink
+            analyticsEventLabel="Press Article"
+            hasIcon={true}
+            href="http://patriotbootcamp.org/blog/operation-code"
+          >
+            Patriot Boot Camp And Operation Code Join Forces To Help Military Veterans Become Technology Entrepreneurs
+          </OutboundLink>
+        </li>
+        <li>
+          <OutboundLink
+            analyticsEventLabel="Press Article"
+            hasIcon={true}
+            href="http://www.maswired.com/operation-code-wants-veterans-to-work-in-tech/"
+          >
+            Operation Code wants veterans to work in tech
+          </OutboundLink>
+        </li>
+        <li>
+          <OutboundLink
+            analyticsEventLabel="Press Article"
+            hasIcon={true}
+            href="http://diversemilitary.net/2017/06/27/coding-bootcamps-accepts-gi-bill/"
+          >
+            Coding Bootcamps Accepts GI Bill
+          </OutboundLink>
+        </li>
+        <li>
+          <OutboundLink
+            analyticsEventLabel="Press Article"
+            hasIcon={true}
+            href="https://news.clearancejobs.com/2017/07/17/operation-code-looks-help-veterans-land-careers/"
+          >
+            Operation Code Looks to Help Veterans Land IT Careers
+          </OutboundLink>
+        </li>
+      </ForwardRef>
+    </ForwardRef>
   </div>
 </div>
 `;
