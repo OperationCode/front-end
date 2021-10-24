@@ -1,4 +1,3 @@
-import React from 'react';
 import { any, bool, func, node, number, oneOf, oneOfType, string } from 'prop-types';
 import noop from 'lodash/noop';
 import classNames from 'classnames';

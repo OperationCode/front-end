@@ -1,4 +1,3 @@
-import React from 'react';
 import { shape, string, number, object, objectOf, oneOfType, bool, oneOf } from 'prop-types';
 import classNames from 'classnames';
 import { ErrorMessage } from 'formik';
@@ -24,7 +23,6 @@ Input.propTypes = {
   hasValidationStyling: bool,
   type: oneOf([
     'button',
-    'checkbox',
     'color',
     'date',
     'datetime-local',
@@ -67,7 +65,7 @@ function Input({
   // See: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Attributes_common_to_all_input_types
 }) {
   const hasErrors = Boolean(errors[name]);
-  const isLabelAfterInput = type === 'radio' || type === 'checkbox';
+  const isLabelAfterInput = type === 'radio';
   const isLabelBeforeInput = !isLabelAfterInput;
 
   return (

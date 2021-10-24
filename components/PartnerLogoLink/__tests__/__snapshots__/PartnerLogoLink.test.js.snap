@@ -5,22 +5,14 @@ exports[`PartnerLogoLink should render with required props 1`] = `
   className="PartnerLogoLink"
 >
   <a
-    href="https://partnerinc.com"
+    href="https://user-images.githubusercontent.com"
     onClick={[Function]}
     rel="noopener noreferrer"
     target="_blank"
   >
-    <noscript>
-      <img
-        alt="Partner Inc. logo"
-        className="logo"
-        src="https://partnerinc.com/logo"
-      />
-    </noscript>
     <img
       alt="Partner Inc. logo"
-      className="logo"
-      data-src="https://partnerinc.com/logo"
+      src="https://user-images.githubusercontent.com/logo"
     />
     <span
       className="ScreenReaderOnly"

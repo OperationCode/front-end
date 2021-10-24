@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import get from 'lodash/get';
 import Router from 'next/router';
 import { getServerErrorMessage } from 'common/utils/api-utils';

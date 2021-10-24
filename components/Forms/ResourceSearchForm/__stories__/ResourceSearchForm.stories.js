@@ -1,5 +1,3 @@
-import React from 'react';
-
 import ResourceSearchForm from '../ResourceSearchForm';
 
 export default {

@@ -1,4 +1,3 @@
-import React from 'react';
 import { node, string, bool, func } from 'prop-types';
 import classNames from 'classnames';
 import ReactModal from 'react-modal';

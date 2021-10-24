@@ -1,4 +1,3 @@
-import React from 'react';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 
 import PartnerLogoLink from '../PartnerLogoLink';
@@ -8,8 +7,8 @@ describe('PartnerLogoLink', () => {
     createSnapshotTest(
       <PartnerLogoLink
         name="Partner Inc."
-        logoSource="https://partnerinc.com/logo"
-        url="https://partnerinc.com"
+        logoSource="https://user-images.githubusercontent.com/logo"
+        url="https://user-images.githubusercontent.com"
       />,
     );
   });

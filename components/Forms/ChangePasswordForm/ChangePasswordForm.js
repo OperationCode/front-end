@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { string, func, shape } from 'prop-types';
 import { Field, Formik } from 'formik';
 import * as Yup from 'yup';
@@ -12,6 +12,11 @@ import { getServerErrorMessage } from 'common/utils/api-utils';
 import { minimumPasswordLength } from 'common/constants/validations';
 import { hasRequiredCharacters } from 'common/utils/validator-utils';
 import styles from './ChangePasswordForm.module.css';
+
+const defaultValues = {
+  newPassword1: '',
+  newPassword2: '',
+};
 
 const passwordResetSubmitSchema = Yup.object().shape({
   newPassword1: Yup.string()
@@ -32,10 +37,7 @@ ChangePasswordForm.propTypes = {
 };
 
 ChangePasswordForm.defaultProps = {
-  initialValues: {
-    newPassword1: '',
-    newPassword2: '',
-  },
+  initialValues: defaultValues,
 };
 
 /**
@@ -49,7 +51,7 @@ function ChangePasswordForm({ onSubmit, onSuccess, initialValues }) {
     try {
       await onSubmit(values);
       actions.setSubmitting(false);
-      actions.resetForm();
+      actions.resetForm({ values: defaultValues });
 
       await onSuccess();
     } catch (error) {

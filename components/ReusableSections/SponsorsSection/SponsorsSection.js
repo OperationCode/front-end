@@ -1,4 +1,3 @@
-import React from 'react';
 import Container from 'components/Container/Container';
 import Heading from 'components/Heading/Heading';
 import PartnerLogoLink from 'components/PartnerLogoLink/PartnerLogoLink';

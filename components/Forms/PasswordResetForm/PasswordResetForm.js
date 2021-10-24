@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { string, func, shape } from 'prop-types';
 import { Field, Formik } from 'formik';
 import * as Yup from 'yup';
@@ -9,6 +9,8 @@ import Alert from 'components/Alert/Alert';
 import { validationErrorMessages } from 'common/constants/messages';
 import { getServerErrorMessage } from 'common/utils/api-utils';
 import styles from './PasswordResetForm.module.css';
+
+const defaultValues = { email: '' };
 
 const passwordResetSchema = Yup.object().shape({
   email: Yup.string()
@@ -25,9 +27,7 @@ PasswordResetForm.propTypes = {
 };
 
 PasswordResetForm.defaultProps = {
-  initialValues: {
-    email: '',
-  },
+  initialValues: defaultValues,
 };
 
 function PasswordResetForm({ initialValues, onSuccess, passwordReset }) {
@@ -37,7 +37,7 @@ function PasswordResetForm({ initialValues, onSuccess, passwordReset }) {
     try {
       const { detail } = await passwordReset({ email });
       actions.setSubmitting(false);
-      actions.resetForm();
+      actions.resetForm({ values: defaultValues });
 
       await onSuccess({ detail });
     } catch (error) {

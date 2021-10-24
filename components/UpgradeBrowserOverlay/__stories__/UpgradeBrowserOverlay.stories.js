@@ -1,5 +1,3 @@
-import React from 'react';
-
 import UpgradeBrowserOverlay from '../UpgradeBrowserOverlay';
 
 export default {

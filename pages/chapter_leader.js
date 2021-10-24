@@ -13,7 +13,7 @@ function ChapterLeader() {
       <Head title={pageTitle} />
 
       <HeroBanner title={pageTitle}>
-        <p className={styles.justifyAlign}>
+        <p>
           Operation Code is looking for volunteer Chapter Leaders to build local communities
           nationwide! Tell us more about yourself{' '}
           <OutboundLink
@@ -32,7 +32,7 @@ function ChapterLeader() {
           <div>
             <h5>Who is a Chapter Leader?</h5>
 
-            <p className={classNames(styles.justifyAlign, styles.fullWidth)}>
+            <p className={classNames(styles.fullWidth)}>
               An Operation Code Chapter Leader organizes meetups and events at the local level, and
               establishes relationships with local companies, educational institutions, and other
               organizations, in order to help build the community and support the mission. Chapter
@@ -85,7 +85,7 @@ function ChapterLeader() {
               <li>Help members learn, grow, and find jobs!</li>
             </ul>
 
-            <p className={styles.justifyAlign}>
+            <p>
               Think you are interested in becoming a Chapter Leader? Click{' '}
               <OutboundLink
                 href="http://op.co.de/chapter-leader-volunteer"

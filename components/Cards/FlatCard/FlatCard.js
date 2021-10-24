@@ -1,7 +1,6 @@
-import React from 'react';
 import { element, node, shape, string } from 'prop-types';
 import classNames from 'classnames';
-import { Image } from '@innocuous/components';
+import Image from 'next/image';
 import { FLAT_CARD_IMAGE } from 'common/constants/testIDs';
 import styles from './FlatCard.module.css';
 
@@ -35,8 +34,10 @@ function FlatCard({ button: Button, children, className, header, image }) {
       <div className={styles.borderContainer}>
         {header && <div className={styles.header}>{header}</div>}
         {hasImage && (
-          <div data-testid={FLAT_CARD_IMAGE} className={styles.rowCenter}>
-            <Image className={styles.image} src={image.source} alt={image.alt} />
+          <div className={styles.rowCenter}>
+            <div data-testid={FLAT_CARD_IMAGE} className={styles.imageWrapper}>
+              <Image src={image.source} alt={image.alt} width={200} height={200} />
+            </div>
           </div>
         )}
         {header && <hr className={styles.divider} />}

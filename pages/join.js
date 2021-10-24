@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import Link from 'next/link';
 import { object } from 'prop-types';
 import { withRouter } from 'next/router';
@@ -17,7 +18,7 @@ Join.propTypes = {
 };
 
 function Join({ router }) {
-  React.useEffect(() => {
+  useEffect(() => {
     router.prefetch(profileUpdateURL);
   }, []);
 

@@ -1,4 +1,3 @@
-import React from 'react';
 import { func } from 'prop-types';
 import classNames from 'classnames';
 import GoogleLogin from 'react-google-login';

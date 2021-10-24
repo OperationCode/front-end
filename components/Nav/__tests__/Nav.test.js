@@ -1,4 +1,3 @@
-import React from 'react';
 import cookie from 'js-cookie';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { CLOSE_BUTTON } from 'common/constants/testIDs';

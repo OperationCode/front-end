@@ -6,6 +6,7 @@ export const validationErrorMessages = {
   password:
     'Minimum password requirements: 8 characters, 1 Lowercase Letter, 1 Uppercase Letter, 1 Number',
   passwordsMatch: 'Passwords must match',
+  codeOfConduct: 'You must agree to our Code of Conduct',
 };
 
 export const networkErrorMessages = {

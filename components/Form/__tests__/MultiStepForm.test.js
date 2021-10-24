@@ -1,6 +1,6 @@
 /* eslint-disable react/no-multi-comp */
 /* eslint-disable max-classes-per-file */
-import React from 'react';
+import { Component } from 'react';
 import faker from 'faker';
 import get from 'lodash/get';
 import { fireEvent, render, waitFor, getByTestId } from '@testing-library/react';
@@ -32,7 +32,7 @@ const typeIntoInput = (input, inputName, value) => {
 };
 
 function makeNameForm(submitHandler = jest.fn()) {
-  return class NameForm extends React.Component {
+  return class NameForm extends Component {
     static validationSchema = Yup.object().shape({
       firstName: Yup.string().required(),
       lastName: Yup.string().required(),
@@ -83,7 +83,7 @@ describe('MultiStepForm', () => {
     'The Answer to the Ultimate Question of Life, the Universe, and Everything is 42';
   const ultimateAnswerFormSubmitHandler = jest.fn();
 
-  class UltimateAnswerForm extends React.Component {
+  class UltimateAnswerForm extends Component {
     static validationSchema = Yup.object().shape({
       ultimateAnswer: Yup.string().matches(/42/, ultimateAnswerIncorrectMessage).required(),
     });
@@ -116,7 +116,7 @@ describe('MultiStepForm', () => {
 
   const favoritesFormSubmitHandler = jest.fn();
 
-  class FavoritesForm extends React.Component {
+  class FavoritesForm extends Component {
     static validationSchema = Yup.object().shape({
       favoriteNumber: Yup.string().required(),
       favoritePerson: Yup.string(),

@@ -1,19 +1,34 @@
-import React, { useState } from 'react';
-import { func, number, oneOfType, shape, string } from 'prop-types';
+import { useState } from 'react';
+import { func, number, oneOfType, shape, string, boolean } from 'prop-types';
 import { Formik, Field } from 'formik';
 import * as Yup from 'yup';
+import noop from 'lodash/noop';
 import { createUser } from 'common/constants/api';
 import { getServerErrorMessage } from 'common/utils/api-utils';
 import { validationErrorMessages } from 'common/constants/messages';
 import { capitalizeFirstLetter } from 'common/utils/string-utils';
 import { minimumPasswordLength } from 'common/constants/validations';
 import { hasRequiredCharacters } from 'common/utils/validator-utils';
+import { codeOfConduct } from 'common/constants/urls';
 import Button from 'components/Buttons/Button/Button';
+import Checkbox from 'components/Form/Checkbox/Checkbox';
 import Form from 'components/Form/Form';
 import Input from 'components/Form/Input/Input';
 import Alert from 'components/Alert/Alert';
 import Link from 'next/link';
+import OutboundLink from 'components/OutboundLink/OutboundLink';
 import styles from './RegistrationForm.module.css';
+
+const defaultValues = {
+  email: '',
+  'confirm-email': '',
+  password: '',
+  'confirm-password': '',
+  firstName: '',
+  lastName: '',
+  zipcode: '',
+  codeOfConduct: false,
+};
 
 /**
  * Zipcode issues solved via a trim check from Yup.
@@ -40,9 +55,11 @@ const registrationSchema = Yup.object().shape({
   firstName: Yup.string().trim().required(validationErrorMessages.required),
   lastName: Yup.string().trim().required(validationErrorMessages.required),
   zipcode: Yup.string().trim().required(validationErrorMessages.required),
+  codeOfConduct: Yup.boolean().oneOf([true], validationErrorMessages.codeOfConduct),
 });
 
 RegistrationForm.propTypes = {
+  onSubmit: func,
   onSuccess: func.isRequired,
   initialValues: shape({
     email: string,
@@ -52,30 +69,25 @@ RegistrationForm.propTypes = {
     firstName: string,
     lastName: string,
     zipcode: oneOfType([string, number]),
+    codeOfConduct: boolean,
   }),
 };
 
 RegistrationForm.defaultProps = {
-  initialValues: {
-    email: '',
-    'confirm-email': '',
-    password: '',
-    'confirm-password': '',
-    firstName: '',
-    lastName: '',
-    zipcode: '',
-  },
+  onSubmit: noop,
+  initialValues: defaultValues,
 };
 
-function RegistrationForm({ initialValues, onSuccess }) {
+function RegistrationForm({ initialValues, onSubmit, onSuccess }) {
   const [errorMessage, setErrorMessage] = useState('');
 
   const handleSubmit = async (values, actions) => {
     try {
+      onSubmit();
       const { token } = await createUser(values);
       await onSuccess({ user: values, token });
       actions.setSubmitting(false);
-      actions.resetForm();
+      actions.resetForm({ values: defaultValues });
     } catch (error) {
       actions.setSubmitting(false);
 
@@ -117,7 +129,7 @@ function RegistrationForm({ initialValues, onSuccess }) {
             </Link>
           </p>
 
-          <div>
+          <div className={styles.formContainer}>
             <Field
               type="email"
               name="email"
@@ -180,15 +192,42 @@ function RegistrationForm({ initialValues, onSuccess }) {
               disabled={isSubmitting}
               autoComplete="postal-code"
             />
+
+            <Field
+              type="checkbox"
+              name="codeOfConduct"
+              label={
+                <span>
+                  I have read and agree to&nbsp;
+                  <OutboundLink
+                    hasIcon={false}
+                    href={codeOfConduct}
+                    analyticsEventLabel="Registration CoC Checkbox Link"
+                  >
+                    Operation Code&apos;s Code of Conduct.
+                  </OutboundLink>
+                  *
+                </span>
+              }
+              component={Checkbox}
+              disabled={isSubmitting}
+            />
           </div>
 
           {errorMessage && <Alert type="error">{errorMessage}</Alert>}
 
-          <p>
+          <hr className={styles.seperator} />
+
+          <p className={styles.aside}>
             The demographic information you provide, helps us understand our community needs, ensure
             diversity, and provide specific resources to reach our mission. Thank you in advance for
-            providing honest answers. We do not sell your information to anyone.
+            providing honest answers.
+            <br />
+            We do not sell your information to anyone.
           </p>
+
+          <hr className={styles.seperator} />
+
           <Button
             className={styles.topMargin}
             type="submit"

@@ -14,12 +14,12 @@ function Contact() {
 
       <HeroBanner className={styles.contactHero} isFullViewportHeight title={pageTitle}>
         <div className={styles.verticalSpacing}>
-          <p className={styles.justifyAlign}>
+          <p>
             We are a decentralized community of hard-working volunteers, and we love hearing
             feedback, comments, and suggestions!
           </p>
 
-          <p className={styles.justifyAlign}>
+          <p>
             The best way to reach our staff and our members is by{' '}
             <Link href="/join">
               <a>joining Operation Code</a>

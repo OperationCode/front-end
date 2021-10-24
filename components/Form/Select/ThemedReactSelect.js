@@ -1,7 +1,6 @@
 // eslint-disable-next-line no-restricted-imports
 import ReactSelect from 'react-select'; // the only spot this import is allowed
 
-import React from 'react';
 import { array, bool, oneOfType, string } from 'prop-types';
 import {
   primary,

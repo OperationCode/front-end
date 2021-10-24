@@ -1,7 +1,3 @@
-.Sponsorship .justifyAlign {
-  text-align: justify;
-}
-
 .Sponsorship .constrainDimensions {
   justify-content: flex-start;
   max-width: 350px;
@@ -27,6 +23,5 @@
 }
 
 .Sponsorship .paragraphFormat {
-  text-align: justify;
   padding: 0 2rem;
 }

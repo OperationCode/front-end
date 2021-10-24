@@ -1,16 +1,17 @@
-const withBundleAnalyzer = require('@next/bundle-analyzer')({
-  enabled: process.env.ANALYZE === 'true',
-});
-const withMDX = require('@next/mdx')({
-  extension: /\.mdx$/,
-});
+const hasBundleAnalyzer = process.env.ANALYZE === 'true';
+const withBundleAnalyzer = require('@next/bundle-analyzer')({ enabled: hasBundleAnalyzer });
+const { s3hostName } = require('./common/constants/urls');
 const svgoConfig = require('./common/config/svgo');
 
-const nextConfig = withBundleAnalyzer({
-  productionBrowserSourceMaps: true,
+const nextConfig = {
+  productionBrowserSourceMaps: false,
 
-  experimental: {
-    scrollRestoration: false, // see: https://github.com/OperationCode/front-end/pull/1280
+  eslint: {
+    ignoreDuringBuilds: true, // We lint during CI.
+  },
+
+  images: {
+    domains: [s3hostName, 'user-images.githubusercontent.com'],
   },
 
   /** @see https://nextjs.org/docs/api-reference/next.config.js/rewrites */
@@ -88,44 +89,17 @@ const nextConfig = withBundleAnalyzer({
   },
 
   webpack: config => {
-    // Fixes npm packages that depend on `fs` module
-    // eslint-disable-next-line no-param-reassign
-    config.node = { fs: 'empty' };
-
-    config.module.rules.push(
-      {
-        test: /\.svg$/,
-        use: [
-          {
-            loader: '@svgr/webpack',
-            options: {
-              svgoConfig,
-            },
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: [
+        {
+          loader: '@svgr/webpack',
+          options: {
+            svgoConfig,
           },
-        ],
-      },
-      {
-        test: /\.(jpe?g|png|gif)$/,
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              limit: 8192,
-              fallback: {
-                loader: 'file-loader',
-                options: {
-                  publicPath: '/_next/static/images',
-                  outputPath: 'static/images',
-                },
-              },
-              publicPath: '/_next/',
-              outputPath: 'static/images/',
-              name: '[name]-[hash].[ext]',
-            },
-          },
-        ],
-      },
-    );
+        },
+      ],
+    });
 
     // Add polyfills
     const originalEntry = config.entry;
@@ -143,6 +117,6 @@ const nextConfig = withBundleAnalyzer({
 
     return config;
   },
-});
+};
 
-module.exports = withMDX(nextConfig);
+module.exports = withBundleAnalyzer(nextConfig);

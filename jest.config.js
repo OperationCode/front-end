@@ -134,7 +134,7 @@ module.exports = {
   // runner: "jest-runner",
 
   // The paths to modules that run some code to configure or set up the testing environment before each test
-  setupFiles: ['jest-prop-type-error'],
+  setupFiles: ['jest-prop-type-error', './test-utils/jest-next-image.js'],
 
   // A list of paths to modules that run some code to configure or set up the testing framework before each test.
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'], // eslint-disable-line unicorn/prevent-abbreviations
@@ -143,7 +143,7 @@ module.exports = {
   // snapshotSerializers: ['enzyme-to-json/serializer'],
 
   // The test environment that will be used for testing
-  // testEnvironment: "jest-environment-jsdom",
+  testEnvironment: 'jest-environment-jsdom',
 
   // Options that will be passed to the testEnvironment
   // testEnvironmentOptions: {},
@@ -172,7 +172,7 @@ module.exports = {
   testURL: 'https://localhost',
 
   // Setting this value to "fake" allows the use of fake timers for functions such as "setTimeout"
-  // timers: "real",
+  timers: 'modern',
 
   // A map from regular expressions to paths to transformers
   transform: {

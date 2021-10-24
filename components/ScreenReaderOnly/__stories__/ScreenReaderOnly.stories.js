@@ -1,5 +1,3 @@
-import React from 'react';
-
 import ScreenReaderOnly from '../ScreenReaderOnly';
 
 export default {

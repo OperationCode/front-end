@@ -1,4 +1,3 @@
-import React from 'react';
 import { number, string, object } from 'prop-types';
 import LeftAngleIcon from 'static/images/icons/FontAwesome/angle-left-solid.svg';
 import RightAngleIcon from 'static/images/icons/FontAwesome/angle-right-solid.svg';
@@ -62,12 +61,8 @@ const getPagination = (currentPage, totalPages) => {
 
 // eslint-disable-next-line react/prop-types
 const PaginationItems = ({ currentPage, pathname, query, totalPages }) => {
-  const {
-    paginationStart,
-    paginationLength,
-    shouldTruncateStart,
-    shouldTruncateEnd,
-  } = getPagination(currentPage, totalPages);
+  const { paginationStart, paginationLength, shouldTruncateStart, shouldTruncateEnd } =
+    getPagination(currentPage, totalPages);
 
   const PaginationItemArray = [...Array(paginationLength)].map((_, index) => {
     const page = index + paginationStart;

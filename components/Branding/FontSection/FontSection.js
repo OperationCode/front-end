@@ -1,4 +1,3 @@
-import React from 'react';
 import Content from 'components/Content/Content';
 import { fontsObject } from 'common/styles/styleExports';
 import styles from './FontSection.module.css';

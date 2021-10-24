@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { string, func } from 'prop-types';
 import classNames from 'classnames';
 import { getServerErrorMessage } from 'common/utils/api-utils';
@@ -19,15 +19,17 @@ SocialLoginGroup.defaultProps = {
 function SocialLoginGroup(props) {
   const [errorMessage, setErrorMessage] = useState('');
 
-  const onSuccess = provider => async ({ accessToken }) => {
-    try {
-      const { handleSuccess, loginSocial } = props;
-      const result = await loginSocial(provider, { accessToken });
-      handleSuccess(result);
-    } catch (error) {
-      setErrorMessage(getServerErrorMessage(error));
-    }
-  };
+  const onSuccess =
+    provider =>
+    async ({ accessToken }) => {
+      try {
+        const { handleSuccess, loginSocial } = props;
+        const result = await loginSocial(provider, { accessToken });
+        handleSuccess(result);
+      } catch (error) {
+        setErrorMessage(getServerErrorMessage(error));
+      }
+    };
 
   const onGoogleFailure = () => {
     setErrorMessage("Couldn't log in with Google");

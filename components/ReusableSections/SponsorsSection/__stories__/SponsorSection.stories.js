@@ -1,5 +1,3 @@
-import React from 'react';
-
 import SponsorsSection from '../SponsorsSection';
 
 export default {

@@ -1,5 +1,4 @@
-import React from 'react';
-import { fireEvent, render, waitFor } from '@testing-library/react';
+import { fireEvent, render, waitFor, screen } from '@testing-library/react';
 import { networkErrorMessages } from 'common/constants/messages';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 import mockUser from 'test-utils/mockGenerators/mockUser';
@@ -71,15 +70,18 @@ describe('RegistrationForm', () => {
 
     OperationCodeAPIMock.onPost('auth/registration/', user).reply(503);
 
+    const submitSpy = jest.fn();
     const successSpy = jest.fn();
-    const { findByText, getByText } = render(
-      <RegistrationForm onSuccess={successSpy} initialValues={user} />,
-    );
+    render(<RegistrationForm onSubmit={submitSpy} onSuccess={successSpy} initialValues={user} />);
 
-    fireEvent.click(getByText('Submit'));
-    expect(successSpy).not.toHaveBeenCalled();
+    expect(screen.queryByRole('alert')).not.toBeInTheDocument();
+    fireEvent.click(screen.getByText('Submit'));
+    expect(screen.queryByRole('alert')).not.toBeInTheDocument();
 
-    const alert = await findByText(networkErrorMessages.serverDown);
+    await waitFor(() => expect(submitSpy).toHaveBeenCalledTimes(1));
+    await waitFor(() => expect(successSpy).not.toHaveBeenCalled());
+
+    const alert = await screen.findByText(networkErrorMessages.serverDown);
     expect(alert).not.toBeNull();
   });
 });

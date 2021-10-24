@@ -1,7 +1,11 @@
+/* eslint-disable react/prop-types */
 import ReactModal from 'react-modal';
 import '@testing-library/jest-dom/extend-expect';
 
+const MockedNextImage = ({ src, alt }) => <img src={src} alt={alt} />;
+
 /* MOCKS */
+jest.mock('next/image', () => MockedNextImage);
 jest.mock('./common/utils/thirdParty/gtag');
 
 // React Modal

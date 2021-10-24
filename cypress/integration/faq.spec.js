@@ -7,7 +7,7 @@ describe('faq', () => {
   });
 
   it('reveals text after clicking "SHOW"', () => {
-    cy.findByTestId(ACCORDION_CONTENT).should('not.be.visible');
+    cy.findByTestId(ACCORDION_CONTENT).should('not.exist');
     cy.findAllByTestId(ACCORDION_TOGGLE_BUTTON).then(([firstButton]) => firstButton.click());
     cy.findAllByTestId(ACCORDION_CONTENT).should('be.visible');
   });

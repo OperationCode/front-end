@@ -1,4 +1,3 @@
-import React from 'react';
 import Link from 'next/link';
 import { func, bool, string, arrayOf, shape } from 'prop-types';
 import classNames from 'classnames';

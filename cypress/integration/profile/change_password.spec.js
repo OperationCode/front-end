@@ -1,5 +1,6 @@
 import existingUser from 'test-utils/mocks/existingUser';
 import { networkErrorMessages, validationErrorMessages } from 'common/constants/messages';
+import { CHANGE_PASSWORD_FORM_ERROR, INPUT_ERROR } from 'common/constants/testIDs';
 
 describe(`profile/change_password (unauthorized)`, () => {
   it(`should redirect to login if not authorized`, () => {
@@ -38,7 +39,7 @@ describe('change_password', () => {
     cy.findByLabelText('Confirm Password*').type(`${existingUser.password}1`);
     cy.findByText('Submit').click();
 
-    cy.findByRole('alert').should('contain', validationErrorMessages.passwordsMatch);
+    cy.findByTestId(INPUT_ERROR).should('contain', validationErrorMessages.passwordsMatch);
   });
 
   it('should NOT be able to change password when server is unreachable', () => {
@@ -53,6 +54,9 @@ describe('change_password', () => {
     cy.findByLabelText('Confirm Password*').type(existingUser.password);
     cy.findByText('Submit').click();
 
-    cy.findByRole('alert').should('have.text', networkErrorMessages.serverDown);
+    cy.findByTestId(CHANGE_PASSWORD_FORM_ERROR).should(
+      'have.text',
+      networkErrorMessages.serverDown,
+    );
   });
 });

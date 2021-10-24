@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Link from 'next/link';
 import withAuthSync from 'decorators/withAuthSync/withAuthSync';
 import { changePassword } from 'common/constants/api';
@@ -8,7 +9,7 @@ import ChangePasswordForm from 'components/Forms/ChangePasswordForm/ChangePasswo
 import styles from 'styles/password_reset.module.css';
 
 function ChangePassword() {
-  const [didChange, setDidChange] = React.useState(false);
+  const [didChange, setDidChange] = useState(false);
 
   const onSuccess = () => {
     setDidChange(true);

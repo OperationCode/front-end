@@ -6,12 +6,6 @@
   width: 650px;
 }
 
-.image {
-  height: 225px;
-  width: 50%;
-  object-fit: cover;
-}
-
 .content {
   align-items: center;
   display: flex;
@@ -27,13 +21,8 @@
 @media screen and (--medium-viewport) {
   .ImageCard {
     height: auto;
-    max-width: 350px;
+    max-width: 325px;
     width: auto;
-  }
-
-  .image {
-    height: 50%;
-    width: 100%;
   }
 
   .content {

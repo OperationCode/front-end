@@ -1,4 +1,3 @@
-import React from 'react';
 import classNames from 'classnames';
 import { string, node, bool, oneOf } from 'prop-types';
 import Link from 'next/link';
