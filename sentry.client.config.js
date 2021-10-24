@@ -11,6 +11,7 @@ Sentry.init({
   // Adjust this value in production, or use tracesSampler for greater control
   tracesSampleRate: 1,
   release: 'client_2.0.0',
+  enabled: !!process.env.SENTRY_AUTH_TOKEN,
 
   // ...
   // Note: if you want to override the automatic release value, do not set a
