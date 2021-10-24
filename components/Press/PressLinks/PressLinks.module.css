@@ -59,3 +59,27 @@
 .logos li::marker {
   display: none;
 }
+
+@media screen and (--medium-viewport) {
+  .logos .flexContainer {
+    width: 60ch;
+  }
+}
+
+@media screen and (--small-viewport) {
+  .logos {
+    width: 80%;
+  }
+
+  .logos .flexContainer {
+    width: 100%;
+  }
+
+  .logos .tabsList {
+    flex-wrap: wrap;
+  }
+
+  .logos .tabsTrigger {
+    min-width: 80%;
+  }
+}
