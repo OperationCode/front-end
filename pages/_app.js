@@ -1,4 +1,8 @@
 /* eslint-disable max-classes-per-file */
+
+// Polyfills
+import 'intersection-observer';
+
 import { useEffect } from 'react';
 import * as Sentry from '@sentry/nextjs';
 import { node } from 'prop-types';

@@ -119,20 +119,6 @@ const nextConfig = withPlugins([withBundleAnalyzer], {
       ],
     });
 
-    // Add polyfills
-    const originalEntry = config.entry;
-
-    // eslint-disable-next-line no-param-reassign
-    config.entry = async () => {
-      const entries = await originalEntry();
-
-      if (entries['main.js'] && !entries['main.js'].includes('./polyfills.js')) {
-        entries['main.js'].unshift('./polyfills.js');
-      }
-
-      return entries;
-    };
-
     return config;
   },
 });
