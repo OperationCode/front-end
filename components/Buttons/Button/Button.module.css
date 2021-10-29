@@ -25,7 +25,7 @@
 }
 
 .primary:hover:not(:disabled),
-.primary:focus:not(:disabled) {
+.primary:focus-visible:not(:disabled) {
   background-color: rgba(0, 0, 0, 0);
   color: var(--primary);
 }
@@ -38,7 +38,7 @@
 }
 
 .secondary:hover:not(:disabled),
-.secondary:focus:not(:disabled) {
+.secondary:focus-visible:not(:disabled) {
   background-color: rgba(0, 0, 0, 0);
   color: var(--secondary);
 }

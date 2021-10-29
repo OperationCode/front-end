@@ -41,7 +41,7 @@
   height: 100%;
 }
 
-.unstyledLink:focus {
+.unstyledLink:focus-visible {
   border: 2px dashed var(--primary);
   outline: none;
 }

@@ -103,7 +103,7 @@
   margin: 0 0.5rem;
 }
 
-.voteButton:focus,
+.voteButton:focus-visible,
 .voteButton:hover {
   background-color: var(--gray);
   cursor: pointer;
@@ -135,7 +135,7 @@
   fill: var(--primary);
 }
 
-.voteButton:focus .icon:not(.active) g,
+.voteButton:focus-visible .icon:not(.active) g,
 .voteButton:hover .icon:not(.active) g {
   fill: var(--gray);
 }

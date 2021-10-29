@@ -50,7 +50,7 @@
 
 @media not screen and (--small-viewport) {
   .Heading:hover .icon,
-  .Heading a:focus .icon {
+  .Heading a:focus-visible .icon {
     display: block;
     opacity: 1;
     visibility: visible;

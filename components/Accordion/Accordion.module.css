@@ -69,7 +69,7 @@
   text-decoration: underline;
 }
 
-.accordionToggleButton:focus {
+.accordionToggleButton:focus-visible {
   border: 1px solid var(--primary);
   border-radius: inherit;
   outline: none;

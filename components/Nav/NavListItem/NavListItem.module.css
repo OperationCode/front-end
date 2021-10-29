@@ -30,10 +30,10 @@
   padding-right: 1rem;
 }
 
-.link:focus,
+.link:focus-visible,
 .link:hover,
-.navItemLink:focus,
-.sublinkToggleButton:focus,
+.navItemLink:focus-visible,
+.sublinkToggleButton:focus-visible,
 .NavListItem:hover .navItemLink:not(.sublinkListItem),
 .NavListItem:hover .sublinkToggleButton:not(.sublinkListItem) {
   cursor: pointer;
