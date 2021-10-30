@@ -25,7 +25,7 @@ exports[`Select should render with required props 1`] = `
         className="css-1f43avz-a11yText-A11yText"
       />
       <div
-        className=" css-6k4gi9-control"
+        className=" css-15na3gh-control"
         onMouseDown={[Function]}
         onTouchEnd={[Function]}
       >
