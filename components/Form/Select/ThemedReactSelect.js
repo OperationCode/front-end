@@ -82,6 +82,7 @@ function ThemedReactSelect({
             padding: '0.25rem',
             opacity: disabled ? '0.5' : '1',
             outline: 'none',
+            zIndex: 2,
             '&:hover': {
               cursor: disabled ? 'not-allowed' : 'text',
             },
