@@ -82,7 +82,6 @@ function ThemedReactSelect({
             padding: '0.25rem',
             opacity: disabled ? '0.5' : '1',
             outline: 'none',
-            zIndex: 2,
             '&:hover': {
               cursor: disabled ? 'not-allowed' : 'text',
             },
@@ -108,6 +107,12 @@ function ThemedReactSelect({
           if (!isSearchable) return {};
 
           return base;
+        },
+        menu: base => {
+          return {
+            ...base,
+            zIndex: 2,
+          };
         },
         multiValueRemove: base => {
           return {

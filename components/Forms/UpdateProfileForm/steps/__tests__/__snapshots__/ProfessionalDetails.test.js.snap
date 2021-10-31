@@ -33,7 +33,7 @@ exports[`UpdateProfileForm/Steps/ProfessionalDetails should render in context of
             className="css-1f43avz-a11yText-A11yText"
           />
           <div
-            className=" css-15na3gh-control"
+            className=" css-6k4gi9-control"
             onMouseDown={[Function]}
             onTouchEnd={[Function]}
           >
