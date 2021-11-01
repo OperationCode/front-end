@@ -14,7 +14,7 @@
 
 .Contact .contactMethod {
   margin: 0 auto 2rem;
-  max-width: 700px; /* keep in sync with paragraph max-width */
+  max-width: var(--typicalMaxWidth);
   font-style: normal;
 }
 
