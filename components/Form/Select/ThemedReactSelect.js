@@ -108,6 +108,12 @@ function ThemedReactSelect({
 
           return base;
         },
+        menu: base => {
+          return {
+            ...base,
+            zIndex: 2,
+          };
+        },
         multiValueRemove: base => {
           return {
             ...base,
