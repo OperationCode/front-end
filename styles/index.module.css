@@ -30,7 +30,7 @@
   align-self: center;
   justify-content: center;
   flex-flow: row wrap;
-  max-width: 900px;
+  max-width: var(--typicalMaxWidth);
 }
 
 .Home .joinThrivingSection {
