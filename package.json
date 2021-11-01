@@ -89,7 +89,7 @@
     "@storybook/addons": "6.4.0-beta.19",
     "@storybook/builder-webpack5": "^6.4.0-beta.19",
     "@storybook/manager-webpack5": "^6.4.0-beta.19",
-    "@storybook/react": "6.4.0-beta.19",
+    "@storybook/react": "6.4.0-beta.23",
     "@storybook/theming": "6.4.0-beta.19",
     "@svgr/webpack": "^5.5.0",
     "@testing-library/cypress": "^8.0.1",
