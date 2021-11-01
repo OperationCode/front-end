@@ -2390,6 +2390,30 @@
     util-deprecate "^1.0.2"
     uuid-browser "^3.1.0"
 
+"@storybook/addon-actions@6.4.0-beta.23":
+  version "6.4.0-beta.23"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-6.4.0-beta.23.tgz#dd40a98ad04419e6ca04dfc7f70e357bcaf4fb62"
+  integrity sha512-FzSXyfBYtq4aNenFVr31wAtd2/d4kwocYUhdph3h4aa0xqkGHMDy/oUt/Oz7G7x7UvRs2ne6t2Abu9O9MjPztA==
+  dependencies:
+    "@storybook/addons" "6.4.0-beta.23"
+    "@storybook/api" "6.4.0-beta.23"
+    "@storybook/components" "6.4.0-beta.23"
+    "@storybook/core-events" "6.4.0-beta.23"
+    "@storybook/csf" "0.0.2--canary.87bc651.0"
+    "@storybook/theming" "6.4.0-beta.23"
+    core-js "^3.8.2"
+    fast-deep-equal "^3.1.3"
+    global "^4.4.0"
+    lodash "^4.17.20"
+    polished "^4.0.5"
+    prop-types "^15.7.2"
+    react-inspector "^5.1.0"
+    regenerator-runtime "^0.13.7"
+    telejson "^5.3.2"
+    ts-dedent "^2.0.0"
+    util-deprecate "^1.0.2"
+    uuid-browser "^3.1.0"
+
 "@storybook/addon-backgrounds@6.4.0-beta.19":
   version "6.4.0-beta.19"
   resolved "https://registry.yarnpkg.com/@storybook/addon-backgrounds/-/addon-backgrounds-6.4.0-beta.19.tgz#bbe5b93a5cca69833bf7f06ce57714a8ad43c2be"
@@ -2604,6 +2628,23 @@
     global "^4.4.0"
     regenerator-runtime "^0.13.7"
 
+"@storybook/addons@6.4.0-beta.23":
+  version "6.4.0-beta.23"
+  resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-6.4.0-beta.23.tgz#7fd8b61e387537299ed146b4780d9c3d5c96e8bc"
+  integrity sha512-rTWYuUe4M4JC4Ai5TFFiCx5Ca9AMzGmZtXxboLoRAM43KLn11eHg65+yZlStPYiRJwwoPEGgL2bfkSucI1ITlg==
+  dependencies:
+    "@storybook/api" "6.4.0-beta.23"
+    "@storybook/channels" "6.4.0-beta.23"
+    "@storybook/client-logger" "6.4.0-beta.23"
+    "@storybook/core-events" "6.4.0-beta.23"
+    "@storybook/csf" "0.0.2--canary.87bc651.0"
+    "@storybook/router" "6.4.0-beta.23"
+    "@storybook/theming" "6.4.0-beta.23"
+    "@types/webpack-env" "^1.16.0"
+    core-js "^3.8.2"
+    global "^4.4.0"
+    regenerator-runtime "^0.13.7"
+
 "@storybook/api@6.4.0-beta.19":
   version "6.4.0-beta.19"
   resolved "https://registry.yarnpkg.com/@storybook/api/-/api-6.4.0-beta.19.tgz#50030cd19054e147d1c81d31af79a50b48984316"
@@ -2624,6 +2665,29 @@
     lodash "^4.17.20"
     memoizerific "^1.11.3"
     qs "^6.10.0"
+    regenerator-runtime "^0.13.7"
+    store2 "^2.12.0"
+    telejson "^5.3.2"
+    ts-dedent "^2.0.0"
+    util-deprecate "^1.0.2"
+
+"@storybook/api@6.4.0-beta.23":
+  version "6.4.0-beta.23"
+  resolved "https://registry.yarnpkg.com/@storybook/api/-/api-6.4.0-beta.23.tgz#a3601ca9fa54fbb54fc911b9304dccc4544ee3fe"
+  integrity sha512-VOFqyTlWHNPL3kQ27S4g/u+ndKQUDB25Yt9wAQYpu+Y3oxeL1BtmDsExG4XoBGAS9TwN7dYWh1q00L0pkpbZ+A==
+  dependencies:
+    "@storybook/channels" "6.4.0-beta.23"
+    "@storybook/client-logger" "6.4.0-beta.23"
+    "@storybook/core-events" "6.4.0-beta.23"
+    "@storybook/csf" "0.0.2--canary.87bc651.0"
+    "@storybook/router" "6.4.0-beta.23"
+    "@storybook/semver" "^7.3.2"
+    "@storybook/theming" "6.4.0-beta.23"
+    core-js "^3.8.2"
+    fast-deep-equal "^3.1.3"
+    global "^4.4.0"
+    lodash "^4.17.20"
+    memoizerific "^1.11.3"
     regenerator-runtime "^0.13.7"
     store2 "^2.12.0"
     telejson "^5.3.2"
@@ -2790,6 +2854,15 @@
     ts-dedent "^2.0.0"
     util-deprecate "^1.0.2"
 
+"@storybook/channels@6.4.0-beta.23":
+  version "6.4.0-beta.23"
+  resolved "https://registry.yarnpkg.com/@storybook/channels/-/channels-6.4.0-beta.23.tgz#c445a396f3a38d699914d1c35b94c7b55bf76374"
+  integrity sha512-IN68UrMNovLTAdUvrffNfRVeT2O4n1wp47bf90S4SUcbyfz5I/gtBd+NorkFumuLq0fX3OwMmx3rrGMiePCUHA==
+  dependencies:
+    core-js "^3.8.2"
+    ts-dedent "^2.0.0"
+    util-deprecate "^1.0.2"
+
 "@storybook/client-api@6.4.0-beta.19":
   version "6.4.0-beta.19"
   resolved "https://registry.yarnpkg.com/@storybook/client-api/-/client-api-6.4.0-beta.19.tgz#b4b757b1f35cb9931d8b8abbe342d49e7be3fbea"
@@ -2823,6 +2896,14 @@
     core-js "^3.8.2"
     global "^4.4.0"
 
+"@storybook/client-logger@6.4.0-beta.23":
+  version "6.4.0-beta.23"
+  resolved "https://registry.yarnpkg.com/@storybook/client-logger/-/client-logger-6.4.0-beta.23.tgz#1cefd4c2309a4a0a10d763d746327c3f77398efe"
+  integrity sha512-eQgdq8kvMM5ZmcWg6fYXfKbFjz49esu/EDQwukRWKAoJk8DmTn/Zz2ZF+Bx40IurxvCa11pmRwKaqMyXr9TjFQ==
+  dependencies:
+    core-js "^3.8.2"
+    global "^4.4.0"
+
 "@storybook/components@6.4.0-beta.19":
   version "6.4.0-beta.19"
   resolved "https://registry.yarnpkg.com/@storybook/components/-/components-6.4.0-beta.19.tgz#87e7f3adf6420714dcd66e5c180caaad7dc16e06"
@@ -2832,6 +2913,36 @@
     "@storybook/client-logger" "6.4.0-beta.19"
     "@storybook/csf" "0.0.2--canary.87bc651.0"
     "@storybook/theming" "6.4.0-beta.19"
+    "@types/color-convert" "^2.0.0"
+    "@types/overlayscrollbars" "^1.12.0"
+    "@types/react-syntax-highlighter" "11.0.5"
+    color-convert "^2.0.1"
+    core-js "^3.8.2"
+    fast-deep-equal "^3.1.3"
+    global "^4.4.0"
+    lodash "^4.17.20"
+    markdown-to-jsx "^7.1.3"
+    memoizerific "^1.11.3"
+    overlayscrollbars "^1.13.1"
+    polished "^4.0.5"
+    prop-types "^15.7.2"
+    react-colorful "^5.1.2"
+    react-popper-tooltip "^3.1.1"
+    react-syntax-highlighter "^13.5.3"
+    react-textarea-autosize "^8.3.0"
+    regenerator-runtime "^0.13.7"
+    ts-dedent "^2.0.0"
+    util-deprecate "^1.0.2"
+
+"@storybook/components@6.4.0-beta.23":
+  version "6.4.0-beta.23"
+  resolved "https://registry.yarnpkg.com/@storybook/components/-/components-6.4.0-beta.23.tgz#ef9b0d51331d8a7d57dbd16f0b5ea0b9ec07c0e0"
+  integrity sha512-5ZSN9UOz1UWoOsXdWbT0ELMi+xHWWUw/+XcM47r9UwzMu9Kb2JZ4ZRoxnz9b4+ebLetI9S4kyqu1Ah4bBdBtig==
+  dependencies:
+    "@popperjs/core" "^2.6.0"
+    "@storybook/client-logger" "6.4.0-beta.23"
+    "@storybook/csf" "0.0.2--canary.87bc651.0"
+    "@storybook/theming" "6.4.0-beta.23"
     "@types/color-convert" "^2.0.0"
     "@types/overlayscrollbars" "^1.12.0"
     "@types/react-syntax-highlighter" "11.0.5"
@@ -2938,6 +3049,13 @@
   version "6.4.0-beta.19"
   resolved "https://registry.yarnpkg.com/@storybook/core-events/-/core-events-6.4.0-beta.19.tgz#044cfa8fe356d44d9493f1eedf844c38b9062fa4"
   integrity sha512-UULLLxMP5pWmhn8Fn9B09ZnEI6EvMotrPQFZqaFLSd4wXll67Z+cb1h/X8ZjL855OjyJDcranTXGOVaD+utZEg==
+  dependencies:
+    core-js "^3.8.2"
+
+"@storybook/core-events@6.4.0-beta.23":
+  version "6.4.0-beta.23"
+  resolved "https://registry.yarnpkg.com/@storybook/core-events/-/core-events-6.4.0-beta.23.tgz#f2ea2716e2f760116859ec526c8c4a9d56f84f95"
+  integrity sha512-lnWaH+SfssAtK0mqSI7ymnW8FnL63oKjxEFV89+c2QxND9K3iOqTO9mIFywb4J7oF8zd1wIR5Fg2wJNTnriSWA==
   dependencies:
     core-js "^3.8.2"
 
@@ -3214,6 +3332,23 @@
     qs "^6.10.0"
     ts-dedent "^2.0.0"
 
+"@storybook/router@6.4.0-beta.23":
+  version "6.4.0-beta.23"
+  resolved "https://registry.yarnpkg.com/@storybook/router/-/router-6.4.0-beta.23.tgz#f0a8f557b3733e7e6ee0d444c2a7ffb2e98bf06a"
+  integrity sha512-McUMV5dGqznLZLvhTZrTWf0MGCX+NII2EBTNyzIfGAgDbyz1Q/IREnGVZIsfuNLoAiQ+VNuuGcYUtd6ax3UCWg==
+  dependencies:
+    "@storybook/client-logger" "6.4.0-beta.23"
+    core-js "^3.8.2"
+    fast-deep-equal "^3.1.3"
+    global "^4.4.0"
+    history "^5.0.1"
+    lodash "^4.17.20"
+    memoizerific "^1.11.3"
+    qs "^6.10.0"
+    react-router "^6.0.0-beta.7"
+    react-router-dom "^6.0.0-beta.7"
+    ts-dedent "^2.0.0"
+
 "@storybook/semver@^7.3.2":
   version "7.3.2"
   resolved "https://registry.yarnpkg.com/@storybook/semver/-/semver-7.3.2.tgz#f3b9c44a1c9a0b933c04e66d0048fcf2fa10dac0"
@@ -3267,6 +3402,24 @@
     "@emotion/is-prop-valid" "^0.8.6"
     "@emotion/styled" "^10.0.27"
     "@storybook/client-logger" "6.4.0-beta.19"
+    core-js "^3.8.2"
+    deep-object-diff "^1.1.0"
+    emotion-theming "^10.0.27"
+    global "^4.4.0"
+    memoizerific "^1.11.3"
+    polished "^4.0.5"
+    resolve-from "^5.0.0"
+    ts-dedent "^2.0.0"
+
+"@storybook/theming@6.4.0-beta.23":
+  version "6.4.0-beta.23"
+  resolved "https://registry.yarnpkg.com/@storybook/theming/-/theming-6.4.0-beta.23.tgz#99e85e83632cdeac0e67b898b285e1139111ff35"
+  integrity sha512-BsQWTyhQ1pTRJDKsrPaOINnmv6rjCslPLEGNu3nqmzuxxvE6vWgEYiJfT2fgxVCdUArUHwCyxoxQwYyyYN6tFQ==
+  dependencies:
+    "@emotion/core" "^10.1.1"
+    "@emotion/is-prop-valid" "^0.8.6"
+    "@emotion/styled" "^10.0.27"
+    "@storybook/client-logger" "6.4.0-beta.23"
     core-js "^3.8.2"
     deep-object-diff "^1.1.0"
     emotion-theming "^10.0.27"
@@ -6039,12 +6192,7 @@ core-js-pure@^3.8.1, core-js-pure@^3.8.2:
   resolved "https://registry.yarnpkg.com/core-js-pure/-/core-js-pure-3.18.2.tgz#d8cc11d4885ea919f3de776d45e720e4c769d406"
   integrity sha512-4hMMLUlZhKJKOWbbGD1/VDUxGPEhEoN/T01k7bx271WiBKCvCfkgPzy0IeRS4PB50p6/N1q/SZL4B/TRsTE5bA==
 
-core-js@^3.0.4, core-js@^3.6.5:
-  version "3.18.1"
-  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.18.1.tgz#289d4be2ce0085d40fc1244c0b1a54c00454622f"
-  integrity sha512-vJlUi/7YdlCZeL6fXvWNaLUPh/id12WXj3MbkMw5uOyF0PfWPBNOCNbs53YqgrvtujLNlt9JQpruyIKkUZ+PKA==
-
-core-js@^3.8.2:
+core-js@^3.0.4, core-js@^3.6.5, core-js@^3.8.2:
   version "3.18.2"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.18.2.tgz#63a551e8a29f305cd4123754846e65896619ba5b"
   integrity sha512-zNhPOUoSgoizoSQFdX1MeZO16ORRb9FFQLts8gSYbZU5FcgXhp24iMWMxnOQo5uIaIG7/6FA/IqJPwev1o9ZXQ==
@@ -12997,6 +13145,18 @@ react-refresh@^0.10.0:
   version "0.10.0"
   resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.10.0.tgz#2f536c9660c0b9b1d500684d9e52a65e7404f7e3"
   integrity sha512-PgidR3wST3dDYKr6b4pJoqQFpPGNKDSCDx4cZoshjXipw3LzO7mG1My2pwEzz2JVkF+inx3xRpDeQLFQGH/hsQ==
+
+react-router-dom@^6.0.0-beta.7:
+  version "6.0.0-beta.8"
+  resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-6.0.0-beta.8.tgz#911c2dcaa746b589fb2085cfe41404b808629a76"
+  integrity sha512-WyiIc6EakJDCo6rUmb7VjCtOpEvm8+4V8CiJdmFPud0lppeNf37TNhTnDQszDbP2y29wBUGb94BOFU2X93uILA==
+  dependencies:
+    react-router "6.0.0-beta.8"
+
+react-router@6.0.0-beta.8, react-router@^6.0.0-beta.7:
+  version "6.0.0-beta.8"
+  resolved "https://registry.yarnpkg.com/react-router/-/react-router-6.0.0-beta.8.tgz#99d570b0eaadac9af590e08fd8229d8c3f5558fd"
+  integrity sha512-pn3j01FA44yWP5gaHvz3CMVjFnmg5NS/BQ5IIalY7jw2yEKgr+OHB1gxTorakpiMaPOXXbfyUt3t4yZ4UBwE5Q==
 
 react-scroll-up-button@^1.6.4:
   version "1.6.4"
