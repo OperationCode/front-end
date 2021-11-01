@@ -29,7 +29,7 @@
   fill: var(--secondary);
 }
 
-.Card:focus {
+.Card:focus-visible {
   outline: none;
 }
 
@@ -38,7 +38,7 @@
   transition: 0.2s box-shadow linear;
 }
 
-.animatedCard:focus,
+.animatedCard:focus-visible,
 .animatedCard:hover {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
 }

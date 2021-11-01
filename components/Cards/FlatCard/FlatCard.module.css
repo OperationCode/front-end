@@ -53,9 +53,9 @@
   bottom: -27.5px;
 }
 
-.FlatCard .flatCardButton button:focus,
+.FlatCard .flatCardButton button:focus-visible,
 .FlatCard .flatCardButton button:hover,
-.FlatCard .flatCardButton a:focus,
+.FlatCard .flatCardButton a:focus-visible,
 .FlatCard .flatCardButton a:hover {
   background-color: var(--white);
   color: var(--secondary);

@@ -6,7 +6,7 @@
   transition: color 0.2s linear;
 }
 
-.Contact .contactHero a:focus,
+.Contact .contactHero a:focus-visible,
 .Contact .contactHero a:hover {
   text-shadow: none;
   color: var(--primary);

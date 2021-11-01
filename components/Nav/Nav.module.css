@@ -74,7 +74,7 @@
   align-self: center;
 }
 
-.donateLink:focus,
+.donateLink:focus-visible,
 .donateLink:hover {
   color: var(--white);
   cursor: pointer;

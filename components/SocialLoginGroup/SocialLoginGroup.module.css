@@ -71,7 +71,7 @@
 
 .facebookButton:active,
 .facebookButton:hover,
-.facebookButton:focus {
+.facebookButton:focus-visible {
   opacity: 0.8;
   cursor: pointer;
 }
@@ -90,7 +90,7 @@
 
 .googleButton:active,
 .googleButton:hover,
-.googleButton:focus {
+.googleButton:focus-visible {
   opacity: 0.8;
   cursor: pointer;
 }
