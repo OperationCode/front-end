@@ -77,7 +77,7 @@
     "yup": "^0.32.11"
   },
   "devDependencies": {
-    "@babel/core": "^7.15.8",
+    "@babel/core": "^7.16.0",
     "@babel/eslint-parser": "^7.15.8",
     "@cypress/code-coverage": "3.9.11",
     "@cypress/webpack-preprocessor": "^5.9.1",
