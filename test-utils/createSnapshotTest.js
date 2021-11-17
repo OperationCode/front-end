@@ -8,6 +8,16 @@ import renderer from 'react-test-renderer';
  * @param {*} Component
  */
 export default Component => {
-  const tree = renderer.create(Component).toJSON();
+  let root = null;
+  renderer.act(() => {
+    root = renderer.create(Component);
+  });
+
+  const tree = root.toJSON();
+  renderer.act(() => {
+    root.unmount();
+    root = null;
+  });
+  // eslint-disable-next-line jest/no-standalone-expect -- This function is always called in tests.
   expect(tree).toMatchSnapshot();
 };
