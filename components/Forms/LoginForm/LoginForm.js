@@ -84,7 +84,7 @@ function LoginForm({ initialValues, login, onSuccess, buttonTheme }) {
               autoComplete="new-password"
             />
 
-            {errorMessage && <Alert type="error">{errorMessage}</Alert>}
+            {Boolean(errorMessage) && <Alert type="error">{errorMessage}</Alert>}
 
             <Button
               className={styles.topMargin}

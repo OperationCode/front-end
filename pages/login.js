@@ -90,7 +90,7 @@ function Login({ loggedOut, unauthorized, router }) {
       <Content
         theme="gray"
         columns={[
-          <>{alertMessage && <Alert type="success">{alertMessage}</Alert>}</>,
+          <>{Boolean(alertMessage) && <Alert type="success">{alertMessage}</Alert>}</>,
           <LoginForm login={onLogin} onSuccess={handleSuccess} />,
           <p>
             Don&apos;t have an account?&nbsp;

@@ -220,7 +220,7 @@ function Resources() {
               <ResourceSkeletonCard numberOfSkeletons={10} />
             ) : (
               <>
-                {errorMessage && <Alert type="error">{`${errorMessage}`}</Alert>}
+                {Boolean(errorMessage) && <Alert type="error">{`${errorMessage}`}</Alert>}
                 {resources && !!resources.length && (
                   <>
                     <div className={styles.resourcesCardWrapper}>

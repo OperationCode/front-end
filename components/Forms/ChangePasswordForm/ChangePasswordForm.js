@@ -87,7 +87,7 @@ function ChangePasswordForm({ onSubmit, onSuccess, initialValues }) {
               autoComplete="new-password"
             />
 
-            {errorMessage && (
+            {Boolean(errorMessage) && (
               <Alert data-testid={CHANGE_PASSWORD_FORM_ERROR} type="error">
                 {errorMessage}
               </Alert>

@@ -214,7 +214,7 @@ function RegistrationForm({ initialValues, onSubmit, onSuccess }) {
             />
           </div>
 
-          {errorMessage && <Alert type="error">{errorMessage}</Alert>}
+          {Boolean(errorMessage) && <Alert type="error">{errorMessage}</Alert>}
 
           <hr className={styles.seperator} />
 
