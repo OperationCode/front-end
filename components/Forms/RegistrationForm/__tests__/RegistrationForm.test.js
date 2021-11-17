@@ -1,4 +1,4 @@
-import { fireEvent, render, waitFor, screen } from '@testing-library/react';
+import { act, fireEvent, render, waitFor, screen } from '@testing-library/react';
 import { networkErrorMessages } from 'common/constants/messages';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 import mockUser from 'test-utils/mockGenerators/mockUser';
@@ -52,13 +52,19 @@ describe('RegistrationForm', () => {
     });
 
     const successSpy = jest.fn(() => Promise.resolve(true));
-    const { container, getByText, findByText } = render(
+    const { container, getByText } = render(
       <RegistrationForm onSuccess={successSpy} initialValues={initialValues} />,
     );
 
-    fireEvent.click(getByText('Submit'));
+    const submit = getByText('Submit');
+    fireEvent.click(submit);
 
-    const submit = await findByText('Submit');
+    // formik switches to `isSubmitting` in a microtask.
+    // TODO: This should probably synchronously switch to being disabled.
+    await act(async () => {
+      await Promise.resolve();
+    });
+
     expect(submit).not.toBeDisabled();
     container.querySelectorAll('input').forEach(input => {
       expect(input.textContent).toBeFalsy();

@@ -63,8 +63,8 @@
     "path": "^0.12.7",
     "prop-types": "^15.6.2",
     "qs": "^6.10.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react": "beta",
+    "react-dom": "beta",
     "react-facebook-login": "^4.1.1",
     "react-google-login": "^5.2.2",
     "react-modal": "^3.14.3",
@@ -94,7 +94,7 @@
     "@svgr/webpack": "^5.5.0",
     "@testing-library/cypress": "^8.0.1",
     "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^12.1.2",
+    "@testing-library/react": "alpha",
     "autoprefixer": "10.3.7",
     "axios-mock-adapter": "^1.20.0",
     "babel-jest": "^27.3.1",
@@ -137,8 +137,8 @@
     "postcss-prepend-imports": "^1.0.1",
     "prettier": "^2.4.1",
     "process": "0.11.10",
-    "react-is": "^17.0.2",
-    "react-test-renderer": "^17.0.2",
+    "react-is": "beta",
+    "react-test-renderer": "beta",
     "require-context.macro": "^1.2.2",
     "start-server-and-test": "^1.14.0",
     "style-loader": "^3.3.1",
@@ -151,8 +151,6 @@
   },
   "resolutions": {
     "istanbul-lib-coverage": "3.2.0",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
     "webpack": "^5.59.1"
   }
 }
