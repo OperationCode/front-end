@@ -20,4 +20,6 @@ beforeAll(() => {
     this.observe = observe;
     this.unobserve = unobserve;
   });
+
+  global.IS_REACT_ACT_ENVIRONMENT = true;
 });

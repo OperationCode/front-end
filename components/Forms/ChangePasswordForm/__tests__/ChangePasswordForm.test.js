@@ -1,4 +1,4 @@
-import { fireEvent, render, waitFor } from '@testing-library/react';
+import { act, fireEvent, render, waitFor } from '@testing-library/react';
 import { passwordResetSubmit } from 'common/constants/api';
 import { validationErrorMessages } from 'common/constants/messages';
 import { BUTTON, INPUT_ERROR, CHANGE_PASSWORD_FORM_ERROR } from 'common/constants/testIDs';
@@ -92,12 +92,14 @@ describe('ChangePasswordForm', () => {
     );
 
     fireEvent.click(component.queryByTestId(BUTTON));
-
-    await waitFor(() => {
-      expect(passwordResetSubmitSpy).not.toHaveBeenCalled();
-      expect(successSpy).not.toHaveBeenCalled();
-      expect(OperationCodeAPIMock.history.post.length).not.toBeGreaterThan(0);
+    // flush formik updates that are scheduled in a microtask
+    await act(async () => {
+      await Promise.resolve();
     });
+
+    expect(passwordResetSubmitSpy).not.toHaveBeenCalled();
+    expect(successSpy).not.toHaveBeenCalled();
+    expect(OperationCodeAPIMock.history.post.length).not.toBeGreaterThan(0);
   });
 
   it('should display error message when request fails', async () => {

@@ -3,7 +3,7 @@
 import { Component } from 'react';
 import faker from 'faker';
 import get from 'lodash/get';
-import { fireEvent, render, waitFor, getByTestId } from '@testing-library/react';
+import { act, fireEvent, render, waitFor, getByTestId } from '@testing-library/react';
 import { Field } from 'formik';
 import * as Yup from 'yup';
 import { networkErrorMessages } from 'common/constants/messages';
@@ -374,14 +374,16 @@ describe('MultiStepForm', () => {
     });
 
     fireEvent.click(goToPreviousStepButton);
-
-    await waitFor(() => {
-      expect(queryByTestId('ultimateAnswer')).toBeNull();
-      expect(queryByTestId('firstName')).not.toBeNull();
-      expect(queryByTestId('lastName')).not.toBeNull();
-      expect(queryByTestId('firstName').value).toStrictEqual(firstNameValue);
-      expect(queryByTestId('lastName').value).toStrictEqual(lastNameValue);
+    // flush formik updates that are scheduled in a microtask
+    await act(async () => {
+      await Promise.resolve();
     });
+
+    expect(queryByTestId('ultimateAnswer')).toBeNull();
+    expect(queryByTestId('firstName')).not.toBeNull();
+    expect(queryByTestId('lastName')).not.toBeNull();
+    expect(queryByTestId('firstName').value).toStrictEqual(firstNameValue);
+    expect(queryByTestId('lastName').value).toStrictEqual(lastNameValue);
   });
 
   it('calls setFieldTouched for every field on prev step if calling showPreviousStep', async () => {
@@ -410,15 +412,17 @@ describe('MultiStepForm', () => {
     expect(goToPreviousStepButton).not.toBeNull();
     expect(goToPreviousStepButton.textContent).toContain('Previous');
     fireEvent.click(goToPreviousStepButton);
+    // flush formik updates that are scheduled in a microtask
+    await act(async () => {
+      await Promise.resolve();
+    });
 
     // make sure that step 1's inputs have persisted & visible after clicking "Previous" from step 1
-    await waitFor(() => {
-      expect(container.querySelectorAll('input')).toHaveLength(2);
-      expect(queryByTestId('firstName')).not.toBeNull();
-      expect(queryByTestId('lastName')).not.toBeNull();
-      expect(queryByTestId('firstName').value).toStrictEqual(firstNameValue);
-      expect(queryByTestId('lastName').value).toStrictEqual(lastNameValue);
-    });
+    expect(container.querySelectorAll('input')).toHaveLength(2);
+    expect(queryByTestId('firstName')).not.toBeNull();
+    expect(queryByTestId('lastName')).not.toBeNull();
+    expect(queryByTestId('firstName').value).toStrictEqual(firstNameValue);
+    expect(queryByTestId('lastName').value).toStrictEqual(lastNameValue);
   });
 
   it('should call custom step handler after submitting', async () => {

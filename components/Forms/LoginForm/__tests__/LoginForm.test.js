@@ -1,5 +1,5 @@
 import faker from 'faker';
-import { render, fireEvent, waitFor, screen } from '@testing-library/react';
+import { act, render, fireEvent, waitFor, screen } from '@testing-library/react';
 import { loginUser } from 'common/constants/api';
 import { networkErrorMessages, validationErrorMessages } from 'common/constants/messages';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
@@ -79,9 +79,13 @@ describe('LoginForm', () => {
     );
 
     fireEvent.click(screen.getByText('Login'));
+    // flush formik updates that are scheduled in a microtask
+    await act(async () => {
+      await Promise.resolve();
+    });
 
-    await waitFor(() => expect(successSpy).not.toHaveBeenCalled());
-    await waitFor(() => expect(OperationCodeAPIMock.history.post.length).not.toBeGreaterThan(0));
+    expect(successSpy).not.toHaveBeenCalled();
+    expect(OperationCodeAPIMock.history.post.length).not.toBeGreaterThan(0);
   });
 
   it('should show error when trying to login with incorrect email or password', async () => {

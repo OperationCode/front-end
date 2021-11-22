@@ -1,4 +1,4 @@
-import { fireEvent, render, waitFor } from '@testing-library/react';
+import { act, fireEvent, render, waitFor } from '@testing-library/react';
 import { passwordReset } from 'common/constants/api';
 import { validationErrorMessages } from 'common/constants/messages';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
@@ -95,11 +95,13 @@ describe('PasswordResetForm', () => {
     );
 
     fireEvent.click(await findByText('Submit'));
-
-    await waitFor(() => {
-      expect(passwordResetSpy).not.toHaveBeenCalled();
-      expect(successSpy).not.toHaveBeenCalled();
-      expect(OperationCodeAPIMock.history.post.length).not.toBeGreaterThan(0);
+    // flush formik updates that are scheduled in a microtask
+    await act(async () => {
+      await Promise.resolve();
     });
+
+    expect(passwordResetSpy).not.toHaveBeenCalled();
+    expect(successSpy).not.toHaveBeenCalled();
+    expect(OperationCodeAPIMock.history.post.length).not.toBeGreaterThan(0);
   });
 });
