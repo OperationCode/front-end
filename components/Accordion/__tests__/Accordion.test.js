@@ -22,7 +22,7 @@ describe('Accordion Accessibility', () => {
     const component = render(<Default {...Default.args} />);
     const Button = component.queryByTestId(ACCORDION_TOGGLE_BUTTON);
 
-    expect(Button.textContent).toBe(toggleMessages.open);
+    expect(Button.textContent).toBe(`Can be JSX${toggleMessages.open}`);
     fireEvent.click(Button);
 
     expect(Button.textContent).toBe(toggleMessages.close);
