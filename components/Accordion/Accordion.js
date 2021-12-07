@@ -58,7 +58,7 @@ function Accordion({ accessibilityId, className, content, hasAnimationOnHover })
             data-testid={ACCORDION_TOGGLE_BUTTON}
             id={accordionId}
           >
-            <div className={styles.headingContainer}>{content.headingChildren}</div>
+            {content.headingChildren}
             {isContentVisible ? (
               <>
                 <ScreenReaderOnly>{toggleMessages.close}</ScreenReaderOnly>

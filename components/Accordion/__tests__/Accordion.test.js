@@ -23,7 +23,6 @@ describe('Accordion Accessibility', () => {
     const Button = component.queryByTestId(ACCORDION_TOGGLE_BUTTON);
 
     expect(Button.textContent).toBe(toggleMessages.open);
-
     fireEvent.click(Button);
 
     expect(Button.textContent).toBe(toggleMessages.close);
