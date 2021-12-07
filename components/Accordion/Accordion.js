@@ -3,8 +3,8 @@ import { arrayOf, bool, node, number, shape, string, oneOfType } from 'prop-type
 import classNames from 'classnames';
 import Chevron from 'public/static/images/icons/FontAwesome/angle-right-solid.svg';
 import { ACCORDION_CONTENT, ACCORDION_TOGGLE_BUTTON } from 'common/constants/testIDs';
+import * as RadixAccordion from '@radix-ui/react-accordion';
 import ScreenReaderOnly, { toggleMessages } from '../ScreenReaderOnly/ScreenReaderOnly';
-import Card from '../Cards/Card/Card';
 import styles from './Accordion.module.css';
 
 const ChevronRight = () => <Chevron className={styles.icon} />;
@@ -45,47 +45,90 @@ function Accordion({ accessibilityId, className, content, hasAnimationOnHover })
   const accordionId = `accordion-control-${accessibilityId}`;
 
   return (
-    <Card
-      className={classNames(styles.Accordion, className)}
-      hasAnimationOnHover={hasAnimationOnHover}
-    >
-      <div className={styles.headingContainer}>{content.headingChildren}</div>
+    <RadixAccordion.Root type="single" className={classNames(styles.Accordion, className)}>
+      <RadixAccordion.Item value={accordionId}>
+        <RadixAccordion.Header>
+          <RadixAccordion.Trigger
+            className={classNames(styles.headingContainer, {
+              [styles.hover]: hasAnimationOnHover,
+            })}
+            onClick={toggleAccordionContent}
+            aria-controls={contentId}
+            aria-expanded={isContentVisible}
+            data-testid={ACCORDION_TOGGLE_BUTTON}
+            id={accordionId}
+          >
+            <div className={styles.headingContainer}>{content.headingChildren}</div>
+            {isContentVisible ? (
+              <>
+                <ScreenReaderOnly>{toggleMessages.close}</ScreenReaderOnly>
+                <ChevronDown />
+              </>
+            ) : (
+              <>
+                <ScreenReaderOnly>{toggleMessages.open}</ScreenReaderOnly>
+                <ChevronRight />
+              </>
+            )}
+          </RadixAccordion.Trigger>
+        </RadixAccordion.Header>
+        <RadixAccordion.Content>
+          <section
+            aria-hidden={!isContentVisible}
+            className={classNames(styles.accordionContent, {
+              [styles.visible]: isContentVisible,
+              [styles.invisible]: !isContentVisible,
+            })}
+            data-testid={ACCORDION_CONTENT}
+            id={contentId}
+            style={{ display: isContentVisible ? 'block' : 'none' }}
+          >
+            {content.bodyChildren}
+          </section>
+        </RadixAccordion.Content>
+      </RadixAccordion.Item>
+    </RadixAccordion.Root>
+    // <Card
+    //   className={classNames(styles.Accordion, className)}
+    //   hasAnimationOnHover={hasAnimationOnHover}
+    // >
+    //   <div className={styles.headingContainer}>{content.headingChildren}</div>
 
-      <button
-        aria-controls={contentId}
-        aria-expanded={isContentVisible}
-        className={styles.accordionToggleButton}
-        data-testid={ACCORDION_TOGGLE_BUTTON}
-        id={accordionId}
-        onClick={toggleAccordionContent}
-        type="button"
-      >
-        {isContentVisible ? (
-          <>
-            <ScreenReaderOnly>{toggleMessages.close}</ScreenReaderOnly>
-            <ChevronDown />
-          </>
-        ) : (
-          <>
-            <ScreenReaderOnly>{toggleMessages.open}</ScreenReaderOnly>
-            <ChevronRight />
-          </>
-        )}
-      </button>
+    //   <button
+    //     aria-controls={contentId}
+    //     aria-expanded={isContentVisible}
+    //     className={styles.accordionToggleButton}
+    //     data-testid={ACCORDION_TOGGLE_BUTTON}
+    //     id={accordionId}
+    //     onClick={toggleAccordionContent}
+    //     type="button"
+    //   >
+    //     {isContentVisible ? (
+    //       <>
+    //         <ScreenReaderOnly>{toggleMessages.close}</ScreenReaderOnly>
+    //         <ChevronDown />
+    //       </>
+    //     ) : (
+    //       <>
+    //         <ScreenReaderOnly>{toggleMessages.open}</ScreenReaderOnly>
+    //         <ChevronRight />
+    //       </>
+    //     )}
+    //   </button>
 
-      <section
-        aria-hidden={!isContentVisible}
-        className={classNames(styles.accordionContent, {
-          [styles.visible]: isContentVisible,
-          [styles.invisible]: !isContentVisible,
-        })}
-        data-testid={ACCORDION_CONTENT}
-        id={contentId}
-        style={{ display: isContentVisible ? 'block' : 'none' }}
-      >
-        {content.bodyChildren}
-      </section>
-    </Card>
+    //   <section
+    //     aria-hidden={!isContentVisible}
+    //     className={classNames(styles.accordionContent, {
+    //       [styles.visible]: isContentVisible,
+    //       [styles.invisible]: !isContentVisible,
+    //     })}
+    //     data-testid={ACCORDION_CONTENT}
+    //     id={contentId}
+    //     style={{ display: isContentVisible ? 'block' : 'none' }}
+    //   >
+    //     {content.bodyChildren}
+    //   </section>
+    // </Card>
   );
 }
 
