@@ -7,13 +7,13 @@ import { toggleMessages } from '../../ScreenReaderOnly/ScreenReaderOnly';
 describe('Accordion', () => {
   it('should render invisible text that turns visible on toggle click', async () => {
     const component = render(<Default {...Default.args} />);
-    const Content = component.queryByTestId(ACCORDION_CONTENT);
+    let Content = component.queryByTestId(ACCORDION_CONTENT);
     // const Button = component.queryByTestId(ACCORDION_TOGGLE_BUTTON);
 
     expect(Content).toBe(null);
 
     fireEvent.click(component.queryByTestId(ACCORDION_TOGGLE_BUTTON));
-
+    Content = component.queryByTestId(ACCORDION_CONTENT);
     expect(Content).toBeVisible();
   });
 });
