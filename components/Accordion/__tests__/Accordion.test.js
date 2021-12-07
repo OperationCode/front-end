@@ -25,6 +25,6 @@ describe('Accordion Accessibility', () => {
     expect(Button.textContent).toBe(`Can be JSX${toggleMessages.open}`);
     fireEvent.click(Button);
 
-    expect(Button.textContent).toBe(toggleMessages.close);
+    expect(Button.textContent).toBe(`Can be JSX${toggleMessages.close}`);
   });
 });
