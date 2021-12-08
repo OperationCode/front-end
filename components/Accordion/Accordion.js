@@ -1,8 +1,7 @@
-import { styled, keyframes } from '@stitches/react';
-import { arrayOf, bool, node, number, shape, string, oneOfType } from 'prop-types';
+import { arrayOf, node, number, shape, string, oneOfType } from 'prop-types';
 import classNames from 'classnames';
 import { ACCORDION_CONTENT, ACCORDION_TOGGLE_BUTTON } from 'common/constants/testIDs';
-import { ChevronDownIcon } from '@radix-ui/react-icons';
+import Chevron from 'public/static/images/icons/FontAwesome/angle-right-solid.svg';
 import * as RadixAccordion from '@radix-ui/react-accordion';
 import styles from './Accordion.module.css';
 
@@ -19,49 +18,17 @@ Accordion.propTypes = {
     /** Section of content associated with header */
     bodyChildren: oneOfType([node, arrayOf(node)]).isRequired,
   }).isRequired,
-  /** Should Accordion have animation on hover */
-  hasAnimationOnHover: bool,
 };
 
 Accordion.defaultProps = {
   className: undefined,
-  hasAnimationOnHover: false,
 };
-
-const slideDown = keyframes({
-  from: { height: 0 },
-  to: { height: 50 },
-});
-
-const slideUp = keyframes({
-  from: { height: 50 },
-  to: { height: 0 },
-});
-
-const StyledContent = styled(RadixAccordion.Content, {
-  overflow: 'hidden',
-
-  '&[data-state="open"]': {
-    animation: `${slideDown} 300ms cubic-bezier(0.87, 0, 0.13, 1)`,
-  },
-  '&[data-state="closed"]': {
-    animation: `${slideUp} 300ms cubic-bezier(0.87, 0, 0.13, 1)`,
-  },
-});
-
-const StyledChevron = styled(ChevronDownIcon, {
-  color: 'white',
-  width: 25,
-  height: 25,
-  transition: 'transform 300ms cubic-bezier(0.87, 0, 0.13, 1)',
-  '[data-state=open] &': { transform: 'rotate(180deg)' },
-});
 
 /**
  * @description A component whose main content is invisible until revealed by the user
  * @see http://web-accessibility.carnegiemuseums.org/code/accordions/
  */
-function Accordion({ accessibilityId, className, content, hasAnimationOnHover }) {
+function Accordion({ accessibilityId, className, content }) {
   const contentId = `content-${accessibilityId}`;
   const accordionId = `accordion-control-${accessibilityId}`;
 
@@ -74,16 +41,14 @@ function Accordion({ accessibilityId, className, content, hasAnimationOnHover })
       <RadixAccordion.Item value={accordionId}>
         <RadixAccordion.Header>
           <RadixAccordion.Trigger
-            className={classNames(styles.headingContainer, {
-              [styles.hover]: hasAnimationOnHover,
-            })}
+            className={styles.headingContainer}
             data-testid={ACCORDION_TOGGLE_BUTTON}
           >
             <div className={styles.headingContainer}>{content.headingChildren}</div>
-            <StyledChevron aria-hidden />
+            <Chevron className={styles.icon} />
           </RadixAccordion.Trigger>
         </RadixAccordion.Header>
-        <StyledContent>
+        <RadixAccordion.Content>
           <section
             className={styles.accordionContent}
             data-testid={ACCORDION_CONTENT}
@@ -91,7 +56,7 @@ function Accordion({ accessibilityId, className, content, hasAnimationOnHover })
           >
             {content.bodyChildren}
           </section>
-        </StyledContent>
+        </RadixAccordion.Content>
       </RadixAccordion.Item>
     </RadixAccordion.Root>
   );

@@ -30,8 +30,6 @@
 
 .icon {
   fill: currentColor;
-  position: absolute;
-  top: 1.25rem; /* Should correspond with heading content height (vertically centered with rest of content */
   right: 1.25rem;
   width: 30px;
 }
@@ -53,4 +51,8 @@
 
 .hover {
   font-weight: 1.35rem;
+}
+
+button[data-state="open"] .icon {
+  transform: rotate(90deg);
 }
