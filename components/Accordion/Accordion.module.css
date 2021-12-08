@@ -56,3 +56,9 @@
 button[data-state="open"] .icon {
   transform: rotate(90deg);
 }
+
+button .icon:focus-visible {
+  border: 1px solid var(--primary);
+  border-radius: inherit;
+  outline: none;
+}
