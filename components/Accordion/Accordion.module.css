@@ -9,7 +9,7 @@
   min-width: unset;
   width: 100%;
 
-  --widthUpToButtonInAccordion: 90%;
+  --widthUpToButtonInAccordion: 100%;
 }
 
 .headingContainer {
@@ -19,8 +19,13 @@
   border: none;
   font-size: 1.25rem;
   font-weight: bold;
+  display: flex;
   text-transform: uppercase;
   width: var(--widthUpToButtonInAccordion);
+}
+
+.headingContainer:hover {
+  cursor: pointer;
 }
 
 .icon {
@@ -41,40 +46,9 @@
   transform: rotate(90deg);
 }
 
-@media screen and (--medium-viewport) {
-  .accordionToggleButton {
-    width: 50px;
-  }
-}
-
-@media screen and (--small-viewport) {
-  .accordionToggleButton {
-    width: 40px;
-  }
-}
-
-.accordionToggleButton:hover {
-  text-decoration: underline;
-}
-
-.accordionToggleButton:focus-visible {
-  border: 1px solid var(--primary);
-  border-radius: inherit;
-  outline: none;
-}
-
 .accordionContent {
   position: relative;
   width: var(--widthUpToButtonInAccordion);
-}
-
-.accordionContent.invisible {
-  height: 0;
-}
-
-.accordionContent.visible {
-  height: auto;
-  margin-top: 1rem;
 }
 
 .hover {

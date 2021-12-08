@@ -1,14 +1,10 @@
-import { useState } from 'react';
+import { styled, keyframes } from '@stitches/react';
 import { arrayOf, bool, node, number, shape, string, oneOfType } from 'prop-types';
 import classNames from 'classnames';
-import Chevron from 'public/static/images/icons/FontAwesome/angle-right-solid.svg';
 import { ACCORDION_CONTENT, ACCORDION_TOGGLE_BUTTON } from 'common/constants/testIDs';
+import { ChevronDownIcon } from '@radix-ui/react-icons';
 import * as RadixAccordion from '@radix-ui/react-accordion';
-import ScreenReaderOnly, { toggleMessages } from '../ScreenReaderOnly/ScreenReaderOnly';
 import styles from './Accordion.module.css';
-
-const ChevronRight = () => <Chevron className={styles.icon} />;
-const ChevronDown = () => <Chevron className={classNames(styles.icon, styles.rotate90)} />;
 
 Accordion.propTypes = {
   /** Accessibility ID to use for joining elements together
@@ -32,60 +28,70 @@ Accordion.defaultProps = {
   hasAnimationOnHover: false,
 };
 
+const slideDown = keyframes({
+  from: { height: 0 },
+  to: { height: 50 },
+});
+
+const slideUp = keyframes({
+  from: { height: 50 },
+  to: { height: 0 },
+});
+
+const StyledContent = styled(RadixAccordion.Content, {
+  overflow: 'hidden',
+
+  '&[data-state="open"]': {
+    animation: `${slideDown} 300ms cubic-bezier(0.87, 0, 0.13, 1)`,
+  },
+  '&[data-state="closed"]': {
+    animation: `${slideUp} 300ms cubic-bezier(0.87, 0, 0.13, 1)`,
+  },
+});
+
+const StyledChevron = styled(ChevronDownIcon, {
+  color: 'white',
+  width: 25,
+  height: 25,
+  transition: 'transform 300ms cubic-bezier(0.87, 0, 0.13, 1)',
+  '[data-state=open] &': { transform: 'rotate(180deg)' },
+});
+
 /**
  * @description A component whose main content is invisible until revealed by the user
  * @see http://web-accessibility.carnegiemuseums.org/code/accordions/
  */
 function Accordion({ accessibilityId, className, content, hasAnimationOnHover }) {
-  const [isContentVisible, setContentVisibility] = useState(false);
-
-  const toggleAccordionContent = () => setContentVisibility(previousState => !previousState);
-
   const contentId = `content-${accessibilityId}`;
   const accordionId = `accordion-control-${accessibilityId}`;
 
   return (
-    <RadixAccordion.Root type="single" className={classNames(styles.Accordion, className)}>
+    <RadixAccordion.Root
+      type="single"
+      className={classNames(styles.Accordion, className)}
+      collapsible
+    >
       <RadixAccordion.Item value={accordionId}>
         <RadixAccordion.Header>
           <RadixAccordion.Trigger
             className={classNames(styles.headingContainer, {
               [styles.hover]: hasAnimationOnHover,
             })}
-            onClick={toggleAccordionContent}
-            aria-controls={contentId}
-            aria-expanded={isContentVisible}
             data-testid={ACCORDION_TOGGLE_BUTTON}
-            id={accordionId}
           >
             <div className={styles.headingContainer}>{content.headingChildren}</div>
-            {isContentVisible ? (
-              <>
-                <ScreenReaderOnly>{toggleMessages.close}</ScreenReaderOnly>
-                <ChevronDown />
-              </>
-            ) : (
-              <>
-                <ScreenReaderOnly>{toggleMessages.open}</ScreenReaderOnly>
-                <ChevronRight />
-              </>
-            )}
+            <StyledChevron aria-hidden />
           </RadixAccordion.Trigger>
         </RadixAccordion.Header>
-        <RadixAccordion.Content>
+        <StyledContent>
           <section
-            aria-hidden={!isContentVisible}
-            className={classNames(styles.accordionContent, {
-              [styles.visible]: isContentVisible,
-              [styles.invisible]: !isContentVisible,
-            })}
+            className={styles.accordionContent}
             data-testid={ACCORDION_CONTENT}
             id={contentId}
-            style={{ display: isContentVisible ? 'block' : 'none' }}
           >
             {content.bodyChildren}
           </section>
-        </RadixAccordion.Content>
+        </StyledContent>
       </RadixAccordion.Item>
     </RadixAccordion.Root>
   );
