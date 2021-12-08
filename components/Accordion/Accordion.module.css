@@ -13,7 +13,10 @@
 }
 
 .headingContainer {
-  all: unset;
+  text-align: left;
+  color: white;
+  background: transparent;
+  border: none;
   font-size: 1.25rem;
   font-weight: bold;
   text-transform: uppercase;
