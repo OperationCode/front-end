@@ -2,7 +2,6 @@ import { fireEvent, render } from '@testing-library/react';
 
 import { ACCORDION_CONTENT, ACCORDION_TOGGLE_BUTTON } from 'common/constants/testIDs';
 import { Default } from '../__stories__/Accordion.stories';
-import { toggleMessages } from '../../ScreenReaderOnly/ScreenReaderOnly';
 
 describe('Accordion', () => {
   it('should render accordion content on toggle click', async () => {
@@ -22,9 +21,9 @@ describe('Accordion Accessibility', () => {
     const component = render(<Default {...Default.args} />);
     const Button = component.queryByTestId(ACCORDION_TOGGLE_BUTTON);
 
-    expect(Button.textContent).toBe(`Can be JSX${toggleMessages.open}`);
+    expect(Button.textContent).toBe(`Can be JSX`);
     fireEvent.click(Button);
 
-    expect(Button.textContent).toBe(`Can be JSX${toggleMessages.close}`);
+    expect(Button.textContent).toBe(`Can be JSX`);
   });
 });
