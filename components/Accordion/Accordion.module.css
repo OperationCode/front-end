@@ -49,16 +49,6 @@
   width: var(--widthUpToButtonInAccordion);
 }
 
-.hover {
-  font-weight: 1.35rem;
-}
-
 button[data-state="open"] .icon {
   transform: rotate(90deg);
-}
-
-button .icon:focus-visible {
-  border: 1px solid var(--primary);
-  border-radius: inherit;
-  outline: none;
 }

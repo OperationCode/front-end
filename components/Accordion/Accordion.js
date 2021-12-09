@@ -43,6 +43,7 @@ function Accordion({ accessibilityId, className, content }) {
           <RadixAccordion.Trigger
             className={styles.headingContainer}
             data-testid={ACCORDION_TOGGLE_BUTTON}
+            id={accordionId}
           >
             <div className={styles.headingContainer}>{content.headingChildren}</div>
             <Chevron className={styles.icon} />
