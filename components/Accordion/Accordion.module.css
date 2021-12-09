@@ -52,3 +52,9 @@
 button[data-state="open"] .icon {
   transform: rotate(90deg);
 }
+
+.Accordion button:focus-visible {
+  border: 1px solid var(--primary);
+  border-radius: 2px;
+  outline: none;
+}
