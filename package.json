@@ -41,7 +41,6 @@
     "@innocuous/functions": "^2.1.1",
     "@next/bundle-analyzer": "11.1.2",
     "@radix-ui/react-accordion": "^0.1.1",
-    "@radix-ui/react-dialog": "^0.1.1",
     "@radix-ui/react-tabs": "^0.1.1",
     "@sentry/nextjs": "^6.13.3",
     "axios": "^0.23.0",
@@ -76,7 +75,6 @@
     "react-scroll-up-button": "^1.6.4",
     "react-select": "^4.0.2",
     "react-youtube": "7.13.1",
-    "stitches": "^1.2.11",
     "yup": "^0.32.11"
   },
   "devDependencies": {
