@@ -106,7 +106,7 @@
     "babel-plugin-react-remove-properties": "^0.3.0",
     "chromatic": "^6.0.4",
     "cross-env": "^7.0.3",
-    "css-loader": "^6.4.0",
+    "css-loader": "^6.5.1",
     "cypress": "^8.6.0",
     "cypress-image-snapshot": "^4.0.1",
     "eslint": "^8.1.0",
