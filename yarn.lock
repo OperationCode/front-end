@@ -10699,10 +10699,10 @@ logrocket-react@^4.0.1:
   resolved "https://registry.yarnpkg.com/logrocket-react/-/logrocket-react-4.0.1.tgz#e8e5405ee5f47f2c25b511931e360713a623f927"
   integrity sha512-TbQELEaDQspKHH0XylAeVZpsHoAcz+sIEG/enUQiH+LoYLW7cMK000XIS6W3Zz14zS0V2Db+KyKi8ivBpGYkzg==
 
-logrocket@^2.1.1:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/logrocket/-/logrocket-2.1.1.tgz#1ac44eb7811b4ebb5a4edbcd8af35b9782bfa093"
-  integrity sha512-wFxpQKf+ON/ZywTBVqqORmnJmW4293706bhyBAmzLnwJJrdcpI/ZicT81itbSpfw9ELEmdVT6e8D9Kx19u4uLQ==
+logrocket@^2.1.3:
+  version "2.1.3"
+  resolved "https://registry.yarnpkg.com/logrocket/-/logrocket-2.1.3.tgz#f7c6788ff57047f838da771d3cd417363abc4ba0"
+  integrity sha512-qrGyZON8EEpiFSWaiL2qM1LsgQ/ccivpMhrjGMLCrbG3uJ60YdRkgRR8bpuxkgMY3RMa8E7cpkvir0L0B/6yHg==
 
 loose-envify@^1.0.0, loose-envify@^1.1.0, loose-envify@^1.4.0:
   version "1.4.0"
