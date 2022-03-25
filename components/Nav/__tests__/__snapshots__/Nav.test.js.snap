@@ -64,13 +64,16 @@ exports[`Nav should render with no props passed 1`] = `
             className="logoLink link"
             onContextMenu={[Function]}
           >
-            <MockedNextImage
-              alt="Operation Code Logo"
+            <div
               className="logo"
-              height={60}
-              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/small-blue-logo.png"
-              width={318}
-            />
+            >
+              <MockedNextImage
+                alt="Operation Code Logo"
+                height={42}
+                src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/small-blue-logo.png"
+                width={224}
+              />
+            </div>
           </a>
         </Link>
         <ul

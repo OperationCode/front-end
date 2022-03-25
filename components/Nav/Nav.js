@@ -68,13 +68,14 @@ export const Nav = () => {
                 className={classNames(styles.logoLink, styles.link)}
                 onContextMenu={redirectRightClick}
               >
-                <Image
-                  src={`${s3}branding/logos/small-blue-logo.png`}
-                  alt="Operation Code Logo"
-                  className={styles.logo}
-                  width={318}
-                  height={60}
-                />
+                <div className={styles.logo}>
+                  <Image
+                    src={`${s3}branding/logos/small-blue-logo.png`}
+                    alt="Operation Code Logo"
+                    width={224}
+                    height={42}
+                  />
+                </div>
               </a>
             </Link>
 
