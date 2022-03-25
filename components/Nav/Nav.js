@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Router from 'next/router';
 import classNames from 'classnames';
 import { s3 } from 'common/constants/urls';
+import Image from 'next/image';
 
 import {
   loggedInNavItems,
@@ -67,10 +68,12 @@ export const Nav = () => {
                 className={classNames(styles.logoLink, styles.link)}
                 onContextMenu={redirectRightClick}
               >
-                <img
+                <Image
                   src={`${s3}branding/logos/small-blue-logo.png`}
                   alt="Operation Code Logo"
                   className={styles.logo}
+                  width={318}
+                  height={60}
                 />
               </a>
             </Link>

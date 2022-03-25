@@ -6,6 +6,7 @@ import OutboundLink from 'components/OutboundLink/OutboundLink';
 import challengers from 'static/operationcode_challenge/names';
 import range from 'lodash/range';
 import styles from 'styles/challenge.module.css';
+import Image from 'next/image';
 
 const pageTitle = 'Challenge';
 
@@ -78,10 +79,11 @@ function Challenge() {
                   visit this link
                 </OutboundLink>
                 &nbsp; and click on the button near the top-right corner of the screen:{' '}
-                <img
+                <Image
                   src={`${s3}github_demo/fork-button.png`}
                   alt="screenshot of 'Fork' button on GitHub"
-                  width="65px"
+                  width={65}
+                  height={65}
                 />{' '}
                 In a few moments, you will be redirected to your own copy of this website&apos;s
                 source code.
@@ -96,10 +98,11 @@ function Challenge() {
                 {` folder`}, then the <code>/static</code> {` folder`}, click on the
                 <code>operationcode_challenge</code> directory and click on the file called
                 <code>names.js</code>. On the right-hand side, you should see
-                <img
+                <Image
                   src={`${s3}github_demo/pencil-icon.png`}
                   alt="a button with a pencil icon"
-                  width="18px"
+                  width={18}
+                  height={18}
                 />
                 . Click it.
               </li>
@@ -115,18 +118,21 @@ function Challenge() {
                 now have something like this:
                 <br />
                 <br />
-                <img
+                <Image
                   src={`${s3}github_demo/example.png`}
                   alt="screenshot of what the screen should look like on GitHub thus far"
                   className={styles.blockImage}
+                  width={500}
+                  height={500}
                 />
                 <br />
                 <br />
                 Once you confirm the similarities, click
-                <img
+                <Image
                   src={`${s3}github_demo/propose-button.png`}
                   alt="screensot of the 'Propose file change' button"
-                  width="125px"
+                  width={125}
+                  height={125}
                 />
               </li>
 
@@ -161,10 +167,11 @@ function Challenge() {
                 Click the next selector to the right, and choose your new branch. Now, you&apos;re
                 comparing Operation Code&apos;s main branch with your new fork&apos;s branch, and
                 you may click
-                <img
+                <Image
                   src={`${s3}github_demo/pr-button.png`}
                   alt="screenshot of the 'Create pull request' button"
-                  width="115px"
+                  width={115}
+                  height={115}
                 />
                 to create your first Pull Request! We hope you come to love that button...
               </li>

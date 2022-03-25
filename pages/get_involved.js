@@ -17,6 +17,7 @@ import ChartIcon from 'static/images/icons/Custom/chart.svg';
 import PeopleMeetingIcon from 'static/images/icons/Custom/people_meeting.svg';
 import { s3 } from 'common/constants/urls';
 import styles from 'styles/get_involved.module.css';
+import Image from 'next/image';
 
 const VISIBILITY_OFFSET = 400;
 
@@ -108,9 +109,11 @@ function GetInvolved() {
           <TrackVisibility offset={VISIBILITY_OFFSET}>
             {({ isVisible }) => (
               <div className={classNames(styles.image, { [styles.showImage]: isVisible })}>
-                <img
+                <Image
                   src={`${s3}redesign/images/one_on_one_mentoring.jpg`}
                   alt="Woman outlines a whiteboarding problem to a man"
+                  width={500}
+                  height={500}
                 />
               </div>
             )}

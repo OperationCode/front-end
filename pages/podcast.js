@@ -10,6 +10,7 @@ import Card from 'components/Cards/Card/Card';
 import Content from 'components/Content/Content';
 import Heading from 'components/Heading/Heading';
 import styles from 'styles/podcast.module.css';
+import Image from 'next/image';
 
 const pageTitle = 'Podcast';
 
@@ -70,7 +71,13 @@ function Podcast({ episodes }) {
                 <Card data-testid="Podcast Card" className={styles.podcastCard} key={name}>
                   <Heading text={interviewee} headingLevel={3} />
 
-                  <img src={image} alt={interviewee} className={styles.img} />
+                  <Image
+                    src={image}
+                    alt={interviewee}
+                    className={styles.img}
+                    width={200}
+                    height={200}
+                  />
 
                   <ReactPlayer
                     url={source}
