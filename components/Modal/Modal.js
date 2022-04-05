@@ -46,7 +46,7 @@ function Modal({
       <Dialog.Content
         className={classNames(CardStyles.Card, className, ModalStyles.contentContainer)}
       >
-        <CloseButton onClick={onRequestClose} theme="white" />
+        <CloseButton onClick={onRequestClose} />
         <div className={childrenClassName} data-testid={MODAL_CONTENT}>
           {children}
         </div>

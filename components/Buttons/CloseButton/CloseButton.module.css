@@ -33,7 +33,7 @@
 }
 
 .white {
-  fill: var(--white) !important;
+  fill: var(--white);
 }
 
 .CloseButton:hover:not(:disabled) .icon {
