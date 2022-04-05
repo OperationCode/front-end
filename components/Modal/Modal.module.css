@@ -2,6 +2,24 @@
   position: relative;
 }
 
+.overlay {
+  background-color: white;
+  position: fixed;
+  inset: 0;
+  opacity: 50%;
+}
+
+.contentContainer {
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+
 .scrollableContainer {
   margin-top: 2.5rem;
   overflow: auto;
@@ -28,8 +46,4 @@
   align-items: center;
   display: flex;
   justify-content: center;
-}
-
-.Modal :global(.ReactModal__Content) {
-  width: 80%;
 }
