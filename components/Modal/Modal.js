@@ -39,18 +39,20 @@ function Modal({
 
   return (
     <Dialog.Root defaultOpen={false} open={isOpen}>
-      <Dialog.Overlay
-        className={ModalStyles.overlay}
-        onClick={shouldCloseOnOverlayClick ? onRequestClose : undefined}
-      />
-      <Dialog.Content
-        className={classNames(CardStyles.Card, className, ModalStyles.contentContainer)}
-      >
-        <CloseButton onClick={onRequestClose} />
-        <div className={childrenClassName} data-testid={MODAL_CONTENT}>
-          {children}
-        </div>
-      </Dialog.Content>
+      <Dialog.Portal>
+        <Dialog.Overlay
+          className={ModalStyles.overlay}
+          onClick={shouldCloseOnOverlayClick ? onRequestClose : undefined}
+        />
+        <Dialog.Content
+          className={classNames(CardStyles.Card, className, ModalStyles.modalContent)}
+        >
+          <CloseButton onClick={onRequestClose} />
+          <div className={childrenClassName} data-testid={MODAL_CONTENT}>
+            {children}
+          </div>
+        </Dialog.Content>
+      </Dialog.Portal>
     </Dialog.Root>
   );
 }
