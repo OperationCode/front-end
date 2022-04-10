@@ -35,13 +35,14 @@ function NavMobile({ isOpen, openMenu, closeMenu, navItems }) {
           type="button"
           name="dropdown"
         >
-          <Image
-            src={`${s3}branding/logos/small-blue-logo.png`}
-            alt="Operation Code Logo"
-            className={styles.logo}
-            width={318}
-            height={60}
-          />
+          <div className={styles.logo}>
+            <Image
+              src={`${s3}branding/logos/small-blue-logo.png`}
+              alt="Operation Code Logo"
+              width={224}
+              height={42}
+            />
+          </div>
         </button>
       </Link>
 

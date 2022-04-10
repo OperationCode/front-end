@@ -47,6 +47,8 @@
 .logo {
   align-self: center;
   margin-left: 1rem;
+  display: flex;
+  justify-content: center;
 }
 
 .navIcon {
