@@ -431,7 +431,7 @@ describe('join', () => {
     cy.findByLabelText(inputFields.codeOfConduct).type(validUser.codeOfConduct);
     cy.findByText('Submit').click();
 
-    cy.url({ timeout: 10000 }).should('contain', '/profile/update');
+    cy.url({ timeout: 20000 }).should('contain', '/profile/update');
     cy.get('h1').should('have.text', 'Update Profile');
 
     cy.getCookies().then(([tokenCookie]) => {
