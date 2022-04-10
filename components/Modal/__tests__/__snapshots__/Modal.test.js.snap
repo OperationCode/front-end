@@ -20,6 +20,7 @@ exports[`Modal should render with many props assigned 1`] = `
     class="overlay"
     data-aria-hidden="true"
     data-state="open"
+    data-testid="MODAL_OVERLAY"
     style="pointer-events: auto;"
   />
   <div
