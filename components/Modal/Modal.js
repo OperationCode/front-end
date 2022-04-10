@@ -4,7 +4,7 @@ import * as Dialog from '@radix-ui/react-dialog';
 import { gtag } from 'common/utils/thirdParty/gtag';
 import CardStyles from 'components/Cards/Card/Card.module.css';
 import CloseButton from 'components/Buttons/CloseButton/CloseButton';
-import { MODAL_CONTENT } from 'common/constants/testIDs';
+import { MODAL_CONTENT, MODAL_OVERLAY } from 'common/constants/testIDs';
 import ModalStyles from './Modal.module.css';
 
 Modal.propTypes = {
@@ -43,6 +43,7 @@ function Modal({
         <Dialog.Overlay
           className={ModalStyles.overlay}
           onClick={shouldCloseOnOverlayClick ? onRequestClose : undefined}
+          data-testid={MODAL_OVERLAY}
         />
         <Dialog.Content
           className={classNames(CardStyles.Card, className, ModalStyles.modalContent)}
