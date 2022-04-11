@@ -19,6 +19,7 @@ import UserIcon from 'static/images/icons/FontAwesome/user-solid.svg';
 import DiversityIcon from 'static/images/icons/FontAwesome/users-solid.svg';
 import { s3 } from 'common/constants/urls';
 import styles from 'styles/events.module.css';
+import Image from 'next/image';
 
 const pageTitle = 'Events';
 
@@ -199,9 +200,11 @@ function Events() {
           <TrackVisibility offset={VISIBILITY_OFFSET}>
             {({ isVisible }) => (
               <div className={classNames(styles.image, { [styles.showImage]: isVisible })}>
-                <img
+                <Image
                   src={`${s3}redesign/images/chef_seattle_meetup.jpg`}
                   alt="Nell Shamrell-Harrington gives a talk at Chef in Seattle"
+                  width={500}
+                  height={500}
                 />
               </div>
             )}
@@ -272,9 +275,11 @@ function Events() {
           <TrackVisibility offset={VISIBILITY_OFFSET}>
             {({ isVisible }) => (
               <div className={classNames(styles.image, { [styles.showImage]: isVisible })}>
-                <img
+                <Image
                   src={`${s3}redesign/images/molina_speaking_at_podium.jpg`}
                   alt="David Molina presents Operation Code at OSCON"
+                  width={500}
+                  height={500}
                 />
               </div>
             )}

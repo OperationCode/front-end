@@ -2,6 +2,7 @@ import classNames from 'classnames';
 import Badge from 'components/Badge/Badge';
 import Content from 'components/Content/Content';
 import { s3 } from 'common/constants/urls';
+import Image from 'next/image';
 import styles from './LogoSection.module.css';
 
 function LogoSection() {
@@ -29,9 +30,11 @@ function LogoSection() {
                   <li>
                     <Badge
                       icon={
-                        <img
+                        <Image
                           src={`${s3}branding/logos/small-blue-logo.png`}
                           alt="Small Blue Accented Logo"
+                          width={318}
+                          height={60}
                         />
                       }
                       isImageFirst={false}
@@ -41,9 +44,11 @@ function LogoSection() {
                   <li>
                     <Badge
                       icon={
-                        <img
+                        <Image
                           src={`${s3}branding/logos/small-red-logo.png`}
                           alt="Small Red Accented Logo"
+                          width={318}
+                          height={60}
                         />
                       }
                       isImageFirst={false}
@@ -53,9 +58,11 @@ function LogoSection() {
                   <li>
                     <Badge
                       icon={
-                        <img
+                        <Image
                           src={`${s3}branding/logos/small-logo.png`}
                           alt="Small Unaccented Logo"
+                          width={318}
+                          height={60}
                         />
                       }
                       isImageFirst={false}
@@ -65,9 +72,11 @@ function LogoSection() {
                   <li>
                     <Badge
                       icon={
-                        <img
+                        <Image
                           src={`${s3}branding/logos/small-white-logo.png`}
                           alt="Small White Accented Logo"
+                          width={318}
+                          height={60}
                         />
                       }
                       isImageFirst={false}
@@ -89,9 +98,11 @@ function LogoSection() {
                   <li>
                     <Badge
                       icon={
-                        <img
+                        <Image
                           src={`${s3}branding/logos/small-stacked-logo-blue.png`}
                           alt="Large Stacked Original"
+                          width={270}
+                          height={226}
                         />
                       }
                       isImageFirst={false}
@@ -101,9 +112,11 @@ function LogoSection() {
                   <li>
                     <Badge
                       icon={
-                        <img
+                        <Image
                           src={`${s3}branding/logos/small-stacked-logo-red.png`}
                           alt="Red Stacked Logo"
+                          width={270}
+                          height={226}
                         />
                       }
                       isImageFirst={false}
@@ -113,9 +126,11 @@ function LogoSection() {
                   <li>
                     <Badge
                       icon={
-                        <img
+                        <Image
                           src={`${s3}branding/logos/small-stacked-logo.png`}
                           alt="Light Stacked Logo"
+                          width={270}
+                          height={226}
                         />
                       }
                       isImageFirst={false}
@@ -138,7 +153,12 @@ function LogoSection() {
                   <li>
                     <Badge
                       icon={
-                        <img src={`${s3}branding/logos/large-blue-medal.png`} alt="OC Blue Medal" />
+                        <Image
+                          src={`${s3}branding/logos/large-blue-medal.png`}
+                          alt="OC Blue Medal"
+                          width={300}
+                          height={404}
+                        />
                       }
                       isImageFirst={false}
                       label="Blue"
@@ -146,7 +166,14 @@ function LogoSection() {
                   </li>
                   <li>
                     <Badge
-                      icon={<img src={`${s3}branding/logos/large-red-medal.png`} alt="Red Medal" />}
+                      icon={
+                        <Image
+                          src={`${s3}branding/logos/large-red-medal.png`}
+                          alt="Red Medal"
+                          width={300}
+                          height={404}
+                        />
+                      }
                       isImageFirst={false}
                       label="Red"
                     />
@@ -154,7 +181,12 @@ function LogoSection() {
                   <li>
                     <Badge
                       icon={
-                        <img src={`${s3}branding/logos/large-slate-medal.png`} alt="Navy Medal" />
+                        <Image
+                          src={`${s3}branding/logos/large-slate-medal.png`}
+                          alt="Navy Medal"
+                          width={300}
+                          height={404}
+                        />
                       }
                       isImageFirst={false}
                       label="Navy"
@@ -176,7 +208,12 @@ function LogoSection() {
                   <li>
                     <Badge
                       icon={
-                        <img src={`${s3}branding/logos/large-blue-medal.png`} alt="OC Blue Badge" />
+                        <Image
+                          src={`${s3}branding/logos/large-blue-medal.png`}
+                          alt="OC Blue Badge"
+                          width={300}
+                          height={404}
+                        />
                       }
                       isImageFirst={false}
                       label="OC Blue Badge"
@@ -185,7 +222,14 @@ function LogoSection() {
 
                   <li>
                     <Badge
-                      icon={<img src={`${s3}branding/logos/large-red-medal.png`} alt="Red Badge" />}
+                      icon={
+                        <Image
+                          src={`${s3}branding/logos/large-red-medal.png`}
+                          alt="Red Badge"
+                          width={300}
+                          height={404}
+                        />
+                      }
                       isImageFirst={false}
                       label="Red Badge"
                     />
@@ -193,7 +237,14 @@ function LogoSection() {
 
                   <li>
                     <Badge
-                      icon={<img src={`${s3}branding/logos/large-slate-medal.png`} alt="Navy" />}
+                      icon={
+                        <Image
+                          src={`${s3}branding/logos/large-slate-medal.png`}
+                          alt="Navy"
+                          width={300}
+                          height={404}
+                        />
+                      }
                       isImageFirst={false}
                       label="Navy Badge"
                     />
@@ -221,9 +272,11 @@ function LogoSection() {
                   <li>
                     <Badge
                       icon={
-                        <img
+                        <Image
                           src={`${s3}branding/logos/large-blue-logo.png`}
                           alt="Original Large Logo"
+                          width={384}
+                          height={70}
                         />
                       }
                       isImageFirst={false}
@@ -234,7 +287,12 @@ function LogoSection() {
                   <li>
                     <Badge
                       icon={
-                        <img src={`${s3}branding/logos/large-red-logo.png`} alt="Red Large Logo" />
+                        <Image
+                          src={`${s3}branding/logos/large-red-logo.png`}
+                          alt="Red Large Logo"
+                          width={384}
+                          height={70}
+                        />
                       }
                       isImageFirst={false}
                       label="Red"
@@ -244,9 +302,11 @@ function LogoSection() {
                   <li>
                     <Badge
                       icon={
-                        <img
+                        <Image
                           src={`${s3}branding/logos/large-logo.png`}
                           alt="Large Unaccented Logo"
+                          width={384}
+                          height={70}
                         />
                       }
                       isImageFirst={false}
@@ -257,9 +317,11 @@ function LogoSection() {
                   <li>
                     <Badge
                       icon={
-                        <img
+                        <Image
                           src={`${s3}branding/logos/large-white-logo.png`}
                           alt="Large White Accented Logo"
+                          width={384}
+                          height={70}
                         />
                       }
                       isImageFirst={false}

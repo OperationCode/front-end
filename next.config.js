@@ -29,7 +29,7 @@ const nextConfig = withPlugins([withBundleAnalyzer], {
   },
 
   images: {
-    domains: [s3hostName, 'user-images.githubusercontent.com'],
+    domains: [s3hostName, 'user-images.githubusercontent.com', 'ssl-static.libsyn.com'],
   },
 
   /** @see https://nextjs.org/docs/api-reference/next.config.js/rewrites */
