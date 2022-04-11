@@ -50,7 +50,7 @@ describe(`profile/update (from login)`, () => {
     goToNextStep('Military Details');
     goToNextStep('Technology');
     cy.findByTestId(MULTI_STEP_SUBMIT_BUTTON).click();
-    cy.url({ timeout: 20000 }).should('contain', '/profile');
+    cy.url().should('contain', '/profile');
     cy.url().should('not.contain', '/profile/update');
   });
 

@@ -3,8 +3,7 @@ import { validationErrorMessages } from 'common/constants/messages';
 import existingUser from 'test-utils/mocks/existingUser';
 import mockUser from 'test-utils/mockGenerators/mockUser';
 
-let validUser = null;
-
+const validUser = mockUser();
 const inputFields = {
   email: 'Email*',
   confirmEmail: 'Confirm Email*',
@@ -53,8 +52,6 @@ describe('join', () => {
 
     cy.getCookies().should('have.length', 0);
     cy.get('h1').should('have.text', 'Join');
-
-    validUser = mockUser();
   });
 
   /**
@@ -432,9 +429,9 @@ describe('join', () => {
     cy.findByLabelText(inputFields.lastName).type(validUser.lastName);
     cy.findByLabelText(inputFields.zipcode).type(validUser.zipcode);
     cy.findByLabelText(inputFields.codeOfConduct).type(validUser.codeOfConduct);
-    cy.findByTestId('BUTTON').click();
+    cy.findByText('Submit').click();
 
-    cy.url({ timeout: 20000 }).should('contain', '/profile/update');
+    cy.url({ timeout: 10000 }).should('contain', '/profile/update');
     cy.get('h1').should('have.text', 'Update Profile');
 
     cy.getCookies().then(([tokenCookie]) => {

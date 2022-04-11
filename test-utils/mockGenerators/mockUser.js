@@ -17,9 +17,8 @@ export default function mockUser({
     hasOneNumber: true,
   },
 } = {}) {
-  // running into duplicate users in e2e 'should be able to register with valid data' test
-  const firstName = faker.name.firstName() + Math.round(Math.random() * 10000);
-  const lastName = faker.name.lastName() + Math.round(Math.random() * 10000);
+  const firstName = faker.name.firstName();
+  const lastName = faker.name.lastName();
   const email = desiredEmail || faker.internet.email(firstName, lastName, 'operationcode.org');
   const password = mockPassword({
     hasMinimumLength: passwordOptions.hasMinimumLength,
