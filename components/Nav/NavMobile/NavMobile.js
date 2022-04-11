@@ -5,6 +5,7 @@ import { s3 } from 'common/constants/urls';
 import HamburgerIcon from 'static/images/icons/hamburger.svg';
 import CloseButton from 'components/Buttons/CloseButton/CloseButton';
 import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
+import Image from 'next/image';
 import styles from './NavMobile.module.css';
 
 NavMobile.propTypes = {
@@ -34,11 +35,14 @@ function NavMobile({ isOpen, openMenu, closeMenu, navItems }) {
           type="button"
           name="dropdown"
         >
-          <img
-            src={`${s3}branding/logos/small-blue-logo.png`}
-            alt="Operation Code Logo"
-            className={styles.logo}
-          />
+          <div className={styles.logo}>
+            <Image
+              src={`${s3}branding/logos/small-blue-logo.png`}
+              alt="Operation Code Logo"
+              width={224}
+              height={42}
+            />
+          </div>
         </button>
       </Link>
 

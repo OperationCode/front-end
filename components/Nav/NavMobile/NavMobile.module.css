@@ -25,9 +25,10 @@
 }
 
 .logo {
-  max-width: 100%;
-  max-height: calc(var(--navBarHeight) - 20px);
-  vertical-align: middle;
+  align-self: center;
+  margin-left: 1rem;
+  display: flex;
+  justify-content: center;
 }
 
 .hamburger {

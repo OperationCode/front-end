@@ -3,6 +3,7 @@ import Modal from 'components/Modal/Modal';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 import WarningSign from 'static/images/icons/FontAwesome/exclamation-triangle-solid.svg';
 import { s3 } from 'common/constants/urls';
+import Image from 'next/image';
 import styles from './UpgradeBrowserOverlay.module.css';
 
 function UpgradeBrowserOverlay() {
@@ -53,7 +54,13 @@ function UpgradeBrowserOverlay() {
               hasIcon={false}
               href={downloadLink}
             >
-              <img className={styles.browserImage} src={imageSource} alt={`${browserName} Logo`} />
+              <Image
+                className={styles.browserImage}
+                src={imageSource}
+                alt={`${browserName} Logo`}
+                width={100}
+                height={100}
+              />
             </OutboundLink>
           </div>
         ))}
