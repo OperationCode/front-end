@@ -429,9 +429,9 @@ describe('join', () => {
     cy.findByLabelText(inputFields.lastName).type(validUser.lastName);
     cy.findByLabelText(inputFields.zipcode).type(validUser.zipcode);
     cy.findByLabelText(inputFields.codeOfConduct).type(validUser.codeOfConduct);
-    cy.findByText('Submit').click();
+    cy.findByTestId('BUTTON').click();
 
-    cy.url({ timeout: 20000 }).should('contain', '/profile/update');
+    cy.url({ timeout: 10000 }).should('contain', '/profile/update');
     cy.get('h1').should('have.text', 'Update Profile');
 
     cy.getCookies().then(([tokenCookie]) => {
