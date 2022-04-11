@@ -15,9 +15,8 @@ import {
   LOGIN_BUTTON,
   LOGIN_FORM,
   BUTTON,
-  INPUT,
   MODAL_CONTENT,
-  MODAL_OVERLAY,
+  CLOSE_BUTTON,
 } from 'common/constants/testIDs';
 import existingUser from 'test-utils/mocks/existingUser';
 import noop from 'lodash/noop';
@@ -234,10 +233,9 @@ describe('resources', () => {
   it('opens and closes login modal', () => {
     cy.findByTestId(BUTTON).click();
     cy.findByTestId(MODAL_CONTENT).should('exist').and('be.visible');
-    cy.findAllByTestId(INPUT).should('have.length', 3);
     cy.findByTestId(LOGIN_BUTTON).should('exist').and('be.visible');
 
-    cy.findByTestId(MODAL_OVERLAY).click({ force: true });
+    cy.findByTestId(CLOSE_BUTTON).click();
     cy.findAllByTestId(MODAL_CONTENT).should('not.exist');
   });
 

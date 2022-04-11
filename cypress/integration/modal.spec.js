@@ -29,5 +29,6 @@ describe('when the server responds successfully', () => {
     cy.findByTestId(MODAL_CONTENT).should('exist').and('be.visible');
     cy.findByTestId(MODAL_OVERLAY).click({ force: true });
     cy.findByTestId(MODAL_CONTENT).should('not.exist');
+    cy.findByTestId(MODAL_OVERLAY).should('not.exist');
   });
 });

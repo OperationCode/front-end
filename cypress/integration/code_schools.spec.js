@@ -1,6 +1,6 @@
 import {
   MODAL_CONTENT,
-  MODAL_OVERLAY,
+  CLOSE_BUTTON,
   SCHOOL_CARD_LOCATION_LIST_MODAL_BUTTON,
   SCHOOL_LOCATION_LIST_ITEM,
 } from 'common/constants/testIDs';
@@ -71,9 +71,8 @@ describe('code schools', () => {
       cy.findAllByTestId(SCHOOL_CARD_LOCATION_LIST_MODAL_BUTTON).first().click();
       cy.findByTestId(MODAL_CONTENT).should('exist').and('be.visible');
       cy.findAllByTestId(SCHOOL_LOCATION_LIST_ITEM).should('have.length.greaterThan', 1);
-      cy.findByTestId(MODAL_OVERLAY).click({ force: true });
+      cy.findByTestId(CLOSE_BUTTON).click({ force: true });
       cy.findByTestId(MODAL_CONTENT).should('not.exist');
-      cy.findByTestId(MODAL_OVERLAY).should('not.exist');
     });
   });
 });
