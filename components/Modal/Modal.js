@@ -44,11 +44,12 @@ function Modal({
           className={ModalStyles.overlay}
           onClick={shouldCloseOnOverlayClick ? onRequestClose : undefined}
           data-testid={MODAL_OVERLAY}
-        />
+        >
+          <CloseButton theme="secondary" onClick={onRequestClose} />
+        </Dialog.Overlay>
         <Dialog.Content
           className={classNames(CardStyles.Card, className, ModalStyles.modalContent)}
         >
-          <CloseButton onClick={onRequestClose} />
           <div className={childrenClassName} data-testid={MODAL_CONTENT}>
             {children}
           </div>
