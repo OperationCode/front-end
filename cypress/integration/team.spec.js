@@ -6,8 +6,8 @@ describe('team', () => {
   });
 
   it('renders many board members', () => {
-    // 5 is arbitrary, but it confirms that the API is working
-    cy.get('article').should('have.length.greaterThan', 5);
+    // 3 is arbitrary, but it confirms that the API is working
+    cy.get('article').should('have.length.greaterThan', 3);
   });
 
   it('renders board members with their image on display', () => {
