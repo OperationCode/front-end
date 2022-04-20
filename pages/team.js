@@ -50,7 +50,11 @@ function Team({ teamMembers }) {
     <div className={styles.Team}>
       <Head title="Team" />
 
-      <HeroBanner title="The Team" backgroundImageSource={`${s3}redesign/heroBanners/team.jpg`} />
+      <HeroBanner
+        title="The Team"
+        backgroundImageSource={`${s3}oc_crew_nyc_2021.jpg`}
+        className={styles.hero}
+      />
 
       <Content
         title="Our Board"
