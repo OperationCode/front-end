@@ -100,7 +100,7 @@ const servicesGroup = {
 
 const aboutUsGroup = {
   ...about,
-  sublinks: [history, contact, faq, branding],
+  sublinks: [team, history, contact, faq, branding],
 };
 
 const getInvolvedGroup = {
