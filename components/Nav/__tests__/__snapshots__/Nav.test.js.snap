@@ -16,16 +16,8 @@ exports[`Nav should render with no props passed 1`] = `
           "name": "About Us",
         },
         Object {
-          "href": "/events",
-          "name": "Events",
-        },
-        Object {
           "href": "/get_involved",
           "name": "Get Involved",
-        },
-        Object {
-          "href": "/swag",
-          "name": "Merch Store",
         },
         Object {
           "href": "/events",
@@ -42,6 +34,22 @@ exports[`Nav should render with no props passed 1`] = `
         Object {
           "href": "/code_schools",
           "name": "Code Schools",
+        },
+        Object {
+          "href": "/sponsorship",
+          "name": "Sponsorship",
+        },
+        Object {
+          "href": "/swag",
+          "name": "Merch Store",
+        },
+        Object {
+          "href": "/contact",
+          "name": "Contact Us",
+        },
+        Object {
+          "href": "/donate",
+          "name": "Donate",
         },
       ]
     }
@@ -94,10 +102,6 @@ exports[`Nav should render with no props passed 1`] = `
                   "name": "History",
                 },
                 Object {
-                  "href": "/contact",
-                  "name": "Contact Us",
-                },
-                Object {
                   "href": "/faq",
                   "name": "FAQ",
                 },
@@ -114,10 +118,6 @@ exports[`Nav should render with no props passed 1`] = `
             name="Services"
             sublinks={
               Array [
-                Object {
-                  "href": "/swag",
-                  "name": "Merch Store",
-                },
                 Object {
                   "href": "/events",
                   "name": "Events",
@@ -146,6 +146,18 @@ exports[`Nav should render with no props passed 1`] = `
                 Object {
                   "href": "/sponsorship",
                   "name": "Sponsorship",
+                },
+                Object {
+                  "href": "/swag",
+                  "name": "Merch Store",
+                },
+                Object {
+                  "href": "/contact",
+                  "name": "Contact Us",
+                },
+                Object {
+                  "href": "/donate",
+                  "name": "Donate",
                 },
               ]
             }
