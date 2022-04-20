@@ -76,11 +76,6 @@ function NavMobile({ isOpen, openMenu, closeMenu, navItems }) {
                 </Link>
               </li>
             ))}
-            <li className={styles.li} key="Donate">
-              <Link href="/donate">
-                <a className={styles.link}>Donate</a>
-              </Link>
-            </li>
           </ul>
         </nav>
       )}

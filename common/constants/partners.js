@@ -25,12 +25,12 @@ const partners = [
     url: 'https://slack.com/?utm_source=operationcode',
     type: PARTNER_TYPES.PAID,
   },
-  {
-    name: 'Heroku',
-    logoSource: `${s3}partnerLogos/heroku.png`,
-    url: 'https://heroku.com/?utm_source=operationcode',
-    type: PARTNER_TYPES.KIND,
-  },
+  // {
+  //   name: 'Heroku',
+  //   logoSource: `${s3}partnerLogos/heroku.png`,
+  //   url: 'https://heroku.com/?utm_source=operationcode',
+  //   type: PARTNER_TYPES.KIND,
+  // },
   {
     name: '1Password',
     logoSource: `${s3}partnerLogos/1password.png`,
@@ -89,6 +89,18 @@ const partners = [
     name: 'Chromatic',
     logoSource: `${s3}partnerLogos/chromatic.png`,
     url: 'https://chromatic.com/?utm_source=operationcode',
+    type: PARTNER_TYPES.KIND,
+  },
+  {
+    name: 'Coursera',
+    logoSource: `${s3}partnerLogos/coursera.png`,
+    url: 'https://coursera.org/?utm_source=operationcode',
+    type: PARTNER_TYPES.KIND,
+  },
+  {
+    name: 'Team Treehouse',
+    logoSource: `${s3}partnerLogos/treehouse.png`,
+    url: 'https://teamtreehouse.com/?utm_source=operationcode',
     type: PARTNER_TYPES.KIND,
   },
 ];
