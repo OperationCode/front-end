@@ -45,7 +45,9 @@ function Modal({
           onClick={shouldCloseOnOverlayClick ? onRequestClose : undefined}
           data-testid={MODAL_OVERLAY}
         >
-          <CloseButton theme="secondary" onClick={onRequestClose} />
+          <Dialog.Close>
+            <CloseButton theme="secondary" onClick={onRequestClose} />
+          </Dialog.Close>
         </Dialog.Overlay>
         <Dialog.Content
           className={classNames(CardStyles.Card, className, ModalStyles.modalContent)}
