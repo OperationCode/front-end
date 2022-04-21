@@ -24,23 +24,19 @@ exports[`Modal should render with many props assigned 1`] = `
     style="pointer-events: auto;"
   >
     <button
+      class="CloseButton"
+      data-testid="CLOSE_BUTTON"
       type="button"
     >
-      <button
-        class="CloseButton"
-        data-testid="CLOSE_BUTTON"
-        type="button"
+      <span
+        class="ScreenReaderOnly"
+        data-testid="SCREEN_READER_ONLY"
       >
-        <span
-          class="ScreenReaderOnly"
-          data-testid="SCREEN_READER_ONLY"
-        >
-          Close
-        </span>
-        <svg
-          class="icon secondary"
-        />
-      </button>
+        Close
+      </span>
+      <svg
+        class="icon secondary"
+      />
     </button>
   </div>
   <div
