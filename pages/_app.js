@@ -17,7 +17,6 @@ import { clientTokens } from 'common/config/environment';
 import { gtag } from 'common/utils/thirdParty/gtag';
 import Nav from 'components/Nav/Nav';
 import Footer from 'components/Footer/Footer';
-import ReactModal from 'react-modal';
 import 'common/styles/globalStyles.css';
 
 const isProduction = process.env.NODE_ENV === 'production';
@@ -119,9 +118,6 @@ const App = ({ Component, pageProps, err }) => {
       .catch(() =>
         Sentry.captureException('FontFaceObserver took too long to resolve. Ignore this.'),
       );
-
-    // Accessibility: Tell application which DOM node to hide during focus-locking of modal
-    ReactModal.setAppElement('#__next');
   }, []);
 
   return (

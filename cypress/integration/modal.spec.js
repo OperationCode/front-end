@@ -1,6 +1,7 @@
 import {
   CLOSE_BUTTON,
   MODAL_CONTENT,
+  MODAL_OVERLAY,
   SCHOOL_CARD_LOCATION_LIST_MODAL_BUTTON,
 } from 'common/constants/testIDs';
 
@@ -21,5 +22,13 @@ describe('when the server responds successfully', () => {
     cy.findByTestId(MODAL_CONTENT).should('exist').and('be.visible');
     cy.findByTestId(CLOSE_BUTTON).click();
     cy.findByTestId(MODAL_CONTENT).should('not.exist');
+  });
+
+  it('closes the modal when the overlay is clicked', () => {
+    cy.findAllByTestId(SCHOOL_CARD_LOCATION_LIST_MODAL_BUTTON).first().click();
+    cy.findByTestId(MODAL_CONTENT).should('exist').and('be.visible');
+    cy.findByTestId(MODAL_OVERLAY).click({ force: true });
+    cy.findByTestId(MODAL_CONTENT).should('not.exist');
+    cy.findByTestId(MODAL_OVERLAY).should('not.exist');
   });
 });

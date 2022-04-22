@@ -14,6 +14,9 @@ import {
   DOWNVOTE_COUNT,
   LOGIN_BUTTON,
   LOGIN_FORM,
+  BUTTON,
+  MODAL_CONTENT,
+  CLOSE_BUTTON,
 } from 'common/constants/testIDs';
 import existingUser from 'test-utils/mocks/existingUser';
 import noop from 'lodash/noop';
@@ -225,6 +228,15 @@ describe('resources', () => {
     });
 
     checkAllCardsForDataAttribute(DATA_TEST_LANGUAGES, 'JavaScript');
+  });
+
+  it('opens and closes login modal', () => {
+    cy.findByTestId(BUTTON).click();
+    cy.findByTestId(MODAL_CONTENT).should('exist').and('be.visible');
+    cy.findByTestId(LOGIN_BUTTON).should('exist').and('be.visible');
+
+    cy.findByTestId(CLOSE_BUTTON).click();
+    cy.findAllByTestId(MODAL_CONTENT).should('not.exist');
   });
 
   /** @see https://github.com/OperationCode/resources_api/issues/401 */
