@@ -1,3 +1,7 @@
+.Team .hero {
+  background-position: center 30%;
+}
+
 .Team .teamMembers {
   display: flex;
   align-items: flex-start;
