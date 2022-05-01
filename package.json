@@ -83,7 +83,7 @@
     "@cypress/webpack-preprocessor": "^5.9.1",
     "@operation_code/eslint-plugin-custom-rules": "^1.0.1",
     "@storybook/addon-actions": "6.4.0-beta.19",
-    "@storybook/addon-essentials": "6.4.0-beta.19",
+    "@storybook/addon-essentials": "6.4.22",
     "@storybook/addon-links": "6.4.0-beta.19",
     "@storybook/addon-postcss": "^2.0.0",
     "@storybook/addons": "6.4.0-beta.19",
