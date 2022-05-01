@@ -145,7 +145,7 @@
     "stylelint": "^14.0.0",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-standard": "^23.0.0",
-    "stylelint-prettier": "^1.2.0",
+    "stylelint-prettier": "^2.0.0",
     "url-loader": "^4.1.1",
     "webpack": "^5.59.1"
   },
