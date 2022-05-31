@@ -18,7 +18,8 @@ function Branding() {
         <h6>
           For external organizations, corporate sponsors and press, please obtain specific guidance
           and approval from the Director of Communications prior to using Operation Code Branding on
-          public platforms. You may email your request to marketing@operationcode.org
+          public platforms. You may email your request to&nbsp;
+          <a href="mailto:marketing@operationcode.org">marketing@operationcode.org</a>
         </h6>
 
         <br />
