@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Router from 'next/router';
 import classNames from 'classnames';
-import { s3 } from 'common/constants/urls';
 import Image from 'next/image';
 
 import {
@@ -16,6 +15,13 @@ import NavMobile from 'components/Nav/NavMobile/NavMobile';
 import { hasValidAuthToken } from 'common/utils/cookie-utils';
 import UserLogo from '../../public/static/images/icons/FontAwesome/user.svg';
 import styles from './Nav.module.css';
+
+const isLoggedIn = hasValidAuthToken();
+
+const mobileNavItems = isLoggedIn ? mobileLoggedInNavItems : mobileLoggedOutNavItems;
+
+// non-mobile
+const navItems = isLoggedIn ? loggedInNavItems : loggedOutNavItems;
 
 export const Nav = () => {
   const [isMobileNavOpen, setMobileNavOpen] = useState(false);
@@ -43,13 +49,6 @@ export const Nav = () => {
     };
   }, []);
 
-  const isLoggedIn = hasValidAuthToken();
-
-  const mobileNavItems = isLoggedIn ? mobileLoggedInNavItems : mobileLoggedOutNavItems;
-
-  // non-mobile
-  const navItems = isLoggedIn ? loggedInNavItems : loggedOutNavItems;
-
   return (
     <>
       {/* Always rendered, but conditionally displayed via media query */}
@@ -69,12 +68,7 @@ export const Nav = () => {
                 onContextMenu={redirectRightClick}
               >
                 <div className={styles.logo}>
-                  <Image
-                    src={`${s3}branding/logos/small-blue-logo.png`}
-                    alt="Operation Code Logo"
-                    width={224}
-                    height={42}
-                  />
+                  <Image src="/logo.svg" alt="Operation Code Logo" width={224} height={42} />
                 </div>
               </a>
             </Link>
