@@ -41,8 +41,8 @@
 }
 
 .logoLink {
-  height: calc(var(--navBarHeight) - 15px);
-  margin: 7.5px 15px;
+  height: calc(var(--navBarHeight) - 25px);
+  margin: 10px 15px;
 }
 
 .logo {
