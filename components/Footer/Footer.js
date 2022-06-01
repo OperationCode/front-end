@@ -5,6 +5,7 @@ import SocialMedia from 'components/SocialMedia/SocialMedia';
 import { footerItems } from 'common/constants/navigation';
 import { s3 } from 'common/constants/urls';
 import Image from 'next/image';
+import { Logo } from 'components/Branding/Logo/Logo';
 import styles from './Footer.module.css';
 
 function Footer() {
@@ -34,11 +35,19 @@ function Footer() {
         <div className={classNames(styles.logoGrouping)}>
           <Link href="/" key="Home">
             <a className={classNames(styles.logoLink, styles.link)}>
-              <Image
-                src={`${s3}branding/logos/small-blue-logo.png`}
-                alt="Operation Code Logo"
-                width={318}
-                height={60}
+              <Logo
+                operationFill={() => {
+                  return { dark: '#e2e2e2', light: '#f7f7f7' };
+                }}
+                codeFill={() => {
+                  return { dark: '#e2e2e2', light: '#f7f7f7' };
+                }}
+                medalFill={() => {
+                  return { dark: '#e2e2e2', light: '#f7f7f7' };
+                }}
+                starFill={() => {
+                  return { dark: '#e2e2e2', light: '#252E3E' };
+                }}
               />
             </a>
           </Link>

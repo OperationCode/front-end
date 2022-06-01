@@ -3,6 +3,7 @@ import Badge from 'components/Badge/Badge';
 import Content from 'components/Content/Content';
 import { s3 } from 'common/constants/urls';
 import Image from 'next/image';
+import Logo from 'components/Branding/Logo/Logo';
 import styles from './LogoSection.module.css';
 
 function LogoSection() {
@@ -15,12 +16,12 @@ function LogoSection() {
         <ul className={styles.logoSizeList}>
           {/* - SMALL LOGOS - */}
           <li className={classNames(styles.logoSizeListItem, styles.smallLogos)}>
-            <h5>Small Logos</h5>
+            <h5>Logos</h5>
             <p>
-              For use when Operation Code&apos;s logo name is between 0-1 inch in height. In most
-              cases, use the Original Small Logo. The Stacked Small Logo is to be used where
-              graphics needs are larger in vertical height than horizontal width with the Operation
-              Code logo name still under 1 inch in height.
+              {/* eslint-disable-next-line max-len */}
+              Operation Code&apos;s logo is provided as code itself. It is an SVG grouped into four
+              color fill areas. SVG is appropriate to use for small and large formats where
+              horizontal space is needed.
             </p>
 
             <ul className={styles.logoTypeList}>
@@ -28,27 +29,18 @@ function LogoSection() {
                 <h6>TYPICAL</h6>
                 <ul className={styles.badgeList}>
                   <li>
-                    <Badge
-                      icon={
-                        <Image
-                          src={`${s3}branding/logos/small-blue-logo.png`}
-                          alt="Small Blue Accented Logo"
-                          width={318}
-                          height={60}
-                        />
-                      }
-                      isImageFirst={false}
-                      label="Blue"
-                    />
+                    <Badge icon={<Logo />} isImageFirst={false} label="Blue" />
                   </li>
                   <li>
                     <Badge
                       icon={
-                        <Image
-                          src={`${s3}branding/logos/small-red-logo.png`}
-                          alt="Small Red Accented Logo"
-                          width={318}
-                          height={60}
+                        <Logo
+                          operationFill={() => {
+                            return { dark: '#45576a', light: '#45576a' };
+                          }}
+                          codeFill={() => {
+                            return { dark: '#d1665a', light: '#d1665a' };
+                          }}
                         />
                       }
                       isImageFirst={false}
@@ -58,11 +50,16 @@ function LogoSection() {
                   <li>
                     <Badge
                       icon={
-                        <Image
-                          src={`${s3}branding/logos/small-logo.png`}
-                          alt="Small Unaccented Logo"
-                          width={318}
-                          height={60}
+                        <Logo
+                          operationFill={() => {
+                            return { dark: '#e2e2e2', light: '#45576a' };
+                          }}
+                          codeFill={() => {
+                            return { dark: '#e2e2e2', light: '#45576a' };
+                          }}
+                          medalFill={() => {
+                            return { dark: '#e2e2e2', light: '#45576a' };
+                          }}
                         />
                       }
                       isImageFirst={false}
@@ -72,11 +69,19 @@ function LogoSection() {
                   <li>
                     <Badge
                       icon={
-                        <Image
-                          src={`${s3}branding/logos/small-white-logo.png`}
-                          alt="Small White Accented Logo"
-                          width={318}
-                          height={60}
+                        <Logo
+                          operationFill={() => {
+                            return { dark: '#e2e2e2', light: '#f7f7f7' };
+                          }}
+                          codeFill={() => {
+                            return { dark: '#e2e2e2', light: '#f7f7f7' };
+                          }}
+                          medalFill={() => {
+                            return { dark: '#e2e2e2', light: '#f7f7f7' };
+                          }}
+                          starFill={() => {
+                            return { dark: '#e2e2e2', light: '#e2e2e2' };
+                          }}
                         />
                       }
                       isImageFirst={false}
@@ -153,11 +158,14 @@ function LogoSection() {
                   <li>
                     <Badge
                       icon={
-                        <Image
-                          src={`${s3}branding/logos/large-blue-medal.png`}
-                          alt="OC Blue Medal"
-                          width={300}
-                          height={404}
+                        <Logo
+                          markOnly
+                          medalFill={() => {
+                            return { dark: '#3ED6F0', light: '#3ED6F0' };
+                          }}
+                          starFill={() => {
+                            return { dark: '#f7f7f7', light: '#f7f7f7' };
+                          }}
                         />
                       }
                       isImageFirst={false}
@@ -167,11 +175,14 @@ function LogoSection() {
                   <li>
                     <Badge
                       icon={
-                        <Image
-                          src={`${s3}branding/logos/large-red-medal.png`}
-                          alt="Red Medal"
-                          width={300}
-                          height={404}
+                        <Logo
+                          markOnly
+                          medalFill={() => {
+                            return { dark: '#d1665a', light: '#d1665a' };
+                          }}
+                          starFill={() => {
+                            return { dark: '#f7f7f7', light: '#f7f7f7' };
+                          }}
                         />
                       }
                       isImageFirst={false}
@@ -181,151 +192,18 @@ function LogoSection() {
                   <li>
                     <Badge
                       icon={
-                        <Image
-                          src={`${s3}branding/logos/large-slate-medal.png`}
-                          alt="Navy Medal"
-                          width={300}
-                          height={404}
+                        <Logo
+                          markOnly
+                          medalFill={() => {
+                            return { dark: '#45576a', light: '#45576a' };
+                          }}
+                          starFill={() => {
+                            return { dark: '#f7f7f7', light: '#f7f7f7' };
+                          }}
                         />
                       }
                       isImageFirst={false}
                       label="Navy"
-                    />
-                  </li>
-                </ul>
-              </li>
-
-              <li className={styles.logoTypeListItem}>
-                <h6>Badges</h6>
-                <p>
-                  You may also use badges as a profile photo or thumbnail. Badges should be used to
-                  accompany corporate sponsors or alliance partnerships on shared branding. Use the
-                  original OC Blue Badge in most cases, except the Red Badge for special events and
-                  holidays (Thanksgiving, fall and Christmas). The Navy Badge may be used with light
-                  backgrounds and bright colored backgrounds.
-                </p>
-                <ul className={styles.badgeList}>
-                  <li>
-                    <Badge
-                      icon={
-                        <Image
-                          src={`${s3}branding/logos/large-blue-medal.png`}
-                          alt="OC Blue Badge"
-                          width={300}
-                          height={404}
-                        />
-                      }
-                      isImageFirst={false}
-                      label="OC Blue Badge"
-                    />
-                  </li>
-
-                  <li>
-                    <Badge
-                      icon={
-                        <Image
-                          src={`${s3}branding/logos/large-red-medal.png`}
-                          alt="Red Badge"
-                          width={300}
-                          height={404}
-                        />
-                      }
-                      isImageFirst={false}
-                      label="Red Badge"
-                    />
-                  </li>
-
-                  <li>
-                    <Badge
-                      icon={
-                        <Image
-                          src={`${s3}branding/logos/large-slate-medal.png`}
-                          alt="Navy"
-                          width={300}
-                          height={404}
-                        />
-                      }
-                      isImageFirst={false}
-                      label="Navy Badge"
-                    />
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-
-          {/* - LARGE LOGOS - */}
-          <li className={classNames(styles.logoSizeListItem, styles.largeLogos)}>
-            <h5>Large Logos</h5>
-            <p>
-              Use the Original Large Logo in almost all cases above 1 inch in height. The Red Large
-              Logo is to be used in special events (such as Thanksgiving, fall or Christmas), and
-              the Light Large Logo is to be used with dark backgrounds or bright colored
-              backgrounds.
-            </p>
-
-            <ul className={styles.logoTypeList}>
-              <li className={styles.logoTypeListItem}>
-                <h6>TYPICAL</h6>
-
-                <ul className={styles.badgeList}>
-                  <li>
-                    <Badge
-                      icon={
-                        <Image
-                          src={`${s3}branding/logos/large-blue-logo.png`}
-                          alt="Original Large Logo"
-                          width={384}
-                          height={70}
-                        />
-                      }
-                      isImageFirst={false}
-                      label="Blue"
-                    />
-                  </li>
-
-                  <li>
-                    <Badge
-                      icon={
-                        <Image
-                          src={`${s3}branding/logos/large-red-logo.png`}
-                          alt="Red Large Logo"
-                          width={384}
-                          height={70}
-                        />
-                      }
-                      isImageFirst={false}
-                      label="Red"
-                    />
-                  </li>
-
-                  <li>
-                    <Badge
-                      icon={
-                        <Image
-                          src={`${s3}branding/logos/large-logo.png`}
-                          alt="Large Unaccented Logo"
-                          width={384}
-                          height={70}
-                        />
-                      }
-                      isImageFirst={false}
-                      label="Slate"
-                    />
-                  </li>
-
-                  <li>
-                    <Badge
-                      icon={
-                        <Image
-                          src={`${s3}branding/logos/large-white-logo.png`}
-                          alt="Large White Accented Logo"
-                          width={384}
-                          height={70}
-                        />
-                      }
-                      isImageFirst={false}
-                      label="White"
                     />
                   </li>
                 </ul>

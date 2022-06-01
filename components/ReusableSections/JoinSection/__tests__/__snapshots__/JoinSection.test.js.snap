@@ -2,56 +2,52 @@
 
 exports[`JoinSection should render when not logged in 1`] = `
 <div
-  className="Container white"
+  className="containerBottom Container white"
   data-testid="Join Section"
 >
   <div
-    className="content"
+    className="headingContainer"
   >
-    <div
-      className="headingContainer"
+    <h3
+      className="Heading"
     >
-      <h3
-        className="Heading"
+      <div
+        className="hashLinkContainer"
+        data-testid="Heading Content join-our-thriving-community-link"
       >
-        <div
-          className="hashLinkContainer"
-          data-testid="Heading Content join-our-thriving-community-link"
+        <a
+          data-testid="Hash Link"
+          href="#join-our-thriving-community-link"
+          id="join-our-thriving-community-link"
         >
-          <a
-            data-testid="Hash Link"
-            href="#join-our-thriving-community-link"
-            id="join-our-thriving-community-link"
+          <span
+            className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
           >
-            <span
-              className="ScreenReaderOnly"
-              data-testid="SCREEN_READER_ONLY"
-            >
-              Scroll Link for 
-              Join Our Thriving Community
-            </span>
-            <svg
-              className="icon"
-            />
-          </a>
-          Join Our Thriving Community
-        </div>
-      </h3>
-    </div>
-    <p>
-      Are you ready to begin your journey towards a career in tech? Get the support you need by joining our members-only Slack community!
-    </p>
-    <a
-      className="Button verticalSpacing secondary"
-      href="/join"
-      onClick={[Function]}
-      onMouseEnter={[Function]}
-    >
-      Register Now
-    </a>
-    <p>
-      Slack is a community based collaboration tool where all the magic happens!
-    </p>
+            Scroll Link for 
+            Join Our Thriving Community
+          </span>
+          <svg
+            className="icon"
+          />
+        </a>
+        Join Our Thriving Community
+      </div>
+    </h3>
+  </div>
+  <p>
+    Are you ready to begin your journey towards a career in tech? Get the support you need by joining our members-only Slack community!
+  </p>
+  <a
+    className="Button verticalSpacing secondary"
+    href="/join"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+  >
+    Register Now
+  </a>
+  <p>
+    Slack is a community based collaboration tool where all the magic happens!  
     <a
       href="https://get.slack.help/hc/en-us/categories/360000049043-Getting-Started"
       onClick={[Function]}
@@ -69,6 +65,6 @@ exports[`JoinSection should render when not logged in 1`] = `
         className="externalLinkIcon"
       />
     </a>
-  </div>
+  </p>
 </div>
 `;

@@ -9,16 +9,12 @@ exports[`HeroBanner should render with many props assigned 1`] = `
     }
   }
 >
-  <div
-    className="content"
+  <h1
+    className="underline"
   >
-    <h1
-      className="underline"
-    >
-      Test
-    </h1>
-    Testing 123
-  </div>
+    Test
+  </h1>
+  Testing 123
 </div>
 `;
 
@@ -26,14 +22,10 @@ exports[`HeroBanner should render with required props 1`] = `
 <div
   className="HeroBanner smallHero Container secondary"
 >
-  <div
-    className="content"
+  <h1
+    className=""
   >
-    <h1
-      className=""
-    >
-      Test
-    </h1>
-  </div>
+    Test
+  </h1>
 </div>
 `;

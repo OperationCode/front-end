@@ -41,14 +41,14 @@
 }
 
 .logoLink {
-  height: var(--navBarHeight);
+  height: calc(var(--navBarHeight) - 15px);
+  margin: 7.5px 15px;
 }
 
 .logo {
   align-self: center;
   margin-left: 1rem;
   display: flex;
-  justify-content: center;
 }
 
 .navIcon {

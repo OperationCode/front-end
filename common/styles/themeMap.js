@@ -1,5 +1,7 @@
 export const primary = "#3ed6f0";
 export const secondary = "#252e3e";
+export const slate = '#45576a';
+export const red = '#d1665a';
 export const gray = "#e2e2e2";
 export const white = "#f7f7f7";
 export const rgbValuesPrimary = "62, 214, 240";

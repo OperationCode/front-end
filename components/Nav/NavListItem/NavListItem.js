@@ -20,7 +20,7 @@ NavListItem.propTypes = {
 
 NavListItem.defaultProps = {
   sublinks: [],
-  icon: null,
+  icon: <></>,
 };
 
 function NavListItem({ sublinks, href, name, icon }) {

@@ -6,53 +6,49 @@ exports[`Content should render with many props assigned 1`] = `
   id="test-id"
 >
   <div
-    className="content"
+    className="headingContainer"
   >
-    <div
-      className="headingContainer"
+    <h3
+      className="Heading underline"
     >
-      <h3
-        className="Heading underline"
+      <div
+        className="hashLinkContainer"
+        data-testid="Heading Content testing-link"
       >
-        <div
-          className="hashLinkContainer"
-          data-testid="Heading Content testing-link"
+        <a
+          data-testid="Hash Link"
+          href="#testing-link"
+          id="testing-link"
         >
-          <a
-            data-testid="Hash Link"
-            href="#testing-link"
-            id="testing-link"
+          <span
+            className="ScreenReaderOnly"
+            data-testid="SCREEN_READER_ONLY"
           >
-            <span
-              className="ScreenReaderOnly"
-              data-testid="SCREEN_READER_ONLY"
-            >
-              Scroll Link for 
-              Testing!
-            </span>
-            <svg
-              className="icon"
-            />
-          </a>
-          Testing!
-        </div>
-      </h3>
-    </div>
-    <div
-      className="columnsContainer"
-    >
-      <div>
-        <p>
-          some multi-column test content
-        </p>
+            Scroll Link for 
+            Testing!
+          </span>
+          <svg
+            className="icon"
+          />
+        </a>
+        Testing!
       </div>
-      <h6>
-        OH YEAH!!
-      </h6>
-      <aside>
-        Testing...
-      </aside>
+    </h3>
+  </div>
+  <div
+    className="columnsContainer"
+  >
+    <div>
+      <p>
+        some multi-column test content
+      </p>
     </div>
+    <h6>
+      OH YEAH!!
+    </h6>
+    <aside>
+      Testing...
+    </aside>
   </div>
 </div>
 `;
@@ -62,16 +58,12 @@ exports[`Content should render with required props 1`] = `
   className="Container secondary"
 >
   <div
-    className="content"
+    className="columnsContainer"
   >
-    <div
-      className="columnsContainer"
-    >
-      <div>
-        <p>
-          some test content
-        </p>
-      </div>
+    <div>
+      <p>
+        some test content
+      </p>
     </div>
   </div>
 </div>

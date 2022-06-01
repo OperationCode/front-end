@@ -9,10 +9,6 @@ exports[`Container should render with many props assigned 1`] = `
     }
   }
 >
-  <div
-    className="content"
-  >
-    Test Children
-  </div>
+  Test Children
 </div>
 `;

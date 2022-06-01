@@ -1,8 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Router from 'next/router';
 import classNames from 'classnames';
-import Image from 'next/image';
 
 import {
   loggedInNavItems,
@@ -13,18 +12,19 @@ import {
 import NavListItem from 'components/Nav/NavListItem/NavListItem';
 import NavMobile from 'components/Nav/NavMobile/NavMobile';
 import { hasValidAuthToken } from 'common/utils/cookie-utils';
+import { Logo } from 'components/Branding/Logo/Logo';
 import UserLogo from '../../public/static/images/icons/FontAwesome/user.svg';
 import styles from './Nav.module.css';
 
-const isLoggedIn = hasValidAuthToken();
-
-const mobileNavItems = isLoggedIn ? mobileLoggedInNavItems : mobileLoggedOutNavItems;
-
-// non-mobile
-const navItems = isLoggedIn ? loggedInNavItems : loggedOutNavItems;
-
 export const Nav = () => {
   const [isMobileNavOpen, setMobileNavOpen] = useState(false);
+
+  const isLoggedIn = hasValidAuthToken();
+
+  const mobileNavItems = isLoggedIn ? mobileLoggedInNavItems : mobileLoggedOutNavItems;
+
+  // non-mobile
+  const navItems = isLoggedIn ? loggedInNavItems : loggedOutNavItems;
 
   const openMobileMenu = () => {
     setMobileNavOpen(true);
@@ -67,9 +67,7 @@ export const Nav = () => {
                 className={classNames(styles.logoLink, styles.link)}
                 onContextMenu={redirectRightClick}
               >
-                <div className={styles.logo}>
-                  <Image src="/logo.svg" alt="Operation Code Logo" width={224} height={42} />
-                </div>
+                <Logo />
               </a>
             </Link>
 
@@ -79,7 +77,7 @@ export const Nav = () => {
                   key={navItem.name}
                   {...navItem}
                   icon={
-                    navItem.icon === 'UserLogo' ? <UserLogo className={styles.navIcon} /> : null
+                    navItem.icon === 'UserLogo' ? <UserLogo className={styles.navIcon} /> : <></>
                   }
                 />
               ))}

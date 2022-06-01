@@ -14,7 +14,7 @@ function JoinSection() {
   }
 
   return (
-    <Container theme="white" data-testid="Join Section">
+    <Container theme="white" data-testid="Join Section" className={styles.containerBottom}>
       <Heading text="Join Our Thriving Community" headingLevel={3} />
 
       <p>
@@ -26,14 +26,15 @@ function JoinSection() {
         Register Now
       </LinkButton>
 
-      <p>Slack is a community based collaboration tool where all the magic happens!</p>
-
-      <OutboundLink
-        href="https://get.slack.help/hc/en-us/categories/360000049043-Getting-Started"
-        analyticsEventLabel="Learn More Slack"
-      >
-        Never heard of Slack before?
-      </OutboundLink>
+      <p>
+        Slack is a community based collaboration tool where all the magic happens! &nbsp;
+        <OutboundLink
+          href="https://get.slack.help/hc/en-us/categories/360000049043-Getting-Started"
+          analyticsEventLabel="Learn More Slack"
+        >
+          Never heard of Slack before?
+        </OutboundLink>
+      </p>
     </Container>
   );
 }
