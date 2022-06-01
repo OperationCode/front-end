@@ -6,29 +6,38 @@
   align-items: center;
   justify-content: center;
   min-height: 250px;
-  width: 100%;
-  fill: currentColor;
+  fill: currentcolor;
+  flex-direction: column;
+}
+
+@media screen and (--small-viewport) {
+  .Container > * {
+    width: 85%;
+    margin: 0 1.5rem;
+  }
+}
+
+@media screen and (min-width: 577px) {
+  .Container > * {
+    width: 85%;
+    margin: 0 1.5rem;
+  }
+}
+@media screen and (min-width: 769px) {
+  .Container > * {
+    max-width: 768px;
+  }
+}
+
+@media screen and (min-width: 993px) {
+  .Container > * {
+    max-width: 1160px;
+  }
 }
 
 /* need to have a higher order of specificity since HeroBanner fights it */
 .Container.fullViewportHeight {
   min-height: 100vh;
-}
-
-.content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 3.5rem auto;
-  width: 92.5%;
-  max-width: 1400px;
-}
-
-@media screen and (--small-viewport) {
-  .content {
-    width: 85%;
-  }
 }
 
 /* Dark Themes */

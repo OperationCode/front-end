@@ -49,7 +49,7 @@ function Container({
       style={dynamicBackgroundImage}
       {...customDataAttributes}
     >
-      <div className={styles.content}>{children}</div>
+      {children}
     </div>
   );
 }
