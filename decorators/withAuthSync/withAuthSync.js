@@ -5,6 +5,16 @@ import getDisplayName from 'decorators/getDisplayName';
 
 const withAuthSync = WrappedComponent =>
   class extends Component {
+    // eslint-disable-next-line react/sort-comp
+    constructor() {
+      super();
+      this.syncLogout = event => {
+        if (event.key === 'logout') {
+          Router.push('/login');
+        }
+      };
+    }
+
     static displayName = `withAuthSync(${getDisplayName(WrappedComponent)})`;
 
     static async getInitialProps(ctx) {
@@ -25,12 +35,6 @@ const withAuthSync = WrappedComponent =>
       window.removeEventListener('storage', this.syncLogout);
       window.localStorage.removeItem('logout');
     }
-
-    syncLogout = event => {
-      if (event.key === 'logout') {
-        Router.push('/login');
-      }
-    };
 
     render() {
       return <WrappedComponent {...this.props} />;
