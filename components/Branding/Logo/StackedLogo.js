@@ -1,10 +1,14 @@
 /* eslint-disable max-len */
-import { bool } from 'prop-types';
+import { bool, oneOf } from 'prop-types';
+import { Variants } from './Variants';
 
-export const StackedLogo = ({ darkMode, operationFill, starFill, codeFill }) => {
-  const operationFillColor = darkMode ? operationFill().dark : operationFill().light;
-  const starFillColor = darkMode ? starFill().dark : starFill().light;
-  const codeFillColor = darkMode ? codeFill().dark : codeFill().light;
+export const StackedLogo = ({ darkMode, variant }) => {
+  const theme = new Variants({ theme: variant });
+  const { operationFill, codeFill, starFill } = theme;
+
+  const operationFillColor = darkMode ? operationFill.dark : operationFill.light;
+  const codeFillColor = darkMode ? codeFill.dark : codeFill.light;
+  const starFillColor = darkMode ? starFill.dark : starFill.light;
 
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 609 197">
@@ -88,31 +92,12 @@ export const StackedLogo = ({ darkMode, operationFill, starFill, codeFill }) => 
 
 StackedLogo.propTypes = {
   darkMode: bool,
-  operationFill: () => {},
-  starFill: () => {},
-  codeFill: () => {},
+  variant: oneOf(['slate', 'blue', 'red', 'white']),
 };
 
 StackedLogo.defaultProps = {
   darkMode: false,
-  operationFill: () => {
-    return {
-      dark: '#f7f7f7',
-      light: '#45576a',
-    };
-  },
-  codeFill: () => {
-    return {
-      dark: '#3ED6F0',
-      light: '#3ED6F0',
-    };
-  },
-  starFill: () => {
-    return {
-      dark: 'rgba(248,248,248, .99)',
-      light: 'rgba(248,248,248, .99)',
-    };
-  },
+  variant: 'blue',
 };
 
 export default StackedLogo;

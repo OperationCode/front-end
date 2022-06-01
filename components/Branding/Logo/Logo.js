@@ -1,20 +1,24 @@
 /* eslint-disable max-len */
-import { bool } from 'prop-types';
+import { bool, oneOf } from 'prop-types';
+import { Variants } from './Variants';
 import styles from './Logo.module.css';
 
-export const Logo = ({ darkMode, markOnly, operationFill, codeFill, starFill, medalFill }) => {
-  const operationFillColor = darkMode ? operationFill().dark : operationFill().light;
-  const codeFillColor = darkMode ? codeFill().dark : codeFill().light;
-  const starFillColor = darkMode ? starFill().dark : starFill().light;
-  const medalFillColor = darkMode ? medalFill().dark : medalFill().light;
-  const markOnlyViewbox = markOnly ? '0 0 70 95.75' : '0 0 636.11 107';
+export const Logo = ({ darkMode, medalOnly, variant }) => {
+  const theme = new Variants({ theme: variant, medalOnly });
+  const { operationFill, codeFill, medalFill, starFill } = theme;
+
+  const operationFillColor = darkMode ? operationFill.dark : operationFill.light;
+  const codeFillColor = darkMode ? codeFill.dark : codeFill.light;
+  const starFillColor = darkMode ? starFill.dark : starFill.light;
+  const medalFillColor = darkMode ? medalFill.dark : medalFill.light;
+  const markOnlyViewbox = medalOnly ? '0 0 70 95.75' : '0 0 636.11 107';
 
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox={markOnlyViewbox}>
       <g id="Layer_2" data-name="Layer 2">
         <g id="Artboard_1" data-name="Artboard 1">
           <g id="Large_logo" data-name="Large logo">
-            <g id="letters" className={markOnly ? styles.hide : null}>
+            <g id="letters" className={medalOnly ? styles.hide : null}>
               <g id="operation">
                 <path
                   fill={operationFillColor}
@@ -91,40 +95,14 @@ export const Logo = ({ darkMode, markOnly, operationFill, codeFill, starFill, me
 
 Logo.propTypes = {
   darkMode: bool,
-  markOnly: bool,
-  operationFill: () => {},
-  medalFill: () => {},
-  codeFill: () => {},
-  starFill: () => {},
+  medalOnly: bool,
+  variant: oneOf(['slate', 'blue', 'red', 'white']),
 };
 
 Logo.defaultProps = {
   darkMode: false,
-  markOnly: false,
-  codeFill: () => {
-    return {
-      dark: '#3ED6F0',
-      light: '#3ED6F0',
-    };
-  },
-  operationFill: () => {
-    return {
-      dark: '#f7f7f7',
-      light: '#45576a',
-    };
-  },
-  medalFill: () => {
-    return {
-      dark: '#f7f7f7',
-      light: '#45576a',
-    };
-  },
-  starFill: () => {
-    return {
-      dark: 'rgba(248,248,248, .99)',
-      light: 'rgba(248,248,248, .99)',
-    };
-  },
+  medalOnly: false,
+  variant: 'blue',
 };
 
 export default Logo;

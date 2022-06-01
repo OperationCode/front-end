@@ -5,7 +5,8 @@
   width: 100%;
 }
 
-.logoSizeList img {
+.logoSizeList img,
+.logoSizeList svg {
   height: auto;
   max-width: 100%;
 }
@@ -21,14 +22,24 @@
 }
 
 .badgeList {
-  display: flex;
+  display: inline-flex;
   justify-content: space-around;
   align-items: center;
-  flex-wrap: wrap;
   list-style: none;
   margin: 0;
   padding: 0;
   border-bottom: 1px solid #bbbbbb;
+  width: 100%;
+  flex-flow: row wrap;
+}
+@media screen and (min-width: var(--largeViewportWidth)) {
+  .badgeList dt {
+    max-width: 33%;
+  }
+}
+
+.badgeList dt figure {
+  max-height: 405px;
 }
 
 .largeLogos .badgeList {

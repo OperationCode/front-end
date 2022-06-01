@@ -35,20 +35,7 @@ function Footer() {
         <div className={classNames(styles.logoGrouping)}>
           <Link href="/" key="Home">
             <a className={classNames(styles.logoLink, styles.link)}>
-              <Logo
-                operationFill={() => {
-                  return { dark: '#e2e2e2', light: '#f7f7f7' };
-                }}
-                codeFill={() => {
-                  return { dark: '#e2e2e2', light: '#f7f7f7' };
-                }}
-                medalFill={() => {
-                  return { dark: '#e2e2e2', light: '#f7f7f7' };
-                }}
-                starFill={() => {
-                  return { dark: '#e2e2e2', light: '#252E3E' };
-                }}
-              />
+              <Logo variant="white" />
             </a>
           </Link>
         </div>
