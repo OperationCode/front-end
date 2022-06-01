@@ -23,7 +23,6 @@ export const Nav = () => {
 
   const mobileNavItems = isLoggedIn ? mobileLoggedInNavItems : mobileLoggedOutNavItems;
 
-  // non-mobile
   const navItems = isLoggedIn ? loggedInNavItems : loggedOutNavItems;
 
   const openMobileMenu = () => {
