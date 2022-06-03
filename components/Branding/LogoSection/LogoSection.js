@@ -18,7 +18,6 @@ function LogoSection() {
           <li className={classNames(styles.logoSizeListItem, styles.smallLogos)}>
             <h5>Logos</h5>
             <p>
-              {/* eslint-disable-next-line max-len */}
               Operation Code&apos;s logo is provided as code itself. It is an SVG grouped into four
               color fill areas. SVG is appropriate to use for small and large formats where
               horizontal space is needed.
