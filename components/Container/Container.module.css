@@ -10,26 +10,20 @@
   flex-direction: column;
 }
 
-@media screen and (--small-viewport) {
+@media screen and (max-width: var(--smallViewportWidth)) {
   .Container > * {
     width: 85%;
     margin: 0 1.5rem;
   }
 }
 
-@media screen and (min-width: 577px) {
-  .Container > * {
-    width: 85%;
-    margin: 0 1.5rem;
-  }
-}
-@media screen and (min-width: 769px) {
+@media screen and (min-width: var(--mediumViewportWidth)) {
   .Container > * {
     max-width: 768px;
   }
 }
 
-@media screen and (min-width: 993px) {
+@media screen and (min-width: var(--largeViewportWidth)) {
   .Container > * {
     max-width: 1160px;
   }
