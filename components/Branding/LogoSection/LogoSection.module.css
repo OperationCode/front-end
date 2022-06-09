@@ -11,7 +11,8 @@
   max-width: 100%;
 }
 
-.logoSizeList ul {
+.logoSizeList ul,
+.logoSizeList dl {
   margin-bottom: 1.5rem;
 }
 
@@ -29,13 +30,12 @@
   margin: 0;
   padding: 0;
   border-bottom: 1px solid #bbbbbb;
-  width: 100%;
   flex-flow: row wrap;
 }
-@media screen and (min-width: var(--largeViewportWidth)) {
-  .badgeList dt {
-    max-width: 33%;
-  }
+
+.badgeList dt {
+  flex-grow: 1;
+  flex-basis: 50%;
 }
 
 .badgeList dt figure {

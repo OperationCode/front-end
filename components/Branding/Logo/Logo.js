@@ -14,7 +14,7 @@ export const Logo = ({ darkMode, medalOnly, variant }) => {
   const markOnlyViewbox = medalOnly ? '0 0 70 95.75' : '0 0 636.11 107';
 
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox={markOnlyViewbox}>
+    <svg id="logo" xmlns="http://www.w3.org/2000/svg" viewBox={markOnlyViewbox}>
       <g id="Layer_2" data-name="Layer 2">
         <g id="Artboard_1" data-name="Artboard 1">
           <g id="Large_logo" data-name="Large logo">
