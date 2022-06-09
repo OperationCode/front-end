@@ -4,10 +4,10 @@ exports[`LogoSection should render with required props 1`] = `
 <Content
   columns={
     Array [
-      <ul
+      <dl
         className="logoSizeList"
       >
-        <li
+        <dt
           className="logoSizeListItem smallLogos"
         >
           <h5>
@@ -16,93 +16,81 @@ exports[`LogoSection should render with required props 1`] = `
           <p>
             Operation Code's logo is provided as code itself. It is an SVG grouped into four color fill areas. SVG is appropriate to use for small and large formats where horizontal space is needed.
           </p>
-          <ul
+          <dl
             className="logoTypeList"
           >
-            <li
+            <dt
               className="logoTypeListItem"
             >
               <h6>
                 TYPICAL
               </h6>
-              <ul
+              <dl
                 className="badgeList"
               >
-                <li>
+                <dt>
                   <Badge
                     icon={
                       <div>
                         <Logo
-                          codeFill={[Function]}
                           darkMode={false}
-                          markOnly={false}
-                          medalFill={[Function]}
-                          operationFill={[Function]}
-                          starFill={[Function]}
+                          medalOnly={false}
+                          variant="blue"
                         />
                       </div>
                     }
                     isImageFirst={false}
                     label="Blue"
                   />
-                </li>
-                <li>
+                </dt>
+                <dt>
                   <Badge
                     icon={
                       <div>
                         <Logo
-                          codeFill={[Function]}
                           darkMode={false}
-                          markOnly={false}
-                          medalFill={[Function]}
-                          operationFill={[Function]}
-                          starFill={[Function]}
+                          medalOnly={false}
+                          variant="red"
                         />
                       </div>
                     }
                     isImageFirst={false}
                     label="Red"
                   />
-                </li>
-                <li>
+                </dt>
+                <dt>
                   <Badge
                     icon={
                       <div>
                         <Logo
-                          codeFill={[Function]}
                           darkMode={false}
-                          markOnly={false}
-                          medalFill={[Function]}
-                          operationFill={[Function]}
-                          starFill={[Function]}
+                          medalOnly={false}
+                          variant="slate"
                         />
                       </div>
                     }
                     isImageFirst={false}
                     label="Slate"
                   />
-                </li>
-                <li>
+                </dt>
+                <dt>
                   <Badge
                     icon={
                       <div>
                         <Logo
-                          codeFill={[Function]}
                           darkMode={false}
-                          markOnly={false}
-                          medalFill={[Function]}
-                          operationFill={[Function]}
-                          starFill={[Function]}
+                          medalOnly={false}
+                          variant="white"
                         />
                       </div>
                     }
                     isImageFirst={false}
                     label="White"
                   />
-                </li>
-              </ul>
-            </li>
-            <li
+                </dt>
+              </dl>
+            </dt>
+            <dt
               className="logoTypeListItem"
             >
               <h6>
@@ -111,60 +99,68 @@ exports[`LogoSection should render with required props 1`] = `
               <p>
                 Use the Large Stacked Original logo in areas where you have more vertical space than horizontal. Only use the Red Stacked Logo for special holidays such as Thanksgiving, fall events, and Christmas. The Light Stacked Logo is to be used with dark or contrasting bright colored backgrounds.
               </p>
-              <ul
+              <dl
                 className="badgeList"
               >
-                <li>
+                <dt>
                   <Badge
                     icon={
                       <div>
                         <StackedLogo
-                          codeFill={[Function]}
                           darkMode={false}
-                          operationFill={[Function]}
-                          starFill={[Function]}
+                          variant="blue"
                         />
                       </div>
                     }
                     isImageFirst={false}
                     label="Blue"
                   />
-                </li>
-                <li>
+                </dt>
+                <dt>
                   <Badge
                     icon={
                       <div>
                         <StackedLogo
-                          codeFill={[Function]}
                           darkMode={false}
-                          operationFill={[Function]}
-                          starFill={[Function]}
+                          variant="red"
                         />
                       </div>
                     }
                     isImageFirst={false}
                     label="Red"
                   />
-                </li>
-                <li>
+                </dt>
+                <dt>
                   <Badge
                     icon={
                       <div>
                         <StackedLogo
-                          codeFill={[Function]}
                           darkMode={false}
-                          operationFill={[Function]}
-                          starFill={[Function]}
+                          variant="slate"
                         />
                       </div>
                     }
                     isImageFirst={false}
                     label="Slate"
                   />
-                </li>
-              </ul>
-            </li>
-            <li
+                </dt>
+                <dt>
+                  <Badge
+                    icon={
+                      <div>
+                        <StackedLogo
+                          darkMode={false}
+                          variant="white"
+                        />
+                      </div>
+                    }
+                    isImageFirst={false}
+                    label="White"
+                  />
+                </dt>
+              </dl>
+            </dt>
+            <dt
               className="logoTypeListItem"
             >
               <h6>
@@ -173,62 +169,66 @@ exports[`LogoSection should render with required props 1`] = `
               <p>
                 Use the following medals when you are prompted to upload a thumbnail logo only or profile photo. In most cases, use the OC Blue Medal. The Red Medal should only be used for holidays and special events (such as Thanksgiving, fall, or Christmas). The Navy Medal should be used memorandums or lighter bright colored backgrounds.
               </p>
-              <ul
+              <dl
                 className="badgeList"
               >
-                <li>
+                <dt>
                   <Badge
                     icon={
                       <Logo
-                        codeFill={[Function]}
                         darkMode={false}
-                        markOnly={true}
-                        medalFill={[Function]}
-                        operationFill={[Function]}
-                        starFill={[Function]}
+                        medalOnly={true}
+                        variant="blue"
                       />
                     }
                     isImageFirst={false}
                     label="Blue"
                   />
-                </li>
-                <li>
+                </dt>
+                <dt>
                   <Badge
                     icon={
                       <Logo
-                        codeFill={[Function]}
                         darkMode={false}
-                        markOnly={true}
-                        medalFill={[Function]}
-                        operationFill={[Function]}
-                        starFill={[Function]}
+                        medalOnly={true}
+                        variant="red"
                       />
                     }
                     isImageFirst={false}
                     label="Red"
                   />
-                </li>
-                <li>
+                </dt>
+                <dt>
                   <Badge
                     icon={
                       <Logo
-                        codeFill={[Function]}
                         darkMode={false}
-                        markOnly={true}
-                        medalFill={[Function]}
-                        operationFill={[Function]}
-                        starFill={[Function]}
+                        medalOnly={true}
+                        variant="slate"
                       />
                     }
                     isImageFirst={false}
-                    label="Navy"
+                    label="Slate"
                   />
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-      </ul>,
+                </dt>
+                <dt>
+                  <Badge
+                    icon={
+                      <Logo
+                        darkMode={false}
+                        medalOnly={true}
+                        variant="white"
+                      />
+                    }
+                    isImageFirst={false}
+                    label="White"
+                  />
+                </dt>
+              </dl>
+            </dt>
+          </dl>
+        </dt>
+      </dl>,
     ]
   }
   hasTitleUnderline={true}

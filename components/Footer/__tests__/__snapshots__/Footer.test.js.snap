@@ -17,12 +17,9 @@ exports[`Footer should render with no props passed 1`] = `
           className="logoLink link"
         >
           <Logo
-            codeFill={[Function]}
             darkMode={false}
-            markOnly={false}
-            medalFill={[Function]}
-            operationFill={[Function]}
-            starFill={[Function]}
+            medalOnly={false}
+            variant="white"
           />
         </a>
       </Link>

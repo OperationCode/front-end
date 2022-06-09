@@ -73,12 +73,9 @@ exports[`Nav should render with no props passed 1`] = `
             onContextMenu={[Function]}
           >
             <Logo
-              codeFill={[Function]}
               darkMode={false}
-              markOnly={false}
-              medalFill={[Function]}
-              operationFill={[Function]}
-              starFill={[Function]}
+              medalOnly={false}
+              variant="blue"
             />
           </a>
         </Link>
