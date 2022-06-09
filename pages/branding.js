@@ -1,8 +1,8 @@
 import Head from 'components/head';
-import HeroBanner from 'components/HeroBanner/HeroBanner';
-import LogoSection from 'components/Branding/LogoSection/LogoSection';
 import ColorSection from 'components/Branding/ColorSection/ColorSection';
 import FontSection from 'components/Branding/FontSection/FontSection';
+import HeroBanner from 'components/HeroBanner/HeroBanner';
+import LogoSection from 'components/Branding/LogoSection/LogoSection';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 import { s3 } from 'common/constants/urls';
 import styles from 'styles/branding.module.css';
@@ -18,7 +18,8 @@ function Branding() {
         <h6>
           For external organizations, corporate sponsors and press, please obtain specific guidance
           and approval from the Director of Communications prior to using Operation Code Branding on
-          public platforms. You may email your request to marketing@operationcode.org
+          public platforms. You may email your request to&nbsp;
+          <a href="mailto:marketing@operationcode.org">marketing@operationcode.org</a>
         </h6>
 
         <br />

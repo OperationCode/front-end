@@ -38,6 +38,14 @@ exports[`ColorSection should render with required props 1`] = `
     columns={
       Array [
         <Swatch
+          colorName="slate"
+          hexCode="#45576a"
+        />,
+        <Swatch
+          colorName="red"
+          hexCode="#d1665a"
+        />,
+        <Swatch
           colorName="gray"
           hexCode="#e2e2e2"
         />,

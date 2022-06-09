@@ -72,16 +72,14 @@ exports[`Nav should render with no props passed 1`] = `
             className="logoLink link"
             onContextMenu={[Function]}
           >
-            <div
-              className="logo"
-            >
-              <MockedNextImage
-                alt="Operation Code Logo"
-                height={42}
-                src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/small-blue-logo.png"
-                width={224}
-              />
-            </div>
+            <Logo
+              codeFill={[Function]}
+              darkMode={false}
+              markOnly={false}
+              medalFill={[Function]}
+              operationFill={[Function]}
+              starFill={[Function]}
+            />
           </a>
         </Link>
         <ul
@@ -89,7 +87,7 @@ exports[`Nav should render with no props passed 1`] = `
         >
           <NavListItem
             href="/about"
-            icon={null}
+            icon={<React.Fragment />}
             name="About Us"
             sublinks={
               Array [
@@ -114,7 +112,7 @@ exports[`Nav should render with no props passed 1`] = `
           />
           <NavListItem
             href="/services"
-            icon={null}
+            icon={<React.Fragment />}
             name="Services"
             sublinks={
               Array [
@@ -139,7 +137,7 @@ exports[`Nav should render with no props passed 1`] = `
           />
           <NavListItem
             href="/get_involved"
-            icon={null}
+            icon={<React.Fragment />}
             name="Get Involved"
             sublinks={
               Array [
@@ -164,7 +162,7 @@ exports[`Nav should render with no props passed 1`] = `
           />
           <NavListItem
             href="/login"
-            icon={null}
+            icon={<React.Fragment />}
             name="Login"
             sublinks={Array []}
           />

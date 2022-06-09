@@ -8,7 +8,7 @@
 
 .Badge > img,
 .Badge > svg {
-  fill: currentColor;
+  fill: currentcolor;
   height: 100px;
   margin: 1rem 0;
 }
@@ -16,4 +16,8 @@
 .label {
   text-align: center;
   white-space: nowrap;
+}
+
+.label .left {
+  text-align: left;
 }

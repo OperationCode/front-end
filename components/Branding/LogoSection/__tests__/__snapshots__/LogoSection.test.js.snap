@@ -11,10 +11,10 @@ exports[`LogoSection should render with required props 1`] = `
           className="logoSizeListItem smallLogos"
         >
           <h5>
-            Small Logos
+            Logos
           </h5>
           <p>
-            For use when Operation Code's logo name is between 0-1 inch in height. In most cases, use the Original Small Logo. The Stacked Small Logo is to be used where graphics needs are larger in vertical height than horizontal width with the Operation Code logo name still under 1 inch in height.
+            Operation Code's logo is provided as code itself. It is an SVG grouped into four color fill areas. SVG is appropriate to use for small and large formats where horizontal space is needed.
           </p>
           <ul
             className="logoTypeList"
@@ -31,12 +31,16 @@ exports[`LogoSection should render with required props 1`] = `
                 <li>
                   <Badge
                     icon={
-                      <MockedNextImage
-                        alt="Small Blue Accented Logo"
-                        height={60}
-                        src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/small-blue-logo.png"
-                        width={318}
-                      />
+                      <div>
+                        <Logo
+                          codeFill={[Function]}
+                          darkMode={false}
+                          markOnly={false}
+                          medalFill={[Function]}
+                          operationFill={[Function]}
+                          starFill={[Function]}
+                        />
+                      </div>
                     }
                     isImageFirst={false}
                     label="Blue"
@@ -45,12 +49,16 @@ exports[`LogoSection should render with required props 1`] = `
                 <li>
                   <Badge
                     icon={
-                      <MockedNextImage
-                        alt="Small Red Accented Logo"
-                        height={60}
-                        src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/small-red-logo.png"
-                        width={318}
-                      />
+                      <div>
+                        <Logo
+                          codeFill={[Function]}
+                          darkMode={false}
+                          markOnly={false}
+                          medalFill={[Function]}
+                          operationFill={[Function]}
+                          starFill={[Function]}
+                        />
+                      </div>
                     }
                     isImageFirst={false}
                     label="Red"
@@ -59,12 +67,16 @@ exports[`LogoSection should render with required props 1`] = `
                 <li>
                   <Badge
                     icon={
-                      <MockedNextImage
-                        alt="Small Unaccented Logo"
-                        height={60}
-                        src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/small-logo.png"
-                        width={318}
-                      />
+                      <div>
+                        <Logo
+                          codeFill={[Function]}
+                          darkMode={false}
+                          markOnly={false}
+                          medalFill={[Function]}
+                          operationFill={[Function]}
+                          starFill={[Function]}
+                        />
+                      </div>
                     }
                     isImageFirst={false}
                     label="Slate"
@@ -73,12 +85,16 @@ exports[`LogoSection should render with required props 1`] = `
                 <li>
                   <Badge
                     icon={
-                      <MockedNextImage
-                        alt="Small White Accented Logo"
-                        height={60}
-                        src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/small-white-logo.png"
-                        width={318}
-                      />
+                      <div>
+                        <Logo
+                          codeFill={[Function]}
+                          darkMode={false}
+                          markOnly={false}
+                          medalFill={[Function]}
+                          operationFill={[Function]}
+                          starFill={[Function]}
+                        />
+                      </div>
                     }
                     isImageFirst={false}
                     label="White"
@@ -101,12 +117,14 @@ exports[`LogoSection should render with required props 1`] = `
                 <li>
                   <Badge
                     icon={
-                      <MockedNextImage
-                        alt="Large Stacked Original"
-                        height={226}
-                        src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/small-stacked-logo-blue.png"
-                        width={270}
-                      />
+                      <div>
+                        <StackedLogo
+                          codeFill={[Function]}
+                          darkMode={false}
+                          operationFill={[Function]}
+                          starFill={[Function]}
+                        />
+                      </div>
                     }
                     isImageFirst={false}
                     label="Blue"
@@ -115,12 +133,14 @@ exports[`LogoSection should render with required props 1`] = `
                 <li>
                   <Badge
                     icon={
-                      <MockedNextImage
-                        alt="Red Stacked Logo"
-                        height={226}
-                        src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/small-stacked-logo-red.png"
-                        width={270}
-                      />
+                      <div>
+                        <StackedLogo
+                          codeFill={[Function]}
+                          darkMode={false}
+                          operationFill={[Function]}
+                          starFill={[Function]}
+                        />
+                      </div>
                     }
                     isImageFirst={false}
                     label="Red"
@@ -129,12 +149,14 @@ exports[`LogoSection should render with required props 1`] = `
                 <li>
                   <Badge
                     icon={
-                      <MockedNextImage
-                        alt="Light Stacked Logo"
-                        height={226}
-                        src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/small-stacked-logo.png"
-                        width={270}
-                      />
+                      <div>
+                        <StackedLogo
+                          codeFill={[Function]}
+                          darkMode={false}
+                          operationFill={[Function]}
+                          starFill={[Function]}
+                        />
+                      </div>
                     }
                     isImageFirst={false}
                     label="Slate"
@@ -157,11 +179,13 @@ exports[`LogoSection should render with required props 1`] = `
                 <li>
                   <Badge
                     icon={
-                      <MockedNextImage
-                        alt="OC Blue Medal"
-                        height={404}
-                        src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/large-blue-medal.png"
-                        width={300}
+                      <Logo
+                        codeFill={[Function]}
+                        darkMode={false}
+                        markOnly={true}
+                        medalFill={[Function]}
+                        operationFill={[Function]}
+                        starFill={[Function]}
                       />
                     }
                     isImageFirst={false}
@@ -171,11 +195,13 @@ exports[`LogoSection should render with required props 1`] = `
                 <li>
                   <Badge
                     icon={
-                      <MockedNextImage
-                        alt="Red Medal"
-                        height={404}
-                        src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/large-red-medal.png"
-                        width={300}
+                      <Logo
+                        codeFill={[Function]}
+                        darkMode={false}
+                        markOnly={true}
+                        medalFill={[Function]}
+                        operationFill={[Function]}
+                        starFill={[Function]}
                       />
                     }
                     isImageFirst={false}
@@ -185,152 +211,17 @@ exports[`LogoSection should render with required props 1`] = `
                 <li>
                   <Badge
                     icon={
-                      <MockedNextImage
-                        alt="Navy Medal"
-                        height={404}
-                        src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/large-slate-medal.png"
-                        width={300}
+                      <Logo
+                        codeFill={[Function]}
+                        darkMode={false}
+                        markOnly={true}
+                        medalFill={[Function]}
+                        operationFill={[Function]}
+                        starFill={[Function]}
                       />
                     }
                     isImageFirst={false}
                     label="Navy"
-                  />
-                </li>
-              </ul>
-            </li>
-            <li
-              className="logoTypeListItem"
-            >
-              <h6>
-                Badges
-              </h6>
-              <p>
-                You may also use badges as a profile photo or thumbnail. Badges should be used to accompany corporate sponsors or alliance partnerships on shared branding. Use the original OC Blue Badge in most cases, except the Red Badge for special events and holidays (Thanksgiving, fall and Christmas). The Navy Badge may be used with light backgrounds and bright colored backgrounds.
-              </p>
-              <ul
-                className="badgeList"
-              >
-                <li>
-                  <Badge
-                    icon={
-                      <MockedNextImage
-                        alt="OC Blue Badge"
-                        height={404}
-                        src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/large-blue-medal.png"
-                        width={300}
-                      />
-                    }
-                    isImageFirst={false}
-                    label="OC Blue Badge"
-                  />
-                </li>
-                <li>
-                  <Badge
-                    icon={
-                      <MockedNextImage
-                        alt="Red Badge"
-                        height={404}
-                        src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/large-red-medal.png"
-                        width={300}
-                      />
-                    }
-                    isImageFirst={false}
-                    label="Red Badge"
-                  />
-                </li>
-                <li>
-                  <Badge
-                    icon={
-                      <MockedNextImage
-                        alt="Navy"
-                        height={404}
-                        src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/large-slate-medal.png"
-                        width={300}
-                      />
-                    }
-                    isImageFirst={false}
-                    label="Navy Badge"
-                  />
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-        <li
-          className="logoSizeListItem largeLogos"
-        >
-          <h5>
-            Large Logos
-          </h5>
-          <p>
-            Use the Original Large Logo in almost all cases above 1 inch in height. The Red Large Logo is to be used in special events (such as Thanksgiving, fall or Christmas), and the Light Large Logo is to be used with dark backgrounds or bright colored backgrounds.
-          </p>
-          <ul
-            className="logoTypeList"
-          >
-            <li
-              className="logoTypeListItem"
-            >
-              <h6>
-                TYPICAL
-              </h6>
-              <ul
-                className="badgeList"
-              >
-                <li>
-                  <Badge
-                    icon={
-                      <MockedNextImage
-                        alt="Original Large Logo"
-                        height={70}
-                        src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/large-blue-logo.png"
-                        width={384}
-                      />
-                    }
-                    isImageFirst={false}
-                    label="Blue"
-                  />
-                </li>
-                <li>
-                  <Badge
-                    icon={
-                      <MockedNextImage
-                        alt="Red Large Logo"
-                        height={70}
-                        src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/large-red-logo.png"
-                        width={384}
-                      />
-                    }
-                    isImageFirst={false}
-                    label="Red"
-                  />
-                </li>
-                <li>
-                  <Badge
-                    icon={
-                      <MockedNextImage
-                        alt="Large Unaccented Logo"
-                        height={70}
-                        src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/large-logo.png"
-                        width={384}
-                      />
-                    }
-                    isImageFirst={false}
-                    label="Slate"
-                  />
-                </li>
-                <li>
-                  <Badge
-                    icon={
-                      <MockedNextImage
-                        alt="Large White Accented Logo"
-                        height={70}
-                        src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/large-white-logo.png"
-                        width={384}
-                      />
-                    }
-                    isImageFirst={false}
-                    label="White"
                   />
                 </li>
               </ul>
