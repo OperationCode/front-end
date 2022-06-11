@@ -4,7 +4,7 @@ import { useVariant } from './Variants';
 import styles from './Logo.module.css';
 
 export const Logo = ({ darkMode, medalOnly, variant }) => {
-  const theme = useVariant({ theme: variant, medalOnly: false });
+  const theme = useVariant({ theme: variant, medalOnly });
   const { operationFill, codeFill, medalFill, starFill } = theme;
 
   const operationFillColor = darkMode ? operationFill.dark : operationFill.light;
