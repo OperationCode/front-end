@@ -1,4 +1,9 @@
 import * as colors from 'common/styles/themeMap';
+
+export const useVariant = props => {
+  return new Variants(props);
+};
+
 /* eslint-disable class-methods-use-this */
 export class Variants {
   constructor(props) {

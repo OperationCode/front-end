@@ -2,7 +2,7 @@
 
 exports[`Logo should render with required props 1`] = `
 <svg
-  id="logo"
+  className="logo"
   viewBox="0 0 636.11 107"
   xmlns="http://www.w3.org/2000/svg"
 >
