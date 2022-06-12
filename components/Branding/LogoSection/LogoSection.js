@@ -12,9 +12,9 @@ function LogoSection() {
       theme="gray"
       hasTitleUnderline
       columns={[
-        <dl className={styles.logoSizeList}>
+        <ul className={styles.logoSizeList}>
           {/* - SMALL LOGOS - */}
-          <dt className={classNames(styles.logoSizeListItem, styles.smallLogos)}>
+          <li className={classNames(styles.logoSizeListItem, styles.smallLogos)}>
             <h5>Logos</h5>
             <p>
               Operation Code&apos;s logo is provided as code itself. It is an SVG grouped into four
@@ -22,11 +22,11 @@ function LogoSection() {
               horizontal space is needed.
             </p>
 
-            <dl className={styles.logoTypeList}>
-              <dt className={styles.logoTypeListItem}>
+            <ul className={styles.logoTypeList}>
+              <li className={styles.logoTypeListItem}>
                 <h6>TYPICAL</h6>
-                <dl className={styles.badgeList}>
-                  <dt>
+                <ul className={styles.badgeList}>
+                  <li>
                     <Badge
                       icon={
                         <div>
@@ -36,8 +36,8 @@ function LogoSection() {
                       isImageFirst={false}
                       label="Blue"
                     />
-                  </dt>
-                  <dt>
+                  </li>
+                  <li>
                     <Badge
                       icon={
                         <div>
@@ -47,8 +47,8 @@ function LogoSection() {
                       isImageFirst={false}
                       label="Red"
                     />
-                  </dt>
-                  <dt>
+                  </li>
+                  <li>
                     <Badge
                       isImageFirst={false}
                       label="Slate"
@@ -58,8 +58,8 @@ function LogoSection() {
                         </div>
                       }
                     />
-                  </dt>
-                  <dt>
+                  </li>
+                  <li>
                     <Badge
                       icon={
                         <div>
@@ -69,11 +69,11 @@ function LogoSection() {
                       isImageFirst={false}
                       label="White"
                     />
-                  </dt>
-                </dl>
-              </dt>
+                  </li>
+                </ul>
+              </li>
 
-              <dt className={styles.logoTypeListItem}>
+              <li className={styles.logoTypeListItem}>
                 <h6>Stacked Logos</h6>
                 <p>
                   Use the Large Stacked Original logo in areas where you have more vertical space
@@ -81,8 +81,8 @@ function LogoSection() {
                   Thanksgiving, fall events, and Christmas. The Light Stacked Logo is to be used
                   with dark or contrasting bright colored backgrounds.
                 </p>
-                <dl className={styles.badgeList}>
-                  <dt>
+                <ul className={styles.badgeList}>
+                  <li>
                     <Badge
                       icon={
                         <div>
@@ -92,8 +92,8 @@ function LogoSection() {
                       isImageFirst={false}
                       label="Blue"
                     />
-                  </dt>
-                  <dt>
+                  </li>
+                  <li>
                     <Badge
                       icon={
                         <div>
@@ -103,8 +103,8 @@ function LogoSection() {
                       isImageFirst={false}
                       label="Red"
                     />
-                  </dt>
-                  <dt>
+                  </li>
+                  <li>
                     <Badge
                       icon={
                         <div>
@@ -114,8 +114,8 @@ function LogoSection() {
                       isImageFirst={false}
                       label="Slate"
                     />
-                  </dt>
-                  <dt>
+                  </li>
+                  <li>
                     <Badge
                       icon={
                         <div>
@@ -125,11 +125,11 @@ function LogoSection() {
                       isImageFirst={false}
                       label="White"
                     />
-                  </dt>
-                </dl>
-              </dt>
+                  </li>
+                </ul>
+              </li>
 
-              <dt className={styles.logoTypeListItem}>
+              <li className={styles.logoTypeListItem}>
                 <h6>Medals</h6>
                 <p>
                   Use the following medals when you are prompted to upload a thumbnail logo only or
@@ -138,40 +138,40 @@ function LogoSection() {
                   The Navy Medal should be used memorandums or lighter bright colored backgrounds.
                 </p>
 
-                <dl className={styles.badgeList}>
-                  <dt>
+                <ul className={styles.badgeList}>
+                  <li>
                     <Badge
                       icon={<Logo medalOnly variant="blue" />}
                       isImageFirst={false}
                       label="Blue"
                     />
-                  </dt>
-                  <dt>
+                  </li>
+                  <li>
                     <Badge
                       icon={<Logo medalOnly variant="red" />}
                       isImageFirst={false}
                       label="Red"
                     />
-                  </dt>
-                  <dt>
+                  </li>
+                  <li>
                     <Badge
                       icon={<Logo medalOnly variant="slate" />}
                       isImageFirst={false}
                       label="Slate"
                     />
-                  </dt>
-                  <dt>
+                  </li>
+                  <li>
                     <Badge
                       icon={<Logo medalOnly variant="white" />}
                       isImageFirst={false}
                       label="White"
                     />
-                  </dt>
-                </dl>
-              </dt>
-            </dl>
-          </dt>
-        </dl>,
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>,
       ]}
     />
   );

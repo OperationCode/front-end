@@ -11,9 +11,10 @@
   max-width: 100%;
 }
 
-.logoSizeList ul,
-.logoSizeList dl {
-  margin-bottom: 1.5rem;
+.logoSizeList ul {
+  list-style: none;
+  margin: 0 0 1.5rem 0;
+  padding: 0;
 }
 
 .logoSizeListItem {
@@ -33,12 +34,12 @@
   flex-flow: row wrap;
 }
 
-.badgeList dt {
+.badgeList li {
   flex-grow: 1;
   flex-basis: 50%;
 }
 
-.badgeList dt figure {
+.badgeList ul figure {
   max-height: 405px;
 }
 

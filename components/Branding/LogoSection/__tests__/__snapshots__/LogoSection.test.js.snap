@@ -4,10 +4,10 @@ exports[`LogoSection should render with required props 1`] = `
 <Content
   columns={
     Array [
-      <dl
+      <ul
         className="logoSizeList"
       >
-        <dt
+        <li
           className="logoSizeListItem smallLogos"
         >
           <h5>
@@ -16,19 +16,19 @@ exports[`LogoSection should render with required props 1`] = `
           <p>
             Operation Code's logo is provided as code itself. It is an SVG grouped into four color fill areas. SVG is appropriate to use for small and large formats where horizontal space is needed.
           </p>
-          <dl
+          <ul
             className="logoTypeList"
           >
-            <dt
+            <li
               className="logoTypeListItem"
             >
               <h6>
                 TYPICAL
               </h6>
-              <dl
+              <ul
                 className="badgeList"
               >
-                <dt>
+                <li>
                   <Badge
                     icon={
                       <div>
@@ -42,8 +42,8 @@ exports[`LogoSection should render with required props 1`] = `
                     isImageFirst={false}
                     label="Blue"
                   />
-                </dt>
-                <dt>
+                </li>
+                <li>
                   <Badge
                     icon={
                       <div>
@@ -57,8 +57,8 @@ exports[`LogoSection should render with required props 1`] = `
                     isImageFirst={false}
                     label="Red"
                   />
-                </dt>
-                <dt>
+                </li>
+                <li>
                   <Badge
                     icon={
                       <div>
@@ -72,8 +72,8 @@ exports[`LogoSection should render with required props 1`] = `
                     isImageFirst={false}
                     label="Slate"
                   />
-                </dt>
-                <dt>
+                </li>
+                <li>
                   <Badge
                     icon={
                       <div>
@@ -87,10 +87,10 @@ exports[`LogoSection should render with required props 1`] = `
                     isImageFirst={false}
                     label="White"
                   />
-                </dt>
-              </dl>
-            </dt>
-            <dt
+                </li>
+              </ul>
+            </li>
+            <li
               className="logoTypeListItem"
             >
               <h6>
@@ -99,10 +99,10 @@ exports[`LogoSection should render with required props 1`] = `
               <p>
                 Use the Large Stacked Original logo in areas where you have more vertical space than horizontal. Only use the Red Stacked Logo for special holidays such as Thanksgiving, fall events, and Christmas. The Light Stacked Logo is to be used with dark or contrasting bright colored backgrounds.
               </p>
-              <dl
+              <ul
                 className="badgeList"
               >
-                <dt>
+                <li>
                   <Badge
                     icon={
                       <div>
@@ -115,8 +115,8 @@ exports[`LogoSection should render with required props 1`] = `
                     isImageFirst={false}
                     label="Blue"
                   />
-                </dt>
-                <dt>
+                </li>
+                <li>
                   <Badge
                     icon={
                       <div>
@@ -129,8 +129,8 @@ exports[`LogoSection should render with required props 1`] = `
                     isImageFirst={false}
                     label="Red"
                   />
-                </dt>
-                <dt>
+                </li>
+                <li>
                   <Badge
                     icon={
                       <div>
@@ -143,8 +143,8 @@ exports[`LogoSection should render with required props 1`] = `
                     isImageFirst={false}
                     label="Slate"
                   />
-                </dt>
-                <dt>
+                </li>
+                <li>
                   <Badge
                     icon={
                       <div>
@@ -157,10 +157,10 @@ exports[`LogoSection should render with required props 1`] = `
                     isImageFirst={false}
                     label="White"
                   />
-                </dt>
-              </dl>
-            </dt>
-            <dt
+                </li>
+              </ul>
+            </li>
+            <li
               className="logoTypeListItem"
             >
               <h6>
@@ -169,10 +169,10 @@ exports[`LogoSection should render with required props 1`] = `
               <p>
                 Use the following medals when you are prompted to upload a thumbnail logo only or profile photo. In most cases, use the OC Blue Medal. The Red Medal should only be used for holidays and special events (such as Thanksgiving, fall, or Christmas). The Navy Medal should be used memorandums or lighter bright colored backgrounds.
               </p>
-              <dl
+              <ul
                 className="badgeList"
               >
-                <dt>
+                <li>
                   <Badge
                     icon={
                       <Logo
@@ -184,8 +184,8 @@ exports[`LogoSection should render with required props 1`] = `
                     isImageFirst={false}
                     label="Blue"
                   />
-                </dt>
-                <dt>
+                </li>
+                <li>
                   <Badge
                     icon={
                       <Logo
@@ -197,8 +197,8 @@ exports[`LogoSection should render with required props 1`] = `
                     isImageFirst={false}
                     label="Red"
                   />
-                </dt>
-                <dt>
+                </li>
+                <li>
                   <Badge
                     icon={
                       <Logo
@@ -210,8 +210,8 @@ exports[`LogoSection should render with required props 1`] = `
                     isImageFirst={false}
                     label="Slate"
                   />
-                </dt>
-                <dt>
+                </li>
+                <li>
                   <Badge
                     icon={
                       <Logo
@@ -223,12 +223,12 @@ exports[`LogoSection should render with required props 1`] = `
                     isImageFirst={false}
                     label="White"
                   />
-                </dt>
-              </dl>
-            </dt>
-          </dl>
-        </dt>
-      </dl>,
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>,
     ]
   }
   hasTitleUnderline={true}
