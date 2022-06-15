@@ -101,6 +101,7 @@ jobs:
           command: |
             mkdir reports
             mkdir .nyc_output
+            ls -al cypress-coverage
             cp cypress-coverage/coverage.node-*.json reports
             cp jest-coverage/coverage-final.json reports/from-jest.json
             yarn nyc merge reports
