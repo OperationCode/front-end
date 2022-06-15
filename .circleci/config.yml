@@ -142,6 +142,7 @@ workflows:
             - *restore_cache
             - *yarn_install
           attach-workspace: true
+          browser: 'chrome' # actually use Chrome (and not Electron)
           record: true # record results on Cypress Dashboard
           parallel: true # split all specs across machines
           parallelism: 3 # use X number of CircleCI machines
