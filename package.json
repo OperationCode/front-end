@@ -135,7 +135,7 @@
     "postcss-export-custom-variables": "^1.0.0",
     "postcss-import": "^14.0.2",
     "postcss-prepend-imports": "^1.0.1",
-    "prettier": "^2.4.1",
+    "prettier": "^2.7.1",
     "process": "0.11.10",
     "react-is": "^17.0.2",
     "react-test-renderer": "^17.0.2",
