@@ -48,7 +48,7 @@
     "date-fns": "^2.25.0",
     "fast-xml-parser": "^3.21.1",
     "fingerprintjs2": "^2.1.4",
-    "fontfaceobserver": "^2.1.0",
+    "fontfaceobserver": "^2.3.0",
     "formik": "^2.2.9",
     "history": "^5.0.1",
     "intersection-observer": "^0.12.0",
