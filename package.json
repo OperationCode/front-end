@@ -64,7 +64,7 @@
     "path": "^0.12.7",
     "prop-types": "^15.6.2",
     "qs": "^6.10.1",
-    "react": "^17.0.2",
+    "react": "^18.2.0",
     "react-dom": "^17.0.2",
     "react-facebook-login": "^4.1.1",
     "react-google-login": "^5.2.2",
@@ -151,7 +151,7 @@
   },
   "resolutions": {
     "istanbul-lib-coverage": "3.2.0",
-    "react": "17.0.2",
+    "react": "18.2.0",
     "react-dom": "17.0.2",
     "webpack": "^5.59.1"
   }
