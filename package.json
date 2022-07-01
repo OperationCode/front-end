@@ -123,7 +123,7 @@
     "express": "^4.17.1",
     "faker": "^5.5.3",
     "file-loader": "^6.2.0",
-    "husky": "4.3.8",
+    "husky": "8.0.1",
     "identity-obj-proxy": "^3.0.0",
     "jest": "27.3.1",
     "jest-prop-type-error": "^1.1.0",
