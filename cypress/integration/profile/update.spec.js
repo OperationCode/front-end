@@ -5,6 +5,7 @@ import {
   MULTI_STEP_SUBMIT_BUTTON,
   ALERT,
   INPUT_ERROR,
+  PROFILE_GREETING,
 } from 'common/constants/testIDs';
 
 const goToNextStep = stepName => {
@@ -50,6 +51,7 @@ describe(`profile/update (from login)`, () => {
     goToNextStep('Military Details');
     goToNextStep('Technology');
     cy.findByTestId(MULTI_STEP_SUBMIT_BUTTON).click();
+    cy.findByTestId(PROFILE_GREETING).should('be.visible');
     cy.url().should('contain', '/profile');
     cy.url().should('not.contain', '/profile/update');
   });
