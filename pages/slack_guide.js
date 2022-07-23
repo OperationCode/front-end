@@ -242,7 +242,7 @@ function SlackGuide() {
       <HeroBanner title={pageTitle}>
         <iframe
           title="Slack Guide"
-          src="https://youtube.com/embed/m2JuAa6-ors"
+          src="https://youtube.com/embed/6wjmH5qL3Ms"
           frameBorder="0"
           allowFullScreen
           width="755"
