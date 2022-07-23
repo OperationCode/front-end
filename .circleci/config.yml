@@ -94,7 +94,7 @@ jobs:
       - run:
           name: Initialize CodeClimate
           command: |
-            curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-darwin-amd64 > ./cc_test_reporter
+            curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc_test_reporter
             chmod +x ./cc_test_reporter
       - run:
           name: Merge reports into one file
