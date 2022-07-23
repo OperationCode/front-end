@@ -2,66 +2,71 @@
 
 exports[`Modal should render with many props assigned 1`] = `
 <body
-  aria-hidden="true"
-  class="ReactModal__Body--open"
+  style="pointer-events: none;"
 >
-  <div
-    data-react-modal-body-trap=""
-    style="position: absolute; opacity: 0;"
-    tabindex="0"
-  />
-  <div />
-  <div
-    data-react-modal-body-trap=""
-    style="position: absolute; opacity: 0;"
+  <span
+    aria-hidden="true"
+    data-aria-hidden="true"
+    data-radix-focus-guard=""
+    style="outline: none; opacity: 0; position: fixed; pointer-events: none;"
     tabindex="0"
   />
   <div
-    class="Modal"
+    aria-hidden="true"
+    data-aria-hidden="true"
+  />
+  <div
+    aria-hidden="true"
+    class="overlay"
+    data-aria-hidden="true"
+    data-state="open"
+    data-testid="MODAL_OVERLAY"
+    style="pointer-events: auto;"
+  >
+    <button
+      class="CloseButton"
+      data-testid="CLOSE_BUTTON"
+      type="button"
+    >
+      <span
+        class="ScreenReaderOnly"
+        data-testid="SCREEN_READER_ONLY"
+      >
+        Close
+      </span>
+      <svg
+        class="icon secondary"
+      />
+    </button>
+  </div>
+  <div
+    aria-describedby="radix-5"
+    aria-labelledby="radix-4"
+    class="Card test-class modalContent"
+    data-state="open"
+    id="radix-3"
+    role="dialog"
+    style="pointer-events: auto;"
+    tabindex="-1"
   >
     <div
-      class="ReactModal__Overlay"
-      style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75);"
+      data-testid="MODAL_CONTENT"
     >
-      <div
-        aria-label="Test"
-        aria-modal="true"
-        class="ReactModal__Content Card test-class"
-        role="dialog"
-        tabindex="-1"
-      >
-        <button
-          class="CloseButton"
-          data-testid="CLOSE_BUTTON"
-          type="button"
-        >
-          <span
-            class="ScreenReaderOnly"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Close
-          </span>
-          <svg
-            class="icon primary"
-          />
-        </button>
-        <div
-          class="scrollableContainer"
-          data-testid="MODAL_CONTENT"
-        >
-          Test
-        </div>
-      </div>
+      Test
     </div>
   </div>
+  <span
+    aria-hidden="true"
+    data-aria-hidden="true"
+    data-radix-focus-guard=""
+    style="outline: none; opacity: 0; position: fixed; pointer-events: none;"
+    tabindex="0"
+  />
 </body>
 `;
 
 exports[`Modal should render with required props 1`] = `
 <body>
   <div />
-  <div
-    class="Modal"
-  />
 </body>
 `;

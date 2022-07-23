@@ -4,6 +4,7 @@ import OutboundLink from 'components/OutboundLink/OutboundLink';
 import SocialMedia from 'components/SocialMedia/SocialMedia';
 import { footerItems } from 'common/constants/navigation';
 import { s3 } from 'common/constants/urls';
+import Image from 'next/image';
 import styles from './Footer.module.css';
 
 function Footer() {
@@ -33,10 +34,11 @@ function Footer() {
         <div className={classNames(styles.logoGrouping)}>
           <Link href="/" key="Home">
             <a className={classNames(styles.logoLink, styles.link)}>
-              <img
+              <Image
                 src={`${s3}branding/logos/small-blue-logo.png`}
                 alt="Operation Code Logo"
-                className={styles.logo}
+                width={318}
+                height={60}
               />
             </a>
           </Link>
@@ -45,10 +47,12 @@ function Footer() {
         <SocialMedia />
       </div>
       <div>
-        <img
+        <Image
           src={`${s3}guidestar_gold.png`}
           alt="GuideStar Gold Transparency Seal"
           className={styles.goldSealImg}
+          width={128}
+          height={128}
         />
       </div>
       <div className={classNames(styles.footerWrapper, styles.row)}>

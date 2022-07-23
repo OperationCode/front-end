@@ -13,45 +13,56 @@ export async function getStaticProps() {
   try {
     const { data } = await getTeamMembersPromise();
 
-    // Only members of the "team" group are not to be included under "board member"
-    const boardMembers = data.filter(({ group }) => group === 'board' || group === 'staff');
-
-    // Get first board member
-    const firstListedMemberName = 'Conrad Hollomon';
-    const firstBoardMember = boardMembers.find(({ name }) => name === firstListedMemberName);
-
-    // Sorted list of the board members excluding whomever should be listed first
-    const boardMembersExcludingFirst = sortBy(
-      boardMembers.filter(({ name }) => name !== firstListedMemberName),
-      'name',
+    // Only members of the "team" group aren't rendered.
+    const renderableTeamMembers = data.filter(
+      ({ group }) => group === 'board' || group === 'staff',
     );
 
-    const sortedBoardMembers = [firstBoardMember, ...boardMembersExcludingFirst];
+    // Force Executive Director to be first in list
+    const roleToRenderFirst = 'Executive Director';
+    const firstTeamMemberRendered = renderableTeamMembers.find(
+      ({ role }) => role === roleToRenderFirst,
+    );
 
-    return { props: { boardMembers: sortedBoardMembers }, revalidate: TWO_WEEKS };
+    // 1. We exclude the Executive Director (since they are always first).
+    // 2. Sort in reverse by `imageSrc` so team members without photos are rendered last.
+    // 3. Sort by role so the listing makes sense for the emptier looking team members.
+    // 4. Then we sort by name.
+    const sortedListExcludingFirst = sortBy(
+      renderableTeamMembers.filter(({ role }) => role !== roleToRenderFirst),
+      [({ imageSrc }) => !imageSrc, 'role', 'name'],
+    );
+
+    const sortedListOfTeamMembers = [firstTeamMemberRendered, ...sortedListExcludingFirst];
+
+    return { props: { teamMembers: sortedListOfTeamMembers }, revalidate: TWO_WEEKS };
   } catch (error) {
     throw new Error('getStaticProps in /team failed.');
   }
 }
 
 Team.propTypes = {
-  boardMembers: arrayOf(object.isRequired).isRequired,
+  teamMembers: arrayOf(object.isRequired).isRequired,
 };
 
-function Team({ boardMembers }) {
+function Team({ teamMembers }) {
   return (
     <div className={styles.Team}>
       <Head title="Team" />
 
-      <HeroBanner title="The Team" backgroundImageSource={`${s3}redesign/heroBanners/team.jpg`} />
+      <HeroBanner
+        title="The Team"
+        backgroundImageSource={`${s3}oc_crew_nyc_2021.jpg`}
+        className={styles.hero}
+      />
 
       <Content
         title="Our Board"
         hasTitleUnderline
         theme="white"
         columns={[
-          <div className={styles.boardMembers}>
-            {boardMembers.map(({ name, role, imageSrc: imageSource, description }) => (
+          <div className={styles.teamMembers}>
+            {teamMembers.map(({ name, role, imageSrc: imageSource, description }) => (
               <FlatCard
                 key={name}
                 header={
@@ -73,14 +84,15 @@ function Team({ boardMembers }) {
           <div className={styles.foundingMembers}>
             <p>
               Operation Code deeply appreciates the time, energy, and hard work of our{' '}
-              <b>Founding Board Members</b>, including Mark Kerr (Chair), Laura Gomez (Vice Chair),
-              Dr. Tyrone Grandison (Vice Chair), Dr. Stacy Chin (Director of Fundraising Committee),
+              <b>Founding Board Members</b>, including Conrad Hollomon (Executive Director), Nell
+              Shamrell-Harrington (Board Director), Mark Kerr (Chair), Laura Gomez (Vice Chair), Dr.
+              Tyrone Grandison (Vice Chair), Dr. Stacy Chin (Director of Fundraising Committee),
               Liza Rodewald (Director of Military Families Committee), Pete Runyon (Secretary/
               Treasurer), Josh Carter, Nick Frost, and Aimee Knight on their support, dedication and
               commitment in the early days.
             </p>
 
-            <p style={{ textAlign: 'center' }}>
+            <p className={styles.textAlignCenter}>
               <em>Thank you for setting us up for success!</em>
             </p>
           </div>,

@@ -2,6 +2,7 @@ import { element, node, shape, string } from 'prop-types';
 import classNames from 'classnames';
 import Image from 'next/image';
 import { FLAT_CARD_IMAGE } from 'common/constants/testIDs';
+import { getPlaceholder } from 'common/utils/next-utils';
 import styles from './FlatCard.module.css';
 
 FlatCard.propTypes = {
@@ -36,7 +37,14 @@ function FlatCard({ button: Button, children, className, header, image }) {
         {hasImage && (
           <div className={styles.rowCenter}>
             <div data-testid={FLAT_CARD_IMAGE} className={styles.imageWrapper}>
-              <Image src={image.source} alt={image.alt} width={200} height={200} />
+              <Image
+                src={image.source}
+                alt={image.alt}
+                width={200}
+                height={200}
+                placeholder="blur"
+                blurDataURL={getPlaceholder(200, 200)}
+              />
             </div>
           </div>
         )}

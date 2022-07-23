@@ -16,16 +16,8 @@ exports[`Nav should render with no props passed 1`] = `
           "name": "About Us",
         },
         Object {
-          "href": "/events",
-          "name": "Events",
-        },
-        Object {
           "href": "/get_involved",
           "name": "Get Involved",
-        },
-        Object {
-          "href": "/swag",
-          "name": "Merch Store",
         },
         Object {
           "href": "/events",
@@ -42,6 +34,22 @@ exports[`Nav should render with no props passed 1`] = `
         Object {
           "href": "/code_schools",
           "name": "Code Schools",
+        },
+        Object {
+          "href": "/sponsorship",
+          "name": "Sponsorship",
+        },
+        Object {
+          "href": "/swag",
+          "name": "Merch Store",
+        },
+        Object {
+          "href": "/contact",
+          "name": "Contact Us",
+        },
+        Object {
+          "href": "/donate",
+          "name": "Donate",
         },
       ]
     }
@@ -64,11 +72,16 @@ exports[`Nav should render with no props passed 1`] = `
             className="logoLink link"
             onContextMenu={[Function]}
           >
-            <img
-              alt="Operation Code Logo"
+            <div
               className="logo"
-              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/small-blue-logo.png"
-            />
+            >
+              <MockedNextImage
+                alt="Operation Code Logo"
+                height={42}
+                src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/small-blue-logo.png"
+                width={224}
+              />
+            </div>
           </a>
         </Link>
         <ul
@@ -81,12 +94,12 @@ exports[`Nav should render with no props passed 1`] = `
             sublinks={
               Array [
                 Object {
-                  "href": "/history",
-                  "name": "History",
+                  "href": "/team",
+                  "name": "Our Team",
                 },
                 Object {
-                  "href": "/contact",
-                  "name": "Contact Us",
+                  "href": "/history",
+                  "name": "History",
                 },
                 Object {
                   "href": "/faq",
@@ -105,10 +118,6 @@ exports[`Nav should render with no props passed 1`] = `
             name="Services"
             sublinks={
               Array [
-                Object {
-                  "href": "/swag",
-                  "name": "Merch Store",
-                },
                 Object {
                   "href": "/events",
                   "name": "Events",
@@ -137,6 +146,18 @@ exports[`Nav should render with no props passed 1`] = `
                 Object {
                   "href": "/sponsorship",
                   "name": "Sponsorship",
+                },
+                Object {
+                  "href": "/swag",
+                  "name": "Merch Store",
+                },
+                Object {
+                  "href": "/contact",
+                  "name": "Contact Us",
+                },
+                Object {
+                  "href": "/donate",
+                  "name": "Donate",
                 },
               ]
             }

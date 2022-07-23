@@ -1,4 +1,8 @@
-.Team .boardMembers {
+.Team .hero {
+  background-position: center 30%;
+}
+
+.Team .teamMembers {
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -6,10 +10,14 @@
   width: 100%;
 }
 
-.Team .boardMembers img {
+.Team .teamMembers img {
   object-fit: cover;
 }
 
 .Team .foundingMembers {
   padding: 2rem 0 0 0;
+}
+
+.textAlignCenter {
+  text-align: center;
 }

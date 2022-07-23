@@ -82,5 +82,7 @@ export default [
     'Sean Mangosing',
     'Frank (franklyspeaking) Gauss',
     'Sung Paik',
-    'Tri Tran'
+    'Tri Tran',
+    'Damien Richcreek',
+    'Kevin Belk'
 ]

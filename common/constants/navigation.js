@@ -85,6 +85,16 @@ const login = {
   href: '/login', // has a redirect in Next configuration file.
 };
 
+const jobs = {
+  href: '/jobs',
+  name: 'Job Board',
+};
+
+const sponsorship = {
+  name: 'Sponsorship',
+  href: '/sponsorship',
+};
+
 // MARK: Top-level navigation items
 const accountGroup = {
   name: 'Account',
@@ -95,22 +105,17 @@ const accountGroup = {
 
 const servicesGroup = {
   ...services,
-  sublinks: [merchStore, events, podcast, resources, codeSchools],
+  sublinks: [events, podcast, resources, codeSchools],
 };
 
 const aboutUsGroup = {
   ...about,
-  sublinks: [history, contact, faq, branding],
+  sublinks: [team, history, faq, branding],
 };
 
 const getInvolvedGroup = {
   ...getInvolved,
-  sublinks: [
-    {
-      name: 'Sponsorship',
-      href: '/sponsorship',
-    },
-  ],
+  sublinks: [sponsorship, merchStore, contact, donate],
 };
 
 // MARK: Nav items
@@ -119,14 +124,19 @@ export const loggedOutNavItems = [aboutUsGroup, servicesGroup, getInvolvedGroup,
 
 // Extracts sublinks to list everything as a single, top-level list
 export const mobileLoggedInNavItems = flattenDepth(
-  [logout, profile, about, events, getInvolved, ...servicesGroup.sublinks].map(
-    ({ sublinks = [], ...item }) => [item, sublinks],
-  ),
+  [
+    logout,
+    profile,
+    about,
+    getInvolved,
+    ...servicesGroup.sublinks,
+    ...getInvolvedGroup.sublinks,
+  ].map(({ sublinks = [], ...item }) => [item, sublinks]),
   2,
 );
 
 export const mobileLoggedOutNavItems = flattenDepth(
-  [login, about, events, getInvolved, ...servicesGroup.sublinks].map(
+  [login, about, getInvolved, ...servicesGroup.sublinks, ...getInvolvedGroup.sublinks].map(
     ({ sublinks = [], ...item }) => [item, sublinks],
   ),
   2,
@@ -135,27 +145,8 @@ export const mobileLoggedOutNavItems = flattenDepth(
 // MARK: Footer items
 export const footerItems = {
   column1: [about, contact, faq, services],
-  column2: [
-    codeSchools,
-    resources,
-    {
-      href: '/jobs',
-      name: 'Job Board',
-    },
-    events,
-  ],
-  column3: [
-    getInvolved,
-    {
-      href: '/podcast',
-      name: 'Podcast',
-    },
-    {
-      href: '/history',
-      name: 'History',
-    },
-    donate,
-  ],
+  column2: [codeSchools, resources, jobs, events],
+  column3: [getInvolved, podcast, history, donate],
   column4: [
     {
       href: '/press',

@@ -1,10 +1,10 @@
 import { node, string, bool, func } from 'prop-types';
 import classNames from 'classnames';
-import ReactModal from 'react-modal';
+import * as Dialog from '@radix-ui/react-dialog';
 import { gtag } from 'common/utils/thirdParty/gtag';
 import CardStyles from 'components/Cards/Card/Card.module.css';
 import CloseButton from 'components/Buttons/CloseButton/CloseButton';
-import { MODAL_CONTENT } from 'common/constants/testIDs';
+import { MODAL_CONTENT, MODAL_OVERLAY } from 'common/constants/testIDs';
 import ModalStyles from './Modal.module.css';
 
 Modal.propTypes = {
@@ -38,22 +38,26 @@ function Modal({
   }
 
   return (
-    <ReactModal
-      portalClassName={ModalStyles.Modal}
-      className={classNames(CardStyles.Card, className)}
-      contentLabel={screenReaderLabel}
-      isOpen={isOpen}
-      onRequestClose={onRequestClose}
-      shouldCloseOnOverlayClick={shouldCloseOnOverlayClick}
-    >
-      <CloseButton onClick={onRequestClose} />
-      <div
-        className={childrenClassName || ModalStyles.scrollableContainer}
-        data-testid={MODAL_CONTENT}
-      >
-        {children}
-      </div>
-    </ReactModal>
+    <Dialog.Root defaultOpen={false} open={isOpen}>
+      <Dialog.Portal>
+        <Dialog.Overlay
+          className={ModalStyles.overlay}
+          onClick={shouldCloseOnOverlayClick ? onRequestClose : undefined}
+          data-testid={MODAL_OVERLAY}
+        >
+          <Dialog.Close asChild>
+            <CloseButton theme="secondary" onClick={onRequestClose} />
+          </Dialog.Close>
+        </Dialog.Overlay>
+        <Dialog.Content
+          className={classNames(CardStyles.Card, className, ModalStyles.modalContent)}
+        >
+          <div className={childrenClassName} data-testid={MODAL_CONTENT}>
+            {children}
+          </div>
+        </Dialog.Content>
+      </Dialog.Portal>
+    </Dialog.Root>
   );
 }
 

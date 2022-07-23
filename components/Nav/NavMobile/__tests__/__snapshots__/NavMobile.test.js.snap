@@ -13,11 +13,16 @@ exports[`NavMobile should render 1`] = `
       name="dropdown"
       type="button"
     >
-      <img
-        alt="Operation Code Logo"
+      <div
         className="logo"
-        src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/small-blue-logo.png"
-      />
+      >
+        <MockedNextImage
+          alt="Operation Code Logo"
+          height={42}
+          src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/small-blue-logo.png"
+          width={224}
+        />
+      </div>
     </button>
   </Link>
   <button

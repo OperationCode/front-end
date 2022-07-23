@@ -6,6 +6,7 @@ import OutboundLink from 'components/OutboundLink/OutboundLink';
 import { s3, codeOfConduct } from 'common/constants/urls';
 import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
 import styles from 'styles/slack_guide.module.css';
+import Image from 'next/image';
 
 const pageTitle = 'Slack Guide';
 
@@ -207,10 +208,12 @@ const questions = {
             be more helpful.
           </ScreenReaderOnly>
 
-          <img
+          <Image
             className={styles.exploreChannels}
             src={`${s3}slack_tutorial/explore_channels.jpg`}
             alt=""
+            width={500}
+            height={500}
           />
 
           <p>
@@ -218,10 +221,12 @@ const questions = {
             You’re ready to go! Have fun, learn, and connect with others!
           </p>
 
-          <img
+          <Image
             className={styles.joinChannels}
             src={`${s3}slack_tutorial/join_channel.jpg`}
             alt=""
+            width={500}
+            height={500}
           />
         </>
       ),
@@ -237,7 +242,7 @@ function SlackGuide() {
       <HeroBanner title={pageTitle}>
         <iframe
           title="Slack Guide"
-          src="https://youtube.com/embed/m2JuAa6-ors"
+          src="https://youtube.com/embed/6wjmH5qL3Ms"
           frameBorder="0"
           allowFullScreen
           width="755"
