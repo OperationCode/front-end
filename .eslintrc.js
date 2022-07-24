@@ -139,16 +139,17 @@ module.exports = {
     'react/jsx-curly-brace-presence': ['error', { props: 'never', children: 'never' }],
     'react/jsx-filename-extension': ['error', { extensions: ['.js'] }],
     'react/jsx-max-props-per-line': ['error', { maximum: 1, when: 'multiline' }],
-    'react/react-in-jsx-scope': 'off',
+    'react/jsx-no-target-blank': 'off', // browsers protect against this vulnerability now
+    'react/jsx-no-useless-fragment': ['error', { allowExpressions: true }],
     'react/jsx-one-expression-per-line': 'off',
+    'react/jsx-props-no-spreading': ['off'],
     'react/no-did-mount-set-state': 'off',
     'react/no-unused-prop-types': 'error',
     'react/no-unused-state': 'error',
     'react/prefer-stateless-function': ['off'],
-    'react/static-property-placement': ['off'],
-    'react/jsx-props-no-spreading': ['off'],
+    'react/react-in-jsx-scope': 'off',
     'react/state-in-constructor': ['error', 'never'],
-    'react/jsx-no-target-blank': 'off', // browsers protect against this vulnerability now
+    'react/static-property-placement': ['off'],
 
     // Unicorn Plugin Rules
     'unicorn/catch-error-name': 'error',
