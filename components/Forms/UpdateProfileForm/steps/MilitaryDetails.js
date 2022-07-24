@@ -40,57 +40,55 @@ MilitaryDetails.submitHandler = async values => {
 
 function MilitaryDetails({ isSubmitting }) {
   return (
-    <>
-      <div className={styles.row}>
-        <Field
-          className={styles.fullWidth}
-          name="branchOfService"
-          label="Branch Of Service*"
-          component={Select}
-          options={[
-            {
-              value: 'army',
-              label: 'Army / Army Reserves / Army National Guard',
-            },
-            {
-              value: 'navy',
-              label: 'Navy / Navy Reserves',
-            },
-            {
-              value: 'marine',
-              label: 'Marine Corps / Marine Corps Reserves',
-            },
-            {
-              value: 'airforce',
-              label: 'Air Force / Air Force Reserves / Air National Guard',
-            },
-            {
-              value: 'coastguard',
-              label: 'Coast Guard / Coast Guard Reserves',
-            },
-          ]}
-          disabled={isSubmitting}
-        />
+    <div className={styles.row}>
+      <Field
+        className={styles.fullWidth}
+        name="branchOfService"
+        label="Branch Of Service*"
+        component={Select}
+        options={[
+          {
+            value: 'army',
+            label: 'Army / Army Reserves / Army National Guard',
+          },
+          {
+            value: 'navy',
+            label: 'Navy / Navy Reserves',
+          },
+          {
+            value: 'marine',
+            label: 'Marine Corps / Marine Corps Reserves',
+          },
+          {
+            value: 'airforce',
+            label: 'Air Force / Air Force Reserves / Air National Guard',
+          },
+          {
+            value: 'coastguard',
+            label: 'Coast Guard / Coast Guard Reserves',
+          },
+        ]}
+        disabled={isSubmitting}
+      />
 
-        <Field
-          type="number"
-          name="yearsOfService"
-          label="Years Of Service*"
-          component={Input}
-          disabled={isSubmitting}
-          min="1"
-          max="40"
-        />
+      <Field
+        type="number"
+        name="yearsOfService"
+        label="Years Of Service*"
+        component={Input}
+        disabled={isSubmitting}
+        min="1"
+        max="40"
+      />
 
-        <Field
-          type="text"
-          name="payGrade"
-          label="Pay Grade*"
-          component={Input}
-          disabled={isSubmitting}
-        />
-      </div>
-    </>
+      <Field
+        type="text"
+        name="payGrade"
+        label="Pay Grade*"
+        component={Input}
+        disabled={isSubmitting}
+      />
+    </div>
   );
 }
 

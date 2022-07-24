@@ -35,47 +35,45 @@ ProfessionalDetails.submitHandler = async values => {
 
 function ProfessionalDetails({ isSubmitting }) {
   return (
-    <>
-      <div className={styles.row}>
-        <Field
-          className={styles.fullWidth}
-          name="employmentStatus"
-          label="Employment Status*"
-          component={Select}
-          options={[
-            {
-              value: 'fulltime',
-              label: 'Employed Full-Time',
-            },
-            {
-              value: 'parttime',
-              label: 'Employed Part-Time',
-            },
-            {
-              value: 'unemployed',
-              label: 'Currently Unemployed',
-            },
-          ]}
-          disabled={isSubmitting}
-        />
+    <div className={styles.row}>
+      <Field
+        className={styles.fullWidth}
+        name="employmentStatus"
+        label="Employment Status*"
+        component={Select}
+        options={[
+          {
+            value: 'fulltime',
+            label: 'Employed Full-Time',
+          },
+          {
+            value: 'parttime',
+            label: 'Employed Part-Time',
+          },
+          {
+            value: 'unemployed',
+            label: 'Currently Unemployed',
+          },
+        ]}
+        disabled={isSubmitting}
+      />
 
-        <Field
-          type="text"
-          name="companyName"
-          label="Company Name"
-          component={Input}
-          disabled={isSubmitting}
-        />
+      <Field
+        type="text"
+        name="companyName"
+        label="Company Name"
+        component={Input}
+        disabled={isSubmitting}
+      />
 
-        <Field
-          type="text"
-          name="companyRole"
-          label="Company Role"
-          component={Input}
-          disabled={isSubmitting}
-        />
-      </div>
-    </>
+      <Field
+        type="text"
+        name="companyRole"
+        label="Company Role"
+        component={Input}
+        disabled={isSubmitting}
+      />
+    </div>
   );
 }
 

@@ -128,6 +128,13 @@ module.exports = {
     'prettier/prettier': 'error',
 
     // React Plugin Rules
+    'react/function-component-definition': [
+      'error',
+      {
+        namedComponents: ['arrow-function', 'function-declaration'],
+        unnamedComponents: ['arrow-function', 'function-expression'],
+      },
+    ],
     'react/forbid-prop-types': ['error', { forbid: ['any'] }],
     'react/jsx-curly-brace-presence': ['error', { props: 'never', children: 'never' }],
     'react/jsx-filename-extension': ['error', { extensions: ['.js'] }],
@@ -162,12 +169,14 @@ module.exports = {
     'unicorn/throw-new-error': 'error',
 
     // Vanilla ESLint Rules
-    'arrow-body-style': 'off', // prettier
+    'arrow-body-style': 'off',
+    'class-methods-use-this': 'off',
     'comma-dangle': ['error', 'only-multiline'],
-    'implicit-arrow-linebreak': 'off', // prettier
+    'implicit-arrow-linebreak': 'off',
     'max-len': ['error', { code: 100, ignoreUrls: true }],
     'multiline-ternary': 'off',
     'no-console': 'warn',
+    'no-promise-executor-return': 'off',
     'no-restricted-imports': [
       'error',
       {

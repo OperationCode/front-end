@@ -15,46 +15,44 @@ const questions = {
     {
       title: `I’m brand new to programming and exploring my options.`,
       content: (
-        <>
-          <ul>
-            <li>
-              If you&apos;re new to coding, learn some basics at{' '}
-              <OutboundLink
-                analyticsEventLabel="freeCodeCamp Link"
-                href="https://www.freecodecamp.org/"
-              >
-                freeCodeCamp
-              </OutboundLink>{' '}
-              or check out our extensive database with thousands of learning resources on{' '}
-              <OutboundLink
-                analyticsEventLabel="Operation Code Resources Link"
-                href="https://operationcode.org/resources/1"
-              >
-                Operation Code Resources
-              </OutboundLink>{' '}
-              .
-            </li>
-            <li>
-              Contribute to our open - source software on{' '}
-              <OutboundLink analyticsEventLabel="Github" href="https://github.com/OperationCode/">
-                Github
-              </OutboundLink>{' '}
-              .
-            </li>
-            <li>
-              Request 1:1 mentorship in Slack by typing the <b>/mentor</b> command in any Slack
-              channel or thread.
-            </li>
-            <li>
-              Join the different channels based on your interest such as <b>#python</b>{' '}
-              <b>#javascript</b>.
-            </li>
-            <li>
-              Ask for assistance with coding, design or specific questions in the <b>#help</b>{' '}
-              channel.
-            </li>
-          </ul>
-        </>
+        <ul>
+          <li>
+            If you&apos;re new to coding, learn some basics at{' '}
+            <OutboundLink
+              analyticsEventLabel="freeCodeCamp Link"
+              href="https://www.freecodecamp.org/"
+            >
+              freeCodeCamp
+            </OutboundLink>{' '}
+            or check out our extensive database with thousands of learning resources on{' '}
+            <OutboundLink
+              analyticsEventLabel="Operation Code Resources Link"
+              href="https://operationcode.org/resources/1"
+            >
+              Operation Code Resources
+            </OutboundLink>{' '}
+            .
+          </li>
+          <li>
+            Contribute to our open - source software on{' '}
+            <OutboundLink analyticsEventLabel="Github" href="https://github.com/OperationCode/">
+              Github
+            </OutboundLink>{' '}
+            .
+          </li>
+          <li>
+            Request 1:1 mentorship in Slack by typing the <b>/mentor</b> command in any Slack
+            channel or thread.
+          </li>
+          <li>
+            Join the different channels based on your interest such as <b>#python</b>{' '}
+            <b>#javascript</b>.
+          </li>
+          <li>
+            Ask for assistance with coding, design or specific questions in the <b>#help</b>{' '}
+            channel.
+          </li>
+        </ul>
       ),
     },
     {
@@ -69,38 +67,36 @@ const questions = {
     {
       title: `I’m a recent bootcamp/college graduate or looking for a job.`,
       content: (
-        <>
-          <ul>
-            <li>
-              Post your resume (redact your personal information) on <b>#career-advice</b> to have
-              your resume reviewed or ask career-related questions.
-            </li>
-            <li>
-              Join the <b>#daily-programmer</b> channel to practice coding or tech challenges you
-              may encounter during an interview.
-            </li>
-            <li>
-              Speak to a mentor for a more 1-on-1 conversation by typing <b>/mentor</b> on any
-              channel.
-            </li>
-            <li>
-              Keep an eye on the <b>#job-board</b> channel or ask specific questions like salary and
-              benefits on the <b>#compensation</b> channel.
-            </li>
-            <li>
-              Grow your portfolio and keep your skills sharp on <b>#oc-projects</b> and on our
-              open-source software repositories on{' '}
-              <OutboundLink
-                analyticsEventLabel="Github"
-                href="https://github.com/OperationCode/"
-                alt="Github"
-              >
-                Github
-              </OutboundLink>{' '}
-              .
-            </li>
-          </ul>
-        </>
+        <ul>
+          <li>
+            Post your resume (redact your personal information) on <b>#career-advice</b> to have
+            your resume reviewed or ask career-related questions.
+          </li>
+          <li>
+            Join the <b>#daily-programmer</b> channel to practice coding or tech challenges you may
+            encounter during an interview.
+          </li>
+          <li>
+            Speak to a mentor for a more 1-on-1 conversation by typing <b>/mentor</b> on any
+            channel.
+          </li>
+          <li>
+            Keep an eye on the <b>#job-board</b> channel or ask specific questions like salary and
+            benefits on the <b>#compensation</b> channel.
+          </li>
+          <li>
+            Grow your portfolio and keep your skills sharp on <b>#oc-projects</b> and on our
+            open-source software repositories on{' '}
+            <OutboundLink
+              analyticsEventLabel="Github"
+              href="https://github.com/OperationCode/"
+              alt="Github"
+            >
+              Github
+            </OutboundLink>{' '}
+            .
+          </li>
+        </ul>
       ),
     },
     {
