@@ -65,7 +65,7 @@ exports[`Nav should render with no props passed 1`] = `
       <nav
         data-testid="Desktop Nav"
       >
-        <Link
+        <ForwardRef(LinkComponent)
           href="/"
         >
           <a
@@ -83,7 +83,7 @@ exports[`Nav should render with no props passed 1`] = `
               />
             </div>
           </a>
-        </Link>
+        </ForwardRef(LinkComponent)>
         <ul
           className="link"
         >
@@ -169,7 +169,7 @@ exports[`Nav should render with no props passed 1`] = `
             sublinks={Array []}
           />
           <li>
-            <Link
+            <ForwardRef(LinkComponent)
               href="/donate"
             >
               <a
@@ -177,7 +177,7 @@ exports[`Nav should render with no props passed 1`] = `
               >
                 Donate
               </a>
-            </Link>
+            </ForwardRef(LinkComponent)>
           </li>
         </ul>
       </nav>

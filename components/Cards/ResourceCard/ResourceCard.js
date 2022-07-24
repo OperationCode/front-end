@@ -30,7 +30,7 @@ VotingBlock.propTypes = {
   didDownvote: bool.isRequired,
 };
 
-const VotingBlock = ({
+function VotingBlock({
   blockID,
   resourceID,
   upVotes,
@@ -40,7 +40,7 @@ const VotingBlock = ({
   setDownVotes,
   didUpvote,
   didDownvote,
-}) => {
+}) {
   const onVote = voteDirection => handleVote(voteDirection, resourceID, setUpVotes, setDownVotes);
   const onUpvote = () => onVote('upvote');
   const onDownvote = () => onVote('downvote');
@@ -97,7 +97,7 @@ const VotingBlock = ({
       </div>
     </div>
   );
-};
+}
 
 export const possibleUserVotes = {
   upvote: 'upvote',
@@ -130,7 +130,7 @@ ResourceCard.defaultProps = {
   userVote: possibleUserVotes.none,
 };
 
-const ResourceCard = ({
+function ResourceCard({
   description,
   downvotes,
   href,
@@ -142,7 +142,7 @@ const ResourceCard = ({
   upvotes,
   userVote,
   id,
-}) => {
+}) {
   const [upVotes, setUpVotes] = useState(upvotes);
   const [downVotes, setDownVotes] = useState(downvotes);
   const didUpvote = userVote === possibleUserVotes.upvote;
@@ -214,6 +214,6 @@ const ResourceCard = ({
       }}
     />
   );
-};
+}
 
 export default ResourceCard;
