@@ -1,11 +1,21 @@
+import { HERO_BANNER_H1 } from 'common/constants/testIDs';
+
 describe('Hash Links', () => {
-  const verifyHashLink = path => {
+  const verifyHashLink = (title, path) => {
     cy.visitAndWaitFor(path);
+
+    cy.findAllByTestId(HERO_BANNER_H1).should('be.visible');
 
     cy.findAllByTestId('Hash Link').each(link => {
       const { hash } = link[0];
 
-      cy.get(hash).scrollIntoView().click({ force: true }).url().should('include', hash);
+      cy.get(hash).scrollIntoView();
+
+      // The literal scrolling sometimes prevents the hash link from being visible in the viewport
+      // eslint-disable-next-line cypress/no-unnecessary-waiting
+      cy.wait(100);
+
+      cy.get(hash).click({ force: true }).url().should('include', hash);
     });
   };
 
@@ -18,7 +28,20 @@ describe('Hash Links', () => {
   someRandomPagesWithHashLinks.forEach(({ title, path }) => {
     describe(`on ${title} page`, () => {
       it(`will change route when clicked`, () => {
-        verifyHashLink(path);
+        verifyHashLink(title, path);
+      });
+    });
+
+    describe('on small viewports', () => {
+      it('is always invisible', () => {
+        cy.visitAndWaitFor(path);
+        cy.viewport('iphone-6');
+
+        cy.findAllByTestId('Hash Link').each(link => {
+          const { hash } = link[0];
+
+          cy.get(hash).should('not.be.visible');
+        });
       });
     });
 
@@ -40,18 +63,5 @@ describe('Hash Links', () => {
     //     });
     //   });
     // });
-
-    describe('on small viewports', () => {
-      it('is always invisible', () => {
-        cy.visitAndWaitFor(path);
-        cy.viewport('iphone-6');
-
-        cy.findAllByTestId('Hash Link').each(link => {
-          const { hash } = link[0];
-
-          cy.get(hash).should('not.be.visible');
-        });
-      });
-    });
   });
 });
