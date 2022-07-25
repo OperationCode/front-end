@@ -19,10 +19,14 @@ const sentryWebpackPluginOptions = {
 
 /**
  * @see https://nextjs.org/docs/basic-features/typescript#type-checking-nextconfigjs
- * @type {import('next/dist/next-server/server/config').NextConfig}
+ * @type {import('next').NextConfig}
  */
 const nextConfig = withPlugins([withBundleAnalyzer], {
-  productionBrowserSourceMaps: false,
+  excludeDefaultMomentLocales: true,
+
+  devIndicators: {
+    buildActivityPosition: 'top-left',
+  },
 
   eslint: {
     ignoreDuringBuilds: true, // We lint during CI.

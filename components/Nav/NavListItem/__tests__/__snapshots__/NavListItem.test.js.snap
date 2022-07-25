@@ -4,7 +4,7 @@ exports[`NavListItem should render with required props passed 1`] = `
 <li
   className="NavListItem"
 >
-  <Link
+  <ForwardRef(LinkComponent)
     href="/test"
   >
     <a
@@ -21,6 +21,6 @@ exports[`NavListItem should render with required props passed 1`] = `
         Test
       </span>
     </a>
-  </Link>
+  </ForwardRef(LinkComponent)>
 </li>
 `;

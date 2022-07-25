@@ -60,6 +60,13 @@ module.exports = {
   // Make calling deprecated APIs throw helpful error messages
   // errorOnDeprecated: false,
 
+  /**
+   * @see https://jestjs.io/docs/configuration#faketimers-object
+   */
+  fakeTimers: {
+    enableGlobally: true,
+  },
+
   // Force coverage collection from ignored files usin a array of glob patterns
   // forceCoverageMatch: [],
 
@@ -146,7 +153,9 @@ module.exports = {
   testEnvironment: 'jest-environment-jsdom',
 
   // Options that will be passed to the testEnvironment
-  // testEnvironmentOptions: {},
+  testEnvironmentOptions: {
+    url: 'https://localhost',
+  },
 
   // Adds a location field to test results
   // testLocationInResults: false,
@@ -167,12 +176,6 @@ module.exports = {
 
   // This option allows use of a custom test runner
   // testRunner: "jasmine2",
-
-  // This option sets the URL for the jsdom environment. It is reflected in properties such as location.href
-  testURL: 'https://localhost',
-
-  // Setting this value to "fake" allows the use of fake timers for functions such as "setTimeout"
-  timers: 'modern',
 
   // A map from regular expressions to paths to transformers
   transform: {

@@ -13,13 +13,11 @@ function Press() {
       <Head title={pageTitle} />
 
       <HeroBanner title={pageTitle}>
-        <>
-          <p>
-            This page is designed to make a journalist&apos;s job easy in writing, blogging, or
-            documenting Operation Code. Below you will find targeted information corresponding to
-            common representative visitors, videos, photos, press releases, and branding details.
-          </p>
-        </>
+        <p>
+          This page is designed to make a journalist&apos;s job easy in writing, blogging, or
+          documenting Operation Code. Below you will find targeted information corresponding to
+          common representative visitors, videos, photos, press releases, and branding details.
+        </p>
       </HeroBanner>
 
       <Content

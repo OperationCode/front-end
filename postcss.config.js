@@ -5,6 +5,13 @@ module.exports = {
     'postcss-import',
     'autoprefixer',
     'postcss-custom-media',
-    ['postcss-custom-properties', { importFrom: './common/styles/variables.css', preserve: false }],
+    [
+      'postcss-custom-properties',
+      {
+        importFrom: './common/styles/variables.css',
+        preserve: false,
+        disableDeprecationNotice: true,
+      },
+    ],
   ],
 };

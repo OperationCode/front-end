@@ -10,7 +10,7 @@ exports[`Footer should render with no props passed 1`] = `
     <div
       className="logoGrouping"
     >
-      <Link
+      <ForwardRef(LinkComponent)
         href="/"
       >
         <a
@@ -23,7 +23,7 @@ exports[`Footer should render with no props passed 1`] = `
             width={318}
           />
         </a>
-      </Link>
+      </ForwardRef(LinkComponent)>
     </div>
     <div
       className="capitalize marginBottom"
@@ -54,151 +54,151 @@ exports[`Footer should render with no props passed 1`] = `
           className="linksColumn"
         >
           <li>
-            <Link
+            <ForwardRef(LinkComponent)
               href="/about"
             >
               <a>
                 About Us
               </a>
-            </Link>
+            </ForwardRef(LinkComponent)>
           </li>
           <li>
-            <Link
+            <ForwardRef(LinkComponent)
               href="/contact"
             >
               <a>
                 Contact Us
               </a>
-            </Link>
+            </ForwardRef(LinkComponent)>
           </li>
           <li>
-            <Link
+            <ForwardRef(LinkComponent)
               href="/faq"
             >
               <a>
                 FAQ
               </a>
-            </Link>
+            </ForwardRef(LinkComponent)>
           </li>
           <li>
-            <Link
+            <ForwardRef(LinkComponent)
               href="/services"
             >
               <a>
                 Services
               </a>
-            </Link>
+            </ForwardRef(LinkComponent)>
           </li>
         </ul>
         <ul
           className="linksColumn"
         >
           <li>
-            <Link
+            <ForwardRef(LinkComponent)
               href="/code_schools"
             >
               <a>
                 Code Schools
               </a>
-            </Link>
+            </ForwardRef(LinkComponent)>
           </li>
           <li>
-            <Link
+            <ForwardRef(LinkComponent)
               href="/resources"
             >
               <a>
                 Resources
               </a>
-            </Link>
+            </ForwardRef(LinkComponent)>
           </li>
           <li>
-            <Link
+            <ForwardRef(LinkComponent)
               href="/jobs"
             >
               <a>
                 Job Board
               </a>
-            </Link>
+            </ForwardRef(LinkComponent)>
           </li>
           <li>
-            <Link
+            <ForwardRef(LinkComponent)
               href="/events"
             >
               <a>
                 Events
               </a>
-            </Link>
+            </ForwardRef(LinkComponent)>
           </li>
         </ul>
         <ul
           className="linksColumn"
         >
           <li>
-            <Link
+            <ForwardRef(LinkComponent)
               href="/get_involved"
             >
               <a>
                 Get Involved
               </a>
-            </Link>
+            </ForwardRef(LinkComponent)>
           </li>
           <li>
-            <Link
+            <ForwardRef(LinkComponent)
               href="/podcast"
             >
               <a>
                 Podcast
               </a>
-            </Link>
+            </ForwardRef(LinkComponent)>
           </li>
           <li>
-            <Link
+            <ForwardRef(LinkComponent)
               href="/history"
             >
               <a>
                 History
               </a>
-            </Link>
+            </ForwardRef(LinkComponent)>
           </li>
           <li>
-            <Link
+            <ForwardRef(LinkComponent)
               href="/donate"
             >
               <a>
                 Donate
               </a>
-            </Link>
+            </ForwardRef(LinkComponent)>
           </li>
         </ul>
         <ul
           className="linksColumn"
         >
           <li>
-            <Link
+            <ForwardRef(LinkComponent)
               href="/press"
             >
               <a>
                 Press
               </a>
-            </Link>
+            </ForwardRef(LinkComponent)>
           </li>
           <li>
-            <Link
+            <ForwardRef(LinkComponent)
               href="/branding"
             >
               <a>
                 Branding
               </a>
-            </Link>
+            </ForwardRef(LinkComponent)>
           </li>
           <li>
-            <Link
+            <ForwardRef(LinkComponent)
               href="/team"
             >
               <a>
                 Our Team
               </a>
-            </Link>
+            </ForwardRef(LinkComponent)>
           </li>
         </ul>
       </div>
@@ -217,7 +217,7 @@ exports[`Footer should render with no props passed 1`] = `
     <div
       className="row legalLinks"
     >
-      <Link
+      <ForwardRef(LinkComponent)
         href="/terms"
       >
         <a
@@ -225,7 +225,7 @@ exports[`Footer should render with no props passed 1`] = `
         >
           Terms of Use
         </a>
-      </Link>
+      </ForwardRef(LinkComponent)>
       <OutboundLink
         analyticsEventLabel="Privacy footer link"
         hasIcon={true}

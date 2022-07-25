@@ -1,7 +1,9 @@
 /* eslint-disable react/prop-types */
 import '@testing-library/jest-dom/extend-expect';
 
-const MockedNextImage = ({ src, alt }) => <img src={src} alt={alt} />;
+const MockedNextImage = ({ src, alt }) => {
+  return <img src={src} alt={alt} />;
+};
 
 /* MOCKS */
 jest.mock('next/image', () => MockedNextImage);

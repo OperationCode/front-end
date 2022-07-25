@@ -11,3 +11,11 @@ cypress-coverage
 jest-coverage
 .storybook-dist
 common/styles/themeMap.js
+**/*.snap
+**/*.mp4
+**/*.png
+**/*.jpeg
+**/*.jpg
+**/*.txt
+**/*.xml
+**/*.ico

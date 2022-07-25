@@ -31,7 +31,7 @@ function Label({ children, className, 'data-testid': testID, isHidden, ...props 
     </label>
   );
 
-  return isHidden ? <ScreenReaderOnly>{TheLabel}</ScreenReaderOnly> : <>{TheLabel}</>;
+  return isHidden ? <ScreenReaderOnly>{TheLabel}</ScreenReaderOnly> : TheLabel;
 }
 
 export default Label;

@@ -11,7 +11,7 @@
 }
 
 .PaginationItem > svg {
-  fill: currentColor;
+  fill: currentcolor;
   color: var(--primary);
   height: 1.5em;
 }

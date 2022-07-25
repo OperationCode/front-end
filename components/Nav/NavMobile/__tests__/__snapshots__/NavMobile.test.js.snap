@@ -5,7 +5,7 @@ exports[`NavMobile should render 1`] = `
   className="NavMobile"
   data-testid="Mobile Nav Container"
 >
-  <Link
+  <ForwardRef(LinkComponent)
     href="/"
   >
     <button
@@ -24,7 +24,7 @@ exports[`NavMobile should render 1`] = `
         />
       </div>
     </button>
-  </Link>
+  </ForwardRef(LinkComponent)>
   <button
     className="button hamburger"
     data-testid="Hamburger Button"
