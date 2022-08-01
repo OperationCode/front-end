@@ -27,10 +27,9 @@ describe('login', () => {
 
     cy.getCookies().then(([tokenCookie]) => {
       const jwt = jwt_decode(tokenCookie.value);
-
+      expect(jwt.zipcode).to.exist;
       expect(jwt.firstName).to.exist;
       expect(jwt.lastName).to.exist;
-      expect(jwt.zipcode).to.exist;
     });
   });
 
