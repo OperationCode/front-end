@@ -40,7 +40,7 @@
     "@innocuous/components": "^2.1.1",
     "@innocuous/functions": "^2.1.1",
     "@next/bundle-analyzer": "12.2.3",
-    "@radix-ui/react-dialog": "0.1.7",
+    "@radix-ui/react-dialog": "1.0.0",
     "@radix-ui/react-tabs": "0.1.1",
     "@sentry/nextjs": "^7.7.0",
     "axios": "^0.27.2",
