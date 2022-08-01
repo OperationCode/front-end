@@ -18,7 +18,7 @@ module.exports = (on, config) => {
   // `config` is the resolved Cypress config
   addMatchImageSnapshotPlugin(on, config);
   require('@cypress/code-coverage/task')(on, config);
-  on('file:preprocessor', require('@cypress/code-coverage/use-browserify-istanbul'));
+  on('file:preprocessor', require('@cypress/code-coverage/use-babelrc'));
 
   // this fixes aliasing in cypres e2e tests
   // https://github.com/cypress-io/cypress/issues/3262#issuecomment-462646891
