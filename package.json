@@ -41,7 +41,7 @@
     "@innocuous/functions": "^2.1.1",
     "@next/bundle-analyzer": "12.2.3",
     "@radix-ui/react-dialog": "1.0.0",
-    "@radix-ui/react-tabs": "0.1.1",
+    "@radix-ui/react-tabs": "1.0.0",
     "@sentry/nextjs": "^7.8.1",
     "axios": "^0.27.2",
     "classnames": "^2.3.1",
