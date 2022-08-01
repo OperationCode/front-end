@@ -12364,10 +12364,10 @@ nth-check@^2.0.0:
   dependencies:
     boolbase "^1.0.0"
 
-nuka-carousel@^5.1.3:
-  version "5.1.3"
-  resolved "https://registry.yarnpkg.com/nuka-carousel/-/nuka-carousel-5.1.3.tgz#7e2bf2180314696f4906f27a2bf628622204121c"
-  integrity sha512-5neL/NjqrB/TQIQEHcmRaODhZvTyEyPr9kgi8NTTxP/gqos9YusmXQVOHNbCAlEFjBo8rsxbOdfhnvrmQS0Bog==
+nuka-carousel@^5.2.0:
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/nuka-carousel/-/nuka-carousel-5.2.0.tgz#b236e5a633e3ef3abbd7ab21942615fda3eabef8"
+  integrity sha512-mBMS7eXxsb54L87jPTSMst5Ow53u6Ocf28SDY36+THH7RuZ7aJxo8CQAuO8Bov8MkSTGALV+8P7TcaOqnkPYLA==
 
 num2fraction@^1.2.2:
   version "1.2.2"

@@ -59,7 +59,7 @@
     "logrocket-react": "^5.0.1",
     "next": "12.2.3",
     "next-cookies": "^2.0.3",
-    "nuka-carousel": "^5.1.3",
+    "nuka-carousel": "^5.2.0",
     "object-hash": "^3.0.0",
     "path": "^0.12.7",
     "prop-types": "^15.8.1",
