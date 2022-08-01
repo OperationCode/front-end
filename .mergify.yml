@@ -12,7 +12,7 @@ queue_rules:
 pull_request_rules:
   - name: Auto-merge successful Dependabot upgrades
     conditions:
-      - author=dependabot
+      - author=dependabot[bot]
       - '#changes-requested-reviews-by=0'
       - 'status-success=Vercel – operation-code'
       - 'status-success=Vercel – storybook'
