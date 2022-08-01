@@ -42,7 +42,7 @@
     "@next/bundle-analyzer": "12.2.3",
     "@radix-ui/react-dialog": "0.1.7",
     "@radix-ui/react-tabs": "0.1.1",
-    "@sentry/nextjs": "^7.7.0",
+    "@sentry/nextjs": "^7.8.1",
     "axios": "^0.27.2",
     "classnames": "^2.3.1",
     "date-fns": "^2.29.1",
