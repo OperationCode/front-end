@@ -104,7 +104,7 @@
     "babel-plugin-macros": "^3.1.0",
     "babel-plugin-module-resolver": "^4.1.0",
     "babel-plugin-react-remove-properties": "^0.3.0",
-    "chromatic": "^6.7.1",
+    "chromatic": "^6.7.3",
     "cross-env": "^7.0.3",
     "css-loader": "^6.7.1",
     "cypress": "^9.5.3",
