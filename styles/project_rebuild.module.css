@@ -1,3 +1,34 @@
+.logosSection {
+  margin-bottom: 0;
+}
+
+.logos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  margin-bottom: -2rem;
+}
+
+@media screen and (--large-viewport) {
+  .logos {
+    gap: 3rem;
+  }
+
+  .logos > *:nth-child(3) {
+    order: 3;
+  }
+
+  .logos > *:nth-child(2) {
+    order: 1;
+  }
+
+  .logos > *:nth-child(1) {
+    order: 2;
+  }
+}
+
 .bold {
   font-weight: bold;
 }
