@@ -12,7 +12,14 @@ const pageTitle = 'Project Rebuild';
 export default () => {
   return (
     <div>
-      <Head title={pageTitle} />
+      <Head
+        title={pageTitle}
+        description={`Operation Code is a registered 501(c)3 whose mission is to help our military
+        community and SIV allied refugees grow in their tech careers while rebuilding our lives
+        post-conflict. Operation Code is pleased to provide a refugee tech training program -
+        Project Rebuild, in collaboration with our community partners: Fresh Start Refugee
+        Assistance Center and Globally.`}
+      />
 
       <HeroBanner
         title={pageTitle}
