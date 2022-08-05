@@ -95,6 +95,11 @@ const sponsorship = {
   href: '/sponsorship',
 };
 
+const projectRebuild = {
+  name: 'Project Rebuild',
+  href: '/project_rebuild',
+};
+
 // MARK: Top-level navigation items
 const accountGroup = {
   name: 'Account',
@@ -105,7 +110,7 @@ const accountGroup = {
 
 const servicesGroup = {
   ...services,
-  sublinks: [events, podcast, resources, codeSchools],
+  sublinks: [events, podcast, resources, codeSchools, projectRebuild],
 };
 
 const aboutUsGroup = {

@@ -15,7 +15,7 @@ Head.defaultProps = {
   title: undefined,
   description:
     // eslint-disable-next-line max-len
-    'Operation Code is a 501(c)(3) non-profit dedicated to helping military members, veterans, and their families to learn how to get a job in the tech industry.',
+    'Operation Code is a registered 501(c)3 whose mission is to help our military community and SIV allied refugees grow in their tech careers while rebuilding our lives post-conflict.',
   url: 'https://operationcode.org',
   ogImage: `${s3}branding/oc_image.png`,
 };
