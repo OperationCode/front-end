@@ -67,7 +67,6 @@ exports[`LoginForm should render with required props 1`] = `
         />
       </div>
     </div>
-    
     <button
       className="Button topMargin secondary"
       data-testid="LOGIN_BUTTON"

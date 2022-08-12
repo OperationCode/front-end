@@ -129,9 +129,7 @@ exports[`ResourceSearchForm should render with required props 1`] = `
                           "whiteSpace": "pre",
                         }
                       }
-                    >
-                      
-                    </div>
+                    />
                   </div>
                 </div>
               </div>
@@ -262,9 +260,7 @@ exports[`ResourceSearchForm should render with required props 1`] = `
                           "whiteSpace": "pre",
                         }
                       }
-                    >
-                      
-                    </div>
+                    />
                   </div>
                 </div>
               </div>
@@ -395,9 +391,7 @@ exports[`ResourceSearchForm should render with required props 1`] = `
                           "whiteSpace": "pre",
                         }
                       }
-                    >
-                      
-                    </div>
+                    />
                   </div>
                 </div>
               </div>

@@ -123,9 +123,7 @@ exports[`UpdateProfileForm should render with required props 1`] = `
                         "whiteSpace": "pre",
                       }
                     }
-                  >
-                    
-                  </div>
+                  />
                 </div>
               </div>
             </div>
@@ -221,9 +219,7 @@ exports[`UpdateProfileForm should render with required props 1`] = `
   </div>
   <div
     className="errorMessage"
-  >
-    
-  </div>
+  />
   <div
     className="buttonGrouping"
   >

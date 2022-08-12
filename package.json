@@ -64,8 +64,8 @@
     "path": "^0.12.7",
     "prop-types": "^15.8.1",
     "qs": "^6.11.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-facebook-login": "^4.1.1",
     "react-google-login": "^5.2.2",
     "react-on-screen": "^2.1.1",
@@ -138,8 +138,8 @@
     "postcss-prepend-imports": "^1.0.1",
     "prettier": "^2.7.1",
     "process": "0.11.10",
-    "react-is": "^17.0.2",
-    "react-test-renderer": "^17.0.2",
+    "react-is": "^18.2.0",
+    "react-test-renderer": "^18.2.0",
     "require-context.macro": "^1.2.2",
     "start-server-and-test": "^1.14.0",
     "style-loader": "^3.3.1",
@@ -152,8 +152,6 @@
   },
   "resolutions": {
     "istanbul-lib-coverage": "3.2.0",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
     "webpack": "^5.73.0"
   }
 }

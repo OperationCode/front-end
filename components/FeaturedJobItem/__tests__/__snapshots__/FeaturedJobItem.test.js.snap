@@ -123,12 +123,7 @@ exports[`FeaturedJobItem should render with required props 1`] = `
     </div>
     <div
       className="detailsContainer"
-    >
-      
-      
-      
-      
-    </div>
+    />
   </div>
   <p
     className="description"

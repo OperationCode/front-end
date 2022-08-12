@@ -89,9 +89,7 @@ exports[`Select should render with required props 1`] = `
                     "whiteSpace": "pre",
                   }
                 }
-              >
-                
-              </div>
+              />
             </div>
           </div>
         </div>

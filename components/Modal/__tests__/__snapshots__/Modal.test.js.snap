@@ -40,11 +40,11 @@ exports[`Modal should render with many props assigned 1`] = `
     </button>
   </div>
   <div
-    aria-describedby="radix-5"
-    aria-labelledby="radix-4"
+    aria-describedby="radix-:r5:"
+    aria-labelledby="radix-:r4:"
     class="Card test-class modalContent"
     data-state="open"
-    id="radix-3"
+    id="radix-:r3:"
     role="dialog"
     style="pointer-events: auto;"
     tabindex="-1"

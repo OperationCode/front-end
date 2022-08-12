@@ -103,9 +103,7 @@ exports[`UpdateProfileForm/Steps/MilitaryStatus should render in context of Form
                         "whiteSpace": "pre",
                       }
                     }
-                  >
-                    
-                  </div>
+                  />
                 </div>
               </div>
             </div>
