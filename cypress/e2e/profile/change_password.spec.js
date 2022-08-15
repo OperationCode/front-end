@@ -19,12 +19,8 @@ describe('change_password', () => {
     cy.server();
     cy.route('POST', 'auth/password/change/').as('postChange');
 
-    cy.visit('/profile');
-    cy.findAllByLabelText('Email*').type(existingUser.email);
-    cy.findAllByLabelText('Password*').type(existingUser.password);
-
-    cy.findAllByTestId('LOGIN_BUTTON').click();
-    cy.findByText('Change Password').click();
+    cy.login();
+    cy.visit('/profile/change_password');
     cy.get('h1').should('have.text', 'Enter new password');
   });
 

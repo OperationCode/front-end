@@ -7,7 +7,6 @@ import {
   INPUT_ERROR,
   PROFILE_GREETING,
 } from 'common/constants/testIDs';
-import existingUser from 'test-utils/mocks/existingUser';
 
 const goToNextStep = stepName => {
   cy.findByTestId(MULTI_STEP_STEP_BUTTON).click();
@@ -37,16 +36,10 @@ describe(`profile/update (unauthorized)`, () => {
 describe(`profile/update (from login)`, () => {
   beforeEach(() => {
     cy.server();
+    cy.login();
     cy.route('PATCH', 'auth/profile/').as('patchUser');
 
-    cy.visit('/profile');
-    cy.findAllByLabelText('Email*').type(existingUser.email);
-    cy.findAllByLabelText('Password*').type(existingUser.password);
-
-    cy.findAllByTestId('LOGIN_BUTTON').click();
-
-    cy.findByText('Update Profile').click();
-
+    cy.visitAndWaitFor('/profile/update');
     cy.get('h1').should('have.text', 'Update Profile');
     cy.get('h3').should('have.text', firstStepName);
   });
@@ -145,13 +138,7 @@ describe(`profile/update (from login)`, () => {
 describe(`profile/update (from login) [server errors]`, () => {
   beforeEach(() => {
     cy.server({ method: 'PATCH', status: 500, response: {} });
-    cy.visit('/profile');
-    cy.findAllByLabelText('Email*').type(existingUser.email);
-    cy.findAllByLabelText('Password*').type(existingUser.password);
-
-    cy.findAllByTestId('LOGIN_BUTTON').click();
-
-    cy.findByText('Update Profile').click();
+    cy.login();
   });
 
   after(() => cy.clearCookies());
@@ -160,6 +147,8 @@ describe(`profile/update (from login) [server errors]`, () => {
     const ErrorAPICall = 'PATCH_USER_FAIL_UNCAUGHT';
 
     cy.route({ url: 'auth/profile/' }).as(ErrorAPICall);
+
+    cy.visitAndWaitFor('/profile/update');
 
     cy.findByTestId(MULTI_STEP_STEP_BUTTON).click();
 
