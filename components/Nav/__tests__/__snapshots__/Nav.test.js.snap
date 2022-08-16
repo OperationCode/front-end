@@ -91,7 +91,7 @@ exports[`Nav should render with no props passed 1`] = `
         <ul
           className="link"
         >
-          <NavListItem
+          <ForwardRef(LoadableComponent)
             href="/about"
             icon={null}
             name="About Us"
@@ -116,7 +116,7 @@ exports[`Nav should render with no props passed 1`] = `
               ]
             }
           />
-          <NavListItem
+          <ForwardRef(LoadableComponent)
             href="/services"
             icon={null}
             name="Services"
@@ -145,7 +145,7 @@ exports[`Nav should render with no props passed 1`] = `
               ]
             }
           />
-          <NavListItem
+          <ForwardRef(LoadableComponent)
             href="/get_involved"
             icon={null}
             name="Get Involved"
@@ -170,11 +170,10 @@ exports[`Nav should render with no props passed 1`] = `
               ]
             }
           />
-          <NavListItem
+          <ForwardRef(LoadableComponent)
             href="/login"
             icon={null}
             name="Login"
-            sublinks={Array []}
           />
           <li>
             <ForwardRef(LinkComponent)

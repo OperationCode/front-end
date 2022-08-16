@@ -97,9 +97,7 @@ exports[`UpdateProfileForm/Steps/MilitaryDetails should render in context of For
                         "whiteSpace": "pre",
                       }
                     }
-                  >
-                    
-                  </div>
+                  />
                 </div>
               </div>
             </div>

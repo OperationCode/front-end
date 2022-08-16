@@ -97,9 +97,7 @@ exports[`UpdateProfileForm/Steps/Technology should render in context of Formik 1
                         "whiteSpace": "pre",
                       }
                     }
-                  >
-                    
-                  </div>
+                  />
                 </div>
               </div>
             </div>
@@ -231,9 +229,7 @@ exports[`UpdateProfileForm/Steps/Technology should render in context of Formik 1
                         "whiteSpace": "pre",
                       }
                     }
-                  >
-                    
-                  </div>
+                  />
                 </div>
               </div>
             </div>

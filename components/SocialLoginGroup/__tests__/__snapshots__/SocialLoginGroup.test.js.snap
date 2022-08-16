@@ -6,8 +6,6 @@ exports[`SocialLoginGroup should render with required props 1`] = `
 >
   <div
     className="alertContainer fullWidth"
-  >
-    
-  </div>
+  />
 </div>
 `;

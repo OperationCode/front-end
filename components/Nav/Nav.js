@@ -11,11 +11,13 @@ import {
   mobileLoggedInNavItems,
   mobileLoggedOutNavItems,
 } from 'common/constants/navigation';
-import NavListItem from 'components/Nav/NavListItem/NavListItem';
 import NavMobile from 'components/Nav/NavMobile/NavMobile';
 import { hasValidAuthToken } from 'common/utils/cookie-utils';
+import dynamic from 'next/dynamic';
 import UserLogo from '../../public/static/images/icons/FontAwesome/user.svg';
 import styles from './Nav.module.css';
+
+const NavListItem = dynamic(() => import('components/Nav/NavListItem/NavListItem'), { ssr: false });
 
 export const Nav = () => {
   const [isMobileNavOpen, setMobileNavOpen] = useState(false);

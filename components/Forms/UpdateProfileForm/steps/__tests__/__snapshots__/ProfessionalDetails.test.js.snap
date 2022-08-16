@@ -97,9 +97,7 @@ exports[`UpdateProfileForm/Steps/ProfessionalDetails should render in context of
                         "whiteSpace": "pre",
                       }
                     }
-                  >
-                    
-                  </div>
+                  />
                 </div>
               </div>
             </div>

@@ -257,7 +257,6 @@ exports[`RegistrationForm should render with required props 1`] = `
       </label>
     </div>
   </div>
-  
   <hr
     className="seperator"
   />

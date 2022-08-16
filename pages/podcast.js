@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { arrayOf, shape, string } from 'prop-types';
 import get from 'lodash/get';
-import ReactPlayer from 'react-player';
+import dynamic from 'next/dynamic';
 import { parse as parseXml } from 'fast-xml-parser';
 import { ONE_DAY } from 'common/constants/unitsOfTime';
 import Head from 'components/head';
@@ -13,6 +13,8 @@ import styles from 'styles/podcast.module.css';
 import Image from 'next/image';
 
 const pageTitle = 'Podcast';
+
+const ReactPlayer = dynamic(() => import('react-player/lazy'), { ssr: false });
 
 Podcast.propTypes = {
   episodes: arrayOf(shape({ image: string, name: string, source: string, story: string }))
