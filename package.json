@@ -118,7 +118,7 @@
     "eslint-plugin-jsx-a11y": "^6.6.1",
     "eslint-plugin-lodash": "^7.4.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-react": "^7.30.1",
+    "eslint-plugin-react": "^7.31.1",
     "eslint-plugin-unicorn": "^43.0.2",
     "express": "^4.18.1",
     "faker": "^5.5.3",
