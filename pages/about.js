@@ -119,15 +119,15 @@ function About() {
             <h6>Community Events</h6>
             <p>
               Join one of our local meetup chapters throughout the country, and learn with fellow
-              members of the military community. Regarding local chapter events, inquire about
-              events near you or about starting a chapter in your area by emailing{' '}
+              members of the military community. Email us at
               <OutboundLink
                 href="mailto:staff@operationcode.org"
                 analyticsEventLabel="Email"
                 hasIcon={false}
               >
                 staff@operationcode.org
-              </OutboundLink>
+              </OutboundLink>{' '}
+              to learn more.
             </p>
           </ImageCard>,
           <ImageCard
