@@ -42,11 +42,6 @@
         <priority>0.80</priority>
     </url>
     <url>
-        <loc>https://www.operationcode.org/events</loc>
-        <lastmod>Wed, 14 Oct 2020 03:35:19 GMT</lastmod>
-        <priority>0.80</priority>
-    </url>
-    <url>
         <loc>https://www.operationcode.org/faq</loc>
         <lastmod>Wed, 14 Oct 2020 03:35:19 GMT</lastmod>
         <priority>0.80</priority>
@@ -134,6 +129,11 @@
     <url>
         <loc>https://www.operationcode.org/who_we_serve</loc>
         <lastmod>Wed, 14 Oct 2020 03:35:19 GMT</lastmod>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://www.operationcode.org/project_rebuild</loc>
+        <lastmod>Sat, 6 Aug 2022 00:00:00 GMT</lastmod>
         <priority>0.80</priority>
     </url>
 </urlset>

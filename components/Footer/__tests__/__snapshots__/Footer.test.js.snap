@@ -120,15 +120,6 @@ exports[`Footer should render with no props passed 1`] = `
               </a>
             </ForwardRef(LinkComponent)>
           </li>
-          <li>
-            <ForwardRef(LinkComponent)
-              href="/events"
-            >
-              <a>
-                Events
-              </a>
-            </ForwardRef(LinkComponent)>
-          </li>
         </ul>
         <ul
           className="linksColumn"
