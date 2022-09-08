@@ -50,11 +50,6 @@ const getInvolved = {
   href: '/get_involved',
 };
 
-const events = {
-  name: 'Events',
-  href: '/events',
-};
-
 const profile = {
   name: 'Profile',
   href: '/profile',
@@ -110,7 +105,7 @@ const accountGroup = {
 
 const servicesGroup = {
   ...services,
-  sublinks: [events, podcast, resources, codeSchools, projectRebuild],
+  sublinks: [podcast, resources, codeSchools, projectRebuild],
 };
 
 const aboutUsGroup = {
@@ -150,7 +145,7 @@ export const mobileLoggedOutNavItems = flattenDepth(
 // MARK: Footer items
 export const footerItems = {
   column1: [about, contact, faq, services],
-  column2: [codeSchools, resources, jobs, events],
+  column2: [codeSchools, resources, jobs],
   column3: [getInvolved, podcast, history, donate],
   column4: [
     {

@@ -10,6 +10,7 @@ import Badge from 'components/Badge/Badge';
 import Content from 'components/Content/Content';
 import ImageCard from 'components/Cards/ImageCard/ImageCard';
 import LinkButton from 'components/Buttons/LinkButton/LinkButton';
+import OutboundLink from 'components/OutboundLink/OutboundLink';
 import JoinSection from 'components/ReusableSections/JoinSection/JoinSection';
 import CareerServicesIcon from 'static/images/icons/Custom/career_services.svg';
 import MentorshipIcon from 'static/images/icons/Custom/mentorship.svg';
@@ -18,7 +19,6 @@ import { ONE_WEEK } from 'common/constants/unitsOfTime';
 import { s3 } from 'common/constants/urls';
 import { slackMembersAPIUrl, slackGeneralChannelId } from 'common/config/environment';
 import styles from 'styles/services.module.css';
-import OutboundLink from '../components/OutboundLink/OutboundLink';
 
 const VISIBILITY_OFFSET = 400;
 
@@ -158,10 +158,16 @@ function Services({ numberOfMembers }) {
             <Link href="/resources">
               <a>learning resources</a>
             </Link>
-            , and a listing of{' '}
-            <Link href="/events">
-              <a>ongoing events</a>
-            </Link>
+            , and local chapter events. Regarding local chapter events, inquire about events near
+            you or about starting a chapter in your area by emailing{' '}
+            <OutboundLink
+              href="mailto:staff@operationcode.org"
+              analyticsEventLabel="Email"
+              hasIcon={false}
+            >
+              staff@operationcode.org
+            </OutboundLink>
+            .
           </p>,
         ]}
       />

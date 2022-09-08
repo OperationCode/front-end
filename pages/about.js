@@ -4,6 +4,7 @@ import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
 import ImageCard from 'components/Cards/ImageCard/ImageCard';
 import ValueCard from 'components/Cards/ValueCard/ValueCard';
+import OutboundLink from 'components/OutboundLink/OutboundLink';
 import { s3 } from 'common/constants/urls';
 import styles from 'styles/about.module.css';
 
@@ -117,11 +118,16 @@ function About() {
           >
             <h6>Community Events</h6>
             <p>
-              Join one of our{' '}
-              <Link href="/events">
-                <a>local meetup chapters</a>
-              </Link>{' '}
-              throughout the country, and learn with fellow members of the military community.
+              Join one of our local meetup chapters throughout the country, and learn with fellow
+              members of the military community. Regarding local chapter events, inquire about
+              events near you or about starting a chapter in your area by emailing{' '}
+              <OutboundLink
+                href="mailto:staff@operationcode.org"
+                analyticsEventLabel="Email"
+                hasIcon={false}
+              >
+                staff@operationcode.org
+              </OutboundLink>
             </p>
           </ImageCard>,
           <ImageCard

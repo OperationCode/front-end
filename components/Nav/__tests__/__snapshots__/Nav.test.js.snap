@@ -20,10 +20,6 @@ exports[`Nav should render with no props passed 1`] = `
           "name": "Get Involved",
         },
         Object {
-          "href": "/events",
-          "name": "Events",
-        },
-        Object {
           "href": "/podcast",
           "name": "Podcast",
         },
@@ -122,10 +118,6 @@ exports[`Nav should render with no props passed 1`] = `
             name="Services"
             sublinks={
               Array [
-                Object {
-                  "href": "/events",
-                  "name": "Events",
-                },
                 Object {
                   "href": "/podcast",
                   "name": "Podcast",
