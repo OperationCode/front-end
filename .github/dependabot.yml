@@ -2,6 +2,10 @@ version: 2
 updates:
 - package-ecosystem: npm
   directory: "/"
+  schedule:
+    interval: monthly
+    time: "07:00"
+    timezone: America/Los_Angeles
   open-pull-requests-limit: 0
   versioning-strategy: increase
   
