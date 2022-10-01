@@ -2,8 +2,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Router from 'next/router';
 import classNames from 'classnames';
-import { s3 } from 'common/constants/urls';
-import Image from 'next/image';
+import Logo from 'public/static/images/logo.svg';
 
 import {
   loggedInNavItems,
@@ -70,14 +69,7 @@ export const Nav = () => {
                 className={classNames(styles.logoLink, styles.link)}
                 onContextMenu={redirectRightClick}
               >
-                <div className={styles.logo}>
-                  <Image
-                    src={`${s3}branding/logos/small-blue-logo.png`}
-                    alt="Operation Code Logo"
-                    width={224}
-                    height={42}
-                  />
-                </div>
+                <Logo className={styles.logo} style={{ width: 224, height: 42 }} fill="#f7f7f7" />
               </a>
             </Link>
 

@@ -5,6 +5,7 @@ import SocialMedia from 'components/SocialMedia/SocialMedia';
 import { footerItems } from 'common/constants/navigation';
 import { s3 } from 'common/constants/urls';
 import Image from 'next/image';
+import Logo from 'public/static/images/logo.svg';
 import styles from './Footer.module.css';
 
 function Footer() {
@@ -33,12 +34,11 @@ function Footer() {
       <div className={classNames(styles.footerGrouping, styles.socialGrouping)}>
         <div className={classNames(styles.logoGrouping)}>
           <Link href="/" key="Home">
-            <a className={classNames(styles.logoLink, styles.link)}>
-              <Image
-                src={`${s3}branding/logos/small-blue-logo.png`}
-                alt="Operation Code Logo"
-                width={318}
-                height={60}
+            <a>
+              <Logo
+                className={classNames(styles.logoLink, styles.link)}
+                style={{ width: 318, height: 60 }}
+                fill="#252e3e"
               />
             </a>
           </Link>
