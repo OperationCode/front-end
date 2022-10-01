@@ -130,7 +130,7 @@
     "jest-prop-type-error": "^1.1.0",
     "lint-staged": "13.0.3",
     "next-compose-plugins": "^2.2.1",
-    "postcss": "^8.4.14",
+    "postcss": "^8.4.17",
     "postcss-custom-media": "^8.0.2",
     "postcss-custom-properties": "^12.1.8",
     "postcss-export-custom-variables": "^1.0.0",
