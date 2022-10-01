@@ -13,14 +13,16 @@ exports[`Footer should render with no props passed 1`] = `
       <ForwardRef(LinkComponent)
         href="/"
       >
-        <a
-          className="logoLink link"
-        >
-          <MockedNextImage
-            alt="Operation Code Logo"
-            height={60}
-            src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/small-blue-logo.png"
-            width={318}
+        <a>
+          <Svg
+            className="logoLink link"
+            fill="#252e3e"
+            style={
+              Object {
+                "height": 60,
+                "width": 318,
+              }
+            }
           />
         </a>
       </ForwardRef(LinkComponent)>
