@@ -132,7 +132,7 @@
     "next-compose-plugins": "^2.2.1",
     "postcss": "^8.4.14",
     "postcss-custom-media": "^8.0.2",
-    "postcss-custom-properties": "^12.1.8",
+    "postcss-custom-properties": "^12.1.9",
     "postcss-export-custom-variables": "^1.0.0",
     "postcss-import": "^14.1.0",
     "postcss-prepend-imports": "^1.0.1",
