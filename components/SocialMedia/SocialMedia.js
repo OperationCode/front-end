@@ -32,7 +32,7 @@ function SocialMedia() {
         svg={<YouTubeLogo className={styles.logo} />}
       />
       <SocialMediaItem
-        href="https://www.linkedin.com/school/operationcode/"
+        href="https://www.linkedin.com/company/operationcode/"
         name="LinkedIn"
         svg={<LinkedInLogo className={styles.logo} />}
       />
