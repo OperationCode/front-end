@@ -39,7 +39,7 @@
   "dependencies": {
     "@innocuous/components": "^2.1.1",
     "@innocuous/functions": "^2.1.1",
-    "@next/bundle-analyzer": "12.2.3",
+    "@next/bundle-analyzer": "12.3.1",
     "@radix-ui/react-dialog": "1.0.0",
     "@radix-ui/react-tabs": "0.1.1",
     "@sentry/nextjs": "^7.8.1",
@@ -78,7 +78,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.19.3",
-    "@babel/eslint-parser": "^7.18.9",
+    "@babel/eslint-parser": "^7.19.1",
     "@cypress/code-coverage": "^3.10.0",
     "@cypress/webpack-preprocessor": "^5.12.0",
     "@operation_code/eslint-plugin-custom-rules": "^1.0.1",
