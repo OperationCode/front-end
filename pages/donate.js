@@ -4,6 +4,25 @@ import HeroBanner from 'components/HeroBanner/HeroBanner';
 
 const pageTitle = 'Donate';
 
+function DonateForm() {
+  useEffect(() => {
+    const script = document.createElement('script');
+
+    script['src'] = "https://cdn.virtuoussoftware.com/virtuous.embed.min.js" 
+    script['data-vform'] = "48246BDA-5B32-4206-BA2B-E518574E4669" 
+    script['data-orgId'] = "3423" 
+    script['data-isGiving'] = "true"
+    script['data-merchantType'] = "Virtuous"
+    script['data-dependencies'] = "[]"
+  
+    document.body.appendChild(script);
+  
+    return () => {
+      document.body.removeChild(script);
+    }
+  }, []);
+};
+
 function DonatePage() {
   return (
     <>
@@ -44,14 +63,7 @@ function DonatePage() {
           <br />
         </div>
         <br />
-        <script 
-          src="https://cdn.virtuoussoftware.com/virtuous.embed.min.js" 
-          data-vform="48246BDA-5B32-4206-BA2B-E518574E4669" 
-          data-orgId="3423" 
-          data-isGiving="true"
-          data-merchantType="Virtuous"
-          data-dependencies="[]">
-        </script>
+        <DonateForm />
       </Container>
     </>
   );
