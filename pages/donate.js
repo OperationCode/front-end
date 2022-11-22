@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import Head from 'components/head';
 import Container from 'components/Container/Container';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
