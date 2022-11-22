@@ -2,10 +2,9 @@ import { useEffect } from 'react';
 import Head from 'components/head';
 import Container from 'components/Container/Container';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
-
 const pageTitle = 'Donate';
 
-function DonateForm() {
+const donateForm = () => {
   useEffect(() => {
     const script = document.createElement('script');
 
@@ -25,6 +24,7 @@ function DonateForm() {
 };
 
 function DonatePage() {
+  donateForm();
   return (
     <>
       <Head title={pageTitle} />
@@ -64,7 +64,6 @@ function DonatePage() {
           <br />
         </div>
         <br />
-        <DonateForm />
       </Container>
     </>
   );
