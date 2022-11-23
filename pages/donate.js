@@ -7,16 +7,7 @@ const pageTitle = 'Donate';
 function DonatePage() {
   return (
     <>
-      <Head title={pageTitle}>
-        <script 
-          src="https://cdn.virtuoussoftware.com/virtuous.embed.min.js" 
-          data-vform="48246BDA-5B32-4206-BA2B-E518574E4669" 
-          data-orgId="3423" 
-          data-isGiving="true"
-          data-merchantType="Virtuous"
-          data-dependencies="[]">
-        </script>
-      </Head>
+      <Head title={pageTitle} />
       <HeroBanner title={pageTitle} />
       <Container theme="white">
         <div style={{ borderBottom: '4px solid #252e3e' }}>
@@ -53,6 +44,15 @@ function DonatePage() {
           <br />
         </div>
         <br />
+              
+        <script 
+          src="https://cdn.virtuoussoftware.com/virtuous.embed.min.js" 
+          data-vform="48246BDA-5B32-4206-BA2B-E518574E4669" 
+          data-orgId="3423" 
+          data-isGiving="true"
+          data-merchantType="Virtuous"
+          data-dependencies="[]"
+        />
       </Container>
     </>
   );
