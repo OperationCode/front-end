@@ -1,33 +1,22 @@
-import { useEffect } from 'react';
 import Head from 'components/head';
 import Container from 'components/Container/Container';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
+
 const pageTitle = 'Donate';
 
-const donateForm = () => {
-  useEffect(() => {
-    const script = document.createElement('script');
-
-    script['src'] = "https://cdn.virtuoussoftware.com/virtuous.embed.min.js" 
-    script['data-vform'] = "48246BDA-5B32-4206-BA2B-E518574E4669" 
-    script['data-orgId'] = "3423" 
-    script['data-isGiving'] = "true"
-    script['data-merchantType'] = "Virtuous"
-    script['data-dependencies'] = "[]"
-  
-    document.body.appendChild(script);
-  
-    return () => {
-      document.body.removeChild(script);
-    }
-  }, []);
-};
-
 function DonatePage() {
-  donateForm();
   return (
     <>
-      <Head title={pageTitle} />
+      <Head title={pageTitle}>
+        <script 
+          src="https://cdn.virtuoussoftware.com/virtuous.embed.min.js" 
+          data-vform="48246BDA-5B32-4206-BA2B-E518574E4669" 
+          data-orgId="3423" 
+          data-isGiving="true"
+          data-merchantType="Virtuous"
+          data-dependencies="[]">
+        </script>
+      </Head>
       <HeroBanner title={pageTitle} />
       <Container theme="white">
         <div style={{ borderBottom: '4px solid #252e3e' }}>
