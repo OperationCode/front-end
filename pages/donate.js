@@ -44,11 +44,10 @@ function DonatePage() {
           <br />
         </div>
         <br />
-              
-        <script 
-          src="https://cdn.virtuoussoftware.com/virtuous.embed.min.js" 
-          data-vform="48246BDA-5B32-4206-BA2B-E518574E4669" 
-          data-orgId="3423" 
+        <script
+          src="https://cdn.virtuoussoftware.com/virtuous.embed.min.js"
+          data-vform="48246BDA-5B32-4206-BA2B-E518574E4669"
+          data-orgId="3423"
           data-isGiving="true"
           data-merchantType="Virtuous"
           data-dependencies="[]"
