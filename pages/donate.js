@@ -44,15 +44,13 @@ function DonatePage() {
           <br />
         </div>
         <br />
-        <iframe
-          title="Donation Form"
-          src="https://secure.lglforms.com/form_engine/s/BRtP7QUKyHOyEYsZROsRew"
-          height="1500px"
-          width="100%"
-          style={{
-            border: '1px solid transparent',
-            outline: '1px solid transparent',
-          }}
+        <script
+          src="https://cdn.virtuoussoftware.com/virtuous.embed.min.js"
+          data-vform="48246BDA-5B32-4206-BA2B-E518574E4669"
+          data-orgId="3423"
+          data-isGiving="true"
+          data-merchantType="Virtuous"
+          data-dependencies="[]"
         />
       </Container>
     </>
