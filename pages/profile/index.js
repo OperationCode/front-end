@@ -148,7 +148,7 @@ function Profile({
             </LinkButton>
             <LinkButton
               theme="secondary"
-              href="https://drive.google.com/file/d/1s4PsrUzs2MU4itCA44x1VBzX7Gd77H8n/view"
+              href="https://op.co.de/oi4qje"
               analyticsEventLabel="Viewed Scholarship Policy"
             >
               View Scholarship Policy
