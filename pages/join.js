@@ -36,14 +36,13 @@ function Join({ router }) {
       <Content
         theme="gray"
         columns={[
-          <RegistrationForm onSuccess={handleSuccess} />,
-          <p>
-            {'Already registered? '}
-            <Link href="/login">
-              <a>Login</a>
-            </Link>
-            .
-          </p>,
+          <script 
+              src="https://cdn.virtuoussoftware.com/virtuous.embed.min.js" 
+              data-vform="925226EB-B502-4DAF-A38F-FAFBB8C98146" 
+              data-orgId="3423" 
+              data-isGiving="false"
+              data-dependencies="[]">
+          </script>,
         ]}
       />
     </>
