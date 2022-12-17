@@ -59,11 +59,6 @@ const nextConfig = withPlugins([withBundleAnalyzer], {
         permanent: true,
       },
       {
-        source: '/logout',
-        destination: '/login?loggedOut=true',
-        permanent: true,
-      },
-      {
         source: '/who_we_serve',
         destination: '/services',
         permanent: true,

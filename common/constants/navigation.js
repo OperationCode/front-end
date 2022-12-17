@@ -70,16 +70,6 @@ const merchStore = {
   href: '/swag',
 };
 
-const logout = {
-  name: 'Logout',
-  href: '/logout', // has a redirect in Next configuration file.
-};
-
-const login = {
-  name: 'Login',
-  href: '/login', // has a redirect in Next configuration file.
-};
-
 const jobs = {
   href: '/jobs',
   name: 'Job Board',
