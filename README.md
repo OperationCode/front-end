@@ -96,4 +96,4 @@ Thanks to [Sentry](https://getsentry.io) for a wonderful experience with catalog
 Thanks to [Vercel](https://vercel.com) for hosting and continuous deployment of all our web applications.
 
 ## Test
-Hi from Irving!  Don't merge this
+Hi from Irving!  Don't merge this.
