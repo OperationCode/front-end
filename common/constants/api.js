@@ -1,5 +1,4 @@
-import { get, post, patch, put, ResourcesAPI } from 'common/utils/api-utils';
-import { formatUserData } from 'common/utils/formatters';
+import { get, post, put, ResourcesAPI } from 'common/utils/api-utils';
 
 /* GET REQUESTS */
 export const getCodeSchoolsPromise = () => get('api/v1/codeschools/');
