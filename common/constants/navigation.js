@@ -101,8 +101,9 @@ export const loggedOutNavItems = [aboutUsGroup, servicesGroup, getInvolvedGroup]
 
 // Extracts sublinks to list everything as a single, top-level list
 export const mobileLoggedInNavItems = flattenDepth(
-  [about, getInvolved, ...servicesGroup.sublinks, ...getInvolvedGroup.sublinks,].map(
-    ({ sublinks = [], ...item }) => [item, sublinks]),
+  [about, getInvolved, ...servicesGroup.sublinks, ...getInvolvedGroup.sublinks].map(
+    ({ sublinks = [], ...item }) => [item, sublinks],
+  ),
   2,
 );
 
