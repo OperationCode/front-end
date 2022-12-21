@@ -13,8 +13,8 @@ function Join() {
       <Content
         theme="gray"
         columns={[
-          <script 
-            src="https://cdn.virtuoussoftware.com/virtuous.embed.min.js" 
+          <script
+            src="https://cdn.virtuoussoftware.com/virtuous.embed.min.js"
             data-vform="925226EB-B502-4DAF-A38F-FAFBB8C98146"
             data-orgId="3423"
             data-isGiving="false"
