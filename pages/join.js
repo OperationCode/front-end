@@ -17,7 +17,6 @@ function Join() {
           <div className={styles.joinForm}>
             <script
               src="https://cdn.virtuoussoftware.com/virtuous.embed.min.js"
-              crossOrigin=""
               fetchpriority="high"
               data-vform="925226EB-B502-4DAF-A38F-FAFBB8C98146"
               data-orgId="3423"
