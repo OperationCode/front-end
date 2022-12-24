@@ -6,7 +6,7 @@ import styles from './JoinSection.module.css';
 
 export default function JoinSection() {
   return (
-    <Container theme="white" data-testid="Join Section">
+    <Container theme="white">
       <Heading text="Join Our Thriving Community" headingLevel={3} />
 
       <p>

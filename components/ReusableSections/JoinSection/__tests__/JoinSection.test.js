@@ -3,7 +3,7 @@ import JoinSection from '../JoinSection';
 
 describe('JoinSection', () => {
   it('renders', () => {
-    const { queryByTestId } = render(<JoinSection />);
-    expect(queryByTestId('Join Section')).toBeNull();
+    const { queryByText } = render(<JoinSection />);
+    expect(queryByText(/Register Now/gi)).not.toBeNull();
   });
 });
