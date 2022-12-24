@@ -13,26 +13,11 @@
 // Cypress.Commands.add("login", (email, password) => { ... })
 import '@testing-library/cypress/add-commands';
 import { addMatchImageSnapshotCommand } from 'cypress-image-snapshot/command';
-import existingUser from '../../test-utils/mocks/existingUser';
-import { apiUrl } from '../../common/config/environment';
 
 Cypress.Commands.add('visitAndWaitFor', path => {
   cy.visit(path);
   cy.findByTestId('Desktop Nav').should('exist').and('be.visible');
   cy.url().should('contain', path);
-});
-
-// Use `cy.login()` to quickly login for testing authenticated routes
-Cypress.Commands.add('login', () => {
-  cy.request({
-    method: 'POST',
-    url: `${apiUrl}/auth/login/`,
-    body: {
-      ...existingUser,
-    },
-  }).then(({ body: { token } }) => {
-    cy.setCookie('token', token);
-  });
 });
 
 addMatchImageSnapshotCommand({

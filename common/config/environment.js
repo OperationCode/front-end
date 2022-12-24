@@ -23,15 +23,3 @@ export const clientTokens = isProduction
       OC_GOOGLE_KEY: '973655216990-vvl9vfp9v13lfoq7ccm36e8ouukrgdfh.apps.googleusercontent.com',
       SENTRY_DSN: '',
     };
-
-// TODO: Use GH Actions to enable environment-based deploys and stop using prod on PR deploys
-export const apiUrl = isProduction
-  ? 'https://api.operationcode.org'
-  : 'https://api.staging.operationcode.org';
-
-export const resourcesAPIURL = isProduction
-  ? 'https://resources.operationcode.org'
-  : 'https://resources.staging.operationcode.org';
-
-export const slackMembersAPIUrl = 'https://slack.com/api/conversations.members';
-export const slackGeneralChannelId = 'C03GSNF6X';

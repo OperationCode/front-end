@@ -1,8 +1,5 @@
-import axios from 'axios';
 import Link from 'next/link';
-import { number } from 'prop-types';
 import TrackVisibility from 'react-on-screen';
-import get from 'lodash/get';
 import classNames from 'classnames';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
@@ -15,9 +12,7 @@ import JoinSection from 'components/ReusableSections/JoinSection/JoinSection';
 import CareerServicesIcon from 'static/images/icons/Custom/career_services.svg';
 import MentorshipIcon from 'static/images/icons/Custom/mentorship.svg';
 import ScholarshipsIcon from 'static/images/icons/Custom/scholarships.svg';
-import { ONE_WEEK } from 'common/constants/unitsOfTime';
 import { s3 } from 'common/constants/urls';
-import { slackMembersAPIUrl, slackGeneralChannelId } from 'common/config/environment';
 import styles from 'styles/services.module.css';
 
 const VISIBILITY_OFFSET = 400;
@@ -37,37 +32,7 @@ const mentorItems = [
   },
 ];
 
-Services.propTypes = {
-  numberOfMembers: number,
-};
-
-Services.defaultProps = {
-  numberOfMembers: null,
-};
-
-export async function getStaticProps() {
-  let numberOfMembers = null;
-
-  if (process.env.NODE_ENV === 'production') {
-    const response = await axios.get(slackMembersAPIUrl, {
-      params: {
-        token: process.env.SLACK_API_TOKEN,
-        channel: slackGeneralChannelId,
-      },
-    });
-
-    numberOfMembers = get(response, 'data.members.length', 0);
-  }
-
-  return {
-    props: {
-      numberOfMembers,
-    },
-    revalidate: ONE_WEEK,
-  };
-}
-
-function Services({ numberOfMembers }) {
+function Services() {
   return (
     <div className={styles.Services}>
       <Head title="Services" />
@@ -86,9 +51,8 @@ function Services({ numberOfMembers }) {
               We believe that the best way to take advantage of Operation Code is simply to become a
               member of the organization. We work closely with military veterans, service members,
               and military spouses and dependents who are passionate about transitioning into the
-              tech industry. On Slack and in-person meet-ups, we work with{' '}
-              {!numberOfMembers ? 'over 7,000+' : `${numberOfMembers}`} members who are all working
-              towards relevant career and personal goals. Membership is free!
+              tech industry. On Slack and in-person meet-ups, we work with over 7,000+ members who
+              are all working towards relevant career and personal goals. Membership is free!
             </p>
 
             <div className={classNames(styles.centeredText, styles.topMargin)}>
