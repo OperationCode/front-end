@@ -57,15 +57,6 @@ exports[`Footer should render with no props passed 1`] = `
         >
           <li>
             <ForwardRef(LinkComponent)
-              href="/about"
-            >
-              <a>
-                About Us
-              </a>
-            </ForwardRef(LinkComponent)>
-          </li>
-          <li>
-            <ForwardRef(LinkComponent)
               href="/contact"
             >
               <a>
@@ -84,10 +75,10 @@ exports[`Footer should render with no props passed 1`] = `
           </li>
           <li>
             <ForwardRef(LinkComponent)
-              href="/services"
+              href="/jobs"
             >
               <a>
-                Services
+                Job Board
               </a>
             </ForwardRef(LinkComponent)>
           </li>
@@ -97,28 +88,28 @@ exports[`Footer should render with no props passed 1`] = `
         >
           <li>
             <ForwardRef(LinkComponent)
-              href="/code_schools"
+              href="/podcast"
             >
               <a>
-                Code Schools
+                Podcast
               </a>
             </ForwardRef(LinkComponent)>
           </li>
           <li>
             <ForwardRef(LinkComponent)
-              href="/resources"
+              href="/swag"
             >
               <a>
-                Resources
+                Merch Store
               </a>
             </ForwardRef(LinkComponent)>
           </li>
           <li>
             <ForwardRef(LinkComponent)
-              href="/jobs"
+              href="/sponsorship"
             >
               <a>
-                Job Board
+                Sponsorship
               </a>
             </ForwardRef(LinkComponent)>
           </li>
@@ -137,19 +128,10 @@ exports[`Footer should render with no props passed 1`] = `
           </li>
           <li>
             <ForwardRef(LinkComponent)
-              href="/podcast"
+              href="/sponsorship"
             >
               <a>
-                Podcast
-              </a>
-            </ForwardRef(LinkComponent)>
-          </li>
-          <li>
-            <ForwardRef(LinkComponent)
-              href="/history"
-            >
-              <a>
-                History
+                Sponsorship
               </a>
             </ForwardRef(LinkComponent)>
           </li>
@@ -168,19 +150,28 @@ exports[`Footer should render with no props passed 1`] = `
         >
           <li>
             <ForwardRef(LinkComponent)
-              href="/press"
+              href="/about"
             >
               <a>
-                Press
+                About Us
               </a>
             </ForwardRef(LinkComponent)>
           </li>
           <li>
             <ForwardRef(LinkComponent)
-              href="/branding"
+              href="/history"
             >
               <a>
-                Branding
+                History
+              </a>
+            </ForwardRef(LinkComponent)>
+          </li>
+          <li>
+            <ForwardRef(LinkComponent)
+              href="/press"
+            >
+              <a>
+                Press
               </a>
             </ForwardRef(LinkComponent)>
           </li>

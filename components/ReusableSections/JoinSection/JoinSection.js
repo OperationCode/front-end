@@ -1,20 +1,12 @@
-import { hasValidAuthToken } from 'common/utils/cookie-utils';
 import Container from 'components/Container/Container';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 import LinkButton from 'components/Buttons/LinkButton/LinkButton';
 import Heading from 'components/Heading/Heading';
 import styles from './JoinSection.module.css';
 
-function JoinSection() {
-  const isLoggedIn = hasValidAuthToken();
-
-  if (isLoggedIn) {
-    // no need to tell somebody to join if they already have an account!
-    return null;
-  }
-
+export default function JoinSection() {
   return (
-    <Container theme="white" data-testid="Join Section">
+    <Container theme="white">
       <Heading text="Join Our Thriving Community" headingLevel={3} />
 
       <p>
@@ -37,5 +29,3 @@ function JoinSection() {
     </Container>
   );
 }
-
-export default JoinSection;

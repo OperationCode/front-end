@@ -1,0 +1,9 @@
+.joinForm label {
+  margin: 0.8rem 0;
+}
+
+.joinForm button[type="submit"] {
+  padding: 1rem 0.75rem 0.75rem;
+  width: 100%;
+  margin: 1.2rem 0;
+}

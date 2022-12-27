@@ -4,14 +4,8 @@ import Router from 'next/router';
 import classNames from 'classnames';
 import Logo from 'public/static/images/logo.svg';
 
-import {
-  loggedInNavItems,
-  loggedOutNavItems,
-  mobileLoggedInNavItems,
-  mobileLoggedOutNavItems,
-} from 'common/constants/navigation';
+import { loggedOutNavItems, mobileLoggedOutNavItems } from 'common/constants/navigation';
 import NavMobile from 'components/Nav/NavMobile/NavMobile';
-import { hasValidAuthToken } from 'common/utils/cookie-utils';
 import dynamic from 'next/dynamic';
 import UserLogo from '../../public/static/images/icons/FontAwesome/user.svg';
 import styles from './Nav.module.css';
@@ -44,12 +38,10 @@ export const Nav = () => {
     };
   }, []);
 
-  const isLoggedIn = hasValidAuthToken();
-
-  const mobileNavItems = isLoggedIn ? mobileLoggedInNavItems : mobileLoggedOutNavItems;
+  const mobileNavItems = mobileLoggedOutNavItems;
 
   // non-mobile
-  const navItems = isLoggedIn ? loggedInNavItems : loggedOutNavItems;
+  const navItems = loggedOutNavItems;
 
   return (
     <>

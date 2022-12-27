@@ -1,5 +1,4 @@
 const hasBundleAnalyzer = process.env.ANALYZE === 'true';
-const withPlugins = require('next-compose-plugins');
 const { withSentryConfig } = require('@sentry/nextjs');
 const withBundleAnalyzer = require('@next/bundle-analyzer')({ enabled: hasBundleAnalyzer });
 const { s3hostName } = require('./common/constants/urls');
@@ -21,7 +20,7 @@ const sentryWebpackPluginOptions = {
  * @see https://nextjs.org/docs/basic-features/typescript#type-checking-nextconfigjs
  * @type {import('next').NextConfig}
  */
-const nextConfig = withPlugins([withBundleAnalyzer], {
+const nextConfig = {
   excludeDefaultMomentLocales: true,
 
   devIndicators: {
@@ -56,11 +55,6 @@ const nextConfig = withPlugins([withBundleAnalyzer], {
       {
         source: '/resources',
         destination: '/resources/1',
-        permanent: true,
-      },
-      {
-        source: '/logout',
-        destination: '/login?loggedOut=true',
         permanent: true,
       },
       {
@@ -125,6 +119,27 @@ const nextConfig = withPlugins([withBundleAnalyzer], {
 
     return config;
   },
-});
+};
 
-module.exports = withSentryConfig(nextConfig, sentryWebpackPluginOptions);
+/**
+ * The name of the function type is `normalizeConfig` in `next/dist/server/config-shared`,
+ * but JSDoc type imports can't read it.
+ *
+ * @type {(phase: string, config: import('next').NextConfig) => Promise<import('next').NextConfig>)}
+ */
+module.exports = (phase, defaultConfig) => {
+  const plugins = [
+    config => withSentryConfig(config, sentryWebpackPluginOptions),
+    withBundleAnalyzer,
+  ];
+
+  const config = plugins.reduce(
+    (acc, plugin) => {
+      const update = plugin(acc);
+      return typeof update === 'function' ? update(phase, defaultConfig) : update;
+    },
+    { ...nextConfig },
+  );
+
+  return config;
+};
