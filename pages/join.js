@@ -25,9 +25,11 @@ function Join() {
     }
 
     return () => {
-      ref.current.removeChild(script);
+      if (ref.current) {
+        ref.current.removeChild(script);
+      }
     };
-  }, []);
+  }, [ref]);
 
   return (
     <>
