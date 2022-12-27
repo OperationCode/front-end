@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import Head from 'components/head';
 import Container from 'components/Container/Container';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
@@ -5,6 +6,29 @@ import HeroBanner from 'components/HeroBanner/HeroBanner';
 const pageTitle = 'Donate';
 
 function DonatePage() {
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const script = document.createElement('script');
+
+    script.src = 'https://cdn.virtuoussoftware.com/virtuous.embed.min.js';
+    script.async = true;
+    script.setAttribute('fetchpriority', 'high');
+    script.setAttribute('data-vform', '48246BDA-5B32-4206-BA2B-E518574E4669');
+    script.setAttribute('data-orgId', '3423');
+    script.setAttribute('data-isGiving', 'false');
+    script.setAttribute('data-merchantType', 'Virtuous');
+    script.setAttribute('data-dependencies', '[]');
+
+    if (ref.current) {
+      ref.current.appendChild(script);
+    }
+
+    return () => {
+      ref.current.removeChild(script);
+    };
+  }, []);
+
   return (
     <>
       <Head title={pageTitle} />
@@ -44,14 +68,8 @@ function DonatePage() {
           <br />
         </div>
         <br />
-        <script
-          src="https://cdn.virtuoussoftware.com/virtuous.embed.min.js"
-          data-vform="48246BDA-5B32-4206-BA2B-E518574E4669"
-          data-orgId="3423"
-          data-isGiving="true"
-          data-merchantType="Virtuous"
-          data-dependencies="[]"
-        />
+
+        <div ref={ref} />
       </Container>
     </>
   );
