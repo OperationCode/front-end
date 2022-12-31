@@ -16,7 +16,7 @@ function DonatePage() {
     script.setAttribute('fetchpriority', 'high');
     script.setAttribute('data-vform', '48246BDA-5B32-4206-BA2B-E518574E4669');
     script.setAttribute('data-orgId', '3423');
-    script.setAttribute('data-isGiving', 'false');
+    script.setAttribute('data-isGiving', 'true');
     script.setAttribute('data-merchantType', 'Virtuous');
     script.setAttribute('data-dependencies', '[]');
 
