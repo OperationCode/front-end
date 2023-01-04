@@ -23,14 +23,7 @@ const questions = {
               href="https://www.freecodecamp.org/"
             >
               freeCodeCamp
-            </OutboundLink>{' '}
-            or check out our extensive database with thousands of learning resources on{' '}
-            <OutboundLink
-              analyticsEventLabel="Operation Code Resources Link"
-              href="https://operationcode.org/resources/1"
-            >
-              Operation Code Resources
-            </OutboundLink>{' '}
+            </OutboundLink>
             .
           </li>
           <li>

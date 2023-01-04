@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import TrackVisibility from 'react-on-screen';
 import classNames from 'classnames';
 import Head from 'components/head';
@@ -114,16 +113,8 @@ function Services() {
             ))}
           </div>,
           <p>
-            We also offer information on many of America&apos;s best{' '}
-            <Link href="/code_schools">
-              <a>&ldquo;coding bootcamps&rdquo;</a>
-            </Link>
-            , a community-maintained database of{' '}
-            <Link href="/resources">
-              <a>learning resources</a>
-            </Link>
-            , and local chapter events. Regarding local chapter events, inquire about events near
-            you or about starting a chapter in your area by emailing{' '}
+            We also offer local chapter events. Regarding local chapter events, inquire about events
+            near you or about starting a chapter in your area by emailing{' '}
             <OutboundLink
               href="mailto:staff@operationcode.org"
               analyticsEventLabel="Email"
