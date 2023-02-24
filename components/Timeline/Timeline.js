@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import historyData from './historyData';
 import styles from './Timeline.module.css';
 import TimelineEvent from './TimelineEvent/TimelineEvent';
