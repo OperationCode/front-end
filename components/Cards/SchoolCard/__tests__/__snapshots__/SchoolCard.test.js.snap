@@ -1,0 +1,128 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SchoolCard should render with required props 1`] = `
+<Card
+  className="SchoolCard"
+  data-testid="SchoolCard"
+  hasAnimationOnHover={false}
+>
+  <ScreenReaderOnly>
+    <h6
+      data-testid="SchoolCard Name: school name"
+    >
+      school name
+    </h6>
+  </ScreenReaderOnly>
+  <div
+    className="ribbon gi"
+    data-testid="GI Bill Ribbon"
+  >
+    GI Bill
+  </div>
+  <div
+    className="cardBrand"
+  >
+    <MockedNextImage
+      alt="school name logo"
+      height={150}
+      layout="fixed"
+      src="https://operation-code-assets.s3.us-east-2.amazonaws.com//codeSchoolLogos/momentum.jpg"
+      width={150}
+    />
+  </div>
+  <div
+    className="cardBlock badgeGroup"
+  >
+    <Badge
+      className="badgeGroupItem active"
+      icon={<Svg />}
+      isImageFirst={true}
+      label={
+        <LabelWithScreenReader
+          isActive={true}
+          label="Physical campus"
+        />
+      }
+    />
+    <Badge
+      className="badgeGroupItem active"
+      icon={
+        <Svg
+          data-testid="School has online"
+        />
+      }
+      isImageFirst={true}
+      label={
+        <LabelWithScreenReader
+          isActive={true}
+          label="Online classes"
+        />
+      }
+    />
+    <Badge
+      className="badgeGroupItem active"
+      icon={<Svg />}
+      isImageFirst={true}
+      label={
+        <LabelWithScreenReader
+          isActive={true}
+          label="Housing options"
+        />
+      }
+    />
+    <Badge
+      className="badgeGroupItem active"
+      icon={<Svg />}
+      isImageFirst={true}
+      label={
+        <LabelWithScreenReader
+          isActive={true}
+          label="Provided equipment"
+        />
+      }
+    />
+  </div>
+  <div
+    className="cardBlock"
+  >
+    <span
+      className="cardBlockTitle"
+    >
+      Campus Locations:
+    </span>
+    Multiple locations
+    <Button
+      analyticsObject={
+        Object {
+          "action": "Button Selected",
+          "category": "Interactions",
+          "label": "school name | Locations",
+        }
+      }
+      className="modalToggler"
+      data-testid="SCHOOL_CARD_LOCATION_LIST_MODAL_BUTTON"
+      datum=""
+      disabled={false}
+      fullWidth={false}
+      onClick={[Function]}
+      tabIndex={0}
+      theme="primary"
+      type="button"
+    >
+      view all
+    </Button>
+  </div>
+  <div
+    className="cardBlock"
+  >
+    <LinkButton
+      analyticsEventLabel="school name | Website"
+      fullWidth={true}
+      href="website"
+      theme="secondary"
+    >
+      Visit Website
+    </LinkButton>
+  </div>
+</Card>
+`;

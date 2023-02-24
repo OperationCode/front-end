@@ -1,48 +1,51 @@
+import { arrayOf, object } from 'prop-types';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
+import { getTeamMembersPromise } from 'common/constants/api';
 import { s3 } from 'common/constants/urls';
+import { TWO_WEEKS } from 'common/constants/unitsOfTime';
 import Content from 'components/Content/Content';
 import FlatCard from 'components/Cards/FlatCard/FlatCard';
+import sortBy from 'lodash/sortBy';
 import styles from 'styles/team.module.css';
 
-const boardMembers = [
-  {
-    name: 'Cynthia Kao',
-    role: 'Executive Director',
-    // eslint-disable-next-line max-len
-    description: `Cynthia S. Kao started her career as a Licensed Clinical Social Worker specializing in ABA, speech, trauma and addictions therapy for the non-profit sector during her time as an active duty military spouse and as a U.S. Air Force Reservist. During her time in service, she was a combat journalist and provided support to various USAF Public Affairs Offices with public relations, graphic design, events support, press, web, digital and communications expertise. After deploying twice, and exiting the service in early 2014, Cynthia made the transition to civilian life as a Director and Producer for the TV and Film industry before moving into UI/UX design, software development and becoming a founder. She is a mother of three grown children (one who is a service-disabled Army Veteran), and is passionate about advocating for and serving the military, Veteran and military spouse community. She currently lives in the Northern Virginia area.`,
-    imageSrc: 'https://operation-code-assets.s3.us-east-2.amazonaws.com/headshots/cynthia.jpg',
-  },
-  {
-    name: 'Kelly MacLeod',
-    role: 'Board Director, Secretary',
-    // eslint-disable-next-line max-len
-    description: `Kelly MacLeod is a veteran of the North Carolina Army National Guard, with a tour in Iraq and Afghanistan. As a self-taught coder, she is also a veteran and survivor of a career change. Helping veterans has always been a career goal; Kelly now advocates for veterans and milspouses who want to transition to a tech-related career. Her current position as a software project manager has absolutely nothing to do with this, but she leverages it to talk about vets every chance she gets. Kelly has yet to break the Operation Code website.`,
-    imageSrc: 'https://operation-code-assets.s3.us-east-2.amazonaws.com/headshots/kelly.jpg',
-  },
-  {
-    name: 'David Reis',
-    role: 'Board Treasurer',
-    // eslint-disable-next-line max-len
-    description: `David brings to the table more than 30 years of nonprofit and business leadership experience in both international and national organizations, most recently as VP of Development and Ideas Beyond Borders and as CDO at Iraq and Afghanistan Veterans of America. He is also CEO of the nonprofit capacity building consulting firm Forward Motion Strategies.`,
-    imageSrc: 'https://operation-code-assets.s3.us-east-2.amazonaws.com/headshots/david_reis.jpg',
-  },
-  {
-    name: 'Ali Taylor-Cipolla',
-    role: 'Board Vice-Chair',
-    // eslint-disable-next-line max-len
-    description: `Ali Taylor-Cipolla is a compliance specialist by day, activist by night who works with Microsoft and Operation Code, respectively. After spending more than 8 years in the restaurant management field, where it was relatively easy to find work as a constantly moving military spouse, Ali understands the challenges faced by military families, having faced them firsthand. After her partner’s retirement from the United States Air Force, she moved to the Seattle area and completed Microsoft’s Military Spouse Technology Academy. This was where she discovered that she did not want to develop software for a living. However, her love for the technology sector and the people in it brought her to her present role with Global Talent Acquisition at Microsoft. Ali aspires to empower, connect and engage with military families and veterans, helping them achieve stability and realization of their professional goals. She is a current member of the Washington State Military Transition Council where she advocates for the interests of military spouses in her new home state. She lives with her partner and two pet pythons, and when she’s not professionally finding solutions to large problems, she enjoys gardening, PC gaming, and her circus arts practice.`,
-    imageSrc: 'https://operation-code-assets.s3.us-east-2.amazonaws.com/headshots/ali.jpg',
-  },
-  {
-    name: 'Sean Cameron',
-    role: 'Board Chair',
-    // eslint-disable-next-line max-len
-    description: `Sean is a US Navy veteran from Northern California. Originally specializing in electronics, he later crossed into various disciplines including network engineering, information security, and product management. Currently he serves in a client facing role at a small consulting firm in Southern California. Sean started with OC building the San Diego Chapter. Outside of daily routine, Sean is an organizer for a regional data science interest group. His interests include reading, long walks, and the study of language (Rust, R, Python, French, and Spanish, in no particular order).`,
-  },
-];
+export async function getStaticProps() {
+  try {
+    const { data } = await getTeamMembersPromise();
 
-export default function Team() {
+    // Only members of the "team" group aren't rendered.
+    const renderableTeamMembers = data.filter(
+      ({ group }) => group === 'board' || group === 'staff',
+    );
+
+    // Force Executive Director to be first in list
+    const roleToRenderFirst = 'Executive Director';
+    const firstTeamMemberRendered = renderableTeamMembers.find(
+      ({ role }) => role === roleToRenderFirst,
+    );
+
+    // 1. We exclude the Executive Director (since they are always first).
+    // 2. Sort in reverse by `imageSrc` so team members without photos are rendered last.
+    // 3. Sort by role so the listing makes sense for the emptier looking team members.
+    // 4. Then we sort by name.
+    const sortedListExcludingFirst = sortBy(
+      renderableTeamMembers.filter(({ role }) => role !== roleToRenderFirst),
+      [({ imageSrc }) => !imageSrc, 'role', 'name'],
+    );
+
+    const sortedListOfTeamMembers = [firstTeamMemberRendered, ...sortedListExcludingFirst];
+
+    return { props: { teamMembers: sortedListOfTeamMembers }, revalidate: TWO_WEEKS };
+  } catch (error) {
+    throw new Error('getStaticProps in /team failed.');
+  }
+}
+
+Team.propTypes = {
+  teamMembers: arrayOf(object.isRequired).isRequired,
+};
+
+function Team({ teamMembers }) {
   return (
     <div className={styles.Team}>
       <Head title="Team" />
@@ -59,7 +62,7 @@ export default function Team() {
         theme="white"
         columns={[
           <div className={styles.teamMembers}>
-            {boardMembers.map(({ name, role, imageSrc: imageSource, description }) => (
+            {teamMembers.map(({ name, role, imageSrc: imageSource, description }) => (
               <FlatCard
                 key={name}
                 header={
@@ -98,3 +101,5 @@ export default function Team() {
     </div>
   );
 }
+
+export default Team;

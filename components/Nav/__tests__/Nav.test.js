@@ -1,10 +1,16 @@
+import cookie from 'js-cookie';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { CLOSE_BUTTON } from 'common/constants/testIDs';
 import createShallowSnapshotTest from 'test-utils/createShallowSnapshotTest';
+import { VALID_AUTH_TOKEN } from 'test-utils/mocks/jwtMock';
 
 import { Nav } from '../Nav';
 
 describe('Nav', () => {
+  beforeEach(() => {
+    cookie.get = jest.fn().mockImplementation(() => undefined);
+  });
+
   it('should render with no props passed', () => createShallowSnapshotTest(<Nav />));
 
   it('should render both desktop and mobile navigations', () => {
@@ -13,6 +19,22 @@ describe('Nav', () => {
 
     expect(screen.queryByTestId('Desktop Nav Container')).not.toBeNull();
     expect(screen.queryByTestId('Mobile Nav Container')).not.toBeNull();
+  });
+
+  it('should render specific content when logged in', () => {
+    cookie.get = jest.fn().mockImplementation(() => VALID_AUTH_TOKEN);
+
+    render(<Nav />);
+
+    expect(screen.queryByText('Account')).not.toBeNull();
+    expect(screen.queryByText('Login')).toBeNull();
+  });
+
+  it('should render specific content when logged out', () => {
+    render(<Nav />);
+
+    expect(screen.queryByText('Account')).toBeNull();
+    expect(screen.queryByText('Login')).not.toBeNull();
   });
 
   it('should only reveal mobile nav when hamburger button is clicked', async () => {

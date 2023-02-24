@@ -1,0 +1,13 @@
+.LoginForm {
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.topMargin {
+  margin-top: 1rem;
+}

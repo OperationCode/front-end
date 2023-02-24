@@ -50,9 +50,34 @@ const getInvolved = {
   href: '/get_involved',
 };
 
+const profile = {
+  name: 'Profile',
+  href: '/profile',
+};
+
+const codeSchools = {
+  name: 'Code Schools',
+  href: '/code_schools',
+};
+
+const resources = {
+  name: 'Resources',
+  href: '/resources',
+};
+
 const merchStore = {
   name: 'Merch Store',
   href: '/swag',
+};
+
+const logout = {
+  name: 'Logout',
+  href: '/logout', // has a redirect in Next configuration file.
+};
+
+const login = {
+  name: 'Login',
+  href: '/login', // has a redirect in Next configuration file.
 };
 
 const jobs = {
@@ -70,9 +95,17 @@ const projectRebuild = {
   href: '/project_rebuild',
 };
 
+// MARK: Top-level navigation items
+const accountGroup = {
+  name: 'Account',
+  href: profile.href,
+  sublinks: [profile, logout],
+  icon: 'UserLogo',
+};
+
 const servicesGroup = {
   ...services,
-  sublinks: [podcast, projectRebuild],
+  sublinks: [podcast, resources, codeSchools, projectRebuild],
 };
 
 const aboutUsGroup = {
@@ -86,11 +119,24 @@ const getInvolvedGroup = {
 };
 
 // MARK: Nav items
-export const loggedOutNavItems = [aboutUsGroup, servicesGroup, getInvolvedGroup];
+export const loggedInNavItems = [aboutUsGroup, servicesGroup, getInvolvedGroup, accountGroup];
+export const loggedOutNavItems = [aboutUsGroup, servicesGroup, getInvolvedGroup, login];
 
 // Extracts sublinks to list everything as a single, top-level list
+export const mobileLoggedInNavItems = flattenDepth(
+  [
+    logout,
+    profile,
+    about,
+    getInvolved,
+    ...servicesGroup.sublinks,
+    ...getInvolvedGroup.sublinks,
+  ].map(({ sublinks = [], ...item }) => [item, sublinks]),
+  2,
+);
+
 export const mobileLoggedOutNavItems = flattenDepth(
-  [about, getInvolved, ...servicesGroup.sublinks, ...getInvolvedGroup.sublinks].map(
+  [login, about, getInvolved, ...servicesGroup.sublinks, ...getInvolvedGroup.sublinks].map(
     ({ sublinks = [], ...item }) => [item, sublinks],
   ),
   2,
@@ -98,16 +144,15 @@ export const mobileLoggedOutNavItems = flattenDepth(
 
 // MARK: Footer items
 export const footerItems = {
-  column1: [contact, faq, jobs],
-  column2: [podcast, merchStore, sponsorship],
-  column3: [getInvolved, sponsorship, donate],
+  column1: [about, contact, faq, services],
+  column2: [codeSchools, resources, jobs],
+  column3: [getInvolved, podcast, history, donate],
   column4: [
-    about,
-    history,
     {
       href: '/press',
       name: 'Press',
     },
+    branding,
     team,
   ],
   legal: [

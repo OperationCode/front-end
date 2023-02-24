@@ -8,6 +8,10 @@ exports[`Nav should render with no props passed 1`] = `
     navItems={
       Array [
         Object {
+          "href": "/login",
+          "name": "Login",
+        },
+        Object {
           "href": "/about",
           "name": "About Us",
         },
@@ -18,6 +22,14 @@ exports[`Nav should render with no props passed 1`] = `
         Object {
           "href": "/podcast",
           "name": "Podcast",
+        },
+        Object {
+          "href": "/resources",
+          "name": "Resources",
+        },
+        Object {
+          "href": "/code_schools",
+          "name": "Code Schools",
         },
         Object {
           "href": "/project_rebuild",
@@ -111,6 +123,14 @@ exports[`Nav should render with no props passed 1`] = `
                   "name": "Podcast",
                 },
                 Object {
+                  "href": "/resources",
+                  "name": "Resources",
+                },
+                Object {
+                  "href": "/code_schools",
+                  "name": "Code Schools",
+                },
+                Object {
                   "href": "/project_rebuild",
                   "name": "Project Rebuild",
                 },
@@ -141,6 +161,11 @@ exports[`Nav should render with no props passed 1`] = `
                 },
               ]
             }
+          />
+          <ForwardRef(LoadableComponent)
+            href="/login"
+            icon={null}
+            name="Login"
           />
           <li>
             <ForwardRef(LinkComponent)
