@@ -35,6 +35,32 @@ const boardMembers = [
     role: 'Board Chair',
     description: `Sean is a US Navy veteran from Northern California. Originally specializing in electronics, he later crossed into various disciplines including network engineering, information security, and product management. Currently he serves in a client facing role at a small consulting firm in Southern California. Sean started with OC building the San Diego Chapter. Outside of daily routine, Sean is an organizer for a regional data science interest group. His interests include reading, long walks, and the study of language (Rust, R, Python, French, and Spanish, in no particular order).`,
   },
+  {
+    name: 'Conrad "Alex" Bituin',
+    description: `Conrad “Alex” Bituin is currently a Software Engineer in the payments domain for a financial services organization, and currently also serves as the Operation Code Outreach Lead and Director of Digital Strategy. Throughout his 14-year career in the U.S. Army Reserves, Alex has also worked in the sales, health and fitness, retail, insurance, and education industries - most recently serving as a 6th grade teacher. He is passionate about education and professional development opportunities for the U.S. military community. Outside of supporting and advocating for our military community, Alex enjoys spending time with his spouse and two children, diving into data science and machine learning projects, football (American), and home brewing.`,
+    imageSrc:
+      'https://operation-code-assets.s3.us-east-2.amazonaws.com/headshots/conrad_bituin.jpg',
+  },
+  {
+    name: 'Alex P. Wu',
+    description: `Alex is a Marine Corps Veteran and currently works at Twilio as Counsel, Law Enforcement and National Security.
+
+    He was previously a litigation associate at the law firm Cooley LLP and a vetting attorney on the Biden-Harris Transition Team. Before becoming an attorney, Alex served as a Marine combat engineer platoon commander in Helmand Province, Afghanistan, and then as a reserve tank platoon commander, executive officer, and company commander in the States. While a reservist, he worked in Washington, DC for an AAPI-advocacy non-profit and then as a staffer in the White House Office of Management and Administration and the White House Counsel's Office.
+
+    Alex earned his J.D. from Stanford Law School, B.A. in Sociology from the College of William and Mary, and currently lives in the San Francisco Bay Area with his wife and their two bulldogs. He is originally from the D.C. area and is a long-suffering Washington Wizards fan.`,
+    imageSrc: 'https://operation-code-assets.s3.us-east-2.amazonaws.com/headshots/alex_wu.jpg',
+  },
+  {
+    name: 'Martin Espinosa',
+    description: `Martin has been Technology Executive for over 25 years and is currently the VP of Internal Audit and Chief Audit Executive (CAE) at Juniper Networks. He has deep experience in finance, risk, compliance, governance, technology and process improvement with experience in security, software, hardware, semi-conductor, gaming and banking sectors with global multi-billion dollar companies. Prior to joining Juniper, Martin has been Chief Audit Executive (CAE) at multiple technology companies such as Symantec, Polycom, Electronic Arts and Avago (now Broadcom). He has also worked in finance operations prior to his internal audit roles and served as Chief Compliance Officer for Polycom. Other companies he has worked for include Sun Microsystems and Yahoo!! He is a firm believer of mentoring, giving back to the community and working with others to grow. He is a proud father of two and believes without work life balance you have no balance. He earned his BA in Economics from the University of Dallas and his MBA from the University of Colorado.`,
+    imageSrc:
+      'https://operation-code-assets.s3.us-east-2.amazonaws.com/headshots/martin_espinosa.jpg',
+  },
+  {
+    name: 'Mike Roberts',
+    description: `Mike Roberts is a software engineer by trade with over three decades of experience programming. He is the founder and CEO of Creating Coding Careers, which helps underrepresented people break into tech and helps companies build high-performance engineering teams out of historically excluded tech talent. Having launched hundreds of new collar careers, he has grads working at IBM/RedHat, Apple, WalmartLabs, Sony, AWS, Facebook, Deloitte, Trust&Will, BD, NewRocket, and many more amazing tech companies.`,
+    imageSrc: 'https://operation-code-assets.s3.us-east-2.amazonaws.com/headshots/mike_roberts.jpg',
+  },
 ];
 
 export default function Team() {
@@ -60,8 +86,12 @@ export default function Team() {
                 header={
                   <>
                     <h3>{name}</h3>
-                    <br />
-                    <h5>{role}</h5>
+                    {role && (
+                      <>
+                        <br />
+                        <h5>{role}</h5>
+                      </>
+                    )}
                   </>
                 }
                 image={{
