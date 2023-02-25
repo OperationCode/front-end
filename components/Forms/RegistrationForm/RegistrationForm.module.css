@@ -33,3 +33,11 @@
   font-size: 14px;
   padding: 0.5rem 0.75rem;
 }
+
+.invisible {
+  display: none;
+}
+
+.bold {
+  font-weight: 700;
+}

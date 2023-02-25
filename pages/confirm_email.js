@@ -32,8 +32,8 @@ function ConfirmEmail({ isVerified }) {
         columns={[
           <p>
             {isVerified ? (
-              <Link href="/login">
-                <a>Verified! Click to Login</a>
+              <Link href="/">
+                <a>Verified! Go home.</a>
               </Link>
             ) : (
               <Alert type="error">Could not verify email</Alert>

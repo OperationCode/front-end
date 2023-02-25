@@ -78,7 +78,7 @@ exports[`RegistrationForm should render with required props 1`] = `
       </div>
     </div>
     <div
-      className="field"
+      className="invisible field"
       data-testid="INPUT"
     >
       <label
@@ -101,12 +101,12 @@ exports[`RegistrationForm should render with required props 1`] = `
           onBlur={[Function]}
           onChange={[Function]}
           type="password"
-          value=""
+          value="nOnEeDfOrP@ssw0rd!"
         />
       </div>
     </div>
     <div
-      className="field"
+      className="invisible field"
       data-testid="INPUT"
     >
       <label
@@ -129,7 +129,7 @@ exports[`RegistrationForm should render with required props 1`] = `
           onBlur={[Function]}
           onChange={[Function]}
           type="password"
-          value=""
+          value="nOnEeDfOrP@ssw0rd!"
         />
       </div>
     </div>
@@ -265,7 +265,11 @@ exports[`RegistrationForm should render with required props 1`] = `
   >
     The demographic information you provide, helps us understand our community needs, ensure diversity, and provide specific resources to reach our mission. Thank you in advance for providing honest answers.
     <br />
-    We do not sell your information to anyone.
+    <span
+      className="bold"
+    >
+      We do not sell your information to anyone.
+    </span>
   </p>
   <hr
     className="seperator"

@@ -67,7 +67,7 @@ function UpdateProfileForm({ initialValues }) {
   };
 
   const goToProfile = () => {
-    Router.push('/profile');
+    Router.push('/join/success');
   };
 
   // ordered

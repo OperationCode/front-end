@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`JoinSection should render when not logged in 1`] = `
+exports[`JoinSection should render 1`] = `
 <div
   className="Container white"
   data-testid="Join Section"

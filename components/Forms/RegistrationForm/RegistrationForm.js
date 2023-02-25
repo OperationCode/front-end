@@ -7,8 +7,6 @@ import { createUser } from 'common/constants/api';
 import { getServerErrorMessage } from 'common/utils/api-utils';
 import { validationErrorMessages } from 'common/constants/messages';
 import { capitalizeFirstLetter } from 'common/utils/string-utils';
-import { minimumPasswordLength } from 'common/constants/validations';
-import { hasRequiredCharacters } from 'common/utils/validator-utils';
 import { codeOfConduct } from 'common/constants/urls';
 import Button from 'components/Buttons/Button/Button';
 import Checkbox from 'components/Form/Checkbox/Checkbox';
@@ -19,11 +17,13 @@ import Link from 'next/link';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 import styles from './RegistrationForm.module.css';
 
+export const PASSWORD_FOR_EVERYBODY = 'nOnEeDfOrP@ssw0rd!';
+
 const defaultValues = {
   email: '',
   'confirm-email': '',
-  password: '',
-  'confirm-password': '',
+  password: PASSWORD_FOR_EVERYBODY,
+  'confirm-password': PASSWORD_FOR_EVERYBODY,
   firstName: '',
   lastName: '',
   zipcode: '',
@@ -45,10 +45,7 @@ const registrationSchema = Yup.object().shape({
   'confirm-email': Yup.string()
     .required(validationErrorMessages.required)
     .oneOf([Yup.ref('email')], validationErrorMessages.emailsMatch),
-  password: Yup.string()
-    .required(validationErrorMessages.required)
-    .min(minimumPasswordLength, validationErrorMessages.password)
-    .test('password-strength', validationErrorMessages.password, hasRequiredCharacters),
+  password: Yup.string().required(validationErrorMessages.required),
   'confirm-password': Yup.string()
     .required(validationErrorMessages.required)
     .oneOf([Yup.ref('password')], validationErrorMessages.passwordsMatch),
@@ -149,6 +146,7 @@ function RegistrationForm({ initialValues, onSubmit, onSuccess }) {
             />
 
             <Field
+              className={styles.invisible}
               type="password"
               name="password"
               label="Password*"
@@ -158,6 +156,7 @@ function RegistrationForm({ initialValues, onSubmit, onSuccess }) {
             />
 
             <Field
+              className={styles.invisible}
               type="password"
               name="confirm-password"
               label="Confirm Password*"
@@ -223,7 +222,7 @@ function RegistrationForm({ initialValues, onSubmit, onSuccess }) {
             diversity, and provide specific resources to reach our mission. Thank you in advance for
             providing honest answers.
             <br />
-            We do not sell your information to anyone.
+            <span className={styles.bold}>We do not sell your information to anyone.</span>
           </p>
 
           <hr className={styles.seperator} />

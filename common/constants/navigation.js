@@ -50,11 +50,6 @@ const getInvolved = {
   href: '/get_involved',
 };
 
-const profile = {
-  name: 'Profile',
-  href: '/profile',
-};
-
 const codeSchools = {
   name: 'Code Schools',
   href: '/code_schools',
@@ -70,16 +65,6 @@ const merchStore = {
   href: '/swag',
 };
 
-const logout = {
-  name: 'Logout',
-  href: '/logout', // has a redirect in Next configuration file.
-};
-
-const login = {
-  name: 'Login',
-  href: '/login', // has a redirect in Next configuration file.
-};
-
 const jobs = {
   href: '/jobs',
   name: 'Job Board',
@@ -93,14 +78,6 @@ const sponsorship = {
 const projectRebuild = {
   name: 'Project Rebuild',
   href: '/project_rebuild',
-};
-
-// MARK: Top-level navigation items
-const accountGroup = {
-  name: 'Account',
-  href: profile.href,
-  sublinks: [profile, logout],
-  icon: 'UserLogo',
 };
 
 const servicesGroup = {
@@ -119,28 +96,17 @@ const getInvolvedGroup = {
 };
 
 // MARK: Nav items
-export const loggedInNavItems = [aboutUsGroup, servicesGroup, getInvolvedGroup, accountGroup];
-export const loggedOutNavItems = [aboutUsGroup, servicesGroup, getInvolvedGroup, login];
+export const desktopNavItems = [aboutUsGroup, servicesGroup, getInvolvedGroup];
 
 // Extracts sublinks to list everything as a single, top-level list
-export const mobileLoggedInNavItems = flattenDepth(
-  [
-    logout,
-    profile,
-    about,
-    getInvolved,
-    ...servicesGroup.sublinks,
-    ...getInvolvedGroup.sublinks,
-  ].map(({ sublinks = [], ...item }) => [item, sublinks]),
-  2,
-);
-
-export const mobileLoggedOutNavItems = flattenDepth(
-  [login, about, getInvolved, ...servicesGroup.sublinks, ...getInvolvedGroup.sublinks].map(
+export const mobileNavItems = flattenDepth(
+  [about, getInvolved, ...servicesGroup.sublinks, ...getInvolvedGroup.sublinks].map(
     ({ sublinks = [], ...item }) => [item, sublinks],
   ),
   2,
 );
+
+console.log({ mobileNavItems });
 
 // MARK: Footer items
 export const footerItems = {

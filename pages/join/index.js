@@ -1,25 +1,21 @@
 import { useEffect } from 'react';
-import Link from 'next/link';
-import { object } from 'prop-types';
-import { withRouter } from 'next/router';
-import { login } from 'common/utils/auth-utils';
+import { useRouter } from 'next/router';
 import { gtag } from 'common/utils/thirdParty/gtag';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
 import RegistrationForm from 'components/Forms/RegistrationForm/RegistrationForm';
+import { login } from 'common/utils/auth-utils';
 
 const pageTitle = 'Join';
 
-const profileUpdateURL = '/profile/update';
+const profileUpdateURL = '/join/form';
 
-Join.propTypes = {
-  router: object.isRequired,
-};
+export default function Join() {
+  const { prefetch } = useRouter();
 
-function Join({ router }) {
   useEffect(() => {
-    router.prefetch(profileUpdateURL);
+    prefetch(profileUpdateURL);
   }, []);
 
   const handleSuccess = ({ token }) => {
@@ -33,21 +29,7 @@ function Join({ router }) {
 
       <HeroBanner title={pageTitle} />
 
-      <Content
-        theme="gray"
-        columns={[
-          <RegistrationForm onSuccess={handleSuccess} />,
-          <p>
-            {'Already registered? '}
-            <Link href="/login">
-              <a>Login</a>
-            </Link>
-            .
-          </p>,
-        ]}
-      />
+      <Content theme="gray" columns={[<RegistrationForm onSuccess={handleSuccess} />]} />
     </>
   );
 }
-
-export default withRouter(Join);

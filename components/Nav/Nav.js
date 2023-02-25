@@ -4,14 +4,8 @@ import Router from 'next/router';
 import classNames from 'classnames';
 import Logo from 'public/static/images/logo.svg';
 
-import {
-  loggedInNavItems,
-  loggedOutNavItems,
-  mobileLoggedInNavItems,
-  mobileLoggedOutNavItems,
-} from 'common/constants/navigation';
+import { desktopNavItems, mobileNavItems } from 'common/constants/navigation';
 import NavMobile from 'components/Nav/NavMobile/NavMobile';
-import { hasValidAuthToken } from 'common/utils/cookie-utils';
 import dynamic from 'next/dynamic';
 import UserLogo from '../../public/static/images/icons/FontAwesome/user.svg';
 import styles from './Nav.module.css';
@@ -44,13 +38,6 @@ export const Nav = () => {
     };
   }, []);
 
-  const isLoggedIn = hasValidAuthToken();
-
-  const mobileNavItems = isLoggedIn ? mobileLoggedInNavItems : mobileLoggedOutNavItems;
-
-  // non-mobile
-  const navItems = isLoggedIn ? loggedInNavItems : loggedOutNavItems;
-
   return (
     <>
       {/* Always rendered, but conditionally displayed via media query */}
@@ -74,7 +61,7 @@ export const Nav = () => {
             </Link>
 
             <ul className={styles.link}>
-              {navItems.map(navItem => (
+              {desktopNavItems.map(navItem => (
                 <NavListItem
                   key={navItem.name}
                   {...navItem}

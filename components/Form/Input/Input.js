@@ -7,6 +7,7 @@ import Label from 'components/Form/Label/Label';
 import styles from './Input.module.css';
 
 Input.propTypes = {
+  className: string,
   field: shape({
     name: string.isRequired,
   }).isRequired,
@@ -47,6 +48,7 @@ Input.propTypes = {
 };
 
 Input.defaultProps = {
+  className: '',
   hasValidationStyling: true,
   isLabelHidden: false,
   id: '',
@@ -54,6 +56,7 @@ Input.defaultProps = {
 };
 
 function Input({
+  className,
   field: { name, value, ...field },
   form: { touched, errors },
   hasValidationStyling,
@@ -69,7 +72,7 @@ function Input({
   const isLabelBeforeInput = !isLabelAfterInput;
 
   return (
-    <div className={styles.field} data-testid={INPUT}>
+    <div className={classNames(className, styles.field)} data-testid={INPUT}>
       {isLabelBeforeInput && (
         <Label for={name} isHidden={isLabelHidden}>
           {label}
