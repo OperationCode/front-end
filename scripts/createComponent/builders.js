@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 /* This file contains the functions which generate the output of each file */
 module.exports = {
   // Output generated for component's definition file

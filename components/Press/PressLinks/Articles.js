@@ -60,7 +60,7 @@ const General = [
   },
   {
     title:
-      'When the call of duty is technology, veterans rally to support each other through Operation Code', // eslint-disable-line max-len
+      'When the call of duty is technology, veterans rally to support each other through Operation Code',
     url: 'https://www.geekwire.com/2016/call-duty-technology-veterans-rally-support-operation-code/',
   },
   {
@@ -153,7 +153,7 @@ const General = [
   },
   {
     title:
-      'Patriot Boot Camp And Operation Code Join Forces To Help Military Veterans Become Technology Entrepreneurs', // eslint-disable-line max-len
+      'Patriot Boot Camp And Operation Code Join Forces To Help Military Veterans Become Technology Entrepreneurs',
     url: 'http://patriotbootcamp.org/blog/operation-code',
   },
   {

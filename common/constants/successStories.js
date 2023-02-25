@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import { s3 } from 'common/constants/urls';
 
 const successStories = [

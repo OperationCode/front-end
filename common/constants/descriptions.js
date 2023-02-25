@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 /** Provides lorem ipsum descriptions of length
  * short: 1 sentence,
  * medium: 3 sentences,

@@ -174,7 +174,6 @@ module.exports = {
     'class-methods-use-this': 'off',
     'comma-dangle': ['error', 'only-multiline'],
     'implicit-arrow-linebreak': 'off',
-    'max-len': ['error', { code: 100, ignoreUrls: true }],
     'multiline-ternary': 'off',
     'no-console': 'warn',
     'no-promise-executor-return': 'off',
