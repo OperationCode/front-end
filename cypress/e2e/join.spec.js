@@ -7,8 +7,6 @@ const validUser = mockUser();
 const inputFields = {
   email: 'Email*',
   confirmEmail: 'Confirm Email*',
-  password: 'Password*',
-  confirmPassword: 'Confirm Password*',
   firstName: 'First Name*',
   lastName: 'Last Name*',
   zipcode: 'Zipcode*',
@@ -66,8 +64,6 @@ describe('join', () => {
     assertError();
 
     cy.findByLabelText(inputFields.confirmEmail).type(validUser.email);
-    cy.findByLabelText(inputFields.password).type(validUser.password);
-    cy.findByLabelText(inputFields.confirmPassword).type(validUser.password);
     cy.findByLabelText(inputFields.firstName).type(validUser.firstName);
     cy.findByLabelText(inputFields.lastName).type(validUser.lastName);
     cy.findByLabelText(inputFields.zipcode).type(validUser.zipcode);
@@ -81,8 +77,6 @@ describe('join', () => {
     assertError();
 
     cy.findByLabelText(inputFields.confirmEmail).type(validUser.email);
-    cy.findByLabelText(inputFields.password).type(validUser.password);
-    cy.findByLabelText(inputFields.confirmPassword).type(validUser.password);
     cy.findByLabelText(inputFields.firstName).type(validUser.firstName);
     cy.findByLabelText(inputFields.lastName).type(validUser.lastName);
     cy.findByLabelText(inputFields.zipcode).type(validUser.zipcode);
@@ -100,8 +94,6 @@ describe('join', () => {
     assertError({ errorMessage: validationErrorMessages.email });
 
     cy.findByLabelText(inputFields.confirmEmail).type(invalidUser.email);
-    cy.findByLabelText(inputFields.password).type(invalidUser.password);
-    cy.findByLabelText(inputFields.confirmPassword).type(invalidUser.password);
     cy.findByLabelText(inputFields.firstName).type(invalidUser.firstName);
     cy.findByLabelText(inputFields.lastName).type(invalidUser.lastName);
     cy.findByLabelText(inputFields.zipcode).type(invalidUser.zipcode);
@@ -116,8 +108,6 @@ describe('join', () => {
     cy.findByLabelText(inputFields.confirmEmail).focus().blur();
     assertError();
 
-    cy.findByLabelText(inputFields.password).type(validUser.password);
-    cy.findByLabelText(inputFields.confirmPassword).type(validUser.password);
     cy.findByLabelText(inputFields.firstName).type(validUser.firstName);
     cy.findByLabelText(inputFields.lastName).type(validUser.lastName);
     cy.findByLabelText(inputFields.zipcode).type(validUser.zipcode);
@@ -132,8 +122,6 @@ describe('join', () => {
     cy.findByLabelText(inputFields.confirmEmail).type(existingUser.email).blur();
     assertError({ errorMessage: validationErrorMessages.emailsMatch });
 
-    cy.findByLabelText(inputFields.password).type(validUser.password);
-    cy.findByLabelText(inputFields.confirmPassword).type(validUser.password);
     cy.findByLabelText(inputFields.firstName).type(validUser.firstName);
     cy.findByLabelText(inputFields.lastName).type(validUser.lastName);
     cy.findByLabelText(inputFields.zipcode).type(validUser.zipcode);
@@ -145,8 +133,6 @@ describe('join', () => {
   it('should NOT be able to register with an existing email', () => {
     cy.findByLabelText(inputFields.email).type(existingUser.email);
     cy.findByLabelText(inputFields.confirmEmail).type(existingUser.email);
-    cy.findByLabelText(inputFields.password).type(existingUser.password);
-    cy.findByLabelText(inputFields.confirmPassword).type(existingUser.password);
     cy.findByLabelText(inputFields.firstName).type(existingUser.firstName);
     cy.findByLabelText(inputFields.lastName).type(existingUser.lastName);
     cy.findByLabelText(inputFields.zipcode).type(existingUser.zipcode);
@@ -156,152 +142,11 @@ describe('join', () => {
   });
 
   /**
-   * Password & ConfirmPassword fields
-   */
-  it('should NOT be able to register when blurring past password', () => {
-    cy.findByLabelText(inputFields.email).type(validUser.email);
-    cy.findByLabelText(inputFields.confirmEmail).type(validUser.email);
-
-    cy.findByLabelText(inputFields.password).focus().blur();
-    assertError();
-
-    cy.findByLabelText(inputFields.confirmPassword).type(validUser.password);
-    cy.findByLabelText(inputFields.firstName).type(validUser.firstName);
-    cy.findByLabelText(inputFields.lastName).type(validUser.lastName);
-    cy.findByLabelText(inputFields.zipcode).type(validUser.zipcode);
-    cy.findByLabelText(inputFields.codeOfConduct).type(validUser.codeOfConduct);
-
-    assertFailedLogin({ numberOfErrors: 2 });
-  });
-
-  it('should NOT be able to register with short password', () => {
-    const invalidUser = mockUser({
-      passwordOptions: {
-        hasMinimumLength: false,
-      },
-    });
-
-    cy.findByLabelText(inputFields.email).type(invalidUser.email);
-    cy.findByLabelText(inputFields.confirmEmail).type(invalidUser.email);
-
-    cy.findByLabelText(inputFields.password).type(invalidUser.password).blur();
-    assertError({ errorMessage: validationErrorMessages.password });
-
-    cy.findByLabelText(inputFields.confirmPassword).type(invalidUser.password);
-    cy.findByLabelText(inputFields.firstName).type(invalidUser.firstName);
-    cy.findByLabelText(inputFields.lastName).type(invalidUser.lastName);
-    cy.findByLabelText(inputFields.zipcode).type(invalidUser.zipcode);
-    cy.findByLabelText(inputFields.codeOfConduct).type(validUser.codeOfConduct);
-
-    assertFailedLogin({ errorMessage: validationErrorMessages.password });
-  });
-
-  it('should NOT be able to register with password missing lowercase', () => {
-    const invalidUser = mockUser({
-      passwordOptions: {
-        hasOneLowercaseChar: false,
-      },
-    });
-
-    cy.findByLabelText(inputFields.email).type(invalidUser.email);
-    cy.findByLabelText(inputFields.confirmEmail).type(invalidUser.email);
-
-    cy.findByLabelText(inputFields.password).type(invalidUser.password).blur();
-    assertError({ errorMessage: validationErrorMessages.password });
-
-    cy.findByLabelText(inputFields.confirmPassword).type(invalidUser.password);
-    cy.findByLabelText(inputFields.firstName).type(invalidUser.firstName);
-    cy.findByLabelText(inputFields.lastName).type(invalidUser.lastName);
-    cy.findByLabelText(inputFields.zipcode).type(invalidUser.zipcode);
-    cy.findByLabelText(inputFields.codeOfConduct).type(validUser.codeOfConduct);
-
-    assertFailedLogin({ errorMessage: validationErrorMessages.password });
-  });
-
-  it('should NOT be able to register with password missing uppercase', () => {
-    const invalidUser = mockUser({
-      passwordOptions: {
-        hasOneUppercaseChar: false,
-      },
-    });
-
-    cy.findByLabelText(inputFields.email).type(invalidUser.email);
-    cy.findByLabelText(inputFields.confirmEmail).type(invalidUser.email);
-
-    cy.findByLabelText(inputFields.password).type(invalidUser.password).blur();
-    assertError({ errorMessage: validationErrorMessages.password });
-
-    cy.findByLabelText(inputFields.confirmPassword).type(invalidUser.password);
-    cy.findByLabelText(inputFields.firstName).type(invalidUser.firstName);
-    cy.findByLabelText(inputFields.lastName).type(invalidUser.lastName);
-    cy.findByLabelText(inputFields.zipcode).type(invalidUser.zipcode);
-    cy.findByLabelText(inputFields.codeOfConduct).type(validUser.codeOfConduct);
-
-    assertFailedLogin({ errorMessage: validationErrorMessages.password });
-  });
-
-  it('should NOT be able to register with password missing number', () => {
-    const invalidUser = mockUser({
-      passwordOptions: {
-        hasOneNumber: false,
-      },
-    });
-
-    cy.findByLabelText(inputFields.email).type(invalidUser.email);
-    cy.findByLabelText(inputFields.confirmEmail).type(invalidUser.email);
-
-    cy.findByLabelText(inputFields.password).type(invalidUser.password).blur();
-    assertError({ errorMessage: validationErrorMessages.password });
-
-    cy.findByLabelText(inputFields.confirmPassword).type(invalidUser.password);
-    cy.findByLabelText(inputFields.firstName).type(invalidUser.firstName);
-    cy.findByLabelText(inputFields.lastName).type(invalidUser.lastName);
-    cy.findByLabelText(inputFields.zipcode).type(invalidUser.zipcode);
-    cy.findByLabelText(inputFields.codeOfConduct).type(validUser.codeOfConduct);
-
-    assertFailedLogin({ errorMessage: validationErrorMessages.password });
-  });
-
-  it('should NOT be able to register when blurring past confirmPassword', () => {
-    cy.findByLabelText(inputFields.email).type(validUser.email);
-    cy.findByLabelText(inputFields.confirmEmail).type(validUser.email);
-    cy.findByLabelText(inputFields.password).type(validUser.password);
-
-    cy.findByLabelText(inputFields.confirmPassword).focus().blur();
-    assertError();
-
-    cy.findByLabelText(inputFields.firstName).type(validUser.firstName);
-    cy.findByLabelText(inputFields.lastName).type(validUser.lastName);
-    cy.findByLabelText(inputFields.zipcode).type(validUser.zipcode);
-    cy.findByLabelText(inputFields.codeOfConduct).type(validUser.codeOfConduct);
-
-    assertFailedLogin();
-  });
-
-  it('should NOT be able to register when passwords do not match', () => {
-    cy.findByLabelText(inputFields.email).type(validUser.email);
-    cy.findByLabelText(inputFields.confirmEmail).type(validUser.email);
-    cy.findByLabelText(inputFields.password).type(validUser.password);
-
-    cy.findByLabelText(inputFields.confirmPassword).type(existingUser.password).blur();
-    assertError({ errorMessage: validationErrorMessages.passwordsMatch });
-
-    cy.findByLabelText(inputFields.firstName).type(validUser.firstName);
-    cy.findByLabelText(inputFields.lastName).type(validUser.lastName);
-    cy.findByLabelText(inputFields.zipcode).type(validUser.zipcode);
-    cy.findByLabelText(inputFields.codeOfConduct).type(validUser.codeOfConduct);
-
-    assertFailedLogin({ errorMessage: validationErrorMessages.passwordsMatch });
-  });
-
-  /**
    * FirstName & LastName Fields
    */
   it('should NOT be able to register when blurring past firstName', () => {
     cy.findByLabelText(inputFields.email).type(validUser.email);
     cy.findByLabelText(inputFields.confirmEmail).type(validUser.email);
-    cy.findByLabelText(inputFields.password).type(validUser.password);
-    cy.findByLabelText(inputFields.confirmPassword).type(validUser.password);
 
     cy.findByLabelText(inputFields.firstName).focus().blur();
     assertError();
@@ -316,8 +161,6 @@ describe('join', () => {
   it('should NOT be able to register when firstName contains only spaces', () => {
     cy.findByLabelText(inputFields.email).type(validUser.email);
     cy.findByLabelText(inputFields.confirmEmail).type(validUser.email);
-    cy.findByLabelText(inputFields.password).type(validUser.password);
-    cy.findByLabelText(inputFields.confirmPassword).type(validUser.password);
 
     cy.findByLabelText(inputFields.firstName).type('     ').blur();
     assertError();
@@ -332,8 +175,6 @@ describe('join', () => {
   it('should NOT be able to register when blurring past lastName', () => {
     cy.findByLabelText(inputFields.email).type(validUser.email);
     cy.findByLabelText(inputFields.confirmEmail).type(validUser.email);
-    cy.findByLabelText(inputFields.password).type(validUser.password);
-    cy.findByLabelText(inputFields.confirmPassword).type(validUser.password);
     cy.findByLabelText(inputFields.firstName).type(validUser.firstName);
 
     cy.findByLabelText(inputFields.lastName).focus().blur();
@@ -348,8 +189,6 @@ describe('join', () => {
   it('should NOT be able to register when lastName contains only spaces', () => {
     cy.findByLabelText(inputFields.email).type(validUser.email);
     cy.findByLabelText(inputFields.confirmEmail).type(validUser.email);
-    cy.findByLabelText(inputFields.password).type(validUser.password);
-    cy.findByLabelText(inputFields.confirmPassword).type(validUser.password);
     cy.findByLabelText(inputFields.firstName).type(validUser.firstName);
 
     cy.findByLabelText(inputFields.lastName).type('     ').blur();
@@ -367,8 +206,6 @@ describe('join', () => {
   it('should NOT be able to register when blurring past zipcode', () => {
     cy.findByLabelText(inputFields.email).type(validUser.email);
     cy.findByLabelText(inputFields.confirmEmail).type(validUser.email);
-    cy.findByLabelText(inputFields.password).type(validUser.password);
-    cy.findByLabelText(inputFields.confirmPassword).type(validUser.password);
     cy.findByLabelText(inputFields.firstName).type(validUser.firstName);
     cy.findByLabelText(inputFields.lastName).type(validUser.lastName);
 
@@ -383,8 +220,6 @@ describe('join', () => {
   it('should NOT be able to register when zipcode contains only spaces', () => {
     cy.findByLabelText(inputFields.email).type(validUser.email);
     cy.findByLabelText(inputFields.confirmEmail).type(validUser.email);
-    cy.findByLabelText(inputFields.password).type(validUser.password);
-    cy.findByLabelText(inputFields.confirmPassword).type(validUser.password);
     cy.findByLabelText(inputFields.firstName).type(validUser.firstName);
     cy.findByLabelText(inputFields.lastName).type(validUser.lastName);
 
@@ -399,8 +234,6 @@ describe('join', () => {
   it('should NOT be able to register when Code of Conduct is not agreed to', () => {
     cy.findByLabelText(inputFields.email).type(validUser.email);
     cy.findByLabelText(inputFields.confirmEmail).type(validUser.email);
-    cy.findByLabelText(inputFields.password).type(validUser.password);
-    cy.findByLabelText(inputFields.confirmPassword).type(validUser.password);
     cy.findByLabelText(inputFields.firstName).type(validUser.firstName);
     cy.findByLabelText(inputFields.lastName).type(validUser.lastName);
     cy.findByLabelText(inputFields.zipcode).type(validUser.zipcode);
@@ -423,8 +256,6 @@ describe('join', () => {
   it('should be able to register with valid data', () => {
     cy.findByLabelText(inputFields.email).type(validUser.email);
     cy.findByLabelText(inputFields.confirmEmail).type(validUser.email);
-    cy.findByLabelText(inputFields.password).type(validUser.password);
-    cy.findByLabelText(inputFields.confirmPassword).type(validUser.password);
     cy.findByLabelText(inputFields.firstName).type(validUser.firstName);
     cy.findByLabelText(inputFields.lastName).type(validUser.lastName);
     cy.findByLabelText(inputFields.zipcode).type(validUser.zipcode);
