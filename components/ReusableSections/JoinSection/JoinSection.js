@@ -4,9 +4,9 @@ import LinkButton from 'components/Buttons/LinkButton/LinkButton';
 import Heading from 'components/Heading/Heading';
 import styles from './JoinSection.module.css';
 
-export default function JoinSection() {
+function JoinSection() {
   return (
-    <Container theme="white">
+    <Container theme="white" data-testid="Join Section">
       <Heading text="Join Our Thriving Community" headingLevel={3} />
 
       <p>
@@ -29,3 +29,5 @@ export default function JoinSection() {
     </Container>
   );
 }
+
+export default JoinSection;

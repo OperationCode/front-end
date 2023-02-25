@@ -1,6 +1,6 @@
 import { fireEvent, render } from '@testing-library/react';
 import createShallowSnapshotTest from 'test-utils/createShallowSnapshotTest';
-import { mobileLoggedOutNavItems } from 'common/constants/navigation';
+import { mobileNavItems } from 'common/constants/navigation';
 import { CLOSE_BUTTON } from 'common/constants/testIDs';
 
 import NavMobile from '../NavMobile';
@@ -9,7 +9,7 @@ describe('NavMobile', () => {
   it('should render', () =>
     createShallowSnapshotTest(
       <NavMobile
-        navItems={mobileLoggedOutNavItems}
+        navItems={mobileNavItems}
         isOpen={false}
         openMenu={() => {}}
         closeMenu={() => {}}
@@ -19,7 +19,7 @@ describe('NavMobile', () => {
   it('should not have a visible menu when isOpen prop is false', () => {
     const wrapper = render(
       <NavMobile
-        navItems={mobileLoggedOutNavItems}
+        navItems={mobileNavItems}
         isOpen={false}
         openMenu={() => {}}
         closeMenu={() => {}}
@@ -31,12 +31,7 @@ describe('NavMobile', () => {
 
   it('should have a visible menu when isOpen prop is true', () => {
     const wrapper = render(
-      <NavMobile
-        navItems={mobileLoggedOutNavItems}
-        isOpen
-        openMenu={() => {}}
-        closeMenu={() => {}}
-      />,
+      <NavMobile navItems={mobileNavItems} isOpen openMenu={() => {}} closeMenu={() => {}} />,
     );
 
     expect(wrapper.container.querySelector('ul')).not.toBeNull();
@@ -47,7 +42,7 @@ describe('NavMobile', () => {
 
     const wrapper = render(
       <NavMobile
-        navItems={mobileLoggedOutNavItems}
+        navItems={mobileNavItems}
         isOpen={false}
         openMenu={mockOpen}
         closeMenu={() => {}}
@@ -63,12 +58,7 @@ describe('NavMobile', () => {
     const mockClose = jest.fn();
 
     const wrapper = render(
-      <NavMobile
-        navItems={mobileLoggedOutNavItems}
-        isOpen
-        openMenu={() => {}}
-        closeMenu={mockClose}
-      />,
+      <NavMobile navItems={mobileNavItems} isOpen openMenu={() => {}} closeMenu={mockClose} />,
     );
 
     fireEvent.click(wrapper.queryByTestId(CLOSE_BUTTON));

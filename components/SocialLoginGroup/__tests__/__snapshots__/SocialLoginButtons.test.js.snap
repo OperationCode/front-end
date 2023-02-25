@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SocialLoginButtons should render with required props 1`] = `
+Array [
+  <button
+    className="loginButton googleButton"
+    disabled={true}
+    onClick={[Function]}
+    type="button"
+  >
+    Login with Google
+  </button>,
+  <button
+    className="loginButton facebookButton"
+    onClick={[Function]}
+    type="button"
+  >
+    Login with Facebook
+  </button>,
+]
+`;

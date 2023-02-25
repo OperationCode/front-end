@@ -1,0 +1,68 @@
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.intro .termDefinition {
+  margin: 1rem 2rem;
+  max-width: 500px;
+}
+
+.filterContainer {
+  margin: 2rem 0;
+  width: 100%;
+}
+
+.filterContainer > h5 {
+  text-align: center;
+}
+
+.select {
+  margin: 0.5rem auto;
+  min-width: 20rem;
+  width: 90%;
+  max-width: 50rem;
+}
+
+.schoolCardsWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.centered {
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.schoolLocationModal {
+  width: 500px;
+}
+
+@media screen and (--small-viewport) {
+  .schoolLocationModal {
+    width: 100%;
+  }
+}
+
+.schoolLocationModal > div {
+  width: 100%;
+}
+
+.schoolLocalModalItem {
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--gray);
+}
+
+.schoolLocalModalItem:last-child {
+  border-bottom: 0;
+  margin-bottom: 15px;
+}
+
+.schoolLocationList {
+  margin: 1rem 0;
+  padding: 0;
+  list-style: none;
+}
