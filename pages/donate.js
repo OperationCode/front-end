@@ -1,42 +1,17 @@
-import { useEffect, useRef } from 'react';
 import Head from 'components/head';
 import Container from 'components/Container/Container';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
+import styles from 'styles/donate.module.css';
 
 const pageTitle = 'Donate';
 
 function DonatePage() {
-  const ref = useRef(null);
-
-  useEffect(() => {
-    const script = document.createElement('script');
-
-    script.src = 'https://cdn.virtuoussoftware.com/virtuous.embed.min.js';
-    script.async = true;
-    script.setAttribute('fetchpriority', 'high');
-    script.setAttribute('data-vform', '48246BDA-5B32-4206-BA2B-E518574E4669');
-    script.setAttribute('data-orgId', '3423');
-    script.setAttribute('data-isGiving', 'true');
-    script.setAttribute('data-merchantType', 'Virtuous');
-    script.setAttribute('data-dependencies', '[]');
-
-    if (ref.current) {
-      ref.current.appendChild(script);
-    }
-
-    return () => {
-      if (ref.current) {
-        ref.current.removeChild(script);
-      }
-    };
-  }, [ref]);
-
   return (
     <>
       <Head title={pageTitle} />
       <HeroBanner title={pageTitle} />
       <Container theme="white">
-        <div style={{ borderBottom: '4px solid #252e3e' }}>
+        <div className={styles.explainer}>
           <h1>Why Donate?</h1>
           <p>
             Operation Code runs all operations and programs based on donations. We need your help!
@@ -67,11 +42,13 @@ function DonatePage() {
             Transparency from GuideStar in 2021. Feel free to reach out to us by{' '}
             <a href="mailto:staff@operationcode.org">e-mail</a> if you have any questions.
           </p>
-          <br />
         </div>
-        <br />
 
-        <div ref={ref} />
+        <iframe
+          title="Donation Form"
+          src="https://secure.lglforms.com/form_engine/s/BRtP7QUKyHOyEYsZROsRew"
+          className={styles.donateForm}
+        />
       </Container>
     </>
   );

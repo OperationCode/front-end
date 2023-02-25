@@ -1,0 +1,43 @@
+.RegistrationForm {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.topMargin {
+  margin-top: 1rem;
+}
+
+.RegistrationForm > p {
+  margin: 1.25rem auto;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 500px;
+  width: 100%;
+}
+
+.seperator {
+  margin: 2rem 0;
+  width: 25%;
+}
+
+.aside {
+  background-color: var(--white);
+  border: 1px solid var(--secondary);
+  border-radius: 4px;
+  font-size: 14px;
+  padding: 0.5rem 0.75rem;
+}
+
+.invisible {
+  display: none;
+}
+
+.bold {
+  font-weight: 700;
+}

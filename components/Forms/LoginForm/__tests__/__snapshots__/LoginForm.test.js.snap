@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoginForm should render with required props 1`] = `
+<form
+  className="LoginForm"
+  data-testid="LOGIN_FORM"
+  noValidate={true}
+  onReset={[Function]}
+  onSubmit={[Function]}
+>
+  <div
+    className="row"
+  >
+    <div
+      className="field"
+      data-testid="INPUT"
+    >
+      <label
+        className="Label"
+        data-testid="LABEL"
+        htmlFor="email"
+      >
+        Email*
+      </label>
+      <div
+        className="inputFeedbackGrouping"
+        data-testid="INPUT_FEEDBACK_GROUPING"
+      >
+        <input
+          autoComplete="username email"
+          className="Input"
+          disabled={false}
+          id="email"
+          name="email"
+          onBlur={[Function]}
+          onChange={[Function]}
+          type="email"
+          value=""
+        />
+      </div>
+    </div>
+    <div
+      className="field"
+      data-testid="INPUT"
+    >
+      <label
+        className="Label"
+        data-testid="LABEL"
+        htmlFor="password"
+      >
+        Password*
+      </label>
+      <div
+        className="inputFeedbackGrouping"
+        data-testid="INPUT_FEEDBACK_GROUPING"
+      >
+        <input
+          autoComplete="new-password"
+          className="Input"
+          disabled={false}
+          id="password"
+          name="password"
+          onBlur={[Function]}
+          onChange={[Function]}
+          type="password"
+          value=""
+        />
+      </div>
+    </div>
+    <button
+      className="Button topMargin secondary"
+      data-testid="LOGIN_BUTTON"
+      disabled={false}
+      onClick={[Function]}
+      tabIndex={0}
+      type="submit"
+    >
+      Login
+    </button>
+  </div>
+</form>
+`;

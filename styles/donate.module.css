@@ -1,0 +1,12 @@
+.explainer {
+  border-bottom: 4px solid var(--secondary);
+  margin-bottom: 1.6rem;
+}
+
+.donateForm {
+  border: 1px solid transparent;
+  outline: 1px solid transparent;
+  max-width: 70ch;
+  height: 1500px;
+  width: 100%;
+}

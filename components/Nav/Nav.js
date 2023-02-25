@@ -4,7 +4,7 @@ import Router from 'next/router';
 import classNames from 'classnames';
 import Logo from 'public/static/images/logo.svg';
 
-import { loggedOutNavItems, mobileLoggedOutNavItems } from 'common/constants/navigation';
+import { desktopNavItems, mobileNavItems } from 'common/constants/navigation';
 import NavMobile from 'components/Nav/NavMobile/NavMobile';
 import dynamic from 'next/dynamic';
 import UserLogo from '../../public/static/images/icons/FontAwesome/user.svg';
@@ -38,11 +38,6 @@ export const Nav = () => {
     };
   }, []);
 
-  const mobileNavItems = mobileLoggedOutNavItems;
-
-  // non-mobile
-  const navItems = loggedOutNavItems;
-
   return (
     <>
       {/* Always rendered, but conditionally displayed via media query */}
@@ -66,7 +61,7 @@ export const Nav = () => {
             </Link>
 
             <ul className={styles.link}>
-              {navItems.map(navItem => (
+              {desktopNavItems.map(navItem => (
                 <NavListItem
                   key={navItem.name}
                   {...navItem}

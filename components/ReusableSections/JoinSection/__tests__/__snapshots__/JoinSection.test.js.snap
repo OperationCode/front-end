@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`JoinSection should render 1`] = `
+<div
+  className="Container white"
+  data-testid="Join Section"
+>
+  <div
+    className="content"
+  >
+    <div
+      className="headingContainer"
+    >
+      <h3
+        className="Heading"
+      >
+        <div
+          className="hashLinkContainer"
+          data-testid="Heading Content join-our-thriving-community-link"
+        >
+          <a
+            data-testid="Hash Link"
+            href="#join-our-thriving-community-link"
+            id="join-our-thriving-community-link"
+          >
+            <span
+              className="ScreenReaderOnly"
+              data-testid="SCREEN_READER_ONLY"
+            >
+              Scroll Link for 
+              Join Our Thriving Community
+            </span>
+            <svg
+              className="icon"
+            />
+          </a>
+          Join Our Thriving Community
+        </div>
+      </h3>
+    </div>
+    <p>
+      Are you ready to begin your journey towards a career in tech? Get the support you need by joining our members-only Slack community!
+    </p>
+    <a
+      className="Button verticalSpacing secondary"
+      href="/join"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      Register Now
+    </a>
+    <p>
+      Slack is a community based collaboration tool where all the magic happens!
+    </p>
+    <a
+      href="https://get.slack.help/hc/en-us/categories/360000049043-Getting-Started"
+      onClick={[Function]}
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      Never heard of Slack before?
+      <span
+        className="ScreenReaderOnly"
+        data-testid="SCREEN_READER_ONLY"
+      >
+        Opens in new window
+      </span>
+      <svg
+        className="externalLinkIcon"
+      />
+    </a>
+  </div>
+</div>
+`;
