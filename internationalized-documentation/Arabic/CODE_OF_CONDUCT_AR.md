@@ -57,7 +57,7 @@
 
 ## الإسناد
 
-،الإصدار 1.4 ،[الصفحة الرئيسية][Contributor Covenant/العهد المساهم] تم تعديل مدونة قواعد السلوك هذه من
+،الإصدار 1.4 ،[الصفحة الرئيسية][contributor covenant/العهد المساهم] تم تعديل مدونة قواعد السلوك هذه من
 [http://contributor-covenant.org/version/1/4][الإصدار] متوفر عند
 
 [الصفحة الرئيسية]: http://contributor-covenant.org
