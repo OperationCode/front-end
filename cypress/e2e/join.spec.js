@@ -247,7 +247,7 @@ describe('join', () => {
    * Registration without all fields
    */
   it('should NOT be able to register without filling all required fields', () => {
-    assertFailedLogin({ numberOfErrors: 8 });
+    assertFailedLogin({ numberOfErrors: 6 });
   });
 
   /**
@@ -262,7 +262,7 @@ describe('join', () => {
     cy.findByLabelText(inputFields.codeOfConduct).type(validUser.codeOfConduct);
     cy.findByText('Submit').click();
 
-    cy.url({ timeout: 20000 }).should('contain', '/profile/update');
+    cy.url({ timeout: 20000 }).should('contain', '/join/form');
     cy.get('h1').should('have.text', 'Update Profile');
 
     cy.getCookies().then(([tokenCookie]) => {
