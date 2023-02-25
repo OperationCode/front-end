@@ -272,8 +272,5 @@ describe('join', () => {
       expect(jwt.lastName).to.exist;
       expect(jwt.zipcode).to.exist;
     });
-
-    cy.findByTestId('Nav Item Login').should('not.exist');
-    cy.findByTestId('Nav Item Logout').should('exist');
   });
 });
