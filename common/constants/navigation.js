@@ -106,8 +106,6 @@ export const mobileNavItems = flattenDepth(
   2,
 );
 
-console.log({ mobileNavItems });
-
 // MARK: Footer items
 export const footerItems = {
   column1: [about, contact, faq, services],
