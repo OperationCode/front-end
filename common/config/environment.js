@@ -7,7 +7,8 @@ const isProduction = process.env.NODE_ENV === 'production';
 export const clientTokens = isProduction
   ? {
       GOOGLE_ADS_ID: 'AW-868714671',
-      GOOGLE_ANALYTICS_ID: 'UA-75642413-1',
+      GOOGLE_ANALYTICS_ID: 'G-5QSQ208NW6',
+      // GOOGLE_ANALYTICS_ID: 'UA-75642413-1',
       GOOGLE_TAG_MANAGER_ID: 'GTM-PTPTHST', // unused
       LOGROCKET: 'uquzri',
       OC_FACEBOOK_KEY: '207055783236912',
