@@ -22,7 +22,7 @@
   justify-content: center;
   margin: 3.5rem auto;
   width: 92.5%;
-  max-width: 1400px;
+  max-width: 1200px;
 }
 
 @media screen and (--small-viewport) {
