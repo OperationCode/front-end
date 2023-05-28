@@ -21,8 +21,8 @@
   align-items: center;
   justify-content: center;
   margin: 3.5rem auto;
-  width: 92.5%;
-  max-width: 1200px;
+  width: 100%;
+  max-width: 1400px;
 }
 
 @media screen and (--small-viewport) {
