@@ -26,7 +26,8 @@
     "test:changes": "yarn test --changedSince=main --verbose=true",
     "test:changes:watch": "yarn test:changes --watch",
     "test:watch": "yarn test --watch",
-    "test:update-snaps": "yarn test -u"
+    "test:update-snaps": "yarn test -u",
+    "chromatic": "chromatic --exit-zero-on-changes"
   },
   "nyc": {
     "extends": "./nyc.config.js",
