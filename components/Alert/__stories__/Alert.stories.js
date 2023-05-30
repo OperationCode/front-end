@@ -15,7 +15,7 @@ ErrorAlert.args = {
 
 export const SuccessAlert = Template.bind({});
 SuccessAlert.args = {
-  children: 'This is a success alert.',
+  children: 'Success Alert JSX or Text',
   type: 'success',
 };
 
