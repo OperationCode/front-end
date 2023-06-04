@@ -1,32 +1,56 @@
+import { Formik, Field } from 'formik';
+import Form from '../../Form';
 import Input from '../Input';
+
+const InputTemplate = args => {
+  const {
+    field: { name },
+    label,
+  } = args;
+
+  return (
+    <Formik
+      initialValues={{
+        input1Value: '',
+      }}
+      onSubmit={values => alert(values)}
+    >
+      <Form>
+        <div>
+          <Field name={name} label={label} component={Input} />
+        </div>
+      </Form>
+    </Formik>
+  );
+};
+
+export const Default = InputTemplate.bind({});
+
+Default.args = {
+  field: { name: 'serviceBranchInput' },
+  label: 'Which branch did you serve with?',
+};
 
 export default {
   component: Input,
   title: 'Form/Input',
-};
-
-const Template = arguments_ => {
-  return (
-    <>
-      <span>
-        NOTE: This component&apos;s story has no context outside of Formik and will not function
-        properly
-      </span>
-      <Input {...arguments_} />
-    </>
-  );
-};
-const fieldName = 'someInput';
-
-// Default Input supplied with only required args
-export const Default = Template.bind({});
-Default.args = {
-  field: {
-    name: fieldName,
+  argTypes: {
+    form: {
+      table: { disable: true },
+    },
   },
-  form: {
-    touched: { [fieldName]: false },
-    errors: { [fieldName]: '' },
+  parameters: {
+    controls: { sort: 'requiredFirst' },
   },
-  label: 'Input label',
+  decorators: [
+    InputStory => (
+      <>
+        <span>
+          NOTE: This component&apos;s story has no context outside of Formik and will not function
+          properly
+        </span>
+        <InputStory />
+      </>
+    ),
+  ],
 };
