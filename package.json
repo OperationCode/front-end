@@ -5,6 +5,7 @@
   "scripts": {
     "build": "next build",
     "build:analyze": "cross-env ANALYZE=true next build",
+    "chromatic": "chromatic --exit-zero-on-changes skip",
     "create-component": "node scripts/createComponent/createComponent.js",
     "create-page": "node scripts/createPage/createPage.js",
     "dev": "next -p 3000",
