@@ -5,8 +5,8 @@ const postCSSConfig = require('../postcss.config');
 
 // Export a function. Accept the base config as the only param.
 module.exports = {
-  core: { builder: 'webpack5' },
   stories: ['../components/**/__stories__/*.stories.js'],
+  staticDirs: ['../public'],
   addons: [
     '@storybook/addon-essentials',
     {
@@ -33,7 +33,6 @@ module.exports = {
     // 'PRODUCTION' is used when building the static version of storybook.
 
     config.resolve.extensions.push('.svg');
-
     config.module.rules = config.module.rules.map(data => {
       if (/svg\|/.test(String(data.test)))
         data.test = /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2|cur|ani)(\?.*)?$/;
@@ -52,7 +51,6 @@ module.exports = {
         },
       ],
     });
-
     config.plugins.push(
       new webpack.DefinePlugin({
         'process.env.__NEXT_IMAGE_OPTS': JSON.stringify({
@@ -64,9 +62,18 @@ module.exports = {
         }),
       }),
     );
-
-    config.plugins.push(new webpack.ProvidePlugin({ process: 'process/browser' }));
-
+    config.plugins.push(
+      new webpack.ProvidePlugin({
+        process: 'process/browser',
+      }),
+    );
     return config;
+  },
+  framework: {
+    name: '@storybook/nextjs',
+    options: {},
+  },
+  docs: {
+    autodocs: true,
   },
 };
