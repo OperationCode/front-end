@@ -6,6 +6,7 @@ const postCSSConfig = require('../postcss.config');
 // Export a function. Accept the base config as the only param.
 module.exports = {
   stories: ['../components/**/__stories__/*.stories.js'],
+  staticDirs: ['../public'],
   addons: [
     '@storybook/addon-essentials',
     {
