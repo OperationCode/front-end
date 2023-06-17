@@ -1,29 +1,36 @@
 import ProgressIndicator from '../ProgressIndicator';
 
-const totalSteps = 10;
+export const Default = {
+  render: args => <ProgressIndicator {...args} />,
+};
 
-export default {
+export const TotalSteps = {
+  render: args => <ProgressIndicator {...args} />,
+  args: {
+    stepNumber: 0,
+    totalSteps: 100,
+  },
+};
+
+export const StepNumber = {
+  render: args => <ProgressIndicator {...args} />,
+  args: {
+    stepNumber: 40,
+    totalSteps: 100,
+  },
+};
+
+const meta = {
+  title: 'Progress Indicator',
   component: ProgressIndicator,
-  title: 'ProgressIndicator',
   argTypes: {
     stepNumber: {
-      control: {
-        type: 'number',
-        min: 0,
-        max: totalSteps,
-      },
+      control: { type: 'number' },
     },
     totalSteps: {
-      control: {
-        type: 'number',
-        min: totalSteps,
-      },
+      control: { type: 'number' },
     },
   },
 };
 
-const Template = arguments_ => <ProgressIndicator {...arguments_} />;
-
-/** Default ProgressIndicator with 0 progress */
-export const Default = Template.bind({});
-Default.args = {};
+export default meta;
