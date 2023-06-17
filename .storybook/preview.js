@@ -18,16 +18,34 @@ Object.defineProperty(nextImage, 'default', {
   },
 });
 
-export const parameters = {
-  actions: { argTypesRegex: '^on[A-Z].*' },
-  backgrounds: {
-    values: backgroundsPalleteArray,
-    default: 'White',
-  },
-  viewport: {
-    viewports: {
-      ...viewports.MINIMAL_VIEWPORTS,
-      ...viewports.INITIAL_VIEWPORTS,
+const preview = {
+  parameters: {
+    actions: { argTypesRegex: '^on[A-Z].*' },
+    backgrounds: {
+      values: backgroundsPalleteArray,
+      default: 'White',
+    },
+    viewport: {
+      viewports: {
+        ...viewports.MINIMAL_VIEWPORTS,
+        ...viewports.INITIAL_VIEWPORTS,
+      },
     },
   },
 };
+
+export default preview;
+
+// export const parameters = {
+//   actions: { argTypesRegex: '^on[A-Z].*' },
+//   backgrounds: {
+//     values: backgroundsPalleteArray,
+//     default: 'White',
+//   },
+//   viewport: {
+//     viewports: {
+//       ...viewports.MINIMAL_VIEWPORTS,
+//       ...viewports.INITIAL_VIEWPORTS,
+//     },
+//   },
+// };
