@@ -123,7 +123,6 @@ describe('join', () => {
   it('should NOT be able to register when emails do not match', () => {
     cy.findByLabelText(inputFields.email).type(validUser.email);
 
-    cy.findByLabelText(inputFields.confirmEmail).blur();
     cy.findByLabelText(inputFields.confirmEmail).type(existingUser.email);
     assertError({ errorMessage: validationErrorMessages.emailsMatch });
 
