@@ -15,7 +15,9 @@ describe('Hash Links', () => {
       // eslint-disable-next-line cypress/no-unnecessary-waiting
       cy.wait(100);
 
-      cy.get(hash).click({ force: true }).url().should('include', hash);
+      cy.get(hash).click({ force: true });
+      cy.get(hash).url();
+      cy.get.should('include', hash);
     });
   };
 

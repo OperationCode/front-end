@@ -21,7 +21,8 @@ describe('code schools', () => {
     });
 
     it('renders "Cincy Code IT Bootcamps" and "Tech Elevator" after filtering for Ohio', () => {
-      cy.get(ReactSelectSelector).type('Ohio', { force: true }).type('{enter}');
+      cy.get(ReactSelectSelector).type('Ohio', { force: true });
+      cy.get(ReactSelectSelector).type('{enter}');
 
       cy.findByTestId('SchoolCard Name: Cincy Code IT Bootcamps').should('exist');
       cy.findByTestId('SchoolCard Name: Tech Elevator').should('exist');
@@ -44,13 +45,15 @@ describe('code schools', () => {
     });
 
     it('renders no code school cards after filtering for Alaska', () => {
-      cy.get(ReactSelectSelector).type('Alaska', { force: true }).type('{enter}');
+      cy.get(ReactSelectSelector).type('Alaska', { force: true });
+      cy.get(ReactSelectSelector).type('{enter}');
 
       cy.findByTestId('SchoolCard').should('have.length', 0);
     });
 
     it('renders no school cards after filtering for Alaska then all after selecting all', () => {
-      cy.get(ReactSelectSelector).type('Alaska', { force: true }).type('{enter}');
+      cy.get(ReactSelectSelector).type('Alaska', { force: true });
+      cy.get(ReactSelectSelector).type('{enter}');
 
       cy.findByTestId('SchoolCard').should('have.length', 0);
 
@@ -59,10 +62,9 @@ describe('code schools', () => {
     });
 
     it('renders all cards after un-filtering Alaska', () => {
-      cy.get(ReactSelectSelector)
-        .type('Alaska', { force: true })
-        .type('{enter}')
-        .type('{backspace}');
+      cy.get(ReactSelectSelector).type('Alaska', { force: true });
+      cy.get(ReactSelectSelector).type('{enter}');
+      cy.get(ReactSelectSelector).type('{backspace}');
 
       cy.findAllByTestId('SchoolCard').should('have.length.greaterThan', 30);
     });
