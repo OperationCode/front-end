@@ -1,7 +1,10 @@
 .NavDesktop {
   height: var(--navBarHeight);
   position: absolute;
-  top: var(--navBarTopGutterHeight);
+
+  border-bottom: 1px solid #3ed6f0;
+  box-shadow: 0px 2px 4px #3ed6f0;
+  
   width: 100%;
   z-index: 10;
 }
