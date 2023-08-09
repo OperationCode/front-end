@@ -63,9 +63,11 @@ export default () => {
             <p>
               In conjunction with Fresh Start Refugee Assistance Center, an Afghan-American led
               non-profit, and Globally.org’s ReUp Refugee Tech Re-Skilling Program, Operation Code
-              is pleased to announce that we are continuing our Project Rebuild Refugee Tech
-              Training Program. Since March 2022, Operation Code launched the initial pilot cohort,
-              with 8 Afghan refugee participants in attendance.
+              is pleased to announce that we are expanding our Project Rebuild Refugee Tech Training
+              Program. Since March 2022, Operation Code launched the initial pilot cohort, with 8
+              Afghan refugee participants in attendance. We have expanded the cohorts to include
+              Ukrainian refugees and Ukrainian transitioning military service members and their
+              spouses.
             </p>
 
             <p>
@@ -98,6 +100,41 @@ export default () => {
           </>,
         ]}
       />
+
+      <Content
+        theme="white"
+        title="How you can help"
+        columns={[
+          <>
+            <p>
+              Are you interested in participating in future cohorts of Project Rebuild as a student?
+              We currently train and provide scholarships for at least one tech Google certification
+              in these areas: cybersecurity, data analytics, digital marketing and e-commerce, UI/UX
+              design, and project management. Pending financial assistance available, we may also
+              cover one (1) tech certification exam such as A+, Network+ or Sec+.
+            </p>
+
+            <p>
+              Each cohort runs for six (6) months conducted remotely at your own pace. We will pair
+              you with a mentor in our military community who currently works in tech and fits your
+              objectives and/or geographical location. You must have proficient English speaking and
+              reading capability and proficient computer and keyboard use.
+            </p>
+
+            <p>
+              Still interested? Fill out the{' '}
+              <OutboundLink
+                href="https://op.co.de/ProjectRebuildApplication"
+                analyticsEventLabel="Project Rebuild Application Form Click"
+              >
+                application form
+              </OutboundLink>
+              .
+            </p>
+          </>,
+        ]}
+      />
+
       <Content
         theme="white"
         title="How you can help"
@@ -119,24 +156,14 @@ export default () => {
 
       <Content
         theme="white"
-        title="*Time-sensitive request"
+        title="*Ongoing Financial Assistance Needed"
         columns={[
           <>
             <p>
-              <span className={styles.bold}>
-                Help us reach our fundraising target of $36,000 USD to support 4 FALL cohort members
-                who have been selected to participate in the Microsoft Software and Systems Academy
-                (MSSA).
-              </span>
-            </p>
-
-            <p>
-              Your generosity provides $9K in stipends per member to cover a total of 4.5 months of
-              expenses while they are participating in the full-time program. The stipend will help
-              to cover rent, utilities, food, and bills. Upon completion of the MSSA program,
-              graduates earn on average nationwide, a salary of $70,000. This is more than 3 times
-              the average annual income of a refugee household in the first 5 years of resettling in
-              the USA.
+              The funds for the Project Rebuild Program is dependent on your financial support and
+              not taken from our general fund for U.S. military service members, Veterans and
+              military spouses. Please consider supporting this life-changing program and directing
+              your donations specifically for Project Rebuild.
             </p>
 
             <p>
