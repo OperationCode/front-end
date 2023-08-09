@@ -76,7 +76,7 @@ function Footer() {
 
       <div className={classNames(styles.row, styles.legalGrouping)}>
         <div className={classNames(styles.row, styles.copyright)}>
-          &#169; 2014-{currentYear} Operation Code™
+          &#169; 2014-{currentYear} Operation Code™ registered 501(c)3
         </div>
         <div className={classNames(styles.row, styles.legalLinks)}>
           {footerItems.legal.map(link =>

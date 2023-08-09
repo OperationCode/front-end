@@ -27,8 +27,8 @@ function About() {
           <>
             <p>
               <b>
-                Operation Code is a non-profit charity helping the military community learn software
-                development, enter the tech industry, and code the future.
+                Operation Code is a registered 501(c)3, non-profit charity helping the military
+                community learn software development, enter the tech industry, and code the future.
               </b>
             </p>
 

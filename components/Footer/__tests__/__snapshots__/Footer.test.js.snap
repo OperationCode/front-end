@@ -196,7 +196,7 @@ exports[`Footer should render with no props passed 1`] = `
     >
       © 2014-
       2023
-       Operation Code™
+       Operation Code™ registered 501(c)3
     </div>
     <div
       className="row legalLinks"
