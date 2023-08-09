@@ -25,12 +25,12 @@ const partners = [
     url: 'https://slack.com/?utm_source=operationcode',
     type: PARTNER_TYPES.PAID,
   },
-  // {
-  //   name: 'Heroku',
-  //   logoSource: `${s3}partnerLogos/heroku.png`,
-  //   url: 'https://heroku.com/?utm_source=operationcode',
-  //   type: PARTNER_TYPES.KIND,
-  // },
+  {
+    name: 'Elyon International',
+    logoSource: `${s3}partnerLogos/elyon.png`,
+    url: 'https://elyoninternational.com/?utm_source=operationcode',
+    type: PARTNER_TYPES.KIND,
+  },
   {
     name: '1Password',
     logoSource: `${s3}partnerLogos/1password.png`,
