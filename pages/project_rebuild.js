@@ -147,8 +147,9 @@ export default () => {
             </p>
 
             <p>
-              We also need financial donations that will go directly to support the participants
-              focus on their certifications and tech training through a living stipend.
+              We also need financial donations that will go directly to support the participants to
+              be able to focus on their certifications and tech training through a living stipend.
+              Donate what you can.
             </p>
           </>,
         ]}
