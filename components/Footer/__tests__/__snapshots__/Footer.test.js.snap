@@ -39,7 +39,7 @@ exports[`Footer should render with no props passed 1`] = `
   >
     <OutboundLink
       analyticsEventLabel="Footer GuideStar"
-      hasIcon={true}
+      hasIcon={false}
       href="https://www.guidestar.org/profile/shared/52626ac8-5e8b-445a-889e-30bf1ac0b46e"
     >
       <MockedNextImage

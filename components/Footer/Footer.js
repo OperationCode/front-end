@@ -49,6 +49,7 @@ function Footer() {
         <OutboundLink
           href="https://www.guidestar.org/profile/shared/52626ac8-5e8b-445a-889e-30bf1ac0b46e"
           analyticsEventLabel="Footer GuideStar"
+          hasIcon={false}
         >
           <Image
             src="/static/images/platinum-transparency.png"
