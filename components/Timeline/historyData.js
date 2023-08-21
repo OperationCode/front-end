@@ -216,4 +216,29 @@ export default {
       ),
     },
   ],
+  2023: [
+    {
+      title: `August 2023 Guidestar Platinum`,
+      content: (
+        <p>
+          Operation Code receives the{' '}
+          <OutboundLink
+            href="https://www.guidestar.org/profile/shared/52626ac8-5e8b-445a-889e-30bf1ac0b46e"
+            analyticsEventLabel="History Link"
+          >
+            Platinum Seal of Transparency
+          </OutboundLink>{' '}
+          from{' '}
+          <OutboundLink
+            analyticsEventLabel="History Link"
+            href="https://www.guidestar.org/"
+            alt="Guidestar"
+          >
+            Guidestar.org,
+          </OutboundLink>{' '}
+          the independent data analysis for non-profit certification of approval.
+        </p>
+      ),
+    },
+  ],
 };

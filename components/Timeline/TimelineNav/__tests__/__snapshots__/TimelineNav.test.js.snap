@@ -55,6 +55,14 @@ exports[`TimelineNav should render with no props passed passed 1`] = `
     >
       2021
     </Link>
+    <Link
+      className="timelineNavLink"
+      offset={0}
+      smooth={true}
+      to="event-2023"
+    >
+      2023
+    </Link>
   </nav>
   <div
     className="timelineNavSeperator"
