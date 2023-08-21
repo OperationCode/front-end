@@ -2,6 +2,7 @@ import Head from 'components/head';
 import Container from 'components/Container/Container';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import styles from 'styles/donate.module.css';
+import OutboundLink from 'components/OutboundLink/OutboundLink';
 
 const pageTitle = 'Donate';
 
@@ -38,9 +39,16 @@ function DonatePage() {
             <br />
             <br />
             We pride ourselves in transparency, making sure that our community knows what their
-            contributions are going towards, which has led to us receive the Gold Seal of
-            Transparency from GuideStar in 2021. Feel free to reach out to us by{' '}
-            <a href="mailto:staff@operationcode.org">e-mail</a> if you have any questions.
+            contributions are going towards. This pride is validated by receiving the{' '}
+            <OutboundLink
+              href="https://www.guidestar.org/profile/shared/52626ac8-5e8b-445a-889e-30bf1ac0b46e"
+              analyticsEventLabel="Donate Page GuideStar Report"
+            >
+              Gold Seal of Transparency from GuideStar in 2021 and the Platinum Seal of Transparency
+              from GuideStar in 2023
+            </OutboundLink>
+            . Feel free to reach out to us by <a href="mailto:staff@operationcode.org">e-mail</a> if
+            you have any questions.
           </p>
         </div>
 

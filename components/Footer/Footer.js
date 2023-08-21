@@ -3,7 +3,6 @@ import classNames from 'classnames';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 import SocialMedia from 'components/SocialMedia/SocialMedia';
 import { footerItems } from 'common/constants/navigation';
-import { s3 } from 'common/constants/urls';
 import Image from 'next/image';
 import Logo from 'public/static/images/logo.svg';
 import styles from './Footer.module.css';
@@ -46,14 +45,18 @@ function Footer() {
         <div className={classNames(styles.capitalize, styles.marginBottom)}>Connect With Us!</div>
         <SocialMedia />
       </div>
-      <div>
-        <Image
-          src={`${s3}guidestar_gold.png`}
-          alt="GuideStar Gold Transparency Seal"
-          className={styles.goldSealImg}
-          width={128}
-          height={128}
-        />
+      <div className={styles.goldSealImg}>
+        <OutboundLink
+          href="https://www.guidestar.org/profile/shared/52626ac8-5e8b-445a-889e-30bf1ac0b46e"
+          analyticsEventLabel="Footer GuideStar"
+        >
+          <Image
+            src="/static/images/platinum-transparency.png"
+            alt="GuideStar Gold Transparency Seal"
+            width={128}
+            height={128}
+          />
+        </OutboundLink>
       </div>
       <div className={classNames(styles.footerWrapper, styles.row)}>
         <div className={classNames(styles.footerGrouping, styles.linksGrouping, styles.capitalize)}>
