@@ -72,6 +72,11 @@ const nextConfig = {
         destination: 'https://operationcode.threadless.com/',
         permanent: true,
       },
+      {
+        source: '/chapters/kc',
+        destination: 'https://operationcodekc.github.io/opcodekc.org/',
+        permanent: true,
+      },
     ];
   },
 
