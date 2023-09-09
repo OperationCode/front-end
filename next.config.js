@@ -32,7 +32,12 @@ const nextConfig = {
   },
 
   images: {
-    domains: [s3hostName, 'user-images.githubusercontent.com', 'ssl-static.libsyn.com'],
+    domains: [
+      s3hostName,
+      'user-images.githubusercontent.com',
+      'ssl-static.libsyn.com',
+      'i.ytimg.com',
+    ],
   },
 
   /** @see https://nextjs.org/docs/api-reference/next.config.js/rewrites */
@@ -70,11 +75,6 @@ const nextConfig = {
       {
         source: '/shop',
         destination: 'https://operationcode.threadless.com/',
-        permanent: true,
-      },
-      {
-        source: '/chapters/kc',
-        destination: 'https://operationcodekc.github.io/opcodekc.org/',
         permanent: true,
       },
     ];

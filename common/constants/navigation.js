@@ -65,6 +65,11 @@ const jobs = {
   name: 'Job Board',
 };
 
+const chapters = {
+  name: 'Chapters',
+  href: '/chapters',
+};
+
 const sponsorship = {
   name: 'Sponsorship',
   href: '/sponsorship',
@@ -87,7 +92,7 @@ const aboutUsGroup = {
 
 const getInvolvedGroup = {
   ...getInvolved,
-  sublinks: [sponsorship, merchStore, contact, donate],
+  sublinks: [chapters, sponsorship, merchStore, contact, donate],
 };
 
 // MARK: Nav items
@@ -104,7 +109,7 @@ export const mobileNavItems = flattenDepth(
 // MARK: Footer items
 export const footerItems = {
   column1: [about, contact, faq, services],
-  column2: [codeSchools, jobs],
+  column2: [chapters, codeSchools, jobs],
   column3: [getInvolved, podcast, history, donate],
   column4: [
     {
