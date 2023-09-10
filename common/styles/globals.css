@@ -1,6 +1,12 @@
 /* Do not attempt to change values in themeMap - only change in ./variables.css */
 @import "./variables.css";
 
+/* stylelint-disable at-rule-no-unknown */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* stylelint-enable at-rule-no-unknown */
+
 /* Global Styles */
 @font-face {
   font-family: "DIN Condensed Bold";

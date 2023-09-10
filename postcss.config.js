@@ -1,6 +1,7 @@
 module.exports = {
   // Keep in sync with `.storybook/webpack.config.js`
   plugins: [
+    'tailwindcss',
     ['postcss-prepend-imports', { path: 'common/styles', files: ['media-queries.css'] }],
     'postcss-import',
     'autoprefixer',
