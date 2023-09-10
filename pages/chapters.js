@@ -1,9 +1,7 @@
-import Link from 'next/link';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
 import FlatCard from 'components/Cards/FlatCard/FlatCard';
-import styles from 'styles/chapters.module.css';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 
 const pageTitle = 'Chapters';
@@ -11,16 +9,24 @@ const pageTitle = 'Chapters';
 const unsortedChapterLocations = [
   {
     name: 'Kansas City',
-    path: 'kc',
+    url: 'https://www.eventbrite.com/cc/kansas-city-chapter-877989',
   },
-  // {
-  //   name: 'New York',
-  //   path: 'nyc',
-  // },
-  // {
-  //   name: 'Los Angeles',
-  //   path: 'la',
-  // },
+  {
+    name: 'New York',
+    url: 'https://www.eventbrite.com/cc/nyc-chapter-877919',
+  },
+  {
+    name: 'Austin',
+    url: 'https://www.eventbrite.com/cc/austin-tx-chapter-847379',
+  },
+  {
+    name: 'DC',
+    url: 'https://www.eventbrite.com/cc/washington-dc-and-metro-collection-1111969',
+  },
+  {
+    name: 'National',
+    url: 'https://www.eventbrite.com/cc/operation-code-national-events-847109',
+  },
 ];
 
 const chapterLocations = unsortedChapterLocations.sort(({ name: nameA }, { name: nameB }) =>
@@ -29,10 +35,10 @@ const chapterLocations = unsortedChapterLocations.sort(({ name: nameA }, { name:
 
 function Chapters() {
   return (
-    <div className={styles.Chapters}>
+    <>
       <Head title={pageTitle} />
 
-      <HeroBanner title={pageTitle} className={styles.hero}>
+      <HeroBanner title={pageTitle} className="min-h-0 pt-28 pb-4">
         <p>Get involved by joing your local chapter!</p>
       </HeroBanner>
 
@@ -40,18 +46,22 @@ function Chapters() {
         theme="white"
         title="Locations"
         columns={[
-          <div className={styles.locations}>
+          <div className="flex justify-center flex-wrap gap-8 w-full">
             {chapterLocations.map(chapter => {
               return (
-                <FlatCard key={chapter.name}>
-                  <Link href={`/chapters/${chapter.path}`}>
-                    <a>{chapter.name}</a>
-                  </Link>
+                <FlatCard key={chapter.name} className="min-w-[10rem] text-center">
+                  <OutboundLink
+                    href={chapter.url}
+                    hasIcon={false}
+                    analyticsEventLabel={`${chapter.name} Eventbrite`}
+                  >
+                    {chapter.name}
+                  </OutboundLink>
                 </FlatCard>
               );
             })}
           </div>,
-          <div className={styles.contributeLocation}>
+          <div className="w-full text-center">
             Don’t see your a location in your area?
             <br />
             <OutboundLink
@@ -65,7 +75,7 @@ function Chapters() {
           </div>,
         ]}
       />
-    </div>
+    </>
   );
 }
 
