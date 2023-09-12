@@ -16,12 +16,12 @@ PartnerLogoLink.defaultProps = {
 
 const sizeMappings = {
   small: {
-    width: 50,
-    height: 50,
-  },
-  medium: {
     width: 100,
     height: 100,
+  },
+  medium: {
+    width: 125,
+    height: 125,
   },
   large: {
     width: 150,

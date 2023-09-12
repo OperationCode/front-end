@@ -8,8 +8,8 @@ module.exports = {
     'prettier',
     'plugin:jest/recommended',
     'plugin:cypress/recommended',
+    'plugin:storybook/recommended',
   ],
-
   env: {
     browser: true,
     commonjs: true,
@@ -18,9 +18,7 @@ module.exports = {
     jest: true,
     node: true,
   },
-
   parser: '@babel/eslint-parser',
-
   plugins: [
     'prettier',
     'unicorn',
@@ -30,12 +28,10 @@ module.exports = {
     'import',
     'lodash',
   ],
-
   globals: {
     cy: true,
     Cypress: true,
   },
-
   overrides: [
     {
       files: ['cypress/**/*.js'],
@@ -60,18 +56,13 @@ module.exports = {
     },
     {
       files: ['components/nav.js', 'components/Footer/Footer.js'],
-      rules: {
-        'jsx-a11y/anchor-is-valid': 'off',
-      },
+      rules: { 'jsx-a11y/anchor-is-valid': 'off' },
     },
     {
       files: ['components/UpdateProfileForm/**/*.js'],
-      rules: {
-        'react/sort-comp': 'off',
-      },
+      rules: { 'react/sort-comp': 'off' },
     },
   ],
-
   rules: {
     // Import Rules
     'import/extensions': [
@@ -188,14 +179,12 @@ module.exports = {
           {
             name: 'prop-types',
             importNames: ['default'],
-            message: `Please use named imports of "prop-types".\n
-              Example: "import { func } from 'prop-types';"`,
+            message: `Please use named imports of "prop-types".\n Example: "import { func } from 'prop-types';"`,
           },
           {
             name: 'formik',
             importNames: ['Form'],
-            message: `Please use our Form component to have good defaults defined.\n
-              "import Form from 'components/Form/Form';"`,
+            message: `Please use our Form component to have good defaults defined.\n "import Form from 'components/Form/Form';"`,
           },
           {
             name: 'react',

@@ -239,6 +239,7 @@ exports[`RegistrationForm should render with required props 1`] = `
         <span>
           I have read and agree to 
           <a
+            className="OutboundLink"
             href="https://github.com/OperationCode/operationcode_docs/blob/master/community/code_of_conduct.md"
             onClick={[Function]}
             rel="noopener noreferrer"

@@ -17,8 +17,9 @@ const assertError = ({
   numberOfErrors = 1,
   errorMessage = validationErrorMessages.required,
 } = {}) => {
-  cy.findAllByRole('alert')
-    .should('have.length', numberOfErrors + 1) // +1 because next announcer exists
+  cy.get('#__next') // // avoid rest of UI because next announcer exists
+    .findAllByRole('alert')
+    .should('have.length', numberOfErrors)
     .should('contain', errorMessage);
 };
 
@@ -60,7 +61,8 @@ describe('join', () => {
    * E-mail & ConfrimEmail fields
    */
   it('should NOT be able to register when blurring past email', () => {
-    cy.findByLabelText(inputFields.email).focus().blur();
+    cy.findByLabelText(inputFields.email).focus();
+    cy.findByLabelText(inputFields.email).blur();
     assertError();
 
     cy.findByLabelText(inputFields.confirmEmail).type(validUser.email);
@@ -73,7 +75,8 @@ describe('join', () => {
   });
 
   it('should NOT be able to register when email contains only spaces', () => {
-    cy.findByLabelText(inputFields.email).type('   ').blur();
+    cy.findByLabelText(inputFields.email).type('   ');
+    cy.findByLabelText(inputFields.email).blur();
     assertError();
 
     cy.findByLabelText(inputFields.confirmEmail).type(validUser.email);
@@ -90,7 +93,8 @@ describe('join', () => {
       desiredEmail: 'invalidemail@.com',
     });
 
-    cy.findByLabelText(inputFields.email).type(invalidUser.email).blur();
+    cy.findByLabelText(inputFields.email).type(invalidUser.email);
+    cy.findByLabelText(inputFields.email).blur();
     assertError({ errorMessage: validationErrorMessages.email });
 
     cy.findByLabelText(inputFields.confirmEmail).type(invalidUser.email);
@@ -105,7 +109,8 @@ describe('join', () => {
   it('should NOT be able to register when blurring past confirmEmail', () => {
     cy.findByLabelText(inputFields.email).type(validUser.email);
 
-    cy.findByLabelText(inputFields.confirmEmail).focus().blur();
+    cy.findByLabelText(inputFields.confirmEmail).focus();
+    cy.findByLabelText(inputFields.confirmEmail).blur();
     assertError();
 
     cy.findByLabelText(inputFields.firstName).type(validUser.firstName);
@@ -118,11 +123,13 @@ describe('join', () => {
 
   it('should NOT be able to register when emails do not match', () => {
     cy.findByLabelText(inputFields.email).type(validUser.email);
+    cy.findByLabelText(inputFields.confirmEmail).type(existingUser.email);
 
-    cy.findByLabelText(inputFields.confirmEmail).type(existingUser.email).blur();
+    // Need to do next input too so we blur off the email fields allowing errors to render
+    cy.findByLabelText(inputFields.firstName).type(validUser.firstName);
+
     assertError({ errorMessage: validationErrorMessages.emailsMatch });
 
-    cy.findByLabelText(inputFields.firstName).type(validUser.firstName);
     cy.findByLabelText(inputFields.lastName).type(validUser.lastName);
     cy.findByLabelText(inputFields.zipcode).type(validUser.zipcode);
     cy.findByLabelText(inputFields.codeOfConduct).type(validUser.codeOfConduct);
@@ -148,7 +155,8 @@ describe('join', () => {
     cy.findByLabelText(inputFields.email).type(validUser.email);
     cy.findByLabelText(inputFields.confirmEmail).type(validUser.email);
 
-    cy.findByLabelText(inputFields.firstName).focus().blur();
+    cy.findByLabelText(inputFields.firstName).focus();
+    cy.findByLabelText(inputFields.firstName).blur();
     assertError();
 
     cy.findByLabelText(inputFields.lastName).type(validUser.lastName);
@@ -162,7 +170,8 @@ describe('join', () => {
     cy.findByLabelText(inputFields.email).type(validUser.email);
     cy.findByLabelText(inputFields.confirmEmail).type(validUser.email);
 
-    cy.findByLabelText(inputFields.firstName).type('     ').blur();
+    cy.findByLabelText(inputFields.firstName).type('     ');
+    cy.findByLabelText(inputFields.firstName).blur();
     assertError();
 
     cy.findByLabelText(inputFields.lastName).type(validUser.lastName);
@@ -177,7 +186,8 @@ describe('join', () => {
     cy.findByLabelText(inputFields.confirmEmail).type(validUser.email);
     cy.findByLabelText(inputFields.firstName).type(validUser.firstName);
 
-    cy.findByLabelText(inputFields.lastName).focus().blur();
+    cy.findByLabelText(inputFields.lastName).focus();
+    cy.findByLabelText(inputFields.lastName).blur();
     assertError();
 
     cy.findByLabelText(inputFields.zipcode).type(validUser.zipcode);
@@ -191,7 +201,8 @@ describe('join', () => {
     cy.findByLabelText(inputFields.confirmEmail).type(validUser.email);
     cy.findByLabelText(inputFields.firstName).type(validUser.firstName);
 
-    cy.findByLabelText(inputFields.lastName).type('     ').blur();
+    cy.findByLabelText(inputFields.lastName).type('     ');
+    cy.findByLabelText(inputFields.lastName).blur();
     assertError();
 
     cy.findByLabelText(inputFields.zipcode).type(validUser.zipcode);
@@ -209,7 +220,8 @@ describe('join', () => {
     cy.findByLabelText(inputFields.firstName).type(validUser.firstName);
     cy.findByLabelText(inputFields.lastName).type(validUser.lastName);
 
-    cy.findByLabelText(inputFields.zipcode).focus().blur();
+    cy.findByLabelText(inputFields.zipcode).focus();
+    cy.findByLabelText(inputFields.zipcode).blur();
     assertError();
 
     cy.findByLabelText(inputFields.codeOfConduct).type(validUser.codeOfConduct);
@@ -223,7 +235,8 @@ describe('join', () => {
     cy.findByLabelText(inputFields.firstName).type(validUser.firstName);
     cy.findByLabelText(inputFields.lastName).type(validUser.lastName);
 
-    cy.findByLabelText(inputFields.zipcode).type('     ').blur();
+    cy.findByLabelText(inputFields.zipcode).type('     ');
+    cy.findByLabelText(inputFields.zipcode).blur();
     assertError();
 
     cy.findByLabelText(inputFields.codeOfConduct).type(validUser.codeOfConduct);
@@ -238,7 +251,8 @@ describe('join', () => {
     cy.findByLabelText(inputFields.lastName).type(validUser.lastName);
     cy.findByLabelText(inputFields.zipcode).type(validUser.zipcode);
 
-    cy.findByLabelText(inputFields.codeOfConduct).focus().blur();
+    cy.findByLabelText(inputFields.codeOfConduct).focus();
+    cy.findByLabelText(inputFields.codeOfConduct).blur();
     assertError({ numberOfErrors: 1, errorMessage: validationErrorMessages.codeOfConduct });
     assertFailedLogin({ numberOfErrors: 1, errorMessage: validationErrorMessages.codeOfConduct });
   });

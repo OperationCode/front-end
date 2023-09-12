@@ -2,10 +2,6 @@
   padding: 1rem 0;
 }
 
-.job h6 {
-  display: inline;
-}
-
 .details {
   display: flex;
   flex-wrap: wrap;
@@ -16,7 +12,9 @@
 }
 
 .detailsContainer {
-  margin-right: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3125rem;
 }
 
 .detail {

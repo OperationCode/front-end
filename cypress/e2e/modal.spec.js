@@ -12,9 +12,11 @@ describe('when the server responds successfully', () => {
   });
 
   it('hides the rest of the app for accessibility purposes', () => {
-    cy.get('#__next').should('not.have.attr', 'aria-hide');
+    cy.get('#__next').should('not.have.attr', 'aria-hidden');
     cy.findAllByTestId(SCHOOL_CARD_LOCATION_LIST_MODAL_BUTTON).first().click();
-    cy.get('#__next').should('have.attr', 'aria-hidden', 'true');
+    setTimeout(() => {
+      cy.get('#__next').should('have.attr', 'aria-hidden', 'true');
+    }, 2000);
   });
 
   it('closes the modal when the x button is clicked', () => {

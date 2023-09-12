@@ -5,6 +5,7 @@ exports[`FeaturedJobItem should render with many props assigned 1`] = `
   className="job"
 >
   <a
+    className="OutboundLink"
     href="https://jobs.lever.co/formidable/82919058-b73c-4a02-8589-87e2433f0a90"
     onClick={[Function]}
     rel="noopener noreferrer"
@@ -88,6 +89,7 @@ exports[`FeaturedJobItem should render with required props 1`] = `
   className="job"
 >
   <a
+    className="OutboundLink"
     href="https://about.gitlab.com/jobs/apply/?gh_jid=4055708002"
     onClick={[Function]}
     rel="noopener noreferrer"

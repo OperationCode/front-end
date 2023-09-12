@@ -24,7 +24,7 @@ FlatCard.defaultProps = {
 };
 
 function FlatCard({ button: Button, children, className, header, image }) {
-  const hasImage = image && image.alt && image.source;
+  const hasImage = image && image.source;
 
   return (
     <article
@@ -34,22 +34,26 @@ function FlatCard({ button: Button, children, className, header, image }) {
     >
       <div className={styles.borderContainer}>
         {header && <div className={styles.header}>{header}</div>}
+
         {hasImage && (
           <div className={styles.rowCenter}>
             <div data-testid={FLAT_CARD_IMAGE} className={styles.imageWrapper}>
               <Image
                 src={image.source}
-                alt={image.alt}
-                width={200}
-                height={200}
+                alt={image.alt ?? ''}
+                width={194}
+                height={194}
                 placeholder="blur"
-                blurDataURL={getPlaceholder(200, 200)}
+                blurDataURL={getPlaceholder(194, 194)}
               />
             </div>
           </div>
         )}
+
         {header && <hr className={styles.divider} />}
+
         <div className={styles.children}>{children}</div>
+
         {Button && <div className={styles.flatCardButton}>{Button}</div>}
       </div>
     </article>

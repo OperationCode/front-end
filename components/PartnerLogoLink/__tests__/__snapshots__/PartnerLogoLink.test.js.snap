@@ -5,6 +5,7 @@ exports[`PartnerLogoLink should render with required props 1`] = `
   className="PartnerLogoLink"
 >
   <a
+    className="OutboundLink"
     href="https://user-images.githubusercontent.com"
     onClick={[Function]}
     rel="noopener noreferrer"

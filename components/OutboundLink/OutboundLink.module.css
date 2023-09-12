@@ -1,8 +1,12 @@
+.OutboundLink {
+  display: inline-flex;
+  align-items: flex-start;
+}
+
 .externalLinkIcon {
   fill: currentcolor !important;
-  left: 4px;
-  top: 2px;
-  padding-right: 0.25rem;
   position: relative;
-  width: 0.825em;
+  bottom: 0;
+  margin: 0 0.25rem;
+  width: 0.75em;
 }
