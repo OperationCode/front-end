@@ -17,8 +17,9 @@ const assertError = ({
   numberOfErrors = 1,
   errorMessage = validationErrorMessages.required,
 } = {}) => {
-  cy.findAllByRole('alert')
-    .should('have.length', numberOfErrors + 1) // +1 because next announcer exists
+  cy.get('#__next') // // avoid rest of UI because next announcer exists
+    .findAllByRole('alert')
+    .should('have.length', numberOfErrors)
     .should('contain', errorMessage);
 };
 
@@ -122,11 +123,13 @@ describe('join', () => {
 
   it('should NOT be able to register when emails do not match', () => {
     cy.findByLabelText(inputFields.email).type(validUser.email);
-
     cy.findByLabelText(inputFields.confirmEmail).type(existingUser.email);
+
+    // Need to do next input too so we blur off the email fields allowing errors to render
+    cy.findByLabelText(inputFields.firstName).type(validUser.firstName);
+
     assertError({ errorMessage: validationErrorMessages.emailsMatch });
 
-    cy.findByLabelText(inputFields.firstName).type(validUser.firstName);
     cy.findByLabelText(inputFields.lastName).type(validUser.lastName);
     cy.findByLabelText(inputFields.zipcode).type(validUser.zipcode);
     cy.findByLabelText(inputFields.codeOfConduct).type(validUser.codeOfConduct);

@@ -16,8 +16,7 @@ describe('Hash Links', () => {
       cy.wait(100);
 
       cy.get(hash).click({ force: true });
-      cy.get(hash).url();
-      cy.get.should('include', hash);
+      cy.get(hash).url().should('include', hash);
     });
   };
 
