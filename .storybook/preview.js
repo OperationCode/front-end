@@ -1,7 +1,6 @@
 import backgroundsPalleteArray from './backgrounds';
 import 'common/styles/globals.css';
 import * as viewports from '@storybook/addon-viewport';
-import * as nextImage from 'next/image';
 
 export const decorators = [
   Story => (
@@ -10,13 +9,6 @@ export const decorators = [
     </div>
   ),
 ];
-
-Object.defineProperty(nextImage, 'default', {
-  configurable: true,
-  value: props => {
-    return <img {...props} />;
-  },
-});
 
 const preview = {
   parameters: {
@@ -35,17 +27,3 @@ const preview = {
 };
 
 export default preview;
-
-// export const parameters = {
-//   actions: { argTypesRegex: '^on[A-Z].*' },
-//   backgrounds: {
-//     values: backgroundsPalleteArray,
-//     default: 'White',
-//   },
-//   viewport: {
-//     viewports: {
-//       ...viewports.MINIMAL_VIEWPORTS,
-//       ...viewports.INITIAL_VIEWPORTS,
-//     },
-//   },
-// };
