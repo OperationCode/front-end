@@ -24,7 +24,7 @@ FlatCard.defaultProps = {
 };
 
 function FlatCard({ button: Button, children, className, header, image }) {
-  const hasImage = image && image.alt && image.source;
+  const hasImage = image && image.source;
 
   return (
     <article
@@ -39,7 +39,7 @@ function FlatCard({ button: Button, children, className, header, image }) {
             <div data-testid={FLAT_CARD_IMAGE} className={styles.imageWrapper}>
               <Image
                 src={image.source}
-                alt={image.alt}
+                alt={image.alt ?? ''}
                 width={200}
                 height={200}
                 placeholder="blur"
