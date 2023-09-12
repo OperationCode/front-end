@@ -6,6 +6,7 @@ import styles from './Content.module.css';
 
 Content.propTypes = {
   backgroundImageSource: string,
+  className: string,
   columns: array.isRequired, // can be JSX, elements, or strings
   hasTitleUnderline: bool,
   id: string,
@@ -16,6 +17,7 @@ Content.propTypes = {
 
 Content.defaultProps = {
   backgroundImageSource: undefined,
+  className: '',
   hasTitleUnderline: false,
   id: undefined,
   isFullViewportHeight: false,
@@ -24,6 +26,7 @@ Content.defaultProps = {
 };
 
 function Content({
+  className,
   columns,
   hasTitleUnderline,
   id,
@@ -35,6 +38,7 @@ function Content({
   return (
     <Container
       backgroundImageSource={backgroundImageSource}
+      className={className}
       id={id}
       isFullViewportHeight={isFullViewportHeight}
       theme={theme}

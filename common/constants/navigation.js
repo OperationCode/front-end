@@ -55,11 +55,6 @@ const codeSchools = {
   href: '/code_schools',
 };
 
-const resources = {
-  name: 'Resources',
-  href: '/resources',
-};
-
 const merchStore = {
   name: 'Merch Store',
   href: '/swag',
@@ -68,6 +63,11 @@ const merchStore = {
 const jobs = {
   href: '/jobs',
   name: 'Job Board',
+};
+
+const chapters = {
+  name: 'Chapters',
+  href: '/chapters',
 };
 
 const sponsorship = {
@@ -82,7 +82,7 @@ const projectRebuild = {
 
 const servicesGroup = {
   ...services,
-  sublinks: [podcast, resources, codeSchools, projectRebuild],
+  sublinks: [podcast, codeSchools, projectRebuild],
 };
 
 const aboutUsGroup = {
@@ -92,7 +92,7 @@ const aboutUsGroup = {
 
 const getInvolvedGroup = {
   ...getInvolved,
-  sublinks: [sponsorship, merchStore, contact, donate],
+  sublinks: [chapters, sponsorship, merchStore, contact, donate],
 };
 
 // MARK: Nav items
@@ -109,7 +109,7 @@ export const mobileNavItems = flattenDepth(
 // MARK: Footer items
 export const footerItems = {
   column1: [about, contact, faq, services],
-  column2: [codeSchools, resources, jobs],
+  column2: [chapters, codeSchools, jobs],
   column3: [getInvolved, podcast, history, donate],
   column4: [
     {

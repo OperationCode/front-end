@@ -34,14 +34,21 @@ exports[`Footer should render with no props passed 1`] = `
     </div>
     <SocialMedia />
   </div>
-  <div>
-    <MockedNextImage
-      alt="GuideStar Gold Transparency Seal"
-      className="goldSealImg"
-      height={128}
-      src="https://operation-code-assets.s3.us-east-2.amazonaws.com/guidestar_gold.png"
-      width={128}
-    />
+  <div
+    className="goldSealImg"
+  >
+    <OutboundLink
+      analyticsEventLabel="Footer GuideStar"
+      hasIcon={false}
+      href="https://www.guidestar.org/profile/shared/52626ac8-5e8b-445a-889e-30bf1ac0b46e"
+    >
+      <MockedNextImage
+        alt="GuideStar Gold Transparency Seal"
+        height={128}
+        src="/static/images/platinum-transparency.png"
+        width={128}
+      />
+    </OutboundLink>
   </div>
   <div
     className="footerWrapper row"
@@ -97,19 +104,19 @@ exports[`Footer should render with no props passed 1`] = `
         >
           <li>
             <ForwardRef(LinkComponent)
-              href="/code_schools"
+              href="/chapters"
             >
               <a>
-                Code Schools
+                Chapters
               </a>
             </ForwardRef(LinkComponent)>
           </li>
           <li>
             <ForwardRef(LinkComponent)
-              href="/resources"
+              href="/code_schools"
             >
               <a>
-                Resources
+                Code Schools
               </a>
             </ForwardRef(LinkComponent)>
           </li>
@@ -205,7 +212,7 @@ exports[`Footer should render with no props passed 1`] = `
     >
       © 2014-
       2023
-       Operation Code™
+       Operation Code™ registered 501(c)3
     </div>
     <div
       className="row legalLinks"

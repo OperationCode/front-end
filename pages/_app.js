@@ -17,7 +17,7 @@ import { clientTokens } from 'common/config/environment';
 import { gtag } from 'common/utils/thirdParty/gtag';
 import Nav from 'components/Nav/Nav';
 import Footer from 'components/Footer/Footer';
-import 'common/styles/globalStyles.css';
+import 'common/styles/globals.css';
 
 const isProduction = process.env.NODE_ENV === 'production';
 

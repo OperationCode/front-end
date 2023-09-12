@@ -1,5 +1,5 @@
 import backgroundsPalleteArray from './backgrounds';
-import 'common/styles/globalStyles.css';
+import 'common/styles/globals.css';
 import * as viewports from '@storybook/addon-viewport';
 import * as nextImage from 'next/image';
 

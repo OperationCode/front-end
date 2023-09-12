@@ -371,5 +371,60 @@ exports[`Timeline should render with no props passed passed 1`] = `
       />
     </div>
   </div>
+  <div
+    className="segment"
+  >
+    <div
+      className="date"
+    >
+      <h3>
+        2023
+      </h3>
+    </div>
+    <div
+      className="vertLine"
+    >
+      <div
+        className="line"
+      />
+      <div
+        className="bubble"
+      />
+    </div>
+    <div
+      className="timelineEvent"
+      id="event-2023"
+    >
+      <TimelineEvent
+        content={
+          <p>
+            Operation Code receives the
+             
+            <OutboundLink
+              analyticsEventLabel="History Link"
+              hasIcon={true}
+              href="https://www.guidestar.org/profile/shared/52626ac8-5e8b-445a-889e-30bf1ac0b46e"
+            >
+              Platinum Seal of Transparency
+            </OutboundLink>
+             
+            from
+             
+            <OutboundLink
+              alt="Guidestar"
+              analyticsEventLabel="History Link"
+              hasIcon={true}
+              href="https://www.guidestar.org/"
+            >
+              Guidestar.org,
+            </OutboundLink>
+             
+            the independent data analysis for non-profit certification of approval.
+          </p>
+        }
+        title="August 2023 Guidestar Platinum"
+      />
+    </div>
+  </div>
 </div>
 `;

@@ -1,7 +1,6 @@
 .Footer {
   align-items: center;
   display: flex;
-  height: 550px;
   justify-content: center;
   flex-direction: column;
   padding: 2rem 0;
@@ -16,8 +15,6 @@
 }
 
 .goldSealImg {
-  height: 120px;
-  width: 120px;
   margin-bottom: 1rem;
 }
 
@@ -98,8 +95,6 @@
 
 @media screen and (--medium-viewport) {
   .goldSealImg {
-    height: 175px;
-    width: 175px;
     margin-top: 1rem;
     margin-bottom: 0;
   }
