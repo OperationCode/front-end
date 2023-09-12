@@ -1,0 +1,41 @@
+.KC .hero {
+  min-height: 0;
+  padding-top: 6rem;
+}
+
+.KC .info {
+  text-align: center;
+  width: 100%;
+}
+
+.KC .podcastThumbnailList {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 3rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+@media screen and (--small-viewport) {
+  .KC .podcastThumbnailList {
+    grid-template-columns: 1fr;
+  }
+}
+
+.KC .podcastThumbnailListItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.KC .podcastThumbnailListItem a {
+  text-decoration: none;
+}
+
+.KC .podcastThumbnailListItem a:hover {
+  text-decoration: underline;
+}

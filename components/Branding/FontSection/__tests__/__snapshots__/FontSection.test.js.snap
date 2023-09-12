@@ -2,6 +2,7 @@
 
 exports[`FontSection should render with required props 1`] = `
 <Content
+  className=""
   columns={
     Array [
       <ul

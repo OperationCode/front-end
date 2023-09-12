@@ -53,11 +53,12 @@ function Podcast({ episodes }) {
     <div className={styles.Podcast}>
       <Head title={pageTitle} />
 
-      <HeroBanner title={pageTitle} />
+      <HeroBanner className={styles.hero} title={pageTitle}>
+        <p>Come listen to some inspiring stories of our vets transitioning into tech!</p>
+      </HeroBanner>
 
       <Content
         columns={[
-          <p>Come listen to some inspiring stories of our vets transitioning into tech!</p>,
           <div className={styles.podcastCards}>
             {episodes.map(({ name, image, source, story }) => {
               /*

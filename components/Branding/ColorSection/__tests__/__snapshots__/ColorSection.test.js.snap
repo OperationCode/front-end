@@ -3,6 +3,7 @@
 exports[`ColorSection should render with required props 1`] = `
 <React.Fragment>
   <Content
+    className=""
     columns={
       Array [
         <div>
@@ -35,6 +36,7 @@ exports[`ColorSection should render with required props 1`] = `
     title="Colors"
   />
   <Content
+    className=""
     columns={
       Array [
         <Swatch
