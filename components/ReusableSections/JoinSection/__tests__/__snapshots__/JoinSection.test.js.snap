@@ -53,6 +53,7 @@ exports[`JoinSection should render 1`] = `
       Slack is a community based collaboration tool where all the magic happens!
     </p>
     <a
+      className="OutboundLink"
       href="https://get.slack.help/hc/en-us/categories/360000049043-Getting-Started"
       onClick={[Function]}
       rel="noopener noreferrer"

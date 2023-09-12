@@ -5,6 +5,7 @@ exports[`SocialMediaItem should render with required props 1`] = `
   className="SocialMediaItem"
 >
   <a
+    className="OutboundLink"
     href="https://facebook.com"
     onClick={[Function]}
     rel="noopener noreferrer"

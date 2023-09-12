@@ -2,6 +2,7 @@
 
 exports[`OutboundLink should render with required props 1`] = `
 <a
+  className="OutboundLink"
   href="https://tests.com"
   onClick={[Function]}
   rel="noopener noreferrer"

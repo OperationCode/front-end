@@ -21,6 +21,7 @@ function ImageCard({ alt, children, className, imageSource, isImageFirst }) {
   const ImageComponent = (
     <Image src={imageSource} alt={alt} width={325} height={225} layout="fixed" />
   );
+
   const ContentComponent = <div className={styles.content}>{children}</div>;
 
   return (

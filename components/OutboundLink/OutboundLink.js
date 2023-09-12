@@ -2,6 +2,7 @@ import { bool, node, string } from 'prop-types';
 import { gtag } from 'common/utils/thirdParty/gtag';
 import ExternalLinkIcon from 'static/images/icons/FontAwesome/external-link-square-alt-solid.svg';
 import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
+import classNames from 'node_modules/classnames/index';
 import styles from './OutboundLink.module.css';
 
 OutboundLink.propTypes = {
@@ -36,7 +37,7 @@ function OutboundLink({
 
   return (
     <a
-      className={className}
+      className={classNames(styles.OutboundLink, className)}
       data-testid={testID}
       href={href}
       onClick={trackOutboundLinkClick}

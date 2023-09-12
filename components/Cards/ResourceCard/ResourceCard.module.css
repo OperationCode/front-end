@@ -37,10 +37,14 @@
 }
 
 .votingBlock {
+  /**
+   * It is always `display: flex`, but not defined
+   * here because of responsive styles
+   */
   align-items: center;
   font-size: 1rem;
-  font-weight: 200;
   text-transform: none;
+  gap: 0.75rem;
 }
 
 .desktopVotingBlock {
@@ -52,7 +56,7 @@
   display: none;
   justify-content: space-between;
   border-top: 1px solid var(--gray);
-  padding-top: 1rem;
+  padding-top: 1.5rem;
 }
 
 @media screen and (--medium-viewport) {
@@ -67,7 +71,7 @@
 }
 
 .votingBlockHeader {
-  margin-right: 1rem;
+  margin-right: 0.3125rem;
 }
 
 .voteInfo {
@@ -80,6 +84,19 @@
 
 .voteCount {
   margin: 0 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.voteCount > span:last-child {
+  height: 24px;
+}
+
+@media screen and (--medium-viewport) {
+  .voteCount > span:last-child {
+    height: 20px;
+  }
 }
 
 .voteButton {
@@ -88,7 +105,7 @@
   border-radius: 3px;
   display: flex;
   font-size: 1rem;
-  margin: 0 0.25rem;
+  align-items: center;
   padding: 0.3125rem 0 0.25rem;
   text-decoration: none;
 }
@@ -111,8 +128,7 @@
 
 @media screen and (--medium-viewport) {
   .voteButton {
-    margin: 0 1rem;
-    padding: 0.5rem 0.5rem 0.3125rem;
+    padding: 0.75rem 0.75rem 0.5rem;
   }
 }
 

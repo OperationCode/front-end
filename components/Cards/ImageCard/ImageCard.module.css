@@ -6,12 +6,16 @@
   width: 650px;
 }
 
+.ImageCard img {
+  object-fit: cover;
+}
+
 .content {
   align-items: center;
   display: flex;
   flex-flow: column;
   justify-content: center;
-  overflow: hidden; /* prevent devs from bloating content */
+  overflow-y: auto;
   margin: 1.5rem;
   height: calc(100% - 3rem); /* 1.5rem margin top AND bottom hence 3rem */
   width: calc(50% - 3rem); /* 1.5rem margin left AND right hence 3rem */
