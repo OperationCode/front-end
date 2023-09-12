@@ -56,15 +56,11 @@ module.exports = {
     },
     {
       files: ['components/nav.js', 'components/Footer/Footer.js'],
-      rules: {
-        'jsx-a11y/anchor-is-valid': 'off',
-      },
+      rules: { 'jsx-a11y/anchor-is-valid': 'off' },
     },
     {
       files: ['components/UpdateProfileForm/**/*.js'],
-      rules: {
-        'react/sort-comp': 'off',
-      },
+      rules: { 'react/sort-comp': 'off' },
     },
   ],
   rules: {
@@ -72,55 +68,32 @@ module.exports = {
     'import/extensions': [
       'error',
       'never',
-      {
-        css: 'always',
-        jpg: 'always',
-        json: 'always',
-        png: 'always',
-        svg: 'always',
-      },
+      { css: 'always', jpg: 'always', json: 'always', png: 'always', svg: 'always' },
     ],
     'import/no-unresolved': 'off',
-    'import/no-extraneous-dependencies': [
-      'error',
-      {
-        devDependencies: true,
-      },
-    ],
+    'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
     'import/order': [
       'error',
-      {
-        groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
-      },
+      { groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'] },
     ],
     'import/prefer-default-export': 'off',
+
     // OC eslint Plugin Rules
     '@operation_code/custom-rules/proptype-definition-above-fn': 'error',
+
     // Jest Plugin Rules
-    'jest/consistent-test-it': [
-      'error',
-      {
-        fn: 'it',
-        withinDescribe: 'it',
-      },
-    ],
+    'jest/consistent-test-it': ['error', { fn: 'it', withinDescribe: 'it' }],
     'jest/expect-expect': [
       'error',
-      {
-        assertFunctionNames: ['expect', 'createShallowSnapshotTest', 'createSnapshotTest'],
-      },
+      { assertFunctionNames: ['expect', 'createShallowSnapshotTest', 'createSnapshotTest'] },
     ],
-    'jest/prefer-lowercase-title': [
-      'error',
-      {
-        ignore: ['describe'],
-      },
-    ],
+    'jest/prefer-lowercase-title': ['error', { ignore: ['describe'] }],
     'jest/no-jasmine-globals': 'error',
     'jest/no-test-prefixes': 'error',
     'jest/no-test-return-statement': 'error',
     'jest/prefer-strict-equal': 'error',
     'jest/valid-describe-callback': 'error',
+
     // JSX-A11Y Plugin Rules
     'jsx-a11y/anchor-is-valid': [
       'error',
@@ -138,10 +111,13 @@ module.exports = {
         controlComponents: ['Input', 'Select'],
       },
     ],
+
     // Lodash Plugin Rules
     'lodash/import-scope': ['error', 'method'],
+
     // Prettier Plugin Rules
     'prettier/prettier': 'error',
+
     // React Plugin Rules
     'react/function-component-definition': [
       'error',
@@ -150,40 +126,12 @@ module.exports = {
         unnamedComponents: ['arrow-function', 'function-expression'],
       },
     ],
-    'react/forbid-prop-types': [
-      'error',
-      {
-        forbid: ['any'],
-      },
-    ],
-    'react/jsx-curly-brace-presence': [
-      'error',
-      {
-        props: 'never',
-        children: 'never',
-      },
-    ],
-    'react/jsx-filename-extension': [
-      'error',
-      {
-        extensions: ['.js'],
-      },
-    ],
-    'react/jsx-max-props-per-line': [
-      'error',
-      {
-        maximum: 1,
-        when: 'multiline',
-      },
-    ],
-    'react/jsx-no-target-blank': 'off',
-    // browsers protect against this vulnerability now
-    'react/jsx-no-useless-fragment': [
-      'error',
-      {
-        allowExpressions: true,
-      },
-    ],
+    'react/forbid-prop-types': ['error', { forbid: ['any'] }],
+    'react/jsx-curly-brace-presence': ['error', { props: 'never', children: 'never' }],
+    'react/jsx-filename-extension': ['error', { extensions: ['.js'] }],
+    'react/jsx-max-props-per-line': ['error', { maximum: 1, when: 'multiline' }],
+    'react/jsx-no-target-blank': 'off', // browsers protect against this vulnerability now
+    'react/jsx-no-useless-fragment': ['error', { allowExpressions: true }],
     'react/jsx-one-expression-per-line': 'off',
     'react/jsx-props-no-spreading': ['off'],
     'react/no-did-mount-set-state': 'off',
@@ -193,6 +141,7 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     'react/state-in-constructor': ['error', 'never'],
     'react/static-property-placement': ['off'],
+
     // Unicorn Plugin Rules
     'unicorn/catch-error-name': 'error',
     'unicorn/error-message': 'error',
@@ -210,6 +159,7 @@ module.exports = {
     'unicorn/prefer-text-content': 'error',
     'unicorn/prefer-type-error': 'error',
     'unicorn/throw-new-error': 'error',
+
     // Vanilla ESLint Rules
     'arrow-body-style': 'off',
     'class-methods-use-this': 'off',
@@ -229,14 +179,12 @@ module.exports = {
           {
             name: 'prop-types',
             importNames: ['default'],
-            message: `Please use named imports of "prop-types".\n
-              Example: "import { func } from 'prop-types';"`,
+            message: `Please use named imports of "prop-types".\n Example: "import { func } from 'prop-types';"`,
           },
           {
             name: 'formik',
             importNames: ['Form'],
-            message: `Please use our Form component to have good defaults defined.\n
-              "import Form from 'components/Form/Form';"`,
+            message: `Please use our Form component to have good defaults defined.\n "import Form from 'components/Form/Form';"`,
           },
           {
             name: 'react',
