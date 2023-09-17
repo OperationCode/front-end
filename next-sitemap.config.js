@@ -5,6 +5,7 @@ module.exports = {
   siteUrl: 'https://www.operationcode.org',
   generateIndexSitemap: false, // Simplification to make robots.txt "Sitemap" easier
   priority: 0.8,
+  changefreq: 'weekly',
   // Modified default transform function
   transform: async (config, path) => {
     return {
