@@ -1,139 +1,140 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
     <url>
         <loc>https://www.operationcode.org/about</loc>
-        <lastmod>Wed, 14 Oct 2020 03:35:19 GMT</lastmod>
+        <lastmod>2020-10-14T03:35:19Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://www.operationcode.org/branding</loc>
-        <lastmod>Wed, 14 Oct 2020 03:35:19 GMT</lastmod>
+        <lastmod>2020-10-14T03:35:19Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://www.operationcode.org/challenge</loc>
-        <lastmod>Wed, 14 Oct 2020 03:35:19 GMT</lastmod>
+        <lastmod>2020-10-14T03:35:19Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://www.operationcode.org/chapter_leader</loc>
-        <lastmod>Wed, 14 Oct 2020 03:35:19 GMT</lastmod>
+        <lastmod>2020-10-14T03:35:19Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://www.operationcode.org/code_schools</loc>
-        <lastmod>Wed, 14 Oct 2020 03:35:19 GMT</lastmod>
+        <lastmod>2020-10-14T03:35:19Z</lastmod>
         <priority>1.00</priority>
     </url>
     <url>
         <loc>https://www.operationcode.org/confirm_email</loc>
-        <lastmod>Thu, 07 May 2020 19:49:15 GMT</lastmod>
+        <lastmod>2020-05-07T19:49:15Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://www.operationcode.org/contact</loc>
-        <lastmod>Wed, 14 Oct 2020 03:35:19 GMT</lastmod>
+        <lastmod>2020-10-14T03:35:19Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://www.operationcode.org/donate</loc>
-        <lastmod>Thu, 07 May 2020 19:49:15 GMT</lastmod>
+        <lastmod>2020-05-07T19:49:15Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://www.operationcode.org/faq</loc>
-        <lastmod>Wed, 14 Oct 2020 03:35:19 GMT</lastmod>
+        <lastmod>2020-10-14T03:35:19Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://www.operationcode.org/get_involved</loc>
-        <lastmod>Wed, 14 Oct 2020 03:35:19 GMT</lastmod>
+        <lastmod>2020-10-14T03:35:19Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://www.operationcode.org/history</loc>
-        <lastmod>Wed, 14 Oct 2020 03:35:19 GMT</lastmod>
+        <lastmod>2020-10-14T03:35:19Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://www.operationcode.org/</loc>
-        <lastmod>Wed, 14 Oct 2020 03:35:19 GMT</lastmod>
+        <lastmod>2020-10-14T03:35:19Z</lastmod>
         <priority>1.00</priority>
     </url>
     <url>
         <loc>https://www.operationcode.org/jobs</loc>
-        <lastmod>Thu, 07 May 2020 19:49:15 GMT</lastmod>
+        <lastmod>2020-05-07T19:49:15Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://www.operationcode.org/join</loc>
-        <lastmod>Thu, 24 Sep 2020 03:32:54 GMT</lastmod>
+        <lastmod>2020-09-24T03:32:54Z</lastmod>
         <priority>1.00</priority>
     </url>
     <url>
         <loc>https://www.operationcode.org/login</loc>
-        <lastmod>Thu, 24 Sep 2020 03:32:54 GMT</lastmod>
+        <lastmod>2020-09-24T03:32:54Z</lastmod>
         <priority>1.00</priority>
     </url>
     <url>
         <loc>https://www.operationcode.org/password_reset/confirm</loc>
-        <lastmod>Wed, 14 Oct 2020 03:35:19 GMT</lastmod>
+        <lastmod>2020-10-14T03:35:19Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://www.operationcode.org/password_reset</loc>
-        <lastmod>Thu, 07 May 2020 19:49:15 GMT</lastmod>
+        <lastmod>2020-05-07T19:49:15Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://www.operationcode.org/podcast</loc>
-        <lastmod>Wed, 14 Oct 2020 03:35:19 GMT</lastmod>
+        <lastmod>2020-10-14T03:35:19Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://www.operationcode.org/policy</loc>
-        <lastmod>Wed, 14 Oct 2020 03:35:19 GMT</lastmod>
+        <lastmod>2020-10-14T03:35:19Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://www.operationcode.org/press</loc>
-        <lastmod>Wed, 14 Oct 2020 03:35:19 GMT</lastmod>
+        <lastmod>2020-10-14T03:35:19Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://www.operationcode.org/resources</loc>
-        <lastmod>Mon, 31 Aug 2020 20:02:08 GMT</lastmod>
+        <lastmod>2020-08-31T20:02:08Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://www.operationcode.org/resources/1</loc>
-        <lastmod>Wed, 14 Oct 2020 03:35:19 GMT</lastmod>
+        <lastmod>2020-10-14T03:35:19Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://www.operationcode.org/sponsorship</loc>
-        <lastmod>Wed, 14 Oct 2020 03:35:19 GMT</lastmod>
+        <lastmod>2020-10-14T03:35:19Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://www.operationcode.org/team</loc>
-        <lastmod>Wed, 14 Oct 2020 03:35:19 GMT</lastmod>
+        <lastmod>2020-10-14T03:35:19Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://www.operationcode.org/terms</loc>
-        <lastmod>Thu, 07 May 2020 19:49:16 GMT</lastmod>
+        <lastmod>2020-05-07T19:49:16Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://www.operationcode.org/who_we_serve</loc>
-        <lastmod>Wed, 14 Oct 2020 03:35:19 GMT</lastmod>
+        <lastmod>2020-10-14T03:35:19Z</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://www.operationcode.org/project_rebuild</loc>
-        <lastmod>Sat, 6 Aug 2022 00:00:00 GMT</lastmod>
+        <lastmod>2020-08-06T00:00:00Z</lastmod>
         <priority>0.80</priority>
     </url>
 </urlset>
