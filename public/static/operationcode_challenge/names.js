@@ -84,5 +84,6 @@ export default [
     'Sung Paik',
     'Tri Tran',
     'Damien Richcreek',
-    'Kevin Belk'
+    'Kevin Belk',
+    'Andrew Lester',
 ]
