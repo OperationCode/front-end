@@ -8,7 +8,10 @@
     "/404",
     "/_app",
     "/_document",
-    "/_error"
+    "/_error",
+    "/join/form",
+    "/join/success",
+    "/confirm_email"
   ],
   "priority": {
     "/": "1.00",

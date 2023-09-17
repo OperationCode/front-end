@@ -39,11 +39,6 @@
     <priority>1.00</priority>
   </url>
   <url>
-    <loc>https://www.operationcode.org/confirm_email</loc>
-    <lastmod>2023-09-17T04:59:47.694Z</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
     <loc>https://www.operationcode.org/contact</loc>
     <lastmod>2023-09-17T04:59:47.694Z</lastmod>
     <priority>0.80</priority>
@@ -79,19 +74,9 @@
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://www.operationcode.org/join/form</loc>
-    <lastmod>2023-09-17T04:59:47.695Z</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
     <loc>https://www.operationcode.org/join</loc>
     <lastmod>2023-09-17T04:59:47.695Z</lastmod>
     <priority>1.00</priority>
-  </url>
-  <url>
-    <loc>https://www.operationcode.org/join/success</loc>
-    <lastmod>2023-09-17T04:59:47.695Z</lastmod>
-    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.operationcode.org/podcast</loc>
