@@ -15,11 +15,11 @@ module.exports = {
       lg: '992px',
       xl: '1200px',
     },
-    colors: {
-      themeGray: '#121212',
-      white: '#FFFFFF',
+    extend: {
+      colors: {
+        themeGray: '#121212',
+      },
     },
-    extend: {},
   },
   plugins: [],
   important: '#__next',

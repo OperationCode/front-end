@@ -23,12 +23,12 @@ function ErrorDisplay({ statusCode }) {
       <div className="bg-themeGray w-full h-full">
         <div
           className={
-            'h-[45vh] text-white bg-[url("/static/images/TankFlip.gif")] md:h[100vh] flex flex-col justify-center w-[100%]  bg-cover items-center'
+            'h-[45vh] text-white bg-[url("/static/images/TankFlip.gif")] flex flex-col justify-center w-full  bg-cover items-center'
           }
         >
           <div className="text-center m-[1rem]">
-            <h1 className="text-6xl">{statusCode || 'Oh no'}!</h1>
-            <p className="text-2xl">
+            <h1 className="text-6xl text-white">{statusCode || 'Oh no'}!</h1>
+            <p className="text-2xl text-white">
               We&apos;re so ashamed. You definitely weren&apos;t supposed to see this...
             </p>
           </div>
