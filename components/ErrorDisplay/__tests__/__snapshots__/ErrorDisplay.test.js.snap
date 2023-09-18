@@ -1,23 +1,49 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ErrorDisplay should render with just required props 1`] = `
+exports[`ErrorDisplay should render with just Received props 1`] = `
 <div
-  className="ErrorDisplay"
+  className="ErrorDisplay bg-[#121212] w-[100% h-[100%]"
 >
   <div
-    className="bg"
+    className="bg bg-[url("/static/images/TankFlip.gif")] md:h[100vh] flex flex-col justify-center w-[100%] text-white bg-cover items-center"
   >
     <div
-      className="textContainer"
+      className="text-center m-[1rem]"
     >
       <h1
-        className="title"
+        className="text-[4rem]"
       >
         404
         !
       </h1>
       <p
-        className="paragraph"
+        className="text-[1.4rem]"
+      >
+        We're so ashamed. You definitely weren't supposed to see this...
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ErrorDisplay should render with just required props 1`] = `
+<div
+  className="ErrorDisplay bg-[#121212] w-[100% h-[100%]"
+>
+  <div
+    className="bg bg-[url(\\"/static/images/TankFlip.gif\\")] md:h[100vh] flex flex-col justify-center w-[100%] text-white bg-cover items-center"
+  >
+    <div
+      className="text-center m-[1rem]"
+    >
+      <h1
+        className="text-[4rem]"
+      >
+        404
+        !
+      </h1>
+      <p
+        className="text-[1.4rem]"
       >
         We're so ashamed. You definitely weren't supposed to see this...
       </p>
