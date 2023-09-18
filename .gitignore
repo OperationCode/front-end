@@ -4,6 +4,7 @@ package-lock.json
 # Cypress local support artifacts
 cypress/screenshots
 cypress/videos
+cypress/downloads/downloads.html
 
 # Logs
 logs
