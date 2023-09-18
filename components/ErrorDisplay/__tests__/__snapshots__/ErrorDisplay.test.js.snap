@@ -2,22 +2,22 @@
 
 exports[`ErrorDisplay should render with just required props 1`] = `
 <div
-  className="ErrorDisplay bg-[#121212] w-[100% h-[100%]"
+  className="bg-themeGray w-full h-full"
 >
   <div
-    className="bg bg-[url(\\"/static/images/TankFlip.gif\\")] md:h[100vh] flex flex-col justify-center w-[100%] text-white bg-cover items-center"
+    className="h-[45vh] text-white bg-[url(\\"/static/images/TankFlip.gif\\")] md:h[100vh] flex flex-col justify-center w-[100%]  bg-cover items-center"
   >
     <div
       className="text-center m-[1rem]"
     >
       <h1
-        className="text-[4rem]"
+        className="text-6xl"
       >
         404
         !
       </h1>
       <p
-        className="text-[1.4rem]"
+        className="text-2xl"
       >
         We're so ashamed. You definitely weren't supposed to see this...
       </p>

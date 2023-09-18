@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import { number } from 'prop-types';
 import Head from 'components/head';
-import styles from './ErrorDisplay.module.css';
 
 ErrorDisplay.propTypes = { statusCode: number };
 
@@ -21,13 +20,15 @@ function ErrorDisplay({ statusCode }) {
         <meta name="robots" content="noindex, nofollow" key={statusCode} />
       </Head>
 
-      <div className={`${styles.ErrorDisplay} bg-[#121212] w-[100% h-[100%]`}>
+      <div className="bg-themeGray w-full h-full">
         <div
-          className={`${styles.bg} bg-[url("/static/images/TankFlip.gif")] md:h[100vh] flex flex-col justify-center w-[100%] text-white bg-cover items-center`}
+          className={
+            'h-[45vh] text-white bg-[url("/static/images/TankFlip.gif")] md:h[100vh] flex flex-col justify-center w-[100%]  bg-cover items-center'
+          }
         >
           <div className="text-center m-[1rem]">
-            <h1 className="text-[4rem]">{statusCode || 'Oh no'}!</h1>
-            <p className="text-[1.4rem]">
+            <h1 className="text-6xl">{statusCode || 'Oh no'}!</h1>
+            <p className="text-2xl">
               We&apos;re so ashamed. You definitely weren&apos;t supposed to see this...
             </p>
           </div>
