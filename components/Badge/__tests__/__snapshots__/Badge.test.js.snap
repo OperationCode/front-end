@@ -2,11 +2,11 @@
 
 exports[`Badge should render with many props assigned 1`] = `
 <figure
-  className="Badge test-class"
+  className="flex flex-col justify-items-center place-content-start m-2 test-class"
 >
   <svg />
   <figcaption
-    className="label"
+    className="text-center whitespace-nowrap"
   >
     Badge Icon
   </figcaption>
@@ -15,11 +15,11 @@ exports[`Badge should render with many props assigned 1`] = `
 
 exports[`Badge should render with required props 1`] = `
 <figure
-  className="Badge"
+  className="flex flex-col justify-items-center place-content-start m-2"
 >
   <svg />
   <figcaption
-    className="label"
+    className="text-center whitespace-nowrap"
   >
     Testing
   </figcaption>

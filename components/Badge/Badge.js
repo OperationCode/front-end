@@ -1,6 +1,5 @@
 import { bool, element, oneOfType, string } from 'prop-types';
 import classNames from 'classnames';
-import styles from './Badge.module.css';
 
 Badge.propTypes = {
   className: string,
@@ -16,15 +15,20 @@ Badge.defaultProps = {
 
 function Badge({ className, icon, isImageFirst, label }) {
   return (
-    <figure className={classNames(styles.Badge, className)}>
+    <figure
+      className={classNames(
+        'flex flex-col justify-items-center place-content-start m-2',
+        className,
+      )}
+    >
       {isImageFirst ? (
         <>
           {icon}
-          <figcaption className={styles.label}>{label}</figcaption>
+          <figcaption className="text-center whitespace-nowrap">{label}</figcaption>
         </>
       ) : (
         <>
-          <figcaption className={styles.label}>{label}</figcaption>
+          <figcaption className="text-center whitespace-nowrap">{label}</figcaption>
           {icon}
         </>
       )}

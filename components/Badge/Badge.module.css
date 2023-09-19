@@ -1,19 +1,6 @@
-.Badge {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  margin: 1rem;
-}
-
 .Badge > img,
 .Badge > svg {
   fill: currentcolor;
   height: 100px;
   margin: 1rem 0;
-}
-
-.label {
-  text-align: center;
-  white-space: nowrap;
 }
