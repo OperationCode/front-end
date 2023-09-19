@@ -22,5 +22,4 @@ module.exports = {
     },
   },
   plugins: [],
-  important: '#__next',
 };
