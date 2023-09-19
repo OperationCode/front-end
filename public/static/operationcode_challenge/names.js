@@ -87,4 +87,5 @@ export default [
     'Kevin Belk',
     'Andrew Lester',
     'Esther Lee',
+    'Khush Makadia',
 ]
