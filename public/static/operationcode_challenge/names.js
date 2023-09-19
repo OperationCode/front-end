@@ -86,4 +86,5 @@ export default [
     'Damien Richcreek',
     'Kevin Belk',
     'Andrew Lester',
+    'Esther Lee',
 ]
