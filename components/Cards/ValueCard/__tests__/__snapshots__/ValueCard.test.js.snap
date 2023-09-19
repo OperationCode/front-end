@@ -2,10 +2,10 @@
 
 exports[`ValueCard should render with required props 1`] = `
 <article
-  className="Card ValueCard"
+  className="Card !justify-start max-w-[400px] h-[400px] p-8 overflow-y-auto"
 >
   <h3
-    className="name"
+    className="text-center underline"
   >
     Testing
   </h3>
