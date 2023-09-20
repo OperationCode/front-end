@@ -4,7 +4,7 @@ import * as viewports from '@storybook/addon-viewport';
 
 export const decorators = [
   Story => (
-    <div style={{ margin: '2rem' }}>
+    <div id="__next" style={{ margin: '2rem' }}>
       <Story />
     </div>
   ),
