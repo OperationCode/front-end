@@ -13,7 +13,7 @@
   margin-top: -1rem;
 }
 
-.Services .badge {
+:global(#__next) .Services .badgeGroupings .badge {
   fill: var(--secondary);
   margin: 1rem 4rem;
 }

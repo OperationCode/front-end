@@ -20,6 +20,7 @@
     "color-function-notation": "legacy",
     "no-duplicate-selectors": true,
     "property-no-unknown": [true, { "ignoreProperties": ["composes", "composes-with"] }],
+    "selector-id-pattern": null,
     "selector-class-pattern": null,
     "selector-pseudo-class-no-unknown": [true, { "ignorePseudoClasses": ["global"] }],
     "shorthand-property-no-redundant-values": null,

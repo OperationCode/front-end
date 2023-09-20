@@ -18,6 +18,10 @@
   height: 200px;
 }
 
+.imageWrapper img {
+  object-fit: cover;
+}
+
 .header {
   order: 2;
   text-align: center;

@@ -20,6 +20,10 @@
   width: 100%;
 }
 
+.logoTypeListItem {
+  margin-top: 1rem;
+}
+
 .badgeList {
   display: flex;
   justify-content: space-around;
@@ -28,6 +32,7 @@
   list-style: none;
   margin: 0;
   padding: 0;
+  padding-bottom: 1rem;
   border-bottom: 1px solid #bbbbbb;
 }
 

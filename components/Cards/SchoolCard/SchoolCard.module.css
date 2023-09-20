@@ -72,7 +72,7 @@
   width: 85px;
   background: var(--primary);
   color: var(--secondary);
-  padding: 0.4rem 0 0.1rem;
+  padding: 1rem 0 0.1rem;
 }
 
 .vettec::before,
