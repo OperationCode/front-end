@@ -1,4 +1,4 @@
-.GetInvolved .ctaContainer {
+:global(#__next) .GetInvolved .ctaContainer {
   display: flex;
   width: 100%;
   max-width: var(--typicalMaxWidth);
@@ -6,55 +6,55 @@
   flex-wrap: wrap;
 }
 
-.GetInvolved .ctaContainer > * {
+:global(#__next) .GetInvolved .ctaContainer > * {
   margin-top: 1rem;
 }
 
-.GetInvolved .topMargin {
+:global(#__next) .GetInvolved .topMargin {
   margin-top: 1rem;
 }
 
-.GetInvolved .extraTopMargin {
+:global(#__next) .GetInvolved .extraTopMargin {
   margin-top: 2rem;
 }
 
-.GetInvolved .image {
+:global(#__next) .GetInvolved .image {
   margin: 2rem;
   max-width: 500px;
 }
 
-.GetInvolved .cta {
+:global(#__next) .GetInvolved .cta {
   display: flex;
   flex-direction: column;
 }
 
-.GetInvolved .centeredText {
+:global(#__next) .GetInvolved .centeredText {
   text-align: center;
 }
 
-.GetInvolved .image img {
+:global(#__next) .GetInvolved .image img {
   max-width: 100%;
   opacity: 0;
   transition: opacity 1s;
 }
 
-.GetInvolved .showImage img {
+:global(#__next) .GetInvolved .showImage img {
   opacity: 1;
 }
 
-.GetInvolved .badgeGroupings {
+:global(#__next) .GetInvolved .badgeGroupings {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   margin-top: -1rem;
 }
 
-.GetInvolved .badge {
+:global(#__next) .GetInvolved .badge {
   margin: 1rem 4rem;
 }
 
 @media screen and (--medium-viewport) {
-  .GetInvolved .heroBannerMobilePositioning {
+  :global(#__next) .GetInvolved .heroBannerMobilePositioning {
     background-position: 60% center;
   }
 }

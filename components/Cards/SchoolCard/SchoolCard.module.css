@@ -1,4 +1,4 @@
-.SchoolCard {
+:global(#__next) .SchoolCard {
   width: 330px;
   font-family: var(--primaryFontFamily), sans-serif;
   border: 1px solid var(--primary);
@@ -12,18 +12,18 @@
 }
 
 @media screen and (--large-viewport) {
-  .SchoolCard {
+  :global(#__next) .SchoolCard {
     width: 300px;
   }
 }
 
 @media screen and (--small-viewport) {
-  .SchoolCard {
+  :global(#__next) .SchoolCard {
     width: 75vw;
   }
 }
 
-.ribbon {
+:global(#__next) .ribbon {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -41,24 +41,24 @@
   z-index: 1;
 }
 
-.ribbon::before {
+:global(#__next) .ribbon::before {
   right: 100%;
 }
 
-.ribbon::after {
+:global(#__next) .ribbon::after {
   left: 100%;
 }
 
-.gi {
+:global(#__next) .gi {
   width: 85px;
   background: var(--secondary);
   color: var(--primary);
 }
 
-.gi::before,
-.gi::after,
-.dual::before,
-.dual::after {
+:global(#__next) .gi::before,
+:global(#__next) .gi::after,
+:global(#__next) .dual::before,
+:global(#__next) .dual::after {
   content: "";
   position: absolute;
   top: 0;
@@ -68,15 +68,15 @@
   background: var(--secondary);
 }
 
-.vettec {
+:global(#__next) .vettec {
   width: 85px;
   background: var(--primary);
   color: var(--secondary);
   padding: 1rem 0 0.1rem;
 }
 
-.vettec::before,
-.vettec::after {
+:global(#__next) .vettec::before,
+:global(#__next) .vettec::after {
   content: "";
   position: absolute;
   top: 0;
@@ -86,34 +86,34 @@
   background: var(--primary);
 }
 
-.dual {
+:global(#__next) .dual {
   width: 40px;
   background: var(--secondary);
   color: var(--primary);
 }
 
-.cardBrand {
+:global(#__next) .cardBrand {
   padding: 0.25rem 0;
   margin: 1.5rem 0;
 }
 
-.cardBrand > * {
+:global(#__next) .cardBrand > * {
   vertical-align: middle;
 }
 
-.SchoolCard,
-.cardBlock {
+:global(#__next) .SchoolCard,
+:global(#__next) .cardBlock {
   box-sizing: border-box;
 }
 
-.cardBlock {
+:global(#__next) .cardBlock {
   border-top: 1px solid var(--gray);
   display: flex;
   padding: 1rem 0.75rem;
   width: 100%;
 }
 
-.cardBlockTitle {
+:global(#__next) .cardBlockTitle {
   font-weight: bold;
   display: block;
   margin-right: auto;
@@ -121,11 +121,11 @@
   color: var(--secondary);
 }
 
-.cardBlockValue {
+:global(#__next) .cardBlockValue {
   font-weight: normal;
 }
 
-.SchoolCard .modalToggler {
+:global(#__next) .modalToggler {
   min-width: auto;
   text-transform: none;
   padding: 2px 6px 0;
@@ -136,19 +136,19 @@
   border: 2px solid var(--gray);
 }
 
-.SchoolCard .modalToggler:hover {
+:global(#__next) .modalToggler:hover {
   background-color: transparent;
   color: var(--secondary);
   border-color: var(--gray);
 }
 
 @media screen and (--large-viewport) {
-  .SchoolCard .modalToggler {
+  :global(#__next) .modalToggler {
     margin-top: -5px;
   }
 }
 
-.badgeGroup {
+:global(#__next) .badgeGroup {
   display: grid;
   padding: 0.75rem 0;
   width: 100%;
@@ -157,44 +157,44 @@
   align-items: center;
 }
 
-.active figcaption::after,
-.inactive figcaption::after {
+:global(#__next) .active figcaption::after,
+:global(#__next) .inactive figcaption::after {
   position: absolute;
   top: -0.75rem;
   right: 1rem;
   width: 1.25rem;
 }
 
-.active figcaption::after {
+:global(#__next) .active figcaption::after {
   stroke: var(--successDeep);
   content: url("/static/images/icons/Custom/check-circle.svg");
 }
 
-.inactive figcaption::after {
+:global(#__next) .inactive figcaption::after {
   stroke: var(--errorDeep);
   content: url("/static/images/icons/Custom/x-circle.svg");
 }
 
-.badgeGroupItem.inactive {
+:global(#__next) .badgeGroupItem.inactive {
   opacity: 0.75;
 }
 
-.badgeGroupItem.inactive figcaption::after {
+:global(#__next) .badgeGroupItem.inactive figcaption::after {
   opacity: 1;
 }
 
-.badgeGroupItem {
+:global(#__next) .badgeGroupItem {
   margin: 0.75rem 0;
   position: relative;
   width: 95px;
   font-size: 15px;
 }
 
-.badgeGroupItem svg {
+:global(#__next) .badgeGroupItem svg {
   height: 32px;
   margin: 0;
 }
 
-.badgeGroupItem figcaption {
+:global(#__next) .badgeGroupItem figcaption {
   margin-top: 10px;
 }

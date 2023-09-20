@@ -2,7 +2,7 @@
 
 exports[`Badge should render with many props assigned 1`] = `
 <figure
-  className="flex flex-col justify-items-center place-content-start m-2 [&>img>svg]:fill-current [&>img>svg]:my-4 [&>img]:mx-0 [&>img]:h-24 [&>svg]:mx-0 [&>svg]:h-24 test-class"
+  className="flex flex-col justify-items-center place-content-start m-2 [&>svg]:fill-current [&>svg]:my-4 [&>img]:mx-0 [&>img]:h-24 [&>svg]:mx-0 [&>svg]:h-24 test-class"
 >
   <svg />
   <figcaption
@@ -15,7 +15,7 @@ exports[`Badge should render with many props assigned 1`] = `
 
 exports[`Badge should render with required props 1`] = `
 <figure
-  className="flex flex-col justify-items-center place-content-start m-2 [&>img>svg]:fill-current [&>img>svg]:my-4 [&>img]:mx-0 [&>img]:h-24 [&>svg]:mx-0 [&>svg]:h-24"
+  className="flex flex-col justify-items-center place-content-start m-2 [&>svg]:fill-current [&>svg]:my-4 [&>img]:mx-0 [&>img]:h-24 [&>svg]:mx-0 [&>svg]:h-24"
 >
   <svg />
   <figcaption

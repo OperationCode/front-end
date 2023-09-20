@@ -17,7 +17,17 @@ function Badge({ className, icon, isImageFirst, label }) {
   return (
     <figure
       className={classNames(
-        'flex flex-col justify-items-center place-content-start m-2 [&>img>svg]:fill-current [&>img>svg]:my-4 [&>img]:mx-0 [&>img]:h-24 [&>svg]:mx-0 [&>svg]:h-24',
+        'flex',
+        'flex-col',
+        'justify-items-center',
+        'place-content-start',
+        'm-2',
+        '[&>svg]:fill-current',
+        '[&>svg]:my-4',
+        '[&>img]:mx-0',
+        '[&>img]:h-24',
+        '[&>svg]:mx-0',
+        '[&>svg]:h-24',
         className,
       )}
     >
