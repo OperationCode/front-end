@@ -22,6 +22,7 @@
 .hashLinkContainer > a {
   position: absolute;
   left: -2rem;
+  top: 0.5rem;
 }
 
 .icon {
