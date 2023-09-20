@@ -88,4 +88,5 @@ export default [
     'Andrew Lester',
     'Esther Lee',
     'Khush Makadia',
+    'John Winy Ludeke'
 ]
