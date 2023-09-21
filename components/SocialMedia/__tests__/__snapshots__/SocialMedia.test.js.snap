@@ -7,7 +7,7 @@ exports[`SocialMedia should render with no props passed passed 1`] = `
     name="Facebook"
     svg={
       <Svg
-        className="logo"
+        className="fill-white w-6"
       />
     }
   />
@@ -16,7 +16,7 @@ exports[`SocialMedia should render with no props passed passed 1`] = `
     name="Twitter"
     svg={
       <Svg
-        className="logo"
+        className="fill-white w-6"
       />
     }
   />
@@ -25,7 +25,7 @@ exports[`SocialMedia should render with no props passed passed 1`] = `
     name="Instagram"
     svg={
       <Svg
-        className="logo"
+        className="fill-white w-6"
       />
     }
   />
@@ -34,7 +34,7 @@ exports[`SocialMedia should render with no props passed passed 1`] = `
     name="YouTube"
     svg={
       <Svg
-        className="logo"
+        className="fill-white w-6"
       />
     }
   />
@@ -43,7 +43,7 @@ exports[`SocialMedia should render with no props passed passed 1`] = `
     name="LinkedIn"
     svg={
       <Svg
-        className="logo"
+        className="fill-white w-6"
       />
     }
   />
@@ -52,7 +52,7 @@ exports[`SocialMedia should render with no props passed passed 1`] = `
     name="GitHub"
     svg={
       <Svg
-        className="logo"
+        className="fill-white w-6"
       />
     }
   />
