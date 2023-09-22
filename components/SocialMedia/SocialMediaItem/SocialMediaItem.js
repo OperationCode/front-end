@@ -1,7 +1,6 @@
 import { node, string } from 'prop-types';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
-import styles from './SocialMediaItem.module.css';
 
 SocialMediaItem.propTypes = {
   name: string.isRequired,
@@ -11,7 +10,7 @@ SocialMediaItem.propTypes = {
 
 function SocialMediaItem({ name, href, svg }) {
   return (
-    <div className={styles.SocialMediaItem}>
+    <div className="my-0 mx-2 opacity-80 hover:opacity-100">
       <OutboundLink
         analyticsEventLabel={`Social Media Engagement: ${name}`}
         hasIcon={false}

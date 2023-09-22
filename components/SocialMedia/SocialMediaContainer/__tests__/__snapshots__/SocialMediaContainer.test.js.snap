@@ -2,7 +2,7 @@
 
 exports[`SocialMediaContainer should render with required props 1`] = `
 <div
-  className="SocialMediaContainer"
+  className="flex flex-row justify-around items-center"
 >
   <div>
     Testing 1

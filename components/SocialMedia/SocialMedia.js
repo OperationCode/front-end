@@ -6,7 +6,6 @@ import YouTubeLogo from 'static/images/icons/youtube_logo.svg';
 import LinkedInLogo from 'static/images/icons/linkedin_logo_circle.svg';
 import SocialMediaContainer from './SocialMediaContainer/SocialMediaContainer';
 import SocialMediaItem from './SocialMediaItem/SocialMediaItem';
-import styles from './SocialMedia.module.css';
 
 function SocialMedia() {
   return (
@@ -14,32 +13,32 @@ function SocialMedia() {
       <SocialMediaItem
         href="https://facebook.com/operationcode.org"
         name="Facebook"
-        svg={<FacebookLogo className={styles.logo} />}
+        svg={<FacebookLogo className="fill-white w-6" />}
       />
       <SocialMediaItem
         href="https://twitter.com/operation_code"
         name="Twitter"
-        svg={<TwitterLogo className={styles.logo} />}
+        svg={<TwitterLogo className="fill-white w-6" />}
       />
       <SocialMediaItem
         href="https://www.instagram.com/operation_code/"
         name="Instagram"
-        svg={<InstagramLogo className={styles.logo} />}
+        svg={<InstagramLogo className="fill-white w-6" />}
       />
       <SocialMediaItem
         href="https://www.youtube.com/channel/UCAoJt4a_KEBmgXfoQUrNbSA"
         name="YouTube"
-        svg={<YouTubeLogo className={styles.logo} />}
+        svg={<YouTubeLogo className="fill-white w-6" />}
       />
       <SocialMediaItem
         href="https://www.linkedin.com/company/operationcode/"
         name="LinkedIn"
-        svg={<LinkedInLogo className={styles.logo} />}
+        svg={<LinkedInLogo className="fill-white w-6" />}
       />
       <SocialMediaItem
         href="https://github.com/OperationCode/"
         name="GitHub"
-        svg={<GitHubLogo className={styles.logo} />}
+        svg={<GitHubLogo className="fill-white w-6" />}
       />
     </SocialMediaContainer>
   );

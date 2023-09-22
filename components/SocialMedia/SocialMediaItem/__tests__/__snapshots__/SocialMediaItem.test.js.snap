@@ -2,7 +2,7 @@
 
 exports[`SocialMediaItem should render with required props 1`] = `
 <div
-  className="SocialMediaItem"
+  className="my-0 mx-2 opacity-80 hover:opacity-100"
 >
   <a
     className="OutboundLink"
