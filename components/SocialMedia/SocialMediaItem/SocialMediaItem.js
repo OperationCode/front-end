@@ -10,7 +10,7 @@ SocialMediaItem.propTypes = {
 
 function SocialMediaItem({ name, href, svg }) {
   return (
-    <div className="my-0 mx-2 hover:opacity-100">
+    <div className="my-0 mx-2 opacity-80 hover:opacity-100">
       <OutboundLink
         analyticsEventLabel={`Social Media Engagement: ${name}`}
         hasIcon={false}
