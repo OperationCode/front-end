@@ -18,7 +18,6 @@ module.exports = {
     extend: {
       colors: {
         themeGray: '#121212',
-        gray: 'rgba(255, 255, 255, 0.5)',
         secondary: '#252e3e',
       },
     },

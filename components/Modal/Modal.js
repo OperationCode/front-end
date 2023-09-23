@@ -39,7 +39,7 @@ function Modal({
     <Dialog.Root defaultOpen={false} open={isOpen}>
       <Dialog.Portal>
         <Dialog.Overlay
-          className="inset-0 fixed bg-gray"
+          className="inset-0 fixed bg-white/50"
           onClick={shouldCloseOnOverlayClick ? onRequestClose : undefined}
           data-testid={MODAL_OVERLAY}
         >
