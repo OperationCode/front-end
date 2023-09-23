@@ -11,14 +11,14 @@ Modal.propTypes = {
   isOpen: bool,
   onRequestClose: func.isRequired,
   screenReaderLabel: string.isRequired, // basically a summarizing title
-  shouldCloseOnOverlayClick: bool,
+  canClose: bool,
   childrenClassName: string,
 };
 
 Modal.defaultProps = {
   className: undefined,
   isOpen: false,
-  shouldCloseOnOverlayClick: true,
+  canClose: true,
   childrenClassName: undefined,
 };
 
@@ -28,28 +28,54 @@ function Modal({
   isOpen,
   onRequestClose,
   screenReaderLabel,
-  shouldCloseOnOverlayClick,
+  canClose,
   childrenClassName,
 }) {
   if (isOpen) {
     gtag.modalView(screenReaderLabel);
   }
 
+  const portalContainer =
+    typeof window !== 'undefined' ? document.querySelector('#__next') ?? undefined : undefined;
+
   return (
     <Dialog.Root defaultOpen={false} open={isOpen}>
-      <Dialog.Portal>
+      <Dialog.Portal container={portalContainer}>
         <Dialog.Overlay
-          className="inset-0 fixed bg-white/50"
-          onClick={shouldCloseOnOverlayClick ? onRequestClose : undefined}
+          className="inset-0 fixed bg-white/50 z-[2]"
+          onClick={canClose ? onRequestClose : undefined}
           data-testid={MODAL_OVERLAY}
         >
-          <Dialog.Close asChild>
-            <CloseButton theme="secondary" onClick={onRequestClose} />
-          </Dialog.Close>
+          {canClose && (
+            <Dialog.Close asChild>
+              <CloseButton theme="secondary" onClick={onRequestClose} />
+            </Dialog.Close>
+          )}
         </Dialog.Overlay>
+
         <Dialog.Content
           className={classNames(
-            'bg-white text-secondary flex flex-col flex-nowrap m-4 min-h-[100px] min-w-[100px] p-6 fixed items-center justify-center overflow-hidden w-[80%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[2]',
+            'outline-none',
+            'bg-white',
+            'text-secondary',
+            'flex',
+            'flex-col',
+            'flex-nowrap',
+            'm-4',
+            'min-h-[100px]',
+            'min-w-[100px]',
+            'p-6',
+            'fixed',
+            'items-center',
+            'justify-center',
+            'overflow-hidden',
+            'w-[80%]',
+            'top-1/2',
+            'left-1/2',
+            '-translate-x-1/2',
+            '-translate-y-1/2',
+            'z-[2]',
+            'shadow-md',
             className,
           )}
         >

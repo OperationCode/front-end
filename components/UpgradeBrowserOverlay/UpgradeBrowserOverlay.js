@@ -37,7 +37,7 @@ function UpgradeBrowserOverlay() {
       screenReaderLabel="Upgrade Your Browser"
       isOpen
       overlayClassName={styles.overlay}
-      shouldCloseOnOverlayClick={false}
+      canClose={false}
     >
       <WarningSign className={styles.warningLogo} />
       <h1>Please Upgrade Your Browser</h1>
