@@ -49,9 +49,8 @@ function Modal({
         </Dialog.Overlay>
         <Dialog.Content
           className={classNames(
-            'items-center bg-white text-secondary flex flex-col flex-nowrap justify-around m-4 min-h-[100px] min-w-[100px] p-6',
+            'bg-white text-secondary flex flex-col flex-nowrap m-4 min-h-[100px] min-w-[100px] p-6 fixed items-center justify-center overflow-hidden w-[80%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[2]',
             className,
-            'fixed items-center justify-center overflow-hidden w-10/12 top-3/4 left-3/4 -translate-x-2/4 -translate-y-2/4 z-[2]',
           )}
         >
           <div className={childrenClassName} data-testid={MODAL_CONTENT}>
