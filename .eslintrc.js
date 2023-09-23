@@ -167,6 +167,7 @@ module.exports = {
     'implicit-arrow-linebreak': 'off',
     'multiline-ternary': 'off',
     'no-console': 'warn',
+    'no-extra-boolean-cast': 'off',
     'no-promise-executor-return': 'off',
     'no-restricted-imports': [
       'error',
