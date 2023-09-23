@@ -2,24 +2,6 @@
   position: relative;
 }
 
-.overlay {
-  background-color: rgba(255, 255, 255, 0.5);
-  position: fixed;
-  inset: 0;
-}
-
-.modalContent {
-  position: fixed;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  width: 80%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-}
-
 .scrollableContainer {
   margin-top: 2.5rem;
   overflow: auto;
