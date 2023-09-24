@@ -22,13 +22,13 @@ function HeroBanner({ backgroundImageSource, children, className, isFullViewport
   return (
     <Container
       backgroundImageSource={backgroundImageSource}
-      className={classNames('pt-20 min-h-[60vh]', className, {
+      className={classNames(className, 'pt-20 min-h-[60vh] text-shadow-[0_0_15px_#111111]', {
         'min-h-[35vh]': !children && !backgroundImageSource,
       })}
       isFullViewportHeight={isFullViewportHeight}
     >
       <h1
-        className={classNames({ 'border-b-4 border-b-primary text-center': children })}
+        className={classNames({ 'border-b-4 border-b-primary text-center mb-4': children })}
         data-testid={HERO_BANNER_H1}
       >
         {title}
