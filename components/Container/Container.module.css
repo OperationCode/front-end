@@ -12,7 +12,7 @@
 
 /* need to have a higher order of specificity since HeroBanner fights it */
 .Container.fullViewportHeight {
-  min-height: 100vh;
+  min-height: 100vh !important;
 }
 
 .content {

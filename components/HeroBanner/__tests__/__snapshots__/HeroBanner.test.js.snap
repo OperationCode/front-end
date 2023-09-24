@@ -2,7 +2,7 @@
 
 exports[`HeroBanner should render with many props assigned 1`] = `
 <div
-  className="HeroBanner test Container secondary fullViewportHeight"
+  className="test pt-20 min-h-[60vh] text-shadow-[0_0_15px_#111111] Container secondary fullViewportHeight"
   style={
     Object {
       "backgroundImage": "linear-gradient(rgba(33, 48, 69, 0.65),rgba(33, 48, 69, 0.65)), url(https://operation-code-assets.s3.us-east-2.amazonaws.com/heroBanner/stock_family-2.jpg)",
@@ -13,7 +13,7 @@ exports[`HeroBanner should render with many props assigned 1`] = `
     className="content"
   >
     <h1
-      className="underline"
+      className="border-b-4 border-b-primary text-center mb-4"
       data-testid="HERO_BANNER_H1"
     >
       Test
@@ -25,7 +25,7 @@ exports[`HeroBanner should render with many props assigned 1`] = `
 
 exports[`HeroBanner should render with required props 1`] = `
 <div
-  className="HeroBanner smallHero Container secondary"
+  className="pt-20 min-h-[60vh] text-shadow-[0_0_15px_#111111] min-h-[35vh] Container secondary"
 >
   <div
     className="content"
