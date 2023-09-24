@@ -2,7 +2,6 @@ import { string, node, bool } from 'prop-types';
 import classNames from 'classnames';
 import Container from 'components/Container/Container';
 import { HERO_BANNER_H1 } from 'common/constants/testIDs';
-import styles from './HeroBanner.module.css';
 
 HeroBanner.propTypes = {
   backgroundImageSource: string,
@@ -23,12 +22,15 @@ function HeroBanner({ backgroundImageSource, children, className, isFullViewport
   return (
     <Container
       backgroundImageSource={backgroundImageSource}
-      className={classNames(styles.HeroBanner, className, {
-        [styles.smallHero]: !children && !backgroundImageSource,
+      className={classNames('pt-20 min-h-[60vh]', className, {
+        'min-h-[35vh]': !children && !backgroundImageSource,
       })}
       isFullViewportHeight={isFullViewportHeight}
     >
-      <h1 className={classNames({ [styles.underline]: children })} data-testid={HERO_BANNER_H1}>
+      <h1
+        className={classNames({ 'border-b-4 border-b-primary text-center': children })}
+        data-testid={HERO_BANNER_H1}
+      >
         {title}
       </h1>
       {children}
