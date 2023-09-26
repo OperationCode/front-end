@@ -1,35 +1,3 @@
-.body {
-  display: none;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  overflow: hidden;
-  width: 100%;
-  z-index: 2;
-  transition: left 0.25s ease-in-out;
-}
-
-.hidden {
-  composes: body;
-  left: -100%;
-}
-
-.visible {
-  composes: body;
-  left: 0;
-}
-
-.content {
-  height: 100%;
-  width: 100%;
-}
-
-@media screen and (--large-viewport) {
-  .body {
-    display: block;
-  }
-}
-
 @media screen and (orientation: landscape) {
   .body {
     width: 320px;
