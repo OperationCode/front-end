@@ -1,6 +1,5 @@
 import { node, string, bool } from 'prop-types';
 import classNames from 'classnames';
-import styles from './Drawer.module.css';
 
 Drawer.propTypes = {
   children: node.isRequired,
@@ -16,12 +15,16 @@ Drawer.defaultProps = {
 function Drawer({ children, className, isVisible }) {
   return (
     <div
-      className={classNames(className, {
-        [styles.visible]: isVisible,
-        [styles.hidden]: !isVisible,
-      })}
+      className={classNames(
+        className,
+        'hidden lg:block transition-all ease-in-out duration-1000 fixed top-0 bottom-0  overflow-hidden width-full z-[2]',
+        {
+          '-left-0': isVisible,
+          '-left-[100%]': !isVisible,
+        },
+      )}
     >
-      <div className={styles.content}>{children}</div>
+      <div className="h-full w-full">{children}</div>
     </div>
   );
 }
