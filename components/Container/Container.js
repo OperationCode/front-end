@@ -42,14 +42,21 @@ function Container({
 
   return (
     <div
-      className={classNames(className, styles.Container, styles[theme], {
-        [styles.fullViewportHeight]: isFullViewportHeight,
-      })}
+      className={classNames(
+        className,
+        'bg-center bg-no-repeat bg-cover flex items-center justify-center min-h-[250px] w-full fill-current',
+        styles[theme],
+        {
+          'min-[100vh]': isFullViewportHeight,
+        },
+      )}
       id={id}
       style={dynamicBackgroundImage}
       {...customDataAttributes}
     >
-      <div className={styles.content}>{children}</div>
+      <div className="flex flex-col items-center justify-center my-14 mx-auto w-full max-w-[1400px] sm:w-[85%]">
+        {children}
+      </div>
     </div>
   );
 }
