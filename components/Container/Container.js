@@ -47,7 +47,7 @@ function Container({
         'bg-center bg-no-repeat bg-cover flex items-center justify-center min-h-[250px] w-full fill-current',
         styles[theme],
         {
-          'min-[100vh]': isFullViewportHeight,
+          'min-h-screen': isFullViewportHeight,
         },
       )}
       id={id}
