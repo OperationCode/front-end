@@ -1,4 +1,4 @@
-![Operation Code Logo](https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/large-blue-logo.png)
+![]([https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/large-blue-logo.png](https://i.imgur.com/mW5LUGV.jpg))
 
 <br />
 
