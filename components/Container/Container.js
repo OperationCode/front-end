@@ -1,7 +1,6 @@
 import { bool, node, number, oneOf, oneOfType, string } from 'prop-types';
 import classNames from 'classnames';
 import { getDataAttributes } from 'common/utils/prop-utils';
-import styles from './Container.module.css';
 
 Container.propTypes = {
   backgroundImageSource: string,
@@ -45,7 +44,9 @@ function Container({
       className={classNames(
         className,
         'bg-center bg-no-repeat bg-cover flex items-center justify-center min-h-[250px] w-full fill-current',
-        styles[theme],
+        theme === 'secondary' && 'bg-secondary text-white [& svg]:fill-white',
+        theme === 'gray' && 'bg-gray text-secondary',
+        theme === 'white' && 'bg-white text-secondary',
         {
           'min-h-screen': isFullViewportHeight,
         },

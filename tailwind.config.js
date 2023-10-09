@@ -22,6 +22,7 @@ module.exports = {
         themeGray: '#121212',
         primary: '#3ed6f0',
         secondary: '#252e3e',
+        gray: '#e2e2e2',
       },
     },
   },
