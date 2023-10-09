@@ -54,6 +54,7 @@ function Home() {
         columns={successStories.map(story => (
           <SuccessStory {...story} key={story.title} />
         ))}
+        className="pb-24"
       />
 
       <SponsorsSection />
