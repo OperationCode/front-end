@@ -5,16 +5,3 @@
   justify-content: center;
   margin: 1rem auto;
 }
-
-.columnsContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  width: 100%;
-}
-
-/* the individual columns */
-.columnsContainer > * {
-  margin: 1rem;
-}
