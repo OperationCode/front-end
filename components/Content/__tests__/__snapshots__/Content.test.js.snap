@@ -39,7 +39,7 @@ exports[`Content should render with many props assigned 1`] = `
       </h3>
     </div>
     <div
-      className="columnsContainer"
+      className="flex justify-center items-center flex-wrap w-full [&>*]:m-4"
     >
       <div>
         <p>
@@ -65,7 +65,7 @@ exports[`Content should render with required props 1`] = `
     className="content"
   >
     <div
-      className="columnsContainer"
+      className="flex justify-center items-center flex-wrap w-full [&>*]:m-4"
     >
       <div>
         <p>
