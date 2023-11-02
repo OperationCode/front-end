@@ -2,7 +2,7 @@
 
 exports[`FeaturedJobItem should render with many props assigned 1`] = `
 <article
-  className="job"
+  className="py-4 px-0"
 >
   <a
     className="OutboundLink"
@@ -25,59 +25,59 @@ exports[`FeaturedJobItem should render with many props assigned 1`] = `
     />
   </a>
   <div
-    className="details"
+    className="flex flex-wrap text-lg text-secondary opacity-80 mt-1 "
   >
     <div
-      className="detailsContainer"
+      className="flex items-center gap-[0.3125rem]"
     >
       <svg
-        className="icon"
+        className="fill-secondary opacity-80 h-[0.825rem]"
       />
       <span
-        className="detail"
+        className="ml-1"
       >
         Formidable Labs
       </span>
     </div>
     <div
-      className="detailsContainer"
+      className="flex items-center gap-[0.3125rem]"
     >
       <svg
-        className="icon"
+        className="fill-secondary opacity-80 h-[0.825rem]"
       />
       <span
-        className="detail"
+        className="ml-1"
       >
         Seattle
         ,
       </span>
       <span
-        className="detail"
+        className="ml-1"
       >
         WA
         ,
       </span>
       <span
-        className="detail"
+        className="ml-1"
       >
         United States
       </span>
     </div>
     <div
-      className="detailsContainer"
+      className="flex items-center gap-[0.3125rem]"
     >
       <svg
-        className="icon"
+        className="fill-secondary opacity-80 h-[0.825rem]"
       />
       <span
-        className="remote"
+        className="ml-1"
       >
         Remote
       </span>
     </div>
   </div>
   <p
-    className="description"
+    className="m-0"
   >
     As an Experienced React Engineer, you will do React things.
   </p>
@@ -86,7 +86,7 @@ exports[`FeaturedJobItem should render with many props assigned 1`] = `
 
 exports[`FeaturedJobItem should render with required props 1`] = `
 <article
-  className="job"
+  className="py-4 px-0"
 >
   <a
     className="OutboundLink"
@@ -109,26 +109,26 @@ exports[`FeaturedJobItem should render with required props 1`] = `
     />
   </a>
   <div
-    className="details"
+    className="flex flex-wrap text-lg text-secondary opacity-80 mt-1 "
   >
     <div
-      className="detailsContainer"
+      className="flex items-center gap-[0.3125rem]"
     >
       <svg
-        className="icon"
+        className="fill-secondary opacity-80 h-[0.825rem]"
       />
       <span
-        className="detail"
+        className="ml-1"
       >
         GitLab
       </span>
     </div>
     <div
-      className="detailsContainer"
+      className="flex items-center gap-[0.3125rem]"
     />
   </div>
   <p
-    className="description"
+    className="m-0"
   >
     This is a fake role, since GitLab always has remote.
   </p>
