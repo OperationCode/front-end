@@ -12,10 +12,7 @@ ScreenReaderOnly.propTypes = {
 
 function ScreenReaderOnly({ children }) {
   return (
-    <span
-      className="border-0 h-[1px] overflow-hidden -m-[1px] p-0 absolute w-[1px]"
-      data-testid={SCREEN_READER_ONLY}
-    >
+    <span className="sr-only" data-testid={SCREEN_READER_ONLY}>
       {children}
     </span>
   );

@@ -6,7 +6,7 @@ Array [
     Content never displayed, but it is rendered
   </span>,
   <span
-    className="border-0 h-[1px] overflow-hidden -m-[1px] p-0 absolute w-[1px]"
+    className="sr-only"
     data-testid="SCREEN_READER_ONLY"
   >
     ScreenReader content
