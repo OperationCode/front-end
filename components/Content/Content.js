@@ -2,7 +2,6 @@ import { cloneElement } from 'react';
 import { array, bool, oneOf, string } from 'prop-types';
 import Container from 'components/Container/Container';
 import Heading from 'components/Heading/Heading';
-import styles from './Content.module.css';
 
 Content.propTypes = {
   backgroundImageSource: string,
@@ -45,7 +44,7 @@ function Content({
     >
       {title && <Heading text={title} hasTitleUnderline={hasTitleUnderline} headingLevel={3} />}
 
-      <div className={styles.columnsContainer}>
+      <div className="flex justify-center items-center flex-wrap w-full [&>*]:m-4">
         {/* eslint-disable-next-line react/no-array-index-key */}
         {columns.map((column, index) => cloneElement(column, { key: index }))}
       </div>
