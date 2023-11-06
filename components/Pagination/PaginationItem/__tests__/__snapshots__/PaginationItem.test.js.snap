@@ -12,7 +12,7 @@ exports[`PaginationItem renders correctly as a current item with value 1`] = `
     onMouseEnter={[Function]}
   >
     <span
-      className="ScreenReaderOnly"
+      className="sr-only"
       data-testid="SCREEN_READER_ONLY"
     >
       Go to page
