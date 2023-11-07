@@ -3,7 +3,6 @@ import LeftAngleIcon from 'static/images/icons/FontAwesome/angle-left-solid.svg'
 import RightAngleIcon from 'static/images/icons/FontAwesome/angle-right-solid.svg';
 import { PREV_PAGE_BUTTON, NEXT_PAGE_BUTTON } from '../../common/constants/testIDs';
 import PaginationItem from './PaginationItem/PaginationItem';
-import styles from './Pagination.module.css';
 
 Pagination.propTypes = {
   currentPage: number.isRequired,
@@ -147,7 +146,12 @@ function Pagination({ currentPage, pathname, query, totalPages }) {
   }
 
   return (
-    <nav className={styles.Pagination} data-testid="Pagination">
+    <nav
+      className={
+        '[&>ol]:flex [&>ol]:my-0 [&>ol]:mx-auto [&>ol]:p-0 [&>ol]:justify-between [&>ol]:items-center [&>ol]:max-w-fit"'
+      }
+      data-testid="Pagination"
+    >
       <ol>
         {currentPage > 1 && (
           <PaginationItem
@@ -156,7 +160,7 @@ function Pagination({ currentPage, pathname, query, totalPages }) {
             query={query}
             testId={PREV_PAGE_BUTTON}
           >
-            <LeftAngleIcon className={styles.icon} />
+            <LeftAngleIcon className="w-full" />
           </PaginationItem>
         )}
 
@@ -174,7 +178,7 @@ function Pagination({ currentPage, pathname, query, totalPages }) {
             query={query}
             testId={NEXT_PAGE_BUTTON}
           >
-            <RightAngleIcon className={styles.icon} />
+            <RightAngleIcon className="w-full" />
           </PaginationItem>
         )}
       </ol>

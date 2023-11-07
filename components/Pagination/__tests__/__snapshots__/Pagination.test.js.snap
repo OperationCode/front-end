@@ -2,7 +2,7 @@
 
 exports[`Pagination should render with required props 1`] = `
 <nav
-  className="Pagination"
+  className="[&>ol]:flex [&>ol]:my-0 [&>ol]:mx-auto [&>ol]:p-0 [&>ol]:justify-between [&>ol]:items-center [&>ol]:max-w-fit\\""
   data-testid="Pagination"
 >
   <ol>
@@ -17,7 +17,7 @@ exports[`Pagination should render with required props 1`] = `
         onMouseEnter={[Function]}
       >
         <span
-          className="ScreenReaderOnly"
+          className="sr-only"
           data-testid="SCREEN_READER_ONLY"
         >
           Go to page
@@ -36,7 +36,7 @@ exports[`Pagination should render with required props 1`] = `
         onMouseEnter={[Function]}
       >
         <span
-          className="ScreenReaderOnly"
+          className="sr-only"
           data-testid="SCREEN_READER_ONLY"
         >
           Go to page
@@ -55,7 +55,7 @@ exports[`Pagination should render with required props 1`] = `
         onMouseEnter={[Function]}
       >
         <span
-          className="ScreenReaderOnly"
+          className="sr-only"
           data-testid="SCREEN_READER_ONLY"
         >
           Go to page
@@ -74,7 +74,7 @@ exports[`Pagination should render with required props 1`] = `
         onMouseEnter={[Function]}
       >
         <span
-          className="ScreenReaderOnly"
+          className="sr-only"
           data-testid="SCREEN_READER_ONLY"
         >
           Go to page
@@ -93,7 +93,7 @@ exports[`Pagination should render with required props 1`] = `
         onMouseEnter={[Function]}
       >
         <span
-          className="ScreenReaderOnly"
+          className="sr-only"
           data-testid="SCREEN_READER_ONLY"
         >
           Go to page
@@ -112,7 +112,7 @@ exports[`Pagination should render with required props 1`] = `
         onMouseEnter={[Function]}
       >
         <span
-          className="ScreenReaderOnly"
+          className="sr-only"
           data-testid="SCREEN_READER_ONLY"
         >
           Go to page
@@ -131,7 +131,7 @@ exports[`Pagination should render with required props 1`] = `
         onMouseEnter={[Function]}
       >
         <span
-          className="ScreenReaderOnly"
+          className="sr-only"
           data-testid="SCREEN_READER_ONLY"
         >
           Go to page
@@ -150,7 +150,7 @@ exports[`Pagination should render with required props 1`] = `
         onMouseEnter={[Function]}
       >
         <span
-          className="ScreenReaderOnly"
+          className="sr-only"
           data-testid="SCREEN_READER_ONLY"
         >
           Go to page
@@ -169,7 +169,7 @@ exports[`Pagination should render with required props 1`] = `
         onMouseEnter={[Function]}
       >
         <span
-          className="ScreenReaderOnly"
+          className="sr-only"
           data-testid="SCREEN_READER_ONLY"
         >
           Go to page
@@ -194,7 +194,7 @@ exports[`Pagination should render with required props 1`] = `
         onMouseEnter={[Function]}
       >
         <span
-          className="ScreenReaderOnly"
+          className="sr-only"
           data-testid="SCREEN_READER_ONLY"
         >
           Go to page
@@ -213,13 +213,13 @@ exports[`Pagination should render with required props 1`] = `
         onMouseEnter={[Function]}
       >
         <span
-          className="ScreenReaderOnly"
+          className="sr-only"
           data-testid="SCREEN_READER_ONLY"
         >
           Go to page
         </span>
         <svg
-          className="icon"
+          className="w-full"
         />
       </a>
     </li>
