@@ -147,7 +147,9 @@ function Pagination({ currentPage, pathname, query, totalPages }) {
 
   return (
     <nav
-      className={'[&>ol]:flex  my-0 mx-auto  p-0 justify-between items-center max-w-fit"'}
+      className={
+        '[&>ol]:flex [&>ol]:my-0 [&>ol]:mx-auto [&>ol]:p-0 [&>ol]:justify-between [&>ol]:items-center [&>ol]:max-w-fit"'
+      }
       data-testid="Pagination"
     >
       <ol>
