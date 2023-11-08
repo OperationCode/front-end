@@ -33,7 +33,7 @@ export default function PartnerLogoLink({ logoSource, name, url, size }) {
     <div className="text-center w-36">
       <OutboundLink href={url} analyticsEventLabel={`Partner Logo Click - ${name}`} hasIcon={false}>
         <Image
-          className="w-full grayscale h-full text-center filter opacity-60 transition-opacity duration-200 ease-linear hover:grayscale-0 hover:opacity-100 hover:transition-opacity hover:duration-200 hover:ease-linear"
+          className="w-full grayscale h-full text-center opacity-60 transition-all duration-200 ease-linear hover:grayscale-0 hover:opacity-100 hover:transition-all hover:duration-200 hover:ease-linear"
           src={logoSource}
           alt={`${name} logo`}
           {...sizeMappings[size]}
