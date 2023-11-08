@@ -1,7 +1,6 @@
 import { string, oneOf } from 'prop-types';
 import Image from 'next/image';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
-import styles from './PartnerLogoLink.module.css';
 
 PartnerLogoLink.propTypes = {
   logoSource: string.isRequired,
@@ -31,10 +30,10 @@ const sizeMappings = {
 
 export default function PartnerLogoLink({ logoSource, name, url, size }) {
   return (
-    <div className={styles.PartnerLogoLink}>
+    <div className="text-center w-36">
       <OutboundLink href={url} analyticsEventLabel={`Partner Logo Click - ${name}`} hasIcon={false}>
         <Image
-          className={styles.logo}
+          className="w-full grayscale h-full text-center filter opacity-60 transition-opacity duration-200 ease-linear hover:grayscale-0 hover:opacity-100 hover:transition-opacity hover:duration-200 hover:ease-linear"
           src={logoSource}
           alt={`${name} logo`}
           {...sizeMappings[size]}
