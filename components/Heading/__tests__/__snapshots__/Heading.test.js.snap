@@ -29,7 +29,7 @@ exports[`Heading should render with required props 1`] = `
         id="test-link"
       >
         <span
-          className="ScreenReaderOnly"
+          className="sr-only"
           data-testid="SCREEN_READER_ONLY"
         >
           Scroll Link for 

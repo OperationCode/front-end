@@ -29,7 +29,7 @@ exports[`Modal should render with many props assigned 1`] = `
       type="button"
     >
       <span
-        class="ScreenReaderOnly"
+        class="sr-only"
         data-testid="SCREEN_READER_ONLY"
       >
         Close

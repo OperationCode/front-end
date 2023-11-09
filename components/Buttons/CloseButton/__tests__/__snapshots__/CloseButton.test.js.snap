@@ -9,7 +9,7 @@ exports[`CloseButton should render with just required props passed 1`] = `
   type="button"
 >
   <span
-    className="ScreenReaderOnly"
+    className="sr-only"
     data-testid="SCREEN_READER_ONLY"
   >
     Close
