@@ -247,7 +247,7 @@ exports[`RegistrationForm should render with required props 1`] = `
           >
             Operation Code's Code of Conduct.
             <span
-              className="ScreenReaderOnly"
+              className="sr-only"
               data-testid="SCREEN_READER_ONLY"
             >
               Opens in new window
