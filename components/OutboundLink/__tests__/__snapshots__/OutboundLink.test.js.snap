@@ -10,7 +10,7 @@ exports[`OutboundLink should render with required props 1`] = `
 >
   Test
   <span
-    className="ScreenReaderOnly"
+    className="sr-only"
     data-testid="SCREEN_READER_ONLY"
   >
     Opens in new window
