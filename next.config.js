@@ -36,6 +36,8 @@ const nextConfig = {
       s3hostName,
       'user-images.githubusercontent.com',
       'ssl-static.libsyn.com',
+      'static.libsyn.com',
+      'libsyn.com',
       'i.ytimg.com',
     ],
   },

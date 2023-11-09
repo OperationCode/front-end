@@ -44,7 +44,7 @@ export async function getStaticProps() {
     return { props: { episodes }, revalidate: ONE_DAY };
   }
 
-  // Request failed or RSS Feed is broken
+  // Request failed or RSS Feed is broken... Break the build!
   throw new Error('getStaticProps in /podcast failed.');
 }
 
