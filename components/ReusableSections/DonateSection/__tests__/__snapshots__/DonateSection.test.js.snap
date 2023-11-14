@@ -19,7 +19,7 @@ exports[`DonateSection should render with no props passed passed 1`] = `
     Thank you for supporting our mission!
   </p>
   <LinkButton
-    className="topMargin"
+    className="mt-4"
     fullWidth={false}
     href="/donate"
     theme="primary"
