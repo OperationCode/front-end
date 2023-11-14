@@ -1,5 +1,4 @@
 import { number } from 'prop-types';
-import styles from './ProgressIndicator.module.css';
 
 export const developmentErrors = {
   currentStepTooLow: '"currentStep" cannot be negative',
@@ -31,7 +30,7 @@ export default function ProgressIndicator({ stepNumber, totalSteps }) {
   const percentageCompleted = (stepNumber / totalSteps) * 100;
 
   return (
-    <div className={styles.ProgressIndicator}>
+    <div className="flex flex-col my-6 mx-0 items-center">
       <label htmlFor="steps-indicator">
         {stepNumber}/{totalSteps} Complete
       </label>

@@ -24,7 +24,7 @@ exports[`JoinSection should render 1`] = `
             id="join-our-thriving-community-link"
           >
             <span
-              className="ScreenReaderOnly"
+              className="sr-only"
               data-testid="SCREEN_READER_ONLY"
             >
               Scroll Link for 
@@ -61,7 +61,7 @@ exports[`JoinSection should render 1`] = `
     >
       Never heard of Slack before?
       <span
-        className="ScreenReaderOnly"
+        className="sr-only"
         data-testid="SCREEN_READER_ONLY"
       >
         Opens in new window

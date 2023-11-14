@@ -15,7 +15,7 @@ exports[`FeaturedJobItem should render with many props assigned 1`] = `
       Experienced React Engineer
     </h6>
     <span
-      className="ScreenReaderOnly"
+      className="sr-only"
       data-testid="SCREEN_READER_ONLY"
     >
       Opens in new window
@@ -99,7 +99,7 @@ exports[`FeaturedJobItem should render with required props 1`] = `
       DevOps Engineer
     </h6>
     <span
-      className="ScreenReaderOnly"
+      className="sr-only"
       data-testid="SCREEN_READER_ONLY"
     >
       Opens in new window

@@ -13,7 +13,7 @@ exports[`UpdateProfileForm should render with required props 1`] = `
     Professional Details
   </h3>
   <div
-    className="ProgressIndicator"
+    className="flex flex-col my-6 mx-0 items-center"
   >
     <label
       htmlFor="steps-indicator"

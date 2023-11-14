@@ -2,7 +2,7 @@
 
 exports[`PartnerLogoLink should render with required props 1`] = `
 <div
-  className="PartnerLogoLink"
+  className="text-center w-36"
 >
   <a
     className="OutboundLink"
@@ -16,7 +16,7 @@ exports[`PartnerLogoLink should render with required props 1`] = `
       src="https://user-images.githubusercontent.com/logo"
     />
     <span
-      className="ScreenReaderOnly"
+      className="sr-only"
       data-testid="SCREEN_READER_ONLY"
     >
       Opens in new window

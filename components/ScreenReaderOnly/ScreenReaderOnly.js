@@ -1,6 +1,5 @@
 import { node } from 'prop-types';
 import { SCREEN_READER_ONLY } from 'common/constants/testIDs';
-import styles from './ScreenReaderOnly.module.css';
 
 export const toggleMessages = {
   open: 'Show more',
@@ -13,7 +12,7 @@ ScreenReaderOnly.propTypes = {
 
 function ScreenReaderOnly({ children }) {
   return (
-    <span className={styles.ScreenReaderOnly} data-testid={SCREEN_READER_ONLY}>
+    <span className="sr-only" data-testid={SCREEN_READER_ONLY}>
       {children}
     </span>
   );
