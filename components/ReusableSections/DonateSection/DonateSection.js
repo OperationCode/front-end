@@ -2,7 +2,6 @@ import { s3 } from 'common/constants/urls';
 import Container from 'components/Container/Container';
 import LinkButton from 'components/Buttons/LinkButton/LinkButton';
 import Heading from 'components/Heading/Heading';
-import styles from './DonateSection.module.css';
 
 function DonateSection() {
   return (
@@ -18,7 +17,7 @@ function DonateSection() {
 
       <p>Thank you for supporting our mission!</p>
 
-      <LinkButton href="/donate" theme="primary" className={styles.topMargin}>
+      <LinkButton href="/donate" theme="primary" className="mt-4">
         Donate Now
       </LinkButton>
     </Container>
