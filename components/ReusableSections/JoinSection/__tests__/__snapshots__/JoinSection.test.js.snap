@@ -42,7 +42,7 @@ exports[`JoinSection should render 1`] = `
       Are you ready to begin your journey towards a career in tech? Get the support you need by joining our members-only Slack community!
     </p>
     <a
-      className="Button verticalSpacing secondary"
+      className="Button mt-4 mb-4 secondary"
       href="/join"
       onClick={[Function]}
       onMouseEnter={[Function]}
