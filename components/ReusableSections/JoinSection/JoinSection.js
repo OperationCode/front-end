@@ -13,7 +13,7 @@ function JoinSection() {
         joining our members-only Slack community!
       </p>
 
-      <LinkButton href="/join" theme="secondary" className="mt-4 mb-4">
+      <LinkButton href="/join" theme="secondary" className="my-4">
         Register Now
       </LinkButton>
 
