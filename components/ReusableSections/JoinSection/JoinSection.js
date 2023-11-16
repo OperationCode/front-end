@@ -2,7 +2,6 @@ import Container from 'components/Container/Container';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 import LinkButton from 'components/Buttons/LinkButton/LinkButton';
 import Heading from 'components/Heading/Heading';
-import styles from './JoinSection.module.css';
 
 function JoinSection() {
   return (
@@ -14,7 +13,7 @@ function JoinSection() {
         joining our members-only Slack community!
       </p>
 
-      <LinkButton href="/join" theme="secondary" className={styles.verticalSpacing}>
+      <LinkButton href="/join" theme="secondary" className="my-4">
         Register Now
       </LinkButton>
 
