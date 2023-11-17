@@ -2,7 +2,7 @@
 
 exports[`OutboundLink should render with required props 1`] = `
 <a
-  className="OutboundLink"
+  className="inline-flex items-start"
   href="https://tests.com"
   onClick={[Function]}
   rel="noopener noreferrer"
@@ -16,7 +16,7 @@ exports[`OutboundLink should render with required props 1`] = `
     Opens in new window
   </span>
   <svg
-    className="externalLinkIcon"
+    className="fill-current relative my-0 mx-1 bottom-0 w-3"
   />
 </a>
 `;
