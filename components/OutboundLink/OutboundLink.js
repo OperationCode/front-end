@@ -47,7 +47,7 @@ function OutboundLink({
 
       <ScreenReaderOnly>Opens in new window</ScreenReaderOnly>
 
-      {hasIcon && <ExternalLinkIcon className="fill-current relative my-0 mx-1 bottom-0 w-3" />}
+      {hasIcon && <ExternalLinkIcon className="!fill-current relative my-0 mx-1 bottom-0 w-3" />}
     </a>
   );
 }

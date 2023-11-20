@@ -67,7 +67,7 @@ exports[`JoinSection should render 1`] = `
         Opens in new window
       </span>
       <svg
-        className="fill-current relative my-0 mx-1 bottom-0 w-3"
+        className="!fill-current relative my-0 mx-1 bottom-0 w-3"
       />
     </a>
   </div>
