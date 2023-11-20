@@ -53,7 +53,7 @@ exports[`JoinSection should render 1`] = `
       Slack is a community based collaboration tool where all the magic happens!
     </p>
     <a
-      className="OutboundLink"
+      className="inline-flex items-start"
       href="https://get.slack.help/hc/en-us/categories/360000049043-Getting-Started"
       onClick={[Function]}
       rel="noopener noreferrer"
@@ -67,7 +67,7 @@ exports[`JoinSection should render 1`] = `
         Opens in new window
       </span>
       <svg
-        className="externalLinkIcon"
+        className="!fill-current relative my-0 mx-1 bottom-0 w-3"
       />
     </a>
   </div>
