@@ -5,7 +5,7 @@ exports[`SocialMediaItem should render with required props 1`] = `
   className="my-0 mx-2 opacity-80 hover:opacity-100"
 >
   <a
-    className="OutboundLink"
+    className="inline-flex items-start"
     href="https://facebook.com"
     onClick={[Function]}
     rel="noopener noreferrer"

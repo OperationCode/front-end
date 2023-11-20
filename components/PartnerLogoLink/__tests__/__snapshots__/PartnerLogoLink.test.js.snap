@@ -5,7 +5,7 @@ exports[`PartnerLogoLink should render with required props 1`] = `
   className="text-center w-36"
 >
   <a
-    className="OutboundLink"
+    className="inline-flex items-start"
     href="https://user-images.githubusercontent.com"
     onClick={[Function]}
     rel="noopener noreferrer"
