@@ -67,7 +67,7 @@ function ChangePasswordForm({ onSubmit, onSuccess, initialValues }) {
     >
       {({ isSubmitting }) => (
         <Form className="w-full">
-          <div className="flex  flex-col items-center">
+          <div className="flex flex-col items-center">
             <Field
               type="password"
               name="newPassword1"
