@@ -11,7 +11,6 @@ import { validationErrorMessages } from 'common/constants/messages';
 import { getServerErrorMessage } from 'common/utils/api-utils';
 import { minimumPasswordLength } from 'common/constants/validations';
 import { hasRequiredCharacters } from 'common/utils/validator-utils';
-import styles from './ChangePasswordForm.module.css';
 
 const defaultValues = {
   newPassword1: '',
@@ -67,8 +66,8 @@ function ChangePasswordForm({ onSubmit, onSuccess, initialValues }) {
       validationSchema={passwordResetSubmitSchema}
     >
       {({ isSubmitting }) => (
-        <Form className={styles.PasswordResetSubmitForm}>
-          <div className={styles.row}>
+        <Form className="w-full">
+          <div className="flex flex-col items-center">
             <Field
               type="password"
               name="newPassword1"
@@ -93,12 +92,7 @@ function ChangePasswordForm({ onSubmit, onSuccess, initialValues }) {
               </Alert>
             )}
 
-            <Button
-              className={styles.topMargin}
-              type="submit"
-              theme="secondary"
-              disabled={isSubmitting}
-            >
+            <Button className="mt-4" type="submit" theme="secondary" disabled={isSubmitting}>
               Submit
             </Button>
           </div>
