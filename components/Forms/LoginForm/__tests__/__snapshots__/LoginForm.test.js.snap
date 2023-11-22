@@ -2,14 +2,14 @@
 
 exports[`LoginForm should render with required props 1`] = `
 <form
-  className="LoginForm"
+  className="w-full"
   data-testid="LOGIN_FORM"
   noValidate={true}
   onReset={[Function]}
   onSubmit={[Function]}
 >
   <div
-    className="row"
+    className="flex flex-col items-center"
   >
     <div
       className="field"
@@ -68,7 +68,7 @@ exports[`LoginForm should render with required props 1`] = `
       </div>
     </div>
     <button
-      className="Button topMargin secondary"
+      className="Button mt-4 secondary"
       data-testid="LOGIN_BUTTON"
       disabled={false}
       onClick={[Function]}
