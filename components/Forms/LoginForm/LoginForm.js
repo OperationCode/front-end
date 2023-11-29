@@ -9,7 +9,6 @@ import Button from 'components/Buttons/Button/Button';
 import Form from 'components/Form/Form';
 import Input from 'components/Form/Input/Input';
 import Alert from 'components/Alert/Alert';
-import styles from './LoginForm.module.css';
 
 const defaultValues = {
   email: '',
@@ -64,8 +63,8 @@ function LoginForm({ initialValues, login, onSuccess, buttonTheme }) {
   return (
     <Formik initialValues={initialValues} onSubmit={handleSubmit} validationSchema={loginSchema}>
       {({ isSubmitting }) => (
-        <Form className={styles.LoginForm} data-testid={LOGIN_FORM}>
-          <div className={styles.row}>
+        <Form className="w-full" data-testid={LOGIN_FORM}>
+          <div className="flex flex-col items-center">
             <Field
               type="email"
               name="email"
@@ -87,7 +86,7 @@ function LoginForm({ initialValues, login, onSuccess, buttonTheme }) {
             {errorMessage && <Alert type="error">{errorMessage}</Alert>}
 
             <Button
-              className={styles.topMargin}
+              className="mt-4"
               type="submit"
               theme={buttonTheme}
               disabled={isSubmitting}
