@@ -8,7 +8,6 @@ import Input from 'components/Form/Input/Input';
 import Alert from 'components/Alert/Alert';
 import { validationErrorMessages } from 'common/constants/messages';
 import { getServerErrorMessage } from 'common/utils/api-utils';
-import styles from './PasswordResetForm.module.css';
 
 const defaultValues = { email: '' };
 
@@ -54,8 +53,8 @@ function PasswordResetForm({ initialValues, onSuccess, passwordReset }) {
       validationSchema={passwordResetSchema}
     >
       {({ isSubmitting }) => (
-        <Form className={styles.PasswordResetForm}>
-          <div className={styles.row}>
+        <Form className="w-full">
+          <div className="flex flex-wrap justify-center">
             <Field
               type="email"
               name="email"
@@ -66,17 +65,12 @@ function PasswordResetForm({ initialValues, onSuccess, passwordReset }) {
             />
           </div>
 
-          <div className={styles.row}>
+          <div className="flex flex-wrap justify-center">
             {errorMessage && <Alert type="error">{errorMessage}</Alert>}
           </div>
 
-          <div className={styles.row}>
-            <Button
-              className={styles.topMargin}
-              type="submit"
-              theme="secondary"
-              disabled={isSubmitting}
-            >
+          <div className="flex flex-wrap justify-center">
+            <Button className="mt-4" type="submit" theme="secondary" disabled={isSubmitting}>
               Submit
             </Button>
           </div>
