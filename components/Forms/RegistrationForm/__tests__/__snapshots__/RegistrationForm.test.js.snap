@@ -2,7 +2,7 @@
 
 exports[`RegistrationForm should render with required props 1`] = `
 <form
-  className="RegistrationForm"
+  className="w-full flex items-center flex-col [&>p]:my-5 [&>p]:mx-auto"
   noValidate={true}
   onReset={[Function]}
   onSubmit={[Function]}
@@ -19,7 +19,7 @@ exports[`RegistrationForm should render with required props 1`] = `
     </a>
   </p>
   <div
-    className="formContainer"
+    className="flex flex-col justify-between max-w-lg w-full"
   >
     <div
       className="field"
@@ -78,7 +78,7 @@ exports[`RegistrationForm should render with required props 1`] = `
       </div>
     </div>
     <div
-      className="invisible field"
+      className="hidden field"
       data-testid="INPUT"
     >
       <label
@@ -106,7 +106,7 @@ exports[`RegistrationForm should render with required props 1`] = `
       </div>
     </div>
     <div
-      className="invisible field"
+      className="hidden field"
       data-testid="INPUT"
     >
       <label
@@ -259,24 +259,24 @@ exports[`RegistrationForm should render with required props 1`] = `
     </div>
   </div>
   <hr
-    className="seperator"
+    className="my-8 mx-0"
   />
   <p
-    className="aside"
+    className="bg-white border-1 border-solid border-secondary rounded-md text-sm py-2 px-3"
   >
     The demographic information you provide, helps us understand our community needs, ensure diversity, and provide specific resources to reach our mission. Thank you in advance for providing honest answers.
     <br />
     <span
-      className="bold"
+      className="font-bold"
     >
       We do not sell your information to anyone.
     </span>
   </p>
   <hr
-    className="seperator"
+    className="my-8 mx-0"
   />
   <button
-    className="Button topMargin secondary"
+    className="Button mt-4 secondary"
     data-testid="BUTTON"
     disabled={false}
     onClick={[Function]}
