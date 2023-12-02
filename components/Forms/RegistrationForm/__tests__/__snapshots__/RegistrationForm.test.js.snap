@@ -259,7 +259,7 @@ exports[`RegistrationForm should render with required props 1`] = `
     </div>
   </div>
   <hr
-    className="my-8 mx-0"
+    className="my-8 mx-0 w-1/4"
   />
   <p
     className="bg-white border-1 border-solid border-secondary rounded-md text-sm py-2 px-3"
