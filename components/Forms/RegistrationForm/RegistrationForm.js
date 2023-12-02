@@ -224,7 +224,7 @@ function RegistrationForm({ initialValues, onSubmit, onSuccess }) {
             <span className="font-bold">We do not sell your information to anyone.</span>
           </p>
 
-          <hr className="my-8 mx-0" />
+          <hr className="my-8 mx-0 w-1/4" />
 
           <Button className="mt-4" type="submit" theme="secondary" disabled={isSubmitting}>
             Submit

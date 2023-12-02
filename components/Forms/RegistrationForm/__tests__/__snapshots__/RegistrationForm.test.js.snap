@@ -273,7 +273,7 @@ exports[`RegistrationForm should render with required props 1`] = `
     </span>
   </p>
   <hr
-    className="my-8 mx-0"
+    className="my-8 mx-0 w-1/4"
   />
   <button
     className="Button mt-4 secondary"
