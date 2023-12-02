@@ -15,7 +15,6 @@ import Input from 'components/Form/Input/Input';
 import Alert from 'components/Alert/Alert';
 import Link from 'next/link';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
-import styles from './RegistrationForm.module.css';
 
 export const PASSWORD_FOR_EVERYBODY = 'nOnEeDfOrP@ssw0rd!';
 
@@ -115,7 +114,7 @@ function RegistrationForm({ initialValues, onSubmit, onSuccess }) {
       validationSchema={registrationSchema}
     >
       {({ isSubmitting }) => (
-        <Form className={styles.RegistrationForm}>
+        <Form className="w-full flex items-center flex-col [&>p]:my-5 [&>p]:mx-auto">
           <p>
             We work closely with military veterans, service members, and spouses who are passionate
             about transitioning into the tech industry. We work with over 7,000 members who are all
@@ -126,7 +125,7 @@ function RegistrationForm({ initialValues, onSubmit, onSuccess }) {
             </Link>
           </p>
 
-          <div className={styles.formContainer}>
+          <div className="flex flex-col justify-between max-w-lg w-full">
             <Field
               type="email"
               name="email"
@@ -146,7 +145,7 @@ function RegistrationForm({ initialValues, onSubmit, onSuccess }) {
             />
 
             <Field
-              className={styles.invisible}
+              className="hidden"
               type="password"
               name="password"
               label="Password*"
@@ -156,7 +155,7 @@ function RegistrationForm({ initialValues, onSubmit, onSuccess }) {
             />
 
             <Field
-              className={styles.invisible}
+              className="hidden"
               type="password"
               name="confirm-password"
               label="Confirm Password*"
@@ -215,24 +214,19 @@ function RegistrationForm({ initialValues, onSubmit, onSuccess }) {
 
           {errorMessage && <Alert type="error">{errorMessage}</Alert>}
 
-          <hr className={styles.seperator} />
+          <hr className="my-8 mx-0 w-1/4" />
 
-          <p className={styles.aside}>
+          <p className="bg-white border-1 border-solid border-secondary rounded-md text-sm py-2 px-3">
             The demographic information you provide, helps us understand our community needs, ensure
             diversity, and provide specific resources to reach our mission. Thank you in advance for
             providing honest answers.
             <br />
-            <span className={styles.bold}>We do not sell your information to anyone.</span>
+            <span className="font-bold">We do not sell your information to anyone.</span>
           </p>
 
-          <hr className={styles.seperator} />
+          <hr className="my-8 mx-0 w-1/4" />
 
-          <Button
-            className={styles.topMargin}
-            type="submit"
-            theme="secondary"
-            disabled={isSubmitting}
-          >
+          <Button className="mt-4" type="submit" theme="secondary" disabled={isSubmitting}>
             Submit
           </Button>
         </Form>
