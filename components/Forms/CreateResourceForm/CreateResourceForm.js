@@ -92,7 +92,7 @@ function CreateResourceForm({
       validationSchema={validationSchema}
     >
       {({ isSubmitting }) => (
-        <Form className="flex flex-col w-full [&>*]:my-4 [&>*]:mx-0">
+        <Form className="flex flex-col w-full [&>*]:my-4 [&>*]:mx-0 max-w-girderWidth">
           <Field
             type="text"
             name="name"
