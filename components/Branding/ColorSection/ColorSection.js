@@ -1,7 +1,6 @@
 import { brandColorsObject } from 'common/styles/styleExports';
 import Swatch from 'components/Branding/Swatch/Swatch';
 import Content from 'components/Content/Content';
-import styles from './ColorSection.module.css';
 
 function ColorSection() {
   const primaryColor = { name: 'Primary', hexCode: brandColorsObject.primary };
@@ -23,11 +22,11 @@ function ColorSection() {
         theme="white"
         columns={[
           <div>
-            <h3 className={styles.centeredText}>Primary</h3>
+            <h3 className="text-center">Primary</h3>
             <Swatch colorName={primaryColor.name} hexCode={primaryColor.hexCode} />
           </div>,
           <div>
-            <h3 className={styles.centeredText}>Secondary</h3>
+            <h3 className="text-center">Secondary</h3>
             <Swatch colorName={secondaryColor.name} hexCode={secondaryColor.hexCode} />
           </div>,
         ]}
