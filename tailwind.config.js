@@ -24,6 +24,9 @@ module.exports = {
         secondary: '#252e3e',
       },
     },
+    maxWidth: {
+      girderWidth: '700px',
+    },
   },
   plugins: [
     plugin(({ matchUtilities, theme }) => {

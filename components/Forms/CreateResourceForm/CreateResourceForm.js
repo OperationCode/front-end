@@ -12,7 +12,6 @@ import Button from 'components/Buttons/Button/Button';
 import Form from 'components/Form/Form';
 import Input from 'components/Form/Input/Input';
 import Select from 'components/Form/Select/Select';
-import styles from './CreateResourceForm.module.css';
 
 // This exists only because we don't have a radio component and I wanna get this done quickly!
 // TODO: Make radio input component
@@ -93,7 +92,7 @@ function CreateResourceForm({
       validationSchema={validationSchema}
     >
       {({ isSubmitting }) => (
-        <Form className={styles.CreateResourceForm}>
+        <Form className="flex flex-col w-full [&>*]:my-4 [&>*]:mx-0 max-w-girderWidth">
           <Field
             type="text"
             name="name"
@@ -156,7 +155,7 @@ function CreateResourceForm({
           />
 
           <Button
-            className={styles.submitButton}
+            className="justify-self-end mt-8"
             type="submit"
             theme="secondary"
             disabled={isSubmitting}
