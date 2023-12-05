@@ -8,7 +8,7 @@ exports[`ColorSection should render with required props 1`] = `
       Array [
         <div>
           <h3
-            className="centeredText"
+            className="text-center"
           >
             Primary
           </h3>
@@ -19,7 +19,7 @@ exports[`ColorSection should render with required props 1`] = `
         </div>,
         <div>
           <h3
-            className="centeredText"
+            className="text-center"
           >
             Secondary
           </h3>
