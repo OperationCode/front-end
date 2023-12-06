@@ -6,7 +6,7 @@ exports[`FontSection should render with required props 1`] = `
   columns={
     Array [
       <ul
-        className="fontsList"
+        className="list-none w-full [&>li]:m-4"
       >
         <li>
           <div>
