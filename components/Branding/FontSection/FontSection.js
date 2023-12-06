@@ -1,6 +1,5 @@
 import Content from 'components/Content/Content';
 import { fontsObject } from 'common/styles/styleExports';
-import styles from './FontSection.module.css';
 
 function FontSection() {
   // Every letter of the alphabet in one string
@@ -12,7 +11,7 @@ function FontSection() {
       theme="gray"
       hasTitleUnderline
       columns={[
-        <ul className={styles.fontsList}>
+        <ul className="list-none w-full [&>li]:m-4">
           {Object.keys(fontsObject).map(item => {
             const fontStyle = {
               fontFamily: fontsObject[item],

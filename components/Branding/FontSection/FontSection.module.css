@@ -1,12 +1,3 @@
-.fontsList {
-  list-style: none;
-  width: 100%;
-}
-
-.fontsList > li {
-  margin: 1rem;
-}
-
 .primaryFontFamily div > h6,
 .primaryFontFamily div > p {
   font-family: var(--primaryFontFamily), sans-serif;
