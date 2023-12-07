@@ -18,7 +18,7 @@ function FontSection() {
             };
             return (
               <li key={item}>
-                <div>
+                <div className="[&>p]:font-serif [&>h6]:font-serif">
                   <h6 style={fontStyle}>{fontsObject[item]}</h6>
                   <p style={fontStyle}>{demoText}</p>
                 </div>

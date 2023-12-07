@@ -1,9 +1,0 @@
-.primaryFontFamily div > h6,
-.primaryFontFamily div > p {
-  font-family: var(--primaryFontFamily), sans-serif;
-}
-
-.secondaryFontFamily div > h6,
-.secondaryFontFamily div > p {
-  font-family: var(--secondaryFontFamily), serif;
-}
