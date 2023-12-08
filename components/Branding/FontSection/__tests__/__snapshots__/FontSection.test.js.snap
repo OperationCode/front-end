@@ -34,7 +34,7 @@ exports[`FontSection should render with required props 1`] = `
         </li>
         <li>
           <div
-            className="[&>p]:font-serif [&>h6]:font-serif"
+            className="[&>p]:font-sans [&>h6]:font-sans"
           >
             <h6
               style={

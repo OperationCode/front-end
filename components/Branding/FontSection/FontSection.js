@@ -18,7 +18,13 @@ function FontSection() {
             };
             return (
               <li key={item}>
-                <div className="[&>p]:font-serif [&>h6]:font-serif">
+                <div
+                  className={
+                    fontsObject[item] === 'DIN Condensed Bold'
+                      ? '[&>p]:font-serif [&>h6]:font-serif'
+                      : '[&>p]:font-sans [&>h6]:font-sans'
+                  }
+                >
                   <h6 style={fontStyle}>{fontsObject[item]}</h6>
                   <p style={fontStyle}>{demoText}</p>
                 </div>
