@@ -29,7 +29,7 @@ module.exports = {
     },
     fontFamily: {
       primaryFontFamily: '"DIN Condensed Bold"',
-      secondaryFontFamily: 'Encode Sans',
+      secondaryFontFamily: '"Encode Sans"',
     },
   },
   plugins: [
