@@ -27,6 +27,10 @@ module.exports = {
     maxWidth: {
       girderWidth: '700px',
     },
+    fontFamily: {
+      primaryFontFamily: '"DIN Condensed Bold"',
+      secondaryFontFamily: 'Encode Sans',
+    },
   },
   plugins: [
     plugin(({ matchUtilities, theme }) => {
