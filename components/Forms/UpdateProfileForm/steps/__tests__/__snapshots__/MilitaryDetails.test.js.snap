@@ -13,7 +13,7 @@ exports[`UpdateProfileForm/Steps/MilitaryDetails should render in context of For
       className="field"
     >
       <label
-        className="Label"
+        className="text-rgbValuesSecondary text-sm"
         data-testid="LABEL"
         htmlFor="branchOfService"
       >
@@ -141,7 +141,7 @@ exports[`UpdateProfileForm/Steps/MilitaryDetails should render in context of For
       data-testid="INPUT"
     >
       <label
-        className="Label"
+        className="text-rgbValuesSecondary text-sm"
         data-testid="LABEL"
         htmlFor="yearsOfService"
       >
@@ -170,7 +170,7 @@ exports[`UpdateProfileForm/Steps/MilitaryDetails should render in context of For
       data-testid="INPUT"
     >
       <label
-        className="Label"
+        className="text-rgbValuesSecondary text-sm"
         data-testid="LABEL"
         htmlFor="payGrade"
       >

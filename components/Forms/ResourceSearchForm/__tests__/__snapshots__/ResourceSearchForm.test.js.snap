@@ -12,7 +12,7 @@ exports[`ResourceSearchForm should render with required props 1`] = `
     data-testid="INPUT"
   >
     <label
-      className="Label"
+      className="text-rgbValuesSecondary text-sm"
       data-testid="LABEL"
       htmlFor="q"
     >
@@ -45,7 +45,7 @@ exports[`ResourceSearchForm should render with required props 1`] = `
         className="field"
       >
         <label
-          className="Label"
+          className="text-rgbValuesSecondary text-sm"
           data-testid="LABEL"
           htmlFor="category"
         >
@@ -176,7 +176,7 @@ exports[`ResourceSearchForm should render with required props 1`] = `
         className="field"
       >
         <label
-          className="Label"
+          className="text-rgbValuesSecondary text-sm"
           data-testid="LABEL"
           htmlFor="free"
         >
@@ -307,7 +307,7 @@ exports[`ResourceSearchForm should render with required props 1`] = `
         className="field"
       >
         <label
-          className="Label"
+          className="text-rgbValuesSecondary text-sm"
           data-testid="LABEL"
           htmlFor="languages"
         >

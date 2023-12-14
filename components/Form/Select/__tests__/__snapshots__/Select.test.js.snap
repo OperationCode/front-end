@@ -5,7 +5,7 @@ exports[`Select should render with required props 1`] = `
   className="field"
 >
   <label
-    className="Label"
+    className="text-rgbValuesSecondary text-sm"
     data-testid="LABEL"
     htmlFor="someSelectName"
   >

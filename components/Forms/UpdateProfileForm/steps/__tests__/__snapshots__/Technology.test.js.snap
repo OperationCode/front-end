@@ -13,7 +13,7 @@ exports[`UpdateProfileForm/Steps/Technology should render in context of Formik 1
       className="field"
     >
       <label
-        className="Label"
+        className="text-rgbValuesSecondary text-sm"
         data-testid="LABEL"
         htmlFor="programmingLanguages"
       >
@@ -145,7 +145,7 @@ exports[`UpdateProfileForm/Steps/Technology should render in context of Formik 1
       className="field"
     >
       <label
-        className="Label"
+        className="text-rgbValuesSecondary text-sm"
         data-testid="LABEL"
         htmlFor="disciplines"
       >

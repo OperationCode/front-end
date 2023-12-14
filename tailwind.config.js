@@ -22,6 +22,7 @@ module.exports = {
         themeGray: '#121212',
         primary: '#3ed6f0',
         secondary: '#252e3e',
+        rgbValuesSecondary: 'rbg(37, 46, 62, 0.75)',
       },
     },
     maxWidth: {

@@ -16,7 +16,7 @@ exports[`LoginForm should render with required props 1`] = `
       data-testid="INPUT"
     >
       <label
-        className="Label"
+        className="text-rgbValuesSecondary text-sm"
         data-testid="LABEL"
         htmlFor="email"
       >
@@ -44,7 +44,7 @@ exports[`LoginForm should render with required props 1`] = `
       data-testid="INPUT"
     >
       <label
-        className="Label"
+        className="text-rgbValuesSecondary text-sm"
         data-testid="LABEL"
         htmlFor="password"
       >

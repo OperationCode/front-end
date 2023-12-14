@@ -2,7 +2,6 @@ import { node, string, bool } from 'prop-types';
 import classNames from 'classnames';
 import { LABEL } from 'common/constants/testIDs';
 import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
-import styles from './Label.module.css';
 
 Label.propTypes = {
   children: node.isRequired,
@@ -24,7 +23,7 @@ function Label({ children, className, 'data-testid': testID, isHidden, ...props 
       // for isnt destructured because it's a reserved word in JavaScript
       // eslint-disable-next-line react/destructuring-assignment
       htmlFor={props.for}
-      className={classNames(styles.Label, className)}
+      className={classNames('text-rgbValuesSecondary text-sm', className)}
       data-testid={testID}
     >
       {children}
