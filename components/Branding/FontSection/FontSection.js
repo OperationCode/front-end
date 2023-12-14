@@ -1,6 +1,5 @@
 import Content from 'components/Content/Content';
 import { fontsObject } from 'common/styles/styleExports';
-import styles from './FontSection.module.css';
 
 function FontSection() {
   // Every letter of the alphabet in one string
@@ -12,14 +11,20 @@ function FontSection() {
       theme="gray"
       hasTitleUnderline
       columns={[
-        <ul className={styles.fontsList}>
+        <ul className="list-none w-full [&>li]:m-4">
           {Object.keys(fontsObject).map(item => {
             const fontStyle = {
               fontFamily: fontsObject[item],
             };
             return (
               <li key={item}>
-                <div>
+                <div
+                  className={
+                    fontsObject[item] === 'DIN Condensed Bold'
+                      ? '[&>p]:font-serif [&>h6]:font-serif [&>p]:font-primaryFontFamily [&>h6]:font-primaryFontFamily'
+                      : '[&>p]:font-sans [&>p]:font-secondaryFontFamily [&>h6]:font-sans [&>h6]:font-secondaryFontFamily'
+                  }
+                >
                   <h6 style={fontStyle}>{fontsObject[item]}</h6>
                   <p style={fontStyle}>{demoText}</p>
                 </div>
