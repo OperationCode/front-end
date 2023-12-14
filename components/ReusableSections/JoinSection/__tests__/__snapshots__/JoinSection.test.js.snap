@@ -2,11 +2,11 @@
 
 exports[`JoinSection should render 1`] = `
 <div
-  className="Container white"
+  className="bg-center bg-no-repeat bg-cover flex items-center justify-center min-h-[250px] w-full fill-current bg-white text-secondary"
   data-testid="Join Section"
 >
   <div
-    className="content"
+    className="flex flex-col items-center justify-center my-14 mx-auto w-full max-w-[1400px] sm:w-[85%]"
   >
     <div
       className="headingContainer"

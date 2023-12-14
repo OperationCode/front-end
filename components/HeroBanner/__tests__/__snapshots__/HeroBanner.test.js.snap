@@ -2,7 +2,7 @@
 
 exports[`HeroBanner should render with many props assigned 1`] = `
 <div
-  className="test pt-20 min-h-[60vh] text-shadow-[0_0_15px_#111111] Container secondary fullViewportHeight"
+  className="test pt-20 min-h-[60vh] text-shadow-[0_0_15px_#111111] bg-center bg-no-repeat bg-cover flex items-center justify-center min-h-[250px] w-full fill-current bg-secondary text-white [& svg]:fill-white min-h-screen"
   style={
     Object {
       "backgroundImage": "linear-gradient(rgba(33, 48, 69, 0.65),rgba(33, 48, 69, 0.65)), url(https://operation-code-assets.s3.us-east-2.amazonaws.com/heroBanner/stock_family-2.jpg)",
@@ -10,7 +10,7 @@ exports[`HeroBanner should render with many props assigned 1`] = `
   }
 >
   <div
-    className="content"
+    className="flex flex-col items-center justify-center my-14 mx-auto w-full max-w-[1400px] sm:w-[85%]"
   >
     <h1
       className="border-b-4 border-b-primary text-center mb-4"
@@ -25,10 +25,10 @@ exports[`HeroBanner should render with many props assigned 1`] = `
 
 exports[`HeroBanner should render with required props 1`] = `
 <div
-  className="pt-20 min-h-[60vh] text-shadow-[0_0_15px_#111111] min-h-[35vh] Container secondary"
+  className="pt-20 min-h-[60vh] text-shadow-[0_0_15px_#111111] min-h-[35vh] bg-center bg-no-repeat bg-cover flex items-center justify-center min-h-[250px] w-full fill-current bg-secondary text-white [& svg]:fill-white"
 >
   <div
-    className="content"
+    className="flex flex-col items-center justify-center my-14 mx-auto w-full max-w-[1400px] sm:w-[85%]"
   >
     <h1
       className=""

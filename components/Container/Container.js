@@ -1,7 +1,6 @@
 import { bool, node, number, oneOf, oneOfType, string } from 'prop-types';
 import classNames from 'classnames';
 import { getDataAttributes } from 'common/utils/prop-utils';
-import styles from './Container.module.css';
 
 Container.propTypes = {
   backgroundImageSource: string,
@@ -42,14 +41,23 @@ function Container({
 
   return (
     <div
-      className={classNames(className, styles.Container, styles[theme], {
-        [styles.fullViewportHeight]: isFullViewportHeight,
-      })}
+      className={classNames(
+        className,
+        'bg-center bg-no-repeat bg-cover flex items-center justify-center min-h-[250px] w-full fill-current',
+        theme === 'secondary' && 'bg-secondary text-white [& svg]:fill-white',
+        theme === 'gray' && 'bg-gray text-secondary',
+        theme === 'white' && 'bg-white text-secondary',
+        {
+          'min-h-screen': isFullViewportHeight,
+        },
+      )}
       id={id}
       style={dynamicBackgroundImage}
       {...customDataAttributes}
     >
-      <div className={styles.content}>{children}</div>
+      <div className="flex flex-col items-center justify-center my-14 mx-auto w-full max-w-[1400px] sm:w-[85%]">
+        {children}
+      </div>
     </div>
   );
 }
