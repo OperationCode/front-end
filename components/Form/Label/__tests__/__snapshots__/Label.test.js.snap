@@ -2,7 +2,7 @@
 
 exports[`Label should render with required props 1`] = `
 <label
-  className="text-rgbValuesSecondary text-sm"
+  className="text-secondary text-sm"
   data-testid="LABEL"
   htmlFor="someInputName"
 >

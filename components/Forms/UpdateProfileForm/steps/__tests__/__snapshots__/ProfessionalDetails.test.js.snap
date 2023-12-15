@@ -13,7 +13,7 @@ exports[`UpdateProfileForm/Steps/ProfessionalDetails should render in context of
       className="field"
     >
       <label
-        className="text-rgbValuesSecondary text-sm"
+        className="text-secondary text-sm"
         data-testid="LABEL"
         htmlFor="employmentStatus"
       >
@@ -141,7 +141,7 @@ exports[`UpdateProfileForm/Steps/ProfessionalDetails should render in context of
       data-testid="INPUT"
     >
       <label
-        className="text-rgbValuesSecondary text-sm"
+        className="text-secondary text-sm"
         data-testid="LABEL"
         htmlFor="companyName"
       >
@@ -168,7 +168,7 @@ exports[`UpdateProfileForm/Steps/ProfessionalDetails should render in context of
       data-testid="INPUT"
     >
       <label
-        className="text-rgbValuesSecondary text-sm"
+        className="text-secondary text-sm"
         data-testid="LABEL"
         htmlFor="companyRole"
       >
