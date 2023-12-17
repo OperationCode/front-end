@@ -23,13 +23,13 @@ module.exports = {
         primary: '#3ed6f0',
         secondary: 'rbg(37, 46, 62, 0.75)',
       },
-    },
-    maxWidth: {
-      girderWidth: '700px',
-    },
-    fontFamily: {
-      primaryFontFamily: '"DIN Condensed Bold"',
-      secondaryFontFamily: '"Encode Sans"',
+      maxWidth: {
+        girderWidth: '700px',
+      },
+      fontFamily: {
+        primaryFontFamily: '"DIN Condensed Bold"',
+        secondaryFontFamily: '"Encode Sans"',
+      },
     },
   },
   plugins: [

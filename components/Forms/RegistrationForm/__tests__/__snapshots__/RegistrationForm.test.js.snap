@@ -19,7 +19,7 @@ exports[`RegistrationForm should render with required props 1`] = `
     </a>
   </p>
   <div
-    className="flex flex-col justify-between max-w-lg w-full"
+    className="flex flex-col justify-between w-full max-w-lg"
   >
     <div
       className="field"
@@ -259,7 +259,7 @@ exports[`RegistrationForm should render with required props 1`] = `
     </div>
   </div>
   <hr
-    className="my-8 mx-0 w-1/4"
+    className="my-8 mx-0 w-1/4 border-themeGray"
   />
   <p
     className="bg-white border-1 border-solid border-secondary rounded-md text-sm py-2 px-3"
@@ -273,7 +273,7 @@ exports[`RegistrationForm should render with required props 1`] = `
     </span>
   </p>
   <hr
-    className="my-8 mx-0 w-1/4"
+    className="my-8 mx-0 w-1/4 border-themeGray"
   />
   <button
     className="Button mt-4 secondary"

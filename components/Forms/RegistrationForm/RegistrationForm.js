@@ -125,7 +125,7 @@ function RegistrationForm({ initialValues, onSubmit, onSuccess }) {
             </Link>
           </p>
 
-          <div className="flex flex-col justify-between max-w-lg w-full">
+          <div className="flex flex-col justify-between w-full max-w-lg">
             <Field
               type="email"
               name="email"
@@ -214,7 +214,7 @@ function RegistrationForm({ initialValues, onSubmit, onSuccess }) {
 
           {errorMessage && <Alert type="error">{errorMessage}</Alert>}
 
-          <hr className="my-8 mx-0 w-1/4" />
+          <hr className="my-8 mx-0 w-1/4 border-themeGray" />
 
           <p className="bg-white border-1 border-solid border-secondary rounded-md text-sm py-2 px-3">
             The demographic information you provide, helps us understand our community needs, ensure
@@ -224,7 +224,7 @@ function RegistrationForm({ initialValues, onSubmit, onSuccess }) {
             <span className="font-bold">We do not sell your information to anyone.</span>
           </p>
 
-          <hr className="my-8 mx-0 w-1/4" />
+          <hr className="my-8 mx-0 w-1/4 border-themeGray" />
 
           <Button className="mt-4" type="submit" theme="secondary" disabled={isSubmitting}>
             Submit
