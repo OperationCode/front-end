@@ -2,10 +2,10 @@
 
 exports[`TimelineEvent should render with required props 1`] = `
 <div
-  className="eventContainer"
+  className="ml-8 mr-0 border-1 border-solid border-[#c5c5c5] p-5 rounded-md"
 >
   <h4
-    className="eventTitle"
+    className="uppercase md:text-2xl"
   >
     test title
   </h4>
