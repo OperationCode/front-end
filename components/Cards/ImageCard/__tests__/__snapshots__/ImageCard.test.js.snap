@@ -2,43 +2,49 @@
 
 exports[`ImageCard should render with many props assigned 1`] = `
 <Card
-  className="ImageCard test"
+  className="md:flex-row flex-col md:h-56 md:w-[650px] md:max-w-none p-0 h-auto max-w-xs w-auto [&>*]:flex-[1_1_50%] test"
   hasAnimationOnHover={false}
 >
   <React.Fragment>
     <div
-      className="content"
+      className="flex items-center flex-col justify-start overflow-y-auto m-4"
     >
       <p>
         Testing!
       </p>
     </div>
-    <MockedNextImage
-      alt="Test title"
-      height={225}
-      layout="fixed"
-      src="/static/images/Family1.jpg"
-      width={325}
-    />
+    <div
+      className="relative h-full"
+    >
+      <MockedNextImage
+        alt="Test title"
+        layout="fill"
+        objectFit="cover"
+        src="/static/images/Family1.jpg"
+      />
+    </div>
   </React.Fragment>
 </Card>
 `;
 
 exports[`ImageCard should render with required props 1`] = `
 <Card
-  className="ImageCard"
+  className="md:flex-row flex-col md:h-56 md:w-[650px] md:max-w-none p-0 h-auto max-w-xs w-auto [&>*]:flex-[1_1_50%]"
   hasAnimationOnHover={false}
 >
   <React.Fragment>
-    <MockedNextImage
-      alt="Test title"
-      height={225}
-      layout="fixed"
-      src="/static/images/Family1.jpg"
-      width={325}
-    />
     <div
-      className="content"
+      className="relative h-full w-full min-h-[225px]"
+    >
+      <MockedNextImage
+        alt="Test title"
+        layout="fill"
+        objectFit="cover"
+        src="/static/images/Family1.jpg"
+      />
+    </div>
+    <div
+      className="flex items-center flex-col justify-start overflow-y-auto m-4"
     >
       <p>
         Testing!

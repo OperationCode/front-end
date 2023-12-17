@@ -78,6 +78,7 @@
     "react-scroll-up-button": "^1.6.4",
     "react-select": "^4.0.2",
     "react-youtube": "9.0.3",
+    "tailwind-merge": "^2.1.0",
     "yup": "^0.32.11"
   },
   "devDependencies": {

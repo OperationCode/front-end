@@ -39,7 +39,7 @@ exports[`UpdateProfileForm should render with required props 1`] = `
       className="field"
     >
       <label
-        className="text-secondary text-sm"
+        className="text-themeSecondary text-sm"
         data-testid="LABEL"
         htmlFor="employmentStatus"
       >
@@ -167,7 +167,7 @@ exports[`UpdateProfileForm should render with required props 1`] = `
       data-testid="INPUT"
     >
       <label
-        className="text-secondary text-sm"
+        className="text-themeSecondary text-sm"
         data-testid="LABEL"
         htmlFor="companyName"
       >
@@ -194,7 +194,7 @@ exports[`UpdateProfileForm should render with required props 1`] = `
       data-testid="INPUT"
     >
       <label
-        className="text-secondary text-sm"
+        className="text-themeSecondary text-sm"
         data-testid="LABEL"
         htmlFor="companyRole"
       >

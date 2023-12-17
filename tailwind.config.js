@@ -19,16 +19,18 @@ module.exports = {
     },
     extend: {
       colors: {
-        themeGray: '#121212',
-        primary: '#3ed6f0',
-        secondary: 'rbg(37, 46, 62, 0.75)',
+        themePrimary: '#3ed6f0',
+        themeSecondary: '#252e3e',
+        themeGray200: '#121212',
+        themeGray800: '#e2e2e2',
+        white: '#f7f7f7',
       },
       maxWidth: {
         girderWidth: '700px',
       },
       fontFamily: {
-        primaryFontFamily: '"DIN Condensed Bold"',
-        secondaryFontFamily: '"Encode Sans"',
+        dinCondensed: '"DIN Condensed Bold"',
+        encodeSans: '"Encode Sans"',
       },
     },
   },

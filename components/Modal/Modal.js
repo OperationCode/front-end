@@ -57,7 +57,7 @@ function Modal({
           className={classNames(
             'outline-none',
             'bg-white',
-            'text-secondary',
+            'text-themeSecondary',
             'flex',
             'flex-col',
             'flex-nowrap',

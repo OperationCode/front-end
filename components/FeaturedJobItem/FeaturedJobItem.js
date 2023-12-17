@@ -29,15 +29,15 @@ function FeaturedJobItem({ title, source, sourceUrl, city, state, country, descr
         <h6>{title}</h6>
       </OutboundLink>
 
-      <div className="flex flex-wrap text-lg text-secondary opacity-80 mt-1 ">
+      <div className="flex flex-wrap text-lg text-themeSecondary opacity-80 mt-1 ">
         <div className="flex items-center gap-1.5">
-          <BuildingIcon className="fill-secondary opacity-80 h-3.5" />
+          <BuildingIcon className="fill-themeSecondary opacity-80 h-3.5" />
           <span className="ml-1">{source}</span>
         </div>
 
         <div className="flex items-center gap-1.5">
           {(city || state || country) && (
-            <MapMarkerIcon className="fill-secondary opacity-80 h-3.5" />
+            <MapMarkerIcon className="fill-themeSecondary opacity-80 h-3.5" />
           )}
           {city && <span className="ml-1">{city},</span>}
           {state && <span className="ml-1">{state},</span>}
@@ -46,7 +46,7 @@ function FeaturedJobItem({ title, source, sourceUrl, city, state, country, descr
 
         {remote && (
           <div className="flex items-center gap-1.5">
-            <CloudUploadIcon className="fill-secondary opacity-80 h-3.5" />
+            <CloudUploadIcon className="fill-themeSecondary opacity-80 h-3.5" />
             <span className="ml-1">Remote</span>
           </div>
         )}
