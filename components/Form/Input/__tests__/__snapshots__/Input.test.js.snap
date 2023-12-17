@@ -6,7 +6,7 @@ exports[`Input should render with required props 1`] = `
   data-testid="INPUT"
 >
   <label
-    className="Label"
+    className="text-secondary text-sm"
     data-testid="LABEL"
     htmlFor="someInputName"
   >
