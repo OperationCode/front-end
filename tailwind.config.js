@@ -21,7 +21,7 @@ module.exports = {
       colors: {
         themeGray: '#121212',
         primary: '#3ed6f0',
-        secondary: 'rbg(37, 46, 62, 0.75)',
+        secondary: 'rbga(37,46,62,0.75)',
       },
       maxWidth: {
         girderWidth: '700px',
