@@ -19,7 +19,7 @@ function Card({ children, className, hasAnimationOnHover, ...props }) {
   return (
     <article
       className={classNames(
-        'items-center bg-white [&_svg]:fill-secondary text-secondary flex flex-col flex-nowrap justify-around m-4 min-h-[100px] min-w-[100px] p-6 shadow-md focus-visible:outline-none',
+        'items-center bg-white [&_svg]:fill-themeSecondary text-themeSecondary flex flex-col flex-nowrap justify-around m-4 min-h-[100px] min-w-[100px] p-6 shadow-md focus-visible:outline-none',
         className,
         {
           'shadow-sm transition-shadow duration-200 ease-linear hover:shadow-lg focus-visible:shadow-lg':

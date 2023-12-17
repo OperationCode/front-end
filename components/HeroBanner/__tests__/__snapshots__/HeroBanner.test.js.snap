@@ -13,7 +13,7 @@ exports[`HeroBanner should render with many props assigned 1`] = `
     className="content"
   >
     <h1
-      className="border-b-4 border-b-primary text-center mb-4"
+      className="border-b-4 border-b-themePrimary text-center mb-4"
       data-testid="HERO_BANNER_H1"
     >
       Test

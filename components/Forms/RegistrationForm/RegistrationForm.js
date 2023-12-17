@@ -214,9 +214,9 @@ function RegistrationForm({ initialValues, onSubmit, onSuccess }) {
 
           {errorMessage && <Alert type="error">{errorMessage}</Alert>}
 
-          <hr className="my-8 mx-0 w-1/4 border-themeGray" />
+          <hr className="my-8 mx-0 w-1/4 border-themeGray200" />
 
-          <p className="bg-white border-1 border-solid border-secondary rounded-md text-sm py-2 px-3">
+          <p className="bg-white border-1 border-solid border-themeSecondary rounded-md text-sm py-2 px-3">
             The demographic information you provide, helps us understand our community needs, ensure
             diversity, and provide specific resources to reach our mission. Thank you in advance for
             providing honest answers.
@@ -224,7 +224,7 @@ function RegistrationForm({ initialValues, onSubmit, onSuccess }) {
             <span className="font-bold">We do not sell your information to anyone.</span>
           </p>
 
-          <hr className="my-8 mx-0 w-1/4 border-themeGray" />
+          <hr className="my-8 mx-0 w-1/4 border-themeGray200" />
 
           <Button className="mt-4" type="submit" theme="secondary" disabled={isSubmitting}>
             Submit

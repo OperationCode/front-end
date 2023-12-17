@@ -20,7 +20,7 @@ function SuccessStory({ imageSource, quote, title }) {
         />
       </div>
 
-      <div className="flex flex-1 flex-col flex-nowrap items-center p-8 pt-40 border-2 border-solid border-primary [&>blockquote]:my-4 [&>blockquote]:mx-0 [&>blockquote]:text-base">
+      <div className="flex flex-1 flex-col flex-nowrap items-center p-8 pt-40 border-2 border-solid border-themePrimary [&>blockquote]:my-4 [&>blockquote]:mx-0 [&>blockquote]:text-base">
         <h6 className="text-center text-base">{title}</h6>
         <blockquote>{`"${quote}"`}</blockquote>
       </div>

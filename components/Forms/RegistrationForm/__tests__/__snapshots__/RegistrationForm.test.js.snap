@@ -26,7 +26,7 @@ exports[`RegistrationForm should render with required props 1`] = `
       data-testid="INPUT"
     >
       <label
-        className="text-secondary text-sm"
+        className="text-themeSecondary text-sm"
         data-testid="LABEL"
         htmlFor="email"
       >
@@ -54,7 +54,7 @@ exports[`RegistrationForm should render with required props 1`] = `
       data-testid="INPUT"
     >
       <label
-        className="text-secondary text-sm"
+        className="text-themeSecondary text-sm"
         data-testid="LABEL"
         htmlFor="confirm-email"
       >
@@ -82,7 +82,7 @@ exports[`RegistrationForm should render with required props 1`] = `
       data-testid="INPUT"
     >
       <label
-        className="text-secondary text-sm"
+        className="text-themeSecondary text-sm"
         data-testid="LABEL"
         htmlFor="password"
       >
@@ -110,7 +110,7 @@ exports[`RegistrationForm should render with required props 1`] = `
       data-testid="INPUT"
     >
       <label
-        className="text-secondary text-sm"
+        className="text-themeSecondary text-sm"
         data-testid="LABEL"
         htmlFor="confirm-password"
       >
@@ -138,7 +138,7 @@ exports[`RegistrationForm should render with required props 1`] = `
       data-testid="INPUT"
     >
       <label
-        className="text-secondary text-sm"
+        className="text-themeSecondary text-sm"
         data-testid="LABEL"
         htmlFor="firstName"
       >
@@ -166,7 +166,7 @@ exports[`RegistrationForm should render with required props 1`] = `
       data-testid="INPUT"
     >
       <label
-        className="text-secondary text-sm"
+        className="text-themeSecondary text-sm"
         data-testid="LABEL"
         htmlFor="lastName"
       >
@@ -194,7 +194,7 @@ exports[`RegistrationForm should render with required props 1`] = `
       data-testid="INPUT"
     >
       <label
-        className="text-secondary text-sm"
+        className="text-themeSecondary text-sm"
         data-testid="LABEL"
         htmlFor="zipcode"
       >
@@ -222,7 +222,7 @@ exports[`RegistrationForm should render with required props 1`] = `
       data-testid="CHECKBOX"
     >
       <label
-        className="text-secondary text-sm"
+        className="text-themeSecondary text-sm"
         data-testid="LABEL"
         htmlFor="codeOfConduct"
       >
@@ -259,10 +259,10 @@ exports[`RegistrationForm should render with required props 1`] = `
     </div>
   </div>
   <hr
-    className="my-8 mx-0 w-1/4 border-themeGray"
+    className="my-8 mx-0 w-1/4 border-themeGray200"
   />
   <p
-    className="bg-white border-1 border-solid border-secondary rounded-md text-sm py-2 px-3"
+    className="bg-white border-1 border-solid border-themeSecondary rounded-md text-sm py-2 px-3"
   >
     The demographic information you provide, helps us understand our community needs, ensure diversity, and provide specific resources to reach our mission. Thank you in advance for providing honest answers.
     <br />
@@ -273,7 +273,7 @@ exports[`RegistrationForm should render with required props 1`] = `
     </span>
   </p>
   <hr
-    className="my-8 mx-0 w-1/4 border-themeGray"
+    className="my-8 mx-0 w-1/4 border-themeGray200"
   />
   <button
     className="Button mt-4 secondary"

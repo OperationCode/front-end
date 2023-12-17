@@ -19,7 +19,7 @@ exports[`UpdateProfileForm/Steps/MilitaryStatus should render in context of Form
       className="field"
     >
       <label
-        className="text-secondary text-sm"
+        className="text-themeSecondary text-sm"
         data-testid="LABEL"
         htmlFor="militaryStatus"
       >
