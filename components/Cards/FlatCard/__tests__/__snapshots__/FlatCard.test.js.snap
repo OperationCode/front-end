@@ -2,13 +2,13 @@
 
 exports[`FlatCard should render with many props assigned 1`] = `
 <article
-  className="FlatCard test-class"
+  className="box-border my-6 mx-4 relative max-w-[400px] test-class"
 >
   <div
-    className="borderContainer"
+    className="p-8 border-4 border-solid border-themePrimary"
   >
     <div
-      className="header"
+      className="order-2 text-center"
     >
       <h1>
         Main heading
@@ -18,7 +18,7 @@ exports[`FlatCard should render with many props assigned 1`] = `
       </h6>
     </div>
     <hr
-      className="divider"
+      className="w-10/12 border-1 border-solid border-themePrimary"
     />
     <div
       className="children"
@@ -31,7 +31,7 @@ exports[`FlatCard should render with many props assigned 1`] = `
       </p>
     </div>
     <div
-      className="flatCardButton"
+      className="text-center absolute left-0 right-0 -bottom-7 [&>button]:hover:bg-white [&>button]:hover:text-themeSecondary [&>button]:focus-visible:text-themePrimary [&>button]:focus-visible:bg-white [&>a]:hover:bg-white [&>a]:hover:text-themeSecondary [&>a]:focus-visible:bg-white [&>a]:focus-visible:text-themeSecondary "
     >
       <a
         className="Button primary"
@@ -48,10 +48,10 @@ exports[`FlatCard should render with many props assigned 1`] = `
 
 exports[`FlatCard should render with required props 1`] = `
 <article
-  className="FlatCard"
+  className="box-border my-6 mx-4 relative max-w-[400px]"
 >
   <div
-    className="borderContainer"
+    className="p-8 border-4 border-solid border-themePrimary"
   >
     <div
       className="children"
