@@ -1,18 +1,22 @@
 import { Link } from 'react-scroll';
 import historyData from '../historyData';
-import styles from './TimelineNav.module.css';
 
 const TimelineNav = () => {
   return (
-    <section className={styles.timelineNav}>
-      <nav className={styles.timelineNavLinksContainer}>
+    <section className="px-16 sm:p-0">
+      <nav className="flex justify-around">
         {Object.keys(historyData).map(year => (
-          <Link key={year} to={`event-${year}`} smooth className={styles.timelineNavLink}>
+          <Link
+            key={year}
+            to={`event-${year}`}
+            smooth
+            className="font-bold text-xl cursor-pointer opacity-60 hover:opacity-60 transition-all duration-100 ease-in-out hover:scale-[1.1]"
+          >
             {year}
           </Link>
         ))}
       </nav>
-      <div className={styles.timelineNavSeperator} />
+      <div className="mt-4 bg-[#d7d7d7] h-1" />
     </section>
   );
 };

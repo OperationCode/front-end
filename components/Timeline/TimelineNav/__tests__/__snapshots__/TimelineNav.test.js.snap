@@ -2,13 +2,13 @@
 
 exports[`TimelineNav should render with no props passed passed 1`] = `
 <section
-  className="timelineNav"
+  className="px-16 sm:p-0"
 >
   <nav
-    className="timelineNavLinksContainer"
+    className="flex justify-around"
   >
     <Link
-      className="timelineNavLink"
+      className="font-bold text-xl cursor-pointer opacity-60 hover:opacity-60 transition-all duration-100 ease-in-out hover:scale-[1.1]"
       offset={0}
       smooth={true}
       to="event-2011"
@@ -16,7 +16,7 @@ exports[`TimelineNav should render with no props passed passed 1`] = `
       2011
     </Link>
     <Link
-      className="timelineNavLink"
+      className="font-bold text-xl cursor-pointer opacity-60 hover:opacity-60 transition-all duration-100 ease-in-out hover:scale-[1.1]"
       offset={0}
       smooth={true}
       to="event-2013"
@@ -24,7 +24,7 @@ exports[`TimelineNav should render with no props passed passed 1`] = `
       2013
     </Link>
     <Link
-      className="timelineNavLink"
+      className="font-bold text-xl cursor-pointer opacity-60 hover:opacity-60 transition-all duration-100 ease-in-out hover:scale-[1.1]"
       offset={0}
       smooth={true}
       to="event-2014"
@@ -32,7 +32,7 @@ exports[`TimelineNav should render with no props passed passed 1`] = `
       2014
     </Link>
     <Link
-      className="timelineNavLink"
+      className="font-bold text-xl cursor-pointer opacity-60 hover:opacity-60 transition-all duration-100 ease-in-out hover:scale-[1.1]"
       offset={0}
       smooth={true}
       to="event-2015"
@@ -40,7 +40,7 @@ exports[`TimelineNav should render with no props passed passed 1`] = `
       2015
     </Link>
     <Link
-      className="timelineNavLink"
+      className="font-bold text-xl cursor-pointer opacity-60 hover:opacity-60 transition-all duration-100 ease-in-out hover:scale-[1.1]"
       offset={0}
       smooth={true}
       to="event-2019"
@@ -48,7 +48,7 @@ exports[`TimelineNav should render with no props passed passed 1`] = `
       2019
     </Link>
     <Link
-      className="timelineNavLink"
+      className="font-bold text-xl cursor-pointer opacity-60 hover:opacity-60 transition-all duration-100 ease-in-out hover:scale-[1.1]"
       offset={0}
       smooth={true}
       to="event-2021"
@@ -56,7 +56,7 @@ exports[`TimelineNav should render with no props passed passed 1`] = `
       2021
     </Link>
     <Link
-      className="timelineNavLink"
+      className="font-bold text-xl cursor-pointer opacity-60 hover:opacity-60 transition-all duration-100 ease-in-out hover:scale-[1.1]"
       offset={0}
       smooth={true}
       to="event-2023"
@@ -65,7 +65,7 @@ exports[`TimelineNav should render with no props passed passed 1`] = `
     </Link>
   </nav>
   <div
-    className="timelineNavSeperator"
+    className="mt-4 bg-[#d7d7d7] h-1"
   />
 </section>
 `;
