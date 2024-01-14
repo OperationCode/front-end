@@ -3,7 +3,6 @@ import classNames from 'classnames';
 import Image from 'next/image';
 import { FLAT_CARD_IMAGE } from 'common/constants/testIDs';
 import { getPlaceholder } from 'common/utils/next-utils';
-import styles from './FlatCard.module.css';
 
 FlatCard.propTypes = {
   button: element,
@@ -55,7 +54,7 @@ function FlatCard({ button: Button, children, className, header, image }) {
 
         {header && <hr className="w-10/12 border-1 border-solid border-themePrimary" />}
 
-        <div className={styles.children}>{children}</div>
+        <div>{children}</div>
 
         {Button && (
           <div className="text-center absolute left-0 right-0 -bottom-7 [&>button]:hover:bg-white [&>button]:hover:text-themeSecondary [&>button]:focus-visible:text-themePrimary [&>button]:focus-visible:bg-white [&>a]:hover:bg-white [&>a]:hover:text-themeSecondary [&>a]:focus-visible:bg-white [&>a]:focus-visible:text-themeSecondary ">
