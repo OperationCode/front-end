@@ -18,7 +18,7 @@ exports[`FlatCard should render with many props assigned 1`] = `
       </h6>
     </div>
     <hr
-      className="w-10/12 border-1 border-solid border-themePrimary"
+      className="w-10/12 border-solid border-themePrimary"
     />
     <div>
       <p>

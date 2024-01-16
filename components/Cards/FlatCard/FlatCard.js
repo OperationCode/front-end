@@ -38,7 +38,7 @@ function FlatCard({ button: Button, children, className, header, image }) {
           <div className="flex justify-center">
             <div
               data-testid={FLAT_CARD_IMAGE}
-              className="border-solid border-themePrimary order-1 absolute -top-1 h-52 [&>img]:object-cover"
+              className="border-solid border-themePrimary border-[3px] order-1 absolute -top-4 h-52 [&>img]:object-cover"
             >
               <Image
                 src={image.source}
@@ -52,7 +52,7 @@ function FlatCard({ button: Button, children, className, header, image }) {
           </div>
         )}
 
-        {header && <hr className="w-10/12 border-1 border-solid border-themePrimary" />}
+        {header && <hr className="w-10/12 border-solid border-themePrimary" />}
 
         <div>{children}</div>
 
