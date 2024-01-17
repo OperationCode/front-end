@@ -3,7 +3,6 @@ import classNames from 'classnames';
 import Image from 'next/image';
 import { FLAT_CARD_IMAGE } from 'common/constants/testIDs';
 import { getPlaceholder } from 'common/utils/next-utils';
-import styles from './FlatCard.module.css';
 
 FlatCard.propTypes = {
   button: element,
@@ -28,16 +27,19 @@ function FlatCard({ button: Button, children, className, header, image }) {
 
   return (
     <article
-      className={classNames(styles.FlatCard, className, {
-        [styles.cardWithImage]: hasImage,
+      className={classNames('box-border my-6 mx-4 relative max-w-[400px]', className, {
+        'pt-14': hasImage,
       })}
     >
-      <div className={styles.borderContainer}>
-        {header && <div className={styles.header}>{header}</div>}
+      <div className="p-8 border-4 border-solid border-themePrimary">
+        {header && <div className="order-2 text-center">{header}</div>}
 
         {hasImage && (
-          <div className={styles.rowCenter}>
-            <div data-testid={FLAT_CARD_IMAGE} className={styles.imageWrapper}>
+          <div className="flex justify-center">
+            <div
+              data-testid={FLAT_CARD_IMAGE}
+              className="border-solid border-themePrimary border-[3px] order-1 absolute -top-4 h-52 [&>img]:object-cover"
+            >
               <Image
                 src={image.source}
                 alt={image.alt ?? ''}
@@ -50,11 +52,15 @@ function FlatCard({ button: Button, children, className, header, image }) {
           </div>
         )}
 
-        {header && <hr className={styles.divider} />}
+        {header && <hr className="w-10/12 border-solid border-themePrimary" />}
 
-        <div className={styles.children}>{children}</div>
+        <div>{children}</div>
 
-        {Button && <div className={styles.flatCardButton}>{Button}</div>}
+        {Button && (
+          <div className="text-center absolute left-0 right-0 -bottom-7 [&>button]:hover:bg-white [&>button]:hover:text-themeSecondary [&>button]:focus-visible:text-themePrimary [&>button]:focus-visible:bg-white [&>a]:hover:bg-white [&>a]:hover:text-themeSecondary [&>a]:focus-visible:bg-white [&>a]:focus-visible:text-themeSecondary ">
+            {Button}
+          </div>
+        )}
       </div>
     </article>
   );
