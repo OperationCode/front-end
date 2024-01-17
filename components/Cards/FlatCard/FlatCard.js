@@ -1,5 +1,6 @@
 import { element, node, shape, string } from 'prop-types';
 import classNames from 'classnames';
+import { twMerge } from 'tailwind-merge';
 import Image from 'next/image';
 import { FLAT_CARD_IMAGE } from 'common/constants/testIDs';
 import { getPlaceholder } from 'common/utils/next-utils';
@@ -31,20 +32,25 @@ function FlatCard({ button: Button, children, className, header, image }) {
         'pt-14': hasImage,
       })}
     >
-      <div className="p-8 border-4 border-solid border-themePrimary">
-        {header && <div className="order-2 text-center">{header}</div>}
+      <div
+        className={twMerge(
+          'p-8 flex flex-col gap-5 border-4 border-solid border-themePrimary',
+          hasImage && `pt-32`,
+        )}
+      >
+        {header && <div className="text-center">{header}</div>}
 
         {hasImage && (
-          <div className="flex justify-center">
+          <div className="flex justify-center -my-5">
             <div
               data-testid={FLAT_CARD_IMAGE}
-              className="border-solid border-themePrimary border-[3px] order-1 absolute -top-4 h-52 [&>img]:object-cover"
+              className="absolute -top-4 border-solid border-themePrimary border-[3px] w-[194px] h-[194px]"
             >
               <Image
                 src={image.source}
                 alt={image.alt ?? ''}
-                width={194}
-                height={194}
+                layout="fill"
+                objectFit
                 placeholder="blur"
                 blurDataURL={getPlaceholder(194, 194)}
               />
@@ -52,7 +58,7 @@ function FlatCard({ button: Button, children, className, header, image }) {
           </div>
         )}
 
-        {header && <hr className="w-10/12 border-solid border-themePrimary" />}
+        {header && <hr className="w-full border-2 border-solid border-themePrimary" />}
 
         <div>{children}</div>
 
