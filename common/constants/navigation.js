@@ -50,11 +50,6 @@ const getInvolved = {
   href: '/get_involved',
 };
 
-const codeSchools = {
-  name: 'Code Schools',
-  href: '/code_schools',
-};
-
 const merchStore = {
   name: 'Merch Store',
   href: '/swag',
@@ -82,7 +77,7 @@ const projectRebuild = {
 
 const servicesGroup = {
   ...services,
-  sublinks: [podcast, codeSchools, projectRebuild],
+  sublinks: [podcast, projectRebuild],
 };
 
 const aboutUsGroup = {
@@ -109,7 +104,7 @@ export const mobileNavItems = flattenDepth(
 // MARK: Footer items
 export const footerItems = {
   column1: [about, contact, faq, services],
-  column2: [chapters, codeSchools, jobs],
+  column2: [chapters, jobs],
   column3: [getInvolved, podcast, history, donate],
   column4: [
     {
