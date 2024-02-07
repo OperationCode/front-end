@@ -2,12 +2,14 @@
 
 exports[`RegistrationForm should render with required props 1`] = `
 <form
-  className="w-full flex items-center flex-col [&>p]:my-5 [&>p]:mx-auto"
+  className="flex flex-col items-center w-full"
   noValidate={true}
   onReset={[Function]}
   onSubmit={[Function]}
 >
-  <p>
+  <p
+    className="max-w-xl px-4 pb-4"
+  >
     We work closely with military veterans, service members, and spouses who are passionate about transitioning into the tech industry. We work with over 7,000 members who are all working towards relevant goals on Slack and in-person meet-ups. Membership is free! Unfamiliar with Slack?
      
     <a
@@ -19,7 +21,7 @@ exports[`RegistrationForm should render with required props 1`] = `
     </a>
   </p>
   <div
-    className="flex flex-col justify-between w-full max-w-lg"
+    className="flex flex-col justify-between w-full max-w-xl"
   >
     <div
       className="field"
@@ -252,38 +254,85 @@ exports[`RegistrationForm should render with required props 1`] = `
             >
               Opens in new window
             </span>
+            <svg
+              className="!fill-current relative my-0 mx-1 bottom-0 w-3"
+            />
+          </a>
+          *
+        </span>
+      </label>
+    </div>
+    <div
+      className="field"
+      data-testid="CHECKBOX"
+    >
+      <label
+        className="text-themeSecondary text-sm"
+        data-testid="LABEL"
+        htmlFor="slackGuidelines"
+      >
+        <input
+          checked={false}
+          className="Checkbox"
+          id="slackGuidelines"
+          name="slackGuidelines"
+          onBlur={[Function]}
+          onChange={[Function]}
+          type="checkbox"
+          value=""
+        />
+        <span>
+          I have read and agree to 
+          <a
+            className="inline-flex items-start"
+            href="https://github.com/OperationCode/START_HERE/blob/master/community_guidelines.md"
+            onClick={[Function]}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Operation Code's Slack Community Guidelines.
+            <span
+              className="sr-only"
+              data-testid="SCREEN_READER_ONLY"
+            >
+              Opens in new window
+            </span>
+            <svg
+              className="!fill-current relative my-0 mx-1 bottom-0 w-3"
+            />
           </a>
           *
         </span>
       </label>
     </div>
   </div>
-  <hr
-    className="my-8 mx-0 w-1/4 border-themeGray200"
-  />
-  <p
-    className="bg-white border-1 border-solid border-themeSecondary rounded-md text-sm py-2 px-3"
+  <div
+    className="max-w-xl px-3 pb-5"
   >
-    The demographic information you provide, helps us understand our community needs, ensure diversity, and provide specific resources to reach our mission. Thank you in advance for providing honest answers.
-    <br />
-    <span
-      className="font-bold"
+    <p
+      className="max-w-xl text-xs"
     >
-      We do not sell your information to anyone.
-    </span>
-  </p>
-  <hr
-    className="my-8 mx-0 w-1/4 border-themeGray200"
-  />
-  <button
-    className="Button mt-4 secondary"
-    data-testid="BUTTON"
-    disabled={false}
-    onClick={[Function]}
-    tabIndex={0}
-    type="submit"
+      The demographic information you provide, helps us understand our community needs, ensure diversity, and provide specific resources to reach our mission. Thank you in advance for providing honest answers. 
+      <span
+        className="font-bold"
+      >
+        We do not sell your information to anyone.
+      </span>
+    </p>
+  </div>
+  <div
+    className="w-full max-w-xl px-2"
   >
-    Submit
-  </button>
+    <button
+      className="Button secondary"
+      data-testid="BUTTON"
+      disabled={false}
+      onClick={[Function]}
+      tabIndex={0}
+      type="submit"
+    >
+      Submit
+    </button>
+  </div>
 </form>
 `;
