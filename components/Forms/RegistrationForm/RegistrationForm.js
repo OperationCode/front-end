@@ -7,7 +7,7 @@ import { createUser } from 'common/constants/api';
 import { getServerErrorMessage } from 'common/utils/api-utils';
 import { validationErrorMessages } from 'common/constants/messages';
 import { capitalizeFirstLetter } from 'common/utils/string-utils';
-import { codeOfConduct } from 'common/constants/urls';
+import { codeOfConduct, slackGuidelines } from 'common/constants/urls';
 import Button from 'components/Buttons/Button/Button';
 import Checkbox from 'components/Form/Checkbox/Checkbox';
 import Form from 'components/Form/Form';
@@ -27,6 +27,7 @@ const defaultValues = {
   lastName: '',
   zipcode: '',
   codeOfConduct: false,
+  slackGuidelines: false,
 };
 
 /**
@@ -52,6 +53,7 @@ const registrationSchema = Yup.object().shape({
   lastName: Yup.string().trim().required(validationErrorMessages.required),
   zipcode: Yup.string().trim().required(validationErrorMessages.required),
   codeOfConduct: Yup.boolean().oneOf([true], validationErrorMessages.codeOfConduct),
+  slackGuidelines: Yup.boolean().oneOf([true], validationErrorMessages.slackGuidelines),
 });
 
 RegistrationForm.propTypes = {
@@ -66,6 +68,7 @@ RegistrationForm.propTypes = {
     lastName: string,
     zipcode: oneOfType([string, number]),
     codeOfConduct: boolean,
+    slackGuidelines: boolean,
   }),
 };
 
@@ -198,7 +201,7 @@ function RegistrationForm({ initialValues, onSubmit, onSuccess }) {
                 <span>
                   I have read and agree to&nbsp;
                   <OutboundLink
-                    hasIcon={false}
+                    hasIcon
                     href={codeOfConduct}
                     analyticsEventLabel="Registration CoC Checkbox Link"
                   >
@@ -210,13 +213,33 @@ function RegistrationForm({ initialValues, onSubmit, onSuccess }) {
               component={Checkbox}
               disabled={isSubmitting}
             />
+
+            <Field
+              type="checkbox"
+              name="slackGuidelines"
+              label={
+                <span>
+                  I have read and agree to&nbsp;
+                  <OutboundLink
+                    hasIcon
+                    href={slackGuidelines}
+                    analyticsEventLabel="Registration CoC Checkbox Link"
+                  >
+                    Operation Code&apos;s Slack Community Guidelines.
+                  </OutboundLink>
+                  *
+                </span>
+              }
+              component={Checkbox}
+              disabled={isSubmitting}
+            />
           </div>
 
           {errorMessage && <Alert type="error">{errorMessage}</Alert>}
 
-          <hr className="my-8 mx-0 w-1/4 border-themeGray200" />
+          <hr className="w-1/4 mx-0 my-8 border-themeGray200" />
 
-          <p className="bg-white border-1 border-solid border-themeSecondary rounded-md text-sm py-2 px-3">
+          <p className="px-3 py-2 text-sm bg-white border-solid rounded-md border-1 border-themeSecondary">
             The demographic information you provide, helps us understand our community needs, ensure
             diversity, and provide specific resources to reach our mission. Thank you in advance for
             providing honest answers.
@@ -224,7 +247,7 @@ function RegistrationForm({ initialValues, onSubmit, onSuccess }) {
             <span className="font-bold">We do not sell your information to anyone.</span>
           </p>
 
-          <hr className="my-8 mx-0 w-1/4 border-themeGray200" />
+          <hr className="w-1/4 mx-0 my-8 border-themeGray200" />
 
           <Button className="mt-4" type="submit" theme="secondary" disabled={isSubmitting}>
             Submit
