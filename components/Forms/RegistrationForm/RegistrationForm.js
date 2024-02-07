@@ -117,8 +117,8 @@ function RegistrationForm({ initialValues, onSubmit, onSuccess }) {
       validationSchema={registrationSchema}
     >
       {({ isSubmitting }) => (
-        <Form className="w-full flex items-center flex-col [&>p]:my-5 [&>p]:mx-auto">
-          <p>
+        <Form className="flex flex-col items-center w-full">
+          <p className="max-w-xl px-4 pb-4">
             We work closely with military veterans, service members, and spouses who are passionate
             about transitioning into the tech industry. We work with over 7,000 members who are all
             working towards relevant goals on Slack and in-person meet-ups. Membership is free!
@@ -128,7 +128,7 @@ function RegistrationForm({ initialValues, onSubmit, onSuccess }) {
             </Link>
           </p>
 
-          <div className="flex flex-col justify-between w-full max-w-lg">
+          <div className="flex flex-col justify-between w-full max-w-xl">
             <Field
               type="email"
               name="email"
@@ -223,7 +223,7 @@ function RegistrationForm({ initialValues, onSubmit, onSuccess }) {
                   <OutboundLink
                     hasIcon
                     href={slackGuidelines}
-                    analyticsEventLabel="Registration CoC Checkbox Link"
+                    analyticsEventLabel="Registration Slack Guidelines Checkbox Link"
                   >
                     Operation Code&apos;s Slack Community Guidelines.
                   </OutboundLink>
@@ -237,21 +237,20 @@ function RegistrationForm({ initialValues, onSubmit, onSuccess }) {
 
           {errorMessage && <Alert type="error">{errorMessage}</Alert>}
 
-          <hr className="w-1/4 mx-0 my-8 border-themeGray200" />
+          <div className="max-w-xl px-3 pb-5">
+            <p className="max-w-xl text-xs">
+              The demographic information you provide, helps us understand our community needs,
+              ensure diversity, and provide specific resources to reach our mission. Thank you in
+              advance for providing honest answers.&nbsp;
+              <span className="font-bold">We do not sell your information to anyone.</span>
+            </p>
+          </div>
 
-          <p className="px-3 py-2 text-sm bg-white border-solid rounded-md border-1 border-themeSecondary">
-            The demographic information you provide, helps us understand our community needs, ensure
-            diversity, and provide specific resources to reach our mission. Thank you in advance for
-            providing honest answers.
-            <br />
-            <span className="font-bold">We do not sell your information to anyone.</span>
-          </p>
-
-          <hr className="w-1/4 mx-0 my-8 border-themeGray200" />
-
-          <Button className="mt-4" type="submit" theme="secondary" disabled={isSubmitting}>
-            Submit
-          </Button>
+          <div className="w-full max-w-xl px-2">
+            <Button type="submit" theme="secondary" disabled={isSubmitting}>
+              Submit
+            </Button>
+          </div>
         </Form>
       )}
     </Formik>
