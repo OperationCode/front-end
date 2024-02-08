@@ -113,15 +113,6 @@ exports[`Footer should render with no props passed 1`] = `
           </li>
           <li>
             <ForwardRef(LinkComponent)
-              href="/code_schools"
-            >
-              <a>
-                Code Schools
-              </a>
-            </ForwardRef(LinkComponent)>
-          </li>
-          <li>
-            <ForwardRef(LinkComponent)
               href="/jobs"
             >
               <a>
