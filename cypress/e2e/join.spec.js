@@ -10,7 +10,8 @@ const inputFields = {
   firstName: 'First Name*',
   lastName: 'Last Name*',
   zipcode: 'Zipcode*',
-  codeOfConduct: /I have read and agree to/,
+  codeOfConduct: /Code of Conduct/,
+  slackGuidelines: /Slack Community Guidelines/,
 };
 
 const assertError = ({
@@ -70,6 +71,7 @@ describe('join', () => {
     cy.findByLabelText(inputFields.lastName).type(validUser.lastName);
     cy.findByLabelText(inputFields.zipcode).type(validUser.zipcode);
     cy.findByLabelText(inputFields.codeOfConduct).type(validUser.codeOfConduct);
+    cy.findByLabelText(inputFields.slackGuidelines).type(validUser.slackGuidelines);
 
     assertFailedLogin({ numberOfErrors: 2 });
   });
@@ -84,6 +86,7 @@ describe('join', () => {
     cy.findByLabelText(inputFields.lastName).type(validUser.lastName);
     cy.findByLabelText(inputFields.zipcode).type(validUser.zipcode);
     cy.findByLabelText(inputFields.codeOfConduct).type(validUser.codeOfConduct);
+    cy.findByLabelText(inputFields.slackGuidelines).type(validUser.slackGuidelines);
 
     assertFailedLogin({ numberOfErrors: 2 });
   });
@@ -102,6 +105,7 @@ describe('join', () => {
     cy.findByLabelText(inputFields.lastName).type(invalidUser.lastName);
     cy.findByLabelText(inputFields.zipcode).type(invalidUser.zipcode);
     cy.findByLabelText(inputFields.codeOfConduct).type(validUser.codeOfConduct);
+    cy.findByLabelText(inputFields.slackGuidelines).type(validUser.slackGuidelines);
 
     assertFailedLogin({ errorMessage: validationErrorMessages.email });
   });
@@ -117,6 +121,7 @@ describe('join', () => {
     cy.findByLabelText(inputFields.lastName).type(validUser.lastName);
     cy.findByLabelText(inputFields.zipcode).type(validUser.zipcode);
     cy.findByLabelText(inputFields.codeOfConduct).type(validUser.codeOfConduct);
+    cy.findByLabelText(inputFields.slackGuidelines).type(validUser.slackGuidelines);
 
     assertFailedLogin();
   });
@@ -133,6 +138,7 @@ describe('join', () => {
     cy.findByLabelText(inputFields.lastName).type(validUser.lastName);
     cy.findByLabelText(inputFields.zipcode).type(validUser.zipcode);
     cy.findByLabelText(inputFields.codeOfConduct).type(validUser.codeOfConduct);
+    cy.findByLabelText(inputFields.slackGuidelines).type(validUser.slackGuidelines);
 
     assertFailedLogin({ errorMessage: validationErrorMessages.emailsMatch });
   });
@@ -144,6 +150,7 @@ describe('join', () => {
     cy.findByLabelText(inputFields.lastName).type(existingUser.lastName);
     cy.findByLabelText(inputFields.zipcode).type(existingUser.zipcode);
     cy.findByLabelText(inputFields.codeOfConduct).type(validUser.codeOfConduct);
+    cy.findByLabelText(inputFields.slackGuidelines).type(validUser.slackGuidelines);
 
     assertFailedLogin({ errorMessage: validationErrorMessages.emailExists, shouldWait: true });
   });
@@ -162,6 +169,7 @@ describe('join', () => {
     cy.findByLabelText(inputFields.lastName).type(validUser.lastName);
     cy.findByLabelText(inputFields.zipcode).type(validUser.zipcode);
     cy.findByLabelText(inputFields.codeOfConduct).type(validUser.codeOfConduct);
+    cy.findByLabelText(inputFields.slackGuidelines).type(validUser.slackGuidelines);
 
     assertFailedLogin();
   });
@@ -177,6 +185,7 @@ describe('join', () => {
     cy.findByLabelText(inputFields.lastName).type(validUser.lastName);
     cy.findByLabelText(inputFields.zipcode).type(validUser.zipcode);
     cy.findByLabelText(inputFields.codeOfConduct).type(validUser.codeOfConduct);
+    cy.findByLabelText(inputFields.slackGuidelines).type(validUser.slackGuidelines);
 
     assertFailedLogin();
   });
@@ -192,6 +201,7 @@ describe('join', () => {
 
     cy.findByLabelText(inputFields.zipcode).type(validUser.zipcode);
     cy.findByLabelText(inputFields.codeOfConduct).type(validUser.codeOfConduct);
+    cy.findByLabelText(inputFields.slackGuidelines).type(validUser.slackGuidelines);
 
     assertFailedLogin();
   });
@@ -207,6 +217,7 @@ describe('join', () => {
 
     cy.findByLabelText(inputFields.zipcode).type(validUser.zipcode);
     cy.findByLabelText(inputFields.codeOfConduct).type(validUser.codeOfConduct);
+    cy.findByLabelText(inputFields.slackGuidelines).type(validUser.slackGuidelines);
 
     assertFailedLogin();
   });
@@ -225,6 +236,7 @@ describe('join', () => {
     assertError();
 
     cy.findByLabelText(inputFields.codeOfConduct).type(validUser.codeOfConduct);
+    cy.findByLabelText(inputFields.slackGuidelines).type(validUser.slackGuidelines);
 
     assertFailedLogin();
   });
@@ -240,6 +252,7 @@ describe('join', () => {
     assertError();
 
     cy.findByLabelText(inputFields.codeOfConduct).type(validUser.codeOfConduct);
+    cy.findByLabelText(inputFields.slackGuidelines).type(validUser.slackGuidelines);
 
     assertFailedLogin();
   });
@@ -253,15 +266,32 @@ describe('join', () => {
 
     cy.findByLabelText(inputFields.codeOfConduct).focus();
     cy.findByLabelText(inputFields.codeOfConduct).blur();
+    cy.findByLabelText(inputFields.slackGuidelines).type(validUser.slackGuidelines);
+
     assertError({ numberOfErrors: 1, errorMessage: validationErrorMessages.codeOfConduct });
     assertFailedLogin({ numberOfErrors: 1, errorMessage: validationErrorMessages.codeOfConduct });
+  });
+
+  it('should NOT be able to register when Slack Community Guidelines is not agreed to', () => {
+    cy.findByLabelText(inputFields.email).type(validUser.email);
+    cy.findByLabelText(inputFields.confirmEmail).type(validUser.email);
+    cy.findByLabelText(inputFields.firstName).type(validUser.firstName);
+    cy.findByLabelText(inputFields.lastName).type(validUser.lastName);
+    cy.findByLabelText(inputFields.zipcode).type(validUser.zipcode);
+    cy.findByLabelText(inputFields.codeOfConduct).type(validUser.codeOfConduct);
+
+    cy.findByLabelText(inputFields.slackGuidelines).focus();
+    cy.findByLabelText(inputFields.slackGuidelines).blur();
+
+    assertError({ numberOfErrors: 1, errorMessage: validationErrorMessages.slackGuidelines });
+    assertFailedLogin({ numberOfErrors: 1, errorMessage: validationErrorMessages.slackGuidelines });
   });
 
   /**
    * Registration without all fields
    */
   it('should NOT be able to register without filling all required fields', () => {
-    assertFailedLogin({ numberOfErrors: 6 });
+    assertFailedLogin({ numberOfErrors: 7 });
   });
 
   /**
@@ -274,6 +304,7 @@ describe('join', () => {
     cy.findByLabelText(inputFields.lastName).type(validUser.lastName);
     cy.findByLabelText(inputFields.zipcode).type(validUser.zipcode);
     cy.findByLabelText(inputFields.codeOfConduct).type(validUser.codeOfConduct);
+    cy.findByLabelText(inputFields.slackGuidelines).type(validUser.slackGuidelines);
     cy.findByText('Submit').click();
 
     cy.url({ timeout: 20000 }).should('contain', '/join/form');

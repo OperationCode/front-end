@@ -36,6 +36,7 @@ export default function mockUser({
    * so that the mocked value is correct in all contexts.
    */
   const codeOfConduct = typeof Cypress === 'object' ? ' ' : true;
+  const slackGuidelines = typeof Cypress === 'object' ? ' ' : true;
 
   const user = {
     email,
@@ -46,6 +47,7 @@ export default function mockUser({
     lastName,
     zipcode,
     codeOfConduct,
+    slackGuidelines,
   };
 
   return user;
