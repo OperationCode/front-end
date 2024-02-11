@@ -1,3 +1,4 @@
+// @ts-check
 const hasBundleAnalyzer = process.env.ANALYZE === 'true';
 const { withSentryConfig } = require('@sentry/nextjs');
 const withBundleAnalyzer = require('@next/bundle-analyzer')({ enabled: hasBundleAnalyzer });
@@ -29,6 +30,10 @@ const nextConfig = {
 
   eslint: {
     ignoreDuringBuilds: true, // We lint during CI.
+  },
+
+  typescript: {
+    ignoreBuildErrors: true, // ignoring build errors for the time being until project is fully typed
   },
 
   images: {
@@ -127,9 +132,9 @@ const nextConfig = {
  * The name of the function type is `normalizeConfig` in `next/dist/server/config-shared`,
  * but JSDoc type imports can't read it.
  *
- * @type {(phase: string, config: import('next').NextConfig) => Promise<import('next').NextConfig>)}
+ * @type {(phase: string, config: import('next').NextConfig) => Promise<import('next').NextConfig>}
  */
-module.exports = (phase, defaultConfig) => {
+module.exports = async (phase, defaultConfig) => {
   const plugins = [
     config => withSentryConfig(config, sentryWebpackPluginOptions),
     withBundleAnalyzer,

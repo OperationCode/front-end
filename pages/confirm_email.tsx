@@ -5,12 +5,13 @@ import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
 import Alert from '../components/Alert/Alert';
+import type { NextPageContext } from 'next';
 
 ConfirmEmail.propTypes = {
   isVerified: bool.isRequired,
 };
 
-ConfirmEmail.getInitialProps = async ({ query: { key } }) => {
+ConfirmEmail.getInitialProps = async ({ query: { key } }: NextPageContext) => {
   try {
     const data = await confirmEmail({ key });
 
@@ -20,7 +21,7 @@ ConfirmEmail.getInitialProps = async ({ query: { key } }) => {
   }
 };
 
-function ConfirmEmail({ isVerified }) {
+function ConfirmEmail({ isVerified }: { isVerified: boolean }) {
   return (
     <>
       <Head title="Email Verification" />

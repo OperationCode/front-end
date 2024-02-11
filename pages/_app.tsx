@@ -3,7 +3,7 @@
 // Polyfills
 import 'intersection-observer';
 
-import { useEffect } from 'react';
+import { useEffect, type PropsWithChildren } from 'react';
 import * as Sentry from '@sentry/nextjs';
 import { node } from 'prop-types';
 import Router from 'next/router';
@@ -18,6 +18,7 @@ import { gtag } from 'common/utils/thirdParty/gtag';
 import Nav from 'components/Nav/Nav';
 import Footer from 'components/Footer/Footer';
 import 'common/styles/globals.css';
+import type { AppProps } from 'next/app';
 
 const isProduction = process.env.NODE_ENV === 'production';
 
@@ -38,7 +39,7 @@ Layout.propTypes = {
   children: node.isRequired,
 };
 
-function Layout({ children }) {
+function Layout({ children }: PropsWithChildren<{}>) {
   return (
     <div>
       <Nav />
@@ -65,7 +66,7 @@ if (!isProduction) {
   Router.events.on('routeChangeComplete', () => {
     const path = '/_next/static/chunks/styles.chunk.module.css';
     const chunksSelector = `link[href*="${path}"]:not([rel=preload])`;
-    const chunksNodes = document.querySelectorAll(chunksSelector);
+    const chunksNodes: NodeListOf<HTMLAnchorElement> = document.querySelectorAll(chunksSelector);
     if (chunksNodes.length) {
       const timestamp = new Date().valueOf();
       chunksNodes[0].href = `${path}?ts=${timestamp}`;
@@ -74,7 +75,7 @@ if (!isProduction) {
 }
 
 // eslint-disable-next-line react/prop-types
-const App = ({ Component, pageProps, err }) => {
+const App = ({ Component, pageProps, err }: AppProps & { err: any }) => {
   useEffect(() => {
     /* Analytics */
     // TODO: Leverage prod-build-time-only env vars instead of window check
@@ -91,7 +92,7 @@ const App = ({ Component, pageProps, err }) => {
       setupLogRocketReact(LogRocket);
 
       // Per library docs, Fingerprint2 should not run immediately
-      if (window.requestIdleCallback) {
+      if ('requestIdleCallback' in window) {
         requestIdleCallback(setLogRocketFingerprint);
       } else {
         setTimeout(setLogRocketFingerprint, 500);
