@@ -7,8 +7,23 @@ import Content from 'components/Content/Content';
 import UpdateProfileForm from 'components/Forms/UpdateProfileForm/UpdateProfileForm';
 import withAuthSync from 'decorators/withAuthSync/withAuthSync';
 import { getUserPromise } from 'common/constants/api';
+import { NextPageContext } from 'next';
 
 const pageTitle = 'Update Profile';
+
+interface UpdateProfileProps {
+  initialValues: {
+    programmingLanguages: string[];
+    disciplines: string[];
+    branchOfService: string;
+    yearsOfService: string;
+    payGrade: string;
+    militaryStatus: string;
+    employmentStatus: string;
+    companyName: string;
+    companyRole: string;
+  };
+}
 
 UpdateProfile.propTypes = {
   initialValues: objectOf(oneOfType([array, oneOfType([string, number, bool])])),
@@ -18,7 +33,7 @@ UpdateProfile.defaultProps = {
   initialValues: undefined,
 };
 
-UpdateProfile.getInitialProps = async ctx => {
+UpdateProfile.getInitialProps = async (ctx: NextPageContext): Promise<UpdateProfileProps> => {
   const { token } = nextCookie(ctx);
   const { data } = await getUserPromise({ token });
 
@@ -38,7 +53,7 @@ UpdateProfile.getInitialProps = async ctx => {
   };
 };
 
-function UpdateProfile({ initialValues }) {
+function UpdateProfile({ initialValues }: UpdateProfileProps) {
   return (
     <>
       <Head title={pageTitle} />
