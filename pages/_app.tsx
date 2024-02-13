@@ -1,9 +1,7 @@
-/* eslint-disable max-classes-per-file */
-
 // Polyfills
 import 'intersection-observer';
 
-import { useEffect, type PropsWithChildren } from 'react';
+import { useEffect, PropsWithChildren } from 'react';
 import * as Sentry from '@sentry/nextjs';
 import { node } from 'prop-types';
 import Router from 'next/router';
@@ -18,7 +16,8 @@ import { gtag } from 'common/utils/thirdParty/gtag';
 import Nav from 'components/Nav/Nav';
 import Footer from 'components/Footer/Footer';
 import 'common/styles/globals.css';
-import type { AppProps } from 'next/app';
+import { AppProps } from 'next/app';
+import NextErrorComponent from 'next/error';
 
 const isProduction = process.env.NODE_ENV === 'production';
 
@@ -39,7 +38,7 @@ Layout.propTypes = {
   children: node.isRequired,
 };
 
-function Layout({ children }: PropsWithChildren<{}>) {
+function Layout({ children }: PropsWithChildren<unknown>) {
   return (
     <div>
       <Nav />
@@ -74,8 +73,7 @@ if (!isProduction) {
   });
 }
 
-// eslint-disable-next-line react/prop-types
-const App = ({ Component, pageProps, err }: AppProps & { err: any }) => {
+const App = ({ Component, pageProps, err }: AppProps & { err: NextErrorComponent }) => {
   useEffect(() => {
     /* Analytics */
     // TODO: Leverage prod-build-time-only env vars instead of window check
@@ -104,7 +102,7 @@ const App = ({ Component, pageProps, err }: AppProps & { err: any }) => {
       if (font.url) {
         const link = document.createElement('link');
         link.href = font.url;
-        link.rel = 'stylesheet'; // eslint-disable-line unicorn/prevent-abbreviations
+        link.rel = 'stylesheet';
         document.head.append(link);
       }
 

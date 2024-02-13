@@ -9,6 +9,7 @@ module.exports = {
     'plugin:jest/recommended',
     'plugin:cypress/recommended',
     'plugin:storybook/recommended',
+    'plugin:@typescript-eslint/eslint-recommended',
   ],
   env: {
     browser: true,
@@ -19,6 +20,10 @@ module.exports = {
     node: true,
   },
   parser: '@babel/eslint-parser',
+  parserOptions: {
+    project: true,
+    tsconfigRootDir: __dirname,
+  },
   plugins: [
     'prettier',
     'unicorn',
@@ -27,12 +32,29 @@ module.exports = {
     '@operation_code/custom-rules',
     'import',
     'lodash',
+    '@typescript-eslint',
   ],
   globals: {
     cy: true,
     Cypress: true,
   },
   overrides: [
+    {
+      extends: ['plugin:@typescript-eslint/disable-type-checked'],
+      files: ['./**/*.js'],
+    },
+    {
+      files: ['./**/*.ts', './**/*.tsx'],
+      parser: '@typescript-eslint/parser',
+      parserOptions: {
+        project: ['./tsconfig.json'],
+      },
+      extends: ['plugin:@typescript-eslint/strict', 'plugin:@typescript-eslint/stylistic'],
+      rules: {
+        'react/no-array-index-key': 'off',
+        'react/require-default-props': 'off',
+      },
+    },
     {
       files: ['cypress/**/*.js'],
       rules: {
@@ -128,7 +150,7 @@ module.exports = {
     ],
     'react/forbid-prop-types': ['error', { forbid: ['any'] }],
     'react/jsx-curly-brace-presence': ['error', { props: 'never', children: 'never' }],
-    'react/jsx-filename-extension': ['error', { extensions: ['.js'] }],
+    'react/jsx-filename-extension': ['error', { extensions: ['.js', '.tsx'] }],
     'react/jsx-max-props-per-line': ['error', { maximum: 1, when: 'multiline' }],
     'react/jsx-no-target-blank': 'off', // browsers protect against this vulnerability now
     'react/jsx-no-useless-fragment': ['error', { allowExpressions: true }],
@@ -196,5 +218,40 @@ module.exports = {
       },
     ],
     'no-use-before-define': 'off',
+
+    // Typescript Rules
+    // custom rules for typescript-eslint: https://github.com/OperationCode/front-end/pull/1792#pullrequestreview-1874516174
+    '@typescript-eslint/consistent-type-imports': 'error',
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
+    '@typescript-eslint/naming-convention': [
+      'error',
+      {
+        selector: 'variable',
+        types: ['boolean'],
+        format: ['PascalCase', 'UPPER_CASE'],
+        prefix: [
+          'is',
+          'was',
+          'should',
+          'has',
+          'can',
+          'did',
+          'will',
+          'IS_',
+          'WAS_',
+          'SHOULD_',
+          'HAS_',
+          'CAN_',
+          'DID_',
+          'WILL_',
+        ],
+      },
+    ],
+    '@typescript-eslint/no-empty-interface': ['error', { allowSingleExtends: true }],
+    '@typescript-eslint/no-explicit-any': 'error',
+    '@typescript-eslint/no-unused-vars': ['error', { vars: 'all', varsIgnorePattern: '_' }],
+    '@typescript-eslint/unbound-method': 'off', // gives false negatives in arrow funcs
   },
+
+  root: true,
 };

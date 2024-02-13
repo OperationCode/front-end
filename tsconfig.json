@@ -5,7 +5,6 @@
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
-    "strict": true,
     "forceConsistentCasingInFileNames": true,
     "incremental": true,
     "esModuleInterop": true,
@@ -13,14 +12,18 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "checkJs": true,
+    "checkJs": false,
     "allowSyntheticDefaultImports": true,
+    "strict": true,
     "alwaysStrict": true,
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
     "jsx": "preserve",
     "jsxFactory": "React.createElement",
     "jsxFragmentFactory": "React.Fragment",
-    "noEmit": false, // TODO - change to true when project 100% typed
-    "noEmitOnError": false, // TODO - change to true when project 100% typed
+    "noEmit": true,
+    "noEmitOnError": true,
     "paths": {
       // Ensure intellisense continues to operate - match with webpack aliases
       "common/*": ["./common/*"],
@@ -33,16 +36,6 @@
       "test-utils/*": ["./test-utils/*"]
     }
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "common/config/svgo.js",
-    "common/constants/urls.js",
-    "next.config.js",
-    "components/Form/Select/Select.js",
-    "components/Form/MultiStepForm.js",
-    "components/Form/Form.js"
-  ],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
 }

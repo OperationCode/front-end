@@ -1,12 +1,13 @@
-import NextErrorComponent from 'next/error';
+import NextErrorComponent, { ErrorProps } from 'next/error';
 import * as Sentry from '@sentry/nextjs';
 import ErrorDisplay from 'components/ErrorDisplay/ErrorDisplay';
-import type { ErrorProps } from 'next/error';
-import type { NextPageContext } from 'next';
+import { NextPageContext } from 'next';
 
-type CustomErrorProps = ErrorProps & { hasGetInitialPropsRun?: boolean; err?: any };
+interface CustomErrorProps extends ErrorProps {
+  hasGetInitialPropsRun?: boolean;
+  err?: NextPageContext['err'];
+}
 
-// eslint-disable-next-line react/prop-types
 const CustomError = ({ statusCode, hasGetInitialPropsRun, err }: CustomErrorProps) => {
   if (!hasGetInitialPropsRun && err) {
     // getInitialProps is not called in case of

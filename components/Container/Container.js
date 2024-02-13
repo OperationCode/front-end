@@ -21,15 +21,8 @@ Container.defaultProps = {
   theme: 'secondary',
 };
 
-function Container({
-  backgroundImageSource,
-  children,
-  className,
-  id,
-  isFullViewportHeight,
-  theme,
-  ...props
-}) {
+function Container(props) {
+  const { backgroundImageSource, children, className, id, isFullViewportHeight, theme } = props;
   // See https://css-tricks.com/tinted-images-multiple-backgrounds/ for explanation
   const darkOverlay = 'linear-gradient(rgba(33, 48, 69, 0.65),rgba(33, 48, 69, 0.65))';
   const dynamicBackgroundImage = backgroundImageSource

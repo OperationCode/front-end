@@ -80,11 +80,7 @@ const questions = {
           <li>
             Grow your portfolio and keep your skills sharp on <b>#oc-projects</b> and on our
             open-source software repositories on{' '}
-            <OutboundLink
-              analyticsEventLabel="Github"
-              href="https://github.com/OperationCode/"
-              alt="Github"
-            >
+            <OutboundLink analyticsEventLabel="Github" href="https://github.com/OperationCode/">
               Github
             </OutboundLink>{' '}
             .
@@ -109,16 +105,11 @@ const questions = {
           <OutboundLink
             analyticsEventLabel="Slack Community Guidelines"
             href="https://github.com/OperationCode/START_HERE/blob/master/community_guidelines.md"
-            alt="Slack Community Guidelines"
           >
             Slack Community Guidelines
           </OutboundLink>{' '}
           and{' '}
-          <OutboundLink
-            analyticsEventLabel="Code of Conduct"
-            href={codeOfConduct}
-            alt="Code of Conduct"
-          >
+          <OutboundLink analyticsEventLabel="Code of Conduct" href={codeOfConduct}>
             Code of Conduct
           </OutboundLink>{' '}
           .
@@ -173,7 +164,6 @@ const questions = {
               <OutboundLink
                 analyticsEventLabel="Operation Code Github repo"
                 href="https://github.com/OperationCode"
-                alt="Operation Code Github repo"
               >
                 repo
               </OutboundLink>{' '}

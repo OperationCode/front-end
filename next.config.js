@@ -32,10 +32,6 @@ const nextConfig = {
     ignoreDuringBuilds: true, // We lint during CI.
   },
 
-  typescript: {
-    ignoreBuildErrors: true, // ignoring build errors for the time being until project is fully typed
-  },
-
   images: {
     domains: [
       s3hostName,
@@ -136,6 +132,10 @@ const nextConfig = {
  */
 module.exports = async (phase, defaultConfig) => {
   const plugins = [
+    /**
+     *
+     * @type {(config: import('next').NextConfig) => any}
+     */
     config => withSentryConfig(config, sentryWebpackPluginOptions),
     withBundleAnalyzer,
   ];
