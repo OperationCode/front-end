@@ -20,10 +20,6 @@ module.exports = {
     node: true,
   },
   parser: '@babel/eslint-parser',
-  parserOptions: {
-    project: true,
-    tsconfigRootDir: __dirname,
-  },
   plugins: [
     'prettier',
     'unicorn',
@@ -40,19 +36,48 @@ module.exports = {
   },
   overrides: [
     {
-      extends: ['plugin:@typescript-eslint/disable-type-checked'],
-      files: ['./**/*.js'],
-    },
-    {
       files: ['./**/*.ts', './**/*.tsx'],
       parser: '@typescript-eslint/parser',
       parserOptions: {
-        project: ['./tsconfig.json'],
+        project: true,
       },
       extends: ['plugin:@typescript-eslint/strict', 'plugin:@typescript-eslint/stylistic'],
       rules: {
         'react/no-array-index-key': 'off',
         'react/require-default-props': 'off',
+
+        // Typescript Rules
+        // custom rules for typescript-eslint: https://github.com/OperationCode/front-end/pull/1792#pullrequestreview-1874516174
+        '@typescript-eslint/consistent-type-imports': ['error', { prefer: 'no-type-imports' }],
+        '@typescript-eslint/explicit-module-boundary-types': 'off',
+        '@typescript-eslint/naming-convention': [
+          'error',
+          {
+            selector: 'variable',
+            types: ['boolean'],
+            format: ['PascalCase', 'UPPER_CASE'],
+            prefix: [
+              'is',
+              'was',
+              'should',
+              'has',
+              'can',
+              'did',
+              'will',
+              'IS_',
+              'WAS_',
+              'SHOULD_',
+              'HAS_',
+              'CAN_',
+              'DID_',
+              'WILL_',
+            ],
+          },
+        ],
+        '@typescript-eslint/no-empty-interface': ['error', { allowSingleExtends: true }],
+        '@typescript-eslint/no-explicit-any': 'error',
+        '@typescript-eslint/no-unused-vars': ['error', { vars: 'all', varsIgnorePattern: '_' }],
+        '@typescript-eslint/unbound-method': 'off', // gives false negatives in arrow funcs
       },
     },
     {
@@ -218,39 +243,6 @@ module.exports = {
       },
     ],
     'no-use-before-define': 'off',
-
-    // Typescript Rules
-    // custom rules for typescript-eslint: https://github.com/OperationCode/front-end/pull/1792#pullrequestreview-1874516174
-    '@typescript-eslint/consistent-type-imports': 'error',
-    '@typescript-eslint/explicit-module-boundary-types': 'off',
-    '@typescript-eslint/naming-convention': [
-      'error',
-      {
-        selector: 'variable',
-        types: ['boolean'],
-        format: ['PascalCase', 'UPPER_CASE'],
-        prefix: [
-          'is',
-          'was',
-          'should',
-          'has',
-          'can',
-          'did',
-          'will',
-          'IS_',
-          'WAS_',
-          'SHOULD_',
-          'HAS_',
-          'CAN_',
-          'DID_',
-          'WILL_',
-        ],
-      },
-    ],
-    '@typescript-eslint/no-empty-interface': ['error', { allowSingleExtends: true }],
-    '@typescript-eslint/no-explicit-any': 'error',
-    '@typescript-eslint/no-unused-vars': ['error', { vars: 'all', varsIgnorePattern: '_' }],
-    '@typescript-eslint/unbound-method': 'off', // gives false negatives in arrow funcs
   },
 
   root: true,

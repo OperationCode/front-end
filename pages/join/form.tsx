@@ -7,12 +7,12 @@ import Content from 'components/Content/Content';
 import UpdateProfileForm from 'components/Forms/UpdateProfileForm/UpdateProfileForm';
 import withAuthSync from 'decorators/withAuthSync/withAuthSync';
 import { getUserPromise } from 'common/constants/api';
-import { NextPageContext } from 'next';
+import { NextPage } from 'next';
 
 const pageTitle = 'Update Profile';
 
 interface UpdateProfileProps {
-  initialValues: {
+  initialValues?: {
     programmingLanguages: string[];
     disciplines: string[];
     branchOfService: string;
@@ -25,6 +25,18 @@ interface UpdateProfileProps {
   };
 }
 
+const UpdateProfile: NextPage<UpdateProfileProps> = ({ initialValues }: UpdateProfileProps) => {
+  return (
+    <>
+      <Head title={pageTitle} />
+
+      <HeroBanner title={pageTitle} />
+
+      <Content theme="gray" columns={[<UpdateProfileForm initialValues={initialValues} />]} />
+    </>
+  );
+};
+
 UpdateProfile.propTypes = {
   initialValues: objectOf(oneOfType([array, oneOfType([string, number, bool])])),
 };
@@ -33,7 +45,7 @@ UpdateProfile.defaultProps = {
   initialValues: undefined,
 };
 
-UpdateProfile.getInitialProps = async (ctx: NextPageContext): Promise<UpdateProfileProps> => {
+UpdateProfile.getInitialProps = async ctx => {
   const { token } = nextCookie(ctx);
   const { data } = await getUserPromise({ token });
 
@@ -52,17 +64,5 @@ UpdateProfile.getInitialProps = async (ctx: NextPageContext): Promise<UpdateProf
     initialValues: { ...UpdateProfileForm.defaultProps.initialValues, ...formattedData },
   };
 };
-
-function UpdateProfile({ initialValues }: UpdateProfileProps) {
-  return (
-    <>
-      <Head title={pageTitle} />
-
-      <HeroBanner title={pageTitle} />
-
-      <Content theme="gray" columns={[<UpdateProfileForm initialValues={initialValues} />]} />
-    </>
-  );
-}
 
 export default withAuthSync(UpdateProfile);
