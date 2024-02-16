@@ -3,7 +3,6 @@ import 'intersection-observer';
 
 import { useEffect, PropsWithChildren } from 'react';
 import * as Sentry from '@sentry/nextjs';
-import { node } from 'prop-types';
 import Router from 'next/router';
 import Fingerprint2 from 'fingerprintjs2';
 import FontFaceObserver from 'fontfaceobserver';
@@ -33,10 +32,6 @@ const fonts = [
     url: null,
   },
 ];
-
-Layout.propTypes = {
-  children: node.isRequired,
-};
 
 function Layout({ children }: PropsWithChildren<unknown>) {
   return (

@@ -1,4 +1,3 @@
-import { array, objectOf, oneOfType, string, number, bool } from 'prop-types';
 import nextCookie from 'next-cookies';
 import get from 'lodash/get';
 import Head from 'components/head';
@@ -35,10 +34,6 @@ const UpdateProfile: NextPage<UpdateProfileProps> = ({ initialValues }: UpdatePr
       <Content theme="gray" columns={[<UpdateProfileForm initialValues={initialValues} />]} />
     </>
   );
-};
-
-UpdateProfile.propTypes = {
-  initialValues: objectOf(oneOfType([array, oneOfType([string, number, bool])])),
 };
 
 UpdateProfile.defaultProps = {
