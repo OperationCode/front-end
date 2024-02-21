@@ -1,4 +1,3 @@
-import { array, objectOf, oneOfType, string, number, bool } from 'prop-types';
 import nextCookie from 'next-cookies';
 import get from 'lodash/get';
 import Head from 'components/head';
@@ -7,11 +6,34 @@ import Content from 'components/Content/Content';
 import UpdateProfileForm from 'components/Forms/UpdateProfileForm/UpdateProfileForm';
 import withAuthSync from 'decorators/withAuthSync/withAuthSync';
 import { getUserPromise } from 'common/constants/api';
+import { NextPage } from 'next';
 
 const pageTitle = 'Update Profile';
 
-UpdateProfile.propTypes = {
-  initialValues: objectOf(oneOfType([array, oneOfType([string, number, bool])])),
+interface UpdateProfileProps {
+  initialValues?: {
+    programmingLanguages: string[];
+    disciplines: string[];
+    branchOfService: string;
+    yearsOfService: string;
+    payGrade: string;
+    militaryStatus: string;
+    employmentStatus: string;
+    companyName: string;
+    companyRole: string;
+  };
+}
+
+const UpdateProfile: NextPage<UpdateProfileProps> = ({ initialValues }: UpdateProfileProps) => {
+  return (
+    <>
+      <Head title={pageTitle} />
+
+      <HeroBanner title={pageTitle} />
+
+      <Content theme="gray" columns={[<UpdateProfileForm initialValues={initialValues} />]} />
+    </>
+  );
 };
 
 UpdateProfile.defaultProps = {
@@ -37,17 +59,5 @@ UpdateProfile.getInitialProps = async ctx => {
     initialValues: { ...UpdateProfileForm.defaultProps.initialValues, ...formattedData },
   };
 };
-
-function UpdateProfile({ initialValues }) {
-  return (
-    <>
-      <Head title={pageTitle} />
-
-      <HeroBanner title={pageTitle} />
-
-      <Content theme="gray" columns={[<UpdateProfileForm initialValues={initialValues} />]} />
-    </>
-  );
-}
 
 export default withAuthSync(UpdateProfile);

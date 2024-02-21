@@ -1,16 +1,12 @@
+import { NextPageContext } from 'next';
 import Link from 'next/link';
-import { bool } from 'prop-types';
 import { confirmEmail } from 'common/constants/api';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
 import Alert from '../components/Alert/Alert';
 
-ConfirmEmail.propTypes = {
-  isVerified: bool.isRequired,
-};
-
-ConfirmEmail.getInitialProps = async ({ query: { key } }) => {
+ConfirmEmail.getInitialProps = async ({ query: { key } }: NextPageContext) => {
   try {
     const data = await confirmEmail({ key });
 
@@ -20,7 +16,7 @@ ConfirmEmail.getInitialProps = async ({ query: { key } }) => {
   }
 };
 
-function ConfirmEmail({ isVerified }) {
+function ConfirmEmail({ isVerified }: { isVerified: boolean }) {
   return (
     <>
       <Head title="Email Verification" />

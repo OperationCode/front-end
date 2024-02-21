@@ -314,7 +314,6 @@ function FAQ() {
 
       <HeroBanner title="Frequently Asked Questions" />
 
-      {/* eslint-disable react/no-array-index-key */}
       <Content
         title="General Questions"
         hasTitleUnderline
@@ -362,7 +361,6 @@ function FAQ() {
           />
         ))}
       />
-      {/* eslint-enable react/no-array-index-key */}
     </div>
   );
 }

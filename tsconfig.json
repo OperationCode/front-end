@@ -1,0 +1,41 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "target": "esnext",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "incremental": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "checkJs": false,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "alwaysStrict": true,
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "jsx": "preserve",
+    "jsxFactory": "React.createElement",
+    "jsxFragmentFactory": "React.Fragment",
+    "noEmit": true,
+    "noEmitOnError": true,
+    "paths": {
+      // Ensure intellisense continues to operate - match with webpack aliases
+      "common/*": ["./common/*"],
+      "components/*": ["./components/*"],
+      "pages/*": ["./pages/*"],
+      "public/*": ["./public/*"],
+      "scripts/*": ["./scripts/*"],
+      "static/*": ["./public/static/*"],
+      "styles/*": ["./styles/*"],
+      "test-utils/*": ["./test-utils/*"]
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
+}

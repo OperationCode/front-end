@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { arrayOf, shape, string } from 'prop-types';
 import get from 'lodash/get';
 import dynamic from 'next/dynamic';
 import { parse as parseXml } from 'fast-xml-parser';
@@ -12,20 +11,32 @@ import Heading from 'components/Heading/Heading';
 import styles from 'styles/podcast.module.css';
 import Image from 'next/image';
 
+interface RSS {
+  channel: {
+    item: { image: { href: string }; link: string; title: string; description: string }[];
+  };
+}
+
+interface Episode {
+  image: string;
+  name: string;
+  source: string;
+  story: string;
+}
+
 const pageTitle = 'Podcast';
 
 const ReactPlayer = dynamic(() => import('react-player/lazy'), { ssr: false });
 
-Podcast.propTypes = {
-  episodes: arrayOf(shape({ image: string, name: string, source: string, story: string }))
-    .isRequired,
-};
-
 // We have atypical error handling because there exist errors thrown on nearly every request.
 export async function getStaticProps() {
-  const { data } = await axios.get('https://operationcode.libsyn.com/rss');
+  const { data } = await axios.get<string>('https://operationcode.libsyn.com/rss');
 
-  const { rss } = parseXml(data, {
+  const {
+    rss,
+  }: {
+    rss: RSS;
+  } = parseXml(data, {
     ignoreNameSpace: true,
     ignoreAttributes: false,
     attributeNamePrefix: '',
@@ -48,7 +59,7 @@ export async function getStaticProps() {
   throw new Error('getStaticProps in /podcast failed.');
 }
 
-function Podcast({ episodes }) {
+function Podcast({ episodes }: { episodes: Episode[] }) {
   return (
     <div className={styles.Podcast}>
       <Head title={pageTitle} />
