@@ -20,10 +20,6 @@ exports[`Nav should render with no props passed 1`] = `
           "name": "Podcast",
         },
         Object {
-          "href": "/code_schools",
-          "name": "Code Schools",
-        },
-        Object {
           "href": "/project_rebuild",
           "name": "Project Rebuild",
         },
@@ -117,10 +113,6 @@ exports[`Nav should render with no props passed 1`] = `
                 Object {
                   "href": "/podcast",
                   "name": "Podcast",
-                },
-                Object {
-                  "href": "/code_schools",
-                  "name": "Code Schools",
                 },
                 Object {
                   "href": "/project_rebuild",

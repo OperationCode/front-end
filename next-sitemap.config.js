@@ -1,4 +1,4 @@
-const priorities = { '/': '1.00', '/join': '1.00', '/code_schools': '1.00' };
+const priorities = { '/': '1.00', '/join': '1.00' };
 
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
