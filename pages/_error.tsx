@@ -1,9 +1,14 @@
-import NextErrorComponent from 'next/error';
+import NextErrorComponent, { ErrorProps } from 'next/error';
 import * as Sentry from '@sentry/nextjs';
 import ErrorDisplay from 'components/ErrorDisplay/ErrorDisplay';
+import { NextPageContext } from 'next';
 
-// eslint-disable-next-line react/prop-types
-const CustomError = ({ statusCode, hasGetInitialPropsRun, err }) => {
+interface CustomErrorProps extends ErrorProps {
+  hasGetInitialPropsRun?: boolean;
+  err?: NextPageContext['err'];
+}
+
+const CustomError = ({ statusCode, hasGetInitialPropsRun, err }: CustomErrorProps) => {
   if (!hasGetInitialPropsRun && err) {
     // getInitialProps is not called in case of
     // https://github.com/vercel/next.js/issues/8592. As a workaround, we pass
@@ -15,8 +20,9 @@ const CustomError = ({ statusCode, hasGetInitialPropsRun, err }) => {
   return <ErrorDisplay statusCode={statusCode} />;
 };
 
-CustomError.getInitialProps = async ({ res, err, asPath }) => {
-  const errorInitialProps = await NextErrorComponent.getInitialProps({
+CustomError.getInitialProps = async ({ res, err, asPath, ...props }: NextPageContext) => {
+  const errorInitialProps: CustomErrorProps = await NextErrorComponent.getInitialProps({
+    ...props,
     res,
     err,
   });

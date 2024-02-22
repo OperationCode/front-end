@@ -1,11 +1,8 @@
-/* eslint-disable max-classes-per-file */
-
 // Polyfills
 import 'intersection-observer';
 
-import { useEffect } from 'react';
+import { useEffect, PropsWithChildren } from 'react';
 import * as Sentry from '@sentry/nextjs';
-import { node } from 'prop-types';
 import Router from 'next/router';
 import Fingerprint2 from 'fingerprintjs2';
 import FontFaceObserver from 'fontfaceobserver';
@@ -18,6 +15,8 @@ import { gtag } from 'common/utils/thirdParty/gtag';
 import Nav from 'components/Nav/Nav';
 import Footer from 'components/Footer/Footer';
 import 'common/styles/globals.css';
+import { AppProps } from 'next/app';
+import NextErrorComponent from 'next/error';
 
 const isProduction = process.env.NODE_ENV === 'production';
 
@@ -34,11 +33,7 @@ const fonts = [
   },
 ];
 
-Layout.propTypes = {
-  children: node.isRequired,
-};
-
-function Layout({ children }) {
+function Layout({ children }: PropsWithChildren<unknown>) {
   return (
     <div>
       <Nav />
@@ -65,7 +60,7 @@ if (!isProduction) {
   Router.events.on('routeChangeComplete', () => {
     const path = '/_next/static/chunks/styles.chunk.module.css';
     const chunksSelector = `link[href*="${path}"]:not([rel=preload])`;
-    const chunksNodes = document.querySelectorAll(chunksSelector);
+    const chunksNodes: NodeListOf<HTMLAnchorElement> = document.querySelectorAll(chunksSelector);
     if (chunksNodes.length) {
       const timestamp = new Date().valueOf();
       chunksNodes[0].href = `${path}?ts=${timestamp}`;
@@ -73,8 +68,7 @@ if (!isProduction) {
   });
 }
 
-// eslint-disable-next-line react/prop-types
-const App = ({ Component, pageProps, err }) => {
+const App = ({ Component, pageProps, err }: AppProps & { err: NextErrorComponent }) => {
   useEffect(() => {
     /* Analytics */
     // TODO: Leverage prod-build-time-only env vars instead of window check
@@ -91,7 +85,7 @@ const App = ({ Component, pageProps, err }) => {
       setupLogRocketReact(LogRocket);
 
       // Per library docs, Fingerprint2 should not run immediately
-      if (window.requestIdleCallback) {
+      if ('requestIdleCallback' in window) {
         requestIdleCallback(setLogRocketFingerprint);
       } else {
         setTimeout(setLogRocketFingerprint, 500);
@@ -103,7 +97,7 @@ const App = ({ Component, pageProps, err }) => {
       if (font.url) {
         const link = document.createElement('link');
         link.href = font.url;
-        link.rel = 'stylesheet'; // eslint-disable-line unicorn/prevent-abbreviations
+        link.rel = 'stylesheet';
         document.head.append(link);
       }
 

@@ -18,7 +18,7 @@ export default function Join() {
     prefetch(profileUpdateURL);
   }, []);
 
-  const handleSuccess = ({ token }) => {
+  const handleSuccess = ({ token }: { token: string }) => {
     gtag.conversionEvent({ adId: '9ZvVCOOFmrkBEK-Rnp4D', category: 'sign_up' });
     login({ token }, profileUpdateURL);
   };
