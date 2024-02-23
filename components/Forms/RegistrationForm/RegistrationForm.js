@@ -227,7 +227,7 @@ function RegistrationForm({ initialValues, onSubmit, onSuccess }) {
                     href={slackGuidelines}
                     analyticsEventLabel="Registration Slack Guidelines Checkbox Link"
                   >
-                    Operation Code&apos;s Slack Guidelines.
+                    Operation Code&apos;s Slack Community Guidelines.
                   </OutboundLink>
                   *
                 </span>
