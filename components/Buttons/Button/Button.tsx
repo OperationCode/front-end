@@ -2,15 +2,11 @@ import React from 'react';
 import noop from 'lodash/noop';
 import classNames from 'classnames';
 import { BUTTON } from 'common/constants/testIDs';
-/**
- * TODO: Should this be removed from 'custom-props' since we have TS now?
- */
-// import { googleAnalyticsEventPropType } from 'common/constants/custom-props';
 import { gtag } from 'common/utils/thirdParty/gtag';
 import { getDataAttributes, getAriaAttributes } from 'common/utils/prop-utils';
 import styles from './Button.module.css';
 
-type AnalyticsObjectType = {
+type GoogleAnalyticsEventPropType = {
   /**
    * A description of the behaviour. E.g. 'Clicked Delete', 'Added a component', 'Deleted account'
    */
@@ -44,7 +40,7 @@ type ButtonProps = {
   /**
    * Helps track in-page `event` interactions.
    */
-  analyticsObject?: AnalyticsObjectType;
+  analyticsObject?: GoogleAnalyticsEventPropType;
   /**
    * Element used as the button label.
    */
