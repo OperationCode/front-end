@@ -118,17 +118,19 @@ function RegistrationForm({ initialValues, onSubmit, onSuccess }) {
     >
       {({ isSubmitting }) => (
         <Form className="flex flex-col items-center w-full">
-          <p className="max-w-xl px-4 pb-4">
-            We work closely with military veterans, service members, and spouses who are passionate
-            about transitioning into the tech industry. We work with over 7,000 members who are all
-            working towards relevant goals on Slack and in-person meet-ups. Membership is free!
-            Unfamiliar with Slack?{` `}
-            <Link href="/slack_guide">
-              <a>Learn how to use it!</a>
-            </Link>
-          </p>
+          <div className="max-w-xl px-4">
+            <p className="pb-4">
+              We work closely with military veterans, service members, and spouses who are
+              passionate about transitioning into the tech industry. We work with over 7,000 members
+              who are all working towards relevant goals on Slack and in-person meet-ups. Membership
+              is free! Unfamiliar with Slack?{` `}
+              <Link href="/slack_guide">
+                <a>Learn how to use it!</a>
+              </Link>
+            </p>
+          </div>
 
-          <div className="flex flex-col justify-between w-full max-w-xl">
+          <div className="flex flex-col justify-between max-w-md">
             <Field
               type="email"
               name="email"
@@ -225,7 +227,7 @@ function RegistrationForm({ initialValues, onSubmit, onSuccess }) {
                     href={slackGuidelines}
                     analyticsEventLabel="Registration Slack Guidelines Checkbox Link"
                   >
-                    Operation Code&apos;s Slack Community Guidelines.
+                    Operation Code&apos;s Slack Guidelines.
                   </OutboundLink>
                   *
                 </span>
@@ -237,19 +239,16 @@ function RegistrationForm({ initialValues, onSubmit, onSuccess }) {
 
           {errorMessage && <Alert type="error">{errorMessage}</Alert>}
 
-          <div className="max-w-xl px-3 pb-5">
-            <p className="max-w-xl text-xs">
+          <div className="max-w-md px-3 pt-1">
+            <Button type="submit" theme="secondary" disabled={isSubmitting}>
+              Submit
+            </Button>
+            <p className="pt-5 text-xs">
               The demographic information you provide, helps us understand our community needs,
               ensure diversity, and provide specific resources to reach our mission. Thank you in
               advance for providing honest answers.&nbsp;
               <span className="font-bold">We do not sell your information to anyone.</span>
             </p>
-          </div>
-
-          <div className="w-full max-w-xl px-2">
-            <Button type="submit" theme="secondary" disabled={isSubmitting}>
-              Submit
-            </Button>
           </div>
         </Form>
       )}
