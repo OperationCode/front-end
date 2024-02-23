@@ -7,21 +7,25 @@ exports[`RegistrationForm should render with required props 1`] = `
   onReset={[Function]}
   onSubmit={[Function]}
 >
-  <p
-    className="max-w-xl px-4 pb-4"
-  >
-    We work closely with military veterans, service members, and spouses who are passionate about transitioning into the tech industry. We work with over 7,000 members who are all working towards relevant goals on Slack and in-person meet-ups. Membership is free! Unfamiliar with Slack?
-     
-    <a
-      href="/slack_guide"
-      onClick={[Function]}
-      onMouseEnter={[Function]}
-    >
-      Learn how to use it!
-    </a>
-  </p>
   <div
-    className="flex flex-col justify-between w-full max-w-xl"
+    className="max-w-xl px-4"
+  >
+    <p
+      className="pb-4"
+    >
+      We work closely with military veterans, service members, and spouses who are passionate about transitioning into the tech industry. We work with over 7,000 members who are all working towards relevant goals on Slack and in-person meet-ups. Membership is free! Unfamiliar with Slack?
+       
+      <a
+        href="/slack_guide"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        Learn how to use it!
+      </a>
+    </p>
+  </div>
+  <div
+    className="flex flex-col justify-between max-w-md"
   >
     <div
       className="field"
@@ -307,21 +311,7 @@ exports[`RegistrationForm should render with required props 1`] = `
     </div>
   </div>
   <div
-    className="max-w-xl px-3 pb-5"
-  >
-    <p
-      className="max-w-xl text-xs"
-    >
-      The demographic information you provide, helps us understand our community needs, ensure diversity, and provide specific resources to reach our mission. Thank you in advance for providing honest answers. 
-      <span
-        className="font-bold"
-      >
-        We do not sell your information to anyone.
-      </span>
-    </p>
-  </div>
-  <div
-    className="w-full max-w-xl px-2"
+    className="max-w-md px-3 pt-1"
   >
     <button
       className="Button secondary"
@@ -333,6 +323,16 @@ exports[`RegistrationForm should render with required props 1`] = `
     >
       Submit
     </button>
+    <p
+      className="pt-5 text-xs"
+    >
+      The demographic information you provide, helps us understand our community needs, ensure diversity, and provide specific resources to reach our mission. Thank you in advance for providing honest answers. 
+      <span
+        className="font-bold"
+      >
+        We do not sell your information to anyone.
+      </span>
+    </p>
   </div>
 </form>
 `;
