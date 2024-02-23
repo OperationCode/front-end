@@ -7,7 +7,7 @@ import { createUser } from 'common/constants/api';
 import { getServerErrorMessage } from 'common/utils/api-utils';
 import { validationErrorMessages } from 'common/constants/messages';
 import { capitalizeFirstLetter } from 'common/utils/string-utils';
-import { codeOfConduct } from 'common/constants/urls';
+import { codeOfConduct, slackGuidelines } from 'common/constants/urls';
 import Button from 'components/Buttons/Button/Button';
 import Checkbox from 'components/Form/Checkbox/Checkbox';
 import Form from 'components/Form/Form';
@@ -27,6 +27,7 @@ const defaultValues = {
   lastName: '',
   zipcode: '',
   codeOfConduct: false,
+  slackGuidelines: false,
 };
 
 /**
@@ -52,6 +53,7 @@ const registrationSchema = Yup.object().shape({
   lastName: Yup.string().trim().required(validationErrorMessages.required),
   zipcode: Yup.string().trim().required(validationErrorMessages.required),
   codeOfConduct: Yup.boolean().oneOf([true], validationErrorMessages.codeOfConduct),
+  slackGuidelines: Yup.boolean().oneOf([true], validationErrorMessages.slackGuidelines),
 });
 
 RegistrationForm.propTypes = {
@@ -66,6 +68,7 @@ RegistrationForm.propTypes = {
     lastName: string,
     zipcode: oneOfType([string, number]),
     codeOfConduct: boolean,
+    slackGuidelines: boolean,
   }),
 };
 
@@ -114,18 +117,20 @@ function RegistrationForm({ initialValues, onSubmit, onSuccess }) {
       validationSchema={registrationSchema}
     >
       {({ isSubmitting }) => (
-        <Form className="w-full flex items-center flex-col [&>p]:my-5 [&>p]:mx-auto">
-          <p>
-            We work closely with military veterans, service members, and spouses who are passionate
-            about transitioning into the tech industry. We work with over 7,000 members who are all
-            working towards relevant goals on Slack and in-person meet-ups. Membership is free!
-            Unfamiliar with Slack?{` `}
-            <Link href="/slack_guide">
-              <a>Learn how to use it!</a>
-            </Link>
-          </p>
+        <Form className="flex flex-col items-center w-full">
+          <div className="max-w-xl px-4">
+            <p className="pb-4">
+              We work closely with military veterans, service members, and spouses who are
+              passionate about transitioning into the tech industry. We work with over 7,000 members
+              who are all working towards relevant goals on Slack and in-person meet-ups. Membership
+              is free! Unfamiliar with Slack?{` `}
+              <Link href="/slack_guide">
+                <a>Learn how to use it!</a>
+              </Link>
+            </p>
+          </div>
 
-          <div className="flex flex-col justify-between w-full max-w-lg">
+          <div className="flex flex-col justify-between max-w-md">
             <Field
               type="email"
               name="email"
@@ -198,7 +203,7 @@ function RegistrationForm({ initialValues, onSubmit, onSuccess }) {
                 <span>
                   I have read and agree to&nbsp;
                   <OutboundLink
-                    hasIcon={false}
+                    hasIcon
                     href={codeOfConduct}
                     analyticsEventLabel="Registration CoC Checkbox Link"
                   >
@@ -210,25 +215,41 @@ function RegistrationForm({ initialValues, onSubmit, onSuccess }) {
               component={Checkbox}
               disabled={isSubmitting}
             />
+
+            <Field
+              type="checkbox"
+              name="slackGuidelines"
+              label={
+                <span>
+                  I have read and agree to&nbsp;
+                  <OutboundLink
+                    hasIcon
+                    href={slackGuidelines}
+                    analyticsEventLabel="Registration Slack Guidelines Checkbox Link"
+                  >
+                    Operation Code&apos;s Slack Community Guidelines.
+                  </OutboundLink>
+                  *
+                </span>
+              }
+              component={Checkbox}
+              disabled={isSubmitting}
+            />
           </div>
 
           {errorMessage && <Alert type="error">{errorMessage}</Alert>}
 
-          <hr className="my-8 mx-0 w-1/4 border-themeGray200" />
-
-          <p className="bg-white border-1 border-solid border-themeSecondary rounded-md text-sm py-2 px-3">
-            The demographic information you provide, helps us understand our community needs, ensure
-            diversity, and provide specific resources to reach our mission. Thank you in advance for
-            providing honest answers.
-            <br />
-            <span className="font-bold">We do not sell your information to anyone.</span>
-          </p>
-
-          <hr className="my-8 mx-0 w-1/4 border-themeGray200" />
-
-          <Button className="mt-4" type="submit" theme="secondary" disabled={isSubmitting}>
-            Submit
-          </Button>
+          <div className="max-w-md px-3 pt-1">
+            <Button type="submit" theme="secondary" disabled={isSubmitting}>
+              Submit
+            </Button>
+            <p className="pt-5 text-xs">
+              The demographic information you provide, helps us understand our community needs,
+              ensure diversity, and provide specific resources to reach our mission. Thank you in
+              advance for providing honest answers.&nbsp;
+              <span className="font-bold">We do not sell your information to anyone.</span>
+            </p>
+          </div>
         </Form>
       )}
     </Formik>
