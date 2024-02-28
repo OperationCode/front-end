@@ -36,7 +36,7 @@ describe('Button', () => {
     const { queryByTestId } = render(<Button onClick={onClickMock}>Testing</Button>);
 
     expect(onClickMock).toHaveBeenCalledTimes(0);
-
+    // @ts-expect-error Argument of type 'HTMLElement | null' is not assignable (delete comment to view full error)
     fireEvent.click(queryByTestId(BUTTON));
 
     expect(onClickMock).toHaveBeenCalledTimes(1);
@@ -46,7 +46,7 @@ describe('Button', () => {
     const { queryByTestId } = render(<Button {...requiredProps} />);
 
     expect(gtag.event).toHaveBeenCalledTimes(0);
-
+    // @ts-expect-error Argument of type 'HTMLElement | null' is not assignable (delete comment to view full error)
     fireEvent.click(queryByTestId(BUTTON));
 
     expect(gtag.event).toHaveBeenCalledTimes(1);
