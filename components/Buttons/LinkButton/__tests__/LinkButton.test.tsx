@@ -35,6 +35,7 @@ describe('LinkButton', () => {
     const gtagSpy = vi.spyOn(gtag, 'outboundLink');
     expect(gtagSpy).toHaveBeenCalledTimes(0);
 
+    //@ts-expect-error
     fireEvent.click(component.queryByTestId(testID));
 
     expect(gtagSpy).toHaveBeenCalledTimes(1);
