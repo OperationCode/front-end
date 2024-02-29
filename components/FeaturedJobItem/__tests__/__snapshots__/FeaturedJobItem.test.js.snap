@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`FeaturedJobItem should render with many props assigned 1`] = `
+exports[`FeaturedJobItem > should render with many props assigned 1`] = `
 <article
   className="py-4 px-0"
 >
@@ -22,6 +22,12 @@ exports[`FeaturedJobItem should render with many props assigned 1`] = `
     </span>
     <svg
       className="!fill-current relative my-0 mx-1 bottom-0 w-3"
+      dangerouslySetInnerHTML={
+        {
+          "__html": "<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" id="73ab62bc"><title>External Link Symbol</title><path d="M448 80v352c0 27-21 48-48 48H48c-27 0-48-21-48-48V80c0-27 21-48 48-48h352c27 0 48 21 48 48zm-88 16H248c-21 0-32 26-17 41l32 32L68 364c-5 5-5 13 0 17l31 31c4 5 12 5 17 0l195-195 32 32c15 15 41 4 41-17V120c0-13-11-24-24-24z"/></symbol><use href='#73ab62bc'/>",
+        }
+      }
+      viewBox="0 0 448 512"
     />
   </a>
   <div
@@ -32,6 +38,12 @@ exports[`FeaturedJobItem should render with many props assigned 1`] = `
     >
       <svg
         className="fill-themeSecondary opacity-80 h-3.5"
+        dangerouslySetInnerHTML={
+          {
+            "__html": "<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" id="d15de51e"><title>Building</title><path d="M436 480h-20V24a24 24 0 0 0-24-24H56a24 24 0 0 0-24 24v456H12a12 12 0 0 0-12 12v20h448v-20a12 12 0 0 0-12-12zM128 76a12 12 0 0 1 12-12h40a12 12 0 0 1 12 12v40a12 12 0 0 1-12 12h-40a12 12 0 0 1-12-12V76zm0 96a12 12 0 0 1 12-12h40a12 12 0 0 1 12 12v40a12 12 0 0 1-12 12h-40a12 12 0 0 1-12-12v-40zm52 148h-40a12 12 0 0 1-12-12v-40a12 12 0 0 1 12-12h40a12 12 0 0 1 12 12v40a12 12 0 0 1-12 12zm76 160h-64v-84a12 12 0 0 1 12-12h40a12 12 0 0 1 12 12v84zm64-172a12 12 0 0 1-12 12h-40a12 12 0 0 1-12-12v-40a12 12 0 0 1 12-12h40a12 12 0 0 1 12 12v40zm0-96a12 12 0 0 1-12 12h-40a12 12 0 0 1-12-12v-40a12 12 0 0 1 12-12h40a12 12 0 0 1 12 12v40zm0-96a12 12 0 0 1-12 12h-40a12 12 0 0 1-12-12V76a12 12 0 0 1 12-12h40a12 12 0 0 1 12 12v40z"/></symbol><use href='#d15de51e'/>",
+          }
+        }
+        viewBox="0 0 448 512"
       />
       <span
         className="ml-1"
@@ -44,6 +56,12 @@ exports[`FeaturedJobItem should render with many props assigned 1`] = `
     >
       <svg
         className="fill-themeSecondary opacity-80 h-3.5"
+        dangerouslySetInnerHTML={
+          {
+            "__html": "<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" id="fb2a0dac"><title>Map Marker</title><path d="M172.3 501.7C27 291 0 269.4 0 192a192 192 0 1 1 384 0c0 77.4-27 99-172.3 309.7a24 24 0 0 1-39.4 0zM192 272a80 80 0 1 0 0-160 80 80 0 0 0 0 160z"/></symbol><use href='#fb2a0dac'/>",
+          }
+        }
+        viewBox="0 0 384 512"
       />
       <span
         className="ml-1"
@@ -68,6 +86,12 @@ exports[`FeaturedJobItem should render with many props assigned 1`] = `
     >
       <svg
         className="fill-themeSecondary opacity-80 h-3.5"
+        dangerouslySetInnerHTML={
+          {
+            "__html": "<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" id="cf1b401c"><title>Cloud With Up Arrow Inside</title><path d="M537.6 226.6a96 96 0 0 0-142.9-114.4 159.9 159.9 0 0 0-298.5 87.9A144.1 144.1 0 0 0 144 480h368a128 128 0 0 0 25.6-253.4zM393.4 288H328v112a16 16 0 0 1-16 16h-48a16 16 0 0 1-16-16V288h-65.4a16 16 0 0 1-11.3-27.3l105.4-105.4a16 16 0 0 1 22.6 0l105.4 105.4a16 16 0 0 1-11.3 27.3z"/></symbol><use href='#cf1b401c'/>",
+          }
+        }
+        viewBox="0 0 640 512"
       />
       <span
         className="ml-1"
@@ -84,7 +108,7 @@ exports[`FeaturedJobItem should render with many props assigned 1`] = `
 </article>
 `;
 
-exports[`FeaturedJobItem should render with required props 1`] = `
+exports[`FeaturedJobItem > should render with required props 1`] = `
 <article
   className="py-4 px-0"
 >
@@ -106,6 +130,12 @@ exports[`FeaturedJobItem should render with required props 1`] = `
     </span>
     <svg
       className="!fill-current relative my-0 mx-1 bottom-0 w-3"
+      dangerouslySetInnerHTML={
+        {
+          "__html": "<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" id="73ab62bc"><title>External Link Symbol</title><path d="M448 80v352c0 27-21 48-48 48H48c-27 0-48-21-48-48V80c0-27 21-48 48-48h352c27 0 48 21 48 48zm-88 16H248c-21 0-32 26-17 41l32 32L68 364c-5 5-5 13 0 17l31 31c4 5 12 5 17 0l195-195 32 32c15 15 41 4 41-17V120c0-13-11-24-24-24z"/></symbol><use href='#73ab62bc'/>",
+        }
+      }
+      viewBox="0 0 448 512"
     />
   </a>
   <div
@@ -116,6 +146,12 @@ exports[`FeaturedJobItem should render with required props 1`] = `
     >
       <svg
         className="fill-themeSecondary opacity-80 h-3.5"
+        dangerouslySetInnerHTML={
+          {
+            "__html": "<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" id="d15de51e"><title>Building</title><path d="M436 480h-20V24a24 24 0 0 0-24-24H56a24 24 0 0 0-24 24v456H12a12 12 0 0 0-12 12v20h448v-20a12 12 0 0 0-12-12zM128 76a12 12 0 0 1 12-12h40a12 12 0 0 1 12 12v40a12 12 0 0 1-12 12h-40a12 12 0 0 1-12-12V76zm0 96a12 12 0 0 1 12-12h40a12 12 0 0 1 12 12v40a12 12 0 0 1-12 12h-40a12 12 0 0 1-12-12v-40zm52 148h-40a12 12 0 0 1-12-12v-40a12 12 0 0 1 12-12h40a12 12 0 0 1 12 12v40a12 12 0 0 1-12 12zm76 160h-64v-84a12 12 0 0 1 12-12h40a12 12 0 0 1 12 12v84zm64-172a12 12 0 0 1-12 12h-40a12 12 0 0 1-12-12v-40a12 12 0 0 1 12-12h40a12 12 0 0 1 12 12v40zm0-96a12 12 0 0 1-12 12h-40a12 12 0 0 1-12-12v-40a12 12 0 0 1 12-12h40a12 12 0 0 1 12 12v40zm0-96a12 12 0 0 1-12 12h-40a12 12 0 0 1-12-12V76a12 12 0 0 1 12-12h40a12 12 0 0 1 12 12v40z"/></symbol><use href='#d15de51e'/>",
+          }
+        }
+        viewBox="0 0 448 512"
       />
       <span
         className="ml-1"

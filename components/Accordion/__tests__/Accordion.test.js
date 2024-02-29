@@ -1,6 +1,10 @@
 import { fireEvent, render } from '@testing-library/react';
 
-import { ACCORDION_CONTENT, ACCORDION_TOGGLE_BUTTON } from 'common/constants/testIDs';
+import {
+  ACCORDION_CONTENT,
+  ACCORDION_TOGGLE_BUTTON,
+  SCREEN_READER_ONLY,
+} from 'common/constants/testIDs';
 import { Default } from '../__stories__/Accordion.stories';
 import { toggleMessages } from '../../ScreenReaderOnly/ScreenReaderOnly';
 
@@ -20,7 +24,7 @@ describe('Accordion', () => {
 describe('Accordion Accessibility', () => {
   it('should display the correct screenReader text for toggle button', async () => {
     const component = render(<Default {...Default.args} />);
-    const Button = component.queryByTestId(ACCORDION_TOGGLE_BUTTON);
+    const Button = component.queryByTestId(SCREEN_READER_ONLY);
 
     expect(Button.textContent).toBe(toggleMessages.open);
 

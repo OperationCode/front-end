@@ -1,7 +1,7 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`ScreenReaderOnly should render with required props 1`] = `
-Array [
+exports[`ScreenReaderOnly > should render with required props 1`] = `
+[
   <span>
     Content never displayed, but it is rendered
   </span>,

@@ -5,11 +5,11 @@ import CloseButton from '../CloseButton';
 
 describe('CloseButton', () => {
   it('should render with just required props passed', () => {
-    createSnapshotTest(<CloseButton onClick={jest.fn()} />);
+    createSnapshotTest(<CloseButton onClick={vi.fn()} />);
   });
 
   it('should not be clickable when disabled', () => {
-    const onClickMock = jest.fn();
+    const onClickMock = vi.fn();
     const { queryByTestId } = render(<CloseButton disabled onClick={onClickMock} />);
 
     fireEvent.click(queryByTestId(CLOSE_BUTTON));

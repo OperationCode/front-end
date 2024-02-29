@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`LinkButton should render with many props assigned 1`] = `
+exports[`LinkButton > should render with many props assigned 1`] = `
 <a
   className="inline-flex items-start Button test-class secondary fullWidth"
   data-testid="Test"
@@ -19,7 +19,7 @@ exports[`LinkButton should render with many props assigned 1`] = `
 </a>
 `;
 
-exports[`LinkButton should render with required props 1`] = `
+exports[`LinkButton > should render with required props 1`] = `
 <a
   className="Button primary"
   href="https://tests.com"

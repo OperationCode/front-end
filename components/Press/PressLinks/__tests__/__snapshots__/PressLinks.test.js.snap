@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`PressLinks should render with no props passed 1`] = `
+exports[`PressLinks > should render with no props passed 1`] = `
 <div
   className="logos"
 >
@@ -8,11 +8,19 @@ exports[`PressLinks should render with no props passed 1`] = `
     className="flexContainer"
   >
     <ForwardRef
-      defaultValue="Boston"
+      defaultValue="NYC"
     >
       <ForwardRef
         className="tabsList"
       >
+        <ForwardRef
+          className="tabsTrigger"
+          value="NYC"
+        >
+          <h3>
+            NYC
+          </h3>
+        </ForwardRef>
         <ForwardRef
           className="tabsTrigger"
           value="Boston"
@@ -29,14 +37,38 @@ exports[`PressLinks should render with no props passed 1`] = `
             General
           </h3>
         </ForwardRef>
-        <ForwardRef
-          className="tabsTrigger"
-          value="NYC"
-        >
-          <h3>
-            NYC
-          </h3>
-        </ForwardRef>
+      </ForwardRef>
+      <ForwardRef
+        className="tabsContent"
+        value="NYC"
+      >
+        <li>
+          <OutboundLink
+            analyticsEventLabel="Press Article"
+            hasIcon={true}
+            href="https://wtkr.com/2018/05/16/new-program-aims-to-help-veterans-land-jobs-in-tech-industry/"
+          >
+            New program aims to help veterans land jobs in tech industry
+          </OutboundLink>
+        </li>
+        <li>
+          <OutboundLink
+            analyticsEventLabel="Press Article"
+            hasIcon={true}
+            href="http://www.wdtv.com/content/news/Veterans-in-Residence-program-helping-veterans-grow-businesses-482707221.html"
+          >
+            Veterans in Residence
+          </OutboundLink>
+        </li>
+        <li>
+          <OutboundLink
+            analyticsEventLabel="Press Article"
+            hasIcon={true}
+            href="https://www.wework.com/blog/posts/after-flying-solo-veterans-find-others-who-have-their-back"
+          >
+            After Flying Solo, Veterans Find Others Who Have Their Backs
+          </OutboundLink>
+        </li>
       </ForwardRef>
       <ForwardRef
         className="tabsContent"
@@ -414,38 +446,6 @@ exports[`PressLinks should render with no props passed 1`] = `
             href="https://news.clearancejobs.com/2017/07/17/operation-code-looks-help-veterans-land-careers/"
           >
             Operation Code Looks to Help Veterans Land IT Careers
-          </OutboundLink>
-        </li>
-      </ForwardRef>
-      <ForwardRef
-        className="tabsContent"
-        value="NYC"
-      >
-        <li>
-          <OutboundLink
-            analyticsEventLabel="Press Article"
-            hasIcon={true}
-            href="https://wtkr.com/2018/05/16/new-program-aims-to-help-veterans-land-jobs-in-tech-industry/"
-          >
-            New program aims to help veterans land jobs in tech industry
-          </OutboundLink>
-        </li>
-        <li>
-          <OutboundLink
-            analyticsEventLabel="Press Article"
-            hasIcon={true}
-            href="http://www.wdtv.com/content/news/Veterans-in-Residence-program-helping-veterans-grow-businesses-482707221.html"
-          >
-            Veterans in Residence
-          </OutboundLink>
-        </li>
-        <li>
-          <OutboundLink
-            analyticsEventLabel="Press Article"
-            hasIcon={true}
-            href="https://www.wework.com/blog/posts/after-flying-solo-veterans-find-others-who-have-their-back"
-          >
-            After Flying Solo, Veterans Find Others Who Have Their Backs
           </OutboundLink>
         </li>
       </ForwardRef>

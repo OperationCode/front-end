@@ -13,11 +13,11 @@ describe('LoginForm', () => {
   });
 
   it('should render with required props', () => {
-    createSnapshotTest(<LoginForm login={jest.fn()} onSuccess={jest.fn()} />);
+    createSnapshotTest(<LoginForm login={vi.fn()} onSuccess={vi.fn()} />);
   });
 
   it('should display required error message when blurring past email input', async () => {
-    render(<LoginForm login={jest.fn()} onSuccess={jest.fn()} />);
+    render(<LoginForm login={vi.fn()} onSuccess={vi.fn()} />);
 
     fireEvent.blur(screen.getByLabelText(/Email/));
 
@@ -25,7 +25,7 @@ describe('LoginForm', () => {
   });
 
   it('should show error when providing non-email to email input', async () => {
-    render(<LoginForm login={jest.fn()} onSuccess={jest.fn()} />);
+    render(<LoginForm login={vi.fn()} onSuccess={vi.fn()} />);
 
     fireEvent.change(screen.getByLabelText(/Email/), { target: { value: 'email' } });
     fireEvent.blur(screen.getByLabelText(/Email/));
@@ -34,7 +34,7 @@ describe('LoginForm', () => {
   });
 
   it('should show "password required" message when blurring past input', async () => {
-    render(<LoginForm login={jest.fn()} onSuccess={jest.fn()} />);
+    render(<LoginForm login={vi.fn()} onSuccess={vi.fn()} />);
 
     fireEvent.blur(screen.getByLabelText(/Password/));
 
@@ -58,7 +58,7 @@ describe('LoginForm', () => {
       token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9',
     });
 
-    const successSpy = jest.fn();
+    const successSpy = vi.fn();
     render(<LoginForm onSuccess={successSpy} login={loginUser} initialValues={initialValues} />);
 
     fireEvent.click(screen.getByText('Login'));
@@ -68,12 +68,12 @@ describe('LoginForm', () => {
   });
 
   it('should NOT submit with invalid data in form', async () => {
-    const successSpy = jest.fn();
+    const successSpy = vi.fn();
 
     render(
       <LoginForm
         onSuccess={successSpy}
-        login={jest.fn()}
+        login={vi.fn()}
         initialValues={{ email: 'email@email', password: '1' }}
       />,
     );
@@ -94,7 +94,7 @@ describe('LoginForm', () => {
 
     OperationCodeAPIMock.onPost('auth/login/', initialValues).reply(401, { error: invalidError });
 
-    const successSpy = jest.fn();
+    const successSpy = vi.fn();
 
     render(<LoginForm login={loginUser} onSuccess={successSpy} initialValues={initialValues} />);
 
@@ -114,7 +114,7 @@ describe('LoginForm', () => {
 
     OperationCodeAPIMock.onPost('auth/login/', initialValues).reply(503);
 
-    const successSpy = jest.fn();
+    const successSpy = vi.fn();
     render(<LoginForm onSuccess={successSpy} login={loginUser} initialValues={initialValues} />);
 
     fireEvent.click(screen.getByText('Login'));
@@ -143,7 +143,7 @@ describe('LoginForm', () => {
       token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9',
     });
 
-    const successSpy = jest.fn(() => Promise.resolve(true));
+    const successSpy = vi.fn(() => Promise.resolve(true));
     render(<LoginForm onSuccess={successSpy} login={loginUser} initialValues={initialValues} />);
 
     expect(successSpy).toHaveBeenCalledTimes(0);

@@ -5,7 +5,7 @@
     "**/*.js",
     "coverage/**/*",
     "cypress-coverage/**/*",
-    "jest-coverage/**/*",
+    "vitest-coverage/**/*",
     "node_modules/**/*"
   ],
   "rules": {

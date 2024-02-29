@@ -7,7 +7,7 @@ import { Nav } from '../Nav';
 
 describe('Nav', () => {
   beforeEach(() => {
-    cookie.get = jest.fn().mockImplementation(() => undefined);
+    cookie.get = vi.fn().mockImplementation(() => undefined);
   });
 
   it('should render with no props passed', () => createShallowSnapshotTest(<Nav />));

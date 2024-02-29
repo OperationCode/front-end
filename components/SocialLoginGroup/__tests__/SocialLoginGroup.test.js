@@ -8,7 +8,7 @@ describe('SocialLoginGroup', () => {
   const socialReturnToken = { accessToken: 'abc123' };
 
   function renderWithHelpers() {
-    const handleSuccessSpy = jest.fn();
+    const handleSuccessSpy = vi.fn();
 
     let renderProps;
 
@@ -35,7 +35,7 @@ describe('SocialLoginGroup', () => {
 
   it('should render with required props', () => {
     createSnapshotTest(
-      <SocialLoginGroup loginSocial={jest.fn()} handleSuccess={jest.fn()}>
+      <SocialLoginGroup loginSocial={vi.fn()} handleSuccess={vi.fn()}>
         {() => {}}
       </SocialLoginGroup>,
     );

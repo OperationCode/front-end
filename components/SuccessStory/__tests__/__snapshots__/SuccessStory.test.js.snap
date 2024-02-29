@@ -1,11 +1,11 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`SuccessStory should render with required props 1`] = `
+exports[`SuccessStory > should render with required props 1`] = `
 <FlatCard
   button={null}
   header="Great testing culture"
   image={
-    Object {
+    {
       "alt": "",
       "source": "image.png",
     }

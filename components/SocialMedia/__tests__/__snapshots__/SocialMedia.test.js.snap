@@ -1,12 +1,12 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`SocialMedia should render with no props passed passed 1`] = `
+exports[`SocialMedia > should render with no props passed passed 1`] = `
 <SocialMediaContainer>
   <SocialMediaItem
     href="https://facebook.com/operationcode.org"
     name="Facebook"
     svg={
-      <Svg
+      <ForwardRef
         className="fill-white w-6"
       />
     }
@@ -15,7 +15,7 @@ exports[`SocialMedia should render with no props passed passed 1`] = `
     href="https://twitter.com/operation_code"
     name="Twitter"
     svg={
-      <Svg
+      <ForwardRef
         className="fill-white w-6"
       />
     }
@@ -24,7 +24,7 @@ exports[`SocialMedia should render with no props passed passed 1`] = `
     href="https://www.instagram.com/operation_code/"
     name="Instagram"
     svg={
-      <Svg
+      <ForwardRef
         className="fill-white w-6"
       />
     }
@@ -33,7 +33,7 @@ exports[`SocialMedia should render with no props passed passed 1`] = `
     href="https://www.youtube.com/channel/UCAoJt4a_KEBmgXfoQUrNbSA"
     name="YouTube"
     svg={
-      <Svg
+      <ForwardRef
         className="fill-white w-6"
       />
     }
@@ -42,7 +42,7 @@ exports[`SocialMedia should render with no props passed passed 1`] = `
     href="https://www.linkedin.com/company/operationcode/"
     name="LinkedIn"
     svg={
-      <Svg
+      <ForwardRef
         className="fill-white w-6"
       />
     }
@@ -51,7 +51,7 @@ exports[`SocialMedia should render with no props passed passed 1`] = `
     href="https://github.com/OperationCode/"
     name="GitHub"
     svg={
-      <Svg
+      <ForwardRef
         className="fill-white w-6"
       />
     }

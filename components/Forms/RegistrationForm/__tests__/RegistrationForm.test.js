@@ -11,7 +11,7 @@ beforeEach(() => {
 
 describe('RegistrationForm', () => {
   it('should render with required props', () => {
-    createSnapshotTest(<RegistrationForm onSuccess={jest.fn()} />);
+    createSnapshotTest(<RegistrationForm onSuccess={vi.fn()} />);
   });
 
   it('should submit with valid data in form', async () => {
@@ -25,7 +25,7 @@ describe('RegistrationForm', () => {
       zipcode: user.zipcode,
     }).reply(200, { token: 'fake-token' });
 
-    const successSpy = jest.fn();
+    const successSpy = vi.fn();
     const { getByText } = render(<RegistrationForm onSuccess={successSpy} initialValues={user} />);
 
     fireEvent.click(getByText('Submit'));
@@ -51,7 +51,7 @@ describe('RegistrationForm', () => {
       token: 'fake-token',
     });
 
-    const successSpy = jest.fn(() => Promise.resolve(true));
+    const successSpy = vi.fn(() => Promise.resolve(true));
     const { container, getByText, findByText } = render(
       <RegistrationForm onSuccess={successSpy} initialValues={initialValues} />,
     );
@@ -70,8 +70,8 @@ describe('RegistrationForm', () => {
 
     OperationCodeAPIMock.onPost('auth/registration/', user).reply(503);
 
-    const submitSpy = jest.fn();
-    const successSpy = jest.fn();
+    const submitSpy = vi.fn();
+    const successSpy = vi.fn();
     render(<RegistrationForm onSubmit={submitSpy} onSuccess={successSpy} initialValues={user} />);
 
     expect(screen.queryByRole('alert')).not.toBeInTheDocument();

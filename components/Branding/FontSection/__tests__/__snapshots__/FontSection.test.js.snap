@@ -1,10 +1,10 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`FontSection should render with required props 1`] = `
+exports[`FontSection > should render with required props 1`] = `
 <Content
   className=""
   columns={
-    Array [
+    [
       <ul
         className="list-none w-full [&>li]:m-4"
       >
@@ -14,7 +14,7 @@ exports[`FontSection should render with required props 1`] = `
           >
             <h6
               style={
-                Object {
+                {
                   "fontFamily": "DIN Condensed Bold",
                 }
               }
@@ -23,7 +23,7 @@ exports[`FontSection should render with required props 1`] = `
             </h6>
             <p
               style={
-                Object {
+                {
                   "fontFamily": "DIN Condensed Bold",
                 }
               }
@@ -38,7 +38,7 @@ exports[`FontSection should render with required props 1`] = `
           >
             <h6
               style={
-                Object {
+                {
                   "fontFamily": "Encode Sans",
                 }
               }
@@ -47,7 +47,7 @@ exports[`FontSection should render with required props 1`] = `
             </h6>
             <p
               style={
-                Object {
+                {
                   "fontFamily": "Encode Sans",
                 }
               }

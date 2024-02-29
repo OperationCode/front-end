@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Alert should render error alert with required props 1`] = `
+exports[`Alert > should render error alert with required props 1`] = `
 <div
   className="Alert error"
   data-testid="ALERT"

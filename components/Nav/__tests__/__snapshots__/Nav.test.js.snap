@@ -1,45 +1,45 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Nav should render with no props passed 1`] = `
+exports[`Nav > should render with no props passed 1`] = `
 <React.Fragment>
   <NavMobile
     closeMenu={[Function]}
     isOpen={false}
     navItems={
-      Array [
-        Object {
+      [
+        {
           "href": "/about",
           "name": "About Us",
         },
-        Object {
+        {
           "href": "/get_involved",
           "name": "Get Involved",
         },
-        Object {
+        {
           "href": "/podcast",
           "name": "Podcast",
         },
-        Object {
+        {
           "href": "/project_rebuild",
           "name": "Project Rebuild",
         },
-        Object {
+        {
           "href": "/chapters",
           "name": "Chapters",
         },
-        Object {
+        {
           "href": "/sponsorship",
           "name": "Sponsorship",
         },
-        Object {
+        {
           "href": "/swag",
           "name": "Merch Store",
         },
-        Object {
+        {
           "href": "/contact",
           "name": "Contact Us",
         },
-        Object {
+        {
           "href": "/donate",
           "name": "Donate",
         },
@@ -64,11 +64,11 @@ exports[`Nav should render with no props passed 1`] = `
             className="logoLink link"
             onContextMenu={[Function]}
           >
-            <Svg
+            <ForwardRef
               className="logo"
               fill="#f7f7f7"
               style={
-                Object {
+                {
                   "height": 42,
                   "width": 224,
                 }
@@ -84,20 +84,20 @@ exports[`Nav should render with no props passed 1`] = `
             icon={null}
             name="About Us"
             sublinks={
-              Array [
-                Object {
+              [
+                {
                   "href": "/team",
                   "name": "Our Team",
                 },
-                Object {
+                {
                   "href": "/history",
                   "name": "History",
                 },
-                Object {
+                {
                   "href": "/faq",
                   "name": "FAQ",
                 },
-                Object {
+                {
                   "href": "/branding",
                   "name": "Branding",
                 },
@@ -109,12 +109,12 @@ exports[`Nav should render with no props passed 1`] = `
             icon={null}
             name="Services"
             sublinks={
-              Array [
-                Object {
+              [
+                {
                   "href": "/podcast",
                   "name": "Podcast",
                 },
-                Object {
+                {
                   "href": "/project_rebuild",
                   "name": "Project Rebuild",
                 },
@@ -126,24 +126,24 @@ exports[`Nav should render with no props passed 1`] = `
             icon={null}
             name="Get Involved"
             sublinks={
-              Array [
-                Object {
+              [
+                {
                   "href": "/chapters",
                   "name": "Chapters",
                 },
-                Object {
+                {
                   "href": "/sponsorship",
                   "name": "Sponsorship",
                 },
-                Object {
+                {
                   "href": "/swag",
                   "name": "Merch Store",
                 },
-                Object {
+                {
                   "href": "/contact",
                   "name": "Contact Us",
                 },
-                Object {
+                {
                   "href": "/donate",
                   "name": "Donate",
                 },

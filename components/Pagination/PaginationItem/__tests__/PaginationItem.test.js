@@ -29,7 +29,6 @@ describe('PaginationItem', () => {
 
   it('is not clickable when value is undefined', () => {
     const { queryByTestId } = render(<PaginationItem {...requiredProps} />);
-
     expect(queryByTestId(requiredProps.testId)).toHaveClass('notClickable');
   });
 });

@@ -1,5 +1,5 @@
-const snakeCase = require('lodash/snakeCase');
-const { clientTokens } = require('common/config/environment');
+import snakeCase from 'lodash/snakeCase';
+import { clientTokens } from 'common/config/environment';
 
 // TODO: Leverage prod-build-time-only env vars instead NODE_ENV for prod check
 const isProduction = process.env.NODE_ENV === 'production';

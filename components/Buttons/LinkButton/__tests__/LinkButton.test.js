@@ -32,12 +32,12 @@ describe('LinkButton', () => {
 
   it('fires gtag event onclick', () => {
     const component = render(OutboundLinkButton);
-
-    expect(gtag.outboundLink).toHaveBeenCalledTimes(0);
+    const gtagSpy = vi.spyOn(gtag, 'outboundLink');
+    expect(gtagSpy).toHaveBeenCalledTimes(0);
 
     fireEvent.click(component.queryByTestId(testID));
 
-    expect(gtag.outboundLink).toHaveBeenCalledTimes(1);
-    expect(gtag.outboundLink).toHaveBeenCalledWith(testID, requiredProps.href);
+    expect(gtagSpy).toHaveBeenCalledTimes(1);
+    expect(gtagSpy).toHaveBeenCalledWith(testID, requiredProps.href);
   });
 });

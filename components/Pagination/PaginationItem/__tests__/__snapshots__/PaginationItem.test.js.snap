@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`PaginationItem renders correctly as a current item with value 1`] = `
+exports[`PaginationItem > renders correctly as a current item with value 1`] = `
 <li
   className="PaginationItem current"
   data-testid="test"
@@ -22,7 +22,7 @@ exports[`PaginationItem renders correctly as a current item with value 1`] = `
 </li>
 `;
 
-exports[`PaginationItem renders with required props 1`] = `
+exports[`PaginationItem > renders with required props 1`] = `
 <li
   className="PaginationItem notClickable"
   data-testid="test"

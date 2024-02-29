@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Modal should render with many props assigned 1`] = `
+exports[`Modal > should render with many props assigned 1`] = `
 <body
   style="pointer-events: none;"
 >
@@ -36,7 +36,24 @@ exports[`Modal should render with many props assigned 1`] = `
       </span>
       <svg
         class="icon secondary"
-      />
+        viewBox="0 0 500 500"
+      >
+        <symbol
+          id="c3230965"
+          viewBox="0 0 500 500"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <title>
+            Plus Symbol
+          </title>
+          <path
+            d="M500 200H300V0H200v200H0v100h200v200h100V300h200V200z"
+          />
+        </symbol>
+        <use
+          href="#c3230965"
+        />
+      </svg>
     </button>
   </div>
   <div
@@ -65,7 +82,7 @@ exports[`Modal should render with many props assigned 1`] = `
 </body>
 `;
 
-exports[`Modal should render with required props 1`] = `
+exports[`Modal > should render with required props 1`] = `
 <body>
   <div />
 </body>

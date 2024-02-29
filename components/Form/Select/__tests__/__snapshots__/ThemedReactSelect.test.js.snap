@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`ThemedReactSelect should render with required props 1`] = `
+exports[`ThemedReactSelect > should render with required props 1`] = `
 <div
   className=" css-2b097c-container"
   onKeyDown={[Function]}
@@ -30,7 +30,7 @@ exports[`ThemedReactSelect should render with required props 1`] = `
         <div
           className=""
           style={
-            Object {
+            {
               "display": "inline-block",
             }
           }
@@ -47,7 +47,7 @@ exports[`ThemedReactSelect should render with required props 1`] = `
             onFocus={[Function]}
             spellCheck="false"
             style={
-              Object {
+              {
                 "background": 0,
                 "border": 0,
                 "boxSizing": "content-box",
@@ -66,7 +66,7 @@ exports[`ThemedReactSelect should render with required props 1`] = `
           />
           <div
             style={
-              Object {
+              {
                 "height": 0,
                 "left": 0,
                 "overflow": "scroll",

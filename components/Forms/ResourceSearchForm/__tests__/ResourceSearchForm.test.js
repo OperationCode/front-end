@@ -13,9 +13,9 @@ describe('ResourceSearchForm', () => {
     createSnapshotTest(
       <ResourceSearchForm
         fields={mockFields}
-        setIsLoading={jest.fn()}
-        updateQuery={jest.fn()}
-        setErrorMessage={jest.fn()}
+        setIsLoading={vi.fn()}
+        updateQuery={vi.fn()}
+        setErrorMessage={vi.fn()}
         allCategories={[]}
         allLanguages={[]}
       />,

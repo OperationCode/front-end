@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Button should render with many props assigned 1`] = `
+exports[`Button > should render with many props assigned 1`] = `
 <button
   className="Button test-class secondary disabled fullWidth"
   data-id="test-id"
@@ -14,7 +14,7 @@ exports[`Button should render with many props assigned 1`] = `
 </button>
 `;
 
-exports[`Button should render with required props 1`] = `
+exports[`Button > should render with required props 1`] = `
 <button
   className="Button primary"
   data-testid="BUTTON"

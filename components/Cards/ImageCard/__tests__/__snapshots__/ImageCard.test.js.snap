@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`ImageCard should render with many props assigned 1`] = `
+exports[`ImageCard > should render with many props assigned 1`] = `
 <Card
   className="md:flex-row flex-col md:h-56 md:w-[650px] md:max-w-none p-0 h-auto max-w-xs w-auto [&>*]:flex-[1_1_50%] test"
   hasAnimationOnHover={false}
@@ -27,7 +27,7 @@ exports[`ImageCard should render with many props assigned 1`] = `
 </Card>
 `;
 
-exports[`ImageCard should render with required props 1`] = `
+exports[`ImageCard > should render with required props 1`] = `
 <Card
   className="md:flex-row flex-col md:h-56 md:w-[650px] md:max-w-none p-0 h-auto max-w-xs w-auto [&>*]:flex-[1_1_50%]"
   hasAnimationOnHover={false}
