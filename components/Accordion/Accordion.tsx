@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { arrayOf, bool, node, number, shape, string, oneOfType } from 'prop-types';
 import classNames from 'classnames';
 import Chevron from 'public/static/images/icons/FontAwesome/angle-right-solid.svg';
 import { ACCORDION_CONTENT, ACCORDION_TOGGLE_BUTTON } from 'common/constants/testIDs';
@@ -10,33 +9,46 @@ import styles from './Accordion.module.css';
 const ChevronRight = () => <Chevron className={styles.icon} />;
 const ChevronDown = () => <Chevron className={classNames(styles.icon, styles.rotate90)} />;
 
-Accordion.propTypes = {
-  /** Accessibility ID to use for joining elements together
-   * with ARIA attributes */
-  accessibilityId: oneOfType([number, string]).isRequired,
-  /** Name of style class to use */
-  className: string,
-  /** Composition of the Accordion */
-  content: shape({
-    /** Labels or thumbnails representing sections of content */
-    headingChildren: oneOfType([node, arrayOf(node)]).isRequired,
-    /** Section of content associated with header */
-    bodyChildren: oneOfType([node, arrayOf(node)]).isRequired,
-  }).isRequired,
-  /** Should Accordion have animation on hover */
-  hasAnimationOnHover: bool,
+type ContentPropType = {
+  /**
+   * Labels or thumbnails representing sections of content.
+   */
+  headingChildren: React.ReactNode | React.ReactNode[];
+  /**
+   * Section of content associated with header.
+   */
+  bodyChildren: React.ReactNode | React.ReactNode[];
 };
 
-Accordion.defaultProps = {
-  className: undefined,
-  hasAnimationOnHover: false,
+export type AccordionPropsType = {
+  /**
+   * Accessibility ID to use for joining elements together with ARIA attributes
+   */
+  accessibilityId: number | string;
+  /**
+   * Composition of the Accordion.
+   */
+  content: ContentPropType;
+  /**
+   * Name of style class to use.
+   */
+  className?: string;
+  /**
+   * Should Accordion have animation on hover.
+   */
+  hasAnimationOnHover?: boolean;
 };
 
 /**
  * @description A component whose main content is invisible until revealed by the user
  * @see http://web-accessibility.carnegiemuseums.org/code/accordions/
  */
-function Accordion({ accessibilityId, className, content, hasAnimationOnHover }) {
+function Accordion({
+  accessibilityId,
+  className = undefined,
+  content,
+  hasAnimationOnHover = false,
+}: AccordionPropsType) {
   const [isContentVisible, setContentVisibility] = useState(false);
 
   const toggleAccordionContent = () => setContentVisibility(previousState => !previousState);
