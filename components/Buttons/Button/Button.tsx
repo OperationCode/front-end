@@ -16,7 +16,7 @@ type GoogleAnalyticsEventPropType = {
    */
   category: string;
   /**
-   * More precise labelling of the related action. E.g. alongside the 'Added a component' action,
+   * More precise labeling of the related action. E.g. alongside the 'Added a component' action,
    * we could add the name of a component as the label. E.g. 'Survey', 'Heading', 'Button', etc.
    */
   label?: string;
@@ -46,14 +46,6 @@ type ButtonProps = {
    */
   children: React.ReactNode | string;
   /**
-   * Applies classnames to the base element.
-   */
-  className?: string;
-  /**
-   * Disables user interaction with the component.
-   */
-  disabled?: boolean;
-  /**
    * Forces the component's width as wide as its parent container's width.
    */
   fullWidth?: boolean;
@@ -62,18 +54,9 @@ type ButtonProps = {
    */
   onClick?: () => void | undefined;
   /**
-   * Sets the tab index order of the base element.
-   */
-  tabIndex?: string | number;
-  /**
    * Sets the button color theme.
    */
   theme?: 'primary' | 'secondary';
-  /**
-   * Applies a button type to the base element.
-   */
-  type?: 'button' | 'reset' | 'submit';
-  datum?: any;
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 export default function Button({
@@ -89,7 +72,6 @@ export default function Button({
   tabIndex = 0,
   theme = 'primary',
   type = 'button',
-  datum = '',
   ...rest
 }: ButtonProps) {
   const customDataAttributes = getDataAttributes(rest);
@@ -100,11 +82,6 @@ export default function Button({
     label: typeof children === 'string' ? children : undefined,
   };
 
-  const clickHandler = () => {
-    gtag.event(eventConfig);
-    onClick();
-  };
-
   return (
     <button
       className={classNames(styles.Button, className, styles[theme], {
@@ -113,7 +90,10 @@ export default function Button({
       })}
       data-testid={BUTTON}
       disabled={disabled}
-      onClick={clickHandler}
+      onClick={() => {
+        gtag.event(eventConfig);
+        onClick();
+      }}
       tabIndex={tabIndex}
       type={type}
       {...customDataAttributes}
