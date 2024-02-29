@@ -1,37 +1,40 @@
 import classNames from 'classnames';
-import { string, node, bool, oneOf } from 'prop-types';
 import Link from 'next/link';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 import styles from '../Button/Button.module.css';
 
-LinkButton.propTypes = {
-  // Only pass analytics event label if you're href is to an external website
-  analyticsEventLabel: string,
-  children: node.isRequired,
-  className: string,
-  'data-testid': string,
-  fullWidth: bool,
-  href: string.isRequired,
-  theme: oneOf(['primary', 'secondary']),
-};
-
-LinkButton.defaultProps = {
-  analyticsEventLabel: undefined,
-  className: undefined,
-  'data-testid': undefined,
-  fullWidth: false,
-  theme: 'primary',
-};
+export type LinkButtonProps = {
+  /**
+   * Url to be passed to the base anchor element.
+   */
+  href: string;
+  /**
+   * Only pass analytics event label if you're href is to an external website
+   */
+  analyticsEventLabel?: string;
+  /**
+   * Sets an id to the base element for testing.
+   */
+  'data-testid'?: string;
+  /**
+   * Forces the component's width as wide as its parent container's width.
+   */
+  fullWidth?: boolean;
+  /**
+   * Sets the button color theme.
+   */
+  theme?: 'primary' | 'secondary';
+} & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 export default function LinkButton({
-  analyticsEventLabel,
+  analyticsEventLabel = undefined,
   children,
-  className,
+  className = undefined,
   'data-testid': testID,
-  fullWidth,
+  fullWidth = false,
   href,
-  theme,
-}) {
+  theme = 'primary',
+}: LinkButtonProps) {
   const linkButtonClassNames = classNames(styles.Button, className, styles[theme], {
     [styles.fullWidth]: fullWidth,
   });
