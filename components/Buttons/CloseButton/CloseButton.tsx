@@ -11,11 +11,6 @@ export type CloseButtonProps = {
   theme?: 'primary' | 'secondary' | 'white';
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
-CloseButton.defaultProps = {
-  disabled: false,
-  theme: 'primary',
-};
-
 export default function CloseButton({
   disabled = false,
   onClick,

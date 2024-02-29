@@ -5,6 +5,9 @@ type CloseButtonStoryType = StoryObj<typeof CloseButton>;
 
 export const Default: CloseButtonStoryType = {
   render: args => <CloseButton {...args} />,
+  args: {
+    theme: 'primary',
+  },
 };
 
 const meta: Meta<typeof CloseButton> = {
