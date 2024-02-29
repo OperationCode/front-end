@@ -12,6 +12,7 @@ describe('CloseButton', () => {
     const onClickMock = vi.fn();
     const { queryByTestId } = render(<CloseButton disabled onClick={onClickMock} />);
 
+    // @ts-expect-error
     fireEvent.click(queryByTestId(CLOSE_BUTTON));
 
     expect(onClickMock).toHaveBeenCalledTimes(0);
