@@ -1,19 +1,25 @@
-import { bool, element, oneOfType, string } from 'prop-types';
 import classNames from 'classnames';
 
-Badge.propTypes = {
-  className: string,
-  icon: element.isRequired, // TODO: Create custom proptype accepting only `<svg>` or `<img>`
-  label: oneOfType([string, element]).isRequired,
-  isImageFirst: bool,
+export type BadgePropsType = {
+  /**
+   * SVG icon to be used as the badge.
+   */
+  icon: React.ReactElement;
+  /**
+   * Optional label that is rendered with the badge.
+   */
+  label: string | React.ReactElement;
+  /**
+   * Applies classnames to the base `figure` element for styling.
+   */
+  className?: string;
+  /**
+   * Sets whether the label is rendered above, or below, the badge..
+   */
+  isImageFirst: boolean;
 };
 
-Badge.defaultProps = {
-  className: undefined,
-  isImageFirst: true,
-};
-
-function Badge({ className, icon, isImageFirst, label }) {
+function Badge({ className = undefined, icon, isImageFirst = true, label }: BadgePropsType) {
   return (
     <figure
       className={classNames(
