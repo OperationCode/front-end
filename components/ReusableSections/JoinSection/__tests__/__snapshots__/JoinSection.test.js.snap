@@ -9,16 +9,17 @@ exports[`JoinSection should render 1`] = `
     className="content"
   >
     <div
-      className="headingContainer"
+      className="flex justify-center"
     >
       <h3
-        className="Heading"
+        className="flex uppercase text-center my-4 mx-0"
       >
         <div
-          className="hashLinkContainer"
+          className="relative [&>a]:absolute [&>a]:-left-8 [&>a]:top-2"
           data-testid="Heading Content join-our-thriving-community-link"
         >
           <a
+            className="sm:opacity-0 sm:hidden sm:none"
             data-testid="Hash Link"
             href="#join-our-thriving-community-link"
             id="join-our-thriving-community-link"
@@ -31,7 +32,7 @@ exports[`JoinSection should render 1`] = `
               Join Our Thriving Community
             </span>
             <svg
-              className="icon"
+              className="w-4 leading-9 h-8 -my-1 mx-2 outline-none"
             />
           </a>
           Join Our Thriving Community
