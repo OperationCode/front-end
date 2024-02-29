@@ -34,8 +34,8 @@
       "styles/*": ["./styles/*"],
       "test-utils/*": ["./test-utils/*"]
     },
-    "types": ["vitest/globals"]
+    "types": ["vitest/globals", "@testing-library/jest-dom"]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "vitest.config.ts", "**/*.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "vitest.config.mts", "**/*.js"],
   "exclude": ["node_modules"]
 }

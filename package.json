@@ -105,6 +105,7 @@
     "@testing-library/react": "^12.1.5",
     "@types/fingerprintjs2": "2",
     "@types/fontfaceobserver": "^2.1.3",
+    "@types/jest": "^29.5.12",
     "@types/lodash": "^4.14.202",
     "@types/logrocket-react": "^3.0.3",
     "@types/object-hash": "^3.0.0",
