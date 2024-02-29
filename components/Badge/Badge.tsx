@@ -16,7 +16,7 @@ export type BadgePropsType = {
   /**
    * Sets whether the label is rendered above, or below, the badge..
    */
-  isImageFirst: boolean;
+  isImageFirst?: boolean;
 };
 
 function Badge({ className = undefined, icon, isImageFirst = true, label }: BadgePropsType) {
