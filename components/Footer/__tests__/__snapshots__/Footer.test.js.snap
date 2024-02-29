@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Footer should render with no props passed 1`] = `
+exports[`Footer > should render with no props passed 1`] = `
 <footer
   className="Footer"
 >
@@ -14,11 +14,11 @@ exports[`Footer should render with no props passed 1`] = `
         href="/"
       >
         <a>
-          <Svg
-            className="logoLink link"
+          <ForwardRef
+            className=""
             fill="#252e3e"
             style={
-              Object {
+              {
                 "height": 60,
                 "width": 318,
               }

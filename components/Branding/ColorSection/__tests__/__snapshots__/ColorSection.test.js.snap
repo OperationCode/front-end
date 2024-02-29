@@ -1,11 +1,11 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`ColorSection should render with required props 1`] = `
+exports[`ColorSection > should render with required props 1`] = `
 <React.Fragment>
   <Content
     className=""
     columns={
-      Array [
+      [
         <div>
           <h3
             className="text-center"
@@ -38,7 +38,7 @@ exports[`ColorSection should render with required props 1`] = `
   <Content
     className=""
     columns={
-      Array [
+      [
         <Swatch
           colorName="gray"
           hexCode="#e2e2e2"

@@ -12,12 +12,12 @@ afterEach(() => {
 
 describe('PasswordResetForm', () => {
   it('should render with required props', () => {
-    createSnapshotTest(<PasswordResetForm onSuccess={jest.fn()} passwordReset={jest.fn()} />);
+    createSnapshotTest(<PasswordResetForm onSuccess={vi.fn()} passwordReset={vi.fn()} />);
   });
 
   it('should display required error message when blurring past email input', async () => {
     const { findByLabelText, findByText } = render(
-      <PasswordResetForm onSuccess={jest.fn()} passwordReset={jest.fn()} />,
+      <PasswordResetForm onSuccess={vi.fn()} passwordReset={vi.fn()} />,
     );
 
     fireEvent.blur(await findByLabelText(/Email/));
@@ -27,7 +27,7 @@ describe('PasswordResetForm', () => {
 
   it('should show error when providing non-email to email input', async () => {
     const { findByLabelText, findByText } = render(
-      <PasswordResetForm onSuccess={jest.fn()} passwordReset={jest.fn()} />,
+      <PasswordResetForm onSuccess={vi.fn()} passwordReset={vi.fn()} />,
     );
 
     fireEvent.change(await findByLabelText(/Email/), { target: { value: 'email' } });
@@ -43,7 +43,7 @@ describe('PasswordResetForm', () => {
       detail: 'success',
     });
 
-    const successSpy = jest.fn();
+    const successSpy = vi.fn();
 
     const { findByLabelText, findByText } = render(
       <PasswordResetForm onSuccess={successSpy} passwordReset={passwordReset} />,
@@ -65,7 +65,7 @@ describe('PasswordResetForm', () => {
       error: 'test error',
     });
 
-    const successSpy = jest.fn();
+    const successSpy = vi.fn();
 
     const { findByLabelText, findByText } = render(
       <PasswordResetForm onSuccess={successSpy} passwordReset={passwordReset} />,
@@ -83,8 +83,8 @@ describe('PasswordResetForm', () => {
       email: 'email',
     };
 
-    const successSpy = jest.fn();
-    const passwordResetSpy = jest.fn();
+    const successSpy = vi.fn();
+    const passwordResetSpy = vi.fn();
 
     const { findByText } = render(
       <PasswordResetForm

@@ -1,8 +1,8 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`ErrorDisplay should render with just required props 1`] = `
+exports[`ErrorDisplay > should render with just required props 1`] = `
 <div
-  className="h-screen text-white bg-[url(\\"/static/images/TankFlip.gif\\")] flex flex-col justify-center w-full  bg-cover items-center"
+  className="h-screen text-white bg-[url("/static/images/TankFlip.gif")] flex flex-col justify-center w-full  bg-cover items-center"
 >
   <div
     className="text-center my-4 mx-auto"

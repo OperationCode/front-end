@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`FlatCard should render with many props assigned 1`] = `
+exports[`FlatCard > should render with many props assigned 1`] = `
 <article
   className="box-border my-6 mx-4 relative max-w-[400px] test-class"
 >
@@ -44,7 +44,7 @@ exports[`FlatCard should render with many props assigned 1`] = `
 </article>
 `;
 
-exports[`FlatCard should render with required props 1`] = `
+exports[`FlatCard > should render with required props 1`] = `
 <article
   className="box-border my-6 mx-4 relative max-w-[400px]"
 >

@@ -70,7 +70,7 @@ jobs:
       - persist_to_workspace:
           root: << pipeline.parameters.workspace_root >>
           paths:
-            - project/jest-coverage
+            - project/vitest-coverage
 
   lint:
     executor: default
@@ -103,7 +103,7 @@ jobs:
             mkdir .nyc_output
             ls -al cypress-coverage
             cp cypress-coverage/coverage.node-*.json reports
-            cp jest-coverage/coverage-final.json reports/from-jest.json
+            cp vitest-coverage/coverage-final.json reports/from-vitest.json
             yarn nyc merge reports
             mv coverage.json .nyc_output/out.json
       - run:

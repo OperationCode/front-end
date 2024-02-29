@@ -1,7 +1,7 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`SocialLoginButtons should render with required props 1`] = `
-Array [
+exports[`SocialLoginButtons > should render with required props 1`] = `
+[
   <button
     className="loginButton googleButton"
     disabled={true}

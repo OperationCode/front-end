@@ -13,8 +13,8 @@ beforeEach(() => {
 
 describe('ChangePasswordForm', () => {
   const requiredProps = {
-    onSuccess: jest.fn(),
-    onSubmit: jest.fn(),
+    onSuccess: vi.fn(),
+    onSubmit: vi.fn(),
   };
 
   it('should render with required props', () => {
@@ -51,8 +51,8 @@ describe('ChangePasswordForm', () => {
   it('should submit with valid data in form', async () => {
     const user = mockUser();
 
-    const successSpy = jest.fn();
-    const passwordResetSubmitSpy = jest.fn();
+    const successSpy = vi.fn();
+    const passwordResetSubmitSpy = vi.fn();
 
     const component = render(
       <ChangePasswordForm
@@ -77,8 +77,8 @@ describe('ChangePasswordForm', () => {
   });
 
   it('should NOT submit to server with invalid data in form', async () => {
-    const successSpy = jest.fn();
-    const passwordResetSubmitSpy = jest.fn();
+    const successSpy = vi.fn();
+    const passwordResetSubmitSpy = vi.fn();
 
     const component = render(
       <ChangePasswordForm
@@ -109,7 +109,7 @@ describe('ChangePasswordForm', () => {
       newPassword2: user.password,
     }).reply(400, { error });
 
-    const successSpy = jest.fn();
+    const successSpy = vi.fn();
 
     const component = render(
       <ChangePasswordForm

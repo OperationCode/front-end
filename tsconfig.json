@@ -25,7 +25,6 @@
     "noEmit": true,
     "noEmitOnError": true,
     "paths": {
-      // Ensure intellisense continues to operate - match with webpack aliases
       "common/*": ["./common/*"],
       "components/*": ["./components/*"],
       "pages/*": ["./pages/*"],
@@ -34,8 +33,9 @@
       "static/*": ["./public/static/*"],
       "styles/*": ["./styles/*"],
       "test-utils/*": ["./test-utils/*"]
-    }
+    },
+    "types": ["vitest/globals"]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "vitest.config.ts", "**/*.js"],
   "exclude": ["node_modules"]
 }

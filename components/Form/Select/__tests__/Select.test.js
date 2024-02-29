@@ -11,8 +11,8 @@ const getReactSelect = domElement => domElement.querySelector('[id^=react-select
 
 describe('Select', () => {
   const name = 'someSelectName';
-  const setFieldTouched = jest.fn();
-  const setFieldValue = jest.fn();
+  const setFieldTouched = vi.fn();
+  const setFieldValue = vi.fn();
 
   const requiredProps = {
     field: {

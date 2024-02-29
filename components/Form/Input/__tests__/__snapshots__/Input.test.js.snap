@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Input should render with required props 1`] = `
+exports[`Input > should render with required props 1`] = `
 <div
   className="field"
   data-testid="INPUT"
@@ -20,8 +20,8 @@ exports[`Input should render with required props 1`] = `
       className="Input"
       id="someInputName"
       name="someInputName"
-      onBlur={[MockFunction]}
-      onChange={[MockFunction]}
+      onBlur={[MockFunction spy]}
+      onChange={[MockFunction spy]}
       type="text"
       value=""
     />

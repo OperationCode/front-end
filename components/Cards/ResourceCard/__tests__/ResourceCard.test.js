@@ -1,4 +1,3 @@
-/* eslint-env jest */
 import { fireEvent, render } from '@testing-library/react';
 import { UPVOTE_BUTTON, DOWNVOTE_BUTTON } from 'common/constants/testIDs';
 
@@ -12,7 +11,7 @@ describe('ResourceCard', () => {
   };
 
   it('fires appropriate method when upvote button clicked', () => {
-    const handleVoteMock = jest.fn();
+    const handleVoteMock = vi.fn();
 
     const component = render(<ResourceCard {...requiredProps} handleVote={handleVoteMock} />);
 
@@ -29,7 +28,7 @@ describe('ResourceCard', () => {
   });
 
   it('fires appropriate method when downvote button clicked', () => {
-    const handleVoteMock = jest.fn();
+    const handleVoteMock = vi.fn();
 
     const component = render(<ResourceCard {...requiredProps} handleVote={handleVoteMock} />);
 

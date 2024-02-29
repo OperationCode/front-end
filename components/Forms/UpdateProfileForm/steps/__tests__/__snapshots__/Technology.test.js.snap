@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`UpdateProfileForm/Steps/Technology should render in context of Formik 1`] = `
+exports[`UpdateProfileForm/Steps/Technology > should render in context of Formik 1`] = `
 <form
   noValidate={true}
   onReset={[Function]}
@@ -51,7 +51,7 @@ exports[`UpdateProfileForm/Steps/Technology should render in context of Formik 1
                 <div
                   className=""
                   style={
-                    Object {
+                    {
                       "display": "inline-block",
                     }
                   }
@@ -68,7 +68,7 @@ exports[`UpdateProfileForm/Steps/Technology should render in context of Formik 1
                     onFocus={[Function]}
                     spellCheck="false"
                     style={
-                      Object {
+                      {
                         "background": 0,
                         "border": 0,
                         "boxSizing": "content-box",
@@ -87,7 +87,7 @@ exports[`UpdateProfileForm/Steps/Technology should render in context of Formik 1
                   />
                   <div
                     style={
-                      Object {
+                      {
                         "height": 0,
                         "left": 0,
                         "overflow": "scroll",
@@ -183,7 +183,7 @@ exports[`UpdateProfileForm/Steps/Technology should render in context of Formik 1
                 <div
                   className=""
                   style={
-                    Object {
+                    {
                       "display": "inline-block",
                     }
                   }
@@ -200,7 +200,7 @@ exports[`UpdateProfileForm/Steps/Technology should render in context of Formik 1
                     onFocus={[Function]}
                     spellCheck="false"
                     style={
-                      Object {
+                      {
                         "background": 0,
                         "border": 0,
                         "boxSizing": "content-box",
@@ -219,7 +219,7 @@ exports[`UpdateProfileForm/Steps/Technology should render in context of Formik 1
                   />
                   <div
                     style={
-                      Object {
+                      {
                         "height": 0,
                         "left": 0,
                         "overflow": "scroll",

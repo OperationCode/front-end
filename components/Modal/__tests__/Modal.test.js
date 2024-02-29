@@ -4,9 +4,15 @@ import Modal from '../Modal';
 
 describe('Modal', () => {
   const requiredProps = {
-    onRequestClose: jest.fn(),
+    onRequestClose: vi.fn(),
     screenReaderLabel: 'Test',
   };
+
+  const gtagSpyModalView = vi.spyOn(gtag, 'modalView');
+
+  beforeEach(() => {
+    gtagSpyModalView.mockClear();
+  });
 
   afterEach(cleanup);
 
@@ -27,7 +33,7 @@ describe('Modal', () => {
   });
 
   it('does not fire gtag.modalView on render unopened render', () => {
-    expect(gtag.modalView).toHaveBeenCalledTimes(0);
+    expect(gtagSpyModalView).toHaveBeenCalledTimes(0);
 
     render(
       <Modal {...requiredProps} isOpen={false}>
@@ -35,11 +41,11 @@ describe('Modal', () => {
       </Modal>,
     );
 
-    expect(gtag.modalView).toHaveBeenCalledTimes(0);
+    expect(gtagSpyModalView).toHaveBeenCalledTimes(0);
   });
 
   it('fires gtag.modalView on render when open', () => {
-    expect(gtag.modalView).toHaveBeenCalledTimes(0);
+    expect(gtagSpyModalView).toHaveBeenCalledTimes(0);
 
     render(
       <Modal {...requiredProps} isOpen>
@@ -47,7 +53,7 @@ describe('Modal', () => {
       </Modal>,
     );
 
-    expect(gtag.modalView).toHaveBeenCalledTimes(1);
-    expect(gtag.modalView).toHaveBeenCalledWith(requiredProps.screenReaderLabel);
+    expect(gtagSpyModalView).toHaveBeenCalledTimes(1);
+    expect(gtagSpyModalView).toHaveBeenCalledWith(requiredProps.screenReaderLabel);
   });
 });

@@ -1,15 +1,15 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`LogoSection should render with required props 1`] = `
+exports[`LogoSection > should render with required props 1`] = `
 <Content
   className=""
   columns={
-    Array [
+    [
       <ul
         className="logoSizeList"
       >
         <li
-          className="logoSizeListItem smallLogos"
+          className="logoSizeListItem"
         >
           <h5>
             Small Logos
@@ -17,9 +17,7 @@ exports[`LogoSection should render with required props 1`] = `
           <p>
             For use when Operation Code's logo name is between 0-1 inch in height. In most cases, use the Original Small Logo. The Stacked Small Logo is to be used where graphics needs are larger in vertical height than horizontal width with the Operation Code logo name still under 1 inch in height.
           </p>
-          <ul
-            className="logoTypeList"
-          >
+          <ul>
             <li
               className="logoTypeListItem"
             >
@@ -266,9 +264,7 @@ exports[`LogoSection should render with required props 1`] = `
           <p>
             Use the Original Large Logo in almost all cases above 1 inch in height. The Red Large Logo is to be used in special events (such as Thanksgiving, fall or Christmas), and the Light Large Logo is to be used with dark backgrounds or bright colored backgrounds.
           </p>
-          <ul
-            className="logoTypeList"
-          >
+          <ul>
             <li
               className="logoTypeListItem"
             >

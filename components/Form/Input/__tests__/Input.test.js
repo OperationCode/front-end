@@ -13,8 +13,8 @@ describe('Input', () => {
       name: 'someInputName',
     },
     form: { touched: { someInputName: false }, errors: { someInputName: '' } },
-    onBlur: jest.fn(),
-    onChange: jest.fn(),
+    onBlur: vi.fn(),
+    onChange: vi.fn(),
     label: 'Some Input:',
   };
 

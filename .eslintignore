@@ -8,6 +8,6 @@ yarn.lock
 bin
 static
 cypress-coverage
-jest-coverage
+vitest-coverage
 .storybook-dist
 common/styles/themeMap.js

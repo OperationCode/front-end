@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`TimelineEvent should render with required props 1`] = `
+exports[`TimelineEvent > should render with required props 1`] = `
 <div
   className="mb-8 border-1 border-solid border-[#c5c5c5] p-5 rounded-md"
 >
@@ -9,9 +9,7 @@ exports[`TimelineEvent should render with required props 1`] = `
   >
     test title
   </h4>
-  <div
-    className="eventContent"
-  >
+  <div>
     here is some test content
   </div>
 </div>

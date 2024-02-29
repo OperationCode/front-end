@@ -10,7 +10,7 @@ describe('Alert', () => {
   });
 
   it('should call close handler when close alert button clicked', () => {
-    const onCloseMock = jest.fn();
+    const onCloseMock = vi.fn();
 
     const { queryByTestId } = render(<SuccessAlert {...SuccessAlert.args} onClose={onCloseMock} />);
 

@@ -38,7 +38,7 @@ describe('NavMobile', () => {
   });
 
   it('should invoke callback when hamburger button is clicked', () => {
-    const mockOpen = jest.fn();
+    const mockOpen = vi.fn();
 
     const wrapper = render(
       <NavMobile
@@ -55,7 +55,7 @@ describe('NavMobile', () => {
   });
 
   it('should invoke callback when close button is pressed', () => {
-    const mockClose = jest.fn();
+    const mockClose = vi.fn();
 
     const wrapper = render(
       <NavMobile navItems={mobileNavItems} isOpen openMenu={() => {}} closeMenu={mockClose} />,

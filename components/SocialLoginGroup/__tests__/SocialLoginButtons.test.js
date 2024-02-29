@@ -9,6 +9,6 @@ describe('SocialLoginButtons', () => {
   });
 
   it('should render with required props', () => {
-    createSnapshotTest(<SocialLoginButtons onGoogleFailure={jest.fn()} onSuccess={jest.fn()} />);
+    createSnapshotTest(<SocialLoginButtons onGoogleFailure={vi.fn()} onSuccess={vi.fn()} />);
   });
 });

@@ -22,7 +22,7 @@ describe('Button', () => {
         className="test-class"
         disabled
         fullWidth
-        onClick={jest.fn()}
+        onClick={vi.fn()}
         tabIndex={-1}
         theme="secondary"
         type="submit"
@@ -32,7 +32,7 @@ describe('Button', () => {
   });
 
   it('call props.onClick when button is clicked', () => {
-    const onClickMock = jest.fn();
+    const onClickMock = vi.fn();
     const { queryByTestId } = render(<Button onClick={onClickMock}>Testing</Button>);
 
     expect(onClickMock).toHaveBeenCalledTimes(0);
@@ -44,13 +44,13 @@ describe('Button', () => {
 
   it('fires gtag event onclick', () => {
     const { queryByTestId } = render(<Button {...requiredProps} />);
-
-    expect(gtag.event).toHaveBeenCalledTimes(0);
+    const gtagSpy = vi.spyOn(gtag, 'event');
+    expect(gtagSpy).toHaveBeenCalledTimes(0);
 
     fireEvent.click(queryByTestId(BUTTON));
 
-    expect(gtag.event).toHaveBeenCalledTimes(1);
-    expect(gtag.event).toHaveBeenCalledWith({
+    expect(gtagSpy).toHaveBeenCalledTimes(1);
+    expect(gtagSpy).toHaveBeenCalledWith({
       action: 'Button Selected',
       category: 'Interactions',
       label: requiredProps.children,

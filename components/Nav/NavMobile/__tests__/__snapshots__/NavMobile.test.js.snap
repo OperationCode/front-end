@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`NavMobile should render 1`] = `
+exports[`NavMobile > should render 1`] = `
 <header
   className="NavMobile"
   data-testid="Mobile Nav Container"
@@ -35,7 +35,7 @@ exports[`NavMobile should render 1`] = `
     <ScreenReaderOnly>
       Open Menu
     </ScreenReaderOnly>
-    <Svg
+    <ForwardRef
       className="hamburgerIcon"
     />
   </button>

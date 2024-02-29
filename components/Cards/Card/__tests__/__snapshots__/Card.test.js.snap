@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Card should render with many props assigned 1`] = `
+exports[`Card > should render with many props assigned 1`] = `
 <article
   className="items-center bg-white [&_svg]:fill-themeSecondary text-themeSecondary flex flex-col flex-nowrap justify-around m-4 min-h-[100px] min-w-[100px] p-6 focus-visible:outline-none shadow-sm transition-shadow duration-200 ease-linear hover:shadow-lg focus-visible:shadow-lg test-class"
 >
@@ -8,7 +8,7 @@ exports[`Card should render with many props assigned 1`] = `
 </article>
 `;
 
-exports[`Card should render with required props 1`] = `
+exports[`Card > should render with required props 1`] = `
 <article
   className="items-center bg-white [&_svg]:fill-themeSecondary text-themeSecondary flex flex-col flex-nowrap justify-around m-4 min-h-[100px] min-w-[100px] p-6 shadow-md focus-visible:outline-none"
 >

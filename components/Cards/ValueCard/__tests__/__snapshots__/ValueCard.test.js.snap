@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`ValueCard should render with required props 1`] = `
+exports[`ValueCard > should render with required props 1`] = `
 <article
   className="items-center bg-white [&_svg]:fill-themeSecondary text-themeSecondary flex flex-col flex-nowrap justify-around m-4 min-h-[100px] min-w-[100px] shadow-md focus-visible:outline-none !justify-start max-w-[400px] h-[400px] p-8 overflow-y-auto"
 >

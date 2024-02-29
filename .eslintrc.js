@@ -6,7 +6,6 @@ module.exports = {
     'airbnb',
     'plugin:jsx-a11y/recommended',
     'prettier',
-    'plugin:jest/recommended',
     'plugin:cypress/recommended',
     'plugin:storybook/recommended',
     'plugin:@typescript-eslint/eslint-recommended',
@@ -16,14 +15,12 @@ module.exports = {
     commonjs: true,
     es6: true,
     'cypress/globals': true,
-    jest: true,
     node: true,
   },
   parser: '@babel/eslint-parser',
   plugins: [
     'prettier',
     'unicorn',
-    'jest',
     'cypress',
     '@operation_code/custom-rules',
     'import',
@@ -35,6 +32,26 @@ module.exports = {
     Cypress: true,
   },
   overrides: [
+    {
+      files: ['./**/*.test.js', './**/*.test.jsx', './**/*.test.ts', './**/*.test.tsx'],
+      plugins: ['vitest'],
+      extends: ['plugin:vitest-globals/recommended', 'plugin:vitest/recommended'],
+      env: {
+        'vitest-globals/env': true,
+      },
+      rules: {
+        'vitest/consistent-test-it': ['error', { fn: 'it', withinDescribe: 'it' }],
+        'vitest/expect-expect': [
+          'error',
+          { assertFunctionNames: ['expect', 'createShallowSnapshotTest', 'createSnapshotTest'] },
+        ],
+        'vitest/prefer-lowercase-title': ['error', { ignore: ['describe'] }],
+        'vitest/no-test-prefixes': 'error',
+        'vitest/no-test-return-statement': 'error',
+        'vitest/prefer-strict-equal': 'error',
+        'vitest/valid-describe-callback': 'error',
+      },
+    },
     {
       files: ['./**/*.ts', './**/*.tsx'],
       parser: '@typescript-eslint/parser',
@@ -84,9 +101,8 @@ module.exports = {
       files: ['cypress/**/*.js'],
       rules: {
         'func-names': 'off',
-        'jest/expect-expect': 'off',
-        'jest/valid-expect': 'off',
-        'jest/valid-expect-in-promise': ['off'],
+        'vitest/expect-expect': 'off',
+        'vitest/valid-expect': 'off',
         'no-unused-expressions': ['off'],
       },
     },
@@ -127,19 +143,6 @@ module.exports = {
 
     // OC eslint Plugin Rules
     '@operation_code/custom-rules/proptype-definition-above-fn': 'error',
-
-    // Jest Plugin Rules
-    'jest/consistent-test-it': ['error', { fn: 'it', withinDescribe: 'it' }],
-    'jest/expect-expect': [
-      'error',
-      { assertFunctionNames: ['expect', 'createShallowSnapshotTest', 'createSnapshotTest'] },
-    ],
-    'jest/prefer-lowercase-title': ['error', { ignore: ['describe'] }],
-    'jest/no-jasmine-globals': 'error',
-    'jest/no-test-prefixes': 'error',
-    'jest/no-test-return-statement': 'error',
-    'jest/prefer-strict-equal': 'error',
-    'jest/valid-describe-callback': 'error',
 
     // JSX-A11Y Plugin Rules
     'jsx-a11y/anchor-is-valid': [
@@ -244,6 +247,5 @@ module.exports = {
     ],
     'no-use-before-define': 'off',
   },
-
   root: true,
 };

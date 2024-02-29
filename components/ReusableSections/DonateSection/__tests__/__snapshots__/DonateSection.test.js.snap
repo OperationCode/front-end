@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`DonateSection should render with no props passed passed 1`] = `
+exports[`DonateSection > should render with no props passed passed 1`] = `
 <Container
   backgroundImageSource="https://operation-code-assets.s3.us-east-2.amazonaws.com/background_flag.jpg"
   isFullViewportHeight={false}
