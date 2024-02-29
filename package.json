@@ -86,6 +86,7 @@
   "devDependencies": {
     "@babel/core": "^7.19.3",
     "@babel/eslint-parser": "^7.19.1",
+    "@babel/preset-typescript": "^7.23.3",
     "@cypress/code-coverage": "^3.10.0",
     "@cypress/webpack-preprocessor": "^5.12.0",
     "@operation_code/eslint-plugin-custom-rules": "^1.0.1",
