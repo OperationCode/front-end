@@ -42,17 +42,9 @@ type ButtonProps = {
    */
   analyticsObject?: GoogleAnalyticsEventPropType;
   /**
-   * Element used as the button label.
-   */
-  children: React.ReactNode | string;
-  /**
    * Forces the component's width as wide as its parent container's width.
    */
   fullWidth?: boolean;
-  /**
-   * Function to be called when button is clicked.
-   */
-  onClick?: () => void | undefined;
   /**
    * Sets the button color theme.
    */
@@ -90,9 +82,9 @@ export default function Button({
       })}
       data-testid={BUTTON}
       disabled={disabled}
-      onClick={() => {
+      onClick={e => {
         gtag.event(eventConfig);
-        onClick();
+        onClick(e);
       }}
       tabIndex={tabIndex}
       type={type}
