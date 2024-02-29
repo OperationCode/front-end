@@ -51,7 +51,7 @@
     "classnames": "^2.3.1",
     "date-fns": "^2.29.3",
     "eslint-plugin-vitest": "^0.3.22",
-    "fast-xml-parser": "^3.21.1",
+    "fast-xml-parser": "^4.1.2",
     "fingerprintjs2": "^2.1.4",
     "fontfaceobserver": "^2.3.0",
     "formik": "^2.2.9",
