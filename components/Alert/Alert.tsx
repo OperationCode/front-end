@@ -13,9 +13,9 @@ export type AlertPropsType = {
 
 function Alert({
   children,
-  className = undefined,
+  className,
   'data-testid': testID = ALERT,
-  onClose = undefined,
+  onClose,
   type,
 }: AlertPropsType) {
   return (
