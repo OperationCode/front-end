@@ -3,6 +3,13 @@ import Alert from '../Alert';
 
 type AlertStoryType = StoryObj<typeof Alert>;
 
+const meta: Meta<typeof Alert> = {
+  title: 'Alert',
+  component: Alert,
+};
+
+export default meta;
+
 const AlertStoryTemplate: AlertStoryType = {
   render: args => <Alert {...args} />,
 };
@@ -30,10 +37,3 @@ export const WarningAlert: AlertStoryType = {
     type: 'warning',
   },
 };
-
-const meta: Meta<typeof Alert> = {
-  title: 'Alert',
-  component: Alert,
-};
-
-export default meta;
