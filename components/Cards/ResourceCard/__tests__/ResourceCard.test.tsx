@@ -1,6 +1,5 @@
 import { fireEvent, render } from '@testing-library/react';
 import { UPVOTE_BUTTON, DOWNVOTE_BUTTON } from 'common/constants/testIDs';
-
 import ResourceCard from '../ResourceCard';
 
 describe('ResourceCard', () => {
@@ -12,12 +11,13 @@ describe('ResourceCard', () => {
 
   it('fires appropriate method when upvote button clicked', () => {
     const handleVoteMock = vi.fn();
-
     const component = render(<ResourceCard {...requiredProps} handleVote={handleVoteMock} />);
-
     const UpvoteButton = component.queryByTestId(UPVOTE_BUTTON);
+
     expect(handleVoteMock).not.toHaveBeenCalled();
-    fireEvent.click(UpvoteButton);
+
+    UpvoteButton && fireEvent.click(UpvoteButton);
+
     expect(handleVoteMock).toHaveBeenCalledTimes(1);
     expect(handleVoteMock).toHaveBeenCalledWith(
       'upvote',
@@ -29,12 +29,13 @@ describe('ResourceCard', () => {
 
   it('fires appropriate method when downvote button clicked', () => {
     const handleVoteMock = vi.fn();
-
     const component = render(<ResourceCard {...requiredProps} handleVote={handleVoteMock} />);
-
     const DownvoteButton = component.queryByTestId(DOWNVOTE_BUTTON);
+
     expect(handleVoteMock).not.toHaveBeenCalled();
-    fireEvent.click(DownvoteButton);
+
+    DownvoteButton && fireEvent.click(DownvoteButton);
+
     expect(handleVoteMock).toHaveBeenCalledTimes(1);
     expect(handleVoteMock).toHaveBeenCalledWith(
       'downvote',
