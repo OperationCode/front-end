@@ -15,6 +15,7 @@ export type BadgePropsType = {
   className?: string;
   /**
    * Sets whether the label is rendered above, or below, the badge..
+   * @default - true  
    */
   isImageFirst?: boolean;
 };
