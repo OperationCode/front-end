@@ -1,5 +1,4 @@
 import createShallowSnapshotTest from 'test-utils/createShallowSnapshotTest';
-
 import ImageCard from '../ImageCard';
 
 describe('ImageCard', () => {

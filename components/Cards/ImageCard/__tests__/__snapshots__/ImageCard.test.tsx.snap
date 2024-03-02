@@ -3,11 +3,10 @@
 exports[`ImageCard > should render with many props assigned 1`] = `
 <Card
   className="md:flex-row flex-col md:h-56 md:w-[650px] md:max-w-none p-0 h-auto max-w-xs w-auto [&>*]:flex-[1_1_50%] test"
-  hasAnimationOnHover={false}
 >
   <React.Fragment>
     <div
-      className="flex items-center flex-col justify-start overflow-y-auto m-4"
+      className="flex flex-col items-center justify-start m-4 overflow-y-auto"
     >
       <p>
         Testing!
@@ -30,7 +29,6 @@ exports[`ImageCard > should render with many props assigned 1`] = `
 exports[`ImageCard > should render with required props 1`] = `
 <Card
   className="md:flex-row flex-col md:h-56 md:w-[650px] md:max-w-none p-0 h-auto max-w-xs w-auto [&>*]:flex-[1_1_50%]"
-  hasAnimationOnHover={false}
 >
   <React.Fragment>
     <div
@@ -44,7 +42,7 @@ exports[`ImageCard > should render with required props 1`] = `
       />
     </div>
     <div
-      className="flex items-center flex-col justify-start overflow-y-auto m-4"
+      className="flex flex-col items-center justify-start m-4 overflow-y-auto"
     >
       <p>
         Testing!
