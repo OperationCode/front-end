@@ -3,9 +3,7 @@ import Swatch from 'components/Branding/Swatch/Swatch';
 import Content from 'components/Content/Content';
 
 function ColorSection() {
-  // @ts-expect-error
   const primaryColor = { name: 'Primary', hexCode: brandColorsObject.primary };
-  // @ts-expect-error
   const secondaryColor = { name: 'Secondary', hexCode: brandColorsObject.secondary };
 
   // Compose a list of colors excluding primary and secondary
@@ -37,7 +35,6 @@ function ColorSection() {
         title="Other On-Brand Colors"
         theme="white"
         columns={otherColorNames.map(colorName => (
-          // @ts-expect-error
           <Swatch colorName={colorName} hexCode={brandColorsObject[colorName]} key={colorName} />
         ))}
       />
