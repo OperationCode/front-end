@@ -35,6 +35,7 @@ export type AccordionPropsType = {
   className?: string;
   /**
    * Should Accordion have animation on hover.
+   * @default - false  
    */
   hasAnimationOnHover?: boolean;
 };
@@ -45,7 +46,7 @@ export type AccordionPropsType = {
  */
 function Accordion({
   accessibilityId,
-  className = undefined,
+  className,
   content,
   hasAnimationOnHover = false,
 }: AccordionPropsType) {
