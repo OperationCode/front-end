@@ -27,9 +27,9 @@ export type LinkButtonProps = {
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 export default function LinkButton({
-  analyticsEventLabel = undefined,
+  analyticsEventLabel,
   children,
-  className = undefined,
+  className,
   'data-testid': testID,
   fullWidth = false,
   href,

@@ -3,6 +3,13 @@ import LinkButton from '../LinkButton';
 
 type LinkButtonStoryType = StoryObj<typeof LinkButton>;
 
+const meta: Meta<typeof LinkButton> = {
+  title: 'Buttons/LinkButton',
+  component: LinkButton,
+};
+
+export default meta;
+
 export const Default: LinkButtonStoryType = {
   render: args => <LinkButton {...args} />,
   args: {
@@ -10,10 +17,3 @@ export const Default: LinkButtonStoryType = {
     href: '#',
   },
 };
-
-const meta: Meta<typeof LinkButton> = {
-  title: 'Buttons/LinkButton',
-  component: LinkButton,
-};
-
-export default meta;
