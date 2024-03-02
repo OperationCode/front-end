@@ -6,7 +6,12 @@ Swatch.propTypes = {
   hexCode: string.isRequired,
 };
 
-function Swatch({ colorName, hexCode }) {
+export type Swatch = {
+  colorName: string;
+  hexCode: string;
+};
+
+function Swatch({ colorName, hexCode }: Swatch) {
   return (
     <figure className="border-1 border-solid border-[#333333] p-4 m-6 w-56">
       <ScreenReaderOnly>{`A block of the color ${colorName}`}</ScreenReaderOnly>
