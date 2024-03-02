@@ -3,8 +3,9 @@ import Accordion from '../Accordion';
 
 type AccordionStoryType = StoryObj<typeof Accordion>;
 
-export const Default: AccordionStoryType = {
-  render: args => <Accordion {...args} />,
+const meta: Meta<typeof Accordion> = {
+  title: 'Accordion',
+  component: Accordion,
   args: {
     accessibilityId: '1',
     content: {
@@ -14,9 +15,8 @@ export const Default: AccordionStoryType = {
   },
 };
 
-const meta: Meta<typeof Accordion> = {
-  title: 'Accordion',
-  component: Accordion,
-};
-
 export default meta;
+
+export const Default: AccordionStoryType = {
+  render: args => <Accordion {...args} />,
+};
