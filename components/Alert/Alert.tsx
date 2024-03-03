@@ -1,24 +1,23 @@
-import { func, node, oneOf, string } from 'prop-types';
 import classNames from 'classnames';
 import { ALERT, ALERT_CLOSE_BUTTON } from 'common/constants/testIDs';
 import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
 import styles from './Alert.module.css';
 
-Alert.propTypes = {
-  children: node.isRequired,
-  className: string,
-  'data-testid': string,
-  onClose: func,
-  type: oneOf(['error', 'success', 'warning']).isRequired,
+export type AlertPropsType = {
+  type: 'error' | 'success' | 'warning';
+  children: React.ReactNode;
+  className?: string;
+  'data-testid'?: string;
+  onClose?: () => void;
 };
 
-Alert.defaultProps = {
-  className: undefined,
-  'data-testid': ALERT,
-  onClose: undefined,
-};
-
-function Alert({ children, className, 'data-testid': testID, onClose, type }) {
+function Alert({
+  children,
+  className,
+  'data-testid': testID = ALERT,
+  onClose,
+  type,
+}: AlertPropsType) {
   return (
     <div
       className={classNames(styles.Alert, className, {
