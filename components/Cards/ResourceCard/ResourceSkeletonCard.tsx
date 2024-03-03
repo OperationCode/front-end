@@ -1,10 +1,5 @@
-// import { number } from 'prop-types';
 import { SKELETON_CARD } from '../../../common/constants/testIDs';
 import styles from './ResourceSkeletonCard.module.css';
-
-// ResourceSkeletonCard.propTypes = {
-//   numberOfSkeletons: number.isRequired,
-// };
 
 export type ResourceSkeletonCardPropsType = {
   /**
