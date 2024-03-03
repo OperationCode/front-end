@@ -11,7 +11,8 @@ export type ResourceSkeletonCardPropsType = {
 function ResourceSkeletonCard({ numberOfSkeletons }: ResourceSkeletonCardPropsType) {
   return (
     <div className={styles.resourcesCardWrapper}>
-      {[...Array(numberOfSkeletons)].map((index) => (
+      // @ts-expect-error -- 'skeleton' is declared but its value is never read.ts(6133)
+      {[...Array(numberOfSkeletons)].map((skeleton, index) => (
         // eslint-disable-next-line react/no-array-index-key
         <div data-testid={SKELETON_CARD} key={index} className={styles.Skeleton}>
           <div className={styles.loading}>
