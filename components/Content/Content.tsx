@@ -3,13 +3,39 @@ import Container from 'components/Container/Container';
 import Heading from 'components/Heading/Heading';
 
 export type ContentPropsType = {
+  /**
+   * Elements to be rendered in the container.
+   */
   columns: React.ReactNode[];
+  /**
+   * Sets the path for an optional background image.
+   */
   backgroundImageSource?: string;
+  /**
+   * Applies style classes to the wrapping div.
+   */
   className?: string;
+  /**
+   * Displays an optional line under the title.
+   */
   hasTitleUnderline?: boolean;
+  /**
+   * Applies an id to the container.
+   */
   id?: string;
+  /**
+   * Sets the height of the container to be full viewport height.
+   * @default false
+   */
   isFullViewportHeight?: boolean;
+  /**
+   * Applies the color theme.
+   * @default secondary
+   */
   theme?: 'gray' | 'secondary' | 'white';
+  /**
+   * Applies an additional title element.
+   */
   title?: string;
 };
 
