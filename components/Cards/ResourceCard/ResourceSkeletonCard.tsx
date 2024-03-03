@@ -7,6 +7,9 @@ import styles from './ResourceSkeletonCard.module.css';
 // };
 
 export type ResourceSkeletonCardPropsType = {
+  /**
+   * Sets the number of UI "skeletons" to render.
+   */
   numberOfSkeletons: number;
 };
 
