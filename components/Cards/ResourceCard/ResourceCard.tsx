@@ -153,44 +153,49 @@ export const possibleUserVotes = {
   none: null,
 };
 
-// ResourceCard.propTypes = {
-//   description: string,
-//   downvotes: number,
-//   href: string.isRequired,
-//   name: string.isRequired,
-//   id: number.isRequired,
-//   category: string,
-//   languages: oneOfType([string, array]),
-//   isFree: bool,
-//   handleVote: func,
-//   upvotes: number,
-//   userVote: oneOf(Object.values(possibleUserVotes)),
-// };
-
 export type ResourceCardPropType = {
+  /**
+   * Url path for the link.
+   */
   href: string;
+  /**
+   * Name of the resource applied to the resource title link.
+   */
   name: string;
+  /**
+   * Applies an id to the component.
+   */
   id: number;
+  /**
+   * Optional description of the resource.
+   */
   description?: string;
+  /**
+   * Number of "down" votes.
+   */
   downvotes?: number;
+  /**
+   * Sets the category text.
+   */
   category?: string;
+  /**
+   * Applies the resource languages.
+   */
   languages?: string | string[];
+  /**
+   * Sets indictor that resource is free.
+   */
   isFree?: boolean;
+  /**
+   * Function to handle the vote.
+   */
   handleVote?: () => void;
+  /**
+   * Number of "up" votes.
+   */
   upvotes?: number;
   userVote?: keyof typeof possibleUserVotes | null;
 };
-
-// ResourceCard.defaultProps = {
-//   description: '',
-//   downvotes: 0,
-//   category: '',
-//   languages: [],
-//   isFree: false,
-//   handleVote: () => {},
-//   upvotes: 0,
-//   userVote: possibleUserVotes.none,
-// };
 
 function ResourceCard({
   description = '',
