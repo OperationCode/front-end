@@ -16,7 +16,7 @@ describe('ResourceCard', () => {
 
     expect(handleVoteMock).not.toHaveBeenCalled();
 
-    UpvoteButton && fireEvent.click(UpvoteButton);
+    fireEvent.click(UpvoteButton!);
 
     expect(handleVoteMock).toHaveBeenCalledTimes(1);
     expect(handleVoteMock).toHaveBeenCalledWith(
@@ -34,7 +34,7 @@ describe('ResourceCard', () => {
 
     expect(handleVoteMock).not.toHaveBeenCalled();
 
-    DownvoteButton && fireEvent.click(DownvoteButton);
+    fireEvent.click(DownvoteButton!);
 
     expect(handleVoteMock).toHaveBeenCalledTimes(1);
     expect(handleVoteMock).toHaveBeenCalledWith(
