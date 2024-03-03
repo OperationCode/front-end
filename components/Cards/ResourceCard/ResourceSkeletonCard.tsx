@@ -1,12 +1,16 @@
-import { number } from 'prop-types';
+// import { number } from 'prop-types';
 import { SKELETON_CARD } from '../../../common/constants/testIDs';
 import styles from './ResourceSkeletonCard.module.css';
 
-ResourceSkeletonCard.propTypes = {
-  numberOfSkeletons: number.isRequired,
+// ResourceSkeletonCard.propTypes = {
+//   numberOfSkeletons: number.isRequired,
+// };
+
+export type ResourceSkeletonCardPropsType = {
+  numberOfSkeletons: number;
 };
 
-function ResourceSkeletonCard({ numberOfSkeletons }) {
+function ResourceSkeletonCard({ numberOfSkeletons }: ResourceSkeletonCardPropsType) {
   return (
     <div className={styles.resourcesCardWrapper}>
       {[...Array(numberOfSkeletons)].map((skeleton, index) => (
