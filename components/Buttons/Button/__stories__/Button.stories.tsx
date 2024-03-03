@@ -3,13 +3,6 @@ import Button from '../Button';
 
 type ButtonStoryType = StoryObj<typeof Button>;
 
-export const Default: ButtonStoryType = {
-  render: args => <Button {...args} />,
-  args: {
-    children: 'Button',
-  },
-};
-
 const meta: Meta<typeof Button> = {
   title: 'Buttons/Button',
   component: Button,
@@ -21,3 +14,10 @@ const meta: Meta<typeof Button> = {
 };
 
 export default meta;
+
+export const Default: ButtonStoryType = {
+  render: args => <Button {...args} />,
+  args: {
+    children: 'Button',
+  },
+};
