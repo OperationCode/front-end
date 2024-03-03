@@ -11,7 +11,7 @@ export type ResourceSkeletonCardPropsType = {
 function ResourceSkeletonCard({ numberOfSkeletons }: ResourceSkeletonCardPropsType) {
   return (
     <div className={styles.resourcesCardWrapper}>
-      {[...Array(numberOfSkeletons)].map((skeleton, index) => (
+      {[...Array(numberOfSkeletons)].map((index) => (
         // eslint-disable-next-line react/no-array-index-key
         <div data-testid={SKELETON_CARD} key={index} className={styles.Skeleton}>
           <div className={styles.loading}>
