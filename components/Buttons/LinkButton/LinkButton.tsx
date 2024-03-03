@@ -9,6 +9,14 @@ export type LinkButtonProps = {
    */
   href: string;
   /**
+   * String or element to be used as the label.
+   */
+  children: React.ReactNode;
+  /**
+   * Applies classnames to the base element.
+   */
+  className?: string;
+  /**
    * Only pass analytics event label if you're href is to an external website
    */
   analyticsEventLabel?: string;
@@ -24,7 +32,7 @@ export type LinkButtonProps = {
    * Sets the button color theme.
    */
   theme?: 'primary' | 'secondary';
-} & React.ButtonHTMLAttributes<HTMLButtonElement>;
+};
 
 export default function LinkButton({
   analyticsEventLabel,
