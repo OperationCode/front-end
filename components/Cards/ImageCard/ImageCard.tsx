@@ -1,4 +1,3 @@
-// import { bool, node, string } from 'prop-types';
 import { twMerge } from 'tailwind-merge';
 import Image from 'next/image';
 import Card, { CardPropsType } from 'components/Cards/Card/Card';
