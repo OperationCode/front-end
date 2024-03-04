@@ -1,36 +1,26 @@
-import { string, bool, oneOf } from 'prop-types';
 import classNames from 'classnames';
 import kebabCase from 'lodash/kebabCase';
 import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
 import LinkIcon from 'static/images/icons/FontAwesome/link-solid.svg';
 import styles from './Heading.module.css';
 
-// Heading.propTypes = {
-//   className: string,
-//   hasHashLink: bool,
-//   hasTitleUnderline: bool,
-//   headingLevel: oneOf([1, 2, 3, 4, 5, 6]),
-//   text: string.isRequired,
-// };
-
-type HeadingLevelType = 1 | 2 | 3 | 4 | 5 | 6
+type HeadingLevelType = 1 | 2 | 3 | 4 | 5 | 6;
 
 export type HeadingPropsType = {
-  text: string
-  className?: string
-  hasHashLink?: boolean
-  hasTitleUnderline?: boolean
-  headingLevel: HeadingLevelType
-}
+  text: string;
+  className?: string;
+  hasHashLink?: boolean;
+  hasTitleUnderline?: boolean;
+  headingLevel: HeadingLevelType;
+};
 
-// Heading.defaultProps = {
-//   className: undefined,
-//   hasHashLink: true,
-//   hasTitleUnderline: false,
-//   headingLevel: 2,
-// };
-
-function Heading({ className, hasHashLink = true, hasTitleUnderline = false, headingLevel = 2, text }: HeadingPropsType) {
+function Heading({
+  className,
+  hasHashLink = true,
+  hasTitleUnderline = false,
+  headingLevel = 2,
+  text,
+}: HeadingPropsType) {
   const anchorId = `${kebabCase(text)}-link`;
   const HeadingElement = `h${headingLevel}` as keyof JSX.IntrinsicElements;
 
