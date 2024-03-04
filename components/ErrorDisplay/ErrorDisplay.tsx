@@ -1,11 +1,13 @@
-import { number } from 'prop-types';
 import Head from 'components/head';
 
-ErrorDisplay.propTypes = { statusCode: number };
+export type ErrorDisplayPropsType = {
+  /**
+   * Displasy a status code instead of 'Error'.
+   */
+  statusCode?: number;
+};
 
-ErrorDisplay.defaultProps = { statusCode: undefined };
-
-function ErrorDisplay({ statusCode }) {
+function ErrorDisplay({ statusCode }: ErrorDisplayPropsType) {
   return (
     <>
       <Head title={statusCode ? `${statusCode}` : 'Error'}>
@@ -17,7 +19,7 @@ function ErrorDisplay({ statusCode }) {
           'h-screen text-white bg-[url("/static/images/TankFlip.gif")] flex flex-col justify-center w-full  bg-cover items-center'
         }
       >
-        <div className="text-center my-4 mx-auto">
+        <div className="mx-auto my-4 text-center">
           <h1 className="text-6xl text-white">{statusCode || 'Oh no'}!</h1>
           <p className="text-2xl text-white">
             We&apos;re so ashamed. You definitely weren&apos;t supposed to see this...
