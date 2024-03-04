@@ -2,7 +2,7 @@
 
 exports[`FeaturedJobItem > should render with many props assigned 1`] = `
 <article
-  className="py-4 px-0"
+  className="px-0 py-4"
 >
   <a
     className="inline-flex items-start"
@@ -31,7 +31,7 @@ exports[`FeaturedJobItem > should render with many props assigned 1`] = `
     />
   </a>
   <div
-    className="flex flex-wrap text-lg text-themeSecondary opacity-80 mt-1 "
+    className="flex flex-wrap mt-1 text-lg text-themeSecondary opacity-80 "
   >
     <div
       className="flex items-center gap-1.5"
@@ -110,7 +110,7 @@ exports[`FeaturedJobItem > should render with many props assigned 1`] = `
 
 exports[`FeaturedJobItem > should render with required props 1`] = `
 <article
-  className="py-4 px-0"
+  className="px-0 py-4"
 >
   <a
     className="inline-flex items-start"
@@ -139,7 +139,7 @@ exports[`FeaturedJobItem > should render with required props 1`] = `
     />
   </a>
   <div
-    className="flex flex-wrap text-lg text-themeSecondary opacity-80 mt-1 "
+    className="flex flex-wrap mt-1 text-lg text-themeSecondary opacity-80 "
   >
     <div
       className="flex items-center gap-1.5"
