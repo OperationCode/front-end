@@ -1,28 +1,45 @@
-import { bool, node, number, oneOf, oneOfType, string } from 'prop-types';
 import classNames from 'classnames';
 import { getDataAttributes } from 'common/utils/prop-utils';
 import styles from './Container.module.css';
 
-Container.propTypes = {
-  backgroundImageSource: string,
-  children: node,
-  className: string,
-  id: oneOfType([string, number]),
-  isFullViewportHeight: bool,
-  theme: oneOf(['gray', 'secondary', 'white']),
+export type ContainerPropsType = {
+  /**
+   * Sets the path for an optional background image.
+   */
+  backgroundImageSource?: string;
+  /**
+   * Content to be rendered in the Container.
+   */
+  children?: React.ReactNode;
+  /**
+   * Applies style classes to the wrapping div.
+   */
+  className?: string;
+  /**
+   * Applies an id to the container.
+   */
+  id?: string;
+  /**
+   * Sets the height of the container to be full viewport height.
+   * @default false
+   */
+  isFullViewportHeight?: boolean;
+  /**
+   * Applies the color theme.
+   * @default secondary
+   */
+  theme?: 'gray' | 'secondary' | 'white';
 };
 
-Container.defaultProps = {
-  backgroundImageSource: undefined,
-  children: undefined,
-  className: undefined,
-  id: undefined,
-  isFullViewportHeight: false,
-  theme: 'secondary',
-};
-
-function Container(props) {
-  const { backgroundImageSource, children, className, id, isFullViewportHeight, theme } = props;
+function Container(props: ContainerPropsType) {
+  const {
+    backgroundImageSource,
+    children,
+    className,
+    id,
+    isFullViewportHeight = false,
+    theme = 'secondary',
+  } = props;
   // See https://css-tricks.com/tinted-images-multiple-backgrounds/ for explanation
   const darkOverlay = 'linear-gradient(rgba(33, 48, 69, 0.65),rgba(33, 48, 69, 0.65))';
   const dynamicBackgroundImage = backgroundImageSource
