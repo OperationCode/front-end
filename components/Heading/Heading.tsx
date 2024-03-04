@@ -7,10 +7,25 @@ import styles from './Heading.module.css';
 type HeadingLevelType = 1 | 2 | 3 | 4 | 5 | 6;
 
 export type HeadingPropsType = {
+  /**
+   * Text to be rendered in the heading element.
+   */
   text: string;
+  /**
+   * Applies classnames to the base `figure` element for styling.
+   */
   className?: string;
+  /**
+   * Applies an anchor as the base element if true.
+   */
   hasHashLink?: boolean;
+  /**
+   * Displays an optional line under the title.
+   */
   hasTitleUnderline?: boolean;
+  /**
+   * Sets the heading level (h1, h2, etc)
+   */
   headingLevel: HeadingLevelType;
 };
 
