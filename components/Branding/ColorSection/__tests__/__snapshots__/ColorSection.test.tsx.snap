@@ -3,7 +3,6 @@
 exports[`ColorSection > should render with required props 1`] = `
 <React.Fragment>
   <Content
-    className=""
     columns={
       [
         <div>
@@ -31,12 +30,10 @@ exports[`ColorSection > should render with required props 1`] = `
       ]
     }
     hasTitleUnderline={true}
-    isFullViewportHeight={false}
     theme="white"
     title="Colors"
   />
   <Content
-    className=""
     columns={
       [
         <Swatch
@@ -49,8 +46,6 @@ exports[`ColorSection > should render with required props 1`] = `
         />,
       ]
     }
-    hasTitleUnderline={false}
-    isFullViewportHeight={false}
     theme="white"
     title="Other On-Brand Colors"
   />

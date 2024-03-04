@@ -2,7 +2,6 @@
 
 exports[`FontSection > should render with required props 1`] = `
 <Content
-  className=""
   columns={
     [
       <ul
@@ -60,7 +59,6 @@ exports[`FontSection > should render with required props 1`] = `
     ]
   }
   hasTitleUnderline={true}
-  isFullViewportHeight={false}
   theme="gray"
   title="Typography"
 />
