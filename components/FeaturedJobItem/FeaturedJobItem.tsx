@@ -1,19 +1,7 @@
-// import { string, bool } from 'prop-types';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 import BuildingIcon from 'static/images/icons/FontAwesome/building_icon.svg';
 import CloudUploadIcon from 'static/images/icons/FontAwesome/cloud_upload_icon.svg';
 import MapMarkerIcon from 'static/images/icons/FontAwesome/map_marker_icon.svg';
-
-// FeaturedJobItem.propTypes = {
-//   title: string.isRequired,
-//   source: string.isRequired,
-//   sourceUrl: string.isRequired,
-//   city: string,
-//   state: string,
-//   country: string,
-//   description: string.isRequired,
-//   remote: bool,
-// };
 
 export type FeaturedJobItemPropsType = {
   /**
@@ -40,7 +28,7 @@ export type FeaturedJobItemPropsType = {
    * Applies an optional state for the featured job.
    */
   state?: string;
-    /**
+  /**
    * Applies an optional country for the featured job.
    */
   country?: string;
@@ -50,13 +38,6 @@ export type FeaturedJobItemPropsType = {
    */
   remote?: boolean;
 };
-
-// FeaturedJobItem.defaultProps = {
-//   remote: false,
-//   city: '',
-//   state: '',
-//   country: '',
-// };
 
 function FeaturedJobItem({
   title,
