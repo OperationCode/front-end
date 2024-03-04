@@ -29,7 +29,7 @@ export type HeadingPropsType = {
    * Sets the heading level (h1, h2, etc)
    * @default 2
    */
-  headingLevel: HeadingLevelType;
+  headingLevel?: HeadingLevelType;
 };
 
 function Heading({
