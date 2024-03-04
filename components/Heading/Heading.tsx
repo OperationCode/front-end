@@ -17,14 +17,17 @@ export type HeadingPropsType = {
   className?: string;
   /**
    * Applies an anchor as the base element if true.
+   * @default true
    */
   hasHashLink?: boolean;
   /**
    * Displays an optional line under the title.
+   * @default false
    */
   hasTitleUnderline?: boolean;
   /**
    * Sets the heading level (h1, h2, etc)
+   * @default 2
    */
   headingLevel: HeadingLevelType;
 };
