@@ -1,26 +1,34 @@
-import { bool, node, string } from 'prop-types';
 import { twMerge } from 'tailwind-merge';
 import Image from 'next/image';
-import Card from 'components/Cards/Card/Card';
+import Card, { CardPropsType } from 'components/Cards/Card/Card';
 
-ImageCard.propTypes = {
-  alt: string.isRequired,
-  children: node.isRequired,
-  className: string,
-  imageSource: string.isRequired,
-  isImageFirst: bool,
-};
+export type ImageCardPropsType = {
+  /**
+   * Includes alt text for the image.
+   */
+  alt: string;
+  /**
+   * Url for the image.
+   */
+  imageSource: string;
+  /**
+   * Sets whether the image is displayed inline before the content, or after.
+   * @default - true
+   */
+  isImageFirst?: boolean;
+} & Omit<CardPropsType, 'hasAnimationOnHover'>;
 
-ImageCard.defaultProps = {
-  className: undefined,
-  isImageFirst: true,
-};
-
-function ImageCard({ alt, children, className, imageSource, isImageFirst }) {
+function ImageCard({
+  alt,
+  children,
+  className,
+  imageSource,
+  isImageFirst = true,
+}: ImageCardPropsType) {
   const ImageComponent = <Image src={imageSource} alt={alt} layout="fill" objectFit="cover" />;
 
   const ContentComponent = (
-    <div className="flex items-center flex-col justify-start overflow-y-auto m-4">{children}</div>
+    <div className="flex flex-col items-center justify-start m-4 overflow-y-auto">{children}</div>
   );
 
   return (

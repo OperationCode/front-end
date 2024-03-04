@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { string, number, func, oneOf, oneOfType, array, bool } from 'prop-types';
 import classNames from 'classnames';
 import Accordion from 'components/Accordion/Accordion';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
@@ -18,16 +17,64 @@ import styles from './ResourceCard.module.css';
 
 const DESKTOP_VOTING_BLOCK = 'desktopVotingBlock';
 
-VotingBlock.propTypes = {
-  blockID: string.isRequired,
-  resourceID: string.isRequired,
-  upVotes: number.isRequired,
-  downVotes: number.isRequired,
-  handleVote: func.isRequired,
-  setUpVotes: func.isRequired,
-  setDownVotes: func.isRequired,
-  didUpvote: bool.isRequired,
-  didDownvote: bool.isRequired,
+type VoteDirectionType = 'upvote' | 'downvote';
+
+type HandleVoteType = (
+  /**
+   * Sets the vote to be up or down.
+   */
+  voteDirection: VoteDirectionType,
+  /**
+   * Sets which resource is gets the vote.
+   */
+  resourceID: number,
+  /**
+   * Function that sets the state value of "up" votes.
+   */
+  setUpVotes: VotingBlockPropsType['setUpVotes'],
+  /**
+   * Function that sets the state value of "down" votes.
+   */
+  setDownVotes: VotingBlockPropsType['setDownVotes'],
+) => void;
+
+type VotingBlockPropsType = {
+  /**
+   * Applies an id.
+   */
+  blockID: string;
+  /**
+   * Sets which resource is gets the vote.
+   */
+  resourceID: number;
+  /**
+   * Number of "up" votes.
+   */
+  upVotes: number;
+  /**
+   * Number of "down" votes.
+   */
+  downVotes: number;
+  /**
+   * Function to handle the vote.
+   */
+  handleVote: HandleVoteType | undefined;
+  /**
+   * Function that sets the state value of "up" votes.
+   */
+  setUpVotes: React.Dispatch<React.SetStateAction<number>>;
+  /**
+   * Function that sets the state value of "down" votes.
+   */
+  setDownVotes: React.Dispatch<React.SetStateAction<number>>;
+  /**
+   * Applies classes based on whether an "up" vote has occurred.
+   */
+  didUpvote: boolean;
+  /**
+   * Applies classes based on whether an "down" vote has occurred.
+   */
+  didDownvote: boolean;
 };
 
 function VotingBlock({
@@ -40,8 +87,9 @@ function VotingBlock({
   setDownVotes,
   didUpvote,
   didDownvote,
-}) {
-  const onVote = voteDirection => handleVote(voteDirection, resourceID, setUpVotes, setDownVotes);
+}: VotingBlockPropsType) {
+  const onVote = (voteDirection: VoteDirectionType) =>
+    handleVote?.(voteDirection, resourceID, setUpVotes, setDownVotes);
   const onUpvote = () => onVote('upvote');
   const onDownvote = () => onVote('downvote');
 
@@ -105,44 +153,63 @@ export const possibleUserVotes = {
   none: null,
 };
 
-ResourceCard.propTypes = {
-  description: string,
-  downvotes: number,
-  href: string.isRequired,
-  name: string.isRequired,
-  id: number.isRequired,
-  category: string,
-  languages: oneOfType([string, array]),
-  isFree: bool,
-  handleVote: func,
-  upvotes: number,
-  userVote: oneOf(Object.values(possibleUserVotes)),
-};
-
-ResourceCard.defaultProps = {
-  description: '',
-  downvotes: 0,
-  category: '',
-  languages: [],
-  isFree: false,
-  handleVote: () => {},
-  upvotes: 0,
-  userVote: possibleUserVotes.none,
+export type ResourceCardPropType = {
+  /**
+   * Url path for the link.
+   */
+  href: string;
+  /**
+   * Name of the resource applied to the resource title link.
+   */
+  name: string;
+  /**
+   * Applies an id to the component.
+   */
+  id: number;
+  /**
+   * Optional description of the resource.
+   */
+  description?: string;
+  /**
+   * Number of "down" votes.
+   */
+  downvotes?: number;
+  /**
+   * Sets the category text.
+   */
+  category?: string;
+  /**
+   * Applies the resource languages.
+   */
+  languages?: string | string[];
+  /**
+   * Sets indictor that resource is free.
+   */
+  isFree?: boolean;
+  /**
+   * Function to handle the vote.
+   */
+  handleVote?: () => void;
+  /**
+   * Number of "up" votes.
+   */
+  upvotes?: number;
+  userVote?: keyof typeof possibleUserVotes | null;
 };
 
 function ResourceCard({
-  description,
-  downvotes,
+  description = '',
+  downvotes = 0,
   href,
   name,
-  category,
-  languages,
-  isFree,
+  category = '',
+  languages = [],
+  isFree = false,
   handleVote,
-  upvotes,
-  userVote,
+  upvotes = 0,
+  userVote = possibleUserVotes.none,
   id,
-}) {
+}: ResourceCardPropType) {
   const [upVotes, setUpVotes] = useState(upvotes);
   const [downVotes, setDownVotes] = useState(downvotes);
   const didUpvote = userVote === possibleUserVotes.upvote;
@@ -157,7 +224,7 @@ function ResourceCard({
           <div
             data-testid={RESOURCE_CARD}
             data-test-category={category}
-            data-test-languages={languages.join('-')}
+            data-test-languages={Array.isArray(languages) ? languages.join('-') : languages}
             data-test-isfree={isFree}
             className={styles.header}
           >
@@ -191,7 +258,8 @@ function ResourceCard({
 
             <div className={styles.metadata}>
               <p>
-                <span className={styles.metadataLabel}>Languages:</span> {languages.join(', ')}
+                <span className={styles.metadataLabel}>Languages:</span>{' '}
+                {Array.isArray(languages) ? languages.join(', ') : languages}
               </p>
               <p>
                 <span className={styles.metadataLabel}>Category:</span> {category}

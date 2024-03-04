@@ -1,12 +1,11 @@
-import { string } from 'prop-types';
 import Card from 'components/Cards/Card/Card';
 
-ValueCard.propTypes = {
-  name: string.isRequired,
-  description: string.isRequired,
+export type ValueCardPropsType = {
+  name: string;
+  description: string;
 };
 
-function ValueCard({ description, name }) {
+function ValueCard({ description, name }: ValueCardPropsType) {
   return (
     <Card
       className="!justify-start max-w-[400px] h-[400px] p-8 overflow-y-auto"
