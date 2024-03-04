@@ -1,26 +1,20 @@
-import { bool, node, string } from 'prop-types';
 import { twMerge } from 'tailwind-merge';
 import { getDataAttributes } from 'common/utils/prop-utils';
 
-Card.propTypes = {
-  children: node.isRequired,
-  className: string,
-  hasAnimationOnHover: bool,
+export type CardPropsType = {
+  children: React.ReactNode;
+  className?: string;
+  hasAnimationOnHover?: boolean;
 };
 
-Card.defaultProps = {
-  className: undefined,
-  hasAnimationOnHover: false,
-};
-
-function Card({ children, className, ...props }) {
+function Card({ children, className, hasAnimationOnHover, ...props }: CardPropsType) {
   const customDataAttributes = getDataAttributes(props);
 
   return (
     <article
       className={twMerge(
         'items-center bg-white [&_svg]:fill-themeSecondary text-themeSecondary flex flex-col flex-nowrap justify-around m-4 min-h-[100px] min-w-[100px] p-6 shadow-md focus-visible:outline-none',
-        props.hasAnimationOnHover &&
+        hasAnimationOnHover &&
           'shadow-sm transition-shadow duration-200 ease-linear hover:shadow-lg focus-visible:shadow-lg',
         className,
       )}
