@@ -1,24 +1,38 @@
-import { string, node, bool } from 'prop-types';
 import classNames from 'classnames';
 import Container from 'components/Container/Container';
 import { HERO_BANNER_H1 } from 'common/constants/testIDs';
 
-HeroBanner.propTypes = {
-  backgroundImageSource: string,
-  className: string,
-  children: node,
-  isFullViewportHeight: bool,
-  title: string.isRequired,
+export type HeroBannerPropsType = {
+  /**
+   * Renders a title for the banner.
+   */
+  title: string;
+  /**
+   * Sets the path for an optional background image.
+   */
+  backgroundImageSource?: string;
+  /**
+   * Applies classnames to the base `figure` element for styling.
+   */
+  className?: string;
+  /**
+   * Content to be rendered in the Container.
+   */
+  children?: React.ReactNode;
+  /**
+   * Sets the height of the container to be full viewport height.
+   * @default false
+   */
+  isFullViewportHeight?: boolean;
 };
 
-HeroBanner.defaultProps = {
-  backgroundImageSource: '',
-  className: undefined,
-  children: undefined,
-  isFullViewportHeight: false,
-};
-
-function HeroBanner({ backgroundImageSource, children, className, isFullViewportHeight, title }) {
+function HeroBanner({
+  backgroundImageSource,
+  children,
+  className,
+  isFullViewportHeight = false,
+  title,
+}: HeroBannerPropsType) {
   return (
     <Container
       backgroundImageSource={backgroundImageSource}
