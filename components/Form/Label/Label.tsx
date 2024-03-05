@@ -21,6 +21,7 @@ export type LabelPropsType = {
   'data-testid'?: string;
   /**
    * Sets if the label is hidden or not.
+   * @default false
    */
   isHidden?: boolean;
 };
