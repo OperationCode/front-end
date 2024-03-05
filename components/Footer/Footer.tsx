@@ -7,11 +7,26 @@ import Image from 'next/image';
 import Logo from 'public/static/images/logo.svg';
 import styles from './Footer.module.css';
 
+export type FooterPropsType = {
+  /**
+   * Url string applied ot the link.
+   */
+  href: string;
+  /**
+   * String applied to the link label.
+   */
+  name: string;
+  /**
+   * Only pass analytics event label if you're href is to an external website
+   */
+  analyticsEventLabel?: string;
+};
+
 function Footer() {
   const currentYear = new Date().getFullYear();
 
   // eslint-disable-next-line react/prop-types
-  const renderLink = ({ href, name, analyticsEventLabel }) => {
+  const renderLink = ({ href, name, analyticsEventLabel }: FooterPropsType) => {
     return (
       <li key={href}>
         {analyticsEventLabel ? (

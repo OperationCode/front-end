@@ -24,7 +24,7 @@ describe('Modal', () => {
 
   it('should render with many props assigned', () => {
     const { container } = render(
-      <Modal {...requiredProps} className="test-class" isOpen shouldCloseOnOverlayClick={false}>
+      <Modal {...requiredProps} className="test-class" isOpen>
         Test
       </Modal>,
     );

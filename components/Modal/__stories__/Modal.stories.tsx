@@ -1,17 +1,36 @@
+import { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
 import isChromatic from 'chromatic/isChromatic';
-
 import { descriptions } from 'common/constants/descriptions';
 import Button from 'components/Buttons/Button/Button';
 import Modal from '../Modal';
 
-export const Default = {
+type ModalStoryType = StoryObj<typeof Modal>;
+
+const meta: Meta<typeof Modal> = {
+  title: 'Modal',
+  component: Modal,
+  parameters: {
+    previewTabs: {
+      'storybook/docs/panel': { hidden: true },
+    },
+    docs: {
+      autodocs: false,
+      disable: true,
+      page: null,
+    },
+  },
+};
+
+export default meta;
+
+export const Default: ModalStoryType = {
   render: args => {
     const [isDemoModalOpen, setIsDemoModalOpen] = useState(args.isOpen);
 
     return (
       <>
-        <Button onClick={() => setIsDemoModalOpen(true)}>Open Modal</Button>
+        <Button onClick={() => setIsDemoModalOpen(true)}>Open modal</Button>
 
         <Modal
           {...args}
@@ -28,22 +47,8 @@ export const Default = {
   },
 };
 
-export const NonDismissableModal = {
-  render: args => {
-    const [isDemoModalOpen, setIsDemoModalOpen] = useState(args.isOpen);
-
-    return (
-      <>
-        <Button onClick={() => setIsDemoModalOpen(true)}>Open Modal</Button>
-
-        <Modal
-          {...args}
-          isOpen={isDemoModalOpen}
-          onRequestClose={prevValue => setIsDemoModalOpen(!prevValue)}
-        />
-      </>
-    );
-  },
+export const NonDismissableModal: ModalStoryType = {
+  ...Default,
   args: {
     canClose: false,
     isOpen: false,
@@ -59,20 +64,3 @@ export const NonDismissableModal = {
     screenReaderLabel: 'You have completed the form.',
   },
 };
-
-const meta = {
-  title: 'Modal',
-  component: Modal,
-  parameters: {
-    previewTabs: {
-      'storybook/docs/panel': { hidden: true },
-    },
-    docs: {
-      autodocs: false,
-      disable: true,
-      page: null,
-    },
-  },
-};
-
-export default meta;
