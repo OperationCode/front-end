@@ -1,42 +1,59 @@
-import { node, string, bool, func } from 'prop-types';
 import classNames from 'classnames';
 import * as Dialog from '@radix-ui/react-dialog';
 import { gtag } from 'common/utils/thirdParty/gtag';
 import CloseButton from 'components/Buttons/CloseButton/CloseButton';
 import { MODAL_CONTENT, MODAL_OVERLAY } from 'common/constants/testIDs';
 
-Modal.propTypes = {
-  children: node.isRequired,
-  className: string,
-  isOpen: bool,
-  onRequestClose: func.isRequired,
-  screenReaderLabel: string.isRequired, // basically a summarizing title
-  canClose: bool,
-  childrenClassName: string,
-};
-
-Modal.defaultProps = {
-  className: undefined,
-  isOpen: false,
-  canClose: true,
-  childrenClassName: undefined,
+export type ModalPropsType = {
+  /**
+   * Content to be rendered in the modal.
+   */
+  children: React.ReactNode;
+  /**
+   * Function that is called when the user clicks the close button.
+   */
+  onRequestClose: (arg1: any) => void;
+  /**
+   * Applies a label for the screen reader.
+   */
+  screenReaderLabel: string;
+  /**
+   * Applies style classes to the wrapping div.
+   */
+  className?: string;
+  /**
+   * Sets if the modal is open an visible (or not)
+   * @default false
+   */
+  isOpen?: boolean;
+  /**
+   * Sets if the modal can be closed by the user
+   * @default true
+   */
+  canClose?: boolean;
+  /**
+   * Applies style classes to the child content.
+   */
+  childrenClassName?: string;
 };
 
 function Modal({
   children,
   className,
-  isOpen,
+  isOpen = false,
   onRequestClose,
   screenReaderLabel,
-  canClose,
+  canClose = true,
   childrenClassName,
-}) {
+}: ModalPropsType) {
   if (isOpen) {
     gtag.modalView(screenReaderLabel);
   }
 
   const portalContainer =
-    typeof window !== 'undefined' ? document.querySelector('#__next') ?? undefined : undefined;
+    typeof window !== 'undefined'
+      ? (document.querySelector('#__next') as HTMLElement) ?? undefined
+      : undefined;
 
   return (
     <Dialog.Root defaultOpen={false} open={isOpen}>

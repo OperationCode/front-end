@@ -5,8 +5,6 @@ exports[`DonateSection > should render with no props passed passed 1`] = `
   backgroundImageSource="https://operation-code-assets.s3.us-east-2.amazonaws.com/background_flag.jpg"
 >
   <Heading
-    hasHashLink={true}
-    hasTitleUnderline={false}
     headingLevel={3}
     text="Donate"
   />
