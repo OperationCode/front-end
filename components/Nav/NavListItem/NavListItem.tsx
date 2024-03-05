@@ -29,12 +29,7 @@ export type NavListItemPropsType = {
   icon?: React.ReactElement | null;
 };
 
-NavListItem.defaultProps = {
-  sublinks: [],
-  icon: null,
-};
-
-function NavListItem({ sublinks, href, name, icon }: NavListItemPropsType) {
+function NavListItem({ sublinks, href, name, icon = null }: NavListItemPropsType) {
   const [areSublinksVisible, setSublinksVisible] = useState(false);
 
   const handleKeyDown = (event: React.KeyboardEvent, indexKeyedOn: number) => {
