@@ -49,7 +49,9 @@ describe('NavMobile', () => {
       />,
     );
 
-    fireEvent.click(wrapper.queryByTestId('Hamburger Button'));
+    const hamburgerButton = wrapper.queryByTestId('Hamburger Button')!;
+
+    fireEvent.click(hamburgerButton);
 
     expect(mockOpen).toHaveBeenCalled();
   });
@@ -61,7 +63,9 @@ describe('NavMobile', () => {
       <NavMobile navItems={mobileNavItems} isOpen openMenu={() => {}} closeMenu={mockClose} />,
     );
 
-    fireEvent.click(wrapper.queryByTestId(CLOSE_BUTTON));
+    const closeButton = wrapper.queryByTestId(CLOSE_BUTTON)!;
+
+    fireEvent.click(closeButton);
 
     expect(mockClose).toHaveBeenCalled();
   });
