@@ -3,6 +3,7 @@ import { cleanup, fireEvent, render } from '@testing-library/react';
 import { INPUT, INPUT_ERROR, INPUT_FEEDBACK_GROUPING, LABEL } from 'common/constants/testIDs';
 import { validationErrorMessages } from 'common/constants/messages';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
+import { InputType } from '../Input';
 
 import Form from '../../Form';
 import Input from '../Input';
@@ -15,12 +16,13 @@ describe('Input', () => {
     form: { touched: { someInputName: false }, errors: { someInputName: '' } },
     onBlur: vi.fn(),
     onChange: vi.fn(),
+    onSubmit: vi.fn(),
     label: 'Some Input:',
   };
 
   it('should render with required props', () => {
     createSnapshotTest(
-      <Formik>
+      <Formik initialValues={{}} onSubmit={requiredProps.onSubmit}>
         <Input {...requiredProps} />
       </Formik>,
     );
@@ -28,7 +30,7 @@ describe('Input', () => {
 
   it('should render with label, even if hidden', () => {
     const component = render(
-      <Formik>
+      <Formik initialValues={{}} onSubmit={requiredProps.onSubmit}>
         <Input {...requiredProps} isLabelHidden />
       </Formik>,
     );
@@ -41,14 +43,14 @@ describe('Input', () => {
     const validate = () => ({ test: 'Required' });
 
     const component = render(
-      <Formik validate={validate}>
+      <Formik validate={validate} initialValues={{}} onSubmit={requiredProps.onSubmit}>
         <Form>
           <Field id="test" name="test" label={label} component={Input} />,
         </Form>
       </Formik>,
     );
 
-    fireEvent.blur(component.queryByLabelText(label));
+    fireEvent.blur(component.queryByLabelText(label)!);
 
     const Alert = await component.findByTestId(INPUT_ERROR);
     expect(Alert.textContent).toBe(validationErrorMessages.required);
@@ -56,14 +58,14 @@ describe('Input', () => {
 
   it('should render the label after the input for radio inputs', () => {
     const component = render(
-      <Formik>
+      <Formik initialValues={{}} onSubmit={requiredProps.onSubmit}>
         <Input {...requiredProps} type="radio" />
       </Formik>,
     );
 
-    const Radio = component.queryByTestId(INPUT);
+    const Radio = component.queryByTestId(INPUT)!;
 
-    const InputFeedbackGrouping = component.queryByTestId(INPUT_FEEDBACK_GROUPING);
+    const InputFeedbackGrouping = component.queryByTestId(INPUT_FEEDBACK_GROUPING)!;
     const Label = component.queryByTestId(LABEL);
 
     // Selectors are rendered
@@ -79,7 +81,7 @@ describe('Input', () => {
   });
 
   it('should render the label before the input for all other input types', () => {
-    const otherInputTypes = [
+    const otherInputTypes: InputType[] = [
       'button',
       'color',
       'date',
@@ -108,14 +110,14 @@ describe('Input', () => {
 
     otherInputTypes.forEach(inputType => {
       const { container, queryByTestId, unmount } = render(
-        <Formik>
+        <Formik initialValues={{}} onSubmit={requiredProps.onSubmit}>
           <Input {...requiredProps} type={inputType} />
         </Formik>,
       );
 
-      const SomeInput = queryByTestId(INPUT);
+      const SomeInput = queryByTestId(INPUT)!;
 
-      const InputFeedbackGrouping = queryByTestId(INPUT_FEEDBACK_GROUPING);
+      const InputFeedbackGrouping = queryByTestId(INPUT_FEEDBACK_GROUPING)!;
       const Label = queryByTestId(LABEL);
 
       // Selectors are rendered

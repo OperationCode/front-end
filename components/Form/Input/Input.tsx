@@ -1,4 +1,3 @@
-import { shape, string, number, object, objectOf, oneOfType, bool, oneOf } from 'prop-types';
 import classNames from 'classnames';
 import { ErrorMessage } from 'formik';
 import { INPUT, INPUT_ERROR, INPUT_FEEDBACK_GROUPING } from 'common/constants/testIDs';
@@ -6,68 +5,83 @@ import Alert from 'components/Alert/Alert';
 import Label from 'components/Form/Label/Label';
 import styles from './Input.module.css';
 
-Input.propTypes = {
-  className: string,
-  field: shape({
-    name: string.isRequired,
-  }).isRequired,
-  form: shape({
-    // TODO: Resolve why multiselects can end up with touched: { key: array }
-    // see ThemedReactSelect as well
-    // touched: objectOf(bool).isRequired,
-    touched: object.isRequired,
-    errors: objectOf(string),
-  }).isRequired,
-  isLabelHidden: bool,
-  id: oneOfType([string, number]),
-  label: string.isRequired,
-  hasValidationStyling: bool,
-  type: oneOf([
-    'button',
-    'color',
-    'date',
-    'datetime-local',
-    'email',
-    'file',
-    'hidden',
-    'image',
-    'month',
-    'number',
-    'password',
-    'radio',
-    'range',
-    'reset',
-    'search',
-    'submit',
-    'tel',
-    'text',
-    'time',
-    'url',
-    'week',
-  ]),
-};
+export type InputType =
+  | 'button'
+  | 'color'
+  | 'date'
+  | 'datetime-local'
+  | 'email'
+  | 'file'
+  | 'hidden'
+  | 'image'
+  | 'month'
+  | 'number'
+  | 'password'
+  | 'radio'
+  | 'range'
+  | 'reset'
+  | 'search'
+  | 'submit'
+  | 'tel'
+  | 'text'
+  | 'time'
+  | 'url'
+  | 'week';
 
-Input.defaultProps = {
-  className: '',
-  hasValidationStyling: true,
-  isLabelHidden: false,
-  id: '',
-  type: 'text',
+export type InputPropsType = {
+  /**
+   * Applies a label that to the form input.
+   */
+  label: string;
+  /**
+   * Sets the name and value for the input element.
+   */
+  field: {
+    name: string;
+    value?: string;
+  };
+  form: {
+    touched: Record<string, any>;
+    errors?: Record<string, string>;
+  };
+  /**
+   * Passes the input type to the base input element.
+   * @default 'text'
+   */
+  type?: InputType;
+  /**
+   * Applies classnames to the base `input` element for styling.
+   */
+  className?: string;
+  /**
+   * Sets if the label is hidden or not.
+   * @default false
+   */
+  isLabelHidden?: boolean;
+  /**
+   * Passes an idea to the root input element.
+   */
+  id?: string;
+  /**
+   * Allows validation styling if validation is being used.
+   * @default true
+   */
+  hasValidationStyling?: boolean;
 };
 
 function Input({
   className,
   field: { name, value, ...field },
   form: { touched, errors },
-  hasValidationStyling,
+  hasValidationStyling = true,
   id,
-  isLabelHidden,
+  isLabelHidden = false,
   label,
-  type,
+  type = 'text',
   ...props // input simply has too many possible attributes... we'd be redocumenting the web
-  // See: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Attributes_common_to_all_input_types
-}) {
-  const hasErrors = Boolean(errors[name]);
+}: // See: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Attributes_common_to_all_input_types
+InputPropsType) {
+  const hasErrors = Boolean(errors?.[name]);
   const isLabelAfterInput = type === 'radio';
   const isLabelBeforeInput = !isLabelAfterInput;
 
@@ -94,7 +108,7 @@ function Input({
         />
 
         <ErrorMessage name={name}>
-          {message => {
+          {(message: string) => {
             return hasErrors ? (
               <Alert className={styles.errorMessage} data-testid={INPUT_ERROR} type="error">
                 {message}
