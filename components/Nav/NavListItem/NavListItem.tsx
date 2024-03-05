@@ -5,7 +5,7 @@ import PlusIcon from 'static/images/icons/plus.svg';
 import MinusIcon from 'static/images/icons/minus.svg';
 import styles from './NavListItem.module.css';
 
-type SublinksType = {
+type SublinkType = {
   name: string;
   href: string;
 };
@@ -22,7 +22,7 @@ export type NavListItemPropsType = {
   /**
    * List of child links containing the `name` and `href`
    */
-  sublinks?: SublinksType[];
+  sublinks?: SublinkType[];
   /**
    * Includes an optional icon.
    */
