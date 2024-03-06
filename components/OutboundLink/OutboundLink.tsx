@@ -1,23 +1,33 @@
-import { bool, node, string } from 'prop-types';
 import { gtag } from 'common/utils/thirdParty/gtag';
 import ExternalLinkIcon from 'static/images/icons/FontAwesome/external-link-square-alt-solid.svg';
 import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
 import classNames from 'node_modules/classnames/index';
 
-OutboundLink.propTypes = {
-  // will report this label plus the URL from where it was clicked
-  analyticsEventLabel: string.isRequired,
-  children: node.isRequired,
-  className: string,
-  'data-testid': string,
-  hasIcon: bool,
-  href: string.isRequired,
-};
-
-OutboundLink.defaultProps = {
-  className: undefined,
-  'data-testid': undefined,
-  hasIcon: true,
+export type OutboundLinkPropsType = {
+  /**
+   * will report this label plus the URL from where it was clicked
+   */
+  analyticsEventLabel: string;
+  /**
+   * Url path for the link.
+   */
+  href: string;
+  /**
+   * Content to be rendered as the link.
+   */
+  children: React.ReactNode;
+  /**
+   * Name of style class to use.
+   */
+  className?: string;
+  /**
+   * Sets an id to the base element for testing.
+   */
+  'data-testid'?: string;
+  /**
+   * Adds an an icon to identify link is an external link.
+   */
+  hasIcon?: boolean;
 };
 
 function OutboundLink({
@@ -25,9 +35,9 @@ function OutboundLink({
   children,
   'data-testid': testID,
   className,
-  hasIcon,
+  hasIcon = true,
   href,
-}) {
+}: OutboundLinkPropsType) {
   const isNotMailToLink = !href.startsWith('mailto:');
 
   const trackOutboundLinkClick = () => {
