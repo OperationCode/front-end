@@ -25,13 +25,15 @@ function PressLinks() {
               value={region}
               className={styles.tabsContent}
             >
-              {Articles[region].map(link => (
-                <li key={`GroupLink_${link.url}`}>
-                  <OutboundLink href={link.url} analyticsEventLabel="Press Article">
-                    {link.title}
-                  </OutboundLink>
-                </li>
-              ))}
+              {(Articles as Record<string, any>)[region].map(
+                (link: { url: string; title: string }) => (
+                  <li key={`GroupLink_${link.url}`}>
+                    <OutboundLink href={link.url} analyticsEventLabel="Press Article">
+                      {link.title}
+                    </OutboundLink>
+                  </li>
+                ),
+              )}
             </Tabs.Content>
           ))}
         </Tabs.Root>
