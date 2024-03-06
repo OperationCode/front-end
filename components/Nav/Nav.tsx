@@ -66,8 +66,9 @@ export const Nav = () => {
                   key={navItem.name}
                   {...navItem}
                   icon={
-                    // @ts-expect-error
-                    navItem.icon === 'UserLogo' ? <UserLogo className={styles.navIcon} /> : null
+                    'icon' in navItem && navItem.icon === 'UserLogo' ? (
+                      <UserLogo className={styles.navIcon} />
+                    ) : null
                   }
                 />
               ))}
