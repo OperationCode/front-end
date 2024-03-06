@@ -52,7 +52,7 @@ describe('Pagination', () => {
   it('should throw an error if given value of currentPage is less than 1', () => {
     /* eslint-disable function-paren-newline */
     expect(() =>
-      Pagination({ currentPage: 0, totalPages: 5, pathname: requiredProps.pathname }),
+      Pagination({ currentPage: 0, totalPages: 5, pathname: requiredProps.pathname, query: {} }),
     ).toThrow(developmentErrors.currentPageTooSmall);
     /* eslint-enable function-paren-newline */
   });
@@ -60,7 +60,7 @@ describe('Pagination', () => {
   it('should throw an error if given value of currentPage is greater than totalPages', () => {
     /* eslint-disable function-paren-newline */
     expect(() =>
-      Pagination({ currentPage: 6, totalPages: 5, pathname: requiredProps.pathname }),
+      Pagination({ currentPage: 6, totalPages: 5, pathname: requiredProps.pathname, query: {} }),
     ).toThrow(developmentErrors.currentPageTooBig);
     /* eslint-enable function-paren-newline */
   });
