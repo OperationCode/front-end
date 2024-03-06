@@ -25,7 +25,7 @@ export const Nav = () => {
     document.body.style.overflow = 'auto';
   };
 
-  const redirectRightClick = event_ => {
+  const redirectRightClick = (event_: React.MouseEvent) => {
     event_.preventDefault();
     Router.push('/branding');
   };
@@ -66,6 +66,7 @@ export const Nav = () => {
                   key={navItem.name}
                   {...navItem}
                   icon={
+                    // @ts-expect-error
                     navItem.icon === 'UserLogo' ? <UserLogo className={styles.navIcon} /> : null
                   }
                 />
