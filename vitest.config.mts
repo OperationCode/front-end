@@ -29,6 +29,42 @@ export default defineConfig({
     },
     coverage: {
       reportsDirectory: './vitest-coverage',
+      include: [
+        'common/**/*.{js,ts,tsx}',
+        'components/**/*.{js,ts,tsx}',
+        'decorators/**/*.{js,ts,tsx}',
+      ],
+      exclude: [
+        // Irrelevant configs and local-only scripts
+        'coverage/**',
+        '{cypress,vitest}-coverage/**',
+        'dist/**',
+        '.storybook-dist/**',
+        '.next/**',
+        '**/*.d.ts',
+        '{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build}.config.*',
+        'vitest.{workspace,projects}.[jt]s?(on)',
+        '.{eslint,mocha,prettier}rc.{?(c|m)js,yml}',
+        'scripts/**',
+        'test-utils/**',
+
+        // Folders covered by integration tests
+        'node_modules/**',
+        'cypress/**',
+        'common/config/**',
+        'common/styles/**',
+        'common/constants/**',
+
+        // No real logic to test here
+        'common/utils/api-utils.{[jt]s}',
+        'components/ZipRecruiterJobs/ZipRecruiterJobs.{[jt]s}',
+        'components/Press/PressLinks/Articles.{[jt]s}',
+        'components/Timeline/historyData.{[jt]s}',
+
+        // Don't collect coverage from import/export mappers
+        'common/(.*)/index.{[jt]s}',
+        'components/(.*)/index.{[jt]s}',
+      ],
     },
   },
 });
