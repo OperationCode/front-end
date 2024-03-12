@@ -5,14 +5,7 @@ export const toggleMessages = {
   close: 'Hide expanded',
 };
 
-export type ScreenReaderOnlyPropsType = {
-  /**
-   * Child content that is rendered in the root element, but not displayed.
-   */
-  children: React.ReactNode;
-};
-
-function ScreenReaderOnly({ children }: ScreenReaderOnlyPropsType) {
+function ScreenReaderOnly({ children }: React.PropsWithChildren<unknown>) {
   return (
     <span className="sr-only" data-testid={SCREEN_READER_ONLY}>
       {children}
