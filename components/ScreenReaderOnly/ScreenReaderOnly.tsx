@@ -1,4 +1,3 @@
-import { node } from 'prop-types';
 import { SCREEN_READER_ONLY } from 'common/constants/testIDs';
 
 export const toggleMessages = {
@@ -6,11 +5,14 @@ export const toggleMessages = {
   close: 'Hide expanded',
 };
 
-ScreenReaderOnly.propTypes = {
-  children: node.isRequired,
+export type ScreenReaderOnlyPropsType = {
+  /**
+   * Child content that is rendered in the root element, but not displayed.
+   */
+  children: React.ReactNode;
 };
 
-function ScreenReaderOnly({ children }) {
+function ScreenReaderOnly({ children }: ScreenReaderOnlyPropsType) {
   return (
     <span className="sr-only" data-testid={SCREEN_READER_ONLY}>
       {children}
