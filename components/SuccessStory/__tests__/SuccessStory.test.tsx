@@ -1,5 +1,4 @@
 import createShallowSnapshotTest from 'test-utils/createShallowSnapshotTest';
-
 import SuccessStory from '../SuccessStory';
 
 describe('SuccessStory', () => {
