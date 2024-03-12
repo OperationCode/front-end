@@ -1,10 +1,4 @@
-import { array, node, oneOfType, string } from 'prop-types';
 import styles from './TimelineEvent.module.css';
-
-TimelineEvent.propTypes = {
-  content: oneOfType([string, array, node]).isRequired,
-  title: string.isRequired,
-};
 
 export type TimelineEventPropsType = {
   content: string | string[] | React.ReactNode | React.ReactNode[];
