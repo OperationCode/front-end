@@ -18,7 +18,7 @@ export type SuccessStoryPropsType = {
 function SuccessStory({ imageSource, quote, title }: SuccessStoryPropsType) {
   return (
     <FlatCard header={title} image={{ source: imageSource, alt: '' }}>
-      <blockquote>{`"${quote}"`}</blockquote>
+      <blockquote>{`“${quote}”`}</blockquote>
     </FlatCard>
   );
 }
