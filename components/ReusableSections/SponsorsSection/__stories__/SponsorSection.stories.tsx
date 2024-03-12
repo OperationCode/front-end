@@ -4,7 +4,7 @@ import SponsorsSection from '../SponsorsSection';
 type SponsorsSectionStoryType = StoryObj<typeof SponsorsSection>
 
 const meta: Meta<typeof SponsorsSection> = {
-  title: 'Reusable/SponsorsSection',
+  title: 'ReusableSections/SponsorsSection',
   component: SponsorsSection
 }
 
