@@ -1,3 +1,4 @@
+import { Meta, StoryObj } from '@storybook/react';
 import {
   Title,
   ArgTypes,
@@ -9,28 +10,10 @@ import {
 } from '@storybook/blocks';
 import ProgressIndicator from '../ProgressIndicator';
 
-export const Default = {
-  render: args => <ProgressIndicator {...args} />,
-};
+type ProgressIndicatorStoryType = StoryObj<typeof ProgressIndicator>;
 
-export const TotalSteps = {
-  render: args => <ProgressIndicator {...args} />,
-  args: {
-    stepNumber: 0,
-    totalSteps: 100,
-  },
-};
-
-export const StepNumber = {
-  render: args => <ProgressIndicator {...args} />,
-  args: {
-    stepNumber: 40,
-    totalSteps: 100,
-  },
-};
-
-const meta = {
-  title: 'Progress Indicator',
+const meta: Meta<typeof ProgressIndicator> = {
+  title: 'ProgressIndicator',
   component: ProgressIndicator,
   argTypes: {
     stepNumber: {
@@ -90,3 +73,23 @@ const meta = {
 };
 
 export default meta;
+
+export const Default: ProgressIndicatorStoryType = {
+  render: args => <ProgressIndicator {...args} />,
+};
+
+export const TotalSteps: ProgressIndicatorStoryType = {
+  ...Default,
+  args: {
+    stepNumber: 0,
+    totalSteps: 100,
+  },
+};
+
+export const StepNumber: ProgressIndicatorStoryType = {
+  ...Default,
+  args: {
+    stepNumber: 40,
+    totalSteps: 100,
+  },
+};

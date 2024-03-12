@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { func, bool, string, arrayOf, shape } from 'prop-types';
 import classNames from 'classnames';
 import { s3 } from 'common/constants/urls';
 import HamburgerIcon from 'static/images/icons/hamburger.svg';
@@ -8,25 +7,53 @@ import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
 import Image from 'next/image';
 import styles from './NavMobile.module.css';
 
-NavMobile.propTypes = {
-  isOpen: bool.isRequired,
-  openMenu: func.isRequired,
-  closeMenu: func.isRequired,
-  navItems: arrayOf(
-    shape({
-      href: string.isRequired,
-      name: string.isRequired,
-      sublinks: arrayOf(
-        shape({
-          name: string.isRequired,
-          href: string.isRequired,
-        }),
-      ),
-    }),
-  ).isRequired,
+type SublinkType = {
+  /**
+   * String used as the link label.
+   */
+  name: string;
+  /**
+   * String used for the URL.
+   */
+  href: string;
 };
 
-function NavMobile({ isOpen, openMenu, closeMenu, navItems }) {
+type NavItemType = {
+  /**
+   * String used as the link label.
+   */
+  name: string;
+
+  /**
+   * String used for the URL.
+   */
+  href: string;
+  /**
+   * Adds nested sublinks.
+   */
+  sublinks?: SublinkType[];
+};
+
+export type NavMobilePropsType = {
+  /**
+   * Sets if the mobile navigation is open or closed.
+   */
+  isOpen: boolean;
+  /**
+   * Function called when open button is clicked.
+   */
+  openMenu: () => void;
+  /**
+   * Function called when close button is clicked.
+   */
+  closeMenu: () => void;
+  /**
+   * List of navigations items.
+   */
+  navItems: NavItemType[];
+};
+
+function NavMobile({ isOpen, openMenu, closeMenu, navItems }: NavMobilePropsType) {
   return (
     <header className={styles.NavMobile} data-testid="Mobile Nav Container">
       <Link href="/">
@@ -64,9 +91,7 @@ function NavMobile({ isOpen, openMenu, closeMenu, navItems }) {
           <ul className={styles.ul}>
             <li className={styles.li} key="Home">
               <Link href="/">
-                <a className={styles.link} name="dropdown">
-                  Home
-                </a>
+                <a className={styles.link}>Home</a>
               </Link>
             </li>
             {navItems.map(navlink => (

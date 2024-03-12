@@ -1,33 +1,39 @@
 import { useState } from 'react';
 import classNames from 'classnames';
 import Link from 'next/link';
-import { arrayOf, shape, string, element } from 'prop-types';
 import PlusIcon from 'static/images/icons/plus.svg';
 import MinusIcon from 'static/images/icons/minus.svg';
 import styles from './NavListItem.module.css';
 
-NavListItem.propTypes = {
-  href: string.isRequired,
-  name: string.isRequired,
-  sublinks: arrayOf(
-    shape({
-      name: string.isRequired,
-      href: string.isRequired,
-    }),
-  ),
-  icon: element,
+type SublinkType = {
+  name: string;
+  href: string;
 };
 
-NavListItem.defaultProps = {
-  sublinks: [],
-  icon: null,
+export type NavListItemPropsType = {
+  /**
+   * Text used for the label.
+   */
+  name: string;
+  /**
+   * Url to be passed to the base anchor element.
+   */
+  href: string;
+  /**
+   * List of child links containing the `name` and `href`
+   */
+  sublinks?: SublinkType[];
+  /**
+   * Includes an optional icon.
+   */
+  icon?: React.ReactElement | null;
 };
 
-function NavListItem({ sublinks, href, name, icon }) {
+function NavListItem({ sublinks, href, name, icon = null }: NavListItemPropsType) {
   const [areSublinksVisible, setSublinksVisible] = useState(false);
 
-  const handleKeyDown = (event, indexKeyedOn) => {
-    const lastSublinkIndex = sublinks.length - 1;
+  const handleKeyDown = (event: React.KeyboardEvent, indexKeyedOn: number) => {
+    const lastSublinkIndex = sublinks && sublinks.length - 1;
     const isLastSublink = indexKeyedOn === lastSublinkIndex;
     const isFirstSublink = indexKeyedOn === 0;
 
@@ -43,7 +49,7 @@ function NavListItem({ sublinks, href, name, icon }) {
     }
   };
 
-  const hasSublinks = sublinks.length > 0;
+  const hasSublinks = sublinks && sublinks.length > 0;
   const exposeSublinks = () => setSublinksVisible(true);
   const hideSublinks = () => setSublinksVisible(false);
   const invertSublinkVisibility = () => setSublinksVisible(previousState => !previousState);

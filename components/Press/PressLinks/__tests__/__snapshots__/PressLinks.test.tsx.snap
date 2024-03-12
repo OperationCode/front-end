@@ -45,7 +45,6 @@ exports[`PressLinks > should render with no props passed 1`] = `
         <li>
           <OutboundLink
             analyticsEventLabel="Press Article"
-            hasIcon={true}
             href="https://wtkr.com/2018/05/16/new-program-aims-to-help-veterans-land-jobs-in-tech-industry/"
           >
             New program aims to help veterans land jobs in tech industry
@@ -54,7 +53,6 @@ exports[`PressLinks > should render with no props passed 1`] = `
         <li>
           <OutboundLink
             analyticsEventLabel="Press Article"
-            hasIcon={true}
             href="http://www.wdtv.com/content/news/Veterans-in-Residence-program-helping-veterans-grow-businesses-482707221.html"
           >
             Veterans in Residence
@@ -63,7 +61,6 @@ exports[`PressLinks > should render with no props passed 1`] = `
         <li>
           <OutboundLink
             analyticsEventLabel="Press Article"
-            hasIcon={true}
             href="https://www.wework.com/blog/posts/after-flying-solo-veterans-find-others-who-have-their-back"
           >
             After Flying Solo, Veterans Find Others Who Have Their Backs
@@ -77,7 +74,6 @@ exports[`PressLinks > should render with no props passed 1`] = `
         <li>
           <OutboundLink
             analyticsEventLabel="Press Article"
-            hasIcon={true}
             href="https://insights.dice.com/2017/01/11/tech-pros-volunteer-fun-ways/"
           >
             How Tech Pros Can Volunteer in Fun Ways
@@ -86,7 +82,6 @@ exports[`PressLinks > should render with no props passed 1`] = `
         <li>
           <OutboundLink
             analyticsEventLabel="Press Article"
-            hasIcon={true}
             href="https://www.necn.com/news/business/MassChallenge-Finnest_-Operation-Code_-Sunrise-Health_NECN-441063423.html"
           >
             MassChallenge Finalists: Finnest, Operation Code, Sunrise Health
@@ -95,7 +90,6 @@ exports[`PressLinks > should render with no props passed 1`] = `
         <li>
           <OutboundLink
             analyticsEventLabel="Press Article"
-            hasIcon={true}
             href="http://www.wickedbandwidth.com/02072017-techbreakfast-microsoft-nerd/"
           >
             TechBreakfast at Microsoft NERD
@@ -104,7 +98,6 @@ exports[`PressLinks > should render with no props passed 1`] = `
         <li>
           <OutboundLink
             analyticsEventLabel="Press Article"
-            hasIcon={true}
             href="https://www.youtube.com/watch?v=YGaG_HL3oEQ"
           >
             Operation Code - #BNT80 Boston New Technology Startup Demo
@@ -113,7 +106,6 @@ exports[`PressLinks > should render with no props passed 1`] = `
         <li>
           <OutboundLink
             analyticsEventLabel="Press Article"
-            hasIcon={true}
             href="https://www.youtube.com/watch?v=GcvVsVsH-Gg"
           >
             MassChallenge Finalist | Operation Code | Conrad Hollomon
@@ -122,7 +114,6 @@ exports[`PressLinks > should render with no props passed 1`] = `
         <li>
           <OutboundLink
             analyticsEventLabel="Press Article"
-            hasIcon={true}
             href="https://venturefizz.com/stories/boston/operation-code-creating-coding-community-veterans-and-citizens"
           >
             Operation Code – Creating a Coding Community with Veterans and Citizens
@@ -131,7 +122,6 @@ exports[`PressLinks > should render with no props passed 1`] = `
         <li>
           <OutboundLink
             analyticsEventLabel="Press Article"
-            hasIcon={true}
             href="https://www.deepcoredata.com/innovation-spotlight-veterans-mission-operation-code/"
           >
             Innovation Spotlight: Operation Code
@@ -140,7 +130,6 @@ exports[`PressLinks > should render with no props passed 1`] = `
         <li>
           <OutboundLink
             analyticsEventLabel="Press Article"
-            hasIcon={true}
             href="https://blogs.microsoft.com/newengland/2017/11/10/tech4vets-masschallenge-veterans/"
           >
             tech4vets Masschallenge Veterans
@@ -154,7 +143,6 @@ exports[`PressLinks > should render with no props passed 1`] = `
         <li>
           <OutboundLink
             analyticsEventLabel="Press Article"
-            hasIcon={true}
             href="https://blog.opportunityatwork.org/techhire-educator-spotlight-operation-code-debd0a796f9d"
           >
             TechHire Educator Spotlight: Operation Code
@@ -163,7 +151,6 @@ exports[`PressLinks > should render with no props passed 1`] = `
         <li>
           <OutboundLink
             analyticsEventLabel="Press Article"
-            hasIcon={true}
             href="https://www.switchup.org/blog/why-veterans-will-make-excellent-programmers"
           >
             Why Veterans Will Make Excellent Programmers
@@ -172,7 +159,6 @@ exports[`PressLinks > should render with no props passed 1`] = `
         <li>
           <OutboundLink
             analyticsEventLabel="Press Article"
-            hasIcon={true}
             href="https://www.wired.com/story/thousands-of-veterans-want-to-learn-to-code-but-cant/"
           >
             THOUSANDS OF VETERANS WANT TO LEARN TO CODE — BUT CAN’T
@@ -181,7 +167,6 @@ exports[`PressLinks > should render with no props passed 1`] = `
         <li>
           <OutboundLink
             analyticsEventLabel="Press Article"
-            hasIcon={true}
             href="https://medium.com/the-hum/hacking-entrepreneurship-an-interview-with-david-molina-of-operation-code-12a7e199e4e0"
           >
             Hacking Entrepreneurship — An Interview with David Molina of Operation Code
@@ -190,7 +175,6 @@ exports[`PressLinks > should render with no props passed 1`] = `
         <li>
           <OutboundLink
             analyticsEventLabel="Press Article"
-            hasIcon={true}
             href="http://blog.teamtreehouse.com/operation-code-connecting-veterans-with-code"
           >
             Operation Code: Connecting Veterans with Code Skills
@@ -199,7 +183,6 @@ exports[`PressLinks > should render with no props passed 1`] = `
         <li>
           <OutboundLink
             analyticsEventLabel="Press Article"
-            hasIcon={true}
             href="https://blog.github.com/2016-11-11-operation-code-connecting-tech-and-veterans/"
           >
             Operation Code: connecting tech and veterans
@@ -208,7 +191,6 @@ exports[`PressLinks > should render with no props passed 1`] = `
         <li>
           <OutboundLink
             analyticsEventLabel="Press Article"
-            hasIcon={true}
             href="https://www.geekwire.com/2016/call-duty-technology-veterans-rally-support-operation-code/"
           >
             When the call of duty is technology, veterans rally to support each other through Operation Code
@@ -217,7 +199,6 @@ exports[`PressLinks > should render with no props passed 1`] = `
         <li>
           <OutboundLink
             analyticsEventLabel="Press Article"
-            hasIcon={true}
             href="https://www.youtube.com/watch?v=qoy7scC2SHk"
           >
             Get Coding Now with Operation Code Army Veteran and Founder David Molina
@@ -226,7 +207,6 @@ exports[`PressLinks > should render with no props passed 1`] = `
         <li>
           <OutboundLink
             analyticsEventLabel="Press Article"
-            hasIcon={true}
             href="https://www.youtube.com/watch?v=xN7yMoe38xc"
           >
             The New Developer - Operation Code - GitHub Universe 2016
@@ -235,7 +215,6 @@ exports[`PressLinks > should render with no props passed 1`] = `
         <li>
           <OutboundLink
             analyticsEventLabel="Press Article"
-            hasIcon={true}
             href="https://www.youtube.com/watch?v=-wSwlLeKFdE"
           >
             What happens when military veterans learn to code - CodeConf 2016
@@ -244,7 +223,6 @@ exports[`PressLinks > should render with no props passed 1`] = `
         <li>
           <OutboundLink
             analyticsEventLabel="Press Article"
-            hasIcon={true}
             href="https://opensource.com/article/17/4/operation-code-mentors-veterans"
           >
             How Operation Code helps veterans learn programming skills
@@ -253,7 +231,6 @@ exports[`PressLinks > should render with no props passed 1`] = `
         <li>
           <OutboundLink
             analyticsEventLabel="Press Article"
-            hasIcon={true}
             href="https://softwareengineeringdaily.com/2016/03/20/helping-veterans-learn-code-david-molina/"
           >
             Helping Veterans Learn to Code with David Molina
@@ -262,7 +239,6 @@ exports[`PressLinks > should render with no props passed 1`] = `
         <li>
           <OutboundLink
             analyticsEventLabel="Press Article"
-            hasIcon={true}
             href="https://developingstory.netlify.com/tds-66-david-molina-from-operation-code"
           >
             Podcast: a developing story as told by developers
@@ -271,7 +247,6 @@ exports[`PressLinks > should render with no props passed 1`] = `
         <li>
           <OutboundLink
             analyticsEventLabel="Press Article"
-            hasIcon={true}
             href="https://www.instagram.com/p/21p5bFxUjd/?taken-by=davidcmolina"
           >
             Instagram: David Molina
@@ -280,7 +255,6 @@ exports[`PressLinks > should render with no props passed 1`] = `
         <li>
           <OutboundLink
             analyticsEventLabel="Press Article"
-            hasIcon={true}
             href="http://blog.teamtreehouse.com/from-aviation-electrician-to-back-end-engineering-bret-funk-operation-code-story"
           >
             From Aviation Electrician to Back End Engineering: Bret Funk’s Operation Code story
@@ -289,7 +263,6 @@ exports[`PressLinks > should render with no props passed 1`] = `
         <li>
           <OutboundLink
             analyticsEventLabel="Press Article"
-            hasIcon={true}
             href="http://blog.teamtreehouse.com/navy-veteran-to-software-developer-geno-guerreros-operation-code-story"
           >
             Navy Veteran to Software Developer: Geno Guerrero’s Operation Code Story
@@ -298,7 +271,6 @@ exports[`PressLinks > should render with no props passed 1`] = `
         <li>
           <OutboundLink
             analyticsEventLabel="Press Article"
-            hasIcon={true}
             href="http://blog.teamtreehouse.com/marine-corps-veteran-front-end-developer-billy-le"
           >
             From Marine Corps Veteran to Front End Developer: Billy Le’s Operation Code Story
@@ -307,7 +279,6 @@ exports[`PressLinks > should render with no props passed 1`] = `
         <li>
           <OutboundLink
             analyticsEventLabel="Press Article"
-            hasIcon={true}
             href="https://techcrunch.com/2015/11/11/few-options-for-veterans-looking-to-enter-tech/"
           >
             Few Options For Veterans Looking To Enter Tech
@@ -316,7 +287,6 @@ exports[`PressLinks > should render with no props passed 1`] = `
         <li>
           <OutboundLink
             analyticsEventLabel="Press Article"
-            hasIcon={true}
             href="https://www.ibtimes.com/coding-boot-camps-go-after-veterans-take-silicon-valleys-vacant-tech-jobs-2174421"
           >
             Coding Boot Camps Go After Veterans To Take Silicon Valley's Vacant Tech Jobs
@@ -325,7 +295,6 @@ exports[`PressLinks > should render with no props passed 1`] = `
         <li>
           <OutboundLink
             analyticsEventLabel="Press Article"
-            hasIcon={true}
             href="https://www.makeschool.com/blog/20-diversity-and-inclusion-leaders-to-follow-in-2018"
           >
             20 Diversity and Inclusion Leaders to Follow in 2018
@@ -334,7 +303,6 @@ exports[`PressLinks > should render with no props passed 1`] = `
         <li>
           <OutboundLink
             analyticsEventLabel="Press Article"
-            hasIcon={true}
             href="http://bitshare.cm/news/tech-innovation-meets-military-service-geekwires-memorial-day-remembrance-and-update/"
           >
             Tech innovation meets military service: GeekWire’s Memorial Day remembrance and update
@@ -343,7 +311,6 @@ exports[`PressLinks > should render with no props passed 1`] = `
         <li>
           <OutboundLink
             analyticsEventLabel="Press Article"
-            hasIcon={true}
             href="https://www.millennialaction.org/press-archives/vetstechpr"
           >
             MAP HOSTS CONGRESSIONAL BRIEFING ON VETERANS' READINESS IN TECH CAREERS
@@ -352,7 +319,6 @@ exports[`PressLinks > should render with no props passed 1`] = `
         <li>
           <OutboundLink
             analyticsEventLabel="Press Article"
-            hasIcon={true}
             href="https://www.advfn.com/news_Analytics-Pros-Inc-Hosts-Training-for-Veterans-a_72657464.html"
           >
             Analytics Pros, Inc. Hosts Training for Veterans and Veterans' Spouses
@@ -361,7 +327,6 @@ exports[`PressLinks > should render with no props passed 1`] = `
         <li>
           <OutboundLink
             analyticsEventLabel="Press Article"
-            hasIcon={true}
             href="http://mentoringdevelopers.com/episode-36-how-to-pick-a-programming-language-to-learn-for-new-developers-part-2/"
           >
             Episode 36 – How to pick a programming language to learn for new developers – Part 2
@@ -370,7 +335,6 @@ exports[`PressLinks > should render with no props passed 1`] = `
         <li>
           <OutboundLink
             analyticsEventLabel="Press Article"
-            hasIcon={true}
             href="https://www.blogs.va.gov/VAntage/33028/upskill-veterans-training-technology-jobs/"
           >
             How to “upskill” Veterans’ training for technology jobs
@@ -379,7 +343,6 @@ exports[`PressLinks > should render with no props passed 1`] = `
         <li>
           <OutboundLink
             analyticsEventLabel="Press Article"
-            hasIcon={true}
             href="https://www.instagram.com/p/BbZT3Q-BBDC/"
           >
             Instagram: Operation Code made the front cover of Oregon Veterans News Magazine
@@ -388,7 +351,6 @@ exports[`PressLinks > should render with no props passed 1`] = `
         <li>
           <OutboundLink
             analyticsEventLabel="Press Article"
-            hasIcon={true}
             href="https://blog.sabio.la/jameel-from-jarhead-to-softwareengineer-9130702da5c1"
           >
             Jameel: From Marines to SoftwareEngineer
@@ -397,7 +359,6 @@ exports[`PressLinks > should render with no props passed 1`] = `
         <li>
           <OutboundLink
             analyticsEventLabel="Press Article"
-            hasIcon={true}
             href="https://www.seattletimes.com/business/technology/seattles-code-fellows-wins-approval-under-gi-bill/"
           >
             Seattle coding-school tuition to be covered by GI Bill
@@ -406,7 +367,6 @@ exports[`PressLinks > should render with no props passed 1`] = `
         <li>
           <OutboundLink
             analyticsEventLabel="Press Article"
-            hasIcon={true}
             href="https://www.koin.com/news/veteran-gi-bill-should-cover-code-school_20180208085618706/960235415"
           >
             Veteran: GI Bill should cover code school
@@ -415,7 +375,6 @@ exports[`PressLinks > should render with no props passed 1`] = `
         <li>
           <OutboundLink
             analyticsEventLabel="Press Article"
-            hasIcon={true}
             href="http://patriotbootcamp.org/blog/operation-code"
           >
             Patriot Boot Camp And Operation Code Join Forces To Help Military Veterans Become Technology Entrepreneurs
@@ -424,7 +383,6 @@ exports[`PressLinks > should render with no props passed 1`] = `
         <li>
           <OutboundLink
             analyticsEventLabel="Press Article"
-            hasIcon={true}
             href="http://www.maswired.com/operation-code-wants-veterans-to-work-in-tech/"
           >
             Operation Code wants veterans to work in tech
@@ -433,7 +391,6 @@ exports[`PressLinks > should render with no props passed 1`] = `
         <li>
           <OutboundLink
             analyticsEventLabel="Press Article"
-            hasIcon={true}
             href="http://diversemilitary.net/2017/06/27/coding-bootcamps-accepts-gi-bill/"
           >
             Coding Bootcamps Accepts GI Bill
@@ -442,7 +399,6 @@ exports[`PressLinks > should render with no props passed 1`] = `
         <li>
           <OutboundLink
             analyticsEventLabel="Press Article"
-            hasIcon={true}
             href="https://news.clearancejobs.com/2017/07/17/operation-code-looks-help-veterans-land-careers/"
           >
             Operation Code Looks to Help Veterans Land IT Careers
