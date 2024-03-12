@@ -1,0 +1,487 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`SponsorsSection > should render 1`] = `
+<div
+  className="Container gray"
+  data-testid="Sponsors Section"
+>
+  <div
+    className="content"
+  >
+    <div
+      className="headingContainer"
+    >
+      <h3
+        className="Heading underline"
+      >
+        <div
+          className="hashLinkContainer"
+          data-testid="Heading Content sponsors-link"
+        >
+          <a
+            data-testid="Hash Link"
+            href="#sponsors-link"
+            id="sponsors-link"
+          >
+            <span
+              className="sr-only"
+              data-testid="SCREEN_READER_ONLY"
+            >
+              Scroll Link for 
+              Sponsors
+            </span>
+            <svg
+              className="icon"
+              dangerouslySetInnerHTML={
+                {
+                  "__html": "<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="d456e9ce"><title>Link Icon</title><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></symbol><use href='#d456e9ce'/>",
+                }
+              }
+              viewBox="0 0 512 512"
+            />
+          </a>
+          Sponsors
+        </div>
+      </h3>
+    </div>
+    <div
+      className="headingContainer"
+    >
+      <h4
+        className="Heading"
+      >
+        <div
+          className="hashLinkContainer"
+          data-testid="Heading Content corporate-partners-link"
+        >
+          <a
+            data-testid="Hash Link"
+            href="#corporate-partners-link"
+            id="corporate-partners-link"
+          >
+            <span
+              className="sr-only"
+              data-testid="SCREEN_READER_ONLY"
+            >
+              Scroll Link for 
+              Corporate Partners
+            </span>
+            <svg
+              className="icon"
+              dangerouslySetInnerHTML={
+                {
+                  "__html": "<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="d456e9ce"><title>Link Icon</title><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></symbol><use href='#d456e9ce'/>",
+                }
+              }
+              viewBox="0 0 512 512"
+            />
+          </a>
+          Corporate Partners
+        </div>
+      </h4>
+    </div>
+    <p>
+      These sponsors have donated cash to help keep the mission going here at Operation Code. They may or may not have also donated to our cause via others means.
+    </p>
+    <div
+      className="flex justify-center items-center flex-wrap [&>*]:m-4"
+    >
+      <div
+        className="text-center w-36"
+      >
+        <a
+          className="inline-flex items-start"
+          href="https://slack.com/?utm_source=operationcode"
+          onClick={[Function]}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <img
+            alt="Slack logo"
+            src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/slack.png"
+          />
+          <span
+            className="sr-only"
+            data-testid="SCREEN_READER_ONLY"
+          >
+            Opens in new window
+          </span>
+        </a>
+      </div>
+      <div
+        className="text-center w-36"
+      >
+        <a
+          className="inline-flex items-start"
+          href="https://threatstack.com/?utm_source=operationcode"
+          onClick={[Function]}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <img
+            alt="Threat Stack logo"
+            src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/threat_stack.png"
+          />
+          <span
+            className="sr-only"
+            data-testid="SCREEN_READER_ONLY"
+          >
+            Opens in new window
+          </span>
+        </a>
+      </div>
+      <div
+        className="text-center w-36"
+      >
+        <a
+          className="inline-flex items-start"
+          href="https://www.usbank.com/index.html?utm_source=operationcode"
+          onClick={[Function]}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <img
+            alt="US Bank logo"
+            src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/usbank.png"
+          />
+          <span
+            className="sr-only"
+            data-testid="SCREEN_READER_ONLY"
+          >
+            Opens in new window
+          </span>
+        </a>
+      </div>
+    </div>
+    <div
+      className="headingContainer"
+    >
+      <h4
+        className="Heading"
+      >
+        <div
+          className="hashLinkContainer"
+          data-testid="Heading Content corporate-supporters-link"
+        >
+          <a
+            data-testid="Hash Link"
+            href="#corporate-supporters-link"
+            id="corporate-supporters-link"
+          >
+            <span
+              className="sr-only"
+              data-testid="SCREEN_READER_ONLY"
+            >
+              Scroll Link for 
+              Corporate Supporters
+            </span>
+            <svg
+              className="icon"
+              dangerouslySetInnerHTML={
+                {
+                  "__html": "<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="d456e9ce"><title>Link Icon</title><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></symbol><use href='#d456e9ce'/>",
+                }
+              }
+              viewBox="0 0 512 512"
+            />
+          </a>
+          Corporate Supporters
+        </div>
+      </h4>
+    </div>
+    <p>
+      The following organizations have helped Operation Code through services, products, advertisements, scholarships, or sponsorships. We thank them for their contributions.
+    </p>
+    <div
+      className="flex justify-center items-center flex-wrap [&>*]:m-4"
+    >
+      <div
+        className="text-center w-36"
+      >
+        <a
+          className="inline-flex items-start"
+          href="https://1password.com/?utm_source=operationcode"
+          onClick={[Function]}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <img
+            alt="1Password logo"
+            src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/1password.png"
+          />
+          <span
+            className="sr-only"
+            data-testid="SCREEN_READER_ONLY"
+          >
+            Opens in new window
+          </span>
+        </a>
+      </div>
+      <div
+        className="text-center w-36"
+      >
+        <a
+          className="inline-flex items-start"
+          href="https://apexsystems.com/?utm_source=operationcode"
+          onClick={[Function]}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <img
+            alt="APEX Systems logo"
+            src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/apex_systems.png"
+          />
+          <span
+            className="sr-only"
+            data-testid="SCREEN_READER_ONLY"
+          >
+            Opens in new window
+          </span>
+        </a>
+      </div>
+      <div
+        className="text-center w-36"
+      >
+        <a
+          className="inline-flex items-start"
+          href="https://chromatic.com/?utm_source=operationcode"
+          onClick={[Function]}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <img
+            alt="Chromatic logo"
+            src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/chromatic.png"
+          />
+          <span
+            className="sr-only"
+            data-testid="SCREEN_READER_ONLY"
+          >
+            Opens in new window
+          </span>
+        </a>
+      </div>
+      <div
+        className="text-center w-36"
+      >
+        <a
+          className="inline-flex items-start"
+          href="https://coursera.org/?utm_source=operationcode"
+          onClick={[Function]}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <img
+            alt="Coursera logo"
+            src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/coursera.png"
+          />
+          <span
+            className="sr-only"
+            data-testid="SCREEN_READER_ONLY"
+          >
+            Opens in new window
+          </span>
+        </a>
+      </div>
+      <div
+        className="text-center w-36"
+      >
+        <a
+          className="inline-flex items-start"
+          href="https://elyoninternational.com/?utm_source=operationcode"
+          onClick={[Function]}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <img
+            alt="Elyon International logo"
+            src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/elyon.png"
+          />
+          <span
+            className="sr-only"
+            data-testid="SCREEN_READER_ONLY"
+          >
+            Opens in new window
+          </span>
+        </a>
+      </div>
+      <div
+        className="text-center w-36"
+      >
+        <a
+          className="inline-flex items-start"
+          href="https://github.com/?utm_source=operationcode"
+          onClick={[Function]}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <img
+            alt="GitHub logo"
+            src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/github.png"
+          />
+          <span
+            className="sr-only"
+            data-testid="SCREEN_READER_ONLY"
+          >
+            Opens in new window
+          </span>
+        </a>
+      </div>
+      <div
+        className="text-center w-36"
+      >
+        <a
+          className="inline-flex items-start"
+          href="https://hackerrank.com/?utm_source=operationcode"
+          onClick={[Function]}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <img
+            alt="HackerRank logo"
+            src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/hackerrank.png"
+          />
+          <span
+            className="sr-only"
+            data-testid="SCREEN_READER_ONLY"
+          >
+            Opens in new window
+          </span>
+        </a>
+      </div>
+      <div
+        className="text-center w-36"
+      >
+        <a
+          className="inline-flex items-start"
+          href="https://logrocket.com/?utm_source=operationcode"
+          onClick={[Function]}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <img
+            alt="LogRocket logo"
+            src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/logrocket.png"
+          />
+          <span
+            className="sr-only"
+            data-testid="SCREEN_READER_ONLY"
+          >
+            Opens in new window
+          </span>
+        </a>
+      </div>
+      <div
+        className="text-center w-36"
+      >
+        <a
+          className="inline-flex items-start"
+          href="https://oreilly.com/?utm_source=operationcode"
+          onClick={[Function]}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <img
+            alt="O'Reilly Media logo"
+            src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/oreilly.png"
+          />
+          <span
+            className="sr-only"
+            data-testid="SCREEN_READER_ONLY"
+          >
+            Opens in new window
+          </span>
+        </a>
+      </div>
+      <div
+        className="text-center w-36"
+      >
+        <a
+          className="inline-flex items-start"
+          href="https://securecodewarrior.com/?utm_source=operationcode"
+          onClick={[Function]}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <img
+            alt="Secure Code Warrior logo"
+            src="https://user-images.githubusercontent.com/51661129/92973323-3d540b80-f484-11ea-85dd-d202fc751cd9.png"
+          />
+          <span
+            className="sr-only"
+            data-testid="SCREEN_READER_ONLY"
+          >
+            Opens in new window
+          </span>
+        </a>
+      </div>
+      <div
+        className="text-center w-36"
+      >
+        <a
+          className="inline-flex items-start"
+          href="https://teamtreehouse.com/?utm_source=operationcode"
+          onClick={[Function]}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <img
+            alt="Team Treehouse logo"
+            src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/treehouse.png"
+          />
+          <span
+            className="sr-only"
+            data-testid="SCREEN_READER_ONLY"
+          >
+            Opens in new window
+          </span>
+        </a>
+      </div>
+      <div
+        className="text-center w-36"
+      >
+        <a
+          className="inline-flex items-start"
+          href="https://vercel.com/home?utm_source=operationcode"
+          onClick={[Function]}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <img
+            alt="Vercel logo"
+            src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/vercel.png"
+          />
+          <span
+            className="sr-only"
+            data-testid="SCREEN_READER_ONLY"
+          >
+            Opens in new window
+          </span>
+        </a>
+      </div>
+      <div
+        className="text-center w-36"
+      >
+        <a
+          className="inline-flex items-start"
+          href="https://zapier.com/?utm_source=operationcode"
+          onClick={[Function]}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <img
+            alt="Zapier logo"
+            src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/zapier.png"
+          />
+          <span
+            className="sr-only"
+            data-testid="SCREEN_READER_ONLY"
+          >
+            Opens in new window
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -3,10 +3,15 @@ import Heading from 'components/Heading/Heading';
 import PartnerLogoLink from 'components/PartnerLogoLink/PartnerLogoLink';
 import partners, { PARTNER_TYPES } from 'common/constants/partners';
 
-const isPaidSponsor = partner => partner.type === PARTNER_TYPES.PAID;
+type Partner = {
+  name: string;
+  type: string;
+};
+
+const isPaidSponsor = (partner: Partner): boolean => partner.type === PARTNER_TYPES.PAID;
 
 const SponsorsSection = () => (
-  <Container theme="gray">
+  <Container theme="gray" data-testid="Sponsors Section">
     <Heading text="Sponsors" hasTitleUnderline headingLevel={3} />
 
     <Heading text="Corporate Partners" headingLevel={4} />
