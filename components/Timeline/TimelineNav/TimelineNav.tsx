@@ -1,3 +1,4 @@
+// @ts-expect-error
 import { Link } from 'react-scroll';
 import historyData from '../historyData';
 
