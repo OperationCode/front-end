@@ -1,28 +1,43 @@
 import Link from 'next/link';
 import omit from 'lodash/omit';
-import { bool, node, number, object, string } from 'prop-types';
 import classNames from 'classnames';
 import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
 import styles from './PaginationItem.module.css';
 
-PaginationItem.propTypes = {
-  children: node.isRequired,
-  isCurrent: bool,
-  pathname: string.isRequired,
-  query: object,
-  testId: string.isRequired,
-  value: number,
+export type PaginationItemPropsType = {
+  /**
+   * Content to be rendered as the link.
+   */
+  children: React.ReactNode;
+  /**
+   * Sets the URL path
+   */
+  pathname: string;
+  /**
+   * Sets an id to the base element for testing.
+   */
+  testId: string;
+  /**
+   * Sets styles to indicate the current item is selected.
+   */
+  isCurrent?: boolean;
+  query?: Record<string, any>;
+  value?: number;
 };
 
-PaginationItem.defaultProps = {
-  isCurrent: false,
-  query: {},
-  value: undefined,
-};
-
-function PaginationItem({ children, isCurrent, pathname, query, testId, value }) {
+function PaginationItem({
+  children,
+  isCurrent = false,
+  pathname,
+  query,
+  testId,
+  value,
+}: PaginationItemPropsType) {
   const relevantQueryStringObject = omit(query, ['page']);
-  const realURL = { pathname: pathname.replace('[page]', value), query: relevantQueryStringObject };
+  const realURL = {
+    pathname: pathname.replace('[page]', String(value)),
+    query: relevantQueryStringObject,
+  };
 
   const isClickable = !!value;
 

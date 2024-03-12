@@ -60,7 +60,7 @@ describe('NavListItem', () => {
   it('should have visible sublinks on when button is clicked', () => {
     const { container } = render(<NavListItem {...testDataWithSublinks} />);
 
-    const button = container.querySelector('button');
+    const button = container.querySelector('button')!;
 
     fireEvent.click(button);
 
@@ -73,7 +73,9 @@ describe('NavListItem', () => {
     expect(queryByTestId('minus-icon')).toBeNull();
     expect(queryByTestId('plus-icon')).not.toBeNull();
 
-    fireEvent.mouseEnter(container.querySelector('button'));
+    const button = container.querySelector('button')!;
+
+    fireEvent.mouseEnter(button);
 
     expect(queryByTestId('minus-icon')).not.toBeNull();
     expect(queryByTestId('plus-icon')).toBeNull();
@@ -86,14 +88,18 @@ describe('NavListItem', () => {
     fireEvent.mouseEnter(link);
     expect(container.querySelector('ul')).not.toHaveClass('invisible');
 
-    fireEvent.click(container.querySelector('button'));
+    const button = container.querySelector('button')!;
+
+    fireEvent.click(button);
     expect(container.querySelector('ul')).toHaveClass('invisible');
   });
 
   it('should show sublinks on click, then hide them on pressing Shift+Tab on first sublink', () => {
     const { container, getByTestId } = render(<NavListItem {...testDataWithSublinks} />);
 
-    fireEvent.click(container.querySelector('button'));
+    const button = container.querySelector('button')!;
+
+    fireEvent.click(button);
     expect(container.querySelector('ul')).not.toHaveClass('invisible');
 
     fireEvent.keyDown(getByTestId('Nav Item Test - 1'), KEY_CODES.TAB_AND_SHIFT);
@@ -103,7 +109,9 @@ describe('NavListItem', () => {
   it('should show sublinks on click, then hide them on pressing Tab on last sublink', () => {
     const { container, getByTestId } = render(<NavListItem {...testDataWithSublinks} />);
 
-    fireEvent.click(container.querySelector('button'));
+    const button = container.querySelector('button')!;
+
+    fireEvent.click(button);
     expect(container.querySelector('ul')).not.toHaveClass('invisible');
 
     fireEvent.keyDown(getByTestId('Nav Item Test - 2'), KEY_CODES.TAB);

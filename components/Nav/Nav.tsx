@@ -25,11 +25,6 @@ export const Nav = () => {
     document.body.style.overflow = 'auto';
   };
 
-  const redirectRightClick = event_ => {
-    event_.preventDefault();
-    Router.push('/branding');
-  };
-
   useEffect(() => {
     Router.events.on('routeChangeComplete', closeMobileMenu);
 
@@ -54,7 +49,10 @@ export const Nav = () => {
             <Link href="/" key="Home">
               <a
                 className={classNames(styles.logoLink, styles.link)}
-                onContextMenu={redirectRightClick}
+                onContextMenu={event => {
+                  event.preventDefault();
+                  Router.push('/branding');
+                }}
               >
                 <Logo className={styles.logo} style={{ width: 224, height: 42 }} fill="#f7f7f7" />
               </a>
@@ -66,7 +64,9 @@ export const Nav = () => {
                   key={navItem.name}
                   {...navItem}
                   icon={
-                    navItem.icon === 'UserLogo' ? <UserLogo className={styles.navIcon} /> : null
+                    'icon' in navItem && navItem.icon === 'UserLogo' ? (
+                      <UserLogo className={styles.navIcon} />
+                    ) : null
                   }
                 />
               ))}

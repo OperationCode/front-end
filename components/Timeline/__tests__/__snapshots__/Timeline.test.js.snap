@@ -36,7 +36,6 @@ exports[`Timeline > should render with no props passed passed 1`] = `
             <OutboundLink
               alt="Angel Hack"
               analyticsEventLabel="History Link"
-              hasIcon={true}
               href="https://angelhack.com"
             >
               AngelHack,
@@ -81,7 +80,6 @@ exports[`Timeline > should render with no props passed passed 1`] = `
             <OutboundLink
               alt="Bmore On Rails"
               analyticsEventLabel="History Link"
-              hasIcon={true}
               href="https://www.meetup.com/bmore-on-rails/"
             >
               "Bmore on Rails"
@@ -92,7 +90,6 @@ exports[`Timeline > should render with no props passed passed 1`] = `
             <OutboundLink
               alt="One Mounth Rails"
               analyticsEventLabel="History Link"
-              hasIcon={true}
               href="https://onemonth.com"
             >
               One Month's Rails
@@ -103,7 +100,6 @@ exports[`Timeline > should render with no props passed passed 1`] = `
             <OutboundLink
               alt="Patriot Boot Camp"
               analyticsEventLabel="History Link"
-              hasIcon={true}
               href="https://patriotbootcamp.org/"
             >
               Patriot Boot Camp
@@ -163,7 +159,6 @@ exports[`Timeline > should render with no props passed passed 1`] = `
             <OutboundLink
               alt="Cascadia Conference"
               analyticsEventLabel="History Link"
-              hasIcon={true}
               href="http://cascadiarubyconf.com/"
             >
               Cascadia Ruby,
@@ -174,7 +169,6 @@ exports[`Timeline > should render with no props passed passed 1`] = `
             <OutboundLink
               alt="Code Fellows"
               analyticsEventLabel="History Link"
-              hasIcon={true}
               href="https://www.codefellows.org"
             >
               Code Fellows,
@@ -185,7 +179,6 @@ exports[`Timeline > should render with no props passed passed 1`] = `
             <OutboundLink
               alt="Operation Code Old Repository"
               analyticsEventLabel="History Link"
-              hasIcon={true}
               href="//github.com/OperationCode/operationcode"
             >
               GitHub
@@ -204,7 +197,6 @@ exports[`Timeline > should render with no props passed passed 1`] = `
             <OutboundLink
               alt="Code Fellows"
               analyticsEventLabel="History Link"
-              hasIcon={true}
               href="https://www.codefellows.org"
             >
               Code Fellows,
@@ -215,7 +207,6 @@ exports[`Timeline > should render with no props passed passed 1`] = `
             <OutboundLink
               alt="Hack Summit"
               analyticsEventLabel="History Link"
-              hasIcon={true}
               href="https://hacksummit.org/"
             >
               hack.summit,
@@ -294,7 +285,6 @@ exports[`Timeline > should render with no props passed passed 1`] = `
             <OutboundLink
               alt="VET TEC"
               analyticsEventLabel="History Link"
-              hasIcon={true}
               href="https://www.va.gov/education/about-gi-bill-benefits/how-to-use-benefits/vettec-high-tech-program/"
             >
               VET TEC
@@ -305,7 +295,6 @@ exports[`Timeline > should render with no props passed passed 1`] = `
             <OutboundLink
               alt="VET TEC"
               analyticsEventLabel="History Link"
-              hasIcon={true}
               href="https://www.va.gov/education/about-gi-bill-benefits/how-to-use-benefits/vettec-high-tech-program/"
             >
               VET TEC
@@ -350,7 +339,6 @@ exports[`Timeline > should render with no props passed passed 1`] = `
             <OutboundLink
               alt="Guidestar"
               analyticsEventLabel="History Link"
-              hasIcon={true}
               href="https://www.guidestar.org/"
             >
               Guidestar.org,
@@ -402,7 +390,6 @@ exports[`Timeline > should render with no props passed passed 1`] = `
              
             <OutboundLink
               analyticsEventLabel="History Link"
-              hasIcon={true}
               href="https://www.guidestar.org/profile/shared/52626ac8-5e8b-445a-889e-30bf1ac0b46e"
             >
               Platinum Seal of Transparency
@@ -413,7 +400,6 @@ exports[`Timeline > should render with no props passed passed 1`] = `
             <OutboundLink
               alt="Guidestar"
               analyticsEventLabel="History Link"
-              hasIcon={true}
               href="https://www.guidestar.org/"
             >
               Guidestar.org,

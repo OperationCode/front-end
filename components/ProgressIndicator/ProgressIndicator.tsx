@@ -1,28 +1,30 @@
-import { number } from 'prop-types';
-
 export const developmentErrors = {
   currentStepTooLow: '"currentStep" cannot be negative',
   currentStepTooHigh: '"currentStep" cannot be greater than "totalSteps"',
   totalStepsTooLow: '"totalSteps" must be greater than zero',
 };
 
-const throwDevelopmentException = (expression, message) => {
+const throwDevelopmentException = (expression: boolean, message: string) => {
   if (process.env.NODE_ENV !== 'production' && expression) {
     throw new Error(message);
   }
 };
 
-ProgressIndicator.propTypes = {
-  stepNumber: number,
-  totalSteps: number,
+export type ProgressIndicatorPropsType = {
+  /**
+   * Sets the current step number.
+   */
+  stepNumber: number;
+  /**
+   * Sets the total number of steps.
+   */
+  totalSteps: number;
 };
 
-ProgressIndicator.defaultProps = {
-  stepNumber: 0,
-  totalSteps: 1,
-};
-
-export default function ProgressIndicator({ stepNumber, totalSteps }) {
+export default function ProgressIndicator({
+  stepNumber = 0,
+  totalSteps = 1,
+}: ProgressIndicatorPropsType) {
   throwDevelopmentException(totalSteps < 1, developmentErrors.totalStepsTooLow);
   throwDevelopmentException(stepNumber < 0, developmentErrors.currentStepTooLow);
   throwDevelopmentException(stepNumber > totalSteps, developmentErrors.currentStepTooHigh);
@@ -30,7 +32,7 @@ export default function ProgressIndicator({ stepNumber, totalSteps }) {
   const percentageCompleted = (stepNumber / totalSteps) * 100;
 
   return (
-    <div className="flex flex-col my-6 mx-0 items-center">
+    <div className="flex flex-col items-center mx-0 my-6">
       <label htmlFor="steps-indicator">
         {stepNumber}/{totalSteps} Complete
       </label>

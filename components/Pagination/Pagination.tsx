@@ -1,24 +1,38 @@
-import { number, string, object } from 'prop-types';
 import LeftAngleIcon from 'static/images/icons/FontAwesome/angle-left-solid.svg';
 import RightAngleIcon from 'static/images/icons/FontAwesome/angle-right-solid.svg';
 import { PREV_PAGE_BUTTON, NEXT_PAGE_BUTTON } from '../../common/constants/testIDs';
 import PaginationItem from './PaginationItem/PaginationItem';
 
-Pagination.propTypes = {
-  currentPage: number.isRequired,
-  pathname: string.isRequired,
-  query: object.isRequired,
-  totalPages: number.isRequired,
+export type PaginationPropsType = {
+  /**
+   * Sets the current page number to indicate which PaginationItem is styled differently.
+   */
+  currentPage: number;
+  /**
+   * Sets the current page number to indicate which PaginationItem is styled differently.
+   */
+  pathname: string;
+  /**
+   * Sets the URL path.
+   */
+  query: Record<string, any>;
+  /**
+   * Sets the total number of pages.
+   */
+  totalPages: number;
 };
 
 export const developmentErrors = {
-  currentPageValue: value => `The value passed for currentPage is ${value}.`,
+  currentPageValue: (value: number) => `The value passed for currentPage is ${value}.`,
   currentPageTooSmall: '"currentPage" cannot be less than 1.',
   currentPageTooBig: '"currentPage" cannot be larger than "totalPages".',
   mustUsePageAsPathParam: `Your path parameter must be "[page]". See https://nextjs.org/docs/routing/dynamic-routes for more`,
 };
 
-const getPagination = (currentPage, totalPages) => {
+const getPagination = (
+  currentPage: PaginationPropsType['currentPage'],
+  totalPages: PaginationPropsType['totalPages'],
+) => {
   // maximum length of the Pagination Bar, should be an odd integer, default is 11
   const MAX_VISIBLE_ELEMENTS = 11;
   const ELEMENTS_ON_ONE_SIDE = (MAX_VISIBLE_ELEMENTS - 1) / 2; // 5
@@ -59,7 +73,7 @@ const getPagination = (currentPage, totalPages) => {
 };
 
 // eslint-disable-next-line react/prop-types
-const PaginationItems = ({ currentPage, pathname, query, totalPages }) => {
+const PaginationItems = ({ currentPage, pathname, query, totalPages }: PaginationPropsType) => {
   const { paginationStart, paginationLength, shouldTruncateStart, shouldTruncateEnd } =
     getPagination(currentPage, totalPages);
 
@@ -118,7 +132,7 @@ const PaginationItems = ({ currentPage, pathname, query, totalPages }) => {
   );
 };
 
-function Pagination({ currentPage, pathname, query, totalPages }) {
+function Pagination({ currentPage, pathname, query, totalPages }: PaginationPropsType) {
   /* Developer Errors */
   if (process.env.NODE_ENV !== 'production') {
     const isCurrentPageTooSmall = currentPage < 1;

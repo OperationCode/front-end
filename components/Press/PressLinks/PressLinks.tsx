@@ -1,6 +1,7 @@
 import * as Tabs from '@radix-ui/react-tabs';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 import * as Articles from './Articles';
+import { objectKeys } from 'utils/types';
 import styles from './PressLinks.module.css';
 
 function PressLinks() {
@@ -19,13 +20,13 @@ function PressLinks() {
               </Tabs.Trigger>
             ))}
           </Tabs.List>
-          {Object.keys(Articles).map(region => (
+          {objectKeys(Articles).map(region => (
             <Tabs.Content
               key={`TabsContent_${region}`}
               value={region}
               className={styles.tabsContent}
             >
-              {Articles[region].map(link => (
+              {Articles[region].map((link: { url: string; title: string }) => (
                 <li key={`GroupLink_${link.url}`}>
                   <OutboundLink href={link.url} analyticsEventLabel="Press Article">
                     {link.title}

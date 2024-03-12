@@ -1,3 +1,4 @@
+// @ts-expect-error
 import cookie from 'js-cookie';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { CLOSE_BUTTON } from 'common/constants/testIDs';
@@ -25,7 +26,9 @@ describe('Nav', () => {
 
     expect(screen.queryByTestId('Mobile Nav')).toBeNull();
 
-    fireEvent.click(screen.queryByTestId('Hamburger Button'));
+    const hamburgerButton = screen.queryByTestId('Hamburger Button')!;
+
+    fireEvent.click(hamburgerButton);
 
     expect(await screen.findByTestId('Mobile Nav')).not.toBeNull();
   });
