@@ -5,7 +5,7 @@ import DonateSection from '../DonateSection';
 type DonateSectionStoryType = StoryObj<React.FC>;
 
 const meta: Meta<typeof DonateSection> = {
-  title: 'Reusable/DonateSection',
+  title: 'ReusableSections/DonateSection',
   component: DonateSection,
 };
 

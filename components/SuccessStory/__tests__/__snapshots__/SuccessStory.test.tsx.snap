@@ -12,7 +12,7 @@ exports[`SuccessStory > should render with required props 1`] = `
   }
 >
   <blockquote>
-    "Best test of my life!"
+    “Best test of my life!”
   </blockquote>
 </FlatCard>
 `;
