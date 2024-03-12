@@ -6,7 +6,12 @@ TimelineEvent.propTypes = {
   title: string.isRequired,
 };
 
-function TimelineEvent({ content, title }) {
+export type TimelineEventPropsType = {
+  content: string | string[] | React.ReactNode | React.ReactNode[];
+  title: string;
+};
+
+function TimelineEvent({ content, title }: TimelineEventPropsType) {
   return (
     <div className="mb-8 border-1 border-solid border-[#c5c5c5] p-5 rounded-md">
       <h4 className="capitalize md:text-2xl">{title}</h4>
