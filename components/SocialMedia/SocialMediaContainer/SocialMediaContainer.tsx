@@ -1,8 +1,7 @@
-import { arrayOf, element } from 'prop-types';
-
-SocialMediaContainer.propTypes = { children: arrayOf(element).isRequired };
-
 export type SocialMediaContainer = {
+  /**
+   * Child content of
+   */
   children: React.ReactElement[];
 };
 
