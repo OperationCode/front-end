@@ -219,7 +219,6 @@ exports[`Footer > should render with no props passed 1`] = `
       </ForwardRef(LinkComponent)>
       <OutboundLink
         analyticsEventLabel="Privacy footer link"
-        hasIcon={true}
         href="https://www.iubenda.com/privacy-policy/8174861"
       >
         Privacy

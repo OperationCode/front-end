@@ -1,0 +1,14 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`SocialMediaContainer > should render with required props 1`] = `
+<div
+  className="flex flex-row items-center justify-around"
+>
+  <div>
+    Testing 1
+  </div>
+  <div>
+    Testing 2
+  </div>
+</div>
+`;
