@@ -1,11 +1,12 @@
 import historyData from './historyData';
 import styles from './Timeline.module.css';
 import TimelineEvent from './TimelineEvent/TimelineEvent';
+import { objectKeys } from 'utils/types';
 
 function Timeline() {
   return (
     <div className={styles.timeline}>
-      {Object.keys(historyData).map(year => (
+      {objectKeys(historyData).map(year => (
         <div className={styles.segment} key={year}>
           <div className={styles.date}>
             <h3>{year}</h3>
