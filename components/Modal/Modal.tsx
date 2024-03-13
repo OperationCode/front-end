@@ -35,6 +35,10 @@ export type ModalPropsType = {
    * Applies style classes to the child content.
    */
   childrenClassName?: string;
+  /**
+   * Applies classNames to the overlay.
+   */
+  overlayClassName?: string;
 };
 
 function Modal({
