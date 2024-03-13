@@ -1,7 +1,7 @@
 import styles from './TimelineEvent.module.css';
 
 export type TimelineEventPropsType = {
-  content: string | string[] | React.ReactNode | React.ReactNode[];
+  content: React.ReactNode[];
   title: string;
 };
 
