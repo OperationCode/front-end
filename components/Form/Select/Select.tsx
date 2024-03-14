@@ -1,14 +1,3 @@
-import {
-  arrayOf,
-  bool,
-  func,
-  number,
-  object,
-  objectOf,
-  oneOfType,
-  shape,
-  string,
-} from 'prop-types';
 import { ErrorMessage } from 'formik';
 import Alert from 'components/Alert/Alert';
 import Label from 'components/Form/Label/Label';
@@ -51,39 +40,6 @@ export type SelectPropsType = {
   isMulti?: boolean;
   isSearchable?: boolean;
 };
-
-// Select.propTypes = {
-//   field: shape({
-//     name: string.isRequired,
-//     value: oneOfType([string, number, bool, arrayOf(string), arrayOf(number), arrayOf(bool)])
-//       .isRequired,
-//   }).isRequired,
-//   form: shape({
-//     // TODO: Resolve why multiselects can end up with touched: { key: array }
-//     // see ThemedReactSelect as well
-//     // touched: objectOf(bool).isRequired,
-//     touched: object.isRequired,
-//     errors: objectOf(string).isRequired,
-//     setFieldTouched: func.isRequired,
-//     setFieldValue: func.isRequired,
-//   }).isRequired,
-//   hasValidationStyling: bool,
-//   id: oneOfType([string, number]),
-//   isLabelHidden: bool,
-//   isMulti: bool,
-//   isSearchable: bool,
-//   label: string.isRequired,
-//   options: arrayOf(shape({ label: string.isRequired, value: string.isRequired }).isRequired)
-//     .isRequired,
-// };
-
-// Select.defaultProps = {
-//   hasValidationStyling: true,
-//   id: undefined,
-//   isLabelHidden: false,
-//   isMulti: false,
-//   isSearchable: true,
-// };
 
 export default function Select({
   field: { name, value: fieldValue },

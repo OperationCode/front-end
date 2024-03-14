@@ -1,7 +1,5 @@
 // eslint-disable-next-line no-restricted-imports
 import ReactSelect from 'react-select'; // the only spot this import is allowed
-
-import { array, bool, oneOfType, string } from 'prop-types';
 import {
   primary,
   rgbValuesPrimary,
@@ -10,28 +8,9 @@ import {
   errorDeep,
 } from 'common/styles/themeMap';
 
-// ThemedReactSelect.propTypes = {
-//   disabled: bool,
-//   hasErrors: bool,
-//   hasValidationStyling: bool,
-//   id: string,
-//   instanceId: string,
-//   isMulti: bool,
-//   isSearchable: bool,
-//   // TODO: Resolve why multiselects can end up with touched: { key: array }
-//   // see ThemedReactSelect as well
-//   // isTouched: bool,
-//   isTouched: oneOfType([array, bool]),
-// };
-
 type OptionType = {
   [key: string]: any;
 };
-
-// type OptionType = {
-//   label: string
-//   value: string
-// }
 
 type OptionsType = OptionType[];
 
@@ -47,24 +26,11 @@ export type ThemedReactSelect = {
   isMulti?: boolean;
   isSearchable?: boolean;
   isTouched?: any[] | boolean;
-  name?: string
-  onBlur?: () => void
-  onChange?: (selected: any) => void
+  name?: string;
+  onBlur?: () => void;
+  onChange?: (selected: any) => void;
   value?: ValueType;
-} 
-
-// & React.InputHTMLAttributes<HTMLInputElement>;
-
-// ThemedReactSelect.defaultProps = {
-//   disabled: false,
-//   hasErrors: false,
-//   hasValidationStyling: true,
-//   id: undefined,
-//   instanceId: undefined,
-//   isMulti: false,
-//   isSearchable: true,
-//   isTouched: false,
-// };
+};
 
 function ThemedReactSelect({
   disabled = false,
