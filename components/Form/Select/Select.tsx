@@ -1,26 +1,8 @@
-import { ErrorMessage } from 'formik';
+import { ErrorMessage, FieldProps } from 'formik';
 import Alert from 'components/Alert/Alert';
 import Label from 'components/Form/Label/Label';
 import ThemedReactSelect from './ThemedReactSelect';
 import styles from './Select.module.css';
-
-type FieldType = {
-  name: string;
-  value: string | string[] | number | number[] | boolean | boolean[];
-};
-
-type TouchedType = Record<string, any>;
-
-type ErrorsType = {
-  [key: string]: string;
-};
-
-type FormType = {
-  touched: TouchedType;
-  errors: ErrorsType;
-  setFieldTouched: (name: string) => void;
-  setFieldValue: (name: string, value: string | string[]) => void;
-};
 
 type SelectOptionType = {
   label: string;
@@ -30,8 +12,6 @@ type SelectOptionType = {
 type SelectOptionsType = SelectOptionType[];
 
 export type SelectPropsType = {
-  field: FieldType;
-  form: FormType;
   options: SelectOptionsType;
   label: string;
   hasValidationStyling?: boolean;
@@ -39,7 +19,7 @@ export type SelectPropsType = {
   isLabelHidden?: boolean;
   isMulti?: boolean;
   isSearchable?: boolean;
-};
+} & FieldProps;
 
 export default function Select({
   field: { name, value: fieldValue },

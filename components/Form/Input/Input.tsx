@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import { ErrorMessage } from 'formik';
+import { ErrorMessage, FieldProps } from 'formik';
 import { INPUT, INPUT_ERROR, INPUT_FEEDBACK_GROUPING } from 'common/constants/testIDs';
 import Alert from 'components/Alert/Alert';
 import Label from 'components/Form/Label/Label';
@@ -36,14 +36,6 @@ export type InputPropsType = {
   /**
    * Sets the name and value for the input element.
    */
-  field: {
-    name: string;
-    value?: string;
-  };
-  form: {
-    touched: Record<string, any>;
-    errors?: Record<string, string>;
-  };
   /**
    * Passes the input type to the base input element.
    * @default 'text'
@@ -67,7 +59,7 @@ export type InputPropsType = {
    * @default true
    */
   hasValidationStyling?: boolean;
-};
+} & FieldProps;
 
 function Input({
   className,

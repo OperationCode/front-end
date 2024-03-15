@@ -1,11 +1,11 @@
 import classNames from 'classnames';
-import { ErrorMessage } from 'formik';
+import { ErrorMessage, FieldProps } from 'formik';
 import { CHECKBOX, CHECKBOX_ERROR } from 'common/constants/testIDs';
 import Alert from 'components/Alert/Alert';
 import Label from 'components/Form/Label/Label';
 import styles from './Checkbox.module.css';
 
-export interface CheckboxPropsType {
+export interface CheckboxPropsType extends FieldProps {
   /**
    * Applies a label that to the form input.
    */
@@ -13,14 +13,6 @@ export interface CheckboxPropsType {
   /**
    * Sets the name and value for the input element.
    */
-  field: {
-    name: string;
-    value?: string;
-  };
-  form: {
-    touched: Record<string, any>;
-    errors?: Record<string, string>;
-  };
   /**
    * Passes an idea to the root input element.
    */
