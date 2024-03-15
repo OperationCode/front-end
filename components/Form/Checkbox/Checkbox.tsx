@@ -5,7 +5,7 @@ import Alert from 'components/Alert/Alert';
 import Label from 'components/Form/Label/Label';
 import styles from './Checkbox.module.css';
 
-export type CheckboxPropsType = {
+export interface CheckboxPropsType {
   /**
    * Applies a label that to the form input.
    */
@@ -25,7 +25,7 @@ export type CheckboxPropsType = {
    * Passes an idea to the root input element.
    */
   id?: string;
-};
+}
 
 function Checkbox({
   field: { name, value, ...field },
@@ -51,7 +51,7 @@ function Checkbox({
       </Label>
 
       <ErrorMessage name={name}>
-        {(message: string) => {
+        {message => {
           return hasErrors ? (
             <Alert className={styles.errorMessage} data-testid={CHECKBOX_ERROR} type="error">
               {message}
