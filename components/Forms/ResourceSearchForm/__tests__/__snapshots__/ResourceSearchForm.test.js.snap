@@ -55,93 +55,86 @@ exports[`ResourceSearchForm > should render with required props 1`] = `
           className="selectFeedbackGrouping"
         >
           <div
-            className=" css-2b097c-container"
+            className=" css-b62m3t-container"
             onKeyDown={[Function]}
           >
+            <span
+              className="css-1f43avz-a11yText-A11yText"
+              id="react-select-category-live-region"
+            />
             <span
               aria-atomic="false"
               aria-live="polite"
               aria-relevant="additions text"
               className="css-1f43avz-a11yText-A11yText"
+              role="log"
             />
             <div
-              className=" css-6k4gi9-control"
+              className=" css-8olv4-control"
               onMouseDown={[Function]}
               onTouchEnd={[Function]}
             >
               <div
-                className=" css-g1d714-ValueContainer"
+                className=" css-art2ul-ValueContainer2"
               >
                 <div
-                  className=" css-1wa3eu0-placeholder"
+                  className=" css-1jqq78o-placeholder"
+                  id="react-select-category-placeholder"
                 >
                   Start typing a category...
                 </div>
                 <div
-                  className="css-b8ldur-Input"
+                  className=" css-w9q2zk-Input2"
+                  data-value=""
                 >
-                  <div
+                  <input
+                    aria-activedescendant=""
+                    aria-autocomplete="list"
+                    aria-describedby="react-select-category-placeholder"
+                    aria-expanded={false}
+                    aria-haspopup={true}
+                    autoCapitalize="none"
+                    autoComplete="off"
+                    autoCorrect="off"
                     className=""
+                    disabled={false}
+                    id="react-select-category-input"
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onFocus={[Function]}
+                    role="combobox"
+                    spellCheck="false"
                     style={
                       {
-                        "display": "inline-block",
+                        "background": 0,
+                        "border": 0,
+                        "color": "inherit",
+                        "font": "inherit",
+                        "gridArea": "1 / 2",
+                        "label": "input",
+                        "margin": 0,
+                        "minWidth": "2px",
+                        "opacity": 1,
+                        "outline": 0,
+                        "padding": 0,
+                        "width": "100%",
                       }
                     }
-                  >
-                    <input
-                      aria-autocomplete="list"
-                      autoCapitalize="none"
-                      autoComplete="off"
-                      autoCorrect="off"
-                      disabled={false}
-                      id="react-select-category-input"
-                      onBlur={[Function]}
-                      onChange={[Function]}
-                      onFocus={[Function]}
-                      spellCheck="false"
-                      style={
-                        {
-                          "background": 0,
-                          "border": 0,
-                          "boxSizing": "content-box",
-                          "color": "inherit",
-                          "fontSize": "inherit",
-                          "label": "input",
-                          "opacity": 1,
-                          "outline": 0,
-                          "padding": 0,
-                          "width": "1px",
-                        }
-                      }
-                      tabIndex="0"
-                      type="text"
-                      value=""
-                    />
-                    <div
-                      style={
-                        {
-                          "height": 0,
-                          "left": 0,
-                          "overflow": "scroll",
-                          "position": "absolute",
-                          "top": 0,
-                          "visibility": "hidden",
-                          "whiteSpace": "pre",
-                        }
-                      }
-                    />
-                  </div>
+                    tabIndex={0}
+                    type="text"
+                    value=""
+                  />
                 </div>
               </div>
               <div
-                className=" css-1hb7zxy-IndicatorsContainer"
+                className=" css-4xgw5l-IndicatorsContainer2"
               >
                 <span
-                  className=" css-1okebmr-indicatorSeparator"
+                  className=" css-1u9des2-indicatorSeparator"
                 />
                 <div
                   aria-hidden="true"
-                  className=" css-1vtn1ro-indicatorContainer"
+                  className=" css-itfj09-indicatorContainer"
                   onMouseDown={[Function]}
                   onTouchEnd={[Function]}
                 >
@@ -186,93 +179,86 @@ exports[`ResourceSearchForm > should render with required props 1`] = `
           className="selectFeedbackGrouping"
         >
           <div
-            className=" css-2b097c-container"
+            className=" css-b62m3t-container"
             onKeyDown={[Function]}
           >
+            <span
+              className="css-1f43avz-a11yText-A11yText"
+              id="react-select-free-live-region"
+            />
             <span
               aria-atomic="false"
               aria-live="polite"
               aria-relevant="additions text"
               className="css-1f43avz-a11yText-A11yText"
+              role="log"
             />
             <div
-              className=" css-6k4gi9-control"
+              className=" css-8olv4-control"
               onMouseDown={[Function]}
               onTouchEnd={[Function]}
             >
               <div
-                className=" css-g1d714-ValueContainer"
+                className=" css-art2ul-ValueContainer2"
               >
                 <div
-                  className=" css-1wa3eu0-placeholder"
+                  className=" css-1jqq78o-placeholder"
+                  id="react-select-free-placeholder"
                 >
                   Resource cost...
                 </div>
                 <div
-                  className="css-b8ldur-Input"
+                  className=" css-w9q2zk-Input2"
+                  data-value=""
                 >
-                  <div
+                  <input
+                    aria-activedescendant=""
+                    aria-autocomplete="list"
+                    aria-describedby="react-select-free-placeholder"
+                    aria-expanded={false}
+                    aria-haspopup={true}
+                    autoCapitalize="none"
+                    autoComplete="off"
+                    autoCorrect="off"
                     className=""
+                    disabled={false}
+                    id="react-select-free-input"
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onFocus={[Function]}
+                    role="combobox"
+                    spellCheck="false"
                     style={
                       {
-                        "display": "inline-block",
+                        "background": 0,
+                        "border": 0,
+                        "color": "inherit",
+                        "font": "inherit",
+                        "gridArea": "1 / 2",
+                        "label": "input",
+                        "margin": 0,
+                        "minWidth": "2px",
+                        "opacity": 1,
+                        "outline": 0,
+                        "padding": 0,
+                        "width": "100%",
                       }
                     }
-                  >
-                    <input
-                      aria-autocomplete="list"
-                      autoCapitalize="none"
-                      autoComplete="off"
-                      autoCorrect="off"
-                      disabled={false}
-                      id="react-select-free-input"
-                      onBlur={[Function]}
-                      onChange={[Function]}
-                      onFocus={[Function]}
-                      spellCheck="false"
-                      style={
-                        {
-                          "background": 0,
-                          "border": 0,
-                          "boxSizing": "content-box",
-                          "color": "inherit",
-                          "fontSize": "inherit",
-                          "label": "input",
-                          "opacity": 1,
-                          "outline": 0,
-                          "padding": 0,
-                          "width": "1px",
-                        }
-                      }
-                      tabIndex="0"
-                      type="text"
-                      value=""
-                    />
-                    <div
-                      style={
-                        {
-                          "height": 0,
-                          "left": 0,
-                          "overflow": "scroll",
-                          "position": "absolute",
-                          "top": 0,
-                          "visibility": "hidden",
-                          "whiteSpace": "pre",
-                        }
-                      }
-                    />
-                  </div>
+                    tabIndex={0}
+                    type="text"
+                    value=""
+                  />
                 </div>
               </div>
               <div
-                className=" css-1hb7zxy-IndicatorsContainer"
+                className=" css-4xgw5l-IndicatorsContainer2"
               >
                 <span
-                  className=" css-1okebmr-indicatorSeparator"
+                  className=" css-1u9des2-indicatorSeparator"
                 />
                 <div
                   aria-hidden="true"
-                  className=" css-1vtn1ro-indicatorContainer"
+                  className=" css-itfj09-indicatorContainer"
                   onMouseDown={[Function]}
                   onTouchEnd={[Function]}
                 >
@@ -317,93 +303,86 @@ exports[`ResourceSearchForm > should render with required props 1`] = `
           className="selectFeedbackGrouping"
         >
           <div
-            className=" css-2b097c-container"
+            className=" css-b62m3t-container"
             onKeyDown={[Function]}
           >
+            <span
+              className="css-1f43avz-a11yText-A11yText"
+              id="react-select-languages-live-region"
+            />
             <span
               aria-atomic="false"
               aria-live="polite"
               aria-relevant="additions text"
               className="css-1f43avz-a11yText-A11yText"
+              role="log"
             />
             <div
-              className=" css-6k4gi9-control"
+              className=" css-8olv4-control"
               onMouseDown={[Function]}
               onTouchEnd={[Function]}
             >
               <div
-                className=" css-g1d714-ValueContainer"
+                className=" css-art2ul-ValueContainer2"
               >
                 <div
-                  className=" css-1wa3eu0-placeholder"
+                  className=" css-1jqq78o-placeholder"
+                  id="react-select-languages-placeholder"
                 >
                   Start typing a language...
                 </div>
                 <div
-                  className="css-b8ldur-Input"
+                  className=" css-w9q2zk-Input2"
+                  data-value=""
                 >
-                  <div
+                  <input
+                    aria-activedescendant=""
+                    aria-autocomplete="list"
+                    aria-describedby="react-select-languages-placeholder"
+                    aria-expanded={false}
+                    aria-haspopup={true}
+                    autoCapitalize="none"
+                    autoComplete="off"
+                    autoCorrect="off"
                     className=""
+                    disabled={false}
+                    id="react-select-languages-input"
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onFocus={[Function]}
+                    role="combobox"
+                    spellCheck="false"
                     style={
                       {
-                        "display": "inline-block",
+                        "background": 0,
+                        "border": 0,
+                        "color": "inherit",
+                        "font": "inherit",
+                        "gridArea": "1 / 2",
+                        "label": "input",
+                        "margin": 0,
+                        "minWidth": "2px",
+                        "opacity": 1,
+                        "outline": 0,
+                        "padding": 0,
+                        "width": "100%",
                       }
                     }
-                  >
-                    <input
-                      aria-autocomplete="list"
-                      autoCapitalize="none"
-                      autoComplete="off"
-                      autoCorrect="off"
-                      disabled={false}
-                      id="react-select-languages-input"
-                      onBlur={[Function]}
-                      onChange={[Function]}
-                      onFocus={[Function]}
-                      spellCheck="false"
-                      style={
-                        {
-                          "background": 0,
-                          "border": 0,
-                          "boxSizing": "content-box",
-                          "color": "inherit",
-                          "fontSize": "inherit",
-                          "label": "input",
-                          "opacity": 1,
-                          "outline": 0,
-                          "padding": 0,
-                          "width": "1px",
-                        }
-                      }
-                      tabIndex="0"
-                      type="text"
-                      value=""
-                    />
-                    <div
-                      style={
-                        {
-                          "height": 0,
-                          "left": 0,
-                          "overflow": "scroll",
-                          "position": "absolute",
-                          "top": 0,
-                          "visibility": "hidden",
-                          "whiteSpace": "pre",
-                        }
-                      }
-                    />
-                  </div>
+                    tabIndex={0}
+                    type="text"
+                    value=""
+                  />
                 </div>
               </div>
               <div
-                className=" css-1hb7zxy-IndicatorsContainer"
+                className=" css-4xgw5l-IndicatorsContainer2"
               >
                 <span
-                  className=" css-1okebmr-indicatorSeparator"
+                  className=" css-1u9des2-indicatorSeparator"
                 />
                 <div
                   aria-hidden="true"
-                  className=" css-1vtn1ro-indicatorContainer"
+                  className=" css-itfj09-indicatorContainer"
                   onMouseDown={[Function]}
                   onTouchEnd={[Function]}
                 >
@@ -426,6 +405,7 @@ exports[`ResourceSearchForm > should render with required props 1`] = `
               <input
                 name="languages"
                 type="hidden"
+                value=""
               />
             </div>
           </div>
