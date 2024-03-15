@@ -1,5 +1,6 @@
 // eslint-disable-next-line no-restricted-imports
 import ReactSelect from 'react-select'; // the only spot this import is allowed
+import { FormikTouched } from 'formik';
 import {
   primary,
   rgbValuesPrimary,
@@ -16,6 +17,8 @@ type OptionsType = OptionType[];
 
 type ValueType = string | OptionType | OptionsType;
 
+type TouchedType = FormikTouched<any> | FormikTouched<any>[] | boolean;
+
 export type ThemedReactSelect = {
   options: OptionsType;
   disabled?: boolean;
@@ -25,7 +28,7 @@ export type ThemedReactSelect = {
   instanceId?: string;
   isMulti?: boolean;
   isSearchable?: boolean;
-  isTouched?: any[] | boolean;
+  isTouched?: TouchedType;
   name?: string;
   onBlur?: () => void;
   onChange?: (selected: any) => void;
