@@ -70,6 +70,11 @@ const sponsorship = {
   href: '/sponsorship',
 };
 
+const scholarship = {
+  name: 'Scholarship',
+  href: '/scholarship',
+};
+
 const projectRebuild = {
   name: 'Project Rebuild',
   href: '/project_rebuild',
@@ -77,7 +82,7 @@ const projectRebuild = {
 
 const servicesGroup = {
   ...services,
-  sublinks: [podcast, projectRebuild],
+  sublinks: [podcast, scholarship, projectRebuild],
 };
 
 const aboutUsGroup = {
@@ -104,7 +109,7 @@ export const mobileNavItems = flattenDepth(
 // MARK: Footer items
 export const footerItems = {
   column1: [about, contact, faq, services],
-  column2: [chapters, jobs],
+  column2: [chapters, scholarship, jobs],
   column3: [getInvolved, podcast, history, donate],
   column4: [
     {
