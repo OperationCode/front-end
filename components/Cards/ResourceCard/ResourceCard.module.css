@@ -14,6 +14,10 @@
   flex: 1;
 }
 
+.link {
+  color: var(--secondary);
+}
+
 .link svg {
   top: 0;
   left: 0.5rem;
