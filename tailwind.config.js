@@ -23,6 +23,7 @@ module.exports = {
         themeSecondary: '#252e3e',
         themeGray200: '#121212',
         themeGray800: '#e2e2e2',
+        burntOrange500: 'hsl(14, 55%, 45%, 1)',
         white: '#f7f7f7',
       },
       maxWidth: {
