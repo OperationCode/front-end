@@ -1,11 +1,11 @@
 import Head from 'components/head';
 
-export type ErrorDisplayPropsType = {
+export interface ErrorDisplayPropsType {
   /**
    * Displasy a status code instead of 'Error'.
    */
   statusCode?: number;
-};
+}
 
 function ErrorDisplay({ statusCode }: ErrorDisplayPropsType) {
   return (

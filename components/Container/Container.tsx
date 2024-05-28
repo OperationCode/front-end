@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import { getDataAttributes } from 'common/utils/prop-utils';
 import styles from './Container.module.css';
 
-export type ContainerPropsType = {
+export interface ContainerPropsType {
   /**
    * Sets the path for an optional background image.
    */
@@ -29,7 +29,7 @@ export type ContainerPropsType = {
    * @default secondary
    */
   theme?: 'gray' | 'secondary' | 'white';
-};
+}
 
 function Container(props: ContainerPropsType) {
   const {
@@ -41,7 +41,7 @@ function Container(props: ContainerPropsType) {
     theme = 'secondary',
   } = props;
   // See https://css-tricks.com/tinted-images-multiple-backgrounds/ for explanation
-  const darkOverlay = 'linear-gradient(rgba(33, 48, 69, 0.65),rgba(33, 48, 69, 0.65))';
+  const darkOverlay = 'linear-gradient(hsl(215, 30%, 10%, 0.7),hsl(215, 30%, 10%, 0.7))';
   const dynamicBackgroundImage = backgroundImageSource
     ? {
         backgroundImage: `${darkOverlay}, url(${backgroundImageSource})`,

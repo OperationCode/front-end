@@ -72,15 +72,22 @@ h6 {
   letter-spacing: 3px;
   margin: 0;
   padding: 0;
+  text-wrap: initial;
+  text-wrap: balance;
 }
 
 a {
-  color: currentcolor;
+  color: var(--burntOrange500);
+  text-decoration: none;
 }
 
 nav a,
 footer a {
-  text-decoration: none;
+  color: currentcolor;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 p {
