@@ -13,38 +13,48 @@ interface ScholarshipOption {
   title: string;
   logoSrc: string;
   body: string;
+  link: string;
 }
+
+const airtableScholarshipApplicationLink =
+  'https://airtable.com/appeXPiUS5GQwC7Vi/shr5CuF4IJGks7Wfp';
 
 const scholarshipOptions: ScholarshipOption[] = [
   {
     title: 'Code Platoon X Operation Code',
     logoSrc: `${s3}partnerLogos/code_platoon.png`,
     body: 'Apply to attend a full ride scholarship to one of the Code Platoon’s coding bootcamp cohorts.',
+    link: '/scholarship/code_platoon',
   },
   {
     title: 'Coursera - Google Certifications',
     logoSrc: `${s3}partnerLogos/coursera.png`,
     body: 'Get certified with Google and prepare for in-demand jobs in Cybersecurity, Digital Marketing & Analytics, Data Analytics, IT Support, Project Management, & UX Design.',
+    link: airtableScholarshipApplicationLink,
   },
   {
     title: 'CompTIA Certifications Training & Exam',
     logoSrc: `${s3}partnerLogos/comptia.png`,
     body: 'With more than 2 million IT certifications issued worldwide, CompTIA is dedicated to helping IT professionals lead the charge in our digitally connected world.',
+    link: airtableScholarshipApplicationLink,
   },
   {
     title: 'Secure Code Warrior',
     logoSrc: `${s3}partnerLogos/secure_code_warrior.png`,
     body: 'Are you interested in using one of our licenses with Secure Code Warrior? Sign up today and beef up your appsec skills while gaming!',
+    link: airtableScholarshipApplicationLink,
   },
   {
     title: 'Treehouse',
     logoSrc: `${s3}partnerLogos/treehouse.png`,
     body: 'Start your journey into coding, programming, and design. Perfect for beginners, intermediate and advanced learners.',
+    link: airtableScholarshipApplicationLink,
   },
   {
     title: 'Udemy',
     logoSrc: `${s3}partnerLogos/udemy.png`,
     body: 'Skill up to success! Udemy offers over 185,000 courses and has 49 million students. Learn programming, marketing, data science and more.',
+    link: airtableScholarshipApplicationLink,
   },
 ];
 
@@ -59,7 +69,7 @@ export default function ScholarshipsPage() {
       <Container theme="white" className="pb-8">
         <p>
           Our <span className="font-bold">Scholarships Program</span> is a competitive benefit that
-          contributes directly to the professional development andnd career growth of our service
+          contributes directly to the professional development and career growth of our service
           members, Veterans and military family members.
         </p>
 
@@ -91,12 +101,12 @@ export default function ScholarshipsPage() {
             <p>We provide learning licenses and access to the below platforms:</p>
           </div>
 
-          <ul className="flex flex-wrap w-full self-center gap-4">
+          <ul className="flex flex-wrap w-full justify-center self-center gap-4">
             {scholarshipOptions.map(option => (
               <li key={option.title} className="max-w-sm w-full h-96">
                 <OutboundLink
                   className="w-full h-full hover:no-underline"
-                  href="https://airtable.com/appeXPiUS5GQwC7Vi/shr5CuF4IJGks7Wfp"
+                  href={option.link}
                   analyticsEventLabel={`Scholarship Option Click [${option.title}]`}
                   hasIcon={false}
                 >
