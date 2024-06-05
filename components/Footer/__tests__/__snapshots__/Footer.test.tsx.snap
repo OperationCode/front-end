@@ -2,36 +2,30 @@
 
 exports[`Footer > should render with no props passed 1`] = `
 <footer
-  className="Footer"
+  className="flex justify-center flex-col items-center py-8"
 >
   <div
-    className="test"
+    className="w-full border border-sky-500"
   >
     <div
-      className="footerGrouping"
+      className="flex flex-col items-center pb-6 border border-yellow-300"
     >
-      <div
-        className="logoGrouping"
+      <ForwardRef(LinkComponent)
+        href="/"
       >
-        <ForwardRef(LinkComponent)
-          href="/"
-        >
-          <a>
-            <ForwardRef
-              className=""
-              fill="#252e3e"
-              style={
-                {
-                  "height": 60,
-                  "width": 318,
-                }
-              }
-            />
-          </a>
-        </ForwardRef(LinkComponent)>
-      </div>
+        <ForwardRef
+          className="cursor-pointer"
+          fill="#252e3e"
+          style={
+            {
+              "height": 60,
+              "width": 318,
+            }
+          }
+        />
+      </ForwardRef(LinkComponent)>
       <div
-        className="marginBottom"
+        className="mb-2"
       >
         Connect With Us!
       </div>

@@ -43,22 +43,19 @@ function Footer() {
     );
   };
 
+  //   display: flex;
+  // flex-direction: column;
+  // align-items: center;
+  // padding-bottom: 2rem;
+  // border: 1px red solid;
   return (
     <footer className="flex justify-center flex-col items-center py-8">
       <div className="w-full border border-sky-500">
-        <div className={classNames(styles.footerGrouping, styles.socialGrouping)}>
-          <div className={classNames(styles.logoGrouping)}>
-            <Link href="/" key="Home">
-              <a>
-                <Logo
-                  className={classNames(styles.logoLink, styles.link)}
-                  style={{ width: 318, height: 60 }}
-                  fill="#252e3e"
-                />
-              </a>
-            </Link>
-          </div>
-          <div className={classNames(styles.capitalize, styles.marginBottom)}>Connect With Us!</div>
+        <div className="flex flex-col items-center pb-6 border border-yellow-300">
+          <Link href="/" key="Home">
+            <Logo style={{ width: 318, height: 60 }} fill="#252e3e" className="cursor-pointer" />
+          </Link>
+          <div className="mb-2">Connect With Us!</div>
           <SocialMedia />
         </div>
         <div className={styles.goldSealImg}>

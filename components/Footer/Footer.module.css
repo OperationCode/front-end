@@ -19,16 +19,18 @@
   text-align: center;
 }
 
-.Footer:not(.logoGrouping) a:hover {
-  /* Apply on-hover underline to text-based anchors */
+/* Apply on-hover underline to text-based anchors */
+
+/* .Footer:not(.logoGrouping) a:hover {
   text-decoration: underline;
-}
+} */
 
 .footerGrouping {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-bottom: 2rem;
+  border: 1px red solid;
 }
 
 /* .row {
@@ -41,9 +43,9 @@
   flex-direction: column;
 }
 
-.logoGrouping img {
+/* .logoGrouping img {
   height: 50px;
-}
+} */
 
 /* .linksGrouping {
   flex-direction: row;
@@ -77,9 +79,9 @@
   flex-wrap: nowrap;
 }
 
-.marginBottom {
+/* .marginBottom {
   margin-bottom: 8px;
-}
+} */
 
 .linksRow {
   display: flex;
