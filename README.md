@@ -1,6 +1,4 @@
-![](https://i.imgur.com/mW5LUGV.jpg)
-
-<br />
+![](https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/large-blue-logo.png)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Twitter Follow](https://img.shields.io/twitter/follow/operation_code.svg?style=social&label=Follow&style=social)](https://twitter.com/operation_code)
