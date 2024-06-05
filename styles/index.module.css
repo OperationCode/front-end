@@ -2,6 +2,10 @@
   padding: 0;
 }
 
+.heroText {
+  padding: 0 1rem;
+}
+
 .Home .ctaContainer {
   display: flex;
   width: 100%;
