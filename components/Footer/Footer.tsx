@@ -44,8 +44,8 @@ function Footer() {
   };
 
   return (
-    <footer className={styles.Footer}>
-      <div className={styles.test}>
+    <footer className="flex justify-center flex-col items-center py-8">
+      <div className="w-full border border-sky-500">
         <div className={classNames(styles.footerGrouping, styles.socialGrouping)}>
           <div className={classNames(styles.logoGrouping)}>
             <Link href="/" key="Home">

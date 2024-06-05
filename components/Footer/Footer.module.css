@@ -1,15 +1,10 @@
-.Footer {
+/* .Footer {
   align-items: center;
   display: flex;
   justify-content: center;
   flex-direction: column;
   padding: 2rem 0;
-}
-
-.test {
-  border: 1px red solid;
-  width: 100%;
-}
+} */
 
 .Footer div {
   box-sizing: border-box;
