@@ -5,233 +5,227 @@ exports[`Footer > should render with no props passed 1`] = `
   className="Footer"
 >
   <div
-    className="footerGrouping socialGrouping"
+    className="test"
   >
     <div
-      className="logoGrouping"
-    >
-      <ForwardRef(LinkComponent)
-        href="/"
-      >
-        <a>
-          <ForwardRef
-            className=""
-            fill="#252e3e"
-            style={
-              {
-                "height": 60,
-                "width": 318,
-              }
-            }
-          />
-        </a>
-      </ForwardRef(LinkComponent)>
-    </div>
-    <div
-      className="capitalize marginBottom"
-    >
-      Connect With Us!
-    </div>
-    <SocialMedia />
-  </div>
-  <div
-    className="goldSealImg"
-  >
-    <OutboundLink
-      analyticsEventLabel="Footer GuideStar"
-      hasIcon={false}
-      href="https://www.guidestar.org/profile/shared/52626ac8-5e8b-445a-889e-30bf1ac0b46e"
-    >
-      <MockedNextImage
-        alt="GuideStar Gold Transparency Seal"
-        height={128}
-        src="/static/images/platinum-transparency.png"
-        width={128}
-      />
-    </OutboundLink>
-  </div>
-  <div
-    className="footerWrapper row"
-  >
-    <div
-      className="footerGrouping linksGrouping capitalize"
+      className="footerGrouping"
     >
       <div
-        className="linksRow"
+        className="logoGrouping"
       >
-        <ul
-          className="linksColumn"
+        <ForwardRef(LinkComponent)
+          href="/"
         >
-          <li>
-            <ForwardRef(LinkComponent)
-              href="/about"
-            >
-              <a>
-                About Us
-              </a>
-            </ForwardRef(LinkComponent)>
-          </li>
-          <li>
-            <ForwardRef(LinkComponent)
-              href="/contact"
-            >
-              <a>
-                Contact Us
-              </a>
-            </ForwardRef(LinkComponent)>
-          </li>
-          <li>
-            <ForwardRef(LinkComponent)
-              href="/faq"
-            >
-              <a>
-                FAQ
-              </a>
-            </ForwardRef(LinkComponent)>
-          </li>
-          <li>
-            <ForwardRef(LinkComponent)
-              href="/services"
-            >
-              <a>
-                Services
-              </a>
-            </ForwardRef(LinkComponent)>
-          </li>
-        </ul>
-        <ul
-          className="linksColumn"
+          <a>
+            <ForwardRef
+              className=""
+              fill="#252e3e"
+              style={
+                {
+                  "height": 60,
+                  "width": 318,
+                }
+              }
+            />
+          </a>
+        </ForwardRef(LinkComponent)>
+      </div>
+      <div
+        className="marginBottom"
+      >
+        Connect With Us!
+      </div>
+      <SocialMedia />
+    </div>
+    <div
+      className="goldSealImg"
+    >
+      <OutboundLink
+        analyticsEventLabel="Footer GuideStar"
+        hasIcon={false}
+        href="https://www.guidestar.org/profile/shared/52626ac8-5e8b-445a-889e-30bf1ac0b46e"
+      >
+        <MockedNextImage
+          alt="GuideStar Gold Transparency Seal"
+          height={128}
+          src="/static/images/platinum-transparency.png"
+          width={128}
+        />
+      </OutboundLink>
+    </div>
+    <div
+      className=""
+    >
+      <div
+        className="footerGrouping"
+      >
+        <div
+          className="linksRow"
         >
-          <li>
-            <ForwardRef(LinkComponent)
-              href="/chapters"
-            >
-              <a>
-                Chapters
-              </a>
-            </ForwardRef(LinkComponent)>
-          </li>
-          <li>
-            <ForwardRef(LinkComponent)
-              href="/scholarship"
-            >
-              <a>
-                Scholarship
-              </a>
-            </ForwardRef(LinkComponent)>
-          </li>
-          <li>
-            <ForwardRef(LinkComponent)
-              href="/jobs"
-            >
-              <a>
-                Job Board
-              </a>
-            </ForwardRef(LinkComponent)>
-          </li>
-        </ul>
-        <ul
-          className="linksColumn"
-        >
-          <li>
-            <ForwardRef(LinkComponent)
-              href="/get_involved"
-            >
-              <a>
-                Get Involved
-              </a>
-            </ForwardRef(LinkComponent)>
-          </li>
-          <li>
-            <ForwardRef(LinkComponent)
-              href="/podcast"
-            >
-              <a>
-                Podcast
-              </a>
-            </ForwardRef(LinkComponent)>
-          </li>
-          <li>
-            <ForwardRef(LinkComponent)
-              href="/history"
-            >
-              <a>
-                History
-              </a>
-            </ForwardRef(LinkComponent)>
-          </li>
-          <li>
-            <ForwardRef(LinkComponent)
-              href="/donate"
-            >
-              <a>
-                Donate
-              </a>
-            </ForwardRef(LinkComponent)>
-          </li>
-        </ul>
-        <ul
-          className="linksColumn"
-        >
-          <li>
-            <ForwardRef(LinkComponent)
-              href="/press"
-            >
-              <a>
-                Press
-              </a>
-            </ForwardRef(LinkComponent)>
-          </li>
-          <li>
-            <ForwardRef(LinkComponent)
-              href="/branding"
-            >
-              <a>
-                Branding
-              </a>
-            </ForwardRef(LinkComponent)>
-          </li>
-          <li>
-            <ForwardRef(LinkComponent)
-              href="/team"
-            >
-              <a>
-                Our Team
-              </a>
-            </ForwardRef(LinkComponent)>
-          </li>
-        </ul>
+          <ul>
+            <li>
+              <ForwardRef(LinkComponent)
+                href="/about"
+              >
+                <a>
+                  About Us
+                </a>
+              </ForwardRef(LinkComponent)>
+            </li>
+            <li>
+              <ForwardRef(LinkComponent)
+                href="/contact"
+              >
+                <a>
+                  Contact Us
+                </a>
+              </ForwardRef(LinkComponent)>
+            </li>
+            <li>
+              <ForwardRef(LinkComponent)
+                href="/faq"
+              >
+                <a>
+                  FAQ
+                </a>
+              </ForwardRef(LinkComponent)>
+            </li>
+            <li>
+              <ForwardRef(LinkComponent)
+                href="/services"
+              >
+                <a>
+                  Services
+                </a>
+              </ForwardRef(LinkComponent)>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <ForwardRef(LinkComponent)
+                href="/chapters"
+              >
+                <a>
+                  Chapters
+                </a>
+              </ForwardRef(LinkComponent)>
+            </li>
+            <li>
+              <ForwardRef(LinkComponent)
+                href="/scholarship"
+              >
+                <a>
+                  Scholarship
+                </a>
+              </ForwardRef(LinkComponent)>
+            </li>
+            <li>
+              <ForwardRef(LinkComponent)
+                href="/jobs"
+              >
+                <a>
+                  Job Board
+                </a>
+              </ForwardRef(LinkComponent)>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <ForwardRef(LinkComponent)
+                href="/get_involved"
+              >
+                <a>
+                  Get Involved
+                </a>
+              </ForwardRef(LinkComponent)>
+            </li>
+            <li>
+              <ForwardRef(LinkComponent)
+                href="/podcast"
+              >
+                <a>
+                  Podcast
+                </a>
+              </ForwardRef(LinkComponent)>
+            </li>
+            <li>
+              <ForwardRef(LinkComponent)
+                href="/history"
+              >
+                <a>
+                  History
+                </a>
+              </ForwardRef(LinkComponent)>
+            </li>
+            <li>
+              <ForwardRef(LinkComponent)
+                href="/donate"
+              >
+                <a>
+                  Donate
+                </a>
+              </ForwardRef(LinkComponent)>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <ForwardRef(LinkComponent)
+                href="/press"
+              >
+                <a>
+                  Press
+                </a>
+              </ForwardRef(LinkComponent)>
+            </li>
+            <li>
+              <ForwardRef(LinkComponent)
+                href="/branding"
+              >
+                <a>
+                  Branding
+                </a>
+              </ForwardRef(LinkComponent)>
+            </li>
+            <li>
+              <ForwardRef(LinkComponent)
+                href="/team"
+              >
+                <a>
+                  Our Team
+                </a>
+              </ForwardRef(LinkComponent)>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-  <div
-    className="row legalGrouping"
-  >
     <div
-      className="row copyright"
+      className="legalGrouping"
     >
-      © 2014-
-      2023
-       Operation Code™ registered 501(c)3
-    </div>
-    <div
-      className="row legalLinks"
-    >
-      <ForwardRef(LinkComponent)
-        href="/terms"
+      <div
+        className=""
       >
-        <a
-          className="lineHeightFix"
+        © 2014-
+        2023
+         Operation Code™ registered 501(c)3
+      </div>
+      <div
+        className="legalLinks"
+      >
+        <ForwardRef(LinkComponent)
+          href="/terms"
         >
-          Terms of Use
-        </a>
-      </ForwardRef(LinkComponent)>
-      <OutboundLink
-        analyticsEventLabel="Privacy footer link"
-        href="https://www.iubenda.com/privacy-policy/8174861"
-      >
-        Privacy
-      </OutboundLink>
+          <a>
+            Terms of Use
+          </a>
+        </ForwardRef(LinkComponent)>
+        <OutboundLink
+          analyticsEventLabel="Privacy footer link"
+          href="https://www.iubenda.com/privacy-policy/8174861"
+        >
+          Privacy
+        </OutboundLink>
+      </div>
     </div>
   </div>
 </footer>
