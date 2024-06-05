@@ -29,7 +29,7 @@ function FlatCard({ button: Button, children, className, header, image }) {
   return (
     <article
       className={classNames('box-border my-6 mx-4 relative max-w-[400px]', className, {
-        'pt-14 max-[576px]:pt-[75px]': hasImage,
+        'pt-20 sm:pr-14': hasImage,
       })}
     >
       <div
