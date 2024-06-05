@@ -132,3 +132,62 @@ export const footerItems = {
     },
   ],
 };
+
+export const footerStuff = [
+  {
+    name: 'About Us',
+    href: '/about',
+  },
+  {
+    name: 'Contact Us',
+    href: '/contact',
+  },
+  {
+    name: 'FAQ',
+    href: '/faq',
+  },
+  {
+    name: 'Services',
+    href: '/services',
+  },
+  {
+    name: 'Chapters',
+    href: '/chapters',
+  },
+  {
+    name: 'Scholarship',
+    href: '/scholarship',
+  },
+  {
+    name: 'Job Board',
+    href: '/jobs',
+  },
+  {
+    name: 'Get Involved',
+    href: '/get_involved',
+  },
+  {
+    name: 'Podcast',
+    href: '/podcast',
+  },
+  {
+    name: 'History',
+    href: '/history',
+  },
+  {
+    href: '/donate',
+    name: 'Donate',
+  },
+  {
+    name: 'Press',
+    href: '/press',
+  },
+  {
+    name: 'Branding',
+    href: '/branding',
+  },
+  {
+    name: 'Our Team',
+    href: '/team',
+  },
+];

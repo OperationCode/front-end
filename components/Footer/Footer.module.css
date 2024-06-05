@@ -14,10 +14,10 @@
   color: var(--white);
 }
 
-.goldSealImg {
+/* .goldSealImg {
   margin-bottom: 1rem;
   text-align: center;
-}
+} */
 
 /* Apply on-hover underline to text-based anchors */
 
@@ -30,7 +30,8 @@
   flex-direction: column;
   align-items: center;
   padding-bottom: 2rem;
-  border: 1px red solid;
+
+  /* border: 1px red solid; */
 }
 
 /* .row {

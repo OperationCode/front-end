@@ -2,7 +2,7 @@ import Link from 'next/link';
 import classNames from 'classnames';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 import SocialMedia from 'components/SocialMedia/SocialMedia';
-import { footerItems } from 'common/constants/navigation';
+import { footerItems, footerStuff } from 'common/constants/navigation';
 import Image from 'next/image';
 import Logo from 'public/static/images/logo.svg';
 import styles from './Footer.module.css';
@@ -43,22 +43,17 @@ function Footer() {
     );
   };
 
-  //   display: flex;
-  // flex-direction: column;
-  // align-items: center;
-  // padding-bottom: 2rem;
-  // border: 1px red solid;
   return (
-    <footer className="flex justify-center flex-col items-center py-8">
-      <div className="w-full border border-sky-500">
-        <div className="flex flex-col items-center pb-6 border border-yellow-300">
+    <footer className="py-8">
+      <div className="border border-sky-500">
+        <div className="flex flex-col items-center pb-6">
           <Link href="/" key="Home">
             <Logo style={{ width: 318, height: 60 }} fill="#252e3e" className="cursor-pointer" />
           </Link>
-          <div className="mb-2">Connect With Us!</div>
+          <h6 className="mb-2">Connect With Us!</h6>
           <SocialMedia />
         </div>
-        <div className={styles.goldSealImg}>
+        <div className="text-center mb-4">
           <OutboundLink
             href="https://www.guidestar.org/profile/shared/52626ac8-5e8b-445a-889e-30bf1ac0b46e"
             analyticsEventLabel="Footer GuideStar"
@@ -72,27 +67,13 @@ function Footer() {
             />
           </OutboundLink>
         </div>
-        <div className={classNames(styles.footerWrapper, styles.row)}>
-          <div
-            className={classNames(styles.footerGrouping, styles.linksGrouping, styles.capitalize)}
-          >
-            <div className={styles.linksRow}>
-              <ul className={styles.linksColumn}>
-                {footerItems.column1.map(link => renderLink(link))}
-              </ul>
-              <ul className={styles.linksColumn}>
-                {footerItems.column2.map(link => renderLink(link))}
-              </ul>
-              <ul className={styles.linksColumn}>
-                {footerItems.column3.map(link => renderLink(link))}
-              </ul>
-              <ul className={styles.linksColumn}>
-                {footerItems.column4.map(link => renderLink(link))}
-              </ul>
-            </div>
-          </div>
+        <div className="max-w-[1000px] mx-auto">
+          <ul>
+            <li className="text-center grid sm:grid-cols-2 md:grid-cols-4 gap-2">
+              {footerStuff.map(link => renderLink(link))}
+            </li>
+          </ul>
         </div>
-
         <div className={classNames(styles.row, styles.legalGrouping)}>
           <div className={classNames(styles.row, styles.copyright)}>
             &#169; 2014-{currentYear} Operation Code™ registered 501(c)3
