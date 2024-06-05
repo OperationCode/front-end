@@ -21,18 +21,18 @@ function Home() {
         isFullViewportHeight
         title="Build The Future"
       >
-        <>
+        <div className={styles.heroText}>
           <p>
             We&apos;re the largest community of military veterans, service members, and spouses
             committed to becoming software developers with the help of mentors, scholarships, and
             our tech partners.
           </p>
+        </div>
 
-          <div className={styles.ctaContainer}>
-            <LinkButton href="/about">Learn More</LinkButton>
-            <LinkButton href="/join">Join Us</LinkButton>
-          </div>
-        </>
+        <div className={styles.ctaContainer}>
+          <LinkButton href="/about">Learn More</LinkButton>
+          <LinkButton href="/join">Join Us</LinkButton>
+        </div>
       </HeroBanner>
 
       <Content
