@@ -67,6 +67,7 @@
     "next-cookies": "^2.0.3",
     "next-sitemap": "^4.2.3",
     "nuka-carousel": "^5.2.0",
+    "nyc": "^15.1.0",
     "object-hash": "^3.0.0",
     "path": "^0.12.7",
     "prop-types": "^15.8.1",
@@ -82,6 +83,8 @@
     "react-select": "^4.0.2",
     "react-youtube": "9.0.3",
     "tailwind-merge": "^2.1.0",
+    "ts-jest": "^29.1.4",
+    "ts-node": "^10.9.2",
     "yup": "^0.32.11"
   },
   "devDependencies": {
