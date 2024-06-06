@@ -49,7 +49,7 @@ exports[`Footer > should render with no props passed 1`] = `
       className="max-w-[1000px] mx-auto pb-8"
     >
       <ul
-        className="text-center grid grid-cols-2 md:grid-cols-4 gap-2"
+        className="px-10 md:px-0 text-center grid grid-cols-2 md:grid-cols-4 gap-2"
       >
         <li>
           <ForwardRef(LinkComponent)
