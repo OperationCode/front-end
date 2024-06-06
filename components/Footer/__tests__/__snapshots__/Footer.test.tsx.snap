@@ -4,9 +4,7 @@ exports[`Footer > should render with no props passed 1`] = `
 <footer
   className="py-8"
 >
-  <div
-    className="border border-sky-500"
-  >
+  <div>
     <div
       className="flex flex-col items-center pb-6"
     >
@@ -48,11 +46,11 @@ exports[`Footer > should render with no props passed 1`] = `
       </OutboundLink>
     </div>
     <div
-      className="max-w-[1000px] mx-auto"
+      className="max-w-[1000px] mx-auto pb-8"
     >
       <ul>
         <li
-          className="text-center grid sm:grid-cols-2 md:grid-cols-4 gap-2"
+          className="text-center grid grid-cols-2 md:grid-cols-4 gap-2"
         >
           <li>
             <ForwardRef(LinkComponent)
@@ -184,18 +182,21 @@ exports[`Footer > should render with no props passed 1`] = `
       </ul>
     </div>
     <div
-      className="legalGrouping"
+      className="text-xs text-center"
     >
       <div
-        className=""
+        className="mb-6"
       >
         © 2014-
         2023
-         Operation Code™ registered 501(c)3
+         Operation Code™
+        <span
+          className="pl-8"
+        >
+          registered 501(c)3
+        </span>
       </div>
-      <div
-        className="legalLinks"
-      >
+      <div>
         <ForwardRef(LinkComponent)
           href="/terms"
         >

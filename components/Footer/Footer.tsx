@@ -45,7 +45,7 @@ function Footer() {
 
   return (
     <footer className="py-8">
-      <div className="border border-sky-500">
+      <div>
         <div className="flex flex-col items-center pb-6">
           <Link href="/" key="Home">
             <Logo style={{ width: 318, height: 60 }} fill="#252e3e" className="cursor-pointer" />
@@ -67,18 +67,19 @@ function Footer() {
             />
           </OutboundLink>
         </div>
-        <div className="max-w-[1000px] mx-auto">
+        <div className="max-w-[1000px] mx-auto pb-8">
           <ul>
-            <li className="text-center grid sm:grid-cols-2 md:grid-cols-4 gap-2">
+            <li className="text-center grid grid-cols-2 md:grid-cols-4 gap-2">
               {footerStuff.map(link => renderLink(link))}
             </li>
           </ul>
         </div>
-        <div className={classNames(styles.row, styles.legalGrouping)}>
-          <div className={classNames(styles.row, styles.copyright)}>
-            &#169; 2014-{currentYear} Operation Code™ registered 501(c)3
+        <div className="text-xs text-center">
+          <div className="mb-6">
+            &#169; 2014-{currentYear} Operation Code™
+            <span className="pl-8">registered 501(c)3</span>
           </div>
-          <div className={classNames(styles.row, styles.legalLinks)}>
+          <div>
             {footerItems.legal.map(link =>
               // / logic of renderLink duplicated here
               link.analyticsEventLabel ? (
