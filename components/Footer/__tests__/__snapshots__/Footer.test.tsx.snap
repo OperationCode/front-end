@@ -182,7 +182,7 @@ exports[`Footer > should render with no props passed 1`] = `
       </ul>
     </div>
     <div
-      className="text-xs text-center"
+      className="text-sm text-center"
     >
       <div
         className="mb-6"
@@ -191,7 +191,7 @@ exports[`Footer > should render with no props passed 1`] = `
         2023
          Operation Code™
         <span
-          className="pl-8"
+          className="pl-4"
         >
           registered 501(c)3
         </span>

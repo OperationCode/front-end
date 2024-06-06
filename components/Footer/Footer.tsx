@@ -72,10 +72,10 @@ function Footer() {
             </li>
           </ul>
         </div>
-        <div className="text-xs text-center">
+        <div className="text-sm text-center">
           <div className="mb-6">
             &#169; 2014-{currentYear} Operation Code™
-            <span className="pl-8">registered 501(c)3</span>
+            <span className="pl-4">registered 501(c)3</span>
           </div>
           <div className="flex mx-auto justify-between w-60">
             {legal.map(link =>
