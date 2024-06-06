@@ -1,11 +1,9 @@
 import Link from 'next/link';
-import classNames from 'classnames';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 import SocialMedia from 'components/SocialMedia/SocialMedia';
-import { footerItems, footerStuff } from 'common/constants/navigation';
+import { footerItems, legal } from 'common/constants/navigation';
 import Image from 'next/image';
 import Logo from 'public/static/images/logo.svg';
-import styles from './Footer.module.css';
 
 export type FooterPropsType = {
   /**
@@ -70,7 +68,7 @@ function Footer() {
         <div className="max-w-[1000px] mx-auto pb-8">
           <ul>
             <li className="text-center grid grid-cols-2 md:grid-cols-4 gap-2">
-              {footerStuff.map(link => renderLink(link))}
+              {footerItems.map(link => renderLink(link))}
             </li>
           </ul>
         </div>
@@ -79,8 +77,8 @@ function Footer() {
             &#169; 2014-{currentYear} Operation Code™
             <span className="pl-8">registered 501(c)3</span>
           </div>
-          <div>
-            {footerItems.legal.map(link =>
+          <div className="flex mx-auto justify-between w-60">
+            {legal.map(link =>
               // / logic of renderLink duplicated here
               link.analyticsEventLabel ? (
                 <OutboundLink
@@ -92,7 +90,7 @@ function Footer() {
                 </OutboundLink>
               ) : (
                 <Link href={link.href} key={link.href}>
-                  <a className={styles.lineHeightFix}>{link.name}</a>
+                  {link.name}
                 </Link>
               ),
             )}

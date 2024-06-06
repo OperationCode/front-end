@@ -80,6 +80,11 @@ const projectRebuild = {
   href: '/project_rebuild',
 };
 
+const press = {
+  name: 'Press',
+  href: '/press',
+};
+
 const servicesGroup = {
   ...services,
   sublinks: [podcast, scholarship, projectRebuild],
@@ -106,88 +111,32 @@ export const mobileNavItems = flattenDepth(
   2,
 );
 
-// MARK: Footer items
-export const footerItems = {
-  column1: [about, contact, faq, services],
-  column2: [chapters, scholarship, jobs],
-  column3: [getInvolved, podcast, history, donate],
-  column4: [
-    {
-      href: '/press',
-      name: 'Press',
-    },
-    branding,
-    team,
-  ],
-  legal: [
-    {
-      href: '/terms',
-      name: 'Terms of Use',
-    },
-    {
-      // NOTE: If you change this route, please update the redirect in `vercel.json` as well
-      href: 'https://www.iubenda.com/privacy-policy/8174861',
-      name: 'Privacy',
-      analyticsEventLabel: 'Privacy',
-    },
-  ],
-};
+export const footerItems = [
+  about,
+  chapters,
+  jobs,
+  getInvolved,
+  contact,
+  scholarship,
+  podcast,
+  history,
+  faq,
+  donate,
+  press,
+  branding,
+  services,
+  team,
+];
 
-export const footerStuff = [
+export const legal = [
   {
-    name: 'About Us',
-    href: '/about',
+    name: 'Terms of Use',
+    href: '/terms',
   },
   {
-    name: 'Contact Us',
-    href: '/contact',
-  },
-  {
-    name: 'FAQ',
-    href: '/faq',
-  },
-  {
-    name: 'Services',
-    href: '/services',
-  },
-  {
-    name: 'Chapters',
-    href: '/chapters',
-  },
-  {
-    name: 'Scholarship',
-    href: '/scholarship',
-  },
-  {
-    name: 'Job Board',
-    href: '/jobs',
-  },
-  {
-    name: 'Get Involved',
-    href: '/get_involved',
-  },
-  {
-    name: 'Podcast',
-    href: '/podcast',
-  },
-  {
-    name: 'History',
-    href: '/history',
-  },
-  {
-    href: '/donate',
-    name: 'Donate',
-  },
-  {
-    name: 'Press',
-    href: '/press',
-  },
-  {
-    name: 'Branding',
-    href: '/branding',
-  },
-  {
-    name: 'Our Team',
-    href: '/team',
+    // NOTE: If you change this route, please update the redirect in `vercel.json` as well
+    name: 'Privacy',
+    href: 'https://www.iubenda.com/privacy-policy/8174861',
+    analyticsEventLabel: 'Privacy',
   },
 ];

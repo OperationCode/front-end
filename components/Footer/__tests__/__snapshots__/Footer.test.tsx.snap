@@ -63,46 +63,10 @@ exports[`Footer > should render with no props passed 1`] = `
           </li>
           <li>
             <ForwardRef(LinkComponent)
-              href="/contact"
-            >
-              <a>
-                Contact Us
-              </a>
-            </ForwardRef(LinkComponent)>
-          </li>
-          <li>
-            <ForwardRef(LinkComponent)
-              href="/faq"
-            >
-              <a>
-                FAQ
-              </a>
-            </ForwardRef(LinkComponent)>
-          </li>
-          <li>
-            <ForwardRef(LinkComponent)
-              href="/services"
-            >
-              <a>
-                Services
-              </a>
-            </ForwardRef(LinkComponent)>
-          </li>
-          <li>
-            <ForwardRef(LinkComponent)
               href="/chapters"
             >
               <a>
                 Chapters
-              </a>
-            </ForwardRef(LinkComponent)>
-          </li>
-          <li>
-            <ForwardRef(LinkComponent)
-              href="/scholarship"
-            >
-              <a>
-                Scholarship
               </a>
             </ForwardRef(LinkComponent)>
           </li>
@@ -126,6 +90,24 @@ exports[`Footer > should render with no props passed 1`] = `
           </li>
           <li>
             <ForwardRef(LinkComponent)
+              href="/contact"
+            >
+              <a>
+                Contact Us
+              </a>
+            </ForwardRef(LinkComponent)>
+          </li>
+          <li>
+            <ForwardRef(LinkComponent)
+              href="/scholarship"
+            >
+              <a>
+                Scholarship
+              </a>
+            </ForwardRef(LinkComponent)>
+          </li>
+          <li>
+            <ForwardRef(LinkComponent)
               href="/podcast"
             >
               <a>
@@ -139,6 +121,15 @@ exports[`Footer > should render with no props passed 1`] = `
             >
               <a>
                 History
+              </a>
+            </ForwardRef(LinkComponent)>
+          </li>
+          <li>
+            <ForwardRef(LinkComponent)
+              href="/faq"
+            >
+              <a>
+                FAQ
               </a>
             </ForwardRef(LinkComponent)>
           </li>
@@ -171,6 +162,15 @@ exports[`Footer > should render with no props passed 1`] = `
           </li>
           <li>
             <ForwardRef(LinkComponent)
+              href="/services"
+            >
+              <a>
+                Services
+              </a>
+            </ForwardRef(LinkComponent)>
+          </li>
+          <li>
+            <ForwardRef(LinkComponent)
               href="/team"
             >
               <a>
@@ -196,13 +196,13 @@ exports[`Footer > should render with no props passed 1`] = `
           registered 501(c)3
         </span>
       </div>
-      <div>
+      <div
+        className="flex mx-auto justify-between w-60"
+      >
         <ForwardRef(LinkComponent)
           href="/terms"
         >
-          <a>
-            Terms of Use
-          </a>
+          Terms of Use
         </ForwardRef(LinkComponent)>
         <OutboundLink
           analyticsEventLabel="Privacy footer link"
