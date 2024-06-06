@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 import SocialMedia from 'components/SocialMedia/SocialMedia';
-import { footerItems, legal } from 'common/constants/navigation';
+import { footerItems } from 'common/constants/navigation';
 import Image from 'next/image';
 import Logo from 'public/static/images/logo.svg';
 
@@ -22,6 +22,7 @@ export type FooterPropsType = {
 
 function Footer() {
   const currentYear = new Date().getFullYear();
+  const { items, legal } = footerItems;
 
   // eslint-disable-next-line react/prop-types
   const renderLink = ({ href, name, analyticsEventLabel }: FooterPropsType) => {
@@ -33,9 +34,7 @@ function Footer() {
           </OutboundLink>
         ) : (
           // TODO: Attack prefetch to scroll listener
-          <Link href={href}>
-            <a>{name}</a>
-          </Link>
+          <Link href={href}>{name}</Link>
         )}
       </li>
     );
@@ -68,7 +67,7 @@ function Footer() {
         <div className="max-w-[1000px] mx-auto pb-8">
           <ul>
             <li className="text-center grid grid-cols-2 md:grid-cols-4 gap-2">
-              {footerItems.map(link => renderLink(link))}
+              {items.map(link => renderLink(link))}
             </li>
           </ul>
         </div>

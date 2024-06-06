@@ -56,126 +56,98 @@ exports[`Footer > should render with no props passed 1`] = `
             <ForwardRef(LinkComponent)
               href="/about"
             >
-              <a>
-                About Us
-              </a>
+              About Us
             </ForwardRef(LinkComponent)>
           </li>
           <li>
             <ForwardRef(LinkComponent)
               href="/chapters"
             >
-              <a>
-                Chapters
-              </a>
+              Chapters
             </ForwardRef(LinkComponent)>
           </li>
           <li>
             <ForwardRef(LinkComponent)
               href="/jobs"
             >
-              <a>
-                Job Board
-              </a>
+              Job Board
             </ForwardRef(LinkComponent)>
           </li>
           <li>
             <ForwardRef(LinkComponent)
               href="/get_involved"
             >
-              <a>
-                Get Involved
-              </a>
+              Get Involved
             </ForwardRef(LinkComponent)>
           </li>
           <li>
             <ForwardRef(LinkComponent)
               href="/contact"
             >
-              <a>
-                Contact Us
-              </a>
+              Contact Us
             </ForwardRef(LinkComponent)>
           </li>
           <li>
             <ForwardRef(LinkComponent)
               href="/scholarship"
             >
-              <a>
-                Scholarship
-              </a>
+              Scholarship
             </ForwardRef(LinkComponent)>
           </li>
           <li>
             <ForwardRef(LinkComponent)
               href="/podcast"
             >
-              <a>
-                Podcast
-              </a>
+              Podcast
             </ForwardRef(LinkComponent)>
           </li>
           <li>
             <ForwardRef(LinkComponent)
               href="/history"
             >
-              <a>
-                History
-              </a>
+              History
             </ForwardRef(LinkComponent)>
           </li>
           <li>
             <ForwardRef(LinkComponent)
               href="/faq"
             >
-              <a>
-                FAQ
-              </a>
+              FAQ
             </ForwardRef(LinkComponent)>
           </li>
           <li>
             <ForwardRef(LinkComponent)
               href="/donate"
             >
-              <a>
-                Donate
-              </a>
+              Donate
             </ForwardRef(LinkComponent)>
           </li>
           <li>
             <ForwardRef(LinkComponent)
               href="/press"
             >
-              <a>
-                Press
-              </a>
+              Press
             </ForwardRef(LinkComponent)>
           </li>
           <li>
             <ForwardRef(LinkComponent)
               href="/branding"
             >
-              <a>
-                Branding
-              </a>
+              Branding
             </ForwardRef(LinkComponent)>
           </li>
           <li>
             <ForwardRef(LinkComponent)
               href="/services"
             >
-              <a>
-                Services
-              </a>
+              Services
             </ForwardRef(LinkComponent)>
           </li>
           <li>
             <ForwardRef(LinkComponent)
               href="/team"
             >
-              <a>
-                Our Team
-              </a>
+              Our Team
             </ForwardRef(LinkComponent)>
           </li>
         </li>

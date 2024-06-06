@@ -111,32 +111,33 @@ export const mobileNavItems = flattenDepth(
   2,
 );
 
-export const footerItems = [
-  about,
-  chapters,
-  jobs,
-  getInvolved,
-  contact,
-  scholarship,
-  podcast,
-  history,
-  faq,
-  donate,
-  press,
-  branding,
-  services,
-  team,
-];
-
-export const legal = [
-  {
-    name: 'Terms of Use',
-    href: '/terms',
-  },
-  {
-    // NOTE: If you change this route, please update the redirect in `vercel.json` as well
-    name: 'Privacy',
-    href: 'https://www.iubenda.com/privacy-policy/8174861',
-    analyticsEventLabel: 'Privacy',
-  },
-];
+export const footerItems = {
+  items: [
+    about,
+    chapters,
+    jobs,
+    getInvolved,
+    contact,
+    scholarship,
+    podcast,
+    history,
+    faq,
+    donate,
+    press,
+    branding,
+    services,
+    team,
+  ],
+  legal: [
+    {
+      name: 'Terms of Use',
+      href: '/terms',
+    },
+    {
+      // NOTE: If you change this route, please update the redirect in `vercel.json` as well
+      name: 'Privacy',
+      href: 'https://www.iubenda.com/privacy-policy/8174861',
+      analyticsEventLabel: 'Privacy',
+    },
+  ],
+};
