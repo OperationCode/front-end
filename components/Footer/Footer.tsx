@@ -65,10 +65,8 @@ function Footer() {
           </OutboundLink>
         </div>
         <div className="max-w-[1000px] mx-auto pb-8">
-          <ul>
-            <li className="text-center grid grid-cols-2 md:grid-cols-4 gap-2">
-              {items.map(link => renderLink(link))}
-            </li>
+          <ul className="text-center grid grid-cols-2 md:grid-cols-4 gap-2">
+            {items.map(link => renderLink(link))}
           </ul>
         </div>
         <div className="text-sm text-center">
