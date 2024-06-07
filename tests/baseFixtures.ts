@@ -1,14 +1,10 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import * as crypto from 'crypto';
+
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { test as baseTest } from '@playwright/test';
 
-const istanbulCLIOutput = path.join(process.cwd(), '.nyc_output');
-
-export function generateUUID(): string {
-  return crypto.randomBytes(16).toString('hex');
-}
+const istanbulCLIOutput = path.join(process.cwd(), 'coverage');
 
 export const test = baseTest.extend({
   context: async ({ context }, use) => {
@@ -21,10 +17,7 @@ export const test = baseTest.extend({
     await fs.promises.mkdir(istanbulCLIOutput, { recursive: true });
     await context.exposeFunction('collectIstanbulCoverage', (coverageJSON: string) => {
       if (coverageJSON)
-        fs.writeFileSync(
-          path.join(istanbulCLIOutput, `playwright_coverage_${generateUUID()}.json`),
-          coverageJSON,
-        );
+        fs.writeFileSync(path.join(istanbulCLIOutput, `playwright_coverage.json`), coverageJSON);
     });
     await use(context);
     // eslint-disable-next-line no-restricted-syntax

@@ -29,7 +29,10 @@
     "test:changes:watch": "yarn test:changes --watch",
     "test:watch": "yarn test --watch",
     "test:update-snaps": "yarn test -u",
-    "test:ui": "vitest --ui"
+    "test:ui": "vitest --ui",
+    "test-e2e": "playwright test",
+    "create-report": "nyc report --reporter html --reporter text --reporter json -t coverage --report-dir coverage/summary",
+    "coverage": "yarn test && yarn test-e2e && yarn create-report"
   },
   "nyc": {
     "extends": "./nyc.config.js",
