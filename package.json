@@ -32,7 +32,8 @@
     "test:ui": "vitest --ui",
     "test-e2e": "playwright test",
     "create-report": "nyc report --reporter html --reporter text --reporter json -t coverage --report-dir coverage/summary",
-    "coverage": "yarn test && yarn test-e2e && yarn create-report"
+    "coverage": "yarn test-e2e && yarn create-report",
+    "show-report": "yarn playwright show-report"
   },
   "nyc": {
     "extends": "./nyc.config.js",
