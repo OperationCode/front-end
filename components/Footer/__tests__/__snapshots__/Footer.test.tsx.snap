@@ -2,7 +2,7 @@
 
 exports[`Footer > should render with no props passed 1`] = `
 <footer
-  className="py-8"
+  className="pt-12 pb-40 md:py-8"
 >
   <div>
     <div
@@ -46,10 +46,10 @@ exports[`Footer > should render with no props passed 1`] = `
       </OutboundLink>
     </div>
     <div
-      className="max-w-[1000px] mx-auto pb-8"
+      className="max-w-[1000px] mx-auto pb-10"
     >
       <ul
-        className="px-10 md:px-0 text-center grid grid-cols-2 md:grid-cols-4 gap-2"
+        className="text-xl lg:text-base px-10 md:px-0 text-center grid grid-cols-2 md:grid-cols-4 gap-7 md:gap-3 pt-3"
       >
         <li>
           <ForwardRef(LinkComponent)
@@ -152,7 +152,7 @@ exports[`Footer > should render with no props passed 1`] = `
       </ul>
     </div>
     <div
-      className="text-sm text-center"
+      className="text-sm text-center pb-20 pt-4 md:pb-8"
     >
       <div
         className="mb-6"

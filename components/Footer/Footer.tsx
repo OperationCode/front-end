@@ -41,7 +41,7 @@ function Footer() {
   };
 
   return (
-    <footer className="py-8">
+    <footer className="pt-12 pb-40 md:py-8">
       <div>
         <div className="flex flex-col items-center pb-6">
           <Link href="/" key="Home">
@@ -64,12 +64,12 @@ function Footer() {
             />
           </OutboundLink>
         </div>
-        <div className="max-w-[1000px] mx-auto pb-8">
-          <ul className="px-10 md:px-0 text-center grid grid-cols-2 md:grid-cols-4 gap-2">
+        <div className="max-w-[1000px] mx-auto pb-10">
+          <ul className="text-xl lg:text-base px-10 md:px-0 text-center grid grid-cols-2 md:grid-cols-4 gap-7 md:gap-3 pt-3">
             {items.map(link => renderLink(link))}
           </ul>
         </div>
-        <div className="text-sm text-center">
+        <div className="text-sm text-center pb-20 pt-4 md:pb-8">
           <div className="mb-6">
             &#169; 2014-{currentYear} Operation Code™
             <span className="pl-4">registered 501(c)3</span>
