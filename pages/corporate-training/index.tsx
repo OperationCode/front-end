@@ -70,6 +70,14 @@ const CorporateTraining = () => {
           </p>
         </div>
       </div>
+      <div className="text-white w-full bg-themeSecondary text-center h-[300px]">
+        <h5>Vets come from low income means, are uneducated or joined out of desperation</h5>
+        <p className="max-w-[75%]">
+          Technological, tactical, and strategic planning focuses on raising the bar for recruits.
+          The truth is the majority of new recruits come from median family income & cognitive
+          skills, equal to or greater than civilians (Journal of Strategic Studies
+        </p>
+      </div>
       <div className="flex w-full bg-white">
         <div className="relative w-3/6 h-[585px]">
           <Image
