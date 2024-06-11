@@ -2,236 +2,185 @@
 
 exports[`Footer > should render with no props passed 1`] = `
 <footer
-  className="Footer"
+  className="pt-12 pb-40 md:py-8"
 >
-  <div
-    className="footerGrouping socialGrouping"
-  >
+  <div>
     <div
-      className="logoGrouping"
+      className="flex flex-col items-center pb-6"
     >
       <ForwardRef(LinkComponent)
         href="/"
       >
-        <a>
-          <ForwardRef
-            className=""
-            fill="#252e3e"
-            style={
-              {
-                "height": 60,
-                "width": 318,
-              }
+        <ForwardRef
+          className="cursor-pointer"
+          fill="#252e3e"
+          style={
+            {
+              "height": 60,
+              "width": 318,
             }
-          />
-        </a>
+          }
+        />
       </ForwardRef(LinkComponent)>
+      <h6
+        className="mb-2"
+      >
+        Connect With Us!
+      </h6>
+      <SocialMedia />
     </div>
     <div
-      className="capitalize marginBottom"
+      className="text-center mb-4"
     >
-      Connect With Us!
+      <OutboundLink
+        analyticsEventLabel="Footer GuideStar"
+        hasIcon={false}
+        href="https://www.guidestar.org/profile/shared/52626ac8-5e8b-445a-889e-30bf1ac0b46e"
+      >
+        <MockedNextImage
+          alt="GuideStar Gold Transparency Seal"
+          height={128}
+          src="/static/images/platinum-transparency.png"
+          width={128}
+        />
+      </OutboundLink>
     </div>
-    <SocialMedia />
-  </div>
-  <div
-    className="goldSealImg"
-  >
-    <OutboundLink
-      analyticsEventLabel="Footer GuideStar"
-      hasIcon={false}
-      href="https://www.guidestar.org/profile/shared/52626ac8-5e8b-445a-889e-30bf1ac0b46e"
-    >
-      <MockedNextImage
-        alt="GuideStar Gold Transparency Seal"
-        height={128}
-        src="/static/images/platinum-transparency.png"
-        width={128}
-      />
-    </OutboundLink>
-  </div>
-  <div
-    className="footerWrapper row"
-  >
     <div
-      className="footerGrouping linksGrouping capitalize"
+      className="max-w-[1000px] mx-auto pb-10"
+    >
+      <ul
+        className="text-xl lg:text-base px-10 md:px-0 text-center grid grid-cols-2 md:grid-cols-4 gap-7 md:gap-3 pt-3"
+      >
+        <li>
+          <ForwardRef(LinkComponent)
+            href="/about"
+          >
+            About Us
+          </ForwardRef(LinkComponent)>
+        </li>
+        <li>
+          <ForwardRef(LinkComponent)
+            href="/chapters"
+          >
+            Chapters
+          </ForwardRef(LinkComponent)>
+        </li>
+        <li>
+          <ForwardRef(LinkComponent)
+            href="/jobs"
+          >
+            Job Board
+          </ForwardRef(LinkComponent)>
+        </li>
+        <li>
+          <ForwardRef(LinkComponent)
+            href="/get_involved"
+          >
+            Get Involved
+          </ForwardRef(LinkComponent)>
+        </li>
+        <li>
+          <ForwardRef(LinkComponent)
+            href="/contact"
+          >
+            Contact Us
+          </ForwardRef(LinkComponent)>
+        </li>
+        <li>
+          <ForwardRef(LinkComponent)
+            href="/scholarship"
+          >
+            Scholarship
+          </ForwardRef(LinkComponent)>
+        </li>
+        <li>
+          <ForwardRef(LinkComponent)
+            href="/podcast"
+          >
+            Podcast
+          </ForwardRef(LinkComponent)>
+        </li>
+        <li>
+          <ForwardRef(LinkComponent)
+            href="/history"
+          >
+            History
+          </ForwardRef(LinkComponent)>
+        </li>
+        <li>
+          <ForwardRef(LinkComponent)
+            href="/faq"
+          >
+            FAQ
+          </ForwardRef(LinkComponent)>
+        </li>
+        <li>
+          <ForwardRef(LinkComponent)
+            href="/donate"
+          >
+            Donate
+          </ForwardRef(LinkComponent)>
+        </li>
+        <li>
+          <ForwardRef(LinkComponent)
+            href="/press"
+          >
+            Press
+          </ForwardRef(LinkComponent)>
+        </li>
+        <li>
+          <ForwardRef(LinkComponent)
+            href="/branding"
+          >
+            Branding
+          </ForwardRef(LinkComponent)>
+        </li>
+        <li>
+          <ForwardRef(LinkComponent)
+            href="/services"
+          >
+            Services
+          </ForwardRef(LinkComponent)>
+        </li>
+        <li>
+          <ForwardRef(LinkComponent)
+            href="/team"
+          >
+            Our Team
+          </ForwardRef(LinkComponent)>
+        </li>
+      </ul>
+    </div>
+    <div
+      className="text-sm text-center pb-20 pt-4 md:pb-8"
     >
       <div
-        className="linksRow"
+        className="mb-6"
       >
-        <ul
-          className="linksColumn"
+        © 2014-
+        2023
+         Operation Code™
+        <span
+          className="pl-4"
         >
-          <li>
-            <ForwardRef(LinkComponent)
-              href="/about"
-            >
-              <a>
-                About Us
-              </a>
-            </ForwardRef(LinkComponent)>
-          </li>
-          <li>
-            <ForwardRef(LinkComponent)
-              href="/contact"
-            >
-              <a>
-                Contact Us
-              </a>
-            </ForwardRef(LinkComponent)>
-          </li>
-          <li>
-            <ForwardRef(LinkComponent)
-              href="/faq"
-            >
-              <a>
-                FAQ
-              </a>
-            </ForwardRef(LinkComponent)>
-          </li>
-          <li>
-            <ForwardRef(LinkComponent)
-              href="/services"
-            >
-              <a>
-                Services
-              </a>
-            </ForwardRef(LinkComponent)>
-          </li>
-        </ul>
-        <ul
-          className="linksColumn"
-        >
-          <li>
-            <ForwardRef(LinkComponent)
-              href="/chapters"
-            >
-              <a>
-                Chapters
-              </a>
-            </ForwardRef(LinkComponent)>
-          </li>
-          <li>
-            <ForwardRef(LinkComponent)
-              href="/scholarship"
-            >
-              <a>
-                Scholarship
-              </a>
-            </ForwardRef(LinkComponent)>
-          </li>
-          <li>
-            <ForwardRef(LinkComponent)
-              href="/jobs"
-            >
-              <a>
-                Job Board
-              </a>
-            </ForwardRef(LinkComponent)>
-          </li>
-        </ul>
-        <ul
-          className="linksColumn"
-        >
-          <li>
-            <ForwardRef(LinkComponent)
-              href="/get_involved"
-            >
-              <a>
-                Get Involved
-              </a>
-            </ForwardRef(LinkComponent)>
-          </li>
-          <li>
-            <ForwardRef(LinkComponent)
-              href="/podcast"
-            >
-              <a>
-                Podcast
-              </a>
-            </ForwardRef(LinkComponent)>
-          </li>
-          <li>
-            <ForwardRef(LinkComponent)
-              href="/history"
-            >
-              <a>
-                History
-              </a>
-            </ForwardRef(LinkComponent)>
-          </li>
-          <li>
-            <ForwardRef(LinkComponent)
-              href="/donate"
-            >
-              <a>
-                Donate
-              </a>
-            </ForwardRef(LinkComponent)>
-          </li>
-        </ul>
-        <ul
-          className="linksColumn"
-        >
-          <li>
-            <ForwardRef(LinkComponent)
-              href="/press"
-            >
-              <a>
-                Press
-              </a>
-            </ForwardRef(LinkComponent)>
-          </li>
-          <li>
-            <ForwardRef(LinkComponent)
-              href="/branding"
-            >
-              <a>
-                Branding
-              </a>
-            </ForwardRef(LinkComponent)>
-          </li>
-          <li>
-            <ForwardRef(LinkComponent)
-              href="/team"
-            >
-              <a>
-                Our Team
-              </a>
-            </ForwardRef(LinkComponent)>
-          </li>
-        </ul>
+          registered 501(c)3
+        </span>
       </div>
-    </div>
-  </div>
-  <div
-    className="row legalGrouping"
-  >
-    <div
-      className="row copyright"
-    >
-      © 2014-
-      2023
-       Operation Code™ registered 501(c)3
-    </div>
-    <div
-      className="row legalLinks"
-    >
-      <ForwardRef(LinkComponent)
-        href="/terms"
+      <div
+        className="flex mx-auto justify-between w-60"
       >
-        <a
-          className="lineHeightFix"
+        <ForwardRef(LinkComponent)
+          href="/terms"
         >
           Terms of Use
-        </a>
-      </ForwardRef(LinkComponent)>
-      <OutboundLink
-        analyticsEventLabel="Privacy footer link"
-        href="https://www.iubenda.com/privacy-policy/8174861"
-      >
-        Privacy
-      </OutboundLink>
+        </ForwardRef(LinkComponent)>
+        <OutboundLink
+          analyticsEventLabel="Privacy footer link"
+          href="https://www.iubenda.com/privacy-policy/8174861"
+        >
+          Privacy
+        </OutboundLink>
+      </div>
     </div>
   </div>
 </footer>
