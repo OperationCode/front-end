@@ -28,10 +28,12 @@ const CorporateTraining = () => {
         </div>
       </div>
       <div className="flex w-full bg-white">
-        <div className="w-3/6 px-32 flex flex-col justify-center">
+        <div className="w-3/6 px-20 flex flex-col justify-center">
           <h6 className="text-xl">Bias #1</h6>
-          <p className="text-3xl">All Veterans have PTSD or some form of mental illness</p>
-          <p className="text-base pt-3">
+          <h6 className="text-[28px] text-themeSecondary pt-1">
+            All Veterans have PTSD or some form of mental illness
+          </h6>
+          <p className="text-base">
             The truth is that 28% of OIF/OEF/OND Vets self-reported one mental health diagnosis
             (NIH), and more than 1 in 5 adult civilians in the general population live with a mental
             illness (CDC).
@@ -55,10 +57,12 @@ const CorporateTraining = () => {
             objectFit="cover"
           />
         </div>
-        <div className="w-3/6 px-32 flex flex-col justify-center">
+        <div className="w-3/6 px-20 flex flex-col justify-center">
           <h6 className="text-xl">Bias #2</h6>
-          <p className="text-3xl">Veterans are violent and unsafe to be around</p>
-          <p className="text-base pt-3">
+          <h6 className="text-[28px] text-themeSecondary pt-1">
+            Veterans are violent and unsafe to be around
+          </h6>
+          <p className="text-base">
             The truth is that TV, movies and sensationalized media propels these violent
             stereotypes. The truth: the incarceration rate for Vets is lower than for non-Vets
             (Bureau of Justice Statistics). Access to mental health resources & reducing stigma
@@ -67,12 +71,12 @@ const CorporateTraining = () => {
         </div>
       </div>
       <div className="flex w-full bg-white">
-        <div className="w-3/6 px-32 flex flex-col justify-center">
+        <div className="w-3/6 px-20 flex flex-col justify-center">
           <h6 className="text-xl">Bias #3</h6>
-          <p className="text-3xl">
+          <h6 className="text-[28px] text-themeSecondary pt-1">
             Vets come from low income means, are uneducated or joined out of desperation
-          </p>
-          <p className="text-base pt-3">
+          </h6>
+          <p className="text-base">
             Technological, tactical, and strategic planning focuses on raising the bar for recruits.
             The truth is the majority of new recruits come from median family income & cognitive
             skills, equal to or greater than civilians (Journal of Strategic Studies).
@@ -96,13 +100,13 @@ const CorporateTraining = () => {
             objectFit="cover"
           />
         </div>
-        <div className="w-3/6 px-32 flex flex-col justify-center">
+        <div className="w-3/6 px-20 flex flex-col justify-center">
           <h6 className="text-xl">Bias #4</h6>
-          <p className="text-3xl">
+          <h6 className="text-[28px] text-themeSecondary pt-1">
             Reserve and National Guard Service Members are part-time warriors and not able to focus
             on civilian careers.
-          </p>
-          <p className="text-base pt-3">
+          </h6>
+          <p className="text-base">
             Reserve and National Guard members face a new challenge: bias from civilian coworkers
             and hiring managers{' '}
             <a href="https://www.military.com/" target="_blank" rel="noopener noreferrer">
@@ -115,12 +119,12 @@ const CorporateTraining = () => {
         </div>
       </div>
       <div className="flex w-full bg-white">
-        <div className="w-3/6 px-32 flex flex-col justify-center">
+        <div className="w-3/6 px-20 flex flex-col justify-center">
           <h6 className="text-xl">Bias #5</h6>
-          <p className="text-3xl">
+          <h6 className="text-[28px] text-themeSecondary pt-1">
             Military and Veteran spouses choose not to work and enjoy being dependents
-          </p>
-          <p className="text-base pt-3">
+          </h6>
+          <p className="text-base">
             There are ~ 11.5M military and Veteran spouses. The under-employment and unemployment
             rate is ~13%, over 3X the national rate [
             <a
@@ -130,7 +134,7 @@ const CorporateTraining = () => {
             >
               Department of Labor, Women&apos;s Bureau
             </a>
-            ] The Truth: to support our Vets, in their return to the civilian workforce, we MUST
+            ]. The Truth: to support our Vets, in their return to the civilian workforce, we MUST
             support their spouses and family members.
           </p>
         </div>
