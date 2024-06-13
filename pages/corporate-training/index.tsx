@@ -104,9 +104,13 @@ const CorporateTraining = () => {
           </p>
           <p className="text-base pt-3">
             Reserve and National Guard members face a new challenge: bias from civilian coworkers
-            and hiring managers Military.com. The truth: work cultures that promote and support
-            Reserve and NG members retain loyalty, increased productivity & diversity and sets an
-            example for employees to define exemplary service to others.
+            and hiring managers{' '}
+            <a href="https://www.military.com/" target="_blank" rel="noopener noreferrer">
+              military.com
+            </a>
+            . The truth: work cultures that promote and support Reserve and NG members retain
+            loyalty, increased productivity & diversity and sets an example for employees to define
+            exemplary service to others.
           </p>
         </div>
       </div>
@@ -118,10 +122,16 @@ const CorporateTraining = () => {
           </p>
           <p className="text-base pt-3">
             There are ~ 11.5M military and Veteran spouses. The under-employment and unemployment
-            rate is ~13%, over 3X the national rate [Department of Labor, Women&apos;s Bureau]
-            (https://www.dol.gov/sites/dolgov/files/WB/mib/WB-MilSpouse-factsheet.pdf.) The Truth:
-            to support our Vets, in their return to the civilian workforce, we MUST support their
-            spouses and family members.
+            rate is ~13%, over 3X the national rate [
+            <a
+              href="https://www.dol.gov/sites/dolgov/files/WB/mib/WB-MilSpouse-factsheet.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Department of Labor, Women&apos;s Bureau
+            </a>
+            ] The Truth: to support our Vets, in their return to the civilian workforce, we MUST
+            support their spouses and family members.
           </p>
         </div>
         <div className="relative w-3/6 h-[585px]">
