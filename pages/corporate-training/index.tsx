@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
+import OutboundLink from 'components/OutboundLink/OutboundLink';
 
 const pageTitle = 'Corporate Training: Breaking Biases';
 
@@ -22,14 +23,21 @@ const CorporateTraining = () => {
             and overt biases. Reach out to us if you would like more information on how our military
             cultural competency training works, if you&apos;d like us to help create a military
             Diversity, Equity, Inclusion and Belonging strategy, provide ongoing professional
-            development or set up a military Employee Resource Group with you: Contact the
-            Partnerships Team. We look forward to hearing from you!
+            development or set up a military Employee Resource Group with you: Contact the{' '}
+            <OutboundLink
+              href="mailto:partnerships@operationcode.org"
+              analyticsEventLabel="Email"
+              hasIcon={false}
+            >
+              Partnerships Team
+            </OutboundLink>
+            . We look forward to hearing from you!
           </p>
         </div>
       </div>
       <div className="flex w-full bg-white">
         <div className="w-3/6 px-20 flex flex-col justify-center">
-          <h6 className="text-xl">Bias #1</h6>
+          <h6 className="text-xl tracking-[.05em]">Bias #1</h6>
           <h6 className="text-[28px] text-themeSecondary pt-1">
             All Veterans have PTSD or some form of mental illness
           </h6>
@@ -58,7 +66,7 @@ const CorporateTraining = () => {
           />
         </div>
         <div className="w-3/6 px-20 flex flex-col justify-center">
-          <h6 className="text-xl">Bias #2</h6>
+          <h6 className="text-xl tracking-[.05em]">Bias #2</h6>
           <h6 className="text-[28px] text-themeSecondary pt-1">
             Veterans are violent and unsafe to be around
           </h6>
@@ -72,7 +80,7 @@ const CorporateTraining = () => {
       </div>
       <div className="flex w-full bg-white">
         <div className="w-3/6 px-20 flex flex-col justify-center">
-          <h6 className="text-xl">Bias #3</h6>
+          <h6 className="text-xl tracking-[.05em]">Bias #3</h6>
           <h6 className="text-[28px] text-themeSecondary pt-1">
             Vets come from low income means, are uneducated or joined out of desperation
           </h6>
@@ -101,7 +109,7 @@ const CorporateTraining = () => {
           />
         </div>
         <div className="w-3/6 px-20 flex flex-col justify-center">
-          <h6 className="text-xl">Bias #4</h6>
+          <h6 className="text-xl tracking-[.05em]">Bias #4</h6>
           <h6 className="text-[28px] text-themeSecondary pt-1">
             Reserve and National Guard Service Members are part-time warriors and not able to focus
             on civilian careers.
@@ -120,7 +128,7 @@ const CorporateTraining = () => {
       </div>
       <div className="flex w-full bg-white">
         <div className="w-3/6 px-20 flex flex-col justify-center">
-          <h6 className="text-xl">Bias #5</h6>
+          <h6 className="text-xl tracking-[.05em]">Bias #5</h6>
           <h6 className="text-[28px] text-themeSecondary pt-1">
             Military and Veteran spouses choose not to work and enjoy being dependents
           </h6>
