@@ -1,11 +1,9 @@
 import Link from 'next/link';
-import classNames from 'classnames';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 import SocialMedia from 'components/SocialMedia/SocialMedia';
 import { footerItems } from 'common/constants/navigation';
 import Image from 'next/image';
 import Logo from 'public/static/images/logo.svg';
-import styles from './Footer.module.css';
 
 export type FooterPropsType = {
   /**
@@ -24,6 +22,7 @@ export type FooterPropsType = {
 
 function Footer() {
   const currentYear = new Date().getFullYear();
+  const { items, legal } = footerItems;
 
   // eslint-disable-next-line react/prop-types
   const renderLink = ({ href, name, analyticsEventLabel }: FooterPropsType) => {
@@ -35,85 +34,64 @@ function Footer() {
           </OutboundLink>
         ) : (
           // TODO: Attack prefetch to scroll listener
-          <Link href={href}>
-            <a>{name}</a>
-          </Link>
+          <Link href={href}>{name}</Link>
         )}
       </li>
     );
   };
 
   return (
-    <footer className={styles.Footer}>
-      <div className={classNames(styles.footerGrouping, styles.socialGrouping)}>
-        <div className={classNames(styles.logoGrouping)}>
+    <footer className="pt-12 pb-40 md:py-8">
+      <div>
+        <div className="flex flex-col items-center pb-6">
           <Link href="/" key="Home">
-            <a>
-              <Logo
-                className={classNames(styles.logoLink, styles.link)}
-                style={{ width: 318, height: 60 }}
-                fill="#252e3e"
-              />
-            </a>
+            <Logo style={{ width: 318, height: 60 }} fill="#252e3e" className="cursor-pointer" />
           </Link>
+          <h6 className="mb-2">Connect With Us!</h6>
+          <SocialMedia />
         </div>
-        <div className={classNames(styles.capitalize, styles.marginBottom)}>Connect With Us!</div>
-        <SocialMedia />
-      </div>
-      <div className={styles.goldSealImg}>
-        <OutboundLink
-          href="https://www.guidestar.org/profile/shared/52626ac8-5e8b-445a-889e-30bf1ac0b46e"
-          analyticsEventLabel="Footer GuideStar"
-          hasIcon={false}
-        >
-          <Image
-            src="/static/images/platinum-transparency.png"
-            alt="GuideStar Gold Transparency Seal"
-            width={128}
-            height={128}
-          />
-        </OutboundLink>
-      </div>
-      <div className={classNames(styles.footerWrapper, styles.row)}>
-        <div className={classNames(styles.footerGrouping, styles.linksGrouping, styles.capitalize)}>
-          <div className={styles.linksRow}>
-            <ul className={styles.linksColumn}>
-              {footerItems.column1.map(link => renderLink(link))}
-            </ul>
-            <ul className={styles.linksColumn}>
-              {footerItems.column2.map(link => renderLink(link))}
-            </ul>
-            <ul className={styles.linksColumn}>
-              {footerItems.column3.map(link => renderLink(link))}
-            </ul>
-            <ul className={styles.linksColumn}>
-              {footerItems.column4.map(link => renderLink(link))}
-            </ul>
+        <div className="text-center mb-4">
+          <OutboundLink
+            href="https://www.guidestar.org/profile/shared/52626ac8-5e8b-445a-889e-30bf1ac0b46e"
+            analyticsEventLabel="Footer GuideStar"
+            hasIcon={false}
+          >
+            <Image
+              src="/static/images/platinum-transparency.png"
+              alt="GuideStar Gold Transparency Seal"
+              width={128}
+              height={128}
+            />
+          </OutboundLink>
+        </div>
+        <div className="max-w-[1000px] mx-auto pb-10">
+          <ul className="text-xl lg:text-base px-10 md:px-0 text-center grid grid-cols-2 md:grid-cols-4 gap-7 md:gap-3 pt-3">
+            {items.map(link => renderLink(link))}
+          </ul>
+        </div>
+        <div className="text-sm text-center pb-20 pt-4 md:pb-8">
+          <div className="mb-6">
+            &#169; 2014-{currentYear} Operation Code™
+            <span className="pl-4">registered 501(c)3</span>
           </div>
-        </div>
-      </div>
-
-      <div className={classNames(styles.row, styles.legalGrouping)}>
-        <div className={classNames(styles.row, styles.copyright)}>
-          &#169; 2014-{currentYear} Operation Code™ registered 501(c)3
-        </div>
-        <div className={classNames(styles.row, styles.legalLinks)}>
-          {footerItems.legal.map(link =>
-            // / logic of renderLink duplicated here
-            link.analyticsEventLabel ? (
-              <OutboundLink
-                key={link.href}
-                analyticsEventLabel={`${link.name} footer link`}
-                href={link.href}
-              >
-                {link.name}
-              </OutboundLink>
-            ) : (
-              <Link href={link.href} key={link.href}>
-                <a className={styles.lineHeightFix}>{link.name}</a>
-              </Link>
-            ),
-          )}
+          <div className="flex mx-auto justify-between w-60">
+            {legal.map(link =>
+              // / logic of renderLink duplicated here
+              link.analyticsEventLabel ? (
+                <OutboundLink
+                  key={link.href}
+                  analyticsEventLabel={`${link.name} footer link`}
+                  href={link.href}
+                >
+                  {link.name}
+                </OutboundLink>
+              ) : (
+                <Link href={link.href} key={link.href}>
+                  {link.name}
+                </Link>
+              ),
+            )}
+          </div>
         </div>
       </div>
     </footer>
