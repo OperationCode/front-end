@@ -28,7 +28,7 @@ const CorporateTraining = () => {
         </div>
       </div>
       <div className="flex w-full bg-white">
-        <div className="w-3/6 p-32 flex flex-col justify-center">
+        <div className="w-3/6 px-32 flex flex-col justify-center">
           <h6 className="text-xl">Bias #1</h6>
           <p className="text-3xl">All Veterans have PTSD or some form of mental illness</p>
           <p className="text-base pt-3">
@@ -55,7 +55,7 @@ const CorporateTraining = () => {
             objectFit="cover"
           />
         </div>
-        <div className="w-3/6 p-32 flex flex-col justify-center">
+        <div className="w-3/6 px-32 flex flex-col justify-center">
           <h6 className="text-xl">Bias #2</h6>
           <p className="text-3xl">Veterans are violent and unsafe to be around</p>
           <p className="text-base pt-3">
@@ -87,7 +87,7 @@ const CorporateTraining = () => {
             objectFit="cover"
           />
         </div>
-        <div className="w-3/6 p-32 flex flex-col justify-center">
+        <div className="w-3/6 px-32 flex flex-col justify-center">
           <h6 className="text-xl">Bias #3</h6>
           <p className="text-3xl">
             Vets come from low income means, are uneducated or joined out of desperation
@@ -100,7 +100,7 @@ const CorporateTraining = () => {
         </div>
       </div>
       <div className="flex w-full bg-themeGray800">
-        <div className="w-3/6 p-32">
+        <div className="w-3/6 px-32 flex flex-col justify-center">
           <h6 className="text-xl">Bias #4</h6>
           <p className="text-3xl">
             Reserve and National Guard Service Members are part-time warriors and not able to focus
@@ -131,7 +131,7 @@ const CorporateTraining = () => {
             objectFit="cover"
           />
         </div>
-        <div className="w-3/6 p-32 flex flex-col justify-center">
+        <div className="w-3/6 px-32 flex flex-col justify-center">
           <h6 className="text-xl">Bias #5</h6>
           <p className="text-3xl">
             Military and Veteran spouses choose not to work and enjoy being dependents
