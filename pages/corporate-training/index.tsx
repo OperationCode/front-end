@@ -66,27 +66,7 @@ const CorporateTraining = () => {
           </p>
         </div>
       </div>
-      <div className="text-white w-full bg-themeSecondary h-[300px] flex flex-col justify-center">
-        <div className="flex flex-col items-center">
-          <h5 className="text-[28px]">
-            Vets come from low income means, are uneducated or joined out of desperation
-          </h5>
-          <p className="text-center max-w-[53rem]">
-            Technological, tactical, and strategic planning focuses on raising the bar for recruits.
-            The truth is the majority of new recruits come from median family income & cognitive
-            skills, equal to or greater than civilians (Journal of Strategic Studies)
-          </p>
-        </div>
-      </div>
       <div className="flex w-full bg-white">
-        <div className="relative w-3/6 h-[585px]">
-          <Image
-            src="/static/images/bias3.jpg"
-            alt="Woman listening to someone talking"
-            layout="fill"
-            objectFit="cover"
-          />
-        </div>
         <div className="w-3/6 px-32 flex flex-col justify-center">
           <h6 className="text-xl">Bias #3</h6>
           <p className="text-3xl">
@@ -98,8 +78,24 @@ const CorporateTraining = () => {
             skills, equal to or greater than civilians (Journal of Strategic Studies).
           </p>
         </div>
+        <div className="relative w-3/6 h-[585px]">
+          <Image
+            src="/static/images/bias3.jpg"
+            alt="Woman listening to someone talking"
+            layout="fill"
+            objectFit="cover"
+          />
+        </div>
       </div>
       <div className="flex w-full bg-themeGray800">
+        <div className="relative w-3/6 h-[585px]">
+          <Image
+            src="/static/images/bias4.jpg"
+            alt="Woman listening to someone talking"
+            layout="fill"
+            objectFit="cover"
+          />
+        </div>
         <div className="w-3/6 px-32 flex flex-col justify-center">
           <h6 className="text-xl">Bias #4</h6>
           <p className="text-3xl">
@@ -113,24 +109,8 @@ const CorporateTraining = () => {
             example for employees to define exemplary service to others.
           </p>
         </div>
-        <div className="relative w-3/6 h-[585px]">
-          <Image
-            src="/static/images/bias4.jpg"
-            alt="Woman listening to someone talking"
-            layout="fill"
-            objectFit="cover"
-          />
-        </div>
       </div>
       <div className="flex w-full bg-white">
-        <div className="relative w-3/6 h-[585px]">
-          <Image
-            src="/static/images/bias5.jpg"
-            alt="Woman listening to someone talking"
-            layout="fill"
-            objectFit="cover"
-          />
-        </div>
         <div className="w-3/6 px-32 flex flex-col justify-center">
           <h6 className="text-xl">Bias #5</h6>
           <p className="text-3xl">
@@ -143,6 +123,14 @@ const CorporateTraining = () => {
             to support our Vets, in their return to the civilian workforce, we MUST support their
             spouses and family members.
           </p>
+        </div>
+        <div className="relative w-3/6 h-[585px]">
+          <Image
+            src="/static/images/bias5.jpg"
+            alt="Woman listening to someone talking"
+            layout="fill"
+            objectFit="cover"
+          />
         </div>
       </div>
     </>
