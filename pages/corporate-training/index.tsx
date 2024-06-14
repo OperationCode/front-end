@@ -12,7 +12,7 @@ const CorporateTraining = () => {
       <div className="relative">
         <Head title={pageTitle} />
         <HeroBanner
-          className="pt-0"
+          className="pt-0 border sm:border-white text-center"
           backgroundImageSource="/static/images/heroImage.jpg"
           title={pageTitle}
         />
@@ -35,19 +35,19 @@ const CorporateTraining = () => {
           </p>
         </div>
       </div>
-      <div className="flex w-full bg-white">
-        <div className="w-3/6 px-20 flex flex-col justify-center">
+      <div className="md:flex w-full bg-white">
+        <div className="md:w-3/6 px-0 h-[324px] md:h-0 md:px-20 flex flex-col justify-center text-center">
           <h6 className="text-xl tracking-[.05em]">Bias #1</h6>
-          <h6 className="text-[28px] text-themeSecondary pt-1">
+          <h6 className="text-[28px] text-themeSecondary pt-1 tracking-[1px]">
             All Veterans have PTSD or some form of mental illness
           </h6>
-          <p className="text-base">
+          <p className="text-base px-6">
             The truth is that 28% of OIF/OEF/OND Vets self-reported one mental health diagnosis
             (NIH), and more than 1 in 5 adult civilians in the general population live with a mental
             illness (CDC).
           </p>
         </div>
-        <div className="relative w-3/6 h-[585px]">
+        <div className="relative md:w-3/6 h-[324px] md:h-[585px]">
           <Image
             src="/static/images/bias1.jpg"
             alt="Woman listening to someone talking"
@@ -56,8 +56,20 @@ const CorporateTraining = () => {
           />
         </div>
       </div>
-      <div className="flex w-full bg-themeGray800">
-        <div className="relative w-3/6 h-[585px]">
+      <div className="md:flex w-full bg-themeGray800">
+        <div className="md:w-3/6 md:order-2 px-0 h-[324px] md:h-0 md:px-20 flex flex-col justify-center text-center">
+          <h6 className="text-xl tracking-[.05em]">Bias #2</h6>
+          <h6 className="text-[28px] text-themeSecondary pt-1 tracking-[1px]">
+            Veterans are violent and unsafe to be around
+          </h6>
+          <p className="text-base px-6">
+            The truth is that TV, movies and sensationalized media propels these violent
+            stereotypes. The truth: the incarceration rate for Vets is lower than for non-Vets
+            (Bureau of Justice Statistics). Access to mental health resources & reducing stigma
+            reduces the rate of criminalization for all.
+          </p>
+        </div>
+        <div className="relative md:w-3/6 md:order-1 h-[324px] md:h-[585px]">
           <Image
             src="/static/images/bias2.jpg"
             alt="Woman listening to someone talking"
@@ -65,32 +77,20 @@ const CorporateTraining = () => {
             objectFit="cover"
           />
         </div>
-        <div className="w-3/6 px-20 flex flex-col justify-center">
-          <h6 className="text-xl tracking-[.05em]">Bias #2</h6>
-          <h6 className="text-[28px] text-themeSecondary pt-1">
-            Veterans are violent and unsafe to be around
-          </h6>
-          <p className="text-base">
-            The truth is that TV, movies and sensationalized media propels these violent
-            stereotypes. The truth: the incarceration rate for Vets is lower than for non-Vets
-            (Bureau of Justice Statistics). Access to mental health resources & reducing stigma
-            reduces the rate of criminalization for all.
-          </p>
-        </div>
       </div>
-      <div className="flex w-full bg-white">
-        <div className="w-3/6 px-20 flex flex-col justify-center">
+      <div className="md:flex w-full bg-white">
+        <div className="md:w-3/6 px-0 h-[324px] md:h-0 md:px-20 flex flex-col justify-center text-center">
           <h6 className="text-xl tracking-[.05em]">Bias #3</h6>
-          <h6 className="text-[28px] text-themeSecondary pt-1">
+          <h6 className="text-[28px] text-themeSecondary pt-1 tracking-[1px]">
             Vets come from low income means, are uneducated or joined out of desperation
           </h6>
-          <p className="text-base">
+          <p className="text-base px-6">
             Technological, tactical, and strategic planning focuses on raising the bar for recruits.
             The truth is the majority of new recruits come from median family income & cognitive
             skills, equal to or greater than civilians (Journal of Strategic Studies).
           </p>
         </div>
-        <div className="relative w-3/6 h-[585px]">
+        <div className="relative md:w-3/6 h-[324px] md:h-[585px]">
           <Image
             src="/static/images/bias3.jpg"
             alt="Woman listening to someone talking"
@@ -99,22 +99,14 @@ const CorporateTraining = () => {
           />
         </div>
       </div>
-      <div className="flex w-full bg-themeGray800">
-        <div className="relative w-3/6 h-[585px]">
-          <Image
-            src="/static/images/bias4.jpg"
-            alt="Woman listening to someone talking"
-            layout="fill"
-            objectFit="cover"
-          />
-        </div>
-        <div className="w-3/6 px-20 flex flex-col justify-center">
+      <div className="md:flex w-full bg-themeGray800">
+        <div className="md:w-3/6 md:order-2 px-0 h-[324px] md:h-0 md:px-20 flex flex-col justify-center text-center">
           <h6 className="text-xl tracking-[.05em]">Bias #4</h6>
-          <h6 className="text-[28px] text-themeSecondary pt-1">
+          <h6 className="text-[28px] text-themeSecondary pt-1 tracking-[1px]">
             Reserve and National Guard Service Members are part-time warriors and not able to focus
             on civilian careers.
           </h6>
-          <p className="text-base">
+          <p className="text-base px-6">
             Reserve and National Guard members face a new challenge: bias from civilian coworkers
             and hiring managers{' '}
             <a href="https://www.military.com/" target="_blank" rel="noopener noreferrer">
@@ -125,14 +117,22 @@ const CorporateTraining = () => {
             exemplary service to others.
           </p>
         </div>
+        <div className="relative md:order-1 md:w-3/6 h-[324px] md:h-[585px]">
+          <Image
+            src="/static/images/bias4.jpg"
+            alt="Woman listening to someone talking"
+            layout="fill"
+            objectFit="cover"
+          />
+        </div>
       </div>
-      <div className="flex w-full bg-white">
-        <div className="w-3/6 px-20 flex flex-col justify-center">
+      <div className="md:flex w-full bg-white">
+        <div className="md:w-3/6 px-0 h-[324px] md:h-0 md:px-20 flex flex-col justify-center text-center">
           <h6 className="text-xl tracking-[.05em]">Bias #5</h6>
-          <h6 className="text-[28px] text-themeSecondary pt-1">
+          <h6 className="text-[28px] text-themeSecondary pt-1 tracking-[1px]">
             Military and Veteran spouses choose not to work and enjoy being dependents
           </h6>
-          <p className="text-base">
+          <p className="text-base px-6">
             There are ~ 11.5M military and Veteran spouses. The under-employment and unemployment
             rate is ~13%, over 3X the national rate [
             <a
@@ -146,7 +146,7 @@ const CorporateTraining = () => {
             support their spouses and family members.
           </p>
         </div>
-        <div className="relative w-3/6 h-[585px]">
+        <div className="relative md:w-3/6 h-[324px] md:h-[585px]">
           <Image
             src="/static/images/bias5.jpg"
             alt="Woman listening to someone talking"
