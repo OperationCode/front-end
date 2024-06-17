@@ -12,12 +12,13 @@ const CorporateTraining = () => {
       <div className="relative">
         <Head title={pageTitle} />
         <HeroBanner
-          className="pt-0 text-center"
+          className="pt-0 text-center h-[750px] md:h-0"
           backgroundImageSource="/static/images/heroImage.jpg"
-          title={pageTitle}
+          title=""
         />
-        <div className="absolute top-1/3 inset-0 flex items-center justify-center text-center mt-6">
-          <p className="text-lg text-white max-w-[72%]">
+        <div className="absolute top-[120px] md:justify-center inset-0 flex flex-col items-center text-center">
+          <h1 className="text-white">Corporate Training: Breaking Biases</h1>
+          <p className="text-lg text-white max-w-[72%] mt-3">
             Operation Code has provided corporate training for tech employers since 2019. In order
             to break barriers and blockers for our military community, we must address the implicit
             and overt biases. Reach out to us if you would like more information on how our military
