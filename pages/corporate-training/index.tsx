@@ -99,7 +99,7 @@ const CorporateTraining = () => {
           />
         </div>
       </div>
-      <div className="sm:block md:flex md:flex-col lg:flex-row md:items-center w-full bg-themeGray800">
+      <div className="sm:block md:flex md:flex-col lg:flex-row lg:h-[365px] md:items-center w-full bg-themeGray800">
         <div className="md:w-3/6 px-0 h-[385px] lg:h-[324px] flex flex-col justify-center text-center lg:order-2">
           <h6 className="text-2xl tracking-[.05em] text-themeSecondary">Bias #4</h6>
           <h6 className="text-[28px] text-themeSecondary pt-1 tracking-[1px] leading-9 pb-4">
@@ -117,7 +117,7 @@ const CorporateTraining = () => {
             exemplary service to others.
           </p>
         </div>
-        <div className="relative md:w-3/6 h-[324px] lg:order-1">
+        <div className="relative md:w-3/6 h-[324px] lg:order-1 lg:h-full">
           <Image
             src="/static/images/bias4.jpg"
             alt="Woman listening to someone talking"
