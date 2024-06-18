@@ -1,4 +1,3 @@
-// import Link from 'next/link';
 import Image from 'next/image';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
