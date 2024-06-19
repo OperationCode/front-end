@@ -22,8 +22,10 @@
 .icon {
   fill: currentcolor;
   position: absolute;
-  top: 1.25rem; /* Should correspond with heading content height (vertically centered with rest of content */
+
+  /* Should correspond with heading content height (vertically centered with rest of content */
   right: 1.25rem;
+  top: 20px;
   width: 30px;
 }
 
