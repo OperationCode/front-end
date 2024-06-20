@@ -1,16 +1,16 @@
-import Container from 'components/Container/Container';
-import Heading from 'components/Heading/Heading';
-import PartnerLogoLink from 'components/PartnerLogoLink/PartnerLogoLink';
-import partners, { PARTNER_TYPES } from 'common/constants/partners';
+import { Container } from 'components/Container/Container';
+import { Heading } from 'components/Heading/Heading';
+import { PartnerLogoLink } from 'components/PartnerLogoLink/PartnerLogoLink';
+import { PARTNER_TYPES, sortedPartners } from 'common/constants/partners';
 
-type Partner = {
+interface Partner {
   name: string;
   type: string;
-};
+}
 
 const isPaidSponsor = (partner: Partner): boolean => partner.type === PARTNER_TYPES.PAID;
 
-const SponsorsSection = () => (
+export const SponsorsSection = () => (
   <Container theme="gray" data-testid="Sponsors Section">
     <Heading text="Sponsors" hasTitleUnderline headingLevel={3} />
 
@@ -20,7 +20,7 @@ const SponsorsSection = () => (
       may or may not have also donated to our cause via others means.
     </p>
     <div className="flex justify-center items-center flex-wrap [&>*]:m-4">
-      {partners
+      {sortedPartners
         .filter(x => isPaidSponsor(x))
         .map(partner => (
           <PartnerLogoLink key={partner.name} {...partner} size="large" />
@@ -33,7 +33,7 @@ const SponsorsSection = () => (
       advertisements, scholarships, or sponsorships. We thank them for their contributions.
     </p>
     <div className="flex justify-center items-center flex-wrap [&>*]:m-4">
-      {partners
+      {sortedPartners
         .filter(x => !isPaidSponsor(x))
         .map(partner => (
           <PartnerLogoLink key={partner.name} {...partner} />
@@ -41,5 +41,3 @@ const SponsorsSection = () => (
     </div>
   </Container>
 );
-
-export default SponsorsSection;

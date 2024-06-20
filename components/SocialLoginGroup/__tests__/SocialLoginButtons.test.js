@@ -1,5 +1,5 @@
 import createSnapshotTest from 'test-utils/createSnapshotTest';
-import SocialLoginButtons from '../SocialLoginButtons';
+import { SocialLoginButtons } from '../SocialLoginButtons';
 
 describe('SocialLoginButtons', () => {
   beforeEach(() => {

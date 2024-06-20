@@ -21,7 +21,7 @@ UpdateProfileForm.defaultProps = {
   },
 };
 
-function UpdateProfileForm({ initialValues }) {
+export function UpdateProfileForm({ initialValues }) {
   const [shouldShowMilitaryStep, handleShouldShowMilitaryStep] = useState(false);
 
   // TODO: Abstract method to utility and use for all error-handling purposes
@@ -88,5 +88,3 @@ function UpdateProfileForm({ initialValues }) {
     />
   );
 }
-
-export default UpdateProfileForm;

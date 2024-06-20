@@ -1,5 +1,5 @@
 import createShallowSnapshotTest from 'test-utils/createShallowSnapshotTest';
-import SuccessStory from '../SuccessStory';
+import { SuccessStory } from '../SuccessStory';
 
 describe('SuccessStory', () => {
   it('should render with required props', () => {

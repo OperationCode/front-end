@@ -1,4 +1,4 @@
-import ChangePasswordForm from '../ChangePasswordForm';
+import { ChangePasswordForm } from '../ChangePasswordForm';
 
 export default {
   component: ChangePasswordForm,

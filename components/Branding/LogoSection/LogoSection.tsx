@@ -1,11 +1,11 @@
 import classNames from 'classnames';
-import Badge from 'components/Badge/Badge';
-import Content from 'components/Content/Content';
+import { Badge } from 'components/Badge/Badge';
+import { Content } from 'components/Content/Content';
 import { s3 } from 'common/constants/urls';
-import Image from 'next/image';
+import Image from 'next/legacy/image';
 import styles from './LogoSection.module.css';
 
-function LogoSection() {
+export function LogoSection() {
   return (
     <Content
       title="Logo"
@@ -337,4 +337,3 @@ function LogoSection() {
     />
   );
 }
-export default LogoSection;

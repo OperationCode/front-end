@@ -1,4 +1,3 @@
-import React from 'react';
 import noop from 'lodash/noop';
 import classNames from 'classnames';
 import { BUTTON } from 'common/constants/testIDs';
@@ -6,7 +5,7 @@ import { gtag } from 'common/utils/thirdParty/gtag';
 import { getDataAttributes, getAriaAttributes } from 'common/utils/prop-utils';
 import styles from './Button.module.css';
 
-type GoogleAnalyticsEventPropType = {
+interface GoogleAnalyticsEventPropType {
   /**
    * A description of the behaviour. E.g. 'Clicked Delete', 'Added a component', 'Deleted account'
    */
@@ -34,7 +33,7 @@ type GoogleAnalyticsEventPropType = {
    * 'beacon', 'xhr', or 'image'.
    */
   transport?: 'beacon' | 'xhr' | 'image';
-};
+}
 
 type ButtonProps = {
   /**
@@ -51,7 +50,7 @@ type ButtonProps = {
   theme?: 'primary' | 'secondary';
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
-export default function Button({
+export function Button({
   analyticsObject = {
     action: 'Button Selected',
     category: 'Interactions',
@@ -87,7 +86,8 @@ export default function Button({
         onClick(e);
       }}
       tabIndex={tabIndex}
-      type={type}
+      // eslint-disable-next-line react/button-has-type
+      type={type} // `type` prop has a default value, so ^ is a false-negative
       {...customDataAttributes}
       {...ariaAttributes}
     >

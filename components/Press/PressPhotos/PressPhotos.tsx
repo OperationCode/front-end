@@ -1,8 +1,8 @@
 import { s3 } from 'common/constants/urls';
-import Image from 'next/image';
+import Image from 'next/legacy/image';
 import styles from './PressPhotos.module.css';
 
-function PressPhotos() {
+export function PressPhotos() {
   return (
     <div className={styles.photos}>
       <Image
@@ -38,5 +38,3 @@ function PressPhotos() {
     </div>
   );
 }
-
-export default PressPhotos;

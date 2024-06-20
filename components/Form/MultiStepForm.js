@@ -9,10 +9,10 @@ import {
   MULTI_STEP_SUBMIT_BUTTON,
   MULTI_STEP_PREVIOUS_BUTTON,
 } from 'common/constants/testIDs';
-import Button from 'components/Buttons/Button/Button';
-import Form from 'components/Form/Form';
-import Alert from 'components/Alert/Alert';
-import ProgressIndicator from 'components/ProgressIndicator/ProgressIndicator';
+import { Button } from 'components/Buttons/Button/Button';
+import { Form } from 'components/Form/Form';
+import { Alert } from 'components/Alert/Alert';
+import { ProgressIndicator } from 'components/ProgressIndicator/ProgressIndicator';
 import styles from './MultiStepForm.module.css';
 
 MultiStepForm.propTypes = {
@@ -153,5 +153,3 @@ export function MultiStepForm({
     </Formik>
   );
 }
-
-export default MultiStepForm;

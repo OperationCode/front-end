@@ -3,9 +3,9 @@ import { fireEvent, render, waitFor } from '@testing-library/react';
 import OperationCodeAPIMock from 'test-utils/mocks/apiMock';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 import { KEY_CODES } from 'test-utils/identifiers';
-import Form from 'components/Form/Form';
+import { Form } from 'components/Form/Form';
 
-import MilitaryDetails from '../MilitaryDetails';
+import { MilitaryDetails } from '../MilitaryDetails';
 
 describe('UpdateProfileForm/Steps/MilitaryDetails', () => {
   afterEach(() => {

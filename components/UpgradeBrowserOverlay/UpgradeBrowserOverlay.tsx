@@ -1,12 +1,12 @@
 import noop from 'lodash/noop';
-import Modal from 'components/Modal/Modal';
-import OutboundLink from 'components/OutboundLink/OutboundLink';
+import { Modal } from 'components/Modal/Modal';
+import { OutboundLink } from 'components/OutboundLink/OutboundLink';
 import WarningSign from 'static/images/icons/FontAwesome/exclamation-triangle-solid.svg';
 import { s3 } from 'common/constants/urls';
-import Image from 'next/image';
+import Image from 'next/legacy/image';
 import styles from './UpgradeBrowserOverlay.module.css';
 
-function UpgradeBrowserOverlay() {
+export function UpgradeBrowserOverlay() {
   const browsers = [
     {
       browserName: 'Microsoft Edge',
@@ -68,5 +68,3 @@ function UpgradeBrowserOverlay() {
     </Modal>
   );
 }
-
-export default UpgradeBrowserOverlay;

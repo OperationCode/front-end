@@ -1,4 +1,4 @@
-import ResourceSearchForm from '../ResourceSearchForm';
+import { ResourceSearchForm } from '../ResourceSearchForm';
 
 export default {
   component: ResourceSearchForm,

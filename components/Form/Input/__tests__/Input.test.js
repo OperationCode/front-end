@@ -4,8 +4,8 @@ import { INPUT, INPUT_ERROR, INPUT_FEEDBACK_GROUPING, LABEL } from 'common/const
 import { validationErrorMessages } from 'common/constants/messages';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 
-import Form from '../../Form';
-import Input from '../Input';
+import { Form } from '../../Form';
+import { Input } from '../Input';
 
 describe('Input', () => {
   const requiredProps = {

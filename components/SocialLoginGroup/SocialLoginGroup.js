@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { string, func } from 'prop-types';
 import classNames from 'classnames';
 import { getServerErrorMessage } from 'common/utils/api-utils';
-import Alert from 'components/Alert/Alert';
+import { Alert } from 'components/Alert/Alert';
 import styles from './SocialLoginGroup.module.css';
 
 SocialLoginGroup.propTypes = {
@@ -16,7 +16,7 @@ SocialLoginGroup.defaultProps = {
   className: undefined,
 };
 
-function SocialLoginGroup(props) {
+export function SocialLoginGroup(props) {
   const [errorMessage, setErrorMessage] = useState('');
 
   const onSuccess =
@@ -51,5 +51,3 @@ function SocialLoginGroup(props) {
     </div>
   );
 }
-
-export default SocialLoginGroup;

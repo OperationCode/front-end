@@ -1,7 +1,7 @@
 import { node, string, bool } from 'prop-types';
 import classNames from 'classnames';
 import { LABEL } from 'common/constants/testIDs';
-import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
+import { ScreenReaderOnly } from 'components/ScreenReaderOnly/ScreenReaderOnly';
 
 Label.propTypes = {
   children: node.isRequired,
@@ -17,7 +17,7 @@ Label.defaultProps = {
   isHidden: false,
 };
 
-function Label({ children, className, 'data-testid': testID, isHidden, ...props }) {
+export function Label({ children, className, 'data-testid': testID, isHidden, ...props }) {
   const TheLabel = (
     <label
       // for isnt destructured because it's a reserved word in JavaScript
@@ -32,5 +32,3 @@ function Label({ children, className, 'data-testid': testID, isHidden, ...props 
 
   return isHidden ? <ScreenReaderOnly>{TheLabel}</ScreenReaderOnly> : TheLabel;
 }
-
-export default Label;

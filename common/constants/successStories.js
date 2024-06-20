@@ -1,6 +1,6 @@
 import { s3 } from 'common/constants/urls';
 
-const successStories = [
+export const successStories = [
   {
     title: 'Ali Cipolla-Taylor, Talent Acquisition at Microsoft',
     quote:
@@ -20,5 +20,3 @@ const successStories = [
     imageSource: `${s3}headshots/jose.jpg`,
   },
 ];
-
-export default successStories;

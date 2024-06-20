@@ -1,7 +1,7 @@
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 
 import { s3 } from 'common/constants/urls';
-import HeroBanner from '../HeroBanner';
+import { HeroBanner } from '../HeroBanner';
 
 describe('HeroBanner', () => {
   it('should render with required props', () => {

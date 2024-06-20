@@ -10,7 +10,7 @@ SocialLoginButtons.propTypes = {
   onGoogleFailure: func.isRequired,
 };
 
-function SocialLoginButtons({ onSuccess, onGoogleFailure }) {
+export function SocialLoginButtons({ onSuccess, onGoogleFailure }) {
   return (
     <>
       <GoogleLogin
@@ -47,5 +47,3 @@ function SocialLoginButtons({ onSuccess, onGoogleFailure }) {
     </>
   );
 }
-
-export default SocialLoginButtons;

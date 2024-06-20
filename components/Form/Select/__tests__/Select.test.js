@@ -4,8 +4,8 @@ import createSnapshotTest from 'test-utils/createSnapshotTest';
 import { KEY_CODES } from 'test-utils/identifiers';
 
 import { LABEL } from 'common/constants/testIDs';
-import Form from '../../Form';
-import Select from '../Select';
+import { Form } from '../../Form';
+import { Select } from '../Select';
 
 const getReactSelect = domElement => domElement.querySelector('[id^=react-select]');
 

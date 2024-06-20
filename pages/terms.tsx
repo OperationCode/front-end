@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import Head from 'components/head';
-import HeroBanner from 'components/HeroBanner/HeroBanner';
-import Content from 'components/Content/Content';
+import { Head } from 'components/Head';
+import { HeroBanner } from 'components/HeroBanner/HeroBanner';
+import { Content } from 'components/Content/Content';
 
 function Terms() {
   return (
@@ -246,10 +246,7 @@ function Terms() {
             <h3>Contact Us</h3>
             <p>
               If you have any questions about these Terms, please{' '}
-              <Link href="/contact">
-                <a>contact us</a>
-              </Link>
-              .
+              <Link href="/contact">contact us</Link>.
             </p>
           </div>,
         ]}

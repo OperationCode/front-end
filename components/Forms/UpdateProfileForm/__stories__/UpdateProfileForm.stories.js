@@ -1,4 +1,4 @@
-import UpdateProfileForm from '../UpdateProfileForm';
+import { UpdateProfileForm } from '../UpdateProfileForm';
 import { ProfessionalDetails, MilitaryStatus, MilitaryDetails, Technology } from '../steps';
 
 export default {

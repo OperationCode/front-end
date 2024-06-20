@@ -5,12 +5,10 @@ export const toggleMessages = {
   close: 'Hide expanded',
 };
 
-function ScreenReaderOnly({ children }: React.PropsWithChildren<unknown>) {
+export function ScreenReaderOnly({ children }: React.PropsWithChildren<unknown>) {
   return (
     <span className="sr-only" data-testid={SCREEN_READER_ONLY}>
       {children}
     </span>
   );
 }
-
-export default ScreenReaderOnly;

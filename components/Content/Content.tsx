@@ -1,8 +1,8 @@
 import { cloneElement, ReactElement } from 'react';
-import Container from 'components/Container/Container';
-import Heading from 'components/Heading/Heading';
+import { Container } from 'components/Container/Container';
+import { Heading } from 'components/Heading/Heading';
 
-export type ContentPropsType = {
+export interface ContentPropsType {
   /**
    * Elements to be rendered in the container.
    */
@@ -37,9 +37,9 @@ export type ContentPropsType = {
    * Applies an additional title element.
    */
   title?: string;
-};
+}
 
-function Content({
+export function Content({
   className,
   columns,
   hasTitleUnderline = false,
@@ -66,5 +66,3 @@ function Content({
     </Container>
   );
 }
-
-export default Content;

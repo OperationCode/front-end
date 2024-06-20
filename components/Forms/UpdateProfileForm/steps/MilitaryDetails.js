@@ -3,8 +3,8 @@ import { Field } from 'formik';
 import * as Yup from 'yup';
 import { updateUser } from 'common/constants/api';
 import { validationErrorMessages } from 'common/constants/messages';
-import Input from 'components/Form/Input/Input';
-import Select from 'components/Form/Select/Select';
+import { Input } from 'components/Form/Input/Input';
+import { Select } from 'components/Form/Select/Select';
 import styles from './_steps.module.css';
 
 MilitaryDetails.propTypes = {
@@ -38,7 +38,7 @@ MilitaryDetails.submitHandler = async values => {
   await updateUser(values);
 };
 
-function MilitaryDetails({ isSubmitting }) {
+export function MilitaryDetails({ isSubmitting }) {
   return (
     <div className={styles.row}>
       <Field
@@ -91,5 +91,3 @@ function MilitaryDetails({ isSubmitting }) {
     </div>
   );
 }
-
-export default MilitaryDetails;

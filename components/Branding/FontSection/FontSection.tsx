@@ -1,7 +1,7 @@
-import Content from 'components/Content/Content';
+import { Content } from 'components/Content/Content';
 import { fontsObject } from 'common/styles/styleExports';
 
-function FontSection() {
+export function FontSection() {
   // Every letter of the alphabet in one string
   const demoText = 'Sphinx of black quartz, judge my vow!';
 
@@ -36,5 +36,3 @@ function FontSection() {
     />
   );
 }
-
-export default FontSection;

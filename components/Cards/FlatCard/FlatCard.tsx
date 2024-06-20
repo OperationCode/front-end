@@ -1,29 +1,22 @@
-import { element, node, shape, string } from 'prop-types';
 import classNames from 'classnames';
 import { twMerge } from 'tailwind-merge';
-import Image from 'next/image';
+import Image from 'next/legacy/image';
 import { FLAT_CARD_IMAGE } from 'common/constants/testIDs';
 import { getPlaceholder } from 'common/utils/next-utils';
+import { ReactNode } from 'react';
 
-FlatCard.propTypes = {
-  button: element,
-  children: node.isRequired,
-  className: string,
-  header: node,
-  image: shape({
-    source: string.isRequired,
-    alt: string.isRequired,
-  }),
-};
+interface FlatCardProps {
+  button?: ReactNode;
+  children: ReactNode;
+  className?: string;
+  header?: ReactNode;
+  image?: {
+    source: string;
+    alt: string;
+  };
+}
 
-FlatCard.defaultProps = {
-  button: null,
-  className: undefined,
-  header: undefined,
-  image: undefined,
-};
-
-function FlatCard({ button: Button, children, className, header, image }) {
+export function FlatCard({ button: Button, children, className, header, image }: FlatCardProps) {
   const hasImage = image && image.source;
 
   return (
@@ -50,7 +43,7 @@ function FlatCard({ button: Button, children, className, header, image }) {
                 src={image.source}
                 alt={image.alt ?? ''}
                 layout="fill"
-                objectFit
+                objectFit="cover"
                 placeholder="blur"
                 blurDataURL={getPlaceholder(194, 194)}
               />
@@ -71,5 +64,3 @@ function FlatCard({ button: Button, children, className, header, image }) {
     </article>
   );
 }
-
-export default FlatCard;

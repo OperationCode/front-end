@@ -1,11 +1,11 @@
-import Head from 'components/head';
-import Container from 'components/Container/Container';
-import HeroBanner from 'components/HeroBanner/HeroBanner';
-import OutboundLink from 'components/OutboundLink/OutboundLink';
+import { Head } from 'components/Head';
+import { Container } from 'components/Container/Container';
+import { HeroBanner } from 'components/HeroBanner/HeroBanner';
+import { OutboundLink } from 'components/OutboundLink/OutboundLink';
 import { s3 } from 'common/constants/urls';
 import Link from 'next/link';
-import Card from 'components/Cards/Card/Card';
-import Image from 'next/image';
+import { Card } from 'components/Cards/Card/Card';
+import Image from 'next/legacy/image';
 
 const pageTitle = 'Scholarships Program';
 
@@ -80,9 +80,7 @@ export default function ScholarshipsPage() {
             <ul className="list-disc flex flex-col gap-3 mb-3 ml-4">
               <li>
                 Be an active member of our Operation Code community (
-                <Link href="/join">
-                  <a>join here</a>
-                </Link>
+                <Link href="/join">join here</Link>
                 ), a U.S. active duty, Reserves or National Guard military service member, Veteran
                 or military dependent.
               </li>

@@ -1,9 +1,9 @@
-import Image from 'next/image';
-import OutboundLink from 'components/OutboundLink/OutboundLink';
+import Image from 'next/legacy/image';
+import { OutboundLink } from 'components/OutboundLink/OutboundLink';
 
 type SizeType = 'small' | 'medium' | 'large';
 
-export type PartnerLogoLinkPropsType = {
+export interface PartnerLogoLinkPropsType {
   /**
    * Path to the logo image.
    */
@@ -21,7 +21,7 @@ export type PartnerLogoLinkPropsType = {
    * @default 'medium'
    */
   size?: SizeType;
-};
+}
 
 const sizeMappings = {
   small: {
@@ -38,7 +38,7 @@ const sizeMappings = {
   },
 };
 
-export default function PartnerLogoLink({
+export function PartnerLogoLink({
   logoSource,
   name,
   url,

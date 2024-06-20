@@ -1,8 +1,8 @@
 import classNames from 'classnames';
-import Container from 'components/Container/Container';
+import { Container } from 'components/Container/Container';
 import { HERO_BANNER_H1 } from 'common/constants/testIDs';
 
-export type HeroBannerPropsType = {
+export interface HeroBannerPropsType {
   /**
    * Renders a title for the banner.
    */
@@ -24,9 +24,9 @@ export type HeroBannerPropsType = {
    * @default false
    */
   isFullViewportHeight?: boolean;
-};
+}
 
-function HeroBanner({
+export function HeroBanner({
   backgroundImageSource,
   children,
   className,
@@ -51,5 +51,3 @@ function HeroBanner({
     </Container>
   );
 }
-
-export default HeroBanner;

@@ -1,9 +1,9 @@
 import { gtag } from 'common/utils/thirdParty/gtag';
 import ExternalLinkIcon from 'static/images/icons/FontAwesome/external-link-square-alt-solid.svg';
-import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
+import { ScreenReaderOnly } from 'components/ScreenReaderOnly/ScreenReaderOnly';
 import classNames from 'node_modules/classnames/index';
 
-export type OutboundLinkPropsType = {
+export interface OutboundLinkPropsType {
   /**
    * will report this label plus the URL from where it was clicked
    */
@@ -28,9 +28,9 @@ export type OutboundLinkPropsType = {
    * Adds an an icon to identify link is an external link.
    */
   hasIcon?: boolean;
-};
+}
 
-function OutboundLink({
+export function OutboundLink({
   analyticsEventLabel,
   children,
   'data-testid': testID,
@@ -61,5 +61,3 @@ function OutboundLink({
     </a>
   );
 }
-
-export default OutboundLink;

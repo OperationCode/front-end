@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { gtag } from 'common/utils/thirdParty/gtag';
-import Head from 'components/head';
-import HeroBanner from 'components/HeroBanner/HeroBanner';
-import Content from 'components/Content/Content';
+import { Head } from 'components/Head';
+import { HeroBanner } from 'components/HeroBanner/HeroBanner';
+import { Content } from 'components/Content/Content';
 import RegistrationForm from 'components/Forms/RegistrationForm/RegistrationForm';
 import { login } from 'common/utils/auth-utils';
 

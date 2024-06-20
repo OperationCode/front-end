@@ -2,14 +2,14 @@ import { useState } from 'react';
 import classNames from 'classnames';
 import Chevron from 'public/static/images/icons/FontAwesome/angle-right-solid.svg';
 import { ACCORDION_CONTENT, ACCORDION_TOGGLE_BUTTON } from 'common/constants/testIDs';
-import ScreenReaderOnly, { toggleMessages } from '../ScreenReaderOnly/ScreenReaderOnly';
-import Card from '../Cards/Card/Card';
+import { ScreenReaderOnly, toggleMessages } from '../ScreenReaderOnly/ScreenReaderOnly';
+import { Card } from '../Cards/Card/Card';
 import styles from './Accordion.module.css';
 
 const ChevronRight = () => <Chevron className={styles.icon} />;
 const ChevronDown = () => <Chevron className={classNames(styles.icon, styles.rotate90)} />;
 
-type ContentPropType = {
+interface ContentPropType {
   /**
    * Labels or thumbnails representing sections of content.
    */
@@ -18,9 +18,9 @@ type ContentPropType = {
    * Section of content associated with header.
    */
   bodyChildren: React.ReactNode | React.ReactNode[];
-};
+}
 
-export type AccordionPropsType = {
+export interface AccordionPropsType {
   /**
    * Accessibility ID to use for joining elements together with ARIA attributes
    */
@@ -38,13 +38,13 @@ export type AccordionPropsType = {
    * @default - false
    */
   hasAnimationOnHover?: boolean;
-};
+}
 
 /**
  * @description A component whose main content is invisible until revealed by the user
  * @see http://web-accessibility.carnegiemuseums.org/code/accordions/
  */
-function Accordion({
+export function Accordion({
   accessibilityId,
   className,
   content,
@@ -101,5 +101,3 @@ function Accordion({
     </Card>
   );
 }
-
-export default Accordion;

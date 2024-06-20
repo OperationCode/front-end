@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import CloseButton from '../CloseButton';
+import { CloseButton } from '../CloseButton';
 
 type CloseButtonStoryType = StoryObj<typeof CloseButton>;
 

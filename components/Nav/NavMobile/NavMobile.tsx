@@ -2,12 +2,12 @@ import Link from 'next/link';
 import classNames from 'classnames';
 import { s3 } from 'common/constants/urls';
 import HamburgerIcon from 'static/images/icons/hamburger.svg';
-import CloseButton from 'components/Buttons/CloseButton/CloseButton';
-import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
-import Image from 'next/image';
+import { CloseButton } from 'components/Buttons/CloseButton/CloseButton';
+import { ScreenReaderOnly } from 'components/ScreenReaderOnly/ScreenReaderOnly';
+import Image from 'next/legacy/image';
 import styles from './NavMobile.module.css';
 
-type SublinkType = {
+interface SublinkType {
   /**
    * String used as the link label.
    */
@@ -16,9 +16,9 @@ type SublinkType = {
    * String used for the URL.
    */
   href: string;
-};
+}
 
-type NavItemType = {
+interface NavItemType {
   /**
    * String used as the link label.
    */
@@ -32,9 +32,9 @@ type NavItemType = {
    * Adds nested sublinks.
    */
   sublinks?: SublinkType[];
-};
+}
 
-export type NavMobilePropsType = {
+export interface NavMobilePropsType {
   /**
    * Sets if the mobile navigation is open or closed.
    */
@@ -51,26 +51,20 @@ export type NavMobilePropsType = {
    * List of navigations items.
    */
   navItems: NavItemType[];
-};
+}
 
-function NavMobile({ isOpen, openMenu, closeMenu, navItems }: NavMobilePropsType) {
+export function NavMobile({ isOpen, openMenu, closeMenu, navItems }: NavMobilePropsType) {
   return (
     <header className={styles.NavMobile} data-testid="Mobile Nav Container">
-      <Link href="/">
-        <button
-          className={classNames(styles.button, styles.logoButton)}
-          type="button"
-          name="dropdown"
-        >
-          <div className={styles.logo}>
-            <Image
-              src={`${s3}branding/logos/small-blue-logo.png`}
-              alt="Operation Code Logo"
-              width={224}
-              height={42}
-            />
-          </div>
-        </button>
+      <Link href="/" className={classNames(styles.button, styles.logoButton, 'inline-flex')}>
+        <div className={styles.logo}>
+          <Image
+            src={`${s3}branding/logos/small-blue-logo.png`}
+            alt="Operation Code Logo"
+            width={224}
+            height={42}
+          />
+        </div>
       </Link>
 
       <button
@@ -90,14 +84,15 @@ function NavMobile({ isOpen, openMenu, closeMenu, navItems }: NavMobilePropsType
 
           <ul className={styles.ul}>
             <li className={styles.li} key="Home">
-              <Link href="/">
-                <a className={styles.link}>Home</a>
+              <Link href="/" className={styles.link}>
+                Home
               </Link>
             </li>
+
             {navItems.map(navlink => (
               <li className={styles.li} key={navlink.name}>
-                <Link href={navlink.href}>
-                  <a className={styles.link}>{navlink.name}</a>
+                <Link href={navlink.href} className={styles.link}>
+                  {navlink.name}
                 </Link>
               </li>
             ))}
@@ -107,5 +102,3 @@ function NavMobile({ isOpen, openMenu, closeMenu, navItems }: NavMobilePropsType
     </header>
   );
 }
-
-export default NavMobile;

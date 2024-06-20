@@ -10,7 +10,7 @@ const throwDevelopmentException = (expression: boolean, message: string) => {
   }
 };
 
-export type ProgressIndicatorPropsType = {
+export interface ProgressIndicatorPropsType {
   /**
    * Sets the current step number.
    */
@@ -19,12 +19,9 @@ export type ProgressIndicatorPropsType = {
    * Sets the total number of steps.
    */
   totalSteps: number;
-};
+}
 
-export default function ProgressIndicator({
-  stepNumber = 0,
-  totalSteps = 1,
-}: ProgressIndicatorPropsType) {
+export function ProgressIndicator({ stepNumber = 0, totalSteps = 1 }: ProgressIndicatorPropsType) {
   throwDevelopmentException(totalSteps < 1, developmentErrors.totalStepsTooLow);
   throwDevelopmentException(stepNumber < 0, developmentErrors.currentStepTooLow);
   throwDevelopmentException(stepNumber > totalSteps, developmentErrors.currentStepTooHigh);

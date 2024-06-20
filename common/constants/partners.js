@@ -105,4 +105,4 @@ const partners = [
   },
 ];
 
-export default sortBy(partners, 'name');
+export const sortedPartners = sortBy(partners, 'name');

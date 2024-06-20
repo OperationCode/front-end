@@ -1,6 +1,6 @@
 import { fireEvent, render } from '@testing-library/react';
 import { UPVOTE_BUTTON, DOWNVOTE_BUTTON } from 'common/constants/testIDs';
-import ResourceCard from '../ResourceCard';
+import { ResourceCard } from '../ResourceCard';
 
 describe('ResourceCard', () => {
   const requiredProps = {

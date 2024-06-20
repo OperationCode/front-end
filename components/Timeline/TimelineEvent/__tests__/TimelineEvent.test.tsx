@@ -1,6 +1,6 @@
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 
-import TimelineEvent from '../TimelineEvent';
+import { TimelineEvent } from '../TimelineEvent';
 
 describe('TimelineEvent', () => {
   it('should render with required props', () => {

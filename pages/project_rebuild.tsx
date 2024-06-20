@@ -1,10 +1,10 @@
-import Image from 'next/image';
-import Head from 'components/head';
-import HeroBanner from 'components/HeroBanner/HeroBanner';
-import Content from 'components/Content/Content';
-import OutboundLink from 'components/OutboundLink/OutboundLink';
+import Image from 'next/legacy/image';
+import { Head } from 'components/Head';
+import { HeroBanner } from 'components/HeroBanner/HeroBanner';
+import { Content } from 'components/Content/Content';
+import { OutboundLink } from 'components/OutboundLink/OutboundLink';
 import styles from 'styles/project_rebuild.module.css';
-import LinkButton from 'components/Buttons/LinkButton/LinkButton';
+import { LinkButton } from 'components/Buttons/LinkButton/LinkButton';
 import { s3 } from 'common/constants/urls';
 
 const pageTitle = 'Project Rebuild';
@@ -32,6 +32,7 @@ export default () => {
           <div className={styles.logos}>
             <Image
               src={`${s3}partnerLogos/fresh-start-refugee.png`}
+              alt=""
               layout="fixed"
               width="100"
               height="100"
@@ -39,6 +40,7 @@ export default () => {
             />
             <Image
               src={`${s3}branding/logos/large-blue-logo.png`}
+              alt=""
               layout="intrinsic"
               width="550"
               height="100"
@@ -46,6 +48,7 @@ export default () => {
             />
             <Image
               src={`${s3}partnerLogos/globally_logo.png`}
+              alt=""
               layout="fixed"
               width="140"
               height="140"

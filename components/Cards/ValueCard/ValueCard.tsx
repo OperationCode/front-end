@@ -1,11 +1,11 @@
-import Card from 'components/Cards/Card/Card';
+import { Card } from 'components/Cards/Card/Card';
 
-export type ValueCardPropsType = {
+export interface ValueCardPropsType {
   name: string;
   description: string;
-};
+}
 
-function ValueCard({ description, name }: ValueCardPropsType) {
+export function ValueCard({ description, name }: ValueCardPropsType) {
   return (
     <Card
       className="!justify-start max-w-[400px] h-[400px] p-8 overflow-y-auto"
@@ -16,5 +16,3 @@ function ValueCard({ description, name }: ValueCardPropsType) {
     </Card>
   );
 }
-
-export default ValueCard;

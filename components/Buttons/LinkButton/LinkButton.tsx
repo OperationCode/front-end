@@ -1,9 +1,9 @@
 import classNames from 'classnames';
 import Link from 'next/link';
-import OutboundLink from 'components/OutboundLink/OutboundLink';
+import { OutboundLink } from 'components/OutboundLink/OutboundLink';
 import styles from '../Button/Button.module.css';
 
-export type LinkButtonProps = {
+export interface LinkButtonProps {
   /**
    * Url to be passed to the base anchor element.
    */
@@ -32,9 +32,9 @@ export type LinkButtonProps = {
    * Sets the button color theme.
    */
   theme?: 'primary' | 'secondary';
-};
+}
 
-export default function LinkButton({
+export function LinkButton({
   analyticsEventLabel,
   children,
   className,
@@ -43,9 +43,15 @@ export default function LinkButton({
   href,
   theme = 'primary',
 }: LinkButtonProps) {
-  const linkButtonClassNames = classNames(styles.Button, className, styles[theme], {
-    [styles.fullWidth]: fullWidth,
-  });
+  const linkButtonClassNames = classNames(
+    styles.Button,
+    className,
+    styles[theme],
+    '!inline-block hover:no-underline',
+    {
+      [styles.fullWidth]: fullWidth,
+    },
+  );
 
   const hasAnalyticsEventLabel = !!analyticsEventLabel;
 
@@ -60,10 +66,8 @@ export default function LinkButton({
       {children}
     </OutboundLink>
   ) : (
-    <Link href={href}>
-      <a className={linkButtonClassNames} data-testid={testID} href={href}>
-        {children}
-      </a>
+    <Link href={href} className={linkButtonClassNames} data-testid={testID}>
+      {children}
     </Link>
   );
 }

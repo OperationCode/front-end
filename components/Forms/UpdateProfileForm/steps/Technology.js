@@ -3,7 +3,7 @@ import { Field } from 'formik';
 import * as Yup from 'yup';
 import { updateUser } from 'common/constants/api';
 import { mapStringsToSelectOptions } from '@innocuous/functions';
-import Select from 'components/Form/Select/Select';
+import { Select } from 'components/Form/Select/Select';
 import styles from './_steps.module.css';
 
 const programmingLanguages = [
@@ -57,7 +57,7 @@ Technology.submitHandler = async values => {
   await updateUser(values);
 };
 
-function Technology({ isSubmitting }) {
+export function Technology({ isSubmitting }) {
   const programmingLanguageOptions = [...mapStringsToSelectOptions(programmingLanguages)];
   const disciplineOptions = [...mapStringsToSelectOptions(disciplines)];
 
@@ -97,5 +97,3 @@ function Technology({ isSubmitting }) {
     </>
   );
 }
-
-export default Technology;

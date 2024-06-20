@@ -1,6 +1,6 @@
-import React from 'react';
+import { React } from 'react';
 import { Meta, StoryObj } from '@storybook/react';
-import DonateSection from '../DonateSection';
+import { DonateSection } from '../DonateSection';
 
 type DonateSectionStoryType = StoryObj<React.FC>;
 

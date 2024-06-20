@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-const ZipRecruiterJobs = () => {
+export const ZipRecruiterJobs = () => {
   useEffect(() => {
     const zipRecruiterScript = document.createElement('script');
 
@@ -36,5 +36,3 @@ const ZipRecruiterJobs = () => {
 
   return <div id="zipsearch_container" />;
 };
-
-export default ZipRecruiterJobs;

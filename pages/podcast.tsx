@@ -3,13 +3,13 @@ import get from 'lodash/get';
 import dynamic from 'next/dynamic';
 import { parse as parseXml } from 'fast-xml-parser';
 import { ONE_DAY } from 'common/constants/unitsOfTime';
-import Head from 'components/head';
-import HeroBanner from 'components/HeroBanner/HeroBanner';
-import Card from 'components/Cards/Card/Card';
-import Content from 'components/Content/Content';
-import Heading from 'components/Heading/Heading';
+import { Head } from 'components/Head';
+import { HeroBanner } from 'components/HeroBanner/HeroBanner';
+import { Card } from 'components/Cards/Card/Card';
+import { Content } from 'components/Content/Content';
+import { Heading } from 'components/Heading/Heading';
 import styles from 'styles/podcast.module.css';
-import Image from 'next/image';
+import Image from 'next/legacy/image';
 
 interface RSS {
   channel: {

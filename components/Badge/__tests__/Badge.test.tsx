@@ -2,7 +2,7 @@ import { render } from '@testing-library/react';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 import Icon from 'static/images/icons/github_logo.svg';
 
-import Badge from '../Badge';
+import { Badge } from '../Badge';
 
 const badgeIcon = <Icon />;
 

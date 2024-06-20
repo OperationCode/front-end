@@ -1,5 +1,5 @@
-import Head from 'components/head';
-import HeroBanner from 'components/HeroBanner/HeroBanner';
+import { Head } from 'components/Head';
+import { HeroBanner } from 'components/HeroBanner/HeroBanner';
 import { s3 } from 'common/constants/urls';
 import styles from 'styles/policy.module.css';
 

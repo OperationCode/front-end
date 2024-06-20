@@ -3,7 +3,7 @@ import createShallowSnapshotTest from 'test-utils/createShallowSnapshotTest';
 import { mobileNavItems } from 'common/constants/navigation';
 import { CLOSE_BUTTON } from 'common/constants/testIDs';
 
-import NavMobile from '../NavMobile';
+import { NavMobile } from '../NavMobile';
 
 describe('NavMobile', () => {
   it('should render', () =>

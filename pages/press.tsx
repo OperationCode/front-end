@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import Head from 'components/head';
-import HeroBanner from 'components/HeroBanner/HeroBanner';
-import Content from 'components/Content/Content';
+import { Head } from 'components/Head';
+import { HeroBanner } from 'components/HeroBanner/HeroBanner';
+import { Content } from 'components/Content/Content';
 import { Videos, Photos, Links } from 'components/Press';
 import styles from 'styles/press.module.css';
 
@@ -26,23 +26,11 @@ function Press() {
           <aside>
             <p>
               If you are looking for our mission statement or our values, please{' '}
-              <Link href="/about">
-                <a>go to the About page</a>
-              </Link>
-              . On other pages of our website you can{' '}
-              <Link href="/faq">
-                <a>see answers to frequently asked questions</a>
-              </Link>
-              ,{' '}
-              <Link href="/history">
-                <a>view our history</a>
-              </Link>
-              , and{' '}
-              <Link href="/team">
-                <a>learn more about our staff</a>
-              </Link>
-              . Lastly, if you are seeking information not located on our website, please do not
-              hesitate to email us at{' '}
+              <Link href="/about">go to the About page</Link>. On other pages of our website you can{' '}
+              <Link href="/faq">see answers to frequently asked questions</Link>,{' '}
+              <Link href="/history">view our history</Link>, and{' '}
+              <Link href="/team">learn more about our staff</Link>. Lastly, if you are seeking
+              information not located on our website, please do not hesitate to email us at{' '}
               <a href="mailto:staff@operationcode.org?subject=Press Inquiry">
                 staff@operationcode.org
               </a>
@@ -106,9 +94,7 @@ function Press() {
         theme="white"
         columns={[
           <div className={styles.logos}>
-            <Link href="/branding">
-              <a>View Our Branding</a>
-            </Link>
+            <Link href="/branding">View Our Branding</Link>
           </div>,
         ]}
       />

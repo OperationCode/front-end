@@ -1,12 +1,12 @@
 import classNames from 'classnames';
 import kebabCase from 'lodash/kebabCase';
-import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
+import { ScreenReaderOnly } from 'components/ScreenReaderOnly/ScreenReaderOnly';
 import LinkIcon from 'static/images/icons/FontAwesome/link-solid.svg';
 import styles from './Heading.module.css';
 
 type HeadingLevelType = 1 | 2 | 3 | 4 | 5 | 6;
 
-export type HeadingPropsType = {
+export interface HeadingPropsType {
   /**
    * Text to be rendered in the heading element.
    */
@@ -30,9 +30,9 @@ export type HeadingPropsType = {
    * @default 2
    */
   headingLevel?: HeadingLevelType;
-};
+}
 
-function Heading({
+export function Heading({
   className,
   hasHashLink = true,
   hasTitleUnderline = false,
@@ -65,5 +65,3 @@ function Heading({
     </div>
   );
 }
-
-export default Heading;

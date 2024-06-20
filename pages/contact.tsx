@@ -1,8 +1,8 @@
 import classNames from 'classnames';
 import Link from 'next/link';
-import Head from 'components/head';
-import HeroBanner from 'components/HeroBanner/HeroBanner';
-import OutboundLink from 'components/OutboundLink/OutboundLink';
+import { Head } from 'components/Head';
+import { HeroBanner } from 'components/HeroBanner/HeroBanner';
+import { OutboundLink } from 'components/OutboundLink/OutboundLink';
 import styles from 'styles/contact.module.css';
 
 const pageTitle = 'Contact Us';
@@ -21,10 +21,8 @@ function Contact() {
 
           <p>
             The best way to reach our staff and our members is by{' '}
-            <Link href="/join">
-              <a>joining Operation Code</a>
-            </Link>{' '}
-            to receive an invite to our team, including our Slack chat.
+            <Link href="/join">joining Operation Code</Link> to receive an invite to our team,
+            including our Slack chat.
           </p>
         </div>
 

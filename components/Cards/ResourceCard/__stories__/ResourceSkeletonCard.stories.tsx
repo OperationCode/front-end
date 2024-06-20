@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import ResourceSkeletonCard from '../ResourceSkeletonCard';
+import { ResourceSkeletonCard } from '../ResourceSkeletonCard';
 
 type ResourceSkeletonCardStoryType = StoryObj<typeof ResourceSkeletonCard>;
 

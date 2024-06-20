@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import HeroBanner from '../HeroBanner';
+import { HeroBanner } from '../HeroBanner';
 
 type HeroBannerStoryType = StoryObj<typeof HeroBanner>;
 

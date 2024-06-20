@@ -8,7 +8,7 @@ import {
   Description,
   Source,
 } from '@storybook/blocks';
-import ProgressIndicator from '../ProgressIndicator';
+import { ProgressIndicator } from '../ProgressIndicator';
 
 type ProgressIndicatorStoryType = StoryObj<typeof ProgressIndicator>;
 
@@ -37,7 +37,7 @@ const meta: Meta<typeof ProgressIndicator> = {
           <Source
             format
             code={`
-              import ProgressIndicator from 'components/ProgressIndicator/ProgressIndicator';
+              import { ProgressIndicator } from '@/components/ProgressIndicator/ProgressIndicator';
             `}
           />
           <Description>Use in the UI where needed.</Description>

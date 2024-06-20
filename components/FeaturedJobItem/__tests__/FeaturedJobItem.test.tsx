@@ -1,5 +1,5 @@
 import createSnapshotTest from 'test-utils/createSnapshotTest';
-import FeaturedJobItem from '../FeaturedJobItem';
+import { FeaturedJobItem } from '../FeaturedJobItem';
 
 describe('FeaturedJobItem', () => {
   it('should render with required props', () => {

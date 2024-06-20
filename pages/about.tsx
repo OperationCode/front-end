@@ -1,10 +1,10 @@
 import Link from 'next/link';
-import Head from 'components/head';
-import HeroBanner from 'components/HeroBanner/HeroBanner';
-import Content from 'components/Content/Content';
-import ImageCard from 'components/Cards/ImageCard/ImageCard';
-import ValueCard from 'components/Cards/ValueCard/ValueCard';
-import OutboundLink from 'components/OutboundLink/OutboundLink';
+import { Head } from 'components/Head';
+import { HeroBanner } from 'components/HeroBanner/HeroBanner';
+import { Content } from 'components/Content/Content';
+import { ImageCard } from 'components/Cards/ImageCard/ImageCard';
+import { ValueCard } from 'components/Cards/ValueCard/ValueCard';
+import { OutboundLink } from 'components/OutboundLink/OutboundLink';
 import { s3 } from 'common/constants/urls';
 import styles from 'styles/about.module.css';
 
@@ -35,10 +35,7 @@ function About() {
             <p>
               We at Operation Code strive to provide an efficient way into a tech career for
               veterans, military spouses, and transitioning servicemembers. Read about our{' '}
-              <Link href="/history">
-                <a>organization&apos;s history </a>
-              </Link>
-              to learn more!
+              <Link href="/history">organization&apos;s history</Link> to learn more!
             </p>
 
             <p>
@@ -52,11 +49,8 @@ function About() {
               As a non-profit organization, we rely heavily on your support. If you are interested
               in helping us financially, please donate here or set your Amazon Smile organization to
               &ldquo;Operation Code&rdquo;. If you have questions about our organization, platforms,
-              or services, please reference our{' '}
-              <Link href="/faq">
-                <a>FAQ</a>
-              </Link>{' '}
-              page. Otherwise, do not hesitate to reach out to our staff.
+              or services, please reference our <Link href="/faq">FAQ</Link> page. Otherwise, do not
+              hesitate to reach out to our staff.
             </p>
           </>,
         ]}
@@ -137,11 +131,8 @@ function About() {
           >
             <h6>Podcast</h6>
             <p>
-              <Link href="/podcast">
-                <a>We have a podcast!</a>
-              </Link>{' '}
-              You can listen into the amazing stories of our members. Visualize your success through
-              others&apos; footsteps.
+              <Link href="/podcast">We have a podcast!</Link> You can listen into the amazing
+              stories of our members. Visualize your success through others&apos; footsteps.
             </p>
           </ImageCard>,
         ]}

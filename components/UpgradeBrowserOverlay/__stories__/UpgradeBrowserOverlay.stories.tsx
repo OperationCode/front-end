@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import UpgradeBrowserOverlay from '../UpgradeBrowserOverlay';
+import { UpgradeBrowserOverlay } from '../UpgradeBrowserOverlay';
 
 type UpgradeBrowserOverlayStoryType = StoryObj<typeof UpgradeBrowserOverlay>;
 

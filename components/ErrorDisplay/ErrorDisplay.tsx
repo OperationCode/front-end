@@ -1,4 +1,4 @@
-import Head from 'components/head';
+import { Head } from 'components/Head';
 
 export interface ErrorDisplayPropsType {
   /**
@@ -7,7 +7,7 @@ export interface ErrorDisplayPropsType {
   statusCode?: number;
 }
 
-function ErrorDisplay({ statusCode }: ErrorDisplayPropsType) {
+export function ErrorDisplay({ statusCode }: ErrorDisplayPropsType) {
   return (
     <>
       <Head title={statusCode ? `${statusCode}` : 'Error'}>
@@ -29,5 +29,3 @@ function ErrorDisplay({ statusCode }: ErrorDisplayPropsType) {
     </>
   );
 }
-
-export default ErrorDisplay;

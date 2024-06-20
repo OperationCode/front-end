@@ -1,8 +1,8 @@
-import Head from 'components/head';
-import HeroBanner from 'components/HeroBanner/HeroBanner';
-import Content from 'components/Content/Content';
-import FlatCard from 'components/Cards/FlatCard/FlatCard';
-import OutboundLink from 'components/OutboundLink/OutboundLink';
+import { Head } from 'components/Head';
+import { HeroBanner } from 'components/HeroBanner/HeroBanner';
+import { Content } from 'components/Content/Content';
+import { FlatCard } from 'components/Cards/FlatCard/FlatCard';
+import { OutboundLink } from 'components/OutboundLink/OutboundLink';
 
 const pageTitle = 'Chapters';
 

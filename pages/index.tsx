@@ -1,12 +1,12 @@
-import Head from 'components/head';
-import HeroBanner from 'components/HeroBanner/HeroBanner';
-import Content from 'components/Content/Content';
-import JoinSection from 'components/ReusableSections/JoinSection/JoinSection';
-import SponsorsSection from 'components/ReusableSections/SponsorsSection/SponsorsSection';
-import SuccessStory from 'components/SuccessStory/SuccessStory';
-import Heading from 'components/Heading/Heading';
-import LinkButton from 'components/Buttons/LinkButton/LinkButton';
-import successStories from 'common/constants/successStories';
+import { Head } from 'components/Head';
+import { HeroBanner } from 'components/HeroBanner/HeroBanner';
+import { Content } from 'components/Content/Content';
+import { JoinSection } from 'components/ReusableSections/JoinSection/JoinSection';
+import { SponsorsSection } from 'components/ReusableSections/SponsorsSection/SponsorsSection';
+import { SuccessStory } from 'components/SuccessStory/SuccessStory';
+import { Heading } from 'components/Heading/Heading';
+import { LinkButton } from 'components/Buttons/LinkButton/LinkButton';
+import { successStories } from 'common/constants/successStories';
 import { s3 } from 'common/constants/urls';
 import styles from 'styles/index.module.css';
 

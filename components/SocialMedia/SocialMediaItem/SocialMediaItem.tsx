@@ -1,7 +1,7 @@
-import OutboundLink from 'components/OutboundLink/OutboundLink';
-import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
+import { OutboundLink } from 'components/OutboundLink/OutboundLink';
+import { ScreenReaderOnly } from 'components/ScreenReaderOnly/ScreenReaderOnly';
 
-export type SocialMediaItemPropsType = {
+export interface SocialMediaItemPropsType {
   /**
    * Name of the social media item.
    */
@@ -14,9 +14,9 @@ export type SocialMediaItemPropsType = {
    * Icon to be used.
    */
   svg: React.ReactNode;
-};
+}
 
-function SocialMediaItem({ name, href, svg }: SocialMediaItemPropsType) {
+export function SocialMediaItem({ name, href, svg }: SocialMediaItemPropsType) {
   return (
     <div className="mx-2 my-0 opacity-80 hover:opacity-100">
       <OutboundLink
@@ -30,5 +30,3 @@ function SocialMediaItem({ name, href, svg }: SocialMediaItemPropsType) {
     </div>
   );
 }
-
-export default SocialMediaItem;

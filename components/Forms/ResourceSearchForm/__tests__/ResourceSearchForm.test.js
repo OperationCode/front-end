@@ -1,5 +1,5 @@
 import createSnapshotTest from 'test-utils/createSnapshotTest';
-import ResourceSearchForm from '../ResourceSearchForm';
+import { ResourceSearchForm } from '../ResourceSearchForm';
 
 const mockFields = {
   languages: null,

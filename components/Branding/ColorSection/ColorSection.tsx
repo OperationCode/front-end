@@ -1,8 +1,8 @@
 import { brandColorsObject } from 'common/styles/styleExports';
-import Swatch from 'components/Branding/Swatch/Swatch';
-import Content from 'components/Content/Content';
+import { Swatch } from 'components/Branding/Swatch/Swatch';
+import { Content } from 'components/Content/Content';
 
-function ColorSection() {
+export function ColorSection() {
   const primaryColor = { name: 'Primary', hexCode: brandColorsObject.primary };
   const secondaryColor = { name: 'Secondary', hexCode: brandColorsObject.secondary };
 
@@ -41,5 +41,3 @@ function ColorSection() {
     </>
   );
 }
-
-export default ColorSection;

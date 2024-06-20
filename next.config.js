@@ -22,6 +22,8 @@ const sentryWebpackPluginOptions = {
  * @type {import('next').NextConfig}
  */
 const nextConfig = {
+  swcMinify: false,
+
   excludeDefaultMomentLocales: true,
 
   devIndicators: {

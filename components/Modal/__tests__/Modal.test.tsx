@@ -1,6 +1,6 @@
 import { cleanup, render } from '@testing-library/react';
 import { gtag } from 'common/utils/thirdParty/gtag';
-import Modal from '../Modal';
+import { Modal } from '../Modal';
 
 describe('Modal', () => {
   const requiredProps = {

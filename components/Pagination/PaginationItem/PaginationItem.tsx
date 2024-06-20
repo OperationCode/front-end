@@ -1,10 +1,10 @@
 import Link from 'next/link';
 import omit from 'lodash/omit';
 import classNames from 'classnames';
-import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
+import { ScreenReaderOnly } from 'components/ScreenReaderOnly/ScreenReaderOnly';
 import styles from './PaginationItem.module.css';
 
-export type PaginationItemPropsType = {
+export interface PaginationItemPropsType {
   /**
    * Content to be rendered as the link.
    */
@@ -23,9 +23,9 @@ export type PaginationItemPropsType = {
   isCurrent?: boolean;
   query?: Record<string, any>;
   value?: number;
-};
+}
 
-function PaginationItem({
+export function PaginationItem({
   children,
   isCurrent = false,
   pathname,
@@ -50,11 +50,9 @@ function PaginationItem({
       data-testid={testId}
     >
       {isClickable ? (
-        <Link href={{ pathname, query }} as={realURL}>
-          <a className={styles.unstyledLink}>
-            <ScreenReaderOnly>Go to page</ScreenReaderOnly>
-            {children}
-          </a>
+        <Link href={{ pathname, query }} as={realURL} className={styles.unstyledLink}>
+          <ScreenReaderOnly>Go to page</ScreenReaderOnly>
+          {children}
         </Link>
       ) : (
         children
@@ -62,5 +60,3 @@ function PaginationItem({
     </li>
   );
 }
-
-export default PaginationItem;

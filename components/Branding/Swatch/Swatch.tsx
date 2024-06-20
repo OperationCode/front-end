@@ -1,17 +1,17 @@
 import { string } from 'prop-types';
-import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
+import { ScreenReaderOnly } from 'components/ScreenReaderOnly/ScreenReaderOnly';
 
 Swatch.propTypes = {
   colorName: string.isRequired,
   hexCode: string.isRequired,
 };
 
-export type Swatch = {
+export interface Swatch {
   colorName: string;
   hexCode: string;
-};
+}
 
-function Swatch({ colorName, hexCode }: Swatch) {
+export function Swatch({ colorName, hexCode }: Swatch) {
   return (
     <figure className="border-1 border-solid border-[#333333] p-4 m-6 w-56">
       <ScreenReaderOnly>{`A block of the color ${colorName}`}</ScreenReaderOnly>
@@ -25,5 +25,3 @@ function Swatch({ colorName, hexCode }: Swatch) {
     </figure>
   );
 }
-
-export default Swatch;

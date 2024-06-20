@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import Heading from '../Heading';
+import { Heading } from '../Heading';
 
 type HeadingStoryType = StoryObj<typeof Heading>;
 

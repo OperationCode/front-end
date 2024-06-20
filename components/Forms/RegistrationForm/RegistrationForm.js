@@ -8,13 +8,13 @@ import { getServerErrorMessage } from 'common/utils/api-utils';
 import { validationErrorMessages } from 'common/constants/messages';
 import { capitalizeFirstLetter } from 'common/utils/string-utils';
 import { codeOfConduct, slackGuidelines } from 'common/constants/urls';
-import Button from 'components/Buttons/Button/Button';
-import Checkbox from 'components/Form/Checkbox/Checkbox';
-import Form from 'components/Form/Form';
-import Input from 'components/Form/Input/Input';
-import Alert from 'components/Alert/Alert';
+import { Button } from 'components/Buttons/Button/Button';
+import { Checkbox } from 'components/Form/Checkbox/Checkbox';
+import { Form } from 'components/Form/Form';
+import { Input } from 'components/Form/Input/Input';
+import { Alert } from 'components/Alert/Alert';
 import Link from 'next/link';
-import OutboundLink from 'components/OutboundLink/OutboundLink';
+import { OutboundLink } from 'components/OutboundLink/OutboundLink';
 
 export const PASSWORD_FOR_EVERYBODY = 'nOnEeDfOrP@ssw0rd!';
 
@@ -77,7 +77,7 @@ RegistrationForm.defaultProps = {
   initialValues: defaultValues,
 };
 
-function RegistrationForm({ initialValues, onSubmit, onSuccess }) {
+export function RegistrationForm({ initialValues, onSubmit, onSuccess }) {
   const [errorMessage, setErrorMessage] = useState('');
 
   const handleSubmit = async (values, actions) => {
@@ -124,9 +124,7 @@ function RegistrationForm({ initialValues, onSubmit, onSuccess }) {
               passionate about transitioning into the tech industry. We work with over 7,000 members
               who are all working towards relevant goals on Slack and in-person meet-ups. Membership
               is free! Unfamiliar with Slack?{` `}
-              <Link href="/slack_guide">
-                <a>Learn how to use it!</a>
-              </Link>
+              <Link href="/slack_guide">Learn how to use it!</Link>
             </p>
           </div>
 
@@ -255,5 +253,3 @@ function RegistrationForm({ initialValues, onSubmit, onSuccess }) {
     </Formik>
   );
 }
-
-export default RegistrationForm;

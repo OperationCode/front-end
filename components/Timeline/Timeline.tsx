@@ -1,9 +1,9 @@
 import { objectKeys } from 'utils/types';
-import historyData from './historyData';
+import { historyData } from './historyData';
 import styles from './Timeline.module.css';
-import TimelineEvent from './TimelineEvent/TimelineEvent';
+import { TimelineEvent } from './TimelineEvent/TimelineEvent';
 
-function Timeline() {
+export function Timeline() {
   return (
     <div className={styles.timeline}>
       {objectKeys(historyData).map(year => (
@@ -27,5 +27,3 @@ function Timeline() {
     </div>
   );
 }
-
-export default Timeline;

@@ -1,14 +1,14 @@
 import classNames from 'classnames';
 import TrackVisibility from 'react-on-screen';
-import Head from 'components/head';
-import HeroBanner from 'components/HeroBanner/HeroBanner';
-import Badge from 'components/Badge/Badge';
-import Content from 'components/Content/Content';
+import { Head } from 'components/Head';
+import { HeroBanner } from 'components/HeroBanner/HeroBanner';
+import { Badge } from 'components/Badge/Badge';
+import { Content } from 'components/Content/Content';
 import Link from 'next/link';
-import LinkButton from 'components/Buttons/LinkButton/LinkButton';
-import Heading from 'components/Heading/Heading';
-import DonateSection from 'components/ReusableSections/DonateSection/DonateSection';
-import JoinSection from 'components/ReusableSections/JoinSection/JoinSection';
+import { LinkButton } from 'components/Buttons/LinkButton/LinkButton';
+import { Heading } from 'components/Heading/Heading';
+import { DonateSection } from 'components/ReusableSections/DonateSection/DonateSection';
+import { JoinSection } from 'components/ReusableSections/JoinSection/JoinSection';
 import HighfivingIcon from 'static/images/icons/Custom/high_fiving.svg';
 import BullseyeIcon from 'static/images/icons/Custom/bullseye.svg';
 import ManHoldingKeyIcon from 'static/images/icons/Custom/man_holding_key.svg';
@@ -17,7 +17,7 @@ import ChartIcon from 'static/images/icons/Custom/chart.svg';
 import PeopleMeetingIcon from 'static/images/icons/Custom/people_meeting.svg';
 import { s3 } from 'common/constants/urls';
 import styles from 'styles/get_involved.module.css';
-import Image from 'next/image';
+import Image from 'next/legacy/image';
 
 const VISIBILITY_OFFSET = 400;
 
@@ -64,19 +64,10 @@ function GetInvolved() {
         <>
           <p>
             Help make an impact to transitioning service members, military veterans, military
-            spouses and dependents! You can help in several ways:{' '}
-            <Link href="/donate">
-              <a>Donate</a>
-            </Link>{' '}
+            spouses and dependents! You can help in several ways: <Link href="/donate">Donate</Link>{' '}
             to help provide scholarships and keep our daily operations afloat,{' '}
-            <Link href="/services">
-              <a>Volunteer</a>
-            </Link>
-            , or become a{' '}
-            <Link href="/sponsorship">
-              <a>Corporate Partner</a>
-            </Link>
-            .
+            <Link href="/services">Volunteer</Link>, or become a{' '}
+            <Link href="/sponsorship">Corporate Partner</Link>.
           </p>
 
           <div className={styles.ctaContainer}>
@@ -113,7 +104,7 @@ function GetInvolved() {
                   src={`${s3}redesign/images/one_on_one_mentoring.jpg`}
                   alt="Woman outlines a whiteboarding problem to a man"
                   width={500}
-                  height={500}
+                  height={357}
                 />
               </div>
             )}

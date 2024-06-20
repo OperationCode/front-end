@@ -31,7 +31,7 @@ export interface ContainerPropsType {
   theme?: 'gray' | 'secondary' | 'white';
 }
 
-function Container(props: ContainerPropsType) {
+export function Container(props: ContainerPropsType) {
   const {
     backgroundImageSource,
     children,
@@ -63,5 +63,3 @@ function Container(props: ContainerPropsType) {
     </div>
   );
 }
-
-export default Container;

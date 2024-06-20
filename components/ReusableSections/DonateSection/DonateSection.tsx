@@ -1,9 +1,9 @@
 import { s3 } from 'common/constants/urls';
-import Container from 'components/Container/Container';
-import LinkButton from 'components/Buttons/LinkButton/LinkButton';
-import Heading from 'components/Heading/Heading';
+import { Container } from 'components/Container/Container';
+import { LinkButton } from 'components/Buttons/LinkButton/LinkButton';
+import { Heading } from 'components/Heading/Heading';
 
-function DonateSection() {
+export function DonateSection() {
   return (
     <Container backgroundImageSource={`${s3}background_flag.jpg`}>
       <Heading text="Donate" headingLevel={3} />
@@ -23,5 +23,3 @@ function DonateSection() {
     </Container>
   );
 }
-
-export default DonateSection;

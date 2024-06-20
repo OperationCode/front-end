@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import JoinSection from '../JoinSection';
+import { JoinSection } from '../JoinSection';
 
 type JoinSectionStoryType = StoryObj<typeof JoinSection>;
 

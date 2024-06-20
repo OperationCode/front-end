@@ -1,5 +1,5 @@
-import { descriptions } from 'common/constants/descriptions';
-import FlatCard from '../FlatCard';
+import { FlatCard } from '../FlatCard';
+import { descriptions } from '@/common/constants/descriptions';
 
 export default {
   component: FlatCard,

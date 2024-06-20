@@ -1,6 +1,6 @@
-import OutboundLink from 'components/OutboundLink/OutboundLink';
+import { OutboundLink } from 'components/OutboundLink/OutboundLink';
 
-export default {
+export const historyData = {
   2011: [
     {
       title: 'Humble Beginnings',

@@ -1,10 +1,10 @@
 import * as Tabs from '@radix-ui/react-tabs';
-import OutboundLink from 'components/OutboundLink/OutboundLink';
-import * as Articles from './Articles';
+import { OutboundLink } from 'components/OutboundLink/OutboundLink';
 import { objectKeys } from 'utils/types';
+import * as Articles from './Articles';
 import styles from './PressLinks.module.css';
 
-function PressLinks() {
+export function PressLinks() {
   return (
     <div className={styles.logos}>
       <div className={styles.flexContainer}>
@@ -40,5 +40,3 @@ function PressLinks() {
     </div>
   );
 }
-
-export default PressLinks;

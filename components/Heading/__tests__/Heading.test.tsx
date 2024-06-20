@@ -1,5 +1,5 @@
 import createSnapshotTest from 'test-utils/createSnapshotTest';
-import Heading from '../Heading';
+import { Heading } from '../Heading';
 
 describe('Heading', () => {
   const requiredProps = {

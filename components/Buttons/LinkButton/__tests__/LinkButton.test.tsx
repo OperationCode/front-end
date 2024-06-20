@@ -1,7 +1,7 @@
 import { fireEvent, render } from '@testing-library/react';
 import { gtag } from 'common/utils/thirdParty/gtag';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
-import LinkButton from '../LinkButton';
+import { LinkButton } from '../LinkButton';
 
 describe('LinkButton', () => {
   const testID = 'Test';

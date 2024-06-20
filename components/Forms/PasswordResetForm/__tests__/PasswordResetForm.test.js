@@ -4,7 +4,7 @@ import { validationErrorMessages } from 'common/constants/messages';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 import OperationCodeAPIMock from 'test-utils/mocks/apiMock';
 import mockUser from 'test-utils/mockGenerators/mockUser';
-import PasswordResetForm from '../PasswordResetForm';
+import { PasswordResetForm } from '../PasswordResetForm';
 
 afterEach(() => {
   OperationCodeAPIMock.reset();

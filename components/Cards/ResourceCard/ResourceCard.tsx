@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import classNames from 'classnames';
-import Accordion from 'components/Accordion/Accordion';
-import OutboundLink from 'components/OutboundLink/OutboundLink';
-import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
+import { Accordion } from 'components/Accordion/Accordion';
+import { OutboundLink } from 'components/OutboundLink/OutboundLink';
+import { ScreenReaderOnly } from 'components/ScreenReaderOnly/ScreenReaderOnly';
 import {
   UPVOTE_BUTTON,
   UPVOTE_COUNT,
@@ -38,7 +38,7 @@ type HandleVoteType = (
   setDownVotes: VotingBlockPropsType['setDownVotes'],
 ) => void;
 
-type VotingBlockPropsType = {
+interface VotingBlockPropsType {
   /**
    * Applies an id.
    */
@@ -75,7 +75,7 @@ type VotingBlockPropsType = {
    * Applies classes based on whether an "down" vote has occurred.
    */
   didDownvote: boolean;
-};
+}
 
 function VotingBlock({
   blockID,
@@ -153,7 +153,7 @@ export const possibleUserVotes = {
   none: null,
 };
 
-export type ResourceCardPropType = {
+export interface ResourceCardPropType {
   /**
    * Url path for the link.
    */
@@ -195,9 +195,9 @@ export type ResourceCardPropType = {
    */
   upvotes?: number;
   userVote?: keyof typeof possibleUserVotes | null;
-};
+}
 
-function ResourceCard({
+export function ResourceCard({
   description = '',
   downvotes = 0,
   href,
@@ -283,5 +283,3 @@ function ResourceCard({
     />
   );
 }
-
-export default ResourceCard;

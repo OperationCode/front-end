@@ -35,7 +35,7 @@ ThemedReactSelect.defaultProps = {
   isTouched: false,
 };
 
-function ThemedReactSelect({
+export function ThemedReactSelect({
   disabled,
   hasErrors,
   hasValidationStyling,
@@ -139,5 +139,3 @@ function ThemedReactSelect({
     />
   );
 }
-
-export default ThemedReactSelect;

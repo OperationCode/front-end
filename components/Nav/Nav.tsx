@@ -5,12 +5,15 @@ import classNames from 'classnames';
 import Logo from 'public/static/images/logo.svg';
 
 import { desktopNavItems, mobileNavItems } from 'common/constants/navigation';
-import NavMobile from 'components/Nav/NavMobile/NavMobile';
+import { NavMobile } from 'components/Nav/NavMobile/NavMobile';
 import dynamic from 'next/dynamic';
 import UserLogo from '../../public/static/images/icons/FontAwesome/user.svg';
 import styles from './Nav.module.css';
 
-const NavListItem = dynamic(() => import('components/Nav/NavListItem/NavListItem'), { ssr: false });
+const NavListItem = dynamic(
+  () => import('components/Nav/NavListItem/NavListItem').then(module => module.NavListItem),
+  { ssr: false },
+);
 
 export const Nav = () => {
   const [isMobileNavOpen, setMobileNavOpen] = useState(false);
@@ -46,16 +49,15 @@ export const Nav = () => {
       <header className={styles.NavDesktop}>
         <div className={styles.desktopNavContainer} data-testid="Desktop Nav Container">
           <nav data-testid="Desktop Nav">
-            <Link href="/" key="Home">
-              <a
-                className={classNames(styles.logoLink, styles.link)}
-                onContextMenu={event => {
-                  event.preventDefault();
-                  Router.push('/branding');
-                }}
-              >
-                <Logo className={styles.logo} style={{ width: 224, height: 42 }} fill="#f7f7f7" />
-              </a>
+            <Link
+              href="/"
+              className={classNames(styles.logoLink, styles.link)}
+              onContextMenu={event => {
+                event.preventDefault();
+                Router.push('/branding');
+              }}
+            >
+              <Logo className={styles.logo} style={{ width: 224, height: 42 }} fill="#f7f7f7" />
             </Link>
 
             <ul className={styles.link}>
@@ -72,9 +74,9 @@ export const Nav = () => {
               ))}
 
               {/* stylistic one-off */}
-              <li key="Donate">
-                <Link href="/donate">
-                  <a className={classNames(styles.link, styles.donateLink)}>Donate</a>
+              <li>
+                <Link href="/donate" className={classNames(styles.link, styles.donateLink)}>
+                  Donate
                 </Link>
               </li>
             </ul>
@@ -84,5 +86,3 @@ export const Nav = () => {
     </>
   );
 };
-
-export default Nav;

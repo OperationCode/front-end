@@ -1,11 +1,11 @@
 import Link from 'next/link';
-import OutboundLink from 'components/OutboundLink/OutboundLink';
-import SocialMedia from 'components/SocialMedia/SocialMedia';
+import { OutboundLink } from 'components/OutboundLink/OutboundLink';
+import { SocialMedia } from 'components/SocialMedia/SocialMedia';
 import { footerItems } from 'common/constants/navigation';
-import Image from 'next/image';
+import Image from 'next/legacy/image';
 import Logo from 'public/static/images/logo.svg';
 
-export type FooterPropsType = {
+export interface FooterPropsType {
   /**
    * Url string applied ot the link.
    */
@@ -18,9 +18,9 @@ export type FooterPropsType = {
    * Only pass analytics event label if you're href is to an external website
    */
   analyticsEventLabel?: string;
-};
+}
 
-function Footer() {
+export function Footer() {
   const currentYear = new Date().getFullYear();
   const { items, legal } = footerItems;
 
@@ -44,7 +44,7 @@ function Footer() {
     <footer className="pt-12 pb-40 md:py-8">
       <div>
         <div className="flex flex-col items-center pb-6">
-          <Link href="/" key="Home">
+          <Link href="/">
             <Logo style={{ width: 318, height: 60 }} fill="#252e3e" className="cursor-pointer" />
           </Link>
           <h6 className="mb-2">Connect With Us!</h6>
@@ -86,7 +86,7 @@ function Footer() {
                   {link.name}
                 </OutboundLink>
               ) : (
-                <Link href={link.href} key={link.href}>
+                <Link key={link.href} href={link.href}>
                   {link.name}
                 </Link>
               ),
@@ -97,5 +97,3 @@ function Footer() {
     </footer>
   );
 }
-
-export default Footer;

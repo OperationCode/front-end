@@ -2,7 +2,7 @@ import createShallowSnapshotTest from 'test-utils/createShallowSnapshotTest';
 import { render, fireEvent } from '@testing-library/react';
 import { KEY_CODES } from 'test-utils/identifiers';
 
-import NavListItem from '../NavListItem';
+import { NavListItem } from '../NavListItem';
 
 describe('NavListItem', () => {
   const testDataWithoutSublinks = {

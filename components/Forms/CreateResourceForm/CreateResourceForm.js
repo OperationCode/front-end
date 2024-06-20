@@ -8,10 +8,10 @@ import get from 'lodash/get';
 import { createResource } from 'common/constants/api';
 import { getServerErrorMessage } from 'common/utils/api-utils';
 import { validationErrorMessages } from 'common/constants/messages';
-import Button from 'components/Buttons/Button/Button';
-import Form from 'components/Form/Form';
-import Input from 'components/Form/Input/Input';
-import Select from 'components/Form/Select/Select';
+import { Button } from 'components/Buttons/Button/Button';
+import { Form } from 'components/Form/Form';
+import { Input } from 'components/Form/Input/Input';
+import { Select } from 'components/Form/Select/Select';
 
 // This exists only because we don't have a radio component and I wanna get this done quickly!
 // TODO: Make radio input component
@@ -36,7 +36,7 @@ CreateResourceForm.propTypes = {
   onFailure: func.isRequired,
 };
 
-function CreateResourceForm({
+export function CreateResourceForm({
   categoryOptions: _categoryOptions,
   languageOptions: _languageOptions,
   onSuccess,
@@ -167,5 +167,3 @@ function CreateResourceForm({
     </Formik>
   );
 }
-
-export default CreateResourceForm;

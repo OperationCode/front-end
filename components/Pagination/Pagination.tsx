@@ -1,9 +1,9 @@
 import LeftAngleIcon from 'static/images/icons/FontAwesome/angle-left-solid.svg';
 import RightAngleIcon from 'static/images/icons/FontAwesome/angle-right-solid.svg';
 import { PREV_PAGE_BUTTON, NEXT_PAGE_BUTTON } from '../../common/constants/testIDs';
-import PaginationItem from './PaginationItem/PaginationItem';
+import { PaginationItem } from './PaginationItem/PaginationItem';
 
-export type PaginationPropsType = {
+export interface PaginationPropsType {
   /**
    * Sets the current page number to indicate which PaginationItem is styled differently.
    */
@@ -20,7 +20,7 @@ export type PaginationPropsType = {
    * Sets the total number of pages.
    */
   totalPages: number;
-};
+}
 
 export const developmentErrors = {
   currentPageValue: (value: number) => `The value passed for currentPage is ${value}.`,
@@ -132,7 +132,7 @@ const PaginationItems = ({ currentPage, pathname, query, totalPages }: Paginatio
   );
 };
 
-function Pagination({ currentPage, pathname, query, totalPages }: PaginationPropsType) {
+export function Pagination({ currentPage, pathname, query, totalPages }: PaginationPropsType) {
   /* Developer Errors */
   if (process.env.NODE_ENV !== 'production') {
     const isCurrentPageTooSmall = currentPage < 1;
@@ -199,5 +199,3 @@ function Pagination({ currentPage, pathname, query, totalPages }: PaginationProp
     </nav>
   );
 }
-
-export default Pagination;

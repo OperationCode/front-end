@@ -1,10 +1,10 @@
 import classNames from 'classnames';
 import * as Dialog from '@radix-ui/react-dialog';
 import { gtag } from 'common/utils/thirdParty/gtag';
-import CloseButton from 'components/Buttons/CloseButton/CloseButton';
+import { CloseButton } from 'components/Buttons/CloseButton/CloseButton';
 import { MODAL_CONTENT, MODAL_OVERLAY } from 'common/constants/testIDs';
 
-export type ModalPropsType = {
+export interface ModalPropsType {
   /**
    * Content to be rendered in the modal.
    */
@@ -39,9 +39,9 @@ export type ModalPropsType = {
    * Applies classNames to the overlay.
    */
   overlayClassName?: string;
-};
+}
 
-function Modal({
+export function Modal({
   children,
   className,
   isOpen = false,
@@ -108,5 +108,3 @@ function Modal({
     </Dialog.Root>
   );
 }
-
-export default Modal;

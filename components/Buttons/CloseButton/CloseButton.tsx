@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import { CLOSE_BUTTON } from 'common/constants/testIDs';
-import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
+import { ScreenReaderOnly } from 'components/ScreenReaderOnly/ScreenReaderOnly';
 import PlusIcon from 'static/images/icons/plus.svg';
 import styles from './CloseButton.module.css';
 
@@ -11,11 +11,7 @@ export type CloseButtonProps = {
   theme?: 'primary' | 'secondary' | 'white';
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
-export default function CloseButton({
-  disabled = false,
-  onClick,
-  theme = 'primary',
-}: CloseButtonProps) {
+export function CloseButton({ disabled = false, onClick, theme = 'primary' }: CloseButtonProps) {
   return (
     <button
       className={styles.CloseButton}

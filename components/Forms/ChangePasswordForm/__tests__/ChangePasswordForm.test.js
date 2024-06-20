@@ -5,7 +5,7 @@ import { BUTTON, INPUT_ERROR, CHANGE_PASSWORD_FORM_ERROR } from 'common/constant
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 import OperationCodeAPIMock from 'test-utils/mocks/apiMock';
 import mockUser from 'test-utils/mockGenerators/mockUser';
-import ChangePasswordForm from '../ChangePasswordForm';
+import { ChangePasswordForm } from '../ChangePasswordForm';
 
 beforeEach(() => {
   OperationCodeAPIMock.reset();

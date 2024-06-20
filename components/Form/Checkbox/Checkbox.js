@@ -2,8 +2,8 @@ import { shape, string, node, number, object, objectOf, oneOfType } from 'prop-t
 import classNames from 'classnames';
 import { ErrorMessage } from 'formik';
 import { CHECKBOX, CHECKBOX_ERROR } from 'common/constants/testIDs';
-import Alert from 'components/Alert/Alert';
-import Label from 'components/Form/Label/Label';
+import { Alert } from 'components/Alert/Alert';
+import { Label } from 'components/Form/Label/Label';
 import styles from './Checkbox.module.css';
 
 Checkbox.propTypes = {
@@ -25,7 +25,7 @@ Checkbox.defaultProps = {
   id: '',
 };
 
-function Checkbox({ field: { name, value, ...field }, form: { errors }, id, label }) {
+export function Checkbox({ field: { name, value, ...field }, form: { errors }, id, label }) {
   const hasErrors = Boolean(errors[name]);
 
   return (
@@ -55,5 +55,3 @@ function Checkbox({ field: { name, value, ...field }, form: { errors }, id, labe
     </div>
   );
 }
-
-export default Checkbox;

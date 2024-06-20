@@ -1,7 +1,6 @@
 import { Formik, Field } from 'formik';
-import createSnapshotTest from 'test-utils/createSnapshotTest';
-
-import Form from '../Form';
+import { Form } from '../Form';
+import createSnapshotTest from '@/test-utils/createSnapshotTest';
 
 describe('Form', () => {
   it('should render within the context of Formik', () => {

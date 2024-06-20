@@ -2,8 +2,8 @@ import { render } from '@testing-library/react';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 import { FLAT_CARD_IMAGE } from 'common/constants/testIDs';
 import { s3 } from 'common/constants/urls';
-import LinkButton from 'components/Buttons/LinkButton/LinkButton';
-import FlatCard from '../FlatCard';
+import { LinkButton } from 'components/Buttons/LinkButton/LinkButton';
+import { FlatCard } from '../FlatCard';
 
 describe('FlatCard', () => {
   const requiredProps = {

@@ -1,13 +1,13 @@
 import { twMerge } from 'tailwind-merge';
 import { getDataAttributes } from 'common/utils/prop-utils';
 
-export type CardPropsType = {
+export interface CardPropsType {
   children: React.ReactNode;
   className?: string;
   hasAnimationOnHover?: boolean;
-};
+}
 
-function Card({ children, className, hasAnimationOnHover, ...props }: CardPropsType) {
+export function Card({ children, className, hasAnimationOnHover, ...props }: CardPropsType) {
   const customDataAttributes = getDataAttributes(props);
 
   return (
@@ -24,5 +24,3 @@ function Card({ children, className, hasAnimationOnHover, ...props }: CardPropsT
     </article>
   );
 }
-
-export default Card;

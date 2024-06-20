@@ -5,12 +5,12 @@ import PlusIcon from 'static/images/icons/plus.svg';
 import MinusIcon from 'static/images/icons/minus.svg';
 import styles from './NavListItem.module.css';
 
-type SublinkType = {
+interface SublinkType {
   name: string;
   href: string;
-};
+}
 
-export type NavListItemPropsType = {
+export interface NavListItemPropsType {
   /**
    * Text used for the label.
    */
@@ -27,9 +27,9 @@ export type NavListItemPropsType = {
    * Includes an optional icon.
    */
   icon?: React.ReactElement | null;
-};
+}
 
-function NavListItem({ sublinks, href, name, icon = null }: NavListItemPropsType) {
+export function NavListItem({ sublinks, href, name, icon = null }: NavListItemPropsType) {
   const [areSublinksVisible, setSublinksVisible] = useState(false);
 
   const handleKeyDown = (event: React.KeyboardEvent, indexKeyedOn: number) => {
@@ -56,18 +56,17 @@ function NavListItem({ sublinks, href, name, icon = null }: NavListItemPropsType
 
   return (
     <li className={styles.NavListItem}>
-      <Link href={href}>
-        <a
-          className={classNames(styles.link, styles.navItemLink)}
-          onMouseEnter={exposeSublinks}
-          onMouseLeave={hideSublinks}
-          role="link"
-          tabIndex={0}
-          data-testid={`Nav Item ${name}`}
-        >
-          <span className={styles.linkContent}>{name}</span>
-          {icon && icon}
-        </a>
+      <Link
+        href={href}
+        className={classNames(styles.link, styles.navItemLink)}
+        onMouseEnter={exposeSublinks}
+        onMouseLeave={hideSublinks}
+        role="link"
+        tabIndex={0}
+        data-testid={`Nav Item ${name}`}
+      >
+        <span className={styles.linkContent}>{name}</span>
+        {icon && icon}
       </Link>
 
       {hasSublinks && (
@@ -99,17 +98,17 @@ function NavListItem({ sublinks, href, name, icon = null }: NavListItemPropsType
             {sublinks.map((sublink, index) => (
               <li className={styles.sublinkListItem} key={sublink.name}>
                 {/* 😞 next/link fought being mocked, so `prefetch` has test-specific code */}
-                <Link href={sublink.href} prefetch={process.env.NODE_ENV === 'production'}>
-                  <a
-                    className={styles.link}
-                    key={sublink.name}
-                    role="link"
-                    tabIndex={0}
-                    data-testid={`Nav Item ${sublink.name}`}
-                    onKeyDown={event => handleKeyDown(event, index)}
-                  >
-                    <span className={styles.linkContent}>{sublink.name}</span>
-                  </a>
+                <Link
+                  href={sublink.href}
+                  prefetch={process.env.NODE_ENV === 'production'}
+                  className={styles.link}
+                  key={sublink.name}
+                  role="link"
+                  tabIndex={0}
+                  data-testid={`Nav Item ${sublink.name}`}
+                  onKeyDown={event => handleKeyDown(event, index)}
+                >
+                  <span className={styles.linkContent}>{sublink.name}</span>
                 </Link>
               </li>
             ))}
@@ -119,5 +118,3 @@ function NavListItem({ sublinks, href, name, icon = null }: NavListItemPropsType
     </li>
   );
 }
-
-export default NavListItem;

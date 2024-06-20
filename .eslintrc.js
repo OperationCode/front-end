@@ -75,12 +75,14 @@ module.exports = {
             format: ['PascalCase', 'UPPER_CASE'],
             prefix: [
               'is',
+              'are',
               'was',
               'should',
               'has',
               'can',
               'did',
               'will',
+              'ARE_',
               'IS_',
               'WAS_',
               'SHOULD_',
@@ -235,7 +237,7 @@ module.exports = {
           {
             name: 'formik',
             importNames: ['Form'],
-            message: `Please use our Form component to have good defaults defined.\n "import Form from 'components/Form/Form';"`,
+            message: `Please use our Form component to have good defaults defined.\n "import { Form } from 'components/Form/Form';"`,
           },
           {
             name: 'react',

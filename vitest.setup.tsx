@@ -1,10 +1,13 @@
 import '@testing-library/jest-dom';
+import { ImageProps } from 'next/legacy/image';
 import { vi, beforeAll } from 'vitest';
 
-const MockedNextImage = ({ src, alt }: { src: string; alt: string }) => <img src={src} alt={alt} />;
+const LegacyMockedNextImage = ({ src, alt, ...props }: ImageProps) => (
+  <img src={src as string} alt={alt} {...props} />
+);
 
 /* MOCKS */
-vi.mock('next/image', () => ({ default: MockedNextImage }));
+vi.mock('next/legacy/image', () => ({ default: LegacyMockedNextImage }));
 vi.importMock('common/utils/thirdParty/gtag');
 
 beforeAll(async () => {
