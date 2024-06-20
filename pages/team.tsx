@@ -94,10 +94,14 @@ export default function Team() {
                     )}
                   </>
                 }
-                image={{
-                  source: imageSource,
-                  alt: `Headshot of ${name}`,
-                }}
+                image={
+                  imageSource
+                    ? {
+                        source: imageSource,
+                        alt: `Headshot of ${name}`,
+                      }
+                    : undefined
+                }
               >
                 {description}
               </FlatCard>

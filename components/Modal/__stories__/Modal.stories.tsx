@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
-import { isChromatic } from 'chromatic/isChromatic';
+import isChromatic from 'chromatic/isChromatic';
 import { Modal } from '../Modal';
 import { descriptions } from '@/common/constants/descriptions';
 import { Button } from '@/components/Buttons/Button/Button';
@@ -35,7 +35,7 @@ export const Default: ModalStoryType = {
         <Modal
           {...args}
           isOpen={isDemoModalOpen}
-          onRequestClose={prevValue => setIsDemoModalOpen(!prevValue)}
+          onRequestClose={() => setIsDemoModalOpen(prevValue => !prevValue)}
         />
       </>
     );

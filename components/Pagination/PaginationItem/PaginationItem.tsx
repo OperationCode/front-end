@@ -1,3 +1,4 @@
+import { ParsedUrlQueryInput } from 'node:querystring';
 import Link from 'next/link';
 import omit from 'lodash/omit';
 import classNames from 'classnames';
@@ -21,7 +22,7 @@ export interface PaginationItemPropsType {
    * Sets styles to indicate the current item is selected.
    */
   isCurrent?: boolean;
-  query?: Record<string, unknown>;
+  query?: ParsedUrlQueryInput;
   value?: number;
 }
 

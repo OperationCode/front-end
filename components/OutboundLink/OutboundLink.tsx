@@ -1,4 +1,4 @@
-import classNames from 'node_modules/classnames/index';
+import classNames from 'classnames';
 import { gtag } from '@/common/utils/thirdParty/gtag';
 import ExternalLinkIcon from '@/public/static/images/icons/FontAwesome/external-link-square-alt-solid.svg';
 import { ScreenReaderOnly } from '@/components/ScreenReaderOnly/ScreenReaderOnly';

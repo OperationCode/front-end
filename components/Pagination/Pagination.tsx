@@ -1,5 +1,6 @@
-import { PREV_PAGE_BUTTON, NEXT_PAGE_BUTTON } from '../../common/constants/testIDs';
+import { ParsedUrlQueryInput } from 'node:querystring';
 import { PaginationItem } from './PaginationItem/PaginationItem';
+import { PREV_PAGE_BUTTON, NEXT_PAGE_BUTTON } from '@/common/constants/testIDs';
 import LeftAngleIcon from '@/public/static/images/icons/FontAwesome/angle-left-solid.svg';
 import RightAngleIcon from '@/public/static/images/icons/FontAwesome/angle-right-solid.svg';
 
@@ -15,7 +16,7 @@ export interface PaginationPropsType {
   /**
    * Sets the URL path.
    */
-  query: Record<string, unknown>;
+  query: ParsedUrlQueryInput;
   /**
    * Sets the total number of pages.
    */

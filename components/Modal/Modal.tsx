@@ -12,7 +12,7 @@ export interface ModalPropsType {
   /**
    * Function that is called when the user clicks the close button.
    */
-  onRequestClose: (previousValue?: boolean) => void;
+  onRequestClose?: () => void;
   /**
    * Applies a label for the screen reader.
    */

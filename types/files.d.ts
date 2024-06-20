@@ -1,10 +1,8 @@
 declare module '*.svg' {
   import { SVGProps, ReactSVGElement } from 'react';
 
-  export const ReactComponent: (props?: SVGProps<SVGElement>) => ReactSVGElement;
-
-  const filePath: string;
+  const ReactComponent: (props?: SVGProps<SVGElement>) => ReactSVGElement;
 
   // eslint-disable-next-line import/no-default-export
-  export default filePath;
+  export default ReactComponent;
 }

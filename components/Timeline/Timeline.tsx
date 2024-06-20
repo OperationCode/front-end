@@ -1,7 +1,7 @@
-import { objectKeys } from 'utils/types';
 import { historyData } from './historyData';
 import styles from './Timeline.module.css';
 import { TimelineEvent } from './TimelineEvent/TimelineEvent';
+import { objectKeys } from '@/utils/types';
 
 export function Timeline() {
   return (

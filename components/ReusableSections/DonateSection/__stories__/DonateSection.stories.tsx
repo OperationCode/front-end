@@ -1,8 +1,8 @@
-import { React } from 'react';
 import { Meta, StoryObj } from '@storybook/react';
+import { FC } from 'react';
 import { DonateSection } from '../DonateSection';
 
-type DonateSectionStoryType = StoryObj<React.FC>;
+type DonateSectionStoryType = StoryObj<FC>;
 
 const meta: Meta<typeof DonateSection> = {
   title: 'ReusableSections/DonateSection',

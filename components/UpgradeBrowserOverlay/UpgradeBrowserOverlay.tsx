@@ -1,4 +1,3 @@
-import noop from 'lodash/noop';
 import Image from 'next/legacy/image';
 import styles from './UpgradeBrowserOverlay.module.css';
 import { Modal } from '@/components/Modal/Modal';
@@ -32,7 +31,6 @@ export function UpgradeBrowserOverlay() {
 
   return (
     <Modal
-      onRequestClose={noop}
       className={styles.UpgradeBrowserOverlay}
       screenReaderLabel="Upgrade Your Browser"
       isOpen
