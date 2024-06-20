@@ -98,7 +98,11 @@ exports[`SponsorsSection > should render 1`] = `
         >
           <img
             alt="Slack logo"
+            className="w-full h-full text-center transition-all duration-200 ease-linear grayscale opacity-60 hover:grayscale-0 hover:opacity-100 hover:transition-all hover:duration-200 hover:ease-linear"
+            height={150}
+            layout="fixed"
             src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/slack.png"
+            width={150}
           />
           <span
             className="sr-only"
@@ -120,7 +124,11 @@ exports[`SponsorsSection > should render 1`] = `
         >
           <img
             alt="Threat Stack logo"
+            className="w-full h-full text-center transition-all duration-200 ease-linear grayscale opacity-60 hover:grayscale-0 hover:opacity-100 hover:transition-all hover:duration-200 hover:ease-linear"
+            height={150}
+            layout="fixed"
             src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/threat_stack.png"
+            width={150}
           />
           <span
             className="sr-only"
@@ -142,7 +150,11 @@ exports[`SponsorsSection > should render 1`] = `
         >
           <img
             alt="US Bank logo"
+            className="w-full h-full text-center transition-all duration-200 ease-linear grayscale opacity-60 hover:grayscale-0 hover:opacity-100 hover:transition-all hover:duration-200 hover:ease-linear"
+            height={150}
+            layout="fixed"
             src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/usbank.png"
+            width={150}
           />
           <span
             className="sr-only"
@@ -207,7 +219,11 @@ exports[`SponsorsSection > should render 1`] = `
         >
           <img
             alt="1Password logo"
+            className="w-full h-full text-center transition-all duration-200 ease-linear grayscale opacity-60 hover:grayscale-0 hover:opacity-100 hover:transition-all hover:duration-200 hover:ease-linear"
+            height={125}
+            layout="fixed"
             src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/1password.png"
+            width={125}
           />
           <span
             className="sr-only"
@@ -229,7 +245,11 @@ exports[`SponsorsSection > should render 1`] = `
         >
           <img
             alt="APEX Systems logo"
+            className="w-full h-full text-center transition-all duration-200 ease-linear grayscale opacity-60 hover:grayscale-0 hover:opacity-100 hover:transition-all hover:duration-200 hover:ease-linear"
+            height={125}
+            layout="fixed"
             src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/apex_systems.png"
+            width={125}
           />
           <span
             className="sr-only"
@@ -251,7 +271,11 @@ exports[`SponsorsSection > should render 1`] = `
         >
           <img
             alt="Chromatic logo"
+            className="w-full h-full text-center transition-all duration-200 ease-linear grayscale opacity-60 hover:grayscale-0 hover:opacity-100 hover:transition-all hover:duration-200 hover:ease-linear"
+            height={125}
+            layout="fixed"
             src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/chromatic.png"
+            width={125}
           />
           <span
             className="sr-only"
@@ -273,7 +297,11 @@ exports[`SponsorsSection > should render 1`] = `
         >
           <img
             alt="Coursera logo"
+            className="w-full h-full text-center transition-all duration-200 ease-linear grayscale opacity-60 hover:grayscale-0 hover:opacity-100 hover:transition-all hover:duration-200 hover:ease-linear"
+            height={125}
+            layout="fixed"
             src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/coursera.png"
+            width={125}
           />
           <span
             className="sr-only"
@@ -295,7 +323,11 @@ exports[`SponsorsSection > should render 1`] = `
         >
           <img
             alt="Elyon International logo"
+            className="w-full h-full text-center transition-all duration-200 ease-linear grayscale opacity-60 hover:grayscale-0 hover:opacity-100 hover:transition-all hover:duration-200 hover:ease-linear"
+            height={125}
+            layout="fixed"
             src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/elyon.png"
+            width={125}
           />
           <span
             className="sr-only"
@@ -317,7 +349,11 @@ exports[`SponsorsSection > should render 1`] = `
         >
           <img
             alt="GitHub logo"
+            className="w-full h-full text-center transition-all duration-200 ease-linear grayscale opacity-60 hover:grayscale-0 hover:opacity-100 hover:transition-all hover:duration-200 hover:ease-linear"
+            height={125}
+            layout="fixed"
             src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/github.png"
+            width={125}
           />
           <span
             className="sr-only"
@@ -339,7 +375,11 @@ exports[`SponsorsSection > should render 1`] = `
         >
           <img
             alt="HackerRank logo"
+            className="w-full h-full text-center transition-all duration-200 ease-linear grayscale opacity-60 hover:grayscale-0 hover:opacity-100 hover:transition-all hover:duration-200 hover:ease-linear"
+            height={125}
+            layout="fixed"
             src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/hackerrank.png"
+            width={125}
           />
           <span
             className="sr-only"
@@ -361,7 +401,11 @@ exports[`SponsorsSection > should render 1`] = `
         >
           <img
             alt="LogRocket logo"
+            className="w-full h-full text-center transition-all duration-200 ease-linear grayscale opacity-60 hover:grayscale-0 hover:opacity-100 hover:transition-all hover:duration-200 hover:ease-linear"
+            height={125}
+            layout="fixed"
             src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/logrocket.png"
+            width={125}
           />
           <span
             className="sr-only"
@@ -383,7 +427,11 @@ exports[`SponsorsSection > should render 1`] = `
         >
           <img
             alt="O'Reilly Media logo"
+            className="w-full h-full text-center transition-all duration-200 ease-linear grayscale opacity-60 hover:grayscale-0 hover:opacity-100 hover:transition-all hover:duration-200 hover:ease-linear"
+            height={125}
+            layout="fixed"
             src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/oreilly.png"
+            width={125}
           />
           <span
             className="sr-only"
@@ -405,7 +453,11 @@ exports[`SponsorsSection > should render 1`] = `
         >
           <img
             alt="Secure Code Warrior logo"
+            className="w-full h-full text-center transition-all duration-200 ease-linear grayscale opacity-60 hover:grayscale-0 hover:opacity-100 hover:transition-all hover:duration-200 hover:ease-linear"
+            height={125}
+            layout="fixed"
             src="https://user-images.githubusercontent.com/51661129/92973323-3d540b80-f484-11ea-85dd-d202fc751cd9.png"
+            width={125}
           />
           <span
             className="sr-only"
@@ -427,7 +479,11 @@ exports[`SponsorsSection > should render 1`] = `
         >
           <img
             alt="Team Treehouse logo"
+            className="w-full h-full text-center transition-all duration-200 ease-linear grayscale opacity-60 hover:grayscale-0 hover:opacity-100 hover:transition-all hover:duration-200 hover:ease-linear"
+            height={125}
+            layout="fixed"
             src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/treehouse.png"
+            width={125}
           />
           <span
             className="sr-only"
@@ -449,7 +505,11 @@ exports[`SponsorsSection > should render 1`] = `
         >
           <img
             alt="Vercel logo"
+            className="w-full h-full text-center transition-all duration-200 ease-linear grayscale opacity-60 hover:grayscale-0 hover:opacity-100 hover:transition-all hover:duration-200 hover:ease-linear"
+            height={125}
+            layout="fixed"
             src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/vercel.png"
+            width={125}
           />
           <span
             className="sr-only"
@@ -471,7 +531,11 @@ exports[`SponsorsSection > should render 1`] = `
         >
           <img
             alt="Zapier logo"
+            className="w-full h-full text-center transition-all duration-200 ease-linear grayscale opacity-60 hover:grayscale-0 hover:opacity-100 hover:transition-all hover:duration-200 hover:ease-linear"
+            height={125}
+            layout="fixed"
             src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/zapier.png"
+            width={125}
           />
           <span
             className="sr-only"

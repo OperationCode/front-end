@@ -13,7 +13,11 @@ exports[`PartnerLogoLink > should render with required props 1`] = `
   >
     <img
       alt="Partner Inc. logo"
+      className="w-full h-full text-center transition-all duration-200 ease-linear grayscale opacity-60 hover:grayscale-0 hover:opacity-100 hover:transition-all hover:duration-200 hover:ease-linear"
+      height={125}
+      layout="fixed"
       src="https://user-images.githubusercontent.com/logo"
+      width={125}
     />
     <span
       className="sr-only"

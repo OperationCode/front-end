@@ -2,7 +2,7 @@
 
 exports[`LinkButton > should render with many props assigned 1`] = `
 <a
-  className="inline-flex items-start Button test-class secondary fullWidth"
+  className="inline-flex items-start Button test-class secondary !inline-block hover:no-underline fullWidth"
   data-testid="Test"
   href="https://tests.com"
   onClick={[Function]}
@@ -21,10 +21,11 @@ exports[`LinkButton > should render with many props assigned 1`] = `
 
 exports[`LinkButton > should render with required props 1`] = `
 <a
-  className="Button primary"
+  className="Button primary !inline-block hover:no-underline"
   href="https://tests.com"
   onClick={[Function]}
   onMouseEnter={[Function]}
+  onTouchStart={[Function]}
 >
   Test
 </a>

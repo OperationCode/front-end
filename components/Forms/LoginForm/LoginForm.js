@@ -8,7 +8,7 @@ import { LOGIN_BUTTON, LOGIN_FORM } from '@/common/constants/testIDs';
 import { Button } from '@/components/Buttons/Button/Button';
 import { Form } from '@/components/Form/Form';
 import { Input } from '@/components/Form/Input/Input';
-import Alert from '@/components/Alert/Alert';
+import { Alert } from '@/components/Alert/Alert';
 
 const defaultValues = {
   email: '',

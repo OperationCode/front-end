@@ -62,23 +62,20 @@ exports[`Nav > should render with no props passed 1`] = `
         data-testid="Desktop Nav"
       >
         <ForwardRef(LinkComponent)
+          className="logoLink link"
           href="/"
+          onContextMenu={[Function]}
         >
-          <a
-            className="logoLink link"
-            onContextMenu={[Function]}
-          >
-            <ForwardRef
-              className="logo"
-              fill="#f7f7f7"
-              style={
-                {
-                  "height": 42,
-                  "width": 224,
-                }
+          <ForwardRef
+            className="logo"
+            fill="#f7f7f7"
+            style={
+              {
+                "height": 42,
+                "width": 224,
               }
-            />
-          </a>
+            }
+          />
         </ForwardRef(LinkComponent)>
         <ul
           className="link"
@@ -160,13 +157,10 @@ exports[`Nav > should render with no props passed 1`] = `
           />
           <li>
             <ForwardRef(LinkComponent)
+              className="link donateLink"
               href="/donate"
             >
-              <a
-                className="link donateLink"
-              >
-                Donate
-              </a>
+              Donate
             </ForwardRef(LinkComponent)>
           </li>
         </ul>

@@ -6,24 +6,19 @@ exports[`NavMobile > should render 1`] = `
   data-testid="Mobile Nav Container"
 >
   <ForwardRef(LinkComponent)
+    className="button logoButton inline-flex"
     href="/"
   >
-    <button
-      className="button logoButton"
-      name="dropdown"
-      type="button"
+    <div
+      className="logo"
     >
-      <div
-        className="logo"
-      >
-        <MockedNextImage
-          alt="Operation Code Logo"
-          height={42}
-          src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/small-blue-logo.png"
-          width={224}
-        />
-      </div>
-    </button>
+      <LegacyMockedNextImage
+        alt="Operation Code Logo"
+        height={42}
+        src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/small-blue-logo.png"
+        width={224}
+      />
+    </div>
   </ForwardRef(LinkComponent)>
   <button
     className="button hamburger"

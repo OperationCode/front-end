@@ -36,7 +36,7 @@ exports[`UpgradeBrowserOverlay > should render with no props passed 1`] = `
         hasIcon={false}
         href="https://www.microsoft.com/windows/microsoft-edge"
       >
-        <MockedNextImage
+        <LegacyMockedNextImage
           alt="Microsoft Edge Logo"
           className="browserImage"
           height={100}
@@ -58,7 +58,7 @@ exports[`UpgradeBrowserOverlay > should render with no props passed 1`] = `
         hasIcon={false}
         href="https://www.google.com/chrome"
       >
-        <MockedNextImage
+        <LegacyMockedNextImage
           alt="Google Chrome Logo"
           className="browserImage"
           height={100}
@@ -80,7 +80,7 @@ exports[`UpgradeBrowserOverlay > should render with no props passed 1`] = `
         hasIcon={false}
         href="https://www.mozilla.org/firefox/new"
       >
-        <MockedNextImage
+        <LegacyMockedNextImage
           alt="Mozilla Firefox Logo"
           className="browserImage"
           height={100}
@@ -102,7 +102,7 @@ exports[`UpgradeBrowserOverlay > should render with no props passed 1`] = `
         hasIcon={false}
         href="https://support.apple.com/downloads/safari"
       >
-        <MockedNextImage
+        <LegacyMockedNextImage
           alt="Safari Logo"
           className="browserImage"
           height={100}
