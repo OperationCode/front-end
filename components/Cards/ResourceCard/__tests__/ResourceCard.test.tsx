@@ -1,5 +1,5 @@
 import { fireEvent, render } from '@testing-library/react';
-import { UPVOTE_BUTTON, DOWNVOTE_BUTTON } from 'common/constants/testIDs';
+import { UPVOTE_BUTTON, DOWNVOTE_BUTTON } from '@/common/constants/testIDs';
 import { ResourceCard } from '../ResourceCard';
 
 describe('ResourceCard', () => {

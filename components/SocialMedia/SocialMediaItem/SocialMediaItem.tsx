@@ -1,5 +1,5 @@
-import { OutboundLink } from 'components/OutboundLink/OutboundLink';
-import { ScreenReaderOnly } from 'components/ScreenReaderOnly/ScreenReaderOnly';
+import { OutboundLink } from '@/components/OutboundLink/OutboundLink';
+import { ScreenReaderOnly } from '@/components/ScreenReaderOnly/ScreenReaderOnly';
 
 export interface SocialMediaItemPropsType {
   /**

@@ -4,14 +4,14 @@ import Router from 'next/router';
 import classNames from 'classnames';
 import Logo from 'public/static/images/logo.svg';
 
-import { desktopNavItems, mobileNavItems } from 'common/constants/navigation';
-import { NavMobile } from 'components/Nav/NavMobile/NavMobile';
+import { desktopNavItems, mobileNavItems } from '@/common/constants/navigation';
+import { NavMobile } from '@/components/Nav/NavMobile/NavMobile';
 import dynamic from 'next/dynamic';
 import UserLogo from '../../public/static/images/icons/FontAwesome/user.svg';
 import styles from './Nav.module.css';
 
 const NavListItem = dynamic(
-  () => import('components/Nav/NavListItem/NavListItem').then(module => module.NavListItem),
+  () => import('@/components/Nav/NavListItem/NavListItem').then(module => module.NavListItem),
   { ssr: false },
 );
 

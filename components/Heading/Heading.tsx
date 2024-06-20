@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import kebabCase from 'lodash/kebabCase';
-import { ScreenReaderOnly } from 'components/ScreenReaderOnly/ScreenReaderOnly';
-import LinkIcon from 'static/images/icons/FontAwesome/link-solid.svg';
+import { ScreenReaderOnly } from '@/components/ScreenReaderOnly/ScreenReaderOnly';
+import LinkIcon from '@/public/static/images/icons/FontAwesome/link-solid.svg';
 import styles from './Heading.module.css';
 
 type HeadingLevelType = 1 | 2 | 3 | 4 | 5 | 6;

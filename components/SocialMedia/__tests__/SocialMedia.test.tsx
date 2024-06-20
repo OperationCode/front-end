@@ -1,4 +1,4 @@
-import createShallowSnapshotTest from 'test-utils/createShallowSnapshotTest';
+import createShallowSnapshotTest from '@/test-utils/createShallowSnapshotTest';
 
 import { SocialMedia } from '../SocialMedia';
 

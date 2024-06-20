@@ -1,4 +1,4 @@
-import createShallowSnapshotTest from 'test-utils/createShallowSnapshotTest';
+import createShallowSnapshotTest from '@/test-utils/createShallowSnapshotTest';
 import { DonateSection } from '../DonateSection';
 
 describe('DonateSection', () => {

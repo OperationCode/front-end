@@ -1,10 +1,10 @@
-import { Head } from 'components/Head';
-import { HeroBanner } from 'components/HeroBanner/HeroBanner';
-import { Content } from 'components/Content/Content';
-import { Accordion } from 'components/Accordion/Accordion';
-import { OutboundLink } from 'components/OutboundLink/OutboundLink';
-import { s3, codeOfConduct } from 'common/constants/urls';
-import { ScreenReaderOnly } from 'components/ScreenReaderOnly/ScreenReaderOnly';
+import { Head } from '@/components/Head';
+import { HeroBanner } from '@/components/HeroBanner/HeroBanner';
+import { Content } from '@/components/Content/Content';
+import { Accordion } from '@/components/Accordion/Accordion';
+import { OutboundLink } from '@/components/OutboundLink/OutboundLink';
+import { s3, codeOfConduct } from '@/common/constants/urls';
+import { ScreenReaderOnly } from '@/components/ScreenReaderOnly/ScreenReaderOnly';
 import styles from 'styles/slack_guide.module.css';
 import Image from 'next/legacy/image';
 

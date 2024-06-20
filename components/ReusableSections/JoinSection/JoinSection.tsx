@@ -1,7 +1,7 @@
-import { Container } from 'components/Container/Container';
-import { OutboundLink } from 'components/OutboundLink/OutboundLink';
-import { LinkButton } from 'components/Buttons/LinkButton/LinkButton';
-import { Heading } from 'components/Heading/Heading';
+import { Container } from '@/components/Container/Container';
+import { OutboundLink } from '@/components/OutboundLink/OutboundLink';
+import { LinkButton } from '@/components/Buttons/LinkButton/LinkButton';
+import { Heading } from '@/components/Heading/Heading';
 
 export function JoinSection() {
   return (

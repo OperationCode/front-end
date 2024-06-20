@@ -1,4 +1,4 @@
-import { Card } from 'components/Cards/Card/Card';
+import { Card } from '@/components/Cards/Card/Card';
 
 export interface ValueCardPropsType {
   name: string;

@@ -1,11 +1,10 @@
 import { Formik, Field } from 'formik';
 import { cleanup, fireEvent, render } from '@testing-library/react';
-import { INPUT, INPUT_ERROR, INPUT_FEEDBACK_GROUPING, LABEL } from 'common/constants/testIDs';
-import { validationErrorMessages } from 'common/constants/messages';
-import createSnapshotTest from 'test-utils/createSnapshotTest';
-
 import { Form } from '../../Form';
 import { Input } from '../Input';
+import { INPUT, INPUT_ERROR, INPUT_FEEDBACK_GROUPING, LABEL } from '@/common/constants/testIDs';
+import { validationErrorMessages } from '@/common/constants/messages';
+import createSnapshotTest from '@/test-utils/createSnapshotTest';
 
 describe('Input', () => {
   const requiredProps = {

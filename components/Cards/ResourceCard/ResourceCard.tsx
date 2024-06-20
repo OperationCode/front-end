@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import classNames from 'classnames';
-import { Accordion } from 'components/Accordion/Accordion';
-import { OutboundLink } from 'components/OutboundLink/OutboundLink';
-import { ScreenReaderOnly } from 'components/ScreenReaderOnly/ScreenReaderOnly';
+import { Accordion } from '@/components/Accordion/Accordion';
+import { OutboundLink } from '@/components/OutboundLink/OutboundLink';
+import { ScreenReaderOnly } from '@/components/ScreenReaderOnly/ScreenReaderOnly';
 import {
   UPVOTE_BUTTON,
   UPVOTE_COUNT,
@@ -10,9 +10,9 @@ import {
   DOWNVOTE_COUNT,
   RESOURCE_CARD,
   RESOURCE_TITLE,
-} from 'common/constants/testIDs';
-import ThumbsUp from 'static/images/icons/FontAwesome/thumbs-up.svg';
-import ThumbsDown from 'static/images/icons/FontAwesome/thumbs-down.svg';
+} from '@/common/constants/testIDs';
+import ThumbsUp from '@/public/static/images/icons/FontAwesome/thumbs-up.svg';
+import ThumbsDown from '@/public/static/images/icons/FontAwesome/thumbs-down.svg';
 import styles from './ResourceCard.module.css';
 
 const DESKTOP_VOTING_BLOCK = 'desktopVotingBlock';

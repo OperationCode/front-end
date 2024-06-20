@@ -1,4 +1,4 @@
-import createSnapshotTest from 'test-utils/createSnapshotTest';
+import createSnapshotTest from '@/test-utils/createSnapshotTest';
 
 import { SocialMediaContainer } from '../SocialMediaContainer';
 

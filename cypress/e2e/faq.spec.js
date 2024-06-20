@@ -1,4 +1,4 @@
-import { ACCORDION_CONTENT, ACCORDION_TOGGLE_BUTTON } from 'common/constants/testIDs';
+import { ACCORDION_CONTENT, ACCORDION_TOGGLE_BUTTON } from '@/common/constants/testIDs';
 
 describe('faq', () => {
   beforeEach(() => {

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import classNames from 'classnames';
 import Chevron from 'public/static/images/icons/FontAwesome/angle-right-solid.svg';
-import { ACCORDION_CONTENT, ACCORDION_TOGGLE_BUTTON } from 'common/constants/testIDs';
+import { ACCORDION_CONTENT, ACCORDION_TOGGLE_BUTTON } from '@/common/constants/testIDs';
 import { ScreenReaderOnly, toggleMessages } from '../ScreenReaderOnly/ScreenReaderOnly';
 import { Card } from '../Cards/Card/Card';
 import styles from './Accordion.module.css';

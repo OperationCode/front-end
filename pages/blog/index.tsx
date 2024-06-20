@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
-import { Head } from 'components/Head';
-import { HeroBanner } from 'components/HeroBanner/HeroBanner';
+import { Head } from '@/components/Head';
+import { HeroBanner } from '@/components/HeroBanner/HeroBanner';
 
 const pageTitle = 'Blog';
 

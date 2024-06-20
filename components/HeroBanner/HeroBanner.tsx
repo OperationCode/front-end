@@ -1,6 +1,6 @@
 import classNames from 'classnames';
-import { Container } from 'components/Container/Container';
-import { HERO_BANNER_H1 } from 'common/constants/testIDs';
+import { Container } from '@/components/Container/Container';
+import { HERO_BANNER_H1 } from '@/common/constants/testIDs';
 
 export interface HeroBannerPropsType {
   /**

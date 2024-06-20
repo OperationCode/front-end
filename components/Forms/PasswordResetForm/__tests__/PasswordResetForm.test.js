@@ -1,10 +1,10 @@
 import { fireEvent, render, waitFor } from '@testing-library/react';
-import { passwordReset } from 'common/constants/api';
-import { validationErrorMessages } from 'common/constants/messages';
-import createSnapshotTest from 'test-utils/createSnapshotTest';
-import OperationCodeAPIMock from 'test-utils/mocks/apiMock';
-import mockUser from 'test-utils/mockGenerators/mockUser';
 import { PasswordResetForm } from '../PasswordResetForm';
+import { passwordReset } from '@/common/constants/api';
+import { validationErrorMessages } from '@/common/constants/messages';
+import createSnapshotTest from '@/test-utils/createSnapshotTest';
+import OperationCodeAPIMock from '@/test-utils/mocks/apiMock';
+import mockUser from '@/test-utils/mockGenerators/mockUser';
 
 afterEach(() => {
   OperationCodeAPIMock.reset();

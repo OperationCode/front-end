@@ -1,11 +1,11 @@
 import { fireEvent, render, waitFor } from '@testing-library/react';
-import { passwordResetSubmit } from 'common/constants/api';
-import { validationErrorMessages } from 'common/constants/messages';
-import { BUTTON, INPUT_ERROR, CHANGE_PASSWORD_FORM_ERROR } from 'common/constants/testIDs';
-import createSnapshotTest from 'test-utils/createSnapshotTest';
-import OperationCodeAPIMock from 'test-utils/mocks/apiMock';
-import mockUser from 'test-utils/mockGenerators/mockUser';
 import { ChangePasswordForm } from '../ChangePasswordForm';
+import { passwordResetSubmit } from '@/common/constants/api';
+import { validationErrorMessages } from '@/common/constants/messages';
+import { BUTTON, INPUT_ERROR, CHANGE_PASSWORD_FORM_ERROR } from '@/common/constants/testIDs';
+import createSnapshotTest from '@/test-utils/createSnapshotTest';
+import OperationCodeAPIMock from '@/test-utils/mocks/apiMock';
+import mockUser from '@/test-utils/mockGenerators/mockUser';
 
 beforeEach(() => {
   OperationCodeAPIMock.reset();

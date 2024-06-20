@@ -1,8 +1,8 @@
 import classNames from 'classnames';
 import { twMerge } from 'tailwind-merge';
 import Image from 'next/legacy/image';
-import { FLAT_CARD_IMAGE } from 'common/constants/testIDs';
-import { getPlaceholder } from 'common/utils/next-utils';
+import { FLAT_CARD_IMAGE } from '@/common/constants/testIDs';
+import { getPlaceholder } from '@/common/utils/next-utils';
 import { ReactNode } from 'react';
 
 interface FlatCardProps {

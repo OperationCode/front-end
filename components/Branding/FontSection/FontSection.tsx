@@ -1,5 +1,5 @@
-import { Content } from 'components/Content/Content';
-import { fontsObject } from 'common/styles/styleExports';
+import { Content } from '@/components/Content/Content';
+import { fontsObject } from '@/common/styles/styleExports';
 
 export function FontSection() {
   // Every letter of the alphabet in one string

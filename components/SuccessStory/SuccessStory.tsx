@@ -1,4 +1,4 @@
-import { FlatCard } from 'components/Cards/FlatCard/FlatCard';
+import { FlatCard } from '@/components/Cards/FlatCard/FlatCard';
 
 export interface SuccessStoryPropsType {
   /**

@@ -1,4 +1,4 @@
-import { s3 } from 'common/constants/urls';
+import { s3 } from '@/common/constants/urls';
 
 export const successStories = [
   {

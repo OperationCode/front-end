@@ -1,9 +1,9 @@
 import Link from 'next/link';
-import { Head } from 'components/Head';
-import { HeroBanner } from 'components/HeroBanner/HeroBanner';
-import { Content } from 'components/Content/Content';
-import { Accordion } from 'components/Accordion/Accordion';
-import { OutboundLink } from 'components/OutboundLink/OutboundLink';
+import { Head } from '@/components/Head';
+import { HeroBanner } from '@/components/HeroBanner/HeroBanner';
+import { Content } from '@/components/Content/Content';
+import { Accordion } from '@/components/Accordion/Accordion';
+import { OutboundLink } from '@/components/OutboundLink/OutboundLink';
 import styles from 'styles/faq.module.css';
 
 const questions = {

@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import { Head } from 'components/Head';
-import { HeroBanner } from 'components/HeroBanner/HeroBanner';
-import { Content } from 'components/Content/Content';
+import { Head } from '@/components/Head';
+import { HeroBanner } from '@/components/HeroBanner/HeroBanner';
+import { Content } from '@/components/Content/Content';
 
 function Terms() {
   return (

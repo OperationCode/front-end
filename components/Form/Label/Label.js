@@ -1,7 +1,7 @@
 import { node, string, bool } from 'prop-types';
 import classNames from 'classnames';
-import { LABEL } from 'common/constants/testIDs';
-import { ScreenReaderOnly } from 'components/ScreenReaderOnly/ScreenReaderOnly';
+import { LABEL } from '@/common/constants/testIDs';
+import { ScreenReaderOnly } from '@/components/ScreenReaderOnly/ScreenReaderOnly';
 
 Label.propTypes = {
   children: node.isRequired,

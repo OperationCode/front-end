@@ -1,5 +1,5 @@
 import { string } from 'prop-types';
-import { ScreenReaderOnly } from 'components/ScreenReaderOnly/ScreenReaderOnly';
+import { ScreenReaderOnly } from '@/components/ScreenReaderOnly/ScreenReaderOnly';
 
 Swatch.propTypes = {
   colorName: string.isRequired,

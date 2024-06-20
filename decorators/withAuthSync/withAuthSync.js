@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import Router from 'next/router';
-import { authenticate } from 'common/utils/auth-utils';
-import getDisplayName from 'decorators/getDisplayName';
+import { authenticate } from '@/common/utils/auth-utils';
+import getDisplayName from '@/decorators/getDisplayName';
 
 const withAuthSync = WrappedComponent =>
   class extends Component {

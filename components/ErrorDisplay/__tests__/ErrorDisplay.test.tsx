@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import createSnapshotTest from 'test-utils/createSnapshotTest';
+import createSnapshotTest from '@/test-utils/createSnapshotTest';
 import { ErrorDisplay } from '../ErrorDisplay';
 
 describe('ErrorDisplay', () => {

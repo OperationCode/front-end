@@ -7,6 +7,7 @@
 // You can read more here:
 // https://on.cypress.io/plugins-guide
 // ***********************************************************
+const path = require('path');
 const { addMatchImageSnapshotPlugin } = require('cypress-image-snapshot/plugin');
 const webpack = require('@cypress/webpack-preprocessor');
 // This function is called when a project is opened or re-opened (e.g. due to
@@ -28,7 +29,13 @@ module.exports = (on, config) => {
   on(
     'file:preprocessor',
     webpack({
-      webpackOptions: { resolve: { alias: require('../../pathAliases') } },
+      webpackOptions: {
+        resolve: {
+          alias: {
+            '@/': path.resolve('./'),
+          },
+        },
+      },
       watchOptions: {},
     }),
   );

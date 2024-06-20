@@ -30,9 +30,9 @@ export default defineConfig({
     coverage: {
       reportsDirectory: './vitest-coverage',
       include: [
-        'common/**/*.{js,ts,tsx}',
-        'components/**/*.{js,ts,tsx}',
-        'decorators/**/*.{js,ts,tsx}',
+        '@/common/**/*.{js,ts,tsx}',
+        '@/components/**/*.{js,ts,tsx}',
+        '@/decorators/**/*.{js,ts,tsx}',
       ],
       exclude: [
         // Irrelevant configs and local-only scripts
@@ -45,8 +45,8 @@ export default defineConfig({
         '{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build}.config.*',
         'vitest.{workspace,projects}.[jt]s?(on)',
         '.{eslint,mocha,prettier}rc.{?(c|m)js,yml}',
-        'scripts/**',
-        'test-utils/**',
+        '@/scripts/**',
+        '@/test-utils/**',
 
         // Folders covered by integration tests
         'node_modules/**',

@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { string, func } from 'prop-types';
 import classNames from 'classnames';
-import { getServerErrorMessage } from 'common/utils/api-utils';
-import { Alert } from 'components/Alert/Alert';
 import styles from './SocialLoginGroup.module.css';
+import { getServerErrorMessage } from '@/common/utils/api-utils';
+import { Alert } from '@/components/Alert/Alert';
 
 SocialLoginGroup.propTypes = {
   className: string,

@@ -1,6 +1,6 @@
-import { brandColorsObject } from 'common/styles/styleExports';
-import { Swatch } from 'components/Branding/Swatch/Swatch';
-import { Content } from 'components/Content/Content';
+import { brandColorsObject } from '@/common/styles/styleExports';
+import { Swatch } from '@/components/Branding/Swatch/Swatch';
+import { Content } from '@/components/Content/Content';
 
 export function ColorSection() {
   const primaryColor = { name: 'Primary', hexCode: brandColorsObject.primary };

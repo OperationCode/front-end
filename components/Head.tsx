@@ -1,5 +1,5 @@
 import NextHead from 'next/head';
-import { s3 } from 'common/constants/urls';
+import { s3 } from '@/common/constants/urls';
 import { ReactNode } from 'react';
 
 interface HeadProps {

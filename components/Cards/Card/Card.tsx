@@ -1,5 +1,5 @@
 import { twMerge } from 'tailwind-merge';
-import { getDataAttributes } from 'common/utils/prop-utils';
+import { getDataAttributes } from '@/common/utils/prop-utils';
 
 export interface CardPropsType {
   children: React.ReactNode;

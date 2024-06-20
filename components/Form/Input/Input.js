@@ -1,10 +1,10 @@
 import { shape, string, number, object, objectOf, oneOfType, bool, oneOf } from 'prop-types';
 import classNames from 'classnames';
 import { ErrorMessage } from 'formik';
-import { INPUT, INPUT_ERROR, INPUT_FEEDBACK_GROUPING } from 'common/constants/testIDs';
-import { Alert } from 'components/Alert/Alert';
-import { Label } from 'components/Form/Label/Label';
 import styles from './Input.module.css';
+import { INPUT, INPUT_ERROR, INPUT_FEEDBACK_GROUPING } from '@/common/constants/testIDs';
+import { Alert } from '@/components/Alert/Alert';
+import { Label } from '@/components/Form/Label/Label';
 
 Input.propTypes = {
   className: string,

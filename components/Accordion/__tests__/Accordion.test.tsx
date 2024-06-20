@@ -4,7 +4,7 @@ import {
   ACCORDION_CONTENT,
   ACCORDION_TOGGLE_BUTTON,
   SCREEN_READER_ONLY,
-} from 'common/constants/testIDs';
+} from '@/common/constants/testIDs';
 import { toggleMessages } from '../../ScreenReaderOnly/ScreenReaderOnly';
 import meta, { Default } from '../__stories__/Accordion.stories';
 

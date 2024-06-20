@@ -1,5 +1,5 @@
-import LeftAngleIcon from 'static/images/icons/FontAwesome/angle-left-solid.svg';
-import RightAngleIcon from 'static/images/icons/FontAwesome/angle-right-solid.svg';
+import LeftAngleIcon from '@/public/static/images/icons/FontAwesome/angle-left-solid.svg';
+import RightAngleIcon from '@/public/static/images/icons/FontAwesome/angle-right-solid.svg';
 import { PREV_PAGE_BUTTON, NEXT_PAGE_BUTTON } from '../../common/constants/testIDs';
 import { PaginationItem } from './PaginationItem/PaginationItem';
 

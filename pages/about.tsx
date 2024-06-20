@@ -1,11 +1,11 @@
 import Link from 'next/link';
-import { Head } from 'components/Head';
-import { HeroBanner } from 'components/HeroBanner/HeroBanner';
-import { Content } from 'components/Content/Content';
-import { ImageCard } from 'components/Cards/ImageCard/ImageCard';
-import { ValueCard } from 'components/Cards/ValueCard/ValueCard';
-import { OutboundLink } from 'components/OutboundLink/OutboundLink';
-import { s3 } from 'common/constants/urls';
+import { Head } from '@/components/Head';
+import { HeroBanner } from '@/components/HeroBanner/HeroBanner';
+import { Content } from '@/components/Content/Content';
+import { ImageCard } from '@/components/Cards/ImageCard/ImageCard';
+import { ValueCard } from '@/components/Cards/ValueCard/ValueCard';
+import { OutboundLink } from '@/components/OutboundLink/OutboundLink';
+import { s3 } from '@/common/constants/urls';
 import styles from 'styles/about.module.css';
 
 const pageTitle = 'About Us';

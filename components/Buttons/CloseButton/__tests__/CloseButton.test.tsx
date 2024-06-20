@@ -1,6 +1,6 @@
 import { fireEvent, render } from '@testing-library/react';
-import { CLOSE_BUTTON } from 'common/constants/testIDs';
-import createSnapshotTest from 'test-utils/createSnapshotTest';
+import { CLOSE_BUTTON } from '@/common/constants/testIDs';
+import createSnapshotTest from '@/test-utils/createSnapshotTest';
 import { CloseButton } from '../CloseButton';
 
 describe('CloseButton', () => {

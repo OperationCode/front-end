@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import Link from 'next/link';
-import { OutboundLink } from 'components/OutboundLink/OutboundLink';
+import { OutboundLink } from '@/components/OutboundLink/OutboundLink';
 import styles from '../Button/Button.module.css';
 
 export interface LinkButtonProps {

@@ -1,6 +1,6 @@
 import { twMerge } from 'tailwind-merge';
 import Image from 'next/legacy/image';
-import { Card, CardPropsType } from 'components/Cards/Card/Card';
+import { Card, CardPropsType } from '@/components/Cards/Card/Card';
 
 export type ImageCardPropsType = {
   /**

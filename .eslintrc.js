@@ -120,11 +120,11 @@ module.exports = {
       },
     },
     {
-      files: ['components/nav.js', 'components/Footer/Footer.js'],
+      files: ['./components/nav.js', './components/Footer/Footer.js'],
       rules: { 'jsx-a11y/anchor-is-valid': 'off' },
     },
     {
-      files: ['components/UpdateProfileForm/**/*.js'],
+      files: ['./components/UpdateProfileForm/**/*.js'],
       rules: { 'react/sort-comp': 'off' },
     },
   ],
@@ -227,7 +227,7 @@ module.exports = {
         paths: [
           {
             name: 'react-select',
-            message: 'Please use `components/Form/Select/ThemedReactSelect` instead.',
+            message: 'Please use `@/components/Form/Select/ThemedReactSelect` instead.',
           },
           {
             name: 'prop-types',
@@ -237,7 +237,7 @@ module.exports = {
           {
             name: 'formik',
             importNames: ['Form'],
-            message: `Please use our Form component to have good defaults defined.\n "import { Form } from 'components/Form/Form';"`,
+            message: `Please use our Form component to have good defaults defined.\n "import { Form } from '@/components/Form/Form';"`,
           },
           {
             name: 'react',

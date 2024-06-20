@@ -8,7 +8,7 @@ const LegacyMockedNextImage = ({ src, alt, ...props }: ImageProps) => (
 
 /* MOCKS */
 vi.mock('next/legacy/image', () => ({ default: LegacyMockedNextImage }));
-vi.importMock('common/utils/thirdParty/gtag');
+vi.importMock('@/common/utils/thirdParty/gtag');
 
 beforeAll(async () => {
   const IntersectionObserverMock = vi.fn(() => ({

@@ -1,4 +1,4 @@
-import createSnapshotTest from 'test-utils/createSnapshotTest';
+import createSnapshotTest from '@/test-utils/createSnapshotTest';
 import { composeStory } from '@storybook/react';
 import meta, { Default } from '../__stories__/ScreenReaderOnly.stories';
 

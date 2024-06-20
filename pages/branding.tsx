@@ -1,10 +1,10 @@
-import { Head } from 'components/Head';
-import { HeroBanner } from 'components/HeroBanner/HeroBanner';
-import { LogoSection } from 'components/Branding/LogoSection/LogoSection';
-import { ColorSection } from 'components/Branding/ColorSection/ColorSection';
-import { FontSection } from 'components/Branding/FontSection/FontSection';
-import { OutboundLink } from 'components/OutboundLink/OutboundLink';
-import { s3 } from 'common/constants/urls';
+import { Head } from '@/components/Head';
+import { HeroBanner } from '@/components/HeroBanner/HeroBanner';
+import { LogoSection } from '@/components/Branding/LogoSection/LogoSection';
+import { ColorSection } from '@/components/Branding/ColorSection/ColorSection';
+import { FontSection } from '@/components/Branding/FontSection/FontSection';
+import { OutboundLink } from '@/components/OutboundLink/OutboundLink';
+import { s3 } from '@/common/constants/urls';
 import styles from 'styles/branding.module.css';
 
 const pageTitle = 'Branding Guide';

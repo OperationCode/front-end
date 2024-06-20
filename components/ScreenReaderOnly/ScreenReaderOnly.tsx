@@ -1,4 +1,4 @@
-import { SCREEN_READER_ONLY } from 'common/constants/testIDs';
+import { SCREEN_READER_ONLY } from '@/common/constants/testIDs';
 
 export const toggleMessages = {
   open: 'Show more',

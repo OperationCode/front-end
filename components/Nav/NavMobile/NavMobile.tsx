@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import classNames from 'classnames';
-import { s3 } from 'common/constants/urls';
-import HamburgerIcon from 'static/images/icons/hamburger.svg';
-import { CloseButton } from 'components/Buttons/CloseButton/CloseButton';
-import { ScreenReaderOnly } from 'components/ScreenReaderOnly/ScreenReaderOnly';
+import { s3 } from '@/common/constants/urls';
+import HamburgerIcon from '@/public/static/images/icons/hamburger.svg';
+import { CloseButton } from '@/components/Buttons/CloseButton/CloseButton';
+import { ScreenReaderOnly } from '@/components/ScreenReaderOnly/ScreenReaderOnly';
 import Image from 'next/legacy/image';
 import styles from './NavMobile.module.css';
 

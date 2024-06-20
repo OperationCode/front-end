@@ -1,8 +1,8 @@
 import classNames from 'classnames';
 import * as Dialog from '@radix-ui/react-dialog';
-import { gtag } from 'common/utils/thirdParty/gtag';
-import { CloseButton } from 'components/Buttons/CloseButton/CloseButton';
-import { MODAL_CONTENT, MODAL_OVERLAY } from 'common/constants/testIDs';
+import { gtag } from '@/common/utils/thirdParty/gtag';
+import { CloseButton } from '@/components/Buttons/CloseButton/CloseButton';
+import { MODAL_CONTENT, MODAL_OVERLAY } from '@/common/constants/testIDs';
 
 export interface ModalPropsType {
   /**

@@ -1,11 +1,11 @@
 import { Formik, Field } from 'formik';
 import { fireEvent, render, waitFor } from '@testing-library/react';
-import createSnapshotTest from 'test-utils/createSnapshotTest';
-import { KEY_CODES } from 'test-utils/identifiers';
-
-import { LABEL } from 'common/constants/testIDs';
 import { Form } from '../../Form';
 import { Select } from '../Select';
+import createSnapshotTest from '@/test-utils/createSnapshotTest';
+import { KEY_CODES } from '@/test-utils/identifiers';
+
+import { LABEL } from '@/common/constants/testIDs';
 
 const getReactSelect = domElement => domElement.querySelector('[id^=react-select]');
 

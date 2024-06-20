@@ -1,6 +1,6 @@
 import { cloneElement, ReactElement } from 'react';
-import { Container } from 'components/Container/Container';
-import { Heading } from 'components/Heading/Heading';
+import { Container } from '@/components/Container/Container';
+import { Heading } from '@/components/Heading/Heading';
 
 export interface ContentPropsType {
   /**

@@ -1,8 +1,8 @@
 import noop from 'lodash/noop';
 import classNames from 'classnames';
-import { BUTTON } from 'common/constants/testIDs';
-import { gtag } from 'common/utils/thirdParty/gtag';
-import { getDataAttributes, getAriaAttributes } from 'common/utils/prop-utils';
+import { BUTTON } from '@/common/constants/testIDs';
+import { gtag } from '@/common/utils/thirdParty/gtag';
+import { getDataAttributes, getAriaAttributes } from '@/common/utils/prop-utils';
 import styles from './Button.module.css';
 
 interface GoogleAnalyticsEventPropType {

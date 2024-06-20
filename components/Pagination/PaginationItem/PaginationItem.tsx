@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import omit from 'lodash/omit';
 import classNames from 'classnames';
-import { ScreenReaderOnly } from 'components/ScreenReaderOnly/ScreenReaderOnly';
+import { ScreenReaderOnly } from '@/components/ScreenReaderOnly/ScreenReaderOnly';
 import styles from './PaginationItem.module.css';
 
 export interface PaginationItemPropsType {

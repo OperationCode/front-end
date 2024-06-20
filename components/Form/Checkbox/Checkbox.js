@@ -1,10 +1,10 @@
 import { shape, string, node, number, object, objectOf, oneOfType } from 'prop-types';
 import classNames from 'classnames';
 import { ErrorMessage } from 'formik';
-import { CHECKBOX, CHECKBOX_ERROR } from 'common/constants/testIDs';
-import { Alert } from 'components/Alert/Alert';
-import { Label } from 'components/Form/Label/Label';
 import styles from './Checkbox.module.css';
+import { CHECKBOX, CHECKBOX_ERROR } from '@/common/constants/testIDs';
+import { Alert } from '@/components/Alert/Alert';
+import { Label } from '@/components/Form/Label/Label';
 
 Checkbox.propTypes = {
   field: shape({

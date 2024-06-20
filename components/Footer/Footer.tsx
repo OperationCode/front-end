@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import { OutboundLink } from 'components/OutboundLink/OutboundLink';
-import { SocialMedia } from 'components/SocialMedia/SocialMedia';
-import { footerItems } from 'common/constants/navigation';
+import { OutboundLink } from '@/components/OutboundLink/OutboundLink';
+import { SocialMedia } from '@/components/SocialMedia/SocialMedia';
+import { footerItems } from '@/common/constants/navigation';
 import Image from 'next/legacy/image';
 import Logo from 'public/static/images/logo.svg';
 

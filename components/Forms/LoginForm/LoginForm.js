@@ -2,13 +2,13 @@ import { useState } from 'react';
 import { func, shape, string } from 'prop-types';
 import { Formik, Field } from 'formik';
 import * as Yup from 'yup';
-import { getServerErrorMessage } from 'common/utils/api-utils';
-import { validationErrorMessages } from 'common/constants/messages';
-import { LOGIN_BUTTON, LOGIN_FORM } from 'common/constants/testIDs';
-import { Button } from 'components/Buttons/Button/Button';
-import { Form } from 'components/Form/Form';
-import { Input } from 'components/Form/Input/Input';
-import Alert from 'components/Alert/Alert';
+import { getServerErrorMessage } from '@/common/utils/api-utils';
+import { validationErrorMessages } from '@/common/constants/messages';
+import { LOGIN_BUTTON, LOGIN_FORM } from '@/common/constants/testIDs';
+import { Button } from '@/components/Buttons/Button/Button';
+import { Form } from '@/components/Form/Form';
+import { Input } from '@/components/Form/Input/Input';
+import Alert from '@/components/Alert/Alert';
 
 const defaultValues = {
   email: '',

@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import classNames from 'classnames';
 import Link from 'next/link';
-import PlusIcon from 'static/images/icons/plus.svg';
-import MinusIcon from 'static/images/icons/minus.svg';
+import PlusIcon from '@/public/static/images/icons/plus.svg';
+import MinusIcon from '@/public/static/images/icons/minus.svg';
 import styles from './NavListItem.module.css';
 
 interface SublinkType {

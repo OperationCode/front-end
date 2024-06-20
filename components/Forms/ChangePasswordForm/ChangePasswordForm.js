@@ -2,15 +2,15 @@ import { useState } from 'react';
 import { string, func, shape } from 'prop-types';
 import { Field, Formik } from 'formik';
 import * as Yup from 'yup';
-import { CHANGE_PASSWORD_FORM_ERROR } from 'common/constants/testIDs';
-import { Button } from 'components/Buttons/Button/Button';
-import { Form } from 'components/Form/Form';
-import { Input } from 'components/Form/Input/Input';
-import { Alert } from 'components/Alert/Alert';
-import { validationErrorMessages } from 'common/constants/messages';
-import { getServerErrorMessage } from 'common/utils/api-utils';
-import { minimumPasswordLength } from 'common/constants/validations';
-import { hasRequiredCharacters } from 'common/utils/validator-utils';
+import { CHANGE_PASSWORD_FORM_ERROR } from '@/common/constants/testIDs';
+import { Button } from '@/components/Buttons/Button/Button';
+import { Form } from '@/components/Form/Form';
+import { Input } from '@/components/Form/Input/Input';
+import { Alert } from '@/components/Alert/Alert';
+import { validationErrorMessages } from '@/common/constants/messages';
+import { getServerErrorMessage } from '@/common/utils/api-utils';
+import { minimumPasswordLength } from '@/common/constants/validations';
+import { hasRequiredCharacters } from '@/common/utils/validator-utils';
 
 const defaultValues = {
   newPassword1: '',

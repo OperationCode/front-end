@@ -1,6 +1,6 @@
-import createShallowSnapshotTest from 'test-utils/createShallowSnapshotTest';
+import createShallowSnapshotTest from '@/test-utils/createShallowSnapshotTest';
 import { render, fireEvent } from '@testing-library/react';
-import { KEY_CODES } from 'test-utils/identifiers';
+import { KEY_CODES } from '@/test-utils/identifiers';
 
 import { NavListItem } from '../NavListItem';
 

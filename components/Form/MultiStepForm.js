@@ -3,17 +3,17 @@ import { useState } from 'react';
 import { arrayOf, func, object } from 'prop-types';
 import noop from 'lodash/noop';
 import { Formik } from 'formik';
-import { validStep } from 'common/constants/custom-props';
+import styles from './MultiStepForm.module.css';
+import { validStep } from '@/common/constants/custom-props';
 import {
   MULTI_STEP_STEP_BUTTON,
   MULTI_STEP_SUBMIT_BUTTON,
   MULTI_STEP_PREVIOUS_BUTTON,
-} from 'common/constants/testIDs';
-import { Button } from 'components/Buttons/Button/Button';
-import { Form } from 'components/Form/Form';
-import { Alert } from 'components/Alert/Alert';
-import { ProgressIndicator } from 'components/ProgressIndicator/ProgressIndicator';
-import styles from './MultiStepForm.module.css';
+} from '@/common/constants/testIDs';
+import { Button } from '@/components/Buttons/Button/Button';
+import { Form } from '@/components/Form/Form';
+import { Alert } from '@/components/Alert/Alert';
+import { ProgressIndicator } from '@/components/ProgressIndicator/ProgressIndicator';
 
 MultiStepForm.propTypes = {
   // initialValues must be object where entire form's shape is described

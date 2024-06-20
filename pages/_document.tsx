@@ -1,5 +1,5 @@
 import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document';
-import { clientTokens } from 'common/config/environment';
+import { clientTokens } from '@/common/config/environment';
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {

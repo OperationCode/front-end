@@ -1,5 +1,5 @@
 import * as Tabs from '@radix-ui/react-tabs';
-import { OutboundLink } from 'components/OutboundLink/OutboundLink';
+import { OutboundLink } from '@/components/OutboundLink/OutboundLink';
 import { objectKeys } from 'utils/types';
 import * as Articles from './Articles';
 import styles from './PressLinks.module.css';

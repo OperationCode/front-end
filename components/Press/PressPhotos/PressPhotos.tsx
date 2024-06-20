@@ -1,4 +1,4 @@
-import { s3 } from 'common/constants/urls';
+import { s3 } from '@/common/constants/urls';
 import Image from 'next/legacy/image';
 import styles from './PressPhotos.module.css';
 

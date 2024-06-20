@@ -1,4 +1,4 @@
-import { OutboundLink } from 'components/OutboundLink/OutboundLink';
+import { OutboundLink } from '@/components/OutboundLink/OutboundLink';
 
 export const historyData = {
   2011: [

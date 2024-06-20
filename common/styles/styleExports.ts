@@ -1,4 +1,4 @@
-import { isHexColor } from 'common/utils/style-utils';
+import { isHexColor } from '@/common/utils/style-utils';
 import * as themeMap from './themeMap';
 
 const themeMapValues = Object.entries(themeMap);
@@ -17,16 +17,13 @@ export const breakpointsObject: StyleObjectType = themeMapValues.reduce((object,
   return object;
 }, {} as StyleObjectType);
 
-export const brandColorsObject: StyleObjectType = themeMapValues.reduce(
-  (object, [key, value]) => {
-    if (isHexColor(value)) {
-      object[key] = value; // eslint-disable-line no-param-reassign
-    }
+export const brandColorsObject: StyleObjectType = themeMapValues.reduce((object, [key, value]) => {
+  if (isHexColor(value)) {
+    object[key] = value; // eslint-disable-line no-param-reassign
+  }
 
-    return object;
-  },
-  {} as StyleObjectType,
-);
+  return object;
+}, {} as StyleObjectType);
 
 export const fontsObject: StyleObjectType = themeMapValues.reduce((object, [key, value]) => {
   if (key.includes('Font')) {

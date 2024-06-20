@@ -1,5 +1,5 @@
 import Image from 'next/legacy/image';
-import { OutboundLink } from 'components/OutboundLink/OutboundLink';
+import { OutboundLink } from '@/components/OutboundLink/OutboundLink';
 
 type SizeType = 'small' | 'medium' | 'large';
 

@@ -1,8 +1,8 @@
-import createSnapshotTest from 'test-utils/createSnapshotTest';
 import { render, act } from '@testing-library/react';
-import { loginSocial } from 'common/constants/api';
-import OperationCodeAPIMock from 'test-utils/mocks/apiMock';
 import { SocialLoginGroup } from '../SocialLoginGroup';
+import createSnapshotTest from '@/test-utils/createSnapshotTest';
+import { loginSocial } from '@/common/constants/api';
+import OperationCodeAPIMock from '@/test-utils/mocks/apiMock';
 
 describe('SocialLoginGroup', () => {
   const socialReturnToken = { accessToken: 'abc123' };

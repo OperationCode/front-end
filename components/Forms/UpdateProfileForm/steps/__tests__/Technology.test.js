@@ -1,11 +1,11 @@
 import { Formik } from 'formik';
 import { fireEvent, render, waitFor } from '@testing-library/react';
-import OperationCodeAPIMock from 'test-utils/mocks/apiMock';
-import createSnapshotTest from 'test-utils/createSnapshotTest';
-import { Form } from 'components/Form/Form';
-
-import { KEY_CODES } from 'test-utils/identifiers';
 import { Technology } from '../Technology';
+import OperationCodeAPIMock from '@/test-utils/mocks/apiMock';
+import createSnapshotTest from '@/test-utils/createSnapshotTest';
+import { Form } from '@/components/Form/Form';
+
+import { KEY_CODES } from '@/test-utils/identifiers';
 
 describe('UpdateProfileForm/Steps/Technology', () => {
   afterEach(() => {

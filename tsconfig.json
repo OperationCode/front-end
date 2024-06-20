@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "baseUrl": "./",
     "target": "esnext",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
@@ -24,16 +23,7 @@
     "jsxFragmentFactory": "React.Fragment",
     "noEmit": true,
     "noEmitOnError": true,
-    "paths": {
-      "common/*": ["./common/*"],
-      "components/*": ["./components/*"],
-      "pages/*": ["./pages/*"],
-      "public/*": ["./public/*"],
-      "scripts/*": ["./scripts/*"],
-      "static/*": ["./public/static/*"],
-      "styles/*": ["./styles/*"],
-      "test-utils/*": ["./test-utils/*"]
-    },
+    "paths": { "@/*": ["./*"] },
     "types": ["vitest/globals", "@testing-library/jest-dom"]
   },
   "include": ["next-env.d.ts", "**/*.js", "**/*.ts", "**/*.tsx", "vitest.config.mts"],

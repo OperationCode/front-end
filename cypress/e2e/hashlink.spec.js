@@ -1,4 +1,4 @@
-import { HERO_BANNER_H1 } from 'common/constants/testIDs';
+import { HERO_BANNER_H1 } from '@/common/constants/testIDs';
 
 describe('Hash Links', () => {
   const verifyHashLink = (title, path) => {

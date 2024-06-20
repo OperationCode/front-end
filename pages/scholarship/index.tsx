@@ -1,10 +1,10 @@
-import { Head } from 'components/Head';
-import { Container } from 'components/Container/Container';
-import { HeroBanner } from 'components/HeroBanner/HeroBanner';
-import { OutboundLink } from 'components/OutboundLink/OutboundLink';
-import { s3 } from 'common/constants/urls';
+import { Head } from '@/components/Head';
+import { Container } from '@/components/Container/Container';
+import { HeroBanner } from '@/components/HeroBanner/HeroBanner';
+import { OutboundLink } from '@/components/OutboundLink/OutboundLink';
+import { s3 } from '@/common/constants/urls';
 import Link from 'next/link';
-import { Card } from 'components/Cards/Card/Card';
+import { Card } from '@/components/Cards/Card/Card';
 import Image from 'next/legacy/image';
 
 const pageTitle = 'Scholarships Program';

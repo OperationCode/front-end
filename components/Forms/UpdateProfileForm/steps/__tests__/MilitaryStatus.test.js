@@ -1,11 +1,10 @@
 import { Formik } from 'formik';
 import { fireEvent, render, waitFor } from '@testing-library/react';
-import OperationCodeAPIMock from 'test-utils/mocks/apiMock';
-import createSnapshotTest from 'test-utils/createSnapshotTest';
-import { KEY_CODES } from 'test-utils/identifiers';
-import { Form } from 'components/Form/Form';
-
 import { MilitaryStatus } from '../MilitaryStatus';
+import OperationCodeAPIMock from '@/test-utils/mocks/apiMock';
+import createSnapshotTest from '@/test-utils/createSnapshotTest';
+import { KEY_CODES } from '@/test-utils/identifiers';
+import { Form } from '@/components/Form/Form';
 
 describe('UpdateProfileForm/Steps/MilitaryStatus', () => {
   afterEach(() => {

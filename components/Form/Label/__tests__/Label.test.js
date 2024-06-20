@@ -1,9 +1,8 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import { render } from '@testing-library/react';
-import createSnapshotTest from 'test-utils/createSnapshotTest';
-import { LABEL, SCREEN_READER_ONLY } from 'common/constants/testIDs';
-
 import { Label } from '../Label';
+import createSnapshotTest from '@/test-utils/createSnapshotTest';
+import { LABEL, SCREEN_READER_ONLY } from '@/common/constants/testIDs';
 
 describe('Label', () => {
   it('should render with required props', () => {

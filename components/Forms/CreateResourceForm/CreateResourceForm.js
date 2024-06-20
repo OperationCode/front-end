@@ -5,13 +5,13 @@ import * as Yup from 'yup';
 import { insertIf } from '@innocuous/functions';
 import isEmpty from 'lodash/isEmpty';
 import get from 'lodash/get';
-import { createResource } from 'common/constants/api';
-import { getServerErrorMessage } from 'common/utils/api-utils';
-import { validationErrorMessages } from 'common/constants/messages';
-import { Button } from 'components/Buttons/Button/Button';
-import { Form } from 'components/Form/Form';
-import { Input } from 'components/Form/Input/Input';
-import { Select } from 'components/Form/Select/Select';
+import { createResource } from '@/common/constants/api';
+import { getServerErrorMessage } from '@/common/utils/api-utils';
+import { validationErrorMessages } from '@/common/constants/messages';
+import { Button } from '@/components/Buttons/Button/Button';
+import { Form } from '@/components/Form/Form';
+import { Input } from '@/components/Form/Input/Input';
+import { Select } from '@/components/Form/Select/Select';
 
 // This exists only because we don't have a radio component and I wanna get this done quickly!
 // TODO: Make radio input component

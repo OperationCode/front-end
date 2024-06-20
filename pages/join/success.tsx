@@ -1,6 +1,6 @@
-import { Head } from 'components/Head';
-import { HeroBanner } from 'components/HeroBanner/HeroBanner';
-import { OutboundLink } from 'components/OutboundLink/OutboundLink';
+import { Head } from '@/components/Head';
+import { HeroBanner } from '@/components/HeroBanner/HeroBanner';
+import { OutboundLink } from '@/components/OutboundLink/OutboundLink';
 
 const pageTitle = `Successful Registration!`;
 

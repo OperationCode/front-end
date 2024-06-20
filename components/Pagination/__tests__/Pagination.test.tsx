@@ -1,5 +1,5 @@
 import { cleanup, render } from '@testing-library/react';
-import createSnapshotTest from 'test-utils/createSnapshotTest';
+import createSnapshotTest from '@/test-utils/createSnapshotTest';
 
 import { Pagination, developmentErrors } from '../Pagination';
 

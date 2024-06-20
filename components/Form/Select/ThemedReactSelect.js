@@ -8,7 +8,7 @@ import {
   rgbValuesSecondary,
   successDeep,
   errorDeep,
-} from 'common/styles/themeMap';
+} from '@/common/styles/themeMap';
 
 ThemedReactSelect.propTypes = {
   disabled: bool,

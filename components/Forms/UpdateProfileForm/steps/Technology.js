@@ -1,10 +1,10 @@
 import { bool } from 'prop-types';
 import { Field } from 'formik';
 import * as Yup from 'yup';
-import { updateUser } from 'common/constants/api';
 import { mapStringsToSelectOptions } from '@innocuous/functions';
-import { Select } from 'components/Form/Select/Select';
 import styles from './_steps.module.css';
+import { updateUser } from '@/common/constants/api';
+import { Select } from '@/components/Form/Select/Select';
 
 const programmingLanguages = [
   'JavaScript',

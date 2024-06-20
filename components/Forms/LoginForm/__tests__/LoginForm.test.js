@@ -1,11 +1,11 @@
 import faker from 'faker';
 import { render, fireEvent, waitFor, screen } from '@testing-library/react';
-import { loginUser } from 'common/constants/api';
-import { networkErrorMessages, validationErrorMessages } from 'common/constants/messages';
-import createSnapshotTest from 'test-utils/createSnapshotTest';
-import OperationCodeAPIMock from 'test-utils/mocks/apiMock';
-import mockUser from 'test-utils/mockGenerators/mockUser';
 import { LoginForm } from '../LoginForm';
+import { loginUser } from '@/common/constants/api';
+import { networkErrorMessages, validationErrorMessages } from '@/common/constants/messages';
+import createSnapshotTest from '@/test-utils/createSnapshotTest';
+import OperationCodeAPIMock from '@/test-utils/mocks/apiMock';
+import mockUser from '@/test-utils/mockGenerators/mockUser';
 
 describe('LoginForm', () => {
   afterEach(() => {
