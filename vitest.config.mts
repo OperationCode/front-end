@@ -5,6 +5,7 @@ import tsconfigPaths from 'vite-tsconfig-paths';
 import react from '@vitejs/plugin-react';
 import magicalSvg from 'vite-plugin-magical-svg';
 
+// eslint-disable-next-line import/no-default-export
 export default defineConfig({
   plugins: [tsconfigPaths(), magicalSvg({ target: 'react' }), react()],
   // use tsx loader for js using jsx
@@ -30,9 +31,9 @@ export default defineConfig({
     coverage: {
       reportsDirectory: './vitest-coverage',
       include: [
-        '@/common/**/*.{js,ts,tsx}',
-        '@/components/**/*.{js,ts,tsx}',
-        '@/decorators/**/*.{js,ts,tsx}',
+        'common/**/*.{js,ts,tsx}',
+        'components/**/*.{js,ts,tsx}',
+        'decorators/**/*.{js,ts,tsx}',
       ],
       exclude: [
         // Irrelevant configs and local-only scripts
@@ -45,8 +46,8 @@ export default defineConfig({
         '{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build}.config.*',
         'vitest.{workspace,projects}.[jt]s?(on)',
         '.{eslint,mocha,prettier}rc.{?(c|m)js,yml}',
-        '@/scripts/**',
-        '@/test-utils/**',
+        'scripts/**',
+        'test-utils/**',
 
         // Folders covered by integration tests
         'node_modules/**',

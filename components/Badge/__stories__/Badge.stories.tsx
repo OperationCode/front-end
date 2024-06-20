@@ -1,8 +1,8 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { GithubIcon } from 'public/static/images/icons/github_logo.svg';
-import { TwitterIcon } from 'public/static/images/icons/twitter_logo.svg';
-import { PinterestIcon } from 'public/static/images/icons/pinterest_logo.svg';
 import { Badge } from '../Badge';
+import GithubIcon from '@/public/static/images/icons/github_logo.svg';
+import TwitterIcon from '@/public/static/images/icons/twitter_logo.svg';
+import PinterestIcon from '@/public/static/images/icons/pinterest_logo.svg';
 
 const icons = {
   github: <GithubIcon />,
