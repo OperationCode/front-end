@@ -35,7 +35,7 @@ export type AccordionPropsType = {
   className?: string;
   /**
    * Should Accordion have animation on hover.
-   * @default - false  
+   * @default - false
    */
   hasAnimationOnHover?: boolean;
 };
@@ -59,7 +59,7 @@ function Accordion({
 
   return (
     <Card
-      className={classNames(styles.Accordion, className)}
+      className={classNames(styles.Accordion, className, 'justify-normal')}
       hasAnimationOnHover={hasAnimationOnHover}
     >
       <div className={styles.headingContainer}>{content.headingChildren}</div>
