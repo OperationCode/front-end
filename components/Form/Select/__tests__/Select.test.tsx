@@ -2,12 +2,11 @@ import { Formik, Field } from 'formik';
 import { fireEvent, render, waitFor } from '@testing-library/react';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 import { KEY_CODES } from 'test-utils/identifiers';
-
 import { LABEL } from 'common/constants/testIDs';
 import Form from '../../Form';
 import Select from '../Select';
 
-const getReactSelect = domElement => domElement.querySelector('[id^=react-select]');
+const getReactSelect = (domElement: any) => domElement.querySelector('[id^=react-select]');
 
 describe('Select', () => {
   const name = 'someSelectName';
@@ -37,7 +36,7 @@ describe('Select', () => {
 
   it('should render with required props', () => {
     createSnapshotTest(
-      <Formik>
+      <Formik initialValues={{}} onSubmit={() => {}}>
         <Select {...requiredProps} />
       </Formik>,
     );
@@ -45,7 +44,7 @@ describe('Select', () => {
 
   it('should render with label, even if hidden', () => {
     const { queryAllByTestId } = render(
-      <Formik>
+      <Formik initialValues={{}} onSubmit={() => {}}>
         <Select {...requiredProps} isLabelHidden />
       </Formik>,
     );
@@ -59,7 +58,7 @@ describe('Select', () => {
       const validate = () => ({ [fieldName]: 'Required' });
 
       const { container, findByText } = render(
-        <Formik initialValues={{ [fieldName]: '' }} validate={validate}>
+        <Formik initialValues={{ [fieldName]: '' }} validate={validate} onSubmit={() => {}}>
           <Form>
             <Field
               name={fieldName}
@@ -81,7 +80,7 @@ describe('Select', () => {
 
     it('should fire formik-related callbacks when changing non-multi select', async () => {
       const { container } = render(
-        <Formik>
+        <Formik initialValues={{}} onSubmit={() => {}}>
           <Select {...requiredProps} />
         </Formik>,
       );
@@ -99,7 +98,7 @@ describe('Select', () => {
 
     it('should fire formik-related callbacks when changing multi select', async () => {
       const { container } = render(
-        <Formik>
+        <Formik initialValues={{}} onSubmit={() => {}}>
           <Select {...requiredProps} field={{ name: 'test', value: [] }} isMulti />
         </Formik>,
       );
@@ -125,7 +124,7 @@ describe('Select', () => {
 
     it('should be able to remove multiselect options', async () => {
       const { container } = render(
-        <Formik>
+        <Formik initialValues={{}} onSubmit={() => {}}>
           <Select {...requiredProps} field={{ name: 'test', value: [] }} isMulti />
         </Formik>,
       );

@@ -1,7 +1,6 @@
 // eslint-disable-next-line no-restricted-imports
 import ReactSelect from 'react-select'; // the only spot this import is allowed
-
-import { array, bool, oneOfType, string } from 'prop-types';
+import { FormikTouched } from 'formik';
 import {
   primary,
   rgbValuesPrimary,
@@ -10,41 +9,43 @@ import {
   errorDeep,
 } from 'common/styles/themeMap';
 
-ThemedReactSelect.propTypes = {
-  disabled: bool,
-  hasErrors: bool,
-  hasValidationStyling: bool,
-  id: string,
-  instanceId: string,
-  isMulti: bool,
-  isSearchable: bool,
-  // TODO: Resolve why multiselects can end up with touched: { key: array }
-  // see ThemedReactSelect as well
-  // isTouched: bool,
-  isTouched: oneOfType([array, bool]),
+type OptionType = {
+  [key: string]: any;
 };
 
-ThemedReactSelect.defaultProps = {
-  disabled: false,
-  hasErrors: false,
-  hasValidationStyling: true,
-  id: undefined,
-  instanceId: undefined,
-  isMulti: false,
-  isSearchable: true,
-  isTouched: false,
+type OptionsType = OptionType[];
+
+type ValueType = string | OptionType | OptionsType;
+
+type TouchedType = FormikTouched<any> | FormikTouched<any>[] | boolean;
+
+export type ThemedReactSelect = {
+  options: OptionsType;
+  disabled?: boolean;
+  hasErrors?: boolean;
+  hasValidationStyling?: boolean;
+  id?: string;
+  instanceId?: string;
+  isMulti?: boolean;
+  isSearchable?: boolean;
+  isTouched?: TouchedType;
+  name?: string;
+  onBlur?: () => void;
+  onChange?: (selected: any) => void;
+  value?: ValueType;
 };
 
 function ThemedReactSelect({
-  disabled,
-  hasErrors,
-  hasValidationStyling,
+  disabled = false,
+  hasErrors = false,
+  hasValidationStyling = true,
   id,
   instanceId,
-  isMulti,
-  isSearchable,
+  isMulti = false,
+  isSearchable = true,
+  options,
   ...props
-}) {
+}: ThemedReactSelect) {
   // See TODO in propTypes definition
   // eslint-disable-next-line react/destructuring-assignment
   const isTouched = Array.isArray(props.isTouched) ? true : props.isTouched; // coerce to boolean
@@ -60,8 +61,9 @@ function ThemedReactSelect({
   return (
     <ReactSelect
       {...props}
+      options={options}
       instanceId={instanceId || id}
-      disabled={disabled}
+      isDisabled={disabled}
       closeMenuOnSelect={!isMulti}
       isMulti={isMulti}
       isSearchable={isSearchable}

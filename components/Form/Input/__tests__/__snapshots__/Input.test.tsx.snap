@@ -22,6 +22,7 @@ exports[`Input > should render with required props 1`] = `
       name="someInputName"
       onBlur={[MockFunction spy]}
       onChange={[MockFunction spy]}
+      onSubmit={[MockFunction spy]}
       type="text"
       value=""
     />

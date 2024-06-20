@@ -1,70 +1,43 @@
-import {
-  arrayOf,
-  bool,
-  func,
-  number,
-  object,
-  objectOf,
-  oneOfType,
-  shape,
-  string,
-} from 'prop-types';
-import { ErrorMessage } from 'formik';
+import { ErrorMessage, FieldProps } from 'formik';
 import Alert from 'components/Alert/Alert';
 import Label from 'components/Form/Label/Label';
 import ThemedReactSelect from './ThemedReactSelect';
 import styles from './Select.module.css';
 
-Select.propTypes = {
-  field: shape({
-    name: string.isRequired,
-    value: oneOfType([string, number, bool, arrayOf(string), arrayOf(number), arrayOf(bool)])
-      .isRequired,
-  }).isRequired,
-  form: shape({
-    // TODO: Resolve why multiselects can end up with touched: { key: array }
-    // see ThemedReactSelect as well
-    // touched: objectOf(bool).isRequired,
-    touched: object.isRequired,
-    errors: objectOf(string).isRequired,
-    setFieldTouched: func.isRequired,
-    setFieldValue: func.isRequired,
-  }).isRequired,
-  hasValidationStyling: bool,
-  id: oneOfType([string, number]),
-  isLabelHidden: bool,
-  isMulti: bool,
-  isSearchable: bool,
-  label: string.isRequired,
-  options: arrayOf(shape({ label: string.isRequired, value: string.isRequired }).isRequired)
-    .isRequired,
+type SelectOptionType = {
+  label: string;
+  value: string;
 };
 
-Select.defaultProps = {
-  hasValidationStyling: true,
-  id: undefined,
-  isLabelHidden: false,
-  isMulti: false,
-  isSearchable: true,
-};
+type SelectOptionsType = SelectOptionType[];
+
+export type SelectPropsType = {
+  options: SelectOptionsType;
+  label: string;
+  hasValidationStyling?: boolean;
+  id?: string;
+  isLabelHidden?: boolean;
+  isMulti?: boolean;
+  isSearchable?: boolean;
+} & FieldProps;
 
 export default function Select({
   field: { name, value: fieldValue },
   form: { errors, setFieldTouched, setFieldValue, touched },
-  hasValidationStyling,
+  hasValidationStyling = true,
   id,
-  isLabelHidden,
-  isMulti,
-  isSearchable,
+  isLabelHidden = false,
+  isMulti = false,
+  isSearchable = true,
   label,
   options,
   ...props // disabled, placeholder, etc.
-}) {
+}: SelectPropsType) {
   /**
    * @description handle changing of non-multi select
    * @param {string} selected
    */
-  const onChangeSingle = selected => {
+  const onChangeSingle = (selected: SelectOptionType) => {
     setFieldValue(name, selected === null ? '' : selected.value);
   };
 
@@ -72,7 +45,7 @@ export default function Select({
    * @description handle changing of multi select
    * @param {string[]} selectedArray
    */
-  const onChangeMulti = selectedArray => {
+  const onChangeMulti = (selectedArray: SelectOptionsType) => {
     if (selectedArray) {
       setFieldValue(
         name,
@@ -96,7 +69,17 @@ export default function Select({
    * @returns {{ label: string; value: string; }[]}
    */
   const getValueFromMulti = () => {
-    return options.filter(option => fieldValue.includes(option.value));
+    if (Array.isArray(fieldValue)) {
+      return fieldValue
+        .map(
+          value =>
+            options.find((option: SelectOptionType) => option.value === value) as SelectOptionType,
+        )
+        .filter(Boolean);
+    } else {
+      return [];
+    }
+    // return options.filter(option => fieldValue.includes(option.value));
   };
 
   const handleBlur = () => {
@@ -126,13 +109,13 @@ export default function Select({
           isSearchable={isSearchable}
           name={name}
           onBlur={handleBlur}
-          onChange={onChangeHandler}
+          onChange={() => onChangeHandler}
           options={options}
           value={value || ''}
         />
 
         <ErrorMessage name={name}>
-          {message => {
+          {(message: string) => {
             return hasErrors ? (
               <Alert className={styles.errorMessage} type="error">
                 {message}
