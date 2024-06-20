@@ -27,7 +27,7 @@ const biases: Bias[] = [
       </>
     ),
     image: '/static/images/bias1.jpg',
-    alt: 'Woman listening to someone talking',
+    alt: 'soldier sitting on the couch with his head resting on his hands.',
   },
   {
     title: 'Bias #2',
@@ -41,7 +41,7 @@ const biases: Bias[] = [
       </>
     ),
     image: '/static/images/bias2.jpg',
-    alt: 'Woman listening to someone talking',
+    alt: 'A soldier getting comforted.',
   },
   {
     title: 'Bias #3',
@@ -54,7 +54,7 @@ const biases: Bias[] = [
       </>
     ),
     image: '/static/images/bias3.jpg',
-    alt: 'Woman listening to someone talking',
+    alt: 'A homeless vet holding a sign for help.',
   },
   {
     title: 'Bias #4',
@@ -77,7 +77,7 @@ const biases: Bias[] = [
       </>
     ),
     image: '/static/images/bias4.jpg',
-    alt: 'Woman listening to someone talking',
+    alt: 'A soldier shaking hands with someone.',
   },
   {
     title: 'Bias #5',
@@ -102,7 +102,7 @@ const biases: Bias[] = [
       </>
     ),
     image: '/static/images/bias5.jpg',
-    alt: 'Woman listening to someone talking',
+    alt: 'two wedding rights resting on an american flad patch.',
   },
 ];
 
