@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { descriptions } from '@/common/constants/descriptions';
 import { ResourceCard } from '../ResourceCard';
+import { descriptions } from '@/common/constants/descriptions';
 
 type ResourceCardStoryType = StoryObj<typeof ResourceCard>;
 

@@ -1,9 +1,9 @@
 import Link from 'next/link';
+import styles from 'styles/press.module.css';
 import { Head } from '@/components/Head';
 import { HeroBanner } from '@/components/HeroBanner/HeroBanner';
 import { Content } from '@/components/Content/Content';
 import { Videos, Photos, Links } from '@/components/Press';
-import styles from 'styles/press.module.css';
 
 const pageTitle = 'Press';
 

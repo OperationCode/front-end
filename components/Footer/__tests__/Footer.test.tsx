@@ -1,6 +1,5 @@
-import createShallowSnapshotTest from '@/test-utils/createShallowSnapshotTest';
-
 import { Footer } from '../Footer';
+import createShallowSnapshotTest from '@/test-utils/createShallowSnapshotTest';
 
 describe('Footer', () => {
   it('should render with no props passed', () => {

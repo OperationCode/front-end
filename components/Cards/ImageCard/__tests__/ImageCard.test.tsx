@@ -1,5 +1,5 @@
-import createShallowSnapshotTest from '@/test-utils/createShallowSnapshotTest';
 import { ImageCard } from '../ImageCard';
+import createShallowSnapshotTest from '@/test-utils/createShallowSnapshotTest';
 
 describe('ImageCard', () => {
   it('should render with required props', () => {

@@ -1,9 +1,9 @@
 import classNames from 'classnames';
 import Link from 'next/link';
+import styles from 'styles/contact.module.css';
 import { Head } from '@/components/Head';
 import { HeroBanner } from '@/components/HeroBanner/HeroBanner';
 import { OutboundLink } from '@/components/OutboundLink/OutboundLink';
-import styles from 'styles/contact.module.css';
 
 const pageTitle = 'Contact Us';
 

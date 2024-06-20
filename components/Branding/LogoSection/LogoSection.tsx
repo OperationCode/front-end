@@ -1,9 +1,9 @@
 import classNames from 'classnames';
+import Image from 'next/legacy/image';
+import styles from './LogoSection.module.css';
 import { Badge } from '@/components/Badge/Badge';
 import { Content } from '@/components/Content/Content';
 import { s3 } from '@/common/constants/urls';
-import Image from 'next/legacy/image';
-import styles from './LogoSection.module.css';
 
 export function LogoSection() {
   return (

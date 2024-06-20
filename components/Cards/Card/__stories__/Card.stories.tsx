@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { descriptions } from '@/common/constants/descriptions';
 import { Card } from '../Card';
+import { descriptions } from '@/common/constants/descriptions';
 
 type CardStoryType = StoryObj<typeof Card>;
 

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import classNames from 'classnames';
+import styles from './ResourceCard.module.css';
 import { Accordion } from '@/components/Accordion/Accordion';
 import { OutboundLink } from '@/components/OutboundLink/OutboundLink';
 import { ScreenReaderOnly } from '@/components/ScreenReaderOnly/ScreenReaderOnly';
@@ -13,7 +14,6 @@ import {
 } from '@/common/constants/testIDs';
 import ThumbsUp from '@/public/static/images/icons/FontAwesome/thumbs-up.svg';
 import ThumbsDown from '@/public/static/images/icons/FontAwesome/thumbs-down.svg';
-import styles from './ResourceCard.module.css';
 
 const DESKTOP_VOTING_BLOCK = 'desktopVotingBlock';
 

@@ -1,5 +1,5 @@
-import createSnapshotTest from '@/test-utils/createSnapshotTest';
 import { ValueCard } from '../ValueCard';
+import createSnapshotTest from '@/test-utils/createSnapshotTest';
 
 describe('ValueCard', () => {
   it('should render with required props', () => {

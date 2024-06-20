@@ -1,5 +1,6 @@
 import TrackVisibility from 'react-on-screen';
 import classNames from 'classnames';
+import styles from 'styles/services.module.css';
 import { Head } from '@/components/Head';
 import { HeroBanner } from '@/components/HeroBanner/HeroBanner';
 import { Badge } from '@/components/Badge/Badge';
@@ -12,7 +13,6 @@ import CareerServicesIcon from '@/public/static/images/icons/Custom/career_servi
 import MentorshipIcon from '@/public/static/images/icons/Custom/mentorship.svg';
 import ScholarshipsIcon from '@/public/static/images/icons/Custom/scholarships.svg';
 import { s3 } from '@/common/constants/urls';
-import styles from 'styles/services.module.css';
 
 const VISIBILITY_OFFSET = 400;
 

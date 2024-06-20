@@ -1,12 +1,12 @@
 import { fireEvent, render } from '@testing-library/react';
 import { composeStory } from '@storybook/react';
+import { toggleMessages } from '../../ScreenReaderOnly/ScreenReaderOnly';
+import meta, { Default } from '../__stories__/Accordion.stories';
 import {
   ACCORDION_CONTENT,
   ACCORDION_TOGGLE_BUTTON,
   SCREEN_READER_ONLY,
 } from '@/common/constants/testIDs';
-import { toggleMessages } from '../../ScreenReaderOnly/ScreenReaderOnly';
-import meta, { Default } from '../__stories__/Accordion.stories';
 
 const AccordionStory = composeStory(Default, meta);
 
@@ -29,11 +29,11 @@ describe('Accordion Accessibility', () => {
     const component = render(<AccordionStory />);
     const Button = component.queryByTestId(SCREEN_READER_ONLY);
 
-    //@ts-expect-error
+    // @ts-expect-error
     expect(Button.textContent).toBe(toggleMessages.open);
-    //@ts-expect-error
+    // @ts-expect-error
     fireEvent.click(Button);
-    //@ts-expect-error
+    // @ts-expect-error
     expect(Button.textContent).toBe(toggleMessages.close);
   });
 });

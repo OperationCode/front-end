@@ -1,6 +1,5 @@
-import createSnapshotTest from '@/test-utils/createSnapshotTest';
-
 import { SocialMediaContainer } from '../SocialMediaContainer';
+import createSnapshotTest from '@/test-utils/createSnapshotTest';
 
 describe('SocialMediaContainer', () => {
   it('should render with required props', () => {

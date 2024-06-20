@@ -1,9 +1,9 @@
 import Image from 'next/legacy/image';
+import { ReactNode } from 'react';
+import classNames from 'classnames';
 import { Head } from '@/components/Head';
 import { HeroBanner } from '@/components/HeroBanner/HeroBanner';
 import { OutboundLink } from '@/components/OutboundLink/OutboundLink';
-import { ReactNode } from 'react';
-import classNames from 'classnames';
 
 const pageTitle = 'Corporate Training: Breaking Biases';
 

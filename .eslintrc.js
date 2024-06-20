@@ -100,6 +100,32 @@ module.exports = {
       },
     },
     {
+      files: ['./**/*.test.ts', './**/*.test.tsx'],
+      parser: '@typescript-eslint/parser',
+      parserOptions: {
+        project: true,
+      },
+      extends: ['plugin:@typescript-eslint/strict', 'plugin:@typescript-eslint/stylistic'],
+      rules: {
+        '@typescript-eslint/no-non-null-assertion': 'off',
+        '@typescript-eslint/ban-ts-comment': 'off',
+      },
+    },
+    {
+      files: [
+        'test-utils/**/*.js',
+        'test-utils/**/*.ts',
+        'test-utils/**/*.tsx',
+        'pages/**/*.tsx',
+        'pages/**/*.js',
+        '**/*.stories.tsx',
+        '**/*.stories.js',
+      ],
+      rules: {
+        'import/no-default-export': 'off',
+      },
+    },
+    {
       files: ['cypress/**/*.js'],
       rules: {
         'func-names': 'off',
@@ -133,7 +159,14 @@ module.exports = {
     'import/extensions': [
       'error',
       'never',
-      { css: 'always', jpg: 'always', json: 'always', png: 'always', svg: 'always' },
+      {
+        css: 'always',
+        jpg: 'always',
+        json: 'always',
+        png: 'always',
+        svg: 'always',
+        stories: 'always',
+      },
     ],
     'import/no-unresolved': 'off',
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
@@ -142,6 +175,7 @@ module.exports = {
       { groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'] },
     ],
     'import/prefer-default-export': 'off',
+    'import/no-default-export': 'error',
 
     // OC eslint Plugin Rules
     '@operation_code/custom-rules/proptype-definition-above-fn': 'error',

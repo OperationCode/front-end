@@ -61,7 +61,9 @@ export function Content({
 
       <div className="flex justify-center items-center flex-wrap w-full [&>*]:m-4">
         {/* eslint-disable-next-line react/no-array-index-key */}
-        {columns.map((column, index) => cloneElement(column as ReactElement<any>, { key: index }))}
+        {columns.map((column, index) =>
+          cloneElement(column as ReactElement<unknown>, { key: index }),
+        )}
       </div>
     </Container>
   );

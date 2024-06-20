@@ -1,11 +1,9 @@
-import { isHexColor } from '@/common/utils/style-utils';
 import * as themeMap from './themeMap';
+import { isHexColor } from '@/common/utils/style-utils';
 
 const themeMapValues = Object.entries(themeMap);
 
-type StyleObjectType = {
-  [key: string]: string;
-};
+type StyleObjectType = Record<string, string>;
 
 export const breakpointsObject: StyleObjectType = themeMapValues.reduce((object, [key, value]) => {
   const isBreakpoint = key.includes('ViewportWidth');

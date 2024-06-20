@@ -1,9 +1,9 @@
 import { Component } from 'react';
 import Router from 'next/router';
 import { authenticate } from '@/common/utils/auth-utils';
-import getDisplayName from '@/decorators/getDisplayName';
+import { getDisplayName } from '@/decorators/getDisplayName';
 
-const withAuthSync = WrappedComponent =>
+export const withAuthSync = WrappedComponent =>
   class extends Component {
     static displayName = `withAuthSync(${getDisplayName(WrappedComponent)})`;
 
@@ -36,5 +36,3 @@ const withAuthSync = WrappedComponent =>
       return <WrappedComponent {...this.props} />;
     }
   };
-
-export default withAuthSync;

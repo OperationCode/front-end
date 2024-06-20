@@ -1,9 +1,9 @@
 import Image from 'next/legacy/image';
+import styles from 'styles/project_rebuild.module.css';
 import { Head } from '@/components/Head';
 import { HeroBanner } from '@/components/HeroBanner/HeroBanner';
 import { Content } from '@/components/Content/Content';
 import { OutboundLink } from '@/components/OutboundLink/OutboundLink';
-import styles from 'styles/project_rebuild.module.css';
 import { LinkButton } from '@/components/Buttons/LinkButton/LinkButton';
 import { s3 } from '@/common/constants/urls';
 

@@ -1,7 +1,7 @@
+import styles from 'styles/donate.module.css';
 import { Head } from '@/components/Head';
 import { Container } from '@/components/Container/Container';
 import { HeroBanner } from '@/components/HeroBanner/HeroBanner';
-import styles from 'styles/donate.module.css';
 import { OutboundLink } from '@/components/OutboundLink/OutboundLink';
 
 const pageTitle = 'Donate';

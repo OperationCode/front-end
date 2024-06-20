@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import omit from 'lodash/omit';
 import classNames from 'classnames';
-import { ScreenReaderOnly } from '@/components/ScreenReaderOnly/ScreenReaderOnly';
 import styles from './PaginationItem.module.css';
+import { ScreenReaderOnly } from '@/components/ScreenReaderOnly/ScreenReaderOnly';
 
 export interface PaginationItemPropsType {
   /**
@@ -21,7 +21,7 @@ export interface PaginationItemPropsType {
    * Sets styles to indicate the current item is selected.
    */
   isCurrent?: boolean;
-  query?: Record<string, any>;
+  query?: Record<string, unknown>;
   value?: number;
 }
 

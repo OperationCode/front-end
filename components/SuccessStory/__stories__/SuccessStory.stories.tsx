@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
+import { SuccessStory } from '../SuccessStory';
 import { descriptions } from '@/common/constants/descriptions';
 import { s3 } from '@/common/constants/urls';
-import { SuccessStory } from '../SuccessStory';
 
 type SuccessStoryType = StoryObj<typeof SuccessStory>;
 

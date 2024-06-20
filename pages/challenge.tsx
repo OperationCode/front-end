@@ -1,12 +1,12 @@
+import range from 'lodash/range';
+import styles from 'styles/challenge.module.css';
+import Image from 'next/legacy/image';
 import { s3 } from '@/common/constants/urls';
 import { Head } from '@/components/Head';
 import { HeroBanner } from '@/components/HeroBanner/HeroBanner';
 import { Content } from '@/components/Content/Content';
 import { OutboundLink } from '@/components/OutboundLink/OutboundLink';
 import challengers from '@/public/static/operationcode_challenge/names';
-import range from 'lodash/range';
-import styles from 'styles/challenge.module.css';
-import Image from 'next/legacy/image';
 
 const pageTitle = 'Challenge';
 

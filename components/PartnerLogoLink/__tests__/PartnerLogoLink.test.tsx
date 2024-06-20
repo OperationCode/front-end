@@ -1,5 +1,5 @@
-import createSnapshotTest from '@/test-utils/createSnapshotTest';
 import { PartnerLogoLink } from '../PartnerLogoLink';
+import createSnapshotTest from '@/test-utils/createSnapshotTest';
 
 describe('PartnerLogoLink', () => {
   it('should render with required props', () => {

@@ -1,10 +1,10 @@
 import noop from 'lodash/noop';
+import Image from 'next/legacy/image';
+import styles from './UpgradeBrowserOverlay.module.css';
 import { Modal } from '@/components/Modal/Modal';
 import { OutboundLink } from '@/components/OutboundLink/OutboundLink';
 import WarningSign from '@/public/static/images/icons/FontAwesome/exclamation-triangle-solid.svg';
 import { s3 } from '@/common/constants/urls';
-import Image from 'next/legacy/image';
-import styles from './UpgradeBrowserOverlay.module.css';
 
 export function UpgradeBrowserOverlay() {
   const browsers = [

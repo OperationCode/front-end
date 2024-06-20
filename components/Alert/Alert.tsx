@@ -1,7 +1,7 @@
 import classNames from 'classnames';
+import styles from './Alert.module.css';
 import { ALERT, ALERT_CLOSE_BUTTON } from '@/common/constants/testIDs';
 import { ScreenReaderOnly } from '@/components/ScreenReaderOnly/ScreenReaderOnly';
-import styles from './Alert.module.css';
 
 export interface AlertPropsType {
   type: 'error' | 'success' | 'warning';

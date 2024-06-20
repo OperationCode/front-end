@@ -1,6 +1,5 @@
-import createSnapshotTest from '@/test-utils/createSnapshotTest';
-
 import { Content } from '../Content';
+import createSnapshotTest from '@/test-utils/createSnapshotTest';
 
 // eslint-disable-next-line unicorn/prevent-abbreviations
 const requiredProps = {

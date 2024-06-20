@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
+import { ImageCard } from '../ImageCard';
 import { descriptions } from '@/common/constants/descriptions';
 import { s3 } from '@/common/constants/urls';
-import { ImageCard } from '../ImageCard';
 
 type ImageCardPropsType = StoryObj<typeof ImageCard>;
 

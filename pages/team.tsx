@@ -1,9 +1,9 @@
+import styles from 'styles/team.module.css';
 import { Head } from '@/components/Head';
 import { HeroBanner } from '@/components/HeroBanner/HeroBanner';
 import { s3 } from '@/common/constants/urls';
 import { Content } from '@/components/Content/Content';
 import { FlatCard } from '@/components/Cards/FlatCard/FlatCard';
-import styles from 'styles/team.module.css';
 
 const boardMembers = [
   {

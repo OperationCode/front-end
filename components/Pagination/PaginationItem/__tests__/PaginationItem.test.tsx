@@ -1,7 +1,6 @@
 import { cleanup, render } from '@testing-library/react';
-import createSnapshotTest from '@/test-utils/createSnapshotTest';
-
 import { PaginationItem } from '../PaginationItem';
+import createSnapshotTest from '@/test-utils/createSnapshotTest';
 
 describe('PaginationItem', () => {
   const requiredProps = {

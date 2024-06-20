@@ -1,8 +1,8 @@
 import classNames from 'classnames';
+import styles from './CloseButton.module.css';
 import { CLOSE_BUTTON } from '@/common/constants/testIDs';
 import { ScreenReaderOnly } from '@/components/ScreenReaderOnly/ScreenReaderOnly';
 import PlusIcon from '@/public/static/images/icons/plus.svg';
-import styles from './CloseButton.module.css';
 
 export type CloseButtonProps = {
   /**

@@ -1,6 +1,6 @@
 import classNames from 'classnames';
-import { getDataAttributes } from '@/common/utils/prop-utils';
 import styles from './Container.module.css';
+import { getDataAttributes } from '@/common/utils/prop-utils';
 
 export interface ContainerPropsType {
   /**

@@ -1,5 +1,5 @@
-import createSnapshotTest from '@/test-utils/createSnapshotTest';
 import { Card } from '../Card';
+import createSnapshotTest from '@/test-utils/createSnapshotTest';
 
 describe('Card', () => {
   it('should render with required props', () => {

@@ -1,12 +1,12 @@
 import nextCookie from 'next-cookies';
 import get from 'lodash/get';
+import { NextPage } from 'next';
 import { Head } from '@/components/Head';
 import { HeroBanner } from '@/components/HeroBanner/HeroBanner';
 import { Content } from '@/components/Content/Content';
 import { UpdateProfileForm } from '@/components/Forms/UpdateProfileForm/UpdateProfileForm';
-import withAuthSync from '@/decorators/withAuthSync/withAuthSync';
+import { withAuthSync } from '@/decorators/withAuthSync/withAuthSync';
 import { getUserPromise } from '@/common/constants/api';
-import { NextPage } from 'next';
 
 const pageTitle = 'Update Profile';
 

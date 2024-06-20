@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { descriptions } from '@/common/constants/descriptions';
 import { Container } from '../Container';
+import { descriptions } from '@/common/constants/descriptions';
 
 type ContainerStoryType = StoryObj<typeof Container>;
 

@@ -1,7 +1,7 @@
-import LeftAngleIcon from '@/public/static/images/icons/FontAwesome/angle-left-solid.svg';
-import RightAngleIcon from '@/public/static/images/icons/FontAwesome/angle-right-solid.svg';
 import { PREV_PAGE_BUTTON, NEXT_PAGE_BUTTON } from '../../common/constants/testIDs';
 import { PaginationItem } from './PaginationItem/PaginationItem';
+import LeftAngleIcon from '@/public/static/images/icons/FontAwesome/angle-left-solid.svg';
+import RightAngleIcon from '@/public/static/images/icons/FontAwesome/angle-right-solid.svg';
 
 export interface PaginationPropsType {
   /**
@@ -15,7 +15,7 @@ export interface PaginationPropsType {
   /**
    * Sets the URL path.
    */
-  query: Record<string, any>;
+  query: Record<string, unknown>;
   /**
    * Sets the total number of pages.
    */
@@ -45,16 +45,16 @@ const getPagination = (
   const shouldTruncateStart = isTruncatingRequired && isLeftSideLengthy;
   const shouldTruncateEnd = isTruncatingRequired && isRightSideLengthy;
 
-  const truncateStartOnly = shouldTruncateStart && !shouldTruncateEnd;
-  const truncateEndOnly = !shouldTruncateStart && shouldTruncateEnd;
+  const shouldTruncateStartOnly = shouldTruncateStart && !shouldTruncateEnd;
+  const shouldTruncateEndOnly = !shouldTruncateStart && shouldTruncateEnd;
 
   let paginationStart;
   let paginationEnd;
 
-  if (truncateStartOnly) {
+  if (shouldTruncateStartOnly) {
     paginationStart = totalPages - MAX_VISIBLE_ELEMENTS + 3;
     paginationEnd = totalPages;
-  } else if (truncateEndOnly) {
+  } else if (shouldTruncateEndOnly) {
     paginationStart = 1;
     paginationEnd = MAX_VISIBLE_ELEMENTS - 2;
   } else {

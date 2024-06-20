@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
-import createSnapshotTest from '@/test-utils/createSnapshotTest';
 import { OutboundLink } from '../OutboundLink';
+import createSnapshotTest from '@/test-utils/createSnapshotTest';
 
 describe('OutboundLink', () => {
   it('should render with required props', () => {

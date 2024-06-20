@@ -10,13 +10,13 @@ import hash from 'object-hash';
 import LogRocket from 'logrocket';
 import setupLogRocketReact from 'logrocket-react';
 import ScrollUpButton from 'react-scroll-up-button';
+import { AppProps } from 'next/app';
+import NextErrorComponent from 'next/error';
 import { clientTokens } from '@/common/config/environment';
 import { gtag } from '@/common/utils/thirdParty/gtag';
 import { Nav } from '@/components/Nav/Nav';
 import { Footer } from '@/components/Footer/Footer';
 import '@/common/styles/globals.css';
-import { AppProps } from 'next/app';
-import NextErrorComponent from 'next/error';
 
 const isProduction = process.env.NODE_ENV === 'production';
 

@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import classNames from 'classnames';
 import Chevron from 'public/static/images/icons/FontAwesome/angle-right-solid.svg';
-import { ACCORDION_CONTENT, ACCORDION_TOGGLE_BUTTON } from '@/common/constants/testIDs';
 import { ScreenReaderOnly, toggleMessages } from '../ScreenReaderOnly/ScreenReaderOnly';
 import { Card } from '../Cards/Card/Card';
 import styles from './Accordion.module.css';
+import { ACCORDION_CONTENT, ACCORDION_TOGGLE_BUTTON } from '@/common/constants/testIDs';
 
 const ChevronRight = () => <Chevron className={styles.icon} />;
 const ChevronDown = () => <Chevron className={classNames(styles.icon, styles.rotate90)} />;

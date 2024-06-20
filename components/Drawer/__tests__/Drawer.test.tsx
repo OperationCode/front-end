@@ -1,6 +1,5 @@
-import createSnapshotTest from '@/test-utils/createSnapshotTest';
-
 import { Drawer } from '../Drawer';
+import createSnapshotTest from '@/test-utils/createSnapshotTest';
 
 describe('Drawer', () => {
   it('should render with required props', () => {

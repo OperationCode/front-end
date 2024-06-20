@@ -1,7 +1,7 @@
 import { fireEvent, render } from '@testing-library/react';
+import { CloseButton } from '../CloseButton';
 import { CLOSE_BUTTON } from '@/common/constants/testIDs';
 import createSnapshotTest from '@/test-utils/createSnapshotTest';
-import { CloseButton } from '../CloseButton';
 
 describe('CloseButton', () => {
   it('should render with just required props passed', () => {

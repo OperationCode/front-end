@@ -1,6 +1,5 @@
-import createShallowSnapshotTest from '@/test-utils/createShallowSnapshotTest';
-
 import { Swatch } from '../Swatch';
+import createShallowSnapshotTest from '@/test-utils/createShallowSnapshotTest';
 
 describe('Swatch', () => {
   it('should render with required props', () => {

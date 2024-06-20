@@ -1,10 +1,12 @@
 import classNames from 'classnames';
 import TrackVisibility from 'react-on-screen';
+import Link from 'next/link';
+import styles from 'styles/get_involved.module.css';
+import Image from 'next/legacy/image';
 import { Head } from '@/components/Head';
 import { HeroBanner } from '@/components/HeroBanner/HeroBanner';
 import { Badge } from '@/components/Badge/Badge';
 import { Content } from '@/components/Content/Content';
-import Link from 'next/link';
 import { LinkButton } from '@/components/Buttons/LinkButton/LinkButton';
 import { Heading } from '@/components/Heading/Heading';
 import { DonateSection } from '@/components/ReusableSections/DonateSection/DonateSection';
@@ -16,8 +18,6 @@ import NetworkingIcon from '@/public/static/images/icons/Custom/networked_people
 import ChartIcon from '@/public/static/images/icons/Custom/chart.svg';
 import PeopleMeetingIcon from '@/public/static/images/icons/Custom/people_meeting.svg';
 import { s3 } from '@/common/constants/urls';
-import styles from 'styles/get_involved.module.css';
-import Image from 'next/legacy/image';
 
 const VISIBILITY_OFFSET = 400;
 

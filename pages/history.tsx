@@ -1,10 +1,10 @@
+import styles from 'styles/history.module.css';
 import { s3 } from '@/common/constants/urls';
 import { Content } from '@/components/Content/Content';
 import { Head } from '@/components/Head';
 import { HeroBanner } from '@/components/HeroBanner/HeroBanner';
 import { Timeline } from '@/components/Timeline/Timeline';
 import { TimelineNav } from '@/components/Timeline/TimelineNav/TimelineNav';
-import styles from 'styles/history.module.css';
 
 const pageTitle = 'History';
 

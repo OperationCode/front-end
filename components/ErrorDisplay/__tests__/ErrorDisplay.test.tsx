@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
-import createSnapshotTest from '@/test-utils/createSnapshotTest';
 import { ErrorDisplay } from '../ErrorDisplay';
+import createSnapshotTest from '@/test-utils/createSnapshotTest';
 
 describe('ErrorDisplay', () => {
   it('should render with just required props', () => {

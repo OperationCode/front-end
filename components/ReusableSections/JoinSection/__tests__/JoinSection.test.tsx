@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
-import createSnapshotTest from '@/test-utils/createSnapshotTest';
 import { JoinSection } from '../JoinSection';
+import createSnapshotTest from '@/test-utils/createSnapshotTest';
 
 describe('JoinSection', () => {
   it('should render', () => {

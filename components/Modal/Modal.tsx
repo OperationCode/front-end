@@ -12,7 +12,7 @@ export interface ModalPropsType {
   /**
    * Function that is called when the user clicks the close button.
    */
-  onRequestClose: (arg1: any) => void;
+  onRequestClose: (previousValue?: boolean) => void;
   /**
    * Applies a label for the screen reader.
    */
@@ -49,6 +49,7 @@ export function Modal({
   screenReaderLabel,
   canClose = true,
   childrenClassName,
+  overlayClassName,
 }: ModalPropsType) {
   if (isOpen) {
     gtag.modalView(screenReaderLabel);
@@ -63,7 +64,7 @@ export function Modal({
     <Dialog.Root defaultOpen={false} open={isOpen}>
       <Dialog.Portal container={portalContainer}>
         <Dialog.Overlay
-          className="inset-0 fixed bg-white/50 z-[2]"
+          className={classNames('inset-0 fixed bg-white/50 z-[2]', overlayClassName)}
           onClick={canClose ? onRequestClose : undefined}
           data-testid={MODAL_OVERLAY}
         >

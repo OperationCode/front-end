@@ -1,6 +1,6 @@
-import { s3 } from '@/common/constants/urls';
 import Image from 'next/legacy/image';
 import styles from './PressPhotos.module.css';
+import { s3 } from '@/common/constants/urls';
 
 export function PressPhotos() {
   return (

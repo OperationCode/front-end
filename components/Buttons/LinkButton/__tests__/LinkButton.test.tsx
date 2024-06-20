@@ -1,7 +1,7 @@
 import { fireEvent, render } from '@testing-library/react';
+import { LinkButton } from '../LinkButton';
 import { gtag } from '@/common/utils/thirdParty/gtag';
 import createSnapshotTest from '@/test-utils/createSnapshotTest';
-import { LinkButton } from '../LinkButton';
 
 describe('LinkButton', () => {
   const testID = 'Test';
@@ -35,7 +35,7 @@ describe('LinkButton', () => {
     const gtagSpy = vi.spyOn(gtag, 'outboundLink');
     expect(gtagSpy).toHaveBeenCalledTimes(0);
 
-    //@ts-expect-error
+    // @ts-expect-error
     fireEvent.click(component.queryByTestId(testID));
 
     expect(gtagSpy).toHaveBeenCalledTimes(1);

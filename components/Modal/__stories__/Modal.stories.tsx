@@ -1,9 +1,9 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
 import { isChromatic } from 'chromatic/isChromatic';
+import { Modal } from '../Modal';
 import { descriptions } from '@/common/constants/descriptions';
 import { Button } from '@/components/Buttons/Button/Button';
-import { Modal } from '../Modal';
 
 type ModalStoryType = StoryObj<typeof Modal>;
 

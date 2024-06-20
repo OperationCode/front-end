@@ -1,3 +1,4 @@
+import styles from 'styles/index.module.css';
 import { Head } from '@/components/Head';
 import { HeroBanner } from '@/components/HeroBanner/HeroBanner';
 import { Content } from '@/components/Content/Content';
@@ -8,7 +9,6 @@ import { Heading } from '@/components/Heading/Heading';
 import { LinkButton } from '@/components/Buttons/LinkButton/LinkButton';
 import { successStories } from '@/common/constants/successStories';
 import { s3 } from '@/common/constants/urls';
-import styles from 'styles/index.module.css';
 
 function Home() {
   return (

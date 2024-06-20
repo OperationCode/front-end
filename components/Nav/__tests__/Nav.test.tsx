@@ -1,10 +1,9 @@
-// @ts-expect-error
+// @ts-expect-error - Have yet to mock dependency
 import cookie from 'js-cookie';
 import { fireEvent, render, screen } from '@testing-library/react';
+import { Nav } from '../Nav';
 import { CLOSE_BUTTON } from '@/common/constants/testIDs';
 import createShallowSnapshotTest from '@/test-utils/createShallowSnapshotTest';
-
-import { Nav } from '../Nav';
 
 describe('Nav', () => {
   beforeEach(() => {

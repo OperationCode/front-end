@@ -1,4 +1,4 @@
-import getDisplayName from '../getDisplayName';
+import { getDisplayName } from '../getDisplayName';
 
 describe('getDisplayName', () => {
   it("should return displayName if it's all component has", () => {

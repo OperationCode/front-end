@@ -1,6 +1,5 @@
-import createSnapshotTest from '@/test-utils/createSnapshotTest';
-
 import { ProgressIndicator, developmentErrors } from '../ProgressIndicator';
+import createSnapshotTest from '@/test-utils/createSnapshotTest';
 
 describe('ProgressIndicator', () => {
   it('should render with required props', () => {
