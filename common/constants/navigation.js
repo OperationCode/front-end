@@ -85,9 +85,14 @@ const press = {
   href: '/press',
 };
 
+const corporateTraining = {
+  name: 'Corporate Training',
+  href: '/corporate-training',
+};
+
 const servicesGroup = {
   ...services,
-  sublinks: [podcast, scholarship, projectRebuild],
+  sublinks: [podcast, scholarship, projectRebuild, corporateTraining],
 };
 
 const aboutUsGroup = {
@@ -127,6 +132,7 @@ export const footerItems = {
     branding,
     services,
     team,
+    corporateTraining,
   ],
   legal: [
     {
