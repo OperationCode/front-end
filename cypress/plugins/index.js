@@ -32,7 +32,7 @@ module.exports = (on, config) => {
       webpackOptions: {
         resolve: {
           alias: {
-            '@/': path.resolve('./'),
+            '@/': path.resolve('../../'),
           },
         },
       },
