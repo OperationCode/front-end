@@ -6,7 +6,8 @@ orbs:
 executors:
   default:
     docker:
-      - image: cypress/browsers:node18.12.0-chrome107 # keep in sync with .nvmrc and any other executors
+      # keep in sync with .nvmrc and any other executors
+      - image: cypress/browsers:node-18.20.3-chrome-125.0.6422.141-1-ff-126.0.1-edge-125.0.2535.85-1
     environment:
       CC_TEST_REPORTER_ID: 0f2bc6ef737019bfc8eda369cd06b66c54606b144b4d81cec010fb494d2559af
 
