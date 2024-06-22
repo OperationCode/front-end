@@ -1,3 +1,5 @@
+/* eslint-disable global-require */
+
 // ***********************************************************
 // This example plugins/index.js can be used to load plugins
 //
@@ -7,23 +9,15 @@
 // You can read more here:
 // https://on.cypress.io/plugins-guide
 // ***********************************************************
+
 const path = require('path');
 const { addMatchImageSnapshotPlugin } = require('cypress-image-snapshot/plugin');
 const webpack = require('@cypress/webpack-preprocessor');
-// This function is called when a project is opened or re-opened (e.g. due to
-// the project's config changing)
-// eslint-disable-next-line no-unused-vars
-/* eslint-disable global-require */
-module.exports = (on, config) => {
-  // `on` is used to hook into various events Cypress emits
-  // `config` is the resolved Cypress config
 
-  if (!!process.env.CI) {
-    addMatchImageSnapshotPlugin(on, config);
-    require('@cypress/code-coverage/task')(on, config);
-    on('file:preprocessor', require('@cypress/code-coverage/use-babelrc'));
-  }
-
+module.exports = (
+  on, // `on` is used to hook into various events Cypress emits
+  config, // `config` is the resolved Cypress config
+) => {
   // this fixes aliasing in cypres e2e tests
   // https://github.com/cypress-io/cypress/issues/3262#issuecomment-462646891
   on(
@@ -32,12 +26,19 @@ module.exports = (on, config) => {
       webpackOptions: {
         resolve: {
           alias: {
-            '@/': path.resolve('../../'),
+            '@': path.resolve(__dirname, '../../'),
           },
         },
       },
       watchOptions: {},
     }),
   );
+
+  if (!!process.env.CI) {
+    addMatchImageSnapshotPlugin(on, config);
+    require('@cypress/code-coverage/task')(on, config);
+    on('file:preprocessor', require('@cypress/code-coverage/use-babelrc'));
+  }
+
   return config;
 };

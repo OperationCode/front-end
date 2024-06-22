@@ -1,4 +1,4 @@
-import jwt_decode from 'jwt-decode'; // eslint-disable-line camelcase
+import jwtDecode from 'jwt-decode';
 import { validationErrorMessages } from '@/common/constants/messages';
 import existingUser from '@/test-utils/mocks/existingUser';
 import mockUser from '@/test-utils/mockGenerators/mockUser';
@@ -311,7 +311,7 @@ describe('join', () => {
     cy.get('h1').should('have.text', 'Update Profile');
 
     cy.getCookies().then(([tokenCookie]) => {
-      const jwt = jwt_decode(tokenCookie.value);
+      const jwt = jwtDecode(tokenCookie.value);
 
       expect(jwt.firstName).to.exist;
       expect(jwt.lastName).to.exist;
