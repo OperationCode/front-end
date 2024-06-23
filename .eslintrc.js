@@ -120,6 +120,7 @@ module.exports = {
         'pages/**/*.js',
         '**/*.stories.tsx',
         '**/*.stories.js',
+        './cypress.config.ts',
       ],
       rules: {
         'import/no-default-export': 'off',

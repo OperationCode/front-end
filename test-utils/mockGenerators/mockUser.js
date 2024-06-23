@@ -5,7 +5,6 @@ import mockPassword from './mockPassword';
  * @description generate a mocked user object for registration tests
  *
  * @export
- * @param {string} [desiredEmail=''] User will be created with this email, if passed
  * @returns {Object.<string, string>}
  */
 export default function mockUser({

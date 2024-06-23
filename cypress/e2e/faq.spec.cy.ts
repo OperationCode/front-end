@@ -1,4 +1,4 @@
-import { ACCORDION_CONTENT, ACCORDION_TOGGLE_BUTTON } from '@/common/constants/testIDs';
+import { ACCORDION_CONTENT, ACCORDION_TOGGLE_BUTTON } from '../../common/constants/testIDs';
 
 describe('faq', () => {
   beforeEach(() => {
@@ -8,6 +8,7 @@ describe('faq', () => {
 
   it('reveals text after clicking "SHOW"', () => {
     cy.findByTestId(ACCORDION_CONTENT).should('not.exist');
+    // @ts-expect-error - This seems to be incorrect 🤷🏼‍♂️
     cy.findAllByTestId(ACCORDION_TOGGLE_BUTTON).then(([firstButton]) => firstButton.click());
     cy.findAllByTestId(ACCORDION_CONTENT).should('be.visible');
   });

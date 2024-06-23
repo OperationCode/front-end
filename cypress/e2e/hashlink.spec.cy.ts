@@ -1,13 +1,14 @@
-import { HERO_BANNER_H1 } from '@/common/constants/testIDs';
+import { HERO_BANNER_H1 } from '../../common/constants/testIDs';
 
 describe('Hash Links', () => {
-  const verifyHashLink = (title, path) => {
+  const verifyHashLink = (_title: string, path: string) => {
     cy.visitAndWaitFor(path);
 
     cy.findAllByTestId(HERO_BANNER_H1).should('be.visible');
 
-    cy.findAllByTestId('Hash Link').each(link => {
-      const { hash } = link[0];
+    // @ts-expect-error - This seems to be incorrect 🤷🏼‍♂️
+    cy.findAllByTestId('Hash Link').each(([link]) => {
+      const { hash } = link;
 
       cy.get(hash).scrollIntoView();
 
@@ -38,8 +39,9 @@ describe('Hash Links', () => {
         cy.visitAndWaitFor(path);
         cy.viewport('iphone-6');
 
-        cy.findAllByTestId('Hash Link').each(link => {
-          const { hash } = link[0];
+        // @ts-expect-error - This seems to be incorrect 🤷🏼‍♂️
+        cy.findAllByTestId('Hash Link').each(([link]) => {
+          const { hash } = link;
 
           cy.get(hash).should('not.be.visible');
         });

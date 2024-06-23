@@ -5,6 +5,9 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({ enabled: hasBundle
 const { s3hostName } = require('./common/constants/urls');
 const svgoConfig = require('./common/config/svgo');
 
+/**
+ * @type {Partial<import('@sentry/nextjs/types/config/types').SentryWebpackPluginOptions>}
+ */
 const sentryWebpackPluginOptions = {
   // Additional config options for the Sentry Webpack plugin. Keep in mind that
   // the following options are set automatically, and overriding them is not
@@ -15,6 +18,13 @@ const sentryWebpackPluginOptions = {
   silent: true, // Suppresses all logs
   // For all available options, see:
   // https://github.com/getsentry/sentry-webpack-plugin#options.
+};
+
+/**
+ * @type {Partial<import('@sentry/nextjs/types/config/types').UserSentryOptions>}
+ */
+const sentryOptions = {
+  hideSourceMaps: false,
 };
 
 /**
@@ -135,10 +145,9 @@ const nextConfig = {
 module.exports = async (phase, defaultConfig) => {
   const plugins = [
     /**
-     *
      * @type {(config: import('next').NextConfig) => any}
      */
-    config => withSentryConfig(config, sentryWebpackPluginOptions),
+    config => withSentryConfig(config, sentryWebpackPluginOptions, sentryOptions),
     withBundleAnalyzer,
   ];
 
