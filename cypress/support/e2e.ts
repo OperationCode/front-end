@@ -13,7 +13,7 @@
 // https://on.cypress.io/configuration
 // ***********************************************************
 
-import './commands';
+import './commands.ts';
 import '@cypress/code-coverage/support';
 
 // beforeEach(() => {
