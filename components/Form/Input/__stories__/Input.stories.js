@@ -1,6 +1,6 @@
 import { Formik, Field } from 'formik';
-import Form from '../../Form';
-import Input from '../Input';
+import { Form } from '../../Form';
+import { Input } from '../Input';
 
 const InputTemplate = args => {
   const {

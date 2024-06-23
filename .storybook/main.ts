@@ -1,5 +1,6 @@
 const svgoConfig = require('../common/config/svgo');
 import type { StorybookConfig } from '@storybook/nextjs';
+import path from 'path';
 
 const config: StorybookConfig = {
   stories: [
@@ -16,6 +17,10 @@ const config: StorybookConfig = {
     },
   ],
   webpackFinal: async config => {
+    if (config.resolve?.alias) {
+      config.resolve.alias['@'] = path.resolve(__dirname, '../');
+    }
+
     // Find the Storybook Webpack rule relevant to SVG files.
     // @ts-expect-error => 'config.module' is possibly 'undefined'.ts(18048)
     const imageRule = config.module.rules.find(rule => {

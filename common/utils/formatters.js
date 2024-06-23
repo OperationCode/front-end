@@ -1,4 +1,4 @@
-import { isFilledArray } from 'common/utils/array-utils';
+import { isFilledArray } from '@/common/utils/array-utils';
 
 // TODO: Remove eslint disable when more items are exported
 /* eslint-disable import/prefer-default-export */

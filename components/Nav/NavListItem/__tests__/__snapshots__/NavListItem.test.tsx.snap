@@ -5,22 +5,19 @@ exports[`NavListItem > should render with required props passed 1`] = `
   className="NavListItem"
 >
   <ForwardRef(LinkComponent)
+    className="link navItemLink"
+    data-testid="Nav Item Test"
     href="/test"
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    role="link"
+    tabIndex={0}
   >
-    <a
-      className="link navItemLink"
-      data-testid="Nav Item Test"
-      onMouseEnter={[Function]}
-      onMouseLeave={[Function]}
-      role="link"
-      tabIndex={0}
+    <span
+      className="linkContent"
     >
-      <span
-        className="linkContent"
-      >
-        Test
-      </span>
-    </a>
+      Test
+    </span>
   </ForwardRef(LinkComponent)>
 </li>
 `;

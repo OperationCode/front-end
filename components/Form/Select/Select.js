@@ -10,10 +10,10 @@ import {
   string,
 } from 'prop-types';
 import { ErrorMessage } from 'formik';
-import Alert from 'components/Alert/Alert';
-import Label from 'components/Form/Label/Label';
-import ThemedReactSelect from './ThemedReactSelect';
+import { ThemedReactSelect } from './ThemedReactSelect';
 import styles from './Select.module.css';
+import { Alert } from '@/components/Alert/Alert';
+import { Label } from '@/components/Form/Label/Label';
 
 Select.propTypes = {
   field: shape({
@@ -48,7 +48,7 @@ Select.defaultProps = {
   isSearchable: true,
 };
 
-export default function Select({
+export function Select({
   field: { name, value: fieldValue },
   form: { errors, setFieldTouched, setFieldValue, touched },
   hasValidationStyling,

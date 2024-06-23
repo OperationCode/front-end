@@ -1,41 +1,33 @@
 {
   "compilerOptions": {
-    "baseUrl": "./",
-    "target": "esnext",
-    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "incremental": true,
+    "baseUrl": "./",
     "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
+    "incremental": true,
     "isolatedModules": true,
-    "checkJs": false,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "alwaysStrict": true,
-    "noImplicitAny": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
     "jsx": "preserve",
-    "jsxFactory": "React.createElement",
-    "jsxFragmentFactory": "React.Fragment",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "module": "esnext",
+    "moduleResolution": "bundler",
     "noEmit": true,
-    "noEmitOnError": true,
     "paths": {
-      "common/*": ["./common/*"],
-      "components/*": ["./components/*"],
-      "pages/*": ["./pages/*"],
-      "public/*": ["./public/*"],
-      "scripts/*": ["./scripts/*"],
-      "static/*": ["./public/static/*"],
-      "styles/*": ["./styles/*"],
-      "test-utils/*": ["./test-utils/*"]
+      "@/*": ["./*"]
     },
-    "types": ["vitest/globals", "@testing-library/jest-dom"]
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "types": ["cypress", "node", "@testing-library/cypress"]
   },
-  "include": ["next-env.d.ts", "**/*.js", "**/*.ts", "**/*.tsx", "vitest.config.mts"],
+  "include": [
+    "next-env.d.ts",
+    "types/*.d.ts",
+    "./**/*.js",
+    "./**/*.ts",
+    "./**/*.tsx",
+    "vitest.config.mts",
+    "vitest/globals",
+    ".next/types/**/*.ts",
+    "@testing-library/jest-dom"
+  ],
   "exclude": ["node_modules"]
 }

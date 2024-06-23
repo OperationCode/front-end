@@ -1,9 +1,9 @@
 import axios from 'axios';
 import lodashGet from 'lodash/get';
-import { networkErrorMessages } from 'common/constants/messages';
-import { apiUrl, resourcesAPIURL } from 'common/config/environment';
-import { setAuthorizationHeader } from 'common/utils/cookie-utils';
 import qs from 'qs';
+import { networkErrorMessages } from '@/common/constants/messages';
+import { apiUrl, resourcesAPIURL } from '@/common/config/environment';
+import { setAuthorizationHeader } from '@/common/utils/cookie-utils';
 
 const baseAxiosConfig = {
   baseURL: apiUrl,

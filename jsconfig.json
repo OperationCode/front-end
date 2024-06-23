@@ -6,16 +6,6 @@
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "baseUrl": ".",
-    "paths": {
-      // Ensure intellisense continues to operate - match with webpack aliases
-      "common/*": ["./common/*"],
-      "components/*": ["./components/*"],
-      "pages/*": ["./pages/*"],
-      "public/*": ["./public/*"],
-      "scripts/*": ["./scripts/*"],
-      "static/*": ["./public/static/*"],
-      "styles/*": ["./styles/*"],
-      "test-utils/*": ["./test-utils/*"]
-    }
+    "paths": { "@/*": ["./*"] }
   }
 }

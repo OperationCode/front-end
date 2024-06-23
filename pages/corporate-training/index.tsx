@@ -1,9 +1,9 @@
-import Image from 'next/image';
-import Head from 'components/head';
-import HeroBanner from 'components/HeroBanner/HeroBanner';
-import OutboundLink from 'components/OutboundLink/OutboundLink';
+import Image from 'next/legacy/image';
 import { ReactNode } from 'react';
 import classNames from 'classnames';
+import { Head } from '@/components/Head';
+import { HeroBanner } from '@/components/HeroBanner/HeroBanner';
+import { OutboundLink } from '@/components/OutboundLink/OutboundLink';
 
 const pageTitle = 'Corporate Training: Breaking Biases';
 

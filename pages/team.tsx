@@ -1,9 +1,9 @@
-import Head from 'components/head';
-import HeroBanner from 'components/HeroBanner/HeroBanner';
-import { s3 } from 'common/constants/urls';
-import Content from 'components/Content/Content';
-import FlatCard from 'components/Cards/FlatCard/FlatCard';
 import styles from 'styles/team.module.css';
+import { Head } from '@/components/Head';
+import { HeroBanner } from '@/components/HeroBanner/HeroBanner';
+import { s3 } from '@/common/constants/urls';
+import { Content } from '@/components/Content/Content';
+import { FlatCard } from '@/components/Cards/FlatCard/FlatCard';
 
 const boardMembers = [
   {
@@ -94,10 +94,14 @@ export default function Team() {
                     )}
                   </>
                 }
-                image={{
-                  source: imageSource,
-                  alt: `Headshot of ${name}`,
-                }}
+                image={
+                  imageSource
+                    ? {
+                        source: imageSource,
+                        alt: `Headshot of ${name}`,
+                      }
+                    : undefined
+                }
               >
                 {description}
               </FlatCard>

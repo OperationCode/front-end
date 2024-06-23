@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 
-export type DrawerPropsType = {
+export interface DrawerPropsType {
   /**
    * Content to be rendered in the Drawer.
    */
@@ -14,9 +14,9 @@ export type DrawerPropsType = {
    * @default false
    */
   isVisible?: boolean;
-};
+}
 
-function Drawer({ children, className, isVisible = false }: DrawerPropsType) {
+export function Drawer({ children, className, isVisible = false }: DrawerPropsType) {
   return (
     <div
       className={classNames(
@@ -32,5 +32,3 @@ function Drawer({ children, className, isVisible = false }: DrawerPropsType) {
     </div>
   );
 }
-
-export default Drawer;

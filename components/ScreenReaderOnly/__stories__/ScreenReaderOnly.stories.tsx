@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import ScreenReaderOnly from '../ScreenReaderOnly';
+import { ScreenReaderOnly } from '../ScreenReaderOnly';
 
 type ScreenReaderOnlyStoryType = StoryObj<typeof ScreenReaderOnly>;
 

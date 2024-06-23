@@ -1,9 +1,10 @@
-import LeftAngleIcon from 'static/images/icons/FontAwesome/angle-left-solid.svg';
-import RightAngleIcon from 'static/images/icons/FontAwesome/angle-right-solid.svg';
-import { PREV_PAGE_BUTTON, NEXT_PAGE_BUTTON } from '../../common/constants/testIDs';
-import PaginationItem from './PaginationItem/PaginationItem';
+import { ParsedUrlQueryInput } from 'node:querystring';
+import { PaginationItem } from './PaginationItem/PaginationItem';
+import { PREV_PAGE_BUTTON, NEXT_PAGE_BUTTON } from '@/common/constants/testIDs';
+import LeftAngleIcon from '@/public/static/images/icons/FontAwesome/angle-left-solid.svg';
+import RightAngleIcon from '@/public/static/images/icons/FontAwesome/angle-right-solid.svg';
 
-export type PaginationPropsType = {
+export interface PaginationPropsType {
   /**
    * Sets the current page number to indicate which PaginationItem is styled differently.
    */
@@ -15,12 +16,12 @@ export type PaginationPropsType = {
   /**
    * Sets the URL path.
    */
-  query: Record<string, any>;
+  query: ParsedUrlQueryInput;
   /**
    * Sets the total number of pages.
    */
   totalPages: number;
-};
+}
 
 export const developmentErrors = {
   currentPageValue: (value: number) => `The value passed for currentPage is ${value}.`,
@@ -45,16 +46,16 @@ const getPagination = (
   const shouldTruncateStart = isTruncatingRequired && isLeftSideLengthy;
   const shouldTruncateEnd = isTruncatingRequired && isRightSideLengthy;
 
-  const truncateStartOnly = shouldTruncateStart && !shouldTruncateEnd;
-  const truncateEndOnly = !shouldTruncateStart && shouldTruncateEnd;
+  const shouldTruncateStartOnly = shouldTruncateStart && !shouldTruncateEnd;
+  const shouldTruncateEndOnly = !shouldTruncateStart && shouldTruncateEnd;
 
   let paginationStart;
   let paginationEnd;
 
-  if (truncateStartOnly) {
+  if (shouldTruncateStartOnly) {
     paginationStart = totalPages - MAX_VISIBLE_ELEMENTS + 3;
     paginationEnd = totalPages;
-  } else if (truncateEndOnly) {
+  } else if (shouldTruncateEndOnly) {
     paginationStart = 1;
     paginationEnd = MAX_VISIBLE_ELEMENTS - 2;
   } else {
@@ -132,7 +133,7 @@ const PaginationItems = ({ currentPage, pathname, query, totalPages }: Paginatio
   );
 };
 
-function Pagination({ currentPage, pathname, query, totalPages }: PaginationPropsType) {
+export function Pagination({ currentPage, pathname, query, totalPages }: PaginationPropsType) {
   /* Developer Errors */
   if (process.env.NODE_ENV !== 'production') {
     const isCurrentPageTooSmall = currentPage < 1;
@@ -199,5 +200,3 @@ function Pagination({ currentPage, pathname, query, totalPages }: PaginationProp
     </nav>
   );
 }
-
-export default Pagination;

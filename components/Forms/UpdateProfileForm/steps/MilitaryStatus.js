@@ -1,10 +1,10 @@
 import { bool } from 'prop-types';
 import { Field } from 'formik';
 import * as Yup from 'yup';
-import { updateUser } from 'common/constants/api';
-import { validationErrorMessages } from 'common/constants/messages';
-import Select from 'components/Form/Select/Select';
 import styles from './_steps.module.css';
+import { updateUser } from '@/common/constants/api';
+import { validationErrorMessages } from '@/common/constants/messages';
+import { Select } from '@/components/Form/Select/Select';
 
 MilitaryStatus.propTypes = {
   isSubmitting: bool,
@@ -28,7 +28,7 @@ MilitaryStatus.submitHandler = async values => {
   await updateUser(values);
 };
 
-function MilitaryStatus({ isSubmitting }) {
+export function MilitaryStatus({ isSubmitting }) {
   return (
     <>
       <p>
@@ -67,5 +67,3 @@ function MilitaryStatus({ isSubmitting }) {
     </>
   );
 }
-
-export default MilitaryStatus;

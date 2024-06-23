@@ -1,7 +1,7 @@
-import Head from 'components/head';
-import Container from 'components/Container/Container';
-import HeroBanner from 'components/HeroBanner/HeroBanner';
 import { useEffect } from 'react';
+import { Head } from '@/components/Head';
+import { Container } from '@/components/Container/Container';
+import { HeroBanner } from '@/components/HeroBanner/HeroBanner';
 
 const pageTitle = 'Code Platoon X Operation Code Bootcamp Scholarship';
 

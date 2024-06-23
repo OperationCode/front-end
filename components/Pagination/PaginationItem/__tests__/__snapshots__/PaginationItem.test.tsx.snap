@@ -10,6 +10,7 @@ exports[`PaginationItem > renders correctly as a current item with value 1`] = `
     href="/resources/1"
     onClick={[Function]}
     onMouseEnter={[Function]}
+    onTouchStart={[Function]}
   >
     <span
       className="sr-only"

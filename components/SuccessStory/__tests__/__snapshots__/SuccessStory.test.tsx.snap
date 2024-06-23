@@ -2,7 +2,6 @@
 
 exports[`SuccessStory > should render with required props 1`] = `
 <FlatCard
-  button={null}
   header="Great testing culture"
   image={
     {

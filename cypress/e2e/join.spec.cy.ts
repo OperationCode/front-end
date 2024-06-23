@@ -1,7 +1,7 @@
-import jwt_decode from 'jwt-decode'; // eslint-disable-line camelcase
-import { validationErrorMessages } from 'common/constants/messages';
-import existingUser from 'test-utils/mocks/existingUser';
-import mockUser from 'test-utils/mockGenerators/mockUser';
+import jwtDecode from 'jwt-decode';
+import { validationErrorMessages } from '../../common/constants/messages';
+import existingUser from '../../test-utils/mocks/existingUser';
+import mockUser from '../../test-utils/mockGenerators/mockUser';
 
 const validUser = mockUser();
 const inputFields = {
@@ -45,8 +45,7 @@ const assertFailedLogin = ({
 
 describe('join', () => {
   beforeEach(() => {
-    cy.server();
-    cy.route('POST', 'auth/registration/').as('postRegister');
+    cy.intercept('POST', 'auth/registration/').as('postRegister');
 
     cy.visitAndWaitFor('/join');
 
@@ -311,11 +310,11 @@ describe('join', () => {
     cy.get('h1').should('have.text', 'Update Profile');
 
     cy.getCookies().then(([tokenCookie]) => {
-      const jwt = jwt_decode(tokenCookie.value);
+      const jwt = jwtDecode(tokenCookie.value);
 
-      expect(jwt.firstName).to.exist;
-      expect(jwt.lastName).to.exist;
-      expect(jwt.zipcode).to.exist;
+      cy.wrap(jwt).invoke('firstName').should('exist');
+      cy.wrap(jwt).invoke('lastName').should('exist');
+      cy.wrap(jwt).invoke('zipcode').should('exist');
     });
   });
 });

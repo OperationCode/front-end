@@ -1,5 +1,5 @@
-import { get, post, patch, put, ResourcesAPI } from 'common/utils/api-utils';
-import { formatUserData } from 'common/utils/formatters';
+import { get, post, patch, put, ResourcesAPI } from '@/common/utils/api-utils';
+import { formatUserData } from '@/common/utils/formatters';
 
 /* GET REQUESTS */
 export const getUserPromise = ({ token }) => get('auth/user/', { token });

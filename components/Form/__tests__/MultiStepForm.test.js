@@ -7,13 +7,13 @@ import get from 'lodash/get';
 import { fireEvent, render, waitFor, getByTestId } from '@testing-library/react';
 import { Field } from 'formik';
 import * as Yup from 'yup';
-import { networkErrorMessages } from 'common/constants/messages';
+import { MultiStepForm } from '../MultiStepForm';
+import { networkErrorMessages } from '@/common/constants/messages';
 import {
   MULTI_STEP_SUBMIT_BUTTON,
   MULTI_STEP_STEP_BUTTON,
   MULTI_STEP_PREVIOUS_BUTTON,
-} from 'common/constants/testIDs';
-import { MultiStepForm } from '../MultiStepForm';
+} from '@/common/constants/testIDs';
 
 const submitForm = async ({ container, isFinalStep = false }) => {
   const button = await waitFor(

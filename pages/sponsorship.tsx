@@ -1,13 +1,13 @@
-import Head from 'components/head';
-import HeroBanner from 'components/HeroBanner/HeroBanner';
-import Content from 'components/Content/Content';
-import Badge from 'components/Badge/Badge';
-import Card from 'components/Cards/Card/Card';
-import FlatCard from 'components/Cards/FlatCard/FlatCard';
-import LinkButton from 'components/Buttons/LinkButton/LinkButton';
-import SponsorsSection from 'components/ReusableSections/SponsorsSection/SponsorsSection';
-import MedalSolid from 'static/images/icons/FontAwesome/medal-solid.svg';
 import styles from 'styles/sponsorship.module.css';
+import { Head } from '@/components/Head';
+import { HeroBanner } from '@/components/HeroBanner/HeroBanner';
+import { Content } from '@/components/Content/Content';
+import { Badge } from '@/components/Badge/Badge';
+import { Card } from '@/components/Cards/Card/Card';
+import { FlatCard } from '@/components/Cards/FlatCard/FlatCard';
+import { LinkButton } from '@/components/Buttons/LinkButton/LinkButton';
+import { SponsorsSection } from '@/components/ReusableSections/SponsorsSection/SponsorsSection';
+import MedalSolid from '@/public/static/images/icons/FontAwesome/medal-solid.svg';
 
 const pageTitle = 'Corporate Sponsorship';
 
