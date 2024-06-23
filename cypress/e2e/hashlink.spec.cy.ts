@@ -6,8 +6,8 @@ describe('Hash Links', () => {
 
     cy.findAllByTestId(HERO_BANNER_H1).should('be.visible');
 
-    // @ts-expect-error - This seems to be incorrect 🤷🏼‍♂️
     cy.findAllByTestId('Hash Link').each(([link]) => {
+      // @ts-expect-error - This seems to be incorrect 🤷🏼‍♂️
       const { hash } = link;
 
       cy.get(hash).scrollIntoView();
@@ -39,8 +39,8 @@ describe('Hash Links', () => {
         cy.visitAndWaitFor(path);
         cy.viewport('iphone-6');
 
-        // @ts-expect-error - This seems to be incorrect 🤷🏼‍♂️
         cy.findAllByTestId('Hash Link').each(([link]) => {
+          // @ts-expect-error - This seems to be incorrect 🤷🏼‍♂️
           const { hash } = link;
 
           cy.get(hash).should('not.be.visible');
