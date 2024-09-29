@@ -28,6 +28,10 @@ exports[`Nav > should render with no props passed 1`] = `
           "name": "Project Rebuild",
         },
         {
+          "href": "/corporate-training",
+          "name": "Corporate Training",
+        },
+        {
           "href": "/chapters",
           "name": "Chapters",
         },
@@ -125,6 +129,10 @@ exports[`Nav > should render with no props passed 1`] = `
                 {
                   "href": "/project_rebuild",
                   "name": "Project Rebuild",
+                },
+                {
+                  "href": "/corporate-training",
+                  "name": "Corporate Training",
                 },
               ]
             }
