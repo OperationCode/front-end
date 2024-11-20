@@ -1,17 +1,6 @@
 queue_rules:
   - name: default
-    conditions:
-      - 'status-success=Vercel – operation-code'
-      - 'status-success=Vercel – storybook'
-      - 'status-success=ci/circleci: lint'
-      - 'status-success=ci/circleci: unit_tests'
-      - 'status-success=cypress: all tests'
-      - status-success=codeclimate/diff-coverage
-      - status-success=codeclimate/total-coverage
-
-pull_request_rules:
-  - name: Auto-merge successful Dependabot upgrades
-    conditions:
+    queue_conditions:
       - author=dependabot[bot]
       - '#changes-requested-reviews-by=0'
       - 'status-success=Vercel – operation-code'
@@ -21,7 +10,18 @@ pull_request_rules:
       - 'status-success=cypress: all tests'
       - status-success=codeclimate/diff-coverage
       - status-success=codeclimate/total-coverage
+    merge_conditions:
+      - 'status-success=Vercel – operation-code'
+      - 'status-success=Vercel – storybook'
+      - 'status-success=ci/circleci: lint'
+      - 'status-success=ci/circleci: unit_tests'
+      - 'status-success=cypress: all tests'
+      - status-success=codeclimate/diff-coverage
+      - status-success=codeclimate/total-coverage
+    merge_method: rebase
+
+pull_request_rules:
+  - name: refactored queue action rule
+    conditions: []
     actions:
       queue:
-        method: rebase
-        name: default
