@@ -1,8 +1,8 @@
 import { fireEvent, render } from '@testing-library/react';
 import { composeStory } from '@storybook/react';
-import createSnapshotTest from 'test-utils/createSnapshotTest';
-import { ALERT_CLOSE_BUTTON } from 'common/constants/testIDs';
 import meta, { ErrorAlert, SuccessAlert, WarningAlert } from '../__stories__/Alert.stories';
+import createSnapshotTest from '@/test-utils/createSnapshotTest';
+import { ALERT_CLOSE_BUTTON } from '@/common/constants/testIDs';
 
 const ErrorAlertStory = composeStory(ErrorAlert, meta);
 const SuccessAlertStory = composeStory(SuccessAlert, meta);

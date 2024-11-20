@@ -75,12 +75,14 @@ module.exports = {
             format: ['PascalCase', 'UPPER_CASE'],
             prefix: [
               'is',
+              'are',
               'was',
               'should',
               'has',
               'can',
               'did',
               'will',
+              'ARE_',
               'IS_',
               'WAS_',
               'SHOULD_',
@@ -95,6 +97,33 @@ module.exports = {
         '@typescript-eslint/no-explicit-any': 'error',
         '@typescript-eslint/no-unused-vars': ['error', { vars: 'all', varsIgnorePattern: '_' }],
         '@typescript-eslint/unbound-method': 'off', // gives false negatives in arrow funcs
+      },
+    },
+    {
+      files: ['./**/*.test.ts', './**/*.test.tsx'],
+      parser: '@typescript-eslint/parser',
+      parserOptions: {
+        project: true,
+      },
+      extends: ['plugin:@typescript-eslint/strict', 'plugin:@typescript-eslint/stylistic'],
+      rules: {
+        '@typescript-eslint/no-non-null-assertion': 'off',
+        '@typescript-eslint/ban-ts-comment': 'off',
+      },
+    },
+    {
+      files: [
+        'test-utils/**/*.js',
+        'test-utils/**/*.ts',
+        'test-utils/**/*.tsx',
+        'pages/**/*.tsx',
+        'pages/**/*.js',
+        '**/*.stories.tsx',
+        '**/*.stories.js',
+        './cypress.config.ts',
+      ],
+      rules: {
+        'import/no-default-export': 'off',
       },
     },
     {
@@ -118,11 +147,11 @@ module.exports = {
       },
     },
     {
-      files: ['components/nav.js', 'components/Footer/Footer.js'],
+      files: ['./components/nav.js', './components/Footer/Footer.js'],
       rules: { 'jsx-a11y/anchor-is-valid': 'off' },
     },
     {
-      files: ['components/UpdateProfileForm/**/*.js'],
+      files: ['./components/UpdateProfileForm/**/*.js'],
       rules: { 'react/sort-comp': 'off' },
     },
   ],
@@ -131,7 +160,14 @@ module.exports = {
     'import/extensions': [
       'error',
       'never',
-      { css: 'always', jpg: 'always', json: 'always', png: 'always', svg: 'always' },
+      {
+        css: 'always',
+        jpg: 'always',
+        json: 'always',
+        png: 'always',
+        svg: 'always',
+        stories: 'always',
+      },
     ],
     'import/no-unresolved': 'off',
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
@@ -140,6 +176,7 @@ module.exports = {
       { groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'] },
     ],
     'import/prefer-default-export': 'off',
+    'import/no-default-export': 'error',
 
     // OC eslint Plugin Rules
     '@operation_code/custom-rules/proptype-definition-above-fn': 'error',
@@ -225,7 +262,7 @@ module.exports = {
         paths: [
           {
             name: 'react-select',
-            message: 'Please use `components/Form/Select/ThemedReactSelect` instead.',
+            message: 'Please use `@/components/Form/Select/ThemedReactSelect` instead.',
           },
           {
             name: 'prop-types',
@@ -235,7 +272,7 @@ module.exports = {
           {
             name: 'formik',
             importNames: ['Form'],
-            message: `Please use our Form component to have good defaults defined.\n "import Form from 'components/Form/Form';"`,
+            message: `Please use our Form component to have good defaults defined.\n "import { Form } from '@/components/Form/Form';"`,
           },
           {
             name: 'react',

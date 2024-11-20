@@ -29,7 +29,7 @@ exports[`LogoSection > should render with required props 1`] = `
                 <li>
                   <Badge
                     icon={
-                      <MockedNextImage
+                      <LegacyMockedNextImage
                         alt="Small Blue Accented Logo"
                         height={60}
                         src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/small-blue-logo.png"
@@ -43,7 +43,7 @@ exports[`LogoSection > should render with required props 1`] = `
                 <li>
                   <Badge
                     icon={
-                      <MockedNextImage
+                      <LegacyMockedNextImage
                         alt="Small Red Accented Logo"
                         height={60}
                         src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/small-red-logo.png"
@@ -57,7 +57,7 @@ exports[`LogoSection > should render with required props 1`] = `
                 <li>
                   <Badge
                     icon={
-                      <MockedNextImage
+                      <LegacyMockedNextImage
                         alt="Small Unaccented Logo"
                         height={60}
                         src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/small-logo.png"
@@ -71,7 +71,7 @@ exports[`LogoSection > should render with required props 1`] = `
                 <li>
                   <Badge
                     icon={
-                      <MockedNextImage
+                      <LegacyMockedNextImage
                         alt="Small White Accented Logo"
                         height={60}
                         src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/small-white-logo.png"
@@ -99,7 +99,7 @@ exports[`LogoSection > should render with required props 1`] = `
                 <li>
                   <Badge
                     icon={
-                      <MockedNextImage
+                      <LegacyMockedNextImage
                         alt="Large Stacked Original"
                         height={226}
                         src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/small-stacked-logo-blue.png"
@@ -113,7 +113,7 @@ exports[`LogoSection > should render with required props 1`] = `
                 <li>
                   <Badge
                     icon={
-                      <MockedNextImage
+                      <LegacyMockedNextImage
                         alt="Red Stacked Logo"
                         height={226}
                         src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/small-stacked-logo-red.png"
@@ -127,7 +127,7 @@ exports[`LogoSection > should render with required props 1`] = `
                 <li>
                   <Badge
                     icon={
-                      <MockedNextImage
+                      <LegacyMockedNextImage
                         alt="Light Stacked Logo"
                         height={226}
                         src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/small-stacked-logo.png"
@@ -155,7 +155,7 @@ exports[`LogoSection > should render with required props 1`] = `
                 <li>
                   <Badge
                     icon={
-                      <MockedNextImage
+                      <LegacyMockedNextImage
                         alt="OC Blue Medal"
                         height={404}
                         src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/large-blue-medal.png"
@@ -169,7 +169,7 @@ exports[`LogoSection > should render with required props 1`] = `
                 <li>
                   <Badge
                     icon={
-                      <MockedNextImage
+                      <LegacyMockedNextImage
                         alt="Red Medal"
                         height={404}
                         src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/large-red-medal.png"
@@ -183,7 +183,7 @@ exports[`LogoSection > should render with required props 1`] = `
                 <li>
                   <Badge
                     icon={
-                      <MockedNextImage
+                      <LegacyMockedNextImage
                         alt="Navy Medal"
                         height={404}
                         src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/large-slate-medal.png"
@@ -211,7 +211,7 @@ exports[`LogoSection > should render with required props 1`] = `
                 <li>
                   <Badge
                     icon={
-                      <MockedNextImage
+                      <LegacyMockedNextImage
                         alt="OC Blue Badge"
                         height={404}
                         src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/large-blue-medal.png"
@@ -225,7 +225,7 @@ exports[`LogoSection > should render with required props 1`] = `
                 <li>
                   <Badge
                     icon={
-                      <MockedNextImage
+                      <LegacyMockedNextImage
                         alt="Red Badge"
                         height={404}
                         src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/large-red-medal.png"
@@ -239,7 +239,7 @@ exports[`LogoSection > should render with required props 1`] = `
                 <li>
                   <Badge
                     icon={
-                      <MockedNextImage
+                      <LegacyMockedNextImage
                         alt="Navy"
                         height={404}
                         src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/large-slate-medal.png"
@@ -276,7 +276,7 @@ exports[`LogoSection > should render with required props 1`] = `
                 <li>
                   <Badge
                     icon={
-                      <MockedNextImage
+                      <LegacyMockedNextImage
                         alt="Original Large Logo"
                         height={70}
                         src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/large-blue-logo.png"
@@ -290,7 +290,7 @@ exports[`LogoSection > should render with required props 1`] = `
                 <li>
                   <Badge
                     icon={
-                      <MockedNextImage
+                      <LegacyMockedNextImage
                         alt="Red Large Logo"
                         height={70}
                         src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/large-red-logo.png"
@@ -304,7 +304,7 @@ exports[`LogoSection > should render with required props 1`] = `
                 <li>
                   <Badge
                     icon={
-                      <MockedNextImage
+                      <LegacyMockedNextImage
                         alt="Large Unaccented Logo"
                         height={70}
                         src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/large-logo.png"
@@ -318,7 +318,7 @@ exports[`LogoSection > should render with required props 1`] = `
                 <li>
                   <Badge
                     icon={
-                      <MockedNextImage
+                      <LegacyMockedNextImage
                         alt="Large White Accented Logo"
                         height={70}
                         src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/large-white-logo.png"

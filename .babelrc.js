@@ -1,4 +1,4 @@
-const pathAliases = require('./pathAliases');
+const path = require('path');
 
 module.exports = {
   env: {
@@ -29,7 +29,9 @@ module.exports = {
       'module-resolver',
       {
         root: ['./'],
-        alias: pathAliases,
+        alias: {
+          '@/': path.resolve('./'),
+        },
       },
     ],
     'macros',

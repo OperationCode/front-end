@@ -1,5 +1,5 @@
 import backgroundsPalleteArray from './backgrounds';
-import 'common/styles/globals.css';
+import '@/common/styles/globals.css';
 import * as viewports from '@storybook/addon-viewport';
 
 export const decorators = [

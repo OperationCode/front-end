@@ -1,9 +1,9 @@
 import classNames from 'classnames';
-import Head from 'components/head';
-import HeroBanner from 'components/HeroBanner/HeroBanner';
-import Content from 'components/Content/Content';
-import OutboundLink from 'components/OutboundLink/OutboundLink';
 import styles from 'styles/chapter_leader.module.css';
+import { Head } from '@/components/Head';
+import { HeroBanner } from '@/components/HeroBanner/HeroBanner';
+import { Content } from '@/components/Content/Content';
+import { OutboundLink } from '@/components/OutboundLink/OutboundLink';
 
 const pageTitle = 'Chapter Leaders';
 

@@ -1,14 +1,14 @@
 import { SKELETON_CARD } from '../../../common/constants/testIDs';
 import styles from './ResourceSkeletonCard.module.css';
 
-export type ResourceSkeletonCardPropsType = {
+export interface ResourceSkeletonCardPropsType {
   /**
    * Sets the number of UI "skeletons" to render.
    */
   numberOfSkeletons: number;
-};
+}
 
-function ResourceSkeletonCard({ numberOfSkeletons }: ResourceSkeletonCardPropsType) {
+export function ResourceSkeletonCard({ numberOfSkeletons }: ResourceSkeletonCardPropsType) {
   return (
     <div className={styles.resourcesCardWrapper}>
       {[...Array(numberOfSkeletons)].map((_skeleton, index) => (
@@ -22,5 +22,3 @@ function ResourceSkeletonCard({ numberOfSkeletons }: ResourceSkeletonCardPropsTy
     </div>
   );
 }
-
-export default ResourceSkeletonCard;

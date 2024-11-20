@@ -1,6 +1,5 @@
 describe('team', () => {
   beforeEach(() => {
-    cy.server();
     cy.visitAndWaitFor('/team');
     cy.get('h1').should('have.text', 'The Team');
   });

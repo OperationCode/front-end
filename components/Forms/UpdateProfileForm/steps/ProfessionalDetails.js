@@ -1,11 +1,11 @@
 import { bool } from 'prop-types';
 import { Field } from 'formik';
 import * as Yup from 'yup';
-import { updateUser } from 'common/constants/api';
-import { validationErrorMessages } from 'common/constants/messages';
-import Input from 'components/Form/Input/Input';
-import Select from 'components/Form/Select/Select';
 import styles from './_steps.module.css';
+import { updateUser } from '@/common/constants/api';
+import { validationErrorMessages } from '@/common/constants/messages';
+import { Input } from '@/components/Form/Input/Input';
+import { Select } from '@/components/Form/Select/Select';
 
 ProfessionalDetails.propTypes = {
   isSubmitting: bool,
@@ -33,7 +33,7 @@ ProfessionalDetails.submitHandler = async values => {
   await updateUser(values);
 };
 
-function ProfessionalDetails({ isSubmitting }) {
+export function ProfessionalDetails({ isSubmitting }) {
   return (
     <div className={styles.row}>
       <Field
@@ -76,5 +76,3 @@ function ProfessionalDetails({ isSubmitting }) {
     </div>
   );
 }
-
-export default ProfessionalDetails;

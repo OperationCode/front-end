@@ -2,15 +2,15 @@ import { func } from 'prop-types';
 import classNames from 'classnames';
 import GoogleLogin from 'react-google-login';
 import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props';
-import { clientTokens } from 'common/config/environment';
 import styles from './SocialLoginGroup.module.css';
+import { clientTokens } from '@/common/config/environment';
 
 SocialLoginButtons.propTypes = {
   onSuccess: func.isRequired,
   onGoogleFailure: func.isRequired,
 };
 
-function SocialLoginButtons({ onSuccess, onGoogleFailure }) {
+export function SocialLoginButtons({ onSuccess, onGoogleFailure }) {
   return (
     <>
       <GoogleLogin
@@ -47,5 +47,3 @@ function SocialLoginButtons({ onSuccess, onGoogleFailure }) {
     </>
   );
 }
-
-export default SocialLoginButtons;

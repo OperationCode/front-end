@@ -32,10 +32,11 @@ exports[`FlatCard > should render with many props assigned 1`] = `
       className="text-center absolute left-0 right-0 -bottom-7 [&>button]:hover:bg-white [&>button]:hover:text-themeSecondary [&>button]:focus-visible:text-themePrimary [&>button]:focus-visible:bg-white [&>a]:hover:bg-white [&>a]:hover:text-themeSecondary [&>a]:focus-visible:bg-white [&>a]:focus-visible:text-themeSecondary "
     >
       <a
-        className="Button primary"
+        className="Button primary !inline-block hover:no-underline"
         href="/"
         onClick={[Function]}
         onMouseEnter={[Function]}
+        onTouchStart={[Function]}
       >
         Widget Action
       </a>

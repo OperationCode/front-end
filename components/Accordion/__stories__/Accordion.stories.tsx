@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import Accordion from '../Accordion';
+import { Accordion } from '../Accordion';
 
 type AccordionStoryType = StoryObj<typeof Accordion>;
 

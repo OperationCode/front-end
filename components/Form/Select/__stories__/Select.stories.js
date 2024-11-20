@@ -1,6 +1,6 @@
 import { Formik, Field } from 'formik';
-import Form from '../../Form';
-import Select from '../Select';
+import { Form } from '../../Form';
+import { Select } from '../Select';
 
 const selectOptions = [
   { label: 'Air Force', value: 'air force' },

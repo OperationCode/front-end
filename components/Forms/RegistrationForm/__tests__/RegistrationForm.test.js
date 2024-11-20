@@ -1,9 +1,9 @@
 import { fireEvent, render, waitFor, screen } from '@testing-library/react';
-import { networkErrorMessages } from 'common/constants/messages';
-import createSnapshotTest from 'test-utils/createSnapshotTest';
-import mockUser from 'test-utils/mockGenerators/mockUser';
-import OperationCodeAPIMock from 'test-utils/mocks/apiMock';
-import RegistrationForm from '../RegistrationForm';
+import { RegistrationForm } from '../RegistrationForm';
+import { networkErrorMessages } from '@/common/constants/messages';
+import createSnapshotTest from '@/test-utils/createSnapshotTest';
+import mockUser from '@/test-utils/mockGenerators/mockUser';
+import OperationCodeAPIMock from '@/test-utils/mocks/apiMock';
 
 beforeEach(() => {
   OperationCodeAPIMock.reset();

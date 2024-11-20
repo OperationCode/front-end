@@ -1,6 +1,6 @@
 import styles from './PressVideos.module.css';
 
-function PressVideos() {
+export function PressVideos() {
   return (
     <div className={styles.pressVideos}>
       <iframe
@@ -22,5 +22,3 @@ function PressVideos() {
     </div>
   );
 }
-
-export default PressVideos;

@@ -1,6 +1,6 @@
-import createSnapshotTest from 'test-utils/createSnapshotTest';
-import FacebookLogo from 'static/images/icons/facebook_logo.svg';
-import SocialMediaItem from '../SocialMediaItem';
+import { SocialMediaItem } from '../SocialMediaItem';
+import createSnapshotTest from '@/test-utils/createSnapshotTest';
+import FacebookLogo from '@/public/static/images/icons/facebook_logo.svg';
 
 describe('SocialMediaItem', () => {
   it('should render with required props', () => {

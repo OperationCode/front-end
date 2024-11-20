@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import get from 'lodash/get';
 import Router from 'next/router';
-import { getServerErrorMessage } from 'common/utils/api-utils';
 import { array, objectOf, oneOfType, string, number, bool } from 'prop-types';
 import { insertIf } from '@innocuous/functions';
-import { MultiStepForm } from 'components/Form/MultiStepForm';
 import { ProfessionalDetails, MilitaryStatus, MilitaryDetails, Technology } from './steps';
+import { MultiStepForm } from '@/components/Form/MultiStepForm';
+import { getServerErrorMessage } from '@/common/utils/api-utils';
 
 UpdateProfileForm.propTypes = {
   // Not required to allow for diff props in testing
@@ -21,7 +21,7 @@ UpdateProfileForm.defaultProps = {
   },
 };
 
-function UpdateProfileForm({ initialValues }) {
+export function UpdateProfileForm({ initialValues }) {
   const [shouldShowMilitaryStep, handleShouldShowMilitaryStep] = useState(false);
 
   // TODO: Abstract method to utility and use for all error-handling purposes
@@ -88,5 +88,3 @@ function UpdateProfileForm({ initialValues }) {
     />
   );
 }
-
-export default UpdateProfileForm;

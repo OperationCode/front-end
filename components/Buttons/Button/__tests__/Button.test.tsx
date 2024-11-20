@@ -1,9 +1,8 @@
 import { fireEvent, render } from '@testing-library/react';
-import { BUTTON } from 'common/constants/testIDs';
-import { gtag } from 'common/utils/thirdParty/gtag';
-import createSnapshotTest from 'test-utils/createSnapshotTest';
-
-import Button from '../Button';
+import { Button } from '../Button';
+import { BUTTON } from '@/common/constants/testIDs';
+import { gtag } from '@/common/utils/thirdParty/gtag';
+import createSnapshotTest from '@/test-utils/createSnapshotTest';
 
 describe('Button', () => {
   const requiredProps = {

@@ -15,7 +15,7 @@ exports[`ImageCard > should render with many props assigned 1`] = `
     <div
       className="relative h-full"
     >
-      <MockedNextImage
+      <LegacyMockedNextImage
         alt="Test title"
         layout="fill"
         objectFit="cover"
@@ -34,7 +34,7 @@ exports[`ImageCard > should render with required props 1`] = `
     <div
       className="relative h-full w-full min-h-[225px]"
     >
-      <MockedNextImage
+      <LegacyMockedNextImage
         alt="Test title"
         layout="fill"
         objectFit="cover"
