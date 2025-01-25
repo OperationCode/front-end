@@ -23,13 +23,14 @@
     "test:e2e:headless": "cypress run --browser chrome",
     "test:e2e:update-snaps": "cypress run --browser chrome --env updateSnapshots=true",
     "test:e2e:ci": "cypress run --browser chrome --record",
-    "test": "cross-env vitest --config ./vitest.config.mts --run",
+    "test": "vitest --run",
     "test:ci": "yarn test --coverage --silent",
     "test:changes": "yarn test --changed main",
     "test:changes:watch": "yarn test:changes --watch",
     "test:watch": "yarn test --watch",
     "test:update-snaps": "yarn test -u",
-    "test:ui": "vitest --ui"
+    "test:ui": "vitest --ui",
+    "vitest": "cross-env vitest --config ./vitest.config.mts"
   },
   "nyc": {
     "extends": "./nyc.config.js",
@@ -41,12 +42,14 @@
   },
   "dependencies": {
     "@innocuous/components": "^2.1.1",
-    "@innocuous/functions": "^2.1.1",
     "@next/bundle-analyzer": "12.3.1",
     "@radix-ui/react-dialog": "1.0.0",
     "@radix-ui/react-tabs": "0.1.1",
     "@sentry/nextjs": "^7.77.0",
     "@storybook/blocks": "^7.4.1",
+    "@types/airtable": "^0.10.1",
+    "@types/js-cookie": "^3.0.6",
+    "airtable": "^0.12.2",
     "axios": "^1.6.0",
     "classnames": "^2.3.1",
     "date-fns": "^2.29.3",
@@ -169,7 +172,7 @@
     "stylelint-config-standard": "^26.0.0",
     "stylelint-prettier": "^2.0.0",
     "tailwindcss": "^3.3.3",
-    "typescript": "^5.3.3",
+    "typescript": "^5.6.3",
     "url-loader": "^4.1.1",
     "vite-plugin-magical-svg": "^1.2.1",
     "vite-tsconfig-paths": "^4.3.1",
@@ -180,5 +183,6 @@
     "istanbul-lib-coverage": "3.2.0",
     "jackspeak": "2.1.1",
     "webpack": "^5.73.0"
-  }
+  },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }

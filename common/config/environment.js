@@ -36,3 +36,8 @@ export const resourcesAPIURL = isProduction
 
 export const slackMembersAPIUrl = 'https://slack.com/api/conversations.members';
 export const slackGeneralChannelId = 'C03GSNF6X';
+
+export const AIR_TABLE_BASE_ID = 'app9tYjofmFWMxRl8';
+export const AIR_TABLE_TABLE_NAME = isProduction
+  ? 'Onboarding Request PRODUCTION'
+  : 'Onboarding Request STAGING';

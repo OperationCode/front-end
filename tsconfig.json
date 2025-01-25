@@ -36,6 +36,13 @@
     },
     "types": ["vitest/globals", "@testing-library/jest-dom"]
   },
-  "include": ["next-env.d.ts", "**/*.js", "**/*.ts", "**/*.tsx", "vitest.config.mts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.js",
+    "**/*.ts",
+    "**/*.tsx",
+    "vitest.config.mts",
+    "components/Form/__tests__/Form.test.tss"
+  ],
   "exclude": ["node_modules"]
 }
