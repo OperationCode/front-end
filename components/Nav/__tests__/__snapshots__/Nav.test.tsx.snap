@@ -126,6 +126,7 @@ exports[`Nav > should render with no props passed 1`] = `
                 },
               ]
             }
+            target="_self"
           />
           <ForwardRef(LoadableComponent)
             href="/services"
@@ -155,6 +156,7 @@ exports[`Nav > should render with no props passed 1`] = `
                 },
               ]
             }
+            target="_self"
           />
           <ForwardRef(LoadableComponent)
             href="/get_involved"
@@ -189,6 +191,7 @@ exports[`Nav > should render with no props passed 1`] = `
                 },
               ]
             }
+            target="_self"
           />
           <li>
             <ForwardRef(LinkComponent)
