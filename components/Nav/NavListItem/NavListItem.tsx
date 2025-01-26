@@ -61,7 +61,7 @@ function NavListItem({ sublinks, href, name, target, icon = null }: NavListItemP
 
     return (
         <li className={styles.NavListItem}>
-            <Link href={href}>
+            <Link href={href} target={target}>
                 <a
                     className={classNames(styles.link, styles.navItemLink)}
                     onMouseEnter={exposeSublinks}
