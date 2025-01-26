@@ -28,7 +28,28 @@ module.exports = (on, config) => {
   on(
     'file:preprocessor',
     webpack({
-      webpackOptions: { resolve: { alias: require('../../pathAliases') } },
+      webpackOptions: {
+        resolve: {
+          alias: require('../../pathAliases'),
+          extensions: ['.js', '.ts', '.tsx'],
+        },
+        module: {
+          rules: [
+            {
+              test: /\.(js|ts|tsx)$/,
+              exclude: [/node_modules/],
+              use: [
+                {
+                  loader: 'babel-loader',
+                  options: {
+                    presets: ['@babel/preset-typescript'],
+                  },
+                },
+              ],
+            },
+          ],
+        },
+      },
       watchOptions: {},
     }),
   );

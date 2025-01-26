@@ -2,7 +2,7 @@ export const validationErrorMessages = {
   required: 'Required',
   email: 'Must be a valid email',
   emailsMatch: 'Emails must match',
-  emailExists: 'A user is already registered with this e-mail address',
+  emailExists: 'This email has already been registered with an application.',
   codeOfConduct: 'You must agree to our Code of Conduct',
   slackGuidelines: 'You must agree to our Slack workspace guidelines',
 };

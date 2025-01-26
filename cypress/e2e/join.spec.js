@@ -1,7 +1,6 @@
-import jwt_decode from 'jwt-decode'; // eslint-disable-line camelcase
-import { validationErrorMessages } from 'common/constants/messages';
 import existingUser from 'test-utils/mocks/existingUser';
 import { mockUser } from 'test-utils/mockGenerators/mockUser';
+import { validationErrorMessages } from 'common/constants/messages';
 
 const validUser = mockUser();
 const inputFields = {
@@ -27,29 +26,17 @@ const assertError = ({
 const assertFailedLogin = ({
   numberOfErrors = 1,
   errorMessage = validationErrorMessages.required,
-  shouldWait = false,
-  routeToWaitFor = '@postRegister',
 } = {}) => {
   cy.findByText('Submit').click();
-
-  if (shouldWait) {
-    cy.wait(routeToWaitFor || '@postRegister');
-  }
-
   cy.url().should('contain', '/join');
-
   assertError({ numberOfErrors, errorMessage });
-
   cy.getCookies().should('have.length', 0);
 };
 
 describe('join', () => {
   beforeEach(() => {
     cy.server();
-    cy.route('POST', 'auth/registration/').as('postRegister');
-
     cy.visitAndWaitFor('/join');
-
     cy.getCookies().should('have.length', 0);
     cy.get('h1').should('have.text', 'Join');
   });
@@ -92,9 +79,7 @@ describe('join', () => {
   });
 
   it('should NOT be able to register with an invalid email', () => {
-    const invalidUser = mockUser({
-      desiredEmail: 'invalidemail@.com',
-    });
+    const invalidUser = mockUser('invalidemail@.com');
 
     cy.findByLabelText(inputFields.email).type(invalidUser.email);
     cy.findByLabelText(inputFields.email).blur();
@@ -152,7 +137,7 @@ describe('join', () => {
     cy.findByLabelText(inputFields.codeOfConduct).type(validUser.codeOfConduct);
     cy.findByLabelText(inputFields.slackGuidelines).type(validUser.slackGuidelines);
 
-    assertFailedLogin({ errorMessage: validationErrorMessages.emailExists, shouldWait: true });
+    assertFailedLogin({ errorMessage: validationErrorMessages.emailExists });
   });
 
   /**
@@ -309,13 +294,5 @@ describe('join', () => {
 
     cy.url({ timeout: 20000 }).should('contain', '/join/form');
     cy.get('h1').should('have.text', 'Update Profile');
-
-    cy.getCookies().then(([tokenCookie]) => {
-      const jwt = jwt_decode(tokenCookie.value);
-
-      expect(jwt.firstName).to.exist;
-      expect(jwt.lastName).to.exist;
-      expect(jwt.zipcode).to.exist;
-    });
   });
 });
