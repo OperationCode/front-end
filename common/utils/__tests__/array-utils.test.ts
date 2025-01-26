@@ -40,7 +40,7 @@ describe('Array Utilities', () => {
         { label: 'three', value: 'three' },
       ];
 
-      expect(mapStringsToSelectOptions(strings)).toEqual(expected);
+      expect(mapStringsToSelectOptions(strings)).toStrictEqual(expected);
     });
   });
 });

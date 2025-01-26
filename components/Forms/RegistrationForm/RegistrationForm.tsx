@@ -11,7 +11,8 @@ import Input from 'components/Form/Input/Input';
 import Alert from 'components/Alert/Alert';
 import Link from 'next/link';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
-import axios, { AxiosError } from 'axios';
+import type { AxiosError } from 'axios';
+import axios from 'axios';
 
 export interface RegistrationFormValues {
   email: string;

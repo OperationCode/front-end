@@ -1,6 +1,7 @@
-import { ErrorMessage, FieldInputProps, FormikHelpers, FormikState } from 'formik';
+import type { FieldInputProps, FormikHelpers, FormikState } from 'formik';
+import { ErrorMessage } from 'formik';
 import { INPUT, INPUT_ERROR, INPUT_FEEDBACK_GROUPING } from 'common/constants/testIDs';
-import { InputHTMLAttributes } from 'react';
+import type { InputHTMLAttributes } from 'react';
 import classNames from 'classnames';
 import Label from 'components/Form/Label/Label';
 import Alert from 'components/Alert/Alert';

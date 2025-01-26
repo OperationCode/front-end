@@ -1,7 +1,8 @@
 // Polyfills
 import 'intersection-observer';
 
-import { useEffect, PropsWithChildren } from 'react';
+import type { PropsWithChildren } from 'react';
+import { useEffect } from 'react';
 import * as Sentry from '@sentry/nextjs';
 import Router from 'next/router';
 import Fingerprint2 from 'fingerprintjs2';
@@ -15,8 +16,8 @@ import { gtag } from 'common/utils/thirdParty/gtag';
 import Nav from 'components/Nav/Nav';
 import Footer from 'components/Footer/Footer';
 import 'common/styles/globals.css';
-import { AppProps } from 'next/app';
-import NextErrorComponent from 'next/error';
+import type { AppProps } from 'next/app';
+import type NextErrorComponent from 'next/error';
 
 const isProduction = process.env.NODE_ENV === 'production';
 

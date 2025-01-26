@@ -13,7 +13,7 @@
     "format:md": "prettier --write \"**/*.md\"",
     "lint": "yarn lint:scripts && yarn lint:styles && yarn format:md",
     "lint:ci": "yarn eslint \"**/*.js\" && yarn stylelint \"**/*.css\"",
-    "lint:scripts": "eslint --fix \"**/*.js\"",
+    "lint:scripts": "eslint --fix \"**/*.{js,jsx,ts,tsx}\"",
     "lint:styles": "stylelint --fix \"**/*.css\"",
     "postbuild": "next-sitemap",
     "start": "next start -p 3000",
@@ -27,9 +27,9 @@
     "test:ci": "yarn test --coverage --silent",
     "test:changes": "yarn test --changed main",
     "test:changes:watch": "yarn test:changes --watch",
-    "test:watch": "yarn test --watch",
     "test:update-snaps": "yarn test -u",
     "test:ui": "vitest --ui",
+    "test:watch": "vitest",
     "vitest": "cross-env vitest --config ./vitest.config.mts"
   },
   "nyc": {
@@ -153,6 +153,7 @@
     "identity-obj-proxy": "^3.0.0",
     "jsdom": "^24.0.0",
     "lint-staged": "13.0.3",
+    "next-router-mock": "^0.9.13",
     "postcss": "^8.4.29",
     "postcss-custom-media": "^8.0.2",
     "postcss-custom-properties": "^12.1.8",

@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import Drawer from '../Drawer';
 
 type DrawerStorytype = StoryObj<typeof Drawer>;

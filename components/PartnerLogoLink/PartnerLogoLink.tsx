@@ -3,7 +3,7 @@ import OutboundLink from 'components/OutboundLink/OutboundLink';
 
 type SizeType = 'small' | 'medium' | 'large';
 
-export type PartnerLogoLinkPropsType = {
+export interface PartnerLogoLinkPropsType {
   /**
    * Path to the logo image.
    */
@@ -21,7 +21,7 @@ export type PartnerLogoLinkPropsType = {
    * @default 'medium'
    */
   size?: SizeType;
-};
+}
 
 const sizeMappings = {
   small: {

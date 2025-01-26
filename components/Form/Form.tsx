@@ -1,5 +1,5 @@
 import { connect } from 'formik';
-import { DetailedHTMLProps, FormHTMLAttributes, FunctionComponent } from 'react';
+import type { DetailedHTMLProps, FormHTMLAttributes, FunctionComponent } from 'react';
 
 const FormikConnectedForm = connect(({ formik: { handleReset, handleSubmit }, ...props }) => (
   <form onReset={handleReset} onSubmit={handleSubmit} noValidate {...props} />

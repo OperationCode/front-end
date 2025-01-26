@@ -7,7 +7,8 @@ import { LABEL } from 'common/constants/testIDs';
 import { describe, afterEach, it, expect, vi } from 'vitest';
 import { getReactSelectInput } from 'components/Form/Select/ThemedReactSelect';
 import Form from '../../Form';
-import { SelectMulti, SelectMultiProps } from '../SelectMulti';
+import type { SelectMultiProps } from '../SelectMulti';
+import { SelectMulti } from '../SelectMulti';
 
 describe('Select', () => {
   const name = 'someSelectName';

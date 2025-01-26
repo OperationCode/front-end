@@ -1,8 +1,10 @@
-import { ErrorMessage, FieldInputProps, FormikHelpers, FormikState } from 'formik';
+import type { FieldInputProps, FormikHelpers, FormikState } from 'formik';
+import { ErrorMessage } from 'formik';
 import Alert from 'components/Alert/Alert';
 import Label from 'components/Form/Label/Label';
 import classNames from 'classnames';
-import { ThemedReactSelect, OptionType, ThemedReactSelectProps } from './ThemedReactSelect';
+import type { OptionType, ThemedReactSelectProps } from './ThemedReactSelect';
+import { ThemedReactSelect } from './ThemedReactSelect';
 import styles from './Select.module.css';
 
 export interface SelectMultiProps

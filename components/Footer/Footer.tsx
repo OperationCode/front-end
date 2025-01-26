@@ -5,7 +5,7 @@ import { footerItems } from 'common/constants/navigation';
 import Image from 'next/image';
 import Logo from 'public/static/images/logo.svg';
 
-export type FooterPropsType = {
+export interface FooterPropsType {
   /**
    * Url string applied ot the link.
    */
@@ -18,7 +18,7 @@ export type FooterPropsType = {
    * Only pass analytics event label if you're href is to an external website
    */
   analyticsEventLabel?: string;
-};
+}
 
 function Footer() {
   const currentYear = new Date().getFullYear();

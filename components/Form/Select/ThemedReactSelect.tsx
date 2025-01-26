@@ -1,4 +1,4 @@
-// eslint-disable-next-line no-restricted-imports
+/* eslint-disable @typescript-eslint/no-restricted-imports */
 import type { Props as ReactSelectProps } from 'react-select';
 import ReactSelect from 'react-select'; // the only spot this import is allowed
 

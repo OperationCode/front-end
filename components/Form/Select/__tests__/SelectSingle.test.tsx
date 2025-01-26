@@ -5,7 +5,8 @@ import { KEY_CODES } from 'test-utils/identifiers';
 import noop from 'lodash/noop';
 import { LABEL } from 'common/constants/testIDs';
 import { describe, afterEach, it, expect, vi } from 'vitest';
-import { SelectSingle, SelectSingleProps } from 'components/Form/Select/SelectSingle';
+import type { SelectSingleProps } from 'components/Form/Select/SelectSingle';
+import { SelectSingle } from 'components/Form/Select/SelectSingle';
 import { getReactSelectInput } from 'components/Form/Select/ThemedReactSelect';
 import Form from '../../Form';
 

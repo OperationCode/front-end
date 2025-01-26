@@ -1,9 +1,9 @@
 import styles from './TimelineEvent.module.css';
 
-export type TimelineEventPropsType = {
+export interface TimelineEventPropsType {
   content: React.ReactNode | React.ReactNode[];
   title: string;
-};
+}
 
 function TimelineEvent({ content, title }: TimelineEventPropsType) {
   return (

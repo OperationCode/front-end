@@ -2,7 +2,7 @@ import { node, string, bool } from 'prop-types';
 import classNames from 'classnames';
 import { LABEL } from 'common/constants/testIDs';
 import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
-import { PropsWithChildren } from 'react';
+import type { PropsWithChildren } from 'react';
 
 Label.propTypes = {
   children: node.isRequired,

@@ -36,7 +36,14 @@ module.exports = {
     'import/extensions': [
       'error',
       'never',
-      { css: 'always', jpg: 'always', json: 'always', png: 'always', svg: 'always' },
+      {
+        css: 'always',
+        jpg: 'always',
+        json: 'always',
+        png: 'always',
+        svg: 'always',
+        stories: 'always',
+      },
     ],
     'import/no-unresolved': 'off',
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
@@ -181,6 +188,10 @@ module.exports = {
       },
       extends: ['plugin:@typescript-eslint/strict', 'plugin:@typescript-eslint/stylistic'],
       rules: {
+        // Deactivate rules not meant for TS
+        'no-restricted-imports': 'off',
+
+        // React Plugin Rules
         'react/prop-types': 'off', // https://github.com/jsx-eslint/eslint-plugin-react/issues/3651
         'react/no-array-index-key': 'off',
         'react/require-default-props': 'off',
@@ -196,6 +207,7 @@ module.exports = {
             format: ['PascalCase', 'UPPER_CASE'],
             prefix: [
               'is',
+              'are',
               'was',
               'should',
               'has',
@@ -203,6 +215,7 @@ module.exports = {
               'did',
               'will',
               'IS_',
+              'ARE_',
               'WAS_',
               'SHOULD_',
               'HAS_',
@@ -214,6 +227,27 @@ module.exports = {
         ],
         '@typescript-eslint/no-empty-interface': ['error', { allowSingleExtends: true }],
         '@typescript-eslint/no-explicit-any': 'error',
+        '@typescript-eslint/no-restricted-imports': [
+          'error',
+          {
+            paths: [
+              {
+                name: 'react-select',
+                message: 'Please use `components/Form/Select/ThemedReactSelect` instead.',
+              },
+              {
+                name: 'formik',
+                importNames: ['Form'],
+                message: `Please use our Form component to have good defaults defined.\n "import Form from 'components/Form/Form';"`,
+              },
+              {
+                name: 'react',
+                importNames: ['default'],
+                message: 'React is globally availble for all page files.',
+              },
+            ],
+          },
+        ],
         '@typescript-eslint/no-unused-vars': ['error', { vars: 'all', varsIgnorePattern: '_' }],
         '@typescript-eslint/unbound-method': 'off', // gives false negatives in arrow funcs
       },

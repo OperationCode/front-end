@@ -1,5 +1,5 @@
 import faker from 'faker';
-import { RegistrationFormValues } from 'components/Forms/RegistrationForm/RegistrationForm';
+import type { RegistrationFormValues } from 'components/Forms/RegistrationForm/RegistrationForm';
 
 export function mockUser(desiredEmail?: string): RegistrationFormValues {
   const firstName = faker.name.firstName() as string;
