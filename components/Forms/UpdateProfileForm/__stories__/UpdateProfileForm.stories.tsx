@@ -1,5 +1,8 @@
+import { ProfessionalDetails } from 'components/Forms/UpdateProfileForm/steps/ProfessionalDetails';
+import { MilitaryDetails } from 'components/Forms/UpdateProfileForm/steps/MilitaryDetails';
+import { MilitaryStatus } from 'components/Forms/UpdateProfileForm/steps/MilitaryStatus';
+import { PersonalDetails } from 'components/Forms/UpdateProfileForm/steps/PersonalDetails';
 import UpdateProfileForm from '../UpdateProfileForm';
-import { ProfessionalDetails, MilitaryStatus, MilitaryDetails, Technology } from '../steps';
 
 export default {
   component: UpdateProfileForm,
@@ -25,6 +28,6 @@ Default.args = {
     ...ProfessionalDetails.initialValues,
     ...MilitaryStatus.initialValues,
     ...MilitaryDetails.initialValues,
-    ...Technology.initialValues,
+    ...PersonalDetails.initialValues,
   },
 };
