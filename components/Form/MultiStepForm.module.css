@@ -1,5 +1,7 @@
 .MultiStepForm {
-  width: auto;
+  width: 100%;
+  max-width: 50ch;
+  margin: 0 !important;
 }
 
 .containerFormErrorMessage {

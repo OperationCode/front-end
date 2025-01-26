@@ -12,12 +12,12 @@
   --rgbValuesSecondary: 37, 46, 62;
 
   /* Bootstrap "state" colors */
-  --success: hsl(134, 41%, 88%, 0.6);
-  --successDeep: hsl(132, 60%, 25%, 1);
+  --success: hsl(132, 35%, 88%, 0.6);
+  --successDeep: hsl(132, 60%, 23%, 1);
   --warning: hsl(46, 100%, 90%, 0.6);
-  --warningDeep: hsl(39, 76%, 44%, 1);
+  --warningDeep: hsl(39, 80%, 31%, 1);
   --error: hsl(355, 70%, 91%, 0.6);
-  --errorDeep: hsl(355, 63%, 36%, 1);
+  --errorDeep: hsl(355, 63%, 34%, 1);
 
   /* Fonts */
   --primaryFontFamily: "DIN Condensed Bold";

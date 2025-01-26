@@ -16,6 +16,7 @@ exports[`Select > should render with required props 1`] = `
   >
     <div
       className=" css-2b097c-container"
+      id="someSelectName"
       onKeyDown={[Function]}
     >
       <span
@@ -54,7 +55,7 @@ exports[`Select > should render with required props 1`] = `
                 autoComplete="off"
                 autoCorrect="off"
                 disabled={false}
-                id="someSelectName"
+                id="input-someSelectName"
                 onBlur={[Function]}
                 onChange={[Function]}
                 onFocus={[Function]}
@@ -120,11 +121,6 @@ exports[`Select > should render with required props 1`] = `
           </div>
         </div>
       </div>
-      <input
-        name="someSelectName"
-        type="hidden"
-        value=""
-      />
     </div>
   </div>
 </div>

@@ -1,6 +1,6 @@
 import { Formik, Field } from 'formik';
 import Form from '../../Form';
-import Select from '../Select';
+import Select from '../SelectSingle';
 
 const selectOptions = [
   { label: 'Air Force', value: 'air force' },
@@ -17,15 +17,22 @@ const SelectTemplate = args => {
     field: { name },
     label,
     options,
+    isMulti,
   } = args;
 
   return (
     <Formik initialValues={{ [`${name}`]: '' }} onSubmit={values => console.log(values)}>
-      <Form>
+      <Form style={{ height: '35vh' }}>
         <Field name={name}>
           {({ field, form }) => (
             <div>
-              <Select field={field} form={form} label={label} options={options} />
+              <Select
+                field={field}
+                form={form}
+                label={label}
+                options={isMulti ? selectOptions : options}
+                isMulti={isMulti}
+              />
             </div>
           )}
         </Field>

@@ -24,7 +24,6 @@ function Footer() {
   const currentYear = new Date().getFullYear();
   const { items, legal } = footerItems;
 
-  // eslint-disable-next-line react/prop-types
   const renderLink = ({ href, name, analyticsEventLabel }: FooterPropsType) => {
     return (
       <li key={href}>

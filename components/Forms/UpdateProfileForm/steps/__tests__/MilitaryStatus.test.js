@@ -39,7 +39,7 @@ describe('UpdateProfileForm/Steps/MilitaryStatus', () => {
         </Form>
       </Formik>,
     );
-    const ReactSelect = container.querySelector('#react-select-militaryStatus-input');
+    const ReactSelect = container.querySelector('#react-select-militaryAffiliation-input');
 
     fireEvent.blur(ReactSelect);
     fireEvent.keyDown(ReactSelect, KEY_CODES.DOWN_ARROW);

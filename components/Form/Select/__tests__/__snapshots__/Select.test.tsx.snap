@@ -120,11 +120,6 @@ exports[`Select > should render with required props 1`] = `
           </div>
         </div>
       </div>
-      <input
-        name="someSelectName"
-        type="hidden"
-        value=""
-      />
     </div>
   </div>
 </div>

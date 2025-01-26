@@ -54,7 +54,7 @@ exports[`Select > should render with required props 1`] = `
                 autoComplete="off"
                 autoCorrect="off"
                 disabled={false}
-                id="someSelectName"
+                id="input-someSelectName"
                 onBlur={[Function]}
                 onChange={[Function]}
                 onFocus={[Function]}
@@ -120,11 +120,6 @@ exports[`Select > should render with required props 1`] = `
           </div>
         </div>
       </div>
-      <input
-        name="someSelectName"
-        type="hidden"
-        value=""
-      />
     </div>
   </div>
 </div>

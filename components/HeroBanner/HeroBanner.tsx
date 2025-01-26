@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import Container from 'components/Container/Container';
 import { HERO_BANNER_H1 } from 'common/constants/testIDs';
 
-export type HeroBannerPropsType = {
+export interface HeroBannerPropsType {
   /**
    * Renders a title for the banner.
    */
@@ -24,7 +24,7 @@ export type HeroBannerPropsType = {
    * @default false
    */
   isFullViewportHeight?: boolean;
-};
+}
 
 function HeroBanner({
   backgroundImageSource,
@@ -33,11 +33,14 @@ function HeroBanner({
   isFullViewportHeight = false,
   title,
 }: HeroBannerPropsType) {
+  const shouldBeMini = !children && !backgroundImageSource;
+
   return (
     <Container
       backgroundImageSource={backgroundImageSource}
-      className={classNames(className, 'pt-20 min-h-[60vh] text-shadow-[0_0_15px_#111111]', {
-        'min-h-[35vh]': !children && !backgroundImageSource,
+      className={classNames(className, 'pt-20 text-shadow-[0_0_15px_#111111]', {
+        'min-h-[35vh]': shouldBeMini,
+        'min-h-[60vh]': !shouldBeMini,
       })}
       isFullViewportHeight={isFullViewportHeight}
     >

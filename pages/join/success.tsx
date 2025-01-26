@@ -1,3 +1,4 @@
+import LinkButton from 'components/Buttons/LinkButton/LinkButton';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
@@ -11,8 +12,8 @@ export default function JoinSuccess() {
 
       <HeroBanner title={pageTitle}>
         <p>
-          You will receive a Slack invite in your email inbox shortly! If you do not, please email
-          us at{' '}
+          We will review your application and send an invite to our Slack team as soon as possible.
+          If you do not receive an invite within a week, please email us at{' '}
           <OutboundLink
             href="mailto:staff@operationcode.org"
             analyticsEventLabel="Email"
@@ -22,6 +23,10 @@ export default function JoinSuccess() {
           </OutboundLink>
           .
         </p>
+
+        <LinkButton href="/" className="mt-4">
+          Go Home
+        </LinkButton>
       </HeroBanner>
     </>
   );

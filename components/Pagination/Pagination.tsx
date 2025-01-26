@@ -3,7 +3,7 @@ import RightAngleIcon from 'static/images/icons/FontAwesome/angle-right-solid.sv
 import { PREV_PAGE_BUTTON, NEXT_PAGE_BUTTON } from '../../common/constants/testIDs';
 import PaginationItem from './PaginationItem/PaginationItem';
 
-export type PaginationPropsType = {
+export interface PaginationPropsType {
   /**
    * Sets the current page number to indicate which PaginationItem is styled differently.
    */
@@ -20,7 +20,7 @@ export type PaginationPropsType = {
    * Sets the total number of pages.
    */
   totalPages: number;
-};
+}
 
 export const developmentErrors = {
   currentPageValue: (value: number) => `The value passed for currentPage is ${value}.`,
@@ -72,7 +72,6 @@ const getPagination = (
   };
 };
 
-// eslint-disable-next-line react/prop-types
 const PaginationItems = ({ currentPage, pathname, query, totalPages }: PaginationPropsType) => {
   const { paginationStart, paginationLength, shouldTruncateStart, shouldTruncateEnd } =
     getPagination(currentPage, totalPages);

@@ -47,9 +47,6 @@ describe('UpdateProfileForm/Steps/MilitaryDetails', () => {
     fireEvent.keyDown(ReactSelect, KEY_CODES.DOWN_ARROW);
 
     fireEvent.keyDown(ReactSelect, KEY_CODES.ENTER);
-    fireEvent.change(container.querySelector('input#yearsOfService'), {
-      target: { id: 'yearsOfService', value: '3' },
-    });
     fireEvent.change(container.querySelector('input#payGrade'), {
       target: { id: 'payGrade', value: 'E-5' },
     });
