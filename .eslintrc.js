@@ -3,12 +3,13 @@
  */
 module.exports = {
   extends: [
+    'plugin:@typescript-eslint/eslint-recommended',
     'airbnb',
     'plugin:jsx-a11y/recommended',
-    'prettier',
     'plugin:cypress/recommended',
     'plugin:storybook/recommended',
-    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:prettier/recommended',
+    'prettier',
   ],
   env: {
     browser: true,
@@ -19,7 +20,6 @@ module.exports = {
   },
   parser: '@babel/eslint-parser',
   plugins: [
-    'prettier',
     'unicorn',
     'cypress',
     '@operation_code/custom-rules',
@@ -76,9 +76,6 @@ module.exports = {
 
     // Lodash Plugin Rules
     'lodash/import-scope': ['error', 'method'],
-
-    // Prettier Plugin Rules
-    'prettier/prettier': 'error',
 
     // React Plugin Rules
     'react/function-component-definition': [

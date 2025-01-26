@@ -26,7 +26,7 @@ export const hasValidAuthToken = (token = cookie.get('token')) => {
     return false;
   }
 
-  const jwt = jwtDecode(token);
+  const jwt = jwtDecode<{ exp: number }>(token);
   const currentTime = new Date().getTime() / 1000;
 
   // Valid if jwt expiry is in the future

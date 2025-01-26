@@ -58,7 +58,7 @@ function Modal({
 
   const portalContainer =
     typeof window !== 'undefined'
-      ? (document.querySelector('#__next') as HTMLElement) ?? undefined
+      ? ((document.querySelector('#__next') as HTMLElement) ?? undefined)
       : undefined;
 
   return (

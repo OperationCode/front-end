@@ -20,8 +20,8 @@
   --errorDeep: hsl(355, 63%, 34%, 1);
 
   /* Fonts */
-  --primaryFontFamily: "DIN Condensed Bold";
-  --secondaryFontFamily: "Encode Sans";
+  --primaryFontFamily: 'DIN Condensed Bold';
+  --secondaryFontFamily: 'Encode Sans';
 
   /*
    * Breakpoint definitions used in Storybook

@@ -13,7 +13,9 @@
   min-width: 175px;
   padding: 1rem 0.75rem 0.75rem;
   white-space: nowrap;
-  transition: 0.2s linear background-color, 0.2s linear color;
+  transition:
+    0.2s linear background-color,
+    0.2s linear color;
   text-shadow: none;
 }
 
