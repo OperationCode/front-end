@@ -20,7 +20,7 @@ const onboardingFormInitialValues = {
 
 export type UpdateProfileFormShape = typeof onboardingFormInitialValues;
 
-interface UpdateProfileFormProps {
+export interface UpdateProfileFormProps {
   initialValues?: UpdateProfileFormShape;
 }
 
