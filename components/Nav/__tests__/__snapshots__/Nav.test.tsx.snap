@@ -10,57 +10,47 @@ exports[`Nav > should render with no props passed 1`] = `
         {
           "href": "/about",
           "name": "About Us",
-          "target": "_self",
         },
         {
           "href": "/get_involved",
           "name": "Get Involved",
-          "target": "_self",
         },
         {
           "href": "/podcast",
           "name": "Podcast",
-          "target": "_self",
         },
         {
           "href": "/scholarship",
           "name": "Scholarship",
-          "target": "_self",
         },
         {
           "href": "/project_rebuild",
           "name": "Project Rebuild",
-          "target": "_self",
         },
         {
           "href": "/corporate-training",
           "name": "Corporate Training",
-          "target": "_self",
         },
         {
           "href": "/chapters",
           "name": "Chapters",
-          "target": "_self",
         },
         {
           "href": "/sponsorship",
           "name": "Sponsorship",
-          "target": "_self",
         },
         {
           "href": "/swag",
+          "isExternal": true,
           "name": "Merch Store",
-          "target": "_blank",
         },
         {
           "href": "/contact",
           "name": "Contact Us",
-          "target": "_self",
         },
         {
           "href": "/donate",
           "name": "Donate",
-          "target": "_self",
         },
       ]
     }
@@ -107,26 +97,21 @@ exports[`Nav > should render with no props passed 1`] = `
                 {
                   "href": "/team",
                   "name": "Our Team",
-                  "target": "_self",
                 },
                 {
                   "href": "/history",
                   "name": "History",
-                  "target": "_self",
                 },
                 {
                   "href": "/faq",
                   "name": "FAQ",
-                  "target": "_self",
                 },
                 {
                   "href": "/branding",
                   "name": "Branding",
-                  "target": "_self",
                 },
               ]
             }
-            target="_self"
           />
           <ForwardRef(LoadableComponent)
             href="/services"
@@ -137,26 +122,21 @@ exports[`Nav > should render with no props passed 1`] = `
                 {
                   "href": "/podcast",
                   "name": "Podcast",
-                  "target": "_self",
                 },
                 {
                   "href": "/scholarship",
                   "name": "Scholarship",
-                  "target": "_self",
                 },
                 {
                   "href": "/project_rebuild",
                   "name": "Project Rebuild",
-                  "target": "_self",
                 },
                 {
                   "href": "/corporate-training",
                   "name": "Corporate Training",
-                  "target": "_self",
                 },
               ]
             }
-            target="_self"
           />
           <ForwardRef(LoadableComponent)
             href="/get_involved"
@@ -167,31 +147,26 @@ exports[`Nav > should render with no props passed 1`] = `
                 {
                   "href": "/chapters",
                   "name": "Chapters",
-                  "target": "_self",
                 },
                 {
                   "href": "/sponsorship",
                   "name": "Sponsorship",
-                  "target": "_self",
                 },
                 {
                   "href": "/swag",
+                  "isExternal": true,
                   "name": "Merch Store",
-                  "target": "_blank",
                 },
                 {
                   "href": "/contact",
                   "name": "Contact Us",
-                  "target": "_self",
                 },
                 {
                   "href": "/donate",
                   "name": "Donate",
-                  "target": "_self",
                 },
               ]
             }
-            target="_self"
           />
           <li>
             <ForwardRef(LinkComponent)

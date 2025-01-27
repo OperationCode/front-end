@@ -9,7 +9,7 @@ import styles from './NavListItem.module.css';
 type SublinkType = {
     name: string;
     href: string;
-    isExternal: boolean;
+    isExternal?: boolean;
 };
 
 export type NavListItemPropsType = {
@@ -22,10 +22,6 @@ export type NavListItemPropsType = {
      */
     href: string;
     /**
-     * Url to be passed to the base anchor element.
-     */
-    isExternal?: boolean;
-    /**
      * List of child links containing the `name` and `href`
      */
     sublinks?: SublinkType[];
@@ -35,7 +31,7 @@ export type NavListItemPropsType = {
     icon?: React.ReactElement | null;
 };
 
-function NavListItem({ sublinks, href, name, icon = null, isExternal = false }: NavListItemPropsType) {
+function NavListItem({ sublinks, href, name, icon = null}: NavListItemPropsType) {
     const [areSublinksVisible, setSublinksVisible] = useState(false);
 
     const handleKeyDown = (event: React.KeyboardEvent, indexKeyedOn: number) => {
@@ -121,6 +117,7 @@ function NavListItem({ sublinks, href, name, icon = null, isExternal = false }: 
                                     <OutboundLink
                                         analyticsEventLabel={`Clicked on ${sublink.name} -> ${sublink.href}`}
                                         href={sublink.href}
+                                        // children={<span className={styles.link}>{sublink.name}</span>}
                                         children={<span className={styles.link}>{sublink.name}</span>}
                                         hasIcon={false}
                                     />
