@@ -56,7 +56,7 @@ function UpdateProfileForm({
     return getServerErrorMessage(errorObject);
   };
 
-  const onValueChange = async (values: UpdateProfileFormShape) => {
+  const onStepSubmit = async (values: UpdateProfileFormShape) => {
     const hasMilitaryExperience = [
       'Active Duty U.S. Military Service Member',
       'U.S. Reserve or National Guard member',
@@ -91,7 +91,7 @@ function UpdateProfileForm({
     <MultiStepForm
       initialValues={initialValues}
       getErrorMessage={generateError}
-      onEachStepSubmit={onValueChange}
+      onEachStepSubmit={onStepSubmit}
       onFinalSubmit={goToProfile}
       steps={steps}
     />

@@ -2,13 +2,13 @@
 
 exports[`UpdateProfileForm > should render with required props 1`] = `
 <form
-  className="MultiStepForm"
+  className="w-full max-w-prose-sm !m-0"
   noValidate={true}
   onReset={[Function]}
   onSubmit={[Function]}
 >
   <h3
-    className="centerAligned"
+    className="text-center"
   >
     Professional Details
   </h3>
@@ -59,7 +59,7 @@ exports[`UpdateProfileForm > should render with required props 1`] = `
             className="css-1f43avz-a11yText-A11yText"
           />
           <div
-            className=" css-1mgllov-control"
+            className=" css-1s1bmlz-control"
             onMouseDown={[Function]}
             onTouchEnd={[Function]}
           >
@@ -212,19 +212,29 @@ exports[`UpdateProfileForm > should render with required props 1`] = `
       </div>
     </div>
   </div>
-  <div />
   <div
-    className="buttonGrouping"
+    className="mt-8"
+  />
+  <div
+    className="flex flex-nowrap justify-around items-center mx-auto mt-8 w-full gap-x-4 min-w-[7rem]"
   >
     <button
-      className="Button secondary fullWidth"
+      className="Button group secondary fullWidth"
       data-testid="SUBMIT_STEP_BUTTON"
       disabled={false}
       onClick={[Function]}
       tabIndex={0}
       type="submit"
     >
-      Next →
+      <span
+        className="flex items-center justify-center gap-x-2"
+      >
+        <span
+          className="mt-[0.325rem]"
+        >
+          Next →
+        </span>
+      </span>
     </button>
   </div>
 </form>

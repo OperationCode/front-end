@@ -52,11 +52,12 @@ export function ThemedReactSelect<TMulti extends boolean>({
       closeMenuOnSelect={!isMulti}
       isMulti={isMulti}
       isSearchable={isSearchable}
-      blurInputOnSelect={isMulti}
+      blurInputOnSelect={isMulti && !isTouched} // this is ideal UX for seeing-eye users
       styles={{
         control: base => {
           return {
             ...base,
+            backgroundColor: isDisabled ? 'transparent' : 'white',
             borderColor:
               isTouched && hasValidationStyling ? outerColor : `rgba(${rgbValuesSecondary}, 0.5)`,
             boxShadow: isTouched && hasValidationStyling ? `0 0 1px 1px ${outerColor}` : 'none',

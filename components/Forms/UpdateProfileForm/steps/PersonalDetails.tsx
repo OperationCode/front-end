@@ -10,14 +10,12 @@ PersonalDetails.title = 'Personal Details';
 
 PersonalDetails.validationSchema = Yup.object().shape({
   joinReason: Yup.array()
-    .of(Yup.string())
-    .min(1, validationErrorMessages.required)
-    .required(validationErrorMessages.required),
+    .of(Yup.object().shape({ label: Yup.string(), value: Yup.string() }))
+    .min(1, validationErrorMessages.required),
   gender: Yup.string().required(validationErrorMessages.required),
   ethnicity: Yup.array()
-    .of(Yup.string())
-    .min(1, validationErrorMessages.required)
-    .required(validationErrorMessages.required),
+    .of(Yup.object().shape({ label: Yup.string(), value: Yup.string() }))
+    .min(1, validationErrorMessages.required),
   educationLevel: Yup.string().required(validationErrorMessages.required),
 });
 
@@ -64,7 +62,7 @@ const ethnicityOptions = mapStringsToSelectOptions([
 const educationLevelOptions = mapStringsToSelectOptions([
   'High school',
   'College/Associates degree',
-  "4 year Bachelor's degree",
+  '4 year Bachelor’s degree',
   'Graduate degree',
   'Post-Graduate degree',
   'Coding Bootcamp/other Professional Certifications',
@@ -80,7 +78,7 @@ export function PersonalDetails({ isSubmitting }: PersonalDetailsProps) {
         label="Join Reason*"
         component={SelectMulti}
         options={joinReasonOptions}
-        disabled={isSubmitting}
+        isDisabled={isSubmitting}
       />
 
       <Field
@@ -89,7 +87,7 @@ export function PersonalDetails({ isSubmitting }: PersonalDetailsProps) {
         label="Gender*"
         component={SelectSingle}
         options={genderOptions}
-        disabled={isSubmitting}
+        isDisabled={isSubmitting}
       />
 
       <Field
@@ -98,7 +96,7 @@ export function PersonalDetails({ isSubmitting }: PersonalDetailsProps) {
         label="Ethnicity*"
         component={SelectMulti}
         options={ethnicityOptions}
-        disabled={isSubmitting}
+        isDisabled={isSubmitting}
       />
 
       <Field
@@ -107,7 +105,7 @@ export function PersonalDetails({ isSubmitting }: PersonalDetailsProps) {
         label="Education Level*"
         component={SelectSingle}
         options={educationLevelOptions}
-        disabled={isSubmitting}
+        isDisabled={isSubmitting}
       />
     </div>
   );

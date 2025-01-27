@@ -3,7 +3,6 @@ import { ErrorMessage } from 'formik';
 import Alert from 'components/Alert/Alert';
 import Label from 'components/Form/Label/Label';
 import classNames from 'classnames';
-import LogRocket from 'logrocket';
 import type { ThemedReactSelectProps, OptionType } from './ThemedReactSelect';
 import { ThemedReactSelect } from './ThemedReactSelect';
 import styles from './Select.module.css';
@@ -56,12 +55,9 @@ export function SelectSingle({
         <ThemedReactSelect<false>
           {...sharedProps}
           isMulti={false}
-          onChange={option => {
-            if (option) {
-              setFieldValue(name, option.value);
-            } else {
-              LogRocket.captureException(new Error('SelectSingle onChange received a null option'));
-            }
+          onChange={async option => {
+            await setFieldValue(name, option?.value ?? '');
+            await setFieldTouched(name, true);
           }}
           options={options}
           value={value}

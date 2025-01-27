@@ -14,7 +14,13 @@ import Button from 'components/Buttons/Button/Button';
 import Form from 'components/Form/Form';
 import Alert from 'components/Alert/Alert';
 import ProgressIndicator from 'components/ProgressIndicator/ProgressIndicator';
-import styles from './MultiStepForm.module.css';
+
+const InlineLoadingSpinner = () => (
+  <span
+    aria-hidden
+    className="border-solid border-white border-4 !border-b-themePrimary rounded-[50%] h-5 w-5 box-border animate-spin group-hover:border-themeSecondary transition-colors"
+  />
+);
 
 interface MultiStepFormProps<T> {
   initialValues: T;
@@ -107,18 +113,16 @@ export function MultiStepForm<T extends Record<string, string | string[] | numbe
       onSubmit={handleSubmit}
     >
       {formikBag => (
-        <Form className={styles.MultiStepForm} onSubmit={formikBag.handleSubmit}>
-          <h3 className={styles.centerAligned}>{CurrentStep.title}</h3>
+        <Form className="w-full max-w-prose-sm !m-0" onSubmit={formikBag.handleSubmit}>
+          <h3 className="text-center">{CurrentStep.title}</h3>
 
           <ProgressIndicator stepNumber={stepNumber} totalSteps={steps.length} />
 
           <CurrentStep {...formikBag} />
 
-          <div className={styles.errorMessage}>
-            {errorMessage && <Alert type="error">{errorMessage}</Alert>}
-          </div>
+          <div className="mt-8">{errorMessage && <Alert type="error">{errorMessage}</Alert>}</div>
 
-          <div className={styles.buttonGrouping}>
+          <div className="flex flex-nowrap justify-around items-center mx-auto mt-8 w-full gap-x-4 min-w-[7rem]">
             {!isFirstStep && (
               <Button
                 theme="secondary"
@@ -136,8 +140,12 @@ export function MultiStepForm<T extends Record<string, string | string[] | numbe
                 theme="secondary"
                 disabled={formikBag.isSubmitting}
                 data-testid={MULTI_STEP_SUBMIT_BUTTON}
+                className="group"
               >
-                Submit ✓
+                <span className="flex items-center justify-center gap-x-2">
+                  {formikBag.isSubmitting && <InlineLoadingSpinner />}
+                  <span className="mt-[0.325rem]">Submit ✓</span>
+                </span>
               </Button>
             ) : (
               <Button
@@ -146,8 +154,12 @@ export function MultiStepForm<T extends Record<string, string | string[] | numbe
                 disabled={formikBag.isSubmitting}
                 fullWidth={isFirstStep}
                 data-testid={MULTI_STEP_STEP_BUTTON}
+                className="group"
               >
-                Next →
+                <span className="flex items-center justify-center gap-x-2">
+                  {formikBag.isSubmitting && <InlineLoadingSpinner />}
+                  <span className="mt-[0.325rem]">Next →</span>
+                </span>
               </Button>
             )}
           </div>

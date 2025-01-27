@@ -37,7 +37,7 @@ export function ProfessionalDetails({ isSubmitting }: ProfessionalDetailsProps) 
         label="Employment Status*"
         component={SelectSingle}
         options={options}
-        disabled={isSubmitting}
+        isDisabled={isSubmitting}
       />
 
       <Field
@@ -45,7 +45,7 @@ export function ProfessionalDetails({ isSubmitting }: ProfessionalDetailsProps) 
         name="companyName"
         label="Company Name"
         component={Input}
-        disabled={isSubmitting}
+        isDisabled={isSubmitting}
       />
 
       <Field
@@ -53,7 +53,7 @@ export function ProfessionalDetails({ isSubmitting }: ProfessionalDetailsProps) 
         name="companyRole"
         label="Company Role"
         component={Input}
-        disabled={isSubmitting}
+        isDisabled={isSubmitting}
       />
     </div>
   );

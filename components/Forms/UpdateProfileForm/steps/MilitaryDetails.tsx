@@ -9,12 +9,9 @@ MilitaryDetails.title = 'Military Details';
 
 MilitaryDetails.validationSchema = Yup.object().shape({
   branchOfService: Yup.array()
-    .of(Yup.string())
-    .min(1, validationErrorMessages.required)
-    .required(validationErrorMessages.required),
-  payGrade: Yup.string()
-    .min(1, validationErrorMessages.required)
-    .required(validationErrorMessages.required),
+    .of(Yup.object().shape({ label: Yup.string(), value: Yup.string() }))
+    .min(1, validationErrorMessages.required),
+  payGrade: Yup.string().required(validationErrorMessages.required),
 });
 
 MilitaryDetails.initialValues = {
@@ -49,7 +46,7 @@ export function MilitaryDetails({ isSubmitting }: MilitaryDetailsProps) {
         label="Branch Of Service*"
         component={SelectMulti}
         options={branchOptions.map(option => ({ value: option, label: option }))}
-        disabled={isSubmitting}
+        isDisabled={isSubmitting}
       />
 
       <Field
@@ -57,7 +54,7 @@ export function MilitaryDetails({ isSubmitting }: MilitaryDetailsProps) {
         label="Pay Grade*"
         component={SelectSingle}
         options={payGradeOptions.map(option => ({ value: option, label: option }))}
-        disabled={isSubmitting}
+        isDisabled={isSubmitting}
       />
     </div>
   );

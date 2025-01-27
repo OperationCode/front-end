@@ -10,7 +10,7 @@ import styles from './Select.module.css';
 export interface SelectMultiProps
   extends Pick<ThemedReactSelectProps<true>, 'id' | 'hasValidationStyling' | 'isSearchable'> {
   className?: string;
-  field: FieldInputProps<string[]>;
+  field: FieldInputProps<{ label: string; value: string }[]>;
   form: FormikState<Record<string, string[]>> & FormikHelpers<Record<string, string[]>>;
   isLabelHidden?: boolean;
   label: string;
@@ -29,21 +29,7 @@ export function SelectMulti({
   options,
   ...props // disabled, placeholder, etc.
 }: SelectMultiProps) {
-  const value = options.filter(option => fieldValue.includes(option.value));
   const hasErrors = Boolean(errors[name]);
-
-  const sharedProps = {
-    ...props,
-    id: id ? `${id}` : name,
-    hasErrors,
-    hasValidationStyling,
-    isTouched: Boolean(touched[name]),
-    isSearchable,
-    name,
-    onBlur: () => setFieldTouched(name),
-    options,
-    value,
-  };
 
   return (
     <div className={classNames(className, styles.field)}>
@@ -53,20 +39,21 @@ export function SelectMulti({
 
       <div className={styles.selectFeedbackGrouping}>
         <ThemedReactSelect<true>
-          {...sharedProps}
-          isMulti={true} // eslint-disable-line react/jsx-boolean-value
-          onChange={selectedArray => {
-            if (selectedArray) {
-              setFieldValue(
-                name,
-                selectedArray.map(item => item.value),
-              );
-            } else {
-              setFieldValue(name, []);
-            }
+          {...props}
+          id={id ? `${id}` : name}
+          name={name}
+          hasErrors={hasErrors}
+          hasValidationStyling={hasValidationStyling}
+          isMulti
+          isSearchable={isSearchable}
+          isTouched={Boolean(touched[name])}
+          onBlur={() => setFieldTouched(name)}
+          onChange={async selectedArray => {
+            await setFieldValue(name, selectedArray ?? []);
+            await setFieldTouched(name, true);
           }}
           options={options}
-          value={value ?? []}
+          value={fieldValue}
         />
 
         <ErrorMessage name={name}>

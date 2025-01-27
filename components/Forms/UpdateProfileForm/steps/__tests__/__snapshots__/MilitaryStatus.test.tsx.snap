@@ -48,7 +48,7 @@ exports[`UpdateProfileForm/Steps/MilitaryStatus > should render in context of Fo
               className="css-1f43avz-a11yText-A11yText"
             />
             <div
-              className=" css-1mgllov-control"
+              className=" css-1s1bmlz-control"
               onMouseDown={[Function]}
               onTouchEnd={[Function]}
             >

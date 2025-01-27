@@ -47,7 +47,7 @@ export function MilitaryStatus({ isSubmitting }: MilitaryStatusProps) {
           label="Military Affiliation*"
           component={SelectSingle}
           options={options.map(option => ({ value: option, label: option }))}
-          disabled={isSubmitting}
+          isDisabled={isSubmitting}
         />
       </div>
     </div>

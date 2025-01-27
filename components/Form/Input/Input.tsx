@@ -8,16 +8,18 @@ import Alert from 'components/Alert/Alert';
 import styles from './Input.module.css';
 
 /** @see https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Attributes_common_to_all_input_types */
-interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'form'> {
+interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'disabled' | 'form'> {
   field: FieldInputProps<string>;
   form: FormikState<Record<string, string>> & FormikHelpers<Record<string, string>>;
   hasValidationStyling?: boolean;
+  isDisabled?: boolean;
   isLabelHidden?: boolean;
   label: string;
 }
 
 function Input({
   className,
+  isDisabled = false,
   field: { name, value, ...field },
   form: { touched, errors },
   hasValidationStyling = true,
@@ -47,6 +49,7 @@ function Input({
             [styles.valid]: touched[name] && !hasErrors && hasValidationStyling,
             [styles.invalid]: touched[name] && hasErrors && hasValidationStyling,
           })}
+          disabled={isDisabled}
           id={id || name}
           name={name}
           type={type}

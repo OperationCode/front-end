@@ -117,7 +117,7 @@ export function RegistrationForm({
               name="email"
               label="Email*"
               component={Input}
-              disabled={isSubmitting}
+              isDisabled={isSubmitting}
               autoComplete="username email"
             />
 
@@ -126,7 +126,7 @@ export function RegistrationForm({
               name="confirm-email"
               label="Confirm Email*"
               component={Input}
-              disabled={isSubmitting}
+              isDisabled={isSubmitting}
               autoComplete="username email"
             />
 
@@ -136,7 +136,7 @@ export function RegistrationForm({
               name="password"
               label="Password*"
               component={Input}
-              disabled={isSubmitting}
+              isDisabled={isSubmitting}
               autoComplete="new-password"
             />
 
@@ -146,7 +146,7 @@ export function RegistrationForm({
               name="confirm-password"
               label="Confirm Password*"
               component={Input}
-              disabled={isSubmitting}
+              isDisabled={isSubmitting}
               autoComplete="new-password"
             />
 
@@ -155,7 +155,7 @@ export function RegistrationForm({
               name="firstName"
               label="First Name*"
               component={Input}
-              disabled={isSubmitting}
+              isDisabled={isSubmitting}
               autoComplete="given-name"
             />
 
@@ -164,7 +164,7 @@ export function RegistrationForm({
               name="lastName"
               label="Last Name*"
               component={Input}
-              disabled={isSubmitting}
+              isDisabled={isSubmitting}
               autoComplete="family-name"
             />
 
@@ -173,7 +173,7 @@ export function RegistrationForm({
               name="zipcode"
               label="Zipcode*"
               component={Input}
-              disabled={isSubmitting}
+              isDisabled={isSubmitting}
               autoComplete="postal-code"
             />
 
@@ -194,7 +194,7 @@ export function RegistrationForm({
                 </span>
               }
               component={Checkbox}
-              disabled={isSubmitting}
+              isDisabled={isSubmitting}
             />
 
             <Field
@@ -214,14 +214,14 @@ export function RegistrationForm({
                 </span>
               }
               component={Checkbox}
-              disabled={isSubmitting}
+              isDisabled={isSubmitting}
             />
           </div>
 
           {errorMessage && <Alert type="error">{errorMessage}</Alert>}
 
           <div className="max-w-md px-3 mt-5">
-            <Button type="submit" theme="secondary" disabled={isSubmitting}>
+            <Button type="submit" theme="secondary" isDisabled={isSubmitting}>
               Submit
             </Button>
             <p className="pt-5 text-xs">

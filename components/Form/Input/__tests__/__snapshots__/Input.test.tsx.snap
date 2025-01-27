@@ -18,6 +18,7 @@ exports[`Input > should render with required props 1`] = `
   >
     <input
       className="Input"
+      disabled={false}
       id="someInputName"
       name="someInputName"
       onBlur={[MockFunction spy]}
