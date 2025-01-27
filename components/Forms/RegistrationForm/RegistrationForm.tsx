@@ -221,7 +221,7 @@ export function RegistrationForm({
           {errorMessage && <Alert type="error">{errorMessage}</Alert>}
 
           <div className="max-w-md px-3 mt-5">
-            <Button type="submit" theme="secondary" isDisabled={isSubmitting}>
+            <Button type="submit" theme="secondary" disabled={isSubmitting}>
               Submit
             </Button>
             <p className="pt-5 text-xs">
