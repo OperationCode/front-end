@@ -3,12 +3,13 @@ import classNames from 'classnames';
 import Link from 'next/link';
 import PlusIcon from 'static/images/icons/plus.svg';
 import MinusIcon from 'static/images/icons/minus.svg';
+import OutboundLink from 'components/OutboundLink/OutboundLink';
 import styles from './NavListItem.module.css';
 
 type SublinkType = {
     name: string;
     href: string;
-    target: string;
+    isExternal: boolean;
 };
 
 export type NavListItemPropsType = {
@@ -21,9 +22,9 @@ export type NavListItemPropsType = {
      */
     href: string;
     /**
-     * Target attribute to be passed to the base anchor element.
+     * Url to be passed to the base anchor element.
      */
-    target: string;
+    isExternal?: boolean;
     /**
      * List of child links containing the `name` and `href`
      */
@@ -34,7 +35,7 @@ export type NavListItemPropsType = {
     icon?: React.ReactElement | null;
 };
 
-function NavListItem({ sublinks, href, name, target, icon = null }: NavListItemPropsType) {
+function NavListItem({ sublinks, href, name, icon = null, isExternal = false }: NavListItemPropsType) {
     const [areSublinksVisible, setSublinksVisible] = useState(false);
 
     const handleKeyDown = (event: React.KeyboardEvent, indexKeyedOn: number) => {
@@ -61,7 +62,7 @@ function NavListItem({ sublinks, href, name, target, icon = null }: NavListItemP
 
     return (
         <li className={styles.NavListItem}>
-            <Link href={href} target={target}>
+            <Link href={href}>
                 <a
                     className={classNames(styles.link, styles.navItemLink)}
                     onMouseEnter={exposeSublinks}
@@ -104,19 +105,26 @@ function NavListItem({ sublinks, href, name, target, icon = null }: NavListItemP
                         {sublinks.map((sublink, index) => (
                             <li className={styles.sublinkListItem} key={sublink.name}>
                                 {/* 😞 next/link fought being mocked, so `prefetch` has test-specific code */}
-                                <Link href={sublink.href} prefetch={process.env.NODE_ENV === 'production'}>
-                                    <a
-                                        className={styles.link}
-                                        key={sublink.name}
-                                        role="link"
-                                        tabIndex={0}
-                                        data-testid={`Nav Item ${sublink.name}`}
-                                        onKeyDown={event => handleKeyDown(event, index)}
-                                        target={sublink.target}
-                                    >
-                                        <span className={styles.linkContent}>{sublink.name}</span>
-                                    </a>
-                                </Link>
+                                {!sublink.isExternal ? (
+                                    <Link href={sublink.href} prefetch={process.env.NODE_ENV === 'production'}>
+                                        <a
+                                            className={styles.link}
+                                            role="link"
+                                            tabIndex={0}
+                                            data-testid={`Nav Item ${sublink.name}`}
+                                            onKeyDown={event => handleKeyDown(event, index)}
+                                        >
+                                            <span className={styles.linkContent}>{sublink.name}</span>
+                                        </a>
+                                    </Link>
+                                ) : (
+                                    <OutboundLink
+                                        analyticsEventLabel={`Clicked on ${sublink.name} -> ${sublink.href}`}
+                                        href={sublink.href}
+                                        children={<span className={styles.link}>{sublink.name}</span>}
+                                        hasIcon={false}
+                                    />
+                                )}
                             </li>
                         ))}
                     </ul>
