@@ -14,11 +14,15 @@ import Button from 'components/Buttons/Button/Button';
 import Form from 'components/Form/Form';
 import Alert from 'components/Alert/Alert';
 import ProgressIndicator from 'components/ProgressIndicator/ProgressIndicator';
+import { twMerge } from 'tailwind-merge';
 
-const InlineLoadingSpinner = () => (
+const InlineLoadingSpinner = ({ className }: { className?: string }) => (
   <span
     aria-hidden
-    className="border-solid border-white border-4 !border-b-themePrimary rounded-[50%] h-5 w-5 box-border animate-spin group-hover:border-themeSecondary transition-colors"
+    className={twMerge(
+      'border-solid border-white border-4 !border-b-themePrimary rounded-[50%] h-5 w-5 box-border animate-spin group-hover:border-themeSecondary transition-colors',
+      className,
+    )}
   />
 );
 
@@ -123,7 +127,7 @@ export function MultiStepForm<T extends Record<string, string | string[] | numbe
 
           <div className="mt-8">{errorMessage && <Alert type="error">{errorMessage}</Alert>}</div>
 
-          <div className="flex flex-nowrap justify-around items-center mx-auto mt-8 w-full gap-x-4 min-w-[7rem]">
+          <div className="flex justify-center flex-wrap md:flex-nowrap md:justify-around items-center mx-auto mt-8 w-full gap-4 min-w-[7rem] [&>button]:w-full md:[&>button]:w-auto">
             {!isFirstStep && (
               <Button
                 theme="secondary"
@@ -158,8 +162,8 @@ export function MultiStepForm<T extends Record<string, string | string[] | numbe
                 className="group"
               >
                 <span className="flex items-center justify-center gap-x-2">
-                  {formikBag.isSubmitting && <InlineLoadingSpinner />}
-                  <span className="mt-[0.325rem]">Next →</span>
+                  {formikBag.isSubmitting && <InlineLoadingSpinner className="-mt-[0.325rem]" />}
+                  <span>Next →</span>
                 </span>
               </Button>
             )}
