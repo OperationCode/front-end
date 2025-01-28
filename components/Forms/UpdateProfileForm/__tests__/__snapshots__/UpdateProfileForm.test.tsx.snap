@@ -216,7 +216,7 @@ exports[`UpdateProfileForm > should render with required props 1`] = `
     className="mt-8"
   />
   <div
-    className="flex flex-nowrap justify-around items-center mx-auto mt-8 w-full gap-x-4 min-w-[7rem]"
+    className="flex justify-center flex-wrap md:flex-nowrap md:justify-around items-center mx-auto mt-8 w-full gap-4 min-w-[7rem] [&>button]:w-full md:[&>button]:w-auto"
   >
     <button
       className="Button group secondary fullWidth"
@@ -229,9 +229,7 @@ exports[`UpdateProfileForm > should render with required props 1`] = `
       <span
         className="flex items-center justify-center gap-x-2"
       >
-        <span
-          className="mt-[0.325rem]"
-        >
+        <span>
           Next →
         </span>
       </span>
