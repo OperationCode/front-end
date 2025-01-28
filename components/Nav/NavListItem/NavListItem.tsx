@@ -6,13 +6,13 @@ import MinusIcon from 'static/images/icons/minus.svg';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 import styles from './NavListItem.module.css';
 
-type SublinkType = {
+interface SublinkType {
     name: string;
     href: string;
     isExternal?: boolean;
 };
 
-export type NavListItemPropsType = {
+export interface NavListItemPropsType {
     /**
      * Text used for the label.
      */
@@ -29,7 +29,7 @@ export type NavListItemPropsType = {
      * Includes an optional icon.
      */
     icon?: React.ReactElement | null;
-};
+}
 
 function NavListItem({ sublinks, href, name, icon = null}: NavListItemPropsType) {
     const [areSublinksVisible, setSublinksVisible] = useState(false);
@@ -116,11 +116,15 @@ function NavListItem({ sublinks, href, name, icon = null}: NavListItemPropsType)
                                 ) : (
                                     <OutboundLink
                                         analyticsEventLabel={`Clicked on ${sublink.name} -> ${sublink.href}`}
+                                        className={styles.link}
+                                        data-testid={`Nav Item ${sublink.name}`}
                                         href={sublink.href}
                                         // children={<span className={styles.link}>{sublink.name}</span>}
                                         children={<span className={styles.link}>{sublink.name}</span>}
                                         hasIcon={false}
-                                    />
+                                    >
+                                        <span className={styles.link}>{sublink.name}</span>
+                                    </OutboundLink>
                                 )}
                             </li>
                         ))}
