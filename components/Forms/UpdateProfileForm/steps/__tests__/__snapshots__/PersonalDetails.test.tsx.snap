@@ -10,7 +10,7 @@ exports[`UpdateProfileForm/Steps/PersonalDetails > should render in context of F
     className="row"
   >
     <div
-      className="fullWidth field"
+      className="field"
     >
       <label
         className="text-themeSecondary text-sm"
@@ -133,7 +133,7 @@ exports[`UpdateProfileForm/Steps/PersonalDetails > should render in context of F
       </div>
     </div>
     <div
-      className="fullWidth field"
+      className="field"
     >
       <label
         className="text-themeSecondary text-sm"
@@ -255,7 +255,7 @@ exports[`UpdateProfileForm/Steps/PersonalDetails > should render in context of F
       </div>
     </div>
     <div
-      className="fullWidth field"
+      className="field"
     >
       <label
         className="text-themeSecondary text-sm"
@@ -378,7 +378,7 @@ exports[`UpdateProfileForm/Steps/PersonalDetails > should render in context of F
       </div>
     </div>
     <div
-      className="fullWidth field"
+      className="field"
     >
       <label
         className="text-themeSecondary text-sm"
