@@ -119,8 +119,6 @@ function NavListItem({ sublinks, href, name, icon = null}: NavListItemPropsType)
                                         className={styles.link}
                                         data-testid={`Nav Item ${sublink.name}`}
                                         href={sublink.href}
-                                        // children={<span className={styles.link}>{sublink.name}</span>}
-                                        children={<span className={styles.link}>{sublink.name}</span>}
                                         hasIcon={false}
                                     >
                                         <span className={styles.link}>{sublink.name}</span>
