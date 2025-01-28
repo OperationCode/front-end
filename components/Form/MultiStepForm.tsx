@@ -25,7 +25,7 @@ const InlineLoadingSpinner = () => (
 interface MultiStepFormProps<T> {
   initialValues: T;
   getErrorMessage: (error: AxiosError) => string;
-  onEachStepSubmit?: (values: T) => Promise<void>;
+  onEachStepSubmit?: (values: T, helpers: FormikHelpers<T>) => Promise<void>;
   onFinalSubmit: (values: T) => Promise<void>;
   steps: (FunctionComponent<FormikProps<T>> & {
     title: string;
@@ -84,7 +84,7 @@ export function MultiStepForm<T extends Record<string, string | string[] | numbe
     }
 
     try {
-      await onEachStepSubmit?.(values);
+      await onEachStepSubmit?.(values, helpers);
 
       const currentStepSubmitHandler = steps[stepNumber].submitHandler;
       await currentStepSubmitHandler?.(values);
@@ -110,6 +110,7 @@ export function MultiStepForm<T extends Record<string, string | string[] | numbe
     <Formik
       initialValues={initialValues}
       validationSchema={CurrentStep.validationSchema}
+      enableReinitialize
       onSubmit={handleSubmit}
     >
       {formikBag => (

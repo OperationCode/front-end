@@ -10,6 +10,33 @@ import { ProfessionalDetails } from 'components/Forms/UpdateProfileForm/steps/Pr
 import { MilitaryStatus } from 'components/Forms/UpdateProfileForm/steps/MilitaryStatus';
 import { MilitaryDetails } from 'components/Forms/UpdateProfileForm/steps/MilitaryDetails';
 import { PersonalDetails } from 'components/Forms/UpdateProfileForm/steps/PersonalDetails';
+import type { FormikHelpers } from 'formik';
+
+const generateError = (errorObject: AxiosError) => {
+  const serverResponse = (errorObject?.response?.data ?? {}) as Record<string, string>;
+  const responseDataValues = Object.values(serverResponse);
+  const isHandledServerError = responseDataValues.length > 0;
+
+  if (isHandledServerError) {
+    const hasMultiError = responseDataValues.some(
+      value => Array.isArray(value) && value.length > 0,
+    );
+
+    if (hasMultiError) {
+      const errorMessage = responseDataValues
+        .map(messages => {
+          // Only return the first item of a potential array of errors.
+          // Rather than make this code more complex, just let the user resolve them per submit.
+          return messages[0];
+        })
+        .join('\n'); // could span many fields as well, so have a new line per field with error
+
+      return errorMessage;
+    }
+  }
+
+  return getServerErrorMessage(errorObject);
+};
 
 const onboardingFormInitialValues = {
   ...ProfessionalDetails.initialValues,
@@ -30,46 +57,29 @@ function UpdateProfileForm({
   const { push } = useRouter();
   const [shouldShowMilitaryStep, setShouldShowMilitaryStep] = useState(false);
 
-  const generateError = (errorObject: AxiosError) => {
-    const serverResponse = (errorObject?.response?.data ?? {}) as Record<string, string>;
-    const responseDataValues = Object.values(serverResponse);
-    const isHandledServerError = responseDataValues.length > 0;
-
-    if (isHandledServerError) {
-      const hasMultiError = responseDataValues.some(
-        value => Array.isArray(value) && value.length > 0,
-      );
-
-      if (hasMultiError) {
-        const errorMessage = responseDataValues
-          .map(messages => {
-            // Only return the first item of a potential array of errors.
-            // Rather than make this code more complex, just let the user resolve them per submit.
-            return messages[0];
-          })
-          .join('\n'); // could span many fields as well, so have a new line per field with error
-
-        return errorMessage;
-      }
-    }
-
-    return getServerErrorMessage(errorObject);
-  };
-
-  const onStepSubmit = async (values: UpdateProfileFormShape) => {
+  const onStepSubmit = async (
+    values: UpdateProfileFormShape,
+    formikHelpers: FormikHelpers<UpdateProfileFormShape>,
+  ) => {
     const hasMilitaryExperience = [
       'Active Duty U.S. Military Service Member',
       'U.S. Reserve or National Guard member',
       'U.S. Veteran',
     ].includes(values.militaryAffiliation);
 
-    if (hasMilitaryExperience) {
-      setShouldShowMilitaryStep(true);
-    } else {
-      // setValues remove military values OR on submit, don't pass military values
-      setShouldShowMilitaryStep(false);
-    }
+    setShouldShowMilitaryStep(hasMilitaryExperience);
 
+    if (hasMilitaryExperience) {
+      const relevantKeys = Object.keys(
+        MilitaryDetails.initialValues,
+      ) as (keyof typeof MilitaryDetails.initialValues)[];
+
+      const isMilitaryDetailsStepEmpty = relevantKeys.every(key => values[key].length === 0);
+
+      if (isMilitaryDetailsStepEmpty) {
+        relevantKeys.forEach(key => formikHelpers.setFieldTouched(key, false));
+      }
+    }
     await updateUser(values);
   };
 
@@ -88,7 +98,7 @@ function UpdateProfileForm({
     : [ProfessionalDetails, MilitaryStatus, PersonalDetails];
 
   return (
-    <MultiStepForm
+    <MultiStepForm<UpdateProfileFormShape>
       initialValues={initialValues}
       getErrorMessage={generateError}
       onEachStepSubmit={onStepSubmit}

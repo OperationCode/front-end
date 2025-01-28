@@ -73,7 +73,6 @@ export function PersonalDetails({ isSubmitting }: PersonalDetailsProps) {
   return (
     <div className={styles.row}>
       <Field
-        className={styles.fullWidth}
         name="joinReason"
         label="Join Reason*"
         component={SelectMulti}
@@ -82,7 +81,6 @@ export function PersonalDetails({ isSubmitting }: PersonalDetailsProps) {
       />
 
       <Field
-        className={styles.fullWidth}
         name="gender"
         label="Gender*"
         component={SelectSingle}
@@ -91,7 +89,6 @@ export function PersonalDetails({ isSubmitting }: PersonalDetailsProps) {
       />
 
       <Field
-        className={styles.fullWidth}
         name="ethnicity"
         label="Ethnicity*"
         component={SelectMulti}
@@ -100,7 +97,6 @@ export function PersonalDetails({ isSubmitting }: PersonalDetailsProps) {
       />
 
       <Field
-        className={styles.fullWidth}
         name="educationLevel"
         label="Education Level*"
         component={SelectSingle}
