@@ -77,7 +77,7 @@ exports[`UpdateProfileForm/Steps/MilitaryStatus > should render in context of Fo
                       autoComplete="off"
                       autoCorrect="off"
                       disabled={false}
-                      id="input-militaryAffiliation"
+                      id="militaryAffiliation"
                       onBlur={[Function]}
                       onChange={[Function]}
                       onFocus={[Function]}
@@ -143,6 +143,11 @@ exports[`UpdateProfileForm/Steps/MilitaryStatus > should render in context of Fo
                 </div>
               </div>
             </div>
+            <input
+              name="militaryAffiliation"
+              type="hidden"
+              value=""
+            />
           </div>
         </div>
       </div>

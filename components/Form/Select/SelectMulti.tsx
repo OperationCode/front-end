@@ -40,7 +40,7 @@ export function SelectMulti({
       <div className={styles.selectFeedbackGrouping}>
         <ThemedReactSelect<true>
           {...props}
-          id={id ? `${id}` : name}
+          id={id ? `${id}` : undefined}
           name={name}
           hasErrors={hasErrors}
           hasValidationStyling={hasValidationStyling}

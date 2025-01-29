@@ -4,6 +4,7 @@ import { validationErrorMessages } from 'common/constants/messages';
 import { SelectSingle } from 'components/Form/Select/SelectSingle';
 import { mapStringsToSelectOptions } from 'common/utils/array-utils';
 import { SelectMulti } from 'components/Form/Select/SelectMulti';
+import type { OptionType } from 'components/Form/Select/ThemedReactSelect';
 import styles from './_steps.module.css';
 
 PersonalDetails.title = 'Personal Details';
@@ -20,9 +21,9 @@ PersonalDetails.validationSchema = Yup.object().shape({
 });
 
 PersonalDetails.initialValues = {
-  joinReason: [] as string[],
+  joinReason: [] as OptionType[],
   gender: '',
-  ethnicity: '',
+  ethnicity: [] as OptionType[],
   educationLevel: '',
 };
 

@@ -88,7 +88,7 @@ exports[`UpdateProfileForm > should render with required props 1`] = `
                     autoComplete="off"
                     autoCorrect="off"
                     disabled={false}
-                    id="input-employmentStatus"
+                    id="employmentStatus"
                     onBlur={[Function]}
                     onChange={[Function]}
                     onFocus={[Function]}
@@ -154,6 +154,11 @@ exports[`UpdateProfileForm > should render with required props 1`] = `
               </div>
             </div>
           </div>
+          <input
+            name="employmentStatus"
+            type="hidden"
+            value=""
+          />
         </div>
       </div>
     </div>

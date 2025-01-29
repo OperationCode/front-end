@@ -1,8 +1,9 @@
 import existingUser from 'test-utils/mocks/existingUser';
 import { mockUser } from 'test-utils/mockGenerators/mockUser';
 import { validationErrorMessages } from 'common/constants/messages';
+import { SUCCESS_PAGE_MESSAGE } from 'common/constants/testIDs';
 
-const validUser = mockUser();
+const getValidUser = () => mockUser();
 const inputFields = {
   email: 'Email*',
   confirmEmail: 'Confirm Email*',
@@ -49,6 +50,7 @@ describe('join', () => {
    * E-mail & ConfrimEmail fields
    */
   it('should NOT be able to register when blurring past email', () => {
+    const validUser = getValidUser();
     cy.findByLabelText(inputFields.email).focus();
     cy.findByLabelText(inputFields.email).blur();
     assertError();
@@ -64,6 +66,7 @@ describe('join', () => {
   });
 
   it('should NOT be able to register when email contains only spaces', () => {
+    const validUser = getValidUser();
     cy.findByLabelText(inputFields.email).type('   ');
     cy.findByLabelText(inputFields.email).blur();
     assertError();
@@ -79,6 +82,7 @@ describe('join', () => {
   });
 
   it('should NOT be able to register with an invalid email', () => {
+    const validUser = getValidUser();
     const invalidUser = mockUser('invalidemail@.com');
 
     cy.findByLabelText(inputFields.email).type(invalidUser.email);
@@ -96,6 +100,7 @@ describe('join', () => {
   });
 
   it('should NOT be able to register when blurring past confirmEmail', () => {
+    const validUser = getValidUser();
     cy.findByLabelText(inputFields.email).type(validUser.email);
 
     cy.findByLabelText(inputFields.confirmEmail).focus();
@@ -112,6 +117,7 @@ describe('join', () => {
   });
 
   it('should NOT be able to register when emails do not match', () => {
+    const validUser = getValidUser();
     cy.findByLabelText(inputFields.email).type(validUser.email);
     cy.findByLabelText(inputFields.confirmEmail).type(existingUser.email);
 
@@ -129,6 +135,7 @@ describe('join', () => {
   });
 
   it('should NOT be able to register with an existing email', () => {
+    const validUser = getValidUser();
     cy.findByLabelText(inputFields.email).type(existingUser.email);
     cy.findByLabelText(inputFields.confirmEmail).type(existingUser.email);
     cy.findByLabelText(inputFields.firstName).type(existingUser.firstName);
@@ -144,6 +151,7 @@ describe('join', () => {
    * FirstName & LastName Fields
    */
   it('should NOT be able to register when blurring past firstName', () => {
+    const validUser = getValidUser();
     cy.findByLabelText(inputFields.email).type(validUser.email);
     cy.findByLabelText(inputFields.confirmEmail).type(validUser.email);
 
@@ -160,6 +168,7 @@ describe('join', () => {
   });
 
   it('should NOT be able to register when firstName contains only spaces', () => {
+    const validUser = getValidUser();
     cy.findByLabelText(inputFields.email).type(validUser.email);
     cy.findByLabelText(inputFields.confirmEmail).type(validUser.email);
 
@@ -176,6 +185,7 @@ describe('join', () => {
   });
 
   it('should NOT be able to register when blurring past lastName', () => {
+    const validUser = getValidUser();
     cy.findByLabelText(inputFields.email).type(validUser.email);
     cy.findByLabelText(inputFields.confirmEmail).type(validUser.email);
     cy.findByLabelText(inputFields.firstName).type(validUser.firstName);
@@ -192,6 +202,7 @@ describe('join', () => {
   });
 
   it('should NOT be able to register when lastName contains only spaces', () => {
+    const validUser = getValidUser();
     cy.findByLabelText(inputFields.email).type(validUser.email);
     cy.findByLabelText(inputFields.confirmEmail).type(validUser.email);
     cy.findByLabelText(inputFields.firstName).type(validUser.firstName);
@@ -211,6 +222,7 @@ describe('join', () => {
    * Zipcode field
    */
   it('should NOT be able to register when blurring past zipcode', () => {
+    const validUser = getValidUser();
     cy.findByLabelText(inputFields.email).type(validUser.email);
     cy.findByLabelText(inputFields.confirmEmail).type(validUser.email);
     cy.findByLabelText(inputFields.firstName).type(validUser.firstName);
@@ -227,6 +239,7 @@ describe('join', () => {
   });
 
   it('should NOT be able to register when zipcode contains only spaces', () => {
+    const validUser = getValidUser();
     cy.findByLabelText(inputFields.email).type(validUser.email);
     cy.findByLabelText(inputFields.confirmEmail).type(validUser.email);
     cy.findByLabelText(inputFields.firstName).type(validUser.firstName);
@@ -243,6 +256,7 @@ describe('join', () => {
   });
 
   it('should NOT be able to register when Code of Conduct is not agreed to', () => {
+    const validUser = getValidUser();
     cy.findByLabelText(inputFields.email).type(validUser.email);
     cy.findByLabelText(inputFields.confirmEmail).type(validUser.email);
     cy.findByLabelText(inputFields.firstName).type(validUser.firstName);
@@ -258,6 +272,7 @@ describe('join', () => {
   });
 
   it('should NOT be able to register when Slack Community Guidelines is not agreed to', () => {
+    const validUser = getValidUser();
     cy.findByLabelText(inputFields.email).type(validUser.email);
     cy.findByLabelText(inputFields.confirmEmail).type(validUser.email);
     cy.findByLabelText(inputFields.firstName).type(validUser.firstName);
@@ -283,6 +298,7 @@ describe('join', () => {
    * Test Valid User
    */
   it('should be able to register with valid data', () => {
+    const validUser = getValidUser();
     cy.findByLabelText(inputFields.email).type(validUser.email);
     cy.findByLabelText(inputFields.confirmEmail).type(validUser.email);
     cy.findByLabelText(inputFields.firstName).type(validUser.firstName);
@@ -294,5 +310,50 @@ describe('join', () => {
 
     cy.url({ timeout: 20000 }).should('contain', '/join/form');
     cy.get('h1').should('have.text', 'Update Profile');
+
+    // Professional Details
+    cy.findByLabelText('Employment Status*')
+      .should('exist')
+      .type('Full-Time{enter}', { force: true });
+    cy.findByLabelText('Company Name').should('exist').type('Test Company');
+    cy.findByLabelText('Company Role').should('exist').type('Test Title');
+    cy.get('form').submit();
+
+    // Military Status
+    cy.findByLabelText('Military Affiliation*').should('exist').type('Non{enter}', { force: true });
+    cy.get('form').submit();
+
+    // Assert that we see Personal Details (not Military Details)
+    cy.get('form').findByText('Personal Details').should('exist');
+
+    // Go back
+    cy.get('form').findAllByRole('button').filter('[type="button"]').click();
+
+    // Military Status
+    cy.findByLabelText('Military Affiliation*')
+      .should('exist')
+      .type('Active{enter}', { force: true });
+    cy.get('form').submit();
+
+    // Military Details
+    cy.findByLabelText('Branch Of Service*').should('exist').type('Army{enter}', { force: true });
+    cy.findByLabelText('Pay Grade*').should('exist').type('E1-E5{enter}', { force: true });
+    cy.get('form').submit();
+
+    // Personal Details
+    cy.findByLabelText('Join Reason*')
+      .should('exist')
+      .type('I’d like access to jobs{enter}', { force: true });
+    cy.findByLabelText('Join Reason*').type('I’d like access to re{enter}', { force: true });
+    cy.findByLabelText('Gender*').should('exist').type('Male{enter}', { force: true });
+    cy.findByLabelText('Ethnicity*').should('exist').type('Caucasian{enter}', { force: true });
+    cy.findByLabelText('Ethnicity*').type('Hispanic{enter}', { force: true });
+    cy.findByLabelText('Education Level*')
+      .should('exist')
+      .type('High school{enter}', { force: true });
+    cy.get('form').submit();
+
+    // Success UI
+    cy.findByTestId(SUCCESS_PAGE_MESSAGE).should('exist');
   });
 });

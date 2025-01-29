@@ -3,6 +3,7 @@ import * as Yup from 'yup';
 import { validationErrorMessages } from 'common/constants/messages';
 import { SelectSingle } from 'components/Form/Select/SelectSingle';
 import { SelectMulti } from 'components/Form/Select/SelectMulti';
+import type { OptionType } from 'components/Form/Select/ThemedReactSelect';
 import styles from './_steps.module.css';
 
 MilitaryDetails.title = 'Military Details';
@@ -15,7 +16,7 @@ MilitaryDetails.validationSchema = Yup.object().shape({
 });
 
 MilitaryDetails.initialValues = {
-  branchOfService: [] as string[],
+  branchOfService: [] as OptionType[],
   payGrade: '',
 };
 

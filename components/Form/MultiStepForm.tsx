@@ -15,6 +15,7 @@ import Form from 'components/Form/Form';
 import Alert from 'components/Alert/Alert';
 import ProgressIndicator from 'components/ProgressIndicator/ProgressIndicator';
 import { twMerge } from 'tailwind-merge';
+import type { OptionType } from 'components/Form/Select/ThemedReactSelect';
 
 const InlineLoadingSpinner = ({ className }: { className?: string }) => (
   <span
@@ -40,7 +41,9 @@ interface MultiStepFormProps<T> {
   })[];
 }
 
-export function MultiStepForm<T extends Record<string, string | string[] | number | number[]>>({
+export function MultiStepForm<
+  T extends Record<string, string | string[] | number | number[] | OptionType[]>,
+>({
   steps,
   initialValues,
   onEachStepSubmit,

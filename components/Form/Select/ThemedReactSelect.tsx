@@ -15,8 +15,6 @@ export interface OptionType {
   value: string;
 }
 
-export const createInputId = (name: string) => `input-${name}`;
-
 export interface ThemedReactSelectProps<TMulti extends boolean>
   extends ReactSelectProps<OptionType, TMulti> {
   name: string; // name?: string is on ReactSelectProps, but we're gonna require it.
@@ -46,8 +44,9 @@ export function ThemedReactSelect<TMulti extends boolean>({
     // @ts-expect-error - Bad types package for react-select
     <ReactSelect
       {...props}
-      inputId={createInputId(name)}
+      inputId={name}
       instanceId={name}
+      name={name}
       isDisabled={isDisabled}
       closeMenuOnSelect={!isMulti}
       isMulti={isMulti}
@@ -127,4 +126,4 @@ export function ThemedReactSelect<TMulti extends boolean>({
 }
 
 export const getReactSelectInput = (domElement: HTMLElement, fieldName: string) =>
-  domElement.querySelector(`[id^=${createInputId(fieldName)}]`);
+  domElement.querySelector(`[id^=${fieldName}]`);

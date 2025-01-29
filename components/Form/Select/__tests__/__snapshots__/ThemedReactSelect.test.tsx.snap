@@ -92,7 +92,7 @@ exports[`ThemedReactSelect > should render (multi) with required props 1`] = `
             autoComplete="off"
             autoCorrect="off"
             disabled={false}
-            id="input-Test"
+            id="Test"
             onBlur={[Function]}
             onChange={[Function]}
             onFocus={[Function]}
@@ -177,6 +177,18 @@ exports[`ThemedReactSelect > should render (multi) with required props 1`] = `
       </div>
     </div>
   </div>
+  <div>
+    <input
+      name="Test"
+      type="hidden"
+      value="1"
+    />
+    <input
+      name="Test"
+      type="hidden"
+      value="2"
+    />
+  </div>
 </div>
 `;
 
@@ -221,7 +233,7 @@ exports[`ThemedReactSelect > should render (non-multi) with required props 1`] =
             autoComplete="off"
             autoCorrect="off"
             disabled={false}
-            id="input-Test"
+            id="Test"
             onBlur={[Function]}
             onChange={[Function]}
             onFocus={[Function]}
@@ -287,5 +299,10 @@ exports[`ThemedReactSelect > should render (non-multi) with required props 1`] =
       </div>
     </div>
   </div>
+  <input
+    name="Test"
+    type="hidden"
+    value="1"
+  />
 </div>
 `;

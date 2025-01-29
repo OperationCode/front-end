@@ -24,7 +24,6 @@ exports[`UpdateProfileForm/Steps/PersonalDetails > should render in context of F
       >
         <div
           className=" css-2b097c-container"
-          id="joinReason"
           onKeyDown={[Function]}
         >
           <span
@@ -63,7 +62,7 @@ exports[`UpdateProfileForm/Steps/PersonalDetails > should render in context of F
                     autoComplete="off"
                     autoCorrect="off"
                     disabled={false}
-                    id="input-joinReason"
+                    id="joinReason"
                     onBlur={[Function]}
                     onChange={[Function]}
                     onFocus={[Function]}
@@ -128,6 +127,12 @@ exports[`UpdateProfileForm/Steps/PersonalDetails > should render in context of F
                 </svg>
               </div>
             </div>
+          </div>
+          <div>
+            <input
+              name="joinReason"
+              type="hidden"
+            />
           </div>
         </div>
       </div>
@@ -185,7 +190,7 @@ exports[`UpdateProfileForm/Steps/PersonalDetails > should render in context of F
                     autoComplete="off"
                     autoCorrect="off"
                     disabled={false}
-                    id="input-gender"
+                    id="gender"
                     onBlur={[Function]}
                     onChange={[Function]}
                     onFocus={[Function]}
@@ -251,6 +256,11 @@ exports[`UpdateProfileForm/Steps/PersonalDetails > should render in context of F
               </div>
             </div>
           </div>
+          <input
+            name="gender"
+            type="hidden"
+            value=""
+          />
         </div>
       </div>
     </div>
@@ -269,7 +279,6 @@ exports[`UpdateProfileForm/Steps/PersonalDetails > should render in context of F
       >
         <div
           className=" css-2b097c-container"
-          id="ethnicity"
           onKeyDown={[Function]}
         >
           <span
@@ -308,7 +317,7 @@ exports[`UpdateProfileForm/Steps/PersonalDetails > should render in context of F
                     autoComplete="off"
                     autoCorrect="off"
                     disabled={false}
-                    id="input-ethnicity"
+                    id="ethnicity"
                     onBlur={[Function]}
                     onChange={[Function]}
                     onFocus={[Function]}
@@ -373,6 +382,12 @@ exports[`UpdateProfileForm/Steps/PersonalDetails > should render in context of F
                 </svg>
               </div>
             </div>
+          </div>
+          <div>
+            <input
+              name="ethnicity"
+              type="hidden"
+            />
           </div>
         </div>
       </div>
@@ -430,7 +445,7 @@ exports[`UpdateProfileForm/Steps/PersonalDetails > should render in context of F
                     autoComplete="off"
                     autoCorrect="off"
                     disabled={false}
-                    id="input-educationLevel"
+                    id="educationLevel"
                     onBlur={[Function]}
                     onChange={[Function]}
                     onFocus={[Function]}
@@ -496,6 +511,11 @@ exports[`UpdateProfileForm/Steps/PersonalDetails > should render in context of F
               </div>
             </div>
           </div>
+          <input
+            name="educationLevel"
+            type="hidden"
+            value=""
+          />
         </div>
       </div>
     </div>

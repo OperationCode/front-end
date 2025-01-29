@@ -80,6 +80,7 @@ function UpdateProfileForm({
         relevantKeys.forEach(key => formikHelpers.setFieldTouched(key, false));
       }
     }
+
     await updateUser(values);
   };
 

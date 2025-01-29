@@ -24,7 +24,6 @@ exports[`UpdateProfileForm/Steps/MilitaryDetails > should render in context of F
       >
         <div
           className=" css-2b097c-container"
-          id="branchOfService"
           onKeyDown={[Function]}
         >
           <span
@@ -63,7 +62,7 @@ exports[`UpdateProfileForm/Steps/MilitaryDetails > should render in context of F
                     autoComplete="off"
                     autoCorrect="off"
                     disabled={false}
-                    id="input-branchOfService"
+                    id="branchOfService"
                     onBlur={[Function]}
                     onChange={[Function]}
                     onFocus={[Function]}
@@ -128,6 +127,12 @@ exports[`UpdateProfileForm/Steps/MilitaryDetails > should render in context of F
                 </svg>
               </div>
             </div>
+          </div>
+          <div>
+            <input
+              name="branchOfService"
+              type="hidden"
+            />
           </div>
         </div>
       </div>
@@ -185,7 +190,7 @@ exports[`UpdateProfileForm/Steps/MilitaryDetails > should render in context of F
                     autoComplete="off"
                     autoCorrect="off"
                     disabled={false}
-                    id="input-payGrade"
+                    id="payGrade"
                     onBlur={[Function]}
                     onChange={[Function]}
                     onFocus={[Function]}
@@ -251,6 +256,11 @@ exports[`UpdateProfileForm/Steps/MilitaryDetails > should render in context of F
               </div>
             </div>
           </div>
+          <input
+            name="payGrade"
+            type="hidden"
+            value=""
+          />
         </div>
       </div>
     </div>

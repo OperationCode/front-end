@@ -27,13 +27,17 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         companyRole,
         employmentStatus,
         militaryAffiliation,
-        branchOfService,
+        branchOfService: selectedBranchOfServiceOptions,
         payGrade,
-        joinReason,
+        joinReason: selectedJoinReasonOptions,
         gender,
-        ethnicity,
+        ethnicity: selectedEthnicityOptions,
         educationLevel,
       } = req.body as Partial<UpdateProfileFormShape>;
+
+      const branchOfService = selectedBranchOfServiceOptions?.map(option => option.value) ?? [];
+      const ethnicity = selectedEthnicityOptions?.map(option => option.value) ?? [];
+      const joinReason = selectedJoinReasonOptions?.map(option => option.value) ?? [];
 
       let militaryBranch = branchOfService;
       if (militaryAffiliation?.includes('spouse')) {

@@ -62,7 +62,7 @@ exports[`UpdateProfileForm/Steps/ProfessionalDetails > should render in context 
                     autoComplete="off"
                     autoCorrect="off"
                     disabled={false}
-                    id="input-employmentStatus"
+                    id="employmentStatus"
                     onBlur={[Function]}
                     onChange={[Function]}
                     onFocus={[Function]}
@@ -128,6 +128,11 @@ exports[`UpdateProfileForm/Steps/ProfessionalDetails > should render in context 
               </div>
             </div>
           </div>
+          <input
+            name="employmentStatus"
+            type="hidden"
+            value=""
+          />
         </div>
       </div>
     </div>

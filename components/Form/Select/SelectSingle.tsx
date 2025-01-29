@@ -32,19 +32,6 @@ export function SelectSingle({
   const value = options.find(option => option.value === fieldValue);
   const hasErrors = Boolean(errors[name]);
 
-  const sharedProps = {
-    ...props,
-    id: id ? `${id}` : undefined,
-    hasErrors,
-    hasValidationStyling,
-    isTouched: Boolean(touched[name]),
-    isSearchable,
-    name,
-    onBlur: () => setFieldTouched(name),
-    options,
-    value,
-  };
-
   return (
     <div className={classNames(className, styles.field)}>
       <Label for={name} isHidden={isLabelHidden}>
@@ -53,7 +40,14 @@ export function SelectSingle({
 
       <div className={styles.selectFeedbackGrouping}>
         <ThemedReactSelect<false>
-          {...sharedProps}
+          {...props}
+          id={id ? `${id}` : undefined}
+          name={name}
+          hasErrors={hasErrors}
+          hasValidationStyling={hasValidationStyling}
+          isTouched={Boolean(touched[name])}
+          onBlur={() => setFieldTouched(name)}
+          isSearchable={isSearchable}
           isMulti={false}
           onChange={async option => {
             await setFieldValue(name, option?.value ?? '');
