@@ -2,6 +2,7 @@
 
 exports[`Modal > should render with many props assigned 1`] = `
 <body
+  data-scroll-locked="1"
   style="pointer-events: none;"
 >
   <span

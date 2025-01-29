@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { s3 } from 'common/constants/urls';
 import PartnerLogoLink from '../PartnerLogoLink';
 

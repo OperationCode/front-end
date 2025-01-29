@@ -240,7 +240,7 @@ function SlackGuide() {
               headingChildren: <h6>{faq.title}</h6>,
               bodyChildren: <p>{faq.content}</p>,
             }}
-            accessibilityId='accordion'
+            accessibilityId="accordion"
           />
         ))}
       />

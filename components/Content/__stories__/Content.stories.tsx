@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import Content from '../Content';
 
 type ContentStoryType = StoryObj<typeof Content>;

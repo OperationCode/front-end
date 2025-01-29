@@ -2,28 +2,19 @@ import { fireEvent, render } from '@testing-library/react';
 import createShallowSnapshotTest from 'test-utils/createShallowSnapshotTest';
 import { mobileNavItems } from 'common/constants/navigation';
 import { CLOSE_BUTTON } from 'common/constants/testIDs';
+import noop from 'lodash/noop';
 
 import NavMobile from '../NavMobile';
 
 describe('NavMobile', () => {
   it('should render', () =>
     createShallowSnapshotTest(
-      <NavMobile
-        navItems={mobileNavItems}
-        isOpen={false}
-        openMenu={() => {}}
-        closeMenu={() => {}}
-      />,
+      <NavMobile navItems={mobileNavItems} isOpen={false} openMenu={noop} closeMenu={noop} />,
     ));
 
   it('should not have a visible menu when isOpen prop is false', () => {
     const wrapper = render(
-      <NavMobile
-        navItems={mobileNavItems}
-        isOpen={false}
-        openMenu={() => {}}
-        closeMenu={() => {}}
-      />,
+      <NavMobile navItems={mobileNavItems} isOpen={false} openMenu={noop} closeMenu={noop} />,
     );
 
     expect(wrapper.container.querySelector('ul')).toBeNull();
@@ -31,7 +22,7 @@ describe('NavMobile', () => {
 
   it('should have a visible menu when isOpen prop is true', () => {
     const wrapper = render(
-      <NavMobile navItems={mobileNavItems} isOpen openMenu={() => {}} closeMenu={() => {}} />,
+      <NavMobile navItems={mobileNavItems} isOpen openMenu={noop} closeMenu={noop} />,
     );
 
     expect(wrapper.container.querySelector('ul')).not.toBeNull();
@@ -41,12 +32,7 @@ describe('NavMobile', () => {
     const mockOpen = vi.fn();
 
     const wrapper = render(
-      <NavMobile
-        navItems={mobileNavItems}
-        isOpen={false}
-        openMenu={mockOpen}
-        closeMenu={() => {}}
-      />,
+      <NavMobile navItems={mobileNavItems} isOpen={false} openMenu={mockOpen} closeMenu={noop} />,
     );
 
     const hamburgerButton = wrapper.queryByTestId('Hamburger Button')!;
@@ -60,7 +46,7 @@ describe('NavMobile', () => {
     const mockClose = vi.fn();
 
     const wrapper = render(
-      <NavMobile navItems={mobileNavItems} isOpen openMenu={() => {}} closeMenu={mockClose} />,
+      <NavMobile navItems={mobileNavItems} isOpen openMenu={noop} closeMenu={mockClose} />,
     );
 
     const closeButton = wrapper.queryByTestId(CLOSE_BUTTON)!;

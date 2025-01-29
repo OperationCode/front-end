@@ -4,23 +4,22 @@ import { gtag } from 'common/utils/thirdParty/gtag';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
-import RegistrationForm from 'components/Forms/RegistrationForm/RegistrationForm';
-import { login } from 'common/utils/auth-utils';
+import { RegistrationForm } from 'components/Forms/RegistrationForm/RegistrationForm';
 
 const pageTitle = 'Join';
 
 const profileUpdateURL = '/join/form';
 
 export default function Join() {
-  const { prefetch } = useRouter();
+  const { prefetch, push } = useRouter();
 
   useEffect(() => {
     prefetch(profileUpdateURL);
   }, []);
 
-  const handleSuccess = ({ token }: { token: string }) => {
+  const handleSuccess = () => {
     gtag.conversionEvent({ adId: '9ZvVCOOFmrkBEK-Rnp4D', category: 'sign_up' });
-    login({ token }, profileUpdateURL);
+    push(profileUpdateURL);
   };
 
   return (

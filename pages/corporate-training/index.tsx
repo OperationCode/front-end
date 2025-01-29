@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 import classNames from 'classnames';
 
 const pageTitle = 'Corporate Training: Breaking Biases';

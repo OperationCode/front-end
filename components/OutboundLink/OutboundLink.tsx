@@ -3,7 +3,7 @@ import ExternalLinkIcon from 'static/images/icons/FontAwesome/external-link-squa
 import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
 import classNames from 'node_modules/classnames/index';
 
-export type OutboundLinkPropsType = {
+export interface OutboundLinkPropsType {
   /**
    * will report this label plus the URL from where it was clicked
    */
@@ -28,7 +28,7 @@ export type OutboundLinkPropsType = {
    * Adds an an icon to identify link is an external link.
    */
   hasIcon?: boolean;
-};
+}
 
 function OutboundLink({
   analyticsEventLabel,

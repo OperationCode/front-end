@@ -20,8 +20,7 @@ describe('Alert', () => {
 
     expect(onCloseMock).toHaveBeenCalledTimes(0);
 
-    // @ts-expect-error
-    fireEvent.click(queryByTestId(ALERT_CLOSE_BUTTON));
+    fireEvent.click(queryByTestId(ALERT_CLOSE_BUTTON)!);
 
     expect(onCloseMock).toHaveBeenCalledTimes(1);
   });

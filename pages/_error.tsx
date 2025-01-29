@@ -1,7 +1,8 @@
-import NextErrorComponent, { ErrorProps } from 'next/error';
+import type { ErrorProps } from 'next/error';
+import NextErrorComponent from 'next/error';
 import * as Sentry from '@sentry/nextjs';
 import ErrorDisplay from 'components/ErrorDisplay/ErrorDisplay';
-import { NextPageContext } from 'next';
+import type { NextPageContext } from 'next';
 
 interface CustomErrorProps extends ErrorProps {
   hasGetInitialPropsRun?: boolean;

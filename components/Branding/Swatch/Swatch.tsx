@@ -6,10 +6,10 @@ Swatch.propTypes = {
   hexCode: string.isRequired,
 };
 
-export type Swatch = {
+export interface Swatch {
   colorName: string;
   hexCode: string;
-};
+}
 
 function Swatch({ colorName, hexCode }: Swatch) {
   return (

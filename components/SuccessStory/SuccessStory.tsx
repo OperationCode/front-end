@@ -1,6 +1,6 @@
 import FlatCard from 'components/Cards/FlatCard/FlatCard';
 
-export type SuccessStoryPropsType = {
+export interface SuccessStoryPropsType {
   /**
    * Path to image used on the card.
    */
@@ -13,7 +13,7 @@ export type SuccessStoryPropsType = {
    * String applied to the card header.
    */
   title: string;
-};
+}
 
 function SuccessStory({ imageSource, quote, title }: SuccessStoryPropsType) {
   return (

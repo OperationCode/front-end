@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 
-export type DrawerPropsType = {
+export interface DrawerPropsType {
   /**
    * Content to be rendered in the Drawer.
    */
@@ -14,7 +14,7 @@ export type DrawerPropsType = {
    * @default false
    */
   isVisible?: boolean;
-};
+}
 
 function Drawer({ children, className, isVisible = false }: DrawerPropsType) {
   return (

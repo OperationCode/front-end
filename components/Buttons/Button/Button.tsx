@@ -1,4 +1,4 @@
-import React from 'react';
+import type { ButtonHTMLAttributes } from 'react';
 import noop from 'lodash/noop';
 import classNames from 'classnames';
 import { BUTTON } from 'common/constants/testIDs';
@@ -6,7 +6,7 @@ import { gtag } from 'common/utils/thirdParty/gtag';
 import { getDataAttributes, getAriaAttributes } from 'common/utils/prop-utils';
 import styles from './Button.module.css';
 
-type GoogleAnalyticsEventPropType = {
+interface GoogleAnalyticsEventPropType {
   /**
    * A description of the behaviour. E.g. 'Clicked Delete', 'Added a component', 'Deleted account'
    */
@@ -34,7 +34,7 @@ type GoogleAnalyticsEventPropType = {
    * 'beacon', 'xhr', or 'image'.
    */
   transport?: 'beacon' | 'xhr' | 'image';
-};
+}
 
 type ButtonProps = {
   /**
@@ -49,7 +49,7 @@ type ButtonProps = {
    * Sets the button color theme.
    */
   theme?: 'primary' | 'secondary';
-} & React.ButtonHTMLAttributes<HTMLButtonElement>;
+} & ButtonHTMLAttributes<HTMLButtonElement>;
 
 export default function Button({
   analyticsObject = {
@@ -87,7 +87,8 @@ export default function Button({
         onClick(e);
       }}
       tabIndex={tabIndex}
-      type={type}
+      // TODO: lint rule seems broken. check after updating lint deps?
+      type={type} // eslint-disable-line react/button-has-type
       {...customDataAttributes}
       {...ariaAttributes}
     >

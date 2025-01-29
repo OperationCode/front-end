@@ -3,12 +3,13 @@
  */
 module.exports = {
   extends: [
+    'plugin:@typescript-eslint/eslint-recommended',
     'airbnb',
     'plugin:jsx-a11y/recommended',
-    'prettier',
     'plugin:cypress/recommended',
     'plugin:storybook/recommended',
-    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:prettier/recommended',
+    'prettier',
   ],
   env: {
     browser: true,
@@ -19,7 +20,6 @@ module.exports = {
   },
   parser: '@babel/eslint-parser',
   plugins: [
-    'prettier',
     'unicorn',
     'cypress',
     '@operation_code/custom-rules',
@@ -31,107 +31,19 @@ module.exports = {
     cy: true,
     Cypress: true,
   },
-  overrides: [
-    {
-      files: ['./**/*.test.js', './**/*.test.jsx', './**/*.test.ts', './**/*.test.tsx'],
-      plugins: ['vitest'],
-      extends: ['plugin:vitest-globals/recommended', 'plugin:vitest/recommended'],
-      env: {
-        'vitest-globals/env': true,
-      },
-      rules: {
-        'vitest/consistent-test-it': ['error', { fn: 'it', withinDescribe: 'it' }],
-        'vitest/expect-expect': [
-          'error',
-          { assertFunctionNames: ['expect', 'createShallowSnapshotTest', 'createSnapshotTest'] },
-        ],
-        'vitest/prefer-lowercase-title': ['error', { ignore: ['describe'] }],
-        'vitest/no-test-prefixes': 'error',
-        'vitest/no-test-return-statement': 'error',
-        'vitest/prefer-strict-equal': 'error',
-        'vitest/valid-describe-callback': 'error',
-      },
-    },
-    {
-      files: ['./**/*.ts', './**/*.tsx'],
-      parser: '@typescript-eslint/parser',
-      parserOptions: {
-        project: true,
-      },
-      extends: ['plugin:@typescript-eslint/strict', 'plugin:@typescript-eslint/stylistic'],
-      rules: {
-        'react/no-array-index-key': 'off',
-        'react/require-default-props': 'off',
-
-        // Typescript Rules
-        // custom rules for typescript-eslint: https://github.com/OperationCode/front-end/pull/1792#pullrequestreview-1874516174
-        '@typescript-eslint/consistent-type-imports': ['error', { prefer: 'no-type-imports' }],
-        '@typescript-eslint/explicit-module-boundary-types': 'off',
-        '@typescript-eslint/naming-convention': [
-          'error',
-          {
-            selector: 'variable',
-            types: ['boolean'],
-            format: ['PascalCase', 'UPPER_CASE'],
-            prefix: [
-              'is',
-              'was',
-              'should',
-              'has',
-              'can',
-              'did',
-              'will',
-              'IS_',
-              'WAS_',
-              'SHOULD_',
-              'HAS_',
-              'CAN_',
-              'DID_',
-              'WILL_',
-            ],
-          },
-        ],
-        '@typescript-eslint/no-empty-interface': ['error', { allowSingleExtends: true }],
-        '@typescript-eslint/no-explicit-any': 'error',
-        '@typescript-eslint/no-unused-vars': ['error', { vars: 'all', varsIgnorePattern: '_' }],
-        '@typescript-eslint/unbound-method': 'off', // gives false negatives in arrow funcs
-      },
-    },
-    {
-      files: ['cypress/**/*.js'],
-      rules: {
-        'func-names': 'off',
-        'vitest/expect-expect': 'off',
-        'vitest/valid-expect': 'off',
-        'no-unused-expressions': ['off'],
-      },
-    },
-    {
-      files: [
-        'pages/**.js',
-        'components/head.js',
-        'components/nav.js',
-        'components/Timeline/historyData.js',
-      ],
-      rules: {
-        'react/react-in-jsx-scope': 'off',
-      },
-    },
-    {
-      files: ['components/nav.js', 'components/Footer/Footer.js'],
-      rules: { 'jsx-a11y/anchor-is-valid': 'off' },
-    },
-    {
-      files: ['components/UpdateProfileForm/**/*.js'],
-      rules: { 'react/sort-comp': 'off' },
-    },
-  ],
   rules: {
     // Import Rules
     'import/extensions': [
       'error',
       'never',
-      { css: 'always', jpg: 'always', json: 'always', png: 'always', svg: 'always' },
+      {
+        css: 'always',
+        jpg: 'always',
+        json: 'always',
+        png: 'always',
+        svg: 'always',
+        stories: 'always',
+      },
     ],
     'import/no-unresolved': 'off',
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
@@ -164,9 +76,6 @@ module.exports = {
 
     // Lodash Plugin Rules
     'lodash/import-scope': ['error', 'method'],
-
-    // Prettier Plugin Rules
-    'prettier/prettier': 'error',
 
     // React Plugin Rules
     'react/function-component-definition': [
@@ -247,5 +156,135 @@ module.exports = {
     ],
     'no-use-before-define': 'off',
   },
+  overrides: [
+    {
+      files: ['./**/*.test.js', './**/*.test.jsx', './**/*.test.ts', './**/*.test.tsx'],
+      plugins: ['vitest'],
+      extends: ['plugin:vitest-globals/recommended', 'plugin:vitest/recommended'],
+      env: {
+        'vitest-globals/env': true,
+      },
+      rules: {
+        'vitest/consistent-test-it': ['error', { fn: 'it', withinDescribe: 'it' }],
+        'vitest/expect-expect': [
+          'error',
+          { assertFunctionNames: ['expect', 'createShallowSnapshotTest', 'createSnapshotTest'] },
+        ],
+        'vitest/prefer-lowercase-title': ['error', { ignore: ['describe'] }],
+        'vitest/no-test-prefixes': 'error',
+        'vitest/no-test-return-statement': 'error',
+        'vitest/prefer-strict-equal': 'error',
+        'vitest/valid-describe-callback': 'error',
+      },
+    },
+    {
+      files: ['./**/*.ts', './**/*.tsx'],
+      parser: '@typescript-eslint/parser',
+      parserOptions: {
+        project: true,
+      },
+      extends: ['plugin:@typescript-eslint/strict', 'plugin:@typescript-eslint/stylistic'],
+      rules: {
+        // Deactivate rules not meant for TS
+        'no-restricted-imports': 'off',
+
+        // React Plugin Rules
+        'react/prop-types': 'off', // https://github.com/jsx-eslint/eslint-plugin-react/issues/3651
+        'react/no-array-index-key': 'off',
+        'react/require-default-props': 'off',
+
+        // Typescript Rules
+        '@typescript-eslint/consistent-type-imports': ['error'],
+        '@typescript-eslint/explicit-module-boundary-types': 'off',
+        '@typescript-eslint/naming-convention': [
+          'error',
+          {
+            selector: 'variable',
+            types: ['boolean'],
+            format: ['PascalCase', 'UPPER_CASE'],
+            prefix: [
+              'is',
+              'are',
+              'was',
+              'should',
+              'has',
+              'can',
+              'did',
+              'will',
+              'IS_',
+              'ARE_',
+              'WAS_',
+              'SHOULD_',
+              'HAS_',
+              'CAN_',
+              'DID_',
+              'WILL_',
+            ],
+          },
+        ],
+        '@typescript-eslint/no-empty-interface': ['error', { allowSingleExtends: true }],
+        '@typescript-eslint/no-explicit-any': 'error',
+        '@typescript-eslint/no-restricted-imports': [
+          'error',
+          {
+            paths: [
+              {
+                name: 'react-select',
+                message: 'Please use `components/Form/Select/ThemedReactSelect` instead.',
+              },
+              {
+                name: 'formik',
+                importNames: ['Form'],
+                message: `Please use our Form component to have good defaults defined.\n "import Form from 'components/Form/Form';"`,
+              },
+              {
+                name: 'react',
+                importNames: ['default'],
+                message: 'React is globally availble for all page files.',
+              },
+            ],
+          },
+        ],
+        '@typescript-eslint/no-unused-vars': ['error', { vars: 'all', varsIgnorePattern: '_' }],
+        '@typescript-eslint/unbound-method': 'off', // gives false negatives in arrow funcs
+      },
+    },
+    {
+      files: ['./**/*.test.ts', './**/*.test.tsx'],
+      rules: {
+        '@typescript-eslint/no-non-null-assertion': 'off',
+      },
+    },
+    {
+      files: ['./pages/api/**/*.ts'],
+      rules: {
+        'no-console': 'off',
+      },
+    },
+    {
+      files: ['cypress/**/*.js'],
+      rules: {
+        'func-names': 'off',
+        'vitest/expect-expect': 'off',
+        'vitest/valid-expect': 'off',
+        'no-unused-expressions': ['off'],
+      },
+    },
+    {
+      files: [
+        'pages/**.js',
+        'components/head.js',
+        'components/nav.js',
+        'components/Timeline/historyData.js',
+      ],
+      rules: {
+        'react/react-in-jsx-scope': 'off',
+      },
+    },
+    {
+      files: ['components/nav.js', 'components/Footer/Footer.js'],
+      rules: { 'jsx-a11y/anchor-is-valid': 'off' },
+    },
+  ],
   root: true,
 };

@@ -1,5 +1,5 @@
 /* Do not attempt to change values in themeMap - only change in ./variables.css */
-@import "./variables.css";
+@import url('./variables.css');
 
 /* stylelint-disable at-rule-no-unknown */
 @tailwind base;
@@ -9,11 +9,13 @@
 
 /* Global Styles */
 @font-face {
-  font-family: "DIN Condensed Bold";
+  font-family: 'DIN Condensed Bold';
   font-style: normal;
   font-weight: normal;
   font-display: auto;
+  /* stylelint-disable-next-line at-rule-descriptor-no-unknown */
   -webkit-font-smoothing: antialiased;
+  /* stylelint-disable-next-line at-rule-descriptor-no-unknown */
   -moz-osx-font-smoothing: grayscale;
 
   /* prettier-ignore */

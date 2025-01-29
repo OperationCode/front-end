@@ -7,7 +7,7 @@ import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
 import Image from 'next/image';
 import styles from './NavMobile.module.css';
 
-type SublinkType = {
+interface SublinkType {
   /**
    * String used as the link label.
    */
@@ -16,9 +16,9 @@ type SublinkType = {
    * String used for the URL.
    */
   href: string;
-};
+}
 
-type NavItemType = {
+interface NavItemType {
   /**
    * String used as the link label.
    */
@@ -32,9 +32,9 @@ type NavItemType = {
    * Adds nested sublinks.
    */
   sublinks?: SublinkType[];
-};
+}
 
-export type NavMobilePropsType = {
+export interface NavMobilePropsType {
   /**
    * Sets if the mobile navigation is open or closed.
    */
@@ -51,7 +51,7 @@ export type NavMobilePropsType = {
    * List of navigations items.
    */
   navItems: NavItemType[];
-};
+}
 
 function NavMobile({ isOpen, openMenu, closeMenu, navItems }: NavMobilePropsType) {
   return (

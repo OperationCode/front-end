@@ -17,8 +17,7 @@ describe('Accordion', () => {
 
     expect(Content).not.toBeVisible();
 
-    // @ts-expect-error
-    fireEvent.click(component.queryByTestId(ACCORDION_TOGGLE_BUTTON));
+    fireEvent.click(component.queryByTestId(ACCORDION_TOGGLE_BUTTON)!);
 
     expect(Content).toBeVisible();
   });
@@ -27,13 +26,10 @@ describe('Accordion', () => {
 describe('Accordion Accessibility', () => {
   it('should display the correct screenReader text for toggle button', async () => {
     const component = render(<AccordionStory />);
-    const Button = component.queryByTestId(SCREEN_READER_ONLY);
+    const Button = component.queryByTestId(SCREEN_READER_ONLY)!;
 
-    //@ts-expect-error
     expect(Button.textContent).toBe(toggleMessages.open);
-    //@ts-expect-error
     fireEvent.click(Button);
-    //@ts-expect-error
     expect(Button.textContent).toBe(toggleMessages.close);
   });
 });

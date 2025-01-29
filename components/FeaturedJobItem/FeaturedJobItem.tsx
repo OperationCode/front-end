@@ -3,7 +3,7 @@ import BuildingIcon from 'static/images/icons/FontAwesome/building_icon.svg';
 import CloudUploadIcon from 'static/images/icons/FontAwesome/cloud_upload_icon.svg';
 import MapMarkerIcon from 'static/images/icons/FontAwesome/map_marker_icon.svg';
 
-export type FeaturedJobItemPropsType = {
+export interface FeaturedJobItemPropsType {
   /**
    * Title of the feautured job item.
    */
@@ -37,7 +37,7 @@ export type FeaturedJobItemPropsType = {
    * @default false
    */
   remote?: boolean;
-};
+}
 
 function FeaturedJobItem({
   title,

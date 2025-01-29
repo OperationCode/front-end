@@ -5,12 +5,12 @@ import PlusIcon from 'static/images/icons/plus.svg';
 import MinusIcon from 'static/images/icons/minus.svg';
 import styles from './NavListItem.module.css';
 
-type SublinkType = {
+interface SublinkType {
   name: string;
   href: string;
-};
+}
 
-export type NavListItemPropsType = {
+export interface NavListItemPropsType {
   /**
    * Text used for the label.
    */
@@ -27,7 +27,7 @@ export type NavListItemPropsType = {
    * Includes an optional icon.
    */
   icon?: React.ReactElement | null;
-};
+}
 
 function NavListItem({ sublinks, href, name, icon = null }: NavListItemPropsType) {
   const [areSublinksVisible, setSublinksVisible] = useState(false);
