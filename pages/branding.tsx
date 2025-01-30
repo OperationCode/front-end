@@ -15,7 +15,7 @@ function Branding() {
       <Head title={pageTitle} />
 
       <HeroBanner isFullViewportHeight title={pageTitle}>
-        <h6>
+        <h6 className="text-center">
           For external organizations, corporate sponsors and press, please obtain specific guidance
           and approval from the Director of Communications prior to using Operation Code Branding on
           public platforms. You may email your request to marketing@operationcode.org

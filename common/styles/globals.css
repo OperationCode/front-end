@@ -93,6 +93,7 @@ a:hover {
 p {
   line-height: 1.75;
   max-width: var(--typicalMaxWidth);
+  padding: 16px 0;
 }
 
 #root {
