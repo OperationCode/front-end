@@ -5,132 +5,136 @@ import PlusIcon from 'static/images/icons/plus.svg';
 import MinusIcon from 'static/images/icons/minus.svg';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 import styles from './NavListItem.module.css';
+import { twMerge } from 'tailwind-merge';
 
 interface SublinkType {
-    name: string;
-    href: string;
-    isExternal?: boolean;
-};
-
-export interface NavListItemPropsType {
-    /**
-     * Text used for the label.
-     */
-    name: string;
-    /**
-     * Url to be passed to the base anchor element.
-     */
-    href: string;
-    /**
-     * List of child links containing the `name` and `href`
-     */
-    sublinks?: SublinkType[];
-    /**
-     * Includes an optional icon.
-     */
-    icon?: React.ReactElement | null;
+  name: string;
+  href: string;
+  isExternal?: boolean;
 }
 
-function NavListItem({ sublinks, href, name, icon = null}: NavListItemPropsType) {
-    const [areSublinksVisible, setSublinksVisible] = useState(false);
+export interface NavListItemPropsType {
+  /**
+   * Text used for the label.
+   */
+  name: string;
+  /**
+   * Url to be passed to the base anchor element.
+   */
+  href: string;
+  /**
+   * List of child links containing the `name` and `href`
+   */
+  sublinks?: SublinkType[];
+  /**
+   * Includes an optional icon.
+   */
+  icon?: React.ReactElement | null;
+}
 
-    const handleKeyDown = (event: React.KeyboardEvent, indexKeyedOn: number) => {
-        const lastSublinkIndex = sublinks && sublinks.length - 1;
-        const isLastSublink = indexKeyedOn === lastSublinkIndex;
-        const isFirstSublink = indexKeyedOn === 0;
+function NavListItem({ sublinks, href, name, icon = null }: NavListItemPropsType) {
+  const [areSublinksVisible, setSublinksVisible] = useState(false);
 
-        const didHitTab = event.key === 'Tab';
-        const didTabForward = didHitTab && !event.shiftKey;
-        const didTabBackward = didHitTab && event.shiftKey;
+  const handleKeyDown = (event: React.KeyboardEvent, indexKeyedOn: number) => {
+    const lastSublinkIndex = sublinks && sublinks.length - 1;
+    const isLastSublink = indexKeyedOn === lastSublinkIndex;
+    const isFirstSublink = indexKeyedOn === 0;
 
-        const shouldHideSublinks =
-            (isLastSublink && didTabForward) || (isFirstSublink && didTabBackward);
+    const didHitTab = event.key === 'Tab';
+    const didTabForward = didHitTab && !event.shiftKey;
+    const didTabBackward = didHitTab && event.shiftKey;
 
-        if (shouldHideSublinks) {
-            setSublinksVisible(false);
-        }
-    };
+    const shouldHideSublinks =
+      (isLastSublink && didTabForward) || (isFirstSublink && didTabBackward);
 
-    const hasSublinks = sublinks && sublinks.length > 0;
-    const exposeSublinks = () => setSublinksVisible(true);
-    const hideSublinks = () => setSublinksVisible(false);
-    const invertSublinkVisibility = () => setSublinksVisible(previousState => !previousState);
+    if (shouldHideSublinks) {
+      setSublinksVisible(false);
+    }
+  };
 
-    return (
-        <li className={styles.NavListItem}>
-            <Link href={href}>
-                <a
-                    className={classNames(styles.link, styles.navItemLink)}
-                    onMouseEnter={exposeSublinks}
-                    onMouseLeave={hideSublinks}
-                    role="link"
-                    tabIndex={0}
-                    data-testid={`Nav Item ${name}`}
-                >
-                    <span className={styles.linkContent}>{name}</span>
-                    {icon && icon}
-                </a>
-            </Link>
+  const hasSublinks = sublinks && sublinks.length > 0;
+  const exposeSublinks = () => setSublinksVisible(true);
+  const hideSublinks = () => setSublinksVisible(false);
+  const invertSublinkVisibility = () => setSublinksVisible(previousState => !previousState);
 
-            {hasSublinks && (
-                <>
-                    <button
-                        aria-expanded={areSublinksVisible}
-                        aria-haspopup={hasSublinks}
-                        aria-label="submenu"
-                        className={styles.sublinkToggleButton}
-                        onClick={invertSublinkVisibility}
-                        onMouseEnter={exposeSublinks}
-                        onMouseLeave={hideSublinks}
-                        type="button"
-                    >
-                        {areSublinksVisible ? (
-                            <MinusIcon className={styles.icon} data-testid="minus-icon" />
-                        ) : (
-                            <PlusIcon className={styles.icon} data-testid="plus-icon" />
-                        )}
-                    </button>
+  return (
+    <li className={styles.NavListItem}>
+      <Link href={href}>
+        <a
+          className={classNames(
+            twMerge(styles.link, '[&>svg]:-bottom-2 [&>svg]:right-3'),
+            styles.navItemLink,
+          )}
+          onMouseEnter={exposeSublinks}
+          onMouseLeave={hideSublinks}
+          role="link"
+          tabIndex={0}
+          data-testid={`Nav Item ${name}`}
+        >
+          <span className={styles.linkContent}>{name}</span>
+          {icon && icon}
+        </a>
+      </Link>
 
-                    <ul
-                        className={classNames(styles.sublinksList, {
-                            [styles.invisible]: !areSublinksVisible,
-                        })}
-                        onMouseEnter={exposeSublinks}
-                        onMouseLeave={hideSublinks}
-                    >
-                        {sublinks.map((sublink, index) => (
-                            <li className={styles.sublinkListItem} key={sublink.name}>
-                                {/* 😞 next/link fought being mocked, so `prefetch` has test-specific code */}
-                                {!sublink.isExternal ? (
-                                    <Link href={sublink.href} prefetch={process.env.NODE_ENV === 'production'}>
-                                        <a
-                                            className={styles.link}
-                                            role="link"
-                                            tabIndex={0}
-                                            data-testid={`Nav Item ${sublink.name}`}
-                                            onKeyDown={event => handleKeyDown(event, index)}
-                                        >
-                                            <span className={styles.linkContent}>{sublink.name}</span>
-                                        </a>
-                                    </Link>
-                                ) : (
-                                    <OutboundLink
-                                        analyticsEventLabel={`Clicked on ${sublink.name} -> ${sublink.href}`}
-                                        className={styles.link}
-                                        data-testid={`Nav Item ${sublink.name}`}
-                                        href={sublink.href}
-                                        hasIcon
-                                    >
-                                        <span className={styles.link}>{sublink.name}</span>
-                                    </OutboundLink>
-                                )}
-                            </li>
-                        ))}
-                    </ul>
-                </>
+      {hasSublinks && (
+        <>
+          <button
+            aria-expanded={areSublinksVisible}
+            aria-haspopup={hasSublinks}
+            aria-label="submenu"
+            className={styles.sublinkToggleButton}
+            onClick={invertSublinkVisibility}
+            onMouseEnter={exposeSublinks}
+            onMouseLeave={hideSublinks}
+            type="button"
+          >
+            {areSublinksVisible ? (
+              <MinusIcon className={styles.icon} data-testid="minus-icon" />
+            ) : (
+              <PlusIcon className={styles.icon} data-testid="plus-icon" />
             )}
-        </li>
-    );
+          </button>
+
+          <ul
+            className={classNames(styles.sublinksList, {
+              [styles.invisible]: !areSublinksVisible,
+            })}
+            onMouseEnter={exposeSublinks}
+            onMouseLeave={hideSublinks}
+          >
+            {sublinks.map((sublink, index) => (
+              <li className={styles.sublinkListItem} key={sublink.name}>
+                {/* 😞 next/link fought being mocked, so `prefetch` has test-specific code */}
+                {!sublink.isExternal ? (
+                  <Link href={sublink.href} prefetch={process.env.NODE_ENV === 'production'}>
+                    <a
+                      className={twMerge(styles.link, '[&>svg]:-bottom-2 [&>svg]:right-3')}
+                      role="link"
+                      tabIndex={0}
+                      data-testid={`Nav Item ${sublink.name}`}
+                      onKeyDown={event => handleKeyDown(event, index)}
+                    >
+                      <span className={styles.linkContent}>{sublink.name}</span>
+                    </a>
+                  </Link>
+                ) : (
+                  <OutboundLink
+                    analyticsEventLabel={`Clicked on ${sublink.name} -> ${sublink.href}`}
+                    className={twMerge(styles.link, '[&>svg]:-bottom-2 [&>svg]:right-3')}
+                    data-testid={`Nav Item ${sublink.name}`}
+                    href={sublink.href}
+                    hasIcon
+                  >
+                    <span className={twMerge(styles.link, '[&>svg]:-bottom-2 [&>svg]:right-3')}>{sublink.name}</span>
+                  </OutboundLink>
+                )}
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
+    </li>
+  );
 }
 
 export default NavListItem;
