@@ -41,6 +41,7 @@ exports[`Nav > should render with no props passed 1`] = `
         },
         {
           "href": "/swag",
+          "isExternal": true,
           "name": "Merch Store",
         },
         {
@@ -69,7 +70,7 @@ exports[`Nav > should render with no props passed 1`] = `
           href="/"
         >
           <a
-            className="logoLink link"
+            className="logoLink link [&>svg]:-bottom-2 [&>svg]:right-3"
             onContextMenu={[Function]}
           >
             <ForwardRef
@@ -85,7 +86,7 @@ exports[`Nav > should render with no props passed 1`] = `
           </a>
         </ForwardRef(LinkComponent)>
         <ul
-          className="link"
+          className="link [&>svg]:-bottom-2 [&>svg]:right-3"
         >
           <ForwardRef(LoadableComponent)
             href="/about"
@@ -153,6 +154,7 @@ exports[`Nav > should render with no props passed 1`] = `
                 },
                 {
                   "href": "/swag",
+                  "isExternal": true,
                   "name": "Merch Store",
                 },
                 {
@@ -171,7 +173,7 @@ exports[`Nav > should render with no props passed 1`] = `
               href="/donate"
             >
               <a
-                className="link donateLink"
+                className="link [&>svg]:-bottom-2 [&>svg]:right-3 donateLink"
               >
                 Donate
               </a>

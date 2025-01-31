@@ -3,14 +3,17 @@ import classNames from 'classnames';
 import Link from 'next/link';
 import PlusIcon from 'static/images/icons/plus.svg';
 import MinusIcon from 'static/images/icons/minus.svg';
+import OutboundLink from 'components/OutboundLink/OutboundLink';
+import { twMerge } from 'tailwind-merge';
 import styles from './NavListItem.module.css';
 
-type SublinkType = {
+interface SublinkType {
   name: string;
   href: string;
-};
+  isExternal?: boolean;
+}
 
-export type NavListItemPropsType = {
+export interface NavListItemPropsType {
   /**
    * Text used for the label.
    */
@@ -27,7 +30,7 @@ export type NavListItemPropsType = {
    * Includes an optional icon.
    */
   icon?: React.ReactElement | null;
-};
+}
 
 function NavListItem({ sublinks, href, name, icon = null }: NavListItemPropsType) {
   const [areSublinksVisible, setSublinksVisible] = useState(false);
@@ -58,7 +61,10 @@ function NavListItem({ sublinks, href, name, icon = null }: NavListItemPropsType
     <li className={styles.NavListItem}>
       <Link href={href}>
         <a
-          className={classNames(styles.link, styles.navItemLink)}
+          className={classNames(
+            twMerge(styles.link, '[&>svg]:-bottom-2 [&>svg]:right-3'),
+            styles.navItemLink,
+          )}
           onMouseEnter={exposeSublinks}
           onMouseLeave={hideSublinks}
           role="link"
@@ -99,18 +105,29 @@ function NavListItem({ sublinks, href, name, icon = null }: NavListItemPropsType
             {sublinks.map((sublink, index) => (
               <li className={styles.sublinkListItem} key={sublink.name}>
                 {/* 😞 next/link fought being mocked, so `prefetch` has test-specific code */}
-                <Link href={sublink.href} prefetch={process.env.NODE_ENV === 'production'}>
-                  <a
-                    className={styles.link}
-                    key={sublink.name}
-                    role="link"
-                    tabIndex={0}
+                {!sublink.isExternal ? (
+                  <Link href={sublink.href} prefetch={process.env.NODE_ENV === 'production'}>
+                    <a
+                      className={twMerge(styles.link, '[&>svg]:-bottom-2 [&>svg]:right-3')}
+                      role="link"
+                      tabIndex={0}
+                      data-testid={`Nav Item ${sublink.name}`}
+                      onKeyDown={event => handleKeyDown(event, index)}
+                    >
+                      <span className={styles.linkContent}>{sublink.name}</span>
+                    </a>
+                  </Link>
+                ) : (
+                  <OutboundLink
+                    analyticsEventLabel={`Clicked on ${sublink.name} -> ${sublink.href}`}
+                    className={twMerge(styles.link, '[&>svg]:-bottom-2 [&>svg]:right-3')}
                     data-testid={`Nav Item ${sublink.name}`}
-                    onKeyDown={event => handleKeyDown(event, index)}
+                    href={sublink.href}
+                    hasIcon
                   >
-                    <span className={styles.linkContent}>{sublink.name}</span>
-                  </a>
-                </Link>
+                    <span className={twMerge(styles.link, '[&>svg]:-bottom-2 [&>svg]:right-3')}>{sublink.name}</span>
+                  </OutboundLink>
+                )}
               </li>
             ))}
           </ul>

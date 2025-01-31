@@ -53,6 +53,7 @@ const getInvolved = {
 const merchStore = {
   name: 'Merch Store',
   href: '/swag',
+  isExternal: true,
 };
 
 const jobs = {
