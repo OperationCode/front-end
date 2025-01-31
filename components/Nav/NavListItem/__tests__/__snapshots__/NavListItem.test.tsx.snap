@@ -8,7 +8,7 @@ exports[`NavListItem > should render with required props passed 1`] = `
     href="/test"
   >
     <a
-      className="link [&>svg]:-bottom-2 [&>svg]:right-3 navItemLink"
+      className="link navItemLink"
       data-testid="Nav Item Test"
       onMouseEnter={[Function]}
       onMouseLeave={[Function]}
