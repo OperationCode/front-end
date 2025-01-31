@@ -4,8 +4,8 @@ import Link from 'next/link';
 import PlusIcon from 'static/images/icons/plus.svg';
 import MinusIcon from 'static/images/icons/minus.svg';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
-import styles from './NavListItem.module.css';
 import { twMerge } from 'tailwind-merge';
+import styles from './NavListItem.module.css';
 
 interface SublinkType {
   name: string;

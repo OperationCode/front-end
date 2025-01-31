@@ -3,7 +3,6 @@ import Link from 'next/link';
 import Router from 'next/router';
 import classNames from 'classnames';
 import Logo from 'public/static/images/logo.svg';
-
 import { desktopNavItems, mobileNavItems } from 'common/constants/navigation';
 import NavMobile from 'components/Nav/NavMobile/NavMobile';
 import dynamic from 'next/dynamic';
