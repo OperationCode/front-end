@@ -29,7 +29,11 @@
     "test:changes:watch": "yarn test:changes --watch",
     "test:watch": "yarn test --watch",
     "test:update-snaps": "yarn test -u",
-    "test:ui": "vitest --ui"
+    "test:ui": "vitest --ui",
+    "test-e2e": "playwright test",
+    "create-report": "nyc report --reporter html --reporter text --reporter json -t coverage --report-dir coverage/summary",
+    "show-report": "yarn playwright show-report",
+    "coverage": "yarn test-e2e && yarn create-report"
   },
   "nyc": {
     "extends": "./nyc.config.js",
@@ -43,6 +47,7 @@
     "@innocuous/components": "^2.1.1",
     "@innocuous/functions": "^2.1.1",
     "@next/bundle-analyzer": "12.3.1",
+    "@playwright/test": "^1.44.1",
     "@radix-ui/react-dialog": "1.0.0",
     "@radix-ui/react-tabs": "0.1.1",
     "@sentry/nextjs": "^7.77.0",
@@ -66,6 +71,7 @@
     "next-cookies": "^2.0.3",
     "next-sitemap": "^4.2.3",
     "nuka-carousel": "^5.2.0",
+    "nyc": "^15.1.0",
     "object-hash": "^3.0.0",
     "path": "^0.12.7",
     "prop-types": "^15.8.1",
@@ -81,6 +87,8 @@
     "react-select": "^4.0.2",
     "react-youtube": "9.0.3",
     "tailwind-merge": "^2.1.0",
+    "ts-jest": "^29.1.4",
+    "ts-node": "^10.9.2",
     "yup": "^0.32.11"
   },
   "devDependencies": {
@@ -108,6 +116,7 @@
     "@types/jest": "^29.5.12",
     "@types/lodash": "^4.14.202",
     "@types/logrocket-react": "^3.0.3",
+    "@types/node": "^20.14.2",
     "@types/object-hash": "^3.0.0",
     "@types/prop-types": "^15.7.11",
     "@types/react": "^18.2.55",
