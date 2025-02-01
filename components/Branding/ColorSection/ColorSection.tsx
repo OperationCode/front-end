@@ -15,18 +15,18 @@ function ColorSection() {
   });
 
   return (
-    <>
+    <div className="text-center">
       <Content
         title="Colors"
         hasTitleUnderline
         theme="white"
         columns={[
           <div>
-            <h3 className="text-center">Primary</h3>
+            <h3>Primary</h3>
             <Swatch colorName={primaryColor.name} hexCode={primaryColor.hexCode} />
           </div>,
           <div>
-            <h3 className="text-center">Secondary</h3>
+            <h3>Secondary</h3>
             <Swatch colorName={secondaryColor.name} hexCode={secondaryColor.hexCode} />
           </div>,
         ]}
@@ -38,7 +38,7 @@ function ColorSection() {
           <Swatch colorName={colorName} hexCode={brandColorsObject[colorName]} key={colorName} />
         ))}
       />
-    </>
+    </div>
   );
 }
 
