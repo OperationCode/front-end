@@ -12,6 +12,7 @@
   max-width: var(--typicalMaxWidth);
   justify-content: space-evenly;
   flex-wrap: wrap;
+  column-gap: 0.5rem;
 }
 
 .Home .ctaContainer > * {
