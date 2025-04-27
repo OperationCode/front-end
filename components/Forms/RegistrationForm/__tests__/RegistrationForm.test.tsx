@@ -5,6 +5,7 @@ import { mockUser } from 'test-utils/mockGenerators/mockUser';
 import { describe, expect, it } from 'vitest';
 import MockAdapter from 'axios-mock-adapter';
 import axios from 'axios';
+import { REGISTRATION_FORM_INITIAL_SUBMIT_BUTTON } from 'common/constants/testIDs';
 import { RegistrationForm } from '../RegistrationForm';
 
 const axiosMock = new MockAdapter(axios);
@@ -22,11 +23,11 @@ describe('RegistrationForm', () => {
     const successSpy = vi.fn();
     const submitSpy = vi.fn();
 
-    const { getByText } = render(
+    const { getByTestId } = render(
       <RegistrationForm onSubmit={submitSpy} onSuccess={successSpy} initialValues={user} />,
     );
 
-    fireEvent.click(getByText('Submit'));
+    fireEvent.click(getByTestId(REGISTRATION_FORM_INITIAL_SUBMIT_BUTTON));
 
     await waitFor(() => {
       expect(submitSpy).toHaveBeenCalledTimes(1);
@@ -40,13 +41,13 @@ describe('RegistrationForm', () => {
     axiosMock.onPost('/api/registration/new', user).reply(200);
 
     const successSpy = vi.fn(() => Promise.resolve(true));
-    const { container, getByText, findByText } = render(
+    const { container, getByTestId, findByTestId } = render(
       <RegistrationForm onSuccess={successSpy} initialValues={user} />,
     );
 
-    fireEvent.click(getByText('Submit'));
+    fireEvent.click(getByTestId(REGISTRATION_FORM_INITIAL_SUBMIT_BUTTON));
 
-    const submit = await findByText('Submit');
+    const submit = await findByTestId(REGISTRATION_FORM_INITIAL_SUBMIT_BUTTON);
     expect(submit).not.toBeDisabled();
     container.querySelectorAll('input').forEach(input => {
       expect(input.textContent).toBeFalsy();
@@ -64,7 +65,7 @@ describe('RegistrationForm', () => {
 
     // No Alert on mount
     expect(screen.queryByRole('alert')).not.toBeInTheDocument();
-    fireEvent.click(screen.getByText('Submit'));
+    fireEvent.click(screen.getByTestId(REGISTRATION_FORM_INITIAL_SUBMIT_BUTTON));
 
     // Alert shown after submitting
     await waitFor(() => expect(submitSpy).toHaveBeenCalledTimes(1));

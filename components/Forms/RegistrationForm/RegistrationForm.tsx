@@ -14,6 +14,7 @@ import OutboundLink from 'components/OutboundLink/OutboundLink';
 import type { AxiosError } from 'axios';
 import axios from 'axios';
 import { InlineLoadingSpinner } from 'components/InlineLoadingSpinner';
+import { REGISTRATION_FORM_INITIAL_SUBMIT_BUTTON } from 'common/constants/testIDs';
 
 export interface RegistrationFormValues {
   email: string;
@@ -222,7 +223,12 @@ export function RegistrationForm({
           {errorMessage && <Alert type="error">{errorMessage}</Alert>}
 
           <div className="max-w-md px-3 mt-5">
-            <Button type="submit" theme="secondary" disabled={isSubmitting}>
+            <Button
+              type="submit"
+              theme="secondary"
+              disabled={isSubmitting}
+              data-testid={REGISTRATION_FORM_INITIAL_SUBMIT_BUTTON}
+            >
               <span className="flex items-center justify-center gap-x-2">
                 {isSubmitting && <InlineLoadingSpinner />}
                 <span className="mt-[0.325rem]">Submit ✓</span>

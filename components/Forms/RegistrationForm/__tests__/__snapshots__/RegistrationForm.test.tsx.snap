@@ -327,13 +327,21 @@ exports[`RegistrationForm > should render with required props 1`] = `
   >
     <button
       className="Button secondary"
-      data-testid="BUTTON"
+      data-testid="REGISTRATION_FORM_INITIAL_SUBMIT_BUTTON"
       disabled={false}
       onClick={[Function]}
       tabIndex={0}
       type="submit"
     >
-      Submit
+      <span
+        className="flex items-center justify-center gap-x-2"
+      >
+        <span
+          className="mt-[0.325rem]"
+        >
+          Submit ✓
+        </span>
+      </span>
     </button>
     <p
       className="pt-5 text-xs"
