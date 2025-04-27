@@ -13,6 +13,7 @@ import Link from 'next/link';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 import type { AxiosError } from 'axios';
 import axios from 'axios';
+import { InlineLoadingSpinner } from 'components/InlineLoadingSpinner';
 
 export interface RegistrationFormValues {
   email: string;
@@ -222,7 +223,10 @@ export function RegistrationForm({
 
           <div className="max-w-md px-3 mt-5">
             <Button type="submit" theme="secondary" disabled={isSubmitting}>
-              Submit
+              <span className="flex items-center justify-center gap-x-2">
+                {isSubmitting && <InlineLoadingSpinner />}
+                <span className="mt-[0.325rem]">Submit ✓</span>
+              </span>
             </Button>
             <p className="pt-5 text-xs">
               The demographic information you provide, helps us understand our community needs,

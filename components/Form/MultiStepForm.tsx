@@ -14,18 +14,8 @@ import Button from 'components/Buttons/Button/Button';
 import Form from 'components/Form/Form';
 import Alert from 'components/Alert/Alert';
 import ProgressIndicator from 'components/ProgressIndicator/ProgressIndicator';
-import { twMerge } from 'tailwind-merge';
 import type { OptionType } from 'components/Form/Select/ThemedReactSelect';
-
-const InlineLoadingSpinner = ({ className }: { className?: string }) => (
-  <span
-    aria-hidden
-    className={twMerge(
-      'border-solid border-white border-4 !border-b-themePrimary rounded-[50%] h-5 w-5 box-border animate-spin group-hover:border-themeSecondary transition-colors',
-      className,
-    )}
-  />
-);
+import { InlineLoadingSpinner } from 'components/InlineLoadingSpinner';
 
 interface MultiStepFormProps<T> {
   initialValues: T;
