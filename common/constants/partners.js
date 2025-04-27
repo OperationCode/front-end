@@ -20,12 +20,6 @@ const partners = [
     type: PARTNER_TYPES.KIND,
   },
   {
-    name: 'Slack',
-    logoSource: `${s3}partnerLogos/slack.png`,
-    url: 'https://slack.com/?utm_source=operationcode',
-    type: PARTNER_TYPES.PAID,
-  },
-  {
     name: 'Elyon International',
     logoSource: `${s3}partnerLogos/elyon.png`,
     url: 'https://elyoninternational.com/?utm_source=operationcode',
