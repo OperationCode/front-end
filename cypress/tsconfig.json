@@ -1,5 +1,15 @@
 {
   "compilerOptions": {
+    "paths": {
+      "common/*": ["../common/*"],
+      "components/*": ["../components/*"],
+      "pages/*": ["../pages/*"],
+      "public/*": ["../public/*"],
+      "scripts/*": ["../scripts/*"],
+      "static/*": ["../public/static/*"],
+      "styles/*": ["../styles/*"],
+      "test-utils/*": ["../test-utils/*"]
+    },
     "types": ["cypress", "@testing-library/cypress"]
   }
 }
