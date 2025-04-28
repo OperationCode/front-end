@@ -1,7 +1,10 @@
 import existingUser from 'test-utils/mocks/existingUser';
 import { mockUser } from 'test-utils/mockGenerators/mockUser';
 import { validationErrorMessages } from 'common/constants/messages';
-import { SUCCESS_PAGE_MESSAGE } from 'common/constants/testIDs';
+import {
+  SUCCESS_PAGE_MESSAGE,
+  REGISTRATION_FORM_INITIAL_SUBMIT_BUTTON,
+} from 'common/constants/testIDs';
 
 const getValidUser = () => mockUser();
 const inputFields = {
@@ -28,7 +31,7 @@ const assertFailedLogin = ({
   numberOfErrors = 1,
   errorMessage = validationErrorMessages.required,
 } = {}) => {
-  cy.findByText('Submit').click();
+  cy.findByTestId(REGISTRATION_FORM_INITIAL_SUBMIT_BUTTON).click();
   cy.url().should('contain', '/join');
   assertError({ numberOfErrors, errorMessage });
   cy.getCookies().should('have.length', 0);
@@ -306,7 +309,7 @@ describe('join', () => {
     cy.findByLabelText(inputFields.zipcode).type(validUser.zipcode);
     cy.findByLabelText(inputFields.codeOfConduct).type(validUser.codeOfConduct);
     cy.findByLabelText(inputFields.slackGuidelines).type(validUser.slackGuidelines);
-    cy.findByText('Submit').click();
+    cy.findByTestId(REGISTRATION_FORM_INITIAL_SUBMIT_BUTTON).click();
 
     cy.url({ timeout: 20000 }).should('contain', '/join/form');
     cy.get('h1').should('have.text', 'Update Profile');
