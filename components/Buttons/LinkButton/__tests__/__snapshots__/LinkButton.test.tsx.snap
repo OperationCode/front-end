@@ -25,6 +25,7 @@ exports[`LinkButton > should render with required props 1`] = `
   href="https://tests.com"
   onClick={[Function]}
   onMouseEnter={[Function]}
+  onTouchStart={[Function]}
 >
   Test
 </a>
