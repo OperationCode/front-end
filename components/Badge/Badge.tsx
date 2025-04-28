@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 
-export type BadgePropsType = {
+export interface BadgePropsType {
   /**
    * SVG icon to be used as the badge.
    */
@@ -15,10 +15,10 @@ export type BadgePropsType = {
   className?: string;
   /**
    * Sets whether the label is rendered above, or below, the badge..
-   * @default - true  
+   * @default - true
    */
   isImageFirst?: boolean;
-};
+}
 
 function Badge({ className = undefined, icon, isImageFirst = true, label }: BadgePropsType) {
   return (

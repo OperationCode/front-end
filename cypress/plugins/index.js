@@ -9,6 +9,7 @@
 // ***********************************************************
 const { addMatchImageSnapshotPlugin } = require('cypress-image-snapshot/plugin');
 const webpack = require('@cypress/webpack-preprocessor');
+const { DefinePlugin } = require('webpack');
 // This function is called when a project is opened or re-opened (e.g. due to
 // the project's config changing)
 // eslint-disable-next-line no-unused-vars
@@ -28,9 +29,41 @@ module.exports = (on, config) => {
   on(
     'file:preprocessor',
     webpack({
-      webpackOptions: { resolve: { alias: require('../../pathAliases') } },
+      webpackOptions: {
+        resolve: {
+          alias: require('../../pathAliases'),
+          extensions: ['.js', '.ts', '.tsx'],
+        },
+        plugins: [
+          new DefinePlugin({
+            'process.env': {
+              NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+              PRODUCTION_DEPLOYMENT: JSON.stringify(false),
+            },
+          }),
+        ],
+        module: {
+          rules: [
+            {
+              test: /\.(js|ts|tsx)$/,
+              exclude: [/node_modules/],
+              use: [
+                {
+                  loader: 'babel-loader',
+                  options: {
+                    presets: ['@babel/preset-typescript'],
+                  },
+                },
+              ],
+            },
+          ],
+        },
+      },
       watchOptions: {},
     }),
   );
+
+  console.log(process.env);
+
   return config;
 };

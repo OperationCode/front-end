@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { descriptions } from 'common/constants/descriptions';
 import { s3 } from 'common/constants/urls';
 import ImageCard from '../ImageCard';
@@ -18,5 +18,5 @@ const meta: Meta<typeof ImageCard> = {
 export default meta;
 
 export const Default: ImageCardPropsType = {
-  render: args => <ImageCard {...args} />
+  render: args => <ImageCard {...args} />,
 };

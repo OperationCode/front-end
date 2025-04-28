@@ -1,7 +1,7 @@
 /*
  * This file should only contain environment variables that are non-secret.
  */
-const isProduction = process.env.NODE_ENV === 'production';
+const isProduction = process.env.PRODUCTION_DEPLOYMENT === 'true';
 
 // These are all exposed by the client, so there's no way to protect them anyways.
 export const clientTokens = isProduction
@@ -36,3 +36,8 @@ export const resourcesAPIURL = isProduction
 
 export const slackMembersAPIUrl = 'https://slack.com/api/conversations.members';
 export const slackGeneralChannelId = 'C03GSNF6X';
+
+export const AIR_TABLE_BASE_ID = 'app9tYjofmFWMxRl8';
+export const AIR_TABLE_TABLE_NAME = isProduction
+  ? 'Onboarding Request PRODUCTION'
+  : 'Onboarding Request STAGING';

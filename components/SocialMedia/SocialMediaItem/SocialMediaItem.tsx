@@ -1,7 +1,7 @@
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
 
-export type SocialMediaItemPropsType = {
+export interface SocialMediaItemPropsType {
   /**
    * Name of the social media item.
    */
@@ -14,7 +14,7 @@ export type SocialMediaItemPropsType = {
    * Icon to be used.
    */
   svg: React.ReactNode;
-};
+}
 
 function SocialMediaItem({ name, href, svg }: SocialMediaItemPropsType) {
   return (

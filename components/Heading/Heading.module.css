@@ -46,7 +46,9 @@
   display: none;
   opacity: 0;
   visibility: hidden;
-  transition: 0.2s linear opacity, 0.2s linear visibility;
+  transition:
+    0.2s linear opacity,
+    0.2s linear visibility;
 }
 
 @media not screen and (--small-viewport) {
@@ -55,6 +57,8 @@
     display: block;
     opacity: 1;
     visibility: visible;
-    transition: 0.2s linear opacity, 0.2s linear visibility;
+    transition:
+      0.2s linear opacity,
+      0.2s linear visibility;
   }
 }

@@ -34,7 +34,7 @@
   outline: 1px solid var(--primary);
 }
 
-.logos .tabsTrigger[data-state="active"] {
+.logos .tabsTrigger[data-state='active'] {
   border-bottom: 2px solid var(--primary);
 }
 

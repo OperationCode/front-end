@@ -3,7 +3,7 @@ import Link from 'next/link';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 import styles from '../Button/Button.module.css';
 
-export type LinkButtonProps = {
+export interface LinkButtonProps {
   /**
    * Url to be passed to the base anchor element.
    */
@@ -32,7 +32,7 @@ export type LinkButtonProps = {
    * Sets the button color theme.
    */
   theme?: 'primary' | 'secondary';
-};
+}
 
 export default function LinkButton({
   analyticsEventLabel,

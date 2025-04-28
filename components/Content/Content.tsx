@@ -1,8 +1,9 @@
-import { cloneElement, ReactElement } from 'react';
+import type { ReactElement } from 'react';
+import { cloneElement } from 'react';
 import Container from 'components/Container/Container';
 import Heading from 'components/Heading/Heading';
 
-export type ContentPropsType = {
+export interface ContentPropsType {
   /**
    * Elements to be rendered in the container.
    */
@@ -37,7 +38,7 @@ export type ContentPropsType = {
    * Applies an additional title element.
    */
   title?: string;
-};
+}
 
 function Content({
   className,
@@ -61,7 +62,9 @@ function Content({
 
       <div className="flex justify-center items-center flex-wrap w-full [&>*]:m-4">
         {/* eslint-disable-next-line react/no-array-index-key */}
-        {columns.map((column, index) => cloneElement(column as ReactElement<any>, { key: index }))}
+        {columns.map((column, index) =>
+          cloneElement(column as ReactElement<unknown>, { key: index }),
+        )}
       </div>
     </Container>
   );

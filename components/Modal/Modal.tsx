@@ -3,8 +3,9 @@ import * as Dialog from '@radix-ui/react-dialog';
 import { gtag } from 'common/utils/thirdParty/gtag';
 import CloseButton from 'components/Buttons/CloseButton/CloseButton';
 import { MODAL_CONTENT, MODAL_OVERLAY } from 'common/constants/testIDs';
+import { twMerge } from 'tailwind-merge';
 
-export type ModalPropsType = {
+export interface ModalPropsType {
   /**
    * Content to be rendered in the modal.
    */
@@ -12,7 +13,7 @@ export type ModalPropsType = {
   /**
    * Function that is called when the user clicks the close button.
    */
-  onRequestClose: (arg1: any) => void;
+  onRequestClose: () => void;
   /**
    * Applies a label for the screen reader.
    */
@@ -39,7 +40,7 @@ export type ModalPropsType = {
    * Applies classNames to the overlay.
    */
   overlayClassName?: string;
-};
+}
 
 function Modal({
   children,
@@ -49,6 +50,7 @@ function Modal({
   screenReaderLabel,
   canClose = true,
   childrenClassName,
+  overlayClassName,
 }: ModalPropsType) {
   if (isOpen) {
     gtag.modalView(screenReaderLabel);
@@ -56,14 +58,14 @@ function Modal({
 
   const portalContainer =
     typeof window !== 'undefined'
-      ? (document.querySelector('#__next') as HTMLElement) ?? undefined
+      ? ((document.querySelector('#__next') as HTMLElement) ?? undefined)
       : undefined;
 
   return (
     <Dialog.Root defaultOpen={false} open={isOpen}>
       <Dialog.Portal container={portalContainer}>
         <Dialog.Overlay
-          className="inset-0 fixed bg-white/50 z-[2]"
+          className={twMerge('inset-0 fixed bg-white/50 z-[2]', overlayClassName)}
           onClick={canClose ? onRequestClose : undefined}
           data-testid={MODAL_OVERLAY}
         >
