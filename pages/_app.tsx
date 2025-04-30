@@ -72,12 +72,13 @@ if (!isProduction) {
 const App = ({ Component, pageProps, err }: AppProps & { err: NextErrorComponent }) => {
   useEffect(() => {
     /* Analytics */
-    // TODO: Leverage prod-build-time-only env vars instead of window check
-    if (isProduction && window.location.host.includes('operationcode.org')) {
+    if (isProduction) {
       LogRocket.init(`${clientTokens.LOGROCKET}/operation-code`);
 
       // Every crash report will have a LogRocket session URL.
       LogRocket.getSessionURL(sessionURL => {
+        console.log('LogRocket session URL: ', sessionURL);
+
         Sentry.configureScope(scope => {
           scope.setExtra('sessionURL', sessionURL);
         });
