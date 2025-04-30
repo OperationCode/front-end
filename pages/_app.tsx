@@ -73,7 +73,7 @@ const App = ({ Component, pageProps, err }: AppProps & { err: NextErrorComponent
   useEffect(() => {
     /* Analytics */
     if (isProduction) {
-      LogRocket.init(`${clientTokens.LOGROCKET}/operation-code`);
+      LogRocket.init('uquzri/operation-code');
 
       // Every crash report will have a LogRocket session URL.
       LogRocket.getSessionURL(sessionURL => {
