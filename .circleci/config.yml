@@ -94,6 +94,7 @@ jobs:
       - run:
           name: Initialize CodeClimate
           command: |
+            apt-get update && apt-get install curl -y
             curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc_test_reporter
             chmod +x ./cc_test_reporter
       - run:
