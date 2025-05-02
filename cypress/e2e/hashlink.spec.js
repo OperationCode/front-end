@@ -13,9 +13,14 @@ describe('Hash Links', () => {
 
       // The literal scrolling sometimes prevents the hash link from being visible in the viewport
       // eslint-disable-next-line cypress/no-unnecessary-waiting
-      cy.wait(100);
+      cy.wait(200);
 
       cy.get(hash).click({ force: true });
+
+      // once encountered a failure because the hash link was not yet in the URL
+      // eslint-disable-next-line cypress/no-unnecessary-waiting
+      cy.wait(100);
+
       cy.get(hash).url().should('include', hash);
     });
   };
