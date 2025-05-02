@@ -7,38 +7,38 @@ exports[`PressLinks > should render with no props passed 1`] = `
   <div
     className="flexContainer"
   >
-    <ForwardRef
+    <Tabs
       defaultValue="NYC"
     >
-      <ForwardRef
+      <TabsList
         className="tabsList"
       >
-        <ForwardRef
+        <TabsTrigger
           className="tabsTrigger"
           value="NYC"
         >
           <h3>
             NYC
           </h3>
-        </ForwardRef>
-        <ForwardRef
+        </TabsTrigger>
+        <TabsTrigger
           className="tabsTrigger"
           value="Boston"
         >
           <h3>
             Boston
           </h3>
-        </ForwardRef>
-        <ForwardRef
+        </TabsTrigger>
+        <TabsTrigger
           className="tabsTrigger"
           value="General"
         >
           <h3>
             General
           </h3>
-        </ForwardRef>
-      </ForwardRef>
-      <ForwardRef
+        </TabsTrigger>
+      </TabsList>
+      <TabsContent
         className="tabsContent"
         value="NYC"
       >
@@ -66,8 +66,8 @@ exports[`PressLinks > should render with no props passed 1`] = `
             After Flying Solo, Veterans Find Others Who Have Their Backs
           </OutboundLink>
         </li>
-      </ForwardRef>
-      <ForwardRef
+      </TabsContent>
+      <TabsContent
         className="tabsContent"
         value="Boston"
       >
@@ -135,8 +135,8 @@ exports[`PressLinks > should render with no props passed 1`] = `
             tech4vets Masschallenge Veterans
           </OutboundLink>
         </li>
-      </ForwardRef>
-      <ForwardRef
+      </TabsContent>
+      <TabsContent
         className="tabsContent"
         value="General"
       >
@@ -404,8 +404,8 @@ exports[`PressLinks > should render with no props passed 1`] = `
             Operation Code Looks to Help Veterans Land IT Careers
           </OutboundLink>
         </li>
-      </ForwardRef>
-    </ForwardRef>
+      </TabsContent>
+    </Tabs>
   </div>
 </div>
 `;
