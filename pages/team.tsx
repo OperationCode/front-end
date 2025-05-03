@@ -13,14 +13,22 @@ const boardMembers = [
     imageSrc: 'https://operation-code-assets.s3.us-east-2.amazonaws.com/headshots/cynthia.jpg',
   },
   {
-    name: 'Kelly MacLeod',
-    role: 'Board Director, Secretary',
-    description: `Kelly MacLeod is a veteran of the North Carolina Army National Guard, with a tour in Iraq and Afghanistan. As a self-taught coder, she is also a veteran and survivor of a career change. Helping veterans has always been a career goal; Kelly now advocates for veterans and milspouses who want to transition to a tech-related career. Her current position as a software project manager has absolutely nothing to do with this, but she leverages it to talk about vets every chance she gets. Kelly has yet to break the Operation Code website.`,
-    imageSrc: 'https://operation-code-assets.s3.us-east-2.amazonaws.com/headshots/kelly.jpg',
+    name: 'Glomani Bravo-Lopez',
+    role: 'Executive Director',
+    description: `Glomani Bravo-López is a Puerto Rican thought leader, innovator, and Marine Corps combat Veteran driven by a lifelong commitment to service, impact, and purpose. Born and raised in Brooklyn, New York (with formative years spent in Puerto Rico), Glomani served honorably in the U.S. Marine Corps infantry from 2005 to 2009 with the 3rd Battalion, 2nd Marines (3/2) Lima Company, completing two combat deployments to Iraq. He later served as a marksmanship instructor with the 2nd Marine Division Marksmanship Training Unit at Camp LeJeune.
+
+    Following his military service, Glomani pursued studies in construction management and earned a degree in Business Administration with a concentration in finance and investments from Brooklyn College (CUNY). His civilian career spans construction, real estate, nonprofits, and government, including nearly a decade as Deputy Chief of Staff to a NYC Council Member and Senior Advisor to the Brooklyn District Attorney. He also served as Policy & Political Director for a New York City Mayoral campaign.
+
+    During the pandemic, Glomani expanded his technical knowledge by completing the MIT Professional Education certificate in Machine Learning: From Data to Decisions, earning top marks among a competitive global cohort. The program deepened his expertise in artificial intelligence and machine learning, sparking a shift in focus toward the transformative potential of data-driven systems to improve workforce outcomes and deliver public good.
+
+    A serial entrepreneur and committed servant leader, Glomani is recognized for his strategic acumen in government relations, workforce development, and organizational transformation. Prior to founding Hyena Enterprises Global, he led talent and workforce development for a DoD-sponsored Manufacturing Innovation Institute (MII), where he saw firsthand the urgent need to align education, training, and industry innovation.
+
+    Today, through Hyena, he is building a next-generation approach to workforce resilience—developing purpose-aligned, AI-informed talent pipelines to support the future of advanced manufacturing and national defense. Glomani joins Operation Code to focus on Public Relations and improve our communications function.`,
+    imageSrc: '',
   },
   {
     name: 'David Reis',
-    role: 'Board Treasurer',
+    role: 'Board Fundraising Director',
     description: `David brings to the table more than 30 years of nonprofit and business leadership experience in both international and national organizations, most recently as VP of Development and Ideas Beyond Borders and as CDO at Iraq and Afghanistan Veterans of America. He is also CEO of the nonprofit capacity building consulting firm Forward Motion Strategies.`,
     imageSrc: 'https://operation-code-assets.s3.us-east-2.amazonaws.com/headshots/david_reis.jpg',
   },
@@ -31,22 +39,12 @@ const boardMembers = [
     imageSrc: 'https://operation-code-assets.s3.us-east-2.amazonaws.com/headshots/ali.jpg',
   },
   {
-    name: 'Sean Cameron',
-    role: 'Board Chair',
-    description: `Sean is a US Navy veteran from Northern California. Originally specializing in electronics, he later crossed into various disciplines including network engineering, information security, and product management. Currently he serves in a client facing role at a small consulting firm in Southern California. Sean started with OC building the San Diego Chapter. Outside of daily routine, Sean is an organizer for a regional data science interest group. His interests include reading, long walks, and the study of language (Rust, R, Python, French, and Spanish, in no particular order).`,
-  },
-  {
-    name: 'Conrad "Alex" Bituin',
-    description: `Conrad “Alex” Bituin is currently a Software Engineer in the payments domain for a financial services organization, and currently also serves as the Operation Code Outreach Lead and Director of Digital Strategy. Throughout his 14-year career in the U.S. Army Reserves, Alex has also worked in the sales, health and fitness, retail, insurance, and education industries - most recently serving as a 6th grade teacher. He is passionate about education and professional development opportunities for the U.S. military community. Outside of supporting and advocating for our military community, Alex enjoys spending time with his spouse and two children, diving into data science and machine learning projects, football (American), and home brewing.`,
-    imageSrc:
-      'https://operation-code-assets.s3.us-east-2.amazonaws.com/headshots/conrad_bituin.jpg',
-  },
-  {
     name: 'Alex P. Wu',
+    role: 'Treasurer',
     description: `Alex is a Marine Corps Veteran and currently works at Twilio as Counsel, Law Enforcement and National Security.
-
+    
     He was previously a litigation associate at the law firm Cooley LLP and a vetting attorney on the Biden-Harris Transition Team. Before becoming an attorney, Alex served as a Marine combat engineer platoon commander in Helmand Province, Afghanistan, and then as a reserve tank platoon commander, executive officer, and company commander in the States. While a reservist, he worked in Washington, DC for an AAPI-advocacy non-profit and then as a staffer in the White House Office of Management and Administration and the White House Counsel's Office.
-
+    
     Alex earned his J.D. from Stanford Law School, B.A. in Sociology from the College of William and Mary, and currently lives in the San Francisco Bay Area with his wife and their two bulldogs. He is originally from the D.C. area and is a long-suffering Washington Wizards fan.`,
     imageSrc: 'https://operation-code-assets.s3.us-east-2.amazonaws.com/headshots/alex_wu.jpg',
   },
@@ -61,6 +59,25 @@ const boardMembers = [
     description: `Mike Roberts is a software engineer by trade with over three decades of experience programming. He is the founder and CEO of Creating Coding Careers, which helps underrepresented people break into tech and helps companies build high-performance engineering teams out of historically excluded tech talent. Having launched hundreds of new collar careers, he has grads working at IBM/RedHat, Apple, WalmartLabs, Sony, AWS, Facebook, Deloitte, Trust&Will, BD, NewRocket, and many more amazing tech companies.`,
     imageSrc: 'https://operation-code-assets.s3.us-east-2.amazonaws.com/headshots/mike_roberts.jpg',
   },
+  
+  // Inactive Team members: S
+  // {
+  //   name: 'Kelly MacLeod',
+  //   role: 'Board Director, Secretary',
+  //   description: `Kelly MacLeod is a veteran of the North Carolina Army National Guard, with a tour in Iraq and Afghanistan. As a self-taught coder, she is also a veteran and survivor of a career change. Helping veterans has always been a career goal; Kelly now advocates for veterans and milspouses who want to transition to a tech-related career. Her current position as a software project manager has absolutely nothing to do with this, but she leverages it to talk about vets every chance she gets. Kelly has yet to break the Operation Code website.`,
+  //   imageSrc: 'https://operation-code-assets.s3.us-east-2.amazonaws.com/headshots/kelly.jpg',
+  // },
+  // {
+  //   name: 'Sean Cameron',
+  //   role: 'Board Chair',
+  //   description: `Sean is a US Navy veteran from Northern California. Originally specializing in electronics, he later crossed into various disciplines including network engineering, information security, and product management. Currently he serves in a client facing role at a small consulting firm in Southern California. Sean started with OC building the San Diego Chapter. Outside of daily routine, Sean is an organizer for a regional data science interest group. His interests include reading, long walks, and the study of language (Rust, R, Python, French, and Spanish, in no particular order).`,
+  // },
+  // {
+  //   name: 'Conrad "Alex" Bituin',
+  //   description: `Conrad “Alex” Bituin is currently a Software Engineer in the payments domain for a financial services organization, and currently also serves as the Operation Code Outreach Lead and Director of Digital Strategy. Throughout his 14-year career in the U.S. Army Reserves, Alex has also worked in the sales, health and fitness, retail, insurance, and education industries - most recently serving as a 6th grade teacher. He is passionate about education and professional development opportunities for the U.S. military community. Outside of supporting and advocating for our military community, Alex enjoys spending time with his spouse and two children, diving into data science and machine learning projects, football (American), and home brewing.`,
+  //   imageSrc:
+  //     'https://operation-code-assets.s3.us-east-2.amazonaws.com/headshots/conrad_bituin.jpg',
+  // },
 ];
 
 export default function Team() {
