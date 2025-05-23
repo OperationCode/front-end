@@ -36,6 +36,6 @@
     },
     "types": ["vitest/globals", "@testing-library/jest-dom"]
   },
-  "include": ["next-env.d.ts", "**/*.js", "**/*.ts", "**/*.tsx", "vitest.config.mts"],
-  "exclude": ["node_modules"]
+  "include": ["vitest.config.mts", "next-env.d.ts", "**/*.js", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules", "./cypress/tsconfig.json"]
 }

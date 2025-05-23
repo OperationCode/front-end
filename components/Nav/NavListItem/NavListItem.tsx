@@ -9,7 +9,10 @@ import styles from './NavListItem.module.css';
 
 interface SublinkType {
   name: string;
+
   href: string;
+
+  /** @default false */
   isExternal?: boolean;
 }
 
@@ -125,7 +128,9 @@ function NavListItem({ sublinks, href, name, icon = null }: NavListItemPropsType
                     href={sublink.href}
                     hasIcon
                   >
-                    <span className={twMerge(styles.link, '[&>svg]:-bottom-2 [&>svg]:right-3')}>{sublink.name}</span>
+                    <span className={twMerge(styles.link, '[&>svg]:-bottom-2 [&>svg]:right-3')}>
+                      {sublink.name}
+                    </span>
                   </OutboundLink>
                 )}
               </li>

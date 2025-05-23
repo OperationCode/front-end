@@ -1,7 +1,8 @@
 // Polyfills
 import 'intersection-observer';
 
-import { useEffect, PropsWithChildren } from 'react';
+import type { PropsWithChildren } from 'react';
+import { useEffect } from 'react';
 import * as Sentry from '@sentry/nextjs';
 import Router from 'next/router';
 import Fingerprint2 from 'fingerprintjs2';
@@ -10,13 +11,12 @@ import hash from 'object-hash';
 import LogRocket from 'logrocket';
 import setupLogRocketReact from 'logrocket-react';
 import ScrollUpButton from 'react-scroll-up-button';
-import { clientTokens } from 'common/config/environment';
 import { gtag } from 'common/utils/thirdParty/gtag';
 import Nav from 'components/Nav/Nav';
 import Footer from 'components/Footer/Footer';
 import 'common/styles/globals.css';
-import { AppProps } from 'next/app';
-import NextErrorComponent from 'next/error';
+import type { AppProps } from 'next/app';
+import type NextErrorComponent from 'next/error';
 
 const isProduction = process.env.NODE_ENV === 'production';
 
@@ -71,12 +71,13 @@ if (!isProduction) {
 const App = ({ Component, pageProps, err }: AppProps & { err: NextErrorComponent }) => {
   useEffect(() => {
     /* Analytics */
-    // TODO: Leverage prod-build-time-only env vars instead of window check
-    if (isProduction && window.location.host.includes('operationcode.org')) {
-      LogRocket.init(`${clientTokens.LOGROCKET}/operation-code`);
+    if (isProduction) {
+      LogRocket.init('uquzri/operation-code');
 
       // Every crash report will have a LogRocket session URL.
       LogRocket.getSessionURL(sessionURL => {
+        console.log('LogRocket session URL: ', sessionURL);
+
         Sentry.configureScope(scope => {
           scope.setExtra('sessionURL', sessionURL);
         });

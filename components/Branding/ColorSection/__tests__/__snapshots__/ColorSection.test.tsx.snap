@@ -1,14 +1,14 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`ColorSection > should render with required props 1`] = `
-<React.Fragment>
+<div
+  className="text-center"
+>
   <Content
     columns={
       [
         <div>
-          <h3
-            className="text-center"
-          >
+          <h3>
             Primary
           </h3>
           <Swatch
@@ -17,9 +17,7 @@ exports[`ColorSection > should render with required props 1`] = `
           />
         </div>,
         <div>
-          <h3
-            className="text-center"
-          >
+          <h3>
             Secondary
           </h3>
           <Swatch
@@ -49,5 +47,5 @@ exports[`ColorSection > should render with required props 1`] = `
     theme="white"
     title="Other On-Brand Colors"
   />
-</React.Fragment>
+</div>
 `;

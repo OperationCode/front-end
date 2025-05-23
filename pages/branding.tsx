@@ -5,17 +5,18 @@ import ColorSection from 'components/Branding/ColorSection/ColorSection';
 import FontSection from 'components/Branding/FontSection/FontSection';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 import { s3 } from 'common/constants/urls';
+import { twMerge } from 'tailwind-merge';
 import styles from 'styles/branding.module.css';
 
 const pageTitle = 'Branding Guide';
 
 function Branding() {
   return (
-    <div className={styles.Branding}>
+    <div className={twMerge(styles.Branding, '[*_p]:px-4')}>
       <Head title={pageTitle} />
 
       <HeroBanner isFullViewportHeight title={pageTitle}>
-        <h6>
+        <h6 className="text-center">
           For external organizations, corporate sponsors and press, please obtain specific guidance
           and approval from the Director of Communications prior to using Operation Code Branding on
           public platforms. You may email your request to marketing@operationcode.org

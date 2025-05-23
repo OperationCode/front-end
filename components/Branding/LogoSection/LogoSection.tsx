@@ -15,8 +15,8 @@ function LogoSection() {
         <ul className={styles.logoSizeList}>
           {/* - SMALL LOGOS - */}
           <li className={classNames(styles.logoSizeListItem, styles.smallLogos)}>
-            <h5>Small Logos</h5>
-            <p>
+            <h5 className="text-center">Small Logos</h5>
+            <p className="mx-auto">
               For use when Operation Code&apos;s logo name is between 0-1 inch in height. In most
               cases, use the Original Small Logo. The Stacked Small Logo is to be used where
               graphics needs are larger in vertical height than horizontal width with the Operation
@@ -25,7 +25,7 @@ function LogoSection() {
 
             <ul className={styles.logoTypeList}>
               <li className={styles.logoTypeListItem}>
-                <h6>TYPICAL</h6>
+                <h6 className="text-center">TYPICAL</h6>
                 <ul className={styles.badgeList}>
                   <li>
                     <Badge
@@ -87,8 +87,8 @@ function LogoSection() {
               </li>
 
               <li className={styles.logoTypeListItem}>
-                <h6>Stacked Logos</h6>
-                <p>
+                <h6 className="text-center">Stacked Logos</h6>
+                <p className="mx-auto">
                   Use the Large Stacked Original logo in areas where you have more vertical space
                   than horizontal. Only use the Red Stacked Logo for special holidays such as
                   Thanksgiving, fall events, and Christmas. The Light Stacked Logo is to be used
@@ -141,8 +141,8 @@ function LogoSection() {
               </li>
 
               <li className={styles.logoTypeListItem}>
-                <h6>Medals</h6>
-                <p>
+                <h6 className="text-center">Medals</h6>
+                <p className="mx-auto">
                   Use the following medals when you are prompted to upload a thumbnail logo only or
                   profile photo. In most cases, use the OC Blue Medal. The Red Medal should only be
                   used for holidays and special events (such as Thanksgiving, fall, or Christmas).
@@ -196,8 +196,8 @@ function LogoSection() {
               </li>
 
               <li className={styles.logoTypeListItem}>
-                <h6>Badges</h6>
-                <p>
+                <h6 className="text-center">Badges</h6>
+                <p className="mx-auto">
                   You may also use badges as a profile photo or thumbnail. Badges should be used to
                   accompany corporate sponsors or alliance partnerships on shared branding. Use the
                   original OC Blue Badge in most cases, except the Red Badge for special events and
@@ -256,8 +256,8 @@ function LogoSection() {
 
           {/* - LARGE LOGOS - */}
           <li className={classNames(styles.logoSizeListItem, styles.largeLogos)}>
-            <h5>Large Logos</h5>
-            <p>
+            <h5 className="text-center">Large Logos</h5>
+            <p className="mx-auto">
               Use the Original Large Logo in almost all cases above 1 inch in height. The Red Large
               Logo is to be used in special events (such as Thanksgiving, fall or Christmas), and
               the Light Large Logo is to be used with dark backgrounds or bright colored
@@ -266,7 +266,7 @@ function LogoSection() {
 
             <ul className={styles.logoTypeList}>
               <li className={styles.logoTypeListItem}>
-                <h6>TYPICAL</h6>
+                <h6 className="text-center">TYPICAL</h6>
 
                 <ul className={styles.badgeList}>
                   <li>

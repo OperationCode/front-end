@@ -3,10 +3,10 @@ import Heading from 'components/Heading/Heading';
 import PartnerLogoLink from 'components/PartnerLogoLink/PartnerLogoLink';
 import partners, { PARTNER_TYPES } from 'common/constants/partners';
 
-type Partner = {
+interface Partner {
   name: string;
   type: string;
-};
+}
 
 const isPaidSponsor = (partner: Partner): boolean => partner.type === PARTNER_TYPES.PAID;
 

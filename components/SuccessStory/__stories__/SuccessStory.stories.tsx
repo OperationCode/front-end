@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { descriptions } from 'common/constants/descriptions';
 import { s3 } from 'common/constants/urls';
 import SuccessStory from '../SuccessStory';

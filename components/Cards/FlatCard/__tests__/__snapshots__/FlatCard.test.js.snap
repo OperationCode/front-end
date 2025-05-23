@@ -36,6 +36,7 @@ exports[`FlatCard > should render with many props assigned 1`] = `
         href="/"
         onClick={[Function]}
         onMouseEnter={[Function]}
+        onTouchStart={[Function]}
       >
         Widget Action
       </a>

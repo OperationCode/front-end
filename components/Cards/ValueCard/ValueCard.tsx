@@ -1,9 +1,9 @@
 import Card from 'components/Cards/Card/Card';
 
-export type ValueCardPropsType = {
+export interface ValueCardPropsType {
   name: string;
   description: string;
-};
+}
 
 function ValueCard({ description, name }: ValueCardPropsType) {
   return (

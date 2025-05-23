@@ -33,12 +33,16 @@
   margin: 0 0.25rem;
   vertical-align: middle;
   transform: scale(1);
-  transition: 0.2s color linear, 0.2s transform linear;
+  transition:
+    0.2s color linear,
+    0.2s transform linear;
 }
 
 .alertCloseButton:hover {
   color: black;
   cursor: pointer;
   transform: scale(1.1);
-  transition: 0.2s color linear, 0.2s transform linear;
+  transition:
+    0.2s color linear,
+    0.2s transform linear;
 }

@@ -6,6 +6,8 @@ exports[`Alert > should render error alert with required props 1`] = `
   data-testid="ALERT"
   role="alert"
 >
-  Error Alert JSX or Text
+  <span>
+    Error Alert JSX or Text
+  </span>
 </div>
 `;

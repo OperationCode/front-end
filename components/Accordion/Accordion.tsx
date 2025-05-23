@@ -9,7 +9,7 @@ import styles from './Accordion.module.css';
 const ChevronRight = () => <Chevron className={styles.icon} />;
 const ChevronDown = () => <Chevron className={classNames(styles.icon, styles.rotate90)} />;
 
-type ContentPropType = {
+interface ContentPropType {
   /**
    * Labels or thumbnails representing sections of content.
    */
@@ -18,9 +18,9 @@ type ContentPropType = {
    * Section of content associated with header.
    */
   bodyChildren: React.ReactNode | React.ReactNode[];
-};
+}
 
-export type AccordionPropsType = {
+export interface AccordionPropsType {
   /**
    * Accessibility ID to use for joining elements together with ARIA attributes
    */
@@ -38,7 +38,7 @@ export type AccordionPropsType = {
    * @default - false
    */
   hasAnimationOnHover?: boolean;
-};
+}
 
 /**
  * @description A component whose main content is invisible until revealed by the user

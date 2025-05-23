@@ -5,6 +5,5 @@
 @custom-media --medium-viewport (max-width: 768px);
 @custom-media --large-viewport (max-width: 992px);
 @custom-media --extra-large-viewport (max-width: 1200px);
-
 @custom-media --mobile-viewport (--large-viewport);
 @custom-media --desktop-viewport (min-width: 992px);

@@ -18,6 +18,7 @@ module.exports = {
       xl: '1200px',
     },
     extend: {
+      // TODO: Move colors into theme (not extension), kebab-case keys, use hsl, and update naming
       colors: {
         themePrimary: '#3ed6f0',
         themeSecondary: '#252e3e',
@@ -28,6 +29,7 @@ module.exports = {
       },
       maxWidth: {
         girderWidth: '700px',
+        'prose-sm': '50ch',
       },
       fontFamily: {
         dinCondensed: '"DIN Condensed Bold"',
@@ -38,11 +40,7 @@ module.exports = {
   plugins: [
     plugin(({ matchUtilities, theme }) => {
       matchUtilities(
-        {
-          'text-shadow': value => ({
-            textShadow: value,
-          }),
-        },
+        { 'text-shadow': value => ({ textShadow: value }) },
         { values: theme('textShadow') },
       );
     }),

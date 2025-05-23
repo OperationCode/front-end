@@ -107,7 +107,7 @@ exports[`RegistrationForm > should render with required props 1`] = `
           onBlur={[Function]}
           onChange={[Function]}
           type="password"
-          value="nOnEeDfOrP@ssw0rd!"
+          value=""
         />
       </div>
     </div>
@@ -135,7 +135,7 @@ exports[`RegistrationForm > should render with required props 1`] = `
           onBlur={[Function]}
           onChange={[Function]}
           type="password"
-          value="nOnEeDfOrP@ssw0rd!"
+          value=""
         />
       </div>
     </div>
@@ -323,7 +323,7 @@ exports[`RegistrationForm > should render with required props 1`] = `
     </div>
   </div>
   <div
-    className="max-w-md px-3 pt-1"
+    className="max-w-md px-3 mt-5"
   >
     <button
       className="Button secondary"

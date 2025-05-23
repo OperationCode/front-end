@@ -52,6 +52,7 @@ exports[`JoinSection > should render 1`] = `
       href="/join"
       onClick={[Function]}
       onMouseEnter={[Function]}
+      onTouchStart={[Function]}
     >
       Register Now
     </a>

@@ -17,9 +17,7 @@ describe('Badge', () => {
 
   it('should render the image after the label when `isImageFirst` is true', () => {
     const { container } = render(<Badge icon={badgeIcon} label="Badge Icon" isImageFirst />);
-    // @ts-expect-error
-    const { childNodes } = container.firstChild;
-
+    const { childNodes } = container.firstChild!;
     const [firstItem, secondItem] = childNodes;
 
     expect(firstItem).toBe(container.querySelector('svg'));
@@ -30,8 +28,7 @@ describe('Badge', () => {
     const { container } = render(
       <Badge icon={badgeIcon} label="Badge Icon" isImageFirst={false} />,
     );
-    // @ts-expect-error
-    const { childNodes } = container.firstChild;
+    const { childNodes } = container.firstChild!;
 
     const [firstItem, secondItem] = childNodes;
 

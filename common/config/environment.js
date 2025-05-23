@@ -1,7 +1,7 @@
 /*
  * This file should only contain environment variables that are non-secret.
  */
-const isProduction = process.env.NODE_ENV === 'production';
+const isProduction = process.env.PRODUCTION_DEPLOYMENT === 'true';
 
 // These are all exposed by the client, so there's no way to protect them anyways.
 export const clientTokens = isProduction
@@ -10,7 +10,6 @@ export const clientTokens = isProduction
       GOOGLE_ANALYTICS_ID: 'G-5QSQ208NW6',
       // GOOGLE_ANALYTICS_ID: 'UA-75642413-1',
       GOOGLE_TAG_MANAGER_ID: 'GTM-PTPTHST', // unused
-      LOGROCKET: 'uquzri',
       OC_FACEBOOK_KEY: '207055783236912',
       OC_GOOGLE_KEY: '448638408285-6ego1u9ic6qcbsiitr2m173pp1tbs27k.apps.googleusercontent.com',
       SENTRY_DSN: 'https://90edfb8d1d9640cf86d8aefd57218d71@sentry.io/1443656',
@@ -19,7 +18,6 @@ export const clientTokens = isProduction
       GOOGLE_ADS_ID: '',
       GOOGLE_ANALYTICS_ID: '',
       GOOGLE_TAG_MANAGER_ID: '', // unused
-      LOGROCKET: '',
       OC_FACEBOOK_KEY: '399113557601038',
       OC_GOOGLE_KEY: '973655216990-vvl9vfp9v13lfoq7ccm36e8ouukrgdfh.apps.googleusercontent.com',
       SENTRY_DSN: '',
@@ -36,3 +34,8 @@ export const resourcesAPIURL = isProduction
 
 export const slackMembersAPIUrl = 'https://slack.com/api/conversations.members';
 export const slackGeneralChannelId = 'C03GSNF6X';
+
+export const AIR_TABLE_BASE_ID = 'app9tYjofmFWMxRl8';
+export const AIR_TABLE_TABLE_NAME = isProduction
+  ? 'Onboarding Request PRODUCTION'
+  : 'Onboarding Request STAGING';
