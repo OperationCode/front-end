@@ -4,6 +4,7 @@ import { s3 } from 'common/constants/urls';
 import Content from 'components/Content/Content';
 import FlatCard from 'components/Cards/FlatCard/FlatCard';
 import styles from 'styles/team.module.css';
+import { useEffect, useRef } from "react";
 
 const boardMembers = [
   {
@@ -64,6 +65,62 @@ const boardMembers = [
 ];
 
 export default function Team() {
+  const teamContainerRef = useRef(null);
+
+  useEffect(() => {
+
+    const adjustHeights = () => {
+      if (!teamContainerRef.current) return;
+
+      const elements = teamContainerRef.current.querySelectorAll('article');
+      const rows = new Map();
+
+      elements.forEach(e => {
+        const flexCol = e.querySelector('.flex-col');
+        if (flexCol) {
+          flexCol.style.marginTop = '0';
+          flexCol.style.height = 'auto';
+          flexCol.style.minHeight = '0';
+        }
+      });
+
+      elements.forEach(e => {
+        let top = e.offsetTop;
+        if (!rows.has(top)) {
+          rows.set(top, []);
+        }
+        rows.get(top).push(e);
+      });
+
+      rows.forEach(rowElements => {
+        let maxHeight = Math.max(...rowElements.map(e => e.getBoundingClientRect().height));
+
+        let topDistance = rowElements[0].querySelector('.flex-col').offsetTop;
+
+        rowElements.forEach(e => {
+          const flexCol = e.querySelector('.flex-col');
+          let diff = Math.abs(topDistance - flexCol.offsetTop);
+          if (flexCol) {
+            if (diff > 0) {
+              flexCol.style.marginTop = `${diff}px`;
+            }
+            flexCol.style.minHeight = `${maxHeight}px`;
+            flexCol.style.height = `${maxHeight}px`;
+          }
+        });
+      });
+    };
+
+    adjustHeights();
+
+    window.addEventListener("resize", adjustHeights);
+
+    return () => {
+      window.removeEventListener("resize", adjustHeights);
+    };
+
+  }, []);
+
   return (
     <div className={styles.Team}>
       <Head title="Team" />
@@ -79,7 +136,7 @@ export default function Team() {
         hasTitleUnderline
         theme="white"
         columns={[
-          <div className={styles.teamMembers}>
+          <div ref={teamContainerRef} className={styles.teamMembers}>
             {boardMembers.map(({ name, role, imageSrc: imageSource, description }) => (
               <FlatCard
                 key={name}
