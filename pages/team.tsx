@@ -65,14 +65,14 @@ const boardMembers = [
 ];
 
 export default function Team() {
-  const teamContainerRef = useRef(null);
+  const teamContainerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
 
     const adjustHeights = () => {
       if (!teamContainerRef.current) return;
 
-      const elements = teamContainerRef.current.querySelectorAll('article');
+      const elements = teamContainerRef.current ? teamContainerRef.current.querySelectorAll("article") : [];
       const rows = new Map();
 
       elements.forEach(e => {
