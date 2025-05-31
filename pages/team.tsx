@@ -76,7 +76,7 @@ export default function Team() {
       const rows = new Map();
 
       elements.forEach(e => {
-        const flexCol = e.querySelector('.flex-col');
+        const flexCol = e.querySelector('.flex-col') as HTMLElement;
         if (flexCol) {
           flexCol.style.marginTop = '0';
           flexCol.style.height = 'auto';
@@ -93,14 +93,15 @@ export default function Team() {
       });
 
       rows.forEach(rowElements => {
-        let maxHeight = Math.max(...rowElements.map(e => e.getBoundingClientRect().height));
+        let maxHeight = Math.max(...rowElements.map((e: HTMLElement) => e.getBoundingClientRect().height));
 
-        let topDistance = rowElements[0].querySelector('.flex-col').offsetTop;
+        const flexCol = rowElements[0].querySelector(".flex-col") as HTMLElement;
+        let topDistance = flexCol.offsetTop;
 
-        rowElements.forEach(e => {
+        rowElements.forEach((e: HTMLElement) => {
           const flexCol = e.querySelector('.flex-col');
-          let diff = Math.abs(topDistance - flexCol.offsetTop);
-          if (flexCol) {
+          let diff = Math.abs(topDistance - ((flexCol as HTMLElement)?.offsetTop || 0));
+          if (flexCol instanceof HTMLElement) {
             if (diff > 0) {
               flexCol.style.marginTop = `${diff}px`;
             }
