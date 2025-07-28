@@ -4,7 +4,6 @@ import { s3 } from 'common/constants/urls';
 import Content from 'components/Content/Content';
 import FlatCard from 'components/Cards/FlatCard/FlatCard';
 import styles from 'styles/team.module.css';
-import Button from 'components/Buttons/Button/Button';
 import cynthiaHeadshot from 'public/static/images/cynthia.jpg';
 import glomaniHeadshot from 'public/static/images/glomani.jpg';
 
@@ -96,35 +95,7 @@ export default function Team() {
                   alt: `Headshot of ${name}`,
                 }}
               >
-                <p
-                  className="h-36 overflow-hidden line-clamp-5 mb-5 transition-[height] duration-300 ease-in-out whitespace-pre-line"
-                  style={{
-                    textOverflow: 'ellipsis',
-                  }}
-                >
-                  {description}
-                </p>
-                <Button
-                  fullWidth
-                  onClick={e => {
-                    const button = e.target as HTMLButtonElement;
-                    const paragraph = button.previousSibling as HTMLParagraphElement;
-                    paragraph.classList.toggle('expanded');
-                    const hasExpanded = paragraph.classList.contains('expanded');
-
-                    if (hasExpanded) {
-                      paragraph.style.height = `${paragraph.scrollHeight}px`;
-                      paragraph.classList.remove('h-36', 'line-clamp-5');
-                      button.innerText = 'Show Less';
-                    } else {
-                      paragraph.style.height = '';
-                      paragraph.classList.add('h-36', 'line-clamp-5');
-                      button.innerText = 'Show More';
-                    }
-                  }}
-                >
-                  Show More
-                </Button>
+                <p className="h-64 overflow-y-auto whitespace-pre-line">{description}</p>
               </FlatCard>
             ))}
           </div>,
