@@ -80,56 +80,121 @@ exports[`SponsorsSection > should render 1`] = `
         </div>
       </h4>
     </div>
-    <p>
+    <p
+      className="mb-5"
+    >
       These sponsors have donated cash to help keep the mission going here at Operation Code. They may or may not have also donated to our cause via others means.
     </p>
     <div
-      className="flex justify-center items-center flex-wrap [&>*]:m-4"
+      className="flex justify-center items-center flex-wrap gap-10"
     >
-      <div
-        className="text-center w-36"
+      <a
+        className="inline-flex items-start"
+        href="https://etsy.com"
+        onClick={[Function]}
+        rel="noopener noreferrer"
+        target="_blank"
       >
-        <a
-          className="inline-flex items-start"
-          href="https://threatstack.com/?utm_source=operationcode"
-          onClick={[Function]}
-          rel="noopener noreferrer"
-          target="_blank"
+        <div
+          className="relative h-[150px] w-[150px]"
+        >
+          <img
+            alt="Etsy logo"
+          />
+        </div>
+        <span
+          className="sr-only"
+          data-testid="SCREEN_READER_ONLY"
+        >
+          Opens in new window
+        </span>
+      </a>
+      <a
+        className="inline-flex items-start"
+        href="https://www.juniper.net"
+        onClick={[Function]}
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <div
+          className="relative h-[150px] w-[150px]"
+        >
+          <img
+            alt="Juniper Networks logo"
+          />
+        </div>
+        <span
+          className="sr-only"
+          data-testid="SCREEN_READER_ONLY"
+        >
+          Opens in new window
+        </span>
+      </a>
+      <a
+        className="inline-flex items-start"
+        href="https://threatstack.com/?utm_source=operationcode"
+        onClick={[Function]}
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <div
+          className="relative h-[150px] w-[150px]"
         >
           <img
             alt="Threat Stack logo"
             src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/threat_stack.png"
           />
-          <span
-            className="sr-only"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Opens in new window
-          </span>
-        </a>
-      </div>
-      <div
-        className="text-center w-36"
+        </div>
+        <span
+          className="sr-only"
+          data-testid="SCREEN_READER_ONLY"
+        >
+          Opens in new window
+        </span>
+      </a>
+      <a
+        className="inline-flex items-start"
+        href="https://www.usbank.com/index.html?utm_source=operationcode"
+        onClick={[Function]}
+        rel="noopener noreferrer"
+        target="_blank"
       >
-        <a
-          className="inline-flex items-start"
-          href="https://www.usbank.com/index.html?utm_source=operationcode"
-          onClick={[Function]}
-          rel="noopener noreferrer"
-          target="_blank"
+        <div
+          className="relative h-[150px] w-[150px]"
         >
           <img
             alt="US Bank logo"
             src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/usbank.png"
           />
-          <span
-            className="sr-only"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Opens in new window
-          </span>
-        </a>
-      </div>
+        </div>
+        <span
+          className="sr-only"
+          data-testid="SCREEN_READER_ONLY"
+        >
+          Opens in new window
+        </span>
+      </a>
+      <a
+        className="inline-flex items-start"
+        href="https://www.umpquabank.com/"
+        onClick={[Function]}
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <div
+          className="relative h-[150px] w-[150px]"
+        >
+          <img
+            alt="Umpqua Bank logo"
+          />
+        </div>
+        <span
+          className="sr-only"
+          data-testid="SCREEN_READER_ONLY"
+        >
+          Opens in new window
+        </span>
+      </a>
     </div>
     <div
       className="headingContainer"
@@ -167,298 +232,384 @@ exports[`SponsorsSection > should render 1`] = `
         </div>
       </h4>
     </div>
-    <p>
+    <p
+      className="mb-5"
+    >
       The following organizations have helped Operation Code through services, products, advertisements, scholarships, or sponsorships. We thank them for their contributions.
     </p>
     <div
-      className="flex justify-center items-center flex-wrap [&>*]:m-4"
+      className="flex justify-center items-center flex-wrap gap-10"
     >
-      <div
-        className="text-center w-36"
+      <a
+        className="inline-flex items-start"
+        href="https://1password.com/?utm_source=operationcode"
+        onClick={[Function]}
+        rel="noopener noreferrer"
+        target="_blank"
       >
-        <a
-          className="inline-flex items-start"
-          href="https://1password.com/?utm_source=operationcode"
-          onClick={[Function]}
-          rel="noopener noreferrer"
-          target="_blank"
+        <div
+          className="relative h-[125px] w-[125px]"
         >
           <img
             alt="1Password logo"
             src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/1password.png"
           />
-          <span
-            className="sr-only"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Opens in new window
-          </span>
-        </a>
-      </div>
-      <div
-        className="text-center w-36"
+        </div>
+        <span
+          className="sr-only"
+          data-testid="SCREEN_READER_ONLY"
+        >
+          Opens in new window
+        </span>
+      </a>
+      <a
+        className="inline-flex items-start"
+        href="https://apexsystems.com/?utm_source=operationcode"
+        onClick={[Function]}
+        rel="noopener noreferrer"
+        target="_blank"
       >
-        <a
-          className="inline-flex items-start"
-          href="https://apexsystems.com/?utm_source=operationcode"
-          onClick={[Function]}
-          rel="noopener noreferrer"
-          target="_blank"
+        <div
+          className="relative h-[125px] w-[125px]"
         >
           <img
             alt="APEX Systems logo"
             src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/apex_systems.png"
           />
-          <span
-            className="sr-only"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Opens in new window
-          </span>
-        </a>
-      </div>
-      <div
-        className="text-center w-36"
+        </div>
+        <span
+          className="sr-only"
+          data-testid="SCREEN_READER_ONLY"
+        >
+          Opens in new window
+        </span>
+      </a>
+      <a
+        className="inline-flex items-start"
+        href="https://airbnb.com"
+        onClick={[Function]}
+        rel="noopener noreferrer"
+        target="_blank"
       >
-        <a
-          className="inline-flex items-start"
-          href="https://chromatic.com/?utm_source=operationcode"
-          onClick={[Function]}
-          rel="noopener noreferrer"
-          target="_blank"
+        <div
+          className="relative h-[125px] w-[125px]"
+        >
+          <img
+            alt="Airbnb logo"
+          />
+        </div>
+        <span
+          className="sr-only"
+          data-testid="SCREEN_READER_ONLY"
+        >
+          Opens in new window
+        </span>
+      </a>
+      <a
+        className="inline-flex items-start"
+        href="https://chromatic.com/?utm_source=operationcode"
+        onClick={[Function]}
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <div
+          className="relative h-[125px] w-[125px]"
         >
           <img
             alt="Chromatic logo"
             src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/chromatic.png"
           />
-          <span
-            className="sr-only"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Opens in new window
-          </span>
-        </a>
-      </div>
-      <div
-        className="text-center w-36"
+        </div>
+        <span
+          className="sr-only"
+          data-testid="SCREEN_READER_ONLY"
+        >
+          Opens in new window
+        </span>
+      </a>
+      <a
+        className="inline-flex items-start"
+        href="https://www.codeplatoon.org"
+        onClick={[Function]}
+        rel="noopener noreferrer"
+        target="_blank"
       >
-        <a
-          className="inline-flex items-start"
-          href="https://coursera.org/?utm_source=operationcode"
-          onClick={[Function]}
-          rel="noopener noreferrer"
-          target="_blank"
+        <div
+          className="relative h-[125px] w-[125px]"
+        >
+          <img
+            alt="Code Platoon logo"
+          />
+        </div>
+        <span
+          className="sr-only"
+          data-testid="SCREEN_READER_ONLY"
+        >
+          Opens in new window
+        </span>
+      </a>
+      <a
+        className="inline-flex items-start"
+        href="https://coursera.org/?utm_source=operationcode"
+        onClick={[Function]}
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <div
+          className="relative h-[125px] w-[125px]"
         >
           <img
             alt="Coursera logo"
             src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/coursera.png"
           />
-          <span
-            className="sr-only"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Opens in new window
-          </span>
-        </a>
-      </div>
-      <div
-        className="text-center w-36"
+        </div>
+        <span
+          className="sr-only"
+          data-testid="SCREEN_READER_ONLY"
+        >
+          Opens in new window
+        </span>
+      </a>
+      <a
+        className="inline-flex items-start"
+        href="https://elyoninternational.com/?utm_source=operationcode"
+        onClick={[Function]}
+        rel="noopener noreferrer"
+        target="_blank"
       >
-        <a
-          className="inline-flex items-start"
-          href="https://elyoninternational.com/?utm_source=operationcode"
-          onClick={[Function]}
-          rel="noopener noreferrer"
-          target="_blank"
+        <div
+          className="relative h-[125px] w-[125px]"
         >
           <img
             alt="Elyon International logo"
             src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/elyon.png"
           />
-          <span
-            className="sr-only"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Opens in new window
-          </span>
-        </a>
-      </div>
-      <div
-        className="text-center w-36"
+        </div>
+        <span
+          className="sr-only"
+          data-testid="SCREEN_READER_ONLY"
+        >
+          Opens in new window
+        </span>
+      </a>
+      <a
+        className="inline-flex items-start"
+        href="https://github.com/?utm_source=operationcode"
+        onClick={[Function]}
+        rel="noopener noreferrer"
+        target="_blank"
       >
-        <a
-          className="inline-flex items-start"
-          href="https://github.com/?utm_source=operationcode"
-          onClick={[Function]}
-          rel="noopener noreferrer"
-          target="_blank"
+        <div
+          className="relative h-[125px] w-[125px]"
         >
           <img
             alt="GitHub logo"
             src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/github.png"
           />
-          <span
-            className="sr-only"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Opens in new window
-          </span>
-        </a>
-      </div>
-      <div
-        className="text-center w-36"
+        </div>
+        <span
+          className="sr-only"
+          data-testid="SCREEN_READER_ONLY"
+        >
+          Opens in new window
+        </span>
+      </a>
+      <a
+        className="inline-flex items-start"
+        href="https://google.com"
+        onClick={[Function]}
+        rel="noopener noreferrer"
+        target="_blank"
       >
-        <a
-          className="inline-flex items-start"
-          href="https://hackerrank.com/?utm_source=operationcode"
-          onClick={[Function]}
-          rel="noopener noreferrer"
-          target="_blank"
+        <div
+          className="relative h-[125px] w-[125px]"
+        >
+          <img
+            alt="Google logo"
+          />
+        </div>
+        <span
+          className="sr-only"
+          data-testid="SCREEN_READER_ONLY"
+        >
+          Opens in new window
+        </span>
+      </a>
+      <a
+        className="inline-flex items-start"
+        href="https://hackerrank.com/?utm_source=operationcode"
+        onClick={[Function]}
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <div
+          className="relative h-[125px] w-[125px]"
         >
           <img
             alt="HackerRank logo"
             src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/hackerrank.png"
           />
-          <span
-            className="sr-only"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Opens in new window
-          </span>
-        </a>
-      </div>
-      <div
-        className="text-center w-36"
+        </div>
+        <span
+          className="sr-only"
+          data-testid="SCREEN_READER_ONLY"
+        >
+          Opens in new window
+        </span>
+      </a>
+      <a
+        className="inline-flex items-start"
+        href="https://logrocket.com/?utm_source=operationcode"
+        onClick={[Function]}
+        rel="noopener noreferrer"
+        target="_blank"
       >
-        <a
-          className="inline-flex items-start"
-          href="https://logrocket.com/?utm_source=operationcode"
-          onClick={[Function]}
-          rel="noopener noreferrer"
-          target="_blank"
+        <div
+          className="relative h-[125px] w-[125px]"
         >
           <img
             alt="LogRocket logo"
             src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/logrocket.png"
           />
-          <span
-            className="sr-only"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Opens in new window
-          </span>
-        </a>
-      </div>
-      <div
-        className="text-center w-36"
+        </div>
+        <span
+          className="sr-only"
+          data-testid="SCREEN_READER_ONLY"
+        >
+          Opens in new window
+        </span>
+      </a>
+      <a
+        className="inline-flex items-start"
+        href="https://oreilly.com/?utm_source=operationcode"
+        onClick={[Function]}
+        rel="noopener noreferrer"
+        target="_blank"
       >
-        <a
-          className="inline-flex items-start"
-          href="https://oreilly.com/?utm_source=operationcode"
-          onClick={[Function]}
-          rel="noopener noreferrer"
-          target="_blank"
+        <div
+          className="relative h-[125px] w-[125px]"
         >
           <img
             alt="O'Reilly Media logo"
             src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/oreilly.png"
           />
-          <span
-            className="sr-only"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Opens in new window
-          </span>
-        </a>
-      </div>
-      <div
-        className="text-center w-36"
+        </div>
+        <span
+          className="sr-only"
+          data-testid="SCREEN_READER_ONLY"
+        >
+          Opens in new window
+        </span>
+      </a>
+      <a
+        className="inline-flex items-start"
+        href="https://securecodewarrior.com/?utm_source=operationcode"
+        onClick={[Function]}
+        rel="noopener noreferrer"
+        target="_blank"
       >
-        <a
-          className="inline-flex items-start"
-          href="https://securecodewarrior.com/?utm_source=operationcode"
-          onClick={[Function]}
-          rel="noopener noreferrer"
-          target="_blank"
+        <div
+          className="relative h-[125px] w-[125px]"
         >
           <img
             alt="Secure Code Warrior logo"
             src="https://user-images.githubusercontent.com/51661129/92973323-3d540b80-f484-11ea-85dd-d202fc751cd9.png"
           />
-          <span
-            className="sr-only"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Opens in new window
-          </span>
-        </a>
-      </div>
-      <div
-        className="text-center w-36"
+        </div>
+        <span
+          className="sr-only"
+          data-testid="SCREEN_READER_ONLY"
+        >
+          Opens in new window
+        </span>
+      </a>
+      <a
+        className="inline-flex items-start"
+        href="https://teamtreehouse.com/?utm_source=operationcode"
+        onClick={[Function]}
+        rel="noopener noreferrer"
+        target="_blank"
       >
-        <a
-          className="inline-flex items-start"
-          href="https://teamtreehouse.com/?utm_source=operationcode"
-          onClick={[Function]}
-          rel="noopener noreferrer"
-          target="_blank"
+        <div
+          className="relative h-[125px] w-[125px]"
         >
           <img
             alt="Team Treehouse logo"
             src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/treehouse.png"
           />
-          <span
-            className="sr-only"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Opens in new window
-          </span>
-        </a>
-      </div>
-      <div
-        className="text-center w-36"
+        </div>
+        <span
+          className="sr-only"
+          data-testid="SCREEN_READER_ONLY"
+        >
+          Opens in new window
+        </span>
+      </a>
+      <a
+        className="inline-flex items-start"
+        href="https://uniteus.com"
+        onClick={[Function]}
+        rel="noopener noreferrer"
+        target="_blank"
       >
-        <a
-          className="inline-flex items-start"
-          href="https://vercel.com/home?utm_source=operationcode"
-          onClick={[Function]}
-          rel="noopener noreferrer"
-          target="_blank"
+        <div
+          className="relative h-[125px] w-[125px]"
+        >
+          <img
+            alt="Unite Us logo"
+          />
+        </div>
+        <span
+          className="sr-only"
+          data-testid="SCREEN_READER_ONLY"
+        >
+          Opens in new window
+        </span>
+      </a>
+      <a
+        className="inline-flex items-start"
+        href="https://vercel.com/home?utm_source=operationcode"
+        onClick={[Function]}
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <div
+          className="relative h-[125px] w-[125px]"
         >
           <img
             alt="Vercel logo"
             src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/vercel.png"
           />
-          <span
-            className="sr-only"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Opens in new window
-          </span>
-        </a>
-      </div>
-      <div
-        className="text-center w-36"
+        </div>
+        <span
+          className="sr-only"
+          data-testid="SCREEN_READER_ONLY"
+        >
+          Opens in new window
+        </span>
+      </a>
+      <a
+        className="inline-flex items-start"
+        href="https://zapier.com/?utm_source=operationcode"
+        onClick={[Function]}
+        rel="noopener noreferrer"
+        target="_blank"
       >
-        <a
-          className="inline-flex items-start"
-          href="https://zapier.com/?utm_source=operationcode"
-          onClick={[Function]}
-          rel="noopener noreferrer"
-          target="_blank"
+        <div
+          className="relative h-[125px] w-[125px]"
         >
           <img
             alt="Zapier logo"
             src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/zapier.png"
           />
-          <span
-            className="sr-only"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Opens in new window
-          </span>
-        </a>
-      </div>
+        </div>
+        <span
+          className="sr-only"
+          data-testid="SCREEN_READER_ONLY"
+        >
+          Opens in new window
+        </span>
+      </a>
     </div>
   </div>
 </div>

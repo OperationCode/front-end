@@ -15,11 +15,11 @@ const SponsorsSection = () => (
     <Heading text="Sponsors" hasTitleUnderline headingLevel={3} />
 
     <Heading text="Corporate Partners" headingLevel={4} />
-    <p>
+    <p className="mb-5">
       These sponsors have donated cash to help keep the mission going here at Operation Code. They
       may or may not have also donated to our cause via others means.
     </p>
-    <div className="flex justify-center items-center flex-wrap [&>*]:m-4">
+    <div className="flex justify-center items-center flex-wrap gap-10">
       {partners
         .filter(x => isPaidSponsor(x))
         .map(partner => (
@@ -28,11 +28,11 @@ const SponsorsSection = () => (
     </div>
 
     <Heading text="Corporate Supporters" headingLevel={4} />
-    <p>
+    <p className="mb-5">
       The following organizations have helped Operation Code through services, products,
       advertisements, scholarships, or sponsorships. We thank them for their contributions.
     </p>
-    <div className="flex justify-center items-center flex-wrap [&>*]:m-4">
+    <div className="flex justify-center items-center flex-wrap gap-10">
       {partners
         .filter(x => !isPaidSponsor(x))
         .map(partner => (

@@ -24,18 +24,9 @@ export interface PartnerLogoLinkPropsType {
 }
 
 const sizeMappings = {
-  small: {
-    width: 100,
-    height: 100,
-  },
-  medium: {
-    width: 125,
-    height: 125,
-  },
-  large: {
-    width: 150,
-    height: 150,
-  },
+  small: 'h-[100px] w-[100px]',
+  medium: 'h-[125px] w-[125px]',
+  large: 'h-[150px] w-[150px]',
 };
 
 export default function PartnerLogoLink({
@@ -45,16 +36,15 @@ export default function PartnerLogoLink({
   size = 'medium',
 }: PartnerLogoLinkPropsType) {
   return (
-    <div className="text-center w-36">
-      <OutboundLink href={url} analyticsEventLabel={`Partner Logo Click - ${name}`} hasIcon={false}>
+    <OutboundLink href={url} analyticsEventLabel={`Partner Logo Click - ${name}`} hasIcon={false}>
+      <div className={`relative ${sizeMappings[size]}`}>
         <Image
-          className="w-full h-full text-center transition-all duration-200 ease-linear grayscale opacity-60 hover:grayscale-0 hover:opacity-100 hover:transition-all hover:duration-200 hover:ease-linear"
+          className="transition-all duration-200 ease-linear grayscale opacity-60 hover:grayscale-0 hover:opacity-100 hover:transition-all hover:duration-200 hover:ease-linear object-contain"
           src={logoSource}
           alt={`${name} logo`}
-          {...sizeMappings[size]}
-          layout="fixed"
+          layout="fill"
         />
-      </OutboundLink>
-    </div>
+      </div>
+    </OutboundLink>
   );
 }

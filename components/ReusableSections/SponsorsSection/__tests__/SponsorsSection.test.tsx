@@ -16,8 +16,7 @@ describe('SponsorsSection', () => {
 
     partners.forEach(partner => {
       const image = component.queryByAltText(`${partner.name} logo`)!;
-      const link = image.parentNode as HTMLAnchorElement;
-
+      const link = image.closest('a') as HTMLAnchorElement;
       expect(image).toBeInTheDocument();
       expect(link.href.startsWith('https://')).toStrictEqual(true);
     });
