@@ -41,7 +41,6 @@ export function ThemedReactSelect<TMulti extends boolean>({
   const outerColor = hasErrors ? errorDeep : successDeep;
 
   return (
-    // @ts-expect-error - Bad types package for react-select
     <ReactSelect
       {...props}
       inputId={name}
