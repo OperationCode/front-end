@@ -1,6 +1,17 @@
 import { s3 } from 'common/constants/urls';
 import sortBy from 'lodash/sortBy';
 
+// Paid Sponsors
+import etsy from 'static/images/sponsors/etsy_logo.png';
+import umpquaBank from 'static/images/sponsors/umpqua_bank_logo.png';
+import juniperNetworks from 'static/images/sponsors/juniper_networks_logo.png';
+
+// In Kind Sponsors
+import google from 'static/images/sponsors/google_logo.png';
+import codePlatoon from 'static/images/sponsors/code_platoon_logo.png';
+import uniteUs from 'static/images/sponsors/unite_us_logo.png';
+import airbnb from 'static/images/sponsors/airbnb_logo.png';
+
 export const PARTNER_TYPES = {
   PAID: 'PAID',
   KIND: 'IN-KIND',
@@ -97,6 +108,33 @@ const partners = [
     url: 'https://teamtreehouse.com/?utm_source=operationcode',
     type: PARTNER_TYPES.KIND,
   },
+  { name: 'Etsy', logoSource: etsy.src, url: 'https://etsy.com', type: PARTNER_TYPES.PAID },
+  {
+    name: 'Umpqua Bank',
+    logoSource: umpquaBank.src,
+    url: 'https://www.umpquabank.com/',
+    type: PARTNER_TYPES.PAID,
+  },
+  {
+    name: 'Juniper Networks',
+    logoSource: juniperNetworks.src,
+    url: 'https://www.juniper.net',
+    type: PARTNER_TYPES.PAID,
+  },
+  { name: 'Google', logoSource: google.src, url: 'https://google.com', type: PARTNER_TYPES.KIND },
+  {
+    name: 'Code Platoon',
+    logoSource: codePlatoon.src,
+    url: 'https://www.codeplatoon.org',
+    type: PARTNER_TYPES.KIND,
+  },
+  {
+    name: 'Unite Us',
+    logoSource: uniteUs.src,
+    url: 'https://uniteus.com',
+    type: PARTNER_TYPES.KIND,
+  },
+  { name: 'Airbnb', logoSource: airbnb.src, url: 'https://airbnb.com', type: PARTNER_TYPES.KIND },
 ];
 
 export default sortBy(partners, 'name');
