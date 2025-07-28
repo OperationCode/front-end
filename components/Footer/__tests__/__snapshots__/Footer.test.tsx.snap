@@ -47,7 +47,7 @@ exports[`Footer > should render with no props passed 1`] = `
       <OutboundLink
         analyticsEventLabel="Footer CompTIA"
         hasIcon={false}
-        href="https://www.comptia.org"
+        href="https://www.comptia.org/?utm_source=operationcode"
       >
         <MockedNextImage
           alt="CompTIA Authorized Partner - Gold"

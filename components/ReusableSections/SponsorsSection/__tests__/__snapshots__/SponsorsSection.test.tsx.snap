@@ -90,7 +90,7 @@ exports[`SponsorsSection > should render 1`] = `
     >
       <a
         className="inline-flex items-start"
-        href="https://etsy.com"
+        href="https://etsy.com/?utm_source=operationcode"
         onClick={[Function]}
         rel="noopener noreferrer"
         target="_blank"
@@ -111,7 +111,7 @@ exports[`SponsorsSection > should render 1`] = `
       </a>
       <a
         className="inline-flex items-start"
-        href="https://www.juniper.net"
+        href="https://www.juniper.net/?utm_source=operationcode"
         onClick={[Function]}
         rel="noopener noreferrer"
         target="_blank"
@@ -176,7 +176,7 @@ exports[`SponsorsSection > should render 1`] = `
       </a>
       <a
         className="inline-flex items-start"
-        href="https://www.umpquabank.com/"
+        href="https://www.umpquabank.com/?utm_source=operationcode"
         onClick={[Function]}
         rel="noopener noreferrer"
         target="_blank"
@@ -286,7 +286,7 @@ exports[`SponsorsSection > should render 1`] = `
       </a>
       <a
         className="inline-flex items-start"
-        href="https://airbnb.com"
+        href="https://airbnb.com/?utm_source=operationcode"
         onClick={[Function]}
         rel="noopener noreferrer"
         target="_blank"
@@ -329,7 +329,7 @@ exports[`SponsorsSection > should render 1`] = `
       </a>
       <a
         className="inline-flex items-start"
-        href="https://www.codeplatoon.org"
+        href="https://www.codeplatoon.org/?utm_source=operationcode"
         onClick={[Function]}
         rel="noopener noreferrer"
         target="_blank"
@@ -416,7 +416,7 @@ exports[`SponsorsSection > should render 1`] = `
       </a>
       <a
         className="inline-flex items-start"
-        href="https://google.com"
+        href="https://google.com/?utm_source=operationcode"
         onClick={[Function]}
         rel="noopener noreferrer"
         target="_blank"
@@ -547,7 +547,7 @@ exports[`SponsorsSection > should render 1`] = `
       </a>
       <a
         className="inline-flex items-start"
-        href="https://uniteus.com"
+        href="https://uniteus.com/?utm_source=operationcode"
         onClick={[Function]}
         rel="noopener noreferrer"
         target="_blank"
@@ -568,7 +568,7 @@ exports[`SponsorsSection > should render 1`] = `
       </a>
       <a
         className="inline-flex items-start"
-        href="https://vercel.com/home?utm_source=operationcode"
+        href="https://vercel.com/?utm_source=operationcode"
         onClick={[Function]}
         rel="noopener noreferrer"
         target="_blank"

@@ -35,8 +35,14 @@ export default function PartnerLogoLink({
   url,
   size = 'medium',
 }: PartnerLogoLinkPropsType) {
+  const urlObj = new URL(url);
+  urlObj.searchParams.append('utm_source', 'operationcode');
   return (
-    <OutboundLink href={url} analyticsEventLabel={`Partner Logo Click - ${name}`} hasIcon={false}>
+    <OutboundLink
+      href={urlObj.toString()}
+      analyticsEventLabel={`Partner Logo Click - ${name}`}
+      hasIcon={false}
+    >
       <div className={`relative ${sizeMappings[size]}`}>
         <Image
           className="transition-all duration-200 ease-linear grayscale opacity-60 hover:grayscale-0 hover:opacity-100 hover:transition-all hover:duration-200 hover:ease-linear object-contain"

@@ -3,7 +3,7 @@
 exports[`PartnerLogoLink > should render with required props 1`] = `
 <a
   className="inline-flex items-start"
-  href="https://user-images.githubusercontent.com"
+  href="https://user-images.githubusercontent.com/?utm_source=operationcode"
   onClick={[Function]}
   rel="noopener noreferrer"
   target="_blank"
