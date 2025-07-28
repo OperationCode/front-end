@@ -66,7 +66,7 @@ function Footer() {
             />
           </OutboundLink>
           <OutboundLink
-            href="https://www.comptia.org"
+            href="https://www.comptia.org/?utm_source=operationcode"
             analyticsEventLabel="Footer CompTIA"
             hasIcon={false}
           >
