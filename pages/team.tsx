@@ -16,26 +16,16 @@ const boardMembers = [
     imageSrc: cynthiaHeadshot.src,
   },
   {
-    name: 'Glomani Bravo-López',
-    role: 'Director',
-    description: `Glomani Bravo-López is a Puerto Rican thought leader, innovator, and Marine Corps combat Veteran driven by a lifelong commitment to service, impact, and purpose. Born and raised in Brooklyn, New York (with formative years spent in Puerto Rico), Glomani served honorably in the U.S. Marine Corps infantry from 2005 to 2009 with the 3rd Battalion, 2nd Marines (3/2) Lima Company, completing two combat deployments to Iraq.
-
-    Following his military service, Glomani pursued studies in construction management and earned a degree in Business Administration with a concentration in finance and investments from Brooklyn College (CUNY). His civilian career spans construction, real estate, nonprofits, and government, including nearly a decade as Deputy Chief of Staff to a NYC Council Member and Senior Advisor to the Brooklyn District Attorney. He also served as Policy & Political Director for a New York City Mayoral campaign.
-
-    Today, through founding Hyena Enterprises Global, he is building a next-generation approach to workforce resilience—developing purpose-aligned, AI-informed talent pipelines to support the future of advanced manufacturing and national defense. Glomani joins Operation Code to focus on Public Relations and improve our communications function.`,
-    imageSrc: glomaniHeadshot.src,
+    name: 'Ali Taylor-Cipolla',
+    role: 'Board Vice-Chair',
+    description: `Ali Taylor-Cipolla is a compliance specialist by day, activist by night who works with Microsoft and Operation Code, respectively. After spending more than 8 years in the restaurant management field, where it was relatively easy to find work as a constantly moving military spouse, Ali understands the challenges faced by military families, having faced them firsthand. After her partner’s retirement from the United States Air Force, she moved to the Seattle area and completed Microsoft’s Military Spouse Technology Academy. This was where she discovered that she did not want to develop software for a living. However, her love for the technology sector and the people in it brought her to her present role with Global Talent Acquisition at Microsoft. Ali aspires to empower, connect and engage with military families and veterans, helping them achieve stability and realization of their professional goals. She is a current member of the Washington State Military Transition Council where she advocates for the interests of military spouses in her new home state. She lives with her partner and two pet pythons, and when she’s not professionally finding solutions to large problems, she enjoys gardening, PC gaming, and her circus arts practice.`,
+    imageSrc: 'https://operation-code-assets.s3.us-east-2.amazonaws.com/headshots/ali.jpg',
   },
   {
     name: 'David Reis',
     role: 'Board Fundraising Director',
     description: `David brings to the table more than 30 years of nonprofit and business leadership experience in both international and national organizations, most recently as VP of Development and Ideas Beyond Borders and as CDO at Iraq and Afghanistan Veterans of America. He is also CEO of the nonprofit capacity building consulting firm Forward Motion Strategies.`,
     imageSrc: 'https://operation-code-assets.s3.us-east-2.amazonaws.com/headshots/david_reis.jpg',
-  },
-  {
-    name: 'Ali Taylor-Cipolla',
-    role: 'Board Vice-Chair',
-    description: `Ali Taylor-Cipolla is a compliance specialist by day, activist by night who works with Microsoft and Operation Code, respectively. After spending more than 8 years in the restaurant management field, where it was relatively easy to find work as a constantly moving military spouse, Ali understands the challenges faced by military families, having faced them firsthand. After her partner’s retirement from the United States Air Force, she moved to the Seattle area and completed Microsoft’s Military Spouse Technology Academy. This was where she discovered that she did not want to develop software for a living. However, her love for the technology sector and the people in it brought her to her present role with Global Talent Acquisition at Microsoft. Ali aspires to empower, connect and engage with military families and veterans, helping them achieve stability and realization of their professional goals. She is a current member of the Washington State Military Transition Council where she advocates for the interests of military spouses in her new home state. She lives with her partner and two pet pythons, and when she’s not professionally finding solutions to large problems, she enjoys gardening, PC gaming, and her circus arts practice.`,
-    imageSrc: 'https://operation-code-assets.s3.us-east-2.amazonaws.com/headshots/ali.jpg',
   },
   {
     name: 'Alex P. Wu',
@@ -57,6 +47,16 @@ const boardMembers = [
     name: 'Mike Roberts',
     description: `Mike Roberts is a software engineer by trade with over three decades of experience programming. He is the founder and CEO of Creating Coding Careers, which helps underrepresented people break into tech and helps companies build high-performance engineering teams out of historically excluded tech talent. Having launched hundreds of new collar careers, he has grads working at IBM/RedHat, Apple, WalmartLabs, Sony, AWS, Facebook, Deloitte, Trust&Will, BD, NewRocket, and many more amazing tech companies.`,
     imageSrc: 'https://operation-code-assets.s3.us-east-2.amazonaws.com/headshots/mike_roberts.jpg',
+  },
+  {
+    name: 'Glomani Bravo-López',
+    role: 'Director',
+    description: `Glomani Bravo-López is a Puerto Rican thought leader, innovator, and Marine Corps combat Veteran driven by a lifelong commitment to service, impact, and purpose. Born and raised in Brooklyn, New York (with formative years spent in Puerto Rico), Glomani served honorably in the U.S. Marine Corps infantry from 2005 to 2009 with the 3rd Battalion, 2nd Marines (3/2) Lima Company, completing two combat deployments to Iraq.
+
+    Following his military service, Glomani pursued studies in construction management and earned a degree in Business Administration with a concentration in finance and investments from Brooklyn College (CUNY). His civilian career spans construction, real estate, nonprofits, and government, including nearly a decade as Deputy Chief of Staff to a NYC Council Member and Senior Advisor to the Brooklyn District Attorney. He also served as Policy & Political Director for a New York City Mayoral campaign.
+
+    Today, through founding Hyena Enterprises Global, he is building a next-generation approach to workforce resilience—developing purpose-aligned, AI-informed talent pipelines to support the future of advanced manufacturing and national defense. Glomani joins Operation Code to focus on Public Relations and improve our communications function.`,
+    imageSrc: glomaniHeadshot.src,
   },
 ];
 
