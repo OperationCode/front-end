@@ -4,7 +4,6 @@ import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
 import Accordion from 'components/Accordion/Accordion';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
-import styles from 'styles/faq.module.css';
 
 const questions = {
   general: [
@@ -309,7 +308,7 @@ const questions = {
 
 function FAQ() {
   return (
-    <div className={styles.FAQ}>
+    <div>
       <Head title="FAQ" />
 
       <HeroBanner title="Frequently Asked Questions" />
@@ -319,7 +318,7 @@ function FAQ() {
         hasTitleUnderline
         columns={questions.general.map((faq, index) => (
           <Accordion
-            className={styles.FAQAccordion}
+            className="flex-grow"
             content={{
               headingChildren: <h6>{faq.title}</h6>,
               bodyChildren: <p>{faq.content}</p>,
@@ -335,7 +334,6 @@ function FAQ() {
         hasTitleUnderline
         columns={questions.donation.map((faq, index) => (
           <Accordion
-            className={styles.FAQAccordion}
             content={{
               headingChildren: <h6>{faq.title}</h6>,
               bodyChildren: <p>{faq.content}</p>,
@@ -351,7 +349,6 @@ function FAQ() {
         hasTitleUnderline
         columns={questions.volunteer.map((faq, index) => (
           <Accordion
-            className={styles.FAQAccordion}
             content={{
               headingChildren: <h6>{faq.title}</h6>,
               bodyChildren: <p>{faq.content}</p>,

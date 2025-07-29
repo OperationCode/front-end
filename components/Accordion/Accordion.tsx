@@ -1,13 +1,9 @@
 import { useState } from 'react';
-import classNames from 'classnames';
 import Chevron from 'public/static/images/icons/FontAwesome/angle-right-solid.svg';
 import { ACCORDION_CONTENT, ACCORDION_TOGGLE_BUTTON } from 'common/constants/testIDs';
+import { twMerge } from 'tailwind-merge';
 import ScreenReaderOnly, { toggleMessages } from '../ScreenReaderOnly/ScreenReaderOnly';
 import Card from '../Cards/Card/Card';
-import styles from './Accordion.module.css';
-
-const ChevronRight = () => <Chevron className={styles.icon} />;
-const ChevronDown = () => <Chevron className={classNames(styles.icon, styles.rotate90)} />;
 
 interface ContentPropType {
   /**
@@ -59,42 +55,32 @@ function Accordion({
 
   return (
     <Card
-      className={classNames(styles.Accordion, className, 'justify-normal')}
+      className={twMerge('w-full py-0 justify-normal flex-nowrap min-h-full', className)}
       hasAnimationOnHover={hasAnimationOnHover}
     >
-      <div className={styles.headingContainer}>{content.headingChildren}</div>
-
-      <button
-        aria-controls={contentId}
-        aria-expanded={isContentVisible}
-        className={styles.accordionToggleButton}
-        data-testid={ACCORDION_TOGGLE_BUTTON}
-        id={accordionId}
-        onClick={toggleAccordionContent}
-        type="button"
-      >
-        {isContentVisible ? (
-          <>
-            <ScreenReaderOnly>{toggleMessages.close}</ScreenReaderOnly>
-            <ChevronDown />
-          </>
-        ) : (
-          <>
-            <ScreenReaderOnly>{toggleMessages.open}</ScreenReaderOnly>
-            <ChevronRight />
-          </>
-        )}
-      </button>
+      <div className="w-full flex items-center justify-between">
+        <div className="flex-1 text-xl font-bold uppercase">{content.headingChildren}</div>
+        <button
+          aria-controls={contentId}
+          aria-expanded={isContentVisible}
+          className="grid place-items-center w-20 h-20 -mr-6"
+          data-testid={ACCORDION_TOGGLE_BUTTON}
+          id={accordionId}
+          onClick={toggleAccordionContent}
+          type="button"
+        >
+          <ScreenReaderOnly>{toggleMessages[isContentVisible ? 'close' : 'open']}</ScreenReaderOnly>
+          <Chevron
+            className={`w-[30px] fill-current transition-transform duration-100 ease-linear ${isContentVisible ? 'rotate-90' : ''} `}
+          />
+        </button>
+      </div>
 
       <section
         aria-hidden={!isContentVisible}
-        className={classNames(styles.accordionContent, {
-          [styles.visible]: isContentVisible,
-          [styles.invisible]: !isContentVisible,
-        })}
+        className={`w-full pb-4 ${isContentVisible ? 'block' : 'hidden'}`}
         data-testid={ACCORDION_CONTENT}
         id={contentId}
-        style={{ display: isContentVisible ? 'block' : 'none' }}
       >
         {content.bodyChildren}
       </section>
