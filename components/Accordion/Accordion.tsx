@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import Chevron from 'public/static/images/icons/FontAwesome/angle-right-solid.svg';
 import { ACCORDION_CONTENT, ACCORDION_TOGGLE_BUTTON } from 'common/constants/testIDs';
-import { twMerge } from 'tailwind-merge';
-import ScreenReaderOnly, { toggleMessages } from '../ScreenReaderOnly/ScreenReaderOnly';
+import { cx } from 'common/utils/cva';
 import Card from '../Cards/Card/Card';
+import ScreenReaderOnly, { toggleMessages } from '../ScreenReaderOnly/ScreenReaderOnly';
 
 interface ContentPropType {
   /**
@@ -55,7 +55,7 @@ function Accordion({
 
   return (
     <Card
-      className={twMerge('w-full py-0 justify-normal flex-nowrap min-h-full', className)}
+      className={cx('w-full py-0 justify-normal flex-nowrap min-h-full', className)}
       hasAnimationOnHover={hasAnimationOnHover}
     >
       <div className="w-full flex items-center justify-between">
@@ -71,7 +71,9 @@ function Accordion({
         >
           <ScreenReaderOnly>{toggleMessages[isContentVisible ? 'close' : 'open']}</ScreenReaderOnly>
           <Chevron
-            className={`w-[30px] fill-current transition-transform duration-100 ease-linear ${isContentVisible ? 'rotate-90' : ''} `}
+            className={cx('w-[30px] fill-current transition-transform duration-100 ease-linear', {
+              'rotate-90': isContentVisible,
+            })}
           />
         </button>
       </div>
