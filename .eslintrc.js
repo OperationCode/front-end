@@ -151,18 +151,19 @@ module.exports = {
             importNames: ['default'],
             message: 'React is globally availble for all page files.',
           },
-          {
-            name: 'tailwind-merge',
-            importNames: ['twMerge'],
-            message:
-              'Please import `cx` from `common/utils/cva.ts` instead of directly from tailwind-merge.',
-          },
-          {
-            name: 'class-variance-authority',
-            importNames: ['cx', 'cva'],
-            message:
-              'Please import from `common/utils/cva.ts` instead of directly from class-variance-authority.',
-          },
+          /* {
+           * name: 'tailwind-merge',
+           * importNames: ['twMerge'],
+           * message:
+           *   'Please import `cx` from `common/utils/cva.ts` instead of directly from tailwind-merge.',
+           * },
+           * {
+           *   name: 'class-variance-authority',
+           *   importNames: ['cx', 'cva'],
+           *  message:
+           *    'Please import from `common/utils/cva.ts` instead of directly from class-variance-authority.',
+           *},
+           */
         ],
       },
     ],

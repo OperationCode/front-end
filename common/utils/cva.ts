@@ -1,6 +1,8 @@
+/* eslint-disable @typescript-eslint/no-restricted-imports */
 import { cx as clsx, cva as cvaOriginal } from 'class-variance-authority';
 import { twMerge } from 'tailwind-merge';
 import type { ClassValue } from 'class-variance-authority/dist/types';
+/* eslint-enable @typescript-eslint/no-restricted-imports */
 
 /**
  * Utility function to merge Tailwind CSS classes. This function combines the functionality of
