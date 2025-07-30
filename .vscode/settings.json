@@ -1,3 +1,12 @@
 {
   "typescript.tsdk": "node_modules/typescript/lib"
+  "tailwindCSS.classAttributes": ["className"],
+  "tailwindCSS.classFunctions": ["cx", "cva", "clsx", "classMerge", "twMerge"],
+  "tailwindCSS.lint.cssConflict": "ignore",
+  "typescript.preferences.autoImportFileExcludePatterns": [
+    "class-variance-authority",
+    "clsx",
+    "tailwind-merge"
+  ]
+
 }
