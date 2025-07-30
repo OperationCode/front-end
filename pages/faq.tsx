@@ -318,7 +318,6 @@ function FAQ() {
         hasTitleUnderline
         columns={questions.general.map((faq, index) => (
           <Accordion
-            className="flex-grow"
             content={{
               headingChildren: <h6>{faq.title}</h6>,
               bodyChildren: <p>{faq.content}</p>,
