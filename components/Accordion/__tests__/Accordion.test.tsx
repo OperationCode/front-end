@@ -15,11 +15,11 @@ describe('Accordion', () => {
     const component = render(<AccordionStory />);
     const Content = component.queryByTestId(ACCORDION_CONTENT);
 
-    expect(Content).not.toBeVisible();
+    expect(Content?.classList.contains('hidden')).toBe(true);
 
     fireEvent.click(component.queryByTestId(ACCORDION_TOGGLE_BUTTON)!);
 
-    expect(Content).toBeVisible();
+    expect(Content?.classList.contains('hidden')).not.toBe(true);
   });
 });
 
