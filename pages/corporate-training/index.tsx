@@ -3,7 +3,7 @@ import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 import type { ReactNode } from 'react';
-import classNames from 'classnames';
+import { cx } from 'common/utils/cva';
 
 const pageTitle = 'Corporate Training: Breaking Biases';
 
@@ -136,7 +136,7 @@ const CorporateTraining = () => {
         {biases.map(bias => (
           <li
             key={bias.title}
-            className={classNames(
+            className={cx(
               'flex md:even:flex-row-reverse md:flex-row flex-col-reverse flex-wrap md:flex-nowrap md:[&>*]:flex-1',
               'even:bg-themeSecondary even:text-white', // mobile alternating colors per li
               'md:[&:nth-child(1n)]:bg-white md:[&:nth-child(2n)]:bg-themeGray800 md:[&:nth-child(3n)]:bg-themeSecondary md:[&:nth-child(1n)]:text-themeSecondary md:[&:nth-child(3n)]:text-white', // non-mobile alternating colors per li
@@ -154,7 +154,7 @@ const CorporateTraining = () => {
             </article>
 
             <div
-              className={classNames(
+              className={cx(
                 'relative h-64 w-64 mx-auto mt-10 mb-2 md:m-0 md:aspect-square 2xl:aspect-[4/2] md:h-auto md:w-auto',
                 "before:content-[''] before:absolute before:top-2 before:left-2 before:w-full before:h-full before:bg-themePrimary", // mobile only bg square
                 'md:before:content-[unset]',

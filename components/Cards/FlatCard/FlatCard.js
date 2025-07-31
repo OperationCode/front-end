@@ -1,6 +1,5 @@
 import { element, node, shape, string } from 'prop-types';
-import classNames from 'classnames';
-import { twMerge } from 'tailwind-merge';
+import { cx } from 'common/utils/cva';
 import Image from 'next/image';
 import { FLAT_CARD_IMAGE } from 'common/constants/testIDs';
 import { getPlaceholder } from 'common/utils/next-utils';
@@ -28,12 +27,12 @@ function FlatCard({ button: Button, children, className, header, image }) {
 
   return (
     <article
-      className={classNames('box-border my-6 mx-4 relative max-w-[400px]', className, {
+      className={cx('box-border my-6 mx-4 relative max-w-[400px]', className, {
         'pt-20 sm:pt-14': hasImage,
       })}
     >
       <div
-        className={twMerge(
+        className={cx(
           'p-8 flex flex-col gap-5 border-4 border-solid border-themePrimary',
           hasImage && `pt-32`,
         )}

@@ -1,7 +1,7 @@
 import { gtag } from 'common/utils/thirdParty/gtag';
 import ExternalLinkIcon from 'static/images/icons/FontAwesome/external-link-square-alt-solid.svg';
 import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
-import classNames from 'node_modules/classnames/index';
+import { cx } from 'common/utils/cva';
 
 export interface OutboundLinkPropsType {
   /**
@@ -46,7 +46,7 @@ function OutboundLink({
 
   return (
     <a
-      className={classNames('inline-flex items-start', className)}
+      className={cx('inline-flex items-start', className)}
       data-testid={testID}
       href={href}
       onClick={trackOutboundLinkClick}

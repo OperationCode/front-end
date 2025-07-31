@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import { cx } from 'common/utils/cva';
 import Badge from 'components/Badge/Badge';
 import Content from 'components/Content/Content';
 import { s3 } from 'common/constants/urls';
@@ -14,7 +14,7 @@ function LogoSection() {
       columns={[
         <ul className={styles.logoSizeList}>
           {/* - SMALL LOGOS - */}
-          <li className={classNames(styles.logoSizeListItem, styles.smallLogos)}>
+          <li className={cx(styles.logoSizeListItem, styles.smallLogos)}>
             <h5 className="text-center">Small Logos</h5>
             <p className="mx-auto">
               For use when Operation Code&apos;s logo name is between 0-1 inch in height. In most
@@ -255,7 +255,7 @@ function LogoSection() {
           </li>
 
           {/* - LARGE LOGOS - */}
-          <li className={classNames(styles.logoSizeListItem, styles.largeLogos)}>
+          <li className={cx(styles.logoSizeListItem, styles.largeLogos)}>
             <h5 className="text-center">Large Logos</h5>
             <p className="mx-auto">
               Use the Original Large Logo in almost all cases above 1 inch in height. The Red Large

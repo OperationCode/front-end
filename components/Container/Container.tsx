@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import { cx } from 'common/utils/cva';
 import { getDataAttributes } from 'common/utils/prop-utils';
 import styles from './Container.module.css';
 
@@ -52,7 +52,7 @@ function Container(props: ContainerPropsType) {
 
   return (
     <div
-      className={classNames(className, styles.Container, styles[theme], {
+      className={cx(className, styles.Container, styles[theme], {
         [styles.fullViewportHeight]: isFullViewportHeight,
       })}
       id={id}

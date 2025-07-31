@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import { cx } from 'common/utils/cva';
 
 export interface DrawerPropsType {
   /**
@@ -19,9 +19,9 @@ export interface DrawerPropsType {
 function Drawer({ children, className, isVisible = false }: DrawerPropsType) {
   return (
     <div
-      className={classNames(
+      className={cx(
         className,
-        'hidden lg:block transition-all ease-in-out duration-1000 fixed top-0 bottom-0  overflow-hidden width-full z-[2]',
+        'hidden lg:block transition-all ease-in-out duration-1000 fixed top-0 bottom-0 overflow-hidden width-full z-[2]',
         {
           '-left-0': isVisible,
           '-left-full': !isVisible,

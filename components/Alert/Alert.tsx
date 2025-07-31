@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import { cx } from 'common/utils/cva';
 import { ALERT, ALERT_CLOSE_BUTTON } from 'common/constants/testIDs';
 import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
 import styles from './Alert.module.css';
@@ -20,7 +20,7 @@ function Alert({
 }: AlertPropsType) {
   return (
     <div
-      className={classNames(styles.Alert, className, {
+      className={cx(styles.Alert, className, {
         [styles.error]: type === 'error',
         [styles.success]: type === 'success',
         [styles.warning]: type === 'warning',

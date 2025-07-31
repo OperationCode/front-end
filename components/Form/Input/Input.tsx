@@ -2,7 +2,7 @@ import type { FieldInputProps, FormikHelpers, FormikState } from 'formik';
 import { ErrorMessage } from 'formik';
 import { INPUT, INPUT_ERROR, INPUT_FEEDBACK_GROUPING } from 'common/constants/testIDs';
 import type { InputHTMLAttributes } from 'react';
-import classNames from 'classnames';
+import { cx } from 'common/utils/cva';
 import Label from 'components/Form/Label/Label';
 import Alert from 'components/Alert/Alert';
 import styles from './Input.module.css';
@@ -34,7 +34,7 @@ function Input({
   const isLabelBeforeInput = !isLabelAfterInput;
 
   return (
-    <div className={classNames(className, styles.field)} data-testid={INPUT}>
+    <div className={cx(className, styles.field)} data-testid={INPUT}>
       {isLabelBeforeInput && (
         <Label for={name} isHidden={isLabelHidden}>
           {label}
@@ -45,7 +45,7 @@ function Input({
         <input
           {...field}
           {...props}
-          className={classNames(styles.Input, hasValidationStyling, {
+          className={cx(styles.Input, hasValidationStyling, {
             [styles.valid]: touched[name] && !hasErrors && hasValidationStyling,
             [styles.invalid]: touched[name] && hasErrors && hasValidationStyling,
           })}

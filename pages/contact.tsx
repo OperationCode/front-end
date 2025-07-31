@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import { cx } from 'common/utils/cva';
 import Link from 'next/link';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
@@ -28,7 +28,7 @@ function Contact() {
           </p>
         </div>
 
-        <address className={classNames(styles.forceWidth, styles.contactMethod)}>
+        <address className={cx(styles.forceWidth, styles.contactMethod)}>
           <b>You can also reach us via email:</b>
 
           <br />
@@ -42,7 +42,7 @@ function Contact() {
           </OutboundLink>
         </address>
 
-        <address className={classNames(styles.forceWidth, styles.contactMethod)}>
+        <address className={cx(styles.forceWidth, styles.contactMethod)}>
           <b>You could tweet at us:</b>
 
           <br />
@@ -52,7 +52,7 @@ function Contact() {
           </OutboundLink>
         </address>
 
-        <address className={classNames(styles.forceWidth, styles.contactMethod)}>
+        <address className={cx(styles.forceWidth, styles.contactMethod)}>
           <b>And - if you really want to - you can snail-mail us:</b>
 
           <br />

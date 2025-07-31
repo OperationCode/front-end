@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import { cx } from 'common/utils/cva';
 import kebabCase from 'lodash/kebabCase';
 import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
 import LinkIcon from 'static/images/icons/FontAwesome/link-solid.svg';
@@ -45,7 +45,7 @@ function Heading({
   return (
     <div className={styles.headingContainer}>
       <HeadingElement
-        className={classNames(className, styles.Heading, {
+        className={cx(className, styles.Heading, {
           [styles.underline]: hasTitleUnderline,
         })}
       >

@@ -1,6 +1,6 @@
 import type { ButtonHTMLAttributes } from 'react';
 import noop from 'lodash/noop';
-import classNames from 'classnames';
+import { cx } from 'common/utils/cva';
 import { BUTTON } from 'common/constants/testIDs';
 import { gtag } from 'common/utils/thirdParty/gtag';
 import { getDataAttributes, getAriaAttributes } from 'common/utils/prop-utils';
@@ -76,7 +76,7 @@ export default function Button({
 
   return (
     <button
-      className={classNames(styles.Button, className, styles[theme], {
+      className={cx(styles.Button, className, styles[theme], {
         [styles.disabled]: disabled,
         [styles.fullWidth]: fullWidth,
       })}
