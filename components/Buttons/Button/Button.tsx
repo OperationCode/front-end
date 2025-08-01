@@ -1,10 +1,10 @@
 import type { ButtonHTMLAttributes } from 'react';
+import type { VariantProps } from 'common/utils/cva';
 import noop from 'lodash/noop';
-import { cx } from 'common/utils/cva';
+import { cva } from 'common/utils/cva';
 import { BUTTON } from 'common/constants/testIDs';
 import { gtag } from 'common/utils/thirdParty/gtag';
 import { getDataAttributes, getAriaAttributes } from 'common/utils/prop-utils';
-import styles from './Button.module.css';
 
 interface GoogleAnalyticsEventPropType {
   /**
@@ -36,20 +36,53 @@ interface GoogleAnalyticsEventPropType {
   transport?: 'beacon' | 'xhr' | 'image';
 }
 
-type ButtonProps = {
+interface ButtonProps
+  extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'disabled'>,
+    VariantProps<typeof buttonCva> {
   /**
    * Helps track in-page `event` interactions.
    */
   analyticsObject?: GoogleAnalyticsEventPropType;
-  /**
-   * Forces the component's width as wide as its parent container's width.
-   */
-  fullWidth?: boolean;
-  /**
-   * Sets the button color theme.
-   */
-  theme?: 'primary' | 'secondary';
-} & ButtonHTMLAttributes<HTMLButtonElement>;
+}
+
+export const buttonCva = cva(
+  'inline-block font-din-condensed rounded leading-none border-4 border-solid cursor-pointer font-bold text-center uppercase py-4 px-3 whitespace-nowrap transition-all duration-200 ease-linear min-w-[175px]',
+  {
+    variants: {
+      theme: {
+        primary: 'bg-primary border-primary outline-primary text-secondary',
+        secondary: 'bg-secondary border-secondary outline-secondary text-primary',
+      },
+      fullWidth: {
+        false: null,
+        true: 'w-full',
+      },
+      disabled: {
+        false: null,
+        true: 'opacity-60 hover:cursor-not-allowed',
+      },
+    },
+    compoundVariants: [
+      {
+        theme: 'primary',
+        disabled: false,
+        class:
+          'focus-visible:bg-transparent focus-visible:text-primary hover:bg-transparent hover:text-primary',
+      },
+      {
+        theme: 'secondary',
+        disabled: false,
+        class:
+          'focus-visible:bg-transparent focus-visible:text-secondary hover:bg-transparent hover:text-secondary',
+      },
+    ],
+    defaultVariants: {
+      theme: 'primary',
+      disabled: false,
+      fullWidth: false,
+    },
+  },
+);
 
 export default function Button({
   analyticsObject = {
@@ -58,17 +91,16 @@ export default function Button({
   },
   children,
   className = undefined,
-  disabled = false,
-  fullWidth = false,
+  disabled,
+  fullWidth,
   onClick = noop,
   tabIndex = 0,
-  theme = 'primary',
+  theme,
   type = 'button',
   ...rest
 }: ButtonProps) {
   const customDataAttributes = getDataAttributes(rest);
   const ariaAttributes = getAriaAttributes(rest);
-
   const eventConfig = {
     ...analyticsObject,
     label: typeof children === 'string' ? children : undefined,
@@ -76,10 +108,7 @@ export default function Button({
 
   return (
     <button
-      className={cx(styles.Button, className, styles[theme], {
-        [styles.disabled]: disabled,
-        [styles.fullWidth]: fullWidth,
-      })}
+      className={buttonCva({ theme, disabled, fullWidth, className })}
       data-testid={BUTTON}
       disabled={disabled}
       onClick={e => {

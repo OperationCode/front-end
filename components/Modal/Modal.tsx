@@ -79,7 +79,7 @@ function Modal({
           className={cx(
             'outline-none',
             'bg-white',
-            'text-themeSecondary',
+            'text-secondary',
             'flex',
             'flex-col',
             'flex-nowrap',

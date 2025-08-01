@@ -12,20 +12,19 @@ module.exports = {
   ],
   theme: {
     screens: {
-      sm: '576px',
-      md: '768px',
-      lg: '992px',
-      xl: '1200px',
+      sm: 'var(--smallViewportWidth)',
+      md: 'var(--mediumViewportWidth)',
+      lg: 'var(--largeViewportWidth)',
+      xl: 'var(--extraLargeViewportWidth)',
     },
     extend: {
       // TODO: Move colors into theme (not extension), kebab-case keys, use hsl, and update naming
       colors: {
-        themePrimary: '#3ed6f0',
-        themeSecondary: '#252e3e',
-        themeGray200: '#121212',
-        themeGray800: '#e2e2e2',
-        burntOrange500: 'hsl(14, 55%, 45%, 1)',
-        white: '#f7f7f7',
+        white: 'var(--white)',
+        primary: 'var(--primary)',
+        secondary: 'var(--secondary)',
+        'burnt-orange': 'var(--burntOrange500)',
+        'theme-gray-800': 'var(--gray)',
         error: 'var(--error)',
         'error-deep': 'var(--errorDeep)',
         success: 'var(--success)',
@@ -38,8 +37,8 @@ module.exports = {
         'prose-sm': '50ch',
       },
       fontFamily: {
-        dinCondensed: '"DIN Condensed Bold"',
-        encodeSans: '"Encode Sans"',
+        'din-condensed': '"DIN Condensed Bold"',
+        'encode-sans': '"Encode Sans"',
       },
     },
   },

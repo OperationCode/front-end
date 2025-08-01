@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-restricted-imports */
 import { cx as clsx, cva as cvaOriginal } from 'class-variance-authority';
 import { twMerge } from 'tailwind-merge';
+import type { VariantProps as VariantPropsOriginal } from 'class-variance-authority';
 import type { ClassValue } from 'class-variance-authority/dist/types';
 /* eslint-enable @typescript-eslint/no-restricted-imports */
 
@@ -36,4 +37,10 @@ export const cva: typeof cvaOriginal = (base, config) => {
   };
 };
 
-export type { VariantProps } from 'class-variance-authority';
+type ExcludeNull<T> = { [P in keyof T]: Exclude<T[P], null> };
+
+/* eslint-disable @typescript-eslint/no-explicit-any */
+export type VariantProps<Comp extends (...args: any) => any> = ExcludeNull<
+  VariantPropsOriginal<Comp>
+>;
+/* eslint-enable @typescript-eslint/no-explicit-any */

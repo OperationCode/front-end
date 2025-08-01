@@ -33,7 +33,7 @@ exports[`RegistrationForm > should render with required props 1`] = `
       data-testid="INPUT"
     >
       <label
-        className="text-themeSecondary text-sm"
+        className="text-secondary text-sm"
         data-testid="LABEL"
         htmlFor="email"
       >
@@ -61,7 +61,7 @@ exports[`RegistrationForm > should render with required props 1`] = `
       data-testid="INPUT"
     >
       <label
-        className="text-themeSecondary text-sm"
+        className="text-secondary text-sm"
         data-testid="LABEL"
         htmlFor="confirm-email"
       >
@@ -89,7 +89,7 @@ exports[`RegistrationForm > should render with required props 1`] = `
       data-testid="INPUT"
     >
       <label
-        className="text-themeSecondary text-sm"
+        className="text-secondary text-sm"
         data-testid="LABEL"
         htmlFor="password"
       >
@@ -117,7 +117,7 @@ exports[`RegistrationForm > should render with required props 1`] = `
       data-testid="INPUT"
     >
       <label
-        className="text-themeSecondary text-sm"
+        className="text-secondary text-sm"
         data-testid="LABEL"
         htmlFor="confirm-password"
       >
@@ -145,7 +145,7 @@ exports[`RegistrationForm > should render with required props 1`] = `
       data-testid="INPUT"
     >
       <label
-        className="text-themeSecondary text-sm"
+        className="text-secondary text-sm"
         data-testid="LABEL"
         htmlFor="firstName"
       >
@@ -173,7 +173,7 @@ exports[`RegistrationForm > should render with required props 1`] = `
       data-testid="INPUT"
     >
       <label
-        className="text-themeSecondary text-sm"
+        className="text-secondary text-sm"
         data-testid="LABEL"
         htmlFor="lastName"
       >
@@ -201,7 +201,7 @@ exports[`RegistrationForm > should render with required props 1`] = `
       data-testid="INPUT"
     >
       <label
-        className="text-themeSecondary text-sm"
+        className="text-secondary text-sm"
         data-testid="LABEL"
         htmlFor="zipcode"
       >
@@ -229,7 +229,7 @@ exports[`RegistrationForm > should render with required props 1`] = `
       data-testid="CHECKBOX"
     >
       <label
-        className="text-themeSecondary text-sm"
+        className="text-secondary text-sm"
         data-testid="LABEL"
         htmlFor="codeOfConduct"
       >
@@ -278,7 +278,7 @@ exports[`RegistrationForm > should render with required props 1`] = `
       data-testid="CHECKBOX"
     >
       <label
-        className="text-themeSecondary text-sm"
+        className="text-secondary text-sm"
         data-testid="LABEL"
         htmlFor="slackGuidelines"
       >
@@ -327,7 +327,7 @@ exports[`RegistrationForm > should render with required props 1`] = `
     className="max-w-md px-3 mt-5"
   >
     <button
-      className="Button secondary"
+      className="inline-block font-din-condensed rounded leading-none border-4 border-solid cursor-pointer font-bold text-center uppercase py-4 px-3 whitespace-nowrap transition-all duration-200 ease-linear min-w-[175px] bg-secondary border-secondary outline-secondary text-primary focus-visible:bg-transparent focus-visible:text-secondary hover:bg-transparent hover:text-secondary"
       data-testid="REGISTRATION_FORM_INITIAL_SUBMIT_BUTTON"
       disabled={false}
       onClick={[Function]}
