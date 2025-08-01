@@ -5,11 +5,9 @@ exports[`LogoSection > should render with required props 1`] = `
   columns={
     [
       <ul
-        className="logoSizeList"
+        className="space-y-4"
       >
-        <li
-          className="logoSizeListItem"
-        >
+        <li>
           <h5
             className="text-center"
           >
@@ -20,17 +18,17 @@ exports[`LogoSection > should render with required props 1`] = `
           >
             For use when Operation Code's logo name is between 0-1 inch in height. In most cases, use the Original Small Logo. The Stacked Small Logo is to be used where graphics needs are larger in vertical height than horizontal width with the Operation Code logo name still under 1 inch in height.
           </p>
-          <ul>
-            <li
-              className="logoTypeListItem"
-            >
+          <ul
+            className="space-y-4"
+          >
+            <li>
               <h6
                 className="text-center"
               >
                 TYPICAL
               </h6>
               <ul
-                className="badgeList"
+                className="flex justify-around items-center flex-wrap pb-4 border-b border-solid border-slate-400"
               >
                 <li>
                   <Badge
@@ -90,9 +88,7 @@ exports[`LogoSection > should render with required props 1`] = `
                 </li>
               </ul>
             </li>
-            <li
-              className="logoTypeListItem"
-            >
+            <li>
               <h6
                 className="text-center"
               >
@@ -104,7 +100,7 @@ exports[`LogoSection > should render with required props 1`] = `
                 Use the Large Stacked Original logo in areas where you have more vertical space than horizontal. Only use the Red Stacked Logo for special holidays such as Thanksgiving, fall events, and Christmas. The Light Stacked Logo is to be used with dark or contrasting bright colored backgrounds.
               </p>
               <ul
-                className="badgeList"
+                className="flex justify-around items-center flex-wrap pb-4 border-b border-solid border-slate-400"
               >
                 <li>
                   <Badge
@@ -150,9 +146,7 @@ exports[`LogoSection > should render with required props 1`] = `
                 </li>
               </ul>
             </li>
-            <li
-              className="logoTypeListItem"
-            >
+            <li>
               <h6
                 className="text-center"
               >
@@ -164,7 +158,7 @@ exports[`LogoSection > should render with required props 1`] = `
                 Use the following medals when you are prompted to upload a thumbnail logo only or profile photo. In most cases, use the OC Blue Medal. The Red Medal should only be used for holidays and special events (such as Thanksgiving, fall, or Christmas). The Navy Medal should be used memorandums or lighter bright colored backgrounds.
               </p>
               <ul
-                className="badgeList"
+                className="flex justify-around items-center flex-wrap pb-4 border-b border-solid border-slate-400"
               >
                 <li>
                   <Badge
@@ -177,7 +171,7 @@ exports[`LogoSection > should render with required props 1`] = `
                       />
                     }
                     isImageFirst={false}
-                    label="Blue"
+                    label="OC Blue"
                   />
                 </li>
                 <li>
@@ -210,9 +204,7 @@ exports[`LogoSection > should render with required props 1`] = `
                 </li>
               </ul>
             </li>
-            <li
-              className="logoTypeListItem"
-            >
+            <li>
               <h6
                 className="text-center"
               >
@@ -224,7 +216,7 @@ exports[`LogoSection > should render with required props 1`] = `
                 You may also use badges as a profile photo or thumbnail. Badges should be used to accompany corporate sponsors or alliance partnerships on shared branding. Use the original OC Blue Badge in most cases, except the Red Badge for special events and holidays (Thanksgiving, fall and Christmas). The Navy Badge may be used with light backgrounds and bright colored backgrounds.
               </p>
               <ul
-                className="badgeList"
+                className="flex justify-around items-center flex-wrap pb-4 border-b border-solid border-slate-400"
               >
                 <li>
                   <Badge
@@ -258,7 +250,7 @@ exports[`LogoSection > should render with required props 1`] = `
                   <Badge
                     icon={
                       <MockedNextImage
-                        alt="Navy"
+                        alt="Navy Badge"
                         height={404}
                         src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/large-slate-medal.png"
                         width={300}
@@ -272,9 +264,7 @@ exports[`LogoSection > should render with required props 1`] = `
             </li>
           </ul>
         </li>
-        <li
-          className="logoSizeListItem largeLogos"
-        >
+        <li>
           <h5
             className="text-center"
           >
@@ -286,16 +276,14 @@ exports[`LogoSection > should render with required props 1`] = `
             Use the Original Large Logo in almost all cases above 1 inch in height. The Red Large Logo is to be used in special events (such as Thanksgiving, fall or Christmas), and the Light Large Logo is to be used with dark backgrounds or bright colored backgrounds.
           </p>
           <ul>
-            <li
-              className="logoTypeListItem"
-            >
+            <li>
               <h6
                 className="text-center"
               >
                 TYPICAL
               </h6>
               <ul
-                className="badgeList"
+                className="flex justify-around items-center pb-4 border-b border-solid border-slate-400 flex-col flex-nowrap"
               >
                 <li>
                   <Badge
