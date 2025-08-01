@@ -6,6 +6,15 @@ type ButtonStoryType = StoryObj<typeof Button>;
 const meta: Meta<typeof Button> = {
   title: 'Buttons/Button',
   component: Button,
+  args: {
+    theme: 'primary',
+    fullWidth: false,
+    disabled: false,
+  },
+  argTypes: {
+    fullWidth: { control: 'boolean' },
+    disabled: { control: 'boolean' },
+  },
   parameters: {
     actions: {
       handles: ['click'],

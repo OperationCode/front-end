@@ -13,7 +13,7 @@ exports[`UpdateProfileForm/Steps/PersonalDetails > should render in context of F
       className="field"
     >
       <label
-        className="text-themeSecondary text-sm"
+        className="text-secondary text-sm"
         data-testid="LABEL"
         htmlFor="joinReason"
       >
@@ -141,7 +141,7 @@ exports[`UpdateProfileForm/Steps/PersonalDetails > should render in context of F
       className="field"
     >
       <label
-        className="text-themeSecondary text-sm"
+        className="text-secondary text-sm"
         data-testid="LABEL"
         htmlFor="gender"
       >
@@ -268,7 +268,7 @@ exports[`UpdateProfileForm/Steps/PersonalDetails > should render in context of F
       className="field"
     >
       <label
-        className="text-themeSecondary text-sm"
+        className="text-secondary text-sm"
         data-testid="LABEL"
         htmlFor="ethnicity"
       >
@@ -396,7 +396,7 @@ exports[`UpdateProfileForm/Steps/PersonalDetails > should render in context of F
       className="field"
     >
       <label
-        className="text-themeSecondary text-sm"
+        className="text-secondary text-sm"
         data-testid="LABEL"
         htmlFor="educationLevel"
       >

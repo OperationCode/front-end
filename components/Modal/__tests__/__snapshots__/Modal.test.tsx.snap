@@ -60,7 +60,7 @@ exports[`Modal > should render with many props assigned 1`] = `
   <div
     aria-describedby="radix-:r5:"
     aria-labelledby="radix-:r4:"
-    class="outline-none bg-white text-themeSecondary flex flex-col flex-nowrap m-4 min-h-[100px] min-w-[100px] p-6 fixed items-center justify-center overflow-hidden w-[80%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[2] shadow-md test-class"
+    class="outline-none bg-white text-secondary flex flex-col flex-nowrap m-4 min-h-[100px] min-w-[100px] p-6 fixed items-center justify-center overflow-hidden w-[80%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[2] shadow-md test-class"
     data-state="open"
     id="radix-:r3:"
     role="dialog"

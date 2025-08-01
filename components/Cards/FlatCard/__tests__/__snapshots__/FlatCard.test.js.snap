@@ -5,7 +5,7 @@ exports[`FlatCard > should render with many props assigned 1`] = `
   className="box-border my-6 mx-4 relative max-w-[400px] test-class"
 >
   <div
-    className="p-8 flex flex-col gap-5 border-4 border-solid border-themePrimary"
+    className="p-8 flex flex-col gap-5 border-4 border-solid border-primary"
   >
     <div
       className="text-center"
@@ -18,7 +18,7 @@ exports[`FlatCard > should render with many props assigned 1`] = `
       </h6>
     </div>
     <hr
-      className="w-full border-2 border-solid border-themePrimary"
+      className="w-full border-2 border-solid border-primary"
     />
     <div>
       <p>
@@ -29,10 +29,10 @@ exports[`FlatCard > should render with many props assigned 1`] = `
       </p>
     </div>
     <div
-      className="text-center absolute left-0 right-0 -bottom-7 [&>button]:hover:bg-white [&>button]:hover:text-themeSecondary [&>button]:focus-visible:text-themePrimary [&>button]:focus-visible:bg-white [&>a]:hover:bg-white [&>a]:hover:text-themeSecondary [&>a]:focus-visible:bg-white [&>a]:focus-visible:text-themeSecondary "
+      className="text-center absolute left-0 right-0 -bottom-7 [&>button]:hover:bg-white [&>button]:hover:text-secondary [&>button]:focus-visible:text-primary [&>button]:focus-visible:bg-white [&>a]:hover:bg-white [&>a]:hover:text-secondary [&>a]:focus-visible:bg-white [&>a]:focus-visible:text-secondary "
     >
       <a
-        className="Button primary"
+        className="inline-block font-din-condensed rounded leading-none border-4 border-solid cursor-pointer font-bold text-center uppercase py-4 px-3 whitespace-nowrap transition-all duration-200 ease-linear min-w-[175px] bg-primary border-primary outline-primary text-secondary focus-visible:bg-transparent focus-visible:text-primary hover:bg-transparent hover:text-primary"
         href="/"
         onClick={[Function]}
         onMouseEnter={[Function]}
@@ -50,7 +50,7 @@ exports[`FlatCard > should render with required props 1`] = `
   className="box-border my-6 mx-4 relative max-w-[400px]"
 >
   <div
-    className="p-8 flex flex-col gap-5 border-4 border-solid border-themePrimary"
+    className="p-8 flex flex-col gap-5 border-4 border-solid border-primary"
   >
     <div>
       <p>
