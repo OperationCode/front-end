@@ -7,8 +7,6 @@ executors:
   default:
     docker:
       - image: cypress/browsers:22.15.0
-    environment:
-      CC_TEST_REPORTER_ID: 0f2bc6ef737019bfc8eda369cd06b66c54606b144b4d81cec010fb494d2559af
 
 parameters:
   workspace_root:
@@ -92,12 +90,6 @@ jobs:
       - *restore_cache
       - *yarn_install
       - run:
-          name: Initialize CodeClimate
-          command: |
-            apt-get update && apt-get install curl -y
-            curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc_test_reporter
-            chmod +x ./cc_test_reporter
-      - run:
           name: Merge reports into one file
           command: |
             mkdir reports
@@ -111,14 +103,6 @@ jobs:
           name: Convert finalized report from JSON to lcov
           command: |
             yarn nyc report --reporter lcov --report-dir coverage
-      - run:
-          name: Format report for Code Climate
-          command: |
-            ./cc_test_reporter format-coverage -t lcov -o coverage/codeclimate.json coverage/lcov.info
-      - run:
-          name: Upload the report to CodeClimate
-          command: |
-            ./cc_test_reporter upload-coverage --debug --input coverage/codeclimate.json
 
 workflows:
   default:
