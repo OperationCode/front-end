@@ -26,6 +26,12 @@ module.exports = {
         themeGray800: '#e2e2e2',
         burntOrange500: 'hsl(14, 55%, 45%, 1)',
         white: '#f7f7f7',
+        error: 'var(--error)',
+        'error-deep': 'var(--errorDeep)',
+        success: 'var(--success)',
+        'success-deep': 'var(--successDeep)',
+        warning: 'var(--warning)',
+        'warning-deep': 'var(--warningDeep)',
       },
       maxWidth: {
         girderWidth: '700px',
