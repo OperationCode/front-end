@@ -31,12 +31,10 @@ export default function LinkButton({
   children,
   className,
   'data-testid': testID,
-  fullWidth,
   href,
   theme,
-  disabled,
 }: LinkButtonProps) {
-  const linkButtonClassNames = buttonCva({ theme, fullWidth, disabled, className });
+  const linkButtonClassNames = buttonCva({ theme, className });
 
   const hasAnalyticsEventLabel = !!analyticsEventLabel;
 

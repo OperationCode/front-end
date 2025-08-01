@@ -8,11 +8,9 @@ const meta: Meta<typeof Button> = {
   component: Button,
   args: {
     theme: 'primary',
-    fullWidth: false,
     disabled: false,
   },
   argTypes: {
-    fullWidth: { control: 'boolean' },
     disabled: { control: 'boolean' },
   },
   parameters: {

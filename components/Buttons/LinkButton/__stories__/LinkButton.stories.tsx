@@ -8,12 +8,6 @@ const meta: Meta<typeof LinkButton> = {
   component: LinkButton,
   args: {
     theme: 'primary',
-    fullWidth: false,
-    disabled: false,
-  },
-  argTypes: {
-    fullWidth: { control: 'boolean' },
-    disabled: { control: 'boolean' },
   },
 };
 

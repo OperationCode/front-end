@@ -43,43 +43,34 @@ interface ButtonProps
    * Helps track in-page `event` interactions.
    */
   analyticsObject?: GoogleAnalyticsEventPropType;
+  disabled?: boolean;
 }
 
 export const buttonCva = cva(
-  'inline-block font-din-condensed rounded leading-none border-4 border-solid cursor-pointer font-bold text-center uppercase py-4 px-3 whitespace-nowrap transition-all duration-200 ease-linear min-w-[175px]',
+  [
+    'inline-block font-din-condensed rounded leading-none border-4 border-solid cursor-pointer font-bold text-center uppercase py-4 px-3 whitespace-nowrap transition-all duration-200 ease-linear min-w-[175px]',
+    'focus-visible:bg-transparent hover:bg-transparent',
+    'disabled:opacity-60 disabled:hover:cursor-not-allowed',
+  ],
   {
     variants: {
       theme: {
         primary: 'bg-primary border-primary outline-primary text-secondary',
         secondary: 'bg-secondary border-secondary outline-secondary text-primary',
       },
-      fullWidth: {
-        false: null,
-        true: 'w-full',
-      },
-      disabled: {
-        false: null,
-        true: 'opacity-60 hover:cursor-not-allowed',
-      },
     },
     compoundVariants: [
       {
         theme: 'primary',
-        disabled: false,
-        class:
-          'focus-visible:bg-transparent focus-visible:text-primary hover:bg-transparent hover:text-primary',
+        class: 'focus-visible:text-primary hover:text-primary',
       },
       {
         theme: 'secondary',
-        disabled: false,
-        class:
-          'focus-visible:bg-transparent focus-visible:text-secondary hover:bg-transparent hover:text-secondary',
+        class: 'focus-visible:text-secondary hover:text-secondary',
       },
     ],
     defaultVariants: {
       theme: 'primary',
-      disabled: false,
-      fullWidth: false,
     },
   },
 );
@@ -91,8 +82,7 @@ export default function Button({
   },
   children,
   className = undefined,
-  disabled,
-  fullWidth,
+  disabled = false,
   onClick = noop,
   tabIndex = 0,
   theme,
@@ -108,7 +98,7 @@ export default function Button({
 
   return (
     <button
-      className={buttonCva({ theme, disabled, fullWidth, className })}
+      className={buttonCva({ theme, className })}
       data-testid={BUTTON}
       disabled={disabled}
       onClick={e => {
