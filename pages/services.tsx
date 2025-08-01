@@ -1,5 +1,5 @@
 import TrackVisibility from 'react-on-screen';
-import classNames from 'classnames';
+import { cx } from 'common/utils/cva';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Badge from 'components/Badge/Badge';
@@ -54,14 +54,14 @@ function Services() {
               are all working towards relevant career and personal goals. Membership is free!
             </p>
 
-            <div className={classNames(styles.centeredText, styles.topMargin)}>
+            <div className={cx(styles.centeredText, styles.topMargin)}>
               <LinkButton href="/join" theme="secondary">
                 Become A Member
               </LinkButton>
             </div>
 
             <div>
-              <p className={classNames(styles.centeredText, styles.topMargin)}>
+              <p className={cx(styles.centeredText, styles.topMargin)}>
                 Do you love Operation Code? Check out our{' '}
                 <OutboundLink
                   analyticsEventLabel="Merch Store"

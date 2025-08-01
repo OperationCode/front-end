@@ -5,14 +5,14 @@ import ColorSection from 'components/Branding/ColorSection/ColorSection';
 import FontSection from 'components/Branding/FontSection/FontSection';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 import { s3 } from 'common/constants/urls';
-import { twMerge } from 'tailwind-merge';
+import { cx } from 'common/utils/cva';
 import styles from 'styles/branding.module.css';
 
 const pageTitle = 'Branding Guide';
 
 function Branding() {
   return (
-    <div className={twMerge(styles.Branding, '[*_p]:px-4')}>
+    <div className={cx(styles.Branding, '[*_p]:px-4')}>
       <Head title={pageTitle} />
 
       <HeroBanner isFullViewportHeight title={pageTitle}>

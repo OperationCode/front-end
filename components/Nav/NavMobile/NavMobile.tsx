@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import classNames from 'classnames';
+import { cx } from 'common/utils/cva';
 import { s3 } from 'common/constants/urls';
 import HamburgerIcon from 'static/images/icons/hamburger.svg';
 import CloseButton from 'components/Buttons/CloseButton/CloseButton';
@@ -57,11 +57,7 @@ function NavMobile({ isOpen, openMenu, closeMenu, navItems }: NavMobilePropsType
   return (
     <header className={styles.NavMobile} data-testid="Mobile Nav Container">
       <Link href="/">
-        <button
-          className={classNames(styles.button, styles.logoButton)}
-          type="button"
-          name="dropdown"
-        >
+        <button className={cx(styles.button, styles.logoButton)} type="button" name="dropdown">
           <div className={styles.logo}>
             <Image
               src={`${s3}branding/logos/small-blue-logo.png`}
@@ -74,7 +70,7 @@ function NavMobile({ isOpen, openMenu, closeMenu, navItems }: NavMobilePropsType
       </Link>
 
       <button
-        className={classNames(styles.button, styles.hamburger)}
+        className={cx(styles.button, styles.hamburger)}
         onClick={openMenu}
         type="button"
         name="dropdown"

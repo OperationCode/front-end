@@ -2,7 +2,7 @@ import type { FieldInputProps, FormikHelpers, FormikState } from 'formik';
 import { ErrorMessage } from 'formik';
 import Alert from 'components/Alert/Alert';
 import Label from 'components/Form/Label/Label';
-import classNames from 'classnames';
+import { cx } from 'common/utils/cva';
 import type { OptionType, ThemedReactSelectProps } from './ThemedReactSelect';
 import { ThemedReactSelect } from './ThemedReactSelect';
 import styles from './Select.module.css';
@@ -32,7 +32,7 @@ export function SelectMulti({
   const hasErrors = Boolean(errors[name]);
 
   return (
-    <div className={classNames(className, styles.field)}>
+    <div className={cx(className, styles.field)}>
       <Label for={name} isHidden={isLabelHidden}>
         {label}
       </Label>

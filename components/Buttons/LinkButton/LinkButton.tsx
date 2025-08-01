@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import { cx } from 'common/utils/cva';
 import Link from 'next/link';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 import styles from '../Button/Button.module.css';
@@ -43,7 +43,7 @@ export default function LinkButton({
   href,
   theme = 'primary',
 }: LinkButtonProps) {
-  const linkButtonClassNames = classNames(styles.Button, className, styles[theme], {
+  const linkButtonClassNames = cx(styles.Button, className, styles[theme], {
     [styles.fullWidth]: fullWidth,
   });
 

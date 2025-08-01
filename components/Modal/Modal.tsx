@@ -1,9 +1,8 @@
-import classNames from 'classnames';
 import * as Dialog from '@radix-ui/react-dialog';
 import { gtag } from 'common/utils/thirdParty/gtag';
 import CloseButton from 'components/Buttons/CloseButton/CloseButton';
 import { MODAL_CONTENT, MODAL_OVERLAY } from 'common/constants/testIDs';
-import { twMerge } from 'tailwind-merge';
+import { cx } from 'common/utils/cva';
 
 export interface ModalPropsType {
   /**
@@ -65,7 +64,7 @@ function Modal({
     <Dialog.Root defaultOpen={false} open={isOpen}>
       <Dialog.Portal container={portalContainer}>
         <Dialog.Overlay
-          className={twMerge('inset-0 fixed bg-white/50 z-[2]', overlayClassName)}
+          className={cx('inset-0 fixed bg-white/50 z-[2]', overlayClassName)}
           onClick={canClose ? onRequestClose : undefined}
           data-testid={MODAL_OVERLAY}
         >
@@ -77,7 +76,7 @@ function Modal({
         </Dialog.Overlay>
 
         <Dialog.Content
-          className={classNames(
+          className={cx(
             'outline-none',
             'bg-white',
             'text-themeSecondary',

@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import { cx } from 'common/utils/cva';
 import Container from 'components/Container/Container';
 import { HERO_BANNER_H1 } from 'common/constants/testIDs';
 
@@ -38,14 +38,14 @@ function HeroBanner({
   return (
     <Container
       backgroundImageSource={backgroundImageSource}
-      className={classNames(className, 'pt-20 text-shadow-[0_0_15px_#111111]', {
+      className={cx(className, 'pt-20 text-shadow-[0_0_15px_#111111]', {
         'min-h-[35vh]': shouldBeMini,
         'min-h-[60vh]': !shouldBeMini,
       })}
       isFullViewportHeight={isFullViewportHeight}
     >
       <h1
-        className={classNames({ 'border-b-4 border-b-themePrimary text-center mb-4': children })}
+        className={cx({ 'border-b-4 border-b-themePrimary text-center mb-4': children })}
         data-testid={HERO_BANNER_H1}
       >
         {title}

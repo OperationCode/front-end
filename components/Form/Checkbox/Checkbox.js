@@ -1,5 +1,4 @@
 import { shape, string, node, number, object, objectOf, oneOfType } from 'prop-types';
-import classNames from 'classnames';
 import { ErrorMessage } from 'formik';
 import { CHECKBOX, CHECKBOX_ERROR } from 'common/constants/testIDs';
 import Alert from 'components/Alert/Alert';
@@ -33,7 +32,7 @@ function Checkbox({ field: { name, value, ...field }, form: { errors }, id, labe
       <Label for={name} isHidden={false}>
         <input
           {...field}
-          className={classNames(styles.Checkbox)}
+          className={styles.Checkbox}
           id={id || name}
           name={name}
           type="checkbox"

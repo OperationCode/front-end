@@ -1,13 +1,12 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Router from 'next/router';
-import classNames from 'classnames';
 import Logo from 'public/static/images/logo.svg';
 
 import { desktopNavItems, mobileNavItems } from 'common/constants/navigation';
 import NavMobile from 'components/Nav/NavMobile/NavMobile';
 import dynamic from 'next/dynamic';
-import { twMerge } from 'tailwind-merge';
+import { cx } from 'common/utils/cva';
 import UserLogo from '../../public/static/images/icons/FontAwesome/user.svg';
 import styles from './Nav.module.css';
 
@@ -49,10 +48,7 @@ export const Nav = () => {
           <nav data-testid="Desktop Nav">
             <Link href="/" key="Home">
               <a
-                className={classNames(
-                  styles.logoLink,
-                  twMerge(styles.link, '[&>svg]:-bottom-2 [&>svg]:right-3'),
-                )}
+                className={cx(styles.logoLink, styles.link, '[&>svg]:-bottom-2 [&>svg]:right-3')}
                 onContextMenu={event => {
                   event.preventDefault();
                   Router.push('/branding');
@@ -62,7 +58,7 @@ export const Nav = () => {
               </a>
             </Link>
 
-            <ul className={twMerge(styles.link, '[&>svg]:-bottom-2 [&>svg]:right-3')}>
+            <ul className={cx(styles.link, '[&>svg]:-bottom-2 [&>svg]:right-3')}>
               {desktopNavItems.map(navItem => (
                 <NavListItem
                   key={navItem.name}
@@ -79,8 +75,9 @@ export const Nav = () => {
               <li key="Donate">
                 <Link href="/donate">
                   <a
-                    className={classNames(
-                      twMerge(styles.link, '[&>svg]:-bottom-2 [&>svg]:right-3'),
+                    className={cx(
+                      styles.link,
+                      '[&>svg]:-bottom-2 [&>svg]:right-3',
                       styles.donateLink,
                     )}
                   >

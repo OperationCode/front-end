@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import { cx } from 'common/utils/cva';
 import { CLOSE_BUTTON } from 'common/constants/testIDs';
 import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
 import PlusIcon from 'static/images/icons/plus.svg';
@@ -26,7 +26,7 @@ export default function CloseButton({
     >
       <ScreenReaderOnly>Close</ScreenReaderOnly>
 
-      <PlusIcon className={classNames(styles.icon, styles[theme])} />
+      <PlusIcon className={cx(styles.icon, styles[theme])} />
     </button>
   );
 }

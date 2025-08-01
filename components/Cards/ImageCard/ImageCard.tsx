@@ -1,4 +1,4 @@
-import { twMerge } from 'tailwind-merge';
+import { cx } from 'common/utils/cva';
 import Image from 'next/image';
 import type { CardPropsType } from 'components/Cards/Card/Card';
 import Card from 'components/Cards/Card/Card';
@@ -34,7 +34,7 @@ function ImageCard({
 
   return (
     <Card
-      className={twMerge(
+      className={cx(
         'md:flex-row flex-col md:h-56 md:w-[650px] md:max-w-none p-0 h-auto max-w-xs w-auto [&>*]:flex-[1_1_50%]',
         className,
       )}

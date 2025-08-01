@@ -1,10 +1,9 @@
 import { useState } from 'react';
-import classNames from 'classnames';
 import Link from 'next/link';
 import PlusIcon from 'static/images/icons/plus.svg';
 import MinusIcon from 'static/images/icons/minus.svg';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
-import { twMerge } from 'tailwind-merge';
+import { cx } from 'common/utils/cva';
 import styles from './NavListItem.module.css';
 
 interface SublinkType {
@@ -64,10 +63,7 @@ function NavListItem({ sublinks, href, name, icon = null }: NavListItemPropsType
     <li className={styles.NavListItem}>
       <Link href={href}>
         <a
-          className={classNames(
-            twMerge(styles.link, '[&>svg]:-bottom-2 [&>svg]:right-3'),
-            styles.navItemLink,
-          )}
+          className={cx(styles.link, '[&>svg]:-bottom-2 [&>svg]:right-3', styles.navItemLink)}
           onMouseEnter={exposeSublinks}
           onMouseLeave={hideSublinks}
           role="link"
@@ -99,7 +95,7 @@ function NavListItem({ sublinks, href, name, icon = null }: NavListItemPropsType
           </button>
 
           <ul
-            className={classNames(styles.sublinksList, {
+            className={cx(styles.sublinksList, {
               [styles.invisible]: !areSublinksVisible,
             })}
             onMouseEnter={exposeSublinks}
@@ -111,7 +107,7 @@ function NavListItem({ sublinks, href, name, icon = null }: NavListItemPropsType
                 {!sublink.isExternal ? (
                   <Link href={sublink.href} prefetch={process.env.NODE_ENV === 'production'}>
                     <a
-                      className={twMerge(styles.link, '[&>svg]:-bottom-2 [&>svg]:right-3')}
+                      className={cx(styles.link, '[&>svg]:-bottom-2 [&>svg]:right-3')}
                       role="link"
                       tabIndex={0}
                       data-testid={`Nav Item ${sublink.name}`}
@@ -123,12 +119,12 @@ function NavListItem({ sublinks, href, name, icon = null }: NavListItemPropsType
                 ) : (
                   <OutboundLink
                     analyticsEventLabel={`Clicked on ${sublink.name} -> ${sublink.href}`}
-                    className={twMerge(styles.link, '[&>svg]:-bottom-2 [&>svg]:right-3')}
+                    className={cx(styles.link, '[&>svg]:-bottom-2 [&>svg]:right-3')}
                     data-testid={`Nav Item ${sublink.name}`}
                     href={sublink.href}
                     hasIcon
                   >
-                    <span className={twMerge(styles.link, '[&>svg]:-bottom-2 [&>svg]:right-3')}>
+                    <span className={cx(styles.link, '[&>svg]:-bottom-2 [&>svg]:right-3')}>
                       {sublink.name}
                     </span>
                   </OutboundLink>
