@@ -16,6 +16,7 @@ import Alert from 'components/Alert/Alert';
 import ProgressIndicator from 'components/ProgressIndicator/ProgressIndicator';
 import type { OptionType } from 'components/Form/Select/ThemedReactSelect';
 import { InlineLoadingSpinner } from 'components/InlineLoadingSpinner';
+import { cx } from 'common/utils/cva';
 
 interface MultiStepFormProps<T> {
   initialValues: T;
@@ -150,9 +151,8 @@ export function MultiStepForm<
                 type="submit"
                 theme="secondary"
                 disabled={formikBag.isSubmitting}
-                fullWidth={isFirstStep}
                 data-testid={MULTI_STEP_STEP_BUTTON}
-                className="group"
+                className={cx('group', isFirstStep && 'w-full')}
               >
                 <span className="flex items-center justify-center gap-x-2">
                   {formikBag.isSubmitting && <InlineLoadingSpinner className="-mt-[0.325rem]" />}

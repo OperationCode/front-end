@@ -6,6 +6,9 @@ type LinkButtonStoryType = StoryObj<typeof LinkButton>;
 const meta: Meta<typeof LinkButton> = {
   title: 'Buttons/LinkButton',
   component: LinkButton,
+  args: {
+    theme: 'primary',
+  },
 };
 
 export default meta;

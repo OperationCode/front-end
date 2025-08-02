@@ -21,8 +21,8 @@ function FontSection() {
                 <div
                   className={
                     fontsObject[item] === 'DIN Condensed Bold'
-                      ? '[&>p]:font-serif [&>h6]:font-serif [&>p]:font-dinCondensed [&>h6]:font-dinCondensed'
-                      : '[&>p]:font-sans [&>p]:font-encodeSans [&>h6]:font-sans [&>h6]:font-encodeSans'
+                      ? '[&>p]:font-serif [&>h6]:font-serif [&>p]:font-din-condensed [&>h6]:font-din-condensed'
+                      : '[&>p]:font-sans [&>p]:font-encode-sans [&>h6]:font-sans [&>h6]:font-encode-sans'
                   }
                 >
                   <h6 style={fontStyle}>{fontsObject[item]}</h6>

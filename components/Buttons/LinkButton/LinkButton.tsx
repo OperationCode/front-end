@@ -1,9 +1,9 @@
-import { cx } from 'common/utils/cva';
 import Link from 'next/link';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
-import styles from '../Button/Button.module.css';
+import type { VariantProps } from 'common/utils/cva';
+import { buttonCva } from '../Button/Button';
 
-export interface LinkButtonProps {
+export interface LinkButtonProps extends VariantProps<typeof buttonCva> {
   /**
    * Url to be passed to the base anchor element.
    */
@@ -24,14 +24,6 @@ export interface LinkButtonProps {
    * Sets an id to the base element for testing.
    */
   'data-testid'?: string;
-  /**
-   * Forces the component's width as wide as its parent container's width.
-   */
-  fullWidth?: boolean;
-  /**
-   * Sets the button color theme.
-   */
-  theme?: 'primary' | 'secondary';
 }
 
 export default function LinkButton({
@@ -39,13 +31,10 @@ export default function LinkButton({
   children,
   className,
   'data-testid': testID,
-  fullWidth = false,
   href,
-  theme = 'primary',
+  theme,
 }: LinkButtonProps) {
-  const linkButtonClassNames = cx(styles.Button, className, styles[theme], {
-    [styles.fullWidth]: fullWidth,
-  });
+  const linkButtonClassNames = buttonCva({ theme, className });
 
   const hasAnalyticsEventLabel = !!analyticsEventLabel;
 

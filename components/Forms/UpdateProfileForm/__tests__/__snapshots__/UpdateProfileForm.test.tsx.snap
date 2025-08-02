@@ -39,7 +39,7 @@ exports[`UpdateProfileForm > should render with required props 1`] = `
       className="fullWidth field"
     >
       <label
-        className="text-themeSecondary text-sm"
+        className="text-secondary text-sm"
         data-testid="LABEL"
         htmlFor="employmentStatus"
       >
@@ -167,7 +167,7 @@ exports[`UpdateProfileForm > should render with required props 1`] = `
       data-testid="INPUT"
     >
       <label
-        className="text-themeSecondary text-sm"
+        className="text-secondary text-sm"
         data-testid="LABEL"
         htmlFor="companyName"
       >
@@ -194,7 +194,7 @@ exports[`UpdateProfileForm > should render with required props 1`] = `
       data-testid="INPUT"
     >
       <label
-        className="text-themeSecondary text-sm"
+        className="text-secondary text-sm"
         data-testid="LABEL"
         htmlFor="companyRole"
       >
@@ -224,7 +224,7 @@ exports[`UpdateProfileForm > should render with required props 1`] = `
     className="flex justify-center flex-wrap md:flex-nowrap md:justify-around items-center mx-auto mt-8 w-full gap-4 min-w-[7rem] [&>button]:w-full md:[&>button]:w-auto"
   >
     <button
-      className="Button group secondary fullWidth"
+      className="inline-block font-din-condensed rounded leading-none border-4 border-solid cursor-pointer font-bold text-center uppercase py-4 px-3 whitespace-nowrap transition-all duration-200 ease-linear min-w-[175px] focus-visible:bg-transparent hover:bg-transparent disabled:opacity-60 disabled:hover:cursor-not-allowed bg-secondary border-secondary outline-secondary text-primary focus-visible:text-secondary hover:text-secondary group w-full"
       data-testid="SUBMIT_STEP_BUTTON"
       disabled={false}
       onClick={[Function]}

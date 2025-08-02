@@ -45,7 +45,7 @@ function HeroBanner({
       isFullViewportHeight={isFullViewportHeight}
     >
       <h1
-        className={cx({ 'border-b-4 border-b-themePrimary text-center mb-4': children })}
+        className={cx({ 'border-b-4 border-b-primary text-center mb-4': children })}
         data-testid={HERO_BANNER_H1}
       >
         {title}

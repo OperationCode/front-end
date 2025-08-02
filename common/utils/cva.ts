@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-restricted-imports */
-import { cx as clsx, cva as cvaOriginal } from 'class-variance-authority';
+import { cx as clsx, cva as cvaOriginal } from 'cva';
 import { twMerge } from 'tailwind-merge';
-import type { ClassValue } from 'class-variance-authority/dist/types';
+import type { ClassValue, CVA } from 'cva';
 /* eslint-enable @typescript-eslint/no-restricted-imports */
 
 /**
@@ -28,12 +28,12 @@ export const cx = (...classes: ClassValue[]) => twMerge(clsx(...classes));
  *
  * @see https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Handling_conflicts
  */
-export const cva: typeof cvaOriginal = (base, config) => {
-  const cvaFn = cvaOriginal(base, config);
+export const cva: CVA = props => {
+  const cvaFn = cvaOriginal(props);
   return (...args: Parameters<typeof cvaFn>) => {
     const result = cvaFn(...args);
     return twMerge(result);
   };
 };
 
-export type { VariantProps } from 'class-variance-authority';
+export type { VariantProps } from 'cva';
