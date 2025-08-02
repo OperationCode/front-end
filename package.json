@@ -51,7 +51,7 @@
     "@types/js-cookie": "^3.0.6",
     "airtable": "^0.12.2",
     "axios": "^1.9.0",
-    "class-variance-authority": "^0.7.1",
+    "cva": "^1.0.0-beta.4",
     "date-fns": "^2.29.3",
     "eslint-plugin-vitest": "^0.3.22",
     "fast-xml-parser": "^3.21.1",

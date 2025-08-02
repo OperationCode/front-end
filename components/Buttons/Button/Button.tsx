@@ -37,43 +37,40 @@ interface GoogleAnalyticsEventPropType {
 }
 
 interface ButtonProps
-  extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'disabled'>,
+  extends ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonCva> {
   /**
    * Helps track in-page `event` interactions.
    */
   analyticsObject?: GoogleAnalyticsEventPropType;
-  disabled?: boolean;
 }
 
-export const buttonCva = cva(
-  [
+export const buttonCva = cva({
+  base: [
     'inline-block font-din-condensed rounded leading-none border-4 border-solid cursor-pointer font-bold text-center uppercase py-4 px-3 whitespace-nowrap transition-all duration-200 ease-linear min-w-[175px]',
     'focus-visible:bg-transparent hover:bg-transparent',
     'disabled:opacity-60 disabled:hover:cursor-not-allowed',
   ],
-  {
-    variants: {
-      theme: {
-        primary: 'bg-primary border-primary outline-primary text-secondary',
-        secondary: 'bg-secondary border-secondary outline-secondary text-primary',
-      },
-    },
-    compoundVariants: [
-      {
-        theme: 'primary',
-        class: 'focus-visible:text-primary hover:text-primary',
-      },
-      {
-        theme: 'secondary',
-        class: 'focus-visible:text-secondary hover:text-secondary',
-      },
-    ],
-    defaultVariants: {
-      theme: 'primary',
+  variants: {
+    theme: {
+      primary: 'bg-primary border-primary outline-primary text-secondary',
+      secondary: 'bg-secondary border-secondary outline-secondary text-primary',
     },
   },
-);
+  compoundVariants: [
+    {
+      theme: 'primary',
+      class: 'focus-visible:text-primary hover:text-primary',
+    },
+    {
+      theme: 'secondary',
+      class: 'focus-visible:text-secondary hover:text-secondary',
+    },
+  ],
+  defaultVariants: {
+    theme: 'primary',
+  },
+});
 
 export default function Button({
   analyticsObject = {
