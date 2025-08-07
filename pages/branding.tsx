@@ -15,7 +15,7 @@ function Branding() {
     <div className={cx(styles.Branding, '[*_p]:px-4')}>
       <Head title={pageTitle} />
 
-      <HeroBanner isFullViewportHeight title={pageTitle}>
+      <HeroBanner className="min-h-dvh" title={pageTitle}>
         <h6 className="text-center">
           For external organizations, corporate sponsors and press, please obtain specific guidance
           and approval from the Director of Communications prior to using Operation Code Branding on

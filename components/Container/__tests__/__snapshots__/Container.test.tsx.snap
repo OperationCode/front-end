@@ -2,7 +2,7 @@
 
 exports[`Container > should render with many props assigned 1`] = `
 <div
-  className="test-class Container white fullViewportHeight"
+  className="bg-center bg-no-repeat bg-cover flex items-center justify-between w-full fill-current min-h-[25px] bg-white text-secondary test-class"
   style={
     {
       "backgroundImage": "linear-gradient(hsl(215, 30%, 10%, 0.7),hsl(215, 30%, 10%, 0.7)), url(https://operation-code-assets.s3.us-east-2.amazonaws.com/heroBanner/stock_family-2.jpg)",
@@ -10,7 +10,7 @@ exports[`Container > should render with many props assigned 1`] = `
   }
 >
   <div
-    className="content"
+    className="flex flex-col items-center justify-center mx-auto w-full my-[3.5rem] max-w-[1400px] sm:w-[85%]"
   >
     Test Children
   </div>

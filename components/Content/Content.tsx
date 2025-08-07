@@ -25,11 +25,6 @@ export interface ContentPropsType {
    */
   id?: string;
   /**
-   * Sets the height of the container to be full viewport height.
-   * @default false
-   */
-  isFullViewportHeight?: boolean;
-  /**
    * Applies the color theme.
    * @default secondary
    */
@@ -45,7 +40,6 @@ function Content({
   columns,
   hasTitleUnderline = false,
   id,
-  isFullViewportHeight = false,
   theme = 'secondary',
   title,
   backgroundImageSource,
@@ -55,7 +49,6 @@ function Content({
       backgroundImageSource={backgroundImageSource}
       className={className}
       id={id}
-      isFullViewportHeight={isFullViewportHeight}
       theme={theme}
     >
       {title && <Heading text={title} hasTitleUnderline={hasTitleUnderline} headingLevel={3} />}

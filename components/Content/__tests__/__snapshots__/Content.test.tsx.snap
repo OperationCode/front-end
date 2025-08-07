@@ -2,11 +2,11 @@
 
 exports[`Content > should render with many props assigned 1`] = `
 <div
-  className="Container secondary fullViewportHeight"
+  className="bg-center bg-no-repeat bg-cover flex items-center justify-between w-full fill-current min-h-[25px] bg-secondary text-white"
   id="test-id"
 >
   <div
-    className="content"
+    className="flex flex-col items-center justify-center mx-auto w-full my-[3.5rem] max-w-[1400px] sm:w-[85%]"
   >
     <div
       className="headingContainer"
@@ -65,10 +65,10 @@ exports[`Content > should render with many props assigned 1`] = `
 
 exports[`Content > should render with required props 1`] = `
 <div
-  className="Container secondary"
+  className="bg-center bg-no-repeat bg-cover flex items-center justify-between w-full fill-current min-h-[25px] bg-secondary text-white"
 >
   <div
-    className="content"
+    className="flex flex-col items-center justify-center mx-auto w-full my-[3.5rem] max-w-[1400px] sm:w-[85%]"
   >
     <div
       className="flex justify-center items-center flex-wrap w-full [&>*]:m-4"

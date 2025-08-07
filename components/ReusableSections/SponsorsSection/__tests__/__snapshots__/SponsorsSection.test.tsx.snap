@@ -2,11 +2,11 @@
 
 exports[`SponsorsSection > should render 1`] = `
 <div
-  className="Container gray"
+  className="bg-center bg-no-repeat bg-cover flex items-center justify-between w-full fill-current min-h-[25px] bg-theme-gray-800 text-secondary"
   data-testid="Sponsors Section"
 >
   <div
-    className="content"
+    className="flex flex-col items-center justify-center mx-auto w-full my-[3.5rem] max-w-[1400px] sm:w-[85%]"
   >
     <div
       className="headingContainer"

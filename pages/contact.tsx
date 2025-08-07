@@ -12,7 +12,7 @@ function Contact() {
     <div className={styles.Contact}>
       <Head title={pageTitle} />
 
-      <HeroBanner className={styles.contactHero} isFullViewportHeight title={pageTitle}>
+      <HeroBanner className={cx(styles.contactHero, 'min-h-dvh')} title={pageTitle}>
         <div className={styles.verticalSpacing}>
           <p>
             We are a decentralized community of hard-working volunteers, and we love hearing
