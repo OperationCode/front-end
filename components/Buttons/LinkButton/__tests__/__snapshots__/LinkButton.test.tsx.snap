@@ -2,7 +2,7 @@
 
 exports[`LinkButton > should render with many props assigned 1`] = `
 <a
-  className="items-start inline-block font-din-condensed rounded leading-none border-4 border-solid cursor-pointer font-bold text-center uppercase py-4 px-3 whitespace-nowrap transition-all duration-200 ease-linear min-w-[175px] bg-secondary border-secondary outline-secondary text-primary w-full focus-visible:bg-transparent focus-visible:text-secondary hover:bg-transparent hover:text-secondary test-class"
+  className="items-start inline-block font-din-condensed rounded leading-none border-4 border-solid cursor-pointer font-bold text-center uppercase py-4 px-3 whitespace-nowrap transition-all duration-200 ease-linear min-w-[175px] focus-visible:bg-transparent hover:bg-transparent disabled:opacity-60 disabled:hover:cursor-not-allowed bg-secondary border-secondary outline-secondary text-primary focus-visible:text-secondary hover:text-secondary test-class"
   data-testid="Test"
   href="https://tests.com"
   onClick={[Function]}
@@ -21,7 +21,7 @@ exports[`LinkButton > should render with many props assigned 1`] = `
 
 exports[`LinkButton > should render with required props 1`] = `
 <a
-  className="inline-block font-din-condensed rounded leading-none border-4 border-solid cursor-pointer font-bold text-center uppercase py-4 px-3 whitespace-nowrap transition-all duration-200 ease-linear min-w-[175px] bg-primary border-primary outline-primary text-secondary focus-visible:bg-transparent focus-visible:text-primary hover:bg-transparent hover:text-primary"
+  className="inline-block font-din-condensed rounded leading-none border-4 border-solid cursor-pointer font-bold text-center uppercase py-4 px-3 whitespace-nowrap transition-all duration-200 ease-linear min-w-[175px] focus-visible:bg-transparent hover:bg-transparent disabled:opacity-60 disabled:hover:cursor-not-allowed bg-primary border-primary outline-primary text-secondary focus-visible:text-primary hover:text-primary"
   href="https://tests.com"
   onClick={[Function]}
   onMouseEnter={[Function]}
