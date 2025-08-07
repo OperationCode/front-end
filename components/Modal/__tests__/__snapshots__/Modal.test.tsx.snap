@@ -25,7 +25,7 @@ exports[`Modal > should render with many props assigned 1`] = `
     style="pointer-events: auto;"
   >
     <button
-      class=""
+      class="group bg-transparent h-5 w-5 absolute top-4 right-4 border-none z-1 text-secondary"
       data-testid="CLOSE_BUTTON"
       type="button"
     >
@@ -36,7 +36,7 @@ exports[`Modal > should render with many props assigned 1`] = `
         Close
       </span>
       <svg
-        class=""
+        class="fill-current transform rotate-45 transition-transform duration-200 ease-linear group-hover:rotate-[135deg]"
         viewBox="0 0 500 500"
       >
         <symbol

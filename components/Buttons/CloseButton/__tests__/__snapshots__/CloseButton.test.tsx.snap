@@ -2,7 +2,7 @@
 
 exports[`CloseButton > should render with just required props passed 1`] = `
 <button
-  className=""
+  className="group bg-transparent h-5 w-5 absolute top-4 right-4 border-none z-1 text-primary"
   data-testid="CLOSE_BUTTON"
   onClick={[MockFunction spy]}
   type="button"
@@ -14,7 +14,7 @@ exports[`CloseButton > should render with just required props passed 1`] = `
     Close
   </span>
   <svg
-    className=""
+    className="fill-current transform rotate-45 transition-transform duration-200 ease-linear group-hover:rotate-[135deg]"
     dangerouslySetInnerHTML={
       {
         "__html": "<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" id="c3230965"><title>Plus Symbol</title><path d="M500 200H300V0H200v200H0v100h200v200h100V300h200V200z"/></symbol><use href='#c3230965'/>",
