@@ -2,7 +2,7 @@
 
 exports[`Button > should render with many props assigned 1`] = `
 <button
-  className="Button test-class secondary disabled fullWidth"
+  className="inline-block font-din-condensed rounded leading-none border-4 border-solid cursor-pointer font-bold text-center uppercase py-4 px-3 whitespace-nowrap transition-all duration-200 ease-linear min-w-[175px] focus-visible:bg-transparent hover:bg-transparent disabled:opacity-60 disabled:hover:cursor-not-allowed bg-secondary border-secondary outline-secondary text-primary focus-visible:text-secondary hover:text-secondary test-class"
   data-id="test-id"
   data-testid="BUTTON"
   disabled={true}
@@ -16,7 +16,7 @@ exports[`Button > should render with many props assigned 1`] = `
 
 exports[`Button > should render with required props 1`] = `
 <button
-  className="Button primary"
+  className="inline-block font-din-condensed rounded leading-none border-4 border-solid cursor-pointer font-bold text-center uppercase py-4 px-3 whitespace-nowrap transition-all duration-200 ease-linear min-w-[175px] focus-visible:bg-transparent hover:bg-transparent disabled:opacity-60 disabled:hover:cursor-not-allowed bg-primary border-primary outline-primary text-secondary focus-visible:text-primary hover:text-primary"
   data-testid="BUTTON"
   disabled={false}
   onClick={[Function]}

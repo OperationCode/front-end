@@ -9,7 +9,7 @@ exports[`FontSection > should render with required props 1`] = `
       >
         <li>
           <div
-            className="[&>p]:font-serif [&>h6]:font-serif [&>p]:font-dinCondensed [&>h6]:font-dinCondensed"
+            className="[&>p]:font-serif [&>h6]:font-serif [&>p]:font-din-condensed [&>h6]:font-din-condensed"
           >
             <h6
               style={
@@ -33,7 +33,7 @@ exports[`FontSection > should render with required props 1`] = `
         </li>
         <li>
           <div
-            className="[&>p]:font-sans [&>p]:font-encodeSans [&>h6]:font-sans [&>h6]:font-encodeSans"
+            className="[&>p]:font-sans [&>p]:font-encode-sans [&>h6]:font-sans [&>h6]:font-encode-sans"
           >
             <h6
               style={

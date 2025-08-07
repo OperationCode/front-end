@@ -33,7 +33,7 @@ function FlatCard({ button: Button, children, className, header, image }) {
     >
       <div
         className={cx(
-          'p-8 flex flex-col gap-5 border-4 border-solid border-themePrimary',
+          'p-8 flex flex-col gap-5 border-4 border-solid border-primary',
           hasImage && `pt-32`,
         )}
       >
@@ -43,7 +43,7 @@ function FlatCard({ button: Button, children, className, header, image }) {
           <div className="flex justify-center -my-5">
             <div
               data-testid={FLAT_CARD_IMAGE}
-              className="absolute -top-4 border-solid border-themePrimary border-[3px] w-[194px] h-[194px]"
+              className="absolute -top-4 border-solid border-primary border-[3px] w-[194px] h-[194px]"
             >
               <Image
                 src={image.source}
@@ -57,12 +57,12 @@ function FlatCard({ button: Button, children, className, header, image }) {
           </div>
         )}
 
-        {header && <hr className="w-full border-2 border-solid border-themePrimary" />}
+        {header && <hr className="w-full border-2 border-solid border-primary" />}
 
         <div>{children}</div>
 
         {Button && (
-          <div className="text-center absolute left-0 right-0 -bottom-7 [&>button]:hover:bg-white [&>button]:hover:text-themeSecondary [&>button]:focus-visible:text-themePrimary [&>button]:focus-visible:bg-white [&>a]:hover:bg-white [&>a]:hover:text-themeSecondary [&>a]:focus-visible:bg-white [&>a]:focus-visible:text-themeSecondary ">
+          <div className="text-center absolute left-0 right-0 -bottom-7 [&>button]:hover:bg-white [&>button]:hover:text-secondary [&>button]:focus-visible:text-primary [&>button]:focus-visible:bg-white [&>a]:hover:bg-white [&>a]:hover:text-secondary [&>a]:focus-visible:bg-white [&>a]:focus-visible:text-secondary ">
             {Button}
           </div>
         )}
