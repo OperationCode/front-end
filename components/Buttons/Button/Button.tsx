@@ -38,7 +38,7 @@ interface GoogleAnalyticsEventPropType {
 
 interface ButtonProps
   extends ButtonHTMLAttributes<HTMLButtonElement>,
-  VariantProps<typeof buttonCva> {
+    VariantProps<typeof buttonCva> {
   /**
    * Helps track in-page `event` interactions.
    */
