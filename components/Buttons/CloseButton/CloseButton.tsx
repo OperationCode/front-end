@@ -5,7 +5,8 @@ import PlusIcon from 'static/images/icons/plus.svg';
 
 import type { VariantProps } from 'common/utils/cva';
 
-const closeButtonCva = cva('group bg-transparent h-5 w-5 absolute top-4 right-4 border-none z-1', {
+const closeButtonCva = cva({
+  base: 'group bg-transparent h-5 w-5 absolute top-4 right-4 border-none z-1',
   variants: {
     theme: {
       primary: 'text-primary',
@@ -24,20 +25,18 @@ const closeButtonCva = cva('group bg-transparent h-5 w-5 absolute top-4 right-4 
 });
 
 // TODO - tailwindv3 does not have :not() so using cva until tw is upgraded
-const iconCva = cva(
-  'fill-current transform rotate-45 transition-transform duration-200 ease-linear',
-  {
-    variants: {
-      disabled: {
-        false: 'group-hover:rotate-[135deg]',
-        true: null,
-      },
-    },
-    defaultVariants: {
-      disabled: false,
+const iconCva = cva({
+  base: 'fill-current transform rotate-45 transition-transform duration-200 ease-linear',
+  variants: {
+    disabled: {
+      false: 'group-hover:rotate-[135deg]',
+      true: null,
     },
   },
-);
+  defaultVariants: {
+    disabled: false,
+  },
+});
 
 export interface CloseButtonProps
   extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'disabled'>,
