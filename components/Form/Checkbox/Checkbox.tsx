@@ -1,4 +1,4 @@
-import type { FormikProps, Field } from 'formik';
+import type { FormikProps, Field, FormikValues } from 'formik';
 import { ErrorMessage } from 'formik';
 import { CHECKBOX, CHECKBOX_ERROR } from 'common/constants/testIDs';
 import Alert from 'components/Alert/Alert';
@@ -6,7 +6,7 @@ import Label from 'components/Form/Label/Label';
 
 interface CheckboxProps extends React.HTMLAttributes<HTMLInputElement> {
   field: ReturnType<typeof Field>;
-  form: FormikProps<{ name: string }>;
+  form: FormikProps<FormikValues>;
   label: React.ReactNode | string;
 }
 
@@ -16,8 +16,7 @@ function Checkbox({
   id,
   label,
 }: CheckboxProps) {
-  const hasErrors = !!errors.name;
-
+  const hasErrors = errors[name];
   return (
     <div className="relative m-4" data-testid={CHECKBOX}>
       <Label for={name} isHidden={false}>
