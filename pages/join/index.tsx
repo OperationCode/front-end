@@ -26,7 +26,7 @@ export default function Join() {
     <>
       <Head title={pageTitle} />
 
-      <HeroBanner title={pageTitle} />
+      <HeroBanner title={pageTitle} className="min-h-[35dvh]" />
 
       <Content theme="gray" columns={[<RegistrationForm onSuccess={handleSuccess} />]} />
     </>

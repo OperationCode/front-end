@@ -8,7 +8,7 @@ function Terms() {
     <>
       <Head title="Terms of Service" />
 
-      <HeroBanner title="Terms of Service" />
+      <HeroBanner title="Terms of Service" className="min-h-[35dvh]" />
 
       <Content
         columns={[

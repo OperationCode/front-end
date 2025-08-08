@@ -1,8 +1,8 @@
-import { cx } from 'common/utils/cva';
+import { cva } from 'common/utils/cva';
 import { getDataAttributes } from 'common/utils/prop-utils';
-import styles from './Container.module.css';
+import type { VariantProps } from 'common/utils/cva';
 
-export interface ContainerPropsType {
+export interface ContainerPropsType extends VariantProps<typeof containerCva> {
   /**
    * Sets the path for an optional background image.
    */
@@ -20,26 +20,34 @@ export interface ContainerPropsType {
    */
   id?: string;
   /**
-   * Sets the height of the container to be full viewport height.
-   * @default false
-   */
-  isFullViewportHeight?: boolean;
-  /**
    * Applies the color theme.
    * @default secondary
    */
   theme?: 'gray' | 'secondary' | 'white';
 }
 
-function Container(props: ContainerPropsType) {
-  const {
-    backgroundImageSource,
-    children,
-    className,
-    id,
-    isFullViewportHeight = false,
-    theme = 'secondary',
-  } = props;
+const containerCva = cva({
+  base: 'bg-center bg-no-repeat bg-cover flex items-center justify-between w-full fill-current min-h-[250px]',
+  variants: {
+    theme: {
+      gray: 'bg-theme-gray-800 text-secondary',
+      secondary: 'bg-secondary text-white',
+      white: 'bg-white text-secondary',
+    },
+  },
+  defaultVariants: {
+    theme: 'secondary',
+  },
+});
+
+function Container({
+  backgroundImageSource,
+  children,
+  className,
+  id,
+  theme,
+  ...props
+}: ContainerPropsType) {
   // See https://css-tricks.com/tinted-images-multiple-backgrounds/ for explanation
   const darkOverlay = 'linear-gradient(hsl(215, 30%, 10%, 0.7),hsl(215, 30%, 10%, 0.7))';
   const dynamicBackgroundImage = backgroundImageSource
@@ -52,14 +60,14 @@ function Container(props: ContainerPropsType) {
 
   return (
     <div
-      className={cx(className, styles.Container, styles[theme], {
-        [styles.fullViewportHeight]: isFullViewportHeight,
-      })}
+      className={containerCva({ theme, className })}
       id={id}
       style={dynamicBackgroundImage}
       {...customDataAttributes}
     >
-      <div className={styles.content}>{children}</div>
+      <div className="flex flex-col items-center justify-center mx-auto w-full my-[3.5rem] max-w-[1400px] sm:w-[85%]">
+        {children}
+      </div>
     </div>
   );
 }

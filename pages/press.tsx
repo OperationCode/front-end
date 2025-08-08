@@ -12,7 +12,7 @@ function Press() {
     <div className={styles.Press}>
       <Head title={pageTitle} />
 
-      <HeroBanner title={pageTitle}>
+      <HeroBanner title={pageTitle} className="min-h-[60dvh]">
         <p>
           This page is designed to make a journalist&apos;s job easy in writing, blogging, or
           documenting Operation Code. Below you will find targeted information corresponding to

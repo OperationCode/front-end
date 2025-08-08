@@ -11,7 +11,7 @@ function ChapterLeader() {
     <div className={styles.ChapterLeader}>
       <Head title={pageTitle} />
 
-      <HeroBanner title={pageTitle}>
+      <HeroBanner title={pageTitle} className="min-h-[60dvh]">
         <p>
           Operation Code is looking for volunteer Chapter Leaders to build local communities
           nationwide! Tell us more about yourself{' '}

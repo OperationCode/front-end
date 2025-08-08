@@ -10,7 +10,7 @@ function DonatePage() {
   return (
     <>
       <Head title={pageTitle} />
-      <HeroBanner title={pageTitle} />
+      <HeroBanner title={pageTitle} className="min-h-[35dvh]" />
       <Container theme="white">
         <div className={styles.explainer}>
           <h1>Why Donate?</h1>

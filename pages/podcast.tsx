@@ -64,7 +64,7 @@ function Podcast({ episodes }: { episodes: Episode[] }) {
     <div className={styles.Podcast}>
       <Head title={pageTitle} />
 
-      <HeroBanner className={styles.hero} title={pageTitle}>
+      <HeroBanner className={`${styles.hero} min-h-[60dvh]`} title={pageTitle}>
         <p>Come listen to some inspiring stories of our vets transitioning into tech!</p>
       </HeroBanner>
 

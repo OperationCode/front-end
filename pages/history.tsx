@@ -14,7 +14,7 @@ function History() {
       <Head title={pageTitle} />
       <HeroBanner
         backgroundImageSource={`${s3}heroBanners/colin-powell.jpg`}
-        className={styles.hero}
+        className={`${styles.hero} min-h-[60dvh]`}
         title={pageTitle}
       >
         <>

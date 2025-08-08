@@ -65,6 +65,7 @@ export default function ScholarshipsPage() {
       <HeroBanner
         title={pageTitle}
         backgroundImageSource={`${s3}heroBanners/scholarships_hero.jpeg`}
+        className="min-h-[60dvh]"
       />
       <Container theme="white" className="pb-8">
         <p>

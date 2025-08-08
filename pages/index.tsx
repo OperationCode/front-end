@@ -9,6 +9,7 @@ import LinkButton from 'components/Buttons/LinkButton/LinkButton';
 import successStories from 'common/constants/successStories';
 import { s3 } from 'common/constants/urls';
 import styles from 'styles/index.module.css';
+import { cx } from 'common/utils/cva';
 
 function Home() {
   return (
@@ -16,9 +17,8 @@ function Home() {
       <Head title="Home" />
 
       <HeroBanner
-        className={styles.hero}
+        className={cx(styles.hero, 'min-h-dvh')}
         backgroundImageSource={`${s3}redesign/heroBanners/homepage.jpg`}
-        isFullViewportHeight
         title="Build The Future"
       >
         <div className={styles.heroText}>

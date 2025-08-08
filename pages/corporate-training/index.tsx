@@ -111,7 +111,7 @@ const CorporateTraining = () => {
     <>
       <Head title={pageTitle} />
       <HeroBanner
-        className="py-12"
+        className="pb-12 min-h-[60dvh]"
         backgroundImageSource="/static/images/heroImage.jpg"
         title="Corporate Training: Breaking Biases"
       >

@@ -311,7 +311,7 @@ function FAQ() {
     <div>
       <Head title="FAQ" />
 
-      <HeroBanner title="Frequently Asked Questions" />
+      <HeroBanner title="Frequently Asked Questions" className="min-h-[35dvh]" />
 
       <Content
         title="General Questions"

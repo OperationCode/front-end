@@ -16,7 +16,7 @@ function Sponsorship() {
     <div className={styles.Sponsorship}>
       <Head title={pageTitle} />
 
-      <HeroBanner title={pageTitle}>
+      <HeroBanner title={pageTitle} className="min-h-[60dvh]">
         <LinkButton href="/donate" theme="primary" className={styles.topMargin}>
           Donate Now
         </LinkButton>

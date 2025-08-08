@@ -10,8 +10,8 @@ function Policy() {
 
       <HeroBanner
         backgroundImageSource={`${s3}redesign/heroBanners/policy.jpg`}
-        isFullViewportHeight
         title="Modernize the GI Bill"
+        className="min-h-dvh"
       >
         <h6 className={styles.subtitle}>
           We demanded that Congress develop policies to make veterans more competitive for careers
