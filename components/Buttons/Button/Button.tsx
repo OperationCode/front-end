@@ -47,7 +47,9 @@ interface ButtonProps
 
 export const buttonCva = cva({
   base: [
-    'inline-block font-din-condensed rounded leading-none border-4 border-solid cursor-pointer font-bold text-center uppercase py-4 px-3 whitespace-nowrap transition-all duration-200 ease-linear min-w-[175px]',
+    'inline-block font-din-condensed rounded leading-none border-4 border-solid',
+    'cursor-pointer font-bold text-center uppercase py-4 px-3 text-shadow-[initial]',
+    'whitespace-nowrap transition-all duration-200 ease-linear min-w-[175px]',
     'focus-visible:bg-transparent hover:bg-transparent',
     'disabled:opacity-60 disabled:hover:cursor-not-allowed',
   ],
