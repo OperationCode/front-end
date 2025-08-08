@@ -225,7 +225,7 @@ exports[`RegistrationForm > should render with required props 1`] = `
       </div>
     </div>
     <div
-      className="field"
+      className="relative m-4"
       data-testid="CHECKBOX"
     >
       <label
@@ -235,7 +235,7 @@ exports[`RegistrationForm > should render with required props 1`] = `
       >
         <input
           checked={false}
-          className="Checkbox"
+          className="border border-secondary/5 rounded-[3px] text-lg p-2 scale-150 mr-3 disabled:opacity-60 hover:disabled:cursor-not-allowed"
           id="codeOfConduct"
           name="codeOfConduct"
           onBlur={[Function]}
@@ -274,7 +274,7 @@ exports[`RegistrationForm > should render with required props 1`] = `
       </label>
     </div>
     <div
-      className="field"
+      className="relative m-4"
       data-testid="CHECKBOX"
     >
       <label
@@ -284,7 +284,7 @@ exports[`RegistrationForm > should render with required props 1`] = `
       >
         <input
           checked={false}
-          className="Checkbox"
+          className="border border-secondary/5 rounded-[3px] text-lg p-2 scale-150 mr-3 disabled:opacity-60 hover:disabled:cursor-not-allowed"
           id="slackGuidelines"
           name="slackGuidelines"
           onBlur={[Function]}
