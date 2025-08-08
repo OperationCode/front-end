@@ -2,7 +2,7 @@
 
 exports[`Content > should render with many props assigned 1`] = `
 <div
-  className="bg-center bg-no-repeat bg-cover flex items-center justify-between w-full fill-current min-h-[25px] bg-secondary text-white"
+  className="bg-center bg-no-repeat bg-cover flex items-center justify-between w-full fill-current min-h-[250px] bg-secondary text-white"
   id="test-id"
 >
   <div
@@ -65,7 +65,7 @@ exports[`Content > should render with many props assigned 1`] = `
 
 exports[`Content > should render with required props 1`] = `
 <div
-  className="bg-center bg-no-repeat bg-cover flex items-center justify-between w-full fill-current min-h-[25px] bg-secondary text-white"
+  className="bg-center bg-no-repeat bg-cover flex items-center justify-between w-full fill-current min-h-[250px] bg-secondary text-white"
 >
   <div
     className="flex flex-col items-center justify-center mx-auto w-full my-[3.5rem] max-w-[1400px] sm:w-[85%]"

@@ -2,7 +2,7 @@
 
 exports[`HeroBanner > should render with many props assigned 1`] = `
 <div
-  className="bg-center bg-no-repeat bg-cover flex items-center justify-between w-full fill-current bg-secondary text-white test pt-20 text-shadow-[0_0_15px_#111111] min-h-dvh"
+  className="bg-center bg-no-repeat bg-cover flex items-center justify-between w-full fill-current bg-secondary text-white pt-20 text-shadow-[0_0_15px_#111111] min-h-dvh test"
   style={
     {
       "backgroundImage": "linear-gradient(hsl(215, 30%, 10%, 0.7),hsl(215, 30%, 10%, 0.7)), url(https://operation-code-assets.s3.us-east-2.amazonaws.com/heroBanner/stock_family-2.jpg)",

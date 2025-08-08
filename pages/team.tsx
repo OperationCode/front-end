@@ -67,7 +67,7 @@ export default function Team() {
       <HeroBanner
         title="The Team"
         backgroundImageSource={`${s3}oc_crew_nyc_2021.jpg`}
-        className={styles.hero}
+        className={`${styles.hero} bg-[center_30%] min-h-[60dvh]`}
       />
 
       <Content

@@ -38,7 +38,7 @@ function Chapters() {
     <>
       <Head title={pageTitle} />
 
-      <HeroBanner title={pageTitle} className="min-h-0 pt-28 pb-4">
+      <HeroBanner title={pageTitle} className="min-h-[60dvh] pt-20 pb-4">
         <p>Get involved by joing your local chapter!</p>
       </HeroBanner>
 

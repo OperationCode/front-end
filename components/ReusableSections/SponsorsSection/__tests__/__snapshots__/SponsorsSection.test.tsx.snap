@@ -2,7 +2,7 @@
 
 exports[`SponsorsSection > should render 1`] = `
 <div
-  className="bg-center bg-no-repeat bg-cover flex items-center justify-between w-full fill-current min-h-[25px] bg-theme-gray-800 text-secondary"
+  className="bg-center bg-no-repeat bg-cover flex items-center justify-between w-full fill-current min-h-[250px] bg-theme-gray-800 text-secondary"
   data-testid="Sponsors Section"
 >
   <div

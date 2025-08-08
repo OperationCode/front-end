@@ -27,7 +27,7 @@ export interface ContainerPropsType extends VariantProps<typeof containerCva> {
 }
 
 const containerCva = cva({
-  base: 'bg-center bg-no-repeat bg-cover flex items-center justify-between w-full fill-current min-h-[25px]',
+  base: 'bg-center bg-no-repeat bg-cover flex items-center justify-between w-full fill-current min-h-[250px]',
   variants: {
     theme: {
       gray: 'bg-theme-gray-800 text-secondary',

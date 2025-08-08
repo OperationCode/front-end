@@ -12,7 +12,7 @@ function Jobs() {
     <>
       <Head title={pageTitle} />
 
-      <HeroBanner title={pageTitle} />
+      <HeroBanner title={pageTitle} className="min-h-[35dvh]" />
 
       <Content
         theme="gray"

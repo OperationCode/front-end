@@ -15,7 +15,7 @@ function BlogIndex() {
   return (
     <>
       <Head title={pageTitle} />
-      <HeroBanner title={pageTitle} />
+      <HeroBanner title={pageTitle} className="min-h-[35dvh]" />
     </>
   );
 }

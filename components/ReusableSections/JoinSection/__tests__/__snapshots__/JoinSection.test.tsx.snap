@@ -2,7 +2,7 @@
 
 exports[`JoinSection > should render 1`] = `
 <div
-  className="bg-center bg-no-repeat bg-cover flex items-center justify-between w-full fill-current min-h-[25px] bg-white text-secondary"
+  className="bg-center bg-no-repeat bg-cover flex items-center justify-between w-full fill-current min-h-[250px] bg-white text-secondary"
   data-testid="Join Section"
 >
   <div

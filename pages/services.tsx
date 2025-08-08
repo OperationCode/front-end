@@ -39,6 +39,7 @@ function Services() {
       <HeroBanner
         backgroundImageSource={`${s3}redesign/heroBanners/who_we_serve.jpg`}
         title="Services"
+        className="min-h-[60dvh]"
       />
 
       <Content

@@ -58,7 +58,7 @@ function GetInvolved() {
 
       <HeroBanner
         backgroundImageSource={`${s3}redesign/heroBanners/get_involved.jpg`}
-        className={styles.heroBannerMobilePositioning}
+        className={`${styles.heroBannerMobilePositioning} bg-[center_20%] min-h-[60dvh]`}
         title="You Can Make An Impact"
       >
         <>
