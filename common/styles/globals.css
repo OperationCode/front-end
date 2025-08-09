@@ -5,6 +5,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --primary-rgb: 62 214 240;
+    --secondary-rgb: 37 46 62;
+    --gray-rgb: 226 226 226;
+    --white-rgb: 247 247 247;
+    --burnt-orange-hsl: 14 55% 45%;
+    --success-hsl: 132 35% 88%;
+    --success-deep-hsl: 132 60% 23%;
+    --warning-hsl: 46 100% 90%;
+    --warning-deep-hsl: 39 80% 31%;
+    --error-hsl: 355 70% 91%;
+    --error-deep-hsl: 355 63% 34%;
+  }
+}
 /* stylelint-enable at-rule-no-unknown */
 
 /* Global Styles */
