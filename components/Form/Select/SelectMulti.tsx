@@ -33,7 +33,7 @@ export function SelectMulti({
 
   return (
     <div className={cx(className, styles.field)}>
-      <Label for={name} isHidden={isLabelHidden}>
+      <Label htmlFor={name} isHidden={isLabelHidden}>
         {label}
       </Label>
 
