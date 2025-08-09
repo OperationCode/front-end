@@ -22,7 +22,7 @@ function Checkbox({
       <Label for={name} isHidden={false}>
         <input
           {...field}
-          className="border border-secondary/5 rounded-[3px] text-lg p-2 scale-150 mr-3 disabled:opacity-60 hover:disabled:cursor-not-allowed"
+          className="border border-secondary/5 rounded-sm text-lg p-2 scale-150 mr-3 disabled:opacity-60 hover:disabled:cursor-not-allowed"
           id={id || name}
           name={name}
           type="checkbox"

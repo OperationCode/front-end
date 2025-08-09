@@ -45,7 +45,7 @@ exports[`RegistrationForm > should render with required props 1`] = `
       >
         <input
           autoComplete="username email"
-          className="border border-secondary/50 rounded-[3px] text-lg p-2 disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-[200px] focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
+          className="border border-secondary/50 rounded-sm text-lg p-2 disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
           disabled={false}
           id="email"
           name="email"
@@ -73,7 +73,7 @@ exports[`RegistrationForm > should render with required props 1`] = `
       >
         <input
           autoComplete="username email"
-          className="border border-secondary/50 rounded-[3px] text-lg p-2 disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-[200px] focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
+          className="border border-secondary/50 rounded-sm text-lg p-2 disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
           disabled={false}
           id="confirm-email"
           name="confirm-email"
@@ -101,7 +101,7 @@ exports[`RegistrationForm > should render with required props 1`] = `
       >
         <input
           autoComplete="new-password"
-          className="border border-secondary/50 rounded-[3px] text-lg p-2 disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-[200px] focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
+          className="border border-secondary/50 rounded-sm text-lg p-2 disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
           disabled={false}
           id="password"
           name="password"
@@ -129,7 +129,7 @@ exports[`RegistrationForm > should render with required props 1`] = `
       >
         <input
           autoComplete="new-password"
-          className="border border-secondary/50 rounded-[3px] text-lg p-2 disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-[200px] focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
+          className="border border-secondary/50 rounded-sm text-lg p-2 disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
           disabled={false}
           id="confirm-password"
           name="confirm-password"
@@ -157,7 +157,7 @@ exports[`RegistrationForm > should render with required props 1`] = `
       >
         <input
           autoComplete="given-name"
-          className="border border-secondary/50 rounded-[3px] text-lg p-2 disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-[200px] focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
+          className="border border-secondary/50 rounded-sm text-lg p-2 disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
           disabled={false}
           id="firstName"
           name="firstName"
@@ -185,7 +185,7 @@ exports[`RegistrationForm > should render with required props 1`] = `
       >
         <input
           autoComplete="family-name"
-          className="border border-secondary/50 rounded-[3px] text-lg p-2 disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-[200px] focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
+          className="border border-secondary/50 rounded-sm text-lg p-2 disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
           disabled={false}
           id="lastName"
           name="lastName"
@@ -213,7 +213,7 @@ exports[`RegistrationForm > should render with required props 1`] = `
       >
         <input
           autoComplete="postal-code"
-          className="border border-secondary/50 rounded-[3px] text-lg p-2 disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-[200px] focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
+          className="border border-secondary/50 rounded-sm text-lg p-2 disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
           disabled={false}
           id="zipcode"
           name="zipcode"
@@ -235,7 +235,7 @@ exports[`RegistrationForm > should render with required props 1`] = `
       >
         <input
           checked={false}
-          className="border border-secondary/5 rounded-[3px] text-lg p-2 scale-150 mr-3 disabled:opacity-60 hover:disabled:cursor-not-allowed"
+          className="border border-secondary/5 rounded-sm text-lg p-2 scale-150 mr-3 disabled:opacity-60 hover:disabled:cursor-not-allowed"
           id="codeOfConduct"
           name="codeOfConduct"
           onBlur={[Function]}
@@ -284,7 +284,7 @@ exports[`RegistrationForm > should render with required props 1`] = `
       >
         <input
           checked={false}
-          className="border border-secondary/5 rounded-[3px] text-lg p-2 scale-150 mr-3 disabled:opacity-60 hover:disabled:cursor-not-allowed"
+          className="border border-secondary/5 rounded-sm text-lg p-2 scale-150 mr-3 disabled:opacity-60 hover:disabled:cursor-not-allowed"
           id="slackGuidelines"
           name="slackGuidelines"
           onBlur={[Function]}

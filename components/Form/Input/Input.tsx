@@ -48,8 +48,8 @@ function Input({
           {...field}
           {...props}
           className={cx(
-            'border border-secondary/50 rounded-[3px] text-lg p-2',
-            'disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-[200px]',
+            'border border-secondary/50 rounded-sm text-lg p-2',
+            'disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48',
             'focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none',
             {
               'border-success-deep shadow-xs shadow-success-deep outline-none':
@@ -70,9 +70,9 @@ function Input({
             return hasErrors ? (
               <Alert
                 className={cx([
-                  'mt-2 flex-1 text-center max-w-[calc(100%_+_2px)]',
+                  'mt-2 flex-1 text-center max-w-full -mx-0.5',
                   'lg:mt-0 lg:ml-4 lg:absolute lg:-top-0.5 lg:left-full',
-                  'lg:min-w-[150px] lg:max-w-[300px] lg:w-auto',
+                  'lg:min-w-36 lg:max-w-72 lg:w-auto',
                   'lg:py-0 lg:px-2.5 lg:min-h-full lg:flex lg:items-center lg:justify-center',
                 ])}
                 data-testid={INPUT_ERROR}
