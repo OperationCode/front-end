@@ -2,7 +2,7 @@
 
 exports[`Input > should render with required props 1`] = `
 <div
-  className="field"
+  className="m-4"
   data-testid="INPUT"
 >
   <label
@@ -13,11 +13,11 @@ exports[`Input > should render with required props 1`] = `
     Some Input:
   </label>
   <div
-    className="inputFeedbackGrouping"
+    className="flex flex-col items-stretch lg:relative"
     data-testid="INPUT_FEEDBACK_GROUPING"
   >
     <input
-      className="Input"
+      className="border border-secondary/50 rounded-[3px] text-lg p-2 disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-[200px] focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
       disabled={false}
       id="someInputName"
       name="someInputName"

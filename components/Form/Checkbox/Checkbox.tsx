@@ -16,7 +16,7 @@ function Checkbox({
   id,
   label,
 }: CheckboxProps) {
-  const hasErrors = errors[name];
+  const hasErrors = Boolean(errors[name]);
   return (
     <div className="relative m-4" data-testid={CHECKBOX}>
       <Label for={name} isHidden={false}>
