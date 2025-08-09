@@ -86,7 +86,7 @@ function Input({
       </div>
 
       {isLabelAfterInput && (
-        <Label for={name} isHidden={isLabelHidden}>
+        <Label htmlFor={name} isHidden={isLabelHidden}>
           {label}
         </Label>
       )}
