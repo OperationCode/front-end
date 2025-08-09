@@ -29,7 +29,7 @@ exports[`RegistrationForm > should render with required props 1`] = `
     className="flex flex-col justify-between max-w-md"
   >
     <div
-      className="field"
+      className="m-4"
       data-testid="INPUT"
     >
       <label
@@ -40,12 +40,12 @@ exports[`RegistrationForm > should render with required props 1`] = `
         Email*
       </label>
       <div
-        className="inputFeedbackGrouping"
+        className="flex flex-col items-stretch lg:relative"
         data-testid="INPUT_FEEDBACK_GROUPING"
       >
         <input
           autoComplete="username email"
-          className="Input"
+          className="border border-secondary/50 rounded-sm text-lg p-2 disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
           disabled={false}
           id="email"
           name="email"
@@ -57,7 +57,7 @@ exports[`RegistrationForm > should render with required props 1`] = `
       </div>
     </div>
     <div
-      className="field"
+      className="m-4"
       data-testid="INPUT"
     >
       <label
@@ -68,12 +68,12 @@ exports[`RegistrationForm > should render with required props 1`] = `
         Confirm Email*
       </label>
       <div
-        className="inputFeedbackGrouping"
+        className="flex flex-col items-stretch lg:relative"
         data-testid="INPUT_FEEDBACK_GROUPING"
       >
         <input
           autoComplete="username email"
-          className="Input"
+          className="border border-secondary/50 rounded-sm text-lg p-2 disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
           disabled={false}
           id="confirm-email"
           name="confirm-email"
@@ -85,7 +85,7 @@ exports[`RegistrationForm > should render with required props 1`] = `
       </div>
     </div>
     <div
-      className="hidden field"
+      className="m-4 hidden"
       data-testid="INPUT"
     >
       <label
@@ -96,12 +96,12 @@ exports[`RegistrationForm > should render with required props 1`] = `
         Password*
       </label>
       <div
-        className="inputFeedbackGrouping"
+        className="flex flex-col items-stretch lg:relative"
         data-testid="INPUT_FEEDBACK_GROUPING"
       >
         <input
           autoComplete="new-password"
-          className="Input"
+          className="border border-secondary/50 rounded-sm text-lg p-2 disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
           disabled={false}
           id="password"
           name="password"
@@ -113,7 +113,7 @@ exports[`RegistrationForm > should render with required props 1`] = `
       </div>
     </div>
     <div
-      className="hidden field"
+      className="m-4 hidden"
       data-testid="INPUT"
     >
       <label
@@ -124,12 +124,12 @@ exports[`RegistrationForm > should render with required props 1`] = `
         Confirm Password*
       </label>
       <div
-        className="inputFeedbackGrouping"
+        className="flex flex-col items-stretch lg:relative"
         data-testid="INPUT_FEEDBACK_GROUPING"
       >
         <input
           autoComplete="new-password"
-          className="Input"
+          className="border border-secondary/50 rounded-sm text-lg p-2 disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
           disabled={false}
           id="confirm-password"
           name="confirm-password"
@@ -141,7 +141,7 @@ exports[`RegistrationForm > should render with required props 1`] = `
       </div>
     </div>
     <div
-      className="field"
+      className="m-4"
       data-testid="INPUT"
     >
       <label
@@ -152,12 +152,12 @@ exports[`RegistrationForm > should render with required props 1`] = `
         First Name*
       </label>
       <div
-        className="inputFeedbackGrouping"
+        className="flex flex-col items-stretch lg:relative"
         data-testid="INPUT_FEEDBACK_GROUPING"
       >
         <input
           autoComplete="given-name"
-          className="Input"
+          className="border border-secondary/50 rounded-sm text-lg p-2 disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
           disabled={false}
           id="firstName"
           name="firstName"
@@ -169,7 +169,7 @@ exports[`RegistrationForm > should render with required props 1`] = `
       </div>
     </div>
     <div
-      className="field"
+      className="m-4"
       data-testid="INPUT"
     >
       <label
@@ -180,12 +180,12 @@ exports[`RegistrationForm > should render with required props 1`] = `
         Last Name*
       </label>
       <div
-        className="inputFeedbackGrouping"
+        className="flex flex-col items-stretch lg:relative"
         data-testid="INPUT_FEEDBACK_GROUPING"
       >
         <input
           autoComplete="family-name"
-          className="Input"
+          className="border border-secondary/50 rounded-sm text-lg p-2 disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
           disabled={false}
           id="lastName"
           name="lastName"
@@ -197,7 +197,7 @@ exports[`RegistrationForm > should render with required props 1`] = `
       </div>
     </div>
     <div
-      className="field"
+      className="m-4"
       data-testid="INPUT"
     >
       <label
@@ -208,12 +208,12 @@ exports[`RegistrationForm > should render with required props 1`] = `
         Zipcode*
       </label>
       <div
-        className="inputFeedbackGrouping"
+        className="flex flex-col items-stretch lg:relative"
         data-testid="INPUT_FEEDBACK_GROUPING"
       >
         <input
           autoComplete="postal-code"
-          className="Input"
+          className="border border-secondary/50 rounded-sm text-lg p-2 disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
           disabled={false}
           id="zipcode"
           name="zipcode"
@@ -235,7 +235,7 @@ exports[`RegistrationForm > should render with required props 1`] = `
       >
         <input
           checked={false}
-          className="border border-secondary/5 rounded-[3px] text-lg p-2 scale-150 mr-3 disabled:opacity-60 hover:disabled:cursor-not-allowed"
+          className="border border-secondary/5 rounded-sm text-lg p-2 scale-150 mr-3 disabled:opacity-60 hover:disabled:cursor-not-allowed"
           id="codeOfConduct"
           name="codeOfConduct"
           onBlur={[Function]}
@@ -284,7 +284,7 @@ exports[`RegistrationForm > should render with required props 1`] = `
       >
         <input
           checked={false}
-          className="border border-secondary/5 rounded-[3px] text-lg p-2 scale-150 mr-3 disabled:opacity-60 hover:disabled:cursor-not-allowed"
+          className="border border-secondary/5 rounded-sm text-lg p-2 scale-150 mr-3 disabled:opacity-60 hover:disabled:cursor-not-allowed"
           id="slackGuidelines"
           name="slackGuidelines"
           onBlur={[Function]}
