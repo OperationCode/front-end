@@ -19,7 +19,7 @@ function Checkbox({
   const hasErrors = Boolean(errors[name]);
   return (
     <div className="relative m-4" data-testid={CHECKBOX}>
-      <Label for={name} isHidden={false}>
+      <Label htmlFor={name} isHidden={false}>
         <input
           {...field}
           className="border border-secondary/5 rounded-sm text-lg p-2 scale-150 mr-3 disabled:opacity-60 hover:disabled:cursor-not-allowed"

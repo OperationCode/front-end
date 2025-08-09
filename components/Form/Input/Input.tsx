@@ -35,7 +35,7 @@ function Input({
   return (
     <div className={cx('m-4', className)} data-testid={INPUT}>
       {isLabelBeforeInput && (
-        <Label for={name} isHidden={isLabelHidden}>
+        <Label htmlFor={id || name} isHidden={isLabelHidden}>
           {label}
         </Label>
       )}
