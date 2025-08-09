@@ -10,7 +10,7 @@ exports[`UpdateProfileForm/Steps/PersonalDetails > should render in context of F
     className="row"
   >
     <div
-      className="field"
+      className="m-4 min-w-64"
     >
       <label
         className="text-secondary text-sm"
@@ -20,7 +20,7 @@ exports[`UpdateProfileForm/Steps/PersonalDetails > should render in context of F
         Join Reason*
       </label>
       <div
-        className="selectFeedbackGrouping"
+        className="lg:relative"
       >
         <div
           className=" css-2b097c-container"
@@ -33,7 +33,7 @@ exports[`UpdateProfileForm/Steps/PersonalDetails > should render in context of F
             className="css-1f43avz-a11yText-A11yText"
           />
           <div
-            className=" css-1s1bmlz-control"
+            className=" css-19g9ivk-control"
             onMouseDown={[Function]}
             onTouchEnd={[Function]}
           >
@@ -138,7 +138,7 @@ exports[`UpdateProfileForm/Steps/PersonalDetails > should render in context of F
       </div>
     </div>
     <div
-      className="field"
+      className="m-4 min-w-64"
     >
       <label
         className="text-secondary text-sm"
@@ -148,7 +148,7 @@ exports[`UpdateProfileForm/Steps/PersonalDetails > should render in context of F
         Gender*
       </label>
       <div
-        className="selectFeedbackGrouping"
+        className="lg:relative"
       >
         <div
           className=" css-2b097c-container"
@@ -161,7 +161,7 @@ exports[`UpdateProfileForm/Steps/PersonalDetails > should render in context of F
             className="css-1f43avz-a11yText-A11yText"
           />
           <div
-            className=" css-1s1bmlz-control"
+            className=" css-19g9ivk-control"
             onMouseDown={[Function]}
             onTouchEnd={[Function]}
           >
@@ -265,7 +265,7 @@ exports[`UpdateProfileForm/Steps/PersonalDetails > should render in context of F
       </div>
     </div>
     <div
-      className="field"
+      className="m-4 min-w-64"
     >
       <label
         className="text-secondary text-sm"
@@ -275,7 +275,7 @@ exports[`UpdateProfileForm/Steps/PersonalDetails > should render in context of F
         Ethnicity*
       </label>
       <div
-        className="selectFeedbackGrouping"
+        className="lg:relative"
       >
         <div
           className=" css-2b097c-container"
@@ -288,7 +288,7 @@ exports[`UpdateProfileForm/Steps/PersonalDetails > should render in context of F
             className="css-1f43avz-a11yText-A11yText"
           />
           <div
-            className=" css-1s1bmlz-control"
+            className=" css-19g9ivk-control"
             onMouseDown={[Function]}
             onTouchEnd={[Function]}
           >
@@ -393,7 +393,7 @@ exports[`UpdateProfileForm/Steps/PersonalDetails > should render in context of F
       </div>
     </div>
     <div
-      className="field"
+      className="m-4 min-w-64"
     >
       <label
         className="text-secondary text-sm"
@@ -403,7 +403,7 @@ exports[`UpdateProfileForm/Steps/PersonalDetails > should render in context of F
         Education Level*
       </label>
       <div
-        className="selectFeedbackGrouping"
+        className="lg:relative"
       >
         <div
           className=" css-2b097c-container"
@@ -416,7 +416,7 @@ exports[`UpdateProfileForm/Steps/PersonalDetails > should render in context of F
             className="css-1f43avz-a11yText-A11yText"
           />
           <div
-            className=" css-1s1bmlz-control"
+            className=" css-19g9ivk-control"
             onMouseDown={[Function]}
             onTouchEnd={[Function]}
           >

@@ -62,7 +62,6 @@ export function ThemedReactSelect<TMulti extends boolean>({
             fontSize: '1.125rem',
             marginTop: '0',
             marginBottom: '0',
-            minWidth: '250px',
             padding: '0.25rem',
             opacity: isDisabled ? '0.5' : '1',
             outline: 'none',

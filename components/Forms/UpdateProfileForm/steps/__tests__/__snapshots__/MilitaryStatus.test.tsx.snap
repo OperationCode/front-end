@@ -25,7 +25,7 @@ exports[`UpdateProfileForm/Steps/MilitaryStatus > should render in context of Fo
       className="row"
     >
       <div
-        className="fullWidth field"
+        className="m-4 min-w-64 fullWidth"
       >
         <label
           className="text-secondary text-sm"
@@ -35,7 +35,7 @@ exports[`UpdateProfileForm/Steps/MilitaryStatus > should render in context of Fo
           Military Affiliation*
         </label>
         <div
-          className="selectFeedbackGrouping"
+          className="lg:relative"
         >
           <div
             className=" css-2b097c-container"
@@ -48,7 +48,7 @@ exports[`UpdateProfileForm/Steps/MilitaryStatus > should render in context of Fo
               className="css-1f43avz-a11yText-A11yText"
             />
             <div
-              className=" css-1s1bmlz-control"
+              className=" css-19g9ivk-control"
               onMouseDown={[Function]}
               onTouchEnd={[Function]}
             >
