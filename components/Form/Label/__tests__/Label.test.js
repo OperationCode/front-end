@@ -7,12 +7,12 @@ import Label from '../Label';
 
 describe('Label', () => {
   it('should render with required props', () => {
-    createSnapshotTest(<Label for="someInputName">Test</Label>);
+    createSnapshotTest(<Label htmlFor="someInputName">Test</Label>);
   });
 
   it('should be visually hidden with isHidden passed', () => {
     const component = render(
-      <Label for="someInputName" isHidden>
+      <Label htmlFor="someInputName" isHidden>
         Visually Hidden?
       </Label>,
     );
