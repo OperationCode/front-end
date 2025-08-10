@@ -20,12 +20,6 @@ export default {
     './src/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    screens: {
-      sm: 'var(--smallViewportWidth)',
-      md: 'var(--mediumViewportWidth)',
-      lg: 'var(--largeViewportWidth)',
-      xl: 'var(--extraLargeViewportWidth)',
-    },
     extend: {
       colors: {
         white: 'rgb(var(--white-rgb) / <alpha-value>)',
