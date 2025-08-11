@@ -8,12 +8,19 @@ exports[`RegistrationForm > should render with required props 1`] = `
   onSubmit={[Function]}
 >
   <div
-    className="max-w-xl px-4"
+    className="max-w-xl px-4 space-y-4"
   >
-    <p
-      className="pb-4"
-    >
-      We work closely with military veterans, service members, and spouses who are passionate about transitioning into the tech industry. We work with over 7,000 members who are all working towards relevant goals on Slack and in-person meet-ups. Membership is free! Unfamiliar with Slack?
+    <p>
+      After submitting this form, please note there is a small onboarding form to follow.
+       
+      <span
+        className="font-bold"
+      >
+        Failure to complete the entirety of onboarding will mean your application to join the community will be ignored.
+      </span>
+    </p>
+    <p>
+      We work closely with military veterans, service members, and spouses who are passionate about transitioning into the tech industry. We work with over 15,000 members who are all working towards relevant goals on Slack and in-person meet-ups. Membership is free! Unfamiliar with Slack?
        
       <a
         href="/slack_guide"

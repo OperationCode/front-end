@@ -2,7 +2,7 @@
 
 exports[`Alert > should render error alert with required props 1`] = `
 <div
-  className="border border-solid rounded shadow-md text-sm px-3 bg-error border-error-deep text-error-deep"
+  className="border border-solid rounded shadow-md text-sm px-3 py-1 bg-error border-error-deep text-error-deep"
   data-testid="ALERT"
   role="alert"
 >
