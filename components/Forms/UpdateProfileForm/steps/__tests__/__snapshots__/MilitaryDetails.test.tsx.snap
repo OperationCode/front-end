@@ -7,10 +7,10 @@ exports[`UpdateProfileForm/Steps/MilitaryDetails > should render in context of F
   onSubmit={[Function]}
 >
   <div
-    className="row"
+    className="flex flex-col items-stretch my-4 px-4 gap-8"
   >
     <div
-      className="m-4 min-w-64"
+      className="min-w-64"
     >
       <label
         className="text-secondary text-sm"
@@ -138,7 +138,7 @@ exports[`UpdateProfileForm/Steps/MilitaryDetails > should render in context of F
       </div>
     </div>
     <div
-      className="m-4 min-w-64"
+      className="min-w-64"
     >
       <label
         className="text-secondary text-sm"

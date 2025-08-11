@@ -26,10 +26,9 @@ exports[`RegistrationForm > should render with required props 1`] = `
     </p>
   </div>
   <div
-    className="flex flex-col justify-between max-w-md"
+    className="flex flex-col justify-between max-w-md gap-8 my-4 px-4"
   >
     <div
-      className="m-4"
       data-testid="INPUT"
     >
       <label
@@ -57,7 +56,6 @@ exports[`RegistrationForm > should render with required props 1`] = `
       </div>
     </div>
     <div
-      className="m-4"
       data-testid="INPUT"
     >
       <label
@@ -85,7 +83,7 @@ exports[`RegistrationForm > should render with required props 1`] = `
       </div>
     </div>
     <div
-      className="m-4 hidden"
+      className="hidden"
       data-testid="INPUT"
     >
       <label
@@ -113,7 +111,7 @@ exports[`RegistrationForm > should render with required props 1`] = `
       </div>
     </div>
     <div
-      className="m-4 hidden"
+      className="hidden"
       data-testid="INPUT"
     >
       <label
@@ -141,7 +139,6 @@ exports[`RegistrationForm > should render with required props 1`] = `
       </div>
     </div>
     <div
-      className="m-4"
       data-testid="INPUT"
     >
       <label
@@ -169,7 +166,6 @@ exports[`RegistrationForm > should render with required props 1`] = `
       </div>
     </div>
     <div
-      className="m-4"
       data-testid="INPUT"
     >
       <label
@@ -197,7 +193,6 @@ exports[`RegistrationForm > should render with required props 1`] = `
       </div>
     </div>
     <div
-      className="m-4"
       data-testid="INPUT"
     >
       <label
@@ -225,7 +220,7 @@ exports[`RegistrationForm > should render with required props 1`] = `
       </div>
     </div>
     <div
-      className="relative m-4"
+      className="relative"
       data-testid="CHECKBOX"
     >
       <label
@@ -235,7 +230,7 @@ exports[`RegistrationForm > should render with required props 1`] = `
       >
         <input
           checked={false}
-          className="border border-secondary/5 rounded-sm text-lg p-2 scale-150 mr-3 disabled:opacity-60 hover:disabled:cursor-not-allowed"
+          className="border border-secondary/50 rounded-sm text-lg p-2 scale-150 mr-3 disabled:opacity-60 hover:disabled:cursor-not-allowed"
           id="codeOfConduct"
           name="codeOfConduct"
           onBlur={[Function]}
@@ -274,7 +269,7 @@ exports[`RegistrationForm > should render with required props 1`] = `
       </label>
     </div>
     <div
-      className="relative m-4"
+      className="relative"
       data-testid="CHECKBOX"
     >
       <label
@@ -284,7 +279,7 @@ exports[`RegistrationForm > should render with required props 1`] = `
       >
         <input
           checked={false}
-          className="border border-secondary/5 rounded-sm text-lg p-2 scale-150 mr-3 disabled:opacity-60 hover:disabled:cursor-not-allowed"
+          className="border border-secondary/50 rounded-sm text-lg p-2 scale-150 mr-3 disabled:opacity-60 hover:disabled:cursor-not-allowed"
           id="slackGuidelines"
           name="slackGuidelines"
           onBlur={[Function]}
