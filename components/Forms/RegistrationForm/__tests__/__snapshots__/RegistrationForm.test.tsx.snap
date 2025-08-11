@@ -2,13 +2,13 @@
 
 exports[`RegistrationForm > should render with required props 1`] = `
 <form
-  className="flex flex-col items-center w-full"
+  className="flex flex-col max-w-md items-center w-full"
   noValidate={true}
   onReset={[Function]}
   onSubmit={[Function]}
 >
   <div
-    className="max-w-xl px-4 space-y-4"
+    className="px-4 space-y-4 w-full"
   >
     <p>
       After submitting this form, please note there is a small onboarding form to follow.
@@ -33,7 +33,7 @@ exports[`RegistrationForm > should render with required props 1`] = `
     </p>
   </div>
   <div
-    className="flex flex-col justify-between max-w-md"
+    className="flex flex-col justify-between w-full"
   >
     <div
       className="m-4"
@@ -251,7 +251,8 @@ exports[`RegistrationForm > should render with required props 1`] = `
           value=""
         />
         <span>
-          I have read and agree to 
+          I have read and agree to 
+          <br />
           <a
             className="inline-flex items-start"
             href="https://github.com/OperationCode/operationcode_docs/blob/master/community/code_of_conduct.md"
@@ -300,7 +301,8 @@ exports[`RegistrationForm > should render with required props 1`] = `
           value=""
         />
         <span>
-          I have read and agree to 
+          I have read and agree to 
+          <br />
           <a
             className="inline-flex items-start"
             href="https://github.com/OperationCode/START_HERE/blob/master/community_guidelines.md"

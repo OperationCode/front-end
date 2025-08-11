@@ -100,8 +100,8 @@ export function RegistrationForm({
       validationSchema={registrationSchema}
     >
       {({ isSubmitting }) => (
-        <Form className="flex flex-col items-center w-full">
-          <div className="max-w-xl px-4 space-y-4">
+        <Form className="flex flex-col max-w-md items-center w-full">
+          <div className="px-4 space-y-4 w-full">
             <p>
               After submitting this form, please note there is a small onboarding form to follow.{' '}
               <span className="font-bold">
@@ -121,7 +121,7 @@ export function RegistrationForm({
             </p>
           </div>
 
-          <div className="flex flex-col justify-between max-w-md">
+          <div className="flex flex-col justify-between w-full">
             <Field
               type="email"
               name="email"
@@ -192,7 +192,7 @@ export function RegistrationForm({
               name="codeOfConduct"
               label={
                 <span>
-                  I have read and agree to&nbsp;
+                  I have read and agree to <br />
                   <OutboundLink
                     hasIcon
                     href={codeOfConduct}
@@ -212,7 +212,7 @@ export function RegistrationForm({
               name="slackGuidelines"
               label={
                 <span>
-                  I have read and agree to&nbsp;
+                  I have read and agree to <br />
                   <OutboundLink
                     hasIcon
                     href={slackGuidelines}
