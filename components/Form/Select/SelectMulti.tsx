@@ -33,7 +33,7 @@ export function SelectMulti({
   const hasErrors = Boolean(errors[name]);
 
   return (
-    <div className={cx('m-4 min-w-64', className)}>
+    <div className={cx('min-w-64', className)}>
       <Label htmlFor={name} isHidden={isLabelHidden}>
         {label}
       </Label>

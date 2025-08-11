@@ -113,7 +113,7 @@ export function RegistrationForm({
             </p>
           </div>
 
-          <div className="flex flex-col justify-between max-w-md">
+          <div className="flex flex-col justify-between max-w-md gap-8 my-4 px-4">
             <Field
               type="email"
               name="email"
