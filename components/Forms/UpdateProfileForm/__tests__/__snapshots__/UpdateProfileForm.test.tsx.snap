@@ -33,10 +33,10 @@ exports[`UpdateProfileForm > should render with required props 1`] = `
     </progress>
   </div>
   <div
-    className="row"
+    className="flex flex-col items-stretch my-4 px-4 gap-8"
   >
     <div
-      className="m-4 min-w-64 fullWidth"
+      className="min-w-64 w-full"
     >
       <label
         className="text-secondary text-sm"
@@ -163,7 +163,6 @@ exports[`UpdateProfileForm > should render with required props 1`] = `
       </div>
     </div>
     <div
-      className="m-4"
       data-testid="INPUT"
     >
       <label
@@ -190,7 +189,6 @@ exports[`UpdateProfileForm > should render with required props 1`] = `
       </div>
     </div>
     <div
-      className="m-4"
       data-testid="INPUT"
     >
       <label
