@@ -101,8 +101,16 @@ export function RegistrationForm({
     >
       {({ isSubmitting }) => (
         <Form className="flex flex-col items-center w-full">
-          <div className="max-w-xl px-4">
-            <p className="pb-4">
+          <div className="max-w-xl px-4 space-y-4">
+            <p>
+              After submitting this form, please note there is a small onboarding form to follow.{' '}
+              <span className="font-bold">
+                Failure to complete the entirety of onboarding will mean your application to join
+                the community will be ignored.
+              </span>
+            </p>
+
+            <p>
               We work closely with military veterans, service members, and spouses who are
               passionate about transitioning into the tech industry. We work with over 7,000 members
               who are all working towards relevant goals on Slack and in-person meet-ups. Membership
