@@ -7,8 +7,6 @@ import { desktopNavItems, mobileNavItems } from 'common/constants/navigation';
 import NavMobile from 'components/Nav/NavMobile/NavMobile';
 import dynamic from 'next/dynamic';
 import { cx } from 'common/utils/cva';
-import UserLogo from '../../public/static/images/icons/FontAwesome/user.svg';
-import styles from './Nav.module.css';
 
 const NavListItem = dynamic(() => import('components/Nav/NavListItem/NavListItem'), { ssr: false });
 
@@ -43,32 +41,27 @@ export const Nav = () => {
         navItems={mobileNavItems}
       />
 
-      <header className={styles.NavDesktop}>
-        <div className={styles.desktopNavContainer} data-testid="Desktop Nav Container">
-          <nav data-testid="Desktop Nav">
+      <header className="hidden absolute top-4 w-full z-10 sm:block">
+        <div className="mx-auto max-w-[1400px]" data-testid="Desktop Nav Container">
+          <nav
+            className="font-bold h-16 bg-white rounded-sm flex justify-between"
+            data-testid="Desktop Nav"
+          >
             <Link href="/" key="Home">
               <a
-                className={cx(styles.logoLink, styles.link, '[&>svg]:-bottom-2 [&>svg]:right-3')}
+                className="mx-4 flex items-center"
                 onContextMenu={event => {
                   event.preventDefault();
                   Router.push('/branding');
                 }}
               >
-                <Logo className={styles.logo} style={{ width: 224, height: 42 }} fill="#f7f7f7" />
+                <Logo className="w-56 fill-white" />
               </a>
             </Link>
 
-            <ul className={cx(styles.link, '[&>svg]:-bottom-2 [&>svg]:right-3')}>
+            <ul className="flex">
               {desktopNavItems.map(navItem => (
-                <NavListItem
-                  key={navItem.name}
-                  {...navItem}
-                  icon={
-                    'icon' in navItem && navItem.icon === 'UserLogo' ? (
-                      <UserLogo className={styles.navIcon} />
-                    ) : null
-                  }
-                />
+                <NavListItem key={navItem.name} {...navItem} />
               ))}
 
               {/* stylistic one-off */}
@@ -76,9 +69,10 @@ export const Nav = () => {
                 <Link href="/donate">
                   <a
                     className={cx(
-                      styles.link,
-                      '[&>svg]:-bottom-2 [&>svg]:right-3',
-                      styles.donateLink,
+                      'pt-1 px-8 font-bold bg-primary text-secondary no-underline',
+                      'flex items-center justify-center h-full',
+                      'transition-colors duration-200 ease-linear',
+                      'rounded-r-sm cursor-pointer hover:text-white focus-visible:text-white',
                     )}
                   >
                     Donate

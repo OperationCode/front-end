@@ -2,25 +2,25 @@
 
 exports[`NavListItem > should render with required props passed 1`] = `
 <li
-  className="NavListItem"
+  className="relative"
 >
-  <ForwardRef(LinkComponent)
-    href="/test"
+  <div
+    className="h-full flex items-center justify-center"
   >
-    <a
-      className="link [&>svg]:-bottom-2 [&>svg]:right-3 navItemLink"
-      data-testid="Nav Item Test"
-      onMouseEnter={[Function]}
-      onMouseLeave={[Function]}
-      role="link"
-      tabIndex={0}
+    <ForwardRef(LinkComponent)
+      href="/test"
     >
-      <span
-        className="linkContent"
+      <a
+        className="pt-1.5 h-full text-center text-secondary fill-current min-w-24 cursor-pointer flex items-center justify-center leading-none transition-all duration-200 ease-linear no-underline hover:text-primary focus-visible:text-primary"
+        data-testid="Nav Item Test"
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        role="link"
+        tabIndex={0}
       >
         Test
-      </span>
-    </a>
-  </ForwardRef(LinkComponent)>
+      </a>
+    </ForwardRef(LinkComponent)>
+  </div>
 </li>
 `;
