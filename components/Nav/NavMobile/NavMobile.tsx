@@ -6,31 +6,18 @@ import CloseButton from 'components/Buttons/CloseButton/CloseButton';
 import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
 import Image from 'next/image';
 
-interface SublinkType {
-  /**
-   * String used as the link label.
-   */
-  name: string;
-  /**
-   * String used for the URL.
-   */
-  href: string;
-}
-
-interface NavItemType {
-  /**
-   * String used as the link label.
-   */
+export interface NavLink {
+  /** String used as the link label. */
   name: string;
 
-  /**
-   * String used for the URL.
-   */
+  /** String used for the URL. */
   href: string;
-  /**
-   * Adds nested sublinks.
-   */
-  sublinks?: SublinkType[];
+
+  /** Adds nested sublinks. */
+  sublinks?: NavLink[];
+
+  /** Indicates if the link is external. */
+  isExternal?: boolean;
 }
 
 export interface NavMobilePropsType {
@@ -49,7 +36,7 @@ export interface NavMobilePropsType {
   /**
    * List of navigations items.
    */
-  navItems: NavItemType[];
+  navItems: NavLink[];
 }
 
 const linkClassName = cx(

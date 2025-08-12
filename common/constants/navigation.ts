@@ -1,127 +1,118 @@
-interface NavLink {
-  name: string;
-  href: string;
-  sublinks?: { name: string; href: string }[];
-  isExternal?: boolean;
-}
-
-type MobileNavLink = Pick<NavLink, 'name' | 'href'>;
-
-const donate: NavLink = {
+const donate = {
   href: '/donate',
   name: 'Donate',
 };
 
-const services: NavLink = {
+const services = {
   name: 'Services',
   href: '/services',
 };
 
-const about: NavLink = {
+const about = {
   name: 'About Us',
   href: '/about',
 };
 
-const history: NavLink = {
+const history = {
   name: 'History',
   href: '/history',
 };
 
-const team: NavLink = {
+const team = {
   name: 'Our Team',
   href: '/team',
 };
 
-const contact: NavLink = {
+const contact = {
   name: 'Contact Us',
   href: '/contact',
 };
 
-const faq: NavLink = {
+const faq = {
   name: 'FAQ',
   href: '/faq',
 };
 
-const podcast: NavLink = {
+const podcast = {
   name: 'Podcast',
   href: '/podcast',
 };
 
-const branding: NavLink = {
+const branding = {
   name: 'Branding',
   href: '/branding',
 };
 
-const getInvolved: NavLink = {
+const getInvolved = {
   name: 'Get Involved',
   href: '/get_involved',
 };
 
-const merchStore: NavLink = {
+const merchStore = {
   name: 'Merch Store',
   href: '/swag',
   isExternal: true,
 };
 
-const jobs: NavLink = {
+const jobs = {
   href: '/jobs',
   name: 'Job Board',
 };
 
-const chapters: NavLink = {
+const chapters = {
   name: 'Chapters',
   href: '/chapters',
 };
 
-const sponsorship: NavLink = {
+const sponsorship = {
   name: 'Sponsorship',
   href: '/sponsorship',
 };
 
-const scholarship: NavLink = {
+const scholarship = {
   name: 'Scholarship',
   href: '/scholarship',
 };
 
-const projectRebuild: NavLink = {
+const projectRebuild = {
   name: 'Project Rebuild',
   href: '/project_rebuild',
 };
 
-const press: NavLink = {
+const press = {
   name: 'Press',
   href: '/press',
 };
 
-const corporateTraining: NavLink = {
+const corporateTraining = {
   name: 'Corporate Training',
   href: '/corporate-training',
 };
 
-const servicesGroup: NavLink = {
+const servicesGroup = {
   ...services,
   sublinks: [podcast, scholarship, projectRebuild, corporateTraining],
 };
 
-const aboutUsGroup: NavLink = {
+const aboutUsGroup = {
   ...about,
   sublinks: [team, history, faq, branding],
 };
 
-const getInvolvedGroup: NavLink = {
+const getInvolvedGroup = {
   ...getInvolved,
   sublinks: [chapters, sponsorship, merchStore, contact, donate],
 };
 
 // MARK: Nav items
-export const desktopNavItems: NavLink[] = [aboutUsGroup, servicesGroup, getInvolvedGroup];
+export const desktopNavItems = [aboutUsGroup, servicesGroup, getInvolvedGroup];
 
 // Extracts sublinks to list everything as a single, top-level list
-export const mobileNavItems: MobileNavLink[] = [
+export const mobileNavItems = [
   about,
   getInvolved,
-  servicesGroup.sublinks as MobileNavLink[],
-  getInvolvedGroup.sublinks as MobileNavLink[],
+  servicesGroup.sublinks,
+  getInvolvedGroup.sublinks,
 ].flat();
 
 export const footerItems = {
