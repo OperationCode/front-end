@@ -2,31 +2,31 @@
 
 exports[`NavMobile > should render 1`] = `
 <header
-  className="NavMobile"
+  className="fixed flex items-center justify-between w-full h-20 bg-white z-50 px-4 sm:hidden"
   data-testid="Mobile Nav Container"
 >
   <ForwardRef(LinkComponent)
     href="/"
   >
     <button
-      className="button logoButton"
+      className="relative"
       name="dropdown"
       type="button"
     >
       <div
-        className="logo"
+        className="h-11 w-56"
       >
         <MockedNextImage
           alt="Operation Code Logo"
-          height={42}
+          className="object-contain"
+          layout="fill"
           src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/small-blue-logo.png"
-          width={224}
         />
       </div>
     </button>
   </ForwardRef(LinkComponent)>
   <button
-    className="button hamburger"
+    className="cursor-pointer"
     data-testid="Hamburger Button"
     name="dropdown"
     onClick={[Function]}
@@ -36,7 +36,7 @@ exports[`NavMobile > should render 1`] = `
       Open Menu
     </ScreenReaderOnly>
     <ForwardRef
-      className="hamburgerIcon"
+      className="size-9"
     />
   </button>
 </header>

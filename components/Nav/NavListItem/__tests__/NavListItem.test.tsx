@@ -40,7 +40,7 @@ describe('NavListItem', () => {
 
     const ul = container.querySelector('ul');
     expect(ul).not.toBeNull();
-    expect(ul).toHaveClass('invisible');
+    expect(ul).toHaveClass('hidden');
   });
 
   it('should have visible sublinks on mouse hover', () => {
@@ -50,11 +50,11 @@ describe('NavListItem', () => {
 
     fireEvent.mouseEnter(link);
 
-    expect(ul).not.toHaveClass('invisible');
+    expect(ul).not.toHaveClass('hidden');
 
     fireEvent.mouseLeave(link);
 
-    expect(ul).toHaveClass('invisible');
+    expect(ul).toHaveClass('hidden');
   });
 
   it('should have visible sublinks on when button is clicked', () => {
@@ -86,12 +86,12 @@ describe('NavListItem', () => {
     const link = getByText(testDataWithSublinks.sublinks[0].name);
 
     fireEvent.mouseEnter(link);
-    expect(container.querySelector('ul')).not.toHaveClass('invisible');
+    expect(container.querySelector('ul')).not.toHaveClass('hidden');
 
     const button = container.querySelector('button')!;
 
     fireEvent.click(button);
-    expect(container.querySelector('ul')).toHaveClass('invisible');
+    expect(container.querySelector('ul')).toHaveClass('hidden');
   });
 
   it('should show sublinks on click, then hide them on pressing Shift+Tab on first sublink', () => {
@@ -100,10 +100,10 @@ describe('NavListItem', () => {
     const button = container.querySelector('button')!;
 
     fireEvent.click(button);
-    expect(container.querySelector('ul')).not.toHaveClass('invisible');
+    expect(container.querySelector('ul')).not.toHaveClass('hidden');
 
     fireEvent.keyDown(getByTestId('Nav Item Test - 1'), KEY_CODES.TAB_AND_SHIFT);
-    expect(container.querySelector('ul')).toHaveClass('invisible');
+    expect(container.querySelector('ul')).toHaveClass('hidden');
   });
 
   it('should show sublinks on click, then hide them on pressing Tab on last sublink', () => {
@@ -115,6 +115,6 @@ describe('NavListItem', () => {
     expect(container.querySelector('ul')).not.toHaveClass('invisible');
 
     fireEvent.keyDown(getByTestId('Nav Item Test - 2'), KEY_CODES.TAB);
-    expect(container.querySelector('ul')).toHaveClass('invisible');
+    expect(container.querySelector('ul')).toHaveClass('hidden');
   });
 });

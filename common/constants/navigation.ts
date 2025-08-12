@@ -1,5 +1,3 @@
-import flattenDepth from 'lodash/flattenDepth';
-
 const donate = {
   href: '/donate',
   name: 'Donate',
@@ -110,12 +108,12 @@ const getInvolvedGroup = {
 export const desktopNavItems = [aboutUsGroup, servicesGroup, getInvolvedGroup];
 
 // Extracts sublinks to list everything as a single, top-level list
-export const mobileNavItems = flattenDepth(
-  [about, getInvolved, ...servicesGroup.sublinks, ...getInvolvedGroup.sublinks].map(
-    ({ sublinks = [], ...item }) => [item, sublinks],
-  ),
-  2,
-);
+export const mobileNavItems = [
+  about,
+  getInvolved,
+  servicesGroup.sublinks,
+  getInvolvedGroup.sublinks,
+].flat();
 
 export const footerItems = {
   items: [
