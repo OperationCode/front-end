@@ -12,7 +12,7 @@ exports[`Content > should render with many props assigned 1`] = `
       className="flex justify-center"
     >
       <h3
-        className="group flex uppercase text-center my-4 mx-0 border-4 border-b border-b-primary"
+        className="group flex uppercase text-center my-4 mx-0 border-solid border-b-4 border-b-primary"
       >
         <div
           className="relative"
