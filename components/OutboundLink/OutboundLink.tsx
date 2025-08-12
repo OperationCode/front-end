@@ -53,11 +53,12 @@ function OutboundLink({
       rel={isNotMailToLink ? 'noopener noreferrer' : undefined}
       target={isNotMailToLink ? '_blank' : undefined}
     >
-      {children}
+      <span>
+        {children}
 
-      <ScreenReaderOnly>Opens in new window</ScreenReaderOnly>
-
-      {hasIcon && <ExternalLinkIcon className="!fill-current relative my-0 mx-1 bottom-0 w-3" />}
+        <ScreenReaderOnly>Opens in new window</ScreenReaderOnly>
+        {hasIcon && <ExternalLinkIcon className="inline-block ml-1 fill-current -mt-3 size-3.5" />}
+      </span>
     </a>
   );
 }

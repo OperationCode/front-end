@@ -47,7 +47,7 @@ function Heading({
         className={cx(
           'group flex uppercase text-center my-4 mx-0',
           {
-            'border-4 border-b border-b-primary': hasTitleUnderline,
+            'border-solid border-b-4 border-b-primary': hasTitleUnderline,
           },
           className,
         )}
