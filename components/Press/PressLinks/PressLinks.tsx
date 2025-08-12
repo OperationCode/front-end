@@ -29,7 +29,7 @@ function PressLinks() {
             value={region}
             className="p-5 space-y-2.5 text-balance list-none text-center"
           >
-            {Articles[region].map((link: { url: string; title: string }) => (
+            {Articles[region].map(link => (
               <li key={`GroupLink_${link.url}`}>
                 <OutboundLink
                   href={link.url}
