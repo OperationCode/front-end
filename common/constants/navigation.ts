@@ -112,7 +112,14 @@ export const desktopNavItems = [aboutUsGroup, servicesGroup, getInvolvedGroup];
 // Extracts sublinks to list everything as a single, top-level list
 export const mobileNavItems = flattenDepth(
   [about, getInvolved, ...servicesGroup.sublinks, ...getInvolvedGroup.sublinks].map(
-    ({ sublinks = [], ...item }) => [item, sublinks],
+    ({
+      sublinks = [],
+      ...item
+    }: {
+      name: string;
+      href: string;
+      sublinks?: { name: string; href: string }[];
+    }) => [item, sublinks],
   ),
   2,
 );
