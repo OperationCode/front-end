@@ -8,11 +8,7 @@ export default {
         <p>
           Operation Code&apos;s founder - retired U.S. Army Captain, David Molina - attended his
           first hackathon in New York City. After a weekend learning to code at{' '}
-          <OutboundLink
-            analyticsEventLabel="History Link"
-            href="https://angelhack.com"
-            alt="Angel Hack"
-          >
+          <OutboundLink analyticsEventLabel="History Link" href="https://angelhack.com">
             AngelHack,
           </OutboundLink>{' '}
           he was inspired to pursue software engineering as a post-military occupation. He submitted
@@ -33,25 +29,16 @@ export default {
           <OutboundLink
             analyticsEventLabel="History Link"
             href="https://www.meetup.com/bmore-on-rails/"
-            alt="Bmore On Rails"
           >
             &quot;Bmore on Rails&quot;
           </OutboundLink>{' '}
           while finishing{' '}
-          <OutboundLink
-            analyticsEventLabel="History Link"
-            href="https://onemonth.com"
-            alt="One Mounth Rails"
-          >
+          <OutboundLink analyticsEventLabel="History Link" href="https://onemonth.com">
             One Month&apos;s Rails
           </OutboundLink>{' '}
           online course. After meeting Rubyists from around the world, he was introduced to the
           Portland, Oregon Ruby group. Inspired, Molina joined Techstars&apos;{' '}
-          <OutboundLink
-            analyticsEventLabel="History Link"
-            href="https://patriotbootcamp.org/"
-            alt="Patriot Boot Camp"
-          >
+          <OutboundLink analyticsEventLabel="History Link" href="https://patriotbootcamp.org/">
             Patriot Boot Camp
           </OutboundLink>
           (PBC) at George Washington University.
@@ -86,28 +73,19 @@ export default {
       content: (
         <p>
           At{' '}
-          <OutboundLink
-            analyticsEventLabel="History Link"
-            href="http://cascadiarubyconf.com/"
-            alt="Cascadia Conference"
-          >
+          <OutboundLink analyticsEventLabel="History Link" href="http://cascadiarubyconf.com/">
             Cascadia Ruby,
           </OutboundLink>{' '}
           Molina received encouragement from fellow Rubyist, Whitney Rose, to launch Operation
           Code&apos;s petition using &quot;Launchrock&quot;. After lengthy discussions with Kristin
           Smith, Adam Enbar (representing The Flatiron School), and{' '}
-          <OutboundLink
-            analyticsEventLabel="History Link"
-            href="https://www.codefellows.org"
-            alt="Code Fellows"
-          >
+          <OutboundLink analyticsEventLabel="History Link" href="https://www.codefellows.org">
             Code Fellows,
           </OutboundLink>{' '}
           the first line of code is committed to{' '}
           <OutboundLink
             analyticsEventLabel="History Link"
             href="//github.com/OperationCode/operationcode"
-            alt="Operation Code Old Repository"
           >
             GitHub
           </OutboundLink>{' '}
@@ -120,21 +98,13 @@ export default {
       content: (
         <p>
           Later that same year, web developer, teacher, entrepreneur and co-founder of{' '}
-          <OutboundLink
-            analyticsEventLabel="History Link"
-            href="https://www.codefellows.org"
-            alt="Code Fellows"
-          >
+          <OutboundLink analyticsEventLabel="History Link" href="https://www.codefellows.org">
             Code Fellows,
           </OutboundLink>{' '}
           Ivan Storck, purchased the domain &apos;operationcode.org&apos; and became our first donor
           in the process. To round out 2014, HackHands co-founders Forest Good and Geraldo Ramos
           joined Operation Code, designing our logo and providing veterans free access to{' '}
-          <OutboundLink
-            analyticsEventLabel="History Link"
-            href="https://hacksummit.org/"
-            alt="Hack Summit"
-          >
+          <OutboundLink analyticsEventLabel="History Link" href="https://hacksummit.org/">
             hack.summit,
           </OutboundLink>{' '}
           a virtual conference to learn from the world&apos;s most renowned programmers.
@@ -163,7 +133,6 @@ export default {
           <OutboundLink
             analyticsEventLabel="History Link"
             href="https://www.va.gov/education/about-gi-bill-benefits/how-to-use-benefits/vettec-high-tech-program/"
-            alt="VET TEC"
           >
             VET TEC
           </OutboundLink>{' '}
@@ -172,7 +141,6 @@ export default {
           <OutboundLink
             analyticsEventLabel="History Link"
             href="https://www.va.gov/education/about-gi-bill-benefits/how-to-use-benefits/vettec-high-tech-program/"
-            alt="VET TEC"
           >
             VET TEC
           </OutboundLink>{' '}
@@ -192,11 +160,7 @@ export default {
       content: (
         <p>
           Operation Code receives the Gold Seal of Transparency from{' '}
-          <OutboundLink
-            analyticsEventLabel="History Link"
-            href="https://www.guidestar.org/"
-            alt="Guidestar"
-          >
+          <OutboundLink analyticsEventLabel="History Link" href="https://www.guidestar.org/">
             Guidestar.org,
           </OutboundLink>{' '}
           the independent data analysis for non-profit certification of approval.
@@ -229,11 +193,7 @@ export default {
             Platinum Seal of Transparency
           </OutboundLink>{' '}
           from{' '}
-          <OutboundLink
-            analyticsEventLabel="History Link"
-            href="https://www.guidestar.org/"
-            alt="Guidestar"
-          >
+          <OutboundLink analyticsEventLabel="History Link" href="https://www.guidestar.org/">
             Guidestar.org,
           </OutboundLink>{' '}
           the independent data analysis for non-profit certification of approval.
