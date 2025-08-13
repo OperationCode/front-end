@@ -1,5 +1,3 @@
-import styles from './TimelineEvent.module.css';
-
 export interface TimelineEventPropsType {
   content: React.ReactNode | React.ReactNode[];
   title: string;
@@ -7,10 +5,9 @@ export interface TimelineEventPropsType {
 
 function TimelineEvent({ content, title }: TimelineEventPropsType) {
   return (
-    <div className="mb-8 border-1 border-solid border-[#c5c5c5] p-5 rounded-md">
+    <div className="mb-8 p-5 rounded-md">
       <h4 className="capitalize md:text-2xl">{title}</h4>
-
-      <div className={styles.eventContent}>{content}</div>
+      <div>{content}</div>
     </div>
   );
 }
