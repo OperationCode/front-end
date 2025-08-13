@@ -3,31 +3,33 @@
 exports[`UpgradeBrowserOverlay > should render with no props passed 1`] = `
 <Modal
   canClose={false}
-  className="UpgradeBrowserOverlay"
+  className="rounded border-4 border-gray-500 p-5 text-center max-w-screen-xl"
   isOpen={true}
   onRequestClose={[Function]}
-  overlayClassName="overlay"
+  overlayClassName="bg-secondary/80 backdrop-blur-sm"
   screenReaderLabel="Upgrade Your Browser"
 >
   <ForwardRef
-    className="warningLogo"
+    className="fill-burnt-orange size-24"
   />
-  <h1>
+  <h1
+    className="text-3xl"
+  >
     Please Upgrade Your Browser
   </h1>
   <div
-    className="message"
+    className="py-2"
   >
     You might be experiencing some problems viewing this page. Use the links below to download or upgrade your existing browser for a seamless experience.
   </div>
   <div
-    className="browsersList"
+    className="flex justify-around py-4"
   >
     <div
-      className="browser"
+      className="group flex flex-col items-center justify-center font-bold p-2"
     >
       <span
-        className="browserName"
+        className="pb-2 group-hover:underline"
       >
         Microsoft Edge
       </span>
@@ -38,7 +40,6 @@ exports[`UpgradeBrowserOverlay > should render with no props passed 1`] = `
       >
         <MockedNextImage
           alt="Microsoft Edge Logo"
-          className="browserImage"
           height={100}
           src="https://operation-code-assets.s3.us-east-2.amazonaws.com/browserLogos/edge-icon.png"
           width={100}
@@ -46,10 +47,10 @@ exports[`UpgradeBrowserOverlay > should render with no props passed 1`] = `
       </OutboundLink>
     </div>
     <div
-      className="browser"
+      className="group flex flex-col items-center justify-center font-bold p-2"
     >
       <span
-        className="browserName"
+        className="pb-2 group-hover:underline"
       >
         Google Chrome
       </span>
@@ -60,7 +61,6 @@ exports[`UpgradeBrowserOverlay > should render with no props passed 1`] = `
       >
         <MockedNextImage
           alt="Google Chrome Logo"
-          className="browserImage"
           height={100}
           src="https://operation-code-assets.s3.us-east-2.amazonaws.com/browserLogos/chrome-icon.png"
           width={100}
@@ -68,10 +68,10 @@ exports[`UpgradeBrowserOverlay > should render with no props passed 1`] = `
       </OutboundLink>
     </div>
     <div
-      className="browser"
+      className="group flex flex-col items-center justify-center font-bold p-2"
     >
       <span
-        className="browserName"
+        className="pb-2 group-hover:underline"
       >
         Mozilla Firefox
       </span>
@@ -82,7 +82,6 @@ exports[`UpgradeBrowserOverlay > should render with no props passed 1`] = `
       >
         <MockedNextImage
           alt="Mozilla Firefox Logo"
-          className="browserImage"
           height={100}
           src="https://operation-code-assets.s3.us-east-2.amazonaws.com/browserLogos/firefox-icon.png"
           width={100}
@@ -90,10 +89,10 @@ exports[`UpgradeBrowserOverlay > should render with no props passed 1`] = `
       </OutboundLink>
     </div>
     <div
-      className="browser"
+      className="group flex flex-col items-center justify-center font-bold p-2"
     >
       <span
-        className="browserName"
+        className="pb-2 group-hover:underline"
       >
         Safari
       </span>
@@ -104,7 +103,6 @@ exports[`UpgradeBrowserOverlay > should render with no props passed 1`] = `
       >
         <MockedNextImage
           alt="Safari Logo"
-          className="browserImage"
           height={100}
           src="https://operation-code-assets.s3.us-east-2.amazonaws.com/browserLogos/safari-icon.png"
           width={100}

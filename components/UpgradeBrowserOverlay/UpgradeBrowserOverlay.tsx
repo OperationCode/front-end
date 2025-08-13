@@ -4,7 +4,6 @@ import OutboundLink from 'components/OutboundLink/OutboundLink';
 import WarningSign from 'static/images/icons/FontAwesome/exclamation-triangle-solid.svg';
 import { s3 } from 'common/constants/urls';
 import Image from 'next/image';
-import styles from './UpgradeBrowserOverlay.module.css';
 
 function UpgradeBrowserOverlay() {
   const browsers = [
@@ -33,34 +32,31 @@ function UpgradeBrowserOverlay() {
   return (
     <Modal
       onRequestClose={noop}
-      className={styles.UpgradeBrowserOverlay}
+      className="rounded border-4 border-gray-500 p-5 text-center max-w-screen-xl"
       screenReaderLabel="Upgrade Your Browser"
       isOpen
-      overlayClassName={styles.overlay}
+      overlayClassName="bg-secondary/80 backdrop-blur-sm"
       canClose={false}
     >
-      <WarningSign className={styles.warningLogo} />
-      <h1>Please Upgrade Your Browser</h1>
-      <div className={styles.message}>
+      <WarningSign className="fill-burnt-orange size-24" />
+      <h1 className="text-3xl">Please Upgrade Your Browser</h1>
+      <div className="py-2">
         You might be experiencing some problems viewing this page. Use the links below to download
         or upgrade your existing browser for a seamless experience.
       </div>
-      <div className={styles.browsersList}>
+      <div className="flex justify-around py-4">
         {browsers.map(({ browserName, imageSource, downloadLink }) => (
-          <div className={styles.browser} key={browserName}>
-            <span className={styles.browserName}>{browserName}</span>
+          <div
+            className="group flex flex-col items-center justify-center font-bold p-2"
+            key={browserName}
+          >
+            <span className="pb-2 group-hover:underline">{browserName}</span>
             <OutboundLink
               analyticsEventLabel={`${browserName} Download from <UpgradeBrowserOverlay>`}
               hasIcon={false}
               href={downloadLink}
             >
-              <Image
-                className={styles.browserImage}
-                src={imageSource}
-                alt={`${browserName} Logo`}
-                width={100}
-                height={100}
-              />
+              <Image src={imageSource} alt={`${browserName} Logo`} width={100} height={100} />
             </OutboundLink>
           </div>
         ))}
