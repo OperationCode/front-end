@@ -49,5 +49,5 @@ jobs:
       - name: "Upload Coverage"
         uses: actions/upload-artifact@v4
         with:
-          name: coverage
-          path: coverage
+          name: vitest-coverage
+          path: vitest-coverage
