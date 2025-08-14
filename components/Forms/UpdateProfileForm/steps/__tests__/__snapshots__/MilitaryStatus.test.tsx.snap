@@ -7,7 +7,7 @@ exports[`UpdateProfileForm/Steps/MilitaryStatus > should render in context of Fo
   onSubmit={[Function]}
 >
   <div
-    className="row"
+    className="flex flex-col items-stretch my-4 px-4 gap-8"
   >
     <div
       className="border border-solid rounded shadow-md text-sm px-3 py-1 bg-warning border-warning-deep text-warning-deep"
@@ -22,10 +22,10 @@ exports[`UpdateProfileForm/Steps/MilitaryStatus > should render in context of Fo
       How do you classify yourself in regards to being part of the military?
     </p>
     <div
-      className="row"
+      className="flex flex-col items-stretch my-4 px-4 gap-8"
     >
       <div
-        className="m-4 min-w-64 fullWidth"
+        className="min-w-64 w-full"
       >
         <label
           className="text-secondary text-sm"

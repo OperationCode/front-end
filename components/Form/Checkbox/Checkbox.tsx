@@ -3,6 +3,7 @@ import { ErrorMessage } from 'formik';
 import { CHECKBOX, CHECKBOX_ERROR } from 'common/constants/testIDs';
 import Alert from 'components/Alert/Alert';
 import Label from 'components/Form/Label/Label';
+import { cx } from 'common/utils/cva';
 
 interface CheckboxProps extends React.HTMLAttributes<HTMLInputElement> {
   field: ReturnType<typeof Field>;
@@ -15,14 +16,15 @@ function Checkbox({
   form: { errors },
   id,
   label,
+  className,
 }: CheckboxProps) {
   const hasErrors = Boolean(errors[name]);
   return (
-    <div className="relative m-4" data-testid={CHECKBOX}>
+    <div className={cx('relative', className)} data-testid={CHECKBOX}>
       <Label htmlFor={name} isHidden={false}>
         <input
           {...field}
-          className="border border-secondary/5 rounded-sm text-lg p-2 scale-150 mr-3 disabled:opacity-60 hover:disabled:cursor-not-allowed"
+          className="border border-secondary/50 rounded-sm text-lg p-2 scale-150 mr-3 disabled:opacity-60 hover:disabled:cursor-not-allowed"
           id={id || name}
           name={name}
           type="checkbox"

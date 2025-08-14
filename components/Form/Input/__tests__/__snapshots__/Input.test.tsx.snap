@@ -2,7 +2,6 @@
 
 exports[`Input > should render with required props 1`] = `
 <div
-  className="m-4"
   data-testid="INPUT"
 >
   <label

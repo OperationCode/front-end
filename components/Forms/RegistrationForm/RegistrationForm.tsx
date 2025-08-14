@@ -86,8 +86,6 @@ export function RegistrationForm({
 
           const axiosErrorMessage = axiosError?.message as string | undefined;
 
-          console.log({ _error, axiosError, axiosErrorMessage });
-
           if (axiosErrorMessage) {
             setErrorMessage(axiosErrorMessage);
           } else {

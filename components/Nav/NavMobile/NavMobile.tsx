@@ -5,33 +5,19 @@ import HamburgerIcon from 'static/images/icons/hamburger.svg';
 import CloseButton from 'components/Buttons/CloseButton/CloseButton';
 import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
 import Image from 'next/image';
-import styles from './NavMobile.module.css';
 
-interface SublinkType {
-  /**
-   * String used as the link label.
-   */
-  name: string;
-  /**
-   * String used for the URL.
-   */
-  href: string;
-}
-
-interface NavItemType {
-  /**
-   * String used as the link label.
-   */
+export interface NavLink {
+  /** String used as the link label. */
   name: string;
 
-  /**
-   * String used for the URL.
-   */
+  /** String used for the URL. */
   href: string;
-  /**
-   * Adds nested sublinks.
-   */
-  sublinks?: SublinkType[];
+
+  /** Adds nested sublinks. */
+  sublinks?: NavLink[];
+
+  /** Indicates if the link is external. */
+  isExternal?: boolean;
 }
 
 export interface NavMobilePropsType {
@@ -50,50 +36,65 @@ export interface NavMobilePropsType {
   /**
    * List of navigations items.
    */
-  navItems: NavItemType[];
+  navItems: NavLink[];
 }
+
+const linkClassName = cx(
+  'text-white fill-white transition-all duration-200 ease-linear',
+  'text-3xl cursor-pointer no-underline outline-none',
+  'hover:text-primary hover:fill-primary',
+  'focus-visible:text-primary focus-visible:fill-primary',
+);
 
 function NavMobile({ isOpen, openMenu, closeMenu, navItems }: NavMobilePropsType) {
   return (
-    <header className={styles.NavMobile} data-testid="Mobile Nav Container">
+    <header
+      className={cx(
+        'fixed flex items-center justify-between',
+        'w-full h-20 bg-white z-50 px-4 sm:hidden',
+      )}
+      data-testid="Mobile Nav Container"
+    >
       <Link href="/">
-        <button className={cx(styles.button, styles.logoButton)} type="button" name="dropdown">
-          <div className={styles.logo}>
+        <button className="relative" type="button" name="dropdown">
+          <div className="h-11 w-56">
             <Image
               src={`${s3}branding/logos/small-blue-logo.png`}
               alt="Operation Code Logo"
-              width={224}
-              height={42}
+              layout="fill"
+              className="object-contain"
             />
           </div>
         </button>
       </Link>
 
       <button
-        className={cx(styles.button, styles.hamburger)}
+        className="cursor-pointer"
         onClick={openMenu}
         type="button"
         name="dropdown"
         data-testid="Hamburger Button"
       >
         <ScreenReaderOnly>Open Menu</ScreenReaderOnly>
-        <HamburgerIcon className={styles.hamburgerIcon} />
+        <HamburgerIcon className="size-9" />
       </button>
 
       {isOpen && (
-        <nav data-testid="Mobile Nav">
+        <nav
+          className={cx('absolute inset-0 bg-secondary/95', 'w-full h-dvh overflow-auto')}
+          data-testid="Mobile Nav"
+        >
           <CloseButton onClick={closeMenu} theme="white" />
-
-          <ul className={styles.ul}>
-            <li className={styles.li} key="Home">
+          <ul className="py-16 px-8 space-y-8">
+            <li key="Home">
               <Link href="/">
-                <a className={styles.link}>Home</a>
+                <a className={linkClassName}>Home</a>
               </Link>
             </li>
             {navItems.map(navlink => (
-              <li className={styles.li} key={navlink.name}>
+              <li key={navlink.name}>
                 <Link href={navlink.href}>
-                  <a className={styles.link}>{navlink.name}</a>
+                  <a className={linkClassName}>{navlink.name}</a>
                 </Link>
               </li>
             ))}

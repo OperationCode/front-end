@@ -2,23 +2,21 @@
 
 exports[`PressVideos > should render with no props passed 1`] = `
 <div
-  className="pressVideos"
+  className="flex items-center justify-around flex-wrap gap-5"
 >
   <iframe
     allowFullScreen={true}
+    className="aspect-video h-48 md:h-64 lg:h-96"
     frameBorder="0"
-    height="425"
     src="https://www.youtube.com/embed/xN7yMoe38xc"
-    title="GitHub Universe: Operation Code"
-    width="755"
+    title="Github Universe: Operation Code"
   />
   <iframe
     allowFullScreen={true}
+    className="aspect-video h-48 md:h-64 lg:h-96"
     frameBorder="0"
-    height="425"
     src="https://player.vimeo.com/video/124866675?byline=0&portrait=0"
-    title="GitHub Universe: Operation Code"
-    width="755"
+    title="Operation Code - On a Mission to Expand the GI Bill"
   />
 </div>
 `;

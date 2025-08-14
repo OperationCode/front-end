@@ -2,7 +2,7 @@
 
 exports[`Select > should render with required props 1`] = `
 <div
-  className="m-4 min-w-64"
+  className="min-w-64"
 >
   <label
     className="text-secondary text-sm"
