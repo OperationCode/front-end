@@ -15,7 +15,7 @@ function Label({
   ...props
 }: LabelProps) {
   const TheLabel = (
-    <label className={cx('text-secondary text-sm', className)} data-testid={testID} {...props}>
+    <label className={cx('text-secondary', className)} data-testid={testID} {...props}>
       {children}
     </label>
   );

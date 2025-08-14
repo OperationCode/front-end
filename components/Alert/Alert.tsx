@@ -19,7 +19,7 @@ function Alert({
 }: AlertPropsType) {
   return (
     <div
-      className={cx('border border-solid border-black rounded shadow-md text-sm px-3', className, {
+      className={cx('border border-solid border-black rounded shadow-md text-sm p-2', className, {
         'bg-error border-error-deep text-error-deep': type === 'error',
         'bg-success border-success-deep text-success-deep': type === 'success',
         'bg-warning border-warning-deep text-warning-deep': type === 'warning',
