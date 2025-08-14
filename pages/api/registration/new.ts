@@ -20,11 +20,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     // Record found, return initial values
     if (records.length > 0) {
-      const record = records[0];
-      await base(AIR_TABLE_TABLE_NAME).update(record.id, {
-        'Company Name': 'Capsule',
-      });
-
       return res
         .status(409)
         .json({ message: `This email has already been registered with an application.` });
