@@ -71,7 +71,7 @@ const educationLevelOptions = mapStringsToSelectOptions([
 
 export function PersonalDetails({ isSubmitting }: PersonalDetailsProps) {
   return (
-    <div className="flex flex-col items-stretch my-4 px-4 gap-8">
+    <div className="flex flex-col gap-4">
       <Field
         name="joinReason"
         label="Join Reason*"

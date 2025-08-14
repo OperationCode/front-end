@@ -7,13 +7,13 @@ exports[`UpdateProfileForm/Steps/ProfessionalDetails > should render in context 
   onSubmit={[Function]}
 >
   <div
-    className="flex flex-col items-stretch my-4 px-4 gap-8"
+    className="flex flex-col gap-4"
   >
     <div
       className="min-w-64 w-full"
     >
       <label
-        className="text-secondary text-sm"
+        className="text-secondary"
         data-testid="LABEL"
         htmlFor="employmentStatus"
       >
@@ -140,7 +140,7 @@ exports[`UpdateProfileForm/Steps/ProfessionalDetails > should render in context 
       data-testid="INPUT"
     >
       <label
-        className="text-secondary text-sm"
+        className="text-secondary"
         data-testid="LABEL"
         htmlFor="companyName"
       >
@@ -166,7 +166,7 @@ exports[`UpdateProfileForm/Steps/ProfessionalDetails > should render in context 
       data-testid="INPUT"
     >
       <label
-        className="text-secondary text-sm"
+        className="text-secondary"
         data-testid="LABEL"
         htmlFor="companyRole"
       >

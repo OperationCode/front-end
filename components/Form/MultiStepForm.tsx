@@ -112,16 +112,19 @@ export function MultiStepForm<
       onSubmit={handleSubmit}
     >
       {formikBag => (
-        <Form className="w-full max-w-prose-sm !m-0" onSubmit={formikBag.handleSubmit}>
+        <Form
+          className="flex flex-col gap-4 w-full max-w-prose px-4 !m-0"
+          onSubmit={formikBag.handleSubmit}
+        >
           <h3 className="text-center">{CurrentStep.title}</h3>
 
           <ProgressIndicator stepNumber={stepNumber} totalSteps={steps.length} />
 
           <CurrentStep {...formikBag} />
 
-          <div className="mt-8">{errorMessage && <Alert type="error">{errorMessage}</Alert>}</div>
+          <div>{errorMessage && <Alert type="error">{errorMessage}</Alert>}</div>
 
-          <div className="flex justify-center flex-wrap md:flex-nowrap md:justify-around items-center mx-auto mt-8 w-full gap-4 min-w-[7rem] [&>button]:w-full md:[&>button]:w-auto">
+          <div className="flex items-center justify-center gap-3 flex-wrap [&>button]:flex-1">
             {!isFirstStep && (
               <Button
                 theme="secondary"

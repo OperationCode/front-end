@@ -2,7 +2,7 @@
 
 exports[`UpdateProfileForm > should render with required props 1`] = `
 <form
-  className="w-full max-w-prose-sm !m-0"
+  className="flex flex-col gap-4 w-full max-w-prose px-4 !m-0"
   noValidate={true}
   onReset={[Function]}
   onSubmit={[Function]}
@@ -13,7 +13,7 @@ exports[`UpdateProfileForm > should render with required props 1`] = `
     Professional Details
   </h3>
   <div
-    className="flex flex-col items-center mx-0 my-6"
+    className="flex flex-col items-center"
   >
     <label
       htmlFor="steps-indicator"
@@ -33,13 +33,13 @@ exports[`UpdateProfileForm > should render with required props 1`] = `
     </progress>
   </div>
   <div
-    className="flex flex-col items-stretch my-4 px-4 gap-8"
+    className="flex flex-col gap-4"
   >
     <div
       className="min-w-64 w-full"
     >
       <label
-        className="text-secondary text-sm"
+        className="text-secondary"
         data-testid="LABEL"
         htmlFor="employmentStatus"
       >
@@ -166,7 +166,7 @@ exports[`UpdateProfileForm > should render with required props 1`] = `
       data-testid="INPUT"
     >
       <label
-        className="text-secondary text-sm"
+        className="text-secondary"
         data-testid="LABEL"
         htmlFor="companyName"
       >
@@ -192,7 +192,7 @@ exports[`UpdateProfileForm > should render with required props 1`] = `
       data-testid="INPUT"
     >
       <label
-        className="text-secondary text-sm"
+        className="text-secondary"
         data-testid="LABEL"
         htmlFor="companyRole"
       >
@@ -215,11 +215,9 @@ exports[`UpdateProfileForm > should render with required props 1`] = `
       </div>
     </div>
   </div>
+  <div />
   <div
-    className="mt-8"
-  />
-  <div
-    className="flex justify-center flex-wrap md:flex-nowrap md:justify-around items-center mx-auto mt-8 w-full gap-4 min-w-[7rem] [&>button]:w-full md:[&>button]:w-auto"
+    className="flex items-center justify-center gap-3 flex-wrap [&>button]:flex-1"
   >
     <button
       className="inline-block font-din-condensed rounded leading-none border-4 border-solid cursor-pointer font-bold text-center uppercase py-4 px-3 text-shadow-[initial] whitespace-nowrap transition-all duration-200 ease-linear min-w-[175px] focus-visible:bg-transparent hover:bg-transparent disabled:opacity-60 disabled:hover:cursor-not-allowed bg-secondary border-secondary outline-secondary text-primary focus-visible:text-secondary hover:text-secondary group w-full"

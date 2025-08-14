@@ -222,7 +222,6 @@ function SlackGuide() {
         <iframe
           title="Slack Guide"
           src="https://youtube.com/embed/6wjmH5qL3Ms"
-          frameBorder="0"
           allowFullScreen
           width="755"
           height="425"
