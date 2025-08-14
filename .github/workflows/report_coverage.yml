@@ -1,7 +1,11 @@
 name: Report Coverage 
+
 on:
   workflow_run:
     workflows: ["Upload Coverage"]
+    types:
+      - completed
+
 jobs:
   report:
     runs-on: ubuntu-latest

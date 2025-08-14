@@ -1,4 +1,4 @@
-name: "Upload Coverage"
+name: Upload Coverage
 on:
   pull_request:
     branches: [main]
