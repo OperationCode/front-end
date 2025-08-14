@@ -2,7 +2,7 @@
 
 exports[`ProgressIndicator > should render with required props 1`] = `
 <div
-  className="flex flex-col items-center mx-0 my-6"
+  className="flex flex-col items-center"
 >
   <label
     htmlFor="steps-indicator"

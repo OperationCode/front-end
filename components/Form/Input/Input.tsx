@@ -70,7 +70,7 @@ function Input({
             return hasErrors ? (
               <Alert
                 className={cx(
-                  'mt-2 flex-1 text-center max-w-full -mx-0.5',
+                  'max-w-full -mx-0.5 mt-2 flex-1',
                   'lg:mt-0 lg:ml-4 lg:absolute lg:top-0 lg:left-full',
                   'lg:min-w-36 lg:max-w-72 lg:w-auto',
                   'lg:py-0 lg:px-2.5 lg:min-h-full lg:flex lg:items-center lg:justify-center',

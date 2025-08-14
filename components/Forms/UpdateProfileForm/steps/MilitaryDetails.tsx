@@ -40,7 +40,7 @@ const payGradeOptions = ['E1-E5', 'E6-E9+', 'O1-O3', 'O4-O7+', 'WO1-3', 'WO3+'];
 
 export function MilitaryDetails({ isSubmitting }: MilitaryDetailsProps) {
   return (
-    <div className="flex flex-col items-stretch my-4 px-4 gap-8">
+    <div className="flex flex-col gap-4">
       <Field
         name="branchOfService"
         label="Branch Of Service*"
