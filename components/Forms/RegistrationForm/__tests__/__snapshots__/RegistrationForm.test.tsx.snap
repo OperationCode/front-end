@@ -2,359 +2,336 @@
 
 exports[`RegistrationForm > should render with required props 1`] = `
 <form
-  className="flex flex-col max-w-md items-center w-full"
+  className="flex flex-col gap-4 max-w-prose w-full px-4 !m-0"
   noValidate={true}
   onReset={[Function]}
   onSubmit={[Function]}
 >
   <div
-    className="px-4 space-y-4 w-full"
+    data-testid="INPUT"
   >
-    <p>
-      After submitting this form, please note there is a small onboarding form to follow.
-       
-      <span
-        className="font-bold"
-      >
-        Failure to complete the entirety of onboarding will mean your application to join the community will be ignored.
-      </span>
-    </p>
-    <p>
-      We work closely with military veterans, service members, and spouses who are passionate about transitioning into the tech industry. We work with over 15,000 members who are all working towards relevant goals on Slack and in-person meet-ups. Membership is free! Unfamiliar with Slack?
-       
-      <a
-        href="/slack_guide"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-        onTouchStart={[Function]}
-      >
-        Learn how to use it!
-      </a>
-    </p>
-  </div>
-  <div
-    className="flex flex-col justify-between w-full"
-  >
-    <div
-      data-testid="INPUT"
+    <label
+      className="text-secondary"
+      data-testid="LABEL"
+      htmlFor="email"
     >
-      <label
-        className="text-secondary text-sm"
-        data-testid="LABEL"
-        htmlFor="email"
-      >
-        Email*
-      </label>
-      <div
-        className="flex flex-col items-stretch lg:relative"
-        data-testid="INPUT_FEEDBACK_GROUPING"
-      >
-        <input
-          autoComplete="username email"
-          className="border border-secondary/50 rounded-sm text-lg p-2 disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
-          disabled={false}
-          id="email"
-          name="email"
-          onBlur={[Function]}
-          onChange={[Function]}
-          type="email"
-          value=""
-        />
-      </div>
-    </div>
+      Email*
+    </label>
     <div
-      data-testid="INPUT"
+      className="flex flex-col items-stretch lg:relative"
+      data-testid="INPUT_FEEDBACK_GROUPING"
     >
-      <label
-        className="text-secondary text-sm"
-        data-testid="LABEL"
-        htmlFor="confirm-email"
-      >
-        Confirm Email*
-      </label>
-      <div
-        className="flex flex-col items-stretch lg:relative"
-        data-testid="INPUT_FEEDBACK_GROUPING"
-      >
-        <input
-          autoComplete="username email"
-          className="border border-secondary/50 rounded-sm text-lg p-2 disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
-          disabled={false}
-          id="confirm-email"
-          name="confirm-email"
-          onBlur={[Function]}
-          onChange={[Function]}
-          type="email"
-          value=""
-        />
-      </div>
-    </div>
-    <div
-      className="hidden"
-      data-testid="INPUT"
-    >
-      <label
-        className="text-secondary text-sm"
-        data-testid="LABEL"
-        htmlFor="password"
-      >
-        Password*
-      </label>
-      <div
-        className="flex flex-col items-stretch lg:relative"
-        data-testid="INPUT_FEEDBACK_GROUPING"
-      >
-        <input
-          autoComplete="new-password"
-          className="border border-secondary/50 rounded-sm text-lg p-2 disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
-          disabled={false}
-          id="password"
-          name="password"
-          onBlur={[Function]}
-          onChange={[Function]}
-          type="password"
-          value=""
-        />
-      </div>
-    </div>
-    <div
-      className="hidden"
-      data-testid="INPUT"
-    >
-      <label
-        className="text-secondary text-sm"
-        data-testid="LABEL"
-        htmlFor="confirm-password"
-      >
-        Confirm Password*
-      </label>
-      <div
-        className="flex flex-col items-stretch lg:relative"
-        data-testid="INPUT_FEEDBACK_GROUPING"
-      >
-        <input
-          autoComplete="new-password"
-          className="border border-secondary/50 rounded-sm text-lg p-2 disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
-          disabled={false}
-          id="confirm-password"
-          name="confirm-password"
-          onBlur={[Function]}
-          onChange={[Function]}
-          type="password"
-          value=""
-        />
-      </div>
-    </div>
-    <div
-      data-testid="INPUT"
-    >
-      <label
-        className="text-secondary text-sm"
-        data-testid="LABEL"
-        htmlFor="firstName"
-      >
-        First Name*
-      </label>
-      <div
-        className="flex flex-col items-stretch lg:relative"
-        data-testid="INPUT_FEEDBACK_GROUPING"
-      >
-        <input
-          autoComplete="given-name"
-          className="border border-secondary/50 rounded-sm text-lg p-2 disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
-          disabled={false}
-          id="firstName"
-          name="firstName"
-          onBlur={[Function]}
-          onChange={[Function]}
-          type="text"
-          value=""
-        />
-      </div>
-    </div>
-    <div
-      data-testid="INPUT"
-    >
-      <label
-        className="text-secondary text-sm"
-        data-testid="LABEL"
-        htmlFor="lastName"
-      >
-        Last Name*
-      </label>
-      <div
-        className="flex flex-col items-stretch lg:relative"
-        data-testid="INPUT_FEEDBACK_GROUPING"
-      >
-        <input
-          autoComplete="family-name"
-          className="border border-secondary/50 rounded-sm text-lg p-2 disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
-          disabled={false}
-          id="lastName"
-          name="lastName"
-          onBlur={[Function]}
-          onChange={[Function]}
-          type="text"
-          value=""
-        />
-      </div>
-    </div>
-    <div
-      data-testid="INPUT"
-    >
-      <label
-        className="text-secondary text-sm"
-        data-testid="LABEL"
-        htmlFor="zipcode"
-      >
-        Zipcode*
-      </label>
-      <div
-        className="flex flex-col items-stretch lg:relative"
-        data-testid="INPUT_FEEDBACK_GROUPING"
-      >
-        <input
-          autoComplete="postal-code"
-          className="border border-secondary/50 rounded-sm text-lg p-2 disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
-          disabled={false}
-          id="zipcode"
-          name="zipcode"
-          onBlur={[Function]}
-          onChange={[Function]}
-          type="text"
-          value=""
-        />
-      </div>
-    </div>
-    <div
-      className="relative"
-      data-testid="CHECKBOX"
-    >
-      <label
-        className="text-secondary text-sm"
-        data-testid="LABEL"
-        htmlFor="codeOfConduct"
-      >
-        <input
-          checked={false}
-          className="border border-secondary/50 rounded-sm text-lg p-2 scale-150 mr-3 disabled:opacity-60 hover:disabled:cursor-not-allowed"
-          id="codeOfConduct"
-          name="codeOfConduct"
-          onBlur={[Function]}
-          onChange={[Function]}
-          type="checkbox"
-          value=""
-        />
-        <span>
-          I have read and agree to 
-          <br />
-          <a
-            className="inline-flex items-start"
-            href="https://github.com/OperationCode/operationcode_docs/blob/master/community/code_of_conduct.md"
-            onClick={[Function]}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <span>
-              Operation Code's Code of Conduct.
-              <span
-                className="sr-only"
-                data-testid="SCREEN_READER_ONLY"
-              >
-                Opens in new window
-              </span>
-              <svg
-                className="inline-block ml-1 fill-current -mt-3 size-3.5"
-                dangerouslySetInnerHTML={
-                  {
-                    "__html": "<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" id="73ab62bc"><title>External Link Symbol</title><path d="M448 80v352c0 27-21 48-48 48H48c-27 0-48-21-48-48V80c0-27 21-48 48-48h352c27 0 48 21 48 48zm-88 16H248c-21 0-32 26-17 41l32 32L68 364c-5 5-5 13 0 17l31 31c4 5 12 5 17 0l195-195 32 32c15 15 41 4 41-17V120c0-13-11-24-24-24z"/></symbol><use href='#73ab62bc'/>",
-                  }
-                }
-                viewBox="0 0 448 512"
-              />
-            </span>
-          </a>
-          *
-        </span>
-      </label>
-    </div>
-    <div
-      className="relative"
-      data-testid="CHECKBOX"
-    >
-      <label
-        className="text-secondary text-sm"
-        data-testid="LABEL"
-        htmlFor="slackGuidelines"
-      >
-        <input
-          checked={false}
-          className="border border-secondary/50 rounded-sm text-lg p-2 scale-150 mr-3 disabled:opacity-60 hover:disabled:cursor-not-allowed"
-          id="slackGuidelines"
-          name="slackGuidelines"
-          onBlur={[Function]}
-          onChange={[Function]}
-          type="checkbox"
-          value=""
-        />
-        <span>
-          I have read and agree to 
-          <br />
-          <a
-            className="inline-flex items-start"
-            href="https://github.com/OperationCode/START_HERE/blob/master/community_guidelines.md"
-            onClick={[Function]}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <span>
-              Operation Code's Slack Community Guidelines.
-              <span
-                className="sr-only"
-                data-testid="SCREEN_READER_ONLY"
-              >
-                Opens in new window
-              </span>
-              <svg
-                className="inline-block ml-1 fill-current -mt-3 size-3.5"
-                dangerouslySetInnerHTML={
-                  {
-                    "__html": "<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" id="73ab62bc"><title>External Link Symbol</title><path d="M448 80v352c0 27-21 48-48 48H48c-27 0-48-21-48-48V80c0-27 21-48 48-48h352c27 0 48 21 48 48zm-88 16H248c-21 0-32 26-17 41l32 32L68 364c-5 5-5 13 0 17l31 31c4 5 12 5 17 0l195-195 32 32c15 15 41 4 41-17V120c0-13-11-24-24-24z"/></symbol><use href='#73ab62bc'/>",
-                  }
-                }
-                viewBox="0 0 448 512"
-              />
-            </span>
-          </a>
-          *
-        </span>
-      </label>
+      <input
+        autoComplete="username email"
+        className="border border-secondary/50 rounded-sm text-lg p-2 disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
+        disabled={false}
+        id="email"
+        name="email"
+        onBlur={[Function]}
+        onChange={[Function]}
+        type="email"
+        value=""
+      />
     </div>
   </div>
   <div
-    className="max-w-md px-3 mt-5"
+    data-testid="INPUT"
   >
-    <button
-      className="inline-block font-din-condensed rounded leading-none border-4 border-solid cursor-pointer font-bold text-center uppercase py-4 px-3 text-shadow-[initial] whitespace-nowrap transition-all duration-200 ease-linear min-w-[175px] focus-visible:bg-transparent hover:bg-transparent disabled:opacity-60 disabled:hover:cursor-not-allowed bg-secondary border-secondary outline-secondary text-primary focus-visible:text-secondary hover:text-secondary"
-      data-testid="REGISTRATION_FORM_INITIAL_SUBMIT_BUTTON"
-      disabled={false}
-      onClick={[Function]}
-      tabIndex={0}
-      type="submit"
+    <label
+      className="text-secondary"
+      data-testid="LABEL"
+      htmlFor="confirm-email"
     >
+      Confirm Email*
+    </label>
+    <div
+      className="flex flex-col items-stretch lg:relative"
+      data-testid="INPUT_FEEDBACK_GROUPING"
+    >
+      <input
+        autoComplete="username email"
+        className="border border-secondary/50 rounded-sm text-lg p-2 disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
+        disabled={false}
+        id="confirm-email"
+        name="confirm-email"
+        onBlur={[Function]}
+        onChange={[Function]}
+        type="email"
+        value=""
+      />
+    </div>
+  </div>
+  <div
+    className="hidden"
+    data-testid="INPUT"
+  >
+    <label
+      className="text-secondary"
+      data-testid="LABEL"
+      htmlFor="password"
+    >
+      Password*
+    </label>
+    <div
+      className="flex flex-col items-stretch lg:relative"
+      data-testid="INPUT_FEEDBACK_GROUPING"
+    >
+      <input
+        autoComplete="new-password"
+        className="border border-secondary/50 rounded-sm text-lg p-2 disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
+        disabled={false}
+        id="password"
+        name="password"
+        onBlur={[Function]}
+        onChange={[Function]}
+        type="password"
+        value=""
+      />
+    </div>
+  </div>
+  <div
+    className="hidden"
+    data-testid="INPUT"
+  >
+    <label
+      className="text-secondary"
+      data-testid="LABEL"
+      htmlFor="confirm-password"
+    >
+      Confirm Password*
+    </label>
+    <div
+      className="flex flex-col items-stretch lg:relative"
+      data-testid="INPUT_FEEDBACK_GROUPING"
+    >
+      <input
+        autoComplete="new-password"
+        className="border border-secondary/50 rounded-sm text-lg p-2 disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
+        disabled={false}
+        id="confirm-password"
+        name="confirm-password"
+        onBlur={[Function]}
+        onChange={[Function]}
+        type="password"
+        value=""
+      />
+    </div>
+  </div>
+  <div
+    data-testid="INPUT"
+  >
+    <label
+      className="text-secondary"
+      data-testid="LABEL"
+      htmlFor="firstName"
+    >
+      First Name*
+    </label>
+    <div
+      className="flex flex-col items-stretch lg:relative"
+      data-testid="INPUT_FEEDBACK_GROUPING"
+    >
+      <input
+        autoComplete="given-name"
+        className="border border-secondary/50 rounded-sm text-lg p-2 disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
+        disabled={false}
+        id="firstName"
+        name="firstName"
+        onBlur={[Function]}
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+  <div
+    data-testid="INPUT"
+  >
+    <label
+      className="text-secondary"
+      data-testid="LABEL"
+      htmlFor="lastName"
+    >
+      Last Name*
+    </label>
+    <div
+      className="flex flex-col items-stretch lg:relative"
+      data-testid="INPUT_FEEDBACK_GROUPING"
+    >
+      <input
+        autoComplete="family-name"
+        className="border border-secondary/50 rounded-sm text-lg p-2 disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
+        disabled={false}
+        id="lastName"
+        name="lastName"
+        onBlur={[Function]}
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+  <div
+    data-testid="INPUT"
+  >
+    <label
+      className="text-secondary"
+      data-testid="LABEL"
+      htmlFor="zipcode"
+    >
+      Zipcode*
+    </label>
+    <div
+      className="flex flex-col items-stretch lg:relative"
+      data-testid="INPUT_FEEDBACK_GROUPING"
+    >
+      <input
+        autoComplete="postal-code"
+        className="border border-secondary/50 rounded-sm text-lg p-2 disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
+        disabled={false}
+        id="zipcode"
+        name="zipcode"
+        onBlur={[Function]}
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+  <div
+    className="relative"
+    data-testid="CHECKBOX"
+  >
+    <label
+      className="text-secondary group flex items-start gap-3 outline-1 outline-transparent outline-offset-2 cursor-pointer has-[input:disabled]:cursor-not-allowed [&>input:focus-visible]:outline-secondary/50"
+      data-testid="LABEL"
+      htmlFor="codeOfConduct"
+    >
+      <input
+        checked={false}
+        className="border border-secondary/50 size-5 rounded-sm disabled:opacity-60 cursor-[inherit] group-hover:border-secondary outline-transparent outline-offset-2 outline group-hover:outline-secondary/25"
+        disabled={false}
+        id="codeOfConduct"
+        name="codeOfConduct"
+        onBlur={[Function]}
+        onChange={[Function]}
+        type="checkbox"
+        value=""
+      />
       <span
-        className="flex items-center justify-center gap-x-2"
+        className="select-none -mt-[0.1875rem]"
       >
-        <span
-          className="mt-[0.325rem]"
+        I have read and agree to
+         
+        <a
+          className="inline-flex items-start"
+          href="https://github.com/OperationCode/operationcode_docs/blob/master/community/code_of_conduct.md"
+          onClick={[Function]}
+          rel="noopener noreferrer"
+          target="_blank"
         >
-          Submit ✓
-        </span>
+          <span>
+            Operation Code's Code of Conduct.
+            <span
+              className="sr-only"
+              data-testid="SCREEN_READER_ONLY"
+            >
+              Opens in new window
+            </span>
+            <svg
+              className="inline-block ml-1 fill-current -mt-3 size-3.5"
+              dangerouslySetInnerHTML={
+                {
+                  "__html": "<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" id="73ab62bc"><title>External Link Symbol</title><path d="M448 80v352c0 27-21 48-48 48H48c-27 0-48-21-48-48V80c0-27 21-48 48-48h352c27 0 48 21 48 48zm-88 16H248c-21 0-32 26-17 41l32 32L68 364c-5 5-5 13 0 17l31 31c4 5 12 5 17 0l195-195 32 32c15 15 41 4 41-17V120c0-13-11-24-24-24z"/></symbol><use href='#73ab62bc'/>",
+                }
+              }
+              viewBox="0 0 448 512"
+            />
+          </span>
+        </a>
+         
+        *
       </span>
-    </button>
-    <p
-      className="pt-5 text-xs"
+    </label>
+  </div>
+  <div
+    className="relative"
+    data-testid="CHECKBOX"
+  >
+    <label
+      className="text-secondary group flex items-start gap-3 outline-1 outline-transparent outline-offset-2 cursor-pointer has-[input:disabled]:cursor-not-allowed [&>input:focus-visible]:outline-secondary/50"
+      data-testid="LABEL"
+      htmlFor="slackGuidelines"
     >
+      <input
+        checked={false}
+        className="border border-secondary/50 size-5 rounded-sm disabled:opacity-60 cursor-[inherit] group-hover:border-secondary outline-transparent outline-offset-2 outline group-hover:outline-secondary/25"
+        disabled={false}
+        id="slackGuidelines"
+        name="slackGuidelines"
+        onBlur={[Function]}
+        onChange={[Function]}
+        type="checkbox"
+        value=""
+      />
+      <span
+        className="select-none -mt-[0.1875rem]"
+      >
+        I have read and agree to
+         
+        <a
+          className="inline-flex items-start"
+          href="https://github.com/OperationCode/START_HERE/blob/master/community_guidelines.md"
+          onClick={[Function]}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <span>
+            Operation Code's Slack Community Guidelines.
+            <span
+              className="sr-only"
+              data-testid="SCREEN_READER_ONLY"
+            >
+              Opens in new window
+            </span>
+            <svg
+              className="inline-block ml-1 fill-current -mt-3 size-3.5"
+              dangerouslySetInnerHTML={
+                {
+                  "__html": "<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" id="73ab62bc"><title>External Link Symbol</title><path d="M448 80v352c0 27-21 48-48 48H48c-27 0-48-21-48-48V80c0-27 21-48 48-48h352c27 0 48 21 48 48zm-88 16H248c-21 0-32 26-17 41l32 32L68 364c-5 5-5 13 0 17l31 31c4 5 12 5 17 0l195-195 32 32c15 15 41 4 41-17V120c0-13-11-24-24-24z"/></symbol><use href='#73ab62bc'/>",
+                }
+              }
+              viewBox="0 0 448 512"
+            />
+          </span>
+        </a>
+         
+        *
+      </span>
+    </label>
+  </div>
+  <button
+    className="inline-block font-din-condensed rounded leading-none border-4 border-solid cursor-pointer font-bold text-center uppercase py-4 px-3 text-shadow-[initial] whitespace-nowrap transition-all duration-200 ease-linear min-w-[175px] focus-visible:bg-transparent hover:bg-transparent disabled:opacity-60 disabled:hover:cursor-not-allowed bg-secondary border-secondary outline-secondary text-primary focus-visible:text-secondary hover:text-secondary w-full"
+    data-testid="REGISTRATION_FORM_INITIAL_SUBMIT_BUTTON"
+    disabled={false}
+    onClick={[Function]}
+    tabIndex={0}
+    type="submit"
+  >
+    <span
+      className="flex items-center justify-center gap-x-2"
+    >
+      <span
+        className="mt-[0.325rem]"
+      >
+        Submit ✓
+      </span>
+    </span>
+  </button>
+  <aside
+    className="text-xs mx-auto p-3 border border-dashed border-warning-deep bg-warning rounded-md"
+  >
+    <p>
       The demographic information you provide, helps us understand our community needs, ensure diversity, and provide specific resources to reach our mission. Thank you in advance for providing honest answers. 
       <span
         className="font-bold"
@@ -362,6 +339,6 @@ exports[`RegistrationForm > should render with required props 1`] = `
         We do not sell your information to anyone.
       </span>
     </p>
-  </div>
+  </aside>
 </form>
 `;

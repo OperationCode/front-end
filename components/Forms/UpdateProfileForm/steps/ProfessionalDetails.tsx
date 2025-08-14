@@ -29,7 +29,7 @@ const options = mapStringsToSelectOptions(['Full-Time', 'Part-Time', 'Unemployed
 
 export function ProfessionalDetails({ isSubmitting }: ProfessionalDetailsProps) {
   return (
-    <div className="flex flex-col items-stretch my-4 px-4 gap-8">
+    <div className="flex flex-col gap-4">
       <Field
         className="w-full"
         name="employmentStatus"

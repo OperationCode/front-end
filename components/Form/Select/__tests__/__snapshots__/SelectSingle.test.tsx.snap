@@ -5,7 +5,7 @@ exports[`Select > should render with required props 1`] = `
   className="min-w-64"
 >
   <label
-    className="text-secondary text-sm"
+    className="text-secondary"
     data-testid="LABEL"
     htmlFor="someSelectName"
   >

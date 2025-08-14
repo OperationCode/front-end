@@ -5,33 +5,48 @@ import Alert from 'components/Alert/Alert';
 import Label from 'components/Form/Label/Label';
 import { cx } from 'common/utils/cva';
 
-interface CheckboxProps extends React.HTMLAttributes<HTMLInputElement> {
+interface CheckboxProps extends Omit<React.HTMLAttributes<HTMLInputElement>, 'disabled'> {
   field: ReturnType<typeof Field>;
   form: FormikProps<FormikValues>;
   label: React.ReactNode | string;
+  isDisabled?: boolean;
 }
 
 function Checkbox({
+  className,
   field: { name, value, ...field },
   form: { errors },
   id,
+  isDisabled = false,
   label,
-  className,
 }: CheckboxProps) {
   const hasErrors = Boolean(errors[name]);
   return (
     <div className={cx('relative', className)} data-testid={CHECKBOX}>
-      <Label htmlFor={name} isHidden={false}>
+      <Label
+        htmlFor={name}
+        isHidden={false}
+        className={cx(
+          'group flex items-start gap-3 outline outline-1 outline-transparent outline-offset-2',
+          'cursor-pointer has-[input:disabled]:cursor-not-allowed [&>input:focus-visible]:outline-secondary/50',
+        )}
+      >
         <input
           {...field}
-          className="border border-secondary/50 rounded-sm text-lg p-2 scale-150 mr-3 disabled:opacity-60 hover:disabled:cursor-not-allowed"
+          className={cx(
+            'border border-secondary/50 size-5 rounded-sm disabled:opacity-60 cursor-[inherit] group-hover:border-secondary',
+            'outline-transparent outline-offset-2 outline-1 outline',
+            'group-hover:outline-secondary/25',
+          )}
+          disabled={isDisabled}
           id={id || name}
           name={name}
           type="checkbox"
           value={value || ''}
         />
 
-        {label}
+        {/* negative margin here is to align the text with the checkbox bubble while allowing the field to use `flex items start` for if the label wraps lines */}
+        <span className="select-none -mt-[0.1875rem]">{label}</span>
       </Label>
 
       <ErrorMessage name={name}>

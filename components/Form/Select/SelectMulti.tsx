@@ -63,10 +63,10 @@ export function SelectMulti({
             return hasErrors ? (
               <Alert
                 className={cx(
-                  'max-w-full -mx-0.5',
+                  'max-w-full -mx-0.5 mt-2 flex-1',
                   'lg:mt-0 lg:ml-4 lg:absolute lg:top-0 lg:left-full',
-                  'lg:min-w-36 lg:max-w-72 Lg:w-max py-0 px-2.5',
-                  'lg:h-full lg:flex lg:items-center lg:justify-center',
+                  'lg:min-w-36 lg:max-w-72 lg:w-max py-0 px-2.5',
+                  'lg:py-0 lg:px-2.5 lg:min-h-full lg:flex lg:items-center lg:justify-center',
                 )}
                 type="error"
               >

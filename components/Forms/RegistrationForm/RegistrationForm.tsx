@@ -9,7 +9,6 @@ import Checkbox from 'components/Form/Checkbox/Checkbox';
 import Form from 'components/Form/Form';
 import Input from 'components/Form/Input/Input';
 import Alert from 'components/Alert/Alert';
-import Link from 'next/link';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 import type { AxiosError } from 'axios';
 import axios from 'axios';
@@ -98,155 +97,135 @@ export function RegistrationForm({
       validationSchema={registrationSchema}
     >
       {({ isSubmitting }) => (
-        <Form className="flex flex-col max-w-md items-center w-full">
-          <div className="px-4 space-y-4 w-full">
-            <p>
-              After submitting this form, please note there is a small onboarding form to follow.{' '}
-              <span className="font-bold">
-                Failure to complete the entirety of onboarding will mean your application to join
-                the community will be ignored.
-              </span>
-            </p>
+        <Form className="flex flex-col gap-4 max-w-prose w-full px-4 !m-0">
+          <Field
+            type="email"
+            name="email"
+            label="Email*"
+            component={Input}
+            isDisabled={isSubmitting}
+            autoComplete="username email"
+          />
 
-            <p>
-              We work closely with military veterans, service members, and spouses who are
-              passionate about transitioning into the tech industry. We work with over 15,000
-              members who are all working towards relevant goals on Slack and in-person meet-ups.
-              Membership is free! Unfamiliar with Slack?{` `}
-              <Link href="/slack_guide">
-                <a>Learn how to use it!</a>
-              </Link>
-            </p>
-          </div>
+          <Field
+            type="email"
+            name="confirm-email"
+            label="Confirm Email*"
+            component={Input}
+            isDisabled={isSubmitting}
+            autoComplete="username email"
+          />
 
-          <div className="flex flex-col justify-between w-full">
-            <Field
-              type="email"
-              name="email"
-              label="Email*"
-              component={Input}
-              isDisabled={isSubmitting}
-              autoComplete="username email"
-            />
+          <Field
+            className="hidden"
+            type="password"
+            name="password"
+            label="Password*"
+            component={Input}
+            isDisabled={isSubmitting}
+            autoComplete="new-password"
+          />
 
-            <Field
-              type="email"
-              name="confirm-email"
-              label="Confirm Email*"
-              component={Input}
-              isDisabled={isSubmitting}
-              autoComplete="username email"
-            />
+          <Field
+            className="hidden"
+            type="password"
+            name="confirm-password"
+            label="Confirm Password*"
+            component={Input}
+            isDisabled={isSubmitting}
+            autoComplete="new-password"
+          />
 
-            <Field
-              className="hidden"
-              type="password"
-              name="password"
-              label="Password*"
-              component={Input}
-              isDisabled={isSubmitting}
-              autoComplete="new-password"
-            />
+          <Field
+            type="text"
+            name="firstName"
+            label="First Name*"
+            component={Input}
+            isDisabled={isSubmitting}
+            autoComplete="given-name"
+          />
 
-            <Field
-              className="hidden"
-              type="password"
-              name="confirm-password"
-              label="Confirm Password*"
-              component={Input}
-              isDisabled={isSubmitting}
-              autoComplete="new-password"
-            />
+          <Field
+            type="text"
+            name="lastName"
+            label="Last Name*"
+            component={Input}
+            isDisabled={isSubmitting}
+            autoComplete="family-name"
+          />
 
-            <Field
-              type="text"
-              name="firstName"
-              label="First Name*"
-              component={Input}
-              isDisabled={isSubmitting}
-              autoComplete="given-name"
-            />
+          <Field
+            type="text"
+            name="zipcode"
+            label="Zipcode*"
+            component={Input}
+            isDisabled={isSubmitting}
+            autoComplete="postal-code"
+          />
 
-            <Field
-              type="text"
-              name="lastName"
-              label="Last Name*"
-              component={Input}
-              isDisabled={isSubmitting}
-              autoComplete="family-name"
-            />
+          <Field
+            type="checkbox"
+            name="codeOfConduct"
+            label={
+              <>
+                I have read and agree to{' '}
+                <OutboundLink
+                  hasIcon
+                  href={codeOfConduct}
+                  analyticsEventLabel="Registration CoC Checkbox Link"
+                >
+                  Operation Code&apos;s Code of Conduct.
+                </OutboundLink>{' '}
+                *
+              </>
+            }
+            component={Checkbox}
+            isDisabled={isSubmitting}
+          />
 
-            <Field
-              type="text"
-              name="zipcode"
-              label="Zipcode*"
-              component={Input}
-              isDisabled={isSubmitting}
-              autoComplete="postal-code"
-            />
-
-            <Field
-              type="checkbox"
-              name="codeOfConduct"
-              label={
-                <span>
-                  I have read and agree to <br />
-                  <OutboundLink
-                    hasIcon
-                    href={codeOfConduct}
-                    analyticsEventLabel="Registration CoC Checkbox Link"
-                  >
-                    Operation Code&apos;s Code of Conduct.
-                  </OutboundLink>
-                  *
-                </span>
-              }
-              component={Checkbox}
-              isDisabled={isSubmitting}
-            />
-
-            <Field
-              type="checkbox"
-              name="slackGuidelines"
-              label={
-                <span>
-                  I have read and agree to <br />
-                  <OutboundLink
-                    hasIcon
-                    href={slackGuidelines}
-                    analyticsEventLabel="Registration Slack Guidelines Checkbox Link"
-                  >
-                    Operation Code&apos;s Slack Community Guidelines.
-                  </OutboundLink>
-                  *
-                </span>
-              }
-              component={Checkbox}
-              isDisabled={isSubmitting}
-            />
-          </div>
+          <Field
+            type="checkbox"
+            name="slackGuidelines"
+            label={
+              <>
+                I have read and agree to{' '}
+                <OutboundLink
+                  hasIcon
+                  href={slackGuidelines}
+                  analyticsEventLabel="Registration Slack Guidelines Checkbox Link"
+                >
+                  Operation Code&apos;s Slack Community Guidelines.
+                </OutboundLink>{' '}
+                *
+              </>
+            }
+            component={Checkbox}
+            isDisabled={isSubmitting}
+          />
 
           {errorMessage && <Alert type="error">{errorMessage}</Alert>}
 
-          <div className="max-w-md px-3 mt-5">
-            <Button
-              type="submit"
-              theme="secondary"
-              disabled={isSubmitting}
-              data-testid={REGISTRATION_FORM_INITIAL_SUBMIT_BUTTON}
-            >
-              <span className="flex items-center justify-center gap-x-2">
-                {isSubmitting && <InlineLoadingSpinner />}
-                <span className="mt-[0.325rem]">Submit ✓</span>
-              </span>
-            </Button>
-            <p className="pt-5 text-xs">
+          <Button
+            type="submit"
+            theme="secondary"
+            className="w-full"
+            disabled={isSubmitting}
+            data-testid={REGISTRATION_FORM_INITIAL_SUBMIT_BUTTON}
+          >
+            <span className="flex items-center justify-center gap-x-2">
+              {isSubmitting && <InlineLoadingSpinner />}
+              <span className="mt-[0.325rem]">Submit ✓</span>
+            </span>
+          </Button>
+
+          <aside className="text-xs mx-auto p-3 border border-dashed border-warning-deep bg-warning rounded-md">
+            <p>
               The demographic information you provide, helps us understand our community needs,
               ensure diversity, and provide specific resources to reach our mission. Thank you in
               advance for providing honest answers.&nbsp;
               <span className="font-bold">We do not sell your information to anyone.</span>
             </p>
-          </div>
+          </aside>
         </Form>
       )}
     </Formik>
