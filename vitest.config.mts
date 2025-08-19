@@ -28,6 +28,8 @@ export default defineConfig({
       },
     },
     coverage: {
+      reporter: ['text', 'json-summary', 'json'],
+      reportOnFailure: true,
       reportsDirectory: './vitest-coverage',
       include: [
         'common/**/*.{js,ts,tsx}',
