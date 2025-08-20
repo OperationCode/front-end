@@ -1,0 +1,42 @@
+name: Report Coverage 
+
+on:
+  workflow_run:
+    workflows: [Upload Coverage]
+    types: [completed]
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+
+    permissions:
+      pull-requests: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download Coverage Artifact
+        uses: actions/download-artifact@v4
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          run-id: ${{ github.event.workflow_run.id }}
+
+      - name: Get PR number
+        id: PR
+        uses: 8BitJonny/gh-get-current-pr@3.0.0
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          sha: ${{ github.event.workflow_run.head_sha }}
+          filterOutClosed: true
+          filterOutDraft: true
+
+      - name: Report Coverage
+        if: success() && steps.PR.outputs.number
+        uses: davelosert/vitest-coverage-report-action@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          json-summary-path: vitest-coverage/coverage-summary.json
+          json-final-path: vitest-coverage/coverage-final.json
+          pr-number: ${{ steps.PR.outputs.number }}
+          file-coverage-mode: changes
+          comment-on: pr
