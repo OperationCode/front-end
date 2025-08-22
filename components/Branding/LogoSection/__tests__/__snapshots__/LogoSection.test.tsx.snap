@@ -5,7 +5,7 @@ exports[`LogoSection > should render with required props 1`] = `
   columns={
     [
       <ul
-        className="space-y-4"
+        className="space-y-4 [&>li>p]:my-4"
       >
         <li>
           <h5

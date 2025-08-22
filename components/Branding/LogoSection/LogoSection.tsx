@@ -39,7 +39,7 @@ function LogoSection() {
       theme="gray"
       hasTitleUnderline
       columns={[
-        <ul className="space-y-4">
+        <ul className="space-y-4 [&>li>p]:my-4">
           {/* - SMALL LOGOS - */}
           <li>
             <h5 className="text-center">Small Logos</h5>
