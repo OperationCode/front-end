@@ -7,17 +7,16 @@ import FlatCard from 'components/Cards/FlatCard/FlatCard';
 import LinkButton from 'components/Buttons/LinkButton/LinkButton';
 import SponsorsSection from 'components/ReusableSections/SponsorsSection/SponsorsSection';
 import MedalSolid from 'static/images/icons/FontAwesome/medal-solid.svg';
-import styles from 'styles/sponsorship.module.css';
 
 const pageTitle = 'Corporate Sponsorship';
 
 function Sponsorship() {
   return (
-    <div className={styles.Sponsorship}>
+    <div>
       <Head title={pageTitle} />
 
       <HeroBanner title={pageTitle} className="min-h-[60dvh]">
-        <LinkButton href="/donate" theme="primary" className={styles.topMargin}>
+        <LinkButton href="/donate" theme="primary" className="mt-4">
           Donate Now
         </LinkButton>
       </HeroBanner>
@@ -63,7 +62,7 @@ function Sponsorship() {
         theme="white"
         hasTitleUnderline
         columns={[
-          <Card className={styles.constrainDimensions}>
+          <Card className="justify-start max-w-[350px] h-[250px]">
             <h6>Employee Engagement</h6>
             <p>
               Provide opportunities for software engineers to mentor new learners and contribute to
@@ -71,7 +70,7 @@ function Sponsorship() {
               organization - share their story; loud and proud.
             </p>
           </Card>,
-          <Card className={styles.constrainDimensions}>
+          <Card className="justify-start max-w-[350px] h-[250px]">
             <h6>Talent Management</h6>
             <p>
               Build a talent pipeline between your company and transitioning service members with
@@ -79,7 +78,7 @@ function Sponsorship() {
               diverse - they will bolster any workforce.
             </p>
           </Card>,
-          <Card className={styles.constrainDimensions}>
+          <Card className="justify-start max-w-[350px] h-[250px]">
             <h6>Marketing</h6>
             <p>
               Marketing opportunities for national online and local community engagement Community
@@ -96,29 +95,29 @@ function Sponsorship() {
         columns={[
           <div>
             <Badge
-              className={styles.badgeFormat}
-              icon={<MedalSolid className={styles.gold} />}
+              className="text-2xl font-medium mt-6"
+              icon={<MedalSolid className="text-[#ffaa22]" />}
               label="Gold Sponsor"
             />
-            <p className={styles.paragraphFormat}>
+            <p className="px-8">
               National benefits include branding recognition in national Slack community, open
               source program sponsorship, national employee engagement activities, plus all above.
             </p>
             <Badge
-              className={styles.badgeFormat}
-              icon={<MedalSolid className={styles.silver} />}
+              className="text-2xl font-medium mt-6"
+              icon={<MedalSolid className="text-silver" />}
               label="Silver Sponsor"
             />
-            <p className={styles.paragraphFormat}>
+            <p className="px-8">
               Three local chapter sponsorships of choice, complete with marketing, employee
               engagement and talent pipeline opportunities, plus all above.
             </p>
             <Badge
-              className={styles.badgeFormat}
-              icon={<MedalSolid className={styles.bronze} />}
+              className="text-2xl font-medium mt-6"
+              icon={<MedalSolid className="text-[#cd7f32]" />}
               label="Bronze Sponsor"
             />
-            <p className={styles.paragraphFormat}>
+            <p className="px-8">
               Sponsor one chapter and support your local Operation Code community for the year,
               including events, training, and networking opportunities.
             </p>
