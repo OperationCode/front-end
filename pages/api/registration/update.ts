@@ -20,7 +20,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     // Record found, return initial values
     if (records.length > 0) {
-      const record = records[0];
+      const relevantRecord = records[0];
 
       const {
         companyName,
@@ -91,14 +91,15 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       }
 
       // Update the record with the new values
-      await base(AIR_TABLE_TABLE_NAME).update(record.id, parsedPayload);
+      await base(AIR_TABLE_TABLE_NAME).update(relevantRecord.id, parsedPayload);
 
       return res.status(200).json({ message: 'Success' });
     }
 
     // No record found, add a new row to the table
-    res.writeHead(302, { Location: '/' });
-    return res.status(404).json({ message: 'No record found for this email' });
+    return res
+      .writeHead(404, { Location: '/' })
+      .json({ message: `No record found for this email (${email})` });
   } catch (error) {
     console.error('Error with /api/registration/update PATCH request:', error);
     return res.status(500).json({ message: 'Server Error' });

@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import type { AxiosError } from 'axios';
-import axios from 'axios';
 import { getServerErrorMessage } from 'common/utils/api-utils';
 import { MultiStepForm } from 'components/Form/MultiStepForm';
 import LogRocket from 'logrocket';
@@ -84,9 +83,8 @@ function UpdateProfileForm({
     await updateUser(values);
   };
 
-  const goToProfile = async (values: UpdateProfileFormShape) => {
+  const goToProfile = async () => {
     try {
-      await axios.patch('/api/registration/update', values);
       push('/join/success');
     } catch (error) {
       LogRocket.captureException(error as Error);
