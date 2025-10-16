@@ -20,7 +20,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     // Record found, return initial values
     if (records.length > 0) {
-      const record = records[0];
+      const relevantRecord = records[0];
 
       const {
         companyName,
@@ -91,7 +91,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       }
 
       // Update the record with the new values
-      await base(AIR_TABLE_TABLE_NAME).update(record.id, parsedPayload);
+      await base(AIR_TABLE_TABLE_NAME).update(relevantRecord.id, parsedPayload);
 
       return res.status(200).json({ message: 'Success' });
     }
