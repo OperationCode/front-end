@@ -99,7 +99,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     // No record found, add a new row to the table
     return res
       .writeHead(404, { Location: '/' })
-      .json({ message: 'No record found for this email' });
+      .json({ message: `No record found for this email (${email})` });
   } catch (error) {
     console.error('Error with /api/registration/update PATCH request:', error);
     return res.status(500).json({ message: 'Server Error' });
