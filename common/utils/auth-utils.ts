@@ -2,35 +2,37 @@ import Router from 'next/router';
 import nextCookie from 'next-cookies';
 import { setAuthCookies, removeAuthCookies, hasValidAuthToken } from './cookie-utils';
 
-export const login = async ({ token }, routeTo = '/profile') => {
+export const login = async ({ token }: { token: string }, routeTo: string = '/profile'): Promise<void> => {
   setAuthCookies({ token });
   await Router.push(routeTo);
 };
 
-export const logout = ({ routeTo = '/login', shouldRedirect = true } = {}) => {
+export const logout = ({ routeTo = '/login', shouldRedirect = true }: { routeTo?: string; shouldRedirect?: boolean } = {}): void => {
   removeAuthCookies();
-  window.localStorage.setItem('logout', Date.now()); // Log out from all windows
+  window.localStorage.setItem('logout', Date.now().toString()); // Log out from all windows
   if (shouldRedirect) {
     Router.push(routeTo);
   }
 };
+
+interface NextContext {
+  pathname?: string;
+  query?: Record<string, any>;
+  asPath?: string;
+  req?: any;
+  res?: any;
+  err?: any;
+}
 
 /**
  * @description This method examines ctx via `getInitialProps` and returns a token if it exists.
  * If a token does not exist, the user will be routed to /login
  *
  * @export
- * @param {{
- *   pathname: string,
- *   query: Object.<string, any>,
- *   asPath: string,
- *   req: Object.<string, any>,
- *   res: Object.<string, any>,
- *   err: Object.<string, any>
- * }} ctx
- * @returns {?string} token or null
+ * @param ctx
+ * @returns {string} token or empty string
  */
-export const authenticate = ctx => {
+export const authenticate = (ctx: NextContext): string => {
   const { token } = nextCookie(ctx);
 
   if (!token || !hasValidAuthToken(token)) {
@@ -47,16 +49,9 @@ export const authenticate = ctx => {
  *
  * @export
  * @param {string} path
- * @param {{
- *   pathname: string,
- *   query: Object.<string, any>,
- *   asPath: string,
- *   req: Object.<string, any>,
- *   res: Object.<string, any>,
- *   err: Object.<string, any>
- * }} ctx
+ * @param ctx
  */
-export const isomorphicRedirect = (path, ctx) => {
+export const isomorphicRedirect = (path: string, ctx?: NextContext): void => {
   if (ctx && ctx.res) {
     ctx.res.writeHead(302, { Location: path });
     ctx.res.end();

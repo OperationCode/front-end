@@ -1,6 +1,17 @@
 /* eslint-disable unicorn/prevent-abbreviations */
 // Webpack is unable to use export default
-const svgoConfig = {
+
+interface SVGOPlugin {
+  name: string;
+  params?: Record<string, any>;
+}
+
+interface SVGOConfig {
+  plugins: SVGOPlugin[];
+  floatPrecision: number;
+}
+
+const svgoConfig: SVGOConfig = {
   plugins: [
     { name: 'cleanupIDs', params: { minify: true } },
     { name: 'cleanupListOfValues' },

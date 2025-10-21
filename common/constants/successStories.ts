@@ -1,6 +1,12 @@
 import { s3 } from 'common/constants/urls';
 
-const successStories = [
+interface SuccessStory {
+  title: string;
+  quote: string;
+  imageSource: string;
+}
+
+const successStories: SuccessStory[] = [
   {
     title: 'Ali Cipolla-Taylor, Talent Acquisition at Microsoft',
     quote:

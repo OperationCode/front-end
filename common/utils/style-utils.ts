@@ -5,7 +5,7 @@
  * @param {string} pxValue (ex: "768px")
  * @returns {number}
  */
-export function getNumberFromPixelValue(pxValue) {
+export function getNumberFromPixelValue(pxValue: string): number {
   if (!hasPixelSuffix(pxValue)) {
     throw new Error(`${pxValue} is not a pixel value!`);
   }
@@ -22,7 +22,7 @@ export function getNumberFromPixelValue(pxValue) {
  * @param {string} someString
  * @returns {boolean}
  */
-export function hasPixelSuffix(someString) {
+export function hasPixelSuffix(someString: string): boolean {
   return someString.slice(-2) === 'px' && someString.length > 2;
 }
 
@@ -34,7 +34,7 @@ export function hasPixelSuffix(someString) {
  * @throws Will throw an error if method is not passed a string
  * @returns {boolean}
  */
-export function isHexColor(value) {
+export function isHexColor(value: any): boolean {
   if (typeof value === 'object') {
     throw new TypeError(
       `Must pass a string to this method. You passed an object! Keys: ${Object.keys(value)}.`,
@@ -66,21 +66,21 @@ export function isHexColor(value) {
  * @param {string[]} arrayOfBreakpointValues
  * @returns {string[]}
  */
-export function getSortedBreakpointValues(arrayOfBreakpointValues) {
+export function getSortedBreakpointValues(arrayOfBreakpointValues: string[]): number[] {
   return arrayOfBreakpointValues
-    .map(pixelValue => getNumberFromPixelValue(pixelValue))
-    .sort((a, b) => a - b);
+    .map((pixelValue: string) => getNumberFromPixelValue(pixelValue))
+    .sort((a: number, b: number) => a - b);
 }
 
 /**
  * An object representing the application's visual breakpoints.
- * @typedef {{
- * sm: number,
- * md: number,
- * lg: number,
- * xl: number
- * }} Breakpoints
  */
+export interface Breakpoints {
+  sm: number;
+  md: number;
+  lg: number;
+  xl: number;
+}
 
 /**
  * @description Take an array of every CSS variable value, return a Breakpoint object
@@ -90,7 +90,7 @@ export function getSortedBreakpointValues(arrayOfBreakpointValues) {
  * @throws Will throw an error if breakpoint-related values array is not exactly length 4
  * @returns {Breakpoints}
  */
-export function getBreakpoints(arrayOfBreakpointValues) {
+export function getBreakpoints(arrayOfBreakpointValues: string[]): Breakpoints {
   if (arrayOfBreakpointValues.length !== 4) {
     throw new Error(`
       We require a small, medium, large, and extra-large breakpoint. Ensure

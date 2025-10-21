@@ -1,10 +1,19 @@
 /*
  * This file should only contain environment variables that are non-secret.
  */
-const isProduction = process.env.PRODUCTION_DEPLOYMENT === 'true';
+const isProduction: boolean = process.env.PRODUCTION_DEPLOYMENT === 'true';
+
+interface ClientTokens {
+  GOOGLE_ADS_ID: string;
+  GOOGLE_ANALYTICS_ID: string;
+  GOOGLE_TAG_MANAGER_ID: string;
+  OC_FACEBOOK_KEY: string;
+  OC_GOOGLE_KEY: string;
+  SENTRY_DSN: string;
+}
 
 // These are all exposed by the client, so there's no way to protect them anyways.
-export const clientTokens = isProduction
+export const clientTokens: ClientTokens = isProduction
   ? {
       GOOGLE_ADS_ID: 'AW-868714671',
       GOOGLE_ANALYTICS_ID: 'G-5QSQ208NW6',
@@ -24,18 +33,18 @@ export const clientTokens = isProduction
     };
 
 // TODO: Use GH Actions to enable environment-based deploys and stop using prod on PR deploys
-export const apiUrl = isProduction
+export const apiUrl: string = isProduction
   ? 'https://api.operationcode.org'
   : 'https://api.staging.operationcode.org';
 
-export const resourcesAPIURL = isProduction
+export const resourcesAPIURL: string = isProduction
   ? 'https://resources.operationcode.org'
   : 'https://resources.staging.operationcode.org';
 
-export const slackMembersAPIUrl = 'https://slack.com/api/conversations.members';
-export const slackGeneralChannelId = 'C03GSNF6X';
+export const slackMembersAPIUrl: string = 'https://slack.com/api/conversations.members';
+export const slackGeneralChannelId: string = 'C03GSNF6X';
 
-export const AIR_TABLE_BASE_ID = 'app9tYjofmFWMxRl8';
-export const AIR_TABLE_TABLE_NAME = isProduction
+export const AIR_TABLE_BASE_ID: string = 'app9tYjofmFWMxRl8';
+export const AIR_TABLE_TABLE_NAME: string = isProduction
   ? 'Onboarding Request PRODUCTION'
   : 'Onboarding Request STAGING';

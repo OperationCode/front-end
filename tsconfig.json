@@ -3,7 +3,7 @@
     "baseUrl": "./",
     "target": "esnext",
     "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
+    "allowJs": false,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "incremental": true,
@@ -36,6 +36,6 @@
     },
     "types": ["vitest/globals", "@testing-library/jest-dom"]
   },
-  "include": ["vitest.config.mts", "next-env.d.ts", "**/*.js", "**/*.ts", "**/*.tsx"],
+  "include": ["vitest.config.mts", "next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules", "./cypress/tsconfig.json"]
 }

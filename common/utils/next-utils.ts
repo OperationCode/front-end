@@ -3,7 +3,7 @@
 /**
  * @deprecated Do not import this! It's only exported to be checked in a test.
  */
-export const getShimmerSVG = (width, height) => `
+export const getShimmerSVG = (width: number, height: number): string => `
 <svg width="${width}" height="${height}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <defs>
     <linearGradient id="g">
@@ -24,7 +24,7 @@ export const getShimmerSVG = (width, height) => `
   />
 </svg>`;
 
-const toBase64 = str =>
+const toBase64 = (str: string): string =>
   typeof window === 'undefined' ? Buffer.from(str).toString('base64') : window.btoa(str);
 
 /**
@@ -35,5 +35,5 @@ const toBase64 = str =>
  * @param {number} width
  * @param {number} height
  */
-export const getPlaceholder = (width, height) =>
+export const getPlaceholder = (width: number, height: number): string =>
   `data:image/svg+xml;base64,${toBase64(getShimmerSVG(width, height))}`;

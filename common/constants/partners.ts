@@ -15,9 +15,16 @@ import airbnb from 'static/images/sponsors/airbnb_logo.png';
 export const PARTNER_TYPES = {
   PAID: 'PAID',
   KIND: 'IN-KIND',
-};
+} as const;
 
-const partners = [
+interface Partner {
+  name: string;
+  logoSource: string;
+  url: string;
+  type: typeof PARTNER_TYPES.PAID | typeof PARTNER_TYPES.KIND;
+}
+
+const partners: Partner[] = [
   {
     name: 'APEX Systems',
     logoSource: `${s3}partnerLogos/apex_systems.png`,
@@ -137,4 +144,6 @@ const partners = [
   { name: 'Airbnb', logoSource: airbnb.src, url: 'https://airbnb.com', type: PARTNER_TYPES.KIND },
 ];
 
-export default sortBy(partners, 'name');
+const sortedPartners: Partner[] = sortBy(partners, 'name');
+
+export default sortedPartners;
