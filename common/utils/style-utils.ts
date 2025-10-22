@@ -34,10 +34,10 @@ export function hasPixelSuffix(someString: string): boolean {
  * @throws Will throw an error if method is not passed a string
  * @returns {boolean}
  */
-export function isHexColor(value: any): boolean {
-  if (typeof value === 'object') {
+export function isHexColor(value: unknown): boolean {
+  if (typeof value === 'object' && value !== null) {
     throw new TypeError(
-      `Must pass a string to this method. You passed an object! Keys: ${Object.keys(value)}.`,
+      `Must pass a string to this method. You passed an object! Keys: ${Object.keys(value as object)}.`,
     );
   }
 

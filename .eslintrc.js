@@ -208,6 +208,7 @@ module.exports = {
         // Typescript Rules
         '@typescript-eslint/consistent-type-imports': ['error'],
         '@typescript-eslint/explicit-module-boundary-types': 'off',
+        '@typescript-eslint/no-inferrable-types': ['error'],
         '@typescript-eslint/naming-convention': [
           'error',
           {

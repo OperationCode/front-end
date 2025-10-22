@@ -2,12 +2,15 @@ import Router from 'next/router';
 import nextCookie from 'next-cookies';
 import { setAuthCookies, removeAuthCookies, hasValidAuthToken } from './cookie-utils';
 
-export const login = async ({ token }: { token: string }, routeTo: string = '/profile'): Promise<void> => {
+export const login = async ({ token }: { token: string }, routeTo = '/profile'): Promise<void> => {
   setAuthCookies({ token });
   await Router.push(routeTo);
 };
 
-export const logout = ({ routeTo = '/login', shouldRedirect = true }: { routeTo?: string; shouldRedirect?: boolean } = {}): void => {
+export const logout = ({
+  routeTo = '/login',
+  shouldRedirect = true,
+}: { routeTo?: string; shouldRedirect?: boolean } = {}): void => {
   removeAuthCookies();
   window.localStorage.setItem('logout', Date.now().toString()); // Log out from all windows
   if (shouldRedirect) {
@@ -17,11 +20,14 @@ export const logout = ({ routeTo = '/login', shouldRedirect = true }: { routeTo?
 
 interface NextContext {
   pathname?: string;
-  query?: Record<string, any>;
+  query?: Record<string, unknown>;
   asPath?: string;
-  req?: any;
-  res?: any;
-  err?: any;
+  req?: unknown;
+  res?: {
+    writeHead: (statusCode: number, headers: Record<string, string>) => void;
+    end: () => void;
+  };
+  err?: unknown;
 }
 
 /**
