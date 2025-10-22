@@ -12,7 +12,7 @@
     "format": "prettier --write \"**/*\"",
     "format:md": "prettier --write \"**/*.md\"",
     "lint": "yarn lint:scripts && yarn lint:styles && yarn format:md",
-    "lint:ci": "yarn eslint \"**/*.js\" && yarn stylelint \"**/*.css\"",
+    "lint:ci": "yarn eslint \"**/*.{js,jsx,ts,tsx}\" && yarn stylelint \"**/*.css\"",
     "lint:scripts": "eslint --fix \"**/*.{js,jsx,ts,tsx}\"",
     "lint:styles": "stylelint --fix \"**/*.css\"",
     "postbuild": "next-sitemap",

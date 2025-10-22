@@ -310,6 +310,21 @@ module.exports = {
       files: ['components/nav.js', 'components/Footer/Footer.js'],
       rules: { 'jsx-a11y/anchor-is-valid': 'off' },
     },
+    {
+      files: [
+        '*.config.ts',
+        'scripts/**/*.ts',
+        'test-utils/**/*.ts',
+        'test-utils/**/*.tsx',
+        'cypress/plugins/**/*.ts',
+        '**/__stories__/**/*.tsx',
+        '**/__stories__/**/*.ts',
+      ],
+      rules: {
+        '@typescript-eslint/no-var-requires': 'off',
+        '@typescript-eslint/no-empty-function': 'off',
+      },
+    },
   ],
   root: true,
 };
