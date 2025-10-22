@@ -9,5 +9,6 @@ bin
 static
 cypress-coverage
 vitest-coverage
+.storybook
 .storybook-dist
 common/styles/themeMap.js
