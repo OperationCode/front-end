@@ -1,7 +1,7 @@
 /*
  * This file should only contain environment variables that are non-secret.
  */
-const isProduction: boolean = process.env.PRODUCTION_DEPLOYMENT === 'true';
+const isProduction = process.env.PRODUCTION_DEPLOYMENT === 'true';
 
 interface ClientTokens {
   GOOGLE_ADS_ID: string;
@@ -33,18 +33,18 @@ export const clientTokens: ClientTokens = isProduction
     };
 
 // TODO: Use GH Actions to enable environment-based deploys and stop using prod on PR deploys
-export const apiUrl: string = isProduction
+export const apiUrl = isProduction
   ? 'https://api.operationcode.org'
   : 'https://api.staging.operationcode.org';
 
-export const resourcesAPIURL: string = isProduction
+export const resourcesAPIURL = isProduction
   ? 'https://resources.operationcode.org'
   : 'https://resources.staging.operationcode.org';
 
-export const slackMembersAPIUrl: string = 'https://slack.com/api/conversations.members';
-export const slackGeneralChannelId: string = 'C03GSNF6X';
+export const slackMembersAPIUrl = 'https://slack.com/api/conversations.members';
+export const slackGeneralChannelId = 'C03GSNF6X';
 
-export const AIR_TABLE_BASE_ID: string = 'app9tYjofmFWMxRl8';
-export const AIR_TABLE_TABLE_NAME: string = isProduction
+export const AIR_TABLE_BASE_ID = 'app9tYjofmFWMxRl8';
+export const AIR_TABLE_TABLE_NAME = isProduction
   ? 'Onboarding Request PRODUCTION'
   : 'Onboarding Request STAGING';

@@ -4,19 +4,19 @@ import { clientTokens } from 'common/config/environment';
 // Extend Window interface to include gtag
 declare global {
   interface Window {
-    gtag?: (command: string, targetId: string, config?: Record<string, any>) => void;
+    gtag?: (command: string, targetId: string, config?: Record<string, unknown>) => void;
   }
 }
 
 // TODO: Leverage prod-build-time-only env vars instead NODE_ENV for prod check
-const isProduction: boolean = process.env.NODE_ENV === 'production';
-const isDevelopment: boolean = process.env.NODE_ENV === 'development';
+const isProduction = process.env.NODE_ENV === 'production';
+const isDevelopment = process.env.NODE_ENV === 'development';
 
 /**
  * @description dev-only logging of gtag methods
  * @param {{ methodName: string }} { methodName, ...rest }
  */
-const log = ({ methodName, ...rest }: { methodName: string; [key: string]: any }): void => {
+const log = ({ methodName, ...rest }: { methodName: string; [key: string]: unknown }): void => {
   if (isDevelopment) {
     console.log(`gtag.${methodName}\n`, rest); // eslint-disable-line no-console
   }
@@ -28,7 +28,7 @@ const log = ({ methodName, ...rest }: { methodName: string; [key: string]: any }
  * @param {boolean?} isModalView
  * @see https://developers.google.com/analytics/devguides/collection/gtagjs/pages
  */
-const pageView = (url: string, isModalView: boolean = false): void => {
+const pageView = (url: string, isModalView = false): void => {
   log({ methodName: 'pageview', url, isModalView });
 
   if (isProduction && !!window && !!window.gtag) {
@@ -44,7 +44,7 @@ interface EventParams {
   category: string;
   label?: string;
   value?: number;
-  otherEventParameters?: Record<string, any>;
+  otherEventParameters?: Record<string, unknown>;
 }
 
 /**
@@ -96,7 +96,13 @@ const event = ({
  * @description Log a conversion event with gtag (connected to Google Ads ID of a conversion)
  * @param {{ adId: string, category?: string }} { adId, category = 'engagement' }
  */
-const conversionEvent = ({ adId, category = 'engagement' }: { adId: string; category?: string }): void => {
+const conversionEvent = ({
+  adId,
+  category = 'engagement',
+}: {
+  adId: string;
+  category?: string;
+}): void => {
   log({ methodName: 'adEvent', adId, category });
 
   if (isProduction) {
@@ -118,7 +124,7 @@ const outboundLink = (label: string, url: string): void => {
     action: `To: ${label}`,
     category: 'Outbound',
     label: `URL: ${url}`,
-    value: url as any,
+    value: url as unknown as number,
   });
 };
 
