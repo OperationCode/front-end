@@ -10,7 +10,8 @@ const ZipRecruiterJobs = () => {
 
     document.body.append(zipRecruiterScript);
 
-    const initializeZipRecruiter = zipsearch => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const initializeZipRecruiter = (zipsearch: any) => {
       const options = {
         container: 'zipsearch_container',
         alerts_api_key: 'mnsiawwpjgk5i4u42awbp5kdhs8gpy26',

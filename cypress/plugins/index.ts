@@ -14,7 +14,8 @@ const { DefinePlugin } = require('webpack');
 // the project's config changing)
 // eslint-disable-next-line no-unused-vars
 /* eslint-disable global-require */
-module.exports = (on, config) => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+module.exports = (on: any, config: any) => {
   // `on` is used to hook into various events Cypress emits
   // `config` is the resolved Cypress config
 

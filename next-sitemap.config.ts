@@ -7,11 +7,13 @@ module.exports = {
   priority: 0.8,
   changefreq: 'weekly',
   // Modified default transform function
-  transform: async (config, path) => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  transform: async (config: any, path: any) => {
     return {
       loc: path,
       changefreq: config.changefreq,
-      priority: priorities[path] ?? config.priority,
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+      priority: priorities[path as keyof typeof priorities] ?? config.priority,
       lastmod: config.autoLastmod ? new Date().toISOString() : undefined,
       alternateRefs: config.alternateRefs ?? [],
     };

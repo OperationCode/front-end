@@ -3,6 +3,11 @@ import type { ReactElement } from 'react';
 declare global {
   type RenderableChild = string | number | ReactElement;
 
+  interface Window {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    zipsearch?: any;
+  }
+
   namespace NodeJS {
     interface ProcessEnv {
       readonly NODE_ENV: 'development' | 'production' | 'test';

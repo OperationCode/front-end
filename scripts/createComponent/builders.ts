@@ -1,7 +1,7 @@
 /* This file contains the functions which generate the output of each file */
 module.exports = {
   // Output generated for component's definition file
-  buildJS: componentName =>
+  buildJS: (componentName: string) =>
     `import { string, node } from 'prop-types';
 import {cx} from 'common/utils/cva';
 import styles from './${componentName}.module.css';
@@ -21,10 +21,10 @@ export default function ${componentName}({ className, children }) {
 `,
 
   // Output generated for component's css file
-  buildCss: componentName => `.${componentName} {}`,
+  buildCss: (componentName: string) => `.${componentName} {}`,
 
   // Output generated for component's story file
-  buildStoryJs: componentName =>
+  buildStoryJs: (componentName: string) =>
     `
 import ${componentName} from '../${componentName}';
 
@@ -45,7 +45,7 @@ Default.args = {
 `,
 
   // Output generated for component's test file
-  buildTestJs: componentName =>
+  buildTestJs: (componentName: string) =>
     `import { render } from '@testing-library/react';
 
 import ${componentName} from '../${componentName}';

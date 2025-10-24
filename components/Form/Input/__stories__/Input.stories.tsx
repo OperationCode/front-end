@@ -2,7 +2,8 @@ import { Formik, Field } from 'formik';
 import Form from '../../Form';
 import Input from '../Input';
 
-const InputTemplate = args => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const InputTemplate = (args: any) => {
   const {
     field: { name },
     label,
@@ -24,7 +25,8 @@ const InputTemplate = args => {
   );
 };
 
-export const Default = InputTemplate.bind({});
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const Default: any = InputTemplate.bind({});
 
 Default.args = {
   field: { name: 'serviceBranchInput' },
@@ -43,7 +45,8 @@ export default {
     controls: { sort: 'requiredFirst' },
   },
   decorators: [
-    InputStory => (
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    (InputStory: any) => (
       <>
         <span>
           NOTE: This component&apos;s story has no context outside of Formik and will not function

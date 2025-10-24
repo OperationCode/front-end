@@ -22,7 +22,11 @@ interface NextContext {
   pathname?: string;
   query?: Record<string, unknown>;
   asPath?: string;
-  req?: unknown;
+  req?: {
+    headers: {
+      cookie?: string;
+    };
+  };
   res?: {
     writeHead: (statusCode: number, headers: Record<string, string>) => void;
     end: () => void;

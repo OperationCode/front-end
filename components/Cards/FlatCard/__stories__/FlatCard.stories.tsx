@@ -1,3 +1,4 @@
+import type { ComponentStory } from '@storybook/react';
 import { descriptions } from 'common/constants/descriptions';
 import FlatCard from '../FlatCard';
 
@@ -6,7 +7,7 @@ export default {
   title: 'Cards/FlatCard',
 };
 
-const Template = arguments_ => <FlatCard {...arguments_} />;
+const Template: ComponentStory<typeof FlatCard> = arguments_ => <FlatCard {...arguments_} />;
 
 // Default FlatCard supplied with only required args
 export const Default = Template.bind({});
