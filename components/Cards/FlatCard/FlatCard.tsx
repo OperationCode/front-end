@@ -1,29 +1,22 @@
-import { element, node, shape, string } from 'prop-types';
+import type { ReactElement, ReactNode } from 'react';
 import { cx } from 'common/utils/cva';
 import Image from 'next/image';
 import { FLAT_CARD_IMAGE } from 'common/constants/testIDs';
 import { getPlaceholder } from 'common/utils/next-utils';
 
-FlatCard.propTypes = {
-  button: element,
-  children: node.isRequired,
-  className: string,
-  header: node,
-  image: shape({
-    source: string.isRequired,
-    alt: string.isRequired,
-  }),
-};
+interface FlatCardProps {
+  button?: ReactElement | null;
+  children: ReactNode;
+  className?: string;
+  header?: ReactNode;
+  image?: {
+    source: string;
+    alt: string;
+  };
+}
 
-FlatCard.defaultProps = {
-  button: null,
-  className: undefined,
-  header: undefined,
-  image: undefined,
-};
-
-function FlatCard({ button: Button, children, className, header, image }) {
-  const hasImage = image && image.source;
+function FlatCard({ button: Button, children, className, header, image }: FlatCardProps) {
+  const hasImage = !!image?.source;
 
   return (
     <article
@@ -49,7 +42,7 @@ function FlatCard({ button: Button, children, className, header, image }) {
                 src={image.source}
                 alt={image.alt ?? ''}
                 layout="fill"
-                objectFit
+                objectFit="cover"
                 placeholder="blur"
                 blurDataURL={getPlaceholder(194, 194)}
               />

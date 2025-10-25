@@ -17,7 +17,7 @@ exports[`CloseButton > should render with just required props passed 1`] = `
     className="fill-current transform rotate-45 transition-transform duration-200 ease-linear group-hover:rotate-[135deg]"
     dangerouslySetInnerHTML={
       {
-        "__html": "<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" id="c3230965"><title>Plus Symbol</title><path d="M500 200H300V0H200v200H0v100h200v200h100V300h200V200z"/></symbol><use href='#c3230965'/>",
+        "__html": "<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" id="_c3230965"><title>Plus Symbol</title><path d="M500 200H300V0H200v200H0v100h200v200h100V300h200V200z"/></symbol><use href='#_c3230965'/>",
       }
     }
     viewBox="0 0 500 500"

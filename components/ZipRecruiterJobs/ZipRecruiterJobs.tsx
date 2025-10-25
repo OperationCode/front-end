@@ -1,17 +1,35 @@
 import { useEffect } from 'react';
 
+interface ZipSearchOptions {
+  container: string;
+  alerts_api_key: string;
+  search: string;
+  jobs_per_page: string;
+  days_ago: string;
+  font_family: string;
+}
+
+interface ZipSearch {
+  init: (options: ZipSearchOptions) => void;
+}
+
+declare global {
+  interface Window {
+    zipsearch?: ZipSearch;
+  }
+}
+
 const ZipRecruiterJobs = () => {
   useEffect(() => {
     const zipRecruiterScript = document.createElement('script');
 
-    // eslint-disable-next-line unicorn/prevent-abbreviations
     zipRecruiterScript.src =
       'https://www.ziprecruiter.com/jobs-widget/pro/v2/63bjfya4arc58ywaxtvi8jkchvzymeep';
 
     document.body.append(zipRecruiterScript);
 
-    const initializeZipRecruiter = zipsearch => {
-      const options = {
+    const initializeZipRecruiter = (zipsearch: ZipSearch) => {
+      const options: ZipSearchOptions = {
         container: 'zipsearch_container',
         alerts_api_key: 'mnsiawwpjgk5i4u42awbp5kdhs8gpy26',
         search: 'software engineer',

@@ -1,6 +1,6 @@
-/* eslint-disable react/no-multi-comp */
 /* eslint-disable max-classes-per-file */
 import { vi } from 'vitest';
+import type { ReactElement } from 'react';
 import { Component } from 'react';
 import faker from 'faker';
 import get from 'lodash/get';
@@ -15,7 +15,12 @@ import {
 } from 'common/constants/testIDs';
 import { MultiStepForm } from '../MultiStepForm';
 
-const submitForm = async ({ container, isFinalStep = false }) => {
+interface SubmitFormParams {
+  container: HTMLElement;
+  isFinalStep?: boolean;
+}
+
+const submitForm = async ({ container, isFinalStep = false }: SubmitFormParams): Promise<void> => {
   const button = await waitFor(
     () =>
       isFinalStep
@@ -27,7 +32,7 @@ const submitForm = async ({ container, isFinalStep = false }) => {
   fireEvent.click(button);
 };
 
-const typeIntoInput = (input, inputName, value) => {
+const typeIntoInput = (input: HTMLElement, inputName: string, value: string | number): void => {
   fireEvent.change(input, { target: { id: inputName, value } });
   fireEvent.blur(input);
 };
@@ -46,7 +51,7 @@ function makeNameForm(submitHandler = vi.fn()) {
 
     static submitHandler = submitHandler;
 
-    render() {
+    render(): ReactElement {
       const { props } = this;
       return (
         <>
@@ -75,7 +80,6 @@ function makeNameForm(submitHandler = vi.fn()) {
 }
 
 describe('MultiStepForm', () => {
-  // Define some mock form steps
   const nameFormSubmitHandler = vi.fn();
 
   const NameForm = makeNameForm(nameFormSubmitHandler);
@@ -95,7 +99,7 @@ describe('MultiStepForm', () => {
 
     static submitHandler = ultimateAnswerFormSubmitHandler;
 
-    render() {
+    render(): ReactElement {
       const { props } = this;
       return (
         <>
@@ -130,7 +134,7 @@ describe('MultiStepForm', () => {
 
     static submitHandler = favoritesFormSubmitHandler;
 
-    render() {
+    render(): ReactElement {
       const { props } = this;
       return (
         <>
@@ -157,14 +161,14 @@ describe('MultiStepForm', () => {
     }
   }
 
-  const getErrorMessage = vi.fn().mockImplementation(error => {
+  const getErrorMessage = vi.fn().mockImplementation((error: unknown) => {
     const serverError = get(error, 'response.data.error', '');
 
     if (serverError) {
       return serverError;
     }
 
-    return error.message;
+    return error instanceof Error ? error.message : String(error);
   });
 
   const requiredProps = {
@@ -181,19 +185,15 @@ describe('MultiStepForm', () => {
   };
 
   it('should render with required props passed', () => {
-    // hiding console statements for this test
-    /* eslint-disable no-console */
     const originalConsoleError = console.error;
     console.error = vi.fn();
 
     const { container } = render(<MultiStepForm {...requiredProps} />);
     expect(container.querySelector('form')).not.toBeNull();
     expect(container.querySelector('input')).not.toBeNull();
-    expect(container.querySelector('button').textContent).toContain('Next');
+    expect(container.querySelector('button')?.textContent).toContain('Next');
 
-    // reset console.error's behavior
     console.error = originalConsoleError;
-    /* eslint-enable no-console */
   });
 
   it('should not render later steps on first render', () => {
@@ -279,13 +279,12 @@ describe('MultiStepForm', () => {
     typeIntoInput(await findByLabelText(/ultimate/gim), 'ultimateAnswer', '42');
     await submitForm({ container });
 
-    // expect(queryByTestId(MULTI_STEP_SUBMIT_BUTTON).textContent).toContain('Submit');
     typeIntoInput(await findByLabelText(/number/gim), 'favoriteNumber', faker.random.number());
     typeIntoInput(await findByLabelText(/person/gim), 'favoritePerson', faker.name.firstName());
     await submitForm({ container, isFinalStep: true });
 
-    const { textContent: alertText } = await findByRole('alert');
-    expect(alertText).toStrictEqual(networkErrorMessages.serverDown);
+    const alert = await findByRole('alert');
+    expect(alert.textContent).toStrictEqual(networkErrorMessages.serverDown);
   });
 
   it('should handle server error on final submit', async () => {
@@ -310,8 +309,8 @@ describe('MultiStepForm', () => {
     typeIntoInput(await findByLabelText(/person/gim), 'favoritePerson', faker.name.firstName());
     await submitForm({ container, isFinalStep: true });
 
-    const { textContent: alertText } = await findByRole('alert');
-    expect(alertText).toStrictEqual(errorMessage);
+    const alert = await findByRole('alert');
+    expect(alert.textContent).toStrictEqual(errorMessage);
   });
 
   it('should wipe error message between an invalid and valid submit', async () => {
@@ -324,7 +323,6 @@ describe('MultiStepForm', () => {
       <MultiStepForm {...requiredProps} onFinalSubmit={onFinalSubmitMock} />,
     );
 
-    // Ensure no alert exists at the start
     expect(queryByRole('alert')).toBeNull();
 
     typeIntoInput(await findByLabelText(/first name/i), 'firstName', faker.name.firstName());
@@ -369,17 +367,17 @@ describe('MultiStepForm', () => {
 
     await waitFor(() => {
       expect(goToPreviousStepButton).not.toBeNull();
-      expect(goToPreviousStepButton.textContent).toContain('Previous');
+      expect(goToPreviousStepButton?.textContent).toContain('Previous');
     });
 
-    fireEvent.click(goToPreviousStepButton);
+    fireEvent.click(goToPreviousStepButton!);
 
     await waitFor(() => {
       expect(queryByTestId('ultimateAnswer')).toBeNull();
       expect(queryByTestId('firstName')).not.toBeNull();
       expect(queryByTestId('lastName')).not.toBeNull();
-      expect(queryByTestId('firstName').value).toStrictEqual(firstNameValue);
-      expect(queryByTestId('lastName').value).toStrictEqual(lastNameValue);
+      expect((queryByTestId('firstName') as HTMLInputElement).value).toStrictEqual(firstNameValue);
+      expect((queryByTestId('lastName') as HTMLInputElement).value).toStrictEqual(lastNameValue);
     });
   });
 
@@ -395,28 +393,25 @@ describe('MultiStepForm', () => {
     typeIntoInput(await findByLabelText(/last name/gim), 'lastName', lastNameValue);
     await submitForm({ container });
 
-    // make sure that step 2's input has initialValue & visible after step 1 submission
     await waitFor(() => {
       expect(container.querySelectorAll('input')).toHaveLength(1);
       expect(queryByTestId('ultimateAnswer')).not.toBeNull();
-      expect(queryByTestId('ultimateAnswer').value).toStrictEqual(
+      expect((queryByTestId('ultimateAnswer') as HTMLInputElement).value).toStrictEqual(
         UltimateAnswerForm.initialValues.ultimateAnswer,
       );
     });
 
-    // click on "Previous" button
     const goToPreviousStepButton = queryByTestId(MULTI_STEP_PREVIOUS_BUTTON);
     expect(goToPreviousStepButton).not.toBeNull();
-    expect(goToPreviousStepButton.textContent).toContain('Previous');
-    fireEvent.click(goToPreviousStepButton);
+    expect(goToPreviousStepButton?.textContent).toContain('Previous');
+    fireEvent.click(goToPreviousStepButton!);
 
-    // make sure that step 1's inputs have persisted & visible after clicking "Previous" from step 1
     await waitFor(() => {
       expect(container.querySelectorAll('input')).toHaveLength(2);
       expect(queryByTestId('firstName')).not.toBeNull();
       expect(queryByTestId('lastName')).not.toBeNull();
-      expect(queryByTestId('firstName').value).toStrictEqual(firstNameValue);
-      expect(queryByTestId('lastName').value).toStrictEqual(lastNameValue);
+      expect((queryByTestId('firstName') as HTMLInputElement).value).toStrictEqual(firstNameValue);
+      expect((queryByTestId('lastName') as HTMLInputElement).value).toStrictEqual(lastNameValue);
     });
   });
 
@@ -452,8 +447,8 @@ describe('MultiStepForm', () => {
       expect(mockedSubmitHandler).toHaveBeenCalledTimes(1);
     });
 
-    const { textContent: alertText } = await findByRole('alert');
-    expect(alertText).toStrictEqual(networkErrorMessages.serverDown);
+    const alert = await findByRole('alert');
+    expect(alert.textContent).toStrictEqual(networkErrorMessages.serverDown);
   });
 
   it('should handle server error on custom handler submit', async () => {
@@ -477,7 +472,7 @@ describe('MultiStepForm', () => {
       expect(mockedSubmitHandler).toHaveBeenCalledTimes(1);
     });
 
-    const { textContent: alertText } = await findByRole('alert');
-    expect(alertText).toStrictEqual(errorMessage);
+    const alert = await findByRole('alert');
+    expect(alert.textContent).toStrictEqual(errorMessage);
   });
 });

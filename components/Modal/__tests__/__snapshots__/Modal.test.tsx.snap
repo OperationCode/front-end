@@ -40,7 +40,7 @@ exports[`Modal > should render with many props assigned 1`] = `
         viewBox="0 0 500 500"
       >
         <symbol
-          id="c3230965"
+          id="_c3230965"
           viewBox="0 0 500 500"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -52,7 +52,7 @@ exports[`Modal > should render with many props assigned 1`] = `
           />
         </symbol>
         <use
-          href="#c3230965"
+          href="#_c3230965"
         />
       </svg>
     </button>
