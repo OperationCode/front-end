@@ -1,3 +1,4 @@
+import type { StoryFn } from '@storybook/react';
 import Label from '../Label';
 
 export default {
@@ -7,18 +8,22 @@ export default {
 
 const pairedInputName = 'pairedInputName';
 
-const Template = arguments_ => {
+interface LabelArgs {
+  children: string;
+  for?: string;
+}
+
+const Template: StoryFn<LabelArgs> = args => {
   return (
     <>
       <span>NOTE: This component is always paired with an input</span>
       <div>
-        <Label htmlFor={pairedInputName} {...arguments_} />
+        <Label htmlFor={pairedInputName} {...args} />
       </div>
     </>
   );
 };
 
-// Default Label supplied with only required args
 export const Default = Template.bind({});
 Default.args = {
   children: 'Label',

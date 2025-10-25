@@ -1,25 +1,22 @@
+import type { ReactElement } from 'react';
 import NextHead from 'next/head';
-import { element, string } from 'prop-types';
 import { s3 } from 'common/constants/urls';
 
-Head.propTypes = {
-  children: element,
-  title: string,
-  description: string,
-  url: string,
-  ogImage: string,
-};
+interface HeadProps {
+  children?: ReactElement;
+  title?: string;
+  description?: string;
+  url?: `https://${string}` | `/${string}`;
+  ogImage?: `https://${string}` | `/${string}`;
+}
 
-Head.defaultProps = {
-  children: undefined,
-  title: undefined,
-  description:
-    'Operation Code is a registered 501(c)3 whose mission is to help our military community and SIV allied refugees grow in their tech careers while rebuilding our lives post-conflict.',
-  url: 'https://operationcode.org',
-  ogImage: `${s3}branding/oc_image.png`,
-};
-
-function Head({ children, title, description, url, ogImage }) {
+function Head({
+  children,
+  title,
+  description = 'Operation Code is a registered 501(c)3 whose mission is to help our military community and SIV allied refugees grow in their tech careers while rebuilding our lives post-conflict.',
+  url = 'https://operationcode.org',
+  ogImage = `${s3}branding/oc_image.png`,
+}: HeadProps) {
   return (
     <NextHead>
       <meta charSet="UTF-8" />

@@ -1,3 +1,4 @@
+import type { StoryFn } from '@storybook/react';
 import { descriptions } from 'common/constants/descriptions';
 import FlatCard from '../FlatCard';
 
@@ -6,9 +7,16 @@ export default {
   title: 'Cards/FlatCard',
 };
 
-const Template = arguments_ => <FlatCard {...arguments_} />;
+interface FlatCardArgs {
+  children: string;
+  image: {
+    source: string;
+    alt: string;
+  };
+}
 
-// Default FlatCard supplied with only required args
+const Template: StoryFn<FlatCardArgs> = args => <FlatCard {...args} />;
+
 export const Default = Template.bind({});
 Default.args = {
   children: descriptions.long,

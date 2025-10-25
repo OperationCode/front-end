@@ -1,8 +1,14 @@
 import { Formik, Field } from 'formik';
+import type { StoryFn } from '@storybook/react';
 import Form from '../../Form';
 import Input from '../Input';
 
-const InputTemplate = args => {
+interface InputTemplateArgs {
+  field: { name: string };
+  label: string;
+}
+
+const InputTemplate: StoryFn<InputTemplateArgs> = args => {
   const {
     field: { name },
     label,
@@ -13,7 +19,7 @@ const InputTemplate = args => {
       initialValues={{
         input1Value: '',
       }}
-      onSubmit={values => alert(values)}
+      onSubmit={values => alert(JSON.stringify(values))}
     >
       <Form>
         <div>
@@ -43,7 +49,7 @@ export default {
     controls: { sort: 'requiredFirst' },
   },
   decorators: [
-    InputStory => (
+    (InputStory: () => JSX.Element) => (
       <>
         <span>
           NOTE: This component&apos;s story has no context outside of Formik and will not function
