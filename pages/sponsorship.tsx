@@ -62,7 +62,7 @@ function Sponsorship() {
         theme="white"
         hasTitleUnderline
         columns={[
-          <Card className="justify-start max-w-[350px] h-[250px]">
+          <Card className="justify-start max-w-xs h-64">
             <h6>Employee Engagement</h6>
             <p>
               Provide opportunities for software engineers to mentor new learners and contribute to
@@ -70,7 +70,7 @@ function Sponsorship() {
               organization - share their story; loud and proud.
             </p>
           </Card>,
-          <Card className="justify-start max-w-[350px] h-[250px]">
+          <Card className="justify-start max-w-xs h-64">
             <h6>Talent Management</h6>
             <p>
               Build a talent pipeline between your company and transitioning service members with
@@ -78,7 +78,7 @@ function Sponsorship() {
               diverse - they will bolster any workforce.
             </p>
           </Card>,
-          <Card className="justify-start max-w-[350px] h-[250px]">
+          <Card className="justify-start max-w-xs h-64">
             <h6>Marketing</h6>
             <p>
               Marketing opportunities for national online and local community engagement Community
