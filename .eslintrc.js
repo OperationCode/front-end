@@ -247,7 +247,7 @@ module.exports = {
               {
                 name: 'formik',
                 importNames: ['Form'],
-                message: `Please use our Form component to have good defaults defined.\n "import Form from 'components/Form/Form';"`,
+                message: `Please use our Form component to have good defaults defined.\n "import { Form } from 'components/Form/Form';"`,
               },
               {
                 name: 'react',
