@@ -16,7 +16,7 @@ interface FlatCardProps {
 }
 
 function FlatCard({ button: Button, children, className, header, image }: FlatCardProps) {
-  const hasImage = Boolean(image?.source);
+  const hasImage = !!image?.source;
 
   return (
     <article
@@ -32,7 +32,7 @@ function FlatCard({ button: Button, children, className, header, image }: FlatCa
       >
         {header && <div className="text-center">{header}</div>}
 
-        {hasImage && image && (
+        {hasImage && (
           <div className="flex justify-center -my-5">
             <div
               data-testid={FLAT_CARD_IMAGE}
