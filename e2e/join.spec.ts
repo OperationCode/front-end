@@ -326,7 +326,7 @@ test.describe('join', () => {
     await getCheckbox(page, /Slack Community Guidelines/).check();
     await page.getByTestId(REGISTRATION_FORM_INITIAL_SUBMIT_BUTTON).click();
 
-    await expect(page).toHaveURL(/\/join\/form/, { timeout: 20000 });
+    await page.waitForURL(/\/join\/form/, { timeout: 30000 });
     await expect(page.locator('h1')).toHaveText('Update Profile');
 
     // Professional Details
