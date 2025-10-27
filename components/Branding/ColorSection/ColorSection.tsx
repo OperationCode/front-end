@@ -21,11 +21,11 @@ function ColorSection() {
         hasTitleUnderline
         theme="white"
         columns={[
-          <div>
+          <div key="primary">
             <h3>Primary</h3>
             <Swatch colorName={primaryColor.name} hexCode={primaryColor.hexCode} />
           </div>,
-          <div>
+          <div key="secondary">
             <h3>Secondary</h3>
             <Swatch colorName={secondaryColor.name} hexCode={secondaryColor.hexCode} />
           </div>,

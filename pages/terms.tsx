@@ -12,7 +12,7 @@ function Terms() {
 
       <Content
         columns={[
-          <div>
+          <div key="terms">
             <p>
               <i>Last updated: September 8, 2018.</i>
             </p>

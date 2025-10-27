@@ -11,7 +11,7 @@ function FontSection() {
       theme="gray"
       hasTitleUnderline
       columns={[
-        <ul className="list-none w-full [&>li]:m-4">
+        <ul key="fonts" className="list-none w-full [&>li]:m-4">
           {Object.keys(fontsObject).map(item => {
             const fontStyle = {
               fontFamily: fontsObject[item],

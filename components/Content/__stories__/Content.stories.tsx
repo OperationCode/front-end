@@ -4,13 +4,13 @@ import Content from '../Content';
 type ContentStoryType = StoryObj<typeof Content>;
 
 const multiColumnArray = [
-  <div>
+  <div key="col1">
     <p>Column 1</p>
   </div>,
-  <div>
+  <div key="col2">
     <p>Column 2</p>
   </div>,
-  <div>
+  <div key="col3">
     <p>Column 3</p>
   </div>,
 ];

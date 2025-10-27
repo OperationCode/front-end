@@ -26,7 +26,7 @@ function Sponsorship() {
         theme="white"
         hasTitleUnderline
         columns={[
-          <p>
+          <p key="intro">
             Operation Code is pleased to invite America&apos;s leading technology companies to
             become shared value sponsors. Please join us and help make our mission a success.
             Together, we will create a new and secure future for today&apos;s veterans and military
@@ -39,18 +39,18 @@ function Sponsorship() {
         title="What We Offer"
         theme="secondary"
         columns={[
-          <FlatCard>
+          <FlatCard key="offer1">
             The largest national volunteer service organization devoted to software engineering.
           </FlatCard>,
-          <FlatCard>
+          <FlatCard key="offer2">
             Direct and indirect access to military veterans and spouses for surveying or hiring
             purposes.
           </FlatCard>,
-          <FlatCard>
+          <FlatCard key="offer3">
             Potential partnerships with national and local meetups. Help us create a community at a
             city near you.
           </FlatCard>,
-          <FlatCard>
+          <FlatCard key="offer4">
             An authentic and vibrant community. Your sponsorship will have a very noticeable and
             organic impact.
           </FlatCard>,
@@ -62,7 +62,7 @@ function Sponsorship() {
         theme="white"
         hasTitleUnderline
         columns={[
-          <Card className="justify-start max-w-xs h-64">
+          <Card key="engagement1" className="justify-start max-w-xs h-64">
             <h6>Employee Engagement</h6>
             <p>
               Provide opportunities for software engineers to mentor new learners and contribute to
@@ -70,7 +70,7 @@ function Sponsorship() {
               organization - share their story; loud and proud.
             </p>
           </Card>,
-          <Card className="justify-start max-w-xs h-64">
+          <Card key="engagement2" className="justify-start max-w-xs h-64">
             <h6>Talent Management</h6>
             <p>
               Build a talent pipeline between your company and transitioning service members with
@@ -78,7 +78,7 @@ function Sponsorship() {
               diverse - they will bolster any workforce.
             </p>
           </Card>,
-          <Card className="justify-start max-w-xs h-64">
+          <Card key="engagement3" className="justify-start max-w-xs h-64">
             <h6>Marketing</h6>
             <p>
               Marketing opportunities for national online and local community engagement Community
@@ -93,7 +93,7 @@ function Sponsorship() {
         title="Corporate Partner Opportunities"
         theme="secondary"
         columns={[
-          <div>
+          <div key="partner-opportunities">
             <Badge
               className="text-2xl font-medium mt-6"
               icon={<MedalSolid className="text-[#ffaa22]" />}

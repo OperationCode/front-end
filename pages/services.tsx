@@ -46,7 +46,7 @@ function Services() {
         title="We're A Community"
         theme="gray"
         columns={[
-          <div>
+          <div key="community">
             <p>
               We believe that the best way to take advantage of Operation Code is simply to become a
               member of the organization. We work closely with military veterans, service members,
@@ -80,7 +80,7 @@ function Services() {
 
       <Content
         columns={[
-          <TrackVisibility offset={VISIBILITY_OFFSET}>
+          <TrackVisibility key="image-card-1" offset={VISIBILITY_OFFSET}>
             <ImageCard
               alt="Two developers collaborting over some code."
               imageSource={`${s3}redesign/images/paired_programming.jpg`}
@@ -99,11 +99,11 @@ function Services() {
         title="Our Commitment To You"
         theme="gray"
         columns={[
-          <p>
+          <p key="commitment-intro">
             Whether you are looking to change careers or starting a new one in the tech industry, we
             are here to help you succeed by providing:
           </p>,
-          <div className={styles.badgeGroupings}>
+          <div key="commitment-badges" className={styles.badgeGroupings}>
             {mentorItems.map(item => (
               <Badge
                 key={item.label}
@@ -113,7 +113,7 @@ function Services() {
               />
             ))}
           </div>,
-          <p>
+          <p key="chapter-events">
             We also offer local chapter events. Regarding local chapter events, inquire about events
             near you or about starting a chapter in your area by emailing{' '}
             <OutboundLink
@@ -130,7 +130,7 @@ function Services() {
 
       <Content
         columns={[
-          <TrackVisibility offset={VISIBILITY_OFFSET}>
+          <TrackVisibility key="image-card-2" offset={VISIBILITY_OFFSET}>
             <ImageCard
               alt="Room full of people chatting at an Operation Code meetup in New York City."
               imageSource={`${s3}redesign/images/chatting_at_meetup.jpg`}

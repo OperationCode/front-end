@@ -9,7 +9,7 @@ import { s3 } from 'common/constants/urls';
 
 const pageTitle = 'Project Rebuild';
 
-export default () => {
+function ProjectRebuild() {
   return (
     <div>
       <Head
@@ -30,7 +30,7 @@ export default () => {
       <Content
         theme="white"
         columns={[
-          <div className={styles.logos}>
+          <div key="logos" className={styles.logos}>
             <Image
               src={`${s3}partnerLogos/fresh-start-refugee.png`}
               layout="fixed"
@@ -58,9 +58,9 @@ export default () => {
 
       <Content
         theme="white"
-        title="A collaborative tech program to rebuild refugees’ lives"
+        title="A collaborative tech program to rebuild refugees' lives"
         columns={[
-          <>
+          <div key="description">
             <p>
               In conjunction with Fresh Start Refugee Assistance Center, an Afghan-American led
               non-profit, and Globally.org’s ReUp Refugee Tech Re-Skilling Program, Operation Code
@@ -98,7 +98,7 @@ export default () => {
               in the United States, providing candidates with a path to access opportunities
               commensurate with their prior work experience and education.
             </p>
-          </>,
+          </div>,
         ]}
       />
 
@@ -106,7 +106,7 @@ export default () => {
         theme="white"
         title="How you can help"
         columns={[
-          <>
+          <div key="student-info">
             <p>
               Are you interested in participating in future cohorts of Project Rebuild as a student?
               We currently train and provide scholarships for at least one tech Google certification
@@ -132,7 +132,7 @@ export default () => {
               </OutboundLink>
               .
             </p>
-          </>,
+          </div>,
         ]}
       />
 
@@ -140,7 +140,7 @@ export default () => {
         theme="white"
         title="How you can help"
         columns={[
-          <>
+          <div key="help-info">
             <p>
               We need your help to continue this impactful and life-changing program! You can
               provide in-kind donations such as new laptops, software licenses, or volunteer as a
@@ -152,7 +152,7 @@ export default () => {
               be able to focus on their certifications and tech training through a living stipend.
               Donate what you can.
             </p>
-          </>,
+          </div>,
         ]}
       />
 
@@ -160,7 +160,7 @@ export default () => {
         theme="white"
         title="*Ongoing Financial Assistance Needed"
         columns={[
-          <>
+          <div key="financial">
             <p>
               The funds for the Project Rebuild Program is dependent on your financial support and
               not taken from our general fund for U.S. military service members, Veterans and
@@ -183,9 +183,11 @@ export default () => {
             <div className={styles.donateLinkButtonContainer}>
               <LinkButton href="/donate">Donate</LinkButton>
             </div>
-          </>,
+          </div>,
         ]}
       />
     </div>
   );
-};
+}
+
+export default ProjectRebuild;

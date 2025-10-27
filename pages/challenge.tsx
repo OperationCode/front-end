@@ -55,7 +55,7 @@ function Challenge() {
         title="Let's get started!"
         theme="white"
         columns={[
-          <div>
+          <div key="instructions">
             <ol className={styles.instructionList}>
               <li>
                 Firstly,{' '}
@@ -203,12 +203,12 @@ function Challenge() {
         title="Your Name Here"
         hasTitleUnderline
         columns={[
-          <div>
+          <div key="names">
             <h6 className={styles.centerText}>
               Here is a list of the people that have completed this before you:
             </h6>
             <div className={styles.challengerListContainer}>
-              <Content columns={[<NamesColumns />]} />
+              <Content columns={[<NamesColumns key="names-columns" />]} />
             </div>
           </div>,
         ]}

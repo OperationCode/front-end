@@ -27,7 +27,7 @@ function Jobs() {
         theme="white"
         title="ZipRecruiter"
         hasTitleUnderline
-        columns={[<ZipRecruiterJobs />]}
+        columns={[<ZipRecruiterJobs key="zip-recruiter" />]}
       />
     </>
   );
