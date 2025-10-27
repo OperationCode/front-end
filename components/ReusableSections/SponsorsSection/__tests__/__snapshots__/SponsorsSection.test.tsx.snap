@@ -13,16 +13,16 @@ exports[`SponsorsSection > should render 1`] = `
     >
       <h3
         className="group flex uppercase text-center my-4 mx-0 border-solid border-b-4 border-b-primary"
+        id="sponsors-link"
       >
         <div
           className="relative"
           data-testid="Heading Content sponsors-link"
         >
           <a
-            className="hidden absolute top-2 -left-8 transition-all duration-200 ease-linear sm:inline sm:opacity-0 sm:group-hover:opacity-100"
+            className="absolute top-2 -left-8 invisible group-hover:visible focus-visible:visible"
             data-testid="Hash Link"
             href="#sponsors-link"
-            id="sponsors-link"
           >
             <span
               className="sr-only"
@@ -50,16 +50,16 @@ exports[`SponsorsSection > should render 1`] = `
     >
       <h4
         className="group flex uppercase text-center my-4 mx-0"
+        id="corporate-partners-link"
       >
         <div
           className="relative"
           data-testid="Heading Content corporate-partners-link"
         >
           <a
-            className="hidden absolute top-2 -left-8 transition-all duration-200 ease-linear sm:inline sm:opacity-0 sm:group-hover:opacity-100"
+            className="absolute top-2 -left-8 invisible group-hover:visible focus-visible:visible"
             data-testid="Hash Link"
             href="#corporate-partners-link"
-            id="corporate-partners-link"
           >
             <span
               className="sr-only"
@@ -213,16 +213,16 @@ exports[`SponsorsSection > should render 1`] = `
     >
       <h4
         className="group flex uppercase text-center my-4 mx-0"
+        id="corporate-supporters-link"
       >
         <div
           className="relative"
           data-testid="Heading Content corporate-supporters-link"
         >
           <a
-            className="hidden absolute top-2 -left-8 transition-all duration-200 ease-linear sm:inline sm:opacity-0 sm:group-hover:opacity-100"
+            className="absolute top-2 -left-8 invisible group-hover:visible focus-visible:visible"
             data-testid="Hash Link"
             href="#corporate-supporters-link"
-            id="corporate-supporters-link"
           >
             <span
               className="sr-only"

@@ -6,6 +6,7 @@ exports[`Heading > should render with many props assigned 1`] = `
 >
   <h5
     className="group flex uppercase text-center my-4 mx-0 border-solid border-b-4 border-b-primary"
+    id="test-link"
   >
     Test
   </h5>
@@ -18,16 +19,16 @@ exports[`Heading > should render with required props 1`] = `
 >
   <h2
     className="group flex uppercase text-center my-4 mx-0"
+    id="test-link"
   >
     <div
       className="relative"
       data-testid="Heading Content test-link"
     >
       <a
-        className="hidden absolute top-2 -left-8 transition-all duration-200 ease-linear sm:inline sm:opacity-0 sm:group-hover:opacity-100"
+        className="absolute top-2 -left-8 invisible group-hover:visible focus-visible:visible"
         data-testid="Hash Link"
         href="#test-link"
-        id="test-link"
       >
         <span
           className="sr-only"
