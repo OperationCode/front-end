@@ -24,7 +24,6 @@
     "test:e2e:dev": "export LOCAL_PLAYWRIGHT=true && playwright test --ui",
     "test:e2e:headless": "playwright test",
     "test:e2e:update-snaps": "playwright test --update-snapshots",
-    "test:e2e:ci": "playwright test --ci",
     "test": "vitest --run",
     "test:ci": "yarn test --coverage --silent",
     "test:changes": "yarn test --changed main",

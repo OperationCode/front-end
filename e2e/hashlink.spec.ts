@@ -28,6 +28,16 @@ test.describe('Hash Links', () => {
       // Get all hash links on the page
       const hashLinks = await page.getByTestId('Hash Link').all();
 
+      // Wait for at least one hash link to be attached to ensure they're in a stable state
+      // eslint-disable-next-line playwright/no-conditional-in-test
+      if (hashLinks.length > 0) {
+        // eslint-disable-next-line playwright/no-conditional-expect
+        await expect(hashLinks[0]).toBeAttached();
+      }
+
+      // Move mouse away from any elements to ensure no hover states are active
+      await page.mouse.move(0, 0);
+
       for (const link of hashLinks) {
         const hash = await link.getAttribute('href');
 
@@ -35,13 +45,16 @@ test.describe('Hash Links', () => {
         // eslint-disable-next-line playwright/no-conditional-in-test
         if (!hash) continue;
 
-        // Verify the hash link is not visible initially
-        await expect(link).toBeHidden();
-
         const hashId = hash.replace(/^.*#/, '');
 
         // Locate the heading element relevant to the hashlink
         const heading = page.locator(`#${hashId}`);
+
+        // Ensure heading is not in hover state before checking link visibility
+        await page.mouse.move(0, 0);
+
+        // Verify the hash link has visibility: hidden initially
+        await expect(link).toHaveCSS('visibility', 'hidden', { timeout: 2000 });
 
         // Scroll heading into view
         await heading.scrollIntoViewIfNeeded();
