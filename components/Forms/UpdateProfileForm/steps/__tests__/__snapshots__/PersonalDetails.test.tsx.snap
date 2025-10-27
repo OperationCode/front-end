@@ -7,20 +7,20 @@ exports[`UpdateProfileForm/Steps/PersonalDetails > should render in context of F
   onSubmit={[Function]}
 >
   <div
-    className="row"
+    className="flex flex-col gap-4"
   >
     <div
-      className="field"
+      className="min-w-64"
     >
       <label
-        className="text-themeSecondary text-sm"
+        className="text-secondary"
         data-testid="LABEL"
         htmlFor="joinReason"
       >
         Join Reason*
       </label>
       <div
-        className="selectFeedbackGrouping"
+        className="lg:relative"
       >
         <div
           className=" css-2b097c-container"
@@ -33,7 +33,7 @@ exports[`UpdateProfileForm/Steps/PersonalDetails > should render in context of F
             className="css-1f43avz-a11yText-A11yText"
           />
           <div
-            className=" css-1s1bmlz-control"
+            className=" css-19g9ivk-control"
             onMouseDown={[Function]}
             onTouchEnd={[Function]}
           >
@@ -138,17 +138,17 @@ exports[`UpdateProfileForm/Steps/PersonalDetails > should render in context of F
       </div>
     </div>
     <div
-      className="field"
+      className="min-w-64"
     >
       <label
-        className="text-themeSecondary text-sm"
+        className="text-secondary"
         data-testid="LABEL"
         htmlFor="gender"
       >
         Gender*
       </label>
       <div
-        className="selectFeedbackGrouping"
+        className="lg:relative"
       >
         <div
           className=" css-2b097c-container"
@@ -161,7 +161,7 @@ exports[`UpdateProfileForm/Steps/PersonalDetails > should render in context of F
             className="css-1f43avz-a11yText-A11yText"
           />
           <div
-            className=" css-1s1bmlz-control"
+            className=" css-19g9ivk-control"
             onMouseDown={[Function]}
             onTouchEnd={[Function]}
           >
@@ -265,17 +265,17 @@ exports[`UpdateProfileForm/Steps/PersonalDetails > should render in context of F
       </div>
     </div>
     <div
-      className="field"
+      className="min-w-64"
     >
       <label
-        className="text-themeSecondary text-sm"
+        className="text-secondary"
         data-testid="LABEL"
         htmlFor="ethnicity"
       >
         Ethnicity*
       </label>
       <div
-        className="selectFeedbackGrouping"
+        className="lg:relative"
       >
         <div
           className=" css-2b097c-container"
@@ -288,7 +288,7 @@ exports[`UpdateProfileForm/Steps/PersonalDetails > should render in context of F
             className="css-1f43avz-a11yText-A11yText"
           />
           <div
-            className=" css-1s1bmlz-control"
+            className=" css-19g9ivk-control"
             onMouseDown={[Function]}
             onTouchEnd={[Function]}
           >
@@ -393,17 +393,17 @@ exports[`UpdateProfileForm/Steps/PersonalDetails > should render in context of F
       </div>
     </div>
     <div
-      className="field"
+      className="min-w-64"
     >
       <label
-        className="text-themeSecondary text-sm"
+        className="text-secondary"
         data-testid="LABEL"
         htmlFor="educationLevel"
       >
         Education Level*
       </label>
       <div
-        className="selectFeedbackGrouping"
+        className="lg:relative"
       >
         <div
           className=" css-2b097c-container"
@@ -416,7 +416,7 @@ exports[`UpdateProfileForm/Steps/PersonalDetails > should render in context of F
             className="css-1f43avz-a11yText-A11yText"
           />
           <div
-            className=" css-1s1bmlz-control"
+            className=" css-19g9ivk-control"
             onMouseDown={[Function]}
             onTouchEnd={[Function]}
           >

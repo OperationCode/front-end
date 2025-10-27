@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import { cx } from 'common/utils/cva';
 import TrackVisibility from 'react-on-screen';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
@@ -58,7 +58,7 @@ function GetInvolved() {
 
       <HeroBanner
         backgroundImageSource={`${s3}redesign/heroBanners/get_involved.jpg`}
-        className={styles.heroBannerMobilePositioning}
+        className={`${styles.heroBannerMobilePositioning} bg-[center_20%] min-h-[60dvh]`}
         title="You Can Make An Impact"
       >
         <>
@@ -108,7 +108,7 @@ function GetInvolved() {
         columns={[
           <TrackVisibility offset={VISIBILITY_OFFSET}>
             {({ isVisible }) => (
-              <div className={classNames(styles.image, { [styles.showImage]: isVisible })}>
+              <div className={cx(styles.image, { [styles.showImage]: isVisible })}>
                 <Image
                   src={`${s3}redesign/images/one_on_one_mentoring.jpg`}
                   alt="Woman outlines a whiteboarding problem to a man"
@@ -126,7 +126,7 @@ function GetInvolved() {
               pursuits of a tech career.
             </p>
 
-            <div className={classNames(styles.centeredText, styles.extraTopMargin)}>
+            <div className={cx(styles.centeredText, styles.extraTopMargin)}>
               <LinkButton href="/join">Become A Mentor</LinkButton>
             </div>
           </div>,
@@ -144,7 +144,7 @@ function GetInvolved() {
             </p>
             <p className={styles.centeredText}>You can help us with:</p>
           </div>,
-          <div className={classNames(styles.badgeGroupings)}>
+          <div className={cx(styles.badgeGroupings)}>
             {supportItems.map(item => (
               <Badge
                 key={item.label}

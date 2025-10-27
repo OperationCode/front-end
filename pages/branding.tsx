@@ -5,43 +5,39 @@ import ColorSection from 'components/Branding/ColorSection/ColorSection';
 import FontSection from 'components/Branding/FontSection/FontSection';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 import { s3 } from 'common/constants/urls';
-import { twMerge } from 'tailwind-merge';
-import styles from 'styles/branding.module.css';
 
 const pageTitle = 'Branding Guide';
 
 function Branding() {
   return (
-    <div className={twMerge(styles.Branding, '[*_p]:px-4')}>
+    <>
       <Head title={pageTitle} />
 
-      <HeroBanner isFullViewportHeight title={pageTitle}>
-        <h6 className="text-center">
+      <HeroBanner className="min-h-dvh" title={pageTitle}>
+        <h6 className="text-center mb-4">
           For external organizations, corporate sponsors and press, please obtain specific guidance
           and approval from the Director of Communications prior to using Operation Code Branding on
           public platforms. You may email your request to marketing@operationcode.org
         </h6>
 
-        <br />
+        <h6>General Guidelines</h6>
 
-        <h6 className={styles.topMargin}>General Guidelines</h6>
-
-        <p>
+        <p className="m-4">
           The size ratio between the star and the medallion changes depending on the size of
           reproduction. Please make use of the appropriate sized logo when creating collateral.
         </p>
 
-        <p>
+        <p className="m-4">
           In most cases, use the blue-accent version of the logo. The red-accent is delivered for
           special uses only.
         </p>
 
-        <p>
+        <p className="m-4">
           Please note: Images may appear larger or smaller than they appear on your device, but the
           files linked are &quot;large&quot; or &quot;small&quot; as described.
         </p>
 
-        <p>
+        <p className="m-4">
           View{' '}
           <a
             rel="noreferrer"
@@ -52,7 +48,7 @@ function Branding() {
           </a>
         </p>
 
-        <p>
+        <p className="m-4">
           <OutboundLink
             analyticsEventLabel="Branding EPS Download"
             href={`${s3}Operation-Code-Logo.eps`}
@@ -65,7 +61,7 @@ function Branding() {
       <LogoSection />
       <ColorSection />
       <FontSection />
-    </div>
+    </>
   );
 }
 

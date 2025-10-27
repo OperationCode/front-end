@@ -12,7 +12,7 @@ const UpdateProfile: NextPage = () => {
     <>
       <Head title={pageTitle} />
 
-      <HeroBanner title={pageTitle} className="max-h-48" />
+      <HeroBanner title={pageTitle} className="max-h-48 min-h-[auto]" />
 
       <Content theme="gray" columns={[<UpdateProfileForm />]} />
     </>

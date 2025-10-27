@@ -5,7 +5,6 @@ import { SelectSingle } from 'components/Form/Select/SelectSingle';
 import { mapStringsToSelectOptions } from 'common/utils/array-utils';
 import { SelectMulti } from 'components/Form/Select/SelectMulti';
 import type { OptionType } from 'components/Form/Select/ThemedReactSelect';
-import styles from './_steps.module.css';
 
 PersonalDetails.title = 'Personal Details';
 
@@ -72,7 +71,7 @@ const educationLevelOptions = mapStringsToSelectOptions([
 
 export function PersonalDetails({ isSubmitting }: PersonalDetailsProps) {
   return (
-    <div className={styles.row}>
+    <div className="flex flex-col gap-4">
       <Field
         name="joinReason"
         label="Join Reason*"

@@ -8,12 +8,12 @@ import qs from 'qs';
 
 const baseAxiosConfig = {
   baseURL: apiUrl,
-  timeout: 5000,
+  timeout: 15000,
 };
 
 const resourcesAxiosConfig = {
   baseURL: resourcesAPIURL,
-  timeout: 5000,
+  timeout: 15000,
 };
 
 export const OperationCodeAPI = axios.create(baseAxiosConfig);

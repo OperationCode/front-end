@@ -17,18 +17,21 @@ const selectOptions = [
 const SelectSingleTemplate = (args: SelectSingleProps) => {
   const {
     field: { name },
-    label,
-    options,
+    form: _form,
+    ...props
   } = args;
 
   return (
     <Formik initialValues={{ [`${name}`]: '' }} onSubmit={values => console.log(values)}>
       <Form style={{ height: '35vh' }}>
-        <Field name={name}>
+        <Field
+          name={name}
+          validate={(value: string) => (value ? undefined : 'Please select a value')}
+        >
           {/* @ts-expect-error - idk */}
           {({ field, form }) => (
             <div>
-              <SelectSingle field={field} form={form} label={label} options={options} />
+              <SelectSingle field={field} form={form} {...props} />
             </div>
           )}
         </Field>
@@ -40,20 +43,27 @@ const SelectSingleTemplate = (args: SelectSingleProps) => {
 /** Default Select supplied with only required args */
 export const Default = SelectSingleTemplate.bind({});
 
-// @ts-expect-error - Storybook thing with static properties.
-Default.args = {
+const defaultArgs = {
   field: { name: 'branchSelect' },
-  label: 'Please select a  branch:',
-  options: selectOptions.slice(0, 1),
+  label: 'Please select a branch:',
+  isLabelHidden: false,
+  isSearchable: false,
+  hasValidationStyling: false,
+  disabled: false,
+  className: 'w-80',
 };
 
+// @ts-expect-error - Storybook thing with static properties.
+Default.args = {
+  ...defaultArgs,
+  options: selectOptions.slice(0, 1),
+};
 /** Select component with multiple options supplied */
 export const WithMultipleOptions = SelectSingleTemplate.bind({});
 
 // @ts-expect-error - Storybook thing with static properties.
 WithMultipleOptions.args = {
-  field: { name: 'branchSelect' },
-  label: 'Please select a  branch:',
+  ...defaultArgs,
   options: selectOptions,
 };
 

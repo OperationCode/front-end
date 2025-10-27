@@ -3,7 +3,7 @@ module.exports = {
   // Output generated for component's definition file
   buildJS: componentName =>
     `import { string, node } from 'prop-types';
-import classNames from 'classnames';
+import {cx} from 'common/utils/cva';
 import styles from './${componentName}.module.css';
 
 ${componentName}.propTypes = {
@@ -16,7 +16,7 @@ ${componentName}.defaultProps = {
 };
 
 export default function ${componentName}({ className, children }) {
-  return <div className={classNames(className, styles.${componentName})}>{children}</div>
+  return <div className={cx(className, styles.${componentName})}>{children}</div>
 }
 `,
 

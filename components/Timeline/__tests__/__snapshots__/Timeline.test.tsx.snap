@@ -2,30 +2,32 @@
 
 exports[`Timeline > should render with no props passed passed 1`] = `
 <div
-  className="timeline"
+  className="my-12 mx-auto w-[90%]"
 >
   <div
-    className="segment"
+    className="flex"
   >
     <div
-      className="date"
+      className="flex-1 relative text-right"
     >
-      <h3>
+      <h3
+        className="absolute w-full pr-2.5 text-sm top-8 sm:top-4 sm:text-4xl"
+      >
         2011
       </h3>
     </div>
     <div
-      className="vertLine"
+      className="relative px-5"
     >
       <div
-        className="line"
+        className="absolute top-0 h-full w-0.5 bg-theme-gray-800 -translate-x-1/2"
       />
       <div
-        className="bubble"
+        className="size-3.5 rounded-full border-2 border-gray-500 bg-white absolute top-8 -translate-x-1/2 sm:top-6"
       />
     </div>
     <div
-      className="timelineEvent"
+      className="flex-[8]"
       id="event-2011"
     >
       <TimelineEvent
@@ -34,7 +36,6 @@ exports[`Timeline > should render with no props passed passed 1`] = `
             Operation Code's founder - retired U.S. Army Captain, David Molina - attended his first hackathon in New York City. After a weekend learning to code at
              
             <OutboundLink
-              alt="Angel Hack"
               analyticsEventLabel="History Link"
               href="https://angelhack.com"
             >
@@ -49,27 +50,29 @@ exports[`Timeline > should render with no props passed passed 1`] = `
     </div>
   </div>
   <div
-    className="segment"
+    className="flex"
   >
     <div
-      className="date"
+      className="flex-1 relative text-right"
     >
-      <h3>
+      <h3
+        className="absolute w-full pr-2.5 text-sm top-8 sm:top-4 sm:text-4xl"
+      >
         2013
       </h3>
     </div>
     <div
-      className="vertLine"
+      className="relative px-5"
     >
       <div
-        className="line"
+        className="absolute top-0 h-full w-0.5 bg-theme-gray-800 -translate-x-1/2"
       />
       <div
-        className="bubble"
+        className="size-3.5 rounded-full border-2 border-gray-500 bg-white absolute top-8 -translate-x-1/2 sm:top-6"
       />
     </div>
     <div
-      className="timelineEvent"
+      className="flex-[8]"
       id="event-2013"
     >
       <TimelineEvent
@@ -78,7 +81,6 @@ exports[`Timeline > should render with no props passed passed 1`] = `
             Molina exited military service and began to self-teach Ruby on Rails, a full-stack web development platform for building comprehensive web applications. He also started attending meetups with
              
             <OutboundLink
-              alt="Bmore On Rails"
               analyticsEventLabel="History Link"
               href="https://www.meetup.com/bmore-on-rails/"
             >
@@ -88,7 +90,6 @@ exports[`Timeline > should render with no props passed passed 1`] = `
             while finishing
              
             <OutboundLink
-              alt="One Mounth Rails"
               analyticsEventLabel="History Link"
               href="https://onemonth.com"
             >
@@ -98,7 +99,6 @@ exports[`Timeline > should render with no props passed passed 1`] = `
             online course. After meeting Rubyists from around the world, he was introduced to the Portland, Oregon Ruby group. Inspired, Molina joined Techstars'
              
             <OutboundLink
-              alt="Patriot Boot Camp"
               analyticsEventLabel="History Link"
               href="https://patriotbootcamp.org/"
             >
@@ -128,27 +128,29 @@ exports[`Timeline > should render with no props passed passed 1`] = `
     </div>
   </div>
   <div
-    className="segment"
+    className="flex"
   >
     <div
-      className="date"
+      className="flex-1 relative text-right"
     >
-      <h3>
+      <h3
+        className="absolute w-full pr-2.5 text-sm top-8 sm:top-4 sm:text-4xl"
+      >
         2014
       </h3>
     </div>
     <div
-      className="vertLine"
+      className="relative px-5"
     >
       <div
-        className="line"
+        className="absolute top-0 h-full w-0.5 bg-theme-gray-800 -translate-x-1/2"
       />
       <div
-        className="bubble"
+        className="size-3.5 rounded-full border-2 border-gray-500 bg-white absolute top-8 -translate-x-1/2 sm:top-6"
       />
     </div>
     <div
-      className="timelineEvent"
+      className="flex-[8]"
       id="event-2014"
     >
       <TimelineEvent
@@ -157,7 +159,6 @@ exports[`Timeline > should render with no props passed passed 1`] = `
             At
              
             <OutboundLink
-              alt="Cascadia Conference"
               analyticsEventLabel="History Link"
               href="http://cascadiarubyconf.com/"
             >
@@ -167,7 +168,6 @@ exports[`Timeline > should render with no props passed passed 1`] = `
             Molina received encouragement from fellow Rubyist, Whitney Rose, to launch Operation Code's petition using "Launchrock". After lengthy discussions with Kristin Smith, Adam Enbar (representing The Flatiron School), and
              
             <OutboundLink
-              alt="Code Fellows"
               analyticsEventLabel="History Link"
               href="https://www.codefellows.org"
             >
@@ -177,7 +177,6 @@ exports[`Timeline > should render with no props passed passed 1`] = `
             the first line of code is committed to
              
             <OutboundLink
-              alt="Operation Code Old Repository"
               analyticsEventLabel="History Link"
               href="//github.com/OperationCode/operationcode"
             >
@@ -195,7 +194,6 @@ exports[`Timeline > should render with no props passed passed 1`] = `
             Later that same year, web developer, teacher, entrepreneur and co-founder of
              
             <OutboundLink
-              alt="Code Fellows"
               analyticsEventLabel="History Link"
               href="https://www.codefellows.org"
             >
@@ -205,7 +203,6 @@ exports[`Timeline > should render with no props passed passed 1`] = `
             Ivan Storck, purchased the domain 'operationcode.org' and became our first donor in the process. To round out 2014, HackHands co-founders Forest Good and Geraldo Ramos joined Operation Code, designing our logo and providing veterans free access to
              
             <OutboundLink
-              alt="Hack Summit"
               analyticsEventLabel="History Link"
               href="https://hacksummit.org/"
             >
@@ -220,27 +217,29 @@ exports[`Timeline > should render with no props passed passed 1`] = `
     </div>
   </div>
   <div
-    className="segment"
+    className="flex"
   >
     <div
-      className="date"
+      className="flex-1 relative text-right"
     >
-      <h3>
+      <h3
+        className="absolute w-full pr-2.5 text-sm top-8 sm:top-4 sm:text-4xl"
+      >
         2015
       </h3>
     </div>
     <div
-      className="vertLine"
+      className="relative px-5"
     >
       <div
-        className="line"
+        className="absolute top-0 h-full w-0.5 bg-theme-gray-800 -translate-x-1/2"
       />
       <div
-        className="bubble"
+        className="size-3.5 rounded-full border-2 border-gray-500 bg-white absolute top-8 -translate-x-1/2 sm:top-6"
       />
     </div>
     <div
-      className="timelineEvent"
+      className="flex-[8]"
       id="event-2015"
     >
       <TimelineEvent
@@ -254,27 +253,29 @@ exports[`Timeline > should render with no props passed passed 1`] = `
     </div>
   </div>
   <div
-    className="segment"
+    className="flex"
   >
     <div
-      className="date"
+      className="flex-1 relative text-right"
     >
-      <h3>
+      <h3
+        className="absolute w-full pr-2.5 text-sm top-8 sm:top-4 sm:text-4xl"
+      >
         2019
       </h3>
     </div>
     <div
-      className="vertLine"
+      className="relative px-5"
     >
       <div
-        className="line"
+        className="absolute top-0 h-full w-0.5 bg-theme-gray-800 -translate-x-1/2"
       />
       <div
-        className="bubble"
+        className="size-3.5 rounded-full border-2 border-gray-500 bg-white absolute top-8 -translate-x-1/2 sm:top-6"
       />
     </div>
     <div
-      className="timelineEvent"
+      className="flex-[8]"
       id="event-2019"
     >
       <TimelineEvent
@@ -283,7 +284,6 @@ exports[`Timeline > should render with no props passed passed 1`] = `
             As a direct result of the lobbying and work of Operation Code,
              
             <OutboundLink
-              alt="VET TEC"
               analyticsEventLabel="History Link"
               href="https://www.va.gov/education/about-gi-bill-benefits/how-to-use-benefits/vettec-high-tech-program/"
             >
@@ -293,7 +293,6 @@ exports[`Timeline > should render with no props passed passed 1`] = `
             was launched. Under the Harry W. Colmery Veterans Educational Assistance Act (also known as the Forever G.I. Bill), the
              
             <OutboundLink
-              alt="VET TEC"
               analyticsEventLabel="History Link"
               href="https://www.va.gov/education/about-gi-bill-benefits/how-to-use-benefits/vettec-high-tech-program/"
             >
@@ -308,27 +307,29 @@ exports[`Timeline > should render with no props passed passed 1`] = `
     </div>
   </div>
   <div
-    className="segment"
+    className="flex"
   >
     <div
-      className="date"
+      className="flex-1 relative text-right"
     >
-      <h3>
+      <h3
+        className="absolute w-full pr-2.5 text-sm top-8 sm:top-4 sm:text-4xl"
+      >
         2021
       </h3>
     </div>
     <div
-      className="vertLine"
+      className="relative px-5"
     >
       <div
-        className="line"
+        className="absolute top-0 h-full w-0.5 bg-theme-gray-800 -translate-x-1/2"
       />
       <div
-        className="bubble"
+        className="size-3.5 rounded-full border-2 border-gray-500 bg-white absolute top-8 -translate-x-1/2 sm:top-6"
       />
     </div>
     <div
-      className="timelineEvent"
+      className="flex-[8]"
       id="event-2021"
     >
       <TimelineEvent
@@ -337,7 +338,6 @@ exports[`Timeline > should render with no props passed passed 1`] = `
             Operation Code receives the Gold Seal of Transparency from
              
             <OutboundLink
-              alt="Guidestar"
               analyticsEventLabel="History Link"
               href="https://www.guidestar.org/"
             >
@@ -360,27 +360,29 @@ exports[`Timeline > should render with no props passed passed 1`] = `
     </div>
   </div>
   <div
-    className="segment"
+    className="flex"
   >
     <div
-      className="date"
+      className="flex-1 relative text-right"
     >
-      <h3>
+      <h3
+        className="absolute w-full pr-2.5 text-sm top-8 sm:top-4 sm:text-4xl"
+      >
         2023
       </h3>
     </div>
     <div
-      className="vertLine"
+      className="relative px-5"
     >
       <div
-        className="line"
+        className="absolute top-0 h-full w-0.5 bg-theme-gray-800 -translate-x-1/2"
       />
       <div
-        className="bubble"
+        className="size-3.5 rounded-full border-2 border-gray-500 bg-white absolute top-8 -translate-x-1/2 sm:top-6"
       />
     </div>
     <div
-      className="timelineEvent"
+      className="flex-[8]"
       id="event-2023"
     >
       <TimelineEvent
@@ -398,7 +400,6 @@ exports[`Timeline > should render with no props passed passed 1`] = `
             from
              
             <OutboundLink
-              alt="Guidestar"
               analyticsEventLabel="History Link"
               href="https://www.guidestar.org/"
             >

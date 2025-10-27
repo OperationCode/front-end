@@ -4,7 +4,6 @@ import { validationErrorMessages } from 'common/constants/messages';
 import Input from 'components/Form/Input/Input';
 import { SelectSingle } from 'components/Form/Select/SelectSingle';
 import { mapStringsToSelectOptions } from 'common/utils/array-utils';
-import styles from './_steps.module.css';
 
 ProfessionalDetails.title = 'Professional Details';
 
@@ -30,9 +29,9 @@ const options = mapStringsToSelectOptions(['Full-Time', 'Part-Time', 'Unemployed
 
 export function ProfessionalDetails({ isSubmitting }: ProfessionalDetailsProps) {
   return (
-    <div className={styles.row}>
+    <div className="flex flex-col gap-4">
       <Field
-        className={styles.fullWidth}
+        className="w-full"
         name="employmentStatus"
         label="Employment Status*"
         component={SelectSingle}

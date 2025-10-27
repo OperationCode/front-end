@@ -1,8 +1,7 @@
-import classNames from 'classnames';
+import { cx } from 'common/utils/cva';
 import kebabCase from 'lodash/kebabCase';
 import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
 import LinkIcon from 'static/images/icons/FontAwesome/link-solid.svg';
-import styles from './Heading.module.css';
 
 type HeadingLevelType = 1 | 2 | 3 | 4 | 5 | 6;
 
@@ -43,19 +42,31 @@ function Heading({
   const HeadingElement = `h${headingLevel}` as keyof JSX.IntrinsicElements;
 
   return (
-    <div className={styles.headingContainer}>
+    <div className="flex justify-center">
       <HeadingElement
-        className={classNames(className, styles.Heading, {
-          [styles.underline]: hasTitleUnderline,
-        })}
+        className={cx(
+          'group flex uppercase text-center my-4 mx-0',
+          {
+            'border-solid border-b-4 border-b-primary': hasTitleUnderline,
+          },
+          className,
+        )}
       >
         {hasHashLink ? (
-          <div className={styles.hashLinkContainer} data-testid={`Heading Content ${anchorId}`}>
-            <a id={anchorId} href={`#${anchorId}`} data-testid="Hash Link">
+          <div className="relative" data-testid={`Heading Content ${anchorId}`}>
+            <a
+              id={anchorId}
+              href={`#${anchorId}`}
+              data-testid="Hash Link"
+              className={cx(
+                'hidden absolute top-2 -left-8',
+                'transition-all duration-200 ease-linear',
+                'sm:inline sm:opacity-0 sm:group-hover:opacity-100',
+              )}
+            >
               <ScreenReaderOnly>Scroll Link for {text}</ScreenReaderOnly>
-              <LinkIcon className={styles.icon} />
+              <LinkIcon className="w-4 h-8 leading-9 mx-2 -my-1 outline-none" />
             </a>
-
             {text}
           </div>
         ) : (

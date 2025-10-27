@@ -17,18 +17,20 @@ const selectOptions = [
 const SelectMultiTemplate = (args: SelectMultiProps) => {
   const {
     field: { name },
-    label,
-    options,
+    form: _form,
+    ...props
   } = args;
-
   return (
     <Formik initialValues={{ [`${name}`]: '' }} onSubmit={values => console.log(values)}>
       <Form style={{ height: '35vh' }}>
-        <Field name={name}>
+        <Field
+          name={name}
+          validate={(value: string) => (value ? undefined : 'Please select a value')}
+        >
           {/* @ts-expect-error - idk */}
           {({ field, form }) => (
             <div>
-              <SelectMulti field={field} form={form} label={label} options={options} />
+              <SelectMulti field={field} form={form} {...props} />
             </div>
           )}
         </Field>
@@ -42,8 +44,13 @@ export const Default = SelectMultiTemplate.bind({});
 // @ts-expect-error - Storybook thing with static properties.
 Default.args = {
   field: { name: 'branchSelect' },
-  label: 'Please select a  branch:',
+  label: 'Please select a branch:',
   options: selectOptions,
+  isLabelHidden: false,
+  isSearchable: false,
+  hasValidationStyling: false,
+  disabled: false,
+  className: 'w-80',
 };
 
 export default {

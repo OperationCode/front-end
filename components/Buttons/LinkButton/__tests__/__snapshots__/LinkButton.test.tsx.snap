@@ -2,26 +2,28 @@
 
 exports[`LinkButton > should render with many props assigned 1`] = `
 <a
-  className="inline-flex items-start Button test-class secondary fullWidth"
+  className="items-start inline-block font-din-condensed rounded leading-none border-4 border-solid cursor-pointer font-bold text-center uppercase py-4 px-3 text-shadow-[initial] whitespace-nowrap transition-all duration-200 ease-linear min-w-[175px] focus-visible:bg-transparent hover:bg-transparent disabled:opacity-60 disabled:hover:cursor-not-allowed bg-secondary border-secondary outline-secondary text-primary focus-visible:text-secondary hover:text-secondary test-class"
   data-testid="Test"
   href="https://tests.com"
   onClick={[Function]}
   rel="noopener noreferrer"
   target="_blank"
 >
-  Test
-  <span
-    className="sr-only"
-    data-testid="SCREEN_READER_ONLY"
-  >
-    Opens in new window
+  <span>
+    Test
+    <span
+      className="sr-only"
+      data-testid="SCREEN_READER_ONLY"
+    >
+      Opens in new window
+    </span>
   </span>
 </a>
 `;
 
 exports[`LinkButton > should render with required props 1`] = `
 <a
-  className="Button primary"
+  className="inline-block font-din-condensed rounded leading-none border-4 border-solid cursor-pointer font-bold text-center uppercase py-4 px-3 text-shadow-[initial] whitespace-nowrap transition-all duration-200 ease-linear min-w-[175px] focus-visible:bg-transparent hover:bg-transparent disabled:opacity-60 disabled:hover:cursor-not-allowed bg-primary border-primary outline-primary text-secondary focus-visible:text-primary hover:text-primary"
   href="https://tests.com"
   onClick={[Function]}
   onMouseEnter={[Function]}

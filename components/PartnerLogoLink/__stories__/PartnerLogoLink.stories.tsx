@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { hrefTo } from '@storybook/addon-links';
 import { s3 } from 'common/constants/urls';
 import PartnerLogoLink from '../PartnerLogoLink';
 
@@ -10,7 +11,7 @@ const meta: Meta<typeof PartnerLogoLink> = {
   args: {
     logoSource: `${s3}partnerLogos/github.png`,
     name: 'Partner Name',
-    url: '#',
+    url: await hrefTo('PartnerLogoLink', 'docs'),
   },
 };
 

@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import { gtag } from 'common/utils/thirdParty/gtag';
-import styles from 'styles/thank_you.module.css';
 
 const pageTitle = 'Thank You';
 
@@ -12,11 +11,10 @@ function ThankYou() {
   }, []);
 
   return (
-    <div className={styles.ThankYou}>
+    <div>
       <Head title={pageTitle} />
-
-      <HeroBanner title={pageTitle} className={styles.main}>
-        <p>
+      <HeroBanner title={pageTitle} className="pb-9 min-h-[60dvh]">
+        <p className="text-left">
           Thank you so much for your donation!
           <br />
           <br />

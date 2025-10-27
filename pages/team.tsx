@@ -5,25 +5,15 @@ import Content from 'components/Content/Content';
 import FlatCard from 'components/Cards/FlatCard/FlatCard';
 import styles from 'styles/team.module.css';
 import Script from "next/script";
+import cynthiaHeadshot from 'public/static/images/cynthia.jpg';
+import glomaniHeadshot from 'public/static/images/glomani.jpg';
 
 const boardMembers = [
   {
     name: 'Cynthia Kao',
     role: 'Executive Director',
     description: `Cynthia S. Kao started her career as a Licensed Clinical Social Worker specializing in ABA, speech, trauma and addictions therapy for the non-profit sector during her time as an active duty military spouse and as a U.S. Air Force Reservist. During her time in service, she was a combat journalist and provided support to various USAF Public Affairs Offices with public relations, graphic design, events support, press, web, digital and communications expertise. After deploying twice, and exiting the service in early 2014, Cynthia made the transition to civilian life as a Director and Producer for the TV and Film industry before moving into UI/UX design, software development and becoming a founder. She is a mother of three grown children (one who is a service-disabled Army Veteran), and is passionate about advocating for and serving the military, Veteran and military spouse community. She currently lives in the Northern Virginia area.`,
-    imageSrc: 'https://operation-code-assets.s3.us-east-2.amazonaws.com/headshots/cynthia.jpg',
-  },
-  {
-    name: 'Kelly MacLeod',
-    role: 'Board Director, Secretary',
-    description: `Kelly MacLeod is a veteran of the North Carolina Army National Guard, with a tour in Iraq and Afghanistan. As a self-taught coder, she is also a veteran and survivor of a career change. Helping veterans has always been a career goal; Kelly now advocates for veterans and milspouses who want to transition to a tech-related career. Her current position as a software project manager has absolutely nothing to do with this, but she leverages it to talk about vets every chance she gets. Kelly has yet to break the Operation Code website.`,
-    imageSrc: 'https://operation-code-assets.s3.us-east-2.amazonaws.com/headshots/kelly.jpg',
-  },
-  {
-    name: 'David Reis',
-    role: 'Board Treasurer',
-    description: `David brings to the table more than 30 years of nonprofit and business leadership experience in both international and national organizations, most recently as VP of Development and Ideas Beyond Borders and as CDO at Iraq and Afghanistan Veterans of America. He is also CEO of the nonprofit capacity building consulting firm Forward Motion Strategies.`,
-    imageSrc: 'https://operation-code-assets.s3.us-east-2.amazonaws.com/headshots/david_reis.jpg',
+    imageSrc: cynthiaHeadshot.src,
   },
   {
     name: 'Ali Taylor-Cipolla',
@@ -32,18 +22,14 @@ const boardMembers = [
     imageSrc: 'https://operation-code-assets.s3.us-east-2.amazonaws.com/headshots/ali.jpg',
   },
   {
-    name: 'Sean Cameron',
-    role: 'Board Chair',
-    description: `Sean is a US Navy veteran from Northern California. Originally specializing in electronics, he later crossed into various disciplines including network engineering, information security, and product management. Currently he serves in a client facing role at a small consulting firm in Southern California. Sean started with OC building the San Diego Chapter. Outside of daily routine, Sean is an organizer for a regional data science interest group. His interests include reading, long walks, and the study of language (Rust, R, Python, French, and Spanish, in no particular order).`,
-  },
-  {
-    name: 'Conrad "Alex" Bituin',
-    description: `Conrad “Alex” Bituin is currently a Software Engineer in the payments domain for a financial services organization, and currently also serves as the Operation Code Outreach Lead and Director of Digital Strategy. Throughout his 14-year career in the U.S. Army Reserves, Alex has also worked in the sales, health and fitness, retail, insurance, and education industries - most recently serving as a 6th grade teacher. He is passionate about education and professional development opportunities for the U.S. military community. Outside of supporting and advocating for our military community, Alex enjoys spending time with his spouse and two children, diving into data science and machine learning projects, football (American), and home brewing.`,
-    imageSrc:
-      'https://operation-code-assets.s3.us-east-2.amazonaws.com/headshots/conrad_bituin.jpg',
+    name: 'David Reis',
+    role: 'Board Fundraising Director',
+    description: `David brings to the table more than 30 years of nonprofit and business leadership experience in both international and national organizations, most recently as VP of Development and Ideas Beyond Borders and as CDO at Iraq and Afghanistan Veterans of America. He is also CEO of the nonprofit capacity building consulting firm Forward Motion Strategies.`,
+    imageSrc: 'https://operation-code-assets.s3.us-east-2.amazonaws.com/headshots/david_reis.jpg',
   },
   {
     name: 'Alex P. Wu',
+    role: 'Treasurer',
     description: `Alex is a Marine Corps Veteran and currently works at Twilio as Counsel, Law Enforcement and National Security.
 
     He was previously a litigation associate at the law firm Cooley LLP and a vetting attorney on the Biden-Harris Transition Team. Before becoming an attorney, Alex served as a Marine combat engineer platoon commander in Helmand Province, Afghanistan, and then as a reserve tank platoon commander, executive officer, and company commander in the States. While a reservist, he worked in Washington, DC for an AAPI-advocacy non-profit and then as a staffer in the White House Office of Management and Administration and the White House Counsel's Office.
@@ -61,6 +47,16 @@ const boardMembers = [
     name: 'Mike Roberts',
     description: `Mike Roberts is a software engineer by trade with over three decades of experience programming. He is the founder and CEO of Creating Coding Careers, which helps underrepresented people break into tech and helps companies build high-performance engineering teams out of historically excluded tech talent. Having launched hundreds of new collar careers, he has grads working at IBM/RedHat, Apple, WalmartLabs, Sony, AWS, Facebook, Deloitte, Trust&Will, BD, NewRocket, and many more amazing tech companies.`,
     imageSrc: 'https://operation-code-assets.s3.us-east-2.amazonaws.com/headshots/mike_roberts.jpg',
+  },
+  {
+    name: 'Glomani Bravo-López',
+    role: 'Director',
+    description: `Glomani Bravo-López is a Puerto Rican thought leader, innovator, and Marine Corps combat Veteran driven by a lifelong commitment to service, impact, and purpose. Born and raised in Brooklyn, New York (with formative years spent in Puerto Rico), Glomani served honorably in the U.S. Marine Corps infantry from 2005 to 2009 with the 3rd Battalion, 2nd Marines (3/2) Lima Company, completing two combat deployments to Iraq.
+
+    Following his military service, Glomani pursued studies in construction management and earned a degree in Business Administration with a concentration in finance and investments from Brooklyn College (CUNY). His civilian career spans construction, real estate, nonprofits, and government, including nearly a decade as Deputy Chief of Staff to a NYC Council Member and Senior Advisor to the Brooklyn District Attorney. He also served as Policy & Political Director for a New York City Mayoral campaign.
+
+    Today, through founding Hyena Enterprises Global, he is building a next-generation approach to workforce resilience—developing purpose-aligned, AI-informed talent pipelines to support the future of advanced manufacturing and national defense. Glomani joins Operation Code to focus on Public Relations and improve our communications function.`,
+    imageSrc: glomaniHeadshot.src,
   },
 ];
 
@@ -117,7 +113,7 @@ export default function Team() {
       <HeroBanner
         title="The Team"
         backgroundImageSource={`${s3}oc_crew_nyc_2021.jpg`}
-        className={styles.hero}
+        className={`${styles.hero} bg-[center_30%] min-h-[60dvh]`}
       />
 
       <Content
@@ -145,7 +141,7 @@ export default function Team() {
                   alt: `Headshot of ${name}`,
                 }}
               >
-                {description}
+                <p className="h-64 overflow-y-auto whitespace-pre-line">{description}</p>
               </FlatCard>
             ))}
           </div>,

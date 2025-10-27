@@ -24,6 +24,7 @@ export default () => {
       <HeroBanner
         title={pageTitle}
         backgroundImageSource={`${s3}heroBanners/project_rebuild_hero.jpg`}
+        className="min-h-[60dvh]"
       />
 
       <Content

@@ -57,40 +57,33 @@ exports[`Nav > should render with no props passed 1`] = `
     openMenu={[Function]}
   />
   <header
-    className="NavDesktop"
+    className="hidden absolute top-4 w-full z-10 sm:block"
   >
     <div
-      className="desktopNavContainer"
+      className="mx-auto max-w-[1400px]"
       data-testid="Desktop Nav Container"
     >
       <nav
+        className="font-bold h-16 bg-white rounded-sm flex justify-between"
         data-testid="Desktop Nav"
       >
         <ForwardRef(LinkComponent)
           href="/"
         >
           <a
-            className="logoLink link [&>svg]:-bottom-2 [&>svg]:right-3"
+            className="mx-4 flex items-center"
             onContextMenu={[Function]}
           >
             <ForwardRef
-              className="logo"
-              fill="#f7f7f7"
-              style={
-                {
-                  "height": 42,
-                  "width": 224,
-                }
-              }
+              className="w-56 fill-white"
             />
           </a>
         </ForwardRef(LinkComponent)>
         <ul
-          className="link [&>svg]:-bottom-2 [&>svg]:right-3"
+          className="flex"
         >
           <ForwardRef(LoadableComponent)
             href="/about"
-            icon={null}
             name="About Us"
             sublinks={
               [
@@ -115,7 +108,6 @@ exports[`Nav > should render with no props passed 1`] = `
           />
           <ForwardRef(LoadableComponent)
             href="/services"
-            icon={null}
             name="Services"
             sublinks={
               [
@@ -140,7 +132,6 @@ exports[`Nav > should render with no props passed 1`] = `
           />
           <ForwardRef(LoadableComponent)
             href="/get_involved"
-            icon={null}
             name="Get Involved"
             sublinks={
               [
@@ -173,7 +164,7 @@ exports[`Nav > should render with no props passed 1`] = `
               href="/donate"
             >
               <a
-                className="link [&>svg]:-bottom-2 [&>svg]:right-3 donateLink"
+                className="pt-1 px-8 font-bold bg-primary text-secondary no-underline flex items-center justify-center h-full transition-colors duration-200 ease-linear rounded-r-sm cursor-pointer hover:text-white focus-visible:text-white"
               >
                 Donate
               </a>

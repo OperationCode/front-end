@@ -32,7 +32,7 @@ export default function ProgressIndicator({
   const percentageCompleted = (stepNumber / totalSteps) * 100;
 
   return (
-    <div className="flex flex-col items-center mx-0 my-6">
+    <div className="flex flex-col items-center">
       <label htmlFor="steps-indicator">
         {stepNumber}/{totalSteps} Complete
       </label>

@@ -1,40 +1,21 @@
-import { node, string, bool } from 'prop-types';
-import classNames from 'classnames';
+import { cx } from 'common/utils/cva';
 import { LABEL } from 'common/constants/testIDs';
 import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
-import type { PropsWithChildren } from 'react';
 
-Label.propTypes = {
-  children: node.isRequired,
-  className: string,
-  'data-testid': string,
-  for: string.isRequired,
-  isHidden: bool, // visually hides the label, but maintains accessibility
-};
+export interface LabelProps extends React.LabelHTMLAttributes<HTMLLabelElement> {
+  ['data-testid']?: string;
+  isHidden?: boolean;
+}
 
-Label.defaultProps = {
-  className: undefined,
-  'data-testid': LABEL,
-  isHidden: false,
-};
-
-export interface LabelProps
-  extends PropsWithChildren<{
-    className?: string;
-    ['data-testid']?: string;
-    isHidden?: boolean;
-    for: string;
-  }> {}
-
-function Label({ children, className, 'data-testid': testID, isHidden, ...props }: LabelProps) {
+function Label({
+  children,
+  className,
+  'data-testid': testID = LABEL,
+  isHidden,
+  ...props
+}: LabelProps) {
   const TheLabel = (
-    <label
-      // for isnt destructured because it's a reserved word in JavaScript
-      // eslint-disable-next-line react/destructuring-assignment
-      htmlFor={props.for}
-      className={classNames('text-themeSecondary text-sm', className)}
-      data-testid={testID}
-    >
+    <label className={cx('text-secondary', className)} data-testid={testID} {...props}>
       {children}
     </label>
   );

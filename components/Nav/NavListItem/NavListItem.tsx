@@ -1,11 +1,9 @@
 import { useState } from 'react';
-import classNames from 'classnames';
 import Link from 'next/link';
 import PlusIcon from 'static/images/icons/plus.svg';
 import MinusIcon from 'static/images/icons/minus.svg';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
-import { twMerge } from 'tailwind-merge';
-import styles from './NavListItem.module.css';
+import { cx } from 'common/utils/cva';
 
 interface SublinkType {
   name: string;
@@ -29,13 +27,9 @@ export interface NavListItemPropsType {
    * List of child links containing the `name` and `href`
    */
   sublinks?: SublinkType[];
-  /**
-   * Includes an optional icon.
-   */
-  icon?: React.ReactElement | null;
 }
 
-function NavListItem({ sublinks, href, name, icon = null }: NavListItemPropsType) {
+function NavListItem({ sublinks, href, name }: NavListItemPropsType) {
   const [areSublinksVisible, setSublinksVisible] = useState(false);
 
   const handleKeyDown = (event: React.KeyboardEvent, indexKeyedOn: number) => {
@@ -61,82 +55,88 @@ function NavListItem({ sublinks, href, name, icon = null }: NavListItemPropsType
   const invertSublinkVisibility = () => setSublinksVisible(previousState => !previousState);
 
   return (
-    <li className={styles.NavListItem}>
-      <Link href={href}>
-        <a
-          className={classNames(
-            twMerge(styles.link, '[&>svg]:-bottom-2 [&>svg]:right-3'),
-            styles.navItemLink,
-          )}
-          onMouseEnter={exposeSublinks}
-          onMouseLeave={hideSublinks}
-          role="link"
-          tabIndex={0}
-          data-testid={`Nav Item ${name}`}
-        >
-          <span className={styles.linkContent}>{name}</span>
-          {icon && icon}
-        </a>
-      </Link>
-
-      {hasSublinks && (
-        <>
+    <li className="relative">
+      <div className="h-full flex items-center justify-center">
+        <Link href={href}>
+          <a
+            className={cx(
+              'pt-1.5 h-full text-center text-secondary fill-current min-w-24 cursor-pointer',
+              'flex items-center justify-center leading-none transition-all duration-200 ease-linear',
+              'no-underline hover:text-primary focus-visible:text-primary',
+            )}
+            onMouseEnter={exposeSublinks}
+            onMouseLeave={hideSublinks}
+            role="link"
+            tabIndex={0}
+            data-testid={`Nav Item ${name}`}
+          >
+            {name}
+          </a>
+        </Link>
+        {hasSublinks && (
           <button
             aria-expanded={areSublinksVisible}
             aria-haspopup={hasSublinks}
             aria-label="submenu"
-            className={styles.sublinkToggleButton}
+            className="w-6 px-1.5 mr-1 h-full"
             onClick={invertSublinkVisibility}
             onMouseEnter={exposeSublinks}
             onMouseLeave={hideSublinks}
             type="button"
           >
             {areSublinksVisible ? (
-              <MinusIcon className={styles.icon} data-testid="minus-icon" />
+              <MinusIcon data-testid="minus-icon" />
             ) : (
-              <PlusIcon className={styles.icon} data-testid="plus-icon" />
+              <PlusIcon data-testid="plus-icon" />
             )}
           </button>
-
-          <ul
-            className={classNames(styles.sublinksList, {
-              [styles.invisible]: !areSublinksVisible,
-            })}
-            onMouseEnter={exposeSublinks}
-            onMouseLeave={hideSublinks}
-          >
-            {sublinks.map((sublink, index) => (
-              <li className={styles.sublinkListItem} key={sublink.name}>
-                {/* 😞 next/link fought being mocked, so `prefetch` has test-specific code */}
-                {!sublink.isExternal ? (
-                  <Link href={sublink.href} prefetch={process.env.NODE_ENV === 'production'}>
-                    <a
-                      className={twMerge(styles.link, '[&>svg]:-bottom-2 [&>svg]:right-3')}
-                      role="link"
-                      tabIndex={0}
-                      data-testid={`Nav Item ${sublink.name}`}
-                      onKeyDown={event => handleKeyDown(event, index)}
-                    >
-                      <span className={styles.linkContent}>{sublink.name}</span>
-                    </a>
-                  </Link>
-                ) : (
-                  <OutboundLink
-                    analyticsEventLabel={`Clicked on ${sublink.name} -> ${sublink.href}`}
-                    className={twMerge(styles.link, '[&>svg]:-bottom-2 [&>svg]:right-3')}
+        )}
+      </div>
+      {hasSublinks && (
+        <ul
+          className={cx(
+            'whitespace-nowrap bg-white',
+            'absolute right-0 py-2 w-36 rounded-b-sm',
+            'transition-colors duration-200 ease-linear',
+            {
+              hidden: !areSublinksVisible,
+            },
+          )}
+          onMouseEnter={exposeSublinks}
+          onMouseLeave={hideSublinks}
+        >
+          {sublinks.map((sublink, index) => (
+            <li key={sublink.name}>
+              {/* 😞 next/link fought being mocked, so `prefetch` has test-specific code */}
+              {!sublink.isExternal ? (
+                <Link href={sublink.href} prefetch={process.env.NODE_ENV === 'production'}>
+                  <a
+                    className={cx(
+                      'p-4 text-secondary flex items-center justify-center fill-current no-underline',
+                      'transition-colors duration-200 ease-linear hover:text-primary focus-visible:text-primary',
+                    )}
+                    role="link"
+                    tabIndex={0}
                     data-testid={`Nav Item ${sublink.name}`}
-                    href={sublink.href}
-                    hasIcon
+                    onKeyDown={event => handleKeyDown(event, index)}
                   >
-                    <span className={twMerge(styles.link, '[&>svg]:-bottom-2 [&>svg]:right-3')}>
-                      {sublink.name}
-                    </span>
-                  </OutboundLink>
-                )}
-              </li>
-            ))}
-          </ul>
-        </>
+                    <span>{sublink.name}</span>
+                  </a>
+                </Link>
+              ) : (
+                <OutboundLink
+                  analyticsEventLabel={`Clicked on ${sublink.name} -> ${sublink.href}`}
+                  className="p-4 text-secondary flex justify-center transition-colors duration-200 ease-linear hover:text-primary focus-visible:text-primary no-underline"
+                  data-testid={`Nav Item ${sublink.name}`}
+                  href={sublink.href}
+                  hasIcon
+                >
+                  <span>{sublink.name}</span>
+                </OutboundLink>
+              )}
+            </li>
+          ))}
+        </ul>
       )}
     </li>
   );

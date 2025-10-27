@@ -17,7 +17,7 @@ function About() {
 
       <HeroBanner
         backgroundImageSource={`${s3}redesign/heroBanners/about.jpg`}
-        className={styles.hero}
+        className={`${styles.hero} bg-top min-h-[60dvh]`}
         title={pageTitle}
       />
 

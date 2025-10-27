@@ -7,20 +7,20 @@ exports[`UpdateProfileForm/Steps/ProfessionalDetails > should render in context 
   onSubmit={[Function]}
 >
   <div
-    className="row"
+    className="flex flex-col gap-4"
   >
     <div
-      className="fullWidth field"
+      className="min-w-64 w-full"
     >
       <label
-        className="text-themeSecondary text-sm"
+        className="text-secondary"
         data-testid="LABEL"
         htmlFor="employmentStatus"
       >
         Employment Status*
       </label>
       <div
-        className="selectFeedbackGrouping"
+        className="lg:relative"
       >
         <div
           className=" css-2b097c-container"
@@ -33,7 +33,7 @@ exports[`UpdateProfileForm/Steps/ProfessionalDetails > should render in context 
             className="css-1f43avz-a11yText-A11yText"
           />
           <div
-            className=" css-1s1bmlz-control"
+            className=" css-19g9ivk-control"
             onMouseDown={[Function]}
             onTouchEnd={[Function]}
           >
@@ -137,22 +137,21 @@ exports[`UpdateProfileForm/Steps/ProfessionalDetails > should render in context 
       </div>
     </div>
     <div
-      className="field"
       data-testid="INPUT"
     >
       <label
-        className="text-themeSecondary text-sm"
+        className="text-secondary"
         data-testid="LABEL"
         htmlFor="companyName"
       >
         Company Name
       </label>
       <div
-        className="inputFeedbackGrouping"
+        className="flex flex-col items-stretch lg:relative"
         data-testid="INPUT_FEEDBACK_GROUPING"
       >
         <input
-          className="Input"
+          className="border border-secondary/50 rounded-sm text-lg p-2 disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
           disabled={false}
           id="companyName"
           name="companyName"
@@ -164,22 +163,21 @@ exports[`UpdateProfileForm/Steps/ProfessionalDetails > should render in context 
       </div>
     </div>
     <div
-      className="field"
       data-testid="INPUT"
     >
       <label
-        className="text-themeSecondary text-sm"
+        className="text-secondary"
         data-testid="LABEL"
         htmlFor="companyRole"
       >
         Company Role
       </label>
       <div
-        className="inputFeedbackGrouping"
+        className="flex flex-col items-stretch lg:relative"
         data-testid="INPUT_FEEDBACK_GROUPING"
       >
         <input
-          className="Input"
+          className="border border-secondary/50 rounded-sm text-lg p-2 disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
           disabled={false}
           id="companyRole"
           name="companyRole"

@@ -4,7 +4,6 @@ import { validationErrorMessages } from 'common/constants/messages';
 import { SelectSingle } from 'components/Form/Select/SelectSingle';
 import { SelectMulti } from 'components/Form/Select/SelectMulti';
 import type { OptionType } from 'components/Form/Select/ThemedReactSelect';
-import styles from './_steps.module.css';
 
 MilitaryDetails.title = 'Military Details';
 
@@ -41,7 +40,7 @@ const payGradeOptions = ['E1-E5', 'E6-E9+', 'O1-O3', 'O4-O7+', 'WO1-3', 'WO3+'];
 
 export function MilitaryDetails({ isSubmitting }: MilitaryDetailsProps) {
   return (
-    <div className={styles.row}>
+    <div className="flex flex-col gap-4">
       <Field
         name="branchOfService"
         label="Branch Of Service*"

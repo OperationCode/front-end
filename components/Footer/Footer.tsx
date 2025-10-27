@@ -5,6 +5,9 @@ import { footerItems } from 'common/constants/navigation';
 import Image from 'next/image';
 import Logo from 'public/static/images/logo.svg';
 
+import platniumTransparencySeal from 'static/images/platinum-transparency.png';
+import compTia from 'static/images/sponsors/comptia_logo.png';
+
 export interface FooterPropsType {
   /**
    * Url string applied ot the link.
@@ -49,18 +52,25 @@ function Footer() {
           <h6 className="mb-2">Connect With Us!</h6>
           <SocialMedia />
         </div>
-        <div className="text-center mb-4">
+        <div className="flex items-center justify-center gap-8 mb-4">
           <OutboundLink
             href="https://www.guidestar.org/profile/shared/52626ac8-5e8b-445a-889e-30bf1ac0b46e"
             analyticsEventLabel="Footer GuideStar"
             hasIcon={false}
           >
             <Image
-              src="/static/images/platinum-transparency.png"
+              src={platniumTransparencySeal}
               alt="GuideStar Gold Transparency Seal"
               width={128}
               height={128}
             />
+          </OutboundLink>
+          <OutboundLink
+            href="https://www.comptia.org/?utm_source=operationcode"
+            analyticsEventLabel="Footer CompTIA"
+            hasIcon={false}
+          >
+            <Image src={compTia} width={128} height={128} alt="CompTIA Authorized Partner - Gold" />
           </OutboundLink>
         </div>
         <div className="max-w-[1000px] mx-auto pb-10">

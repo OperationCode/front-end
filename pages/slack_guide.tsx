@@ -218,11 +218,10 @@ function SlackGuide() {
     <div className={styles.FAQ}>
       <Head title={pageTitle} />
 
-      <HeroBanner title={pageTitle}>
+      <HeroBanner title={pageTitle} className="min-h-[60dvh]">
         <iframe
           title="Slack Guide"
           src="https://youtube.com/embed/6wjmH5qL3Ms"
-          frameBorder="0"
           allowFullScreen
           width="755"
           height="425"
@@ -230,7 +229,7 @@ function SlackGuide() {
         />
       </HeroBanner>
 
-      <HeroBanner title="Slack Frequently Asked Questions" />
+      <HeroBanner title="Slack Frequently Asked Questions" className="min-h-[35dvh]" />
 
       <Content
         columns={questions.slack.map(faq => (

@@ -2,7 +2,7 @@
 
 exports[`UpdateProfileForm > should render with required props 1`] = `
 <form
-  className="w-full max-w-prose-sm !m-0"
+  className="flex flex-col gap-4 w-full max-w-prose px-4 !m-0"
   noValidate={true}
   onReset={[Function]}
   onSubmit={[Function]}
@@ -13,7 +13,7 @@ exports[`UpdateProfileForm > should render with required props 1`] = `
     Professional Details
   </h3>
   <div
-    className="flex flex-col items-center mx-0 my-6"
+    className="flex flex-col items-center"
   >
     <label
       htmlFor="steps-indicator"
@@ -33,20 +33,20 @@ exports[`UpdateProfileForm > should render with required props 1`] = `
     </progress>
   </div>
   <div
-    className="row"
+    className="flex flex-col gap-4"
   >
     <div
-      className="fullWidth field"
+      className="min-w-64 w-full"
     >
       <label
-        className="text-themeSecondary text-sm"
+        className="text-secondary"
         data-testid="LABEL"
         htmlFor="employmentStatus"
       >
         Employment Status*
       </label>
       <div
-        className="selectFeedbackGrouping"
+        className="lg:relative"
       >
         <div
           className=" css-2b097c-container"
@@ -59,7 +59,7 @@ exports[`UpdateProfileForm > should render with required props 1`] = `
             className="css-1f43avz-a11yText-A11yText"
           />
           <div
-            className=" css-1s1bmlz-control"
+            className=" css-19g9ivk-control"
             onMouseDown={[Function]}
             onTouchEnd={[Function]}
           >
@@ -163,22 +163,21 @@ exports[`UpdateProfileForm > should render with required props 1`] = `
       </div>
     </div>
     <div
-      className="field"
       data-testid="INPUT"
     >
       <label
-        className="text-themeSecondary text-sm"
+        className="text-secondary"
         data-testid="LABEL"
         htmlFor="companyName"
       >
         Company Name
       </label>
       <div
-        className="inputFeedbackGrouping"
+        className="flex flex-col items-stretch lg:relative"
         data-testid="INPUT_FEEDBACK_GROUPING"
       >
         <input
-          className="Input"
+          className="border border-secondary/50 rounded-sm text-lg p-2 disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
           disabled={false}
           id="companyName"
           name="companyName"
@@ -190,22 +189,21 @@ exports[`UpdateProfileForm > should render with required props 1`] = `
       </div>
     </div>
     <div
-      className="field"
       data-testid="INPUT"
     >
       <label
-        className="text-themeSecondary text-sm"
+        className="text-secondary"
         data-testid="LABEL"
         htmlFor="companyRole"
       >
         Company Role
       </label>
       <div
-        className="inputFeedbackGrouping"
+        className="flex flex-col items-stretch lg:relative"
         data-testid="INPUT_FEEDBACK_GROUPING"
       >
         <input
-          className="Input"
+          className="border border-secondary/50 rounded-sm text-lg p-2 disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
           disabled={false}
           id="companyRole"
           name="companyRole"
@@ -217,14 +215,12 @@ exports[`UpdateProfileForm > should render with required props 1`] = `
       </div>
     </div>
   </div>
+  <div />
   <div
-    className="mt-8"
-  />
-  <div
-    className="flex justify-center flex-wrap md:flex-nowrap md:justify-around items-center mx-auto mt-8 w-full gap-4 min-w-[7rem] [&>button]:w-full md:[&>button]:w-auto"
+    className="flex items-center justify-center gap-3 flex-wrap [&>button]:flex-1"
   >
     <button
-      className="Button group secondary fullWidth"
+      className="inline-block font-din-condensed rounded leading-none border-4 border-solid cursor-pointer font-bold text-center uppercase py-4 px-3 text-shadow-[initial] whitespace-nowrap transition-all duration-200 ease-linear min-w-[175px] focus-visible:bg-transparent hover:bg-transparent disabled:opacity-60 disabled:hover:cursor-not-allowed bg-secondary border-secondary outline-secondary text-primary focus-visible:text-secondary hover:text-secondary group w-full"
       data-testid="SUBMIT_STEP_BUTTON"
       disabled={false}
       onClick={[Function]}

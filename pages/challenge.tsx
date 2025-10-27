@@ -41,7 +41,7 @@ function Challenge() {
     <div className={styles.Challenge}>
       <Head title={pageTitle} />
 
-      <HeroBanner title={`Operation Code ${pageTitle}`}>
+      <HeroBanner title={`Operation Code ${pageTitle}`} className="min-h-[60dvh]">
         <p>
           Welcome to the Operation Code challenge! The goal of this challenge is to get you to
           easily commit your first change to a program, see the results of the change, and leave

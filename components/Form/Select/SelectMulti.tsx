@@ -2,10 +2,9 @@ import type { FieldInputProps, FormikHelpers, FormikState } from 'formik';
 import { ErrorMessage } from 'formik';
 import Alert from 'components/Alert/Alert';
 import Label from 'components/Form/Label/Label';
-import classNames from 'classnames';
+import { cx } from 'common/utils/cva';
 import type { OptionType, ThemedReactSelectProps } from './ThemedReactSelect';
 import { ThemedReactSelect } from './ThemedReactSelect';
-import styles from './Select.module.css';
 
 export interface SelectMultiProps
   extends Pick<ThemedReactSelectProps<true>, 'id' | 'hasValidationStyling' | 'isSearchable'> {
@@ -15,6 +14,7 @@ export interface SelectMultiProps
   isLabelHidden?: boolean;
   label: string;
   options: OptionType[];
+  disabled?: boolean;
 }
 
 export function SelectMulti({
@@ -27,17 +27,18 @@ export function SelectMulti({
   isSearchable = true,
   label,
   options,
+  disabled,
   ...props // disabled, placeholder, etc.
 }: SelectMultiProps) {
   const hasErrors = Boolean(errors[name]);
 
   return (
-    <div className={classNames(className, styles.field)}>
-      <Label for={name} isHidden={isLabelHidden}>
+    <div className={cx('min-w-64', className)}>
+      <Label htmlFor={name} isHidden={isLabelHidden}>
         {label}
       </Label>
 
-      <div className={styles.selectFeedbackGrouping}>
+      <div className="lg:relative">
         <ThemedReactSelect<true>
           {...props}
           id={id ? `${id}` : undefined}
@@ -54,12 +55,21 @@ export function SelectMulti({
           }}
           options={options}
           value={fieldValue}
+          isDisabled={disabled}
         />
 
         <ErrorMessage name={name}>
           {(message: string) => {
             return hasErrors ? (
-              <Alert className={styles.errorMessage} type="error">
+              <Alert
+                className={cx(
+                  'max-w-full -mx-0.5 mt-2 flex-1',
+                  'lg:mt-0 lg:ml-4 lg:absolute lg:top-0 lg:left-full',
+                  'lg:min-w-36 lg:max-w-72 lg:w-max py-0 px-2.5',
+                  'lg:py-0 lg:px-2.5 lg:min-h-full lg:flex lg:items-center lg:justify-center',
+                )}
+                type="error"
+              >
                 {message}
               </Alert>
             ) : null;

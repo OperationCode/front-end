@@ -11,7 +11,7 @@ export default function JoinSuccess() {
     <>
       <Head title={pageTitle} />
 
-      <HeroBanner title={pageTitle}>
+      <HeroBanner title={pageTitle} className="min-h-[60dvh]">
         <p data-testid={SUCCESS_PAGE_MESSAGE}>
           We will review your application and send an invite to our Slack team as soon as possible.
           If you do not receive an invite within a week, please email us at{' '}

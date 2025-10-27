@@ -8,20 +8,19 @@ import Heading from 'components/Heading/Heading';
 import LinkButton from 'components/Buttons/LinkButton/LinkButton';
 import successStories from 'common/constants/successStories';
 import { s3 } from 'common/constants/urls';
-import styles from 'styles/index.module.css';
+import { cx } from 'common/utils/cva';
 
 function Home() {
   return (
-    <div className={styles.Home}>
+    <div>
       <Head title="Home" />
 
       <HeroBanner
-        className={styles.hero}
+        className={cx('p-0 min-h-dvh')}
         backgroundImageSource={`${s3}redesign/heroBanners/homepage.jpg`}
-        isFullViewportHeight
         title="Build The Future"
       >
-        <div className={styles.heroText}>
+        <div className="px-4">
           <p>
             We&apos;re the largest community of military veterans, service members, and spouses
             committed to becoming software developers with the help of mentors, scholarships, and
@@ -29,16 +28,20 @@ function Home() {
           </p>
         </div>
 
-        <div className={styles.ctaContainer}>
-          <LinkButton href="/about">Learn More</LinkButton>
-          <LinkButton href="/join">Join Us</LinkButton>
+        <div className="flex w-full max-w-prose justify-evenly flex-wrap gap-x-2">
+          <LinkButton href="/about" className="mt-4">
+            Learn More
+          </LinkButton>
+          <LinkButton href="/join" className="mt-4">
+            Join Us
+          </LinkButton>
         </div>
       </HeroBanner>
 
       <Content
         theme="gray"
         columns={[
-          <div className={styles.mission}>
+          <div className="flex flex-col">
             <Heading text="Our Mission" hasTitleUnderline />
             <p>
               We serve our veterans, service members, and their families, work alongside their
