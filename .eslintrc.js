@@ -16,7 +16,7 @@ module.exports = {
     es6: true,
     node: true,
   },
-  parser: '@babel/eslint-parser',
+  parser: '@typescript-eslint/parser',
   plugins: ['unicorn', '@operation_code/custom-rules', 'import', 'lodash', '@typescript-eslint'],
   rules: {
     // Import Rules
@@ -268,6 +268,12 @@ module.exports = {
         'vitest/expect-expect': 'off',
         'vitest/valid-expect': 'off',
         'no-unused-expressions': ['off'],
+        'playwright/expect-expect': [
+          'warn',
+          {
+            assertFunctionNames: ['expect', 'assertError', 'assertFailedLogin'],
+          },
+        ],
       },
     },
     {

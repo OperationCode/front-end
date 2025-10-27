@@ -65,10 +65,6 @@ jobs:
       - run:
           name: Run tests
           command: yarn test:ci
-      - persist_to_workspace:
-          root: << pipeline.parameters.workspace_root >>
-          paths:
-            - project/vitest-coverage
 
   lint:
     executor: default
@@ -81,28 +77,6 @@ jobs:
           name: Lint
           command: |
             yarn lint:ci
-
-  report_coverage:
-    executor: default
-    steps:
-      - checkout
-      - *attach_workspace
-      - *restore_cache
-      - *yarn_install
-      - run:
-          name: Merge reports into one file
-          command: |
-            mkdir reports
-            mkdir .nyc_output
-            ls -al cypress-coverage
-            cp cypress-coverage/coverage.node-*.json reports
-            cp vitest-coverage/coverage-final.json reports/from-vitest.json
-            yarn nyc merge reports
-            mv coverage.json .nyc_output/out.json
-      - run:
-          name: Convert finalized report from JSON to lcov
-          command: |
-            yarn nyc report --reporter lcov --report-dir coverage
 
 workflows:
   default:
@@ -136,16 +110,3 @@ workflows:
           group: 'all tests' # name this group "all tests" on the dashboard
           start: 'yarn dev' # start server before running tests
           wait-on: http://localhost:3000 # wait until server is ready
-          post-steps:
-            - run:
-                name: Get each parallelized node's coverage report
-                command: cp cypress-coverage/coverage-final.json "cypress-coverage/coverage.node-$CIRCLE_NODE_INDEX.json"
-            - persist_to_workspace:
-                root: << pipeline.parameters.workspace_root >>
-                paths:
-                  - project/cypress-coverage
-
-      - report_coverage:
-          requires:
-            - unit_tests
-            - integration_tests

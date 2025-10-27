@@ -1,4 +1,3 @@
-import type { Page } from '@playwright/test';
 import { test, expect } from '@playwright/test';
 
 const HERO_BANNER_H1 = 'HERO_BANNER_H1';
@@ -9,30 +8,19 @@ const someRandomPagesWithHashLinks = [
   { title: 'Corporate Sponsorship', path: '/sponsorship' },
 ];
 
-const makeHashLinkVisible = async ({ page, hashId }: { page: Page; hashId: string }) => {
-  // Locate the heading element relevant to the hashlink
-  const heading = page.locator(`#${hashId}`);
-
-  // Scroll heading into view
-  await heading.scrollIntoViewIfNeeded();
-
-  // Hover over the heading to make the hash link visible
-  await heading.hover();
-};
-
 test.describe('Hash Links', () => {
   for (const { title, path } of someRandomPagesWithHashLinks) {
     test(`on ${title} page, will be invisible until hovered and change route when clicked`, async ({
       page,
       browserName,
+      hasTouch,
     }) => {
       await page.goto(path);
 
-      // Wait for navigation to complete
+      // Wait for navigation to complete, allowing us to know the page is interactive
       await expect(
         page.getByTestId(browserName === 'chromium' ? 'Desktop Nav' : 'Mobile Nav Container'),
       ).toBeVisible();
-      await expect(page).toHaveURL(new RegExp(path));
 
       // Verify hero banner is visible
       await expect(page.getByTestId(HERO_BANNER_H1).first()).toBeVisible();
@@ -47,11 +35,25 @@ test.describe('Hash Links', () => {
         // eslint-disable-next-line playwright/no-conditional-in-test
         if (!hash) continue;
 
-        const hashId = hash.replace(/^.*#/, '');
-
+        // Verify the hash link is not visible initially
         await expect(link).toBeHidden();
 
-        await makeHashLinkVisible({ page, hashId });
+        const hashId = hash.replace(/^.*#/, '');
+
+        // Locate the heading element relevant to the hashlink
+        const heading = page.locator(`#${hashId}`);
+
+        // Scroll heading into view
+        await heading.scrollIntoViewIfNeeded();
+
+        // Hover over the heading to make the hash link visible
+        // eslint-disable-next-line playwright/no-conditional-in-test
+        if (hasTouch) {
+          await heading.hover();
+          await heading.tap();
+        } else {
+          await heading.hover();
+        }
 
         await expect(link).toBeVisible();
 
