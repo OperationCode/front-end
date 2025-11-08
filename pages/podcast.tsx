@@ -72,6 +72,8 @@ function Podcast({ episodes }: { episodes: Episode[] }) {
         columns={[
           <div className={styles.podcastCards} key="podcast-page">
             {episodes.map(({ name, image, source, story }, index) => {
+              let interviewee = name;
+
               /*
                * Some episodes have multiple parts and are named like "${Name}, part 1".
                * Some episodes are named "${Name} Interview"
@@ -79,7 +81,11 @@ function Podcast({ episodes }: { episodes: Episode[] }) {
                * Parsing them in this manner ensures that the name of the interviewee is
                * available and used for the image alt tag.
                */
-              const interviewee = name.replace(/ interview/gi, '').split(',')[0];
+              try {
+                interviewee = name.replace(/ interview/gi, '').split(',')[0];
+              } catch (error) {
+                throw new Error(`Podcast name parsing failed for episode: ${name}`);
+              }
 
               return (
                 <Card data-testid="Podcast Card" className={styles.podcastCard} key={name}>
