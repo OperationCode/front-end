@@ -13,7 +13,7 @@ import Image from 'next/image';
 
 interface RSS {
   channel: {
-    item: { image: { href: string }; link: string; title: string; description: string }[];
+    item: { image: { href: string }; link: string; title: string[]; description: string }[];
   };
 }
 
@@ -47,7 +47,7 @@ export async function getStaticProps() {
   if (numberOfEpisodes > 0) {
     const episodes = rss.channel.item.map(({ image: { href }, link, title, description }) => ({
       image: href,
-      name: title,
+      name: title[0],
       source: link,
       story: description.replace(/(<p>|<\/p>)/g, ''),
     }));
@@ -72,8 +72,6 @@ function Podcast({ episodes }: { episodes: Episode[] }) {
         columns={[
           <div className={styles.podcastCards} key="podcast-page">
             {episodes.map(({ name, image, source, story }, index) => {
-              let interviewee = name;
-
               /*
                * Some episodes have multiple parts and are named like "${Name}, part 1".
                * Some episodes are named "${Name} Interview"
@@ -81,11 +79,7 @@ function Podcast({ episodes }: { episodes: Episode[] }) {
                * Parsing them in this manner ensures that the name of the interviewee is
                * available and used for the image alt tag.
                */
-              try {
-                interviewee = name.replace(/ interview/gi, '').split(',')[0];
-              } catch (error) {
-                throw new Error(`Podcast name parsing failed for episode: ${name}`);
-              }
+              const interviewee = name.replace(/ interview/gi, '').split(',')[0];
 
               return (
                 <Card data-testid="Podcast Card" className={styles.podcastCard} key={name}>
