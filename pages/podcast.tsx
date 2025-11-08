@@ -13,7 +13,7 @@ import Image from 'next/image';
 
 interface RSS {
   channel: {
-    item: { image: { href: string }; link: string; title: string; description: string }[];
+    item: { image: { href: string }; link: string; title: string[]; description: string }[];
   };
 }
 
@@ -47,7 +47,7 @@ export async function getStaticProps() {
   if (numberOfEpisodes > 0) {
     const episodes = rss.channel.item.map(({ image: { href }, link, title, description }) => ({
       image: href,
-      name: title,
+      name: title[0],
       source: link,
       story: description.replace(/(<p>|<\/p>)/g, ''),
     }));
@@ -70,8 +70,8 @@ function Podcast({ episodes }: { episodes: Episode[] }) {
 
       <Content
         columns={[
-          <div className={styles.podcastCards}>
-            {episodes.map(({ name, image, source, story }) => {
+          <div className={styles.podcastCards} key="podcast-page">
+            {episodes.map(({ name, image, source, story }, index) => {
               /*
                * Some episodes have multiple parts and are named like "${Name}, part 1".
                * Some episodes are named "${Name} Interview"
@@ -89,6 +89,7 @@ function Podcast({ episodes }: { episodes: Episode[] }) {
                     src={image}
                     alt={interviewee}
                     className={styles.img}
+                    priority={index === 0 || index === 1}
                     width={200}
                     height={200}
                   />

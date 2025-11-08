@@ -154,6 +154,7 @@ export function MultiStepForm<
                 type="submit"
                 theme="secondary"
                 disabled={formikBag.isSubmitting}
+                data-loading={formikBag.isSubmitting}
                 data-testid={MULTI_STEP_STEP_BUTTON}
                 className={cx('group', isFirstStep && 'w-full')}
               >

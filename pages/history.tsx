@@ -17,19 +17,19 @@ function History() {
         className={`${styles.hero} min-h-[60dvh]`}
         title={pageTitle}
       >
-        <>
+        <div key="quote">
           <blockquote className={styles.quote}>
             &ldquo;There are no secrets to success. It is the result of preparation, hard work,
             learning from failure.&rdquo;
           </blockquote>
           <span className={styles.author}>- Colin Powell</span>
-        </>
+        </div>
       </HeroBanner>
 
       <Content
         theme="white"
         columns={[
-          <section>
+          <section key="timeline">
             <TimelineNav />
             <Timeline />
           </section>,

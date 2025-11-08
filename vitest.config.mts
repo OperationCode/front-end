@@ -44,7 +44,7 @@ export default defineConfig({
         '.storybook-dist/**',
         '.next/**',
         '**/*.d.ts',
-        '{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build}.config.*',
+        '{karma,rollup,webpack,vite,vitest,jest,ava,playwright,build}.config.*',
         'vitest.{workspace,projects}.[jt]s?(on)',
         '.{eslint,mocha,prettier}rc.{?(c|m)js,yml}',
         'scripts/**',

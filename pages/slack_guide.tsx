@@ -232,8 +232,9 @@ function SlackGuide() {
       <HeroBanner title="Slack Frequently Asked Questions" className="min-h-[35dvh]" />
 
       <Content
-        columns={questions.slack.map(faq => (
+        columns={questions.slack.map((faq, index) => (
           <Accordion
+            key={index}
             className={styles.FAQAccordion}
             content={{
               headingChildren: <h6>{faq.title}</h6>,

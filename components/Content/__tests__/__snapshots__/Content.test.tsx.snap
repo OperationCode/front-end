@@ -13,16 +13,16 @@ exports[`Content > should render with many props assigned 1`] = `
     >
       <h3
         className="group flex uppercase text-center my-4 mx-0 border-solid border-b-4 border-b-primary"
+        id="testing-link"
       >
         <div
           className="relative"
           data-testid="Heading Content testing-link"
         >
           <a
-            className="hidden absolute top-2 -left-8 transition-all duration-200 ease-linear sm:inline sm:opacity-0 sm:group-hover:opacity-100"
+            className="absolute top-2 -left-8 invisible group-hover:visible focus-visible:visible"
             data-testid="Hash Link"
             href="#testing-link"
-            id="testing-link"
           >
             <span
               className="sr-only"

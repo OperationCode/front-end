@@ -49,7 +49,7 @@ export default function Join() {
         </div>
       </HeroBanner>
 
-      <Content theme="gray" columns={[<RegistrationForm onSuccess={handleSuccess} />]} />
+      <Content theme="gray" columns={[<RegistrationForm key="form" onSuccess={handleSuccess} />]} />
     </>
   );
 }

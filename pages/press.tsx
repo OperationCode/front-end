@@ -23,7 +23,7 @@ function Press() {
       <Content
         theme="white"
         columns={[
-          <aside>
+          <aside key="info">
             <p>
               If you are looking for our mission statement or our values, please{' '}
               <Link href="/about">
@@ -49,7 +49,7 @@ function Press() {
               .
             </p>
           </aside>,
-          <div className={styles.row}>
+          <div key="visitor-info" className={styles.row}>
             <div className={styles.column}>
               <div className={styles.textGrouping}>
                 <h4>Code Schools</h4>
@@ -94,18 +94,18 @@ function Press() {
         ]}
       />
 
-      <Content title="Videos" hasTitleUnderline columns={[<Videos />]} />
+      <Content title="Videos" hasTitleUnderline columns={[<Videos key="videos" />]} />
 
-      <Content title="Photos" hasTitleUnderline theme="white" columns={[<Photos />]} />
+      <Content title="Photos" hasTitleUnderline theme="white" columns={[<Photos key="photos" />]} />
 
-      <Content title="In The News" hasTitleUnderline columns={[<Links />]} />
+      <Content title="In The News" hasTitleUnderline columns={[<Links key="links" />]} />
 
       <Content
         title="Branding"
         hasTitleUnderline
         theme="white"
         columns={[
-          <div className={styles.logos}>
+          <div key="branding" className={styles.logos}>
             <Link href="/branding">
               <a>View Our Branding</a>
             </Link>

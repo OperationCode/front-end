@@ -75,7 +75,7 @@ export default function Team() {
         hasTitleUnderline
         theme="white"
         columns={[
-          <div className={styles.teamMembers}>
+          <div key="team-members" className={styles.teamMembers}>
             {boardMembers.map(({ name, role, imageSrc: imageSource, description }) => (
               <FlatCard
                 key={name}
@@ -99,7 +99,7 @@ export default function Team() {
               </FlatCard>
             ))}
           </div>,
-          <div className={styles.foundingMembers}>
+          <div key="founding-members" className={styles.foundingMembers}>
             <p>
               Operation Code deeply appreciates the time, energy, and hard work of our{' '}
               <b>Founding Board Members</b>, including Conrad Hollomon (Executive Director), Nell

@@ -61,7 +61,7 @@ function GetInvolved() {
         className={`${styles.heroBannerMobilePositioning} bg-[center_20%] min-h-[60dvh]`}
         title="You Can Make An Impact"
       >
-        <>
+        <div key="banner-content">
           <p>
             Help make an impact to transitioning service members, military veterans, military
             spouses and dependents! You can help in several ways:{' '}
@@ -83,15 +83,15 @@ function GetInvolved() {
             <LinkButton href="/about">Learn More</LinkButton>
             <LinkButton href="/join">Join Us</LinkButton>
           </div>
-        </>
+        </div>
       </HeroBanner>
 
       <Content
         title="The Power of Mentorship"
         theme="gray"
         columns={[
-          <p>By mentoring one of our members, you will help them:</p>,
-          <div className={styles.badgeGroupings}>
+          <p key="mentorship-intro">By mentoring one of our members, you will help them:</p>,
+          <div key="mentorship-badges" className={styles.badgeGroupings}>
             {mentorItems.map(item => (
               <Badge
                 key={item.label}
@@ -106,7 +106,7 @@ function GetInvolved() {
 
       <Content
         columns={[
-          <TrackVisibility offset={VISIBILITY_OFFSET}>
+          <TrackVisibility key="image" offset={VISIBILITY_OFFSET}>
             {({ isVisible }) => (
               <div className={cx(styles.image, { [styles.showImage]: isVisible })}>
                 <Image
@@ -118,7 +118,7 @@ function GetInvolved() {
               </div>
             )}
           </TrackVisibility>,
-          <div>
+          <div key="empower">
             <Heading text="Empower Our Community and Support Our Mission" headingLevel={3} />
 
             <p>
@@ -137,14 +137,14 @@ function GetInvolved() {
         theme="gray"
         title="Ways You Can Support Operation Code"
         columns={[
-          <div>
+          <div key="support-intro">
             <p>
               We&apos;re always looking for volunteers who are dedicated to making an impact in the
               lives of military veterans, service members, and spouses.
             </p>
             <p className={styles.centeredText}>You can help us with:</p>
           </div>,
-          <div className={cx(styles.badgeGroupings)}>
+          <div key="support-badges" className={cx(styles.badgeGroupings)}>
             {supportItems.map(item => (
               <Badge
                 key={item.label}

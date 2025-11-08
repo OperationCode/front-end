@@ -51,17 +51,16 @@ function Heading({
           },
           className,
         )}
+        id={anchorId}
       >
         {hasHashLink ? (
           <div className="relative" data-testid={`Heading Content ${anchorId}`}>
             <a
-              id={anchorId}
               href={`#${anchorId}`}
               data-testid="Hash Link"
               className={cx(
-                'hidden absolute top-2 -left-8',
-                'transition-all duration-200 ease-linear',
-                'sm:inline sm:opacity-0 sm:group-hover:opacity-100',
+                'absolute top-2 -left-8',
+                'invisible group-hover:visible focus-visible:visible',
               )}
             >
               <ScreenReaderOnly>Scroll Link for {text}</ScreenReaderOnly>

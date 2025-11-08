@@ -13,16 +13,16 @@ exports[`JoinSection > should render 1`] = `
     >
       <h3
         className="group flex uppercase text-center my-4 mx-0"
+        id="join-our-thriving-community-link"
       >
         <div
           className="relative"
           data-testid="Heading Content join-our-thriving-community-link"
         >
           <a
-            className="hidden absolute top-2 -left-8 transition-all duration-200 ease-linear sm:inline sm:opacity-0 sm:group-hover:opacity-100"
+            className="absolute top-2 -left-8 invisible group-hover:visible focus-visible:visible"
             data-testid="Hash Link"
             href="#join-our-thriving-community-link"
-            id="join-our-thriving-community-link"
           >
             <span
               className="sr-only"

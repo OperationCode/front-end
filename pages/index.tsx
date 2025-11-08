@@ -41,7 +41,7 @@ function Home() {
       <Content
         theme="gray"
         columns={[
-          <div className="flex flex-col">
+          <div className="flex flex-col" key="our-mission">
             <Heading text="Our Mission" hasTitleUnderline />
             <p>
               We serve our veterans, service members, and their families, work alongside their

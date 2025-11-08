@@ -46,7 +46,7 @@ function Chapters() {
         theme="white"
         title="Locations"
         columns={[
-          <div className="flex justify-center flex-wrap gap-8 w-full">
+          <div key="locations" className="flex justify-center flex-wrap gap-8 w-full">
             {chapterLocations.map(chapter => {
               return (
                 <FlatCard key={chapter.name} className="min-w-[10rem] text-center">
@@ -61,8 +61,8 @@ function Chapters() {
               );
             })}
           </div>,
-          <div className="w-full text-center">
-            Don’t see your a location in your area?
+          <div key="contact" className="w-full text-center">
+            Don&apos;t see your a location in your area?
             <br />
             <OutboundLink
               href="mailto:staff@operationcode.org"

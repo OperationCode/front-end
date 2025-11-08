@@ -24,7 +24,7 @@ function About() {
       <Content
         theme="white"
         columns={[
-          <>
+          <div key="intro">
             <p>
               <b>
                 Operation Code is a registered 501(c)3, non-profit charity helping the military
@@ -58,7 +58,7 @@ function About() {
               </Link>{' '}
               page. Otherwise, do not hesitate to reach out to our staff.
             </p>
-          </>,
+          </div>,
         ]}
       />
 
@@ -68,6 +68,7 @@ function About() {
         hasTitleUnderline
         columns={[
           <ImageCard
+            key="mentorship"
             alt="Two women pair programming"
             className={styles.imageCard}
             imageSource={`${s3}stock_paired-programming.jpg`}
@@ -79,6 +80,7 @@ function About() {
             </p>
           </ImageCard>,
           <ImageCard
+            key="scholarships"
             alt="Man working on laptop"
             className={styles.imageCard}
             imageSource={`${s3}stock_laptop-working.jpg`}
@@ -90,6 +92,7 @@ function About() {
             </p>
           </ImageCard>,
           <ImageCard
+            key="career-services"
             alt="Team of people working together at a coffee table"
             className={styles.imageCard}
             imageSource={`${s3}stock_teamwork-1.jpg`}
@@ -101,6 +104,7 @@ function About() {
             </p>
           </ImageCard>,
           <ImageCard
+            key="conference-scholarships"
             alt="Operation Code members pose together at Red Hat Summit 2017"
             className={styles.imageCard}
             imageSource={`${s3}photo_red-hat-summit-2.jpg`}
@@ -112,6 +116,7 @@ function About() {
             </p>
           </ImageCard>,
           <ImageCard
+            key="community-events"
             alt="Operation Code NYC Meet-up In 2019"
             className={styles.imageCard}
             imageSource={`${s3}nyc_meetup.jpg`}
@@ -131,6 +136,7 @@ function About() {
             </p>
           </ImageCard>,
           <ImageCard
+            key="podcast"
             alt="A pair of orange headphones resting on a laptop keyboard"
             className={styles.imageCard}
             imageSource={`${s3}headphones.jpg`}
@@ -152,10 +158,10 @@ function About() {
         title="Mission"
         hasTitleUnderline
         columns={[
-          <p>
+          <p key="mission">
             Operation Code is leading the way to expand opportunities for military veterans and
             their families. We aim to help veterans learn new skills and build their careers in the
-            fast-growing technology sector. Our team’s mission - led by veterans and other
+            fast-growing technology sector. Our team&apos;s mission - led by veterans and other
             dedicated, passionate volunteers - is to help open doors for our diverse member base
             through unique program offerings, such as our Software Mentor Program, conference
             scholarships, and employment services. All of this is made possible by individual
@@ -170,6 +176,7 @@ function About() {
         hasTitleUnderline
         columns={[
           <ValueCard
+            key="leadership"
             name="Leadership"
             description="As leaders, we are responsible for what we do or fail to
             do.  We hold ourselves accountable for achieving results that
@@ -178,6 +185,7 @@ function About() {
             was of the highest order and that Operation Code works for them."
           />,
           <ValueCard
+            key="agility"
             name="Agility"
             description="We maintain an attitude of continuous improvement and we
             constantly look for new and better ways to serve our community - we
@@ -185,6 +193,7 @@ function About() {
             challenges emerge, we adjust our approach accordingly."
           />,
           <ValueCard
+            key="clarity"
             name="Clarity"
             description="By being clear and transparent in everything Operation Code
             does, our community can trust that we will act with integrity with the

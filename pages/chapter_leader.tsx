@@ -28,7 +28,7 @@ function ChapterLeader() {
       <Content
         theme="white"
         columns={[
-          <div>
+          <div key="content">
             <h5>Who is a Chapter Leader?</h5>
 
             <p className={styles.fullWidth}>

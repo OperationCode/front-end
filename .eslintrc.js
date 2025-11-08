@@ -4,9 +4,8 @@
 module.exports = {
   extends: [
     'plugin:@typescript-eslint/eslint-recommended',
-    'airbnb',
+    'plugin:react/recommended',
     'plugin:jsx-a11y/recommended',
-    'plugin:cypress/recommended',
     'plugin:storybook/recommended',
     'plugin:prettier/recommended',
     'prettier',
@@ -15,22 +14,10 @@ module.exports = {
     browser: true,
     commonjs: true,
     es6: true,
-    'cypress/globals': true,
     node: true,
   },
-  parser: '@babel/eslint-parser',
-  plugins: [
-    'unicorn',
-    'cypress',
-    '@operation_code/custom-rules',
-    'import',
-    'lodash',
-    '@typescript-eslint',
-  ],
-  globals: {
-    cy: true,
-    Cypress: true,
-  },
+  parser: '@typescript-eslint/parser',
+  plugins: ['unicorn', '@operation_code/custom-rules', 'import', 'lodash', '@typescript-eslint'],
   rules: {
     // Import Rules
     'import/extensions': [
@@ -247,7 +234,7 @@ module.exports = {
               {
                 name: 'formik',
                 importNames: ['Form'],
-                message: `Please use our Form component to have good defaults defined.\n "import Form from 'components/Form/Form';"`,
+                message: `Please use our Form component to have good defaults defined.\n "import { Form } from 'components/Form/Form';"`,
               },
               {
                 name: 'react',
@@ -274,6 +261,22 @@ module.exports = {
       },
     },
     {
+      files: ['./e2e/**/*.spec.ts'],
+      extends: 'plugin:playwright/recommended',
+      rules: {
+        'func-names': 'off',
+        'vitest/expect-expect': 'off',
+        'vitest/valid-expect': 'off',
+        'no-unused-expressions': ['off'],
+        'playwright/expect-expect': [
+          'warn',
+          {
+            assertFunctionNames: ['expect', 'assertError', 'assertFailedLogin'],
+          },
+        ],
+      },
+    },
+    {
       files: ['./**/*.test.ts', './**/*.test.tsx'],
       rules: {
         '@typescript-eslint/no-non-null-assertion': 'off',
@@ -283,15 +286,6 @@ module.exports = {
       files: ['./pages/api/**/*.ts'],
       rules: {
         'no-console': 'off',
-      },
-    },
-    {
-      files: ['cypress/**/*.js'],
-      rules: {
-        'func-names': 'off',
-        'vitest/expect-expect': 'off',
-        'vitest/valid-expect': 'off',
-        'no-unused-expressions': ['off'],
       },
     },
     {
