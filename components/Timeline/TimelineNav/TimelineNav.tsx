@@ -1,4 +1,3 @@
-import { Link } from 'react-scroll';
 import historyData from '../historyData';
 
 const TimelineNav = () => {
@@ -6,14 +5,13 @@ const TimelineNav = () => {
     <section className="px-4 sm:p-0">
       <nav className="flex justify-around">
         {Object.keys(historyData).map(year => (
-          <Link
+          <a
             key={year}
-            to={`event-${year}`}
-            smooth
+            href={`#event-${year}`}
             className="font-bold text-2xl cursor-pointer text-gray-500 transition-all duration-100 ease-in-out hover:opacity-60 hover:scale-110 sm:text-xl"
           >
             {year}
-          </Link>
+          </a>
         ))}
       </nav>
       <div className="mt-4 bg-theme-gray-800 h-1" />
