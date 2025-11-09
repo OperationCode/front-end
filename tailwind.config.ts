@@ -21,6 +21,40 @@ export default {
   ],
   theme: {
     extend: {
+      height: {
+        xs: '20rem',
+        sm: '24rem',
+        md: '28rem',
+        lg: '32rem',
+        xl: '36rem',
+        '2xl': '42rem',
+      },
+      width: {
+        xs: '20rem',
+        sm: '24rem',
+        md: '28rem',
+        lg: '32rem',
+        xl: '36rem',
+        '2xl': '42rem',
+      },
+      maxHeight: {
+        xs: '20rem',
+        sm: '24rem',
+        md: '28rem',
+        lg: '32rem',
+        xl: '36rem',
+        '2xl': '42rem',
+      },
+      maxWidth: {
+        girderWidth: '700px',
+        'prose-sm': '50ch',
+        xs: '20rem',
+        sm: '24rem',
+        md: '28rem',
+        lg: '32rem',
+        xl: '36rem',
+        '2xl': '42rem',
+      },
       colors: {
         white: 'rgb(var(--white-rgb) / <alpha-value>)',
         primary: 'rgb(var(--primary-rgb) / <alpha-value>)',
@@ -33,10 +67,6 @@ export default {
         'success-deep': 'hsl(var(--success-deep-hsl) / <alpha-value>)',
         warning: hslWithOpacity('var(--warning-hsl)') as unknown as string,
         'warning-deep': 'hsl(var(--warning-deep-hsl) / <alpha-value>)',
-      },
-      maxWidth: {
-        girderWidth: '700px',
-        'prose-sm': '50ch',
       },
       fontFamily: {
         'din-condensed': '"DIN Condensed Bold"',
