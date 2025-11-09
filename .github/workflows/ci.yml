@@ -9,12 +9,15 @@ on:
 jobs:
   ci:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        task: [lint, test]
     steps:
       - name: Checkout
         uses: actions/checkout@v5
 
-      - uses: pnpm/action-setup@v4
-        name: Install pnpm
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
         with:
           run_install: false
 
@@ -27,14 +30,16 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Lint
+      - name: Run lint
+        if: matrix.task == 'lint'
         run: pnpm lint:ci
 
-      - name: Unit tests with coverage
+      - name: Run tests
+        if: matrix.task == 'test'
         run: pnpm test:ci
 
       - name: Upload coverage artifact
-        if: github.event_name == 'pull_request'
+        if: matrix.task == 'test' && github.event_name == 'pull_request'
         uses: actions/upload-artifact@v4
         with:
           name: vitest-coverage
