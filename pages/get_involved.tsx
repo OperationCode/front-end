@@ -1,5 +1,4 @@
 import { cx } from 'common/utils/cva';
-import TrackVisibility from 'react-on-screen';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Badge from 'components/Badge/Badge';
@@ -18,8 +17,6 @@ import PeopleMeetingIcon from 'static/images/icons/Custom/people_meeting.svg';
 import { s3 } from 'common/constants/urls';
 import styles from 'styles/get_involved.module.css';
 import Image from 'next/image';
-
-const VISIBILITY_OFFSET = 400;
 
 const mentorItems = [
   {
@@ -106,18 +103,13 @@ function GetInvolved() {
 
       <Content
         columns={[
-          <TrackVisibility key="image" offset={VISIBILITY_OFFSET}>
-            {({ isVisible }) => (
-              <div className={cx(styles.image, { [styles.showImage]: isVisible })}>
-                <Image
-                  src={`${s3}redesign/images/one_on_one_mentoring.jpg`}
-                  alt="Woman outlines a whiteboarding problem to a man"
-                  width={500}
-                  height={500}
-                />
-              </div>
-            )}
-          </TrackVisibility>,
+          <div key="image" className="relative aspect-[1.5/1] m-8 w-full max-w-lg">
+            <Image
+              src={`${s3}redesign/images/one_on_one_mentoring.jpg`}
+              alt="Woman outlines a whiteboarding problem to a man"
+              layout="fill"
+            />
+          </div>,
           <div key="empower">
             <Heading text="Empower Our Community and Support Our Mission" headingLevel={3} />
 

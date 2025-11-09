@@ -1,4 +1,3 @@
-import TrackVisibility from 'react-on-screen';
 import { cx } from 'common/utils/cva';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
@@ -13,8 +12,6 @@ import MentorshipIcon from 'static/images/icons/Custom/mentorship.svg';
 import ScholarshipsIcon from 'static/images/icons/Custom/scholarships.svg';
 import { s3 } from 'common/constants/urls';
 import styles from 'styles/services.module.css';
-
-const VISIBILITY_OFFSET = 400;
 
 const mentorItems = [
   {
@@ -80,7 +77,7 @@ function Services() {
 
       <Content
         columns={[
-          <TrackVisibility key="image-card-1" offset={VISIBILITY_OFFSET}>
+          <div key="image-card-1">
             <ImageCard
               alt="Two developers collaborting over some code."
               imageSource={`${s3}redesign/images/paired_programming.jpg`}
@@ -91,7 +88,7 @@ function Services() {
                 addition of 307,000 jobs in a year.
               </p>
             </ImageCard>
-          </TrackVisibility>,
+          </div>,
         ]}
       />
 
@@ -130,7 +127,7 @@ function Services() {
 
       <Content
         columns={[
-          <TrackVisibility key="image-card-2" offset={VISIBILITY_OFFSET}>
+          <div key="image-card-2">
             <ImageCard
               alt="Room full of people chatting at an Operation Code meetup in New York City."
               imageSource={`${s3}redesign/images/chatting_at_meetup.jpg`}
@@ -147,7 +144,7 @@ function Services() {
                 See Locations
               </LinkButton>
             </ImageCard>
-          </TrackVisibility>,
+          </div>,
         ]}
       />
 
