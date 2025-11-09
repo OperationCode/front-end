@@ -1,0 +1,46 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        task: [lint, test]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          run_install: false
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: ".nvmrc"
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Run lint
+        if: matrix.task == 'lint'
+        run: pnpm lint:ci
+
+      - name: Run tests
+        if: matrix.task == 'test'
+        run: pnpm test:ci
+
+      - name: Upload coverage artifact
+        if: matrix.task == 'test' && github.event_name == 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: vitest-coverage
+          path: vitest-coverage

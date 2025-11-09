@@ -3,10 +3,6 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Twitter Follow](https://img.shields.io/twitter/follow/operation_code.svg?style=social&label=Follow&style=social)](https://twitter.com/operation_code)
 
-[![CircleCI](https://circleci.com/gh/OperationCode/front-end/tree/main.svg?style=svg)](https://circleci.com/gh/OperationCode/front-end/tree/main)
-[![Maintainability](https://api.codeclimate.com/v1/badges/5010b82ce5d8e319a597/maintainability)](https://codeclimate.com/github/OperationCode/front-end/maintainability)
-[![Cypress.io tests](https://img.shields.io/badge/cypress.io-tests-green.svg?style=flat-square)](https://cypress.io)
-
 [See unblocked, unassigned issues](https://github.com/OperationCode/front-end/issues?q=is%3Aopen+is%3Aissue+-label%3A%22Status%3A+Blocked%22+no%3Aassignee). We love our labels - feel free to filter issues to find what you want to work on.
 
 # Welcome!
@@ -29,30 +25,30 @@ Our entire UI library is documented via [![Storybook](https://github.com/storybo
 Required versions of tools used within the repo:
 
 - Node: See [.nvmrc](https://github.com/OperationCode/front-end/blob/main/.nvmrc)
-- `yarn@1`
+- `pnpm@10`
 - `git@2.17.1` or greater
 
 ```sh
 # Install dependencies
-yarn
+pnpm install
 
 # Run local development
-yarn dev
+pnpm dev
 
 # Use Storybook as a workbench when developing new components
-yarn storybook
+pnpm storybook
 
 # Run all unit tests
-yarn test
+pnpm test
 
 # Run all Cypress tests (make sure your dev server is running)
-yarn test:e2e
+pnpm test:e2e
 
 # Create all the necessary files/folders for a new, reusable component
-yarn create-component $ComponentName
+pnpm create-component $ComponentName
 
 # Create the necessary file with a small boilerplate for a new page
-yarn create-page $PageName
+pnpm create-page $PageName
 ```
 
 ## Open Source Gratitude

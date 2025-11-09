@@ -1,7 +1,7 @@
 # .github/workflows/chromatic.yml
 
 # Workflow name
-name: ci
+name: Chromatic
 
 # Event for the workflow
 on: push
@@ -17,32 +17,20 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+
       - name: Read .nvmrc
-        run: echo ::set-output name=NVMRC::$(cat .nvmrc)
-        id: nvm
+        run: echo "NODE_VERSION=$(cat .nvmrc)" >> $GITHUB_ENV
 
       - name: Use Node
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v5
         with:
-          always-auth: true
-          registry-url: https://registry.npmjs.org
-          node-version: '${{ steps.nvm.outputs.NVMRC }}'
-
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-
-      - name: Use cached node_modules
-        uses: actions/cache@v4
-        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
-        with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'pnpm'
 
       - name: Install dependencies
-        run: yarn install --frozen-lockfile --non-interactive
+        run: pnpm install --frozen-lockfile
 
       - name: Publish to Chromatic
         uses: chromaui/action@v1

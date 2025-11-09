@@ -23,7 +23,7 @@ exports[`UpdateProfileForm/Steps/PersonalDetails > should render in context of F
         className="lg:relative"
       >
         <div
-          className=" css-2b097c-container"
+          className="css-2b097c-container"
           onKeyDown={[Function]}
         >
           <span
@@ -33,20 +33,20 @@ exports[`UpdateProfileForm/Steps/PersonalDetails > should render in context of F
             className="css-1f43avz-a11yText-A11yText"
           />
           <div
-            className=" css-19g9ivk-control"
+            className="css-19g9ivk-control"
             onMouseDown={[Function]}
             onTouchEnd={[Function]}
           >
             <div
-              className=" css-g1d714-ValueContainer"
+              className="css-1hwfws3"
             >
               <div
-                className=" css-1wa3eu0-placeholder"
+                className="css-1wa3eu0-placeholder"
               >
                 Select...
               </div>
               <div
-                className="css-b8ldur-Input"
+                className="css-1g6gooi"
               >
                 <div
                   className=""
@@ -102,14 +102,14 @@ exports[`UpdateProfileForm/Steps/PersonalDetails > should render in context of F
               </div>
             </div>
             <div
-              className=" css-1hb7zxy-IndicatorsContainer"
+              className="css-1wy0on6"
             >
               <span
-                className=" css-1okebmr-indicatorSeparator"
+                className="css-1okebmr-indicatorSeparator"
               />
               <div
                 aria-hidden="true"
-                className=" css-1vtn1ro-indicatorContainer"
+                className="css-1vtn1ro-indicatorContainer"
                 onMouseDown={[Function]}
                 onTouchEnd={[Function]}
               >
@@ -151,7 +151,7 @@ exports[`UpdateProfileForm/Steps/PersonalDetails > should render in context of F
         className="lg:relative"
       >
         <div
-          className=" css-2b097c-container"
+          className="css-2b097c-container"
           onKeyDown={[Function]}
         >
           <span
@@ -161,20 +161,20 @@ exports[`UpdateProfileForm/Steps/PersonalDetails > should render in context of F
             className="css-1f43avz-a11yText-A11yText"
           />
           <div
-            className=" css-19g9ivk-control"
+            className="css-19g9ivk-control"
             onMouseDown={[Function]}
             onTouchEnd={[Function]}
           >
             <div
-              className=" css-g1d714-ValueContainer"
+              className="css-1hwfws3"
             >
               <div
-                className=" css-1wa3eu0-placeholder"
+                className="css-1wa3eu0-placeholder"
               >
                 Select...
               </div>
               <div
-                className="css-b8ldur-Input"
+                className="css-1g6gooi"
               >
                 <div
                   className=""
@@ -230,14 +230,14 @@ exports[`UpdateProfileForm/Steps/PersonalDetails > should render in context of F
               </div>
             </div>
             <div
-              className=" css-1hb7zxy-IndicatorsContainer"
+              className="css-1wy0on6"
             >
               <span
-                className=" css-1okebmr-indicatorSeparator"
+                className="css-1okebmr-indicatorSeparator"
               />
               <div
                 aria-hidden="true"
-                className=" css-1vtn1ro-indicatorContainer"
+                className="css-1vtn1ro-indicatorContainer"
                 onMouseDown={[Function]}
                 onTouchEnd={[Function]}
               >
@@ -278,7 +278,7 @@ exports[`UpdateProfileForm/Steps/PersonalDetails > should render in context of F
         className="lg:relative"
       >
         <div
-          className=" css-2b097c-container"
+          className="css-2b097c-container"
           onKeyDown={[Function]}
         >
           <span
@@ -288,20 +288,20 @@ exports[`UpdateProfileForm/Steps/PersonalDetails > should render in context of F
             className="css-1f43avz-a11yText-A11yText"
           />
           <div
-            className=" css-19g9ivk-control"
+            className="css-19g9ivk-control"
             onMouseDown={[Function]}
             onTouchEnd={[Function]}
           >
             <div
-              className=" css-g1d714-ValueContainer"
+              className="css-1hwfws3"
             >
               <div
-                className=" css-1wa3eu0-placeholder"
+                className="css-1wa3eu0-placeholder"
               >
                 Select...
               </div>
               <div
-                className="css-b8ldur-Input"
+                className="css-1g6gooi"
               >
                 <div
                   className=""
@@ -357,14 +357,14 @@ exports[`UpdateProfileForm/Steps/PersonalDetails > should render in context of F
               </div>
             </div>
             <div
-              className=" css-1hb7zxy-IndicatorsContainer"
+              className="css-1wy0on6"
             >
               <span
-                className=" css-1okebmr-indicatorSeparator"
+                className="css-1okebmr-indicatorSeparator"
               />
               <div
                 aria-hidden="true"
-                className=" css-1vtn1ro-indicatorContainer"
+                className="css-1vtn1ro-indicatorContainer"
                 onMouseDown={[Function]}
                 onTouchEnd={[Function]}
               >
@@ -406,7 +406,7 @@ exports[`UpdateProfileForm/Steps/PersonalDetails > should render in context of F
         className="lg:relative"
       >
         <div
-          className=" css-2b097c-container"
+          className="css-2b097c-container"
           onKeyDown={[Function]}
         >
           <span
@@ -416,20 +416,20 @@ exports[`UpdateProfileForm/Steps/PersonalDetails > should render in context of F
             className="css-1f43avz-a11yText-A11yText"
           />
           <div
-            className=" css-19g9ivk-control"
+            className="css-19g9ivk-control"
             onMouseDown={[Function]}
             onTouchEnd={[Function]}
           >
             <div
-              className=" css-g1d714-ValueContainer"
+              className="css-1hwfws3"
             >
               <div
-                className=" css-1wa3eu0-placeholder"
+                className="css-1wa3eu0-placeholder"
               >
                 Select...
               </div>
               <div
-                className="css-b8ldur-Input"
+                className="css-1g6gooi"
               >
                 <div
                   className=""
@@ -485,14 +485,14 @@ exports[`UpdateProfileForm/Steps/PersonalDetails > should render in context of F
               </div>
             </div>
             <div
-              className=" css-1hb7zxy-IndicatorsContainer"
+              className="css-1wy0on6"
             >
               <span
-                className=" css-1okebmr-indicatorSeparator"
+                className="css-1okebmr-indicatorSeparator"
               />
               <div
                 aria-hidden="true"
-                className=" css-1vtn1ro-indicatorContainer"
+                className="css-1vtn1ro-indicatorContainer"
                 onMouseDown={[Function]}
                 onTouchEnd={[Function]}
               >
