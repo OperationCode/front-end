@@ -1,5 +1,3 @@
-name: End-to-End Tests
-
 on:
   push:
     branches: [main]
@@ -8,7 +6,7 @@ on:
 
 jobs:
   e2e:
-    timeout-minutes: 60
+    timeout-minutes: 15
     runs-on: ubuntu-latest
     permissions:
       contents: read
