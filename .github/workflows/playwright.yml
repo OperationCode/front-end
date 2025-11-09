@@ -13,18 +13,22 @@ jobs:
       pull-requests: write
     steps:
       - uses: actions/checkout@v5
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
       - uses: actions/setup-node@v5
         with:
           node-version-file: ".nvmrc"
-          cache: "yarn"
+          cache: "pnpm"
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: pnpm install --frozen-lockfile
       - name: Install Playwright Browsers
-        run: yarn playwright install --with-deps
+        run: pnpm playwright install --with-deps
       - name: Run Playwright tests
         env:
           AIRTABLE_PAT: ${{ secrets.AIRTABLE_PAT }}
-        run: yarn test:e2e:headless
+        run: pnpm test:e2e:headless
       - uses: actions/upload-artifact@v4
         if: failure()
         id: artifact-upload

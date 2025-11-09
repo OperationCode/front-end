@@ -104,7 +104,7 @@ Here is an alphabetically-sorted list of technologies this project leverages:
 - [React.js](https://facebook.github.io/react/) - Facebook's popular JavaScript front-end framework.
 - [Storybook](https://storybook.js.org) - Storybook acts as a "component workbench" and source for component documentation. You can learn more about Storybook on your own [here](https://www.learnstorybook.com/). You can see our Storybook here: [![Storybook](https://github.com/storybookjs/brand/blob/8d28584c89959d7075c237e9345955c895048977/badge/badge-storybook.svg)](http://storybook.operationcode.org)
 - [Webpack](https://webpack.js.org/) - The premier module bundler for JavaScript. Read [this article](https://survivejs.com/webpack/what-is-webpack/) for more information.
-- [Yarn](https://yarnpkg.com/) - Facebook's open source JavaScript package manager. It has very subtle differences from npm, but essentially does the same thing.
+- [pnpm](https://pnpm.io/) - Fast, disk space efficient package manager that uses a content-addressable storage system.
 
 ### PostCSS
 
@@ -190,20 +190,19 @@ Which will output the following when deployed:
 
 ### Installing Dependencies
 
-VERY IMPORTANT: Required versions of tools used within the repo are described [here](https://github.com/OperationCode/front-end#quick-start). We do not use `npm`.
+VERY IMPORTANT: Required versions of tools used within the repo are described [here](https://github.com/OperationCode/front-end#quick-start). We use `pnpm` as our package manager.
 
 _You can check to see your versions like so:_
 
 - Run `node -v`. You can download the latest LTS release of node at [nodejs.org](https://nodejs.org) or you can use [nvm](https://github.com/creationix/nvm) to be able to switch between node versions easily for many projects. If you use Windows, you will need to use [nvm-windows](https://github.com/coreybutler/nvm-windows) instead.
-- Run `npm -v`. If you need to install or upgrade npm, run `npm install -g npm`
-- Run `yarn --version`. If you need to install yarn, run `npm install --global yarn`.
-- Once you have all the required tooling, you should be able to run `yarn` at the root level of your forked repo. You should see a bunch of emojis and progress bars - that is how you will know it is working!
+- Run `pnpm --version`. If you need to install pnpm, run `npm install -g pnpm` or `corepack enable` (Node.js 16.13+).
+- Once you have all the required tooling, you should be able to run `pnpm install` at the root level of your forked repo. You should see progress indicators showing installation progress!
 
 ### Run The Development Server
 
-Now that you've installed your dependencies and your new branch in your fork, you can launch the "dev server" with `yarn dev`.
+Now that you've installed your dependencies and your new branch in your fork, you can launch the "dev server" with `pnpm dev`.
 
-**Note:** The dev server should be running on http://localhost:3000/ shortly after you run `yarn dev`
+**Note:** The dev server should be running on http://localhost:3000/ shortly after you run `pnpm dev`
 
 <center>⚠️ Warning ⚠️ </center>
 <aside>Unfortunately, you may need to refresh a page on navigation in development to have all styles be applied. This is the result of a bug within NextCSS plugin. It's being worked on!</aside>
@@ -213,8 +212,8 @@ Now that you've installed your dependencies and your new branch in your fork, yo
 Some issues take awhile to code a solution for. It is very normal to take a large amount of time to turn in well-written work that resolves an issue! In the meantime, there could be many other people contributing to the code base. Since we use Git, you'll want to keep you project up-to-date with the `main` branch so there are no [merge conflicts](https://help.github.com/articles/about-merge-conflicts/) to resolve when you make your pull request.
 
 1. [Keep your fork in sync with Operation Code's main branch.](https://help.github.com/articles/syncing-a-fork/)
-2. Run `yarn` to install any updated dependencies
-3. Run `yarn dev` to restart local development environment
+2. Run `pnpm install` to install any updated dependencies
+3. Run `pnpm dev` to restart local development environment
 
 ### Knowing The Tools At Your Disposal
 
@@ -270,59 +269,59 @@ You can see interactive documentation on all of our components via [![Storybook]
 * - Root-level files are configuration and documentation.
 ```
 
-### npm Scripts With Explanations
+### pnpm Scripts With Explanations
 
 ```sh
 # Install dependencies defined in `package.json`
-yarn
+pnpm install
 
 # Run local development server accessible in the browser via http://localhost:3000
-yarn dev
+pnpm dev
 
 # Run Storybook development server. Used as a workbench when developing new common components. Accessible in the browser via http://localhost:9001
-yarn storybook
+pnpm storybook
 
 # Create a static bundle of our Storybook instance that can be easily deployed.
-yarn storybook:build
+pnpm storybook:build
 
 # Create a bundle of our main application that can be easily deployed by a server or as a static export.
-yarn build
+pnpm build
 
 # Run build, but expose local instances of bundle visualizations to see what code we ship to users' browsers.
-yarn build:analyze
+pnpm build:analyze
 
 # Fix/reveal linting errors. Used in the precommit hook and on every build to ensure that code meets our linting standards.
-yarn lint
+pnpm lint
 
 # Start the main application server or to serve up a production build locally.
-yarn start
+pnpm start
 
 # Run all available unit and integration tests.
-yarn test
+pnpm test
 
 # Update all snapshot tests
-yarn test -u OR yarn test:update-snaps
+pnpm test -u OR pnpm test:update-snaps
 
 # Only run tests for files changed from main branch
-yarn test:changes
+pnpm test:changes
 
 # Start a test runner for files changed from main branch
-yarn test:changes:watch
+pnpm test:changes:watch
 
 # Start a test runner for all tests
-yarn test:watch
+pnpm test:watch
 
 # You can use the name of the file at the end of any non-e2e test command to run it against a single file
-yarn test $fileName
+pnpm test $fileName
 
 # Opens up a Cypress browser with which you can check e2e tests locally. Be sure the local dev server is running before this command!
-yarn test:e2e
+pnpm test:e2e
 
 #Create all the necessary files/folders for a new, reusable component. Please make `ComponentName` TitleCase.
-yarn create-component $ComponentName
+pnpm create-component $ComponentName
 
 #Create a new page in the pages directory.
-yarn create-page $pageName
+pnpm create-page $pageName
 ```
 
 ## Mocking Back-end Server API
@@ -437,13 +436,13 @@ Install the LTS version [Node.js](https://nodejs.org/en/download/).
 
 Follow the steps found in the [Quick Start Guide](https://github.com/OperationCode/operationcode_frontend/blob/main/CONTRIBUTING.md#quick-start-guide)
 
-If you have any errors, make sure Node, npm, and Yarn is in your environment path by typing `PATH` in CMDER.
+If you have any errors, make sure Node, npm, and pnpm is in your environment path by typing `PATH` in CMDER.
 Look for any path like the ones listed below. `{USER}` is your username you used to login into the computer.
 
 - `C:\Program Files\nodejs\`
-- `C:\Program Files (x86)\Yarn\bin`
+- `C:\Program Files (x86)\pnpm\bin`
 - `C:\Users\{USER}\AppData\Roaming\npm`
-- `C:\Users\{USER}\AppData\Local\Yarn\bin`
+- `C:\Users\{USER}\AppData\Local\pnpm\bin`
 - `C:\Program Files\Git\usr\bin`
 
 To add them in your path, you can go to your Control Panel by clicking on the `Start` > type in: `Control Panel` > click on `System and Security` > click on `System` > on the left hand side, click on `Advanced System Settings` > near the bottom of the window, click on the `Environment Variables` and then under the `User variables for {USER}` click on the `Path` table and click on `Edit..`.

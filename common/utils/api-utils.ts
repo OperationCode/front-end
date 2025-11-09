@@ -1,10 +1,8 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import type { AxiosError, AxiosInstance } from 'axios';
+import type { AxiosError, AxiosInstance, AxiosRequestConfig } from 'axios';
 import axios from 'axios';
 import { networkErrorMessages } from 'common/constants/messages';
 import { apiUrl, resourcesAPIURL } from 'common/config/environment';
 import { setAuthorizationHeader } from 'common/utils/cookie-utils';
-import qs from 'qs';
 
 const baseAxiosConfig = {
   baseURL: apiUrl,
@@ -39,7 +37,10 @@ const getRequestAbortionPieces = () => {
 
 export const get = async (
   path: string,
-  { token, parameters }: { token?: string; parameters?: Record<string, any> } = {},
+  {
+    token,
+    parameters,
+  }: { token?: string; parameters?: Record<string, AxiosRequestConfig['params']> } = {},
   axiosClient = OperationCodeAPI,
 ) => {
   const { abort, connectionTimeout } = getRequestAbortionPieces();
@@ -49,12 +50,6 @@ export const get = async (
       headers: setAuthorizationHeader(token),
       cancelToken: abort.token,
       params: parameters,
-      /**
-       * @description paramsSerializer takes an array of query params that is usually
-       * serialized like this '/api/?id[]=1&id[]=2' and converts it into '/api/?id=1&id=2'
-       * to better work with the API
-       * */
-      paramsSerializer: parameters_ => qs.stringify(parameters_, { arrayFormat: 'repeat' }),
     })
     .then(response => {
       clearTimeout(connectionTimeout);
@@ -68,7 +63,7 @@ export const get = async (
 
 export const post = async (
   path: string,
-  body: Record<string, any> | any[],
+  body: object,
   { token }: { token?: string } = {},
   axiosClient: AxiosInstance = axios,
 ) => {
@@ -91,7 +86,7 @@ export const post = async (
 
 export const patch = async (
   path: string,
-  body: Record<string, any> | any[],
+  body: object,
   { token }: { token?: string } = {},
   axiosClient: AxiosInstance = axios,
 ) => {
@@ -114,7 +109,7 @@ export const patch = async (
 
 export const put = async (
   path: string,
-  body: Record<string, any> | any[],
+  body: object,
   { token }: { token?: string } = {},
   axiosClient: AxiosInstance = axios,
 ) => {
@@ -140,6 +135,7 @@ export const put = async (
  * If object is unexpected, assume the server is down and return a relavant error message.
  */
 export const getServerErrorMessage = (errorObject: AxiosError | Error | unknown) => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const abstractError = errorObject as any;
 
   return abstractError?.response?.data?.error ?? networkErrorMessages.serverDown;

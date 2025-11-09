@@ -5,17 +5,17 @@ queue_rules:
       - '#changes-requested-reviews-by=0'
       - 'status-success=Vercel – operation-code'
       - 'status-success=Vercel – storybook'
-      - 'status-success=ci/circleci: lint'
-      - 'status-success=ci/circleci: unit_tests'
-      - 'status-success=cypress: all tests'
+      - 'status-success=CI / lint'
+      - 'status-success=CI / unit_tests'
+      - 'status-success=Playwright Tests / test'
       - status-success=codeclimate/diff-coverage
       - status-success=codeclimate/total-coverage
     merge_conditions:
       - 'status-success=Vercel – operation-code'
       - 'status-success=Vercel – storybook'
-      - 'status-success=ci/circleci: lint'
-      - 'status-success=ci/circleci: unit_tests'
-      - 'status-success=cypress: all tests'
+      - 'status-success=CI / lint'
+      - 'status-success=CI / unit_tests'
+      - 'status-success=Playwright Tests / test'
       - status-success=codeclimate/diff-coverage
       - status-success=codeclimate/total-coverage
     merge_method: rebase
