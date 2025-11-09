@@ -92,18 +92,9 @@ importers:
       react-dom:
         specifier: ^18.2.0
         version: 18.3.1(react@18.3.1)
-      react-on-screen:
-        specifier: ^2.1.1
-        version: 2.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react-player:
         specifier: ^2.16.0
         version: 2.16.1(react@18.3.1)
-      react-scroll:
-        specifier: ^1.9.3
-        version: 1.9.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      react-scroll-up-button:
-        specifier: ^1.6.4
-        version: 1.6.4(react@18.3.1)
       react-select:
         specifier: ^4.0.2
         version: 4.3.1(@types/react@18.3.26)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -4331,9 +4322,6 @@ packages:
     resolution: {integrity: sha512-j/lJHyoLlWi6G1LDdLgvUtz60Zo5GEj+sVYtTVXnYLDPuzgC3llMxonXym9zIwhhUII8vjdw0LXxavpLqTbl1A==}
     engines: {node: '>=12'}
 
-  detect-passive-events@1.0.5:
-    resolution: {integrity: sha512-foW7Q35wwOCxVzW0xLf5XeB5Fhe7oyRgvkBYdiP9IWgLMzjqUqTvsJv9ymuEWGjY6AoDXD3OC294+Z9iuOw0QA==}
-
   detect-port@1.6.1:
     resolution: {integrity: sha512-CmnVc+Hek2egPx1PeTFVta2W78xy2K/9Rkf6cC4T59S50tVnzKj+tnx5mmx5lwvCkujZ4uRrpRSuV+IVs3f90Q==}
     engines: {node: '>= 4.0.0'}
@@ -5888,9 +5876,6 @@ packages:
   lodash.merge@4.6.2:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
 
-  lodash.throttle@4.1.1:
-    resolution: {integrity: sha512-wIkUCfVKpVsWo3JSZlc+8MB5it+2AN5W8J7YVMST30UrvcQNZ1Okbj+rbVniijTWE6FGYy4XJq/rHkas8qJMLQ==}
-
   lodash.truncate@4.4.2:
     resolution: {integrity: sha512-jttmRe7bRse52OsWIMDLaXxWqRAmtIUccAQ3garviCqJjafXOfNMO0yMfNpdD6zbGaTU0P5Nz7e7gAT6cKmJRw==}
 
@@ -6934,12 +6919,6 @@ packages:
   react-is@18.3.1:
     resolution: {integrity: sha512-/LLMVyas0ljjAtoYiPqYiL8VWXzUUdThrmU5+n20DZv+a+ClRoevUzw5JxU+Ieh5/c87ytoTBV9G1FiKfNJdmg==}
 
-  react-on-screen@2.1.1:
-    resolution: {integrity: sha512-mV2Ntd61ncJ9nBsXF/p5Y6lMDGTTwXTGvHaal4b7O1eX3GwSwDXKAe7KKXTf/4Oc1BuYc7j5Sy0XdT89w/MjDA==}
-    peerDependencies:
-      react: '>=15.0.0'
-      react-dom: '>=15.0.0'
-
   react-player@2.16.1:
     resolution: {integrity: sha512-mxP6CqjSWjidtyDoMOSHVPdhX0pY16aSvw5fVr44EMaT7X5Xz46uQ4b/YBm1v2x+3hHkB9PmjEEkmbHb9PXQ4w==}
     peerDependencies:
@@ -6982,17 +6961,6 @@ packages:
     peerDependenciesMeta:
       '@types/react':
         optional: true
-
-  react-scroll-up-button@1.6.4:
-    resolution: {integrity: sha512-ou/ZLbjAXgXnszmNp9g17XlZBat48V3Oz40ssEcu6dEIM2CVn/yWxej3Y4Fx1LyUtQ1cc/MoWOSXC2dufaiACg==}
-    peerDependencies:
-      react: ^15.5.4 || ^16.0.0
-
-  react-scroll@1.9.3:
-    resolution: {integrity: sha512-xv7FXqF3k63aSLNu4/NjFvRNI0ge7DmmmsbeGarP7LZVAlJMSjUuW3dTtLxp1Afijyv0lS2qwC0GiFHvx1KBHQ==}
-    peerDependencies:
-      react: ^15.5.4 || ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
-      react-dom: ^15.5.4 || ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
   react-select@4.3.1:
     resolution: {integrity: sha512-HBBd0dYwkF5aZk1zP81Wx5UsLIIT2lSvAY2JiJo199LjoLHoivjn9//KsmvQMEFGNhe58xyuOITjfxKCcGc62Q==}
@@ -7334,9 +7302,6 @@ packages:
   shallow-clone@3.0.1:
     resolution: {integrity: sha512-/6KqX+GVUdqPuPPd2LxDDxzX6CAbjJehAAOKlNpqqUpAqPM6HeL8f+o3a+JsyGjn2lv0WY8UsTgUJjU9Ok55NA==}
     engines: {node: '>=8'}
-
-  shallowequal@1.1.0:
-    resolution: {integrity: sha512-y0m1JoUZSlPAjXVtPPW70aZWfIL/dSP7AFkRnniLCrK/8MDKog3TySTBmckD+RObVxH0v4Tox67+F14PdED2oQ==}
 
   sharp@0.32.6:
     resolution: {integrity: sha512-KyLTWwgcR9Oe4d9HwCwNM2l7+J0dUQwn/yf7S0EnTtb0eVS4RxO0eUSvxPtzT4F3SY+C4K6fqdv/DO27sJ/v/w==}
@@ -7971,9 +7936,6 @@ packages:
 
   tunnel-agent@0.6.0:
     resolution: {integrity: sha512-McnNiV1l8RYeY8tBgEpuodCC1mLUdbSN+CYBL7kJsJNInOP8UjDDEwdk6Mw60vdLLrr5NHKZhMAOSrR2NZuQ+w==}
-
-  tween-functions@1.2.0:
-    resolution: {integrity: sha512-PZBtLYcCLtEcjL14Fzb1gSxPBeL7nWvGhO5ZFPGqziCcr8uvHp0NDmdjBchp6KHL+tExcg0m3NISmKxhU394dA==}
 
   type-check@0.4.0:
     resolution: {integrity: sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew==}
@@ -13264,8 +13226,6 @@ snapshots:
     dependencies:
       execa: 5.1.1
 
-  detect-passive-events@1.0.5: {}
-
   detect-port@1.6.1:
     dependencies:
       address: 1.2.2
@@ -15178,8 +15138,6 @@ snapshots:
 
   lodash.merge@4.6.2: {}
 
-  lodash.throttle@4.1.1: {}
-
   lodash.truncate@4.4.2: {}
 
   lodash@4.17.21: {}
@@ -16246,14 +16204,6 @@ snapshots:
 
   react-is@18.3.1: {}
 
-  react-on-screen@2.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
-    dependencies:
-      lodash.throttle: 4.1.1
-      prop-types: 15.8.1
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
-      shallowequal: 1.1.0
-
   react-player@2.16.1(react@18.3.1):
     dependencies:
       deepmerge: 4.3.1
@@ -16296,20 +16246,6 @@ snapshots:
       use-sidecar: 1.1.3(@types/react@18.3.26)(react@18.3.1)
     optionalDependencies:
       '@types/react': 18.3.26
-
-  react-scroll-up-button@1.6.4(react@18.3.1):
-    dependencies:
-      detect-passive-events: 1.0.5
-      prop-types: 15.8.1
-      react: 18.3.1
-      tween-functions: 1.2.0
-
-  react-scroll@1.9.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
-    dependencies:
-      lodash.throttle: 4.1.1
-      prop-types: 15.8.1
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
 
   react-select@4.3.1(@types/react@18.3.26)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
@@ -16737,8 +16673,6 @@ snapshots:
   shallow-clone@3.0.1:
     dependencies:
       kind-of: 6.0.3
-
-  shallowequal@1.1.0: {}
 
   sharp@0.32.6:
     dependencies:
@@ -17488,8 +17422,6 @@ snapshots:
   tunnel-agent@0.6.0:
     dependencies:
       safe-buffer: 5.2.1
-
-  tween-functions@1.2.0: {}
 
   type-check@0.4.0:
     dependencies:
