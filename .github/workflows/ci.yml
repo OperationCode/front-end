@@ -130,7 +130,7 @@ jobs:
               body: comment
             });
 
-  report-coverage:
+  report_coverage:
     runs-on: ubuntu-latest
     needs: unit_tests
     if: always() && github.event_name == 'pull_request'
