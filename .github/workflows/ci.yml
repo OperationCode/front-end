@@ -57,5 +57,12 @@ jobs:
           path: .
           key: workspace-${{ github.sha }}
 
-      - name: Unit tests
+      - name: Unit tests with coverage
         run: pnpm test:ci
+
+      - name: Upload coverage artifact
+        if: github.event_name == 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: vitest-coverage
+          path: vitest-coverage
