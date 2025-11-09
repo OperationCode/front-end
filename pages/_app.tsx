@@ -10,13 +10,13 @@ import FontFaceObserver from 'fontfaceobserver';
 import hash from 'object-hash';
 import LogRocket from 'logrocket';
 import setupLogRocketReact from 'logrocket-react';
-import ScrollUpButton from 'react-scroll-up-button';
 import { gtag } from 'common/utils/thirdParty/gtag';
 import Nav from 'components/Nav/Nav';
 import Footer from 'components/Footer/Footer';
 import 'common/styles/globals.css';
 import type { AppProps } from 'next/app';
 import type NextErrorComponent from 'next/error';
+import { ScrollToTopButton } from 'components/ScrollToTopButton/ScrollToTopButton';
 
 const isProduction = process.env.NODE_ENV === 'production';
 
@@ -39,7 +39,7 @@ function Layout({ children }: PropsWithChildren<unknown>) {
       <Nav />
       <main>{children}</main>
       <Footer />
-      <ScrollUpButton />
+      <ScrollToTopButton />
     </div>
   );
 }
