@@ -1,4 +1,4 @@
-/* IMPORTANT: Please run `yarn storybook` when file changes to update `./themeMap.js` */
+/* IMPORTANT: Please run `pnpm storybook` when file changes to update `./themeMap.js` */
 :root {
   /* Colors */
   --primary: #3ed6f0; /* cerulean */
