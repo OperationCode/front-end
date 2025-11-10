@@ -42,35 +42,34 @@ function Heading({
   const HeadingElement = `h${headingLevel}` as keyof JSX.IntrinsicElements;
 
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center relative">
       <HeadingElement
         className={cx(
-          'group flex uppercase text-center my-4 mx-0',
-          {
-            'border-solid border-b-4 border-b-primary': hasTitleUnderline,
-          },
+          'group flex uppercase text-center my-4 mx-0 border-b border-b-4 border-b-transparent',
+          { 'border-b-primary': hasTitleUnderline },
           className,
         )}
         id={anchorId}
       >
-        {hasHashLink ? (
-          <div className="relative" data-testid={`Heading Content ${anchorId}`}>
+        {hasHashLink && (
+          <div className="relative h-full" data-testid={`Heading Content ${anchorId}`}>
             <a
               href={`#${anchorId}`}
               data-testid="Hash Link"
               className={cx(
-                'absolute top-3 -left-8',
-                'invisible group-hover:visible focus-visible:visible',
+                'hidden sm:visible',
+                'absolute top-0 -left-8 opacity-0 h-full flex items-center justify-center',
+                'group-hover:opacity-100 focus-visible:opacity-100 transition-opacity',
+                'w-0 focus-visible:w-5 group-hover:w-5',
               )}
             >
-              <ScreenReaderOnly>Scroll Link for {text}</ScreenReaderOnly>
-              <LinkIcon className="w-4 h-8 leading-9 mx-2 -my-1 outline-none" />
+              <ScreenReaderOnly>Scroll to {text}</ScreenReaderOnly>
+              <LinkIcon className="w-full h-5" />
             </a>
-            {text}
           </div>
-        ) : (
-          text
         )}
+
+        {text}
       </HeadingElement>
     </div>
   );
