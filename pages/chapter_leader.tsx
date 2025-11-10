@@ -2,13 +2,12 @@ import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
-import styles from 'styles/chapter_leader.module.css';
 
 const pageTitle = 'Chapter Leaders';
 
 function ChapterLeader() {
   return (
-    <div className={styles.ChapterLeader}>
+    <div>
       <Head title={pageTitle} />
 
       <HeroBanner title={pageTitle} className="min-h-[60dvh]">
@@ -31,7 +30,7 @@ function ChapterLeader() {
           <div key="content">
             <h5>Who is a Chapter Leader?</h5>
 
-            <p className={styles.fullWidth}>
+            <p className="w-full max-w-full">
               An Operation Code Chapter Leader organizes meetups and events at the local level, and
               establishes relationships with local companies, educational institutions, and other
               organizations, in order to help build the community and support the mission. Chapter

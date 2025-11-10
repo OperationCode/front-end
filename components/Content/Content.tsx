@@ -53,7 +53,7 @@ function Content({
     >
       {title && <Heading text={title} hasTitleUnderline={hasTitleUnderline} headingLevel={3} />}
 
-      <div className="flex justify-center items-center flex-wrap w-full [&>*]:m-4">
+      <div className="flex justify-center items-center flex-wrap w-full *:m-4">
         {/* eslint-disable-next-line react/no-array-index-key */}
         {columns.map((column, index) =>
           cloneElement(column as ReactElement<unknown>, { key: index }),

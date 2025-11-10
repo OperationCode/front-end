@@ -1,9 +1,0 @@
-@custom-media --extra-small-viewport (max-width: 350px);
-
-/* NOTE: Any changes made to these values should also be reflected in `../variables.css` under "Breakpoint" */
-@custom-media --small-viewport (max-width: 576px);
-@custom-media --medium-viewport (max-width: 768px);
-@custom-media --large-viewport (max-width: 992px);
-@custom-media --extra-large-viewport (max-width: 1200px);
-@custom-media --mobile-viewport (--large-viewport);
-@custom-media --desktop-viewport (min-width: 992px);

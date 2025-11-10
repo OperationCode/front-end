@@ -3,7 +3,6 @@ import HeroBanner from 'components/HeroBanner/HeroBanner';
 import { s3 } from 'common/constants/urls';
 import Content from 'components/Content/Content';
 import FlatCard from 'components/Cards/FlatCard/FlatCard';
-import styles from 'styles/team.module.css';
 import cynthiaHeadshot from 'public/static/images/cynthia.jpg';
 import glomaniHeadshot from 'public/static/images/glomani.jpg';
 
@@ -61,13 +60,13 @@ const boardMembers = [
 
 export default function Team() {
   return (
-    <div className={styles.Team}>
+    <div>
       <Head title="Team" />
 
       <HeroBanner
         title="The Team"
         backgroundImageSource={`${s3}oc_crew_nyc_2021.jpg`}
-        className={`${styles.hero} bg-[center_30%] min-h-[60dvh]`}
+        className="bg-[center_30%] min-h-[60dvh]"
       />
 
       <Content
@@ -75,7 +74,10 @@ export default function Team() {
         hasTitleUnderline
         theme="white"
         columns={[
-          <div key="team-members" className={styles.teamMembers}>
+          <div
+            key="team-members"
+            className="flex items-start justify-center flex-wrap w-full [&_img]:object-cover"
+          >
             {boardMembers.map(({ name, role, imageSrc: imageSource, description }) => (
               <FlatCard
                 key={name}
@@ -99,7 +101,7 @@ export default function Team() {
               </FlatCard>
             ))}
           </div>,
-          <div key="founding-members" className={styles.foundingMembers}>
+          <div key="founding-members" className="pt-8">
             <p>
               Operation Code deeply appreciates the time, energy, and hard work of our{' '}
               <b>Founding Board Members</b>, including Conrad Hollomon (Executive Director), Nell
@@ -110,7 +112,7 @@ export default function Team() {
               commitment in the early days.
             </p>
 
-            <p className={styles.textAlignCenter}>
+            <p className="text-center">
               <em>Thank you for setting us up for success!</em>
             </p>
           </div>,

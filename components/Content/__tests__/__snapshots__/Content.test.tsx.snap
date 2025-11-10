@@ -2,7 +2,7 @@
 
 exports[`Content > should render with many props assigned 1`] = `
 <div
-  className="bg-center bg-no-repeat bg-cover flex items-center justify-between w-full fill-current min-h-[250px] bg-secondary text-white"
+  className="bg-center bg-no-repeat bg-cover flex items-center justify-between w-full px-4 md:px-0 fill-current min-h-[250px] bg-secondary text-white"
   id="test-id"
 >
   <div
@@ -20,7 +20,7 @@ exports[`Content > should render with many props assigned 1`] = `
           data-testid="Heading Content testing-link"
         >
           <a
-            className="absolute top-2 -left-8 invisible group-hover:visible focus-visible:visible"
+            className="absolute top-3 -left-8 invisible group-hover:visible focus-visible:visible"
             data-testid="Hash Link"
             href="#testing-link"
           >
@@ -46,7 +46,7 @@ exports[`Content > should render with many props assigned 1`] = `
       </h3>
     </div>
     <div
-      className="flex justify-center items-center flex-wrap w-full [&>*]:m-4"
+      className="flex justify-center items-center flex-wrap w-full *:m-4"
     >
       <div>
         <p>
@@ -66,13 +66,13 @@ exports[`Content > should render with many props assigned 1`] = `
 
 exports[`Content > should render with required props 1`] = `
 <div
-  className="bg-center bg-no-repeat bg-cover flex items-center justify-between w-full fill-current min-h-[250px] bg-secondary text-white"
+  className="bg-center bg-no-repeat bg-cover flex items-center justify-between w-full px-4 md:px-0 fill-current min-h-[250px] bg-secondary text-white"
 >
   <div
     className="flex flex-col items-center justify-center mx-auto w-full my-[3.5rem] max-w-[1400px] sm:w-[85%]"
   >
     <div
-      className="flex justify-center items-center flex-wrap w-full [&>*]:m-4"
+      className="flex justify-center items-center flex-wrap w-full *:m-4"
     >
       <div>
         <p>

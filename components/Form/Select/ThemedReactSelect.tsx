@@ -2,13 +2,13 @@
 import type { Props as ReactSelectProps } from 'react-select';
 import ReactSelect from 'react-select'; // the only spot this import is allowed
 
-import {
-  primary,
-  rgbValuesPrimary,
-  rgbValuesSecondary,
-  successDeep,
-  errorDeep,
-} from 'common/styles/themeMap';
+const colors = {
+  primary: '#3ed6f0',
+  rgbValuesPrimary: '62, 214, 240',
+  rgbValuesSecondary: '37, 46, 62',
+  successDeep: 'hsl(132, 60%, 23%, 1)',
+  errorDeep: 'hsl(355, 63%, 34%, 1)',
+};
 
 export interface OptionType {
   label: RenderableChild;
@@ -38,7 +38,7 @@ export function ThemedReactSelect<TMulti extends boolean>({
   name,
   ...props
 }: ThemedReactSelectProps<TMulti>) {
-  const outerColor = hasErrors ? errorDeep : successDeep;
+  const outerColor = hasErrors ? colors.errorDeep : colors.successDeep;
 
   return (
     <ReactSelect
@@ -57,7 +57,9 @@ export function ThemedReactSelect<TMulti extends boolean>({
             ...base,
             backgroundColor: isDisabled ? 'transparent' : 'white',
             borderColor:
-              isTouched && hasValidationStyling ? outerColor : `rgba(${rgbValuesSecondary}, 0.5)`,
+              isTouched && hasValidationStyling
+                ? outerColor
+                : `rgba(${colors.rgbValuesSecondary}, 0.5)`,
             boxShadow: isTouched && hasValidationStyling ? `0 0 1px 1px ${outerColor}` : 'none',
             fontSize: '1.125rem',
             marginTop: '0',
@@ -112,10 +114,10 @@ export function ThemedReactSelect<TMulti extends boolean>({
           borderRadius: 3,
           colors: {
             ...theme.colors,
-            primary,
-            primary75: `rgba(${rgbValuesPrimary}, 0.75)`,
-            primary50: `rgba(${rgbValuesPrimary}, 0.50)`,
-            primary25: `rgba(${rgbValuesPrimary}, 0.25)`,
+            primary: colors.primary,
+            primary75: `rgba(${colors.rgbValuesPrimary}, 0.75)`,
+            primary50: `rgba(${colors.rgbValuesPrimary}, 0.50)`,
+            primary25: `rgba(${colors.rgbValuesPrimary}, 0.25)`,
           },
         };
       }}

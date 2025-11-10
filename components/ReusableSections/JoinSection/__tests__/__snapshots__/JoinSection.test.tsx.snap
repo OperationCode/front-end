@@ -2,7 +2,7 @@
 
 exports[`JoinSection > should render 1`] = `
 <div
-  className="bg-center bg-no-repeat bg-cover flex items-center justify-between w-full fill-current min-h-[250px] bg-white text-secondary"
+  className="bg-center bg-no-repeat bg-cover flex items-center justify-between w-full px-4 md:px-0 fill-current min-h-[250px] bg-white text-secondary"
   data-testid="Join Section"
 >
   <div
@@ -20,7 +20,7 @@ exports[`JoinSection > should render 1`] = `
           data-testid="Heading Content join-our-thriving-community-link"
         >
           <a
-            className="absolute top-2 -left-8 invisible group-hover:visible focus-visible:visible"
+            className="absolute top-3 -left-8 invisible group-hover:visible focus-visible:visible"
             data-testid="Hash Link"
             href="#join-our-thriving-community-link"
           >
@@ -49,7 +49,7 @@ exports[`JoinSection > should render 1`] = `
       Are you ready to begin your journey towards a career in tech? Get the support you need by joining our members-only Slack community!
     </p>
     <a
-      className="inline-block font-din-condensed rounded leading-none border-4 border-solid cursor-pointer font-bold text-center uppercase py-4 px-3 text-shadow-[initial] whitespace-nowrap transition-all duration-200 ease-linear min-w-[175px] focus-visible:bg-transparent hover:bg-transparent disabled:opacity-60 disabled:hover:cursor-not-allowed bg-secondary border-secondary outline-secondary text-primary focus-visible:text-secondary hover:text-secondary my-4"
+      className="font-family-bebas font-bold text-center uppercase text-shadow-[initial] tracking-wide inline-block rounded leading-none border-4 border-solid cursor-pointer py-4 px-3 whitespace-nowrap transition-all duration-200 ease-linear min-w-[175px] focus-visible:bg-transparent hover:bg-transparent disabled:opacity-60 disabled:hover:cursor-not-allowed bg-secondary border-secondary outline-secondary text-primary focus-visible:text-secondary hover:text-secondary my-4"
       href="/join"
       onClick={[Function]}
       onMouseEnter={[Function]}
@@ -61,7 +61,7 @@ exports[`JoinSection > should render 1`] = `
       Slack is a community based collaboration tool where all the magic happens!
     </p>
     <a
-      className="inline-flex items-start"
+      className="inline-flex items-start text-burnt-orange"
       href="https://get.slack.help/hc/en-us/categories/360000049043-Getting-Started"
       onClick={[Function]}
       rel="noopener noreferrer"

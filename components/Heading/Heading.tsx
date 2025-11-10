@@ -59,7 +59,7 @@ function Heading({
               href={`#${anchorId}`}
               data-testid="Hash Link"
               className={cx(
-                'absolute top-2 -left-8',
+                'absolute top-3 -left-8',
                 'invisible group-hover:visible focus-visible:visible',
               )}
             >

@@ -3,13 +3,12 @@ import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
 import { Videos, Photos, Links } from 'components/Press';
-import styles from 'styles/press.module.css';
 
 const pageTitle = 'Press';
 
 function Press() {
   return (
-    <div className={styles.Press}>
+    <div>
       <Head title={pageTitle} />
 
       <HeroBanner title={pageTitle} className="min-h-[60dvh]">
@@ -49,9 +48,9 @@ function Press() {
               .
             </p>
           </aside>,
-          <div key="visitor-info" className={styles.row}>
-            <div className={styles.column}>
-              <div className={styles.textGrouping}>
+          <div key="visitor-info" className="flex flex-wrap justify-center">
+            <div className="flex-[100%] md:flex-[100%] lg:flex-[50%]">
+              <div className="m-4">
                 <h4>Code Schools</h4>
                 <p>
                   If your school has recently partnered with our organization and is seeking
@@ -62,8 +61,8 @@ function Press() {
               </div>
             </div>
 
-            <div className={styles.column}>
-              <div className={styles.textGrouping}>
+            <div className="flex-[100%] md:flex-[100%] lg:flex-[50%]">
+              <div className="m-4">
                 <h4>Partnered Organizations</h4>
                 <p>
                   We have long-standing, productive partnerships with some amazing companies, and
@@ -78,8 +77,8 @@ function Press() {
               </div>
             </div>
 
-            <div className={styles.column}>
-              <div className={styles.textGrouping}>
+            <div className="flex-[100%] md:flex-[100%] lg:flex-[50%]">
+              <div className="m-4">
                 <h4>Media Outlets</h4>
                 <p>
                   The staff at Operation Code thank you for taking your time to represent us in your
@@ -105,7 +104,10 @@ function Press() {
         hasTitleUnderline
         theme="white"
         columns={[
-          <div key="branding" className={styles.logos}>
+          <div
+            key="branding"
+            className="pt-[15px] flex flex-row flex-wrap justify-around items-center [&>a]:text-primary [&>a]:no-underline"
+          >
             <Link href="/branding">
               <a>View Our Branding</a>
             </Link>

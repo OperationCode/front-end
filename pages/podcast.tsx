@@ -8,7 +8,6 @@ import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Card from 'components/Cards/Card/Card';
 import Content from 'components/Content/Content';
 import Heading from 'components/Heading/Heading';
-import styles from 'styles/podcast.module.css';
 import Image from 'next/image';
 
 interface RSS {
@@ -61,16 +60,16 @@ export async function getStaticProps() {
 
 function Podcast({ episodes }: { episodes: Episode[] }) {
   return (
-    <div className={styles.Podcast}>
+    <div>
       <Head title={pageTitle} />
 
-      <HeroBanner className={`${styles.hero} min-h-[60dvh]`} title={pageTitle}>
+      <HeroBanner title={pageTitle} className="pt-30 -mb-8 min-h-[40dvh]">
         <p>Come listen to some inspiring stories of our vets transitioning into tech!</p>
       </HeroBanner>
 
       <Content
         columns={[
-          <div className={styles.podcastCards} key="podcast-page">
+          <div className="flex justify-center items-start flex-wrap" key="podcast-page">
             {episodes.map(({ name, image, source, story }, index) => {
               /*
                * Some episodes have multiple parts and are named like "${Name}, part 1".
@@ -82,13 +81,17 @@ function Podcast({ episodes }: { episodes: Episode[] }) {
               const interviewee = name.replace(/ interview/gi, '').split(',')[0];
 
               return (
-                <Card data-testid="Podcast Card" className={styles.podcastCard} key={name}>
+                <Card
+                  data-testid="Podcast Card"
+                  className="items-center flex flex-col justify-center overflow-hidden m-6 w-full sm:w-[500px]"
+                  key={name}
+                >
                   <Heading text={interviewee} headingLevel={3} />
 
                   <Image
                     src={image}
                     alt={interviewee}
-                    className={styles.img}
+                    className="max-h-[200px] max-w-full object-cover"
                     priority={index === 0 || index === 1}
                     width={200}
                     height={200}
@@ -108,7 +111,7 @@ function Podcast({ episodes }: { episodes: Episode[] }) {
                     }}
                   />
 
-                  <p>{story}</p>
+                  <p className="overflow-y-scroll h-[250px] mt-2 mb-6">{story}</p>
                 </Card>
               );
             })}

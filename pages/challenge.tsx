@@ -5,7 +5,6 @@ import Content from 'components/Content/Content';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 import challengers from 'static/operationcode_challenge/names';
 import range from 'lodash/range';
-import styles from 'styles/challenge.module.css';
 import Image from 'next/image';
 
 const pageTitle = 'Challenge';
@@ -25,7 +24,11 @@ export const NamesColumns = () => {
     const namesInColumn = challengers.slice(startIndex, endIndex);
 
     return (
-      <ol key={columnNumber} start={startIndex + 1} className={styles.challengerListColumn}>
+      <ol
+        key={columnNumber}
+        start={startIndex + 1}
+        className="p-0 self-start basis-[225px] list-inside"
+      >
         {namesInColumn.map(name => (
           <li key={name}>{name}</li>
         ))}
@@ -38,7 +41,7 @@ export const NamesColumns = () => {
 
 function Challenge() {
   return (
-    <div className={styles.Challenge}>
+    <div>
       <Head title={pageTitle} />
 
       <HeroBanner title={`Operation Code ${pageTitle}`} className="min-h-[60dvh]">
@@ -56,7 +59,7 @@ function Challenge() {
         theme="white"
         columns={[
           <div key="instructions">
-            <ol className={styles.instructionList}>
+            <ol className="leading-normal p-0 pl-[5px] m-0 [&_li]:pb-[25px] [&_img]:max-w-full [&_img]:h-auto [&_img]:px-[10px]">
               <li>
                 Firstly,{' '}
                 <OutboundLink analyticsEventLabel="Challenge Engagement" href={RepoLink}>
@@ -121,7 +124,7 @@ function Challenge() {
                 <Image
                   src={`${s3}github_demo/example.png`}
                   alt="screenshot of what the screen should look like on GitHub thus far"
-                  className={styles.blockImage}
+                  className="!p-0"
                   width={500}
                   height={500}
                 />
@@ -192,7 +195,7 @@ function Challenge() {
                 your name will show up below!
               </li>
             </ol>
-            <h6 className={styles.centerText}>
+            <h6 className="text-center">
               Congratulations - you&apos;ve made your first open source commit!
             </h6>
           </div>,
@@ -204,10 +207,10 @@ function Challenge() {
         hasTitleUnderline
         columns={[
           <div key="names">
-            <h6 className={styles.centerText}>
+            <h6 className="text-center">
               Here is a list of the people that have completed this before you:
             </h6>
-            <div className={styles.challengerListContainer}>
+            <div className="[&_div]:w-[85vw] [&_div]:m-0">
               <Content columns={[<NamesColumns key="names-columns" />]} />
             </div>
           </div>,

@@ -1,60 +1,38 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`SocialMedia > should render with no props passed passed 1`] = `
-<SocialMediaContainer>
+<div
+  className="flex flex-row items-center justify-around [&_svg]:fill-white [&_svg]:text-white [&_svg]:size-6"
+>
   <SocialMediaItem
     href="https://facebook.com/operationcode.org"
     name="Facebook"
-    svg={
-      <ForwardRef
-        className="fill-white w-6"
-      />
-    }
+    svg={<ForwardRef />}
   />
   <SocialMediaItem
     href="https://twitter.com/operation_code"
     name="Twitter"
-    svg={
-      <ForwardRef
-        className="fill-white w-6"
-      />
-    }
+    svg={<ForwardRef />}
   />
   <SocialMediaItem
     href="https://www.instagram.com/operation_code/"
     name="Instagram"
-    svg={
-      <ForwardRef
-        className="fill-white w-6"
-      />
-    }
+    svg={<ForwardRef />}
   />
   <SocialMediaItem
     href="https://www.youtube.com/channel/UCAoJt4a_KEBmgXfoQUrNbSA"
     name="YouTube"
-    svg={
-      <ForwardRef
-        className="fill-white w-6"
-      />
-    }
+    svg={<ForwardRef />}
   />
   <SocialMediaItem
     href="https://www.linkedin.com/company/operationcode/"
     name="LinkedIn"
-    svg={
-      <ForwardRef
-        className="fill-white w-6"
-      />
-    }
+    svg={<ForwardRef />}
   />
   <SocialMediaItem
     href="https://github.com/OperationCode/"
     name="GitHub"
-    svg={
-      <ForwardRef
-        className="fill-white w-6"
-      />
-    }
+    svg={<ForwardRef />}
   />
-</SocialMediaContainer>
+</div>
 `;

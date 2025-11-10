@@ -1,22 +1,24 @@
 // Polyfills
 import 'intersection-observer';
+import 'common/styles/globals.css';
 
-import type { PropsWithChildren } from 'react';
-import { useEffect } from 'react';
-import * as Sentry from '@sentry/nextjs';
-import Router from 'next/router';
+import { gtag } from 'common/utils/thirdParty/gtag';
+import Footer from 'components/Footer/Footer';
+import Nav from 'components/Nav/Nav';
+import { ScrollToTopButton } from 'components/ScrollToTopButton/ScrollToTopButton';
 import Fingerprint2 from 'fingerprintjs2';
-import FontFaceObserver from 'fontfaceobserver';
-import hash from 'object-hash';
 import LogRocket from 'logrocket';
 import setupLogRocketReact from 'logrocket-react';
-import { gtag } from 'common/utils/thirdParty/gtag';
-import Nav from 'components/Nav/Nav';
-import Footer from 'components/Footer/Footer';
-import 'common/styles/globals.css';
+import Router from 'next/router';
+import hash from 'object-hash';
+import { useEffect } from 'react';
+
+import * as Sentry from '@sentry/nextjs';
+
+import type { PropsWithChildren } from 'react';
 import type { AppProps } from 'next/app';
 import type NextErrorComponent from 'next/error';
-import { ScrollToTopButton } from 'components/ScrollToTopButton/ScrollToTopButton';
+import FontFaceObserver from 'fontfaceobserver';
 
 const isProduction = process.env.NODE_ENV === 'production';
 
@@ -26,10 +28,8 @@ const fonts = [
     url: 'https://fonts.googleapis.com/css?family=Encode+Sans:400,700',
   },
   {
-    fontFamily: 'DIN Condensed Bold',
-    // loading of this font is being handled by the @font-face rule on
-    // the global style sheet.
-    url: null,
+    fontFamily: 'Bebas Neue',
+    url: 'https://fonts.googleapis.com/css?family=Bebas+Neue:400,700',
   },
 ];
 
@@ -76,8 +76,8 @@ const App = ({ Component, pageProps, err }: AppProps & { err: NextErrorComponent
 
       // Every crash report will have a LogRocket session URL.
       LogRocket.getSessionURL(sessionURL => {
+        // eslint-disable-next-line no-console
         console.log('LogRocket session URL: ', sessionURL);
-
         Sentry.configureScope(scope => {
           scope.setExtra('sessionURL', sessionURL);
         });

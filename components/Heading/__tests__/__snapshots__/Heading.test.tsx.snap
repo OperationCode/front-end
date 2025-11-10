@@ -26,7 +26,7 @@ exports[`Heading > should render with required props 1`] = `
       data-testid="Heading Content test-link"
     >
       <a
-        className="absolute top-2 -left-8 invisible group-hover:visible focus-visible:visible"
+        className="absolute top-3 -left-8 invisible group-hover:visible focus-visible:visible"
         data-testid="Hash Link"
         href="#test-link"
       >

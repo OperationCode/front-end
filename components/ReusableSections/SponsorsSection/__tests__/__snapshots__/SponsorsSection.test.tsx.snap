@@ -2,7 +2,7 @@
 
 exports[`SponsorsSection > should render 1`] = `
 <div
-  className="bg-center bg-no-repeat bg-cover flex items-center justify-between w-full fill-current min-h-[250px] bg-theme-gray-800 text-secondary"
+  className="bg-center bg-no-repeat bg-cover flex items-center justify-between w-full px-4 md:px-0 fill-current min-h-[250px] bg-theme-gray-800 text-secondary"
   data-testid="Sponsors Section"
 >
   <div
@@ -20,7 +20,7 @@ exports[`SponsorsSection > should render 1`] = `
           data-testid="Heading Content sponsors-link"
         >
           <a
-            className="absolute top-2 -left-8 invisible group-hover:visible focus-visible:visible"
+            className="absolute top-3 -left-8 invisible group-hover:visible focus-visible:visible"
             data-testid="Hash Link"
             href="#sponsors-link"
           >
@@ -57,7 +57,7 @@ exports[`SponsorsSection > should render 1`] = `
           data-testid="Heading Content corporate-partners-link"
         >
           <a
-            className="absolute top-2 -left-8 invisible group-hover:visible focus-visible:visible"
+            className="absolute top-3 -left-8 invisible group-hover:visible focus-visible:visible"
             data-testid="Hash Link"
             href="#corporate-partners-link"
           >
@@ -91,7 +91,7 @@ exports[`SponsorsSection > should render 1`] = `
       className="flex justify-center items-center flex-wrap gap-10"
     >
       <a
-        className="inline-flex items-start"
+        className="inline-flex items-start text-burnt-orange"
         href="https://etsy.com/?utm_source=operationcode"
         onClick={[Function]}
         rel="noopener noreferrer"
@@ -114,7 +114,7 @@ exports[`SponsorsSection > should render 1`] = `
         </span>
       </a>
       <a
-        className="inline-flex items-start"
+        className="inline-flex items-start text-burnt-orange"
         href="https://www.juniper.net/?utm_source=operationcode"
         onClick={[Function]}
         rel="noopener noreferrer"
@@ -137,7 +137,7 @@ exports[`SponsorsSection > should render 1`] = `
         </span>
       </a>
       <a
-        className="inline-flex items-start"
+        className="inline-flex items-start text-burnt-orange"
         href="https://threatstack.com/?utm_source=operationcode"
         onClick={[Function]}
         rel="noopener noreferrer"
@@ -161,7 +161,7 @@ exports[`SponsorsSection > should render 1`] = `
         </span>
       </a>
       <a
-        className="inline-flex items-start"
+        className="inline-flex items-start text-burnt-orange"
         href="https://www.usbank.com/index.html?utm_source=operationcode"
         onClick={[Function]}
         rel="noopener noreferrer"
@@ -185,7 +185,7 @@ exports[`SponsorsSection > should render 1`] = `
         </span>
       </a>
       <a
-        className="inline-flex items-start"
+        className="inline-flex items-start text-burnt-orange"
         href="https://www.umpquabank.com/?utm_source=operationcode"
         onClick={[Function]}
         rel="noopener noreferrer"
@@ -220,7 +220,7 @@ exports[`SponsorsSection > should render 1`] = `
           data-testid="Heading Content corporate-supporters-link"
         >
           <a
-            className="absolute top-2 -left-8 invisible group-hover:visible focus-visible:visible"
+            className="absolute top-3 -left-8 invisible group-hover:visible focus-visible:visible"
             data-testid="Hash Link"
             href="#corporate-supporters-link"
           >
@@ -254,7 +254,7 @@ exports[`SponsorsSection > should render 1`] = `
       className="flex justify-center items-center flex-wrap gap-10"
     >
       <a
-        className="inline-flex items-start"
+        className="inline-flex items-start text-burnt-orange"
         href="https://1password.com/?utm_source=operationcode"
         onClick={[Function]}
         rel="noopener noreferrer"
@@ -278,7 +278,7 @@ exports[`SponsorsSection > should render 1`] = `
         </span>
       </a>
       <a
-        className="inline-flex items-start"
+        className="inline-flex items-start text-burnt-orange"
         href="https://apexsystems.com/?utm_source=operationcode"
         onClick={[Function]}
         rel="noopener noreferrer"
@@ -302,7 +302,7 @@ exports[`SponsorsSection > should render 1`] = `
         </span>
       </a>
       <a
-        className="inline-flex items-start"
+        className="inline-flex items-start text-burnt-orange"
         href="https://airbnb.com/?utm_source=operationcode"
         onClick={[Function]}
         rel="noopener noreferrer"
@@ -325,7 +325,7 @@ exports[`SponsorsSection > should render 1`] = `
         </span>
       </a>
       <a
-        className="inline-flex items-start"
+        className="inline-flex items-start text-burnt-orange"
         href="https://chromatic.com/?utm_source=operationcode"
         onClick={[Function]}
         rel="noopener noreferrer"
@@ -349,7 +349,7 @@ exports[`SponsorsSection > should render 1`] = `
         </span>
       </a>
       <a
-        className="inline-flex items-start"
+        className="inline-flex items-start text-burnt-orange"
         href="https://www.codeplatoon.org/?utm_source=operationcode"
         onClick={[Function]}
         rel="noopener noreferrer"
@@ -372,7 +372,7 @@ exports[`SponsorsSection > should render 1`] = `
         </span>
       </a>
       <a
-        className="inline-flex items-start"
+        className="inline-flex items-start text-burnt-orange"
         href="https://coursera.org/?utm_source=operationcode"
         onClick={[Function]}
         rel="noopener noreferrer"
@@ -396,7 +396,7 @@ exports[`SponsorsSection > should render 1`] = `
         </span>
       </a>
       <a
-        className="inline-flex items-start"
+        className="inline-flex items-start text-burnt-orange"
         href="https://elyoninternational.com/?utm_source=operationcode"
         onClick={[Function]}
         rel="noopener noreferrer"
@@ -420,7 +420,7 @@ exports[`SponsorsSection > should render 1`] = `
         </span>
       </a>
       <a
-        className="inline-flex items-start"
+        className="inline-flex items-start text-burnt-orange"
         href="https://github.com/?utm_source=operationcode"
         onClick={[Function]}
         rel="noopener noreferrer"
@@ -444,7 +444,7 @@ exports[`SponsorsSection > should render 1`] = `
         </span>
       </a>
       <a
-        className="inline-flex items-start"
+        className="inline-flex items-start text-burnt-orange"
         href="https://google.com/?utm_source=operationcode"
         onClick={[Function]}
         rel="noopener noreferrer"
@@ -467,7 +467,7 @@ exports[`SponsorsSection > should render 1`] = `
         </span>
       </a>
       <a
-        className="inline-flex items-start"
+        className="inline-flex items-start text-burnt-orange"
         href="https://hackerrank.com/?utm_source=operationcode"
         onClick={[Function]}
         rel="noopener noreferrer"
@@ -491,7 +491,7 @@ exports[`SponsorsSection > should render 1`] = `
         </span>
       </a>
       <a
-        className="inline-flex items-start"
+        className="inline-flex items-start text-burnt-orange"
         href="https://logrocket.com/?utm_source=operationcode"
         onClick={[Function]}
         rel="noopener noreferrer"
@@ -515,7 +515,7 @@ exports[`SponsorsSection > should render 1`] = `
         </span>
       </a>
       <a
-        className="inline-flex items-start"
+        className="inline-flex items-start text-burnt-orange"
         href="https://oreilly.com/?utm_source=operationcode"
         onClick={[Function]}
         rel="noopener noreferrer"
@@ -539,7 +539,7 @@ exports[`SponsorsSection > should render 1`] = `
         </span>
       </a>
       <a
-        className="inline-flex items-start"
+        className="inline-flex items-start text-burnt-orange"
         href="https://securecodewarrior.com/?utm_source=operationcode"
         onClick={[Function]}
         rel="noopener noreferrer"
@@ -563,7 +563,7 @@ exports[`SponsorsSection > should render 1`] = `
         </span>
       </a>
       <a
-        className="inline-flex items-start"
+        className="inline-flex items-start text-burnt-orange"
         href="https://teamtreehouse.com/?utm_source=operationcode"
         onClick={[Function]}
         rel="noopener noreferrer"
@@ -587,7 +587,7 @@ exports[`SponsorsSection > should render 1`] = `
         </span>
       </a>
       <a
-        className="inline-flex items-start"
+        className="inline-flex items-start text-burnt-orange"
         href="https://uniteus.com/?utm_source=operationcode"
         onClick={[Function]}
         rel="noopener noreferrer"
@@ -610,7 +610,7 @@ exports[`SponsorsSection > should render 1`] = `
         </span>
       </a>
       <a
-        className="inline-flex items-start"
+        className="inline-flex items-start text-burnt-orange"
         href="https://vercel.com/?utm_source=operationcode"
         onClick={[Function]}
         rel="noopener noreferrer"
@@ -634,7 +634,7 @@ exports[`SponsorsSection > should render 1`] = `
         </span>
       </a>
       <a
-        className="inline-flex items-start"
+        className="inline-flex items-start text-burnt-orange"
         href="https://zapier.com/?utm_source=operationcode"
         onClick={[Function]}
         rel="noopener noreferrer"

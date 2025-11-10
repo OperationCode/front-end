@@ -2,7 +2,7 @@
 
 exports[`NavMobile > should render 1`] = `
 <header
-  className="fixed flex items-center justify-between w-full h-20 bg-white z-50 px-4 sm:hidden"
+  className="fixed flex items-center justify-between uppercase font-family-bebas w-full h-20 bg-white z-50 px-4 lg:hidden"
   data-testid="Mobile Nav Container"
 >
   <ForwardRef(LinkComponent)

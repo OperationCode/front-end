@@ -186,7 +186,7 @@ exports[`Footer > should render with no props passed 1`] = `
         </span>
       </div>
       <div
-        className="flex mx-auto justify-between w-60"
+        className="flex mx-auto justify-between w-60 [&_a]:text-white"
       >
         <ForwardRef(LinkComponent)
           href="/terms"

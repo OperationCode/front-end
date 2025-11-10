@@ -4,25 +4,24 @@ import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Timeline from 'components/Timeline/Timeline';
 import TimelineNav from 'components/Timeline/TimelineNav/TimelineNav';
-import styles from 'styles/history.module.css';
 
 const pageTitle = 'History';
 
 function History() {
   return (
-    <div className={styles.History}>
+    <div>
       <Head title={pageTitle} />
       <HeroBanner
         backgroundImageSource={`${s3}heroBanners/colin-powell.jpg`}
-        className={`${styles.hero} min-h-[60dvh]`}
+        className="bg-[right_center] min-h-[60dvh]"
         title={pageTitle}
       >
         <div key="quote">
-          <blockquote className={styles.quote}>
+          <blockquote className="text-2xl">
             &ldquo;There are no secrets to success. It is the result of preparation, hard work,
             learning from failure.&rdquo;
           </blockquote>
-          <span className={styles.author}>- Colin Powell</span>
+          <span className="text-[1.75rem] float-right">- Colin Powell</span>
         </div>
       </HeroBanner>
 

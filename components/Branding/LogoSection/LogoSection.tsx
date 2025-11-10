@@ -1,4 +1,3 @@
-import { cx } from 'common/utils/cva';
 import Badge from 'components/Badge/Badge';
 import Content from 'components/Content/Content';
 import { s3 } from 'common/constants/urls';
@@ -17,7 +16,7 @@ const stackedLogos = [
   { img: 'small-stacked-logo.png', alt: 'Light Stacked Logo', label: 'Slate' },
 ];
 
-const medalsOrBadges = [
+const medals = [
   { img: 'large-blue-medal.png', alt: 'OC Blue', label: 'OC Blue' },
   { img: 'large-red-medal.png', alt: 'Red', label: 'Red' },
   { img: 'large-slate-medal.png', alt: 'Navy', label: 'Navy' },
@@ -31,15 +30,14 @@ const lgLogos = [
 ];
 
 function LogoSection() {
-  const badgeListClassNames =
-    'flex justify-around items-center flex-wrap pb-4 border-b border-solid border-slate-400';
   return (
     <Content
       title="Logo"
       theme="gray"
       hasTitleUnderline
+      className="[&_ul]:flex [&_ul]:justify-around [&_ul]:items-center [&_ul]:flex-wrap"
       columns={[
-        <ul key="logos" className="space-y-4 [&>li>p]:my-4">
+        <ul key="logos" className="space-y-4 [&>li>p]:my-4 [&_ul]:pb-4">
           {/* - SMALL LOGOS - */}
           <li>
             <h5 className="text-center">Small Logos</h5>
@@ -50,10 +48,10 @@ function LogoSection() {
               Code logo name still under 1 inch in height.
             </p>
 
-            <ul className="space-y-4">
+            <ul className="space-y-4 border-b-2 border-b-secondary *:not-last:border-b &:border-b-secondary">
               <li>
                 <h6 className="text-center">TYPICAL</h6>
-                <ul className={badgeListClassNames}>
+                <ul>
                   {smLogos.map(logo => (
                     <li key={logo.label}>
                       <Badge
@@ -80,7 +78,7 @@ function LogoSection() {
                   Thanksgiving, fall events, and Christmas. The Light Stacked Logo is to be used
                   with dark or contrasting bright colored backgrounds.
                 </p>
-                <ul className={badgeListClassNames}>
+                <ul>
                   {stackedLogos.map(logo => (
                     <li key={logo.label}>
                       <Badge
@@ -99,18 +97,25 @@ function LogoSection() {
                   ))}
                 </ul>
               </li>
-
               <li>
-                <h6 className="text-center">Medals</h6>
-                <p className="mx-auto">
-                  Use the following medals when you are prompted to upload a thumbnail logo only or
-                  profile photo. In most cases, use the OC Blue Medal. The Red Medal should only be
-                  used for holidays and special events (such as Thanksgiving, fall, or Christmas).
-                  The Navy Medal should be used memorandums or lighter bright colored backgrounds.
+                <h6 className="text-center">Medals / Badges</h6>
+                <p className="mx-auto mb-4">
+                  Use the following images when you are prompted to upload a thumbnail logo only or
+                  profile photo. In most cases, use the OC Blue option. The Red option should only
+                  be used for holidays and special events (such as Thanksgiving, fall, or
+                  Christmas). The Navy option should be used memorandums or lighter bright colored
+                  backgrounds.
+                </p>
+                <p className="mx-auto mb-4">
+                  You may also use them as a profile photo or thumbnail. They should be used to
+                  accompany corporate sponsors or alliance partnerships on shared branding. Use the
+                  original OC Blue option in most cases, except the Red option for special events
+                  and holidays (Thanksgiving, fall and Christmas). The Navy option may be used with
+                  light backgrounds and bright colored backgrounds.
                 </p>
 
-                <ul className={badgeListClassNames}>
-                  {medalsOrBadges.map(medal => (
+                <ul className="border-b-0">
+                  {medals.map(medal => (
                     <li key={medal.label}>
                       <Badge
                         icon={
@@ -123,35 +128,6 @@ function LogoSection() {
                         }
                         isImageFirst={false}
                         label={medal.label}
-                      />
-                    </li>
-                  ))}
-                </ul>
-              </li>
-
-              <li>
-                <h6 className="text-center">Badges</h6>
-                <p className="mx-auto">
-                  You may also use badges as a profile photo or thumbnail. Badges should be used to
-                  accompany corporate sponsors or alliance partnerships on shared branding. Use the
-                  original OC Blue Badge in most cases, except the Red Badge for special events and
-                  holidays (Thanksgiving, fall and Christmas). The Navy Badge may be used with light
-                  backgrounds and bright colored backgrounds.
-                </p>
-                <ul className={badgeListClassNames}>
-                  {medalsOrBadges.map(badge => (
-                    <li key={badge.label}>
-                      <Badge
-                        icon={
-                          <Image
-                            src={`${s3}branding/logos/${badge.img}`}
-                            alt={`${badge.alt} Badge`}
-                            width={300}
-                            height={404}
-                          />
-                        }
-                        isImageFirst={false}
-                        label={`${badge.label} Badge`}
                       />
                     </li>
                   ))}
@@ -170,28 +146,23 @@ function LogoSection() {
               backgrounds.
             </p>
 
-            <ul>
-              <li>
-                <h6 className="text-center">TYPICAL</h6>
-                <ul className={cx(badgeListClassNames, 'flex-col flex-nowrap')}>
-                  {lgLogos.map(logo => (
-                    <li key={logo.label}>
-                      <Badge
-                        icon={
-                          <Image
-                            src={`${s3}branding/logos/${logo.img}`}
-                            alt={logo.alt}
-                            width={384}
-                            height={70}
-                          />
-                        }
-                        isImageFirst={false}
-                        label={logo.label}
+            <ul className="flex-col flex-nowrap">
+              {lgLogos.map(logo => (
+                <li key={logo.label}>
+                  <Badge
+                    icon={
+                      <Image
+                        src={`${s3}branding/logos/${logo.img}`}
+                        alt={logo.alt}
+                        width={384}
+                        height={70}
                       />
-                    </li>
-                  ))}
-                </ul>
-              </li>
+                    }
+                    isImageFirst={false}
+                    label={logo.label}
+                  />
+                </li>
+              ))}
             </ul>
           </li>
         </ul>,

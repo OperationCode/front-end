@@ -62,11 +62,13 @@ export default function ScholarshipsPage() {
   return (
     <>
       <Head title={pageTitle} />
+
       <HeroBanner
         title={pageTitle}
         backgroundImageSource={`${s3}heroBanners/scholarships_hero.jpeg`}
-        className="min-h-[60dvh]"
+        className="min-h-[60dvh] text-center"
       />
+
       <Container theme="white" className="pb-8">
         <p>
           Our <span className="font-bold">Scholarships Program</span> is a competitive benefit that
