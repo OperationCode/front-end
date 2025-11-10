@@ -101,15 +101,32 @@ jobs:
           retention-days: 30
 
       - name: Comment PR with Playwright artifact link
-        if: failure() && github.event_name == 'pull_request'
+        if: always() && github.event_name == 'pull_request'
         uses: actions/github-script@v7
         with:
           script: |
             const runId = context.runId;
             const repo = context.repo;
             const artifactUrl = `https://github.com/${repo.owner}/${repo.repo}/actions/runs/${runId}`;
+            const identifier = '<!-- playwright-test-status -->';
 
-            const comment = `## ❌ Playwright Tests Failed
+            // Find existing comment
+            const { data: comments } = await github.rest.issues.listComments({
+              issue_number: context.issue.number,
+              owner: repo.owner,
+              repo: repo.repo,
+            });
+
+            const existingComment = comments.find(comment =>
+              comment.body?.includes(identifier)
+            );
+
+            // Determine if tests passed or failed
+            const testsFailed = '${{ job.status }}' !== 'success';
+
+            if (testsFailed) {
+              const comment = `${identifier}
+            ## ❌ Playwright Tests Failed
 
             The Playwright tests have failed. Please download the test report artifact to see detailed information about the failures:
 
@@ -123,12 +140,29 @@ jobs:
 
             The report includes screenshots, videos, and detailed traces of the failed tests.`;
 
-            github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: repo.owner,
-              repo: repo.repo,
-              body: comment
-            });
+              if (existingComment) {
+                await github.rest.issues.updateComment({
+                  owner: repo.owner,
+                  repo: repo.repo,
+                  comment_id: existingComment.id,
+                  body: comment
+                });
+              } else {
+                await github.rest.issues.createComment({
+                  issue_number: context.issue.number,
+                  owner: repo.owner,
+                  repo: repo.repo,
+                  body: comment
+                });
+              }
+            } else if (existingComment) {
+              // Tests passed - delete the failure comment
+              await github.rest.issues.deleteComment({
+                owner: repo.owner,
+                repo: repo.repo,
+                comment_id: existingComment.id
+              });
+            }
 
   report_coverage:
     runs-on: ubuntu-latest
