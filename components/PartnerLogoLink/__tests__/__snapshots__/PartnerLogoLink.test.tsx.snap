@@ -8,21 +8,19 @@ exports[`PartnerLogoLink > should render with required props 1`] = `
   rel="noopener noreferrer"
   target="_blank"
 >
-  <span>
-    <div
-      className="relative h-[125px] w-[125px]"
-    >
-      <img
-        alt="Partner Inc. logo"
-        src="https://user-images.githubusercontent.com/logo"
-      />
-    </div>
-    <span
-      className="sr-only"
-      data-testid="SCREEN_READER_ONLY"
-    >
-      Opens in new window
-    </span>
+  <div
+    className="relative h-[125px] w-[125px]"
+  >
+    <img
+      alt="Partner Inc. logo"
+      src="https://user-images.githubusercontent.com/logo"
+    />
+  </div>
+  <span
+    className="sr-only"
+    data-testid="SCREEN_READER_ONLY"
+  >
+    Opens in new window
   </span>
 </a>
 `;

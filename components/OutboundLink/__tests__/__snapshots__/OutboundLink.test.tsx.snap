@@ -8,23 +8,21 @@ exports[`OutboundLink > should render with required props 1`] = `
   rel="noopener noreferrer"
   target="_blank"
 >
-  <span>
-    Test
-    <span
-      className="sr-only"
-      data-testid="SCREEN_READER_ONLY"
-    >
-      Opens in new window
-    </span>
-    <svg
-      className="inline-block ml-1 fill-current -mt-3 size-3.5"
-      dangerouslySetInnerHTML={
-        {
-          "__html": "<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" id="_73ab62bc"><title>External Link Symbol</title><path d="M448 80v352c0 27-21 48-48 48H48c-27 0-48-21-48-48V80c0-27 21-48 48-48h352c27 0 48 21 48 48zm-88 16H248c-21 0-32 26-17 41l32 32L68 364c-5 5-5 13 0 17l31 31c4 5 12 5 17 0l195-195 32 32c15 15 41 4 41-17V120c0-13-11-24-24-24z"/></symbol><use href='#_73ab62bc'/>",
-        }
-      }
-      viewBox="0 0 448 512"
-    />
+  Test
+  <span
+    className="sr-only"
+    data-testid="SCREEN_READER_ONLY"
+  >
+    Opens in new window
   </span>
+  <svg
+    className="inline-block ml-1 mt-0.5 fill-current size-3.5"
+    dangerouslySetInnerHTML={
+      {
+        "__html": "<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" id="_73ab62bc"><title>External Link Symbol</title><path d="M448 80v352c0 27-21 48-48 48H48c-27 0-48-21-48-48V80c0-27 21-48 48-48h352c27 0 48 21 48 48zm-88 16H248c-21 0-32 26-17 41l32 32L68 364c-5 5-5 13 0 17l31 31c4 5 12 5 17 0l195-195 32 32c15 15 41 4 41-17V120c0-13-11-24-24-24z"/></symbol><use href='#_73ab62bc'/>",
+      }
+    }
+    viewBox="0 0 448 512"
+  />
 </a>
 `;

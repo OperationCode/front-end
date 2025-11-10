@@ -1,4 +1,4 @@
-const Boston = [
+export const Boston = [
   {
     title: 'How Tech Pros Can Volunteer in Fun Ways',
     url: 'https://insights.dice.com/2017/01/11/tech-pros-volunteer-fun-ways/',
@@ -33,7 +33,7 @@ const Boston = [
   },
 ];
 
-const General = [
+export const General = [
   {
     title: 'TechHire Educator Spotlight: Operation Code',
     url: 'https://blog.opportunityatwork.org/techhire-educator-spotlight-operation-code-debd0a796f9d',
@@ -170,7 +170,7 @@ const General = [
   },
 ];
 
-const NYC = [
+export const NYC = [
   {
     title: 'New program aims to help veterans land jobs in tech industry',
     url: 'https://wtkr.com/2018/05/16/new-program-aims-to-help-veterans-land-jobs-in-tech-industry/',
@@ -184,5 +184,3 @@ const NYC = [
     url: 'https://www.wework.com/blog/posts/after-flying-solo-veterans-find-others-who-have-their-back',
   },
 ];
-
-export { NYC, Boston, General };

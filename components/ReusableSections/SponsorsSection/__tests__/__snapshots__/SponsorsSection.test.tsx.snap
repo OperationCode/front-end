@@ -70,20 +70,18 @@ exports[`SponsorsSection > should render 1`] = `
         rel="noopener noreferrer"
         target="_blank"
       >
-        <span>
-          <div
-            className="relative h-[150px] w-[150px]"
-          >
-            <img
-              alt="Etsy logo"
-            />
-          </div>
-          <span
-            className="sr-only"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Opens in new window
-          </span>
+        <div
+          className="relative h-[150px] w-[150px]"
+        >
+          <img
+            alt="Etsy logo"
+          />
+        </div>
+        <span
+          className="sr-only"
+          data-testid="SCREEN_READER_ONLY"
+        >
+          Opens in new window
         </span>
       </a>
       <a
@@ -93,20 +91,18 @@ exports[`SponsorsSection > should render 1`] = `
         rel="noopener noreferrer"
         target="_blank"
       >
-        <span>
-          <div
-            className="relative h-[150px] w-[150px]"
-          >
-            <img
-              alt="Juniper Networks logo"
-            />
-          </div>
-          <span
-            className="sr-only"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Opens in new window
-          </span>
+        <div
+          className="relative h-[150px] w-[150px]"
+        >
+          <img
+            alt="Juniper Networks logo"
+          />
+        </div>
+        <span
+          className="sr-only"
+          data-testid="SCREEN_READER_ONLY"
+        >
+          Opens in new window
         </span>
       </a>
       <a
@@ -116,21 +112,19 @@ exports[`SponsorsSection > should render 1`] = `
         rel="noopener noreferrer"
         target="_blank"
       >
-        <span>
-          <div
-            className="relative h-[150px] w-[150px]"
-          >
-            <img
-              alt="Threat Stack logo"
-              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/threat_stack.png"
-            />
-          </div>
-          <span
-            className="sr-only"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Opens in new window
-          </span>
+        <div
+          className="relative h-[150px] w-[150px]"
+        >
+          <img
+            alt="Threat Stack logo"
+            src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/threat_stack.png"
+          />
+        </div>
+        <span
+          className="sr-only"
+          data-testid="SCREEN_READER_ONLY"
+        >
+          Opens in new window
         </span>
       </a>
       <a
@@ -140,21 +134,19 @@ exports[`SponsorsSection > should render 1`] = `
         rel="noopener noreferrer"
         target="_blank"
       >
-        <span>
-          <div
-            className="relative h-[150px] w-[150px]"
-          >
-            <img
-              alt="US Bank logo"
-              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/usbank.png"
-            />
-          </div>
-          <span
-            className="sr-only"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Opens in new window
-          </span>
+        <div
+          className="relative h-[150px] w-[150px]"
+        >
+          <img
+            alt="US Bank logo"
+            src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/usbank.png"
+          />
+        </div>
+        <span
+          className="sr-only"
+          data-testid="SCREEN_READER_ONLY"
+        >
+          Opens in new window
         </span>
       </a>
       <a
@@ -164,20 +156,18 @@ exports[`SponsorsSection > should render 1`] = `
         rel="noopener noreferrer"
         target="_blank"
       >
-        <span>
-          <div
-            className="relative h-[150px] w-[150px]"
-          >
-            <img
-              alt="Umpqua Bank logo"
-            />
-          </div>
-          <span
-            className="sr-only"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Opens in new window
-          </span>
+        <div
+          className="relative h-[150px] w-[150px]"
+        >
+          <img
+            alt="Umpqua Bank logo"
+          />
+        </div>
+        <span
+          className="sr-only"
+          data-testid="SCREEN_READER_ONLY"
+        >
+          Opens in new window
         </span>
       </a>
     </div>
@@ -206,21 +196,19 @@ exports[`SponsorsSection > should render 1`] = `
         rel="noopener noreferrer"
         target="_blank"
       >
-        <span>
-          <div
-            className="relative h-[125px] w-[125px]"
-          >
-            <img
-              alt="1Password logo"
-              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/1password.png"
-            />
-          </div>
-          <span
-            className="sr-only"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Opens in new window
-          </span>
+        <div
+          className="relative h-[125px] w-[125px]"
+        >
+          <img
+            alt="1Password logo"
+            src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/1password.png"
+          />
+        </div>
+        <span
+          className="sr-only"
+          data-testid="SCREEN_READER_ONLY"
+        >
+          Opens in new window
         </span>
       </a>
       <a
@@ -230,21 +218,19 @@ exports[`SponsorsSection > should render 1`] = `
         rel="noopener noreferrer"
         target="_blank"
       >
-        <span>
-          <div
-            className="relative h-[125px] w-[125px]"
-          >
-            <img
-              alt="APEX Systems logo"
-              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/apex_systems.png"
-            />
-          </div>
-          <span
-            className="sr-only"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Opens in new window
-          </span>
+        <div
+          className="relative h-[125px] w-[125px]"
+        >
+          <img
+            alt="APEX Systems logo"
+            src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/apex_systems.png"
+          />
+        </div>
+        <span
+          className="sr-only"
+          data-testid="SCREEN_READER_ONLY"
+        >
+          Opens in new window
         </span>
       </a>
       <a
@@ -254,20 +240,18 @@ exports[`SponsorsSection > should render 1`] = `
         rel="noopener noreferrer"
         target="_blank"
       >
-        <span>
-          <div
-            className="relative h-[125px] w-[125px]"
-          >
-            <img
-              alt="Airbnb logo"
-            />
-          </div>
-          <span
-            className="sr-only"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Opens in new window
-          </span>
+        <div
+          className="relative h-[125px] w-[125px]"
+        >
+          <img
+            alt="Airbnb logo"
+          />
+        </div>
+        <span
+          className="sr-only"
+          data-testid="SCREEN_READER_ONLY"
+        >
+          Opens in new window
         </span>
       </a>
       <a
@@ -277,21 +261,19 @@ exports[`SponsorsSection > should render 1`] = `
         rel="noopener noreferrer"
         target="_blank"
       >
-        <span>
-          <div
-            className="relative h-[125px] w-[125px]"
-          >
-            <img
-              alt="Chromatic logo"
-              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/chromatic.png"
-            />
-          </div>
-          <span
-            className="sr-only"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Opens in new window
-          </span>
+        <div
+          className="relative h-[125px] w-[125px]"
+        >
+          <img
+            alt="Chromatic logo"
+            src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/chromatic.png"
+          />
+        </div>
+        <span
+          className="sr-only"
+          data-testid="SCREEN_READER_ONLY"
+        >
+          Opens in new window
         </span>
       </a>
       <a
@@ -301,20 +283,18 @@ exports[`SponsorsSection > should render 1`] = `
         rel="noopener noreferrer"
         target="_blank"
       >
-        <span>
-          <div
-            className="relative h-[125px] w-[125px]"
-          >
-            <img
-              alt="Code Platoon logo"
-            />
-          </div>
-          <span
-            className="sr-only"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Opens in new window
-          </span>
+        <div
+          className="relative h-[125px] w-[125px]"
+        >
+          <img
+            alt="Code Platoon logo"
+          />
+        </div>
+        <span
+          className="sr-only"
+          data-testid="SCREEN_READER_ONLY"
+        >
+          Opens in new window
         </span>
       </a>
       <a
@@ -324,21 +304,19 @@ exports[`SponsorsSection > should render 1`] = `
         rel="noopener noreferrer"
         target="_blank"
       >
-        <span>
-          <div
-            className="relative h-[125px] w-[125px]"
-          >
-            <img
-              alt="Coursera logo"
-              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/coursera.png"
-            />
-          </div>
-          <span
-            className="sr-only"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Opens in new window
-          </span>
+        <div
+          className="relative h-[125px] w-[125px]"
+        >
+          <img
+            alt="Coursera logo"
+            src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/coursera.png"
+          />
+        </div>
+        <span
+          className="sr-only"
+          data-testid="SCREEN_READER_ONLY"
+        >
+          Opens in new window
         </span>
       </a>
       <a
@@ -348,21 +326,19 @@ exports[`SponsorsSection > should render 1`] = `
         rel="noopener noreferrer"
         target="_blank"
       >
-        <span>
-          <div
-            className="relative h-[125px] w-[125px]"
-          >
-            <img
-              alt="Elyon International logo"
-              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/elyon.png"
-            />
-          </div>
-          <span
-            className="sr-only"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Opens in new window
-          </span>
+        <div
+          className="relative h-[125px] w-[125px]"
+        >
+          <img
+            alt="Elyon International logo"
+            src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/elyon.png"
+          />
+        </div>
+        <span
+          className="sr-only"
+          data-testid="SCREEN_READER_ONLY"
+        >
+          Opens in new window
         </span>
       </a>
       <a
@@ -372,21 +348,19 @@ exports[`SponsorsSection > should render 1`] = `
         rel="noopener noreferrer"
         target="_blank"
       >
-        <span>
-          <div
-            className="relative h-[125px] w-[125px]"
-          >
-            <img
-              alt="GitHub logo"
-              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/github.png"
-            />
-          </div>
-          <span
-            className="sr-only"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Opens in new window
-          </span>
+        <div
+          className="relative h-[125px] w-[125px]"
+        >
+          <img
+            alt="GitHub logo"
+            src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/github.png"
+          />
+        </div>
+        <span
+          className="sr-only"
+          data-testid="SCREEN_READER_ONLY"
+        >
+          Opens in new window
         </span>
       </a>
       <a
@@ -396,20 +370,18 @@ exports[`SponsorsSection > should render 1`] = `
         rel="noopener noreferrer"
         target="_blank"
       >
-        <span>
-          <div
-            className="relative h-[125px] w-[125px]"
-          >
-            <img
-              alt="Google logo"
-            />
-          </div>
-          <span
-            className="sr-only"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Opens in new window
-          </span>
+        <div
+          className="relative h-[125px] w-[125px]"
+        >
+          <img
+            alt="Google logo"
+          />
+        </div>
+        <span
+          className="sr-only"
+          data-testid="SCREEN_READER_ONLY"
+        >
+          Opens in new window
         </span>
       </a>
       <a
@@ -419,21 +391,19 @@ exports[`SponsorsSection > should render 1`] = `
         rel="noopener noreferrer"
         target="_blank"
       >
-        <span>
-          <div
-            className="relative h-[125px] w-[125px]"
-          >
-            <img
-              alt="HackerRank logo"
-              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/hackerrank.png"
-            />
-          </div>
-          <span
-            className="sr-only"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Opens in new window
-          </span>
+        <div
+          className="relative h-[125px] w-[125px]"
+        >
+          <img
+            alt="HackerRank logo"
+            src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/hackerrank.png"
+          />
+        </div>
+        <span
+          className="sr-only"
+          data-testid="SCREEN_READER_ONLY"
+        >
+          Opens in new window
         </span>
       </a>
       <a
@@ -443,21 +413,19 @@ exports[`SponsorsSection > should render 1`] = `
         rel="noopener noreferrer"
         target="_blank"
       >
-        <span>
-          <div
-            className="relative h-[125px] w-[125px]"
-          >
-            <img
-              alt="LogRocket logo"
-              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/logrocket.png"
-            />
-          </div>
-          <span
-            className="sr-only"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Opens in new window
-          </span>
+        <div
+          className="relative h-[125px] w-[125px]"
+        >
+          <img
+            alt="LogRocket logo"
+            src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/logrocket.png"
+          />
+        </div>
+        <span
+          className="sr-only"
+          data-testid="SCREEN_READER_ONLY"
+        >
+          Opens in new window
         </span>
       </a>
       <a
@@ -467,21 +435,19 @@ exports[`SponsorsSection > should render 1`] = `
         rel="noopener noreferrer"
         target="_blank"
       >
-        <span>
-          <div
-            className="relative h-[125px] w-[125px]"
-          >
-            <img
-              alt="O'Reilly Media logo"
-              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/oreilly.png"
-            />
-          </div>
-          <span
-            className="sr-only"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Opens in new window
-          </span>
+        <div
+          className="relative h-[125px] w-[125px]"
+        >
+          <img
+            alt="O'Reilly Media logo"
+            src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/oreilly.png"
+          />
+        </div>
+        <span
+          className="sr-only"
+          data-testid="SCREEN_READER_ONLY"
+        >
+          Opens in new window
         </span>
       </a>
       <a
@@ -491,21 +457,19 @@ exports[`SponsorsSection > should render 1`] = `
         rel="noopener noreferrer"
         target="_blank"
       >
-        <span>
-          <div
-            className="relative h-[125px] w-[125px]"
-          >
-            <img
-              alt="Secure Code Warrior logo"
-              src="https://user-images.githubusercontent.com/51661129/92973323-3d540b80-f484-11ea-85dd-d202fc751cd9.png"
-            />
-          </div>
-          <span
-            className="sr-only"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Opens in new window
-          </span>
+        <div
+          className="relative h-[125px] w-[125px]"
+        >
+          <img
+            alt="Secure Code Warrior logo"
+            src="https://user-images.githubusercontent.com/51661129/92973323-3d540b80-f484-11ea-85dd-d202fc751cd9.png"
+          />
+        </div>
+        <span
+          className="sr-only"
+          data-testid="SCREEN_READER_ONLY"
+        >
+          Opens in new window
         </span>
       </a>
       <a
@@ -515,21 +479,19 @@ exports[`SponsorsSection > should render 1`] = `
         rel="noopener noreferrer"
         target="_blank"
       >
-        <span>
-          <div
-            className="relative h-[125px] w-[125px]"
-          >
-            <img
-              alt="Team Treehouse logo"
-              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/treehouse.png"
-            />
-          </div>
-          <span
-            className="sr-only"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Opens in new window
-          </span>
+        <div
+          className="relative h-[125px] w-[125px]"
+        >
+          <img
+            alt="Team Treehouse logo"
+            src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/treehouse.png"
+          />
+        </div>
+        <span
+          className="sr-only"
+          data-testid="SCREEN_READER_ONLY"
+        >
+          Opens in new window
         </span>
       </a>
       <a
@@ -539,20 +501,18 @@ exports[`SponsorsSection > should render 1`] = `
         rel="noopener noreferrer"
         target="_blank"
       >
-        <span>
-          <div
-            className="relative h-[125px] w-[125px]"
-          >
-            <img
-              alt="Unite Us logo"
-            />
-          </div>
-          <span
-            className="sr-only"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Opens in new window
-          </span>
+        <div
+          className="relative h-[125px] w-[125px]"
+        >
+          <img
+            alt="Unite Us logo"
+          />
+        </div>
+        <span
+          className="sr-only"
+          data-testid="SCREEN_READER_ONLY"
+        >
+          Opens in new window
         </span>
       </a>
       <a
@@ -562,21 +522,19 @@ exports[`SponsorsSection > should render 1`] = `
         rel="noopener noreferrer"
         target="_blank"
       >
-        <span>
-          <div
-            className="relative h-[125px] w-[125px]"
-          >
-            <img
-              alt="Vercel logo"
-              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/vercel.png"
-            />
-          </div>
-          <span
-            className="sr-only"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Opens in new window
-          </span>
+        <div
+          className="relative h-[125px] w-[125px]"
+        >
+          <img
+            alt="Vercel logo"
+            src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/vercel.png"
+          />
+        </div>
+        <span
+          className="sr-only"
+          data-testid="SCREEN_READER_ONLY"
+        >
+          Opens in new window
         </span>
       </a>
       <a
@@ -586,21 +544,19 @@ exports[`SponsorsSection > should render 1`] = `
         rel="noopener noreferrer"
         target="_blank"
       >
-        <span>
-          <div
-            className="relative h-[125px] w-[125px]"
-          >
-            <img
-              alt="Zapier logo"
-              src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/zapier.png"
-            />
-          </div>
-          <span
-            className="sr-only"
-            data-testid="SCREEN_READER_ONLY"
-          >
-            Opens in new window
-          </span>
+        <div
+          className="relative h-[125px] w-[125px]"
+        >
+          <img
+            alt="Zapier logo"
+            src="https://operation-code-assets.s3.us-east-2.amazonaws.com/partnerLogos/zapier.png"
+          />
+        </div>
+        <span
+          className="sr-only"
+          data-testid="SCREEN_READER_ONLY"
+        >
+          Opens in new window
         </span>
       </a>
     </div>

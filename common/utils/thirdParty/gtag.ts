@@ -1,15 +1,28 @@
 import snakeCase from 'lodash/snakeCase';
-import { clientTokens } from 'common/config/environment';
+import { clientTokens, isProduction } from 'common/config/environment';
+
+declare global {
+  interface Window {
+    gtag?: (
+      command: 'config' | 'event',
+      targetId: string,
+      config?: Record<string, unknown>,
+    ) => void;
+  }
+}
 
 // TODO: Leverage prod-build-time-only env vars instead NODE_ENV for prod check
-const isProduction = process.env.NODE_ENV === 'production';
 const isDevelopment = process.env.NODE_ENV === 'development';
+
+interface LogParams {
+  methodName: string;
+  [key: string]: unknown;
+}
 
 /**
  * @description dev-only logging of gtag methods
- * @param {{ methodName: string }} { methodName, ...rest }
  */
-const log = ({ methodName, ...rest }) => {
+const log = ({ methodName, ...rest }: LogParams): void => {
   if (isDevelopment) {
     console.log(`gtag.${methodName}\n`, rest); // eslint-disable-line no-console
   }
@@ -17,11 +30,9 @@ const log = ({ methodName, ...rest }) => {
 
 /**
  * @description Log a pageview with gtag
- * @param {string} url
- * @param {boolean?} isModalView
  * @see https://developers.google.com/analytics/devguides/collection/gtagjs/pages
  */
-const pageView = (url, isModalView = false) => {
+const pageView = (url: string, isModalView = false): void => {
   log({ methodName: 'pageview', url, isModalView });
 
   if (isProduction && !!window && !!window.gtag) {
@@ -31,16 +42,21 @@ const pageView = (url, isModalView = false) => {
   }
 };
 
+interface EventParams {
+  action: string;
+  /** Callback function to execute after the event */
+  callback?: () => void;
+  category: string;
+  /** Optional label for the event */
+  label?: string;
+  /** Optional numeric value for the event */
+  value?: number;
+  /** Additional event parameters */
+  otherEventParameters?: Record<string, unknown>;
+}
+
 /**
  * @description Log an event with gtag
- * @param {{
- *  action: string,
- *  callback?: () => void,
- *  category: string,
- *  label?: string,
- *  otherEventParameters?: object,
- *  value?: number,
- * }}
  * @see https://developers.google.com/analytics/devguides/collection/gtagjs/events
  */
 const event = ({
@@ -50,7 +66,7 @@ const event = ({
   label = undefined,
   value = undefined,
   otherEventParameters = {}, // https://developers.google.com/gtagjs/reference/parameter
-}) => {
+}: EventParams): void => {
   if (!action || !category) {
     throw new Error('Google Events must be called with at least an action and category.');
   }
@@ -76,11 +92,17 @@ const event = ({
   }
 };
 
+interface ConversionEventParams {
+  /** Google Ads conversion ID */
+  adId: string;
+  /** Category for the conversion event */
+  category?: string;
+}
+
 /**
  * @description Log a conversion event with gtag (connected to Google Ads ID of a conversion)
- * @param {{ adId: string, category?: string }} { adId, category = 'engagement' }
  */
-const conversionEvent = ({ adId, category = 'engagement' }) => {
+const conversionEvent = ({ adId, category = 'engagement' }: ConversionEventParams): void => {
   log({ methodName: 'adEvent', adId, category });
 
   if (isProduction) {
@@ -94,23 +116,19 @@ const conversionEvent = ({ adId, category = 'engagement' }) => {
 
 /**
  * @description Log a link click which takes users away from our site
- * @param {string} label describe where the user is going
- * @param {string} url
  */
-const outboundLink = (label, url) => {
+const outboundLink = (label: string, url: string): void => {
   event({
     action: `To: ${label}`,
     category: 'Outbound',
     label: `URL: ${url}`,
-    value: url,
   });
 };
 
 /**
  * @description Log a modal view as if it were a gtag page view event
- * @param {string} modalName
  */
-const modalView = modalName => {
+const modalView = (modalName: string): void => {
   const url = `/modal/${snakeCase(modalName.toLowerCase())}`;
 
   const isModalView = true;

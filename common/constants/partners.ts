@@ -137,4 +137,4 @@ const partners = [
   { name: 'Airbnb', logoSource: airbnb.src, url: 'https://airbnb.com', type: PARTNER_TYPES.KIND },
 ];
 
-export default sortBy(partners, 'name');
+export const partnersSortedByName = sortBy(partners, 'name');

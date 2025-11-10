@@ -50,30 +50,30 @@ function FeaturedJobItem({
   remote = false,
 }: FeaturedJobItemPropsType) {
   return (
-    <article className="px-0 py-4">
+    <article>
       <OutboundLink href={sourceUrl} analyticsEventLabel={`Featured Job ${source}`}>
-        <h6>{title}</h6>
+        <h5>{title}</h5>
       </OutboundLink>
 
-      <div className="flex flex-wrap mt-1 text-lg text-secondary opacity-80 ">
-        <div className="flex items-center gap-1.5">
-          <BuildingIcon className="fill-secondary opacity-80 h-3.5" />
+      <div className="flex flex-wrap gap-4 text-lg text-secondary/75">
+        <div className="flex items-center gap-0.5">
+          <BuildingIcon className="fill-secondary size-4" />
           <span className="ml-1">{source}</span>
         </div>
 
-        <div className="flex items-center gap-1.5">
-          {(city || state || country) && (
-            <MapMarkerIcon className="fill-secondary opacity-80 h-3.5" />
-          )}
-          {city && <span className="ml-1">{city},</span>}
-          {state && <span className="ml-1">{state},</span>}
-          {country && <span className="ml-1">{country}</span>}
+        <div className="flex items-center gap-0.5">
+          <MapMarkerIcon className="fill-secondary size-4" />
+          <address className="inline-flex gap-1">
+            {city && <span>{city},</span>}
+            {state && <span>{state},</span>}
+            {country && <span>{country}</span>}
+          </address>
         </div>
 
         {remote && (
-          <div className="flex items-center gap-1.5">
-            <CloudUploadIcon className="fill-secondary opacity-80 h-3.5" />
-            <span className="ml-1">Remote</span>
+          <div className="flex items-center gap-1">
+            <CloudUploadIcon className="fill-secondary size-4" />
+            <span>Remote</span>
           </div>
         )}
       </div>

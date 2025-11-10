@@ -1,7 +1,7 @@
 import Container from 'components/Container/Container';
 import Heading from 'components/Heading/Heading';
 import PartnerLogoLink from 'components/PartnerLogoLink/PartnerLogoLink';
-import partners, { PARTNER_TYPES } from 'common/constants/partners';
+import { PARTNER_TYPES, partnersSortedByName } from 'common/constants/partners';
 
 interface Partner {
   name: string;
@@ -20,7 +20,7 @@ const SponsorsSection = () => (
       may or may not have also donated to our cause via others means.
     </p>
     <div className="flex justify-center items-center flex-wrap gap-10">
-      {partners
+      {partnersSortedByName
         .filter(x => isPaidSponsor(x))
         .map(partner => (
           <PartnerLogoLink key={partner.name} {...partner} size="large" />
@@ -33,7 +33,7 @@ const SponsorsSection = () => (
       advertisements, scholarships, or sponsorships. We thank them for their contributions.
     </p>
     <div className="flex justify-center items-center flex-wrap gap-10">
-      {partners
+      {partnersSortedByName
         .filter(x => !isPaidSponsor(x))
         .map(partner => (
           <PartnerLogoLink key={partner.name} {...partner} />

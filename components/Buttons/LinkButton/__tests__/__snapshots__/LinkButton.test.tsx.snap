@@ -9,14 +9,12 @@ exports[`LinkButton > should render with many props assigned 1`] = `
   rel="noopener noreferrer"
   target="_blank"
 >
-  <span>
-    Test
-    <span
-      className="sr-only"
-      data-testid="SCREEN_READER_ONLY"
-    >
-      Opens in new window
-    </span>
+  Test
+  <span
+    className="sr-only"
+    data-testid="SCREEN_READER_ONLY"
+  >
+    Opens in new window
   </span>
 </a>
 `;

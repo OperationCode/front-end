@@ -2,7 +2,6 @@
 const hasBundleAnalyzer = process.env.ANALYZE === 'true';
 const { withSentryConfig } = require('@sentry/nextjs');
 const withBundleAnalyzer = require('@next/bundle-analyzer')({ enabled: hasBundleAnalyzer });
-const { s3hostName } = require('./common/constants/urls');
 const svgoConfig = require('./common/config/svgo');
 
 const sentryWebpackPluginOptions = {
@@ -34,7 +33,7 @@ const nextConfig = {
 
   images: {
     domains: [
-      s3hostName,
+      'operation-code-assets.s3.us-east-2.amazonaws.com',
       'user-images.githubusercontent.com',
       'ssl-static.libsyn.com',
       'static.libsyn.com',
