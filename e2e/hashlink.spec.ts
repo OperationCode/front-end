@@ -107,8 +107,7 @@ test.describe('Hash Links', () => {
           if (!headingId) continue;
 
           // Verify heading exists and is visible
-          // TODO: will fail
-          await expect(heading).toBeHidden();
+          await expect(heading).toBeVisible();
 
           // Find the hash link within or near this heading
           const link = page
