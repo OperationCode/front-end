@@ -2,7 +2,6 @@ import type { AxiosError, AxiosInstance, AxiosRequestConfig } from 'axios';
 import axios from 'axios';
 import { networkErrorMessages } from 'common/constants/messages';
 import { apiUrl, resourcesAPIURL } from 'common/config/environment';
-import { setAuthorizationHeader } from 'common/utils/cookie-utils';
 
 const baseAxiosConfig = {
   baseURL: apiUrl,
@@ -37,17 +36,13 @@ const getRequestAbortionPieces = () => {
 
 export const get = async (
   path: string,
-  {
-    token,
-    parameters,
-  }: { token?: string; parameters?: Record<string, AxiosRequestConfig['params']> } = {},
+  { parameters }: { parameters?: Record<string, AxiosRequestConfig['params']> } = {},
   axiosClient = OperationCodeAPI,
 ) => {
   const { abort, connectionTimeout } = getRequestAbortionPieces();
 
   return axiosClient
     .get(path, {
-      headers: setAuthorizationHeader(token),
       cancelToken: abort.token,
       params: parameters,
     })
@@ -61,17 +56,11 @@ export const get = async (
     });
 };
 
-export const post = async (
-  path: string,
-  body: object,
-  { token }: { token?: string } = {},
-  axiosClient: AxiosInstance = axios,
-) => {
+export const post = async (path: string, body: object, axiosClient: AxiosInstance = axios) => {
   const { abort, connectionTimeout } = getRequestAbortionPieces();
 
   return axiosClient
     .post(path, body, {
-      headers: setAuthorizationHeader(token),
       cancelToken: abort.token,
     })
     .then(response => {
@@ -84,17 +73,11 @@ export const post = async (
     });
 };
 
-export const patch = async (
-  path: string,
-  body: object,
-  { token }: { token?: string } = {},
-  axiosClient: AxiosInstance = axios,
-) => {
+export const patch = async (path: string, body: object, axiosClient: AxiosInstance = axios) => {
   const { abort, connectionTimeout } = getRequestAbortionPieces();
 
   return axiosClient
     .patch(path, body, {
-      headers: setAuthorizationHeader(token),
       cancelToken: abort.token,
     })
     .then(response => {
@@ -107,17 +90,11 @@ export const patch = async (
     });
 };
 
-export const put = async (
-  path: string,
-  body: object,
-  { token }: { token?: string } = {},
-  axiosClient: AxiosInstance = axios,
-) => {
+export const put = async (path: string, body: object, axiosClient: AxiosInstance = axios) => {
   const { abort, connectionTimeout } = getRequestAbortionPieces();
 
   return axiosClient
     .put(path, body, {
-      headers: setAuthorizationHeader(token),
       cancelToken: abort.token,
     })
     .then(response => {

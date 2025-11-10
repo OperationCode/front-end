@@ -1,4 +1,3 @@
-import cookie from 'js-cookie';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { CLOSE_BUTTON } from 'common/constants/testIDs';
 import createShallowSnapshotTest from 'test-utils/createShallowSnapshotTest';
@@ -6,10 +5,6 @@ import createShallowSnapshotTest from 'test-utils/createShallowSnapshotTest';
 import { Nav } from '../Nav';
 
 describe('Nav', () => {
-  beforeEach(() => {
-    cookie.get = vi.fn().mockImplementation(() => undefined);
-  });
-
   it('should render with no props passed', () => createShallowSnapshotTest(<Nav />));
 
   it('should render both desktop and mobile navigations', () => {
