@@ -1,15 +1,14 @@
 import * as Tabs from '@radix-ui/react-tabs';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
-import { objectKeys } from 'utils/types';
 import { cx } from 'common/utils/cva';
-import * as Articles from './Articles';
+import * as articlesMap from './Articles';
 
 function PressLinks() {
   return (
     <div className="w-full sm:w-[70ch] md:w-[60ch]">
-      <Tabs.Root defaultValue={Object.keys(Articles)[0]}>
+      <Tabs.Root defaultValue={Object.keys(articlesMap)[0]}>
         <Tabs.List className="flex pt-5">
-          {Object.keys(Articles).map(region => (
+          {Object.keys(articlesMap).map(region => (
             <Tabs.Trigger
               key={`TabsTrigger_${region}`}
               value={region}
@@ -23,13 +22,13 @@ function PressLinks() {
             </Tabs.Trigger>
           ))}
         </Tabs.List>
-        {objectKeys(Articles).map(region => (
+        {Object.keys(articlesMap).map(region => (
           <Tabs.Content
             key={`TabsContent_${region}`}
             value={region}
             className="p-5 space-y-2.5 text-balance list-none text-center"
           >
-            {Articles[region].map(link => (
+            {articlesMap[region as keyof typeof articlesMap].map(link => (
               <li key={`GroupLink_${link.url}`}>
                 <OutboundLink
                   href={link.url}

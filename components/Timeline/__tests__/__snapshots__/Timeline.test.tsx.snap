@@ -27,7 +27,7 @@ exports[`Timeline > should render with no props passed passed 1`] = `
       />
     </div>
     <div
-      className="flex-[8]"
+      className="flex-8"
       id="event-2011"
     >
       <TimelineEvent
@@ -72,7 +72,7 @@ exports[`Timeline > should render with no props passed passed 1`] = `
       />
     </div>
     <div
-      className="flex-[8]"
+      className="flex-8"
       id="event-2013"
     >
       <TimelineEvent
@@ -150,7 +150,7 @@ exports[`Timeline > should render with no props passed passed 1`] = `
       />
     </div>
     <div
-      className="flex-[8]"
+      className="flex-8"
       id="event-2014"
     >
       <TimelineEvent
@@ -239,7 +239,7 @@ exports[`Timeline > should render with no props passed passed 1`] = `
       />
     </div>
     <div
-      className="flex-[8]"
+      className="flex-8"
       id="event-2015"
     >
       <TimelineEvent
@@ -275,7 +275,7 @@ exports[`Timeline > should render with no props passed passed 1`] = `
       />
     </div>
     <div
-      className="flex-[8]"
+      className="flex-8"
       id="event-2019"
     >
       <TimelineEvent
@@ -329,7 +329,7 @@ exports[`Timeline > should render with no props passed passed 1`] = `
       />
     </div>
     <div
-      className="flex-[8]"
+      className="flex-8"
       id="event-2021"
     >
       <TimelineEvent
@@ -382,7 +382,7 @@ exports[`Timeline > should render with no props passed passed 1`] = `
       />
     </div>
     <div
-      className="flex-[8]"
+      className="flex-8"
       id="event-2023"
     >
       <TimelineEvent
