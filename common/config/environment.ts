@@ -1,7 +1,7 @@
 /*
  * This file should only contain environment variables that are non-secret.
  */
-const isProduction = process.env.PRODUCTION_DEPLOYMENT === 'true';
+export const isProduction = process.env.PRODUCTION_DEPLOYMENT === 'true';
 
 // These are all exposed by the client, so there's no way to protect them anyways.
 export const clientTokens = isProduction
