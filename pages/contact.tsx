@@ -1,19 +1,20 @@
-import { cx } from 'common/utils/cva';
 import Link from 'next/link';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
-import styles from 'styles/contact.module.css';
 
 const pageTitle = 'Contact Us';
 
 function Contact() {
   return (
-    <div className={styles.Contact}>
+    <div>
       <Head title={pageTitle} />
 
-      <HeroBanner className={cx(styles.contactHero, 'min-h-dvh')} title={pageTitle}>
-        <div className={styles.verticalSpacing}>
+      <HeroBanner
+        className="min-h-dvh [&_a]:transition-colors [&_a]:duration-200 [&_a:focus-visible]:text-shadow-none [&_a:focus-visible]:text-primary [&_a:hover]:text-shadow-none [&_a:hover]:text-primary"
+        title={pageTitle}
+      >
+        <div className="my-4">
           <p>
             We are a decentralized community of hard-working volunteers, and we love hearing
             feedback, comments, and suggestions!
@@ -28,7 +29,7 @@ function Contact() {
           </p>
         </div>
 
-        <address className={cx(styles.forceWidth, styles.contactMethod)}>
+        <address className="w-full mx-auto mb-8 max-w-prose not-italic">
           <b>You can also reach us via email:</b>
 
           <br />
@@ -42,7 +43,7 @@ function Contact() {
           </OutboundLink>
         </address>
 
-        <address className={cx(styles.forceWidth, styles.contactMethod)}>
+        <address className="w-full mx-auto mb-8 max-w-prose not-italic">
           <b>You could tweet at us:</b>
 
           <br />
@@ -52,7 +53,7 @@ function Contact() {
           </OutboundLink>
         </address>
 
-        <address className={cx(styles.forceWidth, styles.contactMethod)}>
+        <address className="w-full mx-auto mb-8 max-w-prose not-italic">
           <b>And - if you really want to - you can snail-mail us:</b>
 
           <br />

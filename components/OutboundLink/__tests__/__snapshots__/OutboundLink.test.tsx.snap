@@ -2,7 +2,7 @@
 
 exports[`OutboundLink > should render with required props 1`] = `
 <a
-  className="inline-flex items-start"
+  className="inline-flex items-start text-burnt-orange"
   href="https://tests.com"
   onClick={[Function]}
   rel="noopener noreferrer"

@@ -7,62 +7,48 @@ exports[`TimelineNav > should render with no props passed passed 1`] = `
   <nav
     className="flex justify-around"
   >
-    <Link
+    <a
       className="font-bold text-2xl cursor-pointer text-gray-500 transition-all duration-100 ease-in-out hover:opacity-60 hover:scale-110 sm:text-xl"
-      offset={0}
-      smooth={true}
-      to="event-2011"
+      href="#event-2011"
     >
       2011
-    </Link>
-    <Link
+    </a>
+    <a
       className="font-bold text-2xl cursor-pointer text-gray-500 transition-all duration-100 ease-in-out hover:opacity-60 hover:scale-110 sm:text-xl"
-      offset={0}
-      smooth={true}
-      to="event-2013"
+      href="#event-2013"
     >
       2013
-    </Link>
-    <Link
+    </a>
+    <a
       className="font-bold text-2xl cursor-pointer text-gray-500 transition-all duration-100 ease-in-out hover:opacity-60 hover:scale-110 sm:text-xl"
-      offset={0}
-      smooth={true}
-      to="event-2014"
+      href="#event-2014"
     >
       2014
-    </Link>
-    <Link
+    </a>
+    <a
       className="font-bold text-2xl cursor-pointer text-gray-500 transition-all duration-100 ease-in-out hover:opacity-60 hover:scale-110 sm:text-xl"
-      offset={0}
-      smooth={true}
-      to="event-2015"
+      href="#event-2015"
     >
       2015
-    </Link>
-    <Link
+    </a>
+    <a
       className="font-bold text-2xl cursor-pointer text-gray-500 transition-all duration-100 ease-in-out hover:opacity-60 hover:scale-110 sm:text-xl"
-      offset={0}
-      smooth={true}
-      to="event-2019"
+      href="#event-2019"
     >
       2019
-    </Link>
-    <Link
+    </a>
+    <a
       className="font-bold text-2xl cursor-pointer text-gray-500 transition-all duration-100 ease-in-out hover:opacity-60 hover:scale-110 sm:text-xl"
-      offset={0}
-      smooth={true}
-      to="event-2021"
+      href="#event-2021"
     >
       2021
-    </Link>
-    <Link
+    </a>
+    <a
       className="font-bold text-2xl cursor-pointer text-gray-500 transition-all duration-100 ease-in-out hover:opacity-60 hover:scale-110 sm:text-xl"
-      offset={0}
-      smooth={true}
-      to="event-2023"
+      href="#event-2023"
     >
       2023
-    </Link>
+    </a>
   </nav>
   <div
     className="mt-4 bg-theme-gray-800 h-1"

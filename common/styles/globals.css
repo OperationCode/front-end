@@ -1,120 +1,53 @@
-/* Do not attempt to change values in themeMap - only change in ./variables.css */
-@import url('./variables.css');
+@import 'tailwindcss' source('../../');
 
-/* stylelint-disable at-rule-no-unknown */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@theme {
+  /* Colors for Tailwind utilities */
+  --color-white: #f7f7f7;
+  --color-primary: #3ed6f0;
+  --color-secondary: #252e3e;
+  --color-burnt-orange: hsl(14 55% 45%);
+  --color-theme-gray-800: #e2e2e2;
+  --color-error: hsl(355 70% 91%);
+  --color-error-deep: hsl(355 63% 34%);
+  --color-success: hsl(132 35% 88%);
+  --color-success-deep: hsl(132 60% 23%);
+  --color-warning: hsl(46 100% 90%);
+  --color-warning-deep: hsl(39 80% 31%);
+  --font-family-bebas: 'Bebas Neue', sans-serif;
+  --font-family-encode: 'Encode Sans', sans-serif;
+  --spacing-prose: 65ch;
+}
 
 @layer base {
-  :root {
-    --primary-rgb: 62 214 240;
-    --secondary-rgb: 37 46 62;
-    --gray-rgb: 226 226 226;
-    --white-rgb: 247 247 247;
-    --burnt-orange-hsl: 14 55% 45%;
-    --success-hsl: 132 35% 88%;
-    --success-deep-hsl: 132 60% 23%;
-    --warning-hsl: 46 100% 90%;
-    --warning-deep-hsl: 39 80% 31%;
-    --error-hsl: 355 70% 91%;
-    --error-deep-hsl: 355 63% 34%;
+  html {
+    @apply font-family-encode size-full m-0 p-0 text-lg font-normal;
+    color: #47566b;
   }
-}
-/* stylelint-enable at-rule-no-unknown */
 
-/* Global Styles */
-@font-face {
-  font-family: 'DIN Condensed Bold';
-  font-style: normal;
-  font-weight: normal;
-  font-display: auto;
-  /* stylelint-disable-next-line at-rule-descriptor-no-unknown */
-  -webkit-font-smoothing: antialiased;
-  /* stylelint-disable-next-line at-rule-descriptor-no-unknown */
-  -moz-osx-font-smoothing: grayscale;
+  body {
+    @apply min-h-screen min-w-xs m-0 hyphens-none;
+  }
 
-  /* prettier-ignore */
-  src:
-    url("/static/fonts/DINCondensed-Bold.ttf") format("truetype"),
-    url("/static/fonts/DINCondensed-Bold.woff2") format("woff2"),
-    url("/static/fonts/DINCondensed-Bold.woff") format("woff");
-}
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-family-bebas uppercase tracking-widest;
+  }
 
-html {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  font-family: var(--secondaryFontFamily), serif;
-  font-size: 18px;
-  font-weight: 400;
-  color: #47566b;
-}
+  footer {
+    @apply bg-secondary text-white;
+  }
 
-body {
-  hyphens: none;
-  margin: 0;
-  min-width: 300px;
-}
+  a {
+    @apply hover:underline;
+  }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-button,
-nav,
-footer {
-  font-family: var(--primaryFontFamily), sans-serif;
-  text-transform: uppercase;
-}
-
-button,
-footer {
-  letter-spacing: 2px;
-}
-
-footer {
-  background-color: var(--secondary);
-  color: var(--white);
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  letter-spacing: 3px;
-  margin: 0;
-  padding: 0;
-  text-wrap: initial;
-  text-wrap: balance;
-}
-
-a {
-  color: var(--burntOrange500);
-  text-decoration: none;
-}
-
-nav a,
-footer a {
-  color: currentcolor;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-p {
-  line-height: 1.75;
-  max-width: var(--typicalMaxWidth);
-}
-
-#root {
-  min-height: 100%;
+  p {
+    @apply max-w-prose;
+  }
 }
 
 /* Custom font scaling formula https://blog.envylabs.com/responsive-typographic-scales-in-css-b9f60431d1c4 */
@@ -140,29 +73,6 @@ h5 {
 
 h6 {
   font-size: 1.125rem;
-}
-
-@media screen and (--large-viewport) {
-  html {
-    font-size: 16px !important;
-  }
-}
-
-@media screen and (--small-viewport) {
-  html {
-    font-size: 14px !important;
-  }
-}
-
-/* React Scroll Button styles */
-.ScrollUpButton {
-  position: fixed;
-  bottom: 50px;
-  right: 30px;
-  cursor: pointer;
-  transition-duration: 0.2s;
-  transition-timing-function: linear;
-  transition-delay: 0s;
 }
 
 code {

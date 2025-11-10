@@ -5,7 +5,6 @@ import Accordion from 'components/Accordion/Accordion';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 import { s3, codeOfConduct } from 'common/constants/urls';
 import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
-import styles from 'styles/slack_guide.module.css';
 import Image from 'next/image';
 
 const pageTitle = 'Slack Guide';
@@ -188,7 +187,7 @@ const questions = {
           </ScreenReaderOnly>
 
           <Image
-            className={styles.exploreChannels}
+            className="w-full sm:w-auto"
             src={`${s3}slack_tutorial/explore_channels.jpg`}
             alt=""
             width={500}
@@ -201,7 +200,7 @@ const questions = {
           </p>
 
           <Image
-            className={styles.joinChannels}
+            className="w-full sm:w-auto"
             src={`${s3}slack_tutorial/join_channel.jpg`}
             alt=""
             width={500}
@@ -215,7 +214,7 @@ const questions = {
 
 function SlackGuide() {
   return (
-    <div className={styles.FAQ}>
+    <div>
       <Head title={pageTitle} />
 
       <HeroBanner title={pageTitle} className="min-h-[60dvh]">
@@ -225,7 +224,7 @@ function SlackGuide() {
           allowFullScreen
           width="755"
           height="425"
-          className={styles.slackVideo}
+          className="h-full w-full sm:h-[425px] sm:w-[755px]"
         />
       </HeroBanner>
 
@@ -235,7 +234,7 @@ function SlackGuide() {
         columns={questions.slack.map((faq, index) => (
           <Accordion
             key={index}
-            className={styles.FAQAccordion}
+            className="bg-transparent rounded-[5px] border border-[#c5c5c5] shadow-none text-white block p-[1.125rem] w-full [&>button>svg]:fill-current [&>button>svg]:top-[0.825rem]"
             content={{
               headingChildren: <h6>{faq.title}</h6>,
               bodyChildren: <p>{faq.content}</p>,

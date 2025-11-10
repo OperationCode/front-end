@@ -2,7 +2,7 @@
 
 exports[`Container > should render with many props assigned 1`] = `
 <div
-  className="bg-center bg-no-repeat bg-cover flex items-center justify-between w-full fill-current min-h-[250px] bg-white text-secondary test-class"
+  className="bg-center bg-no-repeat bg-cover flex items-center justify-between w-full px-4 md:px-0 fill-current min-h-[250px] bg-white text-secondary test-class"
   style={
     {
       "backgroundImage": "linear-gradient(hsl(215, 30%, 10%, 0.7),hsl(215, 30%, 10%, 0.7)), url(https://operation-code-assets.s3.us-east-2.amazonaws.com/heroBanner/stock_family-2.jpg)",

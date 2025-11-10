@@ -50,8 +50,8 @@ function NavMobile({ isOpen, openMenu, closeMenu, navItems }: NavMobilePropsType
   return (
     <header
       className={cx(
-        'fixed flex items-center justify-between',
-        'w-full h-20 bg-white z-50 px-4 sm:hidden',
+        'fixed flex items-center justify-between uppercase font-family-bebas',
+        'w-full h-20 bg-white z-50 px-4 lg:hidden',
       )}
       data-testid="Mobile Nav Container"
     >

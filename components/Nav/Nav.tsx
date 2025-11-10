@@ -41,10 +41,10 @@ export const Nav = () => {
         navItems={mobileNavItems}
       />
 
-      <header className="hidden absolute top-4 w-full z-10 sm:block">
-        <div className="mx-auto max-w-[1400px]" data-testid="Desktop Nav Container">
+      <header className="hidden absolute top-4 w-full z-10 lg:block uppercase font-family-bebas">
+        <div className="mx-auto max-w-7xl px-4" data-testid="Desktop Nav Container">
           <nav
-            className="font-bold h-16 bg-white rounded-sm flex justify-between"
+            className="font-bold h-16 bg-white rounded-sm flex justify-between text-lg"
             data-testid="Desktop Nav"
           >
             <Link href="/" key="Home">
@@ -69,7 +69,7 @@ export const Nav = () => {
                 <Link href="/donate">
                   <a
                     className={cx(
-                      'pt-1 px-8 font-bold bg-primary text-secondary no-underline',
+                      'px-8 font-bold bg-primary text-secondary no-underline',
                       'flex items-center justify-center h-full',
                       'transition-colors duration-200 ease-linear',
                       'rounded-r-sm cursor-pointer hover:text-white focus-visible:text-white',

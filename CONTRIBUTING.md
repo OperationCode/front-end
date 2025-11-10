@@ -30,8 +30,6 @@ Being an open source project involving contributors of varying levels of experie
   - [What Is The Front-End?](#what-is-the-front-end)
   - [What Is The Back-End?](#what-is-the-back-end)
   - [What is REST? What is an API?](#what-is-rest-what-is-an-api)
-- [Technologies](#technologies)
-  - [PostCSS](#postcss)
 - [Development Workflow](#development-workflow)
   - [Installing Dependencies](#installing-dependencies)
   - [Run The Development Server](#run-the-development-server)
@@ -89,102 +87,6 @@ The back-end is responsible for providing data for the front-end to display. Thi
 [What is REST?](https://www.codecademy.com/articles/what-is-rest)
 
 [What is an API?](https://medium.freecodecamp.org/what-is-an-api-in-english-please-b880a3214a82)
-
-## Technologies
-
-Here is an alphabetically-sorted list of technologies this project leverages:
-
-- [Babel](https://babeljs.io/) - JavaScript compiler to unify all the different versions of JS that may have been used or will be used in the future. [Here's a blog post from Scotch.io on why JavaScript utilizes "transpiling" with Babel](https://scotch.io/tutorials/javascript-transpilers-what-they-are-why-we-need-them).
-- [CSS Modules](https://github.com/css-modules/css-modules) - CSS Modules allow us to encapsulate CSS within components. Instead of HTML/CSS - our project structure is basically JSX/CSS.
-- [Cypress](https://cypress.io/) - Hand-picked resources [here](https://github.com/OperationCode/front-end/tree/main/cypress/README.md).
-- [Jest](https://jestjs.io/) - A JavaScript testing framework from Facebook. We use it for all of our unit and some of our integration/regression tests.
-- [Next.js](https://nextjs.org/) - Next is a framework for creating ["server-side rendered"](https://medium.freecodecamp.org/demystifying-reacts-server-side-render-de335d408fe4) React applications with a lot of performance and [search engine optimizations](https://searchengineland.com/guide/what-is-seo) out-of-the-box.
-- [Node.js](https://www.nodejs.org/) - Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine. React utilizes a tiny Node/Express server for it's development environment.
-- [PostCSS](#PostCSS) - Extensive documentation listed below...
-- [React.js](https://facebook.github.io/react/) - Facebook's popular JavaScript front-end framework.
-- [Storybook](https://storybook.js.org) - Storybook acts as a "component workbench" and source for component documentation. You can learn more about Storybook on your own [here](https://www.learnstorybook.com/). You can see our Storybook here: [![Storybook](https://github.com/storybookjs/brand/blob/8d28584c89959d7075c237e9345955c895048977/badge/badge-storybook.svg)](http://storybook.operationcode.org)
-- [Webpack](https://webpack.js.org/) - The premier module bundler for JavaScript. Read [this article](https://survivejs.com/webpack/what-is-webpack/) for more information.
-- [pnpm](https://pnpm.io/) - Fast, disk space efficient package manager that uses a content-addressable storage system.
-
-### PostCSS
-
-In our repo, we use PostCSS plug-ins to help simplify how we write our CSS. PostCSS is included in our webpack configuration, so there are no additional steps necessary to leverage these plug-ins.
-
-#### What is PostCSS?
-
-"PostCSS is a tool for transforming styles with JS plugins. These plugins can lint your CSS, support variables and mixins, transpile future CSS syntax, inline images, and more." - [PostCSS Repo](https://github.com/postcss/postcss)
-
-#### PostCSS Plug-ins in Use
-
-- [Autoprefixer](https://github.com/postcss/autoprefixer): used to parse vendor prefixes for certain CSS property values
-  ([What is a vendor prefix?](https://developer.mozilla.org/en-US/docs/Glossary/Vendor_Prefix)). In our repo, you will not have to include vendor prefixes when you create a non-standard CSS selector.
-
-**Example:**
-During development, we would write:
-
-```
-.someClass {
-  disply: flex;
-}
-```
-
-Which will output the following once compiled:
-
-```
-.someClass {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-```
-
-- [PostCSS Media Variables](https://github.com/WolfgangKluge/postcss-media-variables): This plugin allows us to set 'default' breakpoints, and manipulate those values as needed without changing the defaults. Our defaults are defined in `common/styles/variables.css`
-
-**Example:**
-During development, we would write:
-
-```
-:root {
-    --largeViewportWidth: 992px;
-}
-@media (min-width: var(--largeViewportWidth)) {}
-```
-
-Which will output the following when deployed:
-
-```
-@media (min-width: 992px){}
-```
-
-- [PostCSS CSS Variables](https://github.com/MadLittleMods/postcss-css-variables): This plug-in allows us to use [CSS3 variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables) across older browsers. On run-time, this plug-in extracts and translates our custom variables into 'vanilla' CSS.
-
-**Example:**
-During development, we would write:
-
-```
-:root {
-  --some-color: red;
-  /*here we have defined the property `--some-color` as red*/
-}
-
-.foo {
-  color: --some-color;
-/*the element with class selector `.foo` will be red */
-}
-
-```
-
-Which will output the following when deployed:
-
-```
-.foo {
-  color: red;
-}
-```
-
-- [PostCSS Export Custom Variables](https://github.com/jonathantneal/postcss-export-custom-variables): We use this plug-in simply to export our collection of CSS variables to [common/styles/themeMap.js](https://github.com/OperationCode/front-end/blob/main/common/styles/themeMap.js) so that they're leveragable within any JavaScript context.
-
-- [PostCSS Import](https://github.com/postcss/postcss-import): This plug-in essentially tries to emulate the existing [CSS Import spec](https://developer.mozilla.org/en-US/docs/Web/CSS/@import) allowing for modularization and concatenation of CSS files.
 
 ## Development Workflow
 
@@ -247,9 +149,6 @@ You can see interactive documentation on all of our components via [![Storybook]
 |   ├── _error.js  # Next.js-specific file used to override/customize the traditional error code views (such as 404 and 503)
 |   ├── index.js  # Landing page
 |   └── *.js  # All the other pages
-|
-├── scripts
-|   └── createComponent
 |
 ├── static
 |   ├── fonts
@@ -316,12 +215,6 @@ pnpm test $fileName
 
 # Opens up a Cypress browser with which you can check e2e tests locally. Be sure the local dev server is running before this command!
 pnpm test:e2e
-
-#Create all the necessary files/folders for a new, reusable component. Please make `ComponentName` TitleCase.
-pnpm create-component $ComponentName
-
-#Create a new page in the pages directory.
-pnpm create-page $pageName
 ```
 
 ## Mocking Back-end Server API

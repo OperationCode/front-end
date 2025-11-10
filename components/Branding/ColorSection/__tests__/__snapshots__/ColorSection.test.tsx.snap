@@ -1,51 +1,33 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`ColorSection > should render with required props 1`] = `
-<div
-  className="text-center"
->
-  <Content
-    columns={
-      [
-        <div>
-          <h3>
-            Primary
-          </h3>
-          <Swatch
-            colorName="Primary"
-            hexCode="#3ed6f0"
-          />
-        </div>,
-        <div>
-          <h3>
-            Secondary
-          </h3>
-          <Swatch
-            colorName="Secondary"
-            hexCode="#252e3e"
-          />
-        </div>,
-      ]
-    }
-    hasTitleUnderline={true}
-    theme="white"
-    title="Colors"
-  />
-  <Content
-    columns={
-      [
-        <Swatch
-          colorName="gray"
-          hexCode="#e2e2e2"
-        />,
-        <Swatch
-          colorName="white"
-          hexCode="#f7f7f7"
-        />,
-      ]
-    }
-    theme="white"
-    title="Other On-Brand Colors"
-  />
-</div>
+<Content
+  columns={
+    [
+      <Swatch
+        colorName="primary"
+        hexCode="#3ed6f0"
+      />,
+      <Swatch
+        colorName="secondary"
+        hexCode="#252e3e"
+      />,
+      <Swatch
+        colorName="gray"
+        hexCode="#e2e2e2"
+      />,
+      <Swatch
+        colorName="white"
+        hexCode="#f7f7f7"
+      />,
+      <Swatch
+        colorName="burnt orange"
+        hexCode="#b25134"
+      />,
+    ]
+  }
+  hasTitleUnderline={true}
+  theme="white"
+  title="Colors"
+/>
 `;

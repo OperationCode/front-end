@@ -1,5 +1,3 @@
-import TrackVisibility from 'react-on-screen';
-import { cx } from 'common/utils/cva';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Badge from 'components/Badge/Badge';
@@ -12,9 +10,6 @@ import CareerServicesIcon from 'static/images/icons/Custom/career_services.svg';
 import MentorshipIcon from 'static/images/icons/Custom/mentorship.svg';
 import ScholarshipsIcon from 'static/images/icons/Custom/scholarships.svg';
 import { s3 } from 'common/constants/urls';
-import styles from 'styles/services.module.css';
-
-const VISIBILITY_OFFSET = 400;
 
 const mentorItems = [
   {
@@ -33,7 +28,7 @@ const mentorItems = [
 
 function Services() {
   return (
-    <div className={styles.Services}>
+    <div>
       <Head title="Services" />
 
       <HeroBanner
@@ -55,14 +50,14 @@ function Services() {
               are all working towards relevant career and personal goals. Membership is free!
             </p>
 
-            <div className={cx(styles.centeredText, styles.topMargin)}>
+            <div className="text-center mt-10">
               <LinkButton href="/join" theme="secondary">
                 Become A Member
               </LinkButton>
             </div>
 
             <div>
-              <p className={cx(styles.centeredText, styles.topMargin)}>
+              <p className="text-center mt-10">
                 Do you love Operation Code? Check out our{' '}
                 <OutboundLink
                   analyticsEventLabel="Merch Store"
@@ -80,18 +75,18 @@ function Services() {
 
       <Content
         columns={[
-          <TrackVisibility key="image-card-1" offset={VISIBILITY_OFFSET}>
+          <div key="image-card-1">
             <ImageCard
               alt="Two developers collaborting over some code."
               imageSource={`${s3}redesign/images/paired_programming.jpg`}
               isImageFirst
             >
-              <p className={styles.centeredText}>
+              <p className="text-center">
                 There are 12.1 million net jobs for tech employment in the U.S. alone, with an
                 addition of 307,000 jobs in a year.
               </p>
             </ImageCard>
-          </TrackVisibility>,
+          </div>,
         ]}
       />
 
@@ -103,13 +98,13 @@ function Services() {
             Whether you are looking to change careers or starting a new one in the tech industry, we
             are here to help you succeed by providing:
           </p>,
-          <div key="commitment-badges" className={styles.badgeGroupings}>
+          <div key="commitment-badges" className="flex flex-wrap justify-center -mt-4">
             {mentorItems.map(item => (
               <Badge
                 key={item.label}
                 icon={item.icon}
                 label={item.label}
-                className={styles.badge}
+                className="fill-secondary mt-4 mx-16"
               />
             ))}
           </div>,
@@ -130,14 +125,12 @@ function Services() {
 
       <Content
         columns={[
-          <TrackVisibility key="image-card-2" offset={VISIBILITY_OFFSET}>
+          <div key="image-card-2">
             <ImageCard
               alt="Room full of people chatting at an Operation Code meetup in New York City."
               imageSource={`${s3}redesign/images/chatting_at_meetup.jpg`}
             >
-              <p className={styles.centeredText}>
-                We have meetup chapters all around the United States!
-              </p>
+              <p className="text-center">We have meetup chapters all around the United States!</p>
 
               <LinkButton
                 href="https://www.meetup.com/pro/operationcode"
@@ -147,7 +140,7 @@ function Services() {
                 See Locations
               </LinkButton>
             </ImageCard>
-          </TrackVisibility>,
+          </div>,
         ]}
       />
 

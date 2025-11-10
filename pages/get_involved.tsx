@@ -1,5 +1,3 @@
-import { cx } from 'common/utils/cva';
-import TrackVisibility from 'react-on-screen';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Badge from 'components/Badge/Badge';
@@ -16,10 +14,7 @@ import NetworkingIcon from 'static/images/icons/Custom/networked_people.svg';
 import ChartIcon from 'static/images/icons/Custom/chart.svg';
 import PeopleMeetingIcon from 'static/images/icons/Custom/people_meeting.svg';
 import { s3 } from 'common/constants/urls';
-import styles from 'styles/get_involved.module.css';
 import Image from 'next/image';
-
-const VISIBILITY_OFFSET = 400;
 
 const mentorItems = [
   {
@@ -53,12 +48,12 @@ const supportItems = [
 
 function GetInvolved() {
   return (
-    <div className={styles.GetInvolved}>
+    <div>
       <Head title="Get Involved" />
 
       <HeroBanner
         backgroundImageSource={`${s3}redesign/heroBanners/get_involved.jpg`}
-        className={`${styles.heroBannerMobilePositioning} bg-[center_20%] min-h-[60dvh]`}
+        className="bg-position-[60%_center] md:bg-position-[center_20%] min-h-[60dvh]"
         title="You Can Make An Impact"
       >
         <div key="banner-content">
@@ -79,7 +74,7 @@ function GetInvolved() {
             .
           </p>
 
-          <div className={styles.ctaContainer}>
+          <div className="flex w-full max-w-prose justify-evenly flex-wrap gap-x-2 [&>*]:mt-4">
             <LinkButton href="/about">Learn More</LinkButton>
             <LinkButton href="/join">Join Us</LinkButton>
           </div>
@@ -91,14 +86,9 @@ function GetInvolved() {
         theme="gray"
         columns={[
           <p key="mentorship-intro">By mentoring one of our members, you will help them:</p>,
-          <div key="mentorship-badges" className={styles.badgeGroupings}>
+          <div key="mentorship-badges" className="flex flex-wrap justify-center -mt-4">
             {mentorItems.map(item => (
-              <Badge
-                key={item.label}
-                icon={item.icon}
-                label={item.label}
-                className={styles.badge}
-              />
+              <Badge key={item.label} icon={item.icon} label={item.label} className="my-4 mx-16" />
             ))}
           </div>,
         ]}
@@ -106,18 +96,13 @@ function GetInvolved() {
 
       <Content
         columns={[
-          <TrackVisibility key="image" offset={VISIBILITY_OFFSET}>
-            {({ isVisible }) => (
-              <div className={cx(styles.image, { [styles.showImage]: isVisible })}>
-                <Image
-                  src={`${s3}redesign/images/one_on_one_mentoring.jpg`}
-                  alt="Woman outlines a whiteboarding problem to a man"
-                  width={500}
-                  height={500}
-                />
-              </div>
-            )}
-          </TrackVisibility>,
+          <div key="image" className="relative aspect-[1.5/1] m-8 w-full max-w-lg">
+            <Image
+              src={`${s3}redesign/images/one_on_one_mentoring.jpg`}
+              alt="Woman outlines a whiteboarding problem to a man"
+              layout="fill"
+            />
+          </div>,
           <div key="empower">
             <Heading text="Empower Our Community and Support Our Mission" headingLevel={3} />
 
@@ -126,7 +111,7 @@ function GetInvolved() {
               pursuits of a tech career.
             </p>
 
-            <div className={cx(styles.centeredText, styles.extraTopMargin)}>
+            <div className="text-center mt-8">
               <LinkButton href="/join">Become A Mentor</LinkButton>
             </div>
           </div>,
@@ -142,16 +127,11 @@ function GetInvolved() {
               We&apos;re always looking for volunteers who are dedicated to making an impact in the
               lives of military veterans, service members, and spouses.
             </p>
-            <p className={styles.centeredText}>You can help us with:</p>
+            <p className="text-center">You can help us with:</p>
           </div>,
-          <div key="support-badges" className={cx(styles.badgeGroupings)}>
+          <div key="support-badges" className="flex flex-wrap justify-center -mt-4">
             {supportItems.map(item => (
-              <Badge
-                key={item.label}
-                icon={item.icon}
-                label={item.label}
-                className={styles.badge}
-              />
+              <Badge key={item.label} icon={item.icon} label={item.label} className="my-4 mx-16" />
             ))}
           </div>,
         ]}

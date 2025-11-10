@@ -83,7 +83,7 @@ function Footer() {
             &#169; 2014-{currentYear} Operation Code™
             <span className="pl-4">registered 501(c)3</span>
           </div>
-          <div className="flex mx-auto justify-between w-60">
+          <div className="flex mx-auto justify-between w-60 [&_a]:text-white">
             {legal.map(link =>
               // / logic of renderLink duplicated here
               link.analyticsEventLabel ? (

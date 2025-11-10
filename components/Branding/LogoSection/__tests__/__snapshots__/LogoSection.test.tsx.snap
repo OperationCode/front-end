@@ -2,10 +2,11 @@
 
 exports[`LogoSection > should render with required props 1`] = `
 <Content
+  className="[&_ul]:flex [&_ul]:justify-around [&_ul]:items-center [&_ul]:flex-wrap"
   columns={
     [
       <ul
-        className="space-y-4 [&>li>p]:my-4"
+        className="space-y-4 [&>li>p]:my-4 [&_ul]:pb-4"
       >
         <li>
           <h5
@@ -19,7 +20,7 @@ exports[`LogoSection > should render with required props 1`] = `
             For use when Operation Code's logo name is between 0-1 inch in height. In most cases, use the Original Small Logo. The Stacked Small Logo is to be used where graphics needs are larger in vertical height than horizontal width with the Operation Code logo name still under 1 inch in height.
           </p>
           <ul
-            className="space-y-4"
+            className="space-y-4 border-b-2 border-b-secondary *:not-last:border-b &:border-b-secondary"
           >
             <li>
               <h6
@@ -27,9 +28,7 @@ exports[`LogoSection > should render with required props 1`] = `
               >
                 TYPICAL
               </h6>
-              <ul
-                className="flex justify-around items-center flex-wrap pb-4 border-b border-solid border-slate-400"
-              >
+              <ul>
                 <li>
                   <Badge
                     icon={
@@ -99,9 +98,7 @@ exports[`LogoSection > should render with required props 1`] = `
               >
                 Use the Large Stacked Original logo in areas where you have more vertical space than horizontal. Only use the Red Stacked Logo for special holidays such as Thanksgiving, fall events, and Christmas. The Light Stacked Logo is to be used with dark or contrasting bright colored backgrounds.
               </p>
-              <ul
-                className="flex justify-around items-center flex-wrap pb-4 border-b border-solid border-slate-400"
-              >
+              <ul>
                 <li>
                   <Badge
                     icon={
@@ -150,15 +147,20 @@ exports[`LogoSection > should render with required props 1`] = `
               <h6
                 className="text-center"
               >
-                Medals
+                Medals / Badges
               </h6>
               <p
-                className="mx-auto"
+                className="mx-auto mb-4"
               >
-                Use the following medals when you are prompted to upload a thumbnail logo only or profile photo. In most cases, use the OC Blue Medal. The Red Medal should only be used for holidays and special events (such as Thanksgiving, fall, or Christmas). The Navy Medal should be used memorandums or lighter bright colored backgrounds.
+                Use the following images when you are prompted to upload a thumbnail logo only or profile photo. In most cases, use the OC Blue option. The Red option should only be used for holidays and special events (such as Thanksgiving, fall, or Christmas). The Navy option should be used memorandums or lighter bright colored backgrounds.
+              </p>
+              <p
+                className="mx-auto mb-4"
+              >
+                You may also use them as a profile photo or thumbnail. They should be used to accompany corporate sponsors or alliance partnerships on shared branding. Use the original OC Blue option in most cases, except the Red option for special events and holidays (Thanksgiving, fall and Christmas). The Navy option may be used with light backgrounds and bright colored backgrounds.
               </p>
               <ul
-                className="flex justify-around items-center flex-wrap pb-4 border-b border-solid border-slate-400"
+                className="border-b-0"
               >
                 <li>
                   <Badge
@@ -204,64 +206,6 @@ exports[`LogoSection > should render with required props 1`] = `
                 </li>
               </ul>
             </li>
-            <li>
-              <h6
-                className="text-center"
-              >
-                Badges
-              </h6>
-              <p
-                className="mx-auto"
-              >
-                You may also use badges as a profile photo or thumbnail. Badges should be used to accompany corporate sponsors or alliance partnerships on shared branding. Use the original OC Blue Badge in most cases, except the Red Badge for special events and holidays (Thanksgiving, fall and Christmas). The Navy Badge may be used with light backgrounds and bright colored backgrounds.
-              </p>
-              <ul
-                className="flex justify-around items-center flex-wrap pb-4 border-b border-solid border-slate-400"
-              >
-                <li>
-                  <Badge
-                    icon={
-                      <MockedNextImage
-                        alt="OC Blue Badge"
-                        height={404}
-                        src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/large-blue-medal.png"
-                        width={300}
-                      />
-                    }
-                    isImageFirst={false}
-                    label="OC Blue Badge"
-                  />
-                </li>
-                <li>
-                  <Badge
-                    icon={
-                      <MockedNextImage
-                        alt="Red Badge"
-                        height={404}
-                        src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/large-red-medal.png"
-                        width={300}
-                      />
-                    }
-                    isImageFirst={false}
-                    label="Red Badge"
-                  />
-                </li>
-                <li>
-                  <Badge
-                    icon={
-                      <MockedNextImage
-                        alt="Navy Badge"
-                        height={404}
-                        src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/large-slate-medal.png"
-                        width={300}
-                      />
-                    }
-                    isImageFirst={false}
-                    label="Navy Badge"
-                  />
-                </li>
-              </ul>
-            </li>
           </ul>
         </li>
         <li>
@@ -275,73 +219,64 @@ exports[`LogoSection > should render with required props 1`] = `
           >
             Use the Original Large Logo in almost all cases above 1 inch in height. The Red Large Logo is to be used in special events (such as Thanksgiving, fall or Christmas), and the Light Large Logo is to be used with dark backgrounds or bright colored backgrounds.
           </p>
-          <ul>
+          <ul
+            className="flex-col flex-nowrap"
+          >
             <li>
-              <h6
-                className="text-center"
-              >
-                TYPICAL
-              </h6>
-              <ul
-                className="flex justify-around items-center pb-4 border-b border-solid border-slate-400 flex-col flex-nowrap"
-              >
-                <li>
-                  <Badge
-                    icon={
-                      <MockedNextImage
-                        alt="Original Large Logo"
-                        height={70}
-                        src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/large-blue-logo.png"
-                        width={384}
-                      />
-                    }
-                    isImageFirst={false}
-                    label="Blue"
+              <Badge
+                icon={
+                  <MockedNextImage
+                    alt="Original Large Logo"
+                    height={70}
+                    src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/large-blue-logo.png"
+                    width={384}
                   />
-                </li>
-                <li>
-                  <Badge
-                    icon={
-                      <MockedNextImage
-                        alt="Red Large Logo"
-                        height={70}
-                        src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/large-red-logo.png"
-                        width={384}
-                      />
-                    }
-                    isImageFirst={false}
-                    label="Red"
+                }
+                isImageFirst={false}
+                label="Blue"
+              />
+            </li>
+            <li>
+              <Badge
+                icon={
+                  <MockedNextImage
+                    alt="Red Large Logo"
+                    height={70}
+                    src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/large-red-logo.png"
+                    width={384}
                   />
-                </li>
-                <li>
-                  <Badge
-                    icon={
-                      <MockedNextImage
-                        alt="Large Unaccented Logo"
-                        height={70}
-                        src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/large-logo.png"
-                        width={384}
-                      />
-                    }
-                    isImageFirst={false}
-                    label="Slate"
+                }
+                isImageFirst={false}
+                label="Red"
+              />
+            </li>
+            <li>
+              <Badge
+                icon={
+                  <MockedNextImage
+                    alt="Large Unaccented Logo"
+                    height={70}
+                    src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/large-logo.png"
+                    width={384}
                   />
-                </li>
-                <li>
-                  <Badge
-                    icon={
-                      <MockedNextImage
-                        alt="Large White Accented Logo"
-                        height={70}
-                        src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/large-white-logo.png"
-                        width={384}
-                      />
-                    }
-                    isImageFirst={false}
-                    label="White"
+                }
+                isImageFirst={false}
+                label="Slate"
+              />
+            </li>
+            <li>
+              <Badge
+                icon={
+                  <MockedNextImage
+                    alt="Large White Accented Logo"
+                    height={70}
+                    src="https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/logos/large-white-logo.png"
+                    width={384}
                   />
-                </li>
-              </ul>
+                }
+                isImageFirst={false}
+                label="White"
+              />
             </li>
           </ul>
         </li>

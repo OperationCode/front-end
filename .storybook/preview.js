@@ -1,4 +1,3 @@
-import backgroundsPalleteArray from './backgrounds';
 import 'common/styles/globals.css';
 import * as viewports from '@storybook/addon-viewport';
 
@@ -13,10 +12,6 @@ export const decorators = [
 const preview = {
   parameters: {
     actions: { argTypesRegex: '^on[A-Z].*' },
-    backgrounds: {
-      values: backgroundsPalleteArray,
-      default: 'White',
-    },
     viewport: {
       viewports: {
         ...viewports.MINIMAL_VIEWPORTS,

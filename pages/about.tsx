@@ -6,18 +6,17 @@ import ImageCard from 'components/Cards/ImageCard/ImageCard';
 import ValueCard from 'components/Cards/ValueCard/ValueCard';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 import { s3 } from 'common/constants/urls';
-import styles from 'styles/about.module.css';
 
 const pageTitle = 'About Us';
 
 function About() {
   return (
-    <div className={styles.About}>
+    <div>
       <Head title={pageTitle} />
 
       <HeroBanner
         backgroundImageSource={`${s3}redesign/heroBanners/about.jpg`}
-        className={`${styles.hero} bg-top min-h-[60dvh]`}
+        className="lg:bg-top bg-position-[center_3rem] min-h-[60dvh]"
         title={pageTitle}
       />
 
@@ -70,7 +69,7 @@ function About() {
           <ImageCard
             key="mentorship"
             alt="Two women pair programming"
-            className={styles.imageCard}
+            className="[&_h6]:text-lg [&_p]:text-[85%]"
             imageSource={`${s3}stock_paired-programming.jpg`}
           >
             <h6>Mentorship Program</h6>
@@ -82,7 +81,7 @@ function About() {
           <ImageCard
             key="scholarships"
             alt="Man working on laptop"
-            className={styles.imageCard}
+            className="[&_h6]:text-lg [&_p]:text-[85%]"
             imageSource={`${s3}stock_laptop-working.jpg`}
           >
             <h6>Online Scholarships</h6>
@@ -94,7 +93,7 @@ function About() {
           <ImageCard
             key="career-services"
             alt="Team of people working together at a coffee table"
-            className={styles.imageCard}
+            className="[&_h6]:text-lg [&_p]:text-[85%]"
             imageSource={`${s3}stock_teamwork-1.jpg`}
           >
             <h6>Career Services</h6>
@@ -106,7 +105,7 @@ function About() {
           <ImageCard
             key="conference-scholarships"
             alt="Operation Code members pose together at Red Hat Summit 2017"
-            className={styles.imageCard}
+            className="[&_h6]:text-lg [&_p]:text-[85%]"
             imageSource={`${s3}photo_red-hat-summit-2.jpg`}
           >
             <h6>Conference Scholarships</h6>
@@ -118,7 +117,7 @@ function About() {
           <ImageCard
             key="community-events"
             alt="Operation Code NYC Meet-up In 2019"
-            className={styles.imageCard}
+            className="[&_h6]:text-lg [&_p]:text-[85%]"
             imageSource={`${s3}nyc_meetup.jpg`}
           >
             <h6>Community Events</h6>
@@ -138,7 +137,7 @@ function About() {
           <ImageCard
             key="podcast"
             alt="A pair of orange headphones resting on a laptop keyboard"
-            className={styles.imageCard}
+            className="[&_h6]:text-lg [&_p]:text-[85%]"
             imageSource={`${s3}headphones.jpg`}
           >
             <h6>Podcast</h6>

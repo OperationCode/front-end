@@ -5,52 +5,28 @@ exports[`FontSection > should render with required props 1`] = `
   columns={
     [
       <ul
-        className="list-none w-full [&>li]:m-4"
+        className="list-none [&>li]:m-4 mx-auto"
       >
         <li>
           <div
-            className="[&>p]:font-serif [&>h6]:font-serif [&>p]:font-din-condensed [&>h6]:font-din-condensed"
+            className="[&>p]:font-din-condensed [&>h6]:font-din-condensed"
           >
-            <h6
-              style={
-                {
-                  "fontFamily": "DIN Condensed Bold",
-                }
-              }
-            >
+            <h6>
               DIN Condensed Bold
             </h6>
-            <p
-              style={
-                {
-                  "fontFamily": "DIN Condensed Bold",
-                }
-              }
-            >
+            <p>
               Sphinx of black quartz, judge my vow!
             </p>
           </div>
         </li>
         <li>
           <div
-            className="[&>p]:font-sans [&>p]:font-encode-sans [&>h6]:font-sans [&>h6]:font-encode-sans"
+            className="[&>p]:font-encode-sans [&>h6]:font-encode-sans"
           >
-            <h6
-              style={
-                {
-                  "fontFamily": "Encode Sans",
-                }
-              }
-            >
+            <h6>
               Encode Sans
             </h6>
-            <p
-              style={
-                {
-                  "fontFamily": "Encode Sans",
-                }
-              }
-            >
+            <p>
               Sphinx of black quartz, judge my vow!
             </p>
           </div>

@@ -46,7 +46,7 @@ function OutboundLink({
 
   return (
     <a
-      className={cx('inline-flex items-start', className)}
+      className={cx('inline-flex items-start text-burnt-orange', className)}
       data-testid={testID}
       href={href}
       onClick={trackOutboundLinkClick}

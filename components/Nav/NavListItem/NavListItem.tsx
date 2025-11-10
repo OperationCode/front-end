@@ -56,12 +56,12 @@ function NavListItem({ sublinks, href, name }: NavListItemPropsType) {
 
   return (
     <li className="relative">
-      <div className="h-full flex items-center justify-center">
+      <div className="h-full flex items-center">
         <Link href={href}>
           <a
             className={cx(
-              'pt-1.5 h-full text-center text-secondary fill-current min-w-24 cursor-pointer',
-              'flex items-center justify-center leading-none transition-all duration-200 ease-linear',
+              'h-full pl-8 pr-2 w-30 text-secondary fill-current cursor-pointer',
+              'inline-flex items-center justify-end leading-none transition-all duration-200 ease-linear',
               'no-underline hover:text-primary focus-visible:text-primary',
             )}
             onMouseEnter={exposeSublinks}
@@ -78,7 +78,7 @@ function NavListItem({ sublinks, href, name }: NavListItemPropsType) {
             aria-expanded={areSublinksVisible}
             aria-haspopup={hasSublinks}
             aria-label="submenu"
-            className="w-6 px-1.5 mr-1 h-full"
+            className="w-6 *:w-3 h-full -mt-0.5"
             onClick={invertSublinkVisibility}
             onMouseEnter={exposeSublinks}
             onMouseLeave={hideSublinks}

@@ -1,44 +1,32 @@
-import { brandColorsObject } from 'common/styles/styleExports';
 import Swatch from 'components/Branding/Swatch/Swatch';
 import Content from 'components/Content/Content';
 
+const brandColors = {
+  primary: '#3ed6f0',
+  secondary: '#252e3e',
+  gray: '#e2e2e2',
+  white: '#f7f7f7',
+  burntOrange: '#b25134',
+};
+
+const colors = [
+  { name: 'primary', hexCode: brandColors.primary },
+  { name: 'secondary', hexCode: brandColors.secondary },
+  { name: 'gray', hexCode: brandColors.gray },
+  { name: 'white', hexCode: brandColors.white },
+  { name: 'burnt orange', hexCode: brandColors.burntOrange },
+];
+
 function ColorSection() {
-  const primaryColor = { name: 'Primary', hexCode: brandColorsObject.primary };
-  const secondaryColor = { name: 'Secondary', hexCode: brandColorsObject.secondary };
-
-  // Compose a list of colors excluding primary and secondary
-  const otherColorNames = Object.keys(brandColorsObject).filter(colorName => {
-    const isPrimary = colorName === 'primary';
-    const isSecondary = colorName === 'secondary';
-
-    return !isPrimary && !isSecondary;
-  });
-
   return (
-    <div className="text-center">
-      <Content
-        title="Colors"
-        hasTitleUnderline
-        theme="white"
-        columns={[
-          <div key="primary">
-            <h3>Primary</h3>
-            <Swatch colorName={primaryColor.name} hexCode={primaryColor.hexCode} />
-          </div>,
-          <div key="secondary">
-            <h3>Secondary</h3>
-            <Swatch colorName={secondaryColor.name} hexCode={secondaryColor.hexCode} />
-          </div>,
-        ]}
-      />
-      <Content
-        title="Other On-Brand Colors"
-        theme="white"
-        columns={otherColorNames.map(colorName => (
-          <Swatch colorName={colorName} hexCode={brandColorsObject[colorName]} key={colorName} />
-        ))}
-      />
-    </div>
+    <Content
+      title="Colors"
+      hasTitleUnderline
+      theme="white"
+      columns={colors.map(color => (
+        <Swatch colorName={color.name} hexCode={color.hexCode} key={color.name} />
+      ))}
+    />
   );
 }
 

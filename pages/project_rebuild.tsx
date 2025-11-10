@@ -3,7 +3,6 @@ import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
-import styles from 'styles/project_rebuild.module.css';
 import LinkButton from 'components/Buttons/LinkButton/LinkButton';
 import { s3 } from 'common/constants/urls';
 
@@ -30,7 +29,10 @@ function ProjectRebuild() {
       <Content
         theme="white"
         columns={[
-          <div key="logos" className={styles.logos}>
+          <div
+            key="logos"
+            className="flex flex-wrap items-center justify-center gap-12 lg:gap-16 -mb-8 [&>*:nth-child(3)]:lg:order-3 [&>*:nth-child(2)]:lg:order-1 [&>*:nth-child(1)]:lg:order-2"
+          >
             <Image
               src={`${s3}partnerLogos/fresh-start-refugee.png`}
               layout="fixed"
@@ -72,14 +74,14 @@ function ProjectRebuild() {
             </p>
 
             <p>
-              <span className={styles.bold}>Fresh Start provides wraparound services</span> such as:
+              <span className="font-bold">Fresh Start provides wraparound services</span> such as:
               initial refugee resettlement efforts, ESL classes, driver’s education and licensing,
               affordable housing, mental health and cultural transition support as well as job
               search assistance.
             </p>
 
             <p>
-              <span className={styles.bold}>
+              <span className="font-bold">
                 Operation Code provides hands-on tech training and ongoing mentorship,
                 apprenticeships and hiring
               </span>{' '}
@@ -91,7 +93,7 @@ function ProjectRebuild() {
             </p>
 
             <p>
-              <span className={styles.bold}>
+              <span className="font-bold">
                 Through ongoing partnerships and hiring partners, ReUP by Globally
               </span>{' '}
               also helps to accelerate and simplify the job hiring process for newly arrived Afghans
@@ -180,7 +182,7 @@ function ProjectRebuild() {
               </OutboundLink>
             </p>
 
-            <div className={styles.donateLinkButtonContainer}>
+            <div className="w-full mt-8 mx-auto text-center">
               <LinkButton href="/donate">Donate</LinkButton>
             </div>
           </div>,

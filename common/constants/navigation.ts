@@ -101,7 +101,7 @@ const aboutUsGroup = {
 
 const getInvolvedGroup = {
   ...getInvolved,
-  sublinks: [chapters, sponsorship, merchStore, contact, donate],
+  sublinks: [chapters, sponsorship, merchStore, contact],
 };
 
 // MARK: Nav items
