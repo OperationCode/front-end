@@ -44,13 +44,19 @@ function Contact() {
         </address>
 
         <address className="w-full mx-auto mb-8 max-w-prose not-italic">
-          <b>You could tweet at us:</b>
+          <b>Connect with us on LinkedIn:</b>
 
           <br />
 
-          <OutboundLink href="https://twitter.com/operation_code" analyticsEventLabel="Twitter">
-            @operation_code
+          <OutboundLink
+            href="https://www.linkedin.com/company/operationcode/"
+            analyticsEventLabel="LinkedIn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+           LinkedIn
           </OutboundLink>
+
         </address>
 
         <address className="w-full mx-auto mb-8 max-w-prose not-italic">
@@ -61,10 +67,13 @@ function Contact() {
           <span>
             Operation Code
             <br />
-            818 SW Third Avenue, #221-1090,
+            1631 NE Broadway St. #2185
             <br />
-            Portland, OR 97204
+            Portland, OR, 97232-1425
+            <br />
+            United States
           </span>
+
         </address>
       </HeroBanner>
     </div>
