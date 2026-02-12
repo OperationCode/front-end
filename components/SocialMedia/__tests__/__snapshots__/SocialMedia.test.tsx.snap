@@ -10,11 +10,6 @@ exports[`SocialMedia > should render with no props passed passed 1`] = `
     svg={<ForwardRef />}
   />
   <SocialMediaItem
-    href="https://twitter.com/operation_code"
-    name="Twitter"
-    svg={<ForwardRef />}
-  />
-  <SocialMediaItem
     href="https://www.instagram.com/operation_code/"
     name="Instagram"
     svg={<ForwardRef />}
