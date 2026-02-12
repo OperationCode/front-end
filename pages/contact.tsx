@@ -51,8 +51,6 @@ function Contact() {
           <OutboundLink
             href="https://www.linkedin.com/company/operationcode/"
             analyticsEventLabel="LinkedIn"
-            target="_blank"
-            rel="noopener noreferrer"
           >
            LinkedIn
           </OutboundLink>
