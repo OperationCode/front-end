@@ -52,9 +52,8 @@ function Contact() {
             href="https://www.linkedin.com/company/operationcode/"
             analyticsEventLabel="LinkedIn"
           >
-           LinkedIn
+            LinkedIn
           </OutboundLink>
-
         </address>
 
         <address className="w-full mx-auto mb-8 max-w-prose not-italic">
@@ -71,7 +70,6 @@ function Contact() {
             <br />
             United States
           </span>
-
         </address>
       </HeroBanner>
     </div>
