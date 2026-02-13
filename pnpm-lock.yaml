@@ -51,8 +51,8 @@ importers:
         specifier: ^0.12.2
         version: 0.12.2
       lodash:
-        specifier: ^4.17.21
-        version: 4.17.21
+        specifier: ^4.17.23
+        version: 4.17.23
       logrocket:
         specifier: ^10.1.0
         version: 10.1.0
@@ -98,7 +98,7 @@ importers:
     devDependencies:
       '@operation_code/eslint-plugin-custom-rules':
         specifier: ^1.0.1
-        version: 1.0.1(lodash@4.17.21)
+        version: 1.0.1(lodash@4.17.23)
       '@playwright/test':
         specifier: ^1.56.1
         version: 1.56.1
@@ -5785,8 +5785,8 @@ packages:
   lodash.merge@4.6.2:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
 
-  lodash@4.17.21:
-    resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
+  lodash@4.17.23:
+    resolution: {integrity: sha512-LgVTMpQtIopCi79SJeDiP0TfWi5CNEc/L/aRdTh3yIvmZXTnheWpKjSZhnvMl8iXbC1tFg9gdHHDMLoV7CnG+w==}
 
   log-symbols@4.1.0:
     resolution: {integrity: sha512-8XPvpAA8uyhfteu8pIvQxpJZ7SYYdpUivZpGy6sFsBuKRY/7rQGavedeB8aK+Zkyq6upMFVL/9AW6vOYzfRyLg==}
@@ -7029,6 +7029,10 @@ packages:
   sax@1.4.3:
     resolution: {integrity: sha512-yqYn1JhPczigF94DMS+shiDMjDowYO6y9+wB/4WgO0Y19jWYk0lQ4tuG5KI7kj4FTp1wxPj5IFfcrz/s1c3jjQ==}
 
+  sax@1.4.4:
+    resolution: {integrity: sha512-1n3r/tGXO6b6VXMdFT54SHzT9ytu9yr7TaELowdYpMqY/Ao7EnlQGmAQ1+RatX7Tkkdm6hONI2owqNx2aZj5Sw==}
+    engines: {node: '>=11.0.0'}
+
   saxes@6.0.0:
     resolution: {integrity: sha512-xAg7SOnEhrm5zI3puOOKyy1OMcMlIJZYNJY7xLBwSze0UjhPLnWfj2GF2EpT0jmzaJKIWKHLsaSSajf35bcYnA==}
     engines: {node: '>=v12.22.7'}
@@ -7460,6 +7464,7 @@ packages:
   tar@6.2.1:
     resolution: {integrity: sha512-DZ4yORTwrbTj/7MZYq2w+/ZFdI6OZ/f9SFHR+71gIVUZhOQPHzVCLpvRnPgyaMpfWxxk/4ONva3GQSyNIKRv6A==}
     engines: {node: '>=10'}
+    deprecated: Old versions of tar are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exhorbitant rates) by contacting i@izs.me
 
   telejson@7.2.0:
     resolution: {integrity: sha512-1QTEcJkJEhc8OnStBx/ILRu5J2p0GjvWsBx56bmZRqnrkdBMUe+nX92jxV+p3dB4CP6PZCdJMQJwCggkNBMzkQ==}
@@ -8019,6 +8024,7 @@ packages:
   whatwg-encoding@3.1.1:
     resolution: {integrity: sha512-6qN4hJdMwfYBtE3YBTTHhoeuUrDBPZmbQaxWAqSALV/MeEnR5z1xd8UKud2RAkFoPkmB+hli1TZSnyi84xz1vQ==}
     engines: {node: '>=18'}
+    deprecated: Use @exodus/bytes instead for a more spec-conformant and faster implementation
 
   whatwg-mimetype@4.0.0:
     resolution: {integrity: sha512-QaKxh0eNIi2mE9p2vEdzfagOKHCcj1pJ56EEHGQOVxp8r9/iszLUUV7v89x9O1p/T+NlTM5W7jW6+cz4Fq1YVg==}
@@ -9437,9 +9443,9 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.19.1
 
-  '@operation_code/eslint-plugin-custom-rules@1.0.1(lodash@4.17.21)':
+  '@operation_code/eslint-plugin-custom-rules@1.0.1(lodash@4.17.23)':
     dependencies:
-      lodash: 4.17.21
+      lodash: 4.17.23
 
   '@pkgjs/parseargs@0.11.0':
     optional: true
@@ -10188,7 +10194,7 @@ snapshots:
   '@storybook/addon-controls@7.6.20(@types/react-dom@18.3.7(@types/react@18.3.26))(@types/react@18.3.26)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@storybook/blocks': 7.6.20(@types/react-dom@18.3.7(@types/react@18.3.26))(@types/react@18.3.26)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      lodash: 4.17.21
+      lodash: 4.17.23
       ts-dedent: 2.2.0
     transitivePeerDependencies:
       - '@types/react'
@@ -10360,7 +10366,7 @@ snapshots:
       '@types/lodash': 4.17.20
       color-convert: 2.0.1
       dequal: 2.0.3
-      lodash: 4.17.21
+      lodash: 4.17.23
       markdown-to-jsx: 7.7.17(react@18.3.1)
       memoizerific: 1.11.3
       polished: 4.3.1
@@ -10537,7 +10543,7 @@ snapshots:
       cross-spawn: 7.0.6
       globby: 11.1.0
       jscodeshift: 0.15.2(@babel/preset-env@7.28.5(@babel/core@7.28.5))
-      lodash: 4.17.21
+      lodash: 4.17.23
       prettier: 2.8.8
       recast: 0.23.11
     transitivePeerDependencies:
@@ -10632,7 +10638,7 @@ snapshots:
       express: 4.21.2
       fs-extra: 11.3.2
       globby: 11.1.0
-      lodash: 4.17.21
+      lodash: 4.17.23
       open: 8.4.2
       pretty-hrtime: 1.0.3
       prompts: 2.4.2
@@ -10685,7 +10691,7 @@ snapshots:
 
   '@storybook/csf@0.0.1':
     dependencies:
-      lodash: 4.17.21
+      lodash: 4.17.23
 
   '@storybook/csf@0.1.13':
     dependencies:
@@ -10701,7 +10707,7 @@ snapshots:
       '@types/doctrine': 0.0.3
       assert: 2.1.0
       doctrine: 3.0.0
-      lodash: 4.17.21
+      lodash: 4.17.23
     transitivePeerDependencies:
       - encoding
       - supports-color
@@ -10719,7 +10725,7 @@ snapshots:
       '@storybook/theming': 7.6.17(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@storybook/types': 7.6.17
       dequal: 2.0.3
-      lodash: 4.17.21
+      lodash: 4.17.23
       memoizerific: 1.11.3
       store2: 2.14.4
       telejson: 7.2.0
@@ -10739,7 +10745,7 @@ snapshots:
       '@storybook/theming': 7.6.20(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@storybook/types': 7.6.20
       dequal: 2.0.3
-      lodash: 4.17.21
+      lodash: 4.17.23
       memoizerific: 1.11.3
       store2: 2.14.4
       telejson: 7.2.0
@@ -10885,7 +10891,7 @@ snapshots:
       '@storybook/types': 7.6.17
       '@types/qs': 6.14.0
       dequal: 2.0.3
-      lodash: 4.17.21
+      lodash: 4.17.23
       memoizerific: 1.11.3
       qs: 6.14.0
       synchronous-promise: 2.0.17
@@ -10902,7 +10908,7 @@ snapshots:
       '@storybook/types': 7.6.20
       '@types/qs': 6.14.0
       dequal: 2.0.3
-      lodash: 4.17.21
+      lodash: 4.17.23
       memoizerific: 1.11.3
       qs: 6.14.0
       synchronous-promise: 2.0.17
@@ -10947,7 +10953,7 @@ snapshots:
       acorn-walk: 7.2.0
       escodegen: 2.1.0
       html-tags: 3.3.1
-      lodash: 4.17.21
+      lodash: 4.17.23
       prop-types: 15.8.1
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
@@ -11895,7 +11901,7 @@ snapshots:
       '@types/node': 14.18.63
       abort-controller: 3.0.0
       abortcontroller-polyfill: 1.7.8
-      lodash: 4.17.21
+      lodash: 4.17.23
       node-fetch: 2.7.0
     transitivePeerDependencies:
       - encoding
@@ -13326,7 +13332,7 @@ snapshots:
   eslint-plugin-lodash@7.4.0(eslint@8.57.1):
     dependencies:
       eslint: 8.57.1
-      lodash: 4.17.21
+      lodash: 4.17.23
 
   eslint-plugin-playwright@2.3.0(eslint@8.57.1):
     dependencies:
@@ -13386,7 +13392,7 @@ snapshots:
       esquery: 1.6.0
       indent-string: 4.0.0
       is-builtin-module: 3.2.1
-      lodash: 4.17.21
+      lodash: 4.17.23
       pluralize: 8.0.0
       read-pkg-up: 7.0.1
       regexp-tree: 0.1.27
@@ -13779,7 +13785,7 @@ snapshots:
       '@types/hoist-non-react-statics': 3.3.7(@types/react@18.3.26)
       deepmerge: 2.2.1
       hoist-non-react-statics: 3.3.2
-      lodash: 4.17.21
+      lodash: 4.17.23
       lodash-es: 4.17.21
       react: 18.3.1
       react-fast-compare: 2.0.4
@@ -14072,7 +14078,7 @@ snapshots:
     dependencies:
       '@types/html-minifier-terser': 6.1.0
       html-minifier-terser: 6.1.0
-      lodash: 4.17.21
+      lodash: 4.17.23
       pretty-error: 4.0.0
       tapable: 2.3.0
     optionalDependencies:
@@ -14758,7 +14764,7 @@ snapshots:
 
   lodash.merge@4.6.2: {}
 
-  lodash@4.17.21: {}
+  lodash@4.17.23: {}
 
   log-symbols@4.1.0:
     dependencies:
@@ -14978,7 +14984,7 @@ snapshots:
   needle@3.3.1:
     dependencies:
       iconv-lite: 0.6.3
-      sax: 1.4.3
+      sax: 1.4.4
     optional: true
 
   negotiator@0.6.3: {}
@@ -15541,7 +15547,7 @@ snapshots:
 
   pretty-error@4.0.0:
     dependencies:
-      lodash: 4.17.21
+      lodash: 4.17.23
       renderkid: 3.0.0
 
   pretty-format@27.5.1:
@@ -15941,7 +15947,7 @@ snapshots:
       css-select: 4.3.0
       dom-converter: 0.2.0
       htmlparser2: 6.1.0
-      lodash: 4.17.21
+      lodash: 4.17.23
       strip-ansi: 6.0.1
 
   require-context.macro@1.2.2(babel-plugin-macros@3.1.0):
@@ -16092,6 +16098,9 @@ snapshots:
       webpack: 5.102.1(@swc/core@1.15.1)(esbuild@0.18.20)
 
   sax@1.4.3: {}
+
+  sax@1.4.4:
+    optional: true
 
   saxes@6.0.0:
     dependencies:
@@ -17107,7 +17116,7 @@ snapshots:
     dependencies:
       axios: 0.27.2(debug@4.3.4)
       joi: 17.13.3
-      lodash: 4.17.21
+      lodash: 4.17.23
       minimist: 1.2.8
       rxjs: 7.8.2
     transitivePeerDependencies:
@@ -17137,7 +17146,7 @@ snapshots:
       chalk: 4.1.2
       commander: 6.2.1
       gzip-size: 6.0.0
-      lodash: 4.17.21
+      lodash: 4.17.23
       opener: 1.5.2
       sirv: 1.0.19
       ws: 7.5.10
