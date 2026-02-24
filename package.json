@@ -125,7 +125,7 @@
     "react-test-renderer": "^18.2.0",
     "require-context.macro": "^1.2.2",
     "start-server-and-test": "^1.14.0",
-    "storybook": "^7.4.1",
+    "storybook": "^7.6.21",
     "style-loader": "^3.3.1",
     "tailwindcss": "^4.1.17",
     "typescript": "^5.9.3",
