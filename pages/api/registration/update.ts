@@ -12,6 +12,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   const email = req.cookies?.opCodeApplicantEmail;
 
+  // The cookie is cleared on the final successful step (when all fields are filled).
+  // Additional PATCH requests can still arrive after that (e.g. user double-clicking),
+  // so we need to bail out early rather than querying Airtable with an undefined email.
+  if (!email) {
+    return res.status(401).json({ message: 'Missing registration cookie' });
+  }
+
   try {
     // Search for a record with the relevant email
     const records = await base(AIR_TABLE_TABLE_NAME)
