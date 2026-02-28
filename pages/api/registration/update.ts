@@ -12,6 +12,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   const email = req.cookies?.opCodeApplicantEmail;
 
+  // The cookie is cleared on the final successful step (when all fields are filled).
+  // Additional PATCH requests can still arrive after that (e.g. user double-clicking),
+  // so we need to bail out early rather than querying Airtable with an undefined email.
+  if (!email) {
+    return res.status(401).json({ message: 'Missing registration cookie' });
+  }
+
   try {
     // Search for a record with the relevant email
     const records = await base(AIR_TABLE_TABLE_NAME)
@@ -96,10 +103,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       return res.status(200).json({ message: 'Success' });
     }
 
-    // No record found, add a new row to the table
-    return res
-      .writeHead(404, { Location: '/' })
-      .json({ message: `No record found for this email (${email})` });
+    // No record found — clear the stale cookie so the page guard redirects to /
+    res.setHeader('Set-Cookie', [
+      `opCodeApplicantEmail=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT`,
+    ]);
+    return res.status(404).json({ message: `No record found for this email (${email})` });
   } catch (error) {
     console.error('Error with /api/registration/update PATCH request:', error);
     return res.status(500).json({ message: 'Server Error' });
