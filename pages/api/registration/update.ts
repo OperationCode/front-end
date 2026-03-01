@@ -98,6 +98,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
       return res.status(200).json({ message: 'Success' });
     } else {
+      // Clear the stale cookie so the /join/form page guard redirects to /join
+      res.setHeader('Set-Cookie', [
+        `opCodeApplicantEmail=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT`,
+      ]);
       return res.status(404).json({ message: `No record found for this email (${email})` });
     }
   } catch (error) {
