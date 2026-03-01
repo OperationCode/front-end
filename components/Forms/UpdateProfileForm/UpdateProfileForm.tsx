@@ -84,17 +84,17 @@ function UpdateProfileForm({
       await updateUser(values);
     } catch (error) {
       const axiosError = error as AxiosError;
-      if (axiosError.response?.status === 404) {
-        // Record no longer exists — cookie was cleared by the API, redirect to re-register
-        push('/join');
+      if (axiosError.response?.status === 401 || axiosError.response?.status === 404) {
+        push('/join?registrationError=true');
         return;
       }
       throw error;
     }
   };
 
-  const goToProfile = async () => {
+  const goToProfile = async (values: UpdateProfileFormShape) => {
     try {
+      await updateUser({ ...values, finalize: true });
       push('/join/success');
     } catch (error) {
       LogRocket.captureException(error as Error);

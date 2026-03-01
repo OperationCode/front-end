@@ -19,6 +19,8 @@ MilitaryDetails.initialValues = {
   payGrade: '',
 };
 
+export type MilitaryDetailsFormShape = typeof MilitaryDetails.initialValues;
+
 interface MilitaryDetailsProps {
   isSubmitting: boolean;
 }
