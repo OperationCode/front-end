@@ -85,8 +85,7 @@ function UpdateProfileForm({
     } catch (error) {
       const axiosError = error as AxiosError;
       if (axiosError.response?.status === 401 || axiosError.response?.status === 404) {
-        push('/join?registrationError=true');
-        return;
+        return push('/join?registrationError=true');
       }
       throw error;
     }
