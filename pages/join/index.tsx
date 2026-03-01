@@ -1,10 +1,11 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { gtag } from 'common/utils/thirdParty/gtag';
 import Head from 'components/head';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
 import { RegistrationForm } from 'components/Forms/RegistrationForm/RegistrationForm';
+import Modal from 'components/Modal/Modal';
 import Link from 'next/link';
 
 const pageTitle = 'Join';
@@ -12,11 +13,18 @@ const pageTitle = 'Join';
 const profileUpdateURL = '/join/form';
 
 export default function Join() {
-  const { prefetch, push } = useRouter();
+  const { prefetch, push, query } = useRouter();
+  const [isErrorModalOpen, setIsErrorModalOpen] = useState(false);
 
   useEffect(() => {
     prefetch(profileUpdateURL);
   }, []);
+
+  useEffect(() => {
+    if (query.registrationError) {
+      setIsErrorModalOpen(true);
+    }
+  }, [query.registrationError]);
 
   const handleSuccess = () => {
     gtag.conversionEvent({ adId: '9ZvVCOOFmrkBEK-Rnp4D', category: 'sign_up' });
@@ -50,6 +58,28 @@ export default function Join() {
       </HeroBanner>
 
       <Content theme="gray" columns={[<RegistrationForm key="form" onSuccess={handleSuccess} />]} />
+
+      <Modal
+        isOpen={isErrorModalOpen}
+        onRequestClose={() => setIsErrorModalOpen(false)}
+        screenReaderLabel="Registration error"
+      >
+        <div className="space-y-4 text-center max-w-md">
+          <h2 className="text-xl font-bold">Registration Incomplete</h2>
+          <p>
+            It looks like we&apos;re missing information from the first step of registration. Please
+            complete the form below to get started.
+          </p>
+          <p>
+            If you&apos;ve already completed this step and were unexpectedly redirected here,
+            something may be wrong on our end. Please email us at{' '}
+            <a href="mailto:staff@operationcode.org?subject=Registration Issue">
+              staff@operationcode.org
+            </a>{' '}
+            so we can help.
+          </p>
+        </div>
+      </Modal>
     </>
   );
 }

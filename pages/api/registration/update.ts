@@ -12,7 +12,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   const email = req.cookies?.opCodeApplicantEmail;
 
-  // The cookie is cleared on the final successful step (when all fields are filled).
+  // The cookie is cleared when the client sends `finalize: true` on the final submit.
   // Additional PATCH requests can still arrive after that (e.g. user double-clicking),
   // so we need to bail out early rather than querying Airtable with an undefined email.
   if (!email) {
@@ -87,11 +87,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         }),
       );
 
-      /**
-       * If all fields are defined, the row is done! 🎉
-       * Now, we remove the cookie maintaining form state.
-       */
-      if (Object.values(payload).filter(val => !val).length === 0) {
+      if (req.body.finalize) {
         res.setHeader('Set-Cookie', [
           `opCodeApplicantEmail=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT`,
         ]);
@@ -101,13 +97,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       await base(AIR_TABLE_TABLE_NAME).update(relevantRecord.id, parsedPayload);
 
       return res.status(200).json({ message: 'Success' });
+    } else {
+      // Clear the stale cookie so the /join/form page guard redirects to /join
+      res.setHeader('Set-Cookie', [
+        `opCodeApplicantEmail=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT`,
+      ]);
+      return res.status(404).json({ message: `No record found for this email (${email})` });
     }
-
-    // No record found — clear the stale cookie so the page guard redirects to /
-    res.setHeader('Set-Cookie', [
-      `opCodeApplicantEmail=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT`,
-    ]);
-    return res.status(404).json({ message: `No record found for this email (${email})` });
   } catch (error) {
     console.error('Error with /api/registration/update PATCH request:', error);
     return res.status(500).json({ message: 'Server Error' });
