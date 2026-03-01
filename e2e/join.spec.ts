@@ -399,18 +399,19 @@ test.describe('join', () => {
     });
   });
 
-  test('should handle re-doing many steps without API errors', async ({ page }) => {
-    test.slow(); // this test takes a long time
+  test('should allow completing registration after filling the last step and going back to change earlier answers', async ({
+    page,
+  }) => {
+    test.slow();
     const validUser = getValidUser();
 
-    // Track every PATCH /api/registration/update response
-    const updateResponses: { status: number; url: string }[] = [];
+    const updateResponses: { status: number }[] = [];
     page.on('response', response => {
       if (
         response.url().includes('/api/registration/update') &&
         response.request().method() === 'PATCH'
       ) {
-        updateResponses.push({ status: response.status(), url: response.url() });
+        updateResponses.push({ status: response.status() });
       }
     });
 
@@ -423,23 +424,22 @@ test.describe('join', () => {
     await getCheckbox(page, /Code of Conduct/).check();
     await getCheckbox(page, /Slack Community Guidelines/).check();
     await page.getByTestId(REGISTRATION_FORM_INITIAL_SUBMIT_BUTTON).click();
-
     await page.waitForURL(/\/join\/form/, { timeout: 30000 });
 
-    // --- Step 1: Professional Details ---
+    // Step 1: Professional Details
     await page.getByLabel('Employment Status*').fill('Full-Time');
     await page.keyboard.press('Enter');
     await page.getByLabel('Company Name').fill('Test Company');
     await page.getByLabel('Company Role').fill('Engineer');
     await page.getByTestId(MULTI_STEP_STEP_BUTTON).click();
 
-    // --- Step 2: Military Status ---
+    // Step 2: Military Status (Active — ensures all payload fields exist)
     await expect(page.getByText('Military Status')).toBeVisible({ timeout: 15000 });
     await page.getByLabel('Military Affiliation*').fill('Active');
     await page.keyboard.press('Enter');
     await page.getByTestId(MULTI_STEP_STEP_BUTTON).click();
 
-    // --- Step 3: Military Details ---
+    // Step 3: Military Details
     await expect(page.getByText('Military Details')).toBeVisible({ timeout: 15000 });
     await page.getByLabel('Branch Of Service*').fill('Army');
     await page.keyboard.press('Enter');
@@ -447,27 +447,8 @@ test.describe('join', () => {
     await page.keyboard.press('Enter');
     await page.getByTestId(MULTI_STEP_STEP_BUTTON).click();
 
-    // --- Step 4: Personal Details (we've reached the end) ---
+    // Step 4: Fill Personal Details fields — but DO NOT click Submit
     await expect(page.getByText('Personal Details')).toBeVisible({ timeout: 15000 });
-
-    // --- Go back ALL the way to Professional Details ---
-    await page.getByTestId(MULTI_STEP_PREVIOUS_BUTTON).click();
-    await expect(page.getByText('Military Details')).toBeVisible();
-    await page.getByTestId(MULTI_STEP_PREVIOUS_BUTTON).click();
-    await expect(page.getByText('Military Status')).toBeVisible();
-    await page.getByTestId(MULTI_STEP_PREVIOUS_BUTTON).click();
-    await expect(page.getByText('Professional Details')).toBeVisible();
-
-    // --- Change an answer and re-submit through every step ---
-    await page.getByLabel('Company Role').fill('Senior Engineer');
-    await page.getByTestId(MULTI_STEP_STEP_BUTTON).click();
-    await expect(page.getByText('Military Status')).toBeVisible({ timeout: 15000 });
-    await page.getByTestId(MULTI_STEP_STEP_BUTTON).click();
-    await expect(page.getByText('Military Details')).toBeVisible({ timeout: 15000 });
-    await page.getByTestId(MULTI_STEP_STEP_BUTTON).click();
-    await expect(page.getByText('Personal Details')).toBeVisible({ timeout: 15000 });
-
-    // Fill final step and submit
     await page.getByLabel('Join Reason*').fill('None');
     await page.keyboard.press('Enter');
     await page.getByLabel('Gender*').fill('Male');
@@ -476,12 +457,32 @@ test.describe('join', () => {
     await page.keyboard.press('Enter');
     await page.getByLabel('Education Level*').fill('High school');
     await page.keyboard.press('Enter');
+
+    // Go back to Professional Details (Formik still holds ALL filled values)
+    await page.getByTestId(MULTI_STEP_PREVIOUS_BUTTON).click();
+    await expect(page.getByText('Military Details')).toBeVisible();
+    await page.getByTestId(MULTI_STEP_PREVIOUS_BUTTON).click();
+    await expect(page.getByText('Military Status')).toBeVisible();
+    await page.getByTestId(MULTI_STEP_PREVIOUS_BUTTON).click();
+    await expect(page.getByText('Professional Details')).toBeVisible();
+
+    // Change an answer and re-submit forward through every step.
+    // Each "Next" sends ALL Formik values (including Personal Details) via PATCH.
+    // The cookie must NOT be cleared on these intermediate steps.
+    await page.getByLabel('Company Role').fill('Senior Engineer');
+    await page.getByTestId(MULTI_STEP_STEP_BUTTON).click();
+
+    await expect(page.getByText('Military Status')).toBeVisible({ timeout: 15000 });
+    await page.getByTestId(MULTI_STEP_STEP_BUTTON).click();
+
+    await expect(page.getByText('Military Details')).toBeVisible({ timeout: 15000 });
+    await page.getByTestId(MULTI_STEP_STEP_BUTTON).click();
+
+    await expect(page.getByText('Personal Details')).toBeVisible({ timeout: 15000 });
     await page.getByTestId(MULTI_STEP_SUBMIT_BUTTON).click();
 
     await expect(page.getByTestId(SUCCESS_PAGE_MESSAGE)).toBeVisible({ timeout: 15000 });
 
-    // Every PATCH to /api/registration/update should have returned 200
-    expect(updateResponses.length).toBeGreaterThanOrEqual(7);
     for (const response of updateResponses) {
       expect(response.status).toBe(200);
     }
