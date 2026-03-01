@@ -80,7 +80,17 @@ function UpdateProfileForm({
       }
     }
 
-    await updateUser(values);
+    try {
+      await updateUser(values);
+    } catch (error) {
+      const axiosError = error as AxiosError;
+      if (axiosError.response?.status === 404) {
+        // Record no longer exists — cookie was cleared by the API, redirect to re-register
+        push('/join');
+        return;
+      }
+      throw error;
+    }
   };
 
   const goToProfile = async () => {

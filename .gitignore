@@ -91,3 +91,9 @@ public/sitemap.xml
 /blob-report/
 /playwright/.cache/
 /playwright/.auth/
+
+# TypeScript build info
+tsconfig.tsbuildinfo
+
+# MCP config (local tool settings)
+.mcp.json
