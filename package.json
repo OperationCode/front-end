@@ -39,7 +39,7 @@
     "@storybook/blocks": "^7.4.1",
     "@types/airtable": "^0.10.5",
     "airtable": "^0.12.2",
-    "axios": "^1.12.2",
+    "axios": "^1.13.5",
     "cva": "^1.0.0-beta.4",
     "fast-xml-parser": "^3.21.1",
     "fingerprintjs2": "^2.1.4",
