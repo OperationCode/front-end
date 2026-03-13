@@ -46,7 +46,7 @@
     "fontfaceobserver": "^2.3.0",
     "formik": "^2.4.6",
     "intersection-observer": "^0.12.2",
-    "lodash": "^4.17.21",
+    "lodash": "^4.17.23",
     "logrocket": "^10.1.0",
     "logrocket-react": "^6.0.3",
     "next": "^12.3.1",
