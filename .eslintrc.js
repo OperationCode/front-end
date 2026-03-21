@@ -2,6 +2,7 @@
  * @type {import("eslint").Linter.Config}
  */
 module.exports = {
+  ignorePatterns: ['next-env.d.ts'],
   extends: [
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:react/recommended',
