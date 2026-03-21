@@ -1,4 +1,4 @@
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 
 /**
  * Used to create fully-rendered snapshot test.
@@ -8,6 +8,6 @@ import renderer from 'react-test-renderer';
  * @param {*} Component
  */
 export default Component => {
-  const tree = renderer.create(Component).toJSON();
-  expect(tree).toMatchSnapshot();
+  const { container } = render(Component);
+  expect(container).toMatchSnapshot();
 };

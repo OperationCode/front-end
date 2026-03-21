@@ -1,9 +1,9 @@
-import createShallowSnapshotTest from 'test-utils/createShallowSnapshotTest';
+import createSnapshotTest from 'test-utils/createSnapshotTest';
 
 import FontSection from '../FontSection';
 
 describe('FontSection', () => {
   it('should render with required props', () => {
-    createShallowSnapshotTest(<FontSection />);
+    createSnapshotTest(<FontSection />);
   });
 });

@@ -1,5 +1,5 @@
 import { fireEvent, render } from '@testing-library/react';
-import createShallowSnapshotTest from 'test-utils/createShallowSnapshotTest';
+import createSnapshotTest from 'test-utils/createSnapshotTest';
 import { mobileNavItems } from 'common/constants/navigation';
 import { CLOSE_BUTTON } from 'common/constants/testIDs';
 import noop from 'lodash/noop';
@@ -8,7 +8,7 @@ import NavMobile from '../NavMobile';
 
 describe('NavMobile', () => {
   it('should render', () =>
-    createShallowSnapshotTest(
+    createSnapshotTest(
       <NavMobile navItems={mobileNavItems} isOpen={false} openMenu={noop} closeMenu={noop} />,
     ));
 

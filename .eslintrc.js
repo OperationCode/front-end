@@ -167,7 +167,7 @@ module.exports = {
         'vitest/consistent-test-it': ['error', { fn: 'it', withinDescribe: 'it' }],
         'vitest/expect-expect': [
           'error',
-          { assertFunctionNames: ['expect', 'createShallowSnapshotTest', 'createSnapshotTest'] },
+          { assertFunctionNames: ['expect', 'createSnapshotTest'] },
         ],
         'vitest/prefer-lowercase-title': ['error', { ignore: ['describe'] }],
         'vitest/no-test-prefixes': 'error',

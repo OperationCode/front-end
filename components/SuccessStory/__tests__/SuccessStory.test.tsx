@@ -1,9 +1,9 @@
-import createShallowSnapshotTest from 'test-utils/createShallowSnapshotTest';
+import createSnapshotTest from 'test-utils/createSnapshotTest';
 import SuccessStory from '../SuccessStory';
 
 describe('SuccessStory', () => {
   it('should render with required props', () => {
-    createShallowSnapshotTest(
+    createSnapshotTest(
       <SuccessStory
         imageSource="image.png"
         quote="Best test of my life!"
