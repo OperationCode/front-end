@@ -35,23 +35,24 @@ function ProjectRebuild() {
           >
             <Image
               src={`${s3}partnerLogos/fresh-start-refugee.png`}
-              layout="fixed"
-              width="100"
-              height="100"
+              alt="Fresh Start Refugee"
+              width={100}
+              height={100}
               priority
             />
             <Image
               src={`${s3}branding/logos/large-blue-logo.png`}
-              layout="intrinsic"
-              width="550"
-              height="100"
+              alt="Operation Code"
+              width={550}
+              height={100}
+              style={{ maxWidth: '100%', height: 'auto' }}
               priority
             />
             <Image
               src={`${s3}partnerLogos/globally_logo.png`}
-              layout="fixed"
-              width="140"
-              height="140"
+              alt="Globally"
+              width={140}
+              height={140}
               priority
             />
           </div>,

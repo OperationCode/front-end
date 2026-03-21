@@ -26,7 +26,7 @@ function ImageCard({
   imageSource,
   isImageFirst = true,
 }: ImageCardPropsType) {
-  const ImageComponent = <Image src={imageSource} alt={alt} layout="fill" objectFit="cover" />;
+  const ImageComponent = <Image src={imageSource} alt={alt} fill style={{ objectFit: 'cover' }} />;
 
   const ContentComponent = (
     <div className="flex flex-col items-center justify-start m-4 overflow-y-auto">{children}</div>

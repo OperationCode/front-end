@@ -163,9 +163,8 @@ const CorporateTraining = () => {
               <Image
                 src={bias.image}
                 alt={bias.alt}
-                layout="fill"
-                objectFit="cover"
-                className="2xl:object-[75%_0%]"
+                fill
+                className="object-cover 2xl:object-[75%_0%]"
               />
             </div>
           </li>

@@ -41,8 +41,8 @@ function FlatCard({ button: Button, children, className, header, image }: FlatCa
               <Image
                 src={image.source}
                 alt={image.alt ?? ''}
-                layout="fill"
-                objectFit="cover"
+                fill
+                style={{ objectFit: 'cover' }}
                 placeholder="blur"
                 blurDataURL={getPlaceholder(194, 194)}
               />
