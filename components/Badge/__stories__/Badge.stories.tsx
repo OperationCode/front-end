@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/nextjs';
 import GithubIcon from 'public/static/images/icons/github_logo.svg';
 import TwitterIcon from 'public/static/images/icons/twitter_logo.svg';
 import PinterestIcon from 'public/static/images/icons/pinterest_logo.svg';

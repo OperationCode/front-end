@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/nextjs';
 import { useState } from 'react';
 import isChromatic from 'chromatic/isChromatic';
 import { descriptions } from 'common/constants/descriptions';

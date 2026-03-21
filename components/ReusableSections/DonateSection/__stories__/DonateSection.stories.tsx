@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/nextjs';
 import DonateSection from '../DonateSection';
 
 type DonateSectionStoryType = StoryObj<FC>;

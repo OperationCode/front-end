@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/nextjs';
 import { descriptions } from 'common/constants/descriptions';
 import ValueCard from '../ValueCard';
 

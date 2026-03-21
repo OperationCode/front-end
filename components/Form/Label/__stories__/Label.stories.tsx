@@ -1,4 +1,4 @@
-import type { StoryFn } from '@storybook/react';
+import type { StoryFn } from '@storybook/nextjs';
 import Label from '../Label';
 
 export default {

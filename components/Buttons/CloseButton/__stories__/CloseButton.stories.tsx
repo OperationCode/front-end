@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/nextjs';
 import CloseButton from '../CloseButton';
 
 type CloseButtonStoryType = StoryObj<typeof CloseButton>;

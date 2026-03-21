@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/nextjs';
 import SponsorsSection from '../SponsorsSection';
 
 type SponsorsSectionStoryType = StoryObj<typeof SponsorsSection>;

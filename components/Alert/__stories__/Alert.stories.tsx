@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/nextjs';
 import Alert from '../Alert';
 
 type AlertStoryType = StoryObj<typeof Alert>;
