@@ -1,65 +1,66 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`FlatCard > should render with many props assigned 1`] = `
-<article
-  className="box-border my-6 mx-4 relative max-w-[400px] test-class"
->
-  <div
-    className="p-8 flex flex-col gap-5 border-4 border-solid border-primary"
+<div>
+  <article
+    class="box-border my-6 mx-4 relative max-w-[400px] test-class"
   >
     <div
-      className="text-center"
+      class="p-8 flex flex-col gap-5 border-4 border-solid border-primary"
     >
-      <h1>
-        Main heading
-      </h1>
-      <h6>
-        Sub heading
-      </h6>
-    </div>
-    <hr
-      className="w-full border-2 border-solid border-primary"
-    />
-    <div>
-      <p>
-        Example content goes here
-      </p>
-      <p>
-        More content goes here
-      </p>
-    </div>
-    <div
-      className="text-center absolute left-0 right-0 -bottom-7 [&>button]:hover:bg-white [&>button]:hover:text-secondary [&>button]:focus-visible:text-primary [&>button]:focus-visible:bg-white [&>a]:hover:bg-white [&>a]:hover:text-secondary [&>a]:focus-visible:bg-white [&>a]:focus-visible:text-secondary "
-    >
-      <a
-        className="font-family-bebas font-bold text-center uppercase text-shadow-[initial] tracking-wide inline-block rounded leading-none border-4 border-solid cursor-pointer py-4 px-3 whitespace-nowrap transition-all duration-200 ease-linear min-w-[175px] focus-visible:bg-transparent hover:bg-transparent disabled:opacity-60 disabled:hover:cursor-not-allowed bg-primary border-primary outline-primary text-secondary focus-visible:text-primary hover:text-primary"
-        href="/"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-        onTouchStart={[Function]}
+      <div
+        class="text-center"
       >
-        Widget Action
-      </a>
+        <h1>
+          Main heading
+        </h1>
+        <h6>
+          Sub heading
+        </h6>
+      </div>
+      <hr
+        class="w-full border-2 border-solid border-primary"
+      />
+      <div>
+        <p>
+          Example content goes here
+        </p>
+        <p>
+          More content goes here
+        </p>
+      </div>
+      <div
+        class="text-center absolute left-0 right-0 -bottom-7 [&>button]:hover:bg-white [&>button]:hover:text-secondary [&>button]:focus-visible:text-primary [&>button]:focus-visible:bg-white [&>a]:hover:bg-white [&>a]:hover:text-secondary [&>a]:focus-visible:bg-white [&>a]:focus-visible:text-secondary "
+      >
+        <a
+          class="font-family-bebas font-bold text-center uppercase text-shadow-[initial] tracking-wide inline-block rounded leading-none border-4 border-solid cursor-pointer py-4 px-3 whitespace-nowrap transition-all duration-200 ease-linear min-w-[175px] focus-visible:bg-transparent hover:bg-transparent disabled:opacity-60 disabled:hover:cursor-not-allowed bg-primary border-primary outline-primary text-secondary focus-visible:text-primary hover:text-primary"
+          href="/"
+        >
+          Widget Action
+        </a>
+      </div>
     </div>
-  </div>
-</article>
+  </article>
+</div>
 `;
 
 exports[`FlatCard > should render with required props 1`] = `
-<article
-  className="box-border my-6 mx-4 relative max-w-[400px]"
->
-  <div
-    className="p-8 flex flex-col gap-5 border-4 border-solid border-primary"
+<div>
+  <article
+    class="box-border my-6 mx-4 relative max-w-[400px]"
   >
-    <div>
-      <p>
-        Example content goes here
-      </p>
-      <p>
-        More content goes here
-      </p>
+    <div
+      class="p-8 flex flex-col gap-5 border-4 border-solid border-primary"
+    >
+      <div>
+        <p>
+          Example content goes here
+        </p>
+        <p>
+          More content goes here
+        </p>
+      </div>
     </div>
-  </div>
-</article>
+  </article>
+</div>
 `;

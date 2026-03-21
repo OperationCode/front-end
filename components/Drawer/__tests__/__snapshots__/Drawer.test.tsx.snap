@@ -1,25 +1,29 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Drawer > should render with many props assigned 1`] = `
-<div
-  className="test-class hidden lg:block transition-all ease-in-out duration-1000 fixed top-0 bottom-0 overflow-hidden width-full z-[2] -left-0"
->
+<div>
   <div
-    className="w-full h-full"
+    class="test-class hidden lg:block transition-all ease-in-out duration-1000 fixed top-0 bottom-0 overflow-hidden width-full z-[2] -left-0"
   >
-    Test
+    <div
+      class="w-full h-full"
+    >
+      Test
+    </div>
   </div>
 </div>
 `;
 
 exports[`Drawer > should render with required props 1`] = `
-<div
-  className="hidden lg:block transition-all ease-in-out duration-1000 fixed top-0 bottom-0 overflow-hidden width-full z-[2] -left-full"
->
+<div>
   <div
-    className="w-full h-full"
+    class="hidden lg:block transition-all ease-in-out duration-1000 fixed top-0 bottom-0 overflow-hidden width-full z-[2] -left-full"
   >
-    Test
+    <div
+      class="w-full h-full"
+    >
+      Test
+    </div>
   </div>
 </div>
 `;

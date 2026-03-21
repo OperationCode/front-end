@@ -1,26 +1,23 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`NavListItem > should render with required props passed 1`] = `
-<li
-  className="relative"
->
-  <div
-    className="h-full flex items-center"
+<div>
+  <li
+    class="relative"
   >
-    <ForwardRef(LinkComponent)
-      href="/test"
+    <div
+      class="h-full flex items-center"
     >
       <a
-        className="h-full pl-8 pr-2 w-30 text-secondary fill-current cursor-pointer inline-flex items-center justify-end leading-none transition-all duration-200 ease-linear no-underline hover:text-primary focus-visible:text-primary"
+        class="h-full pl-8 pr-2 w-30 text-secondary fill-current cursor-pointer inline-flex items-center justify-end leading-none transition-all duration-200 ease-linear no-underline hover:text-primary focus-visible:text-primary"
         data-testid="Nav Item Test"
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
+        href="/test"
         role="link"
-        tabIndex={0}
+        tabindex="0"
       >
         Test
       </a>
-    </ForwardRef(LinkComponent)>
-  </div>
-</li>
+    </div>
+  </li>
+</div>
 `;

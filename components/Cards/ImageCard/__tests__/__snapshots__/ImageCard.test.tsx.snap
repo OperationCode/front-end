@@ -1,53 +1,49 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`ImageCard > should render with many props assigned 1`] = `
-<Card
-  className="md:flex-row flex-col md:h-56 md:w-[650px] md:max-w-none p-0 h-auto max-w-xs w-auto [&>*]:flex-[1_1_50%] test"
->
-  <React.Fragment>
+<div>
+  <article
+    class="items-center bg-white [&_svg]:fill-secondary text-secondary flex flex-nowrap justify-around m-4 min-h-[100px] min-w-[100px] shadow-md focus-visible:outline-none md:flex-row flex-col md:h-56 md:w-[650px] md:max-w-none p-0 h-auto max-w-xs w-auto [&>*]:flex-[1_1_50%] test"
+  >
     <div
-      className="flex flex-col items-center justify-start m-4 overflow-y-auto"
+      class="flex flex-col items-center justify-start m-4 overflow-y-auto"
     >
       <p>
         Testing!
       </p>
     </div>
     <div
-      className="relative h-full"
+      class="relative h-full"
     >
-      <MockedNextImage
+      <img
         alt="Test title"
-        layout="fill"
-        objectFit="cover"
         src="/static/images/Family1.jpg"
       />
     </div>
-  </React.Fragment>
-</Card>
+  </article>
+</div>
 `;
 
 exports[`ImageCard > should render with required props 1`] = `
-<Card
-  className="md:flex-row flex-col md:h-56 md:w-[650px] md:max-w-none p-0 h-auto max-w-xs w-auto [&>*]:flex-[1_1_50%]"
->
-  <React.Fragment>
+<div>
+  <article
+    class="items-center bg-white [&_svg]:fill-secondary text-secondary flex flex-nowrap justify-around m-4 min-h-[100px] min-w-[100px] shadow-md focus-visible:outline-none md:flex-row flex-col md:h-56 md:w-[650px] md:max-w-none p-0 h-auto max-w-xs w-auto [&>*]:flex-[1_1_50%]"
+  >
     <div
-      className="relative h-full w-full min-h-[225px]"
+      class="relative h-full w-full min-h-[225px]"
     >
-      <MockedNextImage
+      <img
         alt="Test title"
-        layout="fill"
-        objectFit="cover"
         src="/static/images/Family1.jpg"
       />
     </div>
     <div
-      className="flex flex-col items-center justify-start m-4 overflow-y-auto"
+      class="flex flex-col items-center justify-start m-4 overflow-y-auto"
     >
       <p>
         Testing!
       </p>
     </div>
-  </React.Fragment>
-</Card>
+  </article>
+</div>
 `;

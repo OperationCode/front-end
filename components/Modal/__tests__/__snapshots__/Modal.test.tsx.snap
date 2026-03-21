@@ -58,11 +58,11 @@ exports[`Modal > should render with many props assigned 1`] = `
     </button>
   </div>
   <div
-    aria-describedby="radix-:r5:"
-    aria-labelledby="radix-:r4:"
+    aria-describedby="radix-_r_5_"
+    aria-labelledby="radix-_r_4_"
     class="outline-none bg-white text-secondary flex flex-col flex-nowrap m-4 min-h-24 min-w-24 p-6 fixed items-center justify-center overflow-hidden w-4/5 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[2] shadow-md test-class"
     data-state="open"
-    id="radix-:r3:"
+    id="radix-_r_3_"
     role="dialog"
     style="pointer-events: auto;"
     tabindex="-1"

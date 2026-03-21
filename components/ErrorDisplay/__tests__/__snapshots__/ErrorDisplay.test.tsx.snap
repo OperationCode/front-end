@@ -1,23 +1,25 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`ErrorDisplay > should render with just required props 1`] = `
-<div
-  className="h-screen text-white bg-[url("/static/images/TankFlip.gif")] flex flex-col justify-center w-full  bg-cover items-center"
->
+<div>
   <div
-    className="mx-auto my-4 text-center"
+    class="h-screen text-white bg-[url("/static/images/TankFlip.gif")] flex flex-col justify-center w-full  bg-cover items-center"
   >
-    <h1
-      className="text-6xl text-white"
+    <div
+      class="mx-auto my-4 text-center"
     >
-      404
-      !
-    </h1>
-    <p
-      className="text-2xl text-white"
-    >
-      We're so ashamed. You definitely weren't supposed to see this...
-    </p>
+      <h1
+        class="text-6xl text-white"
+      >
+        404
+        !
+      </h1>
+      <p
+        class="text-2xl text-white"
+      >
+        We're so ashamed. You definitely weren't supposed to see this...
+      </p>
+    </div>
   </div>
 </div>
 `;

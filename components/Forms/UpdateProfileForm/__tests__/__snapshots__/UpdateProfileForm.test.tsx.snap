@@ -1,241 +1,202 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`UpdateProfileForm > should render with required props 1`] = `
-<form
-  className="flex flex-col gap-4 w-full max-w-prose px-4 !m-0"
-  noValidate={true}
-  onReset={[Function]}
-  onSubmit={[Function]}
->
-  <h3
-    className="text-center"
+<div>
+  <form
+    class="flex flex-col gap-4 w-full max-w-prose px-4 !m-0"
+    novalidate=""
   >
-    Professional Details
-  </h3>
-  <div
-    className="flex flex-col items-center"
-  >
-    <label
-      htmlFor="steps-indicator"
+    <h3
+      class="text-center"
     >
-      0
-      /
-      3
-       Complete
-    </label>
-    <progress
-      id="steps-indicator"
-      max={3}
-      value={0}
-    >
-      0
-      %
-    </progress>
-  </div>
-  <div
-    className="flex flex-col gap-4"
-  >
+      Professional Details
+    </h3>
     <div
-      className="min-w-64 w-full"
+      class="flex flex-col items-center"
     >
       <label
-        className="text-secondary"
-        data-testid="LABEL"
-        htmlFor="employmentStatus"
+        for="steps-indicator"
       >
-        Employment Status*
+        0
+        /
+        3
+         Complete
       </label>
-      <div
-        className="lg:relative"
+      <progress
+        id="steps-indicator"
+        max="3"
+        value="0"
       >
-        <div
-          className="css-2b097c-container"
-          onKeyDown={[Function]}
+        0
+        %
+      </progress>
+    </div>
+    <div
+      class="flex flex-col gap-4"
+    >
+      <div
+        class="min-w-64 w-full"
+      >
+        <label
+          class="text-secondary"
+          data-testid="LABEL"
+          for="employmentStatus"
         >
-          <span
-            aria-atomic="false"
-            aria-live="polite"
-            aria-relevant="additions text"
-            className="css-1f43avz-a11yText-A11yText"
-          />
+          Employment Status*
+        </label>
+        <div
+          class="lg:relative"
+        >
           <div
-            className="css-19g9ivk-control"
-            onMouseDown={[Function]}
-            onTouchEnd={[Function]}
+            class="css-b62m3t-container"
           >
+            <span
+              class="css-1f43avz-a11yText-A11yText"
+              id="react-select-employmentStatus-live-region"
+            />
+            <span
+              aria-atomic="false"
+              aria-live="polite"
+              aria-relevant="additions text"
+              class="css-1f43avz-a11yText-A11yText"
+              role="log"
+            />
             <div
-              className="css-1hwfws3"
+              class="css-1mas6x-control"
             >
               <div
-                className="css-1wa3eu0-placeholder"
-              >
-                Select...
-              </div>
-              <div
-                className="css-1g6gooi"
+                class="css-hlgwow"
               >
                 <div
-                  className=""
-                  style={
-                    {
-                      "display": "inline-block",
-                    }
-                  }
+                  class="css-1jqq78o-placeholder"
+                  id="react-select-employmentStatus-placeholder"
+                >
+                  Select...
+                </div>
+                <div
+                  class="css-19bb58m"
+                  data-value=""
                 >
                   <input
+                    aria-activedescendant=""
                     aria-autocomplete="list"
-                    autoCapitalize="none"
-                    autoComplete="off"
-                    autoCorrect="off"
-                    disabled={false}
+                    aria-describedby="react-select-employmentStatus-placeholder"
+                    aria-expanded="false"
+                    aria-haspopup="true"
+                    autocapitalize="none"
+                    autocomplete="off"
+                    autocorrect="off"
+                    class=""
                     id="employmentStatus"
-                    onBlur={[Function]}
-                    onChange={[Function]}
-                    onFocus={[Function]}
-                    spellCheck="false"
-                    style={
-                      {
-                        "background": 0,
-                        "border": 0,
-                        "boxSizing": "content-box",
-                        "color": "inherit",
-                        "fontSize": "inherit",
-                        "label": "input",
-                        "opacity": 1,
-                        "outline": 0,
-                        "padding": 0,
-                        "width": "1px",
-                      }
-                    }
-                    tabIndex="0"
+                    role="combobox"
+                    spellcheck="false"
+                    style="color: inherit; background: 0px; opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                    tabindex="0"
                     type="text"
                     value=""
                   />
-                  <div
-                    style={
-                      {
-                        "height": 0,
-                        "left": 0,
-                        "overflow": "scroll",
-                        "position": "absolute",
-                        "top": 0,
-                        "visibility": "hidden",
-                        "whiteSpace": "pre",
-                      }
-                    }
-                  />
+                </div>
+              </div>
+              <div
+                class="css-1wy0on6"
+              >
+                <span
+                  class="css-1u9des2-indicatorSeparator"
+                />
+                <div
+                  aria-hidden="true"
+                  class="css-itfj09-indicatorContainer"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="css-tj5bde-Svg"
+                    focusable="false"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    width="20"
+                  >
+                    <path
+                      d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
+                    />
+                  </svg>
                 </div>
               </div>
             </div>
-            <div
-              className="css-1wy0on6"
-            >
-              <span
-                className="css-1okebmr-indicatorSeparator"
-              />
-              <div
-                aria-hidden="true"
-                className="css-1vtn1ro-indicatorContainer"
-                onMouseDown={[Function]}
-                onTouchEnd={[Function]}
-              >
-                <svg
-                  aria-hidden="true"
-                  className="css-tj5bde-Svg"
-                  focusable="false"
-                  height={20}
-                  viewBox="0 0 20 20"
-                  width={20}
-                >
-                  <path
-                    d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
-                  />
-                </svg>
-              </div>
-            </div>
+            <input
+              name="employmentStatus"
+              type="hidden"
+              value=""
+            />
           </div>
+        </div>
+      </div>
+      <div
+        data-testid="INPUT"
+      >
+        <label
+          class="text-secondary"
+          data-testid="LABEL"
+          for="companyName"
+        >
+          Company Name
+        </label>
+        <div
+          class="flex flex-col items-stretch lg:relative"
+          data-testid="INPUT_FEEDBACK_GROUPING"
+        >
           <input
-            name="employmentStatus"
-            type="hidden"
+            class="border border-secondary/50 rounded-sm text-lg p-2 disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
+            id="companyName"
+            name="companyName"
+            type="text"
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        data-testid="INPUT"
+      >
+        <label
+          class="text-secondary"
+          data-testid="LABEL"
+          for="companyRole"
+        >
+          Company Role
+        </label>
+        <div
+          class="flex flex-col items-stretch lg:relative"
+          data-testid="INPUT_FEEDBACK_GROUPING"
+        >
+          <input
+            class="border border-secondary/50 rounded-sm text-lg p-2 disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
+            id="companyRole"
+            name="companyRole"
+            type="text"
             value=""
           />
         </div>
       </div>
     </div>
+    <div />
     <div
-      data-testid="INPUT"
+      class="flex items-center justify-center gap-3 flex-wrap [&>button]:flex-1"
     >
-      <label
-        className="text-secondary"
-        data-testid="LABEL"
-        htmlFor="companyName"
+      <button
+        class="font-family-bebas font-bold text-center uppercase text-shadow-[initial] tracking-wide inline-block rounded leading-none border-4 border-solid cursor-pointer py-4 px-3 whitespace-nowrap transition-all duration-200 ease-linear min-w-[175px] focus-visible:bg-transparent hover:bg-transparent disabled:opacity-60 disabled:hover:cursor-not-allowed bg-secondary border-secondary outline-secondary text-primary focus-visible:text-secondary hover:text-secondary group w-full"
+        data-loading="false"
+        data-testid="SUBMIT_STEP_BUTTON"
+        tabindex="0"
+        type="submit"
       >
-        Company Name
-      </label>
-      <div
-        className="flex flex-col items-stretch lg:relative"
-        data-testid="INPUT_FEEDBACK_GROUPING"
-      >
-        <input
-          className="border border-secondary/50 rounded-sm text-lg p-2 disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
-          disabled={false}
-          id="companyName"
-          name="companyName"
-          onBlur={[Function]}
-          onChange={[Function]}
-          type="text"
-          value=""
-        />
-      </div>
-    </div>
-    <div
-      data-testid="INPUT"
-    >
-      <label
-        className="text-secondary"
-        data-testid="LABEL"
-        htmlFor="companyRole"
-      >
-        Company Role
-      </label>
-      <div
-        className="flex flex-col items-stretch lg:relative"
-        data-testid="INPUT_FEEDBACK_GROUPING"
-      >
-        <input
-          className="border border-secondary/50 rounded-sm text-lg p-2 disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
-          disabled={false}
-          id="companyRole"
-          name="companyRole"
-          onBlur={[Function]}
-          onChange={[Function]}
-          type="text"
-          value=""
-        />
-      </div>
-    </div>
-  </div>
-  <div />
-  <div
-    className="flex items-center justify-center gap-3 flex-wrap [&>button]:flex-1"
-  >
-    <button
-      className="font-family-bebas font-bold text-center uppercase text-shadow-[initial] tracking-wide inline-block rounded leading-none border-4 border-solid cursor-pointer py-4 px-3 whitespace-nowrap transition-all duration-200 ease-linear min-w-[175px] focus-visible:bg-transparent hover:bg-transparent disabled:opacity-60 disabled:hover:cursor-not-allowed bg-secondary border-secondary outline-secondary text-primary focus-visible:text-secondary hover:text-secondary group w-full"
-      data-loading={false}
-      data-testid="SUBMIT_STEP_BUTTON"
-      disabled={false}
-      onClick={[Function]}
-      tabIndex={0}
-      type="submit"
-    >
-      <span
-        className="flex items-center justify-center gap-x-2"
-      >
-        <span>
-          Next →
+        <span
+          class="flex items-center justify-center gap-x-2"
+        >
+          <span>
+            Next →
+          </span>
         </span>
-      </span>
-    </button>
-  </div>
-</form>
+      </button>
+    </div>
+  </form>
+</div>
 `;
