@@ -10,7 +10,7 @@ const meta: Meta<typeof PartnerLogoLink> = {
   args: {
     logoSource: `${s3}partnerLogos/github.png`,
     name: 'Partner Name',
-    url: '#',
+    url: 'https://example.com',
   },
 };
 
