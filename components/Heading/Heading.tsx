@@ -1,3 +1,4 @@
+import type { JSX } from 'react';
 import { cx } from 'common/utils/cva';
 import kebabCase from 'lodash/kebabCase';
 import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';

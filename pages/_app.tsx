@@ -55,19 +55,6 @@ const setLogRocketFingerprint = () => {
 
 Router.events.on('routeChangeComplete', url => gtag.pageView(url));
 
-// Fixes Next CSS route change bug: https://github.com/vercel/next-plugins/issues/282
-if (!isProduction) {
-  Router.events.on('routeChangeComplete', () => {
-    const path = '/_next/static/chunks/styles.chunk.module.css';
-    const chunksSelector = `link[href*="${path}"]:not([rel=preload])`;
-    const chunksNodes: NodeListOf<HTMLAnchorElement> = document.querySelectorAll(chunksSelector);
-    if (chunksNodes.length) {
-      const timestamp = new Date().valueOf();
-      chunksNodes[0].href = `${path}?ts=${timestamp}`;
-    }
-  });
-}
-
 const App = ({ Component, pageProps, err }: AppProps & { err: NextErrorComponent }) => {
   useEffect(() => {
     /* Analytics */
@@ -78,9 +65,7 @@ const App = ({ Component, pageProps, err }: AppProps & { err: NextErrorComponent
       LogRocket.getSessionURL(sessionURL => {
         // eslint-disable-next-line no-console
         console.log('LogRocket session URL: ', sessionURL);
-        Sentry.configureScope(scope => {
-          scope.setExtra('sessionURL', sessionURL);
-        });
+        Sentry.getCurrentScope().setExtra('sessionURL', sessionURL);
       });
 
       setupLogRocketReact(LogRocket);
