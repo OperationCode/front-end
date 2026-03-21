@@ -47,16 +47,16 @@ export const Nav = () => {
             className="font-bold h-16 bg-white rounded-sm flex justify-between text-lg"
             data-testid="Desktop Nav"
           >
-            <Link href="/" key="Home">
-              <a
-                className="mx-4 flex items-center"
-                onContextMenu={event => {
-                  event.preventDefault();
-                  Router.push('/branding');
-                }}
-              >
-                <Logo className="w-56 fill-white" />
-              </a>
+            <Link
+              href="/"
+              key="Home"
+              className="mx-4 flex items-center"
+              onContextMenu={event => {
+                event.preventDefault();
+                Router.push('/branding');
+              }}
+            >
+              <Logo className="w-56 fill-white" />
             </Link>
 
             <ul className="flex">
@@ -66,17 +66,16 @@ export const Nav = () => {
 
               {/* stylistic one-off */}
               <li key="Donate">
-                <Link href="/donate">
-                  <a
-                    className={cx(
-                      'px-8 font-bold bg-primary text-secondary no-underline',
-                      'flex items-center justify-center h-full',
-                      'transition-colors duration-200 ease-linear',
-                      'rounded-r-sm cursor-pointer hover:text-white focus-visible:text-white',
-                    )}
-                  >
-                    Donate
-                  </a>
+                <Link
+                  href="/donate"
+                  className={cx(
+                    'px-8 font-bold bg-primary text-secondary no-underline',
+                    'flex items-center justify-center h-full',
+                    'transition-colors duration-200 ease-linear',
+                    'rounded-r-sm cursor-pointer hover:text-white focus-visible:text-white',
+                  )}
+                >
+                  Donate
                 </Link>
               </li>
             </ul>

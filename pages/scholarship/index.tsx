@@ -83,9 +83,7 @@ export default function ScholarshipsPage() {
             <ul className="list-disc flex flex-col gap-3 mb-3 ml-4">
               <li>
                 Be an active member of our Operation Code community (
-                <Link href="/join">
-                  <a>join here</a>
-                </Link>
+                <Link href="/join">join here</Link>
                 ), a U.S. active duty, Reserves or National Guard military service member, Veteran
                 or military dependent.
               </li>
@@ -116,7 +114,7 @@ export default function ScholarshipsPage() {
                   <Card className="w-full h-full" hasAnimationOnHover>
                     <h5 className="-mb-16 text-center ">{option.title}</h5>
                     <div className="relative w-48 h-48 -mb-16">
-                      <Image src={option.logoSrc} alt="" layout="fill" className="object-contain" />
+                      <Image src={option.logoSrc} alt="" fill className="object-contain" />
                     </div>
                     <p>{option.body}</p>
                     <p>Press to apply!</p>

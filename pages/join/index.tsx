@@ -50,9 +50,7 @@ export default function Join() {
             about transitioning into the tech industry. We work with over 15,000 members who are all
             working towards relevant goals on Slack and in-person meet-ups. Membership is free!
             Unfamiliar with Slack?{` `}
-            <Link href="/slack_guide">
-              <a>Learn how to use it!</a>
-            </Link>
+            <Link href="/slack_guide">Learn how to use it!</Link>
           </p>
         </div>
       </HeroBanner>

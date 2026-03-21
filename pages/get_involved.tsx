@@ -59,19 +59,10 @@ function GetInvolved() {
         <div key="banner-content">
           <p>
             Help make an impact to transitioning service members, military veterans, military
-            spouses and dependents! You can help in several ways:{' '}
-            <Link href="/donate">
-              <a>Donate</a>
-            </Link>{' '}
+            spouses and dependents! You can help in several ways: <Link href="/donate">Donate</Link>{' '}
             to help provide scholarships and keep our daily operations afloat,{' '}
-            <Link href="/services">
-              <a>Volunteer</a>
-            </Link>
-            , or become a{' '}
-            <Link href="/sponsorship">
-              <a>Corporate Partner</a>
-            </Link>
-            .
+            <Link href="/services">Volunteer</Link>, or become a{' '}
+            <Link href="/sponsorship">Corporate Partner</Link>.
           </p>
 
           <div className="flex w-full max-w-prose justify-evenly flex-wrap gap-x-2 [&>*]:mt-4">
@@ -100,7 +91,7 @@ function GetInvolved() {
             <Image
               src={`${s3}redesign/images/one_on_one_mentoring.jpg`}
               alt="Woman outlines a whiteboarding problem to a man"
-              layout="fill"
+              fill
             />
           </div>,
           <div key="empower">
