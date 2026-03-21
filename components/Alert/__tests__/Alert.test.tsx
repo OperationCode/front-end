@@ -1,22 +1,21 @@
 import { fireEvent, render } from '@testing-library/react';
-import { composeStory } from '@storybook/react';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 import { ALERT_CLOSE_BUTTON } from 'common/constants/testIDs';
-import meta, { ErrorAlert, SuccessAlert, WarningAlert } from '../__stories__/Alert.stories';
-
-const ErrorAlertStory = composeStory(ErrorAlert, meta);
-const SuccessAlertStory = composeStory(SuccessAlert, meta);
-const WarningAlertStory = composeStory(WarningAlert, meta);
+import Alert from '../Alert';
 
 describe('Alert', () => {
   it('should render error alert with required props', () => {
-    createSnapshotTest(<ErrorAlertStory />);
+    createSnapshotTest(<Alert type="error">Error Alert JSX or Text</Alert>);
   });
 
   it('should call close handler when close alert button clicked', () => {
     const onCloseMock = vi.fn();
 
-    const { queryByTestId } = render(<SuccessAlertStory onClose={onCloseMock} />);
+    const { queryByTestId } = render(
+      <Alert type="success" onClose={onCloseMock}>
+        Success Alert JSX or Text
+      </Alert>,
+    );
 
     expect(onCloseMock).toHaveBeenCalledTimes(0);
 
@@ -26,7 +25,7 @@ describe('Alert', () => {
   });
 
   it('should NOT render button if close handler not provided', () => {
-    const { queryByTestId } = render(<WarningAlertStory />);
+    const { queryByTestId } = render(<Alert type="warning">Warning Alert JSX or Text</Alert>);
 
     expect(queryByTestId(ALERT_CLOSE_BUTTON)).toBeNull();
   });
