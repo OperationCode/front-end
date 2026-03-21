@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/nextjs';
+import { fn } from 'storybook/test';
 import Alert from '../Alert';
 
 type AlertStoryType = StoryObj<typeof Alert>;
@@ -6,6 +7,9 @@ type AlertStoryType = StoryObj<typeof Alert>;
 const meta: Meta<typeof Alert> = {
   title: 'Alert',
   component: Alert,
+  args: {
+    onClose: fn(),
+  },
 };
 
 export default meta;
