@@ -97,3 +97,5 @@ tsconfig.tsbuildinfo
 
 # MCP config (local tool settings)
 .mcp.json
+# next-agents-md
+.next-docs/

@@ -285,18 +285,13 @@ module.exports = {
       },
     },
     {
-      files: ['./pages/api/**/*.ts'],
+      files: ['./app/api/**/*.ts'],
       rules: {
         'no-console': 'off',
       },
     },
     {
-      files: [
-        'pages/**.js',
-        'components/head.js',
-        'components/nav.js',
-        'components/Timeline/historyData.js',
-      ],
+      files: ['components/nav.js', 'components/Timeline/historyData.js'],
       rules: {
         'react/react-in-jsx-scope': 'off',
       },

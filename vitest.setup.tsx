@@ -5,6 +5,11 @@ const MockedNextImage = ({ src, alt }: { src: string; alt: string }) => <img src
 
 /* MOCKS */
 vi.mock('next/image', () => ({ default: MockedNextImage }));
+vi.mock('next/navigation', () => ({
+  useRouter: () => ({ push: vi.fn(), prefetch: vi.fn(), back: vi.fn(), replace: vi.fn() }),
+  usePathname: () => '/',
+  useSearchParams: () => new URLSearchParams(),
+}));
 vi.importMock('common/utils/thirdParty/gtag');
 
 beforeAll(async () => {
