@@ -1,5 +1,7 @@
+'use client';
+
 import { useState } from 'react';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import type { AxiosError } from 'axios';
 import { getServerErrorMessage } from 'common/utils/api-utils';
 import { MultiStepForm } from 'components/Form/MultiStepForm';

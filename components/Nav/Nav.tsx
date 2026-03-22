@@ -1,6 +1,8 @@
-import { useState, useEffect } from 'react';
+'use client';
+
+import { useState, useEffect, useEffectEvent } from 'react';
 import Link from 'next/link';
-import Router from 'next/router';
+import { useRouter, usePathname } from 'next/navigation';
 import Logo from 'public/static/images/logo.svg';
 
 import { desktopNavItems, mobileNavItems } from 'common/constants/navigation';
@@ -11,6 +13,8 @@ import { cx } from 'common/utils/cva';
 const NavListItem = dynamic(() => import('components/Nav/NavListItem/NavListItem'), { ssr: false });
 
 export const Nav = () => {
+  const router = useRouter();
+  const pathname = usePathname();
   const [isMobileNavOpen, setMobileNavOpen] = useState(false);
 
   const openMobileMenu = () => {
@@ -23,13 +27,13 @@ export const Nav = () => {
     document.body.style.overflow = 'auto';
   };
 
-  useEffect(() => {
-    Router.events.on('routeChangeComplete', closeMobileMenu);
+  const closeMobileMenuEvent = useEffectEvent(() => {
+    closeMobileMenu();
+  });
 
-    return () => {
-      Router.events.off('routeChangeComplete', closeMobileMenu);
-    };
-  }, []);
+  useEffect(() => {
+    closeMobileMenuEvent();
+  }, [pathname]);
 
   return (
     <>
@@ -53,7 +57,7 @@ export const Nav = () => {
               className="mx-4 flex items-center"
               onContextMenu={event => {
                 event.preventDefault();
-                Router.push('/branding');
+                router.push('/branding');
               }}
             >
               <Logo className="w-56 fill-white" />
