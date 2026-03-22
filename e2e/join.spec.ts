@@ -15,25 +15,6 @@ const getValidUser = () => mockUser();
 const getInput = (page: Page, fieldName: string) => page.locator(`input[name="${fieldName}"]`);
 const getCheckbox = (page: Page, regex: RegExp) => page.getByLabel(regex);
 
-// Programmatic .blur() doesn't reliably trigger Formik's onBlur validation in WebKit.
-// "Tapping" elsewhere (like a user would on mobile) is the most cross-browser way to blur a field.
-const triggerBlur = async (page: Page, fieldName: string) => {
-  await getInput(page, fieldName).blur();
-  await page.locator('h1').click();
-};
-
-const clickStepButton = async (page: Page) => {
-  const btn = page.getByTestId(MULTI_STEP_STEP_BUTTON);
-  await expect(btn).toBeEnabled();
-  await btn.click();
-};
-
-const clickSubmitButton = async (page: Page) => {
-  const btn = page.getByTestId(MULTI_STEP_SUBMIT_BUTTON);
-  await expect(btn).toBeEnabled();
-  await btn.click();
-};
-
 const assertError = async (
   page: Page,
   {
@@ -60,8 +41,6 @@ const assertFailedLogin = async (
   expect(cookies).toHaveLength(0);
 };
 
-test.describe.configure({ mode: 'serial' });
-
 test.describe('join', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/join');
@@ -80,7 +59,7 @@ test.describe('join', () => {
   test('should NOT be able to register when blurring past email', async ({ page }) => {
     const validUser = getValidUser();
     await getInput(page, 'email').focus();
-    await triggerBlur(page, 'email');
+    await getInput(page, 'email').blur();
     await assertError(page);
 
     await getInput(page, 'confirm-email').fill(validUser.email);
@@ -96,7 +75,7 @@ test.describe('join', () => {
   test('should NOT be able to register when email contains only spaces', async ({ page }) => {
     const validUser = getValidUser();
     await getInput(page, 'email').fill('   ');
-    await triggerBlur(page, 'email');
+    await getInput(page, 'email').blur();
     await assertError(page);
 
     await getInput(page, 'confirm-email').fill(validUser.email);
@@ -113,7 +92,7 @@ test.describe('join', () => {
     const invalidUser = mockUser('invalidemail@.com');
 
     await getInput(page, 'email').fill(invalidUser.email);
-    await triggerBlur(page, 'email');
+    await getInput(page, 'email').blur();
     await assertError(page, { errorMessage: validationErrorMessages.email });
 
     await getInput(page, 'confirm-email').fill(invalidUser.email);
@@ -131,7 +110,7 @@ test.describe('join', () => {
     await getInput(page, 'email').fill(validUser.email);
 
     await getInput(page, 'confirm-email').focus();
-    await triggerBlur(page, 'confirm-email');
+    await getInput(page, 'confirm-email').blur();
     await assertError(page);
 
     await getInput(page, 'firstName').fill(validUser.firstName);
@@ -181,7 +160,7 @@ test.describe('join', () => {
     await getInput(page, 'confirm-email').fill(validUser.email);
 
     await getInput(page, 'firstName').focus();
-    await triggerBlur(page, 'firstName');
+    await getInput(page, 'firstName').blur();
     await assertError(page);
 
     await getInput(page, 'lastName').fill(validUser.lastName);
@@ -198,7 +177,7 @@ test.describe('join', () => {
     await getInput(page, 'confirm-email').fill(validUser.email);
 
     await getInput(page, 'firstName').fill('     ');
-    await triggerBlur(page, 'firstName');
+    await getInput(page, 'firstName').blur();
     await assertError(page);
 
     await getInput(page, 'lastName').fill(validUser.lastName);
@@ -216,7 +195,7 @@ test.describe('join', () => {
     await getInput(page, 'firstName').fill(validUser.firstName);
 
     await getInput(page, 'lastName').focus();
-    await triggerBlur(page, 'lastName');
+    await getInput(page, 'lastName').blur();
     await assertError(page);
 
     await getInput(page, 'zipcode').fill(String(validUser.zipcode));
@@ -233,7 +212,7 @@ test.describe('join', () => {
     await getInput(page, 'firstName').fill(validUser.firstName);
 
     await getInput(page, 'lastName').fill('     ');
-    await triggerBlur(page, 'lastName');
+    await getInput(page, 'lastName').blur();
     await assertError(page);
 
     await getInput(page, 'zipcode').fill(String(validUser.zipcode));
@@ -254,7 +233,7 @@ test.describe('join', () => {
     await getInput(page, 'lastName').fill(validUser.lastName);
 
     await getInput(page, 'zipcode').focus();
-    await triggerBlur(page, 'zipcode');
+    await getInput(page, 'zipcode').blur();
     await assertError(page);
 
     await getCheckbox(page, /Code of Conduct/).check();
@@ -271,7 +250,7 @@ test.describe('join', () => {
     await getInput(page, 'lastName').fill(validUser.lastName);
 
     await getInput(page, 'zipcode').fill('     ');
-    await triggerBlur(page, 'zipcode');
+    await getInput(page, 'zipcode').blur();
     await assertError(page);
 
     await getCheckbox(page, /Code of Conduct/).check();
@@ -289,7 +268,7 @@ test.describe('join', () => {
     await getInput(page, 'zipcode').fill(String(validUser.zipcode));
 
     await getCheckbox(page, /Code of Conduct/).focus();
-    await triggerBlur(page, 'codeOfConduct');
+    await getCheckbox(page, /Code of Conduct/).blur();
     await getCheckbox(page, /Slack Community Guidelines/).check();
 
     await assertError(page, {
@@ -314,7 +293,7 @@ test.describe('join', () => {
     await getCheckbox(page, /Code of Conduct/).check();
 
     await getCheckbox(page, /Slack Community Guidelines/).focus();
-    await triggerBlur(page, 'slackGuidelines');
+    await getCheckbox(page, /Slack Community Guidelines/).blur();
 
     await assertError(page, {
       numberOfErrors: 1,
@@ -356,12 +335,12 @@ test.describe('join', () => {
     await page.keyboard.press('Enter');
     await page.getByLabel('Company Name').fill('Test Company');
     await page.getByLabel('Company Role').fill('Test Title');
-    await clickStepButton(page);
+    await page.getByTestId(MULTI_STEP_STEP_BUTTON).click();
 
     // Military Status
     await page.getByLabel('Military Affiliation*').fill('Non');
     await page.keyboard.press('Enter');
-    await clickStepButton(page);
+    await page.getByTestId(MULTI_STEP_STEP_BUTTON).click();
 
     // Assert that we see Personal Details (not Military Details)
     await expect(page.getByText('Personal Details')).toBeVisible({
@@ -379,7 +358,7 @@ test.describe('join', () => {
     await expect(page.getByText('Military Status')).toBeVisible();
     await page.getByLabel('Military Affiliation*').fill('Active');
     await page.keyboard.press('Enter');
-    await clickStepButton(page);
+    await page.getByTestId(MULTI_STEP_STEP_BUTTON).click();
 
     // Assert that we see Military Details (not Personal Details)
     await expect(page.getByText('Military Details')).toBeVisible({
@@ -392,7 +371,7 @@ test.describe('join', () => {
     await page.keyboard.press('Enter');
     await page.getByLabel('Pay Grade*').fill('E1-E5');
     await page.keyboard.press('Enter');
-    await clickStepButton(page);
+    await page.getByTestId(MULTI_STEP_STEP_BUTTON).click();
 
     // Assert that we see Personal Details again
     await expect(page.getByText('Personal Details')).toBeVisible({
@@ -411,7 +390,7 @@ test.describe('join', () => {
     await page.keyboard.press('Enter');
     await page.getByLabel('Education Level*').fill('High school');
     await page.keyboard.press('Enter');
-    await clickSubmitButton(page);
+    await page.getByTestId(MULTI_STEP_SUBMIT_BUTTON).click();
 
     // Success UI
     await expect(page.getByTestId(SUCCESS_PAGE_MESSAGE)).toBeVisible({
@@ -452,13 +431,13 @@ test.describe('join', () => {
     await page.keyboard.press('Enter');
     await page.getByLabel('Company Name').fill('Test Company');
     await page.getByLabel('Company Role').fill('Engineer');
-    await clickStepButton(page);
+    await page.getByTestId(MULTI_STEP_STEP_BUTTON).click();
 
     // Step 2: Military Status (Active — ensures all payload fields exist)
     await expect(page.getByText('Military Status')).toBeVisible({ timeout: 15000 });
     await page.getByLabel('Military Affiliation*').fill('Active');
     await page.keyboard.press('Enter');
-    await clickStepButton(page);
+    await page.getByTestId(MULTI_STEP_STEP_BUTTON).click();
 
     // Step 3: Military Details
     await expect(page.getByText('Military Details')).toBeVisible({ timeout: 15000 });
@@ -466,7 +445,7 @@ test.describe('join', () => {
     await page.keyboard.press('Enter');
     await page.getByLabel('Pay Grade*').fill('E1-E5');
     await page.keyboard.press('Enter');
-    await clickStepButton(page);
+    await page.getByTestId(MULTI_STEP_STEP_BUTTON).click();
 
     // Step 4: Fill Personal Details fields — but DO NOT click Submit
     await expect(page.getByText('Personal Details')).toBeVisible({ timeout: 15000 });
@@ -491,16 +470,16 @@ test.describe('join', () => {
     // Each "Next" sends ALL Formik values (including Personal Details) via PATCH.
     // The cookie must NOT be cleared on these intermediate steps.
     await page.getByLabel('Company Role').fill('Senior Engineer');
-    await clickStepButton(page);
+    await page.getByTestId(MULTI_STEP_STEP_BUTTON).click();
 
     await expect(page.getByText('Military Status')).toBeVisible({ timeout: 15000 });
-    await clickStepButton(page);
+    await page.getByTestId(MULTI_STEP_STEP_BUTTON).click();
 
     await expect(page.getByText('Military Details')).toBeVisible({ timeout: 15000 });
-    await clickStepButton(page);
+    await page.getByTestId(MULTI_STEP_STEP_BUTTON).click();
 
     await expect(page.getByText('Personal Details')).toBeVisible({ timeout: 15000 });
-    await clickSubmitButton(page);
+    await page.getByTestId(MULTI_STEP_SUBMIT_BUTTON).click();
 
     await expect(page.getByTestId(SUCCESS_PAGE_MESSAGE)).toBeVisible({ timeout: 15000 });
 
