@@ -78,7 +78,7 @@ exports[`Timeline > should render with no props passed passed 1`] = `
                 </svg>
               </a>
                
-              he was inspired to pursue software engineering as a post-military occupation. He submitted an application to The Flatiron School while on active-duty, only to discover that the program did not accept the "Post-9/11 GI Bill" as payment.
+              he was inspired to pursue software engineering as a post-military occupation. He submitted an application to The Flatiron School while on active-duty, only to discover that the program did not accept the “Post-9/11 GI Bill” as payment.
             </p>
           </div>
         </div>
@@ -128,7 +128,7 @@ exports[`Timeline > should render with no props passed passed 1`] = `
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                "Bmore on Rails"
+                “Bmore on Rails”
                 <span
                   class="sr-only"
                   data-testid="SCREEN_READER_ONLY"
@@ -337,7 +337,7 @@ exports[`Timeline > should render with no props passed passed 1`] = `
                 </svg>
               </a>
                
-              Molina received encouragement from fellow Rubyist, Whitney Rose, to launch Operation Code's petition using "Launchrock". After lengthy discussions with Kristin Smith, Adam Enbar (representing The Flatiron School), and
+              Molina received encouragement from fellow Rubyist, Whitney Rose, to launch Operation Code's petition using “Launchrock”. After lengthy discussions with Kristin Smith, Adam Enbar (representing The Flatiron School), and
                
               <a
                 class="inline-flex items-start text-burnt-orange"

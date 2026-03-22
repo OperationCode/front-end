@@ -1,3 +1,5 @@
+'use client';
+
 import { cx } from 'common/utils/cva';
 import { useEffect, useState } from 'react';
 

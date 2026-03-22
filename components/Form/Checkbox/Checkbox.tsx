@@ -46,7 +46,7 @@ function Checkbox({
         />
 
         {/* negative margin here is to align the text with the checkbox bubble while allowing the field to use `flex items start` for if the label wraps lines */}
-        <span className="select-none -mt-[0.1875rem]">{label}</span>
+        <span className="select-none -mt-0.75">{label}</span>
       </Label>
 
       <ErrorMessage name={name}>

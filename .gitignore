@@ -72,6 +72,8 @@ out
 
 # storybook build output
 .storybook-dist
+.storybook-static
+storybook-static
 
 # WebStorm Config
 .idea
@@ -97,3 +99,5 @@ tsconfig.tsbuildinfo
 
 # MCP config (local tool settings)
 .mcp.json
+# next-agents-md
+.next-docs/

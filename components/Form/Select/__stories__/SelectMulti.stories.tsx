@@ -68,7 +68,7 @@ export default {
     (SelectMultiStory: FC) => (
       <>
         <span>
-          NOTE: This component&apos;s story has no context outside of Formik and will not function
+          NOTE: This component's story has no context outside of Formik and will not function
           properly
         </span>
         <SelectMultiStory />

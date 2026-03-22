@@ -22,7 +22,7 @@ exports[`RegistrationForm > should render with required props 1`] = `
       >
         <input
           autocomplete="username email"
-          class="border border-secondary/50 rounded-sm text-lg p-2 disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
+          class="border border-secondary/50 rounded-sm text-lg p-2 bg-white disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
           id="email"
           name="email"
           type="email"
@@ -46,7 +46,7 @@ exports[`RegistrationForm > should render with required props 1`] = `
       >
         <input
           autocomplete="username email"
-          class="border border-secondary/50 rounded-sm text-lg p-2 disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
+          class="border border-secondary/50 rounded-sm text-lg p-2 bg-white disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
           id="confirm-email"
           name="confirm-email"
           type="email"
@@ -71,7 +71,7 @@ exports[`RegistrationForm > should render with required props 1`] = `
       >
         <input
           autocomplete="new-password"
-          class="border border-secondary/50 rounded-sm text-lg p-2 disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
+          class="border border-secondary/50 rounded-sm text-lg p-2 bg-white disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
           id="password"
           name="password"
           type="password"
@@ -96,7 +96,7 @@ exports[`RegistrationForm > should render with required props 1`] = `
       >
         <input
           autocomplete="new-password"
-          class="border border-secondary/50 rounded-sm text-lg p-2 disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
+          class="border border-secondary/50 rounded-sm text-lg p-2 bg-white disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
           id="confirm-password"
           name="confirm-password"
           type="password"
@@ -120,7 +120,7 @@ exports[`RegistrationForm > should render with required props 1`] = `
       >
         <input
           autocomplete="given-name"
-          class="border border-secondary/50 rounded-sm text-lg p-2 disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
+          class="border border-secondary/50 rounded-sm text-lg p-2 bg-white disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
           id="firstName"
           name="firstName"
           type="text"
@@ -144,7 +144,7 @@ exports[`RegistrationForm > should render with required props 1`] = `
       >
         <input
           autocomplete="family-name"
-          class="border border-secondary/50 rounded-sm text-lg p-2 disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
+          class="border border-secondary/50 rounded-sm text-lg p-2 bg-white disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
           id="lastName"
           name="lastName"
           type="text"
@@ -168,7 +168,7 @@ exports[`RegistrationForm > should render with required props 1`] = `
       >
         <input
           autocomplete="postal-code"
-          class="border border-secondary/50 rounded-sm text-lg p-2 disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
+          class="border border-secondary/50 rounded-sm text-lg p-2 bg-white disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
           id="zipcode"
           name="zipcode"
           type="text"
@@ -193,7 +193,7 @@ exports[`RegistrationForm > should render with required props 1`] = `
           value=""
         />
         <span
-          class="select-none -mt-[0.1875rem]"
+          class="select-none -mt-0.75"
         >
           I have read and agree to
            
@@ -253,7 +253,7 @@ exports[`RegistrationForm > should render with required props 1`] = `
           value=""
         />
         <span
-          class="select-none -mt-[0.1875rem]"
+          class="select-none -mt-0.75"
         >
           I have read and agree to
            

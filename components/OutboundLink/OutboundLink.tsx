@@ -1,3 +1,5 @@
+'use client';
+
 import { gtag } from 'common/utils/thirdParty/gtag';
 import ExternalLinkIcon from 'static/images/icons/FontAwesome/external-link-square-alt-solid.svg';
 import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';

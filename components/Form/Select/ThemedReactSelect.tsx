@@ -55,7 +55,7 @@ export function ThemedReactSelect<TMulti extends boolean>({
         control: base => {
           return {
             ...base,
-            backgroundColor: isDisabled ? 'transparent' : 'white',
+            backgroundColor: isDisabled ? 'transparent' : '#f7f7f7',
             borderColor:
               isTouched && hasValidationStyling
                 ? outerColor

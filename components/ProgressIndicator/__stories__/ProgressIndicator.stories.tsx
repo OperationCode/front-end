@@ -51,15 +51,15 @@ const meta: Meta<typeof ProgressIndicator> = {
           />
           <Subheading>totalSteps</Subheading>
           <p>
-            Sets the number of &quot;steps&quot; are needed to fill the indicator bar. The
-            totalSteps value needs to be more than, or equal to the stepNumber value.
+            Sets the number of “steps” are needed to fill the indicator bar. The totalSteps value
+            needs to be more than, or equal to the stepNumber value.
           </p>
           <Canvas of={TotalSteps} sourceState="shown" />
           <Subheading>stepNumber</Subheading>
           <p>
-            Sets the number of &quot;completed&quot; steps and fills the indicator bar relative to
-            the totalSteps value. The stepNumber value needs to be less than, or equal to the
-            totalSteps value.
+            Sets the number of “completed” steps and fills the indicator bar relative to the
+            totalSteps value. The stepNumber value needs to be less than, or equal to the totalSteps
+            value.
           </p>
           <Canvas of={StepNumber} sourceState="shown" />
         </>

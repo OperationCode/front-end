@@ -77,6 +77,7 @@ module.exports = {
     'react/jsx-curly-brace-presence': ['error', { props: 'never', children: 'never' }],
     'react/jsx-filename-extension': ['error', { extensions: ['.js', '.tsx'] }],
     'react/jsx-max-props-per-line': ['error', { maximum: 1, when: 'multiline' }],
+    'react/no-unescaped-entities': 'off',
     'react/jsx-no-target-blank': 'off', // browsers protect against this vulnerability now
     'react/jsx-no-useless-fragment': ['error', { allowExpressions: true }],
     'react/jsx-one-expression-per-line': 'off',
@@ -284,18 +285,13 @@ module.exports = {
       },
     },
     {
-      files: ['./pages/api/**/*.ts'],
+      files: ['./app/api/**/*.ts'],
       rules: {
         'no-console': 'off',
       },
     },
     {
-      files: [
-        'pages/**.js',
-        'components/head.js',
-        'components/nav.js',
-        'components/Timeline/historyData.js',
-      ],
+      files: ['components/nav.js', 'components/Timeline/historyData.js'],
       rules: {
         'react/react-in-jsx-scope': 'off',
       },

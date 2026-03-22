@@ -8,6 +8,14 @@ import UpdateProfileForm from '../UpdateProfileForm';
 export default {
   component: UpdateProfileForm,
   title: 'Forms/UpdateProfileForm',
+  parameters: {
+    nextjs: {
+      appDirectory: true,
+      navigation: {
+        pathname: '/profile',
+      },
+    },
+  },
 };
 
 const Template = (args: UpdateProfileFormProps) => {

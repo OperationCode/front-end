@@ -1,10 +1,12 @@
-import { connect } from 'formik';
-import type { DetailedHTMLProps, FormHTMLAttributes, FunctionComponent } from 'react';
+'use client';
 
-const FormikConnectedForm = connect(({ formik: { handleReset, handleSubmit }, ...props }) => (
-  <form onReset={handleReset} onSubmit={handleSubmit} noValidate {...props} />
-)) as FunctionComponent<DetailedHTMLProps<FormHTMLAttributes<HTMLFormElement>, HTMLFormElement>>;
+import { useFormikContext } from 'formik';
+import type { DetailedHTMLProps, FormHTMLAttributes } from 'react';
 
-FormikConnectedForm.displayName = 'FormikConnectedForm';
+export default function FormikConnectedForm(
+  props: DetailedHTMLProps<FormHTMLAttributes<HTMLFormElement>, HTMLFormElement>,
+) {
+  const { handleReset, handleSubmit } = useFormikContext();
 
-export default FormikConnectedForm;
+  return <form onReset={handleReset} onSubmit={handleSubmit} noValidate {...props} />;
+}

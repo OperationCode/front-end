@@ -42,10 +42,10 @@ function LogoSection() {
           <li>
             <h5 className="text-center">Small Logos</h5>
             <p className="mx-auto">
-              For use when Operation Code&apos;s logo name is between 0-1 inch in height. In most
-              cases, use the Original Small Logo. The Stacked Small Logo is to be used where
-              graphics needs are larger in vertical height than horizontal width with the Operation
-              Code logo name still under 1 inch in height.
+              For use when Operation Code's logo name is between 0-1 inch in height. In most cases,
+              use the Original Small Logo. The Stacked Small Logo is to be used where graphics needs
+              are larger in vertical height than horizontal width with the Operation Code logo name
+              still under 1 inch in height.
             </p>
 
             <ul className="space-y-4 border-b-2 border-b-secondary *:not-last:border-b &:border-b-secondary">
