@@ -6,14 +6,14 @@ export default {
       title: 'Humble Beginnings',
       content: (
         <p>
-          Operation Code&apos;s founder - retired U.S. Army Captain, David Molina - attended his
-          first hackathon in New York City. After a weekend learning to code at{' '}
+          Operation Code's founder - retired U.S. Army Captain, David Molina - attended his first
+          hackathon in New York City. After a weekend learning to code at{' '}
           <OutboundLink analyticsEventLabel="History Link" href="https://angelhack.com">
             AngelHack,
           </OutboundLink>{' '}
           he was inspired to pursue software engineering as a post-military occupation. He submitted
           an application to The Flatiron School while on active-duty, only to discover that the
-          program did not accept the &quot;Post-9/11 GI Bill&quot; as payment.
+          program did not accept the “Post-9/11 GI Bill” as payment.
         </p>
       ),
     },
@@ -30,14 +30,14 @@ export default {
             analyticsEventLabel="History Link"
             href="https://www.meetup.com/bmore-on-rails/"
           >
-            &quot;Bmore on Rails&quot;
+            “Bmore on Rails”
           </OutboundLink>{' '}
           while finishing{' '}
           <OutboundLink analyticsEventLabel="History Link" href="https://onemonth.com">
-            One Month&apos;s Rails
+            One Month's Rails
           </OutboundLink>{' '}
           online course. After meeting Rubyists from around the world, he was introduced to the
-          Portland, Oregon Ruby group. Inspired, Molina joined Techstars&apos;{' '}
+          Portland, Oregon Ruby group. Inspired, Molina joined Techstars'{' '}
           <OutboundLink analyticsEventLabel="History Link" href="https://patriotbootcamp.org/">
             Patriot Boot Camp
           </OutboundLink>
@@ -77,8 +77,8 @@ export default {
             Cascadia Ruby,
           </OutboundLink>{' '}
           Molina received encouragement from fellow Rubyist, Whitney Rose, to launch Operation
-          Code&apos;s petition using &quot;Launchrock&quot;. After lengthy discussions with Kristin
-          Smith, Adam Enbar (representing The Flatiron School), and{' '}
+          Code's petition using “Launchrock”. After lengthy discussions with Kristin Smith, Adam
+          Enbar (representing The Flatiron School), and{' '}
           <OutboundLink analyticsEventLabel="History Link" href="https://www.codefellows.org">
             Code Fellows,
           </OutboundLink>{' '}
@@ -101,13 +101,13 @@ export default {
           <OutboundLink analyticsEventLabel="History Link" href="https://www.codefellows.org">
             Code Fellows,
           </OutboundLink>{' '}
-          Ivan Storck, purchased the domain &apos;operationcode.org&apos; and became our first donor
-          in the process. To round out 2014, HackHands co-founders Forest Good and Geraldo Ramos
-          joined Operation Code, designing our logo and providing veterans free access to{' '}
+          Ivan Storck, purchased the domain 'operationcode.org' and became our first donor in the
+          process. To round out 2014, HackHands co-founders Forest Good and Geraldo Ramos joined
+          Operation Code, designing our logo and providing veterans free access to{' '}
           <OutboundLink analyticsEventLabel="History Link" href="https://hacksummit.org/">
             hack.summit,
           </OutboundLink>{' '}
-          a virtual conference to learn from the world&apos;s most renowned programmers.
+          a virtual conference to learn from the world's most renowned programmers.
         </p>
       ),
     },
@@ -119,7 +119,7 @@ export default {
         <p>
           Operation Code formally launched as a nonprofit, led by David Molina. The kickoff event
           hosted dozens of veterans, software developers, media representatives, and staff members
-          from Senator Ron Wyden and Congressman Earl Blumenauer&apos;s offices.
+          from Senator Ron Wyden and Congressman Earl Blumenauer's offices.
         </p>
       ),
     },

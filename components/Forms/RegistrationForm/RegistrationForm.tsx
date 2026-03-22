@@ -174,7 +174,7 @@ export function RegistrationForm({
                   href={codeOfConduct}
                   analyticsEventLabel="Registration CoC Checkbox Link"
                 >
-                  Operation Code&apos;s Code of Conduct.
+                  Operation Code's Code of Conduct.
                 </OutboundLink>{' '}
                 *
               </>
@@ -194,7 +194,7 @@ export function RegistrationForm({
                   href={slackGuidelines}
                   analyticsEventLabel="Registration Slack Guidelines Checkbox Link"
                 >
-                  Operation Code&apos;s Slack Community Guidelines.
+                  Operation Code's Slack Community Guidelines.
                 </OutboundLink>{' '}
                 *
               </>

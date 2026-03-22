@@ -24,7 +24,7 @@ function SocialMediaItem({ name, href, svg }: SocialMediaItemPropsType) {
         hasIcon={false}
         href={href}
       >
-        <ScreenReaderOnly>Operation Code&apos;s {name}</ScreenReaderOnly>
+        <ScreenReaderOnly>Operation Code's {name}</ScreenReaderOnly>
         {svg}
       </OutboundLink>
     </div>
