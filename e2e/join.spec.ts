@@ -60,6 +60,8 @@ const assertFailedLogin = async (
   expect(cookies).toHaveLength(0);
 };
 
+test.describe.configure({ mode: 'serial' });
+
 test.describe('join', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/join');
