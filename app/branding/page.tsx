@@ -1,4 +1,4 @@
-import { generatePageMetadata } from 'common/utils/metadata';
+import type { Metadata } from 'next';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import LogoSection from 'components/Branding/LogoSection/LogoSection';
 import ColorSection from 'components/Branding/ColorSection/ColorSection';
@@ -7,7 +7,7 @@ import OutboundLink from 'components/OutboundLink/OutboundLink';
 import { s3 } from 'common/constants/urls';
 import LinkButton from 'components/Buttons/LinkButton/LinkButton';
 
-export const metadata = generatePageMetadata({ title: 'Branding Guide' });
+export const metadata: Metadata = { title: 'Branding Guide' };
 
 const pageTitle = 'Branding Guide';
 

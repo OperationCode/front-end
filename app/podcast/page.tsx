@@ -1,7 +1,7 @@
 import axios from 'axios';
 import get from 'lodash/get';
 import { parse as parseXml } from 'fast-xml-parser';
-import { generatePageMetadata } from 'common/utils/metadata';
+import type { Metadata } from 'next';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Card from 'components/Cards/Card/Card';
 import Content from 'components/Content/Content';
@@ -9,7 +9,7 @@ import Heading from 'components/Heading/Heading';
 import Image from 'next/image';
 import PodcastPlayer from './PodcastPlayer';
 
-export const metadata = generatePageMetadata({ title: 'Podcast' });
+export const metadata: Metadata = { title: 'Podcast' };
 
 export const revalidate = 86400;
 

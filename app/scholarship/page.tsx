@@ -1,4 +1,4 @@
-import { generatePageMetadata } from 'common/utils/metadata';
+import type { Metadata } from 'next';
 import Container from 'components/Container/Container';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
@@ -7,7 +7,7 @@ import Link from 'next/link';
 import Card from 'components/Cards/Card/Card';
 import Image from 'next/image';
 
-export const metadata = generatePageMetadata({ title: 'Scholarships Program' });
+export const metadata: Metadata = { title: 'Scholarships Program' };
 
 const pageTitle = 'Scholarships Program';
 

@@ -1,4 +1,4 @@
-import { generatePageMetadata } from 'common/utils/metadata';
+import type { Metadata } from 'next';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import { s3 } from 'common/constants/urls';
 import Content from 'components/Content/Content';
@@ -6,7 +6,7 @@ import FlatCard from 'components/Cards/FlatCard/FlatCard';
 import cynthiaHeadshot from 'public/static/images/cynthia.jpg';
 import glomaniHeadshot from 'public/static/images/glomani.jpg';
 
-export const metadata = generatePageMetadata({ title: 'Team' });
+export const metadata: Metadata = { title: 'Team' };
 
 const boardMembers = [
   {

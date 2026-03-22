@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { generatePageMetadata } from 'common/utils/metadata';
+import type { Metadata } from 'next';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
@@ -8,7 +8,7 @@ import { s3 } from 'common/constants/urls';
 
 const pageTitle = 'Project Rebuild';
 
-export const metadata = generatePageMetadata({ title: pageTitle });
+export const metadata: Metadata = { title: pageTitle };
 
 function ProjectRebuild() {
   return (

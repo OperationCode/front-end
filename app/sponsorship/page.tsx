@@ -1,4 +1,4 @@
-import { generatePageMetadata } from 'common/utils/metadata';
+import type { Metadata } from 'next';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
 import Badge from 'components/Badge/Badge';
@@ -10,7 +10,7 @@ import MedalSolid from 'static/images/icons/FontAwesome/medal-solid.svg';
 
 const pageTitle = 'Corporate Sponsorship';
 
-export const metadata = generatePageMetadata({ title: pageTitle });
+export const metadata: Metadata = { title: pageTitle };
 
 function Sponsorship() {
   return (

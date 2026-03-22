@@ -1,9 +1,9 @@
-import { generatePageMetadata } from 'common/utils/metadata';
+import type { Metadata } from 'next';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 
-export const metadata = generatePageMetadata({ title: 'Chapter Leaders' });
+export const metadata: Metadata = { title: 'Chapter Leaders' };
 
 const pageTitle = 'Chapter Leaders';
 

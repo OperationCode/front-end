@@ -1,4 +1,4 @@
-import { generatePageMetadata } from 'common/utils/metadata';
+import type { Metadata } from 'next';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
 import FeaturedJobsData from 'components/FeaturedJobItem/featuredJobs.json';
@@ -7,7 +7,7 @@ import ZipRecruiterJobs from 'components/ZipRecruiterJobs/ZipRecruiterJobs';
 
 const pageTitle = 'Jobs';
 
-export const metadata = generatePageMetadata({ title: pageTitle });
+export const metadata: Metadata = { title: pageTitle };
 
 function Jobs() {
   return (

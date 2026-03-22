@@ -1,4 +1,4 @@
-import { generatePageMetadata } from 'common/utils/metadata';
+import type { Metadata } from 'next';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
 import JoinSection from 'components/ReusableSections/JoinSection/JoinSection';
@@ -9,7 +9,7 @@ import LinkButton from 'components/Buttons/LinkButton/LinkButton';
 import { s3 } from 'common/constants/urls';
 import { cx } from 'common/utils/cva';
 
-export const metadata = generatePageMetadata({ title: 'Home' });
+export const metadata: Metadata = { title: 'Home' };
 
 const successStories = [
   {

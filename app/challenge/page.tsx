@@ -1,5 +1,5 @@
+import type { Metadata } from 'next';
 import { s3 } from 'common/constants/urls';
-import { generatePageMetadata } from 'common/utils/metadata';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
@@ -7,7 +7,7 @@ import challengers from 'static/operationcode_challenge/names';
 import range from 'lodash/range';
 import Image from 'next/image';
 
-export const metadata = generatePageMetadata({ title: 'Challenge' });
+export const metadata: Metadata = { title: 'Challenge' };
 
 const pageTitle = 'Challenge';
 

@@ -1,11 +1,11 @@
 import Image from 'next/image';
-import { generatePageMetadata } from 'common/utils/metadata';
+import type { Metadata } from 'next';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 import type { ReactNode } from 'react';
 import { cx } from 'common/utils/cva';
 
-export const metadata = generatePageMetadata({ title: 'Corporate Training: Breaking Biases' });
+export const metadata: Metadata = { title: 'Corporate Training: Breaking Biases' };
 
 interface Bias {
   title: string;

@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { generatePageMetadata } from 'common/utils/metadata';
+import type { Metadata } from 'next';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
 import ImageCard from 'components/Cards/ImageCard/ImageCard';
@@ -7,7 +7,7 @@ import ValueCard from 'components/Cards/ValueCard/ValueCard';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 import { s3 } from 'common/constants/urls';
 
-export const metadata = generatePageMetadata({ title: 'About Us' });
+export const metadata: Metadata = { title: 'About Us' };
 
 const pageTitle = 'About Us';
 

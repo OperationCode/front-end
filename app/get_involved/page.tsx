@@ -1,4 +1,4 @@
-import { generatePageMetadata } from 'common/utils/metadata';
+import type { Metadata } from 'next';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Badge from 'components/Badge/Badge';
 import Content from 'components/Content/Content';
@@ -16,7 +16,7 @@ import PeopleMeetingIcon from 'static/images/icons/Custom/people_meeting.svg';
 import { s3 } from 'common/constants/urls';
 import Image from 'next/image';
 
-export const metadata = generatePageMetadata({ title: 'Get Involved' });
+export const metadata: Metadata = { title: 'Get Involved' };
 
 const mentorItems = [
   {

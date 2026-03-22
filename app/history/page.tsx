@@ -1,5 +1,5 @@
+import type { Metadata } from 'next';
 import { s3 } from 'common/constants/urls';
-import { generatePageMetadata } from 'common/utils/metadata';
 import Content from 'components/Content/Content';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Timeline from 'components/Timeline/Timeline';
@@ -7,7 +7,7 @@ import TimelineNav from 'components/Timeline/TimelineNav/TimelineNav';
 
 const pageTitle = 'History';
 
-export const metadata = generatePageMetadata({ title: pageTitle });
+export const metadata: Metadata = { title: pageTitle };
 
 function History() {
   return (

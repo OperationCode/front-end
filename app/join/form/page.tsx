@@ -1,11 +1,11 @@
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
-import { generatePageMetadata } from 'common/utils/metadata';
+import type { Metadata } from 'next';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
 import UpdateProfileForm from 'components/Forms/UpdateProfileForm/UpdateProfileForm';
 
-export const metadata = generatePageMetadata({ title: 'Update Profile' });
+export const metadata: Metadata = { title: 'Update Profile' };
 
 const pageTitle = 'Update Profile';
 

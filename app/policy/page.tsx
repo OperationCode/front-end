@@ -1,8 +1,8 @@
-import { generatePageMetadata } from 'common/utils/metadata';
+import type { Metadata } from 'next';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import { s3 } from 'common/constants/urls';
 
-export const metadata = generatePageMetadata({ title: 'Policy' });
+export const metadata: Metadata = { title: 'Policy' };
 
 function Policy() {
   return (

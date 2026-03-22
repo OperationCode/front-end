@@ -1,11 +1,11 @@
 import Link from 'next/link';
-import { generatePageMetadata } from 'common/utils/metadata';
+import type { Metadata } from 'next';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
 import Accordion from 'components/Accordion/Accordion';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 
-export const metadata = generatePageMetadata({ title: 'FAQ' });
+export const metadata: Metadata = { title: 'FAQ' };
 
 const questions = {
   general: [

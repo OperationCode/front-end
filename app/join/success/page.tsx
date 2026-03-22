@@ -1,10 +1,10 @@
 import { SUCCESS_PAGE_MESSAGE } from 'common/constants/testIDs';
-import { generatePageMetadata } from 'common/utils/metadata';
+import type { Metadata } from 'next';
 import LinkButton from 'components/Buttons/LinkButton/LinkButton';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 
-export const metadata = generatePageMetadata({ title: 'Successful Registration!' });
+export const metadata: Metadata = { title: 'Successful Registration!' };
 
 const pageTitle = `Successful Registration!`;
 

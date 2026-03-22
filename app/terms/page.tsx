@@ -1,10 +1,10 @@
 import type { ReactElement } from 'react';
-import { generatePageMetadata } from 'common/utils/metadata';
+import type { Metadata } from 'next';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
 import { termsContent } from './_content';
 
-export const metadata = generatePageMetadata({ title: 'Terms of Service' });
+export const metadata: Metadata = { title: 'Terms of Service' };
 
 interface TermsSection {
   id: string;

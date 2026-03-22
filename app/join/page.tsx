@@ -1,7 +1,7 @@
-import { generatePageMetadata } from 'common/utils/metadata';
+import type { Metadata } from 'next';
 import JoinContent from './JoinContent';
 
-export const metadata = generatePageMetadata({ title: 'Join' });
+export const metadata: Metadata = { title: 'Join' };
 
 export default async function JoinPage({
   searchParams,

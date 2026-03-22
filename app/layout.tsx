@@ -10,25 +10,35 @@ import Footer from 'components/Footer/Footer';
 import Nav from 'components/Nav/Nav';
 import { ScrollToTopButton } from 'components/ScrollToTopButton/ScrollToTopButton';
 
+const defaultOgImage = `https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/oc_image.png`;
+
 export const metadata: Metadata = {
+  title: {
+    template: 'Operation Code | %s',
+    default: 'Operation Code',
+  },
+  description:
+    'Operation Code is a registered 501(c)3 whose mission is to help our military community and SIV allied refugees grow in their tech careers while rebuilding our lives post-conflict.',
   icons: {
     icon: '/public/favicon.ico',
     apple: '/static/apple-icon-180x180.png',
   },
   openGraph: {
     type: 'website',
+    url: 'https://operationcode.org',
     images: {
       width: 1200,
       height: 630,
       alt: 'Operation Code Logo',
-      url: '',
+      url: defaultOgImage,
     },
   },
   twitter: {
     card: 'summary_large_image',
+    site: 'https://operationcode.org',
     images: {
       alt: 'Operation Code Logo',
-      url: '',
+      url: defaultOgImage,
     },
   },
 };

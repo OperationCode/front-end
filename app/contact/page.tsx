@@ -1,9 +1,9 @@
 import Link from 'next/link';
-import { generatePageMetadata } from 'common/utils/metadata';
+import type { Metadata } from 'next';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 
-export const metadata = generatePageMetadata({ title: 'Contact Us' });
+export const metadata: Metadata = { title: 'Contact Us' };
 
 const pageTitle = 'Contact Us';
 

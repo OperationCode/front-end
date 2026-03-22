@@ -1,11 +1,11 @@
-import { generatePageMetadata } from 'common/utils/metadata';
+import type { Metadata } from 'next';
 import Container from 'components/Container/Container';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 
 const pageTitle = 'Donate';
 
-export const metadata = generatePageMetadata({ title: pageTitle });
+export const metadata: Metadata = { title: pageTitle };
 
 function DonatePage() {
   return (

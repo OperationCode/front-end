@@ -1,7 +1,7 @@
-import { generatePageMetadata } from 'common/utils/metadata';
+import type { Metadata } from 'next';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 
-export const metadata = generatePageMetadata({ title: 'Blog' });
+export const metadata: Metadata = { title: 'Blog' };
 
 const pageTitle = 'Blog';
 

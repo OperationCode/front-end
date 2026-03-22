@@ -1,4 +1,4 @@
-import { generatePageMetadata } from 'common/utils/metadata';
+import type { Metadata } from 'next';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
 import Accordion from 'components/Accordion/Accordion';
@@ -9,7 +9,7 @@ import Image from 'next/image';
 
 const pageTitle = 'Slack Guide';
 
-export const metadata = generatePageMetadata({ title: pageTitle });
+export const metadata: Metadata = { title: pageTitle };
 
 const questions = {
   slack: [

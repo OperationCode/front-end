@@ -1,12 +1,12 @@
 import Link from 'next/link';
-import { generatePageMetadata } from 'common/utils/metadata';
+import type { Metadata } from 'next';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
 import { Videos, Photos, Links } from 'components/Press';
 
 const pageTitle = 'Press';
 
-export const metadata = generatePageMetadata({ title: pageTitle });
+export const metadata: Metadata = { title: pageTitle };
 
 function Press() {
   return (
