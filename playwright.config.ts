@@ -50,7 +50,7 @@ export default defineConfig({
       use: {
         ...devices['iPhone 14 Pro'],
         launchOptions: {
-          slowMo: process.env.LOCAL_PLAYWRIGHT ? 250 : 50,
+          slowMo: process.env.LOCAL_PLAYWRIGHT ? 250 : 100,
         },
       },
     },
