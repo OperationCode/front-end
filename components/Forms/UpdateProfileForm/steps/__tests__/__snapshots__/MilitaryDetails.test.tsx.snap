@@ -36,7 +36,7 @@ exports[`UpdateProfileForm/Steps/MilitaryDetails > should render in context of F
               role="log"
             />
             <div
-              class="css-1mas6x-control"
+              class="css-mtsc6p-control"
             >
               <div
                 class="css-hlgwow"
@@ -134,7 +134,7 @@ exports[`UpdateProfileForm/Steps/MilitaryDetails > should render in context of F
               role="log"
             />
             <div
-              class="css-1mas6x-control"
+              class="css-mtsc6p-control"
             >
               <div
                 class="css-hlgwow"

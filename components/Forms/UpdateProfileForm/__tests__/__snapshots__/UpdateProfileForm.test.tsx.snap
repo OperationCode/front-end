@@ -62,7 +62,7 @@ exports[`UpdateProfileForm > should render with required props 1`] = `
               role="log"
             />
             <div
-              class="css-1mas6x-control"
+              class="css-mtsc6p-control"
             >
               <div
                 class="css-hlgwow"
