@@ -63,6 +63,10 @@ jobs:
   e2e_tests:
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        project: [chromium, "Mobile Safari"]
     permissions:
       contents: read
       pull-requests: write
@@ -87,30 +91,30 @@ jobs:
       - name: Install Playwright Browsers
         run: pnpm playwright install --with-deps
 
-      - name: Run e2e tests
+      - name: Run e2e tests (${{ matrix.project }})
         env:
           AIRTABLE_PAT: ${{ secrets.AIRTABLE_PAT }}
-        run: pnpm test:e2e:headless
+        run: pnpm test:e2e:headless --project='${{ matrix.project }}'
 
       - name: Upload Playwright report
         if: failure()
         uses: actions/upload-artifact@v4
         with:
-          name: playwright-report
+          name: playwright-report-${{ matrix.project }}
           path: playwright-report/
           retention-days: 30
 
       - name: Comment PR with Playwright artifact link
-        if: always() && github.event_name == 'pull_request'
+        if: failure() && github.event_name == 'pull_request'
         uses: actions/github-script@v7
         with:
           script: |
             const runId = context.runId;
             const repo = context.repo;
+            const project = '${{ matrix.project }}';
             const artifactUrl = `https://github.com/${repo.owner}/${repo.repo}/actions/runs/${runId}`;
-            const identifier = '<!-- playwright-test-status -->';
+            const identifier = `<!-- playwright-test-status-${project} -->`;
 
-            // Find existing comment
             const { data: comments } = await github.rest.issues.listComments({
               issue_number: context.issue.number,
               owner: repo.owner,
@@ -121,46 +125,32 @@ jobs:
               comment.body?.includes(identifier)
             );
 
-            // Determine if tests passed or failed
-            const testsFailed = '${{ job.status }}' !== 'success';
+            const comment = `${identifier}
+            ## Playwright Tests Failed (${project})
 
-            if (testsFailed) {
-              const comment = `${identifier}
-            ## ❌ Playwright Tests Failed
+            Download the test report artifact for details:
 
-            The Playwright tests have failed. Please download the test report artifact to see detailed information about the failures:
-
-            📊 [View test run and download artifact](${artifactUrl})
+            [View test run and download artifact](${artifactUrl})
 
             **How to view the report:**
             1. Click the link above
             2. Scroll to the bottom to the "Artifacts" section
-            3. Download the \`playwright-report\` artifact
-            4. Extract the zip file and open \`index.html\` in your browser
+            3. Download the \`playwright-report-${project}\` artifact
+            4. Extract the zip file and open \`index.html\` in your browser`;
 
-            The report includes screenshots, videos, and detailed traces of the failed tests.`;
-
-              if (existingComment) {
-                await github.rest.issues.updateComment({
-                  owner: repo.owner,
-                  repo: repo.repo,
-                  comment_id: existingComment.id,
-                  body: comment
-                });
-              } else {
-                await github.rest.issues.createComment({
-                  issue_number: context.issue.number,
-                  owner: repo.owner,
-                  repo: repo.repo,
-                  body: comment
-                });
-              }
-            } else if (existingComment) {
-              // Tests passed - delete the failure comment
-              await github.rest.issues.deleteComment({
+            if (existingComment) {
+              await github.rest.issues.updateComment({
                 owner: repo.owner,
                 repo: repo.repo,
-                comment_id: existingComment.id
+                comment_id: existingComment.id,
+                body: comment
+              });
+            } else {
+              await github.rest.issues.createComment({
+                issue_number: context.issue.number,
+                owner: repo.owner,
+                repo: repo.repo,
+                body: comment
               });
             }
 
