@@ -32,10 +32,6 @@ export default defineConfig({
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
-
-    launchOptions: {
-      slowMo: process.env.LOCAL_PLAYWRIGHT ? 250 : 0,
-    },
   },
 
   /* Configure projects for major browsers */
@@ -44,6 +40,18 @@ export default defineConfig({
       name: 'chromium',
       use: {
         ...devices['Desktop Chrome'],
+        launchOptions: {
+          slowMo: process.env.LOCAL_PLAYWRIGHT ? 250 : 0,
+        },
+      },
+    },
+    {
+      name: 'Mobile Safari',
+      use: {
+        ...devices['iPhone 14 Pro'],
+        launchOptions: {
+          slowMo: 250,
+        },
       },
     },
   ],
