@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/nextjs';
 import JoinSection from '../JoinSection';
 
 type JoinSectionStoryType = StoryObj<typeof JoinSection>;

@@ -48,7 +48,7 @@ export default function PartnerLogoLink({
           className="transition-all duration-200 ease-linear grayscale opacity-60 hover:grayscale-0 hover:opacity-100 hover:transition-all hover:duration-200 hover:ease-linear object-contain"
           src={logoSource}
           alt={`${name} logo`}
-          layout="fill"
+          fill
         />
       </div>
     </OutboundLink>

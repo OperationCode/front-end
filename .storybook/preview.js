@@ -1,5 +1,5 @@
 import 'common/styles/globals.css';
-import * as viewports from '@storybook/addon-viewport';
+import { MINIMAL_VIEWPORTS, INITIAL_VIEWPORTS } from 'storybook/viewport';
 
 export const decorators = [
   Story => (
@@ -9,13 +9,14 @@ export const decorators = [
   ),
 ];
 
+export const tags = ['autodocs'];
+
 const preview = {
   parameters: {
-    actions: { argTypesRegex: '^on[A-Z].*' },
     viewport: {
       viewports: {
-        ...viewports.MINIMAL_VIEWPORTS,
-        ...viewports.INITIAL_VIEWPORTS,
+        ...MINIMAL_VIEWPORTS,
+        ...INITIAL_VIEWPORTS,
       },
     },
   },

@@ -1,13 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import {
-  Title,
-  ArgTypes,
-  Canvas,
-  Heading,
-  Subheading,
-  Description,
-  Source,
-} from '@storybook/blocks';
+import type { Meta, StoryObj } from '@storybook/nextjs';
+import { Title, ArgTypes, Canvas, Heading, Subheading, Source } from '@storybook/addon-docs/blocks';
 import ProgressIndicator from '../ProgressIndicator';
 
 type ProgressIndicatorStoryType = StoryObj<typeof ProgressIndicator>;
@@ -15,12 +7,16 @@ type ProgressIndicatorStoryType = StoryObj<typeof ProgressIndicator>;
 const meta: Meta<typeof ProgressIndicator> = {
   title: 'ProgressIndicator',
   component: ProgressIndicator,
+  args: {
+    stepNumber: 0,
+    totalSteps: 1,
+  },
   argTypes: {
     stepNumber: {
-      control: { type: 'number' },
+      control: { type: 'number', min: 0 },
     },
     totalSteps: {
-      control: { type: 'number' },
+      control: { type: 'number', min: 1 },
     },
   },
   parameters: {
@@ -33,14 +29,14 @@ const meta: Meta<typeof ProgressIndicator> = {
           <Heading>Best practices</Heading>
           <br />
           <Subheading>Basic usage</Subheading>
-          <Description>Import the `ProgressIndicator` component and render.</Description>
+          <p>Import the ProgressIndicator component and render.</p>
           <Source
             format
             code={`
               import ProgressIndicator from 'components/ProgressIndicator/ProgressIndicator';
             `}
           />
-          <Description>Use in the UI where needed.</Description>
+          <p>Use in the UI where needed.</p>
           <Source
             format
             code={`
@@ -54,17 +50,17 @@ const meta: Meta<typeof ProgressIndicator> = {
             `}
           />
           <Subheading>totalSteps</Subheading>
-          <Description>
-            Sets the number of &quot;steps&quot; are needed to fill the indicator bar. *The
-            `totalSteps` value needs to be more than, or equal to the `stepNumber` value*.
-          </Description>
+          <p>
+            Sets the number of &quot;steps&quot; are needed to fill the indicator bar. The
+            totalSteps value needs to be more than, or equal to the stepNumber value.
+          </p>
           <Canvas of={TotalSteps} sourceState="shown" />
           <Subheading>stepNumber</Subheading>
-          <Description>
+          <p>
             Sets the number of &quot;completed&quot; steps and fills the indicator bar relative to
-            the `totalSteps` value. *The `stepNumber` value needs to be less than, or equal to the
-            `totalSteps` value*.
-          </Description>
+            the totalSteps value. The stepNumber value needs to be less than, or equal to the
+            totalSteps value.
+          </p>
           <Canvas of={StepNumber} sourceState="shown" />
         </>
       ),
@@ -75,7 +71,7 @@ const meta: Meta<typeof ProgressIndicator> = {
 export default meta;
 
 export const Default: ProgressIndicatorStoryType = {
-  render: args => <ProgressIndicator {...args} />,
+  render: args => <ProgressIndicator {...(args as Required<typeof args>)} />,
 };
 
 export const TotalSteps: ProgressIndicatorStoryType = {

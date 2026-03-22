@@ -1,4 +1,4 @@
-import type { StoryFn } from '@storybook/react';
+import type { StoryFn } from '@storybook/nextjs';
 import { RegistrationForm, type RegistrationFormValues } from '../RegistrationForm';
 
 export default {

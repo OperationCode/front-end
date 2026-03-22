@@ -25,23 +25,11 @@ function Press() {
           <aside key="info">
             <p>
               If you are looking for our mission statement or our values, please{' '}
-              <Link href="/about">
-                <a>go to the About page</a>
-              </Link>
-              . On other pages of our website you can{' '}
-              <Link href="/faq">
-                <a>see answers to frequently asked questions</a>
-              </Link>
-              ,{' '}
-              <Link href="/history">
-                <a>view our history</a>
-              </Link>
-              , and{' '}
-              <Link href="/team">
-                <a>learn more about our staff</a>
-              </Link>
-              . Lastly, if you are seeking information not located on our website, please do not
-              hesitate to email us at{' '}
+              <Link href="/about">go to the About page</Link>. On other pages of our website you can{' '}
+              <Link href="/faq">see answers to frequently asked questions</Link>,{' '}
+              <Link href="/history">view our history</Link>, and{' '}
+              <Link href="/team">learn more about our staff</Link>. Lastly, if you are seeking
+              information not located on our website, please do not hesitate to email us at{' '}
               <a href="mailto:staff@operationcode.org?subject=Press Inquiry">
                 staff@operationcode.org
               </a>
@@ -108,9 +96,7 @@ function Press() {
             key="branding"
             className="pt-[15px] flex flex-row flex-wrap justify-around items-center [&>a]:text-primary [&>a]:no-underline"
           >
-            <Link href="/branding">
-              <a>View Our Branding</a>
-            </Link>
+            <Link href="/branding">View Our Branding</Link>
           </div>,
         ]}
       />

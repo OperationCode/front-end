@@ -61,7 +61,7 @@ function NavMobile({ isOpen, openMenu, closeMenu, navItems }: NavMobilePropsType
             <Image
               src={`${s3}branding/logos/small-blue-logo.png`}
               alt="Operation Code Logo"
-              layout="fill"
+              fill
               className="object-contain"
             />
           </div>
@@ -87,14 +87,14 @@ function NavMobile({ isOpen, openMenu, closeMenu, navItems }: NavMobilePropsType
           <CloseButton onClick={closeMenu} theme="white" />
           <ul className="py-16 px-8 space-y-8">
             <li key="Home">
-              <Link href="/">
-                <a className={linkClassName}>Home</a>
+              <Link href="/" className={linkClassName}>
+                Home
               </Link>
             </li>
             {navItems.map(navlink => (
               <li key={navlink.name}>
-                <Link href={navlink.href}>
-                  <a className={linkClassName}>{navlink.name}</a>
+                <Link href={navlink.href} className={linkClassName}>
+                  {navlink.name}
                 </Link>
               </li>
             ))}

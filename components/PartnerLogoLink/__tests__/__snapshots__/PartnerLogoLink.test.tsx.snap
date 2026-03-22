@@ -1,26 +1,27 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`PartnerLogoLink > should render with required props 1`] = `
-<a
-  className="inline-flex items-start text-burnt-orange"
-  href="https://user-images.githubusercontent.com/?utm_source=operationcode"
-  onClick={[Function]}
-  rel="noopener noreferrer"
-  target="_blank"
->
-  <div
-    className="relative h-[125px] w-[125px]"
+<div>
+  <a
+    class="inline-flex items-start text-burnt-orange"
+    href="https://user-images.githubusercontent.com/?utm_source=operationcode"
+    rel="noopener noreferrer"
+    target="_blank"
   >
-    <img
-      alt="Partner Inc. logo"
-      src="https://user-images.githubusercontent.com/logo"
-    />
-  </div>
-  <span
-    className="sr-only"
-    data-testid="SCREEN_READER_ONLY"
-  >
-    Opens in new window
-  </span>
-</a>
+    <div
+      class="relative h-[125px] w-[125px]"
+    >
+      <img
+        alt="Partner Inc. logo"
+        src="https://user-images.githubusercontent.com/logo"
+      />
+    </div>
+    <span
+      class="sr-only"
+      data-testid="SCREEN_READER_ONLY"
+    >
+      Opens in new window
+    </span>
+  </a>
+</div>
 `;

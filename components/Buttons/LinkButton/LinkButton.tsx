@@ -49,10 +49,8 @@ export default function LinkButton({
       {children}
     </OutboundLink>
   ) : (
-    <Link href={href}>
-      <a className={linkButtonClassNames} data-testid={testID} href={href}>
-        {children}
-      </a>
+    <Link href={href} className={linkButtonClassNames} data-testid={testID}>
+      {children}
     </Link>
   );
 }

@@ -1,15 +1,12 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`ScreenReaderOnly > should render with required props 1`] = `
-[
-  <span>
-    Content never displayed, but it is rendered
-  </span>,
+<div>
   <span
-    className="sr-only"
+    class="sr-only"
     data-testid="SCREEN_READER_ONLY"
   >
     ScreenReader content
-  </span>,
-]
+  </span>
+</div>
 `;

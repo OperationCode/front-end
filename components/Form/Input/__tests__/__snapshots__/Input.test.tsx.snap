@@ -1,30 +1,29 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Input > should render with required props 1`] = `
-<div
-  data-testid="INPUT"
->
-  <label
-    className="text-secondary"
-    data-testid="LABEL"
-    htmlFor="someInputName"
-  >
-    Some Input:
-  </label>
+<div>
   <div
-    className="flex flex-col items-stretch lg:relative"
-    data-testid="INPUT_FEEDBACK_GROUPING"
+    data-testid="INPUT"
   >
-    <input
-      className="border border-secondary/50 rounded-sm text-lg p-2 disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
-      disabled={false}
-      id="someInputName"
-      name="someInputName"
-      onBlur={[MockFunction spy]}
-      onChange={[MockFunction spy]}
-      type="text"
-      value=""
-    />
+    <label
+      class="text-secondary"
+      data-testid="LABEL"
+      for="someInputName"
+    >
+      Some Input:
+    </label>
+    <div
+      class="flex flex-col items-stretch lg:relative"
+      data-testid="INPUT_FEEDBACK_GROUPING"
+    >
+      <input
+        class="border border-secondary/50 rounded-sm text-lg p-2 disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
+        id="someInputName"
+        name="someInputName"
+        type="text"
+        value=""
+      />
+    </div>
   </div>
 </div>
 `;

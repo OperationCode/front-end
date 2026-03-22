@@ -1,11 +1,11 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { CLOSE_BUTTON } from 'common/constants/testIDs';
-import createShallowSnapshotTest from 'test-utils/createShallowSnapshotTest';
+import createSnapshotTest from 'test-utils/createSnapshotTest';
 
 import { Nav } from '../Nav';
 
 describe('Nav', () => {
-  it('should render with no props passed', () => createShallowSnapshotTest(<Nav />));
+  it('should render with no props passed', () => createSnapshotTest(<Nav />));
 
   it('should render both desktop and mobile navigations', () => {
     // we conditionally display them via CSS, but always render them

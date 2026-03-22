@@ -34,7 +34,7 @@ function PressPhotos() {
           <Image
             src={photo.src}
             alt={photo.alt}
-            layout="fill"
+            fill
             className={cx('object-cover', photo.className)}
           />
         </div>

@@ -1,18 +1,23 @@
 import { fireEvent, render } from '@testing-library/react';
-import { composeStory } from '@storybook/react';
 import {
   ACCORDION_CONTENT,
   ACCORDION_TOGGLE_BUTTON,
   SCREEN_READER_ONLY,
 } from 'common/constants/testIDs';
 import { toggleMessages } from '../../ScreenReaderOnly/ScreenReaderOnly';
-import meta, { Default } from '../__stories__/Accordion.stories';
+import Accordion from '../Accordion';
 
-const AccordionStory = composeStory(Default, meta);
+const defaultProps = {
+  accessibilityId: '1',
+  content: {
+    headingChildren: <h5>Can be JSX</h5>,
+    bodyChildren: <p>Can also be JSX</p>,
+  },
+};
 
 describe('Accordion', () => {
   it('should render invisible text that turns visible on toggle click', async () => {
-    const component = render(<AccordionStory />);
+    const component = render(<Accordion {...defaultProps} />);
     const Content = component.queryByTestId(ACCORDION_CONTENT);
 
     expect(Content?.classList.contains('hidden')).toBe(true);
@@ -25,7 +30,7 @@ describe('Accordion', () => {
 
 describe('Accordion Accessibility', () => {
   it('should display the correct screenReader text for toggle button', async () => {
-    const component = render(<AccordionStory />);
+    const component = render(<Accordion {...defaultProps} />);
     const Button = component.queryByTestId(SCREEN_READER_ONLY)!;
 
     expect(Button.textContent).toBe(toggleMessages.open);

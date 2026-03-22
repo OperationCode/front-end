@@ -1,4 +1,4 @@
-const svgoConfig = require('../common/config/svgo');
+import svgoConfig from '../common/config/svgo';
 import type { StorybookConfig } from '@storybook/nextjs';
 
 const config: StorybookConfig = {
@@ -7,14 +7,11 @@ const config: StorybookConfig = {
     '../components/**/__stories__/*.stories.@(js|jsx|mjs|ts|tsx)',
   ],
   staticDirs: ['../public'],
-  addons: [
-    '@storybook/addon-essentials',
-    {
-      name: '@storybook/addon-styling',
-      /** @see https://storybook.js.org/recipes/tailwindcss#:~:text=then%20leave%20the%20options%20object%20empty. */
-      options: {},
-    },
-  ],
+  addons: ['@storybook/addon-docs'],
+  framework: {
+    name: '@storybook/nextjs',
+    options: {},
+  },
   webpackFinal: async config => {
     // Find the Storybook Webpack rule relevant to SVG files.
     // @ts-expect-error => 'config.module' is possibly 'undefined'.ts(18048)
@@ -47,13 +44,6 @@ const config: StorybookConfig = {
     });
 
     return config;
-  },
-  framework: {
-    name: '@storybook/nextjs',
-    options: {},
-  },
-  docs: {
-    autodocs: true,
   },
 };
 

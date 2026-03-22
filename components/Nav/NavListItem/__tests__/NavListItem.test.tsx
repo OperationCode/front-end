@@ -1,4 +1,4 @@
-import createShallowSnapshotTest from 'test-utils/createShallowSnapshotTest';
+import createSnapshotTest from 'test-utils/createSnapshotTest';
 import { render, fireEvent } from '@testing-library/react';
 import { KEY_CODES } from 'test-utils/identifiers';
 
@@ -27,7 +27,7 @@ describe('NavListItem', () => {
   };
 
   it('should render with required props passed', () =>
-    createShallowSnapshotTest(<NavListItem {...testDataWithoutSublinks} />));
+    createSnapshotTest(<NavListItem {...testDataWithoutSublinks} />));
 
   it('should not render unordered list without passed sublinks', () => {
     const { container } = render(<NavListItem {...testDataWithoutSublinks} />);

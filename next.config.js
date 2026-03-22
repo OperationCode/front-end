@@ -4,41 +4,29 @@ const { withSentryConfig } = require('@sentry/nextjs');
 const withBundleAnalyzer = require('@next/bundle-analyzer')({ enabled: hasBundleAnalyzer });
 const svgoConfig = require('./common/config/svgo');
 
-const sentryWebpackPluginOptions = {
-  // Additional config options for the Sentry Webpack plugin. Keep in mind that
-  // the following options are set automatically, and overriding them is not
-  // recommended:
-  //   release, url, org, project, authToken, configFile, stripPrefix,
-  //   urlPrefix, include, ignore
-
-  silent: true, // Suppresses all logs
-  // For all available options, see:
-  // https://github.com/getsentry/sentry-webpack-plugin#options.
-};
-
 /**
  * @see https://nextjs.org/docs/basic-features/typescript#type-checking-nextconfigjs
  * @type {import('next').NextConfig}
  */
 const nextConfig = {
-  excludeDefaultMomentLocales: true,
-
-  devIndicators: {
-    buildActivityPosition: 'top-left',
-  },
-
-  eslint: {
-    ignoreDuringBuilds: true, // We lint during CI.
+  turbopack: {
+    rules: {
+      '*.svg': {
+        loaders: ['@svgr/webpack'],
+        as: '*.js',
+      },
+    },
   },
 
   images: {
-    domains: [
-      'operation-code-assets.s3.us-east-2.amazonaws.com',
-      'user-images.githubusercontent.com',
-      'ssl-static.libsyn.com',
-      'static.libsyn.com',
-      'libsyn.com',
-      'i.ytimg.com',
+    localPatterns: [{ pathname: '/**' }],
+    remotePatterns: [
+      { protocol: 'https', hostname: 'operation-code-assets.s3.us-east-2.amazonaws.com' },
+      { protocol: 'https', hostname: 'user-images.githubusercontent.com' },
+      { protocol: 'https', hostname: 'ssl-static.libsyn.com' },
+      { protocol: 'https', hostname: 'static.libsyn.com' },
+      { protocol: 'https', hostname: 'libsyn.com' },
+      { protocol: 'https', hostname: 'i.ytimg.com' },
     ],
   },
 
@@ -123,29 +111,6 @@ const nextConfig = {
   },
 };
 
-/**
- * The name of the function type is `normalizeConfig` in `next/dist/server/config-shared`,
- * but JSDoc type imports can't read it.
- *
- * @type {(phase: string, config: import('next').NextConfig) => Promise<import('next').NextConfig>}
- */
-module.exports = async (phase, defaultConfig) => {
-  const plugins = [
-    /**
-     *
-     * @type {(config: import('next').NextConfig) => any}
-     */
-    config => withSentryConfig(config, sentryWebpackPluginOptions),
-    withBundleAnalyzer,
-  ];
-
-  const config = plugins.reduce(
-    (acc, plugin) => {
-      const update = plugin(acc);
-      return typeof update === 'function' ? update(phase, defaultConfig) : update;
-    },
-    { ...nextConfig },
-  );
-
-  return config;
-};
+module.exports = withSentryConfig(withBundleAnalyzer(nextConfig), {
+  silent: true,
+});

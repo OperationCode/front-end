@@ -1,9 +1,9 @@
-import createShallowSnapshotTest from 'test-utils/createShallowSnapshotTest';
+import createSnapshotTest from 'test-utils/createSnapshotTest';
 import ImageCard from '../ImageCard';
 
 describe('ImageCard', () => {
   it('should render with required props', () => {
-    createShallowSnapshotTest(
+    createSnapshotTest(
       <ImageCard alt="Test title" imageSource="/static/images/Family1.jpg">
         <p>Testing!</p>
       </ImageCard>,
@@ -11,7 +11,7 @@ describe('ImageCard', () => {
   });
 
   it('should render with many props assigned', () => {
-    createShallowSnapshotTest(
+    createSnapshotTest(
       <ImageCard
         alt="Test title"
         className="test"

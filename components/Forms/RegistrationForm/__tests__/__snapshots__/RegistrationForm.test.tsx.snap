@@ -1,340 +1,329 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`RegistrationForm > should render with required props 1`] = `
-<form
-  className="flex flex-col gap-4 max-w-prose w-full px-4 !m-0"
-  noValidate={true}
-  onReset={[Function]}
-  onSubmit={[Function]}
->
-  <div
-    data-testid="INPUT"
+<div>
+  <form
+    class="flex flex-col gap-4 max-w-prose w-full px-4 !m-0"
+    novalidate=""
   >
-    <label
-      className="text-secondary"
-      data-testid="LABEL"
-      htmlFor="email"
-    >
-      Email*
-    </label>
     <div
-      className="flex flex-col items-stretch lg:relative"
-      data-testid="INPUT_FEEDBACK_GROUPING"
+      data-testid="INPUT"
     >
-      <input
-        autoComplete="username email"
-        className="border border-secondary/50 rounded-sm text-lg p-2 disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
-        disabled={false}
-        id="email"
-        name="email"
-        onBlur={[Function]}
-        onChange={[Function]}
-        type="email"
-        value=""
-      />
-    </div>
-  </div>
-  <div
-    data-testid="INPUT"
-  >
-    <label
-      className="text-secondary"
-      data-testid="LABEL"
-      htmlFor="confirm-email"
-    >
-      Confirm Email*
-    </label>
-    <div
-      className="flex flex-col items-stretch lg:relative"
-      data-testid="INPUT_FEEDBACK_GROUPING"
-    >
-      <input
-        autoComplete="username email"
-        className="border border-secondary/50 rounded-sm text-lg p-2 disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
-        disabled={false}
-        id="confirm-email"
-        name="confirm-email"
-        onBlur={[Function]}
-        onChange={[Function]}
-        type="email"
-        value=""
-      />
-    </div>
-  </div>
-  <div
-    className="hidden"
-    data-testid="INPUT"
-  >
-    <label
-      className="text-secondary"
-      data-testid="LABEL"
-      htmlFor="password"
-    >
-      Password*
-    </label>
-    <div
-      className="flex flex-col items-stretch lg:relative"
-      data-testid="INPUT_FEEDBACK_GROUPING"
-    >
-      <input
-        autoComplete="new-password"
-        className="border border-secondary/50 rounded-sm text-lg p-2 disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
-        disabled={false}
-        id="password"
-        name="password"
-        onBlur={[Function]}
-        onChange={[Function]}
-        type="password"
-        value=""
-      />
-    </div>
-  </div>
-  <div
-    className="hidden"
-    data-testid="INPUT"
-  >
-    <label
-      className="text-secondary"
-      data-testid="LABEL"
-      htmlFor="confirm-password"
-    >
-      Confirm Password*
-    </label>
-    <div
-      className="flex flex-col items-stretch lg:relative"
-      data-testid="INPUT_FEEDBACK_GROUPING"
-    >
-      <input
-        autoComplete="new-password"
-        className="border border-secondary/50 rounded-sm text-lg p-2 disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
-        disabled={false}
-        id="confirm-password"
-        name="confirm-password"
-        onBlur={[Function]}
-        onChange={[Function]}
-        type="password"
-        value=""
-      />
-    </div>
-  </div>
-  <div
-    data-testid="INPUT"
-  >
-    <label
-      className="text-secondary"
-      data-testid="LABEL"
-      htmlFor="firstName"
-    >
-      First Name*
-    </label>
-    <div
-      className="flex flex-col items-stretch lg:relative"
-      data-testid="INPUT_FEEDBACK_GROUPING"
-    >
-      <input
-        autoComplete="given-name"
-        className="border border-secondary/50 rounded-sm text-lg p-2 disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
-        disabled={false}
-        id="firstName"
-        name="firstName"
-        onBlur={[Function]}
-        onChange={[Function]}
-        type="text"
-        value=""
-      />
-    </div>
-  </div>
-  <div
-    data-testid="INPUT"
-  >
-    <label
-      className="text-secondary"
-      data-testid="LABEL"
-      htmlFor="lastName"
-    >
-      Last Name*
-    </label>
-    <div
-      className="flex flex-col items-stretch lg:relative"
-      data-testid="INPUT_FEEDBACK_GROUPING"
-    >
-      <input
-        autoComplete="family-name"
-        className="border border-secondary/50 rounded-sm text-lg p-2 disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
-        disabled={false}
-        id="lastName"
-        name="lastName"
-        onBlur={[Function]}
-        onChange={[Function]}
-        type="text"
-        value=""
-      />
-    </div>
-  </div>
-  <div
-    data-testid="INPUT"
-  >
-    <label
-      className="text-secondary"
-      data-testid="LABEL"
-      htmlFor="zipcode"
-    >
-      Zipcode*
-    </label>
-    <div
-      className="flex flex-col items-stretch lg:relative"
-      data-testid="INPUT_FEEDBACK_GROUPING"
-    >
-      <input
-        autoComplete="postal-code"
-        className="border border-secondary/50 rounded-sm text-lg p-2 disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
-        disabled={false}
-        id="zipcode"
-        name="zipcode"
-        onBlur={[Function]}
-        onChange={[Function]}
-        type="text"
-        value=""
-      />
-    </div>
-  </div>
-  <div
-    className="relative"
-    data-testid="CHECKBOX"
-  >
-    <label
-      className="text-secondary group flex items-start gap-3 outline-1 outline-transparent outline-offset-2 cursor-pointer has-[input:disabled]:cursor-not-allowed [&>input:focus-visible]:outline-secondary/50"
-      data-testid="LABEL"
-      htmlFor="codeOfConduct"
-    >
-      <input
-        checked={false}
-        className="border border-secondary/50 size-5 rounded-sm disabled:opacity-60 cursor-[inherit] group-hover:border-secondary outline-transparent outline-offset-2 outline group-hover:outline-secondary/25"
-        disabled={false}
-        id="codeOfConduct"
-        name="codeOfConduct"
-        onBlur={[Function]}
-        onChange={[Function]}
-        type="checkbox"
-        value=""
-      />
-      <span
-        className="select-none -mt-[0.1875rem]"
+      <label
+        class="text-secondary"
+        data-testid="LABEL"
+        for="email"
       >
-        I have read and agree to
-         
-        <a
-          className="inline-flex items-start text-burnt-orange"
-          href="https://github.com/OperationCode/operationcode_docs/blob/master/community/code_of_conduct.md"
-          onClick={[Function]}
-          rel="noopener noreferrer"
-          target="_blank"
+        Email*
+      </label>
+      <div
+        class="flex flex-col items-stretch lg:relative"
+        data-testid="INPUT_FEEDBACK_GROUPING"
+      >
+        <input
+          autocomplete="username email"
+          class="border border-secondary/50 rounded-sm text-lg p-2 disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
+          id="email"
+          name="email"
+          type="email"
+          value=""
+        />
+      </div>
+    </div>
+    <div
+      data-testid="INPUT"
+    >
+      <label
+        class="text-secondary"
+        data-testid="LABEL"
+        for="confirm-email"
+      >
+        Confirm Email*
+      </label>
+      <div
+        class="flex flex-col items-stretch lg:relative"
+        data-testid="INPUT_FEEDBACK_GROUPING"
+      >
+        <input
+          autocomplete="username email"
+          class="border border-secondary/50 rounded-sm text-lg p-2 disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
+          id="confirm-email"
+          name="confirm-email"
+          type="email"
+          value=""
+        />
+      </div>
+    </div>
+    <div
+      class="hidden"
+      data-testid="INPUT"
+    >
+      <label
+        class="text-secondary"
+        data-testid="LABEL"
+        for="password"
+      >
+        Password*
+      </label>
+      <div
+        class="flex flex-col items-stretch lg:relative"
+        data-testid="INPUT_FEEDBACK_GROUPING"
+      >
+        <input
+          autocomplete="new-password"
+          class="border border-secondary/50 rounded-sm text-lg p-2 disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
+          id="password"
+          name="password"
+          type="password"
+          value=""
+        />
+      </div>
+    </div>
+    <div
+      class="hidden"
+      data-testid="INPUT"
+    >
+      <label
+        class="text-secondary"
+        data-testid="LABEL"
+        for="confirm-password"
+      >
+        Confirm Password*
+      </label>
+      <div
+        class="flex flex-col items-stretch lg:relative"
+        data-testid="INPUT_FEEDBACK_GROUPING"
+      >
+        <input
+          autocomplete="new-password"
+          class="border border-secondary/50 rounded-sm text-lg p-2 disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
+          id="confirm-password"
+          name="confirm-password"
+          type="password"
+          value=""
+        />
+      </div>
+    </div>
+    <div
+      data-testid="INPUT"
+    >
+      <label
+        class="text-secondary"
+        data-testid="LABEL"
+        for="firstName"
+      >
+        First Name*
+      </label>
+      <div
+        class="flex flex-col items-stretch lg:relative"
+        data-testid="INPUT_FEEDBACK_GROUPING"
+      >
+        <input
+          autocomplete="given-name"
+          class="border border-secondary/50 rounded-sm text-lg p-2 disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
+          id="firstName"
+          name="firstName"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+    <div
+      data-testid="INPUT"
+    >
+      <label
+        class="text-secondary"
+        data-testid="LABEL"
+        for="lastName"
+      >
+        Last Name*
+      </label>
+      <div
+        class="flex flex-col items-stretch lg:relative"
+        data-testid="INPUT_FEEDBACK_GROUPING"
+      >
+        <input
+          autocomplete="family-name"
+          class="border border-secondary/50 rounded-sm text-lg p-2 disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
+          id="lastName"
+          name="lastName"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+    <div
+      data-testid="INPUT"
+    >
+      <label
+        class="text-secondary"
+        data-testid="LABEL"
+        for="zipcode"
+      >
+        Zipcode*
+      </label>
+      <div
+        class="flex flex-col items-stretch lg:relative"
+        data-testid="INPUT_FEEDBACK_GROUPING"
+      >
+        <input
+          autocomplete="postal-code"
+          class="border border-secondary/50 rounded-sm text-lg p-2 disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
+          id="zipcode"
+          name="zipcode"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+    <div
+      class="relative"
+      data-testid="CHECKBOX"
+    >
+      <label
+        class="text-secondary group flex items-start gap-3 outline-1 outline-transparent outline-offset-2 cursor-pointer has-[input:disabled]:cursor-not-allowed [&>input:focus-visible]:outline-secondary/50"
+        data-testid="LABEL"
+        for="codeOfConduct"
+      >
+        <input
+          class="border border-secondary/50 size-5 rounded-sm disabled:opacity-60 cursor-[inherit] group-hover:border-secondary outline-transparent outline-offset-2 outline group-hover:outline-secondary/25"
+          id="codeOfConduct"
+          name="codeOfConduct"
+          type="checkbox"
+          value=""
+        />
+        <span
+          class="select-none -mt-[0.1875rem]"
         >
-          Operation Code's Code of Conduct.
-          <span
-            className="sr-only"
-            data-testid="SCREEN_READER_ONLY"
+          I have read and agree to
+           
+          <a
+            class="inline-flex items-start text-burnt-orange"
+            href="https://github.com/OperationCode/operationcode_docs/blob/master/community/code_of_conduct.md"
+            rel="noopener noreferrer"
+            target="_blank"
           >
-            Opens in new window
-          </span>
-          <svg
-            className="inline-block ml-1 mt-0.5 fill-current size-3.5"
-            dangerouslySetInnerHTML={
-              {
-                "__html": "<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" id="_73ab62bc"><title>External Link Symbol</title><path d="M448 80v352c0 27-21 48-48 48H48c-27 0-48-21-48-48V80c0-27 21-48 48-48h352c27 0 48 21 48 48zm-88 16H248c-21 0-32 26-17 41l32 32L68 364c-5 5-5 13 0 17l31 31c4 5 12 5 17 0l195-195 32 32c15 15 41 4 41-17V120c0-13-11-24-24-24z"/></symbol><use href='#_73ab62bc'/>",
-              }
-            }
-            viewBox="0 0 448 512"
-          />
-        </a>
-         
-        *
-      </span>
-    </label>
-  </div>
-  <div
-    className="relative"
-    data-testid="CHECKBOX"
-  >
-    <label
-      className="text-secondary group flex items-start gap-3 outline-1 outline-transparent outline-offset-2 cursor-pointer has-[input:disabled]:cursor-not-allowed [&>input:focus-visible]:outline-secondary/50"
-      data-testid="LABEL"
-      htmlFor="slackGuidelines"
+            Operation Code's Code of Conduct.
+            <span
+              class="sr-only"
+              data-testid="SCREEN_READER_ONLY"
+            >
+              Opens in new window
+            </span>
+            <svg
+              class="inline-block ml-1 mt-0.5 fill-current size-3.5"
+              viewBox="0 0 448 512"
+            >
+              <symbol
+                id="_73ab62bc"
+                viewBox="0 0 448 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <title>
+                  External Link Symbol
+                </title>
+                <path
+                  d="M448 80v352c0 27-21 48-48 48H48c-27 0-48-21-48-48V80c0-27 21-48 48-48h352c27 0 48 21 48 48zm-88 16H248c-21 0-32 26-17 41l32 32L68 364c-5 5-5 13 0 17l31 31c4 5 12 5 17 0l195-195 32 32c15 15 41 4 41-17V120c0-13-11-24-24-24z"
+                />
+              </symbol>
+              <use
+                href="#_73ab62bc"
+              />
+            </svg>
+          </a>
+           
+          *
+        </span>
+      </label>
+    </div>
+    <div
+      class="relative"
+      data-testid="CHECKBOX"
     >
-      <input
-        checked={false}
-        className="border border-secondary/50 size-5 rounded-sm disabled:opacity-60 cursor-[inherit] group-hover:border-secondary outline-transparent outline-offset-2 outline group-hover:outline-secondary/25"
-        disabled={false}
-        id="slackGuidelines"
-        name="slackGuidelines"
-        onBlur={[Function]}
-        onChange={[Function]}
-        type="checkbox"
-        value=""
-      />
-      <span
-        className="select-none -mt-[0.1875rem]"
+      <label
+        class="text-secondary group flex items-start gap-3 outline-1 outline-transparent outline-offset-2 cursor-pointer has-[input:disabled]:cursor-not-allowed [&>input:focus-visible]:outline-secondary/50"
+        data-testid="LABEL"
+        for="slackGuidelines"
       >
-        I have read and agree to
-         
-        <a
-          className="inline-flex items-start text-burnt-orange"
-          href="https://github.com/OperationCode/START_HERE/blob/master/community_guidelines.md"
-          onClick={[Function]}
-          rel="noopener noreferrer"
-          target="_blank"
+        <input
+          class="border border-secondary/50 size-5 rounded-sm disabled:opacity-60 cursor-[inherit] group-hover:border-secondary outline-transparent outline-offset-2 outline group-hover:outline-secondary/25"
+          id="slackGuidelines"
+          name="slackGuidelines"
+          type="checkbox"
+          value=""
+        />
+        <span
+          class="select-none -mt-[0.1875rem]"
         >
-          Operation Code's Slack Community Guidelines.
-          <span
-            className="sr-only"
-            data-testid="SCREEN_READER_ONLY"
+          I have read and agree to
+           
+          <a
+            class="inline-flex items-start text-burnt-orange"
+            href="https://github.com/OperationCode/START_HERE/blob/master/community_guidelines.md"
+            rel="noopener noreferrer"
+            target="_blank"
           >
-            Opens in new window
-          </span>
-          <svg
-            className="inline-block ml-1 mt-0.5 fill-current size-3.5"
-            dangerouslySetInnerHTML={
-              {
-                "__html": "<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" id="_73ab62bc"><title>External Link Symbol</title><path d="M448 80v352c0 27-21 48-48 48H48c-27 0-48-21-48-48V80c0-27 21-48 48-48h352c27 0 48 21 48 48zm-88 16H248c-21 0-32 26-17 41l32 32L68 364c-5 5-5 13 0 17l31 31c4 5 12 5 17 0l195-195 32 32c15 15 41 4 41-17V120c0-13-11-24-24-24z"/></symbol><use href='#_73ab62bc'/>",
-              }
-            }
-            viewBox="0 0 448 512"
-          />
-        </a>
-         
-        *
-      </span>
-    </label>
-  </div>
-  <button
-    className="font-family-bebas font-bold text-center uppercase text-shadow-[initial] tracking-wide inline-block rounded leading-none border-4 border-solid cursor-pointer py-4 px-3 whitespace-nowrap transition-all duration-200 ease-linear min-w-[175px] focus-visible:bg-transparent hover:bg-transparent disabled:opacity-60 disabled:hover:cursor-not-allowed bg-secondary border-secondary outline-secondary text-primary focus-visible:text-secondary hover:text-secondary w-full"
-    data-testid="REGISTRATION_FORM_INITIAL_SUBMIT_BUTTON"
-    disabled={false}
-    onClick={[Function]}
-    tabIndex={0}
-    type="submit"
-  >
-    <span
-      className="flex items-center justify-center gap-x-2"
+            Operation Code's Slack Community Guidelines.
+            <span
+              class="sr-only"
+              data-testid="SCREEN_READER_ONLY"
+            >
+              Opens in new window
+            </span>
+            <svg
+              class="inline-block ml-1 mt-0.5 fill-current size-3.5"
+              viewBox="0 0 448 512"
+            >
+              <symbol
+                id="_73ab62bc"
+                viewBox="0 0 448 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <title>
+                  External Link Symbol
+                </title>
+                <path
+                  d="M448 80v352c0 27-21 48-48 48H48c-27 0-48-21-48-48V80c0-27 21-48 48-48h352c27 0 48 21 48 48zm-88 16H248c-21 0-32 26-17 41l32 32L68 364c-5 5-5 13 0 17l31 31c4 5 12 5 17 0l195-195 32 32c15 15 41 4 41-17V120c0-13-11-24-24-24z"
+                />
+              </symbol>
+              <use
+                href="#_73ab62bc"
+              />
+            </svg>
+          </a>
+           
+          *
+        </span>
+      </label>
+    </div>
+    <button
+      class="font-family-bebas font-bold text-center uppercase text-shadow-[initial] tracking-wide inline-block rounded leading-none border-4 border-solid cursor-pointer py-4 px-3 whitespace-nowrap transition-all duration-200 ease-linear min-w-[175px] focus-visible:bg-transparent hover:bg-transparent disabled:opacity-60 disabled:hover:cursor-not-allowed bg-secondary border-secondary outline-secondary text-primary focus-visible:text-secondary hover:text-secondary w-full"
+      data-testid="REGISTRATION_FORM_INITIAL_SUBMIT_BUTTON"
+      tabindex="0"
+      type="submit"
     >
       <span
-        className="mt-[0.325rem]"
+        class="flex items-center justify-center gap-x-2"
       >
-        Submit ✓
+        <span
+          class="mt-[0.325rem]"
+        >
+          Submit ✓
+        </span>
       </span>
-    </span>
-  </button>
-  <aside
-    className="text-xs mx-auto p-3 border border-dashed border-warning-deep bg-warning rounded-md"
-  >
-    <p>
-      The demographic information you provide, helps us understand our community needs, ensure diversity, and provide specific resources to reach our mission. Thank you in advance for providing honest answers. 
-      <span
-        className="font-bold"
-      >
-        We do not sell your information to anyone.
-      </span>
-    </p>
-  </aside>
-</form>
+    </button>
+    <aside
+      class="text-xs mx-auto p-3 border border-dashed border-warning-deep bg-warning rounded-md"
+    >
+      <p>
+        The demographic information you provide, helps us understand our community needs, ensure diversity, and provide specific resources to reach our mission. Thank you in advance for providing honest answers. 
+        <span
+          class="font-bold"
+        >
+          We do not sell your information to anyone.
+        </span>
+      </p>
+    </aside>
+  </form>
+</div>
 `;

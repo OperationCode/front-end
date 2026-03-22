@@ -57,21 +57,20 @@ function NavListItem({ sublinks, href, name }: NavListItemPropsType) {
   return (
     <li className="relative">
       <div className="h-full flex items-center">
-        <Link href={href}>
-          <a
-            className={cx(
-              'h-full pl-8 pr-2 w-30 text-secondary fill-current cursor-pointer',
-              'inline-flex items-center justify-end leading-none transition-all duration-200 ease-linear',
-              'no-underline hover:text-primary focus-visible:text-primary',
-            )}
-            onMouseEnter={exposeSublinks}
-            onMouseLeave={hideSublinks}
-            role="link"
-            tabIndex={0}
-            data-testid={`Nav Item ${name}`}
-          >
-            {name}
-          </a>
+        <Link
+          href={href}
+          className={cx(
+            'h-full pl-8 pr-2 w-30 text-secondary fill-current cursor-pointer',
+            'inline-flex items-center justify-end leading-none transition-all duration-200 ease-linear',
+            'no-underline hover:text-primary focus-visible:text-primary',
+          )}
+          onMouseEnter={exposeSublinks}
+          onMouseLeave={hideSublinks}
+          role="link"
+          tabIndex={0}
+          data-testid={`Nav Item ${name}`}
+        >
+          {name}
         </Link>
         {hasSublinks && (
           <button
@@ -109,19 +108,19 @@ function NavListItem({ sublinks, href, name }: NavListItemPropsType) {
             <li key={sublink.name}>
               {/* 😞 next/link fought being mocked, so `prefetch` has test-specific code */}
               {!sublink.isExternal ? (
-                <Link href={sublink.href} prefetch={process.env.NODE_ENV === 'production'}>
-                  <a
-                    className={cx(
-                      'p-4 text-secondary flex items-center justify-center fill-current no-underline',
-                      'transition-colors duration-200 ease-linear hover:text-primary focus-visible:text-primary',
-                    )}
-                    role="link"
-                    tabIndex={0}
-                    data-testid={`Nav Item ${sublink.name}`}
-                    onKeyDown={event => handleKeyDown(event, index)}
-                  >
-                    <span>{sublink.name}</span>
-                  </a>
+                <Link
+                  href={sublink.href}
+                  prefetch={process.env.NODE_ENV === 'production'}
+                  className={cx(
+                    'p-4 text-secondary flex items-center justify-center fill-current no-underline',
+                    'transition-colors duration-200 ease-linear hover:text-primary focus-visible:text-primary',
+                  )}
+                  role="link"
+                  tabIndex={0}
+                  data-testid={`Nav Item ${sublink.name}`}
+                  onKeyDown={event => handleKeyDown(event, index)}
+                >
+                  <span>{sublink.name}</span>
                 </Link>
               ) : (
                 <OutboundLink

@@ -1,5 +1,6 @@
+import type { ReactNode } from 'react';
 import { Formik, Field } from 'formik';
-import type { StoryFn } from '@storybook/react';
+import type { StoryFn } from '@storybook/nextjs';
 import Form from '../../Form';
 import Input from '../Input';
 
@@ -49,7 +50,7 @@ export default {
     controls: { sort: 'requiredFirst' },
   },
   decorators: [
-    (InputStory: () => JSX.Element) => (
+    (InputStory: () => ReactNode) => (
       <>
         <span>
           NOTE: This component&apos;s story has no context outside of Formik and will not function
