@@ -48,7 +48,7 @@ function Input({
           {...field}
           {...props}
           className={cx(
-            'border border-secondary/50 rounded-sm text-lg p-2',
+            'border border-secondary/50 background- rounded-sm text-lg p-2 bg-white',
             'disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48',
             'focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none',
             {
