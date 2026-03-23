@@ -1,12 +1,12 @@
-import faker from 'faker';
+import { faker } from '@faker-js/faker';
 import type { RegistrationFormValues } from 'components/Forms/RegistrationForm/RegistrationForm';
 
 export function mockUser(desiredEmail?: string): RegistrationFormValues {
-  const firstName = faker.name.firstName() as string;
-  const lastName = faker.name.lastName() as string;
+  const firstName = faker.person.firstName();
+  const lastName = faker.person.lastName();
   const email =
-    desiredEmail || (faker.internet.email(firstName, lastName, 'operationcode.org') as string);
-  const zipcode = `${faker.address.zipCode()}`; // force to be string
+    desiredEmail || faker.internet.email({ firstName, lastName, provider: 'operationcode.org' });
+  const zipcode = `${faker.location.zipCode()}`;
 
   const user = {
     email,

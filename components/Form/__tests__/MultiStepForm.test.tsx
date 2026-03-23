@@ -2,7 +2,7 @@
 import { vi } from 'vitest';
 import type { ReactElement } from 'react';
 import { Component } from 'react';
-import faker from 'faker';
+import { faker } from '@faker-js/faker';
 import get from 'lodash/get';
 import { fireEvent, render, waitFor, getByTestId } from '@testing-library/react';
 import { Field } from 'formik';
@@ -206,8 +206,8 @@ describe('MultiStepForm', () => {
       <MultiStepForm {...requiredProps} />,
     );
 
-    typeIntoInput(await findByLabelText(/first name/gim), 'firstName', faker.name.firstName());
-    typeIntoInput(await findByLabelText(/last name/gim), 'lastName', faker.name.lastName());
+    typeIntoInput(await findByLabelText(/first name/gim), 'firstName', faker.person.firstName());
+    typeIntoInput(await findByLabelText(/last name/gim), 'lastName', faker.person.lastName());
     await submitForm({ container });
 
     expect(await findByTestId('ultimateAnswer')).not.toBeNull();
@@ -219,15 +219,15 @@ describe('MultiStepForm', () => {
       <MultiStepForm {...requiredProps} onFinalSubmit={onFinalSubmitMock} />,
     );
 
-    typeIntoInput(await findByLabelText(/first name/gim), 'firstName', faker.name.firstName());
-    typeIntoInput(await findByLabelText(/last name/gim), 'lastName', faker.name.lastName());
+    typeIntoInput(await findByLabelText(/first name/gim), 'firstName', faker.person.firstName());
+    typeIntoInput(await findByLabelText(/last name/gim), 'lastName', faker.person.lastName());
     await submitForm({ container });
 
     typeIntoInput(await findByLabelText(/ultimate/gim), 'ultimateAnswer', '42');
     await submitForm({ container });
 
-    typeIntoInput(await findByLabelText(/number/gim), 'favoriteNumber', faker.random.number());
-    typeIntoInput(await findByLabelText(/person/gim), 'favoritePerson', faker.name.firstName());
+    typeIntoInput(await findByLabelText(/number/gim), 'favoriteNumber', faker.number.int());
+    typeIntoInput(await findByLabelText(/person/gim), 'favoritePerson', faker.person.firstName());
     await submitForm({ container, isFinalStep: true });
 
     await waitFor(() => {
@@ -241,8 +241,8 @@ describe('MultiStepForm', () => {
       <MultiStepForm {...requiredProps} onEachStepSubmit={onEachStepSubmit} />,
     );
 
-    typeIntoInput(await findByLabelText(/first name/gim), 'firstName', faker.name.firstName());
-    typeIntoInput(await findByLabelText(/last name/gim), 'lastName', faker.name.lastName());
+    typeIntoInput(await findByLabelText(/first name/gim), 'firstName', faker.person.firstName());
+    typeIntoInput(await findByLabelText(/last name/gim), 'lastName', faker.person.lastName());
     await submitForm({ container });
 
     await waitFor(() => {
@@ -256,8 +256,8 @@ describe('MultiStepForm', () => {
       expect(onEachStepSubmit).toHaveBeenCalledTimes(2);
     });
 
-    typeIntoInput(await findByLabelText(/number/gim), 'favoriteNumber', faker.random.number());
-    typeIntoInput(await findByLabelText(/person/gim), 'favoritePerson', faker.name.firstName());
+    typeIntoInput(await findByLabelText(/number/gim), 'favoriteNumber', faker.number.int());
+    typeIntoInput(await findByLabelText(/person/gim), 'favoritePerson', faker.person.firstName());
     await submitForm({ container, isFinalStep: true });
 
     await waitFor(() => {
@@ -272,15 +272,15 @@ describe('MultiStepForm', () => {
       <MultiStepForm {...requiredProps} onFinalSubmit={onFinalSubmitMock} />,
     );
 
-    typeIntoInput(await findByLabelText(/first name/gim), 'firstName', faker.name.firstName());
-    typeIntoInput(await findByLabelText(/last name/gim), 'lastName', faker.name.lastName());
+    typeIntoInput(await findByLabelText(/first name/gim), 'firstName', faker.person.firstName());
+    typeIntoInput(await findByLabelText(/last name/gim), 'lastName', faker.person.lastName());
     await submitForm({ container });
 
     typeIntoInput(await findByLabelText(/ultimate/gim), 'ultimateAnswer', '42');
     await submitForm({ container });
 
-    typeIntoInput(await findByLabelText(/number/gim), 'favoriteNumber', faker.random.number());
-    typeIntoInput(await findByLabelText(/person/gim), 'favoritePerson', faker.name.firstName());
+    typeIntoInput(await findByLabelText(/number/gim), 'favoriteNumber', faker.number.int());
+    typeIntoInput(await findByLabelText(/person/gim), 'favoritePerson', faker.person.firstName());
     await submitForm({ container, isFinalStep: true });
 
     const alert = await findByRole('alert');
@@ -298,15 +298,15 @@ describe('MultiStepForm', () => {
       <MultiStepForm {...requiredProps} onFinalSubmit={onFinalSubmitMock} />,
     );
 
-    typeIntoInput(await findByLabelText(/first name/gim), 'firstName', faker.name.firstName());
-    typeIntoInput(await findByLabelText(/last name/gim), 'lastName', faker.name.lastName());
+    typeIntoInput(await findByLabelText(/first name/gim), 'firstName', faker.person.firstName());
+    typeIntoInput(await findByLabelText(/last name/gim), 'lastName', faker.person.lastName());
     await submitForm({ container });
 
     typeIntoInput(await findByLabelText(/ultimate/gim), 'ultimateAnswer', '42');
     await submitForm({ container });
 
-    typeIntoInput(await findByLabelText(/number/gim), 'favoriteNumber', faker.random.number());
-    typeIntoInput(await findByLabelText(/person/gim), 'favoritePerson', faker.name.firstName());
+    typeIntoInput(await findByLabelText(/number/gim), 'favoriteNumber', faker.number.int());
+    typeIntoInput(await findByLabelText(/person/gim), 'favoritePerson', faker.person.firstName());
     await submitForm({ container, isFinalStep: true });
 
     const alert = await findByRole('alert');
@@ -325,15 +325,15 @@ describe('MultiStepForm', () => {
 
     expect(queryByRole('alert')).toBeNull();
 
-    typeIntoInput(await findByLabelText(/first name/i), 'firstName', faker.name.firstName());
-    typeIntoInput(await findByLabelText(/last name/i), 'lastName', faker.name.lastName());
+    typeIntoInput(await findByLabelText(/first name/i), 'firstName', faker.person.firstName());
+    typeIntoInput(await findByLabelText(/last name/i), 'lastName', faker.person.lastName());
     await submitForm({ container });
 
     typeIntoInput(await findByLabelText(/ultimate/i), 'ultimateAnswer', '42');
     await submitForm({ container });
 
-    typeIntoInput(await findByLabelText(/number/i), 'favoriteNumber', faker.random.number());
-    typeIntoInput(await findByLabelText(/person/i), 'favoritePerson', faker.name.firstName());
+    typeIntoInput(await findByLabelText(/number/i), 'favoriteNumber', faker.number.int());
+    typeIntoInput(await findByLabelText(/person/i), 'favoritePerson', faker.person.firstName());
     await submitForm({ container, isFinalStep: true });
 
     const alert = await findByRole('alert');
@@ -352,8 +352,8 @@ describe('MultiStepForm', () => {
       <MultiStepForm {...requiredProps} />,
     );
 
-    const firstNameValue = faker.name.firstName();
-    const lastNameValue = faker.name.lastName();
+    const firstNameValue = faker.person.firstName();
+    const lastNameValue = faker.person.lastName();
 
     typeIntoInput(await findByLabelText(/first name/gim), 'firstName', firstNameValue);
     typeIntoInput(await findByLabelText(/last name/gim), 'lastName', lastNameValue);
@@ -386,8 +386,8 @@ describe('MultiStepForm', () => {
       <MultiStepForm {...requiredProps} />,
     );
 
-    const firstNameValue = faker.name.firstName();
-    const lastNameValue = faker.name.lastName();
+    const firstNameValue = faker.person.firstName();
+    const lastNameValue = faker.person.lastName();
 
     typeIntoInput(await findByLabelText(/first name/gim), 'firstName', firstNameValue);
     typeIntoInput(await findByLabelText(/last name/gim), 'lastName', lastNameValue);
@@ -418,8 +418,8 @@ describe('MultiStepForm', () => {
   it('should call custom step handler after submitting', async () => {
     const { container, findByLabelText } = render(<MultiStepForm {...requiredProps} />);
 
-    typeIntoInput(await findByLabelText(/first name/gim), 'firstName', faker.name.firstName());
-    typeIntoInput(await findByLabelText(/last name/gim), 'lastName', faker.name.lastName());
+    typeIntoInput(await findByLabelText(/first name/gim), 'firstName', faker.person.firstName());
+    typeIntoInput(await findByLabelText(/last name/gim), 'lastName', faker.person.lastName());
     await submitForm({ container });
 
     await waitFor(() => {
@@ -438,8 +438,8 @@ describe('MultiStepForm', () => {
       <MultiStepForm {...requiredProps} steps={steps} />,
     );
 
-    typeIntoInput(await findByLabelText(/first name/gim), 'firstName', faker.name.firstName());
-    typeIntoInput(await findByLabelText(/last name/gim), 'lastName', faker.name.lastName());
+    typeIntoInput(await findByLabelText(/first name/gim), 'firstName', faker.person.firstName());
+    typeIntoInput(await findByLabelText(/last name/gim), 'lastName', faker.person.lastName());
     await submitForm({ container });
 
     await waitFor(() => {
@@ -463,8 +463,8 @@ describe('MultiStepForm', () => {
       <MultiStepForm {...requiredProps} steps={steps} />,
     );
 
-    typeIntoInput(await findByLabelText(/first name/gim), 'firstName', faker.name.firstName());
-    typeIntoInput(await findByLabelText(/last name/gim), 'lastName', faker.name.lastName());
+    typeIntoInput(await findByLabelText(/first name/gim), 'firstName', faker.person.firstName());
+    typeIntoInput(await findByLabelText(/last name/gim), 'lastName', faker.person.lastName());
     await submitForm({ container });
 
     await waitFor(() => {

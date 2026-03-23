@@ -62,6 +62,7 @@
     "yup": "^1.7.1"
   },
   "devDependencies": {
+    "@faker-js/faker": "^10.3.0",
     "@operation_code/eslint-plugin-custom-rules": "^1.0.1",
     "@playwright/test": "^1.56.1",
     "@storybook/addon-docs": "^10.3.1",
@@ -102,7 +103,6 @@
     "eslint-plugin-vitest": "^0.3.22",
     "eslint-plugin-vitest-globals": "^1.5.0",
     "express": "^4.18.1",
-    "faker": "^5.5.3",
     "file-loader": "^6.2.0",
     "husky": "^9.1.7",
     "identity-obj-proxy": "^3.0.0",
