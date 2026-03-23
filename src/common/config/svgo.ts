@@ -1,5 +1,4 @@
-// Webpack is unable to use export default
-const svgoConfig = {
+export const svgoConfig = {
   plugins: [
     { name: 'cleanupIDs', params: { minify: true } },
     { name: 'cleanupListOfValues' },
@@ -9,7 +8,7 @@ const svgoConfig = {
     { name: 'mergePaths' },
     { name: 'minifyStyles' },
     { name: 'moveElemsAttrsToGroup' },
-    { name: 'removeAttrs', params: { /* exceptions */ attrs: 'fill-rule' } },
+    { name: 'removeAttrs', params: { attrs: 'fill-rule' } },
     { name: 'removeComments' },
     { name: 'removeDesc', params: { removeAny: true } },
     { name: 'removeDimensions' },
@@ -39,6 +38,3 @@ const svgoConfig = {
   ],
   floatPrecision: 3,
 };
-
-// Imported only in Webpack (requires CommonJS imports)
-module.exports = svgoConfig;

@@ -1,17 +1,11 @@
-import { string } from 'prop-types';
 import ScreenReaderOnly from '@/components/ScreenReaderOnly/ScreenReaderOnly';
 
-Swatch.propTypes = {
-  colorName: string.isRequired,
-  hexCode: string.isRequired,
-};
-
-export interface Swatch {
+interface SwatchProps {
   colorName: string;
   hexCode: string;
 }
 
-function Swatch({ colorName, hexCode }: Swatch) {
+function Swatch({ colorName, hexCode }: SwatchProps) {
   return (
     <figure className="m-6 w-56 border border-solid border-theme-gray-800 p-4">
       <ScreenReaderOnly>{`A block of the color ${colorName}`}</ScreenReaderOnly>
