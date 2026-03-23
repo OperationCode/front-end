@@ -1,0 +1,173 @@
+import Image from 'next/image';
+import Badge from '@/components/Badge/Badge';
+import Content from '@/components/Content/Content';
+import { s3 } from '@/common/constants/urls';
+
+const smLogos = [
+  { img: 'small-blue-logo.png', alt: 'Small Blue Accented Logo', label: 'Blue' },
+  { img: 'small-red-logo.png', alt: 'Small Red Accented Logo', label: 'Red' },
+  { img: 'small-logo.png', alt: 'Small Unaccented Logo', label: 'Slate' },
+  { img: 'small-white-logo.png', alt: 'Small White Accented Logo', label: 'White' },
+];
+
+const stackedLogos = [
+  { img: 'small-stacked-logo-blue.png', alt: 'Large Stacked Original', label: 'Blue' },
+  { img: 'small-stacked-logo-red.png', alt: 'Red Stacked Logo', label: 'Red' },
+  { img: 'small-stacked-logo.png', alt: 'Light Stacked Logo', label: 'Slate' },
+];
+
+const medals = [
+  { img: 'large-blue-medal.png', alt: 'OC Blue', label: 'OC Blue' },
+  { img: 'large-red-medal.png', alt: 'Red', label: 'Red' },
+  { img: 'large-slate-medal.png', alt: 'Navy', label: 'Navy' },
+];
+
+const lgLogos = [
+  { img: 'large-blue-logo.png', alt: 'Original Large Logo', label: 'Blue' },
+  { img: 'large-red-logo.png', alt: 'Red Large Logo', label: 'Red' },
+  { img: 'large-logo.png', alt: 'Large Unaccented Logo', label: 'Slate' },
+  { img: 'large-white-logo.png', alt: 'Large White Accented Logo', label: 'White' },
+];
+
+function LogoSection() {
+  return (
+    <Content
+      title="Logo"
+      theme="gray"
+      hasTitleUnderline
+      className="[&_ul]:flex [&_ul]:flex-wrap [&_ul]:items-center [&_ul]:justify-around"
+      columns={[
+        <ul key="logos" className="space-y-4 [&_ul]:pb-4 [&>li>p]:my-4">
+          {/* - SMALL LOGOS - */}
+          <li>
+            <h5 className="text-center">Small Logos</h5>
+            <p className="mx-auto">
+              For use when Operation Code's logo name is between 0-1 inch in height. In most cases,
+              use the Original Small Logo. The Stacked Small Logo is to be used where graphics needs
+              are larger in vertical height than horizontal width with the Operation Code logo name
+              still under 1 inch in height.
+            </p>
+
+            <ul className="space-y-4 border-b-2 border-b-secondary *:not-last:border-b">
+              <li>
+                <h6 className="text-center">TYPICAL</h6>
+                <ul>
+                  {smLogos.map((logo) => (
+                    <li key={logo.label}>
+                      <Badge
+                        icon={
+                          <Image
+                            src={`${s3}branding/logos/${logo.img}`}
+                            alt={logo.alt}
+                            width={318}
+                            height={60}
+                          />
+                        }
+                        isImageFirst={false}
+                        label={logo.label}
+                      />
+                    </li>
+                  ))}
+                </ul>
+              </li>
+              <li>
+                <h6 className="text-center">Stacked Logos</h6>
+                <p className="mx-auto">
+                  Use the Large Stacked Original logo in areas where you have more vertical space
+                  than horizontal. Only use the Red Stacked Logo for special holidays such as
+                  Thanksgiving, fall events, and Christmas. The Light Stacked Logo is to be used
+                  with dark or contrasting bright colored backgrounds.
+                </p>
+                <ul>
+                  {stackedLogos.map((logo) => (
+                    <li key={logo.label}>
+                      <Badge
+                        icon={
+                          <Image
+                            src={`${s3}branding/logos/${logo.img}`}
+                            alt={logo.alt}
+                            width={270}
+                            height={226}
+                          />
+                        }
+                        isImageFirst={false}
+                        label={logo.label}
+                      />
+                    </li>
+                  ))}
+                </ul>
+              </li>
+              <li>
+                <h6 className="text-center">Medals / Badges</h6>
+                <p className="mx-auto mb-4">
+                  Use the following images when you are prompted to upload a thumbnail logo only or
+                  profile photo. In most cases, use the OC Blue option. The Red option should only
+                  be used for holidays and special events (such as Thanksgiving, fall, or
+                  Christmas). The Navy option should be used memorandums or lighter bright colored
+                  backgrounds.
+                </p>
+                <p className="mx-auto mb-4">
+                  You may also use them as a profile photo or thumbnail. They should be used to
+                  accompany corporate sponsors or alliance partnerships on shared branding. Use the
+                  original OC Blue option in most cases, except the Red option for special events
+                  and holidays (Thanksgiving, fall and Christmas). The Navy option may be used with
+                  light backgrounds and bright colored backgrounds.
+                </p>
+
+                <ul className="border-b-0">
+                  {medals.map((medal) => (
+                    <li key={medal.label}>
+                      <Badge
+                        icon={
+                          <Image
+                            src={`${s3}branding/logos/${medal.img}`}
+                            alt={`${medal.alt} Medal`}
+                            width={300}
+                            height={404}
+                          />
+                        }
+                        isImageFirst={false}
+                        label={medal.label}
+                      />
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          {/* - LARGE LOGOS - */}
+          <li>
+            <h5 className="text-center">Large Logos</h5>
+            <p className="mx-auto">
+              Use the Original Large Logo in almost all cases above 1 inch in height. The Red Large
+              Logo is to be used in special events (such as Thanksgiving, fall or Christmas), and
+              the Light Large Logo is to be used with dark backgrounds or bright colored
+              backgrounds.
+            </p>
+
+            <ul className="flex-col flex-nowrap">
+              {lgLogos.map((logo) => (
+                <li key={logo.label}>
+                  <Badge
+                    icon={
+                      <Image
+                        src={`${s3}branding/logos/${logo.img}`}
+                        alt={logo.alt}
+                        width={384}
+                        height={70}
+                      />
+                    }
+                    isImageFirst={false}
+                    label={logo.label}
+                  />
+                </li>
+              ))}
+            </ul>
+          </li>
+        </ul>,
+      ]}
+    />
+  );
+}
+export default LogoSection;

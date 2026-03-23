@@ -17,7 +17,7 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'jsdom',
-    include: ['./**/*.test.ts', './**/*.test.tsx', './**/*.test.js', './**/*.test.jsx'],
+    include: ['./src/**/*.test.ts', './src/**/*.test.tsx', './src/**/*.test.js', './src/**/*.test.jsx'],
     setupFiles: './vitest.setup.tsx',
     minWorkers: 1,
     maxWorkers: 2,
@@ -32,9 +32,9 @@ export default defineConfig({
       reportOnFailure: true,
       reportsDirectory: './vitest-coverage',
       include: [
-        'common/**/*.{js,ts,tsx}',
-        'components/**/*.{js,ts,tsx}',
-        'decorators/**/*.{js,ts,tsx}',
+        'src/common/**/*.{js,ts,tsx}',
+        'src/components/**/*.{js,ts,tsx}',
+        'src/decorators/**/*.{js,ts,tsx}',
       ],
       exclude: [
         // Irrelevant configs and local-only scripts
@@ -53,19 +53,19 @@ export default defineConfig({
         // Folders covered by integration tests
         'node_modules/**',
         'cypress/**',
-        'common/config/**',
-        'common/styles/**',
-        'common/constants/**',
+        'src/common/config/**',
+        'src/common/styles/**',
+        'src/common/constants/**',
 
         // No real logic to test here
-        'common/utils/api-utils.{[jt]s}',
-        'components/ZipRecruiterJobs/ZipRecruiterJobs.{[jt]s}',
-        'components/Press/PressLinks/Articles.{[jt]s}',
-        'components/Timeline/historyData.{[jt]s}',
+        'src/common/utils/api-utils.{[jt]s}',
+        'src/components/ZipRecruiterJobs/ZipRecruiterJobs.{[jt]s}',
+        'src/components/Press/PressLinks/Articles.{[jt]s}',
+        'src/components/Timeline/historyData.{[jt]s}',
 
         // Don't collect coverage from import/export mappers
-        'common/(.*)/index.{[jt]s}',
-        'components/(.*)/index.{[jt]s}',
+        'src/common/(.*)/index.{[jt]s}',
+        'src/components/(.*)/index.{[jt]s}',
       ],
     },
   },

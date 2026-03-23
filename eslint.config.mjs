@@ -41,7 +41,7 @@ export default defineConfig(
     'static/**',
     'cypress-coverage/**',
     'vitest-coverage/**',
-    '.storybook/**',
+    'src/.storybook/**',
     '.storybook-dist/**',
     'storybook-static/**',
     'playwright-report/**',
@@ -55,7 +55,6 @@ export default defineConfig(
     'next-sitemap.config.js',
     'next.config.ts',
     'next.config.js',
-    'pathAliases.js',
     'playwright.config.ts',
     'sentry.client.config.js',
     'sentry.server.config.js',
@@ -233,7 +232,7 @@ export default defineConfig(
     },
     settings: {
       'better-tailwindcss': {
-        entryPoint: './common/styles/globals.css',
+        entryPoint: './src/common/styles/globals.css',
         callees: [...getDefaultCallees(), 'cx', 'cva'],
       },
     },
@@ -289,7 +288,7 @@ export default defineConfig(
           paths: [
             {
               name: 'react-select',
-              message: 'Please use `components/Form/Select/ThemedReactSelect` instead.',
+              message: 'Please use `@/components/Form/Select/ThemedReactSelect` instead.',
             },
             {
               name: 'prop-types',
@@ -301,7 +300,7 @@ export default defineConfig(
               name: 'formik',
               importNames: ['Form'],
               message:
-                'Please use our Form component to have good defaults defined.\n "import Form from \'components/Form/Form\';"',
+                'Please use our Form component to have good defaults defined.\n "import Form from \'@/components/Form/Form\';"',
             },
             {
               name: 'react',
@@ -312,13 +311,13 @@ export default defineConfig(
               name: 'tailwind-merge',
               importNames: ['twMerge'],
               message:
-                'Please import `cx` from `common/utils/cva.ts` instead of directly from tailwind-merge.',
+                'Please import `cx` from `@/common/utils/cva.ts` instead of directly from tailwind-merge.',
             },
             {
               name: 'class-variance-authority',
               importNames: ['cx', 'cva'],
               message:
-                'Please import from `common/utils/cva.ts` instead of directly from class-variance-authority.',
+                'Please import from `@/common/utils/cva.ts` instead of directly from class-variance-authority.',
             },
           ],
         },
@@ -376,13 +375,13 @@ export default defineConfig(
           paths: [
             {
               name: 'react-select',
-              message: 'Please use `components/Form/Select/ThemedReactSelect` instead.',
+              message: 'Please use `@/components/Form/Select/ThemedReactSelect` instead.',
             },
             {
               name: 'formik',
               importNames: ['Form'],
               message:
-                'Please use our Form component to have good defaults defined.\n "import { Form } from \'components/Form/Form\';"',
+                'Please use our Form component to have good defaults defined.\n "import { Form } from \'@/components/Form/Form\';"',
             },
             {
               name: 'react',
@@ -393,13 +392,13 @@ export default defineConfig(
               name: 'tailwind-merge',
               importNames: ['twMerge'],
               message:
-                'Please import `cx` from `common/utils/cva.ts` instead of directly from tailwind-merge.',
+                'Please import `cx` from `@/common/utils/cva.ts` instead of directly from tailwind-merge.',
             },
             {
               name: 'class-variance-authority',
               importNames: ['cx', 'cva'],
               message:
-                'Please import from `common/utils/cva.ts` instead of directly from class-variance-authority.',
+                'Please import from `@/common/utils/cva.ts` instead of directly from class-variance-authority.',
             },
           ],
         },
@@ -426,7 +425,7 @@ export default defineConfig(
       '**/*.test.tsx',
       '**/*.test.js',
       '**/*.test.jsx',
-      'test-utils/**/*.{ts,js}',
+      'src/test-utils/**/*.{ts,js}',
     ],
     plugins: { vitest: eslintPluginVitest },
     languageOptions: {
@@ -454,7 +453,7 @@ export default defineConfig(
 
   // ── Playwright E2E tests ──
   {
-    files: ['e2e/**/*.spec.ts'],
+    files: ['src/e2e/**/*.spec.ts'],
     ...eslintPluginPlaywright.configs['flat/recommended'],
     rules: {
       ...eslintPluginPlaywright.configs['flat/recommended'].rules,
@@ -469,7 +468,7 @@ export default defineConfig(
 
   // ── API routes: allow console ──
   {
-    files: ['app/api/**/*.ts'],
+    files: ['src/app/api/**/*.ts'],
     rules: {
       'no-console': 'off',
     },

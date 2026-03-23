@@ -1,0 +1,36 @@
+import type { Metadata } from 'next';
+import HeroBanner from '@/components/HeroBanner/HeroBanner';
+import Content from '@/components/Content/Content';
+import FeaturedJobsData from '@/components/FeaturedJobItem/featuredJobs.json';
+import FeaturedJobItem from '@/components/FeaturedJobItem/FeaturedJobItem';
+import ZipRecruiterJobs from '@/components/ZipRecruiterJobs/ZipRecruiterJobs';
+
+const pageTitle = 'Jobs';
+
+export const metadata: Metadata = { title: pageTitle };
+
+function Jobs() {
+  return (
+    <>
+      <HeroBanner title={pageTitle} className="min-h-[35dvh]" />
+
+      <Content
+        theme="gray"
+        title="Featured"
+        hasTitleUnderline
+        columns={FeaturedJobsData.filter((job) => job.status === 'active').map((job) => (
+          <FeaturedJobItem key={job.sourceUrl} {...job} />
+        ))}
+      />
+
+      <Content
+        theme="white"
+        title="ZipRecruiter"
+        hasTitleUnderline
+        columns={[<ZipRecruiterJobs key="zip-recruiter" />]}
+      />
+    </>
+  );
+}
+
+export default Jobs;

@@ -41,14 +41,8 @@ pnpm storybook
 # Run all unit tests
 pnpm test
 
-# Run all Cypress tests (make sure your dev server is running)
+# Run all Playwright e2e tests
 pnpm test:e2e
-
-# Create all the necessary files/folders for a new, reusable component
-pnpm create-component $ComponentName
-
-# Create the necessary file with a small boilerplate for a new page
-pnpm create-page $PageName
 ```
 
 ## Open Source Gratitude
@@ -69,7 +63,7 @@ Thanks to [Chromatic](https://www.chromatic.com/) for providing the visual testi
 
 ### LogRocket
 
-<a href="https://logrocket.com/"><img src="https://raw.githubusercontent.com/OperationCode/front-end/main/public/static/images/logrocket.svg" alt="LogRocket" width="306" /></a>
+<a href="https://logrocket.com/"><img src="https://raw.githubusercontent.com/OperationCode/front-end/main/src/static/images/logrocket.svg" alt="LogRocket" width="306" /></a>
 
 Thanks to [LogRocket](https://logrocket.com/) for providing time-saving context on every error and insight into our user's behavior,
 
@@ -77,7 +71,7 @@ Thanks to [LogRocket](https://logrocket.com/) for providing time-saving context 
 
 ### Sentry
 
-<a href="https://www.sentry.io/"><img src="https://raw.githubusercontent.com/OperationCode/front-end/main/public/static/images/sentry.svg" width="306" height="90" alt="Sentry" /></a>
+<a href="https://www.sentry.io/"><img src="https://raw.githubusercontent.com/OperationCode/front-end/main/src/static/images/sentry.svg" width="306" height="90" alt="Sentry" /></a>
 
 Thanks to [Sentry](https://getsentry.io) for a wonderful experience with cataloguing and managing errors.
 
@@ -85,6 +79,6 @@ Thanks to [Sentry](https://getsentry.io) for a wonderful experience with catalog
 
 ### Vercel
 
-<a href="https://vercel.com"><img src="https://raw.githubusercontent.com/OperationCode/front-end/main/public/static/images/vercel.svg" width="306" height="90" alt="Vercel" /></svg></a>
+<a href="https://vercel.com"><img src="https://raw.githubusercontent.com/OperationCode/front-end/main/src/static/images/vercel.svg" width="306" height="90" alt="Vercel" /></svg></a>
 
 Thanks to [Vercel](https://vercel.com) for hosting and continuous deployment of all our web applications.

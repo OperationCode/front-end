@@ -124,48 +124,38 @@ You can see interactive documentation on all of our components via [![Storybook]
 ### File Structure
 
 ```
-├── common
-|   ├── config  # This is just a folder for configuration shared by more than one tool.
-|   ├── constants  # This is a folder that contain simple, but unpreventable uniform data.
-|   ├── styles  # Contains global styles, CSS variables, and a JS export of those CSS variables (used in Storybook)
-|   └── utils
+├── src
+|   ├── app  # Next.js App Router pages, layouts, and API routes
+|   |   ├── layout.tsx  # Root layout
+|   |   ├── page.tsx  # Landing page
+|   |   └── */page.tsx  # All other pages
+|   |
+|   ├── common
+|   |   ├── config  # Configuration shared by more than one tool
+|   |   ├── constants  # Simple, uniform data (testIDs, messages, URLs, etc.)
+|   |   ├── styles  # Global styles (Tailwind CSS)
+|   |   └── utils  # Shared utility functions
+|   |
+|   ├── components
+|   |   └── *  # Reusable UI components (imported via @/components/*)
+|   |
+|   ├── decorators
+|   |   └── *  # Higher-order components that wrap components to add functionality
+|   |
+|   ├── e2e  # Playwright end-to-end tests
+|   |
+|   ├── static
+|   |   └── images  # SVG icons, sponsor logos, and other imported assets
+|   |
+|   └── test-utils
+|       ├── mocks  # Commonly mocked data for testing
+|       ├── mockGenerators  # Functions to generate test data
+|       └── createSnapshotTest.js
 |
-├── components
-|   ├── ReusableSections  # These sections get used many times throughout our pages, but are not necessarily composable or reusable.
-|   ├── *  # Most components act as reusable lego blocks that form the foundation of many components. One-off use components may also exist simply to modularize the codebase (not put everything in one big file).
-|   ├── head.js  # Next.js-specific component to handle a page's meta info (and the rest of it's <head> tag) dynamically
-|   └── nav.js
-|
-├── cypress
-|   └── * # Houses all e2e/integration tests and configuration of cypress.
-|
-├── decorators
-|   └── * # This is filled with higher-order components that wrap components to add little bits of functionality.
-|
-├── pages
-|   ├── styles
-|   ├── _app.js  # Next.js-specific file used to customize the client-side routing of the application.
-|   ├── _document.js  # Next.js-specific file used to customize the initial rendering of the application.
-|   ├── _error.js  # Next.js-specific file used to override/customize the traditional error code views (such as 404 and 503)
-|   ├── index.js  # Landing page
-|   └── *.js  # All the other pages
-|
-├── static
-|   ├── fonts
-|   └── images
-|       └── icons  # SVG icons only
-|
-├── test-utils
-|   ├── mocks  # Contains commonly mocked components, functions, and classes for testing purposes
-|   ├── createComponentInstance.js
-|   ├── createShallowSnapshotTest.js
-|   ├── createSnapshotTest.js
-|   └── setupTests.js
-|
-├── internationalized-documentation
-|    └ * # Folders per language plus an English-only README to describe how to contribute translations of documentation.
+├── public  # Static files served at the root URL
 |
 * - Root-level files are configuration and documentation.
+* - All source imports use the @/* path alias (e.g., @/components/Button/Button).
 ```
 
 ### pnpm Scripts With Explanations
@@ -213,7 +203,7 @@ pnpm test:watch
 # You can use the name of the file at the end of any non-e2e test command to run it against a single file
 pnpm test $fileName
 
-# Opens up a Cypress browser with which you can check e2e tests locally. Be sure the local dev server is running before this command!
+# Run Playwright e2e tests (dev server starts automatically)
 pnpm test:e2e
 ```
 
