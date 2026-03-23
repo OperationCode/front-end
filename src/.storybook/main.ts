@@ -1,4 +1,4 @@
-import svgoConfig from '../common/config/svgo';
+import { svgoConfig } from '../common/config/svgo';
 import type { StorybookConfig } from '@storybook/nextjs';
 
 const config: StorybookConfig = {
