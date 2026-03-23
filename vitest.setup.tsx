@@ -10,7 +10,7 @@ vi.mock('next/navigation', () => ({
   usePathname: () => '/',
   useSearchParams: () => new URLSearchParams(),
 }));
-vi.importMock('common/utils/thirdParty/gtag');
+vi.importMock('@/common/utils/thirdParty/gtag');
 
 beforeAll(async () => {
   const IntersectionObserverMock = vi.fn(() => ({

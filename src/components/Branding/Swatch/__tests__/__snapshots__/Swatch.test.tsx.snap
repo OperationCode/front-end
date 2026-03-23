@@ -1,0 +1,26 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Swatch > should render with required props 1`] = `
+<div>
+  <figure
+    class="m-6 w-56 border border-solid border-theme-gray-800 p-4"
+  >
+    <span
+      class="sr-only"
+      data-testid="SCREEN_READER_ONLY"
+    >
+      A block of the color Blue
+    </span>
+    <div
+      class="mb-4 h-56 border border-solid border-theme-gray-800"
+      style="background-color: rgb(0, 0, 255);"
+    />
+    <figcaption>
+      <h6>
+        BLUE
+      </h6>
+      #0000FF
+    </figcaption>
+  </figure>
+</div>
+`;

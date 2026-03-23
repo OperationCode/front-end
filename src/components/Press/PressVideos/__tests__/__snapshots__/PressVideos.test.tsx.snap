@@ -1,0 +1,24 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`PressVideos > should render with no props passed 1`] = `
+<div>
+  <div
+    class="flex flex-wrap items-center justify-around gap-5"
+  >
+    <iframe
+      allowfullscreen=""
+      class="aspect-video h-48 md:h-64 lg:h-96"
+      frameborder="0"
+      src="https://www.youtube.com/embed/xN7yMoe38xc"
+      title="Github Universe: Operation Code"
+    />
+    <iframe
+      allowfullscreen=""
+      class="aspect-video h-48 md:h-64 lg:h-96"
+      frameborder="0"
+      src="https://player.vimeo.com/video/124866675?byline=0&portrait=0"
+      title="Operation Code - On a Mission to Expand the GI Bill"
+    />
+  </div>
+</div>
+`;

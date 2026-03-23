@@ -27,29 +27,8 @@
     "noEmit": true,
     "noEmitOnError": true,
     "paths": {
-      "common/*": [
-        "./common/*"
-      ],
-      "components/*": [
-        "./components/*"
-      ],
-      "app/*": [
-        "./app/*"
-      ],
-      "public/*": [
-        "./public/*"
-      ],
-      "scripts/*": [
-        "./scripts/*"
-      ],
-      "static/*": [
-        "./public/static/*"
-      ],
-      "styles/*": [
-        "./styles/*"
-      ],
-      "test-utils/*": [
-        "./test-utils/*"
+      "@/*": [
+        "./src/*"
       ]
     },
     "types": [

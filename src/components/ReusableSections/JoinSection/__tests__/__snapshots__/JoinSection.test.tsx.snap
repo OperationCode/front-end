@@ -1,0 +1,109 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`JoinSection > should render 1`] = `
+<div>
+  <div
+    class="bg-center bg-no-repeat bg-cover flex items-center justify-between w-full px-4 md:px-0 fill-current min-h-[250px] bg-white text-secondary"
+    data-testid="Join Section"
+  >
+    <div
+      class="mx-auto my-14 flex w-full max-w-[1400px] flex-col items-center justify-center sm:w-[85%]"
+    >
+      <div
+        class="relative flex justify-center"
+      >
+        <h3
+          class="group mx-0 my-4 flex border-b-4 border-b-transparent text-center uppercase"
+          id="join-our-thriving-community-link"
+        >
+          <div
+            class="relative h-full"
+            data-testid="Heading Content join-our-thriving-community-link"
+          >
+            <a
+              class="sm:visible absolute top-0 -left-8 flex h-full items-center justify-center opacity-0 transition-opacity group-hover:opacity-100 focus-visible:opacity-100 w-0 group-hover:w-5 focus-visible:w-5"
+              data-testid="Hash Link"
+              href="#join-our-thriving-community-link"
+            >
+              <span
+                class="sr-only"
+                data-testid="SCREEN_READER_ONLY"
+              >
+                Scroll to 
+                Join Our Thriving Community
+              </span>
+              <svg
+                class="h-5 w-full"
+                viewBox="0 0 512 512"
+              >
+                <symbol
+                  id="_d456e9ce"
+                  viewBox="0 0 512 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <title>
+                    Link Icon
+                  </title>
+                  <path
+                    d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"
+                  />
+                </symbol>
+                <use
+                  href="#_d456e9ce"
+                />
+              </svg>
+            </a>
+          </div>
+          Join Our Thriving Community
+        </h3>
+      </div>
+      <p>
+        Are you ready to begin your journey towards a career in tech? Get the support you need by joining our members-only Slack community!
+      </p>
+      <a
+        class="font-family-bebas font-bold text-center uppercase text-shadow-[initial] tracking-wide inline-block rounded leading-none border-4 border-solid cursor-pointer py-4 px-3 whitespace-nowrap transition-all duration-200 ease-linear min-w-[175px] focus-visible:bg-transparent hover:bg-transparent disabled:opacity-60 disabled:hover:cursor-not-allowed border-secondary bg-secondary text-primary outline-secondary hover:text-secondary focus-visible:text-secondary my-4"
+        href="/join"
+      >
+        Register Now
+      </a>
+      <p>
+        Slack is a community based collaboration tool where all the magic happens!
+      </p>
+      <a
+        class="inline-flex items-start text-burnt-orange"
+        href="https://get.slack.help/hc/en-us/categories/360000049043-Getting-Started"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        Never heard of Slack before?
+        <span
+          class="sr-only"
+          data-testid="SCREEN_READER_ONLY"
+        >
+          Opens in new window
+        </span>
+        <svg
+          class="mt-0.5 ml-1 inline-block size-3.5 fill-current"
+          viewBox="0 0 448 512"
+        >
+          <symbol
+            id="_73ab62bc"
+            viewBox="0 0 448 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <title>
+              External Link Symbol
+            </title>
+            <path
+              d="M448 80v352c0 27-21 48-48 48H48c-27 0-48-21-48-48V80c0-27 21-48 48-48h352c27 0 48 21 48 48zm-88 16H248c-21 0-32 26-17 41l32 32L68 364c-5 5-5 13 0 17l31 31c4 5 12 5 17 0l195-195 32 32c15 15 41 4 41-17V120c0-13-11-24-24-24z"
+            />
+          </symbol>
+          <use
+            href="#_73ab62bc"
+          />
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>
+`;

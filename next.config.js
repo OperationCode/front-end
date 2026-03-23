@@ -2,7 +2,7 @@
 const hasBundleAnalyzer = process.env.ANALYZE === 'true';
 const { withSentryConfig } = require('@sentry/nextjs');
 const withBundleAnalyzer = require('@next/bundle-analyzer')({ enabled: hasBundleAnalyzer });
-const svgoConfig = require('./common/config/svgo');
+const svgoConfig = require('./src/common/config/svgo');
 
 /**
  * @see https://nextjs.org/docs/basic-features/typescript#type-checking-nextconfigjs
@@ -94,7 +94,7 @@ const nextConfig = {
     ];
   },
 
-  webpack: config => {
+  webpack: (config) => {
     config.module.rules.push({
       test: /\.svg$/,
       use: [

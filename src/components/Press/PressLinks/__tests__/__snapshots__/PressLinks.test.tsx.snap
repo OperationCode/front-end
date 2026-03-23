@@ -1,0 +1,391 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`PressLinks > should render with no props passed 1`] = `
+<div>
+  <div
+    class="w-full sm:w-[70ch] md:w-[60ch]"
+  >
+    <div
+      data-orientation="horizontal"
+      dir="ltr"
+    >
+      <div
+        aria-orientation="horizontal"
+        class="flex pt-5"
+        data-orientation="horizontal"
+        role="tablist"
+        style="outline: none;"
+        tabindex="0"
+      >
+        <button
+          aria-controls="radix-_r_0_-content-Boston"
+          aria-selected="true"
+          class="flex-1 cursor-pointer border-b-2 border-primary/20 hover:border-primary/60 data-[state=active]:border-primary"
+          data-orientation="horizontal"
+          data-radix-collection-item=""
+          data-state="active"
+          id="radix-_r_0_-trigger-Boston"
+          role="tab"
+          tabindex="-1"
+          type="button"
+        >
+          <h3>
+            Boston
+          </h3>
+        </button>
+        <button
+          aria-controls="radix-_r_0_-content-General"
+          aria-selected="false"
+          class="flex-1 cursor-pointer border-b-2 border-primary/20 hover:border-primary/60 data-[state=active]:border-primary"
+          data-orientation="horizontal"
+          data-radix-collection-item=""
+          data-state="inactive"
+          id="radix-_r_0_-trigger-General"
+          role="tab"
+          tabindex="-1"
+          type="button"
+        >
+          <h3>
+            General
+          </h3>
+        </button>
+        <button
+          aria-controls="radix-_r_0_-content-NYC"
+          aria-selected="false"
+          class="flex-1 cursor-pointer border-b-2 border-primary/20 hover:border-primary/60 data-[state=active]:border-primary"
+          data-orientation="horizontal"
+          data-radix-collection-item=""
+          data-state="inactive"
+          id="radix-_r_0_-trigger-NYC"
+          role="tab"
+          tabindex="-1"
+          type="button"
+        >
+          <h3>
+            NYC
+          </h3>
+        </button>
+      </div>
+      <div
+        aria-labelledby="radix-_r_0_-trigger-Boston"
+        class="list-none space-y-2.5 p-5 text-center text-balance"
+        data-orientation="horizontal"
+        data-state="active"
+        id="radix-_r_0_-content-Boston"
+        role="tabpanel"
+        style="animation-duration: 0s;"
+        tabindex="0"
+      >
+        <li>
+          <a
+            class="inline-flex items-start text-sm text-primary no-underline transition-colors duration-200 ease-linear hover:text-white focus-visible:text-white"
+            href="https://insights.dice.com/2017/01/11/tech-pros-volunteer-fun-ways/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            How Tech Pros Can Volunteer in Fun Ways
+            <span
+              class="sr-only"
+              data-testid="SCREEN_READER_ONLY"
+            >
+              Opens in new window
+            </span>
+            <svg
+              class="mt-0.5 ml-1 inline-block size-3.5 fill-current"
+              viewBox="0 0 448 512"
+            >
+              <symbol
+                id="_73ab62bc"
+                viewBox="0 0 448 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <title>
+                  External Link Symbol
+                </title>
+                <path
+                  d="M448 80v352c0 27-21 48-48 48H48c-27 0-48-21-48-48V80c0-27 21-48 48-48h352c27 0 48 21 48 48zm-88 16H248c-21 0-32 26-17 41l32 32L68 364c-5 5-5 13 0 17l31 31c4 5 12 5 17 0l195-195 32 32c15 15 41 4 41-17V120c0-13-11-24-24-24z"
+                />
+              </symbol>
+              <use
+                href="#_73ab62bc"
+              />
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a
+            class="inline-flex items-start text-sm text-primary no-underline transition-colors duration-200 ease-linear hover:text-white focus-visible:text-white"
+            href="https://www.necn.com/news/business/MassChallenge-Finnest_-Operation-Code_-Sunrise-Health_NECN-441063423.html"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            MassChallenge Finalists: Finnest, Operation Code, Sunrise Health
+            <span
+              class="sr-only"
+              data-testid="SCREEN_READER_ONLY"
+            >
+              Opens in new window
+            </span>
+            <svg
+              class="mt-0.5 ml-1 inline-block size-3.5 fill-current"
+              viewBox="0 0 448 512"
+            >
+              <symbol
+                id="_73ab62bc"
+                viewBox="0 0 448 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <title>
+                  External Link Symbol
+                </title>
+                <path
+                  d="M448 80v352c0 27-21 48-48 48H48c-27 0-48-21-48-48V80c0-27 21-48 48-48h352c27 0 48 21 48 48zm-88 16H248c-21 0-32 26-17 41l32 32L68 364c-5 5-5 13 0 17l31 31c4 5 12 5 17 0l195-195 32 32c15 15 41 4 41-17V120c0-13-11-24-24-24z"
+                />
+              </symbol>
+              <use
+                href="#_73ab62bc"
+              />
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a
+            class="inline-flex items-start text-sm text-primary no-underline transition-colors duration-200 ease-linear hover:text-white focus-visible:text-white"
+            href="http://www.wickedbandwidth.com/02072017-techbreakfast-microsoft-nerd/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            TechBreakfast at Microsoft NERD
+            <span
+              class="sr-only"
+              data-testid="SCREEN_READER_ONLY"
+            >
+              Opens in new window
+            </span>
+            <svg
+              class="mt-0.5 ml-1 inline-block size-3.5 fill-current"
+              viewBox="0 0 448 512"
+            >
+              <symbol
+                id="_73ab62bc"
+                viewBox="0 0 448 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <title>
+                  External Link Symbol
+                </title>
+                <path
+                  d="M448 80v352c0 27-21 48-48 48H48c-27 0-48-21-48-48V80c0-27 21-48 48-48h352c27 0 48 21 48 48zm-88 16H248c-21 0-32 26-17 41l32 32L68 364c-5 5-5 13 0 17l31 31c4 5 12 5 17 0l195-195 32 32c15 15 41 4 41-17V120c0-13-11-24-24-24z"
+                />
+              </symbol>
+              <use
+                href="#_73ab62bc"
+              />
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a
+            class="inline-flex items-start text-sm text-primary no-underline transition-colors duration-200 ease-linear hover:text-white focus-visible:text-white"
+            href="https://www.youtube.com/watch?v=YGaG_HL3oEQ"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Operation Code - #BNT80 Boston New Technology Startup Demo
+            <span
+              class="sr-only"
+              data-testid="SCREEN_READER_ONLY"
+            >
+              Opens in new window
+            </span>
+            <svg
+              class="mt-0.5 ml-1 inline-block size-3.5 fill-current"
+              viewBox="0 0 448 512"
+            >
+              <symbol
+                id="_73ab62bc"
+                viewBox="0 0 448 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <title>
+                  External Link Symbol
+                </title>
+                <path
+                  d="M448 80v352c0 27-21 48-48 48H48c-27 0-48-21-48-48V80c0-27 21-48 48-48h352c27 0 48 21 48 48zm-88 16H248c-21 0-32 26-17 41l32 32L68 364c-5 5-5 13 0 17l31 31c4 5 12 5 17 0l195-195 32 32c15 15 41 4 41-17V120c0-13-11-24-24-24z"
+                />
+              </symbol>
+              <use
+                href="#_73ab62bc"
+              />
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a
+            class="inline-flex items-start text-sm text-primary no-underline transition-colors duration-200 ease-linear hover:text-white focus-visible:text-white"
+            href="https://www.youtube.com/watch?v=GcvVsVsH-Gg"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            MassChallenge Finalist | Operation Code | Conrad Hollomon
+            <span
+              class="sr-only"
+              data-testid="SCREEN_READER_ONLY"
+            >
+              Opens in new window
+            </span>
+            <svg
+              class="mt-0.5 ml-1 inline-block size-3.5 fill-current"
+              viewBox="0 0 448 512"
+            >
+              <symbol
+                id="_73ab62bc"
+                viewBox="0 0 448 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <title>
+                  External Link Symbol
+                </title>
+                <path
+                  d="M448 80v352c0 27-21 48-48 48H48c-27 0-48-21-48-48V80c0-27 21-48 48-48h352c27 0 48 21 48 48zm-88 16H248c-21 0-32 26-17 41l32 32L68 364c-5 5-5 13 0 17l31 31c4 5 12 5 17 0l195-195 32 32c15 15 41 4 41-17V120c0-13-11-24-24-24z"
+                />
+              </symbol>
+              <use
+                href="#_73ab62bc"
+              />
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a
+            class="inline-flex items-start text-sm text-primary no-underline transition-colors duration-200 ease-linear hover:text-white focus-visible:text-white"
+            href="https://venturefizz.com/stories/boston/operation-code-creating-coding-community-veterans-and-citizens"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Operation Code – Creating a Coding Community with Veterans and Citizens
+            <span
+              class="sr-only"
+              data-testid="SCREEN_READER_ONLY"
+            >
+              Opens in new window
+            </span>
+            <svg
+              class="mt-0.5 ml-1 inline-block size-3.5 fill-current"
+              viewBox="0 0 448 512"
+            >
+              <symbol
+                id="_73ab62bc"
+                viewBox="0 0 448 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <title>
+                  External Link Symbol
+                </title>
+                <path
+                  d="M448 80v352c0 27-21 48-48 48H48c-27 0-48-21-48-48V80c0-27 21-48 48-48h352c27 0 48 21 48 48zm-88 16H248c-21 0-32 26-17 41l32 32L68 364c-5 5-5 13 0 17l31 31c4 5 12 5 17 0l195-195 32 32c15 15 41 4 41-17V120c0-13-11-24-24-24z"
+                />
+              </symbol>
+              <use
+                href="#_73ab62bc"
+              />
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a
+            class="inline-flex items-start text-sm text-primary no-underline transition-colors duration-200 ease-linear hover:text-white focus-visible:text-white"
+            href="https://www.deepcoredata.com/innovation-spotlight-veterans-mission-operation-code/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Innovation Spotlight: Operation Code
+            <span
+              class="sr-only"
+              data-testid="SCREEN_READER_ONLY"
+            >
+              Opens in new window
+            </span>
+            <svg
+              class="mt-0.5 ml-1 inline-block size-3.5 fill-current"
+              viewBox="0 0 448 512"
+            >
+              <symbol
+                id="_73ab62bc"
+                viewBox="0 0 448 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <title>
+                  External Link Symbol
+                </title>
+                <path
+                  d="M448 80v352c0 27-21 48-48 48H48c-27 0-48-21-48-48V80c0-27 21-48 48-48h352c27 0 48 21 48 48zm-88 16H248c-21 0-32 26-17 41l32 32L68 364c-5 5-5 13 0 17l31 31c4 5 12 5 17 0l195-195 32 32c15 15 41 4 41-17V120c0-13-11-24-24-24z"
+                />
+              </symbol>
+              <use
+                href="#_73ab62bc"
+              />
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a
+            class="inline-flex items-start text-sm text-primary no-underline transition-colors duration-200 ease-linear hover:text-white focus-visible:text-white"
+            href="https://blogs.microsoft.com/newengland/2017/11/10/tech4vets-masschallenge-veterans/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            tech4vets Masschallenge Veterans
+            <span
+              class="sr-only"
+              data-testid="SCREEN_READER_ONLY"
+            >
+              Opens in new window
+            </span>
+            <svg
+              class="mt-0.5 ml-1 inline-block size-3.5 fill-current"
+              viewBox="0 0 448 512"
+            >
+              <symbol
+                id="_73ab62bc"
+                viewBox="0 0 448 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <title>
+                  External Link Symbol
+                </title>
+                <path
+                  d="M448 80v352c0 27-21 48-48 48H48c-27 0-48-21-48-48V80c0-27 21-48 48-48h352c27 0 48 21 48 48zm-88 16H248c-21 0-32 26-17 41l32 32L68 364c-5 5-5 13 0 17l31 31c4 5 12 5 17 0l195-195 32 32c15 15 41 4 41-17V120c0-13-11-24-24-24z"
+                />
+              </symbol>
+              <use
+                href="#_73ab62bc"
+              />
+            </svg>
+          </a>
+        </li>
+      </div>
+      <div
+        aria-labelledby="radix-_r_0_-trigger-General"
+        class="list-none space-y-2.5 p-5 text-center text-balance"
+        data-orientation="horizontal"
+        data-state="inactive"
+        hidden=""
+        id="radix-_r_0_-content-General"
+        role="tabpanel"
+        tabindex="0"
+      />
+      <div
+        aria-labelledby="radix-_r_0_-trigger-NYC"
+        class="list-none space-y-2.5 p-5 text-center text-balance"
+        data-orientation="horizontal"
+        data-state="inactive"
+        hidden=""
+        id="radix-_r_0_-content-NYC"
+        role="tabpanel"
+        tabindex="0"
+      />
+    </div>
+  </div>
+</div>
+`;

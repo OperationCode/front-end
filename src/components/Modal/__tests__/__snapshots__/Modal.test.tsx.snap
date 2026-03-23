@@ -1,0 +1,90 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Modal > should render with many props assigned 1`] = `
+<body
+  data-scroll-locked="1"
+  style="pointer-events: none;"
+>
+  <span
+    aria-hidden="true"
+    data-aria-hidden="true"
+    data-radix-focus-guard=""
+    style="outline: none; opacity: 0; position: fixed; pointer-events: none;"
+    tabindex="0"
+  />
+  <div
+    aria-hidden="true"
+    data-aria-hidden="true"
+  />
+  <div
+    aria-hidden="true"
+    class="fixed inset-0 z-2 bg-white/50"
+    data-aria-hidden="true"
+    data-state="open"
+    data-testid="MODAL_OVERLAY"
+    style="pointer-events: auto;"
+  >
+    <button
+      class="group bg-transparent h-5 w-5 absolute top-4 right-4 border-none z-1 text-secondary"
+      data-testid="CLOSE_BUTTON"
+      type="button"
+    >
+      <span
+        class="sr-only"
+        data-testid="SCREEN_READER_ONLY"
+      >
+        Close
+      </span>
+      <svg
+        class="fill-current transform rotate-45 transition-transform duration-200 ease-linear group-hover:rotate-135"
+        viewBox="0 0 500 500"
+      >
+        <symbol
+          id="_c3230965"
+          viewBox="0 0 500 500"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <title>
+            Plus Symbol
+          </title>
+          <path
+            d="M500 200H300V0H200v200H0v100h200v200h100V300h200V200z"
+          />
+        </symbol>
+        <use
+          href="#_c3230965"
+        />
+      </svg>
+    </button>
+  </div>
+  <div
+    aria-describedby="radix-_r_5_"
+    aria-labelledby="radix-_r_4_"
+    class="outline-none bg-white text-secondary flex flex-col flex-nowrap m-4 min-h-24 min-w-24 p-6 fixed items-center justify-center overflow-hidden w-4/5 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-2 shadow-md test-class"
+    data-state="open"
+    id="radix-_r_3_"
+    role="dialog"
+    style="pointer-events: auto;"
+    tabindex="-1"
+  >
+    <div
+      data-testid="MODAL_CONTENT"
+    >
+      Test
+    </div>
+  </div>
+  <span
+    aria-hidden="true"
+    data-aria-hidden="true"
+    data-radix-focus-guard=""
+    style="outline: none; opacity: 0; position: fixed; pointer-events: none;"
+    tabindex="0"
+  />
+</body>
+`;
+
+exports[`Modal > should render with required props 1`] = `
+<body>
+  <div />
+</body>
+`;

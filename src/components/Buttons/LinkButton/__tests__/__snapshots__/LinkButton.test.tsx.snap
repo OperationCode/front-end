@@ -1,0 +1,32 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`LinkButton > should render with many props assigned 1`] = `
+<div>
+  <a
+    class="items-start font-family-bebas font-bold text-center uppercase text-shadow-[initial] tracking-wide inline-block rounded leading-none border-4 border-solid cursor-pointer py-4 px-3 whitespace-nowrap transition-all duration-200 ease-linear min-w-[175px] focus-visible:bg-transparent hover:bg-transparent disabled:opacity-60 disabled:hover:cursor-not-allowed border-secondary bg-secondary text-primary outline-secondary hover:text-secondary focus-visible:text-secondary test-class"
+    data-testid="Test"
+    href="https://tests.com"
+    rel="noopener noreferrer"
+    target="_blank"
+  >
+    Test
+    <span
+      class="sr-only"
+      data-testid="SCREEN_READER_ONLY"
+    >
+      Opens in new window
+    </span>
+  </a>
+</div>
+`;
+
+exports[`LinkButton > should render with required props 1`] = `
+<div>
+  <a
+    class="font-family-bebas font-bold text-center uppercase text-shadow-[initial] tracking-wide inline-block rounded leading-none border-4 border-solid cursor-pointer py-4 px-3 whitespace-nowrap transition-all duration-200 ease-linear min-w-[175px] focus-visible:bg-transparent hover:bg-transparent disabled:opacity-60 disabled:hover:cursor-not-allowed border-primary bg-primary text-secondary outline-primary hover:text-primary focus-visible:text-primary"
+    href="https://tests.com"
+  >
+    Test
+  </a>
+</div>
+`;

@@ -1,0 +1,18 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ValueCard > should render with required props 1`] = `
+<div>
+  <article
+    class="m-4 flex min-h-[100px] min-w-[100px] flex-col flex-nowrap items-center justify-around bg-white text-secondary shadow-md focus-visible:outline-none [&_svg]:fill-secondary h-[400px] max-w-[400px] justify-start! overflow-y-auto p-8"
+  >
+    <h3
+      class="text-center underline"
+    >
+      Testing
+    </h3>
+    <p>
+      Testing is good for the soul and scientifically proven to make puppies happy.
+    </p>
+  </article>
+</div>
+`;

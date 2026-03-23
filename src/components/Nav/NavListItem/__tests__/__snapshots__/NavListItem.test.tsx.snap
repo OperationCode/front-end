@@ -1,0 +1,23 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`NavListItem > should render with required props passed 1`] = `
+<div>
+  <li
+    class="relative"
+  >
+    <div
+      class="flex h-full items-center"
+    >
+      <a
+        class="h-full w-30 cursor-pointer fill-current pr-2 pl-8 text-secondary inline-flex items-center justify-end leading-none transition-all duration-200 ease-linear no-underline hover:text-primary focus-visible:text-primary"
+        data-testid="Nav Item Test"
+        href="/test"
+        role="link"
+        tabindex="0"
+      >
+        Test
+      </a>
+    </div>
+  </li>
+</div>
+`;

@@ -1,0 +1,18 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`TimelineEvent > should render with required props 1`] = `
+<div>
+  <div
+    class="mb-8 rounded-md p-5"
+  >
+    <h4
+      class="capitalize md:text-2xl"
+    >
+      test title
+    </h4>
+    <div>
+      here is some test content
+    </div>
+  </div>
+</div>
+`;
