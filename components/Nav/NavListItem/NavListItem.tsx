@@ -52,17 +52,17 @@ function NavListItem({ sublinks, href, name }: NavListItemPropsType) {
   const hasSublinks = sublinks && sublinks.length > 0;
   const exposeSublinks = () => setSublinksVisible(true);
   const hideSublinks = () => setSublinksVisible(false);
-  const invertSublinkVisibility = () => setSublinksVisible(previousState => !previousState);
+  const invertSublinkVisibility = () => setSublinksVisible((previousState) => !previousState);
 
   return (
     <li className="relative">
-      <div className="h-full flex items-center">
+      <div className="flex h-full items-center">
         <Link
           href={href}
           className={cx(
-            'h-full pl-8 pr-2 w-30 text-secondary fill-current cursor-pointer',
-            'inline-flex items-center justify-end leading-none transition-all duration-200 ease-linear',
-            'no-underline hover:text-primary focus-visible:text-primary',
+            'h-full w-30 cursor-pointer fill-current pr-2 pl-8 text-secondary',
+            `inline-flex items-center justify-end leading-none transition-all duration-200 ease-linear`,
+            `no-underline hover:text-primary focus-visible:text-primary`,
           )}
           onMouseEnter={exposeSublinks}
           onMouseLeave={hideSublinks}
@@ -77,7 +77,7 @@ function NavListItem({ sublinks, href, name }: NavListItemPropsType) {
             aria-expanded={areSublinksVisible}
             aria-haspopup={hasSublinks}
             aria-label="submenu"
-            className="w-6 *:w-3 h-full -mt-0.5"
+            className="-mt-0.5 h-full w-6 *:w-3"
             onClick={invertSublinkVisibility}
             onMouseEnter={exposeSublinks}
             onMouseLeave={hideSublinks}
@@ -94,8 +94,8 @@ function NavListItem({ sublinks, href, name }: NavListItemPropsType) {
       {hasSublinks && (
         <ul
           className={cx(
-            'whitespace-nowrap bg-white',
-            'absolute right-0 py-2 w-36 rounded-b-sm',
+            'bg-white whitespace-nowrap',
+            'absolute right-0 w-36 rounded-b-sm py-2',
             'transition-colors duration-200 ease-linear',
             {
               hidden: !areSublinksVisible,
@@ -112,20 +112,20 @@ function NavListItem({ sublinks, href, name }: NavListItemPropsType) {
                   href={sublink.href}
                   prefetch={process.env.NODE_ENV === 'production'}
                   className={cx(
-                    'p-4 text-secondary flex items-center justify-center fill-current no-underline',
-                    'transition-colors duration-200 ease-linear hover:text-primary focus-visible:text-primary',
+                    `flex items-center justify-center fill-current p-4 text-secondary no-underline`,
+                    `transition-colors duration-200 ease-linear hover:text-primary focus-visible:text-primary`,
                   )}
                   role="link"
                   tabIndex={0}
                   data-testid={`Nav Item ${sublink.name}`}
-                  onKeyDown={event => handleKeyDown(event, index)}
+                  onKeyDown={(event) => handleKeyDown(event, index)}
                 >
                   <span>{sublink.name}</span>
                 </Link>
               ) : (
                 <OutboundLink
                   analyticsEventLabel={`Clicked on ${sublink.name} -> ${sublink.href}`}
-                  className="p-4 text-secondary flex justify-center transition-colors duration-200 ease-linear hover:text-primary focus-visible:text-primary no-underline"
+                  className="flex justify-center p-4 text-secondary no-underline transition-colors duration-200 ease-linear hover:text-primary focus-visible:text-primary"
                   data-testid={`Nav Item ${sublink.name}`}
                   href={sublink.href}
                   hasIcon

@@ -7,7 +7,7 @@ import SocialMediaItem from './SocialMediaItem/SocialMediaItem';
 
 function SocialMedia() {
   return (
-    <div className="flex flex-row items-center justify-around [&_svg]:fill-white [&_svg]:text-white [&_svg]:size-6">
+    <div className="flex flex-row items-center justify-around [&_svg]:size-6 [&_svg]:fill-white [&_svg]:text-white">
       <SocialMediaItem
         href="https://facebook.com/operationcode.org"
         name="Facebook"

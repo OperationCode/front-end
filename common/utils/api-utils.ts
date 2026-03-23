@@ -25,6 +25,7 @@ export const ResourcesAPI = axios.create(resourcesAxiosConfig);
  * @see https://github.com/axios/axios/issues/647#issuecomment-459517694
  */
 const getRequestAbortionPieces = () => {
+  // eslint-disable-next-line import-x/no-named-as-default-member
   const abort = axios.CancelToken.source();
   const connectionTimeout = setTimeout(
     () => abort.cancel(`Connection timeout of ${baseAxiosConfig.timeout}ms.`),
@@ -46,11 +47,11 @@ export const get = async (
       cancelToken: abort.token,
       params: parameters,
     })
-    .then(response => {
+    .then((response) => {
       clearTimeout(connectionTimeout);
       return response;
     })
-    .catch(error => {
+    .catch((error) => {
       clearTimeout(connectionTimeout);
       throw error;
     });
@@ -63,11 +64,11 @@ export const post = async (path: string, body: object, axiosClient: AxiosInstanc
     .post(path, body, {
       cancelToken: abort.token,
     })
-    .then(response => {
+    .then((response) => {
       clearTimeout(connectionTimeout);
       return response;
     })
-    .catch(error => {
+    .catch((error) => {
       clearTimeout(connectionTimeout);
       throw error;
     });
@@ -80,11 +81,11 @@ export const patch = async (path: string, body: object, axiosClient: AxiosInstan
     .patch(path, body, {
       cancelToken: abort.token,
     })
-    .then(response => {
+    .then((response) => {
       clearTimeout(connectionTimeout);
       return response;
     })
-    .catch(error => {
+    .catch((error) => {
       clearTimeout(connectionTimeout);
       throw error;
     });
@@ -97,11 +98,11 @@ export const put = async (path: string, body: object, axiosClient: AxiosInstance
     .put(path, body, {
       cancelToken: abort.token,
     })
-    .then(response => {
+    .then((response) => {
       clearTimeout(connectionTimeout);
       return response;
     })
-    .catch(error => {
+    .catch((error) => {
       clearTimeout(connectionTimeout);
       throw error;
     });

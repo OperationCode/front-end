@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
+import Image from 'next/image';
 import Container from 'components/Container/Container';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 import { s3 } from 'common/constants/urls';
-import Link from 'next/link';
 import Card from 'components/Cards/Card/Card';
-import Image from 'next/image';
 
 export const metadata: Metadata = { title: 'Scholarships Program' };
 
@@ -76,11 +76,11 @@ export default function ScholarshipsPage() {
           members, Veterans and military family members.
         </p>
 
-        <div className="text-left my-3 flex flex-col gap-3">
+        <div className="my-3 flex flex-col gap-3 text-left">
           <div className="max-w-prose self-center">
             <p>To qualify, you must:</p>
 
-            <ul className="list-disc flex flex-col gap-3 mb-3 ml-4">
+            <ul className="mb-3 ml-4 flex list-disc flex-col gap-3">
               <li>
                 Be an active member of our Operation Code community (
                 <Link href="/join">join here</Link>
@@ -102,18 +102,18 @@ export default function ScholarshipsPage() {
             <p>We provide learning licenses and access to the below platforms:</p>
           </div>
 
-          <ul className="flex flex-wrap w-full justify-center self-center gap-4">
-            {scholarshipOptions.map(option => (
-              <li key={option.title} className="max-w-sm w-full h-96">
+          <ul className="flex w-full flex-wrap justify-center gap-4 self-center">
+            {scholarshipOptions.map((option) => (
+              <li key={option.title} className="h-96 w-full max-w-sm">
                 <OutboundLink
-                  className="w-full h-full hover:no-underline"
+                  className="size-full hover:no-underline"
                   href={option.link}
                   analyticsEventLabel={`Scholarship Option Click [${option.title}]`}
                   hasIcon={false}
                 >
-                  <Card className="w-full h-full" hasAnimationOnHover>
-                    <h5 className="-mb-16 text-center ">{option.title}</h5>
-                    <div className="relative w-48 h-48 -mb-16">
+                  <Card className="size-full" hasAnimationOnHover>
+                    <h5 className="-mb-16 text-center">{option.title}</h5>
+                    <div className="relative -mb-16 size-48">
                       <Image src={option.logoSrc} alt="" fill className="object-contain" />
                     </div>
                     <p>{option.body}</p>

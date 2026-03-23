@@ -3,10 +3,10 @@
 exports[`ImageCard > should render with many props assigned 1`] = `
 <div>
   <article
-    class="items-center bg-white [&_svg]:fill-secondary text-secondary flex flex-nowrap justify-around m-4 min-h-[100px] min-w-[100px] shadow-md focus-visible:outline-none md:flex-row flex-col md:h-56 md:w-[650px] md:max-w-none p-0 h-auto max-w-xs w-auto [&>*]:flex-[1_1_50%] test"
+    class="m-4 flex min-h-[100px] min-w-[100px] flex-nowrap items-center justify-around bg-white text-secondary shadow-md focus-visible:outline-none [&_svg]:fill-secondary size-auto max-w-xs flex-col p-0 *:flex-[1_1_50%] md:h-56 md:w-[650px] md:max-w-none md:flex-row test"
   >
     <div
-      class="flex flex-col items-center justify-start m-4 overflow-y-auto"
+      class="m-4 flex flex-col items-center justify-start overflow-y-auto"
     >
       <p>
         Testing!
@@ -27,10 +27,10 @@ exports[`ImageCard > should render with many props assigned 1`] = `
 exports[`ImageCard > should render with required props 1`] = `
 <div>
   <article
-    class="items-center bg-white [&_svg]:fill-secondary text-secondary flex flex-nowrap justify-around m-4 min-h-[100px] min-w-[100px] shadow-md focus-visible:outline-none md:flex-row flex-col md:h-56 md:w-[650px] md:max-w-none p-0 h-auto max-w-xs w-auto [&>*]:flex-[1_1_50%]"
+    class="m-4 flex min-h-[100px] min-w-[100px] flex-nowrap items-center justify-around bg-white text-secondary shadow-md focus-visible:outline-none [&_svg]:fill-secondary size-auto max-w-xs flex-col p-0 *:flex-[1_1_50%] md:h-56 md:w-[650px] md:max-w-none md:flex-row"
   >
     <div
-      class="relative h-full w-full min-h-[225px]"
+      class="relative size-full min-h-[225px]"
     >
       <img
         alt="Test title"
@@ -38,7 +38,7 @@ exports[`ImageCard > should render with required props 1`] = `
       />
     </div>
     <div
-      class="flex flex-col items-center justify-start m-4 overflow-y-auto"
+      class="m-4 flex flex-col items-center justify-start overflow-y-auto"
     >
       <p>
         Testing!

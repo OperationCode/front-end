@@ -2,7 +2,9 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
-import { Videos, Photos, Links } from 'components/Press';
+import Photos from 'components/Press/PressPhotos/PressPhotos';
+import Videos from 'components/Press/PressVideos/PressVideos';
+import Links from 'components/Press/PressLinks/PressLinks';
 
 const pageTitle = 'Press';
 
@@ -94,7 +96,7 @@ function Press() {
         columns={[
           <div
             key="branding"
-            className="pt-[15px] flex flex-row flex-wrap justify-around items-center [&>a]:text-primary [&>a]:no-underline"
+            className="flex flex-row flex-wrap items-center justify-around pt-[15px] [&>a]:text-primary [&>a]:no-underline"
           >
             <Link href="/branding">View Our Branding</Link>
           </div>,

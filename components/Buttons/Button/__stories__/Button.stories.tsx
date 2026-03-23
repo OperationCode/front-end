@@ -23,7 +23,7 @@ const meta: Meta<typeof Button> = {
 export default meta;
 
 export const Default: ButtonStoryType = {
-  render: args => <Button {...args} />,
+  render: (args) => <Button {...args} />,
   args: {
     children: 'Button',
   },

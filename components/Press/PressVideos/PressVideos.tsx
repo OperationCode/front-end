@@ -8,8 +8,8 @@ const pressVideos = [
 
 function PressVideos() {
   return (
-    <div className="flex items-center justify-around flex-wrap gap-5">
-      {pressVideos.map(video => (
+    <div className="flex flex-wrap items-center justify-around gap-5">
+      {pressVideos.map((video) => (
         <iframe
           key={video.title}
           title={video.title}

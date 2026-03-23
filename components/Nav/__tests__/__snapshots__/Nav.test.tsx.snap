@@ -3,7 +3,7 @@
 exports[`Nav > should render with no props passed 1`] = `
 <div>
   <header
-    class="fixed flex items-center justify-between uppercase font-family-bebas w-full h-20 bg-white z-50 px-4 lg:hidden"
+    class="fixed flex items-center justify-between font-family-bebas uppercase z-50 h-20 w-full bg-white px-4 lg:hidden"
     data-testid="Mobile Nav Container"
   >
     <a
@@ -60,14 +60,14 @@ exports[`Nav > should render with no props passed 1`] = `
     </button>
   </header>
   <header
-    class="hidden absolute top-4 w-full z-10 lg:block uppercase font-family-bebas"
+    class="absolute top-4 z-10 hidden w-full font-family-bebas uppercase lg:block"
   >
     <div
       class="mx-auto max-w-7xl px-4"
       data-testid="Desktop Nav Container"
     >
       <nav
-        class="font-bold h-16 bg-white rounded-sm flex justify-between text-lg"
+        class="flex h-16 justify-between rounded-sm bg-white text-lg font-bold"
         data-testid="Desktop Nav"
       >
         <a
@@ -177,7 +177,7 @@ exports[`Nav > should render with no props passed 1`] = `
         >
           <li>
             <a
-              class="px-8 font-bold bg-primary text-secondary no-underline flex items-center justify-center h-full transition-colors duration-200 ease-linear rounded-r-sm cursor-pointer hover:text-white focus-visible:text-white"
+              class="bg-primary px-8 font-bold text-secondary no-underline flex h-full items-center justify-center transition-colors duration-200 ease-linear cursor-pointer rounded-r-sm hover:text-white focus-visible:text-white"
               href="/donate"
             >
               Donate

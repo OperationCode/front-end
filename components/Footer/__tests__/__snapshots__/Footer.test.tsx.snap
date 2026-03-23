@@ -118,7 +118,7 @@ exports[`Footer > should render with no props passed 1`] = `
           Connect With Us!
         </h6>
         <div
-          class="flex flex-row items-center justify-around [&_svg]:fill-white [&_svg]:text-white [&_svg]:size-6"
+          class="flex flex-row items-center justify-around [&_svg]:size-6 [&_svg]:fill-white [&_svg]:text-white"
         >
           <div
             class="mx-2 my-0 opacity-80 hover:opacity-100"
@@ -365,7 +365,7 @@ exports[`Footer > should render with no props passed 1`] = `
         </div>
       </div>
       <div
-        class="flex items-center justify-center gap-8 mb-4"
+        class="mb-4 flex items-center justify-center gap-8"
       >
         <a
           class="inline-flex items-start text-burnt-orange"
@@ -403,10 +403,10 @@ exports[`Footer > should render with no props passed 1`] = `
         </a>
       </div>
       <div
-        class="max-w-[1000px] mx-auto pb-10"
+        class="mx-auto max-w-[1000px] pb-10"
       >
         <ul
-          class="text-xl lg:text-base px-10 md:px-0 text-center grid grid-cols-2 md:grid-cols-4 gap-7 md:gap-3 pt-3"
+          class="grid grid-cols-2 gap-7 px-10 pt-3 text-center text-xl md:grid-cols-4 md:gap-3 md:px-0 lg:text-base"
         >
           <li>
             <a
@@ -516,7 +516,7 @@ exports[`Footer > should render with no props passed 1`] = `
         </ul>
       </div>
       <div
-        class="text-sm text-center pb-20 pt-4 md:pb-8"
+        class="pt-4 pb-20 text-center text-sm md:pb-8"
       >
         <div
           class="mb-6"
@@ -531,7 +531,7 @@ exports[`Footer > should render with no props passed 1`] = `
           </span>
         </div>
         <div
-          class="flex mx-auto justify-between w-60 [&_a]:text-white"
+          class="mx-auto flex w-60 justify-between [&_a]:text-white"
         >
           <a
             href="/terms"
@@ -552,7 +552,7 @@ exports[`Footer > should render with no props passed 1`] = `
               Opens in new window
             </span>
             <svg
-              class="inline-block ml-1 mt-0.5 fill-current size-3.5"
+              class="mt-0.5 ml-1 inline-block size-3.5 fill-current"
               viewBox="0 0 448 512"
             >
               <symbol

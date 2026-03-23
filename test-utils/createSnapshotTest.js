@@ -7,7 +7,7 @@ import { render } from '@testing-library/react';
  * @export
  * @param {*} Component
  */
-export default Component => {
+export default (Component) => {
   const { container } = render(Component);
   expect(container).toMatchSnapshot();
 };

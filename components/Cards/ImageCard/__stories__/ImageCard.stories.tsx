@@ -18,5 +18,5 @@ const meta: Meta<typeof ImageCard> = {
 export default meta;
 
 export const Default: ImageCardPropsType = {
-  render: args => <ImageCard {...args} />,
+  render: (args) => <ImageCard {...args} />,
 };

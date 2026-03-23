@@ -11,7 +11,6 @@ const someRandomPagesWithHashLinks = [
 test.describe('Hash Links', () => {
   test.describe('Desktop (Chromium)', () => {
     for (const { title, path } of someRandomPagesWithHashLinks) {
-      // eslint-disable-next-line playwright/no-skipped-test
       test(`on ${title} page, will be invisible until hovered and change route when clicked`, async ({
         page,
         browserName,
@@ -77,7 +76,6 @@ test.describe('Hash Links', () => {
 
   test.describe('Mobile (Safari)', () => {
     for (const { title, path } of someRandomPagesWithHashLinks) {
-      // eslint-disable-next-line playwright/no-skipped-test
       test(`on ${title} page, headings should have IDs but hash links should not be visible`, async ({
         page,
         browserName,
@@ -126,7 +124,7 @@ test.describe('Hash Links', () => {
           if (linkCount > 0) {
             // Hash link exists but should not be visible on mobile
             // It should have width 0 or be hidden
-            const width = await link.evaluate(el => el.getBoundingClientRect().width);
+            const width = await link.evaluate((el) => el.getBoundingClientRect().width);
             // eslint-disable-next-line playwright/no-conditional-expect
             expect(width).toBe(0);
           }

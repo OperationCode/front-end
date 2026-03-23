@@ -10,7 +10,7 @@ const meta: Meta<typeof ScreenReaderOnly> = {
     children: 'ScreenReader content',
   },
   decorators: [
-    ScreenReaderOnlyStory => (
+    (ScreenReaderOnlyStory) => (
       <>
         <span>Content never displayed, but it is rendered</span>
         <ScreenReaderOnlyStory />
@@ -22,5 +22,5 @@ const meta: Meta<typeof ScreenReaderOnly> = {
 export default meta;
 
 export const Default: ScreenReaderOnlyStoryType = {
-  render: args => <ScreenReaderOnly {...args} />,
+  render: (args) => <ScreenReaderOnly {...args} />,
 };

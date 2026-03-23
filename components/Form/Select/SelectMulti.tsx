@@ -6,8 +6,10 @@ import { cx } from 'common/utils/cva';
 import type { OptionType, ThemedReactSelectProps } from './ThemedReactSelect';
 import { ThemedReactSelect } from './ThemedReactSelect';
 
-export interface SelectMultiProps
-  extends Pick<ThemedReactSelectProps<true>, 'id' | 'hasValidationStyling' | 'isSearchable'> {
+export interface SelectMultiProps extends Pick<
+  ThemedReactSelectProps<true>,
+  'id' | 'hasValidationStyling' | 'isSearchable'
+> {
   className?: string;
   field: FieldInputProps<{ label: string; value: string }[]>;
   form: FormikState<Record<string, string[]>> & FormikHelpers<Record<string, string[]>>;
@@ -49,7 +51,7 @@ export function SelectMulti({
           isSearchable={isSearchable}
           isTouched={Boolean(touched[name])}
           onBlur={() => setFieldTouched(name)}
-          onChange={async selectedArray => {
+          onChange={async (selectedArray) => {
             await setFieldValue(name, selectedArray ?? []);
             await setFieldTouched(name, true);
           }}
@@ -63,10 +65,10 @@ export function SelectMulti({
             return hasErrors ? (
               <Alert
                 className={cx(
-                  'max-w-full -mx-0.5 mt-2 flex-1',
-                  'lg:mt-0 lg:ml-4 lg:absolute lg:top-0 lg:left-full',
-                  'lg:min-w-36 lg:max-w-72 lg:w-max py-0 px-2.5',
-                  'lg:py-0 lg:px-2.5 lg:min-h-full lg:flex lg:items-center lg:justify-center',
+                  '-mx-0.5 mt-2 max-w-full flex-1',
+                  'lg:absolute lg:top-0 lg:left-full lg:mt-0 lg:ml-4',
+                  `px-2.5 py-0 lg:w-max lg:max-w-72 lg:min-w-36`,
+                  `lg:flex lg:min-h-full lg:items-center lg:justify-center lg:px-2.5 lg:py-0`,
                 )}
                 type="error"
               >

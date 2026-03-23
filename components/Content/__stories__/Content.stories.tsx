@@ -30,7 +30,7 @@ export default meta;
  * Default Content supplied with only one column
  */
 export const Default: ContentStoryType = {
-  render: args => <Content {...args} />,
+  render: (args) => <Content {...args} />,
 };
 
 /**

@@ -1,8 +1,8 @@
 import { fireEvent, render } from '@testing-library/react';
+import noop from 'lodash/noop';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 import { mobileNavItems } from 'common/constants/navigation';
 import { CLOSE_BUTTON } from 'common/constants/testIDs';
-import noop from 'lodash/noop';
 
 import NavMobile from '../NavMobile';
 

@@ -1,4 +1,3 @@
-/* eslint-disable unicorn/prevent-abbreviations */
 // Webpack is unable to use export default
 const svgoConfig = {
   plugins: [

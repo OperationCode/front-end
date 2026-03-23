@@ -1,10 +1,10 @@
 import { Formik, Field } from 'formik';
 import { fireEvent, render, waitFor } from '@testing-library/react';
+import noop from 'lodash/noop';
+import { describe, afterEach, it, expect, vi } from 'vitest';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 import { KEY_CODES } from 'test-utils/identifiers';
-import noop from 'lodash/noop';
 import { LABEL } from 'common/constants/testIDs';
-import { describe, afterEach, it, expect, vi } from 'vitest';
 import { getReactSelectInput } from 'components/Form/Select/ThemedReactSelect';
 import Form from '../../Form';
 import type { SelectMultiProps } from '../SelectMulti';

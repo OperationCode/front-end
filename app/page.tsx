@@ -36,7 +36,7 @@ function Home() {
   return (
     <div>
       <HeroBanner
-        className={cx('p-0 min-h-dvh')}
+        className={cx('min-h-dvh p-0')}
         backgroundImageSource={`${s3}redesign/heroBanners/homepage.jpg`}
         title="Build The Future"
       >
@@ -48,7 +48,7 @@ function Home() {
           </p>
         </div>
 
-        <div className="flex w-full max-w-prose justify-evenly flex-wrap gap-x-2">
+        <div className="flex w-full max-w-prose flex-wrap justify-evenly gap-x-2">
           <LinkButton href="/about" className="mt-4">
             Learn More
           </LinkButton>
@@ -74,7 +74,7 @@ function Home() {
 
       <Content
         title="Success Stories"
-        columns={successStories.map(story => (
+        columns={successStories.map((story) => (
           <SuccessStory {...story} key={story.title} />
         ))}
         className="pb-24"

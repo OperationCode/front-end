@@ -7,13 +7,13 @@ exports[`JoinSection > should render 1`] = `
     data-testid="Join Section"
   >
     <div
-      class="flex flex-col items-center justify-center mx-auto w-full my-[3.5rem] max-w-[1400px] sm:w-[85%]"
+      class="mx-auto my-14 flex w-full max-w-[1400px] flex-col items-center justify-center sm:w-[85%]"
     >
       <div
-        class="flex justify-center relative"
+        class="relative flex justify-center"
       >
         <h3
-          class="group flex uppercase text-center my-4 mx-0 border-b-4 border-b-transparent"
+          class="group mx-0 my-4 flex border-b-4 border-b-transparent text-center uppercase"
           id="join-our-thriving-community-link"
         >
           <div
@@ -21,7 +21,7 @@ exports[`JoinSection > should render 1`] = `
             data-testid="Heading Content join-our-thriving-community-link"
           >
             <a
-              class="sm:visible absolute top-0 -left-8 opacity-0 h-full flex items-center justify-center group-hover:opacity-100 focus-visible:opacity-100 transition-opacity w-0 focus-visible:w-5 group-hover:w-5"
+              class="sm:visible absolute top-0 -left-8 flex h-full items-center justify-center opacity-0 transition-opacity group-hover:opacity-100 focus-visible:opacity-100 w-0 group-hover:w-5 focus-visible:w-5"
               data-testid="Hash Link"
               href="#join-our-thriving-community-link"
             >
@@ -33,7 +33,7 @@ exports[`JoinSection > should render 1`] = `
                 Join Our Thriving Community
               </span>
               <svg
-                class="w-full h-5"
+                class="h-5 w-full"
                 viewBox="0 0 512 512"
               >
                 <symbol
@@ -61,7 +61,7 @@ exports[`JoinSection > should render 1`] = `
         Are you ready to begin your journey towards a career in tech? Get the support you need by joining our members-only Slack community!
       </p>
       <a
-        class="font-family-bebas font-bold text-center uppercase text-shadow-[initial] tracking-wide inline-block rounded leading-none border-4 border-solid cursor-pointer py-4 px-3 whitespace-nowrap transition-all duration-200 ease-linear min-w-[175px] focus-visible:bg-transparent hover:bg-transparent disabled:opacity-60 disabled:hover:cursor-not-allowed bg-secondary border-secondary outline-secondary text-primary focus-visible:text-secondary hover:text-secondary my-4"
+        class="font-family-bebas font-bold text-center uppercase text-shadow-[initial] tracking-wide inline-block rounded leading-none border-4 border-solid cursor-pointer py-4 px-3 whitespace-nowrap transition-all duration-200 ease-linear min-w-[175px] focus-visible:bg-transparent hover:bg-transparent disabled:opacity-60 disabled:hover:cursor-not-allowed border-secondary bg-secondary text-primary outline-secondary hover:text-secondary focus-visible:text-secondary my-4"
         href="/join"
       >
         Register Now
@@ -83,7 +83,7 @@ exports[`JoinSection > should render 1`] = `
           Opens in new window
         </span>
         <svg
-          class="inline-block ml-1 mt-0.5 fill-current size-3.5"
+          class="mt-0.5 ml-1 inline-block size-3.5 fill-current"
           viewBox="0 0 448 512"
         >
           <symbol

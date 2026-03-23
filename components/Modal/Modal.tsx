@@ -64,7 +64,7 @@ function Modal({
     <Dialog.Root defaultOpen={false} open={isOpen}>
       <Dialog.Portal container={portalContainer}>
         <Dialog.Overlay
-          className={cx('inset-0 fixed bg-white/50 z-[2]', overlayClassName)}
+          className={cx('fixed inset-0 z-2 bg-white/50', overlayClassName)}
           onClick={canClose ? onRequestClose : undefined}
           data-testid={MODAL_OVERLAY}
         >
@@ -96,7 +96,7 @@ function Modal({
             'left-1/2',
             '-translate-x-1/2',
             '-translate-y-1/2',
-            'z-[2]',
+            'z-2',
             'shadow-md',
             className,
           )}

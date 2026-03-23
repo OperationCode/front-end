@@ -1,5 +1,5 @@
-import { SUCCESS_PAGE_MESSAGE } from 'common/constants/testIDs';
 import type { Metadata } from 'next';
+import { SUCCESS_PAGE_MESSAGE } from 'common/constants/testIDs';
 import LinkButton from 'components/Buttons/LinkButton/LinkButton';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import OutboundLink from 'components/OutboundLink/OutboundLink';

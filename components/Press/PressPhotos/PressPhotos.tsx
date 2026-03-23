@@ -1,5 +1,5 @@
-import { s3 } from 'common/constants/urls';
 import Image from 'next/image';
+import { s3 } from 'common/constants/urls';
 import { cx } from 'common/utils/cva';
 
 const pressPhotos = [
@@ -28,8 +28,8 @@ const pressPhotos = [
 
 function PressPhotos() {
   return (
-    <div className="pt-4 flex flex-wrap mx-auto items-center justify-center gap-4">
-      {pressPhotos.map(photo => (
+    <div className="mx-auto flex flex-wrap items-center justify-center gap-4 pt-4">
+      {pressPhotos.map((photo) => (
         <div key={photo.src} className="relative aspect-video h-80">
           <Image
             src={photo.src}

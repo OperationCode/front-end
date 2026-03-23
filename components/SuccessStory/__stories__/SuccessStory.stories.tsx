@@ -18,5 +18,5 @@ const meta: Meta<typeof SuccessStory> = {
 export default meta;
 
 export const Default: SuccessStoryType = {
-  render: args => <SuccessStory {...args} />,
+  render: (args) => <SuccessStory {...args} />,
 };

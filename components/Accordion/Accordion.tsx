@@ -50,22 +50,22 @@ function Accordion({
 }: AccordionPropsType) {
   const [isContentVisible, setContentVisibility] = useState(false);
 
-  const toggleAccordionContent = () => setContentVisibility(previousState => !previousState);
+  const toggleAccordionContent = () => setContentVisibility((previousState) => !previousState);
 
   const contentId = `content-${accessibilityId}`;
   const accordionId = `accordion-control-${accessibilityId}`;
 
   return (
     <Card
-      className={cx('w-full py-0 justify-normal flex-nowrap min-h-full', className)}
+      className={cx('min-h-full w-full flex-nowrap justify-normal py-0', className)}
       hasAnimationOnHover={hasAnimationOnHover}
     >
-      <div className="w-full flex items-center justify-between">
+      <div className="flex w-full items-center justify-between">
         <div className="flex-1 text-xl font-bold uppercase">{content.headingChildren}</div>
         <button
           aria-controls={contentId}
           aria-expanded={isContentVisible}
-          className="grid place-items-center w-20 h-20 -mr-6"
+          className="-mr-6 grid size-20 place-items-center"
           data-testid={ACCORDION_TOGGLE_BUTTON}
           id={accordionId}
           onClick={toggleAccordionContent}
@@ -73,7 +73,7 @@ function Accordion({
         >
           <ScreenReaderOnly>{toggleMessages[isContentVisible ? 'close' : 'open']}</ScreenReaderOnly>
           <Chevron
-            className={cx('w-[30px] fill-current transition-transform duration-100 ease-linear', {
+            className={cx(`w-[30px] fill-current transition-transform duration-100 ease-linear`, {
               'rotate-90': isContentVisible,
             })}
           />

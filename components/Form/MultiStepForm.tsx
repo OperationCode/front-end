@@ -1,4 +1,3 @@
-/* eslint-disable unicorn/prevent-abbreviations */
 import type { FunctionComponent } from 'react';
 import { useState } from 'react';
 import type { FormikHelpers, FormikProps } from 'formik';
@@ -27,7 +26,7 @@ interface MultiStepFormProps<T> {
     title: string;
     initialValues: Partial<T>;
     submitHandler?: (values: Partial<T>) => Promise<void>;
-    // eslint-disable-next-line @typescript-eslint/ban-types
+    // eslint-disable-next-line @typescript-eslint/no-empty-object-type
     validationSchema: ObjectSchema<{}>;
   })[];
 }
@@ -56,8 +55,8 @@ export function MultiStepForm<
   const showNextStep = ({ setFieldTouched }: Pick<FormikHelpers<unknown>, 'setFieldTouched'>) => {
     // TODO: Only untouch if value is '' or []
     const nextStepFieldNames = Object.keys(steps[stepNumber + 1].initialValues);
-    nextStepFieldNames.forEach(fieldName => setFieldTouched(fieldName, false));
-    setState(prevState => ({ ...prevState, stepNumber: prevState.stepNumber + 1 }));
+    nextStepFieldNames.forEach((fieldName) => setFieldTouched(fieldName, false));
+    setState((prevState) => ({ ...prevState, stepNumber: prevState.stepNumber + 1 }));
   };
 
   // We assume this method cannot be called on the first step
@@ -66,19 +65,19 @@ export function MultiStepForm<
   }: Pick<FormikHelpers<unknown>, 'setFieldTouched'>) => {
     // TODO: Only untouch if value is '' or []
     const previousStepFieldNames = Object.keys(steps[stepNumber - 1].initialValues);
-    previousStepFieldNames.forEach(fieldName => setFieldTouched(fieldName, false));
+    previousStepFieldNames.forEach((fieldName) => setFieldTouched(fieldName, false));
 
-    setState(prevState => ({ ...prevState, stepNumber: prevState.stepNumber - 1 }));
+    setState((prevState) => ({ ...prevState, stepNumber: prevState.stepNumber - 1 }));
   };
 
   const handleError = (error: AxiosError) => {
-    setState(prevState => ({ ...prevState, errorMessage: getErrorMessage(error) }));
+    setState((prevState) => ({ ...prevState, errorMessage: getErrorMessage(error) }));
   };
 
   const handleSubmit = async (values: T, helpers: FormikHelpers<T>) => {
     if (errorMessage) {
       // reset error message each submit
-      setState(prevState => ({ ...prevState, errorMessage: '' }));
+      setState((prevState) => ({ ...prevState, errorMessage: '' }));
     }
 
     try {
@@ -111,9 +110,9 @@ export function MultiStepForm<
       enableReinitialize
       onSubmit={handleSubmit}
     >
-      {formikBag => (
+      {(formikBag) => (
         <Form
-          className="flex flex-col gap-4 w-full max-w-prose px-4 !m-0"
+          className="m-0! flex w-full max-w-prose flex-col gap-4 px-4"
           onSubmit={formikBag.handleSubmit}
         >
           <h3 className="text-center">{CurrentStep.title}</h3>
@@ -124,7 +123,7 @@ export function MultiStepForm<
 
           <div>{errorMessage && <Alert type="error">{errorMessage}</Alert>}</div>
 
-          <div className="flex items-center justify-center gap-3 flex-wrap [&>button]:flex-1">
+          <div className="flex flex-wrap items-center justify-center gap-3 [&>button]:flex-1">
             {!isFirstStep && (
               <Button
                 theme="secondary"

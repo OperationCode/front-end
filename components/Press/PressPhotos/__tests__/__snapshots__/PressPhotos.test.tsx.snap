@@ -3,7 +3,7 @@
 exports[`PressPhotos > should render with no props passed 1`] = `
 <div>
   <div
-    class="pt-4 flex flex-wrap mx-auto items-center justify-center gap-4"
+    class="mx-auto flex flex-wrap items-center justify-center gap-4 pt-4"
   >
     <div
       class="relative aspect-video h-80"

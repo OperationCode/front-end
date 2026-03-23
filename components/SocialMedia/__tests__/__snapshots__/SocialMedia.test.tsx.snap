@@ -3,7 +3,7 @@
 exports[`SocialMedia > should render with no props passed passed 1`] = `
 <div>
   <div
-    class="flex flex-row items-center justify-around [&_svg]:fill-white [&_svg]:text-white [&_svg]:size-6"
+    class="flex flex-row items-center justify-around [&_svg]:size-6 [&_svg]:fill-white [&_svg]:text-white"
   >
     <div
       class="mx-2 my-0 opacity-80 hover:opacity-100"

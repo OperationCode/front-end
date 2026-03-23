@@ -1,7 +1,7 @@
 import type { FieldInputProps, FormikHelpers, FormikState } from 'formik';
 import { ErrorMessage } from 'formik';
-import { INPUT, INPUT_ERROR, INPUT_FEEDBACK_GROUPING } from 'common/constants/testIDs';
 import type { InputHTMLAttributes } from 'react';
+import { INPUT, INPUT_ERROR, INPUT_FEEDBACK_GROUPING } from 'common/constants/testIDs';
 import { cx } from 'common/utils/cva';
 import Label from 'components/Form/Label/Label';
 import Alert from 'components/Alert/Alert';
@@ -48,9 +48,9 @@ function Input({
           {...field}
           {...props}
           className={cx(
-            'border border-secondary/50 rounded-sm text-lg p-2 bg-white',
-            'disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48',
-            'focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none',
+            'rounded-sm border border-secondary/50 bg-white p-2 text-lg',
+            `min-w-48 disabled:opacity-60 hover:disabled:cursor-not-allowed`,
+            `focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none`,
             {
               'border-success-deep shadow-xs shadow-success-deep outline-none':
                 touched[name] && !hasErrors && hasValidationStyling,
@@ -70,10 +70,10 @@ function Input({
             return hasErrors ? (
               <Alert
                 className={cx(
-                  'max-w-full -mx-0.5 mt-2 flex-1',
-                  'lg:mt-0 lg:ml-4 lg:absolute lg:top-0 lg:left-full',
-                  'lg:min-w-36 lg:max-w-72 lg:w-auto',
-                  'lg:py-0 lg:px-2.5 lg:min-h-full lg:flex lg:items-center lg:justify-center',
+                  '-mx-0.5 mt-2 max-w-full flex-1',
+                  'lg:absolute lg:top-0 lg:left-full lg:mt-0 lg:ml-4',
+                  'lg:w-auto lg:max-w-72 lg:min-w-36',
+                  `lg:flex lg:min-h-full lg:items-center lg:justify-center lg:px-2.5 lg:py-0`,
                 )}
                 data-testid={INPUT_ERROR}
                 type="error"

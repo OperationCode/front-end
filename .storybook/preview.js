@@ -2,7 +2,7 @@ import 'common/styles/globals.css';
 import { MINIMAL_VIEWPORTS, INITIAL_VIEWPORTS } from 'storybook/viewport';
 
 export const decorators = [
-  Story => (
+  (Story) => (
     <div id="__next" style={{ margin: '2rem' }}>
       <Story />
     </div>

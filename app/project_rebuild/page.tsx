@@ -24,7 +24,7 @@ function ProjectRebuild() {
         columns={[
           <div
             key="logos"
-            className="flex flex-wrap items-center justify-center gap-12 lg:gap-16 -mb-8 [&>*:nth-child(3)]:lg:order-3 [&>*:nth-child(2)]:lg:order-1 [&>*:nth-child(1)]:lg:order-2"
+            className="-mb-8 flex flex-wrap items-center justify-center gap-12 lg:gap-16 [&>*:nth-child(1)]:lg:order-2 [&>*:nth-child(2)]:lg:order-1 [&>*:nth-child(3)]:lg:order-3"
           >
             <Image
               src={`${s3}partnerLogos/fresh-start-refugee.png`}
@@ -176,7 +176,7 @@ function ProjectRebuild() {
               </OutboundLink>
             </p>
 
-            <div className="w-full mt-8 mx-auto text-center">
+            <div className="mx-auto mt-8 w-full text-center">
               <LinkButton href="/donate">Donate</LinkButton>
             </div>
           </div>,

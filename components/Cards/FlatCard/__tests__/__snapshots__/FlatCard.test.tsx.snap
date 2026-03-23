@@ -3,10 +3,10 @@
 exports[`FlatCard > should render with many props assigned 1`] = `
 <div>
   <article
-    class="box-border my-6 mx-4 relative max-w-[400px] test-class"
+    class="relative mx-4 my-6 box-border max-w-[400px] test-class"
   >
     <div
-      class="p-8 flex flex-col gap-5 border-4 border-solid border-primary"
+      class="flex flex-col gap-5 border-4 border-solid border-primary p-8"
     >
       <div
         class="text-center"
@@ -30,10 +30,10 @@ exports[`FlatCard > should render with many props assigned 1`] = `
         </p>
       </div>
       <div
-        class="text-center absolute left-0 right-0 -bottom-7 [&>button]:hover:bg-white [&>button]:hover:text-secondary [&>button]:focus-visible:text-primary [&>button]:focus-visible:bg-white [&>a]:hover:bg-white [&>a]:hover:text-secondary [&>a]:focus-visible:bg-white [&>a]:focus-visible:text-secondary "
+        class="absolute inset-x-0 -bottom-7 text-center [&>a]:hover:bg-white [&>a]:hover:text-secondary [&>a]:focus-visible:bg-white [&>a]:focus-visible:text-secondary [&>button]:hover:bg-white [&>button]:hover:text-secondary [&>button]:focus-visible:bg-white [&>button]:focus-visible:text-primary"
       >
         <a
-          class="font-family-bebas font-bold text-center uppercase text-shadow-[initial] tracking-wide inline-block rounded leading-none border-4 border-solid cursor-pointer py-4 px-3 whitespace-nowrap transition-all duration-200 ease-linear min-w-[175px] focus-visible:bg-transparent hover:bg-transparent disabled:opacity-60 disabled:hover:cursor-not-allowed bg-primary border-primary outline-primary text-secondary focus-visible:text-primary hover:text-primary"
+          class="font-family-bebas font-bold text-center uppercase text-shadow-[initial] tracking-wide inline-block rounded leading-none border-4 border-solid cursor-pointer py-4 px-3 whitespace-nowrap transition-all duration-200 ease-linear min-w-[175px] focus-visible:bg-transparent hover:bg-transparent disabled:opacity-60 disabled:hover:cursor-not-allowed border-primary bg-primary text-secondary outline-primary hover:text-primary focus-visible:text-primary"
           href="/"
         >
           Widget Action
@@ -47,10 +47,10 @@ exports[`FlatCard > should render with many props assigned 1`] = `
 exports[`FlatCard > should render with required props 1`] = `
 <div>
   <article
-    class="box-border my-6 mx-4 relative max-w-[400px]"
+    class="relative mx-4 my-6 box-border max-w-[400px]"
   >
     <div
-      class="p-8 flex flex-col gap-5 border-4 border-solid border-primary"
+      class="flex flex-col gap-5 border-4 border-solid border-primary p-8"
     >
       <div>
         <p>

@@ -17,5 +17,5 @@ const meta: Meta<typeof PartnerLogoLink> = {
 export default meta;
 
 export const Default: PartnerLogoLinkStoryType = {
-  render: args => <PartnerLogoLink {...args} />,
+  render: (args) => <PartnerLogoLink {...args} />,
 };

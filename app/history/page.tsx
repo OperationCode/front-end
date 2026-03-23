@@ -14,7 +14,7 @@ function History() {
     <div>
       <HeroBanner
         backgroundImageSource={`${s3}heroBanners/colin-powell.jpg`}
-        className="bg-[right_center] min-h-[60dvh]"
+        className="min-h-[60dvh] bg-position-[right_center]"
         title={pageTitle}
       >
         <div key="quote">
@@ -22,7 +22,7 @@ function History() {
             “There are no secrets to success. It is the result of preparation, hard work, learning
             from failure.”
           </blockquote>
-          <span className="text-[1.75rem] float-right">- Colin Powell</span>
+          <span className="float-right text-[1.75rem]">- Colin Powell</span>
         </div>
       </HeroBanner>
 

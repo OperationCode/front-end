@@ -19,7 +19,7 @@ exports[`FeaturedJobItem > should render with many props assigned 1`] = `
         Opens in new window
       </span>
       <svg
-        class="inline-block ml-1 mt-0.5 fill-current size-3.5"
+        class="mt-0.5 ml-1 inline-block size-3.5 fill-current"
         viewBox="0 0 448 512"
       >
         <symbol
@@ -46,7 +46,7 @@ exports[`FeaturedJobItem > should render with many props assigned 1`] = `
         class="flex items-center gap-0.5"
       >
         <svg
-          class="fill-secondary size-4"
+          class="size-4 fill-secondary"
           viewBox="0 0 448 512"
         >
           <symbol
@@ -75,7 +75,7 @@ exports[`FeaturedJobItem > should render with many props assigned 1`] = `
         class="flex items-center gap-0.5"
       >
         <svg
-          class="fill-secondary size-4"
+          class="size-4 fill-secondary"
           viewBox="0 0 384 512"
         >
           <symbol
@@ -114,7 +114,7 @@ exports[`FeaturedJobItem > should render with many props assigned 1`] = `
         class="flex items-center gap-1"
       >
         <svg
-          class="fill-secondary size-4"
+          class="size-4 fill-secondary"
           viewBox="0 0 640 512"
         >
           <symbol
@@ -166,7 +166,7 @@ exports[`FeaturedJobItem > should render with required props 1`] = `
         Opens in new window
       </span>
       <svg
-        class="inline-block ml-1 mt-0.5 fill-current size-3.5"
+        class="mt-0.5 ml-1 inline-block size-3.5 fill-current"
         viewBox="0 0 448 512"
       >
         <symbol
@@ -193,7 +193,7 @@ exports[`FeaturedJobItem > should render with required props 1`] = `
         class="flex items-center gap-0.5"
       >
         <svg
-          class="fill-secondary size-4"
+          class="size-4 fill-secondary"
           viewBox="0 0 448 512"
         >
           <symbol
@@ -222,7 +222,7 @@ exports[`FeaturedJobItem > should render with required props 1`] = `
         class="flex items-center gap-0.5"
       >
         <svg
-          class="fill-secondary size-4"
+          class="size-4 fill-secondary"
           viewBox="0 0 384 512"
         >
           <symbol

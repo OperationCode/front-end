@@ -13,11 +13,11 @@ export interface Swatch {
 
 function Swatch({ colorName, hexCode }: Swatch) {
   return (
-    <figure className="border border-solid border-theme-gray-800 p-4 m-6 w-56">
+    <figure className="m-6 w-56 border border-solid border-theme-gray-800 p-4">
       <ScreenReaderOnly>{`A block of the color ${colorName}`}</ScreenReaderOnly>
 
       <div
-        className="h-56 mb-4 border border-solid border-theme-gray-800"
+        className="mb-4 h-56 border border-solid border-theme-gray-800"
         style={{ backgroundColor: hexCode }}
       />
 

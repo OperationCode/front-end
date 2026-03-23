@@ -11,7 +11,7 @@ function Contact() {
   return (
     <div>
       <HeroBanner
-        className="min-h-dvh [&_a]:transition-colors [&_a]:duration-200 [&_a:focus-visible]:text-shadow-none [&_a:focus-visible]:text-primary [&_a:hover]:text-shadow-none [&_a:hover]:text-primary"
+        className="min-h-dvh [&_a]:transition-colors [&_a]:duration-200 [&_a:focus-visible]:text-primary [&_a:focus-visible]:text-shadow-none [&_a:hover]:text-primary [&_a:hover]:text-shadow-none"
         title={pageTitle}
       >
         <div className="my-4">
@@ -27,7 +27,7 @@ function Contact() {
           </p>
         </div>
 
-        <address className="w-full mx-auto mb-8 max-w-prose not-italic">
+        <address className="mx-auto mb-8 w-full max-w-prose not-italic">
           <b>You can also reach us via email:</b>
 
           <br />
@@ -41,7 +41,7 @@ function Contact() {
           </OutboundLink>
         </address>
 
-        <address className="w-full mx-auto mb-8 max-w-prose not-italic">
+        <address className="mx-auto mb-8 w-full max-w-prose not-italic">
           <b>Connect with us on LinkedIn:</b>
 
           <br />
@@ -54,7 +54,7 @@ function Contact() {
           </OutboundLink>
         </address>
 
-        <address className="w-full mx-auto mb-8 max-w-prose not-italic">
+        <address className="mx-auto mb-8 w-full max-w-prose not-italic">
           <b>And - if you really want to - you can snail-mail us:</b>
 
           <br />

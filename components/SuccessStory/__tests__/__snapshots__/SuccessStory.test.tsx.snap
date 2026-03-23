@@ -3,10 +3,10 @@
 exports[`SuccessStory > should render with required props 1`] = `
 <div>
   <article
-    class="box-border my-6 mx-4 relative max-w-[400px] pt-20 sm:pt-14"
+    class="relative mx-4 my-6 box-border max-w-[400px] pt-20 sm:pt-14"
   >
     <div
-      class="p-8 flex flex-col gap-5 border-4 border-solid border-primary pt-32"
+      class="flex flex-col gap-5 border-4 border-solid border-primary p-8 pt-32"
     >
       <div
         class="text-center"
@@ -14,10 +14,10 @@ exports[`SuccessStory > should render with required props 1`] = `
         Great testing culture
       </div>
       <div
-        class="flex justify-center -my-5"
+        class="-my-5 flex justify-center"
       >
         <div
-          class="absolute -top-4 border-solid border-primary border-[3px] w-[194px] h-[194px]"
+          class="absolute -top-4 h-[194px] w-[194px] border-[3px] border-solid border-primary"
           data-testid="FLAT_CARD_IMAGE"
         >
           <img

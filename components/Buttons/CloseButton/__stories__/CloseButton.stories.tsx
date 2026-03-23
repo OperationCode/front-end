@@ -18,8 +18,8 @@ const meta: Meta<typeof CloseButton> = {
 export default meta;
 
 export const Default: CloseButtonStoryType = {
-  render: args => (
-    <div className="relative bg-slate-500 h-20">
+  render: (args) => (
+    <div className="relative h-20 bg-slate-500">
       <CloseButton {...args} />
     </div>
   ),

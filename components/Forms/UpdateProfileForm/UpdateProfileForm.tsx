@@ -3,15 +3,15 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import type { AxiosError } from 'axios';
+import LogRocket from 'logrocket';
+import type { FormikHelpers } from 'formik';
 import { getServerErrorMessage } from 'common/utils/api-utils';
 import { MultiStepForm } from 'components/Form/MultiStepForm';
-import LogRocket from 'logrocket';
 import { updateUser } from 'common/constants/api';
 import { ProfessionalDetails } from 'components/Forms/UpdateProfileForm/steps/ProfessionalDetails';
 import { MilitaryStatus } from 'components/Forms/UpdateProfileForm/steps/MilitaryStatus';
 import { MilitaryDetails } from 'components/Forms/UpdateProfileForm/steps/MilitaryDetails';
 import { PersonalDetails } from 'components/Forms/UpdateProfileForm/steps/PersonalDetails';
-import type { FormikHelpers } from 'formik';
 
 const generateError = (errorObject: AxiosError) => {
   const serverResponse = (errorObject?.response?.data ?? {}) as Record<string, string>;
@@ -20,12 +20,12 @@ const generateError = (errorObject: AxiosError) => {
 
   if (isHandledServerError) {
     const hasMultiError = responseDataValues.some(
-      value => Array.isArray(value) && value.length > 0,
+      (value) => Array.isArray(value) && value.length > 0,
     );
 
     if (hasMultiError) {
       const errorMessage = responseDataValues
-        .map(messages => {
+        .map((messages) => {
           // Only return the first item of a potential array of errors.
           // Rather than make this code more complex, just let the user resolve them per submit.
           return messages[0];
@@ -75,10 +75,10 @@ function UpdateProfileForm({
         MilitaryDetails.initialValues,
       ) as (keyof typeof MilitaryDetails.initialValues)[];
 
-      const isMilitaryDetailsStepEmpty = relevantKeys.every(key => values[key].length === 0);
+      const isMilitaryDetailsStepEmpty = relevantKeys.every((key) => values[key].length === 0);
 
       if (isMilitaryDetailsStepEmpty) {
-        relevantKeys.forEach(key => formikHelpers.setFieldTouched(key, false));
+        relevantKeys.forEach((key) => formikHelpers.setFieldTouched(key, false));
       }
     }
 

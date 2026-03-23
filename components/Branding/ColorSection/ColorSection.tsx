@@ -23,7 +23,7 @@ function ColorSection() {
       title="Colors"
       hasTitleUnderline
       theme="white"
-      columns={colors.map(color => (
+      columns={colors.map((color) => (
         <Swatch colorName={color.name} hexCode={color.hexCode} key={color.name} />
       ))}
     />

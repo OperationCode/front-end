@@ -9,7 +9,7 @@ interface InputTemplateArgs {
   label: string;
 }
 
-const InputTemplate: StoryFn<InputTemplateArgs> = args => {
+const InputTemplate: StoryFn<InputTemplateArgs> = (args) => {
   const {
     field: { name },
     label,
@@ -20,7 +20,7 @@ const InputTemplate: StoryFn<InputTemplateArgs> = args => {
       initialValues={{
         input1Value: '',
       }}
-      onSubmit={values => alert(JSON.stringify(values))}
+      onSubmit={(values) => alert(JSON.stringify(values))}
     >
       <Form>
         <div>

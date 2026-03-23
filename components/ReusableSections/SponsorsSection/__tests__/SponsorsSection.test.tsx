@@ -14,7 +14,7 @@ describe('SponsorsSection', () => {
   it('should render a secure link and image for each partner', () => {
     const component = render(<SponsorsSection />);
 
-    partnersSortedByName.forEach(partner => {
+    partnersSortedByName.forEach((partner) => {
       const image = component.queryByAltText(`${partner.name} logo`)!;
       const link = image.closest('a') as HTMLAnchorElement;
       expect(image).toBeInTheDocument();

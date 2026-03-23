@@ -3,7 +3,7 @@
 exports[`RegistrationForm > should render with required props 1`] = `
 <div>
   <form
-    class="flex flex-col gap-4 max-w-prose w-full px-4 !m-0"
+    class="m-0! flex w-full max-w-prose flex-col gap-4 px-4"
     novalidate=""
   >
     <div
@@ -22,7 +22,7 @@ exports[`RegistrationForm > should render with required props 1`] = `
       >
         <input
           autocomplete="username email"
-          class="border border-secondary/50 rounded-sm text-lg p-2 bg-white disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
+          class="rounded-sm border border-secondary/50 bg-white p-2 text-lg min-w-48 disabled:opacity-60 hover:disabled:cursor-not-allowed focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
           id="email"
           name="email"
           type="email"
@@ -46,7 +46,7 @@ exports[`RegistrationForm > should render with required props 1`] = `
       >
         <input
           autocomplete="username email"
-          class="border border-secondary/50 rounded-sm text-lg p-2 bg-white disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
+          class="rounded-sm border border-secondary/50 bg-white p-2 text-lg min-w-48 disabled:opacity-60 hover:disabled:cursor-not-allowed focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
           id="confirm-email"
           name="confirm-email"
           type="email"
@@ -71,7 +71,7 @@ exports[`RegistrationForm > should render with required props 1`] = `
       >
         <input
           autocomplete="new-password"
-          class="border border-secondary/50 rounded-sm text-lg p-2 bg-white disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
+          class="rounded-sm border border-secondary/50 bg-white p-2 text-lg min-w-48 disabled:opacity-60 hover:disabled:cursor-not-allowed focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
           id="password"
           name="password"
           type="password"
@@ -96,7 +96,7 @@ exports[`RegistrationForm > should render with required props 1`] = `
       >
         <input
           autocomplete="new-password"
-          class="border border-secondary/50 rounded-sm text-lg p-2 bg-white disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
+          class="rounded-sm border border-secondary/50 bg-white p-2 text-lg min-w-48 disabled:opacity-60 hover:disabled:cursor-not-allowed focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
           id="confirm-password"
           name="confirm-password"
           type="password"
@@ -120,7 +120,7 @@ exports[`RegistrationForm > should render with required props 1`] = `
       >
         <input
           autocomplete="given-name"
-          class="border border-secondary/50 rounded-sm text-lg p-2 bg-white disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
+          class="rounded-sm border border-secondary/50 bg-white p-2 text-lg min-w-48 disabled:opacity-60 hover:disabled:cursor-not-allowed focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
           id="firstName"
           name="firstName"
           type="text"
@@ -144,7 +144,7 @@ exports[`RegistrationForm > should render with required props 1`] = `
       >
         <input
           autocomplete="family-name"
-          class="border border-secondary/50 rounded-sm text-lg p-2 bg-white disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
+          class="rounded-sm border border-secondary/50 bg-white p-2 text-lg min-w-48 disabled:opacity-60 hover:disabled:cursor-not-allowed focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
           id="lastName"
           name="lastName"
           type="text"
@@ -168,7 +168,7 @@ exports[`RegistrationForm > should render with required props 1`] = `
       >
         <input
           autocomplete="postal-code"
-          class="border border-secondary/50 rounded-sm text-lg p-2 bg-white disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
+          class="rounded-sm border border-secondary/50 bg-white p-2 text-lg min-w-48 disabled:opacity-60 hover:disabled:cursor-not-allowed focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
           id="zipcode"
           name="zipcode"
           type="text"
@@ -181,19 +181,19 @@ exports[`RegistrationForm > should render with required props 1`] = `
       data-testid="CHECKBOX"
     >
       <label
-        class="text-secondary group flex items-start gap-3 outline-1 outline-transparent outline-offset-2 cursor-pointer has-[input:disabled]:cursor-not-allowed [&>input:focus-visible]:outline-secondary/50"
+        class="text-secondary group flex items-start gap-3 outline-1 outline-offset-2 outline-transparent cursor-pointer has-[input:disabled]:cursor-not-allowed [&>input:focus-visible]:outline-secondary/50"
         data-testid="LABEL"
         for="codeOfConduct"
       >
         <input
-          class="border border-secondary/50 size-5 rounded-sm disabled:opacity-60 cursor-[inherit] group-hover:border-secondary outline-transparent outline-offset-2 outline group-hover:outline-secondary/25"
+          class="size-5 cursor-[inherit] rounded-sm border border-secondary/50 group-hover:border-secondary disabled:opacity-60 outline-1 outline-offset-2 outline-transparent group-hover:outline-secondary/25"
           id="codeOfConduct"
           name="codeOfConduct"
           type="checkbox"
           value=""
         />
         <span
-          class="select-none -mt-0.75"
+          class="-mt-0.75 select-none"
         >
           I have read and agree to
            
@@ -211,7 +211,7 @@ exports[`RegistrationForm > should render with required props 1`] = `
               Opens in new window
             </span>
             <svg
-              class="inline-block ml-1 mt-0.5 fill-current size-3.5"
+              class="mt-0.5 ml-1 inline-block size-3.5 fill-current"
               viewBox="0 0 448 512"
             >
               <symbol
@@ -241,19 +241,19 @@ exports[`RegistrationForm > should render with required props 1`] = `
       data-testid="CHECKBOX"
     >
       <label
-        class="text-secondary group flex items-start gap-3 outline-1 outline-transparent outline-offset-2 cursor-pointer has-[input:disabled]:cursor-not-allowed [&>input:focus-visible]:outline-secondary/50"
+        class="text-secondary group flex items-start gap-3 outline-1 outline-offset-2 outline-transparent cursor-pointer has-[input:disabled]:cursor-not-allowed [&>input:focus-visible]:outline-secondary/50"
         data-testid="LABEL"
         for="slackGuidelines"
       >
         <input
-          class="border border-secondary/50 size-5 rounded-sm disabled:opacity-60 cursor-[inherit] group-hover:border-secondary outline-transparent outline-offset-2 outline group-hover:outline-secondary/25"
+          class="size-5 cursor-[inherit] rounded-sm border border-secondary/50 group-hover:border-secondary disabled:opacity-60 outline-1 outline-offset-2 outline-transparent group-hover:outline-secondary/25"
           id="slackGuidelines"
           name="slackGuidelines"
           type="checkbox"
           value=""
         />
         <span
-          class="select-none -mt-0.75"
+          class="-mt-0.75 select-none"
         >
           I have read and agree to
            
@@ -271,7 +271,7 @@ exports[`RegistrationForm > should render with required props 1`] = `
               Opens in new window
             </span>
             <svg
-              class="inline-block ml-1 mt-0.5 fill-current size-3.5"
+              class="mt-0.5 ml-1 inline-block size-3.5 fill-current"
               viewBox="0 0 448 512"
             >
               <symbol
@@ -297,7 +297,7 @@ exports[`RegistrationForm > should render with required props 1`] = `
       </label>
     </div>
     <button
-      class="font-family-bebas font-bold text-center uppercase text-shadow-[initial] tracking-wide inline-block rounded leading-none border-4 border-solid cursor-pointer py-4 px-3 whitespace-nowrap transition-all duration-200 ease-linear min-w-[175px] focus-visible:bg-transparent hover:bg-transparent disabled:opacity-60 disabled:hover:cursor-not-allowed bg-secondary border-secondary outline-secondary text-primary focus-visible:text-secondary hover:text-secondary w-full"
+      class="font-family-bebas font-bold text-center uppercase text-shadow-[initial] tracking-wide inline-block rounded leading-none border-4 border-solid cursor-pointer py-4 px-3 whitespace-nowrap transition-all duration-200 ease-linear min-w-[175px] focus-visible:bg-transparent hover:bg-transparent disabled:opacity-60 disabled:hover:cursor-not-allowed border-secondary bg-secondary text-primary outline-secondary hover:text-secondary focus-visible:text-secondary w-full"
       data-testid="REGISTRATION_FORM_INITIAL_SUBMIT_BUTTON"
       tabindex="0"
       type="submit"
@@ -313,7 +313,7 @@ exports[`RegistrationForm > should render with required props 1`] = `
       </span>
     </button>
     <aside
-      class="text-xs mx-auto p-3 border border-dashed border-warning-deep bg-warning rounded-md"
+      class="mx-auto rounded-md border border-dashed border-warning-deep bg-warning p-3 text-xs"
     >
       <p>
         The demographic information you provide, helps us understand our community needs, ensure diversity, and provide specific resources to reach our mission. Thank you in advance for providing honest answers. 

@@ -1,9 +1,9 @@
 import { Formik, Field } from 'formik';
 import { cleanup, fireEvent, render } from '@testing-library/react';
+import noop from 'lodash/noop';
 import { INPUT, INPUT_ERROR, INPUT_FEEDBACK_GROUPING, LABEL } from 'common/constants/testIDs';
 import { validationErrorMessages } from 'common/constants/messages';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
-import noop from 'lodash/noop';
 
 import Form from '../../Form';
 import Input from '../Input';
@@ -107,7 +107,7 @@ describe('Input', () => {
     expect(otherInputTypes).not.toContain('radio');
     expect(otherInputTypes).not.toContain('checkbox');
 
-    otherInputTypes.forEach(inputType => {
+    otherInputTypes.forEach((inputType) => {
       const { container, queryByTestId, unmount } = render(
         <Formik onSubmit={noop} initialValues={{}}>
           <Input {...requiredProps} type={inputType} />

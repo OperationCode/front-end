@@ -7,13 +7,13 @@ exports[`Content > should render with many props assigned 1`] = `
     id="test-id"
   >
     <div
-      class="flex flex-col items-center justify-center mx-auto w-full my-[3.5rem] max-w-[1400px] sm:w-[85%]"
+      class="mx-auto my-14 flex w-full max-w-[1400px] flex-col items-center justify-center sm:w-[85%]"
     >
       <div
-        class="flex justify-center relative"
+        class="relative flex justify-center"
       >
         <h3
-          class="group flex uppercase text-center my-4 mx-0 border-b-4 border-b-primary"
+          class="group mx-0 my-4 flex border-b-4 text-center uppercase border-b-primary"
           id="testing-link"
         >
           <div
@@ -21,7 +21,7 @@ exports[`Content > should render with many props assigned 1`] = `
             data-testid="Heading Content testing-link"
           >
             <a
-              class="sm:visible absolute top-0 -left-8 opacity-0 h-full flex items-center justify-center group-hover:opacity-100 focus-visible:opacity-100 transition-opacity w-0 focus-visible:w-5 group-hover:w-5"
+              class="sm:visible absolute top-0 -left-8 flex h-full items-center justify-center opacity-0 transition-opacity group-hover:opacity-100 focus-visible:opacity-100 w-0 group-hover:w-5 focus-visible:w-5"
               data-testid="Hash Link"
               href="#testing-link"
             >
@@ -33,7 +33,7 @@ exports[`Content > should render with many props assigned 1`] = `
                 Testing!
               </span>
               <svg
-                class="w-full h-5"
+                class="h-5 w-full"
                 viewBox="0 0 512 512"
               >
                 <symbol
@@ -58,7 +58,7 @@ exports[`Content > should render with many props assigned 1`] = `
         </h3>
       </div>
       <div
-        class="flex justify-center items-center flex-wrap w-full *:m-4"
+        class="flex w-full flex-wrap items-center justify-center *:m-4"
       >
         <div>
           <p>
@@ -83,10 +83,10 @@ exports[`Content > should render with required props 1`] = `
     class="bg-center bg-no-repeat bg-cover flex items-center justify-between w-full px-4 md:px-0 fill-current min-h-[250px] bg-secondary text-white"
   >
     <div
-      class="flex flex-col items-center justify-center mx-auto w-full my-[3.5rem] max-w-[1400px] sm:w-[85%]"
+      class="mx-auto my-14 flex w-full max-w-[1400px] flex-col items-center justify-center sm:w-[85%]"
     >
       <div
-        class="flex justify-center items-center flex-wrap w-full *:m-4"
+        class="flex w-full flex-wrap items-center justify-center *:m-4"
       >
         <div>
           <p>

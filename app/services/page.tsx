@@ -50,14 +50,14 @@ function Services() {
               are all working towards relevant career and personal goals. Membership is free!
             </p>
 
-            <div className="text-center mt-10">
+            <div className="mt-10 text-center">
               <LinkButton href="/join" theme="secondary">
                 Become A Member
               </LinkButton>
             </div>
 
             <div>
-              <p className="text-center mt-10">
+              <p className="mt-10 text-center">
                 Do you love Operation Code? Check out our{' '}
                 <OutboundLink
                   analyticsEventLabel="Merch Store"
@@ -98,13 +98,13 @@ function Services() {
             Whether you are looking to change careers or starting a new one in the tech industry, we
             are here to help you succeed by providing:
           </p>,
-          <div key="commitment-badges" className="flex flex-wrap justify-center -mt-4">
-            {mentorItems.map(item => (
+          <div key="commitment-badges" className="-mt-4 flex flex-wrap justify-center">
+            {mentorItems.map((item) => (
               <Badge
                 key={item.label}
                 icon={item.icon}
                 label={item.label}
-                className="fill-secondary mt-4 mx-16"
+                className="mx-16 mt-4 fill-secondary"
               />
             ))}
           </div>,

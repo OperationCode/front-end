@@ -27,15 +27,15 @@ function Checkbox({
         htmlFor={name}
         isHidden={false}
         className={cx(
-          'group flex items-start gap-3 outline outline-1 outline-transparent outline-offset-2',
-          'cursor-pointer has-[input:disabled]:cursor-not-allowed [&>input:focus-visible]:outline-secondary/50',
+          `group flex items-start gap-3 outline outline-offset-2 outline-transparent`,
+          `cursor-pointer has-[input:disabled]:cursor-not-allowed [&>input:focus-visible]:outline-secondary/50`,
         )}
       >
         <input
           {...field}
           className={cx(
-            'border border-secondary/50 size-5 rounded-sm disabled:opacity-60 cursor-[inherit] group-hover:border-secondary',
-            'outline-transparent outline-offset-2 outline-1 outline',
+            `size-5 cursor-[inherit] rounded-sm border border-secondary/50 group-hover:border-secondary disabled:opacity-60`,
+            'outline outline-offset-2 outline-transparent',
             'group-hover:outline-secondary/25',
           )}
           disabled={isDisabled}
@@ -46,11 +46,11 @@ function Checkbox({
         />
 
         {/* negative margin here is to align the text with the checkbox bubble while allowing the field to use `flex items start` for if the label wraps lines */}
-        <span className="select-none -mt-0.75">{label}</span>
+        <span className="-mt-0.75 select-none">{label}</span>
       </Label>
 
       <ErrorMessage name={name}>
-        {message => {
+        {(message) => {
           return hasErrors ? (
             <Alert className="mt-2 flex-1 text-center" data-testid={CHECKBOX_ERROR} type="error">
               {message}

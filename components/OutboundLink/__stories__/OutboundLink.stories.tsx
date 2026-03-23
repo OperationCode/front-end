@@ -17,5 +17,5 @@ const meta: Meta<typeof OutboundLink> = {
 export default meta;
 
 export const Default: OutboudLinkStoryType = {
-  render: args => <OutboundLink {...args} />,
+  render: (args) => <OutboundLink {...args} />,
 };

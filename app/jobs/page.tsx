@@ -18,7 +18,7 @@ function Jobs() {
         theme="gray"
         title="Featured"
         hasTitleUnderline
-        columns={FeaturedJobsData.filter(job => job.status === 'active').map(job => (
+        columns={FeaturedJobsData.filter((job) => job.status === 'active').map((job) => (
           <FeaturedJobItem key={job.sourceUrl} {...job} />
         ))}
       />

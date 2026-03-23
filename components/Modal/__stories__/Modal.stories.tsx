@@ -25,7 +25,7 @@ const meta: Meta<typeof Modal> = {
 export default meta;
 
 export const Default: ModalStoryType = {
-  render: args => {
+  render: (args) => {
     const [isDemoModalOpen, setIsDemoModalOpen] = useState(args.isOpen);
 
     return (
@@ -35,7 +35,7 @@ export const Default: ModalStoryType = {
         <Modal
           {...args}
           isOpen={isDemoModalOpen}
-          onRequestClose={() => setIsDemoModalOpen(prev => !prev)}
+          onRequestClose={() => setIsDemoModalOpen((prev) => !prev)}
         />
       </>
     );

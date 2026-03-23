@@ -17,7 +17,7 @@ exports[`Input > should render with required props 1`] = `
       data-testid="INPUT_FEEDBACK_GROUPING"
     >
       <input
-        class="border border-secondary/50 rounded-sm text-lg p-2 bg-white disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
+        class="rounded-sm border border-secondary/50 bg-white p-2 text-lg min-w-48 disabled:opacity-60 hover:disabled:cursor-not-allowed focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
         id="someInputName"
         name="someInputName"
         type="text"

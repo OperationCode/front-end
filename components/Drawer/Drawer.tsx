@@ -21,14 +21,14 @@ function Drawer({ children, className, isVisible = false }: DrawerPropsType) {
     <div
       className={cx(
         className,
-        'hidden lg:block transition-all ease-in-out duration-1000 fixed top-0 bottom-0 overflow-hidden width-full z-[2]',
+        `fixed inset-y-0 z-2 hidden w-full overflow-hidden transition-all duration-1000 ease-in-out lg:block`,
         {
-          '-left-0': isVisible,
+          'left-0': isVisible,
           '-left-full': !isVisible,
         },
       )}
     >
-      <div className="w-full h-full">{children}</div>
+      <div className="size-full">{children}</div>
     </div>
   );
 }

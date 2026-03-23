@@ -1,8 +1,8 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 import SocialMedia from 'components/SocialMedia/SocialMedia';
 import { footerItems } from 'common/constants/navigation';
-import Image from 'next/image';
 import Logo from 'public/static/images/logo.svg';
 
 import platniumTransparencySeal from 'static/images/platinum-transparency.png';
@@ -52,7 +52,7 @@ function Footer() {
           <h6 className="mb-2">Connect With Us!</h6>
           <SocialMedia />
         </div>
-        <div className="flex items-center justify-center gap-8 mb-4">
+        <div className="mb-4 flex items-center justify-center gap-8">
           <OutboundLink
             href="https://www.guidestar.org/profile/shared/52626ac8-5e8b-445a-889e-30bf1ac0b46e"
             analyticsEventLabel="Footer GuideStar"
@@ -73,18 +73,18 @@ function Footer() {
             <Image src={compTia} width={128} height={128} alt="CompTIA Authorized Partner - Gold" />
           </OutboundLink>
         </div>
-        <div className="max-w-[1000px] mx-auto pb-10">
-          <ul className="text-xl lg:text-base px-10 md:px-0 text-center grid grid-cols-2 md:grid-cols-4 gap-7 md:gap-3 pt-3">
-            {items.map(link => renderLink(link))}
+        <div className="mx-auto max-w-[1000px] pb-10">
+          <ul className="grid grid-cols-2 gap-7 px-10 pt-3 text-center text-xl md:grid-cols-4 md:gap-3 md:px-0 lg:text-base">
+            {items.map((link) => renderLink(link))}
           </ul>
         </div>
-        <div className="text-sm text-center pb-20 pt-4 md:pb-8">
+        <div className="pt-4 pb-20 text-center text-sm md:pb-8">
           <div className="mb-6">
             &#169; 2014-{currentYear} Operation Code™
             <span className="pl-4">registered 501(c)3</span>
           </div>
-          <div className="flex mx-auto justify-between w-60 [&_a]:text-white">
-            {legal.map(link =>
+          <div className="mx-auto flex w-60 justify-between [&_a]:text-white">
+            {legal.map((link) =>
               // / logic of renderLink duplicated here
               link.analyticsEventLabel ? (
                 <OutboundLink

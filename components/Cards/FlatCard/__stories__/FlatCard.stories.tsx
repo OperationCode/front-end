@@ -15,7 +15,7 @@ interface FlatCardArgs {
   };
 }
 
-const Template: StoryFn<FlatCardArgs> = args => <FlatCard {...args} />;
+const Template: StoryFn<FlatCardArgs> = (args) => <FlatCard {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

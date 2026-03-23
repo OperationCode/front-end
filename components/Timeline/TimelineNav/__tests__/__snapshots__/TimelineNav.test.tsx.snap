@@ -9,50 +9,50 @@ exports[`TimelineNav > should render with no props passed passed 1`] = `
       class="flex justify-around"
     >
       <a
-        class="font-bold text-2xl cursor-pointer text-gray-500 transition-all duration-100 ease-in-out hover:opacity-60 hover:scale-110 sm:text-xl"
+        class="cursor-pointer text-2xl font-bold text-gray-500 transition-all duration-100 ease-in-out hover:scale-110 hover:opacity-60 sm:text-xl"
         href="#event-2011"
       >
         2011
       </a>
       <a
-        class="font-bold text-2xl cursor-pointer text-gray-500 transition-all duration-100 ease-in-out hover:opacity-60 hover:scale-110 sm:text-xl"
+        class="cursor-pointer text-2xl font-bold text-gray-500 transition-all duration-100 ease-in-out hover:scale-110 hover:opacity-60 sm:text-xl"
         href="#event-2013"
       >
         2013
       </a>
       <a
-        class="font-bold text-2xl cursor-pointer text-gray-500 transition-all duration-100 ease-in-out hover:opacity-60 hover:scale-110 sm:text-xl"
+        class="cursor-pointer text-2xl font-bold text-gray-500 transition-all duration-100 ease-in-out hover:scale-110 hover:opacity-60 sm:text-xl"
         href="#event-2014"
       >
         2014
       </a>
       <a
-        class="font-bold text-2xl cursor-pointer text-gray-500 transition-all duration-100 ease-in-out hover:opacity-60 hover:scale-110 sm:text-xl"
+        class="cursor-pointer text-2xl font-bold text-gray-500 transition-all duration-100 ease-in-out hover:scale-110 hover:opacity-60 sm:text-xl"
         href="#event-2015"
       >
         2015
       </a>
       <a
-        class="font-bold text-2xl cursor-pointer text-gray-500 transition-all duration-100 ease-in-out hover:opacity-60 hover:scale-110 sm:text-xl"
+        class="cursor-pointer text-2xl font-bold text-gray-500 transition-all duration-100 ease-in-out hover:scale-110 hover:opacity-60 sm:text-xl"
         href="#event-2019"
       >
         2019
       </a>
       <a
-        class="font-bold text-2xl cursor-pointer text-gray-500 transition-all duration-100 ease-in-out hover:opacity-60 hover:scale-110 sm:text-xl"
+        class="cursor-pointer text-2xl font-bold text-gray-500 transition-all duration-100 ease-in-out hover:scale-110 hover:opacity-60 sm:text-xl"
         href="#event-2021"
       >
         2021
       </a>
       <a
-        class="font-bold text-2xl cursor-pointer text-gray-500 transition-all duration-100 ease-in-out hover:opacity-60 hover:scale-110 sm:text-xl"
+        class="cursor-pointer text-2xl font-bold text-gray-500 transition-all duration-100 ease-in-out hover:scale-110 hover:opacity-60 sm:text-xl"
         href="#event-2023"
       >
         2023
       </a>
     </nav>
     <div
-      class="mt-4 bg-theme-gray-800 h-1"
+      class="mt-4 h-1 bg-theme-gray-800"
     />
   </section>
 </div>

@@ -1,9 +1,9 @@
 import { Formik } from 'formik';
+import noop from 'lodash/noop';
 import OperationCodeAPIMock from 'test-utils/mocks/apiMock';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 import Form from 'components/Form/Form';
 
-import noop from 'lodash/noop';
 import { MilitaryDetails } from '../MilitaryDetails';
 
 describe('UpdateProfileForm/Steps/MilitaryDetails', () => {

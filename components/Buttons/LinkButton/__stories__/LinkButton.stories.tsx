@@ -14,7 +14,7 @@ const meta: Meta<typeof LinkButton> = {
 export default meta;
 
 export const Default: LinkButtonStoryType = {
-  render: args => <LinkButton {...args} />,
+  render: (args) => <LinkButton {...args} />,
   args: {
     children: 'Link',
     href: '#',

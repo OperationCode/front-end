@@ -3,16 +3,16 @@
 exports[`Timeline > should render with no props passed passed 1`] = `
 <div>
   <div
-    class="my-12 mx-auto w-[90%]"
+    class="mx-auto my-12 w-[90%]"
   >
     <div
       class="flex"
     >
       <div
-        class="flex-1 relative text-right"
+        class="relative flex-1 text-right"
       >
         <h3
-          class="absolute w-full pr-2.5 text-sm top-8 sm:top-4 sm:text-4xl"
+          class="absolute top-8 w-full pr-2.5 text-sm sm:top-4 sm:text-4xl"
         >
           2011
         </h3>
@@ -21,10 +21,10 @@ exports[`Timeline > should render with no props passed passed 1`] = `
         class="relative px-5"
       >
         <div
-          class="absolute top-0 h-full w-0.5 bg-theme-gray-800 -translate-x-1/2"
+          class="absolute top-0 h-full w-0.5 -translate-x-1/2 bg-theme-gray-800"
         />
         <div
-          class="size-3.5 rounded-full border-2 border-gray-500 bg-white absolute top-8 -translate-x-1/2 sm:top-6"
+          class="absolute top-8 size-3.5 -translate-x-1/2 rounded-full border-2 border-gray-500 bg-white sm:top-6"
         />
       </div>
       <div
@@ -32,7 +32,7 @@ exports[`Timeline > should render with no props passed passed 1`] = `
         id="event-2011"
       >
         <div
-          class="mb-8 p-5 rounded-md"
+          class="mb-8 rounded-md p-5"
         >
           <h4
             class="capitalize md:text-2xl"
@@ -57,7 +57,7 @@ exports[`Timeline > should render with no props passed passed 1`] = `
                   Opens in new window
                 </span>
                 <svg
-                  class="inline-block ml-1 mt-0.5 fill-current size-3.5"
+                  class="mt-0.5 ml-1 inline-block size-3.5 fill-current"
                   viewBox="0 0 448 512"
                 >
                   <symbol
@@ -88,10 +88,10 @@ exports[`Timeline > should render with no props passed passed 1`] = `
       class="flex"
     >
       <div
-        class="flex-1 relative text-right"
+        class="relative flex-1 text-right"
       >
         <h3
-          class="absolute w-full pr-2.5 text-sm top-8 sm:top-4 sm:text-4xl"
+          class="absolute top-8 w-full pr-2.5 text-sm sm:top-4 sm:text-4xl"
         >
           2013
         </h3>
@@ -100,10 +100,10 @@ exports[`Timeline > should render with no props passed passed 1`] = `
         class="relative px-5"
       >
         <div
-          class="absolute top-0 h-full w-0.5 bg-theme-gray-800 -translate-x-1/2"
+          class="absolute top-0 h-full w-0.5 -translate-x-1/2 bg-theme-gray-800"
         />
         <div
-          class="size-3.5 rounded-full border-2 border-gray-500 bg-white absolute top-8 -translate-x-1/2 sm:top-6"
+          class="absolute top-8 size-3.5 -translate-x-1/2 rounded-full border-2 border-gray-500 bg-white sm:top-6"
         />
       </div>
       <div
@@ -111,7 +111,7 @@ exports[`Timeline > should render with no props passed passed 1`] = `
         id="event-2013"
       >
         <div
-          class="mb-8 p-5 rounded-md"
+          class="mb-8 rounded-md p-5"
         >
           <h4
             class="capitalize md:text-2xl"
@@ -136,7 +136,7 @@ exports[`Timeline > should render with no props passed passed 1`] = `
                   Opens in new window
                 </span>
                 <svg
-                  class="inline-block ml-1 mt-0.5 fill-current size-3.5"
+                  class="mt-0.5 ml-1 inline-block size-3.5 fill-current"
                   viewBox="0 0 448 512"
                 >
                   <symbol
@@ -173,7 +173,7 @@ exports[`Timeline > should render with no props passed passed 1`] = `
                   Opens in new window
                 </span>
                 <svg
-                  class="inline-block ml-1 mt-0.5 fill-current size-3.5"
+                  class="mt-0.5 ml-1 inline-block size-3.5 fill-current"
                   viewBox="0 0 448 512"
                 >
                   <symbol
@@ -210,7 +210,7 @@ exports[`Timeline > should render with no props passed passed 1`] = `
                   Opens in new window
                 </span>
                 <svg
-                  class="inline-block ml-1 mt-0.5 fill-current size-3.5"
+                  class="mt-0.5 ml-1 inline-block size-3.5 fill-current"
                   viewBox="0 0 448 512"
                 >
                   <symbol
@@ -235,7 +235,7 @@ exports[`Timeline > should render with no props passed passed 1`] = `
           </div>
         </div>
         <div
-          class="mb-8 p-5 rounded-md"
+          class="mb-8 rounded-md p-5"
         >
           <h4
             class="capitalize md:text-2xl"
@@ -249,7 +249,7 @@ exports[`Timeline > should render with no props passed passed 1`] = `
           </div>
         </div>
         <div
-          class="mb-8 p-5 rounded-md"
+          class="mb-8 rounded-md p-5"
         >
           <h4
             class="capitalize md:text-2xl"
@@ -268,10 +268,10 @@ exports[`Timeline > should render with no props passed passed 1`] = `
       class="flex"
     >
       <div
-        class="flex-1 relative text-right"
+        class="relative flex-1 text-right"
       >
         <h3
-          class="absolute w-full pr-2.5 text-sm top-8 sm:top-4 sm:text-4xl"
+          class="absolute top-8 w-full pr-2.5 text-sm sm:top-4 sm:text-4xl"
         >
           2014
         </h3>
@@ -280,10 +280,10 @@ exports[`Timeline > should render with no props passed passed 1`] = `
         class="relative px-5"
       >
         <div
-          class="absolute top-0 h-full w-0.5 bg-theme-gray-800 -translate-x-1/2"
+          class="absolute top-0 h-full w-0.5 -translate-x-1/2 bg-theme-gray-800"
         />
         <div
-          class="size-3.5 rounded-full border-2 border-gray-500 bg-white absolute top-8 -translate-x-1/2 sm:top-6"
+          class="absolute top-8 size-3.5 -translate-x-1/2 rounded-full border-2 border-gray-500 bg-white sm:top-6"
         />
       </div>
       <div
@@ -291,7 +291,7 @@ exports[`Timeline > should render with no props passed passed 1`] = `
         id="event-2014"
       >
         <div
-          class="mb-8 p-5 rounded-md"
+          class="mb-8 rounded-md p-5"
         >
           <h4
             class="capitalize md:text-2xl"
@@ -316,7 +316,7 @@ exports[`Timeline > should render with no props passed passed 1`] = `
                   Opens in new window
                 </span>
                 <svg
-                  class="inline-block ml-1 mt-0.5 fill-current size-3.5"
+                  class="mt-0.5 ml-1 inline-block size-3.5 fill-current"
                   viewBox="0 0 448 512"
                 >
                   <symbol
@@ -353,7 +353,7 @@ exports[`Timeline > should render with no props passed passed 1`] = `
                   Opens in new window
                 </span>
                 <svg
-                  class="inline-block ml-1 mt-0.5 fill-current size-3.5"
+                  class="mt-0.5 ml-1 inline-block size-3.5 fill-current"
                   viewBox="0 0 448 512"
                 >
                   <symbol
@@ -390,7 +390,7 @@ exports[`Timeline > should render with no props passed passed 1`] = `
                   Opens in new window
                 </span>
                 <svg
-                  class="inline-block ml-1 mt-0.5 fill-current size-3.5"
+                  class="mt-0.5 ml-1 inline-block size-3.5 fill-current"
                   viewBox="0 0 448 512"
                 >
                   <symbol
@@ -416,7 +416,7 @@ exports[`Timeline > should render with no props passed passed 1`] = `
           </div>
         </div>
         <div
-          class="mb-8 p-5 rounded-md"
+          class="mb-8 rounded-md p-5"
         >
           <h4
             class="capitalize md:text-2xl"
@@ -441,7 +441,7 @@ exports[`Timeline > should render with no props passed passed 1`] = `
                   Opens in new window
                 </span>
                 <svg
-                  class="inline-block ml-1 mt-0.5 fill-current size-3.5"
+                  class="mt-0.5 ml-1 inline-block size-3.5 fill-current"
                   viewBox="0 0 448 512"
                 >
                   <symbol
@@ -478,7 +478,7 @@ exports[`Timeline > should render with no props passed passed 1`] = `
                   Opens in new window
                 </span>
                 <svg
-                  class="inline-block ml-1 mt-0.5 fill-current size-3.5"
+                  class="mt-0.5 ml-1 inline-block size-3.5 fill-current"
                   viewBox="0 0 448 512"
                 >
                   <symbol
@@ -509,10 +509,10 @@ exports[`Timeline > should render with no props passed passed 1`] = `
       class="flex"
     >
       <div
-        class="flex-1 relative text-right"
+        class="relative flex-1 text-right"
       >
         <h3
-          class="absolute w-full pr-2.5 text-sm top-8 sm:top-4 sm:text-4xl"
+          class="absolute top-8 w-full pr-2.5 text-sm sm:top-4 sm:text-4xl"
         >
           2015
         </h3>
@@ -521,10 +521,10 @@ exports[`Timeline > should render with no props passed passed 1`] = `
         class="relative px-5"
       >
         <div
-          class="absolute top-0 h-full w-0.5 bg-theme-gray-800 -translate-x-1/2"
+          class="absolute top-0 h-full w-0.5 -translate-x-1/2 bg-theme-gray-800"
         />
         <div
-          class="size-3.5 rounded-full border-2 border-gray-500 bg-white absolute top-8 -translate-x-1/2 sm:top-6"
+          class="absolute top-8 size-3.5 -translate-x-1/2 rounded-full border-2 border-gray-500 bg-white sm:top-6"
         />
       </div>
       <div
@@ -532,7 +532,7 @@ exports[`Timeline > should render with no props passed passed 1`] = `
         id="event-2015"
       >
         <div
-          class="mb-8 p-5 rounded-md"
+          class="mb-8 rounded-md p-5"
         >
           <h4
             class="capitalize md:text-2xl"
@@ -551,10 +551,10 @@ exports[`Timeline > should render with no props passed passed 1`] = `
       class="flex"
     >
       <div
-        class="flex-1 relative text-right"
+        class="relative flex-1 text-right"
       >
         <h3
-          class="absolute w-full pr-2.5 text-sm top-8 sm:top-4 sm:text-4xl"
+          class="absolute top-8 w-full pr-2.5 text-sm sm:top-4 sm:text-4xl"
         >
           2019
         </h3>
@@ -563,10 +563,10 @@ exports[`Timeline > should render with no props passed passed 1`] = `
         class="relative px-5"
       >
         <div
-          class="absolute top-0 h-full w-0.5 bg-theme-gray-800 -translate-x-1/2"
+          class="absolute top-0 h-full w-0.5 -translate-x-1/2 bg-theme-gray-800"
         />
         <div
-          class="size-3.5 rounded-full border-2 border-gray-500 bg-white absolute top-8 -translate-x-1/2 sm:top-6"
+          class="absolute top-8 size-3.5 -translate-x-1/2 rounded-full border-2 border-gray-500 bg-white sm:top-6"
         />
       </div>
       <div
@@ -574,7 +574,7 @@ exports[`Timeline > should render with no props passed passed 1`] = `
         id="event-2019"
       >
         <div
-          class="mb-8 p-5 rounded-md"
+          class="mb-8 rounded-md p-5"
         >
           <h4
             class="capitalize md:text-2xl"
@@ -599,7 +599,7 @@ exports[`Timeline > should render with no props passed passed 1`] = `
                   Opens in new window
                 </span>
                 <svg
-                  class="inline-block ml-1 mt-0.5 fill-current size-3.5"
+                  class="mt-0.5 ml-1 inline-block size-3.5 fill-current"
                   viewBox="0 0 448 512"
                 >
                   <symbol
@@ -636,7 +636,7 @@ exports[`Timeline > should render with no props passed passed 1`] = `
                   Opens in new window
                 </span>
                 <svg
-                  class="inline-block ml-1 mt-0.5 fill-current size-3.5"
+                  class="mt-0.5 ml-1 inline-block size-3.5 fill-current"
                   viewBox="0 0 448 512"
                 >
                   <symbol
@@ -667,10 +667,10 @@ exports[`Timeline > should render with no props passed passed 1`] = `
       class="flex"
     >
       <div
-        class="flex-1 relative text-right"
+        class="relative flex-1 text-right"
       >
         <h3
-          class="absolute w-full pr-2.5 text-sm top-8 sm:top-4 sm:text-4xl"
+          class="absolute top-8 w-full pr-2.5 text-sm sm:top-4 sm:text-4xl"
         >
           2021
         </h3>
@@ -679,10 +679,10 @@ exports[`Timeline > should render with no props passed passed 1`] = `
         class="relative px-5"
       >
         <div
-          class="absolute top-0 h-full w-0.5 bg-theme-gray-800 -translate-x-1/2"
+          class="absolute top-0 h-full w-0.5 -translate-x-1/2 bg-theme-gray-800"
         />
         <div
-          class="size-3.5 rounded-full border-2 border-gray-500 bg-white absolute top-8 -translate-x-1/2 sm:top-6"
+          class="absolute top-8 size-3.5 -translate-x-1/2 rounded-full border-2 border-gray-500 bg-white sm:top-6"
         />
       </div>
       <div
@@ -690,7 +690,7 @@ exports[`Timeline > should render with no props passed passed 1`] = `
         id="event-2021"
       >
         <div
-          class="mb-8 p-5 rounded-md"
+          class="mb-8 rounded-md p-5"
         >
           <h4
             class="capitalize md:text-2xl"
@@ -715,7 +715,7 @@ exports[`Timeline > should render with no props passed passed 1`] = `
                   Opens in new window
                 </span>
                 <svg
-                  class="inline-block ml-1 mt-0.5 fill-current size-3.5"
+                  class="mt-0.5 ml-1 inline-block size-3.5 fill-current"
                   viewBox="0 0 448 512"
                 >
                   <symbol
@@ -741,7 +741,7 @@ exports[`Timeline > should render with no props passed passed 1`] = `
           </div>
         </div>
         <div
-          class="mb-8 p-5 rounded-md"
+          class="mb-8 rounded-md p-5"
         >
           <h4
             class="capitalize md:text-2xl"
@@ -760,10 +760,10 @@ exports[`Timeline > should render with no props passed passed 1`] = `
       class="flex"
     >
       <div
-        class="flex-1 relative text-right"
+        class="relative flex-1 text-right"
       >
         <h3
-          class="absolute w-full pr-2.5 text-sm top-8 sm:top-4 sm:text-4xl"
+          class="absolute top-8 w-full pr-2.5 text-sm sm:top-4 sm:text-4xl"
         >
           2023
         </h3>
@@ -772,10 +772,10 @@ exports[`Timeline > should render with no props passed passed 1`] = `
         class="relative px-5"
       >
         <div
-          class="absolute top-0 h-full w-0.5 bg-theme-gray-800 -translate-x-1/2"
+          class="absolute top-0 h-full w-0.5 -translate-x-1/2 bg-theme-gray-800"
         />
         <div
-          class="size-3.5 rounded-full border-2 border-gray-500 bg-white absolute top-8 -translate-x-1/2 sm:top-6"
+          class="absolute top-8 size-3.5 -translate-x-1/2 rounded-full border-2 border-gray-500 bg-white sm:top-6"
         />
       </div>
       <div
@@ -783,7 +783,7 @@ exports[`Timeline > should render with no props passed passed 1`] = `
         id="event-2023"
       >
         <div
-          class="mb-8 p-5 rounded-md"
+          class="mb-8 rounded-md p-5"
         >
           <h4
             class="capitalize md:text-2xl"
@@ -808,7 +808,7 @@ exports[`Timeline > should render with no props passed passed 1`] = `
                   Opens in new window
                 </span>
                 <svg
-                  class="inline-block ml-1 mt-0.5 fill-current size-3.5"
+                  class="mt-0.5 ml-1 inline-block size-3.5 fill-current"
                   viewBox="0 0 448 512"
                 >
                   <symbol
@@ -845,7 +845,7 @@ exports[`Timeline > should render with no props passed passed 1`] = `
                   Opens in new window
                 </span>
                 <svg
-                  class="inline-block ml-1 mt-0.5 fill-current size-3.5"
+                  class="mt-0.5 ml-1 inline-block size-3.5 fill-current"
                   viewBox="0 0 448 512"
                 >
                   <symbol

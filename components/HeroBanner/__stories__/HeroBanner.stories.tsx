@@ -14,5 +14,5 @@ const meta: Meta<typeof HeroBanner> = {
 export default meta;
 
 export const Default: HeroBannerStoryType = {
-  render: args => <HeroBanner {...args} />,
+  render: (args) => <HeroBanner {...args} />,
 };

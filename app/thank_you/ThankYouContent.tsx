@@ -13,7 +13,7 @@ export default function ThankYouContent() {
 
   return (
     <div>
-      <HeroBanner title={pageTitle} className="pb-9 min-h-[60dvh]">
+      <HeroBanner title={pageTitle} className="min-h-[60dvh] pb-9">
         <p className="text-left">
           Thank you so much for your donation!
           <br />

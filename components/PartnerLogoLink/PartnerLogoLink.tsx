@@ -45,7 +45,7 @@ export default function PartnerLogoLink({
     >
       <div className={`relative ${sizeMappings[size]}`}>
         <Image
-          className="transition-all duration-200 ease-linear grayscale opacity-60 hover:grayscale-0 hover:opacity-100 hover:transition-all hover:duration-200 hover:ease-linear object-contain"
+          className="object-contain opacity-60 grayscale transition-all duration-200 ease-linear hover:opacity-100 hover:grayscale-0 hover:transition-all hover:duration-200 hover:ease-linear"
           src={logoSource}
           alt={`${name} logo`}
           fill

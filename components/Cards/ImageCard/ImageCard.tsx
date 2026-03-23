@@ -1,5 +1,5 @@
-import { cx } from 'common/utils/cva';
 import Image from 'next/image';
+import { cx } from 'common/utils/cva';
 import type { CardPropsType } from 'components/Cards/Card/Card';
 import Card from 'components/Cards/Card/Card';
 
@@ -29,19 +29,19 @@ function ImageCard({
   const ImageComponent = <Image src={imageSource} alt={alt} fill style={{ objectFit: 'cover' }} />;
 
   const ContentComponent = (
-    <div className="flex flex-col items-center justify-start m-4 overflow-y-auto">{children}</div>
+    <div className="m-4 flex flex-col items-center justify-start overflow-y-auto">{children}</div>
   );
 
   return (
     <Card
       className={cx(
-        'md:flex-row flex-col md:h-56 md:w-[650px] md:max-w-none p-0 h-auto max-w-xs w-auto [&>*]:flex-[1_1_50%]',
+        `size-auto max-w-xs flex-col p-0 *:flex-[1_1_50%] md:h-56 md:w-[650px] md:max-w-none md:flex-row`,
         className,
       )}
     >
       {isImageFirst ? (
         <>
-          <div className="relative h-full w-full min-h-[225px]">{ImageComponent}</div>
+          <div className="relative size-full min-h-[225px]">{ImageComponent}</div>
           {ContentComponent}
         </>
       ) : (

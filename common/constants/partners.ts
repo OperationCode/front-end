@@ -1,5 +1,5 @@
-import { s3 } from 'common/constants/urls';
 import sortBy from 'lodash/sortBy';
+import { s3 } from 'common/constants/urls';
 
 // Paid Sponsors
 import etsy from 'static/images/sponsors/etsy_logo.png';

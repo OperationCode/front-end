@@ -68,7 +68,7 @@ exports[`PressLinks > should render with no props passed 1`] = `
       </div>
       <div
         aria-labelledby="radix-_r_0_-trigger-Boston"
-        class="p-5 space-y-2.5 text-balance list-none text-center"
+        class="list-none space-y-2.5 p-5 text-center text-balance"
         data-orientation="horizontal"
         data-state="active"
         id="radix-_r_0_-content-Boston"
@@ -91,7 +91,7 @@ exports[`PressLinks > should render with no props passed 1`] = `
               Opens in new window
             </span>
             <svg
-              class="inline-block ml-1 mt-0.5 fill-current size-3.5"
+              class="mt-0.5 ml-1 inline-block size-3.5 fill-current"
               viewBox="0 0 448 512"
             >
               <symbol
@@ -127,7 +127,7 @@ exports[`PressLinks > should render with no props passed 1`] = `
               Opens in new window
             </span>
             <svg
-              class="inline-block ml-1 mt-0.5 fill-current size-3.5"
+              class="mt-0.5 ml-1 inline-block size-3.5 fill-current"
               viewBox="0 0 448 512"
             >
               <symbol
@@ -163,7 +163,7 @@ exports[`PressLinks > should render with no props passed 1`] = `
               Opens in new window
             </span>
             <svg
-              class="inline-block ml-1 mt-0.5 fill-current size-3.5"
+              class="mt-0.5 ml-1 inline-block size-3.5 fill-current"
               viewBox="0 0 448 512"
             >
               <symbol
@@ -199,7 +199,7 @@ exports[`PressLinks > should render with no props passed 1`] = `
               Opens in new window
             </span>
             <svg
-              class="inline-block ml-1 mt-0.5 fill-current size-3.5"
+              class="mt-0.5 ml-1 inline-block size-3.5 fill-current"
               viewBox="0 0 448 512"
             >
               <symbol
@@ -235,7 +235,7 @@ exports[`PressLinks > should render with no props passed 1`] = `
               Opens in new window
             </span>
             <svg
-              class="inline-block ml-1 mt-0.5 fill-current size-3.5"
+              class="mt-0.5 ml-1 inline-block size-3.5 fill-current"
               viewBox="0 0 448 512"
             >
               <symbol
@@ -271,7 +271,7 @@ exports[`PressLinks > should render with no props passed 1`] = `
               Opens in new window
             </span>
             <svg
-              class="inline-block ml-1 mt-0.5 fill-current size-3.5"
+              class="mt-0.5 ml-1 inline-block size-3.5 fill-current"
               viewBox="0 0 448 512"
             >
               <symbol
@@ -307,7 +307,7 @@ exports[`PressLinks > should render with no props passed 1`] = `
               Opens in new window
             </span>
             <svg
-              class="inline-block ml-1 mt-0.5 fill-current size-3.5"
+              class="mt-0.5 ml-1 inline-block size-3.5 fill-current"
               viewBox="0 0 448 512"
             >
               <symbol
@@ -343,7 +343,7 @@ exports[`PressLinks > should render with no props passed 1`] = `
               Opens in new window
             </span>
             <svg
-              class="inline-block ml-1 mt-0.5 fill-current size-3.5"
+              class="mt-0.5 ml-1 inline-block size-3.5 fill-current"
               viewBox="0 0 448 512"
             >
               <symbol
@@ -367,7 +367,7 @@ exports[`PressLinks > should render with no props passed 1`] = `
       </div>
       <div
         aria-labelledby="radix-_r_0_-trigger-General"
-        class="p-5 space-y-2.5 text-balance list-none text-center"
+        class="list-none space-y-2.5 p-5 text-center text-balance"
         data-orientation="horizontal"
         data-state="inactive"
         hidden=""
@@ -377,7 +377,7 @@ exports[`PressLinks > should render with no props passed 1`] = `
       />
       <div
         aria-labelledby="radix-_r_0_-trigger-NYC"
-        class="p-5 space-y-2.5 text-balance list-none text-center"
+        class="list-none space-y-2.5 p-5 text-center text-balance"
         data-orientation="horizontal"
         data-state="inactive"
         hidden=""

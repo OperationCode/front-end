@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
+import range from 'lodash/range';
+import Image from 'next/image';
 import { s3 } from 'common/constants/urls';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
 import challengers from 'static/operationcode_challenge/names';
-import range from 'lodash/range';
-import Image from 'next/image';
 
 export const metadata: Metadata = { title: 'Challenge' };
 
@@ -29,9 +29,9 @@ export const NamesColumns = () => {
       <ol
         key={columnNumber}
         start={startIndex + 1}
-        className="p-0 self-start basis-[225px] list-inside"
+        className="basis-[225px] list-inside self-start p-0"
       >
-        {namesInColumn.map(name => (
+        {namesInColumn.map((name) => (
           <li key={name}>{name}</li>
         ))}
       </ol>
@@ -59,7 +59,7 @@ function Challenge() {
         theme="white"
         columns={[
           <div key="instructions">
-            <ol className="leading-normal p-0 pl-[5px] m-0 [&_li]:pb-[25px] [&_img]:max-w-full [&_img]:h-auto [&_img]:px-[10px]">
+            <ol className="m-0 p-0 pl-[5px] leading-normal [&_img]:h-auto [&_img]:max-w-full [&_img]:px-[10px] [&_li]:pb-[25px]">
               <li>
                 Firstly,{' '}
                 <OutboundLink analyticsEventLabel="Challenge Engagement" href={RepoLink}>
@@ -124,7 +124,7 @@ function Challenge() {
                 <Image
                   src={`${s3}github_demo/example.png`}
                   alt="screenshot of what the screen should look like on GitHub thus far"
-                  className="!p-0"
+                  className="p-0!"
                   width={500}
                   height={500}
                 />
@@ -207,7 +207,7 @@ function Challenge() {
             <h6 className="text-center">
               Here is a list of the people that have completed this before you:
             </h6>
-            <div className="[&_div]:w-[85vw] [&_div]:m-0">
+            <div className="[&_div]:m-0 [&_div]:w-[85vw]">
               <Content columns={[<NamesColumns key="names-columns" />]} />
             </div>
           </div>,

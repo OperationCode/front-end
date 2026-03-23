@@ -16,7 +16,7 @@ const meta: Meta<typeof ValueCard> = {
 export default meta;
 
 export const Default: ValueCardStoryType = {
-  render: args => <ValueCard {...args} />,
+  render: (args) => <ValueCard {...args} />,
 };
 
 export const WithLongDescription: ValueCardStoryType = {

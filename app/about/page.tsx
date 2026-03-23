@@ -16,7 +16,7 @@ function About() {
     <div>
       <HeroBanner
         backgroundImageSource={`${s3}redesign/heroBanners/about.jpg`}
-        className="lg:bg-top bg-position-[center_3rem] min-h-[60dvh]"
+        className="min-h-[60dvh] bg-position-[center_3rem] lg:bg-top"
         title={pageTitle}
       />
 

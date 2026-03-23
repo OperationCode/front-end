@@ -1,6 +1,6 @@
 import type { JSX } from 'react';
-import { cx } from 'common/utils/cva';
 import kebabCase from 'lodash/kebabCase';
+import { cx } from 'common/utils/cva';
 import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
 import LinkIcon from 'static/images/icons/FontAwesome/link-solid.svg';
 
@@ -43,10 +43,10 @@ function Heading({
   const HeadingElement = `h${headingLevel}` as keyof JSX.IntrinsicElements;
 
   return (
-    <div className="flex justify-center relative">
+    <div className="relative flex justify-center">
       <HeadingElement
         className={cx(
-          'group flex uppercase text-center my-4 mx-0 border-b border-b-4 border-b-transparent',
+          `group mx-0 my-4 flex border-b-4 border-b-transparent text-center uppercase`,
           { 'border-b-primary': hasTitleUnderline },
           className,
         )}
@@ -58,14 +58,14 @@ function Heading({
               href={`#${anchorId}`}
               data-testid="Hash Link"
               className={cx(
-                'hidden sm:visible',
-                'absolute top-0 -left-8 opacity-0 h-full flex items-center justify-center',
-                'group-hover:opacity-100 focus-visible:opacity-100 transition-opacity',
-                'w-0 focus-visible:w-5 group-hover:w-5',
+                `hidden sm:visible`,
+                `absolute top-0 -left-8 flex h-full items-center justify-center opacity-0`,
+                `transition-opacity group-hover:opacity-100 focus-visible:opacity-100`,
+                `w-0 group-hover:w-5 focus-visible:w-5`,
               )}
             >
               <ScreenReaderOnly>Scroll to {text}</ScreenReaderOnly>
-              <LinkIcon className="w-full h-5" />
+              <LinkIcon className="h-5 w-full" />
             </a>
           </div>
         )}

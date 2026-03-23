@@ -1,7 +1,7 @@
 import { Formik } from 'formik';
+import noop from 'lodash/noop';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 import Form from 'components/Form/Form';
-import noop from 'lodash/noop';
 import { MilitaryStatus } from '../MilitaryStatus';
 
 describe('UpdateProfileForm/Steps/MilitaryStatus', () => {

@@ -2,7 +2,6 @@ import createSnapshotTest from 'test-utils/createSnapshotTest';
 
 import Content from '../Content';
 
-// eslint-disable-next-line unicorn/prevent-abbreviations
 const requiredProps = {
   columns: [
     <div key="content">

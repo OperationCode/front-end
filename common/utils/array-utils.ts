@@ -6,5 +6,5 @@ export function isFilledArray(potentialArray: unknown): potentialArray is any[] 
 }
 
 export function mapStringsToSelectOptions(strings: string[]) {
-  return strings.map(string => ({ label: string, value: string }));
+  return strings.map((string) => ({ label: string, value: string }));
 }

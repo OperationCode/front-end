@@ -15,5 +15,5 @@ const meta: Meta<typeof Card> = {
 export default meta;
 
 export const Default: CardStoryType = {
-  render: args => <Card {...args} />,
+  render: (args) => <Card {...args} />,
 };

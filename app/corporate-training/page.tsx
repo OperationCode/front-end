@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import type { Metadata } from 'next';
+import type { ReactNode } from 'react';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
-import type { ReactNode } from 'react';
 import { cx } from 'common/utils/cva';
 
 export const metadata: Metadata = { title: 'Corporate Training: Breaking Biases' };
@@ -110,7 +110,7 @@ const CorporateTraining = () => {
   return (
     <>
       <HeroBanner
-        className="pb-12 min-h-[60dvh]"
+        className="min-h-[60dvh] pb-12"
         backgroundImageSource="/static/images/heroImage.jpg"
         title="Corporate Training: Breaking Biases"
       >
@@ -128,24 +128,24 @@ const CorporateTraining = () => {
           >
             Partnerships Team
           </OutboundLink>
-          .<span className="block mt-4">We look forward to hearing from you!</span>
+          .<span className="mt-4 block">We look forward to hearing from you!</span>
         </p>
       </HeroBanner>
-      <ol className="flex flex-col w-full list-none">
-        {biases.map(bias => (
+      <ol className="flex w-full list-none flex-col">
+        {biases.map((bias) => (
           <li
             key={bias.title}
             className={cx(
-              'flex md:even:flex-row-reverse md:flex-row flex-col-reverse flex-wrap md:flex-nowrap md:[&>*]:flex-1',
+              `flex flex-col-reverse flex-wrap md:flex-row md:flex-nowrap md:*:flex-1 md:even:flex-row-reverse`,
               'even:bg-secondary even:text-white',
-              'md:[&:nth-child(1n)]:bg-white md:[&:nth-child(2n)]:bg-theme-gray-800 md:[&:nth-child(3n)]:bg-secondary md:[&:nth-child(1n)]:text-secondary md:[&:nth-child(3n)]:text-white',
+              `md:nth-[1n]:bg-white md:nth-[1n]:text-secondary md:nth-[2n]:bg-theme-gray-800 md:nth-[3n]:bg-secondary md:nth-[3n]:text-white`,
             )}
           >
             <article className="flex flex-col items-center justify-center text-left">
-              <div className="p-10 max-w-prose">
-                <h3 className="flex flex-col gap-2 mb-4">
+              <div className="max-w-prose p-10">
+                <h3 className="mb-4 flex flex-col gap-2">
                   <span className="block text-2xl tracking-tight">{bias.title}</span>
-                  <span className="tracking-wider leading-8">{bias.subtitle}</span>
+                  <span className="leading-8 tracking-wider">{bias.subtitle}</span>
                 </h3>
 
                 <p>{bias.description}</p>
@@ -154,8 +154,8 @@ const CorporateTraining = () => {
 
             <div
               className={cx(
-                'relative h-64 w-64 mx-auto mt-10 mb-2 md:m-0 md:aspect-square 2xl:aspect-[4/2] md:h-auto md:w-auto',
-                "before:content-[''] before:absolute before:top-2 before:left-2 before:w-full before:h-full before:bg-primary",
+                `relative mx-auto mt-10 mb-2 size-64 md:m-0 md:aspect-square md:size-auto 2xl:aspect-4/2`,
+                `before:absolute before:top-2 before:left-2 before:size-full before:bg-primary before:content-['']`,
                 'md:before:content-[unset]',
               )}
             >

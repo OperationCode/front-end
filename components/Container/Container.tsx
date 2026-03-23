@@ -65,7 +65,7 @@ function Container({
       style={dynamicBackgroundImage}
       {...customDataAttributes}
     >
-      <div className="flex flex-col items-center justify-center mx-auto w-full my-[3.5rem] max-w-[1400px] sm:w-[85%]">
+      <div className="mx-auto my-14 flex w-full max-w-[1400px] flex-col items-center justify-center sm:w-[85%]">
         {children}
       </div>
     </div>

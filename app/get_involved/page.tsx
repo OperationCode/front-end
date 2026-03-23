@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
+import Image from 'next/image';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Badge from 'components/Badge/Badge';
 import Content from 'components/Content/Content';
-import Link from 'next/link';
 import LinkButton from 'components/Buttons/LinkButton/LinkButton';
 import Heading from 'components/Heading/Heading';
 import DonateSection from 'components/ReusableSections/DonateSection/DonateSection';
@@ -14,7 +15,6 @@ import NetworkingIcon from 'static/images/icons/Custom/networked_people.svg';
 import ChartIcon from 'static/images/icons/Custom/chart.svg';
 import PeopleMeetingIcon from 'static/images/icons/Custom/people_meeting.svg';
 import { s3 } from 'common/constants/urls';
-import Image from 'next/image';
 
 export const metadata: Metadata = { title: 'Get Involved' };
 
@@ -53,7 +53,7 @@ function GetInvolved() {
     <div>
       <HeroBanner
         backgroundImageSource={`${s3}redesign/heroBanners/get_involved.jpg`}
-        className="bg-position-[60%_center] md:bg-position-[center_20%] min-h-[60dvh]"
+        className="min-h-[60dvh] bg-position-[60%_center] md:bg-position-[center_20%]"
         title="You Can Make An Impact"
       >
         <div key="banner-content">
@@ -65,7 +65,7 @@ function GetInvolved() {
             <Link href="/sponsorship">Corporate Partner</Link>.
           </p>
 
-          <div className="flex w-full max-w-prose justify-evenly flex-wrap gap-x-2 [&>*]:mt-4">
+          <div className="flex w-full max-w-prose flex-wrap justify-evenly gap-x-2 *:mt-4">
             <LinkButton href="/about">Learn More</LinkButton>
             <LinkButton href="/join">Join Us</LinkButton>
           </div>
@@ -77,9 +77,9 @@ function GetInvolved() {
         theme="gray"
         columns={[
           <p key="mentorship-intro">By mentoring one of our members, you will help them:</p>,
-          <div key="mentorship-badges" className="flex flex-wrap justify-center -mt-4">
-            {mentorItems.map(item => (
-              <Badge key={item.label} icon={item.icon} label={item.label} className="my-4 mx-16" />
+          <div key="mentorship-badges" className="-mt-4 flex flex-wrap justify-center">
+            {mentorItems.map((item) => (
+              <Badge key={item.label} icon={item.icon} label={item.label} className="mx-16 my-4" />
             ))}
           </div>,
         ]}
@@ -87,7 +87,7 @@ function GetInvolved() {
 
       <Content
         columns={[
-          <div key="image" className="relative aspect-[1.5/1] m-8 w-full max-w-lg">
+          <div key="image" className="relative m-8 aspect-1.5/1 w-full max-w-lg">
             <Image
               src={`${s3}redesign/images/one_on_one_mentoring.jpg`}
               alt="Woman outlines a whiteboarding problem to a man"
@@ -102,7 +102,7 @@ function GetInvolved() {
               pursuits of a tech career.
             </p>
 
-            <div className="text-center mt-8">
+            <div className="mt-8 text-center">
               <LinkButton href="/join">Become A Mentor</LinkButton>
             </div>
           </div>,
@@ -120,9 +120,9 @@ function GetInvolved() {
             </p>
             <p className="text-center">You can help us with:</p>
           </div>,
-          <div key="support-badges" className="flex flex-wrap justify-center -mt-4">
-            {supportItems.map(item => (
-              <Badge key={item.label} icon={item.icon} label={item.label} className="my-4 mx-16" />
+          <div key="support-badges" className="-mt-4 flex flex-wrap justify-center">
+            {supportItems.map((item) => (
+              <Badge key={item.label} icon={item.icon} label={item.label} className="mx-16 my-4" />
             ))}
           </div>,
         ]}

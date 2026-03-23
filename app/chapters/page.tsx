@@ -46,10 +46,10 @@ function Chapters() {
         theme="white"
         title="Locations"
         columns={[
-          <div key="locations" className="flex justify-center flex-wrap gap-8 w-full">
-            {chapterLocations.map(chapter => {
+          <div key="locations" className="flex w-full flex-wrap justify-center gap-8">
+            {chapterLocations.map((chapter) => {
               return (
-                <FlatCard key={chapter.name} className="min-w-[10rem] text-center">
+                <FlatCard key={chapter.name} className="min-w-40 text-center">
                   <OutboundLink
                     href={chapter.url}
                     hasIcon={false}

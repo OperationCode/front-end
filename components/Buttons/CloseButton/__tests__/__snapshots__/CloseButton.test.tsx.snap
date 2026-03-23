@@ -14,7 +14,7 @@ exports[`CloseButton > should render with just required props passed 1`] = `
       Close
     </span>
     <svg
-      class="fill-current transform rotate-45 transition-transform duration-200 ease-linear group-hover:rotate-[135deg]"
+      class="fill-current transform rotate-45 transition-transform duration-200 ease-linear group-hover:rotate-135"
       viewBox="0 0 500 500"
     >
       <symbol

@@ -1,4 +1,3 @@
-/* eslint-disable max-classes-per-file */
 import { vi } from 'vitest';
 import type { ReactElement } from 'react';
 import { Component } from 'react';
@@ -185,6 +184,7 @@ describe('MultiStepForm', () => {
   };
 
   it('should render with required props passed', () => {
+    /* eslint-disable no-console */
     const originalConsoleError = console.error;
     console.error = vi.fn();
 
@@ -194,6 +194,7 @@ describe('MultiStepForm', () => {
     expect(container.querySelector('button')?.textContent).toContain('Next');
 
     console.error = originalConsoleError;
+    /* eslint-enable no-console */
   });
 
   it('should not render later steps on first render', () => {

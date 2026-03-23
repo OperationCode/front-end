@@ -1,10 +1,10 @@
 import { Formik, Field } from 'formik';
 import { fireEvent, render, waitFor } from '@testing-library/react';
+import noop from 'lodash/noop';
+import { describe, afterEach, it, expect, vi } from 'vitest';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 import { KEY_CODES } from 'test-utils/identifiers';
-import noop from 'lodash/noop';
 import { LABEL } from 'common/constants/testIDs';
-import { describe, afterEach, it, expect, vi } from 'vitest';
 import type { SelectSingleProps } from 'components/Form/Select/SelectSingle';
 import { SelectSingle } from 'components/Form/Select/SelectSingle';
 import { getReactSelectInput } from 'components/Form/Select/ThemedReactSelect';

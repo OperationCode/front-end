@@ -4,10 +4,10 @@ exports[`ScrollToTopButton > should render with required props 1`] = `
 <div>
   <button
     aria-hidden="true"
-    class="sm:w-16 sm:h-16 w-12 h-12 fixed bottom-6 bg-secondary border-white border shadow-2xl p-2 rounded-md transition-all opacity-0 -right-5"
+    class="fixed -right-5 bottom-6 size-12 rounded-md border border-white bg-secondary p-2 opacity-0 shadow-2xl transition-all sm:size-16"
   >
     <svg
-      class="inline-block w-full h-full stroke-white fill-white stroke-[0px]"
+      class="inline-block size-full fill-white stroke-white stroke-0"
       viewBox="0 0 32 32"
       xml:space="preserve"
       xmlns="http://www.w3.org/2000/svg"

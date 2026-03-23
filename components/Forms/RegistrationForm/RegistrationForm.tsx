@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Formik, Field } from 'formik';
 import * as Yup from 'yup';
+import type { AxiosError } from 'axios';
+import axios from 'axios';
 import { getServerErrorMessage } from 'common/utils/api-utils';
 import { validationErrorMessages } from 'common/constants/messages';
 import { codeOfConduct, slackGuidelines } from 'common/constants/urls';
@@ -10,8 +12,6 @@ import Form from 'components/Form/Form';
 import Input from 'components/Form/Input/Input';
 import Alert from 'components/Alert/Alert';
 import OutboundLink from 'components/OutboundLink/OutboundLink';
-import type { AxiosError } from 'axios';
-import axios from 'axios';
 import { InlineLoadingSpinner } from 'components/InlineLoadingSpinner';
 import { REGISTRATION_FORM_INITIAL_SUBMIT_BUTTON } from 'common/constants/testIDs';
 
@@ -83,7 +83,7 @@ export function RegistrationForm({
             | Record<string, string>
             | undefined;
 
-          const axiosErrorMessage = axiosError?.message as string | undefined;
+          const axiosErrorMessage = axiosError?.message;
 
           if (axiosErrorMessage) {
             setErrorMessage(axiosErrorMessage);
@@ -97,7 +97,7 @@ export function RegistrationForm({
       validationSchema={registrationSchema}
     >
       {({ isSubmitting }) => (
-        <Form className="flex flex-col gap-4 max-w-prose w-full px-4 !m-0">
+        <Form className="m-0! flex w-full max-w-prose flex-col gap-4 px-4">
           <Field
             type="email"
             name="email"
@@ -218,7 +218,7 @@ export function RegistrationForm({
             </span>
           </Button>
 
-          <aside className="text-xs mx-auto p-3 border border-dashed border-warning-deep bg-warning rounded-md">
+          <aside className="mx-auto rounded-md border border-dashed border-warning-deep bg-warning p-3 text-xs">
             <p>
               The demographic information you provide, helps us understand our community needs,
               ensure diversity, and provide specific resources to reach our mission. Thank you in

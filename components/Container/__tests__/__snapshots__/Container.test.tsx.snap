@@ -7,7 +7,7 @@ exports[`Container > should render with many props assigned 1`] = `
     style="background-image: linear-gradient(hsl(215, 30%, 10%, 0.7),hsl(215, 30%, 10%, 0.7)), url("https://operation-code-assets.s3.us-east-2.amazonaws.com/heroBanner/stock_family-2.jpg");"
   >
     <div
-      class="flex flex-col items-center justify-center mx-auto w-full my-[3.5rem] max-w-[1400px] sm:w-[85%]"
+      class="mx-auto my-14 flex w-full max-w-[1400px] flex-col items-center justify-center sm:w-[85%]"
     >
       Test Children
     </div>

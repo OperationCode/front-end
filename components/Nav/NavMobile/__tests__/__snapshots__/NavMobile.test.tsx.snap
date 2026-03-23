@@ -3,7 +3,7 @@
 exports[`NavMobile > should render 1`] = `
 <div>
   <header
-    class="fixed flex items-center justify-between uppercase font-family-bebas w-full h-20 bg-white z-50 px-4 lg:hidden"
+    class="fixed flex items-center justify-between font-family-bebas uppercase z-50 h-20 w-full bg-white px-4 lg:hidden"
     data-testid="Mobile Nav Container"
   >
     <a

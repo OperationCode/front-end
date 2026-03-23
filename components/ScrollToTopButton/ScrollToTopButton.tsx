@@ -1,7 +1,7 @@
 'use client';
 
-import { cx } from 'common/utils/cva';
 import { useEffect, useState } from 'react';
+import { cx } from 'common/utils/cva';
 
 export function ScrollToTopButton() {
   const [isInView, setIsInView] = useState(false);
@@ -17,15 +17,15 @@ export function ScrollToTopButton() {
     <button
       aria-hidden="true"
       className={cx(
-        'sm:w-16 sm:h-16 w-12 h-12 fixed bottom-6 bg-secondary border-white border shadow-2xl p-2 rounded-md transition-all opacity-0 -right-5',
-        { ['opacity-70 right-6']: isInView },
+        `fixed -right-5 bottom-6 size-12 rounded-md border border-white bg-secondary p-2 opacity-0 shadow-2xl transition-all sm:size-16`,
+        { ['right-6 opacity-70']: isInView },
       )}
       onClick={() => window.scrollTo({ top: 0, behavior: 'auto' })}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         xmlSpace="preserve"
-        className="inline-block w-full h-full stroke-white fill-white stroke-[0px]"
+        className="inline-block size-full fill-white stroke-white stroke-0"
         viewBox="0 0 32 32"
       >
         <path

@@ -16,7 +16,7 @@ function Branding() {
     <>
       <HeroBanner className="min-h-96 pt-36 pb-24" title={pageTitle} />
 
-      <section className="bg-white *:max-w-prose *:mx-auto space-y-8 py-14">
+      <section className="space-y-8 bg-white py-14 *:mx-auto *:max-w-prose">
         <h5 className="text-center">Introduction</h5>
 
         <p>

@@ -28,7 +28,7 @@ export const cx = (...classes: ClassValue[]) => twMerge(clsx(...classes));
  *
  * @see https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Handling_conflicts
  */
-export const cva: CVA = props => {
+export const cva: CVA = (props) => {
   const cvaFn = cvaOriginal(props);
   return (...args: Parameters<typeof cvaFn>) => {
     const result = cvaFn(...args);
@@ -36,4 +36,5 @@ export const cva: CVA = props => {
   };
 };
 
+// eslint-disable-next-line no-barrel-files/no-barrel-files
 export type { VariantProps } from 'cva';

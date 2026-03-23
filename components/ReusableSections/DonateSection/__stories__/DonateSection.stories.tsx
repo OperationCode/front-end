@@ -12,5 +12,5 @@ const meta: Meta<typeof DonateSection> = {
 export default meta;
 
 export const Default: DonateSectionStoryType = {
-  render: args => <DonateSection {...args} />,
+  render: (args) => <DonateSection {...args} />,
 };

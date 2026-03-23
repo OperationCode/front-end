@@ -3,10 +3,10 @@
 exports[`Drawer > should render with many props assigned 1`] = `
 <div>
   <div
-    class="test-class hidden lg:block transition-all ease-in-out duration-1000 fixed top-0 bottom-0 overflow-hidden width-full z-[2] -left-0"
+    class="test-class width-full fixed inset-y-0 z-2 hidden overflow-hidden transition-all duration-1000 ease-in-out lg:block left-0"
   >
     <div
-      class="w-full h-full"
+      class="size-full"
     >
       Test
     </div>
@@ -17,10 +17,10 @@ exports[`Drawer > should render with many props assigned 1`] = `
 exports[`Drawer > should render with required props 1`] = `
 <div>
   <div
-    class="hidden lg:block transition-all ease-in-out duration-1000 fixed top-0 bottom-0 overflow-hidden width-full z-[2] -left-full"
+    class="width-full fixed inset-y-0 z-2 hidden overflow-hidden transition-all duration-1000 ease-in-out lg:block -left-full"
   >
     <div
-      class="w-full h-full"
+      class="size-full"
     >
       Test
     </div>

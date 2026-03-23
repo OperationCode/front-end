@@ -12,10 +12,10 @@ const config: StorybookConfig = {
     name: '@storybook/nextjs',
     options: {},
   },
-  webpackFinal: async config => {
+  webpackFinal: async (config) => {
     // Find the Storybook Webpack rule relevant to SVG files.
     // @ts-expect-error => 'config.module' is possibly 'undefined'.ts(18048)
-    const imageRule = config.module.rules.find(rule => {
+    const imageRule = config.module.rules.find((rule) => {
       // @ts-expect-error => 'rule' is possibly 'null' or 'undefined'.ts(18049)
       if (rule.test && rule.test.test('.svg')) {
         console.log({ rule });

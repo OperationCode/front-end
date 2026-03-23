@@ -1,9 +1,9 @@
 'use client';
 
-import { gtag } from 'common/utils/thirdParty/gtag';
 import { usePathname } from 'next/navigation';
 import { useEffect, useRef } from 'react';
 import * as Sentry from '@sentry/nextjs';
+import { gtag } from 'common/utils/thirdParty/gtag';
 
 const isProduction = process.env.NODE_ENV === 'production';
 
@@ -33,7 +33,7 @@ async function initLogRocket() {
 
   LogRocket.init('uquzri/operation-code');
 
-  LogRocket.getSessionURL(sessionURL => {
+  LogRocket.getSessionURL((sessionURL) => {
     // eslint-disable-next-line no-console
     console.log('LogRocket session URL: ', sessionURL);
     Sentry.getCurrentScope().setExtra('sessionURL', sessionURL);
@@ -42,7 +42,7 @@ async function initLogRocket() {
   setupLogRocketReact(LogRocket);
 
   const setFingerprint = () => {
-    Fingerprint2.get(components => {
+    Fingerprint2.get((components) => {
       const fingerprint = hash(components);
       LogRocket.identify(fingerprint);
     });
@@ -58,7 +58,7 @@ async function initLogRocket() {
 async function loadFonts() {
   const { default: FontFaceObserver } = await import('fontfaceobserver');
 
-  const observers = fonts.map(font => {
+  const observers = fonts.map((font) => {
     if (font.url) {
       const link = document.createElement('link');
       link.href = font.url;

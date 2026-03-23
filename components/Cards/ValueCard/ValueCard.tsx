@@ -8,7 +8,7 @@ export interface ValueCardPropsType {
 function ValueCard({ description, name }: ValueCardPropsType) {
   return (
     <Card
-      className="!justify-start max-w-[400px] h-[400px] p-8 overflow-y-auto"
+      className="h-[400px] max-w-[400px] justify-start! overflow-y-auto p-8"
       hasAnimationOnHover={false}
     >
       <h3 className="text-center underline">{name}</h3>

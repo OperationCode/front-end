@@ -6,10 +6,10 @@ exports[`NavListItem > should render with required props passed 1`] = `
     class="relative"
   >
     <div
-      class="h-full flex items-center"
+      class="flex h-full items-center"
     >
       <a
-        class="h-full pl-8 pr-2 w-30 text-secondary fill-current cursor-pointer inline-flex items-center justify-end leading-none transition-all duration-200 ease-linear no-underline hover:text-primary focus-visible:text-primary"
+        class="h-full w-30 cursor-pointer fill-current pr-2 pl-8 text-secondary inline-flex items-center justify-end leading-none transition-all duration-200 ease-linear no-underline hover:text-primary focus-visible:text-primary"
         data-testid="Nav Item Test"
         href="/test"
         role="link"

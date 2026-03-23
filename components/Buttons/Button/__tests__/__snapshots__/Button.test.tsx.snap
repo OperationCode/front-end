@@ -3,7 +3,7 @@
 exports[`Button > should render with many props assigned 1`] = `
 <div>
   <button
-    class="font-family-bebas font-bold text-center uppercase text-shadow-[initial] tracking-wide inline-block rounded leading-none border-4 border-solid cursor-pointer py-4 px-3 whitespace-nowrap transition-all duration-200 ease-linear min-w-[175px] focus-visible:bg-transparent hover:bg-transparent disabled:opacity-60 disabled:hover:cursor-not-allowed bg-secondary border-secondary outline-secondary text-primary focus-visible:text-secondary hover:text-secondary test-class"
+    class="font-family-bebas font-bold text-center uppercase text-shadow-[initial] tracking-wide inline-block rounded leading-none border-4 border-solid cursor-pointer py-4 px-3 whitespace-nowrap transition-all duration-200 ease-linear min-w-[175px] focus-visible:bg-transparent hover:bg-transparent disabled:opacity-60 disabled:hover:cursor-not-allowed border-secondary bg-secondary text-primary outline-secondary hover:text-secondary focus-visible:text-secondary test-class"
     data-id="test-id"
     data-testid="BUTTON"
     disabled=""
@@ -18,7 +18,7 @@ exports[`Button > should render with many props assigned 1`] = `
 exports[`Button > should render with required props 1`] = `
 <div>
   <button
-    class="font-family-bebas font-bold text-center uppercase text-shadow-[initial] tracking-wide inline-block rounded leading-none border-4 border-solid cursor-pointer py-4 px-3 whitespace-nowrap transition-all duration-200 ease-linear min-w-[175px] focus-visible:bg-transparent hover:bg-transparent disabled:opacity-60 disabled:hover:cursor-not-allowed bg-primary border-primary outline-primary text-secondary focus-visible:text-primary hover:text-primary"
+    class="font-family-bebas font-bold text-center uppercase text-shadow-[initial] tracking-wide inline-block rounded leading-none border-4 border-solid cursor-pointer py-4 px-3 whitespace-nowrap transition-all duration-200 ease-linear min-w-[175px] focus-visible:bg-transparent hover:bg-transparent disabled:opacity-60 disabled:hover:cursor-not-allowed border-primary bg-primary text-secondary outline-primary hover:text-primary focus-visible:text-primary"
     data-testid="BUTTON"
     tabindex="0"
     type="button"

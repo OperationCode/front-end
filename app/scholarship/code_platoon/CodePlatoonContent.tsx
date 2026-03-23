@@ -10,7 +10,7 @@ export default function CodePlatoonContent() {
   useEffect(() => {
     const script = document.createElement('script');
     script.src = 'https://js.hsforms.net/forms/embed/v2.js';
-    document.body.appendChild(script);
+    document.body.append(script);
 
     const tryRunInit = () => {
       // @ts-expect-error - Undefined window property

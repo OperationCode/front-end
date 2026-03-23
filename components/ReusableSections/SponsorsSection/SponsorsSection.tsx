@@ -19,10 +19,10 @@ const SponsorsSection = () => (
       These sponsors have donated cash to help keep the mission going here at Operation Code. They
       may or may not have also donated to our cause via others means.
     </p>
-    <div className="flex justify-center items-center flex-wrap gap-10">
+    <div className="flex flex-wrap items-center justify-center gap-10">
       {partnersSortedByName
-        .filter(x => isPaidSponsor(x))
-        .map(partner => (
+        .filter((x) => isPaidSponsor(x))
+        .map((partner) => (
           <PartnerLogoLink key={partner.name} {...partner} size="large" />
         ))}
     </div>
@@ -32,10 +32,10 @@ const SponsorsSection = () => (
       The following organizations have helped Operation Code through services, products,
       advertisements, scholarships, or sponsorships. We thank them for their contributions.
     </p>
-    <div className="flex justify-center items-center flex-wrap gap-10">
+    <div className="flex flex-wrap items-center justify-center gap-10">
       {partnersSortedByName
-        .filter(x => !isPaidSponsor(x))
-        .map(partner => (
+        .filter((x) => !isPaidSponsor(x))
+        .map((partner) => (
           <PartnerLogoLink key={partner.name} {...partner} />
         ))}
     </div>

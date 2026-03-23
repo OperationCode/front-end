@@ -1,10 +1,10 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { cx } from 'common/utils/cva';
 import { s3 } from 'common/constants/urls';
 import HamburgerIcon from 'static/images/icons/hamburger.svg';
 import CloseButton from 'components/Buttons/CloseButton/CloseButton';
 import ScreenReaderOnly from 'components/ScreenReaderOnly/ScreenReaderOnly';
-import Image from 'next/image';
 
 export interface NavLink {
   /** String used as the link label. */
@@ -40,18 +40,18 @@ export interface NavMobilePropsType {
 }
 
 const linkClassName = cx(
-  'text-white fill-white transition-all duration-200 ease-linear',
-  'text-3xl cursor-pointer no-underline outline-none',
-  'hover:text-primary hover:fill-primary',
-  'focus-visible:text-primary focus-visible:fill-primary',
+  'fill-white text-white transition-all duration-200 ease-linear',
+  'cursor-pointer text-3xl no-underline outline-none',
+  'hover:fill-primary hover:text-primary',
+  'focus-visible:fill-primary focus-visible:text-primary',
 );
 
 function NavMobile({ isOpen, openMenu, closeMenu, navItems }: NavMobilePropsType) {
   return (
     <header
       className={cx(
-        'fixed flex items-center justify-between uppercase font-family-bebas',
-        'w-full h-20 bg-white z-50 px-4 lg:hidden',
+        'fixed flex items-center justify-between font-family-bebas uppercase',
+        `z-50 h-20 w-full bg-white px-4 lg:hidden`,
       )}
       data-testid="Mobile Nav Container"
     >
@@ -81,17 +81,17 @@ function NavMobile({ isOpen, openMenu, closeMenu, navItems }: NavMobilePropsType
 
       {isOpen && (
         <nav
-          className={cx('absolute inset-0 bg-secondary/95', 'w-full h-dvh overflow-auto')}
+          className={cx('absolute inset-0 bg-secondary/95', `h-dvh w-full overflow-auto`)}
           data-testid="Mobile Nav"
         >
           <CloseButton onClick={closeMenu} theme="white" />
-          <ul className="py-16 px-8 space-y-8">
+          <ul className="space-y-8 px-8 py-16">
             <li key="Home">
               <Link href="/" className={linkClassName}>
                 Home
               </Link>
             </li>
-            {navItems.map(navlink => (
+            {navItems.map((navlink) => (
               <li key={navlink.name}>
                 <Link href={navlink.href} className={linkClassName}>
                   {navlink.name}

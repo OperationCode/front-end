@@ -25,10 +25,10 @@ function HeroBanner({ backgroundImageSource, children, className, title }: HeroB
   return (
     <Container
       backgroundImageSource={backgroundImageSource}
-      className={cx('pt-20 text-shadow-[0_0_15px_#111111] min-h-dvh', className)}
+      className={cx('min-h-dvh pt-20 text-shadow-[0_0_15px_#111111]', className)}
     >
       <h1
-        className={cx({ 'border-b-4 border-b-primary text-center mb-4': children })}
+        className={cx({ 'mb-4 border-b-4 border-b-primary text-center': children })}
         data-testid={HERO_BANNER_H1}
       >
         {title}

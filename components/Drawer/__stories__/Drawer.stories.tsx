@@ -19,7 +19,7 @@ export default meta;
  * Default Drawer supplied with only required args.
  */
 export const Default: DrawerStorytype = {
-  render: args => <Drawer {...args} />,
+  render: (args) => <Drawer {...args} />,
   args: {
     children: 'Drawer content will only display on display size of Tablet or smaller',
     isVisible: true,

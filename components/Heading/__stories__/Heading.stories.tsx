@@ -14,5 +14,5 @@ const meta: Meta<typeof Heading> = {
 export default meta;
 
 export const Default: HeadingStoryType = {
-  render: args => <Heading {...args} />,
+  render: (args) => <Heading {...args} />,
 };

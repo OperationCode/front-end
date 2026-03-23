@@ -57,12 +57,12 @@ function FeaturedJobItem({
 
       <div className="flex flex-wrap gap-4 text-lg text-secondary/75">
         <div className="flex items-center gap-0.5">
-          <BuildingIcon className="fill-secondary size-4" />
+          <BuildingIcon className="size-4 fill-secondary" />
           <span className="ml-1">{source}</span>
         </div>
 
         <div className="flex items-center gap-0.5">
-          <MapMarkerIcon className="fill-secondary size-4" />
+          <MapMarkerIcon className="size-4 fill-secondary" />
           <address className="inline-flex gap-1">
             {city && <span>{city},</span>}
             {state && <span>{state},</span>}
@@ -72,7 +72,7 @@ function FeaturedJobItem({
 
         {remote && (
           <div className="flex items-center gap-1">
-            <CloudUploadIcon className="fill-secondary size-4" />
+            <CloudUploadIcon className="size-4 fill-secondary" />
             <span>Remote</span>
           </div>
         )}

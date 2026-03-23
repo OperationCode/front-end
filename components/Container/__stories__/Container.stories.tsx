@@ -15,5 +15,5 @@ const meta: Meta<typeof Container> = {
 export default meta;
 
 export const Default: ContainerStoryType = {
-  render: args => <Container {...args} />,
+  render: (args) => <Container {...args} />,
 };

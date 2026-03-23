@@ -29,7 +29,7 @@ const iconCva = cva({
   base: 'fill-current transform rotate-45 transition-transform duration-200 ease-linear',
   variants: {
     disabled: {
-      false: 'group-hover:rotate-[135deg]',
+      false: 'group-hover:rotate-135',
       true: null,
     },
   },
@@ -39,7 +39,8 @@ const iconCva = cva({
 });
 
 export interface CloseButtonProps
-  extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'disabled'>,
+  extends
+    Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'disabled'>,
     VariantProps<typeof closeButtonCva> {}
 
 export default function CloseButton({ disabled, onClick, theme }: CloseButtonProps) {

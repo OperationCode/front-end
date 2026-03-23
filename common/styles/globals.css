@@ -1,4 +1,4 @@
-@import 'tailwindcss' source('../../');
+@import 'tailwindcss';
 
 @theme {
   /* Colors for Tailwind utilities */
@@ -20,12 +20,12 @@
 
 @layer base {
   html {
-    @apply font-family-encode size-full m-0 p-0 text-lg font-normal;
+    @apply m-0 size-full p-0 font-family-encode text-lg font-normal;
     color: #47566b;
   }
 
   body {
-    @apply min-h-screen min-w-xs m-0 hyphens-none;
+    @apply m-0 min-h-screen min-w-xs hyphens-none;
   }
 
   h1,
@@ -34,7 +34,7 @@
   h4,
   h5,
   h6 {
-    @apply font-family-bebas uppercase tracking-widest;
+    @apply font-family-bebas tracking-widest uppercase;
   }
 
   footer {

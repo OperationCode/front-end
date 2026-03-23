@@ -3,7 +3,7 @@
 exports[`TimelineEvent > should render with required props 1`] = `
 <div>
   <div
-    class="mb-8 p-5 rounded-md"
+    class="mb-8 rounded-md p-5"
   >
     <h4
       class="capitalize md:text-2xl"

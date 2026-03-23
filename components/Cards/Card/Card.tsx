@@ -13,9 +13,9 @@ function Card({ children, className, hasAnimationOnHover, ...props }: CardPropsT
   return (
     <article
       className={cx(
-        'items-center bg-white [&_svg]:fill-secondary text-secondary flex flex-col flex-nowrap justify-around m-4 min-h-[100px] min-w-[100px] p-6 shadow-md focus-visible:outline-none',
+        `m-4 flex min-h-[100px] min-w-[100px] flex-col flex-nowrap items-center justify-around bg-white p-6 text-secondary shadow-md focus-visible:outline-none [&_svg]:fill-secondary`,
         hasAnimationOnHover &&
-          'shadow-sm transition-shadow duration-200 ease-linear hover:shadow-lg focus-visible:shadow-lg',
+          `shadow-sm transition-shadow duration-200 ease-linear hover:shadow-lg focus-visible:shadow-lg`,
         className,
       )}
       {...customDataAttributes}

@@ -3,11 +3,11 @@
 import { useState, useEffect, useEffectEvent } from 'react';
 import Link from 'next/link';
 import { useRouter, usePathname } from 'next/navigation';
+import dynamic from 'next/dynamic';
 import Logo from 'public/static/images/logo.svg';
 
 import { desktopNavItems, mobileNavItems } from 'common/constants/navigation';
 import NavMobile from 'components/Nav/NavMobile/NavMobile';
-import dynamic from 'next/dynamic';
 import { cx } from 'common/utils/cva';
 
 const NavListItem = dynamic(() => import('components/Nav/NavListItem/NavListItem'), { ssr: false });
@@ -45,17 +45,17 @@ export const Nav = () => {
         navItems={mobileNavItems}
       />
 
-      <header className="hidden absolute top-4 w-full z-10 lg:block uppercase font-family-bebas">
+      <header className="absolute top-4 z-10 hidden w-full font-family-bebas uppercase lg:block">
         <div className="mx-auto max-w-7xl px-4" data-testid="Desktop Nav Container">
           <nav
-            className="font-bold h-16 bg-white rounded-sm flex justify-between text-lg"
+            className="flex h-16 justify-between rounded-sm bg-white text-lg font-bold"
             data-testid="Desktop Nav"
           >
             <Link
               href="/"
               key="Home"
               className="mx-4 flex items-center"
-              onContextMenu={event => {
+              onContextMenu={(event) => {
                 event.preventDefault();
                 router.push('/branding');
               }}
@@ -64,7 +64,7 @@ export const Nav = () => {
             </Link>
 
             <ul className="flex">
-              {desktopNavItems.map(navItem => (
+              {desktopNavItems.map((navItem) => (
                 <NavListItem key={navItem.name} {...navItem} />
               ))}
 
@@ -73,10 +73,10 @@ export const Nav = () => {
                 <Link
                   href="/donate"
                   className={cx(
-                    'px-8 font-bold bg-primary text-secondary no-underline',
-                    'flex items-center justify-center h-full',
+                    'bg-primary px-8 font-bold text-secondary no-underline',
+                    'flex h-full items-center justify-center',
                     'transition-colors duration-200 ease-linear',
-                    'rounded-r-sm cursor-pointer hover:text-white focus-visible:text-white',
+                    `cursor-pointer rounded-r-sm hover:text-white focus-visible:text-white`,
                   )}
                 >
                   Donate

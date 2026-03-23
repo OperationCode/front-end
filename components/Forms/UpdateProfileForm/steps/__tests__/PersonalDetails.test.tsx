@@ -1,8 +1,8 @@
 import { Formik } from 'formik';
+import noop from 'lodash/noop';
 import createSnapshotTest from 'test-utils/createSnapshotTest';
 import Form from 'components/Form/Form';
 
-import noop from 'lodash/noop';
 import { PersonalDetails } from '../PersonalDetails';
 
 describe('UpdateProfileForm/Steps/PersonalDetails', () => {

@@ -1,5 +1,5 @@
-import createSnapshotTest from 'test-utils/createSnapshotTest';
 import { render, fireEvent } from '@testing-library/react';
+import createSnapshotTest from 'test-utils/createSnapshotTest';
 import { KEY_CODES } from 'test-utils/identifiers';
 
 import NavListItem from '../NavListItem';

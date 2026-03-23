@@ -71,7 +71,7 @@ const meta: Meta<typeof ProgressIndicator> = {
 export default meta;
 
 export const Default: ProgressIndicatorStoryType = {
-  render: args => <ProgressIndicator {...(args as Required<typeof args>)} />,
+  render: (args) => <ProgressIndicator {...(args as Required<typeof args>)} />,
 };
 
 export const TotalSteps: ProgressIndicatorStoryType = {

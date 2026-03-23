@@ -47,7 +47,7 @@ export function MilitaryDetails({ isSubmitting }: MilitaryDetailsProps) {
         name="branchOfService"
         label="Branch Of Service*"
         component={SelectMulti}
-        options={branchOptions.map(option => ({ value: option, label: option }))}
+        options={branchOptions.map((option) => ({ value: option, label: option }))}
         isDisabled={isSubmitting}
       />
 
@@ -55,7 +55,7 @@ export function MilitaryDetails({ isSubmitting }: MilitaryDetailsProps) {
         name="payGrade"
         label="Pay Grade*"
         component={SelectSingle}
-        options={payGradeOptions.map(option => ({ value: option, label: option }))}
+        options={payGradeOptions.map((option) => ({ value: option, label: option }))}
         isDisabled={isSubmitting}
       />
     </div>

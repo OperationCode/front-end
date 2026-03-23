@@ -15,7 +15,7 @@ const meta: Meta<typeof Alert> = {
 export default meta;
 
 const AlertStoryTemplate: AlertStoryType = {
-  render: args => <Alert {...args} />,
+  render: (args) => <Alert {...args} />,
 };
 
 export const ErrorAlert: AlertStoryType = {

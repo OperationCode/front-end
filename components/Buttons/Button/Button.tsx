@@ -1,6 +1,6 @@
 import type { ButtonHTMLAttributes } from 'react';
-import type { VariantProps } from 'common/utils/cva';
 import noop from 'lodash/noop';
+import type { VariantProps } from 'common/utils/cva';
 import { cva } from 'common/utils/cva';
 import { BUTTON } from 'common/constants/testIDs';
 import { gtag } from 'common/utils/thirdParty/gtag';
@@ -37,8 +37,7 @@ interface GoogleAnalyticsEventPropType {
 }
 
 interface ButtonProps
-  extends ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonCva> {
+  extends ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonCva> {
   /**
    * Helps track in-page `event` interactions.
    */
@@ -55,18 +54,24 @@ export const buttonCva = cva({
   ],
   variants: {
     theme: {
-      primary: 'bg-primary border-primary text-secondary outline-primary text-secondary',
-      secondary: 'bg-secondary border-secondary text-primary outline-secondary text-primary',
+      primary: `border-primary bg-primary text-secondary outline-primary`,
+      secondary: `border-secondary bg-secondary text-primary outline-secondary`,
     },
   },
   compoundVariants: [
     {
       theme: 'primary',
-      class: 'focus-visible:text-primary hover:text-primary',
+      class: `
+        hover:text-primary
+        focus-visible:text-primary
+      `,
     },
     {
       theme: 'secondary',
-      class: 'focus-visible:text-secondary hover:text-secondary',
+      class: `
+        hover:text-secondary
+        focus-visible:text-secondary
+      `,
     },
   ],
   defaultVariants: {
@@ -100,13 +105,13 @@ export default function Button({
       className={buttonCva({ theme, className })}
       data-testid={BUTTON}
       disabled={disabled}
-      onClick={e => {
+      onClick={(e) => {
         gtag.event(eventConfig);
         onClick(e);
       }}
       tabIndex={tabIndex}
       // TODO: lint rule seems broken. check after updating lint deps?
-      type={type} // eslint-disable-line react/button-has-type
+      type={type}
       {...customDataAttributes}
       {...ariaAttributes}
     >

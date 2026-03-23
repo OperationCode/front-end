@@ -406,7 +406,7 @@ test.describe('join', () => {
     const validUser = getValidUser();
 
     const updateResponses: { status: number }[] = [];
-    page.on('response', response => {
+    page.on('response', (response) => {
       if (
         response.url().includes('/api/registration/update') &&
         response.request().method() === 'PATCH'

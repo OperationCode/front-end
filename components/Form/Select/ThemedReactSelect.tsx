@@ -15,8 +15,10 @@ export interface OptionType {
   value: string;
 }
 
-export interface ThemedReactSelectProps<TMulti extends boolean>
-  extends ReactSelectProps<OptionType, TMulti> {
+export interface ThemedReactSelectProps<TMulti extends boolean> extends ReactSelectProps<
+  OptionType,
+  TMulti
+> {
   name: string; // name?: string is on ReactSelectProps, but we're gonna require it.
   hasErrors?: boolean;
   hasValidationStyling?: boolean;
@@ -52,7 +54,7 @@ export function ThemedReactSelect<TMulti extends boolean>({
       isSearchable={isSearchable}
       blurInputOnSelect={isMulti && !isTouched} // this is ideal UX for seeing-eye users
       styles={{
-        control: base => {
+        control: (base) => {
           return {
             ...base,
             backgroundColor: isDisabled ? 'transparent' : '#f7f7f7',
@@ -72,7 +74,7 @@ export function ThemedReactSelect<TMulti extends boolean>({
             },
           };
         },
-        clearIndicator: base => {
+        clearIndicator: (base) => {
           return {
             ...base,
             '&:hover': {
@@ -80,7 +82,7 @@ export function ThemedReactSelect<TMulti extends boolean>({
             },
           };
         },
-        dropdownIndicator: base => {
+        dropdownIndicator: (base) => {
           return {
             ...base,
             '&:hover': {
@@ -88,18 +90,18 @@ export function ThemedReactSelect<TMulti extends boolean>({
             },
           };
         },
-        indicatorSeparator: base => {
+        indicatorSeparator: (base) => {
           if (!isSearchable) return {};
 
           return base;
         },
-        menu: base => {
+        menu: (base) => {
           return {
             ...base,
             zIndex: 2,
           };
         },
-        multiValueRemove: base => {
+        multiValueRemove: (base) => {
           return {
             ...base,
             '&:hover': {
@@ -108,7 +110,7 @@ export function ThemedReactSelect<TMulti extends boolean>({
           };
         },
       }}
-      theme={theme => {
+      theme={(theme) => {
         return {
           ...theme,
           borderRadius: 3,

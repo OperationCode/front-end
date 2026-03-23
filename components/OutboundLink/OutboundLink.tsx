@@ -58,7 +58,7 @@ function OutboundLink({
       {children}
 
       <ScreenReaderOnly>Opens in new window</ScreenReaderOnly>
-      {hasIcon && <ExternalLinkIcon className="inline-block ml-1 mt-0.5 fill-current size-3.5" />}
+      {hasIcon && <ExternalLinkIcon className="mt-0.5 ml-1 inline-block size-3.5 fill-current" />}
     </a>
   );
 }

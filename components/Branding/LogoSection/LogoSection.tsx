@@ -1,7 +1,7 @@
+import Image from 'next/image';
 import Badge from 'components/Badge/Badge';
 import Content from 'components/Content/Content';
 import { s3 } from 'common/constants/urls';
-import Image from 'next/image';
 
 const smLogos = [
   { img: 'small-blue-logo.png', alt: 'Small Blue Accented Logo', label: 'Blue' },
@@ -35,9 +35,9 @@ function LogoSection() {
       title="Logo"
       theme="gray"
       hasTitleUnderline
-      className="[&_ul]:flex [&_ul]:justify-around [&_ul]:items-center [&_ul]:flex-wrap"
+      className="[&_ul]:flex [&_ul]:flex-wrap [&_ul]:items-center [&_ul]:justify-around"
       columns={[
-        <ul key="logos" className="space-y-4 [&>li>p]:my-4 [&_ul]:pb-4">
+        <ul key="logos" className="space-y-4 [&_ul]:pb-4 [&>li>p]:my-4">
           {/* - SMALL LOGOS - */}
           <li>
             <h5 className="text-center">Small Logos</h5>
@@ -48,11 +48,11 @@ function LogoSection() {
               still under 1 inch in height.
             </p>
 
-            <ul className="space-y-4 border-b-2 border-b-secondary *:not-last:border-b &:border-b-secondary">
+            <ul className="space-y-4 border-b-2 border-b-secondary *:not-last:border-b">
               <li>
                 <h6 className="text-center">TYPICAL</h6>
                 <ul>
-                  {smLogos.map(logo => (
+                  {smLogos.map((logo) => (
                     <li key={logo.label}>
                       <Badge
                         icon={
@@ -79,7 +79,7 @@ function LogoSection() {
                   with dark or contrasting bright colored backgrounds.
                 </p>
                 <ul>
-                  {stackedLogos.map(logo => (
+                  {stackedLogos.map((logo) => (
                     <li key={logo.label}>
                       <Badge
                         icon={
@@ -115,7 +115,7 @@ function LogoSection() {
                 </p>
 
                 <ul className="border-b-0">
-                  {medals.map(medal => (
+                  {medals.map((medal) => (
                     <li key={medal.label}>
                       <Badge
                         icon={
@@ -147,7 +147,7 @@ function LogoSection() {
             </p>
 
             <ul className="flex-col flex-nowrap">
-              {lgLogos.map(logo => (
+              {lgLogos.map((logo) => (
                 <li key={logo.label}>
                   <Badge
                     icon={

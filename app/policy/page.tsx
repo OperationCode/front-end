@@ -17,21 +17,21 @@ function Policy() {
           in the tech sector. Mission accomplished!
         </h6>
 
-        <div className="flex flex-col font-primary mt-12">
-          <figure className="bg-[rgba(0,5,30,0.7)] flex m-0 p-2 max-w-[370px]">
-            <div className="flex items-center grow shrink-0 text-primary text-[2rem] leading-[2rem] lg:text-[2.5rem] lg:leading-[2.5rem] pr-4 pl-2 md:grow-0">
+        <div className="mt-12 flex flex-col">
+          <figure className="m-0 flex max-w-92.5 bg-[rgba(0,5,30,0.7)] p-2">
+            <div className="flex shrink-0 grow items-center pr-4 pl-2 text-[2rem]/8 text-primary md:grow-0 lg:text-[2.5rem]/10">
               2%
             </div>
-            <div className="text-white text-2xl leading-[1.7rem]">
+            <div className="text-2xl/[1.7rem] text-white">
               Percentage of the tech industry that are veterans.
             </div>
           </figure>
 
-          <figure className="bg-[rgba(0,5,30,0.7)] flex m-0 p-2 max-w-[500px] mt-4">
-            <div className="flex items-center grow shrink-0 text-primary text-[2rem] leading-[2rem] lg:text-[2.5rem] lg:leading-[2.5rem] pr-4 pl-2 md:grow-0">
+          <figure className="m-0 mt-4 flex max-w-125 bg-[rgba(0,5,30,0.7)] p-2">
+            <div className="flex shrink-0 grow items-center pr-4 pl-2 text-[2rem]/8 text-primary md:grow-0 lg:text-[2.5rem]/10">
               1,600,000+
             </div>
-            <div className="text-white text-2xl leading-[1.7rem]">
+            <div className="text-2xl/[1.7rem] text-white">
               Software development job postings between 2016 and 2017.
             </div>
           </figure>

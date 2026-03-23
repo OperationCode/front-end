@@ -11,7 +11,7 @@ interface RegistrationFormArgs {
   onSuccess: () => void;
 }
 
-const Template: StoryFn<RegistrationFormArgs> = args => {
+const Template: StoryFn<RegistrationFormArgs> = (args) => {
   return (
     <>
       <span>Registration form</span>

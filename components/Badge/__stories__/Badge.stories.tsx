@@ -13,7 +13,7 @@ const icons = {
 type BadgeStoryType = StoryObj<typeof Badge>;
 
 export const GitHubBadge: BadgeStoryType = {
-  render: args => <Badge {...args} />,
+  render: (args) => <Badge {...args} />,
   args: {
     icon: icons.github,
     label: 'GitHub Badge',
@@ -21,7 +21,7 @@ export const GitHubBadge: BadgeStoryType = {
 };
 
 export const TwitterBadge: BadgeStoryType = {
-  render: args => <Badge {...args} />,
+  render: (args) => <Badge {...args} />,
   args: {
     icon: icons.twitter,
     label: 'Twitter Badge',
@@ -29,7 +29,7 @@ export const TwitterBadge: BadgeStoryType = {
 };
 
 export const PinterestBadge: BadgeStoryType = {
-  render: args => <Badge {...args} />,
+  render: (args) => <Badge {...args} />,
   args: {
     icon: icons.pinterest,
     label: 'Pinterest Badge',

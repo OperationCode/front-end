@@ -3,7 +3,7 @@
 exports[`ErrorDisplay > should render with just required props 1`] = `
 <div>
   <div
-    class="h-screen text-white bg-[url("/static/images/TankFlip.gif")] flex flex-col justify-center w-full  bg-cover items-center"
+    class="flex h-screen w-full flex-col items-center justify-center bg-[url("/static/images/TankFlip.gif")] bg-cover text-white"
   >
     <div
       class="mx-auto my-4 text-center"

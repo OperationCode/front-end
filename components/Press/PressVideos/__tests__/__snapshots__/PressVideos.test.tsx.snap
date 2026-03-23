@@ -3,7 +3,7 @@
 exports[`PressVideos > should render with no props passed 1`] = `
 <div>
   <div
-    class="flex items-center justify-around flex-wrap gap-5"
+    class="flex flex-wrap items-center justify-around gap-5"
   >
     <iframe
       allowfullscreen=""

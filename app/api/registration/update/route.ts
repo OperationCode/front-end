@@ -34,9 +34,9 @@ export async function PATCH(request: NextRequest) {
         finalize: shouldFinalize,
       } = (await request.json()) as Partial<UpdateProfileFormShape> & { finalize?: boolean };
 
-      const branchOfService = selectedBranchOfServiceOptions?.map(option => option.value) ?? [];
-      const ethnicity = selectedEthnicityOptions?.map(option => option.value) ?? [];
-      const joinReason = selectedJoinReasonOptions?.map(option => option.value) ?? [];
+      const branchOfService = selectedBranchOfServiceOptions?.map((option) => option.value) ?? [];
+      const ethnicity = selectedEthnicityOptions?.map((option) => option.value) ?? [];
+      const joinReason = selectedJoinReasonOptions?.map((option) => option.value) ?? [];
 
       let militaryBranch = branchOfService;
       if (militaryAffiliation?.includes('spouse')) {

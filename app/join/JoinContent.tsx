@@ -2,12 +2,12 @@
 
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 import { gtag } from 'common/utils/thirdParty/gtag';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Content from 'components/Content/Content';
 import { RegistrationForm } from 'components/Forms/RegistrationForm/RegistrationForm';
 import Modal from 'components/Modal/Modal';
-import Link from 'next/link';
 
 const pageTitle = 'Join';
 
@@ -29,7 +29,7 @@ export default function JoinContent({ hasRegistrationError }: { hasRegistrationE
   return (
     <>
       <HeroBanner title={pageTitle} className="min-h-[35dvh]">
-        <div className="space-y-4 w-full max-w-prose px-4">
+        <div className="w-full max-w-prose space-y-4 px-4">
           <p>
             After submitting this form, please note there is a small onboarding form to follow.{' '}
             <span className="font-bold">
@@ -55,7 +55,7 @@ export default function JoinContent({ hasRegistrationError }: { hasRegistrationE
         onRequestClose={() => setIsErrorModalOpen(false)}
         screenReaderLabel="Registration error"
       >
-        <div className="space-y-4 text-center max-w-md">
+        <div className="max-w-md space-y-4 text-center">
           <h2 className="text-xl font-bold">Registration Incomplete</h2>
           <p>
             It looks like we're missing information from the first step of registration. Please

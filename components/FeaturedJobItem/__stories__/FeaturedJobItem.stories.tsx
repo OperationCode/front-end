@@ -15,7 +15,7 @@ export default meta;
  * Default FeaturedJobItem supplied with only required args.
  */
 export const Default: FeaturedJobItemStoryType = {
-  render: args => <FeaturedJobItem {...args} />,
+  render: (args) => <FeaturedJobItem {...args} />,
   args: {
     title: 'Job Title',
     source: 'Company Name',

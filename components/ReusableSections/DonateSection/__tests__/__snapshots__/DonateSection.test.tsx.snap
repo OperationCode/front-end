@@ -7,13 +7,13 @@ exports[`DonateSection > should render with no props passed passed 1`] = `
     style="background-image: linear-gradient(hsl(215, 30%, 10%, 0.7),hsl(215, 30%, 10%, 0.7)), url("https://operation-code-assets.s3.us-east-2.amazonaws.com/background_flag.jpg");"
   >
     <div
-      class="flex flex-col items-center justify-center mx-auto w-full my-[3.5rem] max-w-[1400px] sm:w-[85%]"
+      class="mx-auto my-14 flex w-full max-w-[1400px] flex-col items-center justify-center sm:w-[85%]"
     >
       <div
-        class="flex justify-center relative"
+        class="relative flex justify-center"
       >
         <h3
-          class="group flex uppercase text-center my-4 mx-0 border-b-4 border-b-transparent"
+          class="group mx-0 my-4 flex border-b-4 border-b-transparent text-center uppercase"
           id="donate-link"
         >
           <div
@@ -21,7 +21,7 @@ exports[`DonateSection > should render with no props passed passed 1`] = `
             data-testid="Heading Content donate-link"
           >
             <a
-              class="sm:visible absolute top-0 -left-8 opacity-0 h-full flex items-center justify-center group-hover:opacity-100 focus-visible:opacity-100 transition-opacity w-0 focus-visible:w-5 group-hover:w-5"
+              class="sm:visible absolute top-0 -left-8 flex h-full items-center justify-center opacity-0 transition-opacity group-hover:opacity-100 focus-visible:opacity-100 w-0 group-hover:w-5 focus-visible:w-5"
               data-testid="Hash Link"
               href="#donate-link"
             >
@@ -33,7 +33,7 @@ exports[`DonateSection > should render with no props passed passed 1`] = `
                 Donate
               </span>
               <svg
-                class="w-full h-5"
+                class="h-5 w-full"
                 viewBox="0 0 512 512"
               >
                 <symbol
@@ -64,7 +64,7 @@ exports[`DonateSection > should render with no props passed passed 1`] = `
         Thank you for supporting our mission!
       </p>
       <a
-        class="font-family-bebas font-bold text-center uppercase text-shadow-[initial] tracking-wide inline-block rounded leading-none border-4 border-solid cursor-pointer py-4 px-3 whitespace-nowrap transition-all duration-200 ease-linear min-w-[175px] focus-visible:bg-transparent hover:bg-transparent disabled:opacity-60 disabled:hover:cursor-not-allowed bg-primary border-primary outline-primary text-secondary focus-visible:text-primary hover:text-primary mt-4"
+        class="font-family-bebas font-bold text-center uppercase text-shadow-[initial] tracking-wide inline-block rounded leading-none border-4 border-solid cursor-pointer py-4 px-3 whitespace-nowrap transition-all duration-200 ease-linear min-w-[175px] focus-visible:bg-transparent hover:bg-transparent disabled:opacity-60 disabled:hover:cursor-not-allowed border-primary bg-primary text-secondary outline-primary hover:text-primary focus-visible:text-primary mt-4"
         href="/donate"
       >
         Donate Now

@@ -61,7 +61,7 @@ function Sponsorship() {
         theme="white"
         hasTitleUnderline
         columns={[
-          <Card key="engagement1" className="justify-start max-w-xs h-64">
+          <Card key="engagement1" className="h-64 max-w-xs justify-start">
             <h6>Employee Engagement</h6>
             <p>
               Provide opportunities for software engineers to mentor new learners and contribute to
@@ -69,7 +69,7 @@ function Sponsorship() {
               organization - share their story; loud and proud.
             </p>
           </Card>,
-          <Card key="engagement2" className="justify-start max-w-xs h-64">
+          <Card key="engagement2" className="h-64 max-w-xs justify-start">
             <h6>Talent Management</h6>
             <p>
               Build a talent pipeline between your company and transitioning service members with
@@ -77,7 +77,7 @@ function Sponsorship() {
               diverse - they will bolster any workforce.
             </p>
           </Card>,
-          <Card key="engagement3" className="justify-start max-w-xs h-64">
+          <Card key="engagement3" className="h-64 max-w-xs justify-start">
             <h6>Marketing</h6>
             <p>
               Marketing opportunities for national online and local community engagement Community
@@ -94,7 +94,7 @@ function Sponsorship() {
         columns={[
           <div key="partner-opportunities">
             <Badge
-              className="text-2xl font-medium mt-6"
+              className="mt-6 text-2xl font-medium"
               icon={<MedalSolid className="text-[#ffaa22]" />}
               label="Gold Sponsor"
             />
@@ -103,8 +103,8 @@ function Sponsorship() {
               source program sponsorship, national employee engagement activities, plus all above.
             </p>
             <Badge
-              className="text-2xl font-medium mt-6"
-              icon={<MedalSolid className="text-silver" />}
+              className="mt-6 text-2xl font-medium"
+              icon={<MedalSolid className="text-[#64748b]" />}
               label="Silver Sponsor"
             />
             <p className="px-8">
@@ -112,7 +112,7 @@ function Sponsorship() {
               engagement and talent pipeline opportunities, plus all above.
             </p>
             <Badge
-              className="text-2xl font-medium mt-6"
+              className="mt-6 text-2xl font-medium"
               icon={<MedalSolid className="text-[#cd7f32]" />}
               label="Bronze Sponsor"
             />

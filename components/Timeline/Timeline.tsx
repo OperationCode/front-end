@@ -3,15 +3,15 @@ import TimelineEvent from './TimelineEvent/TimelineEvent';
 
 function Timeline() {
   return (
-    <div className="my-12 mx-auto w-[90%]">
-      {Object.keys(historyData).map(year => (
+    <div className="mx-auto my-12 w-[90%]">
+      {Object.keys(historyData).map((year) => (
         <div className="flex" key={year}>
-          <div className="flex-1 relative text-right">
-            <h3 className="absolute w-full pr-2.5 text-sm top-8 sm:top-4 sm:text-4xl">{year}</h3>
+          <div className="relative flex-1 text-right">
+            <h3 className="absolute top-8 w-full pr-2.5 text-sm sm:top-4 sm:text-4xl">{year}</h3>
           </div>
           <div className="relative px-5">
-            <div className="absolute top-0 h-full w-0.5 bg-theme-gray-800 -translate-x-1/2" />
-            <div className="size-3.5 rounded-full border-2 border-gray-500 bg-white absolute top-8 -translate-x-1/2 sm:top-6" />
+            <div className="absolute top-0 h-full w-0.5 -translate-x-1/2 bg-theme-gray-800" />
+            <div className="absolute top-8 size-3.5 -translate-x-1/2 rounded-full border-2 border-gray-500 bg-white sm:top-6" />
           </div>
 
           <div id={`event-${year}`} className="flex-8">

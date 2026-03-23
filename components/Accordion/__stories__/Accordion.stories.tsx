@@ -18,5 +18,5 @@ const meta: Meta<typeof Accordion> = {
 export default meta;
 
 export const Default: AccordionStoryType = {
-  render: args => <Accordion {...args} />,
+  render: (args) => <Accordion {...args} />,
 };

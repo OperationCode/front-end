@@ -13,7 +13,7 @@ function DonatePage() {
       <HeroBanner title={pageTitle} className="min-h-[35dvh]" />
 
       <Container theme="white">
-        <div className="border-b border-b-3 border-secondary pb-3 mb-3 flex flex-col gap-2 max-w-prose px-4 w-full mx-auto">
+        <div className="mx-auto mb-3 flex w-full max-w-prose flex-col gap-2 border-b-3 border-secondary px-4 pb-3">
           <h4 className="-mb-2 underline">Why Donate?</h4>
 
           <p>
@@ -61,7 +61,7 @@ function DonatePage() {
         <iframe
           title="Donation Form"
           src="https://secure.lglforms.com/form_engine/s/BRtP7QUKyHOyEYsZROsRew"
-          className="border-transparent outline-transparent max-w-prose px-4 w-full mx-auto h-[1300px]"
+          className="mx-auto h-[1300px] w-full max-w-prose border-transparent px-4 outline-transparent"
         />
       </Container>
     </>

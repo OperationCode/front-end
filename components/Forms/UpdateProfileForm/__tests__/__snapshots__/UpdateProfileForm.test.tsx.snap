@@ -3,7 +3,7 @@
 exports[`UpdateProfileForm > should render with required props 1`] = `
 <div>
   <form
-    class="flex flex-col gap-4 w-full max-w-prose px-4 !m-0"
+    class="m-0! flex w-full max-w-prose flex-col gap-4 px-4"
     novalidate=""
   >
     <h3
@@ -145,7 +145,7 @@ exports[`UpdateProfileForm > should render with required props 1`] = `
           data-testid="INPUT_FEEDBACK_GROUPING"
         >
           <input
-            class="border border-secondary/50 rounded-sm text-lg p-2 bg-white disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
+            class="rounded-sm border border-secondary/50 bg-white p-2 text-lg min-w-48 disabled:opacity-60 hover:disabled:cursor-not-allowed focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
             id="companyName"
             name="companyName"
             type="text"
@@ -168,7 +168,7 @@ exports[`UpdateProfileForm > should render with required props 1`] = `
           data-testid="INPUT_FEEDBACK_GROUPING"
         >
           <input
-            class="border border-secondary/50 rounded-sm text-lg p-2 bg-white disabled:opacity-60 hover:disabled:cursor-not-allowed min-w-48 focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
+            class="rounded-sm border border-secondary/50 bg-white p-2 text-lg min-w-48 disabled:opacity-60 hover:disabled:cursor-not-allowed focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none"
             id="companyRole"
             name="companyRole"
             type="text"
@@ -179,10 +179,10 @@ exports[`UpdateProfileForm > should render with required props 1`] = `
     </div>
     <div />
     <div
-      class="flex items-center justify-center gap-3 flex-wrap [&>button]:flex-1"
+      class="flex flex-wrap items-center justify-center gap-3 [&>button]:flex-1"
     >
       <button
-        class="font-family-bebas font-bold text-center uppercase text-shadow-[initial] tracking-wide inline-block rounded leading-none border-4 border-solid cursor-pointer py-4 px-3 whitespace-nowrap transition-all duration-200 ease-linear min-w-[175px] focus-visible:bg-transparent hover:bg-transparent disabled:opacity-60 disabled:hover:cursor-not-allowed bg-secondary border-secondary outline-secondary text-primary focus-visible:text-secondary hover:text-secondary group w-full"
+        class="font-family-bebas font-bold text-center uppercase text-shadow-[initial] tracking-wide inline-block rounded leading-none border-4 border-solid cursor-pointer py-4 px-3 whitespace-nowrap transition-all duration-200 ease-linear min-w-[175px] focus-visible:bg-transparent hover:bg-transparent disabled:opacity-60 disabled:hover:cursor-not-allowed border-secondary bg-secondary text-primary outline-secondary hover:text-secondary focus-visible:text-secondary group w-full"
         data-loading="false"
         data-testid="SUBMIT_STEP_BUTTON"
         tabindex="0"

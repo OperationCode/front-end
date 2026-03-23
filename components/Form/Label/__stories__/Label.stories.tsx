@@ -13,7 +13,7 @@ interface LabelArgs {
   for?: string;
 }
 
-const Template: StoryFn<LabelArgs> = args => {
+const Template: StoryFn<LabelArgs> = (args) => {
   return (
     <>
       <span>NOTE: This component is always paired with an input</span>

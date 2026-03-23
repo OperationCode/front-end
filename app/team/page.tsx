@@ -66,7 +66,7 @@ export default function Team() {
       <HeroBanner
         title="The Team"
         backgroundImageSource={`${s3}oc_crew_nyc_2021.jpg`}
-        className="bg-[center_30%] min-h-[60dvh]"
+        className="min-h-[60dvh] bg-position-[center_30%]"
       />
 
       <Content
@@ -76,7 +76,7 @@ export default function Team() {
         columns={[
           <div
             key="team-members"
-            className="flex items-start justify-center flex-wrap w-full [&_img]:object-cover"
+            className="flex w-full flex-wrap items-start justify-center [&_img]:object-cover"
           >
             {boardMembers.map(({ name, role, imageSrc: imageSource, description }) => (
               <FlatCard

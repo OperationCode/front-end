@@ -3,7 +3,7 @@
 exports[`Swatch > should render with required props 1`] = `
 <div>
   <figure
-    class="border border-solid border-theme-gray-800 p-4 m-6 w-56"
+    class="m-6 w-56 border border-solid border-theme-gray-800 p-4"
   >
     <span
       class="sr-only"
@@ -12,7 +12,7 @@ exports[`Swatch > should render with required props 1`] = `
       A block of the color Blue
     </span>
     <div
-      class="h-56 mb-4 border border-solid border-theme-gray-800"
+      class="mb-4 h-56 border border-solid border-theme-gray-800"
       style="background-color: rgb(0, 0, 255);"
     />
     <figcaption>

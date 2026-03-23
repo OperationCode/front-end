@@ -21,7 +21,13 @@ const SelectMultiTemplate = (args: SelectMultiProps) => {
     ...props
   } = args;
   return (
-    <Formik initialValues={{ [`${name}`]: '' }} onSubmit={values => console.log(values)}>
+    <Formik
+      initialValues={{ [`${name}`]: '' }}
+      onSubmit={(values) => {
+        // eslint-disable-next-line no-console
+        console.log(values);
+      }}
+    >
       <Form style={{ height: '35vh' }}>
         <Field
           name={name}

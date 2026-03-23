@@ -19,11 +19,15 @@ function Alert({
 }: AlertPropsType) {
   return (
     <div
-      className={cx('border border-solid border-black rounded shadow-md text-sm p-2', className, {
-        'bg-error border-error-deep text-error-deep': type === 'error',
-        'bg-success border-success-deep text-success-deep': type === 'success',
-        'bg-warning border-warning-deep text-warning-deep': type === 'warning',
-      })}
+      className={cx(
+        `rounded-sm border border-solid border-black p-2 text-sm shadow-md`,
+        className,
+        {
+          'border-error-deep bg-error text-error-deep': type === 'error',
+          'border-success-deep bg-success text-success-deep': type === 'success',
+          'border-warning-deep bg-warning text-warning-deep': type === 'warning',
+        },
+      )}
       data-testid={testID}
       role="alert"
     >
@@ -31,7 +35,7 @@ function Alert({
       {Boolean(onClose) && (
         <button
           type="button"
-          className="text-2xl align-middle py-1 px-2 mr-1 transition-all duration-200 ease-linear cursor-pointer hover:text-black hover:scale-110"
+          className="mr-1 cursor-pointer px-2 py-1 align-middle text-2xl transition-all duration-200 ease-linear hover:scale-110 hover:text-black"
           onClick={onClose}
           data-testid={ALERT_CLOSE_BUTTON}
         >

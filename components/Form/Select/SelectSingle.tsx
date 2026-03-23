@@ -6,8 +6,10 @@ import { cx } from 'common/utils/cva';
 import type { ThemedReactSelectProps, OptionType } from './ThemedReactSelect';
 import { ThemedReactSelect } from './ThemedReactSelect';
 
-export interface SelectSingleProps
-  extends Pick<ThemedReactSelectProps<false>, 'id' | 'hasValidationStyling' | 'isSearchable'> {
+export interface SelectSingleProps extends Pick<
+  ThemedReactSelectProps<false>,
+  'id' | 'hasValidationStyling' | 'isSearchable'
+> {
   className?: string;
   field: FieldInputProps<string>;
   form: FormikState<Record<string, string>> & FormikHelpers<Record<string, string>>;
@@ -30,7 +32,7 @@ export function SelectSingle({
   disabled,
   ...props // disabled, placeholder, etc.
 }: SelectSingleProps) {
-  const value = options.find(option => option.value === fieldValue);
+  const value = options.find((option) => option.value === fieldValue);
   const hasErrors = Boolean(errors[name]);
 
   return (
@@ -49,7 +51,7 @@ export function SelectSingle({
           onBlur={() => setFieldTouched(name)}
           isSearchable={isSearchable}
           isMulti={false}
-          onChange={async option => {
+          onChange={async (option) => {
             await setFieldValue(name, option?.value ?? '');
             await setFieldTouched(name, true);
           }}
@@ -63,10 +65,10 @@ export function SelectSingle({
             return hasErrors ? (
               <Alert
                 className={cx(
-                  'max-w-full -mx-0.5 mt-2 flex-1',
-                  'lg:mt-0 lg:ml-4 lg:absolute lg:top-0 lg:left-full',
-                  'lg:min-w-36 lg:max-w-72 lg:w-max',
-                  'lg:py-0 lg:px-2.5 lg:h-full lg:flex lg:items-center lg:justify-center',
+                  '-mx-0.5 mt-2 max-w-full flex-1',
+                  'lg:absolute lg:top-0 lg:left-full lg:mt-0 lg:ml-4',
+                  'lg:w-max lg:max-w-72 lg:min-w-36',
+                  `lg:flex lg:h-full lg:items-center lg:justify-center lg:px-2.5 lg:py-0`,
                 )}
                 type="error"
               >

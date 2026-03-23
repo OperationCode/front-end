@@ -2,11 +2,11 @@ import axios from 'axios';
 import get from 'lodash/get';
 import { parse as parseXml } from 'fast-xml-parser';
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import HeroBanner from 'components/HeroBanner/HeroBanner';
 import Card from 'components/Cards/Card/Card';
 import Content from 'components/Content/Content';
 import Heading from 'components/Heading/Heading';
-import Image from 'next/image';
 import PodcastPlayer from './PodcastPlayer';
 
 export const metadata: Metadata = { title: 'Podcast' };
@@ -60,20 +60,20 @@ export default async function Podcast() {
 
   return (
     <div>
-      <HeroBanner title={pageTitle} className="pt-30 -mb-8 min-h-[40dvh]">
+      <HeroBanner title={pageTitle} className="-mb-8 min-h-[40dvh] pt-30">
         <p>Come listen to some inspiring stories of our vets transitioning into tech!</p>
       </HeroBanner>
 
       <Content
         columns={[
-          <div className="flex justify-center items-start flex-wrap" key="podcast-page">
+          <div className="flex flex-wrap items-start justify-center" key="podcast-page">
             {episodes.map(({ name, image, source, story }, index) => {
               const interviewee = name.replace(/ interview/gi, '').split(',')[0];
 
               return (
                 <Card
                   data-testid="Podcast Card"
-                  className="items-center flex flex-col justify-center overflow-hidden m-6 w-full sm:w-[500px]"
+                  className="m-6 flex w-full flex-col items-center justify-center overflow-hidden sm:w-[500px]"
                   key={name}
                 >
                   <Heading text={interviewee} headingLevel={3} />
@@ -89,7 +89,7 @@ export default async function Podcast() {
 
                   <PodcastPlayer url={source} />
 
-                  <p className="overflow-y-scroll h-[250px] mt-2 mb-6">{story}</p>
+                  <p className="mt-2 mb-6 h-[250px] overflow-y-scroll">{story}</p>
                 </Card>
               );
             })}

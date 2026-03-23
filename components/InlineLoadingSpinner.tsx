@@ -8,7 +8,7 @@ export const InlineLoadingSpinner = ({ className }: InlineLoadingSpinnerProps) =
   <span
     aria-hidden
     className={cx(
-      'border-solid border-white border-4 !border-b-primary rounded-[50%] h-5 w-5 box-border animate-spin group-hover:border-secondary transition-colors',
+      `box-border size-5 animate-spin rounded-[50%] border-4 border-solid border-white border-b-primary! transition-colors group-hover:border-secondary`,
       className,
     )}
   />
