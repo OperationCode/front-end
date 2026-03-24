@@ -1,5 +1,4 @@
-import type { ReactElement } from 'react';
-import { cloneElement } from 'react';
+import { Fragment } from 'react';
 import Container from '@/components/Container/Container';
 import Heading from '@/components/Heading/Heading';
 
@@ -35,6 +34,7 @@ export interface ContentPropsType {
   title?: string;
 }
 
+/** @deprecated Use `Section` from `@/components/Section` instead. */
 function Content({
   className,
   columns,
@@ -54,10 +54,9 @@ function Content({
       {title && <Heading text={title} hasTitleUnderline={hasTitleUnderline} headingLevel={3} />}
 
       <div className="flex w-full flex-wrap items-center justify-center *:m-4">
-        {}
-        {columns.map((column, index) =>
-          cloneElement(column as ReactElement<unknown>, { key: index }),
-        )}
+        {columns.map((column, index) => (
+          <Fragment key={index}>{column}</Fragment>
+        ))}
       </div>
     </Container>
   );

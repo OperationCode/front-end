@@ -1,11 +1,9 @@
-import type { Metadata } from 'next';
+import type { PropsWithChildren } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import HeroBanner from '@/components/HeroBanner/HeroBanner';
 import Badge from '@/components/Badge/Badge';
-import Content from '@/components/Content/Content';
+import Section from '@/components/Section/Section';
 import LinkButton from '@/components/Buttons/LinkButton/LinkButton';
-import Heading from '@/components/Heading/Heading';
 import DonateSection from '@/components/ReusableSections/DonateSection/DonateSection';
 import JoinSection from '@/components/ReusableSections/JoinSection/JoinSection';
 import HighfivingIcon from '@/static/images/icons/Custom/high_fiving.svg';
@@ -15,8 +13,6 @@ import NetworkingIcon from '@/static/images/icons/Custom/networked_people.svg';
 import ChartIcon from '@/static/images/icons/Custom/chart.svg';
 import PeopleMeetingIcon from '@/static/images/icons/Custom/people_meeting.svg';
 import { s3 } from '@/common/constants/urls';
-
-export const metadata: Metadata = { title: 'Get Involved' };
 
 const mentorItems = [
   {
@@ -48,7 +44,7 @@ const supportItems = [
   },
 ];
 
-function GetInvolved() {
+export default function GetInvolvedLayout({ children }: PropsWithChildren) {
   return (
     <div>
       <HeroBanner
@@ -56,7 +52,7 @@ function GetInvolved() {
         className="min-h-[60dvh] bg-position-[60%_center] md:bg-position-[center_20%]"
         title="You Can Make An Impact"
       >
-        <div key="banner-content">
+        <div>
           <p>
             Help make an impact to transitioning service members, military veterans, military
             spouses and dependents! You can help in several ways: <Link href="/donate">Donate</Link>{' '}
@@ -72,61 +68,31 @@ function GetInvolved() {
         </div>
       </HeroBanner>
 
-      <Content
-        title="The Power of Mentorship"
-        theme="gray"
-        columns={[
-          <p key="mentorship-intro">By mentoring one of our members, you will help them:</p>,
-          <div key="mentorship-badges" className="-mt-4 flex flex-wrap justify-center">
-            {mentorItems.map((item) => (
-              <Badge key={item.label} icon={item.icon} label={item.label} className="mx-16 my-4" />
-            ))}
-          </div>,
-        ]}
-      />
+      <Section title="The Power of Mentorship" theme="gray">
+        <p>By mentoring one of our members, you will help them:</p>
+        <div className="-mt-4 flex flex-wrap justify-center">
+          {mentorItems.map((item) => (
+            <Badge key={item.label} icon={item.icon} label={item.label} className="mx-16 my-4" />
+          ))}
+        </div>
+      </Section>
 
-      <Content
-        columns={[
-          <div key="image" className="relative m-8 aspect-1.5/1 w-full max-w-lg">
-            <Image
-              src={`${s3}redesign/images/one_on_one_mentoring.jpg`}
-              alt="Woman outlines a whiteboarding problem to a man"
-              fill
-            />
-          </div>,
-          <div key="empower">
-            <Heading text="Empower Our Community and Support Our Mission" headingLevel={3} />
+      {children}
 
-            <p>
-              Make a difference in the lives of our military community and help them reach their
-              pursuits of a tech career.
-            </p>
-
-            <div className="mt-8 text-center">
-              <LinkButton href="/join">Become A Mentor</LinkButton>
-            </div>
-          </div>,
-        ]}
-      />
-
-      <Content
-        theme="gray"
-        title="Ways You Can Support Operation Code"
-        columns={[
-          <div key="support-intro">
-            <p>
-              We're always looking for volunteers who are dedicated to making an impact in the lives
-              of military veterans, service members, and spouses.
-            </p>
-            <p className="text-center">You can help us with:</p>
-          </div>,
-          <div key="support-badges" className="-mt-4 flex flex-wrap justify-center">
-            {supportItems.map((item) => (
-              <Badge key={item.label} icon={item.icon} label={item.label} className="mx-16 my-4" />
-            ))}
-          </div>,
-        ]}
-      />
+      <Section theme="gray" title="Ways You Can Support Operation Code">
+        <div>
+          <p>
+            We&apos;re always looking for volunteers who are dedicated to making an impact in the
+            lives of military veterans, service members, and spouses.
+          </p>
+          <p className="text-center">You can help us with:</p>
+        </div>
+        <div className="-mt-4 flex flex-wrap justify-center">
+          {supportItems.map((item) => (
+            <Badge key={item.label} icon={item.icon} label={item.label} className="mx-16 my-4" />
+          ))}
+        </div>
+      </Section>
 
       <DonateSection />
 
@@ -134,5 +100,3 @@ function GetInvolved() {
     </div>
   );
 }
-
-export default GetInvolved;

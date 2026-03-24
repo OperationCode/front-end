@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { gtag } from '@/common/utils/thirdParty/gtag';
 import HeroBanner from '@/components/HeroBanner/HeroBanner';
-import Content from '@/components/Content/Content';
+import Section from '@/components/Section/Section';
 import { RegistrationForm } from '@/components/Forms/RegistrationForm/RegistrationForm';
 import Modal from '@/components/Modal/Modal';
 
@@ -48,7 +48,9 @@ export default function JoinContent({ hasRegistrationError }: { hasRegistrationE
         </div>
       </HeroBanner>
 
-      <Content theme="gray" columns={[<RegistrationForm key="form" onSuccess={handleSuccess} />]} />
+      <Section theme="gray">
+        <RegistrationForm onSuccess={handleSuccess} />
+      </Section>
 
       <Modal
         isOpen={isErrorModalOpen}

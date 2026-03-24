@@ -1,12 +1,13 @@
-const priorities = { '/': '1.00', '/join': '1.00' };
+import type { IConfig } from 'next-sitemap';
 
-/** @type {import('next-sitemap').IConfig} */
-module.exports = {
+// eslint-disable-next-line unicorn/no-zero-fractions
+const priorities: Record<string, number> = { '/': 1.0, '/join': 1.0 };
+
+const config: IConfig = {
   siteUrl: 'https://www.operationcode.org',
-  generateIndexSitemap: false, // Simplification to make robots.txt "Sitemap" easier
+  generateIndexSitemap: false,
   priority: 0.8,
   changefreq: 'weekly',
-  // Modified default transform function
   transform: async (config, path) => {
     return {
       loc: path,
@@ -31,3 +32,5 @@ module.exports = {
     '/confirm_email',
   ],
 };
+
+export default config;

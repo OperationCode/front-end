@@ -1,15 +1,10 @@
-import type { Metadata } from 'next';
-import Link from 'next/link';
+import type { PropsWithChildren } from 'react';
 import Image from 'next/image';
 import Container from '@/components/Container/Container';
 import HeroBanner from '@/components/HeroBanner/HeroBanner';
 import OutboundLink from '@/components/OutboundLink/OutboundLink';
 import { s3 } from '@/common/constants/urls';
 import Card from '@/components/Cards/Card/Card';
-
-export const metadata: Metadata = { title: 'Scholarships Program' };
-
-const pageTitle = 'Scholarships Program';
 
 interface ScholarshipOption {
   title: string;
@@ -60,47 +55,18 @@ const scholarshipOptions: ScholarshipOption[] = [
   },
 ];
 
-export default function ScholarshipsPage() {
+export default function ScholarshipLayout({ children }: PropsWithChildren) {
   return (
     <>
       <HeroBanner
-        title={pageTitle}
+        title="Scholarships Program"
         backgroundImageSource={`${s3}heroBanners/scholarships_hero.jpeg`}
         className="min-h-[60dvh] text-center"
       />
 
       <Container theme="white" className="pb-8">
-        <p>
-          Our <span className="font-bold">Scholarships Program</span> is a competitive benefit that
-          contributes directly to the professional development and career growth of our service
-          members, Veterans and military family members.
-        </p>
-
         <div className="my-3 flex flex-col gap-3 text-left">
-          <div className="max-w-prose self-center">
-            <p>To qualify, you must:</p>
-
-            <ul className="mb-3 ml-4 flex list-disc flex-col gap-3">
-              <li>
-                Be an active member of our Operation Code community (
-                <Link href="/join">join here</Link>
-                ), a U.S. active duty, Reserves or National Guard military service member, Veteran
-                or military dependent.
-              </li>
-              <li>
-                Abide by the{' '}
-                <OutboundLink
-                  href="https://docs.google.com/document/d/1KsdkKB1RyEuI7tBspuabxqJ-7n_PhL3B4vdHkBp_-7U/edit?usp=sharing"
-                  analyticsEventLabel="Scholarship Abidement Policy"
-                >
-                  Operation Code Scholarships Policy
-                </OutboundLink>
-                .
-              </li>
-            </ul>
-
-            <p>We provide learning licenses and access to the below platforms:</p>
-          </div>
+          <div className="max-w-prose self-center">{children}</div>
 
           <ul className="flex w-full flex-wrap justify-center gap-4 self-center">
             {scholarshipOptions.map((option) => (

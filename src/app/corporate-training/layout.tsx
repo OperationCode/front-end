@@ -1,11 +1,8 @@
-import Image from 'next/image';
-import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
+import Image from 'next/image';
 import HeroBanner from '@/components/HeroBanner/HeroBanner';
 import OutboundLink from '@/components/OutboundLink/OutboundLink';
 import { cx } from '@/common/utils/cva';
-
-export const metadata: Metadata = { title: 'Corporate Training: Breaking Biases' };
 
 interface Bias {
   title: string;
@@ -106,7 +103,7 @@ const biases: Bias[] = [
   },
 ];
 
-const CorporateTraining = () => {
+export default function CorporateTrainingLayout({ children }: { children: ReactNode }) {
   return (
     <>
       <HeroBanner
@@ -114,23 +111,29 @@ const CorporateTraining = () => {
         backgroundImageSource="/static/images/heroImage.jpg"
         title="Corporate Training: Breaking Biases"
       >
-        <p className="text-left">
-          Operation Code has provided corporate training for tech employers since 2019. In order to
-          break barriers and blockers for our military community, we must address the implicit and
-          overt biases. Reach out to us if you would like more information on how our military
-          cultural competency training works, if you'd like us to help create a military Diversity,
-          Equity, Inclusion and Belonging strategy, provide ongoing professional development or set
-          up a military Employee Resource Group with you: Contact the{' '}
-          <OutboundLink
-            href="mailto:partnerships@operationcode.org"
-            analyticsEventLabel="Email"
-            hasIcon={false}
-          >
-            Partnerships Team
-          </OutboundLink>
-          .<span className="mt-4 block">We look forward to hearing from you!</span>
-        </p>
+        <div className="text-left">
+          <p>
+            Operation Code has provided corporate training for tech employers since 2019. In order
+            to break barriers and blockers for our military community, we must address the implicit
+            and overt biases. Reach out to us if you would like more information on how our military
+            cultural competency training works, if you'd like us to help create a military
+            Diversity, Equity, Inclusion and Belonging strategy, provide ongoing professional
+            development or set up a military Employee Resource Group with you: Contact the{' '}
+            <OutboundLink
+              href="mailto:partnerships@operationcode.org"
+              analyticsEventLabel="Email"
+              hasIcon={false}
+            >
+              Partnerships Team
+            </OutboundLink>
+            .
+          </p>
+          <p>We look forward to hearing from you!</p>
+        </div>
       </HeroBanner>
+
+      {children}
+
       <ol className="flex w-full list-none flex-col">
         {biases.map((bias) => (
           <li
@@ -171,6 +174,4 @@ const CorporateTraining = () => {
       </ol>
     </>
   );
-};
-
-export default CorporateTraining;
+}

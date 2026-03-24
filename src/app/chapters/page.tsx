@@ -1,12 +1,9 @@
 import type { Metadata } from 'next';
-import HeroBanner from '@/components/HeroBanner/HeroBanner';
-import Content from '@/components/Content/Content';
+import Section from '@/components/Section/Section';
 import FlatCard from '@/components/Cards/FlatCard/FlatCard';
 import OutboundLink from '@/components/OutboundLink/OutboundLink';
 
 export const metadata: Metadata = { title: 'Chapters' };
-
-const pageTitle = 'Chapters';
 
 const unsortedChapterLocations = [
   {
@@ -37,45 +34,35 @@ const chapterLocations = unsortedChapterLocations.sort(({ name: nameA }, { name:
 
 function Chapters() {
   return (
-    <>
-      <HeroBanner title={pageTitle} className="min-h-[60dvh] pt-20 pb-4">
-        <p>Get involved by joing your local chapter!</p>
-      </HeroBanner>
-
-      <Content
-        theme="white"
-        title="Locations"
-        columns={[
-          <div key="locations" className="flex w-full flex-wrap justify-center gap-8">
-            {chapterLocations.map((chapter) => {
-              return (
-                <FlatCard key={chapter.name} className="min-w-40 text-center">
-                  <OutboundLink
-                    href={chapter.url}
-                    hasIcon={false}
-                    analyticsEventLabel={`${chapter.name} Eventbrite`}
-                  >
-                    {chapter.name}
-                  </OutboundLink>
-                </FlatCard>
-              );
-            })}
-          </div>,
-          <div key="contact" className="w-full text-center">
-            Don't see your a location in your area?
-            <br />
-            <OutboundLink
-              href="mailto:staff@operationcode.org"
-              analyticsEventLabel="Email About Chapter Interest"
-              hasIcon={false}
-            >
-              Contact us
-            </OutboundLink>{' '}
-            to share your interest in being involved at a local level!
-          </div>,
-        ]}
-      />
-    </>
+    <Section theme="white" title="Locations">
+      <div className="flex w-full flex-wrap justify-center gap-8">
+        {chapterLocations.map((chapter) => {
+          return (
+            <FlatCard key={chapter.name} className="min-w-40 text-center">
+              <OutboundLink
+                href={chapter.url}
+                hasIcon={false}
+                analyticsEventLabel={`${chapter.name} Eventbrite`}
+              >
+                {chapter.name}
+              </OutboundLink>
+            </FlatCard>
+          );
+        })}
+      </div>
+      <div className="w-full text-center">
+        Don't see your a location in your area?
+        <br />
+        <OutboundLink
+          href="mailto:staff@operationcode.org"
+          analyticsEventLabel="Email About Chapter Interest"
+          hasIcon={false}
+        >
+          Contact us
+        </OutboundLink>{' '}
+        to share your interest in being involved at a local level!
+      </div>
+    </Section>
   );
 }
 

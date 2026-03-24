@@ -1,5 +1,5 @@
 import Swatch from '@/components/Branding/Swatch/Swatch';
-import Content from '@/components/Content/Content';
+import Section from '@/components/Section/Section';
 
 const brandColors = {
   primary: '#3ed6f0',
@@ -19,14 +19,11 @@ const colors = [
 
 function ColorSection() {
   return (
-    <Content
-      title="Colors"
-      hasTitleUnderline
-      theme="white"
-      columns={colors.map((color) => (
+    <Section title="Colors" underline theme="white">
+      {colors.map((color) => (
         <Swatch colorName={color.name} hexCode={color.hexCode} key={color.name} />
       ))}
-    />
+    </Section>
   );
 }
 

@@ -24,17 +24,9 @@ function Badge({ className = undefined, icon, isImageFirst = true, label }: Badg
   return (
     <figure
       className={cx(
-        'flex',
-        'flex-col',
-        'justify-items-center',
-        'place-content-start',
-        'm-2',
-        '[&>svg]:fill-current',
-        '[&>svg]:my-4',
-        '[&>img]:mx-0',
-        '[&>img]:h-24',
-        '[&>svg]:mx-0',
-        '[&>svg]:h-24',
+        'm-2 flex flex-col place-content-start justify-items-center',
+        '[&>svg]:mx-0 [&>svg]:my-4 [&>svg]:h-24 [&>svg]:w-auto [&>svg]:fill-current',
+        '[&>img]:mx-0 [&>img]:h-24 [&>img]:w-auto [&>img]:object-contain',
         className,
       )}
     >

@@ -3,9 +3,8 @@ import get from 'lodash/get';
 import { parse as parseXml } from 'fast-xml-parser';
 import type { Metadata } from 'next';
 import Image from 'next/image';
-import HeroBanner from '@/components/HeroBanner/HeroBanner';
 import Card from '@/components/Cards/Card/Card';
-import Content from '@/components/Content/Content';
+import Section from '@/components/Section/Section';
 import Heading from '@/components/Heading/Heading';
 import PodcastPlayer from './PodcastPlayer';
 
@@ -53,49 +52,39 @@ async function getEpisodes(): Promise<Episode[]> {
   throw new Error('Failed to fetch podcast episodes.');
 }
 
-const pageTitle = 'Podcast';
-
 export default async function Podcast() {
   const episodes = await getEpisodes();
 
   return (
-    <div>
-      <HeroBanner title={pageTitle} className="-mb-8 min-h-[40dvh] pt-30">
-        <p>Come listen to some inspiring stories of our vets transitioning into tech!</p>
-      </HeroBanner>
+    <Section>
+      <div className="flex flex-wrap items-start justify-center">
+        {episodes.map(({ name, image, source, story }, index) => {
+          const interviewee = name.replace(/ interview/gi, '').split(',')[0];
 
-      <Content
-        columns={[
-          <div className="flex flex-wrap items-start justify-center" key="podcast-page">
-            {episodes.map(({ name, image, source, story }, index) => {
-              const interviewee = name.replace(/ interview/gi, '').split(',')[0];
+          return (
+            <Card
+              data-testid="Podcast Card"
+              className="m-6 flex w-full flex-col items-center justify-center overflow-hidden sm:w-[500px]"
+              key={name}
+            >
+              <Heading text={interviewee} headingLevel={3} />
 
-              return (
-                <Card
-                  data-testid="Podcast Card"
-                  className="m-6 flex w-full flex-col items-center justify-center overflow-hidden sm:w-[500px]"
-                  key={name}
-                >
-                  <Heading text={interviewee} headingLevel={3} />
+              <Image
+                src={image}
+                alt={interviewee}
+                className="max-h-[200px] max-w-full object-cover"
+                priority={index === 0 || index === 1}
+                width={200}
+                height={200}
+              />
 
-                  <Image
-                    src={image}
-                    alt={interviewee}
-                    className="max-h-[200px] max-w-full object-cover"
-                    priority={index === 0 || index === 1}
-                    width={200}
-                    height={200}
-                  />
+              <PodcastPlayer url={source} />
 
-                  <PodcastPlayer url={source} />
-
-                  <p className="mt-2 mb-6 h-[250px] overflow-y-scroll">{story}</p>
-                </Card>
-              );
-            })}
-          </div>,
-        ]}
-      />
-    </div>
+              <p className="mt-2 mb-6 h-[250px] overflow-y-scroll">{story}</p>
+            </Card>
+          );
+        })}
+      </div>
+    </Section>
   );
 }

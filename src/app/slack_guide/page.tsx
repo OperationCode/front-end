@@ -1,15 +1,12 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
-import HeroBanner from '@/components/HeroBanner/HeroBanner';
-import Content from '@/components/Content/Content';
+import Section from '@/components/Section/Section';
 import Accordion from '@/components/Accordion/Accordion';
 import OutboundLink from '@/components/OutboundLink/OutboundLink';
 import { s3, codeOfConduct } from '@/common/constants/urls';
 import ScreenReaderOnly from '@/components/ScreenReaderOnly/ScreenReaderOnly';
 
-const pageTitle = 'Slack Guide';
-
-export const metadata: Metadata = { title: pageTitle };
+export const metadata: Metadata = { title: 'Slack Guide' };
 
 const questions = {
   slack: [
@@ -216,34 +213,19 @@ const questions = {
 
 function SlackGuide() {
   return (
-    <div>
-      <HeroBanner title={pageTitle} className="min-h-[60dvh]">
-        <iframe
-          title="Slack Guide"
-          src="https://youtube.com/embed/6wjmH5qL3Ms"
-          allowFullScreen
-          width="755"
-          height="425"
-          className="size-full sm:h-[425px] sm:w-[755px]"
+    <Section>
+      {questions.slack.map((faq, index) => (
+        <Accordion
+          key={index}
+          className="block w-full rounded-[5px] border border-[#c5c5c5] bg-transparent p-4.5 text-white shadow-none [&>button>svg]:top-[0.825rem] [&>button>svg]:fill-current"
+          content={{
+            headingChildren: <h6>{faq.title}</h6>,
+            bodyChildren: <p>{faq.content}</p>,
+          }}
+          accessibilityId="accordion"
         />
-      </HeroBanner>
-
-      <HeroBanner title="Slack Frequently Asked Questions" className="min-h-[35dvh]" />
-
-      <Content
-        columns={questions.slack.map((faq, index) => (
-          <Accordion
-            key={index}
-            className="block w-full rounded-[5px] border border-[#c5c5c5] bg-transparent p-4.5 text-white shadow-none [&>button>svg]:top-[0.825rem] [&>button>svg]:fill-current"
-            content={{
-              headingChildren: <h6>{faq.title}</h6>,
-              bodyChildren: <p>{faq.content}</p>,
-            }}
-            accessibilityId="accordion"
-          />
-        ))}
-      />
-    </div>
+      ))}
+    </Section>
   );
 }
 

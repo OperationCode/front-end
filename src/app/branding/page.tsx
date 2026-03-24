@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import HeroBanner from '@/components/HeroBanner/HeroBanner';
 import LogoSection from '@/components/Branding/LogoSection/LogoSection';
 import ColorSection from '@/components/Branding/ColorSection/ColorSection';
 import FontSection from '@/components/Branding/FontSection/FontSection';
@@ -9,13 +8,9 @@ import LinkButton from '@/components/Buttons/LinkButton/LinkButton';
 
 export const metadata: Metadata = { title: 'Branding Guide' };
 
-const pageTitle = 'Branding Guide';
-
 function Branding() {
   return (
     <>
-      <HeroBanner className="min-h-96 pt-36 pb-24" title={pageTitle} />
-
       <section className="space-y-8 bg-white py-14 *:mx-auto *:max-w-prose">
         <h5 className="text-center">Introduction</h5>
 

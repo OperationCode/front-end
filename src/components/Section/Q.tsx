@@ -1,0 +1,23 @@
+'use client';
+
+import { useId } from 'react';
+import Accordion from '@/components/Accordion/Accordion';
+
+interface QProps {
+  children: React.ReactNode;
+  title: string;
+}
+
+export default function Q({ title, children }: QProps) {
+  const id = useId();
+
+  return (
+    <Accordion
+      content={{
+        headingChildren: <h6>{title}</h6>,
+        bodyChildren: <p>{children}</p>,
+      }}
+      accessibilityId={id}
+    />
+  );
+}
