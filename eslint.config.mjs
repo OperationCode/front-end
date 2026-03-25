@@ -38,26 +38,14 @@ export default defineConfig(
     '.next/**',
     '.github/**',
     'bin/**',
-    'static/**',
     'cypress-coverage/**',
     'vitest-coverage/**',
-    'src/.storybook/**',
     '.storybook-dist/**',
     'storybook-static/**',
     'playwright-report/**',
     'test-results/**',
     'public/**',
     '*.svg',
-    'vitest.setup.tsx',
-    'vitest.config.mts',
-    'prettier.config.js',
-    'postcss.config.js',
-    'next-sitemap.config.js',
-    'next.config.ts',
-    'next.config.js',
-    'playwright.config.ts',
-    'sentry.client.config.js',
-    'sentry.server.config.js',
   ]),
 
   // ── Base configs ──
@@ -233,7 +221,7 @@ export default defineConfig(
     settings: {
       'better-tailwindcss': {
         entryPoint: './src/common/styles/globals.css',
-        callees: [...getDefaultCallees(), 'cx', 'cva'],
+        callees: [...getDefaultCallees(), 'cn', 'cva'],
       },
     },
   },
@@ -311,7 +299,7 @@ export default defineConfig(
               name: 'tailwind-merge',
               importNames: ['twMerge'],
               message:
-                'Please import `cx` from `@/common/utils/cva.ts` instead of directly from tailwind-merge.',
+                'Please import `cn` from `@/common/utils/cva.ts` instead of directly from tailwind-merge.',
             },
             {
               name: 'class-variance-authority',
@@ -392,7 +380,7 @@ export default defineConfig(
               name: 'tailwind-merge',
               importNames: ['twMerge'],
               message:
-                'Please import `cx` from `@/common/utils/cva.ts` instead of directly from tailwind-merge.',
+                'Please import `cn` from `@/common/utils/cva.ts` instead of directly from tailwind-merge.',
             },
             {
               name: 'class-variance-authority',

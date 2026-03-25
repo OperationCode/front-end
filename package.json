@@ -12,7 +12,7 @@
     "lint": "pnpm lint:scripts && pnpm format:md",
     "lint:ci": "eslint src",
     "lint:scripts": "eslint --fix src",
-    "postbuild": "next-sitemap",
+    "postbuild": "next-sitemap --config next-sitemap.config.ts",
     "prepare": "husky",
     "start": "next start -p 3000",
     "storybook": "storybook dev -p 9001 -c src/.storybook",
