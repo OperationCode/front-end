@@ -4,6 +4,7 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
+  interpolate-size: allow-keywords;
   --radius: 0.625rem;
   --background: #fafafa;
   --foreground: #47566b;

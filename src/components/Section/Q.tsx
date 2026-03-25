@@ -23,10 +23,9 @@ export default function Q({ title, children, className }: QProps) {
     <Card className={cn('min-h-full w-full flex-nowrap justify-normal py-0', className)}>
       <Accordion>
         <AccordionItem value={id} className="border-none">
-          <div className="flex w-full items-center justify-between">
-            <div className="flex-1 text-xl font-bold uppercase">{title}</div>
-            <AccordionTrigger className="-mr-6 grid size-20 place-items-center border-none hover:no-underline" />
-          </div>
+          <AccordionTrigger className="-mx-6 px-6 py-4 text-xl font-bold uppercase hover:no-underline">
+            {title}
+          </AccordionTrigger>
           <AccordionContent className="w-full pb-4">{children}</AccordionContent>
         </AccordionItem>
       </Accordion>
