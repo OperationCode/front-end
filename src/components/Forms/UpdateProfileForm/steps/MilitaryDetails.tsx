@@ -1,17 +1,17 @@
-import { Field } from 'formik';
-import * as Yup from 'yup';
-import { validationErrorMessages } from '@/common/constants/messages';
+import { Controller, useFormContext } from 'react-hook-form';
+import { z } from 'zod';
+import { validationErrorMessages } from '@/lib/constants/messages';
 import { SelectSingle } from '@/components/Form/Select/SelectSingle';
 import { SelectMulti } from '@/components/Form/Select/SelectMulti';
 import type { OptionType } from '@/components/Form/Select/ThemedReactSelect';
 
 MilitaryDetails.title = 'Military Details';
 
-MilitaryDetails.validationSchema = Yup.object().shape({
-  branchOfService: Yup.array()
-    .of(Yup.object().shape({ label: Yup.string(), value: Yup.string() }))
+MilitaryDetails.validationSchema = z.object({
+  branchOfService: z
+    .array(z.object({ label: z.string(), value: z.string() }))
     .min(1, validationErrorMessages.required),
-  payGrade: Yup.string().required(validationErrorMessages.required),
+  payGrade: z.string().min(1, validationErrorMessages.required),
 });
 
 MilitaryDetails.initialValues = {
@@ -25,10 +25,6 @@ interface MilitaryDetailsProps {
   isSubmitting: boolean;
 }
 
-/**
- * There is also 'Military family member' and 'Not affiliated with the military'; however, these
- * selections are automatically chosen based on previous step answers.
- */
 const branchOptions = [
   'U.S. Air Force',
   'U.S. Army',
@@ -41,22 +37,44 @@ const branchOptions = [
 const payGradeOptions = ['E1-E5', 'E6-E9+', 'O1-O3', 'O4-O7+', 'WO1-3', 'WO3+'];
 
 export function MilitaryDetails({ isSubmitting }: MilitaryDetailsProps) {
+  const { control } = useFormContext();
+
   return (
     <div className="flex flex-col gap-4">
-      <Field
+      <Controller
         name="branchOfService"
-        label="Branch Of Service*"
-        component={SelectMulti}
-        options={branchOptions.map((option) => ({ value: option, label: option }))}
-        isDisabled={isSubmitting}
+        control={control}
+        render={({ field, fieldState }) => (
+          <SelectMulti
+            name={field.name}
+            value={field.value}
+            onChange={field.onChange}
+            onBlur={field.onBlur}
+            label="Branch Of Service*"
+            options={branchOptions.map((option) => ({ value: option, label: option }))}
+            disabled={isSubmitting}
+            error={fieldState.error?.message}
+            isTouched={fieldState.isTouched}
+          />
+        )}
       />
 
-      <Field
+      <Controller
         name="payGrade"
-        label="Pay Grade*"
-        component={SelectSingle}
-        options={payGradeOptions.map((option) => ({ value: option, label: option }))}
-        isDisabled={isSubmitting}
+        control={control}
+        render={({ field, fieldState }) => (
+          <SelectSingle
+            name={field.name}
+            value={field.value}
+            onChange={field.onChange}
+            onBlur={field.onBlur}
+            label="Pay Grade*"
+            options={payGradeOptions.map((option) => ({ value: option, label: option }))}
+            disabled={isSubmitting}
+            error={fieldState.error?.message}
+            isTouched={fieldState.isTouched}
+          />
+        )}
       />
     </div>
   );

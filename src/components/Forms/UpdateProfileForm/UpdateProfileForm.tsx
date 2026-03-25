@@ -4,10 +4,9 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import type { AxiosError } from 'axios';
 import LogRocket from 'logrocket';
-import type { FormikHelpers } from 'formik';
-import { getServerErrorMessage } from '@/common/utils/api-utils';
+import { getServerErrorMessage } from '@/lib/utils/api-utils';
 import { MultiStepForm } from '@/components/Form/MultiStepForm';
-import { updateUser } from '@/common/constants/api';
+import { updateUser } from '@/lib/constants/api';
 import { ProfessionalDetails } from '@/components/Forms/UpdateProfileForm/steps/ProfessionalDetails';
 import { MilitaryStatus } from '@/components/Forms/UpdateProfileForm/steps/MilitaryStatus';
 import { MilitaryDetails } from '@/components/Forms/UpdateProfileForm/steps/MilitaryDetails';
@@ -26,11 +25,9 @@ const generateError = (errorObject: AxiosError) => {
     if (hasMultiError) {
       const errorMessage = responseDataValues
         .map((messages) => {
-          // Only return the first item of a potential array of errors.
-          // Rather than make this code more complex, just let the user resolve them per submit.
           return messages[0];
         })
-        .join('\n'); // could span many fields as well, so have a new line per field with error
+        .join('\n');
 
       return errorMessage;
     }
@@ -60,7 +57,7 @@ function UpdateProfileForm({
 
   const onStepSubmit = async (
     values: UpdateProfileFormShape,
-    formikHelpers: FormikHelpers<UpdateProfileFormShape>,
+    helpers: { setFieldTouched: (name: string, touched: boolean) => void },
   ) => {
     const hasMilitaryExperience = [
       'Active Duty U.S. Military Service Member',
@@ -78,7 +75,7 @@ function UpdateProfileForm({
       const isMilitaryDetailsStepEmpty = relevantKeys.every((key) => values[key].length === 0);
 
       if (isMilitaryDetailsStepEmpty) {
-        relevantKeys.forEach((key) => formikHelpers.setFieldTouched(key, false));
+        relevantKeys.forEach((key) => helpers.setFieldTouched(key, false));
       }
     }
 
@@ -103,7 +100,6 @@ function UpdateProfileForm({
     }
   };
 
-  // ordered
   const steps = shouldShowMilitaryStep
     ? [ProfessionalDetails, MilitaryStatus, MilitaryDetails, PersonalDetails]
     : [ProfessionalDetails, MilitaryStatus, PersonalDetails];

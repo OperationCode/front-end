@@ -1,22 +1,22 @@
-import { Field } from 'formik';
-import * as Yup from 'yup';
-import { validationErrorMessages } from '@/common/constants/messages';
+import { Controller, useFormContext } from 'react-hook-form';
+import { z } from 'zod';
+import { validationErrorMessages } from '@/lib/constants/messages';
 import { SelectSingle } from '@/components/Form/Select/SelectSingle';
-import { mapStringsToSelectOptions } from '@/common/utils/array-utils';
+import { mapStringsToSelectOptions } from '@/lib/utils/array-utils';
 import { SelectMulti } from '@/components/Form/Select/SelectMulti';
 import type { OptionType } from '@/components/Form/Select/ThemedReactSelect';
 
 PersonalDetails.title = 'Personal Details';
 
-PersonalDetails.validationSchema = Yup.object().shape({
-  joinReason: Yup.array()
-    .of(Yup.object().shape({ label: Yup.string(), value: Yup.string() }))
+PersonalDetails.validationSchema = z.object({
+  joinReason: z
+    .array(z.object({ label: z.string(), value: z.string() }))
     .min(1, validationErrorMessages.required),
-  gender: Yup.string().required(validationErrorMessages.required),
-  ethnicity: Yup.array()
-    .of(Yup.object().shape({ label: Yup.string(), value: Yup.string() }))
+  gender: z.string().min(1, validationErrorMessages.required),
+  ethnicity: z
+    .array(z.object({ label: z.string(), value: z.string() }))
     .min(1, validationErrorMessages.required),
-  educationLevel: Yup.string().required(validationErrorMessages.required),
+  educationLevel: z.string().min(1, validationErrorMessages.required),
 });
 
 PersonalDetails.initialValues = {
@@ -33,12 +33,12 @@ interface PersonalDetailsProps {
 }
 
 const joinReasonOptions = mapStringsToSelectOptions([
-  'I’d like access to jobs',
-  'I’d like access to resources',
-  'I’d like to mentor/help others',
-  'I’m looking for community',
-  'I’m looking to grow in my tech career',
-  'I’m transitioning from my military career',
+  'I\u2019d like access to jobs',
+  'I\u2019d like access to resources',
+  'I\u2019d like to mentor/help others',
+  'I\u2019m looking for community',
+  'I\u2019m looking to grow in my tech career',
+  'I\u2019m transitioning from my military career',
   'None of the above',
 ]);
 
@@ -62,7 +62,7 @@ const ethnicityOptions = mapStringsToSelectOptions([
 const educationLevelOptions = mapStringsToSelectOptions([
   'High school',
   'College/Associates degree',
-  '4 year Bachelor’s degree',
+  '4 year Bachelor\u2019s degree',
   'Graduate degree',
   'Post-Graduate degree',
   'Coding Bootcamp/other Professional Certifications',
@@ -70,38 +70,80 @@ const educationLevelOptions = mapStringsToSelectOptions([
 ]);
 
 export function PersonalDetails({ isSubmitting }: PersonalDetailsProps) {
+  const { control } = useFormContext();
+
   return (
     <div className="flex flex-col gap-4">
-      <Field
+      <Controller
         name="joinReason"
-        label="Join Reason*"
-        component={SelectMulti}
-        options={joinReasonOptions}
-        isDisabled={isSubmitting}
+        control={control}
+        render={({ field, fieldState }) => (
+          <SelectMulti
+            name={field.name}
+            value={field.value}
+            onChange={field.onChange}
+            onBlur={field.onBlur}
+            label="Join Reason*"
+            options={joinReasonOptions}
+            disabled={isSubmitting}
+            error={fieldState.error?.message}
+            isTouched={fieldState.isTouched}
+          />
+        )}
       />
 
-      <Field
+      <Controller
         name="gender"
-        label="Gender*"
-        component={SelectSingle}
-        options={genderOptions}
-        isDisabled={isSubmitting}
+        control={control}
+        render={({ field, fieldState }) => (
+          <SelectSingle
+            name={field.name}
+            value={field.value}
+            onChange={field.onChange}
+            onBlur={field.onBlur}
+            label="Gender*"
+            options={genderOptions}
+            disabled={isSubmitting}
+            error={fieldState.error?.message}
+            isTouched={fieldState.isTouched}
+          />
+        )}
       />
 
-      <Field
+      <Controller
         name="ethnicity"
-        label="Ethnicity*"
-        component={SelectMulti}
-        options={ethnicityOptions}
-        isDisabled={isSubmitting}
+        control={control}
+        render={({ field, fieldState }) => (
+          <SelectMulti
+            name={field.name}
+            value={field.value}
+            onChange={field.onChange}
+            onBlur={field.onBlur}
+            label="Ethnicity*"
+            options={ethnicityOptions}
+            disabled={isSubmitting}
+            error={fieldState.error?.message}
+            isTouched={fieldState.isTouched}
+          />
+        )}
       />
 
-      <Field
+      <Controller
         name="educationLevel"
-        label="Education Level*"
-        component={SelectSingle}
-        options={educationLevelOptions}
-        isDisabled={isSubmitting}
+        control={control}
+        render={({ field, fieldState }) => (
+          <SelectSingle
+            name={field.name}
+            value={field.value}
+            onChange={field.onChange}
+            onBlur={field.onBlur}
+            label="Education Level*"
+            options={educationLevelOptions}
+            disabled={isSubmitting}
+            error={fieldState.error?.message}
+            isTouched={fieldState.isTouched}
+          />
+        )}
       />
     </div>
   );

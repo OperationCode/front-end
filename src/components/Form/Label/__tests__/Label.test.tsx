@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 import createSnapshotTest from '@/test-utils/createSnapshotTest';
-import { LABEL, SCREEN_READER_ONLY } from '@/common/constants/testIDs';
+import { LABEL, SCREEN_READER_ONLY } from '@/lib/constants/testIDs';
 
 import Label from '../Label';
 

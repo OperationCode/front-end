@@ -1,5 +1,5 @@
-import { cn } from '@/common/utils/cva';
-import { LABEL } from '@/common/constants/testIDs';
+import { cn } from '@/lib/utils';
+import { LABEL } from '@/lib/constants/testIDs';
 import ScreenReaderOnly from '@/components/ScreenReaderOnly/ScreenReaderOnly';
 
 export interface LabelProps extends React.LabelHTMLAttributes<HTMLLabelElement> {
