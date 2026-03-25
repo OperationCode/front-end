@@ -7,7 +7,7 @@ import JoinSection from '@/components/ReusableSections/JoinSection/JoinSection';
 import CareerServicesIcon from '@/static/images/icons/Custom/career_services.svg';
 import MentorshipIcon from '@/static/images/icons/Custom/mentorship.svg';
 import ScholarshipsIcon from '@/static/images/icons/Custom/scholarships.svg';
-import { s3 } from '@/common/constants/urls';
+import { s3 } from '@/lib/constants/urls';
 
 const mentorItems = [
   {

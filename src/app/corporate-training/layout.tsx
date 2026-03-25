@@ -3,7 +3,7 @@ import type { StaticImageData } from 'next/image';
 import Image from 'next/image';
 import HeroBanner from '@/components/HeroBanner/HeroBanner';
 import OutboundLink from '@/components/OutboundLink/OutboundLink';
-import { cn } from '@/common/utils/cva';
+import { cn } from '@/lib/utils';
 import heroImage from '@/static/images/heroImage.jpg';
 import bias1 from '@/static/images/bias1.jpg';
 import bias2 from '@/static/images/bias2.jpg';

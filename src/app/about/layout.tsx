@@ -1,5 +1,5 @@
 import HeroBanner from '@/components/HeroBanner/HeroBanner';
-import { s3 } from '@/common/constants/urls';
+import { s3 } from '@/lib/constants/urls';
 
 export default function AboutLayout({ children }: { children: React.ReactNode }) {
   return (

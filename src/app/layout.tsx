@@ -1,11 +1,11 @@
-import '@/common/styles/globals.css';
+import '@/lib/styles/globals.css';
 
 import type { Metadata } from 'next';
 import Script from 'next/script';
 import type { PropsWithChildren } from 'react';
 import { Encode_Sans, Bebas_Neue } from 'next/font/google';
 
-import { clientTokens } from '@/common/config/environment';
+import { clientTokens } from '@/lib/config/environment';
 import { AnalyticsProvider } from '@/components/Analytics/AnalyticsProvider';
 import Footer from '@/components/Footer/Footer';
 import Nav from '@/components/Nav/Nav';

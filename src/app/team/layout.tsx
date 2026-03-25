@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 import HeroBanner from '@/components/HeroBanner/HeroBanner';
-import { s3 } from '@/common/constants/urls';
+import { s3 } from '@/lib/constants/urls';
 
 export default function TeamLayout({ children }: { children: ReactNode }) {
   return (

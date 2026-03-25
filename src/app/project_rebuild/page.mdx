@@ -1,7 +1,8 @@
 export const metadata = { title: 'Project Rebuild' };
 
 import Image from 'next/image';
-import LinkButton from '@/components/Buttons/LinkButton/LinkButton';
+import Link from 'next/link';
+import { buttonVariants } from '@/components/ui/button';
 
 <Section theme="white">
 
@@ -100,7 +101,7 @@ WE CANNOT MEET OUR MISSION WITHOUT YOUR HELP! DONATE YOUR BEST AMOUNT TODAY. Con
 us to volunteer or donate in-kind services/hardware/software at: <OutboundLink href="mailto:staff@operationcode.org" analyticsEventLabel="Project Rebuild - 'staff@operationcode.org' link" hasIcon={false}>staff@operationcode.org</OutboundLink>
 
 <div className="mx-auto mt-8 w-full text-center">
-  <LinkButton href="/donate">Donate</LinkButton>
+  <Link href="/donate" className={buttonVariants({ variant: 'default' })}>Donate</Link>
 </div>
 
 </Section>

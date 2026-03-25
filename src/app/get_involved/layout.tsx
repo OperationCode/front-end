@@ -3,7 +3,7 @@ import Link from 'next/link';
 import HeroBanner from '@/components/HeroBanner/HeroBanner';
 import Badge from '@/components/Badge/Badge';
 import Section from '@/components/Section/Section';
-import LinkButton from '@/components/Buttons/LinkButton/LinkButton';
+import { buttonVariants } from '@/components/ui/button';
 import DonateSection from '@/components/ReusableSections/DonateSection/DonateSection';
 import JoinSection from '@/components/ReusableSections/JoinSection/JoinSection';
 import HighfivingIcon from '@/static/images/icons/Custom/high_fiving.svg';
@@ -12,7 +12,7 @@ import ManHoldingKeyIcon from '@/static/images/icons/Custom/man_holding_key.svg'
 import NetworkingIcon from '@/static/images/icons/Custom/networked_people.svg';
 import ChartIcon from '@/static/images/icons/Custom/chart.svg';
 import PeopleMeetingIcon from '@/static/images/icons/Custom/people_meeting.svg';
-import { s3 } from '@/common/constants/urls';
+import { s3 } from '@/lib/constants/urls';
 
 const mentorItems = [
   {
@@ -62,8 +62,12 @@ export default function GetInvolvedLayout({ children }: PropsWithChildren) {
           </p>
 
           <div className="flex w-full max-w-prose flex-wrap justify-evenly gap-x-2 *:mt-4">
-            <LinkButton href="/about">Learn More</LinkButton>
-            <LinkButton href="/join">Join Us</LinkButton>
+            <Link href="/about" className={buttonVariants({ variant: 'default' })}>
+              Learn More
+            </Link>
+            <Link href="/join" className={buttonVariants({ variant: 'default' })}>
+              Join Us
+            </Link>
           </div>
         </div>
       </HeroBanner>

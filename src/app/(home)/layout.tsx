@@ -1,9 +1,10 @@
 import type { PropsWithChildren } from 'react';
+import Link from 'next/link';
 import HeroBanner from '@/components/HeroBanner/HeroBanner';
 import JoinSection from '@/components/ReusableSections/JoinSection/JoinSection';
 import SponsorsSection from '@/components/ReusableSections/SponsorsSection/SponsorsSection';
-import LinkButton from '@/components/Buttons/LinkButton/LinkButton';
-import { s3 } from '@/common/constants/urls';
+import { buttonVariants } from '@/components/ui/button';
+import { s3 } from '@/lib/constants/urls';
 
 export default function HomeLayout({ children }: PropsWithChildren) {
   return (
@@ -22,12 +23,12 @@ export default function HomeLayout({ children }: PropsWithChildren) {
         </div>
 
         <div className="flex w-full max-w-prose flex-wrap justify-evenly gap-x-2">
-          <LinkButton href="/about" className="mt-4">
+          <Link href="/about" className={buttonVariants({ size: 'lg', className: 'no-underline' })}>
             Learn More
-          </LinkButton>
-          <LinkButton href="/join" className="mt-4">
+          </Link>
+          <Link href="/join" className={buttonVariants({ size: 'lg', className: 'no-underline' })}>
             Join Us
-          </LinkButton>
+          </Link>
         </div>
       </HeroBanner>
 
