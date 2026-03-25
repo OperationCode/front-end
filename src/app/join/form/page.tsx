@@ -13,9 +13,7 @@ export default async function UpdateProfile() {
   const cookieStore = await cookies();
   const opCodeApplicantEmail = cookieStore.get('opCodeApplicantEmail');
 
-  if (!opCodeApplicantEmail) {
-    redirect('/');
-  }
+  if (!opCodeApplicantEmail) redirect('/');
 
   return (
     <>

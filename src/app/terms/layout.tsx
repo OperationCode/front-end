@@ -4,7 +4,7 @@ import HeroBanner from '@/components/HeroBanner/HeroBanner';
 export default function TermsLayout({ children }: { children: ReactNode }) {
   return (
     <>
-      <HeroBanner title="Terms of Service" className="min-h-[35dvh]" />
+      <HeroBanner title="Terms of Service" className="min-h-[25dvh]" />
       {children}
     </>
   );
