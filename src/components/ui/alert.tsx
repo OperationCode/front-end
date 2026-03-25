@@ -1,5 +1,5 @@
 import type { ComponentProps } from 'react';
-import { cn, cva, type VariantProps } from '@/common/utils/cva';
+import { cn, cva, type VariantProps } from '@/lib/utils';
 
 const alertVariants = cva({
   base: "group/alert relative grid w-full gap-0.5 rounded-lg border px-2.5 py-2 text-left text-sm has-data-[slot=alert-action]:relative has-data-[slot=alert-action]:pr-18 has-[>svg]:grid-cols-[auto_1fr] has-[>svg]:gap-x-2 *:[svg]:row-span-2 *:[svg]:translate-y-0.5 *:[svg]:text-current *:[svg:not([class*='size-'])]:size-4",
@@ -8,6 +8,10 @@ const alertVariants = cva({
       default: 'bg-card text-card-foreground',
       destructive:
         'bg-card text-destructive *:data-[slot=alert-description]:text-destructive/90 *:[svg]:text-current',
+      success:
+        'border-success-deep bg-success text-success-deep *:data-[slot=alert-description]:text-success-deep/90',
+      warning:
+        'border-warning-deep bg-warning text-warning-deep *:data-[slot=alert-description]:text-warning-deep/90',
     },
   },
   defaultVariants: {

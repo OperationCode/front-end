@@ -3,7 +3,8 @@
 import { Accordion as AccordionPrimitive } from '@base-ui/react/accordion';
 
 import { ChevronDownIcon, ChevronUpIcon } from 'lucide-react';
-import { cn } from '@/common/utils/cva';
+import { cn } from '@/lib/utils';
+import { ACCORDION_CONTENT, ACCORDION_TOGGLE_BUTTON } from '@/lib/constants/testIDs';
 
 function Accordion({ className, ...props }: AccordionPrimitive.Root.Props) {
   return (
@@ -29,6 +30,7 @@ function AccordionTrigger({ className, children, ...props }: AccordionPrimitive.
   return (
     <AccordionPrimitive.Header className="flex">
       <AccordionPrimitive.Trigger
+        data-testid={ACCORDION_TOGGLE_BUTTON}
         data-slot="accordion-trigger"
         className={cn(
           'group/accordion-trigger relative flex flex-1 items-start justify-between rounded-lg border border-transparent py-2.5 text-left text-sm font-medium transition-all outline-none hover:underline focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:after:border-ring aria-disabled:pointer-events-none aria-disabled:opacity-50 **:data-[slot=accordion-trigger-icon]:ml-auto **:data-[slot=accordion-trigger-icon]:size-4 **:data-[slot=accordion-trigger-icon]:text-muted-foreground',
@@ -53,6 +55,7 @@ function AccordionTrigger({ className, children, ...props }: AccordionPrimitive.
 function AccordionContent({ className, children, ...props }: AccordionPrimitive.Panel.Props) {
   return (
     <AccordionPrimitive.Panel
+      data-testid={ACCORDION_CONTENT}
       data-slot="accordion-content"
       className="overflow-hidden text-sm data-closed:animate-accordion-up data-open:animate-accordion-down"
       {...props}

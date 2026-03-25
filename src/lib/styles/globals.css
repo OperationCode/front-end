@@ -1,0 +1,136 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --radius: 0.625rem;
+  --background: #fafafa;
+  --foreground: #47566b;
+  --card: #ffffff;
+  --card-foreground: #47566b;
+  --popover: #ffffff;
+  --popover-foreground: #47566b;
+  --primary: #3ed6f0;
+  --primary-foreground: #252e3e;
+  --secondary: #252e3e;
+  --secondary-foreground: #3ed6f0;
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+  --accent: #f1f5f9;
+  --accent-foreground: #252e3e;
+  --destructive: hsl(355 63% 34%);
+  --destructive-foreground: #fafafa;
+  --border: #e2e8f0;
+  --input: #e2e8f0;
+  --ring: #3ed6f0;
+}
+
+@theme {
+  --color-white: #f7f7f7;
+  --color-burnt-orange: hsl(14 55% 45%);
+  --color-theme-gray-800: #e2e2e2;
+  --color-error: hsl(355 70% 91%);
+  --color-error-deep: hsl(355 63% 34%);
+  --color-success: hsl(132 35% 88%);
+  --color-success-deep: hsl(132 60% 23%);
+  --color-warning: hsl(46 100% 90%);
+  --color-warning-deep: hsl(39 80% 31%);
+  --font-family-bebas: var(--font-bebas), 'Bebas Neue', sans-serif;
+  --font-family-encode: var(--font-encode), 'Encode Sans', sans-serif;
+  --spacing-prose: 65ch;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply m-0 size-full p-0 font-family-encode text-lg font-normal text-foreground;
+  }
+
+  body {
+    @apply m-0 min-h-screen min-w-xs bg-background hyphens-none;
+    scrollbar-gutter: stable;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-family-bebas leading-snug tracking-widest uppercase;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  h3 {
+    font-size: 1.625rem;
+  }
+  h4 {
+    font-size: 1.375rem;
+  }
+  h5 {
+    font-size: 1.125rem;
+  }
+  h6 {
+    font-size: 1rem;
+  }
+
+  footer {
+    @apply bg-secondary text-white;
+  }
+
+  a {
+    @apply hover:underline;
+  }
+
+  p {
+    @apply max-w-prose;
+  }
+
+  :where(main) ul:not([class]) {
+    @apply list-disc pl-8;
+  }
+
+  :where(main) ol:not([class]) {
+    @apply list-decimal pl-8;
+  }
+
+  code {
+    @apply rounded border border-solid border-muted bg-muted;
+  }
+}

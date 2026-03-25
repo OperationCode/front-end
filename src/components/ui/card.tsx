@@ -1,6 +1,6 @@
 import type { ComponentProps } from 'react';
 
-import { cn } from '@/common/utils/cva';
+import { cn } from '@/lib/utils';
 
 function Card({
   className,

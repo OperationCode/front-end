@@ -14,7 +14,7 @@ import { getDefaultCallees } from 'eslint-plugin-better-tailwindcss/defaults';
 import noBarrelFiles from 'eslint-plugin-no-barrel-files';
 import eslintPluginLodash from 'eslint-plugin-lodash';
 import eslintPluginPlaywright from 'eslint-plugin-playwright';
-import eslintPluginStorybook from 'eslint-plugin-storybook';
+
 
 const compat = new FlatCompat({
   baseDirectory: import.meta.dirname,
@@ -40,8 +40,6 @@ export default defineConfig(
     'bin/**',
     'cypress-coverage/**',
     'vitest-coverage/**',
-    '.storybook-dist/**',
-    'storybook-static/**',
     'playwright-report/**',
     'test-results/**',
     'public/**',
@@ -161,7 +159,6 @@ export default defineConfig(
           json: 'always',
           png: 'always',
           svg: 'always',
-          stories: 'always',
         },
       ],
       'import-x/no-unresolved': 'off',
@@ -220,7 +217,7 @@ export default defineConfig(
     },
     settings: {
       'better-tailwindcss': {
-        entryPoint: './src/common/styles/globals.css',
+        entryPoint: './src/lib/styles/globals.css',
         callees: [...getDefaultCallees(), 'cn', 'cva'],
       },
     },
@@ -228,9 +225,6 @@ export default defineConfig(
 
   // ── No Barrel Files ──
   noBarrelFiles.flat,
-
-  // ── Storybook (flat config) ──
-  ...eslintPluginStorybook.configs['flat/recommended'],
 
   // ── CommonJS files ──
   {
@@ -285,12 +279,6 @@ export default defineConfig(
                 'Please use named imports of "prop-types".\n Example: "import { func } from \'prop-types\';"',
             },
             {
-              name: 'formik',
-              importNames: ['Form'],
-              message:
-                'Please use our Form component to have good defaults defined.\n "import Form from \'@/components/Form/Form\';"',
-            },
-            {
               name: 'react',
               importNames: ['default'],
               message: 'React is globally available for all page files.',
@@ -299,13 +287,13 @@ export default defineConfig(
               name: 'tailwind-merge',
               importNames: ['twMerge'],
               message:
-                'Please import `cn` from `@/common/utils/cva.ts` instead of directly from tailwind-merge.',
+                'Please import `cn` from `@/lib/utils.ts` instead of directly from tailwind-merge.',
             },
             {
               name: 'class-variance-authority',
               importNames: ['cx', 'cva'],
               message:
-                'Please import from `@/common/utils/cva.ts` instead of directly from class-variance-authority.',
+                'Please import from `@/lib/utils.ts` instead of directly from class-variance-authority.',
             },
           ],
         },
@@ -366,12 +354,6 @@ export default defineConfig(
               message: 'Please use `@/components/Form/Select/ThemedReactSelect` instead.',
             },
             {
-              name: 'formik',
-              importNames: ['Form'],
-              message:
-                'Please use our Form component to have good defaults defined.\n "import { Form } from \'@/components/Form/Form\';"',
-            },
-            {
               name: 'react',
               importNames: ['default'],
               message: 'React is globally available for all page files.',
@@ -380,13 +362,13 @@ export default defineConfig(
               name: 'tailwind-merge',
               importNames: ['twMerge'],
               message:
-                'Please import `cn` from `@/common/utils/cva.ts` instead of directly from tailwind-merge.',
+                'Please import `cn` from `@/lib/utils.ts` instead of directly from tailwind-merge.',
             },
             {
               name: 'class-variance-authority',
               importNames: ['cx', 'cva'],
               message:
-                'Please import from `@/common/utils/cva.ts` instead of directly from class-variance-authority.',
+                'Please import from `@/lib/utils.ts` instead of directly from class-variance-authority.',
             },
           ],
         },
