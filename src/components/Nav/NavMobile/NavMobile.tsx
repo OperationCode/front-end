@@ -3,8 +3,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Menu } from 'lucide-react';
-import { cn } from '@/common/utils/cva';
-import { s3 } from '@/common/constants/urls';
+import { cn } from '@/lib/utils';
+import { s3 } from '@/lib/constants/urls';
 import { Sheet, SheetTrigger, SheetContent } from '@/components/ui/sheet';
 import ScreenReaderOnly from '@/components/ScreenReaderOnly/ScreenReaderOnly';
 

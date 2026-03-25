@@ -3,7 +3,7 @@
 import { usePathname } from 'next/navigation';
 import { useEffect, useRef } from 'react';
 import * as Sentry from '@sentry/nextjs';
-import { gtag } from '@/common/utils/thirdParty/gtag';
+import { gtag } from '@/lib/utils/thirdParty/gtag';
 
 const isProduction = process.env.NODE_ENV === 'production';
 

@@ -1,4 +1,4 @@
-import { cn } from '@/common/utils/cva';
+import { cn } from '@/lib/utils';
 import Section from '@/components/Section/Section';
 
 const fonts = ['Bebas Neue' as const, 'Encode Sans' as const];

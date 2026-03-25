@@ -1,8 +1,8 @@
 import type { ReactElement, ReactNode } from 'react';
 import Image from 'next/image';
-import { cn } from '@/common/utils/cva';
-import { FLAT_CARD_IMAGE } from '@/common/constants/testIDs';
-import { getPlaceholder } from '@/common/utils/next-utils';
+import { cn } from '@/lib/utils';
+import { FLAT_CARD_IMAGE } from '@/lib/constants/testIDs';
+import { getPlaceholder } from '@/lib/utils/next-utils';
 
 interface FlatCardProps {
   button?: ReactElement | null;

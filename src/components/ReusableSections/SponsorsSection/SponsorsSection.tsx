@@ -1,7 +1,7 @@
 import Container from '@/components/Container/Container';
 import Heading from '@/components/Heading/Heading';
 import PartnerLogoLink from '@/components/PartnerLogoLink/PartnerLogoLink';
-import { PARTNER_TYPES, partnersSortedByName } from '@/common/constants/partners';
+import { PARTNER_TYPES, partnersSortedByName } from '@/lib/constants/partners';
 
 interface Partner {
   name: string;

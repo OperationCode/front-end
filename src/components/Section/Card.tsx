@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { cn } from '@/common/utils/cva';
+import { cn } from '@/lib/utils';
 import BaseCard from '@/components/Cards/Card/Card';
 
 interface CardProps {

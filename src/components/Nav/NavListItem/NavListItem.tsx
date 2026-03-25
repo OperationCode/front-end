@@ -3,7 +3,7 @@ import Link from 'next/link';
 import PlusIcon from '@/static/images/icons/plus.svg';
 import MinusIcon from '@/static/images/icons/minus.svg';
 import OutboundLink from '@/components/OutboundLink/OutboundLink';
-import { cn } from '@/common/utils/cva';
+import { cn } from '@/lib/utils';
 
 interface SublinkType {
   name: string;

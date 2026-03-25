@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import { s3 } from '@/common/constants/urls';
-import { cn } from '@/common/utils/cva';
+import { s3 } from '@/lib/constants/urls';
+import { cn } from '@/lib/utils';
 
 const pressPhotos = [
   {

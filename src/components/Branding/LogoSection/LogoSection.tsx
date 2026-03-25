@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Badge from '@/components/Badge/Badge';
 import Section from '@/components/Section/Section';
-import { s3 } from '@/common/constants/urls';
+import { s3 } from '@/lib/constants/urls';
 
 const smLogos = [
   { img: 'small-blue-logo.png', alt: 'Small Blue Accented Logo', label: 'Blue' },

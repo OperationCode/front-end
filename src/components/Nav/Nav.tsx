@@ -6,9 +6,9 @@ import { useRouter, usePathname } from 'next/navigation';
 import dynamic from 'next/dynamic';
 import Logo from '@/static/images/logo.svg';
 
-import { desktopNavItems, mobileNavItems } from '@/common/constants/navigation';
+import { desktopNavItems, mobileNavItems } from '@/lib/constants/navigation';
 import NavMobile from '@/components/Nav/NavMobile/NavMobile';
-import { cn } from '@/common/utils/cva';
+import { cn } from '@/lib/utils';
 
 const NavListItem = dynamic(() => import('@/components/Nav/NavListItem/NavListItem'), {
   ssr: false,

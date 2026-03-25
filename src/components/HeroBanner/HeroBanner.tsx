@@ -1,6 +1,6 @@
-import { cn } from '@/common/utils/cva';
+import { cn } from '@/lib/utils';
 import Container from '@/components/Container/Container';
-import { HERO_BANNER_H1 } from '@/common/constants/testIDs';
+import { HERO_BANNER_H1 } from '@/lib/constants/testIDs';
 
 export interface HeroBannerPropsType {
   /**
@@ -25,10 +25,12 @@ function HeroBanner({ backgroundImageSource, children, className, title }: HeroB
   return (
     <Container
       backgroundImageSource={backgroundImageSource}
-      className={cn('min-h-dvh pt-20 text-shadow-[0_0_15px_#111111]', className)}
+      className={cn('min-h-dvh pt-20 [&_p]:text-shadow-md', className)}
     >
       <h1
-        className={cn({ 'mb-4 border-b-4 border-b-primary text-center': children })}
+        className={cn('text-shadow-md', {
+          'mb-4 border-b-4 border-b-primary text-center': children,
+        })}
         data-testid={HERO_BANNER_H1}
       >
         {title}

@@ -1,6 +1,6 @@
 import type { JSX } from 'react';
 import kebabCase from 'lodash/kebabCase';
-import { cn } from '@/common/utils/cva';
+import { cn } from '@/lib/utils';
 import ScreenReaderOnly from '@/components/ScreenReaderOnly/ScreenReaderOnly';
 import LinkIcon from '@/static/images/icons/FontAwesome/link-solid.svg';
 

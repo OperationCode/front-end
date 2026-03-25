@@ -1,8 +1,9 @@
 import { render } from '@testing-library/react';
+import Link from 'next/link';
 import createSnapshotTest from '@/test-utils/createSnapshotTest';
-import { FLAT_CARD_IMAGE } from '@/common/constants/testIDs';
-import { s3 } from '@/common/constants/urls';
-import LinkButton from '@/components/Buttons/LinkButton/LinkButton';
+import { FLAT_CARD_IMAGE } from '@/lib/constants/testIDs';
+import { s3 } from '@/lib/constants/urls';
+import { buttonVariants } from '@/components/ui/button';
 import FlatCard from '../FlatCard';
 
 describe('FlatCard', () => {
@@ -23,7 +24,11 @@ describe('FlatCard', () => {
     createSnapshotTest(
       <FlatCard
         {...requiredProps}
-        button={<LinkButton href="/">Widget Action</LinkButton>}
+        button={
+          <Link href="/" className={buttonVariants({ variant: 'default' })}>
+            Widget Action
+          </Link>
+        }
         className="test-class"
         header={
           <>

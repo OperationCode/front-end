@@ -1,4 +1,4 @@
-import { cn } from '@/common/utils/cva';
+import { cn } from '@/lib/utils';
 
 interface InlineLoadingSpinnerProps {
   className?: string;

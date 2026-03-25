@@ -1,6 +1,6 @@
 import * as Tabs from '@radix-ui/react-tabs';
 import OutboundLink from '@/components/OutboundLink/OutboundLink';
-import { cn } from '@/common/utils/cva';
+import { cn } from '@/lib/utils';
 import * as articlesMap from './Articles';
 
 function PressLinks() {

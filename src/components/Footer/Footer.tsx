@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import OutboundLink from '@/components/OutboundLink/OutboundLink';
 import SocialMedia from '@/components/SocialMedia/SocialMedia';
-import { footerItems } from '@/common/constants/navigation';
+import { footerItems } from '@/lib/constants/navigation';
 import Logo from '@/static/images/logo.svg';
 
 import platniumTransparencySeal from '@/static/images/platinum-transparency.png';
