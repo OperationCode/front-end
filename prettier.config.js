@@ -1,6 +1,6 @@
 module.exports = {
   plugins: ['prettier-plugin-tailwindcss'],
-  tailwindStylesheet: './src/common/styles/globals.css',
+  tailwindStylesheet: './src/lib/styles/globals.css',
   tailwindFunctions: ['cx'],
   arrowParens: 'always',
   printWidth: 100,

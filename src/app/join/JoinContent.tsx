@@ -3,11 +3,11 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { gtag } from '@/common/utils/thirdParty/gtag';
+import { gtag } from '@/lib/utils/thirdParty/gtag';
 import HeroBanner from '@/components/HeroBanner/HeroBanner';
-import Content from '@/components/Content/Content';
+import Section from '@/components/Section/Section';
 import { RegistrationForm } from '@/components/Forms/RegistrationForm/RegistrationForm';
-import Modal from '@/components/Modal/Modal';
+import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog';
 
 const pageTitle = 'Join';
 
@@ -48,29 +48,33 @@ export default function JoinContent({ hasRegistrationError }: { hasRegistrationE
         </div>
       </HeroBanner>
 
-      <Content theme="gray" columns={[<RegistrationForm key="form" onSuccess={handleSuccess} />]} />
+      <Section theme="gray">
+        <RegistrationForm onSuccess={handleSuccess} />
+      </Section>
 
-      <Modal
-        isOpen={isErrorModalOpen}
-        onRequestClose={() => setIsErrorModalOpen(false)}
-        screenReaderLabel="Registration error"
+      <Dialog
+        open={isErrorModalOpen}
+        onOpenChange={(isOpen) => !isOpen && setIsErrorModalOpen(false)}
       >
-        <div className="max-w-md space-y-4 text-center">
-          <h2 className="text-xl font-bold">Registration Incomplete</h2>
-          <p>
-            It looks like we're missing information from the first step of registration. Please
-            complete the form below to get started.
-          </p>
-          <p>
-            If you've already completed this step and were unexpectedly redirected here, something
-            may be wrong on our end. Please email us at{' '}
-            <a href="mailto:staff@operationcode.org?subject=Registration Issue">
-              staff@operationcode.org
-            </a>{' '}
-            so we can help.
-          </p>
-        </div>
-      </Modal>
+        <DialogContent>
+          <DialogTitle className="sr-only">Registration error</DialogTitle>
+          <div className="max-w-md space-y-4 text-center">
+            <h2 className="text-xl font-bold">Registration Incomplete</h2>
+            <p>
+              It looks like we're missing information from the first step of registration. Please
+              complete the form below to get started.
+            </p>
+            <p>
+              If you've already completed this step and were unexpectedly redirected here, something
+              may be wrong on our end. Please email us at{' '}
+              <a href="mailto:staff@operationcode.org?subject=Registration Issue">
+                staff@operationcode.org
+              </a>{' '}
+              so we can help.
+            </p>
+          </div>
+        </DialogContent>
+      </Dialog>
     </>
   );
 }

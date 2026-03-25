@@ -32,7 +32,7 @@ export default defineConfig({
       reportOnFailure: true,
       reportsDirectory: './vitest-coverage',
       include: [
-        'src/common/**/*.{js,ts,tsx}',
+        'src/lib/**/*.{js,ts,tsx}',
         'src/components/**/*.{js,ts,tsx}',
         'src/decorators/**/*.{js,ts,tsx}',
       ],
@@ -41,7 +41,6 @@ export default defineConfig({
         'coverage/**',
         '{cypress,vitest}-coverage/**',
         'dist/**',
-        '.storybook-dist/**',
         '.next/**',
         '**/*.d.ts',
         '{karma,rollup,webpack,vite,vitest,jest,ava,playwright,build}.config.*',
@@ -53,18 +52,18 @@ export default defineConfig({
         // Folders covered by integration tests
         'node_modules/**',
         'cypress/**',
-        'src/common/config/**',
-        'src/common/styles/**',
-        'src/common/constants/**',
+        'src/lib/config/**',
+        'src/lib/styles/**',
+        'src/lib/constants/**',
 
         // No real logic to test here
-        'src/common/utils/api-utils.{[jt]s}',
+        'src/lib/utils/api-utils.{[jt]s}',
         'src/components/ZipRecruiterJobs/ZipRecruiterJobs.{[jt]s}',
         'src/components/Press/PressLinks/Articles.{[jt]s}',
         'src/components/Timeline/historyData.{[jt]s}',
 
         // Don't collect coverage from import/export mappers
-        'src/common/(.*)/index.{[jt]s}',
+        'src/lib/(.*)/index.{[jt]s}',
         'src/components/(.*)/index.{[jt]s}',
       ],
     },

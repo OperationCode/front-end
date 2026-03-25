@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
-import { SUCCESS_PAGE_MESSAGE } from '@/common/constants/testIDs';
-import LinkButton from '@/components/Buttons/LinkButton/LinkButton';
+import Link from 'next/link';
+import { SUCCESS_PAGE_MESSAGE } from '@/lib/constants/testIDs';
+import { buttonVariants } from '@/components/ui/button';
 import HeroBanner from '@/components/HeroBanner/HeroBanner';
 import OutboundLink from '@/components/OutboundLink/OutboundLink';
 
@@ -24,9 +25,9 @@ export default function JoinSuccess() {
         .
       </p>
 
-      <LinkButton href="/" className="mt-4">
+      <Link href="/" className={buttonVariants({ variant: 'default', className: 'mt-4' })}>
         Go Home
-      </LinkButton>
+      </Link>
     </HeroBanner>
   );
 }

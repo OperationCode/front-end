@@ -1,13 +1,13 @@
-import { Field } from 'formik';
-import * as Yup from 'yup';
-import { validationErrorMessages } from '@/common/constants/messages';
+import { Controller, useFormContext } from 'react-hook-form';
+import { z } from 'zod';
+import { validationErrorMessages } from '@/lib/constants/messages';
 import { SelectSingle } from '@/components/Form/Select/SelectSingle';
-import Alert from '@/components/Alert/Alert';
+import { Alert } from '@/components/ui/alert';
 
 MilitaryStatus.title = 'Military Status';
 
-MilitaryStatus.validationSchema = Yup.object().shape({
-  militaryAffiliation: Yup.string().required(validationErrorMessages.required),
+MilitaryStatus.validationSchema = z.object({
+  militaryAffiliation: z.string().min(1, validationErrorMessages.required),
 });
 
 MilitaryStatus.initialValues = {
@@ -31,9 +31,11 @@ const options = [
 ];
 
 export function MilitaryStatus({ isSubmitting }: MilitaryStatusProps) {
+  const { control } = useFormContext();
+
   return (
     <div className="flex flex-col gap-4">
-      <Alert type="warning">
+      <Alert variant="warning">
         Please note that many of our services are only for veterans or their spouses. Also, note
         that you may feel represented by multiple categories; however, you may only choose one for
         this registration form.
@@ -41,13 +43,23 @@ export function MilitaryStatus({ isSubmitting }: MilitaryStatusProps) {
 
       <p>How do you classify yourself in regards to being part of the military?</p>
 
-      <Field
-        className="w-full"
+      <Controller
         name="militaryAffiliation"
-        label="Military Affiliation*"
-        component={SelectSingle}
-        options={options.map((option) => ({ value: option, label: option }))}
-        isDisabled={isSubmitting}
+        control={control}
+        render={({ field, fieldState }) => (
+          <SelectSingle
+            className="w-full"
+            name={field.name}
+            value={field.value}
+            onChange={field.onChange}
+            onBlur={field.onBlur}
+            label="Military Affiliation*"
+            options={options.map((option) => ({ value: option, label: option }))}
+            disabled={isSubmitting}
+            error={fieldState.error?.message}
+            isTouched={fieldState.isTouched}
+          />
+        )}
       />
     </div>
   );

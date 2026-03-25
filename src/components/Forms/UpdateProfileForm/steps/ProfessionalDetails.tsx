@@ -1,16 +1,16 @@
-import { Field } from 'formik';
-import * as Yup from 'yup';
-import { validationErrorMessages } from '@/common/constants/messages';
+import { Controller, useFormContext } from 'react-hook-form';
+import { z } from 'zod';
+import { validationErrorMessages } from '@/lib/constants/messages';
 import Input from '@/components/Form/Input/Input';
 import { SelectSingle } from '@/components/Form/Select/SelectSingle';
-import { mapStringsToSelectOptions } from '@/common/utils/array-utils';
+import { mapStringsToSelectOptions } from '@/lib/utils/array-utils';
 
 ProfessionalDetails.title = 'Professional Details';
 
-ProfessionalDetails.validationSchema = Yup.object().shape({
-  employmentStatus: Yup.string().nullable().required(validationErrorMessages.required),
-  companyName: Yup.string().nullable(),
-  companyRole: Yup.string().nullable(),
+ProfessionalDetails.validationSchema = z.object({
+  employmentStatus: z.string().min(1, validationErrorMessages.required),
+  companyName: z.string().optional().default(''),
+  companyRole: z.string().optional().default(''),
 });
 
 ProfessionalDetails.initialValues = {
@@ -28,31 +28,57 @@ interface ProfessionalDetailsProps {
 const options = mapStringsToSelectOptions(['Full-Time', 'Part-Time', 'Unemployed']);
 
 export function ProfessionalDetails({ isSubmitting }: ProfessionalDetailsProps) {
+  const { control } = useFormContext();
+
   return (
     <div className="flex flex-col gap-4">
-      <Field
-        className="w-full"
+      <Controller
         name="employmentStatus"
-        label="Employment Status*"
-        component={SelectSingle}
-        options={options}
-        isDisabled={isSubmitting}
+        control={control}
+        render={({ field, fieldState }) => (
+          <SelectSingle
+            className="w-full"
+            name={field.name}
+            value={field.value}
+            onChange={field.onChange}
+            onBlur={field.onBlur}
+            label="Employment Status*"
+            options={options}
+            disabled={isSubmitting}
+            error={fieldState.error?.message}
+            isTouched={fieldState.isTouched}
+          />
+        )}
       />
 
-      <Field
-        type="text"
+      <Controller
         name="companyName"
-        label="Company Name"
-        component={Input}
-        isDisabled={isSubmitting}
+        control={control}
+        render={({ field, fieldState }) => (
+          <Input
+            {...field}
+            type="text"
+            label="Company Name"
+            isDisabled={isSubmitting}
+            error={fieldState.error?.message}
+            isTouched={fieldState.isTouched}
+          />
+        )}
       />
 
-      <Field
-        type="text"
+      <Controller
         name="companyRole"
-        label="Company Role"
-        component={Input}
-        isDisabled={isSubmitting}
+        control={control}
+        render={({ field, fieldState }) => (
+          <Input
+            {...field}
+            type="text"
+            label="Company Role"
+            isDisabled={isSubmitting}
+            error={fieldState.error?.message}
+            isTouched={fieldState.isTouched}
+          />
+        )}
       />
     </div>
   );

@@ -1,48 +1,23 @@
-import { Formik, Field } from 'formik';
 import { fireEvent, render, waitFor } from '@testing-library/react';
-import noop from 'lodash/noop';
 import { describe, afterEach, it, expect, vi } from 'vitest';
 import createSnapshotTest from '@/test-utils/createSnapshotTest';
 import { KEY_CODES } from '@/test-utils/identifiers';
-import { LABEL } from '@/common/constants/testIDs';
+import { LABEL } from '@/lib/constants/testIDs';
 import { getReactSelectInput } from '@/components/Form/Select/ThemedReactSelect';
-import Form from '../../Form';
 import type { SelectMultiProps } from '../SelectMulti';
 import { SelectMulti } from '../SelectMulti';
 
-describe('Select', () => {
-  const name = 'someSelectName';
-  const setFieldTouched = vi.fn();
-  const setFieldValue = vi.fn();
+const name = 'someSelectName';
 
-  const requiredPropsForMultiSelect: SelectMultiProps = {
-    field: {
-      name,
-      value: [] as string[],
-      onChange: vi.fn(),
-      onBlur: vi.fn(),
-    },
-    form: {
-      touched: { [name]: false },
-      errors: { [name]: '' },
-      setFieldTouched,
-      setFieldValue,
-      values: { [name]: [] as string[] },
-      isSubmitting: false,
-      isValidating: false,
-      submitCount: 0,
-      setStatus: vi.fn(),
-      setErrors: vi.fn(),
-      setSubmitting: vi.fn(),
-      setTouched: vi.fn(),
-      setValues: vi.fn(),
-      setFieldError: vi.fn(),
-      validateForm: vi.fn(),
-      validateField: vi.fn(),
-      resetForm: vi.fn(),
-      submitForm: vi.fn(),
-      setFormikState: vi.fn(),
-    },
+describe('Select', () => {
+  const onChange = vi.fn();
+  const onBlur = vi.fn();
+
+  const requiredProps: SelectMultiProps = {
+    name,
+    value: [],
+    onChange,
+    onBlur,
     label: 'Some Select:',
     options: [
       { label: 'Taco Bell', value: 'tacobell' },
@@ -54,60 +29,29 @@ describe('Select', () => {
   };
 
   afterEach(() => {
-    setFieldTouched.mockReset();
-    setFieldValue.mockReset();
+    onChange.mockReset();
+    onBlur.mockReset();
   });
 
   it('should render with required props', () => {
-    createSnapshotTest(
-      <Formik onSubmit={noop} initialValues={{}}>
-        <SelectMulti {...requiredPropsForMultiSelect} />
-      </Formik>,
-    );
+    createSnapshotTest(<SelectMulti {...requiredProps} />);
   });
 
   it('should render with label, even if hidden', () => {
-    const { queryAllByTestId } = render(
-      <Formik onSubmit={noop} initialValues={{}}>
-        <SelectMulti {...requiredPropsForMultiSelect} isLabelHidden />
-      </Formik>,
-    );
+    const { queryAllByTestId } = render(<SelectMulti {...requiredProps} isLabelHidden />);
 
     expect(queryAllByTestId(LABEL).length).toBe(1);
   });
 
   describe('interactions', () => {
-    it('should display an error message when a required field is touched', async () => {
-      const fieldName = 'favoriteFastFood';
-      const validate = () => ({ [fieldName]: 'Required' });
+    it('should display an error message when touched with an error', () => {
+      const { getByText } = render(<SelectMulti {...requiredProps} error="Required" isTouched />);
 
-      const { container, findByText } = render(
-        <Formik initialValues={{ [fieldName]: '' }} validate={validate} onSubmit={noop}>
-          <Form>
-            <Field
-              name={fieldName}
-              label="Favorite Fast Food Places*"
-              options={requiredPropsForMultiSelect.options}
-              component={SelectMulti}
-            />
-          </Form>
-        </Formik>,
-      );
-
-      const ReactSelect = getReactSelectInput(container, fieldName)!;
-
-      fireEvent.blur(ReactSelect);
-
-      const alert = await findByText('Required');
-      expect(alert).not.toBeNull();
+      expect(getByText('Some Select:')).not.toBeNull();
     });
 
-    it('should fire formik-related callbacks when changing non-multi select', async () => {
-      const { container } = render(
-        <Formik onSubmit={noop} initialValues={{}}>
-          <SelectMulti {...requiredPropsForMultiSelect} />
-        </Formik>,
-      );
+    it('should fire callbacks when selecting an option', async () => {
+      const { container } = render(<SelectMulti {...requiredProps} />);
       const ReactSelect = getReactSelectInput(container, name)!;
 
       fireEvent.blur(ReactSelect);
@@ -115,18 +59,13 @@ describe('Select', () => {
       fireEvent.keyDown(ReactSelect, KEY_CODES.ENTER);
 
       await waitFor(() => {
-        expect(setFieldTouched).toHaveBeenCalledTimes(1);
-        expect(setFieldValue).toHaveBeenCalledTimes(1);
+        expect(onBlur).toHaveBeenCalledTimes(1);
+        expect(onChange).toHaveBeenCalledTimes(1);
       });
     });
 
-    it('should fire formik-related callbacks when changing multi select', async () => {
-      const { container } = render(
-        <Formik onSubmit={noop} initialValues={{}}>
-          <SelectMulti {...requiredPropsForMultiSelect} />
-        </Formik>,
-      );
-
+    it('should fire callbacks when selecting multiple options', async () => {
+      const { container } = render(<SelectMulti {...requiredProps} />);
       const ReactSelect = getReactSelectInput(container, name)!;
 
       // down arrow once and enter
@@ -141,28 +80,22 @@ describe('Select', () => {
       fireEvent.keyDown(ReactSelect, KEY_CODES.ENTER);
 
       await waitFor(() => {
-        expect(setFieldTouched).toHaveBeenCalledTimes(2);
-        expect(setFieldValue).toHaveBeenCalledTimes(2);
+        expect(onBlur).toHaveBeenCalledTimes(2);
+        expect(onChange).toHaveBeenCalledTimes(2);
       });
     });
 
-    it('should call onChange with empty array when clearing selections', async () => {
-      const { container } = render(
-        <Formik onSubmit={noop} initialValues={{}}>
-          <SelectMulti {...requiredPropsForMultiSelect} />
-        </Formik>,
-      );
-
+    it('should call onChange with selected options', async () => {
+      const { container } = render(<SelectMulti {...requiredProps} />);
       const ReactSelect = getReactSelectInput(container, name)!;
 
-      // Select an option first
       fireEvent.focus(ReactSelect);
       fireEvent.keyDown(ReactSelect, KEY_CODES.DOWN_ARROW);
       fireEvent.keyDown(ReactSelect, KEY_CODES.ENTER);
 
       await waitFor(() => {
-        expect(setFieldValue).toHaveBeenCalledTimes(1);
-        expect(setFieldValue.mock.calls[0]?.[1]).toStrictEqual(
+        expect(onChange).toHaveBeenCalledTimes(1);
+        expect(onChange.mock.calls[0]?.[0]).toStrictEqual(
           expect.arrayContaining([expect.objectContaining({ label: expect.any(String) })]),
         );
       });

@@ -1,8 +1,7 @@
 node_modules
 package.json
 pnpm-lock.yaml
-.babelrc
-**/.babelrc
+next-env.d.ts
 .next
 .github
 bin

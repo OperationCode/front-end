@@ -1,14 +1,28 @@
-import '@/common/styles/globals.css';
+import '@/lib/styles/globals.css';
 
 import type { Metadata } from 'next';
 import Script from 'next/script';
 import type { PropsWithChildren } from 'react';
+import { Encode_Sans, Bebas_Neue } from 'next/font/google';
 
-import { clientTokens } from '@/common/config/environment';
+import { clientTokens } from '@/lib/config/environment';
 import { AnalyticsProvider } from '@/components/Analytics/AnalyticsProvider';
 import Footer from '@/components/Footer/Footer';
 import Nav from '@/components/Nav/Nav';
 import { ScrollToTopButton } from '@/components/ScrollToTopButton/ScrollToTopButton';
+
+const encodeSans = Encode_Sans({
+  subsets: ['latin'],
+  variable: '--font-encode',
+  display: 'swap',
+});
+
+const bebasNeue = Bebas_Neue({
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--font-bebas',
+  display: 'swap',
+});
 
 const defaultOgImage = `https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/oc_image.png`;
 
@@ -47,7 +61,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
   const isProduction = process.env.VERCEL_ENV === 'production';
 
   return (
-    <html lang="en">
+    <html lang="en" className={`${encodeSans.variable} ${bebasNeue.variable}`}>
       <head>
         <link rel="icon" sizes="192x192" href="/static/apple-icon-180x180.png" />
         {isProduction ? (

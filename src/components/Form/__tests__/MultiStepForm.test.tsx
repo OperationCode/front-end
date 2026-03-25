@@ -1,17 +1,16 @@
 import { vi } from 'vitest';
-import type { ReactElement } from 'react';
-import { Component } from 'react';
 import { faker } from '@faker-js/faker';
 import get from 'lodash/get';
 import { fireEvent, render, waitFor, getByTestId } from '@testing-library/react';
-import { Field } from 'formik';
-import * as Yup from 'yup';
-import { networkErrorMessages } from '@/common/constants/messages';
+import { useFormContext } from 'react-hook-form';
+import { z } from 'zod';
+import { networkErrorMessages } from '@/lib/constants/messages';
 import {
   MULTI_STEP_SUBMIT_BUTTON,
   MULTI_STEP_STEP_BUTTON,
   MULTI_STEP_PREVIOUS_BUTTON,
-} from '@/common/constants/testIDs';
+} from '@/lib/constants/testIDs';
+import type { StepComponent } from '../MultiStepForm';
 import { MultiStepForm } from '../MultiStepForm';
 
 interface SubmitFormParams {
@@ -37,45 +36,27 @@ const typeIntoInput = (input: HTMLElement, inputName: string, value: string | nu
 };
 
 function makeNameForm(submitHandler = vi.fn()) {
-  return class NameForm extends Component {
-    static validationSchema = Yup.object().shape({
-      firstName: Yup.string().required(),
-      lastName: Yup.string().required(),
-    });
-
-    static initialValues = {
-      firstName: '',
-      lastName: '',
-    };
-
-    static submitHandler = submitHandler;
-
-    render(): ReactElement {
-      const { props } = this;
-      return (
-        <>
-          <label htmlFor="firstName">First Name*</label>
-          <Field
-            type="text"
-            name="firstName"
-            id="firstName"
-            data-testid="firstName"
-            component="input"
-            {...props}
-          />
-          <label htmlFor="lastName">Last Name*</label>
-          <Field
-            type="text"
-            name="lastName"
-            id="lastName"
-            data-testid="lastName"
-            component="input"
-            {...props}
-          />
-        </>
-      );
-    }
+  const NameForm: StepComponent<Record<string, unknown>> = () => {
+    const { register } = useFormContext();
+    return (
+      <>
+        <label htmlFor="firstName">First Name*</label>
+        <input type="text" id="firstName" data-testid="firstName" {...register('firstName')} />
+        <label htmlFor="lastName">Last Name*</label>
+        <input type="text" id="lastName" data-testid="lastName" {...register('lastName')} />
+      </>
+    );
   };
+
+  NameForm.title = 'Name';
+  NameForm.validationSchema = z.object({
+    firstName: z.string().min(1),
+    lastName: z.string().min(1),
+  });
+  NameForm.initialValues = { firstName: '', lastName: '' };
+  NameForm.submitHandler = submitHandler;
+
+  return NameForm;
 }
 
 describe('MultiStepForm', () => {
@@ -87,78 +68,59 @@ describe('MultiStepForm', () => {
     'The Answer to the Ultimate Question of Life, the Universe, and Everything is 42';
   const ultimateAnswerFormSubmitHandler = vi.fn();
 
-  class UltimateAnswerForm extends Component {
-    static validationSchema = Yup.object().shape({
-      ultimateAnswer: Yup.string().matches(/42/, ultimateAnswerIncorrectMessage).required(),
-    });
-
-    static initialValues = {
-      ultimateAnswer: '',
-    };
-
-    static submitHandler = ultimateAnswerFormSubmitHandler;
-
-    render(): ReactElement {
-      const { props } = this;
-      return (
-        <>
-          <label htmlFor="ultimateAnswer">
-            What is the answer to the Ultimate Question of Life?*
-          </label>
-          <Field
-            type="text"
-            name="ultimateAnswer"
-            id="ultimateAnswer"
-            data-testid="ultimateAnswer"
-            component="input"
-            {...props}
-          />
-        </>
-      );
-    }
-  }
+  const UltimateAnswerForm: StepComponent<Record<string, unknown>> = () => {
+    const { register } = useFormContext();
+    return (
+      <>
+        <label htmlFor="ultimateAnswer">
+          What is the answer to the Ultimate Question of Life?*
+        </label>
+        <input
+          type="text"
+          id="ultimateAnswer"
+          data-testid="ultimateAnswer"
+          {...register('ultimateAnswer')}
+        />
+      </>
+    );
+  };
+  UltimateAnswerForm.title = 'Ultimate Answer';
+  UltimateAnswerForm.validationSchema = z.object({
+    ultimateAnswer: z.string().regex(/42/, ultimateAnswerIncorrectMessage),
+  });
+  UltimateAnswerForm.initialValues = { ultimateAnswer: '' };
+  UltimateAnswerForm.submitHandler = ultimateAnswerFormSubmitHandler;
 
   const favoritesFormSubmitHandler = vi.fn();
 
-  class FavoritesForm extends Component {
-    static validationSchema = Yup.object().shape({
-      favoriteNumber: Yup.string().required(),
-      favoritePerson: Yup.string(),
-    });
-
-    static initialValues = {
-      favoriteNumber: '',
-      favoritePerson: '',
-    };
-
-    static submitHandler = favoritesFormSubmitHandler;
-
-    render(): ReactElement {
-      const { props } = this;
-      return (
-        <>
-          <label htmlFor="favoriteNumber">Favorite Number*</label>
-          <Field
-            type="text"
-            name="favoriteNumber"
-            id="favoriteNumber"
-            data-testid="favoriteNumber"
-            component="input"
-            {...props}
-          />
-          <label htmlFor="favoritePerson">Favorite Person*</label>
-          <Field
-            type="text"
-            name="favoritePerson"
-            id="favoritePerson"
-            data-testid="favoritePerson"
-            component="input"
-            {...props}
-          />
-        </>
-      );
-    }
-  }
+  const FavoritesForm: StepComponent<Record<string, unknown>> = () => {
+    const { register } = useFormContext();
+    return (
+      <>
+        <label htmlFor="favoriteNumber">Favorite Number*</label>
+        <input
+          type="text"
+          id="favoriteNumber"
+          data-testid="favoriteNumber"
+          {...register('favoriteNumber')}
+        />
+        <label htmlFor="favoritePerson">Favorite Person*</label>
+        <input
+          type="text"
+          id="favoritePerson"
+          data-testid="favoritePerson"
+          {...register('favoritePerson')}
+        />
+      </>
+    );
+  };
+  FavoritesForm.title = 'Favorites';
+  FavoritesForm.validationSchema = z.object({
+    favoriteNumber: z.string().min(1),
+    favoritePerson: z.string().optional(),
+  });
+  FavoritesForm.initialValues = { favoriteNumber: '', favoritePerson: '' };
+  FavoritesForm.submitHandler = favoritesFormSubmitHandler;
 
   const getErrorMessage = vi.fn().mockImplementation((error: unknown) => {
     const serverError = get(error, 'response.data.error', '');
@@ -184,17 +146,10 @@ describe('MultiStepForm', () => {
   };
 
   it('should render with required props passed', () => {
-    /* eslint-disable no-console */
-    const originalConsoleError = console.error;
-    console.error = vi.fn();
-
     const { container } = render(<MultiStepForm {...requiredProps} />);
     expect(container.querySelector('form')).not.toBeNull();
     expect(container.querySelector('input')).not.toBeNull();
     expect(container.querySelector('button')?.textContent).toContain('Next');
-
-    console.error = originalConsoleError;
-    /* eslint-enable no-console */
   });
 
   it('should not render later steps on first render', () => {
@@ -382,7 +337,7 @@ describe('MultiStepForm', () => {
     });
   });
 
-  it('calls setFieldTouched for every field on prev step if calling showPreviousStep', async () => {
+  it('navigates back to previous step and preserves field count', async () => {
     const { container, findByLabelText, queryByTestId } = render(
       <MultiStepForm {...requiredProps} />,
     );

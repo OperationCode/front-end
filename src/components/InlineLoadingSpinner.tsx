@@ -1,4 +1,4 @@
-import { cx } from '@/common/utils/cva';
+import { cn } from '@/lib/utils';
 
 interface InlineLoadingSpinnerProps {
   className?: string;
@@ -7,7 +7,7 @@ interface InlineLoadingSpinnerProps {
 export const InlineLoadingSpinner = ({ className }: InlineLoadingSpinnerProps) => (
   <span
     aria-hidden
-    className={cx(
+    className={cn(
       `box-border size-5 animate-spin rounded-[50%] border-4 border-solid border-white border-b-primary! transition-colors group-hover:border-secondary`,
       className,
     )}

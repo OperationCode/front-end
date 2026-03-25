@@ -3,10 +3,10 @@
 exports[`LogoSection > should render with required props 1`] = `
 <div>
   <div
-    class="bg-center bg-no-repeat bg-cover flex items-center justify-between w-full px-4 md:px-0 fill-current min-h-[250px] bg-theme-gray-800 text-secondary [&_ul]:flex [&_ul]:flex-wrap [&_ul]:items-center [&_ul]:justify-around"
+    class="bg-center bg-no-repeat bg-cover flex items-center justify-between w-full px-4 md:px-0 fill-current min-h-62.5 bg-theme-gray-800 text-secondary [&_ul]:flex [&_ul]:flex-wrap [&_ul]:items-center [&_ul]:justify-around"
   >
     <div
-      class="mx-auto my-14 flex w-full max-w-[1400px] flex-col items-center justify-center sm:w-[85%]"
+      class="mx-auto my-14 flex w-full max-w-350 flex-col items-center justify-center sm:w-[85%]"
     >
       <div
         class="relative flex justify-center"
@@ -57,7 +57,7 @@ exports[`LogoSection > should render with required props 1`] = `
         </h3>
       </div>
       <div
-        class="flex w-full flex-wrap items-center justify-center *:m-4"
+        class="flex w-full flex-wrap items-center justify-center gap-4 [&>blockquote]:w-full [&>div]:w-full [&>p]:w-full"
       >
         <ul
           class="space-y-4 [&_ul]:pb-4 [&>li>p]:my-4"
@@ -85,7 +85,7 @@ exports[`LogoSection > should render with required props 1`] = `
                 <ul>
                   <li>
                     <figure
-                      class="flex flex-col justify-items-center place-content-start m-2 [&>svg]:fill-current [&>svg]:my-4 [&>img]:mx-0 [&>img]:h-24 [&>svg]:mx-0 [&>svg]:h-24"
+                      class="m-2 flex flex-col place-content-start justify-items-center [&>svg]:mx-0 [&>svg]:my-4 [&>svg]:h-24 [&>svg]:w-auto [&>svg]:fill-current [&>img]:mx-0 [&>img]:w-auto [&>img]:object-contain [&>img]:h-16"
                     >
                       <figcaption
                         class="text-center whitespace-nowrap"
@@ -100,7 +100,7 @@ exports[`LogoSection > should render with required props 1`] = `
                   </li>
                   <li>
                     <figure
-                      class="flex flex-col justify-items-center place-content-start m-2 [&>svg]:fill-current [&>svg]:my-4 [&>img]:mx-0 [&>img]:h-24 [&>svg]:mx-0 [&>svg]:h-24"
+                      class="m-2 flex flex-col place-content-start justify-items-center [&>svg]:mx-0 [&>svg]:my-4 [&>svg]:h-24 [&>svg]:w-auto [&>svg]:fill-current [&>img]:mx-0 [&>img]:w-auto [&>img]:object-contain [&>img]:h-16"
                     >
                       <figcaption
                         class="text-center whitespace-nowrap"
@@ -115,7 +115,7 @@ exports[`LogoSection > should render with required props 1`] = `
                   </li>
                   <li>
                     <figure
-                      class="flex flex-col justify-items-center place-content-start m-2 [&>svg]:fill-current [&>svg]:my-4 [&>img]:mx-0 [&>img]:h-24 [&>svg]:mx-0 [&>svg]:h-24"
+                      class="m-2 flex flex-col place-content-start justify-items-center [&>svg]:mx-0 [&>svg]:my-4 [&>svg]:h-24 [&>svg]:w-auto [&>svg]:fill-current [&>img]:mx-0 [&>img]:w-auto [&>img]:object-contain [&>img]:h-16"
                     >
                       <figcaption
                         class="text-center whitespace-nowrap"
@@ -130,7 +130,7 @@ exports[`LogoSection > should render with required props 1`] = `
                   </li>
                   <li>
                     <figure
-                      class="flex flex-col justify-items-center place-content-start m-2 [&>svg]:fill-current [&>svg]:my-4 [&>img]:mx-0 [&>img]:h-24 [&>svg]:mx-0 [&>svg]:h-24"
+                      class="m-2 flex flex-col place-content-start justify-items-center [&>svg]:mx-0 [&>svg]:my-4 [&>svg]:h-24 [&>svg]:w-auto [&>svg]:fill-current [&>img]:mx-0 [&>img]:w-auto [&>img]:object-contain [&>img]:h-16"
                     >
                       <figcaption
                         class="text-center whitespace-nowrap"
@@ -159,7 +159,7 @@ exports[`LogoSection > should render with required props 1`] = `
                 <ul>
                   <li>
                     <figure
-                      class="flex flex-col justify-items-center place-content-start m-2 [&>svg]:fill-current [&>svg]:my-4 [&>img]:mx-0 [&>img]:h-24 [&>svg]:mx-0 [&>svg]:h-24"
+                      class="m-2 flex flex-col place-content-start justify-items-center [&>svg]:mx-0 [&>svg]:my-4 [&>svg]:h-24 [&>svg]:w-auto [&>svg]:fill-current [&>img]:mx-0 [&>img]:w-auto [&>img]:object-contain [&>img]:h-40"
                     >
                       <figcaption
                         class="text-center whitespace-nowrap"
@@ -174,7 +174,7 @@ exports[`LogoSection > should render with required props 1`] = `
                   </li>
                   <li>
                     <figure
-                      class="flex flex-col justify-items-center place-content-start m-2 [&>svg]:fill-current [&>svg]:my-4 [&>img]:mx-0 [&>img]:h-24 [&>svg]:mx-0 [&>svg]:h-24"
+                      class="m-2 flex flex-col place-content-start justify-items-center [&>svg]:mx-0 [&>svg]:my-4 [&>svg]:h-24 [&>svg]:w-auto [&>svg]:fill-current [&>img]:mx-0 [&>img]:w-auto [&>img]:object-contain [&>img]:h-40"
                     >
                       <figcaption
                         class="text-center whitespace-nowrap"
@@ -189,7 +189,7 @@ exports[`LogoSection > should render with required props 1`] = `
                   </li>
                   <li>
                     <figure
-                      class="flex flex-col justify-items-center place-content-start m-2 [&>svg]:fill-current [&>svg]:my-4 [&>img]:mx-0 [&>img]:h-24 [&>svg]:mx-0 [&>svg]:h-24"
+                      class="m-2 flex flex-col place-content-start justify-items-center [&>svg]:mx-0 [&>svg]:my-4 [&>svg]:h-24 [&>svg]:w-auto [&>svg]:fill-current [&>img]:mx-0 [&>img]:w-auto [&>img]:object-contain [&>img]:h-40"
                     >
                       <figcaption
                         class="text-center whitespace-nowrap"
@@ -225,7 +225,7 @@ exports[`LogoSection > should render with required props 1`] = `
                 >
                   <li>
                     <figure
-                      class="flex flex-col justify-items-center place-content-start m-2 [&>svg]:fill-current [&>svg]:my-4 [&>img]:mx-0 [&>img]:h-24 [&>svg]:mx-0 [&>svg]:h-24"
+                      class="m-2 flex flex-col place-content-start justify-items-center [&>svg]:mx-0 [&>svg]:my-4 [&>svg]:h-24 [&>svg]:w-auto [&>svg]:fill-current [&>img]:mx-0 [&>img]:w-auto [&>img]:object-contain [&>img]:h-48"
                     >
                       <figcaption
                         class="text-center whitespace-nowrap"
@@ -240,7 +240,7 @@ exports[`LogoSection > should render with required props 1`] = `
                   </li>
                   <li>
                     <figure
-                      class="flex flex-col justify-items-center place-content-start m-2 [&>svg]:fill-current [&>svg]:my-4 [&>img]:mx-0 [&>img]:h-24 [&>svg]:mx-0 [&>svg]:h-24"
+                      class="m-2 flex flex-col place-content-start justify-items-center [&>svg]:mx-0 [&>svg]:my-4 [&>svg]:h-24 [&>svg]:w-auto [&>svg]:fill-current [&>img]:mx-0 [&>img]:w-auto [&>img]:object-contain [&>img]:h-48"
                     >
                       <figcaption
                         class="text-center whitespace-nowrap"
@@ -255,7 +255,7 @@ exports[`LogoSection > should render with required props 1`] = `
                   </li>
                   <li>
                     <figure
-                      class="flex flex-col justify-items-center place-content-start m-2 [&>svg]:fill-current [&>svg]:my-4 [&>img]:mx-0 [&>img]:h-24 [&>svg]:mx-0 [&>svg]:h-24"
+                      class="m-2 flex flex-col place-content-start justify-items-center [&>svg]:mx-0 [&>svg]:my-4 [&>svg]:h-24 [&>svg]:w-auto [&>svg]:fill-current [&>img]:mx-0 [&>img]:w-auto [&>img]:object-contain [&>img]:h-48"
                     >
                       <figcaption
                         class="text-center whitespace-nowrap"
@@ -288,7 +288,7 @@ exports[`LogoSection > should render with required props 1`] = `
             >
               <li>
                 <figure
-                  class="flex flex-col justify-items-center place-content-start m-2 [&>svg]:fill-current [&>svg]:my-4 [&>img]:mx-0 [&>img]:h-24 [&>svg]:mx-0 [&>svg]:h-24"
+                  class="m-2 flex flex-col place-content-start justify-items-center [&>svg]:mx-0 [&>svg]:my-4 [&>svg]:h-24 [&>svg]:w-auto [&>svg]:fill-current [&>img]:mx-0 [&>img]:h-24 [&>img]:w-auto [&>img]:object-contain"
                 >
                   <figcaption
                     class="text-center whitespace-nowrap"
@@ -303,7 +303,7 @@ exports[`LogoSection > should render with required props 1`] = `
               </li>
               <li>
                 <figure
-                  class="flex flex-col justify-items-center place-content-start m-2 [&>svg]:fill-current [&>svg]:my-4 [&>img]:mx-0 [&>img]:h-24 [&>svg]:mx-0 [&>svg]:h-24"
+                  class="m-2 flex flex-col place-content-start justify-items-center [&>svg]:mx-0 [&>svg]:my-4 [&>svg]:h-24 [&>svg]:w-auto [&>svg]:fill-current [&>img]:mx-0 [&>img]:h-24 [&>img]:w-auto [&>img]:object-contain"
                 >
                   <figcaption
                     class="text-center whitespace-nowrap"
@@ -318,7 +318,7 @@ exports[`LogoSection > should render with required props 1`] = `
               </li>
               <li>
                 <figure
-                  class="flex flex-col justify-items-center place-content-start m-2 [&>svg]:fill-current [&>svg]:my-4 [&>img]:mx-0 [&>img]:h-24 [&>svg]:mx-0 [&>svg]:h-24"
+                  class="m-2 flex flex-col place-content-start justify-items-center [&>svg]:mx-0 [&>svg]:my-4 [&>svg]:h-24 [&>svg]:w-auto [&>svg]:fill-current [&>img]:mx-0 [&>img]:h-24 [&>img]:w-auto [&>img]:object-contain"
                 >
                   <figcaption
                     class="text-center whitespace-nowrap"
@@ -333,7 +333,7 @@ exports[`LogoSection > should render with required props 1`] = `
               </li>
               <li>
                 <figure
-                  class="flex flex-col justify-items-center place-content-start m-2 [&>svg]:fill-current [&>svg]:my-4 [&>img]:mx-0 [&>img]:h-24 [&>svg]:mx-0 [&>svg]:h-24"
+                  class="m-2 flex flex-col place-content-start justify-items-center [&>svg]:mx-0 [&>svg]:my-4 [&>svg]:h-24 [&>svg]:w-auto [&>svg]:fill-current [&>img]:mx-0 [&>img]:h-24 [&>img]:w-auto [&>img]:object-contain"
                 >
                   <figcaption
                     class="text-center whitespace-nowrap"

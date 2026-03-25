@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { ACCORDION_CONTENT, ACCORDION_TOGGLE_BUTTON } from '../common/constants/testIDs';
+import { ACCORDION_CONTENT, ACCORDION_TOGGLE_BUTTON } from '../lib/constants/testIDs';
 
 test.describe('faq', () => {
   test.beforeEach(async ({ page }) => {

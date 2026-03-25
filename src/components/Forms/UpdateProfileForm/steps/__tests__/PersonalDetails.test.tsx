@@ -1,22 +1,18 @@
-import { Formik } from 'formik';
-import noop from 'lodash/noop';
+import { FormProvider, useForm } from 'react-hook-form';
 import createSnapshotTest from '@/test-utils/createSnapshotTest';
-import Form from '@/components/Form/Form';
-
 import { PersonalDetails } from '../PersonalDetails';
 
+function TestWrapper({ children }: { children: React.ReactNode }) {
+  const methods = useForm({ defaultValues: PersonalDetails.initialValues });
+  return <FormProvider {...methods}>{children}</FormProvider>;
+}
+
 describe('UpdateProfileForm/Steps/PersonalDetails', () => {
-  it('should render in context of Formik', () => {
+  it('should render in context of FormProvider', () => {
     createSnapshotTest(
-      <Formik
-        onSubmit={noop}
-        initialValues={PersonalDetails.initialValues}
-        validationSchema={PersonalDetails.validationSchema}
-      >
-        <Form>
-          <PersonalDetails isSubmitting={false} />
-        </Form>
-      </Formik>,
+      <TestWrapper>
+        <PersonalDetails isSubmitting={false} />
+      </TestWrapper>,
     );
   });
 });

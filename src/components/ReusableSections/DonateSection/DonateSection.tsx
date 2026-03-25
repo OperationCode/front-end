@@ -1,6 +1,7 @@
-import { s3 } from '@/common/constants/urls';
+import Link from 'next/link';
+import { s3 } from '@/lib/constants/urls';
 import Container from '@/components/Container/Container';
-import LinkButton from '@/components/Buttons/LinkButton/LinkButton';
+import { buttonVariants } from '@/components/ui/button';
 import Heading from '@/components/Heading/Heading';
 
 function DonateSection() {
@@ -17,9 +18,9 @@ function DonateSection() {
 
       <p>Thank you for supporting our mission!</p>
 
-      <LinkButton href="/donate" theme="primary" className="mt-4">
+      <Link href="/donate" className={buttonVariants({ variant: 'default', className: 'mt-4' })}>
         Donate Now
-      </LinkButton>
+      </Link>
     </Container>
   );
 }

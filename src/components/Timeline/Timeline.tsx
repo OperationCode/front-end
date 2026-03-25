@@ -7,11 +7,11 @@ function Timeline() {
       {Object.keys(historyData).map((year) => (
         <div className="flex" key={year}>
           <div className="relative flex-1 text-right">
-            <h3 className="absolute top-8 w-full pr-2.5 text-sm sm:top-4 sm:text-4xl">{year}</h3>
+            <h3 className="absolute top-7 w-full pr-2.5 text-sm sm:top-5 sm:text-4xl">{year}</h3>
           </div>
           <div className="relative px-5">
             <div className="absolute top-0 h-full w-0.5 -translate-x-1/2 bg-theme-gray-800" />
-            <div className="absolute top-8 size-3.5 -translate-x-1/2 rounded-full border-2 border-gray-500 bg-white sm:top-6" />
+            <div className="absolute top-8 size-3.5 -translate-x-1/2 rounded-full border-2 border-gray-500 bg-white sm:top-7" />
           </div>
 
           <div id={`event-${year}`} className="flex-8">

@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 import createSnapshotTest from '@/test-utils/createSnapshotTest';
-import { partnersSortedByName } from '@/common/constants/partners';
+import { partnersSortedByName } from '@/lib/constants/partners';
 import SponsorsSection from '../SponsorsSection';
 
 describe('SponsorsSection', () => {

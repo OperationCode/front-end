@@ -1,21 +1,16 @@
 import type { Metadata } from 'next';
-import HeroBanner from '@/components/HeroBanner/HeroBanner';
 import LogoSection from '@/components/Branding/LogoSection/LogoSection';
 import ColorSection from '@/components/Branding/ColorSection/ColorSection';
 import FontSection from '@/components/Branding/FontSection/FontSection';
 import OutboundLink from '@/components/OutboundLink/OutboundLink';
-import { s3 } from '@/common/constants/urls';
-import LinkButton from '@/components/Buttons/LinkButton/LinkButton';
+import { s3 } from '@/lib/constants/urls';
+import { buttonVariants } from '@/components/ui/button';
 
 export const metadata: Metadata = { title: 'Branding Guide' };
-
-const pageTitle = 'Branding Guide';
 
 function Branding() {
   return (
     <>
-      <HeroBanner className="min-h-96 pt-36 pb-24" title={pageTitle} />
-
       <section className="space-y-8 bg-white py-14 *:mx-auto *:max-w-prose">
         <h5 className="text-center">Introduction</h5>
 
@@ -49,24 +44,17 @@ function Branding() {
           </p>
         </aside>
 
-        <p className="text-center">
-          View{' '}
-          <OutboundLink
-            analyticsEventLabel="Branding Storybook Link"
-            href="https://storybook.operationcode.org/?path=/story/heading--default"
-          >
-            Operation Code's Storybook Component Library here.
-          </OutboundLink>
-        </p>
-
-        <LinkButton
+        <OutboundLink
           analyticsEventLabel="Branding EPS Download"
           href={`${s3}Operation-Code-Logo.eps`}
-          theme="secondary"
-          className="mx-auto block w-fit no-underline"
+          hasIcon={false}
+          className={buttonVariants({
+            variant: 'secondary',
+            className: 'mx-auto block w-fit no-underline',
+          })}
         >
           Download main EPS file
-        </LinkButton>
+        </OutboundLink>
       </section>
 
       <LogoSection />
