@@ -44,6 +44,7 @@ export default defineConfig(
     'test-results/**',
     'public/**',
     '*.svg',
+    'prettier.config.js',
   ]),
 
   // ── Base configs ──

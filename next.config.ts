@@ -2,7 +2,7 @@ import type { NextConfig } from 'next';
 import { withSentryConfig } from '@sentry/nextjs';
 import bundleAnalyzer from '@next/bundle-analyzer';
 import createMDX from '@next/mdx';
-import { svgoConfig } from './src/common/config/svgo';
+import { svgoConfig } from './src/lib/config/svgo';
 
 const hasBundleAnalyzer = process.env.ANALYZE === 'true';
 const withBundleAnalyzer = bundleAnalyzer({ enabled: hasBundleAnalyzer });

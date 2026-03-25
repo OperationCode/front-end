@@ -4,16 +4,16 @@
   "rsc": true,
   "tailwind": {
     "config": "",
-    "css": "src/common/styles/globals.css",
+    "css": "src/lib/styles/globals.css",
     "baseColor": "slate",
     "cssVariables": true
   },
   "aliases": {
     "components": "@/components",
-    "utils": "@/common/utils/cva",
+    "utils": "@/lib/utils",
     "ui": "@/components/ui",
-    "lib": "@/common/utils",
-    "hooks": "@/common/hooks"
+    "lib": "@/lib/utils",
+    "hooks": "@/lib/hooks"
   },
   "iconLibrary": "lucide"
 }

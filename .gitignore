@@ -70,10 +70,6 @@ typings/
 .next
 out
 
-# storybook build output
-.storybook-dist
-.storybook-static
-storybook-static
 
 # WebStorm Config
 .idea
