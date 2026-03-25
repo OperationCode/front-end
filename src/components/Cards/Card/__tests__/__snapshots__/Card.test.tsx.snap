@@ -3,7 +3,7 @@
 exports[`Card > should render with many props assigned 1`] = `
 <div>
   <article
-    class="m-4 flex min-h-[100px] min-w-[100px] flex-col flex-nowrap items-center justify-around rounded-xl bg-card p-6 text-secondary ring-1 ring-foreground/10 focus-visible:outline-none [&_svg]:fill-secondary shadow-sm transition-shadow duration-200 ease-in-out hover:-translate-y-0.5 hover:shadow-lg focus-visible:shadow-lg test-class"
+    class="m-4 flex min-h-25 min-w-25 flex-col flex-nowrap items-center justify-around rounded-xl bg-card p-6 text-secondary ring-1 ring-foreground/10 focus-visible:outline-none [&_svg]:fill-secondary shadow-sm transition-shadow duration-200 ease-in-out hover:-translate-y-0.5 hover:shadow-lg focus-visible:shadow-lg test-class"
   >
     Test
   </article>
@@ -13,7 +13,7 @@ exports[`Card > should render with many props assigned 1`] = `
 exports[`Card > should render with required props 1`] = `
 <div>
   <article
-    class="m-4 flex min-h-[100px] min-w-[100px] flex-col flex-nowrap items-center justify-around rounded-xl bg-card p-6 text-secondary shadow-md ring-1 ring-foreground/10 focus-visible:outline-none [&_svg]:fill-secondary"
+    class="m-4 flex min-h-25 min-w-25 flex-col flex-nowrap items-center justify-around rounded-xl bg-card p-6 text-secondary shadow-md ring-1 ring-foreground/10 focus-visible:outline-none [&_svg]:fill-secondary"
   >
     Test
   </article>
