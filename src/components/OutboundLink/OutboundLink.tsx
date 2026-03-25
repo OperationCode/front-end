@@ -3,7 +3,7 @@
 import { gtag } from '@/common/utils/thirdParty/gtag';
 import ExternalLinkIcon from '@/static/images/icons/FontAwesome/external-link-square-alt-solid.svg';
 import ScreenReaderOnly from '@/components/ScreenReaderOnly/ScreenReaderOnly';
-import { cx } from '@/common/utils/cva';
+import { cn } from '@/common/utils/cva';
 
 export interface OutboundLinkPropsType {
   /**
@@ -48,7 +48,7 @@ function OutboundLink({
 
   return (
     <a
-      className={cx('inline-flex items-start text-burnt-orange', className)}
+      className={cn('inline-flex items-start text-burnt-orange', className)}
       data-testid={testID}
       href={href}
       onClick={trackOutboundLinkClick}

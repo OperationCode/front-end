@@ -1,4 +1,4 @@
-import { cx } from '@/common/utils/cva';
+import { cn } from '@/common/utils/cva';
 import Section from '@/components/Section/Section';
 
 const fonts = ['Bebas Neue' as const, 'Encode Sans' as const];
@@ -12,7 +12,7 @@ function FontSection() {
         {fonts.map((font) => (
           <li key={font}>
             <div
-              className={cx({
+              className={cn({
                 'font-family-bebas': font === 'Bebas Neue',
                 'font-family-encode': font === 'Encode Sans',
               })}

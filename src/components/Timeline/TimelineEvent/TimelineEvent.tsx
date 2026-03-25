@@ -6,7 +6,7 @@ export interface TimelineEventPropsType {
 function TimelineEvent({ content, title }: TimelineEventPropsType) {
   return (
     <div className="mb-8 rounded-md p-5">
-      <h4 className="capitalize md:text-2xl">{title}</h4>
+      <h4 className="mb-2 capitalize md:text-2xl">{title}</h4>
       <div>{content}</div>
     </div>
   );

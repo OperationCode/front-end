@@ -10,7 +10,7 @@ interface FAQProps {
 export default function FAQ({ title, children }: FAQProps) {
   return (
     <Section title={title} underline>
-      <div className="w-full">{children}</div>
+      <div className="flex w-full flex-col gap-3">{children}</div>
     </Section>
   );
 }

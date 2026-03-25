@@ -15,7 +15,7 @@ export default function Q({ title, children }: QProps) {
     <Accordion
       content={{
         headingChildren: <h6>{title}</h6>,
-        bodyChildren: <p>{children}</p>,
+        bodyChildren: children,
       }}
       accessibilityId={id}
     />

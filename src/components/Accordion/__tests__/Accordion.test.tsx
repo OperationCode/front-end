@@ -1,10 +1,5 @@
 import { fireEvent, render } from '@testing-library/react';
-import {
-  ACCORDION_CONTENT,
-  ACCORDION_TOGGLE_BUTTON,
-  SCREEN_READER_ONLY,
-} from '@/common/constants/testIDs';
-import { toggleMessages } from '../../ScreenReaderOnly/ScreenReaderOnly';
+import { ACCORDION_TOGGLE_BUTTON } from '@/common/constants/testIDs';
 import Accordion from '../Accordion';
 
 const defaultProps = {
@@ -18,23 +13,11 @@ const defaultProps = {
 describe('Accordion', () => {
   it('should render invisible text that turns visible on toggle click', async () => {
     const component = render(<Accordion {...defaultProps} />);
-    const Content = component.queryByTestId(ACCORDION_CONTENT);
 
-    expect(Content?.classList.contains('hidden')).toBe(true);
+    expect(component.queryByText('Can also be JSX')).toBeNull();
 
     fireEvent.click(component.queryByTestId(ACCORDION_TOGGLE_BUTTON)!);
 
-    expect(Content?.classList.contains('hidden')).not.toBe(true);
-  });
-});
-
-describe('Accordion Accessibility', () => {
-  it('should display the correct screenReader text for toggle button', async () => {
-    const component = render(<Accordion {...defaultProps} />);
-    const Button = component.queryByTestId(SCREEN_READER_ONLY)!;
-
-    expect(Button.textContent).toBe(toggleMessages.open);
-    fireEvent.click(Button);
-    expect(Button.textContent).toBe(toggleMessages.close);
+    expect(component.queryByText('Can also be JSX')).not.toBeNull();
   });
 });

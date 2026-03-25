@@ -1,6 +1,6 @@
 import type { ReactElement, ReactNode } from 'react';
 import Image from 'next/image';
-import { cx } from '@/common/utils/cva';
+import { cn } from '@/common/utils/cva';
 import { FLAT_CARD_IMAGE } from '@/common/constants/testIDs';
 import { getPlaceholder } from '@/common/utils/next-utils';
 
@@ -20,14 +20,14 @@ function FlatCard({ button: Button, children, className, header, image }: FlatCa
 
   return (
     <article
-      className={cx('relative mx-4 my-6 box-border max-w-[400px]', className, {
+      className={cn('relative mx-4 my-6 box-border max-w-[400px] rounded-xl shadow-sm', className, {
         'pt-20 sm:pt-14': hasImage,
       })}
     >
       <div
-        className={cx(
-          'flex flex-col gap-5 border-4 border-solid border-primary p-8',
-          hasImage && `pt-32`,
+        className={cn(
+          'flex flex-col gap-5 rounded-xl border-2 border-solid border-primary p-8',
+          hasImage && 'pt-32',
         )}
       >
         {header && <div className="text-center">{header}</div>}

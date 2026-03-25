@@ -2,7 +2,7 @@ import type { FieldInputProps, FormikHelpers, FormikState } from 'formik';
 import { ErrorMessage } from 'formik';
 import Alert from '@/components/Alert/Alert';
 import Label from '@/components/Form/Label/Label';
-import { cx } from '@/common/utils/cva';
+import { cn } from '@/common/utils/cva';
 import type { OptionType, ThemedReactSelectProps } from './ThemedReactSelect';
 import { ThemedReactSelect } from './ThemedReactSelect';
 
@@ -35,7 +35,7 @@ export function SelectMulti({
   const hasErrors = Boolean(errors[name]);
 
   return (
-    <div className={cx('min-w-64', className)}>
+    <div className={cn('min-w-64', className)}>
       <Label htmlFor={name} isHidden={isLabelHidden}>
         {label}
       </Label>
@@ -64,7 +64,7 @@ export function SelectMulti({
           {(message: string) => {
             return hasErrors ? (
               <Alert
-                className={cx(
+                className={cn(
                   '-mx-0.5 mt-2 max-w-full flex-1',
                   'lg:absolute lg:top-0 lg:left-full lg:mt-0 lg:ml-4',
                   `px-2.5 py-0 lg:w-max lg:max-w-72 lg:min-w-36`,

@@ -1,6 +1,6 @@
 import { fireEvent, render } from '@testing-library/react';
 import createSnapshotTest from '@/test-utils/createSnapshotTest';
-import { ALERT_CLOSE_BUTTON } from '@/common/constants/testIDs';
+import { CLOSE_BUTTON } from '@/common/constants/testIDs';
 import Alert from '../Alert';
 
 describe('Alert', () => {
@@ -19,7 +19,7 @@ describe('Alert', () => {
 
     expect(onCloseMock).toHaveBeenCalledTimes(0);
 
-    fireEvent.click(queryByTestId(ALERT_CLOSE_BUTTON)!);
+    fireEvent.click(queryByTestId(CLOSE_BUTTON)!);
 
     expect(onCloseMock).toHaveBeenCalledTimes(1);
   });
@@ -27,6 +27,6 @@ describe('Alert', () => {
   it('should NOT render button if close handler not provided', () => {
     const { queryByTestId } = render(<Alert type="warning">Warning Alert JSX or Text</Alert>);
 
-    expect(queryByTestId(ALERT_CLOSE_BUTTON)).toBeNull();
+    expect(queryByTestId(CLOSE_BUTTON)).toBeNull();
   });
 });

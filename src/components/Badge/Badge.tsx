@@ -1,4 +1,4 @@
-import { cx } from '@/common/utils/cva';
+import { cn } from '@/common/utils/cva';
 
 export interface BadgePropsType {
   /**
@@ -23,7 +23,7 @@ export interface BadgePropsType {
 function Badge({ className = undefined, icon, isImageFirst = true, label }: BadgePropsType) {
   return (
     <figure
-      className={cx(
+      className={cn(
         'm-2 flex flex-col place-content-start justify-items-center',
         '[&>svg]:mx-0 [&>svg]:my-4 [&>svg]:h-24 [&>svg]:w-auto [&>svg]:fill-current',
         '[&>img]:mx-0 [&>img]:h-24 [&>img]:w-auto [&>img]:object-contain',

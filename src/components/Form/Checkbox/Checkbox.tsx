@@ -3,7 +3,7 @@ import { ErrorMessage } from 'formik';
 import { CHECKBOX, CHECKBOX_ERROR } from '@/common/constants/testIDs';
 import Alert from '@/components/Alert/Alert';
 import Label from '@/components/Form/Label/Label';
-import { cx } from '@/common/utils/cva';
+import { cn } from '@/common/utils/cva';
 
 interface CheckboxProps extends Omit<React.HTMLAttributes<HTMLInputElement>, 'disabled'> {
   field: ReturnType<typeof Field>;
@@ -22,18 +22,18 @@ function Checkbox({
 }: CheckboxProps) {
   const hasErrors = Boolean(errors[name]);
   return (
-    <div className={cx('relative', className)} data-testid={CHECKBOX}>
+    <div className={cn('relative', className)} data-testid={CHECKBOX}>
       <Label
         htmlFor={name}
         isHidden={false}
-        className={cx(
+        className={cn(
           `group flex items-start gap-3 outline outline-offset-2 outline-transparent`,
           `cursor-pointer has-[input:disabled]:cursor-not-allowed [&>input:focus-visible]:outline-secondary/50`,
         )}
       >
         <input
           {...field}
-          className={cx(
+          className={cn(
             `size-5 cursor-[inherit] rounded-sm border border-secondary/50 group-hover:border-secondary disabled:opacity-60`,
             'outline outline-offset-2 outline-transparent',
             'group-hover:outline-secondary/25',

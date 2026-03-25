@@ -9,45 +9,35 @@ import platniumTransparencySeal from '@/static/images/platinum-transparency.png'
 import compTia from '@/static/images/sponsors/comptia_logo.png';
 
 export interface FooterPropsType {
-  /**
-   * Url string applied ot the link.
-   */
   href: string;
-  /**
-   * String applied to the link label.
-   */
   name: string;
-  /**
-   * Only pass analytics event label if you're href is to an external website
-   */
   analyticsEventLabel?: string;
+}
+
+function FooterLink({ href, name, analyticsEventLabel }: FooterPropsType) {
+  return (
+    <li key={href}>
+      {analyticsEventLabel ? (
+        <OutboundLink analyticsEventLabel={`${name} footer link`} href={href} hasIcon={false}>
+          {name}
+        </OutboundLink>
+      ) : (
+        <Link href={href}>{name}</Link>
+      )}
+    </li>
+  );
 }
 
 function Footer() {
   const currentYear = new Date().getFullYear();
   const { items, legal } = footerItems;
 
-  const renderLink = ({ href, name, analyticsEventLabel }: FooterPropsType) => {
-    return (
-      <li key={href}>
-        {analyticsEventLabel ? (
-          <OutboundLink analyticsEventLabel={`${name} footer link`} href={href} hasIcon={false}>
-            {name}
-          </OutboundLink>
-        ) : (
-          // TODO: Attack prefetch to scroll listener
-          <Link href={href}>{name}</Link>
-        )}
-      </li>
-    );
-  };
-
   return (
-    <footer className="pt-12 pb-40 md:py-8">
+    <footer className="border-t border-primary/20 pt-12 pb-40 md:py-8">
       <div>
         <div className="flex flex-col items-center pb-6">
           <Link href="/" key="Home">
-            <Logo style={{ width: 318, height: 60 }} fill="#252e3e" className="cursor-pointer" />
+            <Logo style={{ width: 318, height: 60 }} className="cursor-pointer fill-current" />
           </Link>
           <h6 className="mb-2">Connect With Us!</h6>
           <SocialMedia />
@@ -75,7 +65,9 @@ function Footer() {
         </div>
         <div className="mx-auto max-w-[1000px] pb-10">
           <ul className="grid grid-cols-2 gap-7 px-10 pt-3 text-center text-xl md:grid-cols-4 md:gap-3 md:px-0 lg:text-base">
-            {items.map((link) => renderLink(link))}
+            {items.map((link) => (
+              <FooterLink key={link.href} {...link} />
+            ))}
           </ul>
         </div>
         <div className="pt-4 pb-20 text-center text-sm md:pb-8">
@@ -84,22 +76,9 @@ function Footer() {
             <span className="pl-4">registered 501(c)3</span>
           </div>
           <div className="mx-auto flex w-60 justify-between [&_a]:text-white">
-            {legal.map((link) =>
-              // / logic of renderLink duplicated here
-              link.analyticsEventLabel ? (
-                <OutboundLink
-                  key={link.href}
-                  analyticsEventLabel={`${link.name} footer link`}
-                  href={link.href}
-                >
-                  {link.name}
-                </OutboundLink>
-              ) : (
-                <Link href={link.href} key={link.href}>
-                  {link.name}
-                </Link>
-              ),
-            )}
+            {legal.map((link) => (
+              <FooterLink key={link.href} {...link} />
+            ))}
           </div>
         </div>
       </div>

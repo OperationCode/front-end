@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { cx } from '@/common/utils/cva';
+import { cn } from '@/common/utils/cva';
 import BaseCard from '@/components/Cards/Card/Card';
 
 interface CardProps {
@@ -13,8 +13,8 @@ function Card({ children, image, alt = '', className }: CardProps) {
   if (image) {
     return (
       <BaseCard
-        className={cx(
-          'size-auto max-w-xs flex-col p-0 *:flex-[1_1_50%] md:h-56 md:w-[650px] md:max-w-none md:flex-row',
+        className={cn(
+          'size-auto max-w-xs flex-col overflow-hidden p-0 *:flex-[1_1_50%] md:h-56 md:w-[650px] md:max-w-none md:flex-row',
           className,
         )}
       >
@@ -30,7 +30,7 @@ function Card({ children, image, alt = '', className }: CardProps) {
 
   return (
     <BaseCard
-      className={cx('h-[400px] max-w-[400px] justify-start! overflow-y-auto p-8', className)}
+      className={cn('h-[400px] max-w-[400px] justify-start! overflow-y-auto p-8', className)}
       hasAnimationOnHover={false}
     >
       {children}

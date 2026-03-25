@@ -1,22 +1,12 @@
-import axios from 'axios';
-import get from 'lodash/get';
-import { parse as parseXml } from 'fast-xml-parser';
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Card from '@/components/Cards/Card/Card';
 import Section from '@/components/Section/Section';
 import Heading from '@/components/Heading/Heading';
 import PodcastPlayer from './PodcastPlayer';
+import episodes from './episodes.json';
 
 export const metadata: Metadata = { title: 'Podcast' };
-
-export const revalidate = 86400;
-
-interface RSS {
-  channel: {
-    item: { image: { href: string }; link: string; title: string[]; description: string }[];
-  };
-}
 
 interface Episode {
   image: string;
@@ -25,40 +15,11 @@ interface Episode {
   story: string;
 }
 
-async function getEpisodes(): Promise<Episode[]> {
-  const { data } = await axios.get<string>('https://operationcode.libsyn.com/rss');
-
-  const {
-    rss,
-  }: {
-    rss: RSS;
-  } = parseXml(data, {
-    ignoreNameSpace: true,
-    ignoreAttributes: false,
-    attributeNamePrefix: '',
-  });
-
-  const numberOfEpisodes = get(rss, 'channel.item.length', 0);
-
-  if (numberOfEpisodes > 0) {
-    return rss.channel.item.map(({ image: { href }, link, title, description }) => ({
-      image: href,
-      name: title[0],
-      source: link,
-      story: description.replace(/(<p>|<\/p>)/g, ''),
-    }));
-  }
-
-  throw new Error('Failed to fetch podcast episodes.');
-}
-
-export default async function Podcast() {
-  const episodes = await getEpisodes();
-
+export default function Podcast() {
   return (
     <Section>
       <div className="flex flex-wrap items-start justify-center">
-        {episodes.map(({ name, image, source, story }, index) => {
+        {(episodes as Episode[]).map(({ name, image, source, story }, index) => {
           const interviewee = name.replace(/ interview/gi, '').split(',')[0];
 
           return (

@@ -2,7 +2,7 @@ import type { FieldInputProps, FormikHelpers, FormikState } from 'formik';
 import { ErrorMessage } from 'formik';
 import type { InputHTMLAttributes } from 'react';
 import { INPUT, INPUT_ERROR, INPUT_FEEDBACK_GROUPING } from '@/common/constants/testIDs';
-import { cx } from '@/common/utils/cva';
+import { cn } from '@/common/utils/cva';
 import Label from '@/components/Form/Label/Label';
 import Alert from '@/components/Alert/Alert';
 
@@ -47,7 +47,7 @@ function Input({
         <input
           {...field}
           {...props}
-          className={cx(
+          className={cn(
             'rounded-sm border border-secondary/50 bg-white p-2 text-lg',
             `min-w-48 disabled:opacity-60 hover:disabled:cursor-not-allowed`,
             `focus-visible:border-primary/50 focus-visible:shadow-xs focus-visible:shadow-primary/75 focus-visible:outline-none`,
@@ -69,7 +69,7 @@ function Input({
           {(message: string) => {
             return hasErrors ? (
               <Alert
-                className={cx(
+                className={cn(
                   '-mx-0.5 mt-2 max-w-full flex-1',
                   'lg:absolute lg:top-0 lg:left-full lg:mt-0 lg:ml-4',
                   'lg:w-auto lg:max-w-72 lg:min-w-36',

@@ -1,4 +1,4 @@
-import { cx } from '@/common/utils/cva';
+import { cn } from '@/common/utils/cva';
 import { LABEL } from '@/common/constants/testIDs';
 import ScreenReaderOnly from '@/components/ScreenReaderOnly/ScreenReaderOnly';
 
@@ -15,7 +15,7 @@ function Label({
   ...props
 }: LabelProps) {
   const TheLabel = (
-    <label className={cx('text-secondary', className)} data-testid={testID} {...props}>
+    <label className={cn('text-secondary', className)} data-testid={testID} {...props}>
       {children}
     </label>
   );

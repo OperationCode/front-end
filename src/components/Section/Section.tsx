@@ -24,7 +24,9 @@ function Section({
     <Container backgroundImageSource={background} className={className} id={id} theme={theme}>
       {title && <Heading text={title} hasTitleUnderline={underline} headingLevel={3} />}
 
-      <div className="flex w-full flex-wrap items-center justify-center *:m-4">{children}</div>
+      <div className="flex w-full flex-wrap items-center justify-center gap-4 [&>blockquote]:w-full [&>div]:w-full [&>p]:w-full">
+        {children}
+      </div>
     </Container>
   );
 }

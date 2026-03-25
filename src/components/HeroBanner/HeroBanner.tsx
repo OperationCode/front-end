@@ -1,4 +1,4 @@
-import { cx } from '@/common/utils/cva';
+import { cn } from '@/common/utils/cva';
 import Container from '@/components/Container/Container';
 import { HERO_BANNER_H1 } from '@/common/constants/testIDs';
 
@@ -25,10 +25,10 @@ function HeroBanner({ backgroundImageSource, children, className, title }: HeroB
   return (
     <Container
       backgroundImageSource={backgroundImageSource}
-      className={cx('min-h-dvh pt-20 text-shadow-[0_0_15px_#111111]', className)}
+      className={cn('min-h-dvh pt-20 text-shadow-[0_0_15px_#111111]', className)}
     >
       <h1
-        className={cx({ 'mb-4 border-b-4 border-b-primary text-center': children })}
+        className={cn({ 'mb-4 border-b-4 border-b-primary text-center': children })}
         data-testid={HERO_BANNER_H1}
       >
         {title}

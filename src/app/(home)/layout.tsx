@@ -4,13 +4,12 @@ import JoinSection from '@/components/ReusableSections/JoinSection/JoinSection';
 import SponsorsSection from '@/components/ReusableSections/SponsorsSection/SponsorsSection';
 import LinkButton from '@/components/Buttons/LinkButton/LinkButton';
 import { s3 } from '@/common/constants/urls';
-import { cx } from '@/common/utils/cva';
 
 export default function HomeLayout({ children }: PropsWithChildren) {
   return (
     <>
       <HeroBanner
-        className={cx('min-h-dvh p-0')}
+        className="min-h-dvh p-0"
         backgroundImageSource={`${s3}redesign/heroBanners/homepage.jpg`}
         title="Build The Future"
       >

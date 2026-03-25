@@ -3,10 +3,10 @@
 exports[`SuccessStory > should render with required props 1`] = `
 <div>
   <article
-    class="relative mx-4 my-6 box-border max-w-[400px] pt-20 sm:pt-14"
+    class="relative mx-4 my-6 box-border max-w-[400px] rounded-xl shadow-sm pt-20 sm:pt-14"
   >
     <div
-      class="flex flex-col gap-5 border-4 border-solid border-primary p-8 pt-32"
+      class="flex flex-col gap-5 rounded-xl border-2 border-solid border-primary p-8 pt-32"
     >
       <div
         class="text-center"

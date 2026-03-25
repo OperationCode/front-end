@@ -1,4 +1,4 @@
-import { cx } from '@/common/utils/cva';
+import { cn } from '@/common/utils/cva';
 
 export interface DrawerPropsType {
   /**
@@ -19,7 +19,7 @@ export interface DrawerPropsType {
 function Drawer({ children, className, isVisible = false }: DrawerPropsType) {
   return (
     <div
-      className={cx(
+      className={cn(
         className,
         `fixed inset-y-0 z-2 hidden w-full overflow-hidden transition-all duration-1000 ease-in-out lg:block`,
         {

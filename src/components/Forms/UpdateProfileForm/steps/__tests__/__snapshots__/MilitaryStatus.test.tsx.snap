@@ -9,7 +9,7 @@ exports[`UpdateProfileForm/Steps/MilitaryStatus > should render in context of Fo
       class="flex flex-col gap-4"
     >
       <div
-        class="rounded-sm border border-solid p-2 text-sm shadow-md border-warning-deep bg-warning text-warning-deep"
+        class="rounded-lg border border-solid p-2 text-sm shadow-sm border-warning-deep bg-warning text-warning-deep"
         data-testid="ALERT"
         role="alert"
       >

@@ -1,4 +1,4 @@
-import { cx } from '@/common/utils/cva';
+import { cn } from '@/common/utils/cva';
 import { getDataAttributes } from '@/common/utils/prop-utils';
 
 export interface CardPropsType {
@@ -12,10 +12,10 @@ function Card({ children, className, hasAnimationOnHover, ...props }: CardPropsT
 
   return (
     <article
-      className={cx(
-        `m-4 flex min-h-[100px] min-w-[100px] flex-col flex-nowrap items-center justify-around bg-white p-6 text-secondary shadow-md focus-visible:outline-none [&_svg]:fill-secondary`,
+      className={cn(
+        'm-4 flex min-h-[100px] min-w-[100px] flex-col flex-nowrap items-center justify-around rounded-xl bg-card p-6 text-secondary shadow-md ring-1 ring-foreground/10 focus-visible:outline-none [&_svg]:fill-secondary',
         hasAnimationOnHover &&
-          `shadow-sm transition-shadow duration-200 ease-linear hover:shadow-lg focus-visible:shadow-lg`,
+          'shadow-sm transition-shadow duration-200 ease-in-out hover:-translate-y-0.5 hover:shadow-lg focus-visible:shadow-lg',
         className,
       )}
       {...customDataAttributes}

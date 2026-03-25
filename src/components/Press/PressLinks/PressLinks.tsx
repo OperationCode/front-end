@@ -1,6 +1,6 @@
 import * as Tabs from '@radix-ui/react-tabs';
 import OutboundLink from '@/components/OutboundLink/OutboundLink';
-import { cx } from '@/common/utils/cva';
+import { cn } from '@/common/utils/cva';
 import * as articlesMap from './Articles';
 
 function PressLinks() {
@@ -12,7 +12,7 @@ function PressLinks() {
             <Tabs.Trigger
               key={`TabsTrigger_${region}`}
               value={region}
-              className={cx(
+              className={cn(
                 'flex-1 cursor-pointer',
                 `border-b-2 border-primary/20 hover:border-primary/60`,
                 'data-[state=active]:border-primary',

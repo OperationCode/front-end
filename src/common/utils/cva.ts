@@ -5,22 +5,12 @@ import type { ClassValue, CVA } from 'cva';
 /* eslint-enable @typescript-eslint/no-restricted-imports */
 
 /**
- * Utility function to merge Tailwind CSS classes. This function combines the functionality of
- * `clsx` and `tailwind-merge` to allow for conditional, dynamic application of Tailwind CSS
- * classes while ensuring that conflicting classes are resolved correctly.
+ * Utility function to merge Tailwind CSS classes. Combines `clsx` and `tailwind-merge`
+ * for conditional, dynamic application of Tailwind CSS classes while resolving conflicts.
  * @see https://github.com/dcastil/tailwind-merge
  * @see https://github.com/lukeed/clsx
- *
- * @example
- * // We should use pseudo-classes when possible, but sometimes we simply need JS for conditional classes.
- * const buttonClass = cx(
- *   'bg-blue-500 hover:bg-blue-700',
- *   { 'underline font-extrabold': shouldBeUnderlinedAndBold },
- *   isLoading && 'animate-spin',
- *   isInViewport ? 'visible' : 'invisible',
- * );
  */
-export const cx = (...classes: ClassValue[]) => twMerge(clsx(...classes));
+export const cn = (...classes: ClassValue[]) => twMerge(clsx(...classes));
 
 /**
  * This utility is identical in API and result as the "real" CVA. We just use twMerge to resolve

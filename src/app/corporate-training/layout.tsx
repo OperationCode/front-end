@@ -1,14 +1,21 @@
 import type { ReactNode } from 'react';
+import type { StaticImageData } from 'next/image';
 import Image from 'next/image';
 import HeroBanner from '@/components/HeroBanner/HeroBanner';
 import OutboundLink from '@/components/OutboundLink/OutboundLink';
-import { cx } from '@/common/utils/cva';
+import { cn } from '@/common/utils/cva';
+import heroImage from '@/static/images/heroImage.jpg';
+import bias1 from '@/static/images/bias1.jpg';
+import bias2 from '@/static/images/bias2.jpg';
+import bias3 from '@/static/images/bias3.jpg';
+import bias4 from '@/static/images/bias4.jpg';
+import bias5 from '@/static/images/bias5.jpg';
 
 interface Bias {
   title: string;
   subtitle: string;
   description: ReactNode;
-  image: string;
+  image: StaticImageData;
   alt: string;
 }
 
@@ -23,7 +30,7 @@ const biases: Bias[] = [
         (CDC).
       </>
     ),
-    image: '/static/images/bias1.jpg',
+    image: bias1,
     alt: 'soldier sitting on the couch with his head resting on his hands.',
   },
   {
@@ -37,7 +44,7 @@ const biases: Bias[] = [
         criminalization for all.
       </>
     ),
-    image: '/static/images/bias2.jpg',
+    image: bias2,
     alt: 'A soldier getting comforted.',
   },
   {
@@ -50,7 +57,7 @@ const biases: Bias[] = [
         equal to or greater than civilians (Journal of Strategic Studies).
       </>
     ),
-    image: '/static/images/bias3.jpg',
+    image: bias3,
     alt: 'A homeless vet holding a sign for help.',
   },
   {
@@ -73,7 +80,7 @@ const biases: Bias[] = [
         service to others.
       </>
     ),
-    image: '/static/images/bias4.jpg',
+    image: bias4,
     alt: 'A soldier shaking hands with someone.',
   },
   {
@@ -98,7 +105,7 @@ const biases: Bias[] = [
         their spouses and family members.
       </>
     ),
-    image: '/static/images/bias5.jpg',
+    image: bias5,
     alt: 'two wedding rights resting on an american flad patch.',
   },
 ];
@@ -108,7 +115,7 @@ export default function CorporateTrainingLayout({ children }: { children: ReactN
     <>
       <HeroBanner
         className="min-h-[60dvh] pb-12"
-        backgroundImageSource="/static/images/heroImage.jpg"
+        backgroundImageSource={heroImage.src}
         title="Corporate Training: Breaking Biases"
       >
         <div className="text-left">
@@ -138,7 +145,7 @@ export default function CorporateTrainingLayout({ children }: { children: ReactN
         {biases.map((bias) => (
           <li
             key={bias.title}
-            className={cx(
+            className={cn(
               `flex flex-col-reverse flex-wrap md:flex-row md:flex-nowrap md:*:flex-1 md:even:flex-row-reverse`,
               'even:bg-secondary even:text-white',
               `md:nth-[1n]:bg-white md:nth-[1n]:text-secondary md:nth-[2n]:bg-theme-gray-800 md:nth-[3n]:bg-secondary md:nth-[3n]:text-white`,
@@ -156,7 +163,7 @@ export default function CorporateTrainingLayout({ children }: { children: ReactN
             </article>
 
             <div
-              className={cx(
+              className={cn(
                 `relative mx-auto mt-10 mb-2 size-64 md:m-0 md:aspect-square md:size-auto 2xl:aspect-4/2`,
                 `before:absolute before:top-2 before:left-2 before:size-full before:bg-primary before:content-['']`,
                 'md:before:content-[unset]',

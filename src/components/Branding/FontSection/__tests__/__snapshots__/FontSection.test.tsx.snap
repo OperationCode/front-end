@@ -57,7 +57,7 @@ exports[`FontSection > should render with required props 1`] = `
         </h3>
       </div>
       <div
-        class="flex w-full flex-wrap items-center justify-center *:m-4"
+        class="flex w-full flex-wrap items-center justify-center gap-4 [&>blockquote]:w-full [&>div]:w-full [&>p]:w-full"
       >
         <ul
           class="mx-auto list-none [&>li]:m-4"

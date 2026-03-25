@@ -1,6 +1,6 @@
 import type { JSX } from 'react';
 import kebabCase from 'lodash/kebabCase';
-import { cx } from '@/common/utils/cva';
+import { cn } from '@/common/utils/cva';
 import ScreenReaderOnly from '@/components/ScreenReaderOnly/ScreenReaderOnly';
 import LinkIcon from '@/static/images/icons/FontAwesome/link-solid.svg';
 
@@ -45,7 +45,7 @@ function Heading({
   return (
     <div className="relative flex justify-center">
       <HeadingElement
-        className={cx(
+        className={cn(
           `group mx-0 my-4 flex border-b-4 border-b-transparent text-center uppercase`,
           { 'border-b-primary': hasTitleUnderline },
           className,
@@ -57,7 +57,7 @@ function Heading({
             <a
               href={`#${anchorId}`}
               data-testid="Hash Link"
-              className={cx(
+              className={cn(
                 `hidden sm:visible`,
                 `absolute top-0 -left-8 flex h-full items-center justify-center opacity-0`,
                 `transition-opacity group-hover:opacity-100 focus-visible:opacity-100`,

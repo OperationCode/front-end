@@ -38,9 +38,6 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       { protocol: 'https', hostname: 'operation-code-assets.s3.us-east-2.amazonaws.com' },
       { protocol: 'https', hostname: 'user-images.githubusercontent.com' },
-      { protocol: 'https', hostname: 'ssl-static.libsyn.com' },
-      { protocol: 'https', hostname: 'static.libsyn.com' },
-      { protocol: 'https', hostname: 'libsyn.com' },
       { protocol: 'https', hostname: 'i.ytimg.com' },
     ],
   },

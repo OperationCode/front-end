@@ -1,43 +1,19 @@
-import * as Dialog from '@radix-ui/react-dialog';
+'use client';
+
+import { Dialog } from '@base-ui/react/dialog';
 import { gtag } from '@/common/utils/thirdParty/gtag';
 import CloseButton from '@/components/Buttons/CloseButton/CloseButton';
 import { MODAL_CONTENT, MODAL_OVERLAY } from '@/common/constants/testIDs';
-import { cx } from '@/common/utils/cva';
+import { cn } from '@/common/utils/cva';
 
 export interface ModalPropsType {
-  /**
-   * Content to be rendered in the modal.
-   */
   children: React.ReactNode;
-  /**
-   * Function that is called when the user clicks the close button.
-   */
   onRequestClose: () => void;
-  /**
-   * Applies a label for the screen reader.
-   */
   screenReaderLabel: string;
-  /**
-   * Applies style classes to the wrapping div.
-   */
   className?: string;
-  /**
-   * Sets if the modal is open an visible (or not)
-   * @default false
-   */
   isOpen?: boolean;
-  /**
-   * Sets if the modal can be closed by the user
-   * @default true
-   */
   canClose?: boolean;
-  /**
-   * Applies style classes to the child content.
-   */
   childrenClassName?: string;
-  /**
-   * Applies classNames to the overlay.
-   */
   overlayClassName?: string;
 }
 
@@ -55,28 +31,17 @@ function Modal({
     gtag.modalView(screenReaderLabel);
   }
 
-  const portalContainer =
-    typeof window !== 'undefined'
-      ? ((document.querySelector('#__next') as HTMLElement) ?? undefined)
-      : undefined;
-
   return (
-    <Dialog.Root defaultOpen={false} open={isOpen}>
-      <Dialog.Portal container={portalContainer}>
-        <Dialog.Overlay
-          className={cx('fixed inset-0 z-2 bg-white/50', overlayClassName)}
+    <Dialog.Root open={isOpen} onOpenChange={(open) => !open && canClose && onRequestClose()}>
+      <Dialog.Portal>
+        <Dialog.Backdrop
+          className={cn('fixed inset-0 z-2 bg-white/50', overlayClassName)}
           onClick={canClose ? onRequestClose : undefined}
           data-testid={MODAL_OVERLAY}
-        >
-          {canClose && (
-            <Dialog.Close asChild>
-              <CloseButton theme="secondary" onClick={onRequestClose} />
-            </Dialog.Close>
-          )}
-        </Dialog.Overlay>
+        />
 
-        <Dialog.Content
-          className={cx(
+        <Dialog.Popup
+          className={cn(
             'outline-none',
             'bg-white',
             'text-secondary',
@@ -98,13 +63,20 @@ function Modal({
             '-translate-y-1/2',
             'z-2',
             'shadow-md',
+            'rounded-xl',
             className,
           )}
         >
+          {canClose && (
+            <Dialog.Close render={<CloseButton theme="secondary" onClick={onRequestClose} />} />
+          )}
+
+          <Dialog.Title className="sr-only">{screenReaderLabel}</Dialog.Title>
+
           <div className={childrenClassName} data-testid={MODAL_CONTENT}>
             {children}
           </div>
-        </Dialog.Content>
+        </Dialog.Popup>
       </Dialog.Portal>
     </Dialog.Root>
   );

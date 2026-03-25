@@ -15,7 +15,7 @@ export default function Question({ title, children }: QuestionProps) {
     <Accordion
       content={{
         headingChildren: <h6>{title}</h6>,
-        bodyChildren: <p>{children}</p>,
+        bodyChildren: children,
       }}
       accessibilityId={id}
     />

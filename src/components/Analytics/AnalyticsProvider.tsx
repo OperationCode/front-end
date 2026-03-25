@@ -7,17 +7,6 @@ import { gtag } from '@/common/utils/thirdParty/gtag';
 
 const isProduction = process.env.NODE_ENV === 'production';
 
-const fonts = [
-  {
-    fontFamily: 'Encode Sans',
-    url: 'https://fonts.googleapis.com/css?family=Encode+Sans:400,700',
-  },
-  {
-    fontFamily: 'Bebas Neue',
-    url: 'https://fonts.googleapis.com/css?family=Bebas+Neue:400,700',
-  },
-];
-
 async function initLogRocket() {
   const [
     { default: LogRocket },
@@ -55,30 +44,6 @@ async function initLogRocket() {
   }
 }
 
-async function loadFonts() {
-  const { default: FontFaceObserver } = await import('fontfaceobserver');
-
-  const observers = fonts.map((font) => {
-    if (font.url) {
-      const link = document.createElement('link');
-      link.href = font.url;
-      link.rel = 'stylesheet';
-      document.head.append(link);
-    }
-
-    const observer = new FontFaceObserver(font.fontFamily);
-    return observer.load(null, 10000);
-  });
-
-  Promise.all(observers)
-    .then(() => {
-      document.documentElement.classList.add('fonts-loaded');
-    })
-    .catch(() =>
-      Sentry.captureException('FontFaceObserver took too long to resolve. Ignore this.'),
-    );
-}
-
 export function AnalyticsProvider() {
   const pathname = usePathname();
   const previousPathname = useRef(pathname);
@@ -94,8 +59,6 @@ export function AnalyticsProvider() {
     if (isProduction) {
       initLogRocket();
     }
-
-    loadFonts();
   }, []);
 
   return null;

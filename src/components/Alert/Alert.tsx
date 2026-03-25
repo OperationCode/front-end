@@ -1,6 +1,6 @@
-import { cx } from '@/common/utils/cva';
-import { ALERT, ALERT_CLOSE_BUTTON } from '@/common/constants/testIDs';
-import ScreenReaderOnly from '@/components/ScreenReaderOnly/ScreenReaderOnly';
+import { cn } from '@/common/utils/cva';
+import { ALERT } from '@/common/constants/testIDs';
+import CloseButton from '@/components/Buttons/CloseButton/CloseButton';
 
 export interface AlertPropsType {
   type: 'error' | 'success' | 'warning';
@@ -19,8 +19,8 @@ function Alert({
 }: AlertPropsType) {
   return (
     <div
-      className={cx(
-        `rounded-sm border border-solid border-black p-2 text-sm shadow-md`,
+      className={cn(
+        'rounded-lg border border-solid border-black p-2 text-sm shadow-sm',
         className,
         {
           'border-error-deep bg-error text-error-deep': type === 'error',
@@ -31,18 +31,7 @@ function Alert({
       data-testid={testID}
       role="alert"
     >
-      {/* TODO: Use CloseButton */}
-      {Boolean(onClose) && (
-        <button
-          type="button"
-          className="mr-1 cursor-pointer px-2 py-1 align-middle text-2xl transition-all duration-200 ease-linear hover:scale-110 hover:text-black"
-          onClick={onClose}
-          data-testid={ALERT_CLOSE_BUTTON}
-        >
-          <ScreenReaderOnly>Close Alert</ScreenReaderOnly>
-          <span>&times;</span>
-        </button>
-      )}
+      {onClose && <CloseButton theme="secondary" onClick={onClose} />}
       <span>{children}</span>
     </div>
   );
