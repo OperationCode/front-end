@@ -45,7 +45,7 @@
     "fingerprintjs2": "^2.1.4",
     "fontfaceobserver": "^2.3.0",
     "formik": "^2.4.6",
-    "lodash": "^4.17.21",
+    "lodash": "^4.18.1",
     "logrocket": "^10.1.0",
     "logrocket-react": "^6.0.3",
     "next": "^16.2.1",
