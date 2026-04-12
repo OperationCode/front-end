@@ -521,7 +521,7 @@ exports[`Footer > should render with no props passed 1`] = `
           class="mb-6"
         >
           © 2014-
-          2023
+          2026
            Operation Code™
           <span
             class="pl-4"
