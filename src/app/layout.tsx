@@ -24,8 +24,6 @@ const bebasNeue = Bebas_Neue({
   display: 'swap',
 });
 
-const defaultOgImage = `https://operation-code-assets.s3.us-east-2.amazonaws.com/branding/oc_image.png`;
-
 export const metadata: Metadata = {
   title: {
     template: 'Operation Code | %s',
@@ -33,27 +31,13 @@ export const metadata: Metadata = {
   },
   description:
     'Operation Code is a registered 501(c)3 whose mission is to help our military community and SIV allied refugees grow in their tech careers while rebuilding our lives post-conflict.',
-  icons: {
-    icon: '/public/favicon.ico',
-    apple: '/static/apple-icon-180x180.png',
-  },
   openGraph: {
     type: 'website',
     url: 'https://operationcode.org',
-    images: {
-      width: 1200,
-      height: 630,
-      alt: 'Operation Code Logo',
-      url: defaultOgImage,
-    },
   },
   twitter: {
     card: 'summary_large_image',
     site: 'https://operationcode.org',
-    images: {
-      alt: 'Operation Code Logo',
-      url: defaultOgImage,
-    },
   },
 };
 
@@ -63,7 +47,6 @@ export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang="en" className={`${encodeSans.variable} ${bebasNeue.variable}`}>
       <head>
-        <link rel="icon" sizes="192x192" href="/static/apple-icon-180x180.png" />
         {isProduction ? (
           <Script
             src={`https://www.googletagmanager.com/gtag/js?id=${clientTokens.GOOGLE_ANALYTICS_ID}`}
