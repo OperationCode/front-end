@@ -29,10 +29,10 @@ const registrationSchema = z
     lastName: z.string().trim().min(1, validationErrorMessages.required),
     zipcode: z.string().trim().min(1, validationErrorMessages.required),
     codeOfConduct: z.literal(true, {
-      message: validationErrorMessages.codeOfConduct,
+      errorMap: () => ({ message: validationErrorMessages.codeOfConduct }),
     }),
     slackGuidelines: z.literal(true, {
-      message: validationErrorMessages.slackGuidelines,
+      errorMap: () => ({ message: validationErrorMessages.slackGuidelines }),
     }),
   })
   .refine((data) => data.email === data['confirm-email'], {
