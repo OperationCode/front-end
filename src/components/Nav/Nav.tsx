@@ -37,7 +37,7 @@ export const Nav = () => {
       <header className="absolute top-4 z-10 hidden w-full font-family-bebas uppercase lg:block">
         <div className="mx-auto max-w-7xl px-4" data-testid="Desktop Nav Container">
           <nav
-            className="flex h-16 justify-between rounded-sm bg-white/95 text-lg font-bold shadow-sm backdrop-blur-sm"
+            className="flex h-16 justify-between rounded-sm bg-white text-lg font-bold shadow-sm backdrop-blur-sm"
             data-testid="Desktop Nav"
           >
             <Link

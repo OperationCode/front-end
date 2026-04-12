@@ -75,7 +75,7 @@ exports[`Nav > should render with no props passed 1`] = `
       data-testid="Desktop Nav Container"
     >
       <nav
-        class="flex h-16 justify-between rounded-sm bg-white/95 text-lg font-bold shadow-sm backdrop-blur-sm"
+        class="flex h-16 justify-between rounded-sm bg-white text-lg font-bold shadow-sm backdrop-blur-sm"
         data-testid="Desktop Nav"
       >
         <a
