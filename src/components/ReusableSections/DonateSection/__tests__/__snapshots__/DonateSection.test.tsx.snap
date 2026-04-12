@@ -4,7 +4,7 @@ exports[`DonateSection > should render with no props passed passed 1`] = `
 <div>
   <div
     class="bg-center bg-no-repeat bg-cover flex items-center justify-between w-full px-4 md:px-0 fill-current min-h-62.5 bg-secondary text-white"
-    style="background-image: linear-gradient(hsl(215, 30%, 10%, 0.7),hsl(215, 30%, 10%, 0.7)), url("https://operation-code-assets.s3.us-east-2.amazonaws.com/background_flag.jpg");"
+    style="background-image: linear-gradient(rgba(18, 24, 33, 0.7), rgba(18, 24, 33, 0.7)), url("https://operation-code-assets.s3.us-east-2.amazonaws.com/background_flag.jpg");"
   >
     <div
       class="mx-auto my-14 flex w-full max-w-350 flex-col items-center justify-center sm:w-[85%]"
