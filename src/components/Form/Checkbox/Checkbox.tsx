@@ -27,14 +27,14 @@ function Checkbox({
         isHidden={false}
         className={cn(
           'group flex items-start gap-3 outline outline-offset-2 outline-transparent',
-          'cursor-pointer has-[input:disabled]:cursor-not-allowed [&>input:focus-visible]:outline-secondary/50',
+          'cursor-pointer has-[input:disabled]:cursor-not-allowed has-[input:disabled]:opacity-75 has-[input:focus-visible]:outline-secondary/50',
         )}
       >
         <input
           {...props}
           ref={ref}
           className={cn(
-            'size-5 cursor-[inherit] rounded-sm border border-secondary/50 group-hover:border-secondary disabled:opacity-60',
+            'size-5 cursor-[inherit] rounded-sm border border-secondary/50 group-hover:border-secondary',
             'outline outline-offset-2 outline-transparent',
             'group-hover:outline-secondary/25',
           )}
