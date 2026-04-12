@@ -17,9 +17,13 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'jsdom',
-    include: ['./src/**/*.test.ts', './src/**/*.test.tsx', './src/**/*.test.js', './src/**/*.test.jsx'],
+    include: [
+      './src/**/*.test.ts',
+      './src/**/*.test.tsx',
+      './src/**/*.test.js',
+      './src/**/*.test.jsx',
+    ],
     setupFiles: './vitest.setup.tsx',
-    minWorkers: 1,
     maxWorkers: 2,
     css: {
       include: /\.module\.css$/,
