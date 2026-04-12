@@ -234,12 +234,12 @@ exports[`RegistrationForm > should render with required props 1`] = `
         data-testid="CHECKBOX"
       >
         <label
-          class="text-secondary group flex items-start gap-3 outline outline-offset-2 outline-transparent cursor-pointer has-[input:disabled]:cursor-not-allowed [&>input:focus-visible]:outline-secondary/50"
+          class="text-secondary group flex items-start gap-3 outline outline-offset-2 outline-transparent cursor-pointer has-[input:disabled]:cursor-not-allowed has-[input:disabled]:opacity-75 has-[input:focus-visible]:outline-secondary/50"
           data-testid="LABEL"
           for="codeOfConduct"
         >
           <input
-            class="size-5 cursor-[inherit] rounded-sm border border-secondary/50 group-hover:border-secondary disabled:opacity-60 outline outline-offset-2 outline-transparent group-hover:outline-secondary/25"
+            class="size-5 cursor-[inherit] rounded-sm border border-secondary/50 group-hover:border-secondary outline outline-offset-2 outline-transparent group-hover:outline-secondary/25"
             id="codeOfConduct"
             name="codeOfConduct"
             type="checkbox"
@@ -301,12 +301,12 @@ exports[`RegistrationForm > should render with required props 1`] = `
         data-testid="CHECKBOX"
       >
         <label
-          class="text-secondary group flex items-start gap-3 outline outline-offset-2 outline-transparent cursor-pointer has-[input:disabled]:cursor-not-allowed [&>input:focus-visible]:outline-secondary/50"
+          class="text-secondary group flex items-start gap-3 outline outline-offset-2 outline-transparent cursor-pointer has-[input:disabled]:cursor-not-allowed has-[input:disabled]:opacity-75 has-[input:focus-visible]:outline-secondary/50"
           data-testid="LABEL"
           for="slackGuidelines"
         >
           <input
-            class="size-5 cursor-[inherit] rounded-sm border border-secondary/50 group-hover:border-secondary disabled:opacity-60 outline outline-offset-2 outline-transparent group-hover:outline-secondary/25"
+            class="size-5 cursor-[inherit] rounded-sm border border-secondary/50 group-hover:border-secondary outline outline-offset-2 outline-transparent group-hover:outline-secondary/25"
             id="slackGuidelines"
             name="slackGuidelines"
             type="checkbox"
