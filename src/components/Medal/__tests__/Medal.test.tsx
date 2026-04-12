@@ -2,21 +2,21 @@ import { render } from '@testing-library/react';
 import createSnapshotTest from '@/test-utils/createSnapshotTest';
 import Icon from '@/static/images/icons/github_logo.svg';
 
-import Badge from '../Badge';
+import Medal from '../Medal';
 
 const badgeIcon = <Icon />;
 
-describe('Badge', () => {
+describe('Medal', () => {
   it('should render with required props', () => {
-    createSnapshotTest(<Badge icon={badgeIcon} label="Testing" />);
+    createSnapshotTest(<Medal icon={badgeIcon} label="Testing" />);
   });
 
   it('should render with many props assigned', () => {
-    createSnapshotTest(<Badge icon={badgeIcon} label="Badge Icon" className="test-class" />);
+    createSnapshotTest(<Medal icon={badgeIcon} label="Badge Icon" className="test-class" />);
   });
 
   it('should render the image after the label when `isImageFirst` is true', () => {
-    const { container } = render(<Badge icon={badgeIcon} label="Badge Icon" isImageFirst />);
+    const { container } = render(<Medal icon={badgeIcon} label="Badge Icon" isImageFirst />);
     const { childNodes } = container.firstChild!;
     const [firstItem, secondItem] = childNodes;
 
@@ -26,7 +26,7 @@ describe('Badge', () => {
 
   it('should render the image before the label when `isImageFirst` is false', () => {
     const { container } = render(
-      <Badge icon={badgeIcon} label="Badge Icon" isImageFirst={false} />,
+      <Medal icon={badgeIcon} label="Badge Icon" isImageFirst={false} />,
     );
     const { childNodes } = container.firstChild!;
 

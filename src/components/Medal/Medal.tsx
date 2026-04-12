@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils';
 
-export interface BadgePropsType {
+export interface MedalPropsType {
   /**
    * SVG icon to be used as the badge.
    */
@@ -20,7 +20,7 @@ export interface BadgePropsType {
   isImageFirst?: boolean;
 }
 
-function Badge({ className = undefined, icon, isImageFirst = true, label }: BadgePropsType) {
+function Medal({ className = undefined, icon, isImageFirst = true, label }: MedalPropsType) {
   return (
     <figure
       className={cn(
@@ -45,4 +45,4 @@ function Badge({ className = undefined, icon, isImageFirst = true, label }: Badg
   );
 }
 
-export default Badge;
+export default Medal;

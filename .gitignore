@@ -95,5 +95,8 @@ tsconfig.tsbuildinfo
 
 # MCP config (local tool settings)
 .mcp.json
+# Storybook
+storybook-static
+
 # next-agents-md
 .next-docs/

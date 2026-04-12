@@ -1,6 +1,6 @@
 import type { PropsWithChildren } from 'react';
 import HeroBanner from '@/components/HeroBanner/HeroBanner';
-import Badge from '@/components/Badge/Badge';
+import Medal from '@/components/Medal/Medal';
 import Section from '@/components/Section/Section';
 import OutboundLink from '@/components/OutboundLink/OutboundLink';
 import JoinSection from '@/components/ReusableSections/JoinSection/JoinSection';
@@ -42,7 +42,7 @@ export default function ServicesLayout({ children }: PropsWithChildren) {
         </p>
         <div className="-mt-4 flex flex-wrap justify-center">
           {mentorItems.map((item) => (
-            <Badge
+            <Medal
               key={item.label}
               icon={item.icon}
               label={item.label}

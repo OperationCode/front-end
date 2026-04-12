@@ -20,7 +20,7 @@ function FlatCard({ button: Button, children, className, header, image }: FlatCa
 
   return (
     <article
-      className={cn('relative mx-4 my-6 box-border max-w-[400px] rounded-xl shadow-sm', className, {
+      className={cn('relative mx-4 my-6 box-border max-w-100 rounded-xl shadow-sm', className, {
         'pt-20 sm:pt-14': hasImage,
       })}
     >
@@ -36,7 +36,7 @@ function FlatCard({ button: Button, children, className, header, image }: FlatCa
           <div className="-my-5 flex justify-center">
             <div
               data-testid={FLAT_CARD_IMAGE}
-              className="absolute -top-4 h-[194px] w-[194px] border-[3px] border-solid border-primary"
+              className="absolute -top-4 size-48.5 border-[3px] border-solid border-primary"
             >
               <Image
                 src={image.source}
@@ -55,7 +55,7 @@ function FlatCard({ button: Button, children, className, header, image }: FlatCa
         <div>{children}</div>
 
         {Button && (
-          <div className="absolute inset-x-0 -bottom-7 text-center [&>a]:hover:bg-white [&>a]:hover:text-secondary [&>a]:focus-visible:bg-white [&>a]:focus-visible:text-secondary [&>button]:hover:bg-white [&>button]:hover:text-secondary [&>button]:focus-visible:bg-white [&>button]:focus-visible:text-primary">
+          <div className="absolute inset-x-0 -bottom-5 text-center *:outline-2 *:outline-offset-1 *:outline-transparent [&>a]:hover:bg-primary/75 [&>a]:focus-visible:outline-primary [&>button]:hover:bg-primary/75 [&>button]:focus-visible:outline-primary">
             {Button}
           </div>
         )}

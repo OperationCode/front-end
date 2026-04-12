@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Badge > should render with many props assigned 1`] = `
+exports[`Medal > should render with many props assigned 1`] = `
 <div>
   <figure
     class="m-2 flex flex-col place-content-start justify-items-center [&>svg]:mx-0 [&>svg]:my-4 [&>svg]:h-24 [&>svg]:w-auto [&>svg]:fill-current [&>img]:mx-0 [&>img]:h-24 [&>img]:w-auto [&>img]:object-contain test-class"
@@ -34,7 +34,7 @@ exports[`Badge > should render with many props assigned 1`] = `
 </div>
 `;
 
-exports[`Badge > should render with required props 1`] = `
+exports[`Medal > should render with required props 1`] = `
 <div>
   <figure
     class="m-2 flex flex-col place-content-start justify-items-center [&>svg]:mx-0 [&>svg]:my-4 [&>svg]:h-24 [&>svg]:w-auto [&>svg]:fill-current [&>img]:mx-0 [&>img]:h-24 [&>img]:w-auto [&>img]:object-contain"

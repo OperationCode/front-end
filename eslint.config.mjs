@@ -14,6 +14,7 @@ import eslintPluginLodash from 'eslint-plugin-lodash';
 import eslintPluginPlaywright from 'eslint-plugin-playwright';
 import eslintPluginReactHooks from 'eslint-plugin-react-hooks';
 import reactYouMightNotNeedAnEffect from 'eslint-plugin-react-you-might-not-need-an-effect';
+import eslintPluginStorybook from 'eslint-plugin-storybook';
 
 
 const compat = new FlatCompat({
@@ -43,6 +44,7 @@ export default defineConfig(
     'playwright-report/**',
     'test-results/**',
     'public/**',
+    'src/.storybook/**',
     '*.svg',
     'prettier.config.js',
   ]),
@@ -411,6 +413,9 @@ export default defineConfig(
       'no-console': 'off',
     },
   },
+
+  // ── Storybook stories ──
+  ...eslintPluginStorybook.configs['flat/recommended'],
 
   // ── Prettier (must be last) ──
   eslintPluginPrettierRecommended,

@@ -1,7 +1,7 @@
 import type { PropsWithChildren } from 'react';
 import Link from 'next/link';
 import HeroBanner from '@/components/HeroBanner/HeroBanner';
-import Badge from '@/components/Badge/Badge';
+import Medal from '@/components/Medal/Medal';
 import Section from '@/components/Section/Section';
 import { buttonVariants } from '@/components/ui/button';
 import DonateSection from '@/components/ReusableSections/DonateSection/DonateSection';
@@ -76,7 +76,7 @@ export default function GetInvolvedLayout({ children }: PropsWithChildren) {
         <p>By mentoring one of our members, you will help them:</p>
         <div className="-mt-4 flex flex-wrap justify-center">
           {mentorItems.map((item) => (
-            <Badge key={item.label} icon={item.icon} label={item.label} className="mx-16 my-4" />
+            <Medal key={item.label} icon={item.icon} label={item.label} className="mx-16 my-4" />
           ))}
         </div>
       </Section>
@@ -93,7 +93,7 @@ export default function GetInvolvedLayout({ children }: PropsWithChildren) {
         </div>
         <div className="-mt-4 flex flex-wrap justify-center">
           {supportItems.map((item) => (
-            <Badge key={item.label} icon={item.icon} label={item.label} className="mx-16 my-4" />
+            <Medal key={item.label} icon={item.icon} label={item.label} className="mx-16 my-4" />
           ))}
         </div>
       </Section>

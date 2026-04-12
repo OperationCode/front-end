@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import Badge from '@/components/Badge/Badge';
+import Medal from '@/components/Medal/Medal';
 import Section from '@/components/Section/Section';
 import { s3 } from '@/lib/constants/urls';
 
@@ -54,7 +54,7 @@ function LogoSection() {
               <ul>
                 {smLogos.map((logo) => (
                   <li key={logo.label}>
-                    <Badge
+                    <Medal
                       className="[&>img]:h-16"
                       icon={
                         <Image
@@ -82,7 +82,7 @@ function LogoSection() {
               <ul>
                 {stackedLogos.map((logo) => (
                   <li key={logo.label}>
-                    <Badge
+                    <Medal
                       className="[&>img]:h-40"
                       icon={
                         <Image
@@ -118,7 +118,7 @@ function LogoSection() {
               <ul className="border-b-0">
                 {medals.map((medal) => (
                   <li key={medal.label}>
-                    <Badge
+                    <Medal
                       className="[&>img]:h-48"
                       icon={
                         <Image
@@ -150,7 +150,7 @@ function LogoSection() {
           <ul className="flex-col flex-nowrap">
             {lgLogos.map((logo) => (
               <li key={logo.label}>
-                <Badge
+                <Medal
                   icon={
                     <Image
                       src={`${s3}branding/logos/${logo.img}`}
