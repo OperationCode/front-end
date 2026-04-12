@@ -16,6 +16,7 @@ const withMDX = createMDX({
 });
 
 const nextConfig: NextConfig = {
+  reactCompiler: true,
   pageExtensions: ['md', 'mdx', 'ts', 'tsx'],
   turbopack: {
     rules: {
