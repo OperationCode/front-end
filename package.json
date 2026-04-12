@@ -89,6 +89,7 @@
     "@vitest/eslint-plugin": "^1.6.15",
     "@vitest/ui": "^4.1.4",
     "axios-mock-adapter": "^2.1.0",
+    "babel-plugin-react-compiler": "^1.0.0",
     "cross-env": "^10.1.0",
     "dotenv": "^17.4.1",
     "eslint": "^10.2.0",
