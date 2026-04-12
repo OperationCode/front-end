@@ -1,19 +1,32 @@
 import type { Meta, StoryObj } from '@storybook/nextjs';
-import { descriptions } from '@/common/constants/descriptions';
 import Card from '../Card';
 
-type CardStoryType = StoryObj<typeof Card>;
-
 const meta: Meta<typeof Card> = {
-  title: 'Cards/Card',
+  title: 'Cards/ArticleCard',
   component: Card,
+};
+export default meta;
+type Story = StoryObj<typeof Card>;
+
+export const Default: Story = {
   args: {
-    children: descriptions.medium,
+    children: (
+      <div className="text-center">
+        <h3>Card Title</h3>
+        <p>Card content goes here.</p>
+      </div>
+    ),
   },
 };
 
-export default meta;
-
-export const Default: CardStoryType = {
-  render: (args) => <Card {...args} />,
+export const WithHoverAnimation: Story = {
+  args: {
+    hasAnimationOnHover: true,
+    children: (
+      <div className="text-center">
+        <h3>Hover Me</h3>
+        <p>This card has a hover animation.</p>
+      </div>
+    ),
+  },
 };

@@ -1,6 +1,6 @@
-import { cva } from '@/common/utils/cva';
-import { getDataAttributes } from '@/common/utils/prop-utils';
-import type { VariantProps } from '@/common/utils/cva';
+import { cva } from '@/lib/utils';
+import { getDataAttributes } from '@/lib/utils/prop-utils';
+import type { VariantProps } from '@/lib/utils';
 
 export interface ContainerPropsType extends VariantProps<typeof containerCva> {
   /**
@@ -27,7 +27,7 @@ export interface ContainerPropsType extends VariantProps<typeof containerCva> {
 }
 
 const containerCva = cva({
-  base: 'bg-center bg-no-repeat bg-cover flex items-center justify-between w-full px-4 md:px-0 fill-current min-h-[250px]',
+  base: 'bg-center bg-no-repeat bg-cover flex items-center justify-between w-full px-4 md:px-0 fill-current min-h-62.5',
   variants: {
     theme: {
       gray: 'bg-theme-gray-800 text-secondary',
@@ -65,7 +65,7 @@ function Container({
       style={dynamicBackgroundImage}
       {...customDataAttributes}
     >
-      <div className="mx-auto my-14 flex w-full max-w-[1400px] flex-col items-center justify-center sm:w-[85%]">
+      <div className="mx-auto my-14 flex w-full max-w-350 flex-col items-center justify-center sm:w-[85%]">
         {children}
       </div>
     </div>

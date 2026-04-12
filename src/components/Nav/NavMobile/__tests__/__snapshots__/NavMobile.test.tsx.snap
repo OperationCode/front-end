@@ -25,9 +25,15 @@ exports[`NavMobile > should render 1`] = `
       </button>
     </a>
     <button
+      aria-expanded="false"
+      aria-haspopup="dialog"
       class="cursor-pointer"
+      data-base-ui-click-trigger=""
+      data-slot="sheet-trigger"
       data-testid="Hamburger Button"
+      id="base-ui-_r_2_"
       name="dropdown"
+      tabindex="0"
       type="button"
     >
       <span
@@ -37,24 +43,26 @@ exports[`NavMobile > should render 1`] = `
         Open Menu
       </span>
       <svg
-        class="size-9"
-        viewBox="0 0 512 512"
+        aria-hidden="true"
+        class="lucide lucide-menu size-9"
+        fill="none"
+        height="24"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
       >
-        <symbol
-          id="_e636ec86"
-          version="1"
-          viewBox="0 0 512 512"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <title>
-            Hamburger Icon
-          </title>
-          <path
-            d="M32 96h448v96H32zm0 128h448v96H32zm0 128h448v96H32z"
-          />
-        </symbol>
-        <use
-          href="#_e636ec86"
+        <path
+          d="M4 5h16"
+        />
+        <path
+          d="M4 12h16"
+        />
+        <path
+          d="M4 19h16"
         />
       </svg>
     </button>

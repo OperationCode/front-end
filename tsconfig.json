@@ -1,13 +1,8 @@
 {
   "compilerOptions": {
-    "baseUrl": "./",
     "target": "esnext",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "allowJs": true,
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": false,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "incremental": true,
@@ -27,14 +22,9 @@
     "noEmit": true,
     "noEmitOnError": true,
     "paths": {
-      "@/*": [
-        "./src/*"
-      ]
+      "@/*": ["./src/*"]
     },
-    "types": [
-      "vitest/globals",
-      "@testing-library/jest-dom"
-    ],
+    "types": ["vitest/globals", "@testing-library/jest-dom"],
     "plugins": [
       {
         "name": "next"
@@ -45,14 +35,11 @@
     "vitest.config.mts",
     "vitest.setup.tsx",
     "next-env.d.ts",
-    "**/*.js",
     "**/*.ts",
     "**/*.tsx",
+    "**/*.mdx",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts"
   ],
-  "exclude": [
-    "node_modules",
-    "./cypress/tsconfig.json"
-  ]
+  "exclude": ["node_modules", "./cypress/tsconfig.json"]
 }

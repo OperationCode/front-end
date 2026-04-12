@@ -1,25 +1,32 @@
 import type { Meta, StoryObj } from '@storybook/nextjs';
-import { descriptions } from '@/common/constants/descriptions';
 import FeaturedJobItem from '../FeaturedJobItem';
-
-type FeaturedJobItemStoryType = StoryObj<typeof FeaturedJobItem>;
 
 const meta: Meta<typeof FeaturedJobItem> = {
   title: 'FeaturedJobItem',
   component: FeaturedJobItem,
 };
-
 export default meta;
+type Story = StoryObj<typeof FeaturedJobItem>;
 
-/**
- * Default FeaturedJobItem supplied with only required args.
- */
-export const Default: FeaturedJobItemStoryType = {
-  render: (args) => <FeaturedJobItem {...args} />,
+export const Default: Story = {
   args: {
-    title: 'Job Title',
-    source: 'Company Name',
-    sourceUrl: '#',
-    description: descriptions.long,
+    title: 'Senior Software Engineer',
+    description: 'Build and maintain scalable web applications using modern technologies.',
+    source: 'Acme Corp',
+    sourceUrl: 'https://example.com/jobs/123',
+    city: 'Austin',
+    state: 'TX',
+    country: 'USA',
+  },
+};
+
+export const Remote: Story = {
+  args: {
+    title: 'Frontend Developer',
+    description: 'Work remotely on our React-based platform.',
+    source: 'Remote Inc',
+    sourceUrl: 'https://example.com/jobs/456',
+    country: 'USA',
+    remote: true,
   },
 };

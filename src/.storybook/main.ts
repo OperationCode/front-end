@@ -1,4 +1,4 @@
-import { svgoConfig } from '../common/config/svgo';
+import { svgoConfig } from '../lib/config/svgo';
 import type { StorybookConfig } from '@storybook/nextjs';
 
 const config: StorybookConfig = {
@@ -18,7 +18,6 @@ const config: StorybookConfig = {
     const imageRule = config.module.rules.find((rule) => {
       // @ts-expect-error => 'rule' is possibly 'null' or 'undefined'.ts(18049)
       if (rule.test && rule.test.test('.svg')) {
-        console.log({ rule });
         return true;
       } else {
         return false;

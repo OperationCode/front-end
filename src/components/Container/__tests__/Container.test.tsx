@@ -1,6 +1,6 @@
 import createSnapshotTest from '@/test-utils/createSnapshotTest';
 
-import { s3 } from '@/common/constants/urls';
+import { s3 } from '@/lib/constants/urls';
 import Container from '../Container';
 
 describe('Container', () => {
@@ -8,12 +8,7 @@ describe('Container', () => {
 
   it('should render with many props assigned', () => {
     createSnapshotTest(
-      <Container
-        backgroundImageSource={testImageUrl}
-        className="test-class"
-        isFullViewportHeight
-        theme="white"
-      >
+      <Container backgroundImageSource={testImageUrl} className="test-class" theme="white">
         Test Children
       </Container>,
     );

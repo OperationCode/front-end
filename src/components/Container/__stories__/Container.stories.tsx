@@ -1,19 +1,30 @@
 import type { Meta, StoryObj } from '@storybook/nextjs';
-import { descriptions } from '@/common/constants/descriptions';
 import Container from '../Container';
-
-type ContainerStoryType = StoryObj<typeof Container>;
 
 const meta: Meta<typeof Container> = {
   title: 'Container',
   component: Container,
+};
+export default meta;
+type Story = StoryObj<typeof Container>;
+
+export const Secondary: Story = {
   args: {
-    children: descriptions.long,
+    theme: 'secondary',
+    children: <p>Secondary theme (default)</p>,
   },
 };
 
-export default meta;
+export const White: Story = {
+  args: {
+    theme: 'white',
+    children: <p>White theme</p>,
+  },
+};
 
-export const Default: ContainerStoryType = {
-  render: (args) => <Container {...args} />,
+export const Gray: Story = {
+  args: {
+    theme: 'gray',
+    children: <p>Gray theme</p>,
+  },
 };

@@ -12,7 +12,7 @@ exports[`Timeline > should render with no props passed passed 1`] = `
         class="relative flex-1 text-right"
       >
         <h3
-          class="absolute top-8 w-full pr-2.5 text-sm sm:top-4 sm:text-4xl"
+          class="absolute top-7 w-full pr-2.5 text-sm sm:top-5 sm:text-4xl"
         >
           2011
         </h3>
@@ -24,7 +24,7 @@ exports[`Timeline > should render with no props passed passed 1`] = `
           class="absolute top-0 h-full w-0.5 -translate-x-1/2 bg-theme-gray-800"
         />
         <div
-          class="absolute top-8 size-3.5 -translate-x-1/2 rounded-full border-2 border-gray-500 bg-white sm:top-6"
+          class="absolute top-8 size-3.5 -translate-x-1/2 rounded-full border-2 border-gray-500 bg-white sm:top-7"
         />
       </div>
       <div
@@ -35,7 +35,7 @@ exports[`Timeline > should render with no props passed passed 1`] = `
           class="mb-8 rounded-md p-5"
         >
           <h4
-            class="capitalize md:text-2xl"
+            class="mb-2 capitalize md:text-2xl"
           >
             Humble Beginnings
           </h4>
@@ -91,7 +91,7 @@ exports[`Timeline > should render with no props passed passed 1`] = `
         class="relative flex-1 text-right"
       >
         <h3
-          class="absolute top-8 w-full pr-2.5 text-sm sm:top-4 sm:text-4xl"
+          class="absolute top-7 w-full pr-2.5 text-sm sm:top-5 sm:text-4xl"
         >
           2013
         </h3>
@@ -103,7 +103,7 @@ exports[`Timeline > should render with no props passed passed 1`] = `
           class="absolute top-0 h-full w-0.5 -translate-x-1/2 bg-theme-gray-800"
         />
         <div
-          class="absolute top-8 size-3.5 -translate-x-1/2 rounded-full border-2 border-gray-500 bg-white sm:top-6"
+          class="absolute top-8 size-3.5 -translate-x-1/2 rounded-full border-2 border-gray-500 bg-white sm:top-7"
         />
       </div>
       <div
@@ -114,7 +114,7 @@ exports[`Timeline > should render with no props passed passed 1`] = `
           class="mb-8 rounded-md p-5"
         >
           <h4
-            class="capitalize md:text-2xl"
+            class="mb-2 capitalize md:text-2xl"
           >
             One Month's Rails
           </h4>
@@ -238,7 +238,7 @@ exports[`Timeline > should render with no props passed passed 1`] = `
           class="mb-8 rounded-md p-5"
         >
           <h4
-            class="capitalize md:text-2xl"
+            class="mb-2 capitalize md:text-2xl"
           >
             Grassroots Advocacy
           </h4>
@@ -252,7 +252,7 @@ exports[`Timeline > should render with no props passed passed 1`] = `
           class="mb-8 rounded-md p-5"
         >
           <h4
-            class="capitalize md:text-2xl"
+            class="mb-2 capitalize md:text-2xl"
           >
             Operation Code's First Draft
           </h4>
@@ -271,7 +271,7 @@ exports[`Timeline > should render with no props passed passed 1`] = `
         class="relative flex-1 text-right"
       >
         <h3
-          class="absolute top-8 w-full pr-2.5 text-sm sm:top-4 sm:text-4xl"
+          class="absolute top-7 w-full pr-2.5 text-sm sm:top-5 sm:text-4xl"
         >
           2014
         </h3>
@@ -283,7 +283,7 @@ exports[`Timeline > should render with no props passed passed 1`] = `
           class="absolute top-0 h-full w-0.5 -translate-x-1/2 bg-theme-gray-800"
         />
         <div
-          class="absolute top-8 size-3.5 -translate-x-1/2 rounded-full border-2 border-gray-500 bg-white sm:top-6"
+          class="absolute top-8 size-3.5 -translate-x-1/2 rounded-full border-2 border-gray-500 bg-white sm:top-7"
         />
       </div>
       <div
@@ -294,7 +294,7 @@ exports[`Timeline > should render with no props passed passed 1`] = `
           class="mb-8 rounded-md p-5"
         >
           <h4
-            class="capitalize md:text-2xl"
+            class="mb-2 capitalize md:text-2xl"
           >
             First Commit
           </h4>
@@ -419,7 +419,7 @@ exports[`Timeline > should render with no props passed passed 1`] = `
           class="mb-8 rounded-md p-5"
         >
           <h4
-            class="capitalize md:text-2xl"
+            class="mb-2 capitalize md:text-2xl"
           >
             Our Official Domain and Brand is Born
           </h4>
@@ -512,7 +512,7 @@ exports[`Timeline > should render with no props passed passed 1`] = `
         class="relative flex-1 text-right"
       >
         <h3
-          class="absolute top-8 w-full pr-2.5 text-sm sm:top-4 sm:text-4xl"
+          class="absolute top-7 w-full pr-2.5 text-sm sm:top-5 sm:text-4xl"
         >
           2015
         </h3>
@@ -524,7 +524,7 @@ exports[`Timeline > should render with no props passed passed 1`] = `
           class="absolute top-0 h-full w-0.5 -translate-x-1/2 bg-theme-gray-800"
         />
         <div
-          class="absolute top-8 size-3.5 -translate-x-1/2 rounded-full border-2 border-gray-500 bg-white sm:top-6"
+          class="absolute top-8 size-3.5 -translate-x-1/2 rounded-full border-2 border-gray-500 bg-white sm:top-7"
         />
       </div>
       <div
@@ -535,7 +535,7 @@ exports[`Timeline > should render with no props passed passed 1`] = `
           class="mb-8 rounded-md p-5"
         >
           <h4
-            class="capitalize md:text-2xl"
+            class="mb-2 capitalize md:text-2xl"
           >
             501(c)(3) Official Status
           </h4>
@@ -554,7 +554,7 @@ exports[`Timeline > should render with no props passed passed 1`] = `
         class="relative flex-1 text-right"
       >
         <h3
-          class="absolute top-8 w-full pr-2.5 text-sm sm:top-4 sm:text-4xl"
+          class="absolute top-7 w-full pr-2.5 text-sm sm:top-5 sm:text-4xl"
         >
           2019
         </h3>
@@ -566,7 +566,7 @@ exports[`Timeline > should render with no props passed passed 1`] = `
           class="absolute top-0 h-full w-0.5 -translate-x-1/2 bg-theme-gray-800"
         />
         <div
-          class="absolute top-8 size-3.5 -translate-x-1/2 rounded-full border-2 border-gray-500 bg-white sm:top-6"
+          class="absolute top-8 size-3.5 -translate-x-1/2 rounded-full border-2 border-gray-500 bg-white sm:top-7"
         />
       </div>
       <div
@@ -577,7 +577,7 @@ exports[`Timeline > should render with no props passed passed 1`] = `
           class="mb-8 rounded-md p-5"
         >
           <h4
-            class="capitalize md:text-2xl"
+            class="mb-2 capitalize md:text-2xl"
           >
             April 2019 Congress Passes VET TEC Program
           </h4>
@@ -670,7 +670,7 @@ exports[`Timeline > should render with no props passed passed 1`] = `
         class="relative flex-1 text-right"
       >
         <h3
-          class="absolute top-8 w-full pr-2.5 text-sm sm:top-4 sm:text-4xl"
+          class="absolute top-7 w-full pr-2.5 text-sm sm:top-5 sm:text-4xl"
         >
           2021
         </h3>
@@ -682,7 +682,7 @@ exports[`Timeline > should render with no props passed passed 1`] = `
           class="absolute top-0 h-full w-0.5 -translate-x-1/2 bg-theme-gray-800"
         />
         <div
-          class="absolute top-8 size-3.5 -translate-x-1/2 rounded-full border-2 border-gray-500 bg-white sm:top-6"
+          class="absolute top-8 size-3.5 -translate-x-1/2 rounded-full border-2 border-gray-500 bg-white sm:top-7"
         />
       </div>
       <div
@@ -693,7 +693,7 @@ exports[`Timeline > should render with no props passed passed 1`] = `
           class="mb-8 rounded-md p-5"
         >
           <h4
-            class="capitalize md:text-2xl"
+            class="mb-2 capitalize md:text-2xl"
           >
             February 2021 Guidestar Gold
           </h4>
@@ -744,7 +744,7 @@ exports[`Timeline > should render with no props passed passed 1`] = `
           class="mb-8 rounded-md p-5"
         >
           <h4
-            class="capitalize md:text-2xl"
+            class="mb-2 capitalize md:text-2xl"
           >
             March 2021 Operation Code Exceeds 8000 Members
           </h4>
@@ -763,7 +763,7 @@ exports[`Timeline > should render with no props passed passed 1`] = `
         class="relative flex-1 text-right"
       >
         <h3
-          class="absolute top-8 w-full pr-2.5 text-sm sm:top-4 sm:text-4xl"
+          class="absolute top-7 w-full pr-2.5 text-sm sm:top-5 sm:text-4xl"
         >
           2023
         </h3>
@@ -775,7 +775,7 @@ exports[`Timeline > should render with no props passed passed 1`] = `
           class="absolute top-0 h-full w-0.5 -translate-x-1/2 bg-theme-gray-800"
         />
         <div
-          class="absolute top-8 size-3.5 -translate-x-1/2 rounded-full border-2 border-gray-500 bg-white sm:top-6"
+          class="absolute top-8 size-3.5 -translate-x-1/2 rounded-full border-2 border-gray-500 bg-white sm:top-7"
         />
       </div>
       <div
@@ -786,7 +786,7 @@ exports[`Timeline > should render with no props passed passed 1`] = `
           class="mb-8 rounded-md p-5"
         >
           <h4
-            class="capitalize md:text-2xl"
+            class="mb-2 capitalize md:text-2xl"
           >
             August 2023 Guidestar Platinum
           </h4>

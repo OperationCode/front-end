@@ -1,7 +1,5 @@
 import type { Metadata } from 'next';
-import HeroBanner from '@/components/HeroBanner/HeroBanner';
-import { s3 } from '@/common/constants/urls';
-import Content from '@/components/Content/Content';
+import Section from '@/components/Section/Section';
 import FlatCard from '@/components/Cards/FlatCard/FlatCard';
 import cynthiaHeadshot from '@/static/images/cynthia.jpg';
 import glomaniHeadshot from '@/static/images/glomani.jpg';
@@ -62,62 +60,46 @@ const boardMembers = [
 
 export default function Team() {
   return (
-    <div>
-      <HeroBanner
-        title="The Team"
-        backgroundImageSource={`${s3}oc_crew_nyc_2021.jpg`}
-        className="min-h-[60dvh] bg-position-[center_30%]"
-      />
-
-      <Content
-        title="Our Board"
-        hasTitleUnderline
-        theme="white"
-        columns={[
-          <div
-            key="team-members"
-            className="flex w-full flex-wrap items-start justify-center [&_img]:object-cover"
-          >
-            {boardMembers.map(({ name, role, imageSrc: imageSource, description }) => (
-              <FlatCard
-                key={name}
-                header={
+    <Section title="Our Board" underline theme="white">
+      <div className="flex w-full flex-wrap items-start justify-center [&_img]:object-cover">
+        {boardMembers.map(({ name, role, imageSrc: imageSource, description }) => (
+          <FlatCard
+            key={name}
+            header={
+              <>
+                <h3>{name}</h3>
+                {role && (
                   <>
-                    <h3>{name}</h3>
-                    {role && (
-                      <>
-                        <br />
-                        <h5>{role}</h5>
-                      </>
-                    )}
+                    <br />
+                    <h5>{role}</h5>
                   </>
-                }
-                image={{
-                  source: imageSource,
-                  alt: `Headshot of ${name}`,
-                }}
-              >
-                <p className="h-64 overflow-y-auto whitespace-pre-line">{description}</p>
-              </FlatCard>
-            ))}
-          </div>,
-          <div key="founding-members" className="pt-8">
-            <p>
-              Operation Code deeply appreciates the time, energy, and hard work of our{' '}
-              <b>Founding Board Members</b>, including Conrad Hollomon (Executive Director), Nell
-              Shamrell-Harrington (Board Director), Mark Kerr (Chair), Laura Gomez (Vice Chair), Dr.
-              Tyrone Grandison (Vice Chair), Dr. Stacy Chin (Director of Fundraising Committee),
-              Liza Rodewald (Director of Military Families Committee), Pete Runyon (Secretary/
-              Treasurer), Josh Carter, Nick Frost, and Aimee Knight on their support, dedication and
-              commitment in the early days.
-            </p>
+                )}
+              </>
+            }
+            image={{
+              source: imageSource,
+              alt: `Headshot of ${name}`,
+            }}
+          >
+            <p className="h-64 overflow-y-auto whitespace-pre-line">{description}</p>
+          </FlatCard>
+        ))}
+      </div>
+      <div className="pt-8">
+        <p>
+          Operation Code deeply appreciates the time, energy, and hard work of our{' '}
+          <b>Founding Board Members</b>, including Conrad Hollomon (Executive Director), Nell
+          Shamrell-Harrington (Board Director), Mark Kerr (Chair), Laura Gomez (Vice Chair), Dr.
+          Tyrone Grandison (Vice Chair), Dr. Stacy Chin (Director of Fundraising Committee), Liza
+          Rodewald (Director of Military Families Committee), Pete Runyon (Secretary/ Treasurer),
+          Josh Carter, Nick Frost, and Aimee Knight on their support, dedication and commitment in
+          the early days.
+        </p>
 
-            <p className="text-center">
-              <em>Thank you for setting us up for success!</em>
-            </p>
-          </div>,
-        ]}
-      />
-    </div>
+        <p className="text-center">
+          <em>Thank you for setting us up for success!</em>
+        </p>
+      </div>
+    </Section>
   );
 }

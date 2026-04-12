@@ -1,25 +1,24 @@
 /// <reference types="vitest" />
 
 import { defineConfig } from 'vitest/config';
-import tsconfigPaths from 'vite-tsconfig-paths';
 import react from '@vitejs/plugin-react';
 import magicalSvg from 'vite-plugin-magical-svg';
 
 export default defineConfig({
-  plugins: [tsconfigPaths(), magicalSvg({ target: 'react' }), react()],
-  // use tsx loader for js using jsx
-  // TODO - remove if ever migrating to Vite
-  esbuild: {
-    loader: 'tsx',
-    include: /\.[jt]sx?$/,
-    exclude: [],
+  plugins: [magicalSvg({ target: 'react' }), react()],
+  resolve: {
+    tsconfigPaths: true,
   },
   test: {
     globals: true,
     environment: 'jsdom',
-    include: ['./src/**/*.test.ts', './src/**/*.test.tsx', './src/**/*.test.js', './src/**/*.test.jsx'],
+    include: [
+      './src/**/*.test.ts',
+      './src/**/*.test.tsx',
+      './src/**/*.test.js',
+      './src/**/*.test.jsx',
+    ],
     setupFiles: './vitest.setup.tsx',
-    minWorkers: 1,
     maxWorkers: 2,
     css: {
       include: /\.module\.css$/,
@@ -32,7 +31,7 @@ export default defineConfig({
       reportOnFailure: true,
       reportsDirectory: './vitest-coverage',
       include: [
-        'src/common/**/*.{js,ts,tsx}',
+        'src/lib/**/*.{js,ts,tsx}',
         'src/components/**/*.{js,ts,tsx}',
         'src/decorators/**/*.{js,ts,tsx}',
       ],
@@ -41,7 +40,6 @@ export default defineConfig({
         'coverage/**',
         '{cypress,vitest}-coverage/**',
         'dist/**',
-        '.storybook-dist/**',
         '.next/**',
         '**/*.d.ts',
         '{karma,rollup,webpack,vite,vitest,jest,ava,playwright,build}.config.*',
@@ -53,18 +51,18 @@ export default defineConfig({
         // Folders covered by integration tests
         'node_modules/**',
         'cypress/**',
-        'src/common/config/**',
-        'src/common/styles/**',
-        'src/common/constants/**',
+        'src/lib/config/**',
+        'src/lib/styles/**',
+        'src/lib/constants/**',
 
         // No real logic to test here
-        'src/common/utils/api-utils.{[jt]s}',
+        'src/lib/utils/api-utils.{[jt]s}',
         'src/components/ZipRecruiterJobs/ZipRecruiterJobs.{[jt]s}',
         'src/components/Press/PressLinks/Articles.{[jt]s}',
         'src/components/Timeline/historyData.{[jt]s}',
 
         // Don't collect coverage from import/export mappers
-        'src/common/(.*)/index.{[jt]s}',
+        'src/lib/(.*)/index.{[jt]s}',
         'src/components/(.*)/index.{[jt]s}',
       ],
     },

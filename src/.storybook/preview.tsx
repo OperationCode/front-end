@@ -1,4 +1,4 @@
-import '@/common/styles/globals.css';
+import '@/lib/styles/globals.css';
 import { MINIMAL_VIEWPORTS, INITIAL_VIEWPORTS } from 'storybook/viewport';
 
 export const decorators = [
@@ -13,6 +13,11 @@ export const tags = ['autodocs'];
 
 const preview = {
   parameters: {
+    options: {
+      storySort: {
+        method: 'alphabetical',
+      },
+    },
     viewport: {
       viewports: {
         ...MINIMAL_VIEWPORTS,

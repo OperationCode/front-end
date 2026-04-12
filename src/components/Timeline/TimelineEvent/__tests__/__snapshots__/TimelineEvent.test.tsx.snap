@@ -6,7 +6,7 @@ exports[`TimelineEvent > should render with required props 1`] = `
     class="mb-8 rounded-md p-5"
   >
     <h4
-      class="capitalize md:text-2xl"
+      class="mb-2 capitalize md:text-2xl"
     >
       test title
     </h4>

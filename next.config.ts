@@ -1,13 +1,23 @@
 import type { NextConfig } from 'next';
 import { withSentryConfig } from '@sentry/nextjs';
 import bundleAnalyzer from '@next/bundle-analyzer';
-import { svgoConfig } from './src/common/config/svgo';
+import createMDX from '@next/mdx';
+import { svgoConfig } from './src/lib/config/svgo';
 
 const hasBundleAnalyzer = process.env.ANALYZE === 'true';
 const withBundleAnalyzer = bundleAnalyzer({ enabled: hasBundleAnalyzer });
 const jsonSvgoConfig = JSON.parse(JSON.stringify(svgoConfig));
 
+const withMDX = createMDX({
+  options: {
+    remarkPlugins: [],
+    rehypePlugins: [],
+  },
+});
+
 const nextConfig: NextConfig = {
+  reactCompiler: true,
+  pageExtensions: ['md', 'mdx', 'ts', 'tsx'],
   turbopack: {
     rules: {
       '*.svg': {
@@ -29,9 +39,6 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       { protocol: 'https', hostname: 'operation-code-assets.s3.us-east-2.amazonaws.com' },
       { protocol: 'https', hostname: 'user-images.githubusercontent.com' },
-      { protocol: 'https', hostname: 'ssl-static.libsyn.com' },
-      { protocol: 'https', hostname: 'static.libsyn.com' },
-      { protocol: 'https', hostname: 'libsyn.com' },
       { protocol: 'https', hostname: 'i.ytimg.com' },
     ],
   },
@@ -75,6 +82,6 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default withSentryConfig(withBundleAnalyzer(nextConfig), {
+export default withSentryConfig(withBundleAnalyzer(withMDX(nextConfig)), {
   silent: true,
 });

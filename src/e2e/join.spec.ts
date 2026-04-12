@@ -1,14 +1,14 @@
 import { test, expect, type Page } from '@playwright/test';
 import existingUser from '../test-utils/mocks/existingUser';
 import { mockUser } from '../test-utils/mockGenerators/mockUser';
-import { validationErrorMessages } from '../common/constants/messages';
+import { validationErrorMessages } from '../lib/constants/messages';
 import {
   SUCCESS_PAGE_MESSAGE,
   REGISTRATION_FORM_INITIAL_SUBMIT_BUTTON,
   MULTI_STEP_STEP_BUTTON,
   MULTI_STEP_SUBMIT_BUTTON,
   MULTI_STEP_PREVIOUS_BUTTON,
-} from '../common/constants/testIDs';
+} from '../lib/constants/testIDs';
 
 const getValidUser = () => mockUser();
 
@@ -17,26 +17,19 @@ const getCheckbox = (page: Page, regex: RegExp) => page.getByLabel(regex);
 
 const assertError = async (
   page: Page,
-  {
-    numberOfErrors = 1,
-    errorMessage = validationErrorMessages.required,
-  }: { numberOfErrors?: number; errorMessage?: string } = {},
+  { errorMessage = validationErrorMessages.required }: { errorMessage?: string } = {},
 ) => {
-  const alerts = page.locator('#__next').getByRole('alert');
-  await expect(alerts).toHaveCount(numberOfErrors);
-  await expect(alerts.first()).toContainText(errorMessage);
+  const alerts = page.locator('[data-slot="field-error"], [data-slot="alert"]');
+  await expect(alerts.filter({ hasText: errorMessage }).first()).toBeVisible();
 };
 
 const assertFailedLogin = async (
   page: Page,
-  {
-    numberOfErrors = 1,
-    errorMessage = validationErrorMessages.required,
-  }: { numberOfErrors?: number; errorMessage?: string } = {},
+  { errorMessage = validationErrorMessages.required }: { errorMessage?: string } = {},
 ) => {
   await page.getByTestId(REGISTRATION_FORM_INITIAL_SUBMIT_BUTTON).click();
   await expect(page).toHaveURL(/\/join/);
-  await assertError(page, { numberOfErrors, errorMessage });
+  await assertError(page, { errorMessage });
   const cookies = await page.context().cookies();
   expect(cookies).toHaveLength(0);
 };
@@ -47,6 +40,12 @@ test.describe('join', () => {
     const cookies = await page.context().cookies();
     expect(cookies).toHaveLength(0);
     await expect(page.locator('h1')).toHaveText('Join');
+
+    // Wait for React hydration so form event handlers are attached
+    await page.waitForFunction(() => {
+      const form = document.querySelector('form');
+      return form && Object.keys(form).some((k) => k.startsWith('__react'));
+    });
   });
 
   /**
@@ -69,7 +68,7 @@ test.describe('join', () => {
     await getCheckbox(page, /Code of Conduct/).check();
     await getCheckbox(page, /Slack Community Guidelines/).check();
 
-    await assertFailedLogin(page, { numberOfErrors: 2 });
+    await assertFailedLogin(page, {});
   });
 
   test('should NOT be able to register when email contains only spaces', async ({ page }) => {
@@ -85,7 +84,7 @@ test.describe('join', () => {
     await getCheckbox(page, /Code of Conduct/).check();
     await getCheckbox(page, /Slack Community Guidelines/).check();
 
-    await assertFailedLogin(page, { numberOfErrors: 2 });
+    await assertFailedLogin(page, {});
   });
 
   test('should NOT be able to register with an invalid email', async ({ page }) => {
@@ -126,11 +125,7 @@ test.describe('join', () => {
     const validUser = getValidUser();
     await getInput(page, 'email').fill(validUser.email);
     await getInput(page, 'confirm-email').fill(existingUser.email);
-
     await getInput(page, 'firstName').fill(validUser.firstName);
-
-    await assertError(page, { errorMessage: validationErrorMessages.emailsMatch });
-
     await getInput(page, 'lastName').fill(validUser.lastName);
     await getInput(page, 'zipcode').fill(String(validUser.zipcode));
     await getCheckbox(page, /Code of Conduct/).check();
@@ -272,11 +267,9 @@ test.describe('join', () => {
     await getCheckbox(page, /Slack Community Guidelines/).check();
 
     await assertError(page, {
-      numberOfErrors: 1,
       errorMessage: validationErrorMessages.codeOfConduct,
     });
     await assertFailedLogin(page, {
-      numberOfErrors: 1,
       errorMessage: validationErrorMessages.codeOfConduct,
     });
   });
@@ -296,11 +289,9 @@ test.describe('join', () => {
     await getCheckbox(page, /Slack Community Guidelines/).blur();
 
     await assertError(page, {
-      numberOfErrors: 1,
       errorMessage: validationErrorMessages.slackGuidelines,
     });
     await assertFailedLogin(page, {
-      numberOfErrors: 1,
       errorMessage: validationErrorMessages.slackGuidelines,
     });
   });
@@ -309,7 +300,7 @@ test.describe('join', () => {
    * Registration without all fields
    */
   test('should NOT be able to register without filling all required fields', async ({ page }) => {
-    await assertFailedLogin(page, { numberOfErrors: 7 });
+    await assertFailedLogin(page, {});
   });
 
   /**

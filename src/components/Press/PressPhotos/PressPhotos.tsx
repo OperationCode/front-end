@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import { s3 } from '@/common/constants/urls';
-import { cx } from '@/common/utils/cva';
+import { s3 } from '@/lib/constants/urls';
+import { cn } from '@/lib/utils';
 
 const pressPhotos = [
   {
@@ -35,7 +35,7 @@ function PressPhotos() {
             src={photo.src}
             alt={photo.alt}
             fill
-            className={cx('object-cover', photo.className)}
+            className={cn('object-cover', photo.className)}
           />
         </div>
       ))}

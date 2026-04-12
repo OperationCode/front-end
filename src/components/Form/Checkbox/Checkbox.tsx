@@ -1,40 +1,40 @@
-import type { FormikProps, Field, FormikValues } from 'formik';
-import { ErrorMessage } from 'formik';
-import { CHECKBOX, CHECKBOX_ERROR } from '@/common/constants/testIDs';
-import Alert from '@/components/Alert/Alert';
+import { CHECKBOX } from '@/lib/constants/testIDs';
 import Label from '@/components/Form/Label/Label';
-import { cx } from '@/common/utils/cva';
+import { cn } from '@/lib/utils';
 
-interface CheckboxProps extends Omit<React.HTMLAttributes<HTMLInputElement>, 'disabled'> {
-  field: ReturnType<typeof Field>;
-  form: FormikProps<FormikValues>;
+interface CheckboxProps extends Omit<
+  React.InputHTMLAttributes<HTMLInputElement>,
+  'disabled' | 'type'
+> {
   label: React.ReactNode | string;
   isDisabled?: boolean;
+  ref?: React.Ref<HTMLInputElement>;
 }
 
 function Checkbox({
   className,
-  field: { name, value, ...field },
-  form: { errors },
   id,
   isDisabled = false,
   label,
+  name,
+  ref,
+  ...props
 }: CheckboxProps) {
-  const hasErrors = Boolean(errors[name]);
   return (
-    <div className={cx('relative', className)} data-testid={CHECKBOX}>
+    <div className={cn('relative', className)} data-testid={CHECKBOX}>
       <Label
-        htmlFor={name}
+        htmlFor={id || name}
         isHidden={false}
-        className={cx(
-          `group flex items-start gap-3 outline outline-offset-2 outline-transparent`,
-          `cursor-pointer has-[input:disabled]:cursor-not-allowed [&>input:focus-visible]:outline-secondary/50`,
+        className={cn(
+          'group flex items-start gap-3 outline outline-offset-2 outline-transparent',
+          'cursor-pointer has-[input:disabled]:cursor-not-allowed has-[input:disabled]:opacity-75 has-[input:focus-visible]:outline-secondary/50',
         )}
       >
         <input
-          {...field}
-          className={cx(
-            `size-5 cursor-[inherit] rounded-sm border border-secondary/50 group-hover:border-secondary disabled:opacity-60`,
+          {...props}
+          ref={ref}
+          className={cn(
+            'size-5 cursor-[inherit] rounded-sm border border-secondary/50 group-hover:border-secondary',
             'outline outline-offset-2 outline-transparent',
             'group-hover:outline-secondary/25',
           )}
@@ -42,22 +42,10 @@ function Checkbox({
           id={id || name}
           name={name}
           type="checkbox"
-          value={value || ''}
         />
 
-        {/* negative margin here is to align the text with the checkbox bubble while allowing the field to use `flex items start` for if the label wraps lines */}
         <span className="-mt-0.75 select-none">{label}</span>
       </Label>
-
-      <ErrorMessage name={name}>
-        {(message) => {
-          return hasErrors ? (
-            <Alert className="mt-2 flex-1 text-center" data-testid={CHECKBOX_ERROR} type="error">
-              {message}
-            </Alert>
-          ) : null;
-        }}
-      </ErrorMessage>
     </div>
   );
 }

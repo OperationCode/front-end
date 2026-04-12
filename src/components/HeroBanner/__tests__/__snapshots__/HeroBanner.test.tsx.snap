@@ -3,14 +3,14 @@
 exports[`HeroBanner > should render with many props assigned 1`] = `
 <div>
   <div
-    class="bg-center bg-no-repeat bg-cover flex items-center justify-between w-full px-4 md:px-0 fill-current bg-secondary text-white min-h-dvh pt-20 text-shadow-[0_0_15px_#111111] test"
-    style="background-image: linear-gradient(hsl(215, 30%, 10%, 0.7),hsl(215, 30%, 10%, 0.7)), url("https://operation-code-assets.s3.us-east-2.amazonaws.com/heroBanner/stock_family-2.jpg");"
+    class="bg-center bg-no-repeat bg-cover flex items-center justify-between w-full px-4 md:px-0 fill-current bg-secondary text-white min-h-dvh pt-20 [&_p]:text-shadow-md test"
+    style="background-image: linear-gradient(rgba(18, 24, 33, 0.7), rgba(18, 24, 33, 0.7)), url("https://operation-code-assets.s3.us-east-2.amazonaws.com/heroBanner/stock_family-2.jpg");"
   >
     <div
-      class="mx-auto my-14 flex w-full max-w-[1400px] flex-col items-center justify-center sm:w-[85%]"
+      class="mx-auto my-14 flex w-full max-w-350 flex-col items-center justify-center sm:w-[85%]"
     >
       <h1
-        class="mb-4 border-b-4 border-b-primary text-center"
+        class="text-shadow-md mb-4 border-b-4 border-b-primary text-center"
         data-testid="HERO_BANNER_H1"
       >
         Test
@@ -24,13 +24,13 @@ exports[`HeroBanner > should render with many props assigned 1`] = `
 exports[`HeroBanner > should render with required props 1`] = `
 <div>
   <div
-    class="bg-center bg-no-repeat bg-cover flex items-center justify-between w-full px-4 md:px-0 fill-current bg-secondary text-white min-h-dvh pt-20 text-shadow-[0_0_15px_#111111]"
+    class="bg-center bg-no-repeat bg-cover flex items-center justify-between w-full px-4 md:px-0 fill-current bg-secondary text-white min-h-dvh pt-20 [&_p]:text-shadow-md"
   >
     <div
-      class="mx-auto my-14 flex w-full max-w-[1400px] flex-col items-center justify-center sm:w-[85%]"
+      class="mx-auto my-14 flex w-full max-w-350 flex-col items-center justify-center sm:w-[85%]"
     >
       <h1
-        class=""
+        class="text-shadow-md"
         data-testid="HERO_BANNER_H1"
       >
         Test

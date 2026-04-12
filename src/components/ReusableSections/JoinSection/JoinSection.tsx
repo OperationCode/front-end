@@ -1,6 +1,7 @@
+import Link from 'next/link';
 import Container from '@/components/Container/Container';
 import OutboundLink from '@/components/OutboundLink/OutboundLink';
-import LinkButton from '@/components/Buttons/LinkButton/LinkButton';
+import { buttonVariants } from '@/components/ui/button';
 import Heading from '@/components/Heading/Heading';
 
 function JoinSection() {
@@ -13,9 +14,9 @@ function JoinSection() {
         joining our members-only Slack community!
       </p>
 
-      <LinkButton href="/join" theme="secondary" className="my-4">
+      <Link href="/join" className={buttonVariants({ variant: 'secondary', className: 'my-4' })}>
         Register Now
-      </LinkButton>
+      </Link>
 
       <p>Slack is a community based collaboration tool where all the magic happens!</p>
 

@@ -1,6 +1,6 @@
 import createSnapshotTest from '@/test-utils/createSnapshotTest';
 
-import { s3 } from '@/common/constants/urls';
+import { s3 } from '@/lib/constants/urls';
 import HeroBanner from '../HeroBanner';
 
 describe('HeroBanner', () => {
@@ -14,7 +14,6 @@ describe('HeroBanner', () => {
         title="Test"
         backgroundImageSource={`${s3}heroBanner/stock_family-2.jpg`}
         className="test"
-        isFullViewportHeight
       >
         Testing 123
       </HeroBanner>,

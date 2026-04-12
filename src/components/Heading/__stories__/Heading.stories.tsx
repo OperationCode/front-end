@@ -1,18 +1,28 @@
 import type { Meta, StoryObj } from '@storybook/nextjs';
 import Heading from '../Heading';
 
-type HeadingStoryType = StoryObj<typeof Heading>;
-
 const meta: Meta<typeof Heading> = {
   title: 'Heading',
   component: Heading,
-  args: {
-    text: 'Heading text',
-  },
+  args: { text: 'Our Mission' },
+};
+export default meta;
+type Story = StoryObj<typeof Heading>;
+
+export const Default: Story = {};
+
+export const WithUnderline: Story = {
+  args: { hasTitleUnderline: true },
 };
 
-export default meta;
+export const WithoutHashLink: Story = {
+  args: { hasHashLink: false },
+};
 
-export const Default: HeadingStoryType = {
-  render: (args) => <Heading {...args} />,
+export const HeadingLevel1: Story = {
+  args: { headingLevel: 1, text: 'Page Title' },
+};
+
+export const HeadingLevel3: Story = {
+  args: { headingLevel: 3, text: 'Subsection' },
 };

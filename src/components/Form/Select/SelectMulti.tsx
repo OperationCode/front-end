@@ -1,8 +1,5 @@
-import type { FieldInputProps, FormikHelpers, FormikState } from 'formik';
-import { ErrorMessage } from 'formik';
-import Alert from '@/components/Alert/Alert';
+import { cn } from '@/lib/utils';
 import Label from '@/components/Form/Label/Label';
-import { cx } from '@/common/utils/cva';
 import type { OptionType, ThemedReactSelectProps } from './ThemedReactSelect';
 import { ThemedReactSelect } from './ThemedReactSelect';
 
@@ -11,18 +8,24 @@ export interface SelectMultiProps extends Pick<
   'id' | 'hasValidationStyling' | 'isSearchable'
 > {
   className?: string;
-  field: FieldInputProps<{ label: string; value: string }[]>;
-  form: FormikState<Record<string, string[]>> & FormikHelpers<Record<string, string[]>>;
+  name: string;
+  value: OptionType[];
+  onChange: (value: OptionType[]) => void;
+  onBlur: () => void;
   isLabelHidden?: boolean;
   label: string;
   options: OptionType[];
   disabled?: boolean;
+  error?: string;
+  isTouched?: boolean;
 }
 
 export function SelectMulti({
   className,
-  field: { name, value: fieldValue },
-  form: { errors, setFieldTouched, setFieldValue, touched },
+  name,
+  value: fieldValue,
+  onChange,
+  onBlur,
   hasValidationStyling = true,
   id,
   isLabelHidden = false,
@@ -30,53 +33,34 @@ export function SelectMulti({
   label,
   options,
   disabled,
-  ...props // disabled, placeholder, etc.
+  error,
+  isTouched = false,
 }: SelectMultiProps) {
-  const hasErrors = Boolean(errors[name]);
+  const hasErrors = Boolean(error);
 
   return (
-    <div className={cx('min-w-64', className)}>
+    <div className={cn('min-w-64', className)}>
       <Label htmlFor={name} isHidden={isLabelHidden}>
         {label}
       </Label>
 
       <div className="lg:relative">
         <ThemedReactSelect<true>
-          {...props}
           id={id ? `${id}` : undefined}
           name={name}
           hasErrors={hasErrors}
           hasValidationStyling={hasValidationStyling}
           isMulti
           isSearchable={isSearchable}
-          isTouched={Boolean(touched[name])}
-          onBlur={() => setFieldTouched(name)}
-          onChange={async (selectedArray) => {
-            await setFieldValue(name, selectedArray ?? []);
-            await setFieldTouched(name, true);
+          isTouched={isTouched}
+          onBlur={onBlur}
+          onChange={(selectedArray) => {
+            onChange((selectedArray ?? []) as OptionType[]);
           }}
           options={options}
           value={fieldValue}
           isDisabled={disabled}
         />
-
-        <ErrorMessage name={name}>
-          {(message: string) => {
-            return hasErrors ? (
-              <Alert
-                className={cx(
-                  '-mx-0.5 mt-2 max-w-full flex-1',
-                  'lg:absolute lg:top-0 lg:left-full lg:mt-0 lg:ml-4',
-                  `px-2.5 py-0 lg:w-max lg:max-w-72 lg:min-w-36`,
-                  `lg:flex lg:min-h-full lg:items-center lg:justify-center lg:px-2.5 lg:py-0`,
-                )}
-                type="error"
-              >
-                {message}
-              </Alert>
-            ) : null;
-          }}
-        </ErrorMessage>
       </div>
     </div>
   );

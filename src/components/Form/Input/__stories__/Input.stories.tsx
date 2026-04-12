@@ -1,63 +1,55 @@
-import type { ReactNode } from 'react';
-import { Formik, Field } from 'formik';
-import type { StoryFn } from '@storybook/nextjs';
-import Form from '../../Form';
+import type { Meta, StoryObj } from '@storybook/nextjs';
 import Input from '../Input';
 
-interface InputTemplateArgs {
-  field: { name: string };
-  label: string;
-}
-
-const InputTemplate: StoryFn<InputTemplateArgs> = (args) => {
-  const {
-    field: { name },
-    label,
-  } = args;
-
-  return (
-    <Formik
-      initialValues={{
-        input1Value: '',
-      }}
-      onSubmit={(values) => alert(JSON.stringify(values))}
-    >
-      <Form>
-        <div>
-          <Field name={name} label={label} component={Input} />
-        </div>
-      </Form>
-    </Formik>
-  );
-};
-
-export const Default = InputTemplate.bind({});
-
-Default.args = {
-  field: { name: 'serviceBranchInput' },
-  label: 'Which branch did you serve with?',
-};
-
-export default {
+const meta: Meta<typeof Input> = {
+  title: 'Forms/Input',
   component: Input,
-  title: 'Form/Input',
-  argTypes: {
-    form: {
-      table: { disable: true },
-    },
+};
+export default meta;
+type Story = StoryObj<typeof Input>;
+
+export const Default: Story = {
+  args: {
+    label: 'Email',
+    name: 'email',
+    type: 'email',
+    placeholder: 'you@example.com',
   },
-  parameters: {
-    controls: { sort: 'requiredFirst' },
+};
+
+export const Disabled: Story = {
+  args: {
+    label: 'Disabled',
+    name: 'disabled',
+    isDisabled: true,
+    placeholder: 'Cannot edit',
   },
-  decorators: [
-    (InputStory: () => ReactNode) => (
-      <>
-        <span>
-          NOTE: This component's story has no context outside of Formik and will not function
-          properly
-        </span>
-        <InputStory />
-      </>
-    ),
-  ],
+};
+
+export const WithError: Story = {
+  args: {
+    label: 'Email',
+    name: 'email-error',
+    type: 'email',
+    error: 'Invalid email address',
+    isTouched: true,
+  },
+};
+
+export const Valid: Story = {
+  args: {
+    label: 'Name',
+    name: 'name-valid',
+    defaultValue: 'Kyle',
+    isTouched: true,
+  },
+};
+
+export const HiddenLabel: Story = {
+  args: {
+    label: 'Search',
+    name: 'search',
+    isLabelHidden: true,
+    placeholder: 'Search...',
+  },
 };

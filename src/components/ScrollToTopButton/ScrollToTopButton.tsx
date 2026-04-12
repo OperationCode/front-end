@@ -1,22 +1,23 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { cx } from '@/common/utils/cva';
+import { cn } from '@/lib/utils';
 
 export function ScrollToTopButton() {
-  const [isInView, setIsInView] = useState(false);
+  const [isInView, setIsInView] = useState(() =>
+    typeof window !== 'undefined' ? window.scrollY >= 750 : false,
+  );
 
   useEffect(() => {
     const handleScroll = () => setIsInView(window.scrollY >= 750);
     window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
     <button
       aria-hidden="true"
-      className={cx(
+      className={cn(
         `fixed -right-5 bottom-6 size-12 rounded-md border border-white bg-secondary p-2 opacity-0 shadow-2xl transition-all sm:size-16`,
         { ['right-6 opacity-70']: isInView },
       )}

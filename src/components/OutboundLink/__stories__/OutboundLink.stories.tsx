@@ -1,21 +1,26 @@
 import type { Meta, StoryObj } from '@storybook/nextjs';
-import { descriptions } from '@/common/constants/descriptions';
 import OutboundLink from '../OutboundLink';
-
-type OutboudLinkStoryType = StoryObj<typeof OutboundLink>;
 
 const meta: Meta<typeof OutboundLink> = {
   title: 'OutboundLink',
   component: OutboundLink,
+};
+export default meta;
+type Story = StoryObj<typeof OutboundLink>;
+
+export const Default: Story = {
   args: {
-    analyticsEventLabel: 'Event label',
-    children: descriptions.short,
-    href: '#',
+    href: 'https://operationcode.org',
+    analyticsEventLabel: 'Storybook link',
+    children: 'Operation Code',
   },
 };
 
-export default meta;
-
-export const Default: OutboudLinkStoryType = {
-  render: (args) => <OutboundLink {...args} />,
+export const WithoutIcon: Story = {
+  args: {
+    href: 'https://operationcode.org',
+    analyticsEventLabel: 'Storybook link',
+    children: 'No icon link',
+    hasIcon: false,
+  },
 };

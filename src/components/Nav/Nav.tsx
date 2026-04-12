@@ -1,14 +1,14 @@
 'use client';
 
-import { useState, useEffect, useEffectEvent } from 'react';
+import { useState, useRef, useEffect, useEffectEvent } from 'react';
 import Link from 'next/link';
 import { useRouter, usePathname } from 'next/navigation';
 import dynamic from 'next/dynamic';
 import Logo from '@/static/images/logo.svg';
 
-import { desktopNavItems, mobileNavItems } from '@/common/constants/navigation';
+import { desktopNavItems, mobileNavItems } from '@/lib/constants/navigation';
 import NavMobile from '@/components/Nav/NavMobile/NavMobile';
-import { cx } from '@/common/utils/cva';
+import { cn } from '@/lib/utils';
 
 const NavListItem = dynamic(() => import('@/components/Nav/NavListItem/NavListItem'), {
   ssr: false,
@@ -17,40 +17,27 @@ const NavListItem = dynamic(() => import('@/components/Nav/NavListItem/NavListIt
 export const Nav = () => {
   const router = useRouter();
   const pathname = usePathname();
-  const [isMobileNavOpen, setMobileNavOpen] = useState(false);
+  const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
+  const previousPathnameRef = useRef(pathname);
 
-  const openMobileMenu = () => {
-    setMobileNavOpen(true);
-    document.body.style.overflow = 'hidden';
-  };
-
-  const closeMobileMenu = () => {
-    setMobileNavOpen(false);
-    document.body.style.overflow = 'auto';
-  };
-
-  const closeMobileMenuEvent = useEffectEvent(() => {
-    closeMobileMenu();
-  });
+  // eslint-disable-next-line @eslint-react/set-state-in-effect
+  const closeMobileNav = useEffectEvent(() => setIsMobileNavOpen(false));
 
   useEffect(() => {
-    closeMobileMenuEvent();
+    if (previousPathnameRef.current !== pathname) {
+      previousPathnameRef.current = pathname;
+      closeMobileNav();
+    }
   }, [pathname]);
 
   return (
     <>
-      {/* Always rendered, but conditionally displayed via media query */}
-      <NavMobile
-        isOpen={isMobileNavOpen}
-        closeMenu={closeMobileMenu}
-        openMenu={openMobileMenu}
-        navItems={mobileNavItems}
-      />
+      <NavMobile isOpen={isMobileNavOpen} setOpen={setIsMobileNavOpen} navItems={mobileNavItems} />
 
       <header className="absolute top-4 z-10 hidden w-full font-family-bebas uppercase lg:block">
         <div className="mx-auto max-w-7xl px-4" data-testid="Desktop Nav Container">
           <nav
-            className="flex h-16 justify-between rounded-sm bg-white text-lg font-bold"
+            className="flex h-16 justify-between rounded-sm bg-white text-lg font-bold shadow-sm backdrop-blur-sm"
             data-testid="Desktop Nav"
           >
             <Link
@@ -70,15 +57,14 @@ export const Nav = () => {
                 <NavListItem key={navItem.name} {...navItem} />
               ))}
 
-              {/* stylistic one-off */}
               <li key="Donate">
                 <Link
                   href="/donate"
-                  className={cx(
+                  className={cn(
                     'bg-primary px-8 font-bold text-secondary no-underline',
                     'flex h-full items-center justify-center',
                     'transition-colors duration-200 ease-linear',
-                    `cursor-pointer rounded-r-sm hover:text-white focus-visible:text-white`,
+                    'cursor-pointer rounded-r-sm hover:text-white focus-visible:text-white',
                   )}
                 >
                   Donate

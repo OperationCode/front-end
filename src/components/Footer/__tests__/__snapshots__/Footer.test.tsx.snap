@@ -3,7 +3,7 @@
 exports[`Footer > should render with no props passed 1`] = `
 <div>
   <footer
-    class="pt-12 pb-40 md:py-8"
+    class="border-t border-primary/20 pt-12 pb-40 md:py-8"
   >
     <div>
       <div
@@ -13,8 +13,7 @@ exports[`Footer > should render with no props passed 1`] = `
           href="/"
         >
           <svg
-            class="cursor-pointer"
-            fill="#252e3e"
+            class="cursor-pointer fill-current"
             style="width: 318px; height: 60px;"
             viewBox="0 0 636.11 107"
           >
@@ -522,7 +521,7 @@ exports[`Footer > should render with no props passed 1`] = `
           class="mb-6"
         >
           © 2014-
-          2023
+          2026
            Operation Code™
           <span
             class="pl-4"
@@ -533,45 +532,29 @@ exports[`Footer > should render with no props passed 1`] = `
         <div
           class="mx-auto flex w-60 justify-between [&_a]:text-white"
         >
-          <a
-            href="/terms"
-          >
-            Terms of Use
-          </a>
-          <a
-            class="inline-flex items-start text-burnt-orange"
-            href="https://www.iubenda.com/privacy-policy/8174861"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Privacy
-            <span
-              class="sr-only"
-              data-testid="SCREEN_READER_ONLY"
+          <li>
+            <a
+              href="/terms"
             >
-              Opens in new window
-            </span>
-            <svg
-              class="mt-0.5 ml-1 inline-block size-3.5 fill-current"
-              viewBox="0 0 448 512"
+              Terms of Use
+            </a>
+          </li>
+          <li>
+            <a
+              class="inline-flex items-start text-burnt-orange"
+              href="https://www.iubenda.com/privacy-policy/8174861"
+              rel="noopener noreferrer"
+              target="_blank"
             >
-              <symbol
-                id="_73ab62bc"
-                viewBox="0 0 448 512"
-                xmlns="http://www.w3.org/2000/svg"
+              Privacy
+              <span
+                class="sr-only"
+                data-testid="SCREEN_READER_ONLY"
               >
-                <title>
-                  External Link Symbol
-                </title>
-                <path
-                  d="M448 80v352c0 27-21 48-48 48H48c-27 0-48-21-48-48V80c0-27 21-48 48-48h352c27 0 48 21 48 48zm-88 16H248c-21 0-32 26-17 41l32 32L68 364c-5 5-5 13 0 17l31 31c4 5 12 5 17 0l195-195 32 32c15 15 41 4 41-17V120c0-13-11-24-24-24z"
-                />
-              </symbol>
-              <use
-                href="#_73ab62bc"
-              />
-            </svg>
-          </a>
+                Opens in new window
+              </span>
+            </a>
+          </li>
         </div>
       </div>
     </div>

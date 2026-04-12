@@ -43,15 +43,20 @@ const ZipRecruiterJobs = () => {
       zipsearch.init(options);
     };
 
+    let timeoutId: ReturnType<typeof setTimeout>;
+
     const tryRunInit = () => {
       if (window.zipsearch) {
-        return initializeZipRecruiter(window.zipsearch);
+        initializeZipRecruiter(window.zipsearch);
+        return;
       }
 
-      return setTimeout(tryRunInit, 500);
+      timeoutId = setTimeout(tryRunInit, 500);
     };
 
     tryRunInit();
+
+    return () => clearTimeout(timeoutId);
   }, []);
 
   return <div id="zipsearch_container" />;

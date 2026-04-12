@@ -1,27 +1,26 @@
-import type { StoryFn } from '@storybook/nextjs';
-import { descriptions } from '@/common/constants/descriptions';
+import type { Meta, StoryObj } from '@storybook/nextjs';
 import FlatCard from '../FlatCard';
 
-export default {
-  component: FlatCard,
+const meta: Meta<typeof FlatCard> = {
   title: 'Cards/FlatCard',
+  component: FlatCard,
+};
+export default meta;
+type Story = StoryObj<typeof FlatCard>;
+
+export const Default: Story = {
+  args: {
+    header: 'Card Header',
+    children: <p>Card body content goes here.</p>,
+  },
 };
 
-interface FlatCardArgs {
-  children: string;
-  image: {
-    source: string;
-    alt: string;
-  };
-}
-
-const Template: StoryFn<FlatCardArgs> = (args) => <FlatCard {...args} />;
-
-export const Default = Template.bind({});
-Default.args = {
-  children: descriptions.long,
-  image: {
-    source: '',
-    alt: '',
+export const WithButton: Story = {
+  args: {
+    header: 'With Action',
+    children: <p>This card has a button.</p>,
+    button: (
+      <button className="rounded-sm bg-primary px-4 py-2 text-primary-foreground">Action</button>
+    ),
   },
 };
