@@ -6,7 +6,6 @@ import { cn } from '@/lib/utils';
 
 function Label({ className, ...props }: ComponentProps<'label'>) {
   return (
-    // eslint-disable-next-line jsx-a11y/label-has-associated-control -- htmlFor passed via props spread
     <label
       data-slot="label"
       className={cn(

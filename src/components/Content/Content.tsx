@@ -55,6 +55,7 @@ function Content({
 
       <div className="flex w-full flex-wrap items-center justify-center *:m-4">
         {columns.map((column, index) => (
+          // eslint-disable-next-line @eslint-react/no-array-index-key
           <Fragment key={index}>{column}</Fragment>
         ))}
       </div>

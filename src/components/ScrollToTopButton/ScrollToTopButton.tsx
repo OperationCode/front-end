@@ -4,12 +4,13 @@ import { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
 
 export function ScrollToTopButton() {
-  const [isInView, setIsInView] = useState(false);
+  const [isInView, setIsInView] = useState(() =>
+    typeof window !== 'undefined' ? window.scrollY >= 750 : false,
+  );
 
   useEffect(() => {
     const handleScroll = () => setIsInView(window.scrollY >= 750);
     window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 

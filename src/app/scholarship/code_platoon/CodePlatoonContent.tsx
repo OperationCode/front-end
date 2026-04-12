@@ -12,6 +12,8 @@ export default function CodePlatoonContent() {
     script.src = 'https://js.hsforms.net/forms/embed/v2.js';
     document.body.append(script);
 
+    let timeoutId: ReturnType<typeof setTimeout>;
+
     const tryRunInit = () => {
       // @ts-expect-error - Undefined window property
       if (window.hbspt) {
@@ -25,11 +27,12 @@ export default function CodePlatoonContent() {
         return;
       }
 
-      // Recursive call to tryRunInit until window.hbspt is defined
-      setTimeout(tryRunInit, 500);
+      timeoutId = setTimeout(tryRunInit, 500);
     };
 
     tryRunInit();
+
+    return () => clearTimeout(timeoutId);
   }, []);
 
   return (

@@ -1,5 +1,4 @@
 import type { InputHTMLAttributes } from 'react';
-import { forwardRef } from 'react';
 import { INPUT, INPUT_FEEDBACK_GROUPING } from '@/lib/constants/testIDs';
 import { cn } from '@/lib/utils';
 import Label from '@/components/Form/Label/Label';
@@ -11,24 +10,23 @@ interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'disabl
   label: string;
   error?: string;
   isTouched?: boolean;
+  ref?: React.Ref<HTMLInputElement>;
 }
 
-const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
-  {
-    className,
-    isDisabled = false,
-    hasValidationStyling = true,
-    id,
-    isLabelHidden = false,
-    label,
-    name,
-    type = 'text',
-    error,
-    isTouched = false,
-    ...props
-  },
+function Input({
+  className,
+  isDisabled = false,
+  hasValidationStyling = true,
+  id,
+  isLabelHidden = false,
+  label,
+  name,
+  type = 'text',
+  error,
+  isTouched = false,
   ref,
-) {
+  ...props
+}: InputProps) {
   const hasErrors = Boolean(error);
   const isLabelAfterInput = type === 'radio';
   const isLabelBeforeInput = !isLabelAfterInput;
@@ -73,6 +71,6 @@ const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
       )}
     </div>
   );
-});
+}
 
 export default Input;

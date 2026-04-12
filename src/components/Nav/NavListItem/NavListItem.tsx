@@ -30,7 +30,7 @@ export interface NavListItemPropsType {
 }
 
 function NavListItem({ sublinks, href, name }: NavListItemPropsType) {
-  const [areSublinksVisible, setSublinksVisible] = useState(false);
+  const [areSublinksVisible, setAreSublinksVisible] = useState(false);
 
   const handleKeyDown = (event: React.KeyboardEvent, indexKeyedOn: number) => {
     const lastSublinkIndex = sublinks && sublinks.length - 1;
@@ -45,14 +45,14 @@ function NavListItem({ sublinks, href, name }: NavListItemPropsType) {
       (isLastSublink && didTabForward) || (isFirstSublink && didTabBackward);
 
     if (shouldHideSublinks) {
-      setSublinksVisible(false);
+      setAreSublinksVisible(false);
     }
   };
 
   const hasSublinks = sublinks && sublinks.length > 0;
-  const exposeSublinks = () => setSublinksVisible(true);
-  const hideSublinks = () => setSublinksVisible(false);
-  const invertSublinkVisibility = () => setSublinksVisible((previousState) => !previousState);
+  const exposeSublinks = () => setAreSublinksVisible(true);
+  const hideSublinks = () => setAreSublinksVisible(false);
+  const invertSublinkVisibility = () => setAreSublinksVisible((previousState) => !previousState);
 
   return (
     <li className="relative">

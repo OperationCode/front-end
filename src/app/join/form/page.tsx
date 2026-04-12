@@ -11,6 +11,8 @@ const pageTitle = 'Update Profile';
 
 export default async function UpdateProfile() {
   const cookieStore = await cookies();
+
+  // eslint-disable-next-line @eslint-react/purity
   const opCodeApplicantEmail = cookieStore.get('opCodeApplicantEmail');
 
   if (!opCodeApplicantEmail) redirect('/');

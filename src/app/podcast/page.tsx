@@ -32,7 +32,6 @@ export default function Podcast() {
                 height={200}
               />
 
-              {/* eslint-disable-next-line jsx-a11y/media-has-caption -- no captions available */}
               <audio controls preload={index < 2 ? 'metadata' : 'none'} className="my-3 w-4/5">
                 <source src={source} type={source.endsWith('.m4a') ? 'audio/mp4' : 'audio/mpeg'} />
               </audio>

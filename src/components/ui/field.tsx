@@ -93,7 +93,6 @@ function FieldContent({ className, ...props }: React.ComponentProps<'div'>) {
 
 function FieldLabel({ className, ...props }: React.ComponentProps<typeof Label>) {
   return (
-    // eslint-disable-next-line jsx-a11y/label-has-associated-control -- htmlFor passed via props spread
     <Label
       data-slot="field-label"
       className={cn(
@@ -189,7 +188,9 @@ function FieldError({
 
     return (
       <ul className="ml-4 flex list-disc flex-col gap-1">
-        {uniqueErrors.map((error, index) => error?.message && <li key={index}>{error.message}</li>)}
+        {uniqueErrors.map(
+          (error) => error?.message && <li key={error.message}>{error.message}</li>,
+        )}
       </ul>
     );
   }, [children, errors]);

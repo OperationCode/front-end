@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useEffectEvent } from 'react';
+import { useState, useRef, useEffect, useEffectEvent } from 'react';
 import Link from 'next/link';
 import { useRouter, usePathname } from 'next/navigation';
 import dynamic from 'next/dynamic';
@@ -17,19 +17,22 @@ const NavListItem = dynamic(() => import('@/components/Nav/NavListItem/NavListIt
 export const Nav = () => {
   const router = useRouter();
   const pathname = usePathname();
-  const [isMobileNavOpen, setMobileNavOpen] = useState(false);
+  const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
+  const previousPathnameRef = useRef(pathname);
 
-  const closeMobileMenuEvent = useEffectEvent(() => {
-    setMobileNavOpen(false);
-  });
+  // eslint-disable-next-line @eslint-react/set-state-in-effect
+  const closeMobileNav = useEffectEvent(() => setIsMobileNavOpen(false));
 
   useEffect(() => {
-    closeMobileMenuEvent();
+    if (previousPathnameRef.current !== pathname) {
+      previousPathnameRef.current = pathname;
+      closeMobileNav();
+    }
   }, [pathname]);
 
   return (
     <>
-      <NavMobile isOpen={isMobileNavOpen} setOpen={setMobileNavOpen} navItems={mobileNavItems} />
+      <NavMobile isOpen={isMobileNavOpen} setOpen={setIsMobileNavOpen} navItems={mobileNavItems} />
 
       <header className="absolute top-4 z-10 hidden w-full font-family-bebas uppercase lg:block">
         <div className="mx-auto max-w-7xl px-4" data-testid="Desktop Nav Container">

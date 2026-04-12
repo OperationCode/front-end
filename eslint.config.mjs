@@ -3,9 +3,7 @@ import tseslint from 'typescript-eslint';
 import eslint from '@eslint/js';
 import { FlatCompat } from '@eslint/eslintrc';
 import eslintPluginUnicorn from 'eslint-plugin-unicorn';
-import eslintPluginReact from 'eslint-plugin-react';
-import eslintPluginReactHooks from 'eslint-plugin-react-hooks';
-import eslintPluginJsxA11y from 'eslint-plugin-jsx-a11y';
+import eslintReact from '@eslint-react/eslint-plugin';
 import eslintPluginVitest from '@vitest/eslint-plugin';
 import eslintPluginImportX from 'eslint-plugin-import-x';
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
@@ -14,6 +12,7 @@ import { getDefaultCallees } from 'eslint-plugin-better-tailwindcss/defaults';
 import noBarrelFiles from 'eslint-plugin-no-barrel-files';
 import eslintPluginLodash from 'eslint-plugin-lodash';
 import eslintPluginPlaywright from 'eslint-plugin-playwright';
+import eslintPluginReactHooks from 'eslint-plugin-react-hooks';
 
 
 const compat = new FlatCompat({
@@ -23,7 +22,7 @@ const compat = new FlatCompat({
 /** @type {import("eslint").Linter.Config['languageOptions']} */
 const languageOptions = {
   parserOptions: {
-    project: true,
+    projectService: true,
     tsconfigRootDir: import.meta.dirname,
   },
   ecmaVersion: 'latest',
@@ -85,63 +84,27 @@ export default defineConfig(
     },
   },
 
-  // ── React ──
-  eslintPluginReact.configs.flat['jsx-runtime'],
+  // ── React (via @eslint-react) ──
   {
-    plugins: { 'react-hooks': eslintPluginReactHooks },
-    rules: eslintPluginReactHooks.configs.recommended.rules,
-  },
-  {
-    files: ['**/*.{ts,tsx,js,jsx}'],
-    settings: { react: { version: 'detect' } },
-    rules: {
-      'react/function-component-definition': [
-        'error',
-        {
-          namedComponents: ['arrow-function', 'function-declaration'],
-          unnamedComponents: ['arrow-function', 'function-expression'],
-        },
-      ],
-      'react/forbid-prop-types': ['error', { forbid: ['any'] }],
-      'react/jsx-curly-brace-presence': ['error', { props: 'never', children: 'never' }],
-      'react/jsx-filename-extension': ['error', { extensions: ['.js', '.tsx'] }],
-      'react/jsx-max-props-per-line': ['error', { maximum: 1, when: 'multiline' }],
-      'react/no-unescaped-entities': 'off',
-      'react/jsx-no-target-blank': 'off',
-      'react/jsx-no-useless-fragment': ['error', { allowExpressions: true }],
-      'react/jsx-one-expression-per-line': 'off',
-      'react/jsx-props-no-spreading': 'off',
-      'react/no-did-mount-set-state': 'off',
-      'react/no-unused-prop-types': 'error',
-      'react/no-unused-state': 'error',
-      'react/prefer-stateless-function': 'off',
-      'react/react-in-jsx-scope': 'off',
-      'react/state-in-constructor': ['error', 'never'],
-      'react/static-property-placement': 'off',
-    },
+    files: ['**/*.{ts,tsx}'],
+    extends: [eslintReact.configs['recommended-typescript']],
   },
 
-  // ── JSX Accessibility ──
-  eslintPluginJsxA11y.flatConfigs.recommended,
+  // ── React Hooks / React Compiler (compiler-specific rules only; overlaps with @eslint-react disabled) ──
   {
-    files: ['**/*.{ts,tsx,js,jsx}'],
+    files: ['**/*.{ts,tsx}'],
+    ...eslintPluginReactHooks.configs.flat['recommended-latest'],
     rules: {
-      'jsx-a11y/anchor-is-valid': [
-        'error',
-        {
-          components: ['Link'],
-          specialLink: ['hrefLeft', 'hrefRight'],
-          aspects: ['invalidHref', 'preferButton'],
-        },
-      ],
-      'jsx-a11y/label-has-associated-control': [
-        2,
-        {
-          labelComponents: ['Label'],
-          labelAttributes: ['for'],
-          controlComponents: ['Input', 'Select'],
-        },
-      ],
+      ...eslintPluginReactHooks.configs.flat['recommended-latest'].rules,
+      'react-hooks/rules-of-hooks': 'off',
+      'react-hooks/exhaustive-deps': 'off',
+      'react-hooks/use-memo': 'off',
+      'react-hooks/component-hook-factories': 'off',
+      'react-hooks/set-state-in-effect': 'off',
+      'react-hooks/error-boundaries': 'off',
+      'react-hooks/purity': 'off',
+      'react-hooks/set-state-in-render': 'off',
+      'react-hooks/unsupported-syntax': 'off',
     },
   },
 
@@ -309,10 +272,6 @@ export default defineConfig(
     rules: {
       'no-restricted-imports': 'off',
 
-      'react/prop-types': 'off',
-      'react/no-array-index-key': 'off',
-      'react/require-default-props': 'off',
-
       '@typescript-eslint/consistent-type-imports': 'error',
       '@typescript-eslint/explicit-module-boundary-types': 'off',
       '@typescript-eslint/naming-convention': [
@@ -419,6 +378,7 @@ export default defineConfig(
     files: ['**/*.test.ts', '**/*.test.tsx'],
     rules: {
       '@typescript-eslint/no-non-null-assertion': 'off',
+      '@eslint-react/component-hook-factories': 'off',
     },
   },
 

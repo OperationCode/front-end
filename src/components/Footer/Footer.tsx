@@ -28,8 +28,9 @@ function FooterLink({ href, name, analyticsEventLabel }: FooterPropsType) {
   );
 }
 
+const currentYear = new Date().getFullYear();
+
 function Footer() {
-  const currentYear = new Date().getFullYear();
   const { items, legal } = footerItems;
 
   return (

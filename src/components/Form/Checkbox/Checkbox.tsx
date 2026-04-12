@@ -1,4 +1,3 @@
-import { forwardRef } from 'react';
 import { CHECKBOX } from '@/lib/constants/testIDs';
 import Label from '@/components/Form/Label/Label';
 import { cn } from '@/lib/utils';
@@ -9,12 +8,18 @@ interface CheckboxProps extends Omit<
 > {
   label: React.ReactNode | string;
   isDisabled?: boolean;
+  ref?: React.Ref<HTMLInputElement>;
 }
 
-const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(function Checkbox(
-  { className, id, isDisabled = false, label, name, ...props },
+function Checkbox({
+  className,
+  id,
+  isDisabled = false,
+  label,
+  name,
   ref,
-) {
+  ...props
+}: CheckboxProps) {
   return (
     <div className={cn('relative', className)} data-testid={CHECKBOX}>
       <Label
@@ -43,6 +48,6 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(function Checkbox(
       </Label>
     </div>
   );
-});
+}
 
 export default Checkbox;
