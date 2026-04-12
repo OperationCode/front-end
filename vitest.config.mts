@@ -1,18 +1,13 @@
 /// <reference types="vitest" />
 
 import { defineConfig } from 'vitest/config';
-import tsconfigPaths from 'vite-tsconfig-paths';
 import react from '@vitejs/plugin-react';
 import magicalSvg from 'vite-plugin-magical-svg';
 
 export default defineConfig({
-  plugins: [tsconfigPaths(), magicalSvg({ target: 'react' }), react()],
-  // use tsx loader for js using jsx
-  // TODO - remove if ever migrating to Vite
-  esbuild: {
-    loader: 'tsx',
-    include: /\.[jt]sx?$/,
-    exclude: [],
+  plugins: [magicalSvg({ target: 'react' }), react()],
+  resolve: {
+    tsconfigPaths: true,
   },
   test: {
     globals: true,

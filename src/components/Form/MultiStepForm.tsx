@@ -6,7 +6,7 @@ import type { DefaultValues, Resolver } from 'react-hook-form';
 import { useForm, FormProvider } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import type { AxiosError } from 'axios';
-import type { $ZodType } from 'zod/v4/core';
+import type { ZodTypeAny } from 'zod';
 import {
   MULTI_STEP_STEP_BUTTON,
   MULTI_STEP_SUBMIT_BUTTON,
@@ -24,7 +24,7 @@ export interface StepComponent<T extends Record<string, unknown>> extends Functi
   title: string;
   initialValues: Partial<T>;
   submitHandler?: (values: Partial<T>) => Promise<void>;
-  validationSchema: $ZodType;
+  validationSchema: ZodTypeAny;
 }
 
 interface MultiStepFormProps<T extends Record<string, unknown>> {
@@ -64,7 +64,7 @@ function StepFormInner<T extends Record<string, unknown>>({
 }: StepFormInnerProps<T>) {
   const methods = useForm<T>({
     defaultValues,
-    resolver: zodResolver(CurrentStep.validationSchema as $ZodType<T, T>) as unknown as Resolver<T>,
+    resolver: zodResolver(CurrentStep.validationSchema) as Resolver<T>,
     mode: 'onTouched',
   });
 
