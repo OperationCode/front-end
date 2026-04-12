@@ -8,12 +8,7 @@ describe('Container', () => {
 
   it('should render with many props assigned', () => {
     createSnapshotTest(
-      <Container
-        backgroundImageSource={testImageUrl}
-        className="test-class"
-        isFullViewportHeight
-        theme="white"
-      >
+      <Container backgroundImageSource={testImageUrl} className="test-class" theme="white">
         Test Children
       </Container>,
     );

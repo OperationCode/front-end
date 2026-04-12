@@ -273,7 +273,7 @@ describe('MultiStepForm', () => {
     const onFinalSubmitMock = vi
       .fn()
       .mockRejectedValueOnce(new Error(networkErrorMessages.serverDown))
-      .mockResolvedValueOnce();
+      .mockResolvedValueOnce(undefined);
 
     const { container, findByLabelText, findByRole, queryByRole } = render(
       <MultiStepForm {...requiredProps} onFinalSubmit={onFinalSubmitMock} />,

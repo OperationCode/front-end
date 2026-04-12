@@ -28,7 +28,7 @@ async function initLogRocket() {
     Sentry.getCurrentScope().setExtra('sessionURL', sessionURL);
   });
 
-  setupLogRocketReact(LogRocket);
+  setupLogRocketReact();
 
   const setFingerprint = () => {
     Fingerprint2.get((components) => {
@@ -46,12 +46,12 @@ async function initLogRocket() {
 
 export function AnalyticsProvider() {
   const pathname = usePathname();
-  const previousPathname = useRef(pathname);
+  const previousPathnameRef = useRef(pathname);
 
   useEffect(() => {
-    if (previousPathname.current !== pathname) {
+    if (previousPathnameRef.current !== pathname) {
       gtag.pageView(pathname);
-      previousPathname.current = pathname;
+      previousPathnameRef.current = pathname;
     }
   }, [pathname]);
 

@@ -4,7 +4,7 @@ import { networkErrorMessages } from '@/lib/constants/messages';
 describe('API Utilities', () => {
   describe('getServerErrorMessage', () => {
     it('returns server down if not passed an object', () => {
-      expect(getServerErrorMessage()).toStrictEqual(networkErrorMessages.serverDown);
+      expect(getServerErrorMessage(undefined)).toStrictEqual(networkErrorMessages.serverDown);
     });
 
     it('returns server down if not passed an object with an expected shape', () => {
