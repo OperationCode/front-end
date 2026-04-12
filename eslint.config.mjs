@@ -13,6 +13,7 @@ import noBarrelFiles from 'eslint-plugin-no-barrel-files';
 import eslintPluginLodash from 'eslint-plugin-lodash';
 import eslintPluginPlaywright from 'eslint-plugin-playwright';
 import eslintPluginReactHooks from 'eslint-plugin-react-hooks';
+import reactYouMightNotNeedAnEffect from 'eslint-plugin-react-you-might-not-need-an-effect';
 
 
 const compat = new FlatCompat({
@@ -106,6 +107,12 @@ export default defineConfig(
       'react-hooks/set-state-in-render': 'off',
       'react-hooks/unsupported-syntax': 'off',
     },
+  },
+
+  // ── React "You Might Not Need an Effect" ──
+  {
+    files: ['**/*.{ts,tsx}'],
+    ...reactYouMightNotNeedAnEffect.configs.recommended,
   },
 
   // ── Import-X (replaces eslint-plugin-import) ──
