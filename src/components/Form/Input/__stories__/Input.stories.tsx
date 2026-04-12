@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/nextjs';
 import Input from '../Input';
 
 const meta: Meta<typeof Input> = {
-  title: 'Input',
+  title: 'Forms/Input',
   component: Input,
 };
 export default meta;

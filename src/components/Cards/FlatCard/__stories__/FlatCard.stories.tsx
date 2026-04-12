@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/nextjs';
 import FlatCard from '../FlatCard';
 
 const meta: Meta<typeof FlatCard> = {
-  title: 'FlatCard',
+  title: 'Cards/FlatCard',
   component: FlatCard,
 };
 export default meta;

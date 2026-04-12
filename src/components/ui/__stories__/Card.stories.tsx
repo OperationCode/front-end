@@ -3,7 +3,7 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter }
 import { Button } from '../button';
 
 const meta: Meta<typeof Card> = {
-  title: 'Card',
+  title: 'Cards/Card',
   component: Card,
 };
 export default meta;

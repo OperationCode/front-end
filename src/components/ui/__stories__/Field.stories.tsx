@@ -10,7 +10,7 @@ import {
 } from '../field';
 
 const meta: Meta<typeof Field> = {
-  title: 'Field',
+  title: 'Forms/Field',
   component: Field,
 };
 export default meta;

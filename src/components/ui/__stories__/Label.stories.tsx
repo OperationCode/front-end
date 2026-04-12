@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/nextjs';
 import { Label } from '../label';
 
 const meta: Meta<typeof Label> = {
-  title: 'Label',
+  title: 'Forms/Label',
   component: Label,
   args: { children: 'Email address' },
 };

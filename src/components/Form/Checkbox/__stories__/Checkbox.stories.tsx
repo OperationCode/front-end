@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/nextjs';
 import Checkbox from '../Checkbox';
 
 const meta: Meta<typeof Checkbox> = {
-  title: 'Checkbox',
+  title: 'Forms/Checkbox',
   component: Checkbox,
 };
 export default meta;
