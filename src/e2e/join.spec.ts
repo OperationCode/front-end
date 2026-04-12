@@ -40,6 +40,12 @@ test.describe('join', () => {
     const cookies = await page.context().cookies();
     expect(cookies).toHaveLength(0);
     await expect(page.locator('h1')).toHaveText('Join');
+
+    // Wait for React hydration so form event handlers are attached
+    await page.waitForFunction(() => {
+      const form = document.querySelector('form');
+      return form && Object.keys(form).some((k) => k.startsWith('__react'));
+    });
   });
 
   /**
