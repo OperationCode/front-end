@@ -1,10 +1,33 @@
-ignoredBuiltDependencies:
-  - core-js
-  - core-js-pure
-  - sharp
+# Supply chain security defaults. https://pnpm.io/supply-chain-security
+# pnpm v11+ enables most of these by default; they are pinned explicitly so an
+# accidental version downgrade or config drift does not silently weaken posture.
 
-onlyBuiltDependencies:
-  - '@sentry/cli'
-  - '@swc/core'
-  - esbuild
-  - husky
+# Wait 7d after publish before resolving a new version. Buys time for malicious
+# releases (typosquats, hijacked maintainer accounts) to be yanked.
+minimumReleaseAge: 4320 # 3 days
+
+# Bypass the cooldown for packages we trust to ship clean hotfixes quickly.
+# Accepts bare names, name@version, disjunctions (`a || b`), and globs (`@scope/*`).
+minimumReleaseAgeExclude:
+  - next
+
+# Reject transitive deps that resolve to git/tarball URLs. Only direct deps may
+# use exotic sources.
+blockExoticSubdeps: true
+
+# Fail install if a dep has a lifecycle script that is not explicitly allowed
+# below, instead of silently skipping it.
+strictDepBuilds: true
+
+# Explicit allowlist of packages permitted to run install/postinstall scripts.
+# Everything else is blocked. Audit any addition here.
+allowBuilds:
+  '@sentry/cli': true
+  '@swc/core': true
+  esbuild: true
+  husky: true
+  sharp: true
+  unrs-resolver: true
+  core-js: false
+  core-js-pure: false
+  msw: false
