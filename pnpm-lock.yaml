@@ -4,6 +4,9 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+overrides:
+  vite: ^8.0.0
+
 importers:
 
   .:
@@ -268,7 +271,7 @@ importers:
         specifier: ^8.59.2
         version: 8.59.2(eslint@10.3.0(jiti@2.7.0))(typescript@6.0.3)
       vite:
-        specifier: ^8.0.12
+        specifier: ^8.0.0
         version: 8.0.12(@types/node@24.10.0)(esbuild@0.27.7)(jiti@2.7.0)(terser@5.47.1)(yaml@2.9.0)
       vite-plugin-magical-svg:
         specifier: ^1.9.0
@@ -2841,7 +2844,7 @@ packages:
       esbuild: '*'
       rollup: '*'
       storybook: ^10.3.6
-      vite: '*'
+      vite: ^8.0.0
       webpack: '*'
     peerDependenciesMeta:
       esbuild:
@@ -3595,7 +3598,7 @@ packages:
     resolution: {integrity: sha512-/x2EmFC4mT4NNzqvC3fmesuV97w5FC903KPmey4gsnJiMQ3Be1IlDKVaDaG8iqaLFHqJ2FVEkxZk5VmeLjIItw==}
     peerDependencies:
       msw: ^2.4.9
-      vite: ^6.0.0 || ^7.0.0 || ^8.0.0
+      vite: ^8.0.0
     peerDependenciesMeta:
       msw:
         optional: true
@@ -7859,12 +7862,12 @@ packages:
   vite-plugin-magical-svg@1.9.0:
     resolution: {integrity: sha512-A0oWe+3PX7+tHcIH2kZz9CeOK1/GKy0aUFLtRbstL9QAstZju4VGiJCh/jidRQgWLRmALMpUe9KRFjJcOYUd4g==}
     peerDependencies:
-      vite: '>= 3.0.0'
+      vite: ^8.0.0
 
   vite-tsconfig-paths@6.1.1:
     resolution: {integrity: sha512-2cihq7zliibCCZ8P9cKJrQBkfgdvcFkOOc3Y02o3GWUDLgqjWsZudaoiuOwO/gzTzy17cS5F7ZPo4bsnS4DGkg==}
     peerDependencies:
-      vite: '*'
+      vite: ^8.0.0
 
   vite@8.0.12:
     resolution: {integrity: sha512-w2dDofOWv2QB09ZITZBsvKTVAlYvPR4IAmrY/v0ir9KvLs0xybR7i48wxhM1/oyBWO34wPns+bPGw5ZrZqDpZg==}
@@ -7925,7 +7928,7 @@ packages:
       '@vitest/ui': 4.1.5
       happy-dom: '*'
       jsdom: '*'
-      vite: ^6.0.0 || ^7.0.0 || ^8.0.0
+      vite: ^8.0.0
     peerDependenciesMeta:
       '@edge-runtime/vm':
         optional: true
