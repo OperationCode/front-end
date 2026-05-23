@@ -18,6 +18,12 @@ const airtableScholarshipApplicationLink =
 
 const scholarshipOptions: ScholarshipOption[] = [
   {
+    title: 'NVIDIA Deep Learning Institute',
+    logoSrc: '/static/images/nvidia_dli_logo.png',
+    body: 'Apply for a voucher to access NVIDIA DLI self-paced courses covering deep learning, accelerated computing, and data science.',
+    link: 'https://airtable.com/appeXPiUS5GQwC7Vi/shrHcYPAlWzgFmq8Q',
+  },
+  {
     title: 'Code Platoon X Operation Code',
     logoSrc: `${s3}partnerLogos/code_platoon.png`,
     body: "Apply to attend a full ride scholarship to one of the Code Platoon's coding bootcamp cohorts.",
