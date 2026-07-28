@@ -6,7 +6,7 @@ import type { DefaultValues, Resolver } from 'react-hook-form';
 import { useForm, FormProvider } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import type { AxiosError } from 'axios';
-import type { ZodTypeAny } from 'zod';
+import type { ZodType } from 'zod';
 import {
   MULTI_STEP_STEP_BUTTON,
   MULTI_STEP_SUBMIT_BUTTON,
@@ -24,7 +24,7 @@ export interface StepComponent<T extends Record<string, unknown>> extends Functi
   title: string;
   initialValues: Partial<T>;
   submitHandler?: (values: Partial<T>) => Promise<void>;
-  validationSchema: ZodTypeAny;
+  validationSchema: ZodType<Record<string, unknown>, Record<string, unknown>>;
 }
 
 interface MultiStepFormProps<T extends Record<string, unknown>> {
@@ -123,7 +123,7 @@ function StepFormInner<T extends Record<string, unknown>>({
               className={cn('group', isFirstStep && 'w-full')}
             >
               <span className="flex items-center justify-center gap-x-2">
-                {formState.isSubmitting && <InlineLoadingSpinner className="-mt-[0.325rem]" />}
+                {formState.isSubmitting && <InlineLoadingSpinner className="mt-[-0.325rem]" />}
                 <span>Next →</span>
               </span>
             </Button>

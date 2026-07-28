@@ -20,10 +20,8 @@ export const cn = (...classes: ClassValue[]) => twMerge(clsx(...classes));
  */
 export const cva: CVA = (props) => {
   const cvaFn = cvaOriginal(props);
-  return (...args: Parameters<typeof cvaFn>) => {
-    const result = cvaFn(...args);
-    return twMerge(result);
-  };
+  const component = (...args: Parameters<typeof cvaFn>) => twMerge(cvaFn(...args));
+  return Object.assign(component, { config: cvaFn.config });
 };
 
 // eslint-disable-next-line no-barrel-files/no-barrel-files

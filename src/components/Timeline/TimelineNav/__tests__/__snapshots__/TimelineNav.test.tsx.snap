@@ -59,7 +59,7 @@ exports[`TimelineNav > should render with no props passed passed 1`] = `
         aria-haspopup="menu"
         class="w-full cursor-pointer rounded-lg border border-border bg-background px-4 py-2 text-left text-lg font-bold"
         data-slot="dropdown-menu-trigger"
-        id="base-ui-_r_4_"
+        id="base-ui-_r_3_"
         tabindex="0"
         type="button"
       >

@@ -34,3 +34,10 @@ allowBuilds:
 
 overrides:
   vite: '^8.0.0'
+  # Security patches for transitive deps flagged by `pnpm audit` whose parents
+  # have not yet released a bump. Remove an entry once the parent pulls it in.
+  'brace-expansion@5': '>=5.0.8' # via @sentry/nextjs (build). Only the 5.x copy.
+  fast-uri: '^3.1.4' # via @hookform/resolvers>ajv. Stay on 3.x for ajv compat.
+  postcss: '^8.5.18' # via next / @mdx-js/loader>webpack.
+  sharp: '^0.35.0' # via next image optimization (runtime).
+  valibot: '^1.4.2' # via @hookform/resolvers (unused resolver).
