@@ -6,7 +6,8 @@ exports[`Medal > should render with many props assigned 1`] = `
     class="m-2 flex flex-col place-content-start justify-items-center [&>svg]:mx-0 [&>svg]:my-4 [&>svg]:h-24 [&>svg]:w-auto [&>svg]:fill-current [&>img]:mx-0 [&>img]:h-24 [&>img]:w-auto [&>img]:object-contain test-class"
   >
     <svg
-      viewBox="0 0 54 54"
+      height="54"
+      width="54"
     >
       <symbol
         id="_7e6684a5"
@@ -40,7 +41,8 @@ exports[`Medal > should render with required props 1`] = `
     class="m-2 flex flex-col place-content-start justify-items-center [&>svg]:mx-0 [&>svg]:my-4 [&>svg]:h-24 [&>svg]:w-auto [&>svg]:fill-current [&>img]:mx-0 [&>img]:h-24 [&>img]:w-auto [&>img]:object-contain"
   >
     <svg
-      viewBox="0 0 54 54"
+      height="54"
+      width="54"
     >
       <symbol
         id="_7e6684a5"

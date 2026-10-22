@@ -34,7 +34,8 @@ exports[`JoinSection > should render 1`] = `
               </span>
               <svg
                 class="h-5 w-full"
-                viewBox="0 0 512 512"
+                height="512"
+                width="512"
               >
                 <symbol
                   id="_d456e9ce"
@@ -84,7 +85,8 @@ exports[`JoinSection > should render 1`] = `
         </span>
         <svg
           class="mt-0.5 ml-1 inline-block size-3.5 fill-current"
-          viewBox="0 0 448 512"
+          height="512"
+          width="448"
         >
           <symbol
             id="_73ab62bc"

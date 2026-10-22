@@ -20,7 +20,8 @@ exports[`FeaturedJobItem > should render with many props assigned 1`] = `
       </span>
       <svg
         class="mt-0.5 ml-1 inline-block size-3.5 fill-current"
-        viewBox="0 0 448 512"
+        height="512"
+        width="448"
       >
         <symbol
           id="_73ab62bc"
@@ -47,7 +48,8 @@ exports[`FeaturedJobItem > should render with many props assigned 1`] = `
       >
         <svg
           class="size-4 fill-secondary"
-          viewBox="0 0 448 512"
+          height="512"
+          width="448"
         >
           <symbol
             id="_d15de51e"
@@ -76,7 +78,8 @@ exports[`FeaturedJobItem > should render with many props assigned 1`] = `
       >
         <svg
           class="size-4 fill-secondary"
-          viewBox="0 0 384 512"
+          height="512"
+          width="384"
         >
           <symbol
             id="_fb2a0dac"
@@ -115,7 +118,8 @@ exports[`FeaturedJobItem > should render with many props assigned 1`] = `
       >
         <svg
           class="size-4 fill-secondary"
-          viewBox="0 0 640 512"
+          height="512"
+          width="640"
         >
           <symbol
             id="_cf1b401c"
@@ -167,7 +171,8 @@ exports[`FeaturedJobItem > should render with required props 1`] = `
       </span>
       <svg
         class="mt-0.5 ml-1 inline-block size-3.5 fill-current"
-        viewBox="0 0 448 512"
+        height="512"
+        width="448"
       >
         <symbol
           id="_73ab62bc"
@@ -194,7 +199,8 @@ exports[`FeaturedJobItem > should render with required props 1`] = `
       >
         <svg
           class="size-4 fill-secondary"
-          viewBox="0 0 448 512"
+          height="512"
+          width="448"
         >
           <symbol
             id="_d15de51e"
@@ -223,7 +229,8 @@ exports[`FeaturedJobItem > should render with required props 1`] = `
       >
         <svg
           class="size-4 fill-secondary"
-          viewBox="0 0 384 512"
+          height="512"
+          width="384"
         >
           <symbol
             id="_fb2a0dac"
