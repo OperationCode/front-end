@@ -197,7 +197,7 @@ export default defineConfig(
   },
 
   // ── No Barrel Files ──
-  noBarrelFiles.flat,
+  ...noBarrelFiles.configs['flat/recommended'],
 
   // ── CommonJS files ──
   {
