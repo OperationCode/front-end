@@ -1,5 +1,4 @@
 import createSnapshotTest from '@/test-utils/createSnapshotTest';
-
 import TimelineEvent from '../TimelineEvent';
 
 describe('TimelineEvent', () => {

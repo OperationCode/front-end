@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/nextjs';
+import { Button } from '../button';
 import {
   Sheet,
   SheetTrigger,
@@ -7,7 +8,6 @@ import {
   SheetTitle,
   SheetDescription,
 } from '../sheet';
-import { Button } from '../button';
 
 const meta: Meta<typeof Sheet> = {
   title: 'Sheet',

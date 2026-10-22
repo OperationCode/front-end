@@ -1,8 +1,8 @@
 import Link from 'next/link';
-import { s3 } from '@/lib/constants/urls';
 import Container from '@/components/Container/Container';
-import { buttonVariants } from '@/components/ui/button';
 import Heading from '@/components/Heading/Heading';
+import { buttonVariants } from '@/components/ui/button';
+import { s3 } from '@/lib/constants/urls';
 
 function DonateSection() {
   return (

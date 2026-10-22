@@ -1,9 +1,9 @@
+import type { Metadata } from 'next';
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
-import type { Metadata } from 'next';
+import UpdateProfileForm from '@/components/Forms/UpdateProfileForm/UpdateProfileForm';
 import HeroBanner from '@/components/HeroBanner/HeroBanner';
 import Section from '@/components/Section/Section';
-import UpdateProfileForm from '@/components/Forms/UpdateProfileForm/UpdateProfileForm';
 
 export const metadata: Metadata = { title: 'Update Profile' };
 

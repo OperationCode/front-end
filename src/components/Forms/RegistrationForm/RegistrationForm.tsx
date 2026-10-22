@@ -1,22 +1,22 @@
 'use client';
 
-import { useState } from 'react';
-import { useForm, Controller } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { z } from 'zod';
 import type { AxiosError } from 'axios';
 import axios from 'axios';
-import { getServerErrorMessage } from '@/lib/utils/api-utils';
-import { validationErrorMessages } from '@/lib/constants/messages';
-import { codeOfConduct, slackGuidelines } from '@/lib/constants/urls';
-import { Button } from '@/components/ui/button';
+import { useState } from 'react';
+import { useForm, Controller } from 'react-hook-form';
+import { z } from 'zod';
 import Checkbox from '@/components/Form/Checkbox/Checkbox';
 import Input from '@/components/Form/Input/Input';
-import { Alert } from '@/components/ui/alert';
-import OutboundLink from '@/components/OutboundLink/OutboundLink';
 import { InlineLoadingSpinner } from '@/components/InlineLoadingSpinner';
-import { REGISTRATION_FORM_INITIAL_SUBMIT_BUTTON } from '@/lib/constants/testIDs';
+import OutboundLink from '@/components/OutboundLink/OutboundLink';
+import { Alert } from '@/components/ui/alert';
+import { Button } from '@/components/ui/button';
 import { Field, FieldError } from '@/components/ui/field';
+import { validationErrorMessages } from '@/lib/constants/messages';
+import { REGISTRATION_FORM_INITIAL_SUBMIT_BUTTON } from '@/lib/constants/testIDs';
+import { codeOfConduct, slackGuidelines } from '@/lib/constants/urls';
+import { getServerErrorMessage } from '@/lib/utils/api-utils';
 
 const registrationSchema = z
   .object({
@@ -82,7 +82,8 @@ export function RegistrationForm({
       onSuccess();
     } catch (_error: unknown) {
       const axiosError = (_error as AxiosError).response?.data as
-        Record<string, string> | undefined;
+        | Record<string, string>
+        | undefined;
 
       const axiosErrorMessage = axiosError?.message;
 

@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import { cn } from '@/lib/utils';
 import BaseCard from '@/components/Cards/Card/Card';
+import { cn } from '@/lib/utils';
 
 interface CardProps {
   children: React.ReactNode;

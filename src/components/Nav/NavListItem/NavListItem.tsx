@@ -1,9 +1,9 @@
-import { useState } from 'react';
 import Link from 'next/link';
-import PlusIcon from '@/static/images/icons/plus.svg';
-import MinusIcon from '@/static/images/icons/minus.svg';
+import { useState } from 'react';
 import OutboundLink from '@/components/OutboundLink/OutboundLink';
 import { cn } from '@/lib/utils';
+import MinusIcon from '@/static/images/icons/minus.svg';
+import PlusIcon from '@/static/images/icons/plus.svg';
 
 interface SublinkType {
   name: string;

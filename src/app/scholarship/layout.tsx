@@ -1,10 +1,10 @@
-import type { PropsWithChildren } from 'react';
 import Image from 'next/image';
+import type { PropsWithChildren } from 'react';
+import Card from '@/components/Cards/Card/Card';
 import Container from '@/components/Container/Container';
 import HeroBanner from '@/components/HeroBanner/HeroBanner';
 import OutboundLink from '@/components/OutboundLink/OutboundLink';
 import { s3 } from '@/lib/constants/urls';
-import Card from '@/components/Cards/Card/Card';
 
 interface ScholarshipOption {
   title: string;

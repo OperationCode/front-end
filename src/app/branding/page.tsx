@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
-import LogoSection from '@/components/Branding/LogoSection/LogoSection';
 import ColorSection from '@/components/Branding/ColorSection/ColorSection';
 import FontSection from '@/components/Branding/FontSection/FontSection';
+import LogoSection from '@/components/Branding/LogoSection/LogoSection';
 import OutboundLink from '@/components/OutboundLink/OutboundLink';
-import { s3 } from '@/lib/constants/urls';
 import { buttonVariants } from '@/components/ui/button';
+import { s3 } from '@/lib/constants/urls';
 
 export const metadata: Metadata = { title: 'Branding Guide' };
 

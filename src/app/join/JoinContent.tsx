@@ -1,13 +1,13 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { gtag } from '@/lib/utils/thirdParty/gtag';
+import { useRouter } from 'next/navigation';
+import { useEffect, useState } from 'react';
+import { RegistrationForm } from '@/components/Forms/RegistrationForm/RegistrationForm';
 import HeroBanner from '@/components/HeroBanner/HeroBanner';
 import Section from '@/components/Section/Section';
-import { RegistrationForm } from '@/components/Forms/RegistrationForm/RegistrationForm';
 import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog';
+import { gtag } from '@/lib/utils/thirdParty/gtag';
 
 const pageTitle = 'Join';
 

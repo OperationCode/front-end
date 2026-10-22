@@ -1,7 +1,6 @@
 import { cleanup, render } from '@testing-library/react';
 import { INPUT, INPUT_FEEDBACK_GROUPING, LABEL } from '@/lib/constants/testIDs';
 import createSnapshotTest from '@/test-utils/createSnapshotTest';
-
 import Input from '../Input';
 
 describe('Input', () => {

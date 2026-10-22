@@ -1,6 +1,6 @@
 import { cva } from '@/lib/utils';
-import { getDataAttributes } from '@/lib/utils/prop-utils';
 import type { VariantProps } from '@/lib/utils';
+import { getDataAttributes } from '@/lib/utils/prop-utils';
 
 export interface ContainerPropsType extends VariantProps<typeof containerCva> {
   /**

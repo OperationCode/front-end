@@ -1,10 +1,10 @@
 import { Controller, useFormContext } from 'react-hook-form';
 import { z } from 'zod';
-import { validationErrorMessages } from '@/lib/constants/messages';
-import { SelectSingle } from '@/components/Form/Select/SelectSingle';
-import { mapStringsToSelectOptions } from '@/lib/utils/array-utils';
 import { SelectMulti } from '@/components/Form/Select/SelectMulti';
+import { SelectSingle } from '@/components/Form/Select/SelectSingle';
 import type { OptionType } from '@/components/Form/Select/ThemedReactSelect';
+import { validationErrorMessages } from '@/lib/constants/messages';
+import { mapStringsToSelectOptions } from '@/lib/utils/array-utils';
 
 PersonalDetails.title = 'Personal Details';
 

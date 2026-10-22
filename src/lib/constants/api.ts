@@ -1,9 +1,9 @@
-import { patch, post } from '@/lib/utils/api-utils';
 import type { RegistrationFormValues } from '@/components/Forms/RegistrationForm/RegistrationForm';
 import type { MilitaryDetailsFormShape } from '@/components/Forms/UpdateProfileForm/steps/MilitaryDetails';
 import type { MilitaryStatusFormShape } from '@/components/Forms/UpdateProfileForm/steps/MilitaryStatus';
 import type { PersonalDetailsFormShape } from '@/components/Forms/UpdateProfileForm/steps/PersonalDetails';
 import type { ProfessionalDetailsFormShape } from '@/components/Forms/UpdateProfileForm/steps/ProfessionalDetails';
+import { patch, post } from '@/lib/utils/api-utils';
 
 export const registerUser = (values: RegistrationFormValues) =>
   post('/api/registration/new', values);

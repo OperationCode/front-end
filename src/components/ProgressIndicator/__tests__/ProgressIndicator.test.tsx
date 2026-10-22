@@ -1,5 +1,4 @@
 import createSnapshotTest from '@/test-utils/createSnapshotTest';
-
 import ProgressIndicator, { developmentErrors } from '../ProgressIndicator';
 
 describe('ProgressIndicator', () => {

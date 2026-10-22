@@ -1,5 +1,5 @@
-import type { ReactNode } from 'react';
 import range from 'lodash/range';
+import type { ReactNode } from 'react';
 import HeroBanner from '@/components/HeroBanner/HeroBanner';
 import Section from '@/components/Section/Section';
 import challengers from '@/static/operationcode_challenge/names';

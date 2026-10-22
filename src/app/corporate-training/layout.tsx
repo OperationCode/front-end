@@ -1,15 +1,15 @@
-import type { ReactNode } from 'react';
 import type { StaticImageData } from 'next/image';
 import Image from 'next/image';
+import type { ReactNode } from 'react';
 import HeroBanner from '@/components/HeroBanner/HeroBanner';
 import OutboundLink from '@/components/OutboundLink/OutboundLink';
 import { cn } from '@/lib/utils';
-import heroImage from '@/static/images/heroImage.jpg';
 import bias1 from '@/static/images/bias1.jpg';
 import bias2 from '@/static/images/bias2.jpg';
 import bias3 from '@/static/images/bias3.jpg';
 import bias4 from '@/static/images/bias4.jpg';
 import bias5 from '@/static/images/bias5.jpg';
+import heroImage from '@/static/images/heroImage.jpg';
 
 interface Bias {
   title: string;

@@ -1,7 +1,6 @@
 import { render } from '@testing-library/react';
-import createSnapshotTest from '@/test-utils/createSnapshotTest';
 import Icon from '@/static/images/icons/github_logo.svg';
-
+import createSnapshotTest from '@/test-utils/createSnapshotTest';
 import Medal from '../Medal';
 
 const badgeIcon = <Icon />;

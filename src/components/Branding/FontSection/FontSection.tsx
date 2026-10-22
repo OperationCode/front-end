@@ -1,5 +1,5 @@
-import { cn } from '@/lib/utils';
 import Section from '@/components/Section/Section';
+import { cn } from '@/lib/utils';
 
 const fonts = ['Bebas Neue' as const, 'Encode Sans' as const];
 

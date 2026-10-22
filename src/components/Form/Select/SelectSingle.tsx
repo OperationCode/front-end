@@ -1,5 +1,5 @@
-import { cn } from '@/lib/utils';
 import Label from '@/components/Form/Label/Label';
+import { cn } from '@/lib/utils';
 import type { ThemedReactSelectProps, OptionType } from './ThemedReactSelect';
 import { ThemedReactSelect } from './ThemedReactSelect';
 

@@ -1,16 +1,14 @@
 import sortBy from 'lodash/sortBy';
 import { s3 } from '@/lib/constants/urls';
-
+import airbnb from '@/static/images/sponsors/airbnb_logo.png';
+import codePlatoon from '@/static/images/sponsors/code_platoon_logo.png';
 // Paid Sponsors
 import etsy from '@/static/images/sponsors/etsy_logo.png';
-import umpquaBank from '@/static/images/sponsors/umpqua_bank_logo.png';
-import juniperNetworks from '@/static/images/sponsors/juniper_networks_logo.png';
-
 // In Kind Sponsors
 import google from '@/static/images/sponsors/google_logo.png';
-import codePlatoon from '@/static/images/sponsors/code_platoon_logo.png';
+import juniperNetworks from '@/static/images/sponsors/juniper_networks_logo.png';
+import umpquaBank from '@/static/images/sponsors/umpqua_bank_logo.png';
 import uniteUs from '@/static/images/sponsors/unite_us_logo.png';
-import airbnb from '@/static/images/sponsors/airbnb_logo.png';
 
 export const PARTNER_TYPES = {
   PAID: 'PAID',
