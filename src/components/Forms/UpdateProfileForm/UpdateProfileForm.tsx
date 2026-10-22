@@ -1,16 +1,16 @@
 'use client';
 
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
 import type { AxiosError } from 'axios';
 import LogRocket from 'logrocket';
-import { getServerErrorMessage } from '@/lib/utils/api-utils';
+import { useRouter } from 'next/navigation';
+import { useState } from 'react';
 import { MultiStepForm } from '@/components/Form/MultiStepForm';
-import { updateUser } from '@/lib/constants/api';
-import { ProfessionalDetails } from '@/components/Forms/UpdateProfileForm/steps/ProfessionalDetails';
-import { MilitaryStatus } from '@/components/Forms/UpdateProfileForm/steps/MilitaryStatus';
 import { MilitaryDetails } from '@/components/Forms/UpdateProfileForm/steps/MilitaryDetails';
+import { MilitaryStatus } from '@/components/Forms/UpdateProfileForm/steps/MilitaryStatus';
 import { PersonalDetails } from '@/components/Forms/UpdateProfileForm/steps/PersonalDetails';
+import { ProfessionalDetails } from '@/components/Forms/UpdateProfileForm/steps/ProfessionalDetails';
+import { updateUser } from '@/lib/constants/api';
+import { getServerErrorMessage } from '@/lib/utils/api-utils';
 
 const generateError = (errorObject: AxiosError) => {
   const serverResponse = (errorObject?.response?.data ?? {}) as Record<string, string>;

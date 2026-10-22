@@ -1,5 +1,5 @@
-import { getServerErrorMessage } from '@/lib/utils/api-utils';
 import { networkErrorMessages } from '@/lib/constants/messages';
+import { getServerErrorMessage } from '@/lib/utils/api-utils';
 
 describe('API Utilities', () => {
   describe('getServerErrorMessage', () => {

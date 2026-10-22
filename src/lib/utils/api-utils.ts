@@ -1,7 +1,7 @@
 import type { AxiosError, AxiosInstance, AxiosRequestConfig } from 'axios';
 import axios from 'axios';
-import { networkErrorMessages } from '@/lib/constants/messages';
 import { apiUrl, resourcesAPIURL } from '@/lib/config/environment';
+import { networkErrorMessages } from '@/lib/constants/messages';
 
 const baseAxiosConfig = {
   baseURL: apiUrl,

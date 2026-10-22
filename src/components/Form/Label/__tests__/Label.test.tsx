@@ -1,7 +1,6 @@
 import { render } from '@testing-library/react';
-import createSnapshotTest from '@/test-utils/createSnapshotTest';
 import { LABEL, SCREEN_READER_ONLY } from '@/lib/constants/testIDs';
-
+import createSnapshotTest from '@/test-utils/createSnapshotTest';
 import Label from '../Label';
 
 describe('Label', () => {

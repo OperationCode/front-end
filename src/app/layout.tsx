@@ -1,15 +1,13 @@
 import '@/lib/styles/globals.css';
-
 import type { Metadata } from 'next';
+import { Encode_Sans, Bebas_Neue } from 'next/font/google';
 import Script from 'next/script';
 import type { PropsWithChildren } from 'react';
-import { Encode_Sans, Bebas_Neue } from 'next/font/google';
-
-import { clientTokens } from '@/lib/config/environment';
 import { AnalyticsProvider } from '@/components/Analytics/AnalyticsProvider';
 import Footer from '@/components/Footer/Footer';
 import Nav from '@/components/Nav/Nav';
 import { ScrollToTopButton } from '@/components/ScrollToTopButton/ScrollToTopButton';
+import { clientTokens } from '@/lib/config/environment';
 
 const encodeSans = Encode_Sans({
   subsets: ['latin'],

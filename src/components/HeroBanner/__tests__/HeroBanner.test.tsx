@@ -1,6 +1,5 @@
-import createSnapshotTest from '@/test-utils/createSnapshotTest';
-
 import { s3 } from '@/lib/constants/urls';
+import createSnapshotTest from '@/test-utils/createSnapshotTest';
 import HeroBanner from '../HeroBanner';
 
 describe('HeroBanner', () => {

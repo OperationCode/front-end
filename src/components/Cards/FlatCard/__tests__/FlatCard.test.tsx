@@ -1,9 +1,9 @@
 import { render } from '@testing-library/react';
 import Link from 'next/link';
-import createSnapshotTest from '@/test-utils/createSnapshotTest';
+import { buttonVariants } from '@/components/ui/button';
 import { FLAT_CARD_IMAGE } from '@/lib/constants/testIDs';
 import { s3 } from '@/lib/constants/urls';
-import { buttonVariants } from '@/components/ui/button';
+import createSnapshotTest from '@/test-utils/createSnapshotTest';
 import FlatCard from '../FlatCard';
 
 const defaultChildren = (

@@ -1,8 +1,8 @@
 import { Controller, useFormContext } from 'react-hook-form';
 import { z } from 'zod';
-import { validationErrorMessages } from '@/lib/constants/messages';
 import Input from '@/components/Form/Input/Input';
 import { SelectSingle } from '@/components/Form/Select/SelectSingle';
+import { validationErrorMessages } from '@/lib/constants/messages';
 import { mapStringsToSelectOptions } from '@/lib/utils/array-utils';
 
 ProfessionalDetails.title = 'Professional Details';

@@ -1,5 +1,5 @@
-import type { PropsWithChildren } from 'react';
 import Link from 'next/link';
+import type { PropsWithChildren } from 'react';
 import HeroBanner from '@/components/HeroBanner/HeroBanner';
 import JoinSection from '@/components/ReusableSections/JoinSection/JoinSection';
 import SponsorsSection from '@/components/ReusableSections/SponsorsSection/SponsorsSection';

@@ -1,7 +1,7 @@
-import type { NextConfig } from 'next';
-import { withSentryConfig } from '@sentry/nextjs/config';
 import bundleAnalyzer from '@next/bundle-analyzer';
 import createMDX from '@next/mdx';
+import { withSentryConfig } from '@sentry/nextjs/config';
+import type { NextConfig } from 'next';
 import { svgoConfig } from './src/lib/config/svgo';
 
 const hasBundleAnalyzer = process.env.ANALYZE === 'true';

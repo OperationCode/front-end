@@ -1,13 +1,13 @@
 'use client';
 
 import { useId } from 'react';
+import Card from '@/components/Cards/Card/Card';
 import {
   Accordion,
   AccordionItem,
   AccordionTrigger,
   AccordionContent,
 } from '@/components/ui/accordion';
-import Card from '@/components/Cards/Card/Card';
 import { cn } from '@/lib/utils';
 
 interface QProps {

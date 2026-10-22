@@ -1,6 +1,5 @@
 import { render, screen } from '@testing-library/react';
 import createSnapshotTest from '@/test-utils/createSnapshotTest';
-
 import { Nav } from '../Nav';
 
 describe('Nav', () => {

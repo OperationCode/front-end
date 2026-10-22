@@ -1,6 +1,4 @@
 import { test, expect, type Page } from '@playwright/test';
-import existingUser from '../test-utils/mocks/existingUser';
-import { mockUser } from '../test-utils/mockGenerators/mockUser';
 import { validationErrorMessages } from '../lib/constants/messages';
 import {
   SUCCESS_PAGE_MESSAGE,
@@ -9,6 +7,8 @@ import {
   MULTI_STEP_SUBMIT_BUTTON,
   MULTI_STEP_PREVIOUS_BUTTON,
 } from '../lib/constants/testIDs';
+import { mockUser } from '../test-utils/mockGenerators/mockUser';
+import existingUser from '../test-utils/mocks/existingUser';
 
 const getValidUser = () => mockUser();
 

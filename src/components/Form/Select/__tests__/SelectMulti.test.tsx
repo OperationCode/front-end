@@ -1,9 +1,9 @@
 import { fireEvent, render, waitFor } from '@testing-library/react';
 import { describe, afterEach, it, expect, vi } from 'vitest';
+import { getReactSelectInput } from '@/components/Form/Select/ThemedReactSelect';
+import { LABEL } from '@/lib/constants/testIDs';
 import createSnapshotTest from '@/test-utils/createSnapshotTest';
 import { KEY_CODES } from '@/test-utils/identifiers';
-import { LABEL } from '@/lib/constants/testIDs';
-import { getReactSelectInput } from '@/components/Form/Select/ThemedReactSelect';
 import type { SelectMultiProps } from '../SelectMulti';
 import { SelectMulti } from '../SelectMulti';
 

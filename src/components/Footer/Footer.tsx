@@ -1,10 +1,9 @@
-import Link from 'next/link';
 import Image from 'next/image';
+import Link from 'next/link';
 import OutboundLink from '@/components/OutboundLink/OutboundLink';
 import SocialMedia from '@/components/SocialMedia/SocialMedia';
 import { footerItems } from '@/lib/constants/navigation';
 import Logo from '@/static/images/logo.svg';
-
 import platniumTransparencySeal from '@/static/images/platinum-transparency.png';
 import compTia from '@/static/images/sponsors/comptia_logo.png';
 

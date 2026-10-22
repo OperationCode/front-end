@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
-import Section from '@/components/Section/Section';
 import FlatCard from '@/components/Cards/FlatCard/FlatCard';
 import OutboundLink from '@/components/OutboundLink/OutboundLink';
+import Section from '@/components/Section/Section';
 
 export const metadata: Metadata = { title: 'Chapters' };
 

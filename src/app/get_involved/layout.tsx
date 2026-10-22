@@ -1,18 +1,18 @@
-import type { PropsWithChildren } from 'react';
 import Link from 'next/link';
+import type { PropsWithChildren } from 'react';
 import HeroBanner from '@/components/HeroBanner/HeroBanner';
 import Medal from '@/components/Medal/Medal';
-import Section from '@/components/Section/Section';
-import { buttonVariants } from '@/components/ui/button';
 import DonateSection from '@/components/ReusableSections/DonateSection/DonateSection';
 import JoinSection from '@/components/ReusableSections/JoinSection/JoinSection';
-import HighfivingIcon from '@/static/images/icons/Custom/high_fiving.svg';
+import Section from '@/components/Section/Section';
+import { buttonVariants } from '@/components/ui/button';
+import { s3 } from '@/lib/constants/urls';
 import BullseyeIcon from '@/static/images/icons/Custom/bullseye.svg';
+import ChartIcon from '@/static/images/icons/Custom/chart.svg';
+import HighfivingIcon from '@/static/images/icons/Custom/high_fiving.svg';
 import ManHoldingKeyIcon from '@/static/images/icons/Custom/man_holding_key.svg';
 import NetworkingIcon from '@/static/images/icons/Custom/networked_people.svg';
-import ChartIcon from '@/static/images/icons/Custom/chart.svg';
 import PeopleMeetingIcon from '@/static/images/icons/Custom/people_meeting.svg';
-import { s3 } from '@/lib/constants/urls';
 
 const mentorItems = [
   {

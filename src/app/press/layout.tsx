@@ -1,10 +1,10 @@
-import type { PropsWithChildren } from 'react';
 import Link from 'next/link';
+import type { PropsWithChildren } from 'react';
 import HeroBanner from '@/components/HeroBanner/HeroBanner';
-import Section from '@/components/Section/Section';
+import Links from '@/components/Press/PressLinks/PressLinks';
 import Photos from '@/components/Press/PressPhotos/PressPhotos';
 import Videos from '@/components/Press/PressVideos/PressVideos';
-import Links from '@/components/Press/PressLinks/PressLinks';
+import Section from '@/components/Section/Section';
 
 export default function PressLayout({ children }: PropsWithChildren) {
   return (

@@ -1,5 +1,4 @@
 import createSnapshotTest from '@/test-utils/createSnapshotTest';
-
 import Content from '../Content';
 
 const requiredProps = {

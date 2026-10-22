@@ -1,8 +1,8 @@
 /// <reference types="vitest" />
 
-import { defineConfig } from 'vitest/config';
 import react from '@vitejs/plugin-react';
 import magicalSvg from 'vite-plugin-magical-svg';
+import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
   plugins: [magicalSvg({ target: 'react' }), react()],

@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/nextjs';
+import { Button } from '../button';
 import {
   DropdownMenu,
   DropdownMenuTrigger,
@@ -8,7 +9,6 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
 } from '../dropdown-menu';
-import { Button } from '../button';
 
 const meta: Meta<typeof DropdownMenu> = {
   title: 'DropdownMenu',

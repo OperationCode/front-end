@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { SUCCESS_PAGE_MESSAGE } from '@/lib/constants/testIDs';
-import { buttonVariants } from '@/components/ui/button';
 import HeroBanner from '@/components/HeroBanner/HeroBanner';
 import OutboundLink from '@/components/OutboundLink/OutboundLink';
+import { buttonVariants } from '@/components/ui/button';
+import { SUCCESS_PAGE_MESSAGE } from '@/lib/constants/testIDs';
 
 export const metadata: Metadata = { title: 'Successful Registration!' };
 

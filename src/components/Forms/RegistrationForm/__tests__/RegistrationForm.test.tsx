@@ -1,11 +1,11 @@
 import { fireEvent, render, waitFor, screen } from '@testing-library/react';
-import { describe, expect, it } from 'vitest';
-import MockAdapter from 'axios-mock-adapter';
 import axios from 'axios';
+import MockAdapter from 'axios-mock-adapter';
+import { describe, expect, it } from 'vitest';
 import { networkErrorMessages } from '@/lib/constants/messages';
+import { REGISTRATION_FORM_INITIAL_SUBMIT_BUTTON } from '@/lib/constants/testIDs';
 import createSnapshotTest from '@/test-utils/createSnapshotTest';
 import { mockUser } from '@/test-utils/mockGenerators/mockUser';
-import { REGISTRATION_FORM_INITIAL_SUBMIT_BUTTON } from '@/lib/constants/testIDs';
 import { RegistrationForm } from '../RegistrationForm';
 
 const axiosMock = new MockAdapter(axios);

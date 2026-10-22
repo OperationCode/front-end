@@ -1,13 +1,13 @@
 import type { PropsWithChildren } from 'react';
 import HeroBanner from '@/components/HeroBanner/HeroBanner';
 import Medal from '@/components/Medal/Medal';
-import Section from '@/components/Section/Section';
 import OutboundLink from '@/components/OutboundLink/OutboundLink';
 import JoinSection from '@/components/ReusableSections/JoinSection/JoinSection';
+import Section from '@/components/Section/Section';
+import { s3 } from '@/lib/constants/urls';
 import CareerServicesIcon from '@/static/images/icons/Custom/career_services.svg';
 import MentorshipIcon from '@/static/images/icons/Custom/mentorship.svg';
 import ScholarshipsIcon from '@/static/images/icons/Custom/scholarships.svg';
-import { s3 } from '@/lib/constants/urls';
 
 const mentorItems = [
   {

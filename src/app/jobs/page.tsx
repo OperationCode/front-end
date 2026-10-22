@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
-import Section from '@/components/Section/Section';
-import FeaturedJobsData from '@/components/FeaturedJobItem/featuredJobs.json';
 import FeaturedJobItem from '@/components/FeaturedJobItem/FeaturedJobItem';
+import FeaturedJobsData from '@/components/FeaturedJobItem/featuredJobs.json';
+import Section from '@/components/Section/Section';
 import ZipRecruiterJobs from '@/components/ZipRecruiterJobs/ZipRecruiterJobs';
 
 export const metadata: Metadata = { title: 'Jobs' };

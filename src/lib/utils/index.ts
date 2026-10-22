@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-restricted-imports */
 import { cx as clsx, cva as cvaOriginal } from 'cva';
-import { twMerge } from 'tailwind-merge';
 import type { ClassValue, CVA } from 'cva';
+import { twMerge } from 'tailwind-merge';
 /* eslint-enable @typescript-eslint/no-restricted-imports */
 
 /**

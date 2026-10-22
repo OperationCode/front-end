@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import Container from '@/components/Container/Container';
+import Heading from '@/components/Heading/Heading';
 import OutboundLink from '@/components/OutboundLink/OutboundLink';
 import { buttonVariants } from '@/components/ui/button';
-import Heading from '@/components/Heading/Heading';
 
 function JoinSection() {
   return (

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
-import Section from '@/components/Section/Section';
 import FlatCard from '@/components/Cards/FlatCard/FlatCard';
+import Section from '@/components/Section/Section';
 import cynthiaHeadshot from '@/static/images/cynthia.jpg';
 import glomaniHeadshot from '@/static/images/glomani.jpg';
 
