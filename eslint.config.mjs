@@ -16,7 +16,6 @@ import eslintPluginReactHooks from 'eslint-plugin-react-hooks';
 import reactYouMightNotNeedAnEffect from 'eslint-plugin-react-you-might-not-need-an-effect';
 import eslintPluginStorybook from 'eslint-plugin-storybook';
 
-
 const compat = new FlatCompat({
   baseDirectory: import.meta.dirname,
 });
@@ -24,7 +23,9 @@ const compat = new FlatCompat({
 /** @type {import("eslint").Linter.Config['languageOptions']} */
 const languageOptions = {
   parserOptions: {
-    projectService: true,
+    projectService: {
+      allowDefaultProject: ['*.config.js', '*.config.mjs'],
+    },
     tsconfigRootDir: import.meta.dirname,
   },
   ecmaVersion: 'latest',
@@ -46,7 +47,6 @@ export default defineConfig(
     'public/**',
     'src/.storybook/**',
     '*.svg',
-    'prettier.config.js',
   ]),
 
   // ── Base configs ──
