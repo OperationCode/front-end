@@ -1,8 +1,8 @@
-import type { PropsWithChildren } from 'react';
 import Link from 'next/link';
+import type { PropsWithChildren } from 'react';
 import HeroBanner from '@/components/HeroBanner/HeroBanner';
-import { buttonVariants } from '@/components/ui/button';
 import SponsorsSection from '@/components/ReusableSections/SponsorsSection/SponsorsSection';
+import { buttonVariants } from '@/components/ui/button';
 
 export default function SponsorshipLayout({ children }: PropsWithChildren) {
   return (

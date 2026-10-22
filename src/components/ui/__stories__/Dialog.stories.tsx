@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/nextjs';
+import { Button } from '../button';
 import {
   Dialog,
   DialogTrigger,
@@ -8,7 +9,6 @@ import {
   DialogDescription,
   DialogFooter,
 } from '../dialog';
-import { Button } from '../button';
 
 const meta: Meta<typeof Dialog> = {
   title: 'Dialog',

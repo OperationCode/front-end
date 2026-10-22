@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Card from '@/components/Cards/Card/Card';
-import Section from '@/components/Section/Section';
 import Heading from '@/components/Heading/Heading';
+import Section from '@/components/Section/Section';
 import episodes from './episodes';
 
 export const metadata: Metadata = { title: 'Podcast' };

@@ -1,8 +1,7 @@
 import { render } from '@testing-library/react';
 import noop from 'lodash/noop';
-import createSnapshotTest from '@/test-utils/createSnapshotTest';
 import { mobileNavItems } from '@/lib/constants/navigation';
-
+import createSnapshotTest from '@/test-utils/createSnapshotTest';
 import NavMobile from '../NavMobile';
 
 describe('NavMobile', () => {

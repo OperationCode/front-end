@@ -1,14 +1,13 @@
 'use client';
 
-import { useState, useRef, useEffect, useEffectEvent } from 'react';
+import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { useRouter, usePathname } from 'next/navigation';
-import dynamic from 'next/dynamic';
-import Logo from '@/static/images/logo.svg';
-
-import { desktopNavItems, mobileNavItems } from '@/lib/constants/navigation';
+import { useState, useRef, useEffect, useEffectEvent } from 'react';
 import NavMobile from '@/components/Nav/NavMobile/NavMobile';
+import { desktopNavItems, mobileNavItems } from '@/lib/constants/navigation';
 import { cn } from '@/lib/utils';
+import Logo from '@/static/images/logo.svg';
 
 const NavListItem = dynamic(() => import('@/components/Nav/NavListItem/NavListItem'), {
   ssr: false,

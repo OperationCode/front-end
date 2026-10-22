@@ -1,5 +1,5 @@
-import { CHECKBOX } from '@/lib/constants/testIDs';
 import Label from '@/components/Form/Label/Label';
+import { CHECKBOX } from '@/lib/constants/testIDs';
 import { cn } from '@/lib/utils';
 
 interface CheckboxProps extends Omit<

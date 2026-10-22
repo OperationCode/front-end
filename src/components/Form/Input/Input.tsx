@@ -1,7 +1,7 @@
 import type { InputHTMLAttributes } from 'react';
+import Label from '@/components/Form/Label/Label';
 import { INPUT, INPUT_FEEDBACK_GROUPING } from '@/lib/constants/testIDs';
 import { cn } from '@/lib/utils';
-import Label from '@/components/Form/Label/Label';
 
 interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'disabled'> {
   hasValidationStyling?: boolean;

@@ -1,11 +1,11 @@
 import { fireEvent, render, waitFor } from '@testing-library/react';
 import { describe, afterEach, it, expect, vi } from 'vitest';
-import createSnapshotTest from '@/test-utils/createSnapshotTest';
-import { KEY_CODES } from '@/test-utils/identifiers';
-import { LABEL } from '@/lib/constants/testIDs';
 import type { SelectSingleProps } from '@/components/Form/Select/SelectSingle';
 import { SelectSingle } from '@/components/Form/Select/SelectSingle';
 import { getReactSelectInput } from '@/components/Form/Select/ThemedReactSelect';
+import { LABEL } from '@/lib/constants/testIDs';
+import createSnapshotTest from '@/test-utils/createSnapshotTest';
+import { KEY_CODES } from '@/test-utils/identifiers';
 
 const name = 'someSelectName';
 

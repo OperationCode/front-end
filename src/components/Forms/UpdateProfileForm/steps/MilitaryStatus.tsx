@@ -1,8 +1,8 @@
 import { Controller, useFormContext } from 'react-hook-form';
 import { z } from 'zod';
-import { validationErrorMessages } from '@/lib/constants/messages';
 import { SelectSingle } from '@/components/Form/Select/SelectSingle';
 import { Alert } from '@/components/ui/alert';
+import { validationErrorMessages } from '@/lib/constants/messages';
 
 MilitaryStatus.title = 'Military Status';
 

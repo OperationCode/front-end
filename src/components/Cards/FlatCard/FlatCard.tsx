@@ -1,7 +1,7 @@
-import type { ReactElement, ReactNode } from 'react';
 import Image from 'next/image';
-import { cn } from '@/lib/utils';
+import type { ReactElement, ReactNode } from 'react';
 import { FLAT_CARD_IMAGE } from '@/lib/constants/testIDs';
+import { cn } from '@/lib/utils';
 import { getPlaceholder } from '@/lib/utils/next-utils';
 
 interface FlatCardProps {

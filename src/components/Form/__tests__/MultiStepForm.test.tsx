@@ -1,8 +1,8 @@
-import { vi } from 'vitest';
 import { faker } from '@faker-js/faker';
-import get from 'lodash/get';
 import { fireEvent, render, waitFor, getByTestId } from '@testing-library/react';
+import get from 'lodash/get';
 import { useFormContext } from 'react-hook-form';
+import { vi } from 'vitest';
 import { z } from 'zod';
 import { networkErrorMessages } from '@/lib/constants/messages';
 import {

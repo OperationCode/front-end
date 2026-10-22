@@ -1,7 +1,6 @@
 import { fireEvent, render, waitFor } from '@testing-library/react';
 import { vi } from 'vitest';
 import createSnapshotTest from '@/test-utils/createSnapshotTest';
-
 import { ScrollToTopButton } from '../ScrollToTopButton';
 
 describe('ScrollToTopButton', () => {

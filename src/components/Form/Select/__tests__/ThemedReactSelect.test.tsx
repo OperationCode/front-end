@@ -1,6 +1,5 @@
 import noop from 'lodash/noop';
 import createSnapshotTest from '@/test-utils/createSnapshotTest';
-
 import { ThemedReactSelect } from '../ThemedReactSelect';
 
 describe('ThemedReactSelect', () => {

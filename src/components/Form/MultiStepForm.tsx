@@ -1,21 +1,21 @@
 'use client';
 
-import type { FunctionComponent } from 'react';
-import { useRef, useState } from 'react';
-import type { DefaultValues, Resolver } from 'react-hook-form';
-import { useForm, FormProvider } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import type { AxiosError } from 'axios';
+import type { FunctionComponent } from 'react';
+import { useState } from 'react';
+import type { DefaultValues, Resolver } from 'react-hook-form';
+import { useForm, FormProvider } from 'react-hook-form';
 import type { ZodType } from 'zod';
+import { InlineLoadingSpinner } from '@/components/InlineLoadingSpinner';
+import ProgressIndicator from '@/components/ProgressIndicator/ProgressIndicator';
+import { Alert } from '@/components/ui/alert';
+import { Button } from '@/components/ui/button';
 import {
   MULTI_STEP_STEP_BUTTON,
   MULTI_STEP_SUBMIT_BUTTON,
   MULTI_STEP_PREVIOUS_BUTTON,
 } from '@/lib/constants/testIDs';
-import { Button } from '@/components/ui/button';
-import { Alert } from '@/components/ui/alert';
-import ProgressIndicator from '@/components/ProgressIndicator/ProgressIndicator';
-import { InlineLoadingSpinner } from '@/components/InlineLoadingSpinner';
 import { cn } from '@/lib/utils';
 
 export interface StepComponent<T extends Record<string, unknown>> extends FunctionComponent<{
@@ -144,20 +144,15 @@ export function MultiStepForm<T extends Record<string, unknown>>({
   const [state, setState] = useState({
     errorMessage: '',
     stepNumber: 0,
+    values: initialValues,
   });
 
-  const valuesRef = useRef<T>(initialValues);
-  const stepsRef = useRef(steps);
-  stepsRef.current = steps;
-
-  const { errorMessage, stepNumber } = state;
+  const { errorMessage, stepNumber, values: stepValues } = state;
   const CurrentStep = steps[stepNumber];
   const isFirstStep = stepNumber === 0;
   const isLastStep = stepNumber === steps.length - 1;
 
   const handleSubmit = async (values: T) => {
-    valuesRef.current = values;
-
     if (errorMessage) {
       setState((prev) => ({ ...prev, errorMessage: '' }));
     }
@@ -176,10 +171,9 @@ export function MultiStepForm<T extends Record<string, unknown>>({
 
       if (isLastStep) {
         await onFinalSubmit(values);
-        valuesRef.current = initialValues;
-        setState({ errorMessage: '', stepNumber: 0 });
+        setState({ errorMessage: '', stepNumber: 0, values: initialValues });
       } else {
-        setState((prev) => ({ ...prev, stepNumber: prev.stepNumber + 1 }));
+        setState((prev) => ({ ...prev, stepNumber: prev.stepNumber + 1, values }));
       }
     } catch (error) {
       setState((prev) => ({ ...prev, errorMessage: getErrorMessage(error as AxiosError) }));
@@ -187,15 +181,14 @@ export function MultiStepForm<T extends Record<string, unknown>>({
   };
 
   const handlePrevious = (currentValues: T) => {
-    valuesRef.current = currentValues;
-    setState((prev) => ({ ...prev, stepNumber: prev.stepNumber - 1 }));
+    setState((prev) => ({ ...prev, stepNumber: prev.stepNumber - 1, values: currentValues }));
   };
 
   return (
     <StepFormInner<T>
       key={stepNumber}
       step={CurrentStep}
-      defaultValues={valuesRef.current as DefaultValues<T>}
+      defaultValues={stepValues as DefaultValues<T>}
       isFirstStep={isFirstStep}
       isLastStep={isLastStep}
       stepNumber={stepNumber}

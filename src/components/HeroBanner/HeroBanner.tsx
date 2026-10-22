@@ -1,6 +1,6 @@
-import { cn } from '@/lib/utils';
 import Container from '@/components/Container/Container';
 import { HERO_BANNER_H1 } from '@/lib/constants/testIDs';
+import { cn } from '@/lib/utils';
 
 export interface HeroBannerPropsType {
   /**

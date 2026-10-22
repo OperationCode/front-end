@@ -1,7 +1,7 @@
-import { NextResponse, type NextRequest } from 'next/server';
 import Airtable from 'airtable';
-import { AIR_TABLE_BASE_ID, AIR_TABLE_TABLE_NAME } from '@/lib/config/environment';
+import { NextResponse, type NextRequest } from 'next/server';
 import type { RegistrationFormValues } from '@/components/Forms/RegistrationForm/RegistrationForm';
+import { AIR_TABLE_BASE_ID, AIR_TABLE_TABLE_NAME } from '@/lib/config/environment';
 
 const base = new Airtable({ apiKey: process.env.AIRTABLE_PAT }).base(AIR_TABLE_BASE_ID);
 
