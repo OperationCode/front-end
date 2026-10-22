@@ -82,8 +82,7 @@ export function RegistrationForm({
       onSuccess();
     } catch (_error: unknown) {
       const axiosError = (_error as AxiosError).response?.data as
-        | Record<string, string>
-        | undefined;
+        Record<string, string> | undefined;
 
       const axiosErrorMessage = axiosError?.message;
 

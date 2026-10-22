@@ -19,7 +19,8 @@ exports[`SocialMediaItem > should render with required props 1`] = `
         Facebook
       </span>
       <svg
-        viewBox="0 0 500 500"
+        height="500"
+        width="500"
       >
         <symbol
           id="_96f4af80"

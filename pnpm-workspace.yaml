@@ -41,3 +41,4 @@ overrides:
   postcss: '^8.5.18' # via next / @mdx-js/loader>webpack.
   sharp: '^0.35.0' # via next image optimization (runtime).
   valibot: '^1.4.2' # via @hookform/resolvers (unused resolver).
+  webpack-dev-middleware: '^7.4.5' # via @storybook/builder-webpack5 (dev server).

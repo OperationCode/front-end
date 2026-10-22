@@ -1,4 +1,4 @@
-import '@testing-library/jest-dom';
+import '@testing-library/jest-dom/vitest';
 import { vi, beforeAll } from 'vitest';
 
 const MockedNextImage = ({ src, alt }: { src: string; alt: string }) => <img src={src} alt={alt} />;
