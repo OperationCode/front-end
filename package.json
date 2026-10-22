@@ -10,7 +10,7 @@
     "format": "prettier --write \"**/*\"",
     "format:md": "prettier --write \"**/*.md\"",
     "lint": "pnpm lint:scripts && pnpm format:md",
-    "lint:ci": "eslint src",
+    "lint:ci": "eslint .",
     "lint:scripts": "eslint --fix src",
     "postbuild": "next-sitemap --config next-sitemap.config.ts",
     "prepare": "husky",
