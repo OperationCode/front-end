@@ -34,7 +34,8 @@ exports[`Content > should render with many props assigned 1`] = `
               </span>
               <svg
                 class="h-5 w-full"
-                viewBox="0 0 512 512"
+                height="512"
+                width="512"
               >
                 <symbol
                   id="_d456e9ce"
