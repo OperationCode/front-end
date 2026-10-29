@@ -108,7 +108,7 @@
     "shadcn": "^4.22.1",
     "storybook": "^10.6.3",
     "tailwindcss": "^4.3.3",
-    "typescript": "^7.0.2",
+    "typescript": "^6.0.3",
     "vite": "^8.3.5",
     "vite-plugin-magical-svg": "^1.10.3",
     "vite-tsconfig-paths": "^6.1.1",
